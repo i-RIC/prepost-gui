@@ -31,6 +31,7 @@ const std::string CgnsFile::Impl::BINAME = "BaseIterativeData";
 CgnsFile::Impl::Impl()
 {
 	m_solutionWriter = new SolutionWriterStandard(this);
+	m_fileName = "Case1.cgn";
 }
 
 CgnsFile::Impl::~Impl()
@@ -736,6 +737,11 @@ CgnsFile::CgnsFile() :
 CgnsFile::~CgnsFile()
 {
 	delete impl;
+}
+
+void CgnsFile::setFileName(const char* fileName)
+{
+	impl->m_fileName = fileName;
 }
 
 void CgnsFile::setFileId(int fileId)

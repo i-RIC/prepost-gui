@@ -28,6 +28,8 @@ int IRICLIBDLL cg_iRIC_InitRead_Base(int fid, char* basename);
 
 int IRICLIBDLL cg_iRIC_InitRead(int fid);
 
+void IRICLIBDLL cg_iRIC_SetFilename(int fid, char* fname);
+
 int IRICLIBDLL iRIC_InitOption(int option);
 
 int IRICLIBDLL cg_iRIC_Flush(char* name, int* fid);

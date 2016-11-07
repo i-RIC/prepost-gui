@@ -73,6 +73,12 @@ int cg_iRIC_InitRead(int fid)
 	return f->InitRead();
 }
 
+void cg_iRIC_SetFilename(int fid, char* fname)
+{
+	iRICLib::CgnsFile* f = m_files.at(fid);
+	f->setFileName(fname);
+}
+
 int iRIC_InitOption(int option)
 {
 	FILE* fp;

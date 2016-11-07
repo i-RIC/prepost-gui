@@ -13,6 +13,7 @@ public:
 	CgnsFile();
 	~CgnsFile();
 
+	void setFileName(const char* fileName);
 	void setFileId(int fileId);
 
 	// -----------------------------------

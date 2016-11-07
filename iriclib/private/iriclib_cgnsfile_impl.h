@@ -91,6 +91,7 @@ public:
 	static void getBcName(const char* typeName, int num, char* name); // local_get_bc_name
 	static void getParticleSolName(int num, char* name);
 
+	std::string m_fileName;
 	int m_fileId = 0;
 
 	int m_baseId = 0;
