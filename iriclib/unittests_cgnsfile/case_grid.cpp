@@ -95,6 +95,60 @@ void case_GridRead()
 	remove("case_grid.cgn");
 }
 
+void case_GridReadFunc()
+{
+	QFile::copy("case_gridfunc.cgn", "case_gridreadfunc.cgn");
+
+	int fid;
+	int ier = cg_open("case_gridreadfunc.cgn", CG_MODE_MODIFY, &fid);
+
+	VERIFY_LOG("cg_open() ier == 0", ier == 0);
+	VERIFY_LOG("cg_open() fid != 0", fid != 0);
+
+	ier = cg_iRIC_Init(fid);
+
+	VERIFY_LOG("cg_iRIC_Init() ier == 0", ier == 0);
+
+	cgsize_t isize, jsize;
+	std::vector<double> x, y;
+
+	ier = cg_iRIC_GotoGridCoord2d_Mul(fid, &isize, &jsize);
+	VERIFY_LOG("cg_iRIC_GotoGridCoord2d_Mul() ier == 0", ier == 0);
+	VERIFY_LOG("cg_iRIC_GotoGridCoord2d_Mul() isize == 15", isize == 15);
+	VERIFY_LOG("cg_iRIC_GotoGridCoord2d_Mul() jsize == 15", jsize == 15);
+
+	x.assign(isize * jsize, 0);
+	y.assign(isize * jsize, 0);
+
+	ier = cg_iRIC_GetGridCoord2d_Mul(fid, x.data(), y.data());
+	VERIFY_LOG("cg_iRIC_GotoGridCoord2d_Mul() ier == 0", ier == 0);
+
+	cgsize_t time_count;
+	ier = cg_iRIC_Read_Grid_FunctionalDimensionSize_Mul(fid, const_cast<char*>("Xrain"), const_cast<char*>("Time"), &time_count);
+	VERIFY_LOG("cg_iRIC_Read_Grid_FunctionalDimensionSize_Mul() ier == 0", ier == 0);
+	VERIFY_LOG("cg_iRIC_Read_Grid_FunctionalDimensionSize_Mul() time_count == 24", time_count == 24);
+
+	std::vector<double> timeArr;
+	timeArr.assign(time_count, 0);
+	ier = cg_iRIC_Read_Grid_FunctionalDimension_Real_Mul(fid, const_cast<char*>("Xrain"), const_cast<char*>("Time"), timeArr.data());
+	VERIFY_LOG("cg_iRIC_Read_Grid_FunctionalDimension_Real_Mul() ier == 0", ier == 0);
+
+	ier = cg_iRIC_Read_Grid_FunctionalTime_Mul(fid, const_cast<char*>("Xrain"), timeArr.data());
+	VERIFY_LOG("cg_iRIC_Read_Grid_FunctionalTime_Mul() ier == 0", ier == 0);
+
+	std::vector<double> rain;
+	rain.assign(isize * jsize, 0);
+
+	for (int i = 0; i < timeArr.size(); ++i) {
+		ier = cg_iRIC_Read_Grid_Functional_Real_Node_Mul(fid, const_cast<char*>("Xrain"), i + 1, rain.data());
+		VERIFY_LOG("cg_iRIC_Read_Grid_Functional_Real_Node_Mul() ier == 0", ier == 0);
+	}
+
+	cg_close(fid);
+
+	remove("case_gridreadfunc.cgn");
+}
+
 void case_GridWrite()
 {
 	QFile::copy("case_nogrid.cgn", "case_gridwrite1d.cgn");

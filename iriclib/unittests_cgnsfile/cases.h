@@ -18,6 +18,7 @@ void case_BcWrite();
 void case_Complex();
 
 void case_GridRead();
+void case_GridReadFunc();
 void case_GridWrite();
 
 void case_SolStartEnd();
