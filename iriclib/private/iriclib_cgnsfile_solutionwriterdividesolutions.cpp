@@ -64,6 +64,10 @@ int linkGrid(const char* filename_src, int fid_src, int bid_src, int zid_src, in
 	if (linkname == nullptr) {
 		linkname = &(name[0]);
 	}
+
+	ier = cg_goto(fid_tgt, bid_tgt, "Zone_t", zid_tgt, NULL);
+	RETURN_IF_ERR;
+
 	return cg_link_write(linkname, filename_src, path.c_str());
 }
 
@@ -93,6 +97,10 @@ int linkSolution(const char* filename_src, int fid_src, int bid_src, int zid_src
 	if (linkname == nullptr) {
 		linkname = &(name[0]);
 	}
+
+	ier = cg_goto(fid_tgt, bid_tgt, "Zone_t", zid_tgt, NULL);
+	RETURN_IF_ERR;
+
 	return cg_link_write(linkname, filename_src, path.c_str());
 }
 
@@ -121,14 +129,20 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Time(double time)
 	RETURN_IF_ERR;
 
 	Impl* i = impl();
-	CgnsFile::SolutionWriterStandard::stdSolWriteTime(time, i);
+	ier = CgnsFile::SolutionWriterStandard::stdSolWriteTime(time, i);
+	RETURN_IF_ERR;
+
 	m_fileName = solutionFileName(i->m_fileName, i->m_solId);
 
 	ier = setupSolutionFile(m_fileName, i, &m_fileId, &m_baseId, &m_zoneId);
 	RETURN_IF_ERR;
 
 	ier = cg_biter_write(m_fileId, m_baseId, CgnsFile::Impl::BINAME.c_str(), 1);
-	cg_goto(m_fileId, m_baseId, "BaseIterativeData_t", 1, NULL);
+	RETURN_IF_ERR;
+
+	ier = cg_goto(m_fileId, m_baseId, "BaseIterativeData_t", 1, NULL);
+	RETURN_IF_ERR;
+
 	cgsize_t dimVec = 1;
 	ier = cg_array_write("TimeValues", RealDouble, 1, &dimVec, &time);
 	RETURN_IF_ERR;
@@ -287,7 +301,11 @@ int CgnsFile::SolutionWriterDivideSolutions::setupSolutionFile(const std::string
 	ier = linkGrid(i->m_fileName.c_str(), i->m_fileId, i->m_baseId, i->m_zoneId, 1, *fileId, *baseId, *zoneId, nullptr);
 	RETURN_IF_ERR;
 
-	return cg_ziter_write(*fileId, *baseId, *zoneId, ZINAME.c_str());
+	ier = cg_ziter_write(*fileId, *baseId, *zoneId, ZINAME.c_str());
+	RETURN_IF_ERR;
+
+	cg_close(*fileId);
+	return cg_open(solFileName.c_str(), CG_MODE_MODIFY, fileId);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::linkParticleSolution(const char* filename_src, int fid_src, int bid_src, int zid_src, int sid_src, int fid_tgt, int bid_tgt, int zid_tgt, char* linkname)
@@ -295,7 +313,6 @@ int CgnsFile::SolutionWriterDivideSolutions::linkParticleSolution(const char* fi
 	char name[32];
 	int celldim, physdim;
 	cgsize_t zoneSize[9];
-	GridLocation_t location;
 
 	std::string path;
 
@@ -315,5 +332,9 @@ int CgnsFile::SolutionWriterDivideSolutions::linkParticleSolution(const char* fi
 	if (linkname == nullptr) {
 		linkname = &(name[0]);
 	}
+
+	ier = cg_goto(fid_tgt, bid_tgt, "Zone_t", zid_tgt, NULL);
+	RETURN_IF_ERR;
+
 	return cg_link_write(linkname, filename_src, path.c_str());
 }
