@@ -289,7 +289,12 @@ int CgnsFile::SolutionWriterDivideSolutions::closeFileIfOpen()
 
 int CgnsFile::SolutionWriterDivideSolutions::setupSolutionFile(const std::string& solFileName, CgnsFile::Impl* i, int* fileId, int* baseId, int* zoneId)
 {
-	int ier = cg_open(solFileName.c_str(), CG_MODE_WRITE, fileId);
+	int fileType;
+	int ier = cg_get_file_type(i->m_fileId, &fileType);
+	RETURN_IF_ERR;
+	cg_set_file_type(fileType);
+
+	ier = cg_open(solFileName.c_str(), CG_MODE_WRITE, fileId);
 	RETURN_IF_ERR;
 
 	ier = copyBase(i->m_fileId, i->m_baseId, *fileId, baseId);
@@ -305,6 +310,9 @@ int CgnsFile::SolutionWriterDivideSolutions::setupSolutionFile(const std::string
 	RETURN_IF_ERR;
 
 	cg_close(*fileId);
+
+	cg_set_file_type(CG_FILE_NONE);
+
 	return cg_open(solFileName.c_str(), CG_MODE_MODIFY, fileId);
 }
 
