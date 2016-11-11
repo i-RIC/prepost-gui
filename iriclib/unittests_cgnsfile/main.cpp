@@ -21,5 +21,7 @@ int main(int argc, char* argv[])
 	case_BcRead();
 	case_BcWrite();
 
+	case_Complex();
+
 	return 0;
 }

@@ -15,4 +15,6 @@ void case_CalcCondWrite();
 void case_BcRead();
 void case_BcWrite();
 
+void case_Complex();
+
 } // extern "C"

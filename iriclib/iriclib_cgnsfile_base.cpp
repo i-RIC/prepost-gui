@@ -421,7 +421,7 @@ int CgnsFile::Impl::gotoComplexGroup(const char* groupName)
 
 int CgnsFile::Impl::gotoComplex(const char* groupName, int num)
 {
-	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, "UserDefinedData_t", num, NULL);
+	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, 0, "UserDefinedData_t", num, NULL);
 }
 
 int CgnsFile::Impl::gotoComplexChild(const char* groupName, int num, const char* name)
