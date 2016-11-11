@@ -205,11 +205,11 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_GridCoord2d(double *x, do
 
 	char gridName[CgnsFile::Impl::NAME_MAXLENGTH];
 	CgnsFile::Impl::getSolGridCoordName(i->m_solId, gridName);
-	ier = linkGrid(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 2, i->m_fileId, m_baseId, m_zoneId, gridName);
+	ier = linkGrid(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 2, i->m_fileId, i->m_baseId, i->m_zoneId, gridName);
 	RETURN_IF_ERR;
 
 	i->m_solGridCoordPointers.push_back(gridName);
-	return i->writeGridCoordinatesPointers(m_fileId, m_baseId, m_zoneId, i->m_solGridCoordPointers);
+	return i->writeGridCoordinatesPointers(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solGridCoordPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_GridCoord3d(double *x, double *y, double *z)
@@ -224,11 +224,11 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_GridCoord3d(double *x, do
 
 	char gridName[CgnsFile::Impl::NAME_MAXLENGTH];
 	CgnsFile::Impl::getSolGridCoordName(i->m_solId, gridName);
-	ier = linkGrid(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 2, i->m_fileId, m_baseId, m_zoneId, gridName);
+	ier = linkGrid(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 2, i->m_fileId, i->m_baseId, i->m_zoneId, gridName);
 	RETURN_IF_ERR;
 
 	i->m_solGridCoordPointers.push_back(gridName);
-	return i->writeGridCoordinatesPointers(m_fileId, m_baseId, m_zoneId, i->m_solGridCoordPointers);
+	return i->writeGridCoordinatesPointers(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solGridCoordPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Integer(const char *name, int* data)
