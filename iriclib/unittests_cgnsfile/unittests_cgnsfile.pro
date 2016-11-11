@@ -32,6 +32,7 @@ SOURCES += case_bc.cpp \
            case_calccond.cpp \
            case_check.cpp \
            case_complex.cpp \
+           case_grid.cpp \
            case_init.cpp \
            case_initoption_check.cpp \
            case_initread.cpp \

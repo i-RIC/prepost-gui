@@ -23,6 +23,9 @@ int main(int argc, char* argv[])
 
 	case_Complex();
 
+	case_GridRead();
+	case_GridWrite();
+
 	case_SolStartEnd();
 
 	return 0;
