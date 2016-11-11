@@ -18,5 +18,8 @@ int main(int argc, char* argv[])
 	case_CalcCondRead();
 	case_CalcCondWrite();
 
+	case_BcRead();
+	case_BcWrite();
+
 	return 0;
 }

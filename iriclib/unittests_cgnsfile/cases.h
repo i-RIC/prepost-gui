@@ -12,4 +12,7 @@ void case_CheckCancel();
 void case_CalcCondRead();
 void case_CalcCondWrite();
 
+void case_BcRead();
+void case_BcWrite();
+
 } // extern "C"
