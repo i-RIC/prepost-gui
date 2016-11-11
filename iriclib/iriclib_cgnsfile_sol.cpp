@@ -120,7 +120,7 @@ int CgnsFile::Sol_Write_BaseIterative_Integer(const char *name, int value)
 {
 	bool found = false;
 	BaseIterativeT<int> data = name;
-	for (BaseIterativeT<int> bit : impl->m_solBaseIterInts) {
+	for (BaseIterativeT<int>& bit : impl->m_solBaseIterInts) {
 		if (bit.name() == name) {
 			bit.addValue(value);
 			data = bit;
@@ -143,7 +143,7 @@ int CgnsFile::Sol_Write_BaseIterative_Real(const char *name, double value)
 {
 	bool found = false;
 	BaseIterativeT<double> data = name;
-	for (BaseIterativeT<double> bit : impl->m_solBaseIterReals) {
+	for (BaseIterativeT<double>& bit : impl->m_solBaseIterReals) {
 		if (bit.name() == name) {
 			bit.addValue(value);
 			data = bit;

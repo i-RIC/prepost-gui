@@ -12,7 +12,11 @@ CgnsFile::SolutionWriterStandard::SolutionWriterStandard(CgnsFile::Impl* impl) :
 
 int CgnsFile::SolutionWriterStandard::Sol_Write_Time(double time)
 {
-	return stdSolWriteTime(time, impl());
+	Impl* i = impl();
+	int ier = stdSolWriteTime(time, i);
+	RETURN_IF_ERR;
+
+	return Impl::addSolutionNode(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solId, &(i->m_solPointers));
 }
 
 int CgnsFile::SolutionWriterStandard::Sol_Write_Iteration(int index)
@@ -98,11 +102,7 @@ int CgnsFile::SolutionWriterStandard::stdSolWriteTime(double time, CgnsFile::Imp
 	RETURN_IF_ERR;
 	ier = impl->gotoBaseIter();
 	RETURN_IF_ERR
-	ier = cg_array_write("TimeValues", RealDouble, 1, &dimVec, impl->m_solTimes.data());
-	RETURN_IF_ERR;
-
-	// add solution node
-	return Impl::addSolutionNode(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, &(impl->m_solPointers));
+	return cg_array_write("TimeValues", RealDouble, 1, &dimVec, impl->m_solTimes.data());
 }
 
 int CgnsFile::SolutionWriterStandard::stdSolWriteIteration(int index, CgnsFile::Impl* impl)
