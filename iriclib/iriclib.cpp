@@ -544,25 +544,25 @@ int cg_iRIC_InitGrid_Mul(int fid, int zoneId)
 int cg_iRIC_Write_Grid_Real_Node_Mul(int fid, char* name, double* values)
 {
 	GET_F(fid);
-	return f->Grid_Read_Real_Node(name, values);
+	return f->Grid_Write_Real_Node(name, values);
 }
 
 int cg_iRIC_Write_Grid_Integer_Node_Mul(int fid, char* name, int* values)
 {
 	GET_F(fid);
-	return f->Grid_Read_Integer_Node(name, values);
+	return f->Grid_Write_Integer_Node(name, values);
 }
 
 int cg_iRIC_Write_Grid_Real_Cell_Mul(int fid, char* name, double* values)
 {
 	GET_F(fid);
-	return f->Grid_Read_Real_Cell(name, values);
+	return f->Grid_Write_Real_Cell(name, values);
 }
 
 int cg_iRIC_Write_Grid_Integer_Cell_Mul(int fid, char* name, int* values)
 {
 	GET_F(fid);
-	return f->Grid_Read_Integer_Cell(name, values);
+	return f->Grid_Write_Integer_Cell(name, values);
 }
 
 int cg_iRIC_Read_Sol_Count_Mul(int fid, int* count)
