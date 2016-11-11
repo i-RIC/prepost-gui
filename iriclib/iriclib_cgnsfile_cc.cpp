@@ -22,7 +22,7 @@ int CgnsFile::CC_Read_RealSingle(const char* name, float* realvalue)
 {
 	int ier = impl->gotoCCChild(name);
 	RETURN_IF_ERR;
-	return Impl::readArray("Value", RealSingle, 1, realvalue);
+	return Impl::readArrayAs("Value", RealSingle, 1, realvalue);
 }
 
 int CgnsFile::CC_Read_StringLen(const char *name, int* length)

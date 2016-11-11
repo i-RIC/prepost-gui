@@ -29,7 +29,7 @@ int CgnsFile::Complex_CC_Read_RealSingle(const char *groupname, int num, const c
 {
 	int ier = impl->gotoComplexChild(groupname, num, name);
 	RETURN_IF_ERR;
-	return Impl::readArray("Value", RealSingle, 1, realvalue);
+	return Impl::readArrayAs("Value", RealSingle, 1, realvalue);
 }
 
 int CgnsFile::Complex_CC_Read_StringLen(const char *groupname, int num, const char *name, int* length)
