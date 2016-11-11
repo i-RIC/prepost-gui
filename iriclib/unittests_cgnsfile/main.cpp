@@ -23,5 +23,7 @@ int main(int argc, char* argv[])
 
 	case_Complex();
 
+	case_SolStartEnd();
+
 	return 0;
 }

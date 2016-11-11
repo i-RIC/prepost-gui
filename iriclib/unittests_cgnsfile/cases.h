@@ -17,4 +17,6 @@ void case_BcWrite();
 
 void case_Complex();
 
+void case_SolStartEnd();
+
 } // extern "C"

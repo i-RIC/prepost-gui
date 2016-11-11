@@ -35,4 +35,5 @@ SOURCES += case_bc.cpp \
            case_init.cpp \
            case_initoption_check.cpp \
            case_initread.cpp \
+           case_sol_startend.cpp \
            main.cpp
