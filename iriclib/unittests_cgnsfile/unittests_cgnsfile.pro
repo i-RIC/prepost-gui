@@ -37,4 +37,5 @@ SOURCES += case_bc.cpp \
            case_initoption_check.cpp \
            case_initread.cpp \
            case_sol_startend.cpp \
+           case_sol_write.cpp \
            main.cpp

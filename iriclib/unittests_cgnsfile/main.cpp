@@ -29,5 +29,8 @@ int main(int argc, char* argv[])
 
 	case_SolStartEnd();
 
+	case_SolWriteStd();
+	case_SolWriteDivide();
+
 	return 0;
 }

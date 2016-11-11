@@ -23,4 +23,7 @@ void case_GridWrite();
 
 void case_SolStartEnd();
 
+void case_SolWriteStd();
+void case_SolWriteDivide();
+
 } // extern "C"
