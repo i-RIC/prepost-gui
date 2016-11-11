@@ -97,6 +97,8 @@ int iRIC_InitOption(int option)
 		return 0;
 	} else if (option == IRIC_OPTION_DIVIDESOLUTIONS){
 		m_divideSolutions = true;
+	} else if (option == IRIC_OPTION_STDSOLUTION) {
+		m_divideSolutions = false;
 	}
 }
 
