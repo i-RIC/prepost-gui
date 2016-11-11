@@ -174,6 +174,42 @@ void case_GridWrite()
 	ier = cg_iRIC_WriteGridCoord2d_Mul(fid, isize, jsize, x.data(), y.data());
 	VERIFY_LOG("cg_iRIC_WriteGridCoord2d_Mul() ier == 0", ier == 0);
 
+	std::vector<double> real_node_write, real_cell_write;
+	std::vector<int> int_node_write, int_cell_write;
+
+	real_node_write.assign(isize * jsize, 0);
+	int_node_write.assign(isize * jsize, 0);
+	real_cell_write.assign((isize - 1) * (jsize - 1), 0);
+	int_cell_write.assign((isize - 1) * (jsize - 1), 0);
+
+	for (int i = 0; i < real_node_write.size(); ++i) {
+		real_node_write[i] = 0.5 * i - 0.001 * i * (i - 50);
+	}
+
+	for (int i = 0; i < int_node_write.size(); ++i) {
+		int_node_write[i] = i * i + i * 2 + 6;
+	}
+
+	for (int i = 0; i < real_cell_write.size(); ++i) {
+		real_cell_write[i] = 0.8 * i - 0.0005 * i * (i - 10);
+	}
+
+	for (int i = 0; i < int_cell_write.size(); ++i) {
+		int_cell_write[i] = i * i - i * 4 + 414;
+	}
+
+	ier = cg_iRIC_Write_Grid_Real_Node_Mul(fid, const_cast<char*>("realnode_test"), real_node_write.data());
+	VERIFY_LOG("cg_iRIC_Write_Grid_Real_Node_Mul() ier == 0", ier == 0);
+
+	ier = cg_iRIC_Write_Grid_Integer_Node_Mul(fid, const_cast<char*>("intnode_test"), int_node_write.data());
+	VERIFY_LOG("cg_iRIC_Write_Grid_Integer_Node_Mul() ier == 0", ier == 0);
+
+	ier = cg_iRIC_Write_Grid_Real_Cell_Mul(fid, const_cast<char*>("realcell_test"), real_cell_write.data());
+	VERIFY_LOG("cg_iRIC_Write_Grid_Real_Cell_Mul() ier == 0", ier == 0);
+
+	ier = cg_iRIC_Write_Grid_Integer_Cell_Mul(fid, const_cast<char*>("intcell_test"), int_cell_write.data());
+	VERIFY_LOG("cg_iRIC_Write_Grid_Integer_Cell_Mul() ier == 0", ier == 0);
+
 	cg_close(fid);
 
 	ier = cg_open("case_gridwrite2d.cgn", CG_MODE_READ, &fid);
@@ -197,6 +233,42 @@ void case_GridWrite()
 	ier = cg_array_read(2, read_y.data());
 	VERIFY_LOG("cg_array_read() ier == 0", ier == 0);
 	VERIFY_LOG("cg_array_read() value valid", y == read_y);
+
+	ier = cg_goto(fid, 1, "iRICZone", 0, "GridConditions", 0, "realnode_test", 0, NULL);
+	VERIFY_LOG("cg_goto() for realnode_test ier == 0", ier == 0);
+	ier = cg_array_info(1, name, &datatype, &dim, dimVec);
+	std::vector<double> real_node_read;
+	real_node_read.assign(dimVec[0], 0);
+	ier = cg_array_read(1, real_node_read.data());
+	VERIFY_LOG("cg_array_read() for realnode_test ier == 0", ier == 0);
+	VERIFY_LOG("realnode_test value check", real_node_read == real_node_write);
+
+	ier = cg_goto(fid, 1, "iRICZone", 0, "GridConditions", 0, "intnode_test", 0, NULL);
+	VERIFY_LOG("cg_goto() for intnode_test ier == 0", ier == 0);
+	ier = cg_array_info(1, name, &datatype, &dim, dimVec);
+	std::vector<int> int_node_read;
+	int_node_read.assign(dimVec[0], 0);
+	ier = cg_array_read(1, int_node_read.data());
+	VERIFY_LOG("cg_array_read() for intnode_test ier == 0", ier == 0);
+	VERIFY_LOG("intnode_test value check", int_node_read == int_node_write);
+
+	ier = cg_goto(fid, 1, "iRICZone", 0, "GridConditions", 0, "realcell_test", 0, NULL);
+	VERIFY_LOG("cg_goto() for realcell_test ier == 0", ier == 0);
+	ier = cg_array_info(1, name, &datatype, &dim, dimVec);
+	std::vector<double> real_cell_read;
+	real_cell_read.assign(dimVec[0], 0);
+	ier = cg_array_read(1, real_cell_read.data());
+	VERIFY_LOG("cg_array_read() for realcell_test ier == 0", ier == 0);
+	VERIFY_LOG("realcell_test value check", real_cell_read == real_cell_write);
+
+	ier = cg_goto(fid, 1, "iRICZone", 0, "GridConditions", 0, "intcell_test", 0, NULL);
+	VERIFY_LOG("cg_goto() for intcell_test ier == 0", ier == 0);
+	ier = cg_array_info(1, name, &datatype, &dim, dimVec);
+	std::vector<int> int_cell_read;
+	int_cell_read.assign(dimVec[0], 0);
+	ier = cg_array_read(1, int_cell_read.data());
+	VERIFY_LOG("cg_array_read() for intcell_test ier == 0", ier == 0);
+	VERIFY_LOG("intcell_test value check", int_cell_read == int_cell_write);
 
 	cg_close(fid);
 
