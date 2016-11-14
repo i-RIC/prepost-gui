@@ -43,7 +43,7 @@ CgnsFile::Impl::~Impl()
 	}
 }
 
-int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
+int CgnsFile::Impl::initBaseId(bool clearResults, char* bname, bool skipInitZone)
 {
 	std::string baseName = IRICBASE;
 	if (bname != NULL) {
@@ -64,6 +64,9 @@ int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
 			// base found!
 			m_baseId = B;
 			m_ccBaseId = B;
+			if (skipInitZone){
+				return 0;
+			}
 			return initZoneId(clearResults);
 		}
 	}
@@ -847,7 +850,7 @@ int CgnsFile::Flush()
 
 int CgnsFile::GotoBase(int* B)
 {
-	int ier = impl->initBaseId(false);
+	int ier = impl->initBaseId(false, 0, true);
 	RETURN_IF_ERR;
 
 	ier = impl->gotoBase();

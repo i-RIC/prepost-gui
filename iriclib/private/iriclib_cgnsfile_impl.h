@@ -20,7 +20,7 @@ public:
 	Impl();
 	~Impl();
 
-	int initBaseId(bool clearResults, char* baseName = NULL);
+	int initBaseId(bool clearResults, char* baseName = NULL, bool skipInitZone = false);
 	int initZoneId(bool clearResults);
 
 	void optionDivideSolutions();
