@@ -25,6 +25,10 @@ void writeSolution(int fid, bool iterMode)
 	std::vector<double> vx, vy, depth;
 	std::vector<double> wet;
 
+	std::vector<double> particle_x, particle_y;
+	std::vector<double> particle_vx, particle_vy;
+	std::vector<int> particle_active;
+
 	x.assign(isize * jsize, 0);
 	y.assign(isize * jsize, 0);
 	ier = cg_iRIC_GetGridCoord2d_Mul(fid, x.data(), y.data());
@@ -33,6 +37,17 @@ void writeSolution(int fid, bool iterMode)
 	vy.assign(isize * jsize, 0.3);
 	depth.assign(isize * jsize, 4);
 	wet.assign(isize * jsize, 0);
+
+	int particle_num = 20;
+	particle_x.assign(particle_num, 0);
+	particle_y.assign(particle_num, 0);
+	particle_vx.assign(particle_num, 2);
+	particle_vy.assign(particle_num, 3);
+	particle_active.assign(particle_num, 1);
+
+	for (int i = 0; i < particle_num; ++i) {
+		particle_x[i] = i;
+	}
 
 	for (int i = 0; i < 5; ++i) {
 		if (iterMode) {
@@ -65,6 +80,18 @@ void writeSolution(int fid, bool iterMode)
 		int DamOpen = i;
 		cg_iRIC_Write_Sol_BaseIterative_Integer_Mul(fid, const_cast<char*>("DamOpen"), DamOpen);
 		VERIFY_LOG("cg_iRIC_Write_Sol_BaseIterative_Integer_Mul() for IBC ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Pos2d_Mul(fid, particle_num, particle_x.data(), particle_y.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Pos2d_Mul() ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Real_Mul(fid, const_cast<char*>("VelX"), particle_vx.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Real_Mul() for VelX ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Real_Mul(fid, const_cast<char*>("VelY"), particle_vy.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Real_Mul() for VelY ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Integer_Mul(fid, const_cast<char*>("Active"), particle_active.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Integer_Mul() for Active ier == 0", ier == 0);
 	}
 }
 
@@ -79,6 +106,10 @@ void writeSolution3d(int fid)
 	std::vector<double> vx, vy, depth;
 	std::vector<double> wet;
 
+	std::vector<double> particle_x, particle_y, particle_z;
+	std::vector<double> particle_vx, particle_vy, particle_vz;
+	std::vector<int> particle_active;
+
 	x.assign(isize * jsize, 0);
 	y.assign(isize * jsize, 0);
 	z.assign(isize * jsize, 0);
@@ -90,6 +121,19 @@ void writeSolution3d(int fid)
 	vy.assign(isize * jsize, 0.3);
 	depth.assign(isize * jsize, 4);
 	wet.assign(isize * jsize, 0);
+
+	int particle_num = 20;
+	particle_x.assign(particle_num, 0);
+	particle_y.assign(particle_num, 0);
+	particle_z.assign(particle_num, 0);
+	particle_vx.assign(particle_num, 2);
+	particle_vy.assign(particle_num, 3);
+	particle_vz.assign(particle_num, 1);
+	particle_active.assign(particle_num, 1);
+
+	for (int i = 0; i < particle_num; ++i) {
+		particle_x[i] = i;
+	}
 
 	for (int i = 0; i < 5; ++i) {
 		double TimeVal = i * 2.13;
@@ -116,6 +160,21 @@ void writeSolution3d(int fid)
 		int DamOpen = i;
 		cg_iRIC_Write_Sol_BaseIterative_Integer_Mul(fid, const_cast<char*>("DamOpen"), DamOpen);
 		VERIFY_LOG("cg_iRIC_Write_Sol_BaseIterative_Integer_Mul() for IBC ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Pos3d_Mul(fid, particle_num, particle_x.data(), particle_y.data(), particle_z.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Pos2d_Mul() ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Real_Mul(fid, const_cast<char*>("VelX"), particle_vx.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Real_Mul() for VelX ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Real_Mul(fid, const_cast<char*>("VelY"), particle_vy.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Real_Mul() for VelY ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Real_Mul(fid, const_cast<char*>("VelZ"), particle_vz.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Real_Mul() for VelZ ier == 0", ier == 0);
+
+		ier = cg_iRIC_Write_Sol_Particle_Integer_Mul(fid, const_cast<char*>("Active"), particle_active.data());
+		VERIFY_LOG("cg_iRIC_Write_Sol_Particle_Integer_Mul() for Active ier == 0", ier == 0);
 	}
 }
 
