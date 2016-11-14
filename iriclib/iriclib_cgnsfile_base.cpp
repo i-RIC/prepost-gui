@@ -32,11 +32,15 @@ CgnsFile::Impl::Impl()
 {
 	m_solutionWriter = new SolutionWriterStandard(this);
 	m_fileName = "Case1.cgn";
+	m_solLinkFileId = 0;
 }
 
 CgnsFile::Impl::~Impl()
 {
 	delete m_solutionWriter;
+	if (m_solLinkFileId != 0) {
+		cg_close(m_solLinkFileId);
+	}
 }
 
 int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
@@ -522,6 +526,42 @@ int CgnsFile::Impl::gotoBcChildCreateIfNotExist(const char* typeName, int num, c
 	ier = cg_user_data_write(name);
 	RETURN_IF_ERR;
 	return gotoBcChild(typeName, num, name);
+}
+
+int CgnsFile::Impl::followLinkIfNeeded()
+{
+	int pathlen;
+	int ier = cg_is_link(&pathlen);
+	RETURN_IF_ERR;
+
+	if (pathlen == 0) {return 0;}
+
+	char* filename;
+	char* path;
+
+	cg_link_read(&filename, &path);
+
+	if (m_solLinkFileId != 0 && m_solLinkedFileName == filename) {
+		// we can use the file already open.
+	} else {
+		// open the linked file.
+		if (m_solLinkFileId != 0) {
+			cg_close(m_solLinkFileId);
+		}
+		ier = cg_open(filename, CG_MODE_READ, &m_solLinkFileId);
+		RETURN_IF_ERR;
+		m_solLinkedFileName = filename;
+	}
+	std::string fullpath;
+	fullpath = "/";
+	fullpath.append(path);
+
+	ier = cg_gopath(m_solLinkFileId, fullpath.data());
+
+	cg_free(filename);
+	cg_free(path);
+
+	return ier;
 }
 
 int CgnsFile::Impl::findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec)
