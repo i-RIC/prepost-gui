@@ -4,6 +4,7 @@
 #include "geodatabackground.h"
 #include "geodatabackgroundeditdialog.h"
 #include "../base/preprocessorwindowinterface.h"
+#include "private/geodatabackground_editvaluecommand.h"
 
 #include <misc/iricundostack.h>
 
@@ -11,7 +12,6 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QStandardItem>
-#include <QUndoCommand>
 
 GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
 	GeoData {d, creator, condition}
@@ -82,46 +82,6 @@ void GeoDataBackground::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_editValueAction);
 }
 
-class GeoDataBackgroundEditValueCommand : public QUndoCommand
-{
-public:
-	GeoDataBackgroundEditValueCommand(GeoDataBackground::Type type, const QVariant& val, GeoDataBackground* b) :
-		QUndoCommand(GeoDataBackground::tr("Background edit value")),
-		m_newType {type},
-		m_newValue {val},
-		m_oldType {b->m_type},
-		m_oldValue {b->variantValue()},
-		m_oldMapped {b->isMapped()},
-		m_background {b}
-	{}
-	void redo() override {
-		applyValues(m_newType, m_newValue, false);
-	}
-	void undo() override {
-		applyValues(m_oldType, m_oldValue, m_oldMapped);
-	}
-
-private:
-	void applyValues(GeoDataBackground::Type t, const QVariant& val, bool mapped)
-	{
-		m_background->m_type = t;
-		m_background->m_customValue = val;
-		m_background->setMapped(mapped);
-
-		auto geoData = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (m_background->parent());
-		geoData->informValueRangeChange();
-		geoData->informDataChange();
-	}
-
-	GeoDataBackground::Type m_newType;
-	QVariant m_newValue;
-	GeoDataBackground::Type m_oldType;
-	QVariant m_oldValue;
-	bool m_oldMapped;
-
-	GeoDataBackground* m_background;
-};
-
 void GeoDataBackground::editValue()
 {
 	if (m_gridAttribute->isOption()) {
@@ -132,7 +92,7 @@ void GeoDataBackground::editValue()
 		dialog->setVariantValue(m_customValue);
 		int ret = dialog->exec();
 		if (ret == QDialog::Accepted) {
-			iRICUndoStack::instance().push(new GeoDataBackgroundEditValueCommand(m_type, dialog->variantValue(), this));
+			iRICUndoStack::instance().push(new EditValueCommand(m_type, dialog->variantValue(), this));
 		}
 		delete dialog;
 	} else {
@@ -146,7 +106,7 @@ void GeoDataBackground::editValue()
 		dialog.setupDialog();;
 		int ret = dialog.exec();
 		if (ret == QDialog::Accepted) {
-			iRICUndoStack::instance().push(new GeoDataBackgroundEditValueCommand(dialog.type(), dialog.customValue(), this));
+			iRICUndoStack::instance().push(new EditValueCommand(dialog.type(), dialog.customValue(), this));
 		}
 	}
 }

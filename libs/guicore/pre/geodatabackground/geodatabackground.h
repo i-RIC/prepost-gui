@@ -5,7 +5,6 @@
 #include <QVariant>
 
 class QAction;
-class GeoDataBackgroundEditValueCommand;
 
 class GeoDataBackground : public GeoData
 {
@@ -44,8 +43,7 @@ protected:
 private:
 	QAction* m_editValueAction;
 
-public:
-	friend class GeoDataBackgroundEditValueCommand;
+	class EditValueCommand;
 };
 
 #endif // GEODATABACKGROUND_H

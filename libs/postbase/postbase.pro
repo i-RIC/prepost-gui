@@ -92,6 +92,7 @@ HEADERS += cfshapeexportwindowi.h \
            title/posttitledataitem.h \
            title/posttitleeditdialog.h \
            title/posttitlesetting.h \
+           time/private/posttimedataitem_setsettingcommand.h \
            title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
          particle/postparticlebasicsettingdialog.ui \
@@ -110,6 +111,7 @@ SOURCES += post2dwindowcontoursetting.cpp \
            title/posttitledataitem.cpp \
            title/posttitleeditdialog.cpp \
            title/posttitlesetting.cpp \
+           time/private/posttimedataitem_setsettingcommand.cpp \
            title/private/posttitledataitem_setsettingcommand.cpp
 TRANSLATIONS += languages/iricPostbase_es_ES.ts \
                 languages/iricPostbase_fr_FR.ts \

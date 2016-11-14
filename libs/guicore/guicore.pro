@@ -191,6 +191,8 @@ HEADERS += guicore_global.h \
            base/windowwithpropertybrowser.h \
            base/windowwithtmsi.h \
            base/windowwithzindexinterface.h \
+           bgcolor/backgroundcoloreditinterface.h \
+           bgcolor/backgroundcoloreditvtkinterface.h \
            datamodel/attributebrowsertargetdataitem.h \
            datamodel/geodataproxydataitem.h \
            datamodel/graphics2dwindowdatamodel.h \
@@ -283,6 +285,7 @@ HEADERS += guicore_global.h \
            tmsimage/tmsimagegroupdataitem.h \
            tmsimage/tmsimagesetting.h \
            tmsimage/tmsimagesettingmanager.h \
+           bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.h \
            datamodel/private/graphicswindowdataitem_modifycommand.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
@@ -365,6 +368,7 @@ HEADERS += guicore_global.h \
            project/measured/measureddatacsvimporter.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
+           project/private/backgroundimageinfo_setactorpropertycommand.h \
            project/private/cgnsfileentry_impl.h \
            project/private/colorsource_impl.h \
            project/private/projectdatacopythread.h \
@@ -389,6 +393,7 @@ HEADERS += guicore_global.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
+           pre/geodatabackground/private/geodatabackground_editvaluecommand.h \
            pre/geodatabackground/private/geodatabackgroundcellmappert_detail.h \
            pre/geodatabackground/private/geodatabackgroundcreatort_detail.h \
            pre/geodatabackground/private/geodatabackgroundnodemappert_detail.h \
@@ -485,6 +490,8 @@ SOURCES += base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
            base/snapshotenabledwindowinterface.cpp \
            base/windowwithzindexinterface.cpp \
+           bgcolor/backgroundcoloreditinterface.cpp \
+           bgcolor/backgroundcoloreditvtkinterface.cpp \
            datamodel/attributebrowsertargetdataitem.cpp \
            datamodel/geodataproxydataitem.cpp \
            datamodel/graphics2dwindowdatamodel.cpp \
@@ -574,6 +581,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            tmsimage/tmsimagegroupdataitem.cpp \
            tmsimage/tmsimagesetting.cpp \
            tmsimage/tmsimagesettingmanager.cpp \
+           bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.cpp \
            datamodel/private/graphicswindowdataitem_modifycommand.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
@@ -636,8 +644,10 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/measured/measureddata.cpp \
            project/measured/measureddatacsvexporter.cpp \
            project/measured/measureddatacsvimporter.cpp \
+           project/private/backgroundimageinfo_setactorpropertycommand.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
+           pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \

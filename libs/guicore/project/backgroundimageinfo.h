@@ -139,8 +139,9 @@ private:
 	QCursor m_rotateCursor;
 	QCursor m_zoomCursor;
 
+	class SetActorPropertyCommand;
+
 public:
-	friend class BackgroundImageInfoActorPropertySetting;
 	friend class BackgroundImageInfoDialog;
 };
 
