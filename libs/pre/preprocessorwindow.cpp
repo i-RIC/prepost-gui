@@ -419,7 +419,7 @@ PreProcessorDataModel* PreProcessorWindow::model() const
 
 VTKGraphicsView* PreProcessorWindow::viewForBackgroundColor() const
 {
-	return m_dataModel->graphicsView();
+	return m_graphicsView;
 }
 
 ObjectBrowser* PreProcessorWindow::objectBrowser() const
