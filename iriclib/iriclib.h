@@ -6,8 +6,10 @@
 #define IRIC_GEO_RIVERSURVEY    2
 #define IRIC_GEO_POINTMAP       3
 
-#define IRIC_OPTION_UNKNOWN     0
-#define IRIC_OPTION_CANCEL      1
+#define IRIC_OPTION_UNKNOWN         0
+#define IRIC_OPTION_CANCEL          1
+#define IRIC_OPTION_DIVIDESOLUTIONS 2
+#define IRIC_OPTION_STDSOLUTION     3
 
 #define IRIC_LOCKED 1
 
@@ -26,6 +28,8 @@ int IRICLIBDLL cg_iRIC_Init(int fid);
 int IRICLIBDLL cg_iRIC_InitRead_Base(int fid, char* basename);
 
 int IRICLIBDLL cg_iRIC_InitRead(int fid);
+
+void IRICLIBDLL cg_iRIC_SetFilename(int fid, char* fname);
 
 int IRICLIBDLL iRIC_InitOption(int option);
 

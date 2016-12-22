@@ -15,22 +15,6 @@ CONFIG += dll
 
 DEFINES += IRICLIBDLL_LIBRARY
 
-# Input
-HEADERS += iriclib.h \
-	iriclib_bstream.h \
-	iriclib_polygon.h \
-	iriclib_riversurvey.h \
-	iriclib_pointmap.h \
-	iriclib_f.h
-
-SOURCES += iriclib.c \
-	iriclib_bstream.cpp \
-	iriclib_geo.cpp \
-	iriclib_polygon.cpp \
-	iriclib_riversurvey.cpp \
-	iriclib_pointmap.cpp \
-	iric_ftoc.c
-
 QT =
 DEFINES += UPPERCASE
 
@@ -55,3 +39,37 @@ unix {
 	INSTALLS += target
 }
 
+# Input
+HEADERS += error_macros.h \
+           fortran_macros.h \
+           iriclib.h \
+           iriclib_bstream.h \
+           iriclib_cgnsfile.h \
+           iriclib_global.h \
+           iriclib_pointmap.h \
+           iriclib_polygon.h \
+           iriclib_riversurvey.h \
+           private/iriclib_cgnsfile_baseiterativet.h \
+           private/iriclib_cgnsfile_baseiterativet_detail.h \
+           private/iriclib_cgnsfile_impl.h \
+           private/iriclib_cgnsfile_solutionwriter.h \
+           private/iriclib_cgnsfile_solutionwriterdividesolutions.h \
+           private/iriclib_cgnsfile_solutionwriterstandard.h
+SOURCES += iric_ftoc.c \
+           iriclib.cpp \
+           iriclib_bstream.cpp \
+           iriclib_cgnsfile_base.cpp \
+           iriclib_cgnsfile_bc.cpp \
+           iriclib_cgnsfile_cc.cpp \
+           iriclib_cgnsfile_complex_cc.cpp \
+           iriclib_cgnsfile_geo.cpp \
+           iriclib_cgnsfile_grid.cpp \
+           iriclib_cgnsfile_sol.cpp \
+           iriclib_geo.cpp \
+           iriclib_pointmap.cpp \
+           iriclib_polygon.cpp \
+           iriclib_riversurvey.cpp \
+           iriclib_single.c \
+           private/iriclib_cgnsfile_solutionwriter.cpp \
+           private/iriclib_cgnsfile_solutionwriterdividesolutions.cpp \
+           private/iriclib_cgnsfile_solutionwriterstandard.cpp

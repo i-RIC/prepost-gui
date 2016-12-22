@@ -1,3 +1,4 @@
+#include "../misc/cgnslinkfollower.h"
 #include "../pre/grid/structured2dgrid.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
@@ -439,6 +440,9 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 
 		return true;
 	}
+
+	CgnsLinkFollower linkFollower;
+
 	// get array info in order to know the number of particles.
 	char aName[ProjectCgnsFile::BUFFERLEN];
 	DataType_t dType;
@@ -733,6 +737,9 @@ bool PostZoneDataContainer::loadGridScalarData(const int fn, const int solid)
 	if (ier != 0) {return false;}
 	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
 	if (ier != 0) {return false;}
+
+	CgnsLinkFollower linkFollower;
+
 	vtkDataSetAttributes* data;
 	if (location == Vertex) {
 		// vertex.
@@ -753,6 +760,9 @@ bool PostZoneDataContainer::loadGridVectorData(const int fn, const int solid)
 	if (ier != 0) {return false;}
 	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
 	if (ier != 0) {return false;}
+
+	CgnsLinkFollower linkFollower;
+
 	vtkDataSetAttributes* data;
 	if (location == Vertex) {
 		// vertex.
