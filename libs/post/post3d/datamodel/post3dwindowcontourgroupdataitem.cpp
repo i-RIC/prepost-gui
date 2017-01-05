@@ -75,7 +75,7 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowD
 	Post3dWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_zScale {1}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 	PostZoneDataContainer* c = zItem->dataContainer();
