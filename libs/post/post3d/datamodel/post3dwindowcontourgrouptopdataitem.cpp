@@ -120,7 +120,7 @@ QDialog* Post3dWindowContourGroupTopDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 
-	if (children().size() >= 4) {
+	if (childItems().size() >= 4) {
 		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
 		return nullptr;
 	}
@@ -139,7 +139,7 @@ QDialog* Post3dWindowContourGroupTopDataItem::propertyDialog(QWidget* p)
 	scalarSetting.target = c->data()->GetPointData()->GetArrayName(0);
 	scalarSetting.numberOfDivisions = 10;
 
-	switch (children().size() % 4) {
+	switch (childItems().size() % 4) {
 	case 0:
 		scalarSetting.scalarBarSetting.positionX = 0.8;
 		scalarSetting.scalarBarSetting.positionY = 0.1;
@@ -182,7 +182,9 @@ public:
 	{}
 	~CreateCommand() {
 		delete m_undoCommand;
-		delete m_propDialog;
+		if (! m_firstDialog) {
+			delete m_propDialog;
+		}
 	}
 	void redo() {
 		m_item = new Post3dWindowContourGroupDataItem(m_topItem);
@@ -197,8 +199,8 @@ public:
 		// don't delete original propDialog
 		if (! m_firstDialog) {
 			delete m_propDialog;
-			m_firstDialog = false;
 		}
+		m_firstDialog = false;
 		m_propDialog = m_item->propertyDialog(nullptr);
 		m_undoCommand->undo();
 		delete m_item;
