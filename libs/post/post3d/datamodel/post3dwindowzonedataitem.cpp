@@ -2,6 +2,7 @@
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowarrowgroupdataitem.h"
 #include "post3dwindowcontourgroupdataitem.h"
+#include "post3dwindowcontourgrouptopdataitem.h"
 #include "post3dwindowgridshapedataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindownodescalargroupdataitem.h"
@@ -46,7 +47,7 @@
 Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
 	Post3dWindowDataItem {zoneName.c_str(), QIcon(":/images/iconGrid.png"), parent},
 	m_shapeDataItem {nullptr},
-	m_contourGroupItem {nullptr},
+	m_contourGroupTopItem {nullptr},
 	m_scalarGroupDataItem {nullptr},
 	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
@@ -61,7 +62,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	PostZoneDataContainer* cont = dataContainer();
 	if (cont->scalarValueExists()) {
-		m_contourGroupItem = new Post3dWindowContourGroupDataItem(this);
+		m_contourGroupTopItem = new Post3dWindowContourGroupTopDataItem(this);
 		m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupDataItem(this);
 	}
 
@@ -78,7 +79,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	m_childItems.push_back(m_shapeDataItem);
 
 	if (cont->scalarValueExists()) {
-		m_childItems.push_back(m_contourGroupItem);
+		m_childItems.push_back(m_contourGroupTopItem);
 		m_childItems.push_back(m_scalarGroupDataItem);
 	}
 
@@ -99,9 +100,16 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
-	QDomNode contourGroupNode = iRIC::getChildNode(node, "ContourGroup");
-	if (! contourGroupNode.isNull() && m_contourGroupItem != nullptr) {
-		m_contourGroupItem->loadFromProjectMainFile(contourGroupNode);
+	QDomNode contoursNode = iRIC::getChildNode(node, "Contours");
+	if (!contoursNode.isNull() && m_contourGroupTopItem != nullptr) {
+		// multi-contours
+		m_contourGroupTopItem->loadFromProjectMainFile(contoursNode);
+	} else {
+		// single-contour
+		QDomNode contourGroupNode = iRIC::getChildNode(node, "ContourGroup");
+		if (! contourGroupNode.isNull() && m_contourGroupTopItem != nullptr) {
+			m_contourGroupTopItem->loadFromProjectMainFile(contourGroupNode);
+		}
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
 	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
@@ -132,9 +140,9 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_contourGroupItem != nullptr) {
-		writer.writeStartElement("ContourGroup");
-		m_contourGroupItem->saveToProjectMainFile(writer);
+	if (m_contourGroupTopItem != nullptr) {
+		writer.writeStartElement("Contours");
+		m_contourGroupTopItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	if (m_scalarGroupDataItem != nullptr) {
@@ -183,8 +191,8 @@ void Post3dWindowZoneDataItem::update()
 {
 	m_shapeDataItem->update();
 
-	if (m_contourGroupItem != nullptr) {
-		m_contourGroupItem->update();
+	if (m_contourGroupTopItem != nullptr) {
+		m_contourGroupTopItem->update();
 	}
 	if (m_scalarGroupDataItem != nullptr) {
 		m_scalarGroupDataItem->update();

@@ -1,5 +1,5 @@
 #include "datamodel/post3dwindowarrowgroupdataitem.h"
-#include "datamodel/post3dwindowcontourgroupdataitem.h"
+#include "datamodel/post3dwindowcontourgrouptopdataitem.h"
 #include "datamodel/post3dwindowgridshapedataitem.h"
 #include "datamodel/post3dwindowgridtypedataitem.h"
 #include "datamodel/post3dwindownodescalargroupdataitem.h"
@@ -98,7 +98,7 @@ void Post3dWindowDataModel::contourSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowContourGroupDataItem* citem = item->contourGroupItem();
+	Post3dWindowContourGroupTopDataItem* citem = item->contourGroupTopItem();
 	citem->showPropertyDialog();
 }
 

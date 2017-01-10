@@ -74,7 +74,7 @@ void Post3dWindowFaceDataItem::update()
 {
 	m_dataOK = false;
 	if (m_actor != nullptr) {m_actor->VisibilityOff();}
-	Post3dWindowZoneDataItem* zdi = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
+	Post3dWindowZoneDataItem* zdi = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent()->parent());
 	PostZoneDataContainer* cont = zdi->dataContainer();
 	if (cont == nullptr) {return;}
 	vtkPointSet* pd = cont->data();

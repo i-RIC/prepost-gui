@@ -5,10 +5,12 @@
 
 #include <QUndoCommand>
 
+class Post3dWindowContourGroupTopDataItem;
+
 class Post3dWindowContourGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const ScalarSettingContainer& scalarSetting, const LookupTableContainer& lookupTable, const QString& scalarBarTitle, Post3dWindowContourGroupDataItem* item);
+	SetSettingCommand(const ScalarSettingContainer& scalarSetting, const LookupTableContainer& lookupTable, const QString& scalarBarTitle, Post3dWindowContourGroupDataItem* item, QUndoCommand* parent = nullptr);
 
 	void redo() override;
 	void undo() override;
@@ -25,6 +27,7 @@ private:
 	QString m_oldScalarBarTitle;
 
 	Post3dWindowContourGroupDataItem* m_item;
+	Post3dWindowContourGroupTopDataItem* m_topItem;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPDATAITEM_SETSETTINGCOMMAND_H
