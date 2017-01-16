@@ -271,6 +271,11 @@ int cg_iRIC_Read_Functional_RealSingle_Mul(int fid, char* name, float* x, float*
 	return f->CC_Read_Functional_RealSingle(name, x, y);
 }
 
+int cg_iRIC_Read_FunctionalWithName_RealSingle_Mul(int fid, char* name, char* paramname, float* data){
+	GET_F(fid);
+	return f->CC_Read_FunctionalWithName_RealSingle(name, paramname, data);
+}
+
 int cg_iRIC_Write_Integer_Mul(int fid, char* name, int intvalue){
 	GET_F(fid);
 	return f->CC_Write_Integer(name, intvalue);

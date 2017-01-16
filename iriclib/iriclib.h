@@ -77,6 +77,8 @@ int IRICLIBDLL cg_iRIC_Read_FunctionalWithName_Mul(int fid, char* name, char* pa
 
 int IRICLIBDLL cg_iRIC_Read_Functional_RealSingle_Mul(int fid, char* name, float* x, float* y);
 
+int IRICLIBDLL cg_iRIC_Read_FunctionalWithName_RealSingle_Mul(int fid, char* name, char* paramname, float* data);
+
 /**********************************************/
 /* Writing Calculation Conditions             */
 /**********************************************/
@@ -384,6 +386,8 @@ int IRICLIBDLL cg_iRIC_Read_Functional(char* name, double* x, double* y);
 int IRICLIBDLL cg_iRIC_Read_FunctionalWithName(char* name, char* paramname, double* data);
 
 int IRICLIBDLL cg_iRIC_Read_Functional_RealSingle(char* name, float* x, float* y);
+
+int IRICLIBDLL cg_iRIC_Read_FunctionalWithName_RealSingle(char* name, char* paramname, float* data);
 
 int IRICLIBDLL cg_iRIC_Write_Integer(char* name, int intvalue);
 
