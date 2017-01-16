@@ -79,14 +79,19 @@ int CgnsFile::CC_Read_FunctionalWithName(const char *name, const char *paramname
 
 int CgnsFile::CC_Read_Functional_RealSingle(const char *name, float* x, float* y)
 {
-	int ier = impl->gotoCCChild(name);
+	int ier;
+	ier = CC_Read_FunctionalWithName_RealSingle(name, "Param", x);
 	RETURN_IF_ERR;
-
-	ier = Impl::readArrayAs("Param", RealSingle, -1, x);
-	RETURN_IF_ERR;
-	ier = Impl::readArrayAs("Value", RealSingle, -1, y);
+	ier = CC_Read_FunctionalWithName_RealSingle(name, "Value", y);
 	RETURN_IF_ERR;
 	return 0;
+}
+
+int CgnsFile::CC_Read_FunctionalWithName_RealSingle(const char* name, const char* paramname, float* data)
+{
+	int ier = impl->gotoCCChild(name);
+	RETURN_IF_ERR;
+	return Impl::readArrayAs(paramname, RealSingle, -1, data);
 }
 
 int CgnsFile::CC_Write_Integer(const char *name, int intvalue)

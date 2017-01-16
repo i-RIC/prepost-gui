@@ -57,6 +57,11 @@ int cg_iRIC_Read_Functional_RealSingle(char* name, float* x, float* y)
 	return cg_iRIC_Read_Functional_RealSingle_Mul(lastfileid, name, x, y);
 }
 
+int cg_iRIC_Read_FunctionalWithName_RealSingle(char* name, char* paramname, float* data)
+{
+	return cg_iRIC_Read_FunctionalWithName_RealSingle_Mul(lastfileid, name, paramname, data);
+}
+
 int cg_iRIC_Write_Integer(char* name, int intvalue)
 {
 	return cg_iRIC_Write_Integer_Mul(lastfileid, name, intvalue);

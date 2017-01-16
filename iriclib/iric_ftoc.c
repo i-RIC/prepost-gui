@@ -211,6 +211,19 @@ void IRICLIBDLL FMNAME(cg_iric_read_functional_realsingle_mul_f, CG_IRIC_READ_FU
 	*ier = cg_iRIC_Read_Functional_RealSingle_Mul(*fid, c_name, x, y);
 }
 
+void IRICLIBDLL FMNAME(cg_iric_read_functionalwithname_realsingle_mul_f, CG_IRIC_READ_FUNCTIONALWITHNAME_REALSINGLE_MUL_F) (int *fid, STR_PSTR(name), STR_PSTR(paramname), float *data, int *ier STR_PLEN(name) STR_PLEN(paramname)) {
+	char c_name[CGIO_MAX_NAME_LENGTH+1];
+	char c_paramname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(name), STR_LEN(name),
+		c_name, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(paramname), STR_LEN(paramname),
+		c_paramname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = cg_iRIC_Read_FunctionalWithName_RealSingle_Mul(*fid, c_name, c_paramname, data);
+}
+
 void IRICLIBDLL FMNAME(cg_iric_read_complex_count_mul_f, CG_IRIC_READ_COMPLEX_COUNT_MUL_F) (int *fid, STR_PSTR(groupname), int *num, int *ier STR_PLEN(groupname)) {
 	char c_groupname[CGIO_MAX_NAME_LENGTH+1];
 	string_2_C_string(STR_PTR(groupname), STR_LEN(groupname),
@@ -1075,6 +1088,19 @@ void IRICLIBDLL FMNAME(cg_iric_read_functional_realsingle_f, CG_IRIC_READ_FUNCTI
 	if (*ier) return;
 
 	*ier = cg_iRIC_Read_Functional_RealSingle(c_name, x, y);
+}
+
+void IRICLIBDLL FMNAME(cg_iric_read_functionalwithname_realsingle_f, CG_IRIC_READ_FUNCTIONALWITHNAME_REALSINGLE_F) (STR_PSTR(name), STR_PSTR(paramname), float *data, int *ier STR_PLEN(name) STR_PLEN(paramname)) {
+	char c_name[CGIO_MAX_NAME_LENGTH+1];
+	char c_paramname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(name), STR_LEN(name),
+		c_name, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(paramname), STR_LEN(paramname),
+		c_paramname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = cg_iRIC_Read_FunctionalWithName_RealSingle(c_name, c_paramname, data);
 }
 
 void IRICLIBDLL FMNAME(cg_iric_read_complex_count_f, CG_IRIC_READ_COMPLEX_COUNT_F) (STR_PSTR(groupname), int *num, int *ier STR_PLEN(groupname)) {

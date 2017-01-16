@@ -45,6 +45,7 @@ public:
 	int CC_Read_Functional(const char* name, double* x, double* y);
 	int CC_Read_FunctionalWithName(const char* name, const char* paramname, double* data);
 	int CC_Read_Functional_RealSingle(const char* name, float* x, float* y);
+	int CC_Read_FunctionalWithName_RealSingle(const char* name, const char* paramname, float* data);
 
 	int CC_Write_Integer(const char* name, int intvalue);
 	int CC_Write_Real(const char* name, double realvalue);
