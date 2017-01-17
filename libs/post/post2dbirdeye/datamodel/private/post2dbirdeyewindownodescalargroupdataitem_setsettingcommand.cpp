@@ -10,11 +10,11 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand::SetSettingCommand
 	m_newScalarBarTitle {colorbarTitle},
 	m_oldSetting {item->m_setting},
 	m_oldLookupTable {},
-	m_oldScalarBarTitle {item->m_colorbarTitleMap[iRIC::toStr(s.target)]},
+	m_oldScalarBarTitle {item->m_colorbarTitleMap[item->target()]},
 	m_item {item}
 {
 	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(item->parent()->parent());
-	LookupTableContainer* lut = gtItem->nodeLookupTable(s.target);
+	LookupTableContainer* lut = gtItem->nodeLookupTable(item->target());
 	m_oldLookupTable = *lut;
 }
 
