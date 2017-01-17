@@ -20,7 +20,7 @@ public:
 
 	int zoomLevel() const;
 
-private:
+private slots:
 	void updateResolution();
 
 private:

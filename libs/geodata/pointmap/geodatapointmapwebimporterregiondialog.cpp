@@ -15,6 +15,7 @@ GeoDataPointmapWebImporterRegionDialog::GeoDataPointmapWebImporterRegionDialog(Q
 	ui(new Ui::GeoDataPointmapWebImporterRegionDialog)
 {
 	ui->setupUi(this);
+	connect(ui->zoomLevelSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateResolution()));
 }
 
 GeoDataPointmapWebImporterRegionDialog::~GeoDataPointmapWebImporterRegionDialog()

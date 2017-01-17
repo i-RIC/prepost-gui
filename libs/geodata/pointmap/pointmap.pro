@@ -12,7 +12,7 @@ DEFINES += ANSI_DECLARATORS
 
 include( ../../../paths.pri )
 
-QT += widgets xml
+QT += network widgets xml
 
 ######################
 # Internal libraries #
@@ -31,6 +31,20 @@ unix {
 	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
+
+# iricCs
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../cs/debug"
+	} else {
+		LIBS += -L"../../cs/release"
+	}
+}
+unix {
+	LIBS += -L"../../cs"
+}
+LIBS += -liricCs
 
 # iricTriangle
 

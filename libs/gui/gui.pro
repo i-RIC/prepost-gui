@@ -274,7 +274,6 @@ HEADERS += gui_api.h \
            misc/iricmainwindowactionmanager.h \
            misc/iricmainwindowmiscdialogmanager.h \
            misc/mousehelpdialog.h \
-           misc/networksetting.h \
            misc/newprojectsolverselectingdialog.h \
            misc/projecttypeselectdialog.h \
            misc/wrongsettingexception.h \
@@ -306,7 +305,6 @@ HEADERS += gui_api.h \
            verification/verificationgraphdialog.h \
            verification/verificationsettingdialog.h \
            main/private/iricmainwindow_snapshotsaver.h \
-           misc/private/networksetting_impl.h \
            pref/private/preferencepagetmsadddialog.h
 FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui \
@@ -350,7 +348,6 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            misc/iricmainwindowactionmanager.cpp \
            misc/iricmainwindowmiscdialogmanager.cpp \
            misc/mousehelpdialog.cpp \
-           misc/networksetting.cpp \
            misc/newprojectsolverselectingdialog.cpp \
            misc/projecttypeselectdialog.cpp \
            pref/preferencedialog.cpp \

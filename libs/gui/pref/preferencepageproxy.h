@@ -3,7 +3,8 @@
 
 #include <QWidget>
 #include "preferencepage.h"
-#include "../misc/networksetting.h"
+
+#include <misc/networksetting.h>
 
 namespace Ui
 {
