@@ -1,5 +1,6 @@
 #include "geodatapointmapt.h"
 #include "geodatapointmapwebimporter.h"
+#include "geodatapointmapwebimporterregiondialog.h"
 
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -55,7 +56,21 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	}
 	m_coordinateSystem = mainfile->coordinateSystem();
 
-	// @todo show dialog and setup import setting here.
+	m_lonMin = 139.5;
+	m_lonMax = 140.0;
+	m_latMin = 35.5;
+	m_latMax = 36.0;
+
+	double centerLat = (m_latMin + m_latMax) * 0.5;
+
+	GeoDataPointmapWebImporterRegionDialog dialog(w);
+	dialog.setCenterLatitude(centerLat);
+	dialog.setMaxZoomLevel(12);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+
+	m_zoomLevel = dialog.zoomLevel();
 
 	return true;
 }

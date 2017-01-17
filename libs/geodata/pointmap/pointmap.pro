@@ -138,6 +138,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaptemplatenodemappert.h \
            geodatapointmapvtkexporter.h \
            geodatapointmapwebimporter.h \
+           geodatapointmapwebimporterregiondialog.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
            private/geodatapointmapt_detail.h \
@@ -148,7 +149,8 @@ FORMS += geodatapointmapaddpointdialog.ui \
          geodatapointmapeditptsdialog.ui \
          geodatapointmapinterpolatepoints.ui \
          geodatapointmaprealimporterfilterdialog.ui \
-         geodatapointmaprepresentationdialog.ui
+         geodatapointmaprepresentationdialog.ui \
+         geodatapointmapwebimporterregiondialog.ui
 SOURCES += geodatapointmap.cpp \
            geodatapointmapaddpointdialog.cpp \
            geodatapointmapbreakline.cpp \
@@ -166,7 +168,8 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapstlimporter.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
            geodatapointmapvtkexporter.cpp \
-           geodatapointmapwebimporter.cpp
+           geodatapointmapwebimporter.cpp \
+           geodatapointmapwebimporterregiondialog.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_es_ES.ts \
                 languages/iricGdPointmap_fr_FR.ts \

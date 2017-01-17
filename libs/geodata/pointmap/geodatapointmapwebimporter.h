@@ -21,6 +21,13 @@ private:
 	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 
 	CoordinateSystem* m_coordinateSystem;
+
+	double m_lonMin;
+	double m_lonMax;
+	double m_latMin;
+	double m_latMax;
+
+	int m_zoomLevel;
 };
 
 #endif // GEODATAPOINTMAPWEBIMPORTER_H
