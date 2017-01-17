@@ -137,6 +137,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaptemplatemappingsetting.h \
            geodatapointmaptemplatenodemappert.h \
            geodatapointmapvtkexporter.h \
+           geodatapointmapwebimporter.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
            private/geodatapointmapt_detail.h \
@@ -164,7 +165,8 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapstlexporter.cpp \
            geodatapointmapstlimporter.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
-           geodatapointmapvtkexporter.cpp
+           geodatapointmapvtkexporter.cpp \
+           geodatapointmapwebimporter.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_es_ES.ts \
                 languages/iricGdPointmap_fr_FR.ts \
