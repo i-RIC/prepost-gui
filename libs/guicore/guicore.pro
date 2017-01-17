@@ -325,6 +325,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatamappert.h \
            pre/geodata/geodatanodemappert.h \
            pre/geodata/geodataproxy.h \
+           pre/geodata/geodatawebimporter.h \
            pre/geodatabackground/geodatabackground.h \
            pre/geodatabackground/geodatabackgroundcellmappert.h \
            pre/geodatabackground/geodatabackgroundcomplex.h \
@@ -610,6 +611,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/geodata/geodataimporter.cpp \
            pre/geodata/geodatamapper.cpp \
            pre/geodata/geodataproxy.cpp \
+           pre/geodata/geodatawebimporter.cpp \
            pre/geodatabackground/geodatabackground.cpp \
            pre/geodatabackground/geodatabackgroundcomplex.cpp \
            pre/geodatabackground/geodatabackgroundcomplexcreator.cpp \

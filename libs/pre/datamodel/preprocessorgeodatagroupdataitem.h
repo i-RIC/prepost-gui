@@ -41,7 +41,10 @@ public:
 	void informDataChange();
 	bool getValueRange(double* min, double* max) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(10);}
+
 	bool importAvailable();
+	bool webImportAvailable();
+
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
@@ -82,6 +85,7 @@ public slots:
 	void addGeoData(QObject* creator);
 	virtual void editScalarsToColors();
 	void import();
+	void importFromWeb();
 	void doExport();
 	void exportAllPolygons();
 	void deleteAll();
@@ -103,6 +107,7 @@ protected:
 
 	QMenu* m_addMenu;
 	QAction* m_importAction;
+	QAction* m_webImportAction;
 	QAction* m_editColorMapAction;
 	QAction* m_setupScalarBarAction;
 	QAction* m_exportAllPolygonsAction;

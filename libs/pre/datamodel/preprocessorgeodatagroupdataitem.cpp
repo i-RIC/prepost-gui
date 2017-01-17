@@ -23,6 +23,7 @@
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataimporter.h>
+#include <guicore/pre/geodata/geodatawebimporter.h>
 #include <guicore/pre/geodata/geodatamapper.h>
 #include <guicore/pre/geodatabackground/geodatabackground.h>
 #include <guicore/project/projectdata.h>
@@ -71,6 +72,10 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_importAction->setEnabled(importAvailable());
 
+	m_webImportAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("&Import from web..."), this);
+	m_webImportAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	m_webImportAction->setEnabled(webImportAvailable());
+
 	m_deleteAllAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this);
 	m_deleteAllAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 
@@ -82,6 +87,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	m_setupScalarBarAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this);
 
 	connect(m_importAction, SIGNAL(triggered()), this, SLOT(import()));
+	connect(m_webImportAction, SIGNAL(triggered()), this, SLOT(importFromWeb()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 	connect(m_exportAllPolygonsAction, SIGNAL(triggered()), this, SLOT(exportAllPolygons()));
 	connect(this, SIGNAL(selectGeoData(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
@@ -128,6 +134,7 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	}
 	connect(m_addSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(addGeoData(QObject*)));
 	menu->addAction(m_importAction);
+	menu->addAction(m_webImportAction);
 	if (m_addMenu->actions().count() != 0) {
 		menu->addMenu(m_addMenu);
 	}
@@ -276,6 +283,138 @@ void PreProcessorGeoDataGroupDataItem::import()
 	}
 	// All imports succeeded.
 	LastIODirectory::set(finfo.absolutePath());
+
+	updateItemMap();
+	updateZDepthRange();
+
+	informValueRangeChange();
+	informDataChange();
+
+	if (failedIds.size() > 0) {
+		QStringList idStrs;
+		for (int i = 0; i < failedIds.size(); ++i) {
+			idStrs.push_back(QString::number(failedIds[i]));
+		}
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Specified file has invalid data, and those were ignored. Ignored data is as follows:\n%1").arg(idStrs.join("\n")));
+	}
+
+	if (item != nullptr) {
+		dataModel()->objectBrowserView()->select(item->standardItem()->index());
+		emit selectGeoData(item->standardItem()->index());
+	}
+	dataModel()->graphicsView()->cameraFit();
+	setModified();
+
+	// import is not undo-able.
+	iRICUndoStack::instance().clear();
+	return;
+
+ERROR:
+	if (wDialog != nullptr) {
+		wDialog->hide();
+		delete wDialog;
+	}
+	updateItemMap();
+	updateZDepthRange();
+
+	informValueRangeChange();
+	informDataChange();
+
+	dataModel()->graphicsView()->cameraFit();
+	setModified();
+
+	// import is not undo-able.
+	iRICUndoStack::instance().clear();
+	return;
+}
+
+void PreProcessorGeoDataGroupDataItem::importFromWeb()
+{
+	std::vector<GeoDataWebImporter*> importers;
+
+	GeoDataFactory& factory = GeoDataFactory::instance();
+
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		for (auto importer : creator->webImporters()) {
+			if (! importer->isCompatibleWith(m_condition)) {continue;}
+			importers.push_back(importer);
+		}
+	}
+	if (importers.size() == 0) {return;}
+
+	auto importer = importers.at(0);
+	Q_ASSERT(importer != nullptr);
+
+	// execute import.
+	int dataCount;
+	QWidget* w = preProcessorWindow();
+	bool ret = importer->importInit(&dataCount, m_condition, this, w);
+	if (! ret) {
+		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data failed."));
+		return;
+	}
+	if (dataCount == 0){
+		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("No data to import."));
+		return;
+	}
+
+	PreProcessorGeoDataDataItemInterface* item = nullptr;
+	std::vector<int> failedIds;
+
+	WaitDialog* wDialog = nullptr;
+	m_cancelImport = false;
+	if (dataCount >= 5) {
+		wDialog = new WaitDialog(mainWindow());
+		wDialog->setRange(0, dataCount - 1);
+		wDialog->setProgress(0);
+		wDialog->setMessage(tr("Importing data..."));
+		wDialog->showProgressBar();
+		connect(wDialog, SIGNAL(canceled()), this, SLOT(cancelImport()));
+		wDialog->show();
+		qApp->processEvents();
+	}
+	for (int i = 0; i < dataCount; ++i) {
+		if (m_cancelImport) {
+			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
+			goto ERROR;
+		}
+		item = buildGeoDataDataItem();
+		// first, create an empty geodata.
+		GeoData* geodata = importer->creator()->create(item, m_condition);
+		item->setGeoData(geodata);
+		// set name and caption
+		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
+		geodata->setupDataItem();
+		// import data from the specified file
+		bool ret = importer->importData(geodata, i, wDialog);
+		if (! ret) {
+			// failed.
+			delete item;
+			item = nullptr;
+			failedIds.push_back(i + 1);
+		} else {
+			QVector2D o = offset();
+			geodata->applyOffset(o.x(), o.y());
+			// the standarditem is set at the last position, so make it the first.
+			QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
+			m_standardItem->insertRows(0, takenItems);
+			// add the item, in the front.
+			m_childItems.insert(m_childItems.begin(), item);
+			if (i != dataCount - 1) {
+				geodata->informDeselection(dataModel()->graphicsView());
+			}
+			setupConnectionToGeoData(geodata);
+		}
+		if (wDialog != nullptr) {
+			wDialog->setProgress(i + 1);
+			qApp->processEvents();
+		}
+	}
+	if (wDialog != nullptr) {
+		wDialog->hide();
+		delete wDialog;
+	}
+	// All imports succeeded.
 
 	updateItemMap();
 	updateZDepthRange();
@@ -802,6 +941,19 @@ bool PreProcessorGeoDataGroupDataItem::importAvailable()
 	for (auto creator : factory.compatibleCreators(m_condition)) {
 		const auto& imps = creator->importers();
 		if (imps.size() > 0) {return true;}
+	}
+	return false;
+}
+
+bool PreProcessorGeoDataGroupDataItem::webImportAvailable()
+{
+	GeoDataFactory& factory = GeoDataFactory::instance();
+
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		const auto& imps = creator->webImporters();
+		for (auto i : imps) {
+			if (i->isCompatibleWith(m_condition)) {return true;}
+		}
 	}
 	return false;
 }
