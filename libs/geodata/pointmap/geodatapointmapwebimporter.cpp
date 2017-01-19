@@ -1,6 +1,6 @@
 #include "geodatapointmapt.h"
 #include "geodatapointmapwebimporter.h"
-#include "geodatapointmapwebimporterregiondialog.h"
+#include "geodatapointmapwebimporterzoomleveldialog.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/webmeratorutil.h>
@@ -86,11 +86,12 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 				qApp->processEvents();
 			}
 
-			if (m_webReply->error() != QNetworkReply::NoError) {
-				if (m_webReply->error() != QNetworkReply::OperationCanceledError) {
-					QMessageBox::critical(w, tr("Error"), m_webReply->errorString());
-				}
+			if (m_webReply->error() == QNetworkReply::OperationCanceledError) {
 				goto FINISH;
+			}
+
+			if (m_webReply->error() != QNetworkReply::NoError) {
+				QMessageBox::critical(w, tr("Error"), m_webReply->errorString());
 			}
 
 			for (int row = 0; row < 256; ++row) {
@@ -108,6 +109,9 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 					double v = valstr.toDouble();
 					double lon, lat;
 					m_wmUtil->getCoordinates(x, y, col, row, &lon, &lat);
+
+					if (lon < m_lonMin || lon > m_lonMax) {continue;}
+					if (lat < m_latMin || lat > m_latMax) {continue;}
 
 					double cx, cy;
 					m_coordinateSystem->mapGeoToGrid(lon, lat, &cx, &cy);
@@ -160,7 +164,7 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 
 	double centerLat = (m_latMin + m_latMax) * 0.5;
 
-	GeoDataPointmapWebImporterRegionDialog dialog(w);
+	GeoDataPointmapWebImporterZoomLevelDialog dialog(w);
 	dialog.setCenterLatitude(centerLat);
 	dialog.setMaxZoomLevel(12);
 

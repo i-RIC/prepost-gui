@@ -1,5 +1,5 @@
-#include "geodatapointmapwebimporterregiondialog.h"
-#include "ui_geodatapointmapwebimporterregiondialog.h"
+#include "geodatapointmapwebimporterzoomleveldialog.h"
+#include "ui_geodatapointmapwebimporterzoomleveldialog.h"
 
 #include <cmath>
 
@@ -10,36 +10,36 @@ const double METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1 = 78272.137219;
 
 } // namespace
 
-GeoDataPointmapWebImporterRegionDialog::GeoDataPointmapWebImporterRegionDialog(QWidget *parent) :
+GeoDataPointmapWebImporterZoomLevelDialog::GeoDataPointmapWebImporterZoomLevelDialog(QWidget *parent) :
 	QDialog(parent),
-	ui(new Ui::GeoDataPointmapWebImporterRegionDialog)
+	ui(new Ui::GeoDataPointmapWebImporterZoomLevelDialog)
 {
 	ui->setupUi(this);
 	connect(ui->zoomLevelSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateResolution()));
 }
 
-GeoDataPointmapWebImporterRegionDialog::~GeoDataPointmapWebImporterRegionDialog()
+GeoDataPointmapWebImporterZoomLevelDialog::~GeoDataPointmapWebImporterZoomLevelDialog()
 {
 	delete ui;
 }
 
-void GeoDataPointmapWebImporterRegionDialog::setMaxZoomLevel(int level)
+void GeoDataPointmapWebImporterZoomLevelDialog::setMaxZoomLevel(int level)
 {
 	ui->zoomLevelSpinBox->setMaximum(level);
 	ui->zoomLevelSpinBox->setValue(level);
 }
 
-void GeoDataPointmapWebImporterRegionDialog::setCenterLatitude(double lat)
+void GeoDataPointmapWebImporterZoomLevelDialog::setCenterLatitude(double lat)
 {
 	m_latitude = lat;
 }
 
-int GeoDataPointmapWebImporterRegionDialog::zoomLevel() const
+int GeoDataPointmapWebImporterZoomLevelDialog::zoomLevel() const
 {
 	return ui->zoomLevelSpinBox->value();
 }
 
-void GeoDataPointmapWebImporterRegionDialog::updateResolution()
+void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
 {
 	int targetZl = zoomLevel();
 	int zl = 1;
