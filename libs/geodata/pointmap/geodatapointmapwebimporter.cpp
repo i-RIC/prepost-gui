@@ -130,7 +130,9 @@ FINISH:
 	delete dialog;
 
 	pmap->setPoints(points, values);
-	pmap->doDelaunay();
+	if (points->GetNumberOfPoints() > 3) {
+		pmap->doDelaunay();
+	}
 	return true;
 }
 
