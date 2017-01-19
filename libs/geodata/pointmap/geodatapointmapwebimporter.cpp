@@ -1,5 +1,6 @@
 #include "geodatapointmapt.h"
 #include "geodatapointmapwebimporter.h"
+#include "geodatapointmapwebimporterregionselectdialog.h"
 #include "geodatapointmapwebimporterzoomleveldialog.h"
 
 #include <cs/coordinatesystem.h>
@@ -157,21 +158,27 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	m_coordinateSystem = mainfile->coordinateSystem();
 	m_coordinateSystem->init();
 
-	m_lonMin = 139.5;
-	m_lonMax = 140.0;
-	m_latMin = 35.5;
-	m_latMax = 36.0;
+	GeoDataPointmapWebImporterRegionSelectDialog rsDialog(w);
+	rsDialog.setCoordinateSystem(m_coordinateSystem);
+
+	int ret = rsDialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+
+	m_lonMin = rsDialog.minLon();
+	m_lonMax = rsDialog.maxLon();
+	m_latMin = rsDialog.minLat();
+	m_latMax = rsDialog.maxLat();
 
 	double centerLat = (m_latMin + m_latMax) * 0.5;
 
-	GeoDataPointmapWebImporterZoomLevelDialog dialog(w);
-	dialog.setCenterLatitude(centerLat);
-	dialog.setMaxZoomLevel(12);
+	GeoDataPointmapWebImporterZoomLevelDialog zlDialog(w);
+	zlDialog.setCenterLatitude(centerLat);
+	zlDialog.setMaxZoomLevel(12);
 
-	int ret = dialog.exec();
+	ret = zlDialog.exec();
 	if (ret == QDialog::Rejected) {return false;}
 
-	m_zoomLevel = dialog.zoomLevel();
+	m_zoomLevel = zlDialog.zoomLevel();
 
 	m_wmUtil = new WebMeratorUtil(m_zoomLevel);
 

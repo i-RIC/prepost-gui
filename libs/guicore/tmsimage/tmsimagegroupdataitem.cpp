@@ -19,7 +19,6 @@
 
 #include <QDomNode>
 #include <QMessageBox>
-#include <QNetworkProxy>
 #include <QRectF>
 #include <QXmlStreamWriter>
 
