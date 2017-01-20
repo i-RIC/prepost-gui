@@ -19,6 +19,7 @@ public:
 	void setCenterLatitude(double lat);
 
 	int zoomLevel() const;
+	QString url() const;
 
 private slots:
 	void updateResolution();

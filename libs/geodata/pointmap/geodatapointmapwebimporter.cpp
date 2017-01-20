@@ -74,7 +74,9 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 	for (int y = ymin; y <= ymax; ++y) {
 		for (int x = xmin; x <= xmax; ++x) {
 			QString urlstr = QString("http://cyberjapandata.gsi.go.jp/xyz/dem/%1/%2/%3.txt").arg(m_zoomLevel).arg(x).arg(y);
-			QUrl url(urlstr);
+//			QString urlstr = QString("https://earthexplorer.usgs.gov/wms/wmts/EPSG3857/srtm/%1/%2/%3.csv").arg(m_zoomLevel).arg(x).arg(y);
+//			QString urlstr = QString("http://cyberjapandata.gsi.go.jp/xyz/demgm/%1/%2/%3.txt").arg(m_zoomLevel).arg(x).arg(y);
+			QUrl url(m_url.arg(m_zoomLevel).arg(x).arg(y));
 			QNetworkRequest request(url);
 
 			m_webReply = m_webAccessManager->get(request);
@@ -181,6 +183,7 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	if (ret == QDialog::Rejected) {return false;}
 
 	m_zoomLevel = zlDialog.zoomLevel();
+	m_url = zlDialog.url();
 
 	m_wmUtil = new WebMeratorUtil(m_zoomLevel);
 

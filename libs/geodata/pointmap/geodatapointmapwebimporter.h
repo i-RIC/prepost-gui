@@ -34,6 +34,7 @@ private:
 	double m_latMax;
 
 	int m_zoomLevel;
+	QString m_url;
 
 	QNetworkAccessManager* m_webAccessManager;
 	QNetworkReply* m_webReply;

@@ -39,6 +39,11 @@ int GeoDataPointmapWebImporterZoomLevelDialog::zoomLevel() const
 	return ui->zoomLevelSpinBox->value();
 }
 
+QString GeoDataPointmapWebImporterZoomLevelDialog::url() const
+{
+	return ui->sourceComboBox->currentText();
+}
+
 void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
 {
 	int targetZl = zoomLevel();
