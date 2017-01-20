@@ -1,6 +1,8 @@
 #include "webmeratorutil.h"
 #include "coordinatesystem.h"
 
+#include <QString>
+
 #include <cmath>
 
 WebMeratorUtil::WebMeratorUtil(int zoomLevel)
