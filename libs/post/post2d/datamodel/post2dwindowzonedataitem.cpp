@@ -6,6 +6,7 @@
 #include "post2dwindowgridshapedataitem.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindownodescalargroupdataitem.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorarrowgroupstructureddataitem.h"
 #include "post2dwindownodevectorarrowgroupunstructureddataitem.h"
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
@@ -54,7 +55,7 @@
 Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_shapeDataItem {nullptr},
-	m_scalarGroupDataItem {nullptr},
+	m_scalarGroupTopDataItem {nullptr},
 	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
 	m_particleGroupDataItem {nullptr},
@@ -72,7 +73,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	PostZoneDataContainer* cont = dataContainer();
 
 	if (cont->scalarValueExists()) {
-		m_scalarGroupDataItem = new Post2dWindowNodeScalarGroupDataItem(this);
+		m_scalarGroupTopDataItem = new Post2dWindowNodeScalarGroupTopDataItem(this);
 
 		vtkPointSet* data = cont->data();
 		if (dynamic_cast<vtkStructuredGrid*> (data) != nullptr){
@@ -113,7 +114,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 		m_childItems.push_back(m_graphGroupDataItem);
 	}
 	if (cont->scalarValueExists()) {
-		m_childItems.push_back(m_scalarGroupDataItem);
+		m_childItems.push_back(m_scalarGroupTopDataItem);
 	}
 	m_childItems.push_back(m_cellFlagGroupDataItem);
 
@@ -159,9 +160,15 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
+	// old contour
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
-		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
+	if (! scalarGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
+		m_scalarGroupTopDataItem->loadFromProjectMainFile(scalarGroupNode);
+	}
+	// new contour
+	QDomNode contourGroupNode = iRIC::getChildNode(node, "Contours");
+	if (! contourGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
+		m_scalarGroupTopDataItem->loadFromProjectMainFile(contourGroupNode);
 	}
 	QDomNode arrowGroupNode = iRIC::getChildNode(node, "ArrowGroup");
 	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr) {
@@ -196,9 +203,9 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_scalarGroupDataItem != nullptr) {
-		writer.writeStartElement("ScalarGroup");
-		m_scalarGroupDataItem->saveToProjectMainFile(writer);
+	if (m_scalarGroupTopDataItem != nullptr) {
+		writer.writeStartElement("Contours");
+		m_scalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	if (m_arrowGroupDataItem != nullptr) {
@@ -269,9 +276,9 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 	m_shapeDataItem->update();
 	qDebug("Grid shape: %d", time.elapsed());
 
-	if (m_scalarGroupDataItem != nullptr) {
+	if (m_scalarGroupTopDataItem != nullptr) {
 		time.restart();
-		m_scalarGroupDataItem->update();
+		m_scalarGroupTopDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
 	}
 	if (m_arrowGroupDataItem != nullptr) {
@@ -389,9 +396,9 @@ void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 	if (cont->scalarValueExists()) {
 		max = min - divWidth * gapRate;
 		min = max - divWidth;
-		r = m_scalarGroupDataItem->zDepthRange();
+		r = m_scalarGroupTopDataItem->zDepthRange();
 		r.setRange(min, max);
-		m_scalarGroupDataItem->setZDepthRange(r);
+		m_scalarGroupTopDataItem->setZDepthRange(r);
 	}
 }
 

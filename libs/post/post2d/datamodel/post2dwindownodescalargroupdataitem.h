@@ -66,6 +66,7 @@ protected:
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	void setupActors();
@@ -84,9 +85,6 @@ private:
 	// Settings
 	Post2dWindowContourSetting m_setting;
 
-	// for scalar bar
-	QMap<std::string, QString> m_colorbarTitleMap;
-
 	vtkSmartPointer<vtkLODActor> m_contourActor;
 	vtkDataSetMapper* m_contourMapper;
 	vtkActor* m_isolineActor;
@@ -100,6 +98,8 @@ private:
 	ShapeExporter* m_shapeExporter;
 
 	class SetSettingCommand;
+
+	friend class Post2dWindowNodeScalarGroupTopDataItem;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPDATAITEM_H

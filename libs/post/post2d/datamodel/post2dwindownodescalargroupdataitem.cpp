@@ -1,16 +1,17 @@
 #include "../post2dwindowdatamodel.h"
 #include "post2dwindowcontoursettingdialog.h"
 #include "post2dwindowgridtypedataitem.h"
-#include "post2dwindownodescalardataitem.h"
 #include "post2dwindownodescalargroupdataitem.h"
 #include "post2dwindownodescalargroupdataitem_shapeexporter.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <cs/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -63,18 +64,11 @@
 #include <vtkPolyDataWriter.h>
 
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	setupActors();
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-		auto item = new Post2dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.push_back(item);
-		m_colorbarTitleMap.insert(name, name.c_str());
-	}
 
 	m_shapeExporter = new ShapeExporter(this);
 }
@@ -97,7 +91,6 @@ std::string Post2dWindowNodeScalarGroupDataItem::target() const
 
 void Post2dWindowNodeScalarGroupDataItem::setTarget(const std::string& target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_setting.target = target.c_str();
 	updateActorSettings();
 }
@@ -111,14 +104,19 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_scalarBarWidget->SetEnabled(0);
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (m_setting.target == "") {return;}
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
+
+	std::string targetStr = iRIC::toStr(m_setting.target);
+	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
+
+	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
 	vtkPolyData* rcp = createRangeClippedPolyData(polyData);
 	vtkPolyData* vcp = createValueClippedPolyData(rcp);
 	rcp->Delete();
@@ -151,14 +149,6 @@ void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_setting.load(node);
 	setTarget(m_setting.target);
 	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i) {
-		QDomElement titleElem = titles.at(i).toElement();
-		std::string val = iRIC::toStr(titleElem.attribute("value"));
-		QString title = titleElem.attribute("title");
-		m_colorbarTitleMap[val] = title;
-	}
 	updateActorSettings();
 }
 
@@ -166,15 +156,6 @@ void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 {
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
-	}
 }
 
 void Post2dWindowNodeScalarGroupDataItem::setupActors()
@@ -249,7 +230,7 @@ void Post2dWindowNodeScalarGroupDataItem::update()
 
 void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
 	if (stc == nullptr) {return;}
 	double range[2];
@@ -300,7 +281,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupHigherClippedPolygon(vtkP
 
 void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
 	if (stc == nullptr) {return;}
 	double range[2];
@@ -318,7 +299,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* 
 
 void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
 	if (stc == nullptr) {return;}
 	m_fringeMapper->SetInputData(polyData);
@@ -332,12 +313,13 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* p
 
 void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
 	if (stc == nullptr) {return;}
 
+	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(iRIC::toStr(m_setting.target))).c_str());
+	a->SetTitle(iRIC::toStr(topitem->m_colorbarTitleMap.value(iRIC::toStr(m_setting.target))).c_str());
 	a->SetLookupTable(stc->vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
 	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
@@ -369,9 +351,9 @@ void Post2dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
-	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
-	Post2dWindowZoneDataItem* zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent());
+	Post2dWindowZoneDataItem* zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent());
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
 		delete dialog;
 		return nullptr;
@@ -382,7 +364,8 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setSetting(m_setting);
-	dialog->setColorBarTitleMap(m_colorbarTitleMap);
+	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	dialog->setColorBarTitleMap(topitem->m_colorbarTitleMap);
 
 	return dialog;
 }
@@ -390,39 +373,42 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 class Post2dWindowNodeScalarGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item) :
-		QUndoCommand {Post2dWindowNodeScalarGroupDataItem::tr("Update Contour Setting")},
+	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item, QUndoCommand* parent = nullptr) :
+		QUndoCommand {Post2dWindowNodeScalarGroupDataItem::tr("Update Contour Setting"), parent},
 		m_newSetting {s},
 		m_newLookupTable {ltc},
 		m_newScalarBarTitle {colorbarTitle},
 		m_oldSetting {item->m_setting},
-		m_oldScalarBarTitle {item->m_colorbarTitleMap[iRIC::toStr(s.target)]}
+		m_item {item},
+		m_topItem {dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(item->parent())}
 	{
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(item->parent()->parent());
-		LookupTableContainer* lut = gtItem->nodeLookupTable(iRIC::toStr(s.target));
-		m_oldLookupTable = *lut;
+		m_oldScalarBarTitle = m_topItem->m_colorbarTitleMap[item->target()];
 
-		m_item = item;
+		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(item->parent()->parent()->parent());
+		if (LookupTableContainer* lut = gtItem->nodeLookupTable(item->target())) {
+			m_oldLookupTable = *lut;
+		}
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
-		m_item->m_colorbarTitleMap[m_newSetting.target] = m_oldScalarBarTitle;
+		m_topItem->m_colorbarTitleMap[m_newSetting.target] = m_oldScalarBarTitle;
 		applySettings(m_oldSetting.target, m_oldLookupTable);
 		m_item->updateActorSettings();
 	}
 	void redo() {
 		m_item->m_setting = m_newSetting;
-		m_item->m_colorbarTitleMap[m_newSetting.target] = m_newScalarBarTitle;
+		m_topItem->m_colorbarTitleMap[m_newSetting.target] = m_newScalarBarTitle;
 		applySettings(m_newSetting.target, m_newLookupTable);
 		m_item->updateActorSettings();
 	}
 private:
 	void applySettings(const std::string& sol, const LookupTableContainer& c) {
 		m_item->setTarget(sol);
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->nodeLookupTable(sol);
-		*lut = c;
-		lut->update();
+		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_item->parent()->parent()->parent());
+		if (LookupTableContainer* lut = gtItem->nodeLookupTable(sol)) {
+			*lut = c;
+			lut->update();
+		}
 		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
 		m_item->m_setting.scalarBarSetting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
 		m_item->m_setting.scalarBarSetting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
@@ -437,6 +423,7 @@ private:
 	QString m_oldScalarBarTitle;
 
 	Post2dWindowNodeScalarGroupDataItem* m_item;
+	Post2dWindowNodeScalarGroupTopDataItem* m_topItem;
 };
 
 void Post2dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
@@ -455,7 +442,7 @@ void Post2dWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWind
 
 vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtkPolyData* polyData)
 {
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 		polyData->Register(0);
 		return polyData;
@@ -486,7 +473,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtk
 	vtkSmartPointer<vtkPolyData> upperClipped;
 	vtkSmartPointer<vtkPolyData> lowerClipped;
 
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc == 0) {
 		polyData->Register(0);
@@ -525,7 +512,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtk
 
 vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc == nullptr) {
 		polyData->Register(0);
@@ -598,19 +585,19 @@ void Post2dWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -621,12 +608,12 @@ void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VT
 void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
 }
 
@@ -634,10 +621,10 @@ bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 {
 	// check the condition.
 	if (m_setting.contour != ContourSettingWidget::ContourFigure) {
-		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, display with Contour Fringe."));
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, display with Contour Figure."));
 		return false;
 	}
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc->autoRange()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, value range should be set up manually."));
@@ -654,7 +641,7 @@ bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 
 	writer.writeStartElement("Document");
@@ -698,7 +685,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writ
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 
 	double div = (stc->manualMax() - stc->manualMin()) / m_setting.numberOfDivisions;
@@ -717,7 +704,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	writer.writeTextElement("name", QString("iRIC output t = %1").arg(time));
 
 	// output each cell data.
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	vtkPointSet* ps = cont->data();
 	vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str());
 	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*>(ps);
@@ -845,4 +832,15 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 bool Post2dWindowNodeScalarGroupDataItem::exportContourFigureToShape(const QString& filename, double time)
 {
 	return m_shapeExporter->exportContourFigure(filename, time);
+}
+
+void Post2dWindowNodeScalarGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
+{
+	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
+
+	Q_ASSERT(parent != nullptr); // the following won't get deleted if parent is null
+
+	new GraphicsWindowDrawOnUndo(this, parent);
+	new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this, parent);
+	new GraphicsWindowDrawOnRedo(this, parent);
 }

@@ -3,6 +3,7 @@
 #include "datamodel/post2dwindowgridtypedataitem.h"
 #include "datamodel/post2dwindowmeasureddatatopdataitem.h"
 #include "datamodel/post2dwindownodescalargroupdataitem.h"
+#include "datamodel/post2dwindownodescalargrouptopdataitem.h"
 #include "datamodel/post2dwindownodevectorarrowgroupdataitem.h"
 #include "datamodel/post2dwindownodevectorparticlegroupdataitem.h"
 #include "datamodel/post2dwindownodevectorstreamlinegroupdataitem.h"
@@ -136,7 +137,7 @@ void Post2dWindowDataModel::contourSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowNodeScalarGroupDataItem* item = zItem->scalarGroupDataItem();
+	Post2dWindowNodeScalarGroupTopDataItem* item = zItem->scalarGroupTopDataItem();
 	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Contour setting is not available, because this result does not contain scalar values."));
 		return;
