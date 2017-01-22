@@ -10,6 +10,7 @@
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
+#include <QDomNode>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
