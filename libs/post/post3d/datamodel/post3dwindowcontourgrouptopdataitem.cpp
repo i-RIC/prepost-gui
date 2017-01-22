@@ -217,4 +217,12 @@ private:
 void Post3dWindowContourGroupTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	iRICUndoStack::instance().push(new CreateCommand(this, propDialog));
+	iRICUndoStack::instance().clear();
+	//
+	// Note: Can't add to stack since m_item is deleted.  The following sequence would
+	// cause iRIC to crash:
+	// Create new contour -> modify contour -> undo -> undo -> redo -> redo
+	// since the modify contour would attempt to use a deleted pointer.
+	//
+	// Need to be able to remove m_item from m_topItem and reuse m_item.
 }
