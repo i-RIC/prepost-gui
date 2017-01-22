@@ -53,6 +53,7 @@ public slots:
 protected:
 	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
+	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	void setupActors();
@@ -68,7 +69,6 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dWindowContourSetting m_setting;
-	QMap<std::string, QString> m_colorbarTitleMap;
 
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkLODActor* m_contourActor;
@@ -84,6 +84,9 @@ private:
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
 	class SetSettingCommand;
+
+public:
+	friend class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H

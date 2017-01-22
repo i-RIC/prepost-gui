@@ -136,8 +136,8 @@ HEADERS += post2dbirdeye_global.h \
            datamodel/post2dbirdeyewindowaxesdataitem.h \
            datamodel/post2dbirdeyewindowgridshapedataitem.h \
            datamodel/post2dbirdeyewindowgridtypedataitem.h \
-           datamodel/post2dbirdeyewindownodescalardataitem.h \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.h \
+           datamodel/post2dbirdeyewindownodescalargrouptopdataitem.h \
            datamodel/post2dbirdeyewindowrootdataitem.h \
            datamodel/post2dbirdeyewindowzonedataitem.h \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.h
@@ -152,8 +152,8 @@ SOURCES += post2dbirdeyeobjectbrowser.cpp \
            datamodel/post2dbirdeyewindowaxesdataitem.cpp \
            datamodel/post2dbirdeyewindowgridshapedataitem.cpp \
            datamodel/post2dbirdeyewindowgridtypedataitem.cpp \
-           datamodel/post2dbirdeyewindownodescalardataitem.cpp \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp \
+           datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp \
            datamodel/post2dbirdeyewindowrootdataitem.cpp \
            datamodel/post2dbirdeyewindowzonedataitem.cpp \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp
