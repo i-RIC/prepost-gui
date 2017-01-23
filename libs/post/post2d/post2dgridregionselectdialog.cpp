@@ -57,8 +57,9 @@ StructuredGridRegion::Range2d Post2dGridRegionSelectDialog::region()
 
 void Post2dGridRegionSelectDialog::setRegion(const StructuredGridRegion::Range2d& region)
 {
-	if (ui->customRadioButton->isChecked()) {
-		ui->structuredGridRegionWidget->setRegion(region);
+	ui->structuredGridRegionWidget->setRegion(region);
+	if (! ui->customRadioButton->isChecked()) {
+		ui->structuredGridRegionWidget->selectAll();
 	}
 }
 
