@@ -112,6 +112,8 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	std::string targetStr = iRIC::toStr(m_setting.target);
+	ScalarsToColorsContainerUtil::setValueRange(&m_lookupTableContainer, pd->GetArray(targetStr.c_str()));
+
 	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
 	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
 
@@ -231,15 +233,12 @@ void Post2dWindowNodeScalarGroupDataItem::update()
 
 void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
-	if (stc == nullptr) {return;}
 	double range[2];
-	stc->getValueRange(&range[0], &range[1]);
+	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
 	m_isolineFilter->SetInputData(polyData);
 	m_isolineFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.target).c_str());
 	m_isolineFilter->GenerateValues(m_setting.numberOfDivisions + 1, range);
-	m_isolineMapper->SetLookupTable(stc->vtkObj());
+	m_isolineMapper->SetLookupTable(m_lookupTableContainer.vtkObj());
 	m_isolineMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
 	m_actorCollection->AddItem(m_isolineActor);
 }
@@ -282,31 +281,25 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupHigherClippedPolygon(vtkP
 
 void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
-	if (stc == nullptr) {return;}
 	double range[2];
-	stc->getValueRange(&range[0], &range[1]);
+	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
 
 	m_contourMapper->SetInputData(createColorContourPolyData(polyData));
 	m_contourMapper->SetScalarRange(range[0], range[1]);
 	m_contourMapper->SetScalarModeToUseCellData();
 	m_contourActor->GetProperty()->SetInterpolationToFlat();
 	m_contourActor->GetProperty()->SetOpacity(m_setting.opacity);
-	m_contourMapper->SetLookupTable(stc->vtkObj());
+	m_contourMapper->SetLookupTable(m_lookupTableContainer.vtkObj());
 	m_contourMapper->UseLookupTableScalarRangeOn();
 	m_actorCollection->AddItem(m_contourActor);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
-	if (stc == nullptr) {return;}
 	m_fringeMapper->SetInputData(polyData);
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
 	m_fringeMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
-	m_fringeMapper->SetLookupTable(stc->vtkObj());
+	m_fringeMapper->SetLookupTable(m_lookupTableContainer.vtkObj());
 	m_fringeMapper->UseLookupTableScalarRangeOn();
 	m_fringeActor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_fringeActor);
@@ -314,14 +307,10 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* p
 
 void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(iRIC::toStr(m_setting.target));
-	if (stc == nullptr) {return;}
-
 	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(topitem->m_colorbarTitleMap.value(iRIC::toStr(m_setting.target))).c_str());
-	a->SetLookupTable(stc->vtkObj());
+	a->SetLookupTable(m_lookupTableContainer.vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
 	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
 	m_setting.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
@@ -353,6 +342,7 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
+	*(gtItem->nodeLookupTable(m_setting.target)) = m_lookupTableContainer;
 	dialog->setGridTypeDataItem(gtItem);
 	Post2dWindowZoneDataItem* zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent());
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
@@ -380,15 +370,11 @@ public:
 		m_newLookupTable {ltc},
 		m_newScalarBarTitle {colorbarTitle},
 		m_oldSetting {item->m_setting},
+		m_oldLookupTable {item->m_lookupTableContainer},
 		m_item {item},
 		m_topItem {dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(item->parent())}
 	{
 		m_oldScalarBarTitle = m_topItem->m_colorbarTitleMap[item->target()];
-
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(item->parent()->parent()->parent());
-		if (LookupTableContainer* lut = gtItem->nodeLookupTable(item->target())) {
-			m_oldLookupTable = *lut;
-		}
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
@@ -405,11 +391,7 @@ public:
 private:
 	void applySettings(const std::string& sol, const LookupTableContainer& c) {
 		m_item->setTarget(sol);
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_item->parent()->parent()->parent());
-		if (LookupTableContainer* lut = gtItem->nodeLookupTable(sol)) {
-			*lut = c;
-			lut->update();
-		}
+		m_item->m_lookupTableContainer = c;
 		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
 		m_item->m_setting.scalarBarSetting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
 		m_item->m_setting.scalarBarSetting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
@@ -466,14 +448,8 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtk
 	vtkSmartPointer<vtkPolyData> upperClipped;
 	vtkSmartPointer<vtkPolyData> lowerClipped;
 
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
-	if (stc == 0) {
-		polyData->Register(0);
-		return polyData;
-	}
 	double min, max;
-	stc->getValueRange(&min, &max);
+	m_lookupTableContainer.getValueRange(&min, &max);
 	if (m_setting.fillLower) {
 		lowerClipped = polyData;
 	} else {
@@ -505,14 +481,8 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtk
 
 vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtkPolyData* polyData)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
-	if (stc == nullptr) {
-		polyData->Register(0);
-		return polyData;
-	}
 	double range[2];
-	stc->getValueRange(&range[0], &range[1]);
+	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
 
 	polyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 
@@ -617,9 +587,7 @@ bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, display with Contour Figure."));
 		return false;
 	}
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
-	if (stc->autoRange()) {
+	if (m_lookupTableContainer.autoRange()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, value range should be set up manually."));
 		return false;
 	}
@@ -634,18 +602,16 @@ bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
-
 	writer.writeStartElement("Document");
 	writer.writeTextElement("name", "iRIC Calculation Result");
 	writer.writeTextElement("open", "1");
 
 	// output styles.
+	auto& stc = m_lookupTableContainer;
 	for (int i = 0; i < m_setting.numberOfDivisions; ++i) {
-		double val = stc->manualMin() + i * (stc->manualMax() - stc->manualMin()) / (m_setting.numberOfDivisions - 1);
+		double val = stc.manualMin() + i * (stc.manualMax() - stc.manualMin()) / (m_setting.numberOfDivisions - 1);
 		double rgb[3];
-		stc->vtkObj()->GetColor(val, rgb);
+		stc.vtkObj()->GetColor(val, rgb);
 		QColor col;
 		col.setRedF(rgb[0]);
 		col.setGreenF(rgb[1]);
@@ -678,10 +644,9 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writ
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
+	auto& stc = m_lookupTableContainer;
 
-	double div = (stc->manualMax() - stc->manualMin()) / m_setting.numberOfDivisions;
+	double div = (stc.manualMax() - stc.manualMin()) / m_setting.numberOfDivisions;
 
 	// Folder start
 	writer.writeStartElement("Folder");
@@ -741,7 +706,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 		double averageDepth = sum / points.size();
 
-		if (averageDepth < stc->manualMin()) {continue;}
+		if (averageDepth < stc.manualMin()) {continue;}
 
 		writer.writeStartElement("Placemark");
 		// name

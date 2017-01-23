@@ -4,6 +4,7 @@
 #include "../post2dwindowdataitem.h"
 
 #include <postbase/post2dwindowcontoursetting.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
 
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -80,6 +81,7 @@ private:
 
 	// Settings
 	Post2dWindowContourSetting m_setting;
+	LookupTableContainer m_lookupTableContainer;
 
 	vtkSmartPointer<vtkLODActor> m_contourActor;
 	vtkDataSetMapper* m_contourMapper;
