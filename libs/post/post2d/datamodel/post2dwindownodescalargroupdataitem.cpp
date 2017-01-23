@@ -18,6 +18,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/scalarstocolors/scalarstocolorscontainerutil.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -151,12 +152,25 @@ void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	setTarget(m_setting.target);
 	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	updateActorSettings();
+
+	QDomNode ltNode = iRIC::getChildNode(node, "LookupTable");
+	if (ltNode.isNull()) {
+		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
+		m_lookupTableContainer = *(gtItem->nodeLookupTable(m_setting.target));
+	} else {
+		m_lookupTableContainer.loadFromProjectMainFile(ltNode);
+	}
 }
 
 void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
+
+	// write lookuptable
+	writer.writeStartElement("LookupTable");
+	m_lookupTableContainer.saveToProjectMainFile(writer);
+	writer.writeEndElement();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::setupActors()
