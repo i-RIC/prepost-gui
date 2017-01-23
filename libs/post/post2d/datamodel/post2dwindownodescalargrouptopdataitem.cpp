@@ -236,7 +236,7 @@ public:
 			delete m_propDialog;
 		}
 		m_firstDialog = false;
-		m_propDialog = m_item->propertyDialog(nullptr);
+		m_propDialog = m_item->propertyDialog(m_item->mainWindow());
 		m_undoCommand->undo();
 		delete m_item;
 		m_item = nullptr;
