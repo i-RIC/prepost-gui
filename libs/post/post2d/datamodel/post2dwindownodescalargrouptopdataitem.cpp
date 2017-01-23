@@ -228,6 +228,7 @@ public:
 		m_undoCommand = new QUndoCommand();
 		m_item->undoCommands(m_propDialog, m_undoCommand);
 		m_undoCommand->redo();
+		m_topItem->setZDepthRange(m_topItem->m_zDepthRange);
 		m_topItem->updateItemMap();
 	}
 	void undo() {

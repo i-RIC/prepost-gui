@@ -218,6 +218,8 @@ void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
+	m_zDepthRange = range;
+
 	m_contourActor->SetPosition(0, 0, range.min());
 	m_fringeActor->SetPosition(0, 0, range.min());
 	m_isolineActor->SetPosition(0, 0, range.min());
