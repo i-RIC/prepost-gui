@@ -3,7 +3,6 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/post2dwindowcontoursetting.h>
 
 #include <vtkPolyData.h>
@@ -22,7 +21,7 @@ class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
 
-class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
+class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
 
@@ -33,8 +32,8 @@ public:
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
 
-	std::string target() const override;
-	void setTarget(const std::string& target) override;
+	std::string target() const;
+	void setTarget(const std::string& target);
 
 	ContourSettingWidget::Contour contour() const {return m_setting.contour;}
 	void updateZDepthRangeItemCount() override;
@@ -58,9 +57,6 @@ public:
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time);
 
 	bool exportContourFigureToShape(const QString& filename, double time);
-
-public slots:
-	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void updateVisibility(bool visible) override;

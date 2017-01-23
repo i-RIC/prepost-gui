@@ -9,7 +9,6 @@
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -352,14 +351,6 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QD
 {
 	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
-}
-
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Contour Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
