@@ -1937,6 +1937,9 @@ void GeoDataRiverSurvey::rotateSelectedPoint()
 {
 	GeoDataRiverPathPoint* selected = selectedPoint();
 	QVector2D dir = selected->previousPoint()->position() - selected->position();
+	if (selected->previousPoint()->firstPoint() && selected->nextPoint() != nullptr) {
+		dir = selected->position() - selected->nextPoint()->position();
+	}
 	double angle = iRIC::angle(dir, selected->crosssectionDirection());
 
 	GeoDataRiverPathPointRotateDialog* dialog = new GeoDataRiverPathPointRotateDialog(this, preProcessorWindow());
