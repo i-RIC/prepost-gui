@@ -212,9 +212,6 @@ void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionW
 	QString caption = m_grid->gridAttribute(m_condition)->gridAttribute()->caption();
 	setWindowTitle(title.arg(caption).arg(m_blackLineIndex + 1));
 	setupData();
-
-	// execute fitting.
-	cameraFit();
 }
 
 const std::string& PreProcessorGridCrosssectionWindow::condition() const

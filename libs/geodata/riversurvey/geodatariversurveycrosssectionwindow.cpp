@@ -220,8 +220,6 @@ void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(double crosssection)
 	updateEditTargetPoint();
 	// set window title.
 	setWindowTitle(QString(tr("Crosssection Window : %2").arg(crosssection)));
-	// fit the camera.
-	cameraFit();
 }
 
 struct SelectionRange {
