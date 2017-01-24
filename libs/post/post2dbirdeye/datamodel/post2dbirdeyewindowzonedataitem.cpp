@@ -3,6 +3,7 @@
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
+#include "post2dbirdeyewindownodescalargrouptopdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -43,14 +44,14 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::stri
 	m_shapeDataItem = new Post2dBirdEyeWindowGridShapeDataItem(this);
 
 	if (cont->scalarValueExists()) {
-		m_scalarGroupDataItem = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this);
+		m_scalarGroupTopDataItem = new Post2dBirdEyeWindowNodeScalarGroupTopDataItem(this);
 	} else {
-		m_scalarGroupDataItem = nullptr;
+		m_scalarGroupTopDataItem = nullptr;
 	}
 
 	m_childItems.push_back(m_shapeDataItem);
 	if (cont->scalarValueExists()) {
-		m_childItems.push_back(m_scalarGroupDataItem);
+		m_childItems.push_back(m_scalarGroupTopDataItem);
 	}
 }
 
@@ -60,9 +61,15 @@ void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
+	// old
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
-		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
+	if (! scalarGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
+		m_scalarGroupTopDataItem->loadFromProjectMainFile(scalarGroupNode);
+	}
+	// new
+	QDomNode contourGroupNode = iRIC::getChildNode(node, "Contours");
+	if (! contourGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
+		m_scalarGroupTopDataItem->loadFromProjectMainFile(contourGroupNode);
 	}
 }
 
@@ -73,9 +80,9 @@ void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_scalarGroupDataItem != nullptr) {
-		writer.writeStartElement("ScalarGroup");
-		m_scalarGroupDataItem->saveToProjectMainFile(writer);
+	if (m_scalarGroupTopDataItem != nullptr) {
+		writer.writeStartElement("Contours");
+		m_scalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
@@ -107,9 +114,9 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 	m_shapeDataItem->update();
 	qDebug("Grid shape: %d", time.elapsed());
 
-	if (m_scalarGroupDataItem != nullptr) {
+	if (m_scalarGroupTopDataItem != nullptr) {
 		time.restart();
-		m_scalarGroupDataItem->update();
+		m_scalarGroupTopDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
 	}
 }
@@ -142,8 +149,8 @@ void Post2dBirdEyeWindowZoneDataItem::assignActorZValues(const ZDepthRange& rang
 	if (cont->scalarValueExists()) {
 		max = min - divWidth * gapRate;
 		min = max - divWidth;
-		r = m_scalarGroupDataItem->zDepthRange();
+		r = m_scalarGroupTopDataItem->zDepthRange();
 		r.setRange(min, max);
-		m_scalarGroupDataItem->setZDepthRange(r);
+		m_scalarGroupTopDataItem->setZDepthRange(r);
 	}
 }

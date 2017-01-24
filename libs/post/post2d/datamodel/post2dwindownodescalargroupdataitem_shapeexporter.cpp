@@ -246,14 +246,14 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	DBFAddField(dbfh, "ValueMin", FTDouble, 40, 6);
 	DBFAddField(dbfh, "ValueMax", FTDouble, 40, 6);
 
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_parent->parent()->parent());
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_parent->parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_parent->m_setting.target);
 	if (stc == nullptr) {return false;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
 	// setup value-clipped poly data from the original data.
-	PostZoneDataContainer* c = dynamic_cast<Post2dWindowZoneDataItem*>(m_parent->parent())->dataContainer();
+	PostZoneDataContainer* c = dynamic_cast<Post2dWindowZoneDataItem*>(m_parent->parent()->parent())->dataContainer();
 
 	vtkSmartPointer<vtkGeometryFilter> geom = vtkSmartPointer<vtkGeometryFilter>::New();
 	geom->SetInputData(c->data());

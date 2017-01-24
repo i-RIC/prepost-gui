@@ -8,6 +8,7 @@
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/scalarstocolors/scalarstocolorscontainerutil.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -121,32 +122,17 @@ void Post3dWindowGridTypeDataItem::updateNodeLookupTableRanges()
 	for (auto it = m_nodeLookupTables.begin(); it != m_nodeLookupTables.end(); ++it) {
 		std::string name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
-		bool first = true;
-		double range[2], min = 0, max = 0;
+		std::vector<vtkDataArray*> da;
 		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
 			Post3dWindowZoneDataItem* zitem = *zit;
 			PostZoneDataContainer* cont = zitem->dataContainer();
 			if (cont == nullptr) {continue;}
 			if (cont->data() == nullptr) {continue;}
 			vtkDataArray* dArray = cont->data()->GetPointData()->GetArray(name.c_str());
-			if (dArray != nullptr) {
-				dArray->GetRange(range);
-				if (first || range[0] < min) {min = range[0];}
-				if (first || range[1] > max) {max = range[1];}
-				first = false;
-			}
+			if (dArray == nullptr) {continue;}
+			da.push_back(dArray);
 		}
-		if (max - min < 1E-4) {
-			// the width is too small.
-			double mid = (min + max) * 0.5;
-			double width = mid * 0.01;
-			if (width < 1E-4) {
-				width = 1E-4;
-			}
-			min = mid - width;
-			max = mid + width;
-		}
-		cont->setValueRange(min, max);
+		ScalarsToColorsContainerUtil::setValueRange(cont, da);
 	}
 }
 
@@ -155,31 +141,15 @@ void Post3dWindowGridTypeDataItem::updateParticleLookupTableRanges()
 	for (auto it = m_particleLookupTables.begin(); it != m_particleLookupTables.end(); ++it) {
 		std::string name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
-		bool first = true;
-		double range[2], min, max;
-		min = 0; max = 0;
+		std::vector<vtkDataArray*> da;
 		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
 			Post3dWindowZoneDataItem* zitem = *zit;
 			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->particleData() == nullptr) {continue;}
 			vtkDataArray* dArray = zitem->dataContainer()->particleData()->GetPointData()->GetArray(name.c_str());
-			if (dArray != nullptr) {
-				dArray->GetRange(range);
-				if (first || range[0] < min) {min = range[0];}
-				if (first || range[1] > max) {max = range[1];}
-				first = false;
-			}
+			if (dArray == nullptr) {continue;}
+			da.push_back(dArray);
 		}
-		if (max - min < 1E-4) {
-			// the width is too small.
-			double mid = (min + max) * 0.5;
-			double width = mid * 0.01;
-			if (width < 1E-4) {
-				width = 1E-4;
-			}
-			min = mid - width;
-			max = mid + width;
-		}
-		cont->setValueRange(min, max);
+		ScalarsToColorsContainerUtil::setValueRange(cont, da);
 	}
 }
 

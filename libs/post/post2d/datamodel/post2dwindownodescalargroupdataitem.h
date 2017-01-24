@@ -3,8 +3,8 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/post2dwindowcontoursetting.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
 
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -22,7 +22,7 @@ class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
 
-class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
+class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
 
@@ -33,8 +33,8 @@ public:
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
 
-	std::string target() const override;
-	void setTarget(const std::string& target) override;
+	std::string target() const;
+	void setTarget(const std::string& target);
 
 	ContourSettingWidget::Contour contour() const {return m_setting.contour;}
 	void updateZDepthRangeItemCount() override;
@@ -59,13 +59,11 @@ public:
 
 	bool exportContourFigureToShape(const QString& filename, double time);
 
-public slots:
-	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
-
 protected:
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	void setupActors();
@@ -83,9 +81,7 @@ private:
 
 	// Settings
 	Post2dWindowContourSetting m_setting;
-
-	// for scalar bar
-	QMap<std::string, QString> m_colorbarTitleMap;
+	LookupTableContainer m_lookupTableContainer;
 
 	vtkSmartPointer<vtkLODActor> m_contourActor;
 	vtkDataSetMapper* m_contourMapper;
@@ -100,6 +96,8 @@ private:
 	ShapeExporter* m_shapeExporter;
 
 	class SetSettingCommand;
+
+	friend class Post2dWindowNodeScalarGroupTopDataItem;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPDATAITEM_H

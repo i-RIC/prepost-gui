@@ -251,6 +251,7 @@ HEADERS += guicore_global.h \
            scalarstocolors/lookuptablecontainer.h \
            scalarstocolors/lookuptableeditwidget.h \
            scalarstocolors/scalarstocolorscontainer.h \
+           scalarstocolors/scalarstocolorscontainerutil.h \
            scalarstocolors/scalarstocolorseditdialog.h \
            scalarstocolors/scalarstocolorseditwidget.h \
            scalarstocolors/scalarstocolorseditwidgetcontainer.h \
@@ -550,6 +551,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            scalarstocolors/lookuptablecontainer.cpp \
            scalarstocolors/lookuptableeditwidget.cpp \
            scalarstocolors/scalarstocolorscontainer.cpp \
+           scalarstocolors/scalarstocolorscontainerutil.cpp \
            scalarstocolors/scalarstocolorseditdialog.cpp \
            scalarstocolors/scalarstocolorseditwidget.cpp \
            scalarstocolors/scalarstocolorseditwidgetcontainer.cpp \

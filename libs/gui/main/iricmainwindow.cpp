@@ -1903,6 +1903,9 @@ void iRICMainWindow::exportCfShape()
 		}
 		zoneName = zones.at(dialog.selectedIndex());
 	}
+	if (Post2dWindow* pw = dynamic_cast<Post2dWindow*>(m_centralWidget->activeSubWindow()->widget())) {
+		if (! pw->checkShapeExportCondition(zoneName)) {return;}
+	}
 	// show setting dialog
 	PostDataExportDialog expDialog(this);
 
@@ -1995,6 +1998,7 @@ void iRICMainWindow::exportStKML()
 		zoneName = zones.at(0);
 	} if (zones.count() > 1) {
 		ItemSelectingDialog dialog;
+		dialog.setMessage(tr("Please select which zone to use:"));
 		dialog.setItems(zones);
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {

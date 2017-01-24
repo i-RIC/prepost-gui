@@ -1,5 +1,6 @@
 #include "datamodel/post2dwindowgridtypedataitem.h"
 #include "datamodel/post2dwindownodescalargroupdataitem.h"
+#include "datamodel/post2dwindownodescalargrouptopdataitem.h"
 #include "datamodel/post2dwindownodevectorparticlegroupdataitem.h"
 #include "datamodel/post2dwindowrootdataitem.h"
 #include "datamodel/post2dwindowzonedataitem.h"
@@ -14,6 +15,7 @@
 
 #include <guibase/colortool.h>
 #include <guibase/graphicsmisc.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -21,6 +23,7 @@
 #include <QAction>
 #include <QColorDialog>
 #include <QLabel>
+#include <QMessageBox>
 #include <QToolBar>
 #include <QUndoCommand>
 
@@ -176,9 +179,13 @@ QList<QString> Post2dWindow::contourFigureDrawingZones()
 		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
 		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
 		for (Post2dWindowZoneDataItem* zItem : zItems) {
-			Post2dWindowNodeScalarGroupDataItem* gItem = zItem->scalarGroupDataItem();
-			if (gItem->contour() == ContourSettingWidget::ContourFigure) {
-				ret.append(zItem->zoneName().c_str());
+			Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+			for (auto item : sItem->childItems()) {
+				Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+				if (typedi->contour() == ContourSettingWidget::ContourFigure) {
+					ret.append(zItem->zoneName().c_str());
+					break;
+				}
 			}
 		}
 	}
@@ -204,36 +211,76 @@ QList<QString> Post2dWindow::particleDrawingZones()
 	return ret;
 }
 
+bool Post2dWindow::checkShapeExportCondition(const QString& zoneName) const
+{
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
+	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	QList<QString> scalars = sItem->availableScalars();
+	if (scalars.count() == 0) {
+		QMessageBox::warning(window(), tr("Error"), tr("No contours have been defined"));
+		return false;
+	} else if (scalars.count() == 1) {
+		m_exportScalarName = scalars.at(0);
+	} if (scalars.count() > 1) {
+		ItemSelectingDialog dialog(sItem->mainWindow());
+		dialog.setMessage(tr("Please select which scalar to export:"));
+		dialog.setItems(scalars);
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected) {
+			return false;
+		}
+		m_exportScalarName = scalars.at(dialog.selectedIndex());
+	}
+	return sItem->checkShapeExportCondition(m_exportScalarName);
+}
+
 bool Post2dWindow::checkKmlExportCondition(const QString& zoneName) const
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-	return sItem->checkKmlExportCondition();
+	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	QList<QString> scalars = sItem->selectedScalars();
+	if (scalars.count() == 0) {
+		QMessageBox::warning(window(), tr("Error"), tr("No contour is drawn now."));
+		return false;
+	} else if (scalars.count() == 1) {
+		m_exportScalarName = scalars.at(0);
+	} if (scalars.count() > 1) {
+		ItemSelectingDialog dialog(sItem->mainWindow());
+		dialog.setMessage(tr("Please select which scalar to export:"));
+		dialog.setItems(scalars);
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected) {
+			return false;
+		}
+		m_exportScalarName = scalars.at(dialog.selectedIndex());
+	}
+	return sItem->checkKmlExportCondition(m_exportScalarName);
 }
 
 bool Post2dWindow::exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zonename));
-	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-	return sItem->exportKMLHeader(writer);
+	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	return sItem->exportKMLHeader(writer, m_exportScalarName);
 }
 
 bool Post2dWindow::exportKMLFooter(QXmlStreamWriter& writer, const QString& zoneName)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-	return sItem->exportKMLFooter(writer);
+	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	return sItem->exportKMLFooter(writer, m_exportScalarName);
 }
 
 bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zoneName)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-	return sItem->exportKMLForTimestep(writer, index, time);
+	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	return sItem->exportKMLForTimestep(writer, m_exportScalarName, index, time);
 }
 
 void Post2dWindow::updateTmsList()
@@ -245,10 +292,10 @@ bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int ind
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
 	QString filePrefix2 = filePrefix;
 	filePrefix2.append(QString("%1.shp").arg(index));
-	return sItem->exportContourFigureToShape(filePrefix2, time);
+	return sItem->exportContourFigureToShape(m_exportScalarName, filePrefix2, time);
 }
 
 QList<QString> Post2dWindow::contourDrawingZones()
@@ -261,9 +308,13 @@ QList<QString> Post2dWindow::contourDrawingZones()
 		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
 		for (int j = 0; j < zItems.count(); ++j) {
 			Post2dWindowZoneDataItem* zItem = zItems.at(j);
-			Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-			if (sItem->standardItem()->checkState() == Qt::Checked && sItem->target() != "") {
-				ret.append(zItem->zoneName().c_str());
+			Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+			for (auto item : sItem->childItems()) {
+				Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+				if (typedi->standardItem()->checkState() == Qt::Checked) {
+					ret.append(zItem->zoneName().c_str());
+					break;
+				}
 			}
 		}
 	}

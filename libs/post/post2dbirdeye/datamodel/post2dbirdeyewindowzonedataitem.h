@@ -13,6 +13,7 @@ class QSignalMapper;
 class Post2dBirdEyeWindowGridShapeDataItem;
 class Post2dBirdEyeWindowContourDataItem;
 class Post2dBirdEyeWindowNodeScalarGroupDataItem;
+class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 class Post2dBirdEyeWindowNodeVectorArrowGroupDataItem;
 class Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem;
 class Post2dBirdEyeWindowNodeVectorParticleGroupDataItem;
@@ -39,7 +40,7 @@ public:
 	std::string zoneName() const {return m_zoneName;}
 	void update();
 	Post2dBirdEyeWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
-	Post2dBirdEyeWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const {return m_scalarGroupTopDataItem;}
 	Post2dBirdEyeWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
 	Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
 	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
@@ -51,7 +52,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dBirdEyeWindowGridShapeDataItem* m_shapeDataItem;
-	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_scalarGroupDataItem;
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
 	Post2dBirdEyeWindowNodeVectorArrowGroupDataItem* m_arrowGroupDataItem;
 	Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
