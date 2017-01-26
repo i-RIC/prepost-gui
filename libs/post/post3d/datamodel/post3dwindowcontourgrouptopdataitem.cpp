@@ -11,8 +11,10 @@
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
+#include <QAction>
 #include <QDomNode>
 #include <QDomElement>
+#include <QMenu>
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
@@ -28,6 +30,9 @@ Post3dWindowContourGroupTopDataItem::Post3dWindowContourGroupTopDataItem(Post3dW
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		m_colorBarTitleMap.insert(name, name.c_str());
 	}
+
+	m_addAction = new QAction("Add...", this);
+	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
 Post3dWindowContourGroupTopDataItem::~Post3dWindowContourGroupTopDataItem()
@@ -113,7 +118,7 @@ void Post3dWindowContourGroupTopDataItem::innerUpdateZScale(double scale)
 	m_zScale = scale;
 }
 
-QDialog* Post3dWindowContourGroupTopDataItem::propertyDialog(QWidget* p)
+QDialog* Post3dWindowContourGroupTopDataItem::addDialog(QWidget* p)
 {
 	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (zoneData == nullptr || zoneData->data() == nullptr) {
@@ -170,6 +175,11 @@ QDialog* Post3dWindowContourGroupTopDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
+void Post3dWindowContourGroupTopDataItem::addCustomMenuItems(QMenu* menu)
+{
+	menu->addAction(m_addAction);
+}
+
 class Post3dWindowContourGroupTopDataItem::CreateCommand : public QUndoCommand
 {
 public:
@@ -214,7 +224,7 @@ private:
 	bool m_firstDialog;
 };
 
-void Post3dWindowContourGroupTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+void Post3dWindowContourGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
 	iRICUndoStack::instance().push(new CreateCommand(this, propDialog));
 	iRICUndoStack::instance().clear();

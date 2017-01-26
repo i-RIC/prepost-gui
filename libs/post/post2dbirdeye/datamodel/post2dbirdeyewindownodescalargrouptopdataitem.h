@@ -8,15 +8,17 @@
 
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem : public Post2dBirdEyeWindowDataItem
 {
+	Q_OBJECT
 public:
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupTopDataItem();
 
 	void update();
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 protected:
+	void addCustomMenuItems(QMenu* menu) override;
+	QDialog* addDialog(QWidget* parent) override;
+	void handleAddDialogAccepted(QDialog* addDialog) override;
 	void innerUpdateZScale(double scale) override;
 
 private:
@@ -32,6 +34,8 @@ private:
 	friend class Post2dBirdEyeWindowNodeScalarGroupDataItem;
 
 	class CreateCommand;
+
+	QAction* m_addAction;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPTOPDATAITEM_H

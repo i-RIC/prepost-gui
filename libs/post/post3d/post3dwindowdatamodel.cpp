@@ -94,12 +94,17 @@ void Post3dWindowDataModel::surfaceSetting()
 //	item->showPropertyDialog();
 }
 
-void Post3dWindowDataModel::contourSetting()
+void Post3dWindowDataModel::addContour()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
 	if (item == nullptr) {return;}
 	Post3dWindowContourGroupTopDataItem* citem = item->contourGroupTopItem();
-	citem->showPropertyDialog();
+	citem->showAddDialog();
+}
+
+void Post3dWindowDataModel::contourSetting()
+{
+	addContour();
 }
 
 void Post3dWindowDataModel::arrowSetting()

@@ -28,6 +28,7 @@ public:
 	void editZScale();
 
 public slots:
+	void addContour();
 	void gridShapeSetting();
 	void surfaceSetting();
 	void contourSetting();

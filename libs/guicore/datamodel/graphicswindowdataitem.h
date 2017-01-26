@@ -106,6 +106,14 @@ public:
 	 */
 	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
 	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
+
+	/// Returns the pointer to a dialog which shows the add dialog of this item.
+	/**
+	 * If no add dialog is available, this function returns 0.
+	 */
+	virtual QDialog* addDialog(QWidget* /*parent*/) {return 0;}
+	virtual void handleAddDialogAccepted(QDialog* /*addDialog*/) {}
+
 	/// Returns the pointer to a toolbar specific to currently selected item.
 	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
 	const std::vector<GraphicsWindowDataItem*>& childItems() const {return m_childItems;}
@@ -134,6 +142,7 @@ public:
 
 public slots:
 	virtual void showPropertyDialog();
+	virtual void showAddDialog();
 
 protected:
 	void setupStandardItem(CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, const QString& text = "");
