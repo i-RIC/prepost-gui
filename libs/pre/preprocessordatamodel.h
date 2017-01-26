@@ -65,6 +65,7 @@ public:
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
 	void setupGeoDataImportMenu(QMenu* menu);
+	void setupGeoDataImportFromWebMenu(QMenu* menu);
 	void setupGeoDataExportMenu(QMenu* menu);
 	void setupHydraulicDataImportMenu(QMenu* menu);
 	void disableGridMenu();
@@ -122,7 +123,9 @@ private:
 	bool addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool setname);
 	bool addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
 	bool setupGeoDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
+	bool setupGeoDataImportFromWebMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
 	bool setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt);
+	bool setupGeoDataImportFromWebMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt);
 	bool setupGeoDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
 	bool setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt);
 	bool setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemInterface* gt);

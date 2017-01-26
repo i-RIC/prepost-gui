@@ -924,7 +924,7 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 	renderGraphicsView();
 }
 
-void PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
+bool PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
 {
 	QString cap = m_condition->caption();
 	cap.append("...");
@@ -932,6 +932,20 @@ void PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
 	a->setEnabled(importAvailable());
 	menu->addAction(a);
 	connect(a, SIGNAL(triggered()), this, SLOT(import()));
+
+	return a->isEnabled();
+}
+
+bool PreProcessorGeoDataGroupDataItem::addImportFromWebAction(QMenu* menu)
+{
+	QString cap = m_condition->caption();
+	cap.append("...");
+	QAction* a = new QAction(cap, menu);
+	a->setEnabled(webImportAvailable());
+	menu->addAction(a);
+	connect(a, SIGNAL(triggered()), this, SLOT(importFromWeb()));
+
+	return a->isEnabled();
 }
 
 bool PreProcessorGeoDataGroupDataItem::importAvailable()

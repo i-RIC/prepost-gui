@@ -50,7 +50,8 @@ public:
 	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
 	const QString& title() const {return m_title;}
 	QAction* importAction() {return m_importAction;}
-	void addImportAction(QMenu* menu);
+	bool addImportAction(QMenu* menu);
+	bool addImportFromWebAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();
 	void addCopyPolygon(GeoDataPolygon* polygon) override;
 	GridAttributeDimensionsContainer* dimensions() const override {return m_dimensions;}

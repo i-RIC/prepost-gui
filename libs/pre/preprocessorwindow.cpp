@@ -366,6 +366,14 @@ void PreProcessorWindow::setupGeoDataImportMenu()
 	m->setupGeoDataImportMenu(menu);
 }
 
+void PreProcessorWindow::setupGeoDataImportFromWebMenu()
+{
+	PreProcessorDataModel* m = model();
+	if (m == nullptr) {return;}
+	QMenu* menu = dynamic_cast<QMenu*>(sender());
+	m->setupGeoDataImportFromWebMenu(menu);
+}
+
 void PreProcessorWindow::setupGeoDataExportMenu()
 {
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
