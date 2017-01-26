@@ -73,10 +73,12 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 	int index = 0;
 	for (int y = ymin; y <= ymax; ++y) {
 		for (int x = xmin; x <= xmax; ++x) {
-			QString urlstr = QString("http://cyberjapandata.gsi.go.jp/xyz/dem/%1/%2/%3.txt").arg(m_zoomLevel).arg(x).arg(y);
-//			QString urlstr = QString("https://earthexplorer.usgs.gov/wms/wmts/EPSG3857/srtm/%1/%2/%3.csv").arg(m_zoomLevel).arg(x).arg(y);
-//			QString urlstr = QString("http://cyberjapandata.gsi.go.jp/xyz/demgm/%1/%2/%3.txt").arg(m_zoomLevel).arg(x).arg(y);
-			QUrl url(m_url.arg(m_zoomLevel).arg(x).arg(y));
+			QString urlstr = m_url;
+			urlstr.replace("{z}", QString::number(m_zoomLevel));
+			urlstr.replace("{x}", QString::number(x));
+			urlstr.replace("{y}", QString::number(y));
+
+			QUrl url(urlstr);
 			QNetworkRequest request(url);
 
 			m_webReply = m_webAccessManager->get(request);
