@@ -178,7 +178,7 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	double centerLat = (m_latMin + m_latMax) * 0.5;
 
 	GeoDataPointmapWebImporterZoomLevelDialog zlDialog(w);
-	zlDialog.setCenterLatitude(centerLat);
+	zlDialog.setArea(m_lonMin, m_lonMax, m_latMin, m_latMax);
 
 	ret = zlDialog.exec();
 	if (ret == QDialog::Rejected) {return false;}

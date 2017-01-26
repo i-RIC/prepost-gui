@@ -16,16 +16,17 @@ class GeoDataPointmapWebImporterZoomLevelDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GeoDataPointmapWebImporterZoomLevelDialog(QWidget *parent = 0);
+	explicit GeoDataPointmapWebImporterZoomLevelDialog(QWidget *parent = nullptr);
 	~GeoDataPointmapWebImporterZoomLevelDialog();
 
-	void setCenterLatitude(double lat);
+	void setArea(double lonMin, double lonMax, double latMin, double latMax);
 
 	int zoomLevel() const;
 	QString url() const;
 
 private slots:
 	void updateResolution();
+	void updateDataSize();
 	void handleSourceChange(int source);
 
 private:
@@ -35,6 +36,10 @@ private:
 
 	std::vector<GeoDataPointmapWebImporterSetting> m_settings;
 	double m_latitude;
+	double m_lonMin;
+	double m_lonMax;
+	double m_latMin;
+	double m_latMax;
 };
 
 #endif // GEODATAPOINTMAPWEBIMPORTERZOOMLEVELDIALOG_H

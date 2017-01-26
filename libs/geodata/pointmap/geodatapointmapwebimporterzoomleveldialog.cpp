@@ -2,6 +2,8 @@
 #include "geodatapointmapwebimporterzoomleveldialog.h"
 #include "ui_geodatapointmapwebimporterzoomleveldialog.h"
 
+#include <cs/webmeratorutil.h>
+
 #include <cmath>
 
 namespace {
@@ -18,6 +20,7 @@ GeoDataPointmapWebImporterZoomLevelDialog::GeoDataPointmapWebImporterZoomLevelDi
 	ui->setupUi(this);
 
 	connect(ui->zoomLevelSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateResolution()));
+	connect(ui->zoomLevelSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDataSize()));
 	connect(ui->sourceComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSourceChange(int)));
 
 	updateList();
@@ -28,9 +31,14 @@ GeoDataPointmapWebImporterZoomLevelDialog::~GeoDataPointmapWebImporterZoomLevelD
 	delete ui;
 }
 
-void GeoDataPointmapWebImporterZoomLevelDialog::setCenterLatitude(double lat)
+void GeoDataPointmapWebImporterZoomLevelDialog::setArea(double lonMin, double lonMax, double latMin, double latMax)
 {
-	m_latitude = lat;
+	m_lonMin = lonMin;
+	m_lonMax = lonMax;
+	m_latMin = latMin;
+	m_latMax = latMax;
+
+	m_latitude = (latMin + latMax) * 0.5;
 }
 
 int GeoDataPointmapWebImporterZoomLevelDialog::zoomLevel() const
@@ -58,6 +66,28 @@ void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
 
 	QString label = QString("%1 m").arg(meterPerPixel);
 	ui->resolutionValueLabel->setText(label);
+}
+
+void GeoDataPointmapWebImporterZoomLevelDialog::updateDataSize()
+{
+	auto wmutil = new WebMeratorUtil(ui->zoomLevelSpinBox->value());
+	int xmin, xmax, ymin, ymax;
+	wmutil->getTileRegion(m_lonMin, m_latMax, m_lonMax, m_latMin, &xmin, &xmax, &ymin, &ymax);
+	delete wmutil;
+
+	int tileNum = (ymax - ymin + 1) * (xmax - xmin + 1);
+	int numPoints = tileNum * 256 * 256;
+	int size = tileNum * 300; // tile is about 300KB for each.
+
+	QString sizeStr;
+	if (size < 1000) {
+		sizeStr = tr("%1 KB").arg(size);
+	} else {
+		sizeStr = tr("%1 MB").arg(size / 1000);
+	}
+	sizeStr += tr(" (%1 points)").arg(numPoints);
+
+	ui->dataSizeValueLabel->setText(sizeStr);
 }
 
 void GeoDataPointmapWebImporterZoomLevelDialog::handleSourceChange(int source)
