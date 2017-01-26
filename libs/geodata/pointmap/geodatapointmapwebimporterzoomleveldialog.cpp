@@ -39,6 +39,9 @@ void GeoDataPointmapWebImporterZoomLevelDialog::setArea(double lonMin, double lo
 	m_latMax = latMax;
 
 	m_latitude = (latMin + latMax) * 0.5;
+
+	updateResolution();
+	updateDataSize();
 }
 
 int GeoDataPointmapWebImporterZoomLevelDialog::zoomLevel() const

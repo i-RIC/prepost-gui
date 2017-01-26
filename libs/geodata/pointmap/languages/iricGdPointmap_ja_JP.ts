@@ -629,7 +629,7 @@
         <translation>Web CSV タイル</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporter.cpp" line="97"/>
+        <location filename="../geodatapointmapwebimporter.cpp" line="99"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -714,8 +714,33 @@
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="95"/>
+        <source>Data size:</source>
+        <translation>データサイズ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="102"/>
+        <source>XX kB (XXXX points)</source>
+        <translation>XX KB (XXXX 点)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="109"/>
         <source>Source:</source>
         <translation>ソース</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="87"/>
+        <source>%1 KB</source>
+        <translation>%1 KB</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
+        <source>%1 MB</source>
+        <translation>%1 MB</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="91"/>
+        <source> (%1 points)</source>
+        <translation> (点数 = %1)</translation>
     </message>
 </context>
 <context>
