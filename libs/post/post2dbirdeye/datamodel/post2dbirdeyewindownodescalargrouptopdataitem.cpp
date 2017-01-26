@@ -11,8 +11,10 @@
 #include <misc/stringtool.h>
 #include <post/post2d/datamodel/post2dwindowcontoursettingdialog.h>
 
+#include <QAction>
 #include <QDomNode>
 #include <QList>
+#include <QMenu.h>
 #include <QMessageBox>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
@@ -30,6 +32,9 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGrou
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
+
+	m_addAction = new QAction("Add...", this);
+	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
 Post2dBirdEyeWindowNodeScalarGroupTopDataItem::~Post2dBirdEyeWindowNodeScalarGroupTopDataItem()
@@ -45,7 +50,7 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::update()
 	}
 }
 
-QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::propertyDialog(QWidget* p)
+QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
 	if (childItems().size() >= 4) {
 		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
@@ -214,7 +219,7 @@ private:
 	bool m_firstDialog;
 };
 
-void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
 	iRICUndoStack::instance().push(new CreateCommand(this, propDialog));
 	iRICUndoStack::instance().clear();
@@ -225,4 +230,9 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handlePropertyDialogAccepted
 	// since the modify contour would attempt to use a deleted pointer.
 	//
 	// Need to be able to remove m_item from m_topItem and reuse m_item.
+}
+
+void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
+{
+	menu->addAction(m_addAction);
 }

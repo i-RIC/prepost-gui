@@ -26,7 +26,6 @@ class vtkContourFilter;
 class Post2dWindowNodeScalarGroupTopDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
-
 public:
 	Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupTopDataItem();
@@ -34,8 +33,6 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	bool hasTransparentPart() override;
 
 	void informSelection(VTKGraphicsView* v) override;
@@ -43,8 +40,6 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-
-	void addCustomMenuItems(QMenu* menu) override;
 
 	QList<QString> selectedScalars();
 	bool checkKmlExportCondition(const QString& target);
@@ -57,8 +52,11 @@ public:
 	bool exportContourFigureToShape(const QString& target, const QString& filename, double time);
 
 protected:
+	void addCustomMenuItems(QMenu* menu) override;
+	QDialog* addDialog(QWidget* parent) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void handleAddDialogAccepted(QDialog* propDialog) override;
 
 private:
 	// for scalar bar
@@ -67,6 +65,8 @@ private:
 	friend class Post2dWindowNodeScalarGroupDataItem;
 
 	class CreateCommand;
+
+	QAction* m_addAction;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H

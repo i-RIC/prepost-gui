@@ -99,7 +99,7 @@ void Post2dBirdEyeWindowDataModel::gridShapeSetting()
 	item->showPropertyDialog();
 }
 
-void Post2dBirdEyeWindowDataModel::contourSetting()
+void Post2dBirdEyeWindowDataModel::addContour()
 {
 	Post2dBirdEyeWindowZoneDataItem* zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
@@ -108,7 +108,12 @@ void Post2dBirdEyeWindowDataModel::contourSetting()
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Contour setting is not available, because this result does not contain scalar values."));
 		return;
 	}
-	item->showPropertyDialog();
+	item->showAddDialog();
+}
+
+void Post2dBirdEyeWindowDataModel::contourSetting()
+{
+	addContour();
 }
 
 Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()

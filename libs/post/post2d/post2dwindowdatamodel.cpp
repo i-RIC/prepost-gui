@@ -133,7 +133,7 @@ void Post2dWindowDataModel::gridShapeSetting()
 	item->showPropertyDialog();
 }
 
-void Post2dWindowDataModel::contourSetting()
+void Post2dWindowDataModel::addContour()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
@@ -142,7 +142,12 @@ void Post2dWindowDataModel::contourSetting()
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Contour setting is not available, because this result does not contain scalar values."));
 		return;
 	}
-	item->showPropertyDialog();
+	item->showAddDialog();
+}
+
+void Post2dWindowDataModel::contourSetting()
+{
+	addContour();
 }
 
 void Post2dWindowDataModel::vectorSetting()

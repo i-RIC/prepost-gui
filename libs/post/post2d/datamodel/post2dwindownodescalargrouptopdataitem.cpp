@@ -27,6 +27,9 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
+
+	m_addAction = new QAction("Add...", this);
+	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
 Post2dWindowNodeScalarGroupTopDataItem::~Post2dWindowNodeScalarGroupTopDataItem()
@@ -118,7 +121,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::update()
 	}
 }
 
-QDialog* Post2dWindowNodeScalarGroupTopDataItem::propertyDialog(QWidget* p)
+QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
 	if (childItems().size() >= 4) {
 		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
@@ -203,6 +206,8 @@ void Post2dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
+	menu->addSeparator();
+	menu->addAction(m_addAction);
 }
 
 class Post2dWindowNodeScalarGroupTopDataItem::CreateCommand : public QUndoCommand
@@ -251,7 +256,7 @@ private:
 	bool m_firstDialog;
 };
 
-void Post2dWindowNodeScalarGroupTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
 	iRICUndoStack::instance().push(new CreateCommand(this, propDialog));
 	iRICUndoStack::instance().clear();

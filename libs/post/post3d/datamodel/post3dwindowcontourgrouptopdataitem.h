@@ -5,6 +5,8 @@
 
 class Post3dWindowContourGroupTopDataItem : public Post3dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post3dWindowContourGroupTopDataItem(Post3dWindowDataItem* p);
 	~Post3dWindowContourGroupTopDataItem();
@@ -13,10 +15,11 @@ public:
 	void update();
 
 protected:
+	void addCustomMenuItems(QMenu* menu) override;
+	QDialog* addDialog(QWidget* p) override;
+	void handleAddDialogAccepted(QDialog* propDialog) override;
 	void doLoadFromProjectMainFile(const QDomNode&) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
-	QDialog* propertyDialog(QWidget* p) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 private:
 	QMap<std::string, QString> m_colorBarTitleMap;
@@ -25,6 +28,8 @@ private:
 	friend class Post3dWindowContourGroupDataItem;
 
 	class CreateCommand;
+
+	QAction* m_addAction;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPTOPDATAITEM_H
