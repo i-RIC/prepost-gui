@@ -16,6 +16,7 @@ class SolverDefinitionGridAttribute;
 class ProjectDataItem;
 class GeoDataMapper;
 class GeoDataImporter;
+class GeoDataWebImporter;
 class GeoDataExporter;
 
 class GUICOREDLL_EXPORT GeoDataCreator : public QObject
@@ -48,6 +49,9 @@ public:
 	const QList<GeoDataImporter*>& importers() const;
 	QList<GeoDataImporter*>& importers();
 
+	const QList<GeoDataWebImporter*>& webImporters() const;
+	QList<GeoDataWebImporter*>& webImporters();
+
 	const QList<GeoDataExporter*>& exporters() const;
 	QList<GeoDataExporter*>& exporters();
 
@@ -61,6 +65,7 @@ private:
 	QList<GeoDataMapper*> m_cellMappers;
 
 	QList<GeoDataImporter*> m_importers;
+	QList<GeoDataWebImporter*> m_webImporters;
 	QList<GeoDataExporter*> m_exporters;
 };
 

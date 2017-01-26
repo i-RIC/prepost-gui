@@ -286,6 +286,7 @@ HEADERS += guicore_global.h \
            tmsimage/tmsimagegroupdataitem.h \
            tmsimage/tmsimagesetting.h \
            tmsimage/tmsimagesettingmanager.h \
+           tmsimage/tmsregionselectwidget.h \
            bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.h \
            datamodel/private/graphicswindowdataitem_modifycommand.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
@@ -325,6 +326,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatamappert.h \
            pre/geodata/geodatanodemappert.h \
            pre/geodata/geodataproxy.h \
+           pre/geodata/geodatawebimporter.h \
            pre/geodatabackground/geodatabackground.h \
            pre/geodatabackground/geodatabackgroundcellmappert.h \
            pre/geodatabackground/geodatabackgroundcomplex.h \
@@ -391,6 +393,7 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
            tmsimage/private/tmsimagegroupdataitem_impl.h \
            tmsimage/private/tmsimagesetting_impl.h \
+           tmsimage/private/tmsregionselectwidget_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
@@ -583,6 +586,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            tmsimage/tmsimagegroupdataitem.cpp \
            tmsimage/tmsimagesetting.cpp \
            tmsimage/tmsimagesettingmanager.cpp \
+           tmsimage/tmsregionselectwidget.cpp \
            bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.cpp \
            datamodel/private/graphicswindowdataitem_modifycommand.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
@@ -610,6 +614,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/geodata/geodataimporter.cpp \
            pre/geodata/geodatamapper.cpp \
            pre/geodata/geodataproxy.cpp \
+           pre/geodata/geodatawebimporter.cpp \
            pre/geodatabackground/geodatabackground.cpp \
            pre/geodatabackground/geodatabackgroundcomplex.cpp \
            pre/geodatabackground/geodatabackgroundcomplexcreator.cpp \

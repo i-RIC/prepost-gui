@@ -7,7 +7,7 @@ TEMPLATE = lib
 
 DEFINES += MISC_LIBRARY
 
-QT += widgets xml
+QT += network widgets xml
 
 include( ../../paths.pri )
 
@@ -40,6 +40,7 @@ HEADERS += arrowsettingcontainer.h \
            linearinterpolator.h \
            mathsupport.h \
            misc_global.h \
+           networksetting.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            qpointfcontainer.h \
@@ -65,6 +66,7 @@ HEADERS += arrowsettingcontainer.h \
            private/enumcontainert_detail.h \
            private/latitudelongitude_impl.h \
            private/latitudelongitudeangle_impl.h \
+           private/networksetting_impl.h \
            private/numericvaluecontainert_detail.h \
            private/qpointfcontainer_impl.h \
            private/simplevaluecontainert_detail.h \
@@ -92,6 +94,7 @@ SOURCES += arrowsettingcontainer.cpp \
            latitudelongitudeangle.cpp \
            linearinterpolator.cpp \
            mathsupport.cpp \
+           networksetting.cpp \
            opacitycontainer.cpp \
            qpointfcontainer.cpp \
            qttool.cpp \

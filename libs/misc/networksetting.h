@@ -1,10 +1,12 @@
 #ifndef NETWORKSETTING_H
 #define NETWORKSETTING_H
 
+#include "misc_global.h"
+
 #include <QString>
 #include <QNetworkProxyFactory>
 
-class NetworkSetting : public QNetworkProxyFactory
+class MISCDLL_EXPORT NetworkSetting : public QNetworkProxyFactory
 {
 public:
 	enum class ProxyMode {

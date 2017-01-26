@@ -364,6 +364,7 @@ private:
 	QMenu* m_gridExportMenu;
 
 	QMenu* m_geoDataImportMenu;
+	QMenu* m_geoDataImportFromWebMenu;
 	QMenu* m_geoDataExportMenu;
 
 	QMenu* m_hydraulicDataImportMenu;

@@ -103,6 +103,7 @@ public slots:
 	void showCalcConditionDialog();
 	void handleAdditionalMenusUpdate(const QList<QMenu*>& menus);
 	void setupGeoDataImportMenu();
+	void setupGeoDataImportFromWebMenu();
 	void setupGeoDataExportMenu();
 	void setupHydraulicDataImportMenu();
 

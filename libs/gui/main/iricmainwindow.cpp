@@ -6,7 +6,6 @@
 #include "../misc/animationcontroller.h"
 #include "../misc/iricmainwindowactionmanager.h"
 #include "../misc/iricmainwindowmiscdialogmanager.h"
-#include "../misc/networksetting.h"
 #include "../misc/newprojectsolverselectingdialog.h"
 #include "../misc/projecttypeselectdialog.h"
 #include "../pref/preferencedialog.h"
@@ -49,6 +48,7 @@
 #include <misc/iricundostack.h>
 #include <misc/iricrootpath.h>
 #include <misc/lastiodirectory.h>
+#include <misc/networksetting.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>

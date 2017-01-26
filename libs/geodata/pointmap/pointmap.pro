@@ -12,7 +12,7 @@ DEFINES += ANSI_DECLARATORS
 
 include( ../../../paths.pri )
 
-QT += widgets xml
+QT += network widgets xml
 
 ######################
 # Internal libraries #
@@ -31,6 +31,20 @@ unix {
 	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
+
+# iricCs
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../cs/debug"
+	} else {
+		LIBS += -L"../../cs/release"
+	}
+}
+unix {
+	LIBS += -L"../../cs"
+}
+LIBS += -liricCs
 
 # iricTriangle
 
@@ -137,17 +151,25 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaptemplatemappingsetting.h \
            geodatapointmaptemplatenodemappert.h \
            geodatapointmapvtkexporter.h \
+           geodatapointmapwebimporter.h \
+           geodatapointmapwebimporterregionselectdialog.h \
+           geodatapointmapwebimportersetting.h \
+           geodatapointmapwebimportersettingmanager.h \
+           geodatapointmapwebimporterzoomleveldialog.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
            private/geodatapointmapt_detail.h \
-           private/geodatapointmaptemplatenodemappert_detail.h
+           private/geodatapointmaptemplatenodemappert_detail.h \
+           private/geodatapointmapwebimportersetting_impl.h
 FORMS += geodatapointmapaddpointdialog.ui \
          geodatapointmapdelptsgreaterthandialog.ui \
          geodatapointmapdelptslessthandialog.ui \
          geodatapointmapeditptsdialog.ui \
          geodatapointmapinterpolatepoints.ui \
          geodatapointmaprealimporterfilterdialog.ui \
-         geodatapointmaprepresentationdialog.ui
+         geodatapointmaprepresentationdialog.ui \
+         geodatapointmapwebimporterregionselectdialog.ui \
+         geodatapointmapwebimporterzoomleveldialog.ui
 SOURCES += geodatapointmap.cpp \
            geodatapointmapaddpointdialog.cpp \
            geodatapointmapbreakline.cpp \
@@ -164,7 +186,12 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapstlexporter.cpp \
            geodatapointmapstlimporter.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
-           geodatapointmapvtkexporter.cpp
+           geodatapointmapvtkexporter.cpp \
+           geodatapointmapwebimporter.cpp \
+           geodatapointmapwebimporterregionselectdialog.cpp \
+           geodatapointmapwebimportersetting.cpp \
+           geodatapointmapwebimportersettingmanager.cpp \
+           geodatapointmapwebimporterzoomleveldialog.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_es_ES.ts \
                 languages/iricGdPointmap_fr_FR.ts \

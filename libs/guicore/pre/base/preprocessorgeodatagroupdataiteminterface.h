@@ -21,6 +21,8 @@ public:
 		: PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 	{}
 	virtual SolverDefinitionGridAttribute* condition() = 0;
+	ProjectData* projectData() const {return ProjectDataItem::projectData();}
+
 	virtual bool getValueRange(double* min, double* max) = 0;
 	virtual void setupEditWidget(GridAttributeEditWidget* widget = nullptr) = 0;
 	virtual void addCopyPolygon(GeoDataPolygon* polygon) = 0;

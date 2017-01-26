@@ -98,6 +98,16 @@ QList<GeoDataImporter*>& GeoDataCreator::importers()
 	return m_importers;
 }
 
+const QList<GeoDataWebImporter*>& GeoDataCreator::webImporters() const
+{
+	return m_webImporters;
+}
+
+QList<GeoDataWebImporter*>& GeoDataCreator::webImporters()
+{
+	return m_webImporters;
+}
+
 const QList<GeoDataExporter*>& GeoDataCreator::exporters() const
 {
 	return m_exporters;

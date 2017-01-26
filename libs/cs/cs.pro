@@ -53,11 +53,13 @@ HEADERS += coordinatesystem.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
            cs_api.h \
+           webmeratorutil.h \
            private/coordinatesystem_impl.h
 FORMS += coordinatesystemselectdialog.ui
 SOURCES += coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
-           coordinatesystemselectdialog.cpp
+           coordinatesystemselectdialog.cpp \
+           webmeratorutil.cpp
 RESOURCES += cs.qrc
 TRANSLATIONS += languages/iricCs_es_ES.ts \
                 languages/iricCs_fr_FR.ts \

@@ -7,6 +7,7 @@
 #include "geodatapointmapstlimporter.h"
 #include "geodatapointmapt.h"
 #include "geodatapointmapvtkexporter.h"
+#include "geodatapointmapwebimporter.h"
 
 #include <vtkDoubleArray.h>
 
@@ -15,6 +16,8 @@ GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
 {
 	importers().append(new GeoDataPointmapRealImporter(this));
 	importers().append(new GeoDataPointmapSTLImporter(this));
+
+	webImporters().append(new GeoDataPointmapWebImporter(this));
 
 	exporters().append(new GeoDataPointmapRealExporter(this));
 	exporters().append(new GeoDataPointmapSTLExporter(this));
