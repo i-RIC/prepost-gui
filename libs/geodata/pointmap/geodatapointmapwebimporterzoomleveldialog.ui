@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>467</width>
+    <width>515</width>
     <height>146</height>
    </rect>
   </property>
@@ -97,23 +97,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="sourceComboBox">
-         <item>
-          <property name="text">
-           <string>http://cyberjapandata.gsi.go.jp/xyz/dem/%1/%2/%3.txt</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>http://cyberjapandata.gsi.go.jp/xyz/demgm/%1/%2/%3.txt</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>https://earthexplorer.usgs.gov/wms/wmts/EPSG3857/srtm/%1/%2/%3.csv</string>
-          </property>
-         </item>
-        </widget>
+        <widget class="QComboBox" name="sourceComboBox"/>
        </item>
       </layout>
      </item>

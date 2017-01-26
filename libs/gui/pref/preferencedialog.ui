@@ -50,6 +50,11 @@
        <string>Background Images (Internet)</string>
       </attribute>
      </widget>
+     <widget class="PreferencePageWebCsvTile" name="csvTileTab">
+      <attribute name="title">
+       <string>Web Elevation Data</string>
+      </attribute>
+     </widget>
     </widget>
    </item>
    <item>
@@ -93,6 +98,12 @@
    <class>PreferencePageTms</class>
    <extends>QWidget</extends>
    <header>pref/preferencepagetms.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageWebCsvTile</class>
+   <extends>QWidget</extends>
+   <header>pref/preferencepagewebcsvtile.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

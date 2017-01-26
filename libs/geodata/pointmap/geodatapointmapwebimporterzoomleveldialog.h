@@ -1,7 +1,11 @@
 #ifndef GEODATAPOINTMAPWEBIMPORTERZOOMLEVELDIALOG_H
 #define GEODATAPOINTMAPWEBIMPORTERZOOMLEVELDIALOG_H
 
+#include "geodatapointmapwebimportersetting.h"
+
 #include <QDialog>
+
+#include <vector>
 
 namespace Ui {
 class GeoDataPointmapWebImporterZoomLevelDialog;
@@ -15,7 +19,6 @@ public:
 	explicit GeoDataPointmapWebImporterZoomLevelDialog(QWidget *parent = 0);
 	~GeoDataPointmapWebImporterZoomLevelDialog();
 
-	void setMaxZoomLevel(int level);
 	void setCenterLatitude(double lat);
 
 	int zoomLevel() const;
@@ -23,10 +26,14 @@ public:
 
 private slots:
 	void updateResolution();
+	void handleSourceChange(int source);
 
 private:
+	void updateList();
+
 	Ui::GeoDataPointmapWebImporterZoomLevelDialog *ui;
 
+	std::vector<GeoDataPointmapWebImporterSetting> m_settings;
 	double m_latitude;
 };
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AnimationController</name>
     <message>
@@ -895,7 +895,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>°</source>
-        <translation type="vanished">°</translation>
+        <translation>°</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="265"/>
@@ -11723,6 +11723,11 @@ p, li { white-space: pre-wrap; }
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
+        <location filename="../pref/preferencedialog.ui" line="55"/>
+        <source>Web Elevation Data</source>
+        <translation>Web 標高データ</translation>
+    </message>
+    <message>
         <source>Snapshot</source>
         <translation type="obsolete">スナップショット</translation>
     </message>
@@ -11815,19 +11820,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>HTTP Proxy Setting</source>
-        <translation type="vanished">HTTP プロキシ設定</translation>
+        <translation>HTTP プロキシ設定</translation>
     </message>
     <message>
         <source>Use Proxy</source>
-        <translation type="vanished">プロキシを利用する</translation>
+        <translation>プロキシを利用する</translation>
     </message>
     <message>
         <source>Note: This setting is used when using Google Map API to import background image.</source>
-        <translation type="vanished">説明: この設定は、 Google Map API を利用して背景画像をインポートする際に利用されます。</translation>
+        <translation>説明: この設定は、 Google Map API を利用して背景画像をインポートする際に利用されます。</translation>
     </message>
     <message>
         <source>Example: http://proxy.example.com:10080</source>
-        <translation type="vanished">例: http://proxy.example.com:10080</translation>
+        <translation>例: http://proxy.example.com:10080</translation>
     </message>
     <message>
         <source>Recent Projects</source>
@@ -12000,93 +12005,93 @@ p, li { white-space: pre-wrap; }
     <name>PreferencePagePost2d</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Grid Shape</source>
-        <translation type="vanished">格子形状</translation>
+        <translation>格子形状</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="vanished">色:</translation>
+        <translation>色:</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="vanished">ベクトル</translation>
+        <translation>ベクトル</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="vanished">倍率:</translation>
+        <translation>倍率:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="vanished">矢印の大きさ:</translation>
+        <translation>矢印の大きさ:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="vanished">流線</translation>
+        <translation>流線</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="vanished">パーティクルトレース</translation>
+        <translation>パーティクルトレース</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="vanished">大きさ:</translation>
+        <translation>大きさ:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePagePost3d</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Grid Shape</source>
-        <translation type="vanished">格子形状</translation>
+        <translation>格子形状</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="vanished">色:</translation>
+        <translation>色:</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="vanished">ベクトル</translation>
+        <translation>ベクトル</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="vanished">倍率:</translation>
+        <translation>倍率:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="vanished">矢印の大きさ:</translation>
+        <translation>矢印の大きさ:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="vanished">流線</translation>
+        <translation>流線</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="vanished">パーティクルトレース</translation>
+        <translation>パーティクルトレース</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="vanished">大きさ:</translation>
+        <translation>大きさ:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePagePre</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Grid Color:</source>
-        <translation type="vanished">格子の色</translation>
+        <translation>格子の色</translation>
     </message>
     <message>
         <source>Color Map:</source>
-        <translation type="vanished">カラーマップ:</translation>
+        <translation>カラーマップ:</translation>
     </message>
 </context>
 <context>
@@ -12141,39 +12146,39 @@ p, li { white-space: pre-wrap; }
     <name>PreferencePageSnapshot</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="vanished">プレフィックス:</translation>
+        <translation>プレフィックス:</translation>
     </message>
     <message>
         <source>Suffix Length:</source>
-        <translation type="vanished">サフィックス桁数:</translation>
+        <translation>サフィックス桁数:</translation>
     </message>
     <message>
         <source>Default Type:</source>
-        <translation type="vanished">画像の種類:</translation>
+        <translation>画像の種類:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="vanished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="vanished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="vanished">Windows ビットマップ (*.bmp)</translation>
+        <translation>Windows ビットマップ (*.bmp)</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="vanished">ポータブルビットマップ (*.ppm)</translation>
+        <translation>ポータブルビットマップ (*.ppm)</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="vanished">X11 ビットマップ (*.xbm)</translation>
+        <translation>X11 ビットマップ (*.xbm)</translation>
     </message>
     <message>
         <source>Windows Bitmap(*.bmp)</source>
@@ -12246,6 +12251,72 @@ p, li { white-space: pre-wrap; }
         <location filename="../pref/private/preferencepagetmsadddialog.ui" line="42"/>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
         <translation>例:  http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageWebCsvTile</name>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="14"/>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="27"/>
+        <source>&amp;Up</source>
+        <translation>上へ(&amp;U)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="34"/>
+        <source>&amp;Down</source>
+        <translation>下へ(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="60"/>
+        <source>&amp;Add</source>
+        <translation>追加(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="67"/>
+        <source>&amp;Delete</source>
+        <translation>削除(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="87"/>
+        <source>&amp;Restore Default</source>
+        <translation>デフォルトに戻す(&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageWebCsvTileAddDialog</name>
+    <message>
+        <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="14"/>
+        <source>Add Web Elevation Data</source>
+        <translation>Web標高データの追加</translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="22"/>
+        <source>Name:</source>
+        <translation>名前:</translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="32"/>
+        <source>Min zoom level:</source>
+        <translation>最小ズームレベル:</translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="63"/>
+        <source>Max zoom level:</source>
+        <translation>最大ズームレベル:</translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="97"/>
+        <source>URL:</source>
+        <translation>URL:</translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="107"/>
+        <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
+        <translation>例: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
@@ -14802,11 +14873,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Animation Speed Setting</source>
-        <translation type="vanished">アニメーションの速度設定</translation>
+        <translation>アニメーションの速度設定</translation>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation type="vanished">アニメーションの描画間隔 (秒):</translation>
+        <translation>アニメーションの描画間隔 (秒):</translation>
     </message>
 </context>
 <context>
@@ -15822,9 +15893,9 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="1677"/>
         <location filename="../main/iricmainwindow.cpp" line="1681"/>
         <location filename="../main/iricmainwindow.cpp" line="1704"/>
-        <location filename="../main/iricmainwindow.cpp" line="2120"/>
-        <location filename="../main/iricmainwindow.cpp" line="2246"/>
-        <location filename="../main/iricmainwindow.cpp" line="2266"/>
+        <location filename="../main/iricmainwindow.cpp" line="2124"/>
+        <location filename="../main/iricmainwindow.cpp" line="2250"/>
+        <location filename="../main/iricmainwindow.cpp" line="2270"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
         <source>Warning</source>
@@ -15841,7 +15912,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This project files needs solver %1 %2, but it does not exists in this system.</source>
-        <translation type="vanished">このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
+        <translation>このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="448"/>
@@ -15860,11 +15931,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Loading solver information from CGNS file failed. This file can not be imported.</source>
-        <translation type="vanished">CGNS ファイルからソルバー情報を読み込めませんでした。このファイルはインポートできません。</translation>
+        <translation>CGNS ファイルからソルバー情報を読み込めませんでした。このファイルはインポートできません。</translation>
     </message>
     <message>
         <source>This CGNS file needs solver %1 %2, but it does not exists in this system.</source>
-        <translation type="vanished">この CGNS ファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
+        <translation>この CGNS ファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="558"/>
@@ -15947,14 +16018,14 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="1789"/>
         <location filename="../main/iricmainwindow.cpp" line="1879"/>
         <location filename="../main/iricmainwindow.cpp" line="1885"/>
-        <location filename="../main/iricmainwindow.cpp" line="1978"/>
-        <location filename="../main/iricmainwindow.cpp" line="1984"/>
+        <location filename="../main/iricmainwindow.cpp" line="1981"/>
+        <location filename="../main/iricmainwindow.cpp" line="1987"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1783"/>
-        <location filename="../main/iricmainwindow.cpp" line="1978"/>
+        <location filename="../main/iricmainwindow.cpp" line="1981"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation>可視化ウィンドウがアクティブな時に、このメニューを選択してください。</translation>
     </message>
@@ -15962,7 +16033,7 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="1769"/>
         <location filename="../main/iricmainwindow.cpp" line="1789"/>
         <location filename="../main/iricmainwindow.cpp" line="1885"/>
-        <location filename="../main/iricmainwindow.cpp" line="1984"/>
+        <location filename="../main/iricmainwindow.cpp" line="1987"/>
         <source>Calculation result does not exists.</source>
         <translation>計算結果が存在しません。</translation>
     </message>
@@ -16079,9 +16150,9 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="1797"/>
         <location filename="../main/iricmainwindow.cpp" line="1861"/>
         <location filename="../main/iricmainwindow.cpp" line="1893"/>
-        <location filename="../main/iricmainwindow.cpp" line="1954"/>
-        <location filename="../main/iricmainwindow.cpp" line="1992"/>
-        <location filename="../main/iricmainwindow.cpp" line="2061"/>
+        <location filename="../main/iricmainwindow.cpp" line="1957"/>
+        <location filename="../main/iricmainwindow.cpp" line="1995"/>
+        <location filename="../main/iricmainwindow.cpp" line="2065"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
@@ -16110,15 +16181,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This project is for solver %1 %2, but it does not exists in this system. Entering post only mode.</source>
-        <translation type="vanished">このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
+        <translation>このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <source>Loading solver information from CGNS file failed. Entering post only mode.</source>
-        <translation type="vanished">CGNS ファイルからソルバー情報を読み込めませんでした。可視化専用モードに移行します。</translation>
+        <translation>CGNS ファイルからソルバー情報を読み込めませんでした。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <source>This CGNS file needs solver %1 %2, but it does not exists in this system. Entering post only mode.</source>
-        <translation type="vanished">このCGNSファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
+        <translation>このCGNSファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="688"/>
@@ -16132,11 +16203,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="vanished">巨大な計算結果を持つため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
+        <translation>巨大な計算結果を持つため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp);;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="vanished">PNG ファイル (*.png);;JPEG ファイル (*.jpg);;BMP ファイル (*.bmp);;EPS ファイル (*.eps);;PDFファイル (*.pdf);;SVGファイル (*.svg)</translation>
+        <translation>PNG ファイル (*.png);;JPEG ファイル (*.jpg);;BMP ファイル (*.bmp);;EPS ファイル (*.eps);;PDFファイル (*.pdf);;SVGファイル (*.svg)</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
@@ -16175,43 +16246,48 @@ Do you really want to import grid from this file?</source>
         <translation>シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1921"/>
+        <location filename="../main/iricmainwindow.cpp" line="1924"/>
         <source>Export contour figure to ESRI Shape files</source>
         <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1931"/>
+        <location filename="../main/iricmainwindow.cpp" line="1934"/>
         <source>Export contour figure</source>
         <translation>面塗りコンターのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1932"/>
+        <location filename="../main/iricmainwindow.cpp" line="1935"/>
         <source>Saving contour figure as ESRI Shape files...</source>
         <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1992"/>
+        <location filename="../main/iricmainwindow.cpp" line="1995"/>
         <source>No contour is drawn now.</source>
         <translation>コンターが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2018"/>
-        <location filename="../main/iricmainwindow.cpp" line="2040"/>
+        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <source>Please select which zone to use:</source>
+        <translation>使用するゾーンを選択して下さい:</translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2022"/>
+        <location filename="../main/iricmainwindow.cpp" line="2044"/>
         <source>Export Google Earth KML for street view</source>
         <translation>ストリートビュー用 Google Earth KML の出力</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2041"/>
+        <location filename="../main/iricmainwindow.cpp" line="2045"/>
         <source>Saving KML files...</source>
         <translation>KML ファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2246"/>
+        <location filename="../main/iricmainwindow.cpp" line="2250"/>
         <source>The grids are edited. When you save, the calculation result is discarded.</source>
         <translation>格子が編集されています。保存すると、計算結果は破棄されます。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2266"/>
+        <location filename="../main/iricmainwindow.cpp" line="2270"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
         <translation>現在の作業ディレクトリ (%1) に、ASCII文字列以外の文字が含まれています。プロジェクトを開始する前に、以下のメニューから作業ディレクトリを変更して下さい。
@@ -16239,29 +16315,29 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1861"/>
-        <location filename="../main/iricmainwindow.cpp" line="1954"/>
-        <location filename="../main/iricmainwindow.cpp" line="2061"/>
+        <location filename="../main/iricmainwindow.cpp" line="1957"/>
+        <location filename="../main/iricmainwindow.cpp" line="2065"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2113"/>
+        <location filename="../main/iricmainwindow.cpp" line="2117"/>
         <source>Import Visualization/Graph Settings</source>
         <translation>可視化・グラフ設定のインポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2113"/>
-        <location filename="../main/iricmainwindow.cpp" line="2135"/>
+        <location filename="../main/iricmainwindow.cpp" line="2117"/>
+        <location filename="../main/iricmainwindow.cpp" line="2139"/>
         <source>Setting file (*.vgsetting)</source>
         <translation>設定ファイル (*.vgsetting)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2120"/>
+        <location filename="../main/iricmainwindow.cpp" line="2124"/>
         <source>File %1 does not exists.</source>
         <translation>%1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2135"/>
+        <location filename="../main/iricmainwindow.cpp" line="2139"/>
         <source>Export Visualization/Graph Settings</source>
         <translation>可視化・グラフ設定のエクスポート</translation>
     </message>
@@ -16293,7 +16369,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="vanished">バージョン番号のビルド番号が指定されていません。</translation>
+        <translation>バージョン番号のビルド番号が指定されていません。</translation>
     </message>
 </context>
 <context>
@@ -17080,11 +17156,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Update check setting...</source>
-        <translation type="vanished">更新確認の設定(&amp;U)...</translation>
+        <translation>更新確認の設定(&amp;U)...</translation>
     </message>
     <message>
         <source>&amp;Manage solvers and grid generators...</source>
-        <translation type="vanished">ソルバと格子生成プログラムの管理(&amp;M)...</translation>
+        <translation>ソルバと格子生成プログラムの管理(&amp;M)...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="593"/>

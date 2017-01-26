@@ -177,7 +177,6 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 
 	GeoDataPointmapWebImporterZoomLevelDialog zlDialog(w);
 	zlDialog.setCenterLatitude(centerLat);
-	zlDialog.setMaxZoomLevel(12);
 
 	ret = zlDialog.exec();
 	if (ret == QDialog::Rejected) {return false;}

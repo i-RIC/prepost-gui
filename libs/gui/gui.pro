@@ -202,6 +202,20 @@ unix {
 }
 LIBS += -liricGdRiversurvey
 
+#iricGdPointmap library
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../geodata/pointmap/debug"
+	} else {
+		LIBS += -L"../geodata/pointmap/release"
+	}
+}
+unix {
+	LIBS += -L"../geodata/pointmap"
+}
+LIBS += -liricGdPointmap
+
 #iricGccexternalprogram library
 
 win32 {
@@ -284,6 +298,7 @@ HEADERS += gui_api.h \
            pref/preferencepagegridcheck.h \
            pref/preferencepageproxy.h \
            pref/preferencepagetms.h \
+           pref/preferencepagewebcsvtile.h \
            projectproperty/projectpropertybasicinfowidget.h \
            projectproperty/projectpropertydialog.h \
            solverdef/solverdefinitionabstractdialog.h \
@@ -305,7 +320,8 @@ HEADERS += gui_api.h \
            verification/verificationgraphdialog.h \
            verification/verificationsettingdialog.h \
            main/private/iricmainwindow_snapshotsaver.h \
-           pref/private/preferencepagetmsadddialog.h
+           pref/private/preferencepagetmsadddialog.h \
+           pref/private/preferencepagewebcsvtileadddialog.h
 FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui \
          continuoussnapshot/continuoussnapshotmoviepropertypage.ui \
@@ -322,6 +338,7 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          pref/preferencepagegridcheck.ui \
          pref/preferencepageproxy.ui \
          pref/preferencepagetms.ui \
+         pref/preferencepagewebcsvtile.ui \
          projectproperty/projectpropertybasicinfowidget.ui \
          projectproperty/projectpropertydialog.ui \
          solverdef/solverdefinitionabstractdialog.ui \
@@ -331,7 +348,8 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          startpage/startpagelaunchtabwidget.ui \
          verification/verificationgraphdialog.ui \
          verification/verificationsettingdialog.ui \
-         pref/private/preferencepagetmsadddialog.ui
+         pref/private/preferencepagetmsadddialog.ui \
+         pref/private/preferencepagewebcsvtileadddialog.ui
 SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.cpp \
            continuoussnapshot/continuoussnapshotmoviepropertypage.cpp \
@@ -357,6 +375,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            pref/preferencepagegridcheck.cpp \
            pref/preferencepageproxy.cpp \
            pref/preferencepagetms.cpp \
+           pref/preferencepagewebcsvtile.cpp \
            projectproperty/projectpropertybasicinfowidget.cpp \
            projectproperty/projectpropertydialog.cpp \
            solverdef/solverdefinitionabstractdialog.cpp \
@@ -378,7 +397,8 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            verification/verificationgraphdialog.cpp \
            verification/verificationsettingdialog.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \
-           pref/private/preferencepagetmsadddialog.cpp
+           pref/private/preferencepagetmsadddialog.cpp \
+           pref/private/preferencepagewebcsvtileadddialog.cpp
 RESOURCES += gui.qrc
 TRANSLATIONS += languages/iricGui_es_ES.ts \
                 languages/iricGui_fr_FR.ts \

@@ -81,3 +81,8 @@ void GeoDataPointmapWebImporterSettingManager::setSettings(const std::vector<Geo
 {
 	saveSettings(settings);
 }
+
+GeoDataPointmapWebImporterSetting GeoDataPointmapWebImporterSettingManager::setupSetting(const QString& caption, int minZoom, int maxZoom, const QString& url)
+{
+	return buildSetting(caption, minZoom, maxZoom, url);
+}

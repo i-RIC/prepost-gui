@@ -1,3 +1,4 @@
+#include "geodatapointmapwebimportersettingmanager.h"
 #include "geodatapointmapwebimporterzoomleveldialog.h"
 #include "ui_geodatapointmapwebimporterzoomleveldialog.h"
 
@@ -15,18 +16,16 @@ GeoDataPointmapWebImporterZoomLevelDialog::GeoDataPointmapWebImporterZoomLevelDi
 	ui(new Ui::GeoDataPointmapWebImporterZoomLevelDialog)
 {
 	ui->setupUi(this);
+
 	connect(ui->zoomLevelSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateResolution()));
+	connect(ui->sourceComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSourceChange(int)));
+
+	updateList();
 }
 
 GeoDataPointmapWebImporterZoomLevelDialog::~GeoDataPointmapWebImporterZoomLevelDialog()
 {
 	delete ui;
-}
-
-void GeoDataPointmapWebImporterZoomLevelDialog::setMaxZoomLevel(int level)
-{
-	ui->zoomLevelSpinBox->setMaximum(level);
-	ui->zoomLevelSpinBox->setValue(level);
 }
 
 void GeoDataPointmapWebImporterZoomLevelDialog::setCenterLatitude(double lat)
@@ -41,7 +40,8 @@ int GeoDataPointmapWebImporterZoomLevelDialog::zoomLevel() const
 
 QString GeoDataPointmapWebImporterZoomLevelDialog::url() const
 {
-	return ui->sourceComboBox->currentText();
+	auto s = m_settings.at(ui->sourceComboBox->currentIndex());
+	return s.url();
 }
 
 void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
@@ -58,4 +58,22 @@ void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
 
 	QString label = QString("%1 m").arg(meterPerPixel);
 	ui->resolutionValueLabel->setText(label);
+}
+
+void GeoDataPointmapWebImporterZoomLevelDialog::handleSourceChange(int source)
+{
+	auto s = m_settings.at(source);
+	ui->zoomLevelSpinBox->setMinimum(s.minZoomLevel());
+	ui->zoomLevelSpinBox->setMaximum(s.maxZoomLevel());
+	ui->zoomLevelSpinBox->setValue(s.maxZoomLevel());
+}
+
+void GeoDataPointmapWebImporterZoomLevelDialog::updateList()
+{
+	GeoDataPointmapWebImporterSettingManager manager;
+	m_settings = manager.settings();
+
+	for (const auto& s : m_settings) {
+		ui->sourceComboBox->addItem(s.caption());
+	}
 }
