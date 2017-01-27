@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>GeoDataNetcdf</name>
     <message>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="24"/>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="33"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../geodatanetcdfimporter.cpp" line="22"/>
         <source>NetCDF</source>
-        <translation type="unfinished"></translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporter.cpp" line="31"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../geodatanetcdfxbandimporter.cpp" line="21"/>
         <source>XBand MP RADER data</source>
-        <translation type="unfinished"></translation>
+        <translation>XバンドMPレーダーデータ</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfxbandimporter.cpp" line="30"/>
@@ -178,122 +178,122 @@
     <name>RawDataNetcdfCreator</name>
     <message>
         <source>Raster data</source>
-        <translation type="vanished">ラスターデータ</translation>
+        <translation>ラスターデータ</translation>
     </message>
     <message>
         <source>Raster data%1</source>
-        <translation type="vanished">ラスターデータ%1</translation>
+        <translation>ラスターデータ%1</translation>
     </message>
 </context>
 <context>
     <name>RawDataNetcdfGdalImporter</name>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="vanished">GeoTiff ファイル (*.tif)</translation>
+        <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
-        <translation type="vanished">GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
+        <translation>GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
     </message>
 </context>
 <context>
     <name>RawDataNetcdfImporter</name>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="vanished">NetCDF ファイル (*.nc)</translation>
+        <translation>NetCDF ファイル (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>%1 does not have longitude and latitude data.</source>
-        <translation type="vanished">%1 は、経度と緯度のデータを持っていません。</translation>
+        <translation>%1 は、経度と緯度のデータを持っていません。</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="vanished">%1 には、インポート可能な変数がありません。</translation>
+        <translation>%1 には、インポート可能な変数がありません。</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation type="vanished">次元 %1 の値が一致しません。</translation>
+        <translation>次元 %1 の値が一致しません。</translation>
     </message>
 </context>
 <context>
     <name>RawDataNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="vanished">基準日付の指定</translation>
+        <translation>基準日付の指定</translation>
     </message>
     <message>
         <source>Automatic recognization of original time failed. Please specify the original date.</source>
-        <translation type="vanished">基準日時の自動認識が失敗しました。基準日時を指定して下さい。</translation>
+        <translation>基準日時の自動認識が失敗しました。基準日時を指定して下さい。</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="vanished">単位:</translation>
+        <translation>単位:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="vanished">days since 2014-01-01</translation>
+        <translation>days since 2014-01-01</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="vanished">基準日時:</translation>
+        <translation>基準日時:</translation>
     </message>
 </context>
 <context>
     <name>RawDataNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="vanished">次元のマッピング設定</translation>
+        <translation>次元のマッピング設定</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="vanished">値: </translation>
+        <translation>値: </translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="vanished">次元</translation>
+        <translation>次元</translation>
     </message>
 </context>
 <context>
     <name>RawDataNetcdfXbandImporter</name>
     <message>
         <source>X band MP rader data (*.*)</source>
-        <translation type="vanished">XバンドMPレーダーデータ (*.*)</translation>
+        <translation>XバンドMPレーダーデータ (*.*)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>X band MP rader data can be imported for grid conditions with dimension &quot;time&quot;.</source>
-        <translation type="vanished">XバンドMPレーダーデータは、「時間」次元を持つ格子属性にのみインポートできます。</translation>
+        <translation>XバンドMPレーダーデータは、「時間」次元を持つ格子属性にのみインポートできます。</translation>
     </message>
     <message>
         <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation type="vanished">XバンドMPレーダーデータは、「時間」次元を持つ格子属性にのみインポートできます。</translation>
+        <translation>XバンドMPレーダーデータは、「時間」次元を持つ格子属性にのみインポートできます。</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="vanished">情報</translation>
+        <translation>情報</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation type="vanished">フォルダ %2 内にある %1 個のファイルをインポートします。</translation>
+        <translation>フォルダ %2 内にある %1 個のファイルをインポートします。</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="vanished">「時間」次元の値が一致しません。</translation>
+        <translation>「時間」次元の値が一致しません。</translation>
     </message>
 </context>
 </TS>
