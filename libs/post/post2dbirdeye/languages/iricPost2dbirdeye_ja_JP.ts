@@ -124,6 +124,10 @@
         <translation>コンター</translation>
     </message>
     <message>
+        <source>Add...</source>
+        <translation>追加...</translation>
+    </message>
+    <message>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
         <source>Warning</source>
         <translation>警告</translation>

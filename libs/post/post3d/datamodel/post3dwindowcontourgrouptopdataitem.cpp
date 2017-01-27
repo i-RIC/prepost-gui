@@ -20,7 +20,7 @@
 
 #include <vtkPointData.h>
 
-Post3dWindowContourGroupTopDataItem::Post3dWindowContourGroupTopDataItem(Post3dWindowDataItem* p) : 
+Post3dWindowContourGroupTopDataItem::Post3dWindowContourGroupTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Contours"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_zScale {1}
 {
@@ -31,7 +31,7 @@ Post3dWindowContourGroupTopDataItem::Post3dWindowContourGroupTopDataItem(Post3dW
 		m_colorBarTitleMap.insert(name, name.c_str());
 	}
 
-	m_addAction = new QAction("Add...", this);
+	m_addAction = new QAction(tr("Add..."), this);
 	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 

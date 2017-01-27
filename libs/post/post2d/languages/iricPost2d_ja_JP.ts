@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="vanished">背景色</translation>
+        <translation>背景色</translation>
     </message>
 </context>
 <context>
@@ -684,7 +684,7 @@
     </message>
     <message>
         <source>MEASUREDDATAS</source>
-        <translation type="vanished">MEASUREDDATAS</translation>
+        <translation>MEASUREDDATAS</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="37"/>
@@ -711,7 +711,7 @@
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="vanished">コンター 物理量変更</translation>
+        <translation>コンター 物理量変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="601"/>
@@ -722,7 +722,7 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Fringe.</source>
-        <translation type="vanished">ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
+        <translation>ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="605"/>
@@ -741,6 +741,11 @@
         <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="22"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="31"/>
+        <source>Add...</source>
+        <translation>追加...</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="127"/>
@@ -796,7 +801,7 @@
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="vanished">パーティクル</translation>
+        <translation>パーティクル</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="63"/>
@@ -1201,11 +1206,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Particle Display Setting</source>
-        <translation type="vanished">パーティクル表示設定の編集</translation>
+        <translation>パーティクル表示設定の編集</translation>
     </message>
     <message>
         <source>Particles (auto)</source>
-        <translation type="vanished">パーティクル (自動)</translation>
+        <translation>パーティクル (自動)</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
@@ -1235,7 +1240,7 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowRawDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="vanished">地理情報</translation>
+        <translation>地理情報</translation>
     </message>
 </context>
 <context>
@@ -1488,31 +1493,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="vanished">コンターの設定変更</translation>
+        <translation>コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="vanished">コンター 物理量変更</translation>
+        <translation>コンター 物理量変更</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="vanished">矢印 物理量変更</translation>
+        <translation>矢印 物理量変更</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="vanished">ベクトルの設定変更</translation>
+        <translation>ベクトルの設定変更</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
-        <translation type="vanished">パーティクル 物理量の変更</translation>
+        <translation>パーティクル 物理量の変更</translation>
     </message>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="vanished">パーティクル設定</translation>
+        <translation>パーティクル設定</translation>
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation type="vanished">流線 物理量の変更</translation>
+        <translation>流線 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="171"/>
@@ -1521,7 +1526,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Background Color</source>
-        <translation type="vanished">背景色の設定</translation>
+        <translation>背景色の設定</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>

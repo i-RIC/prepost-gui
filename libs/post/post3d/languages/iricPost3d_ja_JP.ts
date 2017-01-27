@@ -256,6 +256,11 @@
         <translation>コンター</translation>
     </message>
     <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="34"/>
+        <source>Add...</source>
+        <translation>追加...</translation>
+    </message>
+    <message>
         <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="129"/>
         <source>Warning</source>
         <translation>警告</translation>

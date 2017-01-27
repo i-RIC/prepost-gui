@@ -28,7 +28,7 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
 
-	m_addAction = new QAction("Add...", this);
+	m_addAction = new QAction(tr("Add..."), this);
 	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
