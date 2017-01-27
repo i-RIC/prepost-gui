@@ -16,11 +16,6 @@
         <source>Post-processing (3D): %1</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../post3dwindow.cpp" line="184"/>
-        <source>Background Color</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Post3dWindowActionManager</name>
@@ -200,12 +195,12 @@
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="44"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="75"/>
         <source>Contour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="416"/>
         <source>Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -250,14 +245,32 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="24"/>
+        <source>Contours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="129"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="129"/>
+        <source>A maximum of four contours may be defined.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -812,7 +825,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="202"/>
+        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="196"/>
         <source>Update Grid Shape Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -832,13 +845,19 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="158"/>
-        <source>Edit Background Color</source>
+        <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <source>Update Particles Scalar Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
-        <source>Update Particles Scalar Setting</source>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="48"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="63"/>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="187"/>
+        <source>Create Contour</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -71,22 +71,22 @@
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="107"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="108"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="107"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="108"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="176"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="182"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="176"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="182"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -94,7 +94,7 @@
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="22"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="24"/>
         <source>Grid shape</source>
         <translation type="unfinished"></translation>
     </message>
@@ -107,26 +107,44 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="362"/>
-        <source>Contour Physical Value Change</source>
+        <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="8"/>
+        <source>Update Contour Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="25"/>
+        <source>Contours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
-        <source>Update Contour Setting</source>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
+        <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="207"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="209"/>
         <source>Update Grid Shape Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../post2dbirdeyewindow.cpp" line="146"/>
         <source>Edit Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="180"/>
+        <source>Create Contour</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

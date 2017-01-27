@@ -30,23 +30,33 @@
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="26"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="24"/>
+        <source>GDAL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="33"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="42"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="42"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation>GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporter</name>
+    <message>
+        <location filename="../geodatanetcdfimporter.cpp" line="22"/>
+        <source>NetCDF</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../geodatanetcdfimporter.cpp" line="31"/>
         <source>NetCDF file (*.nc)</source>
@@ -125,36 +135,41 @@
     <name>GeoDataNetcdfXbandImporter</name>
     <message>
         <location filename="../geodatanetcdfxbandimporter.cpp" line="21"/>
+        <source>XBand MP RADER data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="30"/>
         <source>X band MP rader data (*.*)</source>
         <translation>XバンドMPレーダーデータ (*.*)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="39"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="48"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="39"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="48"/>
         <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation>XバンドMPレーダーデータは、「時間」次元を持つ格子属性にのみインポートできます。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="59"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="59"/>
         <source>%1 files in the folder %2 are imported.</source>
         <translation>フォルダ %2 内にある %1 個のファイルをインポートします。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="140"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="151"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="140"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="151"/>
         <source>Dimension values for time mismatch.</source>
         <translation>「時間」次元の値が一致しません。</translation>
     </message>

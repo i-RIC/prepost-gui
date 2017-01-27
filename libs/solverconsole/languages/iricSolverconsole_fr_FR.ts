@@ -4,115 +4,115 @@
 <context>
     <name>SolverConsoleWindow</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="42"/>
+        <location filename="../solverconsolewindow.cpp" line="37"/>
         <source>&amp;Export solver console log...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="95"/>
+        <location filename="../solverconsolewindow.cpp" line="129"/>
         <source>Show Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="96"/>
-        <location filename="../solverconsolewindow.cpp" line="107"/>
+        <location filename="../solverconsolewindow.cpp" line="130"/>
+        <location filename="../solverconsolewindow.cpp" line="141"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="96"/>
+        <location filename="../solverconsolewindow.cpp" line="130"/>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="100"/>
+        <location filename="../solverconsolewindow.cpp" line="134"/>
         <source>The simulation has result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="100"/>
+        <location filename="../solverconsolewindow.cpp" line="134"/>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="107"/>
+        <location filename="../solverconsolewindow.cpp" line="141"/>
         <source>Error occured. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="82"/>
-        <location filename="../solverconsolewindow.cpp" line="111"/>
+        <location filename="../solverconsolewindow.cpp" line="116"/>
+        <location filename="../solverconsolewindow.cpp" line="145"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="82"/>
+        <location filename="../solverconsolewindow.cpp" line="116"/>
         <source>This project is opened in post only mode. You can not run the solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="111"/>
+        <location filename="../solverconsolewindow.cpp" line="145"/>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="125"/>
+        <location filename="../solverconsolewindow.cpp" line="159"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="125"/>
+        <location filename="../solverconsolewindow.cpp" line="159"/>
         <source>Solver executable file %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="173"/>
+        <location filename="../solverconsolewindow.cpp" line="180"/>
         <source>Confirm Solver Termination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="174"/>
+        <location filename="../solverconsolewindow.cpp" line="181"/>
         <source>Do you really want to kill the solver?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="235"/>
-        <location filename="../solverconsolewindow.cpp" line="238"/>
+        <location filename="../solverconsolewindow.cpp" line="233"/>
+        <location filename="../solverconsolewindow.cpp" line="236"/>
         <source>Solver Finished</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="235"/>
+        <location filename="../solverconsolewindow.cpp" line="233"/>
         <source>The solver finished calculation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="238"/>
+        <location filename="../solverconsolewindow.cpp" line="236"/>
         <source>The solver finished abnormally.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="247"/>
+        <location filename="../solverconsolewindow.cpp" line="245"/>
         <source>Solver Console</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="253"/>
+        <location filename="../solverconsolewindow.cpp" line="251"/>
         <source>running</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="255"/>
+        <location filename="../solverconsolewindow.cpp" line="253"/>
         <source>stopped</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="257"/>
+        <location filename="../solverconsolewindow.cpp" line="255"/>
         <source>Solver Console [%1] (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="293"/>
+        <location filename="../solverconsolewindow.cpp" line="345"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -125,32 +125,32 @@
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="134"/>
         <source>Select File to Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="134"/>
         <source>Text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="140"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
         <source>Exporting solver console log...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="148"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="145"/>
         <source>Solver console log is successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="153"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="150"/>
         <source>Fail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="153"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="150"/>
         <source>Exporting solver console log failed.</source>
         <translation type="unfinished"></translation>
     </message>

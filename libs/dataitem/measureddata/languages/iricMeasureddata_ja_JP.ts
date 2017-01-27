@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="26"/>
+        <location filename="../measureddatafiledataitem.cpp" line="34"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="43"/>
+        <location filename="../measureddatafiledataitem.cpp" line="46"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="74"/>
+        <location filename="../measureddatafiledataitem.cpp" line="79"/>
         <source>CSV file (*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="75"/>
+        <location filename="../measureddatafiledataitem.cpp" line="80"/>
         <source>Export Measured Data</source>
         <translation>実測値のエクスポート</translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="82"/>
+        <location filename="../measureddatafiledataitem.cpp" line="87"/>
         <source>Measured Data successfully exported to %1.</source>
         <translation>実測値は、 %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="84"/>
+        <location filename="../measureddatafiledataitem.cpp" line="89"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -37,12 +37,12 @@
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
-        <location filename="../measureddatapointgroupdataitem.cpp" line="46"/>
+        <location filename="../measureddatapointgroupdataitem.cpp" line="378"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
     <message>
-        <location filename="../measureddatapointgroupdataitem.cpp" line="418"/>
+        <location filename="../measureddatapointgroupdataitem.cpp" line="479"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
@@ -75,12 +75,12 @@
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../measureddatapointsettingdialog.cpp" line="105"/>
+        <location filename="../measureddatapointsettingdialog.cpp" line="109"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../measureddatapointsettingdialog.cpp" line="105"/>
+        <location filename="../measureddatapointsettingdialog.cpp" line="109"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -88,12 +88,12 @@
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
-        <location filename="../measureddatavectorgroupdataitem.cpp" line="41"/>
+        <location filename="../measureddatavectorgroupdataitem.cpp" line="330"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../measureddatavectorgroupdataitem.cpp" line="92"/>
+        <location filename="../measureddatavectorgroupdataitem.cpp" line="382"/>
         <source>Arrow Physical Value Change</source>
         <translation>ベクトル 物理量変更</translation>
     </message>
