@@ -12,23 +12,23 @@
 <context>
     <name>BackgroundImageInfo</name>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="79"/>
-        <location filename="../project/backgroundimageinfo.cpp" line="81"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="80"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="82"/>
         <source>Fix Image position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="129"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="130"/>
         <source>Unable to read image %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="229"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="229"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,18 +137,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="89"/>
+        <location filename="../pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp" line="5"/>
         <source>Background edit value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="130"/>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="141"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="90"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="101"/>
         <source>Edit %1 default value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="131"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="91"/>
         <source>Please input new default value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1301,7 +1301,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="275"/>
+        <location filename="../project/private/backgroundimageinfo_setactorpropertycommand.cpp" line="4"/>
         <source>Reallocate Background Image</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1314,6 +1314,11 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="66"/>
         <source>(Undefined)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../bgcolor/backgroundcoloreditinterface.cpp" line="15"/>
+        <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1415,23 +1420,23 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="114"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="113"/>
         <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="141"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="141"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="194"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="193"/>
         <source>Background Image change</source>
         <translation type="unfinished"></translation>
     </message>

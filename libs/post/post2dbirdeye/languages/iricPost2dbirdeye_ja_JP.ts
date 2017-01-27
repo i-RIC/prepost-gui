@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -108,7 +108,7 @@
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="8"/>
@@ -125,7 +125,7 @@
     </message>
     <message>
         <source>Add...</source>
-        <translation>追加...</translation>
+        <translation type="vanished">追加...</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
@@ -147,11 +147,11 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
         <location filename="../post2dbirdeyewindow.cpp" line="146"/>

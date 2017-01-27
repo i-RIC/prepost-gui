@@ -35,4 +35,12 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>StandardErrorMessages</name>
+    <message>
+        <location filename="../standarderrormessages.cpp" line="5"/>
+        <source>Opening file %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

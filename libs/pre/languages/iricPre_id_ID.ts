@@ -112,13 +112,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="34"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="32"/>
         <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="169"/>
-        <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -368,7 +363,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorDataModel</name>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="143"/>
-        <location filename="../preprocessordatamodel.cpp" line="1212"/>
+        <location filename="../preprocessordatamodel.cpp" line="1266"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
@@ -566,29 +561,30 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="844"/>
+        <location filename="../preprocessordatamodel.cpp" line="874"/>
         <source>(No data to import)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="914"/>
+        <location filename="../preprocessordatamodel.cpp" line="968"/>
         <source>(No data to export)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="983"/>
+        <location filename="../preprocessordatamodel.cpp" line="1037"/>
         <source>(No algorithm is selected yet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1040"/>
+        <location filename="../preprocessordatamodel.cpp" line="1094"/>
         <source>Add New %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="132"/>
-        <location filename="../preprocessordatamodel.cpp" line="1107"/>
-        <location filename="../preprocessordatamodel.cpp" line="1133"/>
-        <location filename="../preprocessordatamodel.cpp" line="1189"/>
+        <location filename="../preprocessordatamodel.cpp" line="1161"/>
+        <location filename="../preprocessordatamodel.cpp" line="1187"/>
+        <location filename="../preprocessordatamodel.cpp" line="1243"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -603,53 +599,53 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1107"/>
+        <location filename="../preprocessordatamodel.cpp" line="1161"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1133"/>
+        <location filename="../preprocessordatamodel.cpp" line="1187"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1147"/>
-        <location filename="../preprocessordatamodel.cpp" line="1216"/>
+        <location filename="../preprocessordatamodel.cpp" line="1201"/>
+        <location filename="../preprocessordatamodel.cpp" line="1270"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1147"/>
+        <location filename="../preprocessordatamodel.cpp" line="1201"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1189"/>
+        <location filename="../preprocessordatamodel.cpp" line="1243"/>
         <source>There is no geographic data to import this hydraulic data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1198"/>
+        <location filename="../preprocessordatamodel.cpp" line="1252"/>
         <source>Select geographic data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1199"/>
+        <location filename="../preprocessordatamodel.cpp" line="1253"/>
         <source>Please select the geographic data to import hydraulic data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1216"/>
+        <location filename="../preprocessordatamodel.cpp" line="1270"/>
         <source>Importing %1 succeeded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1220"/>
+        <location filename="../preprocessordatamodel.cpp" line="1274"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1220"/>
+        <location filename="../preprocessordatamodel.cpp" line="1274"/>
         <source>Importing %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -698,130 +694,153 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="70"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="71"/>
         <source>&amp;Import...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="74"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="75"/>
+        <source>&amp;Import from web...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="79"/>
         <source>Delete &amp;All...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="77"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="82"/>
         <source>Export All Polygons...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="80"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="85"/>
         <source>&amp;Color Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="82"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="87"/>
         <source>Set Up Scalarbar...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="116"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="122"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="169"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="176"/>
         <source>All importable files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="174"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="181"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="962"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="193"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="298"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="430"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1136"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="193"/>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="205"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="251"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="208"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="212"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="353"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="357"/>
         <source>Import failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="208"/>
         <source>Importing data from %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="205"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="212"/>
         <source>%1 contains no data to import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="217"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="370"/>
         <source>Importing data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="226"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="378"/>
         <source>Canceled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="226"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="378"/>
         <source>Importing canceled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="238"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="246"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="238"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="246"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="251"/>
-        <source>Importing data from %1 failed. If you press Ignore button, this data will be ignored, and the try to import the remaining datas.</source>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="298"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="430"/>
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="339"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="353"/>
+        <source>Importing data failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="357"/>
+        <source>No data to import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="486"/>
         <source>Select data to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="339"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="486"/>
         <source>Please select which data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="723"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="870"/>
         <source>%1 Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="907"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1081"/>
         <source>Export Polygons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="907"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1081"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="962"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1136"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1794,23 +1813,18 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorWindow</name>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="43"/>
+        <location filename="../preprocessorwindow.cpp" line="42"/>
         <source>Pre-processing Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="172"/>
+        <location filename="../preprocessorwindow.cpp" line="171"/>
         <source>Grid is not created or imported yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="178"/>
+        <location filename="../preprocessorwindow.cpp" line="177"/>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preprocessorwindow.cpp" line="318"/>
-        <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1989,13 +2003,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="295"/>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="141"/>
-        <source>Edit Background Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preprocessorwindow.cpp" line="327"/>
+        <location filename="../preprocessorwindow.cpp" line="299"/>
         <source>Close PreProcessor Window</source>
         <translation type="unfinished"></translation>
     </message>

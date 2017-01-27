@@ -188,36 +188,36 @@
         <translation>コントローラー</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="421"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="450"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="431"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="460"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="424"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="463"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="434"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="473"/>
         <source>I</source>
         <translation>I</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="427"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="466"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="437"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="476"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="430"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="469"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="440"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="479"/>
         <source>K</source>
         <translation>K</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="452"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="462"/>
         <source>Count</source>
         <translation>カウント</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="459"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="469"/>
         <source>Distance</source>
         <translation>距離</translation>
     </message>
