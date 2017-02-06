@@ -112,13 +112,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="34"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="32"/>
         <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="169"/>
-        <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -739,7 +734,8 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="962"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="291"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="970"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -751,7 +747,6 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="205"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="251"/>
         <source>Import failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -766,62 +761,63 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="217"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
         <source>Importing data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="226"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="227"/>
         <source>Canceled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="226"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="227"/>
         <source>Importing canceled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="238"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="239"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="238"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="239"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="251"/>
-        <source>Importing data from %1 failed. If you press Ignore button, this data will be ignored, and the try to import the remaining datas.</source>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="291"/>
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="339"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="347"/>
         <source>Select data to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="339"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="347"/>
         <source>Please select which data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="723"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="731"/>
         <source>%1 Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="907"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="915"/>
         <source>Export Polygons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="907"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="915"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="962"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="970"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1794,23 +1790,18 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorWindow</name>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="43"/>
+        <location filename="../preprocessorwindow.cpp" line="42"/>
         <source>Pre-processing Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="172"/>
+        <location filename="../preprocessorwindow.cpp" line="171"/>
         <source>Grid is not created or imported yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="178"/>
+        <location filename="../preprocessorwindow.cpp" line="177"/>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preprocessorwindow.cpp" line="318"/>
-        <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1989,13 +1980,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="295"/>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="141"/>
-        <source>Edit Background Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preprocessorwindow.cpp" line="327"/>
+        <location filename="../preprocessorwindow.cpp" line="299"/>
         <source>Close PreProcessor Window</source>
         <translation type="unfinished"></translation>
     </message>

@@ -237,7 +237,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 		if (geodata->requestCoordinateSystem()) {
 			if (projectData()->mainfile()->coordinateSystem() == nullptr) {
 				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coodrinate system first."), QMessageBox::Ok);
-				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog();
+				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog(true);
 				if (dialogRet == QDialog::Rejected) {
 					delete item;
 					item = nullptr;
