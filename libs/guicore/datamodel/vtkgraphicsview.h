@@ -96,10 +96,12 @@ private:
 	QPixmap m_zoomPixmap;
 	QPixmap m_rotatePixmap;
 	QPixmap m_movePixmap;
+	QPixmap m_rubberBandPixmap;
 
 	QCursor m_zoomCursor;
 	QCursor m_rotateCursor;
 	QCursor m_moveCursor;
+	QCursor m_rubberBandCursor;
 
 	QImage m_logoImage;
 

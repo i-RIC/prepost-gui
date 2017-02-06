@@ -41,10 +41,12 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent)
 	m_zoomPixmap = QPixmap(":/libs/guibase/images/cursorZoom.png");
 	m_rotatePixmap = QPixmap(":/libs/guibase/images/cursorRotate.png");
 	m_movePixmap = QPixmap(":/libs/guibase/images/cursorMove.png");
+	m_rubberBandPixmap = QPixmap(":/libs/guicore/images/cursorImageZoom.png");
 
 	m_zoomCursor = QCursor(m_zoomPixmap);
 	m_rotateCursor = QCursor(m_rotatePixmap);
 	m_moveCursor = QCursor(m_movePixmap);
+	m_rubberBandCursor = QCursor(m_rubberBandPixmap);
 
 	m_mainRenderer = vtkRenderer::New();
 	m_mainRenderer->SetBackground(1.0, 1.0, 1.0);
@@ -138,6 +140,7 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 		switch (event->button()) {
 		case Qt::LeftButton:
 			if ((event->modifiers() & Qt::ShiftModifier) != 0) {
+				setCursor(m_rubberBandCursor);
 				m_styleBackUp = iren->GetInteractorStyle();
 				iren->SetInteractorStyle(m_rubberBarStyle);
 				iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
