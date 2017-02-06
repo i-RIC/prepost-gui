@@ -24,3 +24,23 @@ int GeoDataNetcdfIntegerImporter::ncGetMissingValue(int ncid, int varid, int* va
 	*value = NC_FILL_INT;
 	return NC_NOERR;
 }
+
+int GeoDataNetcdfIntegerImporter::ncGetScaleFactorValue(int ncid, int varid, int* value) const
+{
+	int ret;
+	ret = nc_get_att_int(ncid, varid, "scale_factor", value);
+	if (ret == NC_NOERR) {return NC_NOERR;}
+
+	*value = 1;
+	return NC_NOERR;
+}
+
+int GeoDataNetcdfIntegerImporter::ncGetAddOffsetValue(int ncid, int varid, int* value) const
+{
+	int ret;
+	ret = nc_get_att_int(ncid, varid, "add_offset", value);
+	if (ret == NC_NOERR) {return NC_NOERR;}
+
+	*value = 0;
+	return NC_NOERR;
+}
