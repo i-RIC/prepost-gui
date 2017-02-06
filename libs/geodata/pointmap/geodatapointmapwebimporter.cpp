@@ -156,7 +156,7 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	*count = 1;
 	auto mainfile = item->projectData()->mainfile();
 	if (mainfile->coordinateSystem() == nullptr) {
-		int dialogRet = mainfile->showCoordinateSystemDialog();
+		int dialogRet = mainfile->showCoordinateSystemDialog(true);
 		if (dialogRet == QDialog::Rejected) {
 			return false;
 		}
