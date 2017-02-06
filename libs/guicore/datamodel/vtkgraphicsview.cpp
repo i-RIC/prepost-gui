@@ -12,6 +12,7 @@
 #include <vtkActor.h>
 #include <vtkRenderWindow.h>
 #include <vtkCamera.h>
+#include <vtkInteractorStyleRubberBandZoom.h>
 #include <vtkMath.h>
 #include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
@@ -33,6 +34,8 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent)
 {
 	m_isViewChanging = false;
 	m_interactive = false;
+	m_isRubberBandZooming = false;
+	m_rubberBarStyle = vtkInteractorStyleRubberBandZoom::New();
 
 	// Set cursors for mouse view change events.
 	m_zoomPixmap = QPixmap(":/libs/guibase/images/cursorZoom.png");
@@ -75,6 +78,7 @@ VTKGraphicsView::~VTKGraphicsView()
 {
 	m_mainRenderer->Delete();
 	m_logoActor->Delete();
+	m_rubberBarStyle->Delete();
 }
 
 void VTKGraphicsView::scale(double s)
@@ -126,15 +130,22 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 
 	// VTK Interactor implementation is used only for view changes.
 	// view changes are done with Ctrl button pressed.
-	if (event->modifiers() == Qt::ControlModifier) {
+	if ((event->modifiers() & Qt::ControlModifier) != 0) {
 		m_isViewChanging = true;
 
 		// give interactor the event information
 		iren->SetEventInformationFlipY(event->x(), event->y(), 0, 0, 0, event->type() == QEvent::MouseButtonDblClick ? 1 : 0);
 		switch (event->button()) {
 		case Qt::LeftButton:
-			setCursor(m_moveCursor);
-			iren->InvokeEvent(vtkCommand::MiddleButtonPressEvent, event);
+			if ((event->modifiers() & Qt::ShiftModifier) != 0) {
+				m_styleBackUp = iren->GetInteractorStyle();
+				iren->SetInteractorStyle(m_rubberBarStyle);
+				iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
+				m_isRubberBandZooming = true;
+			} else {
+				setCursor(m_moveCursor);
+				iren->InvokeEvent(vtkCommand::MiddleButtonPressEvent, event);
+			}
 			break;
 		case Qt::MidButton:
 			setCursor(m_zoomCursor);
@@ -179,6 +190,11 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 	this->unsetCursor();
 	if (m_activeDataItem != nullptr) {
 		if (m_isViewChanging) {
+			if (m_isRubberBandZooming) {
+				iren->InvokeEvent(vtkCommand::LeftButtonReleaseEvent, event);
+				m_isRubberBandZooming = false;
+				this->mRenWin->GetInteractor()->SetInteractorStyle(m_styleBackUp);
+			}
 			m_activeDataItem->viewOperationEnded(this);
 			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*>(m_model);
 			m->viewOperationEndedGlobal();

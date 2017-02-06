@@ -150,6 +150,7 @@ LIBS += \
 	-lvtkFiltersSources-6.1 \
 	-lvtkFiltersTexture-6.1 \
 	-lvtkGUISupportQt-6.1 \
+	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
 	-lvtkIOImage-6.1 \
 	-lvtkIOCore-6.1 \
