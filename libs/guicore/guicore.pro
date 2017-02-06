@@ -294,6 +294,7 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
+           datamodel/private/vtkgraphicsview_impl.h \
            misc/private/cgnslinkfollower_impl.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \

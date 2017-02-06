@@ -17,19 +17,19 @@ VTK3DGraphicsView::VTK3DGraphicsView(QWidget* parent)
 
 void VTK3DGraphicsView::fitInView()
 {
-	m_mainRenderer->ResetCamera();
+	mainRenderer()->ResetCamera();
 	update2Ds();
 }
 
 void VTK3DGraphicsView::rotate(double r)
 {
-	m_mainRenderer->GetActiveCamera()->Roll(r);
+	mainRenderer()->GetActiveCamera()->Roll(r);
 }
 
 void VTK3DGraphicsView::resetRoll()
 {
-	double angle = m_mainRenderer->GetActiveCamera()->GetRoll();
-	m_mainRenderer->GetActiveCamera()->Roll(-angle);
+	double angle = mainRenderer()->GetActiveCamera()->GetRoll();
+	mainRenderer()->GetActiveCamera()->Roll(-angle);
 }
 
 void VTK3DGraphicsView::toXYPlane()
@@ -43,7 +43,7 @@ void VTK3DGraphicsView::toXYPlane()
 	newpos[1] = focal[1];
 	newpos[2] = focal[2] + dist;
 
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->SetPosition(newpos);
 	camera->SetViewUp(0, 1, 0);
 }
@@ -59,7 +59,7 @@ void VTK3DGraphicsView::toYZPlane()
 	newpos[1] = focal[1];
 	newpos[2] = focal[2];
 
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->SetPosition(newpos);
 	camera->SetViewUp(0, 0, 1);
 }
@@ -75,14 +75,14 @@ void VTK3DGraphicsView::toZXPlane()
 	newpos[1] = focal[1] - dist;
 	newpos[2] = focal[2];
 
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->SetPosition(newpos);
 	camera->SetViewUp(0, 0, 1);
 }
 
 void VTK3DGraphicsView::getFocalPointAndDistance(double focal[3], double* distance)
 {
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	double pos[3];
 	camera->GetFocalPoint(focal);
 	camera->GetPosition(pos);
@@ -96,13 +96,14 @@ double VTK3DGraphicsView::stdDistance(int pixels)
 	double x0, y0, z0, x1, y1, z1;
 	x0 = 0; y0 = 0; z0 = 0;
 	x1 = pixels; y1 = 0; z1 = 0;
-	m_mainRenderer->ViewportToNormalizedViewport(x0, y0);
-	m_mainRenderer->NormalizedViewportToView(x0, y0, z0);
-	m_mainRenderer->ViewToWorld(x0, y0, z0);
+	auto r = mainRenderer();
+	r->ViewportToNormalizedViewport(x0, y0);
+	r->NormalizedViewportToView(x0, y0, z0);
+	r->ViewToWorld(x0, y0, z0);
 
-	m_mainRenderer->ViewportToNormalizedViewport(x1, y1);
-	m_mainRenderer->NormalizedViewportToView(x1, y1, z1);
-	m_mainRenderer->ViewToWorld(x1, y1, z1);
+	r->ViewportToNormalizedViewport(x1, y1);
+	r->NormalizedViewportToView(x1, y1, z1);
+	r->ViewToWorld(x1, y1, z1);
 
 	QVector3D v0(x0, y0, z0);
 	QVector3D v1(x1, y1, z1);
@@ -115,9 +116,8 @@ void VTK3DGraphicsView::translate(int x, int y)
 	double position[3];
 	double focalpoint[3];
 	double viewup[3];
-	double s = m_mainRenderer->GetActiveCamera()->GetParallelScale();
-//	double theta = m_mainRenderer->GetActiveCamera()->GetRoll() * M_PI /180;
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	double s = mainRenderer()->GetActiveCamera()->GetParallelScale();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->GetPosition(position);
 	camera->GetFocalPoint(focalpoint);
 	camera->GetViewUp(viewup);
@@ -181,7 +181,7 @@ void VTK3DGraphicsView::cameraToZXPlane()
 
 void VTK3DGraphicsView::updateProjectionMenu(QAction* parallel, QAction* perspective)
 {
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	if (camera->GetParallelProjection()) {
 		parallel->setChecked(true);
 	} else {
@@ -191,13 +191,13 @@ void VTK3DGraphicsView::updateProjectionMenu(QAction* parallel, QAction* perspec
 
 void VTK3DGraphicsView::parallelProjection()
 {
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->ParallelProjectionOn();
 }
 
 void VTK3DGraphicsView::perspectiveProjection()
 {
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->ParallelProjectionOff();
 }
 

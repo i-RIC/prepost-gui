@@ -2,6 +2,7 @@
 #include <cmath>
 
 #include "vtkgraphicsview.h"
+#include "private/vtkgraphicsview_impl.h"
 #include "graphicswindowdataitem.h"
 #include "graphicswindowdatamodel.h"
 
@@ -29,90 +30,118 @@
 #include <QPainter>
 #include <vtkQImageToImageSource.h>
 
-VTKGraphicsView::VTKGraphicsView(QWidget* parent)
-	: QVTKWidget(parent)
+VTKGraphicsView::Impl::Impl() :
+	m_activeDataItem {nullptr},
+	m_model {nullptr},
+
+	m_rubberBarStyle(vtkInteractorStyleRubberBandZoom::New()),
+	m_styleBackUp(),
+	m_camera(vtkCamera::New()),
+	m_mainRenderer(vtkRenderer::New()),
+	m_logoActor(vtkActor2D::New()),
+
+	m_logoImage(":/libs/guicore/images/logo.png"),
+
+	m_zoomPixmap(":/libs/guibase/images/cursorZoom.png"),
+	m_rotatePixmap(":/libs/guibase/images/cursorRotate.png"),
+	m_movePixmap(":/libs/guibase/images/cursorMove.png"),
+	m_rubberBandPixmap(":/libs/guicore/images/cursorImageZoom.png"),
+
+	m_zoomCursor(m_zoomPixmap),
+	m_rotateCursor(m_rotatePixmap),
+	m_moveCursor(m_movePixmap),
+	m_rubberBandCursor(m_rubberBandPixmap),
+
+	m_interactive {false},
+	m_isViewChanging {false},
+	m_isRubberBandZooming {false}
+{}
+
+VTKGraphicsView::Impl::~Impl()
 {
-	m_isViewChanging = false;
-	m_interactive = false;
-	m_isRubberBandZooming = false;
-	m_rubberBarStyle = vtkInteractorStyleRubberBandZoom::New();
+	m_rubberBarStyle->Delete();
+	m_mainRenderer->Delete();
+	m_logoActor->Delete();
+}
 
-	// Set cursors for mouse view change events.
-	m_zoomPixmap = QPixmap(":/libs/guibase/images/cursorZoom.png");
-	m_rotatePixmap = QPixmap(":/libs/guibase/images/cursorRotate.png");
-	m_movePixmap = QPixmap(":/libs/guibase/images/cursorMove.png");
-	m_rubberBandPixmap = QPixmap(":/libs/guicore/images/cursorImageZoom.png");
+VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
+	QVTKWidget(parent),
+	impl {new Impl()}
+{
+	impl->m_mainRenderer->SetBackground(1.0, 1.0, 1.0);
 
-	m_zoomCursor = QCursor(m_zoomPixmap);
-	m_rotateCursor = QCursor(m_rotatePixmap);
-	m_moveCursor = QCursor(m_movePixmap);
-	m_rubberBandCursor = QCursor(m_rubberBandPixmap);
-
-	m_mainRenderer = vtkRenderer::New();
-	m_mainRenderer->SetBackground(1.0, 1.0, 1.0);
-
-	m_logoImage = QImage(":/libs/guicore/images/logo.png");
 	vtkSmartPointer<vtkQImageToImageSource> imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
-	imgToImg->SetQImage(&m_logoImage);
+	imgToImg->SetQImage(&(impl->m_logoImage));
 	vtkSmartPointer<vtkImageMapper> imgMapper = vtkSmartPointer<vtkImageMapper>::New();
 	imgMapper->SetColorWindow(255);
 	imgMapper->SetColorLevel(127.5);
 	imgMapper->SetInputConnection(imgToImg->GetOutputPort());
 
 	// setup logo mapper
-	m_logoActor = vtkActor2D::New();
-	m_logoActor->SetMapper(imgMapper);
-	m_mainRenderer->AddActor2D(m_logoActor);
+	impl->m_logoActor->SetMapper(imgMapper);
+	impl->m_mainRenderer->AddActor2D(impl->m_logoActor);
 
 	vtkRenderWindow* renderWindow = GetRenderWindow();
 	renderWindow->SetMultiSamples(0);
-	renderWindow->AddRenderer(m_mainRenderer);
+	renderWindow->AddRenderer(impl->m_mainRenderer);
 	renderWindow->SetStereoTypeToDresden();
-
-	m_camera = vtkCamera::New();
 
 	// Set the camera to be paralell projection, because it suits
 	// for 2D graphics.
-	m_mainRenderer->GetActiveCamera()->ParallelProjectionOn();
+	impl->m_mainRenderer->GetActiveCamera()->ParallelProjectionOn();
 }
 
 VTKGraphicsView::~VTKGraphicsView()
 {
-	m_mainRenderer->Delete();
-	m_logoActor->Delete();
-	m_rubberBarStyle->Delete();
+	delete impl;
+}
+
+
+void VTKGraphicsView::setModel(GraphicsWindowSimpleDataModel* m)
+{
+	impl->m_model = m;
+}
+
+GraphicsWindowDataItem* VTKGraphicsView::activeDataItem() const
+{
+	return impl->m_activeDataItem;
+}
+
+void VTKGraphicsView::setActiveDataItem(GraphicsWindowDataItem* i)
+{
+	impl->m_activeDataItem = i;
 }
 
 void VTKGraphicsView::scale(double s)
 {
 	setupCamera();
-	m_mainRenderer->GetActiveCamera()->Zoom(s);
+	impl->m_mainRenderer->GetActiveCamera()->Zoom(s);
 	update2Ds();
 }
 
 void VTKGraphicsView::keyPressEvent(QKeyEvent* event)
 {
-	if (m_activeDataItem != nullptr) {
-		m_activeDataItem->keyPressEvent(event, this);
-	} else if (m_interactive) {
+	if (impl->m_activeDataItem != nullptr) {
+		impl->m_activeDataItem->keyPressEvent(event, this);
+	} else if (impl->m_interactive) {
 		QVTKWidget::keyPressEvent(event);
 	}
 }
 
 void VTKGraphicsView::keyReleaseEvent(QKeyEvent* event)
 {
-	if (m_activeDataItem != nullptr) {
-		m_activeDataItem->keyReleaseEvent(event, this);
-	} else if (m_interactive) {
+	if (impl->m_activeDataItem != nullptr) {
+		impl->m_activeDataItem->keyReleaseEvent(event, this);
+	} else if (impl->m_interactive) {
 		QVTKWidget::keyReleaseEvent(event);
 	}
 }
 
 void VTKGraphicsView::mouseDoubleClickEvent(QMouseEvent* event)
 {
-	if (m_activeDataItem != nullptr) {
-		m_activeDataItem->mouseDoubleClickEvent(event, this);
-	} else if (m_interactive) {
+	if (impl->m_activeDataItem != nullptr) {
+		impl->m_activeDataItem->mouseDoubleClickEvent(event, this);
+	} else if (impl->m_interactive) {
 		QVTKWidget::mouseDoubleClickEvent(event);
 	}
 }
@@ -133,29 +162,29 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 	// VTK Interactor implementation is used only for view changes.
 	// view changes are done with Ctrl button pressed.
 	if ((event->modifiers() & Qt::ControlModifier) != 0) {
-		m_isViewChanging = true;
+		impl->m_isViewChanging = true;
 
 		// give interactor the event information
 		iren->SetEventInformationFlipY(event->x(), event->y(), 0, 0, 0, event->type() == QEvent::MouseButtonDblClick ? 1 : 0);
 		switch (event->button()) {
 		case Qt::LeftButton:
 			if ((event->modifiers() & Qt::ShiftModifier) != 0) {
-				setCursor(m_rubberBandCursor);
-				m_styleBackUp = iren->GetInteractorStyle();
-				iren->SetInteractorStyle(m_rubberBarStyle);
+				setCursor(impl->m_rubberBandCursor);
+				impl->m_styleBackUp = iren->GetInteractorStyle();
+				iren->SetInteractorStyle(impl->m_rubberBarStyle);
 				iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
-				m_isRubberBandZooming = true;
+				impl->m_isRubberBandZooming = true;
 			} else {
-				setCursor(m_moveCursor);
+				setCursor(impl->m_moveCursor);
 				iren->InvokeEvent(vtkCommand::MiddleButtonPressEvent, event);
 			}
 			break;
 		case Qt::MidButton:
-			setCursor(m_zoomCursor);
+			setCursor(impl->m_zoomCursor);
 			iren->InvokeEvent(vtkCommand::RightButtonPressEvent, event);
 			break;
 		case Qt::RightButton:
-			setCursor(m_rotateCursor);
+			setCursor(impl->m_rotateCursor);
 			iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
 			break;
 		default:
@@ -164,9 +193,9 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 		}
 	} else {
 		// the mouse press event is informed to the active data item.
-		if (m_activeDataItem != nullptr) {
-			m_activeDataItem->mousePressEvent(event, this);
-		} else if (m_interactive) {
+		if (impl->m_activeDataItem != nullptr) {
+			impl->m_activeDataItem->mousePressEvent(event, this);
+		} else if (impl->m_interactive) {
 			vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 			vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 			i->SetInteractorStyle(nullptr);
@@ -191,27 +220,27 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 
 	// invoke appropriate vtk event
 	this->unsetCursor();
-	if (m_activeDataItem != nullptr) {
-		if (m_isViewChanging) {
-			if (m_isRubberBandZooming) {
+	if (impl->m_activeDataItem != nullptr) {
+		if (impl->m_isViewChanging) {
+			if (impl->m_isRubberBandZooming) {
 				iren->InvokeEvent(vtkCommand::LeftButtonReleaseEvent, event);
-				m_isRubberBandZooming = false;
-				this->mRenWin->GetInteractor()->SetInteractorStyle(m_styleBackUp);
+				impl->m_isRubberBandZooming = false;
+				this->mRenWin->GetInteractor()->SetInteractorStyle(impl->m_styleBackUp);
 			}
-			m_activeDataItem->viewOperationEnded(this);
-			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*>(m_model);
+			impl->m_activeDataItem->viewOperationEnded(this);
+			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*>(impl->m_model);
 			m->viewOperationEndedGlobal();
 		} else {
-			m_activeDataItem->mouseReleaseEvent(event, this);
+			impl->m_activeDataItem->mouseReleaseEvent(event, this);
 		}
-	} else if (m_interactive) {
+	} else if (impl->m_interactive) {
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 		i->SetInteractorStyle(nullptr);
 		QVTKWidget::mouseReleaseEvent(event);
 		i->SetInteractorStyle(style);
 	}
-	m_isViewChanging = false;
+	impl->m_isViewChanging = false;
 	update2Ds();
 
 	switch (event->button()) {
@@ -231,12 +260,12 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 
 void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 {
-	if (m_isViewChanging) {
+	if (impl->m_isViewChanging) {
 		// do the QVTKWidget implementation.
 		QVTKWidget::mouseMoveEvent(event);
-	} else if (m_activeDataItem != nullptr) {
-		m_activeDataItem->mouseMoveEvent(event, this);
-	} else if (m_interactive) {
+	} else if (impl->m_activeDataItem != nullptr) {
+		impl->m_activeDataItem->mouseMoveEvent(event, this);
+	} else if (impl->m_interactive) {
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 		i->SetInteractorStyle(nullptr);
@@ -248,10 +277,10 @@ void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 void VTKGraphicsView::wheelEvent(QWheelEvent* event)
 {
 	QVTKWidget::wheelEvent(event);
-	if (m_activeDataItem != nullptr) {
-		m_activeDataItem->wheelEvent(event, this);
+	if (impl->m_activeDataItem != nullptr) {
+		impl->m_activeDataItem->wheelEvent(event, this);
 	}
-	m_model->viewOperationEndedGlobal();
+	impl->m_model->viewOperationEndedGlobal();
 
 	update2Ds();
 	render();
@@ -320,9 +349,19 @@ void VTKGraphicsView::standardWheelEvent(QWheelEvent* event)
 	i->SetInteractorStyle(style);
 }
 
+vtkRenderer* VTKGraphicsView::mainRenderer() const
+{
+	return impl->m_mainRenderer;
+}
+
+vtkCamera* VTKGraphicsView::camera() const
+{
+	return impl->m_camera;
+}
+
 void VTKGraphicsView::render()
 {
-	m_mainRenderer->GetRenderWindow()->Render();
+	impl->m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTKGraphicsView::restoreUpdateRate()
@@ -331,21 +370,26 @@ void VTKGraphicsView::restoreUpdateRate()
 	w->SetDesiredUpdateRate(w->GetInteractor()->GetStillUpdateRate());
 }
 
+void VTKGraphicsView::setInteractive(bool interactive)
+{
+	impl->m_interactive = interactive;
+}
+
 void VTKGraphicsView::setupCamera()
 {
 	double pos[3];
 	double range[2];
-	vtkCamera* activeCamera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* activeCamera = impl->m_mainRenderer->GetActiveCamera();
 	activeCamera->GetPosition(pos);
-	m_camera->SetPosition(pos);
+	camera()->SetPosition(pos);
 	activeCamera->GetFocalPoint(pos);
-	m_camera->SetFocalPoint(pos);
+	impl->m_camera->SetFocalPoint(pos);
 	activeCamera->GetClippingRange(range);
-	m_camera->SetClippingRange(range);
-	m_camera->ParallelProjectionOn();
-	m_camera->SetParallelScale(activeCamera->GetParallelScale());
-	m_camera->SetDistance(activeCamera->GetDistance());
-	m_camera->SetRoll(activeCamera->GetRoll());
+	impl->m_camera->SetClippingRange(range);
+	impl->m_camera->ParallelProjectionOn();
+	impl->m_camera->SetParallelScale(activeCamera->GetParallelScale());
+	impl->m_camera->SetDistance(activeCamera->GetDistance());
+	impl->m_camera->SetRoll(activeCamera->GetRoll());
 }
 
 VTKGraphicsViewArbitraryMove::VTKGraphicsViewArbitraryMove(vtkCamera* camera, VTKGraphicsView* view)
@@ -356,18 +400,18 @@ VTKGraphicsViewArbitraryMove::VTKGraphicsViewArbitraryMove(vtkCamera* camera, VT
 	double viewup[3];
 
 	m_oldCamera = vtkCamera::New();
-	view->m_camera->GetPosition(pos);
+	view->camera()->GetPosition(pos);
 	m_oldCamera->SetPosition(pos);
-	view->m_camera->GetFocalPoint(pos);
+	view->camera()->GetFocalPoint(pos);
 	m_oldCamera->SetFocalPoint(pos);
-	view->m_camera->GetClippingRange(range);
+	view->camera()->GetClippingRange(range);
 	m_oldCamera->SetClippingRange(range);
-	view->m_camera->GetViewUp(viewup);
+	view->camera()->GetViewUp(viewup);
 	m_oldCamera->SetViewUp(viewup);
 	m_oldCamera->ParallelProjectionOn();
-	m_oldCamera->SetParallelScale(view->m_camera->GetParallelScale());
-	m_oldCamera->SetDistance(view->m_camera->GetDistance());
-	m_oldCamera->SetRoll(view->m_camera->GetRoll());
+	m_oldCamera->SetParallelScale(view->camera()->GetParallelScale());
+	m_oldCamera->SetDistance(view->camera()->GetDistance());
+	m_oldCamera->SetRoll(view->camera()->GetRoll());
 
 	m_newCamera = vtkCamera::New();
 	camera->GetPosition(pos);
@@ -376,7 +420,7 @@ VTKGraphicsViewArbitraryMove::VTKGraphicsViewArbitraryMove(vtkCamera* camera, VT
 	m_newCamera->SetFocalPoint(pos);
 	camera->GetClippingRange(range);
 	m_newCamera->SetClippingRange(range);
-	view->m_camera->GetViewUp(viewup);
+	view->camera()->GetViewUp(viewup);
 	m_newCamera->SetViewUp(viewup);
 	m_newCamera->ParallelProjectionOn();
 	m_newCamera->SetParallelScale(camera->GetParallelScale());
@@ -400,8 +444,8 @@ void VTKGraphicsViewArbitraryMove::undo()
 void VTKGraphicsViewArbitraryMove::redo()
 {
 	m_view->mainRenderer()->SetActiveCamera(m_newCamera);
-	m_view->m_model->viewOperationEndedGlobal();
-	GraphicsWindowDataModel* model = dynamic_cast<GraphicsWindowDataModel*>(m_view->m_model);
+	m_view->model()->viewOperationEndedGlobal();
+	GraphicsWindowDataModel* model = dynamic_cast<GraphicsWindowDataModel*>(m_view->model());
 	if (model != nullptr) {
 		model->update2Ds();
 	}
@@ -431,8 +475,8 @@ QImage VTKGraphicsView::getImage()
 
 void VTKGraphicsView::update2Ds()
 {
-	if (m_model == nullptr) {return;}
-	GraphicsWindowDataModel* model = dynamic_cast<GraphicsWindowDataModel*>(m_model);
+	if (impl->m_model == nullptr) { return; }
+	GraphicsWindowDataModel* model = dynamic_cast<GraphicsWindowDataModel*>(impl->m_model);
 	if (model == nullptr) {return;}
 	model->update2Ds();
 }
@@ -440,29 +484,29 @@ void VTKGraphicsView::update2Ds()
 void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 {
 	QSize size = event->size();
-	m_logoActor->SetPosition(size.width() - m_logoImage.width() - 10, 5);
-	m_logoActor->Modified();
+	impl->m_logoActor->SetPosition(size.width() - impl->m_logoImage.width() - 10, 5);
+	impl->m_logoActor->Modified();
 	QVTKWidget::resizeEvent(event);
 }
 
 void VTKGraphicsView::cameraFit()
 {
 	fitInView();
-	m_model->viewOperationEndedGlobal();
+	impl->m_model->viewOperationEndedGlobal();
 	render();
 }
 
 void VTKGraphicsView::cameraZoomIn()
 {
 	scale(1.2);
-	m_model->viewOperationEndedGlobal();
+	impl->m_model->viewOperationEndedGlobal();
 	render();
 }
 
 void VTKGraphicsView::cameraZoomOut()
 {
 	scale (1 / 1.2);
-	m_model->viewOperationEndedGlobal();
+	impl->m_model->viewOperationEndedGlobal();
 	render();
 }
 
@@ -484,6 +528,12 @@ void VTKGraphicsView::cameraMoveUp()
 void VTKGraphicsView::cameraMoveDown()
 {
 	moveCenter(0, moveWidth());
+}
+
+
+GraphicsWindowSimpleDataModel* VTKGraphicsView::model() const
+{
+	return impl->m_model;
 }
 
 void VTKGraphicsView::moveCenter(int x, int y)
