@@ -1169,14 +1169,24 @@ void ProjectMainFile::setupOffset()
 	iRICUndoStack::instance().push(new ProjectSetOffsetCommand(QVector2D(dialog.offsetX(), dialog.offsetY()), this));
 }
 
-int ProjectMainFile::showCoordinateSystemDialog()
+int ProjectMainFile::showCoordinateSystemDialog(bool forceSelect)
 {
 	iRICMainWindowInterface* mainW = projectData()->mainWindow();
 	CoordinateSystemSelectDialog dialog(mainW);
 	dialog.setBuilder(mainW->coordinateSystemBuilder());
 	dialog.setCoordinateSystem(coordinateSystem());
-	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {return ret;}
-	setCoordinateSystem(dialog.coordinateSystem());
-	return ret;
+
+	CoordinateSystem* cs = nullptr;
+	do {
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected) {return ret;}
+		cs = dialog.coordinateSystem();
+
+		if (cs == nullptr && forceSelect) {
+			QMessageBox::warning(mainW, tr("Warning"), tr("Coordinate system not selected."));
+		}
+	} while (cs == nullptr && forceSelect);
+
+	setCoordinateSystem(cs);
+	return QDialog::Accepted;
 }

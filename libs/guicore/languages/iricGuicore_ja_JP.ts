@@ -1715,6 +1715,7 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="806"/>
         <location filename="../project/projectmainfile.cpp" line="809"/>
         <location filename="../project/projectmainfile.cpp" line="1078"/>
+        <location filename="../project/projectmainfile.cpp" line="1186"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1788,6 +1789,11 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="987"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
+    </message>
+    <message>
+        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <source>Coordinate system not selected.</source>
+        <translation>座標系が選択されていません。</translation>
     </message>
     <message>
         <source> : no such file.</source>

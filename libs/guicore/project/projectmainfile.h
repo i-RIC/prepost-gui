@@ -116,7 +116,7 @@ public:
 	bool mkdirBGDIR();
 	/// Create background image
 	void addBackgroundImage(BackgroundImageInfo* image);
-	int showCoordinateSystemDialog();
+	int showCoordinateSystemDialog(bool forceSelect = false);
 
 public slots:
 	void importCgnsFile();

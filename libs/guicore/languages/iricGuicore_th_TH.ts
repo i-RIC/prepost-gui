@@ -1084,6 +1084,7 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="806"/>
         <location filename="../project/projectmainfile.cpp" line="809"/>
         <location filename="../project/projectmainfile.cpp" line="1078"/>
+        <location filename="../project/projectmainfile.cpp" line="1186"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1172,6 +1173,11 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1096"/>
         <source>File %1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <source>Coordinate system not selected.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
