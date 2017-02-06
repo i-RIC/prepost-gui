@@ -6,11 +6,14 @@
 #include <QVTKWidget.h>
 #include <QUndoCommand>
 
+#include <vtkSmartPointer.h>
+
 class GraphicsWindowDataItem;
 class GraphicsWindowSimpleDataModel;
 class vtkRenderer;
 class vtkCamera;
 class vtkActor2D;
+class vtkInteractorObserver;
 class QCursor;
 
 class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKWidget
@@ -93,16 +96,21 @@ private:
 	QPixmap m_zoomPixmap;
 	QPixmap m_rotatePixmap;
 	QPixmap m_movePixmap;
+	QPixmap m_rubberBandPixmap;
 
 	QCursor m_zoomCursor;
 	QCursor m_rotateCursor;
 	QCursor m_moveCursor;
+	QCursor m_rubberBandCursor;
 
 	QImage m_logoImage;
 
 	GraphicsWindowDataItem* m_activeDataItem;
 	GraphicsWindowSimpleDataModel* m_model;
+	vtkInteractorObserver* m_rubberBarStyle;
+	vtkSmartPointer<vtkInteractorObserver> m_styleBackUp;
 	bool m_isViewChanging;
+	bool m_isRubberBandZooming;
 
 protected:
 	virtual void resizeEvent(QResizeEvent* event) override;
