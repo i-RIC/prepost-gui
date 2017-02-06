@@ -21,6 +21,6 @@ int GeoDataNetcdfRealImporter::ncGetMissingValue(int ncid, int varid, double* va
 	if (ret == NC_NOERR) {return NC_NOERR;}
 	ret = nc_get_att_double(ncid, varid, "_FillValue", value);
 	if (ret == NC_NOERR) {return NC_NOERR;}
-	*value = NC_FILL_INT;
+	*value = NC_FILL_DOUBLE;
 	return NC_NOERR;
 }
