@@ -348,54 +348,46 @@ int GeoDataNetcdfImporter::ncGetVariableAsDouble(int ncid, int varid, size_t len
 	return NC_NOERR;
 }
 
+template<typename T>
+int getVariableAsQVariant(int ncid, int varid, size_t len, int (*f)(int, int, T*), std::vector<QVariant>* list)
+{
+	std::vector<T> tmpbuffer(len);
+	int ret = f(ncid, varid, tmpbuffer.data());
+	if (ret != NC_NOERR) {return ret;}
+	for (size_t i = 0; i < len; ++i) {
+		list->push_back(QVariant(tmpbuffer[i]));
+	}
+	return NC_NOERR;
+}
+
 int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list)
 {
 	int ret;
 	nc_type ncType;
 	list.clear();
 	ret = nc_inq_vartype(ncid, varid, &ncType);
-	if (ncType == NC_INT) {
-		std::vector<int> tmpbuffer(len);
-		ret = nc_get_var_int(ncid, varid, tmpbuffer.data());
-		if (ret != NC_NOERR) {return ret;}
-		for (size_t i = 0; i < len; ++i) {
-			list.push_back(QVariant(tmpbuffer[i]));
-		}
-	} else if (ncType == NC_UINT) {
-		std::vector<unsigned int> tmpbuffer(len);
-		ret = nc_get_var_uint(ncid, varid, tmpbuffer.data());
-		if (ret != NC_NOERR) {return ret;}
-		for (size_t i = 0; i < len; ++i) {
-			list.push_back(QVariant(tmpbuffer[i]));
-		}
-	} else if (ncType == NC_INT64) {
-		std::vector<long long> tmpbuffer(len);
-		ret = nc_get_var_longlong(ncid, varid, tmpbuffer.data());
-		if (ret != NC_NOERR) {return ret;}
-		for (size_t i = 0; i < len; ++i) {
-			list.push_back(QVariant(tmpbuffer[i]));
-		}
-	} else if (ncType == NC_UINT64) {
-		std::vector<unsigned long long> tmpbuffer(len);
-		ret = nc_get_var_ulonglong(ncid, varid, tmpbuffer.data());
-		if (ret != NC_NOERR) {return ret;}
-		for (size_t i = 0; i < len; ++i) {
-			list.push_back(QVariant(tmpbuffer[i]));
-		}
-	}	else if (ncType == NC_FLOAT) {
-		std::vector<float> tmpbuffer(len);
-		ret = nc_get_var_float(ncid, varid, tmpbuffer.data());
-		if (ret != NC_NOERR) {return ret;}
-		for (size_t i = 0; i < len; ++i) {
-			list.push_back(QVariant(tmpbuffer[i]));
-		}
+	if (ncType == NC_BYTE) {
+		return getVariableAsQVariant<signed char>(ncid, varid, len, nc_get_var_schar, &list);
+	} else if (ncType == NC_SHORT) {
+		return getVariableAsQVariant<short int>(ncid, varid, len, nc_get_var_short, &list);
+	} else if (ncType == NC_INT) {
+		return getVariableAsQVariant<int>(ncid, varid, len, nc_get_var_int, &list);
+	} else if (ncType == NC_LONG) {
+		return getVariableAsQVariant<long int>(ncid, varid, len, nc_get_var_long, &list);
+	} else if (ncType == NC_FLOAT) {
+		return getVariableAsQVariant<float>(ncid, varid, len, nc_get_var_float, &list);
 	} else if (ncType == NC_DOUBLE) {
-		std::vector<double> tmpbuffer(len);
-		ret = nc_get_var_double(ncid, varid, tmpbuffer.data());
-		if (ret != NC_NOERR) {return ret;}
-		for (size_t i = 0; i < len; ++i) {
-			list.push_back(QVariant(tmpbuffer[i]));
-		}
+		return getVariableAsQVariant<double>(ncid, varid, len, nc_get_var_double, &list);
+	} else if (ncType == NC_UBYTE) {
+		return getVariableAsQVariant<unsigned char>(ncid, varid, len, nc_get_var_uchar, &list);
+	} else if (ncType == NC_USHORT) {
+		return getVariableAsQVariant<unsigned short int>(ncid, varid, len, nc_get_var_ushort, &list);
+	} else if (ncType == NC_UINT) {
+		return getVariableAsQVariant<unsigned int>(ncid, varid, len, nc_get_var_uint, &list);
+	} else if (ncType == NC_INT64) {
+		return getVariableAsQVariant<long long>(ncid, varid, len, nc_get_var_longlong, &list);
+	} else if (ncType == NC_UINT64) {
+		return getVariableAsQVariant<unsigned long long>(ncid, varid, len, nc_get_var_ulonglong, &list);
 	}
 	return NC_NOERR;
 }
