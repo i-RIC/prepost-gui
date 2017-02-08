@@ -436,7 +436,11 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 		QVariant val = values.at(i);
 		QDateTime d = zeroDate;
 		if (unit == "seconds") {
-			d = d.addSecs(val.toInt());
+			d = d.addSecs(val.toLongLong());
+		} else if (unit == "minutes") {
+			d = d.addSecs(val.toInt() * 60);
+		} else if (unit == "hours") {
+			d = d.addSecs(val.toInt() * 3600);
 		} else if (unit == "days") {
 			qlonglong days = val.toLongLong();
 			int secs = static_cast<int>((val.toDouble() - days) * 24 * 60 * 60);
