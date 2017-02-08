@@ -345,6 +345,19 @@ int GeoDataNetcdfImporter::ncGetVariableAsDouble(int ncid, int varid, size_t len
 	ret = nc_get_var_double(ncid, varid, buffer);
 	if (ret != NC_NOERR) { return ret; }
 
+	double scaleFactor;
+	double addOffset;
+
+	ret = nc_get_att_double(ncid, varid, "scale_factor", &scaleFactor);
+	if (ret != NC_NOERR) {scaleFactor = 1;}
+
+	ret = nc_get_att_double(ncid, varid, "add_offset", &addOffset);
+	if (ret != NC_NOERR) {addOffset = 0;}
+
+	for (size_t i = 0; i < len; ++i) {
+		*(buffer + i) = *(buffer + i) * scaleFactor + addOffset;
+	}
+
 	return NC_NOERR;
 }
 
