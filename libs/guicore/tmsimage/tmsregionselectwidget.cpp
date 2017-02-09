@@ -251,6 +251,9 @@ void TmsRegionSelectWidget::requestUpdate()
 	double lon, lat;
 	impl->m_coordinateSystem->mapGridToGeo(impl->m_centerX, impl->m_centerY, &lon, &lat);
 
+	if (lat > 82) {lat = 82;}
+	if (lat < -82) {lat = -82;}
+
 	tmsloader::TmsRequest* req = manager.buildRequest(QPointF(lon, lat), size(), impl->m_scale, impl->m_mapSetting);
 	if (req == nullptr) {return;}
 
