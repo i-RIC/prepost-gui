@@ -40,6 +40,7 @@ TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& s
 	m_templateName {templateName},
 	m_requestId {requestId},
 	m_webView {view},
+	m_terminating {false},
 	m_timer {this}
 {
 	// To see the view for debugging,, comment out the following line.
@@ -48,6 +49,7 @@ TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& s
 
 TmsRequestHandler::~TmsRequestHandler()
 {
+	m_terminating = true;
 	m_timer.stop();
 	m_webView->stop();
 }
@@ -124,6 +126,8 @@ void TmsRequestHandler::checkImage()
 
 void TmsRequestHandler::handleLoaded()
 {
+	if (m_terminating) {return;}
+
 	QImage image(m_webView->size(), QImage::Format_ARGB32);
 	m_webView->render(&image);
 
