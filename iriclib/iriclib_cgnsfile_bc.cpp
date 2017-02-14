@@ -133,14 +133,19 @@ int CgnsFile::BC_Read_FunctionalWithName(const char *typeName, int num, const ch
 
 int CgnsFile::BC_Read_Functional_RealSingle(const char *typeName, int num, const char *name, float* x, float* y)
 {
-	int ier = impl->gotoBcChild(typeName, num, name);
+	int ier;
+	ier = BC_Read_FunctionalWithName_RealSingle(typeName, num, name, "Param", x);
 	RETURN_IF_ERR;
-
-	ier = Impl::readArrayAs("Param", RealSingle, -1, x);
-	RETURN_IF_ERR;
-	ier = Impl::readArrayAs("Value", RealSingle, -1, y);
+	ier = BC_Read_FunctionalWithName_RealSingle(typeName, num, name, "Value", y);
 	RETURN_IF_ERR;
 	return 0;
+}
+
+int CgnsFile::BC_Read_FunctionalWithName_RealSingle(const char *typeName, int num, const char* name, const char* paramname, float* data)
+{
+	int ier = impl->gotoBcChild(typeName, num, name);
+	RETURN_IF_ERR;
+	return Impl::readArrayAs(paramname, RealSingle, -1, data);
 }
 
 int CgnsFile::BC_Clear()

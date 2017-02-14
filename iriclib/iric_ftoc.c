@@ -348,6 +348,23 @@ void IRICLIBDLL FMNAME(cg_iric_read_complex_functional_realsingle_mul_f, CG_IRIC
 	*ier = cg_iRIC_Read_Complex_Functional_RealSingle_Mul(*fid, c_groupname, *num, c_name, x, y);
 }
 
+void IRICLIBDLL FMNAME(cg_iric_read_complex_functionalwithname_realsingle_mul_f, CG_IRIC_READ_COMPLEX_FUNCTIONALWITHNAME_REALSINGLE_MUL_F) (int *fid, STR_PSTR(groupname), int *num, STR_PSTR(name), STR_PSTR(paramname), float *data, int *ier STR_PLEN(groupname) STR_PLEN(name) STR_PLEN(paramname)) {
+	char c_groupname[CGIO_MAX_NAME_LENGTH+1];
+	char c_name[CGIO_MAX_NAME_LENGTH+1];
+	char c_paramname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(groupname), STR_LEN(groupname),
+		c_groupname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(name), STR_LEN(name),
+		c_name, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(paramname), STR_LEN(paramname),
+		c_paramname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = cg_iRIC_Read_Complex_FunctionalWithName_RealSingle_Mul(*fid, c_groupname, *num, c_name, c_paramname, data);
+}
+
 void IRICLIBDLL FMNAME(cg_iric_read_grid_complex_node_mul_f, CG_IRIC_READ_GRID_COMPLEX_NODE_MUL_F) (int *fid, STR_PSTR(groupname), int *values, int *ier STR_PLEN(groupname)) {
 	char c_groupname[CGIO_MAX_NAME_LENGTH+1];
 	string_2_C_string(STR_PTR(groupname), STR_LEN(groupname),
@@ -851,6 +868,23 @@ void IRICLIBDLL FMNAME(cg_iric_read_bc_functional_realsingle_mul_f, CG_IRIC_READ
 	*ier = cg_iRIC_Read_BC_Functional_RealSingle_Mul(*fid, c_type, *num, c_name, x, y);
 }
 
+void IRICLIBDLL FMNAME(cg_iric_read_bc_functionalwithname_realsingle_mul_f, CG_IRIC_READ_BC_FUNCTIONALWITHNAME_REALSINGLE_MUL_F) (int *fid, STR_PSTR(type), int *num, STR_PSTR(name), STR_PSTR(paramname), float *data, int *ier STR_PLEN(type) STR_PLEN(name) STR_PLEN(paramname)) {
+	char c_type[CGIO_MAX_NAME_LENGTH+1];
+	char c_name[CGIO_MAX_NAME_LENGTH+1];
+	char c_paramname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(type), STR_LEN(type),
+		c_type, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(name), STR_LEN(name),
+		c_name, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(paramname), STR_LEN(paramname),
+		c_paramname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = cg_iRIC_Read_BC_FunctionalWithName_RealSingle_Mul(*fid, c_type, *num, c_name, c_paramname, data);
+}
+
 void IRICLIBDLL FMNAME(cg_iric_write_sol_particle_pos2d_mul_f, CG_IRIC_WRITE_SOL_PARTICLE_POS2D_MUL_F) (int *fid, int *count, double *x, double *y, int *ier) {
 	int c_count;
 	c_count = (cgsize_t)(*count);
@@ -1225,6 +1259,23 @@ void IRICLIBDLL FMNAME(cg_iric_read_complex_functional_realsingle_f, CG_IRIC_REA
 	if (*ier) return;
 
 	*ier = cg_iRIC_Read_Complex_Functional_RealSingle(c_groupname, *num, c_name, x, y);
+}
+
+void IRICLIBDLL FMNAME(cg_iric_read_complex_functionalwithname_realsingle_f, CG_IRIC_READ_COMPLEX_FUNCTIONALWITHNAME_REALSINGLE_F) (STR_PSTR(groupname), int *num, STR_PSTR(name), STR_PSTR(paramname), float *data, int *ier STR_PLEN(groupname) STR_PLEN(name) STR_PLEN(paramname)) {
+	char c_groupname[CGIO_MAX_NAME_LENGTH+1];
+	char c_name[CGIO_MAX_NAME_LENGTH+1];
+	char c_paramname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(groupname), STR_LEN(groupname),
+		c_groupname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(name), STR_LEN(name),
+		c_name, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(paramname), STR_LEN(paramname),
+		c_paramname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = cg_iRIC_Read_Complex_FunctionalWithName_RealSingle(c_groupname, *num, c_name, c_paramname, data);
 }
 
 void IRICLIBDLL FMNAME(cg_iric_read_grid_complex_node_f, CG_IRIC_READ_GRID_COMPLEX_NODE_F) (STR_PSTR(groupname), int *values, int *ier STR_PLEN(groupname)) {
@@ -1728,6 +1779,23 @@ void IRICLIBDLL FMNAME(cg_iric_read_bc_functional_realsingle_f, CG_IRIC_READ_BC_
 	if (*ier) return;
 
 	*ier = cg_iRIC_Read_BC_Functional_RealSingle(c_type, *num, c_name, x, y);
+}
+
+void IRICLIBDLL FMNAME(cg_iric_read_bc_functionalwithname_realsingle_f, CG_IRIC_READ_BC_FUNCTIONALWITHNAME_REALSINGLE_F) (STR_PSTR(type), int *num, STR_PSTR(name), STR_PSTR(paramname), float *data, int *ier STR_PLEN(type) STR_PLEN(name) STR_PLEN(paramname)) {
+	char c_type[CGIO_MAX_NAME_LENGTH+1];
+	char c_name[CGIO_MAX_NAME_LENGTH+1];
+	char c_paramname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(type), STR_LEN(type),
+		c_type, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(name), STR_LEN(name),
+		c_name, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+	string_2_C_string(STR_PTR(paramname), STR_LEN(paramname),
+		c_paramname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = cg_iRIC_Read_BC_FunctionalWithName_RealSingle(c_type, *num, c_name, c_paramname, data);
 }
 
 void IRICLIBDLL FMNAME(cg_iric_write_sol_particle_pos2d_f, CG_IRIC_WRITE_SOL_PARTICLE_POS2D_F) (int *count, double *x, double *y, int *ier) {
