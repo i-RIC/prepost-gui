@@ -176,7 +176,7 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& 
 			itemNode = itemNode.nextSibling();
 			continue;
 		}
-		SolverDefinitionBoundaryCondition* b = new SolverDefinitionBoundaryCondition(itemNode.toElement(), translator);
+		auto b = new SolverDefinitionBoundaryCondition(itemNode.toElement(), translator);
 		m_boundaryConditions.append(b);
 		m_boundaryConditionNameMap.insert(b->name(), b);
 		itemNode = itemNode.nextSibling();
@@ -185,10 +185,10 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& 
 
 void SolverDefinitionGridType::Impl::buildGridAttributes(Grid* grid) const
 {
-	for (SolverDefinitionGridAttribute* cond : m_gridAttributes) {
+	for (auto cond : m_gridAttributes) {
 		grid->addGridAttribute(cond->container(grid));
 	}
-	for (SolverDefinitionGridComplexAttribute* cond : m_gridComplexAttributes) {
+	for (auto cond : m_gridComplexAttributes) {
 		grid->addGridAttribute(cond->container(grid));
 	}
 }

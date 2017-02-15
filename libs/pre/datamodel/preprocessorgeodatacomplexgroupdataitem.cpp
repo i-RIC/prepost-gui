@@ -221,14 +221,11 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	// modify grid related condition values.
 	PreProcessorGridTypeDataItem* gtItem =
 		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::Iterator ccit;
-	for (ccit = conds.begin(); ccit != conds.end(); ++ccit) {
-		PreProcessorGridAndGridCreatingConditionDataItemInterface* ccItem = *ccit;
+	for (auto ccItem : gtItem->conditions()) {
 		Grid* g = ccItem->gridDataItem()->grid();
 		if (g == nullptr) {continue;}
 		GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
-		GridComplexAttributeContainer* cont2 = dynamic_cast<GridComplexAttributeContainer*>(cont);
+		auto cont2 = dynamic_cast<GridComplexAttributeContainer*>(cont);
 		for (unsigned int i = 0; i < cont2->dataCount(); ++i) {
 			int currval = cont2->value(i);
 			int newval = valueMap.value(currval, newDefault);
