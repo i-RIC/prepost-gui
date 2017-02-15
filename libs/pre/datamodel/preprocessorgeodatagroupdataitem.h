@@ -123,7 +123,6 @@ protected:
 	PreProcessorGeoDataDataItem* m_backgroundItem;
 
 private:
-	void moveBackgroundToLast();
 	QList<GeoDataRiverSurveyCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
 
 	bool m_cancelImport;

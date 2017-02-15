@@ -588,23 +588,6 @@ void PreProcessorGeoDataGroupDataItem::addBackground()
 	geodata->setupDataItem();
 }
 
-void PreProcessorGeoDataGroupDataItem::moveBackgroundToLast()
-{
-	// make m_backgroundItem the last item in m_childItems.
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		if (*it == m_backgroundItem) {
-			m_childItems.erase(it);
-			break;
-		}
-	}
-	m_childItems.push_back(m_backgroundItem);
-
-	// QStandardItem order should be reordered manually.
-	QList<QStandardItem*> takenItems = m_standardItem->takeRow(m_backgroundItem->standardItem()->row());
-	// in deed, takenItems containes only one item, and that is background item.
-	m_standardItem->appendRows(takenItems);
-}
-
 void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
