@@ -12,6 +12,7 @@ public:
 	void load(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
 
 	QDomElement m_element;
+	bool m_isGrouped;
 };
 
 #endif // SOLVERDEFINITIONGRIDCOMPLEXATTRIBUTE_IMPL_H

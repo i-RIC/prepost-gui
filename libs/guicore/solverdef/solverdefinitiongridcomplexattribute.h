@@ -23,6 +23,8 @@ public:
 	QString undefinedString() const;
 	QString undefinedEnglishString() const;
 
+	bool isGrouped() const;
+
 private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;
 
