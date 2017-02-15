@@ -18,6 +18,7 @@ const QString SolverDefinition::README {"README"};
 const QString SolverDefinition::LICENSE {"LICENSE"};
 
 SolverDefinition::Impl::Impl(const QString& solverfolder, const QLocale& locale, SolverDefinition *p) :
+	m_locale {locale},
 	m_abstract {solverfolder, locale, 0},
 	m_parent {p}
 {}
@@ -30,12 +31,12 @@ SolverDefinition::Impl::~Impl()
 	delete m_dummyGridType;
 }
 
-void SolverDefinition::Impl::load(const QLocale& locale)
+void SolverDefinition::Impl::load()
 {
 	QDir folder = m_abstract.folder();
 	QString filename = folder.absoluteFilePath(SolverDefinition::FILENAME);
 	// Set up translator first.
-	SolverDefinitionTranslator translator(folder.absolutePath(), locale);
+	SolverDefinitionTranslator translator = buildTranslator();
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -113,12 +114,18 @@ SolverDefinitionGridType* SolverDefinition::Impl::setupGridType(const QDomNode& 
 	return new SolverDefinitionGridType(node.toElement(), translator, isPrimary);
 }
 
+SolverDefinitionTranslator SolverDefinition::Impl::buildTranslator() const
+{
+	QDir folder = m_abstract.folder();
+	return SolverDefinitionTranslator(folder.absolutePath(), m_locale);
+}
+
 // Public interface implementation
 
 SolverDefinition::SolverDefinition(const QString& solverfolder, const QLocale& locale) :
 	impl {new Impl {solverfolder, locale, this}}
 {
-	impl->load(locale);
+	impl->load();
 }
 
 SolverDefinition::~SolverDefinition()
@@ -194,4 +201,9 @@ SolverDefinitionGridType* SolverDefinition::gridType(const std::string& name) co
 const QDomDocument& SolverDefinition::document() const
 {
 	return impl->m_document;
+}
+
+SolverDefinitionTranslator SolverDefinition::buildTranslator() const
+{
+	return impl->buildTranslator();
 }

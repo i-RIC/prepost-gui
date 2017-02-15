@@ -6,6 +6,7 @@
 
 #include <QDomDocument>
 #include <QList>
+#include <QLocale>
 #include <QMap>
 #include <QString>
 
@@ -27,6 +28,7 @@ public:
 	void setupIterationType(const QDomElement& elem);
 	void setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& translator);
 	SolverDefinitionGridType* setupGridType(const QDomNode& node, const SolverDefinitionTranslator& translator, bool isPrimary);
+	SolverDefinitionTranslator buildTranslator() const;
 
 	IterationType m_iterationType;
 	QString m_executableFilename {};
@@ -34,6 +36,7 @@ public:
 	SolverDefinitionGridType* m_dummyGridType {nullptr};
 	QMap<std::string, SolverDefinitionGridType*> m_gridTypeNameMap {};
 	QDomDocument m_document {};
+	QLocale m_locale;
 
 	SolverDefinitionAbstract m_abstract;
 
