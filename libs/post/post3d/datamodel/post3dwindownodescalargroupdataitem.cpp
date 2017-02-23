@@ -74,6 +74,7 @@ void Post3dWindowNodeScalarGroupDataItem::setDefaultValues()
 	m_isoValue = 0.0;
 	m_fullRange = true;
 	m_color = Qt::white;
+	validateRange();
 }
 
 void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
@@ -110,6 +111,7 @@ void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_range.kMax = iRIC::getIntAttribute(node, "kMax");
 	m_isoValue = iRIC::getDoubleAttribute(node, "value");
 	m_color = iRIC::getColorAttribute(node, "color", Qt::white);
+	validateRange();
 	updateActorSettings();
 }
 
@@ -336,4 +338,28 @@ void Post3dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 void Post3dWindowNodeScalarGroupDataItem::updateColorSetting()
 {
 	this->m_isoSurfaceActor->GetProperty()->SetColor(m_color.red()/255., m_color.green()/255., m_color.blue()/255.);
+}
+
+void Post3dWindowNodeScalarGroupDataItem::validateRange()
+{
+	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
+	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr)	{
+		return;
+	}
+	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zItem->dataContainer()->data());
+	int dims[3];
+	g->GetDimensions(dims);
+	if (m_fullRange) {
+		m_range.iMin = 0;  m_range.iMax = dims[0] - 1;
+		m_range.jMin = 0;  m_range.jMax = dims[1] - 1;
+		m_range.kMin = 0;  m_range.kMax = dims[2] - 1;
+	}
+	else {
+		if (m_range.iMin < 0) m_range.iMin = 0;
+		if (m_range.jMin < 0) m_range.jMin = 0;
+		if (m_range.kMin < 0) m_range.kMin = 0;
+		if (m_range.iMax < 0) m_range.iMax = dims[0] - 1;
+		if (m_range.jMax < 0) m_range.jMax = dims[1] - 1;
+		if (m_range.kMax < 0) m_range.kMax = dims[2] - 1;
+	}
 }

@@ -55,6 +55,7 @@ protected:
 	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
 	void updateColorSetting();
+	void validateRange();
 
 private:
 	void setDefaultValues();
