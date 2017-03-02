@@ -61,7 +61,7 @@ void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 	}
 	compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
 	for (int i = 0; i < count; ++i) {
-		GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
+		GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
 		w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
 		w->setNameAndNumber(m_condition->name(), i + 1);
 		w->load(fn);
@@ -302,7 +302,7 @@ void PreProcessorGeoDataComplexGroupDataItem::createDefaultGroup()
 {
 	SolverDefinitionGridComplexAttribute* compCond =
 		dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
-	GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
+	GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
 	w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
 	w->setCaption("Default");
 	w->setColor(m_undefinedColor);

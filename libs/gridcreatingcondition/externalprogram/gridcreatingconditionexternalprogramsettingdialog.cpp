@@ -24,7 +24,7 @@ GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternal
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
 {
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet(mainW);
+	m_containerSet = new InputConditionContainerSet();
 	m_widgetSet = new InputConditionWidgetSet();
 	// create connections.
 	connect(ui->m_pageList, SIGNAL(selectChanged(QString)),
