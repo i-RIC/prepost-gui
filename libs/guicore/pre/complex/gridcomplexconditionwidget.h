@@ -40,7 +40,7 @@ public:
 		InputConditionContainerInteger isDefaultContainer;
 	};
 
-	GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget* parent = nullptr);
+	GridComplexConditionWidget(QWidget* parent = nullptr);
 	~GridComplexConditionWidget();
 
 	void setNameAndNumber(const std::string& name, int number);

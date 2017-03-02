@@ -21,10 +21,8 @@
 
 #include <fstream>
 
-InputConditionContainerSet::InputConditionContainerSet(QWidget* widget)
-{
-	m_parentWidget = widget;
-}
+InputConditionContainerSet::InputConditionContainerSet()
+{}
 
 void InputConditionContainerSet::clear()
 {
@@ -145,7 +143,7 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 		}
 	} catch (ErrorMessage& e) {
 		QString msg(tr("Error occured while loading solver definition file.\n%1: %2"));
-		QMessageBox::critical(parentWidget(), tr("Error"), msg.arg(parameterName.c_str()).arg(e));
+		QMessageBox::critical(nullptr, tr("Error"), msg.arg(parameterName.c_str()).arg(e));
 		throw;
 	}
 }
@@ -183,7 +181,7 @@ void InputConditionContainerSet::reset()
 
 InputConditionContainerSet* InputConditionContainerSet::clone() const
 {
-	InputConditionContainerSet* ret = new InputConditionContainerSet(m_parentWidget);
+	InputConditionContainerSet* ret = new InputConditionContainerSet();
 	ret->m_integers = m_integers;
 	ret->m_reals = m_reals;
 	ret->m_strings = m_strings;
@@ -312,9 +310,4 @@ InputConditionContainerFunctional& InputConditionContainerSet::functional(const 
 InputConditionContainer* InputConditionContainerSet::container(const std::string& name)
 {
 	return m_containers[name];
-}
-
-QWidget* InputConditionContainerSet::parentWidget() const
-{
-	return m_parentWidget;
 }

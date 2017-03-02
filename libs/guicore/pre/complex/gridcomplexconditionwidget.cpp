@@ -22,14 +22,14 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-GridComplexConditionWidget::GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget* parent) :
+GridComplexConditionWidget::GridComplexConditionWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::GridComplexConditionWidget)
 {
 	m_modified = false;
 
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet(mw);
+	m_containerSet = new InputConditionContainerSet();
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
 	m_widgetSet = new InputConditionWidgetSet();
 

@@ -24,7 +24,7 @@ class GUICOREDLL_EXPORT InputConditionContainerSet : public QObject
 	Q_OBJECT
 
 public:
-	InputConditionContainerSet(QWidget* widget);
+	InputConditionContainerSet();
 	void clear();
 	void setup(const QDomNode& condNode, const SolverDefinition& def, const SolverDefinitionTranslator &t, bool forBC = false);
 	void setBCProperty(const std::string& bcname, int bcindex);
@@ -58,8 +58,6 @@ public:
 
 	InputConditionContainer* container(const std::string& name);
 
-	QWidget* parentWidget() const;
-
 signals:
 	void modified();
 
@@ -76,8 +74,6 @@ private:
 	QMap<std::string, InputConditionContainerFunctional> m_functionals;
 	// pointer to one of upper four.
 	QMap<std::string, InputConditionContainer*> m_containers;
-
-	QWidget* m_parentWidget;
 };
 
 #endif // INPUTCONDITIONCONTAINERSET_H
