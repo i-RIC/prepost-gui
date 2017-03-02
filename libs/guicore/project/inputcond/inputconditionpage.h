@@ -18,11 +18,10 @@ class GUICOREDLL_EXPORT InputConditionPage : public QWidget
 {
 
 public:
-	/// Constructor
-	InputConditionPage(QWidget* parent) : QWidget(parent) {}
-	/// Constructor
+	InputConditionPage(QWidget* parent);
 	InputConditionPage(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t, QWidget* parent);
-	const QString& name() {return m_name;}
+
+	const QString& name() const;
 
 private:
 	void load(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
