@@ -3,6 +3,7 @@
 #include "../pre/grid/structured2dgrid.h"
 #include "../pre/grid/unstructured2dgrid.h"
 #include "../project/inputcond/inputconditionwidget.h"
+#include "solverdefinition.h"
 #include "solverdefinitionboundarycondition.h"
 #include "solverdefinitiongridattribute.h"
 #include "solverdefinitiongridattributeintegercell.h"
@@ -50,11 +51,11 @@ SolverDefinitionGridType::Impl::Impl(const std::string& name, const QString& cap
 	m_parent {parent}
 {}
 
-SolverDefinitionGridType::Impl::Impl(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent) :
+SolverDefinitionGridType::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, bool isPrimary, SolverDefinitionGridType* parent) :
 	m_isPrimary {isPrimary},
 	m_parent {parent}
 {
-	load(elem, translator);
+	load(elem, solverDef);
 }
 
 SolverDefinitionGridType::Impl::~Impl()
@@ -65,8 +66,9 @@ SolverDefinitionGridType::Impl::~Impl()
 	delete m_emptyGrid;
 }
 
-void SolverDefinitionGridType::Impl::load(const QDomElement& elem, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridType::Impl::load(const QDomElement& elem, SolverDefinition* solverDef)
 {
+	auto translator = solverDef->buildTranslator();
 	// set basic informations.
 	m_name = iRIC::toStr(elem.attribute("name", "default"));
 	m_caption = translator.translate(elem.attribute("caption", QObject::tr("Default")));
@@ -80,9 +82,9 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& elem, const SolverD
 	setGridGenerators(elem);
 	// setup grid related conditions
 	QDomElement grcElem = iRIC::getChildNode(elem, "GridRelatedCondition").toElement();
-	setupGridAttributes(grcElem, translator);
+	setupGridAttributes(grcElem, solverDef);
 	// setup boundary conditions;
-	setupBoundaryConditions(elem, translator);
+	setupBoundaryConditions(elem, solverDef);
 	m_emptyGrid = createEmptyGrid();
 }
 
@@ -111,7 +113,7 @@ void SolverDefinitionGridType::Impl::setGridGenerators(const QDomElement& elem)
 	}
 }
 
-void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem, SolverDefinition *solverDef)
 {
 	m_isKeepOrder = (elem.attribute("keepOrder") == "true");
 	QDomNode itemNode = elem.firstChild();
@@ -123,7 +125,7 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 
 		if (defElem.attribute("valueType") == "complex") {
 			// Complex condition
-			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, translator, order);
+			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, solverDef, order);
 			m_gridComplexAttributes.append(c);
 			m_gridComplexAttributeNameMap.insert(c->name(), c);
 		} else {
@@ -132,29 +134,29 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 			if (defElem.attribute("position") == "cell") {
 				if (defElem.attribute("valueType") == "integer") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, solverDef, order);
 					} else {
-						c = new SolverDefinitionGridAttributeIntegerCell(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeIntegerCell(itemElem, solverDef, order);
 					}
 				} else if (defElem.attribute("valueType") == "real") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, solverDef, order);
 					} else {
-						c = new SolverDefinitionGridAttributeRealCell(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeRealCell(itemElem, solverDef, order);
 					}
 				}
 			} else if (defElem.attribute("position") == "node") {
 				if (defElem.attribute("valueType") == "integer") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, solverDef, order);
 					} else {
-						c = new SolverDefinitionGridAttributeIntegerNode(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeIntegerNode(itemElem, solverDef, order);
 					}
 				} else if (defElem.attribute("valueType") == "real") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, solverDef, order);
 					} else {
-						c = new SolverDefinitionGridAttributeRealNode(itemElem, translator, order);
+						c = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, order);
 					}
 				}
 			}
@@ -168,7 +170,7 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 	}
 }
 
-void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& elem, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& elem, SolverDefinition *solverDef)
 {
 	QDomNode itemNode = elem.firstChild();
 	while (! itemNode.isNull()) {
@@ -176,7 +178,7 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& 
 			itemNode = itemNode.nextSibling();
 			continue;
 		}
-		auto b = new SolverDefinitionBoundaryCondition(itemNode.toElement(), translator);
+		auto b = new SolverDefinitionBoundaryCondition(itemNode.toElement(), solverDef);
 		m_boundaryConditions.append(b);
 		m_boundaryConditionNameMap.insert(b->name(), b);
 		itemNode = itemNode.nextSibling();
@@ -228,9 +230,9 @@ SolverDefinitionGridType::SolverDefinitionGridType(const std::string& name, cons
 	impl {new Impl{name, caption, this}}
 {}
 
-SolverDefinitionGridType::SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary) :
-	SolverDefinitionNode {},
-	impl {new Impl {node, translator, isPrimary, this}}
+SolverDefinitionGridType::SolverDefinitionGridType(QDomElement node, SolverDefinition* solverDef, bool isPrimary) :
+	SolverDefinitionNode {node, solverDef},
+	impl {new Impl {node, solverDef, isPrimary, this}}
 {}
 
 SolverDefinitionGridType::~SolverDefinitionGridType()

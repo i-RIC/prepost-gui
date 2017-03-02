@@ -5,9 +5,10 @@
 
 #include <misc/stringtool.h>
 
-SolverDefinitionBoundaryCondition::Impl::Impl(const QDomElement& node, const SolverDefinitionTranslator& translator)
+SolverDefinitionBoundaryCondition::Impl::Impl(const QDomElement& node, SolverDefinition* solverDef) :
+	m_definition {solverDef}
 {
-	load(node, translator);
+	load(node, solverDef->buildTranslator());
 }
 
 void SolverDefinitionBoundaryCondition::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
@@ -28,9 +29,9 @@ void SolverDefinitionBoundaryCondition::Impl::load(const QDomElement& node, cons
 	}
 }
 
-SolverDefinitionBoundaryCondition::SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator) :
-	SolverDefinitionNode {node, translator},
-	impl {new Impl {node, translator}}
+SolverDefinitionBoundaryCondition::SolverDefinitionBoundaryCondition(QDomElement node, SolverDefinition* solverDef) :
+	SolverDefinitionNode {node, solverDef},
+	impl {new Impl {node, solverDef}}
 {}
 
 SolverDefinitionBoundaryCondition::~SolverDefinitionBoundaryCondition()

@@ -67,7 +67,7 @@ void SolverDefinition::Impl::load()
 			// No grid related condition node found.
 		} else {
 			// found. build one gridtype, using SolverDefinition node.
-			SolverDefinitionGridType* gt = setupGridType(SDNode, translator, true);
+			SolverDefinitionGridType* gt = setupGridType(SDNode, true);
 			// The Grid Type caption is modified.
 			gt->setCaption(QString(tr("%1 Grids")).arg(m_parent->caption()));
 			m_gridTypes.append(gt);
@@ -100,7 +100,7 @@ void SolverDefinition::Impl::setupGridTypes(const QDomNode& node, const SolverDe
 	bool isPrimary = true;
 	while (! child.isNull()) {
 		if (child.nodeName() == "GridType") {
-			SolverDefinitionGridType* gt = setupGridType(child, translator, isPrimary);
+			SolverDefinitionGridType* gt = setupGridType(child, isPrimary);
 			m_gridTypes.append(gt);
 			m_gridTypeNameMap.insert(gt->name(), gt);
 			isPrimary = false;
@@ -109,9 +109,9 @@ void SolverDefinition::Impl::setupGridTypes(const QDomNode& node, const SolverDe
 	}
 }
 
-SolverDefinitionGridType* SolverDefinition::Impl::setupGridType(const QDomNode& node, const SolverDefinitionTranslator& translator, bool isPrimary)
+SolverDefinitionGridType* SolverDefinition::Impl::setupGridType(const QDomNode& node, bool isPrimary)
 {
-	return new SolverDefinitionGridType(node.toElement(), translator, isPrimary);
+	return new SolverDefinitionGridType(node.toElement(), m_parent, isPrimary);
 }
 
 SolverDefinitionTranslator SolverDefinition::Impl::buildTranslator() const

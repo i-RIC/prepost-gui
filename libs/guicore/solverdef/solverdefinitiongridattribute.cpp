@@ -18,7 +18,7 @@
 #include <QDomElement>
 #include <QSettings>
 
-SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, const SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
+SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
 	m_solverDefinition {solverDef},
 	m_parent {parent}
 {
@@ -50,7 +50,7 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 			QDomNode childNode = children.at(i);
 			if (childNode.nodeName() == "Dimension") {
 				// add dimension
-				auto dim = SolverDefinitionGridAttributeDimensionCreator::create(childNode.toElement(), translator, m_parent);
+				auto dim = SolverDefinitionGridAttributeDimensionCreator::create(childNode.toElement(), solverDef, m_parent);
 				m_dimensions.push_back(dim);
 			}
 		}

@@ -7,7 +7,7 @@
 class SolverDefinitionGridAttributeIntegerOptionNode : public SolverDefinitionGridAttributeIntegerNode, public IntegerEnumLoader
 {
 public:
-	SolverDefinitionGridAttributeIntegerOptionNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+	SolverDefinitionGridAttributeIntegerOptionNode(const QDomElement& elem, SolverDefinition* solverDef, int order);
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;

@@ -25,7 +25,7 @@ public:
 	void load();
 	void setupIterationType(const QDomElement& elem);
 	void setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& translator);
-	SolverDefinitionGridType* setupGridType(const QDomNode& node, const SolverDefinitionTranslator& translator, bool isPrimary);
+	SolverDefinitionGridType* setupGridType(const QDomNode& node, bool isPrimary);
 	SolverDefinitionTranslator buildTranslator() const;
 
 	IterationType m_iterationType;

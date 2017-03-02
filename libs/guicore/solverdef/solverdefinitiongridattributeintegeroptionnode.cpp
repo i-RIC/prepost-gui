@@ -1,12 +1,13 @@
 #include "../pre/gridcond/editwidget/gridattributeintegeroptioneditwidget.h"
 #include "../project/colorsource.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinition.h"
 #include "solverdefinitiongridattributeintegeroptionnode.h"
 
-SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeIntegerNode {elem, translator, true, order}
+SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(const QDomElement& elem, SolverDefinition* solverDef, int order) :
+	SolverDefinitionGridAttributeIntegerNode {elem, solverDef, true, order}
 {
-	loadEnumeration(elem, translator);
+	loadEnumeration(elem, solverDef->buildTranslator());
 }
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::editWidget(QWidget* parent)

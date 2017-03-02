@@ -2,8 +2,8 @@
 #include "../pre/gridcond/base/gridattributedimensionintegercontainer.h"
 #include <QVariant>
 
-SolverDefinitionGridAttributeIntegerDimension::SolverDefinitionGridAttributeIntegerDimension(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond) :
-	SolverDefinitionGridAttributeDimensionT<int> (elem, translator, cond)
+SolverDefinitionGridAttributeIntegerDimension::SolverDefinitionGridAttributeIntegerDimension(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* cond) :
+	SolverDefinitionGridAttributeDimensionT<int> (elem, solverDef, cond)
 {}
 
 int SolverDefinitionGridAttributeIntegerDimension::fromVariant(const QVariant& v) const

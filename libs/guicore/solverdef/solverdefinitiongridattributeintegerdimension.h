@@ -8,7 +8,7 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeIntegerDimension :
 		public SolverDefinitionGridAttributeDimensionT<int>
 {
 public:
-	SolverDefinitionGridAttributeIntegerDimension(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond);
+	SolverDefinitionGridAttributeIntegerDimension(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* cond);
 
 	int fromVariant(const QVariant& v) const override;
 	GridAttributeDimensionContainer* buildContainer() override;

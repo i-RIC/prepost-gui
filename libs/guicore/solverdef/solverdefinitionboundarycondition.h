@@ -13,7 +13,7 @@ class GUICOREDLL_EXPORT SolverDefinitionBoundaryCondition : public SolverDefinit
 {
 public:
 	enum Position {pNode, pCell, pEdge};
-	SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator);
+	SolverDefinitionBoundaryCondition(QDomElement node, SolverDefinition* solverDef);
 	~SolverDefinitionBoundaryCondition();
 
 	const std::string& name() const;

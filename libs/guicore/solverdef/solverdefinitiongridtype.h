@@ -29,9 +29,7 @@ public:
 	};
 	/// Constructor for dummy grid
 	SolverDefinitionGridType(const std::string& name, const QString& caption);
-	/// Constructor
-	SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary);
-	/// Destructor
+	SolverDefinitionGridType(QDomElement node, SolverDefinition* solverDef, bool isPrimary);
 	~SolverDefinitionGridType();
 
 	/// @name Grid attributes

@@ -11,7 +11,7 @@
 class SolverDefinitionGridAttribute::Impl
 {
 public:
-	Impl(const QDomElement& elem, const SolverDefinition* solverDef, SolverDefinitionGridAttribute* parent);
+	Impl(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* parent);
 	~Impl();
 
 	void load(const QDomElement& elem, SolverDefinition* solverDef);
