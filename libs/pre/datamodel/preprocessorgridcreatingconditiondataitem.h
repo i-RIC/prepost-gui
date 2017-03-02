@@ -16,10 +16,10 @@ public:
 	PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridCreatingConditionDataItem();
 
-	GridCreatingCondition* condition() const override {return m_condition;}
+	GridCreatingCondition* condition() const override;
 	void setCondition(GridCreatingCondition* condition) override;
 
-	virtual PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const = 0;
+	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const override;
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*tb*/) override;

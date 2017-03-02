@@ -29,6 +29,9 @@ public:
 	void applyScalarsToColorsSetting();
 	SolverDefinitionGridAttribute* condition() override;
 
+	void setupWidgets(int widgetCount) override;
+	QList<GridComplexConditionWidget*> widgets() const override;
+
 public slots:
 	void showEditGroupDialog();
 	void editScalarsToColors() override;
@@ -41,9 +44,12 @@ private:
 	void updateColorMap();
 	void applySettingsToScalarBar();
 	void createDefaultGroup();
+	void clearWidgets();
 
 	bool m_isCustomModified;
 	QColor m_undefinedColor;
+
+	QList<GridComplexConditionWidget*> m_widgets;
 	GridComplexConditionDialog* m_dialog;
 
 	QAction* m_editGroupAction;

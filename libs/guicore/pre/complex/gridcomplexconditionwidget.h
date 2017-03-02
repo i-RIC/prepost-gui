@@ -48,7 +48,7 @@ public:
 	void load(const int fn);
 	void save(const int fn);
 
-	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
+	void setup(SolverDefinition* def, const QDomElement& elem);
 
 	QString caption() const;
 	void setCaption(const QString& caption);
@@ -61,6 +61,8 @@ public:
 
 	Setting setting();
 	void setSetting(const Setting& setting);
+
+	InputConditionContainerSet* containerSet() const;
 
 signals:
 	void captionChanged(const QString& caption);

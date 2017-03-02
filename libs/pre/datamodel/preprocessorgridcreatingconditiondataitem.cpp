@@ -77,9 +77,9 @@ void PreProcessorGridCreatingConditionDataItem::setCondition(GridCreatingConditi
 	m_condition = condition;
 }
 
-virtual PreProcessorGridTypeDataItemInterface* PreProcessorGridCreatingConditionDataItem::gridTypeDataItem() const
+PreProcessorGridTypeDataItemInterface* PreProcessorGridCreatingConditionDataItem::gridTypeDataItem() const
 {
-	return dynamic_cst<PreProcessorGridTypeDataItemInterface*> (parent()->parent());
+	return dynamic_cast<PreProcessorGridTypeDataItemInterface*> (parent()->parent());
 }
 
 void PreProcessorGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)

@@ -45,13 +45,13 @@ PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem
 
 PreProcessorGeoDataComplexGroupDataItem::~PreProcessorGeoDataComplexGroupDataItem()
 {
+	clearWidgets();
 	delete m_dialog;
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 {
 	int count = 0;
-	SolverDefinitionGridComplexAttribute* compCond = 0;
 	int defId = -1;
 
 	clear();
@@ -59,10 +59,10 @@ void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 	if (ret != 0) {
 		goto INITGROUPS;
 	}
-	compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
+	auto compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
 	for (int i = 0; i < count; ++i) {
 		GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
-		w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
+		w->setup(projectData()->solverDefinition(), compCond->element());
 		w->setNameAndNumber(m_condition->name(), i + 1);
 		w->load(fn);
 		if (w->isDefault()) {defId = i;}
@@ -303,12 +303,20 @@ void PreProcessorGeoDataComplexGroupDataItem::createDefaultGroup()
 	SolverDefinitionGridComplexAttribute* compCond =
 		dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
 	GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
-	w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
+	w->setup(projectData()->solverDefinition(), compCond->element());
 	w->setCaption("Default");
 	w->setColor(m_undefinedColor);
 	w->setIsDefault(true);
 	w->setNameAndNumber(m_condition->name(), 1);
 	m_widgets.append(w);
+}
+
+void PreProcessorGeoDataComplexGroupDataItem::clearWidgets()
+{
+	for (auto w : m_widgets) {
+		delete w;
+	}
+	m_widgets.clear();
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::addBackground()
@@ -329,4 +337,24 @@ void PreProcessorGeoDataComplexGroupDataItem::addBackground()
 SolverDefinitionGridAttribute* PreProcessorGeoDataComplexGroupDataItem::condition()
 {
 	return PreProcessorGeoDataGroupDataItem::condition();
+}
+
+void PreProcessorGeoDataComplexGroupDataItem::setupWidgets(int widgetCount)
+{
+	clearWidgets();
+
+	auto compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
+
+	for (int i = 0; i < widgetCount; ++i) {
+		GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
+		w->setup(projectData()->solverDefinition(), compCond->element());
+		w->setNameAndNumber(m_condition->name(), i + 1);
+		if (i == 0) {w->setIsDefault(true);}
+		m_widgets.append(w);
+	}
+}
+
+QList<GridComplexConditionWidget*> PreProcessorGeoDataComplexGroupDataItem::widgets() const
+{
+	return m_widgets;
 }

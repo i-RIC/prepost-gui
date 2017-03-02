@@ -17,11 +17,8 @@ public:
 	virtual SolverDefinitionGridAttribute* condition() = 0;
 	virtual ProjectData* projectData() const = 0;
 
-protected:
-	QList<GridComplexConditionWidget*> m_widgets;
-
-public:
-	friend class GeoDataBackgroundComplex;
+	virtual void setupWidgets(int widgetCount) = 0;
+	virtual QList<GridComplexConditionWidget*> widgets() const = 0;
 };
 
 #endif // PREPROCESSORGEODATACOMPLEXGROUPDATAITEMINTERFACE_H

@@ -53,10 +53,10 @@ GridComplexConditionWidget::~GridComplexConditionWidget()
 	delete m_widgetSet;
 }
 
-void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale)
+void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement& elem)
 {
 	// open solve definition file
-	SolverDefinitionTranslator t(def->folder().absolutePath(), locale);
+	auto t = def->buildTranslator();
 	// setup ContainerSet first.
 	m_containerSet->setup(elem, *def, t, true);
 	// setup WidgetSet.
@@ -166,6 +166,11 @@ void GridComplexConditionWidget::setSetting(const GridComplexConditionWidget::Se
 	ui->nameEdit->setText(m_captionContainer.value());
 	ui->colorWidget->setColor(QColor(m_colorContainer.value()));
 	ui->isDefaultCheckBox->setChecked(m_isDefaultContainer.value() == 1);
+}
+
+InputConditionContainerSet* GridComplexConditionWidget::containerSet() const
+{
+	return m_containerSet;
 }
 
 void GridComplexConditionWidget::handleDefaultCheck(bool checked)

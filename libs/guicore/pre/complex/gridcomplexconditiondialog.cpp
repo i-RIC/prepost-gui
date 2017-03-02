@@ -101,7 +101,7 @@ void GridComplexConditionDialog::addItem()
 	SolverDefinitionGridComplexAttribute* compCond =
 		dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_dataItem->condition());
 	GridComplexConditionWidget* newWidget = new GridComplexConditionWidget(this);
-	newWidget->setup(m_dataItem->projectData()->solverDefinition(), compCond->element(), m_mainWindow->locale());
+	newWidget->setup(m_dataItem->projectData()->solverDefinition(), compCond->element());
 	newWidget->setCaption(QString("Item%1").arg(m_widgets.count() + 1));
 	if (m_widgets.count() == 0) {
 		// this is the first one. make it the default.
