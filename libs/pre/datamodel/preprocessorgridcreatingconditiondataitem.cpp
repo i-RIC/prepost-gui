@@ -66,9 +66,20 @@ PreProcessorGridCreatingConditionDataItem::~PreProcessorGridCreatingConditionDat
 		delete m_condition;
 	}
 }
+
+GridCreatingCondition* PreProcessorGridCreatingConditionDataItem::condition() const
+{
+	return m_condition;
+}
+
 void PreProcessorGridCreatingConditionDataItem::setCondition(GridCreatingCondition* condition)
 {
 	m_condition = condition;
+}
+
+virtual PreProcessorGridTypeDataItemInterface* PreProcessorGridCreatingConditionDataItem::gridTypeDataItem() const
+{
+	return dynamic_cst<PreProcessorGridTypeDataItemInterface*> (parent()->parent());
 }
 
 void PreProcessorGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)

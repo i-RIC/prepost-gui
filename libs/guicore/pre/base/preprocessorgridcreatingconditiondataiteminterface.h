@@ -5,6 +5,8 @@
 #include "preprocessordataitem.h"
 
 class GridCreatingCondition;
+class PreProcessorGridTypeDataItemInterface;
+
 class QAction;
 
 class GUICOREDLL_EXPORT PreProcessorGridCreatingConditionDataItemInterface : public PreProcessorDataItem
@@ -14,8 +16,11 @@ class GUICOREDLL_EXPORT PreProcessorGridCreatingConditionDataItemInterface : pub
 public:
 	PreProcessorGridCreatingConditionDataItemInterface(GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorGridCreatingConditionDataItemInterface();
-	virtual GridCreatingCondition* condition() = 0;
+
+	virtual GridCreatingCondition* condition() const = 0;
 	virtual void setCondition(GridCreatingCondition* condition) = 0;
+
+	virtual PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const = 0;
 
 	virtual QAction* createAction() = 0;
 	virtual QAction* clearAction() = 0;

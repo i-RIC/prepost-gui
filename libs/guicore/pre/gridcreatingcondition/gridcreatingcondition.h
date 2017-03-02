@@ -37,10 +37,10 @@ public:
 	virtual bool create(QWidget* parent) = 0;
 	/// Ready to create a grid.
 	virtual bool ready() const = 0;
-	GridCreatingConditionCreator* creator() const {return m_creator;}
+	GridCreatingConditionCreator* creator() const;
 	const QString& name() const;
 
-	QMenu* menu() const {return m_menu;}
+	QMenu* menu() const;
 	/// setup VTK actors.
 	virtual bool init() {return true;}
 	virtual void showInitialDialog() {}
