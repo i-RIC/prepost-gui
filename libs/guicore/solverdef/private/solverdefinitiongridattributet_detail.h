@@ -4,8 +4,8 @@
 #include "../solverdefinitiongridattributet.h"
 
 template <class V>
-SolverDefinitionGridAttributeT<V>::SolverDefinitionGridAttributeT(const QDomElement& node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
-	SolverDefinitionGridAttribute {node, translator, pos, isOption, order}
+SolverDefinitionGridAttributeT<V>::SolverDefinitionGridAttributeT(const QDomElement& node, SolverDefinition* solverDef, Position pos, bool isOption, int order) :
+	SolverDefinitionGridAttribute {node, solverDef, pos, isOption, order}
 {}
 
 template <class V>

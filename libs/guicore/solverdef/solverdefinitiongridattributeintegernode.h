@@ -6,13 +6,13 @@
 class SolverDefinitionGridAttributeIntegerNode : public SolverDefinitionGridAttributeInteger
 {
 public:
-	SolverDefinitionGridAttributeIntegerNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+	SolverDefinitionGridAttributeIntegerNode(const QDomElement& elem, SolverDefinition* solverDef, int order);
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
 protected:
-	SolverDefinitionGridAttributeIntegerNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order);
+	SolverDefinitionGridAttributeIntegerNode(const QDomElement& elem, SolverDefinition* solverDef, bool isOption, int order);
 
 private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;

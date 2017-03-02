@@ -18,13 +18,11 @@ class QDomNode;
 class SolverDefinition::Impl
 {
 public:
-	/// Constructor
 	Impl(const QString& solverfolder, const QLocale& locale, SolverDefinition* p);
-	/// Destructor
 	~Impl();
 
 	/// Load information from solver defintion file and translation files.
-	void load(const QLocale& locale);
+	void load();
 	void setupIterationType(const QDomElement& elem);
 	void setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& translator);
 	SolverDefinitionGridType* setupGridType(const QDomNode& node, const SolverDefinitionTranslator& translator, bool isPrimary);

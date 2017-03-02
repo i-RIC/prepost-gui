@@ -3,7 +3,7 @@
 SolverDefinitionNode::SolverDefinitionNode()
 {}
 
-SolverDefinitionNode::SolverDefinitionNode(const QDomElement&, const SolverDefinitionTranslator&)
+SolverDefinitionNode::SolverDefinitionNode(const QDomElement&, SolverDefinition*)
 {}
 
 SolverDefinitionNode::~SolverDefinitionNode()

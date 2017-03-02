@@ -229,7 +229,7 @@ SolverDefinitionGridType::SolverDefinitionGridType(const std::string& name, cons
 {}
 
 SolverDefinitionGridType::SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary) :
-	SolverDefinitionNode {node,translator},
+	SolverDefinitionNode {},
 	impl {new Impl {node, translator, isPrimary, this}}
 {}
 

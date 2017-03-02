@@ -5,6 +5,7 @@
 #include "../scalarstocolors/lookuptablecontainer.h"
 #include "../scalarstocolors/lookuptableeditwidget.h"
 #include "../scalarstocolors/scalarstocolorseditdialog.h"
+#include "solverdefinition.h"
 #include "solverdefinitiongridattribute.h"
 #include "solverdefinitiongridattributedimension.h"
 #include "solverdefinitiongridattributedimensioncreator.h"
@@ -17,10 +18,11 @@
 #include <QDomElement>
 #include <QSettings>
 
-SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute *parent) :
+SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, const SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
+	m_solverDefinition {solverDef},
 	m_parent {parent}
 {
-	load(elem, translator);
+	load(elem, solverDef);
 }
 
 SolverDefinitionGridAttribute::Impl::~Impl()
@@ -30,8 +32,10 @@ SolverDefinitionGridAttribute::Impl::~Impl()
 	}
 }
 
-void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDefinition* solverDef)
 {
+	SolverDefinitionTranslator translator = solverDef->buildTranslator();
+
 	m_name = iRIC::toStr(elem.attribute("name"));
 	m_englishCaption = iRIC::toStr(elem.attribute("caption"));
 	m_caption = translator.translate(elem.attribute("caption"));
@@ -55,9 +59,9 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, const So
 
 // Public interfaces
 
-SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
-	SolverDefinitionNode {elem, translator},
-	impl {new Impl {elem, translator, this}}
+SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& elem, SolverDefinition* definition, Position pos, bool isOption, int order) :
+	SolverDefinitionNode {elem, definition},
+	impl {new Impl {elem, definition, this}}
 {
 	impl->m_position = pos;
 	impl->m_isOption = isOption;
@@ -166,6 +170,11 @@ ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsE
 	ScalarsToColorsEditWidget* widget = createScalarsToColorsEditWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
+}
+
+SolverDefinition* SolverDefinitionGridAttribute::solverDefinition() const
+{
+	return impl->m_solverDefinition;
 }
 
 void SolverDefinitionGridAttribute::setPosition(Position pos)

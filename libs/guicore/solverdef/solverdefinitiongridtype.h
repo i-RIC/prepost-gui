@@ -11,6 +11,7 @@
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
+class SolverDefinitionTranslator;
 class Grid;
 class QStringList;
 

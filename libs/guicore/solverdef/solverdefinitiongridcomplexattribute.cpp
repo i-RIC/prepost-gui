@@ -22,8 +22,8 @@ void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, S
 	m_isGrouped = ! (defNode.attribute("grouped") == "false");
 }
 
-SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeInteger {node, translator, Node, false, order},
+SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, SolverDefinition* solverDef, int order) :
+	SolverDefinitionGridAttributeInteger {node, solverDef, Node, false, order},
 	impl {new Impl {node, this}}
 {}
 
