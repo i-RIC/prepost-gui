@@ -150,6 +150,14 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_setupScalarBarAction);
 }
 
+void PreProcessorGeoDataGroupDataItem::closeCgnsFile()
+{}
+
+SolverDefinitionGridAttribute* PreProcessorGeoDataGroupDataItem::condition()
+{
+	return m_condition;
+}
+
 void PreProcessorGeoDataGroupDataItem::import()
 {
 	QStringList filters;
@@ -811,6 +819,11 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 	return result;
 }
 
+void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(10);
+}
+
 /*
 	 bool PreProcessorGeoDataGroupDataItem::setupImportMenu(QMenu* menu)
 	 {
@@ -905,6 +918,21 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 		}
 	}
 	renderGraphicsView();
+}
+
+ScalarBarSetting& PreProcessorGeoDataGroupDataItem::scalarBarSetting()
+{
+	return m_scalarBarSetting;
+}
+
+const QString& PreProcessorGeoDataGroupDataItem::title() const
+{
+	return m_title;
+}
+
+QAction* PreProcessorGeoDataGroupDataItem::importAction() const
+{
+	return m_importAction;
 }
 
 bool PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
@@ -1010,6 +1038,11 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
+}
+
+GridAttributeDimensionsContainer* PreProcessorGeoDataGroupDataItem::dimensions() const
+{
+	return m_dimensions;
 }
 
 PreProcessorGeoDataDataItemInterface* PreProcessorGeoDataGroupDataItem::buildGeoDataDataItem()

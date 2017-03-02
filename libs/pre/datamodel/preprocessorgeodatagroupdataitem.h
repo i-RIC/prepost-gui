@@ -27,12 +27,11 @@ class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDat
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 	virtual ~PreProcessorGeoDataGroupDataItem();
 	void addCustomMenuItems(QMenu* menu) override;
-	void closeCgnsFile() override {}
-	SolverDefinitionGridAttribute* condition() override {return m_condition;}
+	void closeCgnsFile() override;
+	SolverDefinitionGridAttribute* condition() override;
 	bool isChildCaptionAvailable(const QString& cap);
 	int mappingCount() const;
 	void executeMapping(Grid* grid, WaitDialog* dialog);
@@ -40,21 +39,21 @@ public:
 	void informValueRangeChange();
 	void informDataChange();
 	bool getValueRange(double* min, double* max) override;
-	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(10);}
+	void updateZDepthRangeItemCount() override;
 
 	bool importAvailable();
 	bool webImportAvailable();
 
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
-	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
-	const QString& title() const {return m_title;}
-	QAction* importAction() {return m_importAction;}
+	ScalarBarSetting& scalarBarSetting();
+	const QString& title() const;
+	QAction* importAction() const;
 	bool addImportAction(QMenu* menu);
 	bool addImportFromWebAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();
 	void addCopyPolygon(GeoDataPolygon* polygon) override;
-	GridAttributeDimensionsContainer* dimensions() const override {return m_dimensions;}
+	GridAttributeDimensionsContainer* dimensions() const override;
 	PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() override;
 
 	void informSelection(VTKGraphicsView* v) override;
