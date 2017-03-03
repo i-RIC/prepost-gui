@@ -35,6 +35,22 @@ GridComplexConditionGroup::Setting::Setting() :
 	containerSet {nullptr}
 {}
 
+GridComplexConditionGroup::Setting::Setting(const Setting& s) :
+	caption {s.caption},
+	color {s.color},
+	isDefault {s.isDefault},
+	containerSet {s.containerSet->clone()}
+{}
+
+GridComplexConditionGroup::Setting::Setting(Setting&& s) :
+	caption {s.caption},
+	color {s.color},
+	isDefault {s.isDefault},
+	containerSet {s.containerSet}
+{
+	s.containerSet = nullptr;
+}
+
 GridComplexConditionGroup::Setting::~Setting()
 {
 	delete containerSet;

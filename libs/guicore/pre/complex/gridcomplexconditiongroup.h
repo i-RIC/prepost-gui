@@ -15,9 +15,12 @@ class QWidget;
 class GUICOREDLL_EXPORT GridComplexConditionGroup
 {
 public:
-	class Setting {
+	class GUICOREDLL_EXPORT Setting {
 	public:
 		Setting();
+		Setting(const Setting& s);
+		Setting(Setting&& s);
+
 		~Setting();
 
 		QString caption;

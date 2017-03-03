@@ -31,17 +31,17 @@ GridComplexConditionDialog::~GridComplexConditionDialog()
 	delete m_colorSource;
 }
 
-QList<GridComplexConditionWidget*> GridComplexConditionDialog::widgets() const
+std::vector<GridComplexConditionWidget *> GridComplexConditionDialog::widgets() const
 {
 	return m_widgets;
 }
 
-void GridComplexConditionDialog::setWidgets(QList<GridComplexConditionWidget*> widgets)
+void GridComplexConditionDialog::setWidgets(std::vector<GridComplexConditionWidget *> widgets)
 {
 	m_widgets = widgets;
 	updateList();
 
-	if (m_widgets.count() > 0) {
+	if (m_widgets.size() > 0) {
 		ui->listWidget->setCurrentRow(0);
 	}
 }
@@ -50,7 +50,7 @@ void GridComplexConditionDialog::accept()
 {
 	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
 	bool allok = true;
-	for (int i = 0; i < m_widgets.count(); ++i) {
+	for (int i = 0; i < m_widgets.size(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		allok = allok && asciiCodec->canEncode(w->caption());
 	}
@@ -60,7 +60,7 @@ void GridComplexConditionDialog::accept()
 	}
 	// Check whether one of the items are set to be default.
 	int defIndex = -1;
-	for (int i = 0; i < m_widgets.count(); ++i) {
+	for (int i = 0; i < m_widgets.size(); ++i) {
 		if (m_widgets[i]->isDefault()) {
 			defIndex = i;
 		}
@@ -79,7 +79,7 @@ void GridComplexConditionDialog::defaultChecked(bool checked)
 	if (! checked) {return;}
 
 	int current = ui->listWidget->currentRow();
-	for (int i = 0; i < m_widgets.count(); ++i) {
+	for (int i = 0; i < m_widgets.size(); ++i) {
 		if (i != current) {
 			m_widgets[i]->setIsDefault(false);
 		}
@@ -103,34 +103,34 @@ void GridComplexConditionDialog::addItem()
 		dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_dataItem->condition());
 	GridComplexConditionWidget* newWidget = new GridComplexConditionWidget(this);
 	newWidget->setup(m_dataItem->projectData()->solverDefinition(), compCond->element());
-	newWidget->setCaption(QString("Item%1").arg(m_widgets.count() + 1));
-	if (m_widgets.count() == 0) {
+	newWidget->setCaption(QString("Item%1").arg(m_widgets.size() + 1));
+	if (m_widgets.size() == 0) {
 		// this is the first one. make it the default.
 		newWidget->setIsDefault(true);
 	}
-	newWidget->setColor(m_colorSource->getColor(m_widgets.count()));
-	m_widgets.append(newWidget);
+	newWidget->setColor(m_colorSource->getColor(m_widgets.size()));
+	m_widgets.push_back(newWidget);
 	updateList();
-	ui->listWidget->setCurrentRow(m_widgets.count() - 1);
+	ui->listWidget->setCurrentRow(m_widgets.size() - 1);
 }
 
 void GridComplexConditionDialog::removeItem()
 {
-	if (m_widgets.count() == 1) {
+	if (m_widgets.size() == 1) {
 		// The user tried to remove the last item.
 		QMessageBox::warning(this, tr("Warning"), tr("There must be one group at least."));
 		return;
 	}
 	int current = ui->listWidget->currentRow();
-	m_widgets.removeAt(current);
+	m_widgets.erase(m_widgets.begin() + current);
 	updateList();
-	if (m_widgets.count() == 0) {
+	if (m_widgets.size() == 0) {
 		// removed the last one.
 		QWidget* w = new QWidget(this);
 		ui->widgetContainer->setWidget(w);
 	} else {
-		if (current >= m_widgets.count()) {
-			current = m_widgets.count() - 1;
+		if (current >= m_widgets.size()) {
+			current = m_widgets.size() - 1;
 		}
 		ui->listWidget->setCurrentRow(current);
 	}
@@ -144,9 +144,8 @@ void GridComplexConditionDialog::updateCurrentName(const QString& name)
 void GridComplexConditionDialog::updateList()
 {
 	ui->listWidget->clear();
-	for (int i = 0; i < m_widgets.count(); ++i) {
+	for (int i = 0; i < m_widgets.size(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		ui->listWidget->addItem(w->caption());
 	}
 }
-
