@@ -77,6 +77,7 @@ void GridComplexConditionDialog::accept()
 void GridComplexConditionDialog::defaultChecked(bool checked)
 {
 	if (! checked) {return;}
+
 	int current = ui->listWidget->currentRow();
 	for (int i = 0; i < m_widgets.count(); ++i) {
 		if (i != current) {

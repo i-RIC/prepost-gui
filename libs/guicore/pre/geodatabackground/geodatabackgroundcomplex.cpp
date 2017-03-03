@@ -14,9 +14,10 @@ void GeoDataBackgroundComplex::setItem(PreProcessorGeoDataComplexGroupDataItemIn
 QVariant GeoDataBackgroundComplex::variantValue()
 {
 	int defaultVal = 1;
-	auto widgets = m_item->widgets();
-	for (int i = 0; i < widgets.size(); ++i) {
-		if (widgets.at(i)->isDefault()) {
+
+	auto groups = m_item->groups();
+	for (int i = 0; i < groups.size(); ++i) {
+		if (groups.at(i)->isDefault()) {
 			defaultVal = i + 1;
 		}
 	}

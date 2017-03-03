@@ -22,7 +22,6 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <geodata/polygon/geodatapolygon.h>
-#include <guicore/project/inputcond/inputconditioncontainerset.h>
 
 #include <QAction>
 #include <QLocale>
@@ -45,7 +44,7 @@ PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem
 
 PreProcessorGeoDataComplexGroupDataItem::~PreProcessorGeoDataComplexGroupDataItem()
 {
-	clearWidgets();
+	clearGroups();
 	delete m_dialog;
 }
 
@@ -54,28 +53,30 @@ void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 	int count = 0;
 	int defId = -1;
 
-	clear();
+	auto solverDef = projectData()->solverDefinition();
+	auto compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
+	auto elem = compCond->element();
+
+	clearGroups();
 	int ret = cg_iRIC_Read_Complex_Count(const_cast<char*>(m_condition->name().c_str()), &count);
 	if (ret != 0) {
 		goto INITGROUPS;
 	}
-	auto compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
+
 	for (int i = 0; i < count; ++i) {
-		GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
-		w->setup(projectData()->solverDefinition(), compCond->element());
-		w->setNameAndNumber(m_condition->name(), i + 1);
-		w->load(fn);
-		if (w->isDefault()) {defId = i;}
-		m_widgets.append(w);
+		auto g = new GridComplexConditionGroup(solverDef, elem);
+		g->setNameAndNumber(m_condition->name(), i + 1);
+		g->load();
+		if (g->isDefault()) {defId = i;}
+		m_groups.push_back(g);
 	}
-	if (defId == -1 && m_widgets.count() > 0) {
+	if (defId == -1 && m_groups.size() > 0) {
 		// make the first group default.
-		m_widgets[0]->setIsDefault(true);
+		m_groups[0]->setIsDefault(true);
 	}
 
 INITGROUPS:
-
-	if (m_widgets.count() == 0) {
+	if (m_groups.size() == 0) {
 		createDefaultGroup();
 	}
 	updateColorMap();
@@ -83,10 +84,10 @@ INITGROUPS:
 
 void PreProcessorGeoDataComplexGroupDataItem::saveComplexGroupsToCgnsFile(const int fn)
 {
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		GridComplexConditionWidget* w = m_widgets.at(i);
-		w->setNameAndNumber(m_condition->name(), i + 1);
-		w->save(fn);
+	for (int i = 0; i < m_groups.size(); ++i) {
+		auto g = m_groups.at(i);
+		g->setNameAndNumber(m_condition->name(), i + 1);
+		g->save();
 	}
 }
 
@@ -126,6 +127,11 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_setupScalarBarAction);
 }
 
+ProjectData* PreProcessorGeoDataComplexGroupDataItem::projectData() const
+{
+	return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());
+}
+
 void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 {
 	PreProcessorGridTypeDataItem* tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
@@ -136,12 +142,12 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 	QMap<double, QString> englishEnums;
 	QMap<double, QColor> colors;
 
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		GridComplexConditionWidget* w = m_widgets.at(i);
+	for (int i = 0; i < m_groups.size(); ++i) {
+		auto g = m_groups.at(i);
 		double val = i + 1;
-		colors.insert(val, w->color());
-		enums.insert(val, w->caption());
-		englishEnums.insert(val, w->caption());
+		colors.insert(val, g->color());
+		enums.insert(val, g->caption());
+		englishEnums.insert(val, g->caption());
 	}
 	c2->setColors(colors);
 	c2->setEnumerations(enums);
@@ -156,12 +162,12 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	// set default folder for filename input conditions.
 	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
 
-	QList<GridComplexConditionWidget::Setting> settings;
+	std::vector<GridComplexConditionGroup::Setting> settings;
+	for (int i = 0; i < m_groups.size(); ++i) {
+		settings.push_back(m_groups.at(i)->setting());
+	}
 
 	m_dialog->setWidgets(m_widgets);
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		settings.append(m_widgets[i]->setting());
-	}
 
 	int ret = m_dialog->exec();
 	QList<GridComplexConditionWidget*> widgets = m_dialog->widgets();
@@ -241,20 +247,12 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
 
-	for (int i = 0; i < settings.count(); ++i) {
-		delete settings.at(i).containerSet;
+	for (auto s : settings.size()) {
+		delete s.containerSet;
 	}
 
 	updateColorMap();
 	renderGraphicsView();
-}
-
-void PreProcessorGeoDataComplexGroupDataItem::clear()
-{
-	for (int i = 0; i < m_widgets.size(); ++i) {
-		delete m_widgets.at(i);
-	}
-	m_widgets.clear();
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::setupEditWidget(GridAttributeEditWidget* widget)
@@ -262,9 +260,9 @@ void PreProcessorGeoDataComplexGroupDataItem::setupEditWidget(GridAttributeEditW
 	GridComplexAttributeEditWidget* w = dynamic_cast<GridComplexAttributeEditWidget*>(widget);
 	QMap<int, QString> enums;
 	int defIndex = 0;
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		enums.insert(i + 1, m_widgets[i]->caption());
-		if (m_widgets[i]->isDefault()) {
+	for (int i = 0; i < m_groups.size(); ++i) {
+		enums.insert(i + 1, m_groups[i]->caption());
+		if (m_groups[i]->isDefault()) {
 			defIndex = i + 1;
 		}
 	}
@@ -286,9 +284,9 @@ void PreProcessorGeoDataComplexGroupDataItem::applyScalarsToColorsSetting()
 	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*>(c);
 
 	QMap<double, QColor> colors = c2->colors();
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		GridComplexConditionWidget* w = m_widgets[i];
-		w->setColor(colors.value(i + 1));
+	for (int i = 0; i < m_groups.size(); ++i) {
+		auto g = m_groups[i];
+		g->setColor(colors.value(i + 1));
 	}
 }
 
@@ -300,23 +298,21 @@ void PreProcessorGeoDataComplexGroupDataItem::applySettingsToScalarBar()
 
 void PreProcessorGeoDataComplexGroupDataItem::createDefaultGroup()
 {
-	SolverDefinitionGridComplexAttribute* compCond =
-		dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
-	GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
-	w->setup(projectData()->solverDefinition(), compCond->element());
-	w->setCaption("Default");
-	w->setColor(m_undefinedColor);
-	w->setIsDefault(true);
-	w->setNameAndNumber(m_condition->name(), 1);
-	m_widgets.append(w);
+	auto compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
+	auto g = new GridComplexConditionGroup(projectData()->solverDefinition(), compCond->element());
+	g->setCaption("Default");
+	g->setColor(m_undefinedColor);
+	g->setIsDefault(true);
+	g->setNameAndNumber(m_condition->name(), 1);
+	m_groups.push_back(g);
 }
 
-void PreProcessorGeoDataComplexGroupDataItem::clearWidgets()
+void PreProcessorGeoDataComplexGroupDataItem::clearGroups()
 {
-	for (auto w : m_widgets) {
-		delete w;
+	for (auto g : m_groups) {
+		delete g;
 	}
-	m_widgets.clear();
+	m_groups.clear();
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::addBackground()
@@ -339,22 +335,20 @@ SolverDefinitionGridAttribute* PreProcessorGeoDataComplexGroupDataItem::conditio
 	return PreProcessorGeoDataGroupDataItem::condition();
 }
 
-void PreProcessorGeoDataComplexGroupDataItem::setupWidgets(int widgetCount)
+void PreProcessorGeoDataComplexGroupDataItem::setupGroups(int count)
 {
-	clearWidgets();
+	clearGroups();
 
 	auto compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
 
-	for (int i = 0; i < widgetCount; ++i) {
-		GridComplexConditionWidget* w = new GridComplexConditionWidget(mainWindow());
-		w->setup(projectData()->solverDefinition(), compCond->element());
-		w->setNameAndNumber(m_condition->name(), i + 1);
-		if (i == 0) {w->setIsDefault(true);}
-		m_widgets.append(w);
+	for (int i = 0; i < count; ++i) {
+		auto g = new GridComplexConditionGroup(projectData()->solverDefinition(), compCond->element());
+		if (i == 0) {g->setIsDefault(true);}
+		m_groups.push_back(g);
 	}
 }
 
-QList<GridComplexConditionWidget*> PreProcessorGeoDataComplexGroupDataItem::widgets() const
+std::vector<GridComplexConditionGroup*> PreProcessorGeoDataComplexGroupDataItem::groups() const
 {
-	return m_widgets;
+	return m_groups;
 }
