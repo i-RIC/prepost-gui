@@ -31,11 +31,29 @@
 
 #include <algorithm>
 
+namespace {
+
+void deleteWidgets(std::vector<GridComplexConditionWidget*>* widgets, std::vector<GridComplexConditionWidget*>* widgets2){
+	for (auto w : *widgets2) {
+		auto it = std::find(widgets->begin(), widgets->end(), w);
+		if (it == widgets->end()) {
+			delete w;
+		}
+	}
+	widgets2->clear();
+	for (auto w : *widgets) {
+		delete w;
+	}
+	widgets->clear();
+}
+
+} // namespace
+
 PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItem {cond, parent},
 	m_undefinedColor {Qt::gray}
 {
-	m_dialog = new GridComplexConditionDialog(this, iricMainWindow(), mainWindow());
+	m_dialog = new GridComplexConditionDialog(this, mainWindow());
 	m_dialog->setWindowTitle(PreProcessorGeoDataComplexGroupDataItem::tr("%1 Group Setting").arg(m_condition->caption()));
 
 	m_editGroupAction = new QAction(PreProcessorGeoDataComplexGroupDataItem::tr("Edit &Groups..."), this);
@@ -183,19 +201,10 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 
 	std::vector<GridComplexConditionWidget*> newWidgets = m_dialog->widgets();
 	if (ret == QDialog::Rejected) {
-		for (int i = 0; i < newWidgets.size(); ++i) {
-			GridComplexConditionWidget* w = newWidgets[i];
-			auto it = std::find(widgets.begin(), widgets.end(), w);
-			if (it == widgets.end()) {
-				delete w->group();
-				delete w;
-			}
-		}
+		deleteWidgets(&widgets, &newWidgets);
+
 		for (int i = 0; i < m_groups.size(); ++i) {
 			m_groups[i]->setSetting(settings.at(i));
-		}
-		for (auto w : widgets) {
-			delete w;
 		}
 		return;
 	}
@@ -207,6 +216,8 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		auto w = newWidgets.at(i);
 		m_groups.push_back(w->group());
 	}
+
+	deleteWidgets(&widgets, &newWidgets);
 
 	std::vector<int> valueMap;
 	int newindex = 1;
@@ -223,7 +234,6 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		auto g = oldGroups[i];
 		auto it = std::find(m_groups.begin(), m_groups.end(), g);
 		if (it == m_groups.end()) {
-			delete g;
 			valueMap.push_back(newDefault);
 			-- newindex;
 		} else {
@@ -279,17 +289,6 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
-
-	for (int i = 0; i < newWidgets.size(); ++i) {
-		GridComplexConditionWidget* w = newWidgets[i];
-		auto it = std::find(widgets.begin(), widgets.end(), w);
-		if (it == widgets.end()) {
-			delete w;
-		}
-	}
-	for (auto w : widgets) {
-		delete w;
-	}
 
 	for (auto g : oldGroups) {
 		auto it = std::find(m_groups.begin(), m_groups.end(), g);

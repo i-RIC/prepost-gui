@@ -21,7 +21,7 @@ class GUICOREDLL_EXPORT GridComplexConditionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent);
+	explicit GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, QWidget* parent);
 	~GridComplexConditionDialog();
 
 	std::vector<GridComplexConditionWidget*> widgets() const;
@@ -29,6 +29,7 @@ public:
 
 public slots:
 	void accept() override;
+	void reject() override;
 
 private slots:
 	void defaultChecked(bool checked);
@@ -43,7 +44,6 @@ private:
 	std::vector<GridComplexConditionWidget*> m_widgets;
 
 	PreProcessorGeoDataComplexGroupDataItemInterface* m_dataItem;
-	iRICMainWindowInterface* m_mainWindow;
 	ColorSource* m_colorSource;
 	Ui::GridComplexConditionDialog* ui;
 };

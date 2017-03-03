@@ -12,13 +12,12 @@
 #include <QTextCodec>
 #include <QWidget>
 
-GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent) :
+GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridComplexConditionDialog)
 {
 	ui->setupUi(this);
 	m_dataItem = item;
-	m_mainWindow = mainWindow;
 	m_colorSource = new ColorSource(0);
 	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(selectItem(int)));
 	connect(ui->addButton, SIGNAL(clicked()), this, SLOT(addItem()));
@@ -71,7 +70,15 @@ void GridComplexConditionDialog::accept()
 		// if no default specified and there is more than one widget, make the first one default.
 		m_widgets[0]->setIsDefault(true);
 	}
+
+	ui->widgetContainer->setWidget(nullptr);
 	QDialog::accept();
+}
+
+void GridComplexConditionDialog::reject()
+{
+	ui->widgetContainer->setWidget(nullptr);
+	QDialog::reject();
 }
 
 void GridComplexConditionDialog::defaultChecked(bool checked)

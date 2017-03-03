@@ -23,9 +23,7 @@ GridComplexConditionWidget::Impl::Impl() :
 {}
 
 GridComplexConditionWidget::Impl::~Impl()
-{
-	delete m_group;
-}
+{}
 
 // public interfaces
 
@@ -101,7 +99,14 @@ GridComplexConditionGroup* GridComplexConditionWidget::group()
 
 void GridComplexConditionWidget::setGroup(GridComplexConditionGroup* group)
 {
-	setWidget(group->widget());
+	if (group != nullptr){
+		ui->nameEdit->setText(group->caption());
+		ui->colorWidget->setColor(group->color());
+		ui->isDefaultCheckBox->setChecked(group->isDefault());
+		auto w = group->widget();
+		w->show();
+		setWidget(w);
+	}
 
 	delete impl->m_group;
 	impl->m_group = group;

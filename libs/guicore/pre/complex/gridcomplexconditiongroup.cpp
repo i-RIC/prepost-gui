@@ -26,6 +26,8 @@ GridComplexConditionGroup::Impl::Impl(SolverDefinition* def, const QDomElement& 
 
 GridComplexConditionGroup::Impl::~Impl()
 {
+	m_widgetSet.clear();
+	m_containerSet.clear();
 	delete m_page;
 }
 
