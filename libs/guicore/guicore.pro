@@ -398,6 +398,7 @@ HEADERS += guicore_global.h \
            tmsimage/private/tmsimagesetting_impl.h \
            tmsimage/private/tmsregionselectwidget_impl.h \
            pre/complex/private/gridcomplexconditiongroup_impl.h \
+           pre/complex/private/gridcomplexconditionwidget_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \

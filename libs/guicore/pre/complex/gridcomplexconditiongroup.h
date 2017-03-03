@@ -3,6 +3,9 @@
 
 #include "../../guicore_global.h"
 
+#include <QColor>
+#include <QString>
+
 class SolverDefinition;
 class InputConditionContainerSet;
 
@@ -12,15 +15,39 @@ class QWidget;
 class GUICOREDLL_EXPORT GridComplexConditionGroup
 {
 public:
+	class Setting {
+	public:
+		Setting();
+		~Setting();
+
+		QString caption;
+		QColor color;
+		bool isDefault;
+		InputConditionContainerSet* containerSet;
+	};
+
 	GridComplexConditionGroup(SolverDefinition* def, const QDomElement& elem);
 	~GridComplexConditionGroup();
 
-	void load(const int fn);
-	void save(const int fn);
+	void setNameAndNumber(const std::string& name, int number);
+
+	void load();
+	void save();
 
 	QWidget* widget() const;
-
 	InputConditionContainerSet* containerSet() const;
+
+	QString caption() const;
+	void setCaption(const QString& caption);
+
+	QColor color() const;
+	void setColor(const QColor& color);
+
+	bool isDefault() const;
+	void setIsDefault(bool isDefault);
+
+	Setting setting() const;
+	void setSetting(const Setting& setting);
 
 private:
 	class Impl;

@@ -2,8 +2,11 @@
 #define GRIDCOMPLEXCONDITIONGROUP_IMPL_H
 
 #include "../gridcomplexconditiongroup.h"
+#include "../../../project/inputcond/inputconditioncontainerinteger.h"
+#include "../../../project/inputcond/inputconditioncontainerstring.h"
+#include "../../../project/inputcond/inputconditioncontainerset.h"
+#include "../../../project/inputcond/inputconditionwidgetset.h"
 
-class InputConditionWidgetSet;
 class InputConditionPage;
 
 class GridComplexConditionGroup::Impl
@@ -13,8 +16,12 @@ public:
 	~Impl();
 
 	InputConditionPage* m_page;
-	InputConditionWidgetSet* m_widgetSet;
-	InputConditionContainerSet* m_containerSet;
+	InputConditionWidgetSet m_widgetSet;
+
+	InputConditionContainerString m_caption;
+	InputConditionContainerString m_color;
+	InputConditionContainerInteger m_isDefault;
+	InputConditionContainerSet m_containerSet;
 };
 
 #endif // GRIDCOMPLEXCONDITIONGROUP_IMPL_H

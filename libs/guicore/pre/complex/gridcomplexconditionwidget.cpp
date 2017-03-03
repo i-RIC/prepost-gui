@@ -1,13 +1,9 @@
 #include "ui_gridcomplexconditionwidget.h"
 
-#include "../../base/iricmainwindowinterface.h"
-#include "../../project/inputcond/inputconditioncontainerset.h"
-#include "../../project/inputcond/inputconditionpage.h"
-#include "../../project/inputcond/inputconditionwidgetset.h"
-#include "../../project/inputcond/inputconditionwidgetset.h"
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "gridcomplexconditionwidget.h"
+#include "private/gridcomplexconditionwidget_impl.h"
 
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -22,21 +18,23 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+GridComplexConditionWidget::Impl::Impl() :
+	m_group {nullptr}
+{}
+
+GridComplexConditionWidget::Impl::~Impl()
+{
+	delete m_group;
+}
+
+// public interfaces
+
 GridComplexConditionWidget::GridComplexConditionWidget(QWidget* parent) :
 	QWidget(parent),
-	ui(new Ui::GridComplexConditionWidget)
+	ui(new Ui::GridComplexConditionWidget),
+	impl {new Impl {}}
 {
-	m_modified = false;
-
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet();
-	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
-	m_widgetSet = new InputConditionWidgetSet();
-
-	m_captionContainer.setName("_caption");
-	m_colorContainer.setName("_color");
-	m_isDefaultContainer.setName("_isdefault");
-
 	setHidden(true);
 
 	connect(ui->nameEdit, SIGNAL(textChanged(QString)), this, SIGNAL(captionChanged(QString)));
@@ -47,78 +45,28 @@ GridComplexConditionWidget::GridComplexConditionWidget(QWidget* parent) :
 GridComplexConditionWidget::~GridComplexConditionWidget()
 {
 	delete ui;
-	m_containerSet->clear();
-	delete m_containerSet;
-	m_widgetSet->clear();
-	delete m_widgetSet;
+	if (impl->m_group != nullptr) {
+		auto w = impl->m_group->widget();
+		w->setParent(nullptr);
+		w->hide();
+	}
+	delete impl;
 }
 
 void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement& elem)
 {
-	// open solve definition file
-	auto t = def->buildTranslator();
-	// setup ContainerSet first.
-	m_containerSet->setup(elem, *def, t, true);
-	// setup WidgetSet.
-	m_widgetSet->setup(elem, *m_containerSet, *def, t, true);
-
-	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, t, this);
-	QVBoxLayout* layout = new QVBoxLayout(this);
-	layout->setMargin(0);
-	layout->addWidget(page);
-	ui->settingGroupBox->setLayout(layout);
-}
-
-void GridComplexConditionWidget::setNameAndNumber(const std::string& name, int number)
-{
-	m_containerSet->setComplexProperty(name, number);
-	m_captionContainer.setComplexProperty(name, number);
-	m_colorContainer.setComplexProperty(name, number);
-	m_isDefaultContainer.setComplexProperty(name, number);
-}
-
-void GridComplexConditionWidget::load(const int /*fn*/)
-{
-	m_containerSet->load();
-	m_captionContainer.load();
-	m_colorContainer.load();
-	m_isDefaultContainer.load();
-
-	setCaption(m_captionContainer.value());
-	QColor color(m_colorContainer.value());
-	ui->colorWidget->setColor(color);
-	ui->isDefaultCheckBox->setChecked(m_isDefaultContainer.value() == 1);
-
-	m_modified = false;
-}
-
-void GridComplexConditionWidget::save(const int /*fn*/)
-{
-	m_containerSet->save();
-	m_captionContainer.setValue(ui->nameEdit->text());
-	m_captionContainer.save();
-	m_colorContainer.setValue(ui->colorWidget->color().name());
-	m_colorContainer.save();
-	m_isDefaultContainer.setValue(0);
-	if (ui->isDefaultCheckBox->isChecked()) {m_isDefaultContainer.setValue(1);}
-	m_isDefaultContainer.save();
-
-	m_modified = false;
-}
-
-void GridComplexConditionWidget::setModified()
-{
-	m_modified = true;
-}
-
-void GridComplexConditionWidget::setCaption(const QString& caption)
-{
-	ui->nameEdit->setText(caption);
+	impl->m_group = new GridComplexConditionGroup(def, elem);
+	setWidget(impl->m_group->widget());
 }
 
 QString GridComplexConditionWidget::caption() const
 {
 	return ui->nameEdit->text();
+}
+
+void GridComplexConditionWidget::setCaption(const QString& caption)
+{
+	ui->nameEdit->setText(caption);
 }
 
 QColor GridComplexConditionWidget::color() const
@@ -128,7 +76,7 @@ QColor GridComplexConditionWidget::color() const
 
 void GridComplexConditionWidget::setColor(const QColor& color)
 {
-	ui->colorWidget->setColor(color);
+	return ui->colorWidget->setColor(color);
 }
 
 bool GridComplexConditionWidget::isDefault() const
@@ -142,35 +90,21 @@ void GridComplexConditionWidget::setIsDefault(bool def)
 	ui->isDefaultCheckBox->setDisabled(def);
 }
 
-GridComplexConditionWidget::Setting GridComplexConditionWidget::setting()
+GridComplexConditionGroup* GridComplexConditionWidget::group()
 {
-	m_captionContainer.setValue(ui->nameEdit->text());
-	m_colorContainer.setValue(ui->colorWidget->color().name());
-	m_isDefaultContainer.setValue(ui->isDefaultCheckBox->isChecked() ? 1 : 0);
+	impl->m_group->setCaption(ui->nameEdit->text());
+	impl->m_group->setColor(ui->colorWidget->color());
+	impl->m_group->setIsDefault(ui->isDefaultCheckBox->isChecked());
 
-	GridComplexConditionWidget::Setting setting;
-	setting.containerSet = m_containerSet->clone();
-	setting.captionContainer = m_captionContainer;
-	setting.colorContainer = m_colorContainer;
-	setting.isDefaultContainer = m_isDefaultContainer;
-	return setting;
+	return impl->m_group;
 }
 
-void GridComplexConditionWidget::setSetting(const GridComplexConditionWidget::Setting& setting)
+void GridComplexConditionWidget::setGroup(GridComplexConditionGroup* group)
 {
-	m_containerSet->copyValues(setting.containerSet);
-	m_captionContainer = setting.captionContainer;
-	m_colorContainer = setting.colorContainer;
-	m_isDefaultContainer = setting.isDefaultContainer;
+	setWidget(group->widget());
 
-	ui->nameEdit->setText(m_captionContainer.value());
-	ui->colorWidget->setColor(QColor(m_colorContainer.value()));
-	ui->isDefaultCheckBox->setChecked(m_isDefaultContainer.value() == 1);
-}
-
-InputConditionContainerSet* GridComplexConditionWidget::containerSet() const
-{
-	return m_containerSet;
+	delete impl->m_group;
+	impl->m_group = group;
 }
 
 void GridComplexConditionWidget::handleDefaultCheck(bool checked)
@@ -178,4 +112,12 @@ void GridComplexConditionWidget::handleDefaultCheck(bool checked)
 	if (checked) {
 		ui->isDefaultCheckBox->setEnabled(false);
 	}
+}
+
+void GridComplexConditionWidget::setWidget(QWidget* w)
+{
+	QVBoxLayout* layout = new QVBoxLayout(this);
+	layout->setMargin(0);
+	layout->addWidget(w);
+	ui->settingGroupBox->setLayout(layout);
 }
