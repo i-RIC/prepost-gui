@@ -84,6 +84,11 @@ PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
 
 QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 {
+	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+	if (compAtt != nullptr && compAtt->isGrouped() == false) {
+		return nullptr;
+	}
+
 	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
 	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
