@@ -26,7 +26,8 @@
 #include <QXmlStreamWriter>
 
 PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* dataitem) :
-	PreProcessorGridCreatingConditionDataItemInterface {dataitem}
+	PreProcessorGridCreatingConditionDataItemInterface {dataitem},
+	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -36,45 +37,44 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 
 	// setup actions.
-	m_createAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Create Grid..."), this);
-	m_createAction->setDisabled(true);
-	connect(m_createAction, SIGNAL(triggered()), this, SLOT(createGrid()));
+	impl->m_createAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Create Grid..."), this);
+	impl->m_createAction->setDisabled(true);
+	connect(impl->m_createAction, SIGNAL(triggered()), this, SLOT(createGrid()));
 
-	m_switchAlgorithmAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Select Algorithm to Create Grid..."), this);
-	connect(m_switchAlgorithmAction, SIGNAL(triggered()), this, SLOT(switchAlgorithm()));
+	impl->m_switchAlgorithmAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Select Algorithm to Create Grid..."), this);
+	connect(impl->m_switchAlgorithmAction, SIGNAL(triggered()), this, SLOT(switchAlgorithm()));
 
-	m_clearAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("Reset to &Default..."), this);
-	connect(m_clearAction, SIGNAL(triggered()), this, SLOT(resetCondition()));
-	m_deleteAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition..."), this);
-	m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
-	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCondition()));
+	impl->m_clearAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("Reset to &Default..."), this);
+	connect(impl->m_clearAction, SIGNAL(triggered()), this, SLOT(resetCondition()));
+	impl->m_deleteAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition..."), this);
+	impl->m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
+	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCondition()));
 
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
 	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(*(gTypeItem->gridType()));
 
 	// default condition is not set.
-	m_condition = nullptr;
+	impl->m_condition = nullptr;
 	if (cList.count() < 1) {
 		// users can not switch algorithmn to create grid.
-		m_switchAlgorithmAction->setDisabled(true);
+		impl->m_switchAlgorithmAction->setDisabled(true);
 	}
 }
 
 PreProcessorGridCreatingConditionDataItem::~PreProcessorGridCreatingConditionDataItem()
 {
-	if (m_condition) {
-		delete m_condition;
-	}
+	delete impl->m_condition;
+	delete impl;
 }
 
 GridCreatingCondition* PreProcessorGridCreatingConditionDataItem::condition() const
 {
-	return m_condition;
+	return impl->m_condition;
 }
 
 void PreProcessorGridCreatingConditionDataItem::setCondition(GridCreatingCondition* condition)
 {
-	m_condition = condition;
+	impl->m_condition = condition;
 }
 
 PreProcessorGridTypeDataItemInterface* PreProcessorGridCreatingConditionDataItem::gridTypeDataItem() const
@@ -84,49 +84,49 @@ PreProcessorGridTypeDataItemInterface* PreProcessorGridCreatingConditionDataItem
 
 void PreProcessorGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
 {
-	if (m_condition == nullptr) {
-		menu->addAction(m_switchAlgorithmAction);
+	if (impl->m_condition == nullptr) {
+		menu->addAction(impl->m_switchAlgorithmAction);
 		return;
 	}
-	menu->addAction(m_createAction);
+	menu->addAction(impl->m_createAction);
 	menu->addSeparator();
-	menu->addAction(m_switchAlgorithmAction);
+	menu->addAction(impl->m_switchAlgorithmAction);
 	menu->addSeparator();
-	menu->addAction(m_deleteAction);
+	menu->addAction(impl->m_deleteAction);
 }
 
 bool PreProcessorGridCreatingConditionDataItem::addToolBarButtons(QToolBar* tb)
 {
-	if (m_condition == nullptr) {return false;}
-	return m_condition->addToolBarButtons(tb);
+	if (impl->m_condition == nullptr) {return false;}
+	return impl->m_condition->addToolBarButtons(tb);
 }
 
 void PreProcessorGridCreatingConditionDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->assignActorZValues(range);
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->assignActorZValues(range);
 }
 
 void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	if (m_condition != nullptr) {
-		delete m_condition;
+	if (impl->m_condition != nullptr) {
+		delete impl->m_condition;
 	}
-	m_condition = GridCreatingConditionFactory::instance(iricMainWindow()).restore(node, this);
-	m_createAction->setDisabled(true);
-	if (m_condition != nullptr) {
-		m_condition->setupActors();
-		m_condition->informDeselection(dataModel()->graphicsView());
-		m_condition->assignActorZValues(m_zDepthRange);
-		m_condition->setupMenu();
-		connect(m_condition, SIGNAL(gridCreated(Grid*)), this, SLOT(handleNewGrid(Grid*)));
-		connect(m_condition, SIGNAL(tmpGridCreated(Grid*)), this, SLOT(handleTmpGrid(Grid*)));
-		if (m_condition->init()) {
-			m_createAction->setEnabled(true);
+	impl->m_condition = GridCreatingConditionFactory::instance(iricMainWindow()).restore(node, this);
+	impl->m_createAction->setDisabled(true);
+	if (impl->m_condition != nullptr) {
+		impl->m_condition->setupActors();
+		impl->m_condition->informDeselection(dataModel()->graphicsView());
+		impl->m_condition->assignActorZValues(m_zDepthRange);
+		impl->m_condition->setupMenu();
+		connect(impl->m_condition, SIGNAL(gridCreated(Grid*)), this, SLOT(handleNewGrid(Grid*)));
+		connect(impl->m_condition, SIGNAL(tmpGridCreated(Grid*)), this, SLOT(handleTmpGrid(Grid*)));
+		if (impl->m_condition->init()) {
+			impl->m_createAction->setEnabled(true);
 		} else {
 			// error occured while initializing.
-			delete m_condition;
-			m_condition = nullptr;
+			delete impl->m_condition;
+			impl->m_condition = nullptr;
 		}
 	}
 	updateVisibilityWithoutRendering();
@@ -134,22 +134,22 @@ void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const 
 
 void PreProcessorGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	if (m_condition != nullptr) {
-		writer.writeAttribute("name", m_condition->name());
-		m_condition->saveToProjectMainFile(writer);
+	if (impl->m_condition != nullptr) {
+		writer.writeAttribute("name", impl->m_condition->name());
+		impl->m_condition->saveToProjectMainFile(writer);
 	}
 }
 
 void PreProcessorGridCreatingConditionDataItem::innerUpdate2Ds()
 {
-	if (m_condition != nullptr) {
-		m_condition->update2Ds();
+	if (impl->m_condition != nullptr) {
+		impl->m_condition->update2Ds();
 	}
 }
 
 void PreProcessorGridCreatingConditionDataItem::createGrid()
 {
-	if (m_condition == nullptr) {return;}
+	if (impl->m_condition == nullptr) {return;}
 	PreProcessorGridAndGridCreatingConditionDataItem* tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gridDataItem = tmp_parent->gridDataItem();
 	// this operation is not possible while the solver is running.
@@ -170,7 +170,7 @@ void PreProcessorGridCreatingConditionDataItem::createGrid()
 		}
 	}
 	// each algorithmn can select whether to show dialog or not.
-	bool ok = m_condition->create(preProcessorWindow());
+	bool ok = impl->m_condition->create(preProcessorWindow());
 	if (! ok) {return;}
 	PreProcessorBCSettingGroupDataItem* bcsgItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->bcSettingGroupDataItem();
 	bcsgItem->executeMapping();
@@ -180,10 +180,10 @@ void PreProcessorGridCreatingConditionDataItem::createGrid()
 
 void PreProcessorGridCreatingConditionDataItem::silentDeleteCondition()
 {
-	if (m_condition == nullptr) {return;}
-	delete m_condition;
-	m_condition = nullptr;
-	m_createAction->setDisabled(true);
+	if (impl->m_condition == nullptr) {return;}
+	delete impl->m_condition;
+	impl->m_condition = nullptr;
+	impl->m_createAction->setDisabled(true);
 }
 
 void PreProcessorGridCreatingConditionDataItem::deleteCondition()
@@ -195,10 +195,10 @@ void PreProcessorGridCreatingConditionDataItem::deleteCondition()
 							QMessageBox::Yes | QMessageBox::No,
 							QMessageBox::No);
 	if (ret == QMessageBox::No) {return;}
-	if (m_condition == nullptr) {return;}
-	delete m_condition;
-	m_condition = nullptr;
-	m_createAction->setDisabled(true);
+	if (impl->m_condition == nullptr) {return;}
+	delete impl->m_condition;
+	impl->m_condition = nullptr;
+	impl->m_createAction->setDisabled(true);
 	renderGraphicsView();
 
 	// this operation is not undo-able.
@@ -214,14 +214,14 @@ void PreProcessorGridCreatingConditionDataItem::resetCondition()
 							QMessageBox::Yes | QMessageBox::No,
 							QMessageBox::No);
 	if (ret == QMessageBox::No) {return;}
-	if (m_condition == nullptr) {return;}
-	m_condition->clear();
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->clear();
 	renderGraphicsView();
 
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
 
-	m_condition->showInitialDialog();
+	impl->m_condition->showInitialDialog();
 }
 
 void PreProcessorGridCreatingConditionDataItem::handleNewGrid(Grid* newgrid)
@@ -252,82 +252,102 @@ void PreProcessorGridCreatingConditionDataItem::handleTmpGrid(Grid* tmpgrid)
 void PreProcessorGridCreatingConditionDataItem::moveGrid()
 {}
 
+QAction* PreProcessorGridCreatingConditionDataItem::createAction() const
+{
+	return impl->m_createAction;
+}
+
+QAction* PreProcessorGridCreatingConditionDataItem::switchAction() const
+{
+	return impl->m_switchAlgorithmAction;
+}
+
+QAction* PreProcessorGridCreatingConditionDataItem::deleteAction() const
+{
+	return impl->m_deleteAction;
+}
+
+QAction* PreProcessorGridCreatingConditionDataItem::clearAction() const
+{
+	return impl->m_clearAction;
+}
+
 void PreProcessorGridCreatingConditionDataItem::handleStandardItemClicked()
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->handleStandardItemClicked();
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->handleStandardItemClicked();
 }
 
 void PreProcessorGridCreatingConditionDataItem::handleStandardItemDoubleClicked()
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->handleStandardItemDoubleClicked();
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->handleStandardItemDoubleClicked();
 }
 
 void PreProcessorGridCreatingConditionDataItem::informSelection(VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::informDeselection(VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::viewOperationEnded(VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 QStringList PreProcessorGridCreatingConditionDataItem::containedFiles()
 {
-	if (m_condition == nullptr) {return QStringList();}
-	return m_condition->containedFiles();
+	if (impl->m_condition == nullptr) {return QStringList();}
+	return impl->m_condition->containedFiles();
 }
 
 QMenu* PreProcessorGridCreatingConditionDataItem::menu()
 {
-	if (m_condition != nullptr) {
-		return m_condition->menu();
+	if (impl->m_condition != nullptr) {
+		return impl->m_condition->menu();
 	} else {
 		return nullptr;
 	}
@@ -335,7 +355,7 @@ QMenu* PreProcessorGridCreatingConditionDataItem::menu()
 
 void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 {
-	if (m_condition != nullptr && QMessageBox::Cancel == QMessageBox::warning(mainWindow(), tr("Warning"), tr("When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
+	if (impl->m_condition != nullptr && QMessageBox::Cancel == QMessageBox::warning(mainWindow(), tr("Warning"), tr("When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
 		return;
 	}
 	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
@@ -343,8 +363,8 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(*(gTypeItem->gridType()));
 	PreProcessorGridCreatingConditionAlgorithmSelectDialog dialog;
 	dialog.setCreators(cList);
-	if (m_condition != nullptr) {
-		dialog.setCurrent(m_condition->creator());
+	if (impl->m_condition != nullptr) {
+		dialog.setCurrent(impl->m_condition->creator());
 	}
 	if (QDialog::Accepted != dialog.exec()) {
 		// canceled.
@@ -365,29 +385,29 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 	bool ret = newcond->init();
 	if (ret) {
 		// initialization succeeded.
-		if (m_condition != nullptr) {
-			m_condition->informDeselection(dataModel()->graphicsView());
-			delete m_condition;
+		if (impl->m_condition != nullptr) {
+			impl->m_condition->informDeselection(dataModel()->graphicsView());
+			delete impl->m_condition;
 		}
-		m_condition = newcond;
+		impl->m_condition = newcond;
 	} else {
 		// initialization failed.
 		delete newcond;
 		return;
 	}
 	updateVisibilityWithoutRendering();
-	m_createAction->setEnabled(true);
+	impl->m_createAction->setEnabled(true);
 	dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->gridDataItem()->silentDeleteGrid();
 
 	// switching grid creating algorithmn is not undo-able.
 	iRICUndoStack::instance().clear();
 	// Select this node in object browser.
 	dataModel()->objectBrowserView()->select(m_standardItem->index());
-	m_condition->showInitialDialog();
+	impl->m_condition->showInitialDialog();
 }
 
 void PreProcessorGridCreatingConditionDataItem::doApplyOffset(double x, double y)
 {
-	if (m_condition == nullptr) {return;}
-	m_condition->applyOffset(x, y);
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->applyOffset(x, y);
 }
