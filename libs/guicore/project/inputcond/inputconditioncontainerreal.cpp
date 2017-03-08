@@ -129,6 +129,6 @@ void InputConditionContainerReal::setup(const QDomNode& defNode)
 void InputConditionContainerReal::copyValues(const InputConditionContainerReal& i)
 {
 	InputConditionContainer::copyValues(i);
-	m_value = i.m_value;
-	m_default = i.m_default;
+	setValue(i.value());
+	setDefaultValue(i.defaultValue());
 }

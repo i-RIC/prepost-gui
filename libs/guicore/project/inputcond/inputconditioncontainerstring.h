@@ -21,6 +21,9 @@ public:
 	const QString& value() const;
 	void setValue(const QString& v);
 
+	const QString& defaultValue() const;
+	void setDefaultValue(const QString& v);
+
 	int load() override;
 	int save() override;
 	void clear() override;

@@ -34,7 +34,8 @@ InputConditionContainerString& InputConditionContainerString::operator=(const In
 	return *this;
 }
 
-const QString& InputConditionContainerString::value() const {
+const QString& InputConditionContainerString::value() const
+{
 	return m_value;
 }
 
@@ -45,6 +46,16 @@ void InputConditionContainerString::setValue(const QString& v)
 		emit valueChanged(m_value);
 		emit valueChanged();
 	}
+}
+
+const QString& InputConditionContainerString::defaultValue() const
+{
+	return m_default;
+}
+
+void InputConditionContainerString::setDefaultValue(const QString& v)
+{
+	m_default = v;
 }
 
 int InputConditionContainerString::load()
@@ -134,6 +145,6 @@ void InputConditionContainerString::setup(const QDomNode& defNode)
 void InputConditionContainerString::copyValues(const InputConditionContainerString& i)
 {
 	InputConditionContainer::copyValues(i);
-	m_value = i.m_value;
-	m_default = i.m_default;
+	setValue(i.value());
+	setDefaultValue(i.defaultValue());
 }
