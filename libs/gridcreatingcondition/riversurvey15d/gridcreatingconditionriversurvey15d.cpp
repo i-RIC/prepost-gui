@@ -1191,7 +1191,7 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 		auto g = groups[i];
 		auto cs = g->containerSet();
 		auto& xs = cs->functional("appr_xs");
-		auto& wse = cs->real("n_simple");
+		auto& wse = cs->real("wse");
 
 		auto ai = point->crosssection().AltitudeInfo();
 		QVector<double> x, y;
@@ -1207,7 +1207,7 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 		if (point->waterSurfaceElevationSpecified()) {
 			wse_val = point->waterSurfaceElevationValue();
 		}
-		wse.setValue(point->waterSurfaceElevationValue());
+		wse.setValue(wse_val);
 
 		point = point->nextPoint();
 	}
