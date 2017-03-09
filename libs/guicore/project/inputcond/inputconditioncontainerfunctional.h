@@ -57,9 +57,6 @@ private:
 	void copyValues(const InputConditionContainerFunctional& f);
 	bool loadDefaultFromCsvFile(const QString& filename);
 
-	static bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values);
-	static bool saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values);
-
 	class Impl;
 	Impl* impl;
 };

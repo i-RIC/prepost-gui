@@ -15,6 +15,50 @@
 
 #include <yaml-cpp/yaml.h>
 
+namespace {
+
+bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)
+{
+	QFile csvFile(filename);
+	bool ok = csvFile.open(QFile::ReadOnly | QFile::Text);
+	if (! ok) {return false;}
+
+	QTextStream stream(&csvFile);
+	QString line;
+	do {
+		line = stream.readLine();
+		if (line.isEmpty()) {break;}
+		QStringList frags = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
+		if (frags.length() < values->length() + 1) {break;}
+		param->values.push_back(frags[0].toDouble());
+		for (int i = 0; i < values->length(); ++i) {
+			(*values)[i].values.push_back(frags[i + 1].toDouble());
+		}
+	} while (true);
+	csvFile.close();
+	return true;
+}
+
+bool saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values)
+{
+	QFile csvFile(filename);
+	bool ok = csvFile.open(QFile::WriteOnly | QFile::Text);
+	if (! ok) {return false;}
+
+	QTextStream stream(&csvFile);
+	for (int i = 0; i < param.values.size(); ++i) {
+		stream  << param.values.at(i);
+		for (int j = 0; j < values.size(); ++j){
+			stream << "," << values.at(j).values.at(i);
+		}
+		stream << "\n";
+	}
+	csvFile.close();
+	return true;
+}
+
+} // namespace
+
 InputConditionContainerFunctional::InputConditionContainerFunctional() :
 	InputConditionContainer(),
 	impl {new Impl {}}
@@ -269,44 +313,4 @@ void InputConditionContainerFunctional::copyValues(const InputConditionContainer
 bool InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)
 {
 	return loadFromCsvFile(filename, &(impl->m_paramDefault), &(impl->m_valuesDefault));
-}
-
-bool InputConditionContainerFunctional::loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)
-{
-	QFile csvFile(filename);
-	bool ok = csvFile.open(QFile::ReadOnly | QFile::Text);
-	if (! ok) {return false;}
-
-	QTextStream stream(&csvFile);
-	QString line;
-	do {
-		line = stream.readLine();
-		if (line.isEmpty()) {break;}
-		QStringList frags = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-		if (frags.length() < values->length() + 1) {break;}
-		param->values.push_back(frags[0].toDouble());
-		for (int i = 0; i < values->length(); ++i) {
-			(*values)[i].values.push_back(frags[i + 1].toDouble());
-		}
-	} while (true);
-	csvFile.close();
-	return true;
-}
-
-bool InputConditionContainerFunctional::saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values)
-{
-	QFile csvFile(filename);
-	bool ok = csvFile.open(QFile::WriteOnly | QFile::Text);
-	if (! ok) {return false;}
-
-	QTextStream stream(&csvFile);
-	for (int i = 0; i < param.values.size(); ++i) {
-		stream  << param.values.at(i);
-		for (int j = 0; j < values.size(); ++j){
-			stream << "," << values.at(j).values.at(i);
-		}
-		stream << "\n";
-	}
-	csvFile.close();
-	return true;
 }
