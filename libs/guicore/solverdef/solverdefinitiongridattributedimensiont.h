@@ -9,7 +9,7 @@ template <class V>
 class SolverDefinitionGridAttributeDimensionT : public SolverDefinitionGridAttributeDimension
 {
 public:
-	SolverDefinitionGridAttributeDimensionT(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond);
+	SolverDefinitionGridAttributeDimensionT(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* cond);
 	virtual ~SolverDefinitionGridAttributeDimensionT();
 
 	virtual V fromVariant(const QVariant& v) const = 0;

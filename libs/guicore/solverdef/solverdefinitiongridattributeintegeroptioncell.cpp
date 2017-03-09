@@ -1,14 +1,15 @@
 #include "../pre/gridcond/editwidget/gridattributeintegeroptioneditwidget.h"
 #include "../project/colorsource.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinition.h"
 #include "solverdefinitiongridattributeintegeroptioncell.h"
 
 #include <vtkColorTransferFunction.h>
 
-SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeIntegerCell(elem, translator, true, order)
+SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(const QDomElement& elem, SolverDefinition *solverDef, int order) :
+	SolverDefinitionGridAttributeIntegerCell(elem, solverDef, true, order)
 {
-	loadEnumeration(elem, translator);
+	loadEnumeration(elem, solverDef->buildTranslator());
 }
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::editWidget(QWidget* parent)

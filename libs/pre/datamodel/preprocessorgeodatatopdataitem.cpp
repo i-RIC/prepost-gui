@@ -114,6 +114,19 @@ void setupChildrenInOrder(
 	}
 }
 
+void removeNonGroupedComplexAttributes(PreProcessorGeoDataTopDataItem* item)
+{
+	const auto& children = item->childItems();
+	for (auto c : children) {
+		auto complex = dynamic_cast<PreProcessorGeoDataComplexGroupDataItem*> (c);
+		if (complex == nullptr) {continue;}
+		auto att = dynamic_cast<SolverDefinitionGridComplexAttribute*>(complex->condition());
+		if (att->isGrouped()) {continue;}
+
+		item->standardItem()->takeRow(complex->standardItem()->row());
+	}
+}
+
 } // namespace
 
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
@@ -132,6 +145,7 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	} else {
 		setupChildrenInGroups(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, this);
 	}
+	removeNonGroupedComplexAttributes(this);
 
 	setupActors();
 }

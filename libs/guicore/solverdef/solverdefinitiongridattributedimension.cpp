@@ -1,6 +1,7 @@
 #include "../pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.h"
 #include "../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.h"
 #include "solverdefinitiongridattributedimension.h"
+#include "solverdefinition.h"
 #include "solverdefinitiontranslator.h"
 #include "private/solverdefinitiongridattributedimension_impl.h"
 
@@ -8,22 +9,23 @@
 
 #include <QDomElement>
 
-SolverDefinitionGridAttributeDimension::Impl::Impl(const QDomElement& elem, const SolverDefinitionTranslator &translator, SolverDefinitionGridAttribute* att) :
+SolverDefinitionGridAttributeDimension::Impl::Impl(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* att) :
 	m_attribute {att}
 {
-	load(elem, translator);
+	load(elem, solverDef);
 }
 
-void SolverDefinitionGridAttributeDimension::Impl::load(const QDomElement& elem, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridAttributeDimension::Impl::load(const QDomElement& elem, SolverDefinition* solverDef)
 {
+	auto translator = solverDef->buildTranslator();
 	m_name = iRIC::toStr(elem.attribute("name"));
 	m_englishCaption = iRIC::toStr(elem.attribute("caption"));
 	m_caption = translator.translate(m_englishCaption.c_str());
 }
 
-SolverDefinitionGridAttributeDimension::SolverDefinitionGridAttributeDimension(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att) :
-	SolverDefinitionNode {node, translator},
-	impl {new Impl {node, translator, att}}
+SolverDefinitionGridAttributeDimension::SolverDefinitionGridAttributeDimension(const QDomElement& node, SolverDefinition* solverDef, SolverDefinitionGridAttribute* att) :
+	SolverDefinitionNode {node, solverDef},
+	impl {new Impl {node, solverDef, att}}
 {}
 
 SolverDefinitionGridAttributeDimension::~SolverDefinitionGridAttributeDimension()

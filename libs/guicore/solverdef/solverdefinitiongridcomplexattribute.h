@@ -8,7 +8,7 @@ class GUICOREDLL_EXPORT SolverDefinitionGridComplexAttribute : public SolverDefi
 {
 
 public:
-	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator, int order);
+	SolverDefinitionGridComplexAttribute(QDomElement node, SolverDefinition* solverDef, int order);
 	~SolverDefinitionGridComplexAttribute();
 
 	const QDomElement& element() const;
@@ -22,6 +22,8 @@ public:
 
 	QString undefinedString() const;
 	QString undefinedEnglishString() const;
+
+	bool isGrouped() const;
 
 private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;

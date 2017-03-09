@@ -4,8 +4,8 @@
 #include "../solverdefinitiongridattributedimensiont.h"
 
 template <class V>
-SolverDefinitionGridAttributeDimensionT<V>::SolverDefinitionGridAttributeDimensionT(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att) :
-	SolverDefinitionGridAttributeDimension(elem, translator, att)
+SolverDefinitionGridAttributeDimensionT<V>::SolverDefinitionGridAttributeDimensionT(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* att) :
+	SolverDefinitionGridAttributeDimension(elem, solverDef, att)
 {}
 
 template <class V>

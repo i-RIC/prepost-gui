@@ -32,7 +32,7 @@ InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QL
 	m_solverDefinition = solverDef;
 
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet(parent);
+	m_containerSet = new InputConditionContainerSet();
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
 	m_widgetSet = new InputConditionWidgetSet();
 	// create connections.

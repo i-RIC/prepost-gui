@@ -4,14 +4,14 @@
 #include "../guicore_global.h"
 
 class QDomElement;
-class SolverDefinitionTranslator;
+class SolverDefinition;
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridAttributeDimension;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimensionCreator
 {
 public:
-	static SolverDefinitionGridAttributeDimension* create(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond);
+	static SolverDefinitionGridAttributeDimension* create(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* cond);
 
 private:
 	SolverDefinitionGridAttributeDimensionCreator();

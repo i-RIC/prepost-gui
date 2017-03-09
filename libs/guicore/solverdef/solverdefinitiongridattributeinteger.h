@@ -8,7 +8,7 @@
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeInteger : public SolverDefinitionGridAttributeT<int>
 {
 public:
-	SolverDefinitionGridAttributeInteger(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order);
+	SolverDefinitionGridAttributeInteger(const QDomElement& elem, SolverDefinition* solverDef, Position pos, bool isOption, int order);
 
 	int fromVariant(const QVariant& v) const override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;

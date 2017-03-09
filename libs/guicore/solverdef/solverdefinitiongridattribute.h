@@ -24,6 +24,7 @@ class ProjectDataItem;
 class ScalarsToColorsContainer;
 class ScalarsToColorsEditDialog;
 class ScalarsToColorsEditWidget;
+class SolverDefinition;
 class SolverDefinitionGridAttributeDimension;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttribute : public SolverDefinitionNode
@@ -33,7 +34,7 @@ public:
 		Node,           ///< Node (vertex)
 		CellCenter      ///< Cell center
 	};
-	SolverDefinitionGridAttribute(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order);
+	SolverDefinitionGridAttribute(const QDomElement& elem, SolverDefinition* definition, Position pos, bool isOption, int order);
 	virtual ~SolverDefinitionGridAttribute();
 
 	/// @name Properties
@@ -55,16 +56,22 @@ public:
 	/// @name Interface building functions
 	//@{
 	GridAttributeContainer* container(Grid* grid);
+
 	GridAttributeEditDialog* editDialog(QWidget* parent);
 	virtual GridAttributeEditWidget* editWidget(QWidget* parent) = 0;
+
 	GridAttributeVariationEditDialog* variationEditDialog(QWidget* parent);
 	virtual GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) = 0;
+
 	virtual GeoData* buildBackgroundGeoData(ProjectDataItem* parent) = 0;
+
 	virtual ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
 	virtual ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const;
 	ScalarsToColorsEditDialog* createScalarsToColorsEditDialog(QWidget* parent) const;
 	//@}
 protected:
+	SolverDefinition* solverDefinition() const;
+
 	void setPosition(Position pos);
 
 	ColorTransferFunctionContainer* createColorTransferFunctionContainer(ProjectDataItem* d);

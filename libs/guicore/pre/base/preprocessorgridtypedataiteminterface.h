@@ -14,11 +14,11 @@ class PreProcessorGridTypeDataItemInterface : public PreProcessorDataItem
 {
 
 public:
-	/// Constructor
-	PreProcessorGridTypeDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
-		: PreProcessorDataItem(itemlabel, icon, parent)
+	PreProcessorGridTypeDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
+		PreProcessorDataItem(itemlabel, icon, parent)
 	{}
 	virtual ~PreProcessorGridTypeDataItemInterface() {}
+
 	virtual ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const = 0;
 	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const = 0;

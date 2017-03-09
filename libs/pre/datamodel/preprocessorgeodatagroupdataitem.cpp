@@ -150,6 +150,14 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_setupScalarBarAction);
 }
 
+void PreProcessorGeoDataGroupDataItem::closeCgnsFile()
+{}
+
+SolverDefinitionGridAttribute* PreProcessorGeoDataGroupDataItem::condition()
+{
+	return m_condition;
+}
+
 void PreProcessorGeoDataGroupDataItem::import()
 {
 	QStringList filters;
@@ -588,23 +596,6 @@ void PreProcessorGeoDataGroupDataItem::addBackground()
 	geodata->setupDataItem();
 }
 
-void PreProcessorGeoDataGroupDataItem::moveBackgroundToLast()
-{
-	// make m_backgroundItem the last item in m_childItems.
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		if (*it == m_backgroundItem) {
-			m_childItems.erase(it);
-			break;
-		}
-	}
-	m_childItems.push_back(m_backgroundItem);
-
-	// QStandardItem order should be reordered manually.
-	QList<QStandardItem*> takenItems = m_standardItem->takeRow(m_backgroundItem->standardItem()->row());
-	// in deed, takenItems containes only one item, and that is background item.
-	m_standardItem->appendRows(takenItems);
-}
-
 void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
@@ -828,6 +819,11 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 	return result;
 }
 
+void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(10);
+}
+
 /*
 	 bool PreProcessorGeoDataGroupDataItem::setupImportMenu(QMenu* menu)
 	 {
@@ -922,6 +918,21 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 		}
 	}
 	renderGraphicsView();
+}
+
+ScalarBarSetting& PreProcessorGeoDataGroupDataItem::scalarBarSetting()
+{
+	return m_scalarBarSetting;
+}
+
+const QString& PreProcessorGeoDataGroupDataItem::title() const
+{
+	return m_title;
+}
+
+QAction* PreProcessorGeoDataGroupDataItem::importAction() const
+{
+	return m_importAction;
 }
 
 bool PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
@@ -1027,6 +1038,11 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
+}
+
+GridAttributeDimensionsContainer* PreProcessorGeoDataGroupDataItem::dimensions() const
+{
+	return m_dimensions;
 }
 
 PreProcessorGeoDataDataItemInterface* PreProcessorGeoDataGroupDataItem::buildGeoDataDataItem()

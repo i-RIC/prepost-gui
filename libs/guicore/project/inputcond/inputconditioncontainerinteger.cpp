@@ -128,6 +128,6 @@ void InputConditionContainerInteger::setup(const QDomNode& defNode)
 void InputConditionContainerInteger::copyValues(const InputConditionContainerInteger& i)
 {
 	InputConditionContainer::copyValues(i);
-	m_value = i.m_value;
-	m_default = i.m_default;
+	setValue(i.value());
+	setDefaultValue(i.defaultValue());
 }

@@ -3,7 +3,7 @@
 
 #include "../guicore_global.h"
 
-class SolverDefinitionTranslator;
+class SolverDefinition;
 class QDomElement;
 
 /// This class represents an element node inside solver definition file,
@@ -12,7 +12,7 @@ class GUICOREDLL_EXPORT SolverDefinitionNode
 {
 public:
 	SolverDefinitionNode();
-	SolverDefinitionNode(const QDomElement& elem, const SolverDefinitionTranslator& translator);
+	SolverDefinitionNode(const QDomElement& elem, SolverDefinition* solverDef);
 	virtual ~SolverDefinitionNode();
 };
 

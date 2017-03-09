@@ -9,6 +9,7 @@ class QDomDocument;
 class QString;
 class SolverDefinitionGridType;
 class SolverDefinitionAbstract;
+class SolverDefinitionTranslator;
 class VersionNumber;
 
 /// SolverDefinition class contain information stored in "definition.xml" and
@@ -60,6 +61,8 @@ public:
 	SolverDefinitionGridType* gridType(const std::string& name) const;
 	/// XML Document
 	const QDomDocument& document() const;
+
+	SolverDefinitionTranslator buildTranslator() const;
 
 private:
 	class Impl;

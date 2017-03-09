@@ -9,6 +9,8 @@
 
 #include <guibase/widget/contoursettingwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
+#include <guicore/pre/complex/gridcomplexconditiongroupeditdialog.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
@@ -23,6 +25,7 @@
 
 #include <QDomNode>
 #include <QMenu>
+#include <QMessageBox>
 #include <QMouseEvent>
 #include <QStandardItem>
 #include <QVector>
@@ -55,6 +58,11 @@ PreProcessorGridAttributeCellDataItem::~PreProcessorGridAttributeCellDataItem()
 
 QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 {
+	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+	if (compAtt != nullptr && compAtt->isGrouped() == false) {
+		return nullptr;
+	}
+
 	PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
 	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
@@ -173,22 +181,36 @@ void PreProcessorGridAttributeCellDataItem::editValue()
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
-	dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
-	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid cells.")).arg(m_condition->caption()));
-	PreProcessorGridTypeDataItem* tItem =
-		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
-	i->setupEditWidget(dialog->widget());
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	QVector<vtkIdType> targets = tmpparent->selectedCells();
-	Grid* g = tmpparent->grid();
-	dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
+	auto tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+	auto gridDataItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	if (compAtt != nullptr && compAtt->isGrouped() == false) {
+		auto gItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
+		if (gridDataItem->selectedVertices().size() > 2) {
+			QMessageBox::warning(mainWindow(), tr("Warning"), tr("Please select only one node."));
+			return;
+		}
+		auto selectedV = gridDataItem->selectedVertices().at(0);
+		auto group = gItem->groups().at(selectedV);
+		GridComplexConditionGroupEditDialog dialog(mainWindow());
+		dialog.setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
+		dialog.setGroup(group);
+		dialog.exec();
+	} else {
+		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
+		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
+		dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid cells.")).arg(m_condition->caption()));
+		PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
+		i->setupEditWidget(dialog->widget());
+		QVector<vtkIdType> targets = gridDataItem->selectedCells();
+		Grid* g = gridDataItem->grid();
+		dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
 
-	if (QDialog::Accepted == dialog->exec()) {
-		dialog->applyValue(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
+		if (QDialog::Accepted == dialog->exec()) {
+			dialog->applyValue(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetCellData(), gridDataItem);
+		}
+		delete dialog;
 	}
-	delete dialog;
 }
 
 void PreProcessorGridAttributeCellDataItem::editVariation()

@@ -316,6 +316,9 @@ HEADERS += guicore_global.h \
            pre/base/preprocessorgridtypedataiteminterface.h \
            pre/base/preprocessorwindowinterface.h \
            pre/complex/gridcomplexconditiondialog.h \
+           pre/complex/gridcomplexconditiongroup.h \
+           pre/complex/gridcomplexconditiongroupeditdialog.h \
+           pre/complex/gridcomplexconditiongroupeditwidgetcontainer.h \
            pre/complex/gridcomplexconditionwidget.h \
            pre/complex/gridcomplexconditionwidgetcontainer.h \
            pre/geodata/geodata.h \
@@ -396,6 +399,8 @@ HEADERS += guicore_global.h \
            tmsimage/private/tmsimagegroupdataitem_impl.h \
            tmsimage/private/tmsimagesetting_impl.h \
            tmsimage/private/tmsregionselectwidget_impl.h \
+           pre/complex/private/gridcomplexconditiongroup_impl.h \
+           pre/complex/private/gridcomplexconditionwidget_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
@@ -483,6 +488,7 @@ FORMS += datamodel/propertybrowserview.ui \
          scalarstocolors/lookuptableeditwidget.ui \
          scalarstocolors/scalarstocolorseditdialog.ui \
          pre/complex/gridcomplexconditiondialog.ui \
+         pre/complex/gridcomplexconditiongroupeditdialog.ui \
          pre/complex/gridcomplexconditionwidget.ui \
          pre/geodatabackground/geodatabackgroundeditdialog.ui \
          pre/gridcond/gridcellattributepropertydialog.ui \
@@ -608,6 +614,9 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/base/preprocessorgridcreatingconditiondataiteminterface.cpp \
            pre/base/preprocessorwindowinterface.cpp \
            pre/complex/gridcomplexconditiondialog.cpp \
+           pre/complex/gridcomplexconditiongroup.cpp \
+           pre/complex/gridcomplexconditiongroupeditdialog.cpp \
+           pre/complex/gridcomplexconditiongroupeditwidgetcontainer.cpp \
            pre/complex/gridcomplexconditionwidget.cpp \
            pre/complex/gridcomplexconditionwidgetcontainer.cpp \
            pre/geodata/geodata.cpp \

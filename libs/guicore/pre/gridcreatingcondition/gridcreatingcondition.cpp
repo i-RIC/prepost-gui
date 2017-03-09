@@ -20,9 +20,19 @@ GridCreatingCondition::~GridCreatingCondition()
 	delete m_menu;
 }
 
+GridCreatingConditionCreator* GridCreatingCondition::creator() const
+{
+	return m_creator;
+}
+
 const QString& GridCreatingCondition::name() const
 {
 	return m_creator->name();
+}
+
+QMenu* GridCreatingCondition::menu() const
+{
+	return m_menu;
 }
 
 PreProcessorWindowInterface* GridCreatingCondition::preProcessorWindow() const

@@ -3,7 +3,8 @@
 
 #include "../../guicore_global.h"
 #include <QDialog>
-#include <QList>
+
+#include <vector>
 
 namespace Ui
 {
@@ -20,14 +21,15 @@ class GUICOREDLL_EXPORT GridComplexConditionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent);
+	explicit GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, QWidget* parent);
 	~GridComplexConditionDialog();
 
-	QList<GridComplexConditionWidget*> widgets() const;
-	void setWidgets(QList<GridComplexConditionWidget*> widgets);
+	std::vector<GridComplexConditionWidget*> widgets() const;
+	void setWidgets(std::vector<GridComplexConditionWidget*> widgets);
 
 public slots:
 	void accept() override;
+	void reject() override;
 
 private slots:
 	void defaultChecked(bool checked);
@@ -39,10 +41,9 @@ private slots:
 private:
 	void updateList();
 
-	QList<GridComplexConditionWidget*> m_widgets;
+	std::vector<GridComplexConditionWidget*> m_widgets;
 
 	PreProcessorGeoDataComplexGroupDataItemInterface* m_dataItem;
-	iRICMainWindowInterface* m_mainWindow;
 	ColorSource* m_colorSource;
 	Ui::GridComplexConditionDialog* ui;
 };

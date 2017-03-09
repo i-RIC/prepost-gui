@@ -9,8 +9,11 @@
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
 
+
 #include <guibase/widget/contoursettingwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
+#include <guicore/pre/complex/gridcomplexconditiongroupeditdialog.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
@@ -21,7 +24,6 @@
 #include <guicore/scalarstocolors/lookuptableeditwidget.h>
 #include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
@@ -82,6 +84,11 @@ PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
 
 QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 {
+	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+	if (compAtt != nullptr && compAtt->isGrouped() == false) {
+		return nullptr;
+	}
+
 	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
 	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
@@ -250,22 +257,37 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
-	dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
-	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(m_condition->caption()));
-	PreProcessorGridTypeDataItem* tItem =
-		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
-	i->setupEditWidget(dialog->widget());
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	QVector<vtkIdType> targets = tmpparent->selectedVertices();
-	Grid* g = tmpparent->grid();
-	dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
 
-	if (QDialog::Accepted == dialog->exec()) {
-		dialog->applyValue(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetPointData(), tmpparent);
+	auto tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+	auto gridDataItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	if (compAtt != nullptr && compAtt->isGrouped() == false) {
+		auto gItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
+		if (gridDataItem->selectedVertices().size() > 2) {
+			QMessageBox::warning(mainWindow(), tr("Warning"), tr("Please select only one node."));
+			return;
+		}
+		auto selectedV = gridDataItem->selectedVertices().at(0);
+		auto group = gItem->groups().at(selectedV);
+		GridComplexConditionGroupEditDialog dialog(mainWindow());
+		dialog.setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
+		dialog.setGroup(group);
+		dialog.exec();
+	} else {
+		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
+		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
+		dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(m_condition->caption()));
+		PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
+		i->setupEditWidget(dialog->widget());
+		QVector<vtkIdType> targets = gridDataItem->selectedVertices();
+		Grid* g = gridDataItem->grid();
+		dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
+
+		if (QDialog::Accepted == dialog->exec()) {
+			dialog->applyValue(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetPointData(), gridDataItem);
+		}
+		delete dialog;
 	}
-	delete dialog;
 }
 
 void PreProcessorGridAttributeNodeDataItem::editVariation()

@@ -9,7 +9,7 @@ template <class V>
 class SolverDefinitionGridAttributeT : public SolverDefinitionGridAttribute
 {
 public:
-	SolverDefinitionGridAttributeT(const QDomElement& node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order);
+	SolverDefinitionGridAttributeT(const QDomElement& node, SolverDefinition* solverDef, Position pos, bool isOption, int order);
 
 	V defaultValue() const;
 

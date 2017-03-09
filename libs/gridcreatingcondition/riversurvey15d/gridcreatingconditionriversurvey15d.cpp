@@ -10,14 +10,20 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/complex/gridcomplexconditiongroup.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h>
 #include <guicore/pre/grid/structured15dgridwithcrosssection.h>
 #include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/project/inputcond/inputconditioncontainerfunctional.h>
+#include <guicore/project/inputcond/inputconditioncontainerreal.h>
+#include <guicore/project/inputcond/inputconditioncontainerset.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -36,6 +42,7 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 #include <QMainWindow>
+#include <QVector>
 
 #include <vtkExtractGrid.h>
 #include <vtkGeometryFilter.h>
@@ -993,6 +1000,8 @@ void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* star
 	grid->setPoints(points);
 	grid->setModified();
 
+	setupCrosssections(grid);
+
 	// grid related conditions
 	QList<GridAttributeContainer*>& clist = grid->gridAttributes();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
@@ -1156,6 +1165,52 @@ void GridCreatingConditionRiverSurvey15D::selectCtrlZone(const QVector2D& point,
 			}
 		}
 		p = p->nextPoint();
+	}
+}
+
+void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
+{
+	// if the solver has attribute "Crosssection", and it is a complex type,
+	// create groups.
+
+	auto csGroup = gccDataItem()->gridTypeDataItem()->geoDataTop()->groupDataItem("Crosssection");
+	if (csGroup == nullptr) {return;}
+
+	auto csComplexGroup = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (csGroup);
+	if (csComplexGroup == nullptr) {return;}
+
+	auto cAttr = dynamic_cast<SolverDefinitionGridComplexAttribute*> (csComplexGroup->condition());
+	if (cAttr == nullptr && cAttr->isGrouped()) {return;}
+
+	csComplexGroup->setupGroups(grid->nodeCount());
+
+	auto groups = csComplexGroup->groups();
+
+	auto point = m_riverSurvey->headPoint()->nextPoint();
+
+	for (int i = 0; i < groups.size(); ++i) {
+		auto g = groups[i];
+		auto cs = g->containerSet();
+		auto& xs = cs->functional("appr_xs");
+		auto& wse = cs->real("wse");
+
+		auto ai = point->crosssection().AltitudeInfo();
+		QVector<double> x, y;
+		for (int j = 0; j < ai.length(); ++j) {
+			auto alt = ai.at(j);
+			if (! alt.active()) {continue;}
+			x.push_back(alt.position());
+			y.push_back(alt.height());
+		}
+		xs.setValue(x, y);
+
+		double wse_val = 0;
+		if (point->waterSurfaceElevationSpecified()) {
+			wse_val = point->waterSurfaceElevationValue();
+		}
+		wse.setValue(wse_val);
+
+		point = point->nextPoint();
 	}
 }
 
