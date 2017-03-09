@@ -1,6 +1,7 @@
 #include "gridcomplexconditiongroup.h"
 #include "gridcomplexconditiongroupeditdialog.h"
 #include "ui_gridcomplexconditiongroupeditdialog.h"
+#include "../../project/inputcond/inputconditioncontainerset.h"
 
 GridComplexConditionGroupEditDialog::GridComplexConditionGroupEditDialog(QWidget *parent) :
 	QDialog(parent),

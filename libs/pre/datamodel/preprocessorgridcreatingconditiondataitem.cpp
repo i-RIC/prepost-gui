@@ -8,6 +8,7 @@
 #include "preprocessorgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "private/preprocessorgridcreatingconditiondataitem_impl.h"
 
 #include <gridcreatingcondition/centerandwidth/gridcreatingconditioncenterandwidthdialog.h>
 #include <guibase/objectbrowserview.h>

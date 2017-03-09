@@ -22,6 +22,7 @@
 #include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/project/inputcond/inputconditioncontainerfunctional.h>
 #include <guicore/project/inputcond/inputconditioncontainerreal.h>
+#include <guicore/project/inputcond/inputconditioncontainerset.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>

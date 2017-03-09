@@ -4,6 +4,8 @@
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 
+#include <QDomElement>
+
 GridComplexConditionGroup::Impl::Impl(SolverDefinition* def, const QDomElement& elem) :
 	m_page {nullptr},
 	m_widgetSet {},
