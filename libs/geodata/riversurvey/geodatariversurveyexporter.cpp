@@ -9,11 +9,9 @@
 #include <QFile>
 #include <QTextStream>
 
-GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
-{
-	m_caption = tr("River Survey data (*.riv)");
-}
+GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator) :
+	GeoDataExporter(tr("River Survey data (*.riv)"), creator)
+{}
 
 bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {

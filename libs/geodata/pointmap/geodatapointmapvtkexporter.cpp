@@ -15,11 +15,9 @@
 #include <vtkTransform.h>
 #include <vtkTransformFilter.h>
 
-GeoDataPointmapVTKExporter::GeoDataPointmapVTKExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
-{
-	m_caption = tr("Pointset (DEM etc.)");
-}
+GeoDataPointmapVTKExporter::GeoDataPointmapVTKExporter(GeoDataCreator* creator) :
+	GeoDataExporter(tr("Pointset (DEM etc.)"), creator)
+{}
 
 bool GeoDataPointmapVTKExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {

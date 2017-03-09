@@ -301,7 +301,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 	tail = rs->m_headPoint;
 
 	// Read river survey data
-	ret = RivRead(m_filename, &with4points);
+	ret = RivRead(filename(), &with4points);
 	if (! ret) {return false;}
 
 	PRivPath p;

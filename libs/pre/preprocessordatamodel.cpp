@@ -1011,7 +1011,7 @@ bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataI
 	QList<PreProcessorGeoDataDataItemInterface*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = datas.at(i);
-		if (item->geoData()->exporters().count() > 0) {
+		if (item->geoData()->exporters().size() > 0) {
 			return true;
 		}
 	}

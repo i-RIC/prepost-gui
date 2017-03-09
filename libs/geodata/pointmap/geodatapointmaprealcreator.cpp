@@ -14,17 +14,17 @@
 GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
 	GeoDataCreator {"realPointmap", tr("Points")}
 {
-	importers().append(new GeoDataPointmapRealImporter(this));
-	importers().append(new GeoDataPointmapSTLImporter(this));
+	importers().push_back(new GeoDataPointmapRealImporter(this));
+	importers().push_back(new GeoDataPointmapSTLImporter(this));
 
-	webImporters().append(new GeoDataPointmapWebImporter(this));
+	webImporters().push_back(new GeoDataPointmapWebImporter(this));
 
-	exporters().append(new GeoDataPointmapRealExporter(this));
-	exporters().append(new GeoDataPointmapSTLExporter(this));
-	exporters().append(new GeoDataPointmapVTKExporter(this));
+	exporters().push_back(new GeoDataPointmapRealExporter(this));
+	exporters().push_back(new GeoDataPointmapSTLExporter(this));
+	exporters().push_back(new GeoDataPointmapVTKExporter(this));
 
-	nodeMappers().append(new GeoDataPointmapNodeMapperT<double, vtkDoubleArray>(this));
-	cellMappers().append(new GeoDataPointmapCellMapperT<double, vtkDoubleArray>(this));
+	nodeMappers().push_back(new GeoDataPointmapNodeMapperT<double, vtkDoubleArray>(this));
+	cellMappers().push_back(new GeoDataPointmapCellMapperT<double, vtkDoubleArray>(this));
 }
 
 GeoData* GeoDataPointmapRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

@@ -183,7 +183,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 
 	PolygonShapeInfo info = m_shapeInfos.at(index);
 
-	std::string fname = iRIC::toStr(m_filename);
+	std::string fname = iRIC::toStr(filename());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	SHPObject* shpo = SHPReadObject(shph, info.item);
@@ -222,7 +222,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 	SHPDestroyObject(shpo);
 	SHPClose(shph);
 
-	QString dbfFilename = m_filename;
+	QString dbfFilename = filename();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

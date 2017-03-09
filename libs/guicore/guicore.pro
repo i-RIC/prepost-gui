@@ -402,6 +402,10 @@ HEADERS += guicore_global.h \
            pre/complex/private/gridcomplexconditiongroup_impl.h \
            pre/complex/private/gridcomplexconditionwidget_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
+           pre/geodata/private/geodatacreator_impl.h \
+           pre/geodata/private/geodataexporter_impl.h \
+           pre/geodata/private/geodataimporter_impl.h \
+           pre/geodata/private/geodatamapper_impl.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.h \

@@ -10,11 +10,9 @@
 #include <vtkPolyData.h>
 #include <vtkSTLWriter.h>
 
-GeoDataPointmapSTLExporter::GeoDataPointmapSTLExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
-{
-	m_caption = tr("Stereolithography (STL)");
-}
+GeoDataPointmapSTLExporter::GeoDataPointmapSTLExporter(GeoDataCreator* creator) :
+	GeoDataExporter(tr("Stereolithography (STL)"), creator)
+{}
 
 bool GeoDataPointmapSTLExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* /*w*/, ProjectData* pd)
 {

@@ -3,6 +3,7 @@
 #include "geodata.h"
 #include "geodatacreator.h"
 #include "../geodatabackground/geodatabackground.h"
+#include "private/geodatacreator_impl.h"
 
 #include <QDomElement>
 #include <QDomNode>
@@ -10,12 +11,16 @@
 
 GeoDataCreator::GeoDataCreator(const QString& typeName, const QString& caption) :
 	QObject(nullptr),
-	m_typeName {typeName},
-	m_caption {caption}
-{}
+	impl {new Impl {}}
+{
+	impl->m_typeName = typeName;
+	impl->m_caption = caption;
+}
 
 GeoDataCreator::~GeoDataCreator()
-{}
+{
+	delete impl;
+}
 
 QString GeoDataCreator::name(unsigned int) const
 {
@@ -24,21 +29,20 @@ QString GeoDataCreator::name(unsigned int) const
 
 const QString& GeoDataCreator::typeName() const
 {
-	return m_typeName;
+	return impl->m_typeName;
 }
 
 const QString& GeoDataCreator::caption() const
 {
-	return m_caption;
+	return impl->m_caption;
 }
 
 GeoData* GeoDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	QDomElement elem = node.toElement();
-	if (elem.attribute("type") == m_typeName) {
-		return create(parent, condition);
-	}
-	return nullptr;
+	if (elem.attribute("type") != typeName()) {return nullptr;}
+
+	return create(parent, condition);
 }
 
 void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem *> &list, GeoData* data)
@@ -68,54 +72,54 @@ void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDa
 	}
 }
 
-const QList<GeoDataMapper*>& GeoDataCreator::nodeMappers() const
+const std::vector<GeoDataMapper*>& GeoDataCreator::nodeMappers() const
 {
-	return m_nodeMappers;
+	return impl->m_nodeMappers;
 }
 
-QList<GeoDataMapper*>& GeoDataCreator::nodeMappers()
+std::vector<GeoDataMapper*>& GeoDataCreator::nodeMappers()
 {
-	return m_nodeMappers;
+	return impl->m_nodeMappers;
 }
 
-const QList<GeoDataMapper*>& GeoDataCreator::cellMappers() const
+const std::vector<GeoDataMapper*>& GeoDataCreator::cellMappers() const
 {
-	return m_cellMappers;
+	return impl->m_cellMappers;
 }
 
-QList<GeoDataMapper*>& GeoDataCreator::cellMappers()
+std::vector<GeoDataMapper*>& GeoDataCreator::cellMappers()
 {
-	return m_cellMappers;
+	return impl->m_cellMappers;
 }
 
-const QList<GeoDataImporter*>& GeoDataCreator::importers() const
+const std::vector<GeoDataImporter*>& GeoDataCreator::importers() const
 {
-	return m_importers;
+	return impl->m_importers;
 }
 
-QList<GeoDataImporter*>& GeoDataCreator::importers()
+std::vector<GeoDataImporter*>& GeoDataCreator::importers()
 {
-	return m_importers;
+	return impl->m_importers;
 }
 
-const QList<GeoDataWebImporter*>& GeoDataCreator::webImporters() const
+const std::vector<GeoDataWebImporter*>& GeoDataCreator::webImporters() const
 {
-	return m_webImporters;
+	return impl->m_webImporters;
 }
 
-QList<GeoDataWebImporter*>& GeoDataCreator::webImporters()
+std::vector<GeoDataWebImporter*>& GeoDataCreator::webImporters()
 {
-	return m_webImporters;
+	return impl->m_webImporters;
 }
 
-const QList<GeoDataExporter*>& GeoDataCreator::exporters() const
+const std::vector<GeoDataExporter*>& GeoDataCreator::exporters() const
 {
-	return m_exporters;
+	return impl->m_exporters;
 }
 
-QList<GeoDataExporter*>& GeoDataCreator::exporters()
+std::vector<GeoDataExporter*>& GeoDataCreator::exporters()
 {
-	return m_exporters;
+	return impl->m_exporters;
 }
 
 bool GeoDataCreator::isCreatable() const

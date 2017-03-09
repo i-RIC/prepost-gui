@@ -168,7 +168,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	int ret;
 	char nameBuffer[200];
 
-	ret = nc_open(iRIC::toStr(m_filename).c_str(), NC_NOWRITE, &ncid_in);
+	ret = nc_open(iRIC::toStr(filename()).c_str(), NC_NOWRITE, &ncid_in);
 	if (ret != NC_NOERR) {return false;}
 	QFileInfo finfo(netcdf->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());

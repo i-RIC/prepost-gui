@@ -8,8 +8,8 @@ GeoDataBackgroundComplexCreator* GeoDataBackgroundComplexCreator::m_instance = n
 GeoDataBackgroundComplexCreator::GeoDataBackgroundComplexCreator() :
 	GeoDataCreator{"complexBackground", tr("Background")}
 {
-	nodeMappers().append(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
-	cellMappers().append(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
+	nodeMappers().push_back(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
+	cellMappers().push_back(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
 }
 
 GeoData* GeoDataBackgroundComplexCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

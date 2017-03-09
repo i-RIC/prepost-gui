@@ -11,10 +11,8 @@
 #include <vtkStructuredGridWriter.h>
 
 GeoDataRiverSurveyVTKExporter::GeoDataRiverSurveyVTKExporter(GeoDataCreator* creator) :
-	GeoDataExporter {creator}
-{
-	m_caption = GeoDataRiverSurveyVTKExporter::tr("RiverSurvey data");
-}
+	GeoDataExporter {tr("RiverSurvey data"), creator}
+{}
 
 bool GeoDataRiverSurveyVTKExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* /*pd*/)
 {

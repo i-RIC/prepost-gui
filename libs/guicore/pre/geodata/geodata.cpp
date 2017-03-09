@@ -101,49 +101,49 @@ void GeoData::setMapper(GeoDataMapper* m)
 	m_mapper = m;
 }
 
-QList<GeoDataMapper*> GeoData::mappers() const
+std::vector<GeoDataMapper*> GeoData::mappers() const
 {
 	return (this->*mapperFunc)();
 }
 
 void GeoData::setDefaultMapper()
 {
-	QList<GeoDataMapper*> tmpmappers = mappers();
-	if (tmpmappers.count() == 0) {m_mapper = nullptr;}
-	m_mapper = *(tmpmappers.begin());
+	auto tmpmappers = mappers();
+	if (tmpmappers.size() == 0) {m_mapper = nullptr;}
+	m_mapper = tmpmappers[0];
 }
 
-QList<GeoDataMapper*> GeoData::nodeMappers() const
+std::vector<GeoDataMapper*> GeoData::nodeMappers() const
 {
 	if (m_creator == nullptr) {
-		QList<GeoDataMapper*> l;
+		std::vector<GeoDataMapper*> l;
 		return l;
 	}
 	return m_creator->nodeMappers();
 }
 
-QList<GeoDataMapper*> GeoData::cellMappers() const
+std::vector<GeoDataMapper*> GeoData::cellMappers() const
 {
 	if (m_creator == nullptr) {
-		QList<GeoDataMapper*> l;
+		std::vector<GeoDataMapper*> l;
 		return l;
 	}
 	return m_creator->cellMappers();
 }
 
-QList<GeoDataImporter*> GeoData::importers() const
+std::vector<GeoDataImporter*> GeoData::importers() const
 {
 	if (m_creator == nullptr) {
-		QList<GeoDataImporter*> l;
+		std::vector<GeoDataImporter*> l;
 		return l;
 	}
 	return m_creator->importers();
 }
 
-QList<GeoDataExporter*> GeoData::exporters() const
+std::vector<GeoDataExporter*> GeoData::exporters() const
 {
 	if (m_creator == nullptr) {
-		QList<GeoDataExporter*> l;
+		std::vector<GeoDataExporter*> l;
 		return l;
 	}
 	return m_creator->exporters();

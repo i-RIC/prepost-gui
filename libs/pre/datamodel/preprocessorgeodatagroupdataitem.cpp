@@ -1106,7 +1106,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 	bool codecOK = true;
 	int index = 0;
 
-	for (int i = 0; i < c->exporters().count(); ++i) {
+	for (int i = 0; i < c->exporters().size(); ++i) {
 		exporter = dynamic_cast<GeoDataPolygonShapeExporter*>(c->exporters().at(i));
 		if (exporter != nullptr) {break;}
 	}

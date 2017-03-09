@@ -7,9 +7,9 @@
 GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
 	GeoDataNetcdfCreatorT<double, vtkDoubleArray> {"realNetcdf"}
 {
-	importers().append(new GeoDataNetcdfRealImporter(this));
-	importers().append(new GeoDataNetcdfXbandImporter(this));
-	importers().append(new GeoDataNetcdfGdalRealImporter(this));
+	importers().push_back(new GeoDataNetcdfRealImporter(this));
+	importers().push_back(new GeoDataNetcdfXbandImporter(this));
+	importers().push_back(new GeoDataNetcdfGdalRealImporter(this));
 }
 
 GeoData* GeoDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
