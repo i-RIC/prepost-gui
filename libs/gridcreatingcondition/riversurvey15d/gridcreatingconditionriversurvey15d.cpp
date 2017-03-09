@@ -1191,24 +1191,36 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 	for (int i = 0; i < groups.size(); ++i) {
 		auto g = groups[i];
 		auto cs = g->containerSet();
-		auto& xs = cs->functional("appr_xs");
-		auto& wse = cs->real("wse");
 
 		auto ai = point->crosssection().AltitudeInfo();
-		std::vector<double> x, y;
+		std::vector<double> x, y, zeros;
 		for (int j = 0; j < ai.length(); ++j) {
 			auto alt = ai.at(j);
 			if (! alt.active()) {continue;}
 			x.push_back(alt.position());
 			y.push_back(alt.height());
+			zeros.push_back(0);
 		}
-		xs.setValue(x, y);
+		cs->functional("appr_xs").setValue(x, y);
+
+		auto& n_h = cs->functional("n_h");
+		n_h.param() = x;
+		n_h.value("Y") = y;
+		n_h.value("NVAL") = zeros;
+
+		auto& n_h_v = cs->functional("n_h_v");
+		n_h_v.param() = x;
+		n_h_v.value("Y") = y;
+		n_h_v.value("BOTD") = zeros;
+		n_h_v.value("TOPD") = zeros;
+		n_h_v.value("BOTN") = zeros;
+		n_h_v.value("TOPN") = zeros;
 
 		double wse_val = 0;
 		if (point->waterSurfaceElevationSpecified()) {
 			wse_val = point->waterSurfaceElevationValue();
 		}
-		wse.setValue(wse_val);
+		cs->real("wse").setValue(wse_val);
 
 		point = point->nextPoint();
 	}
