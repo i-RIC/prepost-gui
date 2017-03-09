@@ -7,10 +7,10 @@ class InputConditionContainerFunctional::Impl
 {
 public:
 	Data m_param;
-	QList<Data> m_values;
+	std::vector<Data> m_values;
 
 	Data m_paramDefault;
-	QList<Data> m_valuesDefault;
+	std::vector<Data> m_valuesDefault;
 };
 
 #endif // INPUTCONDITIONCONTAINERFUNCTIONAL_IMPL_H

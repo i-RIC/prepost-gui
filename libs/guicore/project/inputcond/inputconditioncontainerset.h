@@ -67,7 +67,6 @@ private:
 	void setupCustomRec(const QDomNode& node, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void setupContaner(const QDomNode& node, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 
-private:
 	std::map<std::string, InputConditionContainerInteger> m_integers;
 	std::map<std::string, InputConditionContainerReal> m_reals;
 	std::map<std::string, InputConditionContainerString> m_strings;

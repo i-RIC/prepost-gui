@@ -42,8 +42,7 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 #include <QMainWindow>
-#include <QVector>
-
+#
 #include <vtkExtractGrid.h>
 #include <vtkGeometryFilter.h>
 #include <vtkLine.h>
@@ -54,6 +53,7 @@
 #include <vtkVertex.h>
 
 #include <cmath>
+#include <vector>
 
 class GridCreatingConditionCtrlPointDeleteCommand15D : public QUndoCommand
 {
@@ -1195,7 +1195,7 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 		auto& wse = cs->real("wse");
 
 		auto ai = point->crosssection().AltitudeInfo();
-		QVector<double> x, y;
+		std::vector<double> x, y;
 		for (int j = 0; j < ai.length(); ++j) {
 			auto alt = ai.at(j);
 			if (! alt.active()) {continue;}

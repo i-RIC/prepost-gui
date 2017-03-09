@@ -4,7 +4,8 @@
 #include "../../guicore_global.h"
 
 #include "inputconditioncontainer.h"
-#include <QVector>
+
+#include <vector>
 
 class QDir;
 class QDomNode;
@@ -16,8 +17,9 @@ class GUICOREDLL_EXPORT InputConditionContainerFunctional : public InputConditio
 public:
 	struct Data {
 		std::string name;
-		QVector<double> values;
+		std::vector<double> values;
 	};
+
 	InputConditionContainerFunctional();
 	InputConditionContainerFunctional(const std::string& n, const QString& c, QDomNode defNode, const QDir& dir);
 	InputConditionContainerFunctional(const InputConditionContainerFunctional& i);
@@ -26,15 +28,22 @@ public:
 	InputConditionContainerFunctional& operator=(const InputConditionContainerFunctional& i);
 
 	int valueCount() const;
-	QVector<double>& x();
-	QVector<double>& y();
+	std::vector<double>& x();
+	std::vector<double>& y();
 
-	QVector<double>& param();
-	const QVector<double>& param() const;
+	std::vector<double>& param();
+	const std::vector<double>& param() const;
 
-	QVector<double>& value(int index);
-	const QVector<double>& value(int index) const;
-	void setValue(const QVector<double>& x, const QVector<double>& y);
+	std::vector<double>& value(int index);
+	const std::vector<double>& value(int index) const;
+
+	std::vector<std::string> valueNames() const;
+	bool hasValue(const std::string& name) const;
+
+	std::vector<double>& value(const std::string& name);
+	const std::vector<double>& value(const std::string& name) const;
+
+	void setValue(const std::vector<double>& x, const std::vector<double>& y);
 
 	void removeAllValues();
 

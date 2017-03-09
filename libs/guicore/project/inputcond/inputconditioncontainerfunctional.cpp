@@ -17,7 +17,7 @@
 
 namespace {
 
-bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)
+bool loadFromCsvFile(const QString& filename, InputConditionContainerFunctional::Data* param, std::vector<InputConditionContainerFunctional::Data>* values)
 {
 	QFile csvFile(filename);
 	bool ok = csvFile.open(QFile::ReadOnly | QFile::Text);
@@ -29,9 +29,9 @@ bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)
 		line = stream.readLine();
 		if (line.isEmpty()) {break;}
 		QStringList frags = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-		if (frags.length() < values->length() + 1) {break;}
+		if (frags.length() < values->size() + 1) {break;}
 		param->values.push_back(frags[0].toDouble());
-		for (int i = 0; i < values->length(); ++i) {
+		for (int i = 0; i < values->size(); ++i) {
 			(*values)[i].values.push_back(frags[i + 1].toDouble());
 		}
 	} while (true);
@@ -39,7 +39,7 @@ bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)
 	return true;
 }
 
-bool saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values)
+bool saveToCsvFile(const QString& filename, const InputConditionContainerFunctional::Data& param, const std::vector<InputConditionContainerFunctional::Data>& values)
 {
 	QFile csvFile(filename);
 	bool ok = csvFile.open(QFile::WriteOnly | QFile::Text);
@@ -77,7 +77,7 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const std::
 			QDomElement valElem = valNode.toElement();
 			Data valData;
 			valData.name = iRIC::toStr(valElem.attribute("name", "Value"));
-			impl->m_values.append(valData);
+			impl->m_values.push_back(valData);
 		}
 		valNode = valNode.nextSibling();
 	}
@@ -113,40 +113,75 @@ InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(
 
 int InputConditionContainerFunctional::valueCount() const
 {
-	return impl->m_values.count();
+	return impl->m_values.size();
 }
 
-QVector<double>& InputConditionContainerFunctional::x()
+std::vector<double>& InputConditionContainerFunctional::x()
 {
 	return param();
 }
 
-QVector<double>& InputConditionContainerFunctional::y()
+std::vector<double>& InputConditionContainerFunctional::y()
 {
 	return value(0);
 }
 
-QVector<double>& InputConditionContainerFunctional::param()
+std::vector<double>& InputConditionContainerFunctional::param()
 {
 	return impl->m_param.values;
 }
 
-const QVector<double>& InputConditionContainerFunctional::param() const
+const std::vector<double>& InputConditionContainerFunctional::param() const
 {
 	return impl->m_param.values;
 }
 
-QVector<double>& InputConditionContainerFunctional::value(int index)
+std::vector<double>& InputConditionContainerFunctional::value(int index)
 {
 	return impl->m_values[index].values;
 }
 
-const QVector<double>& InputConditionContainerFunctional::value(int index) const
+const std::vector<double>& InputConditionContainerFunctional::value(int index) const
 {
 	return impl->m_values[index].values;
 }
 
-void InputConditionContainerFunctional::setValue(const QVector<double>& x, const QVector<double>& y)
+std::vector<std::string> InputConditionContainerFunctional::valueNames() const
+{
+	std::vector<std::string> names;
+
+	for (auto v : impl->m_values) {
+		names.push_back(v.name);
+	}
+
+	return names;
+}
+
+bool InputConditionContainerFunctional::hasValue(const std::string& name) const
+{
+	for (auto v : impl->m_values) {
+		if (v.name == name) {return true;}
+	}
+	return false;
+}
+
+std::vector<double>& InputConditionContainerFunctional::value(const std::string& name)
+{
+	for (auto& v : impl->m_values) {
+		if (v.name == name) {return v.values;}
+	}
+	return impl->m_values[0].values;
+}
+
+const std::vector<double>& InputConditionContainerFunctional::value(const std::string& name) const
+{
+	for (auto& v : impl->m_values) {
+		if (v.name == name) {return v.values;}
+	}
+	return impl->m_values[0].values;
+}
+
+void InputConditionContainerFunctional::setValue(const std::vector<double>& x, const std::vector<double>& y)
 {
 	impl->m_param.name = "Param";
 	impl->m_param.values = x;
@@ -155,12 +190,12 @@ void InputConditionContainerFunctional::setValue(const QVector<double>& x, const
 	Data val;
 	val.name = "Value";
 	val.values = y;
-	impl->m_values.append(val);
+	impl->m_values.push_back(val);
 }
 
 void InputConditionContainerFunctional::removeAllValues(){
 	impl->m_param.values.clear();
-	for (int i = 0; i < impl->m_values.count(); ++i){
+	for (int i = 0; i < impl->m_values.size(); ++i){
 		impl->m_values[i].values.clear();
 	}
 }
@@ -193,14 +228,9 @@ int InputConditionContainerFunctional::load()
 	}
 	if (result != 0) {goto ERROR;}
 
-	impl->m_param.values.clear();
-	impl->m_param.values.insert(0, length, 0);
-	tmpdata = impl->m_param.values.data();
-	for (int i = 0; i < length; ++i) {
-		*(tmpdata + i) = data[i];
-	}
+	impl->m_param.values = data;
 	// load values.
-	for (int i = 0; i < impl->m_values.count(); ++i) {
+	for (int i = 0; i < impl->m_values.size(); ++i) {
 		Data& val = impl->m_values[i];
 		if (isBoundaryCondition()) {
 			result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(val.name), data.data());
@@ -211,12 +241,7 @@ int InputConditionContainerFunctional::load()
 		}
 		if (result != 0) {goto ERROR;}
 
-		val.values.clear();
-		val.values.insert(0, length, 0);
-		tmpdata = val.values.data();
-		for (int j = 0; j < length; ++j) {
-			*(tmpdata + j) = data[j];
-		}
+		val.values = data;
 	}
 	emit valueChanged();
 	return 0;
@@ -229,7 +254,7 @@ ERROR:
 
 int InputConditionContainerFunctional::save()
 {
-	cgsize_t length = impl->m_param.values.count();
+	cgsize_t length = impl->m_param.values.size();
 	cgsize_t tmplength = length;
 	if (tmplength == 0) {tmplength = 1;}
 	std::vector<double> data (tmplength, 0);
@@ -246,7 +271,7 @@ int InputConditionContainerFunctional::save()
 	}
 
 	// write values;
-	for (int i = 0; i < impl->m_values.count(); ++i) {
+	for (int i = 0; i < impl->m_values.size(); ++i) {
 		Data& val = impl->m_values[i];
 		for (int i = 0; i < length; ++i) {
 			data[i] = val.values.at(i);
@@ -265,7 +290,7 @@ int InputConditionContainerFunctional::save()
 void InputConditionContainerFunctional::clear()
 {
 	impl->m_param.values = impl->m_paramDefault.values;
-	for (int i = 0; i < impl->m_values.count(); ++i){
+	for (int i = 0; i < impl->m_values.size(); ++i){
 		impl->m_values[i].values = impl->m_valuesDefault[i].values;
 	}
 }
