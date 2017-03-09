@@ -41,9 +41,12 @@ private:
 	void setup(const QDomNode& defNode);
 	void copyValues(const InputConditionContainerReal& i);
 
-private:
-	double m_value;
-	double m_default;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/inputconditioncontainerreal_impl.h"
+#endif // _DEBUG
 
 #endif

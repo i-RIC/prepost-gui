@@ -55,17 +55,13 @@ signals:
 
 private:
 	void copyValues(const InputConditionContainerFunctional& f);
-
 	bool loadDefaultFromCsvFile(const QString& filename);
 
 	static bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values);
 	static bool saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values);
 
-	Data m_param;
-	QList<Data> m_values;
-
-	Data m_paramDefault;
-	QList<Data> m_valuesDefault;
+	class Impl;
+	Impl* impl;
 };
 
 #endif // INPUTCONDITIONCONTAINERFUNCTIONAL_H

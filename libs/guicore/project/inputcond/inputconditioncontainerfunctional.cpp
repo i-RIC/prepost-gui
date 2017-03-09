@@ -1,4 +1,5 @@
 #include "inputconditioncontainerfunctional.h"
+#include "private/inputconditioncontainerfunctional_impl.h"
 
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -15,14 +16,16 @@
 #include <yaml-cpp/yaml.h>
 
 InputConditionContainerFunctional::InputConditionContainerFunctional() :
-	InputConditionContainer()
+	InputConditionContainer(),
+	impl {new Impl {}}
 {}
 
 InputConditionContainerFunctional::InputConditionContainerFunctional(const std::string& n, const QString& c, QDomNode defNode, const QDir& dir) :
-	InputConditionContainer(n, c)
+	InputConditionContainer(n, c),
+	impl {new Impl {}}
 {
 	QDomElement paramElem = iRIC::getChildNode(defNode, "Parameter").toElement();
-	m_param.name = iRIC::toStr(paramElem.attribute("name", "Param"));
+	impl->m_param.name = iRIC::toStr(paramElem.attribute("name", "Param"));
 
 	QDomNode valNode = defNode.firstChild();
 	while (! valNode.isNull()) {
@@ -30,12 +33,12 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const std::
 			QDomElement valElem = valNode.toElement();
 			Data valData;
 			valData.name = iRIC::toStr(valElem.attribute("name", "Value"));
-			m_values.append(valData);
+			impl->m_values.append(valData);
 		}
 		valNode = valNode.nextSibling();
 	}
-	m_paramDefault = m_param;
-	m_valuesDefault = m_values;
+	impl->m_paramDefault = impl->m_param;
+	impl->m_valuesDefault = impl->m_values;
 
 	// load default from CSV file if exist
 	QDomElement elem = defNode.toElement();
@@ -46,13 +49,16 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const std::
 }
 
 InputConditionContainerFunctional::InputConditionContainerFunctional(const InputConditionContainerFunctional& i) :
-	InputConditionContainer(i)
+	InputConditionContainer(i),
+	impl {new Impl {}}
 {
 	copyValues(i);
 }
 
 InputConditionContainerFunctional::~InputConditionContainerFunctional()
-{}
+{
+	delete impl;
+}
 
 InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(const InputConditionContainerFunctional& i)
 {
@@ -63,7 +69,7 @@ InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(
 
 int InputConditionContainerFunctional::valueCount() const
 {
-	return m_values.count();
+	return impl->m_values.count();
 }
 
 QVector<double>& InputConditionContainerFunctional::x()
@@ -78,40 +84,40 @@ QVector<double>& InputConditionContainerFunctional::y()
 
 QVector<double>& InputConditionContainerFunctional::param()
 {
-	return m_param.values;
+	return impl->m_param.values;
 }
 
 const QVector<double>& InputConditionContainerFunctional::param() const
 {
-	return m_param.values;
+	return impl->m_param.values;
 }
 
 QVector<double>& InputConditionContainerFunctional::value(int index)
 {
-	return m_values[index].values;
+	return impl->m_values[index].values;
 }
 
 const QVector<double>& InputConditionContainerFunctional::value(int index) const
 {
-	return m_values[index].values;
+	return impl->m_values[index].values;
 }
 
 void InputConditionContainerFunctional::setValue(const QVector<double>& x, const QVector<double>& y)
 {
-	m_param.name = "Param";
-	m_param.values = x;
+	impl->m_param.name = "Param";
+	impl->m_param.values = x;
 
-	m_values.clear();
+	impl->m_values.clear();
 	Data val;
 	val.name = "Value";
 	val.values = y;
-	m_values.append(val);
+	impl->m_values.append(val);
 }
 
 void InputConditionContainerFunctional::removeAllValues(){
-	m_param.values.clear();
-	for (int i = 0; i < m_values.count(); ++i){
-		m_values[i].values.clear();
+	impl->m_param.values.clear();
+	for (int i = 0; i < impl->m_values.count(); ++i){
+		impl->m_values[i].values.clear();
 	}
 }
 
@@ -135,23 +141,23 @@ int InputConditionContainerFunctional::load()
 
 	// load parameter.
 	if (isBoundaryCondition()) {
-		result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(m_param.name), data.data());
+		result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(impl->m_param.name), data.data());
 	} else if (isComplexCondition()) {
-		result = cg_iRIC_Read_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(m_param.name), data.data());
+		result = cg_iRIC_Read_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(impl->m_param.name), data.data());
 	} else {
-		result = cg_iRIC_Read_FunctionalWithName(toC(name()), toC(m_param.name), data.data());
+		result = cg_iRIC_Read_FunctionalWithName(toC(name()), toC(impl->m_param.name), data.data());
 	}
 	if (result != 0) {goto ERROR;}
 
-	m_param.values.clear();
-	m_param.values.insert(0, length, 0);
-	tmpdata = m_param.values.data();
+	impl->m_param.values.clear();
+	impl->m_param.values.insert(0, length, 0);
+	tmpdata = impl->m_param.values.data();
 	for (int i = 0; i < length; ++i) {
 		*(tmpdata + i) = data[i];
 	}
 	// load values.
-	for (int i = 0; i < m_values.count(); ++i) {
-		Data& val = m_values[i];
+	for (int i = 0; i < impl->m_values.count(); ++i) {
+		Data& val = impl->m_values[i];
 		if (isBoundaryCondition()) {
 			result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(val.name), data.data());
 		} else if (isComplexCondition()) {
@@ -179,25 +185,25 @@ ERROR:
 
 int InputConditionContainerFunctional::save()
 {
-	cgsize_t length = m_param.values.count();
+	cgsize_t length = impl->m_param.values.count();
 	cgsize_t tmplength = length;
 	if (tmplength == 0) {tmplength = 1;}
 	std::vector<double> data (tmplength, 0);
 	// write parameter.
 	for (int i = 0; i < length; ++i) {
-		data[i] = m_param.values.at(i);
+		data[i] = impl->m_param.values.at(i);
 	}
 	if (isBoundaryCondition()) {
-		cg_iRIC_Write_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(m_param.name), length, data.data());
+		cg_iRIC_Write_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(impl->m_param.name), length, data.data());
 	} else if (isComplexCondition()) {
-		cg_iRIC_Write_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(m_param.name), length, data.data());
+		cg_iRIC_Write_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(impl->m_param.name), length, data.data());
 	} else {
-		cg_iRIC_Write_FunctionalWithName(toC(name()), toC(m_param.name), length, data.data());
+		cg_iRIC_Write_FunctionalWithName(toC(name()), toC(impl->m_param.name), length, data.data());
 	}
 
 	// write values;
-	for (int i = 0; i < m_values.count(); ++i) {
-		Data& val = m_values[i];
+	for (int i = 0; i < impl->m_values.count(); ++i) {
+		Data& val = impl->m_values[i];
 		for (int i = 0; i < length; ++i) {
 			data[i] = val.values.at(i);
 		}
@@ -214,9 +220,9 @@ int InputConditionContainerFunctional::save()
 
 void InputConditionContainerFunctional::clear()
 {
-	m_param.values = m_paramDefault.values;
-	for (int i = 0; i < m_values.count(); ++i){
-		m_values[i].values = m_valuesDefault[i].values;
+	impl->m_param.values = impl->m_paramDefault.values;
+	for (int i = 0; i < impl->m_values.count(); ++i){
+		impl->m_values[i].values = impl->m_valuesDefault[i].values;
 	}
 }
 
@@ -243,26 +249,26 @@ void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const 
 bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)
 {
 	removeAllValues();
-	return loadFromCsvFile(filename, &m_param, &m_values);
+	return loadFromCsvFile(filename, &(impl->m_param), &(impl->m_values));
 }
 
 bool InputConditionContainerFunctional::saveDataToCsvFile(const QString& filename)
 {
-	return saveToCsvFile(filename, m_param, m_values);
+	return saveToCsvFile(filename, impl->m_param, impl->m_values);
 }
 
 void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)
 {
 	InputConditionContainer::copyValues(f);
-	m_param = f.m_param;
-	m_values = f.m_values;
-	m_paramDefault = f.m_paramDefault;
-	m_valuesDefault = f.m_valuesDefault;
+	impl->m_param = f.impl->m_param;
+	impl->m_values = f.impl->m_values;
+	impl->m_paramDefault = f.impl->m_paramDefault;
+	impl->m_valuesDefault = f.impl->m_valuesDefault;
 }
 
 bool InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)
 {
-	return loadFromCsvFile(filename, &m_paramDefault, &m_valuesDefault);
+	return loadFromCsvFile(filename, &(impl->m_paramDefault), &(impl->m_valuesDefault));
 }
 
 bool InputConditionContainerFunctional::loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)

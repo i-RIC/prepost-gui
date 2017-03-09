@@ -3,8 +3,9 @@
 
 #include "../../guicore_global.h"
 #include "inputconditioncontainer.h"
-#include <QString>
+
 class QDomNode;
+class QString;
 
 class GUICOREDLL_EXPORT InputConditionContainerString : public InputConditionContainer
 {
@@ -37,13 +38,16 @@ signals:
 	void valueChanged(const QString& newvalue);
 	void valueChanged();
 
-protected:
+private:
 	void setup(const QDomNode& defNode);
 	void copyValues(const InputConditionContainerString& i);
 
-private:
-	QString m_value;
-	QString m_default;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/inputconditioncontainerstring_impl.h"
+#endif // _DEBUG
 
 #endif // INPUTCONDITIONCONTAINERSTRING_H

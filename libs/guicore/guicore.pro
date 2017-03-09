@@ -449,6 +449,11 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealeditwidget.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
+           project/inputcond/private/inputconditioncontainer_impl.h \
+           project/inputcond/private/inputconditioncontainerfunctional_impl.h \
+           project/inputcond/private/inputconditioncontainerinteger_impl.h \
+           project/inputcond/private/inputconditioncontainerreal_impl.h \
+           project/inputcond/private/inputconditioncontainerstring_impl.h \
            project/inputcond/private/inputconditiondependencychecksubimages.h \
            project/inputcond/private/inputconditiondependencyconditionalways.h \
            project/inputcond/private/inputconditiondependencyconditionand.h \
