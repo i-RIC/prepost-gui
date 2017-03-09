@@ -85,10 +85,10 @@ void GridComplexConditionGroup::load()
 
 void GridComplexConditionGroup::save()
 {
-	impl->m_caption.load();
-	impl->m_color.load();
-	impl->m_isDefault.load();
-	impl->m_containerSet.load();
+	impl->m_caption.save();
+	impl->m_color.save();
+	impl->m_isDefault.save();
+	impl->m_containerSet.save();
 }
 
 QWidget* GridComplexConditionGroup::widget() const
