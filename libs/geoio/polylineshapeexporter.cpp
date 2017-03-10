@@ -29,7 +29,7 @@ SHPObject* getShpObject(const QVector<QPointF>& data, SHPHandle shph)
 }
 void writeDbf(DBFHandle dbfh)
 {
-	// Add Nave attribute
+	// Add Name attribute
 	DBFAddField(dbfh, "Name", FTString, 10, 0);
 	QTextCodec* codec = QTextCodec::codecForLocale();
 	DBFWriteStringAttribute(dbfh, 0, 0, codec->fromUnicode(QString("Polyline1")).data());
