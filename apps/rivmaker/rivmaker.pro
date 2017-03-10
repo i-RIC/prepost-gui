@@ -33,11 +33,11 @@ HEADERS += ui_rivmakermainwindow.h \
            data/riversurveydatacreator.h \
            data/riversurveydatacrosssection.h \
            data/watersurfaceelevationpoints.h \
+           dialogs/mousehelpdialog.h \
            main/rivmakermainwindow.h \
            data/private/baseline_impl.h \
-           data/private/project_impl.h \
-           /ui_rivmakermainwindow.h
-FORMS += main/rivmakermainwindow.ui
+           data/private/project_impl.h
+FORMS += dialogs/mousehelpdialog.ui main/rivmakermainwindow.ui
 SOURCES += data/baseline.cpp \
            data/crosssection.cpp \
            data/elevationpoints.cpp \
@@ -46,6 +46,8 @@ SOURCES += data/baseline.cpp \
            data/riversurveydatacreator.cpp \
            data/riversurveydatacrosssection.cpp \
            data/watersurfaceelevationpoints.cpp \
+           dialogs/mousehelpdialog.cpp \
            main/main.cpp \
-           main/rivmakermainwindow.cpp
+           main/rivmakermainwindow.cpp \
+           main/rivmakermainwindow_setupconnections.cpp
 RESOURCES += rivmaker.qrc

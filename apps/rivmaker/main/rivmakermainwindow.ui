@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Rivmaker 1.0</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../rivmaker.qrc">
@@ -447,11 +447,23 @@
    </property>
   </action>
   <action name="viewToolbarAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>&amp;Toolbar</string>
    </property>
   </action>
   <action name="viewStatusBarAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>&amp;Status Bar</string>
    </property>

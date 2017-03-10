@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+class Project;
+
 namespace Ui {
 class RivmakerMainWindow;
 }
@@ -15,7 +17,20 @@ public:
 	explicit RivmakerMainWindow(QWidget *parent = 0);
 	~RivmakerMainWindow();
 
+private slots:
+	void newProject();
+
+	void viewToggleToolBar(bool visible);
+	void viewToggleStatusBar(bool visible);
+
+	void helpMouseHint();
+
 private:
+	void setupConnections();
+	void deleteProject();
+
+	Project* m_project;
+
 	Ui::RivmakerMainWindow *ui;
 };
 
