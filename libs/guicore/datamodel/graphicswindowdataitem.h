@@ -114,6 +114,8 @@ public:
 	virtual QDialog* addDialog(QWidget* /*parent*/) {return 0;}
 	virtual void handleAddDialogAccepted(QDialog* /*addDialog*/) {}
 
+	virtual void undoableDeleteItem(GraphicsWindowDataItem* /*item*/, bool /*noDraw*/ = false) {}
+
 	/// Returns the pointer to a toolbar specific to currently selected item.
 	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
 	const std::vector<GraphicsWindowDataItem*>& childItems() const {return m_childItems;}

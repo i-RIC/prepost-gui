@@ -1,3 +1,4 @@
+#include "../../../guibase/objectbrowserview.h"
 #include "post3dwindowcontourgrouptopdataitem.h"
 
 #include "post3dwindowcontourgroupdataitem.h"
@@ -30,9 +31,6 @@ Post3dWindowContourGroupTopDataItem::Post3dWindowContourGroupTopDataItem(Post3dW
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		m_colorBarTitleMap.insert(name, name.c_str());
 	}
-
-	m_addAction = new QAction(tr("Add..."), this);
-	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
 Post3dWindowContourGroupTopDataItem::~Post3dWindowContourGroupTopDataItem()
@@ -177,7 +175,7 @@ QDialog* Post3dWindowContourGroupTopDataItem::addDialog(QWidget* p)
 
 void Post3dWindowContourGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(m_addAction);
+	menu->addAction(dataModel()->objectBrowserView()->addAction());
 }
 
 class Post3dWindowContourGroupTopDataItem::CreateCommand : public QUndoCommand
@@ -198,12 +196,14 @@ public:
 	}
 	void redo() {
 		m_item = new Post3dWindowContourGroupDataItem(m_topItem);
+		m_item->setIsCommandExecuting(true);
 		m_item->updateZScale(m_topItem->m_zScale);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
 		m_undoCommand = new QUndoCommand();
 		m_item->undoCommands(m_propDialog, m_undoCommand);
 		m_undoCommand->redo();
+		m_item->setIsCommandExecuting(false);
 	}
 	void undo() {
 		// don't delete original propDialog

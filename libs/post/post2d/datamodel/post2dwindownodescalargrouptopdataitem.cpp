@@ -1,3 +1,4 @@
+#include "../../../guibase/objectbrowserview.h"
 #include "post2dwindowcontoursettingdialog.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindownodescalargrouptopdataitem.h"
@@ -27,9 +28,6 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
-
-	m_addAction = new QAction(tr("Add..."), this);
-	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
 Post2dWindowNodeScalarGroupTopDataItem::~Post2dWindowNodeScalarGroupTopDataItem()
@@ -101,7 +99,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamW
 
 void Post2dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
 {
-	m_zDepthRange.setItemCount(m_childItems.size());
+	m_zDepthRange.setItemCount((unsigned int)m_childItems.size());
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
@@ -207,7 +205,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
 	menu->addSeparator();
-	menu->addAction(m_addAction);
+	menu->addAction(dataModel()->objectBrowserView()->addAction());
 }
 
 class Post2dWindowNodeScalarGroupTopDataItem::CreateCommand : public QUndoCommand

@@ -22,6 +22,8 @@ class vtkContourFilter;
 
 class Post3dWindowIsosurfaceSetProperty;
 
+#include "post3dwindownodescalargrouptopdataitem.h"  // can't forward declare nested classes
+
 class Post3dWindowNodeScalarGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
@@ -43,12 +45,13 @@ public:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	std::string target() const override;
-	void setTarget(const std::string& target);
+	void setTarget(const std::string& target) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
+	void addCustomMenuItems(QMenu* menu) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateVisibility() override;
@@ -56,6 +59,7 @@ protected:
 	void innerUpdateZScale(double scale) override;
 	void updateColorSetting();
 	void validateRange();
+
 
 private:
 	void setDefaultValues();
@@ -73,6 +77,8 @@ private:
 public:
 	friend class Post3dWindowIsosurfaceSetProperty;
 	friend class Post3dWindowIsosurfaceSelectSolution;
+	friend class Post3dWindowNodeScalarGroupTopDataItem::CreateCommand;
+	friend class Post3dWindowNodeScalarGroupTopDataItem::DeleteCommand;
 };
 
 #endif // POST3DWINDOWNODESCALARGROUPDATAITEM_H

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>336</width>
-    <height>599</height>
+    <height>470</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -325,7 +325,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -358,11 +358,6 @@
    <class>RealNumberEditWidget</class>
    <extends>QLineEdit</extends>
    <header>guibase/widget/realnumbereditwidget.h</header>
-  </customwidget>
-  <customwidget>
-   <class>ColorEditWidget</class>
-   <extends>QLabel</extends>
-   <header>commongui/coloreditwidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

@@ -382,11 +382,6 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 	GraphicsWindowDataItem::updateVisibility(visible);
 }
 
-void Post3dWindowContourGroupDataItem::handleStandardItemChange()
-{
-	GraphicsWindowDataItem::updateVisibility();
-}
-
 QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post3dWindowContourGroupSettingDialog* dialog = new Post3dWindowContourGroupSettingDialog(p);

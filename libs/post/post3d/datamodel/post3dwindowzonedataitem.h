@@ -15,6 +15,7 @@ class QSignalMapper;
 class Post3dWindowGridShapeDataItem;
 class Post3dWindowContourGroupTopDataItem;
 class Post3dWindowNodeScalarGroupDataItem;
+class Post3dWindowNodeScalarGroupTopDataItem;
 class Post3dWindowArrowGroupDataItem;
 class Post3dWindowNodeVectorStreamlineGroupDataItem;
 class Post3dWindowNodeVectorParticleGroupDataItem;
@@ -39,7 +40,7 @@ public:
 	void update();
 	Post3dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
 	Post3dWindowContourGroupTopDataItem* contourGroupTopItem() const {return m_contourGroupTopItem;}
-	Post3dWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
+	Post3dWindowNodeScalarGroupTopDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
 	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
 	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const {return m_streamlineGroupDataItem;}
 	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const {return m_particleGroupDataItem;}
@@ -52,7 +53,7 @@ protected:
 private:
 	Post3dWindowGridShapeDataItem* m_shapeDataItem;
 	Post3dWindowContourGroupTopDataItem* m_contourGroupTopItem;
-	Post3dWindowNodeScalarGroupDataItem* m_scalarGroupDataItem;
+	Post3dWindowNodeScalarGroupTopDataItem* m_scalarGroupDataItem;
 	Post3dWindowArrowGroupDataItem* m_arrowGroupDataItem;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;

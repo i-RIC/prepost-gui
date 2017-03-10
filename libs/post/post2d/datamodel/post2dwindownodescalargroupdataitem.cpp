@@ -117,6 +117,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 
 	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
 	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
+	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
 
 	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
 	vtkPolyData* rcp = createRangeClippedPolyData(polyData);

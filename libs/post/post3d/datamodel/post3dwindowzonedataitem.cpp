@@ -6,6 +6,7 @@
 #include "post3dwindowgridshapedataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindownodescalargroupdataitem.h"
+#include "post3dwindownodescalargrouptopdataitem.h"
 #include "post3dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post3dwindownodevectorstreamlinegroupstructureddataitem.h"
 #include "post3dwindowparticlestopdataitem.h"
@@ -63,7 +64,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	PostZoneDataContainer* cont = dataContainer();
 	if (cont->scalarValueExists()) {
 		m_contourGroupTopItem = new Post3dWindowContourGroupTopDataItem(this);
-		m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupDataItem(this);
+		m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupTopDataItem(this);
 	}
 
 	if (cont->vectorValueExists()) {
@@ -111,9 +112,16 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 			m_contourGroupTopItem->loadFromProjectMainFile(contourGroupNode);
 		}
 	}
-	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
-		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
+	QDomNode isosurfacesNode = iRIC::getChildNode(node, "Isosurfaces");
+	if (! isosurfacesNode.isNull() && m_scalarGroupDataItem != nullptr) {
+		// multi-isosurfaces
+		m_scalarGroupDataItem->loadFromProjectMainFile(isosurfacesNode);
+	} else {
+		// single-isosurface
+		QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
+		if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
+			m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
+		}
 	}
 	QDomNode arrowGroupNode = iRIC::getChildNode(node, "ArrowGroup");
 	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr) {
@@ -146,7 +154,7 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		writer.writeEndElement();
 	}
 	if (m_scalarGroupDataItem != nullptr) {
-		writer.writeStartElement("ScalarGroup");
+		writer.writeStartElement("Isosurfaces");
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}

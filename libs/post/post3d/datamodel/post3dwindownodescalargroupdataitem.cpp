@@ -1,3 +1,4 @@
+#include "../../../guibase/objectbrowserview.h"
 #include "../post3dwindowdatamodel.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowisosurfacesettingdialog.h"
@@ -22,6 +23,7 @@
 
 #include <QDomNode>
 #include <QList>
+#include <QMenu>
 #include <QStandardItem>
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
@@ -48,19 +50,15 @@
 #include <vtkTextProperty.h>
 
 Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setDefaultValues();
 	setupActors();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-		auto item = new Post3dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.push_back(item);
-	}
 }
 
 Post3dWindowNodeScalarGroupDataItem::~Post3dWindowNodeScalarGroupDataItem()
@@ -82,11 +80,14 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
 	if (m_target == "") {return;}
+
+	m_standardItem->setText(m_target.c_str());
+	m_standardItemCopy->setText(m_target.c_str());
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
@@ -163,7 +164,7 @@ void Post3dWindowNodeScalarGroupDataItem::update()
 void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 {
 	// input data
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	vtkPointSet* ps = cont->data();
 
 	// extract interest volume
@@ -183,12 +184,7 @@ void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 
 	// Map the data to graphical primitives
 	m_isoSurfaceMapper->SetInputConnection(contourFilter->GetOutputPort());
-	this->updateColorSetting();
-
-	// set color
-	if (vtkProperty* p = m_isoSurfaceActor->GetProperty()) {
-		p->SetColor(m_color.red() / 255.0, m_color.green() / 255.0, m_color.blue() / 255.0);
-	}
+	updateColorSetting();
 
 	m_actorCollection->AddItem(m_isoSurfaceActor);
 }
@@ -209,9 +205,9 @@ void Post3dWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post3dWindowIsosurfaceSettingDialog* dialog = new Post3dWindowIsosurfaceSettingDialog(p);
-	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
+	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
-	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
+	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {return nullptr;}
 
@@ -325,7 +321,6 @@ std::string Post3dWindowNodeScalarGroupDataItem::target() const
 
 void Post3dWindowNodeScalarGroupDataItem::setTarget(const std::string& target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_target = target;
 	updateActorSettings();
 }
@@ -337,12 +332,12 @@ void Post3dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 
 void Post3dWindowNodeScalarGroupDataItem::updateColorSetting()
 {
-	this->m_isoSurfaceActor->GetProperty()->SetColor(m_color.red()/255., m_color.green()/255., m_color.blue()/255.);
+	m_isoSurfaceActor->GetProperty()->SetColor(m_color.red()/255., m_color.green()/255., m_color.blue()/255.);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::validateRange()
 {
-	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
+	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr)	{
 		return;
 	}
@@ -362,4 +357,9 @@ void Post3dWindowNodeScalarGroupDataItem::validateRange()
 		if (m_range.jMax < 0) m_range.jMax = dims[1] - 1;
 		if (m_range.kMax < 0) m_range.kMax = dims[2] - 1;
 	}
+}
+
+void Post3dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
+{
+	menu->addAction(dataModel()->objectBrowserView()->undoableDeleteAction());
 }
