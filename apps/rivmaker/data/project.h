@@ -24,6 +24,7 @@ public:
 	const BaseLine& baseLine() const;
 	BaseLine baseLine();
 
+	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;
 	bool checkIfReadyToCreateRiverSurveyData(QWidget* w) const;
 
 	void createRiverSurveyData();

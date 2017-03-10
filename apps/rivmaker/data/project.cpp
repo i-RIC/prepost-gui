@@ -54,6 +54,11 @@ BaseLine Project::baseLine()
 	return impl->m_baseLine;
 }
 
+bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
+{
+	return RiverSurveyDataCreator::checkIfReadyToOpenVerticalCrossSectionWindow(*this, w);
+}
+
 bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const
 {
 	return RiverSurveyDataCreator::checkIfReadyToCreate(*this, w);

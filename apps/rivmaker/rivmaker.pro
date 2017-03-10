@@ -24,8 +24,7 @@ LIBS += \
 	-lvtkRenderingOpenGL-6.1
 
 # Input
-HEADERS += ui_rivmakermainwindow.h \
-           data/baseline.h \
+HEADERS += data/baseline.h \
            data/crosssection.h \
            data/elevationpoints.h \
            data/project.h \
@@ -36,8 +35,12 @@ HEADERS += ui_rivmakermainwindow.h \
            dialogs/mousehelpdialog.h \
            main/rivmakermainwindow.h \
            data/private/baseline_impl.h \
-           data/private/project_impl.h
-FORMS += dialogs/mousehelpdialog.ui main/rivmakermainwindow.ui
+           data/private/project_impl.h \
+           window/crosssection/crosssectionwindow.h \
+           window/verticalcrosssection/verticalcrosssectionwindow.h
+FORMS += dialogs/mousehelpdialog.ui \
+         main/rivmakermainwindow.ui \
+         window/verticalcrosssection/verticalcrosssectionwindow.ui
 SOURCES += data/baseline.cpp \
            data/crosssection.cpp \
            data/elevationpoints.cpp \
@@ -49,5 +52,7 @@ SOURCES += data/baseline.cpp \
            dialogs/mousehelpdialog.cpp \
            main/main.cpp \
            main/rivmakermainwindow.cpp \
-           main/rivmakermainwindow_setupconnections.cpp
+           main/rivmakermainwindow_setupconnections.cpp \
+           window/crosssection/crosssectionwindow.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindow.cpp
 RESOURCES += rivmaker.qrc

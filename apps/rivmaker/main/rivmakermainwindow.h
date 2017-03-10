@@ -1,8 +1,13 @@
 #ifndef RIVMAKERMAINWINDOW_H
 #define RIVMAKERMAINWINDOW_H
 
+#include "window/verticalcrosssection/verticalcrosssectionwindow.h"
+
 #include <QMainWindow>
 
+#include <vector>
+
+class CrossSectionWindow;
 class Project;
 
 namespace Ui {
@@ -20,6 +25,9 @@ public:
 private slots:
 	void newProject();
 
+	void focusVerticalCrossSectionWindow();
+	void openCrossSectionWindow();
+
 	void viewToggleToolBar(bool visible);
 	void viewToggleStatusBar(bool visible);
 
@@ -28,6 +36,9 @@ private slots:
 private:
 	void setupConnections();
 	void deleteProject();
+
+	VerticalCrossSectionWindow m_verticalCrossSectionWindow;
+	std::vector<CrossSectionWindow*> m_crossSectionWindows;
 
 	Project* m_project;
 

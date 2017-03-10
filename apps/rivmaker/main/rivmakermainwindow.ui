@@ -17,7 +17,7 @@
    <iconset resource="../rivmaker.qrc">
     <normaloff>:/images/iconRivmaker.png</normaloff>:/images/iconRivmaker.png</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMdiArea" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
