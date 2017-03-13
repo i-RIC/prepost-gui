@@ -1,14 +1,11 @@
 #ifndef RIVMAKERMAINWINDOW_H
 #define RIVMAKERMAINWINDOW_H
 
-#include "window/verticalcrosssection/verticalcrosssectionwindow.h"
-
 #include <QMainWindow>
 
 #include <vector>
 
-class CrossSectionWindow;
-class Project;
+class QCloseEvent;
 
 namespace Ui {
 class RivmakerMainWindow;
@@ -25,6 +22,7 @@ public:
 private slots:
 	void newProject();
 
+	void focusPreProcessorWindow();
 	void focusVerticalCrossSectionWindow();
 	void openCrossSectionWindow();
 
@@ -34,15 +32,19 @@ private slots:
 	void helpMouseHint();
 
 private:
+	void closeEvent(QCloseEvent *e) override;
+
 	void setupConnections();
 	void deleteProject();
 
-	VerticalCrossSectionWindow m_verticalCrossSectionWindow;
-	std::vector<CrossSectionWindow*> m_crossSectionWindows;
-
-	Project* m_project;
+	class Impl;
+	Impl* impl;
 
 	Ui::RivmakerMainWindow *ui;
 };
+
+#ifdef _DEBUG
+	#include "private/rivmakermainwindow_impl.h"
+#endif // _DEBUG
 
 #endif // RIVMAKERMAINWINDOW_H

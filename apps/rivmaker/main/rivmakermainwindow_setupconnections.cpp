@@ -5,6 +5,7 @@ void RivmakerMainWindow::setupConnections()
 {
 	connect(ui->exitAction, SIGNAL(triggered()), this, SLOT(close()));
 
+	connect(ui->focusPreWindowAction, SIGNAL(triggered()), this, SLOT(focusPreProcessorWindow()));
 	connect(ui->focusVerticalCrosssectionWindowAction, SIGNAL(triggered()), this, SLOT(focusVerticalCrossSectionWindow()));
 
 	connect(ui->viewToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleToolBar(bool)));

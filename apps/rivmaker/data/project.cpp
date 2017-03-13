@@ -54,6 +54,16 @@ BaseLine Project::baseLine()
 	return impl->m_baseLine;
 }
 
+const std::vector<CrossSection*>& Project::crossSections() const
+{
+	return impl->m_crossSections;
+}
+
+std::vector<CrossSection*>& Project::crossSections()
+{
+	return impl->m_crossSections;
+}
+
 bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
 {
 	return RiverSurveyDataCreator::checkIfReadyToOpenVerticalCrossSectionWindow(*this, w);
@@ -64,13 +74,6 @@ bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const
 	return RiverSurveyDataCreator::checkIfReadyToCreate(*this, w);
 }
 
-void Project::createRiverSurveyData()
-{
-	deleteRiverSurveyData();
-
-	impl->m_riverSurveyData = RiverSurveyDataCreator::create(*this);
-}
-
 bool Project::hasRiverSurveyData() const
 {
 	return impl->m_riverSurveyData != nullptr;
@@ -79,6 +82,40 @@ bool Project::hasRiverSurveyData() const
 RiverSurveyData* Project::riverSurveyData() const
 {
 	return impl->m_riverSurveyData;
+}
+
+void Project::importElevationPoints()
+{}
+
+void Project::importWaterSurfaceElevationPoints()
+{}
+
+void Project::importBaseLine()
+{}
+
+void Project::importCrossSections()
+{}
+
+void Project::exportElevationPoints()
+{}
+
+void Project::exportWaterSurfaceElevationPoints()
+{}
+
+void Project::exportBaseLine()
+{}
+
+void Project::exportCrossSections()
+{}
+
+void Project::exportRiverSurveyData()
+{}
+
+void Project::createRiverSurveyData()
+{
+	deleteRiverSurveyData();
+
+	impl->m_riverSurveyData = RiverSurveyDataCreator::create(*this);
 }
 
 void Project::deleteRiverSurveyData()

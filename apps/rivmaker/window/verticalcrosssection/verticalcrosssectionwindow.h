@@ -16,6 +16,8 @@ public:
 	~VerticalCrossSectionWindow();
 
 private:
+	void closeEvent(QCloseEvent *e);
+
 	Ui::VerticalCrossSectionWindow *ui;
 };
 

@@ -2,7 +2,6 @@
 #define PROJECT_IMPL_H
 
 #include "../baseline.h"
-#include "../crosssection.h"
 #include "../elevationpoints.h"
 #include "../project.h"
 #include "../watersurfaceelevationpoints.h"
@@ -16,6 +15,7 @@ public:
 	ElevationPoints m_elevationPoints;
 	WaterSurfaceElevationPoints m_waterSurfaceElevationPoints;
 	BaseLine m_baseLine;
+	std::vector<CrossSection*> m_crossSections;
 
 	RiverSurveyData* m_riverSurveyData;
 };

@@ -4,38 +4,67 @@
 
 #include "ui_rivmakermainwindow.h"
 
+#include <QCloseEvent>
 #include <QMdiSubWindow>
+#include <QMessageBox>
+
+namespace {
+
+} // namespace
+
+RivmakerMainWindow::Impl::Impl(RivmakerMainWindow* w) :
+	m_preProcessorWindow {w},
+	m_verticalCrossSectionWindow {w},
+	m_project {nullptr}
+{
+}
+
+RivmakerMainWindow::Impl::~Impl()
+{
+	delete m_project;
+}
+
+// public interfaces
 
 RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 	QMainWindow(parent),
-	m_verticalCrossSectionWindow {this},
-	m_project {nullptr},
+	impl {new Impl {this}},
 	ui(new Ui::RivmakerMainWindow)
 {
 	ui->setupUi(this);
 	setupConnections();
 
-	auto w = ui->centralwidget->addSubWindow(&m_verticalCrossSectionWindow);
-	w->hide();
+	auto pw = ui->centralwidget->addSubWindow(&(impl->m_preProcessorWindow));
+	pw->setWindowIcon(impl->m_preProcessorWindow.windowIcon());
+	pw->showMaximized();
+	auto vw = ui->centralwidget->addSubWindow(&(impl->m_verticalCrossSectionWindow));
+	vw->hide();
 }
 
 RivmakerMainWindow::~RivmakerMainWindow()
 {
-	delete m_project;
 	delete ui;
+	delete impl;
 }
 
 void RivmakerMainWindow::newProject()
 {
 	deleteProject();
-	m_project = new Project();
+	impl->m_project = new Project();
+}
+
+void RivmakerMainWindow::focusPreProcessorWindow()
+{
+	auto pw = impl->m_preProcessorWindow.parentWidget();
+	pw->show();
+	pw->setFocus();
 }
 
 void RivmakerMainWindow::focusVerticalCrossSectionWindow()
 {
-	if (! m_project->checkIfReadyToOpenVerticalCrossSectionWindow(this)) {return;}
+	if (!impl->m_project->checkIfReadyToOpenVerticalCrossSectionWindow(this)) {return;}
 
-	auto pw = m_verticalCrossSectionWindow.parentWidget();
+	auto pw = impl->m_verticalCrossSectionWindow.parentWidget();
 	pw->show();
 	pw->setFocus();
 }
@@ -64,8 +93,18 @@ void RivmakerMainWindow::helpMouseHint()
 	dialog->show();
 }
 
+void RivmakerMainWindow::closeEvent(QCloseEvent *e)
+{
+	int ret = QMessageBox::warning(this, tr("Warning"), tr("Are you sure you want to exit Rivmaker?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+	if (ret == QMessageBox::Cancel) {
+		e->ignore();
+		return;
+	}
+	e->accept();
+}
+
 void RivmakerMainWindow::deleteProject()
 {
-	delete m_project;
-	m_project = nullptr;
+	delete impl->m_project;
+	impl->m_project = nullptr;
 }

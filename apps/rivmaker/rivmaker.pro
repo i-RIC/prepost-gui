@@ -36,8 +36,16 @@ HEADERS += data/baseline.h \
            main/rivmakermainwindow.h \
            data/private/baseline_impl.h \
            data/private/project_impl.h \
+           main/private/rivmakermainwindow_impl.h \
            window/crosssection/crosssectionwindow.h \
-           window/verticalcrosssection/verticalcrosssectionwindow.h
+           window/preprocessor/preprocessormodel.h \
+           window/preprocessor/preprocessorview.h \
+           window/preprocessor/preprocessorwindow.h \
+           window/verticalcrosssection/verticalcrosssectionwindow.h \
+           window/preprocessor/objectbrowser/objectbrowser.h \
+           window/preprocessor/objectbrowser/objectbrowserview.h \
+           window/preprocessor/private/preprocessormodel_impl.h \
+           window/preprocessor/private/preprocessorwindow_impl.h
 FORMS += dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
@@ -54,5 +62,10 @@ SOURCES += data/baseline.cpp \
            main/rivmakermainwindow.cpp \
            main/rivmakermainwindow_setupconnections.cpp \
            window/crosssection/crosssectionwindow.cpp \
-           window/verticalcrosssection/verticalcrosssectionwindow.cpp
+           window/preprocessor/preprocessormodel.cpp \
+           window/preprocessor/preprocessorview.cpp \
+           window/preprocessor/preprocessorwindow.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindow.cpp \
+           window/preprocessor/objectbrowser/objectbrowser.cpp \
+           window/preprocessor/objectbrowser/objectbrowserview.cpp
 RESOURCES += rivmaker.qrc

@@ -11,9 +11,28 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Vertical Cross Section Window</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../rivmaker.qrc">
+    <normaloff>:/images/iconVerticalCrosssection.png</normaloff>:/images/iconVerticalCrosssection.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
@@ -28,6 +47,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../rivmaker.qrc"/>
+ </resources>
  <connections/>
 </ui>

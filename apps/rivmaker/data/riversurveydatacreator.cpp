@@ -3,7 +3,7 @@
 bool RiverSurveyDataCreator::checkIfReadyToOpenVerticalCrossSectionWindow(const Project& project, QWidget* w)
 {
 	// @todo implement this
-	return false;
+	return true;
 }
 
 bool RiverSurveyDataCreator::checkIfReadyToCreate(const Project& project, QWidget* w)
