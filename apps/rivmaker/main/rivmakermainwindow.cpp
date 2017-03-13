@@ -1,4 +1,4 @@
-#include "data/project.h"
+#include "data/project/project.h"
 #include "rivmakermainwindow.h"
 #include "../dialogs/mousehelpdialog.h"
 

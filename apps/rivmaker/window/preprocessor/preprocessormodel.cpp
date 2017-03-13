@@ -45,6 +45,7 @@ void PreProcessorModel::Impl::setupStandatdItemModel()
 // public interfaces
 
 PreProcessorModel::PreProcessorModel(QObject* parent) :
+	QObject {model},
 	impl {new Impl {}}
 {}
 

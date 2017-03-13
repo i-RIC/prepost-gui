@@ -15,10 +15,14 @@ public:
 
 	CrossSection* crossSection() const;
 
+	double waterSurfaceElevation() const;
+	void setWaterSurfaceElevation(double e);
+
 	const std::vector<QVector3D*>& points() const;
 	std::vector<QVector3D*>& points();
 
 private:
+	double m_waterSurfaceElevation;
 	CrossSection* m_crossSection;
 	std::vector<QVector3D*> m_points;
 };

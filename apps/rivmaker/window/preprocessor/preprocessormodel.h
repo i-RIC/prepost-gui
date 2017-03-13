@@ -1,14 +1,14 @@
 #ifndef PREPROCESSORMODEL_H
 #define PREPROCESSORMODEL_H
 
-#include <QObject>
+#include "../../data/base/model.h"
 
 class Project;
 class PreProcessorView;
 
 class QStandardItemModel;
 
-class PreProcessorModel : public QObject
+class PreProcessorModel : public Model
 {
 	Q_OBJECT
 

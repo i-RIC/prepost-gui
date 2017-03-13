@@ -1,9 +1,9 @@
 #ifndef PREPROCESSORVIEW_H
 #define PREPROCESSORVIEW_H
 
-#include <QWidget>
+#include "../../data/base/view.h"
 
-class PreProcessorView : public QWidget
+class PreProcessorView : public View
 {
 	Q_OBJECT
 

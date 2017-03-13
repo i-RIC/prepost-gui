@@ -1,7 +1,6 @@
 #ifndef RIVERSURVEYDATA_H
 #define RIVERSURVEYDATA_H
 
-
 class RiverSurveyData
 {
 public:

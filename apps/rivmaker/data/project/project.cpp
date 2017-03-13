@@ -1,5 +1,5 @@
 #include "project.h"
-#include "riversurveydata.h"
+#include "../riversurveydata/riversurveydata.h"
 #include "riversurveydatacreator.h"
 
 #include "private/project_impl.h"

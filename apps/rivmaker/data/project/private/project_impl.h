@@ -1,10 +1,10 @@
 #ifndef PROJECT_IMPL_H
 #define PROJECT_IMPL_H
 
-#include "../baseline.h"
-#include "../elevationpoints.h"
 #include "../project.h"
-#include "../watersurfaceelevationpoints.h"
+#include "../../baseline/baseline.h"
+#include "../../elevationpoints/elevationpoints.h"
+#include "../../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 
 class Project::Impl
 {
