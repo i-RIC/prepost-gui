@@ -8,6 +8,8 @@ class DataItemController;
 class DataItemView;
 class View;
 
+class QStandardItem;
+
 class Model : public QObject
 {
 public:
@@ -27,10 +29,21 @@ public:
 
 	DataItemView* rootDataItemView() const;
 
+	template<typename T>
+	QStandardItem* buildStandardItems(T* item, QStandardItem* (T::*f)());
+
+	template<typename T>
+	DataItemView* buildDataItemViews(T* item, DataItemView* (T::*f)());
+
+	template<typename T>
+	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)());
+
 private:
 	class Impl;
 	Impl* impl;
 };
+
+#include "model_detail.h"
 
 #ifdef _DEBUG
 	#include "private/model_impl.h"

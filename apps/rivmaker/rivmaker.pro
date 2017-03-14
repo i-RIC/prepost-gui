@@ -31,6 +31,7 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/base/dataitemview.h \
            data/base/dataitemviewhelperi.h \
            data/base/model.h \
+           data/base/model_detail.h \
            data/base/topview.h \
            data/base/view.h \
            data/baseline/baseline.h \
