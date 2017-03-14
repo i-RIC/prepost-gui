@@ -4,7 +4,8 @@
 
 #include <algorithm>
 
-BaseLine::BaseLine() :
+BaseLine::BaseLine(DataItem *parent) :
+	DataItem {parent},
 	impl {new Impl {}}
 {}
 

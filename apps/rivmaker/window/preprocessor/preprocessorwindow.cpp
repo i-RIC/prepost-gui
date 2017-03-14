@@ -18,7 +18,7 @@ PreProcessorWindow::Impl::Impl(PreProcessorWindow* w) :
 	auto obView = new ObjectBrowserView(m_objectBrowser);
 	m_objectBrowser->setWidget(obView);
 
-	obView->setModel(m_model.standardItemmodel());
+	obView->setModel(m_model.standardItemModel());
 
 	w->setCentralWidget(&m_view);
 }
@@ -39,6 +39,11 @@ PreProcessorWindow::PreProcessorWindow(QWidget *parent) :
 PreProcessorWindow::~PreProcessorWindow()
 {
 	delete impl;
+}
+
+void PreProcessorWindow::setProject(Project* project)
+{
+	impl->m_model.setProject(project);
 }
 
 void PreProcessorWindow::closeEvent(QCloseEvent *e)

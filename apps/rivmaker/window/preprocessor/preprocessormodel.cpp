@@ -1,3 +1,7 @@
+#include "../../data/project/project.h"
+#include "../../data/riversurveydata/riversurveydata.h"
+#include "../../data/riversurveydatadummy/riversurveydatadummy.h"
+#include "preprocessordataitemi.h"
 #include "preprocessormodel.h"
 #include "private/preprocessormodel_impl.h"
 
@@ -12,42 +16,20 @@ void setupCheckBox(QStandardItem* item)
 } // namespace
 
 PreProcessorModel::Impl::Impl() :
-	m_project {nullptr},
-	m_view {nullptr},
-	m_standardItemModel {},
-	m_elevationPointsItem {tr("Elevations")},
-	m_waterSurfaceElevationPointsItem {tr("Water Surface Elevations")},
-	m_crossSectionsItem {tr("Cross Sections")},
-	m_baseLineItem {tr("Base Line")},
-	m_riverSurveyDataItem {tr("River Survey Data")}
-{
-	setupStandatdItemModel();
-}
+	m_project {nullptr}
+{}
 
 PreProcessorModel::Impl::~Impl()
 {}
 
-void PreProcessorModel::Impl::setupStandatdItemModel()
-{
-	setupCheckBox(&m_elevationPointsItem);
-	setupCheckBox(&m_waterSurfaceElevationPointsItem);
-	setupCheckBox(&m_crossSectionsItem);
-	setupCheckBox(&m_baseLineItem);
-	setupCheckBox(&m_riverSurveyDataItem);
-
-	m_standardItemModel.appendRow(&m_elevationPointsItem);
-	m_standardItemModel.appendRow(&m_waterSurfaceElevationPointsItem);
-	m_standardItemModel.appendRow(&m_crossSectionsItem);
-	m_standardItemModel.appendRow(&m_baseLineItem);
-	m_standardItemModel.appendRow(&m_riverSurveyDataItem);
-}
-
 // public interfaces
 
 PreProcessorModel::PreProcessorModel(QObject* parent) :
-	QObject {model},
+	Model {parent},
 	impl {new Impl {}}
-{}
+{
+	setupStandatdItemModel();
+}
 
 PreProcessorModel::~PreProcessorModel()
 {
@@ -57,14 +39,29 @@ PreProcessorModel::~PreProcessorModel()
 void PreProcessorModel::setProject(Project* project)
 {
 	impl->m_project = project;
+	setupStandatdItemModel();
 }
 
-void PreProcessorModel::setView(PreProcessorView* view)
+void PreProcessorModel::setupStandatdItemModel()
 {
-	impl->m_view = view;
+	clearStandardItems();
+
+	auto proj = impl->m_project;
+	auto model = standardItemModel();
+
+	if (proj == nullptr) {return;}
+
+	buildStandardItems<PreProcessorDataItemI>(proj->rootDataItem(), &(PreProcessorDataItemI::buildPreProcessorStandardItem));
+
+	model->appendRow(standardItem(&(proj->elevationPoints())));
+	model->appendRow(standardItem(&(proj->waterSurfaceElevationPoints())));
+	model->appendRow(standardItem(&(proj->baseLine())));
+	model->appendRow(standardItem(&(proj->crossSections())));
+
+	if (proj->hasRiverSurveyData()) {
+		model->appendRow(standardItem(proj->riverSurveyData()));
+	} else {
+		model->appendRow(standardItem(&(proj->riverSurveyDataDummy())));
+	}
 }
 
-QStandardItemModel* PreProcessorModel::standardItemmodel() const
-{
-	return &(impl->m_standardItemModel);
-}

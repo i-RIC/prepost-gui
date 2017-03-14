@@ -37,6 +37,9 @@ void DataItemController::mouseReleaseEvent(QMouseEvent*, View*)
 void DataItemController::wheelEvent(QWheelEvent*, View*)
 {}
 
+void DataItemController::restoreMouseCursorOnView(View*)
+{}
+
 DataItem* DataItemController::item()
 {
 	return impl->m_item;

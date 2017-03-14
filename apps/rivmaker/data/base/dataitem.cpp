@@ -12,7 +12,6 @@ DataItem::~DataItem()
 	auto p = parentItem();
 	if (p != nullptr) {p->unregisterChild(this);}
 }
-
 Project* DataItem::project() const
 {
 	return parentItem()->project();

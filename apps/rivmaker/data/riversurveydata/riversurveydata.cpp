@@ -1,6 +1,8 @@
 #include "riversurveydata.h"
 
-RiverSurveyData::RiverSurveyData()
-{
+RiverSurveyData::RiverSurveyData(DataItem* parent) :
+	DataItem {parent}
+{}
 
-}
+RiverSurveyData::~RiverSurveyData()
+{}

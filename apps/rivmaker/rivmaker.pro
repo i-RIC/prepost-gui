@@ -32,15 +32,18 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/base/dataitemviewhelperi.h \
            data/base/model.h \
            data/base/model_detail.h \
+           data/base/rootdataitem.h \
            data/base/topview.h \
            data/base/view.h \
            data/baseline/baseline.h \
            data/crosssection/crosssection.h \
+           data/crosssections/crosssections.h \
            data/elevationpoints/elevationpoints.h \
            data/project/project.h \
            data/project/riversurveydatacreator.h \
            data/riversurveydata/riversurveydata.h \
            data/riversurveydatacrosssection/riversurveydatacrosssection.h \
+           data/riversurveydatadummy/riversurveydatadummy.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.h \
            main/private/rivmakermainwindow_impl.h \
            window/crosssection/crosssectionwindow.h \
@@ -70,15 +73,18 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            data/base/dataitemview.cpp \
            data/base/dataitemviewhelperi.cpp \
            data/base/model.cpp \
+           data/base/rootdataitem.cpp \
            data/base/topview.cpp \
            data/base/view.cpp \
            data/baseline/baseline.cpp \
            data/crosssection/crosssection.cpp \
+           data/crosssections/crosssections.cpp \
            data/elevationpoints/elevationpoints.cpp \
            data/project/project.cpp \
            data/project/riversurveydatacreator.cpp \
            data/riversurveydata/riversurveydata.cpp \
            data/riversurveydatacrosssection/riversurveydatacrosssection.cpp \
+           data/riversurveydatadummy/riversurveydatadummy.cpp \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
            window/crosssection/crosssectionwindow.cpp \
            window/preprocessor/preprocessormodel.cpp \

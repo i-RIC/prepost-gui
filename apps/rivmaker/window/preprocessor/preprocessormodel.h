@@ -17,11 +17,10 @@ public:
 	~PreProcessorModel();
 
 	void setProject(Project* project);
-	void setView(PreProcessorView* view);
-
-	QStandardItemModel* standardItemmodel() const;
 
 private:
+	void setupStandatdItemModel();
+
 	class Impl;
 	Impl* impl;
 };

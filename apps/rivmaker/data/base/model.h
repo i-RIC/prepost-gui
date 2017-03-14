@@ -9,6 +9,7 @@ class DataItemView;
 class View;
 
 class QStandardItem;
+class QStandardItemModel;
 
 class Model : public QObject
 {
@@ -24,19 +25,23 @@ public:
 
 	bool shouldDraw(DataItem* item) const;
 
+	QStandardItem* standardItem(DataItem* item) const;
 	DataItemView* dataItemView(DataItem* item) const;
 	DataItemController* dataItemController(DataItem* item) const;
 
 	DataItemView* rootDataItemView() const;
 
-	template<typename T>
-	QStandardItem* buildStandardItems(T* item, QStandardItem* (T::*f)());
+	QStandardItemModel* standardItemModel() const;
 
 	template<typename T>
-	DataItemView* buildDataItemViews(T* item, DataItemView* (T::*f)());
+	QStandardItem* buildStandardItems(const T* item, QStandardItem* (T::*f)() const);
+	void clearStandardItems();
 
 	template<typename T>
-	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)());
+	DataItemView* buildDataItemViews(const T* item, DataItemView* (T::*f)() const);
+
+	template<typename T>
+	DataItemController* buildDataItemControllers(const T* item, DataItemController* (T::*f)() const);
 
 private:
 	class Impl;

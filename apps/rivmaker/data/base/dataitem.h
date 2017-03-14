@@ -25,7 +25,7 @@ public:
 	const std::vector<DataItem*>& childItems() const;
 
 protected:
-	virtual void unregisterChild(DataItem* child);
+	void unregisterChild(DataItem* child);
 	void clearChildItems();
 	std::vector<DataItem*>& childItems();
 

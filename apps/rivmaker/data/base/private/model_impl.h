@@ -3,6 +3,8 @@
 
 #include "../model.h"
 
+#include <QStandardItemModel>
+
 #include <map>
 
 class QStandardItem;
@@ -21,6 +23,8 @@ public:
 
 	std::map<DataItem*, QStandardItem*> m_standardItemMap;
 	std::map<QStandardItem*, DataItem*> m_reverseStandardItemMap;
+
+	QStandardItemModel m_standardItemModel;
 };
 
 #endif // MODEL_IMPL_H

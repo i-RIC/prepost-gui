@@ -2,7 +2,8 @@
 
 #include <QVector3D>
 
-ElevationPoints::ElevationPoints()
+ElevationPoints::ElevationPoints(DataItem *parent) :
+	DataItem {parent}
 {}
 
 ElevationPoints::~ElevationPoints()

@@ -7,8 +7,11 @@
 
 class BaseLine;
 class CrossSection;
+class CrossSections;
 class ElevationPoints;
 class RiverSurveyData;
+class RiverSurveyDataDummy;
+class RootDataItem;
 class WaterSurfaceElevationPoints;
 
 class QWidget;
@@ -21,6 +24,8 @@ public:
 	Project();
 	~Project();
 
+	RootDataItem* rootDataItem() const;
+
 	const ElevationPoints& elevationPoints() const;
 	ElevationPoints& elevationPoints();
 
@@ -28,16 +33,22 @@ public:
 	WaterSurfaceElevationPoints& waterSurfaceElevationPoints();
 
 	const BaseLine& baseLine() const;
-	BaseLine baseLine();
+	BaseLine& baseLine();
 
-	const std::vector<CrossSection*>& crossSections() const;
-	std::vector<CrossSection*>& crossSections();
+	const CrossSections& crossSections() const;
+	CrossSections& crossSections();
 
-	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;
-	bool checkIfReadyToCreateRiverSurveyData(QWidget* w) const;
+	const std::vector<CrossSection*>& crossSectionVector() const;
+	std::vector<CrossSection*>& crossSectionVector();
 
 	bool hasRiverSurveyData() const;
 	RiverSurveyData* riverSurveyData() const;
+
+	const RiverSurveyDataDummy& riverSurveyDataDummy() const;
+	RiverSurveyDataDummy& riverSurveyDataDummy();
+
+	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;
+	bool checkIfReadyToCreateRiverSurveyData(QWidget* w) const;
 
 public slots:
 	void importElevationPoints();

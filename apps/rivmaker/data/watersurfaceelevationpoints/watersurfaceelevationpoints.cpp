@@ -14,7 +14,8 @@ void clearVector(std::vector<QVector3D*>* vec)
 
 } // namespace
 
-WaterSurfaceElevationPoints::WaterSurfaceElevationPoints()
+WaterSurfaceElevationPoints::WaterSurfaceElevationPoints(DataItem *parent) :
+	DataItem {parent}
 {}
 
 WaterSurfaceElevationPoints::~WaterSurfaceElevationPoints()

@@ -1,11 +1,18 @@
 #include "project.h"
-#include "../riversurveydata/riversurveydata.h"
 #include "riversurveydatacreator.h"
+#include "../base/dataItem.h"
+#include "../riversurveydata/riversurveydata.h"
 
 #include "private/project_impl.h"
 
-Project::Impl::Impl() :
-	m_riverSurveyData {nullptr}
+Project::Impl::Impl(Project *project) :
+	m_rootDataItem {project},
+	m_elevationPoints {&m_rootDataItem},
+	m_waterSurfaceElevationPoints {&m_rootDataItem},
+	m_baseLine {&m_rootDataItem},
+	m_crossSections {&m_rootDataItem},
+	m_riverSurveyData {nullptr},
+	m_riverSurveyDataDummy {&m_rootDataItem}
 {}
 
 Project::Impl::~Impl()
@@ -16,12 +23,17 @@ Project::Impl::~Impl()
 // public interfraces
 
 Project::Project() :
-	impl {new Impl {}}
+	impl {new Impl {this}}
 {}
 
 Project::~Project()
 {
 	delete impl;
+}
+
+RootDataItem* Project::rootDataItem() const
+{
+	return &(impl->m_rootDataItem);
 }
 
 const ElevationPoints& Project::elevationPoints() const
@@ -49,29 +61,30 @@ const BaseLine& Project::baseLine() const
 	return impl->m_baseLine;
 }
 
-BaseLine Project::baseLine()
+BaseLine& Project::baseLine()
 {
 	return impl->m_baseLine;
 }
 
-const std::vector<CrossSection*>& Project::crossSections() const
+const CrossSections& Project::crossSections() const
 {
 	return impl->m_crossSections;
 }
 
-std::vector<CrossSection*>& Project::crossSections()
+CrossSections& Project::crossSections()
 {
 	return impl->m_crossSections;
 }
 
-bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
+const std::vector<CrossSection*>& Project::crossSectionVector() const
 {
-	return RiverSurveyDataCreator::checkIfReadyToOpenVerticalCrossSectionWindow(*this, w);
+	return impl->m_crossSectionVector;
 }
 
-bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const
+
+std::vector<CrossSection*>& Project::crossSectionVector()
 {
-	return RiverSurveyDataCreator::checkIfReadyToCreate(*this, w);
+	return impl->m_crossSectionVector;
 }
 
 bool Project::hasRiverSurveyData() const
@@ -84,8 +97,28 @@ RiverSurveyData* Project::riverSurveyData() const
 	return impl->m_riverSurveyData;
 }
 
+const RiverSurveyDataDummy& Project::riverSurveyDataDummy() const
+{
+	return impl->m_riverSurveyDataDummy;
+}
+
+RiverSurveyDataDummy& Project::riverSurveyDataDummy()
+{
+	return impl->m_riverSurveyDataDummy;
+}
+
 void Project::importElevationPoints()
 {}
+
+bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
+{
+	return RiverSurveyDataCreator::checkIfReadyToOpenVerticalCrossSectionWindow(*this, w);
+}
+
+bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const
+{
+	return RiverSurveyDataCreator::checkIfReadyToCreate(*this, w);
+}
 
 void Project::importWaterSurfaceElevationPoints()
 {}

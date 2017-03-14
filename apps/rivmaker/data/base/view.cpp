@@ -4,6 +4,8 @@
 
 #include <QPainter>
 
+const int View::CLICK_LIMIT = 3;
+
 View::View(QWidget* parent) :
 	QWidget {parent}
 {

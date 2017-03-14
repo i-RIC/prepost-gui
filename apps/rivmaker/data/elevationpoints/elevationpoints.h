@@ -1,14 +1,16 @@
 #ifndef ELEVATIONPOINTS_H
 #define ELEVATIONPOINTS_H
 
+#include "../base/dataitem.h"
+
 #include <vector>
 
 class QVector3D;
 
-class ElevationPoints
+class ElevationPoints : public DataItem
 {
 public:
-	ElevationPoints();
+	ElevationPoints(DataItem* parent);
 	~ElevationPoints();
 
 	const std::vector<QVector3D*>& points() const;

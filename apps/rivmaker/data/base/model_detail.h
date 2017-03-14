@@ -7,15 +7,18 @@
 #include <QStandardItem>
 
 template<typename T>
-QStandardItem* Model::buildStandardItems(T* item, QStandardItem* (T::*f)())
+QStandardItem* Model::buildStandardItems(const T* item, QStandardItem* (T::*f)() const)
 {
 	QStandardItem* sItem = (item->*f)();
 	if (sItem == nullptr) {return nullptr;}
 
-	impl->m_standardItemMap.insert(std::make_pair(item, sItem));
-	impl->m_reverseStandardItemMap.insert(std::make_pair(sItem, item));
+	const DataItem* cdItem = dynamic_cast<const DataItem*> (item);
+	DataItem* dItem = const_cast<DataItem*> (cdItem);
 
-	for (DataItem* child : item->childItems) {
+	impl->m_standardItemMap.insert(std::make_pair(dItem, sItem));
+	impl->m_reverseStandardItemMap.insert(std::make_pair(sItem, dItem));
+
+	for (DataItem* child : cdItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
 		if (t == nullptr) {continue;}
 
@@ -28,14 +31,17 @@ QStandardItem* Model::buildStandardItems(T* item, QStandardItem* (T::*f)())
 }
 
 template<typename T>
-DataItemView* Model::buildDataItemViews(T* item, DataItemView* (T::*f)())
+DataItemView* Model::buildDataItemViews(const T* item, DataItemView* (T::*f)() const)
 {
 	DataItemView* v = (item->*f)();
 	if (v == nullptr) {return nullptr;}
 
-	impl->m_viewMap.insert(std::make_pair(item, v));
+	const DataItem* cdItem = dynamic_cast<const DataItem*> (item);
+	DataItem* dItem = const_cast<DataItem*> (cdItem);
 
-	for (DataItem* child : item->childItems) {
+	impl->m_viewMap.insert(std::make_pair(dItem, v));
+
+	for (DataItem* child : cdItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
 		if (t == nullptr) {continue;}
 
@@ -48,14 +54,17 @@ DataItemView* Model::buildDataItemViews(T* item, DataItemView* (T::*f)())
 }
 
 template<typename T>
-DataItemController* Model::buildDataItemControllers(T* rootItem, DataItemController* (T::*f)())
+DataItemController* Model::buildDataItemControllers(const T* item, DataItemController* (T::*f)() const)
 {
 	DataItemController* c = (item->*f)();
 	if (c == nullptr) {return nullptr;}
 
-	impl->m_controllerMap.insert(std::make_pair(item, c));
+	const DataItem* cdItem = dynamic_cast<const DataItem*> (item);
+	DataItem* dItem = const_cast<DataItem*> (cdItem);
 
-	for (DataItem* child : item->childItems) {
+	impl->m_controllerMap.insert(std::make_pair(dItem, c));
+
+	for (DataItem* child : cdItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
 		if (t == nullptr) {continue;}
 

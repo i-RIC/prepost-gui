@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+class Project;
+
 class PreProcessorWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -10,6 +12,8 @@ class PreProcessorWindow : public QMainWindow
 public:
 	explicit PreProcessorWindow(QWidget *parent = 0);
 	~PreProcessorWindow();
+
+	void setProject(Project* project);
 
 private:
 	void closeEvent(QCloseEvent *e);

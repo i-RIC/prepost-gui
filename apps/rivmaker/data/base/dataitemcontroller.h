@@ -1,5 +1,5 @@
-#ifndef DATAITEMVIEW_H
-#define DATAITEMVIEW_H
+#ifndef DATAITEMCONTROLLER_H
+#define DATAITEMCONTROLLER_H
 
 #include <QObject>
 
@@ -27,6 +27,8 @@ public:
 	virtual void mouseReleaseEvent(QMouseEvent*, View*);
 	virtual void wheelEvent(QWheelEvent*, View*);
 
+	virtual void restoreMouseCursorOnView(View*);
+
 protected:
 	DataItem* item();
 
@@ -39,4 +41,4 @@ private:
 	#include "private/dataitemcontroller_impl.h"
 #endif // _DEBUG
 
-#endif // DATAITEMVIEW_H
+#endif // DATAITEMCONTROLLER_H

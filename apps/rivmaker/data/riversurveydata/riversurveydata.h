@@ -1,10 +1,13 @@
 #ifndef RIVERSURVEYDATA_H
 #define RIVERSURVEYDATA_H
 
-class RiverSurveyData
+#include "../base/dataitem.h"
+
+class RiverSurveyData : public DataItem
 {
 public:
-	RiverSurveyData();
+	RiverSurveyData(DataItem* parent);
+	~RiverSurveyData();
 };
 
 #endif // RIVERSURVEYDATA_H

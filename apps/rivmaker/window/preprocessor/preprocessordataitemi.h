@@ -11,9 +11,9 @@ class PreProcessorDataItemI
 public:
 	virtual ~PreProcessorDataItemI() {}
 
-	virtual QStandardItem* buildPreProcessorStandardItem() const = 0;
-	virtual DataItemController* buildPreProcessorDataItemController() const = 0;
-	virtual DataItemView* buildPreProcessorDataItemView() const = 0;
+	virtual QStandardItem* buildPreProcessorStandardItem() const {return nullptr;}
+	virtual DataItemController* buildPreProcessorDataItemController() {return nullptr;}
+	virtual DataItemView* buildPreProcessorDataItemView() const {return nullptr;}
 };
 
 #endif // PREPROCESSORDATAITEMI_H

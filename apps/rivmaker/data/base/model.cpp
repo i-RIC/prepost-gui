@@ -1,4 +1,6 @@
 #include "model.h"
+#include "view.h"
+
 #include "private/model_impl.h"
 
 #include <QStandardItem>
@@ -28,6 +30,7 @@ View* Model::view() const
 void Model::setView(View* view)
 {
 	impl->m_view = view;
+	view->setModel(this);
 }
 
 DataItem* Model::selectedItem() const
@@ -58,6 +61,14 @@ bool Model::shouldDraw(DataItem* item) const
 	return true;
 }
 
+QStandardItem* Model::standardItem(DataItem* item) const
+{
+	auto it = impl->m_standardItemMap.find(item);
+	if (it == impl->m_standardItemMap.end()) {return nullptr;}
+
+	return it->second;
+}
+
 DataItemView* Model::dataItemView(DataItem* item) const
 {
 	auto it = impl->m_viewMap.find(item);
@@ -72,4 +83,21 @@ DataItemController* Model::dataItemController(DataItem* item) const
 	if (it == impl->m_controllerMap.end()) {return nullptr;}
 
 	return it->second;
+}
+
+DataItemView* Model::rootDataItemView() const
+{
+	return nullptr;
+}
+
+QStandardItemModel* Model::standardItemModel() const
+{
+	return &(impl->m_standardItemModel);
+}
+
+void Model::clearStandardItems()
+{
+	impl->m_standardItemModel.clear();
+	impl->m_standardItemMap.clear();
+	impl->m_reverseStandardItemMap.clear();
 }

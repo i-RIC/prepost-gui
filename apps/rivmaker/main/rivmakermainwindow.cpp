@@ -40,6 +40,8 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 	auto vw = ui->centralwidget->addSubWindow(&(impl->m_verticalCrossSectionWindow));
 	vw->setWindowIcon(impl->m_verticalCrossSectionWindow.windowIcon());
 	vw->hide();
+
+	newProject();
 }
 
 RivmakerMainWindow::~RivmakerMainWindow()
@@ -52,6 +54,7 @@ void RivmakerMainWindow::newProject()
 {
 	deleteProject();
 	impl->m_project = new Project();
+	impl->m_preProcessorWindow.setProject(impl->m_project);
 }
 
 void RivmakerMainWindow::focusPreProcessorWindow()

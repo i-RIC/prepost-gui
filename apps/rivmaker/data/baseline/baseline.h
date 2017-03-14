@@ -1,6 +1,8 @@
 #ifndef BASELINE_H
 #define BASELINE_H
 
+#include "../base/dataitem.h"
+
 #include <QVector2D>
 
 #include <vector>
@@ -8,10 +10,10 @@
 class CrossSection;
 
 class QPointF;
-class BaseLine
+class BaseLine : public DataItem
 {
 public:
-	BaseLine();
+	BaseLine(DataItem* parent);
 	~BaseLine();
 
 	const std::vector<QPointF>& polyLine() const;

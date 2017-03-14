@@ -1,6 +1,30 @@
+#include "dataitemcontroller.h"
 #include "dataitemview.h"
 #include "model.h"
 #include "topview.h"
+
+#include <QMouseEvent>
+
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+namespace {
+
+void rotate(QVector2D* vec, double angle_degree)
+{
+	double angle_rad = angle_degree / 180. * M_PI;
+
+	double x = vec->x();
+	double y = vec->y();
+
+	x = + std::cos(angle_rad) * x + std::sin(angle_rad) * y;
+	y = - std::sin(angle_rad) * x + std::cos(angle_rad) * y;
+
+	vec->setX(x);
+	vec->setY(y);
+}
+
+} // namespace
 
 TopView::TopView(QWidget* parent) :
 	View {parent}
@@ -56,9 +80,9 @@ void TopView::viewMouseMoveEvent(QMouseEvent* event)
 	} else if (m_translating) {
 		double transX = (event->pos().x() - m_previousPos.x());
 		double transY = - (event->pos().y() - m_previousPos.y());
-		vec::Vector2D delta(transX, transY);
+		QVector2D delta(transX, transY);
 		delta /= m_scale;
-		delta.rotate(m_angleDegree);
+		rotate(&delta, m_angleDegree);
 
 		m_centerPoint.setX(m_centerPoint.x() - delta.x());
 		m_centerPoint.setY(m_centerPoint.y() - delta.y());
@@ -88,7 +112,7 @@ void TopView::viewMouseReleaseEvent(QMouseEvent*)
 	m_translating = false;
 	setCursor(Qt::ArrowCursor);
 
-	auto c = m_model->selectedItemController();
+	auto c = model()->selectedItemController();
 	if (c != nullptr){
 		c->restoreMouseCursorOnView(this);
 	}

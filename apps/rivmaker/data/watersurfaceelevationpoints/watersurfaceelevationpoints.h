@@ -1,14 +1,16 @@
 #ifndef WATERSURFACEELEVATIONPOINTS_H
 #define WATERSURFACEELEVATIONPOINTS_H
 
+#include "../base/dataitem.h"
+
 #include <vector>
 
 class QVector3D;
 
-class WaterSurfaceElevationPoints
+class WaterSurfaceElevationPoints : public DataItem
 {
 public:
-	WaterSurfaceElevationPoints();
+	WaterSurfaceElevationPoints(DataItem* parent);
 	~WaterSurfaceElevationPoints();
 
 	const std::vector<QVector3D*>& leftBankPoints() const;

@@ -11,7 +11,6 @@ class View : public QWidget
 
 private:
 	const static int CLICK_LIMIT;
-	const static int MOVE_WIDTH;
 
 public:
 	View(QWidget* parent);
@@ -30,7 +29,6 @@ public:
 	void setModel(Model* m);
 
 	QPointF drawnPos(const QPoint& pos) const;
-	virtual double pixel() const;
 
 	static bool isClick(const QPoint& pressP, const QPoint& releaseP);
 
@@ -77,9 +75,9 @@ private:
 
 	Model* m_model {nullptr};
 
+protected:
 	QTransform m_transform {};
 
-protected:
 	QPoint m_previousPos {};
 	QPointF m_drawOffset {};
 
