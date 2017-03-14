@@ -34,7 +34,8 @@ public:
 
 protected:
 	DataItem* item();
-	bool isSelected() const;
+
+	void updateView();
 
 private:
 	class Impl;

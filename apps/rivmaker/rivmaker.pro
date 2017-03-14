@@ -37,6 +37,7 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/base/topview.h \
            data/base/view.h \
            data/baseline/baseline.h \
+           data/baseline/baselinepreprocessorcontroller.h \
            data/baseline/baselinepreprocessorview.h \
            data/baseline/baselinepreprocessorviewhelper.h \
            data/crosssection/crosssection.h \
@@ -50,6 +51,8 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/riversurveydatacrosssection/riversurveydatacrosssection.h \
            data/riversurveydatadummy/riversurveydatadummy.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.h \
+           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
+           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorviewhelper.h \
            io/points/pointscsvimporter.h \
            io/points/pointsimporter.h \
            io/points/pointsimporteri.h \
@@ -64,6 +67,8 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/base/private/dataitemview_impl.h \
            data/base/private/model_impl.h \
            data/baseline/private/baseline_impl.h \
+           data/baseline/private/baselinepreprocessorcontroller_impl.h \
+           data/crosssections/private/crosssections_impl.h \
            data/project/private/project_impl.h \
            window/preprocessor/objectbrowser/objectbrowser.h \
            window/preprocessor/objectbrowser/objectbrowserview.h \
@@ -85,6 +90,7 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            data/base/topview.cpp \
            data/base/view.cpp \
            data/baseline/baseline.cpp \
+           data/baseline/baselinepreprocessorcontroller.cpp \
            data/baseline/baselinepreprocessorview.cpp \
            data/baseline/baselinepreprocessorviewhelper.cpp \
            data/crosssection/crosssection.cpp \
@@ -98,6 +104,8 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            data/riversurveydatacrosssection/riversurveydatacrosssection.cpp \
            data/riversurveydatadummy/riversurveydatadummy.cpp \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
+           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.cpp \
+           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorviewhelper.cpp \
            io/points/pointscsvimporter.cpp \
            io/points/pointsimporter.cpp \
            window/crosssection/crosssectionwindow.cpp \

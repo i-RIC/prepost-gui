@@ -76,17 +76,6 @@ CrossSections& Project::crossSections()
 	return impl->m_crossSections;
 }
 
-const std::vector<CrossSection*>& Project::crossSectionVector() const
-{
-	return impl->m_crossSectionVector;
-}
-
-
-std::vector<CrossSection*>& Project::crossSectionVector()
-{
-	return impl->m_crossSectionVector;
-}
-
 bool Project::hasRiverSurveyData() const
 {
 	return impl->m_riverSurveyData != nullptr;

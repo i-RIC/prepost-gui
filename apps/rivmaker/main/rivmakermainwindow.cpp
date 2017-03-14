@@ -145,6 +145,41 @@ void RivmakerMainWindow::openCrossSectionWindow()
 
 }
 
+void RivmakerMainWindow::baseLineAddPoint()
+{
+
+}
+
+void RivmakerMainWindow::baseLineRemovePoint()
+{
+
+}
+
+void RivmakerMainWindow::baseLineEditCoordinates()
+{
+
+}
+
+void RivmakerMainWindow::baseLineDelete()
+{
+
+}
+
+void RivmakerMainWindow::crossSectionAdd()
+{
+
+}
+
+void RivmakerMainWindow::crossSectionEditCoordinates()
+{
+
+}
+
+void RivmakerMainWindow::crossSectionDelete()
+{
+
+}
+
 void RivmakerMainWindow::viewToggleToolBar(bool visible)
 {
 	ui->toolBar->setVisible(visible);

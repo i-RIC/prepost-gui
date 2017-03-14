@@ -52,7 +52,7 @@ public:
 	DataItemView* buildDataItemViews(T* item, DataItemView* (T::*f)(Model*));
 
 	template<typename T>
-	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)());
+	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)(Model*));
 
 private slots:
 	void handleObjectBrowserChange(QStandardItem*);

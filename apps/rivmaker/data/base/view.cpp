@@ -124,7 +124,7 @@ void View::rotate90()
 void View::paintEvent(QPaintEvent* event)
 {
 	QPainter painter(this);
-	painter.fillRect(rect(), Qt::yellow);
+	painter.fillRect(rect(), Qt::lightGray);
 
 	model()->rootDataItemView()->draw(&painter);
 }

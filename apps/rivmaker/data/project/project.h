@@ -38,9 +38,6 @@ public:
 	const CrossSections& crossSections() const;
 	CrossSections& crossSections();
 
-	const std::vector<CrossSection*>& crossSectionVector() const;
-	std::vector<CrossSection*>& crossSectionVector();
-
 	bool hasRiverSurveyData() const;
 	RiverSurveyData* riverSurveyData() const;
 

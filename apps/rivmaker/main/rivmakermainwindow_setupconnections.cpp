@@ -31,6 +31,15 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->focusPreWindowAction, SIGNAL(triggered()), this, SLOT(focusPreProcessorWindow()));
 	connect(ui->focusVerticalCrosssectionWindowAction, SIGNAL(triggered()), this, SLOT(focusVerticalCrossSectionWindow()));
 
+	connect(ui->baseLineAddVertexAction, SIGNAL(triggered()), this, SLOT(baseLineAddPoint()));
+	connect(ui->baseLineRemoveVertexAction, SIGNAL(triggered()), this, SLOT(baseLineRemovePoint()));
+	connect(ui->baseLineEditCoordinatesAction, SIGNAL(triggered()), this, SLOT(baseLineEditCoordinates()));
+	connect(ui->baseLineDeleteAction, SIGNAL(triggered()), this, SLOT(baseLineDelete()));
+
+	connect(ui->crosssectionLineAddAction, SIGNAL(triggered()), this, SLOT(crossSectionAdd()));
+	connect(ui->crosssectionLineEditCoordinatesAction, SIGNAL(triggered()), this, SLOT(crossSectionEditCoordinates()));
+	connect(ui->crosssectionLineDeleteAction, SIGNAL(triggered()), this, SLOT(crossSectionDelete()));
+
 	connect(ui->viewToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleToolBar(bool)));
 	connect(ui->viewStatusBarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleStatusBar(bool)));
 

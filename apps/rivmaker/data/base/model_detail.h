@@ -56,11 +56,11 @@ DataItemView* Model::buildDataItemViews(T *item, DataItemView* (T::*f)(Model* mo
 }
 
 template<typename T>
-DataItemController* Model::buildDataItemControllers(T* item, DataItemController* (T::*f)())
+DataItemController* Model::buildDataItemControllers(T* item, DataItemController* (T::*f)(Model* model))
 {
 	DataItem* dItem = dynamic_cast<DataItem*> (item);
 
-	DataItemController* c = (item->*f)();
+	DataItemController* c = (item->*f)(this);
 	if (c != nullptr) {
 		impl->m_controllerMap.insert(std::make_pair(dItem, c));
 	}

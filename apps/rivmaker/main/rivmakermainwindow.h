@@ -39,6 +39,15 @@ private slots:
 	void focusVerticalCrossSectionWindow();
 	void openCrossSectionWindow();
 
+	void baseLineAddPoint();
+	void baseLineRemovePoint();
+	void baseLineEditCoordinates();
+	void baseLineDelete();
+
+	void crossSectionAdd();
+	void crossSectionEditCoordinates();
+	void crossSectionDelete();
+
 	void viewToggleToolBar(bool visible);
 	void viewToggleStatusBar(bool visible);
 

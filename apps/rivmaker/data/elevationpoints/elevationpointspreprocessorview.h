@@ -1,9 +1,8 @@
 #ifndef ELEVATIONPOINTSPREPROCESSORVIEW_H
 #define ELEVATIONPOINTSPREPROCESSORVIEW_H
 
+#include "elevationpoints.h"
 #include "../base/dataitemview.h"
-
-class ElevationPoints;
 
 class ElevationPointsPreprocessorView : public DataItemView
 {

@@ -16,10 +16,14 @@ ElevationPointsPreprocessorView::~ElevationPointsPreprocessorView()
 
 QRectF ElevationPointsPreprocessorView::doBoundingBox() const
 {
+	auto points = dynamic_cast<ElevationPoints*> (item());
+	if (points->points().size() == 0) {
+		return QRectF();
+	}
+
 	bool first = true;
 	double xmin, xmax, ymin, ymax;
 
-	auto points = dynamic_cast<ElevationPoints*> (item());
 	for (QVector3D* v : points->points()) {
 		if (first || v->x() < xmin) {xmin = v->x();}
 		if (first || v->x() > xmax) {xmax = v->x();}

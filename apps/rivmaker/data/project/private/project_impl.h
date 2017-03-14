@@ -24,7 +24,6 @@ public:
 	BaseLine m_baseLine;
 
 	CrossSections m_crossSections;
-	std::vector<CrossSection*> m_crossSectionVector;
 
 	RiverSurveyData* m_riverSurveyData;
 	RiverSurveyDataDummy m_riverSurveyDataDummy;

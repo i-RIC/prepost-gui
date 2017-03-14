@@ -90,8 +90,6 @@
     <property name="title">
      <string>&amp;Base Line</string>
     </property>
-    <addaction name="baseLineCreateAction"/>
-    <addaction name="separator"/>
     <addaction name="baseLineAddVertexAction"/>
     <addaction name="baseLineRemoveVertexAction"/>
     <addaction name="baseLineEditCoordinatesAction"/>

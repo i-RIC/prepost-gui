@@ -31,6 +31,7 @@ public:
 	void exportData(QWidget* w);
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
+	DataItemView* buildPreProcessorDataItemView(Model*) override;
 
 private:
 	std::vector<QVector3D*> m_leftBankPoints;

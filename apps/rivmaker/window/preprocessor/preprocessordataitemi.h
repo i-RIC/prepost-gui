@@ -13,7 +13,7 @@ public:
 	virtual ~PreProcessorDataItemI() {}
 
 	virtual QStandardItem* buildPreProcessorStandardItem() const {return nullptr;}
-	virtual DataItemController* buildPreProcessorDataItemController() {return nullptr;}
+	virtual DataItemController* buildPreProcessorDataItemController(Model*) {return nullptr;}
 	virtual DataItemView* buildPreProcessorDataItemView(Model*) {return nullptr;}
 };
 

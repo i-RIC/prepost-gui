@@ -1,4 +1,6 @@
 #include "dataitemcontroller.h"
+#include "model.h"
+#include "view.h"
 
 #include "private/dataitemcontroller_impl.h"
 
@@ -48,4 +50,9 @@ QMenu& DataItemController::rightClickMenu()
 DataItem* DataItemController::item()
 {
 	return impl->m_item;
+}
+
+void DataItemController::updateView()
+{
+	impl->m_model->view()->update();
 }

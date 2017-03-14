@@ -1,4 +1,5 @@
 #include "watersurfaceelevationpoints.h"
+#include "watersurfaceelevationpointspreprocessorview.h"
 #include "../project/project.h"
 #include "../../io/points/pointsimporter.h"
 
@@ -83,4 +84,9 @@ QStandardItem* WaterSurfaceElevationPoints::buildPreProcessorStandardItem() cons
 	auto item = new QStandardItem(tr("Water Elevation Points"));
 	setupStandardItem(item);
 	return item;
+}
+
+DataItemView* WaterSurfaceElevationPoints::buildPreProcessorDataItemView(Model* model)
+{
+	return new WaterSurfaceElevationPointsPreProcessorView(model, this);
 }

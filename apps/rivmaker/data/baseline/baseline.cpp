@@ -1,4 +1,5 @@
 #include "baseline.h"
+#include "baselinepreprocessorcontroller.h"
 #include "baselinepreprocessorview.h"
 
 #include "private/baseline_impl.h"
@@ -57,6 +58,11 @@ QStandardItem* BaseLine::buildPreProcessorStandardItem() const
 	auto item = new QStandardItem(tr("Base Line"));
 	setupStandardItem(item);
 	return item;
+}
+
+DataItemController* BaseLine::buildPreProcessorDataItemController(Model* model)
+{
+	return new BaseLinePreProcessorController(model, this);
 }
 
 DataItemView* BaseLine::buildPreProcessorDataItemView(Model* model)

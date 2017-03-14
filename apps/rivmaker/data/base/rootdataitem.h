@@ -13,7 +13,7 @@ public:
 	Project* project() const override;
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
-	virtual DataItemView* buildPreProcessorDataItemView(Model* model) override;
+	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
 	Project* m_project;

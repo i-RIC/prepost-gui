@@ -1,12 +1,15 @@
 #ifndef CROSSSECTION_H
 #define CROSSSECTION_H
 
+#include "../base/dataitem.h"
+#include "../../window/preprocessor/preprocessordataitemi.h"
+
 #include <QPointF>
 
-class CrossSection
+class CrossSection : public DataItem, public PreProcessorDataItemI
 {
 public:
-	CrossSection();
+	CrossSection(DataItem* parent);
 	~CrossSection();
 
 	QPointF point1() const;

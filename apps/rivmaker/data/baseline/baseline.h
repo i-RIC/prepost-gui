@@ -29,6 +29,7 @@ public:
 	void reverseDirection();
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
+	DataItemController* buildPreProcessorDataItemController(Model*) override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 
 private:

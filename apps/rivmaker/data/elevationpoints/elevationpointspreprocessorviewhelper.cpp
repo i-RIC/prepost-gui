@@ -5,12 +5,11 @@
 #include "../base/view.h"
 
 #include <QPainter>
-#include <QPen>
 #include <QVector3D>
 
 namespace {
 
-int pointSize = 3;
+int pointSize = 5;
 
 } // namespace
 
