@@ -67,6 +67,8 @@ private:
 	virtual void viewMouseReleaseEvent(QMouseEvent* event) = 0;
 	virtual void viewWheelEvent(QWheelEvent* event) = 0;
 
+	virtual bool inViewOperation() = 0;
+
 	void emitPosition(QMouseEvent* event);
 	virtual void updateTransform() = 0;
 

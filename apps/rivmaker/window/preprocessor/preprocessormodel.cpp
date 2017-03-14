@@ -1,3 +1,4 @@
+#include "../../data/base/view.h"
 #include "../../data/project/project.h"
 #include "../../data/riversurveydata/riversurveydata.h"
 #include "../../data/riversurveydatadummy/riversurveydatadummy.h"
@@ -40,6 +41,7 @@ void PreProcessorModel::setProject(Project* project)
 {
 	impl->m_project = project;
 	setupStandatdItemModel();
+	view()->fit();
 }
 
 void PreProcessorModel::setupStandatdItemModel()
@@ -52,6 +54,8 @@ void PreProcessorModel::setupStandatdItemModel()
 	if (proj == nullptr) {return;}
 
 	buildStandardItems<PreProcessorDataItemI>(proj->rootDataItem(), &(PreProcessorDataItemI::buildPreProcessorStandardItem));
+	buildDataItemViews<PreProcessorDataItemI>(proj->rootDataItem(), &(PreProcessorDataItemI::buildPreProcessorDataItemView));
+	buildDataItemControllers<PreProcessorDataItemI>(proj->rootDataItem(), &(PreProcessorDataItemI::buildPreProcessorDataItemController));
 
 	model->appendRow(standardItem(&(proj->elevationPoints())));
 	model->appendRow(standardItem(&(proj->waterSurfaceElevationPoints())));
@@ -65,3 +69,7 @@ void PreProcessorModel::setupStandatdItemModel()
 	}
 }
 
+RootDataItem* PreProcessorModel::rootDataItem() const
+{
+	return impl->m_project->rootDataItem();
+}

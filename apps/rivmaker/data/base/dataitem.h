@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include <memory>
+#include <vector>
 
 class Project;
 class DataItemController;
@@ -23,11 +24,13 @@ public:
 
 	DataItem* parentItem() const;
 	const std::vector<DataItem*>& childItems() const;
+	std::vector<DataItem*>& childItems();
 
 protected:
 	void unregisterChild(DataItem* child);
 	void clearChildItems();
-	std::vector<DataItem*>& childItems();
+
+	static void setupStandardItem(QStandardItem* item);
 
 private:
 	std::vector<DataItem*> m_childItems;

@@ -47,20 +47,22 @@ public:
 	const RiverSurveyDataDummy& riverSurveyDataDummy() const;
 	RiverSurveyDataDummy& riverSurveyDataDummy();
 
+	const QPointF& offset() const;
+	QPointF& offset();
+
 	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;
 	bool checkIfReadyToCreateRiverSurveyData(QWidget* w) const;
 
-public slots:
-	void importElevationPoints();
-	void importWaterSurfaceElevationPoints();
-	void importBaseLine();
-	void importCrossSections();
+	void importElevationPoints(QWidget* w);
+	void importWaterSurfaceElevationPoints(QWidget* w);
+	void importBaseLine(QWidget* w);
+	void importCrossSections(QWidget* w);
 
-	void exportElevationPoints();
-	void exportWaterSurfaceElevationPoints();
-	void exportBaseLine();
-	void exportCrossSections();
-	void exportRiverSurveyData();
+	void exportElevationPoints(QWidget* w);
+	void exportWaterSurfaceElevationPoints(QWidget* w);
+	void exportBaseLine(QWidget* w);
+	void exportCrossSections(QWidget* w);
+	void exportRiverSurveyData(QWidget* w);
 
 	void createRiverSurveyData();
 	void deleteRiverSurveyData();

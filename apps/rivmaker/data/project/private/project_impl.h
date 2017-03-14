@@ -9,6 +9,8 @@
 #include "../../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 #include "../../riversurveydatadummy/riversurveydatadummy.h"
 
+#include <QPointF>
+
 class Project::Impl
 {
 public:
@@ -26,6 +28,8 @@ public:
 
 	RiverSurveyData* m_riverSurveyData;
 	RiverSurveyDataDummy m_riverSurveyDataDummy;
+
+	QPointF m_offset;
 };
 
 #endif // PROJECT_IMPL_H

@@ -6,6 +6,7 @@
 #include <vector>
 
 class QCloseEvent;
+class ViewWindowI;
 
 namespace Ui {
 class RivmakerMainWindow;
@@ -22,6 +23,18 @@ public:
 private slots:
 	void newProject();
 
+	void importElevation();
+	void importWaterSurfaceElevation();
+	void importSACGUIFile();
+	void importBaseLine();
+	void importCrossSectionLines();
+
+	void fit();
+	void resetRotation();
+	void rotate90();
+	void zoomIn();
+	void zoomOut();
+
 	void focusPreProcessorWindow();
 	void focusVerticalCrossSectionWindow();
 	void openCrossSectionWindow();
@@ -36,6 +49,8 @@ private:
 
 	void setupConnections();
 	void deleteProject();
+
+	ViewWindowI* currentViewWindow() const;
 
 	class Impl;
 	Impl* impl;

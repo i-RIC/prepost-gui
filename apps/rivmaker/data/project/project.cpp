@@ -107,8 +107,15 @@ RiverSurveyDataDummy& Project::riverSurveyDataDummy()
 	return impl->m_riverSurveyDataDummy;
 }
 
-void Project::importElevationPoints()
-{}
+const QPointF& Project::offset() const
+{
+	return impl->m_offset;
+}
+
+QPointF& Project::offset()
+{
+	return impl->m_offset;
+}
 
 bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
 {
@@ -120,28 +127,35 @@ bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const
 	return RiverSurveyDataCreator::checkIfReadyToCreate(*this, w);
 }
 
-void Project::importWaterSurfaceElevationPoints()
+void Project::importElevationPoints(QWidget* w)
+{
+	elevationPoints().importData(w);
+}
+
+void Project::importWaterSurfaceElevationPoints(QWidget* w)
+{
+	waterSurfaceElevationPoints().importData(w);
+}
+
+void Project::importBaseLine(QWidget* w)
 {}
 
-void Project::importBaseLine()
+void Project::importCrossSections(QWidget* w)
 {}
 
-void Project::importCrossSections()
+void Project::exportElevationPoints(QWidget* w)
 {}
 
-void Project::exportElevationPoints()
+void Project::exportWaterSurfaceElevationPoints(QWidget *w)
 {}
 
-void Project::exportWaterSurfaceElevationPoints()
+void Project::exportBaseLine(QWidget* w)
 {}
 
-void Project::exportBaseLine()
+void Project::exportCrossSections(QWidget* w)
 {}
 
-void Project::exportCrossSections()
-{}
-
-void Project::exportRiverSurveyData()
+void Project::exportRiverSurveyData(QWidget* w)
 {}
 
 void Project::createRiverSurveyData()

@@ -7,6 +7,7 @@ class DataItem;
 class Model;
 class View;
 
+class QMenu;
 class QMouseEvent;
 class QKeyEvent;
 class QWheelEvent;
@@ -29,8 +30,11 @@ public:
 
 	virtual void restoreMouseCursorOnView(View*);
 
+	QMenu& rightClickMenu();
+
 protected:
 	DataItem* item();
+	bool isSelected() const;
 
 private:
 	class Impl;

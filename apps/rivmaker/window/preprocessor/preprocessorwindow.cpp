@@ -19,6 +19,7 @@ PreProcessorWindow::Impl::Impl(PreProcessorWindow* w) :
 	m_objectBrowser->setWidget(obView);
 
 	obView->setModel(m_model.standardItemModel());
+	m_model.setObjectBrowserView(obView);
 
 	w->setCentralWidget(&m_view);
 }
@@ -44,6 +45,31 @@ PreProcessorWindow::~PreProcessorWindow()
 void PreProcessorWindow::setProject(Project* project)
 {
 	impl->m_model.setProject(project);
+}
+
+void PreProcessorWindow::fit()
+{
+	impl->m_view.fit();
+}
+
+void PreProcessorWindow::resetRotation()
+{
+	impl->m_view.resetRotation();
+}
+
+void PreProcessorWindow::rotate90()
+{
+	impl->m_view.rotate90();
+}
+
+void PreProcessorWindow::zoomIn()
+{
+	impl->m_view.zoomIn();
+}
+
+void PreProcessorWindow::zoomOut()
+{
+	impl->m_view.zoomOut();
 }
 
 void PreProcessorWindow::closeEvent(QCloseEvent *e)

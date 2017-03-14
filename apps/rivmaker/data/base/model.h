@@ -6,6 +6,8 @@
 class DataItem;
 class DataItemController;
 class DataItemView;
+class ObjectBrowserView;
+class RootDataItem;
 class View;
 
 class QStandardItem;
@@ -13,6 +15,8 @@ class QStandardItemModel;
 
 class Model : public QObject
 {
+	Q_OBJECT
+
 public:
 	Model(QObject* parent);
 	virtual ~Model();
@@ -20,6 +24,13 @@ public:
 	View* view() const;
 	void setView(View* view);
 
+	void setObjectBrowserView(ObjectBrowserView* obView);
+
+	void showRightClickMenu(const QPoint& pos);
+
+	void select(DataItem* item) const;
+
+	bool isSelected(DataItem* item) const;
 	DataItem* selectedItem() const;
 	DataItemController* selectedItemController() const;
 
@@ -38,12 +49,19 @@ public:
 	void clearStandardItems();
 
 	template<typename T>
-	DataItemView* buildDataItemViews(const T* item, DataItemView* (T::*f)() const);
+	DataItemView* buildDataItemViews(T* item, DataItemView* (T::*f)(Model*));
 
 	template<typename T>
-	DataItemController* buildDataItemControllers(const T* item, DataItemController* (T::*f)() const);
+	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)());
+
+private slots:
+	void handleObjectBrowserChange(QStandardItem*);
+
+	void handleObjectBrowserSelection(const QModelIndex& current);
 
 private:
+	virtual RootDataItem* rootDataItem() const = 0;
+
 	class Impl;
 	Impl* impl;
 };

@@ -21,6 +21,8 @@ private:
 	void viewMouseReleaseEvent(QMouseEvent* event) override;
 	void viewWheelEvent(QWheelEvent* event) override;
 
+	bool inViewOperation() override;
+
 	void updateTransform();
 
 	QPointF m_centerPoint {0, 0};

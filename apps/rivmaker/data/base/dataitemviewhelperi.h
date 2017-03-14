@@ -1,7 +1,12 @@
 #ifndef DATAITEMVIEWHELPERI_H
 #define DATAITEMVIEWHELPERI_H
 
+class DataItem;
 class DataItemView;
+class Model;
+class View;
+
+class QPainter;
 
 class DataItemViewHelperI
 {
@@ -13,6 +18,8 @@ public:
 	virtual void draw(QPainter* painter) const = 0;
 
 protected:
+	DataItem* dataItem() const;
+	Model* model() const;
 	View* view() const;
 
 private:

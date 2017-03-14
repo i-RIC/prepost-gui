@@ -3,6 +3,7 @@
 
 #include "model.h"
 #include "dataitemview.h"
+#include "rootdataitem.h"
 
 #include <QStandardItem>
 
@@ -25,23 +26,24 @@ QStandardItem* Model::buildStandardItems(const T* item, QStandardItem* (T::*f)()
 		QStandardItem* childSItem = buildStandardItems(t, f);
 		if (childSItem == nullptr) {continue;}
 
+		if (dynamic_cast<const RootDataItem*> (item) != nullptr) {continue;}
+
 		sItem->appendRow(childSItem);
 	}
 	return sItem;
 }
 
 template<typename T>
-DataItemView* Model::buildDataItemViews(const T* item, DataItemView* (T::*f)() const)
+DataItemView* Model::buildDataItemViews(T *item, DataItemView* (T::*f)(Model* model))
 {
-	DataItemView* v = (item->*f)();
+	DataItemView* v = (item->*f)(this);
 	if (v == nullptr) {return nullptr;}
 
-	const DataItem* cdItem = dynamic_cast<const DataItem*> (item);
-	DataItem* dItem = const_cast<DataItem*> (cdItem);
+	DataItem* dItem = dynamic_cast<DataItem*> (item);
 
 	impl->m_viewMap.insert(std::make_pair(dItem, v));
 
-	for (DataItem* child : cdItem->childItems()) {
+	for (DataItem* child : dItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
 		if (t == nullptr) {continue;}
 
@@ -54,17 +56,16 @@ DataItemView* Model::buildDataItemViews(const T* item, DataItemView* (T::*f)() c
 }
 
 template<typename T>
-DataItemController* Model::buildDataItemControllers(const T* item, DataItemController* (T::*f)() const)
+DataItemController* Model::buildDataItemControllers(T* item, DataItemController* (T::*f)())
 {
+	DataItem* dItem = dynamic_cast<DataItem*> (item);
+
 	DataItemController* c = (item->*f)();
-	if (c == nullptr) {return nullptr;}
+	if (c != nullptr) {
+		impl->m_controllerMap.insert(std::make_pair(dItem, c));
+	}
 
-	const DataItem* cdItem = dynamic_cast<const DataItem*> (item);
-	DataItem* dItem = const_cast<DataItem*> (cdItem);
-
-	impl->m_controllerMap.insert(std::make_pair(dItem, c));
-
-	for (DataItem* child : cdItem->childItems()) {
+	for (DataItem* child : dItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
 		if (t == nullptr) {continue;}
 

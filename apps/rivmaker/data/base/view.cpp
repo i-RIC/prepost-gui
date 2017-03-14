@@ -2,6 +2,7 @@
 #include "view.h"
 #include "dataitemcontroller.h"
 
+#include <QMouseEvent>
 #include <QPainter>
 
 const int View::CLICK_LIMIT = 3;
@@ -21,7 +22,10 @@ View::~View()
 
 void View::updateView()
 {
-	// @todo implement this
+	updateTransform();
+	if (! model()->rootDataItemView()->prepareDraw()) {return;}
+
+	update();
 }
 
 QPointF View::conv(const QPointF& point) const
@@ -119,6 +123,10 @@ void View::rotate90()
 
 void View::paintEvent(QPaintEvent* event)
 {
+	QPainter painter(this);
+	painter.fillRect(rect(), Qt::yellow);
+
+	model()->rootDataItemView()->draw(&painter);
 }
 
 void View::keyPressEvent(QKeyEvent* event)
@@ -147,6 +155,12 @@ void View::mouseDoubleClickEvent(QMouseEvent* event)
 
 void View::mouseMoveEvent(QMouseEvent* event)
 {
+	if (inViewOperation()) {
+		viewMouseMoveEvent(event);
+		updateTransform();
+		update();
+		return;
+	}
 	auto c = m_model->selectedItemController();
 	if (c == nullptr) {return;}
 
@@ -155,23 +169,45 @@ void View::mouseMoveEvent(QMouseEvent* event)
 
 void View::mousePressEvent(QMouseEvent* event)
 {
+	if (event->modifiers() == Qt::ControlModifier) {
+		viewMousePressEvent(event);
+		return;
+	}
 
+	auto c = m_model->selectedItemController();
+	if (c == nullptr) {return;}
+
+	c->mousePressEvent(event, this);
+
+	if (event->button() == Qt::RightButton) {
+		m_rightClickPos = event->pos();
+	}
 }
 
 void View::mouseReleaseEvent(QMouseEvent* event)
 {
+	if (inViewOperation()) {
+		viewMouseReleaseEvent(event);
+		return;
+	}
 
+	auto c = m_model->selectedItemController();
+	if (c == nullptr) {return;}
+
+	c->mouseReleaseEvent(event, this);
+
+	if (event->button() != Qt::RightButton) {return;}
+	if (! isClick(m_rightClickPos, event->pos())) {return;}
+	m_model->showRightClickMenu(event->globalPos());
 }
 
 void View::wheelEvent(QWheelEvent* event)
 {
-
+	viewWheelEvent(event);
 }
 
-void View::resizeEvent(QResizeEvent* event)
-{
-
-}
+void View::resizeEvent(QResizeEvent*)
+{}
 
 void View::paramsResetRotation()
 {}
@@ -186,7 +222,11 @@ void View::emitPosition(QMouseEvent* event)
 
 void View::setupCursors()
 {
+	m_zoomPixmap = QPixmap(":/images/cursorZoom.png");
+	m_movePixmap = QPixmap(":/images/cursorMove.png");
 
+	m_zoomCursor = QCursor(m_zoomPixmap);
+	m_moveCursor = QCursor(m_movePixmap);
 }
 
 bool View::prepareDrawModel()

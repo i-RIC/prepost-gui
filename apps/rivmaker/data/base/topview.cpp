@@ -54,12 +54,12 @@ void TopView::paramsFit()
 
 void TopView::paramsZoomIn()
 {
-	m_scale /= 2;
+	m_scale *= 2;
 }
 
 void TopView::paramsZoomOut()
 {
-	m_scale *= 2;
+	m_scale /= 2;
 }
 
 void TopView::paramsResetRotation()
@@ -102,6 +102,9 @@ void TopView::viewMousePressEvent(QMouseEvent* event)
 		} else if (event->button() == Qt::MidButton) {
 			m_zooming = true;
 			setCursor(m_zoomCursor);
+		} else if (event->button() == Qt::RightButton) {
+			m_rotating = true;
+
 		}
 	}
 }
@@ -110,6 +113,7 @@ void TopView::viewMouseReleaseEvent(QMouseEvent*)
 {
 	m_zooming = false;
 	m_translating = false;
+	m_rotating = false;
 	setCursor(Qt::ArrowCursor);
 
 	auto c = model()->selectedItemController();
@@ -128,6 +132,11 @@ void TopView::viewWheelEvent(QWheelEvent* event)
 		m_scale *= 2;
 	}
 	updateView();
+}
+
+bool TopView::inViewOperation()
+{
+	return m_translating || m_rotating || m_zooming;
 }
 
 void TopView::updateTransform()

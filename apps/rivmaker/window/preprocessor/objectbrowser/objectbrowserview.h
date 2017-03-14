@@ -10,6 +10,14 @@ class ObjectBrowserView : public QTreeView
 public:
 	ObjectBrowserView(QWidget* w);
 	~ObjectBrowserView();
+
+	void select(const QModelIndex& index);
+
+signals:
+	void itemSelected(const QModelIndex& selected);
+
+private:
+	void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
 };
 
 #endif // OBJECTBROWSERVIEW_H

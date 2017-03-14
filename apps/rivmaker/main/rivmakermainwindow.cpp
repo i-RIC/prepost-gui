@@ -1,10 +1,12 @@
 #include "data/project/project.h"
 #include "rivmakermainwindow.h"
+#include "window/viewwindowi.h"
 #include "../dialogs/mousehelpdialog.h"
 
 #include "ui_rivmakermainwindow.h"
 
 #include <QCloseEvent>
+#include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMessageBox>
 
@@ -55,6 +57,71 @@ void RivmakerMainWindow::newProject()
 	deleteProject();
 	impl->m_project = new Project();
 	impl->m_preProcessorWindow.setProject(impl->m_project);
+}
+
+void RivmakerMainWindow::importElevation()
+{
+	impl->m_project->importElevationPoints(this);
+}
+
+void RivmakerMainWindow::importWaterSurfaceElevation()
+{
+	impl->m_project->importWaterSurfaceElevationPoints(this);
+}
+
+void RivmakerMainWindow::importSACGUIFile()
+{
+
+}
+
+void RivmakerMainWindow::importBaseLine()
+{
+
+}
+
+void RivmakerMainWindow::importCrossSectionLines()
+{
+
+}
+
+void RivmakerMainWindow::fit()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->fit();
+}
+
+void RivmakerMainWindow::resetRotation()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->resetRotation();
+}
+
+void RivmakerMainWindow::rotate90()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->rotate90();
+}
+
+void RivmakerMainWindow::zoomIn()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomIn();
+}
+
+void RivmakerMainWindow::zoomOut()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomOut();
 }
 
 void RivmakerMainWindow::focusPreProcessorWindow()
@@ -111,4 +178,11 @@ void RivmakerMainWindow::deleteProject()
 {
 	delete impl->m_project;
 	impl->m_project = nullptr;
+}
+
+ViewWindowI* RivmakerMainWindow::currentViewWindow() const
+{
+	auto mdiArea = dynamic_cast<QMdiArea*> (centralWidget());
+	auto w = mdiArea->currentSubWindow()->widget();
+	return dynamic_cast<ViewWindowI*> (w);
 }

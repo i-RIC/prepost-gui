@@ -4,7 +4,11 @@
 
 DataItem::DataItem(DataItem *parent) :
 	QObject(parent)
-{}
+{
+	if (parent == nullptr) {return;}
+
+	parent->m_childItems.push_back(this);
+}
 
 DataItem::~DataItem()
 {
@@ -27,6 +31,11 @@ const std::vector<DataItem*>& DataItem::childItems() const
 	return m_childItems;
 }
 
+std::vector<DataItem*>& DataItem::childItems()
+{
+	return m_childItems;
+}
+
 void DataItem::unregisterChild(DataItem* child)
 {
 	auto it = std::find(m_childItems.begin(), m_childItems.end(), child);
@@ -43,7 +52,9 @@ void DataItem::clearChildItems()
 	m_childItems.clear();
 }
 
-std::vector<DataItem*>& DataItem::childItems()
+void DataItem::setupStandardItem(QStandardItem* item)
 {
-	return m_childItems;
+	item->setCheckable(true);
+	item->setCheckState(Qt::Checked);
+	item->setEditable(false);
 }

@@ -2,6 +2,7 @@
 #define BASELINE_H
 
 #include "../base/dataitem.h"
+#include "../../window/preprocessor/preprocessordataitemi.h"
 
 #include <QVector2D>
 
@@ -10,8 +11,10 @@
 class CrossSection;
 
 class QPointF;
-class BaseLine : public DataItem
+class BaseLine : public DataItem, public PreProcessorDataItemI
 {
+	Q_OBJECT
+
 public:
 	BaseLine(DataItem* parent);
 	~BaseLine();
@@ -24,6 +27,9 @@ public:
 	void normalizeDirection(CrossSection* cs) const;
 
 	void reverseDirection();
+
+	QStandardItem* buildPreProcessorStandardItem() const override;
+	DataItemView* buildPreProcessorDataItemView(Model*) override;
 
 private:
 	class Impl;

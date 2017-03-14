@@ -14,6 +14,8 @@ class Model::Impl
 public:
 	Impl();
 
+	DataItem* itemFromIndex(const QModelIndex& index);
+
 	View* m_view;
 
 	DataItem* m_selectedItem;
@@ -24,6 +26,7 @@ public:
 	std::map<DataItem*, QStandardItem*> m_standardItemMap;
 	std::map<QStandardItem*, DataItem*> m_reverseStandardItemMap;
 
+	ObjectBrowserView* m_objectBrowserView;
 	QStandardItemModel m_standardItemModel;
 };
 

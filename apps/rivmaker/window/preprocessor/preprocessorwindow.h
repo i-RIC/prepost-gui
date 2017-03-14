@@ -1,11 +1,13 @@
 #ifndef PREPROCESSORWINDOW_H
 #define PREPROCESSORWINDOW_H
 
+#include "../viewwindowi.h"
+
 #include <QMainWindow>
 
 class Project;
 
-class PreProcessorWindow : public QMainWindow
+class PreProcessorWindow : public QMainWindow, public ViewWindowI
 {
 	Q_OBJECT
 
@@ -14,6 +16,13 @@ public:
 	~PreProcessorWindow();
 
 	void setProject(Project* project);
+
+	void fit() override;
+	void resetRotation() override;
+	void rotate90() override;
+
+	void zoomIn() override;
+	void zoomOut() override;
 
 private:
 	void closeEvent(QCloseEvent *e);

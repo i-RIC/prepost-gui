@@ -1,4 +1,5 @@
 #include "rootdataitem.h"
+#include "../base/dataitemview.h"
 
 #include<QStandardItem>
 
@@ -17,5 +18,12 @@ Project* RootDataItem::project() const
 
 QStandardItem* RootDataItem::buildPreProcessorStandardItem() const
 {
-	return new QStandardItem("Root Item");
+	auto item = new QStandardItem("Root Item");
+	setupStandardItem(item);
+	return item;
+}
+
+DataItemView* RootDataItem::buildPreProcessorDataItemView(Model *model)
+{
+	return new DataItemView(model, this);
 }

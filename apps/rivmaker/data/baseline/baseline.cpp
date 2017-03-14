@@ -1,13 +1,20 @@
 #include "baseline.h"
+#include "baselinepreprocessorview.h"
 
 #include "private/baseline_impl.h"
+
+#include <QStandardItem>
 
 #include <algorithm>
 
 BaseLine::BaseLine(DataItem *parent) :
 	DataItem {parent},
 	impl {new Impl {}}
-{}
+{
+	// for test
+	// impl->m_polyLine.push_back(QPointF(0, 0));
+	// impl->m_polyLine.push_back(QPointF(100, -20));
+}
 
 BaseLine::~BaseLine()
 {
@@ -43,4 +50,16 @@ void BaseLine::normalizeDirection(CrossSection* cs) const
 void BaseLine::reverseDirection()
 {
 	std::reverse(impl->m_polyLine.begin(), impl->m_polyLine.end());
+}
+
+QStandardItem* BaseLine::buildPreProcessorStandardItem() const
+{
+	auto item = new QStandardItem(tr("Base Line"));
+	setupStandardItem(item);
+	return item;
+}
+
+DataItemView* BaseLine::buildPreProcessorDataItemView(Model* model)
+{
+	return new BaseLinePreProcessorView(model, this);
 }

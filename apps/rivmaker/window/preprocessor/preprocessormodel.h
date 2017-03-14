@@ -20,6 +20,7 @@ public:
 
 private:
 	void setupStandatdItemModel();
+	RootDataItem* rootDataItem() const override;
 
 	class Impl;
 	Impl* impl;

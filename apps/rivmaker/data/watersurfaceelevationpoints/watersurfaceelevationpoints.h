@@ -2,13 +2,16 @@
 #define WATERSURFACEELEVATIONPOINTS_H
 
 #include "../base/dataitem.h"
+#include "../../window/preprocessor/preprocessordataitemi.h"
 
 #include <vector>
 
 class QVector3D;
 
-class WaterSurfaceElevationPoints : public DataItem
+class WaterSurfaceElevationPoints : public DataItem, public PreProcessorDataItemI
 {
+	Q_OBJECT
+
 public:
 	WaterSurfaceElevationPoints(DataItem* parent);
 	~WaterSurfaceElevationPoints();
@@ -21,6 +24,13 @@ public:
 
 	const std::vector<QVector3D*>& arbitraryPoints() const;
 	std::vector<QVector3D*> arbitraryPoints();
+
+	void clearPoints();
+
+	void importData(QWidget* w);
+	void exportData(QWidget* w);
+
+	QStandardItem* buildPreProcessorStandardItem() const override;
 
 private:
 	std::vector<QVector3D*> m_leftBankPoints;

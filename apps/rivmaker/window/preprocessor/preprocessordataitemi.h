@@ -3,6 +3,7 @@
 
 class DataItemController;
 class DataItemView;
+class Model;
 
 class QStandardItem;
 
@@ -13,7 +14,7 @@ public:
 
 	virtual QStandardItem* buildPreProcessorStandardItem() const {return nullptr;}
 	virtual DataItemController* buildPreProcessorDataItemController() {return nullptr;}
-	virtual DataItemView* buildPreProcessorDataItemView() const {return nullptr;}
+	virtual DataItemView* buildPreProcessorDataItemView(Model*) {return nullptr;}
 };
 
 #endif // PREPROCESSORDATAITEMI_H
