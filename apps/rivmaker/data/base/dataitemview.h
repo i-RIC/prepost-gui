@@ -25,6 +25,8 @@ public:
 	void addChildItem(DataItemView* v);
 	void removeChildItem(DataItemView* v);
 
+	QRectF boundingBox() const;
+
 protected:
 	virtual void doDraw(QPainter *painter) const;
 
@@ -38,6 +40,8 @@ protected:
 private:
 	virtual void doDiscardDrawCache();
 	virtual bool doPrepareDraw();
+
+	virtual QRectF doBoundingBox() const;
 
 	class Impl;
 	Impl* impl;

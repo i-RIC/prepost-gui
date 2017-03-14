@@ -31,6 +31,7 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/base/dataitemview.h \
            data/base/dataitemviewhelperi.h \
            data/base/model.h \
+           data/base/topview.h \
            data/base/view.h \
            data/baseline/baseline.h \
            data/crosssection/crosssection.h \
@@ -68,6 +69,7 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            data/base/dataitemview.cpp \
            data/base/dataitemviewhelperi.cpp \
            data/base/model.cpp \
+           data/base/topview.cpp \
            data/base/view.cpp \
            data/baseline/baseline.cpp \
            data/crosssection/crosssection.cpp \

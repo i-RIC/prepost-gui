@@ -1,9 +1,9 @@
 #ifndef PREPROCESSORVIEW_H
 #define PREPROCESSORVIEW_H
 
-#include "../../data/base/view.h"
+#include "../../data/base/topview.h"
 
-class PreProcessorView : public View
+class PreProcessorView : public TopView
 {
 	Q_OBJECT
 

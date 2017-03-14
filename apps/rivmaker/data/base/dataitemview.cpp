@@ -4,6 +4,8 @@
 
 #include "private/dataitemview_impl.h"
 
+#include <QRectF>
+
 #include <algorithm>
 
 DataItemView::Impl::Impl(Model *model, DataItem *item) :
@@ -76,6 +78,20 @@ void DataItemView::removeChildItem(DataItemView* v)
 	impl->m_childItems.erase(it);
 }
 
+QRectF DataItemView::boundingBox() const
+{
+	QRectF ret = doBoundingBox();
+
+	for (auto child : impl->m_childItems) {
+		QRectF bb = child->boundingBox();
+		if (bb.isNull()) {continue;}
+
+		ret = ret.united(bb);
+	}
+	return ret;
+}
+
+
 void DataItemView::doDraw(QPainter *painter) const
 {
 	for (auto h : impl->m_viewHelpers) {
@@ -114,4 +130,9 @@ void DataItemView::doDiscardDrawCache()
 bool DataItemView::doPrepareDraw()
 {
 	return true;
+}
+
+QRectF DataItemView::doBoundingBox() const
+{
+	return QRectF();
 }

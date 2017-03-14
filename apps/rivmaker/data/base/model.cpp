@@ -10,7 +10,8 @@ Model::Impl::Impl() :
 
 // public interfaces
 
-Model::Model() :
+Model::Model(QObject* parent) :
+	QObject {parent},
 	impl {new Impl {}}
 {}
 

@@ -1,7 +1,7 @@
 #include "preprocessorview.h"
 
 PreProcessorView::PreProcessorView(QWidget* parent) :
-	QWidget(parent)
+	TopView(parent)
 {
 }
 

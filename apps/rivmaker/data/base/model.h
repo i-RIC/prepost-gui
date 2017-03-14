@@ -25,6 +25,8 @@ public:
 	DataItemView* dataItemView(DataItem* item) const;
 	DataItemController* dataItemController(DataItem* item) const;
 
+	DataItemView* rootDataItemView() const;
+
 private:
 	class Impl;
 	Impl* impl;

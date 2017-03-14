@@ -103,6 +103,18 @@ void View::zoomOut()
 	updateView();
 }
 
+void View::resetRotation()
+{
+	paramsResetRotation();
+	updateView();
+}
+
+void View::rotate90()
+{
+	paramsRotate90();
+	updateView();
+}
+
 void View::paintEvent(QPaintEvent* event)
 {
 }
@@ -158,6 +170,12 @@ void View::resizeEvent(QResizeEvent* event)
 {
 
 }
+
+void View::paramsResetRotation()
+{}
+
+void View::paramsRotate90()
+{}
 
 void View::emitPosition(QMouseEvent* event)
 {

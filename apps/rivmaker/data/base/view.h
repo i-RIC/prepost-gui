@@ -40,6 +40,9 @@ public slots:
 	void zoomIn();
 	void zoomOut();
 
+	void resetRotation();
+	void rotate90();
+
 signals:
 	void positionChanged(const QPointF& pos);
 
@@ -58,6 +61,9 @@ private:
 	virtual void paramsZoomIn() = 0;
 	virtual void paramsZoomOut() = 0;
 
+	virtual void paramsResetRotation();
+	virtual void paramsRotate90();
+
 	virtual void viewMouseMoveEvent(QMouseEvent* event) = 0;
 	virtual void viewMousePressEvent(QMouseEvent* event) = 0;
 	virtual void viewMouseReleaseEvent(QMouseEvent* event) = 0;
@@ -73,16 +79,18 @@ private:
 
 	QTransform m_transform {};
 
+protected:
 	QPoint m_previousPos {};
 	QPointF m_drawOffset {};
 
 	QPoint m_rightClickPos {};
 
-	QPixmap m_zoomPixmap;
-	QPixmap m_movePixmap;
-
 	QCursor m_zoomCursor;
 	QCursor m_moveCursor;
+
+private:
+	QPixmap m_zoomPixmap;
+	QPixmap m_movePixmap;
 };
 
 #endif // VIEW_H
