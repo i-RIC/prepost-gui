@@ -53,11 +53,12 @@ void calcImageParameters(QPointF* center, QSize* size, double* scale, const QRec
 	*size = QSize(newWidth, newHeight);
 }
 
-void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs)
+void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)
 {
 	double xmin, xmax, ymin, ymax;
 	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 	QRectF rect(xmin, ymin, (xmax - xmin), (ymax - ymin));
+	rect.adjust(offset.x(), offset.y(), offset.x(), offset.y());
 
 	double x, y;
 
@@ -83,6 +84,7 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 	m_tmsLoader {parent->iricMainWindow()},
 	m_tmsRequestId {-1},
+	m_offset {0, 0},
 	m_parent {parent}
 {
 	m_texture = vtkSmartPointer<vtkTexture>::New();
@@ -231,7 +233,7 @@ void TmsImageGroupDataItem::requestImage()
 	QPointF center;
 	QSize size;
 
-	calcImageParameters(&center, &size, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs);
+	calcImageParameters(&center, &size, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs, impl->m_offset);
 
 	TmsImageSettingManager manager;
 	tmsloader::TmsRequest* request = manager.buildRequest(center, size, impl->m_imageScale, impl->m_target);
@@ -253,6 +255,8 @@ void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)
 
 void TmsImageGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	impl->m_offset.setX(offset().x());
+	impl->m_offset.setY(offset().y());
 	auto target = iRIC::toStr(node.toElement().attribute("target"));
 	setTarget(target);
 }
@@ -260,4 +264,21 @@ void TmsImageGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 void TmsImageGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("target", impl->m_target.c_str());
+}
+
+void TmsImageGroupDataItem::applyOffset(double x_diff, double y_diff)
+{
+	double x = x_diff + impl->m_offset.x();
+	double y = y_diff + impl->m_offset.y();
+	impl->m_offset.setX(x);
+	impl->m_offset.setY(y);
+}
+
+void TmsImageGroupDataItem::doApplyOffset(double x_diff, double y_diff)
+{
+	setIsCommandExecuting(true);
+	this->applyOffset(x_diff, y_diff);
+	// force update
+	setTarget(target());
+	setIsCommandExecuting(false);
 }

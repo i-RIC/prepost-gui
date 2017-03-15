@@ -1141,7 +1141,9 @@ void ProjectMainFile::setOffset(double x, double y)
 class ProjectSetOffsetCommand : public QUndoCommand
 {
 public:
-	ProjectSetOffsetCommand(const QVector2D& newoffset, ProjectMainFile* file) {
+	ProjectSetOffsetCommand(const QVector2D& newoffset, ProjectMainFile* file)
+		: QUndoCommand(QObject::tr("Set offset"))
+	{
 		m_newOffset = newoffset;
 		m_oldOffset = file->offset();
 		m_projectMainFile = file;
