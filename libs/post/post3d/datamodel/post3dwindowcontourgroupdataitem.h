@@ -42,7 +42,6 @@ public:
 
 	void setupScalarBarActor();
 	void updateScalarBarActorSetting();
-	void handleStandardItemChange() override;
 	void update();
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;

@@ -316,7 +316,7 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 
 void Post2dWindowZoneDataItem::updateZDepthRangeItemCount()
 {
-	m_zDepthRange.setItemCount(m_childItems.size() + 1);
+	m_zDepthRange.setItemCount((unsigned int)m_childItems.size() + 1);
 }
 
 void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)

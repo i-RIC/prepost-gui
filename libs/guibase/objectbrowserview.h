@@ -16,10 +16,12 @@ class GUIBASEDLL_EXPORT ObjectBrowserView : public QTreeView
 public:
 	ObjectBrowserView(QWidget* parent);
 
+	QAction* addAction() const;
 	QAction* deleteAction() const;
 	QAction* moveUpAction() const;
 	QAction* moveDownAction() const;
 	QAction* propertyAction() const;
+	QAction* undoableDeleteAction() const;
 
 	QSize sizeHint() const override;
 	void select(const QModelIndex& index);
@@ -33,7 +35,9 @@ protected slots:
 	void deleteCurrentItem();
 	void moveUpCurrentItem();
 	void moveDownCurrentItem();
+	void showAddForCurrentItem();
 	void showPropertyForCurrentItem();
+	void undoableDeleteCurrentItem();
 
 signals:
 	void selectionChanged();
@@ -43,6 +47,7 @@ signals:
 	void requestDeleteItem(const QModelIndex& index);
 	void requestMoveUpItem(const QModelIndex& index);
 	void requestMoveDownItem(const QModelIndex& index);
+	void requestShowAddDialog(const QModelIndex& index);
 	void requestShowPropertyDialog(const QModelIndex& index);
 	void requestDeleteImage(const QModelIndex& index);
 	void requestMoveUpImage(const QModelIndex& index);
@@ -50,6 +55,7 @@ signals:
 	void requestDeleteMeasuredData(const QModelIndex& index);
 	void requestMoveUpMeasuredData(const QModelIndex& index);
 	void requestMoveDownMeasuredData(const QModelIndex& index);
+	void requestUndoableDeleteItem(const QModelIndex& index);
 
 private:
 	void mousePressEvent(QMouseEvent* event) override;
@@ -59,8 +65,10 @@ private:
 
 	QAction* m_moveUpAction;
 	QAction* m_moveDownAction;
+	QAction* m_addAction;
 	QAction* m_deleteAction;
 	QAction* m_propertyAction;
+	QAction* m_undoableDeleteAction;
 
 	bool m_commandExecution;
 	bool m_isPushing;

@@ -65,8 +65,6 @@ private:
 	friend class Post2dWindowNodeScalarGroupDataItem;
 
 	class CreateCommand;
-
-	QAction* m_addAction;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H

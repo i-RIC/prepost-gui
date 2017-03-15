@@ -34,8 +34,6 @@ private:
 	friend class Post2dBirdEyeWindowNodeScalarGroupDataItem;
 
 	class CreateCommand;
-
-	QAction* m_addAction;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPTOPDATAITEM_H

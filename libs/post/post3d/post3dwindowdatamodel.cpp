@@ -102,6 +102,14 @@ void Post3dWindowDataModel::addContour()
 	citem->showAddDialog();
 }
 
+void Post3dWindowDataModel::addIsosurface()
+{
+	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	if (item == nullptr) {return;}
+	Post3dWindowNodeScalarGroupTopDataItem* citem = item->scalarGroupDataItem();
+	citem->showAddDialog();
+}
+
 void Post3dWindowDataModel::contourSetting()
 {
 	addContour();
@@ -133,10 +141,7 @@ void Post3dWindowDataModel::particleSetting()
 
 void Post3dWindowDataModel::isosurfaceSetting()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr) {return;}
-	Post3dWindowNodeScalarGroupDataItem* iitem = item->scalarGroupDataItem();
-	iitem->showPropertyDialog();;
+	addIsosurface();
 }
 
 Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()

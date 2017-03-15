@@ -55,7 +55,6 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	setupActors();
-	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	m_setting.opacity = 0;
 }
 
@@ -100,6 +99,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	std::string targetStr = iRIC::toStr(m_setting.target);
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*>(parent());
 	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
+	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
 
 	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(cont->elevationName()).c_str());
 

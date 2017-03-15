@@ -218,7 +218,7 @@ void Post3dWindowFaceDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting == true) {return;}
 	Post3dWindowContourGroupDataItem* p1 = dynamic_cast<Post3dWindowContourGroupDataItem*>(parent());
-	if (p1 != nullptr) {p1->handleStandardItemChange();}
+	if (p1 != nullptr) {GraphicsWindowDataItem::handleStandardItemChange();}
 	Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
 	if (p2 != nullptr) {
 		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));

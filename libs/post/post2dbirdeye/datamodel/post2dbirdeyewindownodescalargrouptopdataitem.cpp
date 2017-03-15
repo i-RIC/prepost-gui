@@ -1,3 +1,4 @@
+#include "../../../guibase/objectbrowserview.h"
 #include "post2dbirdeyewindow.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
@@ -32,9 +33,6 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGrou
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
-
-	m_addAction = new QAction(tr("Add..."), this);
-	connect(m_addAction, SIGNAL(triggered()), dataModel(), SLOT(addContour()));
 }
 
 Post2dBirdEyeWindowNodeScalarGroupTopDataItem::~Post2dBirdEyeWindowNodeScalarGroupTopDataItem()
@@ -234,5 +232,5 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDia
 
 void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(m_addAction);
+	menu->addAction(dataModel()->objectBrowserView()->addAction());
 }
