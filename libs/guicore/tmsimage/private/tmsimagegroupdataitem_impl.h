@@ -32,6 +32,8 @@ public:
 	QPointF m_imageLowerLeft;
 	double m_imageScale;
 
+	QPointF m_offset;
+
 	TmsImageGroupDataItem* m_parent;
 };
 

@@ -1238,6 +1238,7 @@ PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel
 void PreProcessorDataModel::applyOffset(double x, double y)
 {
 	m_rootDataItem->applyOffset(x, y);
+	m_rootDataItem->renderGraphicsView();
 }
 
 void PreProcessorDataModel::updateTmsList()

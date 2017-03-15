@@ -24,11 +24,16 @@ public:
 
 	void updateZDepthRangeItemCount() override;
 
+	void applyOffset(double x_diff, double y_diff);
+
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 private slots:
 	void handleImageUpdate(int requestId);
+
+protected:
+	void doApplyOffset(double x_diff, double y_diff) override;
 
 private:
 	void requestImage();
