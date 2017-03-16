@@ -3,6 +3,7 @@
 
 void RivmakerMainWindow::setupConnections()
 {
+	connect(ui->newProjectAction, SIGNAL(triggered()), this, SLOT(newProject()));
 	connect(ui->exitAction, SIGNAL(triggered()), this, SLOT(close()));
 
 	connect(ui->importElevationAction, SIGNAL(triggered()), this, SLOT(importElevation()));

@@ -12,6 +12,11 @@ public:
 	CrossSection(DataItem* parent);
 	~CrossSection();
 
+	bool isDefined() const;
+
+	int id() const;
+	void setId(int id);
+
 	QPointF point1() const;
 	void setPoint1(const QPointF& p);
 
@@ -23,9 +28,13 @@ public:
 	void reverseDirection();
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
-
+	DataItemController* buildPreProcessorDataItemController(Model* model) override;
+	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
+	int m_id;
+	bool m_isDefined;
+
 	QPointF m_point1;
 	QPointF m_point2;
 };

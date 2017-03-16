@@ -82,6 +82,7 @@ void DataItemView::addChildItem(DataItemView* v)
 	auto it = std::find(impl->m_childItems.begin(), impl->m_childItems.end(), v);
 	if (it != impl->m_childItems.end()) {return;}
 
+	v->setParentView(this);
 	impl->m_childItems.push_back(v);
 }
 

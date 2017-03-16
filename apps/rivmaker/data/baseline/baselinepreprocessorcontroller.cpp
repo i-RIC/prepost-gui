@@ -1,5 +1,8 @@
 #include "baselinepreprocessorcontroller.h"
+#include "../base/model.h"
 #include "../base/view.h"
+#include "../crosssections/crosssectionspreprocessorcontroller.h"
+#include "../project/project.h"
 
 #include "private/baselinepreprocessorcontroller_impl.h"
 
@@ -25,13 +28,14 @@ void BaseLinePreProcessorController::keyPressEvent(QKeyEvent* event, View*)
 	if (impl->m_mode != Impl::Mode::Defining) {return;}
 	if (event->key() != Qt::Key_Return) {return;}
 
-	impl->m_mode = Impl::Mode::Normal;
+	finishDefining();
 }
 
 void BaseLinePreProcessorController::mouseDoubleClickEvent(QMouseEvent*, View*)
 {
 	if (impl->m_mode != Impl::Mode::Defining) {return;}
-	impl->m_mode = Impl::Mode::Normal;
+
+	finishDefining();
 }
 
 void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
@@ -67,3 +71,17 @@ void BaseLinePreProcessorController::mousePressEvent(QMouseEvent* event, View* v
 
 void BaseLinePreProcessorController::mouseReleaseEvent(QMouseEvent*, View*)
 {}
+
+void BaseLinePreProcessorController::finishDefining()
+{
+	impl->m_mode = Impl::Mode::Normal;
+
+	auto p = item()->project();
+	bool sorted = p->sortCrossSectionsIfPossible();
+	if (! sorted) {return;}
+
+	auto csCtrl = dynamic_cast<CrossSectionsPreProcessorController*> (model()->dataItemController(&(p->crossSections())));
+	csCtrl->rebuildStandardItemsAndViews();
+
+	updateView();
+}

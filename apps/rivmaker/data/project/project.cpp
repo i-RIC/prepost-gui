@@ -1,9 +1,12 @@
 #include "project.h"
 #include "riversurveydatacreator.h"
 #include "../base/dataItem.h"
+#include "../crosssection/crosssection.h"
 #include "../riversurveydata/riversurveydata.h"
 
 #include "private/project_impl.h"
+
+#include <map>
 
 Project::Impl::Impl(Project *project) :
 	m_rootDataItem {project},
@@ -106,9 +109,32 @@ QPointF& Project::offset()
 	return impl->m_offset;
 }
 
+bool Project::sortCrossSectionsIfPossible()
+{
+	auto& bl = baseLine();
+	auto csVec = crossSections().crossSectionVector();
+
+	std::map<double, CrossSection*> posMap;
+	bool crosses;
+	double x, y, pos;
+
+	for (CrossSection* cs : csVec) {
+		bl.getCrossingPoint(*cs, &crosses, &x, &y, &pos);
+		if (! crosses) {return false;}
+		posMap.insert(std::make_pair(pos, cs));
+	}
+
+	auto& childItems = crossSections().childItems();
+	childItems.clear();
+	for (auto pair : posMap) {
+		childItems.push_back(pair.second);
+	}
+	return true;
+}
+
 bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
 {
-	return RiverSurveyDataCreator::checkIfReadyToOpenVerticalCrossSectionWindow(*this, w);
+	return true;
 }
 
 bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const

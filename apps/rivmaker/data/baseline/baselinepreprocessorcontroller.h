@@ -17,6 +17,8 @@ public:
 	void mouseReleaseEvent(QMouseEvent*, View*) override;
 
 private:
+	void finishDefining();
+
 	class Impl;
 	Impl* impl;
 };

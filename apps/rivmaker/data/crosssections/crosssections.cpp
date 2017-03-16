@@ -20,7 +20,7 @@ CrossSections::~CrossSections()
 CrossSection* CrossSections::addCrossSection()
 {
 	auto newS = new CrossSection(this);
-	childItems().push_back(newS);
+	newS->setId(static_cast<int>(childItems().size() - 1));
 
 	return newS;
 }

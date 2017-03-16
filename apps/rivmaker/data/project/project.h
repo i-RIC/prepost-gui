@@ -47,6 +47,8 @@ public:
 	const QPointF& offset() const;
 	QPointF& offset();
 
+	bool sortCrossSectionsIfPossible();
+
 	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;
 	bool checkIfReadyToCreateRiverSurveyData(QWidget* w) const;
 

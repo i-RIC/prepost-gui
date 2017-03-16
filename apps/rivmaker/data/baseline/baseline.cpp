@@ -1,10 +1,13 @@
 #include "baseline.h"
 #include "baselinepreprocessorcontroller.h"
 #include "baselinepreprocessorview.h"
+#include "../crosssection/crosssection.h"
+#include "../../misc/geometryutil.h"
 
 #include "private/baseline_impl.h"
 
 #include <QStandardItem>
+#include <QVector2D>
 
 #include <algorithm>
 
@@ -32,15 +35,34 @@ void BaseLine::setPolyLine(const std::vector<QPointF>& line)
 	impl->m_polyLine = line;
 }
 
-bool BaseLine::checkIfCrosses(const CrossSection& cs) const
-{
-	// @todo implement this
-	return true;
-}
-
 void BaseLine::getCrossingPoint(const CrossSection& cs, bool* crosses, double* x, double* y, double* pos)
 {
-	// @todo implement this
+	*crosses = false;
+	*pos = 0;
+	QPointF intersection;
+	double r, s;
+	for (int i = 0; i < impl->m_polyLine.size() - 1; ++i) {
+		QPointF p1 = impl->m_polyLine.at(i);
+		QPointF p2 = impl->m_polyLine.at(i + 1);
+		bool localCross = GeometryUtil::intersectionPoint(
+					p1, p2,
+					cs.point1(), cs.point2(), &intersection, &r, &s);
+		if (localCross) {
+			if (r < 0 || r > 1) {localCross = false;}
+			if (s < 0 || s > 1) {localCross = false;}
+		}
+
+		if (localCross) {
+			// crosses.
+			*x = intersection.x();
+			*y = intersection.y();
+			*pos = *pos + QVector2D(*x - p1.x(), *y - p1.y()).length();
+			*crosses = true;
+			return;
+		} else {
+			*pos = *pos + QVector2D(p2.x() - p1.x(), p2.y() - p1.y()).length();
+		}
+	}
 }
 
 void BaseLine::normalizeDirection(CrossSection* cs) const

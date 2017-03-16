@@ -11,6 +11,7 @@ RC_FILE = rivmaker.rc
 # Input
 HEADERS += dialogs/mousehelpdialog.h \
            main/rivmakermainwindow.h \
+           misc/geometryutil.h \
            window/viewwindowi.h \
            data/base/dataitem.h \
            data/base/dataitemcontroller.h \
@@ -26,7 +27,11 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/baseline/baselinepreprocessorview.h \
            data/baseline/baselinepreprocessorviewhelper.h \
            data/crosssection/crosssection.h \
+           data/crosssection/crosssectionpreprocessorcontroller.h \
+           data/crosssection/crosssectionpreprocessorview.h \
+           data/crosssection/crosssectionpreprocessorviewhelper.h \
            data/crosssections/crosssections.h \
+           data/crosssections/crosssectionspreprocessorcontroller.h \
            data/elevationpoints/elevationpoints.h \
            data/elevationpoints/elevationpointspreprocessorview.h \
            data/elevationpoints/elevationpointspreprocessorviewhelper.h \
@@ -53,13 +58,13 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/base/private/model_impl.h \
            data/baseline/private/baseline_impl.h \
            data/baseline/private/baselinepreprocessorcontroller_impl.h \
+           data/crosssection/private/crosssectionpreprocessorcontroller_impl.h \
            data/crosssections/private/crosssections_impl.h \
            data/project/private/project_impl.h \
            window/preprocessor/objectbrowser/objectbrowser.h \
            window/preprocessor/objectbrowser/objectbrowserview.h \
            window/preprocessor/private/preprocessormodel_impl.h \
-           window/preprocessor/private/preprocessorwindow_impl.h \
-    data/crosssections/crosssectionspreprocessorcontroller.h
+           window/preprocessor/private/preprocessorwindow_impl.h
 FORMS += dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
@@ -67,6 +72,7 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            main/main.cpp \
            main/rivmakermainwindow.cpp \
            main/rivmakermainwindow_setupconnections.cpp \
+           misc/geometryutil.cpp \
            data/base/dataitem.cpp \
            data/base/dataitemcontroller.cpp \
            data/base/dataitemview.cpp \
@@ -80,7 +86,11 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            data/baseline/baselinepreprocessorview.cpp \
            data/baseline/baselinepreprocessorviewhelper.cpp \
            data/crosssection/crosssection.cpp \
+           data/crosssection/crosssectionpreprocessorcontroller.cpp \
+           data/crosssection/crosssectionpreprocessorview.cpp \
+           data/crosssection/crosssectionpreprocessorviewhelper.cpp \
            data/crosssections/crosssections.cpp \
+           data/crosssections/crosssectionspreprocessorcontroller.cpp \
            data/elevationpoints/elevationpoints.cpp \
            data/elevationpoints/elevationpointspreprocessorview.cpp \
            data/elevationpoints/elevationpointspreprocessorviewhelper.cpp \
@@ -100,6 +110,5 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            window/preprocessor/preprocessorwindow.cpp \
            window/verticalcrosssection/verticalcrosssectionwindow.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
-           window/preprocessor/objectbrowser/objectbrowserview.cpp \
-    data/crosssections/crosssectionspreprocessorcontroller.cpp
+           window/preprocessor/objectbrowser/objectbrowserview.cpp
 RESOURCES += rivmaker.qrc
