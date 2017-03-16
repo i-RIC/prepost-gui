@@ -8,21 +8,6 @@ include( ../../paths.pri )
 QT += widgets network
 RC_FILE = rivmaker.rc
 
-######################
-# External libraries #
-######################
-
-# VTK
-
-LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkInteractionStyle-6.1 \
-	-lvtkIOExport-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingFreeTypeOpenGL-6.1 \
-	-lvtkRenderingOpenGL-6.1
-
 # Input
 HEADERS += dialogs/mousehelpdialog.h \
            main/rivmakermainwindow.h \
@@ -73,7 +58,8 @@ HEADERS += dialogs/mousehelpdialog.h \
            window/preprocessor/objectbrowser/objectbrowser.h \
            window/preprocessor/objectbrowser/objectbrowserview.h \
            window/preprocessor/private/preprocessormodel_impl.h \
-           window/preprocessor/private/preprocessorwindow_impl.h
+           window/preprocessor/private/preprocessorwindow_impl.h \
+    data/crosssections/crosssectionspreprocessorcontroller.h
 FORMS += dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
@@ -114,5 +100,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            window/preprocessor/preprocessorwindow.cpp \
            window/verticalcrosssection/verticalcrosssectionwindow.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
-           window/preprocessor/objectbrowser/objectbrowserview.cpp
+           window/preprocessor/objectbrowser/objectbrowserview.cpp \
+    data/crosssections/crosssectionspreprocessorcontroller.cpp
 RESOURCES += rivmaker.qrc

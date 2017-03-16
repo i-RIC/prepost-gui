@@ -72,6 +72,16 @@ void PreProcessorWindow::zoomOut()
 	impl->m_view.zoomOut();
 }
 
+void PreProcessorWindow::addCrossSection()
+{
+	impl->m_model.addCrossSection();
+}
+
+void PreProcessorWindow::deleteCrossSection()
+{
+	impl->m_model.deleteCrossSection();
+}
+
 void PreProcessorWindow::closeEvent(QCloseEvent *e)
 {
 	parentWidget()->hide();

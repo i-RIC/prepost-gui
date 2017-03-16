@@ -13,6 +13,7 @@ public:
 
 	Model* m_model;
 	DataItem* m_item;
+	DataItemView* m_parentView;
 
 	std::vector<DataItemViewHelperI*> m_viewHelpers;
 

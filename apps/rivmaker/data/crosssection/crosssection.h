@@ -22,6 +22,9 @@ public:
 
 	void reverseDirection();
 
+	QStandardItem* buildPreProcessorStandardItem() const override;
+
+
 private:
 	QPointF m_point1;
 	QPointF m_point2;

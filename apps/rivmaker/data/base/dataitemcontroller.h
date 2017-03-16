@@ -34,6 +34,7 @@ public:
 
 protected:
 	DataItem* item();
+	Model* model();
 
 	void updateView();
 

@@ -10,13 +10,19 @@
 
 DataItemView::Impl::Impl(Model *model, DataItem *item) :
 	m_model {model},
-	m_item {item}
+	m_item {item},
+	m_parentView {nullptr}
 {}
 
 DataItemView::Impl::~Impl()
 {
 	for (auto helper : m_viewHelpers) {
 		delete helper;
+	}
+
+	auto tmpChildren = m_childItems;
+	for (auto c : tmpChildren) {
+		delete c;
 	}
 }
 
@@ -26,7 +32,16 @@ DataItemView::DataItemView(Model* model, DataItem* item) :
 
 DataItemView::~DataItemView()
 {
+	if (impl->m_parentView != nullptr) {
+		impl->m_parentView->removeChildItem(this);
+	}
+
 	delete impl;
+}
+
+void DataItemView::setParentView(DataItemView* parentView)
+{
+	impl->m_parentView = parentView;
 }
 
 void DataItemView::discardDrawCache()

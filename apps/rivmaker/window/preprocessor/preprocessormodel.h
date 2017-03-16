@@ -18,6 +18,11 @@ public:
 
 	void setProject(Project* project);
 
+	void addCrossSection();
+	void deleteCrossSection();
+
+	void setupStandardItemAndViewAndController(PreProcessorDataItemI *newItem, DataItem* parent);
+
 private:
 	void setupStandatdItemModel();
 	RootDataItem* rootDataItem() const override;

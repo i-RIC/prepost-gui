@@ -52,6 +52,11 @@ DataItem* DataItemController::item()
 	return impl->m_item;
 }
 
+Model* DataItemController::model()
+{
+	return impl->m_model;
+}
+
 void DataItemController::updateView()
 {
 	impl->m_model->view()->update();

@@ -18,10 +18,11 @@ public:
 
 	CrossSection* addCrossSection();
 
-	const std::vector<CrossSection*>& crossSectionVector() const;
-	std::vector<CrossSection*>& crossSectionVector();
+	std::vector<CrossSection*> crossSectionVector() const;
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
+	DataItemController* buildPreProcessorDataItemController(Model* model) override;
+	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
 	class Impl;

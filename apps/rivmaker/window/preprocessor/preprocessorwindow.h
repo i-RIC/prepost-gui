@@ -24,6 +24,9 @@ public:
 	void zoomIn() override;
 	void zoomOut() override;
 
+	void addCrossSection();
+	void deleteCrossSection();
+
 private:
 	void closeEvent(QCloseEvent *e);
 

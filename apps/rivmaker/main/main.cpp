@@ -1,14 +1,7 @@
 #include "rivmakermainwindow.h"
 
-#include <vtkAutoInit.h>
-
 #include <QApplication>
 #include <QSettings>
-
-VTK_MODULE_INIT(vtkRenderingOpenGL);
-VTK_MODULE_INIT(vtkInteractionStyle);
-VTK_MODULE_INIT(vtkRenderingFreeType);
-VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 
 int main(int argc, char* argv[])
 {

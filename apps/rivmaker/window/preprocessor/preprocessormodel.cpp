@@ -1,10 +1,14 @@
 #include "../../data/base/view.h"
+#include "../../data/crosssection/crosssection.h"
+#include "../../data/crosssections/crosssectionspreprocessorcontroller.h"
 #include "../../data/project/project.h"
 #include "../../data/riversurveydata/riversurveydata.h"
 #include "../../data/riversurveydatadummy/riversurveydatadummy.h"
 #include "preprocessordataitemi.h"
 #include "preprocessormodel.h"
 #include "private/preprocessormodel_impl.h"
+
+#include <QMessageBox>
 
 namespace {
 
@@ -43,6 +47,50 @@ void PreProcessorModel::setProject(Project* project)
 	setupStandatdItemModel();
 	view()->fit();
 }
+
+void PreProcessorModel::addCrossSection()
+{
+	auto ctrl = dynamic_cast<CrossSectionsPreProcessorController*>
+			(dataItemController(& impl->m_project->crossSections()));
+	if (ctrl == nullptr) {return;}
+
+	ctrl->addCrossSection();
+
+	view()->update();
+}
+
+void PreProcessorModel::deleteCrossSection()
+{
+	auto s = selectedItem();
+	if (dynamic_cast<CrossSection*> (s) == nullptr) {
+		QMessageBox::warning(view(), tr("Warning"), tr("To delete a Cross Section, select it at Object Browser."));
+		return;
+	}
+	auto& crossSections = impl->m_project->crossSections();
+	deleteItem(s);
+}
+
+void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataItemI* newItem, DataItem* parent)
+{
+	auto dItem = dynamic_cast<DataItem*> (newItem);
+	auto sItem = newItem->buildPreProcessorStandardItem();
+	if (sItem != nullptr) {
+		addStandardItem(dItem, sItem);
+		standardItem(parent)->appendRow(sItem);
+	}
+
+	auto view = newItem->buildPreProcessorDataItemView(this);
+	if (view != nullptr) {
+		addDataItemView(dItem, view);
+		dataItemView(parent)->addChildItem(view);
+	}
+
+	auto ctrl = newItem->buildPreProcessorDataItemController(this);
+	if (ctrl != nullptr) {
+		addDataItemController(dItem, ctrl);
+	}
+}
+
 
 void PreProcessorModel::setupStandatdItemModel()
 {

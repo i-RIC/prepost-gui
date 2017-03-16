@@ -6,7 +6,6 @@
 class CrossSections::Impl
 {
 public:
-	std::vector<CrossSection*> m_crossSectionVector;
 };
 
 #endif // CROSSSECTIONS_IMPL_H

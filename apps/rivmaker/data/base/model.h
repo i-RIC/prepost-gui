@@ -44,15 +44,28 @@ public:
 
 	QStandardItemModel* standardItemModel() const;
 
+	void deleteItem(DataItem* item);
+
+	void addStandardItem(DataItem* item, QStandardItem* sitem);
+	void removeStandardItem(DataItem* item);
+
 	template<typename T>
 	QStandardItem* buildStandardItems(const T* item, QStandardItem* (T::*f)() const);
 	void clearStandardItems();
 
+	void addDataItemView(DataItem* item, DataItemView* view);
+	void removeDataItemView(DataItem* item);
+
 	template<typename T>
 	DataItemView* buildDataItemViews(T* item, DataItemView* (T::*f)(Model*));
+	void clearDataItemViews();
+
+	void addDataItemController(DataItem* item, DataItemController* controller);
+	void removeDataItemController(DataItem* item);
 
 	template<typename T>
 	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)(Model*));
+	void clearDataItemControllers();
 
 private slots:
 	void handleObjectBrowserChange(QStandardItem*);

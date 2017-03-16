@@ -1,5 +1,7 @@
 #include "crosssection.h"
 
+#include <QStandardItem>
+
 CrossSection::CrossSection(DataItem* parent) :
 	DataItem {parent}
 {}
@@ -37,4 +39,11 @@ void CrossSection::reverseDirection()
 	auto tmpP = m_point1;
 	m_point1 = m_point2;
 	m_point2 = tmpP;
+}
+
+QStandardItem* CrossSection::buildPreProcessorStandardItem() const
+{
+	auto item = new QStandardItem(tr("Cross Section"));
+	setupStandardItem(item);
+	return item;
 }

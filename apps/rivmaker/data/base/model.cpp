@@ -35,6 +35,10 @@ Model::Model(QObject* parent) :
 
 Model::~Model()
 {
+	clearStandardItems();
+	clearDataItemViews();
+	clearDataItemControllers();
+
 	delete impl;
 }
 
@@ -144,11 +148,88 @@ QStandardItemModel* Model::standardItemModel() const
 	return &(impl->m_standardItemModel);
 }
 
+void Model::deleteItem(DataItem* item)
+{
+	removeStandardItem(item);
+	removeDataItemView(item);
+	removeDataItemController(item);
+
+	delete item;
+}
+
+void Model::addStandardItem(DataItem* item, QStandardItem* sitem)
+{
+	impl->m_standardItemMap.insert(std::make_pair(item, sitem));
+	impl->m_reverseStandardItemMap.insert(std::make_pair(sitem, item));
+}
+
+void Model::removeStandardItem(DataItem* item)
+{
+	auto it = impl->m_standardItemMap.find(item);
+	if (it == impl->m_standardItemMap.end()) {return;}
+
+	auto it2 = impl->m_reverseStandardItemMap.find(it->second);
+	if (it2 != impl->m_reverseStandardItemMap.end()) {
+		impl->m_reverseStandardItemMap.erase(it2);
+	}
+	QStandardItem* sItem = it->second;
+	QStandardItem* parentSItem = sItem->parent();
+	if (parentSItem!= nullptr) {
+		parentSItem->takeRow(sItem->row());
+	}
+	delete it->second;
+	impl->m_standardItemMap.erase(it);
+}
+
 void Model::clearStandardItems()
 {
 	impl->m_standardItemModel.clear();
 	impl->m_standardItemMap.clear();
 	impl->m_reverseStandardItemMap.clear();
+}
+
+void Model::addDataItemView(DataItem* item, DataItemView* view)
+{
+	impl->m_viewMap.insert(std::make_pair(item, view));
+}
+
+void Model::removeDataItemView(DataItem* item)
+{
+	auto it = impl->m_viewMap.find(item);
+	if (it == impl->m_viewMap.end()) {return;}
+
+	delete it->second;
+	impl->m_viewMap.erase(it);
+}
+
+void Model::clearDataItemViews()
+{
+	for (auto pair : impl->m_viewMap) {
+		delete pair.second;
+	}
+	impl->m_viewMap.clear();
+}
+
+void Model::addDataItemController(DataItem* item, DataItemController* controller)
+{
+	impl->m_controllerMap.insert(std::make_pair(item, controller));
+}
+
+void Model::removeDataItemController(DataItem* item)
+{
+	auto it = impl->m_controllerMap.find(item);
+	if (it == impl->m_controllerMap.end()) {return;}
+
+	delete it->second;
+	impl->m_controllerMap.erase(it);
+}
+
+void Model::clearDataItemControllers()
+{
+	for (auto pair : impl->m_controllerMap) {
+		delete pair.second;
+	}
+	impl->m_controllerMap.clear();
 }
 
 void Model::handleObjectBrowserChange(QStandardItem*)

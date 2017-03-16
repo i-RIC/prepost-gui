@@ -18,6 +18,8 @@ public:
 	DataItemView(Model* model, DataItem* item);
 	virtual ~DataItemView();
 
+	void setParentView(DataItemView* parentView);
+
 	void discardDrawCache();
 	bool prepareDraw();
 	virtual void draw(QPainter* painter) const;
