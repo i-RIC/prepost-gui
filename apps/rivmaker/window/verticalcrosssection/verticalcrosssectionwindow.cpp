@@ -1,9 +1,17 @@
 #include "verticalcrosssectionwindow.h"
 #include "ui_verticalcrosssectionwindow.h"
+#include "../../data/arbitraryhwm/arbitraryhwm.h"
+#include "../../data/baseline/baseline.h"
+#include "../../data/crosssection/crosssection.h"
+#include "../../data/leftbankhwm/leftbankhwm.h"
 #include "../../data/project/project.h"
+#include "../../data/points/points.h"
+#include "../../data/rightbankhwm/rightbankhwm.h"
+#include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
+#include <qwt_plot_marker.h>
 #include <qwt_symbol.h>
 
 #include <QCloseEvent>
@@ -41,6 +49,7 @@ VerticalCrossSectionWindow::VerticalCrossSectionWindow(QWidget *parent) :
 	ui->splitter->setSizes(sizes);
 
 	initPlot();
+	initTable();
 }
 
 VerticalCrossSectionWindow::~VerticalCrossSectionWindow()
@@ -70,6 +79,8 @@ void VerticalCrossSectionWindow::updateView()
 	setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &xmin, &xmax, &ymin, &ymax, &first);
 	setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
 	setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+
+	setupCrossSectionMarkers(&xmin, &xmax, &first);
 
 	updateScale(xmin, xmax, ymin, ymax);
 
@@ -107,6 +118,51 @@ void VerticalCrossSectionWindow::initPlot()
 	s = new QwtSymbol(QwtSymbol::Rect, QBrush(Qt::red), QPen(Qt::NoPen), QSize(7, 7));
 	m_rightBankCurve->setSymbol(s);
 	m_rightBankCurve->attach(ui->qwtWidget);
+}
+
+void VerticalCrossSectionWindow::initTable()
+{
+	ui->tableWidget->setColumnCount(2);
+	ui->tableWidget->setRowCount(3);
+
+	QStringList hLabels;
+	hLabels << tr("Name") << tr("Elevation");
+	ui->tableWidget->setHorizontalHeaderLabels(hLabels);
+
+	ui->tableWidget->setItem(0, 0, new QTableWidgetItem("X1"));
+	ui->tableWidget->setItem(1, 0, new QTableWidgetItem("X2"));
+	ui->tableWidget->setItem(2, 0, new QTableWidgetItem("X3"));
+}
+
+void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* xmax, bool* first)
+{
+	for (QwtPlotMarker* m : m_crossSectionMarkers) {
+		m->detach();
+		delete m;
+	}
+	const auto& baseLine = m_project->baseLine();
+	auto csVec = m_project->crossSections().crossSectionVector();
+
+	bool crosses;
+	double x, y, pos;
+
+	for (CrossSection* cs : csVec) {
+		baseLine.getCrossingPoint(cs, &crosses, &x, &y, &pos);
+		if (! crosses) {continue;}
+
+		QwtPlotMarker* marker = new QwtPlotMarker(cs->name());
+		marker->setLabelAlignment(Qt::AlignLeft | Qt::AlignTop);
+		marker->setXValue(pos);
+		marker->setLabelOrientation(Qt::Vertical);
+		marker->setLineStyle(QwtPlotMarker::VLine);
+		marker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
+		marker->attach(ui->qwtWidget);
+
+		if (*first || pos < *xmin) {*xmin = pos;}
+		if (*first || pos > *xmax) {*xmax = pos;}
+
+		*first = false;
+	}
 }
 
 void VerticalCrossSectionWindow::updateScale(double xmin, double xmax, double ymin, double ymax)

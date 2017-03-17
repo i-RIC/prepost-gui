@@ -5,6 +5,7 @@
 
 #include "private/model_impl.h"
 
+#include <QMenu>
 #include <QStandardItem>
 
 Model::Impl::Impl() :
@@ -252,4 +253,24 @@ void Model::handleObjectBrowserSelection(const QModelIndex& current)
 ObjectBrowserView* Model::objectBrowserView() const
 {
 	return impl->m_objectBrowserView;
+}
+
+std::map<DataItem*, DataItemView*>& Model::viewMap()
+{
+	return impl->m_viewMap;
+}
+
+std::map<DataItem*, DataItemController*>& Model::controllerMap()
+{
+	return impl->m_controllerMap;
+}
+
+std::map<DataItem*, QStandardItem*>& Model::standardItemMap()
+{
+	return impl->m_standardItemMap;
+}
+
+std::map<QStandardItem*, DataItem*>& Model::reverseStandardItemMap()
+{
+	return impl->m_reverseStandardItemMap;
 }

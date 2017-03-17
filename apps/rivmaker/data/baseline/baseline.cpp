@@ -80,6 +80,16 @@ void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, doub
 
 double BaseLine::calcPosition(double x, double y) const
 {
+/*
+	QPointF ret;
+	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(4, 1));
+	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(8, -1));
+	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(11, 1));
+	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(-5, 3));
+*/
+
+
+
 	std::map<double, double> distanceMap;
 	double pos = 0;
 	for (int i = 0; i < impl->m_polyLine.size() - 1; ++i) {

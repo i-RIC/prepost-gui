@@ -1,5 +1,6 @@
 #include "project.h"
 #include "riversurveydatacreator.h"
+#include "../arbitraryhwm/arbitraryhwm.h"
 #include "../base/dataItem.h"
 #include "../crosssection/crosssection.h"
 #include "../riversurveydata/riversurveydata.h"

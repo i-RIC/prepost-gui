@@ -5,6 +5,7 @@
 #include "../io/sacguiimporter.h"
 
 #include "ui_rivmakermainwindow.h"
+#include "private/rivmakermainwindow_impl.h"
 
 #include <QCloseEvent>
 #include <QMdiArea>

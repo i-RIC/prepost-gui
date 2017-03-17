@@ -4,6 +4,8 @@
 #include "../crosssections/crosssectionspreprocessorcontroller.h"
 #include "../project/project.h"
 
+#include "private/crosssectionpreprocessorcontroller_impl.h"
+
 #include <QMouseEvent>
 
 CrossSectionPreProcessorController::CrossSectionPreProcessorController(Model* model, CrossSection* item) :

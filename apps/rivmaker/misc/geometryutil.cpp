@@ -22,8 +22,8 @@ bool GeometryUtil::intersectionPoint(const QPointF& p1, const QPointF& p2, const
 
 QPointF GeometryUtil::nearestPoint(const QPointF& a, const QPointF& b, const QPointF& p)
 {
-	QVector2D ab(b.x() - a.x(), b.y() - a.x());
-	QVector2D ap(p.x() - a.x(), p.y() - a.x());
+	QVector2D ab(b.x() - a.x(), b.y() - a.y());
+	QVector2D ap(p.x() - a.x(), p.y() - a.y());
 
 	QVector2D ab_unit = ab / ab.length();
 	double r = (ap.x() * ab_unit.x() + ap.y() * ab_unit.y()) / ab.length();

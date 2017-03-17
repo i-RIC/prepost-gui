@@ -16,8 +16,8 @@ QStandardItem* Model::buildStandardItems(const T* item, QStandardItem* (T::*f)()
 	const DataItem* cdItem = dynamic_cast<const DataItem*> (item);
 	DataItem* dItem = const_cast<DataItem*> (cdItem);
 
-	impl->m_standardItemMap.insert(std::make_pair(dItem, sItem));
-	impl->m_reverseStandardItemMap.insert(std::make_pair(sItem, dItem));
+	standardItemMap().insert(std::make_pair(dItem, sItem));
+	reverseStandardItemMap().insert(std::make_pair(sItem, dItem));
 
 	for (DataItem* child : cdItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
@@ -41,7 +41,7 @@ DataItemView* Model::buildDataItemViews(T *item, DataItemView* (T::*f)(Model* mo
 
 	DataItem* dItem = dynamic_cast<DataItem*> (item);
 
-	impl->m_viewMap.insert(std::make_pair(dItem, v));
+	viewMap().insert(std::make_pair(dItem, v));
 
 	for (DataItem* child : dItem->childItems()) {
 		T* t = dynamic_cast<T*> (child);
@@ -62,7 +62,7 @@ DataItemController* Model::buildDataItemControllers(T* item, DataItemController*
 
 	DataItemController* c = (item->*f)(this);
 	if (c != nullptr) {
-		impl->m_controllerMap.insert(std::make_pair(dItem, c));
+		controllerMap().insert(std::make_pair(dItem, c));
 	}
 
 	for (DataItem* child : dItem->childItems()) {

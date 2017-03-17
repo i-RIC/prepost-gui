@@ -1,9 +1,13 @@
 #include "../../data/base/view.h"
+#include "../../data/baseline/baseline.h"
 #include "../../data/crosssection/crosssection.h"
 #include "../../data/crosssections/crosssectionspreprocessorcontroller.h"
+#include "../../data/elevationpoints/elevationpoints.h"
 #include "../../data/project/project.h"
 #include "../../data/riversurveydata/riversurveydata.h"
 #include "../../data/riversurveydatadummy/riversurveydatadummy.h"
+#include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
+
 #include "preprocessordataitemi.h"
 #include "preprocessormodel.h"
 #include "private/preprocessormodel_impl.h"

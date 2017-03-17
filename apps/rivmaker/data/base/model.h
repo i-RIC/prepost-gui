@@ -78,6 +78,12 @@ protected:
 private:
 	virtual RootDataItem* rootDataItem() const = 0;
 
+	std::map<DataItem*, DataItemView*>& viewMap();
+	std::map<DataItem*, DataItemController*>& controllerMap();
+
+	std::map<DataItem*, QStandardItem*>& standardItemMap();
+	std::map<QStandardItem*, DataItem*>& reverseStandardItemMap();
+
 	class Impl;
 	Impl* impl;
 };

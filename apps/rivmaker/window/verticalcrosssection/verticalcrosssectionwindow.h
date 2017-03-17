@@ -3,9 +3,12 @@
 
 #include <QWidget>
 
+#include <vector>
+
 class Project;
 
 class QwtPlotCurve;
+class QwtPlotMarker;
 
 namespace Ui {
 class VerticalCrossSectionWindow;
@@ -26,6 +29,9 @@ private slots:
 
 private:
 	void initPlot();
+	void initTable();
+	void setupCrossSectionMarkers(double *xmin, double *xmax, bool *first);
+
 	void updateScale(double xmin, double xmax, double ymin, double ymax);
 
 	void closeEvent(QCloseEvent *e);
@@ -33,6 +39,8 @@ private:
 	QwtPlotCurve* m_arbitraryCurve;
 	QwtPlotCurve* m_leftBankCurve;
 	QwtPlotCurve* m_rightBankCurve;
+
+	std::vector<QwtPlotMarker*> m_crossSectionMarkers;
 
 	Project* m_project;
 	Ui::VerticalCrossSectionWindow *ui;
