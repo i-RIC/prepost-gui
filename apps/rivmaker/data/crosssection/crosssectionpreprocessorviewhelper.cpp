@@ -45,5 +45,7 @@ void CrossSectionPreProcessorViewHelper::draw(QPainter *painter) const
 		drawPoint(v->conv(cs->point2()), color, painter);
 	}
 
+	drawPoint(v->conv(cs->crossSectionPoint()), color, painter);
+
 	painter->restore();
 }

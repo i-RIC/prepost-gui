@@ -10,6 +10,8 @@ public:
 		Normal,
 		BeforeDefining,
 		Defining,
+		MovePoint,
+		MovePointPrepare,
 		AddPoint,
 		AddPointPrepare,
 		AddPointNotPossible,
@@ -18,6 +20,7 @@ public:
 	};
 
 	Mode m_mode;
+	int m_movingPointIndex;
 };
 
 #endif // BASELINEPREPROCESSORCONTROLLER_IMPL_H

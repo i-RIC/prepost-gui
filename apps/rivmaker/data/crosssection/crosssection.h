@@ -23,6 +23,9 @@ public:
 	QPointF point2() const;
 	void setPoint2(const QPointF& p);
 
+	QPointF crossSectionPoint() const;
+	void setCrossSectionPoint(const QPointF& p);
+
 	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const;
 
 	void reverseDirection();
@@ -37,6 +40,8 @@ private:
 
 	QPointF m_point1;
 	QPointF m_point2;
+
+	QPointF m_crossSectionPoint;
 };
 
 #endif // CROSSSECTION_H

@@ -121,6 +121,9 @@ bool Project::sortCrossSectionsIfPossible()
 	for (CrossSection* cs : csVec) {
 		bl.getCrossingPoint(*cs, &crosses, &x, &y, &pos);
 		if (! crosses) {return false;}
+
+		cs->setCrossSectionPoint(QPointF(x, y));
+
 		posMap.insert(std::make_pair(pos, cs));
 	}
 

@@ -1,4 +1,6 @@
 #include "rivmakermainwindow.h"
+#include "../misc/geometryutil.h"
+
 
 #include <QApplication>
 #include <QSettings>
@@ -26,6 +28,17 @@ int main(int argc, char* argv[])
 		a.installTranslator(translator);
 	}
 */
+	/*
+	QPointF isec;
+	double r, s;
+	bool ok;
+
+	ok = GeometryUtil::intersectionPoint(QPointF(-1, 0), QPointF(1, 0), QPointF(0, -1), QPointF(0, 1), &isec, &r, &s);
+	ok = GeometryUtil::intersectionPoint(QPointF(-3, 0), QPointF(1, 0), QPointF(0, -1), QPointF(0, 1), &isec, &r, &s);
+	ok = GeometryUtil::intersectionPoint(QPointF(-1, 0), QPointF(1, 0), QPointF(0, -3), QPointF(0, 1), &isec, &r, &s);
+
+	ok = GeometryUtil::intersectionPoint(QPointF(-1, -1), QPointF(1, 1), QPointF(0, -3), QPointF(0, 1), &isec, &r, &s);
+	*/
 
 	RivmakerMainWindow w;
 	w.show();

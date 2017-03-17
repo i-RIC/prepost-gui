@@ -50,6 +50,16 @@ void CrossSection::setPoint2(const QPointF& p)
 	m_point2 = p;
 }
 
+QPointF CrossSection::crossSectionPoint() const
+{
+	return m_crossSectionPoint;
+}
+
+void CrossSection::setCrossSectionPoint(const QPointF& p)
+{
+	m_crossSectionPoint = p;
+}
+
 void CrossSection::getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const
 {
 

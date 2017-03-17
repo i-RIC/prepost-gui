@@ -11,6 +11,7 @@ class View : public QWidget
 
 private:
 	const static int CLICK_LIMIT;
+	const static int NEAR_LIMIT;
 
 public:
 	View(QWidget* parent);
@@ -31,6 +32,7 @@ public:
 	QPointF drawnPos(const QPoint& pos) const;
 
 	static bool isClick(const QPoint& pressP, const QPoint& releaseP);
+	static bool isNear(const QPointF& p1, const QPointF& p2);
 
 public slots:
 	void fit();

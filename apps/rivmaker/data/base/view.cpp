@@ -6,6 +6,7 @@
 #include <QPainter>
 
 const int View::CLICK_LIMIT = 3;
+const int View::NEAR_LIMIT = 3;
 
 View::View(QWidget* parent) :
 	QWidget {parent}
@@ -87,6 +88,14 @@ bool View::isClick(const QPoint& pressP, const QPoint& releaseP)
 {
 	if (qAbs(pressP.x() - releaseP.x()) > CLICK_LIMIT) {return false;}
 	if (qAbs(pressP.y() - releaseP.y()) > CLICK_LIMIT) {return false;}
+
+	return true;
+}
+
+bool View::isNear(const QPointF& p1, const QPointF& p2)
+{
+	if (qAbs(p1.x() - p2.x()) > NEAR_LIMIT) {return false;}
+	if (qAbs(p1.y() - p2.y()) > NEAR_LIMIT) {return false;}
 
 	return true;
 }

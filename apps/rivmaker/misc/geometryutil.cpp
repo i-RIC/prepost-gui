@@ -6,7 +6,7 @@ bool GeometryUtil::intersectionPoint(const QPointF& p1, const QPointF& p2, const
 {
 	double M =
 			(p2.x() - p1.x()) * (q2.y() - q1.y()) -
-			(p2.y() - p1.x()) * (q2.x() - q1.x());
+			(p2.y() - p1.y()) * (q2.x() - q1.x());
 	if (M == 0) {return false;}
 
 	QPointF p1q1 = q1 - p1;
