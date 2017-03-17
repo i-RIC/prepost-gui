@@ -97,6 +97,10 @@ void VerticalCrossSectionWindow::initPlot()
 	qwtW->enableAxis(QwtPlot::yLeft);
 
 	QwtPlotGrid* grid = new QwtPlotGrid();
+	grid->enableXMin(true);
+	grid->enableYMin(true);
+	grid->setMajorPen(Qt::lightGray, 1.0, Qt::SolidLine);
+	grid->setMinorPen(Qt::lightGray, 1.0, Qt::DashLine);
 	grid->attach(ui->qwtWidget);
 
 	QwtSymbol* s = nullptr;
@@ -146,16 +150,22 @@ void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* 
 	bool crosses;
 	double x, y, pos;
 
+	QPen pen;
+	pen.setWidth(2);
+	pen.setStyle(Qt::DashLine);
+
 	for (CrossSection* cs : csVec) {
 		baseLine.getCrossingPoint(cs, &crosses, &x, &y, &pos);
 		if (! crosses) {continue;}
 
-		QwtPlotMarker* marker = new QwtPlotMarker(cs->name());
+		QwtPlotMarker* marker = new QwtPlotMarker();
+		marker->setLabel(cs->name());
 		marker->setLabelAlignment(Qt::AlignLeft | Qt::AlignTop);
 		marker->setXValue(pos);
 		marker->setLabelOrientation(Qt::Vertical);
 		marker->setLineStyle(QwtPlotMarker::VLine);
 		marker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
+		marker->setLinePen(pen);
 		marker->attach(ui->qwtWidget);
 
 		if (*first || pos < *xmin) {*xmin = pos;}
