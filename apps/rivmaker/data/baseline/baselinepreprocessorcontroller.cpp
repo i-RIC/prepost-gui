@@ -106,6 +106,8 @@ void BaseLinePreProcessorController::finishDefining()
 	auto csCtrl = dynamic_cast<CrossSectionsPreProcessorController*> (model()->dataItemController(&(p->crossSections())));
 	csCtrl->rebuildStandardItemsAndViews();
 
+	p->emitUpdated();
+
 	updateView();
 }
 

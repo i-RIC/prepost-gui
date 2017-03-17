@@ -78,6 +78,7 @@ void CrossSectionPreProcessorController::finishDefining()
 	csCtrl->rebuildStandardItemsAndViews();
 
 	model()->select(item());
+	p->emitUpdated();
 
 	updateView();
 }

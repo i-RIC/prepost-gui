@@ -190,3 +190,8 @@ void Project::deleteRiverSurveyData()
 	delete impl->m_riverSurveyData;
 	impl->m_riverSurveyData = nullptr;
 }
+
+void Project::emitUpdated()
+{
+	emit updated();
+}

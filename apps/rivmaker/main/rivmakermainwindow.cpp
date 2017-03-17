@@ -59,6 +59,7 @@ void RivmakerMainWindow::newProject()
 	deleteProject();
 	impl->m_project = new Project();
 	impl->m_preProcessorWindow.setProject(impl->m_project);
+	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
 }
 
 void RivmakerMainWindow::importElevation()
@@ -74,7 +75,7 @@ void RivmakerMainWindow::importWaterSurfaceElevation()
 void RivmakerMainWindow::importSACGUIFile()
 {
 	SACGUIImporter::importData(impl->m_project, this);
-	impl->m_preProcessorWindow.update();
+	impl->m_preProcessorWindow.fit();
 }
 
 void RivmakerMainWindow::importBaseLine()
