@@ -7,6 +7,7 @@
 #include "private/baseline_impl.h"
 
 #include <QIcon>
+#include <QPointF>
 #include <QStandardItem>
 #include <QVector2D>
 
@@ -38,6 +39,8 @@ void BaseLine::setPolyLine(const std::vector<QPointF>& line)
 
 void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, double* y, double* pos)
 {
+	if (impl->m_polyLine.size() < 2) {return;}
+
 	*crosses = false;
 	*pos = 0;
 	QPointF intersection;
@@ -73,6 +76,25 @@ void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, doub
 			*pos = *pos + QVector2D(p2.x() - p1.x(), p2.y() - p1.y()).length();
 		}
 	}
+}
+
+double BaseLine::calcPosition(double x, double y) const
+{
+	std::map<double, double> distanceMap;
+	double pos = 0;
+	for (int i = 0; i < impl->m_polyLine.size() - 1; ++i) {
+		QPointF p1 = impl->m_polyLine.at(i);
+		QPointF p2 = impl->m_polyLine.at(i + 1);
+
+		QPointF np = GeometryUtil::nearestPoint(p1, p2, QPointF(x, y));
+		double point_pos = pos + QVector2D(np.x() - p1.x(), np.y() - p1.y()).length();
+		double distSqr = QVector2D(np.x() - x, np.y() - y).lengthSquared();
+		distanceMap.insert(std::make_pair(distSqr, point_pos));
+
+		pos += QVector2D(p2.x() - p1.x(), p2.y() - p1.y()).length();
+	}
+	auto it = distanceMap.begin();
+	return it->second;
 }
 
 void BaseLine::reverseDirection()

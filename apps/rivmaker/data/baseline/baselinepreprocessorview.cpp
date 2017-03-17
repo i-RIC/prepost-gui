@@ -20,8 +20,10 @@ QRectF BaseLinePreProcessorView::doBoundingBox() const
 	bool first = true;
 	double xmin, xmax, ymin, ymax;
 
-	auto bline = dynamic_cast<BaseLine*> (item());
-	for (QPointF p : bline->polyLine()) {
+	const auto& line = dynamic_cast<BaseLine*> (item())->polyLine();
+	if (line.size() < 2) {return QRect();}
+
+	for (QPointF p : line) {
 		if (first || p.x() < xmin) {xmin = p.x();}
 		if (first || p.x() > xmax) {xmax = p.x();}
 		if (first || p.y() < ymin) {ymin = p.y();}

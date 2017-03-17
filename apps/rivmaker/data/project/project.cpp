@@ -114,7 +114,9 @@ bool Project::sortCrossSectionsIfPossible()
 	auto& bl = baseLine();
 	auto csVec = crossSections().crossSectionVector();
 
-	std::map<double, CrossSection*> posMap;
+	if (bl.polyLine().size() < 2) {return false;}
+
+	std::multimap<double, CrossSection*> posMap;
 	bool crosses;
 	double x, y, pos;
 

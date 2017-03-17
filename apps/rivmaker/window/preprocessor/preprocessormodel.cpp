@@ -112,8 +112,8 @@ void PreProcessorModel::setupStandatdItemModel()
 
 	model->appendRow(standardItem(&(proj->elevationPoints())));
 	model->appendRow(standardItem(&(proj->waterSurfaceElevationPoints())));
-	model->appendRow(standardItem(&(proj->baseLine())));
 	model->appendRow(standardItem(&(proj->crossSections())));
+	model->appendRow(standardItem(&(proj->baseLine())));
 
 	if (proj->hasRiverSurveyData()) {
 		model->appendRow(standardItem(proj->riverSurveyData()));

@@ -17,9 +17,11 @@ CrossSectionPreProcessorView::~CrossSectionPreProcessorView()
 
 QRectF CrossSectionPreProcessorView::doBoundingBox() const
 {
+	auto cs = dynamic_cast<CrossSection*> (item());
+	if (! cs->isDefined()) {return QRectF();}
+
 	double xmin, xmax, ymin, ymax;
 
-	auto cs = dynamic_cast<CrossSection*> (item());
 	xmin = xmax = cs->point1().x();
 	ymin = ymax = cs->point1().y();
 

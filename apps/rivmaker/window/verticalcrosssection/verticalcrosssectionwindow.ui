@@ -41,12 +41,20 @@
      <property name="handleWidth">
       <number>5</number>
      </property>
-     <widget class="QWidget" name="viewWidget" native="true"/>
+     <widget class="QwtPlot" name="qwtWidget" native="true"/>
      <widget class="QTableWidget" name="tableWidget"/>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QWidget</extends>
+   <header>qwt_plot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../rivmaker.qrc"/>
  </resources>
