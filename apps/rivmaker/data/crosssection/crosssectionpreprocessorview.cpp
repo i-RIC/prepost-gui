@@ -1,6 +1,7 @@
 #include "crosssection.h"
 #include "crosssectionpreprocessorview.h"
 #include "crosssectionpreprocessorviewhelper.h"
+#include "crosssectionpreprocessorviewlabelhelper.h"
 
 #include <QRectF>
 
@@ -8,6 +9,7 @@ CrossSectionPreProcessorView::CrossSectionPreProcessorView(Model* model, CrossSe
 	DataItemView {model, item}
 {
 	viewHelpers().push_back(new CrossSectionPreProcessorViewHelper(this));
+	viewHelpers().push_back(new CrossSectionPreProcessorViewLabelHelper(this));
 }
 
 CrossSectionPreProcessorView::~CrossSectionPreProcessorView()

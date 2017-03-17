@@ -18,6 +18,11 @@ bool CrossSection::isDefined() const
 	return m_isDefined;
 }
 
+QString CrossSection::name() const
+{
+	return tr("Cross Section %1").arg(id() + 1);
+}
+
 int CrossSection::id() const
 {
 	return m_id;
@@ -74,7 +79,7 @@ void CrossSection::reverseDirection()
 
 QStandardItem* CrossSection::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(tr("Cross Section %1").arg(id() + 1));
+	auto item = new QStandardItem(name());
 	setupStandardItem(item);
 	return item;
 }

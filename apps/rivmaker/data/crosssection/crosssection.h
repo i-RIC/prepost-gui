@@ -14,6 +14,8 @@ public:
 
 	bool isDefined() const;
 
+	QString name() const;
+
 	int id() const;
 	void setId(int id);
 
