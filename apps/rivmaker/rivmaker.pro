@@ -94,10 +94,15 @@ HEADERS += dialogs/mousehelpdialog.h \
 		data/arbitraryhwm/arbitraryhwmpreprocessorview.h \
 		data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.h \
 		data/watersurfaceelevationpoints/private/watersurfaceelevationpoints_impl.h \
-		io/sacguiimporter.h
+		io/sacguiimporter.h \
+    dialogs/coordinateseditdialog.h \
+    dialogs/private/coordinateeditwidget.h \
+    data/base/coordinatesi.h \
+    dialogs/private/coordinateseditdialog_impl.h
 FORMS += dialogs/mousehelpdialog.ui \
 				 main/rivmakermainwindow.ui \
-				 window/verticalcrosssection/verticalcrosssectionwindow.ui
+				 window/verticalcrosssection/verticalcrosssectionwindow.ui \
+    dialogs/coordinateseditdialog.ui
 SOURCES += dialogs/mousehelpdialog.cpp \
 					 main/main.cpp \
 					 main/rivmakermainwindow.cpp \
@@ -153,5 +158,7 @@ SOURCES += dialogs/mousehelpdialog.cpp \
 		data/arbitraryhwm/arbitraryhwm.cpp \
 		data/arbitraryhwm/arbitraryhwmpreprocessorview.cpp \
 		data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.cpp \
-		io/sacguiimporter.cpp
+		io/sacguiimporter.cpp \
+    dialogs/coordinateseditdialog.cpp \
+    dialogs/private/coordinateeditwidget.cpp
 RESOURCES += rivmaker.qrc

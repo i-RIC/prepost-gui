@@ -76,6 +76,22 @@ void CrossSection::setPoint(int index, const QPointF& p)
 	*point = p;
 }
 
+std::vector<QPointF> CrossSection::coordinates() const
+{
+	std::vector<QPointF> ret;
+
+	ret.push_back(m_point1);
+	ret.push_back(m_point2);
+
+	return ret;
+}
+
+void CrossSection::setCoordinates(const std::vector<QPointF>& coords)
+{
+	m_point1 = coords.at(0);
+	m_point2 = coords.at(1);
+}
+
 void CrossSection::getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const
 {
 

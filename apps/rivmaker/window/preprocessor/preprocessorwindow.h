@@ -24,8 +24,11 @@ public:
 	void zoomIn() override;
 	void zoomOut() override;
 
-	void addCrossSection();
-	void deleteCrossSection();
+	void crossSectionAdd();
+	void crossSectionDelete();
+	void crossSectionEditCoordinates();
+
+	void baseLineEditCoordinates();
 
 private:
 	void closeEvent(QCloseEvent *e);

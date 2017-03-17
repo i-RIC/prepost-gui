@@ -72,14 +72,19 @@ void PreProcessorWindow::zoomOut()
 	impl->m_view.zoomOut();
 }
 
-void PreProcessorWindow::addCrossSection()
+void PreProcessorWindow::crossSectionAdd()
 {
 	impl->m_model.addCrossSection();
 }
 
-void PreProcessorWindow::deleteCrossSection()
+void PreProcessorWindow::crossSectionDelete()
 {
 	impl->m_model.deleteCrossSection();
+}
+
+void PreProcessorWindow::crossSectionEditCoordinates()
+{
+	impl->m_model.editCrossSectionCoordinates();
 }
 
 void PreProcessorWindow::closeEvent(QCloseEvent *e)

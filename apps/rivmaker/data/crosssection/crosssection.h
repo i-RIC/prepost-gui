@@ -2,11 +2,12 @@
 #define CROSSSECTION_H
 
 #include "../base/dataitem.h"
+#include "../base/coordinatesi.h"
 #include "../../window/preprocessor/preprocessordataitemi.h"
 
 #include <QPointF>
 
-class CrossSection : public DataItem, public PreProcessorDataItemI
+class CrossSection : public DataItem, public PreProcessorDataItemI, public CoordinatesI
 {
 public:
 	CrossSection(DataItem* parent);
@@ -27,6 +28,9 @@ public:
 
 	QPointF point(int index) const;
 	void setPoint(int index, const QPointF& p);
+
+	std::vector<QPointF> coordinates() const override;
+	void setCoordinates(const std::vector<QPointF>& coords) override;
 
 	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const;
 

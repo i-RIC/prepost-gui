@@ -20,6 +20,7 @@ public:
 
 	void addCrossSection();
 	void deleteCrossSection();
+	void editCrossSectionCoordinates();
 
 	void setupStandardItemAndViewAndController(PreProcessorDataItemI *newItem, DataItem* parent);
 

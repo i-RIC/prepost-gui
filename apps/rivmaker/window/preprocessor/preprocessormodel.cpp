@@ -7,6 +7,7 @@
 #include "../../data/riversurveydata/riversurveydata.h"
 #include "../../data/riversurveydatadummy/riversurveydatadummy.h"
 #include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
+#include "../../dialogs/coordinateseditdialog.h"
 
 #include "preprocessordataitemi.h"
 #include "preprocessormodel.h"
@@ -73,8 +74,22 @@ void PreProcessorModel::deleteCrossSection()
 		QMessageBox::warning(view(), tr("Warning"), tr("To delete a Cross Section, select it at Object Browser."));
 		return;
 	}
-	auto& crossSections = impl->m_project->crossSections();
 	deleteItem(s);
+}
+
+void PreProcessorModel::editCrossSectionCoordinates()
+{
+	auto s = selectedItem();
+	auto cs = dynamic_cast<CrossSection*> (s);
+	if (cs == nullptr) {
+		QMessageBox::warning(view(), tr("Warning"), tr("To edit Cross Section coordinates, select it at Object Browser."));
+		return;
+	}
+
+	CoordinatesEditDialog dialog(view());
+	dialog.setOffset(impl->m_project->offset());
+	dialog.setTarget(cs);
+	dialog.exec();
 }
 
 void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataItemI* newItem, DataItem* parent)

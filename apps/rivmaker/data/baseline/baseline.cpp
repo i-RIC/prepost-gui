@@ -37,6 +37,16 @@ void BaseLine::setPolyLine(const std::vector<QPointF>& line)
 	impl->m_polyLine = line;
 }
 
+std::vector<QPointF> BaseLine::coordinates() const
+{
+	return polyLine();
+}
+
+void BaseLine::setCoordinates(const std::vector<QPointF>& coords)
+{
+	setPolyLine(coords);
+}
+
 void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, double* y, double* pos) const
 {
 	if (impl->m_polyLine.size() < 2) {return;}

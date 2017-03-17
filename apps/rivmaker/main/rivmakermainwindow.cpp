@@ -172,17 +172,17 @@ void RivmakerMainWindow::baseLineDelete()
 
 void RivmakerMainWindow::crossSectionAdd()
 {
-	impl->m_preProcessorWindow.addCrossSection();
+	impl->m_preProcessorWindow.crossSectionAdd();
 }
 
 void RivmakerMainWindow::crossSectionEditCoordinates()
 {
-
+	impl->m_preProcessorWindow.crossSectionEditCoordinates();
 }
 
 void RivmakerMainWindow::crossSectionDelete()
 {
-	impl->m_preProcessorWindow.deleteCrossSection();
+	impl->m_preProcessorWindow.crossSectionDelete();
 }
 
 void RivmakerMainWindow::viewToggleToolBar(bool visible)
