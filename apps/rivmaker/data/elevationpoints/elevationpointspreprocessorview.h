@@ -2,16 +2,13 @@
 #define ELEVATIONPOINTSPREPROCESSORVIEW_H
 
 #include "elevationpoints.h"
-#include "../base/dataitemview.h"
+#include "../points/pointspreprocessorview.h"
 
-class ElevationPointsPreprocessorView : public DataItemView
+class ElevationPointsPreprocessorView : public PointsPreProcessorView
 {
 public:
 	ElevationPointsPreprocessorView(Model* model, ElevationPoints* item);
 	~ElevationPointsPreprocessorView();
-
-private:
-	QRectF doBoundingBox() const override;
 };
 
 #endif // ELEVATIONPOINTSPREPROCESSORVIEW_H

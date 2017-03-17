@@ -6,7 +6,9 @@
 
 #include <vector>
 
-class QVector3D;
+class LeftBankHWM;
+class RightBankHWM;
+class ArbitraryHWM;
 
 class WaterSurfaceElevationPoints : public DataItem, public PreProcessorDataItemI
 {
@@ -16,27 +18,25 @@ public:
 	WaterSurfaceElevationPoints(DataItem* parent);
 	~WaterSurfaceElevationPoints();
 
-	const std::vector<QVector3D*>& leftBankPoints() const;
-	std::vector<QVector3D*>& leftBankPoints();
+	const LeftBankHWM& leftBankHWM() const;
+	LeftBankHWM& leftBankHWM();
 
-	const std::vector<QVector3D*>& rightBankPoints() const;
-	std::vector<QVector3D*>& rightBankPoints();
+	const RightBankHWM& rightBankHWM() const;
+	RightBankHWM& rightBankHWM();
 
-	const std::vector<QVector3D*>& arbitraryPoints() const;
-	std::vector<QVector3D*> arbitraryPoints();
-
-	void clearPoints();
-
-	void importData(QWidget* w);
-	void exportData(QWidget* w);
+	const ArbitraryHWM& arbitraryHWM() const;
+	ArbitraryHWM& arbitraryHWM();
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 
 private:
-	std::vector<QVector3D*> m_leftBankPoints;
-	std::vector<QVector3D*> m_rightBankPoints;
-	std::vector<QVector3D*> m_arbitraryPoints;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/watersurfaceelevationpoints_impl.h"
+#endif // _DEBUG
 
 #endif // WATERSURFACEELEVATIONPOINTS_H

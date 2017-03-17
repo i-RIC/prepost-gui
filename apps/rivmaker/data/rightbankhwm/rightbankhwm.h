@@ -1,18 +1,18 @@
-#ifndef ELEVATIONPOINTS_H
-#define ELEVATIONPOINTS_H
+#ifndef RIGHTBANKHWM_H
+#define RIGHTBANKHWM_H
 
 #include "../points/points.h"
 
-class ElevationPoints : public Points
+class RightBankHWM : public Points
 {
 	Q_OBJECT
 
 public:
-	ElevationPoints(DataItem* parent);
-	~ElevationPoints();
+	RightBankHWM(DataItem* parent);
+	~RightBankHWM();
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };
 
-#endif // ELEVATIONPOINTS_H
+#endif // RIGHTBANKHWM_H

@@ -2,6 +2,7 @@
 #include "rivmakermainwindow.h"
 #include "window/viewwindowi.h"
 #include "../dialogs/mousehelpdialog.h"
+#include "../io/sacguiimporter.h"
 
 #include "ui_rivmakermainwindow.h"
 
@@ -72,7 +73,8 @@ void RivmakerMainWindow::importWaterSurfaceElevation()
 
 void RivmakerMainWindow::importSACGUIFile()
 {
-
+	SACGUIImporter::importData(impl->m_project, this);
+	impl->m_preProcessorWindow.update();
 }
 
 void RivmakerMainWindow::importBaseLine()

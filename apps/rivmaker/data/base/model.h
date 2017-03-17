@@ -72,6 +72,9 @@ private slots:
 
 	void handleObjectBrowserSelection(const QModelIndex& current);
 
+protected:
+	ObjectBrowserView* objectBrowserView() const;
+
 private:
 	virtual RootDataItem* rootDataItem() const = 0;
 

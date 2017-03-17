@@ -1,92 +1,64 @@
 #include "watersurfaceelevationpoints.h"
-#include "watersurfaceelevationpointspreprocessorview.h"
+#include "private/watersurfaceelevationpoints_impl.h"
 #include "../project/project.h"
-#include "../../io/points/pointsimporter.h"
+#include "../base/dataitemview.h"
 
 #include <QStandardItem>
-#include <QVector3D>
 
-namespace {
-
-void clearVector(std::vector<QVector3D*>* vec)
-{
-	for (auto v : *vec) {
-		delete v;
-	}
-	vec->clear();
-}
-
-} // namespace
+WaterSurfaceElevationPoints::Impl::Impl(WaterSurfaceElevationPoints *parent) :
+	m_arbitraryHWM {parent},
+	m_leftBankHWM {parent},
+	m_rightBankHWM {parent}
+{}
 
 WaterSurfaceElevationPoints::WaterSurfaceElevationPoints(DataItem *parent) :
-	DataItem {parent}
+	DataItem {parent},
+	impl {new Impl {this}}
 {}
 
 WaterSurfaceElevationPoints::~WaterSurfaceElevationPoints()
 {
-	clearPoints();
+	delete impl;
 }
 
-const std::vector<QVector3D*>& WaterSurfaceElevationPoints::leftBankPoints() const
+const LeftBankHWM& WaterSurfaceElevationPoints::leftBankHWM() const
 {
-	return m_leftBankPoints;
+	return impl->m_leftBankHWM;
 }
 
-std::vector<QVector3D*>& WaterSurfaceElevationPoints::leftBankPoints()
+LeftBankHWM& WaterSurfaceElevationPoints::leftBankHWM()
 {
-	return m_leftBankPoints;
+	return impl->m_leftBankHWM;
 }
 
-const std::vector<QVector3D*>& WaterSurfaceElevationPoints::rightBankPoints() const
+const RightBankHWM& WaterSurfaceElevationPoints::rightBankHWM() const
 {
-	return m_rightBankPoints;
+	return impl->m_rightBankHWM;
 }
 
-std::vector<QVector3D*>& WaterSurfaceElevationPoints::rightBankPoints()
+RightBankHWM& WaterSurfaceElevationPoints::rightBankHWM()
 {
-	return m_rightBankPoints;
+	return impl->m_rightBankHWM;
 }
 
-const std::vector<QVector3D*>& WaterSurfaceElevationPoints::arbitraryPoints() const
+const ArbitraryHWM& WaterSurfaceElevationPoints::arbitraryHWM() const
 {
-	return m_arbitraryPoints;
+	return impl->m_arbitraryHWM;
 }
 
-std::vector<QVector3D*> WaterSurfaceElevationPoints::arbitraryPoints()
+ArbitraryHWM& WaterSurfaceElevationPoints::arbitraryHWM()
 {
-	return m_arbitraryPoints;
-}
-
-void WaterSurfaceElevationPoints::clearPoints()
-{
-	clearVector(&m_leftBankPoints);
-	clearVector(&m_rightBankPoints);
-	clearVector(&m_arbitraryPoints);
-}
-
-void WaterSurfaceElevationPoints::importData(QWidget* w)
-{
-	std::vector<QVector3D*> newPoints;
-	bool ok = PointsImporter::importData(&newPoints, &(project()->offset()), w);
-	if (! ok) {return;}
-
-	clearPoints();
-	m_arbitraryPoints = newPoints;
-}
-
-void WaterSurfaceElevationPoints::exportData(QWidget* w)
-{
-
+	return impl->m_arbitraryHWM;
 }
 
 QStandardItem* WaterSurfaceElevationPoints::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(tr("Water Elevation Points"));
+	auto item = new QStandardItem(QIcon(":/images/iconFolder.png"), tr("Water Elevation Points"));
 	setupStandardItem(item);
 	return item;
 }
 
 DataItemView* WaterSurfaceElevationPoints::buildPreProcessorDataItemView(Model* model)
 {
-	return new WaterSurfaceElevationPointsPreProcessorView(model, this);
+	return new DataItemView(model, this);
 }

@@ -21,9 +21,8 @@ public:
 
 	ElevationPoints m_elevationPoints;
 	WaterSurfaceElevationPoints m_waterSurfaceElevationPoints;
-	BaseLine m_baseLine;
-
 	CrossSections m_crossSections;
+	BaseLine m_baseLine;
 
 	RiverSurveyData* m_riverSurveyData;
 	RiverSurveyDataDummy m_riverSurveyDataDummy;

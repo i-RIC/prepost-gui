@@ -7,6 +7,7 @@
 #include "preprocessordataitemi.h"
 #include "preprocessormodel.h"
 #include "private/preprocessormodel_impl.h"
+#include "objectbrowser/objectbrowserview.h"
 
 #include <QMessageBox>
 
@@ -55,6 +56,8 @@ void PreProcessorModel::addCrossSection()
 	if (ctrl == nullptr) {return;}
 
 	ctrl->addCrossSection();
+
+	objectBrowserView()->expandAll();
 
 	view()->update();
 }
@@ -117,6 +120,7 @@ void PreProcessorModel::setupStandatdItemModel()
 	} else {
 		model->appendRow(standardItem(&(proj->riverSurveyDataDummy())));
 	}
+	objectBrowserView()->expandAll();
 }
 
 RootDataItem* PreProcessorModel::rootDataItem() const

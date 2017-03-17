@@ -1,9 +1,9 @@
 #ifndef ELEVATIONPOINTSPREPROCESSORVIEWHELPER_H
 #define ELEVATIONPOINTSPREPROCESSORVIEWHELPER_H
 
-#include "../base/dataitemviewhelperi.h"
+#include "../points/pointspreprocessorviewhelper.h"
 
-class ElevationPointsPreProcessorViewHelper : public DataItemViewHelperI
+class ElevationPointsPreProcessorViewHelper : public PointsPreProcessorViewHelper
 {
 public:
 	ElevationPointsPreProcessorViewHelper(DataItemView* v);

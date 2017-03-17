@@ -248,3 +248,8 @@ void Model::handleObjectBrowserSelection(const QModelIndex& current)
 
 	view()->update();
 }
+
+ObjectBrowserView* Model::objectBrowserView() const
+{
+	return impl->m_objectBrowserView;
+}

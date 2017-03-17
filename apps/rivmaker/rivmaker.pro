@@ -41,8 +41,6 @@ HEADERS += dialogs/mousehelpdialog.h \
            data/riversurveydatacrosssection/riversurveydatacrosssection.h \
            data/riversurveydatadummy/riversurveydatadummy.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.h \
-           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
-           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorviewhelper.h \
            io/points/pointscsvimporter.h \
            io/points/pointsimporter.h \
            io/points/pointsimporteri.h \
@@ -66,7 +64,21 @@ HEADERS += dialogs/mousehelpdialog.h \
            window/preprocessor/private/preprocessormodel_impl.h \
            window/preprocessor/private/preprocessorwindow_impl.h \
     data/crosssection/crosssectionpreprocessorviewlabelhelper.h \
-    data/baseline/baselinepreprocessorviewlabelhelper.h
+    data/baseline/baselinepreprocessorviewlabelhelper.h \
+    data/points/points.h \
+    data/points/pointspreprocessorview.h \
+    data/points/pointspreprocessorviewhelper.h \
+    data/leftbankhwm/leftbankhwm.h \
+    data/leftbankhwm/leftbankhwmpreprocessorview.h \
+    data/leftbankhwm/leftbankhwmpreprocessorviewhelper.h \
+    data/rightbankhwm/rightbankhwm.h \
+    data/rightbankhwm/rightbankhwmpreprocessorview.h \
+    data/rightbankhwm/rightbankhwmpreprocessorviewhelper.h \
+    data/arbitraryhwm/arbitraryhwm.h \
+    data/arbitraryhwm/arbitraryhwmpreprocessorview.h \
+    data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.h \
+    data/watersurfaceelevationpoints/private/watersurfaceelevationpoints_impl.h \
+    io/sacguiimporter.h
 FORMS += dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
@@ -102,8 +114,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            data/riversurveydatacrosssection/riversurveydatacrosssection.cpp \
            data/riversurveydatadummy/riversurveydatadummy.cpp \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
-           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.cpp \
-           data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorviewhelper.cpp \
            io/points/pointscsvimporter.cpp \
            io/points/pointsimporter.cpp \
            window/crosssection/crosssectionwindow.cpp \
@@ -114,5 +124,18 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
            window/preprocessor/objectbrowser/objectbrowserview.cpp \
     data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp \
-    data/baseline/baselinepreprocessorviewlabelhelper.cpp
+    data/baseline/baselinepreprocessorviewlabelhelper.cpp \
+    data/points/points.cpp \
+    data/points/pointspreprocessorview.cpp \
+    data/points/pointspreprocessorviewhelper.cpp \
+    data/leftbankhwm/leftbankhwm.cpp \
+    data/leftbankhwm/leftbankhwmpreprocessorview.cpp \
+    data/leftbankhwm/leftbankhwmpreprocessorviewhelper.cpp \
+    data/rightbankhwm/rightbankhwm.cpp \
+    data/rightbankhwm/rightbankhwmpreprocessorview.cpp \
+    data/rightbankhwm/rightbankhwmpreprocessorviewhelper.cpp \
+    data/arbitraryhwm/arbitraryhwm.cpp \
+    data/arbitraryhwm/arbitraryhwmpreprocessorview.cpp \
+    data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.cpp \
+    io/sacguiimporter.cpp
 RESOURCES += rivmaker.qrc

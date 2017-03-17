@@ -1,18 +1,18 @@
-#ifndef ELEVATIONPOINTS_H
-#define ELEVATIONPOINTS_H
+#ifndef ARBITRARYHWM_H
+#define ARBITRARYHWM_H
 
 #include "../points/points.h"
 
-class ElevationPoints : public Points
+class ArbitraryHWM : public Points
 {
 	Q_OBJECT
 
 public:
-	ElevationPoints(DataItem* parent);
-	~ElevationPoints();
+	ArbitraryHWM(DataItem* parent);
+	~ArbitraryHWM();
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };
 
-#endif // ELEVATIONPOINTS_H
+#endif // ARBITRARYHWM_H

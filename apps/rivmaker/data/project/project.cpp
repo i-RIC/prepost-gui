@@ -12,8 +12,8 @@ Project::Impl::Impl(Project *project) :
 	m_rootDataItem {project},
 	m_elevationPoints {&m_rootDataItem},
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
-	m_baseLine {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
+	m_baseLine {&m_rootDataItem},
 	m_riverSurveyData {nullptr},
 	m_riverSurveyDataDummy {&m_rootDataItem}
 {}
@@ -150,7 +150,7 @@ void Project::importElevationPoints(QWidget* w)
 
 void Project::importWaterSurfaceElevationPoints(QWidget* w)
 {
-	waterSurfaceElevationPoints().importData(w);
+	waterSurfaceElevationPoints().arbitraryHWM().importData(w);
 }
 
 void Project::importBaseLine(QWidget* w)
