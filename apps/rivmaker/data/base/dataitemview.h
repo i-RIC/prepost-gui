@@ -18,6 +18,7 @@ public:
 	DataItemView(Model* model, DataItem* item);
 	virtual ~DataItemView();
 
+	DataItemView* parentView() const;
 	void setParentView(DataItemView* parentView);
 
 	void discardDrawCache();

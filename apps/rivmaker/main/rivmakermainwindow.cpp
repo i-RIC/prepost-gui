@@ -48,6 +48,7 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 
 RivmakerMainWindow::~RivmakerMainWindow()
 {
+	deleteProject();
 	delete ui;
 	delete impl;
 }

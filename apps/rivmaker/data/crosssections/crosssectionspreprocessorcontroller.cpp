@@ -23,16 +23,18 @@ void CrossSectionsPreProcessorController::addCrossSection()
 void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 {
 	auto m = model();
-	auto mySItem = m->standardItem(item());
-	for (auto cs : item()->childItems()) {
+	auto itm = item();
+	auto mySItem = m->standardItem(itm);
+	auto myView = m->dataItemView(itm);
+	for (auto cs : itm->childItems()) {
 		auto sItem = m->standardItem(cs);
 		mySItem->takeRow(sItem->row());
 		m->removeStandardItem(cs);
 
+		myView->removeChildItem(m->dataItemView(cs));
 		m->removeDataItemView(cs);
 	}
 
-	auto myView = m->dataItemView(item());
 	int id = 0;
 	for (auto cs : item()->childItems()) {
 		auto cs2 = dynamic_cast<CrossSection*> (cs);
@@ -42,7 +44,7 @@ void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 		m->addStandardItem(cs, sItem);
 
 		auto v = cs2->buildPreProcessorDataItemView(m);
-		m->addDataItemView(cs, v);
 		myView->addChildItem(v);
+		m->addDataItemView(cs, v);
 	}
 }

@@ -198,6 +198,9 @@ void Model::removeDataItemView(DataItem* item)
 	auto it = impl->m_viewMap.find(item);
 	if (it == impl->m_viewMap.end()) {return;}
 
+	if (it->second->parentView() != nullptr) {
+		it->second->parentView()->removeChildItem(it->second);
+	}
 	delete it->second;
 	impl->m_viewMap.erase(it);
 }

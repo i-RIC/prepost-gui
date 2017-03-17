@@ -95,6 +95,8 @@ void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataIt
 void PreProcessorModel::setupStandatdItemModel()
 {
 	clearStandardItems();
+	clearDataItemViews();
+	clearDataItemControllers();
 
 	auto proj = impl->m_project;
 	auto model = standardItemModel();

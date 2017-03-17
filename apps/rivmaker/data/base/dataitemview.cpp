@@ -19,11 +19,6 @@ DataItemView::Impl::~Impl()
 	for (auto helper : m_viewHelpers) {
 		delete helper;
 	}
-
-	auto tmpChildren = m_childItems;
-	for (auto c : tmpChildren) {
-		delete c;
-	}
 }
 
 DataItemView::DataItemView(Model* model, DataItem* item) :
@@ -32,11 +27,12 @@ DataItemView::DataItemView(Model* model, DataItem* item) :
 
 DataItemView::~DataItemView()
 {
-	if (impl->m_parentView != nullptr) {
-		impl->m_parentView->removeChildItem(this);
-	}
-
 	delete impl;
+}
+
+DataItemView* DataItemView::parentView() const
+{
+	return impl->m_parentView;
 }
 
 void DataItemView::setParentView(DataItemView* parentView)
