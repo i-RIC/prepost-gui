@@ -1,6 +1,7 @@
 #include "baseline.h"
 #include "baselinepreprocessorview.h"
 #include "baselinepreprocessorviewhelper.h"
+#include "baselinepreprocessorviewlabelhelper.h"
 
 #include <QRectF>
 
@@ -8,6 +9,7 @@ BaseLinePreProcessorView::BaseLinePreProcessorView(Model* model, BaseLine* item)
 	DataItemView {model, item}
 {
 	viewHelpers().push_back(new BaseLinePreProcessorViewHelper(this));
+	viewHelpers().push_back(new BaseLinePreProcessorViewLabelHelper(this));
 }
 
 BaseLinePreProcessorView::~BaseLinePreProcessorView()

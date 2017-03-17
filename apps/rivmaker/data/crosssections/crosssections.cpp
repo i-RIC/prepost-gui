@@ -36,7 +36,7 @@ std::vector<CrossSection*> CrossSections::crossSectionVector() const
 
 QStandardItem* CrossSections::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(tr("Cross Sections"));
+	auto item = new QStandardItem(QIcon(":/images/iconFolder.png"), tr("Cross Sections"));
 	setupStandardItem(item);
 	return item;
 }

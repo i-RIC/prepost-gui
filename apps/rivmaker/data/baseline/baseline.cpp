@@ -6,6 +6,7 @@
 
 #include "private/baseline_impl.h"
 
+#include <QIcon>
 #include <QStandardItem>
 #include <QVector2D>
 
@@ -35,7 +36,7 @@ void BaseLine::setPolyLine(const std::vector<QPointF>& line)
 	impl->m_polyLine = line;
 }
 
-void BaseLine::getCrossingPoint(const CrossSection& cs, bool* crosses, double* x, double* y, double* pos)
+void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, double* y, double* pos)
 {
 	*crosses = false;
 	*pos = 0;
@@ -46,7 +47,7 @@ void BaseLine::getCrossingPoint(const CrossSection& cs, bool* crosses, double* x
 		QPointF p2 = impl->m_polyLine.at(i + 1);
 		bool localCross = GeometryUtil::intersectionPoint(
 					p1, p2,
-					cs.point1(), cs.point2(), &intersection, &r, &s);
+					cs->point1(), cs->point2(), &intersection, &r, &s);
 		if (localCross) {
 			if (r < 0 || r > 1) {localCross = false;}
 			if (s < 0 || s > 1) {localCross = false;}
@@ -58,16 +59,20 @@ void BaseLine::getCrossingPoint(const CrossSection& cs, bool* crosses, double* x
 			*y = intersection.y();
 			*pos = *pos + QVector2D(*x - p1.x(), *y - p1.y()).length();
 			*crosses = true;
+
+			// reverse direction of crosssection if needed.
+			QPointF v1 = p2 - p1;
+			QPointF v2 = cs->point2() - cs->point1();
+			double outerProd = v1.x() * v2.y() - v1.y() * v1.x();
+			if (outerProd < 0) {
+				cs->reverseDirection();
+			}
 			return;
-		} else {
+		}
+		else {
 			*pos = *pos + QVector2D(p2.x() - p1.x(), p2.y() - p1.y()).length();
 		}
 	}
-}
-
-void BaseLine::normalizeDirection(CrossSection* cs) const
-{
-	// @todo implement this
 }
 
 void BaseLine::reverseDirection()
@@ -77,7 +82,7 @@ void BaseLine::reverseDirection()
 
 QStandardItem* BaseLine::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(tr("Base Line"));
+	auto item = new QStandardItem(QIcon(":/images/iconBaseline.png"),tr("Base Line"));
 	setupStandardItem(item);
 	return item;
 }

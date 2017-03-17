@@ -101,7 +101,7 @@
    </widget>
    <widget class="QMenu" name="crosssectionLineMenu">
     <property name="title">
-     <string>&amp;Cross Section Line</string>
+     <string>&amp;Cross Section</string>
     </property>
     <addaction name="crosssectionLineAddAction"/>
     <addaction name="separator"/>

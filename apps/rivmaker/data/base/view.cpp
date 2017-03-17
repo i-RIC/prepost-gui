@@ -2,6 +2,7 @@
 #include "view.h"
 #include "dataitemcontroller.h"
 
+#include <QColor>
 #include <QMouseEvent>
 #include <QPainter>
 
@@ -133,7 +134,7 @@ void View::rotate90()
 void View::paintEvent(QPaintEvent* event)
 {
 	QPainter painter(this);
-	painter.fillRect(rect(), Qt::lightGray);
+	painter.fillRect(rect(), QColor(250, 250, 250));
 
 	model()->rootDataItemView()->draw(&painter);
 }

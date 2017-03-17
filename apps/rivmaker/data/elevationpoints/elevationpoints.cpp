@@ -3,6 +3,7 @@
 #include "../project/project.h"
 #include "../../io/points/pointsimporter.h"
 
+#include <QIcon>
 #include <QStandardItem>
 #include <QVector3D>
 
@@ -50,7 +51,7 @@ void ElevationPoints::exportData(QWidget* w)
 
 QStandardItem* ElevationPoints::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(tr("Elevation Points"));
+	auto item = new QStandardItem(QIcon(":/images/iconElevationPoints.png"), tr("Elevation Points"));
 	setupStandardItem(item);
 	return item;
 }

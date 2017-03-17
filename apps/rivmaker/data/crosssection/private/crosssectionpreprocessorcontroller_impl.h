@@ -10,9 +10,12 @@ public:
 		Normal,
 		BeforeDefining,
 		Defining,
+		MovePoint,
+		MovePointPrepare,
 	};
 
 	Mode m_mode;
+	int m_movingPointIndex = 0;
 };
 
 #endif // CROSSSECTIONPREPROCESSORCONTROLLER_IMPL_H

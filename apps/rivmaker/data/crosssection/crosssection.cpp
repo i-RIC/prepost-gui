@@ -2,6 +2,7 @@
 #include "crosssectionpreprocessorcontroller.h"
 #include "crosssectionpreprocessorview.h"
 
+#include <QIcon>
 #include <QStandardItem>
 
 CrossSection::CrossSection(DataItem* parent) :
@@ -20,7 +21,7 @@ bool CrossSection::isDefined() const
 
 QString CrossSection::name() const
 {
-	return tr("Cross Section %1").arg(id() + 1);
+	return tr("X%1").arg(id() + 1);
 }
 
 int CrossSection::id() const
@@ -55,14 +56,24 @@ void CrossSection::setPoint2(const QPointF& p)
 	m_point2 = p;
 }
 
-QPointF CrossSection::crossSectionPoint() const
+QPointF CrossSection::point(int index) const
 {
-	return m_crossSectionPoint;
+	if (index % 2 == 0) {
+		return m_point1;
+	} else {
+		return m_point2;
+	}
 }
 
-void CrossSection::setCrossSectionPoint(const QPointF& p)
+void CrossSection::setPoint(int index, const QPointF& p)
 {
-	m_crossSectionPoint = p;
+	QPointF* point = nullptr;
+	if (index % 2 == 0) {
+		point = &m_point1;
+	} else {
+		point = &m_point2;
+	}
+	*point = p;
 }
 
 void CrossSection::getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const
@@ -79,7 +90,7 @@ void CrossSection::reverseDirection()
 
 QStandardItem* CrossSection::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(name());
+	auto item = new QStandardItem(QIcon(":/images/iconCrossSection.png"), name());
 	setupStandardItem(item);
 	return item;
 }

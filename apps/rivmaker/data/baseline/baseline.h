@@ -22,8 +22,7 @@ public:
 	const std::vector<QPointF>& polyLine() const;
 	void setPolyLine(const std::vector<QPointF>& line);
 
-	void getCrossingPoint(const CrossSection& cs, bool* crosses, double* x, double* y, double* pos);
-	void normalizeDirection(CrossSection* cs) const;
+	void getCrossingPoint(CrossSection* cs, bool* crosses, double* x, double* y, double* pos);
 
 	void reverseDirection();
 

@@ -65,7 +65,8 @@ HEADERS += dialogs/mousehelpdialog.h \
            window/preprocessor/objectbrowser/objectbrowserview.h \
            window/preprocessor/private/preprocessormodel_impl.h \
            window/preprocessor/private/preprocessorwindow_impl.h \
-    data/crosssection/crosssectionpreprocessorviewlabelhelper.h
+    data/crosssection/crosssectionpreprocessorviewlabelhelper.h \
+    data/baseline/baselinepreprocessorviewlabelhelper.h
 FORMS += dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
@@ -112,5 +113,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
            window/verticalcrosssection/verticalcrosssectionwindow.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
            window/preprocessor/objectbrowser/objectbrowserview.cpp \
-    data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp
+    data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp \
+    data/baseline/baselinepreprocessorviewlabelhelper.cpp
 RESOURCES += rivmaker.qrc

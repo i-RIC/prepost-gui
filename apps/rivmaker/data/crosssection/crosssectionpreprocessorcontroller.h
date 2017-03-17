@@ -12,9 +12,12 @@ public:
 
 	void mouseMoveEvent(QMouseEvent* event, View* v) override;
 	void mousePressEvent(QMouseEvent* event, View* v) override;
-	void mouseReleaseEvent(QMouseEvent*, View*) override;
+	void mouseReleaseEvent(QMouseEvent*, View *v) override;
 
 private:
+	void finishDefining();
+	void updateMouseCursor(View* view);
+
 	class Impl;
 	Impl* impl;
 };

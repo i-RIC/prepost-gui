@@ -18,7 +18,7 @@ BaseLinePreProcessorViewHelper::BaseLinePreProcessorViewHelper(DataItemView* v) 
 
 void BaseLinePreProcessorViewHelper::draw(QPainter* painter) const
 {
-	QColor baseLineColor(60, 60, 60);
+	QColor baseLineColor(Qt::black);
 
 	auto baseLine = dynamic_cast<BaseLine*> (dataItem());
 	if (baseLine->polyLine().size() < 2) {return;}

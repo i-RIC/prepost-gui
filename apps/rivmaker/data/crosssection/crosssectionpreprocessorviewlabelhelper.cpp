@@ -7,6 +7,7 @@
 
 namespace {
 
+int labelOffset = 8;
 int fontSize = 10;
 
 } // namespace
@@ -26,6 +27,7 @@ void CrossSectionPreProcessorViewLabelHelper::draw(QPainter *painter) const
 	auto v = view();
 
 	QPointF p2 = v->conv(cs->point2());
+	p2 += QPointF(labelOffset, fontSize * 0.5);
 
 	QFont f;
 	f.setPointSize(fontSize);

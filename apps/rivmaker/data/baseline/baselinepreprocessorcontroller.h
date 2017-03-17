@@ -10,14 +10,15 @@ public:
 	BaseLinePreProcessorController(Model* model, BaseLine* item);
 	~BaseLinePreProcessorController();
 
-	void keyPressEvent(QKeyEvent*, View*) override;
-	void mouseDoubleClickEvent(QMouseEvent*, View*) override;
-	void mouseMoveEvent(QMouseEvent*, View*) override;
-	void mousePressEvent(QMouseEvent*, View*) override;
-	void mouseReleaseEvent(QMouseEvent*, View*) override;
+	void keyPressEvent(QKeyEvent*, View* v) override;
+	void mouseDoubleClickEvent(QMouseEvent*, View* v) override;
+	void mouseMoveEvent(QMouseEvent*, View* v) override;
+	void mousePressEvent(QMouseEvent*, View* v) override;
+	void mouseReleaseEvent(QMouseEvent*, View* v) override;
 
 private:
 	void finishDefining();
+	void updateMouseCursor(View* v);
 
 	class Impl;
 	Impl* impl;

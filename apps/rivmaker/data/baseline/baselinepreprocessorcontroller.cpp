@@ -59,6 +59,7 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 				impl->m_movingPointIndex = i;
 			}
 		}
+		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::MovePoint) {
 		polyline[impl->m_movingPointIndex] = p;
 		baseLine->setPolyLine(polyline);
@@ -83,13 +84,15 @@ void BaseLinePreProcessorController::mousePressEvent(QMouseEvent* event, View* v
 	} else if (impl->m_mode == Impl::Mode::MovePointPrepare) {
 		impl->m_mode = Impl::Mode::MovePoint;
 	}
+	updateMouseCursor(v);
 }
 
-void BaseLinePreProcessorController::mouseReleaseEvent(QMouseEvent*, View*)
+void BaseLinePreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v)
 {
 	if (impl->m_mode == Impl::Mode::MovePoint) {
 		finishDefining();
 	}
+	updateMouseCursor(v);
 }
 
 void BaseLinePreProcessorController::finishDefining()
@@ -104,4 +107,18 @@ void BaseLinePreProcessorController::finishDefining()
 	csCtrl->rebuildStandardItemsAndViews();
 
 	updateView();
+}
+
+void BaseLinePreProcessorController::updateMouseCursor(View* v)
+{
+	switch (impl->m_mode) {
+	case Impl::Mode::MovePointPrepare:
+		v->setCursor(Qt::OpenHandCursor);
+		break;
+	case Impl::Mode::MovePoint:
+		v->setCursor(Qt::ClosedHandCursor);
+		break;
+	default:
+		v->setCursor(Qt::ArrowCursor);
+	}
 }
