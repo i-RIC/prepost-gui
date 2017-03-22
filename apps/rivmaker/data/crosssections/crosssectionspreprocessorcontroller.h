@@ -10,9 +10,18 @@ public:
 	CrossSectionsPreProcessorController(Model* model, CrossSections* item);
 	~CrossSectionsPreProcessorController();
 
+	void rebuildStandardItemsAndViews();
+
+public slots:
 	void addCrossSection();
 
-	void rebuildStandardItemsAndViews();
+private:
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/crosssectionspreprocessorcontroller_impl.h"
+#endif // _DEBUG
 
 #endif // CROSSSECTIONSPREPROCESSORCONTROLLER_H

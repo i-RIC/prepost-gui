@@ -3,16 +3,31 @@
 #include "../base/view.h"
 #include "../crosssections/crosssectionspreprocessorcontroller.h"
 #include "../project/project.h"
+#include "../../window/preprocessor/preprocessormodel.h"
 
 #include "private/crosssectionpreprocessorcontroller_impl.h"
 
+#include <QAction>
+#include <QIcon>
 #include <QMouseEvent>
+
+CrossSectionPreProcessorController::Impl::Impl() :
+	m_mode {Mode::BeforeDefining},
+	m_movingPointIndex {0},
+	m_deleteAction {new QAction(QIcon(":/images/iconDelete.png"), tr("Delete"), nullptr)}
+{}
+
+CrossSectionPreProcessorController::Impl::~Impl()
+{
+	delete m_deleteAction;
+}
 
 CrossSectionPreProcessorController::CrossSectionPreProcessorController(Model* model, CrossSection* item) :
 	DataItemController {model, item},
 	impl {new Impl {}}
 {
-	impl->m_mode = Impl::Mode::BeforeDefining;
+	objectBrowserRightClickMenu().addAction(impl->m_deleteAction);
+	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteThis()));
 }
 
 CrossSectionPreProcessorController::~CrossSectionPreProcessorController()
@@ -66,6 +81,12 @@ void CrossSectionPreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v
 {
 	finishDefining();
 	updateMouseCursor(v);
+}
+
+void CrossSectionPreProcessorController::deleteThis()
+{
+	auto preModel = dynamic_cast<PreProcessorModel*> (model());
+	preModel->deleteCrossSection();
 }
 
 void CrossSectionPreProcessorController::finishDefining()

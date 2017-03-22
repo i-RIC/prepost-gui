@@ -5,6 +5,8 @@
 
 #include "private/model_impl.h"
 
+#include <QApplication>
+#include <QCursor>
 #include <QMenu>
 #include <QStandardItem>
 
@@ -59,16 +61,7 @@ void Model::setObjectBrowserView(ObjectBrowserView* obView)
 	impl->m_objectBrowserView = obView;
 
 	connect(obView, SIGNAL(itemSelected(QModelIndex)), this, SLOT(handleObjectBrowserSelection(QModelIndex)));
-}
-
-void Model::showRightClickMenu(const QPoint& pos)
-{
-	auto s = selectedItemController();
-	if (s == nullptr) {return;}
-
-	QMenu& menu = s->rightClickMenu();
-	menu.move(pos);
-	menu.show();
+	connect(obView, SIGNAL(pressed(QModelIndex)), this, SLOT(handleObjectBrowserPress(QModelIndex)));
 }
 
 void Model::select(DataItem* item) const
@@ -239,6 +232,17 @@ void Model::clearDataItemControllers()
 void Model::handleObjectBrowserChange(QStandardItem*)
 {
 	view()->update();
+}
+
+void Model::handleObjectBrowserPress(const QModelIndex& index)
+{
+	if (QApplication::mouseButtons() != Qt::RightButton) {return;}
+
+	auto item = impl->itemFromIndex(index);
+	auto ctrl = dataItemController(item);
+
+	auto& menu = ctrl->objectBrowserRightClickMenu();
+	menu.exec(QCursor::pos());
 }
 
 void Model::handleObjectBrowserSelection(const QModelIndex& current)

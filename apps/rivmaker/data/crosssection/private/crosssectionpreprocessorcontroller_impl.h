@@ -14,8 +14,13 @@ public:
 		MovePointPrepare,
 	};
 
+	Impl();
+	~Impl();
+
 	Mode m_mode;
-	int m_movingPointIndex = 0;
+	int m_movingPointIndex;
+
+	QAction* m_deleteAction;
 };
 
 #endif // CROSSSECTIONPREPROCESSORCONTROLLER_IMPL_H

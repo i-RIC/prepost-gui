@@ -26,8 +26,6 @@ public:
 
 	void setObjectBrowserView(ObjectBrowserView* obView);
 
-	void showRightClickMenu(const QPoint& pos);
-
 	void select(DataItem* item) const;
 
 	bool isSelected(DataItem* item) const;
@@ -69,6 +67,7 @@ public:
 
 private slots:
 	void handleObjectBrowserChange(QStandardItem*);
+	void handleObjectBrowserPress(const QModelIndex& index);
 
 	void handleObjectBrowserSelection(const QModelIndex& current);
 

@@ -3,12 +3,31 @@
 #include "../base/model.h"
 #include "../../window/preprocessor/preprocessormodel.h"
 
-CrossSectionsPreProcessorController::CrossSectionsPreProcessorController(Model* model, CrossSections* item) :
-	DataItemController {model, item}
+#include "private/crosssectionspreprocessorcontroller_impl.h"
+
+#include <QAction>
+
+CrossSectionsPreProcessorController::Impl::Impl() :
+	m_addAction {new QAction(tr("Add"), nullptr)}
 {}
 
+CrossSectionsPreProcessorController::Impl::~Impl()
+{
+	delete m_addAction;
+}
+
+CrossSectionsPreProcessorController::CrossSectionsPreProcessorController(Model* model, CrossSections* item) :
+	DataItemController {model, item},
+	impl {new Impl {}}
+{
+	objectBrowserRightClickMenu().addAction(impl->m_addAction);
+	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addCrossSection()));
+}
+
 CrossSectionsPreProcessorController::~CrossSectionsPreProcessorController()
-{}
+{
+	delete impl;
+}
 
 void CrossSectionsPreProcessorController::addCrossSection()
 {

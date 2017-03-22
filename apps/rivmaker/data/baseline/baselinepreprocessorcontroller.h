@@ -16,6 +16,10 @@ public:
 	void mousePressEvent(QMouseEvent*, View* v) override;
 	void mouseReleaseEvent(QMouseEvent*, View* v) override;
 
+public slots:
+	void addVertex();
+	void removeVertex();
+
 	void clear();
 
 private:

@@ -10,7 +10,8 @@ class DataItemController::Impl
 public:
 	Impl(Model* model, DataItem* item);
 
-	QMenu m_rightClickMenu;
+	QMenu m_objectBrowserRightClickMenu;
+	QMenu m_viewRightClickMenu;
 
 	Model* m_model;
 	DataItem* m_item;

@@ -48,8 +48,8 @@
       <addaction name="fileImportSACGUIImportAction"/>
      </widget>
      <addaction name="fileImportGeographicDataMenu"/>
-     <addaction name="fileImportBaseLineAction"/>
      <addaction name="fileImportCrosssectionLineAction"/>
+     <addaction name="fileImportBaseLineAction"/>
     </widget>
     <widget class="QMenu" name="exportMenu">
      <property name="title">
@@ -83,8 +83,8 @@
      <addaction name="importSACGUIImportAction"/>
     </widget>
     <addaction name="importGeographicDataMenu"/>
-    <addaction name="importBaseLineAction"/>
     <addaction name="importCrosssectionLineAction"/>
+    <addaction name="importBaseLineAction"/>
    </widget>
    <widget class="QMenu" name="baseLineMenu">
     <property name="title">
@@ -166,8 +166,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="newProjectAction"/>
-   <addaction name="openAction"/>
-   <addaction name="saveAction"/>
    <addaction name="separator"/>
    <addaction name="fitAction"/>
    <addaction name="resetRotationAction"/>
@@ -189,24 +187,6 @@
    </property>
    <property name="text">
     <string>&amp;New Project...</string>
-   </property>
-  </action>
-  <action name="openAction">
-   <property name="icon">
-    <iconset resource="../rivmaker.qrc">
-     <normaloff>:/images/iconFolder.png</normaloff>:/images/iconFolder.png</iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Open...</string>
-   </property>
-  </action>
-  <action name="saveAction">
-   <property name="icon">
-    <iconset resource="../rivmaker.qrc">
-     <normaloff>:/images/iconSave.png</normaloff>:/images/iconSave.png</iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Save</string>
    </property>
   </action>
   <action name="saveAsAction">
@@ -417,7 +397,7 @@
   </action>
   <action name="fileImportCrosssectionLineAction">
    <property name="text">
-    <string>&amp;Cross Section Lines...</string>
+    <string>&amp;Cross Section...</string>
    </property>
   </action>
   <action name="exportBaseLine">
@@ -427,7 +407,7 @@
   </action>
   <action name="exportCrosssectionLineAction">
    <property name="text">
-    <string>&amp;Cross Section Lines...</string>
+    <string>&amp;Cross Section...</string>
    </property>
   </action>
   <action name="exportRiverSurveyDataAction">
@@ -442,7 +422,7 @@
   </action>
   <action name="importCrosssectionLineAction">
    <property name="text">
-    <string>&amp;Cross Section Lines...</string>
+    <string>&amp;Cross Section...</string>
    </property>
   </action>
   <action name="viewToolbarAction">

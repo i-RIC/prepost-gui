@@ -131,7 +131,7 @@ void View::rotate90()
 	updateView();
 }
 
-void View::paintEvent(QPaintEvent* event)
+void View::paintEvent(QPaintEvent*)
 {
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing);
@@ -209,7 +209,8 @@ void View::mouseReleaseEvent(QMouseEvent* event)
 
 	if (event->button() != Qt::RightButton) {return;}
 	if (! isClick(m_rightClickPos, event->pos())) {return;}
-	m_model->showRightClickMenu(event->globalPos());
+
+	c->viewRightClickMenu().exec(event->globalPos());
 }
 
 void View::wheelEvent(QWheelEvent* event)
@@ -228,7 +229,7 @@ void View::paramsResetRotation()
 void View::paramsRotate90()
 {}
 
-void View::emitPosition(QMouseEvent* event)
+void View::emitPosition(QMouseEvent*)
 {
 
 }

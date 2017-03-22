@@ -98,7 +98,8 @@ HEADERS += dialogs/mousehelpdialog.h \
     dialogs/coordinateseditdialog.h \
     dialogs/private/coordinateeditwidget.h \
     data/base/coordinatesi.h \
-    dialogs/private/coordinateseditdialog_impl.h
+    dialogs/private/coordinateseditdialog_impl.h \
+    data/crosssections/private/crosssectionspreprocessorcontroller_impl.h
 FORMS += dialogs/mousehelpdialog.ui \
 				 main/rivmakermainwindow.ui \
 				 window/verticalcrosssection/verticalcrosssectionwindow.ui \

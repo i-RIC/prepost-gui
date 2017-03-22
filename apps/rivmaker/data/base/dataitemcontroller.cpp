@@ -42,9 +42,14 @@ void DataItemController::wheelEvent(QWheelEvent*, View*)
 void DataItemController::restoreMouseCursorOnView(View*)
 {}
 
-QMenu& DataItemController::rightClickMenu()
+QMenu& DataItemController::objectBrowserRightClickMenu()
 {
-	return impl->m_rightClickMenu;
+	return impl->m_objectBrowserRightClickMenu;
+}
+
+QMenu& DataItemController::viewRightClickMenu()
+{
+	return impl->m_viewRightClickMenu;
 }
 
 DataItem* DataItemController::item()
