@@ -1,5 +1,6 @@
 #include "../../data/base/view.h"
 #include "../../data/baseline/baseline.h"
+#include "../../data/baseline/baselinepreprocessorcontroller.h"
 #include "../../data/crosssection/crosssection.h"
 #include "../../data/crosssections/crosssectionspreprocessorcontroller.h"
 #include "../../data/elevationpoints/elevationpoints.h"
@@ -122,11 +123,9 @@ void PreProcessorModel::reverseBaseLineDirection()
 
 void PreProcessorModel::deleteBaseLine()
 {
-	std::vector<QPointF> emptyLine;
 	auto p = impl->m_project;
-	p->baseLine().setPolyLine(emptyLine);
-	p->emitUpdated();
-	view()->update();
+	auto blCtrl = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&(p->baseLine())));
+	blCtrl->clear();
 }
 
 void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataItemI* newItem, DataItem* parent)

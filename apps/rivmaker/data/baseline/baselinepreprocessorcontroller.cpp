@@ -95,8 +95,25 @@ void BaseLinePreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v)
 	updateMouseCursor(v);
 }
 
+void BaseLinePreProcessorController::clear()
+{
+	auto baseLine = dynamic_cast<BaseLine*> (item());
+
+	std::vector<QPointF> emptyLine;
+	baseLine->setPolyLine(emptyLine);
+
+	impl->m_mode = Impl::Mode::BeforeDefining;
+
+	item()->project()->emitUpdated();
+
+	updateView();
+}
+
 void BaseLinePreProcessorController::finishDefining()
 {
+	auto baseLine = dynamic_cast<BaseLine*> (item());
+	if (baseLine->polyLine().size() < 2) {return;}
+
 	impl->m_mode = Impl::Mode::Normal;
 
 	auto p = item()->project();

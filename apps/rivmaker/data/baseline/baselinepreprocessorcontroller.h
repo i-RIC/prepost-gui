@@ -16,6 +16,8 @@ public:
 	void mousePressEvent(QMouseEvent*, View* v) override;
 	void mouseReleaseEvent(QMouseEvent*, View* v) override;
 
+	void clear();
+
 private:
 	void finishDefining();
 	void updateMouseCursor(View* v);

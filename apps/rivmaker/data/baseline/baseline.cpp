@@ -90,6 +90,8 @@ void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, doub
 
 double BaseLine::calcPosition(double x, double y) const
 {
+	if (impl->m_polyLine.size() < 2) {return 0;}
+
 	std::map<double, double> distanceMap;
 	double pos = 0;
 	for (int i = 0; i < impl->m_polyLine.size() - 1; ++i) {
