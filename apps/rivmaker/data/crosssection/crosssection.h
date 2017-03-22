@@ -32,6 +32,9 @@ public:
 	std::vector<QPointF> coordinates() const override;
 	void setCoordinates(const std::vector<QPointF>& coords) override;
 
+	double waterElevation() const;
+	void setWaterElevation(double e);
+
 	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const;
 
 	void reverseDirection();
@@ -46,6 +49,8 @@ private:
 
 	QPointF m_point1;
 	QPointF m_point2;
+
+	double m_waterElevation;
 };
 
 #endif // CROSSSECTION_H

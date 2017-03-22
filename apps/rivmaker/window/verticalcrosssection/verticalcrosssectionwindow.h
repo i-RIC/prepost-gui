@@ -1,6 +1,7 @@
 #ifndef VERTICALCROSSSECTIONWINDOW_H
 #define VERTICALCROSSSECTIONWINDOW_H
 
+#include <QStandardItemModel>
 #include <QWidget>
 
 #include <vector>
@@ -30,6 +31,10 @@ private slots:
 private:
 	void initPlot();
 	void initTable();
+
+	void updatePlot();
+	void updateTable();
+
 	void setupCrossSectionMarkers(double *xmin, double *xmax, bool *first);
 
 	void updateScale(double xmin, double xmax, double ymin, double ymax);
@@ -41,6 +46,8 @@ private:
 	QwtPlotCurve* m_rightBankCurve;
 
 	std::vector<QwtPlotMarker*> m_crossSectionMarkers;
+
+	QStandardItemModel m_tableModel;
 
 	Project* m_project;
 	Ui::VerticalCrossSectionWindow *ui;

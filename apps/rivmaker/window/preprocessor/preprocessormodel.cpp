@@ -97,6 +97,8 @@ void PreProcessorModel::addBaseLineVertex()
 	auto& bl = impl->m_project->baseLine();
 	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
 	bl_c->addVertex();
+
+	select(&bl);
 }
 
 void PreProcessorModel::removeBaseLineVertex()
@@ -104,6 +106,8 @@ void PreProcessorModel::removeBaseLineVertex()
 	auto& bl = impl->m_project->baseLine();
 	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
 	bl_c->removeVertex();
+
+	select(&bl);
 }
 
 void PreProcessorModel::editBaseLineCoordinates()
@@ -111,6 +115,8 @@ void PreProcessorModel::editBaseLineCoordinates()
 	auto& bl = impl->m_project->baseLine();
 	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
 	bl_c->editCoordinates();
+
+	select(&bl);
 }
 
 void PreProcessorModel::reverseBaseLineDirection()
@@ -118,13 +124,17 @@ void PreProcessorModel::reverseBaseLineDirection()
 	auto& bl = impl->m_project->baseLine();
 	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
 	bl_c->reverseDirection();
+
+	select(&bl);
 }
 
 void PreProcessorModel::deleteBaseLine()
 {
-	auto p = impl->m_project;
-	auto blCtrl = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&(p->baseLine())));
-	blCtrl->clear();
+	auto& bl = impl->m_project->baseLine();
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
+	bl_c->clear();
+
+	select(&bl);
 }
 
 void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataItemI* newItem, DataItem* parent)

@@ -94,6 +94,16 @@ void CrossSection::setCoordinates(const std::vector<QPointF>& coords)
 	m_point2 = coords.at(1);
 }
 
+double CrossSection::waterElevation() const
+{
+	return m_waterElevation;
+}
+
+void CrossSection::setWaterElevation(double e)
+{
+	m_waterElevation = e;
+}
+
 void CrossSection::getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const
 {
 

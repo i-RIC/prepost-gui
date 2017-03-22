@@ -15,11 +15,17 @@
 #include <qwt_symbol.h>
 
 #include <QCloseEvent>
+#include <QLabel>
+#include <QDoubleSpinBox>
 #include <QPointF>
+#include <QStyledItemDelegate>
 #include <QVector>
 #include <QVector3D>
 
 namespace {
+
+	const int defaultRowHeight = 20;
+
 	void setSamples(const BaseLine& baseLine, const Points& points, QwtPlotCurve* curve, double* xmin, double* xmax, double* ymin, double* ymax, bool* first)
 	{
 		QVector<QPointF> samples;
@@ -36,6 +42,48 @@ namespace {
 		}
 		curve->setSamples(samples);
 	}
+
+	class Delegate : public QStyledItemDelegate
+	{
+	public:
+		Delegate(QObject* = nullptr) {}
+		QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem&, const QModelIndex& index) const
+		{
+			if (index.column() == 0) {
+				return nullptr;
+				// return new QLabel(parent);
+			} else {
+				auto spinBox = new QDoubleSpinBox(parent);
+				spinBox->setDecimals(3);
+				spinBox->setMinimum(-1000);
+				spinBox->setMaximum(10000);
+				return spinBox;
+			}
+		}
+		void setEditorData(QWidget* editor, const QModelIndex& index) const
+		{
+			QVariant dat = index.model()->data(index, Qt::DisplayRole);
+			if (index.column() == 0) {
+				auto l = dynamic_cast<QLabel*> (editor);
+				l->setText(dat.toString());
+			} else {
+				auto sb = dynamic_cast<QDoubleSpinBox*> (editor);
+				sb->setValue(dat.toDouble());
+			}
+		}
+		void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const
+		{
+			if (index.column() == 0) {return;}
+
+			auto sb = dynamic_cast<QDoubleSpinBox*> (editor);
+			model->setData(index, sb->value(), Qt::EditRole);
+		}
+
+		void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex&) const
+		{
+			editor->setGeometry(option.rect);
+		}
+	};
 }
 
 VerticalCrossSectionWindow::VerticalCrossSectionWindow(QWidget *parent) :
@@ -70,21 +118,9 @@ void VerticalCrossSectionWindow::setProject(Project* project)
 
 void VerticalCrossSectionWindow::updateView()
 {
-	const auto& baseLine = m_project->baseLine();
-	const auto& wse = m_project->waterSurfaceElevationPoints();
+	updatePlot();
 
-	double xmin = 0, xmax = 1, ymin = 0, ymax = 1;
-	bool first = true;
-
-	setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &xmin, &xmax, &ymin, &ymax, &first);
-	setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
-	setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
-
-	setupCrossSectionMarkers(&xmin, &xmax, &first);
-
-	updateScale(xmin, xmax, ymin, ymax);
-
-	ui->qwtWidget->replot();
+	updateTable();
 }
 
 void VerticalCrossSectionWindow::initPlot()
@@ -126,16 +162,59 @@ void VerticalCrossSectionWindow::initPlot()
 
 void VerticalCrossSectionWindow::initTable()
 {
-	ui->tableWidget->setColumnCount(2);
-	ui->tableWidget->setRowCount(3);
+	ui->tableView->setModel(&m_tableModel);
 
+	auto delegate = new Delegate(this);
+	ui->tableView->setItemDelegate(delegate);
+}
+
+void VerticalCrossSectionWindow::updatePlot()
+{
+	const auto& baseLine = m_project->baseLine();
+	const auto& wse = m_project->waterSurfaceElevationPoints();
+
+	double xmin = 0, xmax = 1, ymin = 0, ymax = 1;
+	bool first = true;
+
+	setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+
+	setupCrossSectionMarkers(&xmin, &xmax, &first);
+
+	updateScale(xmin, xmax, ymin, ymax);
+
+	ui->qwtWidget->replot();
+}
+
+void VerticalCrossSectionWindow::updateTable()
+{
+	const auto& crossSections = m_project->crossSections();
+
+	auto& m = m_tableModel;
+
+	m.clear();
+
+	m.setColumnCount(2);
 	QStringList hLabels;
 	hLabels << tr("Name") << tr("Elevation");
-	ui->tableWidget->setHorizontalHeaderLabels(hLabels);
+	m.setHorizontalHeaderLabels(hLabels);
+	ui->tableView->setColumnWidth(0, 50);
+	ui->tableView->setColumnWidth(1, 100);
 
-	ui->tableWidget->setItem(0, 0, new QTableWidgetItem("X1"));
-	ui->tableWidget->setItem(1, 0, new QTableWidgetItem("X2"));
-	ui->tableWidget->setItem(2, 0, new QTableWidgetItem("X3"));
+	int row = 0;
+	for (CrossSection* cs : crossSections.crossSectionVector()) {
+		m.insertRow(row);
+		auto nameItem = new QStandardItem(cs->name());
+		nameItem->setEditable(false);
+		m.setItem(row, 0, nameItem);
+
+		auto elevItem = new QStandardItem();
+		elevItem->setData(cs->waterElevation());
+		m.setItem(row, 1, elevItem);
+
+		ui->tableView->setRowHeight(row, defaultRowHeight);
+	}
 }
 
 void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* xmax, bool* first)

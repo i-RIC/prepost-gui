@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>521</width>
+    <width>678</width>
     <height>347</height>
    </rect>
   </property>
@@ -18,31 +18,16 @@
     <normaloff>:/images/iconVerticalCrosssection.png</normaloff>:/images/iconVerticalCrosssection.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
    <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="handleWidth">
-      <number>5</number>
+      <number>3</number>
      </property>
      <widget class="QwtPlot" name="qwtWidget" native="true"/>
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QTableView" name="tableView"/>
     </widget>
    </item>
   </layout>
