@@ -119,9 +119,6 @@
     <property name="title">
      <string>River Survey Data</string>
     </property>
-    <addaction name="riverSurveyDataCreateAction"/>
-    <addaction name="riverSurveyDataDeleteAction"/>
-    <addaction name="separator"/>
     <addaction name="riverSurveyDataExportAction"/>
    </widget>
    <widget class="QMenu" name="menu_Window">

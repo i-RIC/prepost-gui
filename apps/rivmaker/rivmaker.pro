@@ -100,7 +100,8 @@ HEADERS += dialogs/mousehelpdialog.h \
     data/base/coordinatesi.h \
     dialogs/private/coordinateseditdialog_impl.h \
     data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \
-    misc/mathutil.h
+    misc/mathutil.h \
+    io/rivexporter.h
 FORMS += dialogs/mousehelpdialog.ui \
 				 main/rivmakermainwindow.ui \
 				 window/verticalcrosssection/verticalcrosssectionwindow.ui \
@@ -163,5 +164,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
 		io/sacguiimporter.cpp \
     dialogs/coordinateseditdialog.cpp \
     dialogs/private/coordinateeditwidget.cpp \
-    misc/mathutil.cpp
+    misc/mathutil.cpp \
+    io/rivexporter.cpp
 RESOURCES += rivmaker.qrc

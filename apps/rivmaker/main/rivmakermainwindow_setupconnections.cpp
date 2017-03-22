@@ -23,6 +23,9 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->fileImportCrosssectionLineAction, SIGNAL(triggered()), this, SLOT(importCrossSectionLines()));
 	connect(ui->crosssectionLineImportAction, SIGNAL(triggered()), this, SLOT(importCrossSectionLines()));
 
+	connect(ui->exportRiverSurveyDataAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
+	connect(ui->riverSurveyDataExportAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
+
 	connect(ui->fitAction, SIGNAL(triggered()), this, SLOT(fit()));
 	connect(ui->resetRotationAction, SIGNAL(triggered()), this, SLOT(resetRotation()));
 	connect(ui->rotate90Action, SIGNAL(triggered()), this, SLOT(rotate90()));

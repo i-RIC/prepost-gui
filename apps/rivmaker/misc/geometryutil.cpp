@@ -32,3 +32,14 @@ QPointF GeometryUtil::nearestPoint(const QPointF& a, const QPointF& b, const QPo
 
 	return QPointF(a.x() + r * ab.x(), a.y() + r * ab.y());
 }
+
+QPointF GeometryUtil::mappedPoint(const QPointF& a, const QPointF& b, const QPointF& p)
+{
+	QVector2D ab(b.x() - a.x(), b.y() - a.y());
+	QVector2D ap(p.x() - a.x(), p.y() - a.y());
+
+	QVector2D ab_unit = ab / ab.length();
+	double r = (ap.x() * ab_unit.x() + ap.y() * ab_unit.y()) / ab.length();
+
+	return QPointF(a.x() + r * ab.x(), a.y() + r * ab.y());
+}

@@ -3,6 +3,7 @@
 #include "window/viewwindowi.h"
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
+#include "../io/rivexporter.h"
 
 #include "ui_rivmakermainwindow.h"
 #include "private/rivmakermainwindow_impl.h"
@@ -87,6 +88,11 @@ void RivmakerMainWindow::importBaseLine()
 void RivmakerMainWindow::importCrossSectionLines()
 {
 
+}
+
+void RivmakerMainWindow::exportRiverSurveyData()
+{
+	RivExporter::exportData(impl->m_project->crossSections(), this);
 }
 
 void RivmakerMainWindow::fit()

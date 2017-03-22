@@ -1,9 +1,11 @@
 #include "crosssection.h"
 #include "crosssectionpreprocessorcontroller.h"
 #include "crosssectionpreprocessorview.h"
+#include "../../misc/geometryutil.h"
 
 #include <QIcon>
 #include <QStandardItem>
+#include <QVector2D>
 
 CrossSection::CrossSection(DataItem* parent) :
 	DataItem {parent},
@@ -104,9 +106,39 @@ void CrossSection::setWaterElevation(double e)
 	m_waterElevation = e;
 }
 
-void CrossSection::getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const
+std::vector<QVector3D*> CrossSection::mappedPoints() const
 {
+	return m_mappedPoints;
+}
 
+void CrossSection::setMappedPoints(const std::vector<QVector3D*>& points)
+{
+	m_mappedPoints = points;
+}
+
+void CrossSection::addMappedPoint(QVector3D* p)
+{
+	m_mappedPoints.push_back(p);
+}
+
+void CrossSection::clearMappedPoints()
+{
+	m_mappedPoints.clear();
+}
+
+void CrossSection::getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance) const
+{
+	*nearestPoint = GeometryUtil::nearestPoint(m_point1, m_point2, QPointF(x, y));
+	*distance = QVector2D(x - nearestPoint->x(), y - nearestPoint->y()).length();
+}
+
+void CrossSection::getMappedPoint(double x, double y, QPointF* mappedPoint, double* position) const
+{
+	*mappedPoint = GeometryUtil::mappedPoint(m_point1, m_point2, QPointF(x, y));
+	QVector2D v1(x - m_point1.x(), y - m_point1.y());
+	QVector2D v2(m_point2.x() - m_point1.x(), m_point2.y() - m_point1.y());
+	v2.normalize();
+	*position = QVector2D::dotProduct(v1, v2);
 }
 
 void CrossSection::reverseDirection()

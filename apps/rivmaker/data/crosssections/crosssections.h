@@ -20,6 +20,8 @@ public:
 
 	std::vector<CrossSection*> crossSectionVector() const;
 
+	bool exportRiverSurveyData(const QString& fileName) const;
+
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemController* buildPreProcessorDataItemController(Model* model) override;
 	DataItemView* buildPreProcessorDataItemView(Model* model) override;

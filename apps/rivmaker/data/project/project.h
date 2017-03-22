@@ -48,6 +48,7 @@ public:
 	QPointF& offset();
 
 	void calcCrossSectionElevations();
+	void mapPointsToCrossSections();
 	bool sortCrossSectionsIfPossible();
 
 	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;

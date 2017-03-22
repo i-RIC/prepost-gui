@@ -200,6 +200,27 @@ void Project::calcCrossSectionElevations()
 	}
 }
 
+void Project::mapPointsToCrossSections()
+{
+	if (crossSections().crossSectionVector().size() == 0) {return;}
+
+	const auto& csVec = crossSections().crossSectionVector();
+	for (auto cs : csVec) {
+		cs->clearMappedPoints();
+	}
+	for (QVector3D* p : elevationPoints().points()) {
+		std::multimap<double, CrossSection*> distanceMap;
+		QPointF nearestPoint;
+		double distance;
+		for (auto cs : csVec) {
+			cs->getNearestPoint(p->x(), p->y(), &nearestPoint, &distance);
+			distanceMap.insert(std::make_pair(distance, cs));
+		}
+		auto it = distanceMap.begin();
+		it->second->addMappedPoint(p);
+	}
+}
+
 bool Project::sortCrossSectionsIfPossible()
 {
 	auto& bl = baseLine();

@@ -35,7 +35,13 @@ public:
 	double waterElevation() const;
 	void setWaterElevation(double e);
 
-	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance, double* pos) const;
+	std::vector<QVector3D*> mappedPoints() const;
+	void setMappedPoints(const std::vector<QVector3D*>& points);
+	void addMappedPoint(QVector3D* p);
+	void clearMappedPoints();
+
+	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance) const;
+	void getMappedPoint(double x, double y, QPointF* mappedPoint, double* position) const;
 
 	void reverseDirection();
 
@@ -51,6 +57,8 @@ private:
 	QPointF m_point2;
 
 	double m_waterElevation;
+
+	std::vector<QVector3D*> m_mappedPoints;
 };
 
 #endif // CROSSSECTION_H

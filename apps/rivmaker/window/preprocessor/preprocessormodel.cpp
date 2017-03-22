@@ -161,6 +161,7 @@ void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataIt
 void PreProcessorModel::updateCrossSections()
 {
 	impl->m_project->calcCrossSectionElevations();
+	impl->m_project->mapPointsToCrossSections();
 	bool sorted = impl->m_project->sortCrossSectionsIfPossible();
 	if (! sorted) {return;}
 
