@@ -141,6 +141,12 @@ void VerticalCrossSectionWindow::initPlot()
 
 	QwtSymbol* s = nullptr;
 
+	m_csCurve = new QwtPlotCurve();
+	m_csCurve->setPen(Qt::black, 1);
+	s = new QwtSymbol(QwtSymbol::Diamond, QBrush(Qt::black), QPen(Qt::black), QSize(7, 7));
+	m_csCurve->setSymbol(s);
+	m_csCurve->attach(ui->qwtWidget);
+
 	m_arbitraryCurve = new QwtPlotCurve();
 	m_arbitraryCurve->setPen(Qt::transparent, 1);
 	s = new QwtSymbol(QwtSymbol::Rect, QBrush(Qt::gray), QPen(Qt::NoPen), QSize(7, 7));
@@ -180,6 +186,7 @@ void VerticalCrossSectionWindow::updatePlot()
 	setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
 	setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
 
+	setupCrossSectionLine();
 	setupCrossSectionMarkers(&xmin, &xmax, &first);
 
 	updateScale(xmin, xmax, ymin, ymax);
@@ -210,11 +217,31 @@ void VerticalCrossSectionWindow::updateTable()
 		m.setItem(row, 0, nameItem);
 
 		auto elevItem = new QStandardItem();
-		elevItem->setData(cs->waterElevation());
+		elevItem->setData(cs->waterElevation(), Qt::EditRole);
 		m.setItem(row, 1, elevItem);
 
 		ui->tableView->setRowHeight(row, defaultRowHeight);
+		++ row;
 	}
+}
+
+void VerticalCrossSectionWindow::setupCrossSectionLine()
+{
+	const auto& baseLine = m_project->baseLine();
+	auto csVec = m_project->crossSections().crossSectionVector();
+
+	QVector<QPointF> samples;
+
+	bool crosses;
+	double x, y, pos;
+
+	for (CrossSection* cs : csVec) {
+		baseLine.getCrossingPoint(cs, &crosses, &x, &y, &pos);
+		if (! crosses) {continue;}
+
+		samples.push_back(QPointF(pos, cs->waterElevation()));
+	}
+	m_csCurve->setSamples(samples);
 }
 
 void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* xmax, bool* first)

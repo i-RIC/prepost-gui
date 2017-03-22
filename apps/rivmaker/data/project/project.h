@@ -47,6 +47,7 @@ public:
 	const QPointF& offset() const;
 	QPointF& offset();
 
+	void calcCrossSectionElevations();
 	bool sortCrossSectionsIfPossible();
 
 	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;

@@ -35,11 +35,14 @@ private:
 	void updatePlot();
 	void updateTable();
 
+	void setupCrossSectionLine();
 	void setupCrossSectionMarkers(double *xmin, double *xmax, bool *first);
 
 	void updateScale(double xmin, double xmax, double ymin, double ymax);
 
 	void closeEvent(QCloseEvent *e);
+
+	QwtPlotCurve* m_csCurve;
 
 	QwtPlotCurve* m_arbitraryCurve;
 	QwtPlotCurve* m_leftBankCurve;

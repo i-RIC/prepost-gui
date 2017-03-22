@@ -4,10 +4,37 @@
 #include "../base/dataItem.h"
 #include "../crosssection/crosssection.h"
 #include "../riversurveydata/riversurveydata.h"
+#include "../../misc/mathutil.h"
 
 #include "private/project_impl.h"
 
+#include <QVector3D>
+
 #include <map>
+#include <vector>
+
+namespace {
+
+void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals)
+{
+	for (QVector3D* p : points.points()) {
+		double pos = line.calcPosition(p->x(), p->y());
+		vals->insert(std::make_pair(pos, p->z()));
+	}
+}
+
+void addToElevMap(std::map<CrossSection*, std::vector<double> >* elevVals, CrossSection* cs, double val)
+{
+	auto it = elevVals->find(cs);
+	if (it == elevVals->end()) {
+		std::vector<double> emptyVec;
+		elevVals->insert(std::make_pair(cs, emptyVec));
+		it = elevVals->find(cs);
+	}
+	it->second.push_back(val);
+}
+
+} // namespace
 
 Project::Impl::Impl(Project *project) :
 	m_rootDataItem {project},
@@ -108,6 +135,69 @@ const QPointF& Project::offset() const
 QPointF& Project::offset()
 {
 	return impl->m_offset;
+}
+
+void Project::calcCrossSectionElevations()
+{
+	auto& bl = baseLine();
+	auto csVec = crossSections().crossSectionVector();
+
+	if (bl.polyLine().size() < 2) {return;}
+
+	std::multimap<double, CrossSection*> posMap;
+	bool crosses;
+	double x, y, pos;
+
+	for (CrossSection* cs : csVec) {
+		bl.getCrossingPoint(cs, &crosses, &x, &y, &pos);
+		if (crosses) {
+			posMap.insert(std::make_pair(pos, cs));
+		}
+	}
+
+	std::multimap<double, double> vals;
+
+	auto& wse = waterSurfaceElevationPoints();
+
+	addToVector(wse.leftBankHWM(), bl, &vals);
+	addToVector(wse.rightBankHWM(), bl, &vals);
+	addToVector(wse.arbitraryHWM(), bl, &vals);
+
+	std::map<CrossSection*, std::vector<double> > elevVals;
+
+	for (auto it = posMap.begin(); it != posMap.end(); ++it) {
+		auto it2 = it;
+		++ it2;
+		if (it2 == posMap.end()) {break;}
+
+		double min = it->first;
+		double max = it2->first;
+
+		std::vector<double> xvec, yvec;
+
+		auto it_b = vals.lower_bound(min);
+		auto it_e = vals.upper_bound(max);
+		for (auto tmp_it = it_b; tmp_it != it_e; ++ tmp_it) {
+			xvec.push_back(tmp_it->first);
+			yvec.push_back(tmp_it->second);
+		}
+		double a, b;
+		MathUtil::leastSquares(xvec, yvec, &a, &b);
+
+		addToElevMap(&elevVals, it->second,  a * min + b);
+		addToElevMap(&elevVals, it2->second, a * max + b);
+	}
+
+	for (auto pair : elevVals) {
+		if (pair.second.size() == 0) {continue;}
+
+		double sum = 0;
+		for (double v : pair.second) {
+			sum += v;
+		}
+		double avg = sum / pair.second.size();
+		pair.first->setWaterElevation(avg);
+	}
 }
 
 bool Project::sortCrossSectionsIfPossible()

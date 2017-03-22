@@ -99,7 +99,8 @@ HEADERS += dialogs/mousehelpdialog.h \
     dialogs/private/coordinateeditwidget.h \
     data/base/coordinatesi.h \
     dialogs/private/coordinateseditdialog_impl.h \
-    data/crosssections/private/crosssectionspreprocessorcontroller_impl.h
+    data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \
+    misc/mathutil.h
 FORMS += dialogs/mousehelpdialog.ui \
 				 main/rivmakermainwindow.ui \
 				 window/verticalcrosssection/verticalcrosssectionwindow.ui \
@@ -161,5 +162,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
 		data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.cpp \
 		io/sacguiimporter.cpp \
     dialogs/coordinateseditdialog.cpp \
-    dialogs/private/coordinateeditwidget.cpp
+    dialogs/private/coordinateeditwidget.cpp \
+    misc/mathutil.cpp
 RESOURCES += rivmaker.qrc
