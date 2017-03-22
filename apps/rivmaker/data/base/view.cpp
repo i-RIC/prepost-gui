@@ -218,7 +218,9 @@ void View::wheelEvent(QWheelEvent* event)
 }
 
 void View::resizeEvent(QResizeEvent*)
-{}
+{
+	updateView();
+}
 
 void View::paramsResetRotation()
 {}

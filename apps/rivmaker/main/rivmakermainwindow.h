@@ -42,6 +42,7 @@ private slots:
 	void baseLineAddPoint();
 	void baseLineRemovePoint();
 	void baseLineEditCoordinates();
+	void baseLineReverseDirection();
 	void baseLineDelete();
 
 	void crossSectionAdd();

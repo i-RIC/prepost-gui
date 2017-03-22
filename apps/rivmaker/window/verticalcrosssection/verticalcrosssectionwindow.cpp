@@ -144,6 +144,8 @@ void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* 
 		m->detach();
 		delete m;
 	}
+	m_crossSectionMarkers.clear();
+
 	const auto& baseLine = m_project->baseLine();
 	auto csVec = m_project->crossSections().crossSectionVector();
 
@@ -167,6 +169,8 @@ void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* 
 		marker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
 		marker->setLinePen(pen);
 		marker->attach(ui->qwtWidget);
+
+		m_crossSectionMarkers.push_back(marker);
 
 		if (*first || pos < *xmin) {*xmin = pos;}
 		if (*first || pos > *xmax) {*xmax = pos;}

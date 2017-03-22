@@ -35,6 +35,7 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->baseLineAddVertexAction, SIGNAL(triggered()), this, SLOT(baseLineAddPoint()));
 	connect(ui->baseLineRemoveVertexAction, SIGNAL(triggered()), this, SLOT(baseLineRemovePoint()));
 	connect(ui->baseLineEditCoordinatesAction, SIGNAL(triggered()), this, SLOT(baseLineEditCoordinates()));
+	connect(ui->baseLineReverseDirectionAction, SIGNAL(triggered()), this, SLOT(baseLineReverseDirection()));
 	connect(ui->baseLineDeleteAction, SIGNAL(triggered()), this, SLOT(baseLineDelete()));
 
 	connect(ui->crosssectionLineAddAction, SIGNAL(triggered()), this, SLOT(crossSectionAdd()));

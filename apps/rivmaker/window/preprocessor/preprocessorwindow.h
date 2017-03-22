@@ -29,6 +29,8 @@ public:
 	void crossSectionEditCoordinates();
 
 	void baseLineEditCoordinates();
+	void baseLineReverseDirection();
+	void baseLineDelete();
 
 private:
 	void closeEvent(QCloseEvent *e);

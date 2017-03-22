@@ -106,6 +106,29 @@ void PreProcessorModel::editBaseLineCoordinates()
 	dialog.exec();
 }
 
+void PreProcessorModel::reverseBaseLineDirection()
+{
+	auto p = impl->m_project;
+	p->baseLine().reverseDirection();
+	bool sorted = p->sortCrossSectionsIfPossible();
+	if (sorted) {
+		auto csCtrl = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(p->crossSections())));
+		csCtrl->rebuildStandardItemsAndViews();
+
+	}
+	p->emitUpdated();
+	view()->update();
+}
+
+void PreProcessorModel::deleteBaseLine()
+{
+	std::vector<QPointF> emptyLine;
+	auto p = impl->m_project;
+	p->baseLine().setPolyLine(emptyLine);
+	p->emitUpdated();
+	view()->update();
+}
+
 void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataItemI* newItem, DataItem* parent)
 {
 	auto dItem = dynamic_cast<DataItem*> (newItem);

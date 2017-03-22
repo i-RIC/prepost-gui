@@ -23,6 +23,8 @@ public:
 	void editCrossSectionCoordinates();
 
 	void editBaseLineCoordinates();
+	void reverseBaseLineDirection();
+	void deleteBaseLine();
 
 	void setupStandardItemAndViewAndController(PreProcessorDataItemI *newItem, DataItem* parent);
 

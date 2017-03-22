@@ -93,6 +93,7 @@
     <addaction name="baseLineAddVertexAction"/>
     <addaction name="baseLineRemoveVertexAction"/>
     <addaction name="baseLineEditCoordinatesAction"/>
+    <addaction name="baseLineReverseDirectionAction"/>
     <addaction name="separator"/>
     <addaction name="baseLineDeleteAction"/>
     <addaction name="separator"/>
@@ -554,6 +555,11 @@
    </property>
    <property name="text">
     <string>Open Crosssection Window</string>
+   </property>
+  </action>
+  <action name="baseLineReverseDirectionAction">
+   <property name="text">
+    <string>Reverse &amp;Direction</string>
    </property>
   </action>
  </widget>

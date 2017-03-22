@@ -92,6 +92,16 @@ void PreProcessorWindow::baseLineEditCoordinates()
 	impl->m_model.editBaseLineCoordinates();
 }
 
+void PreProcessorWindow::baseLineReverseDirection()
+{
+	impl->m_model.reverseBaseLineDirection();
+}
+
+void PreProcessorWindow::baseLineDelete()
+{
+	impl->m_model.deleteBaseLine();
+}
+
 void PreProcessorWindow::closeEvent(QCloseEvent *e)
 {
 	parentWidget()->hide();

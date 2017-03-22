@@ -165,9 +165,14 @@ void RivmakerMainWindow::baseLineEditCoordinates()
 	impl->m_preProcessorWindow.baseLineEditCoordinates();
 }
 
+void RivmakerMainWindow::baseLineReverseDirection()
+{
+	impl->m_preProcessorWindow.baseLineReverseDirection();
+}
+
 void RivmakerMainWindow::baseLineDelete()
 {
-
+	impl->m_preProcessorWindow.baseLineDelete();
 }
 
 void RivmakerMainWindow::crossSectionAdd()
