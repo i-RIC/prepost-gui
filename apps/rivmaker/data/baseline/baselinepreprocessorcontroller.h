@@ -6,6 +6,8 @@
 
 class BaseLinePreProcessorController : public DataItemController
 {
+	Q_OBJECT
+
 public:
 	BaseLinePreProcessorController(Model* model, BaseLine* item);
 	~BaseLinePreProcessorController();
@@ -16,9 +18,14 @@ public:
 	void mousePressEvent(QMouseEvent*, View* v) override;
 	void mouseReleaseEvent(QMouseEvent*, View* v) override;
 
+	virtual void setupObjectBrowserRightClickMenu(QMenu* menu);
+	virtual void setupViewRightClickMenu(QMenu* menu);
+
 public slots:
 	void addVertex();
 	void removeVertex();
+	void editCoordinates();
+	void reverseDirection();
 
 	void clear();
 

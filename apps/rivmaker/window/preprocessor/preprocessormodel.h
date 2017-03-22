@@ -22,11 +22,18 @@ public:
 	void deleteCrossSection();
 	void editCrossSectionCoordinates();
 
+	void addBaseLineVertex();
+	void removeBaseLineVertex();
 	void editBaseLineCoordinates();
 	void reverseBaseLineDirection();
 	void deleteBaseLine();
 
 	void setupStandardItemAndViewAndController(PreProcessorDataItemI *newItem, DataItem* parent);
+
+	void updateCrossSections();
+
+private slots:
+	void deleteSelectedItem() override;
 
 private:
 	void setupStandatdItemModel();

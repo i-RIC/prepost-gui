@@ -3,12 +3,15 @@
 #include "../base/view.h"
 #include "../crosssections/crosssectionspreprocessorcontroller.h"
 #include "../project/project.h"
+#include "../../dialogs/coordinateseditdialog.h"
 #include "../../misc/geometryutil.h"
+#include "../../window/preprocessor/preprocessormodel.h"
 
 #include "private/baselinepreprocessorcontroller_impl.h"
 
 #include <QIcon>
 #include <QKeyEvent>
+#include <QMessageBox>
 
 BaseLinePreProcessorController::Impl::Impl() :
 	m_mode {Mode::BeforeDefining},
@@ -19,7 +22,11 @@ BaseLinePreProcessorController::Impl::Impl() :
 	m_removeVertexAction {new QAction(QIcon(":/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), nullptr)},
 	m_editCoordinatesAction {new QAction(tr("&Edit Coordinates..."), nullptr)},
 	m_reverseDirectionAction {new QAction(tr("Reverse &Direction"), nullptr)},
-	m_deleteAction {new QAction(QIcon(":/images/iconDelete.png"), tr("Delete"), nullptr)}
+	m_deleteAction {new QAction(QIcon(":/images/iconDeleteItem.png"), tr("Delete"), nullptr)},
+	m_addPixmap {":/images/cursorAdd.png"},
+	m_removePixmap {":/images/cursorRemove.png"},
+	m_addCursor {m_addPixmap, 0, 0},
+	m_removeCursor {m_removePixmap, 0, 0}
 {}
 
 BaseLinePreProcessorController::Impl::~Impl()
@@ -37,18 +44,10 @@ BaseLinePreProcessorController::BaseLinePreProcessorController(Model* model, Bas
 	DataItemController {model, item},
 	impl {new Impl {}}
 {
-	objectBrowserRightClickMenu().addAction(impl->m_deleteAction);
-
-	viewRightClickMenu().addAction(impl->m_addVertexAction);
-	viewRightClickMenu().addAction(impl->m_removeVertexAction);
-	viewRightClickMenu().addSeparator();
-	viewRightClickMenu().addAction(impl->m_editCoordinatesAction);
-	viewRightClickMenu().addAction(impl->m_reverseDirectionAction);
-	viewRightClickMenu().addSeparator();
-	viewRightClickMenu().addAction(impl->m_deleteAction);
-
 	connect(impl->m_addVertexAction, SIGNAL(triggered()), this, SLOT(addVertex()));
 	connect(impl->m_removeVertexAction, SIGNAL(triggered()), this, SLOT(removeVertex()));
+	connect(impl->m_editCoordinatesAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
+	connect(impl->m_reverseDirectionAction, SIGNAL(triggered()), this, SLOT(reverseDirection()));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(clear()));
 }
 
@@ -107,6 +106,7 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 				break;
 			}
 		}
+		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::RemovePointNotPossible || impl->m_mode == Impl::Mode::RemovePointPrepare) {
 		impl->m_mode = Impl::Mode::RemovePointNotPossible;
 		for (int i = 0; i < polyline.size(); ++i) {
@@ -118,7 +118,7 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 			}
 		}
 		updateMouseCursor(v);
-	} else if (impl->m_mode == Impl::Mode::MovePoint) {
+	} else if (impl->m_mode == Impl::Mode::MovePoint || impl->m_mode == Impl::Mode::AddPoint) {
 		polyline[impl->m_movingPointIndex] = p;
 		baseLine->setPolyLine(polyline);
 		updateView();
@@ -166,6 +166,22 @@ void BaseLinePreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v)
 	updateMouseCursor(v);
 }
 
+void BaseLinePreProcessorController::setupObjectBrowserRightClickMenu(QMenu* menu)
+{
+	menu->addAction(impl->m_deleteAction);
+}
+
+void BaseLinePreProcessorController::setupViewRightClickMenu(QMenu* menu)
+{
+	menu->addAction(impl->m_addVertexAction);
+	menu->addAction(impl->m_removeVertexAction);
+	menu->addSeparator();
+	menu->addAction(impl->m_editCoordinatesAction);
+	menu->addAction(impl->m_reverseDirectionAction);
+	menu->addSeparator();
+	menu->addAction(impl->m_deleteAction);
+}
+
 void BaseLinePreProcessorController::addVertex()
 {
 	if (impl->m_mode == Impl::Mode::Normal) {
@@ -182,6 +198,35 @@ void BaseLinePreProcessorController::removeVertex()
 	} else if (impl->m_mode == Impl::Mode::RemovePointNotPossible) {
 		impl->m_mode = Impl::Mode::Normal;
 	}
+}
+
+void BaseLinePreProcessorController::editCoordinates()
+{
+	auto bl = dynamic_cast<BaseLine*> (item());
+	if (bl->polyLine().size() < 2) {
+		QMessageBox::warning(view(), tr("Warning"), tr("Base line is not defined yet."));
+		return;
+	}
+
+	CoordinatesEditDialog dialog(view());
+	dialog.setOffset(item()->project()->offset());
+	dialog.setTarget(bl);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto preModel = dynamic_cast<PreProcessorModel*> (model());
+	preModel->updateCrossSections();
+}
+
+void BaseLinePreProcessorController::reverseDirection()
+{
+	auto bl = dynamic_cast<BaseLine*> (item());
+	bl->reverseDirection();
+
+	auto preModel = dynamic_cast<PreProcessorModel*> (model());
+	preModel->updateCrossSections();
+
+	updateView();
 }
 
 void BaseLinePreProcessorController::clear()
@@ -205,14 +250,8 @@ void BaseLinePreProcessorController::finishDefining()
 
 	impl->m_mode = Impl::Mode::Normal;
 
-	auto p = item()->project();
-	bool sorted = p->sortCrossSectionsIfPossible();
-	if (! sorted) {return;}
-
-	auto csCtrl = dynamic_cast<CrossSectionsPreProcessorController*> (model()->dataItemController(&(p->crossSections())));
-	csCtrl->rebuildStandardItemsAndViews();
-
-	p->emitUpdated();
+	auto preModel = dynamic_cast<PreProcessorModel*> (model());
+	preModel->updateCrossSections();
 
 	updateView();
 }
@@ -224,7 +263,14 @@ void BaseLinePreProcessorController::updateMouseCursor(View* v)
 		v->setCursor(Qt::OpenHandCursor);
 		break;
 	case Impl::Mode::MovePoint:
+	case Impl::Mode::AddPoint:
 		v->setCursor(Qt::ClosedHandCursor);
+		break;
+	case Impl::Mode::AddPointPrepare:
+		v->setCursor(impl->m_addCursor);
+		break;
+	case Impl::Mode::RemovePointPrepare:
+		v->setCursor(impl->m_removeCursor);
 		break;
 	default:
 		v->setCursor(Qt::ArrowCursor);

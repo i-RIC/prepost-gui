@@ -6,6 +6,7 @@
 #include "private/model_impl.h"
 
 #include <QApplication>
+#include <QAction>
 #include <QCursor>
 #include <QMenu>
 #include <QStandardItem>
@@ -13,8 +14,14 @@
 Model::Impl::Impl() :
 	m_view {nullptr},
 	m_selectedItem {nullptr},
-	m_objectBrowserView {nullptr}
+	m_objectBrowserView {nullptr},
+	m_deleteAction {new QAction(QIcon(":/images/iconDeleteItem.png"), tr("Delete"), nullptr)}
 {}
+
+Model::Impl::~Impl()
+{
+	delete m_deleteAction;
+}
 
 DataItem* Model::Impl::itemFromIndex(const QModelIndex& index)
 {
@@ -34,6 +41,7 @@ Model::Model(QObject* parent) :
 	impl {new Impl {}}
 {
 	connect(&(impl->m_standardItemModel), SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
+	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedItem()));
 }
 
 Model::~Model()
@@ -229,6 +237,11 @@ void Model::clearDataItemControllers()
 	impl->m_controllerMap.clear();
 }
 
+QAction* Model::deleteAction() const
+{
+	return impl->m_deleteAction;
+}
+
 void Model::handleObjectBrowserChange(QStandardItem*)
 {
 	view()->update();
@@ -240,8 +253,16 @@ void Model::handleObjectBrowserPress(const QModelIndex& index)
 
 	auto item = impl->itemFromIndex(index);
 	auto ctrl = dataItemController(item);
+	if (ctrl == nullptr) {return;}
 
-	auto& menu = ctrl->objectBrowserRightClickMenu();
+	QMenu menu(objectBrowserView());
+	ctrl->setupObjectBrowserRightClickMenu(&menu);
+	if (item->isDeletable()) {
+		menu.addSeparator();
+		menu.addAction(impl->m_deleteAction);
+	}
+	if (menu.actions().size() == 0) {return;}
+
 	menu.exec(QCursor::pos());
 }
 
@@ -253,6 +274,9 @@ void Model::handleObjectBrowserSelection(const QModelIndex& current)
 
 	view()->update();
 }
+
+void Model::deleteSelectedItem()
+{}
 
 ObjectBrowserView* Model::objectBrowserView() const
 {

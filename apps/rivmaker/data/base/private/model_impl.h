@@ -7,12 +7,14 @@
 
 #include <map>
 
+class QAction;
 class QStandardItem;
 
 class Model::Impl
 {
 public:
 	Impl();
+	~Impl();
 
 	DataItem* itemFromIndex(const QModelIndex& index);
 
@@ -28,6 +30,8 @@ public:
 
 	ObjectBrowserView* m_objectBrowserView;
 	QStandardItemModel m_standardItemModel;
+
+	QAction* m_deleteAction;
 };
 
 #endif // MODEL_IMPL_H

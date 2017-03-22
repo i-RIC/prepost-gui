@@ -9,7 +9,9 @@ CrossSection::CrossSection(DataItem* parent) :
 	DataItem {parent},
 	m_id {0},
 	m_isDefined {false}
-{}
+{
+	setDeletable(true);
+}
 
 CrossSection::~CrossSection()
 {}

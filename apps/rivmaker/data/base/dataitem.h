@@ -22,6 +22,8 @@ public:
 
 	virtual Project* project() const;
 
+	bool isDeletable() const;
+
 	DataItem* parentItem() const;
 	const std::vector<DataItem*>& childItems() const;
 	std::vector<DataItem*>& childItems();
@@ -29,11 +31,13 @@ public:
 protected:
 	void unregisterChild(DataItem* child);
 	void clearChildItems();
+	void setDeletable(bool deletable);
 
 	static void setupStandardItem(QStandardItem* item);
 
 private:
 	std::vector<DataItem*> m_childItems;
+	bool m_isDeletable;
 };
 
 #endif // DATAITEM_H

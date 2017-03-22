@@ -10,6 +10,7 @@ class ObjectBrowserView;
 class RootDataItem;
 class View;
 
+class QAction;
 class QStandardItem;
 class QStandardItemModel;
 
@@ -65,11 +66,15 @@ public:
 	DataItemController* buildDataItemControllers(T* item, DataItemController* (T::*f)(Model*));
 	void clearDataItemControllers();
 
+	QAction* deleteAction() const;
+
 private slots:
 	void handleObjectBrowserChange(QStandardItem*);
 	void handleObjectBrowserPress(const QModelIndex& index);
 
 	void handleObjectBrowserSelection(const QModelIndex& current);
+
+	virtual void deleteSelectedItem();
 
 protected:
 	ObjectBrowserView* objectBrowserView() const;

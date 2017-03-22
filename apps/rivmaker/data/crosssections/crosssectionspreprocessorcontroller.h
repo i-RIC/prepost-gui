@@ -6,11 +6,15 @@
 
 class CrossSectionsPreProcessorController : public DataItemController
 {
+	Q_OBJECT
+
 public:
 	CrossSectionsPreProcessorController(Model* model, CrossSections* item);
 	~CrossSectionsPreProcessorController();
 
 	void rebuildStandardItemsAndViews();
+
+	void setupObjectBrowserRightClickMenu(QMenu* menu);
 
 public slots:
 	void addCrossSection();

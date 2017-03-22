@@ -6,6 +6,8 @@
 
 class CrossSectionPreProcessorController : public DataItemController
 {
+	Q_OBJECT
+
 public:
 	CrossSectionPreProcessorController(Model* model, CrossSection* item);
 	~CrossSectionPreProcessorController();
@@ -14,8 +16,10 @@ public:
 	void mousePressEvent(QMouseEvent* event, View* v) override;
 	void mouseReleaseEvent(QMouseEvent*, View *v) override;
 
-private slots:
-	void deleteThis();
+	void setupViewRightClickMenu(QMenu* menu) override;
+
+public slots:
+	void editCoordinates();
 
 private:
 	void finishDefining();

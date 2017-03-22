@@ -3,7 +3,8 @@
 #include <QStandardItem>
 
 DataItem::DataItem(DataItem *parent) :
-	QObject(parent)
+	QObject(parent),
+	m_isDeletable {false}
 {
 	if (parent == nullptr) {return;}
 
@@ -19,6 +20,11 @@ DataItem::~DataItem()
 Project* DataItem::project() const
 {
 	return parentItem()->project();
+}
+
+bool DataItem::isDeletable() const
+{
+	return m_isDeletable;
 }
 
 DataItem* DataItem::parentItem() const
@@ -50,6 +56,11 @@ void DataItem::clearChildItems()
 		delete m_childItems[i];
 	}
 	m_childItems.clear();
+}
+
+void DataItem::setDeletable(bool deletable)
+{
+	m_isDeletable = deletable;
 }
 
 void DataItem::setupStandardItem(QStandardItem* item)

@@ -87,6 +87,16 @@ void PreProcessorWindow::crossSectionEditCoordinates()
 	impl->m_model.editCrossSectionCoordinates();
 }
 
+void PreProcessorWindow::baseLineAddVertex()
+{
+	impl->m_model.addBaseLineVertex();
+}
+
+void PreProcessorWindow::baseLineRemoveVertex()
+{
+	impl->m_model.removeBaseLineVertex();
+}
+
 void PreProcessorWindow::baseLineEditCoordinates()
 {
 	impl->m_model.editBaseLineCoordinates();

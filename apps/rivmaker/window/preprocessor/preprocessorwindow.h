@@ -28,6 +28,8 @@ public:
 	void crossSectionDelete();
 	void crossSectionEditCoordinates();
 
+	void baseLineAddVertex();
+	void baseLineRemoveVertex();
 	void baseLineEditCoordinates();
 	void baseLineReverseDirection();
 	void baseLineDelete();

@@ -3,31 +3,31 @@
 #include "../base/view.h"
 #include "../crosssections/crosssectionspreprocessorcontroller.h"
 #include "../project/project.h"
+#include "../../dialogs/coordinateseditdialog.h"
 #include "../../window/preprocessor/preprocessormodel.h"
 
 #include "private/crosssectionpreprocessorcontroller_impl.h"
 
 #include <QAction>
-#include <QIcon>
+#include <QMessageBox>
 #include <QMouseEvent>
 
 CrossSectionPreProcessorController::Impl::Impl() :
 	m_mode {Mode::BeforeDefining},
 	m_movingPointIndex {0},
-	m_deleteAction {new QAction(QIcon(":/images/iconDelete.png"), tr("Delete"), nullptr)}
+	m_editCoordinatesAction {new QAction(tr("&Edit Coordinates..."), nullptr)}
 {}
 
 CrossSectionPreProcessorController::Impl::~Impl()
 {
-	delete m_deleteAction;
+	delete m_editCoordinatesAction;
 }
 
 CrossSectionPreProcessorController::CrossSectionPreProcessorController(Model* model, CrossSection* item) :
 	DataItemController {model, item},
 	impl {new Impl {}}
 {
-	objectBrowserRightClickMenu().addAction(impl->m_deleteAction);
-	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteThis()));
+	connect(impl->m_editCoordinatesAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
 }
 
 CrossSectionPreProcessorController::~CrossSectionPreProcessorController()
@@ -83,25 +83,33 @@ void CrossSectionPreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v
 	updateMouseCursor(v);
 }
 
-void CrossSectionPreProcessorController::deleteThis()
+void CrossSectionPreProcessorController::setupViewRightClickMenu(QMenu* menu)
 {
-	auto preModel = dynamic_cast<PreProcessorModel*> (model());
-	preModel->deleteCrossSection();
+	menu->addAction(impl->m_editCoordinatesAction);
+}
+
+void CrossSectionPreProcessorController::editCoordinates()
+{
+	auto cs = dynamic_cast<CrossSection*> (item());
+	if (! cs->isDefined()) {
+		QMessageBox::warning(view(), tr("Warning"), tr("Cross Section is not defined yet."));
+		return;
+	}
+
+	CoordinatesEditDialog dialog(view());
+	dialog.setOffset(item()->project()->offset());
+	dialog.setTarget(cs);
+	dialog.exec();
+
+	finishDefining();
 }
 
 void CrossSectionPreProcessorController::finishDefining()
 {
 	impl->m_mode = Impl::Mode::Normal;
 
-	auto p = item()->project();
-	bool sorted = p->sortCrossSectionsIfPossible();
-	if (! sorted) {return;}
-
-	auto csCtrl = dynamic_cast<CrossSectionsPreProcessorController*> (model()->dataItemController(&(p->crossSections())));
-	csCtrl->rebuildStandardItemsAndViews();
-
-	model()->select(item());
-	p->emitUpdated();
+	auto preModel = dynamic_cast<PreProcessorModel*> (model());
+	preModel->updateCrossSections();
 
 	updateView();
 }

@@ -20,7 +20,7 @@ public:
 	Mode m_mode;
 	int m_movingPointIndex;
 
-	QAction* m_deleteAction;
+	QAction* m_editCoordinatesAction;
 };
 
 #endif // CROSSSECTIONPREPROCESSORCONTROLLER_IMPL_H

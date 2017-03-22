@@ -152,12 +152,12 @@ void RivmakerMainWindow::openCrossSectionWindow()
 
 void RivmakerMainWindow::baseLineAddPoint()
 {
-
+	impl->m_preProcessorWindow.baseLineAddVertex();
 }
 
 void RivmakerMainWindow::baseLineRemovePoint()
 {
-
+	impl->m_preProcessorWindow.baseLineRemoveVertex();
 }
 
 void RivmakerMainWindow::baseLineEditCoordinates()

@@ -33,6 +33,12 @@ public:
 	QAction* m_editCoordinatesAction;
 	QAction* m_reverseDirectionAction;
 	QAction* m_deleteAction;
+
+	QPixmap m_addPixmap;
+	QPixmap m_removePixmap;
+
+	QCursor m_addCursor;
+	QCursor m_removeCursor;
 };
 
 #endif // BASELINEPREPROCESSORCONTROLLER_IMPL_H

@@ -3,6 +3,7 @@
 #include "dataitemcontroller.h"
 
 #include <QColor>
+#include <QMenu>
 #include <QMouseEvent>
 #include <QPainter>
 
@@ -210,7 +211,15 @@ void View::mouseReleaseEvent(QMouseEvent* event)
 	if (event->button() != Qt::RightButton) {return;}
 	if (! isClick(m_rightClickPos, event->pos())) {return;}
 
-	c->viewRightClickMenu().exec(event->globalPos());
+	QMenu menu(this);
+	c->setupViewRightClickMenu(&menu);
+	if (m_model->selectedItem()->isDeletable()) {
+		menu.addSeparator();
+		menu.addAction(model()->deleteAction());
+	}
+	if (menu.actions().size() == 0) {return;}
+
+	menu.exec(event->globalPos());
 }
 
 void View::wheelEvent(QWheelEvent* event)

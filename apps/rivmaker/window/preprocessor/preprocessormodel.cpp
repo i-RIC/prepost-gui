@@ -2,6 +2,7 @@
 #include "../../data/baseline/baseline.h"
 #include "../../data/baseline/baselinepreprocessorcontroller.h"
 #include "../../data/crosssection/crosssection.h"
+#include "../../data/crosssection/crosssectionpreprocessorcontroller.h"
 #include "../../data/crosssections/crosssectionspreprocessorcontroller.h"
 #include "../../data/elevationpoints/elevationpoints.h"
 #include "../../data/project/project.h"
@@ -76,49 +77,47 @@ void PreProcessorModel::deleteCrossSection()
 		return;
 	}
 	deleteItem(s);
+
+	updateCrossSections();
 }
 
 void PreProcessorModel::editCrossSectionCoordinates()
 {
-	auto s = selectedItem();
-	auto cs = dynamic_cast<CrossSection*> (s);
+	auto cs = dynamic_cast<CrossSection*> (selectedItem());
 	if (cs == nullptr) {
 		QMessageBox::warning(view(), tr("Warning"), tr("To edit Cross Section coordinates, select it at Object Browser."));
 		return;
 	}
+	auto cs_c = dynamic_cast<CrossSectionPreProcessorController*> (dataItemController(cs));
+	cs_c->editCoordinates();
+}
 
-	CoordinatesEditDialog dialog(view());
-	dialog.setOffset(impl->m_project->offset());
-	dialog.setTarget(cs);
-	dialog.exec();
+void PreProcessorModel::addBaseLineVertex()
+{
+	auto& bl = impl->m_project->baseLine();
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
+	bl_c->addVertex();
+}
+
+void PreProcessorModel::removeBaseLineVertex()
+{
+	auto& bl = impl->m_project->baseLine();
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
+	bl_c->removeVertex();
 }
 
 void PreProcessorModel::editBaseLineCoordinates()
 {
 	auto& bl = impl->m_project->baseLine();
-	if (bl.polyLine().size() < 2) {
-		QMessageBox::warning(view(), tr("Warning"), tr("Base line is not defined yet."));
-		return;
-	}
-
-	CoordinatesEditDialog dialog(view());
-	dialog.setOffset(impl->m_project->offset());
-	dialog.setTarget(&(impl->m_project->baseLine()));
-	dialog.exec();
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
+	bl_c->editCoordinates();
 }
 
 void PreProcessorModel::reverseBaseLineDirection()
 {
-	auto p = impl->m_project;
-	p->baseLine().reverseDirection();
-	bool sorted = p->sortCrossSectionsIfPossible();
-	if (sorted) {
-		auto csCtrl = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(p->crossSections())));
-		csCtrl->rebuildStandardItemsAndViews();
-
-	}
-	p->emitUpdated();
-	view()->update();
+	auto& bl = impl->m_project->baseLine();
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&bl));
+	bl_c->reverseDirection();
 }
 
 void PreProcessorModel::deleteBaseLine()
@@ -149,6 +148,24 @@ void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataIt
 	}
 }
 
+void PreProcessorModel::updateCrossSections()
+{
+	bool sorted = impl->m_project->sortCrossSectionsIfPossible();
+	if (! sorted) {return;}
+
+	auto cs = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(impl->m_project->crossSections())));
+	cs->rebuildStandardItemsAndViews();
+
+	impl->m_project->emitUpdated();
+}
+
+void PreProcessorModel::deleteSelectedItem()
+{
+	auto s = selectedItem();
+	if (dynamic_cast<CrossSection*> (s) != nullptr) {
+		deleteCrossSection();
+	}
+}
 
 void PreProcessorModel::setupStandatdItemModel()
 {

@@ -30,12 +30,13 @@ public:
 
 	virtual void restoreMouseCursorOnView(View*);
 
-	QMenu& objectBrowserRightClickMenu();
-	QMenu& viewRightClickMenu();
+	virtual void setupObjectBrowserRightClickMenu(QMenu* menu);
+	virtual void setupViewRightClickMenu(QMenu* menu);
 
 protected:
 	DataItem* item();
-	Model* model();
+	Model* model() const;
+	View* view() const;
 
 	void updateView();
 

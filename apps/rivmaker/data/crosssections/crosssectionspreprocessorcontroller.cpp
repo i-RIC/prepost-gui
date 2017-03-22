@@ -20,7 +20,6 @@ CrossSectionsPreProcessorController::CrossSectionsPreProcessorController(Model* 
 	DataItemController {model, item},
 	impl {new Impl {}}
 {
-	objectBrowserRightClickMenu().addAction(impl->m_addAction);
 	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addCrossSection()));
 }
 
@@ -66,4 +65,9 @@ void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 		myView->addChildItem(v);
 		m->addDataItemView(cs, v);
 	}
+}
+
+void CrossSectionsPreProcessorController::setupObjectBrowserRightClickMenu(QMenu* menu)
+{
+	menu->addAction(impl->m_addAction);
 }
