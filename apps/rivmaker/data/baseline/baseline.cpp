@@ -76,7 +76,7 @@ void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, doub
 			// reverse direction of crosssection if needed.
 			QPointF v1 = p2 - p1;
 			QPointF v2 = cs->point2() - cs->point1();
-			double outerProd = v1.x() * v2.y() - v1.y() * v1.x();
+			double outerProd = v1.x() * v2.y() - v1.y() * v2.x();
 			if (outerProd < 0) {
 				cs->reverseDirection();
 			}
@@ -90,16 +90,6 @@ void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, doub
 
 double BaseLine::calcPosition(double x, double y) const
 {
-/*
-	QPointF ret;
-	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(4, 1));
-	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(8, -1));
-	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(11, 1));
-	ret = GeometryUtil::nearestPoint(QPointF(0, 0), QPointF(10, 0), QPointF(-5, 3));
-*/
-
-
-
 	std::map<double, double> distanceMap;
 	double pos = 0;
 	for (int i = 0; i < impl->m_polyLine.size() - 1; ++i) {
