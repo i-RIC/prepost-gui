@@ -13,7 +13,7 @@ ArbitraryHWM::~ArbitraryHWM()
 
 QStandardItem* ArbitraryHWM::buildPreProcessorStandardItem() const
 {
-	auto item = new QStandardItem(QIcon(":/images/iconAHWM.png"), tr("Arbitrary  HWM"));
+	auto item = new QStandardItem(QIcon(":/images/iconAHWM.png"), tr("Arbitrary HWM"));
 	setupStandardItem(item);
 	return item;
 }

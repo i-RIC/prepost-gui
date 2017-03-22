@@ -113,6 +113,10 @@ void VerticalCrossSectionWindow::setProject(Project* project)
 {
 	m_project = project;
 	connect(m_project, SIGNAL(updated()), this, SLOT(updateView()));
+	connect(&m_tableModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleTableEdit(QStandardItem*)));
+	connect(ui->arbitraryCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->leftCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->rightCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
 	updateView();
 }
 
@@ -121,6 +125,18 @@ void VerticalCrossSectionWindow::updateView()
 	updatePlot();
 
 	updateTable();
+}
+
+void VerticalCrossSectionWindow::handleTableEdit(QStandardItem* editedItem)
+{
+	if (editedItem->column() == 0) {return;}
+	int row = editedItem->row();
+	double val = editedItem->data(Qt::EditRole).toDouble();
+
+	const auto& crossSections = m_project->crossSections();
+	crossSections.crossSectionVector().at(row)->setWaterElevation(val);
+
+	m_project->emitUpdated();
 }
 
 void VerticalCrossSectionWindow::initPlot()
@@ -181,10 +197,23 @@ void VerticalCrossSectionWindow::updatePlot()
 
 	double xmin = 0, xmax = 1, ymin = 0, ymax = 1;
 	bool first = true;
+	QVector<QPointF> emptySamples;
 
-	setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &xmin, &xmax, &ymin, &ymax, &first);
-	setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
-	setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	if (ui->arbitraryCheckBox->isChecked()) {
+		setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_arbitraryCurve->setSamples(emptySamples);
+	}
+	if (ui->leftCheckBox->isChecked()) {
+		setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_leftBankCurve->setSamples(emptySamples);
+	}
+	if (ui->rightCheckBox->isChecked()) {
+		setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_rightBankCurve->setSamples(emptySamples);
+	}
 
 	setupCrossSectionLine();
 	setupCrossSectionMarkers(&xmin, &xmax, &first);
@@ -199,15 +228,16 @@ void VerticalCrossSectionWindow::updateTable()
 	const auto& crossSections = m_project->crossSections();
 
 	auto& m = m_tableModel;
+	m.blockSignals(true);
 
 	m.clear();
+
+	ui->tableView->setModel(nullptr);
 
 	m.setColumnCount(2);
 	QStringList hLabels;
 	hLabels << tr("Name") << tr("Elevation");
 	m.setHorizontalHeaderLabels(hLabels);
-	ui->tableView->setColumnWidth(0, 50);
-	ui->tableView->setColumnWidth(1, 100);
 
 	int row = 0;
 	for (CrossSection* cs : crossSections.crossSectionVector()) {
@@ -220,8 +250,15 @@ void VerticalCrossSectionWindow::updateTable()
 		elevItem->setData(cs->waterElevation(), Qt::EditRole);
 		m.setItem(row, 1, elevItem);
 
-		ui->tableView->setRowHeight(row, defaultRowHeight);
 		++ row;
+	}
+	m.blockSignals(false);
+
+	ui->tableView->setModel(&m);
+	ui->tableView->setColumnWidth(0, 50);
+	ui->tableView->setColumnWidth(1, 100);
+	for (int i = 0; i < m.rowCount(); ++i) {
+		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 }
 

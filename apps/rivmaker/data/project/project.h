@@ -67,6 +67,7 @@ public:
 	void createRiverSurveyData();
 	void deleteRiverSurveyData();
 
+public slots:
 	void emitUpdated();
 
 signals:

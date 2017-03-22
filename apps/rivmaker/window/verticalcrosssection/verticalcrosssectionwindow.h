@@ -27,6 +27,7 @@ public:
 
 private slots:
 	void updateView();
+	void handleTableEdit(QStandardItem* editedItem);
 
 private:
 	void initPlot();
