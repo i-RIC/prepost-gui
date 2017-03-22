@@ -44,6 +44,9 @@ void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 	auto itm = item();
 	auto mySItem = m->standardItem(itm);
 	auto myView = m->dataItemView(itm);
+
+	auto selectedCs = dynamic_cast<CrossSection*> (m->selectedItem());
+
 	for (auto cs : itm->childItems()) {
 		auto sItem = m->standardItem(cs);
 		mySItem->takeRow(sItem->row());
@@ -65,6 +68,10 @@ void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 		myView->addChildItem(v);
 		m->addDataItemView(cs, v);
 	}
+
+	if (selectedCs == nullptr) {return;}
+
+	m->select(selectedCs);
 }
 
 void CrossSectionsPreProcessorController::setupObjectBrowserRightClickMenu(QMenu* menu)
