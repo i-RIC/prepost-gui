@@ -4,6 +4,7 @@
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
+#include "../window/crosssection/crosssectionwindow.h"
 
 #include "ui_rivmakermainwindow.h"
 #include "private/rivmakermainwindow_impl.h"
@@ -62,6 +63,13 @@ void RivmakerMainWindow::newProject()
 	impl->m_project = new Project();
 	impl->m_preProcessorWindow.setProject(impl->m_project);
 	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
+
+	auto windows = dynamic_cast<QMdiArea*> (centralWidget())->subWindowList();
+	for (auto w : windows) {
+		auto csw = dynamic_cast<CrossSectionWindow*> (w->widget());
+		if (csw == nullptr) {continue;}
+		csw->setProject(impl->m_project);
+	}
 }
 
 void RivmakerMainWindow::importElevation()
@@ -153,7 +161,16 @@ void RivmakerMainWindow::focusVerticalCrossSectionWindow()
 
 void RivmakerMainWindow::openCrossSectionWindow()
 {
+	auto w = new CrossSectionWindow(this);
+	w->setProject(impl->m_project);
 
+	connect(impl->m_project, SIGNAL(updated()), w, SLOT(updateView()));
+	auto cw = dynamic_cast<QMdiArea*> (centralWidget());
+	auto subW = cw->addSubWindow(w);
+
+	subW->setWindowIcon(w->windowIcon());
+	subW->show();
+	subW->setFocus();
 }
 
 void RivmakerMainWindow::baseLineAddPoint()

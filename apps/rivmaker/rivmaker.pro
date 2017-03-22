@@ -105,7 +105,8 @@ HEADERS += dialogs/mousehelpdialog.h \
 FORMS += dialogs/mousehelpdialog.ui \
 				 main/rivmakermainwindow.ui \
 				 window/verticalcrosssection/verticalcrosssectionwindow.ui \
-    dialogs/coordinateseditdialog.ui
+    dialogs/coordinateseditdialog.ui \
+    window/crosssection/crosssectionwindow.ui
 SOURCES += dialogs/mousehelpdialog.cpp \
 					 main/main.cpp \
 					 main/rivmakermainwindow.cpp \
@@ -140,7 +141,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
 					 data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
 					 io/points/pointscsvimporter.cpp \
 					 io/points/pointsimporter.cpp \
-					 window/crosssection/crosssectionwindow.cpp \
 					 window/preprocessor/preprocessormodel.cpp \
 					 window/preprocessor/preprocessorview.cpp \
 					 window/preprocessor/preprocessorwindow.cpp \
@@ -165,5 +165,6 @@ SOURCES += dialogs/mousehelpdialog.cpp \
     dialogs/coordinateseditdialog.cpp \
     dialogs/private/coordinateeditwidget.cpp \
     misc/mathutil.cpp \
-    io/rivexporter.cpp
+    io/rivexporter.cpp \
+    window/crosssection/crosssectionwindow.cpp
 RESOURCES += rivmaker.qrc

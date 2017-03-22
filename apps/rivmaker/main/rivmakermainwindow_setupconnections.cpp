@@ -44,6 +44,7 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->crosssectionLineAddAction, SIGNAL(triggered()), this, SLOT(crossSectionAdd()));
 	connect(ui->crosssectionLineEditCoordinatesAction, SIGNAL(triggered()), this, SLOT(crossSectionEditCoordinates()));
 	connect(ui->crosssectionLineDeleteAction, SIGNAL(triggered()), this, SLOT(crossSectionDelete()));
+	connect(ui->openCrosssectionLineWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
 	connect(ui->viewToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleToolBar(bool)));
 	connect(ui->viewStatusBarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleStatusBar(bool)));

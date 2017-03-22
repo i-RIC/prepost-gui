@@ -5,7 +5,6 @@
 #include "../../window/preprocessor/preprocessorwindow.h"
 #include "../../window/verticalcrosssection/verticalcrosssectionwindow.h"
 
-class CrossSectionWindow;
 class Project;
 
 class RivmakerMainWindow::Impl
@@ -16,7 +15,6 @@ public:
 
 	PreProcessorWindow m_preProcessorWindow;
 	VerticalCrossSectionWindow m_verticalCrossSectionWindow;
-	std::vector<CrossSectionWindow*> m_crossSectionWindows;
 
 	Project* m_project;
 };
