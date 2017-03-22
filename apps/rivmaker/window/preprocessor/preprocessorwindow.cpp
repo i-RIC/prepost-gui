@@ -87,6 +87,11 @@ void PreProcessorWindow::crossSectionEditCoordinates()
 	impl->m_model.editCrossSectionCoordinates();
 }
 
+void PreProcessorWindow::baseLineEditCoordinates()
+{
+	impl->m_model.editBaseLineCoordinates();
+}
+
 void PreProcessorWindow::closeEvent(QCloseEvent *e)
 {
 	parentWidget()->hide();

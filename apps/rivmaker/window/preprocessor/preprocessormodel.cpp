@@ -92,6 +92,20 @@ void PreProcessorModel::editCrossSectionCoordinates()
 	dialog.exec();
 }
 
+void PreProcessorModel::editBaseLineCoordinates()
+{
+	auto& bl = impl->m_project->baseLine();
+	if (bl.polyLine().size() < 2) {
+		QMessageBox::warning(view(), tr("Warning"), tr("Base line is not defined yet."));
+		return;
+	}
+
+	CoordinatesEditDialog dialog(view());
+	dialog.setOffset(impl->m_project->offset());
+	dialog.setTarget(&(impl->m_project->baseLine()));
+	dialog.exec();
+}
+
 void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataItemI* newItem, DataItem* parent)
 {
 	auto dItem = dynamic_cast<DataItem*> (newItem);

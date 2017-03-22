@@ -162,7 +162,7 @@ void RivmakerMainWindow::baseLineRemovePoint()
 
 void RivmakerMainWindow::baseLineEditCoordinates()
 {
-
+	impl->m_preProcessorWindow.baseLineEditCoordinates();
 }
 
 void RivmakerMainWindow::baseLineDelete()

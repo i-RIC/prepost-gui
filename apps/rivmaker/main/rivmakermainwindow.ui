@@ -141,8 +141,8 @@
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="importMenu"/>
-   <addaction name="baseLineMenu"/>
    <addaction name="crosssectionLineMenu"/>
+   <addaction name="baseLineMenu"/>
    <addaction name="riverSurveyDataMenu"/>
    <addaction name="menu_Window"/>
    <addaction name="helpMenu"/>

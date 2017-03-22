@@ -22,6 +22,8 @@ public:
 	void deleteCrossSection();
 	void editCrossSectionCoordinates();
 
+	void editBaseLineCoordinates();
+
 	void setupStandardItemAndViewAndController(PreProcessorDataItemI *newItem, DataItem* parent);
 
 private:
