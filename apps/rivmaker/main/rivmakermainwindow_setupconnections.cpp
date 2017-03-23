@@ -26,6 +26,9 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->fileExportBaseLineAction, SIGNAL(triggered()), this, SLOT(exportBaseLine()));
 	connect(ui->baseLineExportAction, SIGNAL(triggered()), this, SLOT(exportBaseLine()));
 
+	connect(ui->fileExportCrosssectionLineAction, SIGNAL(triggered()), this, SLOT(exportCrossSectionLines()));
+	connect(ui->crosssectionLineExportAction, SIGNAL(triggered()), this, SLOT(exportCrossSectionLines()));
+
 	connect(ui->fileExportRiverSurveyDataAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
 	connect(ui->riverSurveyDataExportAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
 
