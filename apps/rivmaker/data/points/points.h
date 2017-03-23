@@ -19,7 +19,6 @@ public:
 	void clearPoints();
 
 	void importData(QWidget* w);
-	void exportData(QWidget* w);
 
 private:
 	std::vector<QVector3D*> m_points;

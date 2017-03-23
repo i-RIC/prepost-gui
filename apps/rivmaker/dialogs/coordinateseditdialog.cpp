@@ -3,6 +3,7 @@
 #include "../data/base/coordinatesi.h"
 
 #include "private/coordinateeditwidget.h"
+#include "private/coordinateseditdialog_impl.h"
 
 #include <QAbstractButton>
 #include <QDialogButtonBox>

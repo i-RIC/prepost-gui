@@ -18,10 +18,15 @@ public:
 	void mousePressEvent(QMouseEvent*, View* v) override;
 	void mouseReleaseEvent(QMouseEvent*, View* v) override;
 
-	virtual void setupObjectBrowserRightClickMenu(QMenu* menu);
-	virtual void setupViewRightClickMenu(QMenu* menu);
+	void updateMode();
+
+	virtual void setupObjectBrowserRightClickMenu(QMenu* menu) override;
+	virtual void setupViewRightClickMenu(QMenu* menu) override;
 
 public slots:
+	void importData();
+	void exportData();
+
 	void addVertex();
 	void removeVertex();
 	void editCoordinates();

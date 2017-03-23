@@ -82,6 +82,12 @@ HEADERS += dialogs/coordinateseditdialog.h \
            io/points/pointscsvimporter.h \
            io/points/pointsimporter.h \
            io/points/pointsimporteri.h \
+           io/polyline/polylinecsvexporter.h \
+           io/polyline/polylinecsvimporter.h \
+           io/polyline/polylineexporter.h \
+           io/polyline/polylineexporteri.h \
+           io/polyline/polylineimporter.h \
+           io/polyline/polylineimporteri.h \
            main/private/rivmakermainwindow_impl.h \
            window/crosssection/crosssectionwindow.h \
            window/preprocessor/preprocessordataitemi.h \
@@ -117,7 +123,6 @@ SOURCES += dialogs/coordinateseditdialog.cpp \
            main/rivmakermainwindow_setupconnections.cpp \
            misc/geometryutil.cpp \
            misc/mathutil.cpp \
-           release/qrc_rivmaker.cpp \
            data/arbitraryhwm/arbitraryhwm.cpp \
            data/arbitraryhwm/arbitraryhwmpreprocessorview.cpp \
            data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.cpp \
@@ -162,6 +167,10 @@ SOURCES += dialogs/coordinateseditdialog.cpp \
            dialogs/private/coordinateeditwidget.cpp \
            io/points/pointscsvimporter.cpp \
            io/points/pointsimporter.cpp \
+           io/polyline/polylinecsvexporter.cpp \
+           io/polyline/polylinecsvimporter.cpp \
+           io/polyline/polylineexporter.cpp \
+           io/polyline/polylineimporter.cpp \
            window/crosssection/crosssectionwindow.cpp \
            window/preprocessor/preprocessormodel.cpp \
            window/preprocessor/preprocessorview.cpp \

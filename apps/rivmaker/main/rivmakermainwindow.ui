@@ -59,9 +59,9 @@
       <iconset resource="../rivmaker.qrc">
        <normaloff>:/images/iconExport.png</normaloff>:/images/iconExport.png</iconset>
      </property>
-     <addaction name="exportBaseLine"/>
-     <addaction name="exportCrosssectionLineAction"/>
-     <addaction name="exportRiverSurveyDataAction"/>
+     <addaction name="fileExportBaseLineAction"/>
+     <addaction name="fileExportCrosssectionLineAction"/>
+     <addaction name="fileExportRiverSurveyDataAction"/>
     </widget>
     <addaction name="newProjectAction"/>
     <addaction name="separator"/>
@@ -397,17 +397,17 @@
     <string>&amp;Cross Section...</string>
    </property>
   </action>
-  <action name="exportBaseLine">
+  <action name="fileExportBaseLineAction">
    <property name="text">
     <string>&amp;Base Line...</string>
    </property>
   </action>
-  <action name="exportCrosssectionLineAction">
+  <action name="fileExportCrosssectionLineAction">
    <property name="text">
     <string>&amp;Cross Section...</string>
    </property>
   </action>
-  <action name="exportRiverSurveyDataAction">
+  <action name="fileExportRiverSurveyDataAction">
    <property name="text">
     <string>&amp;River Survey Data...</string>
    </property>

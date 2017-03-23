@@ -4,13 +4,17 @@
 #include "../crosssections/crosssectionspreprocessorcontroller.h"
 #include "../project/project.h"
 #include "../../dialogs/coordinateseditdialog.h"
+#include "../../io/polyline/polylineimporter.h"
+#include "../../io/polyline/polylineexporter.h"
 #include "../../misc/geometryutil.h"
 #include "../../window/preprocessor/preprocessormodel.h"
 
 #include "private/baselinepreprocessorcontroller_impl.h"
 
+#include <QAction>
 #include <QIcon>
 #include <QKeyEvent>
+#include <QMenu>
 #include <QMessageBox>
 
 BaseLinePreProcessorController::Impl::Impl() :
@@ -18,6 +22,8 @@ BaseLinePreProcessorController::Impl::Impl() :
 	m_movingPointIndex {0},
 	m_addingEdgeIndex {0},
 	m_removingPointIndex {0},
+	m_importAction {new QAction(QIcon(":/images/iconImport.png"), tr("&Import"), nullptr)},
+	m_exportAction {new QAction(QIcon(":/images/iconExport.png"), tr("&Export"), nullptr)},
 	m_addVertexAction {new QAction(QIcon(":/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), nullptr)},
 	m_removeVertexAction {new QAction(QIcon(":/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), nullptr)},
 	m_editCoordinatesAction {new QAction(tr("&Edit Coordinates..."), nullptr)},
@@ -31,6 +37,8 @@ BaseLinePreProcessorController::Impl::Impl() :
 
 BaseLinePreProcessorController::Impl::~Impl()
 {
+	delete m_importAction;
+	delete m_exportAction;
 	delete m_addVertexAction;
 	delete m_removeVertexAction;
 	delete m_editCoordinatesAction;
@@ -44,6 +52,8 @@ BaseLinePreProcessorController::BaseLinePreProcessorController(Model* model, Bas
 	DataItemController {model, item},
 	impl {new Impl {}}
 {
+	connect(impl->m_importAction, SIGNAL(triggered()), this, SLOT(importData()));
+	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportData()));
 	connect(impl->m_addVertexAction, SIGNAL(triggered()), this, SLOT(addVertex()));
 	connect(impl->m_removeVertexAction, SIGNAL(triggered()), this, SLOT(removeVertex()));
 	connect(impl->m_editCoordinatesAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
@@ -166,8 +176,21 @@ void BaseLinePreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v)
 	updateMouseCursor(v);
 }
 
+void BaseLinePreProcessorController::updateMode()
+{
+	auto bl = dynamic_cast<BaseLine*> (item());
+	if (bl->polyLine().size() == 0) {
+		impl->m_mode = Impl::Mode::BeforeDefining;
+	} else {
+		impl->m_mode = Impl::Mode::Normal;
+	}
+}
+
 void BaseLinePreProcessorController::setupObjectBrowserRightClickMenu(QMenu* menu)
 {
+	menu->addAction(impl->m_importAction);
+	menu->addAction(impl->m_exportAction);
+	menu->addSeparator();
 	menu->addAction(impl->m_deleteAction);
 }
 
@@ -180,6 +203,32 @@ void BaseLinePreProcessorController::setupViewRightClickMenu(QMenu* menu)
 	menu->addAction(impl->m_reverseDirectionAction);
 	menu->addSeparator();
 	menu->addAction(impl->m_deleteAction);
+}
+
+void BaseLinePreProcessorController::importData()
+{
+	auto bl = dynamic_cast<BaseLine*> (item());
+
+	std::vector<QPointF> line;
+	QPointF offset = bl->project()->offset();
+	bool ok = PolyLineImporter::importData(&line, &offset, view());
+	if (! ok) {return;}
+
+	bl->setPolyLine(line);
+	bl->project()->setOffset(offset);
+	updateMode();
+
+	updateView();
+}
+
+void BaseLinePreProcessorController::exportData()
+{
+	auto bl = dynamic_cast<BaseLine*> (item());
+	if (bl->polyLine().size() == 0) {
+		QMessageBox::warning(view(), tr("Warning"), tr("Base line is not defined yet."));
+		return;
+	}
+	PolyLineExporter::exportData(bl->polyLine(), bl->project()->offset(), view());
 }
 
 void BaseLinePreProcessorController::addVertex()

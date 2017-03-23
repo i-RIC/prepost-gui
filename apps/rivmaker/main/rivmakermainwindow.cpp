@@ -4,6 +4,7 @@
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
+#include "../io/polyline/polylineimporter.h"
 #include "../window/crosssection/crosssectionwindow.h"
 
 #include "ui_rivmakermainwindow.h"
@@ -90,7 +91,7 @@ void RivmakerMainWindow::importSACGUIFile()
 
 void RivmakerMainWindow::importBaseLine()
 {
-
+	impl->m_preProcessorWindow.importBaseLine();
 }
 
 void RivmakerMainWindow::importCrossSectionLines()
@@ -98,8 +99,22 @@ void RivmakerMainWindow::importCrossSectionLines()
 
 }
 
+void RivmakerMainWindow::exportBaseLine()
+{
+	impl->m_preProcessorWindow.exportBaseLine();
+}
+
+void RivmakerMainWindow::exportCrossSectionLines()
+{
+
+}
+
 void RivmakerMainWindow::exportRiverSurveyData()
 {
+	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {
+		QMessageBox::warning(this, tr("Error"), tr("No data to export exists"));
+		return;
+	}
 	RivExporter::exportData(impl->m_project->crossSections(), this);
 }
 

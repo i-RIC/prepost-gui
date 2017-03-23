@@ -1,4 +1,5 @@
 #include "coordinateeditwidget.h"
+
 #include <cmath>
 #include <QDoubleValidator>
 #include <QMessageBox>

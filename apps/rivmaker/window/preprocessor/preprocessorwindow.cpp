@@ -35,6 +35,8 @@ PreProcessorWindow::PreProcessorWindow(QWidget *parent) :
 {
 	setWindowTitle(tr("Main Window"));
 	setWindowIcon(QIcon(":images/iconMain.png"));
+
+	resize(600, 500);
 }
 
 PreProcessorWindow::~PreProcessorWindow()
@@ -70,6 +72,26 @@ void PreProcessorWindow::zoomIn()
 void PreProcessorWindow::zoomOut()
 {
 	impl->m_view.zoomOut();
+}
+
+void PreProcessorWindow::importBaseLine()
+{
+	impl->m_model.importBaseLine();
+}
+
+void PreProcessorWindow::exportBaseLine()
+{
+	impl->m_model.exportBaseLine();
+}
+
+void PreProcessorWindow::importCrossSections()
+{
+	impl->m_model.importCrossSections();
+}
+
+void PreProcessorWindow::exportCrossSections()
+{
+	impl->m_model.exportCrossSections();
 }
 
 void PreProcessorWindow::crossSectionAdd()

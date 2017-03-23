@@ -247,9 +247,11 @@ void View::setupCursors()
 {
 	m_zoomPixmap = QPixmap(":/images/cursorZoom.png");
 	m_movePixmap = QPixmap(":/images/cursorMove.png");
+	m_rotatePixmap = QPixmap(":/images/cursorRotate.png");
 
-	m_zoomCursor = QCursor(m_zoomPixmap);
-	m_moveCursor = QCursor(m_movePixmap);
+	m_zoomCursor = QCursor(m_zoomPixmap, 16, 16);
+	m_moveCursor = QCursor(m_movePixmap, 16, 16);
+	m_rotateCursor = QCursor(m_rotatePixmap, 16, 16);
 }
 
 bool View::prepareDrawModel()

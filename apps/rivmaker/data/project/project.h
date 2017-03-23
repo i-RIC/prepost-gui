@@ -45,7 +45,7 @@ public:
 	RiverSurveyDataDummy& riverSurveyDataDummy();
 
 	const QPointF& offset() const;
-	QPointF& offset();
+	void setOffset(const QPointF& offset);
 
 	void calcCrossSectionElevations();
 	void mapPointsToCrossSections();

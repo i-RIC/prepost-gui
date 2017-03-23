@@ -11,6 +11,7 @@ class CrossSection;
 class Project;
 
 class QwtPlotCurve;
+class QwtPlotMarker;
 
 class CrossSectionWindow : public QMainWindow
 {
@@ -33,6 +34,7 @@ private:
 	Ui::CrossSectionWindow *ui;
 
 	QwtPlotCurve* m_curve;
+	QwtPlotMarker* m_waterElevationMarker;
 
 	CrossSection* m_currentCrossSection;
 	Project* m_project;

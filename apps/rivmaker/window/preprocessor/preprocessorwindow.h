@@ -24,6 +24,12 @@ public:
 	void zoomIn() override;
 	void zoomOut() override;
 
+	void importBaseLine();
+	void exportBaseLine();
+
+	void importCrossSections();
+	void exportCrossSections();
+
 	void crossSectionAdd();
 	void crossSectionDelete();
 	void crossSectionEditCoordinates();

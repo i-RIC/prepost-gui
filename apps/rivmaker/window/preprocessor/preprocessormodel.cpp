@@ -56,6 +56,27 @@ void PreProcessorModel::setProject(Project* project)
 	view()->fit();
 }
 
+void PreProcessorModel::importBaseLine()
+{
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&(impl->m_project->baseLine())));
+	bl_c->importData();
+}
+
+void PreProcessorModel::exportBaseLine()
+{
+	auto bl_c = dynamic_cast<BaseLinePreProcessorController*> (dataItemController(&(impl->m_project->baseLine())));
+	bl_c->exportData();
+}
+
+void PreProcessorModel::importCrossSections()
+{
+}
+
+void PreProcessorModel::exportCrossSections()
+{
+
+}
+
 void PreProcessorModel::addCrossSection()
 {
 	auto ctrl = dynamic_cast<CrossSectionsPreProcessorController*>

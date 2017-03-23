@@ -1,15 +1,14 @@
-#include "pointsimporter.h"
-#include "pointsimporteri.h"
-#include "pointscsvimporter.h"
+#include "polylineimporter.h"
+#include "polylineimporteri.h"
+#include "polylinecsvimporter.h"
 
 #include <QFileDialog>
 #include <QFileInfo>
-#include <QString>
 
-bool PointsImporter::importData(std::vector<QVector3D*>* points, QPointF* offset, QWidget* w)
+bool PolyLineImporter::importData(std::vector<QPointF>* line, QPointF* offset, QWidget* w)
 {
-	std::vector<PointsImporterI*> importers;
-	importers.push_back(new PointsCsvImporter());
+	std::vector<PolyLineImporterI*> importers;
+	importers.push_back(new PolyLineCsvImporter());
 
 	QStringList filters;
 	for (auto i : importers) {
@@ -24,7 +23,7 @@ bool PointsImporter::importData(std::vector<QVector3D*>* points, QPointF* offset
 	for (auto i : importers) {
 		QStringList exts = i->acceptableExtensions();
 		if (exts.contains(finfo.suffix(), Qt::CaseInsensitive)) {
-			result = i->importData(points, offset, fname, w);
+			result = i->importData(line, offset, fname, w);
 			break;
 		}
 	}
@@ -36,5 +35,5 @@ bool PointsImporter::importData(std::vector<QVector3D*>* points, QPointF* offset
 	return result;
 }
 
-PointsImporter::PointsImporter()
+PolyLineImporter::PolyLineImporter()
 {}

@@ -3,6 +3,9 @@
 #include "../arbitraryhwm/arbitraryhwm.h"
 #include "../base/dataItem.h"
 #include "../crosssection/crosssection.h"
+#include "../crosssections/crosssections.h"
+#include "../leftbankhwm/leftbankhwm.h"
+#include "../rightbankhwm/rightbankhwm.h"
 #include "../riversurveydata/riversurveydata.h"
 #include "../../misc/mathutil.h"
 
@@ -132,9 +135,9 @@ const QPointF& Project::offset() const
 	return impl->m_offset;
 }
 
-QPointF& Project::offset()
+void Project::setOffset(const QPointF& offset)
 {
-	return impl->m_offset;
+	impl->m_offset = offset;
 }
 
 void Project::calcCrossSectionElevations()

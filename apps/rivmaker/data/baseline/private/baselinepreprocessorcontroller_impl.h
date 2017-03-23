@@ -28,6 +28,9 @@ public:
 	int m_addingEdgeIndex;
 	int m_removingPointIndex;
 
+	QAction* m_importAction;
+	QAction* m_exportAction;
+
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;
 	QAction* m_editCoordinatesAction;

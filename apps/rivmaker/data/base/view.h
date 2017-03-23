@@ -89,10 +89,12 @@ protected:
 
 	QCursor m_zoomCursor;
 	QCursor m_moveCursor;
+	QCursor m_rotateCursor;
 
 private:
 	QPixmap m_zoomPixmap;
 	QPixmap m_movePixmap;
+	QPixmap m_rotatePixmap;
 };
 
 #endif // VIEW_H

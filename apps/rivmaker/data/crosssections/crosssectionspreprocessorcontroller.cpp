@@ -6,6 +6,7 @@
 #include "private/crosssectionspreprocessorcontroller_impl.h"
 
 #include <QAction>
+#include <QMenu>
 
 CrossSectionsPreProcessorController::Impl::Impl() :
 	m_addAction {new QAction(tr("Add"), nullptr)}

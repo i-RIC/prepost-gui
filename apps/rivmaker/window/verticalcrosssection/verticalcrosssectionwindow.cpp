@@ -3,6 +3,7 @@
 #include "../../data/arbitraryhwm/arbitraryhwm.h"
 #include "../../data/baseline/baseline.h"
 #include "../../data/crosssection/crosssection.h"
+#include "../../data/crosssections/crosssections.h"
 #include "../../data/leftbankhwm/leftbankhwm.h"
 #include "../../data/project/project.h"
 #include "../../data/points/points.h"

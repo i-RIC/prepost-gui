@@ -7,6 +7,7 @@
 
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
+#include <qwt_plot_marker.h>
 #include <qwt_symbol.h>
 
 #include <QVector3D>
@@ -96,6 +97,13 @@ void CrossSectionWindow::initCurve()
 	QwtSymbol* s = new QwtSymbol(QwtSymbol::Ellipse, QBrush(Qt::black), QPen(Qt::black), QSize(7, 7));
 	m_curve->setSymbol(s);
 	m_curve->attach(ui->qwtWidget);
+
+	m_waterElevationMarker = new QwtPlotMarker();
+	m_waterElevationMarker->setYValue(0);
+	m_waterElevationMarker->setLineStyle(QwtPlotMarker::HLine);
+	m_waterElevationMarker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
+	m_waterElevationMarker->setLinePen(QPen(Qt::blue));
+	m_waterElevationMarker->attach(ui->qwtWidget);
 }
 
 void CrossSectionWindow::updateCurve()
@@ -115,6 +123,8 @@ void CrossSectionWindow::updateCurve()
 		samples.push_back(QPointF(pair.first, pair.second));
 	}
 	m_curve->setSamples(samples);
+
+	m_waterElevationMarker->setYValue(m_currentCrossSection->waterElevation());
 
 	ui->qwtWidget->replot();
 }

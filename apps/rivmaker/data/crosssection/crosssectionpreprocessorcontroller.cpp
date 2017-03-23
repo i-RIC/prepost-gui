@@ -9,6 +9,7 @@
 #include "private/crosssectionpreprocessorcontroller_impl.h"
 
 #include <QAction>
+#include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
 

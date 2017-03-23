@@ -10,7 +10,8 @@
 CrossSection::CrossSection(DataItem* parent) :
 	DataItem {parent},
 	m_id {0},
-	m_isDefined {false}
+	m_isDefined {false},
+	m_waterElevation {0}
 {
 	setDeletable(true);
 }

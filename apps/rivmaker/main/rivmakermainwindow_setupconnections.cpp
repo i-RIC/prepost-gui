@@ -23,7 +23,10 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->fileImportCrosssectionLineAction, SIGNAL(triggered()), this, SLOT(importCrossSectionLines()));
 	connect(ui->crosssectionLineImportAction, SIGNAL(triggered()), this, SLOT(importCrossSectionLines()));
 
-	connect(ui->exportRiverSurveyDataAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
+	connect(ui->fileExportBaseLineAction, SIGNAL(triggered()), this, SLOT(exportBaseLine()));
+	connect(ui->baseLineExportAction, SIGNAL(triggered()), this, SLOT(exportBaseLine()));
+
+	connect(ui->fileExportRiverSurveyDataAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
 	connect(ui->riverSurveyDataExportAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
 
 	connect(ui->fitAction, SIGNAL(triggered()), this, SLOT(fit()));
@@ -45,6 +48,7 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->crosssectionLineEditCoordinatesAction, SIGNAL(triggered()), this, SLOT(crossSectionEditCoordinates()));
 	connect(ui->crosssectionLineDeleteAction, SIGNAL(triggered()), this, SLOT(crossSectionDelete()));
 	connect(ui->openCrosssectionLineWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
+	connect(ui->openCrosssectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
 	connect(ui->viewToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleToolBar(bool)));
 	connect(ui->viewStatusBarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleStatusBar(bool)));

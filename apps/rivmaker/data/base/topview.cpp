@@ -17,11 +17,39 @@ void rotate(QVector2D* vec, double angle_degree)
 	double x = vec->x();
 	double y = vec->y();
 
-	x = + std::cos(angle_rad) * x + std::sin(angle_rad) * y;
-	y = - std::sin(angle_rad) * x + std::cos(angle_rad) * y;
+	double newX = + std::cos(angle_rad) * x + std::sin(angle_rad) * y;
+	double newY = - std::sin(angle_rad) * x + std::cos(angle_rad) * y;
 
-	vec->setX(x);
-	vec->setY(y);
+	vec->setX(newX);
+	vec->setY(newY);
+}
+
+void rotateVector90(QVector2D& v)
+{
+	double tmp = v.x();
+	v.setX(- v.y());
+	v.setY(tmp);
+}
+
+double angleRadian(const QVector2D& v1, const QVector2D& v2)
+{
+	qreal dotprod = QVector2D::dotProduct(v1, v2);
+	double cosVal = dotprod / (v1.length() * v2.length());
+	if (cosVal <= -1) {return M_PI;}
+	if (cosVal >= 1) {return 0;}
+	qreal angle1 = acos(cosVal);
+	QVector2D tmp = v1;
+	rotateVector90(tmp);
+	if (QVector2D::dotProduct(tmp, v2) < 0) {
+		return 2 * M_PI - angle1;
+	} else {
+		return angle1;
+	}
+}
+
+double angleDegree(const QVector2D& v1, const QVector2D& v2)
+{
+	return angleRadian(v1, v2) / M_PI * 180.;
 }
 
 } // namespace
@@ -86,6 +114,15 @@ void TopView::viewMouseMoveEvent(QMouseEvent* event)
 
 		m_centerPoint.setX(m_centerPoint.x() - delta.x());
 		m_centerPoint.setY(m_centerPoint.y() - delta.y());
+	} else if (m_rotating) {
+		QSize s = size();
+		QPointF center(s.width() * 0.5, s.height() * 0.5);
+		QVector2D v1(m_previousPos.x() - center.x(), - (m_previousPos.y() - center.y()));
+		QVector2D v2(event->x() - center.x(), - (event->y() - center.y()));
+		double a = angleDegree(v1, v2);
+		m_angleDegree = m_angleDegree + a;
+		double r = static_cast<int>(m_angleDegree / 360);
+		m_angleDegree -= r * 360;
 	} else {
 		return;
 	}
@@ -104,7 +141,7 @@ void TopView::viewMousePressEvent(QMouseEvent* event)
 			setCursor(m_zoomCursor);
 		} else if (event->button() == Qt::RightButton) {
 			m_rotating = true;
-
+			setCursor(m_rotateCursor);
 		}
 	}
 }

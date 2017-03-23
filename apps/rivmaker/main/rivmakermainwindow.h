@@ -29,6 +29,8 @@ private slots:
 	void importBaseLine();
 	void importCrossSectionLines();
 
+	void exportBaseLine();
+	void exportCrossSectionLines();
 	void exportRiverSurveyData();
 
 	void fit();

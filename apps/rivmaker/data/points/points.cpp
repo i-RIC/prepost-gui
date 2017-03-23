@@ -40,14 +40,11 @@ void Points::clearPoints()
 void Points::importData(QWidget* w)
 {
 	std::vector<QVector3D*> newPoints;
-	bool ok = PointsImporter::importData(&newPoints, &(project()->offset()), w);
+	QPointF offset = project()->offset();
+	bool ok = PointsImporter::importData(&newPoints, &offset, w);
 	if (! ok) {return;}
 
 	clearPoints();
 	m_points = newPoints;
-}
-
-void Points::exportData(QWidget* w)
-{
-
+	project()->setOffset(offset);
 }

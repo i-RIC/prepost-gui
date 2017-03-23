@@ -18,6 +18,12 @@ public:
 
 	void setProject(Project* project);
 
+	void importBaseLine();
+	void exportBaseLine();
+
+	void importCrossSections();
+	void exportCrossSections();
+
 	void addCrossSection();
 	void deleteCrossSection();
 	void editCrossSectionCoordinates();
