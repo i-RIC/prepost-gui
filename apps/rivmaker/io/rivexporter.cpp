@@ -6,6 +6,7 @@
 
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QTextStream>
 #include <QVector3D>
@@ -55,6 +56,22 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 		}
 		ts << endl;
 	}
+	file.close();
+
+	QFileInfo finfo(fname);
+	QFile file2(QString("%1/%2_wse.csv").arg(finfo.absolutePath()).arg(finfo.baseName()));
+	if (! file.open(QIODevice::WriteOnly)) {
+		QMessageBox::critical(w, tr("Error"), tr("%1 could not be opened.").arg(QDir::toNativeSeparators(file2.fileName())));
+		return false;
+	}
+
+	QTextStream ts2(&file2);
+	ts2 << "CrossSection" << "," << "Elevation" << endl;
+	for (CrossSection* s : cs.crossSectionVector()) {
+		ts2 << (s->id() + 1) << "," << s->waterElevation() << endl;
+	}
+	file2.close();
+
 	return true;
 }
 
