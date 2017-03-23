@@ -88,7 +88,9 @@ void RivmakerMainWindow::importWaterSurfaceElevation()
 
 void RivmakerMainWindow::importSACGUIFile()
 {
-	SACGUIImporter::importData(impl->m_project, this);
+	std::vector<CrossSection*> newCrossSections;
+	SACGUIImporter::importData(impl->m_project, &newCrossSections, this);
+	impl->m_preProcessorWindow.setCrossSections(newCrossSections);
 	impl->m_preProcessorWindow.fit();
 }
 
@@ -99,7 +101,7 @@ void RivmakerMainWindow::importBaseLine()
 
 void RivmakerMainWindow::importCrossSectionLines()
 {
-
+	impl->m_preProcessorWindow.importCrossSections();
 }
 
 void RivmakerMainWindow::exportBaseLine()
@@ -109,7 +111,7 @@ void RivmakerMainWindow::exportBaseLine()
 
 void RivmakerMainWindow::exportCrossSectionLines()
 {
-
+	impl->m_preProcessorWindow.exportCrossSections();
 }
 
 void RivmakerMainWindow::exportRiverSurveyData()

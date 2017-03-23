@@ -27,6 +27,14 @@ bool DataItem::isDeletable() const
 	return m_isDeletable;
 }
 
+void DataItem::setParent(DataItem* parent)
+{
+	QObject::setParent(parent);
+	if (parent == nullptr) {return;}
+
+	parent->m_childItems.push_back(this);
+}
+
 DataItem* DataItem::parentItem() const
 {
 	return dynamic_cast<DataItem*> (parent());

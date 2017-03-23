@@ -4,13 +4,14 @@
 #include <QObject>
 
 class Project;
+class CrossSection;
 
 class SACGUIImporter : public QObject
 {
 	Q_OBJECT
 
 public:
-	static bool importData(Project* project, QWidget* w);
+	static bool importData(Project* project, std::vector<CrossSection*>* newCrossSections, QWidget* w);
 
 private:
 	SACGUIImporter();

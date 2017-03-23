@@ -29,6 +29,10 @@ CrossSectionPreProcessorController::CrossSectionPreProcessorController(Model* mo
 	impl {new Impl {}}
 {
 	connect(impl->m_editCoordinatesAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
+
+	if (item->isDefined()) {
+		impl->m_mode = Impl::Mode::Normal;
+	}
 }
 
 CrossSectionPreProcessorController::~CrossSectionPreProcessorController()

@@ -79,6 +79,12 @@ HEADERS += dialogs/coordinateseditdialog.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
            dialogs/private/coordinateeditwidget.h \
            dialogs/private/coordinateseditdialog_impl.h \
+           io/crosssections/crosssectionscsvexporter.h \
+           io/crosssections/crosssectionscsvimporter.h \
+           io/crosssections/crosssectionsexporter.h \
+           io/crosssections/crosssectionsexporteri.h \
+           io/crosssections/crosssectionsimporter.h \
+           io/crosssections/crosssectionsimporteri.h \
            io/points/pointscsvimporter.h \
            io/points/pointsimporter.h \
            io/points/pointsimporteri.h \
@@ -167,6 +173,10 @@ SOURCES += dialogs/coordinateseditdialog.cpp \
            data/riversurveydatadummy/riversurveydatadummy.cpp \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
            dialogs/private/coordinateeditwidget.cpp \
+           io/crosssections/crosssectionscsvexporter.cpp \
+           io/crosssections/crosssectionscsvimporter.cpp \
+           io/crosssections/crosssectionsexporter.cpp \
+           io/crosssections/crosssectionsimporter.cpp \
            io/points/pointscsvimporter.cpp \
            io/points/pointsimporter.cpp \
            io/polyline/polylinecsvexporter.cpp \

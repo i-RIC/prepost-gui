@@ -5,6 +5,7 @@
 
 #include <QMainWindow>
 
+class CrossSection;
 class Project;
 
 class PreProcessorWindow : public QMainWindow, public ViewWindowI
@@ -16,6 +17,7 @@ public:
 	~PreProcessorWindow();
 
 	void setProject(Project* project);
+	void setCrossSections(const std::vector<CrossSection*>& crossSections);
 
 	void fit() override;
 	void resetRotation() override;

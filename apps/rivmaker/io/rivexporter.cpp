@@ -11,6 +11,8 @@
 #include <QTextStream>
 #include <QVector3D>
 
+#include <string>
+
 bool RivExporter::exportData(const Project& project, QWidget* w)
 {
 	QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), "", tr("River Survey Data(*.riv)"));
@@ -60,7 +62,7 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 
 	QFileInfo finfo(fname);
 	QFile file2(QString("%1/%2_wse.csv").arg(finfo.absolutePath()).arg(finfo.baseName()));
-	if (! file.open(QIODevice::WriteOnly)) {
+	if (! file2.open(QIODevice::WriteOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("%1 could not be opened.").arg(QDir::toNativeSeparators(file2.fileName())));
 		return false;
 	}

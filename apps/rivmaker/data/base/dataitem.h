@@ -24,6 +24,8 @@ public:
 
 	bool isDeletable() const;
 
+	void setParent(DataItem* parent);
+
 	DataItem* parentItem() const;
 	const std::vector<DataItem*>& childItems() const;
 	std::vector<DataItem*>& childItems();

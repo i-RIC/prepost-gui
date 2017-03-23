@@ -12,11 +12,15 @@ public:
 	CrossSectionsPreProcessorController(Model* model, CrossSections* item);
 	~CrossSectionsPreProcessorController();
 
+	void setCrossSections(const std::vector<CrossSection*>& crossSections);
 	void rebuildStandardItemsAndViews();
 
 	void setupObjectBrowserRightClickMenu(QMenu* menu);
 
 public slots:
+	void importData();
+	void exportData();
+
 	void addCrossSection();
 
 private:

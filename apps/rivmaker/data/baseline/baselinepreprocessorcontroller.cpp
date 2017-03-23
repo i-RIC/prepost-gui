@@ -22,8 +22,8 @@ BaseLinePreProcessorController::Impl::Impl() :
 	m_movingPointIndex {0},
 	m_addingEdgeIndex {0},
 	m_removingPointIndex {0},
-	m_importAction {new QAction(QIcon(":/images/iconImport.png"), tr("&Import"), nullptr)},
-	m_exportAction {new QAction(QIcon(":/images/iconExport.png"), tr("&Export"), nullptr)},
+	m_importAction {new QAction(QIcon(":/images/iconImport.png"), tr("&Import..."), nullptr)},
+	m_exportAction {new QAction(QIcon(":/images/iconExport.png"), tr("&Export..."), nullptr)},
 	m_addVertexAction {new QAction(QIcon(":/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), nullptr)},
 	m_removeVertexAction {new QAction(QIcon(":/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), nullptr)},
 	m_editCoordinatesAction {new QAction(tr("&Edit Coordinates..."), nullptr)},
@@ -218,7 +218,7 @@ void BaseLinePreProcessorController::importData()
 	bl->project()->setOffset(offset);
 	updateMode();
 
-	updateView();
+	dynamic_cast<PreProcessorModel*> (model())->updateCrossSections();
 }
 
 void BaseLinePreProcessorController::exportData()

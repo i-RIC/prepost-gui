@@ -12,6 +12,8 @@ public:
 	~Impl();
 
 	QAction* m_addAction;
+	QAction* m_importAction;
+	QAction* m_exportAction;
 };
 
 #endif // CROSSSECTIONSPREPROCESSORCONTROLLER_IMPL_H

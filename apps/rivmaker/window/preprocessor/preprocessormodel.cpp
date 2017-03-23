@@ -58,6 +58,16 @@ void PreProcessorModel::setProject(Project* project)
 	view()->fit();
 }
 
+void PreProcessorModel::setCrossSections(const std::vector<CrossSection*>& crossSections)
+{
+	for (auto cs : impl->m_project->crossSections().crossSectionVector()) {
+		deleteItem(cs);
+	}
+
+	auto cs_c = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(impl->m_project->crossSections())));
+	cs_c->setCrossSections(crossSections);
+}
+
 void PreProcessorModel::importElevation()
 {
 	auto e_c = dynamic_cast<PointsPreProcessorController*> (dataItemController(&(impl->m_project->elevationPoints())));
@@ -84,11 +94,14 @@ void PreProcessorModel::exportBaseLine()
 
 void PreProcessorModel::importCrossSections()
 {
+	auto css_c = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(impl->m_project->crossSections())));
+	css_c->importData();
 }
 
 void PreProcessorModel::exportCrossSections()
 {
-
+	auto css_c = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(impl->m_project->crossSections())));
+	css_c->exportData();
 }
 
 void PreProcessorModel::addCrossSection()

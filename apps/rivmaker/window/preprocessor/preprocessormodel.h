@@ -3,6 +3,9 @@
 
 #include "../../data/base/model.h"
 
+#include <vector>
+
+class CrossSection;
 class Project;
 class PreProcessorView;
 
@@ -17,6 +20,7 @@ public:
 	~PreProcessorModel();
 
 	void setProject(Project* project);
+	void setCrossSections(const std::vector<CrossSection*>& crossSections);
 
 	void importElevation();
 	void importWaterSurfaceElevation();

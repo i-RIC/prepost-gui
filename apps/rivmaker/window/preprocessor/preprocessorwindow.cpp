@@ -49,6 +49,11 @@ void PreProcessorWindow::setProject(Project* project)
 	impl->m_model.setProject(project);
 }
 
+void PreProcessorWindow::setCrossSections(const std::vector<CrossSection*>& crossSections)
+{
+	impl->m_model.setCrossSections(crossSections);
+}
+
 void PreProcessorWindow::fit()
 {
 	impl->m_view.fit();
