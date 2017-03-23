@@ -7,7 +7,6 @@
 #include "../../crosssections/crosssections.h"
 #include "../../elevationpoints/elevationpoints.h"
 #include "../../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
-#include "../../riversurveydatadummy/riversurveydatadummy.h"
 
 #include <QPointF>
 
@@ -23,9 +22,6 @@ public:
 	WaterSurfaceElevationPoints m_waterSurfaceElevationPoints;
 	CrossSections m_crossSections;
 	BaseLine m_baseLine;
-
-	RiverSurveyData* m_riverSurveyData;
-	RiverSurveyDataDummy m_riverSurveyDataDummy;
 
 	QPointF m_offset;
 };

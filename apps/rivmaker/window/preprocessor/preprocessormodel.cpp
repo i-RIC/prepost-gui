@@ -8,8 +8,6 @@
 #include "../../data/elevationpoints/elevationpoints.h"
 #include "../../data/points/pointspreprocessorcontroller.h"
 #include "../../data/project/project.h"
-#include "../../data/riversurveydata/riversurveydata.h"
-#include "../../data/riversurveydatadummy/riversurveydatadummy.h"
 #include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 #include "../../dialogs/coordinateseditdialog.h"
 
@@ -247,11 +245,6 @@ void PreProcessorModel::setupStandatdItemModel()
 	model->appendRow(standardItem(&(proj->crossSections())));
 	model->appendRow(standardItem(&(proj->baseLine())));
 
-	if (proj->hasRiverSurveyData()) {
-		model->appendRow(standardItem(proj->riverSurveyData()));
-	} else {
-		model->appendRow(standardItem(&(proj->riverSurveyDataDummy())));
-	}
 	objectBrowserView()->expandAll();
 }
 

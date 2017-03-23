@@ -9,8 +9,6 @@ class BaseLine;
 class CrossSection;
 class CrossSections;
 class ElevationPoints;
-class RiverSurveyData;
-class RiverSurveyDataDummy;
 class RootDataItem;
 class WaterSurfaceElevationPoints;
 
@@ -37,12 +35,6 @@ public:
 
 	const CrossSections& crossSections() const;
 	CrossSections& crossSections();
-
-	bool hasRiverSurveyData() const;
-	RiverSurveyData* riverSurveyData() const;
-
-	const RiverSurveyDataDummy& riverSurveyDataDummy() const;
-	RiverSurveyDataDummy& riverSurveyDataDummy();
 
 	const QPointF& offset() const;
 	void setOffset(const QPointF& offset);

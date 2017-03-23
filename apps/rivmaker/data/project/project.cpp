@@ -3,7 +3,6 @@
 #include "../crosssection/crosssection.h"
 #include "../leftbankhwm/leftbankhwm.h"
 #include "../rightbankhwm/rightbankhwm.h"
-#include "../riversurveydata/riversurveydata.h"
 #include "../../misc/mathutil.h"
 
 #include "private/project_impl.h"
@@ -41,15 +40,11 @@ Project::Impl::Impl(Project *project) :
 	m_elevationPoints {&m_rootDataItem},
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
-	m_baseLine {&m_rootDataItem},
-	m_riverSurveyData {nullptr},
-	m_riverSurveyDataDummy {&m_rootDataItem}
+	m_baseLine {&m_rootDataItem}
 {}
 
 Project::Impl::~Impl()
-{
-	delete m_riverSurveyData;
-}
+{}
 
 // public interfraces
 
@@ -105,26 +100,6 @@ const CrossSections& Project::crossSections() const
 CrossSections& Project::crossSections()
 {
 	return impl->m_crossSections;
-}
-
-bool Project::hasRiverSurveyData() const
-{
-	return impl->m_riverSurveyData != nullptr;
-}
-
-RiverSurveyData* Project::riverSurveyData() const
-{
-	return impl->m_riverSurveyData;
-}
-
-const RiverSurveyDataDummy& Project::riverSurveyDataDummy() const
-{
-	return impl->m_riverSurveyDataDummy;
-}
-
-RiverSurveyDataDummy& Project::riverSurveyDataDummy()
-{
-	return impl->m_riverSurveyDataDummy;
 }
 
 const QPointF& Project::offset() const

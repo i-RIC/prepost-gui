@@ -72,9 +72,6 @@ HEADERS += dialogs/coordinateseditdialog.h \
            data/rightbankhwm/rightbankhwm.h \
            data/rightbankhwm/rightbankhwmpreprocessorview.h \
            data/rightbankhwm/rightbankhwmpreprocessorviewhelper.h \
-           data/riversurveydata/riversurveydata.h \
-           data/riversurveydatacrosssection/riversurveydatacrosssection.h \
-           data/riversurveydatadummy/riversurveydatadummy.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
            dialogs/private/coordinateeditwidget.h \
@@ -168,9 +165,6 @@ SOURCES += dialogs/coordinateseditdialog.cpp \
            data/rightbankhwm/rightbankhwm.cpp \
            data/rightbankhwm/rightbankhwmpreprocessorview.cpp \
            data/rightbankhwm/rightbankhwmpreprocessorviewhelper.cpp \
-           data/riversurveydata/riversurveydata.cpp \
-           data/riversurveydatacrosssection/riversurveydatacrosssection.cpp \
-           data/riversurveydatadummy/riversurveydatadummy.cpp \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
            dialogs/private/coordinateeditwidget.cpp \
            io/crosssections/crosssectionscsvexporter.cpp \
