@@ -117,7 +117,7 @@
    </widget>
    <widget class="QMenu" name="riverSurveyDataMenu">
     <property name="title">
-     <string>River Survey Data</string>
+     <string>&amp;River Survey Data</string>
     </property>
     <addaction name="riverSurveyDataExportAction"/>
    </widget>

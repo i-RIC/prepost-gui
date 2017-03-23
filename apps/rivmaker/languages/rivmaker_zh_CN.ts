@@ -20,12 +20,14 @@
 <context>
     <name>BaseLinePreProcessorController</name>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="207"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="207"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
         <source>Base line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -46,12 +48,12 @@
 <context>
     <name>CoordinateEditWidget</name>
     <message>
-        <location filename="../dialogs/private/coordinateeditwidget.cpp" line="47"/>
+        <location filename="../dialogs/private/coordinateeditwidget.cpp" line="48"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/private/coordinateeditwidget.cpp" line="47"/>
+        <location filename="../dialogs/private/coordinateeditwidget.cpp" line="48"/>
         <source>It is not a real value</source>
         <translation type="unfinished"></translation>
     </message>
@@ -64,12 +66,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/coordinateseditdialog.cpp" line="103"/>
+        <location filename="../dialogs/coordinateseditdialog.cpp" line="104"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/coordinateseditdialog.cpp" line="104"/>
+        <location filename="../dialogs/coordinateseditdialog.cpp" line="105"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
@@ -77,7 +79,7 @@
 <context>
     <name>CrossSection</name>
     <message>
-        <location filename="../data/crosssection/crosssection.cpp" line="28"/>
+        <location filename="../data/crosssection/crosssection.cpp" line="29"/>
         <source>X%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -85,12 +87,12 @@
 <context>
     <name>CrossSectionPreProcessorController</name>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="95"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="95"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
         <source>Cross Section is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -108,12 +110,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="80"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="81"/>
         <source>Distance from Left bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="83"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="84"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -121,15 +123,80 @@
 <context>
     <name>CrossSections</name>
     <message>
-        <location filename="../data/crosssections/crosssections.cpp" line="81"/>
+        <location filename="../data/crosssections/crosssections.cpp" line="39"/>
         <source>Cross Sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionsCsvExporter</name>
+    <message>
+        <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="15"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="31"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="31"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionsCsvImporter</name>
+    <message>
+        <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="15"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="31"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="31"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionsExporter</name>
+    <message>
+        <location filename="../io/crosssections/crosssectionsexporter.cpp" line="17"/>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionsImporter</name>
+    <message>
+        <location filename="../io/crosssections/crosssectionsimporter.cpp" line="16"/>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionsPreProcessorController</name>
+    <message>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
+        <source>Cross Section lines not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsPreProcessorController::Impl</name>
     <message>
-        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="11"/>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="18"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
@@ -190,20 +257,80 @@
     </message>
 </context>
 <context>
+    <name>PointsPreProcessorController::Impl</name>
+    <message>
+        <location filename="../data/points/pointspreprocessorcontroller.cpp" line="12"/>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineCsvExporter</name>
+    <message>
+        <location filename="../io/polyline/polylinecsvexporter.cpp" line="14"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/polyline/polylinecsvexporter.cpp" line="30"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/polyline/polylinecsvexporter.cpp" line="30"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineCsvImporter</name>
+    <message>
+        <location filename="../io/polyline/polylinecsvimporter.cpp" line="14"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/polyline/polylinecsvimporter.cpp" line="30"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/polyline/polylinecsvimporter.cpp" line="30"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineExporter</name>
+    <message>
+        <location filename="../io/polyline/polylineexporter.cpp" line="17"/>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineImporter</name>
+    <message>
+        <location filename="../io/polyline/polylineimporter.cpp" line="17"/>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorModel</name>
     <message>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="76"/>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="88"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="134"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="76"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <source>To delete a Cross Section, select it at Object Browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="88"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="134"/>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -219,29 +346,25 @@
 <context>
     <name>RivExporter</name>
     <message>
-        <location filename="../io/rivexporter.cpp" line="8"/>
+        <location filename="../io/rivexporter.cpp" line="18"/>
         <source>Input File name to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="8"/>
+        <location filename="../io/rivexporter.cpp" line="18"/>
         <source>River Survey Data(*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>RiverSurveyData</name>
     <message>
-        <location filename="../data/riversurveydata/riversurveydata.cpp" line="14"/>
-        <source>River Survey Data</source>
+        <location filename="../io/rivexporter.cpp" line="23"/>
+        <location filename="../io/rivexporter.cpp" line="66"/>
+        <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>RiverSurveyDataDummy</name>
     <message>
-        <location filename="../data/riversurveydatadummy/riversurveydatadummy.cpp" line="15"/>
-        <source>River Survey Data (NO DATA)</source>
+        <location filename="../io/rivexporter.cpp" line="23"/>
+        <location filename="../io/rivexporter.cpp" line="66"/>
+        <source>%1 could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -286,7 +409,7 @@
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="120"/>
-        <source>River Survey Data</source>
+        <source>&amp;River Survey Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -509,12 +632,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="237"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="120"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="120"/>
+        <source>No data to export exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="255"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="237"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="255"/>
         <source>Are you sure you want to exit Rivmaker?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -522,12 +655,12 @@
 <context>
     <name>SACGUIImporter</name>
     <message>
-        <location filename="../io/sacguiimporter.cpp" line="19"/>
+        <location filename="../io/sacguiimporter.cpp" line="39"/>
         <source>Select SAC GUI input file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/sacguiimporter.cpp" line="19"/>
+        <location filename="../io/sacguiimporter.cpp" line="39"/>
         <source>SAC GUI input file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -555,18 +688,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="145"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="146"/>
         <source>Distance Upstream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="148"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="239"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="149"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="240"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="239"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="240"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
