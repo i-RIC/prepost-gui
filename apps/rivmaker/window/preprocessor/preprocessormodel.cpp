@@ -1,3 +1,4 @@
+#include "../../data/arbitraryhwm/arbitraryhwm.h"
 #include "../../data/base/view.h"
 #include "../../data/baseline/baseline.h"
 #include "../../data/baseline/baselinepreprocessorcontroller.h"
@@ -5,6 +6,7 @@
 #include "../../data/crosssection/crosssectionpreprocessorcontroller.h"
 #include "../../data/crosssections/crosssectionspreprocessorcontroller.h"
 #include "../../data/elevationpoints/elevationpoints.h"
+#include "../../data/points/pointspreprocessorcontroller.h"
 #include "../../data/project/project.h"
 #include "../../data/riversurveydata/riversurveydata.h"
 #include "../../data/riversurveydatadummy/riversurveydatadummy.h"
@@ -54,6 +56,18 @@ void PreProcessorModel::setProject(Project* project)
 	impl->m_project = project;
 	setupStandatdItemModel();
 	view()->fit();
+}
+
+void PreProcessorModel::importElevation()
+{
+	auto e_c = dynamic_cast<PointsPreProcessorController*> (dataItemController(&(impl->m_project->elevationPoints())));
+	e_c->importData();
+}
+
+void PreProcessorModel::importWaterSurfaceElevation()
+{
+	auto e_c = dynamic_cast<PointsPreProcessorController*> (dataItemController(&(impl->m_project->waterSurfaceElevationPoints().arbitraryHWM())));
+	e_c->importData();
 }
 
 void PreProcessorModel::importBaseLine()

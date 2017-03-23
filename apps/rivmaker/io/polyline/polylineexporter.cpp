@@ -1,14 +1,14 @@
 #include "polylineexporter.h"
 #include "polylineexporteri.h"
+#include "polylinecsvexporter.h"
 
 #include <QFileDialog>
 #include <QFileInfo>
-#include <QString>
 
 bool PolyLineExporter::exportData(const std::vector<QPointF>& line, const QPointF& offset, QWidget* w)
 {
 	std::vector<PolyLineExporterI*> exporters;
-	// exporters.push_back(new PolyLineCsvImporter());
+	exporters.push_back(new PolyLineCsvExporter());
 
 	QStringList filters;
 	for (auto e : exporters) {

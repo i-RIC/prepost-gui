@@ -51,23 +51,6 @@ public:
 	void mapPointsToCrossSections();
 	bool sortCrossSectionsIfPossible();
 
-	bool checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const;
-	bool checkIfReadyToCreateRiverSurveyData(QWidget* w) const;
-
-	void importElevationPoints(QWidget* w);
-	void importWaterSurfaceElevationPoints(QWidget* w);
-	void importBaseLine(QWidget* w);
-	void importCrossSections(QWidget* w);
-
-	void exportElevationPoints(QWidget* w);
-	void exportWaterSurfaceElevationPoints(QWidget* w);
-	void exportBaseLine(QWidget* w);
-	void exportCrossSections(QWidget* w);
-	void exportRiverSurveyData(QWidget* w);
-
-	void createRiverSurveyData();
-	void deleteRiverSurveyData();
-
 public slots:
 	void emitUpdated();
 

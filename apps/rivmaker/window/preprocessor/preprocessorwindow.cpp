@@ -74,6 +74,16 @@ void PreProcessorWindow::zoomOut()
 	impl->m_view.zoomOut();
 }
 
+void PreProcessorWindow::importElevation()
+{
+	impl->m_model.importElevation();
+}
+
+void PreProcessorWindow::importWaterSurfaceElevation()
+{
+	impl->m_model.importWaterSurfaceElevation();
+}
+
 void PreProcessorWindow::importBaseLine()
 {
 	impl->m_model.importBaseLine();

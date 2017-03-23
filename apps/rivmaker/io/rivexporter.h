@@ -3,14 +3,14 @@
 
 #include <QObject>
 
-class CrossSections;
+class Project;
 
 class RivExporter : public QObject
 {
 	Q_OBJECT
 
 public:
-	static bool exportData(const CrossSections& crossSections, QWidget* w);
+	static bool exportData(const Project& project, QWidget* w);
 
 private:
 	RivExporter();

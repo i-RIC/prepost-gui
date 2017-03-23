@@ -18,6 +18,8 @@ public:
 
 	void setProject(Project* project);
 
+	void importElevation();
+	void importWaterSurfaceElevation();
 	void importBaseLine();
 	void exportBaseLine();
 

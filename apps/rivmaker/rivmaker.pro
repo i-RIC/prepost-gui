@@ -65,10 +65,10 @@ HEADERS += dialogs/coordinateseditdialog.h \
            data/leftbankhwm/leftbankhwmpreprocessorview.h \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.h \
            data/points/points.h \
+           data/points/pointspreprocessorcontroller.h \
            data/points/pointspreprocessorview.h \
            data/points/pointspreprocessorviewhelper.h \
            data/project/project.h \
-           data/project/riversurveydatacreator.h \
            data/rightbankhwm/rightbankhwm.h \
            data/rightbankhwm/rightbankhwmpreprocessorview.h \
            data/rightbankhwm/rightbankhwmpreprocessorviewhelper.h \
@@ -103,6 +103,8 @@ HEADERS += dialogs/coordinateseditdialog.h \
            data/crosssection/private/crosssectionpreprocessorcontroller_impl.h \
            data/crosssections/private/crosssections_impl.h \
            data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \
+           data/points/private/points_impl.h \
+           data/points/private/pointspreprocessorcontroller_impl.h \
            data/project/private/project_impl.h \
            data/watersurfaceelevationpoints/private/watersurfaceelevationpoints_impl.h \
            window/preprocessor/objectbrowser/objectbrowser.h \
@@ -153,10 +155,10 @@ SOURCES += dialogs/coordinateseditdialog.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorview.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.cpp \
            data/points/points.cpp \
+           data/points/pointspreprocessorcontroller.cpp \
            data/points/pointspreprocessorview.cpp \
            data/points/pointspreprocessorviewhelper.cpp \
            data/project/project.cpp \
-           data/project/riversurveydatacreator.cpp \
            data/rightbankhwm/rightbankhwm.cpp \
            data/rightbankhwm/rightbankhwmpreprocessorview.cpp \
            data/rightbankhwm/rightbankhwmpreprocessorviewhelper.cpp \

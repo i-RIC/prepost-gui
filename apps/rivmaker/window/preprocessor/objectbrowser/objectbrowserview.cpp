@@ -16,7 +16,7 @@ void ObjectBrowserView::select(const QModelIndex& index)
 	sm->setCurrentIndex(index, QItemSelectionModel::SelectCurrent);
 }
 
-void ObjectBrowserView::currentChanged(const QModelIndex& current, const QModelIndex& previous)
+void ObjectBrowserView::currentChanged(const QModelIndex& current, const QModelIndex& /* previous */)
 {
 	if (current.isValid()) {emit itemSelected(current);}
 }

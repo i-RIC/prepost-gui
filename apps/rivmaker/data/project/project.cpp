@@ -1,9 +1,6 @@
 #include "project.h"
-#include "riversurveydatacreator.h"
 #include "../arbitraryhwm/arbitraryhwm.h"
-#include "../base/dataItem.h"
 #include "../crosssection/crosssection.h"
-#include "../crosssections/crosssections.h"
 #include "../leftbankhwm/leftbankhwm.h"
 #include "../rightbankhwm/rightbankhwm.h"
 #include "../riversurveydata/riversurveydata.h"
@@ -248,62 +245,6 @@ bool Project::sortCrossSectionsIfPossible()
 		childItems.push_back(pair.second);
 	}
 	return true;
-}
-
-bool Project::checkIfReadyToOpenVerticalCrossSectionWindow(QWidget* w) const
-{
-	return true;
-}
-
-bool Project::checkIfReadyToCreateRiverSurveyData(QWidget* w) const
-{
-	return RiverSurveyDataCreator::checkIfReadyToCreate(*this, w);
-}
-
-void Project::importElevationPoints(QWidget* w)
-{
-	elevationPoints().importData(w);
-}
-
-void Project::importWaterSurfaceElevationPoints(QWidget* w)
-{
-	waterSurfaceElevationPoints().arbitraryHWM().importData(w);
-}
-
-void Project::importBaseLine(QWidget* w)
-{}
-
-void Project::importCrossSections(QWidget* w)
-{}
-
-void Project::exportElevationPoints(QWidget* w)
-{}
-
-void Project::exportWaterSurfaceElevationPoints(QWidget *w)
-{}
-
-void Project::exportBaseLine(QWidget* w)
-{}
-
-void Project::exportCrossSections(QWidget* w)
-{}
-
-void Project::exportRiverSurveyData(QWidget* w)
-{}
-
-void Project::createRiverSurveyData()
-{
-	deleteRiverSurveyData();
-
-	impl->m_riverSurveyData = RiverSurveyDataCreator::create(*this);
-}
-
-void Project::deleteRiverSurveyData()
-{
-	if (impl->m_riverSurveyData == nullptr) {return;}
-
-	delete impl->m_riverSurveyData;
-	impl->m_riverSurveyData = nullptr;
 }
 
 void Project::emitUpdated()

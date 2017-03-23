@@ -24,6 +24,8 @@ public:
 	void zoomIn() override;
 	void zoomOut() override;
 
+	void importElevation();
+	void importWaterSurfaceElevation();
 	void importBaseLine();
 	void exportBaseLine();
 

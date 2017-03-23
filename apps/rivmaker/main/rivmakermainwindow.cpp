@@ -1,6 +1,7 @@
 #include "data/project/project.h"
 #include "rivmakermainwindow.h"
 #include "window/viewwindowi.h"
+#include "../data/crosssections/crosssections.h"
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
@@ -75,12 +76,14 @@ void RivmakerMainWindow::newProject()
 
 void RivmakerMainWindow::importElevation()
 {
-	impl->m_project->importElevationPoints(this);
+	impl->m_preProcessorWindow.importElevation();
+	impl->m_preProcessorWindow.fit();
 }
 
 void RivmakerMainWindow::importWaterSurfaceElevation()
 {
-	impl->m_project->importWaterSurfaceElevationPoints(this);
+	impl->m_preProcessorWindow.importWaterSurfaceElevation();
+	impl->m_preProcessorWindow.fit();
 }
 
 void RivmakerMainWindow::importSACGUIFile()
@@ -115,7 +118,7 @@ void RivmakerMainWindow::exportRiverSurveyData()
 		QMessageBox::warning(this, tr("Error"), tr("No data to export exists"));
 		return;
 	}
-	RivExporter::exportData(impl->m_project->crossSections(), this);
+	RivExporter::exportData(*(impl->m_project), this);
 }
 
 void RivmakerMainWindow::fit()
@@ -167,8 +170,6 @@ void RivmakerMainWindow::focusPreProcessorWindow()
 
 void RivmakerMainWindow::focusVerticalCrossSectionWindow()
 {
-	if (!impl->m_project->checkIfReadyToOpenVerticalCrossSectionWindow(this)) {return;}
-
 	auto pw = impl->m_verticalCrossSectionWindow.parentWidget();
 	pw->show();
 	pw->setFocus();
