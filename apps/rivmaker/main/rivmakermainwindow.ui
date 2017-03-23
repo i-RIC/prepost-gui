@@ -121,7 +121,7 @@
     </property>
     <addaction name="riverSurveyDataExportAction"/>
    </widget>
-   <widget class="QMenu" name="menu_Window">
+   <widget class="QMenu" name="viewMenu">
     <property name="title">
      <string>&amp;View</string>
     </property>
@@ -135,14 +135,14 @@
     </property>
     <addaction name="mouseHintAction"/>
     <addaction name="separator"/>
-    <addaction name="aboutActioni"/>
+    <addaction name="aboutAction"/>
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="importMenu"/>
    <addaction name="crosssectionLineMenu"/>
    <addaction name="baseLineMenu"/>
    <addaction name="riverSurveyDataMenu"/>
-   <addaction name="menu_Window"/>
+   <addaction name="viewMenu"/>
    <addaction name="helpMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -382,7 +382,7 @@
     <string>&amp;Mouse Hint...</string>
    </property>
   </action>
-  <action name="aboutActioni">
+  <action name="aboutAction">
    <property name="text">
     <string>&amp;About...</string>
    </property>

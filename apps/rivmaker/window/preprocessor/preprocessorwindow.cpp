@@ -33,7 +33,7 @@ PreProcessorWindow::PreProcessorWindow(QWidget *parent) :
 	QMainWindow(parent),
 	impl {new Impl {this}}
 {
-	setWindowTitle(tr("Main Window"));
+	setWindowTitle(PreProcessorWindow::tr("Main Window"));
 	setWindowIcon(QIcon(":images/iconMain.png"));
 
 	resize(600, 500);

@@ -16,7 +16,7 @@
 CrossSectionPreProcessorController::Impl::Impl() :
 	m_mode {Mode::BeforeDefining},
 	m_movingPointIndex {0},
-	m_editCoordinatesAction {new QAction(tr("&Edit Coordinates..."), nullptr)}
+	m_editCoordinatesAction {new QAction(CrossSectionPreProcessorController::tr("&Edit Coordinates..."), nullptr)}
 {}
 
 CrossSectionPreProcessorController::Impl::~Impl()

@@ -15,9 +15,9 @@
 #include <QMessageBox>
 
 CrossSectionsPreProcessorController::Impl::Impl() :
-	m_addAction {new QAction(tr("Add"), nullptr)},
-	m_importAction {new QAction(QIcon(":/images/iconImport.png"), tr("&Import.."), nullptr)},
-	m_exportAction {new QAction(QIcon(":/images/iconExport.png"), tr("&Export.."), nullptr)}
+	m_addAction {new QAction(CrossSectionsPreProcessorController::tr("Add"), nullptr)},
+	m_importAction {new QAction(QIcon(":/images/iconImport.png"), CrossSectionsPreProcessorController::tr("&Import.."), nullptr)},
+	m_exportAction {new QAction(QIcon(":/images/iconExport.png"), CrossSectionsPreProcessorController::tr("&Export.."), nullptr)}
 {}
 
 CrossSectionsPreProcessorController::Impl::~Impl()

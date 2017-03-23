@@ -9,8 +9,8 @@
 #include <QMenu>
 
 PointsPreProcessorController::Impl::Impl() :
-	m_importAction {new QAction(QIcon(":/images/iconImport.png"), tr("&Import..."), nullptr)},
-	m_deleteAction {new QAction(QIcon(":/images/iconDeleteItem.png"), tr("&Delete"), nullptr)}
+	m_importAction {new QAction(QIcon(":/images/iconImport.png"), PointsPreProcessorController::tr("&Import..."), nullptr)},
+	m_deleteAction {new QAction(QIcon(":/images/iconDeleteItem.png"), PointsPreProcessorController::tr("&Delete"), nullptr)}
 {}
 
 PointsPreProcessorController::Impl::~Impl()

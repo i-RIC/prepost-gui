@@ -2,6 +2,7 @@
 #include "rivmakermainwindow.h"
 #include "window/viewwindowi.h"
 #include "../data/crosssections/crosssections.h"
+#include "../dialogs/aboutdialog.h"
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
@@ -179,6 +180,11 @@ void RivmakerMainWindow::focusVerticalCrossSectionWindow()
 
 void RivmakerMainWindow::openCrossSectionWindow()
 {
+	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {
+		QMessageBox::warning(this, tr("Warning"), tr("Cross Section Window can not be opened when no Cross Section is defined."));
+		return;
+	}
+
 	auto w = new CrossSectionWindow(this);
 	w->setProject(impl->m_project);
 
@@ -248,6 +254,41 @@ void RivmakerMainWindow::helpMouseHint()
 		dialog = new MouseHelpDialog(this);
 	}
 	dialog->show();
+}
+
+void RivmakerMainWindow::showAboutDialog()
+{
+	AboutDialog dialog(this);
+	dialog.exec();
+}
+
+void RivmakerMainWindow::updateViewMenu()
+{
+	QMenu* vMenu = ui->viewMenu;
+	auto currentActions = vMenu->actions();
+	for (int i = 3; i < currentActions.size(); ++i) {
+		auto a = currentActions.at(i);
+		vMenu->removeAction(a);
+	}
+	auto& mw = impl->m_preProcessorWindow;
+	QAction* mainWindowAction = new QAction(mw.windowIcon(), mw.windowTitle(), vMenu);
+	vMenu->addAction(mainWindowAction);
+	connect(mainWindowAction, SIGNAL(triggered()), this, SLOT(focusPreProcessorWindow()));
+
+	auto& vw = impl->m_verticalCrossSectionWindow;
+	QAction* vWindowAction = new QAction(vw.windowIcon(), vw.windowTitle(), vMenu);
+	vMenu->addAction(vWindowAction);
+	connect(vWindowAction, SIGNAL(triggered()), this, SLOT(focusVerticalCrossSectionWindow()));
+
+	auto windows = dynamic_cast<QMdiArea*> (centralWidget())->subWindowList();
+	for (auto w : windows) {
+		auto csw = dynamic_cast<CrossSectionWindow*> (w->widget());
+		if (csw == nullptr) {continue;}
+
+		QAction* a = new QAction(csw->windowIcon(), csw->windowTitle(), vMenu);
+		vMenu->addAction(a);
+		connect(a, SIGNAL(triggered()), w, SLOT(setFocus()));
+	}
 }
 
 void RivmakerMainWindow::closeEvent(QCloseEvent *e)

@@ -25,7 +25,8 @@ else {
 }
 
 # Input
-HEADERS += dialogs/coordinateseditdialog.h \
+HEADERS += dialogs/aboutdialog.h \
+           dialogs/coordinateseditdialog.h \
            dialogs/mousehelpdialog.h \
            io/rivexporter.h \
            io/sacguiimporter.h \
@@ -114,12 +115,14 @@ HEADERS += dialogs/coordinateseditdialog.h \
            window/preprocessor/objectbrowser/objectbrowserview.h \
            window/preprocessor/private/preprocessormodel_impl.h \
            window/preprocessor/private/preprocessorwindow_impl.h
-FORMS += dialogs/coordinateseditdialog.ui \
+FORMS += dialogs/aboutdialog.ui \
+         dialogs/coordinateseditdialog.ui \
          dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          window/crosssection/crosssectionwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
-SOURCES += dialogs/coordinateseditdialog.cpp \
+SOURCES += dialogs/aboutdialog.cpp \
+           dialogs/coordinateseditdialog.cpp \
            dialogs/mousehelpdialog.cpp \
            io/rivexporter.cpp \
            io/sacguiimporter.cpp \

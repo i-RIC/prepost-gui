@@ -2,6 +2,29 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ja_JP">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="14"/>
+        <source>About rivmaker</source>
+        <translation>rivmaker について</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="41"/>
+        <source>rivmaker 1.0</source>
+        <translation>rivmaker 1.0</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="48"/>
+        <source>Release Date: 2017/3/31</source>
+        <translation>リリース日: 2017/3/31</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="55"/>
+        <source>Copyright: USGS</source>
+        <translation>著作権: USGS</translation>
+    </message>
+</context>
+<context>
     <name>ArbitraryHWM</name>
     <message>
         <location filename="../data/arbitraryhwm/arbitraryhwm.cpp" line="16"/>
@@ -19,6 +42,41 @@
 </context>
 <context>
     <name>BaseLinePreProcessorController</name>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="25"/>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="26"/>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
+        <source>&amp;Add Vertex</source>
+        <translation>点の追加(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
+        <source>&amp;Remove Vertex</source>
+        <translation>点の削除(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
+        <source>&amp;Edit Coordinates...</source>
+        <translation>座標の編集(&amp;E)...</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
+        <source>Reverse &amp;Direction</source>
+        <translation>向きを反転(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
+        <source>Delete</source>
+        <translation>削除</translation>
+    </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
@@ -86,6 +144,11 @@
 </context>
 <context>
     <name>CrossSectionPreProcessorController</name>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="19"/>
+        <source>&amp;Edit Coordinates...</source>
+        <translation>座標の編集(&amp;E)</translation>
+    </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
         <source>Warning</source>
@@ -183,6 +246,21 @@
 <context>
     <name>CrossSectionsPreProcessorController</name>
     <message>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="18"/>
+        <source>Add</source>
+        <translation>追加</translation>
+    </message>
+    <message>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="19"/>
+        <source>&amp;Import..</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="20"/>
+        <source>&amp;Export..</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
         <source>Warning</source>
         <translation>警告</translation>
@@ -196,7 +274,6 @@
 <context>
     <name>CrossSectionsPreProcessorController::Impl</name>
     <message>
-        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="18"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
@@ -215,6 +292,14 @@
         <location filename="../data/leftbankhwm/leftbankhwm.cpp" line="16"/>
         <source>Left Bank HWM</source>
         <translation>左岸側水面標高</translation>
+    </message>
+</context>
+<context>
+    <name>Model</name>
+    <message>
+        <location filename="../data/base/model.cpp" line="18"/>
+        <source>Delete</source>
+        <translation>削除</translation>
     </message>
 </context>
 <context>
@@ -257,9 +342,21 @@
     </message>
 </context>
 <context>
-    <name>PointsPreProcessorController::Impl</name>
+    <name>PointsPreProcessorController</name>
     <message>
         <location filename="../data/points/pointspreprocessorcontroller.cpp" line="12"/>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <location filename="../data/points/pointspreprocessorcontroller.cpp" line="13"/>
+        <source>&amp;Delete</source>
+        <translation>削除(&amp;D)</translation>
+    </message>
+</context>
+<context>
+    <name>PointsPreProcessorController::Impl</name>
+    <message>
         <source>&amp;Import...</source>
         <translation>インポート (&amp;I)...</translation>
     </message>
@@ -333,6 +430,14 @@
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="134"/>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
         <translation>断面の座標を編集するには、先にオブジェクトブラウザで選択して下さい。</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorWindow</name>
+    <message>
+        <location filename="../window/preprocessor/preprocessorwindow.cpp" line="36"/>
+        <source>Main Window</source>
+        <translation>メインウィンドウ</translation>
     </message>
 </context>
 <context>
@@ -650,22 +755,28 @@
         <translation>向きを反転(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="120"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="121"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="120"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="121"/>
         <source>No data to export exists</source>
         <translation>エクスポートするデータがありません</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="255"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="184"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="296"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="255"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="184"/>
+        <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
+        <translation>横断面ウィンドウは、断面が定義されていない時には開けません。</translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="296"/>
         <source>Are you sure you want to exit Rivmaker?</source>
         <translation>本当に Rivmaker を終了していいですか?</translation>
     </message>

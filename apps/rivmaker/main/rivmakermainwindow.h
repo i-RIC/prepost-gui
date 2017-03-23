@@ -57,6 +57,9 @@ private slots:
 	void viewToggleStatusBar(bool visible);
 
 	void helpMouseHint();
+	void showAboutDialog();
+
+	void updateViewMenu();
 
 private:
 	void closeEvent(QCloseEvent *e) override;

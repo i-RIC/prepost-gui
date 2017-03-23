@@ -15,7 +15,7 @@ Model::Impl::Impl() :
 	m_view {nullptr},
 	m_selectedItem {nullptr},
 	m_objectBrowserView {nullptr},
-	m_deleteAction {new QAction(QIcon(":/images/iconDeleteItem.png"), tr("Delete"), nullptr)}
+	m_deleteAction {new QAction(QIcon(":/images/iconDeleteItem.png"), Model::tr("Delete"), nullptr)}
 {}
 
 Model::Impl::~Impl()
