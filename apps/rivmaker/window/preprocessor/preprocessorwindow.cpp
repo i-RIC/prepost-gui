@@ -47,6 +47,7 @@ PreProcessorWindow::~PreProcessorWindow()
 void PreProcessorWindow::setProject(Project* project)
 {
 	impl->m_model.setProject(project);
+	connect(project, SIGNAL(updated()), this, SLOT(update()));
 }
 
 void PreProcessorWindow::setCrossSections(const std::vector<CrossSection*>& crossSections)
