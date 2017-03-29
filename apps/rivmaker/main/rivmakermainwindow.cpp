@@ -62,6 +62,13 @@ RivmakerMainWindow::~RivmakerMainWindow()
 
 void RivmakerMainWindow::newProject()
 {
+	if (impl->m_project != nullptr) {
+		int ret = QMessageBox::warning(this, tr("Warning"), tr("All the data in the project is discarded. Are you sure?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+		if (ret == QMessageBox::Cancel) {
+			return;
+		}
+	}
+
 	deleteProject();
 	impl->m_project = new Project();
 	impl->m_preProcessorWindow.setProject(impl->m_project);
