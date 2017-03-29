@@ -1,5 +1,6 @@
 #include "rivmakermainwindow.h"
 #include "ui_rivmakermainwindow.h"
+#include "private/rivmakermainwindow_impl.h"
 
 void RivmakerMainWindow::setupConnections()
 {
@@ -53,11 +54,14 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->openCrosssectionLineWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 	connect(ui->openCrosssectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
-	connect(ui->viewToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleToolBar(bool)));
+	connect(ui->viewMainToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleMainToolBar(bool)));
+	connect(ui->viewWindowsToolbarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleWindowsToolBar(bool)));
 	connect(ui->viewStatusBarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleStatusBar(bool)));
 
 	connect(ui->mouseHintAction, SIGNAL(triggered()), this, SLOT(helpMouseHint()));
 	connect(ui->aboutAction, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
 
 	connect(ui->viewMenu, SIGNAL(aboutToShow()), this, SLOT(updateViewMenu()));
+
+	connect(&(impl->m_windowActivationMapper), SIGNAL(mapped(QWidget*)), this, SLOT(activateWindow(QWidget*)));
 }

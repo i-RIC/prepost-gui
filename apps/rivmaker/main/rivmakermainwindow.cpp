@@ -16,6 +16,7 @@
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMessageBox>
+#include <QPainter>
 
 namespace {
 
@@ -24,8 +25,14 @@ namespace {
 RivmakerMainWindow::Impl::Impl(RivmakerMainWindow* w) :
 	m_preProcessorWindow {w},
 	m_verticalCrossSectionWindow {w},
+	m_windowsToolBar {w},
+	m_windowActivationMapper {w},
 	m_project {nullptr}
 {
+	m_windowsToolBar.setWindowTitle(RivmakerMainWindow::tr("Window List Toolbar"));
+	m_windowsToolBar.setAllowedAreas(Qt::AllToolBarAreas);
+	m_windowsToolBar.setFloatable(false);
+	m_windowsToolBar.setIconSize(QSize(16, 16));
 }
 
 RivmakerMainWindow::Impl::~Impl()
@@ -40,6 +47,8 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 	impl {new Impl {this}},
 	ui(new Ui::RivmakerMainWindow)
 {
+	addToolBar(Qt::RightToolBarArea, &(impl->m_windowsToolBar));
+
 	ui->setupUi(this);
 	setupConnections();
 
@@ -50,6 +59,7 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 	vw->setWindowIcon(impl->m_verticalCrossSectionWindow.windowIcon());
 	vw->hide();
 
+	updateWindowsToolBar();
 	newProject();
 }
 
@@ -202,6 +212,9 @@ void RivmakerMainWindow::openCrossSectionWindow()
 	subW->setWindowIcon(w->windowIcon());
 	subW->show();
 	subW->setFocus();
+
+	updateWindowsToolBar();
+	connect(w, SIGNAL(destroyed(QObject*)), this, SLOT(updateWindowsToolBar()));
 }
 
 void RivmakerMainWindow::baseLineAddPoint()
@@ -244,9 +257,14 @@ void RivmakerMainWindow::crossSectionDelete()
 	impl->m_preProcessorWindow.crossSectionDelete();
 }
 
-void RivmakerMainWindow::viewToggleToolBar(bool visible)
+void RivmakerMainWindow::viewToggleMainToolBar(bool visible)
 {
 	ui->toolBar->setVisible(visible);
+}
+
+void RivmakerMainWindow::viewToggleWindowsToolBar(bool visible)
+{
+	impl->m_windowsToolBar.setVisible(visible);
 }
 
 void RivmakerMainWindow::viewToggleStatusBar(bool visible)
@@ -273,7 +291,7 @@ void RivmakerMainWindow::updateViewMenu()
 {
 	QMenu* vMenu = ui->viewMenu;
 	auto currentActions = vMenu->actions();
-	for (int i = 3; i < currentActions.size(); ++i) {
+	for (int i = 4; i < currentActions.size(); ++i) {
 		auto a = currentActions.at(i);
 		vMenu->removeAction(a);
 	}
@@ -296,6 +314,39 @@ void RivmakerMainWindow::updateViewMenu()
 		vMenu->addAction(a);
 		connect(a, SIGNAL(triggered()), w, SLOT(setFocus()));
 	}
+}
+
+void RivmakerMainWindow::updateWindowsToolBar()
+{
+	for (QAction* a : impl->m_windowsToolBar.actions()) {
+		impl->m_windowActivationMapper.removeMappings(a);
+	}
+	impl->m_windowsToolBar.clear();
+
+	QPixmap shortcutPixmap(":/images/iconShortcut.png");
+	QSize iconSize = impl->m_windowsToolBar.iconSize();
+
+	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(centralWidget());
+	QList<QMdiSubWindow*> windowList = mdiArea->subWindowList();
+	QPainter painter;
+	for (QMdiSubWindow* w : windowList) {
+		QAction* a = new QAction(w->windowTitle(), &(impl->m_windowsToolBar));
+		QPixmap iconWithShortcut(w->windowIcon().pixmap(iconSize));
+		painter.begin(&iconWithShortcut);
+		painter.drawPixmap(0, 0, iconSize.width(), iconSize.height(), shortcutPixmap);
+		painter.end();
+		a->setIcon(QIcon(iconWithShortcut));
+
+		impl->m_windowsToolBar.addAction(a);
+		connect(a, SIGNAL(triggered()), &(impl->m_windowActivationMapper), SLOT(map()));
+		impl->m_windowActivationMapper.setMapping(a, w);
+	}
+}
+
+void RivmakerMainWindow::activateWindow(QWidget* w)
+{
+	w->show();
+	w->setFocus();
 }
 
 void RivmakerMainWindow::closeEvent(QCloseEvent *e)

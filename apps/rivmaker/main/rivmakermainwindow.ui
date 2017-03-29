@@ -125,7 +125,8 @@
     <property name="title">
      <string>&amp;View</string>
     </property>
-    <addaction name="viewToolbarAction"/>
+    <addaction name="viewMainToolbarAction"/>
+    <addaction name="viewWindowsToolbarAction"/>
     <addaction name="viewStatusBarAction"/>
     <addaction name="separator"/>
    </widget>
@@ -422,7 +423,7 @@
     <string>&amp;Cross Section...</string>
    </property>
   </action>
-  <action name="viewToolbarAction">
+  <action name="viewMainToolbarAction">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -430,7 +431,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>&amp;Toolbar</string>
+    <string>&amp;Main Toolbar</string>
    </property>
   </action>
   <action name="viewStatusBarAction">
@@ -537,6 +538,17 @@
   <action name="baseLineReverseDirectionAction">
    <property name="text">
     <string>Reverse &amp;Direction</string>
+   </property>
+  </action>
+  <action name="viewWindowsToolbarAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Windows Toolbar</string>
    </property>
   </action>
  </widget>

@@ -53,13 +53,17 @@ private slots:
 	void crossSectionEditCoordinates();
 	void crossSectionDelete();
 
-	void viewToggleToolBar(bool visible);
+	void viewToggleMainToolBar(bool visible);
+	void viewToggleWindowsToolBar(bool visible);
 	void viewToggleStatusBar(bool visible);
 
 	void helpMouseHint();
 	void showAboutDialog();
 
 	void updateViewMenu();
+
+	void updateWindowsToolBar();
+	void activateWindow(QWidget* w);
 
 private:
 	void closeEvent(QCloseEvent *e) override;

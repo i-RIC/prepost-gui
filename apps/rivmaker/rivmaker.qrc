@@ -9,6 +9,7 @@
         <file>images/iconAddPolygonVertex.png</file>
         <file>images/iconAHWM.png</file>
         <file>images/iconBaseline.png</file>
+        <file>images/iconCrossSection.png</file>
         <file>images/iconDeleteItem.png</file>
         <file>images/iconElevationPoints.png</file>
         <file>images/iconExport.png</file>
@@ -28,6 +29,7 @@
         <file>images/iconRivmaker.png</file>
         <file>images/iconRivmakerLarge.png</file>
         <file>images/iconSave.png</file>
+        <file>images/iconShortcut.png</file>
         <file>images/iconVerticalCrosssection.png</file>
         <file>images/iconViewFit.png</file>
         <file>images/iconViewRotate90.png</file>
@@ -36,6 +38,5 @@
         <file>images/iconViewZoomOut.png</file>
         <file>images/imgMouseHelp.png</file>
         <file>images/ja_JP/imgMouseHelp.png</file>
-        <file>images/iconCrossSection.png</file>
     </qresource>
 </RCC>
