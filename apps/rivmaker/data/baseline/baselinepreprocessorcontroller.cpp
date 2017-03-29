@@ -17,6 +17,8 @@
 #include <QMenu>
 #include <QMessageBox>
 
+#include <algorithm>
+
 BaseLinePreProcessorController::Impl::Impl() :
 	m_mode {Mode::BeforeDefining},
 	m_movingPointIndex {0},
@@ -86,10 +88,13 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 	auto baseLine = dynamic_cast<BaseLine*> (item());
 	QPointF p = v->rconv(QPointF(event->x(), event->y()));
 	std::vector<QPointF> polyline = baseLine->polyLine();
+	std::reverse(polyline.begin(), polyline.end());
 
 	if (impl->m_mode == Impl::Mode::Defining) {
 		polyline.pop_back();
 		polyline.push_back(p);
+
+		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 		updateView();
 	} else if (impl->m_mode == Impl::Mode::Normal || impl->m_mode == Impl::Mode::MovePointPrepare) {
@@ -130,6 +135,7 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::MovePoint || impl->m_mode == Impl::Mode::AddPoint) {
 		polyline[impl->m_movingPointIndex] = p;
+		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 		updateView();
 	}
@@ -140,20 +146,24 @@ void BaseLinePreProcessorController::mousePressEvent(QMouseEvent* event, View* v
 	auto baseLine = dynamic_cast<BaseLine*> (item());
 	QPointF p = v->rconv(QPointF(event->x(), event->y()));
 	std::vector<QPointF> polyline = baseLine->polyLine();
+	std::reverse(polyline.begin(), polyline.end());
 
 	if (impl->m_mode == Impl::Mode::BeforeDefining) {
 		polyline.push_back(p);
 		polyline.push_back(p);
+		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 		impl->m_mode = Impl::Mode::Defining;
 	} else if (impl->m_mode == Impl::Mode::Defining) {
 		polyline.push_back(p);
+		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 	} else if (impl->m_mode == Impl::Mode::MovePointPrepare) {
 		impl->m_mode = Impl::Mode::MovePoint;
 	} else if (impl->m_mode == Impl::Mode::AddPointPrepare) {
 		auto it = polyline.begin() + (impl->m_addingEdgeIndex + 1);
 		polyline.insert(it, p);
+		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 		impl->m_movingPointIndex = impl->m_addingEdgeIndex + 1;
 		impl->m_mode = Impl::Mode::AddPoint;
@@ -161,6 +171,7 @@ void BaseLinePreProcessorController::mousePressEvent(QMouseEvent* event, View* v
 	} else if (impl->m_mode == Impl::Mode::RemovePointPrepare) {
 		auto it = polyline.begin() + impl->m_removingPointIndex;
 		polyline.erase(it);
+		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 		finishDefining();
 	}
