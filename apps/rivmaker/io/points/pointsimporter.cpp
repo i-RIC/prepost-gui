@@ -12,9 +12,14 @@ bool PointsImporter::importData(std::vector<QVector3D*>* points, QPointF* offset
 	importers.push_back(new PointsCsvImporter());
 
 	QStringList filters;
+	QStringList availableExtensions;
 	for (auto i : importers) {
 		filters.append(i->fileDialogFilters());
+		for (QString ext : i->acceptableExtensions()) {
+			availableExtensions << QString("*.").append(ext);
+		}
 	}
+	filters.push_front(tr("All importable files (%1)").arg(availableExtensions.join(" ")));
 	QString fname = QFileDialog::getOpenFileName(w, tr("Select file to import"), QString(), filters.join(";;"));
 
 	if (fname.isNull()) {return false;}
