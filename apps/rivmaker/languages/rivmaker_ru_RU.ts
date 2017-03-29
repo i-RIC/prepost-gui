@@ -43,49 +43,49 @@
 <context>
     <name>BaseLinePreProcessorController</name>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="25"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
         <source>&amp;Import...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="26"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
         <source>&amp;Edit Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="32"/>
         <source>Reverse &amp;Direction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="33"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="246"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="274"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="246"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="274"/>
         <source>Base line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -157,6 +157,19 @@
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
         <source>Cross Section is not defined yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionPreProcessorViewLabelHelper</name>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp" line="36"/>
+        <source>%1 LB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp" line="40"/>
+        <source>%1 RB</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -304,6 +317,14 @@
     </message>
 </context>
 <context>
+    <name>ObjectBrowser</name>
+    <message>
+        <location filename="../window/preprocessor/objectbrowser/objectbrowser.cpp" line="8"/>
+        <source>Object Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PointsCsvImporter</name>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="14"/>
@@ -329,7 +350,12 @@
 <context>
     <name>PointsImporter</name>
     <message>
-        <location filename="../io/points/pointsimporter.cpp" line="18"/>
+        <location filename="../io/points/pointsimporter.cpp" line="22"/>
+        <source>All importable files (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../io/points/pointsimporter.cpp" line="23"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
@@ -404,6 +430,7 @@
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="134"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -417,11 +444,16 @@
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
+        <source>Not all Cross Sections cross Base line</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
-        <location filename="../window/preprocessor/preprocessorwindow.cpp" line="36"/>
+        <location filename="../window/preprocessor/preprocessorwindow.cpp" line="37"/>
         <source>Main Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -723,28 +755,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="121"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="128"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="121"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="128"/>
         <source>No data to export exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="184"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="296"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="66"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="191"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="303"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="184"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="66"/>
+        <source>All the data in the project is discarded. Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="191"/>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="296"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="303"/>
         <source>Are you sure you want to exit Rivmaker?</source>
         <translation type="unfinished"></translation>
     </message>

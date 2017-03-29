@@ -43,49 +43,49 @@
 <context>
     <name>BaseLinePreProcessorController</name>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="25"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="26"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
         <source>&amp;Add Vertex</source>
         <translation>点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
         <source>&amp;Remove Vertex</source>
         <translation>点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
         <source>&amp;Edit Coordinates...</source>
         <translation>座標の編集(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="32"/>
         <source>Reverse &amp;Direction</source>
         <translation>向きを反転(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="33"/>
         <source>Delete</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="246"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="274"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="228"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="256"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="246"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="274"/>
         <source>Base line is not defined yet.</source>
         <translation>ベースラインはまだ定義されていません。</translation>
     </message>
@@ -158,6 +158,19 @@
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionPreProcessorViewLabelHelper</name>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp" line="36"/>
+        <source>%1 LB</source>
+        <translation>%1 左岸</translation>
+    </message>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp" line="40"/>
+        <source>%1 RB</source>
+        <translation>%1 右岸</translation>
     </message>
 </context>
 <context>
@@ -311,6 +324,14 @@
     </message>
 </context>
 <context>
+    <name>ObjectBrowser</name>
+    <message>
+        <location filename="../window/preprocessor/objectbrowser/objectbrowser.cpp" line="8"/>
+        <source>Object Browser</source>
+        <translation>オブジェクトブラウザ</translation>
+    </message>
+</context>
+<context>
     <name>PointsCsvImporter</name>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="14"/>
@@ -336,7 +357,12 @@
 <context>
     <name>PointsImporter</name>
     <message>
-        <location filename="../io/points/pointsimporter.cpp" line="18"/>
+        <location filename="../io/points/pointsimporter.cpp" line="22"/>
+        <source>All importable files (%1)</source>
+        <translation>全てのインポート可能なファイル (%1)</translation>
+    </message>
+    <message>
+        <location filename="../io/points/pointsimporter.cpp" line="23"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
@@ -418,6 +444,7 @@
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="134"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -431,11 +458,16 @@
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
         <translation>断面の座標を編集するには、先にオブジェクトブラウザで選択して下さい。</translation>
     </message>
+    <message>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
+        <source>Not all Cross Sections cross Base line</source>
+        <translation>ベースラインと交差していない断面があります</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
-        <location filename="../window/preprocessor/preprocessorwindow.cpp" line="36"/>
+        <location filename="../window/preprocessor/preprocessorwindow.cpp" line="37"/>
         <source>Main Window</source>
         <translation>メインウィンドウ</translation>
     </message>
@@ -755,28 +787,34 @@
         <translation>向きを反転(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="121"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="128"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="121"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="128"/>
         <source>No data to export exists</source>
         <translation>エクスポートするデータがありません</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="184"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="296"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="66"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="191"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="303"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="184"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="66"/>
+        <source>All the data in the project is discarded. Are you sure?</source>
+        <translation>プロジェクトの全てのデータが破棄されます。本当にいいですか?</translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="191"/>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation>横断面ウィンドウは、断面が定義されていない時には開けません。</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="296"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="303"/>
         <source>Are you sure you want to exit Rivmaker?</source>
         <translation>本当に Rivmaker を終了していいですか?</translation>
     </message>
