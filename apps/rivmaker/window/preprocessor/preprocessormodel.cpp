@@ -209,6 +209,9 @@ void PreProcessorModel::updateCrossSections()
 	impl->m_project->calcCrossSectionElevations();
 	impl->m_project->mapPointsToCrossSections();
 	bool sorted = impl->m_project->sortCrossSectionsIfPossible();
+	if (! sorted && impl->m_project->baseLine().polyLine().size() >= 2) {
+		QMessageBox::warning(view(), tr("Warning"), tr("Not all Cross Sections cross Base line"));
+	}
 	if (! sorted) {return;}
 
 	auto cs = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(impl->m_project->crossSections())));
