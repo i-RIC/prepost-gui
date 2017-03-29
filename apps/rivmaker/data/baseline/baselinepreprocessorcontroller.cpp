@@ -326,6 +326,10 @@ void BaseLinePreProcessorController::finishDefining()
 void BaseLinePreProcessorController::updateMouseCursor(View* v)
 {
 	switch (impl->m_mode) {
+	case Impl::Mode::BeforeDefining:
+	case Impl::Mode::Defining:
+		v->setCursor(Qt::CrossCursor);
+		break;
 	case Impl::Mode::MovePointPrepare:
 		v->setCursor(Qt::OpenHandCursor);
 		break;
