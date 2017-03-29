@@ -4,9 +4,12 @@
 #include "../base/view.h"
 #include "../project/project.h"
 #include "../../io/points/pointsimporter.h"
+#include "../../window/preprocessor/preprocessormodel.h"
 
 #include <QAction>
 #include <QMenu>
+#include <QMouseEvent>
+#include <QVector3D>
 
 PointsPreProcessorController::Impl::Impl() :
 	m_importAction {new QAction(QIcon(":/images/iconImport.png"), PointsPreProcessorController::tr("&Import..."), nullptr)},
@@ -30,6 +33,22 @@ PointsPreProcessorController::PointsPreProcessorController(Model* model, Points*
 PointsPreProcessorController::~PointsPreProcessorController()
 {
 	delete impl;
+}
+
+void PointsPreProcessorController::mouseMoveEvent(QMouseEvent* event, View* view)
+{
+	QPointF mousePos = event->pos();
+	auto m = dynamic_cast<PreProcessorModel*> (model());
+
+	auto points = dynamic_cast<Points*> (item());
+	for (QVector3D* p : points->points()){
+		auto p_pos = view->conv(QPointF(p->x(), p->y()));
+		if (View::isNear(mousePos, p_pos)) {
+			m->emitValueChange(p->z());
+			return;
+		}
+	}
+	m->emitValueClear();
 }
 
 void PointsPreProcessorController::setupObjectBrowserRightClickMenu(QMenu* menu)

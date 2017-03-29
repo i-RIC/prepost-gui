@@ -2,6 +2,8 @@
 #include "ui_rivmakermainwindow.h"
 #include "private/rivmakermainwindow_impl.h"
 
+#include <QMdiArea>
+
 void RivmakerMainWindow::setupConnections()
 {
 	connect(ui->newProjectAction, SIGNAL(triggered()), this, SLOT(newProject()));
@@ -64,4 +66,12 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->viewMenu, SIGNAL(aboutToShow()), this, SLOT(updateViewMenu()));
 
 	connect(&(impl->m_windowActivationMapper), SIGNAL(mapped(QWidget*)), this, SLOT(activateWindow(QWidget*)));
+
+	connect(&(impl->m_preProcessorWindow), SIGNAL(positionChangedForStatusBar(QPointF)), &(impl->m_mousePositionWidget), SLOT(updatePosition(QPointF)));
+
+	auto mdiArea = dynamic_cast<QMdiArea*> (centralWidget());
+	connect(mdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), &(impl->m_mousePositionWidget), SLOT(clear()));
+
+	connect(&(impl->m_preProcessorWindow), SIGNAL(valueChangedForStatusBar(double)), &(impl->m_valueWidget), SLOT(setValue(double)));
+	connect(&(impl->m_preProcessorWindow), SIGNAL(valueClearedForStatusBar()), &(impl->m_valueWidget), SLOT(clear()));
 }

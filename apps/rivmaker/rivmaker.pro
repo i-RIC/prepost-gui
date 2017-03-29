@@ -33,6 +33,8 @@ HEADERS += dialogs/aboutdialog.h \
            main/rivmakermainwindow.h \
            misc/geometryutil.h \
            misc/mathutil.h \
+           widgets/mousepositionwidget.h \
+           widgets/valuewidget.h \
            window/viewwindowi.h \
            data/arbitraryhwm/arbitraryhwm.h \
            data/arbitraryhwm/arbitraryhwmpreprocessorview.h \
@@ -119,6 +121,8 @@ FORMS += dialogs/aboutdialog.ui \
          dialogs/coordinateseditdialog.ui \
          dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
+         widgets/mousepositionwidget.ui \
+         widgets/valuewidget.ui \
          window/crosssection/crosssectionwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
 SOURCES += dialogs/aboutdialog.cpp \
@@ -131,6 +135,8 @@ SOURCES += dialogs/aboutdialog.cpp \
            main/rivmakermainwindow_setupconnections.cpp \
            misc/geometryutil.cpp \
            misc/mathutil.cpp \
+           widgets/mousepositionwidget.cpp \
+           widgets/valuewidget.cpp \
            data/arbitraryhwm/arbitraryhwm.cpp \
            data/arbitraryhwm/arbitraryhwmpreprocessorview.cpp \
            data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.cpp \

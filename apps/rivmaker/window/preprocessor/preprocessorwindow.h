@@ -8,6 +8,8 @@
 class CrossSection;
 class Project;
 
+class QPointF;
+
 class PreProcessorWindow : public QMainWindow, public ViewWindowI
 {
 	Q_OBJECT
@@ -43,6 +45,11 @@ public:
 	void baseLineEditCoordinates();
 	void baseLineReverseDirection();
 	void baseLineDelete();
+
+signals:
+	void positionChangedForStatusBar(const QPointF& pos);
+	void valueChangedForStatusBar(double val);
+	void valueClearedForStatusBar();
 
 private:
 	void closeEvent(QCloseEvent *e);

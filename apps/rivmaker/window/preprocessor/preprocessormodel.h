@@ -44,6 +44,13 @@ public:
 
 	void updateCrossSections();
 
+	void emitValueChange(double val);
+	void emitValueClear();
+
+signals:
+	void valueChanged(double val);
+	void valueCleared();
+
 private slots:
 	void deleteSelectedItem() override;
 

@@ -27,6 +27,8 @@ RivmakerMainWindow::Impl::Impl(RivmakerMainWindow* w) :
 	m_verticalCrossSectionWindow {w},
 	m_windowsToolBar {w},
 	m_windowActivationMapper {w},
+	m_valueWidget {w},
+	m_mousePositionWidget {w},
 	m_project {nullptr}
 {
 	m_windowsToolBar.setWindowTitle(RivmakerMainWindow::tr("Window List Toolbar"));
@@ -50,6 +52,9 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 	addToolBar(Qt::RightToolBarArea, &(impl->m_windowsToolBar));
 
 	ui->setupUi(this);
+	ui->statusbar->addPermanentWidget(&(impl->m_mousePositionWidget));
+	ui->statusbar->addPermanentWidget(&(impl->m_valueWidget));
+
 	setupConnections();
 
 	auto pw = ui->centralwidget->addSubWindow(&(impl->m_preProcessorWindow));
@@ -83,6 +88,7 @@ void RivmakerMainWindow::newProject()
 	impl->m_project = new Project();
 	impl->m_preProcessorWindow.setProject(impl->m_project);
 	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
+	impl->m_mousePositionWidget.setProject(impl->m_project);
 
 	auto windows = dynamic_cast<QMdiArea*> (centralWidget())->subWindowList();
 	for (auto w : windows) {

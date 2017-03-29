@@ -35,7 +35,11 @@ PreProcessorWindow::PreProcessorWindow(QWidget *parent) :
 	impl {new Impl {this}}
 {
 	setWindowTitle(PreProcessorWindow::tr("Main Window"));
-	setWindowIcon(QIcon(":images/iconMain.png"));
+	setWindowIcon(QIcon(":/images/iconMain.png"));
+
+	connect(&(impl->m_view), SIGNAL(positionChanged(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
+	connect(&(impl->m_model), SIGNAL(valueChanged(double)), this, SIGNAL(valueChangedForStatusBar(double)));
+	connect(&(impl->m_model), SIGNAL(valueCleared()), this, SIGNAL(valueClearedForStatusBar()));
 
 	resize(600, 500);
 }

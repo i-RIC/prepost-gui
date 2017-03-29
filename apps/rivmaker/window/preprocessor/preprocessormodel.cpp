@@ -220,6 +220,16 @@ void PreProcessorModel::updateCrossSections()
 	impl->m_project->emitUpdated();
 }
 
+void PreProcessorModel::emitValueChange(double val)
+{
+	emit valueChanged(val);
+}
+
+void PreProcessorModel::emitValueClear()
+{
+	emit valueCleared();
+}
+
 void PreProcessorModel::deleteSelectedItem()
 {
 	auto s = selectedItem();

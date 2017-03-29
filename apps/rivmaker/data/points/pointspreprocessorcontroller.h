@@ -12,7 +12,9 @@ public:
 	PointsPreProcessorController(Model* model, Points* item);
 	~PointsPreProcessorController();
 
-	virtual void setupObjectBrowserRightClickMenu(QMenu* menu) override;
+	void mouseMoveEvent(QMouseEvent* event, View* view) override;
+
+	void setupObjectBrowserRightClickMenu(QMenu* menu) override;
 
 public slots:
 	void importData();

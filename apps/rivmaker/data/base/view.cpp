@@ -167,6 +167,9 @@ void View::mouseDoubleClickEvent(QMouseEvent* event)
 
 void View::mouseMoveEvent(QMouseEvent* event)
 {
+	QPointF p = rconv(QPointF(event->pos()));
+	emit positionChanged(p);
+
 	if (inViewOperation()) {
 		viewMouseMoveEvent(event);
 		updateTransform();
