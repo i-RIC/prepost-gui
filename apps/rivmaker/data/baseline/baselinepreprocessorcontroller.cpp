@@ -87,6 +87,13 @@ void BaseLinePreProcessorController::mouseDoubleClickEvent(QMouseEvent*, View*)
 {
 	if (impl->m_mode != Impl::Mode::Defining) {return;}
 
+	auto baseLine = dynamic_cast<BaseLine*> (item());
+	std::vector<QPointF> polyline = baseLine->polyLine();
+	std::reverse(polyline.begin(), polyline.end());
+	polyline.pop_back();
+	std::reverse(polyline.begin(), polyline.end());
+	baseLine->setPolyLine(polyline);
+
 	finishDefining();
 }
 
@@ -114,7 +121,6 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 				impl->m_movingPointIndex = i;
 			}
 		}
-		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::AddPointNotPossible || impl->m_mode == Impl::Mode::AddPointPrepare) {
 		impl->m_mode = Impl::Mode::AddPointNotPossible;
 		for (int i = 0; i < polyline.size() - 1; ++i) {
@@ -128,7 +134,6 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 				break;
 			}
 		}
-		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::RemovePointNotPossible || impl->m_mode == Impl::Mode::RemovePointPrepare) {
 		impl->m_mode = Impl::Mode::RemovePointNotPossible;
 		for (int i = 0; i < polyline.size(); ++i) {
@@ -139,13 +144,13 @@ void BaseLinePreProcessorController::mouseMoveEvent(QMouseEvent* event, View* v)
 				impl->m_removingPointIndex = i;
 			}
 		}
-		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::MovePoint || impl->m_mode == Impl::Mode::AddPoint) {
 		polyline[impl->m_movingPointIndex] = p;
 		std::reverse(polyline.begin(), polyline.end());
 		baseLine->setPolyLine(polyline);
 		updateView();
 	}
+	updateMouseCursor(v);
 }
 
 void BaseLinePreProcessorController::mousePressEvent(QMouseEvent* event, View* v)

@@ -58,11 +58,11 @@ void CrossSectionPreProcessorController::mouseMoveEvent(QMouseEvent* event, View
 				impl->m_movingPointIndex = i;
 			}
 		}
-		updateMouseCursor(v);
 	} else if (impl->m_mode == Impl::Mode::MovePoint) {
 		cs->setPoint(impl->m_movingPointIndex, p);
 		updateView();
 	}
+	updateMouseCursor(v);
 }
 
 void CrossSectionPreProcessorController::mousePressEvent(QMouseEvent* event, View* v)
