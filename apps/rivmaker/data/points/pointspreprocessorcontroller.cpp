@@ -54,6 +54,8 @@ void PointsPreProcessorController::importData()
 	points->project()->setOffset(offset);
 
 	points->project()->emitUpdated();
+
+	view()->fit();
 }
 
 void PointsPreProcessorController::clearData()
