@@ -73,6 +73,13 @@ void BaseLinePreProcessorController::keyPressEvent(QKeyEvent* event, View*)
 	if (impl->m_mode != Impl::Mode::Defining) {return;}
 	if (event->key() != Qt::Key_Return) {return;}
 
+	auto baseLine = dynamic_cast<BaseLine*> (item());
+	std::vector<QPointF> polyline = baseLine->polyLine();
+	std::reverse(polyline.begin(), polyline.end());
+	polyline.pop_back();
+	std::reverse(polyline.begin(), polyline.end());
+	baseLine->setPolyLine(polyline);
+
 	finishDefining();
 }
 
