@@ -3,8 +3,12 @@
 
 #include "../base/dataitemviewhelperi.h"
 
-class CrossSectionPreProcessorViewLabelHelper : public DataItemViewHelperI
+#include <QObject>
+
+class CrossSectionPreProcessorViewLabelHelper : public QObject, public DataItemViewHelperI
 {
+	Q_OBJECT
+
 public:
 	CrossSectionPreProcessorViewLabelHelper(DataItemView* v);
 

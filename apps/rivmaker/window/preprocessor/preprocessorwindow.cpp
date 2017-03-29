@@ -2,6 +2,7 @@
 #include "objectbrowser/objectbrowserview.h"
 #include "preprocessorwindow.h"
 #include "private/preprocessorwindow_impl.h"
+#include "../../data/project/project.h"
 
 #include <QCloseEvent>
 

@@ -33,7 +33,7 @@ void CrossSectionPreProcessorViewLabelHelper::draw(QPainter *painter) const
 
 	QPointF p_lb = v->conv(cs->point1());
 	p_lb += QPointF(labelOffset, fontSize * 0.5);
-	painter->drawText(p_rb, tr("%1 LB").arg(cs->name()));
+	painter->drawText(p_lb, tr("%1 LB").arg(cs->name()));
 
 	QPointF p_rb = v->conv(cs->point2());
 	p_rb += QPointF(labelOffset, fontSize * 0.5);
