@@ -5,7 +5,7 @@ ObjectBrowser::ObjectBrowser(QWidget* parent) :
 {
 	setFeatures(QDockWidget::DockWidgetMovable);
 	setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-	setWindowTitle(tr("Object Browser"));
+	setWindowTitle(ObjectBrowser::tr("Object Browser"));
 }
 
 ObjectBrowser::~ObjectBrowser()
