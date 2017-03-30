@@ -9,6 +9,7 @@
 #include "private/gridcreatingconditioncenterandwidth_removevertexcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_updateshapecommand.h"
 
+#include <geoio/polylineio.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
@@ -17,6 +18,8 @@
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
@@ -71,6 +74,12 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 
 	m_reverseCenterLineAction = new QAction(tr("R&everse Center Line Direction"), this);
 	connect(m_reverseCenterLineAction, SIGNAL(triggered()), this, SLOT(reverseCenterLineDirection()));
+
+	m_importCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), tr("&Import Center Line..."), this);
+	connect(m_importCenterLineAction, SIGNAL(triggered()), this, SLOT(importCenterLine()));
+
+	m_exportCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), tr("&Export Center Line..."), this);
+	connect(m_exportCenterLineAction, SIGNAL(triggered()), this, SLOT(exportCenterLine()));
 
 	m_xSpline = vtkSmartPointer<vtkCardinalSpline>::New();
 	m_ySpline = vtkSmartPointer<vtkCardinalSpline>::New();
@@ -413,6 +422,9 @@ void GridCreatingConditionCenterAndWidth::setupMenu()
 	m_menu->addAction(m_removeVertexAction);
 	m_menu->addAction(m_coordEditAction);
 	m_menu->addAction(m_reverseCenterLineAction);
+	m_menu->addSeparator();
+	m_menu->addAction(m_importCenterLineAction);
+	m_menu->addAction(m_exportCenterLineAction);
 
 	m_rightClickingMenu = new QMenu();
 	m_rightClickingMenu->addAction(m_conditionDataItem->createAction());
@@ -423,6 +435,9 @@ void GridCreatingConditionCenterAndWidth::setupMenu()
 	m_rightClickingMenu->addAction(m_reverseCenterLineAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_conditionDataItem->clearAction());
+	m_rightClickingMenu->addSeparator();
+	m_rightClickingMenu->addAction(m_importCenterLineAction);
+	m_rightClickingMenu->addAction(m_exportCenterLineAction);
 }
 
 void GridCreatingConditionCenterAndWidth::setActorProperties(vtkProperty* prop)
@@ -1008,6 +1023,40 @@ void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()
 	}
 	setPolyLine(revPoints);
 	renderGraphicsView();
+}
+
+void GridCreatingConditionCenterAndWidth::importCenterLine()
+{
+	auto polyLine = PolylineIO::importData(preProcessorWindow());
+	if (polyLine.isEmpty()) {return;}
+
+	auto offset = projectData()->mainfile()->offset();
+	for (QPointF& p : polyLine) {
+		p.setX(p.x() - offset.x());
+		p.setY(p.y() - offset.y());
+	}
+
+	setPolyLine(polyLine);
+	m_mouseEventMode = meNormal;
+
+	renderGraphicsView();
+}
+
+void GridCreatingConditionCenterAndWidth::exportCenterLine()
+{
+	auto l = polyLine();
+	if (l.isEmpty()) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Center line not defined yet"));
+		return;
+	}
+	auto offset = projectData()->mainfile()->offset();
+
+	for (QPointF& p : l) {
+		p.setX(p.x() + offset.x());
+		p.setY(p.y() + offset.y());
+	}
+
+	PolylineIO::exportData(l, preProcessorWindow());
 }
 
 void GridCreatingConditionCenterAndWidth::doApplyOffset(double x, double y)

@@ -30,6 +30,20 @@ unix {
 }
 LIBS += -liricMisc
 
+# iricGeoio
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../geoio/debug"
+	} else {
+		LIBS += -L"../../geoio/release"
+	}
+}
+unix {
+	LIBS += -L"../../geoio"
+}
+LIBS += -liricGeoio
+
 # iricGuibase
 
 win32 {

@@ -45,7 +45,7 @@ DATA importDataT(QWidget* w)
 				if (extMap.contains(extension)) {
 					importer = extMap.value(extension);
 				} else {
-					QMessageBox::warning(w, QObject::tr("Warning"), QObject::tr("File type can not be recongnized from the file extensioin. : %1").arg(finfo.fileName()));
+					QMessageBox::warning(w, QObject::tr("Warning"), QObject::tr("File type can not be recongnized from the file extension. : %1").arg(finfo.fileName()));
 					return ret;
 				}
 			} else {
@@ -89,8 +89,8 @@ void exportDataT(const DATA& data, QWidget* w)
 	for (int i = 0; i < filters.size(); ++i) {
 		if (filters[i] == selectedFilter) {
 			exporter = f.exporters().at(i);
+			break;
 		}
-		break;
 	}
 
 	Q_ASSERT(exporter != nullptr);

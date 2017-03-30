@@ -130,6 +130,9 @@ protected:
 	QAction* m_removeVertexAction;
 	QAction* m_coordEditAction;
 	QAction* m_reverseCenterLineAction;
+	QAction* m_importCenterLineAction;
+	QAction* m_exportCenterLineAction;
+
 	QMenu* m_rightClickingMenu;
 
 	int m_iMax;
@@ -148,6 +151,9 @@ private slots:
 	void deletePolyLine();
 	void handleDialogApplied(QDialog* d);
 	void reverseCenterLineDirection();
+
+	void importCenterLine();
+	void exportCenterLine();
 
 private:
 	void updateShapeData();
