@@ -15,11 +15,14 @@ class GeoDataRiverSurveyImporterSettingDialog : public QDialog
 public:
 	enum CenterPointSetting {
 		cpMiddle,
-		cpElevation
+		cpElevation,
+		cpLowWaterWay
 	};
 
 	explicit GeoDataRiverSurveyImporterSettingDialog(QWidget* parent = nullptr);
 	~GeoDataRiverSurveyImporterSettingDialog();
+
+	void setWith4Points(bool with4points);
 
 	CenterPointSetting centerPointSetting() const;
 
