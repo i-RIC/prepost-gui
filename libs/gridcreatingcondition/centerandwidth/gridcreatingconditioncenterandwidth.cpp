@@ -284,15 +284,13 @@ void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = new GridCreatingConditionCenterAndWidthDialog(parent);
 	connect(dialog, SIGNAL(applied(QDialog*)), this, SLOT(handleDialogApplied(QDialog*)));
+	dialog->setLength(m_length);
+	dialog->setWidth(m_width);
 	dialog->setIMax(m_iMax);
 	dialog->setJMax(m_jMax);
-	dialog->setWidth(m_width);
-	dialog->setLength(m_length);
 	m_tmpIMax = m_iMax;
 	m_tmpJMax = m_jMax;
 	m_tmpWidth = m_width;
-	dialog->setStreamWiseLabel();
-	dialog->setCrossStreamLabel();
 
 	int result = dialog->exec();
 	if (result == QDialog::Accepted) {

@@ -10,10 +10,9 @@ GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDi
 {
 	ui->setupUi(this);
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
-	connect(ui->streamWiseSpinBox, SIGNAL(editingFinished()), this, SLOT(setStreamWiseNumber()));
-	connect(ui->crossStreamSpinBox, SIGNAL(editingFinished()), this, SLOT(setCrossStreamNumber()));
-	connect(ui->gridWidthSpinBox, SIGNAL(editingFinished()), this, SLOT(setStreamWiseLabel()));
-	connect(ui->gridWidthSpinBox, SIGNAL(editingFinished()), this, SLOT(setCrossStreamLabel()));
+	connect(ui->nISpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDI()));
+	connect(ui->nJSpinBox, SIGNAL(editingFinished()), this, SLOT(handleNJChange()));
+	connect(ui->widthSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateDJ()));
 }
 
 GridCreatingConditionCenterAndWidthDialog::~GridCreatingConditionCenterAndWidthDialog()
@@ -23,37 +22,34 @@ GridCreatingConditionCenterAndWidthDialog::~GridCreatingConditionCenterAndWidthD
 
 int GridCreatingConditionCenterAndWidthDialog::iMax() const
 {
-	return ui->streamWiseSpinBox->value() + 1;
+	return ui->nISpinBox->value() + 1;
 }
 
 int GridCreatingConditionCenterAndWidthDialog::jMax() const
 {
-	return ui->crossStreamSpinBox->value() + 1;
+	return ui->nJSpinBox->value() + 1;
 }
 
 double GridCreatingConditionCenterAndWidthDialog::width() const
 {
-	return ui->gridWidthSpinBox->value();
-}
-
-double GridCreatingConditionCenterAndWidthDialog::length() const
-{
-	return m_length;
+	return ui->widthSpinBox->value();
 }
 
 void GridCreatingConditionCenterAndWidthDialog::setIMax(int i)
 {
-	ui->streamWiseSpinBox->setValue(i - 1);
+	ui->nISpinBox->setValue(i - 1);
+	updateDI();
 }
 
 void GridCreatingConditionCenterAndWidthDialog::setJMax(int j)
 {
-	ui->crossStreamSpinBox->setValue(j - 1);
+	ui->nJSpinBox->setValue(j - 1);
+	updateDJ();
 }
 
 void GridCreatingConditionCenterAndWidthDialog::setWidth(double w)
 {
-	ui->gridWidthSpinBox->setValue(w);
+	ui->widthSpinBox->setValue(w);
 }
 
 void GridCreatingConditionCenterAndWidthDialog::setLength(double l)
@@ -61,40 +57,35 @@ void GridCreatingConditionCenterAndWidthDialog::setLength(double l)
 	m_length = l;
 }
 
-void GridCreatingConditionCenterAndWidthDialog::setStreamWiseLabel()
+void GridCreatingConditionCenterAndWidthDialog::updateDI()
 {
-	double d = length() / (iMax() - 1);
+	double d = m_length / (iMax() - 1);
 	QString num = QString::number(d);
 	ui->dIValue->setText(QString("%1").arg(num));
 }
 
-void GridCreatingConditionCenterAndWidthDialog::setCrossStreamLabel()
+void GridCreatingConditionCenterAndWidthDialog::updateDJ()
 {
 	double d = width() / (jMax() - 1);
 	QString num = QString::number(d);
 	ui->dJValue->setText(QString("%1").arg(num));
 }
 
-void GridCreatingConditionCenterAndWidthDialog::setStreamWiseNumber()
+void GridCreatingConditionCenterAndWidthDialog::handleNJChange()
 {
-	setStreamWiseLabel();
-}
-
-void GridCreatingConditionCenterAndWidthDialog::setCrossStreamNumber()
-{
-	if (ui->crossStreamSpinBox->value() % 2 == 1) {
-		QMessageBox::warning(this, tr("Warning"),
-            tr("Division number in cross-stream direction should be even. incrementing by one."),
-			QMessageBox::Ok, QMessageBox::Ok);
+	if (ui->nJSpinBox->value() % 2 == 1) {
+		QMessageBox::warning(this, tr("Warning"), tr("nJ should be even. incrementing by one."), QMessageBox::Ok, QMessageBox::Ok);
 		setJMax(jMax() + 1);
+		return;
 	}
-	setCrossStreamLabel();
+
+	updateDJ();
 }
 
 void GridCreatingConditionCenterAndWidthDialog::apply()
 {
-	setStreamWiseLabel();
-	setCrossStreamLabel();
+	updateDI();
+	updateDJ();
 	emit applied(this);
 }
 
