@@ -17,8 +17,8 @@ public:
 	const static double METERPERPIXEL_AT_EQUATOR_1;
 	const static int MAX_GOOGLEAPI_COUNT;
 
-	/// Constructor
-	explicit GoogleMapImageImporter(ProjectData* projectdata, iRICMainWindowInterface* parent);
+	GoogleMapImageImporter(ProjectData* projectdata, iRICMainWindowInterface* parent);
+
 	void importImages();
 
 private slots:

@@ -15,6 +15,7 @@ class GoogleMapImageImportSettingDialog : public QDialog
 public:
 	explicit GoogleMapImageImportSettingDialog(QWidget* parent = nullptr);
 	~GoogleMapImageImportSettingDialog();
+
 	void setZoom(int zoom);
 	void setZoomMax(int zoomMax);
 

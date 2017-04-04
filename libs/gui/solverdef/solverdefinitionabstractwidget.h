@@ -17,16 +17,13 @@ class SolverDefinitionAbstractWidget : public QWidget
 	Q_OBJECT
 
 public:
-	/// Constructor
 	SolverDefinitionAbstractWidget(const SolverDefinitionAbstract* solver, QWidget* parent = nullptr);
-	/// Destructor
 	~SolverDefinitionAbstractWidget();
 
 private:
-	/// Setup dialog widgets to show the information about the solver
 	void setup();
+
 	Ui::SolverDefinitionAbstractWidget* ui;
-	/// The container that stores solver information
 	const SolverDefinitionAbstract* m_solverDefinition;
 };
 
