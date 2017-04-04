@@ -592,7 +592,7 @@ void iRICMainWindowActionManager::setupOptionMenu()
 
 	std::vector<QAction*> actions = m_parent->m_guiToolList->actionList();
 	for (QAction* a : actions) {
-		if (a->text() == "iRIC") {continue;}
+		if (a->text().contains("iRIC")) {continue;}
 
 		m_optionToolMenu->addAction(a);
 		connect(a, SIGNAL(triggered()), m_parent, SLOT(launchExternalTool()));
