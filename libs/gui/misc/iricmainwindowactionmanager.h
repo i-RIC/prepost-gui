@@ -282,7 +282,7 @@ private:
 	/// Setup view menu
 	void setupViewMenu();
 	/// Setup setting menu
-	void setupSettingMenu();
+	void setupOptionMenu();
 	/// Setup camera control menu
 	void setupCameraControlMenu();
 
@@ -334,6 +334,8 @@ private:
 	QMenu* m_cameraControlMenu;
 	/// Setting menu
 	QMenu* m_optionMenu;
+	/// Tool menu
+	QMenu* m_optionToolMenu;
 	/// Simulation menu
 	QMenu* m_simulationMenu;
 	/// Animation menu

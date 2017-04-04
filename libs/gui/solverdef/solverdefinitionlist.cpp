@@ -13,20 +13,12 @@
 #include <QFileSystemWatcher>
 #include <QMessageBox>
 
-SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent) :
+SolverDefinitionList::SolverDefinitionList(const QString& targetDir, const QLocale& locale, QObject* parent) :
 	QObject(parent),
+	m_locale {locale},
 	m_dialog {nullptr}
 {
-	m_locale = locale;
-	QString solversFolder("solvers");
-
-	QDir inst(installDir);
-	inst.cdUp();
-	inst.cdUp();
-	m_targetDirectory = inst.absoluteFilePath(solversFolder);
-	if (! QDir(m_targetDirectory).exists()) {
-		inst.mkdir(solversFolder);
-	}
+	m_targetDirectory = targetDir;
 
 	// setup filesystem watcher
 	QFileSystemWatcher* watcher = new QFileSystemWatcher(this);

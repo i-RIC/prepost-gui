@@ -53,7 +53,7 @@ void iRICMainWindowActionManager::init()
 
 	setupWindowMenu();
 	setupCalculationResultMenu();
-	setupSettingMenu();
+	setupOptionMenu();
 	setupHelpMenu();
 
 	updateMenuBar();
@@ -577,13 +577,26 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	m_resultMenu->setEnabled(false);
 }
 
-void iRICMainWindowActionManager::setupSettingMenu()
+void iRICMainWindowActionManager::setupOptionMenu()
 {
 	m_optionMenu = new QMenu(tr("&Option"), m_menuBar);
 
 	optionPreferencesAction = new QAction(tr("&Preferences..."), m_optionMenu);
 	m_optionMenu->addAction(optionPreferencesAction);
 	connect(optionPreferencesAction, SIGNAL(triggered()), m_parent, SLOT(showPreferenceDialog()));
+
+	m_optionMenu->addSeparator();
+
+	m_optionToolMenu = new QMenu(tr("&Tools"), m_optionMenu);
+	m_optionMenu->addMenu(m_optionToolMenu);
+
+	std::vector<QAction*> actions = m_parent->m_guiToolList->actionList();
+	for (QAction* a : actions) {
+		if (a->text() == "iRIC") {continue;}
+
+		m_optionToolMenu->addAction(a);
+		connect(a, SIGNAL(triggered()), m_parent, SLOT(launchExternalTool()));
+	}
 
 	m_optionMenu->addSeparator();
 

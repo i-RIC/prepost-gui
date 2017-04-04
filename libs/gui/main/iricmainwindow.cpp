@@ -125,6 +125,15 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	setupNetworkProxy();
 	setupBasicSubWindows();
 
+	QDir iricDir = QDir(iRICRootPath::get());
+	iricDir.cdUp();
+	iricDir.cdUp();
+
+	// Setup solver definition list.
+	m_solverDefinitionList = new SolverDefinitionList(iricDir.absoluteFilePath("solvers"), m_locale, this);
+	// Setup tool definition list.
+	m_guiToolList = new SolverDefinitionList(iricDir.absoluteFilePath("guis"), m_locale, this);
+
 	// setup action manager
 	m_actionManager = new iRICMainWindowActionManager(this);
 	m_actionManager->projectFileClose();
@@ -136,8 +145,6 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	addToolBar(Qt::RightToolBarArea, m_actionManager->windowsToolBar());
 	addToolBarBreak(Qt::TopToolBarArea);
 
-	// Setup solver definition list.
-	m_solverDefinitionList = new SolverDefinitionList(iRICRootPath::get(), m_locale, this);
 	// Update "New" submenu using the solver definition list.
 	m_actionManager->updateSolverList(m_solverDefinitionList);
 	// create connections, to update solver list in "New" menu automatically.
@@ -2109,6 +2116,18 @@ void iRICMainWindow::importMeasuredData()
 {
 	m_projectData->mainfile()->addMeasuredData();
 	updatePostActionStatus();
+}
+
+void iRICMainWindow::launchExternalTool()
+{
+	QAction* a = dynamic_cast<QAction*> (sender());
+	for (SolverDefinitionAbstract* tool : m_guiToolList->solverList()) {
+		if (tool->caption() == a->text()) {
+			SolverDefinition def(tool->folder().absolutePath(), m_locale);
+			QProcess::startDetached(def.executableFilename());
+			return;
+		}
+	}
 }
 
 void iRICMainWindow::importVisGraphSetting()
