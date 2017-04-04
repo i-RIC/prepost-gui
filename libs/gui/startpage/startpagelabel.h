@@ -2,7 +2,8 @@
 #define STARTPAGELABEL_H
 
 #include <QWidget>
-#include <QString>
+
+class QString;
 
 class StartPageLabel : public QWidget
 {
@@ -10,10 +11,13 @@ class StartPageLabel : public QWidget
 
 public:
 	static const int IMAGEMARGIN = 20;
+
 	explicit StartPageLabel(QWidget* parent = nullptr);
 	~StartPageLabel();
-	void setTitle(const QString& title) {m_title = title;}
-	void setSubtitle(const QString& title) {m_subtitle = title;}
+
+	void setTitle(const QString& title);
+	void setSubtitle(const QString& title);
+
 	QSize sizeHint() const override;
 
 protected:
@@ -24,8 +28,12 @@ signals:
 	void clicked();
 
 private:
-	QString m_title;
-	QString m_subtitle;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include  "private/startpagelabel_impl.h"
+#endif // _DEBUG
 
 #endif // STARTPAGELABEL_H
