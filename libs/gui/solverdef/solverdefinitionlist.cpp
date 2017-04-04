@@ -14,7 +14,8 @@
 #include <QMessageBox>
 
 SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent) :
-	QObject(parent)
+	QObject(parent),
+	m_dialog {nullptr}
 {
 	m_locale = locale;
 	QString solversFolder("solvers");
@@ -26,8 +27,6 @@ SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLoc
 	if (! QDir(m_targetDirectory).exists()) {
 		inst.mkdir(solversFolder);
 	}
-	// initially, dialog is not prepared.
-	m_dialog = nullptr;
 
 	// setup filesystem watcher
 	QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
