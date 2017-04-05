@@ -4,6 +4,7 @@ $fp2 = fopen("iric_ftoc_part.c", "w");
 
 $ignorefuncs = array(
 "cg_iRIC_GotoBase",
+"cg_iRIC_GotoCC",
 "cg_iRIC_GotoRawDataTop",
 "cg_iRIC_Write_Integer",
 "cg_iRIC_Write_Real",
