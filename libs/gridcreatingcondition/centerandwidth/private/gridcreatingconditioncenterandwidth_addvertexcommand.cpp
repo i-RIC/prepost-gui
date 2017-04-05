@@ -19,34 +19,16 @@ GridCreatingConditionCenterAndWidth::AddVertexCommand::AddVertexCommand(bool key
 
 void GridCreatingConditionCenterAndWidth::AddVertexCommand::redo()
 {
+	auto line = m_condition->polyLine();
 	if (m_keyDown) {
-		// add vertex.
-		vtkPoints* points = m_condition->m_polyLineController.polyData()->GetPoints();
-		std::vector<QPointF> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.push_back(QPointF(p[0], p[1]));
-		}
-		positions.push_back(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.push_back(QPointF(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.size());
-		for (vtkIdType i = 0; i < positions.size(); ++i) {
-			QPointF v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
+		// add vertex
+		auto it = line.begin() + m_vertexId;
+		line.insert(it, m_vertexPosition);
 	} else {
 		// just modify the vertex position
-		vtkPoints* points = m_condition->m_polyLineController.polyData()->GetPoints();
-		points->SetPoint(m_vertexId, m_vertexPosition.x(), m_vertexPosition.y(), 0);
-		points->Modified();
+		line[m_vertexId] = m_vertexPosition;
 	}
-	m_condition->m_polyLineController.polyData()->Modified();
+	m_condition->setPolyLine(line);
 	m_condition->updateShapeData();
 	if (m_condition->m_isGridCreated) {
 		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
@@ -57,27 +39,10 @@ void GridCreatingConditionCenterAndWidth::AddVertexCommand::redo()
 void GridCreatingConditionCenterAndWidth::AddVertexCommand::undo()
 {
 	if (m_keyDown) {
-		// remove vertex.
-		vtkPoints* points = m_condition->m_polyLineController.polyData()->GetPoints();
-		std::vector<QPointF> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.push_back(QPointF(p[0], p[1]));
-		}
-		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.push_back(QPointF(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.size());
-		for (vtkIdType i = 0; i < positions.size(); ++i) {
-			QPointF v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_condition->m_polyLineController.polyData()->Modified();
+		auto line = m_condition->polyLine();
+		auto it = line.begin() + m_vertexId;
+		line.erase(it);
+		m_condition->setPolyLine(line);
 		m_condition->updateShapeData();
 		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);

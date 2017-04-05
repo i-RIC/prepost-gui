@@ -6,6 +6,8 @@
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 
+#include <QPointF>
+
 vtkLinesActor::Impl::Impl() :
 	m_pointsActor {},
 	m_linesActor {},
@@ -29,6 +31,16 @@ vtkLinesActor::vtkLinesActor() :
 vtkLinesActor::~vtkLinesActor()
 {
 	delete impl;
+}
+
+vtkPolyData* vtkLinesActor::pointsPolyData() const
+{
+	return impl->m_pointsPolyData;
+}
+
+vtkPolyData* vtkLinesActor::linesPolyData() const
+{
+	return impl->m_polyData;
 }
 
 vtkActor* vtkLinesActor::pointsActor() const

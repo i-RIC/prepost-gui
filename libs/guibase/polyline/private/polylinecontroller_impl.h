@@ -3,8 +3,7 @@
 
 #include "../polylinecontroller.h"
 
-#include "../../vtktool/vtkpolydatalinesactor.h"
-#include "../../vtktool/vtkpolydatapointsactor.h"
+#include "../../vtktool/vtklineactor.h"
 
 class vtkPolyData;
 
@@ -14,12 +13,7 @@ public:
 	Impl();
 	~Impl();
 
-	bool m_isFocused;
-
-	vtkPolyData* m_polyData;
-
-	vtkPolyDataLinesActor m_linesActor;
-	vtkPolyDataPointsActor m_pointsActor;
+	vtkLineActor m_lineActor;
 };
 
 #endif // POLYLINECONTROLLER_IMPL_H

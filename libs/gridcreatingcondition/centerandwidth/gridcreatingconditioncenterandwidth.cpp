@@ -52,16 +52,28 @@
 
 #define LABEL "label"
 
+namespace {
+
+const int FONTSIZE = 17;
+
+void setupLabelActor(vtkLabel2DActor* actor)
+{
+	actor->setLabelPosition(vtkLabel2DActor::lpMiddleRight);
+	auto prop = actor->labelTextProperty();
+	prop->SetFontSize(FONTSIZE);
+	prop->BoldOn();
+}
+
+} // namespace
+
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator)
 {
 	m_upstreamActor.setLabel("Upstream");
-	m_upstreamActor.setLabelPosition(vtkLabel2DActor::lpMiddleRight);
-	m_downstreamActor.setLabel("Downstream");
-	m_downstreamActor.setLabelPosition(vtkLabel2DActor::lpMiddleRight);
+	setupLabelActor(&m_upstreamActor);
 
-//	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
-//	m_labelArray->SetName(LABEL);
+	m_downstreamActor.setLabel("Downstream");
+	setupLabelActor(&m_downstreamActor);
 
 	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this);
 	m_addVertexAction->setCheckable(true);
@@ -137,11 +149,22 @@ void GridCreatingConditionCenterAndWidth::setPolyLine(const std::vector<QPointF>
 
 void GridCreatingConditionCenterAndWidth::updateShapeData()
 {
+	auto col = actor2DCollection();
+
+	m_upstreamActor.actor()->VisibilityOff();
+	m_downstreamActor.actor()->VisibilityOff();
+	col->RemoveItem(m_upstreamActor.actor());
+	col->RemoveItem(m_downstreamActor.actor());
+
 	auto polyLine = m_polyLineController.polyLine();
 	if (polyLine.size() < 2) {return;}
 
 	m_upstreamActor.setPosition(polyLine.at(0));
 	m_downstreamActor.setPosition(polyLine.at(polyLine.size() - 1));
+	col->AddItem(m_upstreamActor.actor());
+	col->AddItem(m_downstreamActor.actor());
+
+	updateVisibilityWithoutRendering();
 }
 
 bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
@@ -289,27 +312,12 @@ bool GridCreatingConditionCenterAndWidth::ready() const
 
 void GridCreatingConditionCenterAndWidth::setupActors()
 {
-//	m_edgeActor = vtkSmartPointer<vtkActor>::New();
-//	m_vertexActor = vtkSmartPointer<vtkActor>::New();
-//	setActorProperties(m_edgeActor->GetProperty());
-//	setActorProperties(m_vertexActor->GetProperty());
-//	m_edgeActor->GetProperty()->SetLineWidth(2);
-//	m_vertexActor->GetProperty()->SetPointSize(5.0);
-//	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
 	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(2);
 
 	renderer()->AddActor(m_polyLineController.linesActor());
 	renderer()->AddActor(m_polyLineController.pointsActor());
 	renderer()->AddActor2D(m_upstreamActor.actor());
 	renderer()->AddActor2D(m_downstreamActor.actor());
-
-//	m_edgeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-//	m_vertexMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-//	m_edgeActor->SetMapper(m_edgeMapper);
-//	m_vertexActor->SetMapper(m_vertexMapper);
-
-//	m_edgeMapper->SetInputData(m_edgeGrid);
-//	m_vertexMapper->SetInputData(m_vertexGrid);
 
 	m_tmpActor = vtkSmartPointer<vtkActor>::New();
 	m_tmpActor->GetProperty()->SetLighting(false);
@@ -917,6 +925,7 @@ void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()
 		revPoints.push_back(points.at(i));
 	}
 	setPolyLine(revPoints);
+	updateShapeData();
 	renderGraphicsView();
 }
 

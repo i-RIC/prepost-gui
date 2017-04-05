@@ -37,7 +37,6 @@ private:
 	const static int initialDivision = 100;
 
 public:
-	static const int FONTSIZE = 17;
 	enum MouseEventMode {
 		meNormal,
 		meBeforeDefining,
@@ -109,20 +108,9 @@ protected:
 	vtkLabel2DActor m_upstreamActor;
 	vtkLabel2DActor m_downstreamActor;
 
-//	vtkSmartPointer<vtkPolyLine> m_vtkPolyLine;
-//	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
-//	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
-//	vtkSmartPointer<vtkStringArray> m_labelArray;
-
-//	vtkSmartPointer<vtkActor> m_edgeActor;
-//	vtkSmartPointer<vtkActor> m_vertexActor;
 	vtkSmartPointer<vtkActor> m_tmpActor;
-//	vtkSmartPointer<vtkActor2D> m_labelActor;
 
-//	vtkSmartPointer<vtkDataSetMapper> m_edgeMapper;
-//	vtkSmartPointer<vtkDataSetMapper> m_vertexMapper;
 	vtkSmartPointer<vtkDataSetMapper> m_tmpMapper;
-//	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
 
 	vtkSmartPointer<vtkParametricSpline> m_spline;
 	vtkSmartPointer<vtkCardinalSpline> m_xSpline;
@@ -130,7 +118,6 @@ protected:
 	vtkSmartPointer<vtkCardinalSpline> m_zSpline;
 
 	vtkPoints* m_splinePoints;
-//	QVector<QPointF> m_polyLine;
 
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;

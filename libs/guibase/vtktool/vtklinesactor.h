@@ -4,15 +4,20 @@
 #include "../guibase_global.h"
 
 #include <vector>
-#include <QPointF>
+
+class QPointF;
 
 class vtkActor;
+class vtkPolyData;
 
 class GUIBASEDLL_EXPORT vtkLinesActor
 {
 public:
 	vtkLinesActor();
 	~vtkLinesActor();
+
+	vtkPolyData* pointsPolyData() const;
+	vtkPolyData* linesPolyData() const;
 
 	vtkActor* pointsActor() const;
 	vtkActor* linesActor() const;
