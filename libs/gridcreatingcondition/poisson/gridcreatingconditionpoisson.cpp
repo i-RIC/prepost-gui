@@ -1,14 +1,15 @@
 #include "gridcreatingconditionpoisson.h"
 
-GridCreatingConditionPoisson::GridCreatingConditionPoisson(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	GridCreatingCondition(parent, creator)
-{
+#include "private/gridcreatingconditionpoisson_impl.h"
 
-}
+GridCreatingConditionPoisson::GridCreatingConditionPoisson(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator),
+	impl {new Impl {}}
+{}
 
 GridCreatingConditionPoisson::~GridCreatingConditionPoisson()
 {
-
+	delete impl;
 }
 
 bool GridCreatingConditionPoisson::create(QWidget* parent)

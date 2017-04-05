@@ -494,15 +494,15 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 		break;
 	case meTranslate:
 		// execute translation.
-		pushRenderCommand(new MoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+		pushUpdateShapeCommand(new MoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
-		pushRenderCommand(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
+		pushUpdateShapeCommand(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
-		pushRenderCommand(new AddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
+		 pushUpdateShapeCommand(new AddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
 		break;
 	case meEditVerticesDialog:
 		break;

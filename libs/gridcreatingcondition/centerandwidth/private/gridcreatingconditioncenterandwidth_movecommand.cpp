@@ -28,12 +28,10 @@ void GridCreatingConditionCenterAndWidth::MoveCommand::redo()
 		p += m_offset;
 	}
 	m_condition->setPolyLine(line);
-	m_condition->updateShapeData();
 	if (m_condition->m_isGridCreated) {
 		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
 	}
-	m_condition->setModified();
 }
 
 void GridCreatingConditionCenterAndWidth::MoveCommand::undo()
@@ -43,7 +41,6 @@ void GridCreatingConditionCenterAndWidth::MoveCommand::undo()
 		p -= m_offset;
 	}
 	m_condition->setPolyLine(line);
-	m_condition->updateShapeData();
 	if (m_condition->m_isGridCreated) {
 		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());

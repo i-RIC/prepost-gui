@@ -15,9 +15,16 @@ public:
 	bool ready() const override;
 	void clear() override;
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/gridcreatingconditionpoisson_impl.h"
+#endif // _DEBUG
 
 #endif // GRIDCREATINGCONDITIONPOISSON_H

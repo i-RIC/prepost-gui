@@ -29,7 +29,6 @@ void GridCreatingConditionCenterAndWidth::AddVertexCommand::redo()
 		line[m_vertexId] = m_vertexPosition;
 	}
 	m_condition->setPolyLine(line);
-	m_condition->updateShapeData();
 	if (m_condition->m_isGridCreated) {
 		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
@@ -43,7 +42,6 @@ void GridCreatingConditionCenterAndWidth::AddVertexCommand::undo()
 		auto it = line.begin() + m_vertexId;
 		line.erase(it);
 		m_condition->setPolyLine(line);
-		m_condition->updateShapeData();
 		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());

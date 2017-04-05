@@ -75,7 +75,8 @@ win32 {
 # Input
 HEADERS += gcc_poisson_global.h \
            gridcreatingconditioncreatorpoisson.h \
-           gridcreatingconditionpoisson.h
+           gridcreatingconditionpoisson.h \
+    private/gridcreatingconditionpoisson_impl.h
 SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            gridcreatingconditionpoisson.cpp
 RESOURCES += poisson.qrc
