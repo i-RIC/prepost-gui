@@ -66,16 +66,20 @@ void vtkLinesActor::setLines(const std::vector<std::vector<QPointF> >& lines)
 	vtkIdType nodeId = 0;
 
 	for (const std::vector<QPointF>& line : lines) {
-		std::vector<vtkIdType> cellIds(line.size());
 		for (int i = 0; i < line.size(); ++i){
 			const QPointF& p = line.at(i);
 			points->InsertNextPoint(p.x(), p.y(), 0);
-			cellIds[i] = nodeId;
 			pointsCells->InsertNextCell(1, &nodeId);
+
+			if (i != line.size() - 1) {
+				vtkIdType cellids[2];
+				cellids[0] = nodeId;
+				cellids[1] = nodeId + 1;
+				linesCells->InsertNextCell(2, cellids);
+			}
 
 			++ nodeId;
 		}
-		linesCells->InsertNextCell(line.size(), cellIds.data());
 	}
 	impl->m_polyData->SetPoints(points);
 	impl->m_polyData->SetLines(linesCells);
