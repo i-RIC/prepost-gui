@@ -59,7 +59,7 @@ DATA importDataT(QWidget* w)
 
 	ret = importer->importData(filename, selectedFilter, w);
 
-	if (! ret.isEmpty()) {
+	if (! ret.size() == 0) {
 		LastIODirectory::setFromFilename(filename);
 	}
 

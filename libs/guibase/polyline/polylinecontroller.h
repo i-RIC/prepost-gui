@@ -8,6 +8,7 @@
 class QPointF;
 
 class vtkActor;
+class vtkPolyData;
 
 class GUIBASEDLL_EXPORT PolyLineController
 {
@@ -23,6 +24,8 @@ public:
 
 	bool isVertexSelectable(const QPointF& pos, double limitDistance, int* vid);
 	bool isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId);
+
+	vtkPolyData* polyData() const;
 
 	vtkActor* pointsActor() const;
 	vtkActor* linesActor() const;

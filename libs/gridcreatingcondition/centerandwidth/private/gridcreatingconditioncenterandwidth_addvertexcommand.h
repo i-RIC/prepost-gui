@@ -4,7 +4,7 @@
 #include "../gridcreatingconditioncenterandwidth.h"
 
 #include <QUndoCommand>
-#include <QVector2D>
+#include <QPointF>
 
 class GridCreatingConditionCenterAndWidth::AddVertexCommand : public QUndoCommand
 {
@@ -20,7 +20,7 @@ public:
 private:
 	bool m_keyDown;
 	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
+	QPointF m_vertexPosition;
 	GridCreatingConditionCenterAndWidth* m_condition;
 };
 

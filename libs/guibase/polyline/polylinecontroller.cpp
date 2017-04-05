@@ -117,6 +117,11 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 	return true;
 }
 
+vtkPolyData* PolyLineController::polyData() const
+{
+	return impl->m_polyData;
+}
+
 vtkActor* PolyLineController::pointsActor() const
 {
 	return impl->m_pointsActor.actor();

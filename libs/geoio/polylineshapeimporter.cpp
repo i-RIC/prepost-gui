@@ -28,9 +28,9 @@ namespace {
 		SHPHandle m_shapeHandle;
 	};
 
-	QPolygonF importPolyline(const SHPHandle& shph, int index, QWidget *w)
+	std::vector<QPointF> importPolyline(const SHPHandle& shph, int index, QWidget *w)
 	{
-		QVector<QPointF> ret, errorRet;
+		std::vector<QPointF> ret, errorRet;
 		SHPObject* shpo = SHPReadObject(shph, index);
 		if (shpo->nParts > 1) {
 			QMessageBox::critical(w, PolylineShapeImporter ::tr("Error"), PolylineShapeImporter::tr("This polyline is composed of multiple line strnigs.. This polyline can not be imported."));
@@ -51,9 +51,9 @@ namespace {
 	}
 }
 
-QVector<QPointF> PolylineShapeImporter::importData(const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
+std::vector<QPointF> PolylineShapeImporter::importData(const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
 {
-	QVector<QPointF> ret, errorRet;
+	std::vector<QPointF> ret, errorRet;
 
 	auto fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");

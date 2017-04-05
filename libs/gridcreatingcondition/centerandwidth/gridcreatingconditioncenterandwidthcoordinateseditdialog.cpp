@@ -45,45 +45,30 @@ public:
 class GridCreatingConditionCenterAndWidth::EditCoordinatesCommand : public QUndoCommand
 {
 public:
-	EditCoordinatesCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCenterAndWidth* cond) :
-		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Edit Center Line Coordinates")}
-	{
-		m_apply = apply;
-		m_newCoords = coords;
-		m_condition = cond;
-		double p[3];
-		vtkPoints* points = cond->m_vtkPolyLine->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			m_oldCoords.append(QVector2D(p[0], p[1]));
-		}
+	EditCoordinatesCommand(bool apply, std::vector<QPointF> coords, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Edit Center Line Coordinates")},
+		m_apply {apply},
+		m_newCoords (coords),
+		m_oldCoords (cond->polyLine()),
+		m_condition {cond}
+	{}
+	void redo() {
+		m_condition->setPolyLine(m_newCoords);
+		m_condition->updateShapeData();
+		m_condition->renderGraphicsView();
 	}
 	void undo() {
-		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
-		for (vtkIdType i = 0; i < m_oldCoords.count(); ++i) {
-			QVector2D v = m_oldCoords.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
+		m_condition->setPolyLine(m_oldCoords);
 		m_condition->updateShapeData();
 		if (! m_apply) {
 			m_condition->renderGraphicsView();
 		}
 	}
-	void redo() {
-		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
-		for (vtkIdType i = 0; i < m_newCoords.count(); ++i) {
-			QVector2D v = m_newCoords.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_condition->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
+
 private:
 	bool m_apply;
-	QVector<QVector2D> m_newCoords;
-	QVector<QVector2D> m_oldCoords;
+	std::vector<QPointF> m_newCoords;
+	std::vector<QPointF> m_oldCoords;
 	GridCreatingConditionCenterAndWidth* m_condition;
 };
 
@@ -110,7 +95,7 @@ void GridCreatingConditionCenterAndWidthCoordinatesEditDialog::accept()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	QVector<QVector2D> coords = getCoords();
+	std::vector<QPointF> coords = getCoords();
 	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidth::EditCoordinatesCommand(false, coords, m_condition));
 	QDialog::accept();
 }
@@ -132,7 +117,7 @@ void GridCreatingConditionCenterAndWidthCoordinatesEditDialog::apply()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	QVector<QVector2D> coords = getCoords();
+	std::vector<QPointF> coords = getCoords();
 	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidth::EditCoordinatesCommand(true, coords, m_condition));
 	m_applyed = true;
 }
@@ -151,31 +136,29 @@ void GridCreatingConditionCenterAndWidthCoordinatesEditDialog::setupData()
 	m_model->setHeaderData(0, Qt::Horizontal, tr("X"));
 	m_model->setHeaderData(1, Qt::Horizontal, tr("Y"));
 
-	vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+	auto line = m_condition->polyLine();
+	for (int i = 0; i < line.size(); ++i) {
 		m_model->insertRow(i);
-		double p[3];
-		points->GetPoint(i, p);
-		m_model->setData(m_model->index(i, 0, QModelIndex()), p[0]);
-		m_model->setData(m_model->index(i, 1, QModelIndex()), p[1]);
+		m_model->setData(m_model->index(i, 0, QModelIndex()), line[i].x());
+		m_model->setData(m_model->index(i, 1, QModelIndex()), line[i].y());
 	}
 	// set the model into view.
 	ui->tableView->setModel(m_model);
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+	for (int i = 0; i < line.size(); ++i) {
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 	QAbstractItemDelegate* delegate = new GridCreatingConditionCenterAndWidthCoordinatesEditDialogDelegate(this);
 	ui->tableView->setItemDelegate(delegate);
 }
 
-QVector<QVector2D> GridCreatingConditionCenterAndWidthCoordinatesEditDialog::getCoords()
+std::vector<QPointF> GridCreatingConditionCenterAndWidthCoordinatesEditDialog::getCoords()
 {
-	QVector<QVector2D> ret;
+	std::vector<QPointF> ret;
 	int rows = m_model->rowCount();
 	for (int i = 0; i < rows; ++i) {
 		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble();
 		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble();
-		ret.append(QVector2D(x, y));
+		ret.push_back(QPointF(x, y));
 	}
 	return ret;
 }

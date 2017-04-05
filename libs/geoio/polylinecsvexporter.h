@@ -12,7 +12,7 @@ class GEOIODLL_EXPORT PolylineCsvExporter : public QObject, public PolylineExpor
 	Q_OBJECT
 
 public:
-	void exportData(const QVector<QPointF>& data, const QString& filename, const QString& selectedFilter, QWidget* w) override;
+	void exportData(const std::vector<QPointF>& data, const QString& filename, const QString& selectedFilter, QWidget* w) override;
 	QStringList fileDialogFilters() override;
 };
 

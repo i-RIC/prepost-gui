@@ -55,12 +55,13 @@
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator)
 {
-	m_vtkPolyLine = vtkSmartPointer<vtkPolyLine>::New();
-	// setup grid.
-	m_edgeGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_vertexGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
-	m_labelArray->SetName(LABEL);
+	m_upstreamActor.setLabel("Upstream");
+	m_upstreamActor.setLabelPosition(vtkLabel2DActor::lpMiddleRight);
+	m_downstreamActor.setLabel("Downstream");
+	m_downstreamActor.setLabelPosition(vtkLabel2DActor::lpMiddleRight);
+
+//	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
+//	m_labelArray->SetName(LABEL);
 
 	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this);
 	m_addVertexAction->setCheckable(true);
@@ -116,97 +117,31 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 GridCreatingConditionCenterAndWidth::~GridCreatingConditionCenterAndWidth()
 {
 	renderer()->RemoveActor(m_tmpActor);
-	renderer()->RemoveActor(m_vertexActor);
-	renderer()->RemoveActor(m_edgeActor);
-	renderer()->RemoveActor2D(m_labelActor);
+	renderer()->RemoveActor(m_polyLineController.pointsActor());
+	renderer()->RemoveActor(m_polyLineController.linesActor());
+	renderer()->RemoveActor2D(m_upstreamActor.actor());
+	renderer()->RemoveActor2D(m_downstreamActor.actor());
 
 	delete m_rightClickingMenu;
 }
 
-const QVector<QPointF> GridCreatingConditionCenterAndWidth::polyLine()
+std::vector<QPointF> GridCreatingConditionCenterAndWidth::polyLine()
 {
-	QVector<QPointF> ret;
-	vtkIdList* idlist = m_vtkPolyLine->GetPointIds();
-	vtkPoints* points = m_vtkPolyLine->GetPoints();
-	int vCount = idlist->GetNumberOfIds();
-	for (int i = 0; i < vCount; ++i) {
-		vtkIdType id = idlist->GetId(i);
-		double* p = points->GetPoint(id);
-		ret << QPointF(*p, *(p + 1));
-	}
-	return ret;
+	return m_polyLineController.polyLine();
 }
 
-void GridCreatingConditionCenterAndWidth::setPolyLine(const QVector<QPointF>& polyline)
+void GridCreatingConditionCenterAndWidth::setPolyLine(const std::vector<QPointF>& polyline)
 {
-	m_vtkPolyLine = vtkSmartPointer<vtkPolyLine>::New();
-	vtkPoints* points = m_vtkPolyLine->GetPoints();
-	points->SetNumberOfPoints(polyline.count());
-	for (int i = 0; i < polyline.count(); ++i) {
-		QPointF point = polyline.at(i);
-		points->SetPoint(i, point.x(), point.y(), 0);
-	}
-	points->Modified();
-	updateShapeData();
+	m_polyLineController.setPolyLine(polyline);
 }
 
 void GridCreatingConditionCenterAndWidth::updateShapeData()
 {
-	vtkIdList* idlist = m_vtkPolyLine->GetPointIds();
-	vtkPoints* points = m_vtkPolyLine->GetPoints();
+	auto polyLine = m_polyLineController.polyLine();
+	if (polyLine.size() < 2) {return;}
 
-	vtkIdType pointCount = points->GetNumberOfPoints();
-	idlist->SetNumberOfIds(pointCount);
-
-	// update idlist.
-	for (vtkIdType i = 0; i < pointCount; ++i) {
-		idlist->SetId(i, i);
-	}
-
-	// edge grid is constructed.
-	m_edgeGrid->Reset();
-	vtkIdType edgeId = 0;
-	int edgeCount = m_vtkPolyLine->GetNumberOfPoints() - 1;
-	m_edgeGrid->Allocate(edgeCount);
-	vtkLine* nextEdge = vtkLine::New();
-	for (int i = 0; i < edgeCount; ++i) {
-		nextEdge->GetPointIds()->SetId(0, edgeId);
-		nextEdge->GetPointIds()->SetId(1, edgeId + 1);
-		m_edgeGrid->InsertNextCell(nextEdge->GetCellType(), nextEdge->GetPointIds());
-		edgeId += 1;
-	}
-	nextEdge->Delete();
-	m_edgeGrid->SetPoints(m_vtkPolyLine->GetPoints());
-	m_edgeGrid->BuildLinks();
-	m_edgeGrid->Modified();
-
-	// labels are constructed;
-	m_labelArray->Reset();
-	int vertexCount = m_vtkPolyLine->GetNumberOfPoints();
-	if (vertexCount > 0) {
-		m_labelArray->InsertNextValue("  Upstream");
-	}
-	for (int i = 1; i < vertexCount; ++i) {
-		if (i == vertexCount - 1) {
-			m_labelArray->InsertNextValue("  Downstream");
-		} else {
-			m_labelArray->InsertNextValue("");
-		}
-	}
-	// points are constructed.
-	m_vertexGrid->Reset();
-	vtkIdType vertexId = 0;
-	m_vertexGrid->Allocate(vertexCount);
-	vtkVertex* nextVertex = vtkVertex::New();
-	for (int i = 0; i < vertexCount; ++i) {
-		nextVertex->GetPointIds()->SetId(0, vertexId);
-		m_vertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		vertexId += 1;
-	}
-	nextVertex->Delete();
-	m_vertexGrid->SetPoints(m_vtkPolyLine->GetPoints());
-	m_vertexGrid->GetPointData()->AddArray(m_labelArray);
-	m_vertexGrid->Modified();
+	m_upstreamActor.setPosition(polyLine.at(0));
+	m_downstreamActor.setPosition(polyLine.at(polyLine.size() - 1));
 }
 
 bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
@@ -215,12 +150,12 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid creating condition definition not finished yet."));
 		return false;
 	}
-	if (polyLine().count() < 2) {
+	if (polyLine().size() < 2) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid center line is not defined yet. Please click in the main region to define the grid center line."));
 		return false;
 	}
 
-	createSpline(m_vtkPolyLine->GetPoints(), m_iMax);
+	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax);
 	showDialog(parent);
 	if (! m_isAccepted) {return false;}
 
@@ -238,7 +173,7 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return 0;
 	}
-	createSpline(m_vtkPolyLine->GetPoints(), m_iMax - 1);
+	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
 
 	Structured2DGrid* grid = new Structured2DGrid(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
@@ -318,7 +253,8 @@ void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog* d)
 	setIMax(dialog->iMax());
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
-	createSpline(m_vertexGrid->GetPoints(), m_iMax - 1);
+
+	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
 
 	Grid* g = createGrid();
 	if (g == 0) {return;}
@@ -334,7 +270,7 @@ void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
 	setIMax(dialog->iMax());
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
-	createSpline(m_vertexGrid->GetPoints(), m_iMax - 1);
+	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogRejected(QDialog* /*d*/)
@@ -353,39 +289,31 @@ bool GridCreatingConditionCenterAndWidth::ready() const
 
 void GridCreatingConditionCenterAndWidth::setupActors()
 {
-	if (actorCollection()->GetNumberOfItems() > 0) {
-		vtkCollectionIterator* it = actorCollection()->NewIterator();
-		it->GoToFirstItem();
-		while (! it->IsDoneWithTraversal()) {
-			vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
-			renderer()->RemoveActor(actor);
-			it->GoToNextItem();
-		}
-		actorCollection()->RemoveAllItems();
-	}
+//	m_edgeActor = vtkSmartPointer<vtkActor>::New();
+//	m_vertexActor = vtkSmartPointer<vtkActor>::New();
+//	setActorProperties(m_edgeActor->GetProperty());
+//	setActorProperties(m_vertexActor->GetProperty());
+//	m_edgeActor->GetProperty()->SetLineWidth(2);
+//	m_vertexActor->GetProperty()->SetPointSize(5.0);
+//	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
+	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(2);
 
-	m_edgeActor = vtkSmartPointer<vtkActor>::New();
-	m_vertexActor = vtkSmartPointer<vtkActor>::New();
-	setActorProperties(m_edgeActor->GetProperty());
-	setActorProperties(m_vertexActor->GetProperty());
-	m_edgeActor->GetProperty()->SetLineWidth(2);
-	m_vertexActor->GetProperty()->SetPointSize(5.0);
-	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
+	renderer()->AddActor(m_polyLineController.linesActor());
+	renderer()->AddActor(m_polyLineController.pointsActor());
+	renderer()->AddActor2D(m_upstreamActor.actor());
+	renderer()->AddActor2D(m_downstreamActor.actor());
 
-	renderer()->AddActor(m_edgeActor);
-	renderer()->AddActor(m_vertexActor);
-	renderer()->AddActor2D(m_labelActor);
+//	m_edgeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
+//	m_vertexMapper = vtkSmartPointer<vtkDataSetMapper>::New();
+//	m_edgeActor->SetMapper(m_edgeMapper);
+//	m_vertexActor->SetMapper(m_vertexMapper);
 
-	m_edgeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_vertexMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_edgeActor->SetMapper(m_edgeMapper);
-	m_vertexActor->SetMapper(m_vertexMapper);
-
-	m_edgeMapper->SetInputData(m_edgeGrid);
-	m_vertexMapper->SetInputData(m_vertexGrid);
+//	m_edgeMapper->SetInputData(m_edgeGrid);
+//	m_vertexMapper->SetInputData(m_vertexGrid);
 
 	m_tmpActor = vtkSmartPointer<vtkActor>::New();
-	setActorProperties(m_tmpActor->GetProperty());
+	m_tmpActor->GetProperty()->SetLighting(false);
+	m_tmpActor->GetProperty()->SetColor(0, 0, 0);
 	m_tmpActor->GetProperty()->SetRepresentationToWireframe();
 
 	m_tmpMapper = vtkSmartPointer<vtkDataSetMapper>::New();
@@ -393,24 +321,25 @@ void GridCreatingConditionCenterAndWidth::setupActors()
 	renderer()->AddActor(m_tmpActor);
 	m_tmpActor->VisibilityOff();
 
-	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	m_labelMapper->SetLabelModeToLabelFieldData();
-	m_labelMapper->SetFieldDataName(LABEL);
-	vtkTextProperty* prop = m_labelMapper->GetLabelTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontSize(FONTSIZE);
-	prop->SetFontFamilyToArial();
-	prop->BoldOn();
-	prop->ItalicOff();
-	prop->ShadowOff();
-	prop->SetJustificationToLeft();
-	prop->SetVerticalJustificationToCentered();
-	m_labelActor->SetMapper(m_labelMapper);
-	m_labelMapper->SetInputData(m_vertexGrid);
+//	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
+//	m_labelMapper->SetLabelModeToLabelFieldData();
+//	m_labelMapper->SetFieldDataName(LABEL);
+//	vtkTextProperty* prop = m_labelMapper->GetLabelTextProperty();
+//	prop->SetColor(0, 0, 0);
+//	prop->SetFontSize(FONTSIZE);
+//	prop->SetFontFamilyToArial();
+//	prop->BoldOn();
+//	prop->ItalicOff();
+//	prop->ShadowOff();
+//	prop->SetJustificationToLeft();
+//	prop->SetVerticalJustificationToCentered();
+//	m_labelActor->SetMapper(m_labelMapper);
+//	m_labelMapper->SetInputData(m_vertexGrid);
 
-	actorCollection()->AddItem(m_edgeActor);
-	actorCollection()->AddItem(m_vertexActor);
-	actor2DCollection()->AddItem(m_labelActor);
+	actorCollection()->AddItem(m_polyLineController.linesActor());
+	actorCollection()->AddItem(m_polyLineController.pointsActor());
+	actor2DCollection()->AddItem(m_upstreamActor.actor());
+	actor2DCollection()->AddItem(m_downstreamActor.actor());
 
 	updateShapeData();
 }
@@ -440,23 +369,17 @@ void GridCreatingConditionCenterAndWidth::setupMenu()
 	m_rightClickingMenu->addAction(m_exportCenterLineAction);
 }
 
-void GridCreatingConditionCenterAndWidth::setActorProperties(vtkProperty* prop)
-{
-	prop->SetLighting(false);
-	prop->SetColor(0, 0, 0);
-}
-
 void GridCreatingConditionCenterAndWidth::informSelection(PreProcessorGraphicsViewInterface* v)
 {
-	m_edgeActor->GetProperty()->SetLineWidth(selectedEdgeWidth);
-	m_vertexActor->GetProperty()->SetPointSize(5.0);
+	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(selectedEdgeWidth);
+	m_polyLineController.pointsActor()->GetProperty()->SetPointSize(5.0);
 	updateMouseCursor(v);
 }
 
 void GridCreatingConditionCenterAndWidth::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
-	m_edgeActor->GetProperty()->SetLineWidth(normalEdgeWidth);
-	m_vertexActor->GetProperty()->SetPointSize(1.0);
+	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(normalEdgeWidth);
+	m_polyLineController.pointsActor()->GetProperty()->SetPointSize(1.0);
 	v->unsetCursor();
 }
 
@@ -678,19 +601,14 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 
 void GridCreatingConditionCenterAndWidth::deletePolyLine()
 {
-	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {
-		m_vertexGrid->Initialize();
-	}
-	m_edgeGrid->Initialize();
-	m_vtkPolyLine->GetPointIds()->Initialize();
-	m_vtkPolyLine->GetPoints()->Initialize();
-	m_vtkPolyLine->Modified();
-
-	m_polyLine.clear();
+	std::vector<QPointF> emptyVec;
+	m_polyLineController.setPolyLine(emptyVec);
 	ZDepthRange range = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent())->zDepthRange();
 	assignActorZValues(range);
+
 	m_mouseEventMode = meBeforeDefining;
 	updateMouseCursor(graphicsView());
+
 	m_iMax = 11;
 	m_jMax = 11;
 	m_width = 10;
@@ -701,37 +619,9 @@ void GridCreatingConditionCenterAndWidth::deletePolyLine()
 	iRICUndoStack::instance().clear();
 }
 
-bool GridCreatingConditionCenterAndWidth::isVertexSelectable(const QVector2D& pos)
-{
-	if (m_selectedVertexId == -1) {return false;}
-	m_selectedVertexId = m_edgeGrid->FindPoint(pos.x(), pos.y(), 0.0);
-	QVector<QPointF> p = polyLine();
-	PreProcessorGraphicsViewInterface* v = graphicsView();
-	QPointF point = p.at(m_selectedVertexId);
-	QVector2D vertexPos = QVector2D(point.x(), point.y());
-	double limitdist = v->stdRadius(5);
-	return ((vertexPos - pos).length() < limitdist);
-}
-
-bool GridCreatingConditionCenterAndWidth::isEdgeSelectable(const QVector2D& pos)
-{
-	double x[3] = {pos.x(), pos.y(), 0.0};
-	int subId;
-	double pcoords[3];
-	double weights[32];
-	double d = graphicsView()->stdRadius(5);
-	d = d * d;
-	vtkIdType id = m_edgeGrid->FindCell(x, NULL, 0, d, subId, pcoords, weights);
-	if (id >= 0) {
-		m_selectedEdgeId = id;
-		return true;
-	}
-	return false;
-}
-
 void GridCreatingConditionCenterAndWidth::definePolyLine()
 {
-	if (m_vtkPolyLine->GetPoints()->GetNumberOfPoints() < 2) {
+	if (m_polyLineController.polyLine().size() < 2) {
 		// not enough points defined!
 		return;
 	}
@@ -808,11 +698,11 @@ void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filena
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
-	QVector<QPointF> v;
+	std::vector<QPointF> v;
 	while (! s.atEnd()) {
 		double a, b;
 		s >> a >> b;
-		v.append(QPointF(a, b));
+		v.push_back(QPointF(a, b));
 	}
 	f.close();
 	setPolyLine(v);
@@ -829,7 +719,7 @@ void GridCreatingConditionCenterAndWidth::saveExternalData(const QString& filena
 	QFile f(filename);
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
-	QVector<QPointF> v = polyLine();
+	std::vector<QPointF> v = polyLine();
 	int vSize = v.size();
 	for (int i = 0; i < vSize; i++) {
 		s << v.at(i).x();
@@ -845,8 +735,8 @@ void GridCreatingConditionCenterAndWidth::updateZDepthRangeItemCount(ZDepthRange
 
 void GridCreatingConditionCenterAndWidth::assignActorZValues(const ZDepthRange& range)
 {
-	m_vertexActor->SetPosition(0, 0, range.max());
-	m_edgeActor->SetPosition(0, 0, range.max());
+	m_polyLineController.pointsActor()->SetPosition(0, 0, range.max());
+	m_polyLineController.linesActor()->SetPosition(0, 0, range.max());
 	m_tmpActor->SetPosition(0, 0, range.max());
 }
 
@@ -883,12 +773,17 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 	double dx, dy;
 	dx = m_currentPoint.x();
 	dy = m_currentPoint.y();
-	graphicsView()->viewportToWorld(dx, dy);
-	QVector2D worldPos(dx, dy);
+
+	auto v = graphicsView();
+	v->viewportToWorld(dx, dy);
+	QPointF worldPos(dx, dy);
+
+	double radius = v->stdRadius(5);
+
 	switch (m_mouseEventMode) {
 	case meAddVertexNotPossible:
 	case meAddVertexPrepare:
-		if (isEdgeSelectable(worldPos)) {
+		if (m_polyLineController.isEdgeSelectable(worldPos, radius, &m_selectedEdgeId)) {
 			m_mouseEventMode = meAddVertexPrepare;
 		} else {
 			m_mouseEventMode = meAddVertexNotPossible;
@@ -896,7 +791,7 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 		break;
 	case meRemoveVertexNotPossible:
 	case meRemoveVertexPrepare:
-		if (isVertexSelectable(worldPos)) {
+		if (m_polyLineController.isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
 			m_mouseEventMode = meRemoveVertexPrepare;
 		} else {
 			m_mouseEventMode = meRemoveVertexNotPossible;
@@ -908,9 +803,9 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 	case meTranslate:
 	case meMoveVertex:
 	case meAddVertex:
-		if (isVertexSelectable(worldPos)) {
+		if (m_polyLineController.isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
 			m_mouseEventMode = meMoveVertexPrepare;
-		} else if (isEdgeSelectable(worldPos)) {
+		} else if (m_polyLineController.isEdgeSelectable(worldPos, radius, &m_selectedEdgeId)) {
 			m_mouseEventMode = meTranslatePrepare;
 		} else {
 			m_mouseEventMode = meNormal;
@@ -943,7 +838,7 @@ void GridCreatingConditionCenterAndWidth::updateActionStatus()
 	case meMoveVertexPrepare:
 		m_addVertexAction->setEnabled(true);
 		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setEnabled(m_vtkPolyLine->GetPoints()->GetNumberOfPoints() > 2);
+		m_removeVertexAction->setEnabled(m_polyLineController.polyData()->GetPoints()->GetNumberOfPoints() > 2);
 		m_removeVertexAction->setChecked(false);
 		m_coordEditAction->setEnabled(true);
 		break;
@@ -1016,10 +911,10 @@ void GridCreatingConditionCenterAndWidth::showInitialDialog()
 
 void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()
 {
-	QVector<QPointF> points = polyLine();
-	QVector<QPointF> revPoints;
-	for (int i = points.count() - 1; i >= 0; --i) {
-		revPoints.append(points.at(i));
+	std::vector<QPointF> points = polyLine();
+	std::vector<QPointF> revPoints;
+	for (int i = points.size() - 1; i >= 0; --i) {
+		revPoints.push_back(points.at(i));
 	}
 	setPolyLine(revPoints);
 	renderGraphicsView();
@@ -1028,7 +923,7 @@ void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()
 void GridCreatingConditionCenterAndWidth::importCenterLine()
 {
 	auto polyLine = PolylineIO::importData(preProcessorWindow());
-	if (polyLine.isEmpty()) {return;}
+	if (polyLine.size() == 0) {return;}
 
 	auto offset = projectData()->mainfile()->offset();
 	for (QPointF& p : polyLine) {
@@ -1045,7 +940,7 @@ void GridCreatingConditionCenterAndWidth::importCenterLine()
 void GridCreatingConditionCenterAndWidth::exportCenterLine()
 {
 	auto l = polyLine();
-	if (l.isEmpty()) {
+	if (l.size() == 0) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Center line not defined yet"));
 		return;
 	}
@@ -1061,7 +956,7 @@ void GridCreatingConditionCenterAndWidth::exportCenterLine()
 
 void GridCreatingConditionCenterAndWidth::doApplyOffset(double x, double y)
 {
-	QVector<QPointF> polyline = polyLine();
+	std::vector<QPointF> polyline = polyLine();
 	for (int i = 0; i < polyline.size(); ++ i) {
 		QPointF p = polyline.at(i);
 		p.setX(p.x() - x);

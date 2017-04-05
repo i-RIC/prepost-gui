@@ -61,6 +61,7 @@ HEADERS += geoio_global.h \
            polygonio.h \
            polygonshapeexporter.h \
            polygonshapeimporter.h \
+           polygonutil.h \
            polylinecsvexporter.h \
            polylinecsvimporter.h \
            polylineexporterfactory.h \
@@ -84,6 +85,7 @@ SOURCES += polygoncsvexporter.cpp \
            polygonio.cpp \
            polygonshapeexporter.cpp \
            polygonshapeimporter.cpp \
+           polygonutil.cpp \
            polylinecsvexporter.cpp \
            polylinecsvimporter.cpp \
            polylineexporterfactory.cpp \
