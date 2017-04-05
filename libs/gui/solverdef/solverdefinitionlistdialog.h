@@ -16,9 +16,7 @@ class SolverDefinitionListDialog : public QDialog
 	Q_OBJECT
 
 public:
-	/// Constructor
 	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent = nullptr);
-	/// Destructor
 	~SolverDefinitionListDialog();
 	/// Setup dialog items
 	void setup();
@@ -31,7 +29,7 @@ public slots:
 	/// Show detail dialog about the solver currently selected
 	void showDetailOfCurrent();
 
-protected:
+private:
 	void changeEvent(QEvent* e) override;
 
 private:
