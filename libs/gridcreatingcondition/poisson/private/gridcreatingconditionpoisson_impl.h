@@ -10,6 +10,7 @@
 #include <QCursor>
 
 class GeoDataRiverSurvey;
+class Grid;
 
 class QAction;
 
@@ -40,7 +41,8 @@ public:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateActionStatus();
 
-	void copyCenterLine(GeoDataRiverSurvey* data);
+	void copyCenterLine(GeoDataRiverSurvey* data, int num);
+	Grid* createGrid();
 
 	PolyLineController m_centerLineController;
 	PolyLineController m_leftBankLineController;
@@ -60,9 +62,8 @@ public:
 	int m_selectedVertexId;
 	int m_selectedEdgeId;
 
-	int m_streamWiseDiv;
-	int m_leftDiv;
-	int m_rightDiv;
+	int m_iDiv;
+	int m_jDiv;
 
 	double m_previousLeftBankDistance;
 	double m_previousRightBankDistance;

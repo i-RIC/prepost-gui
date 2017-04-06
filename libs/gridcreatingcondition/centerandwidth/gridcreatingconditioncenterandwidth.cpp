@@ -194,7 +194,7 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 {
 	if (m_iMax * m_jMax > MAXGRIDSIZE) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
-		return 0;
+		return nullptr;
 	}
 	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
 

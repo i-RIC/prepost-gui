@@ -11,6 +11,7 @@ public:
 	GridCreatingConditionPoisson(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionPoisson();
 
+	bool init() override;
 	bool create(QWidget* parent) override;
 	bool ready() const override;
 	void clear() override;

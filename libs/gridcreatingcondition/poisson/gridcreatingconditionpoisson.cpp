@@ -1,5 +1,6 @@
 #include "gridcreatingconditionpoisson.h"
 #include "gridcreatingconditionpoissonbuildbanklinesdialog.h"
+#include "gridcreatingconditionpoissongridgeneratedialog.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
 #include "private/gridcreatingconditionpoisson_definenewpointcommand.h"
@@ -20,6 +21,8 @@
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
@@ -38,6 +41,7 @@
 #include <vtkTextProperty.h>
 
 #include <QAction>
+#include <QInputDialog>
 #include <QMenu>
 #include <QKeyEvent>
 #include <QMessageBox>
@@ -66,6 +70,18 @@ GeoDataRiverSurvey* findRiverSurveyData(GridCreatingCondition* cond)
 		}
 	}
 	return nullptr;
+}
+
+int getNumPoints(GeoDataRiverSurvey* riverSurvey)
+{
+	int num = 0;
+	GeoDataRiverPathPoint* p = riverSurvey->headPoint();
+	while (p->nextPoint() != 0) {
+		++ num;
+		p = p->nextPoint();
+	}
+
+	return num;
 }
 
 void makeLineWideWithPoints(PolyLineController* controller)
@@ -109,15 +125,15 @@ std::vector<QPointF> buildSplinePoints(vtkPoints* points, int divNum)
 	length[0] = 0;
 	double u[3], v_prev[3], v[3], Du[9];
 	u[0] = 0; u[1] = 0; u[2] = 0;
-	spline->Evaluate(0, v_prev, Du);
+	spline->Evaluate(u, v_prev, Du);
 	for (int i = 1; i <= d; ++i) {
 		u[0] = i / static_cast<double>(d);
 		spline->Evaluate(u, v, Du);
-		double dx = v[0] - prev_v[0];
-		double dy = v[1] - prev_v[1];
+		double dx = v[0] - v_prev[0];
+		double dy = v[1] - v_prev[1];
 		length[i] = length[i - 1] + sqrt(dx * dx + dy * dy);
 
-		for (j = 0; j < 3; ++j) {
+		for (int j = 0; j < 3; ++j) {
 			v_prev[j] = v[j];
 		}
 	}
@@ -146,12 +162,30 @@ std::vector<QPointF> buildSplinePoints(vtkPoints* points, int divNum)
 	return ret;
 }
 
+double polyLineLength(std::vector<QPointF>& polyLine)
+{
+	double len = 0;
+
+	QPointF prev_p = polyLine.at(0);
+	for (QPointF p : polyLine) {
+		double dx = p.x() - prev_p.x();
+		double dy = p.y() - prev_p.y();
+
+		len = len + sqrt(dx * dx + dy * dy);
+		prev_p = p;
+	}
+	return len;
+}
+
 } // namespace
 
 GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
 	m_parent {parent},
 	m_activeLine {&m_centerLineController},
 	m_mouseEventMode {MouseEventMode::BeforeDefining},
+
+	m_iDiv {10},
+	m_jDiv {10},
 
 	m_previousLeftBankDistance {10},
 	m_previousRightBankDistance {10},
@@ -376,15 +410,26 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 	}
 }
 
-void GridCreatingConditionPoisson::Impl::copyCenterLine(GeoDataRiverSurvey *data)
+void GridCreatingConditionPoisson::Impl::copyCenterLine(GeoDataRiverSurvey *data, int num)
 {
 	GeoDataRiverPathPoint* p = data->headPoint();
 	std::vector<QPointF> line;
+
+	int numPoints = getNumPoints(data);
+	int pointsCreated = 0;
+	int idx = 0;
+
 	while (p->nextPoint() != nullptr) {
 		p = p->nextPoint();
-		auto pos = p->position();
-		QPointF newPoint(pos.x(), pos.y());
-		line.push_back(newPoint);
+		double r1 = pointsCreated / static_cast<double>(num - 1);
+		double r2 = idx / static_cast<double>(numPoints - 1);
+		if (idx == 0 || r1 <= r2) {
+			auto pos = p->position();
+			QPointF newPoint(pos.x(), pos.y());
+			line.push_back(newPoint);
+			++ pointsCreated;
+		}
+		++ idx;
 	}
 	m_centerLineController.setPolyLine(line);
 	if (line.size() < 2) {return;}
@@ -394,20 +439,56 @@ void GridCreatingConditionPoisson::Impl::copyCenterLine(GeoDataRiverSurvey *data
 	updateActionStatus();
 }
 
+Grid* GridCreatingConditionPoisson::Impl::createGrid()
+{
+	int iMax = m_iDiv + 1;
+	int jMax = m_jDiv + 1;
+	if (iMax * jMax > MAXGRIDSIZE) {
+		QMessageBox::warning(m_parent->preProcessorWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
+		return nullptr;
+	}
+
+	Structured2DGrid* grid = new Structured2DGrid(nullptr);
+	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_parent->m_conditionDataItem->parent()->parent());
+	gt->gridType()->buildGridAttributes(grid);
+
+	grid->setDimensions(iMax, jMax);
+	vtkPoints* points = vtkPoints::New();
+	points->SetDataTypeToDouble();
+	points->Allocate(iMax * jMax);
+
+	auto leftBankPoints = buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), m_iDiv);
+	auto rightBankPoints = buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), m_iDiv);
+
+	for (int j = 0; j < jMax; ++j) {
+		for (int i = 0; i < iMax; ++i) {
+			double d = j / static_cast<double>(jMax - 1);
+			QPointF p1 = rightBankPoints.at(i);
+			QPointF p2 = leftBankPoints.at(i);
+
+			double x = p1.x() * (1 - d) + p2.x() * d;
+			double y = p1.y() * (1 - d) + p2.y() * d;
+
+			points->InsertNextPoint(x, y, 0);
+		}
+	}
+
+	grid->vtkGrid()->SetPoints(points);
+	points->Delete();
+
+	for (GridAttributeContainer* c : grid->gridAttributes()) {
+		c->allocate();
+	}
+	grid->setModified();
+	return grid;
+}
+
 // public interface
 
 GridCreatingConditionPoisson::GridCreatingConditionPoisson(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
 	impl {new Impl {this}}
-{
-	auto rs = findRiverSurveyData(this);
-	if (rs != nullptr)	{
-		impl->copyCenterLine(rs);
-	} else {
-		QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("River Survey data not found. Please define Center Line by yourself."));
-		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
-	}
-}
+{}
 
 GridCreatingConditionPoisson::~GridCreatingConditionPoisson()
 {
@@ -440,8 +521,60 @@ GridCreatingConditionPoisson::~GridCreatingConditionPoisson()
 	delete impl;
 }
 
+bool GridCreatingConditionPoisson::init()
+{
+	auto rs = findRiverSurveyData(this);
+	if (rs != nullptr)	{
+		int numPoints = getNumPoints(rs);
+
+		int defaultVal = (numPoints - 2) / 2;
+		if (defaultVal == 0) {defaultVal = 1;}
+
+		bool ok;
+		int num = QInputDialog::getInt(preProcessorWindow(), tr("Specify Control Cross Sections Number"), tr("Number of Control Cross Sections"), defaultVal, 1, numPoints - 2, 1, &ok);
+		if (! ok) {return false;}
+
+		impl->copyCenterLine(rs, num + 2);
+		return true;
+	} else {
+		QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("River Survey data not found. Please define Center Line by yourself."));
+		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
+		return true;
+	}
+}
+
 bool GridCreatingConditionPoisson::create(QWidget* parent)
 {
+	bool ok = true;
+	ok = ok && impl->m_centerLineController.polyLine().size() >= 2;
+	ok = ok && impl->m_leftBankLineController.polyLine().size() >= 2;
+	ok = ok && impl->m_rightBankLineController.polyLine().size() >= 2;
+	if (! ok) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region not defined yet."));
+		return false;
+	}
+
+	GridCreatingConditionPoissonGridGenerateDialog dialog(preProcessorWindow());
+
+	double iLen = polyLineLength(impl->m_centerLineController.polyLine());
+	double jLen = 0.5 * (
+				polyLineLength(impl->m_upstreamLineController.polyLine()) +
+				polyLineLength(impl->m_downstreamLineController.polyLine()));
+	dialog.setILength(iLen);
+	dialog.setJLength(jLen);
+
+	dialog.setIDiv(impl->m_iDiv);
+	dialog.setJDiv(impl->m_jDiv);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+
+	impl->m_iDiv = dialog.iDiv();
+	impl->m_jDiv = dialog.jDiv();
+
+	Grid* grid = impl->createGrid();
+	emit gridCreated(grid);
+
 	return true;
 }
 

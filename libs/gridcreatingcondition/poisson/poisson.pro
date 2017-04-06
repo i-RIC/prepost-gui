@@ -105,6 +105,7 @@ HEADERS += gcc_poisson_global.h \
            gridcreatingconditioncreatorpoisson.h \
            gridcreatingconditionpoisson.h \
            gridcreatingconditionpoissonbuildbanklinesdialog.h \
+           gridcreatingconditionpoissongridgeneratedialog.h \
            private/gridcreatingconditionpoisson_addvertexcommand.h \
            private/gridcreatingconditionpoisson_definenewpointcommand.h \
            private/gridcreatingconditionpoisson_finishdefiningcommand.h \
@@ -113,10 +114,12 @@ HEADERS += gcc_poisson_global.h \
            private/gridcreatingconditionpoisson_movevertexcommand.h \
            private/gridcreatingconditionpoisson_removevertexcommand.h \
            private/gridcreatingconditionpoisson_updatelabelscommand.h
-FORMS += gridcreatingconditionpoissonbuildbanklinesdialog.ui
+FORMS += gridcreatingconditionpoissonbuildbanklinesdialog.ui \
+         gridcreatingconditionpoissongridgeneratedialog.ui
 SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            gridcreatingconditionpoisson.cpp \
            gridcreatingconditionpoissonbuildbanklinesdialog.cpp \
+           gridcreatingconditionpoissongridgeneratedialog.cpp \
            private/gridcreatingconditionpoisson_addvertexcommand.cpp \
            private/gridcreatingconditionpoisson_definenewpointcommand.cpp \
            private/gridcreatingconditionpoisson_finishdefiningcommand.cpp \
