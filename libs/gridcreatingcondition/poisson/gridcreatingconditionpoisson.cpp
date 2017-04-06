@@ -1,6 +1,7 @@
 #include "gridcreatingconditionpoisson.h"
 #include "gridcreatingconditionpoissonbuildbanklinesdialog.h"
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
+#include "poissonsolver.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
 #include "private/gridcreatingconditionpoisson_definenewpointcommand.h"
@@ -145,7 +146,9 @@ std::vector<QPointF> buildSplinePoints(vtkPoints* points, int divNum)
 	for (int i = 0; i <= divNum; ++i) {
 		double param = 0;
 		if (i != 0) {
-			double targetLen = (wholeLen * i) / divNum;
+			double r = i / static_cast<double>(divNum);
+			if (r > 1) {r = 1;}
+			double targetLen = wholeLen * r;
 			while (length[idx + 1] < targetLen) {
 				++ idx;
 			}
@@ -448,6 +451,9 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 		return nullptr;
 	}
 
+	std::vector<double> xVec(iMax * jMax);
+	std::vector<double> yVec(iMax * jMax);
+
 	Structured2DGrid* grid = new Structured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_parent->m_conditionDataItem->parent()->parent());
 	gt->gridType()->buildGridAttributes(grid);
@@ -469,8 +475,15 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 			double x = p1.x() * (1 - d) + p2.x() * d;
 			double y = p1.y() * (1 - d) + p2.y() * d;
 
-			points->InsertNextPoint(x, y, 0);
+			xVec[i + j * iMax] = x;
+			yVec[i + j * iMax] = y;
 		}
+	}
+
+	PoissonSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, 100);
+
+	for (int i = 0; i < xVec.size(); ++i) {
+		points->InsertNextPoint(xVec.at(i), yVec.at(i), 0);
 	}
 
 	grid->vtkGrid()->SetPoints(points);
@@ -934,6 +947,7 @@ void GridCreatingConditionPoisson::importCenterLine()
 	impl->m_centerLineController.setPolyLine(polyLine);
 	impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 
+	impl->updateLabels();
 	renderGraphicsView();
 }
 
@@ -966,6 +980,7 @@ void GridCreatingConditionPoisson::importLeftBankLine()
 	}
 
 	impl->m_leftBankLineController.setPolyLine(polyLine);
+	impl->updateLabels();
 
 	renderGraphicsView();
 }
@@ -999,6 +1014,7 @@ void GridCreatingConditionPoisson::importRightBankLine()
 	}
 
 	impl->m_rightBankLineController.setPolyLine(polyLine);
+	impl->updateLabels();
 
 	renderGraphicsView();
 }

@@ -79,7 +79,7 @@ void exportDataT(const DATA& data, QWidget* w)
 	QString dir = LastIODirectory::get();
 	QString selectedFilter;
 
-	QString filename = QFileDialog::getSaveFileName(w, QObject::tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
+	QString filename = QFileDialog::getSaveFileName(w, QObject::tr("Select file to export"), dir, filters.join(";;"), &selectedFilter);
 
 	if (filename.isNull()) {return;}
 

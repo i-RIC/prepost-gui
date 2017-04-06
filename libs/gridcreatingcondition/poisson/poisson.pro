@@ -106,6 +106,7 @@ HEADERS += gcc_poisson_global.h \
            gridcreatingconditionpoisson.h \
            gridcreatingconditionpoissonbuildbanklinesdialog.h \
            gridcreatingconditionpoissongridgeneratedialog.h \
+           poissonsolver.h \
            private/gridcreatingconditionpoisson_addvertexcommand.h \
            private/gridcreatingconditionpoisson_definenewpointcommand.h \
            private/gridcreatingconditionpoisson_finishdefiningcommand.h \
@@ -120,6 +121,7 @@ SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            gridcreatingconditionpoisson.cpp \
            gridcreatingconditionpoissonbuildbanklinesdialog.cpp \
            gridcreatingconditionpoissongridgeneratedialog.cpp \
+           poissonsolver.cpp \
            private/gridcreatingconditionpoisson_addvertexcommand.cpp \
            private/gridcreatingconditionpoisson_definenewpointcommand.cpp \
            private/gridcreatingconditionpoisson_finishdefiningcommand.cpp \
