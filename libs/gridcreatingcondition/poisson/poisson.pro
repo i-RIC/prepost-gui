@@ -76,9 +76,23 @@ win32 {
 HEADERS += gcc_poisson_global.h \
            gridcreatingconditioncreatorpoisson.h \
            gridcreatingconditionpoisson.h \
-    private/gridcreatingconditionpoisson_impl.h
+           private/gridcreatingconditionpoisson_addvertexcommand.h \
+           private/gridcreatingconditionpoisson_definenewpointcommand.h \
+           private/gridcreatingconditionpoisson_finishdefiningcommand.h \
+           private/gridcreatingconditionpoisson_impl.h \
+           private/gridcreatingconditionpoisson_movecommand.h \
+           private/gridcreatingconditionpoisson_movevertexcommand.h \
+           private/gridcreatingconditionpoisson_removevertexcommand.h \
+           private/gridcreatingconditionpoisson_updatelabelscommand.h
 SOURCES += gridcreatingconditioncreatorpoisson.cpp \
-           gridcreatingconditionpoisson.cpp
+           gridcreatingconditionpoisson.cpp \
+           private/gridcreatingconditionpoisson_addvertexcommand.cpp \
+           private/gridcreatingconditionpoisson_definenewpointcommand.cpp \
+           private/gridcreatingconditionpoisson_finishdefiningcommand.cpp \
+           private/gridcreatingconditionpoisson_movecommand.cpp \
+           private/gridcreatingconditionpoisson_movevertexcommand.cpp \
+           private/gridcreatingconditionpoisson_removevertexcommand.cpp \
+           private/gridcreatingconditionpoisson_updatelabelscommand.cpp
 RESOURCES += poisson.qrc
 TRANSLATIONS += languages/iricGccPoisson_es_ES.ts \
                 languages/iricGccPoisson_fr_FR.ts \

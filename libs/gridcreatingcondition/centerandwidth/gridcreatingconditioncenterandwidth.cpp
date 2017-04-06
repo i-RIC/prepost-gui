@@ -398,7 +398,7 @@ void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphic
 
 void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return) {
+	if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
 		if (m_mouseEventMode == meDefining) {
 			definePolyLine();
 		}
@@ -524,21 +524,21 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 		case meBeforeDefining:
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
-			pushRenderCommand(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefineNewPointCommand(true, event->pos(), this));
 		case meDefining:
-			pushRenderCommand(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefineNewPointCommand(true, event->pos(), this));
 			break;
 		case meTranslatePrepare:
 			m_mouseEventMode = meTranslate;
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			// push the first translation command.
-			pushRenderCommand(new MoveCommand(true, m_currentPoint, m_currentPoint, this));
+			pushRenderCommand(new MoveCommand(true, event->pos(), event->pos(), this));
 			break;
 		case meMoveVertexPrepare:
 			m_mouseEventMode = meMoveVertex;
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			// push the first move command.
-			pushRenderCommand(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedVertexId, this));
+			pushRenderCommand(new MoveVertexCommand(true, event->pos(), event->pos(), m_selectedVertexId, this));
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
@@ -569,7 +569,7 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 		updateActionStatus();
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		m_dragStartPoint = event->pos();
 	}
 }
 
@@ -588,7 +588,7 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 		case meAddVertexNotPossible:
 		case meRemoveVertexPrepare:
 		case meRemoveVertexNotPossible:
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			updateActionStatus();
@@ -622,9 +622,10 @@ void GridCreatingConditionCenterAndWidth::deletePolyLine()
 	m_width = 10;
 	m_length = 0;
 	updateShapeData();
-	renderer()->GetRenderWindow()->Render();
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
+
+	renderGraphicsView();
 }
 
 void GridCreatingConditionCenterAndWidth::definePolyLine()
