@@ -36,6 +36,8 @@ private slots:
 	void removeVertexMode(bool on);
 	void editCoordinates();
 
+	void buildBankLines();
+
 	void importCenterLine();
 	void exportCenterLine();
 

@@ -41,6 +41,8 @@ bool PolyLineController::isVertexSelectable(const QPointF& pos, double limitDist
 	auto polydata = impl->m_lineActor.pointsPolyData();
 	*vid = polydata->FindPoint(pos.x(), pos.y(), 0.0);
 
+	if (*vid == -1) {return false;}
+
 	double v[3];
 	polydata->GetPoint(static_cast<vtkIdType>(*vid), v);
 	QVector2D diff(pos.x() - v[0], pos.y() - v[1]);

@@ -46,6 +46,9 @@ public:
 	PolyLineController m_leftBankLineController;
 	PolyLineController m_rightBankLineController;
 
+	PolyLineController m_upstreamLineController;
+	PolyLineController m_downstreamLineController;
+
 	vtkLabel2DActor m_upstreamActor;
 	vtkLabel2DActor m_downstreamActor;
 	vtkLabel2DActor m_leftBankActor;
@@ -60,6 +63,9 @@ public:
 	int m_streamWiseDiv;
 	int m_leftDiv;
 	int m_rightDiv;
+
+	double m_previousLeftBankDistance;
+	double m_previousRightBankDistance;
 
 	QPoint m_previousPos;
 	QPoint m_pressPos;
