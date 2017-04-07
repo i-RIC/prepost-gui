@@ -12,6 +12,7 @@ public:
 	~GridCreatingConditionPoisson();
 
 	bool init() override;
+	void showInitialDialog() override;
 	bool create(QWidget* parent) override;
 	bool ready() const override;
 	void clear() override;
@@ -51,6 +52,10 @@ private slots:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+
+	void doApplyOffset(double x, double y) override;
 
 	void pushUpdateLabelsCommand(QUndoCommand* com);
 

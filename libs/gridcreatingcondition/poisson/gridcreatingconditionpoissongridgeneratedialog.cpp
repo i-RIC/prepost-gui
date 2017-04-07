@@ -37,6 +37,16 @@ void GridCreatingConditionPoissonGridGenerateDialog::setJDiv(int div)
 	updateDJ();
 }
 
+int GridCreatingConditionPoissonGridGenerateDialog::maxIterations() const
+{
+	return ui->maxIterSpinBox->value();
+}
+
+void GridCreatingConditionPoissonGridGenerateDialog::setMaxIterations(int iters)
+{
+	ui->maxIterSpinBox->setValue(iters);
+}
+
 void GridCreatingConditionPoissonGridGenerateDialog::setILength(double len)
 {
 	m_iLength = len;

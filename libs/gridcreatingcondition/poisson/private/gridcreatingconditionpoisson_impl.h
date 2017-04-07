@@ -64,6 +64,7 @@ public:
 
 	int m_iDiv;
 	int m_jDiv;
+	int m_maxIterations;
 
 	double m_previousLeftBankDistance;
 	double m_previousRightBankDistance;

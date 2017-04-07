@@ -29,6 +29,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+#include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
 #include <vtkActor.h>
@@ -43,6 +44,8 @@
 #include <vtkTextProperty.h>
 
 #include <QAction>
+#include <QDataStream>
+#include <QFile>
 #include <QInputDialog>
 #include <QMenu>
 #include <QKeyEvent>
@@ -181,6 +184,39 @@ double polyLineLength(std::vector<QPointF>& polyLine)
 	return len;
 }
 
+void applyOffsetToPolyLine(PolyLineController* polyLine, double x, double y)
+{
+	auto line = polyLine->polyLine();
+	for (QPointF& p : line) {
+		p.setX(p.x() - x);
+		p.setY(p.y() - y);
+	}
+	polyLine->setPolyLine(line);
+}
+
+void loadPolyLine(QDataStream* stream, PolyLineController* polyLine)
+{
+	std::vector<QPointF> line;
+	int size;
+	*stream >> size;
+	for (int i = 0; i < size; ++i) {
+		qreal x, y;
+		*stream >> x >> y;
+		line.push_back(QPointF(x, y));
+	}
+	polyLine->setPolyLine(line);
+}
+
+void savePolyLine(QDataStream* stream, const PolyLineController& polyLine)
+{
+	auto line = polyLine.polyLine();
+	int size = line.size();
+	*stream << size;
+	for (QPointF& p : line) {
+		*stream << p.x() << p.y();
+	}
+}
+
 } // namespace
 
 GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
@@ -190,6 +226,7 @@ GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
 
 	m_iDiv {10},
 	m_jDiv {10},
+	m_maxIterations {20},
 
 	m_previousLeftBankDistance {10},
 	m_previousRightBankDistance {10},
@@ -467,6 +504,9 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 	auto leftBankPoints = buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), m_iDiv);
 	auto rightBankPoints = buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), m_iDiv);
 
+	double xOffset = 0;
+	double yOffset = 0;
+
 	for (int j = 0; j < jMax; ++j) {
 		for (int i = 0; i < iMax; ++i) {
 			double d = j / static_cast<double>(jMax - 1);
@@ -476,16 +516,20 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 			double x = p1.x() * (1 - d) + p2.x() * d;
 			double y = p1.y() * (1 - d) + p2.y() * d;
 
-			xVec[i + j * iMax] = x;
-			yVec[i + j * iMax] = y;
+			if (i == 0 && j == 0) {
+				xOffset = x;
+				yOffset = y;
+			}
+
+			xVec[i + j * iMax] = x - xOffset;
+			yVec[i + j * iMax] = y - yOffset;
 		}
 	}
 
-	//PoissonSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, 100);
-	SpringSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, 100);
+	SpringSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, m_maxIterations);
 
 	for (int i = 0; i < xVec.size(); ++i) {
-		points->InsertNextPoint(xVec.at(i), yVec.at(i), 0);
+		points->InsertNextPoint(xVec.at(i) + xOffset, yVec.at(i) + yOffset, 0);
 	}
 
 	grid->vtkGrid()->SetPoints(points);
@@ -538,6 +582,11 @@ GridCreatingConditionPoisson::~GridCreatingConditionPoisson()
 
 bool GridCreatingConditionPoisson::init()
 {
+	return true;
+}
+
+void GridCreatingConditionPoisson::showInitialDialog()
+{
 	auto rs = findRiverSurveyData(this);
 	if (rs != nullptr)	{
 		int numPoints = getNumPoints(rs);
@@ -547,14 +596,12 @@ bool GridCreatingConditionPoisson::init()
 
 		bool ok;
 		int num = QInputDialog::getInt(preProcessorWindow(), tr("Specify Control Cross Sections Number"), tr("Number of Control Cross Sections"), defaultVal, 1, numPoints - 2, 1, &ok);
-		if (! ok) {return false;}
-
-		impl->copyCenterLine(rs, num + 2);
-		return true;
+		if (ok) {
+			impl->copyCenterLine(rs, num + 2);
+		}
 	} else {
 		QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("River Survey data not found. Please define Center Line by yourself."));
 		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
-		return true;
 	}
 }
 
@@ -580,12 +627,14 @@ bool GridCreatingConditionPoisson::create(QWidget* parent)
 
 	dialog.setIDiv(impl->m_iDiv);
 	dialog.setJDiv(impl->m_jDiv);
+	dialog.setMaxIterations(impl->m_maxIterations);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return false;}
 
 	impl->m_iDiv = dialog.iDiv();
 	impl->m_jDiv = dialog.jDiv();
+	impl->m_maxIterations = dialog.maxIterations();
 
 	Grid* grid = impl->createGrid();
 	emit gridCreated(grid);
@@ -1040,21 +1089,58 @@ void GridCreatingConditionPoisson::exportRightBankLine()
 
 void GridCreatingConditionPoisson::doLoadFromProjectMainFile(const QDomNode& node)
 {
-/*
-	QDomNode generatorNode = iRIC::getChildNode(node, "Poisson");
-	if (! generatorNode.isNull()) {
-		loadPoissonFromProjectMainFile(generatorNode);
-	}
-*/
+	impl->m_iDiv = iRIC::getIntAttribute(node, "iDiv", 10);
+	impl->m_jDiv = iRIC::getIntAttribute(node, "jDiv", 10);
+	impl->m_maxIterations = iRIC::getIntAttribute(node, "maxIter", 20);
 }
 
 void GridCreatingConditionPoisson::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-/*
-	writer.writeStartElement("Poisson");
-	savePoissonToProjectMainFile(writer);
-	writer.writeEndElement();
-*/
+	iRIC::setIntAttribute(writer, "iDiv", impl->m_iDiv);
+	iRIC::setIntAttribute(writer, "jDiv", impl->m_jDiv);
+	iRIC::setIntAttribute(writer, "maxIter", impl->m_maxIterations);
+}
+
+void GridCreatingConditionPoisson::loadExternalData(const QString& filename)
+{
+	QFile f(filename);
+	f.open(QIODevice::ReadOnly);
+	QDataStream s(&f);
+
+	loadPolyLine(&s, &(impl->m_centerLineController));
+	loadPolyLine(&s, &(impl->m_leftBankLineController));
+	loadPolyLine(&s, &(impl->m_rightBankLineController));
+
+	f.close();
+	if (impl->m_centerLineController.polyLine().size() > 0) {
+		impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
+	} else {
+		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
+	}
+	impl->updateLabels();
+	impl->updateActionStatus();
+}
+
+void GridCreatingConditionPoisson::saveExternalData(const QString& filename)
+{
+	QFile f(filename);
+	f.open(QIODevice::WriteOnly);
+	QDataStream s(&f);
+
+	savePolyLine(&s, impl->m_centerLineController);
+	savePolyLine(&s, impl->m_leftBankLineController);
+	savePolyLine(&s, impl->m_rightBankLineController);
+
+	f.close();
+}
+
+void GridCreatingConditionPoisson::doApplyOffset(double x, double y)
+{
+	applyOffsetToPolyLine(&(impl->m_centerLineController), x, y);
+	applyOffsetToPolyLine(&(impl->m_leftBankLineController), x, y);
+	applyOffsetToPolyLine(&(impl->m_rightBankLineController), x, y);
+
+	impl->updateLabels();
 }
 
 void GridCreatingConditionPoisson::pushUpdateLabelsCommand(QUndoCommand* com)

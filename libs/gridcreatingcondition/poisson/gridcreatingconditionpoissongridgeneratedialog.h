@@ -21,6 +21,9 @@ public:
 	int jDiv() const;
 	void setJDiv(int div);
 
+	int maxIterations() const;
+	void setMaxIterations(int iters);
+
 	void setILength(double len);
 	void setJLength(double len);
 
