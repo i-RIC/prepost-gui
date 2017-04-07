@@ -2,6 +2,7 @@
 #include "gridcreatingconditionpoissonbuildbanklinesdialog.h"
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "poissonsolver.h"
+#include "springsolver.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
 #include "private/gridcreatingconditionpoisson_definenewpointcommand.h"
@@ -480,7 +481,8 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 		}
 	}
 
-	PoissonSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, 100);
+	//PoissonSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, 100);
+	SpringSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, 100);
 
 	for (int i = 0; i < xVec.size(); ++i) {
 		points->InsertNextPoint(xVec.at(i), yVec.at(i), 0);

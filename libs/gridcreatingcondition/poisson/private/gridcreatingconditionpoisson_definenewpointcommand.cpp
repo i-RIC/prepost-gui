@@ -1,4 +1,5 @@
 #include "gridcreatingconditionpoisson_definenewpointcommand.h"
+#include "gridcreatingconditionpoisson_impl.h"
 
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>

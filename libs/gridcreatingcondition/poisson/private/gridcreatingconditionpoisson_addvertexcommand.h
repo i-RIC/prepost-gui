@@ -6,6 +6,8 @@
 #include <QUndoCommand>
 #include <QPointF>
 
+class PolyLineController;
+
 class GridCreatingConditionPoisson::AddVertexCommand : public QUndoCommand
 {
 public:

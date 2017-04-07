@@ -4,6 +4,7 @@
 #include "../gridcreatingconditionpoisson.h"
 
 #include <QUndoCommand>
+#include <QPointF>
 
 class GridCreatingConditionPoisson::DefineNewPointCommand : public QUndoCommand
 {

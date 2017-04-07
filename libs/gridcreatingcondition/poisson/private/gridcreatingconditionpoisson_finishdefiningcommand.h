@@ -5,6 +5,8 @@
 
 #include <QUndoCommand>
 
+class PolyLineController;
+
 class GridCreatingConditionPoisson::FinishDefiningCommand : public QUndoCommand
 {
 public:

@@ -107,6 +107,7 @@ HEADERS += gcc_poisson_global.h \
            gridcreatingconditionpoissonbuildbanklinesdialog.h \
            gridcreatingconditionpoissongridgeneratedialog.h \
            poissonsolver.h \
+           springsolver.h \
            private/gridcreatingconditionpoisson_addvertexcommand.h \
            private/gridcreatingconditionpoisson_definenewpointcommand.h \
            private/gridcreatingconditionpoisson_finishdefiningcommand.h \
@@ -114,7 +115,9 @@ HEADERS += gcc_poisson_global.h \
            private/gridcreatingconditionpoisson_movecommand.h \
            private/gridcreatingconditionpoisson_movevertexcommand.h \
            private/gridcreatingconditionpoisson_removevertexcommand.h \
-           private/gridcreatingconditionpoisson_updatelabelscommand.h
+           private/gridcreatingconditionpoisson_updatelabelscommand.h \
+           springsolver/edge.h \
+           springsolver/grid.h
 FORMS += gridcreatingconditionpoissonbuildbanklinesdialog.ui \
          gridcreatingconditionpoissongridgeneratedialog.ui
 SOURCES += gridcreatingconditioncreatorpoisson.cpp \
@@ -122,13 +125,16 @@ SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            gridcreatingconditionpoissonbuildbanklinesdialog.cpp \
            gridcreatingconditionpoissongridgeneratedialog.cpp \
            poissonsolver.cpp \
+           springsolver.cpp \
            private/gridcreatingconditionpoisson_addvertexcommand.cpp \
            private/gridcreatingconditionpoisson_definenewpointcommand.cpp \
            private/gridcreatingconditionpoisson_finishdefiningcommand.cpp \
            private/gridcreatingconditionpoisson_movecommand.cpp \
            private/gridcreatingconditionpoisson_movevertexcommand.cpp \
            private/gridcreatingconditionpoisson_removevertexcommand.cpp \
-           private/gridcreatingconditionpoisson_updatelabelscommand.cpp
+           private/gridcreatingconditionpoisson_updatelabelscommand.cpp \
+           springsolver/edge.cpp \
+           springsolver/grid.cpp
 RESOURCES += poisson.qrc
 TRANSLATIONS += languages/iricGccPoisson_es_ES.ts \
                 languages/iricGccPoisson_fr_FR.ts \
