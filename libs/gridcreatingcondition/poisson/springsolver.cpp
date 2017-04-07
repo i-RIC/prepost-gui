@@ -141,6 +141,7 @@ double updateGrid(Grid* grid, double springK)
 			err = std::max(err, std::abs(forceY) / avrLen);
 		}
 	}
+
 	// i = 0
 	auto& iMinEdge = grid->iMinEdge();
 	auto& iMinEdgeIds = grid->iMinEdgeIds();
@@ -187,6 +188,151 @@ double updateGrid(Grid* grid, double springK)
 		err = std::max(err, std::abs(newX - origGrid.x(0, j)) / avrLen);
 		err = std::max(err, std::abs(newY - origGrid.y(0, j)) / avrLen);
 	}
+
+	// i = imax
+	auto& iMaxEdge = grid->iMaxEdge();
+	auto& iMaxEdgeIds = grid->iMaxEdgeIds();
+	int imax_1 = grid->iMax() - 1;
+	for (int j = 1; j < grid->jMax() - 1; ++j) {
+		int edgeId = iMaxEdgeIds.at(j - 1);
+		QVector2D edgeDir = iMaxEdge.lineDirection(edgeId);
+
+		std::vector<double> dxVec, dyVec, cVec;
+		double dx, dy;
+
+		calcDelta(&origGrid, imax_1, j, imax_1 - 1, j    , &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, imax_1, j, imax_1    , j - 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, imax_1, j, imax_1    , j + 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, imax_1, j, imax_1 - 1, j - 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1 / ROOT2);
+
+		calcDelta(&origGrid, imax_1, j, imax_1 - 1, j + 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1 / ROOT2);
+
+		double forceX, forceY, avrLen;
+		calcForce(dxVec, dyVec, cVec, springK, &forceX, &forceY, &avrLen);
+
+		double r = forceX * edgeDir.x() + forceY * edgeDir.y();
+		forceX = r * edgeDir.x();
+		forceY = r * edgeDir.y();
+
+		double tmpNewX = origGrid.x(imax_1, j) + forceX;
+		double tmpNewY = origGrid.y(imax_1, j) + forceY;
+
+		int newEdgeId;
+		double newX, newY;
+		iMaxEdge.findMappedPoint(tmpNewX, tmpNewY, edgeId, &newX, &newY, &newEdgeId);
+		iMaxEdgeIds[j - 1] = newEdgeId;
+
+		grid->x(imax_1, j) = newX;
+		grid->y(imax_1, j) = newY;
+
+		err = std::max(err, std::abs(newX - origGrid.x(imax_1, j)) / avrLen);
+		err = std::max(err, std::abs(newY - origGrid.y(imax_1, j)) / avrLen);
+	}
+
+	// j = 0
+	auto& jMinEdge = grid->jMinEdge();
+	auto& jMinEdgeIds = grid->jMinEdgeIds();
+	for (int i = 1; i < grid->iMax() - 1; ++i) {
+		int edgeId = jMinEdgeIds.at(i - 1);
+		QVector2D edgeDir = jMinEdge.lineDirection(edgeId);
+
+		std::vector<double> dxVec, dyVec, cVec;
+		double dx, dy;
+
+		calcDelta(&origGrid, i, 0, i    , 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, i, 0, i - 1, 0, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, i, 0, i + 1, 0, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, i, 0, i - 1, 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1 / ROOT2);
+
+		calcDelta(&origGrid, i, 0, i + 1, 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1 / ROOT2);
+
+		double forceX, forceY, avrLen;
+		calcForce(dxVec, dyVec, cVec, springK, &forceX, &forceY, &avrLen);
+
+		double r = forceX * edgeDir.x() + forceY * edgeDir.y();
+		forceX = r * edgeDir.x();
+		forceY = r * edgeDir.y();
+
+		double tmpNewX = origGrid.x(i, 0) + forceX;
+		double tmpNewY = origGrid.y(i, 0) + forceY;
+
+		int newEdgeId;
+		double newX, newY;
+		jMinEdge.findMappedPoint(tmpNewX, tmpNewY, edgeId, &newX, &newY, &newEdgeId);
+		jMinEdgeIds[i - 1] = newEdgeId;
+
+		grid->x(i, 0) = newX;
+		grid->y(i, 0) = newY;
+
+		err = std::max(err, std::abs(newX - origGrid.x(i, 0)) / avrLen);
+		err = std::max(err, std::abs(newY - origGrid.y(i, 0)) / avrLen);
+	}
+
+	// j = jmax
+	auto& jMaxEdge = grid->jMaxEdge();
+	auto& jMaxEdgeIds = grid->jMaxEdgeIds();
+	int jmax_1 = grid->jMax() - 1;
+	for (int i = 1; i < grid->iMax() - 1; ++i) {
+		int edgeId = jMaxEdgeIds.at(i - 1);
+		QVector2D edgeDir = jMaxEdge.lineDirection(edgeId);
+
+		std::vector<double> dxVec, dyVec, cVec;
+		double dx, dy;
+
+		calcDelta(&origGrid, i, jmax_1, i    , jmax_1 - 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, i, jmax_1, i - 1, jmax_1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, i, jmax_1, i + 1, jmax_1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1);
+
+		calcDelta(&origGrid, i, jmax_1, i - 1, jmax_1 - 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1 / ROOT2);
+
+		calcDelta(&origGrid, i, jmax_1, i + 1, jmax_1 - 1, &dx, &dy);
+		dxVec.push_back(dx); dyVec.push_back(dy); cVec.push_back(1 / ROOT2);
+
+		double forceX, forceY, avrLen;
+		calcForce(dxVec, dyVec, cVec, springK, &forceX, &forceY, &avrLen);
+
+		double r = forceX * edgeDir.x() + forceY * edgeDir.y();
+		forceX = r * edgeDir.x();
+		forceY = r * edgeDir.y();
+
+		double tmpNewX = origGrid.x(i, jmax_1) + forceX;
+		double tmpNewY = origGrid.y(i, jmax_1) + forceY;
+
+		int newEdgeId;
+		double newX, newY;
+		jMaxEdge.findMappedPoint(tmpNewX, tmpNewY, edgeId, &newX, &newY, &newEdgeId);
+		jMaxEdgeIds[i - 1] = newEdgeId;
+
+		grid->x(i, jmax_1) = newX;
+		grid->y(i, jmax_1) = newY;
+
+		err = std::max(err, std::abs(newX - origGrid.x(i, jmax_1)) / avrLen);
+		err = std::max(err, std::abs(newY - origGrid.y(i, jmax_1)) / avrLen);
+	}
+
+
 	return err;
 }
 
