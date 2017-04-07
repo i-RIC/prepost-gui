@@ -54,7 +54,7 @@ void Edge::findMappedPoint(double x, double y, int lineIdHint, double* mappedX, 
 			*mappedY = tmpMappedY;
 		}
 	}
-	if (lineIdHint < m_x.size() - 1) {
+	if (lineIdHint < m_x.size() - 2) {
 		double tmpMappedX, tmpMappedY;
 		nearestPoint(x, y, lineIdHint + 1, &tmpMappedX, &tmpMappedY);
 		double tmpMinDistanceSquared = distanceSquared(x, y, tmpMappedX, tmpMappedY);
@@ -104,6 +104,7 @@ void Edge::nearestPoint(double ax, double ay, double bx, double by, double px, d
 	if (r > 1) {
 		*resultx = bx;
 		*resulty = by;
+		return;
 	}
 	*resultx = ax + r * abx;
 	*resulty = ay + r * aby;
