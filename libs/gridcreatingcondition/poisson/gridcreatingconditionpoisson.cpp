@@ -1,5 +1,6 @@
 #include "gridcreatingconditionpoisson.h"
 #include "gridcreatingconditionpoissonbuildbanklinesdialog.h"
+#include "gridcreatingconditionpoissonctrlpointsdialog.h"
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "poissonsolver.h"
 #include "springsolverthread.h"
@@ -17,6 +18,7 @@
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geoio/polylineio.h>
 #include <guibase/widget/waitdialog.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
@@ -48,7 +50,6 @@
 #include <QCoreApplication>
 #include <QDataStream>
 #include <QFile>
-#include <QInputDialog>
 #include <QMenu>
 #include <QKeyEvent>
 #include <QMessageBox>
@@ -615,9 +616,13 @@ void GridCreatingConditionPoisson::showInitialDialog()
 		if (defaultVal == 0) {defaultVal = 1;}
 
 		bool ok;
-		int num = QInputDialog::getInt(preProcessorWindow(), tr("Specify Control Cross Sections Number"), tr("Number of Control Cross Sections"), defaultVal, 1, numPoints - 2, 1, &ok);
-		if (ok) {
-			impl->copyCenterLine(rs, num + 2);
+
+		GridCreatingConditionPoissonCtrlPointsDialog dialog(preProcessorWindow());
+		dialog.setLocale(iricMainWindow()->locale());
+		dialog.setMaximum(numPoints);
+		int ret = dialog.exec();
+		if (ret == QDialog::Accepted) {
+			impl->copyCenterLine(rs, dialog.value());
 		}
 	} else {
 		QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("River Survey data not found. Please define Center Line by yourself."));

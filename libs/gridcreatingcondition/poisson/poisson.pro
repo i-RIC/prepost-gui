@@ -105,6 +105,7 @@ HEADERS += gcc_poisson_global.h \
            gridcreatingconditioncreatorpoisson.h \
            gridcreatingconditionpoisson.h \
            gridcreatingconditionpoissonbuildbanklinesdialog.h \
+           gridcreatingconditionpoissonctrlpointsdialog.h \
            gridcreatingconditionpoissongridgeneratedialog.h \
            poissonsolver.h \
            springsolver.h \
@@ -120,10 +121,12 @@ HEADERS += gcc_poisson_global.h \
            springsolver/edge.h \
            springsolver/grid.h
 FORMS += gridcreatingconditionpoissonbuildbanklinesdialog.ui \
+         gridcreatingconditionpoissonctrlpointsdialog.ui \
          gridcreatingconditionpoissongridgeneratedialog.ui
 SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            gridcreatingconditionpoisson.cpp \
            gridcreatingconditionpoissonbuildbanklinesdialog.cpp \
+           gridcreatingconditionpoissonctrlpointsdialog.cpp \
            gridcreatingconditionpoissongridgeneratedialog.cpp \
            poissonsolver.cpp \
            springsolver.cpp \
