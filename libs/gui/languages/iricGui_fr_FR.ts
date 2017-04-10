@@ -686,6 +686,34 @@ This wizard will generate or update translation files for solver definition file
         <source>Web Elevation Data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../pref/preferencedialog.ui" line="60"/>
+        <source>Background Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageBackgroundGrid</name>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="20"/>
+        <source>River Survey Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="28"/>
+        <source>Cross Section Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="48"/>
+        <source>Between Cross Sections:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageGeneral</name>
