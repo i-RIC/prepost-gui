@@ -25,6 +25,8 @@ public:
 	virtual QAction* createAction() const = 0;
 	virtual QAction* clearAction() const = 0;
 	virtual QAction* switchAction() const = 0;
+	virtual QAction* importAction() const = 0;
+	virtual QAction* exportAction() const = 0;
 
 	friend class GridCreatingCondition;
 };

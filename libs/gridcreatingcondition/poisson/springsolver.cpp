@@ -76,7 +76,8 @@ void calcForce(const std::vector<double>& dxVec, const std::vector<double>& dyVe
 	*forceY = 0;
 
 	for (int i = 0; i < dxVec.size(); ++i) {
-		double deltaLen = sqrt(*avrLen) * sqrt(lenVec.at(i)) * springK;
+//		double deltaLen = sqrt(*avrLen) * sqrt(lenVec.at(i)) * springK;
+		double deltaLen = lenVec.at(i) * springK;
 		QVector2D v(dxVec.at(i), dyVec.at(i));
 		v = v.normalized() * deltaLen;
 		*forceX += v.x();

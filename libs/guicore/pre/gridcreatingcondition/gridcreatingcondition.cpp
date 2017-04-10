@@ -5,10 +5,22 @@
 #include "gridcreatingcondition.h"
 #include "gridcreatingconditioncreator.h"
 
+#include <QDir>
+#include <QDomDocument>
 #include <QMenu>
+#include <QXmlStreamWriter>
 
-GridCreatingCondition::GridCreatingCondition(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: ProjectDataItem("gridcreatingcondition.dat", parent)
+namespace {
+
+QString BINARY_FILENAME = "condition.dat";
+
+} // namespace
+
+
+const QString GridCreatingCondition::XML_FILENAME = "condition.xml";
+
+GridCreatingCondition::GridCreatingCondition(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	ProjectDataItem("gridcreatingcondition.dat", parent)
 {
 	m_creator = creator;
 	m_conditionDataItem = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
@@ -28,6 +40,64 @@ GridCreatingConditionCreator* GridCreatingCondition::creator() const
 const QString& GridCreatingCondition::name() const
 {
 	return m_creator->name();
+}
+
+
+bool GridCreatingCondition::loadFromExportData(const QString& folder)
+{
+	QDir exportDir(folder);
+
+	QString xmlName = exportDir.absoluteFilePath(XML_FILENAME);
+	QFile f(xmlName);
+
+	QDomDocument doc;
+	bool ok = doc.setContent(&f);
+
+	if (! ok) {return false;}
+
+	doLoadFromProjectMainFile(doc.documentElement());
+
+	QString binName = exportDir.absoluteFilePath(BINARY_FILENAME);
+	loadExternalData(binName);
+
+	return true;
+}
+
+bool GridCreatingCondition::saveToExportData(const QString& folder)
+{
+	QDir exportDir(folder);
+
+	QString xmlName = exportDir.absoluteFilePath(XML_FILENAME);
+
+	QFile f(xmlName);
+	f.open(QFile::WriteOnly);
+	QXmlStreamWriter writer(&f);
+	writer.setAutoFormatting(true);
+	writer.writeStartDocument("1.0");
+	writer.writeStartElement("CalculationCondition");
+
+	writer.writeAttribute("name", name());
+	doSaveToProjectMainFile(writer);
+
+	writer.writeEndElement();
+	writer.writeEndDocument();
+	f.close();
+
+	QString binName = exportDir.absoluteFilePath(BINARY_FILENAME);
+
+	saveExternalData(binName);
+
+	return true;
+}
+
+QStringList GridCreatingCondition::exportDataFileList()
+{
+	QStringList ret;
+
+	ret << XML_FILENAME;
+	ret << BINARY_FILENAME;
+
+	return ret;
 }
 
 QMenu* GridCreatingCondition::menu() const
@@ -105,3 +175,9 @@ ProjectData* GridCreatingCondition::projectData()
 {
 	return m_conditionDataItem->projectData();
 }
+
+void GridCreatingCondition::loadExternalData(const QString&)
+{}
+
+void GridCreatingCondition::saveExternalData(const QString&)
+{}

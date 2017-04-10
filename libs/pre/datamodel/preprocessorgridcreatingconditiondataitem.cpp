@@ -17,10 +17,14 @@
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingconditioncreator.h>
+#include <guicore/pre/gridcreatingcondition/gridcreatingconditionio.h>
+#include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/lastiodirectory.h>
 
 #include <QAction>
+#include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
 #include <QStandardItem>
@@ -50,6 +54,12 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	impl->m_deleteAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition..."), this);
 	impl->m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCondition()));
+
+	impl->m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGridCreatingConditionDataItem::tr("&Import..."), this);
+	connect(impl->m_importAction, SIGNAL(triggered()), this, SLOT(importData()));
+
+	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), PreProcessorGridCreatingConditionDataItem::tr("&Export..."), this);
+	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportData()));
 
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
 	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(*(gTypeItem->gridType()));
@@ -87,11 +97,16 @@ void PreProcessorGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
 {
 	if (impl->m_condition == nullptr) {
 		menu->addAction(impl->m_switchAlgorithmAction);
+		menu->addSeparator();
+		menu->addAction(impl->m_importAction);
 		return;
 	}
 	menu->addAction(impl->m_createAction);
 	menu->addSeparator();
 	menu->addAction(impl->m_switchAlgorithmAction);
+	menu->addSeparator();
+	menu->addAction(impl->m_importAction);
+	menu->addAction(impl->m_exportAction);
 	menu->addSeparator();
 	menu->addAction(impl->m_deleteAction);
 }
@@ -273,6 +288,16 @@ QAction* PreProcessorGridCreatingConditionDataItem::clearAction() const
 	return impl->m_clearAction;
 }
 
+QAction* PreProcessorGridCreatingConditionDataItem::importAction() const
+{
+	return impl->m_importAction;
+}
+
+QAction* PreProcessorGridCreatingConditionDataItem::exportAction() const
+{
+	return impl->m_exportAction;
+}
+
 void PreProcessorGridCreatingConditionDataItem::handleStandardItemClicked()
 {
 	if (impl->m_condition == nullptr) {return;}
@@ -405,6 +430,50 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 	// Select this node in object browser.
 	dataModel()->objectBrowserView()->select(m_standardItem->index());
 	impl->m_condition->showInitialDialog();
+}
+
+void PreProcessorGridCreatingConditionDataItem::importData()
+{
+	QString fname = QFileDialog::getOpenFileName(iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC grid creating condition file(*.igcc)"));
+	if (fname.isNull()) {return;}
+
+	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
+	GridCreatingCondition* newcond = GridCreatingConditionIO::importData(&factory, this, fname, projectData()->workDirectory());
+	newcond->setupActors();
+	newcond->assignActorZValues(m_zDepthRange);
+	newcond->setupMenu();
+	connect(newcond, SIGNAL(gridCreated(Grid*)), this, SLOT(handleNewGrid(Grid*)));
+	connect(newcond, SIGNAL(tmpGridCreated(Grid*)), this, SLOT(handleTmpGrid(Grid*)));
+
+	QFileInfo finfo(fname);
+	LastIODirectory::set(finfo.absolutePath());
+
+	bool ret = newcond->init();
+	if (ret) {
+		if (impl->m_condition != nullptr) {
+			impl->m_condition->informDeselection(dataModel()->graphicsView());
+			delete impl->m_condition;
+		}
+		impl->m_condition = newcond;
+	}
+	updateVisibilityWithoutRendering();
+	impl->m_createAction->setEnabled(true);
+	iRICUndoStack::instance().clear();
+
+	dataModel()->objectBrowserView()->select(m_standardItem->index());
+}
+
+void PreProcessorGridCreatingConditionDataItem::exportData()
+{
+	if (impl->m_condition == nullptr) {
+		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("No data to export."));
+		return;
+	}
+
+	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Select file to export"), LastIODirectory::get(), tr("iRIC grid creating condition file(*.igcc)"));
+	if (fname.isNull()) {return;}
+
+	GridCreatingConditionIO::exportData(impl->m_condition, fname, projectData()->workDirectory());
 }
 
 void PreProcessorGridCreatingConditionDataItem::doApplyOffset(double x, double y)

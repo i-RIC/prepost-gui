@@ -710,6 +710,9 @@ void GridCreatingConditionPoisson::setupMenu()
 	m_menu->addAction(impl->m_exportCenterLineAction);
 	m_menu->addAction(impl->m_exportLeftBankLineAction);
 	m_menu->addAction(impl->m_exportRightBankLineAction);
+	m_menu->addSeparator();
+	m_menu->addAction(m_conditionDataItem->importAction());
+	m_menu->addAction(m_conditionDataItem->exportAction());
 
 	impl->m_rightClickingMenu = new QMenu();
 	auto m = impl->m_rightClickingMenu;
@@ -730,6 +733,9 @@ void GridCreatingConditionPoisson::setupMenu()
 	m->addAction(impl->m_exportCenterLineAction);
 	m->addAction(impl->m_exportLeftBankLineAction);
 	m->addAction(impl->m_exportRightBankLineAction);
+	m_menu->addSeparator();
+	m_menu->addAction(m_conditionDataItem->importAction());
+	m_menu->addAction(m_conditionDataItem->exportAction());
 }
 
 void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewInterface* v)
@@ -1092,6 +1098,8 @@ void GridCreatingConditionPoisson::doLoadFromProjectMainFile(const QDomNode& nod
 	impl->m_iDiv = iRIC::getIntAttribute(node, "iDiv", 10);
 	impl->m_jDiv = iRIC::getIntAttribute(node, "jDiv", 10);
 	impl->m_maxIterations = iRIC::getIntAttribute(node, "maxIter", 20);
+	impl->m_previousLeftBankDistance = iRIC::getDoubleAttribute(node, "leftDistance", 10);
+	impl->m_previousRightBankDistance = iRIC::getDoubleAttribute(node, "rightDistance", 10);
 }
 
 void GridCreatingConditionPoisson::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -1099,6 +1107,8 @@ void GridCreatingConditionPoisson::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	iRIC::setIntAttribute(writer, "iDiv", impl->m_iDiv);
 	iRIC::setIntAttribute(writer, "jDiv", impl->m_jDiv);
 	iRIC::setIntAttribute(writer, "maxIter", impl->m_maxIterations);
+	iRIC::setDoubleAttribute(writer, "leftDistance", impl->m_previousLeftBankDistance);
+	iRIC::setDoubleAttribute(writer, "rightDistance", impl->m_previousRightBankDistance);
 }
 
 void GridCreatingConditionPoisson::loadExternalData(const QString& filename)

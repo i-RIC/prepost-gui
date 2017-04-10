@@ -12,6 +12,9 @@ public:
 	QAction* m_switchAlgorithmAction;
 	QAction* m_deleteAction;
 	QAction* m_clearAction;
+
+	QAction* m_importAction;
+	QAction* m_exportAction;
 };
 
 #endif // PREPROCESSORGRIDCREATINGCONDITIONDATAITEM_IMPL_H
