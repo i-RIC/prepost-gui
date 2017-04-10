@@ -4,6 +4,7 @@
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "poissonsolver.h"
 #include "springsolverthread.h"
+#include "springsolver/edge.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
 #include "private/gridcreatingconditionpoisson_definenewpointcommand.h"
@@ -50,6 +51,7 @@
 #include <QCoreApplication>
 #include <QDataStream>
 #include <QFile>
+#include <QLocale>
 #include <QMenu>
 #include <QKeyEvent>
 #include <QMessageBox>
@@ -61,6 +63,8 @@ const int LINEWIDTH_NARROW = 1;
 
 const int POINTSIZE = 5;
 const int FONTSIZE = 17;
+
+const int SPLINE_FACTOR = 10;
 
 GeoDataRiverSurvey* findRiverSurveyData(GridCreatingCondition* cond)
 {
@@ -224,7 +228,8 @@ void savePolyLine(QDataStream* stream, const PolyLineController& polyLine)
 
 GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
 	m_parent {parent},
-	m_activeLine {&m_centerLineController},
+	m_activePoints {&m_centerLineController},
+	m_activeLine {&m_centerLineSplineController},
 	m_mouseEventMode {MouseEventMode::BeforeDefining},
 
 	m_iDiv {10},
@@ -280,16 +285,37 @@ void GridCreatingConditionPoisson::Impl::finishDefiningLine()
 	m_parent->pushCommand(new FinishDefiningCommand(m_parent));
 }
 
-void GridCreatingConditionPoisson::Impl::updateLabels()
+void GridCreatingConditionPoisson::Impl::updateLabelsAndSplines()
 {
 	auto col = m_parent->actor2DCollection();
+
+	auto center = m_centerLineController.polyLine();
+	auto left = m_leftBankLineController.polyLine();
+	auto right = m_rightBankLineController.polyLine();
+
+	std::vector<QPointF> empty;
+	if (center.size() >= 2) {
+		auto centerLineSpline = buildSplinePoints(m_centerLineController.polyData()->GetPoints(), center.size() * SPLINE_FACTOR);
+		m_centerLineSplineController.setPolyLine(centerLineSpline);
+	} else {
+		m_centerLineSplineController.setPolyLine(empty);
+	}
+	if (left.size() >= 2) {
+		auto leftBankLineSpline = buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), left.size() * SPLINE_FACTOR);
+		m_leftBankLineSplineController.setPolyLine(leftBankLineSpline);
+	} else {
+		m_leftBankLineSplineController.setPolyLine(empty);
+	}
+	if (right.size() >= 2) {
+		auto rightBankLineSpline = buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), right.size() * SPLINE_FACTOR);
+		m_rightBankLineSplineController.setPolyLine(rightBankLineSpline);
+	}
 
 	m_upstreamActor.actor()->VisibilityOff();
 	m_downstreamActor.actor()->VisibilityOff();
 	col->RemoveItem(m_upstreamActor.actor());
 	col->RemoveItem(m_downstreamActor.actor());
 
-	std::vector<QPointF> empty;
 	m_upstreamLineController.setPolyLine(empty);
 	m_downstreamLineController.setPolyLine(empty);
 
@@ -303,9 +329,6 @@ void GridCreatingConditionPoisson::Impl::updateLabels()
 
 	if (m_leftBankLineController.polyLine().size() > 0 && m_rightBankLineController.polyLine().size() > 0) {
 		std::vector<QPointF> upstream, downstream;
-		auto center = m_centerLineController.polyLine();
-		auto left = m_leftBankLineController.polyLine();
-		auto right = m_rightBankLineController.polyLine();
 
 		upstream.push_back(left.at(0));
 		upstream.push_back(center.at(0));
@@ -334,18 +357,24 @@ void GridCreatingConditionPoisson::Impl::updateMouseEventMode(const QPoint& mous
 
 	// switch activeLine
 	int tmp_edgeid;
-	if (m_leftBankLineController.isEdgeSelectable(worldPos, radius, &tmp_edgeid)){
-		m_activeLine = &m_leftBankLineController;
-	} else if (m_rightBankLineController.isEdgeSelectable(worldPos, radius, &tmp_edgeid)){
-		m_activeLine = &m_rightBankLineController;
+	if (m_leftBankLineSplineController.isEdgeSelectable(worldPos, radius, &tmp_edgeid)){
+		m_activePoints = &m_leftBankLineController;
+		m_activeLine = &m_leftBankLineSplineController;
+	} else if (m_rightBankLineSplineController.isEdgeSelectable(worldPos, radius, &tmp_edgeid)){
+		m_activePoints = &m_rightBankLineController;
+		m_activeLine = &m_rightBankLineSplineController;
 	} else {
-		m_activeLine = &m_centerLineController;
+		m_activePoints = &m_centerLineController;
+		m_activeLine = &m_centerLineSplineController;
 	}
 
+	Edge lineEdge;
 	switch (m_mouseEventMode) {
 	case MouseEventMode::AddVertexNotPossible:
 	case MouseEventMode::AddVertexPrepare:
 		if (m_activeLine->isEdgeSelectable(worldPos, radius, &m_selectedEdgeId)) {
+			lineEdge.setLine(m_activePoints->polyLine());
+			m_selectedEdgeId = lineEdge.findNearestLine(worldPos.x(), worldPos.y());
 			m_mouseEventMode = MouseEventMode::AddVertexPrepare;
 		} else {
 			m_mouseEventMode = MouseEventMode::AddVertexNotPossible;
@@ -353,22 +382,18 @@ void GridCreatingConditionPoisson::Impl::updateMouseEventMode(const QPoint& mous
 		break;
 	case MouseEventMode::RemoveVertexNotPossible:
 	case MouseEventMode::RemoveVertexPrepare:
-		if (m_activeLine->isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
+		if (m_activePoints->isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
 			m_mouseEventMode = MouseEventMode::RemoveVertexPrepare;
 		} else {
 			m_mouseEventMode = MouseEventMode::RemoveVertexNotPossible;
 		}
 		break;
 	case MouseEventMode::Normal:
-	case MouseEventMode::TranslatePrepare:
 	case MouseEventMode::MoveVertexPrepare:
-	case MouseEventMode::Translate:
 	case MouseEventMode::MoveVertex:
 	case MouseEventMode::AddVertex:
-		if (m_activeLine->isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
+		if (m_activePoints->isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
 			m_mouseEventMode = MouseEventMode::MoveVertexPrepare;
-		} else if (m_activeLine->isEdgeSelectable(worldPos, radius, &m_selectedEdgeId)) {
-			m_mouseEventMode = MouseEventMode::TranslatePrepare;
 		} else {
 			m_mouseEventMode = MouseEventMode::Normal;
 		}
@@ -392,7 +417,6 @@ void GridCreatingConditionPoisson::Impl::updateMouseCursor(PreProcessorGraphicsV
 	case MouseEventMode::Defining:
 		v->setCursor(Qt::CrossCursor);
 		break;
-	case MouseEventMode::TranslatePrepare:
 	case MouseEventMode::MoveVertexPrepare:
 		v->setCursor(Qt::OpenHandCursor);
 		break;
@@ -402,7 +426,6 @@ void GridCreatingConditionPoisson::Impl::updateMouseCursor(PreProcessorGraphicsV
 	case MouseEventMode::RemoveVertexPrepare:
 		v->setCursor(m_removeCursor);
 		break;
-	case MouseEventMode::Translate:
 	case MouseEventMode::MoveVertex:
 	case MouseEventMode::AddVertex:
 		v->setCursor(Qt::ClosedHandCursor);
@@ -415,7 +438,6 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 	switch (m_mouseEventMode) {
 	case MouseEventMode::BeforeDefining:
 	case MouseEventMode::Defining:
-	case MouseEventMode::Translate:
 	case MouseEventMode::MoveVertex:
 		m_addVertexAction->setDisabled(true);
 		m_addVertexAction->setChecked(false);
@@ -424,7 +446,6 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 		m_coordEditAction->setEnabled(false);
 		break;
 	case MouseEventMode::Normal:
-	case MouseEventMode::TranslatePrepare:
 	case MouseEventMode::MoveVertexPrepare:
 		m_addVertexAction->setEnabled(true);
 		m_addVertexAction->setChecked(false);
@@ -479,7 +500,7 @@ void GridCreatingConditionPoisson::Impl::copyCenterLine(GeoDataRiverSurvey *data
 	if (line.size() < 2) {return;}
 
 	m_mouseEventMode = MouseEventMode::Normal;
-	updateLabels();
+	updateLabelsAndSplines();
 	updateActionStatus();
 }
 
@@ -577,11 +598,11 @@ GridCreatingConditionPoisson::~GridCreatingConditionPoisson()
 	col2->RemoveItem(impl->m_downstreamActor.actor());
 
 	auto col = actorCollection();
-	col->RemoveItem(impl->m_centerLineController.linesActor());
+	col->RemoveItem(impl->m_centerLineSplineController.linesActor());
 	col->RemoveItem(impl->m_centerLineController.pointsActor());
-	col->RemoveItem(impl->m_leftBankLineController.linesActor());
+	col->RemoveItem(impl->m_leftBankLineSplineController.linesActor());
 	col->RemoveItem(impl->m_leftBankLineController.pointsActor());
-	col->RemoveItem(impl->m_rightBankLineController.linesActor());
+	col->RemoveItem(impl->m_rightBankLineSplineController.linesActor());
 	col->RemoveItem(impl->m_rightBankLineController.pointsActor());
 	col->RemoveItem(impl->m_upstreamLineController.linesActor());
 	col->RemoveItem(impl->m_downstreamLineController.linesActor());
@@ -589,11 +610,11 @@ GridCreatingConditionPoisson::~GridCreatingConditionPoisson()
 	renderer()->RemoveActor2D(impl->m_upstreamActor.actor());
 	renderer()->RemoveActor2D(impl->m_downstreamActor.actor());
 
-	renderer()->RemoveActor(impl->m_centerLineController.linesActor());
+	renderer()->RemoveActor(impl->m_centerLineSplineController.linesActor());
 	renderer()->RemoveActor(impl->m_centerLineController.pointsActor());
-	renderer()->RemoveActor(impl->m_leftBankLineController.linesActor());
+	renderer()->RemoveActor(impl->m_leftBankLineSplineController.linesActor());
 	renderer()->RemoveActor(impl->m_leftBankLineController.pointsActor());
-	renderer()->RemoveActor(impl->m_rightBankLineController.linesActor());
+	renderer()->RemoveActor(impl->m_rightBankLineSplineController.linesActor());
 	renderer()->RemoveActor(impl->m_rightBankLineController.pointsActor());
 	renderer()->RemoveActor(impl->m_upstreamLineController.linesActor());
 	renderer()->RemoveActor(impl->m_downstreamLineController.linesActor());
@@ -681,7 +702,7 @@ void GridCreatingConditionPoisson::clear()
 	impl->m_leftBankLineController.setPolyLine(empty);
 
 	impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 	iRICUndoStack::instance().clear();
 
 	renderGraphicsView();
@@ -699,22 +720,21 @@ void GridCreatingConditionPoisson::setupActors()
 
 	renderer()->AddActor2D(impl->m_upstreamActor.actor());
 	renderer()->AddActor2D(impl->m_downstreamActor.actor());
-
-	renderer()->AddActor(impl->m_centerLineController.linesActor());
+	renderer()->AddActor(impl->m_centerLineSplineController.linesActor());
 	renderer()->AddActor(impl->m_centerLineController.pointsActor());
-	renderer()->AddActor(impl->m_leftBankLineController.linesActor());
+	renderer()->AddActor(impl->m_leftBankLineSplineController.linesActor());
 	renderer()->AddActor(impl->m_leftBankLineController.pointsActor());
-	renderer()->AddActor(impl->m_rightBankLineController.linesActor());
+	renderer()->AddActor(impl->m_rightBankLineSplineController.linesActor());
 	renderer()->AddActor(impl->m_rightBankLineController.pointsActor());
 	renderer()->AddActor(impl->m_upstreamLineController.linesActor());
 	renderer()->AddActor(impl->m_downstreamLineController.linesActor());
 
 	auto col = actorCollection();
-	col->AddItem(impl->m_centerLineController.linesActor());
+	col->AddItem(impl->m_centerLineSplineController.linesActor());
 	col->AddItem(impl->m_centerLineController.pointsActor());
-	col->AddItem(impl->m_leftBankLineController.linesActor());
+	col->AddItem(impl->m_leftBankLineSplineController.linesActor());
 	col->AddItem(impl->m_leftBankLineController.pointsActor());
-	col->AddItem(impl->m_rightBankLineController.linesActor());
+	col->AddItem(impl->m_rightBankLineSplineController.linesActor());
 	col->AddItem(impl->m_rightBankLineController.pointsActor());
 	col->AddItem(impl->m_upstreamLineController.linesActor());
 	col->AddItem(impl->m_downstreamLineController.linesActor());
@@ -766,8 +786,11 @@ void GridCreatingConditionPoisson::setupMenu()
 void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewInterface* v)
 {
 	makeLineWideWithPoints(&(impl->m_centerLineController));
+	makeLineWideWithPoints(&(impl->m_centerLineSplineController));
 	makeLineWideWithPoints(&(impl->m_leftBankLineController));
+	makeLineWideWithPoints(&(impl->m_leftBankLineSplineController));
 	makeLineWideWithPoints(&(impl->m_rightBankLineController));
+	makeLineWideWithPoints(&(impl->m_rightBankLineSplineController));
 	makeLineWideWithPoints(&(impl->m_upstreamLineController));
 	makeLineWideWithPoints(&(impl->m_downstreamLineController));
 	impl->updateMouseCursor(v);
@@ -776,8 +799,11 @@ void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewInter
 void GridCreatingConditionPoisson::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
 	makeLineNarrowNoPoints(&(impl->m_centerLineController));
+	makeLineNarrowNoPoints(&(impl->m_centerLineSplineController));
 	makeLineNarrowNoPoints(&(impl->m_leftBankLineController));
+	makeLineNarrowNoPoints(&(impl->m_leftBankLineSplineController));
 	makeLineNarrowNoPoints(&(impl->m_rightBankLineController));
+	makeLineNarrowNoPoints(&(impl->m_rightBankLineSplineController));
 	makeLineNarrowNoPoints(&(impl->m_upstreamLineController));
 	makeLineNarrowNoPoints(&(impl->m_downstreamLineController));
 	v->unsetCursor();
@@ -811,7 +837,6 @@ void GridCreatingConditionPoisson::mouseMoveEvent(QMouseEvent* event, PreProcess
 {
 	switch (impl->m_mouseEventMode) {
 	case Impl::MouseEventMode::Normal:
-	case Impl::MouseEventMode::TranslatePrepare:
 	case Impl::MouseEventMode::MoveVertexPrepare:
 	case Impl::MouseEventMode::AddVertexPrepare:
 	case Impl::MouseEventMode::AddVertexNotPossible:
@@ -822,9 +847,6 @@ void GridCreatingConditionPoisson::mouseMoveEvent(QMouseEvent* event, PreProcess
 		break;
 	case Impl::MouseEventMode::Defining:
 		pushUpdateLabelsCommand(new DefineNewPointCommand(false, event->pos(), this));
-		break;
-	case Impl::MouseEventMode::Translate:
-		pushUpdateLabelsCommand(new MoveCommand(false, impl->m_previousPos, event->pos(), this));
 		break;
 	case Impl::MouseEventMode::MoveVertex:
 		pushUpdateLabelsCommand(new MoveVertexCommand(false, impl->m_previousPos, event->pos(), impl->m_selectedVertexId, this));
@@ -851,10 +873,6 @@ void GridCreatingConditionPoisson::mousePressEvent(QMouseEvent* event, PreProces
 			pushUpdateLabelsCommand(new DefineNewPointCommand(true, event->pos(), this));
 		case Impl::MouseEventMode::Defining:
 			pushUpdateLabelsCommand(new DefineNewPointCommand(true, event->pos(), this));
-			break;
-		case Impl::MouseEventMode::TranslatePrepare:
-			impl->m_mouseEventMode = Impl::MouseEventMode::Translate;
-			pushUpdateLabelsCommand(new MoveCommand(true, event->pos(), event->pos(), this));
 			break;
 		case Impl::MouseEventMode::MoveVertexPrepare:
 			impl->m_mouseEventMode = Impl::MouseEventMode::MoveVertex;
@@ -903,13 +921,13 @@ void GridCreatingConditionPoisson::updateZDepthRangeItemCount(ZDepthRange& range
 void GridCreatingConditionPoisson::assignActorZValues(const ZDepthRange& range)
 {
 	impl->m_centerLineController.pointsActor()->SetPosition(0, 0, range.max());
-	impl->m_centerLineController.linesActor()->SetPosition(0, 0, range.max());
+	impl->m_centerLineSplineController.linesActor()->SetPosition(0, 0, range.max());
 
 	impl->m_leftBankLineController.pointsActor()->SetPosition(0, 0, range.max());
-	impl->m_leftBankLineController.linesActor()->SetPosition(0, 0, range.max());
+	impl->m_leftBankLineSplineController.linesActor()->SetPosition(0, 0, range.max());
 
 	impl->m_rightBankLineController.pointsActor()->SetPosition(0, 0, range.max());
-	impl->m_rightBankLineController.linesActor()->SetPosition(0, 0, range.max());
+	impl->m_rightBankLineSplineController.linesActor()->SetPosition(0, 0, range.max());
 
 	impl->m_upstreamLineController.linesActor()->SetPosition(0, 0, range.max());
 	impl->m_downstreamLineController.linesActor()->SetPosition(0, 0, range.max());
@@ -1010,7 +1028,7 @@ void GridCreatingConditionPoisson::buildBankLines()
 	impl->m_previousLeftBankDistance = leftDistance;
 	impl->m_previousRightBankDistance = rightDistance;
 
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 
 	renderGraphicsView();
 }
@@ -1029,7 +1047,7 @@ void GridCreatingConditionPoisson::importCenterLine()
 	impl->m_centerLineController.setPolyLine(polyLine);
 	impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 	renderGraphicsView();
 }
 
@@ -1062,7 +1080,7 @@ void GridCreatingConditionPoisson::importLeftBankLine()
 	}
 
 	impl->m_leftBankLineController.setPolyLine(polyLine);
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 
 	renderGraphicsView();
 }
@@ -1096,7 +1114,7 @@ void GridCreatingConditionPoisson::importRightBankLine()
 	}
 
 	impl->m_rightBankLineController.setPolyLine(polyLine);
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 
 	renderGraphicsView();
 }
@@ -1152,7 +1170,7 @@ void GridCreatingConditionPoisson::loadExternalData(const QString& filename)
 	} else {
 		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
 	}
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 	impl->updateActionStatus();
 }
 
@@ -1175,7 +1193,7 @@ void GridCreatingConditionPoisson::doApplyOffset(double x, double y)
 	applyOffsetToPolyLine(&(impl->m_leftBankLineController), x, y);
 	applyOffsetToPolyLine(&(impl->m_rightBankLineController), x, y);
 
-	impl->updateLabels();
+	impl->updateLabelsAndSplines();
 }
 
 void GridCreatingConditionPoisson::pushUpdateLabelsCommand(QUndoCommand* com)

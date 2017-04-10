@@ -21,8 +21,6 @@ public:
 		Normal,
 		BeforeDefining,
 		Defining,
-		Translate,
-		TranslatePrepare,
 		MoveVertex,
 		MoveVertexPrepare,
 		AddVertex,
@@ -36,7 +34,7 @@ public:
 	~Impl();
 
 	void finishDefiningLine();
-	void updateLabels();
+	void updateLabelsAndSplines();
 	void updateMouseEventMode(const QPoint& mousePosition);
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateActionStatus();
@@ -48,6 +46,10 @@ public:
 	PolyLineController m_leftBankLineController;
 	PolyLineController m_rightBankLineController;
 
+	PolyLineController m_centerLineSplineController;
+	PolyLineController m_leftBankLineSplineController;
+	PolyLineController m_rightBankLineSplineController;
+
 	PolyLineController m_upstreamLineController;
 	PolyLineController m_downstreamLineController;
 
@@ -56,6 +58,7 @@ public:
 	vtkLabel2DActor m_leftBankActor;
 	vtkLabel2DActor m_rightBankActor;
 
+	PolyLineController* m_activePoints;
 	PolyLineController* m_activeLine;
 
 	MouseEventMode m_mouseEventMode;

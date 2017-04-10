@@ -9,13 +9,13 @@ GridCreatingConditionPoisson::UpdateLabelsCommand::UpdateLabelsCommand(QUndoComm
 void GridCreatingConditionPoisson::UpdateLabelsCommand::redo()
 {
 	m_command->redo();
-	m_condition->impl->updateLabels();
+	m_condition->impl->updateLabelsAndSplines();
 }
 
 void GridCreatingConditionPoisson::UpdateLabelsCommand::undo()
 {
 	m_command->undo();
-	m_condition->impl->updateLabels();
+	m_condition->impl->updateLabelsAndSplines();
 }
 
 int GridCreatingConditionPoisson::UpdateLabelsCommand::id() const

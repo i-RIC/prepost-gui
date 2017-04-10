@@ -1,9 +1,20 @@
 #include "edge.h"
 
+#include <QPointF>
 #include <QVector2D>
 
 Edge::Edge()
 {}
+
+void Edge::setLine(const std::vector<QPointF>& line)
+{
+	std::vector<double> x, y;
+	for (const QPointF& p : line) {
+		x.push_back(p.x());
+		y.push_back(p.y());
+	}
+	setXY(x, y);
+}
 
 void Edge::setXY(const std::vector<double>& x, const std::vector<double>& y)
 {
@@ -16,7 +27,7 @@ int Edge::findNearestLine(double x, double y)
 	int edgeId = 0;
 	double minDistSquared;
 	double resultX, resultY;
-	for (int i = 0; i < m_x.size(); ++i) {
+	for (int i = 0; i < m_x.size() - 1; ++i) {
 		nearestPoint(x, y, i, &resultX, &resultY);
 		double distSquared = distanceSquared(x, y, resultX, resultY);
 		if (i == 0 || distSquared < minDistSquared) {

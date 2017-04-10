@@ -8,7 +8,7 @@ GridCreatingConditionPoisson::MoveVertexCommand::MoveVertexCommand(bool keyDown,
 	QUndoCommand {GridCreatingConditionPoisson::tr("Move Line Vertex")},
 	m_keyDown {keyDown},
 	m_vertexId {vertexId},
-	m_polyLine {cond->impl->m_activeLine}
+	m_polyLine {cond->impl->m_activePoints}
 {
 	double x = from.x();
 	double y = from.y();

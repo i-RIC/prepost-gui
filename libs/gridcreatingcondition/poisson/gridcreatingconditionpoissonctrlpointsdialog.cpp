@@ -16,7 +16,7 @@ GridCreatingConditionPoissonCtrlPointsDialog::~GridCreatingConditionPoissonCtrlP
 	delete ui;
 }
 
-void GridCreatingConditionPoissonCtrlPointsDialog::setLocale(const QLocale &locale)
+void GridCreatingConditionPoissonCtrlPointsDialog::setLocale(const QLocale& locale)
 {
 	QString fname = QString(":/libs/gridcreatingcondition/poisson/images/%1/imgCtrlCrossSections.png").arg(locale.name());
 	QFile file(fname);

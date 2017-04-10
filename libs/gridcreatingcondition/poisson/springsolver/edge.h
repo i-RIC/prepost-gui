@@ -3,12 +3,15 @@
 
 #include <vector>
 
+class QPointF;
 class QVector2D;
 
 class Edge
 {
 public:
 	Edge();
+
+	void setLine(const std::vector<QPointF>& line);
 	void setXY(const std::vector<double>& x, const std::vector<double>& y);
 
 	int findNearestLine(double x, double y);

@@ -10,7 +10,7 @@ GridCreatingConditionPoisson::AddVertexCommand::AddVertexCommand(bool keyDown, i
 	QUndoCommand {GridCreatingConditionPoisson::tr("Insert Line Vertex")},
 	m_keyDown {keyDown},
 	m_vertexId {edgeId + 1},
-	m_polyLine {cond->impl->m_activeLine}
+	m_polyLine {cond->impl->m_activePoints}
 {
 	double x = point.x();
 	double y = point.y();

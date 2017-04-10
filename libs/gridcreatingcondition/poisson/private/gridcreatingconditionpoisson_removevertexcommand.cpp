@@ -4,7 +4,7 @@
 GridCreatingConditionPoisson::RemoveVertexCommand::RemoveVertexCommand(int vertexId, GridCreatingConditionPoisson* cond) :
 	QUndoCommand {GridCreatingConditionPoisson::tr("Remove Vertex")},
 	m_vertexId {vertexId},
-	m_polyLine {cond->impl->m_activeLine},
+	m_polyLine {cond->impl->m_activePoints},
 	m_condition {cond}
 {
 	m_vertexPosition = m_polyLine->polyLine().at(m_vertexId);
