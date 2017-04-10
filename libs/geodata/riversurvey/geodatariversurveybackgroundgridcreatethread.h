@@ -17,10 +17,6 @@ class GeoDataRiverSurveyBackgroundGridCreateThread : public QThread
 {
 	Q_OBJECT
 
-private:
-	static const int IDIVNUM = 4;
-	static const int JDIVNUM = 20;
-
 public:
 	GeoDataRiverSurveyBackgroundGridCreateThread(GeoDataRiverSurvey* parent);
 	~GeoDataRiverSurveyBackgroundGridCreateThread();

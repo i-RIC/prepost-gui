@@ -55,6 +55,11 @@
        <string>Web Elevation Data</string>
       </attribute>
      </widget>
+     <widget class="PreferencePageBackgroundGrid" name="backgroundGridTab">
+      <attribute name="title">
+       <string>Background Grid</string>
+      </attribute>
+     </widget>
     </widget>
    </item>
    <item>
@@ -104,6 +109,12 @@
    <class>PreferencePageWebCsvTile</class>
    <extends>QWidget</extends>
    <header>pref/preferencepagewebcsvtile.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageBackgroundGrid</class>
+   <extends>QWidget</extends>
+   <header>pref/preferencepagebackgroundgrid.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
