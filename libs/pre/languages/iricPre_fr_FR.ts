@@ -1335,7 +1335,8 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="180"/>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="209"/>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="384"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="469"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="446"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="478"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1371,17 +1372,22 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="437"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="473"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="482"/>
         <source>iRIC grid creating condition file(*.igcc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="469"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="446"/>
+        <source>The grid creating condition in this file is not compatible with the solver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="478"/>
         <source>No data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="473"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="482"/>
         <source>Select file to export</source>
         <translation type="unfinished"></translation>
     </message>

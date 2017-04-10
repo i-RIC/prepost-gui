@@ -439,6 +439,15 @@ void PreProcessorGridCreatingConditionDataItem::importData()
 
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
 	GridCreatingCondition* newcond = GridCreatingConditionIO::importData(&factory, this, fname, projectData()->workDirectory());
+
+	auto gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(*(gTypeItem->gridType()));
+	if (! cList.contains(newcond->creator())) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid creating condition in this file is not compatible with the solver"));
+		delete newcond;
+		return;
+	}
+
 	newcond->setupActors();
 	newcond->assignActorZValues(m_zDepthRange);
 	newcond->setupMenu();
