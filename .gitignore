@@ -3,6 +3,7 @@
 moc_*.cpp
 ui_*.h
 *.pdb
+*.vcproj
 *.vcxproj
 *.vcxproj.filters
 *.ilk

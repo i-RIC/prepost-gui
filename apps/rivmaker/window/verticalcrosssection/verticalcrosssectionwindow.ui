@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VerticalCrossSectionWindow</class>
+ <widget class="QWidget" name="VerticalCrossSectionWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>678</width>
+    <height>347</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Vertical Cross Section Window</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../rivmaker.qrc">
+    <normaloff>:/images/iconVerticalCrosssection.png</normaloff>:/images/iconVerticalCrosssection.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QwtPlot" name="qwtWidget" native="true"/>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="arbitraryCheckBox">
+         <property name="text">
+          <string>Arbitrary HWM</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../rivmaker.qrc">
+           <normaloff>:/images/iconAHWM.png</normaloff>:/images/iconAHWM.png</iconset>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="leftCheckBox">
+         <property name="text">
+          <string>Left Bank HWM</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../rivmaker.qrc">
+           <normaloff>:/images/iconLBHWM.png</normaloff>:/images/iconLBHWM.png</iconset>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="rightCheckBox">
+         <property name="text">
+          <string>Right Bank HWM</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../rivmaker.qrc">
+           <normaloff>:/images/iconRBHWM.png</normaloff>:/images/iconRBHWM.png</iconset>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableView" name="tableView"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QWidget</extends>
+   <header>qwt_plot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../rivmaker.qrc"/>
+ </resources>
+ <connections/>
+</ui>
