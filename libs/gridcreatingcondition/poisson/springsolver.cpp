@@ -342,8 +342,9 @@ void SpringSolver::solve(std::vector<double>* x, std::vector<double>* y, int ima
 {
 	int count = 0;
 	double err = 0;
-	double errLimit = 0.05;
+	double errLimit = 0.3;
 	double springK = 1.2;
+	double springKMax = 1.5;
 
 	Grid grid(x, y, imax, jmax);
 	do {
@@ -351,7 +352,7 @@ void SpringSolver::solve(std::vector<double>* x, std::vector<double>* y, int ima
 		err = updateGrid(&grid, springK);
 		if (err > errLimit) {
 			springK *= 0.5;
-		} else {
+		} else if (springK < springKMax){
 			springK *= 1.05;
 		}
 
