@@ -3,13 +3,21 @@
 #include <QDir>
 #include <QFileInfo>
 
-StartPageRecentProject::StartPageRecentProject(const QString& filename, QWidget* parent)
-	: StartPageLabel(parent)
+namespace {
+
+const int MAXFILENAMELEN = 35;
+const int FOLDERNAMELEN = 10;
+
+} // namespace
+
+StartPageRecentProject::StartPageRecentProject(const QString& filename, QWidget* parent) :
+	StartPageLabel(parent),
+	m_filename {filename}
 {
-	m_filename = filename;
 	QFileInfo finfo(filename);
 	QString title = finfo.baseName();
 	setTitle(title);
+
 	QString subtitle = filename;
 	if (subtitle.length() >= MAXFILENAMELEN) {
 		QString filename = finfo.fileName();
@@ -22,5 +30,6 @@ StartPageRecentProject::StartPageRecentProject(const QString& filename, QWidget*
 		subtitle.append("/");
 		subtitle.append(filename);
 	}
+
 	setSubtitle(QDir::toNativeSeparators(subtitle));
 }

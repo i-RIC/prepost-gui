@@ -1,5 +1,6 @@
 #include "polygoncsvimporter.h"
 #include "polylinecsvimporter.h"
+#include "polygonutil.h"
 
 #include <QPolygonF>
 #include <QStringList>
@@ -9,13 +10,13 @@ QPolygonF PolygonCsvImporter::importData(const QString& filename, const QString&
 	QPolygonF ret, errorRet;
 
 	PolylineCsvImporter importer;
-	QVector<QPointF> points = importer.importData(filename, selectedFilter, w);
+	std::vector<QPointF> points = importer.importData(filename, selectedFilter, w);
 
-	if (points.isEmpty()) {
+	if (points.size() == 0) {
 		return errorRet;
 	}
 
-	ret << points;
+	ret = PolygonUtil::fromStdVector(points);
 
 	if (ret.first() != ret.last()) {
 		ret.push_back(ret.first());

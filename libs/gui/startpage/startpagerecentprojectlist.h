@@ -24,6 +24,7 @@ private:
 	void setupItems();
 	void add(const QString& projectFileName);
 	void setup();
+
 	QVBoxLayout* m_layout;
 	int m_numberOfProjects;
 };

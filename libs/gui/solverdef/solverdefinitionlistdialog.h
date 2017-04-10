@@ -29,7 +29,7 @@ public slots:
 	/// Show detail dialog about the solver currently selected
 	void showDetailOfCurrent();
 
-protected:
+private:
 	void changeEvent(QEvent* e) override;
 
 private:

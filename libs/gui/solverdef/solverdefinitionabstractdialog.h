@@ -20,14 +20,13 @@ public:
 	SolverDefinitionAbstractDialog(const SolverDefinitionAbstract* solver, QWidget* parent = nullptr);
 	~SolverDefinitionAbstractDialog();
 
-protected:
+private:
 	void changeEvent(QEvent* e) override;
 
 private:
-	/// Setup dialog widgets to show the information about the solver
 	void setup();
+
 	Ui::SolverDefinitionAbstractDialog* ui;
-	/// The container that stores solver information
 	const SolverDefinitionAbstract* m_solverDefinition;
 };
 

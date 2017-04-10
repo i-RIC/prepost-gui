@@ -40,6 +40,8 @@ public:
 	QAction* switchAction() const override;
 	QAction* deleteAction() const;
 	QAction* clearAction() const override;
+	QAction* importAction() const override;
+	QAction* exportAction() const override;
 	QMenu* menu();
 	virtual void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(3);}
 
@@ -60,6 +62,9 @@ private slots:
 	void handleNewGrid(Grid* newgrid);
 	void handleTmpGrid(Grid* tmpgrid);
 	void switchAlgorithm();
+
+	void importData();
+	void exportData();
 
 signals:
 	void gridCreated();

@@ -3,7 +3,7 @@
 
 #include "geoio_global.h"
 
-#include <QVector>
+#include <vector>
 
 class QPointF;
 class QWidget;
@@ -11,8 +11,8 @@ class QWidget;
 class GEOIODLL_EXPORT PolylineIO
 {
 public:
-	static QVector<QPointF> importData(QWidget* w);
-	static void exportData(const QVector<QPointF>& polyline, QWidget* w);
+	static std::vector<QPointF> importData(QWidget* w);
+	static void exportData(const std::vector<QPointF>& polyline, QWidget* w);
 
 private:
 	PolylineIO();

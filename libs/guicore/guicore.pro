@@ -356,6 +356,8 @@ HEADERS += guicore_global.h \
            pre/gridcond/gridnodeattributepropertydialog.h \
            pre/gridcreatingcondition/gridcreatingcondition.h \
            pre/gridcreatingcondition/gridcreatingconditioncreator.h \
+           pre/gridcreatingcondition/gridcreatingconditionfactoryi.h \
+           pre/gridcreatingcondition/gridcreatingconditionio.h \
            pre/hydraulicdata/hydraulicdataimporter.h \
            project/inputcond/inputconditioncontainer.h \
            project/inputcond/inputconditioncontainerfunctional.h \
@@ -654,6 +656,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/gridnodeattributepropertydialog.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
+           pre/gridcreatingcondition/gridcreatingconditionio.cpp \
            project/inputcond/inputconditioncontainer.cpp \
            project/inputcond/inputconditioncontainerfunctional.cpp \
            project/inputcond/inputconditioncontainerinteger.cpp \

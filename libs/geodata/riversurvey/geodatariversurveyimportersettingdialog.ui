@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>274</width>
-    <height>109</height>
+    <width>264</width>
+    <height>140</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,6 +35,16 @@
     <widget class="QRadioButton" name="smallestRadioButton">
      <property name="text">
       <string>Where the elevation is the smallest</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="lowWaterWayRadioButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Middle point of Low water way</string>
      </property>
     </widget>
    </item>

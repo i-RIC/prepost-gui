@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>AnimationController</name>
     <message>
@@ -895,7 +895,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>°</source>
-        <translation>°</translation>
+        <translation type="vanished">°</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="265"/>
@@ -11728,6 +11728,11 @@ p, li { white-space: pre-wrap; }
         <translation>Web 標高データ</translation>
     </message>
     <message>
+        <location filename="../pref/preferencedialog.ui" line="60"/>
+        <source>Background Grid</source>
+        <translation>背景格子</translation>
+    </message>
+    <message>
         <source>Snapshot</source>
         <translation type="obsolete">スナップショット</translation>
     </message>
@@ -11749,6 +11754,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Preference Dialog</source>
         <translation type="obsolete">設定ダイアログ</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageBackgroundGrid</name>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="14"/>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="20"/>
+        <source>River Survey Data</source>
+        <translation>河川測量データ</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="28"/>
+        <source>Cross Section Direction:</source>
+        <translation>横断線方向:</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagebackgroundgrid.ui" line="48"/>
+        <source>Between Cross Sections:</source>
+        <translation>横断線の間:</translation>
     </message>
 </context>
 <context>
@@ -11820,19 +11848,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>HTTP Proxy Setting</source>
-        <translation>HTTP プロキシ設定</translation>
+        <translation type="vanished">HTTP プロキシ設定</translation>
     </message>
     <message>
         <source>Use Proxy</source>
-        <translation>プロキシを利用する</translation>
+        <translation type="vanished">プロキシを利用する</translation>
     </message>
     <message>
         <source>Note: This setting is used when using Google Map API to import background image.</source>
-        <translation>説明: この設定は、 Google Map API を利用して背景画像をインポートする際に利用されます。</translation>
+        <translation type="vanished">説明: この設定は、 Google Map API を利用して背景画像をインポートする際に利用されます。</translation>
     </message>
     <message>
         <source>Example: http://proxy.example.com:10080</source>
-        <translation>例: http://proxy.example.com:10080</translation>
+        <translation type="vanished">例: http://proxy.example.com:10080</translation>
     </message>
     <message>
         <source>Recent Projects</source>
@@ -12005,93 +12033,93 @@ p, li { white-space: pre-wrap; }
     <name>PreferencePagePost2d</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Grid Shape</source>
-        <translation>格子形状</translation>
+        <translation type="vanished">格子形状</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation>ベクトル</translation>
+        <translation type="vanished">ベクトル</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>倍率:</translation>
+        <translation type="vanished">倍率:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation>矢印の大きさ:</translation>
+        <translation type="vanished">矢印の大きさ:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation>流線</translation>
+        <translation type="vanished">流線</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation>パーティクルトレース</translation>
+        <translation type="vanished">パーティクルトレース</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大きさ:</translation>
+        <translation type="vanished">大きさ:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePagePost3d</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Grid Shape</source>
-        <translation>格子形状</translation>
+        <translation type="vanished">格子形状</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation>ベクトル</translation>
+        <translation type="vanished">ベクトル</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>倍率:</translation>
+        <translation type="vanished">倍率:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation>矢印の大きさ:</translation>
+        <translation type="vanished">矢印の大きさ:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation>流線</translation>
+        <translation type="vanished">流線</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation>パーティクルトレース</translation>
+        <translation type="vanished">パーティクルトレース</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大きさ:</translation>
+        <translation type="vanished">大きさ:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePagePre</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Grid Color:</source>
-        <translation>格子の色</translation>
+        <translation type="vanished">格子の色</translation>
     </message>
     <message>
         <source>Color Map:</source>
-        <translation>カラーマップ:</translation>
+        <translation type="vanished">カラーマップ:</translation>
     </message>
 </context>
 <context>
@@ -12146,39 +12174,39 @@ p, li { white-space: pre-wrap; }
     <name>PreferencePageSnapshot</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>プレフィックス:</translation>
+        <translation type="vanished">プレフィックス:</translation>
     </message>
     <message>
         <source>Suffix Length:</source>
-        <translation>サフィックス桁数:</translation>
+        <translation type="vanished">サフィックス桁数:</translation>
     </message>
     <message>
         <source>Default Type:</source>
-        <translation>画像の種類:</translation>
+        <translation type="vanished">画像の種類:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windows ビットマップ (*.bmp)</translation>
+        <translation type="vanished">Windows ビットマップ (*.bmp)</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>ポータブルビットマップ (*.ppm)</translation>
+        <translation type="vanished">ポータブルビットマップ (*.ppm)</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 ビットマップ (*.xbm)</translation>
+        <translation type="vanished">X11 ビットマップ (*.xbm)</translation>
     </message>
     <message>
         <source>Windows Bitmap(*.bmp)</source>
@@ -14873,11 +14901,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Animation Speed Setting</source>
-        <translation>アニメーションの速度設定</translation>
+        <translation type="vanished">アニメーションの速度設定</translation>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>アニメーションの描画間隔 (秒):</translation>
+        <translation type="vanished">アニメーションの描画間隔 (秒):</translation>
     </message>
 </context>
 <context>
@@ -15912,7 +15940,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This project files needs solver %1 %2, but it does not exists in this system.</source>
-        <translation>このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
+        <translation type="vanished">このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="455"/>
@@ -15931,11 +15959,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Loading solver information from CGNS file failed. This file can not be imported.</source>
-        <translation>CGNS ファイルからソルバー情報を読み込めませんでした。このファイルはインポートできません。</translation>
+        <translation type="vanished">CGNS ファイルからソルバー情報を読み込めませんでした。このファイルはインポートできません。</translation>
     </message>
     <message>
         <source>This CGNS file needs solver %1 %2, but it does not exists in this system.</source>
-        <translation>この CGNS ファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
+        <translation type="vanished">この CGNS ファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="565"/>
@@ -16181,15 +16209,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This project is for solver %1 %2, but it does not exists in this system. Entering post only mode.</source>
-        <translation>このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
+        <translation type="vanished">このプロジェクトファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <source>Loading solver information from CGNS file failed. Entering post only mode.</source>
-        <translation>CGNS ファイルからソルバー情報を読み込めませんでした。可視化専用モードに移行します。</translation>
+        <translation type="vanished">CGNS ファイルからソルバー情報を読み込めませんでした。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <source>This CGNS file needs solver %1 %2, but it does not exists in this system. Entering post only mode.</source>
-        <translation>このCGNSファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
+        <translation type="vanished">このCGNSファイルはソルバー %1 %2 用のものですが、ソルバーがこのシステムにインストールされていません。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="695"/>
@@ -16203,11 +16231,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot saved as a file (*.ipro). Please save as a project.</source>
-        <translation>巨大な計算結果を持つため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
+        <translation type="vanished">巨大な計算結果を持つため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp);;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation>PNG ファイル (*.png);;JPEG ファイル (*.jpg);;BMP ファイル (*.bmp);;EPS ファイル (*.eps);;PDFファイル (*.pdf);;SVGファイル (*.svg)</translation>
+        <translation type="vanished">PNG ファイル (*.png);;JPEG ファイル (*.jpg);;BMP ファイル (*.bmp);;EPS ファイル (*.eps);;PDFファイル (*.pdf);;SVGファイル (*.svg)</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
@@ -16369,7 +16397,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation>バージョン番号のビルド番号が指定されていません。</translation>
+        <translation type="vanished">バージョン番号のビルド番号が指定されていません。</translation>
     </message>
 </context>
 <context>
@@ -17166,11 +17194,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Update check setting...</source>
-        <translation>更新確認の設定(&amp;U)...</translation>
+        <translation type="vanished">更新確認の設定(&amp;U)...</translation>
     </message>
     <message>
         <source>&amp;Manage solvers and grid generators...</source>
-        <translation>ソルバと格子生成プログラムの管理(&amp;M)...</translation>
+        <translation type="vanished">ソルバと格子生成プログラムの管理(&amp;M)...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="609"/>

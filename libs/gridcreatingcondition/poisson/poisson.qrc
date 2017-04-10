@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/gridcreatingcondition/poisson">
+        <file>images/imgGridCreationPoisson.png</file>
+    </qresource>
+</RCC>

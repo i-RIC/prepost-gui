@@ -8,8 +8,6 @@ class StartPageRecentProject : public StartPageLabel
 {
 
 public:
-	static const int MAXFILENAMELEN = 35;
-	static const int FOLDERNAMELEN = 10;
 	StartPageRecentProject(const QString& filename, QWidget* parent);
 	const QString& filename() {return m_filename;}
 

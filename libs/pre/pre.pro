@@ -296,6 +296,20 @@ unix {
 }
 LIBS += -liricGccTriangle
 
+# iricGccPoisson
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/poisson/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/poisson/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/poisson"
+}
+LIBS += -liricGccPoisson
+
 # iricHdRiversurveywaterelevation
 
 win32 {

@@ -31,6 +31,8 @@ class GUICOREDLL_EXPORT GridCreatingCondition : public ProjectDataItem
 
 public:
 	static const int MAXGRIDSIZE = 100000000;
+	static const QString XML_FILENAME;
+
 	GridCreatingCondition(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingCondition();
 	/// Create a new grid.
@@ -39,6 +41,10 @@ public:
 	virtual bool ready() const = 0;
 	GridCreatingConditionCreator* creator() const;
 	const QString& name() const;
+
+	bool loadFromExportData(const QString& folder);
+	bool saveToExportData(const QString& folder);
+	static QStringList exportDataFileList();
 
 	QMenu* menu() const;
 	/// setup VTK actors.
@@ -89,6 +95,12 @@ protected:
 	PreProcessorGridCreatingConditionDataItemInterface* m_conditionDataItem;
 	GridCreatingConditionCreator* m_creator;
 	QMenu* m_menu;
+
+private:
+	virtual void doLoadFromProjectMainFile(const QDomNode& node) = 0;
+	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) = 0;
+	virtual void loadExternalData(const QString& filename);
+	virtual void saveExternalData(const QString& filename);
 };
 
 #endif // GRIDCREATINGCONDITION_H

@@ -4,7 +4,7 @@
 #include "../gridcreatingconditioncenterandwidth.h"
 
 #include <QUndoCommand>
-#include <QVector2D>
+#include <QPointF>
 
 class GridCreatingConditionCenterAndWidth::DefineNewPointCommand : public QUndoCommand
 {
@@ -20,7 +20,7 @@ public:
 private:
 	bool m_keyDown;
 	GridCreatingConditionCenterAndWidth* m_condition;
-	QVector2D m_newPoint;
+	QPointF m_newPoint;
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTH_DEFINENEWPOINTCOMMAND_H

@@ -636,20 +636,28 @@ Do you really want to import this file?</source>
         <translation>削除(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="58"/>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="120"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="57"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="128"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="120"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="128"/>
         <source>There must be one group at least.</source>
         <translation>最低限一つのグループがなくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="58"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="57"/>
         <source>Name has to consist of only English characters.</source>
         <translation>名前には、英数字と記号しか使用できません。</translation>
+    </message>
+</context>
+<context>
+    <name>GridComplexConditionGroupEditDialog</name>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
     </message>
 </context>
 <context>
@@ -683,7 +691,7 @@ Do you really want to import this file?</source>
 <context>
     <name>GridCreatingCondition</name>
     <message>
-        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="15"/>
+        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="27"/>
         <source>&amp;Grid Creating Condition</source>
         <translation>格子生成条件(&amp;G)</translation>
     </message>
@@ -800,29 +808,29 @@ Do you really want to import this file?</source>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="113"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="111"/>
         <source>Definition node is not stored</source>
         <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="141"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="139"/>
         <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="144"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="142"/>
         <source>Wrong conditionType &quot;%1&quot;is set.</source>
         <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="147"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="145"/>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
         <translation>ソルバー定義ファイルの読み込み中にエラーが発生しました。
 %1: %2</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="148"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="146"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1715,7 +1723,7 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="806"/>
         <location filename="../project/projectmainfile.cpp" line="809"/>
         <location filename="../project/projectmainfile.cpp" line="1078"/>
-        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <location filename="../project/projectmainfile.cpp" line="1188"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1791,7 +1799,7 @@ Do you really want to import this file?</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <location filename="../project/projectmainfile.cpp" line="1188"/>
         <source>Coordinate system not selected.</source>
         <translation>座標系が選択されていません。</translation>
     </message>
@@ -1955,7 +1963,7 @@ Do you really want to import this file?</source>
         <translation>下に移動</translation>
     </message>
     <message>
-        <location filename="../datamodel/vtkgraphicsview.cpp" line="333"/>
+        <location filename="../datamodel/vtkgraphicsview.cpp" line="396"/>
         <source>Arbitrary Move</source>
         <translation>移動</translation>
     </message>
@@ -2005,13 +2013,13 @@ Do you really want to import this file?</source>
         <translation>背景画像の再配置</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="17"/>
-        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="72"/>
+        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="18"/>
+        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="74"/>
         <source>Default</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="66"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="67"/>
         <source>(Undefined)</source>
         <translation>(未定義)</translation>
     </message>
@@ -2019,6 +2027,11 @@ Do you really want to import this file?</source>
         <location filename="../bgcolor/backgroundcoloreditinterface.cpp" line="15"/>
         <source>Background Color</source>
         <translation>背景色</translation>
+    </message>
+    <message>
+        <location filename="../project/projectmainfile.cpp" line="1145"/>
+        <source>Set offset</source>
+        <translation>オフセットの指定</translation>
     </message>
 </context>
 <context>
@@ -2084,7 +2097,7 @@ Do you really want to import this file?</source>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
-        <location filename="../solverdef/solverdefinition.cpp" line="71"/>
+        <location filename="../solverdef/solverdefinition.cpp" line="72"/>
         <source>%1 Grids</source>
         <translation>%1 格子</translation>
     </message>
@@ -2182,24 +2195,24 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="113"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="115"/>
         <source>Background Images (Internet)</source>
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="141"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="143"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="141"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="143"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation>インターネットから背景画像を取得するには、以下のメニューから座標系を指定して下さい。
 ファイル -&gt; プロパティ</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="193"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="195"/>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>

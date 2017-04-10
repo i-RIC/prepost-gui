@@ -288,21 +288,22 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 
 bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
+	bool ret;
+	bool with4points;
+	// Read river survey data
+	ret = RivRead(filename(), &with4points);
+	if (! ret) {return false;}
+
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
+	dialog.setWith4Points(with4points);
 	int dialogret = dialog.exec();
 	if (dialogret == QDialog::Rejected) {return false;}
 	m_cpSetting = dialog.centerPointSetting();
 
 	GeoDataRiverPathPoint* tail, *newpoint;
-	bool with4points;
-	bool ret;
 
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	tail = rs->m_headPoint;
-
-	// Read river survey data
-	ret = RivRead(filename(), &with4points);
-	if (! ret) {return false;}
 
 	PRivPath p;
 	double max = 0, left = 0, right = 0;
@@ -357,11 +358,10 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 				oldalt = alt;
 			}
 			double shiftValue = 0;
-			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
-				shiftValue = (left + right) * 0.5;
-			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
-				shiftValue = minpos;
-			}
+
+			// no option to select lowest elevation point.
+			shiftValue = (left + right) * 0.5;
+
 			double leftPoint = (left - shiftValue) /
 												 (newpoint->crosssection().leftBank().position() - shiftValue);
 			double rightPoint = (right - shiftValue) /

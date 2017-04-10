@@ -639,12 +639,12 @@
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
-        <location filename="../geodatariversurveyexporter.cpp" line="15"/>
+        <location filename="../geodatariversurveyexporter.cpp" line="13"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyexporter.cpp" line="80"/>
+        <location filename="../geodatariversurveyexporter.cpp" line="78"/>
         <source>River Survey data(*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -658,13 +658,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="354"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="355"/>
         <location filename="../geodatariversurveyimporter.cpp" line="412"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="354"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="355"/>
         <location filename="../geodatariversurveyimporter.cpp" line="412"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation type="unfinished"></translation>
@@ -692,6 +692,11 @@
         <source>Where the elevation is the smallest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="47"/>
+        <source>Middle point of Low water way</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
@@ -704,12 +709,12 @@
 <context>
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
-        <location filename="../geodatariversurveyvtkexporter.cpp" line="16"/>
+        <location filename="../geodatariversurveyvtkexporter.cpp" line="14"/>
         <source>RiverSurvey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyvtkexporter.cpp" line="57"/>
+        <location filename="../geodatariversurveyvtkexporter.cpp" line="55"/>
         <source>VTK File (*.vtk)</source>
         <translation type="unfinished"></translation>
     </message>

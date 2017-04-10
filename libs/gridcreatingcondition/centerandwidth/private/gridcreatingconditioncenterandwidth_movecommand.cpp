@@ -3,6 +3,8 @@
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
+#include <vtkPolyData.h>
+
 GridCreatingConditionCenterAndWidth::MoveCommand::MoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCenterAndWidth* cond) :
 	QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Move Center Line")},
 	m_keyDown {keyDown},
@@ -11,51 +13,36 @@ GridCreatingConditionCenterAndWidth::MoveCommand::MoveCommand(bool keyDown, cons
 	double dx = from.x();
 	double dy = from.y();
 	cond->graphicsView()->viewportToWorld(dx, dy);
-	QVector2D fromVec(dx, dy);
+	QPointF fromVec(dx, dy);
 	dx = to.x();
 	dy = to.y();
 	cond->graphicsView()->viewportToWorld(dx, dy);
-	QVector2D toVec(dx, dy);
+	QPointF toVec(dx, dy);
 	m_offset = toVec - fromVec;
 }
 
 void GridCreatingConditionCenterAndWidth::MoveCommand::redo()
 {
-	vtkPolyLine* line =  m_condition->m_vtkPolyLine;
-	vtkPoints* points = line->GetPoints();
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-		double p[3];
-		points->GetPoint(i, p);
-		p[0] += m_offset.x();
-		p[1] += m_offset.y();
-		points->SetPoint(i, p);
+	auto line = m_condition->polyLine();
+	for (QPointF& p : line) {
+		p += m_offset;
 	}
-	points->Modified();
-	line->Modified();
-	m_condition->updateShapeData();
+	m_condition->setPolyLine(line);
 	if (m_condition->m_isGridCreated) {
-		m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
+		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
 	}
-	m_condition->setModified();
 }
 
 void GridCreatingConditionCenterAndWidth::MoveCommand::undo()
 {
-	vtkPolyLine* line =  m_condition->m_vtkPolyLine;
-	vtkPoints* points = line->GetPoints();
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-		double p[3];
-		points->GetPoint(i, p);
-		p[0] -= m_offset.x();
-		p[1] -= m_offset.y();
-		points->SetPoint(i, p);
+	auto line = m_condition->polyLine();
+	for (QPointF& p : line) {
+		p -= m_offset;
 	}
-	points->Modified();
-	line->Modified();
-	m_condition->updateShapeData();
+	m_condition->setPolyLine(line);
 	if (m_condition->m_isGridCreated) {
-		m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
+		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
 	}
 }

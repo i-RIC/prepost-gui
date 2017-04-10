@@ -5,14 +5,16 @@
 #include <QString>
 #include <QList>
 #include <QMap>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
+
+#include <guicore/pre/gridcreatingcondition/gridcreatingconditionfactoryi.h>
 
 class GridCreatingConditionCreator;
 class GridCreatingCondition;
 class ProjectDataItem;
 class QDomNode;
+class SolverDefinitionGridType;
 
-class GridCreatingConditionFactory : public QObject
+class GridCreatingConditionFactory : public QObject, public GridCreatingConditionFactoryI
 {
 
 private:
@@ -26,7 +28,7 @@ public:
 	static GridCreatingConditionFactory& instance(QWidget* mainWindow);
 	const QList<GridCreatingConditionCreator*> compatibleCreators(const SolverDefinitionGridType& gridType) const;
 	GridCreatingConditionCreator* getCreator(const QString& name) const;
-	GridCreatingCondition* restore(const QDomNode& node, ProjectDataItem* item) const;
+	GridCreatingCondition* restore(const QDomNode& node, ProjectDataItem* item) const override;
 	void setMainWindow(QWidget* mw);
 
 private:
