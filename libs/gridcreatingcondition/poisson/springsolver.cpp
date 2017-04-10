@@ -338,7 +338,7 @@ double updateGrid(Grid* grid, double springK)
 
 } // namespace
 
-void SpringSolver::solve(std::vector<double>* x, std::vector<double>* y, int imax, int jmax, double eps, int maxIter)
+void SpringSolver::solve(std::vector<double>* x, std::vector<double>* y, int imax, int jmax, double eps, int maxIter, int* progress, bool* cancel)
 {
 	int count = 0;
 	double err = 0;
@@ -356,6 +356,10 @@ void SpringSolver::solve(std::vector<double>* x, std::vector<double>* y, int ima
 		}
 
 		if (count > maxIter) {break;}
+		if (*cancel) {break;}
+
+		*progress = count * 100 / maxIter;
+
 	} while (err > eps);
 }
 

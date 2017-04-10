@@ -2,7 +2,7 @@
 #include "gridcreatingconditionpoissonbuildbanklinesdialog.h"
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "poissonsolver.h"
-#include "springsolver.h"
+#include "springsolverthread.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
 #include "private/gridcreatingconditionpoisson_definenewpointcommand.h"
@@ -16,6 +16,7 @@
 #include <geodata/riversurvey/geodatariversurvey.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geoio/polylineio.h>
+#include <guibase/widget/waitdialog.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
@@ -44,6 +45,7 @@
 #include <vtkTextProperty.h>
 
 #include <QAction>
+#include <QCoreApplication>
 #include <QDataStream>
 #include <QFile>
 #include <QInputDialog>
@@ -526,7 +528,25 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 		}
 	}
 
-	SpringSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, m_maxIterations);
+	SpringSolverThread t(m_parent);
+	t.setGrid(&xVec, &yVec, iMax, jMax);
+	t.setCondition(0.001, m_maxIterations);
+
+	WaitDialog waitDialog(m_parent->preProcessorWindow());
+	waitDialog.showProgressBar();
+	waitDialog.show();
+
+	connect(&waitDialog, SIGNAL(canceled()), &t, SLOT(cancel()));
+
+	t.start();
+	qApp->processEvents();
+
+	while (! t.isFinished()) {
+		waitDialog.setProgress(t.progress());
+		qApp->processEvents();
+	}
+
+//	SpringSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, m_maxIterations);
 
 	for (int i = 0; i < xVec.size(); ++i) {
 		points->InsertNextPoint(xVec.at(i) + xOffset, yVec.at(i) + yOffset, 0);
