@@ -168,6 +168,9 @@ void TmsRegionSelectWidget::mouseMoveEvent(QMouseEvent *e)
 void TmsRegionSelectWidget::setCoordinateSystem(CoordinateSystem* cs)
 {
 	impl->m_coordinateSystem = cs;
+	if (cs->proj4PlaneStr().contains("+proj=utm")) {
+		impl->m_centerY = 5000000;
+	}
 	requestUpdate();
 }
 
