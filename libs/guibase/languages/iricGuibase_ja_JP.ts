@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -217,15 +217,15 @@
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>
-        <translation type="vanished">座標系の選択</translation>
+        <translation>座標系の選択</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="vanished">検索:</translation>
+        <translation>検索:</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation type="vanished">(指定されていない)</translation>
+        <translation>(指定されていない)</translation>
     </message>
 </context>
 <context>
@@ -346,54 +346,60 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="vanished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="vanished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="vanished">X: ------</translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="vanished">Y: ------</translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowserView</name>
     <message>
         <location filename="../objectbrowserview.cpp" line="20"/>
+        <source>&amp;Add...</source>
+        <translation>追加(&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../objectbrowserview.cpp" line="23"/>
+        <location filename="../objectbrowserview.cpp" line="26"/>
         <source>&amp;Delete...</source>
         <translation>削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="23"/>
+        <location filename="../objectbrowserview.cpp" line="29"/>
         <source>Move up</source>
         <translation>上に移動</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="26"/>
+        <location filename="../objectbrowserview.cpp" line="32"/>
         <source>Move down</source>
         <translation>下に移動</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="29"/>
+        <location filename="../objectbrowserview.cpp" line="35"/>
         <source>&amp;Property...</source>
         <translation>プロパティ(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="65"/>
+        <location filename="../objectbrowserview.cpp" line="81"/>
         <source>Delete item</source>
         <translation>項目の削除</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="65"/>
+        <location filename="../objectbrowserview.cpp" line="81"/>
         <source>Are you sure you want to delete this item?</source>
         <translation>本当にこの項目を削除していいですか?</translation>
     </message>
@@ -402,7 +408,7 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation type="vanished">選択状態の変更</translation>
+        <translation>選択状態の変更</translation>
     </message>
 </context>
 <context>
@@ -487,7 +493,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
    &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;-%3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;-%.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
@@ -495,7 +501,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;%-.3f&quot; for 3.141592 --&gt; 3.141
    &quot;%-.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;%-3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;%-.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>

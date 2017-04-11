@@ -331,31 +331,37 @@
     <name>ObjectBrowserView</name>
     <message>
         <location filename="../objectbrowserview.cpp" line="20"/>
-        <source>&amp;Delete...</source>
+        <source>&amp;Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../objectbrowserview.cpp" line="23"/>
-        <source>Move up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../objectbrowserview.cpp" line="26"/>
-        <source>Move down</source>
+        <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../objectbrowserview.cpp" line="29"/>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../objectbrowserview.cpp" line="32"/>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../objectbrowserview.cpp" line="35"/>
         <source>&amp;Property...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="65"/>
+        <location filename="../objectbrowserview.cpp" line="81"/>
         <source>Delete item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="65"/>
+        <location filename="../objectbrowserview.cpp" line="81"/>
         <source>Are you sure you want to delete this item?</source>
         <translation type="unfinished"></translation>
     </message>

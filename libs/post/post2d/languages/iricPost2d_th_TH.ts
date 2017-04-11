@@ -688,29 +688,29 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="382"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="383"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="601"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="602"/>
         <source>To export KML for street view, display with Contour Figure.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="601"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="605"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="610"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="602"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="606"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="611"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="605"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="606"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="610"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="611"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -718,27 +718,27 @@
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="22"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="23"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="127"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="125"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="127"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="125"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="359"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="357"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="359"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="357"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1410,7 +1410,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="217"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="215"/>
         <source>Create Contour</source>
         <translation type="unfinished"></translation>
     </message>

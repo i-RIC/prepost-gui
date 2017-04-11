@@ -200,7 +200,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="416"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="411"/>
         <source>Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -247,17 +247,17 @@
 <context>
     <name>Post3dWindowContourGroupTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="24"/>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="25"/>
         <source>Contours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="129"/>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="127"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="129"/>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="127"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -265,12 +265,12 @@
 <context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="202"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="202"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -445,13 +445,21 @@
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="51"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="53"/>
         <source>Isosurface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="315"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="313"/>
         <source>Isosurface physical value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="23"/>
+        <source>Isosurfaces</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -830,7 +838,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="240"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="238"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -856,8 +864,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="187"/>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="185"/>
         <source>Create Contour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="130"/>
+        <source>Create Isosurface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="212"/>
+        <source>Delete Isosurface</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
