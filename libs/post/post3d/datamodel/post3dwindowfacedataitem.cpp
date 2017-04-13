@@ -74,7 +74,7 @@ void Post3dWindowFaceDataItem::update()
 {
 	m_dataOK = false;
 	if (m_actor != nullptr) {m_actor->VisibilityOff();}
-	Post3dWindowZoneDataItem* zdi = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent()->parent());
+	Post3dWindowZoneDataItem* zdi = getZoneDataItem();
 	PostZoneDataContainer* cont = zdi->dataContainer();
 	if (cont == nullptr) {return;}
 	vtkPointSet* pd = cont->data();
@@ -212,6 +212,19 @@ void Post3dWindowFaceDataItem::updateFilter()
 {
 	m_filter->SetVOI(m_iMin, m_iMax, m_jMin, m_jMax, m_kMin, m_kMax);
 	m_filter->Modified();
+}
+
+Post3dWindowZoneDataItem* Post3dWindowFaceDataItem::getZoneDataItem()
+{
+	ProjectDataItem* target = this;
+	Post3dWindowZoneDataItem* zdi = nullptr;
+	while (zdi == nullptr) {
+		target = target->parent();
+		if (target == nullptr) {return nullptr;}
+
+		zdi = dynamic_cast<Post3dWindowZoneDataItem*> (target);
+	}
+	return zdi;
 }
 
 void Post3dWindowFaceDataItem::handleStandardItemChange()
