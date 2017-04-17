@@ -23,6 +23,29 @@
 #include <qwt_scale_engine.h>
 #include <qwt_legend.h>
 
+namespace {
+
+const int ERROR_MAX = 10;
+
+void checkMinMax(QStringList* errors, int* errorCount, double value, bool minIsSet, double min, bool maxIsSet, double max, int row, const QString& caption) {
+	if (minIsSet && value < min) {
+		QString message = InputConditionWidgetFunctionalDialog::tr("%1 at row %2: The value %3 is smaller than minimum value %4").arg(caption).arg(row).arg(value).arg(min);
+		if (errors->size() < ERROR_MAX) {
+			errors->push_back(message);
+		}
+		++ (*errorCount);
+	}
+	if (maxIsSet && value > max) {
+		QString message = InputConditionWidgetFunctionalDialog::tr("%1 at row %2: The value %3 is larger than maximum value %4").arg(caption).arg(row).arg(value).arg(max);
+		if (errors->size() < ERROR_MAX) {
+			errors->push_back(message);
+		}
+		++ (*errorCount);
+	}
+}
+
+} // namespace
+
 InputConditionWidgetFunctionalDialog::InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent) :
 	QDialog {parent},
 	m_preventGraph {false},
@@ -96,6 +119,8 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 	}
 	QDomElement paramElem = paramNode.toElement();
 	QString paramCaption = t.translate(paramElem.attribute("caption"));
+	m_paramCaption = paramCaption;
+
 	QStringList leftValueCaptions, rightValueCaptions;
 	m_model->setHeaderData(0, Qt::Horizontal, paramCaption);
 	QString paramType = paramElem.attribute("valueType");
@@ -461,6 +486,9 @@ void InputConditionWidgetFunctionalDialog::setData(const InputConditionContainer
 
 void InputConditionWidgetFunctionalDialog::accept()
 {
+	bool ok = checkValues();
+	if (! ok) {return;}
+
 	saveModel();
 	emit accepted();
 	hide();
@@ -489,6 +517,33 @@ void InputConditionWidgetFunctionalDialog::updateSpanColumns()
 			m_model->setData(m_model->index(j, i + 1), QColor(Qt::white), Qt::BackgroundColorRole);
 		}
 	}
+}
+
+bool InputConditionWidgetFunctionalDialog::checkValues()
+{
+	QStringList errors;
+	int errorCount = 0;
+
+	int rows = m_model->rowCount();
+	for (int i = 0; i < rows; ++i) {
+		double paramVal = m_model->data(m_model->index(i, 0)).toDouble();
+		checkMinMax(&errors, &errorCount, paramVal, m_paramMinIsSet, m_paramMin, m_paramMaxIsSet, m_paramMax, i + 1, m_paramCaption);
+
+		for (int j = 0; j < m_valuefuncs.size(); ++j) {
+			double valueVal = m_model->data(m_model->index(i, j + 1)).toDouble();
+			checkMinMax(&errors, &errorCount, valueVal, m_valueMinIsSet.at(j), m_valueMin.at(j), m_valueMaxIsSet.at(j), m_valueMax.at(j), i + 1, m_valueCaptions.at(j));
+		}
+	}
+	if (errorCount == 0) {return true;}
+
+	QString msg = tr("The following problems found: \n").append(errors.join('\n'));
+
+	if (errorCount != errors.size()) {
+		msg.append(tr("\n ... and other %1 errors").arg(errorCount - errors.size()));
+	}
+	QMessageBox::warning(this, tr("Warning"), msg);
+
+	return false;
 }
 
 void InputConditionWidgetFunctionalDialog::updateGraph()

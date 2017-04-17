@@ -64,6 +64,7 @@ private:
 	void setupXYSpan(int row, std::vector<double>* x, std::vector<double>* y);
 
 	void updateSpanColumns();
+	bool checkValues();
 
 	static void setInt(const QVariant& v, QVariant& target);
 	static void setDouble(const QVariant& v, QVariant& target);
@@ -74,6 +75,7 @@ private:
 	void (*m_paramfunc)(const QVariant&, QVariant&);
 	std::vector<void (*)(const QVariant&, QVariant&)> m_valuefuncs;
 
+	QString m_paramCaption;
 	bool m_paramMinIsSet;
 	double m_paramMin;
 	bool m_paramMaxIsSet;
@@ -82,6 +84,7 @@ private:
 	std::vector<QwtPlotCurve*> m_graphCurves;
 	std::vector<QwtArrayData*> m_graphDatas;
 	std::vector<AxisSetting> m_axisSettings;
+
 	std::vector<QString> m_valueCaptions;
 	std::vector<bool> m_valueIsSteps;
 	std::vector<bool> m_valueIsSpans;
@@ -92,6 +95,7 @@ private:
 	std::vector<double> m_valueMin;
 	std::vector<bool> m_valueMaxIsSet;
 	std::vector<double> m_valueMax;
+
 
 	InputConditionContainerFunctional m_container;
 	QStandardItemModel* m_model;
