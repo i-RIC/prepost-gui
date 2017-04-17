@@ -2,6 +2,7 @@
 #include "private/realnumbereditwidget_impl.h"
 
 #include <QDoubleValidator>
+#include <QKeyEvent>
 #include <QMessageBox>
 
 #include <cmath>
@@ -21,6 +22,7 @@ RealNumberEditWidget::RealNumberEditWidget(QWidget* parent) :
 	impl {new Impl {}}
 {
 	setValidator(new QDoubleValidator(this));
+	connect(this, SIGNAL(textEdited(QString)), this, SLOT(handleTextEdited()));
 }
 
 RealNumberEditWidget::~RealNumberEditWidget()
@@ -93,6 +95,8 @@ void RealNumberEditWidget::closeEvent(QCloseEvent* e)
 {
 	if (updateValue(true)) {
 		QLineEdit::closeEvent(e);
+	} else {
+		e->ignore();
 	}
 }
 
@@ -101,8 +105,13 @@ void RealNumberEditWidget::focusOutEvent(QFocusEvent* e)
 	if (updateValue()) {
 		QLineEdit::focusOutEvent(e);
 	} else {
-		setFocus(Qt::OtherFocusReason);
+		e->ignore();
 	}
+}
+
+void RealNumberEditWidget::handleTextEdited()
+{
+	updateValue(true);
 }
 
 bool RealNumberEditWidget::updateValue(bool inhibitMessage)

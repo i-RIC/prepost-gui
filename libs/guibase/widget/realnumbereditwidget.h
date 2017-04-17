@@ -5,6 +5,8 @@
 
 #include <QLineEdit>
 
+class QEvent;
+
 /**
  * @brief Widget to edit real number
  *
@@ -36,10 +38,14 @@ public:
 signals:
 	void valueChanged(double value);
 
+private slots:
+	void handleTextEdited();
+
 private:
+	bool updateValue(bool inhibitMessage = false);
+
 	void closeEvent(QCloseEvent* e) override;
 	void focusOutEvent(QFocusEvent* e) override;
-	bool updateValue(bool inhibitMessage = false);
 
 	class Impl;
 	Impl* impl;

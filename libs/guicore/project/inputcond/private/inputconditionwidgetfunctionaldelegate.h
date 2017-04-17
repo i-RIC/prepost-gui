@@ -3,12 +3,16 @@
 
 #include <QStyledItemDelegate>
 
+class InputConditionWidgetFunctionalDialog;
+
 class InputConditionWidgetFunctionalDelegate : public QStyledItemDelegate
 {
 	Q_OBJECT
 
 public:
-	InputConditionWidgetFunctionalDelegate(QObject* = 0) {}
+	InputConditionWidgetFunctionalDelegate(QObject* = nullptr) {}
+
+	void setDialog(InputConditionWidgetFunctionalDialog* dialog);
 
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
@@ -16,6 +20,9 @@ public:
 	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const;
 
 	void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+
+private:
+	InputConditionWidgetFunctionalDialog* m_dialog;
 };
 
 #endif // INPUTCONDITIONWIDGETFUNCTIONALDELEGATE_H
