@@ -295,7 +295,6 @@ void InputConditionWidgetFunctionalDialog::setupViews()
 	ui->tableView->setModel(m_model);
 	ui->tableView->setSelectionModel(m_selectionModel);
 	auto delegate = new InputConditionWidgetFunctionalDelegate(this);
-	delegate->setDialog(this);
 
 	ui->tableView->setItemDelegate(delegate);
 }
