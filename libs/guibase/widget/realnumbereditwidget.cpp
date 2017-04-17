@@ -106,6 +106,7 @@ void RealNumberEditWidget::focusOutEvent(QFocusEvent* e)
 		QLineEdit::focusOutEvent(e);
 	} else {
 		e->ignore();
+		setFocus();
 	}
 }
 
@@ -125,20 +126,20 @@ bool RealNumberEditWidget::updateValue(bool inhibitMessage)
 		tmpVal = txt.toDouble(&ok);
 		if (! ok) {
 			if (! inhibitMessage) {
-				QMessageBox::warning(this, tr("Error"), tr("It is not a real value"));
+				QMessageBox::warning(this, tr("Warning"), tr("It is not a real value"));
 			}
 			return false;
 		}
 	}
 	if (impl->m_minimumIsSet && tmpVal < impl->m_minimum) {
 		if (! inhibitMessage) {
-			QMessageBox::warning(this, tr("Error"), tr("Minimum value is %1.").arg(impl->m_minimum));
+			QMessageBox::warning(this, tr("Warning"), tr("Minimum value is %1.").arg(impl->m_minimum));
 		}
 		return false;
 	}
 	if (impl->m_maximumIsSet && tmpVal > impl->m_maximum) {
 		if (! inhibitMessage) {
-			QMessageBox::warning(this, tr("Error"), tr("Maximum value is %1.").arg(impl->m_maximum));
+			QMessageBox::warning(this, tr("Warning"), tr("Maximum value is %1.").arg(impl->m_maximum));
 		}
 		return false;
 	}
