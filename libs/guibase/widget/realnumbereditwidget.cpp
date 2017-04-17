@@ -1,37 +1,97 @@
 #include "realnumbereditwidget.h"
+#include "private/realnumbereditwidget_impl.h"
 
 #include <QDoubleValidator>
 #include <QMessageBox>
 
 #include <cmath>
 
+RealNumberEditWidget::Impl::Impl() :
+	m_value {0},
+	m_maximumIsSet {false},
+	m_maximum {0},
+	m_minimumIsSet {false},
+	m_minimum {0}
+{}
+
+// public interfaces
+
 RealNumberEditWidget::RealNumberEditWidget(QWidget* parent) :
-	QLineEdit(parent)
+	QLineEdit(parent),
+	impl {new Impl {}}
 {
 	setValidator(new QDoubleValidator(this));
-	connect(this, SIGNAL(textChanged(QString)), this, SLOT(handleTextChange()));
+}
+
+RealNumberEditWidget::~RealNumberEditWidget()
+{
+	delete impl;
 }
 
 double RealNumberEditWidget::value() const
 {
-	return m_doubleValue;
+	return impl->m_value;
 }
 
 void RealNumberEditWidget::setValue(double newvalue)
 {
-	if (! text().isEmpty() && (m_doubleValue == newvalue)) {return;}
+	if (! text().isEmpty() && (impl->m_value == newvalue)) {return;}
 
-	m_doubleValue = newvalue;
-	if (m_doubleValue == 0) {
+	impl->m_value = newvalue;
+	if (impl->m_value == 0) {
 		setText("0");
 	} else {
-		setText(QString::number(m_doubleValue, 'g', 10));
+		setText(QString::number(impl->m_value, 'g', 10));
 	}
+}
+
+double RealNumberEditWidget::minimum() const
+{
+	return impl->m_minimum;
+}
+
+bool RealNumberEditWidget::minimumIsSet() const
+{
+	return impl->m_minimumIsSet;
+}
+
+void RealNumberEditWidget::setMinimum(double min)
+{
+	impl->m_minimum = min;
+	impl->m_minimumIsSet = true;
+}
+
+void RealNumberEditWidget::clearMinimum()
+{
+	impl->m_minimum = 0;
+	impl->m_minimumIsSet = false;
+}
+
+double RealNumberEditWidget::maximum() const
+{
+	return impl->m_maximum;
+}
+
+bool RealNumberEditWidget::maximumIsSet() const
+{
+	return impl->m_maximumIsSet;
+}
+
+void RealNumberEditWidget::setMaximum(double max)
+{
+	impl->m_maximum = max;
+	impl->m_maximumIsSet = true;
+}
+
+void RealNumberEditWidget::clearMaximum()
+{
+	impl->m_maximum = 0;
+	impl->m_maximumIsSet = false;
 }
 
 void RealNumberEditWidget::closeEvent(QCloseEvent* e)
 {
-	if (updateValue()) {
+	if (updateValue(true)) {
 		QLineEdit::closeEvent(e);
 	}
 }
@@ -41,32 +101,40 @@ void RealNumberEditWidget::focusOutEvent(QFocusEvent* e)
 	if (updateValue()) {
 		QLineEdit::focusOutEvent(e);
 	} else {
-		QMessageBox::warning(this, tr("Error"), tr("It is not a real value"));
 		setFocus(Qt::OtherFocusReason);
 	}
 }
 
-bool RealNumberEditWidget::updateValue()
+bool RealNumberEditWidget::updateValue(bool inhibitMessage)
 {
 	QString txt = text();
+	double tmpVal = 0;
 	if (txt.isEmpty()) {
-		m_doubleValue = 0;
-		emit valueChanged(m_doubleValue);
-		return true;
+		tmpVal = 0;
+	} else {
+		bool ok;
+		tmpVal = txt.toDouble(&ok);
+		if (! ok) {
+			if (! inhibitMessage) {
+				QMessageBox::warning(this, tr("Error"), tr("It is not a real value"));
+			}
+			return false;
+		}
+	}
+	if (impl->m_minimumIsSet && tmpVal < impl->m_minimum) {
+		if (! inhibitMessage) {
+			QMessageBox::warning(this, tr("Error"), tr("Minimum value is %1.").arg(impl->m_minimum));
+		}
+		return false;
+	}
+	if (impl->m_maximumIsSet && tmpVal > impl->m_maximum) {
+		if (! inhibitMessage) {
+			QMessageBox::warning(this, tr("Error"), tr("Maximum value is %1.").arg(impl->m_maximum));
+		}
+		return false;
 	}
 
-	bool ok;
-	double tmpval = txt.toDouble(&ok);
-	if (! ok) {
-		return false; // invalid value
-	}
-
-	m_doubleValue = tmpval;
-	emit valueChanged(m_doubleValue);
+	impl->m_value = tmpVal;
+	emit valueChanged(impl->m_value);
 	return true;
-}
-
-void RealNumberEditWidget::handleTextChange()
-{
-	updateValue();
 }
