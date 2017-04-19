@@ -23,9 +23,6 @@ public:
 	void addDependency(InputConditionDependency* dep);
 	const std::vector<InputConditionDependency*>& dependencies() const;
 
-	virtual void setMaximum(const QVariant& value);
-	virtual void setMinimum(const QVariant& value);
-
 	virtual void addTooltip(const QString& tooltip) = 0;
 
 	static const int margin = 0;

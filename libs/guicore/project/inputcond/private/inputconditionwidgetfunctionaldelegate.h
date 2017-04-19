@@ -3,12 +3,14 @@
 
 #include <QStyledItemDelegate>
 
+class InputConditionWidgetFunctionalDialog;
+
 class InputConditionWidgetFunctionalDelegate : public QStyledItemDelegate
 {
 	Q_OBJECT
 
 public:
-	InputConditionWidgetFunctionalDelegate(QObject* = 0) {}
+	InputConditionWidgetFunctionalDelegate(QObject* = nullptr) {}
 
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 

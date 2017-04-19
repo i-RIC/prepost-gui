@@ -28,8 +28,6 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 		int minval = minstr.toInt(&ok);
 		if (ok) {
 			m_spinBox->setMinimum(minval);
-		} else {
-			// todo build minimum container.
 		}
 	}
 	// max
@@ -39,8 +37,6 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 		int maxval = maxstr.toInt(&ok);
 		if (ok) {
 			m_spinBox->setMaximum(maxval);
-		} else {
-			// todo build maximum container.
 		}
 	}
 	m_container = cont;
@@ -56,15 +52,6 @@ void InputConditionWidgetInteger::addTooltip(const QString& tooltip)
 
 	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
 	l->insertWidget(1, tt);
-}
-
-void InputConditionWidgetInteger::setMaximum(const QVariant& value)
-{
-	m_spinBox->setMaximum(value.toInt());
-}
-void InputConditionWidgetInteger::setMinimum(const QVariant& value)
-{
-	m_spinBox->setMinimum(value.toInt());
 }
 
 void InputConditionWidgetInteger::informChange(int value)

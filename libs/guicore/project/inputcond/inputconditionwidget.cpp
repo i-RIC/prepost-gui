@@ -23,12 +23,6 @@ const std::vector<InputConditionDependency*>& InputConditionWidget::dependencies
 	return m_dependencies;
 }
 
-void InputConditionWidget::setMaximum(const QVariant&)
-{}
-
-void InputConditionWidget::setMinimum(const QVariant&)
-{}
-
 QList<QDomNode> InputConditionWidget::getEnums(QDomNode defNode)
 {
 	QDomNode enumsNode = iRIC::getChildNode(defNode, "Enumerations");

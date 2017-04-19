@@ -5,6 +5,8 @@
 
 #include <QLineEdit>
 
+class QEvent;
+
 /**
  * @brief Widget to edit real number
  *
@@ -18,22 +20,39 @@ class GUIBASEDLL_EXPORT RealNumberEditWidget : public QLineEdit
 
 public:
 	RealNumberEditWidget(QWidget* parent = nullptr);
+	~RealNumberEditWidget();
 
 	double value() const;
 	void setValue(double newvalue);
+
+	double minimum() const;
+	bool minimumIsSet() const;
+	void setMinimum(double min);
+	void clearMinimum();
+
+	double maximum() const;
+	bool maximumIsSet() const;
+	void setMaximum(double max);
+	void clearMaximum();
 
 signals:
 	void valueChanged(double value);
 
 private slots:
-	void handleTextChange();
+	void handleTextEdited();
 
 private:
+	bool updateValue(bool inhibitMessage = false);
+
 	void closeEvent(QCloseEvent* e) override;
 	void focusOutEvent(QFocusEvent* e) override;
-	bool updateValue();
 
-	double m_doubleValue;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/realnumbereditwidget_impl.h"
+#endif // _DEBUG
 
 #endif // REALNUMBEREDITWIDGET_H
