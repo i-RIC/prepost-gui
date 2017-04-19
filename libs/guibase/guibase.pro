@@ -142,7 +142,8 @@ HEADERS += colortool.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
-           widget/private/itemselectingdialog_detail.h
+           widget/private/itemselectingdialog_detail.h \
+           widget/private/realnumbereditwidget_impl.h
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \

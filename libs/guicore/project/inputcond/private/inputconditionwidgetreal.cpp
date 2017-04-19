@@ -8,8 +8,8 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 
-InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerReal* cont) :
-	InputConditionWidget(defnode),
+InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defNode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerReal* cont) :
+	InputConditionWidget(defNode),
 	m_container {cont},
 	m_lineEdit {new RealNumberEditWidget(this)}
 {
@@ -21,6 +21,26 @@ InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defnode, const Solve
 	layout->addWidget(m_lineEdit, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);
+
+	QDomElement defElem = defNode.toElement();
+	// min
+	QString minstr = defElem.attribute("min");
+	if (minstr != "") {
+		bool ok;
+		double minval = minstr.toDouble(& ok);
+		if (ok) {
+			m_lineEdit->setMinimum(minval);
+		}
+	}
+	// max
+	QString maxstr = defElem.attribute("max");
+	if (maxstr != "") {
+		bool ok;
+		double maxval = maxstr.toDouble(& ok);
+		if (ok) {
+			m_lineEdit->setMaximum(maxval);
+		}
+	}
 
 	setValue(cont->value());
 	connect(m_lineEdit, SIGNAL(valueChanged(double)), this, SLOT(getWidgetValue(double)));

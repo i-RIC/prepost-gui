@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 	// set setting information.
 	QCoreApplication::setOrganizationName("iRIC Organization");
 	QCoreApplication::setOrganizationDomain("i-ric.org");
-	QCoreApplication::setApplicationName("iRIC GUI");
+	QCoreApplication::setApplicationName("iRIC GUI 3");
 	// install translators.
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();

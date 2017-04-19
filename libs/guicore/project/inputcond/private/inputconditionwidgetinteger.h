@@ -19,9 +19,6 @@ public:
 
 	void addTooltip(const QString& tooltip) override;
 
-	void setMaximum(const QVariant& value) override;
-	void setMinimum(const QVariant& value) override;
-
 private slots:
 	void informChange(int);
 

@@ -545,35 +545,62 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="32"/>
+        <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="39"/>
+        <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Choose a text file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>Specify file name to save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="539"/>
+        <source>The following problems found: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
+        <source>
+ ... and other %1 errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="544"/>
+        <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

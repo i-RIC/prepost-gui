@@ -1007,36 +1007,63 @@ Do you really want to import this file?</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="32"/>
+        <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
+        <translation>%1 %2行目: 最小値 %4 より小さい値 %3 が入力されています</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="39"/>
+        <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
+        <translation>%1 %2行目: 最大値 %4 より大きい値 %3 が入力されています</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Choose a text file</source>
         <translation>テキストファイルの選択</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>Specify file name to save</source>
         <translation>保存するファイルの名前を指定</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>CSV files (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="539"/>
+        <source>The following problems found: 
+</source>
+        <translation>以下の問題が見つかりました:</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
+        <source>
+ ... and other %1 errors</source>
+        <translation>... その他 %1 件のエラー</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="544"/>
+        <source>Warning</source>
+        <translation>警告</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,7 @@
 #include "inputconditionwidgetfunctionaldelegate.h"
+#include "inputconditionwidgetfunctionaldialog.h"
 
+#include <guibase/widget/integernumbereditwidget.h>
 #include <guibase/widget/realnumbereditwidget.h>
 
 #include <QModelIndex>
@@ -10,11 +12,13 @@ QWidget* InputConditionWidgetFunctionalDelegate::createEditor(QWidget* parent, c
 	QVariant dat = index.model()->data(index, Qt::DisplayRole);
 	if (dat.type() == QVariant::Int) {
 		// Integer. Edit with QSpinBox
-		QSpinBox* spinBox = new QSpinBox(parent);
-		return spinBox;
+		IntegerNumberEditWidget* widget = new IntegerNumberEditWidget(parent);
+
+		return widget;
 	} else {
 		// Float. Edit with RealEdit
 		RealNumberEditWidget* realEdit = new RealNumberEditWidget(parent);
+
 		return realEdit;
 	}
 }
