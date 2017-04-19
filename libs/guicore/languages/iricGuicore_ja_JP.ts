@@ -1044,13 +1044,15 @@ Do you really want to import this file?</source>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="539"/>
         <source>The following problems found: 
 </source>
-        <translation>以下の問題が見つかりました:</translation>
+        <translation>以下の問題が見つかりました:
+</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
         <source>
  ... and other %1 errors</source>
-        <translation>... その他 %1 件のエラー</translation>
+        <translation>
+ ... その他 %1 件のエラー</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="544"/>
