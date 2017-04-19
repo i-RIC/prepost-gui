@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -18,7 +18,7 @@
     </message>
     <message>
         <source>Background Color</source>
-        <translation>背景色</translation>
+        <translation type="vanished">背景色</translation>
     </message>
 </context>
 <context>
@@ -257,7 +257,7 @@
     </message>
     <message>
         <source>Add...</source>
-        <translation>追加...</translation>
+        <translation type="vanished">追加...</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="127"/>
@@ -451,7 +451,7 @@
     </message>
     <message>
         <source>Value Color</source>
-        <translation>値の色</translation>
+        <translation type="vanished">値の色</translation>
     </message>
 </context>
 <context>
@@ -479,7 +479,7 @@
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles</source>
-        <translation>パーティクル</translation>
+        <translation type="vanished">パーティクル</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="40"/>
@@ -716,7 +716,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles (auto)</source>
-        <translation>パーティクル (自動)</translation>
+        <translation type="vanished">パーティクル (自動)</translation>
     </message>
 </context>
 <context>
@@ -896,11 +896,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
-        <translation>パーティクル 物理量の変更</translation>
+        <translation type="vanished">パーティクル 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="42"/>
@@ -909,7 +909,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation>流線 物理量の変更</translation>
+        <translation type="vanished">流線 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
@@ -918,7 +918,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Background Color</source>
-        <translation>背景色の設定</translation>
+        <translation type="vanished">背景色の設定</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -217,15 +217,15 @@
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>
-        <translation>座標系の選択</translation>
+        <translation type="vanished">座標系の選択</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>検索:</translation>
+        <translation type="vanished">検索:</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation>(指定されていない)</translation>
+        <translation type="vanished">(指定されていない)</translation>
     </message>
 </context>
 <context>
@@ -346,23 +346,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation type="vanished">X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation>Y: ------</translation>
+        <translation type="vanished">Y: ------</translation>
     </message>
 </context>
 <context>
@@ -408,7 +408,7 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation>選択状態の変更</translation>
+        <translation type="vanished">選択状態の変更</translation>
     </message>
 </context>
 <context>
@@ -493,7 +493,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
    &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;-%3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;-%.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
@@ -501,7 +501,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;%-.3f&quot; for 3.141592 --&gt; 3.141
    &quot;%-.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;%-3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;%-.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>

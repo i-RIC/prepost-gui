@@ -115,17 +115,17 @@
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="25"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="26"/>
         <source>Contours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="54"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="54"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -143,7 +143,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="178"/>
         <source>Create Contour</source>
         <translation type="unfinished"></translation>
     </message>

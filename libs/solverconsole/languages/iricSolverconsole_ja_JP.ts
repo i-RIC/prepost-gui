@@ -119,7 +119,7 @@
         <translation>ソルバーコンソール [%1] (%2)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="345"/>
+        <location filename="../solverconsolewindow.cpp" line="346"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
@@ -68,11 +68,11 @@
     </message>
     <message>
         <source>Specify Control Cross Sections Number</source>
-        <translation>コントロール断面の数の指定</translation>
+        <translation type="vanished">コントロール断面の数の指定</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections</source>
-        <translation>コントロール断面数</translation>
+        <translation type="vanished">コントロール断面数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionpoisson.cpp" line="649"/>

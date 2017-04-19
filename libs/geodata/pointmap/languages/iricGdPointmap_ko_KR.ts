@@ -434,31 +434,31 @@
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="17"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="15"/>
         <source>Pointset (DEM etc.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="24"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="75"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="22"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="73"/>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="27"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="50"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="25"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="48"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="27"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="50"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="25"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="48"/>
         <source>Error occured while exporting to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="47"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="76"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="45"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="74"/>
         <source>RIC-Nays DEM (*.dat)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -471,30 +471,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="48"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="264"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="49"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="265"/>
         <source>Topography File (*.tpo *.anc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="53"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="54"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="53"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="54"/>
         <source>File open error occured while opening %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="48"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="265"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="49"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="266"/>
         <source>RIC-Nays DEM (*.dat *.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="97"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="266"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="98"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="267"/>
         <source>USGS NED (*.adf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -558,18 +558,18 @@
 <context>
     <name>GeoDataPointmapSTLExporter</name>
     <message>
-        <location filename="../geodatapointmapstlexporter.cpp" line="16"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="14"/>
         <source>Stereolithography (STL)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapstlexporter.cpp" line="38"/>
-        <location filename="../geodatapointmapstlexporter.cpp" line="56"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="36"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="54"/>
         <source>Binary STL (*.stl)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapstlexporter.cpp" line="55"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="53"/>
         <source>ASCII STL (*.stl)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -607,12 +607,12 @@
 <context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
-        <location filename="../geodatapointmapvtkexporter.cpp" line="21"/>
+        <location filename="../geodatapointmapvtkexporter.cpp" line="19"/>
         <source>Pointset (DEM etc.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapvtkexporter.cpp" line="70"/>
+        <location filename="../geodatapointmapvtkexporter.cpp" line="68"/>
         <source>VTK File (*.vtk)</source>
         <translation type="unfinished"></translation>
     </message>

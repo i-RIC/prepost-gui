@@ -119,7 +119,7 @@
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="25"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="26"/>
         <source>Contours</source>
         <translation>コンター</translation>
     </message>
@@ -128,12 +128,12 @@
         <translation type="vanished">追加...</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="54"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="56"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="54"/>
         <source>A maximum of four contours may be defined.</source>
         <translation>コンダーは最大で4つまでしか描画できません。</translation>
     </message>
@@ -159,7 +159,7 @@
         <translation>背景色の設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="178"/>
         <source>Create Contour</source>
         <translation>コンターの作成</translation>
     </message>
