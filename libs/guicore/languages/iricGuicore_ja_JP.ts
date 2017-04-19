@@ -999,36 +999,63 @@ Do you really want to import this file?</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="32"/>
+        <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
+        <translation>%1 %2行目: 最小値 %4 より小さい値 %3 が入力されています</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="39"/>
+        <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
+        <translation>%1 %2行目: 最大値 %4 より大きい値 %3 が入力されています</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Choose a text file</source>
         <translation>テキストファイルの選択</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>Specify file name to save</source>
         <translation>保存するファイルの名前を指定</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>CSV files (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="539"/>
+        <source>The following problems found: 
+</source>
+        <translation>以下の問題が見つかりました:</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
+        <source>
+ ... and other %1 errors</source>
+        <translation>... その他 %1 件のエラー</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="544"/>
+        <source>Warning</source>
+        <translation>警告</translation>
     </message>
 </context>
 <context>
@@ -1715,7 +1742,7 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="806"/>
         <location filename="../project/projectmainfile.cpp" line="809"/>
         <location filename="../project/projectmainfile.cpp" line="1078"/>
-        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <location filename="../project/projectmainfile.cpp" line="1188"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1791,7 +1818,7 @@ Do you really want to import this file?</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <location filename="../project/projectmainfile.cpp" line="1188"/>
         <source>Coordinate system not selected.</source>
         <translation>座標系が選択されていません。</translation>
     </message>
@@ -2020,6 +2047,11 @@ Do you really want to import this file?</source>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
+    <message>
+        <location filename="../project/projectmainfile.cpp" line="1145"/>
+        <source>Set offset</source>
+        <translation>オフセットの指定</translation>
+    </message>
 </context>
 <context>
     <name>RawData</name>
@@ -2182,24 +2214,24 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="114"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="116"/>
         <source>Background Images (Internet)</source>
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="144"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="144"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation>インターネットから背景画像を取得するには、以下のメニューから座標系を指定して下さい。
 ファイル -&gt; プロパティ</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="194"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="196"/>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>
