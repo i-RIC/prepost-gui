@@ -154,12 +154,12 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		ret = nc_inq_dimid(ncid, X, &xDimId);
 		ret = nc_inq_dimid(ncid, Y, &yDimId);
 
-		size_t xSize, ySize;
+		size_t xSize, ySize, xySize;
 		ret = nc_inq_dimlen(ncid, xDimId, &xSize);
 		ret = nc_inq_dimlen(ncid, yDimId, &ySize);
 
 		std::vector<double> xs(xSize);
-		std::vector<double> ys(xSize);
+		std::vector<double> ys(ySize);
 
 		ret = nc_get_var_double(ncid, xVarId, xs.data());
 		ret = nc_get_var_double(ncid, yVarId, ys.data());
@@ -178,30 +178,22 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		// load Lon Lat Values
 		ret = nc_inq_varid(ncid, LAT, &latVarId);
 		ret = nc_inq_varid(ncid, LON, &lonVarId);
+		xySize = xSize * ySize;
 
-		// load lon, lat values
-		int lonDimId, latDimId;
-		ret = nc_inq_dimid(ncid, LAT, &latDimId);
-		ret = nc_inq_dimid(ncid, LON, &lonDimId);
-
-		size_t lonSize, latSize;
-		ret = nc_inq_dimlen(ncid, latDimId, &latSize);
-		ret = nc_inq_dimlen(ncid, lonDimId, &lonSize);
-
-		std::vector<double> lons(lonSize);
-		std::vector<double> lats(latSize);
+		std::vector<double> lons(xySize);
+		std::vector<double> lats(xySize);
 
 		ret = nc_get_var_double(ncid, lonVarId, lons.data());
 		ret = nc_get_var_double(ncid, latVarId, lats.data());
 
 		m_lonValues.clear();
-		m_lonValues.reserve(static_cast<int>(lonSize));
-		for (size_t i = 0; i < lonSize; ++i) {
+		m_lonValues.reserve(static_cast<int>(xySize));
+		for (size_t i = 0; i < xySize; ++i) {
 			m_lonValues.push_back(lons[i]);
 		}
 		m_latValues.clear();
-		m_latValues.reserve(static_cast<int>(latSize));
-		for (size_t i = 0; i < latSize; ++i) {
+		m_latValues.reserve(static_cast<int>(xySize));
+		for (size_t i = 0; i < xySize; ++i) {
 			m_latValues.push_back(lats[i]);
 		}
 	} else {
@@ -287,7 +279,10 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		}
 	}
 	nc_close(ncid);
+
 	updateShapeData();
+	// load data for index 0;
+	handleDimensionCurrentIndexChange(0, 0);
 }
 
 void GeoDataNetcdf::saveExternalData(const QString& /*filename*/)
@@ -691,8 +686,6 @@ int GeoDataNetcdf::outputCoords(int ncid, int xId, int yId, int lonId, int latId
 		if (ret != NC_NOERR) {return ret;}
 		ret = nc_put_var_double(ncid, yId, ys.data());
 		if (ret != NC_NOERR) {return ret;}
-
-		return NC_NOERR;
 	}
 
 	if (m_coordinateSystemType == XY || m_coordinateSystemType == LonLat) {
