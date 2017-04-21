@@ -11,7 +11,7 @@ MouseHelpDialog::MouseHelpDialog(QWidget *parent) :
 	ui(new Ui::MouseHelpDialog)
 {
 	ui->setupUi(this);
-	QSettings setting;
+	QSettings setting("iRIC Organization", "iRIC GUI 3");
 	QString locale = setting.value("general/locale", QLocale::system().name()).value<QString>();
 	QString fname = QString(":/images/%1/imgMouseHelp.png").arg(locale);
 	if (! QFile::exists(fname)) {

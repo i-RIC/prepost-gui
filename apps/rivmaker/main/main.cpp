@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	QApplication a(argc, argv);
 
 	// install translators. it borrows iRIC GUI language setting.
-	QSettings settings("iRIC Organization", "iRIC GUI");
+	QSettings settings("iRIC Organization", "iRIC GUI 3");
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
 
 	QString exeFolder = QApplication::applicationDirPath();
