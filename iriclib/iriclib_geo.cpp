@@ -16,7 +16,7 @@ int iRIC_Geo_Polygon_Open(char* filename, int *id){
 		return -1;
 	}
 	polygons.push_back(polygon);
-	*id = polygons.size();
+	*id = static_cast<int>(polygons.size());
 	return 0;
 }
 
@@ -68,7 +68,7 @@ int iRIC_Geo_Polygon_Read_HoleCount(int id, int* count)
 {
 	iRICLib::Polygon* pol = iRIC_local_Geo_Polygon_GetPolygon(id);
 	if (pol == 0) {return -1;}
-	*count = pol->holes.size();
+	*count = static_cast<int>(pol->holes.size());
 	return 0;
 }
 
@@ -112,7 +112,7 @@ int iRIC_Geo_RiverSurvey_Open(char* filename, int* id)
 		return -1;
 	}
 	riversurveys.push_back(rs);
-	*id = riversurveys.size();
+	*id = static_cast<int>(riversurveys.size());
 	return 0;
 }
 
@@ -136,7 +136,7 @@ int iRIC_Geo_RiverSurvey_Read_Count(int id, int* count)
 {
 	iRICLib::RiverSurvey* rs = iRIC_local_Geo_RiverSurvey_GetRiverSurvey(id);
 	if (rs == 0) {return -1;}
-	*count = rs->points.size();
+	*count = static_cast<int>(rs->points.size());
 	return 0;
 }
 
@@ -186,7 +186,7 @@ int iRIC_Geo_RiverSurvey_Read_AltitudeCount(int id, int pointid, int* count)
 {
 	iRICLib::RiverPathPoint* rpp = iRIC_local_Geo_RiverSurvey_GetRiverPathPoint(id, pointid);
 	if (rpp == 0){return -1;}
-	*count = rpp->altitudes.size();
+	*count = static_cast<int>(rpp->altitudes.size());
 	return 0;
 }
 

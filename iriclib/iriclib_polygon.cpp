@@ -105,7 +105,7 @@ int Polygon::save(const char *filename, bool noDimensions)
 	if (noDimensions){
 		str << values[0];
 	} else {
-		int count = values.size();
+		int count = static_cast<int>(values.size());
 		str << count;
 		for (int i = 0; i < count; ++i){
 			str << values[i];

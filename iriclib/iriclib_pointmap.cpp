@@ -142,7 +142,7 @@ int PointMap::save(const char *filename)
 	OutputBStream str(ostream);
 	str << static_cast<int>(valueType);
 
-	pointCount = x.size();
+	pointCount = static_cast<int>(x.size());
 	str << pointCount;
 
 	for (int i = 0; i < pointCount; ++i){
@@ -160,12 +160,12 @@ int PointMap::save(const char *filename)
 			str << intValue.at(i);
 		}
 	}
-	int triCount = triangles.size();
+	int triCount = static_cast<int>(triangles.size());
 	str << triCount;
 	for (int i = 0; i < triCount; ++i){
 		str << triangles.at(i);
 	}
-	int blCount = breaklines.size();
+	int blCount = static_cast<int>(breaklines.size());
 	str << blCount;
 	for (int i = 0; i < blCount; ++i){
 		str << breaklines.at(i);
