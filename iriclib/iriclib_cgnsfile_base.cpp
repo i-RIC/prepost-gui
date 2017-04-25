@@ -629,7 +629,7 @@ int CgnsFile::Impl::readStringLen(const char* name, int* length)
 	int index;
 	DataType_t datatype;
 	int dim;
-	int dimVec[3];
+	cgsize_t dimVec[3];
 
 	int ier = findArray(name, &index, &datatype, &dim, &(dimVec[0]));
 	RETURN_IF_ERR;
