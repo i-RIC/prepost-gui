@@ -292,6 +292,13 @@ void case_SolWriteDivide()
 {
 	iRIC_InitOption(IRIC_OPTION_DIVIDESOLUTIONS);
 
+	remove("case_soldivide.cgn");
+	remove("case_soldivide_Solution1.cgn");
+	remove("case_soldivide_Solution2.cgn");
+	remove("case_soldivide_Solution3.cgn");
+	remove("case_soldivide_Solution4.cgn");
+	remove("case_soldivide_Solution5.cgn");
+
 	QFile::copy("case_init.cgn", "case_soldivide.cgn");
 
 	int fid;
@@ -327,6 +334,13 @@ void case_SolWriteDivide()
 	remove("case_soldivide_Solution3.cgn");
 	remove("case_soldivide_Solution4.cgn");
 	remove("case_soldivide_Solution5.cgn");
+
+	remove("case_soldivide3d.cgn");
+	remove("case_soldivide3d_Solution1.cgn");
+	remove("case_soldivide3d_Solution2.cgn");
+	remove("case_soldivide3d_Solution3.cgn");
+	remove("case_soldivide3d_Solution4.cgn");
+	remove("case_soldivide3d_Solution5.cgn");
 
 	// @todo add codes to test
 
