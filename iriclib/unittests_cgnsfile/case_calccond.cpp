@@ -16,8 +16,11 @@ extern "C" {
 
 void case_CalcCondRead()
 {
+	remove("case_cc.cgn");
+	QFile::copy("case_init.cgn", "case_cc.cgn");
+
 	int fid;
-	int ier = cg_open("case_init.cgn", CG_MODE_MODIFY, &fid);
+	int ier = cg_open("case_cc.cgn", CG_MODE_MODIFY, &fid);
 
 	VERIFY_LOG("cg_open() ier == 0", ier == 0);
 	VERIFY_LOG("cg_open() fid != 0", fid != 0);
@@ -142,6 +145,8 @@ void case_CalcCondRead()
 	VERIFY_LOG("cg_iRIC_Read_Functional_RealSingle_Mul() value value[3]", fabs(floatvalues.at(3) - 2.8) < 0.001);
 
 	cg_close(fid);
+
+	remove("case_cc.cgn");
 }
 
 void case_CalcCondWrite()

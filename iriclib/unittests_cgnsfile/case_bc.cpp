@@ -16,6 +16,7 @@ extern "C" {
 
 void case_BcRead()
 {
+	remove("case_bc.cgn");
 	QFile::copy("case_init.cgn", "case_bc.cgn");
 
 	int fid;
