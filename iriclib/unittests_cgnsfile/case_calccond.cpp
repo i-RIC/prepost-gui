@@ -222,7 +222,7 @@ void case_CalcCondWrite()
 	VERIFY_LOG("cg_iRIC_Read_String_Mul() ier == 0", ier == 0);
 	VERIFY_LOG("cg_iRIC_Read_String_Mul() value match", std::string(read_str.data()) == write_str);
 
-	int func_len;
+	cgsize_t func_len;
 	std::vector<double> read_params, read_vals;
 	ier = cg_iRIC_Read_FunctionalSize_Mul(fid, const_cast<char*>("write_func"), &func_len);
 	VERIFY_LOG("cg_iRIC_Read_FunctionalSize_Mul() ier == 0", ier == 0);
