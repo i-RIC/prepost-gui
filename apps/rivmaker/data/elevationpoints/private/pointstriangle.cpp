@@ -15,6 +15,7 @@ bool crossedPoint(QVector3D* p1, QVector3D* p2, const QPointF& q1, const QPointF
 
 	bool ok = GeometryUtil::intersectionPoint(p1_2d, p2_2d, q1, q2, &isec, &r, &s);
 	if (ok == false) {return false;}
+	if (r < 0 || r > 1) {return false;}
 
 	double z = p1->z() * (1 - r) + p2->z() * r;
 	crossed->setX(isec.x());
