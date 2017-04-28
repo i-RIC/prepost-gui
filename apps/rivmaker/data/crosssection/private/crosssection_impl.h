@@ -6,6 +6,8 @@
 #include <QPointF>
 #include <QVector2D>
 
+#include <map>
+
 class CrossSection::Impl
 {
 public:
@@ -19,7 +21,7 @@ public:
 
 	double m_waterElevation;
 
-	std::vector<QVector3D*> m_mappedPoints;
+	std::map<double, double> m_mappedPoints;
 
 private:
 	CrossSection* m_parent;

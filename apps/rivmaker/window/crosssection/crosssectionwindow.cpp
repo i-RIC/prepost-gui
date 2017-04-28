@@ -10,7 +10,7 @@
 #include <qwt_plot_marker.h>
 #include <qwt_symbol.h>
 
-#include <QVector3D>
+#include <QVector2D>
 
 #include <map>
 
@@ -111,16 +111,9 @@ void CrossSectionWindow::updateCurve()
 	if (m_currentCrossSection == nullptr) {return;}
 
 	QVector<QPointF> samples;
-	std::multimap<double, double> points;
 
-	QPointF mappedP;
-	double pos;
-	for (QVector3D* p : m_currentCrossSection->mappedPoints()){
-		m_currentCrossSection->getMappedPoint(p->x(), p->y(), &mappedP, &pos);
-		points.insert(std::make_pair(pos, p->z()));
-	}
-	for (auto pair : points) {
-		samples.push_back(QPointF(pair.first, pair.second));
+	for (auto p : m_currentCrossSection->mappedPoints()){
+		samples.push_back(QPointF(p.x(), p.y()));
 	}
 	m_curve->setSamples(samples);
 

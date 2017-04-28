@@ -40,7 +40,8 @@ Project::Impl::Impl(Project *project) :
 	m_elevationPoints {&m_rootDataItem},
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
-	m_baseLine {&m_rootDataItem}
+	m_baseLine {&m_rootDataItem},
+	m_currentBuilder {& m_builderNearest}
 {}
 
 Project::Impl::~Impl()
@@ -183,17 +184,7 @@ void Project::mapPointsToCrossSections()
 	for (auto cs : csVec) {
 		cs->clearMappedPoints();
 	}
-	for (QVector3D* p : elevationPoints().points()) {
-		std::multimap<double, CrossSection*> distanceMap;
-		QPointF nearestPoint;
-		double distance;
-		for (auto cs : csVec) {
-			cs->getNearestPoint(p->x(), p->y(), &nearestPoint, &distance);
-			distanceMap.insert(std::make_pair(distance, cs));
-		}
-		auto it = distanceMap.begin();
-		it->second->addMappedPoint(p);
-	}
+	impl->m_currentBuilder->build(elevationPoints(), &(crossSections()));
 }
 
 bool Project::sortCrossSectionsIfPossible()

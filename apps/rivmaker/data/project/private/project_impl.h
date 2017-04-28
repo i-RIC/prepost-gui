@@ -8,6 +8,8 @@
 #include "../../elevationpoints/elevationpoints.h"
 #include "../../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 
+#include "../../../csbuilder/crosssectionbuildermapalltonearest.h"
+
 #include <QPointF>
 
 class Project::Impl
@@ -22,6 +24,9 @@ public:
 	WaterSurfaceElevationPoints m_waterSurfaceElevationPoints;
 	CrossSections m_crossSections;
 	BaseLine m_baseLine;
+
+	CrossSectionBuilderMapAllToNearest m_builderNearest;
+	CrossSectionBuilderI* m_currentBuilder;
 
 	QPointF m_offset;
 };

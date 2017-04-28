@@ -8,6 +8,7 @@
 #include <vector>
 
 class QPointF;
+class QVector2D;
 
 class CrossSection : public DataItem, public PreProcessorDataItemI, public CoordinatesI
 {
@@ -37,9 +38,9 @@ public:
 	double waterElevation() const;
 	void setWaterElevation(double e);
 
-	std::vector<QVector3D*> mappedPoints() const;
-	void setMappedPoints(const std::vector<QVector3D*>& points);
-	void addMappedPoint(QVector3D* p);
+	std::vector<QVector2D> mappedPoints() const;
+	void setMappedPoints(const std::vector<QVector2D>& points);
+	void addMappedPoint(const QVector2D& p);
 	void clearMappedPoints();
 
 	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance) const;

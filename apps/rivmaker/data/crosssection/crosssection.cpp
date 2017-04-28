@@ -118,19 +118,26 @@ void CrossSection::setWaterElevation(double e)
 	impl->m_waterElevation = e;
 }
 
-std::vector<QVector3D*> CrossSection::mappedPoints() const
+std::vector<QVector2D> CrossSection::mappedPoints() const
 {
-	return impl->m_mappedPoints;
+	std::vector<QVector2D> ret;
+	for (auto pair : impl->m_mappedPoints) {
+		ret.push_back(QVector2D(pair.first, pair.second));
+	}
+	return ret;
 }
 
-void CrossSection::setMappedPoints(const std::vector<QVector3D*>& points)
+void CrossSection::setMappedPoints(const std::vector<QVector2D>& points)
 {
-	impl->m_mappedPoints = points;
+	clearMappedPoints();
+	for (auto p : points) {
+		addMappedPoint(p);
+	}
 }
 
-void CrossSection::addMappedPoint(QVector3D* p)
+void CrossSection::addMappedPoint(const QVector2D& p)
 {
-	impl->m_mappedPoints.push_back(p);
+	impl->m_mappedPoints.insert(std::make_pair(p.x(), p.y()));
 }
 
 void CrossSection::clearMappedPoints()

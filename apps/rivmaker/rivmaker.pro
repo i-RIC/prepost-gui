@@ -25,7 +25,9 @@ else {
 }
 
 # Input
-HEADERS += dialogs/aboutdialog.h \
+HEADERS += csbuilder/crosssectionbuilderi.h \
+           csbuilder/crosssectionbuildermapalltonearest.h \
+           dialogs/aboutdialog.h \
            dialogs/coordinateseditdialog.h \
            dialogs/mousehelpdialog.h \
            io/rivexporter.h \
@@ -126,7 +128,8 @@ FORMS += dialogs/aboutdialog.ui \
          widgets/valuewidget.ui \
          window/crosssection/crosssectionwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
-SOURCES += dialogs/aboutdialog.cpp \
+SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
+           dialogs/aboutdialog.cpp \
            dialogs/coordinateseditdialog.cpp \
            dialogs/mousehelpdialog.cpp \
            io/rivexporter.cpp \
