@@ -41,7 +41,7 @@ Project::Impl::Impl(Project *project) :
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
 	m_baseLine {&m_rootDataItem},
-	m_currentBuilder {& m_builderNearest}
+	m_currentBuilder {& m_builderTin}
 {}
 
 Project::Impl::~Impl()

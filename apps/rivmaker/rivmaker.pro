@@ -3,10 +3,26 @@ TARGET = Rivmaker
 CONFIG += qt
 CONFIG += debug_and_release
 
+DEFINES += ANSI_DECLARATORS
+
 include( ../../paths.pri )
 
 QT += widgets network
 RC_FILE = rivmaker.rc
+
+# iricTriangle
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/triangle/debug"
+	} else {
+		LIBS += -L"../../libs/triangle/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/triangle"
+}
+LIBS += -liricTriangle
 
 # Qwt
 
@@ -27,6 +43,7 @@ else {
 # Input
 HEADERS += csbuilder/crosssectionbuilderi.h \
            csbuilder/crosssectionbuildermapalltonearest.h \
+           csbuilder/crosssectionbuildertin.h \
            dialogs/aboutdialog.h \
            dialogs/coordinateseditdialog.h \
            dialogs/mousehelpdialog.h \
@@ -112,6 +129,8 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/crosssection/private/crosssectionpreprocessorcontroller_impl.h \
            data/crosssections/private/crosssections_impl.h \
            data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \
+           data/elevationpoints/private/elevationpoints_impl.h \
+           data/elevationpoints/private/pointstriangle.h \
            data/points/private/points_impl.h \
            data/points/private/pointspreprocessorcontroller_impl.h \
            data/project/private/project_impl.h \
@@ -129,6 +148,7 @@ FORMS += dialogs/aboutdialog.ui \
          window/crosssection/crosssectionwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
 SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
+           csbuilder/crosssectionbuildertin.cpp \
            dialogs/aboutdialog.cpp \
            dialogs/coordinateseditdialog.cpp \
            dialogs/mousehelpdialog.cpp \
@@ -195,6 +215,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            window/preprocessor/preprocessorview.cpp \
            window/preprocessor/preprocessorwindow.cpp \
            window/verticalcrosssection/verticalcrosssectionwindow.cpp \
+           data/elevationpoints/private/pointstriangle.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
            window/preprocessor/objectbrowser/objectbrowserview.cpp
 RESOURCES += rivmaker.qrc

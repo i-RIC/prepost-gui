@@ -17,7 +17,7 @@ public:
 	const std::vector<QVector3D*>& points() const;
 	std::vector<QVector3D*>& points();
 
-	void setPoints(const std::vector<QVector3D*>& points);
+	virtual void setPoints(const std::vector<QVector3D*>& points);
 	void clearPoints();
 
 	DataItemController* buildPreProcessorDataItemController(Model* model) override;

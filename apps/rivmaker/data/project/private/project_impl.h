@@ -9,6 +9,7 @@
 #include "../../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 
 #include "../../../csbuilder/crosssectionbuildermapalltonearest.h"
+#include "../../../csbuilder/crosssectionbuildertin.h"
 
 #include <QPointF>
 
@@ -26,6 +27,8 @@ public:
 	BaseLine m_baseLine;
 
 	CrossSectionBuilderMapAllToNearest m_builderNearest;
+	CrossSectionBuilderTin m_builderTin;
+
 	CrossSectionBuilderI* m_currentBuilder;
 
 	QPointF m_offset;
