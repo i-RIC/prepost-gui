@@ -106,6 +106,7 @@ HEADERS += dialogs/aboutdialog.h \
            data/base/private/model_impl.h \
            data/baseline/private/baseline_impl.h \
            data/baseline/private/baselinepreprocessorcontroller_impl.h \
+           data/crosssection/private/crosssection_impl.h \
            data/crosssection/private/crosssectionpreprocessorcontroller_impl.h \
            data/crosssections/private/crosssections_impl.h \
            data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \

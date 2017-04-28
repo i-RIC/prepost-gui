@@ -5,7 +5,9 @@
 #include "../base/coordinatesi.h"
 #include "../../window/preprocessor/preprocessordataitemi.h"
 
-#include <QPointF>
+#include <vector>
+
+class QPointF;
 
 class CrossSection : public DataItem, public PreProcessorDataItemI, public CoordinatesI
 {
@@ -50,15 +52,12 @@ public:
 	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
-	int m_id;
-	bool m_isDefined;
-
-	QPointF m_point1;
-	QPointF m_point2;
-
-	double m_waterElevation;
-
-	std::vector<QVector3D*> m_mappedPoints;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/crosssection_impl.h"
+#endif // _DEBUG
 
 #endif // CROSSSECTION_H
