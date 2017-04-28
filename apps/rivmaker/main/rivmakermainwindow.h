@@ -57,6 +57,8 @@ private slots:
 	void viewToggleWindowsToolBar(bool visible);
 	void viewToggleStatusBar(bool visible);
 
+	void optionMappingSetting();
+
 	void helpMouseHint();
 	void showAboutDialog();
 

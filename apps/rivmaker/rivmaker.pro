@@ -46,6 +46,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            csbuilder/crosssectionbuildertin.h \
            dialogs/aboutdialog.h \
            dialogs/coordinateseditdialog.h \
+           dialogs/mappingsettingdialog.h \
            dialogs/mousehelpdialog.h \
            io/rivexporter.h \
            io/sacguiimporter.h \
@@ -141,6 +142,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            window/preprocessor/private/preprocessorwindow_impl.h
 FORMS += dialogs/aboutdialog.ui \
          dialogs/coordinateseditdialog.ui \
+         dialogs/mappingsettingdialog.ui \
          dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          widgets/mousepositionwidget.ui \
@@ -151,6 +153,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            csbuilder/crosssectionbuildertin.cpp \
            dialogs/aboutdialog.cpp \
            dialogs/coordinateseditdialog.cpp \
+           dialogs/mappingsettingdialog.cpp \
            dialogs/mousehelpdialog.cpp \
            io/rivexporter.cpp \
            io/sacguiimporter.cpp \

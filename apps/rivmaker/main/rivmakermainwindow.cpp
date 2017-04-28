@@ -278,6 +278,11 @@ void RivmakerMainWindow::viewToggleStatusBar(bool visible)
 	ui->statusbar->setVisible(visible);
 }
 
+void RivmakerMainWindow::optionMappingSetting()
+{
+
+}
+
 void RivmakerMainWindow::helpMouseHint()
 {
 	static MouseHelpDialog* dialog = nullptr;

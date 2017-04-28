@@ -38,5 +38,8 @@
         <file>images/iconViewZoomOut.png</file>
         <file>images/imgMouseHelp.png</file>
         <file>images/ja_JP/imgMouseHelp.png</file>
+        <file>images/imageAllToLines.png</file>
+        <file>images/imageTemplate.png</file>
+        <file>images/imageTin.png</file>
     </qresource>
 </RCC>
