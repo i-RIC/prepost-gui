@@ -82,7 +82,7 @@ void setupCrossSection(CrossSection* cs, const ElevationPoints& points, double r
 
 	QVector2D delta(0, 0);
 	while (delta.lengthSquared() < lenSqrt) {
-		QPointF p(p1.x() + delta.x(), p2.y() + delta.y());
+		QPointF p(p1.x() + delta.x(), p1.y() + delta.y());
 
 		double z;
 		bool mapped = mapElevation(p, points, streamWiseLength, crossStreamWidth, numberOfExpansions, weightExponent, iDir, jDir, &z);

@@ -51,6 +51,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            csbuilder/crosssectionbuildertin.h \
            dialogs/aboutdialog.h \
            dialogs/coordinateseditdialog.h \
+           dialogs/graphicssettingdialog.h \
            dialogs/mappingsettingdialog.h \
            dialogs/mousehelpdialog.h \
            geom/geometry.h \
@@ -100,6 +101,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/leftbankhwm/leftbankhwmpreprocessorview.h \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.h \
            data/points/points.h \
+           data/points/pointsgraphicssetting.h \
            data/points/pointspreprocessorcontroller.h \
            data/points/pointspreprocessorview.h \
            data/points/pointspreprocessorviewhelper.h \
@@ -154,6 +156,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            window/preprocessor/private/preprocessorwindow_impl.h
 FORMS += dialogs/aboutdialog.ui \
          dialogs/coordinateseditdialog.ui \
+         dialogs/graphicssettingdialog.ui \
          dialogs/mappingsettingdialog.ui \
          dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
@@ -166,6 +169,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            csbuilder/crosssectionbuildertin.cpp \
            dialogs/aboutdialog.cpp \
            dialogs/coordinateseditdialog.cpp \
+           dialogs/graphicssettingdialog.cpp \
            dialogs/mappingsettingdialog.cpp \
            dialogs/mousehelpdialog.cpp \
            geom/geometrypoint.cpp \
@@ -211,6 +215,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorview.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.cpp \
            data/points/points.cpp \
+           data/points/pointsgraphicssetting.cpp \
            data/points/pointspreprocessorcontroller.cpp \
            data/points/pointspreprocessorview.cpp \
            data/points/pointspreprocessorviewhelper.cpp \

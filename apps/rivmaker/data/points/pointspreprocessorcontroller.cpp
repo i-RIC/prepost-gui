@@ -72,6 +72,7 @@ void PointsPreProcessorController::importData()
 	points->setPoints(newPoints);
 	points->project()->setOffset(offset);
 
+	points->project()->updatePointsAutoSize();
 	points->project()->emitUpdated();
 
 	view()->fit();

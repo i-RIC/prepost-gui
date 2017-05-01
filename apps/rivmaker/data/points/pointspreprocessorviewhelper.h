@@ -11,8 +11,8 @@ public:
 	PointsPreProcessorViewHelper(DataItemView* v);
 
 protected:
-	void drawCircles(int size, const QColor& color, QPainter* painter) const;
-	void drawRects(int size, const QColor& color, QPainter* painter) const;
+	void drawCircles(int size, const QColor& color, int transparency, QPainter* painter) const;
+	void drawRects(int size, const QColor& color, int transparency, QPainter* painter) const;
 };
 
 #endif // POINTSPREPROCESSORVIEWHELPER_H

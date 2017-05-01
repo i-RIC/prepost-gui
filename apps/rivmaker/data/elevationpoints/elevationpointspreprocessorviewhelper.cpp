@@ -1,5 +1,6 @@
 #include "elevationpoints.h"
 #include "elevationpointspreprocessorviewhelper.h"
+#include "../points/pointsgraphicssetting.h"
 
 #include <QColor>
 
@@ -9,5 +10,6 @@ ElevationPointsPreProcessorViewHelper::ElevationPointsPreProcessorViewHelper(Dat
 
 void ElevationPointsPreProcessorViewHelper::draw(QPainter* painter) const
 {
-	drawCircles(7, Qt::black, painter);
+	auto setting = PointsGraphicsSetting::elevationPointsSetting;
+	drawCircles(setting.size(), Qt::black, setting.transparency, painter);
 }

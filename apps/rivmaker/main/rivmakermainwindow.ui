@@ -143,6 +143,7 @@
      <string>&amp;Option</string>
     </property>
     <addaction name="mappingSettingAction"/>
+    <addaction name="graphicsSettingAction"/>
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="importMenu"/>
@@ -187,7 +188,7 @@
   </widget>
   <action name="newProjectAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconNew.png</normaloff>:/images/iconNew.png</iconset>
    </property>
    <property name="text">
@@ -230,7 +231,7 @@
   </action>
   <action name="fileImportBackgraundImageAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconImage.png</normaloff>:/images/iconImage.png</iconset>
    </property>
    <property name="text">
@@ -239,7 +240,7 @@
   </action>
   <action name="importBackgraundImageAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconImage.png</normaloff>:/images/iconImage.png</iconset>
    </property>
    <property name="text">
@@ -383,7 +384,7 @@
   </action>
   <action name="mouseHintAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconMouseHelp.png</normaloff>:/images/iconMouseHelp.png</iconset>
    </property>
    <property name="text">
@@ -463,7 +464,7 @@
   </action>
   <action name="fitAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconViewFit.png</normaloff>:/images/iconViewFit.png</iconset>
    </property>
    <property name="text">
@@ -472,7 +473,7 @@
   </action>
   <action name="resetRotationAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconViewRotateReset.png</normaloff>:/images/iconViewRotateReset.png</iconset>
    </property>
    <property name="text">
@@ -484,7 +485,7 @@
   </action>
   <action name="rotate90Action">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconViewRotate90.png</normaloff>:/images/iconViewRotate90.png</iconset>
    </property>
    <property name="text">
@@ -493,7 +494,7 @@
   </action>
   <action name="zoomInAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconViewZoomIn.png</normaloff>:/images/iconViewZoomIn.png</iconset>
    </property>
    <property name="text">
@@ -502,7 +503,7 @@
   </action>
   <action name="zoomOutAction">
    <property name="icon">
-    <iconset resource="../../../libs/gui/gui.qrc">
+    <iconset resource="../rivmaker.qrc">
      <normaloff>:/images/iconViewZoomOut.png</normaloff>:/images/iconViewZoomOut.png</iconset>
    </property>
    <property name="text">
@@ -563,9 +564,13 @@
     <string>&amp;Mapping Setting...</string>
    </property>
   </action>
+  <action name="graphicsSettingAction">
+   <property name="text">
+    <string>&amp;Graphics Setting...</string>
+   </property>
+  </action>
  </widget>
  <resources>
-  <include location="../../../libs/gui/gui.qrc"/>
   <include location="../rivmaker.qrc"/>
  </resources>
  <connections/>

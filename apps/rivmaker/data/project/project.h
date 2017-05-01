@@ -45,6 +45,8 @@ public:
 	const QPointF& offset() const;
 	void setOffset(const QPointF& offset);
 
+	void updatePointsAutoSize();
+
 	MappingMethod mappingMethod() const;
 	void setMappingMethod(MappingMethod method);
 

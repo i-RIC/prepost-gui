@@ -61,6 +61,7 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->viewStatusBarAction, SIGNAL(toggled(bool)), this, SLOT(viewToggleStatusBar(bool)));
 
 	connect(ui->mappingSettingAction, SIGNAL(triggered()), this, SLOT(optionMappingSetting()));
+	connect(ui->graphicsSettingAction, SIGNAL(triggered()), this, SLOT(optionGraphicsSetting()));
 
 	connect(ui->mouseHintAction, SIGNAL(triggered()), this, SLOT(helpMouseHint()));
 	connect(ui->aboutAction, SIGNAL(triggered()), this, SLOT(showAboutDialog()));

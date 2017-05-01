@@ -2,6 +2,7 @@
 #include "../arbitraryhwm/arbitraryhwm.h"
 #include "../crosssection/crosssection.h"
 #include "../leftbankhwm/leftbankhwm.h"
+#include "../points/pointsgraphicssetting.h"
 #include "../rightbankhwm/rightbankhwm.h"
 #include "../../geom/geometrypoint.h"
 #include "../../misc/mathutil.h"
@@ -30,6 +31,25 @@ void addToElevMap(std::map<CrossSection*, std::vector<double> >* elevVals, Cross
 		it = elevVals->find(cs);
 	}
 	it->second.push_back(val);
+}
+
+void updatePointsAutoSize(int numPoints, PointsGraphicsSetting* setting)
+{
+	if (numPoints < 30) {
+		setting->autoSize = 7;
+	}	else if (numPoints < 100) {
+		setting->autoSize = 6;
+	} else if (numPoints < 300) {
+		setting->autoSize = 5;
+	} else if (numPoints < 1000) {
+		setting->autoSize = 4;
+	} else if (numPoints < 3000) {
+		setting->autoSize = 3;
+	} else if (numPoints < 10000) {
+		setting->autoSize = 2;
+	} else {
+		setting->autoSize	= 1;
+	}
 }
 
 } // namespace
@@ -110,6 +130,19 @@ const QPointF& Project::offset() const
 void Project::setOffset(const QPointF& offset)
 {
 	impl->m_offset = offset;
+}
+
+void Project::updatePointsAutoSize()
+{
+	int numElevationPoints = static_cast<int>(impl->m_elevationPoints.points().size());
+	::updatePointsAutoSize(numElevationPoints, &(PointsGraphicsSetting::elevationPointsSetting));
+
+	int numWaterElevationPoints = 0;
+	numWaterElevationPoints += static_cast<int>(impl->m_waterSurfaceElevationPoints.leftBankHWM().points().size());
+	numWaterElevationPoints += static_cast<int>(impl->m_waterSurfaceElevationPoints.rightBankHWM().points().size());
+	numWaterElevationPoints += static_cast<int>(impl->m_waterSurfaceElevationPoints.arbitraryHWM().points().size());
+
+	::updatePointsAutoSize(numWaterElevationPoints, &(PointsGraphicsSetting::waterElevationPointsSetting));
 }
 
 Project::MappingMethod Project::mappingMethod() const

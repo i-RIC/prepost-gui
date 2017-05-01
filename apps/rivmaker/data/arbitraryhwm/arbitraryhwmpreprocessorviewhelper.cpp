@@ -1,4 +1,5 @@
 #include "arbitraryhwmpreprocessorviewhelper.h"
+#include "../points/pointsgraphicssetting.h"
 
 #include <QColor>
 
@@ -8,5 +9,6 @@ ArbitraryHWMPreProcessorViewHelper::ArbitraryHWMPreProcessorViewHelper(DataItemV
 
 void ArbitraryHWMPreProcessorViewHelper::draw(QPainter* painter) const
 {
-	drawRects(7, Qt::gray, painter);
+	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
+	drawRects(setting.size(), Qt::gray, setting.transparency, painter);
 }
