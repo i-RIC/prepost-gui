@@ -54,4 +54,6 @@ void MappingSettingDialog::accept()
 	m_project->setTemplateMappingCrossStreamWidth(ui->crossLengthSpinBox->value());
 	m_project->setTemplateMappingNumberOfExpansions(ui->numExpansionsSpinBox->value());
 	m_project->setTemplateMappingWeightExponent(ui->exponentSpinBox->value());
+
+	QDialog::accept();
 }
