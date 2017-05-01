@@ -3,8 +3,7 @@
 
 #include "../elevationpoints.h"
 #include "../../../geom/geometrytriangle.h"
-
-#include <geos/index/quadtree/Quadtree.h>
+#include "../../../geom/quadtreecontainer.h"
 
 #include <vector>
 
@@ -14,8 +13,12 @@ public:
 	Impl(ElevationPoints* points);
 
 	void buildTriangles();
+	void buildContainers();
 
 	std::vector<GeometryTriangle> m_triangles;
+
+	QuadtreeContainer m_pointsContainer;
+	QuadtreeContainer m_trianglesContainer;
 
 private:
 	ElevationPoints* m_parent;

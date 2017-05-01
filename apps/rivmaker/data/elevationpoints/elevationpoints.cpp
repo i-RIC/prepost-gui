@@ -4,6 +4,7 @@
 #include "private/elevationpoints_impl.h"
 #include "../../geom/geometrypoint.h"
 #include "../../geom/geometrytriangle.h"
+#include "../../geom/rect.h"
 #include "../../misc/geometryutil.h"
 
 #define REAL double
@@ -94,6 +95,20 @@ void ElevationPoints::Impl::buildTriangles()
 	trifree(out.segmentmarkerlist);
 }
 
+void ElevationPoints::Impl::buildContainers()
+{
+	m_pointsContainer.clear();
+
+	for (GeometryPoint* p : m_parent->points()) {
+		m_pointsContainer.add(p);
+	}
+
+	m_trianglesContainer.clear();
+	for (GeometryTriangle& t : m_triangles) {
+		m_trianglesContainer.add(&t);
+	}
+}
+
 // public interfaces
 
 ElevationPoints::ElevationPoints(DataItem *parent) :
@@ -122,14 +137,19 @@ void ElevationPoints::setPoints(const std::vector<GeometryPoint*> &points)
 {
 	Points::setPoints(points);
 	impl->buildTriangles();
+	impl->buildContainers();
 }
 
 std::vector<QVector2D> ElevationPoints::buildCrossSectionPoints(const QPointF& p1, const QPointF& p2) const
 {
 	std::vector<QVector2D> ret;
 
-	for (const GeometryTriangle& tri : impl->m_triangles) {
-		auto points =  tri.crossedPoints(p1, p2);
+	Rect rect(p1.x(), p1.y(), p2.x(), p2.y());
+	auto tris = impl->m_trianglesContainer.findIntersectRect(rect);
+
+	for (Geometry* g : tris) {
+		auto tri = dynamic_cast<GeometryTriangle*> (g);
+		auto points =  tri->crossedPoints(p1, p2);
 		for (GeometryPoint p : points) {
 			QVector2D diff(p.x() - p1.x(), p.y() - p1.y());
 			double distance = diff.length();
