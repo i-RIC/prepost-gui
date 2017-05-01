@@ -212,7 +212,10 @@ void PreProcessorModel::updateCrossSections()
 	if (! sorted && impl->m_project->baseLine().polyLine().size() >= 2) {
 		QMessageBox::warning(view(), tr("Warning"), tr("Not all Cross Sections cross Base line"));
 	}
-	if (! sorted) {return;}
+	if (! sorted) {
+		impl->m_project->emitUpdated();
+		return;
+	}
 
 	auto cs = dynamic_cast<CrossSectionsPreProcessorController*> (dataItemController(&(impl->m_project->crossSections())));
 	cs->rebuildStandardItemsAndViews();
