@@ -1,12 +1,13 @@
 #include "pointscsvimporter.h"
 
+#include "../../geom/geometrypoint.h"
+
 #include <QDir>
 #include <QFile>
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QStringList>
 #include <QTextStream>
-#include <QVector3D>
 
 QStringList PointsCsvImporter::fileDialogFilters()
 {
@@ -25,7 +26,7 @@ QStringList PointsCsvImporter::acceptableExtensions()
 	return ret;
 }
 
-bool PointsCsvImporter::importData(std::vector<QVector3D*>* points, QPointF* offset, const QString& filename, QWidget* w)
+bool PointsCsvImporter::importData(std::vector<GeometryPoint*> *points, QPointF* offset, const QString& filename, QWidget* w)
 {
 	bool ok;
 	int skip = QInputDialog::getInt(w, tr("Filtering Setting"), tr("Filter"), 1, 1, 10000, 1, &ok);
@@ -65,7 +66,7 @@ bool PointsCsvImporter::importData(std::vector<QVector3D*>* points, QPointF* off
 			offset->setY(y);
 		}
 
-		QVector3D* v = new QVector3D(x - offset->x(), y - offset->y(), z);
+		GeometryPoint* v = new GeometryPoint(x - offset->x(), y - offset->y(), z);
 		if (idx % skip == 0) {
 			points->push_back(v);
 		}

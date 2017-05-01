@@ -3,11 +3,10 @@
 #include "../crosssection/crosssection.h"
 #include "../leftbankhwm/leftbankhwm.h"
 #include "../rightbankhwm/rightbankhwm.h"
+#include "../../geom/geometrypoint.h"
 #include "../../misc/mathutil.h"
 
 #include "private/project_impl.h"
-
-#include <QVector3D>
 
 #include <map>
 #include <vector>
@@ -16,7 +15,7 @@ namespace {
 
 void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals)
 {
-	for (QVector3D* p : points.points()) {
+	for (GeometryPoint* p : points.points()) {
 		double pos = line.calcPosition(p->x(), p->y());
 		vals->insert(std::make_pair(pos, p->z()));
 	}

@@ -9,6 +9,7 @@
 #include "../../data/points/points.h"
 #include "../../data/rightbankhwm/rightbankhwm.h"
 #include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
+#include "../../geom/geometrypoint.h"
 
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
@@ -21,7 +22,6 @@
 #include <QPointF>
 #include <QStyledItemDelegate>
 #include <QVector>
-#include <QVector3D>
 
 namespace {
 
@@ -30,7 +30,7 @@ namespace {
 	void setSamples(const BaseLine& baseLine, const Points& points, QwtPlotCurve* curve, double* xmin, double* xmax, double* ymin, double* ymax, bool* first)
 	{
 		QVector<QPointF> samples;
-		for (QVector3D* p : points.points()){
+		for (GeometryPoint* p : points.points()){
 			double pos = baseLine.calcPosition(p->x(), p->y());
 			samples.push_back(QPointF(pos, p->z()));
 

@@ -14,7 +14,7 @@ public:
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 
-	void setPoints(const std::vector<QVector3D*>& points) override;
+	void setPoints(const std::vector<GeometryPoint*>& points) override;
 
 	std::vector<QVector2D> buildCrossSectionPoints(const QPointF& p1, const QPointF& p2) const;
 

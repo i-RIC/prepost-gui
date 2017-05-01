@@ -2,7 +2,8 @@
 #include "elevationpointspreprocessorview.h"
 
 #include "private/elevationpoints_impl.h"
-#include "private/pointstriangle.h"
+#include "../../geom/geometrypoint.h"
+#include "../../geom/geometrytriangle.h"
 #include "../../misc/geometryutil.h"
 
 #define REAL double
@@ -12,7 +13,6 @@
 #include <QIcon>
 #include <QStandardItem>
 #include <QVector2D>
-#include <QVector3D>
 
 ElevationPoints::Impl::Impl(ElevationPoints *points) :
 	m_parent {points}
@@ -27,7 +27,7 @@ void ElevationPoints::Impl::buildTriangles()
 	std::vector<double> pointList;
 	pointList.reserve(pointCount);
 
-	for (QVector3D* p : points) {
+	for (GeometryPoint* p : points) {
 		pointList.push_back(p->x());
 		pointList.push_back(p->y());
 	}
@@ -82,10 +82,10 @@ void ElevationPoints::Impl::buildTriangles()
 
 	m_triangles.clear();
 	for (int i = 0; i < out.numberoftriangles; ++i) {
-		QVector3D* p1 = points.at(*(out.trianglelist + i * 3    ) - 1);
-		QVector3D* p2 = points.at(*(out.trianglelist + i * 3 + 1) - 1);
-		QVector3D* p3 = points.at(*(out.trianglelist + i * 3 + 2) - 1);
-		m_triangles.push_back(PointsTriangle(p1, p2, p3));
+		GeometryPoint* p1 = points.at(*(out.trianglelist + i * 3    ) - 1);
+		GeometryPoint* p2 = points.at(*(out.trianglelist + i * 3 + 1) - 1);
+		GeometryPoint* p3 = points.at(*(out.trianglelist + i * 3 + 2) - 1);
+		m_triangles.push_back(GeometryTriangle(p1, p2, p3));
 	}
 
 	trifree(out.pointmarkerlist);
@@ -118,7 +118,7 @@ DataItemView* ElevationPoints::buildPreProcessorDataItemView(Model* model)
 	return new ElevationPointsPreprocessorView(model, this);
 }
 
-void ElevationPoints::setPoints(const std::vector<QVector3D*>& points)
+void ElevationPoints::setPoints(const std::vector<GeometryPoint*> &points)
 {
 	Points::setPoints(points);
 	impl->buildTriangles();
@@ -128,9 +128,9 @@ std::vector<QVector2D> ElevationPoints::buildCrossSectionPoints(const QPointF& p
 {
 	std::vector<QVector2D> ret;
 
-	for (const PointsTriangle& tri : impl->m_triangles) {
+	for (const GeometryTriangle& tri : impl->m_triangles) {
 		auto points =  tri.crossedPoints(p1, p2);
-		for (QVector3D p : points) {
+		for (GeometryPoint p : points) {
 			QVector2D diff(p.x() - p1.x(), p.y() - p1.y());
 			double distance = diff.length();
 			ret.push_back(QVector2D(distance, p.z()));

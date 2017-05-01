@@ -1,10 +1,9 @@
 #include "points.h"
 #include "pointspreprocessorcontroller.h"
 #include "../project/project.h"
+#include "../../geom/geometrypoint.h"
 
 #include "private/points_impl.h"
-
-#include <QVector3D>
 
 Points::Points(DataItem* parent) :
 	DataItem {parent},
@@ -17,17 +16,17 @@ Points::~Points()
 	delete impl;
 }
 
-const std::vector<QVector3D*>& Points::points() const
+const std::vector<GeometryPoint*> &Points::points() const
 {
 	return impl->m_points;
 }
 
-std::vector<QVector3D*>& Points::points()
+std::vector<GeometryPoint*> &Points::points()
 {
 	return impl->m_points;
 }
 
-void Points::setPoints(const std::vector<QVector3D*>& points)
+void Points::setPoints(const std::vector<GeometryPoint*> &points)
 {
 	clearPoints();
 	impl->m_points = points;

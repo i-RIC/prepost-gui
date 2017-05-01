@@ -40,6 +40,10 @@ else {
 	DEFINES += QT_NO_WARNING_OUTPUT
 }
 
+# geos
+
+LIBS += -lgeos
+
 # Input
 HEADERS += csbuilder/crosssectionbuilderi.h \
            csbuilder/crosssectionbuildermapalltonearest.h \
@@ -49,6 +53,12 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            dialogs/coordinateseditdialog.h \
            dialogs/mappingsettingdialog.h \
            dialogs/mousehelpdialog.h \
+           geom/geometry.h \
+           geom/geometrypoint.h \
+           geom/geometrytriangle.h \
+           geom/quadtreecontainer.h \
+           geom/rect.h \
+           geom/rect_detail.h \
            io/rivexporter.h \
            io/sacguiimporter.h \
            main/rivmakermainwindow.h \
@@ -101,6 +111,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
            dialogs/private/coordinateeditwidget.h \
            dialogs/private/coordinateseditdialog_impl.h \
+           geom/private/quadtreecontainer_impl.h \
            io/crosssections/crosssectionscsvexporter.h \
            io/crosssections/crosssectionscsvimporter.h \
            io/crosssections/crosssectionsexporter.h \
@@ -133,7 +144,6 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/crosssections/private/crosssections_impl.h \
            data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \
            data/elevationpoints/private/elevationpoints_impl.h \
-           data/elevationpoints/private/pointstriangle.h \
            data/points/private/points_impl.h \
            data/points/private/pointspreprocessorcontroller_impl.h \
            data/project/private/project_impl.h \
@@ -158,6 +168,10 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            dialogs/coordinateseditdialog.cpp \
            dialogs/mappingsettingdialog.cpp \
            dialogs/mousehelpdialog.cpp \
+           geom/geometrypoint.cpp \
+           geom/geometrytriangle.cpp \
+           geom/quadtreecontainer.cpp \
+           geom/rect.cpp \
            io/rivexporter.cpp \
            io/sacguiimporter.cpp \
            main/main.cpp \
@@ -221,7 +235,6 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            window/preprocessor/preprocessorview.cpp \
            window/preprocessor/preprocessorwindow.cpp \
            window/verticalcrosssection/verticalcrosssectionwindow.cpp \
-           data/elevationpoints/private/pointstriangle.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
            window/preprocessor/objectbrowser/objectbrowserview.cpp
 RESOURCES += rivmaker.qrc

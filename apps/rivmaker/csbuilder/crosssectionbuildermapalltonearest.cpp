@@ -3,9 +3,9 @@
 #include "../data/crosssection/crosssection.h"
 #include "../data/crosssections/crosssections.h"
 #include "../data/elevationpoints/elevationpoints.h"
+#include "../geom/geometrypoint.h"
 
 #include <QVector2D>
-#include <QVector3D>
 
 #include <map>
 
@@ -14,7 +14,7 @@ CrossSectionBuilderMapAllToNearest::CrossSectionBuilderMapAllToNearest()
 
 void CrossSectionBuilderMapAllToNearest::build(const ElevationPoints& points, CrossSections* crossSections)
 {
-	for (QVector3D* p : points.points()) {
+	for (GeometryPoint* p : points.points()) {
 		std::multimap<double, CrossSection*> distanceMap;
 		QPointF nearestPoint;
 		double distance;

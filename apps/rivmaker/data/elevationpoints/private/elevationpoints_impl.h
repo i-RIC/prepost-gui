@@ -2,7 +2,9 @@
 #define ELEVATIONPOINTS_IMPL_H
 
 #include "../elevationpoints.h"
-#include "pointstriangle.h"
+#include "../../../geom/geometrytriangle.h"
+
+#include <geos/index/quadtree/Quadtree.h>
 
 #include <vector>
 
@@ -13,7 +15,7 @@ public:
 
 	void buildTriangles();
 
-	std::vector<PointsTriangle> m_triangles;
+	std::vector<GeometryTriangle> m_triangles;
 
 private:
 	ElevationPoints* m_parent;

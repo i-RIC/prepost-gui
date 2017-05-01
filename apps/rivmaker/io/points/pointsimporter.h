@@ -3,12 +3,14 @@
 
 #include <QObject>
 
+class GeometryPoint;
+
 class PointsImporter : public QObject
 {
 	Q_OBJECT
 
 public:
-	static bool importData(std::vector<QVector3D*>* points, QPointF* offset, QWidget* w);
+	static bool importData(std::vector<GeometryPoint*>* points, QPointF* offset, QWidget* w);
 
 private:
 	PointsImporter();
