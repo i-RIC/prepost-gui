@@ -16,6 +16,7 @@ public:
 
 	void setPoints(const std::vector<GeometryPoint*>& points) override;
 
+	std::vector<GeometryPoint*> pointsInRect(double xmin, double ymin, double xmax, double ymax) const;
 	std::vector<QVector2D> buildCrossSectionPoints(const QPointF& p1, const QPointF& p2) const;
 
 private:

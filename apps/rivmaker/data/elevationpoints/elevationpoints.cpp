@@ -140,6 +140,20 @@ void ElevationPoints::setPoints(const std::vector<GeometryPoint*> &points)
 	impl->buildContainers();
 }
 
+
+std::vector<GeometryPoint*> ElevationPoints::pointsInRect(double xmin, double ymin, double xmax, double ymax) const
+{
+	Rect rect(xmin, ymin, xmax, ymax);
+	auto pret = impl->m_pointsContainer.findIntersectRect(rect);
+
+	std::vector<GeometryPoint*> ret;
+	for (Geometry* g : pret) {
+		auto p = dynamic_cast<GeometryPoint*> (g);
+		ret.push_back(p);
+	}
+	return ret;
+}
+
 std::vector<QVector2D> ElevationPoints::buildCrossSectionPoints(const QPointF& p1, const QPointF& p2) const
 {
 	std::vector<QVector2D> ret;

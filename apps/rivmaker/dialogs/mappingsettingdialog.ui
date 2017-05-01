@@ -394,8 +394,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>18</x>
-     <y>733</y>
+     <x>27</x>
+     <y>766</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -410,8 +410,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>84</x>
-     <y>733</y>
+     <x>93</x>
+     <y>766</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -431,7 +431,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>263</x>
-     <y>618</y>
+     <y>646</y>
     </hint>
    </hints>
   </connection>
@@ -447,7 +447,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>263</x>
-     <y>696</y>
+     <y>724</y>
     </hint>
    </hints>
   </connection>
@@ -462,8 +462,8 @@
      <y>420</y>
     </hint>
     <hint type="destinationlabel">
-     <x>252</x>
-     <y>637</y>
+     <x>263</x>
+     <y>672</y>
     </hint>
    </hints>
   </connection>
@@ -478,8 +478,24 @@
      <y>418</y>
     </hint>
     <hint type="destinationlabel">
-     <x>227</x>
-     <y>660</y>
+     <x>263</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>templateRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>resolutionSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>611</y>
     </hint>
    </hints>
   </connection>
