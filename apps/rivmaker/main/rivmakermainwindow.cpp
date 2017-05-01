@@ -284,7 +284,11 @@ void RivmakerMainWindow::optionMappingSetting()
 	MappingSettingDialog dialog(this);
 	dialog.setProject(impl->m_project);
 
-	dialog.exec();
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	impl->m_project->mapPointsToCrossSections();
+	impl->m_project->emitUpdated();
 }
 
 void RivmakerMainWindow::helpMouseHint()
