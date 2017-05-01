@@ -116,7 +116,7 @@ Project::MappingMethod Project::mappingMethod() const
 {
 	if (impl->m_currentBuilder == &(impl->m_builderNearest)) {
 		return MappingMethod::AllMapToNearestCrossSection;
-	} else if (impl->m_currentBuilder == &(impl->m_builderTemplate)) {
+	} else if (impl->m_currentBuilder == &(impl->m_builderTin)) {
 		return MappingMethod::TIN;
 	} else {
 		return MappingMethod::Template;
