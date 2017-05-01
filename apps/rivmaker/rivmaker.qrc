@@ -41,5 +41,6 @@
         <file>images/imageAllToLines.png</file>
         <file>images/imageTemplate.png</file>
         <file>images/imageTin.png</file>
+        <file>images/iconQuestion.png</file>
     </qresource>
 </RCC>

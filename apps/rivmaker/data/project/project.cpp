@@ -41,7 +41,7 @@ Project::Impl::Impl(Project *project) :
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
 	m_baseLine {&m_rootDataItem},
-	m_currentBuilder {& m_builderTin}
+	m_currentBuilder {& m_builderNearest}
 {}
 
 Project::Impl::~Impl()
@@ -111,6 +111,78 @@ const QPointF& Project::offset() const
 void Project::setOffset(const QPointF& offset)
 {
 	impl->m_offset = offset;
+}
+
+Project::MappingMethod Project::mappingMethod() const
+{
+	if (impl->m_currentBuilder == &(impl->m_builderNearest)) {
+		return MappingMethod::AllMapToNearestCrossSection;
+	} else if (impl->m_currentBuilder == &(impl->m_builderTemplate)) {
+		return MappingMethod::TIN;
+	} else {
+		return MappingMethod::Template;
+	}
+}
+
+void Project::setMappingMethod(MappingMethod method)
+{
+	if (method == MappingMethod::AllMapToNearestCrossSection) {
+		impl->m_currentBuilder = &(impl->m_builderNearest);
+	} else if (method == MappingMethod::TIN) {
+		impl->m_currentBuilder = &(impl->m_builderTin);
+	} else {
+		impl->m_currentBuilder = &(impl->m_builderTemplate);
+	}
+}
+
+double Project::templateMappingResolution() const
+{
+	return impl->m_builderTemplate.mappingResolution();
+}
+
+void Project::setTemplateMappingResolution(double resolution)
+{
+	impl->m_builderTemplate.setMappingResolution(resolution);
+}
+
+double Project::templateMappingStreamWiseLength() const
+{
+	return impl->m_builderTemplate.streamWiseLength();
+}
+
+void Project::setTemplateMappingStreamWiseLength(double len)
+{
+	impl->m_builderTemplate.setStreamWiseLength(len);
+}
+
+double Project::templateMappingCrossStreamWidth() const
+{
+	return impl->m_builderTemplate.crossStreamWidth();
+}
+
+void Project::setTemplateMappingCrossStreamWidth(double width)
+{
+	impl->m_builderTemplate.setCrossStreamWidth(width);
+}
+
+int Project::templateMappingNumberOfExpansions() const
+{
+	return impl->m_builderTemplate.numberOfExpansions();
+}
+
+void Project::setTemplateMappingNumberOfExpansions(int num)
+{
+	impl->m_builderTemplate.setNumberOfExpansions(num);
+}
+
+double Project::templateMappingWeightExponent() const
+{
+	return impl->m_builderTemplate.weightExponent();
+}
+
+void Project::setTemplateMappingWeightExponent(double exp)
+{
+	impl->m_builderTemplate.setWeightExponent(exp);
 }
 
 void Project::calcCrossSectionElevations()

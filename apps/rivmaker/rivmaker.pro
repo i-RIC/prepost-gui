@@ -43,6 +43,7 @@ else {
 # Input
 HEADERS += csbuilder/crosssectionbuilderi.h \
            csbuilder/crosssectionbuildermapalltonearest.h \
+           csbuilder/crosssectionbuildertemplatemapping.h \
            csbuilder/crosssectionbuildertin.h \
            dialogs/aboutdialog.h \
            dialogs/coordinateseditdialog.h \
@@ -56,6 +57,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            widgets/mousepositionwidget.h \
            widgets/valuewidget.h \
            window/viewwindowi.h \
+           csbuilder/private/crosssectionbuildertemplatemapping_impl.h \
            data/arbitraryhwm/arbitraryhwm.h \
            data/arbitraryhwm/arbitraryhwmpreprocessorview.h \
            data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.h \
@@ -150,6 +152,7 @@ FORMS += dialogs/aboutdialog.ui \
          window/crosssection/crosssectionwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
 SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
+           csbuilder/crosssectionbuildertemplatemapping.cpp \
            csbuilder/crosssectionbuildertin.cpp \
            dialogs/aboutdialog.cpp \
            dialogs/coordinateseditdialog.cpp \

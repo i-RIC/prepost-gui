@@ -3,6 +3,7 @@
 #include "window/viewwindowi.h"
 #include "../data/crosssections/crosssections.h"
 #include "../dialogs/aboutdialog.h"
+#include "../dialogs/mappingsettingdialog.h"
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
@@ -280,7 +281,10 @@ void RivmakerMainWindow::viewToggleStatusBar(bool visible)
 
 void RivmakerMainWindow::optionMappingSetting()
 {
+	MappingSettingDialog dialog(this);
+	dialog.setProject(impl->m_project);
 
+	dialog.exec();
 }
 
 void RivmakerMainWindow::helpMouseHint()
