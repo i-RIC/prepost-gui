@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -137,7 +137,7 @@
 <context>
     <name>CrossSection</name>
     <message>
-        <location filename="../data/crosssection/crosssection.cpp" line="29"/>
+        <location filename="../data/crosssection/crosssection.cpp" line="40"/>
         <source>X%1</source>
         <translation>X%1</translation>
     </message>
@@ -288,15 +288,63 @@
     <name>CrossSectionsPreProcessorController::Impl</name>
     <message>
         <source>Add</source>
-        <translation type="vanished">追加</translation>
+        <translation>追加</translation>
     </message>
 </context>
 <context>
     <name>ElevationPoints</name>
     <message>
-        <location filename="../data/elevationpoints/elevationpoints.cpp" line="16"/>
+        <location filename="../data/elevationpoints/elevationpoints.cpp" line="126"/>
         <source>Elevation Points</source>
         <translation>標高点</translation>
+    </message>
+</context>
+<context>
+    <name>GraphicsSettingDialog</name>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="14"/>
+        <source>Graphics Setting</source>
+        <translation>グラフィックス設定</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="20"/>
+        <source>Elevation Points</source>
+        <translation>標高点</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="26"/>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="128"/>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="32"/>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="134"/>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="42"/>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="144"/>
+        <source>Manual</source>
+        <translation>マニュアル</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="100"/>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="202"/>
+        <source>Transparency:</source>
+        <translation>透過度:</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="110"/>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="212"/>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/graphicssettingdialog.ui" line="122"/>
+        <source>Water Elevation Points</source>
+        <translation>水面標高点</translation>
     </message>
 </context>
 <context>
@@ -305,6 +353,69 @@
         <location filename="../data/leftbankhwm/leftbankhwm.cpp" line="16"/>
         <source>Left Bank HWM</source>
         <translation>左岸側水面標高</translation>
+    </message>
+</context>
+<context>
+    <name>MappingSettingDialog</name>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="14"/>
+        <source>Mapping Setting</source>
+        <translation>マッピング設定</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="20"/>
+        <source>All points are mapped to the nearest CrossSection</source>
+        <translation>すべての点を、一番近い断面にマッピングする</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="48"/>
+        <source>Appropriate for data in which points are all near CrossSections</source>
+        <translation>すべての点が、断面の近くにあるデータに有効です</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="90"/>
+        <source>TIN is used for interpolation at CrossSections</source>
+        <translation>断面での値を補間するのにTINを利用</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="115"/>
+        <source>Appropriate for data in which the density of points are almost the same in whole area</source>
+        <translation>領域全体に均一に標高点があるデータに有効です</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="157"/>
+        <source>Template mapping</source>
+        <translation>テンプレートマッピング</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="182"/>
+        <source>Appropriate for data for which we can not generate good TIN</source>
+        <translation>標高点にばらつきがあり、いいTINが生成できないデータで有効です</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="244"/>
+        <source>Cross section resolution[m]</source>
+        <translation>断面の解像度 [m]</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="267"/>
+        <source>Stream-wise length[m]</source>
+        <translation>流れ方向の長さ[m]</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="290"/>
+        <source>Cross-stream width[m]</source>
+        <translation>横断方向の長さ[m]</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="313"/>
+        <source>Number of Template Expansions:</source>
+        <translation>検索領域の拡大回数:</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="336"/>
+        <source>Weighting Exponent:</source>
+        <translation>重み付けの指数:</translation>
     </message>
 </context>
 <context>
@@ -328,27 +439,27 @@
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="47"/>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X: </translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="66"/>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y: </translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.cpp" line="40"/>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.cpp" line="41"/>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
@@ -362,22 +473,32 @@
 <context>
     <name>PointsCsvImporter</name>
     <message>
-        <location filename="../io/points/pointscsvimporter.cpp" line="14"/>
+        <location filename="../io/points/pointscsvimporter.cpp" line="16"/>
         <source>Topography File (*.tpo)</source>
         <translation>地勢データファイル (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../io/points/pointscsvimporter.cpp" line="15"/>
+        <location filename="../io/points/pointscsvimporter.cpp" line="17"/>
         <source>CSV file (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../io/points/pointscsvimporter.cpp" line="31"/>
+        <location filename="../io/points/pointscsvimporter.cpp" line="32"/>
+        <source>Filtering Setting</source>
+        <translation>間引き設定</translation>
+    </message>
+    <message>
+        <location filename="../io/points/pointscsvimporter.cpp" line="32"/>
+        <source>Filter</source>
+        <translation>間引き</translation>
+    </message>
+    <message>
+        <location filename="../io/points/pointscsvimporter.cpp" line="37"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../io/points/pointscsvimporter.cpp" line="31"/>
+        <location filename="../io/points/pointscsvimporter.cpp" line="37"/>
         <source>%1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
@@ -412,7 +533,7 @@
     <name>PointsPreProcessorController::Impl</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="vanished">インポート (&amp;I)...</translation>
+        <translation>インポート (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -522,13 +643,13 @@
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="23"/>
-        <location filename="../io/rivexporter.cpp" line="66"/>
+        <location filename="../io/rivexporter.cpp" line="61"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="23"/>
-        <location filename="../io/rivexporter.cpp" line="66"/>
+        <location filename="../io/rivexporter.cpp" line="61"/>
         <source>%1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
@@ -537,14 +658,14 @@
     <name>RiverSurveyData</name>
     <message>
         <source>River Survey Data</source>
-        <translation type="vanished">河川測量データ</translation>
+        <translation>河川測量データ</translation>
     </message>
 </context>
 <context>
     <name>RiverSurveyDataDummy</name>
     <message>
         <source>River Survey Data (NO DATA)</source>
-        <translation type="vanished">河川測量データ (データなし)</translation>
+        <translation>河川測量データ (データなし)</translation>
     </message>
 </context>
 <context>
@@ -588,7 +709,7 @@
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="vanished">河川測量データ</translation>
+        <translation>河川測量データ</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="120"/>
@@ -606,257 +727,272 @@
         <translation>ヘルプ(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="152"/>
+        <location filename="../main/rivmakermainwindow.ui" line="143"/>
+        <source>&amp;Option</source>
+        <translation>オプション(&amp;O)</translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="160"/>
         <source>toolBar</source>
         <translation>ツールバー</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="187"/>
+        <location filename="../main/rivmakermainwindow.ui" line="195"/>
         <source>&amp;New Project...</source>
         <translation>新規プロジェクト(&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="192"/>
+        <location filename="../main/rivmakermainwindow.ui" line="200"/>
         <source>Save &amp;As...</source>
         <translation>名前をつけて保存(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="201"/>
+        <location filename="../main/rivmakermainwindow.ui" line="209"/>
         <source>Property...</source>
         <translation>プロパティ...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="206"/>
+        <location filename="../main/rivmakermainwindow.ui" line="214"/>
         <source>E&amp;xit</source>
         <translation>終了(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="211"/>
+        <location filename="../main/rivmakermainwindow.ui" line="219"/>
         <source>Dummy</source>
         <translation>Dummy</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="216"/>
+        <location filename="../main/rivmakermainwindow.ui" line="224"/>
         <source>&amp;Elevation...</source>
         <translation>標高(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="221"/>
+        <location filename="../main/rivmakermainwindow.ui" line="229"/>
         <source>&amp;Water Surface Elevation...</source>
         <translation>水面標高(&amp;W)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="230"/>
-        <location filename="../main/rivmakermainwindow.ui" line="239"/>
+        <location filename="../main/rivmakermainwindow.ui" line="238"/>
+        <location filename="../main/rivmakermainwindow.ui" line="247"/>
         <source>&amp;Background Image...</source>
         <translation>背景画像(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="244"/>
+        <location filename="../main/rivmakermainwindow.ui" line="252"/>
         <source>&amp;SAC GUI Input File...</source>
         <translation>&amp;SAC GUI 入力ファイル...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="249"/>
+        <location filename="../main/rivmakermainwindow.ui" line="257"/>
         <source>&amp;Elevation</source>
         <translation>標高(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="254"/>
+        <location filename="../main/rivmakermainwindow.ui" line="262"/>
         <source>&amp;Water Surface Elevation</source>
         <translation>水面標高(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="259"/>
+        <location filename="../main/rivmakermainwindow.ui" line="267"/>
         <source>&amp;SAC GUI Input File</source>
         <translation>&amp;SAC GUI 入力ファイル...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="264"/>
-        <location filename="../main/rivmakermainwindow.ui" line="356"/>
+        <location filename="../main/rivmakermainwindow.ui" line="272"/>
+        <location filename="../main/rivmakermainwindow.ui" line="364"/>
         <source>&amp;Create...</source>
         <translation>作成(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="273"/>
-        <location filename="../main/rivmakermainwindow.ui" line="374"/>
+        <location filename="../main/rivmakermainwindow.ui" line="281"/>
+        <location filename="../main/rivmakermainwindow.ui" line="382"/>
         <source>&amp;Delete...</source>
         <translation>削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="282"/>
+        <location filename="../main/rivmakermainwindow.ui" line="290"/>
         <source>&amp;Add Vertex</source>
         <translation>点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="291"/>
+        <location filename="../main/rivmakermainwindow.ui" line="299"/>
         <source>&amp;Remove Vertex</source>
         <translation>点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="296"/>
-        <location filename="../main/rivmakermainwindow.ui" line="324"/>
+        <location filename="../main/rivmakermainwindow.ui" line="304"/>
+        <location filename="../main/rivmakermainwindow.ui" line="332"/>
         <source>&amp;Edit Coordinates...</source>
         <translation>座標の編集(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="305"/>
-        <location filename="../main/rivmakermainwindow.ui" line="342"/>
+        <location filename="../main/rivmakermainwindow.ui" line="313"/>
+        <location filename="../main/rivmakermainwindow.ui" line="350"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="314"/>
-        <location filename="../main/rivmakermainwindow.ui" line="351"/>
-        <location filename="../main/rivmakermainwindow.ui" line="365"/>
+        <location filename="../main/rivmakermainwindow.ui" line="322"/>
+        <location filename="../main/rivmakermainwindow.ui" line="359"/>
+        <location filename="../main/rivmakermainwindow.ui" line="373"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="319"/>
+        <location filename="../main/rivmakermainwindow.ui" line="327"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="333"/>
+        <location filename="../main/rivmakermainwindow.ui" line="341"/>
         <source>&amp;Delete</source>
         <translation>削除(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="383"/>
+        <location filename="../main/rivmakermainwindow.ui" line="391"/>
         <source>&amp;Mouse Hint...</source>
         <translation>マウスヒント(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="388"/>
+        <location filename="../main/rivmakermainwindow.ui" line="396"/>
         <source>&amp;About...</source>
         <translation>rivmaker について(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="393"/>
-        <location filename="../main/rivmakermainwindow.ui" line="403"/>
-        <location filename="../main/rivmakermainwindow.ui" line="418"/>
+        <location filename="../main/rivmakermainwindow.ui" line="401"/>
+        <location filename="../main/rivmakermainwindow.ui" line="411"/>
+        <location filename="../main/rivmakermainwindow.ui" line="426"/>
         <source>&amp;Base Line...</source>
         <translation>ベースライン(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="398"/>
-        <location filename="../main/rivmakermainwindow.ui" line="408"/>
-        <location filename="../main/rivmakermainwindow.ui" line="423"/>
+        <location filename="../main/rivmakermainwindow.ui" line="406"/>
+        <location filename="../main/rivmakermainwindow.ui" line="416"/>
+        <location filename="../main/rivmakermainwindow.ui" line="431"/>
         <source>&amp;Cross Section...</source>
         <translation>断面(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="413"/>
+        <location filename="../main/rivmakermainwindow.ui" line="421"/>
         <source>&amp;River Survey Data...</source>
         <translation>河川測量データ(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="434"/>
+        <location filename="../main/rivmakermainwindow.ui" line="442"/>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>メインツールバー(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="551"/>
+        <location filename="../main/rivmakermainwindow.ui" line="559"/>
         <source>&amp;Windows Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>ウィンドウツールバー(&amp;W)</translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="564"/>
+        <source>&amp;Mapping Setting...</source>
+        <translation>マッピング設定(&amp;M)...</translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="569"/>
+        <source>&amp;Graphics Setting...</source>
+        <translation>グラフィックス設定(&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="vanished">ツールバー(&amp;T)</translation>
+        <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="445"/>
+        <location filename="../main/rivmakermainwindow.ui" line="453"/>
         <source>&amp;Status Bar</source>
         <translation>ステータスバー(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="454"/>
+        <location filename="../main/rivmakermainwindow.ui" line="462"/>
         <source>&amp;Open &amp;New Crosssection Window</source>
         <translation>新しい横断面ウィンドウを開く(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="463"/>
+        <location filename="../main/rivmakermainwindow.ui" line="471"/>
         <source>Fit</source>
         <translation>フィット</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="472"/>
-        <location filename="../main/rivmakermainwindow.ui" line="475"/>
+        <location filename="../main/rivmakermainwindow.ui" line="480"/>
+        <location filename="../main/rivmakermainwindow.ui" line="483"/>
         <source>Reset Rotation</source>
         <translation>回転のリセット</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="484"/>
+        <location filename="../main/rivmakermainwindow.ui" line="492"/>
         <source>Rotate 90 degrees</source>
         <translation>90度回転</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="493"/>
+        <location filename="../main/rivmakermainwindow.ui" line="501"/>
         <source>Zoom In</source>
         <translation>ズームイン</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="502"/>
+        <location filename="../main/rivmakermainwindow.ui" line="510"/>
         <source>Zoom Out</source>
         <translation>ズームアウト</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="511"/>
-        <location filename="../main/rivmakermainwindow.ui" line="514"/>
+        <location filename="../main/rivmakermainwindow.ui" line="519"/>
+        <location filename="../main/rivmakermainwindow.ui" line="522"/>
         <source>Focus Main Window</source>
         <translation>メインウィンドウを開く</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="523"/>
-        <location filename="../main/rivmakermainwindow.ui" line="526"/>
+        <location filename="../main/rivmakermainwindow.ui" line="531"/>
+        <location filename="../main/rivmakermainwindow.ui" line="534"/>
         <source>Focus Vertical Crosssection Window</source>
         <translation>縦断面ウィンドウを開く</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="535"/>
+        <location filename="../main/rivmakermainwindow.ui" line="543"/>
         <source>Open Crosssection Window</source>
         <translation>横断面ウィンドウを開く</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="540"/>
+        <location filename="../main/rivmakermainwindow.ui" line="548"/>
         <source>Reverse &amp;Direction</source>
         <translation>向きを反転(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="144"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="149"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="144"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="149"/>
         <source>No data to export exists</source>
         <translation>エクスポートするデータがありません</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="81"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="207"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="360"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="83"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="212"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="383"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="34"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="36"/>
         <source>Window List Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>ウィンドウリスト ツールバー</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="81"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="83"/>
         <source>All the data in the project is discarded. Are you sure?</source>
         <translation>プロジェクトの全てのデータが破棄されます。本当にいいですか?</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="207"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="212"/>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation>横断面ウィンドウは、断面が定義されていない時には開けません。</translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="360"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="383"/>
         <source>Are you sure you want to exit Rivmaker?</source>
         <translation>本当に Rivmaker を終了していいですか?</translation>
     </message>
@@ -879,17 +1015,17 @@
     <message>
         <location filename="../widgets/valuewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <location filename="../widgets/valuewidget.ui" line="47"/>
         <source>Value: </source>
-        <translation type="unfinished"></translation>
+        <translation>値: </translation>
     </message>
     <message>
         <location filename="../widgets/valuewidget.cpp" line="23"/>
         <source>Value: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>値: ------</translation>
     </message>
 </context>
 <context>
