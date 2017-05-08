@@ -69,7 +69,7 @@ public:
 	virtual void saveComplexGroupsToCgnsFile(const int /*fn*/) {}
 	virtual void setupEditWidget(GridAttributeEditWidget* /*widget*/) override {}
 	void updateCrossectionWindows() override;
-	void openCrossSectionWindow(GeoDataRiverSurvey* rs, double crosssection) override;
+	void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) override;
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs) override;
 	void informCtrlPointUpdateToCrosssectionWindows() override;
 	void requestCrosssectionWindowDelete(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* item) override;

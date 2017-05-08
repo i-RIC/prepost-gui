@@ -50,7 +50,7 @@ public:
 	~GeoDataRiverSurveyCrosssectionWindow();
 
 	void setRiverSurvey(GeoDataRiverSurvey* rs);
-	void setCrosssection(double name);
+	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const {return m_editTargetPoint;}
 	QAction* deleteAction() const {return m_deleteAction;}
 	QAction* inactivateByWEOnlyThisAction() const {return m_inactivateByWEOnlyThisAction;}
@@ -121,7 +121,7 @@ private:
 	QAction* m_deleteAction;
 
 	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
-	double m_crosssectionName;
+	QString m_crosssectionName;
 	GeoDataRiverSurvey* m_targetRiverSurvey;
 	GeoDataRiverPathPoint* m_editTargetPoint;
 
@@ -132,7 +132,7 @@ private:
 	QList<GeoDataRiverSurvey*> m_riverSurveys;
 	QList<QColor> m_riverSurveyColors;
 	QList<GeoDataRiverPathPoint*> m_riverPathPoints;
-	QList<double> m_crosssectionNames;
+	QList<QString> m_crosssectionNames;
 
 	QComboBox* m_crosssectionComboBox;
 

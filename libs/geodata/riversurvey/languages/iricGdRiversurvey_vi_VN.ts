@@ -109,47 +109,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="57"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="34"/>
         <source>River Center Point Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="63"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="40"/>
         <source>Mouse Click</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="70"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="47"/>
         <source>Coordinate Values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="92"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="69"/>
         <source>, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="127"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="104"/>
         <source>Ratio between Back and Forth (0-1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="173"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="150"/>
         <source>Cross Section Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="179"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="156"/>
         <source>Inserts Three Point of Altitude 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="188"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="165"/>
         <source>Copy Next River Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="215"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="192"/>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -240,7 +240,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.cpp" line="76"/>
+        <location filename="../geodatariverpathpointinsertdialog.cpp" line="83"/>
         <source>Insert Traversal Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -250,7 +250,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointrenamedialog.cpp" line="49"/>
+        <location filename="../geodatariverpathpointrenamedialog.cpp" line="40"/>
         <source>Rename Traversal Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -388,7 +388,6 @@
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="1910"/>
-        <location filename="../geodatariversurvey.cpp" line="2090"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -400,11 +399,6 @@
     <message>
         <location filename="../geodatariversurvey.cpp" line="1993"/>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatariversurvey.cpp" line="2090"/>
-        <source>Insert Target Point name is &quot;0&quot;. You have to change the name if you want to add a new point.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -644,7 +638,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyexporter.cpp" line="78"/>
+        <location filename="../geodatariversurveyexporter.cpp" line="75"/>
         <source>River Survey data(*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -652,20 +646,20 @@
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="286"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="453"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="314"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="481"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="355"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="412"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="383"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="440"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="355"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="412"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="383"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="440"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation type="unfinished"></translation>
     </message>

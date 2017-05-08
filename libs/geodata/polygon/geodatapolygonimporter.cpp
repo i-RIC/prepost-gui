@@ -211,10 +211,10 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 		}
 		geos::geom::Polygon* polygon = poly->getGeosPolygon(QPointF(0, 0));
 		delete polygon;
-	} catch (geos::util::GEOSException& e){
+	} catch (geos::util::GEOSException&){
 		InformationDialog::warning(w, tr("Warning"), warningMessage, "polygon_import_warn");
 		return false;
-	} catch (ErrorMessage& msg) {
+	} catch (ErrorMessage&) {
 		InformationDialog::warning(w, tr("Warning"), warningMessage, "polygon_import_warn");
 		return false;
 	}

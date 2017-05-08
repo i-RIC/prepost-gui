@@ -7,6 +7,8 @@
 #include <misc/iricundostack.h>
 
 #include <QMessageBox>
+#include <QRegExp>
+#include <QRegExpValidator>
 #include <QUndoCommand>
 
 #include <sstream>
@@ -16,23 +18,12 @@ GeoDataRiverPathPointRenameDialog::GeoDataRiverPathPointRenameDialog(GeoDataRive
 	ui(new Ui::GeoDataRiverPathPointRenameDialog)
 {
 	ui->setupUi(this);
-	double current = p->name().toDouble();
-	double min;
-	double max;
-	double small = 0.01;
-	if (p->nextPoint() == nullptr) {
-		min = current - 100;
-	} else {
-		min = p->nextPoint()->name().toDouble() + small;
-	}
-	if (p->previousPoint()->firstPoint()) {
-		max = current + 100;
-	} else {
-		max = p->previousPoint()->name().toDouble() - small;
-	}
-	ui->nameSpinBox->setValue(current);
-	ui->nameSpinBox->setMinimum(min);
-	ui->nameSpinBox->setMaximum(max);
+
+	QRegExp rx(GeoDataRiverPathPoint::NAME_REGEXP);
+	auto validator = new QRegExpValidator(rx, this);
+	ui->nameEdit->setValidator(validator);
+
+	ui->nameEdit->setText(p->name());
 	m_point = p;
 	m_rs = rs;
 }
@@ -75,9 +66,7 @@ private:
 
 void GeoDataRiverPathPointRenameDialog::accept()
 {
-	std::ostringstream oss;
-	oss << ui->nameSpinBox->value();
-	QString newname = oss.str().c_str();
+	QString newname = ui->nameEdit->text();
 
 	if (newname != m_point->name()) {
 		iRICUndoStack::instance().push(new GeoDataRiverSurvey::RenameRiverPathPointCommand(newname, m_point, m_rs));

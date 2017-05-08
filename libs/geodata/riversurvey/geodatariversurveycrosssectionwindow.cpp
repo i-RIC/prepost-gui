@@ -165,13 +165,13 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 {
 	// update crosssectionNames.
-	QMap<double, bool> tmpNames;
+	QMap<QString, bool> tmpNames;
 	for (int i = 0; i < m_riverSurveys.count(); ++i) {
 		GeoDataRiverSurvey* rs = m_riverSurveys.at(i);
 		GeoDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
 		while (p != nullptr) {
-			tmpNames.insert(p->name().toDouble(), false);
+			tmpNames.insert(p->name(), false);
 			p = p->nextPoint();
 		}
 	}
@@ -179,8 +179,8 @@ void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 
 	m_crosssectionComboBox->blockSignals(true);
 	m_crosssectionComboBox->clear();
-	for (int i = 0; i < m_crosssectionNames.count(); ++i) {
-		QString name = QString("%1").arg(m_crosssectionNames.at(i));
+	for (int i = 0; i < m_crosssectionNames.size(); ++i) {
+		QString name = m_crosssectionNames.at(i);
 		m_crosssectionComboBox->addItem(name);
 	}
 	m_crosssectionComboBox->blockSignals(false);
@@ -205,7 +205,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setRiverSurvey(GeoDataRiverSurvey* rs
 	m_targetRiverSurvey = rs;
 }
 
-void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(double crosssection)
+void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(const QString& crosssection)
 {
 	m_crosssectionName = crosssection;
 	updateRiverPathPoints();
@@ -443,7 +443,7 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 
 void GeoDataRiverSurveyCrosssectionWindow::crosssectionComboBoxChange(int newindex)
 {
-	double crosssection = m_crosssectionNames.at(newindex);
+	auto crosssection = m_crosssectionNames.at(newindex);
 	setCrosssection(crosssection);
 
 	informFocusIn();
@@ -849,7 +849,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	for (int i = 0; i < m_riverSurveys.count(); ++i) {
 		GeoDataRiverPathPoint* p = m_riverSurveys.at(i)->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name().toDouble() != m_crosssectionName) {
+		while (p != nullptr && p->name() != m_crosssectionName) {
 			p = p->nextPoint();
 		}
 		m_riverPathPoints.append(p);
@@ -857,7 +857,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	if (m_gridCreatingConditionRiverSurvey != nullptr) {
 		GeoDataRiverPathPoint* p = m_gridCreatingConditionRiverSurvey->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name().toDouble() != m_crosssectionName) {
+		while (p != nullptr && p->name() != m_crosssectionName) {
 			p = p->nextPoint();
 		}
 		m_gridCreatingConditionPoint = p;
