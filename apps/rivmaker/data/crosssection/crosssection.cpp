@@ -37,7 +37,7 @@ bool CrossSection::isDefined() const
 
 QString CrossSection::name() const
 {
-	return tr("X%1").arg(id() + 1);
+	return tr("SEC%1").arg(id() + 1);
 }
 
 int CrossSection::id() const

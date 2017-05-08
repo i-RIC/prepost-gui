@@ -306,7 +306,7 @@ bool Project::sortCrossSectionsIfPossible()
 		bl.getCrossingPoint(cs, &crosses, &x, &y, &pos);
 		if (! crosses) {return false;}
 
-		posMap.insert(std::make_pair(pos, cs));
+		posMap.insert(std::make_pair(- pos, cs));
 	}
 
 	auto& childItems = crossSections().childItems();

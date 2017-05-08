@@ -31,7 +31,7 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	ts << "#survey" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
 		ts
-				<< (s->id() + 1) << " "
+				<< "SEC" << (s->id() + 1) << " "
 				<< s->point1().x() + offset.x() << " "
 				<< s->point1().y() + offset.y() << " "
 				<< s->point2().x() + offset.x() << " "
@@ -42,7 +42,7 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	ts << "#x-section" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
 		auto points = s->mappedPoints();
-		ts << (s->id() + 1) << " " << points.size() << endl;
+		ts << "SEC" << (s->id() + 1) << " " << points.size() << endl;
 
 		int index = 0;
 		for (auto p : points) {
@@ -65,7 +65,7 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	QTextStream ts2(&file2);
 	ts2 << "CrossSection" << "," << "Elevation" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
-		ts2 << (s->id() + 1) << "," << s->waterElevation() << endl;
+		ts2 << "SEC" << (s->id() + 1) << "," << s->waterElevation() << endl;
 	}
 	file2.close();
 
