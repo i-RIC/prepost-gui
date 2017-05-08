@@ -31,7 +31,7 @@ public:
 	virtual PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() = 0;
 
 	// @todo ugly interface!
-	virtual void openCrossSectionWindow(GeoDataRiverSurvey* rs, double crosssection) = 0;
+	virtual void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) = 0;
 	virtual void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs) = 0;
 	virtual void informCtrlPointUpdateToCrosssectionWindows() = 0;
 	virtual void requestCrosssectionWindowDelete(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* item) = 0;

@@ -168,9 +168,7 @@ void GeoDataRiverPathPointInsertDialog::updatePoint()
 	QVector2D dir;
 	double ratio = 0;
 	// name
-	std::ostringstream oss;
-	oss << ui->nameSpinBox->value();
-	m_newPoint->setName(oss.str().c_str());
+	m_newPoint->setName(ui->nameEdit->text());
 	// center point coordinates.
 	if (ui->coordClickRadioButton->isChecked()) {
 		if (m_insert) {
@@ -374,31 +372,7 @@ void GeoDataRiverPathPointInsertDialog::setupComboBox()
 
 void GeoDataRiverPathPointInsertDialog::setDefaultName()
 {
-	double small = 0.01;
-	double offset = 10;
-	double bigoffset = 100;
-
-	double min;
-	double def;
-	double max;
-	if (m_insertTarget->firstPoint()) {
-		// we are going to add point before the first point.
-		min = m_insertTarget->nextPoint()->name().toDouble() + small;
-		def = m_insertTarget->nextPoint()->name().toDouble() + offset;
-		max = def + bigoffset;
-	} else if (m_insertTarget->nextPoint() == nullptr) {
-		// we are going to add point after the last point.
-		max = m_insertTarget->name().toDouble() - small;
-		def = m_insertTarget->name().toDouble() - offset;
-		min = def - bigoffset;
-	} else {
-		max = m_insertTarget->name().toDouble() - small;
-		min = m_insertTarget->nextPoint()->name().toDouble() + small;
-		def = 0.5 * (m_insertTarget->name().toDouble() + m_insertTarget->nextPoint()->name().toDouble());
-	}
-	ui->nameSpinBox->setValue(def);
-	ui->nameSpinBox->setMinimum(min);
-	ui->nameSpinBox->setMaximum(max);
+	ui->nameEdit->setText("");
 }
 
 void GeoDataRiverPathPointInsertDialog::setDefaultPosition()

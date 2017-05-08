@@ -2272,7 +2272,7 @@ void GeoDataRiverSurvey::updateInterpolators()
 void GeoDataRiverSurvey::openCrossSectionWindow()
 {
 	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	gItem->openCrossSectionWindow(this, selectedPoint()->name().toDouble());
+	gItem->openCrossSectionWindow(this, selectedPoint()->name());
 }
 
 void GeoDataRiverSurvey::updateCrossectionWindows()

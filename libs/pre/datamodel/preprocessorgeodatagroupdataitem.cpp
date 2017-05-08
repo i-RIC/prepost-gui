@@ -1189,7 +1189,7 @@ void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
 	cg_gorel(fn, "..", 0, NULL);
 }
 
-void PreProcessorGeoDataGroupDataItem::openCrossSectionWindow(GeoDataRiverSurvey* rs, double crosssection)
+void PreProcessorGeoDataGroupDataItem::openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection)
 {
 	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* i = new GeoDataRiverSurveyCrosssectionWindowProjectDataItem(this, preProcessorWindow());
 	i->window()->setRiverSurvey(rs);
