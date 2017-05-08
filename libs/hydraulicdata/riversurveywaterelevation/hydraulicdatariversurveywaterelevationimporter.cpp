@@ -23,11 +23,10 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(GeoData* data, const
 		return false;
 	}
 
-	QMap<double, GeoDataRiverPathPoint*> pmap;
+	QMap<QString, GeoDataRiverPathPoint*> pmap;
 	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	while (p != nullptr) {
-		double name = p->name().toDouble();
-		pmap.insert(name, p);
+		pmap.insert(p->name(), p);
 		p = p->nextPoint();
 	}
 	QTextStream in(&file);
@@ -41,11 +40,11 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(GeoData* data, const
 		line = in.readLine();
 		if (! line.isEmpty()) {
 			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-			double kp = pieces.value(0).toDouble();
+			QString kp = pieces.value(0);
 			double height = pieces.value(1).toDouble();
-			GeoDataRiverPathPoint* point = pmap.value(kp, 0);
+			GeoDataRiverPathPoint* point = pmap.value(kp, nullptr);
 			if (point == nullptr) {
-				skipped.append(QString::number(kp));
+				skipped.append(kp);
 			} else {
 				point->setWaterSurfaceElevation(height);
 			}
