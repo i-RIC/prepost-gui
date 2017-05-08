@@ -16,7 +16,7 @@ GeoDataRiverPathPointRenameDialog::GeoDataRiverPathPointRenameDialog(GeoDataRive
 	ui(new Ui::GeoDataRiverPathPointRenameDialog)
 {
 	ui->setupUi(this);
-	ui->nameEdit->setText("");
+	ui->nameEdit->setText(p->name());
 	m_point = p;
 	m_rs = rs;
 }
