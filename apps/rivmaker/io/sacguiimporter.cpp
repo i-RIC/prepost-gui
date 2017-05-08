@@ -50,9 +50,9 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 	if (! file.open(QIODevice::ReadOnly)) {return false;}
 
 	QTextStream stream(&file);
-	QRegExp lbExp("LH\\-.+");
-	QRegExp rbExp("RH\\-.+");
-	QRegExp elevExp("(X[0-9]+)\\-.+");
+	QRegExp lbExp("LH.*");
+	QRegExp rbExp("RH.*");
+	QRegExp elevExp("(X[0-9]+).*");
 	bool first = true;
 
 	std::map<QString, std::vector<GeometryPoint*> > xsecPoints;
