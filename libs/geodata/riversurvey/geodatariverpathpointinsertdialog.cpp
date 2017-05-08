@@ -9,18 +9,25 @@
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 
+#include <QRegExp>
+#include <QRegExpValidator>
 #include <QUndoCommand>
 
 #include <sstream>
 
 GeoDataRiverPathPointInsertDialog::GeoDataRiverPathPointInsertDialog(GeoDataRiverPathPoint* target, bool insert, GeoDataRiverSurvey* rs, QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::GeoDataRiverPathPointInsertDialog}
+	ui {new Ui::GeoDataRiverPathPointInsertDialog},
+	m_insert {insert},
+	m_applyed {false}
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
-	m_applyed = false;
-	m_insert = insert;
+
+	QRegExp rx(GeoDataRiverPathPoint::NAME_REGEXP);
+	auto validator = new QRegExpValidator(rx, this);
+	ui->nameEdit->setValidator(validator);
+
 	if (insert) {
 		m_insertTarget = target->previousPoint();
 	} else {

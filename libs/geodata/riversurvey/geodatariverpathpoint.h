@@ -64,6 +64,9 @@ public:
 		unsigned int number; ///< Number of points to add
 		double param; ///< parameter
 	};
+
+	const static QString NAME_REGEXP;
+
 	GeoDataRiverPathPoint();
 	GeoDataRiverPathPoint(double x, double y);
 	GeoDataRiverPathPoint(const QString& name, double x, double y);

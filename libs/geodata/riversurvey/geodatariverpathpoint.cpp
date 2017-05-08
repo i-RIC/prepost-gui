@@ -14,7 +14,7 @@
 #include <cmath>
 #include <iriclib_riversurvey.h>
 
-
+const QString GeoDataRiverPathPoint::NAME_REGEXP = "[A-Za-z0-9_\\-\\.]+";
 
 GeoDataRiverPathPoint::GeoDataRiverPathPoint()
 {

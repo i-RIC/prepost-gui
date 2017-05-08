@@ -7,6 +7,8 @@
 #include <misc/iricundostack.h>
 
 #include <QMessageBox>
+#include <QRegExp>
+#include <QRegExpValidator>
 #include <QUndoCommand>
 
 #include <sstream>
@@ -16,6 +18,11 @@ GeoDataRiverPathPointRenameDialog::GeoDataRiverPathPointRenameDialog(GeoDataRive
 	ui(new Ui::GeoDataRiverPathPointRenameDialog)
 {
 	ui->setupUi(this);
+
+	QRegExp rx(GeoDataRiverPathPoint::NAME_REGEXP);
+	auto validator = new QRegExpValidator(rx, this);
+	ui->nameEdit->setValidator(validator);
+
 	ui->nameEdit->setText(p->name());
 	m_point = p;
 	m_rs = rs;
