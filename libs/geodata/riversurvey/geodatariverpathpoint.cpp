@@ -14,6 +14,37 @@
 #include <cmath>
 #include <iriclib_riversurvey.h>
 
+
+
+GeoDataRiverPathPoint::GeoDataRiverPathPoint()
+{
+	initializeInnerValues();
+	initializeInterpolators();
+}
+
+GeoDataRiverPathPoint::GeoDataRiverPathPoint(double x, double y)
+{
+	initializeInnerValues();
+	initializeInterpolators();
+	m_position = QVector2D(x, y);
+}
+
+GeoDataRiverPathPoint::GeoDataRiverPathPoint(const QString& name, double x, double y)
+{
+	initializeInnerValues();
+	initializeInterpolators();
+	m_name = name;
+	m_position = QVector2D(x, y);
+}
+
+GeoDataRiverPathPoint::~GeoDataRiverPathPoint()
+{}
+
+const QVector2D& GeoDataRiverPathPoint::position() const
+{
+	return m_position;
+}
+
 void GeoDataRiverPathPoint::initializeInnerValues()
 {
 	m_crosssection.setParent(this);
@@ -89,6 +120,11 @@ void GeoDataRiverPathPoint::movePosition(double offset)
 	m_position = newPosition;
 }
 
+bool GeoDataRiverPathPoint::firstPoint() const
+{
+	return m_firstPoint;
+}
+
 void GeoDataRiverPathPoint::updateAllXSecInterpolators()
 {
 	updateXSecInterpolators();
@@ -127,6 +163,19 @@ void GeoDataRiverPathPoint::UpdateGridInterpolators()
 			if (interpolator != nullptr) {
 				interpolator->updateParameters();
 			}
+		}
+	}
+}
+
+unsigned int GeoDataRiverPathPoint::gridCounts(GeoDataRiverPathPoint* end)
+{
+	if (this == end) {
+		return 1;
+	} else {
+		if (! m_gridSkip) {
+			return 1 + static_cast<unsigned int>(CenterLineCtrlPoints.size()) + m_nextPoint->gridCounts(end);
+		} else {
+			return m_nextPoint->gridCounts(end);
 		}
 	}
 }
@@ -186,6 +235,27 @@ QVector2D GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, doub
 	default:
 		return QVector2D(0, 0);
 	}
+}
+
+int GeoDataRiverPathPoint::selectedPoints() const
+{
+	int selectedpoints = 0;
+	if (IsSelected) {
+		++ selectedpoints;
+	}
+	if (m_nextPoint != 0) {
+		return selectedpoints + m_nextPoint->selectedPoints();
+	} else {
+		return selectedpoints;
+	}
+}
+
+void GeoDataRiverPathPoint::clearSelection()
+{
+	IsSelected = false;
+	if (m_nextPoint == nullptr) {return;}
+
+	m_nextPoint->clearSelection();
 }
 
 void GeoDataRiverPathPoint::selectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1)
@@ -522,6 +592,21 @@ QList<QVector2D> GeoDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position
 		break;
 	}
 	return result;
+}
+
+
+bool GeoDataRiverPathPoint::gridSkip() const
+{
+	return m_gridSkip;
+}
+
+void GeoDataRiverPathPoint::setGridSkip(bool skip)
+{
+	if (m_nextPoint == 0) {return;}
+	if (firstPoint()) {return;}
+	if (m_previousPoint->firstPoint()) {return;}
+
+	m_gridSkip = skip;
 }
 
 void GeoDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCodes)*/

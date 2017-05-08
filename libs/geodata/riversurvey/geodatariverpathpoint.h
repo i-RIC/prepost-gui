@@ -64,24 +64,14 @@ public:
 		unsigned int number; ///< Number of points to add
 		double param; ///< parameter
 	};
-	GeoDataRiverPathPoint() {
-		initializeInnerValues();
-		initializeInterpolators();
-	}
-	GeoDataRiverPathPoint(double x, double y) {
-		initializeInnerValues();
-		initializeInterpolators();
-		m_position = QVector2D(x, y);
-	}
-	GeoDataRiverPathPoint(const QString& name, double x, double y) {
-		initializeInnerValues();
-		initializeInterpolators();
-		m_name = name;
-		m_position = QVector2D(x, y);
-	}
-	virtual ~GeoDataRiverPathPoint(){}
+	GeoDataRiverPathPoint();
+	GeoDataRiverPathPoint(double x, double y);
+	GeoDataRiverPathPoint(const QString& name, double x, double y);
+	virtual ~GeoDataRiverPathPoint();
+
 	/// River center position
-	const QVector2D& position() const {return m_position;}
+	const QVector2D& position() const;
+
 	void load(QDataStream& s, const VersionNumber& number);
 	void save(QDataStream& s);
 	/// Shift the river center position
@@ -97,7 +87,7 @@ public:
 	/**
 	 * @note The first point is the dummy point. It does not have crosssection information.
 	 */
-	bool firstPoint() const {return m_firstPoint;}
+	bool firstPoint() const;
 	QVector2D crosssectionPosition(double x);
 	/// Add new river path point before this point.
 	void insertPathPoint(GeoDataRiverPathPoint* p);
@@ -155,17 +145,7 @@ public:
 	/// Update the interpolators to calculate the grid node positions
 	void UpdateGridInterpolators();
 	/// Returns the number of grid nodes along I-direction.
-	unsigned int gridCounts(GeoDataRiverPathPoint* end) {
-		if (this == end) {
-			return 1;
-		} else {
-			if (! m_gridSkip) {
-				return 1 + static_cast<unsigned int>(CenterLineCtrlPoints.size()) + m_nextPoint->gridCounts(end);
-			} else {
-				return m_nextPoint->gridCounts(end);
-			}
-		}
-	}
+	unsigned int gridCounts(GeoDataRiverPathPoint* end);
 	void createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last = false);
 
 	/// True when this point is selected
@@ -173,17 +153,8 @@ public:
 	/// Disable calling updareRiverShapeInterpolators() if true
 	bool InhibitInterpolatorUpdate;
 	/// Return s the number of selected points including me, and the lower-side river path points
-	int selectedPoints() {
-		int selectedpoints = 0;
-		if (IsSelected) {
-			++ selectedpoints;
-		}
-		if (m_nextPoint != 0) {
-			return selectedpoints + m_nextPoint->selectedPoints();
-		} else {
-			return selectedpoints;
-		}
-	}
+	int selectedPoints() const;
+
 	/**
 	 * @brief Set IsSelected flag true if this point is inside the specified box
 	 * @param point0 base point
@@ -194,13 +165,8 @@ public:
 	void XORSelectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1);
 	void SelectCtrlPointsRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1, std::list<CtrlPointSelectionInfo>& info);
 
-	/// Clear selection.
-	void clearSelection() {
-		IsSelected = false;
-		if (m_nextPoint != 0) {
-			m_nextPoint->clearSelection();
-		}
-	}
+	void clearSelection();
+
 	void addCtrlPoints(CtrlZonePosition position, unsigned int index, CtrlPointsAddMethod method);
 	void reposCtrlPoints(CtrlPointPosition position, int minindex, int maxindex, CtrlPointsAddMethod method);
 	void removeCtrlPoints(CtrlZonePosition position, std::set<int> indices);
@@ -213,13 +179,9 @@ public:
 	double waterSurfaceElevationValue() const;
 
 	QList<QVector2D> CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num);
-	bool gridSkip() const {return m_gridSkip;}
-	void setGridSkip(bool skip) {
-		if (m_nextPoint == 0) {return;}
-		if (firstPoint()) {return;}
-		if (m_previousPoint->firstPoint()) {return;}
-		m_gridSkip = skip;
-	}
+	bool gridSkip() const;
+	void setGridSkip(bool skip);
+
 	/// The interpolator to draw river center line (as spline curve)
 	Interpolator2D1* riverCenter() const {return m_riverCenter;}
 	/// Set the interpolator to draw river center line (as spline curve)
