@@ -19,6 +19,12 @@ class Project : public QObject
 	Q_OBJECT
 
 public:
+	enum class MappingMethod {
+		AllMapToNearestCrossSection,
+		TIN,
+		Template
+	};
+
 	Project();
 	~Project();
 
@@ -38,6 +44,26 @@ public:
 
 	const QPointF& offset() const;
 	void setOffset(const QPointF& offset);
+
+	void updatePointsAutoSize();
+
+	MappingMethod mappingMethod() const;
+	void setMappingMethod(MappingMethod method);
+
+	double templateMappingResolution() const;
+	void setTemplateMappingResolution(double resolution);
+
+	double templateMappingStreamWiseLength() const;
+	void setTemplateMappingStreamWiseLength(double len);
+
+	double templateMappingCrossStreamWidth() const;
+	void setTemplateMappingCrossStreamWidth(double width);
+
+	int templateMappingNumberOfExpansions() const;
+	void setTemplateMappingNumberOfExpansions(int num);
+
+	double templateMappingWeightExponent() const;
+	void setTemplateMappingWeightExponent(double exp);
 
 	void calcCrossSectionElevations();
 	void mapPointsToCrossSections();

@@ -3,6 +3,8 @@
 #include "window/viewwindowi.h"
 #include "../data/crosssections/crosssections.h"
 #include "../dialogs/aboutdialog.h"
+#include "../dialogs/graphicssettingdialog.h"
+#include "../dialogs/mappingsettingdialog.h"
 #include "../dialogs/mousehelpdialog.h"
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
@@ -101,12 +103,14 @@ void RivmakerMainWindow::newProject()
 void RivmakerMainWindow::importElevation()
 {
 	impl->m_preProcessorWindow.importElevation();
+	impl->m_project->updatePointsAutoSize();
 	impl->m_preProcessorWindow.fit();
 }
 
 void RivmakerMainWindow::importWaterSurfaceElevation()
 {
 	impl->m_preProcessorWindow.importWaterSurfaceElevation();
+	impl->m_project->updatePointsAutoSize();
 	impl->m_preProcessorWindow.fit();
 }
 
@@ -114,6 +118,7 @@ void RivmakerMainWindow::importSACGUIFile()
 {
 	std::vector<CrossSection*> newCrossSections;
 	SACGUIImporter::importData(impl->m_project, &newCrossSections, this);
+	impl->m_project->updatePointsAutoSize();
 	impl->m_preProcessorWindow.setCrossSections(newCrossSections);
 	impl->m_preProcessorWindow.fit();
 }
@@ -276,6 +281,24 @@ void RivmakerMainWindow::viewToggleWindowsToolBar(bool visible)
 void RivmakerMainWindow::viewToggleStatusBar(bool visible)
 {
 	ui->statusbar->setVisible(visible);
+}
+
+void RivmakerMainWindow::optionMappingSetting()
+{
+	MappingSettingDialog dialog(this);
+	dialog.setProject(impl->m_project);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	impl->m_project->mapPointsToCrossSections();
+	impl->m_project->emitUpdated();
+}
+
+void RivmakerMainWindow::optionGraphicsSetting()
+{
+	GraphicsSettingDialog dialog(this);
+	dialog.exec();
 }
 
 void RivmakerMainWindow::helpMouseHint()

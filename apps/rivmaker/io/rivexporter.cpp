@@ -9,7 +9,7 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QTextStream>
-#include <QVector3D>
+#include <QVector2D>
 
 #include <string>
 
@@ -43,19 +43,14 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	for (CrossSection* s : cs.crossSectionVector()) {
 		auto points = s->mappedPoints();
 		ts << (s->id() + 1) << " " << points.size() << endl;
-		QPointF mappedPoint;
-		double position;
-		std::map<double, double> elevs;
-		for (QVector3D* p : points) {
-			s->getMappedPoint(p->x(), p->y(), &mappedPoint, &position);
-			elevs.insert(std::make_pair(position, p->z()));
-		}
+
 		int index = 0;
-		for (auto& pair : elevs) {
-			ts << " " << pair.first << " " << pair.second;
+		for (auto p : points) {
+			ts << " " << p.x() << " " << p.y();
 			if (index % 4 == 3) {ts << endl;}
 			++ index;
 		}
+
 		ts << endl;
 	}
 	file.close();

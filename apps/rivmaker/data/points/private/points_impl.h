@@ -6,7 +6,7 @@
 class Points::Impl
 {
 public:
-	std::vector<QVector3D*> m_points;
+	std::vector<GeometryPoint*> m_points;
 };
 
 #endif // POINTS_IMPL_H

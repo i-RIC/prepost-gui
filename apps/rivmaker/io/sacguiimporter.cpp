@@ -6,6 +6,7 @@
 #include "../data/project/project.h"
 #include "../data/rightbankhwm/rightbankhwm.h"
 #include "../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
+#include "../geom/geometrypoint.h"
 
 #include <QFile>
 #include <QFileDialog>
@@ -14,16 +15,15 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QVector2D>
-#include <QVector3D>
 
 #include <map>
 #include <vector>
 
 namespace {
 
-void registerToMap(const QString& name, QVector3D* p, std::map<QString, std::vector<QVector3D*> >* points)
+void registerToMap(const QString& name, GeometryPoint* p, std::map<QString, std::vector<GeometryPoint*> >* points)
 {
-	std::vector<QVector3D*> emptyVec;
+	std::vector<GeometryPoint*> emptyVec;
 	auto it = points->find(name);
 	if (it == points->end()) {
 		points->insert(std::make_pair(name, emptyVec));
@@ -41,10 +41,10 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 
 	QPointF offset = project->offset();
 
-	std::vector<QVector3D*> arbVec;
-	std::vector<QVector3D*> leftVec;
-	std::vector<QVector3D*> rightVec;
-	std::vector<QVector3D*> elevVec;
+	std::vector<GeometryPoint*> arbVec;
+	std::vector<GeometryPoint*> leftVec;
+	std::vector<GeometryPoint*> rightVec;
+	std::vector<GeometryPoint*> elevVec;
 
 	QFile file(fname);
 	if (! file.open(QIODevice::ReadOnly)) {return false;}
@@ -55,7 +55,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 	QRegExp elevExp("(X[0-9]+)\\-.+");
 	bool first = true;
 
-	std::map<QString, std::vector<QVector3D*> > xsecPoints;
+	std::map<QString, std::vector<GeometryPoint*> > xsecPoints;
 
 	do {
 		QString line = stream.readLine();
@@ -73,15 +73,15 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 		}
 
 		if (lbExp.exactMatch(name)) {
-			leftVec.push_back(new QVector3D(x - offset.x(), y - offset.y(), z));
+			leftVec.push_back(new GeometryPoint(x - offset.x(), y - offset.y(), z));
 		} else if (rbExp.exactMatch(name)) {
-			rightVec.push_back(new QVector3D(x - offset.x(), y - offset.y(), z));
+			rightVec.push_back(new GeometryPoint(x - offset.x(), y - offset.y(), z));
 		} else if (elevExp.exactMatch(name)) {
-			QVector3D* p = new QVector3D(x - offset.x(), y - offset.y(), z);
+			GeometryPoint* p = new GeometryPoint(x - offset.x(), y - offset.y(), z);
 			elevVec.push_back(p);
 			registerToMap(elevExp.cap(1), p, &xsecPoints);
 		} else {
-			arbVec.push_back(new QVector3D(x - offset.x(), y - offset.y(), z));
+			arbVec.push_back(new GeometryPoint(x - offset.x(), y - offset.y(), z));
 		}
 
 		first = false;
@@ -97,12 +97,12 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 	for (auto& pair : xsecPoints) {
 		if (pair.second.size() < 2) {continue;}
 
-		std::multimap<double, std::pair<QVector3D*, QVector3D*> > distances;
+		std::multimap<double, std::pair<GeometryPoint*, GeometryPoint*> > distances;
 		const auto& pvec = pair.second;
 		for (int i = 0; i < pvec.size(); ++i) {
-			QVector3D* p1 = pvec.at(i);
+			GeometryPoint* p1 = pvec.at(i);
 			for (int j = i + 1; j < pvec.size(); ++j) {
-				QVector3D* p2 = pvec.at(j);
+				GeometryPoint* p2 = pvec.at(j);
 				double d = QVector2D(p2->x() - p1->x(), p2->y() - p1->y()).lengthSquared();
 				distances.insert(std::make_pair(d, std::make_pair(p1, p2)));
 			}

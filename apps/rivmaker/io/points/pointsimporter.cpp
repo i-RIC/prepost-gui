@@ -6,7 +6,7 @@
 #include <QFileInfo>
 #include <QString>
 
-bool PointsImporter::importData(std::vector<QVector3D*>* points, QPointF* offset, QWidget* w)
+bool PointsImporter::importData(std::vector<GeometryPoint*>* points, QPointF* offset, QWidget* w)
 {
 	std::vector<PointsImporterI*> importers;
 	importers.push_back(new PointsCsvImporter());

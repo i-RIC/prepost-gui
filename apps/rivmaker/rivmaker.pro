@@ -3,10 +3,26 @@ TARGET = Rivmaker
 CONFIG += qt
 CONFIG += debug_and_release
 
+DEFINES += ANSI_DECLARATORS
+
 include( ../../paths.pri )
 
 QT += widgets network
 RC_FILE = rivmaker.rc
+
+# iricTriangle
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/triangle/debug"
+	} else {
+		LIBS += -L"../../libs/triangle/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/triangle"
+}
+LIBS += -liricTriangle
 
 # Qwt
 
@@ -24,10 +40,26 @@ else {
 	DEFINES += QT_NO_WARNING_OUTPUT
 }
 
+# geos
+
+LIBS += -lgeos
+
 # Input
-HEADERS += dialogs/aboutdialog.h \
+HEADERS += csbuilder/crosssectionbuilderi.h \
+           csbuilder/crosssectionbuildermapalltonearest.h \
+           csbuilder/crosssectionbuildertemplatemapping.h \
+           csbuilder/crosssectionbuildertin.h \
+           dialogs/aboutdialog.h \
            dialogs/coordinateseditdialog.h \
+           dialogs/graphicssettingdialog.h \
+           dialogs/mappingsettingdialog.h \
            dialogs/mousehelpdialog.h \
+           geom/geometry.h \
+           geom/geometrypoint.h \
+           geom/geometrytriangle.h \
+           geom/quadtreecontainer.h \
+           geom/rect.h \
+           geom/rect_detail.h \
            io/rivexporter.h \
            io/sacguiimporter.h \
            main/rivmakermainwindow.h \
@@ -36,6 +68,7 @@ HEADERS += dialogs/aboutdialog.h \
            widgets/mousepositionwidget.h \
            widgets/valuewidget.h \
            window/viewwindowi.h \
+           csbuilder/private/crosssectionbuildertemplatemapping_impl.h \
            data/arbitraryhwm/arbitraryhwm.h \
            data/arbitraryhwm/arbitraryhwmpreprocessorview.h \
            data/arbitraryhwm/arbitraryhwmpreprocessorviewhelper.h \
@@ -68,6 +101,7 @@ HEADERS += dialogs/aboutdialog.h \
            data/leftbankhwm/leftbankhwmpreprocessorview.h \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.h \
            data/points/points.h \
+           data/points/pointsgraphicssetting.h \
            data/points/pointspreprocessorcontroller.h \
            data/points/pointspreprocessorview.h \
            data/points/pointspreprocessorviewhelper.h \
@@ -79,6 +113,7 @@ HEADERS += dialogs/aboutdialog.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
            dialogs/private/coordinateeditwidget.h \
            dialogs/private/coordinateseditdialog_impl.h \
+           geom/private/quadtreecontainer_impl.h \
            io/crosssections/crosssectionscsvexporter.h \
            io/crosssections/crosssectionscsvimporter.h \
            io/crosssections/crosssectionsexporter.h \
@@ -106,9 +141,11 @@ HEADERS += dialogs/aboutdialog.h \
            data/base/private/model_impl.h \
            data/baseline/private/baseline_impl.h \
            data/baseline/private/baselinepreprocessorcontroller_impl.h \
+           data/crosssection/private/crosssection_impl.h \
            data/crosssection/private/crosssectionpreprocessorcontroller_impl.h \
            data/crosssections/private/crosssections_impl.h \
            data/crosssections/private/crosssectionspreprocessorcontroller_impl.h \
+           data/elevationpoints/private/elevationpoints_impl.h \
            data/points/private/points_impl.h \
            data/points/private/pointspreprocessorcontroller_impl.h \
            data/project/private/project_impl.h \
@@ -119,15 +156,26 @@ HEADERS += dialogs/aboutdialog.h \
            window/preprocessor/private/preprocessorwindow_impl.h
 FORMS += dialogs/aboutdialog.ui \
          dialogs/coordinateseditdialog.ui \
+         dialogs/graphicssettingdialog.ui \
+         dialogs/mappingsettingdialog.ui \
          dialogs/mousehelpdialog.ui \
          main/rivmakermainwindow.ui \
          widgets/mousepositionwidget.ui \
          widgets/valuewidget.ui \
          window/crosssection/crosssectionwindow.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
-SOURCES += dialogs/aboutdialog.cpp \
+SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
+           csbuilder/crosssectionbuildertemplatemapping.cpp \
+           csbuilder/crosssectionbuildertin.cpp \
+           dialogs/aboutdialog.cpp \
            dialogs/coordinateseditdialog.cpp \
+           dialogs/graphicssettingdialog.cpp \
+           dialogs/mappingsettingdialog.cpp \
            dialogs/mousehelpdialog.cpp \
+           geom/geometrypoint.cpp \
+           geom/geometrytriangle.cpp \
+           geom/quadtreecontainer.cpp \
+           geom/rect.cpp \
            io/rivexporter.cpp \
            io/sacguiimporter.cpp \
            main/main.cpp \
@@ -167,6 +215,7 @@ SOURCES += dialogs/aboutdialog.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorview.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.cpp \
            data/points/points.cpp \
+           data/points/pointsgraphicssetting.cpp \
            data/points/pointspreprocessorcontroller.cpp \
            data/points/pointspreprocessorview.cpp \
            data/points/pointspreprocessorviewhelper.cpp \

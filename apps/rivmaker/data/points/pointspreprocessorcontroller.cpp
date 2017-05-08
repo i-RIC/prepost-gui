@@ -3,13 +3,13 @@
 #include "private/pointspreprocessorcontroller_impl.h"
 #include "../base/view.h"
 #include "../project/project.h"
+#include "../../geom/geometrypoint.h"
 #include "../../io/points/pointsimporter.h"
 #include "../../window/preprocessor/preprocessormodel.h"
 
 #include <QAction>
 #include <QMenu>
 #include <QMouseEvent>
-#include <QVector3D>
 
 PointsPreProcessorController::Impl::Impl() :
 	m_importAction {new QAction(QIcon(":/images/iconImport.png"), PointsPreProcessorController::tr("&Import..."), nullptr)},
@@ -41,7 +41,7 @@ void PointsPreProcessorController::mouseMoveEvent(QMouseEvent* event, View* view
 	auto m = dynamic_cast<PreProcessorModel*> (model());
 
 	auto points = dynamic_cast<Points*> (item());
-	for (QVector3D* p : points->points()){
+	for (GeometryPoint* p : points->points()){
 		auto p_pos = view->conv(QPointF(p->x(), p->y()));
 		if (View::isNear(mousePos, p_pos)) {
 			m->emitValueChange(p->z());
@@ -62,7 +62,7 @@ void PointsPreProcessorController::importData()
 {
 	auto points = dynamic_cast<Points*> (item());
 
-	std::vector<QVector3D*> newPoints;
+	std::vector<GeometryPoint*> newPoints;
 	QPointF offset = points->project()->offset();
 
 	bool ok = PointsImporter::importData(&newPoints, &offset, view());
@@ -72,6 +72,7 @@ void PointsPreProcessorController::importData()
 	points->setPoints(newPoints);
 	points->project()->setOffset(offset);
 
+	points->project()->updatePointsAutoSize();
 	points->project()->emitUpdated();
 
 	view()->fit();

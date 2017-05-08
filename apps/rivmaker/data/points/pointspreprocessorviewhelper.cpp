@@ -1,17 +1,17 @@
 #include "points.h"
 #include "pointspreprocessorviewhelper.h"
 #include "../base/view.h"
+#include "../../geom/geometrypoint.h"
 
 #include <QColor>
 #include <QPainter>
 #include <QPointF>
-#include <QVector3D>
 
 PointsPreProcessorViewHelper::PointsPreProcessorViewHelper(DataItemView* v) :
 	DataItemViewHelperI {v}
 {}
 
-void PointsPreProcessorViewHelper::drawCircles(int size, const QColor& color, QPainter* painter) const
+void PointsPreProcessorViewHelper::drawCircles(int size, const QColor& color, int transparency, QPainter* painter) const
 {
 	painter->save();
 
@@ -19,9 +19,11 @@ void PointsPreProcessorViewHelper::drawCircles(int size, const QColor& color, QP
 	auto points = dynamic_cast<Points*> (dataItem());
 	const auto& pvec = points->points();
 
-	painter->setBrush(color);
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	painter->setBrush(c);
 	painter->setPen(Qt::NoPen);
-	for (QVector3D* p : pvec) {
+	for (GeometryPoint* p : pvec) {
 		QPointF p2 = v->conv(QPointF(p->x(), p->y()));
 
 		QRectF rect(p2.x() - size * 0.5, p2.y() - size * 0.5, size, size);
@@ -31,7 +33,7 @@ void PointsPreProcessorViewHelper::drawCircles(int size, const QColor& color, QP
 	painter->restore();
 }
 
-void PointsPreProcessorViewHelper::drawRects(int size, const QColor& color, QPainter* painter) const
+void PointsPreProcessorViewHelper::drawRects(int size, const QColor& color, int transparency, QPainter* painter) const
 {
 	painter->save();
 
@@ -39,11 +41,13 @@ void PointsPreProcessorViewHelper::drawRects(int size, const QColor& color, QPai
 	auto points = dynamic_cast<Points*> (dataItem());
 	const auto& pvec = points->points();
 
-	for (QVector3D* p : pvec) {
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	for (GeometryPoint* p : pvec) {
 		QPointF p2 = v->conv(QPointF(p->x(), p->y()));
 
 		QRectF rect(p2.x() - size * 0.5, p2.y() - size * 0.5, size, size);
-		painter->fillRect(rect, color);
+		painter->fillRect(rect, c);
 	}
 
 	painter->restore();

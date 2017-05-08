@@ -4,7 +4,7 @@
 #include "../base/dataitem.h"
 #include "../../window/preprocessor/preprocessordataitemi.h"
 
-class QVector3D;
+class GeometryPoint;
 
 class Points : public DataItem, public PreProcessorDataItemI
 {
@@ -14,10 +14,10 @@ public:
 	Points(DataItem* parent);
 	virtual ~Points();
 
-	const std::vector<QVector3D*>& points() const;
-	std::vector<QVector3D*>& points();
+	const std::vector<GeometryPoint*>& points() const;
+	std::vector<GeometryPoint*>& points();
 
-	void setPoints(const std::vector<QVector3D*>& points);
+	virtual void setPoints(const std::vector<GeometryPoint*>& points);
 	void clearPoints();
 
 	DataItemController* buildPreProcessorDataItemController(Model* model) override;

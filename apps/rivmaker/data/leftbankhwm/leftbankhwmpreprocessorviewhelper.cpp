@@ -1,4 +1,5 @@
 #include "leftbankhwmpreprocessorviewhelper.h"
+#include "../points/pointsgraphicssetting.h"
 
 #include <QColor>
 
@@ -8,5 +9,6 @@ LeftBankHWMPreProcessorViewHelper::LeftBankHWMPreProcessorViewHelper(DataItemVie
 
 void LeftBankHWMPreProcessorViewHelper::draw(QPainter* painter) const
 {
-	drawRects(7, Qt::blue, painter);
+	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
+	drawRects(setting.size(), Qt::blue, setting.transparency, painter);
 }

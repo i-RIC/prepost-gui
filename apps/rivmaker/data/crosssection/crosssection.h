@@ -5,7 +5,10 @@
 #include "../base/coordinatesi.h"
 #include "../../window/preprocessor/preprocessordataitemi.h"
 
-#include <QPointF>
+#include <vector>
+
+class QPointF;
+class QVector2D;
 
 class CrossSection : public DataItem, public PreProcessorDataItemI, public CoordinatesI
 {
@@ -35,9 +38,9 @@ public:
 	double waterElevation() const;
 	void setWaterElevation(double e);
 
-	std::vector<QVector3D*> mappedPoints() const;
-	void setMappedPoints(const std::vector<QVector3D*>& points);
-	void addMappedPoint(QVector3D* p);
+	std::vector<QVector2D> mappedPoints() const;
+	void setMappedPoints(const std::vector<QVector2D>& points);
+	void addMappedPoint(const QVector2D& p);
 	void clearMappedPoints();
 
 	void getNearestPoint(double x, double y, QPointF* nearestPoint, double* distance) const;
@@ -50,15 +53,12 @@ public:
 	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
-	int m_id;
-	bool m_isDefined;
-
-	QPointF m_point1;
-	QPointF m_point2;
-
-	double m_waterElevation;
-
-	std::vector<QVector3D*> m_mappedPoints;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/crosssection_impl.h"
+#endif // _DEBUG
 
 #endif // CROSSSECTION_H

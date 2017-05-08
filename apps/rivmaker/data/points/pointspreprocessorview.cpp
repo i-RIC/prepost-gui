@@ -1,7 +1,7 @@
 #include "pointspreprocessorview.h"
+#include "../../geom/geometrypoint.h"
 
 #include <QRectF>
-#include <QVector3D>
 
 PointsPreProcessorView::PointsPreProcessorView(Model* model, Points* item) :
 	DataItemView {model, item}
@@ -20,7 +20,7 @@ QRectF PointsPreProcessorView::doBoundingBox() const
 	bool first = true;
 	double xmin, xmax, ymin, ymax;
 
-	for (QVector3D* v : points->points()) {
+	for (GeometryPoint* v : points->points()) {
 		if (first || v->x() < xmin) {xmin = v->x();}
 		if (first || v->x() > xmax) {xmax = v->x();}
 		if (first || v->y() < ymin) {ymin = v->y();}

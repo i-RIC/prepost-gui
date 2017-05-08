@@ -138,12 +138,20 @@
     <addaction name="separator"/>
     <addaction name="aboutAction"/>
    </widget>
+   <widget class="QMenu" name="optionMenu">
+    <property name="title">
+     <string>&amp;Option</string>
+    </property>
+    <addaction name="mappingSettingAction"/>
+    <addaction name="graphicsSettingAction"/>
+   </widget>
    <addaction name="fileMenu"/>
    <addaction name="importMenu"/>
    <addaction name="crosssectionLineMenu"/>
    <addaction name="baseLineMenu"/>
    <addaction name="riverSurveyDataMenu"/>
    <addaction name="viewMenu"/>
+   <addaction name="optionMenu"/>
    <addaction name="helpMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -549,6 +557,16 @@
    </property>
    <property name="text">
     <string>&amp;Windows Toolbar</string>
+   </property>
+  </action>
+  <action name="mappingSettingAction">
+   <property name="text">
+    <string>&amp;Mapping Setting...</string>
+   </property>
+  </action>
+  <action name="graphicsSettingAction">
+   <property name="text">
+    <string>&amp;Graphics Setting...</string>
    </property>
   </action>
  </widget>

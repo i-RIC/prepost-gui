@@ -1,4 +1,5 @@
 #include "rightbankhwmpreprocessorviewhelper.h"
+#include "../points/pointsgraphicssetting.h"
 
 #include <QColor>
 
@@ -8,5 +9,6 @@ RightBankHWMPreProcessorViewHelper::RightBankHWMPreProcessorViewHelper(DataItemV
 
 void RightBankHWMPreProcessorViewHelper::draw(QPainter* painter) const
 {
-	drawRects(7, Qt::red, painter);
+	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
+	drawRects(setting.size(), Qt::red, setting.transparency, painter);
 }

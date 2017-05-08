@@ -2,12 +2,12 @@
 #include "../arbitraryhwm/arbitraryhwm.h"
 #include "../crosssection/crosssection.h"
 #include "../leftbankhwm/leftbankhwm.h"
+#include "../points/pointsgraphicssetting.h"
 #include "../rightbankhwm/rightbankhwm.h"
+#include "../../geom/geometrypoint.h"
 #include "../../misc/mathutil.h"
 
 #include "private/project_impl.h"
-
-#include <QVector3D>
 
 #include <map>
 #include <vector>
@@ -16,7 +16,7 @@ namespace {
 
 void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals)
 {
-	for (QVector3D* p : points.points()) {
+	for (GeometryPoint* p : points.points()) {
 		double pos = line.calcPosition(p->x(), p->y());
 		vals->insert(std::make_pair(pos, p->z()));
 	}
@@ -33,6 +33,25 @@ void addToElevMap(std::map<CrossSection*, std::vector<double> >* elevVals, Cross
 	it->second.push_back(val);
 }
 
+void updatePointsAutoSize(int numPoints, PointsGraphicsSetting* setting)
+{
+	if (numPoints < 30) {
+		setting->autoSize = 7;
+	}	else if (numPoints < 100) {
+		setting->autoSize = 6;
+	} else if (numPoints < 300) {
+		setting->autoSize = 5;
+	} else if (numPoints < 1000) {
+		setting->autoSize = 4;
+	} else if (numPoints < 3000) {
+		setting->autoSize = 3;
+	} else if (numPoints < 10000) {
+		setting->autoSize = 2;
+	} else {
+		setting->autoSize	= 1;
+	}
+}
+
 } // namespace
 
 Project::Impl::Impl(Project *project) :
@@ -40,7 +59,8 @@ Project::Impl::Impl(Project *project) :
 	m_elevationPoints {&m_rootDataItem},
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
-	m_baseLine {&m_rootDataItem}
+	m_baseLine {&m_rootDataItem},
+	m_currentBuilder {& m_builderNearest}
 {}
 
 Project::Impl::~Impl()
@@ -110,6 +130,91 @@ const QPointF& Project::offset() const
 void Project::setOffset(const QPointF& offset)
 {
 	impl->m_offset = offset;
+}
+
+void Project::updatePointsAutoSize()
+{
+	int numElevationPoints = static_cast<int>(impl->m_elevationPoints.points().size());
+	::updatePointsAutoSize(numElevationPoints, &(PointsGraphicsSetting::elevationPointsSetting));
+
+	int numWaterElevationPoints = 0;
+	numWaterElevationPoints += static_cast<int>(impl->m_waterSurfaceElevationPoints.leftBankHWM().points().size());
+	numWaterElevationPoints += static_cast<int>(impl->m_waterSurfaceElevationPoints.rightBankHWM().points().size());
+	numWaterElevationPoints += static_cast<int>(impl->m_waterSurfaceElevationPoints.arbitraryHWM().points().size());
+
+	::updatePointsAutoSize(numWaterElevationPoints, &(PointsGraphicsSetting::waterElevationPointsSetting));
+}
+
+Project::MappingMethod Project::mappingMethod() const
+{
+	if (impl->m_currentBuilder == &(impl->m_builderNearest)) {
+		return MappingMethod::AllMapToNearestCrossSection;
+	} else if (impl->m_currentBuilder == &(impl->m_builderTin)) {
+		return MappingMethod::TIN;
+	} else {
+		return MappingMethod::Template;
+	}
+}
+
+void Project::setMappingMethod(MappingMethod method)
+{
+	if (method == MappingMethod::AllMapToNearestCrossSection) {
+		impl->m_currentBuilder = &(impl->m_builderNearest);
+	} else if (method == MappingMethod::TIN) {
+		impl->m_currentBuilder = &(impl->m_builderTin);
+	} else {
+		impl->m_currentBuilder = &(impl->m_builderTemplate);
+	}
+}
+
+double Project::templateMappingResolution() const
+{
+	return impl->m_builderTemplate.mappingResolution();
+}
+
+void Project::setTemplateMappingResolution(double resolution)
+{
+	impl->m_builderTemplate.setMappingResolution(resolution);
+}
+
+double Project::templateMappingStreamWiseLength() const
+{
+	return impl->m_builderTemplate.streamWiseLength();
+}
+
+void Project::setTemplateMappingStreamWiseLength(double len)
+{
+	impl->m_builderTemplate.setStreamWiseLength(len);
+}
+
+double Project::templateMappingCrossStreamWidth() const
+{
+	return impl->m_builderTemplate.crossStreamWidth();
+}
+
+void Project::setTemplateMappingCrossStreamWidth(double width)
+{
+	impl->m_builderTemplate.setCrossStreamWidth(width);
+}
+
+int Project::templateMappingNumberOfExpansions() const
+{
+	return impl->m_builderTemplate.numberOfExpansions();
+}
+
+void Project::setTemplateMappingNumberOfExpansions(int num)
+{
+	impl->m_builderTemplate.setNumberOfExpansions(num);
+}
+
+double Project::templateMappingWeightExponent() const
+{
+	return impl->m_builderTemplate.weightExponent();
+}
+
+void Project::setTemplateMappingWeightExponent(double exp)
+{
+	impl->m_builderTemplate.setWeightExponent(exp);
 }
 
 void Project::calcCrossSectionElevations()
@@ -183,17 +288,7 @@ void Project::mapPointsToCrossSections()
 	for (auto cs : csVec) {
 		cs->clearMappedPoints();
 	}
-	for (QVector3D* p : elevationPoints().points()) {
-		std::multimap<double, CrossSection*> distanceMap;
-		QPointF nearestPoint;
-		double distance;
-		for (auto cs : csVec) {
-			cs->getNearestPoint(p->x(), p->y(), &nearestPoint, &distance);
-			distanceMap.insert(std::make_pair(distance, cs));
-		}
-		auto it = distanceMap.begin();
-		it->second->addMappedPoint(p);
-	}
+	impl->m_currentBuilder->build(elevationPoints(), &(crossSections()));
 }
 
 bool Project::sortCrossSectionsIfPossible()

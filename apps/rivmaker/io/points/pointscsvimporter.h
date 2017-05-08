@@ -12,7 +12,7 @@ class PointsCsvImporter : public QObject, public PointsImporterI
 public:
 	QStringList fileDialogFilters() override;
 	QStringList acceptableExtensions() override;
-	bool importData(std::vector<QVector3D*>* points, QPointF* offset, const QString& filename, QWidget* w) override;
+	bool importData(std::vector<GeometryPoint*>* points, QPointF* offset, const QString& filename, QWidget* w) override;
 };
 
 #endif // POINTSCSVIMPORTER_H
