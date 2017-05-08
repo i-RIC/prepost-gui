@@ -2085,11 +2085,6 @@ void GeoDataRiverSurvey::addNewPoint()
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	m_mouseEventMode = meInserting;
 
-	double val = selected->name().toDouble();
-	if (val == 0) {
-		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("Insert Target Point name is \"0\". You have to change the name if you want to add a new point."));
-		return;
-	}
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QVector2D)), dialog, SLOT(setPoint(QVector2D)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
