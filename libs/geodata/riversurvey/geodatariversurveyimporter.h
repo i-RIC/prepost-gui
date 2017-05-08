@@ -42,6 +42,7 @@ private:
 	bool RivRead(const QString& name, bool* with4points);
 
 	PRivPath m_RivRoot;
+	bool m_allNamesAreNumber;
 	GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting m_cpSetting;
 };
 
