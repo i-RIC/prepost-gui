@@ -2,7 +2,7 @@
 
 #include <QSettings>
 
-const int ArrowSettingContainer::DEFAULT_SAMPLING_RATE = 2;
+const int ArrowSettingContainer::DEFAULT_SAMPLING_RATE = 1;
 const int ArrowSettingContainer::DEFAULT_SAMPLING_NUMBER = 100;
 
 const double ArrowSettingContainer::DEFAULT_LEGEND_STANDARD = 1;
@@ -19,7 +19,7 @@ ArrowSettingContainer::ArrowSettingContainer() :
 			&arrowSize, &lineWidth}),
 	target {"attribute"},
 	samplingMode {"samplingMode", SamplingMode::All},
-	samplingRate {"samplingRate", DEFAULT_SAMPLING_NUMBER},
+	samplingRate {"samplingRate", DEFAULT_SAMPLING_RATE},
 	samplingNumber {"samplingNumber", DEFAULT_SAMPLING_NUMBER},
 	colorMode {"colorMode", ColorMode::Custom},
 	customColor {"customColor", Qt::black},

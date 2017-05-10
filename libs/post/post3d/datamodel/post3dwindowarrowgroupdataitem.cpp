@@ -259,7 +259,11 @@ void Post3dWindowArrowGroupDataItem::updateActorSettings()
 
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	m_maskPoints->SetOnRatio(s.samplingRate);
+	if (s.samplingMode == ArrowSettingContainer::SamplingMode::Rate) {
+		m_maskPoints->SetOnRatio(s.samplingRate);
+	} else {
+		m_maskPoints->SetOnRatio(1);
+	}
 
 	setupAppendFilter();
 	if (m_appendFilter->GetNumberOfInputConnections(0) == 0) {return;}
