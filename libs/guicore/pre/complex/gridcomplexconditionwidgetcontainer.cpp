@@ -22,6 +22,9 @@ void GridComplexConditionWidgetContainer::setWidget(QWidget* widget)
 		m_widget->hide();
 	}
 	m_widget = widget;
+
+	if (widget == nullptr) {return;}
+
 	l->addWidget(widget);
 	widget->show();
 }

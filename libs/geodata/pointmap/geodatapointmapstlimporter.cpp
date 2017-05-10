@@ -26,7 +26,7 @@ bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidge
 {
 	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
 	vtkSTLReader* reader = vtkSTLReader::New();
-	reader->SetFileName(iRIC::toStr(m_filename).c_str());
+	reader->SetFileName(iRIC::toStr(filename()).c_str());
 	vtkPolyData* polydata = reader->GetOutput();
 	reader->Update();
 

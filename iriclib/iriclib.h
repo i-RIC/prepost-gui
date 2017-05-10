@@ -117,6 +117,8 @@ int IRICLIBDLL cg_iRIC_Read_Complex_FunctionalWithName_Mul(int fid, char* groupn
 
 int IRICLIBDLL cg_iRIC_Read_Complex_Functional_RealSingle_Mul(int fid, char* groupname, int num, char* name, float* x, float* y);
 
+int IRICLIBDLL cg_iRIC_Read_Complex_FunctionalWithName_RealSingle_Mul(int fid, char* groupname, int num, char* name, char* paramname, float* data);
+
 int IRICLIBDLL cg_iRIC_Read_Grid_Complex_Node_Mul(int fid, char* groupname, int* values);
 
 int IRICLIBDLL cg_iRIC_Read_Grid_Complex_Cell_Mul(int fid, char *groupname, int* values);
@@ -273,6 +275,8 @@ int IRICLIBDLL cg_iRIC_Read_BC_FunctionalWithName_Mul(int fid, char* type, int n
 
 int IRICLIBDLL cg_iRIC_Read_BC_Functional_RealSingle_Mul(int fid, char* type, int num, char* name, float* x, float* y);
 
+int IRICLIBDLL cg_iRIC_Read_BC_FunctionalWithName_RealSingle_Mul(int fid, char* type, int num, char* name, char* paramname, float* data);
+
 /**********************************************/
 /* Writing Boundary Conditions                */
 /**********************************************/
@@ -419,6 +423,8 @@ int IRICLIBDLL cg_iRIC_Read_Complex_FunctionalWithName(char* groupname, int num,
 
 int IRICLIBDLL cg_iRIC_Read_Complex_Functional_RealSingle(char* groupname, int num, char* name, float* x, float* y);
 
+int IRICLIBDLL cg_iRIC_Read_Complex_FunctionalWithName_RealSingle(char* groupname, int num, char* name, char* paramname, float* data);
+
 int IRICLIBDLL cg_iRIC_Read_Grid_Complex_Node(char* groupname, int* values);
 
 int IRICLIBDLL cg_iRIC_Read_Grid_Complex_Cell(char *groupname, int* values);
@@ -550,6 +556,8 @@ int IRICLIBDLL cg_iRIC_Read_BC_Functional(char* type, int num, char* name, doubl
 int IRICLIBDLL cg_iRIC_Read_BC_FunctionalWithName(char* type, int num, char* name, char* paramname, double* data);
 
 int IRICLIBDLL cg_iRIC_Read_BC_Functional_RealSingle(char* type, int num, char* name, float* x, float* y);
+
+int IRICLIBDLL cg_iRIC_Read_BC_FunctionalWithName_RealSingle(char* type, int num, char* name, char* paramname, float* data);
 
 int IRICLIBDLL cg_iRIC_Clear_BC();
 

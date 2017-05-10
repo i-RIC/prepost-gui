@@ -383,6 +383,17 @@ void GraphicsWindowDataItem::showPropertyDialog()
 	delete propDialog;
 }
 
+void GraphicsWindowDataItem::showAddDialog()
+{
+	QDialog* dialog = addDialog(mainWindow());
+	if (dialog == nullptr) {return;}
+	int result = dialog->exec();
+	if (result == QDialog::Accepted) {
+		handleAddDialogAccepted(dialog);
+	}
+	delete dialog;
+}
+
 void GraphicsWindowDataItem::setZDepthRange(const ZDepthRange& newrange)
 {
 	m_zDepthRange = newrange;

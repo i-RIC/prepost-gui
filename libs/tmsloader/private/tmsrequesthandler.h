@@ -50,6 +50,7 @@ private:
 	QWebView* m_webView;
 	QImage m_image;
 	mutable QMutex m_imageMutex;
+	bool m_terminating;
 
 	QTimer m_timer;
 };

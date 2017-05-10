@@ -14,12 +14,12 @@
 GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	GeoDataCreator {"riversurvey", tr("River Survey data")}
 {
-	importers().append(new GeoDataRiverSurveyImporter(this));
+	importers().push_back(new GeoDataRiverSurveyImporter(this));
 
-	exporters().append(new GeoDataRiverSurveyExporter(this));
-	exporters().append(new GeoDataRiverSurveyVTKExporter(this));
+	exporters().push_back(new GeoDataRiverSurveyExporter(this));
+	exporters().push_back(new GeoDataRiverSurveyVTKExporter(this));
 
-	nodeMappers().append(new GeoDataRiverSurveyNodeMapper(this));
+	nodeMappers().push_back(new GeoDataRiverSurveyNodeMapper(this));
 }
 
 GeoData* GeoDataRiverSurveyCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

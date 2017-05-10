@@ -4,32 +4,32 @@
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="26"/>
+        <location filename="../measureddatafiledataitem.cpp" line="34"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="43"/>
+        <location filename="../measureddatafiledataitem.cpp" line="46"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="74"/>
+        <location filename="../measureddatafiledataitem.cpp" line="79"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="75"/>
+        <location filename="../measureddatafiledataitem.cpp" line="80"/>
         <source>Export Measured Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="82"/>
+        <location filename="../measureddatafiledataitem.cpp" line="87"/>
         <source>Measured Data successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatafiledataitem.cpp" line="84"/>
+        <location filename="../measureddatafiledataitem.cpp" line="89"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -37,12 +37,12 @@
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
-        <location filename="../measureddatapointgroupdataitem.cpp" line="46"/>
+        <location filename="../measureddatapointgroupdataitem.cpp" line="378"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatapointgroupdataitem.cpp" line="418"/>
+        <location filename="../measureddatapointgroupdataitem.cpp" line="479"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -75,12 +75,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatapointsettingdialog.cpp" line="105"/>
+        <location filename="../measureddatapointsettingdialog.cpp" line="109"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatapointsettingdialog.cpp" line="105"/>
+        <location filename="../measureddatapointsettingdialog.cpp" line="109"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -88,12 +88,12 @@
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
-        <location filename="../measureddatavectorgroupdataitem.cpp" line="41"/>
+        <location filename="../measureddatavectorgroupdataitem.cpp" line="330"/>
         <source>Arrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddatavectorgroupdataitem.cpp" line="92"/>
+        <location filename="../measureddatavectorgroupdataitem.cpp" line="382"/>
         <source>Arrow Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>

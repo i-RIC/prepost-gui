@@ -109,47 +109,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="57"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="34"/>
         <source>River Center Point Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="63"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="40"/>
         <source>Mouse Click</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="70"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="47"/>
         <source>Coordinate Values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="92"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="69"/>
         <source>, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="127"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="104"/>
         <source>Ratio between Back and Forth (0-1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="173"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="150"/>
         <source>Cross Section Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="179"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="156"/>
         <source>Inserts Three Point of Altitude 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="188"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="165"/>
         <source>Copy Next River Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.ui" line="215"/>
+        <location filename="../geodatariverpathpointinsertdialog.ui" line="192"/>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -240,7 +240,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointinsertdialog.cpp" line="76"/>
+        <location filename="../geodatariverpathpointinsertdialog.cpp" line="83"/>
         <source>Insert Traversal Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -250,7 +250,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariverpathpointrenamedialog.cpp" line="49"/>
+        <location filename="../geodatariverpathpointrenamedialog.cpp" line="40"/>
         <source>Rename Traversal Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -388,7 +388,6 @@
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="1910"/>
-        <location filename="../geodatariversurvey.cpp" line="2087"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -398,13 +397,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1990"/>
+        <location filename="../geodatariversurvey.cpp" line="1993"/>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatariversurvey.cpp" line="2087"/>
-        <source>Insert Target Point name is &quot;0&quot;. You have to change the name if you want to add a new point.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -499,61 +493,61 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="379"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="377"/>
         <source>Edit Elevation Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="474"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="477"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="480"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="597"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="601"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="604"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="472"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="475"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="478"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="595"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="599"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="602"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="474"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="601"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="472"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="599"/>
         <source>At least, two points should be active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="477"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="475"/>
         <source>Fixed points and end points cannot be deleted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="480"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="604"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="478"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="602"/>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="488"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="486"/>
         <source>Delete Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="505"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="510"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="527"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="503"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="508"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="525"/>
         <source>Inactivate Elevation Points using water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="597"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="595"/>
         <source>Fixed points and end points cannot be inactivated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="729"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="727"/>
         <source>River Survey Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="730"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="728"/>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -639,12 +633,12 @@
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
-        <location filename="../geodatariversurveyexporter.cpp" line="15"/>
+        <location filename="../geodatariversurveyexporter.cpp" line="13"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyexporter.cpp" line="80"/>
+        <location filename="../geodatariversurveyexporter.cpp" line="75"/>
         <source>River Survey data(*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -652,20 +646,20 @@
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="290"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="458"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="314"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="481"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="359"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="417"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="383"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="440"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="359"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="417"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="383"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="440"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -692,6 +686,11 @@
         <source>Where the elevation is the smallest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="47"/>
+        <source>Middle point of Low water way</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
@@ -704,12 +703,12 @@
 <context>
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
-        <location filename="../geodatariversurveyvtkexporter.cpp" line="16"/>
+        <location filename="../geodatariversurveyvtkexporter.cpp" line="14"/>
         <source>RiverSurvey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyvtkexporter.cpp" line="57"/>
+        <location filename="../geodatariversurveyvtkexporter.cpp" line="55"/>
         <source>VTK File (*.vtk)</source>
         <translation type="unfinished"></translation>
     </message>

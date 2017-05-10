@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
     <message>
@@ -103,17 +103,17 @@
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="67"/>
+        <location filename="../distancemeasuredataitem.cpp" line="58"/>
         <source>Property</source>
         <translation>プロパティ</translation>
     </message>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="70"/>
+        <location filename="../distancemeasuredataitem.cpp" line="60"/>
         <source>Redefine</source>
         <translation>再定義</translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_definecommand.cpp" line="6"/>
+        <location filename="../private/distancemeasuredataitem_definecommand.cpp" line="7"/>
         <source>Define Distance Measure</source>
         <translation>距離計測の定義</translation>
     </message>
@@ -123,17 +123,17 @@
         <translation>距離計測の点の移動</translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_redefinecommand.cpp" line="4"/>
+        <location filename="../private/distancemeasuredataitem_redefinecommand.cpp" line="5"/>
         <source>Redefine Distance Measure</source>
         <translation>距離計測の再定義</translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_setsettingcommand.cpp" line="4"/>
+        <location filename="../private/distancemeasuredataitem_setsettingcommand.cpp" line="5"/>
         <source>Edit Distance Measure Property</source>
         <translation>距離計測プロパティの編集</translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_translatecommand.cpp" line="6"/>
+        <location filename="../private/distancemeasuredataitem_translatecommand.cpp" line="7"/>
         <source>Translate Distance Measure</source>
         <translation>距離計測の移動</translation>
     </message>

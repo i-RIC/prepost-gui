@@ -45,7 +45,7 @@ DATA importDataT(QWidget* w)
 				if (extMap.contains(extension)) {
 					importer = extMap.value(extension);
 				} else {
-					QMessageBox::warning(w, QObject::tr("Warning"), QObject::tr("File type can not be recongnized from the file extensioin. : %1").arg(finfo.fileName()));
+					QMessageBox::warning(w, QObject::tr("Warning"), QObject::tr("File type can not be recongnized from the file extension. : %1").arg(finfo.fileName()));
 					return ret;
 				}
 			} else {
@@ -59,7 +59,7 @@ DATA importDataT(QWidget* w)
 
 	ret = importer->importData(filename, selectedFilter, w);
 
-	if (! ret.isEmpty()) {
+	if (! ret.size() == 0) {
 		LastIODirectory::setFromFilename(filename);
 	}
 
@@ -79,7 +79,7 @@ void exportDataT(const DATA& data, QWidget* w)
 	QString dir = LastIODirectory::get();
 	QString selectedFilter;
 
-	QString filename = QFileDialog::getSaveFileName(w, QObject::tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
+	QString filename = QFileDialog::getSaveFileName(w, QObject::tr("Select file to export"), dir, filters.join(";;"), &selectedFilter);
 
 	if (filename.isNull()) {return;}
 
@@ -89,8 +89,8 @@ void exportDataT(const DATA& data, QWidget* w)
 	for (int i = 0; i < filters.size(); ++i) {
 		if (filters[i] == selectedFilter) {
 			exporter = f.exporters().at(i);
+			break;
 		}
-		break;
 	}
 
 	Q_ASSERT(exporter != nullptr);

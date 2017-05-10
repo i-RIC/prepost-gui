@@ -9,11 +9,9 @@
 #include <QFile>
 #include <QTextStream>
 
-GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
-{
-	m_caption = tr("River Survey data (*.riv)");
-}
+GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator) :
+	GeoDataExporter(tr("River Survey data (*.riv)"), creator)
+{}
 
 bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
@@ -30,12 +28,9 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	GeoDataRiverPathPoint* lastp = rs->headPoint()->nextPoint();
 	QVector2D offset = pd->mainfile()->offset();
-	while (1) {
-		if (lastp->nextPoint() == nullptr) {break;}
-		lastp = lastp->nextPoint();
-	}
-	// now, export from the last one.
-	GeoDataRiverPathPoint* tmpp = lastp;
+
+	// now, export from the first one.
+	GeoDataRiverPathPoint* tmpp = rs->headPoint()->nextPoint();
 	outstream << "#survey" << endl;
 	while (1) {
 		QVector2D leftBank  = tmpp->crosssectionPosition(tmpp->crosssection().leftBank(true).position());
@@ -44,12 +39,12 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 				<< tmpp->name()
 				<< "\t" << leftBank.x() + offset.x() << "\t" << leftBank.y() + offset.y()
 				<< "\t" << rightBank.x() + offset.x() << "\t" << rightBank.y()  + offset.y() << endl;
-		tmpp = tmpp->previousPoint();
-		if (tmpp->firstPoint()) {break;}
+		tmpp = tmpp->nextPoint();
+		if (tmpp == nullptr) {break;}
 	}
-	// now export crosssection point.
 
-	tmpp = lastp;
+	// now export crosssection point.
+	tmpp = rs->headPoint()->nextPoint();
 	outstream << endl << endl << "#x-section" << endl;
 	while (1) {
 		outstream
@@ -67,8 +62,8 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 			}
 		}
 		outstream << endl;
-		tmpp = tmpp->previousPoint();
-		if (tmpp->firstPoint()) {break;}
+		tmpp = tmpp->nextPoint();
+		if (tmpp == nullptr) {break;}
 	}
 	file.close();
 	return true;

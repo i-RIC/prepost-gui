@@ -1,5 +1,6 @@
 #include "post3dwindowcontourgroupdataitem.h"
 #include "post3dwindowcontourgroupsettingdialog.h"
+#include "post3dwindowcontourgrouptopdataitem.h"
 #include "post3dwindowfacedataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -40,21 +41,46 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
+class Post3dWindowContourGroupUpdateOnRedo : public QUndoCommand
+{
+public:
+	Post3dWindowContourGroupUpdateOnRedo(Post3dWindowContourGroupDataItem *item, QUndoCommand* parent = nullptr)
+		: QUndoCommand(QObject::tr("Update"), parent)
+		, m_item(item)
+	{}
+	void redo() {
+		m_item->updateItemMap();
+		m_item->updateChildActors();
+	}
+private:
+	Post3dWindowContourGroupDataItem *m_item;
+};
+
+class Post3dWindowContourGroupUpdateOnUndo : public QUndoCommand
+{
+public:
+	Post3dWindowContourGroupUpdateOnUndo(Post3dWindowContourGroupDataItem *item, QUndoCommand* parent = nullptr)
+		: QUndoCommand(QObject::tr("Update"), parent)
+		, m_item(item)
+	{}
+	void undo() {
+		m_item->updateItemMap();
+		m_item->updateChildActors();
+	}
+private:
+	Post3dWindowContourGroupDataItem *m_item;
+};
+
 Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_zScale {1}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
-	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
+	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 	PostZoneDataContainer* c = zItem->dataContainer();
 	m_scalarSetting.target = c->data()->GetPointData()->GetArrayName(0);
 	m_scalarSetting.numberOfDivisions = 10;
-
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-		m_colorBarTitleMap.insert(name, name.c_str());
-	}
 
 	setupScalarBarActor();
 }
@@ -286,8 +312,12 @@ void Post3dWindowContourGroupDataItem::updateScalarBarActorSetting()
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	std::string targetStr = iRIC::toStr(m_scalarSetting.target);
-	a->SetTitle(iRIC::toStr(m_colorBarTitleMap.value(targetStr)).c_str());
+
+	Post3dWindowContourGroupTopDataItem* topitem = dynamic_cast<Post3dWindowContourGroupTopDataItem*>(parent());
+	a->SetTitle(iRIC::toStr(topitem->m_colorBarTitleMap.value(targetStr)).c_str());
 	a->SetLookupTable(lookup->vtkObj());
+
+	m_standardItem->setText(topitem->m_colorBarTitleMap.value(targetStr));
 
 	auto& s = m_scalarSetting.scalarBarSetting;
 
@@ -330,7 +360,7 @@ void Post3dWindowContourGroupDataItem::update()
 
 void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 {
-	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	bool dataOK = (zoneData != nullptr && zoneData->data() != nullptr);
 	if (! dataOK) {
 		m_scalarBarWidget->SetEnabled(0);
@@ -352,18 +382,13 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 	GraphicsWindowDataItem::updateVisibility(visible);
 }
 
-void Post3dWindowContourGroupDataItem::handleStandardItemChange()
-{
-	GraphicsWindowDataItem::updateVisibility();
-}
-
 QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post3dWindowContourGroupSettingDialog* dialog = new Post3dWindowContourGroupSettingDialog(p);
 	dialog->setEnabled(true);
-	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
+	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
-	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (zoneData == nullptr || zoneData->data() == nullptr) {
 		delete dialog;
 		return nullptr;
@@ -371,7 +396,8 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setZoneData(zoneData);
 
 	m_scalarSetting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	dialog->setColorBarTitleMap(m_colorBarTitleMap);
+	Post3dWindowContourGroupTopDataItem* topitem = dynamic_cast<Post3dWindowContourGroupTopDataItem*>(parent());
+	dialog->setColorBarTitleMap(topitem->m_colorBarTitleMap);
 
 	dialog->setScalarSetting(m_scalarSetting);
 	dialog->setLookupTable(*(lookupTable()));
@@ -382,22 +408,14 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 
 void Post3dWindowContourGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propDialog);
-	iRICUndoStack& stack = iRICUndoStack::instance();
-
-	stack.beginMacro(tr("Contour Setting"));
-	stack.push(new GraphicsWindowDrawOnUndo(this));
-	stack.push(new SetSettingCommand(dialog->scalarSetting(), dialog->lookupTable(), dialog->scalarBarTitle(), this));
-	setFaceMap(dialog->faceMap());
-	stack.push(new GraphicsWindowDrawOnRedo(this));
-	stack.endMacro();
-	// temporary this command is not undo-able
-	stack.clear();
+	QUndoCommand* contourSetting = new QUndoCommand(tr("Contour Setting"));
+	undoCommands(propDialog, contourSetting);
+	iRICUndoStack::instance().push(contourSetting);
 }
 
 LookupTableContainer* Post3dWindowContourGroupDataItem::lookupTable()
 {
-	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
+	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
 	return gtItem->nodeLookupTable(iRIC::toStr(m_scalarSetting.target));
 }
 
@@ -414,10 +432,14 @@ QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowContourGroupDataIte
 class Post3dWindowContourGroupSetFaceMap : public QUndoCommand
 {
 public:
-	Post3dWindowContourGroupSetFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& oldMap, const QMap<QString, Post3dWindowFaceDataItem::Setting>& newMap, Post3dWindowContourGroupDataItem* item) {
+	Post3dWindowContourGroupSetFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& oldMap, const QMap<QString, Post3dWindowFaceDataItem::Setting>& newMap, QString target, Post3dWindowContourGroupDataItem* item, QUndoCommand* parent = nullptr) :
+		QUndoCommand(parent) 
+	{
 		m_oldMap = oldMap;
 		m_newMap = newMap;
 		m_item = item;
+		m_oldTarget = item->m_scalarSetting.target;
+		m_newTarget = target;
 	}
 	void redo() {
 		removeChildren();
@@ -426,8 +448,7 @@ public:
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.push_back(f);
 		}
-		m_item->updateItemMap();
-		m_item->updateChildActors();
+		m_item->m_scalarSetting.target = m_newTarget;
 	}
 	void undo() {
 		removeChildren();
@@ -436,8 +457,7 @@ public:
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.push_back(f);
 		}
-		m_item->updateItemMap();
-		m_item->updateChildActors();
+		m_item->m_scalarSetting.target = m_oldTarget;
 	}
 private:
 	void removeChildren() {
@@ -450,11 +470,27 @@ private:
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_oldMap;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_newMap;
 	Post3dWindowContourGroupDataItem* m_item;
+	QString m_oldTarget;
+	QString m_newTarget;
 };
 
-void Post3dWindowContourGroupDataItem::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map)
+void Post3dWindowContourGroupDataItem::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map, QString target)
 {
-	iRICUndoStack::instance().push(new Post3dWindowContourGroupSetFaceMap(faceMap(), map, this));
+	iRICUndoStack::instance().push(new Post3dWindowContourGroupSetFaceMap(faceMap(), map, target, this));
+}
+
+void Post3dWindowContourGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
+{
+	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propDialog);
+
+	Q_ASSERT(parent != nullptr); // the following won't get deleted if parent is null
+
+	new GraphicsWindowDrawOnUndo(this, parent);
+	new Post3dWindowContourGroupUpdateOnUndo(this, parent);
+	new SetSettingCommand(dialog->scalarSetting(), dialog->lookupTable(), dialog->scalarBarTitle(), this, parent);
+	new Post3dWindowContourGroupSetFaceMap(faceMap(), dialog->faceMap(), dialog->scalarSetting().target, this, parent);
+	new Post3dWindowContourGroupUpdateOnRedo(this, parent);
+	new GraphicsWindowDrawOnRedo(this, parent);
 }
 
 void Post3dWindowContourGroupDataItem::innerUpdateZScale(double scale)
@@ -496,11 +532,7 @@ void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement childElem = children.at(i).toElement();
-		if (childElem.nodeName() == "ScalarBarTitle") {
-			std::string val = iRIC::toStr(childElem.attribute("value"));
-			QString title = childElem.attribute("title");
-			m_colorBarTitleMap[val] = title;
-		} else if (childElem.nodeName() == "FaceSetting") {
+		if (childElem.nodeName() == "FaceSetting") {
 			QString label = childElem.attribute("label");
 			Post3dWindowFaceDataItem* item = new Post3dWindowFaceDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
@@ -517,15 +549,6 @@ void Post3dWindowContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 
 	m_scalarSetting.save(writer);
 
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_colorBarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
-	}
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		Post3dWindowFaceDataItem* fitem = dynamic_cast<Post3dWindowFaceDataItem*>(m_childItems.at(i));
 		writer.writeStartElement("FaceSetting");

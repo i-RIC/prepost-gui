@@ -3,8 +3,8 @@
 #include "../pre/gridcond/editwidget/gridattributerealvariationeditwidget.h"
 #include "solverdefinitiongridattributerealnode.h"
 
-SolverDefinitionGridAttributeRealNode::SolverDefinitionGridAttributeRealNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeReal {elem, translator, Node, false, order}
+SolverDefinitionGridAttributeRealNode::SolverDefinitionGridAttributeRealNode(const QDomElement& elem, SolverDefinition* solverDef, int order) :
+	SolverDefinitionGridAttributeReal {elem, solverDef, Node, false, order}
 {}
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeRealNode::editWidget(QWidget* parent)
@@ -17,8 +17,8 @@ GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealNode::variati
 	return new GridAttributeRealVariationEditWidget(parent, this);
 }
 
-SolverDefinitionGridAttributeRealNode::SolverDefinitionGridAttributeRealNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order) :
-	SolverDefinitionGridAttributeReal {elem, translator, Node, isOption, order}
+SolverDefinitionGridAttributeRealNode::SolverDefinitionGridAttributeRealNode(const QDomElement& elem, SolverDefinition* solverDef, bool isOption, int order) :
+	SolverDefinitionGridAttributeReal {elem, solverDef, Node, isOption, order}
 {}
 
 GridAttributeContainer* SolverDefinitionGridAttributeRealNode::buildContainer(Grid* grid)

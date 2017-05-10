@@ -92,6 +92,17 @@ SolverDefinitionTranslator::SolverDefinitionTranslator(const QString& solverfold
 	impl {new Impl {solverfolder, locale}}
 {}
 
+SolverDefinitionTranslator::SolverDefinitionTranslator(const SolverDefinitionTranslator& t)
+{
+	*impl = *(t.impl);
+}
+
+SolverDefinitionTranslator::SolverDefinitionTranslator(SolverDefinitionTranslator&& t) :
+	impl {t.impl}
+{
+	t.impl = nullptr;
+}
+
 SolverDefinitionTranslator::~SolverDefinitionTranslator()
 {
 	delete impl;

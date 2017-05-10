@@ -17,8 +17,14 @@ ObjectBrowserView::ObjectBrowserView(QWidget* parent) :
 	m_isPushing = false;
 	m_commandExecution = false;
 
+	m_addAction = new QAction(QIcon(":/libs/guibase/images/iconProperty.png"),tr("&Add..."), this);
+	connect(m_addAction, SIGNAL(triggered()), this, SLOT(showAddForCurrentItem()));
+
 	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"),tr("&Delete..."), this);
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCurrentItem()));
+
+	m_undoableDeleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"),tr("&Delete..."), this);
+	connect(m_undoableDeleteAction, SIGNAL(triggered()), this, SLOT(undoableDeleteCurrentItem()));
 
 	m_moveUpAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.png"), tr("Move up"), this);
 	connect(m_moveUpAction, SIGNAL(triggered()), this, SLOT(moveUpCurrentItem()));
@@ -33,6 +39,11 @@ ObjectBrowserView::ObjectBrowserView(QWidget* parent) :
 	connect(this, SIGNAL(pressed(QModelIndex)), this, SLOT(handlePress(QModelIndex)));
 
 	setSelectionMode(SingleSelection);
+}
+
+QAction* ObjectBrowserView::addAction() const
+{
+	return m_addAction;
 }
 
 QAction* ObjectBrowserView::deleteAction() const
@@ -53,6 +64,11 @@ QAction* ObjectBrowserView::moveDownAction() const
 QAction* ObjectBrowserView::propertyAction() const
 {
 	return m_propertyAction;
+}
+
+QAction* ObjectBrowserView::undoableDeleteAction() const
+{
+	return m_undoableDeleteAction;
 }
 
 QSize ObjectBrowserView::sizeHint() const
@@ -76,6 +92,12 @@ void ObjectBrowserView::deleteCurrentItem()
 	} else {
 		emit requestDeleteItem(selected);
 	}
+}
+
+void ObjectBrowserView::undoableDeleteCurrentItem()
+{
+	QModelIndex selected = *(selectedIndexes().begin());
+	emit requestUndoableDeleteItem(selected);
 }
 
 void ObjectBrowserView::moveUpCurrentItem()
@@ -108,6 +130,12 @@ void ObjectBrowserView::showPropertyForCurrentItem()
 {
 	QModelIndex selected = *(selectedIndexes().begin());
 	emit requestShowPropertyDialog(selected);
+}
+
+void ObjectBrowserView::showAddForCurrentItem()
+{
+	QModelIndex selected = *(selectedIndexes().begin());
+	emit requestShowAddDialog(selected);
 }
 
 void ObjectBrowserView::mousePressEvent(QMouseEvent* event)

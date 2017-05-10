@@ -14,11 +14,20 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
-InputConditionPage::InputConditionPage(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t, QWidget* parent)
-	: QWidget(parent)
+InputConditionPage::InputConditionPage(QWidget* parent) :
+	QWidget {parent}
+{}
+
+InputConditionPage::InputConditionPage(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t, QWidget* parent) :
+	QWidget {parent}
 {
 	// load and construct itself.
 	load(node, ws, t);
+}
+
+const QString& InputConditionPage::name() const
+{
+	return m_name;
 }
 
 void InputConditionPage::load(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)

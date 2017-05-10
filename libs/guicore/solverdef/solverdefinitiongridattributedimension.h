@@ -14,7 +14,7 @@ class GridAttributeDimensionSelectWidget;
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimension : public SolverDefinitionNode
 {
 public:
-	SolverDefinitionGridAttributeDimension(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att);
+	SolverDefinitionGridAttributeDimension(const QDomElement& node, SolverDefinition* solverDef, SolverDefinitionGridAttribute* att);
 	virtual ~SolverDefinitionGridAttributeDimension();
 
 	const std::string& name() const;

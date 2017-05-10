@@ -2,8 +2,10 @@
 #define GRICCREATINGCONDITIONCENTERANDWIDTHCOORDINATESEDITDIALOG_H
 
 #include <QDialog>
-#include <QVector>
-#include <QVector2D>
+
+#include <vector>
+
+class QPointF;
 
 namespace Ui
 {
@@ -33,7 +35,7 @@ private slots:
 	void handleButtonClick(QAbstractButton* button);
 
 private:
-	QVector<QVector2D> getCoords();
+	std::vector<QPointF> getCoords();
 	void setupData();
 	void apply();
 

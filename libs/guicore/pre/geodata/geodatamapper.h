@@ -33,10 +33,12 @@ protected:
 	GeoData* geoData() const;
 
 private:
-	QString m_caption;
-	Grid* m_grid;
-	GridAttributeContainer* m_container;
-	GeoData* m_geoData;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/geodatamapper_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATAMAPPER_H

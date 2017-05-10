@@ -34,6 +34,7 @@ public:
 	void updateTmsList();
 
 public slots:
+	void addContour();
 	void gridShapeSetting();
 	void contourSetting();
 	void vectorSetting();

@@ -121,18 +121,15 @@ public:
 		m_item {item}
 	{}
 	void redo() override {
-		removeChildren();
-		for (auto it = m_newMap.begin(); it != m_newMap.end(); ++it) {
-			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
-			f->setSetting(it.value(), true);
-			m_item->m_childItems.push_back(f);
-		}
-		m_item->updateItemMap();
-		m_item->setupAppendFilter();
+		applySettings(m_newMap);
 	}
 	void undo() override {
+		applySettings(m_oldMap);
+	}
+private:
+	void applySettings(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map) {
 		removeChildren();
-		for (auto it = m_oldMap.begin(); it != m_oldMap.end(); ++it) {
+		for (auto it = map.begin(); it != map.end(); ++it) {
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.push_back(f);
@@ -140,9 +137,10 @@ public:
 		m_item->updateItemMap();
 		m_item->setupAppendFilter();
 	}
-private:
+
 	void removeChildren() {
-		for (auto child : m_item->m_childItems) {
+		auto children = m_item->m_childItems;
+		for (auto child : children) {
 			delete child;
 		}
 		m_item->updateItemMap();

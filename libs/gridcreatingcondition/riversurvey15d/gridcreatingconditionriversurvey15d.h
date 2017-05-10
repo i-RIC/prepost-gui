@@ -102,6 +102,8 @@ private:
 	void selectCtrlZone(const QVector2D& point, double width);
 	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QVector2D& point, double width);
 
+	void setupCrosssections(Grid* grid);
+
 	void setupVtkContainers();
 	void updateShapeData();
 	void allActorsOff();

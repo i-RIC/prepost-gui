@@ -30,7 +30,6 @@ class vtkActor2DCollection;
 
 class QAction;
 class QDialog;
-class QIcon;
 class QKeyEvent;
 class QMenu;
 class QUndoCommand;
@@ -72,14 +71,14 @@ public:
 
 	virtual GeoDataMapper* mapper() const;
 	void setMapper(GeoDataMapper* m);
-	QList<GeoDataMapper*> mappers() const;
+	std::vector<GeoDataMapper*> mappers() const;
 	void setDefaultMapper();
 
-	QList<GeoDataMapper*> nodeMappers() const;
-	QList<GeoDataMapper*> cellMappers() const;
+	std::vector<GeoDataMapper*> nodeMappers() const;
+	std::vector<GeoDataMapper*> cellMappers() const;
 
-	QList<GeoDataImporter*> importers() const;
-	QList<GeoDataExporter*> exporters() const;
+	std::vector<GeoDataImporter*> importers() const;
+	std::vector<GeoDataExporter*> exporters() const;
 
 	virtual void setupDataItem();
 	/// setup VTK actors.
@@ -141,7 +140,7 @@ protected:
 	void updateVisibility();
 	void updateVisibilityWithoutRendering();
 	QAction* deleteAction();
-	QList<GeoDataMapper*> (GeoData::*mapperFunc)() const;
+	std::vector<GeoDataMapper*> (GeoData::*mapperFunc)() const;
 	vtkRenderer* renderer();
 	void renderGraphicsView();
 	vtkActorCollection* actorCollection();

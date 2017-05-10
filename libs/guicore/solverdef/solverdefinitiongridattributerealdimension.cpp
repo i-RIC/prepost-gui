@@ -2,8 +2,8 @@
 #include "../pre/gridcond/base/gridattributedimensionrealcontainer.h"
 #include <QVariant>
 
-SolverDefinitionGridAttributeRealDimension::SolverDefinitionGridAttributeRealDimension(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond) :
-	SolverDefinitionGridAttributeDimensionT<double> (elem, translator, cond)
+SolverDefinitionGridAttributeRealDimension::SolverDefinitionGridAttributeRealDimension(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* cond) :
+	SolverDefinitionGridAttributeDimensionT<double> (elem, solverDef, cond)
 {}
 
 double SolverDefinitionGridAttributeRealDimension::fromVariant(const QVariant& v) const

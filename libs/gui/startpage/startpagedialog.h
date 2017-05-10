@@ -25,9 +25,11 @@ public:
 	};
 	explicit StartPageDialog(QWidget* parent = nullptr);
 	~StartPageDialog();
-	CommandMode commandMode() {return m_commandMode;}
-	SolverDefinitionAbstract* solverDefinition() {return m_solverDefinition;}
-	const QString& projectFileName() {return m_projectFileName;}
+
+	CommandMode commandMode() const;
+	SolverDefinitionAbstract* solverDefinition() const;
+	const QString& projectFileName() const;
+
 	void setSolverList(SolverDefinitionList* solverList);
 	void setLocale(const QString& locale);
 
@@ -39,9 +41,13 @@ private slots:
 
 private:
 	Ui::StartPageDialog* ui;
-	CommandMode m_commandMode;
-	SolverDefinitionAbstract* m_solverDefinition;
-	QString m_projectFileName;
+
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/startpagedialog_impl.h"
+#endif // _DEBUG
 
 #endif // STARTPAGEDIALOG_H

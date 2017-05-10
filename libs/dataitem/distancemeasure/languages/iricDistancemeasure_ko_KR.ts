@@ -103,17 +103,17 @@
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="67"/>
+        <location filename="../distancemeasuredataitem.cpp" line="58"/>
         <source>Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="70"/>
+        <location filename="../distancemeasuredataitem.cpp" line="60"/>
         <source>Redefine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_definecommand.cpp" line="6"/>
+        <location filename="../private/distancemeasuredataitem_definecommand.cpp" line="7"/>
         <source>Define Distance Measure</source>
         <translation type="unfinished"></translation>
     </message>
@@ -123,17 +123,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_redefinecommand.cpp" line="4"/>
+        <location filename="../private/distancemeasuredataitem_redefinecommand.cpp" line="5"/>
         <source>Redefine Distance Measure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_setsettingcommand.cpp" line="4"/>
+        <location filename="../private/distancemeasuredataitem_setsettingcommand.cpp" line="5"/>
         <source>Edit Distance Measure Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_translatecommand.cpp" line="6"/>
+        <location filename="../private/distancemeasuredataitem_translatecommand.cpp" line="7"/>
         <source>Translate Distance Measure</source>
         <translation type="unfinished"></translation>
     </message>

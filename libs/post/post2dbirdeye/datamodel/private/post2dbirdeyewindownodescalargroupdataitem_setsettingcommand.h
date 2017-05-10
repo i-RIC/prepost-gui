@@ -10,10 +10,12 @@
 #include <QString>
 #include <QUndoCommand>
 
+class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
+
 class Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item);
+	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item, QUndoCommand* parent = nullptr);
 
 	void redo() override;
 	void undo() override;
@@ -30,6 +32,7 @@ private:
 	QString m_oldScalarBarTitle;
 
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_item;
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* m_topItem;
 };
 
 #endif // SETSETTINGCOMMAND_H

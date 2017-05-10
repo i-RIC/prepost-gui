@@ -7,9 +7,9 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-QVector<QPointF> PolylineCsvImporter::importData(const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
+std::vector<QPointF> PolylineCsvImporter::importData(const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
 {
-	QVector<QPointF> ret, errorRet;
+	std::vector<QPointF> ret, errorRet;
 
 	QFile file(filename);
 	bool ok = file.open(QFile::ReadOnly);

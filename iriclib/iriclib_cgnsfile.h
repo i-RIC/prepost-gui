@@ -67,6 +67,7 @@ public:
 	int Complex_CC_Read_Functional(const char* groupname, int num, const char* name, double* x, double* y);
 	int Complex_CC_Read_FunctionalWithName(const char* groupname, int num, const char* name, const char *paramname, double* data);
 	int Complex_CC_Read_Functional_RealSingle(const char* groupname, int num, const char* name, float* x, float* y);
+	int Complex_CC_Read_FunctionalWithName_RealSingle(const char* groupname, int num, const char* name, const char* paramname, float* data);
 	int Complex_CC_Read_Grid_Node(const char* groupname, int* values);
 	int Complex_CC_Read_Grid_Cell(const char* groupname, int* values);
 
@@ -127,6 +128,7 @@ public:
 	int BC_Read_Functional(const char* typeName, int num, const char* name, double* x, double* y);
 	int BC_Read_FunctionalWithName(const char* typeName, int num, const char* name, const char *paramname, double* data);
 	int BC_Read_Functional_RealSingle(const char* typeName, int num, const char* name, float* x, float* y);
+	int BC_Read_FunctionalWithName_RealSingle(const char* typeName, int num, const char* name, const char* paramname, float* data);
 
 	int BC_Clear();
 	int BC_Write_Indices(const char* typeName, int num, cgsize_t size, cgsize_t* indices);

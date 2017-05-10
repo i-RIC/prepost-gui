@@ -17,268 +17,268 @@
 <context>
     <name>GridCreatingConditionTriangle</name>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="72"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="73"/>
         <source>Define Grid Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="75"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="76"/>
         <source>Add &amp;Refinement Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="79"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="80"/>
         <source>Add &amp;Hole Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="83"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="84"/>
         <source>Add &amp;Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="88"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="89"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="91"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="92"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="94"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="95"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="97"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="98"/>
         <source>&amp;Delete Region or Break Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="102"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="103"/>
         <source>Edit &amp;Maximum Area for Cells...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="134"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="135"/>
         <source>&amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="235"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1313"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="236"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1314"/>
         <source>Finish Defining Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="262"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1332"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="263"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1333"/>
         <source>Finish Defining Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="317"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="318"/>
         <source>Add New Polygon Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="380"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="381"/>
         <source>Move Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="448"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="449"/>
         <source>Move Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="518"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="519"/>
         <source>Insert Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="615"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="616"/>
         <source>Add New Break Line Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="684"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="685"/>
         <source>Move Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="752"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="753"/>
         <source>Move Break Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="821"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="822"/>
         <source>Insert Break Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="974"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="975"/>
         <source>Remove Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1043"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1044"/>
         <source>Remove Break Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1308"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1327"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2259"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2296"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2453"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2457"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2465"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2469"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2473"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2481"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2485"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2489"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2500"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2509"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2514"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2525"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2535"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1309"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1328"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2260"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2297"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2454"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2458"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2466"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2470"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2474"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2482"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2486"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2490"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2501"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2510"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2515"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2526"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2536"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1308"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1309"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1327"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1328"/>
         <source>Break line must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1994"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1995"/>
         <source>Generating grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2076"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2077"/>
         <source>Add New Remesh Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2128"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2190"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2252"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2561"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2129"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2191"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2253"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2562"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2128"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2129"/>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2135"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2136"/>
         <source>Add New Hole Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2190"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2191"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2197"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2198"/>
         <source>Add New Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2252"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2253"/>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2259"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2260"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2296"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2297"/>
         <source>Are you sure you want to remove this line?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2453"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2454"/>
         <source>Grid region polygon have to consists of more than three vertices.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2457"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2458"/>
         <source>Grid region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2465"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2466"/>
         <source>Remesh polygon have to consists of more than three vertices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2469"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2470"/>
         <source>Remesh polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2473"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2474"/>
         <source>Remesh polygon have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2481"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2482"/>
         <source>Hole polygon have to consists of more than three vertices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2485"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2486"/>
         <source>Hole polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2489"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2490"/>
         <source>Hole polygon have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2500"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2501"/>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2509"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2510"/>
         <source>Break line have to consists of more more than two vertices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2514"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2515"/>
         <source>Break line have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2525"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2526"/>
         <source>Break line have to have no intersection with any region edges.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2535"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2536"/>
         <source>Break line have to have no intersection with other break lines.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2561"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2562"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>

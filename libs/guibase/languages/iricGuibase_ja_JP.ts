@@ -369,31 +369,37 @@
     <name>ObjectBrowserView</name>
     <message>
         <location filename="../objectbrowserview.cpp" line="20"/>
+        <source>&amp;Add...</source>
+        <translation>追加(&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../objectbrowserview.cpp" line="23"/>
+        <location filename="../objectbrowserview.cpp" line="26"/>
         <source>&amp;Delete...</source>
         <translation>削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="23"/>
+        <location filename="../objectbrowserview.cpp" line="29"/>
         <source>Move up</source>
         <translation>上に移動</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="26"/>
+        <location filename="../objectbrowserview.cpp" line="32"/>
         <source>Move down</source>
         <translation>下に移動</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="29"/>
+        <location filename="../objectbrowserview.cpp" line="35"/>
         <source>&amp;Property...</source>
         <translation>プロパティ(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="65"/>
+        <location filename="../objectbrowserview.cpp" line="81"/>
         <source>Delete item</source>
         <translation>項目の削除</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="65"/>
+        <location filename="../objectbrowserview.cpp" line="81"/>
         <source>Are you sure you want to delete this item?</source>
         <translation>本当にこの項目を削除していいですか?</translation>
     </message>

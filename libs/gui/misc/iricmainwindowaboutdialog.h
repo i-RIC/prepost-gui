@@ -16,11 +16,9 @@ class iRICMainWindowAboutDialog : public QDialog
 	Q_OBJECT
 
 public:
-	/// Constructor
 	iRICMainWindowAboutDialog(QWidget* parent = nullptr);
-	/// Destructor
 	~iRICMainWindowAboutDialog();
-	/// Initialization of dialog
+
 	void init(const iRICMetaData& data);
 
 private:

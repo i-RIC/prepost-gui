@@ -321,19 +321,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="58"/>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="120"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="57"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="128"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="120"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="128"/>
         <source>There must be one group at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="58"/>
+        <location filename="../pre/complex/gridcomplexconditiondialog.cpp" line="57"/>
         <source>Name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridComplexConditionGroupEditDialog</name>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="14"/>
+        <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -368,7 +376,7 @@
 <context>
     <name>GridCreatingCondition</name>
     <message>
-        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="15"/>
+        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="27"/>
         <source>&amp;Grid Creating Condition</source>
         <translation type="unfinished"></translation>
     </message>
@@ -389,28 +397,28 @@
 <context>
     <name>InputConditionContainerSet</name>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="113"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="111"/>
         <source>Definition node is not stored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="141"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="139"/>
         <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="144"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="142"/>
         <source>Wrong conditionType &quot;%1&quot;is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="147"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="145"/>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="148"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="146"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -537,35 +545,62 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="32"/>
+        <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="39"/>
+        <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Choose a text file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="372"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="381"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>Specify file name to save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="423"/>
         <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="539"/>
+        <source>The following problems found: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
+        <source>
+ ... and other %1 errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="544"/>
+        <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1084,7 +1119,7 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="806"/>
         <location filename="../project/projectmainfile.cpp" line="809"/>
         <location filename="../project/projectmainfile.cpp" line="1078"/>
-        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <location filename="../project/projectmainfile.cpp" line="1188"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1176,7 +1211,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1186"/>
+        <location filename="../project/projectmainfile.cpp" line="1188"/>
         <source>Coordinate system not selected.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1302,7 +1337,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/vtkgraphicsview.cpp" line="333"/>
+        <location filename="../datamodel/vtkgraphicsview.cpp" line="396"/>
         <source>Arbitrary Move</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1312,19 +1347,24 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="17"/>
-        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="72"/>
+        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="18"/>
+        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="74"/>
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="66"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="67"/>
         <source>(Undefined)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../bgcolor/backgroundcoloreditinterface.cpp" line="15"/>
         <source>Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/projectmainfile.cpp" line="1145"/>
+        <source>Set offset</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1339,7 +1379,7 @@ Do you really want to import this file?</source>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
-        <location filename="../solverdef/solverdefinition.cpp" line="71"/>
+        <location filename="../solverdef/solverdefinition.cpp" line="72"/>
         <source>%1 Grids</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1426,23 +1466,23 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="114"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="115"/>
         <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="143"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="143"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="194"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="195"/>
         <source>Background Image change</source>
         <translation type="unfinished"></translation>
     </message>

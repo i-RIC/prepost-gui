@@ -1,7 +1,5 @@
 #include "gridcreatingconditioncenterandwidth_updateshapecommand.h"
 
-#include <QUndoCommand>
-
 GridCreatingConditionCenterAndWidth::UpdateShapeCommand::UpdateShapeCommand(QUndoCommand* com, GridCreatingConditionCenterAndWidth* item) :
 	m_command {com},
 	m_item {item}

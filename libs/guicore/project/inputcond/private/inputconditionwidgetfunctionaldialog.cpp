@@ -295,7 +295,7 @@ void InputConditionWidgetFunctionalDialog::setupData()
 		m_model->setData(m_model->index(i, 0, QModelIndex()), tmpx);
 	}
 	for (int j = 0; j < m_valuefuncs.size(); ++j) {
-		QVector<double>& values = m_container.value(j);
+		auto& values = m_container.value(j);
 		for (int i = 0; i < values.size(); ++i) {
 			QVariant doubletmpy;
 			QVariant tmpy;

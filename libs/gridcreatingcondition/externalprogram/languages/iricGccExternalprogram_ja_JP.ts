@@ -4,12 +4,12 @@
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="115"/>
+        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="129"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="115"/>
+        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="129"/>
         <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
         <translation>フォルダ &quot;%1&quot; 内の格子生成プログラム定義ファイルを読み込み中にエラーが発生しました。この格子生成プログラムは無視されます。

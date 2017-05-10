@@ -9,11 +9,12 @@
 #include <string>
 
 class SolverDefinition;
+class SolverDefinitionTranslator;
 
 class SolverDefinitionBoundaryCondition::Impl
 {
 public:
-	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator);
+	Impl(const QDomElement& node, SolverDefinition* solverDef);
 	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
 
 	std::string m_name;

@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RivmakerMainWindow</class>
+ <widget class="QMainWindow" name="RivmakerMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Rivmaker 1.0</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../rivmaker.qrc">
+    <normaloff>:/images/iconRivmaker.png</normaloff>:/images/iconRivmaker.png</iconset>
+  </property>
+  <widget class="QMdiArea" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="fileImportMenu">
+     <property name="title">
+      <string>&amp;Import</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../rivmaker.qrc">
+       <normaloff>:/images/iconImport.png</normaloff>:/images/iconImport.png</iconset>
+     </property>
+     <widget class="QMenu" name="fileImportGeographicDataMenu">
+      <property name="title">
+       <string>&amp;Geographic Data</string>
+      </property>
+      <addaction name="fileImportElevationAction"/>
+      <addaction name="fileImportWaterSurfaceElevationAction"/>
+      <addaction name="fileImportSACGUIImportAction"/>
+     </widget>
+     <addaction name="fileImportGeographicDataMenu"/>
+     <addaction name="fileImportCrosssectionLineAction"/>
+     <addaction name="fileImportBaseLineAction"/>
+    </widget>
+    <widget class="QMenu" name="exportMenu">
+     <property name="title">
+      <string>&amp;Export</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../rivmaker.qrc">
+       <normaloff>:/images/iconExport.png</normaloff>:/images/iconExport.png</iconset>
+     </property>
+     <addaction name="fileExportBaseLineAction"/>
+     <addaction name="fileExportCrosssectionLineAction"/>
+     <addaction name="fileExportRiverSurveyDataAction"/>
+    </widget>
+    <addaction name="newProjectAction"/>
+    <addaction name="separator"/>
+    <addaction name="fileImportMenu"/>
+    <addaction name="exportMenu"/>
+    <addaction name="separator"/>
+    <addaction name="exitAction"/>
+   </widget>
+   <widget class="QMenu" name="importMenu">
+    <property name="title">
+     <string>&amp;Import</string>
+    </property>
+    <widget class="QMenu" name="importGeographicDataMenu">
+     <property name="title">
+      <string>&amp;Geographic Data</string>
+     </property>
+     <addaction name="importElevationAction"/>
+     <addaction name="importWaterSurfaceElevationAction"/>
+     <addaction name="importSACGUIImportAction"/>
+    </widget>
+    <addaction name="importGeographicDataMenu"/>
+    <addaction name="importCrosssectionLineAction"/>
+    <addaction name="importBaseLineAction"/>
+   </widget>
+   <widget class="QMenu" name="baseLineMenu">
+    <property name="title">
+     <string>&amp;Base Line</string>
+    </property>
+    <addaction name="baseLineAddVertexAction"/>
+    <addaction name="baseLineRemoveVertexAction"/>
+    <addaction name="baseLineEditCoordinatesAction"/>
+    <addaction name="baseLineReverseDirectionAction"/>
+    <addaction name="separator"/>
+    <addaction name="baseLineDeleteAction"/>
+    <addaction name="separator"/>
+    <addaction name="baseLineImportAction"/>
+    <addaction name="baseLineExportAction"/>
+   </widget>
+   <widget class="QMenu" name="crosssectionLineMenu">
+    <property name="title">
+     <string>&amp;Cross Section</string>
+    </property>
+    <addaction name="crosssectionLineAddAction"/>
+    <addaction name="separator"/>
+    <addaction name="crosssectionLineEditCoordinatesAction"/>
+    <addaction name="separator"/>
+    <addaction name="crosssectionLineDeleteAction"/>
+    <addaction name="separator"/>
+    <addaction name="openCrosssectionLineWindowAction"/>
+    <addaction name="separator"/>
+    <addaction name="crosssectionLineImportAction"/>
+    <addaction name="crosssectionLineExportAction"/>
+   </widget>
+   <widget class="QMenu" name="riverSurveyDataMenu">
+    <property name="title">
+     <string>&amp;River Survey Data</string>
+    </property>
+    <addaction name="riverSurveyDataExportAction"/>
+   </widget>
+   <widget class="QMenu" name="viewMenu">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="viewMainToolbarAction"/>
+    <addaction name="viewWindowsToolbarAction"/>
+    <addaction name="viewStatusBarAction"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="helpMenu">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="mouseHintAction"/>
+    <addaction name="separator"/>
+    <addaction name="aboutAction"/>
+   </widget>
+   <widget class="QMenu" name="optionMenu">
+    <property name="title">
+     <string>&amp;Option</string>
+    </property>
+    <addaction name="mappingSettingAction"/>
+    <addaction name="graphicsSettingAction"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="importMenu"/>
+   <addaction name="crosssectionLineMenu"/>
+   <addaction name="baseLineMenu"/>
+   <addaction name="riverSurveyDataMenu"/>
+   <addaction name="viewMenu"/>
+   <addaction name="optionMenu"/>
+   <addaction name="helpMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="newProjectAction"/>
+   <addaction name="separator"/>
+   <addaction name="fitAction"/>
+   <addaction name="resetRotationAction"/>
+   <addaction name="rotate90Action"/>
+   <addaction name="separator"/>
+   <addaction name="zoomInAction"/>
+   <addaction name="zoomOutAction"/>
+   <addaction name="separator"/>
+   <addaction name="focusPreWindowAction"/>
+   <addaction name="focusVerticalCrosssectionWindowAction"/>
+   <addaction name="openCrosssectionWindowAction"/>
+   <addaction name="separator"/>
+   <addaction name="mouseHintAction"/>
+  </widget>
+  <action name="newProjectAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconNew.png</normaloff>:/images/iconNew.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New Project...</string>
+   </property>
+  </action>
+  <action name="saveAsAction">
+   <property name="text">
+    <string>Save &amp;As...</string>
+   </property>
+  </action>
+  <action name="propertyAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconProperty.png</normaloff>:/images/iconProperty.png</iconset>
+   </property>
+   <property name="text">
+    <string>Property...</string>
+   </property>
+  </action>
+  <action name="exitAction">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="dummyProjectAction">
+   <property name="text">
+    <string>Dummy</string>
+   </property>
+  </action>
+  <action name="fileImportElevationAction">
+   <property name="text">
+    <string>&amp;Elevation...</string>
+   </property>
+  </action>
+  <action name="fileImportWaterSurfaceElevationAction">
+   <property name="text">
+    <string>&amp;Water Surface Elevation...</string>
+   </property>
+  </action>
+  <action name="fileImportBackgraundImageAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconImage.png</normaloff>:/images/iconImage.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Background Image...</string>
+   </property>
+  </action>
+  <action name="importBackgraundImageAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconImage.png</normaloff>:/images/iconImage.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Background Image...</string>
+   </property>
+  </action>
+  <action name="fileImportSACGUIImportAction">
+   <property name="text">
+    <string>&amp;SAC GUI Input File...</string>
+   </property>
+  </action>
+  <action name="importElevationAction">
+   <property name="text">
+    <string>&amp;Elevation</string>
+   </property>
+  </action>
+  <action name="importWaterSurfaceElevationAction">
+   <property name="text">
+    <string>&amp;Water Surface Elevation</string>
+   </property>
+  </action>
+  <action name="importSACGUIImportAction">
+   <property name="text">
+    <string>&amp;SAC GUI Input File</string>
+   </property>
+  </action>
+  <action name="baseLineCreateAction">
+   <property name="text">
+    <string>&amp;Create...</string>
+   </property>
+  </action>
+  <action name="baseLineDeleteAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconDeleteItem.png</normaloff>:/images/iconDeleteItem.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete...</string>
+   </property>
+  </action>
+  <action name="baseLineAddVertexAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconAddPolygonVertex.png</normaloff>:/images/iconAddPolygonVertex.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Add Vertex</string>
+   </property>
+  </action>
+  <action name="baseLineRemoveVertexAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconRemovePolygonVertex.png</normaloff>:/images/iconRemovePolygonVertex.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Remove Vertex</string>
+   </property>
+  </action>
+  <action name="baseLineEditCoordinatesAction">
+   <property name="text">
+    <string>&amp;Edit Coordinates...</string>
+   </property>
+  </action>
+  <action name="baseLineImportAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconImport.png</normaloff>:/images/iconImport.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Import...</string>
+   </property>
+  </action>
+  <action name="baseLineExportAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconExport.png</normaloff>:/images/iconExport.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export...</string>
+   </property>
+  </action>
+  <action name="crosssectionLineAddAction">
+   <property name="text">
+    <string>&amp;Add</string>
+   </property>
+  </action>
+  <action name="crosssectionLineEditCoordinatesAction">
+   <property name="text">
+    <string>&amp;Edit Coordinates...</string>
+   </property>
+  </action>
+  <action name="crosssectionLineDeleteAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconDeleteItem.png</normaloff>:/images/iconDeleteItem.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+  </action>
+  <action name="crosssectionLineImportAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconImport.png</normaloff>:/images/iconImport.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Import...</string>
+   </property>
+  </action>
+  <action name="crosssectionLineExportAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconExport.png</normaloff>:/images/iconExport.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export...</string>
+   </property>
+  </action>
+  <action name="riverSurveyDataCreateAction">
+   <property name="text">
+    <string>&amp;Create...</string>
+   </property>
+  </action>
+  <action name="riverSurveyDataExportAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconExport.png</normaloff>:/images/iconExport.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export...</string>
+   </property>
+  </action>
+  <action name="riverSurveyDataDeleteAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconDeleteItem.png</normaloff>:/images/iconDeleteItem.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete...</string>
+   </property>
+  </action>
+  <action name="mouseHintAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconMouseHelp.png</normaloff>:/images/iconMouseHelp.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Mouse Hint...</string>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="text">
+    <string>&amp;About...</string>
+   </property>
+  </action>
+  <action name="fileImportBaseLineAction">
+   <property name="text">
+    <string>&amp;Base Line...</string>
+   </property>
+  </action>
+  <action name="fileImportCrosssectionLineAction">
+   <property name="text">
+    <string>&amp;Cross Section...</string>
+   </property>
+  </action>
+  <action name="fileExportBaseLineAction">
+   <property name="text">
+    <string>&amp;Base Line...</string>
+   </property>
+  </action>
+  <action name="fileExportCrosssectionLineAction">
+   <property name="text">
+    <string>&amp;Cross Section...</string>
+   </property>
+  </action>
+  <action name="fileExportRiverSurveyDataAction">
+   <property name="text">
+    <string>&amp;River Survey Data...</string>
+   </property>
+  </action>
+  <action name="importBaseLineAction">
+   <property name="text">
+    <string>&amp;Base Line...</string>
+   </property>
+  </action>
+  <action name="importCrosssectionLineAction">
+   <property name="text">
+    <string>&amp;Cross Section...</string>
+   </property>
+  </action>
+  <action name="viewMainToolbarAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Main Toolbar</string>
+   </property>
+  </action>
+  <action name="viewStatusBarAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Status Bar</string>
+   </property>
+  </action>
+  <action name="openCrosssectionLineWindowAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconRiverCrosssection.png</normaloff>:/images/iconRiverCrosssection.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open &amp;New Crosssection Window</string>
+   </property>
+  </action>
+  <action name="fitAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconViewFit.png</normaloff>:/images/iconViewFit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fit</string>
+   </property>
+  </action>
+  <action name="resetRotationAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconViewRotateReset.png</normaloff>:/images/iconViewRotateReset.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset Rotation</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset Rotation</string>
+   </property>
+  </action>
+  <action name="rotate90Action">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconViewRotate90.png</normaloff>:/images/iconViewRotate90.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rotate 90 degrees</string>
+   </property>
+  </action>
+  <action name="zoomInAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconViewZoomIn.png</normaloff>:/images/iconViewZoomIn.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+  </action>
+  <action name="zoomOutAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconViewZoomOut.png</normaloff>:/images/iconViewZoomOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="focusPreWindowAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconMain.png</normaloff>:/images/iconMain.png</iconset>
+   </property>
+   <property name="text">
+    <string>Focus Main Window</string>
+   </property>
+   <property name="toolTip">
+    <string>Focus Main Window</string>
+   </property>
+  </action>
+  <action name="focusVerticalCrosssectionWindowAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconVerticalCrosssection.png</normaloff>:/images/iconVerticalCrosssection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Focus Vertical Crosssection Window</string>
+   </property>
+   <property name="toolTip">
+    <string>Focus Vertical Crosssection Window</string>
+   </property>
+  </action>
+  <action name="openCrosssectionWindowAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconRiverCrosssection.png</normaloff>:/images/iconRiverCrosssection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Crosssection Window</string>
+   </property>
+  </action>
+  <action name="baseLineReverseDirectionAction">
+   <property name="text">
+    <string>Reverse &amp;Direction</string>
+   </property>
+  </action>
+  <action name="viewWindowsToolbarAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Windows Toolbar</string>
+   </property>
+  </action>
+  <action name="mappingSettingAction">
+   <property name="text">
+    <string>&amp;Mapping Setting...</string>
+   </property>
+  </action>
+  <action name="graphicsSettingAction">
+   <property name="text">
+    <string>&amp;Graphics Setting...</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../rivmaker.qrc"/>
+ </resources>
+ <connections/>
+</ui>

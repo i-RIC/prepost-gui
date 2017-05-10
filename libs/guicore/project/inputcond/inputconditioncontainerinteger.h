@@ -37,13 +37,16 @@ signals:
 	void valueChanged(int newvalue);
 	void valueChanged();
 
-protected:
+private:
 	void setup(const QDomNode& defNode);
 	void copyValues(const InputConditionContainerInteger& i);
 
-private:
-	int m_value;
-	int m_default;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/inputconditioncontainerinteger_impl.h"
+#endif // _DEBUG
 
 #endif // INPUTCONDITIONCONTAINERINTEGER_H

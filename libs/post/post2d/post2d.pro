@@ -213,9 +213,9 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowgridshapedataitem.h \
            datamodel/post2dwindowgridtypedataitem.h \
            datamodel/post2dwindowmeasureddatatopdataitem.h \
-           datamodel/post2dwindownodescalardataitem.h \
            datamodel/post2dwindownodescalargroupdataitem.h \
            datamodel/post2dwindownodescalargroupdataitem_shapeexporter.h \
+           datamodel/post2dwindownodescalargrouptopdataitem.h \
            datamodel/post2dwindownodevectorarrowdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.h \
@@ -292,9 +292,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowgridshapedataitem.cpp \
            datamodel/post2dwindowgridtypedataitem.cpp \
            datamodel/post2dwindowmeasureddatatopdataitem.cpp \
-           datamodel/post2dwindownodescalardataitem.cpp \
            datamodel/post2dwindownodescalargroupdataitem.cpp \
            datamodel/post2dwindownodescalargroupdataitem_shapeexporter.cpp \
+           datamodel/post2dwindownodescalargrouptopdataitem.cpp \
            datamodel/post2dwindownodevectorarrowdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp \

@@ -6,7 +6,6 @@
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <guibase/structuredgridregion.h>
-#include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/post2dwindowcontoursetting.h>
 
 #include <QMap>
@@ -24,7 +23,7 @@ class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
 
-class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem, public TargetedItemI
+class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
 
@@ -35,8 +34,8 @@ public:
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
 
-	std::string target() const override;
-	void setTarget(const std::string& target) override;
+	std::string target() const;
+	void setTarget(const std::string& target);
 
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
@@ -47,12 +46,10 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
-public slots:
-	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
-
 protected:
 	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
+	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	void setupActors();
@@ -68,7 +65,6 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dWindowContourSetting m_setting;
-	QMap<std::string, QString> m_colorbarTitleMap;
 
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkLODActor* m_contourActor;
@@ -84,6 +80,9 @@ private:
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
 	class SetSettingCommand;
+
+public:
+	friend class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H

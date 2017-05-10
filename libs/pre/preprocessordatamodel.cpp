@@ -846,6 +846,35 @@ void PreProcessorDataModel::setupGeoDataImportMenu(QMenu* menu)
 	}
 }
 
+void PreProcessorDataModel::setupGeoDataImportFromWebMenu(QMenu* menu)
+{
+	// clear menu first.
+	menu->clear();
+	// find how many grid types are available.
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
+	bool importAvailable = false;
+	if (gridTypes.count() == 0) {
+		// no menu available.
+	} else if (gridTypes.count() == 1) {
+		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
+		importAvailable = setupGeoDataImportFromWebMenuForGridType(menu, gt);
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
+			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
+			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
+			if (setupGeoDataImportFromWebMenuForGridType(gtMenu, gt)) {
+				importAvailable = true;
+			} else {
+				delete gtMenu;
+			}
+		}
+	}
+	if (! importAvailable) {
+		QAction* no = menu->addAction(tr("(No data to import)"));
+		no->setDisabled(true);
+	}
+}
 
 void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu* menu)
 {
@@ -879,10 +908,35 @@ bool PreProcessorDataModel::setupGeoDataImportMenuForGridType(QMenu* menu, PrePr
 	}
 }
 
+bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
+{
+	PreProcessorGeoDataTopDataItemInterface* topItem = gt->geoDataTop();
+	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = topItem->groupDataItems();
+	if (groups.count() == 0) {
+		// no menu available.
+		return false;
+	} else {
+		// there are multiple grids.
+		bool okExists = false;
+		for (int i = 0; i < groups.count(); ++i) {
+			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
+			okExists = okExists || setupGeoDataImportFromWebMenuForGroup(menu, gi);
+		}
+		return okExists;
+	}
+}
+
 bool PreProcessorDataModel::setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt)
 {
 	PreProcessorGeoDataGroupDataItem* item = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gt);
 	item->addImportAction(menu);
+	return true;
+}
+
+bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt)
+{
+	PreProcessorGeoDataGroupDataItem* item = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gt);
+	item->addImportFromWebAction(menu);
 	return true;
 }
 
@@ -957,7 +1011,7 @@ bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataI
 	QList<PreProcessorGeoDataDataItemInterface*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = datas.at(i);
-		if (item->geoData()->exporters().count() > 0) {
+		if (item->geoData()->exporters().size() > 0) {
 			return true;
 		}
 	}

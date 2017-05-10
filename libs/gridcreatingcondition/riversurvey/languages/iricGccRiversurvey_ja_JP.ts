@@ -21,12 +21,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 注意: このアルゴリズムは、河川測量データが読み込まれている時のみ利用できます! このアルゴリズムに切り替えるより先に、河川測量データを読み込んでください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation>地理情報に河川測量データが読み込まれていないため、このアルゴリズムは利用できません。</translation>
     </message>

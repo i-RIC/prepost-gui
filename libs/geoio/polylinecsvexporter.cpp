@@ -7,7 +7,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-void PolylineCsvExporter::exportData(const QVector<QPointF>& data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
+void PolylineCsvExporter::exportData(const std::vector<QPointF>& data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
 {
 	QFile file(filename);
 	bool ok = file.open(QFile::WriteOnly);

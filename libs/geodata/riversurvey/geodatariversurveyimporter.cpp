@@ -19,15 +19,28 @@
 
 #define	SEPARATOR	" \t"
 
+namespace {
+
+const double WRONG_KP = -9999;
+
+} // namespace
+
 PRivPath GeoDataRiverSurveyImporter::RivAlloc(double KP, const char* str)
 {
 	PRivPath node, p;
 
 	// Search
-	for (p = m_RivRoot; p != NULL; p = p->next)
-		if (p->KP == KP) {
-			return p;
+	for (p = m_RivRoot; p != NULL; p = p->next) {
+		if (KP == WRONG_KP) {
+			if (p->strKP == str){
+				return p;
+			}
+		} else {
+			if (p->KP == KP) {
+				return p;
+			}
 		}
+	}
 
 	// Not found.
 	if ((node = new RivPath()) == nullptr) {return nullptr;}
@@ -151,6 +164,11 @@ bool GeoDataRiverSurveyImporter::RivSort(void)
 		return false;
 	}
 
+	if (! m_allNamesAreNumber) {
+		m_RivRoot = pa[0];
+		return true;
+	}
+
 	// Sort by KP
 	for (i = 0; i < n; i++) {
 		k = i;
@@ -190,6 +208,8 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 	PPoint2D pt;
 	PRivPath node;
 
+	m_allNamesAreNumber = true;
+
 	*with4points = true;
 	m_RivRoot = nullptr;
 	// Open river survey data file
@@ -215,17 +235,25 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 			case 1:
 				strKP = tok;
 				KP = (double) atof(tok);
+				if (KP == 0) {
+					m_allNamesAreNumber = false;
+					KP = WRONG_KP;
+				}
 				tok = strtok(NULL, SEPARATOR); left.x  = (double) atof(tok);
 				tok = strtok(NULL, SEPARATOR); left.y  = (double) atof(tok);
 				tok = strtok(NULL, SEPARATOR); right.x = (double) atof(tok);
 				tok = strtok(NULL, SEPARATOR); right.y = (double) atof(tok);
-				//printf( "%f,%f,%f,%f,%f\n", KP,left.x,left.y,right.x,right.y );
 				node = RivAlloc(KP, strKP);
 				RivSetBank(node, &left, &right);
 				break;
 
 			case 2:
+				strKP = tok;
 				KP = (double) atof(tok);
+				if (KP == 0) {
+					m_allNamesAreNumber = false;
+					KP = WRONG_KP;
+				}
 				tok = strtok(NULL, SEPARATOR);
 				if (tok == NULL) {break;}
 				np = atoi(tok);
@@ -237,6 +265,7 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 						*with4points = false;
 					}
 				}
+				node = RivAlloc(KP, strKP);
 				//printf( "%f,%d\n", KP,np );
 				if ((pt = (PPoint2D) malloc(sizeof(Point2D) * np)) == NULL) {
 					printf("error\n");
@@ -258,7 +287,6 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 						tok = strtok(NULL, SEPARATOR);
 					}
 				}
-				node = RivAlloc(KP, "");
 				if (*with4points) {
 					for (int i = 0; i < 4; ++i) {
 						node->divIndices[i] = divIndices[i];
@@ -288,21 +316,22 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 
 bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
+	bool ret;
+	bool with4points;
+	// Read river survey data
+	ret = RivRead(filename(), &with4points);
+	if (! ret) {return false;}
+
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
+	dialog.setWith4Points(with4points);
 	int dialogret = dialog.exec();
 	if (dialogret == QDialog::Rejected) {return false;}
 	m_cpSetting = dialog.centerPointSetting();
 
 	GeoDataRiverPathPoint* tail, *newpoint;
-	bool with4points;
-	bool ret;
 
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	tail = rs->m_headPoint;
-
-	// Read river survey data
-	ret = RivRead(m_filename, &with4points);
-	if (! ret) {return false;}
 
 	PRivPath p;
 	double max = 0, left = 0, right = 0;
@@ -357,11 +386,10 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 				oldalt = alt;
 			}
 			double shiftValue = 0;
-			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
-				shiftValue = (left + right) * 0.5;
-			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
-				shiftValue = minpos;
-			}
+
+			// no option to select lowest elevation point.
+			shiftValue = (left + right) * 0.5;
+
 			double leftPoint = (left - shiftValue) /
 												 (newpoint->crosssection().leftBank().position() - shiftValue);
 			double rightPoint = (right - shiftValue) /

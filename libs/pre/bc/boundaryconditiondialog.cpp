@@ -33,7 +33,7 @@ BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataite
 
 	m_dataItem = dataitem;
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet(mw);
+	m_containerSet = new InputConditionContainerSet();
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
 	m_widgetSet = new InputConditionWidgetSet();
 

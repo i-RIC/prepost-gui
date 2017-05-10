@@ -22,11 +22,6 @@ namespace iRIC
 
 		GridCreatingConditionRiverSurveyMovePoint,
 
-		GridCreatingConditionCenterAndWidthDefineNewPoint,
-		GridCreatingConditionCenterAndWidthMove,
-		GridCreatingConditionCenterAndWidthVertexMove,
-		GridCreatingConditionCenterAndWidthAddVertex,
-
 		GridCreatingConditionTriangleDefineNewPoint,
 		GridCreatingConditionTriangleMove,
 		GridCreatingConditionTriangleVertexMove,

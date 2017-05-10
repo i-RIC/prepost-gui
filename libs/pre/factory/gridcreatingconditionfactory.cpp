@@ -5,6 +5,7 @@
 #include <gridcreatingcondition/externalprogram/gridcreatingconditioncreatorexternalprogram.h>
 #include <gridcreatingcondition/gridcombine/gridcreatingconditioncreatorgridcombine.h>
 #include <gridcreatingcondition/gridgenerator/gridcreatingconditioncreatorgridgenerator.h>
+#include <gridcreatingcondition/poisson/gridcreatingconditioncreatorpoisson.h>
 #include <gridcreatingcondition/rectangularregion/gridcreatingconditioncreatorrectangularregion.h>
 #include <gridcreatingcondition/rectangularregionlonlat/gridcreatingconditioncreatorrectangularregionlonlat.h>
 #include <gridcreatingcondition/riversurvey/gridcreatingconditioncreatorriversurvey.h>
@@ -31,6 +32,7 @@ GridCreatingConditionFactory::GridCreatingConditionFactory(QWidget* mainWindow)
 	m_creators.append(new GridCreatingConditionCreatorRiverSurvey15D());
 	m_creators.append(new GridCreatingConditionCreatorTriangle());
 	m_creators.append(new GridCreatingConditionCreatorCompoundChannel());
+	m_creators.append(new GridCreatingConditionCreatorPoisson());
 
 	// Get locale info
 	QSettings settings;

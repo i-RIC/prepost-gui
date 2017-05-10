@@ -60,6 +60,8 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateFilter();
+	Post3dWindowZoneDataItem* getZoneDataItem();
+
 	bool m_enabled;
 	bool m_dataOK;
 

@@ -17,9 +17,8 @@
         <translation>可視化ウィンドウ (3D): %1</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="184"/>
         <source>Background Color</source>
-        <translation>背景色</translation>
+        <translation type="vanished">背景色</translation>
     </message>
 </context>
 <context>
@@ -200,12 +199,12 @@
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="44"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="75"/>
         <source>Contour</source>
         <translation>コンター</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="411"/>
         <source>Contour Setting</source>
         <translation>コンター設定</translation>
     </message>
@@ -250,14 +249,36 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="25"/>
+        <source>Contours</source>
+        <translation>コンター</translation>
+    </message>
+    <message>
+        <source>Add...</source>
+        <translation type="vanished">追加...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="127"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="127"/>
+        <source>A maximum of four contours may be defined.</source>
+        <translation>コンターは最大で4つまでしか描画できません。</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="202"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="202"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
@@ -436,14 +457,22 @@
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="51"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="53"/>
         <source>Isosurface</source>
         <translation>等値面</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="315"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="313"/>
         <source>Isosurface physical value change</source>
         <translation>等値面物理量の変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="23"/>
+        <source>Isosurfaces</source>
+        <translation>等値面</translation>
     </message>
 </context>
 <context>
@@ -856,12 +885,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="202"/>
+        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="196"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="240"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="238"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
@@ -888,14 +917,34 @@ p, li { white-space: pre-wrap; }
         <translation>流線の設定変更</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="158"/>
         <source>Edit Background Color</source>
-        <translation>背景色の設定</translation>
+        <translation type="vanished">背景色の設定</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
         <source>Update Particles Scalar Setting</source>
         <translation>スカラー設定変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="48"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="63"/>
+        <source>Update</source>
+        <translation>更新</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowcontourgrouptopdataitem.cpp" line="185"/>
+        <source>Create Contour</source>
+        <translation>コンターの作成</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="130"/>
+        <source>Create Isosurface</source>
+        <translation>等値面の作成</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="212"/>
+        <source>Delete Isosurface</source>
+        <translation>等値面の削除</translation>
     </message>
 </context>
 </TS>

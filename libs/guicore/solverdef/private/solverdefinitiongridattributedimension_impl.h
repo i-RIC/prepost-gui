@@ -10,8 +10,8 @@ class SolverDefinitionGridAttribute;
 class SolverDefinitionGridAttributeDimension::Impl
 {
 public:
-	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att);
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
+	Impl(const QDomElement& node, SolverDefinition* solverDef, SolverDefinitionGridAttribute* att);
+	void load(const QDomElement& node, SolverDefinition* solverDef);
 
 	std::string m_name;
 	QString m_caption;

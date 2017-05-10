@@ -3,20 +3,20 @@
 
 #include "../../guicore_global.h"
 #include <QObject>
-#include <QString>
-#include <QList>
-#include <QIcon>
 
 #include <vector>
 
-class QDomNode;
 class GeoData;
-class GraphicsWindowDataItem;
-class SolverDefinitionGridAttribute;
-class ProjectDataItem;
-class GeoDataMapper;
 class GeoDataImporter;
 class GeoDataExporter;
+class GeoDataMapper;
+class GeoDataWebImporter;
+class GraphicsWindowDataItem;
+class ProjectDataItem;
+class SolverDefinitionGridAttribute;
+
+class QDomNode;
+class QString;
 
 class GUICOREDLL_EXPORT GeoDataCreator : public QObject
 {
@@ -39,29 +39,30 @@ public:
 	virtual GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) = 0;
 	virtual GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition);
 
-	const QList<GeoDataMapper*>& nodeMappers() const;
-	QList<GeoDataMapper*>& nodeMappers();
+	const std::vector<GeoDataMapper*>& nodeMappers() const;
+	std::vector<GeoDataMapper*>& nodeMappers();
 
-	const QList<GeoDataMapper*>& cellMappers() const;
-	QList<GeoDataMapper*>& cellMappers();
+	const std::vector<GeoDataMapper*>& cellMappers() const;
+	std::vector<GeoDataMapper*>& cellMappers();
 
-	const QList<GeoDataImporter*>& importers() const;
-	QList<GeoDataImporter*>& importers();
+	const std::vector<GeoDataImporter*>& importers() const;
+	std::vector<GeoDataImporter*>& importers();
 
-	const QList<GeoDataExporter*>& exporters() const;
-	QList<GeoDataExporter*>& exporters();
+	const std::vector<GeoDataWebImporter*>& webImporters() const;
+	std::vector<GeoDataWebImporter*>& webImporters();
+
+	const std::vector<GeoDataExporter*>& exporters() const;
+	std::vector<GeoDataExporter*>& exporters();
 
 	virtual bool isCreatable() const;
 
 private:
-	QString m_caption;
-	QString m_typeName;
-
-	QList<GeoDataMapper*> m_nodeMappers;
-	QList<GeoDataMapper*> m_cellMappers;
-
-	QList<GeoDataImporter*> m_importers;
-	QList<GeoDataExporter*> m_exporters;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/geodatacreator_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATACREATOR_H

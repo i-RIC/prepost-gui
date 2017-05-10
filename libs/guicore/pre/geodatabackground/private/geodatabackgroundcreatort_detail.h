@@ -10,8 +10,8 @@ template <class V, class DA>
 GeoDataBackgroundCreatorT<V, DA>::GeoDataBackgroundCreatorT(const QString& typeName) :
 	GeoDataCreator(typeName, "Background")
 {
-	nodeMappers().append(new GeoDataBackgroundNodeMapperT<V, DA>(this));
-	cellMappers().append(new GeoDataBackgroundCellMapperT<V, DA>(this));
+	nodeMappers().push_back(new GeoDataBackgroundNodeMapperT<V, DA>(this));
+	cellMappers().push_back(new GeoDataBackgroundCellMapperT<V, DA>(this));
 }
 
 template <class V, class DA>

@@ -35,14 +35,13 @@ public:
 	LookupTableContainer* lookupTable();
 
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap() const;
-	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
+	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map, QString target);
 
 	void updateChildActors();
 	vtkActor* setupActorAndMapper(vtkAlgorithmOutput* algo);
 
 	void setupScalarBarActor();
 	void updateScalarBarActorSetting();
-	void handleStandardItemChange() override;
 	void update();
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -57,10 +56,10 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
+	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	ScalarSettingContainer m_scalarSetting;
-	QMap<std::string, QString> m_colorBarTitleMap;
 
 	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
 	void loadContourFromProjectMainFile(const QDomNode& node);
@@ -75,6 +74,7 @@ private:
 
 public:
 	friend class Post3dWindowContourGroupSetFaceMap;
+	friend class Post3dWindowContourGroupTopDataItem;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPDATAITEM_H

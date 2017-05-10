@@ -11,11 +11,9 @@
 
 #include <vtkDoubleArray.h>
 
-GeoDataPointmapRealExporter::GeoDataPointmapRealExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
-{
-	m_caption = tr("Pointset (DEM etc.)");
-}
+GeoDataPointmapRealExporter::GeoDataPointmapRealExporter(GeoDataCreator* creator) :
+	GeoDataExporter(tr("Pointset (DEM etc.)"), creator)
+{}
 
 bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {

@@ -210,6 +210,8 @@ private slots:
 	void importCalculationResult();
 	/// Import Measured data from CSV file.
 	void importMeasuredData();
+	/// Launch tool in guis folder.
+	void launchExternalTool();
 
 	void showPreferenceDialog();
 	void updatePostActionStatus();
@@ -259,6 +261,9 @@ private:
 	QLocale m_locale;
 	/// List of solver definitions
 	SolverDefinitionList* m_solverDefinitionList;
+
+	/// List of GUI tools
+	SolverDefinitionList* m_guiToolList;
 
 	CoordinateSystemBuilder* m_coordinateSystemBuilder;
 

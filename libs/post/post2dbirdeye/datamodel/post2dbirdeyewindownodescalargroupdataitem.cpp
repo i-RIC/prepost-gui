@@ -1,14 +1,14 @@
 #include "../post2dbirdeyewindowdatamodel.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
-#include "post2dbirdeyewindownodescalardataitem.h"
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
+#include "post2dbirdeyewindownodescalargrouptopdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 #include "private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
+#include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -50,19 +50,11 @@
 #include <vtkTextProperty.h>
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* p) :
-	Post2dBirdEyeWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dBirdEyeWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	setupActors();
-	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	vtkPointData* pd = cont->data()->GetPointData();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
-		auto item = new Post2dBirdEyeWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.push_back(item);
-		m_colorbarTitleMap.insert(name, name.c_str());
-	}
 	m_setting.opacity = 0;
 }
 
@@ -82,7 +74,6 @@ std::string Post2dBirdEyeWindowNodeScalarGroupDataItem::target() const
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setTarget(const std::string& target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_setting.target = target.c_str();
 	updateActorSettings();
 }
@@ -96,7 +87,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_scalarBarWidget->SetEnabled(0);
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
-	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (m_setting.target == "") {return;}
@@ -104,6 +95,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
+
+	std::string targetStr = iRIC::toStr(m_setting.target);
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*>(parent());
+	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
+	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
 
 	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(cont->elevationName()).c_str());
 
@@ -198,7 +194,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
-	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
@@ -216,7 +212,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 {
-	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
@@ -284,7 +280,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 {
-	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(target());
 	if (stc == nullptr) {return;}
 	m_warp->SetInputData(m_valueClippedPolyData);
@@ -300,12 +296,13 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
-	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(target());
 	if (stc == nullptr) {return;}
 
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*>(parent());
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(target())).c_str());
+	a->SetTitle(iRIC::toStr(topitem->m_colorbarTitleMap.value(target())).c_str());
 	a->SetLookupTable(stc->vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
 	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
@@ -329,9 +326,9 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
-	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
-	Post2dBirdEyeWindowZoneDataItem* zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent());
+	Post2dBirdEyeWindowZoneDataItem* zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent());
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
 		delete dialog;
 		return nullptr;
@@ -344,7 +341,8 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setSetting(m_setting);
-	dialog->setColorBarTitleMap(m_colorbarTitleMap);
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*>(parent());
+	dialog->setColorBarTitleMap(topitem->m_colorbarTitleMap);
 
 	return dialog;
 }
@@ -355,17 +353,9 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QD
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Contour Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
-}
-
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 {
-	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
+	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (dynamic_cast<vtkStructuredGrid*> (cont->data()) == nullptr) {
 		// unstructured grid.
 		vtkSmartPointer<vtkGeometryFilter> geoFilter = vtkSmartPointer<vtkGeometryFilter>::New();
@@ -390,11 +380,12 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-			vtkSmartPointer<vtkClipPolyData> clipper;
-			clipper->SetInputConnection(geoFilter->GetOutputPort());
+			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
+			vtkPolyData* pd = geoFilter->GetOutput();
+			clipper->SetInputData(pd);
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
 			clipper->InsideOutOff();
-			clipper->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+			pd->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
 			clipper->Update();
 			m_regionClippedPolyData = clipper->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
@@ -411,7 +402,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 	vtkSmartPointer<vtkPolyData> upperClipped;
 	vtkSmartPointer<vtkPolyData> lowerClipped;
 
-	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	LookupTableContainer* stc = typedi->nodeLookupTable(target());
 	if (stc == nullptr) {return;}
 	double min, max;
@@ -489,14 +480,6 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const
 	setTarget(m_setting.target);
 
 	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i) {
-		QDomElement titleElem = titles.at(i).toElement();
-		std::string val = iRIC::toStr(titleElem.attribute("value"));
-		QString title = titleElem.attribute("title");
-		m_colorbarTitleMap[val] = title;
-	}
 	updateActorSettings();
 }
 
@@ -504,14 +487,15 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStr
 {
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
+}
 
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
-	}
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
+{
+	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
+
+	Q_ASSERT(parent != nullptr); // the following won't get deleted if parent is null
+
+	new GraphicsWindowDrawOnUndo(this, parent);
+	new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this, parent);
+	new GraphicsWindowDrawOnRedo(this, parent);
 }

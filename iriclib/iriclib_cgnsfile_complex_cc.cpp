@@ -86,14 +86,19 @@ int CgnsFile::Complex_CC_Read_FunctionalWithName(const char *groupname, int num,
 
 int CgnsFile::Complex_CC_Read_Functional_RealSingle(const char *groupname, int num, const char *name, float* x, float* y)
 {
-	int ier = impl->gotoComplexChild(groupname, num, name);
+	int ier;
+	ier = Complex_CC_Read_FunctionalWithName_RealSingle(groupname, num, name, "Param", x);
 	RETURN_IF_ERR;
-
-	ier = Impl::readArrayAs("Param", RealSingle, -1, x);
-	RETURN_IF_ERR;
-	ier = Impl::readArrayAs("Value", RealSingle, -1, y);
+	ier = Complex_CC_Read_FunctionalWithName_RealSingle(groupname, num, name, "Value", y);
 	RETURN_IF_ERR;
 	return 0;
+}
+
+int CgnsFile::Complex_CC_Read_FunctionalWithName_RealSingle(const char *groupname, int num, const char* name, const char* paramname, float* data)
+{
+	int ier = impl->gotoComplexChild(groupname, num, name);
+	RETURN_IF_ERR;
+	return Impl::readArrayAs(paramname, RealSingle, -1, data);
 }
 
 int CgnsFile::Complex_CC_Read_Grid_Node(const char *groupname, int* values)

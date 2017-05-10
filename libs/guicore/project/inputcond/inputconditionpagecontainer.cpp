@@ -14,10 +14,9 @@ InputConditionPageContainer::InputConditionPageContainer(QWidget* /*w*/)
 
 InputConditionPageContainer::~InputConditionPageContainer()
 {
-	for (auto it = m_pages.begin(); it != m_pages.end(); ++it) {
-		delete *it;
+	for (auto p : m_pages) {
+		delete p;
 	}
-	m_pages.clear();
 }
 
 void InputConditionPageContainer::setup(const QDomElement& elem, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)

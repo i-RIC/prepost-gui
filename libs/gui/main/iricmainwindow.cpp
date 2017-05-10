@@ -6,7 +6,6 @@
 #include "../misc/animationcontroller.h"
 #include "../misc/iricmainwindowactionmanager.h"
 #include "../misc/iricmainwindowmiscdialogmanager.h"
-#include "../misc/networksetting.h"
 #include "../misc/newprojectsolverselectingdialog.h"
 #include "../misc/projecttypeselectdialog.h"
 #include "../pref/preferencedialog.h"
@@ -49,6 +48,7 @@
 #include <misc/iricundostack.h>
 #include <misc/iricrootpath.h>
 #include <misc/lastiodirectory.h>
+#include <misc/networksetting.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
@@ -125,6 +125,15 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	setupNetworkProxy();
 	setupBasicSubWindows();
 
+	QDir iricDir = QDir(iRICRootPath::get());
+	iricDir.cdUp();
+	iricDir.cdUp();
+
+	// Setup solver definition list.
+	m_solverDefinitionList = new SolverDefinitionList(iricDir.absoluteFilePath("solvers"), m_locale, this);
+	// Setup tool definition list.
+	m_guiToolList = new SolverDefinitionList(iricDir.absoluteFilePath("guis"), m_locale, this);
+
 	// setup action manager
 	m_actionManager = new iRICMainWindowActionManager(this);
 	m_actionManager->projectFileClose();
@@ -136,8 +145,6 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	addToolBar(Qt::RightToolBarArea, m_actionManager->windowsToolBar());
 	addToolBarBreak(Qt::TopToolBarArea);
 
-	// Setup solver definition list.
-	m_solverDefinitionList = new SolverDefinitionList(iRICRootPath::get(), m_locale, this);
 	// Update "New" submenu using the solver definition list.
 	m_actionManager->updateSolverList(m_solverDefinitionList);
 	// create connections, to update solver list in "New" menu automatically.
@@ -1903,6 +1910,9 @@ void iRICMainWindow::exportCfShape()
 		}
 		zoneName = zones.at(dialog.selectedIndex());
 	}
+	if (Post2dWindow* pw = dynamic_cast<Post2dWindow*>(m_centralWidget->activeSubWindow()->widget())) {
+		if (! pw->checkShapeExportCondition(zoneName)) {return;}
+	}
 	// show setting dialog
 	PostDataExportDialog expDialog(this);
 
@@ -1995,6 +2005,7 @@ void iRICMainWindow::exportStKML()
 		zoneName = zones.at(0);
 	} if (zones.count() > 1) {
 		ItemSelectingDialog dialog;
+		dialog.setMessage(tr("Please select which zone to use:"));
 		dialog.setItems(zones);
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {
@@ -2105,6 +2116,18 @@ void iRICMainWindow::importMeasuredData()
 {
 	m_projectData->mainfile()->addMeasuredData();
 	updatePostActionStatus();
+}
+
+void iRICMainWindow::launchExternalTool()
+{
+	QAction* a = dynamic_cast<QAction*> (sender());
+	for (SolverDefinitionAbstract* tool : m_guiToolList->solverList()) {
+		if (tool->caption() == a->text()) {
+			SolverDefinition def(tool->folder().absolutePath(), m_locale);
+			QProcess::startDetached(def.executableFilename());
+			return;
+		}
+	}
 }
 
 void iRICMainWindow::importVisGraphSetting()

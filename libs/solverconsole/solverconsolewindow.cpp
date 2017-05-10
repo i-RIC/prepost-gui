@@ -290,6 +290,7 @@ void SolverConsoleWindow::startSolverSilently()
 	impl->m_process = new QProcess(this);
 	QString wd = impl->m_projectData->workDirectory();
 	impl->m_process->setWorkingDirectory(wd);
+	impl->m_process->setProcessChannelMode(QProcess::MergedChannels);
 
 	// set language setting to the environment.
 	QSettings settings;

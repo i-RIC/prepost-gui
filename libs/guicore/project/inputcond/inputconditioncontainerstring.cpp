@@ -1,4 +1,5 @@
 #include "inputconditioncontainerstring.h"
+#include "private/inputconditioncontainerstring_impl.h"
 
 #include <misc/stringtool.h>
 
@@ -10,23 +11,28 @@
 #include <iriclib.h>
 
 InputConditionContainerString::InputConditionContainerString() :
-	InputConditionContainer()
+	InputConditionContainer(),
+	impl {new Impl {}}
 {}
 
 InputConditionContainerString::InputConditionContainerString(const std::string& n, const QString& c, const QDomNode& defNode) :
-	InputConditionContainer(n, c)
+	InputConditionContainer(n, c),
+	impl {new Impl {}}
 {
 	setup(defNode);
 }
 
 InputConditionContainerString::InputConditionContainerString(const InputConditionContainerString& i) :
-	InputConditionContainer(i)
+	InputConditionContainer(i),
+	impl {new Impl {}}
 {
 	copyValues(i);
 }
 
 InputConditionContainerString::~InputConditionContainerString()
-{}
+{
+	delete impl;
+}
 
 InputConditionContainerString& InputConditionContainerString::operator=(const InputConditionContainerString& i)
 {
@@ -34,17 +40,28 @@ InputConditionContainerString& InputConditionContainerString::operator=(const In
 	return *this;
 }
 
-const QString& InputConditionContainerString::value() const {
-	return m_value;
+const QString& InputConditionContainerString::value() const
+{
+	return impl->m_value;
 }
 
 void InputConditionContainerString::setValue(const QString& v)
 {
-	if (m_value != v) {
-		m_value = v;
-		emit valueChanged(m_value);
+	if (impl->m_value != v) {
+		impl->m_value = v;
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
+}
+
+const QString& InputConditionContainerString::defaultValue() const
+{
+	return impl->m_default;
+}
+
+void InputConditionContainerString::setDefaultValue(const QString& v)
+{
+	impl->m_default = v;
 }
 
 int InputConditionContainerString::load()
@@ -78,8 +95,8 @@ int InputConditionContainerString::load()
 	if (ret != 0){
 		clear();
 	} else {
-		m_value = buffer;
-		emit valueChanged(m_value);
+		impl->m_value = buffer;
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
 	delete buffer;
@@ -89,7 +106,7 @@ int InputConditionContainerString::load()
 
 int InputConditionContainerString::save()
 {
-	std::string value = m_value.toUtf8().constData();
+	std::string value = impl->m_value.toUtf8().constData();
 	if (isBoundaryCondition()) {
 		return cg_iRIC_Write_BC_String(toC(bcName()), bcIndex(), toC(name()), toC(value));
 	} else if (isComplexCondition()) {
@@ -101,39 +118,39 @@ int InputConditionContainerString::save()
 
 void InputConditionContainerString::clear()
 {
-	m_value = m_default;
-	emit valueChanged(m_value);
+	impl->m_value = impl->m_default;
+	emit valueChanged(impl->m_value);
 }
 
 QVariant InputConditionContainerString::variantValue() const
 {
-	return QVariant(m_value);
+	return QVariant(impl->m_value);
 }
 
 void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const QDir&)
 {
 	if (doc[name()]) {
-		m_value = doc[name()].as<std::string>().c_str();
-		emit valueChanged(m_value);
+		impl->m_value = doc[name()].as<std::string>().c_str();
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
 }
 
 void InputConditionContainerString::exportToYaml(QTextStream* stream, const QDir&)
 {
-	*stream << name().c_str() << ": " << m_value << "\t#[string] " << caption() << "\r\n";
+	*stream << name().c_str() << ": " << impl->m_value << "\t#[string] " << caption() << "\r\n";
 }
 
 void InputConditionContainerString::setup(const QDomNode& defNode)
 {
 	QDomElement e = defNode.toElement();
-	m_default = e.attribute("default", "");
-	m_value = m_default;
+	impl->m_default = e.attribute("default", "");
+	impl->m_value = impl->m_default;
 }
 
 void InputConditionContainerString::copyValues(const InputConditionContainerString& i)
 {
 	InputConditionContainer::copyValues(i);
-	m_value = i.m_value;
-	m_default = i.m_default;
+	setValue(i.value());
+	setDefaultValue(i.defaultValue());
 }

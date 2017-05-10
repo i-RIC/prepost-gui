@@ -10,6 +10,7 @@ SUBDIRS = \
 	externalprogram \
 	gridcombine \
 	gridgenerator \
+	poisson \
 	rectangularregion \
 	rectangularregionlonlat \
 	riversurvey \

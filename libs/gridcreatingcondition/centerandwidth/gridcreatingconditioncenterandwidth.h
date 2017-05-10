@@ -1,6 +1,8 @@
 #ifndef GRIDCREATINGCONDITIONCENTERANDWIDTH_H
 #define GRIDCREATINGCONDITIONCENTERANDWIDTH_H
 
+#include <guibase/polyline/polylinecontroller.h>
+#include <guibase/vtktool/vtklabel2dactor.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <vtkSmartPointer.h>
@@ -18,6 +20,8 @@
 #include <QPixmap>
 #include <QCursor>
 
+#include <vector>
+
 class QMenu;
 class QAction;
 class QToolBar;
@@ -33,7 +37,6 @@ private:
 	const static int initialDivision = 100;
 
 public:
-	static const int FONTSIZE = 17;
 	enum MouseEventMode {
 		meNormal,
 		meBeforeDefining,
@@ -58,7 +61,6 @@ public:
 
 	void setupActors() override;
 	void setupMenu() override;
-	void setActorProperties(vtkProperty* prop);
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
@@ -71,10 +73,8 @@ public:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& /*range*/) override;
-	const QVector<QPointF> polyLine();
-	void setPolyLine(const QVector<QPointF>& polyline);
-	bool isVertexSelectable(const QVector2D& pos);
-	bool isEdgeSelectable(const QVector2D& pos);
+	std::vector<QPointF> polyLine();
+	void setPolyLine(const std::vector<QPointF>& polyline);
 
 	void definePolyLine();
 	void createSpline(vtkPoints* points, int division);
@@ -104,20 +104,13 @@ protected:
 	void saveExternalData(const QString& /*filename*/) override;
 	void doApplyOffset(double x, double y) override;
 
-	vtkSmartPointer<vtkPolyLine> m_vtkPolyLine;
-	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
-	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
-	vtkSmartPointer<vtkStringArray> m_labelArray;
+	PolyLineController m_polyLineController;
+	vtkLabel2DActor m_upstreamActor;
+	vtkLabel2DActor m_downstreamActor;
 
-	vtkSmartPointer<vtkActor> m_edgeActor;
-	vtkSmartPointer<vtkActor> m_vertexActor;
 	vtkSmartPointer<vtkActor> m_tmpActor;
-	vtkSmartPointer<vtkActor2D> m_labelActor;
 
-	vtkSmartPointer<vtkDataSetMapper> m_edgeMapper;
-	vtkSmartPointer<vtkDataSetMapper> m_vertexMapper;
 	vtkSmartPointer<vtkDataSetMapper> m_tmpMapper;
-	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
 
 	vtkSmartPointer<vtkParametricSpline> m_spline;
 	vtkSmartPointer<vtkCardinalSpline> m_xSpline;
@@ -125,11 +118,14 @@ protected:
 	vtkSmartPointer<vtkCardinalSpline> m_zSpline;
 
 	vtkPoints* m_splinePoints;
-	QVector<QPointF> m_polyLine;
+
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;
 	QAction* m_coordEditAction;
 	QAction* m_reverseCenterLineAction;
+	QAction* m_importCenterLineAction;
+	QAction* m_exportCenterLineAction;
+
 	QMenu* m_rightClickingMenu;
 
 	int m_iMax;
@@ -148,6 +144,9 @@ private slots:
 	void deletePolyLine();
 	void handleDialogApplied(QDialog* d);
 	void reverseCenterLineDirection();
+
+	void importCenterLine();
+	void exportCenterLine();
 
 private:
 	void updateShapeData();

@@ -12,11 +12,14 @@ class PreProcessorGridCreatingConditionDataItem : public PreProcessorGridCreatin
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridCreatingConditionDataItem();
+
+	GridCreatingCondition* condition() const override;
 	void setCondition(GridCreatingCondition* condition) override;
-	GridCreatingCondition* condition() override {return m_condition;}
+
+	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const override;
+
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
 	//void handleStandardItemChange() override;
@@ -33,10 +36,12 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	QStringList containedFiles() override;
 	void moveGrid();
-	QAction* createAction() override {return m_createAction;}
-	QAction* switchAction() override {return m_switchAlgorithmAction;}
-	QAction* deleteAction() {return m_deleteAction;}
-	QAction* clearAction() override {return m_clearAction;}
+	QAction* createAction() const override;
+	QAction* switchAction() const override;
+	QAction* deleteAction() const;
+	QAction* clearAction() const override;
+	QAction* importAction() const override;
+	QAction* exportAction() const override;
 	QMenu* menu();
 	virtual void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(3);}
 
@@ -58,22 +63,22 @@ private slots:
 	void handleTmpGrid(Grid* tmpgrid);
 	void switchAlgorithm();
 
+	void importData();
+	void exportData();
+
 signals:
 	void gridCreated();
 
 private:
-	GridCreatingCondition* m_condition;
-	/// Action to create grid.
-	QAction* m_createAction;
-	/// Action to switch grid creating algorithm.
-	QAction* m_switchAlgorithmAction;
-	/// Action to delete grid creating condition.
-	QAction* m_deleteAction;
-	/// Action to clear grid creating condition.
-	QAction* m_clearAction;
+	class Impl;
+	Impl* impl;
 
 public:
 	friend class GridCreatingCondition;
 };
+
+#ifdef _DEBUG
+	#include "private/preprocessorgridcreatingconditiondataitem_impl.h"
+#endif // _DEBUG
 
 #endif // PREPROCESSORGRIDCREATINGCONDITIONDATAITEM_H

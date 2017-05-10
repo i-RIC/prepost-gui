@@ -9,5 +9,5 @@ PROJECT_NUMBER         =
 PROJECT_BRIEF          =
 PROJECT_LOGO           =
 
-INPUT                  = . ../../../libs/misc
+INPUT                  = . ../../../libs/misc ../../../libs/dataitem ../../../libs/geodata ../../../libs/geoio ../../../libs/gridcreatingcondition ../../../libs/gui ../../../libs/guibase ../../../libs/guicore ../../../libs/hydraulicdata ../../../libs/iricpython ../../../libs/post ../../../libs/postbase ../../../libs/pre ../../../libs/solverconsole ../../../libs/tmsloader ../../../libs/triangle
 EXCLUDE                =

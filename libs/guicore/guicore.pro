@@ -150,6 +150,7 @@ LIBS += \
 	-lvtkFiltersSources-6.1 \
 	-lvtkFiltersTexture-6.1 \
 	-lvtkGUISupportQt-6.1 \
+	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
 	-lvtkIOImage-6.1 \
 	-lvtkIOCore-6.1 \
@@ -251,6 +252,7 @@ HEADERS += guicore_global.h \
            scalarstocolors/lookuptablecontainer.h \
            scalarstocolors/lookuptableeditwidget.h \
            scalarstocolors/scalarstocolorscontainer.h \
+           scalarstocolors/scalarstocolorscontainerutil.h \
            scalarstocolors/scalarstocolorseditdialog.h \
            scalarstocolors/scalarstocolorseditwidget.h \
            scalarstocolors/scalarstocolorseditwidgetcontainer.h \
@@ -285,12 +287,14 @@ HEADERS += guicore_global.h \
            tmsimage/tmsimagegroupdataitem.h \
            tmsimage/tmsimagesetting.h \
            tmsimage/tmsimagesettingmanager.h \
+           tmsimage/tmsregionselectwidget.h \
            bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.h \
            datamodel/private/graphicswindowdataitem_modifycommand.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
+           datamodel/private/vtkgraphicsview_impl.h \
            misc/private/cgnslinkfollower_impl.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
@@ -312,6 +316,9 @@ HEADERS += guicore_global.h \
            pre/base/preprocessorgridtypedataiteminterface.h \
            pre/base/preprocessorwindowinterface.h \
            pre/complex/gridcomplexconditiondialog.h \
+           pre/complex/gridcomplexconditiongroup.h \
+           pre/complex/gridcomplexconditiongroupeditdialog.h \
+           pre/complex/gridcomplexconditiongroupeditwidgetcontainer.h \
            pre/complex/gridcomplexconditionwidget.h \
            pre/complex/gridcomplexconditionwidgetcontainer.h \
            pre/geodata/geodata.h \
@@ -324,6 +331,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatamappert.h \
            pre/geodata/geodatanodemappert.h \
            pre/geodata/geodataproxy.h \
+           pre/geodata/geodatawebimporter.h \
            pre/geodatabackground/geodatabackground.h \
            pre/geodatabackground/geodatabackgroundcellmappert.h \
            pre/geodatabackground/geodatabackgroundcomplex.h \
@@ -348,6 +356,8 @@ HEADERS += guicore_global.h \
            pre/gridcond/gridnodeattributepropertydialog.h \
            pre/gridcreatingcondition/gridcreatingcondition.h \
            pre/gridcreatingcondition/gridcreatingconditioncreator.h \
+           pre/gridcreatingcondition/gridcreatingconditionfactoryi.h \
+           pre/gridcreatingcondition/gridcreatingconditionio.h \
            pre/hydraulicdata/hydraulicdataimporter.h \
            project/inputcond/inputconditioncontainer.h \
            project/inputcond/inputconditioncontainerfunctional.h \
@@ -390,7 +400,14 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
            tmsimage/private/tmsimagegroupdataitem_impl.h \
            tmsimage/private/tmsimagesetting_impl.h \
+           tmsimage/private/tmsregionselectwidget_impl.h \
+           pre/complex/private/gridcomplexconditiongroup_impl.h \
+           pre/complex/private/gridcomplexconditionwidget_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
+           pre/geodata/private/geodatacreator_impl.h \
+           pre/geodata/private/geodataexporter_impl.h \
+           pre/geodata/private/geodataimporter_impl.h \
+           pre/geodata/private/geodatamapper_impl.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.h \
@@ -434,6 +451,11 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealeditwidget.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
+           project/inputcond/private/inputconditioncontainer_impl.h \
+           project/inputcond/private/inputconditioncontainerfunctional_impl.h \
+           project/inputcond/private/inputconditioncontainerinteger_impl.h \
+           project/inputcond/private/inputconditioncontainerreal_impl.h \
+           project/inputcond/private/inputconditioncontainerstring_impl.h \
            project/inputcond/private/inputconditiondependencychecksubimages.h \
            project/inputcond/private/inputconditiondependencyconditionalways.h \
            project/inputcond/private/inputconditiondependencyconditionand.h \
@@ -477,6 +499,7 @@ FORMS += datamodel/propertybrowserview.ui \
          scalarstocolors/lookuptableeditwidget.ui \
          scalarstocolors/scalarstocolorseditdialog.ui \
          pre/complex/gridcomplexconditiondialog.ui \
+         pre/complex/gridcomplexconditiongroupeditdialog.ui \
          pre/complex/gridcomplexconditionwidget.ui \
          pre/geodatabackground/geodatabackgroundeditdialog.ui \
          pre/gridcond/gridcellattributepropertydialog.ui \
@@ -550,6 +573,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            scalarstocolors/lookuptablecontainer.cpp \
            scalarstocolors/lookuptableeditwidget.cpp \
            scalarstocolors/scalarstocolorscontainer.cpp \
+           scalarstocolors/scalarstocolorscontainerutil.cpp \
            scalarstocolors/scalarstocolorseditdialog.cpp \
            scalarstocolors/scalarstocolorseditwidget.cpp \
            scalarstocolors/scalarstocolorseditwidgetcontainer.cpp \
@@ -581,6 +605,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            tmsimage/tmsimagegroupdataitem.cpp \
            tmsimage/tmsimagesetting.cpp \
            tmsimage/tmsimagesettingmanager.cpp \
+           tmsimage/tmsregionselectwidget.cpp \
            bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.cpp \
            datamodel/private/graphicswindowdataitem_modifycommand.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
@@ -600,6 +625,9 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/base/preprocessorgridcreatingconditiondataiteminterface.cpp \
            pre/base/preprocessorwindowinterface.cpp \
            pre/complex/gridcomplexconditiondialog.cpp \
+           pre/complex/gridcomplexconditiongroup.cpp \
+           pre/complex/gridcomplexconditiongroupeditdialog.cpp \
+           pre/complex/gridcomplexconditiongroupeditwidgetcontainer.cpp \
            pre/complex/gridcomplexconditionwidget.cpp \
            pre/complex/gridcomplexconditionwidgetcontainer.cpp \
            pre/geodata/geodata.cpp \
@@ -608,6 +636,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/geodata/geodataimporter.cpp \
            pre/geodata/geodatamapper.cpp \
            pre/geodata/geodataproxy.cpp \
+           pre/geodata/geodatawebimporter.cpp \
            pre/geodatabackground/geodatabackground.cpp \
            pre/geodatabackground/geodatabackgroundcomplex.cpp \
            pre/geodatabackground/geodatabackgroundcomplexcreator.cpp \
@@ -627,6 +656,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/gridnodeattributepropertydialog.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
+           pre/gridcreatingcondition/gridcreatingconditionio.cpp \
            project/inputcond/inputconditioncontainer.cpp \
            project/inputcond/inputconditioncontainerfunctional.cpp \
            project/inputcond/inputconditioncontainerinteger.cpp \

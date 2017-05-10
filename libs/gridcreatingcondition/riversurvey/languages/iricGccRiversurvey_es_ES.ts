@@ -16,12 +16,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation type="unfinished"></translation>
     </message>

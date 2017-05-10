@@ -121,7 +121,7 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 {
 	QMainWindow* mainW = projectData()->mainWindow();
 
-	const QList<GeoDataExporter*>& exps = m_geoData->exporters();
+	auto& exps = m_geoData->exporters();
 	QStringList filters;
 	QList<GeoDataExporter*> exporters;
 	for (auto exp_it = exps.begin(); exp_it != exps.end(); ++exp_it) {
@@ -293,8 +293,7 @@ bool PreProcessorGeoDataDataItem::setupExportMenu(QMenu* /*menu*/)
 
 bool PreProcessorGeoDataDataItem::isExportAvailable()
 {
-	const QList<GeoDataExporter*>& exporters = m_geoData->exporters();
-	return exporters.count() > 0;
+	return m_geoData->exporters().size() > 0;
 }
 
 void PreProcessorGeoDataDataItem::innerUpdate2Ds()

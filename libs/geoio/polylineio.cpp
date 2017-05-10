@@ -5,14 +5,14 @@
 #include "polylineimporteri.h"
 #include "polylineio.h"
 
-QVector<QPointF> PolylineIO::importData(QWidget* w)
+std::vector<QPointF> PolylineIO::importData(QWidget* w)
 {
-	return importDataT<PolylineImporterFactory, QVector<QPointF>, PolylineImporterI> (w);
+	return importDataT<PolylineImporterFactory, std::vector<QPointF>, PolylineImporterI> (w);
 }
 
-void PolylineIO::exportData(const QVector<QPointF>& polyline, QWidget* w)
+void PolylineIO::exportData(const std::vector<QPointF>& polyline, QWidget* w)
 {
-	exportDataT<PolylineExporterFactory, QVector<QPointF>, PolylineExporterI> (polyline, w);
+	exportDataT<PolylineExporterFactory, std::vector<QPointF>, PolylineExporterI> (polyline, w);
 }
 
 PolylineIO::PolylineIO()

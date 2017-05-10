@@ -63,245 +63,245 @@
         <translation>分割線の定義のキャンセル</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="693"/>
+        <location filename="../geodatapointmap.cpp" line="703"/>
         <source>Add New Interp Line Point</source>
         <translation>新しい補間線の点の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="754"/>
+        <location filename="../geodatapointmap.cpp" line="764"/>
         <source>Add New Selection Polygon Point</source>
         <translation>選択用ポリゴンの点の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1091"/>
-        <location filename="../geodatapointmap.cpp" line="1817"/>
-        <location filename="../geodatapointmap.cpp" line="2003"/>
-        <location filename="../geodatapointmap.cpp" line="2505"/>
-        <location filename="../geodatapointmap.cpp" line="2555"/>
-        <location filename="../geodatapointmap.cpp" line="2615"/>
-        <location filename="../geodatapointmap.cpp" line="2640"/>
+        <location filename="../geodatapointmap.cpp" line="1101"/>
+        <location filename="../geodatapointmap.cpp" line="1843"/>
+        <location filename="../geodatapointmap.cpp" line="2029"/>
+        <location filename="../geodatapointmap.cpp" line="2531"/>
+        <location filename="../geodatapointmap.cpp" line="2581"/>
+        <location filename="../geodatapointmap.cpp" line="2641"/>
+        <location filename="../geodatapointmap.cpp" line="2666"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1091"/>
+        <location filename="../geodatapointmap.cpp" line="1101"/>
         <source>Break line have to have no intersection with other break lines.</source>
         <translation>分割線は、他の分割線と交差していてはいけません。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1245"/>
+        <location filename="../geodatapointmap.cpp" line="1255"/>
         <source>Remeshing TINs...</source>
         <translation>TIN を再生成しています...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1465"/>
+        <location filename="../geodatapointmap.cpp" line="1480"/>
         <source>P&amp;ointset Data</source>
         <translation>DEM データ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1602"/>
-        <location filename="../geodatapointmap.cpp" line="2452"/>
-        <location filename="../geodatapointmap.cpp" line="2463"/>
-        <location filename="../geodatapointmap.cpp" line="2474"/>
-        <location filename="../geodatapointmap.cpp" line="2485"/>
-        <location filename="../geodatapointmap.cpp" line="2495"/>
-        <location filename="../geodatapointmap.cpp" line="2522"/>
-        <location filename="../geodatapointmap.cpp" line="2545"/>
-        <location filename="../geodatapointmap.cpp" line="2601"/>
-        <location filename="../geodatapointmap.cpp" line="2626"/>
-        <location filename="../geodatapointmap.cpp" line="2719"/>
-        <location filename="../geodatapointmap.cpp" line="2727"/>
+        <location filename="../geodatapointmap.cpp" line="1628"/>
+        <location filename="../geodatapointmap.cpp" line="2478"/>
+        <location filename="../geodatapointmap.cpp" line="2489"/>
+        <location filename="../geodatapointmap.cpp" line="2500"/>
+        <location filename="../geodatapointmap.cpp" line="2511"/>
+        <location filename="../geodatapointmap.cpp" line="2521"/>
+        <location filename="../geodatapointmap.cpp" line="2548"/>
+        <location filename="../geodatapointmap.cpp" line="2571"/>
+        <location filename="../geodatapointmap.cpp" line="2627"/>
+        <location filename="../geodatapointmap.cpp" line="2652"/>
         <location filename="../geodatapointmap.cpp" line="2745"/>
-        <location filename="../geodatapointmap.cpp" line="2754"/>
+        <location filename="../geodatapointmap.cpp" line="2753"/>
+        <location filename="../geodatapointmap.cpp" line="2771"/>
+        <location filename="../geodatapointmap.cpp" line="2780"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1602"/>
+        <location filename="../geodatapointmap.cpp" line="1628"/>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
         <translation>このモードに切り替えるには、 TIN を再生成する必要があります。再生成しますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1669"/>
+        <location filename="../geodatapointmap.cpp" line="1695"/>
         <source>&amp;Add New Point</source>
         <translation>新しい点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1674"/>
+        <location filename="../geodatapointmap.cpp" line="1700"/>
         <source>&amp;Interpolate Points</source>
         <translation>点の補間追加(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1679"/>
+        <location filename="../geodatapointmap.cpp" line="1705"/>
         <source>Display &amp;Setting...</source>
         <translation>表示設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1682"/>
+        <location filename="../geodatapointmap.cpp" line="1708"/>
         <source>Select point</source>
         <translation>点の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1686"/>
+        <location filename="../geodatapointmap.cpp" line="1712"/>
         <source>Select Points With &amp;Polygon</source>
         <translation>ポリゴン領域で点を選択(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1691"/>
+        <location filename="../geodatapointmap.cpp" line="1717"/>
         <source>&amp;Edit Selected Points...</source>
         <translation>選択された点の編集(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1695"/>
+        <location filename="../geodatapointmap.cpp" line="1721"/>
         <source>Delete Selected P&amp;oints</source>
         <translation>選択された点の削除(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1699"/>
+        <location filename="../geodatapointmap.cpp" line="1725"/>
         <source>E&amp;xport Selected Points...</source>
         <translation>選択された点のエクスポート(&amp;X)...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1703"/>
+        <location filename="../geodatapointmap.cpp" line="1729"/>
         <source>Delete Selected Points &amp;Less Than Value...</source>
         <translation>選択された点のうち、指定した値以下の点を削除(&amp;L)...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1707"/>
+        <location filename="../geodatapointmap.cpp" line="1733"/>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
         <translation>選択された点のうち、指定した値以上の点を削除(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1713"/>
+        <location filename="../geodatapointmap.cpp" line="1739"/>
         <source>Remesh &amp;TINs</source>
         <translation>TIN の再生成(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1716"/>
+        <location filename="../geodatapointmap.cpp" line="1742"/>
         <source>Add &amp;Break Line</source>
         <translation>分割線の追加(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1721"/>
+        <location filename="../geodatapointmap.cpp" line="1747"/>
         <source>&amp;Remove Break Line</source>
         <translation>分割線の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1726"/>
+        <location filename="../geodatapointmap.cpp" line="1752"/>
         <source>Rem&amp;ove All Break Lines...</source>
         <translation>全分割線の削除(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1817"/>
+        <location filename="../geodatapointmap.cpp" line="1843"/>
         <source>Are you sure you want to remove this break line?</source>
         <translation>本当にこの分割線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2003"/>
+        <location filename="../geodatapointmap.cpp" line="2029"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2452"/>
+        <location filename="../geodatapointmap.cpp" line="2478"/>
         <source>Remeshing TINs finished.</source>
         <translation>TIN の再生成が完了しました。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2463"/>
+        <location filename="../geodatapointmap.cpp" line="2489"/>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
         <translation>分割線を追加するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2474"/>
+        <location filename="../geodatapointmap.cpp" line="2500"/>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
         <translation>分割線は、分割線を作成したい点を順にクリックして定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2485"/>
+        <location filename="../geodatapointmap.cpp" line="2511"/>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
         <translation>分割線を削除するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2495"/>
+        <location filename="../geodatapointmap.cpp" line="2521"/>
         <source>Click on the break line you want to remove.</source>
         <translation>削除したい分割線をクリックしてください。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2505"/>
+        <location filename="../geodatapointmap.cpp" line="2531"/>
         <source>Are you sure you want to remove ALL break lines?</source>
         <translation>本当に全ての分割線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2522"/>
+        <location filename="../geodatapointmap.cpp" line="2548"/>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation>点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2545"/>
-        <location filename="../geodatapointmap.cpp" line="2601"/>
-        <location filename="../geodatapointmap.cpp" line="2626"/>
+        <location filename="../geodatapointmap.cpp" line="2571"/>
+        <location filename="../geodatapointmap.cpp" line="2627"/>
+        <location filename="../geodatapointmap.cpp" line="2652"/>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation>点を削除する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2555"/>
-        <location filename="../geodatapointmap.cpp" line="2615"/>
-        <location filename="../geodatapointmap.cpp" line="2640"/>
+        <location filename="../geodatapointmap.cpp" line="2581"/>
+        <location filename="../geodatapointmap.cpp" line="2641"/>
+        <location filename="../geodatapointmap.cpp" line="2666"/>
         <source>You can not delete points used for break lines.</source>
         <translation>分割線に使用されている点は、削除できません。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2558"/>
+        <location filename="../geodatapointmap.cpp" line="2584"/>
         <source>Delete Points</source>
         <translation>点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2566"/>
+        <location filename="../geodatapointmap.cpp" line="2592"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイル名の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2566"/>
+        <location filename="../geodatapointmap.cpp" line="2592"/>
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2572"/>
+        <location filename="../geodatapointmap.cpp" line="2598"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2572"/>
+        <location filename="../geodatapointmap.cpp" line="2598"/>
         <source>Error occured while exporting to %1.</source>
         <translation>%1 へのエクスポート中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2612"/>
+        <location filename="../geodatapointmap.cpp" line="2638"/>
         <source>Delete points less than %1</source>
         <translation>%1 以下の点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2637"/>
+        <location filename="../geodatapointmap.cpp" line="2663"/>
         <source>Delete points greater than %1</source>
         <translation>%1 以上の点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2719"/>
+        <location filename="../geodatapointmap.cpp" line="2745"/>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation>点を補間するには、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2727"/>
+        <location filename="../geodatapointmap.cpp" line="2753"/>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
         <translation>点を補間するには、既存の点を順にクリックしてください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2745"/>
+        <location filename="../geodatapointmap.cpp" line="2771"/>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation>点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2754"/>
+        <location filename="../geodatapointmap.cpp" line="2780"/>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
         <translation>新しい点を追加するには、まずは既に存在する点を一つ選択してください。選択した点での値が、これから新しく追加する点での値のデフォルト値になります。そのあと、新しい点を追加したい任意の場所でクリックして点を追加し、ダブルクリックもしくはリターンキーを押して追加を完了してください。</translation>
     </message>
@@ -421,12 +421,12 @@
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="14"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="15"/>
         <source>Points</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="41"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="44"/>
         <source>Points%1</source>
         <translation>地勢データ%1</translation>
     </message>
@@ -434,31 +434,31 @@
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="17"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="15"/>
         <source>Pointset (DEM etc.)</source>
         <translation>地勢データ (DEM など)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="24"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="75"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="22"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="73"/>
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="27"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="50"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="25"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="48"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="27"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="50"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="25"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="48"/>
         <source>Error occured while exporting to %1.</source>
         <translation>%1 へのエクスポート中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealexporter.cpp" line="47"/>
-        <location filename="../geodatapointmaprealexporter.cpp" line="76"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="45"/>
+        <location filename="../geodatapointmaprealexporter.cpp" line="74"/>
         <source>RIC-Nays DEM (*.dat)</source>
         <translation>RIC-Nays DEM データ (*.dat)</translation>
     </message>
@@ -466,37 +466,35 @@
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="27"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="23"/>
         <source>DEM etc. (*.tpo, *.anc, *.dat, *.stl)</source>
         <translation>DEM など (*.tpo, *.anc, *.dat, *.stl)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="50"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="544"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="49"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="265"/>
         <source>Topography File (*.tpo *.anc)</source>
         <translation>地勢データ (*.tpo *.anc)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="53"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="87"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="54"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="53"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="87"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="54"/>
         <source>File open error occured while opening %1.</source>
         <translation>%1 を開いている時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="84"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="545"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="49"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="266"/>
         <source>RIC-Nays DEM (*.dat *.txt)</source>
         <translation>RIC-Nays DEM データ (*.dat *.txt)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealimporter.cpp" line="121"/>
-        <location filename="../geodatapointmaprealimporter.cpp" line="546"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="98"/>
+        <location filename="../geodatapointmaprealimporter.cpp" line="267"/>
         <source>USGS NED (*.adf)</source>
         <translation>USGS NED (*.adf)</translation>
     </message>
@@ -564,18 +562,18 @@
 <context>
     <name>GeoDataPointmapSTLExporter</name>
     <message>
-        <location filename="../geodatapointmapstlexporter.cpp" line="16"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="14"/>
         <source>Stereolithography (STL)</source>
         <translation>STLデータ</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapstlexporter.cpp" line="38"/>
-        <location filename="../geodatapointmapstlexporter.cpp" line="56"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="36"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="54"/>
         <source>Binary STL (*.stl)</source>
         <translation>バイナリ型式 STLファイル (*.stl)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapstlexporter.cpp" line="55"/>
+        <location filename="../geodatapointmapstlexporter.cpp" line="53"/>
         <source>ASCII STL (*.stl)</source>
         <translation>アスキー型式 STLファイル (*.stl)</translation>
     </message>
@@ -583,7 +581,7 @@
 <context>
     <name>GeoDataPointmapSTLImporter</name>
     <message>
-        <location filename="../geodatapointmapstlimporter.cpp" line="18"/>
+        <location filename="../geodatapointmapstlimporter.cpp" line="17"/>
         <source>Stereolithography (STL)</source>
         <translation>STLデータ</translation>
     </message>
@@ -613,14 +611,136 @@
 <context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
-        <location filename="../geodatapointmapvtkexporter.cpp" line="21"/>
+        <location filename="../geodatapointmapvtkexporter.cpp" line="19"/>
         <source>Pointset (DEM etc.)</source>
         <translation>地勢データ (DEM など)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapvtkexporter.cpp" line="70"/>
+        <location filename="../geodatapointmapvtkexporter.cpp" line="68"/>
         <source>VTK File (*.vtk)</source>
         <translation>VTKファイル (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapWebImporter</name>
+    <message>
+        <location filename="../geodatapointmapwebimporter.cpp" line="23"/>
+        <source>Web CSV tile</source>
+        <translation>Web CSV タイル</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporter.cpp" line="99"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapWebImporterRegionSelectDialog</name>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="14"/>
+        <source>Select Region</source>
+        <translation>領域の選択</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="25"/>
+        <source>Background Image:</source>
+        <translation>背景画像:</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="35"/>
+        <source>Zoom &amp;In</source>
+        <translation>拡大 (&amp;I)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="42"/>
+        <source>Zoom &amp;Out</source>
+        <translation>縮小 (&amp;O)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="62"/>
+        <source>&amp;Next</source>
+        <translation>次へ (&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="69"/>
+        <source>&amp;Cancel</source>
+        <translation>キャンセル (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapWebImporterSettingManager</name>
+    <message>
+        <location filename="../geodatapointmapwebimportersettingmanager.cpp" line="25"/>
+        <source>USGS elevation tiles (SRTM)</source>
+        <translation>USGS 標高タイル (SRTM)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimportersettingmanager.cpp" line="26"/>
+        <source>GSI elevation tiles (FGD DEM)</source>
+        <translation>国土地理院 標高タイル（基盤地図情報数値標高モデル）</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimportersettingmanager.cpp" line="27"/>
+        <source>GSI elevation tiles (Global Map ver. 2)</source>
+        <translation>国土地理院 標高タイル（地球地図全球版標高第2版）</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapWebImporterZoomLevelDialog</name>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="14"/>
+        <source>Zoom Level Setting</source>
+        <translation>ズームレベル設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="20"/>
+        <source>Specify the zoom level of data you want to import.</source>
+        <translation>インポートしたいデータのズームレベルを指定して下さい。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="47"/>
+        <source>Zoom level:</source>
+        <translation>ズームレベル:</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="81"/>
+        <source>Resolution:</source>
+        <translation>解像度:</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="88"/>
+        <source>xx m</source>
+        <translation>xx m</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="95"/>
+        <source>Data size:</source>
+        <translation>データサイズ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="102"/>
+        <source>XX kB (XXXX points)</source>
+        <translation>XX KB (XXXX 点)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="109"/>
+        <source>Source:</source>
+        <translation>ソース</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="87"/>
+        <source>%1 KB</source>
+        <translation>%1 KB</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
+        <source>%1 MB</source>
+        <translation>%1 MB</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="91"/>
+        <source> (%1 points)</source>
+        <translation> (点数 = %1)</translation>
     </message>
 </context>
 <context>

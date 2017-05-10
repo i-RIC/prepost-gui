@@ -10,6 +10,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QList>
+#include <QSettings>
 #include <QVector2D>
 
 #include <vtkDoubleArray.h>
@@ -20,8 +21,8 @@
 
 #define DATA "Data"
 
-GeoDataRiverSurveyBackgroundGridCreateThread::GeoDataRiverSurveyBackgroundGridCreateThread(GeoDataRiverSurvey* rs)
-	: QThread(rs)
+GeoDataRiverSurveyBackgroundGridCreateThread::GeoDataRiverSurveyBackgroundGridCreateThread(GeoDataRiverSurvey* rs) :
+	QThread(rs)
 {
 	m_useDivisionPoints = false;
 
@@ -125,6 +126,12 @@ void GeoDataRiverSurveyBackgroundGridCreateThread::run()
 
 bool GeoDataRiverSurveyBackgroundGridCreateThread::runStandard()
 {
+	QSettings settings;
+	settings.beginGroup("backgroundgrid");
+
+	int IDIVNUM = settings.value("rs_streamdirdiv", 4).value<int>();
+	int JDIVNUM = settings.value("rs_csdirdiv", 20).value<int>();
+
 	int pointCount = 0;
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(parent());
 	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();

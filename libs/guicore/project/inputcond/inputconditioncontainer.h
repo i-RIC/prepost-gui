@@ -3,12 +3,12 @@
 
 #include "../../guicore_global.h"
 
-#include <QString>
 #include <QObject>
 #include <QVariant>
 
 #include <string>
 
+class QString;
 class QDir;
 class QTextStream;
 
@@ -59,15 +59,12 @@ protected:
 	static char* toC(const std::string& str);
 
 private:
-	std::string m_name;
-	QString m_caption;
-
-	bool m_isBoundaryCondition;
-	std::string m_bcName;
-	int m_bcIndex;
-
-	bool m_isComplexCondition;
-	std::string m_complexName;
-	int m_complexIndex;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/inputconditioncontainer_impl.h"
+#endif // _DEBUG
+
 #endif // INPUTCONDITIONCONTAINER_H

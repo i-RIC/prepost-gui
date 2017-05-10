@@ -1,4 +1,3 @@
-#include "../misc/networksetting.h"
 #include "googlemapimageimporter.h"
 #include "googlemapimageimportsettingdialog.h"
 
@@ -12,6 +11,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
+#include <misc/networksetting.h>
 
 #include <QApplication>
 #include <QDir>

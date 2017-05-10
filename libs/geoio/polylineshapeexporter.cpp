@@ -6,13 +6,12 @@
 #include <QPointF>
 #include <QStringList>
 #include <QTextCodec>
-#include <QVector>
 
 #include <shapefil.h>
 
 namespace {
 
-SHPObject* getShpObject(const QVector<QPointF>& data, SHPHandle shph)
+SHPObject* getShpObject(const std::vector<QPointF>& data, SHPHandle shph)
 {
 	int nVertices = data.size();
 	std::vector<double> padfX, padfY;
@@ -29,7 +28,7 @@ SHPObject* getShpObject(const QVector<QPointF>& data, SHPHandle shph)
 }
 void writeDbf(DBFHandle dbfh)
 {
-	// Add Nave attribute
+	// Add Name attribute
 	DBFAddField(dbfh, "Name", FTString, 10, 0);
 	QTextCodec* codec = QTextCodec::codecForLocale();
 	DBFWriteStringAttribute(dbfh, 0, 0, codec->fromUnicode(QString("Polyline1")).data());
@@ -37,7 +36,7 @@ void writeDbf(DBFHandle dbfh)
 
 } // namespace
 
-void PolylineShapeExporter::exportData(const QVector<QPointF>& data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/)
+void PolylineShapeExporter::exportData(const std::vector<QPointF>& data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/)
 {
 	std::string fname = iRIC::toStr(filename);
 

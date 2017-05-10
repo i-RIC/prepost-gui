@@ -24,7 +24,7 @@ public:
 	/**
 	 * @param installDir install directory of iRIC
 	 */
-	SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent);
+	SolverDefinitionList(const QString& targetDir, const QLocale& locale, QObject* parent);
 	~SolverDefinitionList();
 
 	QString absoluteSolverPath(const QString& solverFolder);

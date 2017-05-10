@@ -15,6 +15,7 @@ class QSignalMapper;
 class Post2dWindowGraphGroupDataItem;
 class Post2dWindowGridShapeDataItem;
 class Post2dWindowNodeScalarGroupDataItem;
+class Post2dWindowNodeScalarGroupTopDataItem;
 class Post2dWindowNodeVectorArrowGroupDataItem;
 class Post2dWindowNodeVectorStreamlineGroupDataItem;
 class Post2dWindowNodeVectorParticleGroupDataItem;
@@ -45,7 +46,7 @@ public:
 	std::string zoneName() const {return m_zoneName;}
 	void update(bool noparticle = false);
 	Post2dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
-	Post2dWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
+	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const {return m_scalarGroupTopDataItem;}
 	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
 	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
 	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
@@ -83,7 +84,7 @@ protected:
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
-	Post2dWindowNodeScalarGroupDataItem* m_scalarGroupDataItem;
+	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
 	Post2dWindowNodeVectorArrowGroupDataItem* m_arrowGroupDataItem;
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;

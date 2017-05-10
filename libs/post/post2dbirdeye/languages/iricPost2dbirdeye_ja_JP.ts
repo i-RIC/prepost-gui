@@ -71,22 +71,22 @@
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="107"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="108"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="107"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="108"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation>スカラー量の計算結果がないため、コンター設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="176"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="182"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="176"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="182"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
@@ -94,7 +94,7 @@
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="22"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="24"/>
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
@@ -107,20 +107,41 @@
         <translation>コンター</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="362"/>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
+        <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="8"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="26"/>
+        <source>Contours</source>
+        <translation>コンター</translation>
+    </message>
+    <message>
+        <source>Add...</source>
+        <translation type="vanished">追加...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="54"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="54"/>
+        <source>A maximum of four contours may be defined.</source>
+        <translation>コンダーは最大で4つまでしか描画できません。</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="207"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="209"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>
@@ -136,6 +157,11 @@
         <location filename="../post2dbirdeyewindow.cpp" line="146"/>
         <source>Edit Background Color</source>
         <translation>背景色の設定</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="178"/>
+        <source>Create Contour</source>
+        <translation>コンターの作成</translation>
     </message>
 </context>
 </TS>

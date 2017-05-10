@@ -1,11 +1,12 @@
 #include "../pre/gridcond/editwidget/gridattributerealoptioneditwidget.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinition.h"
 #include "solverdefinitiongridattributerealoptioncell.h"
 
-SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOptionCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeRealCell {elem, translator, true, order}
+SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOptionCell(const QDomElement& elem, SolverDefinition* solverDef, int order) :
+	SolverDefinitionGridAttributeRealCell {elem, solverDef, true, order}
 {
-	loadEnumeration(elem, translator);
+	loadEnumeration(elem, solverDef->buildTranslator());
 }
 
 GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealOptionCell::variationEditWidget(QWidget*)

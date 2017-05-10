@@ -197,7 +197,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="83"/>
+        <location filename="../time/private/posttimedataitem_setsettingcommand.cpp" line="4"/>
         <source>Edit time setting</source>
         <translation type="unfinished"></translation>
     </message>

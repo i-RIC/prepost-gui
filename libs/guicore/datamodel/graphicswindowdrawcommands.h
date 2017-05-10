@@ -10,7 +10,7 @@ class GUICOREDLL_EXPORT GraphicsWindowDrawOnRedo : public QUndoCommand
 {
 
 public:
-	GraphicsWindowDrawOnRedo(GraphicsWindowDataItem* item);
+	GraphicsWindowDrawOnRedo(GraphicsWindowDataItem* item, QUndoCommand* parent = nullptr);
 	void undo()
 	{}
 	void redo() override;
@@ -23,7 +23,7 @@ class GUICOREDLL_EXPORT GraphicsWindowDrawOnUndo : public QUndoCommand
 {
 
 public:
-	GraphicsWindowDrawOnUndo(GraphicsWindowDataItem* item);
+	GraphicsWindowDrawOnUndo(GraphicsWindowDataItem* item, QUndoCommand* parent = nullptr);
 	void undo() override;
 	void redo()
 	{}

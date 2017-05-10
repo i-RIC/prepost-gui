@@ -32,15 +32,16 @@ VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent)
 void VTK2DGraphicsView::resetCamera()
 {
 	vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
-	m_mainRenderer->SetActiveCamera(camera);
+	mainRenderer()->SetActiveCamera(camera);
 }
 
 void VTK2DGraphicsView::fitInView()
 {
+	auto renderer = mainRenderer();
 	setupCamera();
-	m_mainRenderer->ResetCamera();
+	renderer->ResetCamera();
 	double bounds[6];
-	m_mainRenderer->ComputeVisiblePropBounds(bounds);
+	renderer->ComputeVisiblePropBounds(bounds);
 
 	double w1 = bounds[1] - bounds[0];
 	double w2 = bounds[3] - bounds[2];
@@ -50,7 +51,7 @@ void VTK2DGraphicsView::fitInView()
 	// compute the radius of the enclosing sphere
 	radius = sqrt(radius)*0.5;
 	if (radius == 0) {radius = 1;}
-	m_mainRenderer->GetActiveCamera()->SetParallelScale(radius);
+	renderer->GetActiveCamera()->SetParallelScale(radius);
 	QUndoCommand* com = new VTKGraphicsViewArbitraryMove(mainRenderer()->GetActiveCamera(), this);
 	com->redo();
 	delete com;
@@ -63,7 +64,7 @@ void VTK2DGraphicsView::fitInView()
 void VTK2DGraphicsView::getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax)
 {
 	double bounds[6];
-	m_mainRenderer->ComputeVisiblePropBounds(bounds);
+	mainRenderer()->ComputeVisiblePropBounds(bounds);
 
 	*xmin = bounds[0];
 	*xmax = bounds[1];
@@ -113,18 +114,18 @@ void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin,
 
 void VTK2DGraphicsView::rotate(double r)
 {
-	m_mainRenderer->GetActiveCamera()->Roll(r);
+	mainRenderer()->GetActiveCamera()->Roll(r);
 }
 
 void VTK2DGraphicsView::resetRoll()
 {
-	double angle = m_mainRenderer->GetActiveCamera()->GetRoll();
-	m_mainRenderer->GetActiveCamera()->Roll(-angle);
+	double angle = mainRenderer()->GetActiveCamera()->GetRoll();
+	mainRenderer()->GetActiveCamera()->Roll(-angle);
 }
 
 void VTK2DGraphicsView::viewportToWorld(double& x, double& y) const
 {
-	vtkRenderer* r = const_cast<vtkRenderer*> (m_mainRenderer);
+	vtkRenderer* r = const_cast<vtkRenderer*> (mainRenderer());
 	double z = 0.0;
 	r->ViewportToNormalizedViewport(x, y);
 	r->NormalizedViewportToView(x, y, z);
@@ -134,7 +135,7 @@ void VTK2DGraphicsView::viewportToWorld(double& x, double& y) const
 
 void VTK2DGraphicsView::worldToViewport(double& x, double& y) const
 {
-	vtkRenderer* r = const_cast<vtkRenderer*> (m_mainRenderer);
+	vtkRenderer* r = const_cast<vtkRenderer*> (mainRenderer());
 	double z = 0.0;
 	r->WorldToView(x, y, z);
 	y = -y;
@@ -145,14 +146,14 @@ void VTK2DGraphicsView::worldToViewport(double& x, double& y) const
 void VTK2DGraphicsView::ResetCameraClippingRange()
 {
 	double bounds[6];
-	m_mainRenderer->ComputeVisiblePropBounds(bounds);
+	mainRenderer()->ComputeVisiblePropBounds(bounds);
 
 	// move camera forward or backword.
 	double center[3];
 	double depth;
 	double vn[3];
 
-	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	vtkCamera* camera = mainRenderer()->GetActiveCamera();
 	camera->GetFocalPoint(center);
 	camera->GetViewPlaneNormal(vn);
 	// focal point Z is always zero.
@@ -166,7 +167,7 @@ void VTK2DGraphicsView::ResetCameraClippingRange()
 	// update the camera
 	camera->SetFocalPoint(center[0],center[1],center[2]);
 	camera->SetPosition(center[0] + depth * vn[0], center[1] + depth * vn[1], center[2] + depth * vn[2]);
-	m_mainRenderer->ResetCameraClippingRange(bounds);
+	mainRenderer()->ResetCameraClippingRange(bounds);
 }
 
 double VTK2DGraphicsView::stdRadius(int pixels) const
@@ -213,20 +214,21 @@ void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent* event)
 
 void VTK2DGraphicsView::translate(int x, int y)
 {
+	auto r = mainRenderer();
 	double position[3];
 	double focalpoint[3];
-	double s = m_mainRenderer->GetActiveCamera()->GetParallelScale();
-	double theta = m_mainRenderer->GetActiveCamera()->GetRoll() * M_PI /180;
-	m_mainRenderer->GetActiveCamera()->GetPosition(position);
-	m_mainRenderer->GetActiveCamera()->GetFocalPoint(focalpoint);
+	double s = r->GetActiveCamera()->GetParallelScale();
+	double theta = r->GetActiveCamera()->GetRoll() * M_PI / 180;
+	r->GetActiveCamera()->GetPosition(position);
+	r->GetActiveCamera()->GetFocalPoint(focalpoint);
 	double _x = (x * cos(theta) + y * sin(theta)) * s / 1.5;
 	double _y = (-x * sin(theta)+ y * cos(theta)) * s / 1.5;
 	position[0] += _x;
 	position[1] += _y;
 	focalpoint[0] += _x;
 	focalpoint[1] += _y;
-	m_mainRenderer->GetActiveCamera()->SetPosition(position);
-	m_mainRenderer->GetActiveCamera()->SetFocalPoint(focalpoint);
+	r->GetActiveCamera()->SetPosition(position);
+	r->GetActiveCamera()->SetFocalPoint(focalpoint);
 }
 
 void VTK2DGraphicsView::cameraResetRotation()

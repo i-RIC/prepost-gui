@@ -11,8 +11,8 @@
 GeoDataPolygonCreator::GeoDataPolygonCreator(const QString& typeName) :
 	GeoDataCreator {typeName, tr("Polygon")}
 {
-	importers().append(new GeoDataPolygonImporter(this));
-	exporters().append(new GeoDataPolygonShapeExporter(this));
+	importers().push_back(new GeoDataPolygonImporter(this));
+	exporters().push_back(new GeoDataPolygonShapeExporter(this));
 }
 
 QString GeoDataPolygonCreator::name(unsigned int index) const

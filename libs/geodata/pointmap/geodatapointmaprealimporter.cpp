@@ -37,7 +37,7 @@ bool GeoDataPointmapRealImporter::doInit(const QString& /*filename*/, const QStr
 
 bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	QFileInfo finfo(m_filename);
+	QFileInfo finfo(filename());
 	// Allocate objects to hold points and vertex cells.
 	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -45,12 +45,13 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 	vtkSmartPointer<vtkDoubleArray> values = vtkSmartPointer<vtkDoubleArray>::New();
 
 	double xt[3];
-	if (m_selectedFilter == tr("Topography File (*.tpo *.anc)") || m_selectedFilter == tr("RIC-Nays DEM (*.dat *.txt)") ||
+	auto filter = selectedFilter();
+	if (filter == tr("Topography File (*.tpo *.anc)") || filter == tr("RIC-Nays DEM (*.dat *.txt)") ||
 			finfo.suffix() == "tpo" || finfo.suffix() == "anc" || finfo.suffix() == "dat" || finfo.suffix() == "txt")
 	{
-		QFile file(m_filename);
+		QFile file(filename());
 		if (! file.open(QIODevice::ReadOnly)) {
-			QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(m_filename));
+			QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(filename()));
 			return false;
 		}
 		QTextStream in(&file);
@@ -94,7 +95,7 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 		delete map;
 		if (points->GetNumberOfPoints() < 3) {return false;}
 		file.close();
-	} else if (m_selectedFilter == tr("USGS NED (*.adf)") || finfo.suffix() == "adf") {
+	} else if (filter == tr("USGS NED (*.adf)") || finfo.suffix() == "adf") {
 		// read USGS National Elevation Data (NED) data format.
 		// Data available through http://seamless.usgs.gov/
 		// filename will be "w001001.adf" always .adf format is read using GDAL library
@@ -105,7 +106,7 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 			// Following variables for debug
 			// QVector<double> xloc, yloc, zloc;
 			// QVector<double> lat, lon;
-			this->poDataset = (GDALDataset*) GDALOpen(m_filename.toLocal8Bit().constData(), GA_ReadOnly);
+			this->poDataset = (GDALDataset*) GDALOpen(filename().toLocal8Bit().constData(), GA_ReadOnly);
 			if (poDataset == NULL) {
 				std::cerr << "Cannot open file NED adf file for reading" << std::endl;
 				return false;

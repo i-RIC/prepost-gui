@@ -296,6 +296,20 @@ unix {
 }
 LIBS += -liricGccTriangle
 
+# iricGccPoisson
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/poisson/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/poisson/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/poisson"
+}
+LIBS += -liricGccPoisson
+
 # iricHdRiversurveywaterelevation
 
 win32 {
@@ -431,6 +445,7 @@ HEADERS += pre_global.h \
            misc/preprocessorwindowscalarbarsettingwidget.h \
            datamodel/gridshape/preprocessorgridshapedeltadialog.h \
            datamodel/gridshape/preprocessorgridshapenewpositiondialog.h \
+           datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.h \

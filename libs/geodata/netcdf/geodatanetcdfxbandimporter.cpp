@@ -193,17 +193,22 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 	std::vector<float> floatBuffer(bufferSize);
 	std::vector<double> doubleBuffer(bufferSize);
 	float missingValue;
+	float scaleFactor = 1;
+	float addOffset = 0;
 
 	ret = nc_get_att_float(ncid_in, rrVarId, "missing_value", &missingValue);
+	ret = nc_get_att_float(ncid_in, rrVarId, "scale_factor", &scaleFactor);
+	ret = nc_get_att_float(ncid_in, rrVarId, "add_offset", &addOffset);
 
 	for (size_t i = 0; i < timeLen; ++i) {
 		start_in[0] = i;
 		start_out[0] = i;
 		nc_get_vara_float(ncid_in, rrVarId, start_in, len_in, floatBuffer.data());
 		for (size_t j = 0; j < bufferSize; ++j) {
-			doubleBuffer[j] = floatBuffer[j];
 			if (floatBuffer[j] == missingValue) {
 				doubleBuffer[j] = netcdf->missingValue();
+			} else {
+				doubleBuffer[j] = floatBuffer[j] * scaleFactor + addOffset;
 			}
 		}
 		nc_put_vara_double(ncid_out, varOutId, start_out, len_out, doubleBuffer.data());

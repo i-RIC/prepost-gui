@@ -26,9 +26,13 @@ int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int icid_out, int v
 	int ret;
 	int varIdIn;
 	V missingValue;
+	V scaleFactor;
+	V addOffset;
 
 	ret = nc_inq_varid(ncid_in, iRIC::toStr(m_valueVariable).c_str(), &varIdIn);
 	ret = ncGetMissingValue(ncid_in, varIdIn, &missingValue);
+	ret = ncGetScaleFactorValue(ncid_in, varIdIn, &scaleFactor);
+	ret = ncGetAddOffsetValue(ncid_in, varIdIn, &addOffset);
 
 	int dimnum;
 	ret = nc_inq_varndims(ncid_in, varIdIn, &dimnum);
@@ -83,13 +87,13 @@ int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int icid_out, int v
 
 	std::vector<V> buffer(bufferSize);
 
-	ret = importSingleLayerValues(ncid_in, icid_out, 0, dimMap.data(), varIdIn, varIdOut, start_in.data(), start_out.data(), len_in.data(), len_out.data(), bufferSize, buffer.data(), missingValue, dat);
+	ret = importSingleLayerValues(ncid_in, icid_out, 0, dimMap.data(), varIdIn, varIdOut, start_in.data(), start_out.data(), len_in.data(), len_out.data(), bufferSize, buffer.data(), missingValue, scaleFactor, addOffset, dat);
 
 	return ret;
 }
 
 template <class V, class DA>
-int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid_out, int loopid, int* dimMap, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, GeoDataNetcdf* ncdf)
+int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid_out, int loopid, int* dimMap, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, V scale, V offset, GeoDataNetcdf* ncdf)
 {
 	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(ncdf);
 	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
@@ -104,13 +108,15 @@ int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid
 			for (size_t j = 0; j < bufferSize; ++j) {
 				if (*(buffer + j) == missingValue) {
 					*(buffer + j) = netcdf->missingValue();
+				} else {
+					*(buffer + j) = *(buffer + j) * scale + offset;
 				}
 			}
 			ret = ncPutVarConvert(ncid_out, varIdOut, start_out, len_out, buffer);
 			if (ret != NC_NOERR) {return ret;}
 		}	else {
 			// recursive call
-			ret = importSingleLayerValues(ncid_in, ncid_out, loopid + 1, dimMap, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, ncdf);
+			ret = importSingleLayerValues(ncid_in, ncid_out, loopid + 1, dimMap, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, scale, offset, ncdf);
 			if (ret != NC_NOERR) { return ret; }
 		}
 	}

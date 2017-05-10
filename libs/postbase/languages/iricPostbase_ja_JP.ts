@@ -212,7 +212,7 @@
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="83"/>
+        <location filename="../time/private/posttimedataitem_setsettingcommand.cpp" line="4"/>
         <source>Edit time setting</source>
         <translation>時刻表示の設定変更</translation>
     </message>

@@ -13,16 +13,15 @@ class SolverDefinitionGridType::Impl
 {
 public:
 	Impl(const std::string& name, const QString& caption, SolverDefinitionGridType* parent);
-	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent);
+	Impl(const QDomElement& node, SolverDefinition* solverDef, bool isPrimary, SolverDefinitionGridType* parent);
 
-	/// Destructor
 	~Impl();
 
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
+	void load(const QDomElement& node, SolverDefinition* solverDef);
 	void setGridType(const QDomElement& elem);
 	void setGridGenerators(const QDomElement& elem);
-	void setupGridAttributes(const QDomElement& elem, const SolverDefinitionTranslator& translator);
-	void setupBoundaryConditions(const QDomElement& elem, const SolverDefinitionTranslator& translator);
+	void setupGridAttributes(const QDomElement& elem, SolverDefinition* solverDef);
+	void setupBoundaryConditions(const QDomElement& elem, SolverDefinition* solverDef);
 	void buildGridAttributes(Grid* grid) const;
 	Grid* createEmptyGrid();
 

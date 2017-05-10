@@ -21,10 +21,8 @@
 
 #include <fstream>
 
-InputConditionContainerSet::InputConditionContainerSet(QWidget* widget)
-{
-	m_parentWidget = widget;
-}
+InputConditionContainerSet::InputConditionContainerSet()
+{}
 
 void InputConditionContainerSet::clear()
 {
@@ -54,14 +52,14 @@ void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDef
 void InputConditionContainerSet::setBCProperty(const std::string& bcname, int bcindex)
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it.value()->setBCProperty(bcname, bcindex);
+		it->second->setBCProperty(bcname, bcindex);
 	}
 }
 
 void InputConditionContainerSet::setComplexProperty(const std::string& compname, int compindex)
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it.value()->setComplexProperty(compname, compindex);
+		it->second->setComplexProperty(compname, compindex);
 	}
 }
 
@@ -116,26 +114,26 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 		QString type = defElem.attribute("conditionType");
 		// setup container depending on the type
 		if (type == "functional") {
-			m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder()));
-			m_containers.insert(parameterName, &(m_functionals[parameterName]));
+			m_functionals.insert(std::make_pair(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder())));
+			m_containers.insert(std::make_pair(parameterName, &(m_functionals[parameterName])));
 			connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 		} else if (type == "constant" || type == "") {
 			QString valuetype = defElem.attribute("valueType");
 			if (valuetype == "integer") {
-				m_integers.insert(parameterName, InputConditionContainerInteger(parameterName, parameterCaption, defNode));
-				m_containers.insert(parameterName, &(m_integers[parameterName]));
+				m_integers.insert(std::make_pair(parameterName, InputConditionContainerInteger(parameterName, parameterCaption, defNode)));
+				m_containers.insert(std::make_pair(parameterName, &(m_integers[parameterName])));
 				connect(&(m_integers[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "real") {
-				m_reals.insert(parameterName, InputConditionContainerReal(parameterName, parameterCaption, defNode));
-				m_containers.insert(parameterName, &(m_reals[parameterName]));
+				m_reals.insert(std::make_pair(parameterName, InputConditionContainerReal(parameterName, parameterCaption, defNode)));
+				m_containers.insert(std::make_pair(parameterName, &(m_reals[parameterName])));
 				connect(&(m_reals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "string" || valuetype == "filename" || valuetype == "filename_all" || valuetype == "foldername") {
-				m_strings.insert(parameterName, InputConditionContainerString(parameterName, parameterCaption, defNode));
-				m_containers.insert(parameterName, &(m_strings[parameterName]));
+				m_strings.insert(std::make_pair(parameterName, InputConditionContainerString(parameterName, parameterCaption, defNode)));
+				m_containers.insert(std::make_pair(parameterName, &(m_strings[parameterName])));
 				connect(&(m_strings[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "functional") {
-				m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder()));
-				m_containers.insert(parameterName, &(m_functionals[parameterName]));
+				m_functionals.insert(std::make_pair(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder())));
+				m_containers.insert(std::make_pair(parameterName, &(m_functionals[parameterName])));
 				connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else {
 				throw(ErrorMessage(tr("Wrong valueType \"%1\" is set.").arg(valuetype)));
@@ -145,7 +143,7 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 		}
 	} catch (ErrorMessage& e) {
 		QString msg(tr("Error occured while loading solver definition file.\n%1: %2"));
-		QMessageBox::critical(parentWidget(), tr("Error"), msg.arg(parameterName.c_str()).arg(e));
+		QMessageBox::critical(nullptr, tr("Error"), msg.arg(parameterName.c_str()).arg(e));
 		throw;
 	}
 }
@@ -153,7 +151,7 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 void InputConditionContainerSet::setDefaultValues()
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		(*it)->clear();
+		it->second->clear();
 	}
 }
 
@@ -161,14 +159,14 @@ int InputConditionContainerSet::load()
 {
 	// @todo no error checking (for example, wrong value, lacking nodes..) are implemented.
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		(*it)->load();
+		it->second->load();
 	}
 	return 0;
 }
 int InputConditionContainerSet::save()
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		int ret = (*it)->save();
+		int ret = it->second->save();
 		if (ret != 0) {return ret;}
 	}
 	return 0;
@@ -177,29 +175,29 @@ int InputConditionContainerSet::save()
 void InputConditionContainerSet::reset()
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		(*it)->clear();
+		it->second->clear();
 	}
 }
 
 InputConditionContainerSet* InputConditionContainerSet::clone() const
 {
-	InputConditionContainerSet* ret = new InputConditionContainerSet(m_parentWidget);
+	InputConditionContainerSet* ret = new InputConditionContainerSet();
 	ret->m_integers = m_integers;
 	ret->m_reals = m_reals;
 	ret->m_strings = m_strings;
 	ret->m_functionals = m_functionals;
 
-	for (auto it_int = ret->m_integers.begin(); it_int != ret->m_integers.end(); ++it_int) {
-		ret->m_containers.insert(it_int.key(), &(it_int.value()));
+	for (auto it = ret->m_integers.begin(); it != ret->m_integers.end(); ++it) {
+		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
 	}
-	for (auto it_real = ret->m_reals.begin(); it_real != ret->m_reals.end(); ++it_real) {
-		ret->m_containers.insert(it_real.key(), &(it_real.value()));
+	for (auto it = ret->m_reals.begin(); it != ret->m_reals.end(); ++it) {
+		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
 	}
-	for (auto it_str = ret->m_strings.begin(); it_str != ret->m_strings.end(); ++it_str) {
-		ret->m_containers.insert(it_str.key(), &(it_str.value()));
+	for (auto it = ret->m_strings.begin(); it != ret->m_strings.end(); ++it) {
+		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
 	}
-	for (auto it_func = ret->m_functionals.begin(); it_func != ret->m_functionals.end(); ++it_func) {
-		ret->m_containers.insert(it_func.key(), &(it_func.value()));
+	for (auto it = ret->m_functionals.begin(); it != ret->m_functionals.end(); ++it) {
+		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
 	}
 
 	return ret;
@@ -207,17 +205,17 @@ InputConditionContainerSet* InputConditionContainerSet::clone() const
 
 void InputConditionContainerSet::copyValues(const InputConditionContainerSet* set)
 {
-	for (auto it_int = m_integers.begin(); it_int != m_integers.end(); ++it_int) {
-		it_int.value() = set->m_integers.value(it_int.key());
+	for (auto it = m_integers.begin(); it != m_integers.end(); ++it) {
+		it->second = set->m_integers.at(it->first);
 	}
-	for (auto it_real = m_reals.begin(); it_real != m_reals.end(); ++it_real) {
-		it_real.value() = set->m_reals.value(it_real.key());
+	for (auto it = m_reals.begin(); it != m_reals.end(); ++it) {
+		it->second = set->m_reals.at(it->first);
 	}
-	for (auto it_str = m_strings.begin(); it_str != m_strings.end(); ++it_str) {
-		it_str.value() = set->m_strings.value(it_str.key());
+	for (auto it = m_strings.begin(); it != m_strings.end(); ++it) {
+		it->second = set->m_strings.at(it->first);
 	}
-	for (auto it_func = m_functionals.begin(); it_func != m_functionals.end(); ++it_func) {
-		it_func.value() = set->m_functionals.value(it_func.key());
+	for (auto it = m_functionals.begin(); it != m_functionals.end(); ++it) {
+		it->second = set->m_functionals.at(it->first);
 	}
 }
 
@@ -225,7 +223,8 @@ bool InputConditionContainerSet::importFromYaml(const QString& filename)
 {
 	YAML::Node config = YAML::LoadFile(iRIC::toStr(filename));
 	QFileInfo finfo(filename);
-	for (InputConditionContainer* c : m_containers) {
+	for (auto pair : m_containers) {
+		InputConditionContainer* c = pair.second;
 		c->importFromYaml(config, finfo.absoluteDir());
 	}
 	return true;
@@ -242,19 +241,20 @@ bool InputConditionContainerSet::exportToYaml(const QString& filename)
 	QTextCodec* codec = QTextCodec::codecForName("UTF-8");
 	stream.setCodec(codec);
 
-	for (InputConditionContainer* c : m_containers) {
+	for (auto pair : m_containers) {
+		InputConditionContainer* c = pair.second;
 		c->exportToYaml(&stream, finfo.absoluteDir());
 	}
 	yamlFile.close();
 	return true;
 }
 
-QMap<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers()
+std::map<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers()
 {
 	return m_integers;
 }
 
-const QMap<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers() const
+const std::map<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers() const
 {
 	return m_integers;
 }
@@ -264,12 +264,12 @@ InputConditionContainerInteger& InputConditionContainerSet::integer(const std::s
 	return m_integers[name];
 }
 
-QMap<std::string, InputConditionContainerReal>& InputConditionContainerSet::reals()
+std::map<std::string, InputConditionContainerReal>& InputConditionContainerSet::reals()
 {
 	return m_reals;
 }
 
-const QMap<std::string, InputConditionContainerReal>& InputConditionContainerSet::reals() const
+const std::map<std::string, InputConditionContainerReal>& InputConditionContainerSet::reals() const
 {
 	return m_reals;
 }
@@ -279,12 +279,12 @@ InputConditionContainerReal& InputConditionContainerSet::real(const std::string&
 	return m_reals[name];
 }
 
-QMap<std::string, InputConditionContainerString>& InputConditionContainerSet::strings()
+std::map<std::string, InputConditionContainerString>& InputConditionContainerSet::strings()
 {
 	return m_strings;
 }
 
-const QMap<std::string, InputConditionContainerString>& InputConditionContainerSet::strings() const
+const std::map<std::string, InputConditionContainerString>& InputConditionContainerSet::strings() const
 {
 	return m_strings;
 }
@@ -294,12 +294,12 @@ InputConditionContainerString& InputConditionContainerSet::string(const std::str
 	return m_strings[name];
 }
 
-QMap<std::string, InputConditionContainerFunctional>& InputConditionContainerSet::functionals()
+std::map<std::string, InputConditionContainerFunctional>& InputConditionContainerSet::functionals()
 {
 	return m_functionals;
 }
 
-const QMap<std::string, InputConditionContainerFunctional>& InputConditionContainerSet::functionals() const
+const std::map<std::string, InputConditionContainerFunctional>& InputConditionContainerSet::functionals() const
 {
 	return m_functionals;
 }
@@ -312,9 +312,4 @@ InputConditionContainerFunctional& InputConditionContainerSet::functional(const 
 InputConditionContainer* InputConditionContainerSet::container(const std::string& name)
 {
 	return m_containers[name];
-}
-
-QWidget* InputConditionContainerSet::parentWidget() const
-{
-	return m_parentWidget;
 }

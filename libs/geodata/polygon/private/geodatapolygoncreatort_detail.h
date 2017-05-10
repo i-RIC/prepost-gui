@@ -9,8 +9,8 @@ template <class V, class DA>
 GeoDataPolygonCreatorT<V, DA>::GeoDataPolygonCreatorT(const QString& typeName) :
 	GeoDataPolygonCreator {typeName}
 {
-	nodeMappers().append(new GeoDataPolygonNodeMapperT<V, DA>(this));
-	cellMappers().append(new GeoDataPolygonCellMapperT<V, DA>(this));
+	nodeMappers().push_back(new GeoDataPolygonNodeMapperT<V, DA>(this));
+	cellMappers().push_back(new GeoDataPolygonCellMapperT<V, DA>(this));
 }
 
 template <class V, class DA>

@@ -1,26 +1,31 @@
 #include "geodatamapper.h"
+#include "private/geodatamapper_impl.h"
 
 GeoDataMapper::GeoDataMapper(const QString& caption, GeoDataCreator* parent) :
 	QObject {parent},
-	m_caption {caption},
-	m_grid {nullptr},
-	m_container {nullptr},
-	m_geoData {nullptr}
-{}
+	impl {new Impl {}}
+{
+	impl->m_caption = caption;
+	impl->m_grid = nullptr;
+	impl->m_container = nullptr;
+	impl->m_geoData = nullptr;
+}
 
 GeoDataMapper::~GeoDataMapper()
-{}
+{
+	delete impl;
+}
 
 const QString& GeoDataMapper::caption() const
 {
-	return m_caption;
+	return impl->m_caption;
 }
 
 void GeoDataMapper::setTarget(Grid* grid, GridAttributeContainer* container, GeoData* geodata)
 {
-	m_grid = grid;
-	m_container = container;
-	m_geoData = geodata;
+	impl->m_grid = grid;
+	impl->m_container = container;
+	impl->m_geoData = geodata;
 }
 
 GeoDataCreator* GeoDataMapper::creator() const
@@ -31,15 +36,15 @@ GeoDataCreator* GeoDataMapper::creator() const
 
 Grid* GeoDataMapper::grid() const
 {
-	return m_grid;
+	return impl->m_grid;
 }
 
 GridAttributeContainer* GeoDataMapper::container() const
 {
-	return m_container;
+	return impl->m_container;
 }
 
 GeoData* GeoDataMapper::geoData() const
 {
-	return m_geoData;
+	return impl->m_geoData;
 }

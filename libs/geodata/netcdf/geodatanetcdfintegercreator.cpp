@@ -5,7 +5,7 @@
 GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
 	GeoDataNetcdfCreatorT<int, vtkIntArray> {"integerNetcdf"}
 {
-	importers().append(new GeoDataNetcdfIntegerImporter(this));
+	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
 }
 
 GeoData* GeoDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

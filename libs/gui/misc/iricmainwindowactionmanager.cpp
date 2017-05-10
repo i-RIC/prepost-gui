@@ -53,7 +53,7 @@ void iRICMainWindowActionManager::init()
 
 	setupWindowMenu();
 	setupCalculationResultMenu();
-	setupSettingMenu();
+	setupOptionMenu();
 	setupHelpMenu();
 
 	updateMenuBar();
@@ -200,6 +200,9 @@ void iRICMainWindowActionManager::setupImportMenu()
 	m_importMenu->clear();
 	m_geoDataImportMenu = m_importMenu->addMenu(tr("G&eographic Data"));
 	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
+
+	m_geoDataImportFromWebMenu = m_importMenu->addMenu(tr("Geographic Data (from web)"));
+	connect(m_geoDataImportFromWebMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportFromWebMenu()));
 
 	m_hydraulicDataImportMenu = m_importMenu->addMenu(tr("&Hydraulic Data"));
 	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
@@ -574,13 +577,26 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	m_resultMenu->setEnabled(false);
 }
 
-void iRICMainWindowActionManager::setupSettingMenu()
+void iRICMainWindowActionManager::setupOptionMenu()
 {
 	m_optionMenu = new QMenu(tr("&Option"), m_menuBar);
 
 	optionPreferencesAction = new QAction(tr("&Preferences..."), m_optionMenu);
 	m_optionMenu->addAction(optionPreferencesAction);
 	connect(optionPreferencesAction, SIGNAL(triggered()), m_parent, SLOT(showPreferenceDialog()));
+
+	m_optionMenu->addSeparator();
+
+	m_optionToolMenu = new QMenu(tr("&Tools"), m_optionMenu);
+	m_optionMenu->addMenu(m_optionToolMenu);
+
+	std::vector<QAction*> actions = m_parent->m_guiToolList->actionList();
+	for (QAction* a : actions) {
+		if (a->text().contains("iRIC")) {continue;}
+
+		m_optionToolMenu->addAction(a);
+		connect(a, SIGNAL(triggered()), m_parent, SLOT(launchExternalTool()));
+	}
 
 	m_optionMenu->addSeparator();
 

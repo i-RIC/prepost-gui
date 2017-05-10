@@ -1,4 +1,5 @@
 #include "inputconditioncontainerinteger.h"
+#include "private/inputconditioncontainerinteger_impl.h"
 
 #include <misc/stringtool.h>
 
@@ -9,26 +10,34 @@
 
 #include <iriclib.h>
 
+InputConditionContainerInteger::Impl::Impl() :
+	m_value {0},
+	m_default {0}
+{}
+
 InputConditionContainerInteger::InputConditionContainerInteger() :
 	InputConditionContainer(),
-	m_default {0},
-	m_value {0}
+	impl {new Impl {}}
 {}
 
 InputConditionContainerInteger::InputConditionContainerInteger(const std::string& n, const QString& c, const QDomNode& defNode) :
-	InputConditionContainer(n, c)
+	InputConditionContainer(n, c),
+	impl {new Impl {}}
 {
 	setup(defNode);
 }
 
 InputConditionContainerInteger::InputConditionContainerInteger(const InputConditionContainerInteger& i) :
-	InputConditionContainer(i)
+	InputConditionContainer(i),
+	impl {new Impl {}}
 {
 	copyValues(i);
 }
 
 InputConditionContainerInteger::~InputConditionContainerInteger()
-{}
+{
+	delete impl;
+}
 
 InputConditionContainerInteger& InputConditionContainerInteger::operator=(const InputConditionContainerInteger& i)
 {
@@ -38,42 +47,42 @@ InputConditionContainerInteger& InputConditionContainerInteger::operator=(const 
 
 int InputConditionContainerInteger::value() const
 {
-	return m_value;
+	return impl->m_value;
 }
 
 void InputConditionContainerInteger::setValue(int v)
 {
-	if (m_value != v) {
-		m_value = v;
-		emit valueChanged(m_value);
+	if (impl->m_value != v) {
+		impl->m_value = v;
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
 }
 
 int InputConditionContainerInteger::defaultValue() const
 {
-	return m_default;
+	return impl->m_default;
 }
 
 void InputConditionContainerInteger::setDefaultValue(int d)
 {
-	m_default = d;
+	impl->m_default = d;
 }
 
 int InputConditionContainerInteger::load()
 {
 	int ret;
 	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_Integer(toC(bcName()), bcIndex(), toC(name()), &m_value);
+		ret = cg_iRIC_Read_BC_Integer(toC(bcName()), bcIndex(), toC(name()), &(impl->m_value));
 	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), &m_value);
+		ret = cg_iRIC_Read_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), &(impl->m_value));
 	} else {
-		ret = cg_iRIC_Read_Integer(toC(name()), &m_value);
+		ret = cg_iRIC_Read_Integer(toC(name()), &(impl->m_value));
 	}
 	if (ret != 0) {
 		clear();
 	} else {
-		emit valueChanged(m_value);
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
 	return ret;
@@ -82,52 +91,52 @@ int InputConditionContainerInteger::load()
 int InputConditionContainerInteger::save()
 {
 	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_Integer(toC(bcName()), bcIndex(), toC(name()), m_value);
+		return cg_iRIC_Write_BC_Integer(toC(bcName()), bcIndex(), toC(name()), impl->m_value);
 	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), m_value);
+		return cg_iRIC_Write_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), impl->m_value);
 	} else {
-		return cg_iRIC_Write_Integer(toC(name()), m_value);
+		return cg_iRIC_Write_Integer(toC(name()), impl->m_value);
 	}
 }
 
 void InputConditionContainerInteger::clear()
 {
-	if (m_value != m_default) {
-		m_value = m_default;
-		emit valueChanged(m_value);
+	if (impl->m_value != impl->m_default) {
+		impl->m_value = impl->m_default;
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
 }
 
 QVariant InputConditionContainerInteger::variantValue() const
 {
-	return QVariant(m_value);
+	return QVariant(impl->m_value);
 }
 
 void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const QDir&)
 {
 	if (doc[name()]) {
-		m_value = doc[name()].as<int>();
-		emit valueChanged(m_value);
+		impl->m_value = doc[name()].as<int>();
+		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
 }
 
 void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir&)
 {
-	*stream << name().c_str() << ": " << m_value << "\t#[integer] " << caption() << "\r\n";
+	*stream << name().c_str() << ": " << impl->m_value << "\t#[integer] " << caption() << "\r\n";
 }
 
 void InputConditionContainerInteger::setup(const QDomNode& defNode)
 {
 	QDomElement e = defNode.toElement();
-	m_default = e.attribute("default", "0").toInt();
-	m_value = m_default;
+	impl->m_default = e.attribute("default", "0").toInt();
+	impl->m_value = impl->m_default;
 }
 
 void InputConditionContainerInteger::copyValues(const InputConditionContainerInteger& i)
 {
 	InputConditionContainer::copyValues(i);
-	m_value = i.m_value;
-	m_default = i.m_default;
+	setValue(i.value());
+	setDefaultValue(i.defaultValue());
 }

@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/cursorAdd.png</file>
+        <file>images/cursorMove.png</file>
+        <file>images/cursorOpenHandPoint.png</file>
+        <file>images/cursorRemove.png</file>
+        <file>images/cursorRotate.png</file>
+        <file>images/cursorZoom.png</file>
+        <file>images/iconAddPolygonVertex.png</file>
+        <file>images/iconAHWM.png</file>
+        <file>images/iconBaseline.png</file>
+        <file>images/iconCrossSection.png</file>
+        <file>images/iconDeleteItem.png</file>
+        <file>images/iconElevationPoints.png</file>
+        <file>images/iconExport.png</file>
+        <file>images/iconFolder.png</file>
+        <file>images/iconImage.png</file>
+        <file>images/iconImport.png</file>
+        <file>images/iconLBHWM.png</file>
+        <file>images/iconMain.png</file>
+        <file>images/iconMouseHelp.png</file>
+        <file>images/iconNew.png</file>
+        <file>images/iconProperty.png</file>
+        <file>images/iconRBHWM.png</file>
+        <file>images/iconRemovePolygonVertex.png</file>
+        <file>images/iconRiverCrosssection.png</file>
+        <file>images/iconRiverSurveyData.png</file>
+        <file>images/iconRivmaker.ico</file>
+        <file>images/iconRivmaker.png</file>
+        <file>images/iconRivmakerLarge.png</file>
+        <file>images/iconSave.png</file>
+        <file>images/iconShortcut.png</file>
+        <file>images/iconVerticalCrosssection.png</file>
+        <file>images/iconViewFit.png</file>
+        <file>images/iconViewRotate90.png</file>
+        <file>images/iconViewRotateReset.png</file>
+        <file>images/iconViewZoomIn.png</file>
+        <file>images/iconViewZoomOut.png</file>
+        <file>images/imgMouseHelp.png</file>
+        <file>images/ja_JP/imgMouseHelp.png</file>
+        <file>images/imageAllToLines.png</file>
+        <file>images/imageTemplate.png</file>
+        <file>images/imageTin.png</file>
+        <file>images/iconQuestion.png</file>
+    </qresource>
+</RCC>

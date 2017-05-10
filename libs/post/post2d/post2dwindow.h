@@ -61,6 +61,8 @@ public:
 	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zonename) override;
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
 
+	virtual bool checkShapeExportCondition(const QString &zonename) const;
+
 	bool checkKmlExportCondition(const QString &zonename) const override;
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
@@ -94,6 +96,7 @@ private:
 	Post2dWindowDataModel* m_dataModel;
 	Post2dWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+	mutable QString m_exportScalarName;
 
 public:
 	friend class Post2dWindowProjectDataItem;

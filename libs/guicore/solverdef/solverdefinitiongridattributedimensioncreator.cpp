@@ -4,13 +4,13 @@
 
 #include <QDomElement>
 
-SolverDefinitionGridAttributeDimension* SolverDefinitionGridAttributeDimensionCreator::create(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond)
+SolverDefinitionGridAttributeDimension* SolverDefinitionGridAttributeDimensionCreator::create(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* cond)
 {
 	QString valueType = elem.attribute("valueType");
 	if (valueType == "integer") {
-		return new SolverDefinitionGridAttributeIntegerDimension(elem, translator, cond);
+		return new SolverDefinitionGridAttributeIntegerDimension(elem, solverDef, cond);
 	} else if (valueType == "real") {
-		return new SolverDefinitionGridAttributeRealDimension(elem, translator, cond);
+		return new SolverDefinitionGridAttributeRealDimension(elem, solverDef, cond);
 	}
 	return nullptr;
 }

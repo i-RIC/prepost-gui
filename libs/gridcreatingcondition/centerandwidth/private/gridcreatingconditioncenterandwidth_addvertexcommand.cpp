@@ -3,51 +3,34 @@
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
+#include <vtkPolyData.h>
+
 GridCreatingConditionCenterAndWidth::AddVertexCommand::AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCenterAndWidth* cond) :
 	QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex")},
 	m_keyDown {keyDown},
-	m_vertexId {(edgeId + 1) % cond->m_vtkPolyLine->GetNumberOfPoints()},
+	m_vertexId {edgeId + 1},
 	m_condition {cond}
 {
 	double dx = point.x();
 	double dy = point.y();
 	cond->graphicsView()->viewportToWorld(dx, dy);
-	m_vertexPosition = QVector2D(dx, dy);
+	m_vertexPosition = QPointF(dx, dy);
 }
 
 void GridCreatingConditionCenterAndWidth::AddVertexCommand::redo()
 {
+	auto line = m_condition->polyLine();
 	if (m_keyDown) {
-		// add vertex.
-		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
+		// add vertex
+		auto it = line.begin() + m_vertexId;
+		line.insert(it, m_vertexPosition);
 	} else {
 		// just modify the vertex position
-		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
-		points->SetPoint(m_vertexId, m_vertexPosition.x(), m_vertexPosition.y(), 0);
-		points->Modified();
+		line[m_vertexId] = m_vertexPosition;
 	}
-	m_condition->m_vtkPolyLine->Modified();
-	m_condition->updateShapeData();
+	m_condition->setPolyLine(line);
 	if (m_condition->m_isGridCreated) {
-		m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
+		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
 	}
 }
@@ -55,30 +38,12 @@ void GridCreatingConditionCenterAndWidth::AddVertexCommand::redo()
 void GridCreatingConditionCenterAndWidth::AddVertexCommand::undo()
 {
 	if (m_keyDown) {
-		// remove vertex.
-		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_condition->m_vtkPolyLine->Modified();
-		m_condition->updateShapeData();
+		auto line = m_condition->polyLine();
+		auto it = line.begin() + m_vertexId;
+		line.erase(it);
+		m_condition->setPolyLine(line);
 		if (m_condition->m_isGridCreated) {
-			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
+			m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
 	} else {

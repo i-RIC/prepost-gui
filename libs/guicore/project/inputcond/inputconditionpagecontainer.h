@@ -16,10 +16,9 @@ class GUICOREDLL_EXPORT InputConditionPageContainer : public QWidget
 	Q_OBJECT
 
 public:
-	/// Constructor
 	InputConditionPageContainer(QWidget* w);
-	/// Destructor
 	~InputConditionPageContainer();
+
 	void setup(const QDomElement& elem, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
 
 public slots:

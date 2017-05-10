@@ -1,5 +1,5 @@
 #include "datamodel/post3dwindowarrowgroupdataitem.h"
-#include "datamodel/post3dwindowcontourgroupdataitem.h"
+#include "datamodel/post3dwindowcontourgrouptopdataitem.h"
 #include "datamodel/post3dwindowgridshapedataitem.h"
 #include "datamodel/post3dwindowgridtypedataitem.h"
 #include "datamodel/post3dwindownodescalargroupdataitem.h"
@@ -94,12 +94,25 @@ void Post3dWindowDataModel::surfaceSetting()
 //	item->showPropertyDialog();
 }
 
-void Post3dWindowDataModel::contourSetting()
+void Post3dWindowDataModel::addContour()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowContourGroupDataItem* citem = item->contourGroupItem();
-	citem->showPropertyDialog();
+	Post3dWindowContourGroupTopDataItem* citem = item->contourGroupTopItem();
+	citem->showAddDialog();
+}
+
+void Post3dWindowDataModel::addIsosurface()
+{
+	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	if (item == nullptr) {return;}
+	Post3dWindowNodeScalarGroupTopDataItem* citem = item->scalarGroupDataItem();
+	citem->showAddDialog();
+}
+
+void Post3dWindowDataModel::contourSetting()
+{
+	addContour();
 }
 
 void Post3dWindowDataModel::arrowSetting()
@@ -128,10 +141,7 @@ void Post3dWindowDataModel::particleSetting()
 
 void Post3dWindowDataModel::isosurfaceSetting()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr) {return;}
-	Post3dWindowNodeScalarGroupDataItem* iitem = item->scalarGroupDataItem();
-	iitem->showPropertyDialog();;
+	addIsosurface();
 }
 
 Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()

@@ -22,20 +22,16 @@ public:
 	int iMax() const;
 	int jMax() const;
 	double width() const;
-	double length() const;
 
 	void setIMax(int i);
 	void setJMax(int j);
 	void setWidth(double w);
 	void setLength(double l);
 
-public slots:
-	void setStreamWiseLabel();
-	void setCrossStreamLabel();
-
 private slots:
-	void setStreamWiseNumber();
-	void setCrossStreamNumber();
+	void updateDI();
+	void updateDJ();
+	void handleNJChange();
 	void handleButtonClick(QAbstractButton* button);
 
 signals:

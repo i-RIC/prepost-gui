@@ -6,30 +6,27 @@
 #include <QVTKWidget.h>
 #include <QUndoCommand>
 
+#include <vtkSmartPointer.h>
+
 class GraphicsWindowDataItem;
 class GraphicsWindowSimpleDataModel;
-class vtkRenderer;
 class vtkCamera;
-class vtkActor2D;
-class QCursor;
+class vtkRenderer;
+class vtkInteractorObserver;
 
 class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKWidget
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	VTKGraphicsView(QWidget* parent);
-	/// Destructor
 	virtual ~VTKGraphicsView();
 
 	/// @name Model related functions
 	//@{
-	void setModel(GraphicsWindowSimpleDataModel* m) {m_model = m;}
-	GraphicsWindowDataItem* activeDataItem() {return m_activeDataItem;}
-	void setActiveDataItem(GraphicsWindowDataItem* i) {
-		m_activeDataItem = i;
-	}
+	void setModel(GraphicsWindowSimpleDataModel* m);
+	GraphicsWindowDataItem* activeDataItem() const;
+	void setActiveDataItem(GraphicsWindowDataItem* i);
 	//@}
 
 	/// @name Mouse event handling functions
@@ -51,33 +48,25 @@ public:
 	void standardWheelEvent(QWheelEvent* event);
 	//@}
 
-	vtkRenderer* mainRenderer() const {return m_mainRenderer;}
+	vtkRenderer* mainRenderer() const;
+	vtkCamera* camera() const;
 	void render();
 	void restoreUpdateRate();
-	void setInteractive(bool interactive) {
-		m_interactive = interactive;
-	}
+	void setInteractive(bool interactive);
 
 	QImage getImage();
 
 public slots:
-	/// Move the camera so that data fit to the view.
 	void cameraFit();
-	/// Zoom-in
 	void cameraZoomIn();
-	/// Zoom-out
 	void cameraZoomOut();
-	/// Move left
 	void cameraMoveLeft();
-	/// Move right
 	void cameraMoveRight();
-	/// Move up
 	void cameraMoveUp();
-	/// Move down
 	void cameraMoveDown();
 
 protected:
-	GraphicsWindowSimpleDataModel* model() const {return m_model;}
+	GraphicsWindowSimpleDataModel* model() const;
 
 private:
 	/// @name Viewport related functions
@@ -90,33 +79,18 @@ private:
 	int moveWidth();
 	//@}
 
-	QPixmap m_zoomPixmap;
-	QPixmap m_rotatePixmap;
-	QPixmap m_movePixmap;
-
-	QCursor m_zoomCursor;
-	QCursor m_rotateCursor;
-	QCursor m_moveCursor;
-
-	QImage m_logoImage;
-
-	GraphicsWindowDataItem* m_activeDataItem;
-	GraphicsWindowSimpleDataModel* m_model;
-	bool m_isViewChanging;
-
 protected:
 	virtual void resizeEvent(QResizeEvent* event) override;
 	void update2Ds();
 
-	bool m_interactive;
-	vtkActor2D* m_logoActor;
-
-	vtkRenderer* m_mainRenderer;
-	vtkCamera* m_camera;
 	void setupCamera();
 
 public:
 	friend class VTKGraphicsViewArbitraryMove;
+
+private:
+	class Impl;
+	Impl* impl;
 };
 
 class VTKGraphicsViewArbitraryMove : public QUndoCommand
@@ -133,5 +107,9 @@ private:
 	vtkCamera* m_oldCamera;
 	VTKGraphicsView* m_view;
 };
+
+#ifdef _DEBUG
+	#include "private/vtkgraphicsview_impl.h"
+#endif // _DEBUG
 
 #endif // VTKGRAPHICSVIEW_H

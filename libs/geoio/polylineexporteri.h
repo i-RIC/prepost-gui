@@ -3,7 +3,7 @@
 
 #include "geoio_global.h"
 
-#include <QVector>
+#include <vector>
 
 class QPointF;
 class QString;
@@ -15,7 +15,7 @@ class GEOIODLL_EXPORT PolylineExporterI
 public:
 	virtual ~PolylineExporterI() {}
 
-	virtual void exportData(const QVector<QPointF>& data, const QString& filename, const QString& selectedFilter, QWidget* w) = 0;
+	virtual void exportData(const std::vector<QPointF>& data, const QString& filename, const QString& selectedFilter, QWidget* w) = 0;
 	virtual QStringList fileDialogFilters() = 0;
 };
 

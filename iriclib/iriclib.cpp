@@ -362,6 +362,12 @@ int cg_iRIC_Read_Complex_Functional_RealSingle_Mul(int fid, char* groupname, int
 	return f->Complex_CC_Read_Functional_RealSingle(groupname, num, name, x, y);
 }
 
+int cg_iRIC_Read_Complex_FunctionalWithName_RealSingle_Mul(int fid, char* groupname, int num, char* name, char* paramname, float* data)
+{
+	GET_F(fid);
+	return f->Complex_CC_Read_FunctionalWithName_RealSingle(groupname, num, name, paramname, data);
+}
+
 int cg_iRIC_Read_Grid_Complex_Node_Mul(int fid, char* groupname, int* values)
 {
 	GET_F(fid);
@@ -742,6 +748,11 @@ int cg_iRIC_Read_BC_FunctionalWithName_Mul(int fid, char* type, int num, char* n
 int cg_iRIC_Read_BC_Functional_RealSingle_Mul(int fid, char* type, int num, char* name, float* x, float* y){
 	GET_F(fid);
 	return f->BC_Read_Functional_RealSingle(type, num, name, x, y);
+}
+
+int cg_iRIC_Read_BC_FunctionalWithName_RealSingle_Mul(int fid, char* type, int num, char* name, char* paramname, float* data){
+	GET_F(fid);
+	return f->BC_Read_FunctionalWithName_RealSingle(type, num, name, paramname, data);
 }
 
 int cg_iRIC_Clear_BC_Mul(int fid){

@@ -1,5 +1,7 @@
 #include "polylineimporterfactory.h"
 #include "private/polylineimporterfactory_impl.h"
+#include "polylinecsvimporter.h"
+#include "polylineshapeimporter.h"
 
 PolylineImporterFactory* PolylineImporterFactory::m_instance = nullptr;
 
@@ -14,11 +16,16 @@ PolylineImporterFactory& PolylineImporterFactory::instance()
 PolylineImporterFactory::PolylineImporterFactory() :
 	impl {new Impl()}
 {
-
+	impl->m_importers.push_back(new PolylineShapeImporter());
+	impl->m_importers.push_back(new PolylineCsvImporter());
 }
 
 PolylineImporterFactory::~PolylineImporterFactory()
 {
+	for (auto i : impl->m_importers) {
+		delete i;
+	}
+
 	delete impl;
 }
 
