@@ -109,6 +109,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	// get the name;
 	QDomElement itemElem = itemNode.toElement();
 	std::string parameterName = iRIC::toStr(itemElem.attribute("name"));
+	QString parameterCaption = itemElem.attribute("caption");
 	// get the definition node;
 	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 	if (defNode.isNull()) {
@@ -120,7 +121,11 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	// setup container depending on the type
 	InputConditionWidget* widget = nullptr;
 	if (type == "functional") {
-		widget = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
+		auto w = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
+		if (! parameterCaption.isNull()) {
+			w->setCaption(parameterCaption);
+		}
+		widget = w;
 		m_widgets.insert(parameterName, widget);
 	} else if (type == "constant" || type == "") {
 		QString valuetype = defElem.attribute("valueType");
@@ -143,7 +148,11 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 		} else if (valuetype == "foldername") {
 			widget = new InputConditionWidgetFoldername(defNode, t, &(cset.string(parameterName)));
 		} else if (valuetype == "functional") {
-			widget = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
+			auto w = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
+			if (! parameterCaption.isNull()) {
+				w->setCaption(parameterCaption);
+			}
+			widget = w;
 		} else {
 			throw(ErrorMessage("Wrong conditionType is set."));
 		}

@@ -28,6 +28,11 @@ InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode,
 InputConditionWidgetFunctional::~InputConditionWidgetFunctional()
 {}
 
+void InputConditionWidgetFunctional::setCaption(const QString& caption)
+{
+	m_dialog->setWindowTitle(caption);
+}
+
 void InputConditionWidgetFunctional::addTooltip(const QString& tooltip)
 {
 	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);

@@ -17,6 +17,7 @@ public:
 	InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont);
 	~InputConditionWidgetFunctional();
 
+	void setCaption(const QString& caption);
 	void addTooltip(const QString& tooltip) override;
 
 private slots:
