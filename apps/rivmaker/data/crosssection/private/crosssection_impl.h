@@ -4,6 +4,7 @@
 #include "../crosssection.h"
 
 #include <QPointF>
+#include <QString>
 #include <QVector2D>
 
 #include <map>
@@ -13,7 +14,7 @@ class CrossSection::Impl
 public:
 	Impl(CrossSection* cs);
 
-	int m_id;
+	QString m_name;
 	bool m_isDefined;
 
 	QPointF m_point1;

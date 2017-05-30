@@ -10,7 +10,6 @@
 #include <QVector2D>
 
 CrossSection::Impl::Impl(CrossSection* cs) :
-	m_id {0},
 	m_isDefined {false},
 	m_waterElevationIsSet {false},
 	m_waterElevation {0},
@@ -38,17 +37,12 @@ bool CrossSection::isDefined() const
 
 QString CrossSection::name() const
 {
-	return tr("SEC%1").arg(id() + 1);
+	return impl->m_name;
 }
 
-int CrossSection::id() const
+void CrossSection::setName(const QString& name)
 {
-	return impl->m_id;
-}
-
-void CrossSection::setId(int id)
-{
-	impl->m_id = id;
+	impl->m_name = name;
 }
 
 QPointF CrossSection::point1() const
@@ -182,6 +176,7 @@ QStandardItem* CrossSection::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconCrossSection.png"), name());
 	setupStandardItem(item);
+	item->setEditable(true);
 	return item;
 }
 

@@ -106,7 +106,6 @@ void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 	int id = 0;
 	for (auto cs : item()->childItems()) {
 		auto cs2 = dynamic_cast<CrossSection*> (cs);
-		cs2->setId(id++);
 		auto sItem = cs2->buildPreProcessorStandardItem();
 		mySItem->appendRow(sItem);
 		m->addStandardItem(cs, sItem);

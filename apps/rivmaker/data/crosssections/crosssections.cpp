@@ -20,7 +20,7 @@ CrossSections::~CrossSections()
 CrossSection* CrossSections::addCrossSection()
 {
 	auto newS = new CrossSection(this);
-	newS->setId(static_cast<int>(childItems().size() - 1));
+	newS->setName(nextName());
 
 	return newS;
 }
@@ -49,4 +49,22 @@ DataItemController* CrossSections::buildPreProcessorDataItemController(Model* mo
 DataItemView* CrossSections::buildPreProcessorDataItemView(Model* model)
 {
 	return new DataItemView(model, this);
+}
+
+QString CrossSections::nextName() const
+{
+	int id = 1;
+	while (1) {
+		QString name = QString("X%1").arg(id);
+		bool found = false;
+		for (CrossSection* cs : crossSectionVector()) {
+			if (cs->name() == name) {
+				found = true;
+				break;
+			}
+		}
+		if (! found) {return name;}
+
+		++ id;
+	}
 }

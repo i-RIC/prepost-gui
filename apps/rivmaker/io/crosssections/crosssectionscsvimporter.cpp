@@ -57,7 +57,7 @@ bool CrossSectionsCsvImporter::importData(std::vector<CrossSection*>* crossSecti
 			offset->setY(y1);
 		}
 		auto cs = new CrossSection(nullptr);
-		cs->setId(id);
+		cs->setName(QString("X%1").arg(id + 1));
 		cs->setPoint1(QPointF(x1 - offset->x(), y1 - offset->y()));
 		cs->setPoint2(QPointF(x2 - offset->x(), y2 - offset->y()));
 		crossSections->push_back(cs);

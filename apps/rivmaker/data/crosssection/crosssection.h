@@ -19,9 +19,7 @@ public:
 	bool isDefined() const;
 
 	QString name() const;
-
-	int id() const;
-	void setId(int id);
+	void setName(const QString& name);
 
 	QPointF point1() const;
 	void setPoint1(const QPointF& p);

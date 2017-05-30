@@ -114,7 +114,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 		auto cs = new CrossSection(nullptr);
 		cs->setPoint1(QPointF(max_it->second.first->x(), max_it->second.first->y()));
 		cs->setPoint2(QPointF(max_it->second.second->x(), max_it->second.second->y()));
-		cs->setId(id);
+		cs->setName(pair.first);
 		newCrossSections->push_back(cs);
 		++ id;
 	}

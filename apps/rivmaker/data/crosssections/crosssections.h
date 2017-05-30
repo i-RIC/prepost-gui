@@ -25,6 +25,8 @@ public:
 	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
+	QString nextName() const;
+
 	class Impl;
 	Impl* impl;
 };
