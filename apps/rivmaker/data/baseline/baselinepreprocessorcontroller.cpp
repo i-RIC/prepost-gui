@@ -266,6 +266,11 @@ void BaseLinePreProcessorController::addVertex()
 void BaseLinePreProcessorController::removeVertex()
 {
 	if (impl->m_mode == Impl::Mode::Normal) {
+		auto bl = dynamic_cast<BaseLine*> (item());
+		if (bl->polyLine().size() == 2) {
+			QMessageBox::warning(view(), tr("Warning"), tr("Point can not be deleted when there are only two points."));
+			return;
+		}
 		impl->m_mode = Impl::Mode::RemovePointNotPossible;
 	} else if (impl->m_mode == Impl::Mode::RemovePointNotPossible) {
 		impl->m_mode = Impl::Mode::Normal;
