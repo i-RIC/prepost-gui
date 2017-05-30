@@ -270,6 +270,7 @@ void Project::calcCrossSectionElevations()
 
 	for (auto pair : elevVals) {
 		if (pair.second.size() == 0) {continue;}
+		if (pair.first->waterElevationIsSet()) {continue;}
 
 		double sum = 0;
 		for (double v : pair.second) {
@@ -277,6 +278,7 @@ void Project::calcCrossSectionElevations()
 		}
 		double avg = sum / pair.second.size();
 		pair.first->setWaterElevation(avg);
+		pair.first->setWaterElevationIsSet(true);
 	}
 }
 

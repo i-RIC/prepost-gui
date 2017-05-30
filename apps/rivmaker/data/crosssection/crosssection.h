@@ -35,6 +35,9 @@ public:
 	std::vector<QPointF> coordinates() const override;
 	void setCoordinates(const std::vector<QPointF>& coords) override;
 
+	bool waterElevationIsSet() const;
+	void setWaterElevationIsSet(bool isSet);
+
 	double waterElevation() const;
 	void setWaterElevation(double e);
 

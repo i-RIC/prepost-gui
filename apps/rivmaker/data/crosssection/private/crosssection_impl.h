@@ -19,6 +19,7 @@ public:
 	QPointF m_point1;
 	QPointF m_point2;
 
+	bool m_waterElevationIsSet;
 	double m_waterElevation;
 
 	std::map<double, double> m_mappedPoints;

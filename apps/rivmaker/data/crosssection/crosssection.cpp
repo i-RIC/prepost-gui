@@ -12,6 +12,7 @@
 CrossSection::Impl::Impl(CrossSection* cs) :
 	m_id {0},
 	m_isDefined {false},
+	m_waterElevationIsSet {false},
 	m_waterElevation {0},
 	m_parent {cs}
 {}
@@ -106,6 +107,16 @@ void CrossSection::setCoordinates(const std::vector<QPointF>& coords)
 {
 	impl->m_point1 = coords.at(0);
 	impl->m_point2 = coords.at(1);
+}
+
+bool CrossSection::waterElevationIsSet() const
+{
+	return impl->m_waterElevationIsSet;
+}
+
+void CrossSection::setWaterElevationIsSet(bool isSet)
+{
+	impl->m_waterElevationIsSet = isSet;
 }
 
 double CrossSection::waterElevation() const
