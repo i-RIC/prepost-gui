@@ -79,15 +79,21 @@
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="251"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="279"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="271"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="284"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="251"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="279"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="284"/>
         <source>Base line is not defined yet.</source>
         <translation>ベースラインはまだ定義されていません。</translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="271"/>
+        <source>Point can not be deleted when there are only two points.</source>
+        <translation>点が2つしかない時は、削除できません。</translation>
     </message>
 </context>
 <context>
@@ -137,9 +143,13 @@
 <context>
     <name>CrossSection</name>
     <message>
-        <location filename="../data/crosssection/crosssection.cpp" line="40"/>
         <source>X%1</source>
         <translation>X%1</translation>
+    </message>
+    <message>
+        <location filename="../data/crosssection/crosssection.cpp" line="40"/>
+        <source>SEC%1</source>
+        <translation>SEC%1</translation>
     </message>
 </context>
 <context>
@@ -1006,6 +1016,10 @@
     </message>
     <message>
         <location filename="../io/sacguiimporter.cpp" line="39"/>
+        <source>SAC GUI input file (*.txt, *.csv)</source>
+        <translation>SAC GUI 入力ファイル (*.txt, *.csv)</translation>
+    </message>
+    <message>
         <source>SAC GUI input file (*.txt)</source>
         <translation>SAC GUI 入力ファイル (*.txt)</translation>
     </message>

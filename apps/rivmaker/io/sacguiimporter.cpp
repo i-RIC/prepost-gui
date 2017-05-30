@@ -36,7 +36,7 @@ void registerToMap(const QString& name, GeometryPoint* p, std::map<QString, std:
 
 bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* newCrossSections, QWidget* w)
 {
-	QString fname = QFileDialog::getOpenFileName(w, tr("Select SAC GUI input file"), "", tr("SAC GUI input file (*.txt)"));
+	QString fname = QFileDialog::getOpenFileName(w, tr("Select SAC GUI input file"), "", tr("SAC GUI input file (*.txt, *.csv)"));
 	if (fname.isNull()) {return false;}
 
 	QPointF offset = project->offset();
@@ -59,6 +59,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 
 	do {
 		QString line = stream.readLine();
+		line.replace(",", "\t");
 		QStringList frags = line.split("\t");
 		if (frags.size() < 5) {continue;}
 		double x, y, z;

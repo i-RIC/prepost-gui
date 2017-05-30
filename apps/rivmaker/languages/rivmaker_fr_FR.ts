@@ -79,14 +79,20 @@
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="251"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="279"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="271"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="284"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="251"/>
-        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="279"/>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="284"/>
         <source>Base line is not defined yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="271"/>
+        <source>Point can not be deleted when there are only two points.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -138,7 +144,7 @@
     <name>CrossSection</name>
     <message>
         <location filename="../data/crosssection/crosssection.cpp" line="40"/>
-        <source>X%1</source>
+        <source>SEC%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -970,7 +976,7 @@
     </message>
     <message>
         <location filename="../io/sacguiimporter.cpp" line="39"/>
-        <source>SAC GUI input file (*.txt)</source>
+        <source>SAC GUI input file (*.txt, *.csv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
