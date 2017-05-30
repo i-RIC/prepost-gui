@@ -63,8 +63,8 @@ void CrossSectionWindow::updateView()
 	ui->crossSectionComboBox->setCurrentIndex(idx);
 	ui->crossSectionComboBox->blockSignals(false);
 
-	// update Plot
 	updateCurve();
+	updateWindowTitle();
 }
 
 void CrossSectionWindow::handleSelectionChange(int selected)
@@ -120,4 +120,14 @@ void CrossSectionWindow::updateCurve()
 	m_waterElevationMarker->setYValue(m_currentCrossSection->waterElevation());
 
 	ui->qwtWidget->replot();
+}
+
+void CrossSectionWindow::updateWindowTitle()
+{
+	if (m_currentCrossSection == nullptr) {
+		setWindowTitle(tr("Cross Section Window"));
+		return;
+	}
+	auto title = tr("Cross Section Window : %1").arg(m_currentCrossSection->name());
+	setWindowTitle(title);
 }

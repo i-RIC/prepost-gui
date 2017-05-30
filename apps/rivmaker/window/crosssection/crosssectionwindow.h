@@ -30,6 +30,7 @@ private slots:
 private:
 	void initCurve();
 	void updateCurve();
+	void updateWindowTitle();
 
 	Ui::CrossSectionWindow *ui;
 
