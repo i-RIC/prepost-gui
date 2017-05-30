@@ -12,6 +12,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QRegExp>
 
 CrossSectionPreProcessorController::Impl::Impl() :
 	m_mode {Mode::BeforeDefining},
@@ -91,6 +92,26 @@ void CrossSectionPreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v
 void CrossSectionPreProcessorController::setupViewRightClickMenu(QMenu* menu)
 {
 	menu->addAction(impl->m_editCoordinatesAction);
+}
+
+void CrossSectionPreProcessorController::handleStandardItemChange(QStandardItem* sitem)
+{
+	QString newName = sitem->text();
+	QRegExp xnum("X[0-9]+");
+	QRegExp num("[0-9\\.]+");
+	bool isDouble;
+
+	newName.toDouble(&isDouble);
+
+	auto cs = dynamic_cast<CrossSection*> (item());
+	if (xnum.exactMatch(newName)) {
+		cs->setName(newName);
+	} else if (num.exactMatch(newName) && isDouble) {
+		cs->setName(newName);
+	} else {
+		QMessageBox::warning(view(), tr("Warning"), tr("Invalid name for cross section. The name should be \"X1\", \"X2\", ..."));
+		sitem->setText(cs->name());
+	}
 }
 
 void CrossSectionPreProcessorController::editCoordinates()

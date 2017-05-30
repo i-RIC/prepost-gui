@@ -18,6 +18,8 @@ public:
 
 	void setupViewRightClickMenu(QMenu* menu) override;
 
+	void handleStandardItemChange(QStandardItem* item) override;
+
 public slots:
 	void editCoordinates();
 

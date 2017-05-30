@@ -242,8 +242,16 @@ QAction* Model::deleteAction() const
 	return impl->m_deleteAction;
 }
 
-void Model::handleObjectBrowserChange(QStandardItem*)
+void Model::handleObjectBrowserChange(QStandardItem* item)
 {
+	auto ditem = impl->itemFromIndex(item->index());
+	if (ditem != nullptr) {
+		auto ctrl = dataItemController(ditem);
+		if (ctrl != nullptr) {
+			ctrl->handleStandardItemChange(item);
+		}
+	}
+
 	view()->update();
 }
 

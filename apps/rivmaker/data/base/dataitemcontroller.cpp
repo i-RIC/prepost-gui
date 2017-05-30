@@ -48,6 +48,9 @@ void DataItemController::setupObjectBrowserRightClickMenu(QMenu*)
 void DataItemController::setupViewRightClickMenu(QMenu*)
 {}
 
+void DataItemController::handleStandardItemChange(QStandardItem*)
+{}
+
 DataItem* DataItemController::item()
 {
 	return impl->m_item;

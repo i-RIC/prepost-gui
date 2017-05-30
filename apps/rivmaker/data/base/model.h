@@ -69,7 +69,7 @@ public:
 	QAction* deleteAction() const;
 
 private slots:
-	void handleObjectBrowserChange(QStandardItem*);
+	void handleObjectBrowserChange(QStandardItem* item);
 	void handleObjectBrowserPress(const QModelIndex& index);
 
 	void handleObjectBrowserSelection(const QModelIndex& current);

@@ -10,6 +10,7 @@ class View;
 class QMenu;
 class QMouseEvent;
 class QKeyEvent;
+class QStandardItem;
 class QWheelEvent;
 
 class DataItemController : public QObject
@@ -32,6 +33,8 @@ public:
 
 	virtual void setupObjectBrowserRightClickMenu(QMenu* menu);
 	virtual void setupViewRightClickMenu(QMenu* menu);
+
+	virtual void handleStandardItemChange(QStandardItem* item);
 
 protected:
 	DataItem* item();
