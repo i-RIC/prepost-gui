@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QProcess>
+#include <QString>
 
 InstallerTool::InstallerTool()
 {}
@@ -17,7 +18,7 @@ void InstallerTool::openMaintainanceDialog()
 	QProcess process;
 	QStringList args;
 	args << "--skip-gui";
-	process.start(installerFileName());
+	process.start(QString("\"%1\"").arg(installerFileName()));
 	bool finished = false;
 	while (! finished) {
 		finished = process.waitForFinished(100);

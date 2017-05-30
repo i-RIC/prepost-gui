@@ -2124,7 +2124,7 @@ void iRICMainWindow::launchExternalTool()
 	for (SolverDefinitionAbstract* tool : m_guiToolList->solverList()) {
 		if (tool->caption() == a->text()) {
 			SolverDefinition def(tool->folder().absolutePath(), m_locale);
-			QProcess::startDetached(def.executableFilename());
+			QProcess::startDetached(QString("\"%1\"").arg(def.executableFilename()));
 			return;
 		}
 	}
