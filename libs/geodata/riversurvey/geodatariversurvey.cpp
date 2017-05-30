@@ -1585,6 +1585,8 @@ void GeoDataRiverSurvey::updateShapeData()
 		col->AddItem(m_backgroundActor);
 		m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
 	}
+	m_crosssectionLinesActor->VisibilityOff();
+
 	if (m_setting.showLines) {
 		col->AddItem(m_crosssectionLinesActor);
 		m_crosssectionLinesActor->GetProperty()->SetColor(m_setting.crosssectionLinesColor);
