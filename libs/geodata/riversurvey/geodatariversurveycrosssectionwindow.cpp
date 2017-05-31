@@ -143,6 +143,11 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBar()
 	spacer->setFixedWidth(10);
 	ui->toolBar->addWidget(spacer);
 
+	m_autoRescaleCheckBox = new QCheckBox(this);
+	m_autoRescaleCheckBox->setText(tr("Auto rescale"));
+	m_autoRescaleCheckBox->setChecked(true);
+	ui->toolBar->addWidget(m_autoRescaleCheckBox);
+
 	ui->weSpinBox->setEnabled(false);
 
 	connect(m_crosssectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(crosssectionComboBoxChange(int)));
@@ -218,6 +223,10 @@ void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(const QString& crosss
 	m_crosssectionComboBox->blockSignals(false);
 
 	updateEditTargetPoint();
+
+	if (m_autoRescaleCheckBox->isChecked()) {
+		cameraFit();
+	}
 	// set window title.
 	setWindowTitle(QString(tr("Crosssection Window : %2").arg(crosssection)));
 }

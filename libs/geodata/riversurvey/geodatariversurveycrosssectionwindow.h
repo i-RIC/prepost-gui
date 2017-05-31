@@ -11,22 +11,22 @@
 #include <QMainWindow>
 #include <QList>
 #include <QIcon>
-#include <QCheckBox>
-#include <QDoubleSpinBox>
 #include <QUndoCommand>
 
-class GeoDataRiverSurvey;
 class GeoDataRiverPathPoint;
+class GeoDataRiverSurvey;
+class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
+class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
+class PreProcessorGeoDataGroupDataItemInterface;
+
+class QAction;
 class QComboBox;
 class QStandardItemModel;
 class QItemSelectionModel;
 class QModelIndex;
 class QTableView;
 class QTableWidgetItem;
-class QAction;
-class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
-class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
-class PreProcessorGeoDataGroupDataItemInterface;
+class QCheckBox;
 
 namespace Ui
 {
@@ -135,6 +135,7 @@ private:
 	QList<QString> m_crosssectionNames;
 
 	QComboBox* m_crosssectionComboBox;
+	QCheckBox* m_autoRescaleCheckBox;
 
 	bool m_settingUp;
 	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;
