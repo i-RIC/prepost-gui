@@ -514,8 +514,8 @@ void InputConditionWidgetFunctionalDialog::accept()
 	if (! ok) {return;}
 
 	saveModel();
-	emit accepted();
-	hide();
+
+	QDialog::accept();
 }
 
 void InputConditionWidgetFunctionalDialog::updateSpanColumns()
