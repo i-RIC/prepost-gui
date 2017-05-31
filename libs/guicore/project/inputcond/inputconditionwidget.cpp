@@ -23,6 +23,9 @@ const std::vector<InputConditionDependency*>& InputConditionWidget::dependencies
 	return m_dependencies;
 }
 
+void InputConditionWidget::checkImportSourceUpdate()
+{}
+
 QList<QDomNode> InputConditionWidget::getEnums(QDomNode defNode)
 {
 	QDomNode enumsNode = iRIC::getChildNode(defNode, "Enumerations");

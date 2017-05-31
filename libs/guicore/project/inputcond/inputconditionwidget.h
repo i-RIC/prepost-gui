@@ -24,6 +24,7 @@ public:
 	const std::vector<InputConditionDependency*>& dependencies() const;
 
 	virtual void addTooltip(const QString& tooltip) = 0;
+	virtual void checkImportSourceUpdate();
 
 	static const int margin = 0;
 	static QList<QDomNode> getEnums(QDomNode defNode);

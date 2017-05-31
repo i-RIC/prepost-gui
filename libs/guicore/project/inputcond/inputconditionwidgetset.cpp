@@ -45,6 +45,14 @@ InputConditionWidget* InputConditionWidgetSet::widget(const std::string& name) c
 	return m_widgets.value(name);
 }
 
+void InputConditionWidgetSet::checkImportSourceUpdate()
+{
+	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
+		InputConditionWidget* w = *it;
+		w->checkImportSourceUpdate();
+	}
+}
+
 void InputConditionWidgetSet::clear()
 {
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
