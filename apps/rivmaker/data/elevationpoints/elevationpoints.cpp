@@ -21,6 +21,8 @@ ElevationPoints::Impl::Impl(ElevationPoints *points) :
 
 void ElevationPoints::Impl::buildTriangles()
 {
+	if (m_parent->points().size() < 3) {return;}
+
 	triangulateio in, out;
 
 	auto points = m_parent->points();
