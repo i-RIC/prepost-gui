@@ -69,6 +69,7 @@ public:
 	bool exportInputCondition(const QString& filename);
 	bool isInputConditionSet();
 	GridState checkGridState();
+	void checkCalculationConditionImportSourceUpdate() override;
 	/// Check grid shape and if problems found, returns warning message.
 	QString checkGrid(bool detail) override;
 	void showEvent(QShowEvent* e) override;

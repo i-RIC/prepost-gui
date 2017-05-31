@@ -302,3 +302,8 @@ void InputConditionDialog::setReadOnly(bool readonly)
 		ui->buttonBox->button(QDialogButtonBox::Reset)->setEnabled(true);
 	}
 }
+
+void InputConditionDialog::checkImportSourceUpdate()
+{
+	m_widgetSet->checkImportSourceUpdate();
+}

@@ -41,6 +41,8 @@ public:
 	/// Set Readonly mode
 	void setReadOnly(bool readonly);
 
+	void checkImportSourceUpdate();
+
 public slots:
 	void accept() override;
 	void reject() override;

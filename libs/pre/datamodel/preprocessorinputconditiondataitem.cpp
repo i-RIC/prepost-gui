@@ -81,6 +81,21 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 	m_isSet = true;
 }
 
+ProjectData* PreProcessorInputConditionDataItem::projectData() const
+{
+	return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());
+}
+
+void PreProcessorInputConditionDataItem::handleStandardItemDoubleClicked()
+{
+	showDialog();
+}
+
+void PreProcessorInputConditionDataItem::checkImportSourceUpdate()
+{
+	m_dialog->checkImportSourceUpdate();
+}
+
 bool PreProcessorInputConditionDataItem::importInputCondition(const QString& filename)
 {
 	projectData()->mainfile()->postSolutionInfo()->close();
@@ -109,4 +124,19 @@ bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& fil
 	} else {
 		return m_dialog->doExport(filename);
 	}
+}
+
+bool PreProcessorInputConditionDataItem::isSet() const
+{
+	return m_isSet;
+}
+
+bool PreProcessorInputConditionDataItem::isSetupCorrectly() const
+{
+	return m_dialog != nullptr;
+}
+
+void PreProcessorInputConditionDataItem::setModified(bool modified)
+{
+	PreProcessorDataItem::setModified(modified);
 }

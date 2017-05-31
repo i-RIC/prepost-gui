@@ -22,7 +22,6 @@ InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode,
 	connect(button, SIGNAL(clicked()), this, SLOT(openDialog()));
 
 	m_dialog = new InputConditionWidgetFunctionalDialog(defnode, t, this);
-	connect(m_dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
 }
 
 InputConditionWidgetFunctional::~InputConditionWidgetFunctional()
@@ -41,14 +40,18 @@ void InputConditionWidgetFunctional::addTooltip(const QString& tooltip)
 	l->insertWidget(1, tt);
 }
 
+void InputConditionWidgetFunctional::checkImportSourceUpdate()
+{
+	if (m_dialog->checkImportSourceUpdate()) {
+		*m_container = m_dialog->container();
+	}
+}
+
 void InputConditionWidgetFunctional::openDialog()
 {
 	m_dialog->setData(*m_container);
-	m_dialog->setModal(true);
-	m_dialog->show();
-}
+	int ret = m_dialog->exec();
+	if (ret == QDialog::Rejected) {return;}
 
-void InputConditionWidgetFunctional::dialogAccepted()
-{
 	*m_container = m_dialog->container();
 }

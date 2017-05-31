@@ -16,6 +16,7 @@ public:
 
 	virtual PreProcessorDataModelInterface* dataModel() const = 0;
 	virtual bool checkMappingStatus() = 0;
+	virtual void checkCalculationConditionImportSourceUpdate() = 0;
 	virtual QString checkGrid(bool detail) = 0;
 };
 

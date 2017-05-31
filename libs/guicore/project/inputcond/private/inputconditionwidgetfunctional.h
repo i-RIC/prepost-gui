@@ -19,10 +19,10 @@ public:
 
 	void setCaption(const QString& caption);
 	void addTooltip(const QString& tooltip) override;
+	void checkImportSourceUpdate() override;
 
 private slots:
 	void openDialog();
-	void dialogAccepted();
 
 private:
 	InputConditionContainerFunctional* m_container;

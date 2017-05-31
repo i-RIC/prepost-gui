@@ -74,6 +74,54 @@ void InputConditionWidgetFunctionalDialog::clearGraphData()
 	m_graphCurves.clear();
 }
 
+bool InputConditionWidgetFunctionalDialog::importFromCsv(const QString& fileName)
+{
+	QFile file(fileName);
+	if (! file.open(QFile::ReadOnly | QFile::Text)) {
+		QMessageBox::critical(this, tr("Error"), tr("Error occured while opening the file."));
+		return false;
+	}
+	QTextStream stream(&file);
+	QString line;
+	clear();
+	int row = 0;
+	m_preventGraph = true;
+	m_model->blockSignals(true);
+	do {
+		line = stream.readLine();
+		if (! line.isEmpty()) {
+			QVariant tmp;
+			QVariant tmp2;
+			m_model->insertRow(row);
+			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
+			tmp = pieces.value(0);
+			(*m_paramfunc)(tmp, tmp2);
+			m_model->setData(m_model->index(row, 0), tmp2);
+			for (int i = 0; i < m_valuefuncs.size(); ++i) {
+				tmp = pieces.value(i + 1);
+				(*m_valuefuncs[i])(tmp, tmp2);
+				m_model->setData(m_model->index(row, i + 1), tmp2);
+			}
+			row++;
+		}
+	} while (! line.isEmpty());
+	file.close();
+	m_model->blockSignals(false);
+	m_preventGraph = false;
+
+	int rows = m_model->rowCount();
+	for (int i = 0; i < rows; ++i) {
+		ui->tableView->setRowHeight(i, InputConditionWidgetFunctionalDialog::defaultRowHeight);
+	}
+	sort();
+
+	QFileInfo finfo(fileName);
+	m_importedCsvFileName = fileName;
+	m_importedCsvLastModified = finfo.lastModified();
+
+	return true;
+}
+
 void InputConditionWidgetFunctionalDialog::setInt(const QVariant& v, QVariant& target)
 {
 	target = v.toInt();
@@ -376,44 +424,7 @@ void InputConditionWidgetFunctionalDialog::importFromCsv()
 	dir = QFileInfo(fileName).absolutePath();
 	LastIODirectory::set(dir);
 
-	QFile file(fileName);
-	if (! file.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::critical(this, tr("Error"), tr("Error occured while opening the file."));
-		return;
-	}
-	QTextStream stream(&file);
-	QString line;
-	clear();
-	int row = 0;
-	m_preventGraph = true;
-	m_model->blockSignals(true);
-	do {
-		line = stream.readLine();
-		if (! line.isEmpty()) {
-			QVariant tmp;
-			QVariant tmp2;
-			m_model->insertRow(row);
-			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-			tmp = pieces.value(0);
-			(*m_paramfunc)(tmp, tmp2);
-			m_model->setData(m_model->index(row, 0), tmp2);
-			for (int i = 0; i < m_valuefuncs.size(); ++i) {
-				tmp = pieces.value(i + 1);
-				(*m_valuefuncs[i])(tmp, tmp2);
-				m_model->setData(m_model->index(row, i + 1), tmp2);
-			}
-			row++;
-		}
-	} while (! line.isEmpty());
-	file.close();
-	m_model->blockSignals(false);
-	m_preventGraph = false;
-
-	int rows = m_model->rowCount();
-	for (int i = 0; i < rows; ++i) {
-		ui->tableView->setRowHeight(i, InputConditionWidgetFunctionalDialog::defaultRowHeight);
-	}
-	sort();
+	importFromCsv(fileName);
 }
 
 void InputConditionWidgetFunctionalDialog::exportToCsv()
@@ -482,6 +493,19 @@ void InputConditionWidgetFunctionalDialog::setData(const InputConditionContainer
 {
 	m_container = c;
 	setupData();
+}
+
+bool InputConditionWidgetFunctionalDialog::checkImportSourceUpdate()
+{
+	if (m_importedCsvFileName.isNull()) {return false;}
+	QFileInfo finfo(m_importedCsvFileName);
+	if (finfo.lastModified() == m_importedCsvLastModified) {return false;}
+
+	QString msg = tr("File %1 is updated after imporeted to calculation condition %2. Do you want to import the updated file?").arg(QDir::toNativeSeparators(m_importedCsvFileName)).arg(windowTitle());
+	int ret = QMessageBox::information(this, tr("Information"), msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return false;}
+
+	return importFromCsv(m_importedCsvFileName);
 }
 
 void InputConditionWidgetFunctionalDialog::accept()

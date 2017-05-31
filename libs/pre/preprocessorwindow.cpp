@@ -1,6 +1,7 @@
 #include "datamodel/preprocessorgridandgridcreatingconditiondataitem.h"
 #include "datamodel/preprocessorgriddataitem.h"
 #include "datamodel/preprocessorgridtypedataitem.h"
+#include "datamodel/preprocessorinputconditiondataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
 #include "preobjectbrowser.h"
 #include "preobjectbrowserview.h"
@@ -147,11 +148,18 @@ PreProcessorWindow::GridState PreProcessorWindow::checkGridState()
 	}
 }
 
+void PreProcessorWindow::checkCalculationConditionImportSourceUpdate()
+{
+	PreProcessorDataModel* m = model();
+	auto icItem = m->rootDataItem()->inputConditionDataItem();
+	icItem->checkImportSourceUpdate();
+}
+
 QString PreProcessorWindow::checkGrid(bool detail)
 {
 	QString ret;
 	PreProcessorDataModel* m = model();
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m->rootDataItem());
+	PreProcessorRootDataItem* root = m->rootDataItem();
 	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
 	QList<QString> gridNames;
 	QList<QString> gridMessages;

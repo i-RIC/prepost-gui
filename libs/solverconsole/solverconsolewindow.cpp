@@ -117,6 +117,8 @@ void SolverConsoleWindow::startSolver()
 		return;
 	}
 
+	// Check calculation condition status
+	impl->m_projectData->mainWindow()->preProcessorWindow()->checkCalculationConditionImportSourceUpdate();
 	// Check grid is ready
 	bool ok = impl->m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
 	if (! ok) {return;}

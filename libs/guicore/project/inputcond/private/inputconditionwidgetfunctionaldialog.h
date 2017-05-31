@@ -4,10 +4,12 @@
 #include "../inputconditioncontainerfunctional.h"
 #include "../../colorsource.h"
 
-#include <QString>
-#include <QWidget>
+#include <QDateTime>
 #include <QDialog>
 #include <QDomNode>
+#include <QString>
+#include <QWidget>
+
 #include <qwt_plot_curve.h>
 
 #include <vector>
@@ -38,6 +40,8 @@ public:
 	const InputConditionContainerFunctional& container() const;
 	void setData(const InputConditionContainerFunctional& c);
 
+	bool checkImportSourceUpdate();
+
 public slots:
 	void accept() override;
 
@@ -58,6 +62,8 @@ private:
 	void setupConnections();
 	void saveModel();
 	void clearGraphData();
+
+	bool importFromCsv(const QString& fileName);
 
 	void setupXYStandard(int row, std::vector<double>* x, std::vector<double>* y);
 	void setupXYStep(int row, std::vector<double>* x, std::vector<double>* y);
@@ -105,6 +111,9 @@ private:
 	bool m_preventSort;
 
 	ColorSource m_colorSource;
+
+	QString m_importedCsvFileName;
+	QDateTime m_importedCsvLastModified;
 
 	Ui::InputConditionWidgetFunctionalDialog* ui;
 
