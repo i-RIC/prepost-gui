@@ -147,7 +147,6 @@
         <translation>X%1</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssection.cpp" line="40"/>
         <source>SEC%1</source>
         <translation>SEC%1</translation>
     </message>
@@ -155,17 +154,23 @@
 <context>
     <name>CrossSectionPreProcessorController</name>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="19"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="20"/>
         <source>&amp;Edit Coordinates...</source>
         <translation>座標の編集(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
+        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
+    </message>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
     </message>
@@ -187,6 +192,7 @@
     <name>CrossSectionWindow</name>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="128"/>
         <source>Cross Section Window</source>
         <translation>断面ウィンドウ</translation>
     </message>
@@ -204,6 +210,11 @@
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="84"/>
         <source>Elevation</source>
         <translation>標高</translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="131"/>
+        <source>Cross Section Window : %1</source>
+        <translation>断面ウィンドウ : %1</translation>
     </message>
 </context>
 <context>
@@ -1016,6 +1027,10 @@
     </message>
     <message>
         <location filename="../io/sacguiimporter.cpp" line="39"/>
+        <source>SAC GUI input file (*.txt *.csv)</source>
+        <translation>SAC GUI 入力ファイル (*.txt *.csv)</translation>
+    </message>
+    <message>
         <source>SAC GUI input file (*.txt, *.csv)</source>
         <translation>SAC GUI 入力ファイル (*.txt, *.csv)</translation>
     </message>

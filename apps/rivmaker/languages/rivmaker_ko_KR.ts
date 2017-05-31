@@ -141,27 +141,25 @@
     </message>
 </context>
 <context>
-    <name>CrossSection</name>
-    <message>
-        <location filename="../data/crosssection/crosssection.cpp" line="40"/>
-        <source>SEC%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>CrossSectionPreProcessorController</name>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="19"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="20"/>
         <source>&amp;Edit Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="100"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
         <source>Cross Section is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -183,6 +181,7 @@
     <name>CrossSectionWindow</name>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="128"/>
         <source>Cross Section Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -199,6 +198,11 @@
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="84"/>
         <source>Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="131"/>
+        <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -976,7 +980,7 @@
     </message>
     <message>
         <location filename="../io/sacguiimporter.cpp" line="39"/>
-        <source>SAC GUI input file (*.txt, *.csv)</source>
+        <source>SAC GUI input file (*.txt *.csv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
