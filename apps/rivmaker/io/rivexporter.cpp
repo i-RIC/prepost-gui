@@ -13,10 +13,19 @@
 
 #include <string>
 
+RivExporter::RivExporter() :
+	m_rivFileName {},
+	m_csvFileName {}
+{}
+
 bool RivExporter::exportData(const Project& project, QWidget* w)
 {
-	QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), "", tr("River Survey Data(*.riv)"));
+	QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), m_rivFileName, tr("River Survey Data(*.riv)"));
 	if (fname.isNull()) {return false;}
+
+	m_rivFileName = fname;
+	QFileInfo finfo(fname);
+	m_csvFileName = QString("%1/%2_wse.csv").arg(finfo.absolutePath()).arg(finfo.baseName());
 
 	QFile file(fname);
 	if (! file.open(QIODevice::WriteOnly)) {
@@ -55,22 +64,30 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	}
 	file.close();
 
-	QFileInfo finfo(fname);
-	QFile file2(QString("%1/%2_wse.csv").arg(finfo.absolutePath()).arg(finfo.baseName()));
-	if (! file2.open(QIODevice::WriteOnly)) {
-		QMessageBox::critical(w, tr("Error"), tr("%1 could not be opened.").arg(QDir::toNativeSeparators(file2.fileName())));
+	return exportCsvData(project, w);
+}
+
+bool RivExporter::exportCsvData(const Project &project, QWidget *w)
+{
+	if (m_csvFileName.isNull()) {
+		QString fname = QFileDialog::getSaveFileName(w, tr("CSV File name to export"), "", tr("CSV file(*.csv)"));
+		if (fname.isNull()) {return false;}
+
+		m_csvFileName = fname;
+	}
+	QFile file(m_csvFileName);
+	if (! file.open(QIODevice::WriteOnly)) {
+		QMessageBox::critical(w, tr("Error"), tr("%1 could not be opened.").arg(QDir::toNativeSeparators(file.fileName())));
 		return false;
 	}
 
-	QTextStream ts2(&file2);
-	ts2 << "CrossSection" << "," << "Elevation" << endl;
+	const auto& cs = project.crossSections();
+	QTextStream ts(&file);
+	ts << "CrossSection" << "," << "Elevation" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
-		ts2 << s->name() << "," << s->waterElevation() << endl;
+		ts << s->name() << "," << s->waterElevation() << endl;
 	}
-	file2.close();
+	file.close();
 
 	return true;
 }
-
-RivExporter::RivExporter()
-{}

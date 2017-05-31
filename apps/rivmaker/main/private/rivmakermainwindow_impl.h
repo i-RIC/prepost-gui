@@ -2,6 +2,7 @@
 #define RIVMAKERMAINWINDOW_IMPL_H
 
 #include "../rivmakermainwindow.h"
+#include "../../io/rivexporter.h"
 #include "../../widgets/mousepositionwidget.h"
 #include "../../widgets/valuewidget.h"
 #include "../../window/preprocessor/preprocessorwindow.h"
@@ -23,6 +24,8 @@ public:
 
 	QToolBar m_windowsToolBar;
 	QSignalMapper m_windowActivationMapper;
+
+	RivExporter m_rivExporter;
 
 	ValueWidget m_valueWidget;
 	MousePositionWidget m_mousePositionWidget;

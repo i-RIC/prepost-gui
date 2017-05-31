@@ -20,6 +20,8 @@ public:
 	explicit RivmakerMainWindow(QWidget *parent = 0);
 	~RivmakerMainWindow();
 
+	void exportWaterSurfaceElevationData();
+
 private slots:
 	void newProject();
 

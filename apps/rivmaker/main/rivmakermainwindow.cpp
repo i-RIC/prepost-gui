@@ -149,7 +149,16 @@ void RivmakerMainWindow::exportRiverSurveyData()
 		QMessageBox::warning(this, tr("Error"), tr("No data to export exists"));
 		return;
 	}
-	RivExporter::exportData(*(impl->m_project), this);
+	impl->m_rivExporter.exportData(*(impl->m_project), this);
+}
+
+void RivmakerMainWindow::exportWaterSurfaceElevationData()
+{
+	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {
+		QMessageBox::warning(this, tr("Error"), tr("No data to export exists"));
+		return;
+	}
+	impl->m_rivExporter.exportCsvData(*(impl->m_project), this);
 }
 
 void RivmakerMainWindow::fit()

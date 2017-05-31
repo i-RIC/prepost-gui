@@ -10,6 +10,7 @@
 #include "../../data/rightbankhwm/rightbankhwm.h"
 #include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 #include "../../geom/geometrypoint.h"
+#include "../../main/rivmakermainwindow.h"
 
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
@@ -87,11 +88,13 @@ namespace {
 	};
 }
 
-VerticalCrossSectionWindow::VerticalCrossSectionWindow(QWidget *parent) :
-	QWidget(parent),
+VerticalCrossSectionWindow::VerticalCrossSectionWindow(RivmakerMainWindow *parent) :
+	QWidget {parent},
+	m_mainWindow {parent},
 	ui(new Ui::VerticalCrossSectionWindow)
 {
 	ui->setupUi(this);
+	connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportWaterSurfaceElevation()));
 
 	QList<int> sizes;
 	sizes << 300 << 100;
@@ -138,6 +141,11 @@ void VerticalCrossSectionWindow::handleTableEdit(QStandardItem* editedItem)
 	crossSections.crossSectionVector().at(row)->setWaterElevation(val);
 
 	m_project->emitUpdated();
+}
+
+void VerticalCrossSectionWindow::exportWaterSurfaceElevation()
+{
+	m_mainWindow->exportWaterSurfaceElevationData();
 }
 
 void VerticalCrossSectionWindow::initPlot()

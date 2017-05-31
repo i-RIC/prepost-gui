@@ -7,6 +7,7 @@
 #include <vector>
 
 class Project;
+class RivmakerMainWindow;
 
 class QwtPlotCurve;
 class QwtPlotMarker;
@@ -20,7 +21,7 @@ class VerticalCrossSectionWindow : public QWidget
 	Q_OBJECT
 
 public:
-	explicit VerticalCrossSectionWindow(QWidget *parent = 0);
+	explicit VerticalCrossSectionWindow(RivmakerMainWindow *parent);
 	~VerticalCrossSectionWindow();
 
 	void setProject(Project* project);
@@ -28,6 +29,7 @@ public:
 private slots:
 	void updateView();
 	void handleTableEdit(QStandardItem* editedItem);
+	void exportWaterSurfaceElevation();
 
 private:
 	void initPlot();
@@ -54,6 +56,7 @@ private:
 	QStandardItemModel m_tableModel;
 
 	Project* m_project;
+	RivmakerMainWindow* m_mainWindow;
 	Ui::VerticalCrossSectionWindow *ui;
 };
 
