@@ -29,11 +29,13 @@ public:
 	/// Constructor
 	iRICMainWindowActionManager(iRICMainWindow* parent);
 	/// Return the menubar it manages.
-	QMenuBar* menuBar() {return m_menuBar;}
+	QMenuBar* menuBar() const;
 	/// Return the main toolbar.
-	QToolBar* mainToolBar() {return m_mainToolBar;}
+	QToolBar* mainToolBar() const;
+	QToolBar* additionalToolBar() const;
+	QToolBar* animationToolbar() const;
 	/// Return the toolbar of window list
-	QToolBar* windowsToolBar(){return m_windowsToolBar;}
+	QToolBar* windowsToolBar() const;
 	/// Set new project data, and create appropriate connections.
 	void setProjectData(ProjectData* d);
 	/// Set the pointer of animation menu.
@@ -45,15 +47,9 @@ public:
 	 * shown / hidden in this function.
 	 */
 	void updateMenuBar();
-	void setAdditionalMenus(const QList<QMenu*>& menus) {
-		m_additionalMenus = menus;
-	}
-	QToolBar* additionalToolBar() {return m_additionalToolBar;}
-	QToolBar* animationToolbar() {return m_animationToolbar;}
-	void unregisterAdditionalToolBar() {
-		m_additionalToolBar = nullptr;
-	}
-	QMenu* recentProjectsMenu() {return m_recentProjectsMenu;}
+	void setAdditionalMenus(const QList<QMenu*>& menus);
+	void unregisterAdditionalToolBar();
+	QMenu* recentProjectsMenu() const;
 	void setMode(Mode mode);
 	void informSubWindowChange(QWidget* subwindow);
 	/// Signal mapper to map signals to create new project.
@@ -164,8 +160,6 @@ public:
 	/// Action to zoom out in Y direction
 	QAction* cameraZoomOutYAction;
 
-	/// Action to edit CGNS file list.
-	QAction* cgnsEditDialogAction;
 	/// Action to run solver
 	QAction* solverRunAction;
 	/// Action to stop solver
@@ -186,10 +180,6 @@ public:
 	QAction* windowCreateNew2dBirdEyePostProcessorAction;
 	/// Action to open new 3D Post Processor Window.
 	QAction* windowCreateNew3dPostProcessorAction;
-	/// Action to open new graph window (position x-axis)
-//	QAction* windowCreateNewGraph2dPositionWindowAction;
-	/// Action to open new graph window (time x-axis)
-//	QAction* windowCreateNewGraph2dTimeWindowAction;
 	/// Action to open new graph window (hybrid).
 	QAction* windowCreateNewGraph2dHybridWindowAction;
 	/// Action to open new scattered chart window

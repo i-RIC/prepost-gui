@@ -33,6 +33,31 @@ iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)
 	init();
 }
 
+QMenuBar* iRICMainWindowActionManager::menuBar() const
+{
+	return m_menuBar;
+}
+
+QToolBar* iRICMainWindowActionManager::mainToolBar() const
+{
+	return m_mainToolBar;
+}
+
+QToolBar* iRICMainWindowActionManager::additionalToolBar() const
+{
+	return m_additionalToolBar;
+}
+
+QToolBar* iRICMainWindowActionManager::animationToolbar() const
+{
+	return m_animationToolbar;
+}
+
+QToolBar* iRICMainWindowActionManager::windowsToolBar() const
+{
+	return m_windowsToolBar;
+}
+
 void iRICMainWindowActionManager::init()
 {
 	m_isPostWindowActive = false;
@@ -445,9 +470,6 @@ void iRICMainWindowActionManager::setupSimulationMenu()
 
 	m_simulationMenu->addAction(m_parent->solverConsoleWindow()->exportLogAction);
 
-	cgnsEditDialogAction = new QAction(tr("&Edit case list..."), m_simulationMenu);
-//	m_simulationMenu->addAction(cgnsEditDialogAction);
-
 	connect(m_parent->solverConsoleWindow(), SIGNAL(solverStarted()), this, SLOT(handleSolverStart()));
 	connect(m_parent->solverConsoleWindow(), SIGNAL(solverFinished()), this, SLOT(handleSolverFinish()));
 
@@ -457,9 +479,6 @@ void iRICMainWindowActionManager::setupSimulationMenu()
 
 void iRICMainWindowActionManager::setupWindowMenu()
 {
-//	m_windowMenu = new QMenu(tr("&Window"), m_menuBar);
-//	connect(m_windowMenu, SIGNAL(aboutToShow()), this, SLOT(updateWindowList()));
-
 	windowFocusPreProcessorAction = new QAction(tr("Focus &PreProcessor Window"), this);
 	windowFocusPreProcessorAction->setIcon(QIcon(":/images/iconPreprocessing.png"));
 	connect(windowFocusPreProcessorAction, SIGNAL(triggered()), m_parent, SLOT(focusPreProcessorWindow()));
@@ -507,18 +526,7 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	connect(windowCreateNew3dPostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create3dPostWindow()));
 
 	m_resultMenu->addSeparator();
-	/*
-		windowCreateNewGraph2dPositionWindowAction = new QAction(tr("Open new Graph Window (Position X-axis)"), m_resultMenu);
-		windowCreateNewGraph2dPositionWindowAction->setIcon(QIcon(":/images/iconVisGraphPosition.png"));
-		m_resultMenu->addAction(windowCreateNewGraph2dPositionWindowAction);
-		connect(windowCreateNewGraph2dPositionWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dPositionWindow()));
-	*/
-	/*
-		windowCreateNewGraph2dTimeWindowAction = new QAction(tr("Open new Graph Window (Time X-axis)"), m_resultMenu);
-		windowCreateNewGraph2dTimeWindowAction->setIcon(QIcon(":/images/iconVisGraphTime.png"));
-		m_resultMenu->addAction(windowCreateNewGraph2dTimeWindowAction);
-		connect(windowCreateNewGraph2dTimeWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dTimeWindow()));
-	*/
+
 	windowCreateNewGraph2dHybridWindowAction = new QAction(tr("Open new Graph Window"), m_resultMenu);
 	windowCreateNewGraph2dHybridWindowAction->setIcon(QIcon(":/images/iconVisGraphHybrid.png"));
 	m_resultMenu->addAction(windowCreateNewGraph2dHybridWindowAction);
@@ -560,6 +568,8 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	calcResultExportActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
 	connect(calcResultExportActionInCalcMenu, SIGNAL(triggered()), m_parent, SLOT(exportCalculationResult()));
 	m_resultMenu->addAction(calcResultExportActionInCalcMenu);
+
+	m_resultMenu->addAction(m_parent->solverConsoleWindow()->exportLogAction);
 
 	m_resultMenu->addSeparator();
 
@@ -893,6 +903,21 @@ void iRICMainWindowActionManager::updateMenuBar()
 	m_menuBar->addMenu(m_viewMenu);
 	m_menuBar->addMenu(m_optionMenu);
 	m_menuBar->addMenu(m_helpMenu);
+}
+
+void iRICMainWindowActionManager::setAdditionalMenus(const QList<QMenu*>& menus)
+{
+	m_additionalMenus = menus;
+}
+
+void iRICMainWindowActionManager::unregisterAdditionalToolBar()
+{
+	m_additionalToolBar = nullptr;
+}
+
+QMenu* iRICMainWindowActionManager::recentProjectsMenu() const
+{
+	return m_recentProjectsMenu;
 }
 
 void iRICMainWindowActionManager::setMode(Mode mode)
