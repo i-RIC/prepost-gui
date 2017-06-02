@@ -5,6 +5,8 @@
 
 class GridComplexConditionGroup;
 
+class QVBoxLayout;
+
 class GridComplexConditionGroupEditWidgetContainer : public QWidget
 {
 public:
@@ -15,6 +17,7 @@ public:
 
 private:
 	GridComplexConditionGroup* m_group;
+	QVBoxLayout* m_layout;
 };
 
 #endif // GRIDCOMPLEXCONDITIONGROUPEDITWIDGETCONTAINER_H

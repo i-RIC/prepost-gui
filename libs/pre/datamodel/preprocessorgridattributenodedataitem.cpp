@@ -13,6 +13,7 @@
 #include <guibase/widget/contoursettingwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
+#include <guicore/pre/complex/gridcomplexconditiongroup.h>
 #include <guicore/pre/complex/gridcomplexconditiongroupeditdialog.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -77,10 +78,15 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_openVXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Vertical Crosssection Window"), this);
 	m_openVXsectionWindowAction ->setDisabled(true);
 	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
+
+	m_groupEditDialog = new GridComplexConditionGroupEditDialog(mainWindow());
+	m_groupEditDialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 }
 
 PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
-{}
+{
+	delete m_groupEditDialog;
+}
 
 QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 {
@@ -268,11 +274,12 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 			return;
 		}
 		auto selectedV = gridDataItem->selectedVertices().at(0);
-		auto group = gItem->groups().at(selectedV);
-		GridComplexConditionGroupEditDialog dialog(mainWindow());
-		dialog.setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
-		dialog.setGroup(group);
-		dialog.exec();
+		GridComplexConditionGroup* group = gItem->groups().at(selectedV);
+
+		m_groupEditDialog->setGroup(group);
+		m_groupEditDialog->exec();
+
+		m_groupEditDialog->setGroup(nullptr);
 	} else {
 		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
 		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));

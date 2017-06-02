@@ -20,9 +20,10 @@ GridComplexConditionGroupEditDialog::~GridComplexConditionGroupEditDialog()
 void GridComplexConditionGroupEditDialog::setGroup(GridComplexConditionGroup* group)
 {
 	m_group = group;
-	m_backup = group->containerSet()->clone();
-
 	ui->editWidget->setGroup(group);
+	if (group == nullptr) {return;}
+
+	m_backup = group->containerSet()->clone();
 }
 
 void GridComplexConditionGroupEditDialog::reject()

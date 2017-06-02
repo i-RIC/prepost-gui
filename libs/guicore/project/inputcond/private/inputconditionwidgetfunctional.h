@@ -9,6 +9,8 @@ class InputConditionContainerSet;
 class InputConditionWidgetFunctionalDialog;
 class iRICMainWindow;
 
+class QDialog;
+
 class InputConditionWidgetFunctional : public InputConditionWidget
 {
 	Q_OBJECT

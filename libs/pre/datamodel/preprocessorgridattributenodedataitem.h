@@ -8,12 +8,15 @@
 
 #include <QList>
 
+class GridComplexConditionGroupEditDialog;
+class PreProcessorGridCrosssectionWindowProjectDataItem;
 class SolverDefinitionGridAttribute;
+class Structured2DGridCrosssectionEditCommand;
+
 class QAction;
+
 class vtkMapper;
 class vtkStructuredGrid;
-class PreProcessorGridCrosssectionWindowProjectDataItem;
-class Structured2DGridCrosssectionEditCommand;
 
 class PreProcessorGridAttributeNodeDataItem : public NamedGraphicWindowDataItem
 {
@@ -79,6 +82,8 @@ private:
 	void loadContourFromProjectMainFile(const QDomNode& node);
 
 	QList<PreProcessorGridCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
+
+	GridComplexConditionGroupEditDialog* m_groupEditDialog;
 
 public:
 	friend class Structured2DGridCrosssectionEditCommand;
