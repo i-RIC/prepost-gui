@@ -95,6 +95,14 @@ VerticalCrossSectionWindow::VerticalCrossSectionWindow(RivmakerMainWindow *paren
 {
 	ui->setupUi(this);
 	connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportWaterSurfaceElevation()));
+	connect(&m_tableModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleTableEdit(QStandardItem*)));
+	connect(ui->arbitraryCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->benchmarkCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->referenceMarkCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->hubCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->leftCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->rightCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(ui->streamGageCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
 
 	QList<int> sizes;
 	sizes << 300 << 100;
@@ -117,10 +125,6 @@ void VerticalCrossSectionWindow::setProject(Project* project)
 {
 	m_project = project;
 	connect(m_project, SIGNAL(updated()), this, SLOT(updateView()));
-	connect(&m_tableModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleTableEdit(QStandardItem*)));
-	connect(ui->arbitraryCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->leftCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->rightCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
 	updateView();
 }
 
@@ -178,6 +182,24 @@ void VerticalCrossSectionWindow::initPlot()
 	m_arbitraryCurve->setSymbol(s);
 	m_arbitraryCurve->attach(ui->qwtWidget);
 
+	m_benchmarkCurve = new QwtPlotCurve();
+	m_benchmarkCurve->setPen(Qt::transparent, 1);
+	s = new QwtSymbol(QwtSymbol::DTriangle, QBrush(Qt::black), QPen(Qt::NoPen), QSize(7, 7));
+	m_benchmarkCurve->setSymbol(s);
+	m_benchmarkCurve->attach(ui->qwtWidget);
+
+	m_referenceMarkCurve = new QwtPlotCurve();
+	m_referenceMarkCurve->setPen(Qt::transparent, 1);
+	s = new QwtSymbol(QwtSymbol::UTriangle, QBrush(Qt::black), QPen(Qt::NoPen), QSize(7, 7));
+	m_referenceMarkCurve->setSymbol(s);
+	m_referenceMarkCurve->attach(ui->qwtWidget);
+
+	m_hubCurve = new QwtPlotCurve();
+	m_hubCurve->setPen(Qt::transparent, 1);
+	s = new QwtSymbol(QwtSymbol::Diamond, QBrush(Qt::gray), QPen(Qt::NoPen), QSize(7, 7));
+	m_hubCurve->setSymbol(s);
+	m_hubCurve->attach(ui->qwtWidget);
+
 	m_leftBankCurve = new QwtPlotCurve();
 	m_leftBankCurve->setPen(Qt::transparent, 1);
 	s = new QwtSymbol(QwtSymbol::Rect, QBrush(Qt::blue), QPen(Qt::NoPen), QSize(7, 7));
@@ -189,6 +211,12 @@ void VerticalCrossSectionWindow::initPlot()
 	s = new QwtSymbol(QwtSymbol::Rect, QBrush(Qt::red), QPen(Qt::NoPen), QSize(7, 7));
 	m_rightBankCurve->setSymbol(s);
 	m_rightBankCurve->attach(ui->qwtWidget);
+
+	m_streamGageCurve = new QwtPlotCurve();
+	m_streamGageCurve->setPen(Qt::transparent, 1);
+	s = new QwtSymbol(QwtSymbol::Rect, QBrush(Qt::gray), QPen(Qt::NoPen), QSize(7, 7));
+	m_streamGageCurve->setSymbol(s);
+	m_streamGageCurve->attach(ui->qwtWidget);
 }
 
 void VerticalCrossSectionWindow::initTable()
@@ -213,6 +241,21 @@ void VerticalCrossSectionWindow::updatePlot()
 	} else {
 		m_arbitraryCurve->setSamples(emptySamples);
 	}
+	if (ui->benchmarkCheckBox->isChecked()) {
+		setSamples(baseLine, wse.benchmark(), m_benchmarkCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_benchmarkCurve->setSamples(emptySamples);
+	}
+	if (ui->referenceMarkCheckBox->isChecked()) {
+		setSamples(baseLine, wse.referenceMark(), m_referenceMarkCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_referenceMarkCurve->setSamples(emptySamples);
+	}
+	if (ui->hubCheckBox->isChecked()) {
+		setSamples(baseLine, wse.hub(), m_hubCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_hubCurve->setSamples(emptySamples);
+	}
 	if (ui->leftCheckBox->isChecked()) {
 		setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
 	} else {
@@ -222,6 +265,11 @@ void VerticalCrossSectionWindow::updatePlot()
 		setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
 	} else {
 		m_rightBankCurve->setSamples(emptySamples);
+	}
+	if (ui->streamGageCheckBox->isChecked()) {
+		setSamples(baseLine, wse.streamGage(), m_streamGageCurve, &xmin, &xmax, &ymin, &ymax, &first);
+	} else {
+		m_streamGageCurve->setSamples(emptySamples);
 	}
 
 	setupCrossSectionLine();

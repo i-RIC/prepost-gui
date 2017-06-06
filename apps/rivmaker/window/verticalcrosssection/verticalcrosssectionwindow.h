@@ -48,8 +48,12 @@ private:
 	QwtPlotCurve* m_csCurve;
 
 	QwtPlotCurve* m_arbitraryCurve;
+	QwtPlotCurve* m_benchmarkCurve;
+	QwtPlotCurve* m_referenceMarkCurve;
+	QwtPlotCurve* m_hubCurve;
 	QwtPlotCurve* m_leftBankCurve;
 	QwtPlotCurve* m_rightBankCurve;
+	QwtPlotCurve* m_streamGageCurve;
 
 	std::vector<QwtPlotMarker*> m_crossSectionMarkers;
 
