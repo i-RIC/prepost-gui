@@ -201,6 +201,8 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 		m_paramMax = paramElem.attribute("max").toDouble();
 	}
 
+	QStringList spanVals;
+
 	valueNode = node.firstChild();
 	int valueIndex = 0;
 	while (! valueNode.isNull()) {
@@ -247,6 +249,7 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 			bool isSpan = false;
 			if (valueElem.hasAttribute("span")){
 				isSpan = (valueElem.attribute("span") == "true");
+				spanVals.push_back(valueCaption);
 			}
 			m_valueIsSpans.push_back(isSpan);
 
@@ -307,6 +310,13 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 			++ valueIndex;
 		}
 		valueNode = valueNode.nextSibling();
+	}
+
+	if (spanVals.size() == 0) {
+		ui->lineCommentLabel->hide();
+	} else {
+		QString text = tr("%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.");
+		ui->lineCommentLabel->setText(text.arg(spanVals.join(", ")));
 	}
 
 	m_selectionModel = new QItemSelectionModel(m_model);

@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>527</width>
-    <height>393</height>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Calculation Condition</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0">
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,0">
    <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
@@ -62,6 +62,13 @@
       </layout>
      </widget>
      <widget class="QwtPlot" name="graphView" native="true"/>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lineCommentLabel">
+     <property name="text">
+      <string/>
+     </property>
     </widget>
    </item>
    <item>
