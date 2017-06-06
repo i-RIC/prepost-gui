@@ -81,7 +81,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 			offset.setY(y);
 		}
 
-		GeometryPoint* point = new GeometryPoint(x - offset.x(), y - offset.y(), z);
+		GeometryPoint* point = new GeometryPoint(x - offset.x(), y - offset.y(), z, name);
 		if (lbExp.exactMatch(name)) {
 			leftVec.push_back(point);
 		} else if (rbExp.exactMatch(name)) {

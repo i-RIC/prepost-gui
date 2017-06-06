@@ -1,8 +1,9 @@
 #ifndef RIGHTBANKHWMPREPROCESSORVIEW_H
 #define RIGHTBANKHWMPREPROCESSORVIEW_H
 
-#include "rightbankhwm.h"
 #include "../points/pointspreprocessorview.h"
+
+class RightBankHWM;
 
 class RightBankHWMPreProcessorView : public PointsPreProcessorView
 {

@@ -17,6 +17,8 @@ protected:
 	void drawTriangles(int size, const QColor& color, int transparency, QPainter* painter) const;
 	void drawReverseTriangles(int size, const QColor& color, int transparency, QPainter* painter) const;
 
+	void drawNames(QPainter* painter) const;
+
 	const static int STD_SIZE;
 };
 

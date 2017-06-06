@@ -111,6 +111,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/points/pointspreprocessorcontroller.h \
            data/points/pointspreprocessorview.h \
            data/points/pointspreprocessorviewhelper.h \
+           data/points/pointspreprocessorviewnameshelper.h \
            data/project/project.h \
            data/referencemark/referencemark.h \
            data/referencemark/referencemarkpreprocessorview.h \
@@ -237,6 +238,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            data/points/pointspreprocessorcontroller.cpp \
            data/points/pointspreprocessorview.cpp \
            data/points/pointspreprocessorviewhelper.cpp \
+           data/points/pointspreprocessorviewnameshelper.cpp \
            data/project/project.cpp \
            data/referencemark/referencemark.cpp \
            data/referencemark/referencemarkpreprocessorview.cpp \

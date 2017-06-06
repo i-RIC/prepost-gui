@@ -1,8 +1,9 @@
 #ifndef LEFTBANKHWMPREPROCESSORVIEW_H
 #define LEFTBANKHWMPREPROCESSORVIEW_H
 
-#include "leftbankhwm.h"
 #include "../points/pointspreprocessorview.h"
+
+class LeftBankHWM;
 
 class LeftBankHWMPreProcessorView : public PointsPreProcessorView
 {

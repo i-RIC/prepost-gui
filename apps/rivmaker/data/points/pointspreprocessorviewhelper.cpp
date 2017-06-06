@@ -7,6 +7,13 @@
 #include <QPainter>
 #include <QPointF>
 
+namespace {
+
+int labelOffset = 8;
+int fontSize = 10;
+
+} // namespace
+
 const int PointsPreProcessorViewHelper::STD_SIZE = 6;
 
 PointsPreProcessorViewHelper::PointsPreProcessorViewHelper(DataItemView* v) :
@@ -129,6 +136,31 @@ void PointsPreProcessorViewHelper::drawReverseTriangles(int size, const QColor& 
 		polygon.push_back(QPointF(p2.x() + size * 0.5, p2.y() - size * 0.5));
 		polygon.push_back(QPointF(p2.x()             , p2.y() + size * 0.5));
 		painter->drawPolygon(polygon);
+	}
+
+	painter->restore();
+}
+
+void PointsPreProcessorViewHelper::drawNames(QPainter* painter) const
+{
+	painter->save();
+
+	auto v = view();
+	auto points = dynamic_cast<Points*> (dataItem());
+	const auto& pvec = points->points();
+
+	QFont f;
+	f.setPointSize(fontSize);
+	painter->setPen(Qt::black);
+	painter->setFont(f);
+
+	for (GeometryPoint* p : pvec) {
+		if (p->name().isNull()) {continue;}
+
+		QPointF p2 = v->conv(QPointF(p->x(), p->y()));
+		p2 += QPointF(labelOffset, fontSize * 0.5);
+
+		painter->drawText(p2, p->name());
 	}
 
 	painter->restore();
