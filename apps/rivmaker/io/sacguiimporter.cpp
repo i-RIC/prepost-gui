@@ -45,6 +45,10 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 	std::vector<GeometryPoint*> leftVec;
 	std::vector<GeometryPoint*> rightVec;
 	std::vector<GeometryPoint*> elevVec;
+	std::vector<GeometryPoint*> bmVec;
+	std::vector<GeometryPoint*> rmVec;
+	std::vector<GeometryPoint*> hubVec;
+	std::vector<GeometryPoint*> ghVec;
 
 	QFile file(fname);
 	if (! file.open(QIODevice::ReadOnly)) {return false;}
@@ -53,6 +57,10 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 	QRegExp lbExp("LH.*");
 	QRegExp rbExp("RH.*");
 	QRegExp elevExp("(X[0-9]+).*");
+	QRegExp bmExp("BM.*");
+	QRegExp rmExp("RM.*");
+	QRegExp hubExp("HUB.*");
+	QRegExp ghExp("GH.*");
 	bool first = true;
 
 	std::map<QString, std::vector<GeometryPoint*> > xsecPoints;
@@ -73,25 +81,38 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 			offset.setY(y);
 		}
 
+		GeometryPoint* point = new GeometryPoint(x - offset.x(), y - offset.y(), z);
 		if (lbExp.exactMatch(name)) {
-			leftVec.push_back(new GeometryPoint(x - offset.x(), y - offset.y(), z));
+			leftVec.push_back(point);
 		} else if (rbExp.exactMatch(name)) {
-			rightVec.push_back(new GeometryPoint(x - offset.x(), y - offset.y(), z));
+			rightVec.push_back(point);
+		} else if (bmExp.exactMatch(name)) {
+			bmVec.push_back(point);
+		} else if (rmExp.exactMatch(name)) {
+			rmVec.push_back(point);
+		} else if (hubExp.exactMatch(name)) {
+			hubVec.push_back(point);
+		} else if (ghExp.exactMatch(name)) {
+			ghVec.push_back(point);
 		} else if (elevExp.exactMatch(name)) {
-			GeometryPoint* p = new GeometryPoint(x - offset.x(), y - offset.y(), z);
-			elevVec.push_back(p);
-			registerToMap(elevExp.cap(1), p, &xsecPoints);
+			elevVec.push_back(point);
+			registerToMap(elevExp.cap(1), point, &xsecPoints);
 		} else {
-			arbVec.push_back(new GeometryPoint(x - offset.x(), y - offset.y(), z));
+			arbVec.push_back(point);
 		}
 
 		first = false;
 	} while (! stream.atEnd());
 
 	project->elevationPoints().setPoints(elevVec);
-	project->waterSurfaceElevationPoints().leftBankHWM().setPoints(leftVec);
-	project->waterSurfaceElevationPoints().rightBankHWM().setPoints(rightVec);
-	project->waterSurfaceElevationPoints().arbitraryHWM().setPoints(arbVec);
+	auto& wsePoints = project->waterSurfaceElevationPoints();
+	wsePoints.leftBankHWM().setPoints(leftVec);
+	wsePoints.rightBankHWM().setPoints(rightVec);
+	wsePoints.arbitraryHWM().setPoints(arbVec);
+	wsePoints.benchmark().setPoints(bmVec);
+	wsePoints.referenceMark().setPoints(rmVec);
+	wsePoints.hub().setPoints(hubVec);
+	wsePoints.streamGage().setPoints(ghVec);
 	project->setOffset(offset);
 
 	int id = 0;

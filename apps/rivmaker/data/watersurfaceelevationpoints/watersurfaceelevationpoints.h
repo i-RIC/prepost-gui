@@ -6,9 +6,13 @@
 
 #include <vector>
 
-class LeftBankHWM;
-class RightBankHWM;
 class ArbitraryHWM;
+class Benchmark;
+class Hub;
+class LeftBankHWM;
+class ReferenceMark;
+class RightBankHWM;
+class StreamGage;
 
 class WaterSurfaceElevationPoints : public DataItem, public PreProcessorDataItemI
 {
@@ -26,6 +30,18 @@ public:
 
 	const ArbitraryHWM& arbitraryHWM() const;
 	ArbitraryHWM& arbitraryHWM();
+
+	const Benchmark& benchmark() const;
+	Benchmark& benchmark();
+
+	const Hub& hub() const;
+	Hub& hub();
+
+	const ReferenceMark& referenceMark() const;
+	ReferenceMark& referenceMark();
+
+	const StreamGage& streamGage() const;
+	StreamGage& streamGage();
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;

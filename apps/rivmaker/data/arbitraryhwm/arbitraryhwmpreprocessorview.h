@@ -1,8 +1,9 @@
 #ifndef ARBITRARYHWMPREPROCESSORVIEW_H
 #define ARBITRARYHWMPREPROCESSORVIEW_H
 
-#include "arbitraryhwm.h"
 #include "../points/pointspreprocessorview.h"
+
+class ArbitraryHWM;
 
 class ArbitraryHWMPreProcessorView : public PointsPreProcessorView
 {

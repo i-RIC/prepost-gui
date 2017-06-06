@@ -1,3 +1,4 @@
+#include "arbitraryhwm.h"
 #include "arbitraryhwmpreprocessorview.h"
 #include "arbitraryhwmpreprocessorviewhelper.h"
 

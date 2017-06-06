@@ -87,6 +87,9 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/baseline/baselinepreprocessorview.h \
            data/baseline/baselinepreprocessorviewhelper.h \
            data/baseline/baselinepreprocessorviewlabelhelper.h \
+           data/benchmark/benchmark.h \
+           data/benchmark/benchmarkpreprocessorview.h \
+           data/benchmark/benchmarkpreprocessorviewhelper.h \
            data/crosssection/crosssection.h \
            data/crosssection/crosssectionpreprocessorcontroller.h \
            data/crosssection/crosssectionpreprocessorview.h \
@@ -97,6 +100,9 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/elevationpoints/elevationpoints.h \
            data/elevationpoints/elevationpointspreprocessorview.h \
            data/elevationpoints/elevationpointspreprocessorviewhelper.h \
+           data/hub/hub.h \
+           data/hub/hubpreprocessorview.h \
+           data/hub/hubpreprocessorviewhelper.h \
            data/leftbankhwm/leftbankhwm.h \
            data/leftbankhwm/leftbankhwmpreprocessorview.h \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.h \
@@ -106,9 +112,15 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            data/points/pointspreprocessorview.h \
            data/points/pointspreprocessorviewhelper.h \
            data/project/project.h \
+           data/referencemark/referencemark.h \
+           data/referencemark/referencemarkpreprocessorview.h \
+           data/referencemark/referencemarkpreprocessorviewhelper.h \
            data/rightbankhwm/rightbankhwm.h \
            data/rightbankhwm/rightbankhwmpreprocessorview.h \
            data/rightbankhwm/rightbankhwmpreprocessorviewhelper.h \
+           data/streamgage/streamgage.h \
+           data/streamgage/streamgagepreprocessorview.h \
+           data/streamgage/streamgagepreprocessorviewhelper.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.h \
            data/watersurfaceelevationpoints/watersurfaceelevationpointspreprocessorview.h \
            dialogs/private/coordinateeditwidget.h \
@@ -201,6 +213,9 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            data/baseline/baselinepreprocessorview.cpp \
            data/baseline/baselinepreprocessorviewhelper.cpp \
            data/baseline/baselinepreprocessorviewlabelhelper.cpp \
+           data/benchmark/benchmark.cpp \
+           data/benchmark/benchmarkpreprocessorview.cpp \
+           data/benchmark/benchmarkpreprocessorviewhelper.cpp \
            data/crosssection/crosssection.cpp \
            data/crosssection/crosssectionpreprocessorcontroller.cpp \
            data/crosssection/crosssectionpreprocessorview.cpp \
@@ -211,6 +226,9 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            data/elevationpoints/elevationpoints.cpp \
            data/elevationpoints/elevationpointspreprocessorview.cpp \
            data/elevationpoints/elevationpointspreprocessorviewhelper.cpp \
+           data/hub/hub.cpp \
+           data/hub/hubpreprocessorview.cpp \
+           data/hub/hubpreprocessorviewhelper.cpp \
            data/leftbankhwm/leftbankhwm.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorview.cpp \
            data/leftbankhwm/leftbankhwmpreprocessorviewhelper.cpp \
@@ -220,9 +238,15 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            data/points/pointspreprocessorview.cpp \
            data/points/pointspreprocessorviewhelper.cpp \
            data/project/project.cpp \
+           data/referencemark/referencemark.cpp \
+           data/referencemark/referencemarkpreprocessorview.cpp \
+           data/referencemark/referencemarkpreprocessorviewhelper.cpp \
            data/rightbankhwm/rightbankhwm.cpp \
            data/rightbankhwm/rightbankhwmpreprocessorview.cpp \
            data/rightbankhwm/rightbankhwmpreprocessorviewhelper.cpp \
+           data/streamgage/streamgage.cpp \
+           data/streamgage/streamgagepreprocessorview.cpp \
+           data/streamgage/streamgagepreprocessorviewhelper.cpp \
            data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp \
            dialogs/private/coordinateeditwidget.cpp \
            io/crosssections/crosssectionscsvexporter.cpp \

@@ -10,5 +10,5 @@ RightBankHWMPreProcessorViewHelper::RightBankHWMPreProcessorViewHelper(DataItemV
 void RightBankHWMPreProcessorViewHelper::draw(QPainter* painter) const
 {
 	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
-	drawRects(setting.size(), Qt::red, setting.transparency, painter);
+	drawRects(STD_SIZE, Qt::red, setting.transparency, painter);
 }

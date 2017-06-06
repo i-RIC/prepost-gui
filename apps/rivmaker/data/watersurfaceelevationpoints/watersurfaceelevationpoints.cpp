@@ -7,8 +7,12 @@
 
 WaterSurfaceElevationPoints::Impl::Impl(WaterSurfaceElevationPoints *parent) :
 	m_arbitraryHWM {parent},
+	m_benchmark {parent},
+	m_referenceMark {parent},
+	m_hub {parent},
 	m_leftBankHWM {parent},
-	m_rightBankHWM {parent}
+	m_rightBankHWM {parent},
+	m_streamGage {parent}
 {}
 
 WaterSurfaceElevationPoints::WaterSurfaceElevationPoints(DataItem *parent) :
@@ -49,6 +53,46 @@ const ArbitraryHWM& WaterSurfaceElevationPoints::arbitraryHWM() const
 ArbitraryHWM& WaterSurfaceElevationPoints::arbitraryHWM()
 {
 	return impl->m_arbitraryHWM;
+}
+
+const Benchmark& WaterSurfaceElevationPoints::benchmark() const
+{
+	return impl->m_benchmark;
+}
+
+Benchmark& WaterSurfaceElevationPoints::benchmark()
+{
+	return impl->m_benchmark;
+}
+
+const Hub& WaterSurfaceElevationPoints::hub() const
+{
+	return impl->m_hub;
+}
+
+Hub& WaterSurfaceElevationPoints::hub()
+{
+	return impl->m_hub;
+}
+
+const ReferenceMark& WaterSurfaceElevationPoints::referenceMark() const
+{
+	return impl->m_referenceMark;
+}
+
+ReferenceMark& WaterSurfaceElevationPoints::referenceMark()
+{
+	return impl->m_referenceMark;
+}
+
+const StreamGage& WaterSurfaceElevationPoints::streamGage() const
+{
+	return impl->m_streamGage;
+}
+
+StreamGage& WaterSurfaceElevationPoints::streamGage()
+{
+	return impl->m_streamGage;
 }
 
 QStandardItem* WaterSurfaceElevationPoints::buildPreProcessorStandardItem() const
