@@ -86,7 +86,9 @@ bool InputConditionWidgetFunctionalDialog::importFromCsv(const QString& fileName
 	clear();
 	int row = 0;
 	m_preventGraph = true;
-	m_model->blockSignals(true);
+	if (! m_preventSort) {
+		m_model->blockSignals(true);
+	}
 	do {
 		line = stream.readLine();
 		if (! line.isEmpty()) {
