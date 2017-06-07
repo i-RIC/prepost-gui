@@ -311,5 +311,7 @@ InputConditionContainerFunctional& InputConditionContainerSet::functional(const 
 
 InputConditionContainer* InputConditionContainerSet::container(const std::string& name)
 {
+	if (m_containers.find(name) == m_containers.end()) {return nullptr;}
+
 	return m_containers[name];
 }
