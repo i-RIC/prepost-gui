@@ -55,6 +55,14 @@ private:
 	QwtPlotCurve* m_rightBankCurve;
 	QwtPlotCurve* m_streamGageCurve;
 
+	std::vector<QwtPlotMarker*> m_arbitraryMarkers;
+	std::vector<QwtPlotMarker*> m_benchmarkMarkers;
+	std::vector<QwtPlotMarker*> m_referenceMarkMarkers;
+	std::vector<QwtPlotMarker*> m_hubMarkers;
+	std::vector<QwtPlotMarker*> m_leftBankMarkers;
+	std::vector<QwtPlotMarker*> m_rightBankMarkers;
+	std::vector<QwtPlotMarker*> m_streamGageMarkers;
+
 	std::vector<QwtPlotMarker*> m_crossSectionMarkers;
 
 	QStandardItemModel m_tableModel;

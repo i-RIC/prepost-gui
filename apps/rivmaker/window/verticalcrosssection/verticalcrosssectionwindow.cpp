@@ -28,12 +28,38 @@ namespace {
 
 	const int defaultRowHeight = 20;
 
-	void setSamples(const BaseLine& baseLine, const Points& points, QwtPlotCurve* curve, double* xmin, double* xmax, double* ymin, double* ymax, bool* first)
+	void clearMarkers(std::vector<QwtPlotMarker*>* markers)
 	{
+		for (QwtPlotMarker* marker : *markers) {
+			marker->detach();
+			delete marker;
+		}
+		markers->clear();
+	}
+
+	void setSamples(const BaseLine& baseLine, const Points& points, QwtPlotCurve* curve, std::vector<QwtPlotMarker*>* markers, double* xmin, double* xmax, double* ymin, double* ymax, QwtPlot* plot, bool* first)
+	{
+		clearMarkers(markers);
+
 		QVector<QPointF> samples;
 		for (GeometryPoint* p : points.points()){
 			double pos = baseLine.calcPosition(p->x(), p->y());
 			samples.push_back(QPointF(pos, p->z()));
+
+			if (! p->name().isNull()) {
+				QwtPlotMarker* marker = new QwtPlotMarker();
+				marker->setLabel(p->name());
+				marker->setLabelAlignment(Qt::AlignRight | Qt::AlignVCenter);
+				marker->setXValue(pos);
+				marker->setYValue(p->z());
+				marker->setLabelOrientation(Qt::Horizontal);
+				marker->setLineStyle(QwtPlotMarker::NoLine);
+				marker->setSpacing(5);
+				marker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
+				marker->attach(plot);
+
+				markers->push_back(marker);
+			}
 
 			if (*first || pos < *xmin) {*xmin = pos;}
 			if (*first || pos > *xmax) {*xmax = pos;}
@@ -237,39 +263,46 @@ void VerticalCrossSectionWindow::updatePlot()
 	QVector<QPointF> emptySamples;
 
 	if (ui->arbitraryCheckBox->isChecked()) {
-		setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.arbitraryHWM(), m_arbitraryCurve, &m_arbitraryMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_arbitraryCurve->setSamples(emptySamples);
+		clearMarkers(&m_arbitraryMarkers);
 	}
 	if (ui->benchmarkCheckBox->isChecked()) {
-		setSamples(baseLine, wse.benchmark(), m_benchmarkCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.benchmark(), m_benchmarkCurve, &m_benchmarkMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_benchmarkCurve->setSamples(emptySamples);
+		clearMarkers(&m_benchmarkMarkers);
 	}
 	if (ui->referenceMarkCheckBox->isChecked()) {
-		setSamples(baseLine, wse.referenceMark(), m_referenceMarkCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.referenceMark(), m_referenceMarkCurve, &m_referenceMarkMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_referenceMarkCurve->setSamples(emptySamples);
+		clearMarkers(&m_referenceMarkMarkers);
 	}
 	if (ui->hubCheckBox->isChecked()) {
-		setSamples(baseLine, wse.hub(), m_hubCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.hub(), m_hubCurve, &m_hubMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_hubCurve->setSamples(emptySamples);
+		clearMarkers(&m_hubMarkers);
 	}
 	if (ui->leftCheckBox->isChecked()) {
-		setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.leftBankHWM(), m_leftBankCurve, &m_leftBankMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_leftBankCurve->setSamples(emptySamples);
+		clearMarkers(&m_leftBankMarkers);
 	}
 	if (ui->rightCheckBox->isChecked()) {
-		setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.rightBankHWM(), m_rightBankCurve, &m_rightBankMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_rightBankCurve->setSamples(emptySamples);
+		clearMarkers(&m_rightBankMarkers);
 	}
 	if (ui->streamGageCheckBox->isChecked()) {
-		setSamples(baseLine, wse.streamGage(), m_streamGageCurve, &xmin, &xmax, &ymin, &ymax, &first);
+		setSamples(baseLine, wse.streamGage(), m_streamGageCurve, &m_streamGageMarkers, &xmin, &xmax, &ymin, &ymax, ui->qwtWidget, &first);
 	} else {
 		m_streamGageCurve->setSamples(emptySamples);
+		clearMarkers(&m_streamGageMarkers);
 	}
 
 	setupCrossSectionLine();
