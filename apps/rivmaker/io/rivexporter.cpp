@@ -1,4 +1,5 @@
 #include "rivexporter.h"
+#include "../data/baseline/baseline.h"
 #include "../data/crosssections/crosssections.h"
 #include "../data/project/project.h"
 #include "../data/crosssection/crosssection.h"
@@ -69,11 +70,13 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 
 bool RivExporter::exportCsvData(const Project &project, QWidget *w)
 {
+	bool update = true;;
 	if (m_csvFileName.isNull()) {
 		QString fname = QFileDialog::getSaveFileName(w, tr("CSV File name to export"), "", tr("CSV file(*.csv)"));
 		if (fname.isNull()) {return false;}
 
 		m_csvFileName = fname;
+		update = false;
 	}
 	QFile file(m_csvFileName);
 	if (! file.open(QIODevice::WriteOnly)) {
@@ -81,13 +84,20 @@ bool RivExporter::exportCsvData(const Project &project, QWidget *w)
 		return false;
 	}
 
+	const auto& bl = project.baseLine();
+
 	const auto& cs = project.crossSections();
 	QTextStream ts(&file);
-	ts << "CrossSection" << "," << "Elevation" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
-		ts << s->name() << "," << s->waterElevation() << endl;
+		bool crosses;
+		double x, y, pos;
+		bl.getCrossingPoint(s, &crosses, &x, &y, &pos);
+		ts << pos << "," << s->waterElevation() << endl;
 	}
 	file.close();
 
+	if (update) {
+		QMessageBox::information(w, tr("Information"), tr("%1 is updated.").arg(QDir::toNativeSeparators(m_csvFileName)));
+	}
 	return true;
 }
