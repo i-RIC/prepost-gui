@@ -5,6 +5,7 @@ void case_InitFail();
 void case_InitReadSuccess();
 void case_InitReadFail();
 void case_InitOptionCheck();
+void case_InitCC();
 
 void case_CheckLock();
 void case_CheckCancel();
