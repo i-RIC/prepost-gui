@@ -23,8 +23,10 @@ const std::vector<InputConditionDependency*>& InputConditionWidget::dependencies
 	return m_dependencies;
 }
 
-void InputConditionWidget::checkImportSourceUpdate()
-{}
+bool InputConditionWidget::checkImportSourceUpdate()
+{
+	return false;
+}
 
 QList<QDomNode> InputConditionWidget::getEnums(QDomNode defNode)
 {

@@ -305,5 +305,16 @@ void InputConditionDialog::setReadOnly(bool readonly)
 
 void InputConditionDialog::checkImportSourceUpdate()
 {
-	m_widgetSet->checkImportSourceUpdate();
+	bool ret = m_widgetSet->checkImportSourceUpdate();
+
+	if (! ret) {return;}
+
+	int fn, ier;
+	ier = cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_MODIFY, &fn);
+	if (ier != 0) {
+		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
+		return;
+	}
+	save(fn);
+	cg_close(fn);
 }

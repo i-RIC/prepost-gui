@@ -40,11 +40,13 @@ void InputConditionWidgetFunctional::addTooltip(const QString& tooltip)
 	l->insertWidget(1, tt);
 }
 
-void InputConditionWidgetFunctional::checkImportSourceUpdate()
+bool InputConditionWidgetFunctional::checkImportSourceUpdate()
 {
-	if (m_dialog->checkImportSourceUpdate()) {
+	bool ret = m_dialog->checkImportSourceUpdate();
+	if (ret) {
 		*m_container = m_dialog->container();
 	}
+	return ret;
 }
 
 void InputConditionWidgetFunctional::openDialog()

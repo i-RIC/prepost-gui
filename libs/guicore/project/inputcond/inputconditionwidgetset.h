@@ -24,7 +24,7 @@ public:
 	void setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC = false);
 	InputConditionWidget* widget(const std::string& name) const;
 
-	void checkImportSourceUpdate();
+	bool checkImportSourceUpdate();
 	void clear();
 	void disableWidgets();
 	void enableWidgets();

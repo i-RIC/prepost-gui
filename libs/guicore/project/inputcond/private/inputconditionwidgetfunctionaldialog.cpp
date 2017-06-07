@@ -517,7 +517,11 @@ bool InputConditionWidgetFunctionalDialog::checkImportSourceUpdate()
 	int ret = QMessageBox::information(this, tr("Information"), msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (ret == QMessageBox::No) {return false;}
 
-	return importFromCsv(m_importedCsvFileName);
+	bool ok = importFromCsv(m_importedCsvFileName);
+	if (ok) {
+		saveModel();
+	}
+	return ok;
 }
 
 void InputConditionWidgetFunctionalDialog::accept()

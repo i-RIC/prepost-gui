@@ -19,7 +19,7 @@ public:
 
 	void setCaption(const QString& caption);
 	void addTooltip(const QString& tooltip) override;
-	void checkImportSourceUpdate() override;
+	bool checkImportSourceUpdate() override;
 
 private slots:
 	void openDialog();
