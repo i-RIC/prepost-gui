@@ -38,6 +38,8 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	QPointF offset = project.offset();
 	const auto& cs = project.crossSections();
 
+	ts.setRealNumberPrecision(12);
+
 	ts << "#survey" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
 		ts
@@ -48,6 +50,8 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 				<< s->point2().y() + offset.y() << endl;
 	}
 	ts << endl;
+
+	ts.setRealNumberPrecision(6);
 
 	ts << "#x-section" << endl;
 	for (CrossSection* s : cs.crossSectionVector()) {
