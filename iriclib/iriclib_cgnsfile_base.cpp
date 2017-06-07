@@ -862,7 +862,7 @@ int CgnsFile::GotoBase(int* B)
 
 int CgnsFile::GotoCC()
 {
-	int ier = impl->initBaseId(false);
+	int ier = impl->initBaseId(false, NULL, true);
 	RETURN_IF_ERR;
 
 	ier = impl->gotoCC();
