@@ -1201,26 +1201,37 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 			y.push_back(alt.height());
 			zeros.push_back(0);
 		}
-		cs->functional("appr_xs").setValue(x, y);
 
-		auto& n_h = cs->functional("n_h");
-		n_h.param() = x;
-		n_h.value("Y") = y;
-		n_h.value("NVAL") = zeros;
-
-		auto& n_h_v = cs->functional("n_h_v");
-		n_h_v.param() = x;
-		n_h_v.value("Y") = y;
-		n_h_v.value("BOTD") = zeros;
-		n_h_v.value("TOPD") = zeros;
-		n_h_v.value("BOTN") = zeros;
-		n_h_v.value("TOPN") = zeros;
-
-		double wse_val = 0;
-		if (point->waterSurfaceElevationSpecified()) {
-			wse_val = point->waterSurfaceElevationValue();
+		if (cs->container("name") != nullptr) {
+			cs->string("name").setValue(point->name());
 		}
-		cs->real("wse").setValue(wse_val);
+
+		if (cs->container("appr_xs") != nullptr) {
+			cs->functional("appr_xs").setValue(x, y);
+		}
+
+		if (cs->container("n_h") != nullptr) {
+			auto& n_h = cs->functional("n_h");
+			n_h.param() = x;
+			n_h.value("Y") = y;
+			n_h.value("NVAL") = zeros;
+
+			auto& n_h_v = cs->functional("n_h_v");
+			n_h_v.param() = x;
+			n_h_v.value("Y") = y;
+			n_h_v.value("BOTD") = zeros;
+			n_h_v.value("TOPD") = zeros;
+			n_h_v.value("BOTN") = zeros;
+			n_h_v.value("TOPN") = zeros;
+		}
+
+		if (cs->container("wse") != nullptr) {
+			double wse_val = 0;
+			if (point->waterSurfaceElevationSpecified()) {
+				wse_val = point->waterSurfaceElevationValue();
+			}
+			cs->real("wse").setValue(wse_val);
+		}
 
 		point = point->nextPoint();
 	}
@@ -1281,8 +1292,8 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 {
 	std::list<CtrlPointSelectionInfo> tmplist;
 	for (auto it = m_selectedCtrlPointInfoList.begin();
-	     it != m_selectedCtrlPointInfoList.end();
-	     ++it) {
+			 it != m_selectedCtrlPointInfoList.end();
+			 ++it) {
 		if (it->Index < it->Point->CtrlPoints(it->Position).size()) {
 			// Valid
 			tmplist.push_back(*it);
@@ -1313,14 +1324,14 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 		double d = info.Point->CtrlPoints(info.Position)[info.Index];
 		if ((d + 0.01) > 1) {
 			m_GCPOffsetInfo.direction = (
-			    info.Point->CtrlPointPosition2D(info.Position, d) -
-			    info.Point->CtrlPointPosition2D(info.Position, d - 0.01)
-			    ).normalized();
+					info.Point->CtrlPointPosition2D(info.Position, d) -
+					info.Point->CtrlPointPosition2D(info.Position, d - 0.01)
+					).normalized();
 		} else {
 			m_GCPOffsetInfo.direction = (
-			    info.Point->CtrlPointPosition2D(info.Position, d + 0.01) -
-			    info.Point->CtrlPointPosition2D(info.Position, d)
-			    ).normalized();
+					info.Point->CtrlPointPosition2D(info.Position, d + 0.01) -
+					info.Point->CtrlPointPosition2D(info.Position, d)
+					).normalized();
 		}
 		if (info.Position == GeoDataRiverPathPoint::pposCenterToLeft) {
 			m_GCPOffsetInfo.length = std::abs(info.Point->crosssection().leftBank(true).position());
@@ -1328,8 +1339,8 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 			m_GCPOffsetInfo.length = std::abs(info.Point->crosssection().rightBank(true).position());
 		} else {
 			m_GCPOffsetInfo.length = (
-			    info.Point->nextPoint()->position() - info.Point->position()
-			    ).length();
+					info.Point->nextPoint()->position() - info.Point->position()
+					).length();
 		}
 	}
 }
