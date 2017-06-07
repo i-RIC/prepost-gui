@@ -3,6 +3,8 @@
 #include "leftbankhwmpreprocessorviewhelper.h"
 #include "../points/pointspreprocessorviewnameshelper.h"
 
+#include <QColor>
+
 LeftBankHWMPreProcessorView::LeftBankHWMPreProcessorView(Model* model, LeftBankHWM* item) :
 	PointsPreProcessorView {model, item}
 {
@@ -12,3 +14,8 @@ LeftBankHWMPreProcessorView::LeftBankHWMPreProcessorView(Model* model, LeftBankH
 
 LeftBankHWMPreProcessorView::~LeftBankHWMPreProcessorView()
 {}
+
+void LeftBankHWMPreProcessorView::drawMarker(const QPointF &position, QPainter* painter)
+{
+	PointsPreProcessorViewHelper::drawRect(position, PointsPreProcessorViewHelper::STD_SIZE, Qt::blue, 0, painter);
+}

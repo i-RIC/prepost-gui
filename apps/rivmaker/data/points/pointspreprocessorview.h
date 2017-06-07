@@ -10,7 +10,10 @@ public:
 	PointsPreProcessorView(Model* model, Points* item);
 	virtual ~PointsPreProcessorView();
 
+	void drawLegend(QPointF position, QPainter* painter);
+
 private:
+	virtual void drawMarker(const QPointF& position, QPainter* painter) = 0;
 	QRectF doBoundingBox() const override;
 };
 

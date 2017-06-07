@@ -11,6 +11,8 @@ public:
 	RightBankHWM(DataItem* parent);
 	~RightBankHWM();
 
+	QString caption() const override;
+
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };

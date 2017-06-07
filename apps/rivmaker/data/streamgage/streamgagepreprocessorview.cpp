@@ -3,6 +3,8 @@
 #include "streamgagepreprocessorviewhelper.h"
 #include "../points/pointspreprocessorviewnameshelper.h"
 
+#include <QColor>
+
 StreamGagePreProcessorView::StreamGagePreProcessorView(Model* model, StreamGage* item) :
 	PointsPreProcessorView {model, item}
 {
@@ -12,3 +14,8 @@ StreamGagePreProcessorView::StreamGagePreProcessorView(Model* model, StreamGage*
 
 StreamGagePreProcessorView::~StreamGagePreProcessorView()
 {}
+
+void StreamGagePreProcessorView::drawMarker(const QPointF &position, QPainter* painter)
+{
+	PointsPreProcessorViewHelper::drawRect(position, PointsPreProcessorViewHelper::STD_SIZE, Qt::gray, 0, painter);
+}

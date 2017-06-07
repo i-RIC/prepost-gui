@@ -10,6 +10,9 @@ class RightBankHWMPreProcessorView : public PointsPreProcessorView
 public:
 	RightBankHWMPreProcessorView(Model* model, RightBankHWM* item);
 	~RightBankHWMPreProcessorView();
+
+private:
+	void drawMarker(const QPointF& position, QPainter* painter) override;
 };
 
 #endif // RIGHTBANKHWMPREPROCESSORVIEW_H

@@ -11,6 +11,11 @@ StreamGage::StreamGage(DataItem* parent) :
 StreamGage::~StreamGage()
 {}
 
+QString StreamGage::caption() const
+{
+	return tr("Stream gage");
+}
+
 QStandardItem* StreamGage::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconStreamGage.png"), tr("Stream gage"));

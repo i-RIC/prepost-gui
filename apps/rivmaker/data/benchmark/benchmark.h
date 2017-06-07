@@ -11,6 +11,8 @@ public:
 	Benchmark(DataItem* parent);
 	~Benchmark();
 
+	QString caption() const override;
+
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };

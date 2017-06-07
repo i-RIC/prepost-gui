@@ -1,7 +1,15 @@
 #include "pointspreprocessorview.h"
 #include "../../geom/geometrypoint.h"
 
+#include <QFont>
+#include <QPainter>
 #include <QRectF>
+
+namespace {
+
+int LEGEND_FONTSIZE = 10;
+
+} // namespace
 
 PointsPreProcessorView::PointsPreProcessorView(Model* model, Points* item) :
 	DataItemView {model, item}
@@ -9,6 +17,26 @@ PointsPreProcessorView::PointsPreProcessorView(Model* model, Points* item) :
 
 PointsPreProcessorView::~PointsPreProcessorView()
 {}
+
+void PointsPreProcessorView::drawLegend(QPointF position, QPainter* painter)
+{
+	drawMarker(position, painter);
+
+	position.setX(position.x() + 10);
+	position.setY(position.y() + LEGEND_FONTSIZE * 0.5);
+
+	QFont f;
+	f.setPointSize(LEGEND_FONTSIZE);
+
+	painter->save();
+	painter->setPen(Qt::black);
+	painter->setFont(f);
+
+	auto points = dynamic_cast<Points*> (item());
+	painter->drawText(position, points->caption());
+
+	painter->restore();
+}
 
 QRectF PointsPreProcessorView::doBoundingBox() const
 {

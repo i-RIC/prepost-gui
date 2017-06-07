@@ -11,6 +11,11 @@ RightBankHWM::RightBankHWM(DataItem* parent) :
 RightBankHWM::~RightBankHWM()
 {}
 
+QString RightBankHWM::caption() const
+{
+	return tr("Right Bank HWM");
+}
+
 QStandardItem* RightBankHWM::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconRBHWM.png"), tr("Right Bank HWM"));

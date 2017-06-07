@@ -11,6 +11,11 @@ ReferenceMark::ReferenceMark(DataItem* parent) :
 ReferenceMark::~ReferenceMark()
 {}
 
+QString ReferenceMark::caption() const
+{
+	return tr("Reference mark");
+}
+
 QStandardItem* ReferenceMark::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconReferenceMark.png"), tr("Reference mark"));

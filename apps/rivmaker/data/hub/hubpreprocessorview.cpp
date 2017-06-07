@@ -3,6 +3,8 @@
 #include "hubpreprocessorviewhelper.h"
 #include "../points/pointspreprocessorviewnameshelper.h"
 
+#include <QColor>
+
 HubPreProcessorView::HubPreProcessorView(Model* model, Hub* item) :
 	PointsPreProcessorView {model, item}
 {
@@ -12,3 +14,8 @@ HubPreProcessorView::HubPreProcessorView(Model* model, Hub* item) :
 
 HubPreProcessorView::~HubPreProcessorView()
 {}
+
+void HubPreProcessorView::drawMarker(const QPointF &position, QPainter* painter)
+{
+	PointsPreProcessorViewHelper::drawDiamond(position, PointsPreProcessorViewHelper::STD_SIZE, Qt::gray, 0, painter);
+}

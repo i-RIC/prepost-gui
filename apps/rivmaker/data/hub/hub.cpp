@@ -11,6 +11,11 @@ Hub::Hub(DataItem* parent) :
 Hub::~Hub()
 {}
 
+QString Hub::caption() const
+{
+	return tr("Surveying or turning point");
+}
+
 QStandardItem* Hub::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconHub.png"), tr("Surveying or turning point"));

@@ -9,6 +9,9 @@ class ElevationPointsPreprocessorView : public PointsPreProcessorView
 public:
 	ElevationPointsPreprocessorView(Model* model, ElevationPoints* item);
 	~ElevationPointsPreprocessorView();
+
+private:
+	void drawMarker(const QPointF& position, QPainter* painter) override;
 };
 
 #endif // ELEVATIONPOINTSPREPROCESSORVIEW_H

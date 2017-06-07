@@ -9,6 +9,8 @@ public:
 	ReferenceMark(DataItem* parent);
 	~ReferenceMark();
 
+	QString caption() const override;
+
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };

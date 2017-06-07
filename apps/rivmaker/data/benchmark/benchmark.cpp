@@ -11,6 +11,11 @@ Benchmark::Benchmark(DataItem* parent) :
 Benchmark::~Benchmark()
 {}
 
+QString Benchmark::caption() const
+{
+	return tr("Benchmark");
+}
+
 QStandardItem* Benchmark::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconBenchmark.png"), tr("Benchmark"));

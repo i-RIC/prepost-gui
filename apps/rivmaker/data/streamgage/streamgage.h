@@ -9,6 +9,8 @@ public:
 	StreamGage(DataItem* parent);
 	~StreamGage();
 
+	QString caption() const override;
+
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };

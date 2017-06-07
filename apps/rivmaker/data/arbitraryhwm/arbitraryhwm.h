@@ -11,6 +11,8 @@ public:
 	ArbitraryHWM(DataItem* parent);
 	~ArbitraryHWM();
 
+	QString caption() const override;
+
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 };

@@ -9,3 +9,6 @@ ElevationPointsPreprocessorView::ElevationPointsPreprocessorView(Model* model, E
 
 ElevationPointsPreprocessorView::~ElevationPointsPreprocessorView()
 {}
+
+void ElevationPointsPreprocessorView::drawMarker(const QPointF&, QPainter*)
+{}

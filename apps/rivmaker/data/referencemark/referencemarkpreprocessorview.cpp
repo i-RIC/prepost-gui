@@ -3,6 +3,8 @@
 #include "referencemarkpreprocessorviewhelper.h"
 #include "../points/pointspreprocessorviewnameshelper.h"
 
+#include <QColor>
+
 ReferenceMarkPreProcessorView::ReferenceMarkPreProcessorView(Model* model, ReferenceMark* item) :
 	PointsPreProcessorView {model, item}
 {
@@ -12,3 +14,8 @@ ReferenceMarkPreProcessorView::ReferenceMarkPreProcessorView(Model* model, Refer
 
 ReferenceMarkPreProcessorView::~ReferenceMarkPreProcessorView()
 {}
+
+void ReferenceMarkPreProcessorView::drawMarker(const QPointF &position, QPainter* painter)
+{
+	PointsPreProcessorViewHelper::drawTriangle(position, PointsPreProcessorViewHelper::STD_SIZE, Qt::black, 0, painter);
+}

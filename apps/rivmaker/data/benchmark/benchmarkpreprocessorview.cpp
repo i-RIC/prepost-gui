@@ -3,6 +3,8 @@
 #include "benchmarkpreprocessorviewhelper.h"
 #include "../points/pointspreprocessorviewnameshelper.h"
 
+#include <QColor>
+
 BenchmarkPreProcessorView::BenchmarkPreProcessorView(Model* model, Benchmark* item) :
 	PointsPreProcessorView {model, item}
 {
@@ -12,3 +14,8 @@ BenchmarkPreProcessorView::BenchmarkPreProcessorView(Model* model, Benchmark* it
 
 BenchmarkPreProcessorView::~BenchmarkPreProcessorView()
 {}
+
+void BenchmarkPreProcessorView::drawMarker(const QPointF& position, QPainter* painter)
+{
+	PointsPreProcessorViewHelper::drawReverseTriangle(position, PointsPreProcessorViewHelper::STD_SIZE, Qt::black, 0, painter);
+}

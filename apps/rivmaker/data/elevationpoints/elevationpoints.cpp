@@ -123,6 +123,11 @@ ElevationPoints::~ElevationPoints()
 	delete impl;
 }
 
+QString ElevationPoints::caption() const
+{
+	return tr("Elevation Points");
+}
+
 QStandardItem* ElevationPoints::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconElevationPoints.png"), tr("Elevation Points"));

@@ -3,6 +3,8 @@
 #include "arbitraryhwmpreprocessorviewhelper.h"
 #include "../points/pointspreprocessorviewnameshelper.h"
 
+#include <QColor>
+
 ArbitraryHWMPreProcessorView::ArbitraryHWMPreProcessorView(Model* model, ArbitraryHWM* item) :
 	PointsPreProcessorView {model, item}
 {
@@ -12,3 +14,8 @@ ArbitraryHWMPreProcessorView::ArbitraryHWMPreProcessorView(Model* model, Arbitra
 
 ArbitraryHWMPreProcessorView::~ArbitraryHWMPreProcessorView()
 {}
+
+void ArbitraryHWMPreProcessorView::drawMarker(const QPointF &position, QPainter* painter)
+{
+	PointsPreProcessorViewHelper::drawRect(position, PointsPreProcessorViewHelper::STD_SIZE, Qt::gray, 0, painter);
+}

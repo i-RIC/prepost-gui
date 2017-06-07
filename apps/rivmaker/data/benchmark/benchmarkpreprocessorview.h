@@ -10,6 +10,9 @@ class BenchmarkPreProcessorView : public PointsPreProcessorView
 public:
 	BenchmarkPreProcessorView(Model* model, Benchmark* item);
 	~BenchmarkPreProcessorView();
+
+private:
+	void drawMarker(const QPointF& position, QPainter* painter) override;
 };
 
 #endif // BENCHMARKPREPROCESSORVIEW_H

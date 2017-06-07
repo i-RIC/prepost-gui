@@ -20,6 +20,90 @@ PointsPreProcessorViewHelper::PointsPreProcessorViewHelper(DataItemView* v) :
 	DataItemViewHelperI {v}
 {}
 
+void PointsPreProcessorViewHelper::drawCircle(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter)
+{
+	painter->save();
+
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	painter->setBrush(c);
+	painter->setPen(Qt::NoPen);
+
+	QRectF rect(position.x() - size * 0.5, position.y() - size * 0.5, size, size);
+	painter->drawEllipse(rect);
+
+	painter->restore();
+}
+
+void PointsPreProcessorViewHelper::drawRect(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter)
+{
+	painter->save();
+
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	QRectF rect(position.x() - size * 0.5, position.y() - size * 0.5, size, size);
+	painter->fillRect(rect, c);
+
+	painter->restore();
+}
+
+void PointsPreProcessorViewHelper::drawDiamond(const QPointF& p, int size, const QColor& color, int transparency, QPainter* painter)
+{
+	painter->save();
+
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	painter->setPen(c);
+	painter->setBrush(QBrush(c));
+	QPolygonF polygon;
+	polygon.push_back(QPointF(p.x()             , p.y() - size * 0.5));
+	polygon.push_back(QPointF(p.x() - size * 0.5, p.y()             ));
+	polygon.push_back(QPointF(p.x()             , p.y() + size * 0.5));
+	polygon.push_back(QPointF(p.x() + size * 0.5, p.y()             ));
+	polygon.push_back(QPointF(p.x()             , p.y() - size * 0.5));
+	painter->drawPolygon(polygon);
+
+	painter->restore();
+}
+
+void PointsPreProcessorViewHelper::drawTriangle(const QPointF& p, int size, const QColor& color, int transparency, QPainter* painter)
+{
+	painter->save();
+
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	painter->setPen(c);
+	painter->setBrush(QBrush(c));
+
+	QPolygonF polygon;
+	polygon.push_back(QPointF(p.x()             , p.y() - size * 0.5));
+	polygon.push_back(QPointF(p.x() - size * 0.5, p.y() + size * 0.5));
+	polygon.push_back(QPointF(p.x() + size * 0.5, p.y() + size * 0.5));
+	polygon.push_back(QPointF(p.x()             , p.y() - size * 0.5));
+	painter->drawPolygon(polygon);
+
+	painter->restore();
+}
+
+void PointsPreProcessorViewHelper::drawReverseTriangle(const QPointF& p, int size, const QColor& color, int transparency, QPainter* painter)
+{
+	painter->save();
+
+	QColor c = color;
+	c.setAlphaF(1.0 - transparency / 100.0);
+	painter->setPen(c);
+	painter->setBrush(QBrush(c));
+
+	QPolygonF polygon;
+	polygon.push_back(QPointF(p.x()             , p.y() + size * 0.5));
+	polygon.push_back(QPointF(p.x() - size * 0.5, p.y() - size * 0.5));
+	polygon.push_back(QPointF(p.x() + size * 0.5, p.y() - size * 0.5));
+	polygon.push_back(QPointF(p.x()             , p.y() + size * 0.5));
+	painter->drawPolygon(polygon);
+
+	painter->restore();
+}
+
 void PointsPreProcessorViewHelper::drawCircles(int size, const QColor& color, int transparency, QPainter* painter) const
 {
 	painter->save();

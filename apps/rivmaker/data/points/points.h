@@ -17,6 +17,8 @@ public:
 	const std::vector<GeometryPoint*>& points() const;
 	std::vector<GeometryPoint*>& points();
 
+	virtual QString caption() const = 0;
+
 	virtual void setPoints(const std::vector<GeometryPoint*>& points);
 	void clearPoints();
 

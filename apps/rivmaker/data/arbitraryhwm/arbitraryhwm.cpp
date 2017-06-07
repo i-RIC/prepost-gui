@@ -11,6 +11,11 @@ ArbitraryHWM::ArbitraryHWM(DataItem* parent) :
 ArbitraryHWM::~ArbitraryHWM()
 {}
 
+QString ArbitraryHWM::caption() const
+{
+	return tr("Arbitrary HWM");
+}
+
 QStandardItem* ArbitraryHWM::buildPreProcessorStandardItem() const
 {
 	auto item = new QStandardItem(QIcon(":/images/iconAHWM.png"), tr("Arbitrary HWM"));

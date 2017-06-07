@@ -4,11 +4,20 @@
 #include "../base/dataitemviewhelperi.h"
 
 class QColor;
+class QPointF;
 
 class PointsPreProcessorViewHelper : public DataItemViewHelperI
 {
 public:
+	const static int STD_SIZE;
+
 	PointsPreProcessorViewHelper(DataItemView* v);
+
+	static void drawCircle(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter);
+	static void drawRect(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter);
+	static void drawDiamond(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter);
+	static void drawTriangle(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter);
+	static void drawReverseTriangle(const QPointF& position, int size, const QColor& color, int transparency, QPainter* painter);
 
 protected:
 	void drawCircles(int size, const QColor& color, int transparency, QPainter* painter) const;
@@ -18,8 +27,6 @@ protected:
 	void drawReverseTriangles(int size, const QColor& color, int transparency, QPainter* painter) const;
 
 	void drawNames(QPainter* painter) const;
-
-	const static int STD_SIZE;
 };
 
 #endif // POINTSPREPROCESSORVIEWHELPER_H
