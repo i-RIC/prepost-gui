@@ -12,7 +12,8 @@ public:
 	~RightBankHWMPreProcessorView();
 
 private:
-	void drawMarker(const QPointF& position, QPainter* painter) override;
+	void drawMarker(const QPointF& position, QPainter* painter) const override;
+	void doDraw(QPainter *painter) const override;
 };
 
 #endif // RIGHTBANKHWMPREPROCESSORVIEW_H

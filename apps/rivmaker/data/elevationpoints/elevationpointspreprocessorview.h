@@ -11,7 +11,7 @@ public:
 	~ElevationPointsPreprocessorView();
 
 private:
-	void drawMarker(const QPointF& position, QPainter* painter) override;
+	void drawMarker(const QPointF& position, QPainter* painter) const override;
 };
 
 #endif // ELEVATIONPOINTSPREPROCESSORVIEW_H

@@ -11,6 +11,10 @@ int LEGEND_FONTSIZE = 10;
 
 } // namespace
 
+const int PointsPreProcessorView::LEGEND_WIDTH = 170;
+const int PointsPreProcessorView::LEGEND_TOPMARGIN = 10;
+const int PointsPreProcessorView::LEGEND_LINEHEIGHT = 14;
+
 PointsPreProcessorView::PointsPreProcessorView(Model* model, Points* item) :
 	DataItemView {model, item}
 {}
@@ -18,7 +22,7 @@ PointsPreProcessorView::PointsPreProcessorView(Model* model, Points* item) :
 PointsPreProcessorView::~PointsPreProcessorView()
 {}
 
-void PointsPreProcessorView::drawLegend(QPointF position, QPainter* painter)
+void PointsPreProcessorView::drawLegend(QPointF position, QPainter* painter) const
 {
 	drawMarker(position, painter);
 
