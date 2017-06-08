@@ -13,6 +13,7 @@
 #include "../../../csbuilder/crosssectionbuildertin.h"
 
 #include <QPointF>
+#include <QString>
 
 class Project::Impl
 {
@@ -34,6 +35,11 @@ public:
 	CrossSectionBuilderI* m_currentBuilder;
 
 	QPointF m_offset;
+
+	QString m_filename;
+	QString m_tempDir;
+
+	bool m_isModified;
 };
 
 #endif // PROJECT_IMPL_H

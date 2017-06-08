@@ -15,6 +15,7 @@
 #include "private/rivmakermainwindow_impl.h"
 
 #include <QCloseEvent>
+#include <QFileDialog>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMessageBox>
@@ -79,14 +80,8 @@ RivmakerMainWindow::~RivmakerMainWindow()
 
 void RivmakerMainWindow::newProject()
 {
-	if (impl->m_project != nullptr) {
-		int ret = QMessageBox::warning(this, tr("Warning"), tr("All the data in the project is discarded. Are you sure?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-		if (ret == QMessageBox::Cancel) {
-			return;
-		}
-	}
+	if (! closeProject()) {return;}
 
-	deleteProject();
 	impl->m_project = new Project();
 	impl->m_preProcessorWindow.setProject(impl->m_project);
 	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
@@ -97,6 +92,73 @@ void RivmakerMainWindow::newProject()
 		auto csw = dynamic_cast<CrossSectionWindow*> (w->widget());
 		if (csw == nullptr) {continue;}
 		csw->setProject(impl->m_project);
+	}
+}
+
+void RivmakerMainWindow::openProject()
+{
+	bool ok = closeProject();
+	if (! ok) {return;}
+
+	QString filename = QFileDialog::getOpenFileName(this, tr("Open project file"), impl->m_lastFolder, tr("RivMaker project file (*.rpro)"));
+	if (filename.isNull()) {
+		newProject();
+		return;
+	}
+
+	Project* newP = new Project();
+	ok = newP->load(filename);
+	if (! ok) {
+		QMessageBox::critical(this, tr("Error"), tr("Opening project file failed."));
+		delete newP;
+
+		newProject();
+		return;
+	}
+	impl->m_project = newP;
+
+	impl->m_preProcessorWindow.setProject(impl->m_project);
+	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
+	impl->m_mousePositionWidget.setProject(impl->m_project);
+
+	auto windows = dynamic_cast<QMdiArea*> (centralWidget())->subWindowList();
+	for (auto w : windows) {
+		auto csw = dynamic_cast<CrossSectionWindow*> (w->widget());
+		if (csw == nullptr) {continue;}
+		csw->setProject(impl->m_project);
+	}
+
+	QFileInfo finfo(filename);
+	impl->m_lastFolder = finfo.absolutePath();
+}
+
+void RivmakerMainWindow::saveProject()
+{
+	auto p = impl->m_project;
+	if (p->filename().isNull()) {
+		saveProjectAs();
+		return;
+	}
+
+	bool ok = p->save(p->filename());
+	if (ok) {
+		ui->statusbar->showMessage(tr("Project saved to %1.").arg(QDir::toNativeSeparators(p->filename())), 5000);
+	} else {
+		QMessageBox::critical(this, tr("Error"), tr("Saving project file to %1 failed.").arg(QDir::toNativeSeparators(p->filename())));
+	}
+}
+
+void RivmakerMainWindow::saveProjectAs()
+{
+	auto p = impl->m_project;
+	QString filename = QFileDialog::getSaveFileName(this, tr("Save project file"), impl->m_lastFolder, tr("RivMaker project file (*.rpro)"));
+	if (filename.isNull()) {return;}
+
+	bool ok = p->save(filename);
+	if (ok) {
+		ui->statusbar->showMessage(tr("Project saved to %1.").arg(QDir::toNativeSeparators(p->filename())), 5000);
+	} else {
+		QMessageBox::critical(this, tr("Error"), tr("Saving project file to %1 failed.").arg(QDir::toNativeSeparators(p->filename())));
 	}
 }
 
@@ -387,10 +449,26 @@ void RivmakerMainWindow::activateWindow(QWidget* w)
 	w->setFocus();
 }
 
+bool RivmakerMainWindow::closeProject()
+{
+	if (impl->m_project == nullptr) {return true;}
+
+	if (impl->m_project->isModified()) {
+		int ret = QMessageBox::warning(this, tr("Warning"), tr("The modification made to the project is discarded. Are you sure?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+		if (ret == QMessageBox::Cancel) {
+			return false;
+		}
+	}
+
+	deleteProject();
+
+	return true;
+}
+
 void RivmakerMainWindow::closeEvent(QCloseEvent *e)
 {
-	int ret = QMessageBox::warning(this, tr("Warning"), tr("Are you sure you want to exit Rivmaker?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-	if (ret == QMessageBox::Cancel) {
+	bool ok = closeProject();
+	if (! ok) {
 		e->ignore();
 		return;
 	}

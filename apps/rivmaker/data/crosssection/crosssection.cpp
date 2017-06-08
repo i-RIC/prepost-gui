@@ -189,3 +189,13 @@ DataItemView* CrossSection::buildPreProcessorDataItemView(Model* model)
 {
 	return new CrossSectionPreProcessorView(model, this);
 }
+
+void CrossSection::doLoadFromMainFile(const QDomElement& node)
+{
+
+}
+
+void CrossSection::doSaveToMainFile(QXmlStreamWriter* writer) const
+{
+
+}

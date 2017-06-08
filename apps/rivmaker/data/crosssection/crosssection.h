@@ -54,6 +54,9 @@ public:
 	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
+	void doLoadFromMainFile(const QDomElement& node) override;
+	void doSaveToMainFile(QXmlStreamWriter* writer) const override;
+
 	class Impl;
 	Impl* impl;
 };

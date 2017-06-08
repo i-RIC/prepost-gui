@@ -7,7 +7,7 @@ DEFINES += ANSI_DECLARATORS
 
 include( ../../paths.pri )
 
-QT += widgets network
+QT += widgets network xml
 RC_FILE = rivmaker.rc
 
 # iricTriangle

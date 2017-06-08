@@ -68,3 +68,13 @@ QString CrossSections::nextName() const
 		++ id;
 	}
 }
+
+void CrossSections::doLoadFromMainFile(const QDomElement& node)
+{
+
+}
+
+void CrossSections::doSaveToMainFile(QXmlStreamWriter* writer) const
+{
+
+}

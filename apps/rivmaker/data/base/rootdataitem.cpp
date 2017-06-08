@@ -27,3 +27,13 @@ DataItemView* RootDataItem::buildPreProcessorDataItemView(Model *model)
 {
 	return new DataItemView(model, this);
 }
+
+void RootDataItem::doLoadFromMainFile(const QDomElement& node)
+{
+
+}
+
+void RootDataItem::doSaveToMainFile(QXmlStreamWriter* writer) const
+{
+
+}

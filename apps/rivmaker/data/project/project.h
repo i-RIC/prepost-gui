@@ -28,6 +28,9 @@ public:
 	Project();
 	~Project();
 
+	bool load(const QString& filename);
+	bool save(const QString& filename);
+
 	RootDataItem* rootDataItem() const;
 
 	const ElevationPoints& elevationPoints() const;
@@ -68,6 +71,12 @@ public:
 	void calcCrossSectionElevations();
 	void mapPointsToCrossSections();
 	bool sortCrossSectionsIfPossible();
+
+	QString filename() const;
+	QString tempDir() const;
+
+	bool isModified() const;
+	void setModified();
 
 public slots:
 	void emitUpdated();

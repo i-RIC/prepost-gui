@@ -24,6 +24,9 @@ public:
 
 private slots:
 	void newProject();
+	void openProject();
+	void saveProject();
+	void saveProjectAs();
 
 	void importElevation();
 	void importWaterSurfaceElevation();
@@ -71,6 +74,8 @@ private slots:
 	void activateWindow(QWidget* w);
 
 private:
+	bool closeProject();
+
 	void closeEvent(QCloseEvent *e) override;
 
 	void setupConnections();
