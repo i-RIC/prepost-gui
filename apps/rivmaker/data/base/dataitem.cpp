@@ -1,8 +1,11 @@
 #include "dataitem.h"
 #include "../project/project.h"
 
+#include <QDataStream>
 #include <QDir>
 #include <QStandardItem>
+
+const int DataItem::QDATASTREAM_VERSION = QDataStream::Qt_4_8;
 
 DataItem::DataItem(DataItem *parent) :
 	QObject(parent),

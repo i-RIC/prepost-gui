@@ -1,5 +1,7 @@
 #include "rivmakermainwindow.h"
 
+#include <misc/iricrootpath.h>
+
 #include <QApplication>
 #include <QDir>
 #include <QSettings>
@@ -14,6 +16,7 @@ int main(int argc, char* argv[])
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
 
 	QString exeFolder = QApplication::applicationDirPath();
+	iRICRootPath::set(exeFolder);
 
 	QString langFolder = QDir(exeFolder).absoluteFilePath("languages");
 

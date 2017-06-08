@@ -24,6 +24,10 @@ public:
 
 	DataItemController* buildPreProcessorDataItemController(Model* model) override;
 
+protected:
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) const override;
+
 private:
 	class Impl;
 	Impl* impl;

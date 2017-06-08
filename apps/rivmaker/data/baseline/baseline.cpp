@@ -6,6 +6,7 @@
 
 #include "private/baseline_impl.h"
 
+#include <QFile>
 #include <QIcon>
 #include <QPointF>
 #include <QStandardItem>
@@ -129,4 +130,51 @@ DataItemController* BaseLine::buildPreProcessorDataItemController(Model* model)
 DataItemView* BaseLine::buildPreProcessorDataItemView(Model* model)
 {
 	return new BaseLinePreProcessorView(model, this);
+}
+
+void BaseLine::loadExternalData(const QString& filename)
+{
+	QFile file(filename);
+	bool ok = file.open(QIODevice::ReadOnly);
+	if (! ok) {return;}
+
+	QDataStream in(&file);
+	in.setVersion(QDATASTREAM_VERSION);
+
+	qint32 count;
+
+	in >> count;
+
+	impl->m_polyLine.clear();
+	for (qint32 i = 0; i < count; ++i) {
+		QPointF p;
+		in >> p;
+		impl->m_polyLine.push_back(p);
+	}
+
+	file.close();
+}
+
+void BaseLine::saveExternalData(const QString& filename) const
+{
+	QFile file(filename);
+	bool ok = file.open(QIODevice::WriteOnly);
+	if (! ok) {return;}
+	QDataStream out(&file);
+	out.setVersion(QDATASTREAM_VERSION);
+
+	qint32 count = static_cast<qint32> (impl->m_polyLine.size());
+
+	out << count;
+
+	for (QPointF& p : impl->m_polyLine) {
+		out << p;
+	}
+
+	file.close();
+}
+
+QString BaseLine::relativeFilename() const
+{
+	return "baseline.dat";
 }

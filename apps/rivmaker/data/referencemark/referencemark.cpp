@@ -27,3 +27,8 @@ DataItemView* ReferenceMark::buildPreProcessorDataItemView(Model* model)
 {
 	return new ReferenceMarkPreProcessorView(model, this);
 }
+
+QString ReferenceMark::relativeFilename() const
+{
+	return "referencemark.dat";
+}

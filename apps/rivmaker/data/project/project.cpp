@@ -106,6 +106,8 @@ bool Project::load(const QString& filename)
 	impl->m_filename = filename;
 	impl->m_isModified = false;
 
+	updatePointsAutoSize();
+
 	return true;
 }
 
@@ -134,7 +136,10 @@ bool Project::save(const QString& filename)
 	// only for debugging
 	std::string dirString = dir.path().toLocal8Bit();
 
-	bool ret = iRIC::ZipArchive(filename, dir.path(), impl->m_rootDataItem.containedFiles());
+	QStringList files = impl->m_rootDataItem.containedFiles();
+	files << PROJECT_FILENAME;
+
+	bool ret = iRIC::ZipArchive(filename, dir.path(), files);
 	impl->m_filename = filename;
 
 	impl->m_isModified = false;

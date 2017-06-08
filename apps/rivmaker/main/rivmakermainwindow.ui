@@ -175,6 +175,8 @@
     <bool>false</bool>
    </attribute>
    <addaction name="newProjectAction"/>
+   <addaction name="openAction"/>
+   <addaction name="saveAction"/>
    <addaction name="separator"/>
    <addaction name="fitAction"/>
    <addaction name="resetRotationAction"/>
@@ -580,6 +582,12 @@
    <property name="text">
     <string>&amp;Open...</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
   </action>
   <action name="saveAction">
    <property name="icon">
@@ -588,6 +596,9 @@
    </property>
    <property name="text">
     <string>Save</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
    </property>
   </action>
  </widget>

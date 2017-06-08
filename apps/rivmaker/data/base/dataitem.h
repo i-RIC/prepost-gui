@@ -19,6 +19,8 @@ class DataItem : public QObject
 	Q_OBJECT
 
 public:
+	const static int QDATASTREAM_VERSION;
+
 	explicit DataItem(DataItem *parent = nullptr);
 	virtual ~DataItem();
 

@@ -13,6 +13,9 @@ public:
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
+
+private:
+	QString relativeFilename() const override;
 };
 
 #endif // REFERENCEMARK_H

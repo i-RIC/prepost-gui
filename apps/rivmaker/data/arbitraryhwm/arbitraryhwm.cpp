@@ -27,3 +27,8 @@ DataItemView* ArbitraryHWM::buildPreProcessorDataItemView(Model* model)
 {
 	return new ArbitraryHWMPreProcessorView(model, this);
 }
+
+QString ArbitraryHWM::relativeFilename() const
+{
+	return "arbitraryhwm.dat";
+}

@@ -103,7 +103,6 @@ void CrossSectionsPreProcessorController::rebuildStandardItemsAndViews()
 		m->removeDataItemView(cs);
 	}
 
-	int id = 0;
 	for (auto cs : item()->childItems()) {
 		auto cs2 = dynamic_cast<CrossSection*> (cs);
 		auto sItem = cs2->buildPreProcessorStandardItem();

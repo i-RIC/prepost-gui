@@ -5,9 +5,14 @@
 
 #include "private/crosssection_impl.h"
 
+#include <misc/xmlsupport.h>
+
+#include <QDomElement>
+#include <QFile>
 #include <QIcon>
 #include <QStandardItem>
 #include <QVector2D>
+#include <QXmlStreamWriter>
 
 CrossSection::Impl::Impl(CrossSection* cs) :
 	m_isDefined {false},
@@ -33,6 +38,16 @@ CrossSection::~CrossSection()
 bool CrossSection::isDefined() const
 {
 	return impl->m_isDefined;
+}
+
+int CrossSection::id() const
+{
+	return impl->m_id;
+}
+
+void CrossSection::setId(int id)
+{
+	impl->m_id = id;
 }
 
 QString CrossSection::name() const
@@ -192,10 +207,48 @@ DataItemView* CrossSection::buildPreProcessorDataItemView(Model* model)
 
 void CrossSection::doLoadFromMainFile(const QDomElement& node)
 {
-
+	impl->m_name = node.attribute("name");
+	impl->m_isDefined = iRIC::getBooleanAttribute(node, "isDefined", false);
+	impl->m_waterElevationIsSet = iRIC::getBooleanAttribute(node, "isWaterElevationSet", false);
 }
 
 void CrossSection::doSaveToMainFile(QXmlStreamWriter* writer) const
 {
+	writer->writeAttribute("name", impl->m_name);
+	iRIC::setBooleanAttribute(*writer, "isDefined", impl->m_isDefined);
+	iRIC::setBooleanAttribute(*writer, "isWaterElevationSet", impl->m_waterElevationIsSet);
+}
 
+void CrossSection::loadExternalData(const QString& filename)
+{
+	QFile file(filename);
+	bool ok = file.open(QIODevice::ReadOnly);
+	if (! ok) {return;}
+
+	QDataStream in(&file);
+	in.setVersion(QDATASTREAM_VERSION);
+
+	in >> impl->m_point1 >> impl->m_point2;
+	in >> impl->m_waterElevation;
+
+	file.close();
+}
+
+void CrossSection::saveExternalData(const QString& filename) const
+{
+	QFile file(filename);
+	bool ok = file.open(QIODevice::WriteOnly);
+	if (! ok) {return;}
+	QDataStream out(&file);
+	out.setVersion(QDATASTREAM_VERSION);
+
+	out << impl->m_point1 << impl->m_point2;
+	out << impl->m_waterElevation;
+
+	file.close();
+}
+
+QString CrossSection::relativeFilename() const
+{
+	return QString("crosssection%1.dat").arg(impl->m_id);
 }

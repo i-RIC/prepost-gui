@@ -28,3 +28,7 @@ DataItemView* RightBankHWM::buildPreProcessorDataItemView(Model* model)
 	return new RightBankHWMPreProcessorView(model, this);
 }
 
+QString RightBankHWM::relativeFilename() const
+{
+	return "rightbankhwm.dat";
+}
