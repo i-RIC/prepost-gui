@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QSettings>
+#include <QTextCodec>
 #include <QTranslator>
 
 int main(int argc, char* argv[])
@@ -32,5 +33,12 @@ int main(int argc, char* argv[])
 
 	RivmakerMainWindow w;
 	w.show();
+
+	if (argc > 1) {
+		QTextCodec* codec = QTextCodec::codecForLocale();
+		QString fname = codec->toUnicode(argv[1]);
+		w.openProject(fname);
+	}
+
 	return a.exec();
 }

@@ -20,6 +20,7 @@ public:
 	explicit RivmakerMainWindow(QWidget *parent = 0);
 	~RivmakerMainWindow();
 
+	void openProject(const QString& filename);
 	void exportWaterSurfaceElevationData();
 
 private slots:
@@ -77,7 +78,6 @@ private slots:
 	void setupRecentProjectsMenu();
 
 private:
-	void openProject(const QString& filename);
 	bool closeProject();
 
 	void updateWindowTitle();
