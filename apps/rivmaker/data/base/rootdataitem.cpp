@@ -1,5 +1,9 @@
 #include "rootdataitem.h"
 #include "../base/dataitemview.h"
+#include "../baseline/baseline.h"
+#include "../crosssections/crosssections.h"
+#include "../elevationpoints/elevationpoints.h"
+#include "../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 #include "../project/project.h"
 
 #include <misc/xmlsupport.h>
