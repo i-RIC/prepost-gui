@@ -37,6 +37,11 @@ public:
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
 
 private:
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) const override;
+
+	QString relativeFilename() const override;
+
 	class Impl;
 	Impl* impl;
 };

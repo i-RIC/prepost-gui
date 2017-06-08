@@ -1,8 +1,11 @@
 #include "rivmakermainwindow.h"
 
+#include <misc/iricrootpath.h>
+
 #include <QApplication>
 #include <QDir>
 #include <QSettings>
+#include <QTextCodec>
 #include <QTranslator>
 
 int main(int argc, char* argv[])
@@ -14,6 +17,7 @@ int main(int argc, char* argv[])
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
 
 	QString exeFolder = QApplication::applicationDirPath();
+	iRICRootPath::set(exeFolder);
 
 	QString langFolder = QDir(exeFolder).absoluteFilePath("languages");
 
@@ -29,5 +33,12 @@ int main(int argc, char* argv[])
 
 	RivmakerMainWindow w;
 	w.show();
+
+	if (argc > 1) {
+		QTextCodec* codec = QTextCodec::codecForLocale();
+		QString fname = codec->toUnicode(argv[1]);
+		w.openProject(fname);
+	}
+
 	return a.exec();
 }

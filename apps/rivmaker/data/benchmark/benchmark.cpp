@@ -27,3 +27,8 @@ DataItemView* Benchmark::buildPreProcessorDataItemView(Model* model)
 {
 	return new BenchmarkPreProcessorView(model, this);
 }
+
+QString Benchmark::relativeFilename() const
+{
+	return "benchmark.dat";
+}

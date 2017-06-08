@@ -61,6 +61,8 @@ BaseLinePreProcessorController::BaseLinePreProcessorController(Model* model, Bas
 	connect(impl->m_editCoordinatesAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
 	connect(impl->m_reverseDirectionAction, SIGNAL(triggered()), this, SLOT(reverseDirection()));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(clear()));
+
+	updateMode();
 }
 
 BaseLinePreProcessorController::~BaseLinePreProcessorController()

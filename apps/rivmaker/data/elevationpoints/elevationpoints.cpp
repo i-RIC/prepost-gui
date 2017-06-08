@@ -179,3 +179,15 @@ std::vector<QVector2D> ElevationPoints::buildCrossSectionPoints(const QPointF& p
 	}
 	return ret;
 }
+
+void ElevationPoints::loadExternalData(const QString& filename)
+{
+	Points::loadExternalData(filename);
+	impl->buildTriangles();
+	impl->buildContainers();
+}
+
+QString ElevationPoints::relativeFilename() const
+{
+	return "elevationpoints.dat";
+}

@@ -14,6 +14,8 @@ class CrossSection::Impl
 public:
 	Impl(CrossSection* cs);
 
+	int m_id;
+
 	QString m_name;
 	bool m_isDefined;
 

@@ -63,10 +63,21 @@
      <addaction name="fileExportCrosssectionLineAction"/>
      <addaction name="fileExportRiverSurveyDataAction"/>
     </widget>
+    <widget class="QMenu" name="recentProjectsMenu">
+     <property name="title">
+      <string>&amp;Recent Projects</string>
+     </property>
+     <addaction name="dummyAction"/>
+    </widget>
     <addaction name="newProjectAction"/>
+    <addaction name="openAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveAsAction"/>
     <addaction name="separator"/>
     <addaction name="fileImportMenu"/>
     <addaction name="exportMenu"/>
+    <addaction name="separator"/>
+    <addaction name="recentProjectsMenu"/>
     <addaction name="separator"/>
     <addaction name="exitAction"/>
    </widget>
@@ -172,6 +183,8 @@
     <bool>false</bool>
    </attribute>
    <addaction name="newProjectAction"/>
+   <addaction name="openAction"/>
+   <addaction name="saveAction"/>
    <addaction name="separator"/>
    <addaction name="fitAction"/>
    <addaction name="resetRotationAction"/>
@@ -567,6 +580,38 @@
   <action name="graphicsSettingAction">
    <property name="text">
     <string>&amp;Graphics Setting...</string>
+   </property>
+  </action>
+  <action name="openAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconOpen.png</normaloff>:/images/iconOpen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="saveAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconSave.png</normaloff>:/images/iconSave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="dummyAction">
+   <property name="text">
+    <string>dummy</string>
    </property>
   </action>
  </widget>

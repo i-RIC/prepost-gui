@@ -5,7 +5,9 @@
 
 #include "private/crosssections_impl.h"
 
+#include <QDomElement>
 #include <QStandardItem>
+#include <QXmlStreamWriter>
 
 CrossSections::CrossSections(DataItem* parent) :
 	DataItem {parent},
@@ -66,5 +68,32 @@ QString CrossSections::nextName() const
 		if (! found) {return name;}
 
 		++ id;
+	}
+}
+
+void CrossSections::doLoadFromMainFile(const QDomElement& node)
+{
+	int id = 1;
+	auto children = node.childNodes();
+	auto& cItems = childItems();
+	for (int i = 0; i < children.size(); ++i) {
+		QDomElement c = children.at(i).toElement();
+		CrossSection* cs = new CrossSection(this);
+		cs->setId(id);
+		cs->loadFromMainFile(c);
+		++id;
+	}
+}
+
+void CrossSections::doSaveToMainFile(QXmlStreamWriter* writer) const
+{
+	int id = 1;
+	for (DataItem* item : childItems()) {
+		auto cs = dynamic_cast<CrossSection*> (item);
+		cs->setId(id);
+		writer->writeStartElement("CrossSection");
+		cs->saveToMainFile(writer);
+		writer->writeEndElement();
+		++id;
 	}
 }

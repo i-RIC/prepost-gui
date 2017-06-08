@@ -9,6 +9,7 @@
 #include "../../window/verticalcrosssection/verticalcrosssectionwindow.h"
 
 #include <QSignalMapper>
+#include <QString>
 #include <QToolBar>
 
 class Project;
@@ -31,6 +32,8 @@ public:
 	MousePositionWidget m_mousePositionWidget;
 
 	Project* m_project;
+
+	QString m_lastFolder;
 };
 
 #endif // RIVMAKERMAINWINDOW_IMPL_H

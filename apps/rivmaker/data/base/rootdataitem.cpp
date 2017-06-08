@@ -1,7 +1,16 @@
 #include "rootdataitem.h"
 #include "../base/dataitemview.h"
+#include "../baseline/baseline.h"
+#include "../crosssections/crosssections.h"
+#include "../elevationpoints/elevationpoints.h"
+#include "../watersurfaceelevationpoints/watersurfaceelevationpoints.h"
+#include "../project/project.h"
 
-#include<QStandardItem>
+#include <misc/xmlsupport.h>
+
+#include <QDomElement>
+#include <QStandardItem>
+#include <QXmlStreamWriter>
 
 RootDataItem::RootDataItem(Project* project) :
 	DataItem {},
@@ -26,4 +35,46 @@ QStandardItem* RootDataItem::buildPreProcessorStandardItem() const
 DataItemView* RootDataItem::buildPreProcessorDataItemView(Model *model)
 {
 	return new DataItemView(model, this);
+}
+
+void RootDataItem::doLoadFromMainFile(const QDomElement& node)
+{
+	QDomElement epElem = iRIC::getChildNode(node, "ElevationPoints").toElement();
+	if (! epElem.isNull()) {
+		project()->elevationPoints().loadFromMainFile(epElem);
+	}
+
+	QDomElement wsepElem = iRIC::getChildNode(node, "WaterSurfaceElevationPoints").toElement();
+	if (! wsepElem.isNull()) {
+		project()->waterSurfaceElevationPoints().loadFromMainFile(wsepElem);
+	}
+
+	QDomElement csElem = iRIC::getChildNode(node, "CrossSections").toElement();
+	if (! csElem.isNull()) {
+		project()->crossSections().loadFromMainFile(csElem);
+	}
+
+	QDomElement blElem = iRIC::getChildNode(node, "BaseLine").toElement();
+	if (! blElem.isNull()) {
+		project()->baseLine().loadFromMainFile(blElem);
+	}
+}
+
+void RootDataItem::doSaveToMainFile(QXmlStreamWriter* writer) const
+{
+	writer->writeStartElement("ElevationPoints");
+	project()->elevationPoints().saveToMainFile(writer);
+	writer->writeEndElement();
+
+	writer->writeStartElement("WaterSurfaceElevationPoints");
+	project()->waterSurfaceElevationPoints().saveToMainFile(writer);
+	writer->writeEndElement();
+
+	writer->writeStartElement("CrossSections");
+	project()->crossSections().saveToMainFile(writer);
+	writer->writeEndElement();
+
+	writer->writeStartElement("BaseLine");
+	project()->baseLine().saveToMainFile(writer);
+	writer->writeEndElement();
 }

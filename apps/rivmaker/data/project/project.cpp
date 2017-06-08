@@ -9,10 +9,21 @@
 
 #include "private/project_impl.h"
 
+#include <misc/ziparchive.h>
+
+#include <QDir>
+#include <QDomDocument>
+#include <QFile>
+#include <QTemporaryDir>
+#include <QXmlStreamWriter>
+
 #include <map>
+#include <string>
 #include <vector>
 
 namespace {
+
+const QString PROJECT_FILENAME = "project.xml";
 
 void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals)
 {
@@ -60,7 +71,8 @@ Project::Impl::Impl(Project *project) :
 	m_waterSurfaceElevationPoints {&m_rootDataItem},
 	m_crossSections {&m_rootDataItem},
 	m_baseLine {&m_rootDataItem},
-	m_currentBuilder {& m_builderNearest}
+	m_currentBuilder {& m_builderNearest},
+	m_isModified {false}
 {}
 
 Project::Impl::~Impl()
@@ -75,6 +87,70 @@ Project::Project() :
 Project::~Project()
 {
 	delete impl;
+}
+
+bool Project::load(const QString& filename)
+{
+	QFile f2(filename);
+	if (! f2.exists()) {return false;}
+
+	QTemporaryDir dir;
+	impl->m_tempDir = dir.path();
+
+	iRIC::UnzipArchive(filename, dir.path());
+
+	QDir d(dir.path());
+	QFile f(d.absoluteFilePath(PROJECT_FILENAME));
+	QDomDocument doc;
+	doc.setContent(&f);
+
+	rootDataItem()->loadFromMainFile(doc.documentElement());
+
+	impl->m_filename = filename;
+	impl->m_isModified = false;
+
+	updatePointsAutoSize();
+
+	return true;
+}
+
+bool Project::save(const QString& filename)
+{
+	QTemporaryDir dir;
+	impl->m_tempDir = dir.path();
+
+	QDir d(dir.path());
+	QFile f(d.absoluteFilePath(PROJECT_FILENAME));
+
+	bool ok = f.open(QFile::WriteOnly);
+	if (! ok) {return false;}
+
+	QXmlStreamWriter w(&f);
+	w.setAutoFormatting(true);
+	w.writeStartDocument("1.0");
+	w.writeStartElement("RivMakerProject");
+
+	rootDataItem()->saveToMainFile(&w);
+
+	w.writeEndElement();
+	w.writeEndDocument();
+	f.close();
+
+	QStringList files = impl->m_rootDataItem.containedFiles();
+	files << PROJECT_FILENAME;
+
+	QFile oldFile(filename);
+	if (oldFile.exists()) {
+		ok = oldFile.remove();
+		if (! ok) {return false;}
+	}
+
+	bool ret = iRIC::ZipArchive(filename, dir.path(), files);
+	impl->m_filename = filename;
+
+	impl->m_isModified = false;
+
+	return ret;
 }
 
 RootDataItem* Project::rootDataItem() const
@@ -317,6 +393,26 @@ bool Project::sortCrossSectionsIfPossible()
 		childItems.push_back(pair.second);
 	}
 	return true;
+}
+
+QString Project::filename() const
+{
+	return impl->m_filename;
+}
+
+QString Project::tempDir() const
+{
+	return impl->m_tempDir;
+}
+
+bool Project::isModified() const
+{
+	return impl->m_isModified;
+}
+
+void Project::setModified()
+{
+	impl->m_isModified = true;
 }
 
 void Project::emitUpdated()

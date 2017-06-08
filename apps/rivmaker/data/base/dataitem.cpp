@@ -1,6 +1,11 @@
 #include "dataitem.h"
+#include "../project/project.h"
 
+#include <QDataStream>
+#include <QDir>
 #include <QStandardItem>
+
+const int DataItem::QDATASTREAM_VERSION = QDataStream::Qt_4_8;
 
 DataItem::DataItem(DataItem *parent) :
 	QObject(parent),
@@ -50,6 +55,31 @@ std::vector<DataItem*>& DataItem::childItems()
 	return m_childItems;
 }
 
+void DataItem::loadFromMainFile(const QDomElement& node)
+{
+	doLoadFromMainFile(node);
+	loadExternalData(filename());
+}
+
+void DataItem::saveToMainFile(QXmlStreamWriter* writer) const
+{
+	doSaveToMainFile(writer);
+	saveExternalData(filename());
+}
+
+QStringList DataItem::containedFiles() const
+{
+	QStringList ret;
+	const QString name = relativeFilename();
+	if (! name.isNull()) {
+		ret.push_back(name);
+	}
+	for (DataItem* child : m_childItems) {
+		ret << child->containedFiles();
+	}
+	return ret;
+}
+
 void DataItem::unregisterChild(DataItem* child)
 {
 	auto it = std::find(m_childItems.begin(), m_childItems.end(), child);
@@ -76,4 +106,28 @@ void DataItem::setupStandardItem(QStandardItem* item)
 	item->setCheckable(true);
 	item->setCheckState(Qt::Checked);
 	item->setEditable(false);
+}
+
+void DataItem::doLoadFromMainFile(const QDomElement&)
+{}
+
+void DataItem::doSaveToMainFile(QXmlStreamWriter*) const
+{}
+
+void DataItem::loadExternalData(const QString&)
+{}
+
+void DataItem::saveExternalData(const QString&) const
+{}
+
+QString DataItem::filename() const
+{
+	QDir dir(project()->tempDir());
+	return dir.absoluteFilePath(relativeFilename());
+}
+
+QString DataItem::relativeFilename() const
+{
+	QString nullStr;
+	return nullStr;
 }

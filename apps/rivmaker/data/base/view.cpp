@@ -138,7 +138,10 @@ void View::paintEvent(QPaintEvent*)
 	painter.setRenderHint(QPainter::Antialiasing);
 	painter.fillRect(rect(), QColor(250, 250, 250));
 
-	model()->rootDataItemView()->draw(&painter);
+	auto iv = model()->rootDataItemView();
+	if (iv == nullptr) {return;}
+
+	iv->draw(&painter);
 }
 
 void View::keyPressEvent(QKeyEvent* event)

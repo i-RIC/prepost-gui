@@ -15,6 +15,9 @@ public:
 
 	QStandardItem* buildPreProcessorStandardItem() const override;
 	DataItemView* buildPreProcessorDataItemView(Model*) override;
+
+private:
+	QString relativeFilename() const override;
 };
 
 #endif // HUB_H

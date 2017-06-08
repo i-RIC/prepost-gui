@@ -7,6 +7,10 @@
 void RivmakerMainWindow::setupConnections()
 {
 	connect(ui->newProjectAction, SIGNAL(triggered()), this, SLOT(newProject()));
+	connect(ui->openAction, SIGNAL(triggered()), this, SLOT(openProject()));
+	connect(ui->saveAction, SIGNAL(triggered()), this, SLOT(saveProject()));
+	connect(ui->saveAsAction, SIGNAL(triggered()), this, SLOT(saveProjectAs()));
+	connect(ui->recentProjectsMenu, SIGNAL(aboutToShow()), this, SLOT(setupRecentProjectsMenu()));
 	connect(ui->exitAction, SIGNAL(triggered()), this, SLOT(close()));
 
 	connect(ui->importElevationAction, SIGNAL(triggered()), this, SLOT(importElevation()));

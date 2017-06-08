@@ -22,6 +22,9 @@ public:
 	std::vector<QVector2D> buildCrossSectionPoints(const QPointF& p1, const QPointF& p2) const;
 
 private:
+	void loadExternalData(const QString& filename) override;
+	QString relativeFilename() const override;
+
 	class Impl;
 	Impl* impl;
 };

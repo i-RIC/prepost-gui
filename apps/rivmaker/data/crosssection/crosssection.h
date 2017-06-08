@@ -18,6 +18,9 @@ public:
 
 	bool isDefined() const;
 
+	int id() const;
+	void setId(int id);
+
 	QString name() const;
 	void setName(const QString& name);
 
@@ -54,6 +57,14 @@ public:
 	DataItemView* buildPreProcessorDataItemView(Model* model) override;
 
 private:
+	void doLoadFromMainFile(const QDomElement& node) override;
+	void doSaveToMainFile(QXmlStreamWriter* writer) const override;
+
+	void loadExternalData(const QString& filename);
+	void saveExternalData(const QString& filename) const;
+
+	QString relativeFilename() const override;
+
 	class Impl;
 	Impl* impl;
 };

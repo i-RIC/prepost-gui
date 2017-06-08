@@ -27,3 +27,8 @@ DataItemView* StreamGage::buildPreProcessorDataItemView(Model* model)
 {
 	return new StreamGagePreProcessorView(model, this);
 }
+
+QString StreamGage::relativeFilename() const
+{
+	return "streamgage.dat";
+}

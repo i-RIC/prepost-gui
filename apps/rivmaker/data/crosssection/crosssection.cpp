@@ -1,13 +1,19 @@
 #include "crosssection.h"
 #include "crosssectionpreprocessorcontroller.h"
 #include "crosssectionpreprocessorview.h"
+#include "../project/project.h"
 #include "../../misc/geometryutil.h"
 
 #include "private/crosssection_impl.h"
 
+#include <misc/xmlsupport.h>
+
+#include <QDomElement>
+#include <QFile>
 #include <QIcon>
 #include <QStandardItem>
 #include <QVector2D>
+#include <QXmlStreamWriter>
 
 CrossSection::Impl::Impl(CrossSection* cs) :
 	m_isDefined {false},
@@ -35,6 +41,16 @@ bool CrossSection::isDefined() const
 	return impl->m_isDefined;
 }
 
+int CrossSection::id() const
+{
+	return impl->m_id;
+}
+
+void CrossSection::setId(int id)
+{
+	impl->m_id = id;
+}
+
 QString CrossSection::name() const
 {
 	return impl->m_name;
@@ -43,6 +59,7 @@ QString CrossSection::name() const
 void CrossSection::setName(const QString& name)
 {
 	impl->m_name = name;
+	project()->setModified();
 }
 
 QPointF CrossSection::point1() const
@@ -54,6 +71,7 @@ void CrossSection::setPoint1(const QPointF& p)
 {
 	impl->m_isDefined = true;
 	impl->m_point1 = p;
+	project()->setModified();
 }
 
 QPointF CrossSection::point2() const
@@ -65,6 +83,7 @@ void CrossSection::setPoint2(const QPointF& p)
 {
 	impl->m_isDefined = true;
 	impl->m_point2 = p;
+	project()->setModified();
 }
 
 QPointF CrossSection::point(int index) const
@@ -85,6 +104,7 @@ void CrossSection::setPoint(int index, const QPointF& p)
 		point = &(impl->m_point2);
 	}
 	*point = p;
+	project()->setModified();
 }
 
 std::vector<QPointF> CrossSection::coordinates() const
@@ -101,6 +121,7 @@ void CrossSection::setCoordinates(const std::vector<QPointF>& coords)
 {
 	impl->m_point1 = coords.at(0);
 	impl->m_point2 = coords.at(1);
+	project()->setModified();
 }
 
 bool CrossSection::waterElevationIsSet() const
@@ -111,6 +132,7 @@ bool CrossSection::waterElevationIsSet() const
 void CrossSection::setWaterElevationIsSet(bool isSet)
 {
 	impl->m_waterElevationIsSet = isSet;
+	project()->setModified();
 }
 
 double CrossSection::waterElevation() const
@@ -121,6 +143,7 @@ double CrossSection::waterElevation() const
 void CrossSection::setWaterElevation(double e)
 {
 	impl->m_waterElevation = e;
+	project()->setModified();
 }
 
 std::vector<QVector2D> CrossSection::mappedPoints() const
@@ -170,6 +193,7 @@ void CrossSection::reverseDirection()
 	auto tmpP = impl->m_point1;
 	impl->m_point1 = impl->m_point2;
 	impl->m_point2 = tmpP;
+	project()->setModified();
 }
 
 QStandardItem* CrossSection::buildPreProcessorStandardItem() const
@@ -188,4 +212,52 @@ DataItemController* CrossSection::buildPreProcessorDataItemController(Model* mod
 DataItemView* CrossSection::buildPreProcessorDataItemView(Model* model)
 {
 	return new CrossSectionPreProcessorView(model, this);
+}
+
+void CrossSection::doLoadFromMainFile(const QDomElement& node)
+{
+	impl->m_name = node.attribute("name");
+	impl->m_isDefined = iRIC::getBooleanAttribute(node, "isDefined", false);
+	impl->m_waterElevationIsSet = iRIC::getBooleanAttribute(node, "isWaterElevationSet", false);
+}
+
+void CrossSection::doSaveToMainFile(QXmlStreamWriter* writer) const
+{
+	writer->writeAttribute("name", impl->m_name);
+	iRIC::setBooleanAttribute(*writer, "isDefined", impl->m_isDefined);
+	iRIC::setBooleanAttribute(*writer, "isWaterElevationSet", impl->m_waterElevationIsSet);
+}
+
+void CrossSection::loadExternalData(const QString& filename)
+{
+	QFile file(filename);
+	bool ok = file.open(QIODevice::ReadOnly);
+	if (! ok) {return;}
+
+	QDataStream in(&file);
+	in.setVersion(QDATASTREAM_VERSION);
+
+	in >> impl->m_point1 >> impl->m_point2;
+	in >> impl->m_waterElevation;
+
+	file.close();
+}
+
+void CrossSection::saveExternalData(const QString& filename) const
+{
+	QFile file(filename);
+	bool ok = file.open(QIODevice::WriteOnly);
+	if (! ok) {return;}
+	QDataStream out(&file);
+	out.setVersion(QDATASTREAM_VERSION);
+
+	out << impl->m_point1 << impl->m_point2;
+	out << impl->m_waterElevation;
+
+	file.close();
+}
+
+QString CrossSection::relativeFilename() const
+{
+	return QString("crosssection%1.dat").arg(impl->m_id);
 }

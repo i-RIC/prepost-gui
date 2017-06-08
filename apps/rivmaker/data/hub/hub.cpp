@@ -27,3 +27,8 @@ DataItemView* Hub::buildPreProcessorDataItemView(Model* model)
 {
 	return new HubPreProcessorView(model, this);
 }
+
+QString Hub::relativeFilename() const
+{
+	return "hub.dat";
+}
