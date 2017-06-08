@@ -7,7 +7,7 @@
 #include <QString>
 
 class QDir;
-class QFile;
+class QLockFile;
 class iRICMainWindowInterface;
 class ProjectMainFile;
 class SolverDefinition;
@@ -122,7 +122,7 @@ private:
 	/// Solver Definition container.
 	SolverDefinition* m_solverDefinition;
 	/// Lock file
-	QFile* m_lockFile;
+	QLockFile* m_lockFile;
 	/// iRIC MainWindow
 	iRICMainWindowInterface* m_mainWindow;
 	/// Post only mode (i. e. solver definition does not exist);

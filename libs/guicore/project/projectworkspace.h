@@ -38,7 +38,7 @@ public:
 	/// Trash all workfolders those seems to be not used any more.
 	void trashAllTrashWorkfolders();
 	/// Trash the specified workfolder.
-	bool trashWorkfolder(const QString& foldername);
+	bool deleteWorkfolder(const QString& foldername);
 
 	/// QDir object that points the workspace folder.
 	const QDir& workspace() const;

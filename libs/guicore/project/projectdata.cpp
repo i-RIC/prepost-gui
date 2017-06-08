@@ -25,7 +25,7 @@
 #include <QCoreApplication>
 #include <QDesktopServices>
 #include <QDir>
-#include <QFile>
+#include <QLockFile>
 #include <QMessageBox>
 #include <QProcess>
 #include <QTime>
@@ -299,8 +299,8 @@ void ProjectData::checkGridConditions()
 bool ProjectData::lock()
 {
 	unlock();
-	m_lockFile = new QFile(lockFileName(), this);
-	bool ok = m_lockFile->open(QIODevice::WriteOnly);
+	m_lockFile = new QLockFile(lockFileName());
+	bool ok = m_lockFile->lock();
 	if (! ok) {
 		delete m_lockFile;
 		m_lockFile = nullptr;
@@ -312,9 +312,8 @@ bool ProjectData::lock()
 void ProjectData::unlock()
 {
 	if (m_lockFile == nullptr) {return;}
-	m_lockFile->close();
+	m_lockFile->unlock();
 	delete m_lockFile;
-	QFile::remove(lockFileName());
 	m_lockFile = nullptr;
 }
 

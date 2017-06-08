@@ -86,11 +86,11 @@ void ProjectWorkspace::trashAllTrashWorkfolders()
 {
 	auto trashes = trashWorkfolders();
 	for (WorkfolderInfo* f : trashes) {
-		trashWorkfolder(f->folderName());
+		deleteWorkfolder(f->folderName());
 	}
 }
 
-bool ProjectWorkspace::trashWorkfolder(const QString& foldername)
+bool ProjectWorkspace::deleteWorkfolder(const QString& foldername)
 {
 	return iRIC::rmdirRecursively(impl->m_workspace.absoluteFilePath(foldername));
 }

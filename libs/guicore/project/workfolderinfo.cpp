@@ -2,28 +2,25 @@
 #include "workfolderinfo.h"
 #include "private/workfolderinfo_impl.h"
 
+#include <misc/stringtool.h>
+
 #include <QDir>
-#include <QFile>
-#include <QFileInfo>
+#include <QLockFile>
 
 WorkfolderInfo::Impl::Impl(const QString& workfolder) :
 	m_absolutePath {workfolder}
 {
 	QDir wFolder(workfolder);
-	QFile lockFile(wFolder.absoluteFilePath(ProjectData::LOCKFILENAME));
 	m_folderName = wFolder.dirName();
 
-	if (lockFile.exists()) {
-		// if lock file exists, use lastmodified time of lock file
-		QFileInfo info(lockFile);
-		m_lastModifiedTime = info.lastModified();
-		m_isLocked = (! info.isWritable());
-	} else {
-		// if lock file doesn't exists, use lastmodified time of workfolder
-		QFileInfo info(workfolder);
-		m_lastModifiedTime = info.lastModified();
-		m_isLocked = false;
-	}
+	QString lockFileName = wFolder.absoluteFilePath(ProjectData::LOCKFILENAME);
+	QLockFile lockFile(lockFileName);
+	lockFile.setStaleLockTime(0);
+	bool ok = lockFile.tryLock();
+
+	m_isLocked = ! ok;
+
+	lockFile.unlock();
 }
 
 WorkfolderInfo::WorkfolderInfo(const QString& workfolder, QObject* parent) :
@@ -39,11 +36,6 @@ WorkfolderInfo::~WorkfolderInfo()
 QString WorkfolderInfo::folderName() const
 {
 	return impl->m_folderName;
-}
-
-QDateTime WorkfolderInfo::lastModifiedTime() const
-{
-	return impl->m_lastModifiedTime;
 }
 
 QString WorkfolderInfo::absolutePath() const

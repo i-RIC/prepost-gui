@@ -17,7 +17,6 @@ public:
 	~WorkfolderInfo();
 
 	QString folderName() const;
-	QDateTime lastModifiedTime() const;
 	QString absolutePath() const;
 	bool isLocked() const;
 

@@ -12,7 +12,6 @@ public:
 	Impl(const QString& workfolder);
 
 	QString m_folderName;
-	QDateTime m_lastModifiedTime;
 	QString m_absolutePath;
 	bool m_isLocked;
 };
