@@ -27,6 +27,7 @@ private slots:
 	void openProject();
 	void saveProject();
 	void saveProjectAs();
+	void openRecentProject();
 
 	void importElevation();
 	void importWaterSurfaceElevation();
@@ -73,8 +74,16 @@ private slots:
 	void updateWindowsToolBar();
 	void activateWindow(QWidget* w);
 
+	void setupRecentProjectsMenu();
+
 private:
+	void openProject(const QString& filename);
 	bool closeProject();
+
+	void updateWindowTitle();
+
+	void updateRecentProjects(const QString& filename);
+	void removeFromRecentProjects(const QString& filename);
 
 	void closeEvent(QCloseEvent *e) override;
 

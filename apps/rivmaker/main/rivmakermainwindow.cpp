@@ -20,8 +20,11 @@
 #include <QMdiSubWindow>
 #include <QMessageBox>
 #include <QPainter>
+#include <QSettings>
 
 namespace {
+
+const int MAX_RECENT_PROJECTS = 10;
 
 } // namespace
 
@@ -93,6 +96,7 @@ void RivmakerMainWindow::newProject()
 		if (csw == nullptr) {continue;}
 		csw->setProject(impl->m_project);
 	}
+	updateWindowTitle();
 }
 
 void RivmakerMainWindow::openProject()
@@ -106,30 +110,7 @@ void RivmakerMainWindow::openProject()
 		return;
 	}
 
-	Project* newP = new Project();
-	ok = newP->load(filename);
-	if (! ok) {
-		QMessageBox::critical(this, tr("Error"), tr("Opening project file failed."));
-		delete newP;
-
-		newProject();
-		return;
-	}
-	impl->m_project = newP;
-
-	impl->m_preProcessorWindow.setProject(impl->m_project);
-	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
-	impl->m_mousePositionWidget.setProject(impl->m_project);
-
-	auto windows = dynamic_cast<QMdiArea*> (centralWidget())->subWindowList();
-	for (auto w : windows) {
-		auto csw = dynamic_cast<CrossSectionWindow*> (w->widget());
-		if (csw == nullptr) {continue;}
-		csw->setProject(impl->m_project);
-	}
-
-	QFileInfo finfo(filename);
-	impl->m_lastFolder = finfo.absolutePath();
+	openProject(filename);
 }
 
 void RivmakerMainWindow::saveProject()
@@ -143,6 +124,7 @@ void RivmakerMainWindow::saveProject()
 	bool ok = p->save(p->filename());
 	if (ok) {
 		ui->statusbar->showMessage(tr("Project saved to %1.").arg(QDir::toNativeSeparators(p->filename())), 5000);
+		updateRecentProjects(p->filename());
 	} else {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project file to %1 failed.").arg(QDir::toNativeSeparators(p->filename())));
 	}
@@ -156,9 +138,19 @@ void RivmakerMainWindow::saveProjectAs()
 
 	bool ok = p->save(filename);
 	if (ok) {
+		updateRecentProjects(p->filename());
 		ui->statusbar->showMessage(tr("Project saved to %1.").arg(QDir::toNativeSeparators(p->filename())), 5000);
+		updateWindowTitle();
 	} else {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project file to %1 failed.").arg(QDir::toNativeSeparators(p->filename())));
+	}
+}
+
+void RivmakerMainWindow::openRecentProject()
+{
+	QAction* action = qobject_cast<QAction*>(sender());
+	if (action) {
+		openProject(action->data().toString());
 	}
 }
 
@@ -449,6 +441,56 @@ void RivmakerMainWindow::activateWindow(QWidget* w)
 	w->setFocus();
 }
 
+void RivmakerMainWindow::setupRecentProjectsMenu()
+{
+	QMenu* menu = ui->recentProjectsMenu;
+	for (auto a : menu->actions()) {
+		delete a;
+	}
+	menu->clear();
+
+	QSettings setting("iRIC Organization", "RivMaker");
+	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
+	int numRecentFiles = qMin(recentProjects.size(), MAX_RECENT_PROJECTS);
+	for (int i = 0; i < numRecentFiles; ++i) {
+		QString text = tr("&%1 %2").arg(i + 1).arg(QDir::toNativeSeparators(recentProjects.at(i)));
+		QAction* action = new QAction(text, this);
+		action->setData(recentProjects.at(i));
+		connect(action, SIGNAL(triggered()), this, SLOT(openRecentProject()));
+		menu->addAction(action);
+	}
+}
+
+void RivmakerMainWindow::openProject(const QString& filename)
+{
+	Project* newP = new Project();
+	bool ok = newP->load(filename);
+	if (! ok) {
+		QMessageBox::critical(this, tr("Error"), tr("Opening project file failed."));
+		delete newP;
+
+		newProject();
+		return;
+	}
+	impl->m_project = newP;
+
+	impl->m_preProcessorWindow.setProject(impl->m_project);
+	impl->m_verticalCrossSectionWindow.setProject(impl->m_project);
+	impl->m_mousePositionWidget.setProject(impl->m_project);
+
+	auto windows = dynamic_cast<QMdiArea*> (centralWidget())->subWindowList();
+	for (auto w : windows) {
+		auto csw = dynamic_cast<CrossSectionWindow*> (w->widget());
+		if (csw == nullptr) {continue;}
+		csw->setProject(impl->m_project);
+	}
+
+	QFileInfo finfo(filename);
+	impl->m_lastFolder = finfo.absolutePath();
+	updateRecentProjects(filename);
+	updateWindowTitle();
+}
+
 bool RivmakerMainWindow::closeProject()
 {
 	if (impl->m_project == nullptr) {return true;}
@@ -463,6 +505,41 @@ bool RivmakerMainWindow::closeProject()
 	deleteProject();
 
 	return true;
+}
+
+void RivmakerMainWindow::updateWindowTitle()
+{
+	if (impl->m_project == nullptr || impl->m_project->filename().isNull()) {
+		setWindowTitle("RivMaker 1.0");
+	} else {
+		QString title("%1 - RivMaker 1.0");
+		QFileInfo finfo(impl->m_project->filename());
+		setWindowTitle(title.arg(finfo.fileName()));
+	}
+}
+
+
+void RivmakerMainWindow::updateRecentProjects(const QString& filename)
+{
+	QSettings setting("iRIC Organization", "RivMaker");
+	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
+	recentProjects.removeAll(filename);
+	recentProjects.prepend(filename);
+	while (recentProjects.size() > MAX_RECENT_PROJECTS) {
+		recentProjects.removeLast();
+	}
+	setting.setValue("general/recentprojects", recentProjects);
+}
+
+void RivmakerMainWindow::removeFromRecentProjects(const QString& filename)
+{
+	QSettings setting("iRIC Organization", "RivMaker");
+	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
+	recentProjects.removeAll(filename);
+	while (recentProjects.size() > MAX_RECENT_PROJECTS) {
+		recentProjects.removeLast();
+	}
+	setting.setValue("general/recentprojects", recentProjects);
 }
 
 void RivmakerMainWindow::closeEvent(QCloseEvent *e)

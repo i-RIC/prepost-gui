@@ -91,6 +91,9 @@ Project::~Project()
 
 bool Project::load(const QString& filename)
 {
+	QFile f2(filename);
+	if (! f2.exists()) {return false;}
+
 	QTemporaryDir dir;
 	impl->m_tempDir = dir.path();
 
@@ -133,11 +136,14 @@ bool Project::save(const QString& filename)
 	w.writeEndDocument();
 	f.close();
 
-	// only for debugging
-	std::string dirString = dir.path().toLocal8Bit();
-
 	QStringList files = impl->m_rootDataItem.containedFiles();
 	files << PROJECT_FILENAME;
+
+	QFile oldFile(filename);
+	if (oldFile.exists()) {
+		ok = oldFile.remove();
+		if (! ok) {return false;}
+	}
 
 	bool ret = iRIC::ZipArchive(filename, dir.path(), files);
 	impl->m_filename = filename;

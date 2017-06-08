@@ -63,6 +63,12 @@
      <addaction name="fileExportCrosssectionLineAction"/>
      <addaction name="fileExportRiverSurveyDataAction"/>
     </widget>
+    <widget class="QMenu" name="recentProjectsMenu">
+     <property name="title">
+      <string>&amp;Recent Projects</string>
+     </property>
+     <addaction name="dummyAction"/>
+    </widget>
     <addaction name="newProjectAction"/>
     <addaction name="openAction"/>
     <addaction name="saveAction"/>
@@ -70,6 +76,8 @@
     <addaction name="separator"/>
     <addaction name="fileImportMenu"/>
     <addaction name="exportMenu"/>
+    <addaction name="separator"/>
+    <addaction name="recentProjectsMenu"/>
     <addaction name="separator"/>
     <addaction name="exitAction"/>
    </widget>
@@ -599,6 +607,11 @@
    </property>
    <property name="shortcutContext">
     <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="dummyAction">
+   <property name="text">
+    <string>dummy</string>
    </property>
   </action>
  </widget>
