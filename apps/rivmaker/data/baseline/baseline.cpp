@@ -2,6 +2,7 @@
 #include "baselinepreprocessorcontroller.h"
 #include "baselinepreprocessorview.h"
 #include "../crosssection/crosssection.h"
+#include "../project/project.h"
 #include "../../misc/geometryutil.h"
 
 #include "private/baseline_impl.h"
@@ -36,6 +37,7 @@ const std::vector<QPointF>& BaseLine::polyLine() const
 void BaseLine::setPolyLine(const std::vector<QPointF>& line)
 {
 	impl->m_polyLine = line;
+	project()->setModified();
 }
 
 std::vector<QPointF> BaseLine::coordinates() const
@@ -113,6 +115,7 @@ double BaseLine::calcPosition(double x, double y) const
 void BaseLine::reverseDirection()
 {
 	std::reverse(impl->m_polyLine.begin(), impl->m_polyLine.end());
+	project()->setModified();
 }
 
 QStandardItem* BaseLine::buildPreProcessorStandardItem() const

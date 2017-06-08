@@ -33,6 +33,7 @@ void Points::setPoints(const std::vector<GeometryPoint*> &points)
 {
 	clearPoints();
 	impl->m_points = points;
+	project()->setModified();
 }
 
 void Points::clearPoints()
@@ -41,6 +42,7 @@ void Points::clearPoints()
 		delete p;
 	}
 	impl->m_points.clear();
+	project()->setModified();
 }
 
 DataItemController* Points::buildPreProcessorDataItemController(Model* model)

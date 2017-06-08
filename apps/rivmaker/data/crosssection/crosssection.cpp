@@ -1,6 +1,7 @@
 #include "crosssection.h"
 #include "crosssectionpreprocessorcontroller.h"
 #include "crosssectionpreprocessorview.h"
+#include "../project/project.h"
 #include "../../misc/geometryutil.h"
 
 #include "private/crosssection_impl.h"
@@ -58,6 +59,7 @@ QString CrossSection::name() const
 void CrossSection::setName(const QString& name)
 {
 	impl->m_name = name;
+	project()->setModified();
 }
 
 QPointF CrossSection::point1() const
@@ -69,6 +71,7 @@ void CrossSection::setPoint1(const QPointF& p)
 {
 	impl->m_isDefined = true;
 	impl->m_point1 = p;
+	project()->setModified();
 }
 
 QPointF CrossSection::point2() const
@@ -80,6 +83,7 @@ void CrossSection::setPoint2(const QPointF& p)
 {
 	impl->m_isDefined = true;
 	impl->m_point2 = p;
+	project()->setModified();
 }
 
 QPointF CrossSection::point(int index) const
@@ -100,6 +104,7 @@ void CrossSection::setPoint(int index, const QPointF& p)
 		point = &(impl->m_point2);
 	}
 	*point = p;
+	project()->setModified();
 }
 
 std::vector<QPointF> CrossSection::coordinates() const
@@ -116,6 +121,7 @@ void CrossSection::setCoordinates(const std::vector<QPointF>& coords)
 {
 	impl->m_point1 = coords.at(0);
 	impl->m_point2 = coords.at(1);
+	project()->setModified();
 }
 
 bool CrossSection::waterElevationIsSet() const
@@ -126,6 +132,7 @@ bool CrossSection::waterElevationIsSet() const
 void CrossSection::setWaterElevationIsSet(bool isSet)
 {
 	impl->m_waterElevationIsSet = isSet;
+	project()->setModified();
 }
 
 double CrossSection::waterElevation() const
@@ -136,6 +143,7 @@ double CrossSection::waterElevation() const
 void CrossSection::setWaterElevation(double e)
 {
 	impl->m_waterElevation = e;
+	project()->setModified();
 }
 
 std::vector<QVector2D> CrossSection::mappedPoints() const
@@ -185,6 +193,7 @@ void CrossSection::reverseDirection()
 	auto tmpP = impl->m_point1;
 	impl->m_point1 = impl->m_point2;
 	impl->m_point2 = tmpP;
+	project()->setModified();
 }
 
 QStandardItem* CrossSection::buildPreProcessorStandardItem() const
