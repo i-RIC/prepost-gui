@@ -96,7 +96,7 @@ QRectF DataItemView::boundingBox() const
 
 	for (auto child : impl->m_childItems) {
 		QRectF bb = child->boundingBox();
-		if (bb.isNull()) {continue;}
+		if (bb.x() == 0 && bb.y() == 0 && bb.isNull()) {continue;}
 
 		ret = ret.united(bb);
 	}
