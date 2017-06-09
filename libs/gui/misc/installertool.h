@@ -1,14 +1,18 @@
 #ifndef INSTALLERTOOL_H
 #define INSTALLERTOOL_H
 
-class QString;
+#include <QObject>
 
-class InstallerTool
+class QString;
+class QWidget;
+
+class InstallerTool : public QObject
 {
+	Q_OBJECT
 
 public:
 	~InstallerTool();
-	static void openMaintainanceDialog();
+	static void openMaintainanceDialog(QWidget* w);
 	static QString installerFileName();
 
 private:

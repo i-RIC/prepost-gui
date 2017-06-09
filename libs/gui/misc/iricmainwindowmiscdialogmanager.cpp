@@ -62,5 +62,5 @@ void iRICMainWindowMiscDialogManager::about()
 
 void iRICMainWindowMiscDialogManager::showMaintainanceDialog()
 {
-	InstallerTool::openMaintainanceDialog();
+	InstallerTool::openMaintainanceDialog(m_mainWindow);
 }
