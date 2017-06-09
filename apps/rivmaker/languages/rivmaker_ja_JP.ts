@@ -169,18 +169,18 @@
         <translation>座標の編集(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="115"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="124"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="115"/>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
         <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="124"/>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
     </message>
@@ -202,7 +202,7 @@
     <name>CrossSectionWindow</name>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="128"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="208"/>
         <source>Cross Section Window</source>
         <translation>断面ウィンドウ</translation>
     </message>
@@ -212,17 +212,32 @@
         <translation>断面:</translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="81"/>
+        <location filename="../window/crosssection/crosssectionwindow.ui" line="52"/>
+        <source>&amp;Reset Zoom</source>
+        <translation>ズームのリセット(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="93"/>
         <source>Distance from Left bank</source>
         <translation>左岸からの距離</translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="84"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="96"/>
         <source>Elevation</source>
         <translation>標高</translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="131"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="127"/>
+        <source>Left bank HWM</source>
+        <translation>左岸側水面標高</translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="137"/>
+        <source>Right bank HWM</source>
+        <translation>右岸側水面標高</translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="211"/>
         <source>Cross Section Window : %1</source>
         <translation>断面ウィンドウ : %1</translation>
     </message>
@@ -305,12 +320,12 @@
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Cross Section lines not defined yet.</source>
         <translation>断面が定義されていません。</translation>
     </message>
@@ -405,57 +420,57 @@
         <translation>マッピング設定</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="20"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="24"/>
         <source>All points are mapped to the nearest CrossSection</source>
         <translation>すべての点を、一番近い断面にマッピングする</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="48"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="52"/>
         <source>Appropriate for data in which points are all near CrossSections</source>
         <translation>すべての点が、断面の近くにあるデータに有効です</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="90"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="111"/>
         <source>TIN is used for interpolation at CrossSections</source>
         <translation>断面での値を補間するのにTINを利用</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="115"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="136"/>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
         <translation>領域全体に均一に標高点があるデータに有効です</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="157"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="195"/>
         <source>Template mapping</source>
         <translation>テンプレートマッピング</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="182"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="220"/>
         <source>Appropriate for data for which we can not generate good TIN</source>
         <translation>標高点にばらつきがあり、いいTINが生成できないデータで有効です</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="244"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="282"/>
         <source>Cross section resolution[m]</source>
         <translation>断面の解像度 [m]</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="267"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="305"/>
         <source>Stream-wise length[m]</source>
         <translation>流れ方向の長さ[m]</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="290"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="328"/>
         <source>Cross-stream width[m]</source>
         <translation>横断方向の長さ[m]</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="313"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="351"/>
         <source>Number of Template Expansions:</source>
         <translation>検索領域の拡大回数:</translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="336"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="374"/>
         <source>Weighting Exponent:</source>
         <translation>重み付けの指数:</translation>
     </message>
@@ -1195,58 +1210,63 @@
         <translation>縦断面ウィンドウ</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="35"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="26"/>
+        <source>&amp;Reset zoom</source>
+        <translation>ズームのリセット(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="59"/>
         <source>Arbitrary HWM</source>
         <translation>任意の水面標高</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="49"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="73"/>
         <source>Benchmark</source>
         <translation>ベンチマーク</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="63"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="87"/>
         <source>Reference mark</source>
         <translation>参照マーク</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="77"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="101"/>
         <source>Surveying or turning point</source>
         <translation>測量点・移器点</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="91"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="115"/>
         <source>Left Bank HWM</source>
         <translation>左岸側水面標高</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="105"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="129"/>
         <source>Right Bank HWM</source>
         <translation>右岸側水面標高</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="119"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="143"/>
         <source>Stream gage</source>
         <translation>流れゲージ</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="138"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="162"/>
         <source>&amp;Export to CSV</source>
         <translation>CSV にエクスポート (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="188"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="196"/>
         <source>Distance Upstream</source>
         <translation>上流側からの距離</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="191"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="333"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="199"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="344"/>
         <source>Elevation</source>
         <translation>標高</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="333"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="344"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>

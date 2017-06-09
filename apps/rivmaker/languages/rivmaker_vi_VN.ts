@@ -158,18 +158,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="115"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="124"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="112"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="115"/>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="121"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="124"/>
         <source>Cross Section is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -191,7 +191,7 @@
     <name>CrossSectionWindow</name>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="128"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="208"/>
         <source>Cross Section Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -201,17 +201,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="81"/>
+        <location filename="../window/crosssection/crosssectionwindow.ui" line="52"/>
+        <source>&amp;Reset Zoom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="93"/>
         <source>Distance from Left bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="84"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="96"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="131"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="127"/>
+        <source>Left bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="137"/>
+        <source>Right bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="211"/>
         <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -294,12 +309,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="60"/>
+        <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Cross Section lines not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -387,57 +402,57 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="20"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="24"/>
         <source>All points are mapped to the nearest CrossSection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="48"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="52"/>
         <source>Appropriate for data in which points are all near CrossSections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="90"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="111"/>
         <source>TIN is used for interpolation at CrossSections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="115"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="136"/>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="157"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="195"/>
         <source>Template mapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="182"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="220"/>
         <source>Appropriate for data for which we can not generate good TIN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="244"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="282"/>
         <source>Cross section resolution[m]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="267"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="305"/>
         <source>Stream-wise length[m]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="290"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="328"/>
         <source>Cross-stream width[m]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="313"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="351"/>
         <source>Number of Template Expansions:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/mappingsettingdialog.ui" line="336"/>
+        <location filename="../dialogs/mappingsettingdialog.ui" line="374"/>
         <source>Weighting Exponent:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1132,58 +1147,63 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="35"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="26"/>
+        <source>&amp;Reset zoom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="59"/>
         <source>Arbitrary HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="49"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="73"/>
         <source>Benchmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="63"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="87"/>
         <source>Reference mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="77"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="101"/>
         <source>Surveying or turning point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="91"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="115"/>
         <source>Left Bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="105"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="129"/>
         <source>Right Bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="119"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="143"/>
         <source>Stream gage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="138"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="162"/>
         <source>&amp;Export to CSV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="188"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="196"/>
         <source>Distance Upstream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="191"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="333"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="199"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="344"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="333"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="344"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
