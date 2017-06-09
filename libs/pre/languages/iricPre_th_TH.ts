@@ -1122,100 +1122,100 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="62"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="63"/>
         <source>Edit value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="66"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="67"/>
         <source>Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="69"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="70"/>
         <source>Edit value by specifying variation...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="73"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="74"/>
         <source>Open &amp;Crosssection Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="77"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="78"/>
         <source>Open &amp;Vertical Crosssection Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="106"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="112"/>
         <source>Grid Node Attribute Display Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="267"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="273"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="267"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="273"/>
         <source>Please select only one node.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="273"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="83"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="285"/>
         <source>Edit %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="279"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="286"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="302"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="309"/>
         <source>Apply variation to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="303"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="310"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="346"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="372"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="353"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="379"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="346"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="372"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="353"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="379"/>
         <source>To open a Crosssection Window, Please select only one grid node.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="446"/>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="441"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="448"/>
         <source>Export as Topography Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="447"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="454"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="465"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="472"/>
         <source>Grid condition successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="469"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="476"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1873,17 +1873,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorWindow</name>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="42"/>
+        <location filename="../preprocessorwindow.cpp" line="43"/>
         <source>Pre-processing Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="171"/>
+        <location filename="../preprocessorwindow.cpp" line="179"/>
         <source>Grid is not created or imported yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="177"/>
+        <location filename="../preprocessorwindow.cpp" line="185"/>
         <source>Checking grid %1 ...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2063,7 +2063,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="299"/>
+        <location filename="../preprocessorwindow.cpp" line="307"/>
         <source>Close PreProcessor Window</source>
         <translation type="unfinished"></translation>
     </message>

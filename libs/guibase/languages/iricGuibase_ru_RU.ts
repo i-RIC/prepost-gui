@@ -377,13 +377,25 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../widget/realnumbereditwidget.cpp" line="44"/>
-        <source>Error</source>
+        <location filename="../widget/realnumbereditwidget.cpp" line="129"/>
+        <source>It is not a real value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widget/realnumbereditwidget.cpp" line="44"/>
-        <source>It is not a real value</source>
+        <location filename="../widget/realnumbereditwidget.cpp" line="129"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="136"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="142"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widget/realnumbereditwidget.cpp" line="136"/>
+        <source>Minimum value is %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widget/realnumbereditwidget.cpp" line="142"/>
+        <source>Maximum value is %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

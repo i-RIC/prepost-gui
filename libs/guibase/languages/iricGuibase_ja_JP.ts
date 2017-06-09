@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -217,15 +217,15 @@
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>
-        <translation type="vanished">座標系の選択</translation>
+        <translation>座標系の選択</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="vanished">検索:</translation>
+        <translation>検索:</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation type="vanished">(指定されていない)</translation>
+        <translation>(指定されていない)</translation>
     </message>
 </context>
 <context>
@@ -346,23 +346,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="vanished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="vanished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="vanished">X: ------</translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="vanished">Y: ------</translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
@@ -408,7 +408,7 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation type="vanished">選択状態の変更</translation>
+        <translation>選択状態の変更</translation>
     </message>
 </context>
 <context>
@@ -422,14 +422,30 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../widget/realnumbereditwidget.cpp" line="44"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../widget/realnumbereditwidget.cpp" line="44"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="129"/>
         <source>It is not a real value</source>
         <translation>これは実数値ではありません</translation>
+    </message>
+    <message>
+        <location filename="../widget/realnumbereditwidget.cpp" line="129"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="136"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="142"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../widget/realnumbereditwidget.cpp" line="136"/>
+        <source>Minimum value is %1.</source>
+        <translation>最小値は %1 です</translation>
+    </message>
+    <message>
+        <location filename="../widget/realnumbereditwidget.cpp" line="142"/>
+        <source>Maximum value is %1.</source>
+        <translation>最大値は %1 です。</translation>
     </message>
 </context>
 <context>
@@ -493,7 +509,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
    &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;-%3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;-%.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
@@ -501,7 +517,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;%-.3f&quot; for 3.141592 --&gt; 3.141
    &quot;%-.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;%-3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;%-.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>

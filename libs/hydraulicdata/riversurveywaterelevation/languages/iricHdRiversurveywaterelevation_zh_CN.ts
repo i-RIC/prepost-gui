@@ -19,22 +19,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="57"/>
+        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="56"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="57"/>
+        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="56"/>
         <source>Data with KP values %1 are ignored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="71"/>
+        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="70"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="72"/>
+        <location filename="../hydraulicdatariversurveywaterelevationimporter.cpp" line="71"/>
         <source>Text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>

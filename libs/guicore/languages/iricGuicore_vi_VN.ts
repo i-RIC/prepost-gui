@@ -440,6 +440,7 @@
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="143"/>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="258"/>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="265"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="315"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -478,6 +479,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="265"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="315"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -577,7 +579,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="318"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="320"/>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -602,19 +604,19 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="575"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="579"/>
         <source>The following problems found: 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="578"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="582"/>
         <source>
  ... and other %1 errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="580"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="584"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1080,8 +1082,8 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="368"/>
-        <location filename="../project/projectdata.cpp" line="417"/>
+        <location filename="../project/projectdata.cpp" line="367"/>
+        <location filename="../project/projectdata.cpp" line="416"/>
         <source>Saving project...</source>
         <translation type="unfinished"></translation>
     </message>
