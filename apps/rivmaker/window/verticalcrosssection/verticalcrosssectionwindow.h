@@ -11,6 +11,7 @@ class RivmakerMainWindow;
 
 class QwtPlotCurve;
 class QwtPlotMarker;
+class QwtPlotZoomer;
 
 namespace Ui {
 class VerticalCrossSectionWindow;
@@ -30,6 +31,7 @@ private slots:
 	void updateView();
 	void handleTableEdit(QStandardItem* editedItem);
 	void exportWaterSurfaceElevation();
+	void resetZoom();
 
 private:
 	void initPlot();
@@ -64,6 +66,8 @@ private:
 	std::vector<QwtPlotMarker*> m_streamGageMarkers;
 
 	std::vector<QwtPlotMarker*> m_crossSectionMarkers;
+
+	QwtPlotZoomer* m_zoomer;
 
 	QStandardItemModel m_tableModel;
 

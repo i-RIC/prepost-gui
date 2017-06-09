@@ -8,8 +8,11 @@
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
 #include <qwt_plot_marker.h>
+#include <qwt_plot_zoomer.h>
 #include <qwt_symbol.h>
 
+#include <QColor>
+#include <QPen>
 #include <QVector2D>
 
 #include <map>
@@ -21,6 +24,7 @@ CrossSectionWindow::CrossSectionWindow(QWidget *parent) :
 {
 	ui->setupUi(this);
 	connect(ui->crossSectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSelectionChange(int)));
+	connect(ui->resetZoomButton, SIGNAL(clicked()), this, SLOT(resetZoom()));
 
 	initCurve();
 }
@@ -37,6 +41,11 @@ void CrossSectionWindow::setProject(Project* project)
 {
 	m_project = project;
 	updateView();
+}
+
+void CrossSectionWindow::resetZoom()
+{
+	m_zoomer->zoom(0);
 }
 
 void CrossSectionWindow::updateView()
@@ -127,24 +136,53 @@ void CrossSectionWindow::initCurve()
 	m_rbHWM->setLabelAlignment(Qt::AlignRight | Qt::AlignBaseline);
 	m_rbHWM->setLabel(tr("Right bank HWM"));
 	m_rbHWM->attach(ui->qwtWidget);
+
+	m_zoomer = new QwtPlotZoomer(ui->qwtWidget->canvas());
+	m_zoomer->setRubberBandPen(QPen(Qt::black));
+	m_zoomer->setTrackerPen(QPen(Qt::darkBlue));
+	m_zoomer->setMousePattern(QwtEventPattern::MouseSelect1, Qt::LeftButton);
 }
 
 void CrossSectionWindow::updateCurve()
 {
 	if (m_currentCrossSection == nullptr) {return;}
 
+	double xmin, xmax, ymin, ymax;
+
+
 	QVector<QPointF> samples;
 
+	bool first = true;
 	for (auto p : m_currentCrossSection->mappedPoints()){
 		samples.push_back(QPointF(p.x(), p.y()));
+
+		if (first || p.x() < xmin) {xmin = p.x();}
+		if (first || p.x() > xmax) {xmax = p.x();}
+		if (first || p.y() < ymin) {ymin = p.y();}
+		if (first || p.y() > ymax) {ymax = p.y();}
+
+		first = false;
 	}
+	double xWidth = (xmax - xmin);
+	double yWidth = (ymax - ymin);
+	double marginRate = 0.08;
+
+	xmin -= xWidth * marginRate;
+	xmax += xWidth * marginRate;
+	ymin -= yWidth * marginRate;
+	ymax += yWidth * marginRate;
+
 	m_curve->setSamples(samples);
 
 	m_waterElevationMarker->setYValue(m_currentCrossSection->waterElevation());
 
 	updateHWMs();
 
+	ui->qwtWidget->setAxisScale(QwtPlot::xBottom, xmin, xmax);
+	ui->qwtWidget->setAxisScale(QwtPlot::yLeft, ymin, ymax);
+
 	ui->qwtWidget->replot();
+	m_zoomer->setZoomBase(QRectF(QPointF(xmin, ymin), QPointF(xmax, ymax)));
 }
 
 void CrossSectionWindow::updateHWMs()

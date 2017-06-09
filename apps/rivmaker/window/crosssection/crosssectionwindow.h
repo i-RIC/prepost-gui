@@ -12,6 +12,7 @@ class Project;
 
 class QwtPlotCurve;
 class QwtPlotMarker;
+class QwtPlotZoomer;
 
 class CrossSectionWindow : public QMainWindow
 {
@@ -24,6 +25,8 @@ public:
 	void setProject(Project* project);
 
 private slots:
+	void resetZoom();
+
 	void updateView();
 	void handleSelectionChange(int selected);
 
@@ -40,6 +43,8 @@ private:
 
 	QwtPlotMarker* m_lbHWM;
 	QwtPlotMarker* m_rbHWM;
+
+	QwtPlotZoomer* m_zoomer;
 
 	CrossSection* m_currentCrossSection;
 	Project* m_project;

@@ -19,6 +19,7 @@
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
 #include <qwt_plot_marker.h>
+#include <qwt_plot_zoomer.h>
 #include <qwt_symbol.h>
 
 #include <QCloseEvent>
@@ -124,6 +125,7 @@ VerticalCrossSectionWindow::VerticalCrossSectionWindow(RivmakerMainWindow *paren
 	ui(new Ui::VerticalCrossSectionWindow)
 {
 	ui->setupUi(this);
+	connect(ui->resetZoomButton, SIGNAL(clicked()), this, SLOT(resetZoom()));
 	connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportWaterSurfaceElevation()));
 	connect(&m_tableModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleTableEdit(QStandardItem*)));
 	connect(ui->arbitraryCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
@@ -144,6 +146,7 @@ VerticalCrossSectionWindow::VerticalCrossSectionWindow(RivmakerMainWindow *paren
 
 VerticalCrossSectionWindow::~VerticalCrossSectionWindow()
 {
+	delete m_zoomer;
 	delete m_arbitraryCurve;
 	delete m_leftBankCurve;
 	delete m_rightBankCurve;
@@ -180,6 +183,11 @@ void VerticalCrossSectionWindow::handleTableEdit(QStandardItem* editedItem)
 void VerticalCrossSectionWindow::exportWaterSurfaceElevation()
 {
 	m_mainWindow->exportWaterSurfaceElevationData();
+}
+
+void VerticalCrossSectionWindow::resetZoom()
+{
+	m_zoomer->zoom(0);
 }
 
 void VerticalCrossSectionWindow::initPlot()
@@ -247,6 +255,11 @@ void VerticalCrossSectionWindow::initPlot()
 	s = new QwtSymbol(QwtSymbol::Rect, QBrush(Qt::gray), QPen(Qt::NoPen), QSize(7, 7));
 	m_streamGageCurve->setSymbol(s);
 	m_streamGageCurve->attach(ui->qwtWidget);
+
+	m_zoomer = new QwtPlotZoomer(ui->qwtWidget->canvas());
+	m_zoomer->setRubberBandPen(QPen(Qt::black));
+	m_zoomer->setTrackerPen(QPen(Qt::darkBlue));
+	m_zoomer->setMousePattern(QwtEventPattern::MouseSelect1, Qt::LeftButton);
 }
 
 void VerticalCrossSectionWindow::initTable()
@@ -313,8 +326,6 @@ void VerticalCrossSectionWindow::updatePlot()
 	setupCrossSectionMarkers(&xmin, &xmax, &first);
 
 	updateScale(xmin, xmax, ymin, ymax);
-
-	ui->qwtWidget->replot();
 }
 
 void VerticalCrossSectionWindow::updateTable()
@@ -420,9 +431,18 @@ void VerticalCrossSectionWindow::updateScale(double xmin, double xmax, double ym
 {
 	double xwidth = xmax - xmin;
 	double ywidth = ymax - ymin;
+	double marginRate = 0.08;
 
-	ui->qwtWidget->setAxisScale(QwtPlot::xBottom, xmin - xwidth * 0.1, xmax + xwidth * 0.1);
-	ui->qwtWidget->setAxisScale(QwtPlot::yLeft, ymin - ywidth * 0.1, ymax + ywidth * 0.1);
+	xmin -= xwidth * marginRate;
+	xmax += xwidth * marginRate;
+	ymin -= ywidth * marginRate;
+	ymax += ywidth * marginRate;
+
+	ui->qwtWidget->setAxisScale(QwtPlot::xBottom, xmin, xmax);
+	ui->qwtWidget->setAxisScale(QwtPlot::yLeft, ymin, ymax);
+
+	ui->qwtWidget->replot();
+	m_zoomer->setZoomBase(QRectF(QPointF(xmin, ymin), QPointF(xmax, ymax)));
 }
 
 void VerticalCrossSectionWindow::closeEvent(QCloseEvent *e)

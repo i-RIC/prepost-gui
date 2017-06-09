@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>508</width>
-    <height>347</height>
+    <width>583</width>
+    <height>528</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,31 @@
    <iconset resource="../../rivmaker.qrc">
     <normaloff>:/images/iconVerticalCrosssection.png</normaloff>:/images/iconVerticalCrosssection.png</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="resetZoomButton">
+       <property name="text">
+        <string>&amp;Reset zoom</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
    <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
@@ -164,7 +188,7 @@
   <customwidget>
    <class>QwtPlot</class>
    <extends>QWidget</extends>
-   <header location="global">qwt_plot.h</header>
+   <header>qwt_plot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
