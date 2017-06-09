@@ -113,7 +113,9 @@ void CrossSectionWindow::initCurve()
 	m_lbHWM->setLineStyle(QwtPlotMarker::HLine);
 	m_lbHWM->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
 	m_lbHWM->setLinePen(QPen(Qt::darkBlue, 1, Qt::DashLine));
-	m_lbHWM->setTitle("Left bank HWM");
+	m_lbHWM->setLabelOrientation(Qt::Horizontal);
+	m_lbHWM->setLabelAlignment(Qt::AlignRight | Qt::AlignBaseline);
+	m_lbHWM->setLabel(tr("Left bank HWM"));
 	m_lbHWM->attach(ui->qwtWidget);
 
 	m_rbHWM = new QwtPlotMarker();
@@ -121,7 +123,9 @@ void CrossSectionWindow::initCurve()
 	m_rbHWM->setLineStyle(QwtPlotMarker::HLine);
 	m_rbHWM->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
 	m_rbHWM->setLinePen(QPen(Qt::darkBlue, 1, Qt::DashLine));
-	m_rbHWM->setTitle("Right bank HWM");
+	m_rbHWM->setLabelOrientation(Qt::Horizontal);
+	m_rbHWM->setLabelAlignment(Qt::AlignRight | Qt::AlignBaseline);
+	m_rbHWM->setLabel(tr("Right bank HWM"));
 	m_rbHWM->attach(ui->qwtWidget);
 }
 
