@@ -10,5 +10,5 @@ ArbitraryHWMPreProcessorViewHelper::ArbitraryHWMPreProcessorViewHelper(DataItemV
 void ArbitraryHWMPreProcessorViewHelper::draw(QPainter* painter) const
 {
 	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
-	drawRects(STD_SIZE, Qt::gray, setting.transparency, painter);
+	drawRects(setting.size(), Qt::gray, setting.transparency, painter);
 }

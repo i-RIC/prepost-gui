@@ -10,5 +10,5 @@ BenchmarkPreProcessorViewHelper::BenchmarkPreProcessorViewHelper(DataItemView* v
 void BenchmarkPreProcessorViewHelper::draw(QPainter* painter) const
 {
 	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
-	drawReverseTriangles(STD_SIZE, Qt::black, setting.transparency, painter);
+	drawReverseTriangles(setting.size(), Qt::black, setting.transparency, painter);
 }

@@ -10,5 +10,5 @@ HubPreProcessorViewHelper::HubPreProcessorViewHelper(DataItemView* v) :
 void HubPreProcessorViewHelper::draw(QPainter* painter) const
 {
 	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
-	drawDiamonds(STD_SIZE, Qt::gray, setting.transparency, painter);
+	drawDiamonds(setting.size(), Qt::gray, setting.transparency, painter);
 }

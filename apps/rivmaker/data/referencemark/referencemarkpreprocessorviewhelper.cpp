@@ -10,5 +10,5 @@ ReferenceMarkPreProcessorViewHelper::ReferenceMarkPreProcessorViewHelper(DataIte
 void ReferenceMarkPreProcessorViewHelper::draw(QPainter* painter) const
 {
 	auto setting = PointsGraphicsSetting::waterElevationPointsSetting;
-	drawTriangles(STD_SIZE, Qt::black, setting.transparency, painter);
+	drawTriangles(setting.size(), Qt::black, setting.transparency, painter);
 }
