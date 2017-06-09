@@ -502,7 +502,7 @@ bool RivmakerMainWindow::closeProject()
 	if (impl->m_project == nullptr) {return true;}
 
 	if (impl->m_project->isModified()) {
-		int ret = QMessageBox::warning(this, tr("Warning"), tr("The project data is modified. Do you want to save?"), QMessageBox::Cancel | QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
+		int ret = QMessageBox::warning(this, tr("Warning"), tr("The project data is modified. Do you want to save?"), QMessageBox::Cancel | QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
 		if (ret == QMessageBox::Cancel) {
 			return false;
 		} else if (ret == QMessageBox::Yes) {
