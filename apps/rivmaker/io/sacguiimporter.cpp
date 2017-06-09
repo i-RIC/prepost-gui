@@ -143,6 +143,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 		newCrossSections->push_back(cs);
 		++ id;
 	}
+	project->setModified();
 
 	return true;
 }

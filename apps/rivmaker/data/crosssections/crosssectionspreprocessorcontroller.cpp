@@ -51,6 +51,7 @@ void CrossSectionsPreProcessorController::importData()
 	if (! ok) {return;}
 
 	setCrossSections(newCrossSections);
+	crossSections->project()->setModified();
 	crossSections->project()->setOffset(offset);
 }
 

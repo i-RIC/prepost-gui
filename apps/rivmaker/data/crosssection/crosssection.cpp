@@ -71,7 +71,6 @@ void CrossSection::setPoint1(const QPointF& p)
 {
 	impl->m_isDefined = true;
 	impl->m_point1 = p;
-	project()->setModified();
 }
 
 QPointF CrossSection::point2() const
@@ -83,7 +82,6 @@ void CrossSection::setPoint2(const QPointF& p)
 {
 	impl->m_isDefined = true;
 	impl->m_point2 = p;
-	project()->setModified();
 }
 
 QPointF CrossSection::point(int index) const
