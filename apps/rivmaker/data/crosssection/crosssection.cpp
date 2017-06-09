@@ -59,7 +59,6 @@ QString CrossSection::name() const
 void CrossSection::setName(const QString& name)
 {
 	impl->m_name = name;
-	project()->setModified();
 }
 
 QPointF CrossSection::point1() const

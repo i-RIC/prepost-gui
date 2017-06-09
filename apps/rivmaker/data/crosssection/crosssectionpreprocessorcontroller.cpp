@@ -107,8 +107,10 @@ void CrossSectionPreProcessorController::handleStandardItemChange(QStandardItem*
 	auto cs = dynamic_cast<CrossSection*> (item());
 	if (xnum.exactMatch(newName)) {
 		cs->setName(newName);
+		cs->project()->setModified();
 	} else if (num.exactMatch(newName) && isDouble) {
 		cs->setName(newName);
+		cs->project()->setModified();
 	} else {
 		QMessageBox::warning(view(), tr("Warning"), tr("Invalid name for cross section. The name should be \"X1\", \"X2\", ..."));
 		sitem->setText(cs->name());
