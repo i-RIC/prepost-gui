@@ -122,6 +122,7 @@ void PreProcessorModel::deleteCrossSection()
 		QMessageBox::warning(view(), tr("Warning"), tr("To delete a Cross Section, select it at Object Browser."));
 		return;
 	}
+	s->project()->setModified();
 	deleteItem(s);
 
 	updateCrossSections();

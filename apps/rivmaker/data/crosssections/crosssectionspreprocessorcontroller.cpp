@@ -72,6 +72,7 @@ void CrossSectionsPreProcessorController::addCrossSection()
 	dynamic_cast<PreProcessorModel*> (model())->setupStandardItemAndViewAndController(cs, crossSections);
 
 	model()->select(cs);
+	item()->project()->setModified();
 }
 
 void CrossSectionsPreProcessorController::setCrossSections(const std::vector<CrossSection*>& crossSections)

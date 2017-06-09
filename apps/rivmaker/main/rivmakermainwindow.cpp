@@ -113,36 +113,39 @@ void RivmakerMainWindow::openProject()
 	openProject(filename);
 }
 
-void RivmakerMainWindow::saveProject()
+bool RivmakerMainWindow::saveProject()
 {
 	auto p = impl->m_project;
 	if (p->filename().isNull()) {
-		saveProjectAs();
-		return;
+		return saveProjectAs();
 	}
 
 	bool ok = p->save(p->filename());
 	if (ok) {
 		ui->statusbar->showMessage(tr("Project saved to %1.").arg(QDir::toNativeSeparators(p->filename())), 5000);
 		updateRecentProjects(p->filename());
+		return true;
 	} else {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project file to %1 failed.").arg(QDir::toNativeSeparators(p->filename())));
+		return false;
 	}
 }
 
-void RivmakerMainWindow::saveProjectAs()
+bool RivmakerMainWindow::saveProjectAs()
 {
 	auto p = impl->m_project;
 	QString filename = QFileDialog::getSaveFileName(this, tr("Save project file"), impl->m_lastFolder, tr("RivMaker project file (*.rpro)"));
-	if (filename.isNull()) {return;}
+	if (filename.isNull()) {return false;}
 
 	bool ok = p->save(filename);
 	if (ok) {
 		updateRecentProjects(p->filename());
 		ui->statusbar->showMessage(tr("Project saved to %1.").arg(QDir::toNativeSeparators(p->filename())), 5000);
 		updateWindowTitle();
+		return true;
 	} else {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project file to %1 failed.").arg(QDir::toNativeSeparators(p->filename())));
+		return false;
 	}
 }
 
@@ -463,8 +466,11 @@ void RivmakerMainWindow::setupRecentProjectsMenu()
 
 void RivmakerMainWindow::openProject(const QString& filename)
 {
+	bool ok = closeProject();
+	if (! ok) {return;}
+
 	Project* newP = new Project();
-	bool ok = newP->load(filename);
+	ok = newP->load(filename);
 	if (! ok) {
 		QMessageBox::critical(this, tr("Error"), tr("Opening project file failed."));
 		delete newP;
@@ -496,9 +502,12 @@ bool RivmakerMainWindow::closeProject()
 	if (impl->m_project == nullptr) {return true;}
 
 	if (impl->m_project->isModified()) {
-		int ret = QMessageBox::warning(this, tr("Warning"), tr("The modification made to the project is discarded. Are you sure?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+		int ret = QMessageBox::warning(this, tr("Warning"), tr("The project data is modified. Do you want to save?"), QMessageBox::Cancel | QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
 		if (ret == QMessageBox::Cancel) {
 			return false;
+		} else if (ret == QMessageBox::Yes) {
+			bool ok = saveProject();
+			if (! ok) {return false;}
 		}
 	}
 

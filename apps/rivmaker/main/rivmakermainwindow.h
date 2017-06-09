@@ -26,8 +26,8 @@ public:
 private slots:
 	void newProject();
 	void openProject();
-	void saveProject();
-	void saveProjectAs();
+	bool saveProject();
+	bool saveProjectAs();
 	void openRecentProject();
 
 	void importElevation();
