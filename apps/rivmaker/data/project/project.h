@@ -19,6 +19,8 @@ class Project : public QObject
 	Q_OBJECT
 
 public:
+	const static double INVALID_HWM;
+
 	enum class MappingMethod {
 		AllMapToNearestCrossSection,
 		TIN,
@@ -67,6 +69,9 @@ public:
 
 	double templateMappingWeightExponent() const;
 	void setTemplateMappingWeightExponent(double exp);
+
+	double calcLeftBankHWMAtCrossSection(CrossSection* cs);
+	double calcRightBankHWMAtCrossSection(CrossSection* cs);
 
 	void calcCrossSectionElevations();
 	void mapPointsToCrossSections();

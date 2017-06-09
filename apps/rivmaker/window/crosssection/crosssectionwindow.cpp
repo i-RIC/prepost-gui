@@ -27,6 +27,9 @@ CrossSectionWindow::CrossSectionWindow(QWidget *parent) :
 
 CrossSectionWindow::~CrossSectionWindow()
 {
+	delete m_waterElevationMarker;
+	delete m_lbHWM;
+	delete m_rbHWM;
 	delete ui;
 }
 
@@ -104,6 +107,22 @@ void CrossSectionWindow::initCurve()
 	m_waterElevationMarker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
 	m_waterElevationMarker->setLinePen(QPen(Qt::blue));
 	m_waterElevationMarker->attach(ui->qwtWidget);
+
+	m_lbHWM = new QwtPlotMarker();
+	m_lbHWM->setYValue(0);
+	m_lbHWM->setLineStyle(QwtPlotMarker::HLine);
+	m_lbHWM->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
+	m_lbHWM->setLinePen(QPen(Qt::darkBlue, 1, Qt::DashLine));
+	m_lbHWM->setTitle("Left bank HWM");
+	m_lbHWM->attach(ui->qwtWidget);
+
+	m_rbHWM = new QwtPlotMarker();
+	m_rbHWM->setYValue(0);
+	m_rbHWM->setLineStyle(QwtPlotMarker::HLine);
+	m_rbHWM->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
+	m_rbHWM->setLinePen(QPen(Qt::darkBlue, 1, Qt::DashLine));
+	m_rbHWM->setTitle("Right bank HWM");
+	m_rbHWM->attach(ui->qwtWidget);
 }
 
 void CrossSectionWindow::updateCurve()
@@ -119,7 +138,26 @@ void CrossSectionWindow::updateCurve()
 
 	m_waterElevationMarker->setYValue(m_currentCrossSection->waterElevation());
 
+	updateHWMs();
+
 	ui->qwtWidget->replot();
+}
+
+void CrossSectionWindow::updateHWMs()
+{
+	m_lbHWM->detach();
+	m_rbHWM->detach();
+
+	double lbhwm = m_project->calcLeftBankHWMAtCrossSection(m_currentCrossSection);
+	if (lbhwm != Project::INVALID_HWM) {
+		m_lbHWM->setYValue(lbhwm);
+		m_lbHWM->attach(ui->qwtWidget);
+	}
+	double rbhwm = m_project->calcRightBankHWMAtCrossSection(m_currentCrossSection);
+	if (rbhwm != Project::INVALID_HWM) {
+		m_rbHWM->setYValue(rbhwm);
+		m_rbHWM->attach(ui->qwtWidget);
+	}
 }
 
 void CrossSectionWindow::updateWindowTitle()

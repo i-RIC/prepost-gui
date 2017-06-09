@@ -30,12 +30,16 @@ private slots:
 private:
 	void initCurve();
 	void updateCurve();
+	void updateHWMs();
 	void updateWindowTitle();
 
 	Ui::CrossSectionWindow *ui;
 
 	QwtPlotCurve* m_curve;
 	QwtPlotMarker* m_waterElevationMarker;
+
+	QwtPlotMarker* m_lbHWM;
+	QwtPlotMarker* m_rbHWM;
 
 	CrossSection* m_currentCrossSection;
 	Project* m_project;

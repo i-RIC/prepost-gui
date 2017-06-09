@@ -63,6 +63,30 @@ void updatePointsAutoSize(int numPoints, PointsGraphicsSetting* setting)
 	}
 }
 
+double calcHWMAtCrossSection(CrossSection* cs, BaseLine& bl, Points& hwm)
+{
+	bool crosses;
+	double x, y, pos;
+
+	bl.getCrossingPoint(cs, &crosses, &x, &y, &pos);
+
+	if (! crosses) {return Project::INVALID_HWM;}
+
+	std::map<double, double> vals;
+	for (GeometryPoint* p : hwm.points()) {
+		double pos = bl.calcPosition(p->x(), p->y());
+		vals.insert(std::make_pair(pos, p->z()));
+	}
+	auto lb = vals.lower_bound(pos);
+	auto ub = vals.upper_bound(pos);
+	if (lb == vals.end()) {return Project::INVALID_HWM;}
+	if (ub == vals.end()) {return Project::INVALID_HWM;}
+
+	double val = lb->second +
+			(ub->second - lb->second) / (ub->first - lb->first) * (pos - lb->first);
+	return val;
+}
+
 } // namespace
 
 Project::Impl::Impl(Project *project) :
@@ -79,6 +103,8 @@ Project::Impl::~Impl()
 {}
 
 // public interfraces
+
+const double Project::INVALID_HWM = -99999;
 
 Project::Project() :
 	impl {new Impl {this}}
@@ -291,6 +317,16 @@ double Project::templateMappingWeightExponent() const
 void Project::setTemplateMappingWeightExponent(double exp)
 {
 	impl->m_builderTemplate.setWeightExponent(exp);
+}
+
+double Project::calcLeftBankHWMAtCrossSection(CrossSection* cs)
+{
+	return calcHWMAtCrossSection(cs, baseLine(), waterSurfaceElevationPoints().leftBankHWM());
+}
+
+double Project::calcRightBankHWMAtCrossSection(CrossSection* cs)
+{
+	return calcHWMAtCrossSection(cs, baseLine(), waterSurfaceElevationPoints().rightBankHWM());
 }
 
 void Project::calcCrossSectionElevations()
