@@ -63,6 +63,49 @@ void updatePointsAutoSize(int numPoints, PointsGraphicsSetting* setting)
 	}
 }
 
+std::map<double, double>::const_iterator leftValue(const std::map<double, double>& vals, double pos)
+{
+	std::map<double, double>::const_iterator it = vals.begin();
+	if (it->first > pos) {return vals.end();}
+
+	while (1) {
+		auto it2 = it;
+		++ it2;
+		if (it2 == vals.end()) {return it;}
+		if (it2->first > pos) {return it;}
+
+		++ it;
+		if (it == vals.end()) {break;}
+	}
+	return vals.end();
+}
+
+std::map<double, double>::const_iterator rightValue(const std::map<double, double>& vals, double pos)
+{
+	std::map<double, double>::const_iterator it = vals.begin();
+
+	while (1) {
+		if (it->first > pos) {return it;}
+
+		++ it;
+		if (it == vals.end()) {break;}
+	}
+	return vals.end();
+}
+
+double interpolate(const std::map<double, double>& vals, double pos)
+{
+	auto left = leftValue(vals, pos);
+	auto right = rightValue(vals, pos);
+
+	if (left == vals.end()) {return Project::INVALID_HWM;}
+	if (right == vals.end()) {return Project::INVALID_HWM;}
+
+	double val = left->second +
+			(right->second - left->second) / (right->first - left->first) * (pos - left->first);
+	return val;
+}
+
 double calcHWMAtCrossSection(CrossSection* cs, BaseLine& bl, Points& hwm)
 {
 	bool crosses;
@@ -77,14 +120,8 @@ double calcHWMAtCrossSection(CrossSection* cs, BaseLine& bl, Points& hwm)
 		double pos = bl.calcPosition(p->x(), p->y());
 		vals.insert(std::make_pair(pos, p->z()));
 	}
-	auto lb = vals.lower_bound(pos);
-	auto ub = vals.upper_bound(pos);
-	if (lb == vals.end()) {return Project::INVALID_HWM;}
-	if (ub == vals.end()) {return Project::INVALID_HWM;}
 
-	double val = lb->second +
-			(ub->second - lb->second) / (ub->first - lb->first) * (pos - lb->first);
-	return val;
+	return interpolate(vals, pos);
 }
 
 } // namespace
