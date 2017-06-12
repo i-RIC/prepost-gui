@@ -266,7 +266,6 @@ void Post3dWindowArrowGroupDataItem::updateActorSettings()
 	}
 
 	setupAppendFilter();
-	if (m_appendFilter->GetNumberOfInputConnections(0) == 0) {return;}
 
 	calculateStandardValue();
 	updatePolyData();
