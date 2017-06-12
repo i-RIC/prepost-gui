@@ -49,7 +49,7 @@ bool GeoDataPointMapT<V, DA>::getValueRange(double* min, double* max)
 }
 
 template <class V, class DA>
-GeoDataMapper* GeoDataPointMapT<V, DA>::mapper()
+GeoDataMapper* GeoDataPointMapT<V, DA>::mapper() const
 {
 	if (m_gridAttribute->position() == SolverDefinitionGridAttribute::CellCenter) {
 		return GeoData::mapper();

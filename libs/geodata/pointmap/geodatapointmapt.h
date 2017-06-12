@@ -17,7 +17,7 @@ public:
 	void setValue(vtkIdType index, V val);
 
 	bool getValueRange(double* min, double* max) override;
-	GeoDataMapper* mapper();
+	GeoDataMapper* mapper() const override;
 
 private:
 	GeoDataMapper* m_templateMapper;
