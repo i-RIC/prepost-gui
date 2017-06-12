@@ -123,6 +123,9 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSetting(const Post2dWindowNo
 	ui->stdValueSpinBox->setValue(setting.standardValue);
 	ui->legendLengthSpinBox->setValue(setting.legendLength);
 	ui->minValueSpinBox->setValue(setting.minimumValue);
+
+	ui->arrowSizeSpinBox->setValue(setting.arrowSize);
+	ui->lineWidthSpinBox->setValue(setting.lineWidth);
 }
 
 void Post2dWindowArrowUnstructuredSettingDialog::showRegionDialog()
