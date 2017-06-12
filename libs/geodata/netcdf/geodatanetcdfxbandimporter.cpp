@@ -5,6 +5,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricrootpath.h>
@@ -16,6 +17,14 @@
 #include <QList>
 #include <QMessageBox>
 #include <QProcess>
+#include <QTemporaryDir>
+#include <QTextCodec>
+
+#include <string>
+
+namespace {
+	const QString TMP_NC = "tmp.nc";
+} // namespace
 
 GeoDataNetcdfXbandImporter::GeoDataNetcdfXbandImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"xband", tr("XBand MP RADER data"), creator}
@@ -51,9 +60,26 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 
 	QFileInfo finfo(filename);
 	QDir dir = finfo.absoluteDir();
+	QDir workDir = dir;
 	QStringList filter;
 	QStringList filenames = dir.entryList(filter, QDir::Files, QDir::Name);
-	m_tmpFileName = dir.absoluteFilePath("tmp.nc");
+	m_tmpFileName = dir.absoluteFilePath(TMP_NC);
+
+	QString workTmpFileName = m_tmpFileName;
+	QTemporaryDir* tempDir = nullptr;
+
+	QTextCodec* latin1 = QTextCodec::codecForName("latin1");
+	if (! latin1->canEncode(dir.absolutePath())) {
+		// the name contains non-ASCII characters.
+		// we should copy to temporary directory.
+		QDir wsDir(item->projectData()->workDirectory());
+		tempDir = new QTemporaryDir(wsDir.absoluteFilePath("xband"));
+		workDir = QDir(tempDir->path());
+		for (QString fname : filenames) {
+			QFile::copy(dir.absoluteFilePath(fname), workDir.absoluteFilePath(fname));
+		}
+		workTmpFileName = workDir.absoluteFilePath(TMP_NC);
+	}
 
 	if (! item->iricMainWindow()->cuiMode()) {
 		int ret = QMessageBox::information(w, tr("Information"), tr("%1 files in the folder %2 are imported.").arg(filenames.size()).arg(QDir::toNativeSeparators(dir.absolutePath())), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
@@ -65,17 +91,26 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	QString exeName = QDir(exepath).absoluteFilePath("mlitx2nc.exe");
 	QProcess* mlitx2ncProcess = new QProcess();
 	QStringList args;
-	args << m_tmpFileName << QString::number(filenames.size());
+	args << workTmpFileName << QString::number(filenames.size());
 
 	mlitx2ncProcess->start(exeName, args);
-	for (int i = 0; i < filenames.size(); ++i) {
-		QString fname = QDir::toNativeSeparators(dir.absoluteFilePath(filenames.at(i)));
-		fname.append("\r\n");
-		mlitx2ncProcess->write(iRIC::toStr(fname).c_str());
+	for (QString fname : filenames) {
+		QString fullName = QDir::toNativeSeparators(workDir.absoluteFilePath(fname));
+		fullName.append("\r\n");
+		mlitx2ncProcess->write(iRIC::toStr(fullName).c_str());
 	}
 	mlitx2ncProcess->waitForFinished(-1);
 
 	// mlitx2nc process finished.
+
+	if (tempDir != nullptr) {
+
+		std::string workTmpFileNameStr = iRIC::toStr(workTmpFileName);
+
+		bool copyOK = QFile::copy(workTmpFileName, m_tmpFileName);
+		delete tempDir;
+	}
+
 	return true;
 }
 
