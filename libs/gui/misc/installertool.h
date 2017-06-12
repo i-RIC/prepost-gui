@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+class iRICMainWindow;
+
 class QString;
 class QWidget;
 
@@ -12,7 +14,7 @@ class InstallerTool : public QObject
 
 public:
 	~InstallerTool();
-	static void openMaintainanceDialog(QWidget* w);
+	static void openMaintainanceDialog(iRICMainWindow *w);
 	static QString installerFileName();
 
 private:

@@ -1,7 +1,9 @@
 #include "installertool.h"
+#include "../main/iricmainwindow.h"
 
 #include <misc/iricrootpath.h>
 
+#include <QAbstractButton>
 #include <QApplication>
 #include <QDir>
 #include <QMessageBox>
@@ -14,11 +16,22 @@ InstallerTool::InstallerTool()
 InstallerTool::~InstallerTool()
 {}
 
-void InstallerTool::openMaintainanceDialog(QWidget* w)
+void InstallerTool::openMaintainanceDialog(iRICMainWindow* w)
 {
-	QMessageBox::warning(w, tr("Warning"), tr("When you want to update iRIC GUI, please close all iRIC GUI windows before updating, so that iRIC Maintainance can overwrite it."));
+	QMessageBox warningDialog(QMessageBox::Information, tr("Warning"),
+														tr("When you update iRIC, you need to close iRIC before launching iRIC Maintainance.\n"
+														"When you have iRIC windows other than this, close them manually."),
+														QMessageBox::Ok | QMessageBox::Cancel, w);
+	warningDialog.button(QMessageBox::Ok)->setText(tr("Close iRIC and launch iRIC Maintainance"));
+	int ret = warningDialog.exec();
+	if (ret == QMessageBox::Cancel) {return;}
+
+	bool closed = w->closeProject();
+	if (! closed) {return;}
 
 	QProcess::startDetached(QString("\"%1\"").arg(installerFileName()));
+
+	w->close();
 }
 
 QString InstallerTool::installerFileName()
