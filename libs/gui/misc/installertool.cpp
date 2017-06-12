@@ -29,9 +29,14 @@ void InstallerTool::openMaintainanceDialog(iRICMainWindow* w)
 	bool closed = w->closeProject();
 	if (! closed) {return;}
 
-	QProcess::startDetached(QString("\"%1\"").arg(installerFileName()));
+	launchMaintainance();
 
 	w->close();
+}
+
+void InstallerTool::launchMaintainance()
+{
+	QProcess::startDetached(QString("\"%1\"").arg(installerFileName()));
 }
 
 QString InstallerTool::installerFileName()

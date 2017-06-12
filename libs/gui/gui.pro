@@ -285,6 +285,7 @@ HEADERS += gui_api.h \
            misc/iricmainwindowmiscdialogmanager.h \
            misc/mousehelpdialog.h \
            misc/newprojectsolverselectingdialog.h \
+           misc/periodicalupdatechecker.h \
            misc/projecttypeselectdialog.h \
            misc/wrongsettingexception.h \
            pref/preferencedialog.h \
@@ -367,6 +368,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            misc/iricmainwindowmiscdialogmanager.cpp \
            misc/mousehelpdialog.cpp \
            misc/newprojectsolverselectingdialog.cpp \
+           misc/periodicalupdatechecker.cpp \
            misc/projecttypeselectdialog.cpp \
            pref/preferencedialog.cpp \
            pref/preferencepage.cpp \

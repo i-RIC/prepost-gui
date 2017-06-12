@@ -6,9 +6,9 @@ VTK_MODULE_INIT(vtkRenderingFreeType);
 VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 
 #include <gui/main/iricmainwindow.h>
-#include <misc/iricrootpath.h>
-
+#include <gui/misc/periodicalupdatechecker.h>
 #include <misc/errormessage.h>
+#include <misc/iricrootpath.h>
 
 #include <QApplication>
 #include <QDir>
@@ -53,6 +53,9 @@ int main(int argc, char* argv[])
 		translator->load(finfo.baseName(), finfo.absolutePath());
 		a.installTranslator(translator);
 	}
+
+	bool check = PeriodicalUpdateChecker::checkUpdate();
+	if (check) {return 0;}
 
 	try {
 		iRICMainWindow w;

@@ -5890,12 +5890,23 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>InstallerTool</name>
     <message>
-        <location filename="../misc/installertool.cpp" line="19"/>
+        <location filename="../misc/installertool.cpp" line="21"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../misc/installertool.cpp" line="19"/>
+        <location filename="../misc/installertool.cpp" line="22"/>
+        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
+When you have iRIC windows other than this, close them manually.</source>
+        <translation>iRIC を更新する時は、iRIC Maintainance を起動する前に iRIC を閉じる必要があります。
+もし他にも iRIC のウィンドウを開いている場合は、手動で閉じて下さい。</translation>
+    </message>
+    <message>
+        <location filename="../misc/installertool.cpp" line="25"/>
+        <source>Close iRIC and launch iRIC Maintainance</source>
+        <translation>iRIC を閉じて iRIC Maintainance を起動</translation>
+    </message>
+    <message>
         <source>When you want to update iRIC GUI, please close all iRIC GUI windows before updating, so that iRIC Maintainance can overwrite it.</source>
         <translation>iRIC GUI を更新する時は、iRIC Maintainance が上書きできるように、更新する前に全ての iRIC GUI ウィンドウを閉じて下さい。</translation>
     </message>
@@ -6264,6 +6275,26 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>Are you sure you want to delete this item?</source>
         <translation type="obsolete">本当にこの項目を削除していいですか?</translation>
+    </message>
+</context>
+<context>
+    <name>PeriodicalUpdateChecker</name>
+    <message>
+        <location filename="../misc/periodicalupdatechecker.cpp" line="32"/>
+        <source>Check for Update</source>
+        <translation>更新の確認</translation>
+    </message>
+    <message>
+        <location filename="../misc/periodicalupdatechecker.cpp" line="33"/>
+        <source>%1 days have passed after launching iRIC Maintainance for the last time.
+Do you want to launch iRIC Maintainance?</source>
+        <translation>前回 iRIC Maintainance を起動してから %1 以上経過しています。
+iRIC Maintainance を起動しますか?</translation>
+    </message>
+    <message>
+        <location filename="../misc/periodicalupdatechecker.cpp" line="35"/>
+        <source>Launch iRIC Maintainance</source>
+        <translation>iRIC Maintainance を起動</translation>
     </message>
 </context>
 <context>
@@ -11826,36 +11857,51 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="94"/>
+        <source>Checking for Update</source>
+        <translation>更新の確認</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="100"/>
+        <source>Check for update periodically</source>
+        <translation>定期的に更新を確認する</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="128"/>
+        <source>Interval between checking (days):</source>
+        <translation>更新の確認間隔 (日)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="163"/>
         <source>Cell Culling on Drawing Grid</source>
         <translation>格子描画時のセルの間引き</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="100"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="169"/>
         <source>Enable</source>
         <translation>有効</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="128"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="197"/>
         <source>Maximum numbers of cells drawn:</source>
         <translation>描画するセルの最大数:</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="174"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="243"/>
         <source>Maximum numbers of indices drawn:</source>
         <translation>描画するインデックスの最大数:</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="212"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="281"/>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
         <translation>警告: もし間引きを無効にし、非常に大きい格子を作成した倍、メモリ不足により iRIC GUI が異常終了する可能性があります。</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="225"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="294"/>
         <source>Undo</source>
         <translation>アンドゥ</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="231"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="300"/>
         <source>Undo Limit:</source>
         <translation>アンドゥの最大数:</translation>
     </message>
@@ -11884,22 +11930,22 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">クリアする(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="55"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="55"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
         <source>Working directory contains non-ASCII characters.</source>
         <translation>作業ディレクトリに、ASCII文字列以外の文字が含まれています。</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="67"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="67"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>作業ディレクトリが変更されましたが、新しい作業ディレクトリは、次回 iRIC GUI を起動した時から使われます!</translation>
     </message>

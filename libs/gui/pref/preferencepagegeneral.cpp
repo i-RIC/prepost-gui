@@ -1,6 +1,7 @@
 #include "ui_preferencepagegeneral.h"
 
 #include "preferencepagegeneral.h"
+#include "../misc/periodicalupdatechecker.h"
 
 #include <guicore/project/projectworkspace.h>
 #include <guicore/pre/grid/grid.h>
@@ -31,6 +32,11 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	ui->workDirWidget->setDirname(workspace);
 	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
 	ui->folderCopyCheckBox->setChecked(copyFolderProject);
+
+	bool checkPeriodically = settings.value("general/periodicalUpdate", true).toBool();
+	ui->checkUpdatePeriodicallyCheckBox->setChecked(checkPeriodically);
+	int checkInterval = settings.value("general/periodicalUpdateInterval", PeriodicalUpdateChecker::DEFAULT_INTERVAL_DAYS).toInt();
+	ui->checkIntervalSpinBox->setValue(checkInterval);
 
 	bool cullEnable = settings.value("general/cullcellenable", true).toBool();
 	int cullCellLimit = settings.value("general/cullcelllimit", Grid::MAX_DRAWCELLCOUNT).toInt();
@@ -72,6 +78,8 @@ void PreferencePageGeneral::update()
 	settings.setValue("general/locale", loc.name());
 	settings.setValue("general/workspace", ui->workDirWidget->dirname());
 	settings.setValue("general/copyfolderproject", ui->folderCopyCheckBox->isChecked());
+	settings.setValue("general/periodicalUpdate", ui->checkUpdatePeriodicallyCheckBox->isChecked());
+	settings.setValue("general/periodicalUpdateInterval", ui->checkIntervalSpinBox->value());
 	settings.setValue("general/cullcellenable", ui->cullEnableCheckBox->isChecked());
 	settings.setValue("general/cullcelllimit", ui->cullMaxNumberSpinBox->value());
 	settings.setValue("general/cullindexlimit", ui->cullMaxIndexSpinBox->value());

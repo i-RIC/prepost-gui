@@ -617,13 +617,19 @@
 <context>
     <name>InstallerTool</name>
     <message>
-        <location filename="../misc/installertool.cpp" line="19"/>
+        <location filename="../misc/installertool.cpp" line="21"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../misc/installertool.cpp" line="19"/>
-        <source>When you want to update iRIC GUI, please close all iRIC GUI windows before updating, so that iRIC Maintainance can overwrite it.</source>
+        <location filename="../misc/installertool.cpp" line="22"/>
+        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
+When you have iRIC windows other than this, close them manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../misc/installertool.cpp" line="25"/>
+        <source>Close iRIC and launch iRIC Maintainance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -659,6 +665,25 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <location filename="../misc/newprojectsolverselectingdialog.ui" line="31"/>
         <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PeriodicalUpdateChecker</name>
+    <message>
+        <location filename="../misc/periodicalupdatechecker.cpp" line="32"/>
+        <source>Check for Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../misc/periodicalupdatechecker.cpp" line="33"/>
+        <source>%1 days have passed after launching iRIC Maintainance for the last time.
+Do you want to launch iRIC Maintainance?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../misc/periodicalupdatechecker.cpp" line="35"/>
+        <source>Launch iRIC Maintainance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -762,56 +787,71 @@ This wizard will generate or update translation files for solver definition file
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="94"/>
-        <source>Cell Culling on Drawing Grid</source>
+        <source>Checking for Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="100"/>
-        <source>Enable</source>
+        <source>Check for update periodically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="128"/>
+        <source>Interval between checking (days):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="163"/>
+        <source>Cell Culling on Drawing Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="169"/>
+        <source>Enable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="197"/>
         <source>Maximum numbers of cells drawn:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="174"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="243"/>
         <source>Maximum numbers of indices drawn:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="212"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="281"/>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="225"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="294"/>
         <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="231"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="300"/>
         <source>Undo Limit:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="55"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="55"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
         <source>Working directory contains non-ASCII characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="67"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="67"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation type="unfinished"></translation>
     </message>

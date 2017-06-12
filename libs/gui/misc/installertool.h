@@ -15,6 +15,8 @@ class InstallerTool : public QObject
 public:
 	~InstallerTool();
 	static void openMaintainanceDialog(iRICMainWindow *w);
+	static void launchMaintainance();
+
 	static QString installerFileName();
 
 private:
