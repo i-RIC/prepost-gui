@@ -5,6 +5,8 @@
 
 class ReferenceMark : public Points
 {
+	Q_OBJECT
+
 public:
 	ReferenceMark(DataItem* parent);
 	~ReferenceMark();

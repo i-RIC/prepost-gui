@@ -5,6 +5,8 @@
 
 class StreamGage : public Points
 {
+	Q_OBJECT
+
 public:
 	StreamGage(DataItem* parent);
 	~StreamGage();
