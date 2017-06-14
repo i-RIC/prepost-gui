@@ -24,6 +24,7 @@ public:
 
 public slots:
 	void updatePosition(const QPointF& pos);
+	void updatePositionWithoutOffset(const QPointF& pos);
 	void clear();
 
 private:

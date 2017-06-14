@@ -75,6 +75,7 @@ void RivmakerMainWindow::setupConnections()
 	connect(&(impl->m_windowActivationMapper), SIGNAL(mapped(QWidget*)), this, SLOT(activateWindow(QWidget*)));
 
 	connect(&(impl->m_preProcessorWindow), SIGNAL(positionChangedForStatusBar(QPointF)), &(impl->m_mousePositionWidget), SLOT(updatePosition(QPointF)));
+	connect(&(impl->m_verticalCrossSectionWindow), SIGNAL(positionChangedForStatusBar(QPointF)), &(impl->m_mousePositionWidget), SLOT(updatePositionWithoutOffset(QPointF)));
 
 	auto mdiArea = dynamic_cast<QMdiArea*> (centralWidget());
 	connect(mdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)), &(impl->m_mousePositionWidget), SLOT(clear()));

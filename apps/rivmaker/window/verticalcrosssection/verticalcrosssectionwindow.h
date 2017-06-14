@@ -27,6 +27,9 @@ public:
 
 	void setProject(Project* project);
 
+signals:
+	void positionChangedForStatusBar(const QPointF& position);
+
 private slots:
 	void updateView();
 	void handleTableEdit(QStandardItem* editedItem);

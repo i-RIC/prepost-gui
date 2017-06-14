@@ -35,6 +35,14 @@ void MousePositionWidget::updatePosition(const QPointF& pos)
 	ui->labelY->setText(QString("Y: %1").arg(y, 0, 'f', 3));
 }
 
+void MousePositionWidget::updatePositionWithoutOffset(const QPointF& pos)
+{
+	double x = pos.x();
+	double y = pos.y();
+	ui->labelX->setText(QString("X: %1").arg(x, 0, 'f', 3));
+	ui->labelY->setText(QString("Y: %1").arg(y, 0, 'f', 3));
+}
+
 void MousePositionWidget::clear()
 {
 	ui->labelX->setText(tr("X: ------"));

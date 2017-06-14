@@ -9,6 +9,7 @@
 #include "../io/sacguiimporter.h"
 #include "../io/rivexporter.h"
 #include "../io/polyline/polylineimporter.h"
+#include "../widgets/mousepositionwidget.h"
 #include "../window/crosssection/crosssectionwindow.h"
 
 #include "ui_rivmakermainwindow.h"
@@ -280,6 +281,7 @@ void RivmakerMainWindow::openCrossSectionWindow()
 	}
 
 	auto w = new CrossSectionWindow(this);
+	connect(w, SIGNAL(positionChangedForStatusBar(QPointF)), &(impl->m_mousePositionWidget), SLOT(updatePositionWithoutOffset(QPointF)));
 	w->setProject(impl->m_project);
 
 	connect(impl->m_project, SIGNAL(updated()), w, SLOT(updateView()));

@@ -4,6 +4,7 @@ CONFIG += qt
 CONFIG += debug_and_release
 
 DEFINES += ANSI_DECLARATORS
+DEFINES += QWT_DLL
 
 include( ../../paths.pri )
 
@@ -79,6 +80,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            main/rivmakermainwindow.h \
            misc/geometryutil.h \
            misc/mathutil.h \
+           misc/qwtcanvaswithpositionsignal.h \
            widgets/mousepositionwidget.h \
            widgets/valuewidget.h \
            window/viewwindowi.h \
@@ -210,6 +212,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            main/rivmakermainwindow_setupconnections.cpp \
            misc/geometryutil.cpp \
            misc/mathutil.cpp \
+           misc/qwtcanvaswithpositionsignal.cpp \
            widgets/mousepositionwidget.cpp \
            widgets/valuewidget.cpp \
            data/arbitraryhwm/arbitraryhwm.cpp \

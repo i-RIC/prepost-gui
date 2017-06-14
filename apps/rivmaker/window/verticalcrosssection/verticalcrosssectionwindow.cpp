@@ -15,6 +15,7 @@
 #include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 #include "../../geom/geometrypoint.h"
 #include "../../main/rivmakermainwindow.h"
+#include "../../misc/qwtcanvaswithpositionsignal.h"
 
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
@@ -135,6 +136,10 @@ VerticalCrossSectionWindow::VerticalCrossSectionWindow(RivmakerMainWindow *paren
 	connect(ui->leftCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
 	connect(ui->rightCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
 	connect(ui->streamGageCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+
+	QwtCanvasWithPositionSignal* w = new QwtCanvasWithPositionSignal(ui->qwtWidget);
+	connect(w, SIGNAL(positionChangedForStatusBar(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
+	ui->qwtWidget->setCanvas(w);
 
 	QList<int> sizes;
 	sizes << 300 << 100;

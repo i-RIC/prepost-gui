@@ -4,6 +4,7 @@
 #include "../../data/crosssection/crosssection.h"
 #include "../../data/crosssections/crosssections.h"
 #include "../../data/project/project.h"
+#include "../../misc/qwtcanvaswithpositionsignal.h"
 
 #include <qwt_plot_curve.h>
 #include <qwt_plot_grid.h>
@@ -25,6 +26,10 @@ CrossSectionWindow::CrossSectionWindow(QWidget *parent) :
 	ui->setupUi(this);
 	connect(ui->crossSectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSelectionChange(int)));
 	connect(ui->resetZoomButton, SIGNAL(clicked()), this, SLOT(resetZoom()));
+
+	QwtCanvasWithPositionSignal* w = new QwtCanvasWithPositionSignal(ui->qwtWidget);
+	connect(w, SIGNAL(positionChangedForStatusBar(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
+	ui->qwtWidget->setCanvas(w);
 
 	initCurve();
 }

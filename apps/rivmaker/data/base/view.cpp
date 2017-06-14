@@ -26,7 +26,11 @@ View::~View()
 void View::updateView()
 {
 	updateTransform();
-	if (! model()->rootDataItemView()->prepareDraw()) {return;}
+	auto m = model();
+	if (m == nullptr) {return;}
+	auto r = m->rootDataItemView();
+	if (r == nullptr) {return;}
+	if (! r->prepareDraw()) {return;}
 
 	update();
 }
