@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -154,11 +154,11 @@
     <name>CrossSection</name>
     <message>
         <source>X%1</source>
-        <translation type="vanished">X%1</translation>
+        <translation>X%1</translation>
     </message>
     <message>
         <source>SEC%1</source>
-        <translation type="vanished">SEC%1</translation>
+        <translation>SEC%1</translation>
     </message>
 </context>
 <context>
@@ -334,7 +334,7 @@
     <name>CrossSectionsPreProcessorController::Impl</name>
     <message>
         <source>Add</source>
-        <translation type="vanished">追加</translation>
+        <translation>追加</translation>
     </message>
 </context>
 <context>
@@ -590,7 +590,7 @@
     <name>PointsPreProcessorController::Impl</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="vanished">インポート (&amp;I)...</translation>
+        <translation>インポート (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -745,14 +745,14 @@
     <name>RiverSurveyData</name>
     <message>
         <source>River Survey Data</source>
-        <translation type="vanished">河川測量データ</translation>
+        <translation>河川測量データ</translation>
     </message>
 </context>
 <context>
     <name>RiverSurveyDataDummy</name>
     <message>
         <source>River Survey Data (NO DATA)</source>
-        <translation type="vanished">河川測量データ (データなし)</translation>
+        <translation>河川測量データ (データなし)</translation>
     </message>
 </context>
 <context>
@@ -801,7 +801,7 @@
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="vanished">河川測量データ</translation>
+        <translation>河川測量データ</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="131"/>
@@ -1011,7 +1011,7 @@
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="vanished">ツールバー(&amp;T)</translation>
+        <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="466"/>
@@ -1142,7 +1142,7 @@
     </message>
     <message>
         <source>All the data in the project is discarded. Are you sure?</source>
-        <translation type="vanished">プロジェクトの全てのデータが破棄されます。本当にいいですか?</translation>
+        <translation>プロジェクトの全てのデータが破棄されます。本当にいいですか?</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="278"/>
@@ -1151,7 +1151,7 @@
     </message>
     <message>
         <source>Are you sure you want to exit Rivmaker?</source>
-        <translation type="vanished">本当に Rivmaker を終了していいですか?</translation>
+        <translation>本当に Rivmaker を終了していいですか?</translation>
     </message>
 </context>
 <context>
@@ -1168,11 +1168,11 @@
     </message>
     <message>
         <source>SAC GUI input file (*.txt, *.csv)</source>
-        <translation type="vanished">SAC GUI 入力ファイル (*.txt, *.csv)</translation>
+        <translation>SAC GUI 入力ファイル (*.txt, *.csv)</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt)</source>
-        <translation type="vanished">SAC GUI 入力ファイル (*.txt)</translation>
+        <translation>SAC GUI 入力ファイル (*.txt)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1257,7 @@
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="196"/>
         <source>Distance Upstream</source>
-        <translation>上流側からの距離</translation>
+        <translation>上流方向への距離</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="199"/>
