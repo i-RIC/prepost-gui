@@ -191,7 +191,7 @@
     <name>CrossSectionWindow</name>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="208"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="213"/>
         <source>Cross Section Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -206,27 +206,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="93"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="98"/>
         <source>Distance from Left bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="96"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="101"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="127"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="132"/>
         <source>Left bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="137"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="142"/>
         <source>Right bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/crosssection/crosssectionwindow.cpp" line="211"/>
+        <location filename="../window/crosssection/crosssectionwindow.cpp" line="216"/>
         <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -491,12 +491,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/mousepositionwidget.cpp" line="40"/>
+        <location filename="../widgets/mousepositionwidget.cpp" line="48"/>
         <source>X: ------</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/mousepositionwidget.cpp" line="41"/>
+        <location filename="../widgets/mousepositionwidget.cpp" line="49"/>
         <source>Y: ------</source>
         <translation type="unfinished"></translation>
     </message>
@@ -791,310 +791,325 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="213"/>
+        <location filename="../main/rivmakermainwindow.ui" line="211"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="216"/>
         <source>Save &amp;As...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="222"/>
+        <location filename="../main/rivmakermainwindow.ui" line="225"/>
         <source>Property...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="227"/>
+        <location filename="../main/rivmakermainwindow.ui" line="230"/>
         <source>E&amp;xit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="232"/>
+        <location filename="../main/rivmakermainwindow.ui" line="233"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="238"/>
         <source>Dummy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="237"/>
+        <location filename="../main/rivmakermainwindow.ui" line="243"/>
         <source>&amp;Elevation...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="242"/>
+        <location filename="../main/rivmakermainwindow.ui" line="248"/>
         <source>&amp;Water Surface Elevation...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="251"/>
-        <location filename="../main/rivmakermainwindow.ui" line="260"/>
+        <location filename="../main/rivmakermainwindow.ui" line="257"/>
+        <location filename="../main/rivmakermainwindow.ui" line="266"/>
         <source>&amp;Background Image...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="265"/>
+        <location filename="../main/rivmakermainwindow.ui" line="271"/>
         <source>&amp;SAC GUI Input File...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="270"/>
+        <location filename="../main/rivmakermainwindow.ui" line="276"/>
         <source>&amp;Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="275"/>
+        <location filename="../main/rivmakermainwindow.ui" line="281"/>
         <source>&amp;Water Surface Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="280"/>
+        <location filename="../main/rivmakermainwindow.ui" line="286"/>
         <source>&amp;SAC GUI Input File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="285"/>
-        <location filename="../main/rivmakermainwindow.ui" line="377"/>
+        <location filename="../main/rivmakermainwindow.ui" line="291"/>
+        <location filename="../main/rivmakermainwindow.ui" line="383"/>
         <source>&amp;Create...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="294"/>
-        <location filename="../main/rivmakermainwindow.ui" line="395"/>
+        <location filename="../main/rivmakermainwindow.ui" line="300"/>
+        <location filename="../main/rivmakermainwindow.ui" line="401"/>
         <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="303"/>
+        <location filename="../main/rivmakermainwindow.ui" line="309"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="312"/>
+        <location filename="../main/rivmakermainwindow.ui" line="318"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="317"/>
-        <location filename="../main/rivmakermainwindow.ui" line="345"/>
+        <location filename="../main/rivmakermainwindow.ui" line="323"/>
+        <location filename="../main/rivmakermainwindow.ui" line="351"/>
         <source>&amp;Edit Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="326"/>
-        <location filename="../main/rivmakermainwindow.ui" line="363"/>
+        <location filename="../main/rivmakermainwindow.ui" line="332"/>
+        <location filename="../main/rivmakermainwindow.ui" line="369"/>
         <source>&amp;Import...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="335"/>
-        <location filename="../main/rivmakermainwindow.ui" line="372"/>
-        <location filename="../main/rivmakermainwindow.ui" line="386"/>
+        <location filename="../main/rivmakermainwindow.ui" line="341"/>
+        <location filename="../main/rivmakermainwindow.ui" line="378"/>
+        <location filename="../main/rivmakermainwindow.ui" line="392"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="340"/>
+        <location filename="../main/rivmakermainwindow.ui" line="346"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="354"/>
+        <location filename="../main/rivmakermainwindow.ui" line="360"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="404"/>
+        <location filename="../main/rivmakermainwindow.ui" line="410"/>
         <source>&amp;Mouse Hint...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="409"/>
+        <location filename="../main/rivmakermainwindow.ui" line="415"/>
         <source>&amp;About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="414"/>
-        <location filename="../main/rivmakermainwindow.ui" line="424"/>
-        <location filename="../main/rivmakermainwindow.ui" line="439"/>
+        <location filename="../main/rivmakermainwindow.ui" line="420"/>
+        <location filename="../main/rivmakermainwindow.ui" line="430"/>
+        <location filename="../main/rivmakermainwindow.ui" line="445"/>
         <source>&amp;Base Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="419"/>
-        <location filename="../main/rivmakermainwindow.ui" line="429"/>
-        <location filename="../main/rivmakermainwindow.ui" line="444"/>
+        <location filename="../main/rivmakermainwindow.ui" line="425"/>
+        <location filename="../main/rivmakermainwindow.ui" line="435"/>
+        <location filename="../main/rivmakermainwindow.ui" line="450"/>
         <source>&amp;Cross Section...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="434"/>
+        <location filename="../main/rivmakermainwindow.ui" line="440"/>
         <source>&amp;River Survey Data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="455"/>
+        <location filename="../main/rivmakermainwindow.ui" line="461"/>
         <source>&amp;Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="572"/>
+        <location filename="../main/rivmakermainwindow.ui" line="578"/>
         <source>&amp;Windows Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="577"/>
+        <location filename="../main/rivmakermainwindow.ui" line="583"/>
         <source>&amp;Mapping Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="582"/>
+        <location filename="../main/rivmakermainwindow.ui" line="588"/>
         <source>&amp;Graphics Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="591"/>
+        <location filename="../main/rivmakermainwindow.ui" line="597"/>
         <source>&amp;Open...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="594"/>
+        <location filename="../main/rivmakermainwindow.ui" line="600"/>
         <source>Ctrl+O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="606"/>
+        <location filename="../main/rivmakermainwindow.ui" line="612"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="614"/>
+        <location filename="../main/rivmakermainwindow.ui" line="615"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="623"/>
         <source>dummy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="466"/>
+        <location filename="../main/rivmakermainwindow.ui" line="472"/>
         <source>&amp;Status Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="475"/>
+        <location filename="../main/rivmakermainwindow.ui" line="481"/>
         <source>&amp;Open &amp;New Crosssection Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="484"/>
+        <location filename="../main/rivmakermainwindow.ui" line="490"/>
         <source>Fit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="493"/>
-        <location filename="../main/rivmakermainwindow.ui" line="496"/>
+        <location filename="../main/rivmakermainwindow.ui" line="499"/>
+        <location filename="../main/rivmakermainwindow.ui" line="502"/>
         <source>Reset Rotation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="505"/>
+        <location filename="../main/rivmakermainwindow.ui" line="511"/>
         <source>Rotate 90 degrees</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="514"/>
+        <location filename="../main/rivmakermainwindow.ui" line="520"/>
         <source>Zoom In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="523"/>
+        <location filename="../main/rivmakermainwindow.ui" line="529"/>
         <source>Zoom Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="532"/>
-        <location filename="../main/rivmakermainwindow.ui" line="535"/>
+        <location filename="../main/rivmakermainwindow.ui" line="538"/>
+        <location filename="../main/rivmakermainwindow.ui" line="541"/>
         <source>Focus Main Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="544"/>
-        <location filename="../main/rivmakermainwindow.ui" line="547"/>
+        <location filename="../main/rivmakermainwindow.ui" line="550"/>
+        <location filename="../main/rivmakermainwindow.ui" line="553"/>
         <source>Focus Vertical Crosssection Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="556"/>
+        <location filename="../main/rivmakermainwindow.ui" line="562"/>
         <source>Open Crosssection Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.ui" line="561"/>
+        <location filename="../main/rivmakermainwindow.ui" line="567"/>
         <source>Reverse &amp;Direction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="107"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="108"/>
         <source>Open project file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="107"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="137"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="108"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="138"/>
         <source>RivMaker project file (*.rpro)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="125"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="143"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="126"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="144"/>
         <source>Project saved to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="129"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="147"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="206"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="215"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="475"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="130"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="148"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="207"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="216"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="477"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="129"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="147"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="130"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="148"/>
         <source>Saving project file to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="137"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="138"/>
         <source>Save project file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="206"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="215"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="207"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="216"/>
         <source>No data to export exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="278"/>
-        <location filename="../main/rivmakermainwindow.cpp" line="505"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="279"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="507"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="459"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="461"/>
         <source>&amp;%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="475"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="477"/>
         <source>Opening project file failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="505"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="507"/>
         <source>The project data is modified. Do you want to save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="40"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="41"/>
         <source>Window List Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="278"/>
+        <location filename="../main/rivmakermainwindow.cpp" line="279"/>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,18 +1207,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="196"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="201"/>
         <source>Distance Upstream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="199"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="344"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="204"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="349"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="344"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="349"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
