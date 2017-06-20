@@ -307,14 +307,36 @@ void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writeOpacityPercent(m_opacityPercent, writer);
 }
 
-void GeoDataNetcdf::doApplyOffset(double /*x*/, double /*y*/)
+void GeoDataNetcdf::doApplyOffset(double x, double y)
 {
-	// @todo implement this
+	auto points = m_grid->GetPoints();
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+		double p[3];
+		points->GetPoint(i, p);
+		p[0] -= x;
+		p[1] -= y;
+		points->SetPoint(i, p);
+	}
+	points->Modified();
 
+	auto sPoints = m_simplifiedGrid->GetPoints();
+	if (sPoints != nullptr) {
+		for (vtkIdType i = 0; i < sPoints->GetNumberOfPoints(); ++i) {
+			double p[3];
+			sPoints->GetPoint(i, p);
+			p[0] -= x;
+			p[1] -= y;
+			sPoints->SetPoint(i, p);
+		}
+		sPoints->Modified();
+	}
+
+	updateRegionPolyData();
 }
 
 void GeoDataNetcdf::updateShapeData()
 {
+	auto offset = projectData()->mainfile()->offset();
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
 
 	vtkPoints* points = m_grid->GetPoints();
@@ -430,7 +452,7 @@ void GeoDataNetcdf::updateShapeData()
 
 				double x, y;
 				cs->mapGeoToGrid(longitude, latitude, &x, &y);
-				points->InsertNextPoint(x, y, 0);
+				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
 			}
 		}
 
@@ -464,7 +486,7 @@ void GeoDataNetcdf::updateShapeData()
 				}
 				double x, y;
 				cs->mapGeoToGrid(longitude, latitude, &x, &y);
-				points->InsertNextPoint(x, y, 0);
+				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
 			}
 		}
 	}
