@@ -5,6 +5,8 @@
 #include "geodatapolygoncoordinateseditdialog.h"
 
 #include <guibase/widget/coordinateeditwidget.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
 
 #include <QPolygonF>
@@ -155,11 +157,17 @@ void GeoDataPolygonCoordinatesEditDialog::setupData()
 	m_model->setHeaderData(0, Qt::Horizontal, tr("X"));
 	m_model->setHeaderData(1, Qt::Horizontal, tr("Y"));
 
+	auto projectData = m_polygon->projectData();
+	auto offset = projectData->mainfile()->offset();
+
 	vtkPoints* points = m_polygon->m_selectedPolygon->getVtkPolygon()->GetPoints();
 	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		m_model->insertRow(i);
 		double p[3];
 		points->GetPoint(i, p);
+		p[0] += offset.x();
+		p[1] += offset.y();
+
 		m_model->setData(m_model->index(i, 0, QModelIndex()), p[0]);
 		m_model->setData(m_model->index(i, 1, QModelIndex()), p[1]);
 	}
@@ -174,12 +182,15 @@ void GeoDataPolygonCoordinatesEditDialog::setupData()
 
 QVector<QVector2D> GeoDataPolygonCoordinatesEditDialog::getCoords()
 {
+	auto projectData = m_polygon->projectData();
+	auto offset = projectData->mainfile()->offset();
+
 	QVector<QVector2D> ret;
 	int rows = m_model->rowCount();
 	for (int i = 0; i < rows; ++i) {
 		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble();
 		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble();
-		ret.append(QVector2D(x, y));
+		ret.append(QVector2D(x - offset.x(), y - offset.y()));
 	}
 	return ret;
 }
