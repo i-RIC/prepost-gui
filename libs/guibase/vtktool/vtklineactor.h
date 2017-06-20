@@ -30,4 +30,8 @@ private:
 	Impl* impl;
 };
 
+#ifdef _DEBUG
+	#include "private/vtklineactor_impl.h"
+#endif // _DEBUG
+
 #endif // VTKLINEACTOR_H
