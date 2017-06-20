@@ -101,7 +101,8 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(boo
 				int pointsUsed = 0;
 				for (int k = 0; k < numPoints; ++k) {
 					double tmpPoint[3];
-					pointSet->GetPoint(idlist->GetId(k), tmpPoint);
+					auto idx = idlist->GetId(k);
+					pointSet->GetPoint(idx, tmpPoint);
 					QVector2D tmpV(tmpPoint[0], tmpPoint[1]);
 					QVector2D dv = tmpV - vec2d;
 					double tmpDistI = qAbs(QVector2D::dotProduct(dv, vecI));
@@ -113,14 +114,14 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(boo
 							// use this point for mapping.
 							setting.indices.clear();
 							setting.weights.clear();
-							setting.indices.append(k);
+							setting.indices.append(idx);
 							setting.weights.append(1);
 							s->settings.append(setting);
 							found = true;
 						} else {
 							++ pointsUsed;
 							double r = ::pow(dv.length(), m_weightPowVal);
-							setting.indices.append(k);
+							setting.indices.append(idx);
 							setting.weights.append(1 / r);
 							rsum += 1 / r;
 						}
