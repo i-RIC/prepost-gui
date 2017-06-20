@@ -17,19 +17,19 @@ GridCreatingConditionPoisson::DefineNewPointCommand::DefineNewPointCommand(bool 
 
 void GridCreatingConditionPoisson::DefineNewPointCommand::redo()
 {
-	auto line = m_condition->impl->m_activeLine->polyLine();
+	auto line = m_condition->impl->m_activePoints->polyLine();
 	if (m_keyDown) {
 		line.push_back(m_newPoint);
 	} else {
 		line[line.size() - 1] = m_newPoint;
 	}
 	m_condition->impl->m_mouseEventMode = GridCreatingConditionPoisson::Impl::MouseEventMode::Defining;
-	m_condition->impl->m_activeLine->setPolyLine(line);
+	m_condition->impl->m_activePoints->setPolyLine(line);
 }
 
 void GridCreatingConditionPoisson::DefineNewPointCommand::undo()
 {
-	auto line = m_condition->impl->m_activeLine->polyLine();
+	auto line = m_condition->impl->m_activePoints->polyLine();
 	if (m_keyDown) {
 		line.pop_back();
 		if (line.size() == 0) {
@@ -38,7 +38,7 @@ void GridCreatingConditionPoisson::DefineNewPointCommand::undo()
 	} else {
 		// this does not happen. no implementation needed.
 	}
-	m_condition->impl->m_activeLine->setPolyLine(line);
+	m_condition->impl->m_activePoints->setPolyLine(line);
 }
 
 int GridCreatingConditionPoisson::DefineNewPointCommand::id() const
