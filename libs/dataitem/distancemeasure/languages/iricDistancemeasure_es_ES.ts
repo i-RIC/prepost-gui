@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.0" language="es_ES">
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="14"/>
         <source>Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedad de Medido de Distancia</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="22"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="36"/>
         <source>Start Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de Empieza:</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="46"/>
         <location filename="../distancemeasurecopypropertydialog.ui" line="66"/>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>, </translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="56"/>
         <source>End Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto Final:</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="78"/>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="84"/>
         <source>Show Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar Etiqueta</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="94"/>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Contenido</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="100"/>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="114"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="129"/>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="135"/>
         <source>Center-Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro-Arriba</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="145"/>
         <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro-Izquierda</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="152"/>
         <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro-Derecha</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="159"/>
         <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro-Abajo</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="186"/>
         <source>Font Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano de Letra:</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="221"/>
         <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar Marcadores de Fin</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="249"/>
         <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano de Marcador:</translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="283"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -105,12 +105,12 @@
     <message>
         <location filename="../distancemeasuredataitem.cpp" line="58"/>
         <source>Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Propediad</translation>
     </message>
     <message>
         <location filename="../distancemeasuredataitem.cpp" line="60"/>
         <source>Redefine</source>
-        <translation type="unfinished"></translation>
+        <translation>Redefinir</translation>
     </message>
     <message>
         <location filename="../private/distancemeasuredataitem_definecommand.cpp" line="7"/>
@@ -143,17 +143,17 @@
     <message>
         <location filename="../distancemeasuregroupdataitem.cpp" line="14"/>
         <source>&amp;Add Measure...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Medido...</translation>
     </message>
     <message>
         <location filename="../distancemeasuregroupdataitem.cpp" line="18"/>
         <source>Distance Measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidos de Distancia</translation>
     </message>
     <message>
         <location filename="../distancemeasuregroupdataitem.cpp" line="41"/>
         <source>Measure%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Medido%1</translation>
     </message>
 </context>
 </TS>

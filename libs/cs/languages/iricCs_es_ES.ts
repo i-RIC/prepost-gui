@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.0" language="es_ES">
 <context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="14"/>
         <source>Select Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Sistema de Coordenadas</translation>
     </message>
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="22"/>
         <source>Search:</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar:</translation>
     </message>
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="54"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
         <source>(Not Specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No Especificado)</translation>
     </message>
 </context>
 </TS>
