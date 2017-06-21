@@ -69,7 +69,7 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	QTemporaryDir* tempDir = nullptr;
 
 	QTextCodec* latin1 = QTextCodec::codecForName("latin1");
-	if (! latin1->canEncode(dir.absolutePath())) {
+	if (! latin1->canEncode(dir.absolutePath()) || dir.absolutePath().length() > 90) {
 		// the name contains non-ASCII characters.
 		// we should copy to temporary directory.
 		QDir wsDir(item->projectData()->workDirectory());
