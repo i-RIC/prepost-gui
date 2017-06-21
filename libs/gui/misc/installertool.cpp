@@ -36,7 +36,7 @@ void InstallerTool::openMaintainanceDialog(iRICMainWindow* w)
 
 void InstallerTool::launchMaintainance()
 {
-	QProcess::startDetached(QString("\"%1\"").arg(installerFileName()));
+	QProcess::startDetached(QString("\"%1\" --updater").arg(installerFileName()));
 }
 
 QString InstallerTool::installerFileName()
