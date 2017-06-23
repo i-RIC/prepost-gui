@@ -66,6 +66,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamline
 {
 	for (auto actor : m_streamlineActors) {
 		renderer()->RemoveActor(actor);
+		actor->Delete();
 	}
 }
 
@@ -86,6 +87,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 {
 	for (auto actor : m_streamlineActors) {
 		renderer()->RemoveActor(actor);
+		actor->Delete();
 	}
 	m_actorCollection->RemoveAllItems();
 	m_streamlineActors.clear();

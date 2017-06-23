@@ -135,7 +135,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 		}
 		m_sourcePoints.push_back(grid);
 
-		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
+		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(setting.color);
@@ -147,6 +147,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 
 		vtkDataSetMapper* mapper = vtkDataSetMapper::New();
 		actor->SetMapper(mapper);
+		mapper->Delete();
 
 		vtkStreamTracer* tracer = vtkStreamTracer::New();
 		setupStreamTracer(tracer);
@@ -155,6 +156,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.target).c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
+		tracer->Delete();
 
 		m_streamlineActors.push_back(actor);
 	}
