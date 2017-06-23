@@ -207,6 +207,8 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 	Point2D right, left;
 	PPoint2D pt;
 	PRivPath node;
+	QString qstrKP;
+	bool ok;
 
 	m_allNamesAreNumber = true;
 
@@ -234,8 +236,9 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 			switch (mode) {
 			case 1:
 				strKP = tok;
-				KP = (double) atof(tok);
-				if (KP == 0) {
+				qstrKP = strKP;
+				KP = qstrKP.toDouble(&ok);
+				if (! ok) {
 					m_allNamesAreNumber = false;
 					KP = WRONG_KP;
 				}
@@ -249,8 +252,9 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 
 			case 2:
 				strKP = tok;
-				KP = (double) atof(tok);
-				if (KP == 0) {
+				qstrKP = strKP;
+				KP = qstrKP.toDouble(&ok);
+				if (! ok) {
 					m_allNamesAreNumber = false;
 					KP = WRONG_KP;
 				}
