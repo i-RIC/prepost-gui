@@ -112,6 +112,7 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	assignActorZValues(m_zDepthRange);
 	m_isZoneDataItemsSetup = (zoneNum != 0);
+	updateItemMap();
 }
 
 void Post2dWindowGridTypeDataItem::update()
