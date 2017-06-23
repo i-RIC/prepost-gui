@@ -407,6 +407,8 @@ void Post2dWindowZoneDataItem::initNodeAttributeBrowser()
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	PostZoneDataContainer* cont = dataContainer();
+	if (cont == nullptr) {return;}
+
 	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
 	if (sgrid != nullptr) {

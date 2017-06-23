@@ -299,7 +299,10 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* 
 	double range[2];
 	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
 
-	m_contourMapper->SetInputData(createColorContourPolyData(polyData));
+	vtkPolyData* ccPolyData = createColorContourPolyData(polyData);
+	m_contourMapper->SetInputData(ccPolyData);
+	ccPolyData->UnRegister(0);
+
 	m_contourMapper->SetScalarRange(range[0], range[1]);
 	m_contourMapper->SetScalarModeToUseCellData();
 	m_contourActor->GetProperty()->SetInterpolationToFlat();
@@ -517,6 +520,8 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtk
 			highValue = HUGE_VAL;
 		}
 		vtkPolyData* lowClipped = setupLowerClippedPolygon(inputPolyData, lowValue);
+		inputPolyData->UnRegister(0);
+
 		vtkPolyData* bothClipped = setupHigherClippedPolygon(lowClipped, highValue);
 
 		vtkSmartPointer<vtkDoubleArray> cd = vtkSmartPointer<vtkDoubleArray>::New();
@@ -527,9 +532,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtk
 		appendFilledContours->AddInputData(bothClipped);
 		bothClipped->UnRegister(0);
 
-		inputPolyData->UnRegister(0);
 		inputPolyData = lowClipped;
-		inputPolyData->Register(0);
 	}
 	inputPolyData->UnRegister(0);
 
