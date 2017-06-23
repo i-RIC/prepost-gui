@@ -81,6 +81,17 @@ Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()
 	r->RemoveActor(m_fringeActor);
 	m_scalarBarWidget->SetInteractor(0);
 
+
+	m_contourActor->Delete();
+	m_contourMapper->Delete();
+
+	m_isolineActor->Delete();
+	m_isolineFilter->Delete();
+
+	m_fringeActor->Delete();
+	m_fringeMapper->Delete();
+	m_scalarBarWidget->Delete();
+
 	delete m_shapeExporter;
 }
 
@@ -189,7 +200,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	m_isolineFilter = vtkContourFilter::New();
 	m_isolineMapper->SetInputConnection(m_isolineFilter->GetOutputPort());
 
-	m_contourActor = vtkSmartPointer<vtkLODActor>::New();
+	m_contourActor = vtkLODActor::New();
 	// Draw 5000 points from grid vertices.
 	m_contourActor->SetNumberOfCloudPoints(5000);
 	// Make the point size a little big.
@@ -201,7 +212,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	m_contourMapper->SetScalarVisibility(true);
 	m_contourActor->SetMapper(m_contourMapper);
 
-	m_fringeActor = vtkSmartPointer<vtkLODActor>::New();
+	m_fringeActor = vtkLODActor::New();
 	m_fringeActor->SetNumberOfCloudPoints(5000);
 	m_fringeActor->GetProperty()->SetPointSize(2);
 	m_fringeActor->GetProperty()->SetLighting(false);
@@ -213,7 +224,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 
 	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
 
-	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
+	m_scalarBarWidget = vtkScalarBarWidget::New();
 	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
 	m_scalarBarWidget->SetInteractor(iren);
 	m_scalarBarWidget->SetEnabled(0);

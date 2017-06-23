@@ -6,11 +6,6 @@
 #include <postbase/post2dwindowcontoursetting.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 
-#include <vtkPolyData.h>
-#include <vtkSmartPointer.h>
-#include <vtkLODActor.h>
-#include <vtkScalarBarWidget.h>
-
 #include <QMap>
 
 class NamedGraphicWindowDataItem;
@@ -18,9 +13,11 @@ class Post2dWindowNodeScalarDataItem;
 class vtkLODActor;
 class vtkActor;
 class vtkAlgorithm;
-class vtkDataSetMapper;
-class vtkPolyDataMapper;
 class vtkContourFilter;
+class vtkDataSetMapper;
+class vtkPolyData;
+class vtkPolyDataMapper;
+class vtkScalarBarWidget;
 
 class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
 {
@@ -83,14 +80,14 @@ private:
 	Post2dWindowContourSetting m_setting;
 	LookupTableContainer m_lookupTableContainer;
 
-	vtkSmartPointer<vtkLODActor> m_contourActor;
+	vtkLODActor* m_contourActor;
 	vtkDataSetMapper* m_contourMapper;
 	vtkActor* m_isolineActor;
 	vtkPolyDataMapper* m_isolineMapper;
 	vtkContourFilter* m_isolineFilter;
-	vtkSmartPointer<vtkLODActor> m_fringeActor;
+	vtkLODActor* m_fringeActor;
 	vtkDataSetMapper* m_fringeMapper;
-	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
+	vtkScalarBarWidget* m_scalarBarWidget;
 
 	class ShapeExporter;
 	ShapeExporter* m_shapeExporter;

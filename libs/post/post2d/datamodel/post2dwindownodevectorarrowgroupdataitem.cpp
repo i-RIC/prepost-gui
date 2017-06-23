@@ -59,6 +59,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataItem()
 {
 	renderer()->RemoveActor(m_arrowActor);
+	renderer()->RemoveActor(m_baseArrowActor);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
