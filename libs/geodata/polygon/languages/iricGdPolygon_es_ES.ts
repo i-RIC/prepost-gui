@@ -147,7 +147,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="51"/>
+        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="53"/>
         <source>Edit Polygon Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -191,12 +191,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="155"/>
+        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="157"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="156"/>
+        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="158"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
@@ -217,34 +217,40 @@
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="111"/>
+        <location filename="../geodatapolygonimporter.cpp" line="112"/>
         <source>ESRI Shape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="120"/>
+        <location filename="../geodatapolygonimporter.cpp" line="121"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="143"/>
-        <location filename="../geodatapolygonimporter.cpp" line="154"/>
+        <location filename="../geodatapolygonimporter.cpp" line="144"/>
+        <location filename="../geodatapolygonimporter.cpp" line="152"/>
+        <location filename="../geodatapolygonimporter.cpp" line="159"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="143"/>
+        <location filename="../geodatapolygonimporter.cpp" line="144"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="154"/>
+        <location filename="../geodatapolygonimporter.cpp" line="152"/>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygonimporter.cpp" line="159"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="198"/>
-        <source>%th polygon can not be imported. Polygon like below can not be imported:
+        <location filename="../geodatapolygonimporter.cpp" line="203"/>
+        <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
 - Lines of polygon intersect each other
@@ -253,8 +259,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="215"/>
-        <location filename="../geodatapolygonimporter.cpp" line="218"/>
+        <location filename="../geodatapolygonimporter.cpp" line="220"/>
+        <location filename="../geodatapolygonimporter.cpp" line="223"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>

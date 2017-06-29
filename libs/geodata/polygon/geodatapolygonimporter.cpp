@@ -10,6 +10,7 @@
 #include <misc/informationdialog.h>
 #include <misc/stringtool.h>
 
+#include <QDir>
 #include <QMessageBox>
 #include <QStringList>
 #include <QTextCodec>
@@ -147,6 +148,10 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
+	if (dbfh == nullptr) {
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(dbfFilename)));
+		return false;
+	}
 	int recordCount = DBFGetRecordCount(dbfh);
 
 	if (numEntities != recordCount) {
@@ -196,13 +201,13 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 	}
 
 	QString warningMessage = tr(
-				"%th polygon can not be imported. Polygon like below can not be imported:\n"
+				"%1 th polygon can not be imported. Polygon like below can not be imported:\n"
 				"- It has less than three points\n"
 				"- It is not closed\n"
 				"- Lines of polygon intersect each other\n"
 				"- Hole polygon is outside of region polygon\n"
 				"- Polygon passes the same point several times"
-				);
+				).arg(index + 1);
 
 	try {
 		poly->setPolygon(region);
