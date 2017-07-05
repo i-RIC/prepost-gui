@@ -974,4 +974,5 @@ void GridCreatingConditionCenterAndWidth::doApplyOffset(double x, double y)
 		polyline[i] = p;
 	}
 	setPolyLine(polyline);
+	updateShapeData();
 }
