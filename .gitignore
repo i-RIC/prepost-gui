@@ -31,4 +31,8 @@ Makefile.*
 *.o
 *.so
 *.so.*
-apps/iricgui/debug/languages/*.qm
+apps/**/debug
+apps/**/release
+doxygendoc/**/html
+doxygendoc/**/rtf
+doxygen_warnings.txt
