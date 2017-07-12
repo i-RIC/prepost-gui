@@ -6288,7 +6288,7 @@ This wizard will generate or update translation files for solver definition file
         <location filename="../misc/periodicalupdatechecker.cpp" line="33"/>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation>前回 iRIC Maintainance を起動してから %1 以上経過しています。
+        <translation>前回 iRIC Maintainance を起動してから %1 日以上経過しています。
 iRIC Maintainance を起動しますか?</translation>
     </message>
     <message>
