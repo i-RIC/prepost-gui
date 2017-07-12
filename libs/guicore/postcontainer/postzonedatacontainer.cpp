@@ -275,7 +275,6 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	int d;
 	cgsize_t dVector[3];
 	cg_array_info(1, aName, &dType, &d, dVector);
-	vtkPoints* points = 0;
 
 	size_t numPoints = NVertexI * NVertexJ * NVertexK;
 	std::vector<double> dataX(numPoints, 0);
@@ -294,7 +293,8 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 		if (ier != 0) {return false;}
 	}
 
-	points = vtkPoints::New();
+	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
 	for (int k = 0; k < NVertexK; ++k) {
 		for (int j = 0; j < NVertexJ; ++j) {
 			for (int i = 0; i < NVertexI; ++i) {
@@ -305,7 +305,6 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	}
 	grid->SetPoints(points);
 	grid->Modified();
-	points->Delete();
 
 	return true;
 }
@@ -389,6 +388,7 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 	}
 
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
 	for (int i = 0; i < NVertex; ++i) {
 		points->InsertNextPoint(dataX[i], dataY[i], dataZ[i]);
 	}
