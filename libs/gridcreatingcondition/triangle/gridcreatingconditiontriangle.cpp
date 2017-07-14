@@ -2448,6 +2448,32 @@ void GridCreatingConditionTriangle::deselectAll()
 	m_selectMode = smNone;
 }
 
+bool PolygonContain(const QPolygonF& l, const QPolygonF& r)
+{
+	for (int i = 0; i < r.length();i++) {
+		if (!l.contains(r.at(i))) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool GridCreatingConditionTriangle::checkPolygonsIntersection(const QList<QPolygonF>& polygons)
+{
+	for (int i = 0; i < polygons.count(); ++i) {
+		for (int j = i + 1; j < polygons.count(); ++j) {
+			QPolygonF pol1 = polygons[i];
+			QPolygonF pol2 = polygons[j];
+
+			if (!pol1.intersected(pol2).isEmpty() && !PolygonContain(pol1,pol2)) {
+				// intersects!
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
 bool GridCreatingConditionTriangle::checkCondition()
 {
 	if (m_gridRegionPolygon->polygon().count() < 3) {
@@ -2492,17 +2518,11 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		polygons.append(hpol->polygon());
 	}
-	for (int i = 0; i < polygons.count(); ++i) {
-		for (int j = i + 1; j < polygons.count(); ++j) {
-			QPolygonF pol1 = polygons[i];
-			QPolygonF pol2 = polygons[j];
-			if (! pol1.intersected(pol2).isEmpty()) {
-				// intersects!
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
-				return false;
-			}
-		}
+	if (!checkPolygonsIntersection(polygons)) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
+		return false;
 	}
+
 	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine();

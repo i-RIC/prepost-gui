@@ -104,6 +104,7 @@ protected:
 
 private:
 	bool checkCondition();
+	bool checkPolygonsIntersection(const QList<QPolygonF>& );
 	bool selectObject(QPoint point);
 	void deselectAll();
 	bool activePolygonHasFourVertices();
