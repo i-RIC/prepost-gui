@@ -44,6 +44,7 @@
 #include <QUndoCommand>
 #include <QVector2D>
 #include <QVector>
+#include <QInputDialog>
 #include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
@@ -103,6 +104,9 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_editMaxAreaAction = new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this);
 	m_editMaxAreaAction->setDisabled(true);
 
+	m_redivideBreaklineAction = new QAction(GridCreatingConditionTriangle::tr("&Redivide Break Line..."), this);
+	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
+
 	// Set cursors for mouse view change events.
 	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
 	m_removePixmap = QPixmap(":/libs/guibase/images/cursorRemove.png");
@@ -141,6 +145,7 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_menu->addAction(m_removeVertexAction);
 	m_menu->addAction(m_coordEditAction);
 	m_menu->addAction(m_editMaxAreaAction);
+	m_menu->addAction(m_redivideBreaklineAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_deleteAction);
 	m_menu->addSeparator();
@@ -154,6 +159,7 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_rightClickingMenu->addAction(m_removeVertexAction);
 	m_rightClickingMenu->addAction(m_coordEditAction);
 	m_rightClickingMenu->addAction(m_editMaxAreaAction);
+	m_rightClickingMenu->addAction(m_redivideBreaklineAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_deleteAction);
 	m_rightClickingMenu->addSeparator();
@@ -2235,6 +2241,19 @@ private:
 	GridCreatingConditionTriangleDivisionLine* m_targetLine;
 };
 
+void GridCreatingConditionTriangle::redivideBreakline()
+{
+	GridCreatingConditionTriangleDivisionLine* pSelLine= dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine);
+
+	if (pSelLine == 0) {return;}
+
+	bool ok;
+	int n = QInputDialog::getInt(iricMainWindow(), tr("Input divide number"), tr("Divide number"), 10, 1, 1024, 1, &ok);
+	if (! ok) {return;}
+
+	divideDivisionLine(*pSelLine, n);
+}
+
 void GridCreatingConditionTriangle::addDivisionLine()
 {
 	GridCreatingConditionTriangleDivisionLine* l = new GridCreatingConditionTriangleDivisionLine(this);
@@ -2446,6 +2465,69 @@ void GridCreatingConditionTriangle::deselectAll()
 		}
 	}
 	m_selectMode = smNone;
+}
+
+void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTriangleDivisionLine& line,int n)
+{
+	QVector<QPointF> l = line.polyLine();
+	QVector<QPointF> newLine;
+
+	struct LineSection{
+		QPointF start;
+		QPointF slope;
+		double len;
+	};
+	QVector<LineSection> lss;
+	QPointF ptLast = l.at(0);
+	QPointF ptDiff;
+	double len = 0.0f, sec_len;
+	for (int i = 1; i < l.count(); i++) {
+		LineSection ls;
+
+		ptDiff=(l.at(i)- ptLast);
+
+		ls.start = ptLast;
+		ls.slope = ptDiff;
+		double slope_len= sqrt(ls.slope.x() * ls.slope.x() + ls.slope.y() * ls.slope.y());
+		ls.slope.rx() = ls.slope.x() / slope_len;
+		ls.slope.ry() = ls.slope.y() / slope_len;
+		ls.len = sqrt(ptDiff.x() * ptDiff.x() + ptDiff.y() * ptDiff.y());
+		len += ls.len;
+		lss.append(ls);
+		ptLast = l.at(i);
+	}
+	sec_len = len / n;
+
+	QPointF ptNext= lss.at(0).start;
+	int idxLss = 0;
+	newLine.append(lss.at(0).start);
+	double next_len = sec_len;
+	for (int i = 0; i < n - 1; i++) {
+		LineSection& ls = lss[idxLss];
+		if (ls.len>= next_len) {
+			ls.len -= next_len;
+		} else {
+			do {
+				next_len = next_len - ls.len;
+				idxLss ++;
+				Q_ASSERT(idxLss < lss.size());
+				ls = lss[idxLss];
+			} while (next_len > ls.len);
+			ptNext = ls.start;
+			lss[idxLss].len -= next_len;
+		}
+
+		ptNext.rx() += next_len * ls.slope.x();
+		ptNext.ry() += next_len * ls.slope.y();
+		newLine.append(ptNext);
+
+		next_len = sec_len;
+	}
+	newLine.append(l.last());
+
+	line.setPolyLine(newLine);
+
+	renderGraphicsView();
 }
 
 bool GridCreatingConditionTriangle::checkCondition()
