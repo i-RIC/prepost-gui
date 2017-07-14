@@ -32,6 +32,8 @@
 #include <triangle/triangleexecutethread.h>
 #include <triangle/triangle.h>
 
+#include <geos/geom/LinearRing.h>
+
 #include <QAction>
 #include <QApplication>
 #include <QFile>
@@ -59,6 +61,42 @@
 #include <vtkRenderer.h>
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
+
+#include <memory>
+
+namespace {
+
+geos::geom::LinearRing* createRingFromPolygon(const QPolygonF& pol)
+{
+	// Leon, please implement this function.
+	return nullptr;
+}
+
+bool ringsIntersect(const QPolygonF& pol1, const QPolygonF pol2)
+{
+	auto ring1 = std::unique_ptr<geos::geom::LinearRing> (createRingFromPolygon(pol1));
+	auto ring2 = std::unique_ptr<geos::geom::LinearRing> (createRingFromPolygon(pol2));
+
+	return ring1->intersects(ring2.get());
+}
+
+bool checkPolygonsIntersection(const QList<QPolygonF>& polygons)
+{
+	for (int i = 0; i < polygons.count(); ++i) {
+		for (int j = i + 1; j < polygons.count(); ++j) {
+			const QPolygonF& pol1 = polygons[i];
+			const QPolygonF& pol2 = polygons[j];
+
+			if (ringsIntersect(pol1, pol2)) {
+				// intersects!
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+} // namespace
 
 GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition {parent, creator}
@@ -2589,17 +2627,11 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		polygons.append(hpol->polygon());
 	}
-	for (int i = 0; i < polygons.count(); ++i) {
-		for (int j = i + 1; j < polygons.count(); ++j) {
-			QPolygonF pol1 = polygons[i];
-			QPolygonF pol2 = polygons[j];
-			if (! pol1.intersected(pol2).isEmpty()) {
-				// intersects!
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
-				return false;
-			}
-		}
+	if (! checkPolygonsIntersection(polygons)) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
+		return false;
 	}
+
 	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine();
