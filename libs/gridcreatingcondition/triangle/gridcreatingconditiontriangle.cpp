@@ -32,6 +32,9 @@
 #include <triangle/triangleexecutethread.h>
 #include <triangle/triangle.h>
 
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/LinearRing.h>
+
 #include <QAction>
 #include <QApplication>
 #include <QFile>
@@ -102,6 +105,9 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 
 	m_editMaxAreaAction = new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this);
 	m_editMaxAreaAction->setDisabled(true);
+
+	m_redivideBreaklineAction = new QAction(GridCreatingConditionTriangle::tr("&Redivide breakline..."), this);
+	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
 
 	// Set cursors for mouse view change events.
 	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
@@ -1745,10 +1751,29 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	m_areaConstraint = dialog.areaConstraint();
 	m_area = dialog.area();
 
+	unionLines();
 	Grid* grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
 	return true;
+}
+
+void GridCreatingConditionTriangle::unionLines()
+{
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	auto pol = factory->createLinearRing();
+	// pol に、ポリゴンの縁の情報を登録
+	auto breakline = factory->createLineString();
+	// breakline に、ブレークラインの情報を登録。実際は複数あることもある。
+
+	auto lines = new std::vector<geos::geom::Geometry*>();
+
+	lines->push_back(pol);
+	lines->push_back(breakline);
+
+	auto collection = factory->createGeometryCollection(lines);
+
+	collection->Union();
 }
 
 void GridCreatingConditionTriangle::clear()
@@ -2235,6 +2260,14 @@ private:
 	GridCreatingConditionTriangleDivisionLine* m_targetLine;
 };
 
+void GridCreatingConditionTriangle::redivideBreakline()
+{
+	GridCreatingConditionTriangleDivisionLine* pSelLine= dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine);
+
+	if(pSelLine != NULL)
+		this->divideDivisionLine(*pSelLine,1);
+}
+
 void GridCreatingConditionTriangle::addDivisionLine()
 {
 	GridCreatingConditionTriangleDivisionLine* l = new GridCreatingConditionTriangleDivisionLine(this);
@@ -2451,7 +2484,7 @@ void GridCreatingConditionTriangle::deselectAll()
 bool PolygonContain(const QPolygonF& l, const QPolygonF& r)
 {
 	for (int i = 0; i < r.length();i++) {
-		if (!l.contains(r.at(i))) {
+		if (!l.containsPoint(r.at(i), Qt::OddEvenFill) || !l.contains(r.at(i))) {
 			return false;
 		}
 	}
@@ -2472,6 +2505,58 @@ bool GridCreatingConditionTriangle::checkPolygonsIntersection(const QList<QPolyg
 		}
 	}
 	return true;
+}
+
+void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTriangleDivisionLine& line,int n)
+{
+	QVector<QPointF> l = line.polyLine();
+
+	// 元のブレイクライン
+	//std::vector<double> x, y;
+	// 生成する新しいブレイクライン
+	std::vector<double> new_x, new_y;
+
+	// n, x, y は入力済みとします。これから new_x, new_y を作っていきます。
+
+	// まず、元のブレイクラインの各線分の長さと全体の長さを調べます。
+	std::vector<double> seg_len;
+	double whole_len = 0;
+	for (int i = 0; i < n; ++i) {
+		double dx = l[i + 1].x() - l[i].x();
+		double dy = l[i + 1].y() - l[i].y();
+		double len = std::sqrt(dx * dx + dy * dy);
+		seg_len.push_back(len);
+		whole_len += len;
+	}
+
+	// 新しいブレイクラインの先頭の点は、元のブレイクラインの先頭の点と同じです。
+	new_x.push_back(l[0].x());
+	new_y.push_back(l[0].y());
+
+	int idx = 1;
+	double len1 = 0;
+	double len2 = seg_len[0];
+
+	for (int i = 1; i < n; ++i) {
+		double target_len = whole_len * i / n;
+		// 元のブレイクラインで、はじめの点からたどって target_len の距離を進んだ場所
+		// に新しい点を発生させる。
+		while (len2 < target_len) {
+			len1 = len2;
+			len2 += seg_len[idx];
+			++idx;
+		}
+		double a = target_len - len1;
+		double b = len2 - target_len;
+		//新しい点は、(x[idx - 1], y[idx - 1]) と(x[idx], y[idx]) を a : b に内分する点。
+		double tmp_x = l[idx - 1].x() * b / (a + b) + l[idx].x() * a / (a + b);
+		double tmp_y = l[idx - 1].y() * b / (a + b) + l[idx].y() * a / (a + b);
+		new_x.push_back(tmp_x);
+		new_y.push_back(tmp_y);
+	}
+	// 新しいブレイクラインの最後の点は、元のブレイクラインの最後の点と同じです。
+	new_x.push_back(l[n - 1].x());
+	new_y.push_back(l[n - 1].y());
 }
 
 bool GridCreatingConditionTriangle::checkCondition()
@@ -2530,15 +2615,15 @@ bool GridCreatingConditionTriangle::checkCondition()
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to consists of more more than two vertices"));
 			return false;
 		}
-		for (int j = 0; j < l.count(); ++j) {
+		/*for (int j = 0; j < l.count(); ++j) {
 			if (! gridPol.containsPoint(l[j], Qt::OddEvenFill)) {
 				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
 				return false;
 			}
-		}
+		}*/
 		for (int j = 0; j < l.count() - 1; ++j) {
 			QLineF tmpline(l[j], l[j + 1]);
-			for (int k = 0; k < polygons.count(); ++k) {
+			/*for (int k = 0; k < polygons.count(); ++k) {
 				QPolygonF pol = polygons[k];
 				for (int m = 0; m < pol.count() - 1; ++m) {
 					QLineF tmpline2(pol[m], pol[m + 1]);
@@ -2547,7 +2632,7 @@ bool GridCreatingConditionTriangle::checkCondition()
 						return false;
 					}
 				}
-			}
+			}*/
 			for (int k = i + 1; k < m_divisionLines.count(); ++ k) {
 				QVector<QPointF> l2 = m_divisionLines[k]->polyLine();
 				for (int m = 0; m < l2.count() - 1; ++m) {
