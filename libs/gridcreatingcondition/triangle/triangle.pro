@@ -74,15 +74,9 @@ unix {
 }
 LIBS += -liricGuicore
 
-
-
 ######################
 # External libraries #
 ######################
-
-# geos
-
-LIBS += -lgeos
 
 # VTK
 
