@@ -2244,7 +2244,7 @@ void GridCreatingConditionTriangle::redivideBreakline()
 
 	if (pSelLine == 0) {return;}
 
-	divideDivisionLine(*pSelLine, 1);
+	divideDivisionLine(*pSelLine, 10);
 }
 
 void GridCreatingConditionTriangle::addDivisionLine()
