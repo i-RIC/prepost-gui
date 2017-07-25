@@ -2527,6 +2527,8 @@ void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTria
 	}
 	// the last point is the same to the original.
 	newLine.push_back(l[l.size() - 1]);
+
+	line.setPolyLine(l);
 }
 
 bool GridCreatingConditionTriangle::checkCondition()
