@@ -2490,7 +2490,7 @@ void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTria
 {
 	QVector<QPointF> l = line.polyLine();
 
-	std::vector<double> new_x, new_y;
+	QVector<QPointF> newLine;
 
 	// calculate length of segments
 	std::vector<double> seg_len;
@@ -2504,8 +2504,7 @@ void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTria
 	}
 
 	// the first point is the same to the original.
-	new_x.push_back(l[0].x());
-	new_y.push_back(l[0].y());
+	newLine.push_back(l[0]);
 
 	int idx = 1;
 	double len1 = 0;
@@ -2524,12 +2523,10 @@ void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTria
 		// (x[idx - 1], y[idx - 1]) and (x[idx], y[idx]), with ratio a : b.
 		double tmp_x = l[idx - 1].x() * b / (a + b) + l[idx].x() * a / (a + b);
 		double tmp_y = l[idx - 1].y() * b / (a + b) + l[idx].y() * a / (a + b);
-		new_x.push_back(tmp_x);
-		new_y.push_back(tmp_y);
+		newLine.push_back(QPointF(tmp_x, tmp_y));
 	}
 	// the last point is the same to the original.
-	new_x.push_back(l[n - 1].x());
-	new_y.push_back(l[n - 1].y());
+	newLine.push_back(l[l.size() - 1]);
 }
 
 bool GridCreatingConditionTriangle::checkCondition()
