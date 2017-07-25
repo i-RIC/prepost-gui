@@ -2529,6 +2529,8 @@ void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTria
 	newLine.push_back(l[l.size() - 1]);
 
 	line.setPolyLine(l);
+
+	renderGraphicsView();
 }
 
 bool GridCreatingConditionTriangle::checkCondition()
