@@ -85,6 +85,7 @@ private slots:
 	void addRefinementPolygon();
 	void addHolePolygon();
 	void addDivisionLine();
+	void redivideBreakline();
 	void deletePolygon(bool force = false);
 	void deleteLine(bool force = false);
 	void cancel() {m_canceled = true;}
@@ -104,6 +105,8 @@ protected:
 
 private:
 	bool checkCondition();
+	bool checkPolygonsIntersection(const QList<QPolygonF>& );
+	void divideDivisionLine(GridCreatingConditionTriangleDivisionLine& line, int n);
 	bool selectObject(QPoint point);
 	void deselectAll();
 	bool activePolygonHasFourVertices();
@@ -139,6 +142,7 @@ private:
 	QAction* m_coordEditAction;
 	QAction* m_editColorSettingAction;
 	QAction* m_editMaxAreaAction;
+	QAction* m_redivideBreaklineAction;
 	QMenu* m_rightClickingMenu;
 	QColor m_color;
 

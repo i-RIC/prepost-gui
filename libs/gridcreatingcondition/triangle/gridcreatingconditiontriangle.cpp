@@ -103,6 +103,9 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_editMaxAreaAction = new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this);
 	m_editMaxAreaAction->setDisabled(true);
 
+	m_redivideBreaklineAction = new QAction(GridCreatingConditionTriangle::tr("&Redivide breakline..."), this);
+	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
+
 	// Set cursors for mouse view change events.
 	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
 	m_removePixmap = QPixmap(":/libs/guibase/images/cursorRemove.png");
@@ -2235,6 +2238,15 @@ private:
 	GridCreatingConditionTriangleDivisionLine* m_targetLine;
 };
 
+void GridCreatingConditionTriangle::redivideBreakline()
+{
+	GridCreatingConditionTriangleDivisionLine* pSelLine= dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine);
+
+	if (pSelLine == 0) {return;}
+
+	divideDivisionLine(*pSelLine, 10);
+}
+
 void GridCreatingConditionTriangle::addDivisionLine()
 {
 	GridCreatingConditionTriangleDivisionLine* l = new GridCreatingConditionTriangleDivisionLine(this);
@@ -2448,6 +2460,79 @@ void GridCreatingConditionTriangle::deselectAll()
 	m_selectMode = smNone;
 }
 
+bool PolygonContain(const QPolygonF& l, const QPolygonF& r)
+{
+	for (int i = 0; i < r.length();i++) {
+		if (!l.containsPoint(r.at(i), Qt::OddEvenFill) || !l.contains(r.at(i))) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool GridCreatingConditionTriangle::checkPolygonsIntersection(const QList<QPolygonF>& polygons)
+{
+	for (int i = 0; i < polygons.count(); ++i) {
+		for (int j = i + 1; j < polygons.count(); ++j) {
+			QPolygonF pol1 = polygons[i];
+			QPolygonF pol2 = polygons[j];
+
+			if (!pol1.intersected(pol2).isEmpty() && !PolygonContain(pol1,pol2)) {
+				// intersects!
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+void GridCreatingConditionTriangle::divideDivisionLine(GridCreatingConditionTriangleDivisionLine& line,int n)
+{
+	QVector<QPointF> l = line.polyLine();
+
+	QVector<QPointF> newLine;
+
+	// calculate length of segments
+	std::vector<double> seg_len;
+	double whole_len = 0;
+	for (int i = 0; i < n; ++i) {
+		double dx = l[i + 1].x() - l[i].x();
+		double dy = l[i + 1].y() - l[i].y();
+		double len = std::sqrt(dx * dx + dy * dy);
+		seg_len.push_back(len);
+		whole_len += len;
+	}
+
+	// the first point is the same to the original.
+	newLine.push_back(l[0]);
+
+	int idx = 1;
+	double len1 = 0;
+	double len2 = seg_len[0];
+
+	for (int i = 1; i < n; ++i) {
+		double target_len = whole_len * i / n;
+		while (len2 < target_len) {
+			len1 = len2;
+			len2 += seg_len[idx];
+			++idx;
+		}
+		double a = target_len - len1;
+		double b = len2 - target_len;
+		// the new tmp_x tmp_y is the linear interpolated point of
+		// (x[idx - 1], y[idx - 1]) and (x[idx], y[idx]), with ratio a : b.
+		double tmp_x = l[idx - 1].x() * b / (a + b) + l[idx].x() * a / (a + b);
+		double tmp_y = l[idx - 1].y() * b / (a + b) + l[idx].y() * a / (a + b);
+		newLine.push_back(QPointF(tmp_x, tmp_y));
+	}
+	// the last point is the same to the original.
+	newLine.push_back(l[l.size() - 1]);
+
+	line.setPolyLine(l);
+
+	renderGraphicsView();
+}
+
 bool GridCreatingConditionTriangle::checkCondition()
 {
 	if (m_gridRegionPolygon->polygon().count() < 3) {
@@ -2492,17 +2577,11 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		polygons.append(hpol->polygon());
 	}
-	for (int i = 0; i < polygons.count(); ++i) {
-		for (int j = i + 1; j < polygons.count(); ++j) {
-			QPolygonF pol1 = polygons[i];
-			QPolygonF pol2 = polygons[j];
-			if (! pol1.intersected(pol2).isEmpty()) {
-				// intersects!
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
-				return false;
-			}
-		}
+	if (!checkPolygonsIntersection(polygons)) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
+		return false;
 	}
+
 	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine();
