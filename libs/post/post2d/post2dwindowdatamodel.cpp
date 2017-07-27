@@ -288,3 +288,9 @@ void Post2dWindowDataModel::measuredDataVectorSetting()
 	if (fItem == nullptr) {return;}
 	fItem->vectorGroupDataItem()->showPropertyDialog();
 }
+
+void Post2dWindowDataModel::applyOffset(double x, double y)
+{
+	m_rootDataItem->applyOffset(x, y);
+	m_rootDataItem->renderGraphicsView();
+}

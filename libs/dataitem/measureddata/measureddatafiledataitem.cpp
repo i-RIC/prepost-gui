@@ -10,6 +10,7 @@
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
 #include <misc/xmlsupport.h>
+#include <pre/preprocessordatamodel.h>
 
 #include <QAction>
 #include <QDir>
@@ -113,5 +114,8 @@ void MeasuredDataFileDataItem::addCustomMenuItems(QMenu* menu)
 
 void MeasuredDataFileDataItem::doApplyOffset(double x, double y)
 {
-	impl->m_measuredData->applyOffset(x, y);
+	if (PreProcessorDataModel* p = dynamic_cast<PreProcessorDataModel*>(dataModel())) {
+		// since m_measuredData is shared, only apply offset from preprocessor
+		impl->m_measuredData->applyOffset(x, y);
+	}
 }

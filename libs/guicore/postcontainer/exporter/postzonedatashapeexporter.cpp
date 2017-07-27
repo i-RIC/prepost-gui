@@ -14,6 +14,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkPointData.h>
 #include <vtkExtractGrid.h>
+#include <vtkUnstructuredGrid.h>
 
 #include <shapefil.h>
 #include <ogr_spatialref.h>
@@ -221,7 +222,7 @@ QString PostZoneDataShapeExporter::filename(const QString& prefix, int index) co
 	return fname;
 }
 
-bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd) const
+bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QVector2D& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 
@@ -229,9 +230,15 @@ bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const 
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 	bool ok;
 	if (sgrid != 0) {
-		ok = exportStructuredGrid(tmpFile.c_str(), sgrid, imin, imax, jmin, jmax, kmin, kmax);
+		vtkSmartPointer<vtkStructuredGrid> copy;
+		vtkStructuredGrid* grid = applyOffset<vtkStructuredGrid>(sgrid, copy, offset);
+		ok = exportStructuredGrid(tmpFile.c_str(), grid, imin, imax, jmin, jmax, kmin, kmax);
+
 	} else {
-		ok = exportPointSet(tmpFile.c_str(), ps);
+		vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
+		vtkSmartPointer<vtkUnstructuredGrid> copy;
+		vtkUnstructuredGrid* grid = applyOffset<vtkUnstructuredGrid>(ugrid, copy, offset);
+		ok = exportPointSet(tmpFile.c_str(), grid);
 	}
 	if (! ok) {return false;}
 

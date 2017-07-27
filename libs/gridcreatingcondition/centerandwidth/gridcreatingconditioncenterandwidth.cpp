@@ -708,10 +708,11 @@ void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filena
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
 	std::vector<QPointF> v;
+	auto offset = projectData()->mainfile()->offset();
 	while (! s.atEnd()) {
 		double a, b;
 		s >> a >> b;
-		v.push_back(QPointF(a, b));
+		v.push_back(QPointF(a - offset.x(), b - offset.y()));
 	}
 	f.close();
 	setPolyLine(v);
@@ -730,9 +731,10 @@ void GridCreatingConditionCenterAndWidth::saveExternalData(const QString& filena
 	QDataStream s(&f);
 	std::vector<QPointF> v = polyLine();
 	int vSize = v.size();
+	auto offset = projectData()->mainfile()->offset();
 	for (int i = 0; i < vSize; i++) {
-		s << v.at(i).x();
-		s << v.at(i).y();
+		s << v.at(i).x() + offset.x();
+		s << v.at(i).y() + offset.y();
 	}
 	f.close();
 }

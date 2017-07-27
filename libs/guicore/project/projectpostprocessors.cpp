@@ -106,3 +106,10 @@ void ProjectPostProcessors::setFactory(PostProcessorWindowFactoryInterface* fact
 {
 	m_factory = factory;
 }
+
+void ProjectPostProcessors::applyOffset(double x_diff, double y_diff)
+{
+	for (auto w : m_postProcessorWindows) {
+		w->window()->applyOffset(x_diff, y_diff);
+	}
+}

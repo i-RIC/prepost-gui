@@ -86,3 +86,9 @@ void Post2dWindowBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* 
 	BackgroundImageInfoDialog* infoDialog = dynamic_cast<BackgroundImageInfoDialog*>(dialog);
 	m_imageInfo->handlePropertyDialogAccepted(infoDialog);
 }
+
+void Post2dWindowBackgroundImageDataItem::doApplyOffset(double /*x_diff*/, double /*y_diff*/)
+{
+	// offset already applied by PreProcessorBackgroundImageDataItem::doApplyOffset
+	m_imageInfo->applySettingToActor(m_actor);
+}

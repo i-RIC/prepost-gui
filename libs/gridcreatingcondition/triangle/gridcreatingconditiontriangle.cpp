@@ -1368,10 +1368,12 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename)
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
 	QPolygonF poly;
+	auto offset = this->offset();
 	s >> m_angleConstraint >> m_angle;
 	s >> m_areaConstraint >> m_area;
 	s >> poly;
 	if (poly.size() > 0) {
+		if (!offset.isNull()) poly.translate(-offset.x(), -offset.y());
 		m_mouseEventMode = meNormal;
 		m_gridRegionPolygon->setPolygon(poly);
 		informDeselection(graphicsView());
@@ -1385,6 +1387,7 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename)
 	for (int i = 0; i < divLines; ++i) {
 		QVector<QPointF> line;
 		s >> line;
+		if (!offset.isNull()) for (QPointF &pt : line) pt += QPointF(-offset.x(), -offset.y());
 		GridCreatingConditionTriangleDivisionLine* tmpLine = new GridCreatingConditionTriangleDivisionLine(this);
 		tmpLine->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 		tmpLine->setPolyLine(line);
@@ -1396,6 +1399,7 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename)
 		double area;
 		s >> pol;
 		s >> area;
+		if (!offset.isNull()) pol.translate(-offset.x(), -offset.y());
 		GridCreatingConditionTriangleRemeshPolygon* tmpPol = new GridCreatingConditionTriangleRemeshPolygon(this);
 		tmpPol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 		tmpPol->setPolygon(pol);
@@ -1406,6 +1410,7 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename)
 	for (int i = 0; i < holePolygons; ++i) {
 		QPolygonF pol;
 		s >> pol;
+		if (!offset.isNull()) pol.translate(-offset.x(), -offset.y());
 		GridCreatingConditionTriangleHolePolygon* tmpPol = new GridCreatingConditionTriangleHolePolygon(this);
 		tmpPol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 		tmpPol->setPolygon(pol);
@@ -1421,24 +1426,26 @@ void GridCreatingConditionTriangle::saveExternalData(const QString& filename)
 	QFile f(filename);
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
+	auto offset = this->offset();
+	auto voffset = QPointF(-offset.x(), -offset.y());
 	s << m_angleConstraint << m_angle;
 	s << m_areaConstraint << m_area;
-	s << m_gridRegionPolygon->polygon();
+	s << m_gridRegionPolygon->polygon(voffset);
 	int divLines = m_divisionLines.count();
 	s << divLines;
 	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines) {
-		s << line->polyLine();
+		s << line->polyLine(voffset);
 	}
 	int remeshPolygons = m_remeshPolygons.count();
 	s << remeshPolygons;
 	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons) {
-		s << pol->polygon();
+		s << pol->polygon(voffset);
 		s << pol->cellSize();
 	}
 	int holePolygons = m_holePolygons.count();
 	s << holePolygons;
 	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons) {
-		s << pol->polygon();
+		s << pol->polygon(voffset);
 	}
 	f.close();
 }

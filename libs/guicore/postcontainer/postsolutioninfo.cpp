@@ -28,6 +28,7 @@
 #include <QThread>
 #include <QTime>
 #include <QTimerEvent>
+#include <QVector2D>
 #include <QXmlStreamWriter>
 
 #include <vtkStructuredGrid.h>
@@ -842,7 +843,7 @@ void PostSolutionInfo::exportCalculationResult()
 		double time = currentTimeStep();
 		auto& s = m_exportSetting;
 		QString fileName = outputFolder.absoluteFilePath(exporter->filename(s.prefix, fileIndex));
-		bool ok = exporter->exportToFile(zoneC, fileName, time, s.iMin, s.iMax, s.jMin, s.jMax, s.kMin, s.kMax, projectData());
+		bool ok = exporter->exportToFile(zoneC, fileName, time, s.iMin, s.iMax, s.jMin, s.jMax, s.kMin, s.kMax, projectData(), offset());
 		if (! ok) {
 			setCurrentStep(stepBackup);
 			QMessageBox::critical(iricMainWindow(), tr("Error"), tr("Error occured while saving %1").arg(fileName));
@@ -892,7 +893,7 @@ void PostSolutionInfo::exportCalculationResult(const std::string& folder, const 
 		setCurrentStep(step);
 		double time = currentTimeStep();
 		QString fileName = outputFolder.absoluteFilePath(exporter->filename(prefix.c_str(), fileIndex));
-		bool ok = exporter->exportToFile(cont, fileName, time, iMin, iMax, jMin, jMax, kMin, kMax, projectData());
+		bool ok = exporter->exportToFile(cont, fileName, time, iMin, iMax, jMin, jMax, kMin, kMax, projectData(), offset());
 		if (! ok) {
 			setCurrentStep(stepBackup);
 			iricMainWindow()->setContinuousSnapshotInProgress(false);
@@ -953,4 +954,17 @@ void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>* conts)
 		delete c;
 	}
 	conts->clear();
+}
+
+void PostSolutionInfo::applyOffset(double x_diff, double y_diff)
+{
+	for (auto c1 : m_zoneContainers1D) {
+		c1->applyOffset(x_diff, y_diff);
+	}
+	for (auto c2 : m_zoneContainers2D) {
+		c2->applyOffset(x_diff, y_diff);
+	}
+	for (auto c3 : m_zoneContainers3D) {
+		c3->applyOffset(x_diff, y_diff);
+	}
 }

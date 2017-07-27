@@ -4,6 +4,7 @@
 #include "misc/stringtool.h"
 
 #include <QFile>
+#include <QVector2D>
 
 #include <vtkExtractGrid.h>
 #include <vtkStructuredGrid.h>
@@ -27,16 +28,20 @@ QString PostZoneDataVtkExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataVtkExporter::exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*) const
+bool PostZoneDataVtkExporter::exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QVector2D& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 	vtkPointSet* ps = data->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
 	if (sgrid != 0) {
-		exportStructuredGrid(tmpFile.c_str(), sgrid, time, imin, imax, jmin, jmax, kmin, kmax);
+		vtkSmartPointer<vtkStructuredGrid> copy;
+		vtkStructuredGrid* grid = applyOffset<vtkStructuredGrid>(sgrid, copy, offset);
+		exportStructuredGrid(tmpFile.c_str(), grid, time, imin, imax, jmin, jmax, kmin, kmax);
 	} else if (ugrid != 0) {
-		exportUnstructuredGrid(tmpFile.c_str(), ugrid, time);
+		vtkSmartPointer<vtkUnstructuredGrid> copy;
+		vtkUnstructuredGrid* grid = applyOffset<vtkUnstructuredGrid>(ugrid, copy, offset);
+		exportUnstructuredGrid(tmpFile.c_str(), grid, time);
 	}
 	if (QFile::exists(filename)) {
 		bool ok = QFile::remove(filename);

@@ -62,8 +62,8 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 	m_hasWorldFile = false;
 	m_angle = 0;
 	m_scale = 1;
-	m_translateX = 0;
-	m_translateY = 0;
+	m_translateX = -offset().x();
+	m_translateY = -offset().y();
 	m_visible = true;
 
 	m_imageWidth = 0;
@@ -222,8 +222,8 @@ void BackgroundImageInfo::readWorldFile(const QString& name)
 	file.close();
 
 	m_scale = deltaX / m_resizeScale;
-	m_translateX = leftTopX;
-	m_translateY = leftTopY + (m_imageHeight) * deltaY;
+	m_translateX += leftTopX;
+	m_translateY += leftTopY + (m_imageHeight)* deltaY;
 	m_aspectRatio = m_imageHeight / static_cast<double>(m_imageWidth);
 
 	if (fabs(deltaX) != fabs(deltaY)) {
@@ -378,6 +378,7 @@ void BackgroundImageInfo::updateFixActionIcon()
 void BackgroundImageInfo::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
+
 	m_filename   = elem.attribute("filename");
 	m_angle      = iRIC::getDoubleAttribute(node, "angle", 0);
 	m_translateX = iRIC::getDoubleAttribute(node, "positionX", 0);
@@ -385,6 +386,10 @@ void BackgroundImageInfo::doLoadFromProjectMainFile(const QDomNode& node)
 	m_scale      = iRIC::getDoubleAttribute(node, "scale", 1);
 	m_visible    = iRIC::getBooleanAttribute(node, "visibility", true);
 	m_fixed      = iRIC::getBooleanAttribute(node, "fixed", false);
+
+	QVector2D offset = this->offset();
+	m_translateX -= offset.x();
+	m_translateY -= offset.y();
 
 	m_scale /= m_resizeScale;
 
@@ -396,10 +401,13 @@ void BackgroundImageInfo::doLoadFromProjectMainFile(const QDomNode& node)
 
 void BackgroundImageInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	QVector2D offset = this->offset();
+	double translateX = m_translateX + offset.x();
+	double translateY = m_translateY + offset.y();
 	writer.writeAttribute("filename", m_filename);
 	iRIC::setDoubleAttribute(writer, "angle", m_angle);
-	iRIC::setDoubleAttribute(writer, "positionX", m_translateX);
-	iRIC::setDoubleAttribute(writer, "positionY", m_translateY);
+	iRIC::setDoubleAttribute(writer, "positionX", translateX);
+	iRIC::setDoubleAttribute(writer, "positionY", translateY);
 	iRIC::setDoubleAttribute(writer, "scale", m_scale * m_resizeScale);
 	iRIC::setBooleanAttribute(writer, "visibility", m_visible);
 	iRIC::setBooleanAttribute(writer, "fixed", m_fixed);
@@ -457,8 +465,8 @@ void BackgroundImageInfo::handlePropertyDialogAccepted(QDialog* d)
 	iRICUndoStack::instance().push(new SetActorPropertyCommand(dialog->leftBottomX(), dialog->leftBottomY(), dialog->scale(), dialog->angle(), this));
 }
 
-void BackgroundImageInfo::applyOffset(double x, double y)
+void BackgroundImageInfo::applyOffset(double x_diff, double y_diff)
 {
-	this->m_translateX -= x;
-	this->m_translateY -= y;
+	m_translateX -= x_diff;
+	m_translateY -= y_diff;
 }

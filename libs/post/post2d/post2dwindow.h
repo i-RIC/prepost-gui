@@ -68,6 +68,8 @@ public:
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;
 
+	void applyOffset(double x_diff, double y_diff) override;
+
 	void updateTmsList() override;
 
 public slots:

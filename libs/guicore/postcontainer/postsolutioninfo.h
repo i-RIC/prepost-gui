@@ -67,6 +67,8 @@ public:
 
 	void exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format);
 
+	void applyOffset(double x_diff, double y_diff);
+
 protected:
 	void timerEvent(QTimerEvent*) override;
 	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);

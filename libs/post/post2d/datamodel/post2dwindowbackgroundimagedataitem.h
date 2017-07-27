@@ -35,6 +35,7 @@ protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* dialog) override;
+	void doApplyOffset(double x, double y) override;
 
 private:
 	vtkSmartPointer<vtkActor> m_actor;
