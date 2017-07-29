@@ -234,6 +234,7 @@ void GridCreatingConditionTriangleAbstractPolygon::setZDepthRange(double min, do
 void GridCreatingConditionTriangleAbstractPolygon::setActive(bool active)
 {
 	if (active) {
+		Q_ASSERT(m_parent->actorCollection()->IsItemPresent(m_vertexActor) == 0);
 		m_parent->actorCollection()->AddItem(m_vertexActor);
 	} else {
 		m_vertexActor->VisibilityOff();
