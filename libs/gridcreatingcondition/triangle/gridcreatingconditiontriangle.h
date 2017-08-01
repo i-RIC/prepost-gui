@@ -103,6 +103,7 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
+	void unionLines();
 	bool checkCondition();
 	bool selectObject(QPoint point);
 	void deselectAll();

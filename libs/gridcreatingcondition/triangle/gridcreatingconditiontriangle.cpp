@@ -46,6 +46,9 @@
 #include <QVector>
 #include <QXmlStreamWriter>
 
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/LinearRing.h>
+
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkIdList.h>
@@ -1745,10 +1748,30 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	m_areaConstraint = dialog.areaConstraint();
 	m_area = dialog.area();
 
+	unionLines();
 	Grid* grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
 	return true;
+}
+
+void GridCreatingConditionTriangle::unionLines()
+{
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	auto pol = factory->createLinearRing();
+
+	// pol に、ポリゴンの縁の情報を登録
+	auto breakline = factory->createLineString();
+
+	// breakline に、ブレークラインの情報を登録。実際は複数あることもある。
+	auto lines = new std::vector<geos::geom::Geometry*>();
+
+	lines->push_back(pol);
+	lines->push_back(breakline);
+
+	auto collection = factory->createGeometryCollection(lines);
+
+	collection->Union();
 }
 
 void GridCreatingConditionTriangle::clear()
