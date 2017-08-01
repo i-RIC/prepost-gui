@@ -212,13 +212,17 @@ void GridCreatingConditionTriangle::informDeselection(PreProcessorGraphicsViewIn
 {
 	switch (m_selectMode) {
 	case smPolygon:
+		Q_ASSERT(m_selectedPolygon != nullptr);
 		m_selectedPolygon->setActive(false);
 		break;
 	case smLine:
+		Q_ASSERT(m_selectedLine != nullptr);
 		m_selectedLine->setActive(false);
 		break;
 	case smNone:
 		// do nothing.
+		Q_ASSERT(m_selectedPolygon == nullptr);
+		Q_ASSERT(m_selectedLine == nullptr);
 		break;
 	}
 	v->unsetCursor();
@@ -1374,6 +1378,8 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename)
 	if (poly.size() > 0) {
 		m_mouseEventMode = meNormal;
 		m_gridRegionPolygon->setPolygon(poly);
+		Q_ASSERT(m_selectedPolygon == m_gridRegionPolygon);
+		m_selectMode = smPolygon;
 		informDeselection(graphicsView());
 	} else {
 		m_mouseEventMode = meBeforeDefining;
@@ -2446,6 +2452,8 @@ void GridCreatingConditionTriangle::deselectAll()
 		}
 	}
 	m_selectMode = smNone;
+	Q_ASSERT(m_selectedPolygon == nullptr);
+	Q_ASSERT(m_selectedLine == nullptr);
 }
 
 bool GridCreatingConditionTriangle::checkCondition()
