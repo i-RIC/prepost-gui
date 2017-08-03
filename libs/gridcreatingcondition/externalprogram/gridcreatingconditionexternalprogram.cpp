@@ -136,6 +136,16 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		return false;
 	}
 	bool ok = grid->loadFromCgnsFile(fn, 1, 1);
+
+	auto points = grid->vtkGrid()->GetPoints();
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+		double v[3];
+		points->GetPoint(i, v);
+		v[0] -= offset().x();
+		v[1] -= offset().y();
+		points->SetPoint(i, v);
+	}
+
 	cg_close(fn);
 	if (! ok) {
 		// grid generator did not create grid correctly.

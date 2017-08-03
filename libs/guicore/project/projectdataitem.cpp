@@ -122,7 +122,9 @@ void ProjectDataItem::setModified(bool modified)
 
 ProjectData* ProjectDataItem::projectData() const
 {
-	return parent()->projectData();
+	auto p = parent();
+	if (p == nullptr) {return nullptr;}
+	return p->projectData();
 }
 
 void ProjectDataItem::loadFilename(const QDomNode& node)
@@ -161,7 +163,9 @@ void ProjectDataItem::setSubPath(const QString& subPath)
 
 QVector2D ProjectDataItem::offset() const
 {
-	return projectData()->mainfile()->offset();
+	auto pd = projectData();
+	if (pd == nullptr) {return QVector2D(0, 0);}
+	return pd->mainfile()->offset();
 }
 
 void ProjectDataItem::doApplyOffset(double, double)
