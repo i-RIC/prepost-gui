@@ -201,7 +201,7 @@ void applyOffsetToPolyLine(PolyLineController* polyLine, double x, double y)
 	polyLine->setPolyLine(line);
 }
 
-void loadPolyLine(QDataStream* stream, PolyLineController* polyLine)
+void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QVector2D& offset)
 {
 	std::vector<QPointF> line;
 	int size;
@@ -209,18 +209,18 @@ void loadPolyLine(QDataStream* stream, PolyLineController* polyLine)
 	for (int i = 0; i < size; ++i) {
 		qreal x, y;
 		*stream >> x >> y;
-		line.push_back(QPointF(x, y));
+		line.push_back(QPointF(x - offset.x(), y - offset.y()));
 	}
 	polyLine->setPolyLine(line);
 }
 
-void savePolyLine(QDataStream* stream, const PolyLineController& polyLine)
+void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const QVector2D& offset)
 {
 	auto line = polyLine.polyLine();
 	int size = line.size();
 	*stream << size;
 	for (QPointF& p : line) {
-		*stream << p.x() << p.y();
+		*stream << p.x() + offset.x() << p.y() + offset.y();
 	}
 }
 
@@ -1160,9 +1160,9 @@ void GridCreatingConditionPoisson::loadExternalData(const QString& filename)
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
 
-	loadPolyLine(&s, &(impl->m_centerLineController));
-	loadPolyLine(&s, &(impl->m_leftBankLineController));
-	loadPolyLine(&s, &(impl->m_rightBankLineController));
+	loadPolyLine(&s, &(impl->m_centerLineController), offset());
+	loadPolyLine(&s, &(impl->m_leftBankLineController), offset());
+	loadPolyLine(&s, &(impl->m_rightBankLineController), offset());
 
 	f.close();
 	if (impl->m_centerLineController.polyLine().size() > 0) {
@@ -1180,9 +1180,9 @@ void GridCreatingConditionPoisson::saveExternalData(const QString& filename)
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
 
-	savePolyLine(&s, impl->m_centerLineController);
-	savePolyLine(&s, impl->m_leftBankLineController);
-	savePolyLine(&s, impl->m_rightBankLineController);
+	savePolyLine(&s, impl->m_centerLineController, offset());
+	savePolyLine(&s, impl->m_leftBankLineController, offset());
+	savePolyLine(&s, impl->m_rightBankLineController, offset());
 
 	f.close();
 }
