@@ -139,8 +139,8 @@ void GridCreatingConditionCenterAndWidthCoordinatesEditDialog::setupData()
 	auto line = m_condition->polyLine();
 	for (int i = 0; i < line.size(); ++i) {
 		m_model->insertRow(i);
-		m_model->setData(m_model->index(i, 0, QModelIndex()), line[i].x());
-		m_model->setData(m_model->index(i, 1, QModelIndex()), line[i].y());
+		m_model->setData(m_model->index(i, 0, QModelIndex()), line[i].x() + m_condition->offset().x());
+		m_model->setData(m_model->index(i, 1, QModelIndex()), line[i].y() + m_condition->offset().y());
 	}
 	// set the model into view.
 	ui->tableView->setModel(m_model);
@@ -156,8 +156,8 @@ std::vector<QPointF> GridCreatingConditionCenterAndWidthCoordinatesEditDialog::g
 	std::vector<QPointF> ret;
 	int rows = m_model->rowCount();
 	for (int i = 0; i < rows; ++i) {
-		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble();
-		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble();
+		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble() - m_condition->offset().x();
+		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble() - m_condition->offset().y();
 		ret.push_back(QPointF(x, y));
 	}
 	return ret;
