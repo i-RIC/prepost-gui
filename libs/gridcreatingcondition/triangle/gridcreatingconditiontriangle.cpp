@@ -48,6 +48,7 @@
 
 #include <geos/geom/GeometryFactory.h>
 #include <geos/geom/LinearRing.h>
+#include <geos/geom/CoordinateSequenceFactory.h> 
 
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
@@ -1748,22 +1749,31 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	m_areaConstraint = dialog.areaConstraint();
 	m_area = dialog.area();
 
-	unionLines();
 	Grid* grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
 	return true;
 }
 
-void GridCreatingConditionTriangle::unionLines()
+void GridCreatingConditionTriangle::unionLines(const QPolygonF& gridPol, const QVector<QPointF>& line)
 {
 	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
-	auto pol = factory->createLinearRing();
+	
+	std::vector< geos::geom::Coordinate > coordsLRing;
+	for (int i = 0; i < gridPol.size(); i++) {
+		coordsLRing.push_back(geos::geom::Coordinate(gridPol[i].x(), gridPol[i].y(), 0.0));
+	}
+	const geos::geom::CoordinateSequenceFactory* csFactory = factory->getCoordinateSequenceFactory();
+	geos::geom::CoordinateSequence* csLRing = csFactory->create(&coordsLRing);
 
-	// pol に、ポリゴンの縁の情報を登録
-	auto breakline = factory->createLineString();
+	std::vector< geos::geom::Coordinate > coordsBLine;
+	for (int i = 0; i < line.size(); i++) {
+		coordsBLine.push_back(geos::geom::Coordinate(line[i].x(), line[i].y(), 0.0));
+	}
+	geos::geom::CoordinateSequence* csBLine = csFactory->create(&coordsBLine);
 
-	// breakline に、ブレークラインの情報を登録。実際は複数あることもある。
+	auto breakline = factory->createLineString(csBLine);
+	auto pol = factory->createLinearRing(csLRing);
 	auto lines = new std::vector<geos::geom::Geometry*>();
 
 	lines->push_back(pol);
@@ -2535,8 +2545,9 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		for (int j = 0; j < l.count(); ++j) {
 			if (! gridPol.containsPoint(l[j], Qt::OddEvenFill)) {
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
-				return false;
+				//QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
+				//return false;
+				unionLines(gridPol,l);
 			}
 		}
 		for (int j = 0; j < l.count() - 1; ++j) {
