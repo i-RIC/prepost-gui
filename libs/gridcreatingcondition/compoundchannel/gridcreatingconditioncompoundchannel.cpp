@@ -1453,8 +1453,16 @@ void GridCreatingConditionCompoundChannel::doLoadFromProjectMainFile(const QDomN
 
 void GridCreatingConditionCompoundChannel::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
+void GridCreatingConditionCompoundChannel::doApplyOffset(double x, double y)
+{
+	m_gridRegionPolygon->setPolygon(m_gridRegionPolygon->polygon(QPointF(x, y)));
+	m_lowWaterChannelPolygon->setPolygon(m_lowWaterChannelPolygon->polygon(QPointF(x, y)));
+	m_centerLine->setPolyLine(m_centerLine->polyLine(QPointF(x, y)));
+}
+
 void GridCreatingConditionCompoundChannel::loadExternalData(const QString& filename)
 {
+	auto off = offset();
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
@@ -1463,11 +1471,14 @@ void GridCreatingConditionCompoundChannel::loadExternalData(const QString& filen
 	QPolygonF poly;
 	s >> poly;
 	m_gridRegionPolygon->setPolygon(poly);
+	m_gridRegionPolygon->setPolygon(m_gridRegionPolygon->polygon(QPointF(off.x(), off.y())));
 	QPolygonF poly2;
 	s >> poly2;
 	m_lowWaterChannelPolygon->setPolygon(poly2);
+	m_lowWaterChannelPolygon->setPolygon(m_lowWaterChannelPolygon->polygon(QPointF(off.x(), off.y())));
 	s >> points;
 	m_centerLine->setPolyLine(points);
+	m_centerLine->setPolyLine(m_centerLine->polyLine(QPointF(off.x(), off.y())));
 	m_selectMode = smNone;
 	m_selectedPolygon = nullptr;
 	m_selectedLine = nullptr;
@@ -1514,14 +1525,15 @@ void GridCreatingConditionCompoundChannel::loadExternalData(const QString& filen
 
 void GridCreatingConditionCompoundChannel::saveExternalData(const QString& filename)
 {
+	auto off = offset();
 	QFile f(filename);
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
 	s << m_streamWiseDivision << m_leftDivision << m_centerDivision << m_rightDivision;
 
-	s << m_gridRegionPolygon->polygon();
-	s << m_lowWaterChannelPolygon->polygon();
-	s << m_centerLine->polyLine();
+	s << m_gridRegionPolygon->polygon(QPointF(-off.x(), -off.y()));
+	s << m_lowWaterChannelPolygon->polygon(QPointF(-off.x(), -off.y()));
+	s << m_centerLine->polyLine(QPointF(-off.x(), -off.y()));
 	f.close();
 }
 

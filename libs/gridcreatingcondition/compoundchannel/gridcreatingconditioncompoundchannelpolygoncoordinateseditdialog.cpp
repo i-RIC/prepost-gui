@@ -161,8 +161,8 @@ void GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog::setupData
 		m_model->insertRow(i);
 		double p[3];
 		points->GetPoint(i, p);
-		m_model->setData(m_model->index(i, 0, QModelIndex()), p[0]);
-		m_model->setData(m_model->index(i, 1, QModelIndex()), p[1]);
+		m_model->setData(m_model->index(i, 0, QModelIndex()), p[0] + m_condition->offset().x());
+		m_model->setData(m_model->index(i, 1, QModelIndex()), p[1] + m_condition->offset().y());
 	}
 	// set the model into view.
 	ui->tableView->setModel(m_model);
@@ -178,8 +178,8 @@ QVector<QVector2D> GridCreatingConditionCompoundChannelPolygonCoordinatesEditDia
 	QVector<QVector2D> ret;
 	int rows = m_model->rowCount();
 	for (int i = 0; i < rows; ++i) {
-		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble();
-		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble();
+		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble() - m_condition->offset().x();
+		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble() - m_condition->offset().y();
 		ret.append(QVector2D(x, y));
 	}
 	return ret;
