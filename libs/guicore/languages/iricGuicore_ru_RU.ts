@@ -806,47 +806,52 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="68"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="45"/>
+        <source>Topography Files (*.tpo)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="73"/>
         <source>Output folder:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="104"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="109"/>
         <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="123"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="128"/>
         <source>Output file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="133"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="138"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="139"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="144"/>
         <source>All timesteps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="148"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="153"/>
         <source>Start:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="165"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="170"/>
         <source>End:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="182"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="187"/>
         <source>Skip rate :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="113"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="118"/>
         <source>Prefix:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -861,73 +866,73 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="45"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
         <source>ESRI Shape files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="221"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="226"/>
         <source>Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="227"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="232"/>
         <source>Full region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="234"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="239"/>
         <source>I Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="257"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="262"/>
         <source>I Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="280"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="285"/>
         <source>J Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="303"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="308"/>
         <source>J Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="326"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="331"/>
         <source>K Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="349"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="354"/>
         <source>K Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="390"/>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="319"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="395"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="324"/>
         <source>Show &amp;Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="295"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="300"/>
         <source>Select Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="305"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="310"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="305"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="310"/>
         <source>Folder %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="317"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="322"/>
         <source>&amp;Hide Detail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -948,56 +953,56 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="155"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="419"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="751"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="156"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="420"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="752"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="851"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="155"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="419"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="156"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="420"/>
         <source>Error occured while loading calculation result.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="725"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="726"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="725"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="726"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="751"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="752"/>
         <source>Calculation result does not contain grid data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="800"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="801"/>
         <source>Export Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="805"/>
         <source>Saving calculation result as VTK files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="807"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="808"/>
         <source>Saving calculation result as CSV files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="810"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="811"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="851"/>
         <source>Error occured while saving %1</source>
         <translation type="unfinished"></translation>
     </message>

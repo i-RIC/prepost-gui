@@ -42,6 +42,11 @@
        </item>
        <item>
         <property name="text">
+         <string>Topography Files (*.tpo)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
          <string>ESRI Shape files</string>
         </property>
        </item>

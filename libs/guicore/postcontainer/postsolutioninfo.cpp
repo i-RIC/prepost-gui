@@ -5,6 +5,7 @@
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "exporter/postzonedatacsvexporter.h"
 #include "exporter/postzonedatashapeexporter.h"
+#include "exporter/postzonedatatpoexporter.h"
 #include "exporter/postzonedatavtkexporter.h"
 #include "postbaseselectingdialog.h"
 #include "postdataexportdialog.h"
@@ -828,6 +829,8 @@ void PostSolutionInfo::exportCalculationResult()
 		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter{ projectData()->workDirectory(), PostZoneDataVtkExporter::Mode::BINARY }};
 	} else if (m_exportFormat == PostDataExportDialog::Format::CSV) {
 		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataCsvExporter {}};
+	} else if (m_exportFormat == PostDataExportDialog::Format::TPO) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataTpoExporter {}};
 	} else if (m_exportFormat == PostDataExportDialog::Format::ESRIShape) {
 		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataShapeExporter {projectData()->workDirectory()}};
 	}
