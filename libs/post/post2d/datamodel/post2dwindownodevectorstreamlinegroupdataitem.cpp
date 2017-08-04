@@ -201,7 +201,8 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::addCustomMenuItems(QMenu* me
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	updateActorSettings();
+	setTarget(m_setting.target);
+	// updateActorSettings() is called inside setTarget
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
