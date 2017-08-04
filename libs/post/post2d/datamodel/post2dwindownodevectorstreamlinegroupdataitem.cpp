@@ -64,10 +64,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamlineGroupDataItem()
 {
-	for (auto actor : m_streamlineActors) {
-		renderer()->RemoveActor(actor);
-		actor->Delete();
-	}
+	clearActors();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -85,11 +82,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 {
-	for (auto actor : m_streamlineActors) {
-		renderer()->RemoveActor(actor);
-	}
-	m_actorCollection->RemoveAllItems();
-	m_streamlineActors.clear();
+	clearActors();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr) {return;}
@@ -223,4 +216,13 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::innerUpdateZScale(double sca
 	for (vtkActor* actor : m_streamlineActors) {
 		actor->SetScale(1, scale, 1);
 	}
+}
+
+void Post2dWindowNodeVectorStreamlineGroupDataItem::clearActors()
+{
+	for (auto actor : m_streamlineActors) {
+		renderer()->RemoveActor(actor);
+	}
+	m_actorCollection->RemoveAllItems();
+	m_streamlineActors.clear();
 }

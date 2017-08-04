@@ -77,6 +77,9 @@ protected:
 
 	std::vector<vtkActor*> m_streamlineActors;
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
+
+private:
+	void clearActors();
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H
