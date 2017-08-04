@@ -1755,7 +1755,16 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	return true;
 }
 
-void GridCreatingConditionTriangle::unionLines(const QPolygonF& gridPol, const QVector<QPointF>& line)
+bool isInList(const QVector<QPointF>& line, const QPointF& pt) {
+	for (int i = 0; i < line.size();i++) {
+		if (line[i].x() == pt.x()) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void GridCreatingConditionTriangle::unionLines(QPolygonF& gridPol, const QVector<QPointF>& line)
 {
 	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
 	
@@ -1782,6 +1791,20 @@ void GridCreatingConditionTriangle::unionLines(const QPolygonF& gridPol, const Q
 	auto collection = factory->createGeometryCollection(lines);
 
 	collection->Union();
+
+	geos::geom::CoordinateSequence* csNew=collection->getCoordinates();
+	gridPol.clear();
+	QPointF pt;
+	for (size_t i = 0; i < csNew->getSize();i++) {
+		pt.rx() = csNew->getAt(i).x;
+		pt.ry() = csNew->getAt(i).y;
+		
+		if (!isInList(line,pt)) {
+			gridPol.push_back(pt);
+		}
+	}
+	
+	//sprintf(csNew->getSize());
 }
 
 void GridCreatingConditionTriangle::clear()
@@ -2491,6 +2514,7 @@ bool GridCreatingConditionTriangle::checkCondition()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region polygon shape is invalid."));
 		return false;
 	}
+	
 	QPolygonF gridPol = m_gridRegionPolygon->polygon();
 	QList<QPolygonF> polygons;
 	for (int i = 0; i < m_remeshPolygons.count(); ++i) {
@@ -2548,6 +2572,8 @@ bool GridCreatingConditionTriangle::checkCondition()
 				//QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
 				//return false;
 				unionLines(gridPol,l);
+				m_gridRegionPolygon->setPolygon(gridPol);
+				//renderGraphicsView();
 			}
 		}
 		for (int j = 0; j < l.count() - 1; ++j) {

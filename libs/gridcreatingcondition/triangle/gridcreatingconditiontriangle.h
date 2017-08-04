@@ -103,7 +103,7 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
-	void unionLines(const QPolygonF& gridPol, const QVector<QPointF>& line);
+	void unionLines(QPolygonF& gridPol, const QVector<QPointF>& line);
 	bool checkCondition();
 	bool selectObject(QPoint point);
 	void deselectAll();
