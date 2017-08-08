@@ -592,7 +592,7 @@ bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int first
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
-		char arrayname[30];
+		char arrayname[33];
 		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
 		QString name(arrayname);
 
