@@ -1781,8 +1781,10 @@ void GridCreatingConditionTriangle::unionLines(QPolygonF& gridPol, const QVector
 	}
 	geos::geom::CoordinateSequence* csBLine = csFactory->create(&coordsBLine);
 
-	auto breakline = factory->createLineString(csBLine);
-	auto pol = factory->createLinearRing(csLRing);
+	//std::auto_ptr< geos::geom::LineString* >
+	auto breakline=factory->createLineString(csBLine);
+	//std::auto_ptr< geos::geom::Geometry >  
+	auto pol=factory->createLinearRing(csLRing);
 	auto lines = new std::vector<geos::geom::Geometry*>();
 
 	lines->push_back(pol);
@@ -1804,6 +1806,9 @@ void GridCreatingConditionTriangle::unionLines(QPolygonF& gridPol, const QVector
 		}
 	}
 	
+	//factory->destroyGeometry(pol);
+	//factory->destroyGeometry(breakline);
+	delete lines;
 	//sprintf(csNew->getSize());
 }
 
