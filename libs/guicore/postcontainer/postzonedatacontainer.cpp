@@ -295,11 +295,12 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
+	auto offset = this->offset();
 	for (int k = 0; k < NVertexK; ++k) {
 		for (int j = 0; j < NVertexJ; ++j) {
 			for (int i = 0; i < NVertexI; ++i) {
 				int idx = i + NVertexI * (j + NVertexJ * k);
-				points->InsertNextPoint(dataX[idx], dataY[idx], dataZ[idx]);
+				points->InsertNextPoint(dataX[idx] - offset.x(), dataY[idx] - offset.y(), dataZ[idx]);
 			}
 		}
 	}
@@ -389,8 +390,9 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
+	auto offset = this->offset(); 
 	for (int i = 0; i < NVertex; ++i) {
-		points->InsertNextPoint(dataX[i], dataY[i], dataZ[i]);
+		points->InsertNextPoint(dataX[i] - offset.x(), dataY[i] - offset.y(), dataZ[i]);
 	}
 	grid->SetPoints(points);
 
@@ -1261,3 +1263,23 @@ bool PostZoneDataContainer::lineAtJIntersect(int j, const RectRegion& region) co
 	return false;
 }
 
+void PostZoneDataContainer::applyOffset(double x_diff, double y_diff)
+{
+	doApplyOffset(x_diff, y_diff);
+}
+
+void PostZoneDataContainer::doApplyOffset(double x_diff, double y_diff)
+{
+	vtkPointSet* grid = m_data;
+
+	vtkPoints* points = grid->GetPoints();
+	vtkIdType numPoints = points->GetNumberOfPoints();
+	double v[3];
+	for (vtkIdType id = 0; id < numPoints; ++id) {
+		points->GetPoint(id, v);
+		v[0] -= x_diff;
+		v[1] -= y_diff;
+		points->SetPoint(id, v);
+	}
+	points->Modified();
+}

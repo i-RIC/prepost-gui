@@ -50,6 +50,7 @@
 #include <vtkRenderer.h>
 #include <vtkVariant.h>
 
+#include <cfloat>
 #include <string>
 
 PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
@@ -454,6 +455,7 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 			throw ErrorMessage(tr("Error occured while opening the file."));
 		}
 		QTextStream stream(&file);
+		stream.setRealNumberPrecision(DBL_DIG);
 
 		PreProcessorGridDataItem* gitem =  dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 		vtkPointSet* vtkGrid = gitem->grid()->vtkGrid();
@@ -462,11 +464,12 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 		stream << vtkGrid->GetNumberOfPoints() << endl;
 
 		// output values
+		auto offset = this->offset();
 		for (vtkIdType i = 0; i < vtkGrid->GetNumberOfPoints(); ++i) {
 			double x[3];
 			vtkGrid->GetPoint(i, x);
 			double val = da->GetVariantValue(i).ToDouble();
-			stream << x[0] << " " << x[1] << " " << val << endl;
+			stream << x[0] + offset.x() << " " << x[1] + offset.y() << " " << val << endl;
 		}
 		file.close();
 		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);

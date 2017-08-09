@@ -84,7 +84,7 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 	m_tmsLoader {parent->iricMainWindow()},
 	m_tmsRequestId {-1},
-	m_offset {0, 0},
+	m_offset {parent->offset().x(), parent->offset().y()},
 	m_parent {parent}
 {
 	m_texture = vtkSmartPointer<vtkTexture>::New();
@@ -266,18 +266,13 @@ void TmsImageGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeAttribute("target", impl->m_target.c_str());
 }
 
-void TmsImageGroupDataItem::applyOffset(double x_diff, double y_diff)
+void TmsImageGroupDataItem::doApplyOffset(double x_diff, double y_diff)
 {
+	setIsCommandExecuting(true);
 	double x = x_diff + impl->m_offset.x();
 	double y = y_diff + impl->m_offset.y();
 	impl->m_offset.setX(x);
 	impl->m_offset.setY(y);
-}
-
-void TmsImageGroupDataItem::doApplyOffset(double x_diff, double y_diff)
-{
-	setIsCommandExecuting(true);
-	this->applyOffset(x_diff, y_diff);
 	// force update
 	setTarget(target());
 	setIsCommandExecuting(false);

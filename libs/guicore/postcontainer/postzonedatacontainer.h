@@ -55,6 +55,11 @@ public:
 	bool IBCExists() const;
 	QString elevationName() const;
 
+	void applyOffset(double x, double y);
+
+protected:
+	void doApplyOffset(double x, double y) override;
+
 private:
 	bool setBaseId(const int fn);
 	bool setZoneId(const int fn);

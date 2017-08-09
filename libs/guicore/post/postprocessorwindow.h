@@ -26,6 +26,7 @@ public:
 	const QIcon& icon() const {return m_icon;}
 	int index() const {return m_index;}
 	virtual void setupDefaultGeometry(int index) = 0;
+	virtual void applyOffset(double /*x_diff*/, double /*y_diff*/) {}
 
 public slots:
 	// data is updated. re-render the graphics etc.

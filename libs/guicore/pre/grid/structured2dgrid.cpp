@@ -147,9 +147,10 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
+	auto offset = this->offset();
 	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
 		for (unsigned int i = 0; i < m_dimensionI; ++i) {
-			points->InsertNextPoint(dataX[m_dimensionI * j + i], dataY[m_dimensionI * j + i], 0);
+			points->InsertNextPoint(dataX[m_dimensionI * j + i] - offset.x(), dataY[m_dimensionI * j + i] - offset.y(), 0);
 		}
 	}
 	grid->SetPoints(points);
@@ -190,13 +191,14 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
 	// save coordinates.
 	std::vector<double> dataX(m_dimensionI * m_dimensionJ, 0);
 	std::vector<double> dataY(m_dimensionI * m_dimensionJ, 0);
+	auto offset = this->offset();
 	double points[3];
 
 	for (unsigned int i = 0; i < m_dimensionI; ++i) {
 		for (unsigned int j = 0; j < m_dimensionJ; ++j) {
 			vtkGrid()->GetPoints()->GetPoint(i + m_dimensionI * j, points);
-			dataX[i + m_dimensionI * j] = points[0];
-			dataY[i + m_dimensionI * j] = points[1];
+			dataX[i + m_dimensionI * j] = points[0] + offset.x();
+			dataY[i + m_dimensionI * j] = points[1] + offset.y();
 		}
 	}
 	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);

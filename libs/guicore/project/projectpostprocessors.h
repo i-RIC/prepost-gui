@@ -20,6 +20,7 @@ public:
 	void loadFromProjectMainFile(const QDomNode& node, bool import = false);
 	int windowCount() const;
 	void setFactory(PostProcessorWindowFactoryInterface* factory);
+	void applyOffset(double x_diff, double y_diff);
 
 protected:
 	// Never used.

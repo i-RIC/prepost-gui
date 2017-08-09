@@ -135,6 +135,7 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x, double y) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void updateFilename() override {

@@ -24,8 +24,6 @@ public:
 
 	void updateZDepthRangeItemCount() override;
 
-	void applyOffset(double x_diff, double y_diff);
-
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 

@@ -331,3 +331,8 @@ VTKGraphicsView* Post2dWindow::viewForBackgroundColor() const
 {
 	return m_dataModel->graphicsView();
 }
+
+void Post2dWindow::applyOffset(double x_diff, double y_diff)
+{
+	m_dataModel->applyOffset(x_diff, y_diff);
+}

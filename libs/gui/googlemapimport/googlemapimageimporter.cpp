@@ -57,8 +57,11 @@ void GoogleMapImageImporter::importImages()
 	}
 	double xmin, xmax, ymin, ymax;
 	mainWindow()->preProcessorWindow()->dataModel()->graphicsView()->getDataRegion(&xmin, &xmax, &ymin, &ymax);
-	double xcenter = (xmin + xmax) * 0.5;
-	double ycenter = (ymin + ymax) * 0.5;
+	double offsetX = mainFile->offset().x();
+	double offsetY = mainFile->offset().y();
+
+	double xcenter = (xmin + xmax) * 0.5 + offsetX;
+	double ycenter = (ymin + ymax) * 0.5 + offsetY;
 
 	double centerLon, centerLat;
 	double width = qMax(xmax - xmin, ymax - ymin);
@@ -170,8 +173,8 @@ void GoogleMapImageImporter::importImages()
 
 				double xleft = tmpCenterX - meterPerPixel * 320;
 				double ybottom = tmpCenterY - meterPerPixel * 320;
-				image->setTranslateX(xleft);
-				image->setTranslateY(ybottom);
+				image->setTranslateX(xleft - offsetX);
+				image->setTranslateY(ybottom - offsetY);
 				image->setScale(meterPerPixel);
 
 				mainFile->addBackgroundImage(image);

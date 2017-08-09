@@ -48,6 +48,8 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
 
+	void doApplyOffset(double x, double y) override;
+
 	vtkSmartPointer<vtkActor> m_rectangularActor;
 	vtkSmartPointer<vtkActor> m_rectangularFrameActor;
 

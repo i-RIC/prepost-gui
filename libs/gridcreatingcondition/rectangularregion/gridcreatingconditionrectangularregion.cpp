@@ -12,6 +12,7 @@
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+#include <misc/xmlsupport.h>
 
 #include <QDomElement>
 #include <QMenu>
@@ -47,11 +48,12 @@ GridCreatingConditionRectangularRegion::~GridCreatingConditionRectangularRegion(
 
 bool GridCreatingConditionRectangularRegion::create(QWidget* /*parent*/)
 {
+	auto off = offset();
 	GridCreatingConditionRectangularRegionSettingDialog* dialog = new GridCreatingConditionRectangularRegionSettingDialog(this, preProcessorWindow());
-	dialog->setXMin(m_xMin);
-	dialog->setXMax(m_xMax);
-	dialog->setYMin(m_yMin);
-	dialog->setYMax(m_yMax);
+	dialog->setXMin(m_xMin + off.x());
+	dialog->setXMax(m_xMax + off.x());
+	dialog->setYMin(m_yMin + off.y());
+	dialog->setYMax(m_yMax + off.y());
 
 	if (m_stepSize == 0) {
 		m_stepSize = std::min((m_xMax - m_xMin) / 10., (m_yMax - m_yMin) / 10.);
@@ -218,26 +220,42 @@ void GridCreatingConditionRectangularRegion::assignActorZValues(const ZDepthRang
 
 void GridCreatingConditionRectangularRegion::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	auto off = offset();
 	QDomElement elem = node.toElement();
-	m_xMin = elem.attribute("xMin").toDouble();
-	m_xMax = elem.attribute("xMax").toDouble();
-	m_yMin = elem.attribute("yMin").toDouble();
-	m_yMax = elem.attribute("yMax").toDouble();
-	m_stepSize = elem.attribute("stepSize").toDouble();
+	m_xMin = iRIC::getDoubleAttribute(elem, "xMin") - off.x();
+	m_xMax = iRIC::getDoubleAttribute(elem, "xMax") - off.x();
+	m_yMin = iRIC::getDoubleAttribute(elem, "yMin") - off.y();
+	m_yMax = iRIC::getDoubleAttribute(elem, "yMax") - off.y();
+	m_stepSize = iRIC::getDoubleAttribute(elem, "stepSize");
 }
 
 void GridCreatingConditionRectangularRegion::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString str;
-	writer.writeAttribute("xMin", str.setNum(m_xMin));
-	writer.writeAttribute("xMax", str.setNum(m_xMax));
-	writer.writeAttribute("yMin", str.setNum(m_yMin));
-	writer.writeAttribute("yMax", str.setNum(m_yMax));
-	writer.writeAttribute("stepSize", str.setNum(m_stepSize));
+	auto off = offset();
+	iRIC::setDoubleAttribute(writer, "xMin", m_xMin + off.x());
+	iRIC::setDoubleAttribute(writer, "xMax", m_xMax + off.x());
+	iRIC::setDoubleAttribute(writer, "yMin", m_yMin + off.y());
+	iRIC::setDoubleAttribute(writer, "yMax", m_yMax + off.y());
+	iRIC::setDoubleAttribute(writer, "stepSize", m_stepSize);
+}
+
+void GridCreatingConditionRectangularRegion::doApplyOffset(double x, double y)
+{
+	m_xMin -= x;
+	m_xMax -= x;
+	m_yMin -= y;
+	m_yMax -= y;
+
+	createRectangularRegion(m_xMin, m_xMax, m_yMin, m_yMax);
 }
 
 bool GridCreatingConditionRectangularRegion::createGrid(double xmin, double xmax, double ymin, double ymax, double step)
 {
+	auto off = offset();
+	xmin -= off.x();
+	xmax -= off.x();
+	ymin -= off.y();
+	ymax -= off.y();
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
 	if (grid == nullptr) {return false;}
 	m_xMin = xmin;
@@ -252,6 +270,11 @@ bool GridCreatingConditionRectangularRegion::createGrid(double xmin, double xmax
 
 void GridCreatingConditionRectangularRegion::previewGrid(double xmin, double xmax, double ymin, double ymax, double step)
 {
+	auto off = offset();
+	xmin -= off.x();
+	xmax -= off.x();
+	ymin -= off.y();
+	ymax -= off.y();
 	createRectangularRegion(xmin, xmax, ymin, ymax);
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
 	if (grid == nullptr) {return;}

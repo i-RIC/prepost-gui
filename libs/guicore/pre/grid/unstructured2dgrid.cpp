@@ -92,8 +92,9 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
+	auto offset = this->offset();
 	for (int i = 0; i < size[0]; ++i) {
-		points->InsertNextPoint(dataX[i], dataY[i], 0);
+		points->InsertNextPoint(dataX[i] - offset.x(), dataY[i] - offset.y(), 0);
 	}
 	grid->SetPoints(points);
 	points->Delete();
@@ -165,12 +166,13 @@ bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonenam
 	// save coordinates.
 	std::vector<double> dataX(vtkGrid()->GetNumberOfPoints(), 0);
 	std::vector<double> dataY(vtkGrid()->GetNumberOfPoints(), 0);
+	auto offset = this->offset();
 	double points[3];
 
 	for (int i = 0; i < vtkGrid()->GetNumberOfPoints(); ++i) {
 		vtkGrid()->GetPoints()->GetPoint(i, points);
-		dataX[i] = points[0];
-		dataY[i] = points[1];
+		dataX[i] = points[0] + offset.x();
+		dataY[i] = points[1] + offset.y();
 	}
 	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
 	if (ier != 0) {return false;}

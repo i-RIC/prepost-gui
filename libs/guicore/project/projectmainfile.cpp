@@ -1134,6 +1134,8 @@ void ProjectMainFile::setOffset(double x, double y)
 	double x_diff = x - impl->m_offset.x();
 	double y_diff = y - impl->m_offset.y();
 	projectData()->mainWindow()->preProcessorWindow()->dataModel()->applyOffset(x_diff, y_diff);
+	projectData()->mainfile()->postSolutionInfo()->applyOffset(x_diff, y_diff);
+	impl->m_postProcessors->applyOffset(x_diff, y_diff);
 	impl->m_offset.setX(x);
 	impl->m_offset.setY(y);
 }
