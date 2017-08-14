@@ -25,23 +25,27 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-GridCreatingConditionRectangularRegion::GridCreatingConditionRectangularRegion(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingCondition(parent, creator)
+GridCreatingConditionRectangularRegion::GridCreatingConditionRectangularRegion(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator),
+	m_previewGrid {nullptr}
 {
 	m_mouseEventMode = meNormal;
 	m_rightClickingMenu = nullptr;
 	clear();
 	graphicsView()->ResetCameraClippingRange();
-
 }
 
 GridCreatingConditionRectangularRegion::~GridCreatingConditionRectangularRegion()
 {
 	renderer()->RemoveActor(m_rectangularActor);
 	renderer()->RemoveActor(m_rectangularFrameActor);
+	renderer()->RemoveActor(m_previewActor);
 
 	actorCollection()->RemoveItem(m_rectangularActor);
 	actorCollection()->RemoveItem(m_rectangularFrameActor);
+	actorCollection()->RemoveItem(m_previewActor);
+
+	delete m_previewGrid;
 
 	delete m_rightClickingMenu;
 }
@@ -114,9 +118,17 @@ void GridCreatingConditionRectangularRegion::setupActors()
 	m_rectangularFrameActor->GetProperty()->SetLineWidth(2);
 	renderer()->AddActor(m_rectangularFrameActor);
 
+	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	m_previewActor = vtkSmartPointer<vtkActor>::New();
+	m_previewActor->SetMapper(mapper);
+	m_previewActor->GetProperty()->SetColor(0, 0, 0);
+	m_previewActor->GetProperty()->SetRepresentationToWireframe();
+	renderer()->AddActor(m_previewActor);
+
 	createRectangularRegion(m_xMin, m_xMax, m_yMin, m_yMax);
 	m_rectangularActor->VisibilityOff();
 	m_rectangularFrameActor->VisibilityOff();
+	m_previewActor->VisibilityOff();
 
 	updateVisibilityWithoutRendering();
 }
@@ -215,6 +227,7 @@ void GridCreatingConditionRectangularRegion::updateZDepthRangeItemCount(ZDepthRa
 void GridCreatingConditionRectangularRegion::assignActorZValues(const ZDepthRange& range)
 {
 	m_rectangularActor->SetPosition(0, 0, range.min());
+	m_previewActor->SetPosition(0, 0, range.min());
 	m_rectangularFrameActor->SetPosition(0, 0, range.max());
 }
 
@@ -278,21 +291,18 @@ void GridCreatingConditionRectangularRegion::previewGrid(double xmin, double xma
 	createRectangularRegion(xmin, xmax, ymin, ymax);
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
 	if (grid == nullptr) {return;}
-	vtkDataSetMapper* mapper = vtkDataSetMapper::New();
-	mapper->SetInputData(grid->vtkGrid());
-	vtkActor* actor = vtkActor::New();
-	actor->SetMapper(mapper);
-	mapper->Delete();
-	actor->VisibilityOn();
-	actor->GetProperty()->SetColor(0, 0, 0);
-	actor->GetProperty()->SetRepresentationToWireframe();
-	renderer()->AddActor(actor);
 
-	renderGraphicsView();
+	if (m_previewGrid != nullptr) {
+		delete m_previewGrid;
+	}
+	m_previewGrid = grid;
+	actorCollection()->RemoveItem(m_previewActor);
 
-	actor->VisibilityOff();
-	renderer()->RemoveActor(actor);
-	actor->Delete();
+	vtkStructuredGrid* sgrid = m_previewGrid->vtkGrid();
+	m_previewActor->GetMapper()->SetInputDataObject(sgrid);
+	actorCollection()->AddItem(m_previewActor);
+
+	updateVisibility();
 }
 
 Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double xmin, double xmax, double ymin, double ymax, double stepSize)
@@ -334,7 +344,12 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 void GridCreatingConditionRectangularRegion::hideTmpGrid()
 {
 	m_mouseEventMode = meNormal;
-//	m_tmpActor->VisibilityOff();
+
+	m_previewActor->VisibilityOff();
+	actorCollection()->RemoveItem(m_previewActor);
+
+	delete m_previewGrid;
+	m_previewGrid = nullptr;
 }
 
 void GridCreatingConditionRectangularRegion::informSelection(PreProcessorGraphicsViewInterface* v)
