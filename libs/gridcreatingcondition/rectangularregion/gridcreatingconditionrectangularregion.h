@@ -69,7 +69,7 @@ protected:
 //	bool m_isCreatingBoundingBox;
 
 private slots:
-	void hideTmpGrid();
+	void hidePreviewGrid();
 
 private:
 	void createRectangularRegionFromMouse();

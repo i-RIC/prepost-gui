@@ -68,7 +68,7 @@ bool GridCreatingConditionRectangularRegion::create(QWidget* /*parent*/)
 	iricMainWindow()->enterModelessDialogMode();
 
 	connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-	connect(dialog, SIGNAL(destroyed()), this, SLOT(hideTmpGrid()));
+	connect(dialog, SIGNAL(destroyed()), this, SLOT(hidePreviewGrid()));
 	dialog->show();
 	return false;
 }
@@ -341,7 +341,7 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 	return grid;
 }
 
-void GridCreatingConditionRectangularRegion::hideTmpGrid()
+void GridCreatingConditionRectangularRegion::hidePreviewGrid()
 {
 	m_mouseEventMode = meNormal;
 
