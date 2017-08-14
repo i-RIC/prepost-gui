@@ -1183,7 +1183,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 			const std::vector<GraphicsWindowDataItem*>& bcslist = cond->bcSettingGroupDataItem()->childItems();
 			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit) {
 				PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*cit);
-				if (! bcsdi->isMapped()) {
+				if (! bcsdi->bcDataItem()->hideSetting() && ! bcsdi->isMapped()) {
 					int ret = QMessageBox::warning(mainWindow(), PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
 					if (ret == QMessageBox::Yes) {
 						bcsdi->executeMapping(true, 0);
