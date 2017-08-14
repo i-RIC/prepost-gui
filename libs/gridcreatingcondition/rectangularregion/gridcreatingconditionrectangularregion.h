@@ -53,6 +53,9 @@ protected:
 	vtkSmartPointer<vtkActor> m_rectangularActor;
 	vtkSmartPointer<vtkActor> m_rectangularFrameActor;
 
+	Structured2DGrid* m_previewGrid;
+	vtkSmartPointer<vtkActor> m_previewActor;
+
 	QPoint m_startPoint;
 	QPoint m_endPoint;
 
@@ -66,7 +69,7 @@ protected:
 //	bool m_isCreatingBoundingBox;
 
 private slots:
-	void hideTmpGrid();
+	void hidePreviewGrid();
 
 private:
 	void createRectangularRegionFromMouse();
