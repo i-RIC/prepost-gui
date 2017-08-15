@@ -195,6 +195,9 @@ void GridCreatingConditionRectangularRegionLonLat::createRectangularRegionFromMo
 
 void GridCreatingConditionRectangularRegionLonLat::createRectangularRegion(double xmin, double xmax, double ymin, double ymax)
 {
+	actorCollection()->RemoveItem(m_rectangularActor);
+	actorCollection()->RemoveItem(m_rectangularFrameActor);
+
 	vtkStructuredGrid* grid = vtkStructuredGrid::New();
 	grid->SetDimensions(2, 2, 1);
 	vtkPoints* points = vtkPoints::New();
@@ -354,18 +357,12 @@ void GridCreatingConditionRectangularRegionLonLat::hidePreviewGrid()
 
 void GridCreatingConditionRectangularRegionLonLat::informSelection(PreProcessorGraphicsViewInterface* v)
 {
-	actorCollection()->AddItem(m_rectangularActor);
-	actorCollection()->AddItem(m_rectangularFrameActor);
 	updateMouseCursor(v);
-	updateVisibility();
 }
 
 void GridCreatingConditionRectangularRegionLonLat::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
-	m_rectangularFrameActor->VisibilityOff();
-	m_rectangularActor->VisibilityOff();
 	v->unsetCursor();
-	actorCollection()->RemoveAllItems();
 }
 
 void GridCreatingConditionRectangularRegionLonLat::clear()
