@@ -128,6 +128,7 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, solverDef, order);
 			m_gridComplexAttributes.append(c);
 			m_gridComplexAttributeNameMap.insert(c->name(), c);
+			++ order;
 		} else {
 			SolverDefinitionGridAttribute* c = nullptr;
 			QString pos = defElem.attribute("position");
