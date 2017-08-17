@@ -107,6 +107,7 @@ HEADERS += gcc_triangle_global.h \
            gridcreatingconditiontriangleremeshpolygon.h \
            gridcreatingconditiontrianglesettingdialog.h \
            private/gridcreatingconditiontriangle_addremeshpolygoncommand.h \
+           private/gridcreatingconditiontriangle_definepolygonnewpointcommand.h \
            private/gridcreatingconditiontriangle_finishpolygondefiningcommand.h \
            private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.h
 FORMS += gridcreatingconditiontrianglepolygoncoordinateseditdialog.ui \
@@ -126,6 +127,7 @@ SOURCES += gridcreatingconditioncreatortriangle.cpp \
            gridcreatingconditiontriangleremeshpolygon.cpp \
            gridcreatingconditiontrianglesettingdialog.cpp \
            private/gridcreatingconditiontriangle_addremeshpolygoncommand.cpp \
+           private/gridcreatingconditiontriangle_definepolygonnewpointcommand.cpp \
            private/gridcreatingconditiontriangle_finishpolygondefiningcommand.cpp \
            private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.cpp
 TRANSLATIONS += languages/iricGccTriangle_es_ES.ts \
