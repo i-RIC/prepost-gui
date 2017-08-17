@@ -159,6 +159,40 @@ void setupTriangleInput(GridCreatingConditionTriangleGridRegionPolygon* regionPo
 	}
 }
 
+TriangleExecuteThread* setupTriangleThread(bool angleConstraint, double angle,
+																					 bool areaConstraint, bool hasRemeshPolygon,
+																					 PreProcessorGridAndGridCreatingConditionDataItemInterface* dataItemInterface,
+																					 ProjectData* projectData)
+{
+	QString args("p");
+
+	if (angleConstraint) {
+		args.append(QString("q%1").arg(angle));
+	}
+
+	if (areaConstraint || hasRemeshPolygon) {
+		args.append("a");
+	}
+
+	args.append("D");
+
+	TriangleExecuteThread* thread = new TriangleExecuteThread(nullptr);
+
+	thread->setArgs(args);
+
+	std::string zoneName = dataItemInterface->zoneName();
+
+	QString triExe = iRICRootPath::get().append("/triangle.exe");
+	QString workFolder = projectData->workDirectory();
+	QString polyFileName = QString("%1.poly").arg(zoneName.c_str());
+	QString fileArgs = "-ve";
+	fileArgs.append(args);
+
+	thread->setFileOutputSetting(triExe, fileArgs, polyFileName, workFolder);
+
+	return thread;
+}
+
 void clearOutputIO(triangulateio* out)
 {
 	out->pointlist = NULL;
@@ -283,35 +317,15 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	clearOutputIO(&out);
 
-	QString argstr;
-	argstr.append("p");
-	if (m_angleConstraint) {
-		argstr.append(QString("q%1").arg(m_angle));
-	}
-	if (m_areaConstraint || m_remeshPolygons.count() > 0) {
-		argstr.append("a");
-	}
-	argstr.append("D");
-	char* arg = new char[argstr.length() + 1];
-	strcpy(arg, iRIC::toStr(argstr).c_str());
+	auto di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(m_conditionDataItem->parent());
+	QString polyFileName = QString("%1.poly").arg(di->zoneName().c_str());
 
-	TriangleExecuteThread* thread = new TriangleExecuteThread(this);
-
-	thread->setArgs(arg);
+	TriangleExecuteThread* thread = setupTriangleThread(
+				m_angleConstraint, m_angle, m_areaConstraint, m_remeshPolygons.size() > 0,
+				di, projectData());
 	thread->setIOs(&in, &out);
 
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(m_conditionDataItem->parent());
-	std::string zoneName = di->zoneName();
-
-	QString triExe = iRICRootPath::get().append("/triangle.exe");
-	QString workFolder = projectData()->workDirectory();
-	QString polyFileName = QString("%1.poly").arg(zoneName.c_str());
-	QString fileArgs = "-ve";
-	fileArgs.append(argstr);
-
-	thread->setFileOutputSetting(triExe, fileArgs, polyFileName, workFolder);
-
-	outputTriangleInputToFile(in, QString("%1/%2").arg(workFolder).arg(polyFileName));
+	outputTriangleInputToFile(in, QString("%1/%2").arg(projectData()->workDirectory()).arg(polyFileName));
 
 	// start execution!
 	thread->start();
@@ -342,7 +356,6 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	delete thread;
 
 	// free memory
-	delete arg;
 	freeInputIO(in);
 
 	if (m_canceled) {
