@@ -19,6 +19,7 @@
 #include "private/gridcreatingconditiontriangle_movepolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_movepolylinecommand.h"
 #include "private/gridcreatingconditiontriangle_movepolylinevertexcommand.h"
+#include "private/gridcreatingconditiontriangle_removepolygonvertexcommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -333,75 +334,6 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 		break;
 	}
 }
-
-class GridCreatingConditionTriangle::RemovePolygonVertexCommand : public QUndoCommand
-{
-public:
-	RemovePolygonVertexCommand(vtkIdType vertexId, GridCreatingConditionTriangle* pol) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Remove Polygon Vertex")}
-	{
-		m_vertexId = vertexId;
-		double p[3];
-		pol->m_selectedPolygon->getVtkPolygon()->GetPoints()->GetPoint(m_vertexId, p);
-		m_vertexPosition = QVector2D(p[0], p[1]);
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-private:
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleAbstractPolygon* m_targetPolygon;
-};
 
 class GridCreatingConditionTriangle::RemovePolyLineVertexCommand : public QUndoCommand
 {
