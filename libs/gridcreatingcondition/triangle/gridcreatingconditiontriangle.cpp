@@ -8,6 +8,8 @@
 #include "gridcreatingconditiontriangleremeshpolygon.h"
 #include "gridcreatingconditiontrianglesettingdialog.h"
 
+#include "private/gridcreatingconditiontriangle_addremeshpolygoncommand.h"
+
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/qundocommandhelper.h>
@@ -2088,50 +2090,6 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	return grid;
 }
-
-class GridCreatingConditionTriangle::AddRemeshPolygonCommand : public QUndoCommand
-{
-public:
-	AddRemeshPolygonCommand(GridCreatingConditionTriangleRemeshPolygon* newPoly, GridCreatingConditionTriangle* pol) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Add New Remesh Polygon")}
-	{
-		m_polygon = pol;
-		m_targetPolygon = newPoly;
-		m_undoed = false;
-	}
-	virtual ~AddRemeshPolygonCommand() {
-		if (m_undoed) {
-//			delete m_targetPolygon;
-		}
-	}
-	void redo() {
-		m_polygon->deselectAll();
-
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
-		m_polygon->m_selectMode = GridCreatingConditionTriangle::smPolygon;
-		m_targetPolygon->setActive(true);
-		m_polygon->m_selectedPolygon = m_targetPolygon;
-		m_polygon->m_remeshPolygons.append(m_targetPolygon);
-		m_polygon->updateActionStatus();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->renderGraphicsView();
-		m_undoed = false;
-	}
-	void undo() {
-		m_polygon->deselectAll();
-
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
-		m_polygon->m_remeshPolygons.removeOne(m_targetPolygon);
-		m_polygon->updateActionStatus();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->renderGraphicsView();
-		m_undoed = true;
-	}
-private:
-	bool m_undoed;
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleRemeshPolygon* m_targetPolygon;
-};
 
 void GridCreatingConditionTriangle::addRefinementPolygon()
 {
