@@ -117,7 +117,8 @@ HEADERS += gcc_triangle_global.h \
            private/gridcreatingconditiontriangle_movepolygonvertexcommand.h \
            private/gridcreatingconditiontriangle_movepolylinecommand.h \
            private/gridcreatingconditiontriangle_movepolylinevertexcommand.h \
-           private/gridcreatingconditiontriangle_removepolygonvertexcommand.h
+           private/gridcreatingconditiontriangle_removepolygonvertexcommand.h \
+           private/gridcreatingconditiontriangle_removepolylinevertexcommand.h
 FORMS += gridcreatingconditiontrianglepolygoncoordinateseditdialog.ui \
          gridcreatingconditiontrianglepolylinecoordinateseditdialog.ui \
          gridcreatingconditiontriangleremeshdialog.ui \
@@ -145,7 +146,8 @@ SOURCES += gridcreatingconditioncreatortriangle.cpp \
            private/gridcreatingconditiontriangle_movepolygonvertexcommand.cpp \
            private/gridcreatingconditiontriangle_movepolylinecommand.cpp \
            private/gridcreatingconditiontriangle_movepolylinevertexcommand.cpp \
-           private/gridcreatingconditiontriangle_removepolygonvertexcommand.cpp
+           private/gridcreatingconditiontriangle_removepolygonvertexcommand.cpp \
+           private/gridcreatingconditiontriangle_removepolylinevertexcommand.cpp
 TRANSLATIONS += languages/iricGccTriangle_es_ES.ts \
                 languages/iricGccTriangle_fr_FR.ts \
                 languages/iricGccTriangle_id_ID.ts \
