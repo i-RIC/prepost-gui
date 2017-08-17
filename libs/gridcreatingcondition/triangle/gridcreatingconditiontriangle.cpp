@@ -17,6 +17,7 @@
 #include "private/gridcreatingconditiontriangle_movepolygoncommand.h"
 #include "private/gridcreatingconditiontriangle_movepolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_movepolylinecommand.h"
+#include "private/gridcreatingconditiontriangle_movepolylinevertexcommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -275,75 +276,6 @@ void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/
 		}
 	}
 }
-
-class GridCreatingConditionTriangle::MovePolyLineVertexCommand : public QUndoCommand
-{
-public:
-	MovePolyLineVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionTriangle* pol) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Move Break Line Vertex")}
-	{
-		m_keyDown = keyDown;
-		m_vertexId = vertexId;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] += m_offset.x();
-		p[1] += m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] -= m_offset.x();
-		p[1] -= m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("PolyLineMoveVertex");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolyLineVertexCommand* comm = dynamic_cast<const MovePolyLineVertexCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetLine != m_targetLine) {return false;}
-		if (comm->m_vertexId != m_vertexId) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleAbstractLine* m_targetLine;
-	QVector2D m_offset;
-};
 
 class GridCreatingConditionTriangle::AddPolyLineVertexCommand : public QUndoCommand
 {
