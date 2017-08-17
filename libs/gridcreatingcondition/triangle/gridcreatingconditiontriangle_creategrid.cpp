@@ -44,6 +44,14 @@ void clearOutputIO(triangulateio* out)
 	out->normlist = NULL;
 }
 
+void freeInputIO(triangulateio in)
+{
+	delete in.pointlist;
+	delete in.segmentlist;
+	delete in.regionlist;
+	delete in.holelist;
+}
+
 void freeOutputIO(triangulateio out)
 {
 	if (out.pointlist != NULL) {
@@ -274,10 +282,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	// free memory
 	delete arg;
-	delete in.pointlist;
-	delete in.segmentlist;
-	delete in.regionlist;
-	delete in.holelist;
+	freeInputIO(in);
 
 	if (m_canceled) {
 		freeOutputIO(out);
