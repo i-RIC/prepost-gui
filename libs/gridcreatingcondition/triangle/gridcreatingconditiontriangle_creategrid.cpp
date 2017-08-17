@@ -44,6 +44,17 @@ void clearOutputIO(triangulateio* out)
 	out->normlist = NULL;
 }
 
+WaitDialog* setupWaitDialog(QWidget* parent, int progress)
+{
+	WaitDialog* dialog = new WaitDialog(parent);
+	dialog->showProgressBar();
+	dialog->setRange(0, 100);
+	dialog->setUnknownLimitMode(300);
+	dialog->setProgress(progress);
+	dialog->setMessage(tr("Generating grid..."));
+	return dialog;
+}
+
 void outputTriangleInputToFile(triangulateio in, const QString& filename)
 {
 	QFile f(filename);
@@ -296,12 +307,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	if (! finished) {
 		int prog = 10;
 		// Not finished yet. Show wait dialog.
-		WaitDialog* waitDialog = new WaitDialog(preProcessorWindow());
-		waitDialog->showProgressBar();
-		waitDialog->setRange(0, 100);
-		waitDialog->setUnknownLimitMode(300);
-		waitDialog->setProgress(prog);
-		waitDialog->setMessage(tr("Generating grid..."));
+		WaitDialog* waitDialog = setupWaitDialog(preProcessorWindow(), prog);
 		connect(waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
 		waitDialog->show();
 		while (! finished && ! m_canceled) {
