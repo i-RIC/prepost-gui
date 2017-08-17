@@ -8,6 +8,7 @@
 #include "gridcreatingconditiontriangleremeshpolygon.h"
 #include "gridcreatingconditiontrianglesettingdialog.h"
 
+#include "private/gridcreatingconditiontriangle_adddivisionlinecommand.h"
 #include "private/gridcreatingconditiontriangle_addholepolygoncommand.h"
 #include "private/gridcreatingconditiontriangle_addpolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_addpolylinevertexcommand.h"
@@ -1341,50 +1342,6 @@ void GridCreatingConditionTriangle::addHolePolygon()
 	iRICUndoStack::instance().push(new AddHolePolygonCommand(pol, this));
 	InformationDialog::information(preProcessorWindow(), GridCreatingConditionTriangle::tr("Information"), GridCreatingConditionTriangle::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
 }
-
-class GridCreatingConditionTriangle::AddDivisionLineCommand : public QUndoCommand
-{
-public:
-	AddDivisionLineCommand(GridCreatingConditionTriangleDivisionLine* newLine, GridCreatingConditionTriangle* pol) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Add New Break Line")}
-	{
-		m_polygon = pol;
-		m_targetLine = newLine;
-		m_undoed = false;
-	}
-	virtual ~AddDivisionLineCommand() {
-		if (m_undoed) {
-//			delete m_targetLine;
-		}
-	}
-	void redo() {
-		m_polygon->deselectAll();
-
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
-		m_polygon->m_selectMode = GridCreatingConditionTriangle::smLine;
-		m_targetLine->setActive(true);
-		m_polygon->m_selectedLine = m_targetLine;
-		m_polygon->m_divisionLines.append(m_targetLine);
-		m_polygon->updateActionStatus();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->renderGraphicsView();
-		m_undoed = false;
-	}
-	void undo() {
-		m_polygon->deselectAll();
-
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
-		m_polygon->m_divisionLines.removeOne(m_targetLine);
-		m_polygon->updateActionStatus();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->renderGraphicsView();
-		m_undoed = true;
-	}
-private:
-	bool m_undoed;
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleDivisionLine* m_targetLine;
-};
 
 void GridCreatingConditionTriangle::redivideBreakline()
 {
