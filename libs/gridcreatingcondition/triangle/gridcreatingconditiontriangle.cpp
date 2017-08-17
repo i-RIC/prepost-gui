@@ -8,6 +8,7 @@
 #include "gridcreatingconditiontriangleremeshpolygon.h"
 #include "gridcreatingconditiontrianglesettingdialog.h"
 
+#include "private/gridcreatingconditiontriangle_addholepolygoncommand.h"
 #include "private/gridcreatingconditiontriangle_addpolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_addpolylinevertexcommand.h"
 #include "private/gridcreatingconditiontriangle_addremeshpolygoncommand.h"
@@ -1322,50 +1323,6 @@ void GridCreatingConditionTriangle::addRefinementPolygon()
 	iRICUndoStack::instance().push(new AddRemeshPolygonCommand(pol, this));
 	InformationDialog::information(preProcessorWindow(), GridCreatingConditionTriangle::tr("Information"), GridCreatingConditionTriangle::tr("Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addrefinementpolygon");
 }
-
-class GridCreatingConditionTriangle::AddHolePolygonCommand : public QUndoCommand
-{
-public:
-	AddHolePolygonCommand(GridCreatingConditionTriangleHolePolygon* newPoly, GridCreatingConditionTriangle* pol) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Add New Hole Polygon")}
-	{
-		m_polygon = pol;
-		m_targetPolygon = newPoly;
-		m_undoed = false;
-	}
-	virtual ~AddHolePolygonCommand() {
-		if (m_undoed) {
-//			delete m_targetPolygon;
-		}
-	}
-	void redo() {
-		m_polygon->deselectAll();
-
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
-		m_polygon->m_selectMode = GridCreatingConditionTriangle::smPolygon;
-		m_targetPolygon->setActive(true);
-		m_polygon->m_selectedPolygon = m_targetPolygon;
-		m_polygon->m_holePolygons.append(m_targetPolygon);
-		m_polygon->updateActionStatus();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->renderGraphicsView();
-		m_undoed = false;
-	}
-	void undo() {
-		m_polygon->deselectAll();
-
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
-		m_polygon->m_holePolygons.removeOne(m_targetPolygon);
-		m_polygon->updateActionStatus();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->renderGraphicsView();
-		m_undoed = true;
-	}
-private:
-	bool m_undoed;
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleHolePolygon* m_targetPolygon;
-};
 
 void GridCreatingConditionTriangle::addHolePolygon()
 {
