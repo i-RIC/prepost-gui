@@ -9,6 +9,7 @@
 #include "gridcreatingconditiontrianglesettingdialog.h"
 
 #include "private/gridcreatingconditiontriangle_addremeshpolygoncommand.h"
+#include "private/gridcreatingconditiontriangle_finishpolygondefiningcommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -240,33 +241,6 @@ void GridCreatingConditionTriangle::viewOperationEnded(PreProcessorGraphicsViewI
 {
 	updateMouseCursor(v);
 }
-
-class GridCreatingConditionTriangle::FinishPolygonDefiningCommand : public QUndoCommand
-{
-public:
-	FinishPolygonDefiningCommand(GridCreatingConditionTriangle* polygon) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Finish Defining Polygon")}
-	{
-		m_polygon = polygon;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void undo() {
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meDefining;
-		m_polygon->m_selectedPolygon = m_targetPolygon;
-		m_polygon->m_selectedPolygon->setActive(true);
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->updateActionStatus();
-	}
-	void redo() {
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
-		m_targetPolygon->finishDefinition();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->updateActionStatus();
-	}
-private:
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleAbstractPolygon* m_targetPolygon;
-};
 
 class GridCreatingConditionTriangle::FinishPolyLineDefiningCommand : public QUndoCommand
 {
