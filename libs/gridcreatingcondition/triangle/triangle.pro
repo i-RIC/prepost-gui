@@ -105,7 +105,22 @@ HEADERS += gcc_triangle_global.h \
            gridcreatingconditiontrianglepolylinecoordinateseditdialog.h \
            gridcreatingconditiontriangleremeshdialog.h \
            gridcreatingconditiontriangleremeshpolygon.h \
-           gridcreatingconditiontrianglesettingdialog.h
+           gridcreatingconditiontrianglesettingdialog.h \
+           private/gridcreatingconditiontriangle_adddivisionlinecommand.h \
+           private/gridcreatingconditiontriangle_addholepolygoncommand.h \
+           private/gridcreatingconditiontriangle_addpolygonvertexcommand.h \
+           private/gridcreatingconditiontriangle_addpolylinevertexcommand.h \
+           private/gridcreatingconditiontriangle_addremeshpolygoncommand.h \
+           private/gridcreatingconditiontriangle_definepolygonnewpointcommand.h \
+           private/gridcreatingconditiontriangle_definepolylinenewpointcommand.h \
+           private/gridcreatingconditiontriangle_finishpolygondefiningcommand.h \
+           private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.h \
+           private/gridcreatingconditiontriangle_movepolygoncommand.h \
+           private/gridcreatingconditiontriangle_movepolygonvertexcommand.h \
+           private/gridcreatingconditiontriangle_movepolylinecommand.h \
+           private/gridcreatingconditiontriangle_movepolylinevertexcommand.h \
+           private/gridcreatingconditiontriangle_removepolygonvertexcommand.h \
+           private/gridcreatingconditiontriangle_removepolylinevertexcommand.h
 FORMS += gridcreatingconditiontrianglepolygoncoordinateseditdialog.ui \
          gridcreatingconditiontrianglepolylinecoordinateseditdialog.ui \
          gridcreatingconditiontriangleremeshdialog.ui \
@@ -121,7 +136,22 @@ SOURCES += gridcreatingconditioncreatortriangle.cpp \
            gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp \
            gridcreatingconditiontriangleremeshdialog.cpp \
            gridcreatingconditiontriangleremeshpolygon.cpp \
-           gridcreatingconditiontrianglesettingdialog.cpp
+           gridcreatingconditiontrianglesettingdialog.cpp \
+           private/gridcreatingconditiontriangle_adddivisionlinecommand.cpp \
+           private/gridcreatingconditiontriangle_addholepolygoncommand.cpp \
+           private/gridcreatingconditiontriangle_addpolygonvertexcommand.cpp \
+           private/gridcreatingconditiontriangle_addpolylinevertexcommand.cpp \
+           private/gridcreatingconditiontriangle_addremeshpolygoncommand.cpp \
+           private/gridcreatingconditiontriangle_definepolygonnewpointcommand.cpp \
+           private/gridcreatingconditiontriangle_definepolylinenewpointcommand.cpp \
+           private/gridcreatingconditiontriangle_finishpolygondefiningcommand.cpp \
+           private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.cpp \
+           private/gridcreatingconditiontriangle_movepolygoncommand.cpp \
+           private/gridcreatingconditiontriangle_movepolygonvertexcommand.cpp \
+           private/gridcreatingconditiontriangle_movepolylinecommand.cpp \
+           private/gridcreatingconditiontriangle_movepolylinevertexcommand.cpp \
+           private/gridcreatingconditiontriangle_removepolygonvertexcommand.cpp \
+           private/gridcreatingconditiontriangle_removepolylinevertexcommand.cpp
 TRANSLATIONS += languages/iricGccTriangle_es_ES.ts \
                 languages/iricGccTriangle_fr_FR.ts \
                 languages/iricGccTriangle_id_ID.ts \
