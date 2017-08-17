@@ -62,6 +62,42 @@ void freeOutputIO(triangulateio out)
 	}
 }
 
+void setupGridFromTriangleOutput(triangulateio out, const QPointF offset, Unstructured2DGrid* grid)
+{
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->Allocate(out.numberofpoints);
+	points->SetDataTypeToDouble();
+	for (int i = 0; i < out.numberofpoints; ++i) {
+		double v[3];
+		v[0] = *(out.pointlist + i * 2) + offset.x();
+		v[1] = *(out.pointlist + i * 2 + 1) + offset.y();
+		v[2] = 0;
+		points->InsertNextPoint(v);
+	}
+	grid->vtkGrid()->SetPoints(points);
+
+	grid->vtkGrid()->Allocate(out.numberoftriangles);
+	for (int i = 0; i < out.numberoftriangles; ++i) {
+		vtkIdType id1, id2, id3;
+		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
+		id1 = *(out.trianglelist + i * 3) - 1;
+		id2 = *(out.trianglelist + i * 3 + 1) - 1;
+		id3 = *(out.trianglelist + i * 3 + 2) - 1;
+		tri->GetPointIds()->SetId(0, id1);
+		tri->GetPointIds()->SetId(1, id2);
+		tri->GetPointIds()->SetId(2, id3);
+		grid->vtkGrid()->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
+	}
+
+	// allocate memory for all grid related conditions.
+	QList<GridAttributeContainer*>& clist = grid->gridAttributes();
+	for (GridAttributeContainer* container: clist) {
+		container->allocate();
+	}
+	grid->setModified();
+	grid->vtkGrid()->BuildLinks();
+}
+
 } // namespace
 
 Grid* GridCreatingConditionTriangle::createGrid()
@@ -288,40 +324,8 @@ Grid* GridCreatingConditionTriangle::createGrid()
 		freeOutputIO(out);
 		return nullptr;
 	}
-	// copy the result to VTK containers.
-	vtkPoints* points = vtkPoints::New();
-	points->Allocate(out.numberofpoints);
-	points->SetDataTypeToDouble();
-	for (int i = 0; i < out.numberofpoints; ++i) {
-		double v[3];
-		v[0] = *(out.pointlist + i * 2) + offset.x();
-		v[1] = *(out.pointlist + i * 2 + 1) + offset.y();
-		v[2] = 0;
-		points->InsertNextPoint(v);
-	}
-	grid->vtkGrid()->SetPoints(points);
 
-	grid->vtkGrid()->Allocate(out.numberoftriangles);
-	for (int i = 0; i < out.numberoftriangles; ++i) {
-		vtkIdType id1, id2, id3;
-		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-		id1 = *(out.trianglelist + i * 3) - 1;
-		id2 = *(out.trianglelist + i * 3 + 1) - 1;
-		id3 = *(out.trianglelist + i * 3 + 2) - 1;
-		tri->GetPointIds()->SetId(0, id1);
-		tri->GetPointIds()->SetId(1, id2);
-		tri->GetPointIds()->SetId(2, id3);
-		grid->vtkGrid()->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
-	}
-
-	// allocate memory for all grid related conditions.
-	QList<GridAttributeContainer*>& clist = grid->gridAttributes();
-	for (auto it = clist.begin(); it != clist.end(); ++it) {
-		(*it)->allocate();
-	}
-	grid->setModified();
-	grid->vtkGrid()->BuildLinks();
-
+	setupGridFromTriangleOutput(out, offset, grid);
 	freeOutputIO(out);
 
 	return grid;
