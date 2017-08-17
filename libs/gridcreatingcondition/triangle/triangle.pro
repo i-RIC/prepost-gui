@@ -109,6 +109,7 @@ HEADERS += gcc_triangle_global.h \
            private/gridcreatingconditiontriangle_addpolygonvertexcommand.h \
            private/gridcreatingconditiontriangle_addremeshpolygoncommand.h \
            private/gridcreatingconditiontriangle_definepolygonnewpointcommand.h \
+           private/gridcreatingconditiontriangle_definepolylinenewpointcommand.h \
            private/gridcreatingconditiontriangle_finishpolygondefiningcommand.h \
            private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.h \
            private/gridcreatingconditiontriangle_movepolygoncommand.h \
@@ -132,6 +133,7 @@ SOURCES += gridcreatingconditioncreatortriangle.cpp \
            private/gridcreatingconditiontriangle_addpolygonvertexcommand.cpp \
            private/gridcreatingconditiontriangle_addremeshpolygoncommand.cpp \
            private/gridcreatingconditiontriangle_definepolygonnewpointcommand.cpp \
+           private/gridcreatingconditiontriangle_definepolylinenewpointcommand.cpp \
            private/gridcreatingconditiontriangle_finishpolygondefiningcommand.cpp \
            private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.cpp \
            private/gridcreatingconditiontriangle_movepolygoncommand.cpp \

@@ -11,6 +11,7 @@
 #include "private/gridcreatingconditiontriangle_addpolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_addremeshpolygoncommand.h"
 #include "private/gridcreatingconditiontriangle_definepolygonnewpointcommand.h"
+#include "private/gridcreatingconditiontriangle_definepolylinenewpointcommand.h"
 #include "private/gridcreatingconditiontriangle_finishpolygondefiningcommand.h"
 #include "private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.h"
 #include "private/gridcreatingconditiontriangle_movepolygoncommand.h"
@@ -273,75 +274,6 @@ void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/
 		}
 	}
 }
-
-class GridCreatingConditionTriangle::DefinePolyLineNewPointCommand : public QUndoCommand
-{
-public:
-	DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionTriangle* cond) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Add New Break Line Point")}
-	{
-		m_keyDown = keyDown;
-		double dx = point.x();
-		double dy = point.y();
-		cond->graphicsView()->viewportToWorld(dx, dy);
-		m_newPoint = QVector2D(dx, dy);
-		m_condition = cond;
-		m_targetLine = m_condition->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown) {
-			// add new point.
-			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 0) {
-				m_condition->m_mouseEventMode = GridCreatingConditionTriangle::meDefining;
-			}
-			line->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-			line->GetPoints()->Modified();
-		} else {
-			// modify the last point.
-			vtkIdType lastId = line->GetNumberOfPoints() - 1;
-			line->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-			line->GetPoints()->Modified();
-		}
-		line->Modified();
-		m_targetLine->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown) {
-			// decrease the number of points. i. e. remove the last point.
-			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 1) {
-				m_condition->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
-			}
-			line->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-			line->GetPoints()->Modified();
-		} else {
-			// this does not happen. no implementation needed.
-		}
-		line->Modified();
-		m_targetLine->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionTrianglePolyLineDefineNewPoint");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const DefinePolyLineNewPointCommand* comm = dynamic_cast<const DefinePolyLineNewPointCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_condition != m_condition) {return false;}
-		m_newPoint = comm->m_newPoint;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GridCreatingConditionTriangle* m_condition;
-	GridCreatingConditionTriangleAbstractLine* m_targetLine;
-	QVector2D m_newPoint;
-};
 
 class GridCreatingConditionTriangle::MovePolyLineCommand : public QUndoCommand
 {
