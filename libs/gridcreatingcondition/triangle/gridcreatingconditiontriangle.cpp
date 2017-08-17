@@ -10,6 +10,7 @@
 
 #include "private/gridcreatingconditiontriangle_addremeshpolygoncommand.h"
 #include "private/gridcreatingconditiontriangle_finishpolygondefiningcommand.h"
+#include "private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -241,34 +242,6 @@ void GridCreatingConditionTriangle::viewOperationEnded(PreProcessorGraphicsViewI
 {
 	updateMouseCursor(v);
 }
-
-class GridCreatingConditionTriangle::FinishPolyLineDefiningCommand : public QUndoCommand
-{
-public:
-	FinishPolyLineDefiningCommand(GridCreatingConditionTriangle* polygon) :
-		QUndoCommand {GridCreatingConditionTriangle::tr("Finish Defining Break Line")}
-	{
-		m_polygon = polygon;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void undo() {
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meDefining;
-		m_polygon->m_selectMode = GridCreatingConditionTriangle::smLine;
-		m_polygon->m_selectedLine = m_targetLine;
-		m_polygon->m_selectedLine->setActive(true);
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->updateActionStatus();
-	}
-	void redo() {
-		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
-		m_targetLine->finishDefinition();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->updateActionStatus();
-	}
-private:
-	GridCreatingConditionTriangle* m_polygon;
-	GridCreatingConditionTriangleAbstractLine* m_targetLine;
-};
 
 void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
