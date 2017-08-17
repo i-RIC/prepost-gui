@@ -44,6 +44,32 @@ void clearOutputIO(triangulateio* out)
 	out->normlist = NULL;
 }
 
+void outputTriangleInputToFile(triangulateio in, const QString& filename)
+{
+	QFile f(filename);
+	f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text);
+	QTextStream o(&f);
+	o.setRealNumberPrecision(20);
+	o.setRealNumberNotation(QTextStream::ScientificNotation);
+	o << in.numberofpoints << " 2 0 0\n";
+	for (int i = 0; i < in.numberofpoints; ++i) {
+		o << i + 1 << " " << *(in.pointlist + i * 2) << " " << *(in.pointlist + i * 2 + 1) << "\n";
+	}
+	o << in.numberofsegments << " 0\n";
+	for (int i = 0; i < in.numberofsegments; ++i) {
+		o << i + 1 << " " << *(in.segmentlist + i * 2) << " " << *(in.segmentlist + i * 2 + 1) << "\n";
+	}
+	o << in.numberofholes << "\n";
+	for (int i = 0; i < in.numberofholes; ++i) {
+		o << i + 1 << " " << *(in.holelist + i * 2) << " " << *(in.holelist + i * 2 + 1) << "\n";
+	}
+	o << in.numberofregions << "\n";
+	for (int i = 0; i < in.numberofregions; ++i) {
+		o << i + 1 << " " << *(in.regionlist + i * 4) << " " << *(in.regionlist + i * 4 + 1) << " " << *(in.regionlist + i * 4 + 2) << " " << *(in.regionlist + i * 4 + 3) << "\n";
+	}
+	f.close();
+}
+
 void freeInputIO(triangulateio in)
 {
 	delete in.pointlist;
@@ -259,29 +285,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	thread->setFileOutputSetting(triExe, fileArgs, polyFileName, workFolder);
 
-	// file output.
-	QFile f(QString("%1/%2").arg(workFolder).arg(polyFileName));
-	f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text);
-	QTextStream o(&f);
-	o.setRealNumberPrecision(20);
-	o.setRealNumberNotation(QTextStream::ScientificNotation);
-	o << in.numberofpoints << " 2 0 0\n";
-	for (int i = 0; i < in.numberofpoints; ++i) {
-		o << i + 1 << " " << *(in.pointlist + i * 2) << " " << *(in.pointlist + i * 2 + 1) << "\n";
-	}
-	o << in.numberofsegments << " 0\n";
-	for (int i = 0; i < in.numberofsegments; ++i) {
-		o << i + 1 << " " << *(in.segmentlist + i * 2) << " " << *(in.segmentlist + i * 2 + 1) << "\n";
-	}
-	o << in.numberofholes << "\n";
-	for (int i = 0; i < in.numberofholes; ++i) {
-		o << i + 1 << " " << *(in.holelist + i * 2) << " " << *(in.holelist + i * 2 + 1) << "\n";
-	}
-	o << in.numberofregions << "\n";
-	for (int i = 0; i < in.numberofregions; ++i) {
-		o << i + 1 << " " << *(in.regionlist + i * 4) << " " << *(in.regionlist + i * 4 + 1) << " " << *(in.regionlist + i * 4 + 2) << " " << *(in.regionlist + i * 4 + 3) << "\n";
-	}
-	f.close();
+	outputTriangleInputToFile(in, QString("%1/%2").arg(workFolder).arg(polyFileName));
 
 	// start execution!
 	thread->start();
