@@ -20,7 +20,7 @@ public:
 	/// @name Functions to setup triangle running conditions
 	//@{
 	void setIOs(triangulateio* in, triangulateio* out);
-	void setArgs(char* args);
+	void setArgs(const QString& args);
 	void setFileOutputSetting(const QString& exeFile, const QString& args, const QString& filename, const QString& workFolder);
 	//@}
 
