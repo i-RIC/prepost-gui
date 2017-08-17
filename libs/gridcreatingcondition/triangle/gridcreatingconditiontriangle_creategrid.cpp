@@ -43,6 +43,17 @@ void clearOutputIO(triangulateio* out)
 	out->edgemarkerlist = NULL;
 	out->normlist = NULL;
 }
+
+void freeOutputIO(triangulateio out)
+{
+	if (out.pointlist != NULL) {
+		trifree(out.pointlist);
+	}
+	if (out.trianglelist != NULL) {
+		trifree(out.trianglelist);
+	}
+}
+
 } // namespace
 
 Grid* GridCreatingConditionTriangle::createGrid()
@@ -269,12 +280,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	delete in.holelist;
 
 	if (m_canceled) {
-		if (out.pointlist != NULL) {
-			trifree(out.pointlist);
-		}
-		if (out.trianglelist != NULL) {
-			trifree(out.trianglelist);
-		}
+		freeOutputIO(out);
 		return nullptr;
 	}
 	// copy the result to VTK containers.
@@ -310,12 +316,8 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	}
 	grid->setModified();
 	grid->vtkGrid()->BuildLinks();
-	if (out.pointlist != NULL) {
-		trifree(out.pointlist);
-	}
-	if (out.trianglelist != NULL) {
-		trifree(out.trianglelist);
-	}
+
+	freeOutputIO(out);
 
 	return grid;
 }
