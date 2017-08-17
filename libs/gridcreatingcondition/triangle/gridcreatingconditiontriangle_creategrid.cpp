@@ -24,6 +24,27 @@
 
 #include <vtkTriangle.h>
 
+namespace {
+
+void clearOutputIO(triangulateio* out)
+{
+	out->pointlist = NULL;
+	out->pointattributelist = NULL;
+	out->pointmarkerlist = NULL;
+	out->trianglelist = NULL;
+	out->triangleattributelist = NULL;
+	out->trianglearealist = NULL;
+	out->neighborlist = NULL;
+	out->segmentlist = NULL;
+	out->segmentmarkerlist = NULL;
+	out->holelist = NULL;
+	out->regionlist = NULL;
+	out->edgelist = NULL;
+	out->edgemarkerlist = NULL;
+	out->normlist = NULL;
+}
+} // namespace
+
 Grid* GridCreatingConditionTriangle::createGrid()
 {
 	Unstructured2DGrid* grid = new Unstructured2DGrid(nullptr);
@@ -153,20 +174,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 		sOffset += (l.count() - 1);
 	}
 
-	out.pointlist = NULL;
-	out.pointattributelist = NULL;
-	out.pointmarkerlist = NULL;
-	out.trianglelist = NULL;
-	out.triangleattributelist = NULL;
-	out.trianglearealist = NULL;
-	out.neighborlist = NULL;
-	out.segmentlist = NULL;
-	out.segmentmarkerlist = NULL;
-	out.holelist = NULL;
-	out.regionlist = NULL;
-	out.edgelist = NULL;
-	out.edgemarkerlist = NULL;
-	out.normlist = NULL;
+	clearOutputIO(&out);
 
 	QString argstr;
 	argstr.append("p");
