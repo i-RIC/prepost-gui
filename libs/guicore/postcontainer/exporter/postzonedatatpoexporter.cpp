@@ -3,6 +3,7 @@
 
 #include <QFile>
 #include <QTextStream>
+#include <QVector2D>
 
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
@@ -87,11 +88,22 @@ QString PostZoneDataTpoExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*) const
+bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* projectdata, const QVector2D& offset) const
 {
 	QString componentName;
 
-	vtkPointSet* ps = c->data();
+	vtkSmartPointer<vtkStructuredGrid> target_sgrid;
+	vtkSmartPointer<vtkUnstructuredGrid> target_ugrid;
+	vtkPointSet* ps = nullptr;
+
+	vtkStructuredGrid* source_sgrid = vtkStructuredGrid::SafeDownCast(c->data());
+	vtkUnstructuredGrid* source_ugrid = vtkUnstructuredGrid::SafeDownCast(c->data());
+
+	if (source_sgrid != nullptr) {
+		ps = applyOffset<vtkStructuredGrid>(source_sgrid, target_sgrid, offset);
+	} else if (source_ugrid != nullptr) {
+		ps = applyOffset<vtkUnstructuredGrid>(source_ugrid, target_ugrid, offset);
+	}
 	vtkPointData* pd = ps->GetPointData();
 	bool ok;
 	for (int i = 0; i < pd->GetNumberOfArrays(); ++i){
