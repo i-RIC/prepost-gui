@@ -302,6 +302,7 @@ HEADERS += guicore_global.h \
            postcontainer/exporter/postzonedatacsvexporter.h \
            postcontainer/exporter/postzonedataexporter.h \
            postcontainer/exporter/postzonedatashapeexporter.h \
+           postcontainer/exporter/postzonedatatpoexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
            pre/base/preprocessordataitem.h \
            pre/base/preprocessordatamodelinterface.h \
@@ -616,6 +617,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            misc/targeted/targeteditemsettargetcommandtool.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \
            postcontainer/exporter/postzonedatashapeexporter.cpp \
+           postcontainer/exporter/postzonedatatpoexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \
            pre/base/preprocessordataitem.cpp \
            pre/base/preprocessordatamodelinterface.cpp \

@@ -16,7 +16,7 @@ class GUICOREDLL_EXPORT PostDataExportDialog : public QDialog
 	Q_OBJECT
 
 public:
-	enum class Format {VTKASCII, VTKBinary, CSV, ESRIShape};
+	enum class Format {VTKASCII, VTKBinary, CSV, TPO, ESRIShape};
 	explicit PostDataExportDialog(QWidget* parent = nullptr);
 	~PostDataExportDialog();
 	void setTimeValues(QList<double> timevalues);
