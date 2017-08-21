@@ -715,13 +715,14 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 			m_riverSurveyColors.append(colorMap.value(geodata, m_colorSource->getColor(i)));
 		}
 	}
+	if (m_riverSurveys.count() == 0) {
+		m_projectDataItem->requestWindowClose();
+		return;
+	}
+
 	int index = m_riverSurveys.indexOf(m_targetRiverSurvey);
 	if (index == -1) {
-		if (m_riverSurveys.count() == 0) {
-			m_targetRiverSurvey = nullptr;
-		} else {
-			m_targetRiverSurvey = m_riverSurveys[0];
-		}
+		m_targetRiverSurvey = m_riverSurveys[0];
 	}
 	updateRiverPathPoints();
 	updateSurveysTable();
