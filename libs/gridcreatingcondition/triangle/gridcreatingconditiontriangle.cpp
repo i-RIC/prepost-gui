@@ -33,6 +33,8 @@
 #include <triangle/triangle.h>
 
 #include <geos/geom/LinearRing.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/CoordinateSequenceFactory.h> 
 
 #include <QAction>
 #include <QApplication>
@@ -68,8 +70,19 @@ namespace {
 
 geos::geom::LinearRing* createRingFromPolygon(const QPolygonF& pol)
 {
-	// Leon, please implement this function.
-	return nullptr;
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	std::vector< geos::geom::Coordinate >* coordsLRing=new std::vector< geos::geom::Coordinate >();
+
+	for (int i = 0; i < pol.size(); i++) {
+		coordsLRing->push_back(geos::geom::Coordinate(pol[i].x(), pol[i].y(), 0.0));
+	}
+
+	const geos::geom::CoordinateSequenceFactory* csFactory = factory->getCoordinateSequenceFactory();
+	geos::geom::CoordinateSequence* csLRing = csFactory->create(coordsLRing);
+
+	geos::geom::LinearRing* lring = factory->createLinearRing(csLRing);
+
+	return lring;
 }
 
 bool ringsIntersect(const QPolygonF& pol1, const QPolygonF pol2)
