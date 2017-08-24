@@ -275,7 +275,7 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	// show pre-processor window first.
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 	pre->setupDefaultGeometry();
-	pre->parentWidget()->show();
+	focusPreProcessorWindow();
 	m_actionManager->informSubWindowChange(pre);
 	m_solverConsoleWindow->setupDefaultGeometry();
 	m_solverConsoleWindow->parentWidget()->hide();
