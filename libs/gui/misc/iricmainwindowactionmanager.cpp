@@ -138,6 +138,12 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu->addAction(saveSnapshotAction);
 	connect(saveSnapshotAction, SIGNAL(triggered()), m_parent, SLOT(snapshot()));
 
+	copySnapshotAction = new QAction(tr("Copy Snapshot to Clipboard"), m_fileMenu);
+	copySnapshotAction->setIcon(QIcon(":/images/iconCopySnapshot.png"));
+	copySnapshotAction->setDisabled(true);
+	m_fileMenu->addAction(copySnapshotAction);
+	connect(copySnapshotAction, SIGNAL(triggered()), m_parent, SLOT(copySnapshot()));
+
 	saveContinuousSnapShotAction = new QAction(tr("Continuous Snapshot / Movie / Google Earth Export..."), m_fileMenu);
 	saveContinuousSnapShotAction->setIcon(QIcon(":/images/iconGoogleEarth.png"));
 	saveContinuousSnapShotAction->setDisabled(true);
@@ -674,6 +680,7 @@ void iRICMainWindowActionManager::projectFileOpen()
 	saveAsProjectAction->setEnabled(true);
 	propertyAction->setEnabled(true);
 	saveSnapshotAction->setEnabled(true);
+	copySnapshotAction->setEnabled(true);
 
 	// all import actions are enabled.
 	m_importMenu->setEnabled(true);
@@ -772,6 +779,7 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->addAction(openAction);
 	m_mainToolBar->addAction(saveAction);
 	m_mainToolBar->addAction(saveSnapshotAction);
+	m_mainToolBar->addAction(copySnapshotAction);
 	m_mainToolBar->addAction(saveContinuousSnapShotAction);
 
 	m_mainToolBar->addSeparator();
@@ -1055,7 +1063,7 @@ void iRICMainWindowActionManager::updateCameraAction(QAction* a, QWidget* w, con
 void iRICMainWindowActionManager::updateProjectionMenu(QWidget* w)
 {
 	// disconnect old connections.
-	bool status = disconnect(this, SIGNAL(updateProjectionMenuSignal(QAction*, QAction*)), 0, 0);
+	disconnect(this, SIGNAL(updateProjectionMenuSignal(QAction*, QAction*)), 0, 0);
 
 	if (connect(this, SIGNAL(updateProjectionMenuSignal(QAction*, QAction*)), w, SLOT(updateProjectionMenu(QAction*, QAction*)))) {
 		m_setProjectionToMenu->setEnabled(true);
@@ -1153,6 +1161,7 @@ void iRICMainWindowActionManager::updateMiscActions(QWidget* w)
 {
 	updateCameraAction(viewBackgroundColorAction, w, SLOT(editBackgroundColor()));
 	updateCameraAction(viewZDirectionScaleAction, w, SLOT(editZScale()));
+	updateCopySnapshotAction(w);
 	updateProjectionMenu(w);
 }
 
@@ -1160,4 +1169,13 @@ void iRICMainWindowActionManager::updateAdditionalMenus(const QList<QMenu*>& men
 {
 	m_additionalMenus = menus;
 	updateMenuBar();
+}
+
+void iRICMainWindowActionManager::updateCopySnapshotAction(QWidget* w)
+{
+	if (SolverConsoleWindow* s = dynamic_cast<SolverConsoleWindow*>(w)) {
+		copySnapshotAction->setShortcut(QKeySequence());
+	} else {
+		copySnapshotAction->setShortcut(QKeySequence(tr("Ctrl+C")));
+	}
 }

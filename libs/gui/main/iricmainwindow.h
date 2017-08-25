@@ -198,6 +198,8 @@ private slots:
 	void paste();
 	/// Take snapshot and save to Raster image (like bmp, jpeg, png).
 	void snapshot();
+	/// Copy snapshot to clipboard
+	void copySnapshot();
 	/// Take snapshot and save to SVG image.
 	void snapshotSvg();
 	/// Take continuous snapshot and save to Raster image.

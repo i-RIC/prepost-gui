@@ -75,6 +75,8 @@ public:
 	QAction* exitAction;
 	/// Action to save snapshot of current window.
 	QAction* saveSnapshotAction;
+	/// Action to copy snapshot of current window.
+	QAction* copySnapshotAction;
 	/// Action to save snapshots continuously.
 	QAction* saveContinuousSnapShotAction;
 
@@ -298,6 +300,7 @@ private:
 	void updateCameraConnections(QWidget* w);
 	void updateMiscActions(QWidget* w);
 	void updateObjectBrowserMenu(QWidget* w);
+	void updateCopySnapshotAction(QWidget* w);
 	void updateProjectionMenu(QWidget* w);
 	void updatePropertyBrowserMenu(QWidget* w);
 	static void updateCameraAction(QAction* a, QWidget* w, const char* member);
