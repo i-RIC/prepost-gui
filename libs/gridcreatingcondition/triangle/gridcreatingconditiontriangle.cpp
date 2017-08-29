@@ -48,6 +48,10 @@
 #include <triangle/triangleexecutethread.h>
 #include <triangle/triangle.h>
 
+#include <geos/geom/LinearRing.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/CoordinateSequenceFactory.h> 
+
 #include <QAction>
 #include <QApplication>
 #include <QFile>
@@ -75,6 +79,53 @@
 #include <vtkRenderer.h>
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
+
+#include <memory>
+
+namespace {
+
+geos::geom::LinearRing* createRingFromPolygon(const QPolygonF& pol)
+{
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	std::vector< geos::geom::Coordinate >* coordsLRing=new std::vector< geos::geom::Coordinate >();
+
+	for (int i = 0; i < pol.size(); i++) {
+		coordsLRing->push_back(geos::geom::Coordinate(pol[i].x(), pol[i].y(), 0.0));
+	}
+
+	const geos::geom::CoordinateSequenceFactory* csFactory = factory->getCoordinateSequenceFactory();
+	geos::geom::CoordinateSequence* csLRing = csFactory->create(coordsLRing);
+
+	geos::geom::LinearRing* lring = factory->createLinearRing(csLRing);
+
+	return lring;
+}
+
+bool ringsIntersect(const QPolygonF& pol1, const QPolygonF pol2)
+{
+	auto ring1 = std::unique_ptr<geos::geom::LinearRing> (createRingFromPolygon(pol1));
+	auto ring2 = std::unique_ptr<geos::geom::LinearRing> (createRingFromPolygon(pol2));
+
+	return ring1->intersects(ring2.get());
+}
+
+bool checkPolygonsIntersection(const QList<QPolygonF>& polygons)
+{
+	for (int i = 0; i < polygons.count(); ++i) {
+		for (int j = i + 1; j < polygons.count(); ++j) {
+			const QPolygonF& pol1 = polygons[i];
+			const QPolygonF& pol2 = polygons[j];
+
+			if (ringsIntersect(pol1, pol2)) {
+				// intersects!
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+} // namespace
 
 GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition {parent, creator}
@@ -1678,17 +1729,11 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		polygons.append(hpol->polygon());
 	}
-	for (int i = 0; i < polygons.count(); ++i) {
-		for (int j = i + 1; j < polygons.count(); ++j) {
-			QPolygonF pol1 = polygons[i];
-			QPolygonF pol2 = polygons[j];
-			if (! pol1.intersected(pol2).isEmpty()) {
-				// intersects!
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
-				return false;
-			}
-		}
+	if (! checkPolygonsIntersection(polygons)) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
+		return false;
 	}
+
 	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine();
