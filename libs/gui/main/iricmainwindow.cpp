@@ -66,6 +66,7 @@
 #include <solverconsole/solverconsolewindowprojectdataitem.h>
 
 #include <QApplication>
+#include <QClipboard>
 #include <QCryptographicHash>
 #include <QDomNode>
 #include <QDesktopWidget>
@@ -864,6 +865,24 @@ void iRICMainWindow::snapshot()
 
 	SnapshotSaver saver(this);
 	saver.save(enabledWindow);
+}
+
+void iRICMainWindow::copySnapshot()
+{
+	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
+	SnapshotEnabledWindowInterface* enabledWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
+
+	if (enabledWindow == nullptr) {
+		QMessageBox::warning(this, tr("Warning"), tr("This windows does not support snapshot function."));
+		return;
+	}
+
+	enabledWindow->setTransparent(false);
+	QPixmap pixmap = enabledWindow->snapshot();
+
+	QClipboard *clipboard = QApplication::clipboard();
+	clipboard->setPixmap(pixmap);
+	statusBar()->showMessage(tr("Copied snapshot to clipboard."), STATUSBAR_DISPLAYTIME);
 }
 
 void iRICMainWindow::snapshotSvg()
