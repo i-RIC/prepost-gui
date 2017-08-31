@@ -67,6 +67,10 @@
 #include <QInputDialog>
 #include <QXmlStreamWriter>
 
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/LinearRing.h>
+#include <geos/geom/CoordinateSequenceFactory.h> 
+
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkIdList.h>
@@ -1042,6 +1046,63 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	return true;
 }
 
+bool isInList(const QVector<QPointF>& line, const QPointF& pt) {
+	for (int i = 0; i < line.size();i++) {
+		if (line[i].x() == pt.x()) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void GridCreatingConditionTriangle::unionLines(QPolygonF& gridPol, const QVector<QPointF>& line)
+{
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	
+	std::vector< geos::geom::Coordinate > coordsLRing;
+	for (int i = 0; i < gridPol.size(); i++) {
+		coordsLRing.push_back(geos::geom::Coordinate(gridPol[i].x(), gridPol[i].y(), 0.0));
+	}
+	const geos::geom::CoordinateSequenceFactory* csFactory = factory->getCoordinateSequenceFactory();
+	geos::geom::CoordinateSequence* csLRing = csFactory->create(&coordsLRing);
+
+	std::vector< geos::geom::Coordinate > coordsBLine;
+	for (int i = 0; i < line.size(); i++) {
+		coordsBLine.push_back(geos::geom::Coordinate(line[i].x(), line[i].y(), 0.0));
+	}
+	geos::geom::CoordinateSequence* csBLine = csFactory->create(&coordsBLine);
+
+	//std::auto_ptr< geos::geom::LineString* >
+	auto breakline=factory->createLineString(csBLine);
+	//std::auto_ptr< geos::geom::Geometry >  
+	auto pol=factory->createLinearRing(csLRing);
+	auto lines = new std::vector<geos::geom::Geometry*>();
+
+	lines->push_back(pol);
+	lines->push_back(breakline);
+
+	auto collection = factory->createGeometryCollection(lines);
+
+	collection->Union();
+
+	geos::geom::CoordinateSequence* csNew=collection->getCoordinates();
+	gridPol.clear();
+	QPointF pt;
+	for (size_t i = 0; i < csNew->getSize();i++) {
+		pt.rx() = csNew->getAt(i).x;
+		pt.ry() = csNew->getAt(i).y;
+		
+		if (!isInList(line,pt)) {
+			gridPol.push_back(pt);
+		}
+	}
+	
+	//factory->destroyGeometry(pol);
+	//factory->destroyGeometry(breakline);
+	delete lines;
+	//sprintf(csNew->getSize());
+}
+
 void GridCreatingConditionTriangle::clear()
 {
 	initParams();
@@ -1696,6 +1757,7 @@ bool GridCreatingConditionTriangle::checkCondition()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region polygon shape is invalid."));
 		return false;
 	}
+	
 	QPolygonF gridPol = m_gridRegionPolygon->polygon();
 	QList<QPolygonF> polygons;
 	for (int i = 0; i < m_remeshPolygons.count(); ++i) {
@@ -1744,8 +1806,11 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		for (int j = 0; j < l.count(); ++j) {
 			if (! gridPol.containsPoint(l[j], Qt::OddEvenFill)) {
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
-				return false;
+				//QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
+				//return false;
+				unionLines(gridPol,l);
+				m_gridRegionPolygon->setPolygon(gridPol);
+				//renderGraphicsView();
 			}
 		}
 		for (int j = 0; j < l.count() - 1; ++j) {

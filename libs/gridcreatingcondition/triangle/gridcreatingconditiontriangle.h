@@ -104,6 +104,7 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
+	void unionLines(QPolygonF& gridPol, const QVector<QPointF>& line);
 	bool checkCondition();
 	void divideDivisionLine(GridCreatingConditionTriangleDivisionLine& line, int n);
 	bool selectObject(QPoint point);
