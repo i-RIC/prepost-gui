@@ -1369,6 +1369,7 @@ void GridCreatingConditionTriangle::addRefinementPolygon()
 	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setActive(false);
 	}
+	m_selectMode = smPolygon;
 	m_selectedPolygon = pol;
 	m_editMaxAreaAction->disconnect();
 	connect(m_editMaxAreaAction, SIGNAL(triggered()), pol, SLOT(editGridSize()));
