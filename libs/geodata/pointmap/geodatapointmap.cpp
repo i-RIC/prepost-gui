@@ -1222,15 +1222,12 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 	out.edgemarkerlist = NULL;
 	out.normlist = NULL;
 
-	QString argstr;
-	argstr.append("pcj");
-	std::vector<char> arg(argstr.length() + 1);
-	strcpy(arg.data(), iRIC::toStr(argstr).c_str());
+	QString args("pcj");
 
 	qDebug("Time for prepareing data for triangle():%d", time.elapsed());
 	TriangleExecuteThread* thread = new TriangleExecuteThread(this);
 
-	thread->setArgs(arg.data());
+	thread->setArgs(args);
 	thread->setIOs(&in, &out);
 
 	time.restart();

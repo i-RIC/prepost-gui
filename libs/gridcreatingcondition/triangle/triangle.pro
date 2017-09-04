@@ -131,6 +131,7 @@ FORMS += gridcreatingconditiontrianglepolygoncoordinateseditdialog.ui \
          gridcreatingconditiontrianglesettingdialog.ui
 SOURCES += gridcreatingconditioncreatortriangle.cpp \
            gridcreatingconditiontriangle.cpp \
+           gridcreatingconditiontriangle_creategrid.cpp \
            gridcreatingconditiontriangleabstractline.cpp \
            gridcreatingconditiontriangleabstractpolygon.cpp \
            gridcreatingconditiontriangledivisionline.cpp \
