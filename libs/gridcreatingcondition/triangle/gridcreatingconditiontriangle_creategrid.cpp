@@ -24,7 +24,103 @@
 
 #include <vtkTriangle.h>
 
+#include <geos/geom/Coordinate.h>
+#include <geos/geom/CoordinateSequenceFactory.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/Point.h>
+#include <geos/geom/Polygon.h>
+#include <geos/geom/LineString.h>
+#include <geos/geom/GeometryFactory.h>
+
+#include <map>
+#include <memory>
+#include <vector>
+
 namespace {
+
+geos::geom::Polygon* createPolygon(const QPolygonF& polygon)
+{
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	std::vector< geos::geom::Coordinate >* coordsLRing = new std::vector< geos::geom::Coordinate >();
+
+	for (int i = 0; i < polygon.size(); i++) {
+		coordsLRing->push_back(geos::geom::Coordinate(polygon[i].x(), polygon[i].y(), 0.0));
+	}
+
+	const geos::geom::CoordinateSequenceFactory* csFactory = factory->getCoordinateSequenceFactory();
+	geos::geom::CoordinateSequence* csLRing = csFactory->create(coordsLRing);
+
+	geos::geom::LinearRing* lring = factory->createLinearRing(csLRing);
+	std::vector<geos::geom::Geometry*>* emptyHoles = new std::vector<geos::geom::Geometry*>();
+	return factory->createPolygon(lring, emptyHoles);
+}
+
+geos::geom::LineString* createLineString(const QVector<QPointF>& polyLine)
+{
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	std::vector< geos::geom::Coordinate >* coordsLRing = new std::vector< geos::geom::Coordinate >();
+
+	for (int i = 0; i < polyLine.size(); i++) {
+		coordsLRing->push_back(geos::geom::Coordinate(polyLine[i].x(), polyLine[i].y(), 0.0));
+	}
+
+	const geos::geom::CoordinateSequenceFactory* csFactory = factory->getCoordinateSequenceFactory();
+	geos::geom::CoordinateSequence* cs= csFactory->create(coordsLRing);
+
+	return factory->createLineString(cs);
+}
+
+class PointWithId {
+public:
+	int id;
+	double x;
+	double y;
+};
+
+int findOrAddPointAndGetId(double x, double y, std::multimap<double, PointWithId>* pointmap, std::vector<double>* points)
+{
+	auto b = pointmap->lower_bound(x);
+	auto e = pointmap->upper_bound(x);
+
+	for (auto it = b; it != e; ++it) {
+		PointWithId& p = it->second;
+		if (p.x == x && p.y == y) {return p.id;}
+	}
+	// not found add new point
+	int newid = static_cast<int>(pointmap->size()) + 1;
+	pointmap->insert({x, {newid, x, y}});
+	points->push_back(x);
+	points->push_back(y);
+
+	return newid;
+}
+
+void setupPointsAndSegments(geos::geom::Geometry* geom, std::vector<double>* points, std::vector<int>* segments)
+{
+	geos::geom::MultiLineString* strs = dynamic_cast<geos::geom::MultiLineString*> (geom);
+	std::multimap<double, PointWithId> pointMap;
+
+	for (int i = 0; i < strs->getNumGeometries(); ++i) {
+		auto str = dynamic_cast<const geos::geom::LineString*> (strs->getGeometryN(i));
+		geos::geom::Point* p = nullptr;
+		for (int j = 0; j < str->getNumPoints() - 1; ++j) {
+			p = str->getPointN(j);
+			segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), &pointMap, points));
+			p = str->getPointN(j + 1);
+			segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), &pointMap, points));
+		}
+	}
+}
+
+template <typename T>
+T* copyToArray(const std::vector<T>& vals)
+{
+	T* arr = new T[vals.size()];
+	for (size_t i = 0; i < vals.size(); ++i) {
+		*(arr + i) = vals.at(i);
+	}
+	return arr;
+}
 
 void setupTriangleInput(GridCreatingConditionTriangleGridRegionPolygon* regionPolygon,
 												const QList<GridCreatingConditionTriangleRemeshPolygon*>& remeshPolygons,
@@ -34,34 +130,50 @@ void setupTriangleInput(GridCreatingConditionTriangleGridRegionPolygon* regionPo
 												const QPointF& offset,
 												triangulateio* in)
 {
-	QPolygonF pol = regionPolygon->polygon();
-	QVector<QPointF> line;
-	int pointCount = 0;
-	int segmentCount = 0;
-	int regionCount = 1;
-	pointCount += (pol.count() - 1);
-	segmentCount += (pol.count() - 1);
-	for (int i = 0; i < remeshPolygons.size(); ++i) {
-		pol = remeshPolygons[i]->polygon();
-		pointCount += (pol.count() - 1);
-		segmentCount += (pol.count() - 1);
-		++ regionCount;
-	}
-	for (int i = 0; i < holePolygons.size(); ++i) {
-		pol = holePolygons[i]->polygon();
-		pointCount += (pol.count() - 1);
-		segmentCount += (pol.count() - 1);
-	}
-	for (int i = 0; i < divisionLines.size(); ++i) {
-		line = divisionLines[i]->polyLine();
-		pointCount += line.count();
-		segmentCount += (line.count() - 1);
+	auto regionPol = std::unique_ptr<geos::geom::Polygon>(createPolygon(regionPolygon->polygon(offset)));
+
+	std::vector<std::unique_ptr<geos::geom::Polygon> > remeshPols;
+	for (GridCreatingConditionTriangleRemeshPolygon* p : remeshPolygons) {
+		remeshPols.push_back(std::unique_ptr<geos::geom::Polygon> (createPolygon(p->polygon(offset))));
 	}
 
-	in->pointlist = new double[pointCount * 2];
+	std::vector<std::unique_ptr<geos::geom::Polygon> > holePols;
+	for (GridCreatingConditionTriangleHolePolygon* p : holePolygons) {
+		holePols.push_back(std::unique_ptr<geos::geom::Polygon> (createPolygon(p->polygon(offset))));
+	}
+
+	std::vector<std::unique_ptr<geos::geom::LineString> > divLines;
+	for (GridCreatingConditionTriangleDivisionLine* l : divisionLines) {
+		divLines.push_back(std::unique_ptr<geos::geom::LineString> (createLineString(l->polyLine(offset))));
+	}
+
+	std::vector<geos::geom::Geometry*> lines;
+	lines.push_back(const_cast<geos::geom::LineString*> (regionPol->getExteriorRing()));
+	for (auto& p : remeshPols) {
+		lines.push_back(const_cast<geos::geom::LineString*> (p.get()->getExteriorRing()));
+	}
+	for (auto& p : holePols) {
+		lines.push_back(const_cast<geos::geom::LineString*> (p.get()->getExteriorRing()));
+	}
+	for (auto& l : divLines) {
+		lines.push_back(l.get());
+	}
+
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	auto lineCollection = std::unique_ptr<geos::geom::GeometryCollection>
+			(factory->createGeometryCollection(lines));
+	auto unitedLineCollection = lineCollection->Union();
+
+	std::vector<double> points;
+	std::vector<int> segments;
+	std::vector<double> holelist;
+	std::vector<double> regionlist;
+	setupPointsAndSegments(unitedLineCollection.get(), &points, &segments);
+
+	in->numberofpoints = static_cast<int> (points.size() / 2);
+	in->pointlist = copyToArray(points);
 	in->pointattributelist = NULL;
 	in->pointmarkerlist = NULL;
-	in->numberofpoints = pointCount;
 	in->numberofpointattributes = 0;
 
 	in->trianglelist = NULL;
@@ -72,91 +184,52 @@ void setupTriangleInput(GridCreatingConditionTriangleGridRegionPolygon* regionPo
 	in->numberofcorners = 0;
 	in->numberoftriangleattributes = 0;
 
-	in->segmentlist = new int[segmentCount * 2];
+	in->numberofsegments = static_cast<int> (segments.size() / 2);
+	in->segmentlist = copyToArray(segments);
 	in->segmentmarkerlist = NULL;
-	in->numberofsegments = segmentCount;
 
-	in->holelist = new double[holePolygons.count() * 2];
-	in->numberofholes = holePolygons.count();
+	holelist.assign(holePolygons.size() * 2, 0);
+	in->numberofholes = holePolygons.size();
 
-	in->regionlist = new double[regionCount * 4];
-	in->numberofregions = regionCount;
+	regionlist.assign((remeshPolygons.size() + 1) * 4, 0);
+	in->numberofregions = remeshPolygons.size() + 1;
 
 	in->edgelist = NULL;
 	in->edgemarkerlist = NULL;
 	in->normlist = NULL;
 	in->numberofedges = 0;
 
-	pol = regionPolygon->polygon(offset);
-	for (int i = 0; i < pol.count() - 1; ++i) {
-		*(in->pointlist + i * 2)     = pol.at(i).x();
-		*(in->pointlist + i * 2 + 1) = pol.at(i).y();
-		*(in->segmentlist + i * 2) = i + 1;
-		*(in->segmentlist + i * 2 + 1) = (i + 1) % (pol.count() - 1) + 1;
-	}
+	// Areas
 	QPointF innerP = regionPolygon->innerPoint(offset);
-	*(in->regionlist)     = innerP.x();
-	*(in->regionlist + 1) = innerP.y();
-	*(in->regionlist + 2) = 0;
+	regionlist[0] = innerP.x();
+	regionlist[1] = innerP.y();
+	regionlist[2] = 0;
 	if (areaConstraint) {
-		*(in->regionlist + 3) = area;
+		regionlist[3] = area;
 	} else {
 		// no area constraint.
+		auto pol = regionPolygon->polygon();
 		QRectF rect = pol.boundingRect();
-		*(in->regionlist + 3) = rect.width() * rect.height();
+		regionlist[3] = rect.width() * rect.height();
 	}
-	int pOffset = 2 * (pol.count() - 1);
-	int sOffset = (pol.count() - 1);
-	int aOffset = 1;
+
 	for (int i = 0; i < remeshPolygons.size(); ++i) {
 		GridCreatingConditionTriangleRemeshPolygon* rpol = remeshPolygons[i];
-		pol = rpol->polygon(offset);
-		for (int j = 0; j < pol.count() - 1; ++j) {
-			*(in->pointlist + j * 2 + pOffset) = pol.at(j).x();
-			*(in->pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
-			*(in->segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
-			*(in->segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
-		}
 		innerP = rpol->innerPoint(offset);
-		*(in->regionlist + 4 * aOffset) = innerP.x();
-		*(in->regionlist + 4 * aOffset + 1) = innerP.y();
-		*(in->regionlist + 4 * aOffset + 2) = 0;
-		*(in->regionlist + 4 * aOffset + 3) = rpol->cellSize();
-		pOffset += 2 * (pol.count() - 1);
-		sOffset += (pol.count() - 1);
-		++aOffset;
+		regionlist[4 * (i + 1)]     = innerP.x();
+		regionlist[4 * (i + 1) + 1] = innerP.y();
+		regionlist[4 * (i + 1) + 2] = 0;
+		regionlist[4 * (i + 1) + 3] = rpol->cellSize();
 	}
 
 	for (int i = 0; i < holePolygons.size(); ++i) {
 		GridCreatingConditionTriangleHolePolygon* hpol = holePolygons[i];
-		pol = hpol->polygon(offset);
-		for (int j = 0; j < pol.count() - 1; ++j) {
-			*(in->pointlist + j * 2 + pOffset) = pol.at(j).x();
-			*(in->pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
-			*(in->segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
-			*(in->segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
-		}
 		innerP = hpol->innerPoint(offset);
-		*(in->holelist + i * 2) = innerP.x();
-		*(in->holelist + i * 2 + 1) = innerP.y();
-		pOffset += 2 * (pol.count() - 1);
-		sOffset += (pol.count() - 1);
+		holelist[i * 2]     = innerP.x();
+		holelist[i * 2 + 1] = innerP.y();
 	}
-
-	for (int i = 0; i < divisionLines.size(); ++i) {
-		GridCreatingConditionTriangleDivisionLine* line = divisionLines[i];
-		QVector<QPointF> l = line->polyLine(offset);
-		for (int j = 0; j < l.count(); ++j) {
-			*(in->pointlist + j * 2 + pOffset)     = l.at(j).x();
-			*(in->pointlist + j * 2 + 1 + pOffset) = l.at(j).y();
-			if (j != 0) {
-				*(in->segmentlist + (j - 1) * 2 + sOffset * 2) = j + pOffset / 2;
-				*(in->segmentlist + (j - 1) * 2 + 1 + sOffset * 2) = j + 1 + pOffset / 2;
-			}
-		}
-		pOffset += 2 * l.count();
-		sOffset += (l.count() - 1);
-	}
+	in->holelist = copyToArray(holelist);
+	in->regionlist = copyToArray(regionlist);
 }
 
 TriangleExecuteThread* setupTriangleThread(bool angleConstraint, double angle,
