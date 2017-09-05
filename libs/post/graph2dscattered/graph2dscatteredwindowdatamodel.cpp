@@ -1,24 +1,24 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 
-#include "datamodel/graph2dscatteredwindowrootdataitem.h"
-#include "datamodel/graph2dscatteredwindowresultgroupdataitem.h"
-#include <guicore/base/iricmainwindowinterface.h>
-#include "graph2dscatteredwindowdatamodel.h"
-#include <guicore/project/projectdata.h>
-#include "graph2dscatteredwindow.h"
-#include "graph2dscatteredwindowview.h"
-#include "graph2dscatteredwindowdatasourcedialog.h"
-#include "graph2dscatteredaxissettingdialog.h"
-#include "graph2dscatteredwindowdrawsettingdialog.h"
-#include <misc/stringtool.h>
-#include <misc/xmlsupport.h>
-#include <misc/errormessage.h>
-#include <guicore/postcontainer/posttimesteps.h>
 #include "datamodel/graph2dscatteredwindowresultdataitem.h"
+#include "datamodel/graph2dscatteredwindowresultgroupdataitem.h"
+#include "datamodel/graph2dscatteredwindowrootdataitem.h"
+#include "graph2dscatteredaxissettingdialog.h"
+#include "graph2dscatteredwindow.h"
+#include "graph2dscatteredwindowdatamodel.h"
+#include "graph2dscatteredwindowdatasourcedialog.h"
+#include "graph2dscatteredwindowdrawsettingdialog.h"
+#include "graph2dscatteredwindowview.h"
 
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/postcontainer/posttimesteps.h>
+#include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guibase/objectbrowserview.h>
+#include <misc/errormessage.h>
+#include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QDomNode>
 #include <QFile>
