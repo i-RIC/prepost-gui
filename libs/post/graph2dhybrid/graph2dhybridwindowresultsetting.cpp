@@ -7,6 +7,7 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/qwtplotcustomcurve.h>
+#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectcgnsfile.h>
@@ -23,6 +24,8 @@
 
 #include <cgnslib.h>
 #include <qwt_plot.h>
+
+#include <stdexcept>
 
 Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
 {
@@ -64,15 +67,15 @@ Graph2dHybridWindowResultSetting::~Graph2dHybridWindowResultSetting()
 bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString& cgnsFilename)
 {
 	int fn, ier;
-	bool myOpen = false;
+	CgnsFileOpener* opener = nullptr;
 
 	if (sol->fileId() == 0) {
-		ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
-		if (ier != 0) {
-			// error occured while opening.
+		try {
+			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
+			fn = opener->fileId();
+		} catch (std::runtime_error&) {
 			return false;
 		}
-		myOpen = true;
 	} else {
 		fn = sol->fileId();
 	}
@@ -80,7 +83,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 	int nbases;
 	ier = cg_nbases(fn, &nbases);
 	if (ier != 0) {
-		cg_close(fn);
+		delete opener;
 		return false;
 	}
 
@@ -168,9 +171,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			m_dataTypeInfos.append(ti);
 		}
 	}
-	if (myOpen) {
-		cg_close(fn);
-	}
+	delete opener;
 
 	setupMap();
 	return (m_dataTypeInfos.size() > 0);
