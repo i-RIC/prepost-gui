@@ -133,7 +133,6 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	initParams();
 
 	m_gridRegionPolygon = new GridCreatingConditionTriangleGridRegionPolygon(this);
-	m_gridRegionPolygon->setActive(true);
 	m_selectMode = smPolygon;
 	m_selectedPolygon = m_gridRegionPolygon;
 	m_selectedLine = nullptr;
