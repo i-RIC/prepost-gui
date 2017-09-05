@@ -1,6 +1,7 @@
 #include "preprocessorinputconditiondataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/inputcond/inputconditiondialog.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
@@ -64,12 +65,11 @@ void PreProcessorInputConditionDataItem::saveToCgnsFile(const int fn)
 void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 {
 	projectData()->mainfile()->postSolutionInfo()->close();
-	QString fname = projectData()->currentCgnsFileName();
-	int fn;
-	cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	// load data.
-	loadFromCgnsFile(fn);
-	cg_close(fn);
+
+	auto opener = CgnsFileOpener(projectData()->currentCgnsFileName(), CG_MODE_READ);
+	loadFromCgnsFile(opener.fileId());
+	delete opener;
+
 	// set default folder for filename input conditions.
 	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
 	m_dialog->setFileName(fname);
