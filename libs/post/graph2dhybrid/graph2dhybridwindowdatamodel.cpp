@@ -24,6 +24,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -55,6 +56,8 @@
 #include <vtkStructuredGrid.h>
 
 #include <cgnslib.h>
+
+#include <stdexcept>
 
 Graph2dHybridWindowDataModel::Graph2dHybridWindowDataModel(Graph2dHybridWindow* w, ProjectDataItem* parent)
 	: Graph2dWindowDataModel(w, parent)
@@ -1440,22 +1443,24 @@ void Graph2dHybridWindowDataModel::applySettings()
 
 void Graph2dHybridWindowDataModel::updateData()
 {
-	int ier, fn;
-	bool myopen = false;
+	int fn;
+	CgnsFileOpener* opener = nullptr;
 	fn = postSolutionInfo()->fileId();
 	if (fn == 0) {
 		// file not opened.
 		QString cgnsFilename = currentCgnsFileName();
-		ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
-		if (ier != 0) {return;}
-		myopen = true;
+		try {
+			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
+			fn = opener->fileId();
+		} catch (const std::runtime_error&) {
+			return;
+		}
 	}
 
 	updateData(fn);
 
-	if (myopen) {
-		cg_close(fn);
-	}
+	delete opener;
+
 	updateTitle();
 }
 
