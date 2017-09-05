@@ -39,7 +39,7 @@
 
 #include <geos/geom/LinearRing.h>
 #include <geos/geom/GeometryFactory.h>
-#include <geos/geom/CoordinateSequenceFactory.h> 
+#include <geos/geom/CoordinateSequenceFactory.h>
 
 #include <QAction>
 #include <QMenu>
@@ -1433,6 +1433,7 @@ bool GridCreatingConditionTriangle::checkCondition()
 		return false;
 	}
 
+	bool divLineWarning = false;
 	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine();
@@ -1442,8 +1443,7 @@ bool GridCreatingConditionTriangle::checkCondition()
 		}
 		for (int j = 0; j < l.count(); ++j) {
 			if (! gridPol.containsPoint(l[j], Qt::OddEvenFill)) {
-				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
-				return false;
+				divLineWarning = true;
 			}
 		}
 		for (int j = 0; j < l.count() - 1; ++j) {
@@ -1453,23 +1453,16 @@ bool GridCreatingConditionTriangle::checkCondition()
 				for (int m = 0; m < pol.count() - 1; ++m) {
 					QLineF tmpline2(pol[m], pol[m + 1]);
 					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, 0)) {
-						QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to have no intersection with any region edges."));
-						return false;
-					}
-				}
-			}
-			for (int k = i + 1; k < m_divisionLines.count(); ++ k) {
-				QVector<QPointF> l2 = m_divisionLines[k]->polyLine();
-				for (int m = 0; m < l2.count() - 1; ++m) {
-					QLineF tmpline2(l2[m], l2[m + 1]);
-					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, 0)) {
-						QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to have no intersection with other break lines."));
-						return false;
+						divLineWarning = true;
 					}
 				}
 			}
 		}
 	}
+	if (divLineWarning) {
+		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous."), "gctriangle_breakline_cross_warning");
+	}
+
 	return true;
 }
 
