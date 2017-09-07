@@ -696,6 +696,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str());
 	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*>(ps);
 	bool isStructured = (stGrid != nullptr);
+	QVector2D off = offset();
 
 	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId) {
 
@@ -713,6 +714,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 			double v[3];
 			double lon, lat;
 			ps->GetPoint(pointId, v);
+			v[0] += off.x();
+			v[1] += off.y();
 			cs->mapGridToGeo(v[0], v[1], &lon, &lat);
 			double val = da->GetTuple1(pointId);
 			points.append(QVector3D(lon, lat, val));
