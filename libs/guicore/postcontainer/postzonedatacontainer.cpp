@@ -796,7 +796,21 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridConditions", 0, cond->name().c_str(), 0, "end");
 		if (ier != 0) {
 			// Corresponding node does not exists.
-			return false;
+			// Maybe user is trying to load calculation results in project file created
+			// using older solver.
+			//
+			// initializes the array with default value, and returns true.
+
+			vtkSmartPointer<vtkIntArray> iarray = vtkSmartPointer<vtkIntArray>::New();
+			int defaultVal = icond->defaultValue();
+			for (vtkIdType i = 0; i < m_data->GetNumberOfCells(); ++i) {
+				iarray->InsertNextValue(defaultVal);
+			}
+			iarray->SetName(cond->name().c_str());
+
+			m_data->GetCellData()->AddArray(iarray);
+
+			return true;
 		}
 		// Find "Value" array.
 		int narrays;
