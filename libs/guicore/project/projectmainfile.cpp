@@ -56,6 +56,31 @@
 #include <cmath>
 #include <iriclib.h>
 
+namespace {
+
+void copyCgnsFile(const QString& from, const QString& to)
+{
+	// copy the CGNS itself
+	QFile::copy(from, to);
+
+	// copy linked file like Case1_Solution1.cgn, Case1_Solution2.cgn, ...
+	QFileInfo from_finfo(from);
+	QFileInfo to_finfo(to);
+
+	QStringList nameFilters;
+	nameFilters.append("*.cgn");
+	QRegExp re(from_finfo.baseName() + "_Solution[\\d]+");
+	auto files = from_finfo.absoluteDir().entryList(nameFilters, QDir::Files);
+	for (auto f : files) {
+		QFileInfo f_info(f);
+		if (re.indexIn(f_info.baseName()) != -1) {
+			QFile::copy(from_finfo.absoluteDir().filePath(f), to_finfo.absoluteDir().filePath(f));
+		}
+	}
+}
+
+} // namespace
+
 const QString ProjectMainFile::FILENAME = "project.xml";
 const QString ProjectMainFile::BGDIR = "backgroundimages";
 
@@ -545,7 +570,8 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 
 	m_cgnsFileList->add(fnamebody);
 	QString to = m_projectData->workCgnsFileName(fnamebody);
-	QFile::copy(fname, to);
+
+	copyCgnsFile(fname, to);
 
 	std::string solverName;
 	VersionNumber versionNumber;
