@@ -98,7 +98,6 @@ public:
 	const QList<vtkRenderer*>& renderers() const;
 
 	void updateActorVisibility(int idx, bool vis);
-	void importCgnsFile(const QString& filename);
 	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
 	void addMeasuredData();
@@ -119,7 +118,6 @@ public:
 	int showCoordinateSystemDialog(bool forceSelect = false);
 
 public slots:
-	void importCgnsFile();
 	void exportCurrentCgnsFile();
 	bool switchCgnsFile(const QString& name);
 
