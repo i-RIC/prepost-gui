@@ -56,6 +56,31 @@
 #include <cmath>
 #include <iriclib.h>
 
+namespace {
+
+void copyCgnsFile(const QString& from, const QString& to)
+{
+	// copy the CGNS itself
+	QFile::copy(from, to);
+
+	// copy linked file like Case1_Solution1.cgn, Case1_Solution2.cgn, ...
+	QFileInfo from_finfo(from);
+	QFileInfo to_finfo(to);
+
+	QStringList nameFilters;
+	nameFilters.append("*.cgn");
+	QRegExp re(from_finfo.baseName() + "_Solution[\\d]+");
+	auto files = from_finfo.absoluteDir().entryList(nameFilters, QDir::Files);
+	for (auto f : files) {
+		QFileInfo f_info(f);
+		if (re.indexIn(f_info.baseName()) != -1) {
+			QFile::copy(from_finfo.absoluteDir().filePath(f), to_finfo.absoluteDir().filePath(f));
+		}
+	}
+}
+
+} // namespace
+
 const QString ProjectMainFile::FILENAME = "project.xml";
 const QString ProjectMainFile::BGDIR = "backgroundimages";
 
@@ -484,52 +509,6 @@ QStringList ProjectMainFile::containedFiles()
 	return ret;
 }
 
-void ProjectMainFile::importCgnsFile()
-{
-	QString fname = QFileDialog::getOpenFileName(
-										m_projectData->mainWindow(), tr("Import CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
-									);
-	if (fname == "") {return;}
-	importCgnsFile(fname);
-}
-
-void ProjectMainFile::importCgnsFile(const QString& fname)
-{
-	QString fnamebody = QFileInfo(fname).baseName();
-	if (m_cgnsFileList->exists(fnamebody)) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("Solution %1 already exists.").arg(fnamebody)));
-		return;
-	}
-	QRegExp rx(ProjectCgnsFile::acceptablePattern());
-	if (rx.indexIn(fnamebody) == - 1) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("CGNS file whose name contains characters other than alphabets and numbers can not be imported.")));
-		return;
-	}
-
-	m_cgnsFileList->add(fnamebody);
-	QString to = m_projectData->workCgnsFileName(fnamebody);
-	QFile::copy(fname, to);
-
-	std::string solverName;
-	VersionNumber versionNumber;
-
-	bool ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
-	if (ret == true){
-		if (impl->m_solverName != solverName || (! impl->m_solverVersion.compatibleWith(versionNumber))){
-			projectData()->setPostOnlyMode();
-		}
-	} else {
-		// error occured reading solver information.
-		projectData()->setPostOnlyMode();
-	}
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
-	switchCgnsFile(fnamebody);
-
-	// CGNS file import is not undo-able.
-	iRICUndoStack::instance().clear();
-}
-
 bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newname)
 {
 	QString fnamebody = QFileInfo(newname).baseName();
@@ -545,7 +524,8 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 
 	m_cgnsFileList->add(fnamebody);
 	QString to = m_projectData->workCgnsFileName(fnamebody);
-	QFile::copy(fname, to);
+
+	copyCgnsFile(fname, to);
 
 	std::string solverName;
 	VersionNumber versionNumber;

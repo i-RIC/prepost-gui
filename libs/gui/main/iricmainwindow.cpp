@@ -461,7 +461,7 @@ void iRICMainWindow::importCalculationResult()
 
 void iRICMainWindow::importCalculationResult(const QString& fname)
 {
-	// check whether the project file exists.
+	// check whether the CGNS file exists.
 	if (! QFile::exists(fname)) {
 		// the CGNS file does not exists!
 		QMessageBox::warning(this, tr("Warning"), tr("CGNS file %1 does not exists.").arg(QDir::toNativeSeparators(fname)));
