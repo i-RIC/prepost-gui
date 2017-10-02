@@ -5,6 +5,8 @@
 #include "triangleexecutethread.h"
 #include "private/triangleexecutethread_impl.h"
 
+#include <misc/stringtool.h>
+
 #include <QProcess>
 
 TriangleExecuteThread::TriangleExecuteThread(QObject* parent) :
@@ -23,9 +25,9 @@ void TriangleExecuteThread::setIOs(triangulateio* in, triangulateio* out)
 	impl->m_out = out;
 }
 
-void TriangleExecuteThread::setArgs(char* args)
+void TriangleExecuteThread::setArgs(const QString& args)
 {
-	impl->m_args = args;
+	impl->m_args = iRIC::toStr(args);
 }
 
 void TriangleExecuteThread::setFileOutputSetting(const QString& exeFile, const QString& args, const QString& filename, const QString& workFolder)
@@ -38,7 +40,7 @@ void TriangleExecuteThread::setFileOutputSetting(const QString& exeFile, const Q
 
 void TriangleExecuteThread::run()
 {
-	triangulate(impl->m_args, impl->m_in, impl->m_out, nullptr);
+	triangulate(const_cast<char*>(impl->m_args.c_str()), impl->m_in, impl->m_out, nullptr);
 
 	if (impl->m_fileArgs != "") {
 		QProcess process(this);

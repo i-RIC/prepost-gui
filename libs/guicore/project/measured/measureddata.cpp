@@ -197,15 +197,12 @@ void MeasuredData::setupPolyData()
 	out.edgemarkerlist = NULL;
 	out.normlist = NULL;
 
-	QString argstr;
-	argstr.append("pcjQ");
-	std::vector<char> arg (argstr.length() + 1);
-	strcpy(arg.data(), iRIC::toStr(argstr).c_str());
+	QString args("pcjQ");
 	bool finished = false;
 
 	TriangleExecuteThread* thread = new TriangleExecuteThread(this);
 
-	thread->setArgs(arg.data());
+	thread->setArgs(args);
 	thread->setIOs(&in, &out);
 
 	if (impl->m_pointData->GetPoints()->GetNumberOfPoints() < 3) {

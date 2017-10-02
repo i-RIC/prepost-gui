@@ -5,6 +5,8 @@
 
 #include <QString>
 
+#include <string>
+
 struct triangulateio;
 
 class TriangleExecuteThread::Impl
@@ -12,7 +14,7 @@ class TriangleExecuteThread::Impl
 public:
 	triangulateio* m_in {nullptr};
 	triangulateio* m_out {nullptr};
-	char* m_args {nullptr};
+	std::string m_args {};
 
 	QString m_exeFile;
 	QString m_fileArgs;
