@@ -101,12 +101,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		QPen pen = QPen(Qt::black, 1);
 		painter.setPen(pen);
 
-		for (int i = 0; i < m_parentWindow->m_riverPathPoints.count(); ++i) {
-			GeoDataRiverPathPoint* p = m_parentWindow->m_riverPathPoints.at(i);
+		for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
+			GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints().at(i);
 			if (p == nullptr) {continue;}
-			bool enabled = m_parentWindow->m_riverSurveyEnables.at(i);
+			bool enabled = m_parentWindow->riverSurveyEnables().at(i);
 			if (! enabled) {continue;}
-			QColor c = m_parentWindow->m_riverSurveyColors.at(i);
+			QColor c = m_parentWindow->riverSurveyColors().at(i);
 			drawLine(p, c, painter);
 		}
 
@@ -116,7 +116,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		drawSelectionCircle(painter);
 	} else {
 		// draw black lines.
-		drawLine(m_parentWindow->m_gridCreatingConditionPoint, Qt::black, painter);
+		drawLine(m_parentWindow->gridCreatingConditionPoint(), Qt::black, painter);
 		// draw yellow squares.
 		drawSquare(painter);
 		// draw selected yellow squares.
@@ -217,7 +217,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSquare(QPainter& pain
 	QBrush activeBrush(Qt::yellow, Qt::SolidPattern);
 	QBrush inactiveBrush(Qt::blue, Qt::SolidPattern);
 
-	GeoDataRiverPathPoint* blackpoint = m_parentWindow->m_gridCreatingConditionPoint;
+	GeoDataRiverPathPoint* blackpoint = m_parentWindow->gridCreatingConditionPoint();
 	if (blackpoint == nullptr) {return;}
 	GeoDataRiverCrosssection& cross = blackpoint->crosssection();
 	painter.setPen(pen);
@@ -260,9 +260,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSquare(QPainter& pain
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionSquare(QPainter& painter)
 {
-	GeoDataRiverPathPoint* blackpoint = m_parentWindow->m_gridCreatingConditionPoint;
+	GeoDataRiverPathPoint* blackpoint = m_parentWindow->gridCreatingConditionPoint();
 	if (blackpoint == nullptr) {return;}
-	std::list<CtrlPointSelectionInfo>& sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+	std::list<CtrlPointSelectionInfo>& sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 
 	for (const CtrlPointSelectionInfo& info : sel) {
 		if (info.Point == blackpoint) {
@@ -489,8 +489,8 @@ QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 {
 	QRectF ret(0., 0., 0., 0.);
 	bool first = true;
-	for (int i = 0; i < m_parentWindow->m_riverPathPoints.count(); ++i) {
-		GeoDataRiverPathPoint* p = m_parentWindow->m_riverPathPoints[i];
+	for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
+		GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints()[i];
 		if (p == nullptr) {continue;}
 		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		for (int j = 0; j < alist.count(); ++j) {
@@ -660,7 +660,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		m_mouseEventMode = meNormal;
 		if (m_gridMode) {
 			// find selected points near the mouse cursor.
-			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 			QPointF mins(event->x() - 5, event->y() + 5);
 			QPointF maxs(event->x() + 5, event->y() - 5);
 			QMatrix invMatrix = m_matrix.inverted();
@@ -668,7 +668,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			QPointF mappedMaxs = invMatrix.map(maxs);
 			if (continuousGridSelection()) {
 				CtrlPointSelectionInfo info = sel.front();
-				if (info.Point == m_parentWindow->m_gridCreatingConditionPoint) {
+				if (info.Point == m_parentWindow->gridCreatingConditionPoint()) {
 					if (info.Position == GeoDataRiverPathPoint::pposCenterToLeft) {
 						for (auto it = sel.begin(); it != sel.end(); ++it) {
 							info = *it;
@@ -739,9 +739,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		viewport()->update();
 	} else if (m_mouseEventMode == meMove) {
 		if (m_gridMode) {
-			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 			double offset = getGridCtrlPointOffset(m_dragStartPoint, event->pos());
-			iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand(true, offset, m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()));
+			iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand(true, offset, m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()));
 			/*
 						std::list<CtrlPointSelectionInfo> sel =  m_parentWindow->m_targetRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
 						CtrlPointSelectionInfo info = sel.front();
@@ -861,7 +861,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 	case meMove:
 		if (m_gridMode) {
 			// implement this!
-			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 			double offset = getGridCtrlPointOffset(m_dragStartPoint, event->pos());
 			iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand(false, offset, m_parentWindow->m_targetRiverSurvey->gridCreatingCondition()));
 			m_mouseEventMode = meNormal;
@@ -962,8 +962,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 	QPointF mappedMaxs = invMatrix.map(maxs);
 
 	if (m_gridMode) {
-		GeoDataRiverPathPoint* blackpoint = m_parentWindow->m_gridCreatingConditionPoint;
-		std::list<CtrlPointSelectionInfo>& sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+		GeoDataRiverPathPoint* blackpoint = m_parentWindow->gridCreatingConditionPoint();
+		std::list<CtrlPointSelectionInfo>& sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 		sel.clear();
 		CtrlPointSelectionInfo selInfo;
 		selInfo.Point = blackpoint;
@@ -994,8 +994,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 				sel.push_back(selInfo);
 			}
 		}
-		m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->updateShapeData();
-		m_parentWindow->m_gridCreatingConditionRiverSurvey->renderGraphicsView();
+		m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->updateShapeData();
+		m_parentWindow->gridCreatingConditionRiverSurvey()->renderGraphicsView();
 	} else {
 		if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
 		QItemSelection selection;
@@ -1127,7 +1127,7 @@ double GeoDataRiverSurveyCrosssectionWindowGraphicsView::getGridCtrlPointOffset(
 	QPointF mappedStartF = invMatrix.map(startF);
 	QPointF mappedEndF = invMatrix.map(endF);
 	double xoffset = mappedEndF.x() - mappedStartF.x();
-	std::list<CtrlPointSelectionInfo> sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+	std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 	CtrlPointSelectionInfo info = sel.front();
 	if (info.Position == GeoDataRiverPathPoint::pposCenterToLeft) {
 		xoffset /= (info.Point->lXSec()->interpolate(1).position());
@@ -1190,7 +1190,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectLimits(bool* minli
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectGridLimits(double* min, double* max)
 {
-	std::list<CtrlPointSelectionInfo>& list = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+	std::list<CtrlPointSelectionInfo>& list = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 	std::list<CtrlPointSelectionInfo> tmplist;
 	for (auto it = list.begin(); it != list.end(); ++it) {
 		if (it->Index < it->Point->CtrlPoints(it->Position).size()) {
@@ -1201,7 +1201,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectGridLimits(double*
 	list = tmplist;
 	if (continuousGridSelection()) {
 		CtrlPointSelectionInfo& infof = list.front();
-		m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->GCPOffsetInfo().points = infof.Point->CtrlPoints(infof.Position);
+		m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->GCPOffsetInfo().points = infof.Point->CtrlPoints(infof.Position);
 		if (infof.Index == 0) {
 			*min = 0 - infof.Point->CtrlPoints(infof.Position)[0];
 		} else {
@@ -1233,7 +1233,7 @@ bool GeoDataRiverSurveyCrosssectionWindowGraphicsView::continuousSelection()
 
 bool GeoDataRiverSurveyCrosssectionWindowGraphicsView::continuousGridSelection()
 {
-	std::list<CtrlPointSelectionInfo>& list = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
+	std::list<CtrlPointSelectionInfo>& list = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 	if (list.size() == 0) {return false;}
 	else if (list.size() == 1) {return true;}
 	else {

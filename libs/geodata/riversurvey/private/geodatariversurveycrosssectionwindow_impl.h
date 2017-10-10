@@ -3,10 +3,38 @@
 
 #include "../geodatariversurveycrosssectionwindow.h"
 
+#include <QIcon>
+
+class ColorSource;
+
 class GeoDataRiverSurveyCrosssectionWindow::Impl
 {
 public:
+	Impl(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi);
+	~Impl();
 
+	GeoDataRiverSurvey* m_gridCreatingConditionRiverSurvey;
+	GeoDataRiverPathPoint* m_gridCreatingConditionPoint;
+
+	QList<bool> m_riverSurveyEnables;
+	QList<GeoDataRiverSurvey*> m_riverSurveys;
+	QList<QColor> m_riverSurveyColors;
+	QList<GeoDataRiverPathPoint*> m_riverPathPoints;
+	QList<QString> m_crosssectionNames;
+
+	QComboBox* m_crosssectionComboBox;
+	QCheckBox* m_autoRescaleCheckBox;
+
+	QMenu* m_elevationPointMenu;
+	QAction* m_inactivateByWEOnlyThisAction;
+	QAction* m_inactivateByWEAllAction;
+	QAction* m_deleteAction;
+
+	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;
+	QIcon m_icon;
+	ColorSource* m_colorSource;
+
+	bool m_settingUp;
 };
 
 #endif // GEODATARIVERSURVEYCROSSSECTIONWINDOW_IMPL_H

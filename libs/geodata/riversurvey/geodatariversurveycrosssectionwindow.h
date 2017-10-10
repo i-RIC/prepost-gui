@@ -6,11 +6,9 @@
 #include "geodatarivercrosssection.h"
 #include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/base/additionalmenuwindowi.h>
-#include <guicore/project/colorsource.h>
 
 #include <QMainWindow>
 #include <QList>
-#include <QIcon>
 #include <QUndoCommand>
 
 class GeoDataRiverPathPoint;
@@ -20,13 +18,14 @@ class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 class PreProcessorGeoDataGroupDataItemInterface;
 
 class QAction;
+class QCheckBox;
 class QComboBox;
-class QStandardItemModel;
+class QIcon;
 class QItemSelectionModel;
 class QModelIndex;
+class QStandardItemModel;
 class QTableView;
 class QTableWidgetItem;
-class QCheckBox;
 
 namespace Ui
 {
@@ -52,9 +51,9 @@ public:
 	void setRiverSurvey(GeoDataRiverSurvey* rs);
 	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const {return m_editTargetPoint;}
-	QAction* deleteAction() const {return m_deleteAction;}
-	QAction* inactivateByWEOnlyThisAction() const {return m_inactivateByWEOnlyThisAction;}
-	QAction* inactivateByWEAllAction() const {return m_inactivateByWEAllAction;}
+	QAction* deleteAction() const;
+	QAction* inactivateByWEOnlyThisAction() const;
+	QAction* inactivateByWEAllAction() const;
 	void setupData();
 	void updateSurveysTable();
 	void updateComboBoxes();
@@ -111,37 +110,22 @@ private:
 	void setupModel();
 	void setupView();
 	void updateEditTargetPoint();
+
+	GeoDataRiverSurvey* gridCreatingConditionRiverSurvey() const;
+	GeoDataRiverPathPoint* gridCreatingConditionPoint() const;
+
+	const QList<bool>& riverSurveyEnables() const;
+	const QList<GeoDataRiverPathPoint*>& riverPathPoints() const;
+	const QList<QColor>& riverSurveyColors() const;
+
 	Ui::GeoDataRiverSurveyCrosssectionWindow* ui;
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;
-
-	QMenu* m_elevationPointMenu;
-	QAction* m_inactivateByWEOnlyThisAction;
-	QAction* m_inactivateByWEAllAction;
-	QAction* m_deleteAction;
 
 	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
 	QString m_crosssectionName;
 	GeoDataRiverSurvey* m_targetRiverSurvey;
 	GeoDataRiverPathPoint* m_editTargetPoint;
-
-	GeoDataRiverSurvey* m_gridCreatingConditionRiverSurvey;
-	GeoDataRiverPathPoint* m_gridCreatingConditionPoint;
-
-	QList<bool> m_riverSurveyEnables;
-	QList<GeoDataRiverSurvey*> m_riverSurveys;
-	QList<QColor> m_riverSurveyColors;
-	QList<GeoDataRiverPathPoint*> m_riverPathPoints;
-	QList<QString> m_crosssectionNames;
-
-	QComboBox* m_crosssectionComboBox;
-	QCheckBox* m_autoRescaleCheckBox;
-
-	bool m_settingUp;
-	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;
-	QList<GeoDataRiverPathPoint*> m_points;
-	QIcon m_icon;
-	ColorSource* m_colorSource;
 
 	class Impl;
 	Impl* impl;
