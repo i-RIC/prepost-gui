@@ -130,6 +130,19 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapperT<V, DA>::initialize(bool* boolM
 						found = true;
 					}
 				}
+				if (! found) {
+					// Try all cells. it is very time consuming...
+					for (vtkIdType j = 0; j < tmpgrid->GetNumberOfCells(); ++j) {
+						double closestPoint[3];
+						double dist;
+						vtkCell* probeCell = tmpgrid->GetCell(j);
+						if (1 == probeCell->EvaluatePosition(point, closestPoint, subid, pcoords, dist, weights)) {
+							s->settings.push_back(setupSetting(i, probeCell, weights));
+							*(boolMap + i) = true;
+							found = true;
+						}
+					}
+				}
 			}
 		}
 	}
