@@ -143,6 +143,9 @@ private:
 	QIcon m_icon;
 	ColorSource* m_colorSource;
 
+	class Impl;
+	Impl* impl;
+
 public:
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 };
@@ -165,5 +168,9 @@ private:
 	GeoDataRiverSurveyCrosssectionWindow* m_window;
 	GeoDataRiverSurvey* m_rs;
 };
+
+#if _DEBUG
+	#include "private/geodatariversurveycrosssectionwindow_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATARIVERSURVEYCROSSSECTIONWINDOW_H

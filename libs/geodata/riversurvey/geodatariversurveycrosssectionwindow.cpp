@@ -53,7 +53,8 @@ public:
 
 GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemInterface* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
 	QMainWindow {parent},
-	ui {new Ui::GeoDataRiverSurveyCrosssectionWindow}
+	ui {new Ui::GeoDataRiverSurveyCrosssectionWindow},
+	impl {new Impl()}
 {
 	m_groupDataItem = gitem;
 	m_settingUp = false;
@@ -94,6 +95,7 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 
 GeoDataRiverSurveyCrosssectionWindow::~GeoDataRiverSurveyCrosssectionWindow()
 {
+	delete impl;
 	delete ui;
 	delete m_colorSource;
 	m_projectDataItem->informWindowClose();
