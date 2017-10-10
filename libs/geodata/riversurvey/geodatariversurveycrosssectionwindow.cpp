@@ -52,6 +52,8 @@ public:
 };
 
 GeoDataRiverSurveyCrosssectionWindow::Impl::Impl(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi) :
+	m_targetRiverSurvey {nullptr},
+	m_editTargetPoint {nullptr},
 	m_gridCreatingConditionRiverSurvey {nullptr},
 	m_gridCreatingConditionPoint {nullptr},
 	m_projectDataItem {pdi},
@@ -71,10 +73,7 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 	ui {new Ui::GeoDataRiverSurveyCrosssectionWindow},
 	impl {new Impl(pdi)}
 {
-	m_groupDataItem = gitem;
-
-	m_targetRiverSurvey = nullptr;
-	m_editTargetPoint = nullptr;
+	impl->m_groupDataItem = gitem;
 
 	ui->setupUi(this);
 	QList<int> hSizes;
@@ -94,7 +93,7 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 	setupSurveyTable();
 	updateRiverSurveys();
 
-	connect(m_model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(handleDataChange()));
+	connect(impl->m_model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(handleDataChange()));
 	connect(ui->surveysTableWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(handleSurveyTableItemClick(QTableWidgetItem*)));
 	connect(ui->surveysTableWidget, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(handleSurveyTableItemEdit(QTableWidgetItem*)));
 	connect(ui->surveysTableWidget, SIGNAL(currentCellChanged(int,int,int,int)), this, SLOT(handleSurveyTablecurrentCellChange(int,int,int,int)));
@@ -166,14 +165,14 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBar()
 
 void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 {
-	m_model = new QStandardItemModel(0, 4, this);
-	m_model->setHeaderData(0, Qt::Horizontal, tr("Active"));
-	m_model->setHeaderData(1, Qt::Horizontal, tr("Distance from left bank"));
-	m_model->setHeaderData(2, Qt::Horizontal, tr("Position"));
-	m_model->setHeaderData(3, Qt::Horizontal, tr("Elevation"));
+	impl->m_model = new QStandardItemModel(0, 4, this);
+	impl->m_model->setHeaderData(0, Qt::Horizontal, tr("Active"));
+	impl->m_model->setHeaderData(1, Qt::Horizontal, tr("Distance from left bank"));
+	impl->m_model->setHeaderData(2, Qt::Horizontal, tr("Position"));
+	impl->m_model->setHeaderData(3, Qt::Horizontal, tr("Elevation"));
 
-	m_selectionModel = new QItemSelectionModel(m_model, this);
-	connect(m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
+	impl->m_selectionModel = new QItemSelectionModel(impl->m_model, this);
+	connect(impl->m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
@@ -199,7 +198,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 	}
 	impl->m_crosssectionComboBox->blockSignals(false);
 
-	int index = impl->m_crosssectionNames.indexOf(m_crosssectionName);
+	int index = impl->m_crosssectionNames.indexOf(impl->m_crosssectionName);
 	if (index != - 1) {
 		impl->m_crosssectionComboBox->blockSignals(true);
 		impl->m_crosssectionComboBox->setCurrentIndex(index);
@@ -216,12 +215,12 @@ void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 
 void GeoDataRiverSurveyCrosssectionWindow::setRiverSurvey(GeoDataRiverSurvey* rs)
 {
-	m_targetRiverSurvey = rs;
+	impl->m_targetRiverSurvey = rs;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(const QString& crosssection)
 {
-	m_crosssectionName = crosssection;
+	impl->m_crosssectionName = crosssection;
 	updateRiverPathPoints();
 
 	impl->m_crosssectionComboBox->blockSignals(true);
@@ -238,6 +237,11 @@ void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(const QString& crosss
 	}
 	// set window title.
 	setWindowTitle(QString(tr("Crosssection Window : %2").arg(crosssection)));
+}
+
+GeoDataRiverPathPoint* GeoDataRiverSurveyCrosssectionWindow::target() const
+{
+	return impl->m_editTargetPoint;
 }
 
 struct SelectionRange {
@@ -268,7 +272,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 	// detach table view once.
 	ui->tableView->setModel(nullptr);
 	// keep selection status
-	QItemSelection selection = m_selectionModel->selection();
+	QItemSelection selection = impl->m_selectionModel->selection();
 	QList<SelectionRange> sel;
 	for (auto sit = selection.begin(); sit != selection.end(); ++sit) {
 		QItemSelectionRange& tmpr = *sit;
@@ -281,39 +285,39 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 	}
 	clear();
 
-	if (m_editTargetPoint == nullptr) {return;}
+	if (impl->m_editTargetPoint == nullptr) {return;}
 
-	GeoDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = impl->m_editTargetPoint->crosssection();
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	int row = 0;
 
 	GeoDataRiverCrosssection::Altitude alt;
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		alt = *it;
-		m_model->insertRow(row);
-		m_model->setData(m_model->index(row, 0), QVariant(alt.active()));
-		m_model->setData(m_model->index(row, 1), QVariant(alt.position() + cross.leftShift()));
-		m_model->setData(m_model->index(row, 2), QVariant(alt.position()));
-		m_model->setData(m_model->index(row, 3), QVariant(alt.height()));
+		impl->m_model->insertRow(row);
+		impl->m_model->setData(impl->m_model->index(row, 0), QVariant(alt.active()));
+		impl->m_model->setData(impl->m_model->index(row, 1), QVariant(alt.position() + cross.leftShift()));
+		impl->m_model->setData(impl->m_model->index(row, 2), QVariant(alt.position()));
+		impl->m_model->setData(impl->m_model->index(row, 3), QVariant(alt.height()));
 
-		QStandardItem* item = m_model->item(row, 1);
+		QStandardItem* item = impl->m_model->item(row, 1);
 		item->setFlags(item->flags() & (~Qt::ItemIsEditable) & (~ Qt::ItemIsEnabled));
-		m_model->setItem(row, 1, item);
+		impl->m_model->setItem(row, 1, item);
 		ui->tableView->setRowHeight(row, defaultRowHeight);
 		++row;
 	}
 	// connect to table view.
-	ui->tableView->setModel(m_model);
-	ui->tableView->setSelectionModel(m_selectionModel);
+	ui->tableView->setModel(impl->m_model);
+	ui->tableView->setSelectionModel(impl->m_selectionModel);
 	// restore selection status.
 	selection.clear();
 	for (int i = 0; i < sel.count(); ++i) {
 		SelectionRange r = sel.at(i);
-		selection.append(QItemSelectionRange(m_model->index(r.top, r.left), m_model->index(r.bottom, r.right)));
+		selection.append(QItemSelectionRange(impl->m_model->index(r.top, r.left), impl->m_model->index(r.bottom, r.right)));
 	}
-	m_selectionModel->select(selection, QItemSelectionModel::Select | QItemSelectionModel::Clear);
+	impl->m_selectionModel->select(selection, QItemSelectionModel::Select | QItemSelectionModel::Clear);
 	// update tableview row heights.
-	for (int i = 0; i < m_model->rowCount(); ++i) {
+	for (int i = 0; i < impl->m_model->rowCount(); ++i) {
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 	impl->m_settingUp = false;
@@ -322,21 +326,21 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 
 void GeoDataRiverSurveyCrosssectionWindow::setupView()
 {
-	ui->tableView->setModel(m_model);
-	ui->tableView->setSelectionModel(m_selectionModel);
+	ui->tableView->setModel(impl->m_model);
+	ui->tableView->setSelectionModel(impl->m_selectionModel);
 
 	GeoDataRiverSurveyCrosssectionWindowDelegate* del = new GeoDataRiverSurveyCrosssectionWindowDelegate();
 	ui->tableView->setItemDelegate(del);
 
 	ui->graphicsView->setParentWindow(this);
-	ui->graphicsView->setModel(m_model);
-	ui->graphicsView->setSelectionModel(m_selectionModel);
+	ui->graphicsView->setModel(impl->m_model);
+	ui->graphicsView->setSelectionModel(impl->m_selectionModel);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::clear()
 {
-	int rows = m_model->rowCount();
-	m_model->removeRows(0, rows);
+	int rows = impl->m_model->rowCount();
+	impl->m_model->removeRows(0, rows);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateView()
@@ -402,31 +406,31 @@ void GeoDataRiverSurveyCrosssectionWindow::cameraZoomOutY()
 void GeoDataRiverSurveyCrosssectionWindow::handleDataChange()
 {
 	if (impl->m_settingUp) {return;}
-	GeoDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = impl->m_editTargetPoint->crosssection();
 	GeoDataRiverCrosssection::AltitudeList before, after;
 	before = cross.AltitudeInfo();
 	if (! syncData()) { return; }
 	after = cross.AltitudeInfo();
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Elevation Point"), m_editTargetPoint, after, before, this, m_targetRiverSurvey, true));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Elevation Point"), impl->m_editTargetPoint, after, before, this, impl->m_targetRiverSurvey, true));
 }
 
 bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 {
 	impl->m_settingUp = true;
-	GeoDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = impl->m_editTargetPoint->crosssection();
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	GeoDataRiverCrosssection::AltitudeList old = cross.AltitudeInfo();
 	auto it = old.begin();
 	// whether activations are valid or not
 	QList<int> indices;
-	for (int i = 0; i < m_model->rowCount(); ++i) {
-		bool active = m_model->data(m_model->index(i, 0)).toBool();
+	for (int i = 0; i < impl->m_model->rowCount(); ++i) {
+		bool active = impl->m_model->data(impl->m_model->index(i, 0)).toBool();
 		if (active) { continue; }
 		indices.append(i);
 	}
 	if (! canInactivateSelectedRows(cross, indices)) {
-		for (int i = 0; i < m_model->rowCount(); ++i) {
-			m_model->setData(m_model->index(i, 0), QVariant((it + i)->active()));
+		for (int i = 0; i < impl->m_model->rowCount(); ++i) {
+			impl->m_model->setData(impl->m_model->index(i, 0), QVariant((it + i)->active()));
 		}
 		alist = old;
 		impl->m_settingUp = false;
@@ -434,20 +438,20 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 	}
 	// update the crosssection.
 	alist.clear();
-	for (int i = 0; i < m_model->rowCount(); ++i) {
+	for (int i = 0; i < impl->m_model->rowCount(); ++i) {
 		GeoDataRiverCrosssection::Altitude alt;
 		// active
-		alt.setActive(m_model->data(m_model->index(i, 0)).toBool());
+		alt.setActive(impl->m_model->data(impl->m_model->index(i, 0)).toBool());
 		// distance from left bank
 		// position
 		double oldPos = (it + i)->position();
-		double newPos = m_model->data(m_model->index(i, 2)).toDouble();
+		double newPos = impl->m_model->data(impl->m_model->index(i, 2)).toDouble();
 		if (oldPos != newPos) {
 			double min, max;
 			if (i == 0) {
 				max = (it + i + 1)->position();
 				if (newPos > max) { newPos = max; }
-			} else if (i == m_model->rowCount() - 1) {
+			} else if (i == impl->m_model->rowCount() - 1) {
 				min = (it + i - 1)->position();
 				if (newPos < min) { newPos = min; }
 			} else {
@@ -459,17 +463,17 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 					newPos = min;
 				}
 			}
-			m_model->setData(m_model->index(i, 1), QVariant(newPos + cross.leftShift()));
-			m_model->setData(m_model->index(i, 2), QVariant(newPos));
+			impl->m_model->setData(impl->m_model->index(i, 1), QVariant(newPos + cross.leftShift()));
+			impl->m_model->setData(impl->m_model->index(i, 2), QVariant(newPos));
 		}
 		alt.setPosition(newPos);
 		// height
-		alt.setHeight(m_model->data(m_model->index(i, 3)).toDouble());
+		alt.setHeight(impl->m_model->data(impl->m_model->index(i, 3)).toDouble());
 
 		alist.push_back(alt);
 	}
 	updateView();
-	m_targetRiverSurvey->updateShapeData();
+	impl->m_targetRiverSurvey->updateShapeData();
 	impl->m_settingUp = false;
 	return true;
 }
@@ -484,11 +488,11 @@ void GeoDataRiverSurveyCrosssectionWindow::crosssectionComboBoxChange(int newind
 
 void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 {
-	GeoDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = impl->m_editTargetPoint->crosssection();
 	GeoDataRiverCrosssection::AltitudeList before, after;
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
-	QModelIndexList rows = m_selectionModel->selectedRows();
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
 
 	// delete
 	QList<int> indices;
@@ -516,31 +520,31 @@ void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Delete Elevation Points"), m_editTargetPoint, after, before, this, m_targetRiverSurvey));
-	m_selectionModel->clear();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Delete Elevation Points"), impl->m_editTargetPoint, after, before, this, impl->m_targetRiverSurvey));
+	impl->m_selectionModel->clear();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis()
 {
-	if (! m_editTargetPoint->waterSurfaceElevationSpecified()) {return;}
-	QList<int> indices = m_editTargetPoint->getPointsToInactivateUsingWaterElevation();
+	if (! impl->m_editTargetPoint->waterSurfaceElevationSpecified()) {return;}
+	QList<int> indices = impl->m_editTargetPoint->getPointsToInactivateUsingWaterElevation();
 
 	GeoDataRiverCrosssection::AltitudeList before, after;
-	GeoDataRiverCrosssection::AltitudeList& alist = m_editTargetPoint->crosssection().AltitudeInfo();
+	GeoDataRiverCrosssection::AltitudeList& alist = impl->m_editTargetPoint->crosssection().AltitudeInfo();
 	before = alist;
-	if (! canInactivateSelectedRows(m_editTargetPoint->crosssection(), indices)) {
+	if (! canInactivateSelectedRows(impl->m_editTargetPoint->crosssection(), indices)) {
 		alist = before;
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), m_editTargetPoint, after, before, this, m_targetRiverSurvey));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), impl->m_editTargetPoint, after, before, this, impl->m_targetRiverSurvey));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 {
 	QUndoCommand* group = new QUndoCommand(tr("Inactivate Elevation Points using water elevation"));
 
-	GeoDataRiverPathPoint* p = m_targetRiverSurvey->headPoint()->nextPoint();
+	GeoDataRiverPathPoint* p = impl->m_targetRiverSurvey->headPoint()->nextPoint();
 	bool exec = false;
 	while (p != nullptr) {
 		if (! p->waterSurfaceElevationSpecified()) {
@@ -555,7 +559,7 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 			alist = before;
 		}
 		after = alist;
-		new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), p, after, before, this, m_targetRiverSurvey, true, group);
+		new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), p, after, before, this, impl->m_targetRiverSurvey, true, group);
 		exec = true;
 		p = p->nextPoint();
 	}
@@ -568,7 +572,7 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 
 void GeoDataRiverSurveyCrosssectionWindow::updateActionStatus()
 {
-	QModelIndexList rows = m_selectionModel->selectedRows();
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
 	impl->m_deleteAction->setEnabled(rows.count() > 0);
 }
 
@@ -644,7 +648,7 @@ bool GeoDataRiverSurveyCrosssectionWindow::canInactivateSelectedRows(GeoDataRive
 
 void GeoDataRiverSurveyCrosssectionWindow::informFocusIn()
 {
-	m_targetRiverSurvey->setColoredPoints(m_editTargetPoint, nullptr, nullptr);
+	impl->m_targetRiverSurvey->setColoredPoints(impl->m_editTargetPoint, nullptr, nullptr);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::toggleGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs)
@@ -697,23 +701,23 @@ QToolBar* GeoDataRiverSurveyCrosssectionWindow::getAdditionalToolBar() const
 
 PreProcessorGeoDataGroupDataItemInterface* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const
 {
-	return m_groupDataItem;
+	return impl->m_groupDataItem;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::weCheckboxChange(bool checked)
 {
 	ui->weSpinBox->setEnabled(checked);
 	if (! checked) {
-		m_editTargetPoint->clearWaterSurfaceElevation();
+		impl->m_editTargetPoint->clearWaterSurfaceElevation();
 	} else {
-		m_editTargetPoint->setWaterSurfaceElevation(ui->weSpinBox->value());
+		impl->m_editTargetPoint->setWaterSurfaceElevation(ui->weSpinBox->value());
 	}
 	update();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::weValueChange(double val)
 {
-	m_editTargetPoint->setWaterSurfaceElevation(val);
+	impl->m_editTargetPoint->setWaterSurfaceElevation(val);
 	update();
 }
 
@@ -729,7 +733,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	impl->m_riverSurveyEnables.clear();
 	impl->m_riverSurveys.clear();
 	impl->m_riverSurveyColors.clear();
-	const auto& items = m_groupDataItem->childItems();
+	const auto& items = impl->m_groupDataItem->childItems();
 	for (int i = 0; i < items.size(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(items.at(i));
 		GeoDataRiverSurvey* geodata = dynamic_cast<GeoDataRiverSurvey*>(item->geoData());
@@ -744,9 +748,9 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 		return;
 	}
 
-	int index = impl->m_riverSurveys.indexOf(m_targetRiverSurvey);
+	int index = impl->m_riverSurveys.indexOf(impl->m_targetRiverSurvey);
 	if (index == -1) {
-		m_targetRiverSurvey = impl->m_riverSurveys[0];
+		impl->m_targetRiverSurvey = impl->m_riverSurveys[0];
 	}
 	updateRiverPathPoints();
 	updateSurveysTable();
@@ -791,7 +795,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateSurveysTable()
 		ui->surveysTableWidget->setItem(i, 2, item);
 		ui->surveysTableWidget->setRowHeight(i, TABLE_ROWHEIGHT);
 	}
-	int index = impl->m_riverSurveys.indexOf(m_targetRiverSurvey);
+	int index = impl->m_riverSurveys.indexOf(impl->m_targetRiverSurvey);
 	if (index != -1) {
 		ui->surveysTableWidget->selectRow(index);
 	}
@@ -832,29 +836,29 @@ void GeoDataRiverSurveyCrosssectionWindow::handleSurveyTableItemClick(QTableWidg
 void GeoDataRiverSurveyCrosssectionWindow::handleSurveyTablecurrentCellChange(int currentRow, int /*currentColumn*/, int /*previousRow*/, int /*previousColumn*/)
 {
 	if (currentRow == -1) {return;}
-	m_targetRiverSurvey = impl->m_riverSurveys[currentRow];
+	impl->m_targetRiverSurvey = impl->m_riverSurveys[currentRow];
 	updateEditTargetPoint();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 {
-	int index = impl->m_riverSurveys.indexOf(m_targetRiverSurvey);
+	int index = impl->m_riverSurveys.indexOf(impl->m_targetRiverSurvey);
 	if (index == -1) {
-		m_editTargetPoint = nullptr;
+		impl->m_editTargetPoint = nullptr;
 	} else if (! impl->m_riverSurveyEnables[index]) {
-		m_editTargetPoint = nullptr;
+		impl->m_editTargetPoint = nullptr;
 	} else if (impl->m_gridCreatingConditionRiverSurvey != nullptr) {
-		m_editTargetPoint = nullptr;
+		impl->m_editTargetPoint = nullptr;
 	} else {
-		m_editTargetPoint = impl->m_riverPathPoints[index];
+		impl->m_editTargetPoint = impl->m_riverPathPoints[index];
 	}
 
 	GeoDataRiverSurveyCrosssectionWindowDelegate* del =
 		dynamic_cast<GeoDataRiverSurveyCrosssectionWindowDelegate*>(ui->tableView->itemDelegate());
-	if (m_editTargetPoint == nullptr) {
+	if (impl->m_editTargetPoint == nullptr) {
 		del->setCrosssection(nullptr);
 	} else {
-		del->setCrosssection(&(m_editTargetPoint->crosssection()));
+		del->setCrosssection(&(impl->m_editTargetPoint->crosssection()));
 	}
 	setupData();
 	updateView();
@@ -863,18 +867,23 @@ void GeoDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 	// set watersurface elevation
 	ui->weCheckBox->blockSignals(true);
 	ui->weSpinBox->blockSignals(true);
-	if (m_editTargetPoint == nullptr) {
+	if (impl->m_editTargetPoint == nullptr) {
 		ui->weCheckBox->setEnabled(false);
 		ui->weCheckBox->setChecked(false);
 		ui->weSpinBox->setEnabled(false);
 	} else {
 		ui->weCheckBox->setEnabled(true);
-		ui->weCheckBox->setChecked(m_editTargetPoint->waterSurfaceElevationSpecified());
-		ui->weSpinBox->setEnabled(m_editTargetPoint->waterSurfaceElevationSpecified());
-		ui->weSpinBox->setValue(m_editTargetPoint->waterSurfaceElevationValue());
+		ui->weCheckBox->setChecked(impl->m_editTargetPoint->waterSurfaceElevationSpecified());
+		ui->weSpinBox->setEnabled(impl->m_editTargetPoint->waterSurfaceElevationSpecified());
+		ui->weSpinBox->setValue(impl->m_editTargetPoint->waterSurfaceElevationValue());
 	}
 	ui->weCheckBox->blockSignals(false);
 	ui->weSpinBox->blockSignals(false);
+}
+
+GeoDataRiverSurvey* GeoDataRiverSurveyCrosssectionWindow::targetRiverSurvey() const
+{
+	return impl->m_targetRiverSurvey;
 }
 
 GeoDataRiverSurvey* GeoDataRiverSurveyCrosssectionWindow::gridCreatingConditionRiverSurvey() const
@@ -902,13 +911,18 @@ const QList<QColor>& GeoDataRiverSurveyCrosssectionWindow::riverSurveyColors() c
 	return impl->m_riverSurveyColors;
 }
 
+QItemSelectionModel* GeoDataRiverSurveyCrosssectionWindow::selectionModel() const
+{
+	return impl->m_selectionModel;
+}
+
 void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 {
 	impl->m_riverPathPoints.clear();
 	for (int i = 0; i < impl->m_riverSurveys.count(); ++i) {
 		GeoDataRiverPathPoint* p = impl->m_riverSurveys.at(i)->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name() != m_crosssectionName) {
+		while (p != nullptr && p->name() != impl->m_crosssectionName) {
 			p = p->nextPoint();
 		}
 		impl->m_riverPathPoints.append(p);
@@ -916,7 +930,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	if (impl->m_gridCreatingConditionRiverSurvey != nullptr) {
 		GeoDataRiverPathPoint* p = impl->m_gridCreatingConditionRiverSurvey->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name() != m_crosssectionName) {
+		while (p != nullptr && p->name() != impl->m_crosssectionName) {
 			p = p->nextPoint();
 		}
 		impl->m_gridCreatingConditionPoint = p;

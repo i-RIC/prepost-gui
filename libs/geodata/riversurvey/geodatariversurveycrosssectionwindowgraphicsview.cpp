@@ -93,7 +93,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 	// Draw scales.
 	drawScales(painter, matrix);
 	// draw water surface.
-	drawWaterSurfaceElevation(m_parentWindow->m_editTargetPoint, painter, matrix);
+	drawWaterSurfaceElevation(m_parentWindow->target(), painter, matrix);
 
 	if (! m_gridMode) {
 		// draw lines.
@@ -145,14 +145,14 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPath
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& painter)
 {
-	if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
+	if (m_parentWindow->target() == nullptr) {return;}
 
 	QPen pen(Qt::black, 1, Qt::SolidLine);
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
 	QBrush inactiveBrush(Qt::green, Qt::SolidPattern);
 	QBrush fixBrush(Qt::gray, Qt::SolidPattern);
 
-	GeoDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
 	painter.setPen(pen);
 	const GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	for (const GeoDataRiverCrosssection::Altitude& alt : alist) {
@@ -186,13 +186,13 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& pain
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionCircle(QPainter& painter)
 {
-	if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
+	if (m_parentWindow->target() == nullptr) {return;}
 
 	QPen pen(Qt::black, 1, Qt::SolidLine);
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
 	QBrush inactiveBrush(Qt::green, Qt::SolidPattern);
 
-	GeoDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	painter.setPen(pen);
 	QSet<int> drawnRows;
@@ -698,8 +698,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			}
 		} else {
 			// find selected points near the mouse cursor.
-			QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
-			GeoDataRiverPathPoint* p = m_parentWindow->m_editTargetPoint;
+			QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
+			GeoDataRiverPathPoint* p = m_parentWindow->target();
 			GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 			QPointF mins(event->x() - 5, event->y() + 5);
 			QPointF maxs(event->x() + 5, event->y() - 5);
@@ -758,7 +758,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		} else {
 			GeoDataRiverCrosssection::AltitudeList newAltitudeList = m_oldAltitudeList;
 			updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
-			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->m_editTargetPoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, true));
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->target(), newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->targetRiverSurvey(), true));
 		}
 	}
 	m_oldPosition = event->pos();
@@ -808,7 +808,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 				inspectGridLimits(&m_dragLimit.min, &m_dragLimit.max);
 			} else {
 				m_dragStartPoint = event->pos();
-				m_oldAltitudeList = m_parentWindow->m_editTargetPoint->crosssection().AltitudeInfo();
+				m_oldAltitudeList = m_parentWindow->target()->crosssection().AltitudeInfo();
 				inspectLimits(&m_dragLimit.minSet, &m_dragLimit.min, &m_dragLimit.maxSet, &m_dragLimit.max);
 			}
 			m_mouseEventMode = meMove;
@@ -863,12 +863,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 			// implement this!
 			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 			double offset = getGridCtrlPointOffset(m_dragStartPoint, event->pos());
-			iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand(false, offset, m_parentWindow->m_targetRiverSurvey->gridCreatingCondition()));
+			iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand(false, offset, m_parentWindow->targetRiverSurvey()->gridCreatingCondition()));
 			m_mouseEventMode = meNormal;
 		} else {
 			GeoDataRiverCrosssection::AltitudeList newAltitudeList = m_oldAltitudeList;
 			updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
-			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->m_editTargetPoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, false));
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->target(), newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->targetRiverSurvey(), false));
 			m_mouseEventMode = meNormal;
 		}
 		updateMouseCursor();
@@ -997,10 +997,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 		m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->updateShapeData();
 		m_parentWindow->gridCreatingConditionRiverSurvey()->renderGraphicsView();
 	} else {
-		if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
+		if (m_parentWindow->target() == nullptr) {return;}
 		QItemSelection selection;
 
-		GeoDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
+		GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
 		GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 		int row = 0;
 		QModelIndex firstIndex;
@@ -1050,9 +1050,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateActionStatus()
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 {
-	if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
+	if (m_parentWindow->target() == nullptr) {return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
-	GeoDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
 	GeoDataRiverCrosssection::AltitudeList before, after;
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
@@ -1061,14 +1061,14 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 		alist[index.row()].setActive(true);
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->m_editTargetPoint, after, before, m_parentWindow, m_parentWindow->m_targetRiverSurvey));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, before, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 {
-	if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
+	if (m_parentWindow->target() == nullptr) {return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
-	GeoDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
+	GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
 	GeoDataRiverCrosssection::AltitudeList before, after;
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
@@ -1082,22 +1082,22 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->m_editTargetPoint, after, before, m_parentWindow, m_parentWindow->m_targetRiverSurvey));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, before, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
 {
-	if (m_parentWindow->m_editTargetPoint == nullptr) {return;}
+	if (m_parentWindow->target() == nullptr) {return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
 	int from = rows.front().row();
 	int to = rows.back().row();
-	GeoDataRiverCrosssectionAltitudeMoveDialog dialog(m_parentWindow->m_editTargetPoint, from, to, m_parentWindow->m_targetRiverSurvey, m_parentWindow, this);
+	GeoDataRiverCrosssectionAltitudeMoveDialog dialog(m_parentWindow->target(), from, to, m_parentWindow->targetRiverSurvey(), m_parentWindow, this);
 	dialog.exec();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateAltitudeList(GeoDataRiverCrosssection::AltitudeList& alist, const QPoint& start, const QPoint& end)
 {
-	QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
+	QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
 	QPointF startF(start);
 	QPointF endF(end);
 	QMatrix invMatrix = m_matrix.inverted();
@@ -1145,8 +1145,8 @@ double GeoDataRiverSurveyCrosssectionWindowGraphicsView::getGridCtrlPointOffset(
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectLimits(bool* minlimit, double* min, bool* maxlimit, double* max)
 {
-	QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
-	GeoDataRiverCrosssection::AltitudeList& alist = m_parentWindow->m_editTargetPoint->crosssection().AltitudeInfo();
+	QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
+	GeoDataRiverCrosssection::AltitudeList& alist = m_parentWindow->target()->crosssection().AltitudeInfo();
 
 	// First, specify that both min and max limit is set.
 	*minlimit = true;
@@ -1220,7 +1220,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectGridLimits(double*
 
 bool GeoDataRiverSurveyCrosssectionWindowGraphicsView::continuousSelection()
 {
-	QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
+	QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
 	int current = 1;
 	while (current < selectedPoints.count()) {
 		if ((selectedPoints[current].row() - selectedPoints[current - 1].row()) != 1) {

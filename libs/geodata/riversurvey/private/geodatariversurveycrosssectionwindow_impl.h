@@ -13,8 +13,13 @@ public:
 	Impl(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi);
 	~Impl();
 
+	GeoDataRiverSurvey* m_targetRiverSurvey;
+	GeoDataRiverPathPoint* m_editTargetPoint;
+
 	GeoDataRiverSurvey* m_gridCreatingConditionRiverSurvey;
 	GeoDataRiverPathPoint* m_gridCreatingConditionPoint;
+
+	QString m_crosssectionName;
 
 	QList<bool> m_riverSurveyEnables;
 	QList<GeoDataRiverSurvey*> m_riverSurveys;
@@ -24,6 +29,11 @@ public:
 
 	QComboBox* m_crosssectionComboBox;
 	QCheckBox* m_autoRescaleCheckBox;
+
+	QStandardItemModel* m_model;
+	QItemSelectionModel* m_selectionModel;
+
+	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
 
 	QMenu* m_elevationPointMenu;
 	QAction* m_inactivateByWEOnlyThisAction;

@@ -50,7 +50,7 @@ public:
 
 	void setRiverSurvey(GeoDataRiverSurvey* rs);
 	void setCrosssection(const QString& name);
-	GeoDataRiverPathPoint* target() const {return m_editTargetPoint;}
+	GeoDataRiverPathPoint* target() const;
 	QAction* deleteAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
@@ -111,6 +111,7 @@ private:
 	void setupView();
 	void updateEditTargetPoint();
 
+	GeoDataRiverSurvey* targetRiverSurvey() const;
 	GeoDataRiverSurvey* gridCreatingConditionRiverSurvey() const;
 	GeoDataRiverPathPoint* gridCreatingConditionPoint() const;
 
@@ -118,14 +119,9 @@ private:
 	const QList<GeoDataRiverPathPoint*>& riverPathPoints() const;
 	const QList<QColor>& riverSurveyColors() const;
 
-	Ui::GeoDataRiverSurveyCrosssectionWindow* ui;
-	QStandardItemModel* m_model;
-	QItemSelectionModel* m_selectionModel;
+	QItemSelectionModel* selectionModel() const;
 
-	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
-	QString m_crosssectionName;
-	GeoDataRiverSurvey* m_targetRiverSurvey;
-	GeoDataRiverPathPoint* m_editTargetPoint;
+	Ui::GeoDataRiverSurveyCrosssectionWindow* ui;
 
 	class Impl;
 	Impl* impl;
