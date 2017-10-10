@@ -26,6 +26,46 @@
 #include <QStandardItemModel>
 #include <QUndoGroup>
 
+#include <set>
+#include <map>
+
+namespace {
+
+QList<QString> setupCrosssectionNames(const QList<GeoDataRiverSurvey*>& surveys)
+{
+	std::set<QString> nameSet;
+	std::multimap<double, QString> nameMap;
+	bool all_numerical = true;
+
+	for (GeoDataRiverSurvey* survey : surveys) {
+		GeoDataRiverPathPoint* p = survey->headPoint()->nextPoint();
+		while (p != nullptr) {
+			if (nameSet.find(p->name()) == nameSet.end()) {
+				nameSet.insert(p->name());
+				bool numerical;
+				double realName = p->name().toDouble(&numerical);
+				all_numerical = all_numerical && numerical;
+				nameMap.insert({realName, p->name()});
+				p = p->nextPoint();
+			}
+		}
+	}
+
+	QList<QString> names;
+	if (all_numerical) {
+		for (const auto& pair : nameMap) {
+			names.push_back(pair.second);
+		}
+	} else {
+		for (const QString& name : nameSet) {
+			names.push_back(name);
+		}
+	}
+	return names;
+}
+
+} // namespace
+
 class GeoDataRiverSurveyCrosssectionWindowTableDelegate : public QItemDelegate
 {
 public:
@@ -177,22 +217,11 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 {
 	// update crosssectionNames.
-	QMap<QString, bool> tmpNames;
-	for (int i = 0; i < impl->m_riverSurveys.count(); ++i) {
-		GeoDataRiverSurvey* rs = impl->m_riverSurveys.at(i);
-		GeoDataRiverPathPoint* p = rs->headPoint();
-		p = p->nextPoint();
-		while (p != nullptr) {
-			tmpNames.insert(p->name(), false);
-			p = p->nextPoint();
-		}
-	}
-	impl->m_crosssectionNames = tmpNames.keys();
+	impl->m_crosssectionNames = setupCrosssectionNames(impl->m_riverSurveys);
 
 	impl->m_crosssectionComboBox->blockSignals(true);
 	impl->m_crosssectionComboBox->clear();
-	for (int i = 0; i < impl->m_crosssectionNames.size(); ++i) {
-		QString name = impl->m_crosssectionNames.at(i);
+	for (const QString& name : impl->m_crosssectionNames) {
 		impl->m_crosssectionComboBox->addItem(name);
 	}
 	impl->m_crosssectionComboBox->blockSignals(false);
