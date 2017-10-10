@@ -18,12 +18,8 @@ class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 class PreProcessorGeoDataGroupDataItemInterface;
 
 class QAction;
-class QCheckBox;
-class QComboBox;
 class QIcon;
 class QItemSelectionModel;
-class QModelIndex;
-class QStandardItemModel;
 class QTableView;
 class QTableWidgetItem;
 

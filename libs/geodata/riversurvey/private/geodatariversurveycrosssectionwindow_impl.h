@@ -7,6 +7,10 @@
 
 class ColorSource;
 
+class QCheckBox;
+class QComboBox;
+class QStandardItemModel;
+
 class GeoDataRiverSurveyCrosssectionWindow::Impl
 {
 public:

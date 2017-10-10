@@ -14,7 +14,6 @@
 #include <misc/iricundostack.h>
 
 #include <QAction>
-#include <QCloseEvent>
 #include <QColorDialog>
 #include <QComboBox>
 #include <QItemDelegate>
