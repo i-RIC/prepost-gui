@@ -1,9 +1,9 @@
 #ifndef INPUTCONDITIONWIDGETTOOLTIP_H
 #define INPUTCONDITIONWIDGETTOOLTIP_H
 
-#include <QLabel>
+#include "guibase/tooltiplabel.h"
 
-class InputConditionWidgetTooltip : public QLabel
+class InputConditionWidgetTooltip : public TooltipLabel
 {
 public:
 	InputConditionWidgetTooltip(const QString& tooltip, QWidget* parent = 0);
