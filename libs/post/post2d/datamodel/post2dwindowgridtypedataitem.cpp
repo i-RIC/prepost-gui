@@ -44,6 +44,7 @@ PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContaine
 Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
 	Post2dWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_gridType {type},
+	m_geoDataItem {nullptr},
 	m_isZoneDataItemsSetup {false}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -191,7 +192,7 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		}
 	}
 	QDomNode rNode = iRIC::getChildNode(node, "GeoData");
-	if (! rNode.isNull()) {
+	if (! rNode.isNull() && m_geoDataItem != nullptr) {
 		m_geoDataItem->loadFromProjectMainFile(rNode);
 	}
 	QDomNode zonesNode = iRIC::getChildNode(node, "Zones");
@@ -229,9 +230,12 @@ void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
-	writer.writeStartElement("GeoData");
-	m_geoDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
+
+	if (m_geoDataItem != nullptr) {
+		writer.writeStartElement("GeoData");
+		m_geoDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 	writer.writeStartElement("Zones");
 	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
 		Post2dWindowZoneDataItem* zitem = *zit;

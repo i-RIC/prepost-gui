@@ -727,15 +727,16 @@ bool iRICMainWindow::saveProject()
 
 bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 {
-	if (m_projectData->isPostOnlyMode()) {
-		QMessageBox::information(this, tr("Information"), tr("This project is opened in post only mode. You can not save."));
-		return false;
-	}
 	ValueChangerT<bool> savingChanger(&m_isSaving, true);
 	bool ret;
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
-	// save data to work folder.
-	ret = m_projectData->save();
+	if (m_projectData->isPostOnlyMode()) {
+		// do not save CGNS file, but only projext.xml.
+		ret = m_projectData->mainfile()->saveExceptCGNS();
+	} else {
+		ret = m_projectData->save();
+	}
+
 	if (! ret) {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project failed."));
 		return false;
