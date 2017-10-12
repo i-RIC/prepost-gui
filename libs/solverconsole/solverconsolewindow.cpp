@@ -345,7 +345,9 @@ void SolverConsoleWindow::terminateSolverSilently()
 					tr("30 seconds have passed, but the solver do not end. Do you want to kill the solver?"),
 					QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 				if (QMessageBox::Yes == button) {
-					impl->m_process->kill();
+					if (impl->m_process != nullptr) {
+						impl->m_process->kill();
+					}
 					break;
 				}
 				waited = 0;
