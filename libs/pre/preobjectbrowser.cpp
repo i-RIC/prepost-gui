@@ -10,7 +10,7 @@ PreObjectBrowser::PreObjectBrowser(QWidget* parent) :
 	// window properties
 	setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
 	setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-	setWindowTitle(tr("Object Browser"));
+	setWindowTitle(PreObjectBrowser::tr("Object Browser"));
 	setWidget(m_view);
 
 	m_view->setHeaderHidden(true);
