@@ -37,9 +37,11 @@
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
-#include <geos/geom/LinearRing.h>
-#include <geos/geom/GeometryFactory.h>
 #include <geos/geom/CoordinateSequenceFactory.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/LinearRing.h>
+#include <geos/geom/Polygon.h>
+#include <geos/util/IllegalArgumentException.h>
 
 #include <QAction>
 #include <QMenu>
@@ -87,6 +89,28 @@ geos::geom::LinearRing* createRingFromPolygon(const QPolygonF& pol)
 	return lring;
 }
 
+geos::geom::Polygon* createPolygonFromPolygon(const QPolygonF& pol)
+{
+	geos::geom::LinearRing* ring = createRingFromPolygon(pol);
+
+	auto factory = geos::geom::GeometryFactory::getDefaultInstance();
+	auto holes = new std::vector<geos::geom::Geometry*>();
+	return factory->createPolygon(ring, holes);
+}
+
+double calcPolygonArea(const QPolygonF& pol)
+{
+	double area = 0;
+	try {
+		geos::geom::Polygon* tmpp = createPolygonFromPolygon(pol);
+		area = tmpp->getArea();
+		delete tmpp;
+	} catch (geos::util::IllegalArgumentException&) {
+		// do nothing
+	}
+	return area;
+}
+
 bool ringsIntersect(const QPolygonF& pol1, const QPolygonF pol2)
 {
 	auto ring1 = std::unique_ptr<geos::geom::LinearRing> (createRingFromPolygon(pol1));
@@ -109,6 +133,40 @@ bool checkPolygonsIntersection(const QList<QPolygonF>& polygons)
 		}
 	}
 	return true;
+}
+
+bool isPolygonSelectable(GridCreatingConditionTriangleAbstractPolygon* polygon, double x, double y, double limit) {
+	QPolygonF qpol = polygon->polygon();
+	if (qpol.count() <= 3) {
+		QVector2D v(x, y);
+		return polygon->isEdgeSelectable(v, limit) || polygon->isVertexSelectable(v, limit);
+	} else {
+		return qpol.containsPoint(QPointF(x, y), Qt::OddEvenFill);
+	}
+}
+
+GridCreatingConditionTriangleAbstractPolygon* selectPolygon(
+	const QList<GridCreatingConditionTriangleRemeshPolygon*>& remeshPolygons,
+	const QList<GridCreatingConditionTriangleHolePolygon*>& holePolygons,
+	GridCreatingConditionTriangleGridRegionPolygon* regionPolygon, double x, double y, double limit)
+{
+	std::multimap<double, GridCreatingConditionTriangleAbstractPolygon*> polygons;
+
+	for (auto p : remeshPolygons) {
+		polygons.insert({calcPolygonArea(p->polygon()), p});
+	}
+	for (auto p : holePolygons) {
+		polygons.insert({calcPolygonArea(p->polygon()), p});
+	}
+	polygons.insert({calcPolygonArea(regionPolygon->polygon()), regionPolygon});
+
+	for (auto pair : polygons) {
+		GridCreatingConditionTriangleAbstractPolygon* pol = pair.second;
+		if (isPolygonSelectable(pol, x, y, limit)) {
+			return pol;
+		}
+	}
+	return nullptr;
 }
 
 } // namespace
@@ -1198,16 +1256,13 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 	double selectlimit = graphicsView()->stdRadius(5);
 
 	// check whether the division line can be selected.
-	bool selected = false;
 	GridCreatingConditionTriangleAbstractLine* newSelLine = nullptr;
-	for (int i = m_divisionLines.count() - 1; i >= 0 && (! selected); --i) {
+	for (int i = m_divisionLines.count() - 1; i >= 0; --i) {
 		GridCreatingConditionTriangleAbstractLine* l = m_divisionLines[i];
 		if (l->isEdgeSelectable(pv, selectlimit)) {
 			newSelLine = l;
-			selected = true;
 		} else if (l->isVertexSelectable(pv, selectlimit)) {
 			newSelLine = l;
-			selected = true;
 		}
 	}
 	if (newSelLine != nullptr) {
@@ -1215,80 +1270,26 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 		m_selectedLine = newSelLine;
 		m_selectedLine->setActive(true);
 		m_selectedPolygon = nullptr;
-	}
+	} else {
+		// try to find polygon
+		GridCreatingConditionTriangleAbstractPolygon* newSelPol = selectPolygon(
+					m_remeshPolygons, m_holePolygons, m_gridRegionPolygon, dx, dy, selectlimit);
 
-	// find polygon that contains this point.
-	GridCreatingConditionTriangleAbstractPolygon* newSelPol = nullptr;
-	for (int i = m_remeshPolygons.count() - 1; i >= 0 && (! selected); --i) {
-		GridCreatingConditionTriangleAbstractPolygon* pol = m_remeshPolygons[i];
-		QPolygonF polF = pol->polygon();
-		if (polF.count() <= 3) {
-			// it contains only two points.
-			if (pol->isEdgeSelectable(pv, selectlimit)) {
-				newSelPol = pol;
-				selected = true;
-				GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
-				connect(m_editMaxAreaAction, SIGNAL(triggered()), rpol, SLOT(editGridSize()));
-			} else if (pol->isVertexSelectable(pv, selectlimit)) {
-				newSelPol = pol;
-				selected = true;
-				GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
+		if (newSelPol != nullptr) {
+			m_selectMode = smPolygon;
+			m_selectedPolygon = newSelPol;
+			m_selectedPolygon->setActive(true);
+			m_selectedLine = nullptr;
+
+			auto rpol = dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*> (newSelPol);
+			if (rpol != nullptr) {
 				connect(m_editMaxAreaAction, SIGNAL(triggered()), rpol, SLOT(editGridSize()));
 			}
 		} else {
-			if (polF.containsPoint(p, Qt::OddEvenFill)) {
-				newSelPol = pol;
-				selected = true;
-				GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
-				connect(m_editMaxAreaAction, SIGNAL(triggered()), rpol, SLOT(editGridSize()));
-			}
+			m_selectMode = smNone;
+			m_selectedLine = nullptr;
+			m_selectedPolygon = nullptr;
 		}
-	}
-	for (int i = m_holePolygons.count() - 1; i >= 0 && (! selected); --i) {
-		GridCreatingConditionTriangleAbstractPolygon* pol = m_holePolygons[i];
-		QPolygonF polF = pol->polygon();
-		if (polF.count() <= 3) {
-			if (pol->isEdgeSelectable(pv, selectlimit)) {
-				newSelPol = pol;
-				selected = true;
-			} else if (pol->isVertexSelectable(pv, selectlimit)) {
-				newSelPol = pol;
-				selected = true;
-			}
-		} else {
-			if (pol->polygon().containsPoint(p, Qt::OddEvenFill)) {
-				newSelPol = pol;
-				selected = true;
-			}
-		}
-	}
-	if (! selected) {
-		QPolygonF polF = m_gridRegionPolygon->polygon();
-		if (polF.count() <= 3) {
-			if (m_gridRegionPolygon->isEdgeSelectable(pv, selectlimit)) {
-				newSelPol = m_gridRegionPolygon;
-				selected = true;
-			} else if (m_gridRegionPolygon->isVertexSelectable(pv, selectlimit)) {
-				newSelPol = m_gridRegionPolygon;
-				selected = true;
-			}
-		} else {
-			if (m_gridRegionPolygon->polygon().containsPoint(p, Qt::OddEvenFill)) {
-				newSelPol = m_gridRegionPolygon;
-				selected = true;
-			}
-		}
-	}
-	if (newSelPol != nullptr) {
-		m_selectMode = smPolygon;
-		m_selectedPolygon = newSelPol;
-		m_selectedPolygon->setActive(true);
-		m_selectedLine = nullptr;
-	}
-	if (! selected) {
-		m_selectMode = smNone;
-		m_selectedLine = nullptr;
-		m_selectedPolygon = nullptr;
 	}
 
 	if (m_selectMode != oldSelectMode) {return true;}
