@@ -251,7 +251,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLabel" name="sizeWidthLabel">
+           <widget class="TooltipLabel" name="sizeWidthLabel">
             <property name="toolTip">
              <string>If you specify 1, Color bar width is the same to window width.</string>
             </property>
@@ -287,7 +287,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLabel" name="sizeHeightLabel">
+           <widget class="TooltipLabel" name="sizeHeightLabel">
             <property name="toolTip">
              <string>If you specify 1, Color bar height is the same to window height.</string>
             </property>
@@ -352,7 +352,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLabel" name="positionXLabel">
+           <widget class="TooltipLabel" name="positionXLabel">
             <property name="toolTip">
              <string>If you specify 0, Color bar left edge is located at window left edge.</string>
             </property>
@@ -394,7 +394,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLabel" name="positionYLabel">
+           <widget class="TooltipLabel" name="positionYLabel">
             <property name="toolTip">
              <string>If you specify 0, Color bar bottom is located at window bottom.</string>
             </property>
@@ -444,6 +444,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../guibase/guibase.qrc"/>
  </resources>

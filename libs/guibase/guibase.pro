@@ -82,6 +82,7 @@ HEADERS += colortool.h \
            scalarsettingcontainer.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
+           tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomStreamPoints.h \
            vtkdatasetattributestool.h \
@@ -178,6 +179,7 @@ SOURCES += colortool.cpp \
            scalarsettingcontainer.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
+           tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomStreamPoints.cxx \
            vtkdatasetattributestool.cpp \

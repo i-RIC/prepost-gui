@@ -235,7 +235,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="scaleHelpLabel">
+        <widget class="TooltipLabel" name="scaleHelpLabel">
          <property name="toolTip">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -248,7 +248,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="angleHelpLabel">
+        <widget class="TooltipLabel" name="angleHelpLabel">
          <property name="toolTip">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -302,6 +302,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../guibase/guibase.qrc"/>
  </resources>

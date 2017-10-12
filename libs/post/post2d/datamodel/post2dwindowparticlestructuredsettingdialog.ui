@@ -47,7 +47,7 @@
              <item>
               <layout class="QVBoxLayout" name="verticalLayout_5">
                <item>
-                <widget class="QLabel" name="timeHelpLabel">
+                <widget class="TooltipLabel" name="timeHelpLabel">
                  <property name="toolTip">
                   <string extracomment="If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -261,7 +261,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="areaHelpLabel">
+                  <widget class="TooltipLabel" name="areaHelpLabel">
                    <property name="toolTip">
                     <string>Specify the area to generate particles, by grid indices range (I, J).</string>
                    </property>
@@ -380,7 +380,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_2">
                  <item>
-                  <widget class="QLabel" name="spaceHelpLabel">
+                  <widget class="TooltipLabel" name="spaceHelpLabel">
                    <property name="toolTip">
                     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -588,7 +588,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="sizeHelpLabel">
+                 <widget class="TooltipLabel" name="sizeHelpLabel">
                   <property name="toolTip">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -726,6 +726,11 @@ p, li { white-space: pre-wrap; }
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
   <customwidget>
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
