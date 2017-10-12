@@ -539,6 +539,7 @@ GraphicsWindowSimpleDataModel* VTKGraphicsView::model() const
 void VTKGraphicsView::moveCenter(int x, int y)
 {
 	translate(x, y);
+	render();
 }
 
 int VTKGraphicsView::moveWidth()
