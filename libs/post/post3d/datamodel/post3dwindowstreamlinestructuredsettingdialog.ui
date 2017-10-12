@@ -81,7 +81,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="areaHelpLabel">
+              <widget class="TooltipLabel" name="areaHelpLabel">
                <property name="toolTip">
                 <string>Specify the area to start streamlines, by grid indices range (I, J, K).</string>
                </property>
@@ -240,7 +240,7 @@
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="QLabel" name="spaceHelpLabel">
+              <widget class="TooltipLabel" name="spaceHelpLabel">
                <property name="toolTip">
                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -446,7 +446,7 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="widthHelpLabel">
+             <widget class="TooltipLabel" name="widthHelpLabel">
               <property name="toolTip">
                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -551,6 +551,11 @@ p, li { white-space: pre-wrap; }
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
   <customwidget>
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>

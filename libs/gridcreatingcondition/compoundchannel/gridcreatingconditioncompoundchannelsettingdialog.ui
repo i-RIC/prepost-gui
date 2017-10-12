@@ -178,7 +178,7 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="relaxationHelpLabel">
+             <widget class="TooltipLabel" name="relaxationHelpLabel">
               <property name="toolTip">
                <string>When grid shape looks divergent, please make this value smaller.</string>
               </property>
@@ -231,7 +231,7 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="iterationHelpLabel">
+             <widget class="TooltipLabel" name="iterationHelpLabel">
               <property name="toolTip">
                <string>When you feel the grid is not optimized enough, please try increasing this value.</string>
               </property>
@@ -329,6 +329,13 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>streamWiseSpinBox</tabstop>
   <tabstop>rightSpinBox</tabstop>

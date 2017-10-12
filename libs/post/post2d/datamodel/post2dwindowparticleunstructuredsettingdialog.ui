@@ -57,7 +57,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="timeHelpLabel">
+                <widget class="TooltipLabel" name="timeHelpLabel">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -449,7 +449,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="sizeHelpLabel">
+                 <widget class="TooltipLabel" name="sizeHelpLabel">
                   <property name="toolTip">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -587,6 +587,11 @@ p, li { white-space: pre-wrap; }
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
   <customwidget>
    <class>RealNumberEditWidget</class>
    <extends>QLineEdit</extends>
