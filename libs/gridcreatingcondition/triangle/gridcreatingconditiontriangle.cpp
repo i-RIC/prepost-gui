@@ -847,7 +847,9 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 	case meTranslate:
 	case meMoveVertex:
 	case meAddVertex:
-		if (m_selectMode == smNone) {return;}
+		if (m_selectMode == smNone) {
+			m_mouseEventMode = meNormal;
+		}
 		if (m_selectMode == smPolygon) {
 			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meMoveVertexPrepare;
