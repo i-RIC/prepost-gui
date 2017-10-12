@@ -568,6 +568,14 @@
     </message>
 </context>
 <context>
+    <name>TooltipLabel</name>
+    <message>
+        <location filename="../tooltiplabel.cpp" line="13"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TransparencyWidget</name>
     <message>
         <location filename="../widget/transparencywidget.ui" line="29"/>
