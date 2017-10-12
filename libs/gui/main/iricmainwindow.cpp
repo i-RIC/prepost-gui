@@ -340,6 +340,13 @@ void iRICMainWindow::openProject(const QString& filename)
 				QMessageBox::warning(this, tr("Warning"), tr("Project folder path has to consist of only English characters. Please move or rename the project folder."));
 				return;
 			}
+			QDir dir(filename);
+			QFile lockFile(dir.absoluteFilePath("lock"));
+			if (lockFile.exists()) {
+				QMessageBox::warning(this, tr("Warning"), tr("This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows."));
+				return;
+			}
+
 			m_projectData = new ProjectData(filename, this);
 			m_projectData->setFilename(filename, true);
 
