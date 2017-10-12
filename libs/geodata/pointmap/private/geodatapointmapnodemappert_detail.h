@@ -5,6 +5,22 @@
 
 #include <QSet>
 
+namespace {
+
+DoubleMappingSetting setupSetting(unsigned int target, vtkCell* cell, double* weights)
+{
+	DoubleMappingSetting setting;
+	setting.target = target;
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
+		vtkIdType vid = cell->GetPointId(i);
+		setting.indices.push_back(vid);
+		setting.weights.push_back(*(weights + i));
+	}
+	return setting;
+}
+
+} // namespace
+
 template <class V, class DA>
 GeoDataPointmapNodeMapperT<V, DA>::GeoDataPointmapNodeMapperT(GeoDataCreator* parent) :
 	GeoDataNodeMapperT<V, DA>("Pointmap node mapper", parent)
@@ -38,15 +54,7 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapperT<V, DA>::initialize(bool* boolM
 			int subid;
 			cellid = tmpgrid->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
 			if (cellid >= 0) {
-				DoubleMappingSetting setting;
-				setting.target = i;
-				vtkCell* cell = tmpgrid->GetCell(cellid);
-				for (vtkIdType j = 0; j < cell->GetNumberOfPoints(); ++j) {
-					vtkIdType vid = cell->GetPointId(j);
-					setting.indices.append(vid);
-					setting.weights.append(*(weights + j));
-				}
-				s->settings.append(setting);
+				s->settings.push_back(setupSetting(i, tmpgrid->GetCell(cellid), weights));
 				*(boolMap + i) = true;
 			} else {
 				// wider region search.
@@ -79,7 +87,7 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapperT<V, DA>::initialize(bool* boolM
 				cPoints.insert(nearestpoint);
 				while (cPoints.count() > 0) {
 					QSet<vtkIdType> nextCPoints;
-                    for (vtkIdType point : cPoints) {
+					for (vtkIdType point : cPoints) {
 						if (triedPoints.contains(point)) {continue;}
 						vtkSmartPointer<vtkIdList> tmpCells = vtkSmartPointer<vtkIdList>::New();
 						tmpgrid->GetPointCells(point, tmpCells);
@@ -117,17 +125,22 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapperT<V, DA>::initialize(bool* boolM
 					vtkCell* probeCell = tmpgrid->GetCell(probeCellid);
 					vtkIdType cellid = tmpgrid->FindCell(point, probeCell, 0, 1e-4, subid, pcoords, weights);
 					if (cellid >= 0) {
-						vtkCell* cell = tmpgrid->GetCell(cellid);
-						DoubleMappingSetting setting;
-						setting.target = i;
-						for (vtkIdType j = 0; j < cell->GetNumberOfPoints(); ++j) {
-							vtkIdType vid = cell->GetPointId(j);
-							setting.indices.append(vid);
-							setting.weights.append(*(weights + j));
-						}
-						s->settings.append(setting);
+						s->settings.push_back(setupSetting(i, tmpgrid->GetCell(cellid), weights));
 						*(boolMap + i) = true;
 						found = true;
+					}
+				}
+				if (! found) {
+					// Try all cells. it is very time consuming...
+					for (vtkIdType j = 0; j < tmpgrid->GetNumberOfCells(); ++j) {
+						double closestPoint[3];
+						double dist;
+						vtkCell* probeCell = tmpgrid->GetCell(j);
+						if (1 == probeCell->EvaluatePosition(point, closestPoint, subid, pcoords, dist, weights)) {
+							s->settings.push_back(setupSetting(i, probeCell, weights));
+							*(boolMap + i) = true;
+							found = true;
+						}
 					}
 				}
 			}
