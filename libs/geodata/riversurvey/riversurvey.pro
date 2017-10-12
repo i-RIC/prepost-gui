@@ -117,6 +117,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveyvtkexporter.h \
            gridcreatingconditionriversurveyinterface.h \
            private/geodatariversurvey_setdisplaysettingcommand.h \
+           private/geodatariversurveycrosssectionwindow_impl.h \
            private/geodatariversurveyproxy_setsettingcommand.h
 FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointexpanddialog.ui \
