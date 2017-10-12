@@ -5,6 +5,7 @@
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowdelegate.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
+#include "private/geodatariversurveycrosssectionwindow_impl.h"
 
 #include <guibase/widget/centeredcheckbox.h>
 #include <guibase/widget/coloreditwidget.h>
