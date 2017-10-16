@@ -32,7 +32,7 @@ public:
 	/// Filter string like "CSV files (*.csv)"
 	void setFilter(const QString& filter);
 
-	// if a file under baseFolder is selected, file name fill be the relative file name.
+	/// if a file under baseFolder is selected, file name fill be the relative file name.
 	void setBaseFolder(const QString& folder);
 
 private slots:
