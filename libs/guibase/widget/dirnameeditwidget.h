@@ -26,10 +26,9 @@ class GUIBASEDLL_EXPORT DirnameEditWidget : public QWidget
 public:
 	explicit DirnameEditWidget(QWidget* parent = nullptr);
 	~DirnameEditWidget();
-	/// Set the directory name (in full path)
-	void setDirname(const QString& dirname);
-	/// The directory name (in full path)
+
 	QString dirname() const;
+	void setDirname(const QString& dirname);
 
 private slots:
 	/// Open folder select dialog (The dialog shown is operating system dependent)
