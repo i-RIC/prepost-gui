@@ -5,9 +5,10 @@
 #include <QMessageBox>
 
 CoordinateEditWidget::CoordinateEditWidget(QWidget* parent) :
-	QLineEdit(parent)
+	QLineEdit(parent),
+	m_doubleValue {0},
+	m_eventCheck {true}
 {
-	m_eventCheck = true;
 	setValidator(new QDoubleValidator(this));
 	connect(this, SIGNAL(textChanged(QString)), this, SLOT(handleTextChange()));
 }

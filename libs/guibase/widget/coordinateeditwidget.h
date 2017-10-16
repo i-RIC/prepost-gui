@@ -10,10 +10,12 @@ class GUIBASEDLL_EXPORT CoordinateEditWidget : public QLineEdit
 	Q_OBJECT
 
 public:
-	CoordinateEditWidget(QWidget* parent = 0);
-	void setEventCheck(bool check = true);
-	void setValue(double newvalue);
+	CoordinateEditWidget(QWidget* parent = nullptr);
+
 	double value() const;
+	void setValue(double newvalue);
+
+	void setEventCheck(bool check = true);
 
 signals:
 	void valueChanged(double value);

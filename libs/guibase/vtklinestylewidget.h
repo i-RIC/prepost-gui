@@ -14,6 +14,7 @@ class vtkLineStyleWidget;
 class GUIBASEDLL_EXPORT vtkLineStyleWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	explicit vtkLineStyleWidget(QWidget *parent = 0);
 	~vtkLineStyleWidget();

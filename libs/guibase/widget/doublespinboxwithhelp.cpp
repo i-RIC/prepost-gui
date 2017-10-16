@@ -14,7 +14,6 @@ DoubleSpinBoxWithHelp::~DoubleSpinBoxWithHelp()
 	delete ui;
 }
 
-
 double DoubleSpinBoxWithHelp::minimum() const
 {
 	return ui->doubleSpinBox->minimum();
@@ -56,7 +55,6 @@ void DoubleSpinBoxWithHelp::setDecimals(int prec)
 {
 	ui->doubleSpinBox->setDecimals(prec);
 }
-
 
 void DoubleSpinBoxWithHelp::updateHelp()
 {
