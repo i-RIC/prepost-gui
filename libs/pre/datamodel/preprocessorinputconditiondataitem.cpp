@@ -66,8 +66,9 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 {
 	projectData()->mainfile()->postSolutionInfo()->close();
 
-	auto opener = CgnsFileOpener(projectData()->currentCgnsFileName(), CG_MODE_READ);
-	loadFromCgnsFile(opener.fileId());
+	auto fname = projectData()->currentCgnsFileName();
+	auto opener = new CgnsFileOpener(iRIC::toStr(fname), CG_MODE_READ);
+	loadFromCgnsFile(opener->fileId());
 	delete opener;
 
 	// set default folder for filename input conditions.
