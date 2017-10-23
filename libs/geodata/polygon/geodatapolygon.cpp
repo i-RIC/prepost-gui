@@ -934,8 +934,13 @@ void GeoDataPolygon::initParams()
 		maxIndex = dimensions()->maxIndex();
 	}
 	bool ok;
-	double defaultValue = gridAttribute()->variantDefaultValue().toDouble(&ok);
-	if (! ok) {defaultValue = 0;}
+	double defaultValue = 0;
+
+	auto gridAtt = gridAttribute();
+	if (gridAtt != nullptr) {
+		defaultValue = gridAtt->variantDefaultValue().toDouble(&ok);
+		if (! ok) {defaultValue = 0;}
+	}
 
 	for (int i = 0; i <= maxIndex; ++i) {
 		m_variantValues.push_back(defaultValue);
