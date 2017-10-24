@@ -54,7 +54,8 @@ HEADERS += coordinatesystem.h \
            coordinatesystemselectdialog.h \
            cs_api.h \
            webmercatorutil.h \
-           private/coordinatesystem_impl.h
+           private/coordinatesystem_impl.h \
+           private/webmercatorutil_impl.h
 FORMS += coordinatesystemselectdialog.ui
 SOURCES += coordinatesystem.cpp \
            coordinatesystembuilder.cpp \

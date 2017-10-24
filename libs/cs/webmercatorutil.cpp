@@ -1,33 +1,55 @@
 #include "webmercatorutil.h"
-#include "coordinatesystem.h"
+#include "private/webmercatorutil_impl.h"
 
 #include <QString>
 
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <cmath>
 
-WebMercatorUtil::WebMercatorUtil(int zoomLevel)
+namespace {
+
+double DEG_TO_RAD = M_PI / 180;
+double RAD_TO_DEG = 180 / M_PI;
+
+} // namespace
+
+void WebMercatorUtil::Impl::init(int zoomlevel)
 {
-	QString wgs84("+proj=longlat +datum=WGS84 +no_defs");
+	double c = 256;
+	for (int i = 0; i < zoomlevel; ++i) {
+		c *= 2;
+	}
+	Bc = c / 360.0;
+	Cc = c / (2 * M_PI);
+	double e = c / 2;
+	zcx = e;
+	zcy = e;
+}
 
-	double t_p2 = std::pow(2.0, zoomLevel - 1);
-	double t_p1 = t_p2 / 3.141592;
-	QString tile = QString("+proj=merc +a=%1 +b=%1 +lat_ts=0.0 +lon_0=0.0 +x_0=%2 +y_0=-%2 +k=1.0 +axis=esu +units=m +nadgrids=@null +no_defs").arg(t_p1).arg(t_p2);
+void WebMercatorUtil::Impl::project_plxel(double lon, double lat, double* x, double* y)
+{
+	*x = zcx + lon * Bc;
+	double f = std::sin(DEG_TO_RAD * lat);
+	*y = zcy + 0.5 * std::log((1 + f) / (1 - f)) * (-Cc);
+}
 
-	double p_p2 = std::pow(2.0, zoomLevel + 7);
-	double p_p1 = p_p2 / 3.141592;
-	QString pixel = QString("+proj=merc +a=%1 +b=%1 +lat_ts=0.0 +lon_0=0.0 +x_0=%2 +y_0=-%2 +k=1.0 +axis=esu +units=m +nadgrids=@null +no_defs").arg(p_p1).arg(p_p2);
+void WebMercatorUtil::Impl::unproject_pixel(double x, double y, double* lon, double* lat)
+{
+	*lon = (x - zcx) / Bc;
+	double g = (y - zcy) / (- Cc);
+	*lat = RAD_TO_DEG * (2 * std::atan(std::exp(g)) - 0.5 * M_PI);
+}
 
-	m_tileCS = new CoordinateSystem("", "", wgs84, tile);
-	m_tileCS->init();
-
-	m_pixelCS = new CoordinateSystem("", "", wgs84, pixel);
-	m_pixelCS->init();
+WebMercatorUtil::WebMercatorUtil(int zoomLevel) :
+	impl {new Impl ()}
+{
+	impl->init(zoomLevel);
 }
 
 WebMercatorUtil::~WebMercatorUtil()
 {
-	delete m_pixelCS;
-	delete m_tileCS;
+	delete impl;
 }
 
 void WebMercatorUtil::getCoordinates(int tilex, int tiley, int pixelx, int pixely, double* lon, double* lat)
@@ -35,16 +57,20 @@ void WebMercatorUtil::getCoordinates(int tilex, int tiley, int pixelx, int pixel
 	double X = tilex * 256 + pixelx + 0.5;
 	double Y = tiley * 256 + pixely + 0.5;
 
-	m_pixelCS->mapGridToGeo(X, Y, lon, lat);
+	impl->unproject_pixel(X, Y, lon, lat);
 }
 
 void WebMercatorUtil::getTileRegion(double topLeftLon, double topLeftLat, double bottomRightLon, double bottomRightLat, int* xMin, int* xMax, int* yMin, int *yMax)
 {
-	// @todo region between -180 line not supported now.
 	double xmin, ymin, xmax, ymax;
 
-	m_tileCS->mapGeoToGrid(topLeftLon, topLeftLat, &xmin, &ymin);
-	m_tileCS->mapGeoToGrid(bottomRightLon, bottomRightLat, &xmax, &ymax);
+	impl->project_plxel(topLeftLon, topLeftLat, &xmin, &ymin);
+	impl->project_plxel(bottomRightLon, bottomRightLat, &xmax, &ymax);
+
+	xmin /= 256;
+	ymin /= 256;
+	xmax /= 256;
+	ymax /= 256;
 
 	*xMin = static_cast<int>(std::floor(xmin));
 	*yMin = static_cast<int>(std::floor(ymin));

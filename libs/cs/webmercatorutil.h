@@ -15,8 +15,8 @@ public:
 	void getTileRegion(double topLeftLon, double topLeftLat, double bottomRightLon, double bottomRightLat, int* xMin, int* xMax, int* yMin, int *yMax);
 
 private:
-	CoordinateSystem* m_pixelCS;
-	CoordinateSystem* m_tileCS;
+	class Impl;
+	Impl* impl;
 };
 
 #endif // WEBMERATORUTIL_H
