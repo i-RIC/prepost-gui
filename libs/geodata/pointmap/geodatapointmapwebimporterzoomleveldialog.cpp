@@ -2,7 +2,7 @@
 #include "geodatapointmapwebimporterzoomleveldialog.h"
 #include "ui_geodatapointmapwebimporterzoomleveldialog.h"
 
-#include <cs/webmeratorutil.h>
+#include <cs/webmercatorutil.h>
 
 #include <cmath>
 
@@ -73,7 +73,7 @@ void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
 
 void GeoDataPointmapWebImporterZoomLevelDialog::updateDataSize()
 {
-	auto wmutil = new WebMeratorUtil(ui->zoomLevelSpinBox->value());
+	auto wmutil = new WebMercatorUtil(ui->zoomLevelSpinBox->value());
 	int xmin, xmax, ymin, ymax;
 	wmutil->getTileRegion(m_lonMin, m_latMax, m_lonMax, m_latMin, &xmin, &xmax, &ymin, &ymax);
 	delete wmutil;

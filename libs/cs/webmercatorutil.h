@@ -5,11 +5,11 @@
 
 class CoordinateSystem;
 
-class CS_API WebMeratorUtil
+class CS_API WebMercatorUtil
 {
 public:
-	WebMeratorUtil(int zoomLevel);
-	~WebMeratorUtil();
+	WebMercatorUtil(int zoomLevel);
+	~WebMercatorUtil();
 
 	void getCoordinates(int tilex, int tiley, int pixelx, int pixely, double* lon, double* lat);
 	void getTileRegion(double topLeftLon, double topLeftLat, double bottomRightLon, double bottomRightLat, int* xMin, int* xMax, int* yMin, int *yMax);

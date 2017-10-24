@@ -1,11 +1,11 @@
-#include "webmeratorutil.h"
+#include "webmercatorutil.h"
 #include "coordinatesystem.h"
 
 #include <QString>
 
 #include <cmath>
 
-WebMeratorUtil::WebMeratorUtil(int zoomLevel)
+WebMercatorUtil::WebMercatorUtil(int zoomLevel)
 {
 	QString wgs84("+proj=longlat +datum=WGS84 +no_defs");
 
@@ -24,13 +24,13 @@ WebMeratorUtil::WebMeratorUtil(int zoomLevel)
 	m_pixelCS->init();
 }
 
-WebMeratorUtil::~WebMeratorUtil()
+WebMercatorUtil::~WebMercatorUtil()
 {
 	delete m_pixelCS;
 	delete m_tileCS;
 }
 
-void WebMeratorUtil::getCoordinates(int tilex, int tiley, int pixelx, int pixely, double* lon, double* lat)
+void WebMercatorUtil::getCoordinates(int tilex, int tiley, int pixelx, int pixely, double* lon, double* lat)
 {
 	double X = tilex * 256 + pixelx + 0.5;
 	double Y = tiley * 256 + pixely + 0.5;
@@ -38,7 +38,7 @@ void WebMeratorUtil::getCoordinates(int tilex, int tiley, int pixelx, int pixely
 	m_pixelCS->mapGridToGeo(X, Y, lon, lat);
 }
 
-void WebMeratorUtil::getTileRegion(double topLeftLon, double topLeftLat, double bottomRightLon, double bottomRightLat, int* xMin, int* xMax, int* yMin, int *yMax)
+void WebMercatorUtil::getTileRegion(double topLeftLon, double topLeftLat, double bottomRightLon, double bottomRightLat, int* xMin, int* xMax, int* yMin, int *yMax)
 {
 	// @todo region between -180 line not supported now.
 	double xmin, ymin, xmax, ymax;
