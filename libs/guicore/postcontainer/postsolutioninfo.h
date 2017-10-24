@@ -11,6 +11,7 @@
 #include <QMap>
 #include <QStringList>
 
+class CgnsFileOpener;
 class PostIterationSteps;
 class PostTimeSteps;
 class PostDataContainer;
@@ -114,7 +115,7 @@ private:
 	bool m_baseIterativeDataExists;
 	QList<PostDataContainer*> m_otherContainers;
 	int m_timerId;
-	int m_fileId;
+	CgnsFileOpener* m_opener;
 
 	std::vector<std::string> m_zoneNames1D;
 	std::vector<std::string> m_zoneNames2D;

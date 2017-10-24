@@ -17,12 +17,15 @@ class Graph2dHybridWindowLineSettingDialog : public QDialog
 public:
 	explicit Graph2dHybridWindowLineSettingDialog(QWidget* parent = nullptr);
 	~Graph2dHybridWindowLineSettingDialog();
+
+	int lineWidth() const;
 	void setLineWidth(int width);
-	int lineWidth();
+
+	QColor customColor() const;
 	void setCustomColor(QColor col);
-	QColor customColor();
+
+	Graph2dHybridWindowResultSetting::AxisSide axisSide() const;
 	void setAxisSide(Graph2dHybridWindowResultSetting::AxisSide side);
-	Graph2dHybridWindowResultSetting::AxisSide axisSide();
 
 private:
 	Ui::Graph2dHybridWindowLineSettingDialog* ui;

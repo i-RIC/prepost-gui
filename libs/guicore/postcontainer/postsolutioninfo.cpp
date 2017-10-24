@@ -1,4 +1,5 @@
 #include "../base/iricmainwindowinterface.h"
+#include "../misc/cgnsfileopener.h"
 #include "../project/projectdata.h"
 #include "../solverdef/solverdefinition.h"
 #include "../solverdef/solverdefinitiongridtype.h"
@@ -46,7 +47,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_iterationSteps {nullptr},
 	m_timeSteps {nullptr},
 	m_timerId {0},
-	m_fileId {0},
+	m_opener {nullptr},
 	m_iterationType {SolverDefinition::NoIteration},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_particleExportPrefix {"Particle_"}
@@ -115,7 +116,7 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 	if (fn == 0) {
 		bool ok = open();
 		if (ok) {
-			tmpfn = m_fileId;
+			tmpfn = m_opener->fileId();
 		}
 	} else {
 		tmpfn = fn;
@@ -172,8 +173,8 @@ void PostSolutionInfo::informStepsUpdated()
 		return;
 	}
 
-	setupZoneDataContainers(m_fileId);
-	checkBaseIterativeDataExist(m_fileId);
+	setupZoneDataContainers(m_opener->fileId());
+	checkBaseIterativeDataExist(m_opener->fileId());
 	emit updated();
 	emit allPostProcessorsUpdated();
 	close();
@@ -422,10 +423,10 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		return;
 	}
 	if (m_timeSteps != nullptr) {
-		m_timeSteps->checkStepsUpdate(m_fileId);
+		m_timeSteps->checkStepsUpdate(m_opener->fileId());
 	}
 	if (m_iterationSteps != nullptr) {
-		m_iterationSteps->checkStepsUpdate(m_fileId);
+		m_iterationSteps->checkStepsUpdate(m_opener->fileId());
 	}
 	checking = false;
 	close();
@@ -665,15 +666,8 @@ PostSolutionInfo::Dimension PostSolutionInfo::fromIntDimension(int dim)
 
 void PostSolutionInfo::close()
 {
-	QString lockfname = currentCgnsFileName();
-	lockfname.append(".lock");
-	QFile lockedFile(lockfname);
-	lockedFile.remove();
-
-	if (m_fileId != 0) {
-		cg_close(m_fileId);
-		m_fileId = 0;
-	}
+	delete m_opener;
+	m_opener = nullptr;
 }
 
 const PostExportSetting& PostSolutionInfo::exportSetting() const
@@ -698,7 +692,9 @@ void PostSolutionInfo::setParticleExportPrefix(const QString& prefix)
 
 int PostSolutionInfo::fileId() const
 {
-	return m_fileId;
+	if (m_opener == nullptr) {return 0;}
+
+	return m_opener->fileId();
 }
 
 void PostSolutionInfo::exportCalculationResult()
@@ -910,43 +906,15 @@ void PostSolutionInfo::exportCalculationResult(const std::string& folder, const 
 
 bool PostSolutionInfo::open()
 {
-	int retryMax = 50;
-	int retry = 0;
-	int fn, ier;
-
-	if (m_fileId != 0) {
-		// already open!
+	if (m_opener != nullptr) {
 		return true;
 	}
 
-	QString fname = currentCgnsFileName();
-	QString lockfname = fname;
-	lockfname.append(".lock");
-	QFile lockedFile(lockfname);
-	qApp->processEvents();
-
-	while (lockedFile.exists() && retry < retryMax) {
-		++ retry;
-		thread()->msleep(100);
-		qApp->processEvents();
-	}
-
-	if (lockedFile.exists()) {
-		// The solver keeps locking the file too long.
+	try {
+		m_opener = new CgnsFileOpener(iRIC::toStr(currentCgnsFileName()), CG_MODE_READ);
+	} catch (const std::runtime_error&) {
 		return false;
 	}
-
-	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	if (ier != 0) {
-		// error.
-		cg_close(fn);
-		return false;
-	}
-	m_fileId = fn;
-
-	// create lock file.
-	lockedFile.open(QFile::WriteOnly);
-	lockedFile.close();
 
 	return true;
 }

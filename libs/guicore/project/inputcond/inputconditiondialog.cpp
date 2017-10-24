@@ -1,5 +1,6 @@
 #include "ui_inputconditiondialog.h"
 
+#include "../../misc/cgnsfileopener.h"
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "../projectcgnsfile.h"
@@ -151,24 +152,30 @@ bool InputConditionDialog::import(const QString& filename)
 	if (ret != 0) {return false;}
 
 	// now save the loaded data to the current CGNS file.
-	ret = cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0) {return false;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {goto ERROR_BEFORE_CLOSE;}
-	ret = m_containerSet->save();
-	if (ret != 0) {goto ERROR_BEFORE_CLOSE;}
-	ret = cg_close(fn);
-	if (ret != 0) {return false;}
-
-	m_modified = false;
-	// Delete the temporary file.
-	bret = QFile::remove(tmpname);
-	if (! bret) {return false;}
-
-	return true;
+	try {
+		auto opener = new CgnsFileOpener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
+		ret = cg_iRIC_GotoCC(opener->fileId());
+		if (ret == 0) {
+			ret = m_containerSet->save();
+		}
+		delete opener;
+		if (ret != 0) {
+			goto ERROR_AFTER_CLOSE;
+		}
+		m_modified = false;
+		QFile::remove(tmpname);
+		return true;
+	} catch (const std::runtime_error&) {
+		goto ERROR_AFTER_CLOSE;
+	}
 
 ERROR_BEFORE_CLOSE:
 	cg_close(fn);
+	QFile::remove(tmpname);
+	return false;
+
+ERROR_AFTER_CLOSE:
+	QFile::remove(tmpname);
 	return false;
 }
 
@@ -177,23 +184,18 @@ bool InputConditionDialog::importFromYaml(const QString& filename)
 	// load data from yaml file
 	bool ret = m_containerSet->importFromYaml(filename);
 	if (! ret) {return false;}
-	int fn;
 
-	// now save the loaded data to the current CGNS file.
-	ret = cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0){return false;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0){goto ERROR_BEFORE_CLOSE;}
-	ret = m_containerSet->save();
-	if (ret != 0){goto ERROR_BEFORE_CLOSE;}
-	ret = cg_close(fn);
-	if (ret != 0){return false;}
-
-	return true;
-
-ERROR_BEFORE_CLOSE:
-	cg_close(fn);
-	return false;
+	try {
+		auto opener = new CgnsFileOpener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
+		int ret = cg_iRIC_GotoCC(opener->fileId());
+		if (ret) {
+			ret = m_containerSet->save();
+		}
+		delete opener;
+		return (ret == 0);
+	} catch (const std::runtime_error&) {
+		return false;
+	}
 }
 
 bool InputConditionDialog::doExport(const QString& filename)
@@ -259,15 +261,13 @@ void InputConditionDialog::accept()
 		return;
 	}
 
-	int fn, ier;
-	ier = cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_MODIFY, &fn);
-	if (ier != 0) {
+	try {
+		CgnsFileOpener opener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
+		save(opener.fileId());
+		QDialog::accept();
+	} catch (const std::runtime_error&) {
 		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
-		return;
 	}
-	save(fn);
-	cg_close(fn);
-	QDialog::accept();
 }
 
 void InputConditionDialog::reject()
@@ -276,12 +276,14 @@ void InputConditionDialog::reject()
 		return;
 	}
 	// reload.
-	int fn;
-	cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_READ, &fn);
-	load(fn);
-	cg_close(fn);
-	m_modified = false;
-	QDialog::reject();
+	try {
+		CgnsFileOpener opener(iRIC::toStr(m_fileName), CG_MODE_READ);
+		load(opener.fileId());
+		m_modified = false;
+		QDialog::reject();
+	} catch (const std::runtime_error&) {
+		return;
+	}
 }
 
 void InputConditionDialog::setModified()
