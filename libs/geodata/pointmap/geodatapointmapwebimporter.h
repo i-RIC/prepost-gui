@@ -4,7 +4,7 @@
 #include "gd_pointmap_global.h"
 #include <guicore/pre/geodata/geodatawebimporter.h>
 
-class WebMeratorUtil;
+class WebMercatorUtil;
 class CoordinateSystem;
 class QNetworkAccessManager;
 class QNetworkReply;
@@ -42,7 +42,7 @@ private:
 	bool m_isWaitingHttpResponse;
 
 	CoordinateSystem* m_coordinateSystem;
-	WebMeratorUtil* m_wmUtil;
+	WebMercatorUtil* m_wmUtil;
 };
 
 #endif // GEODATAPOINTMAPWEBIMPORTER_H

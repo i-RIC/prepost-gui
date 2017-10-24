@@ -4,7 +4,7 @@
 #include "geodatapointmapwebimporterzoomleveldialog.h"
 
 #include <cs/coordinatesystem.h>
-#include <cs/webmeratorutil.h>
+#include <cs/webmercatorutil.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -186,7 +186,7 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	m_zoomLevel = zlDialog.zoomLevel();
 	m_url = zlDialog.url();
 
-	m_wmUtil = new WebMeratorUtil(m_zoomLevel);
+	m_wmUtil = new WebMercatorUtil(m_zoomLevel);
 
 	return true;
 }
