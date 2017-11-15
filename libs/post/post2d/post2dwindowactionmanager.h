@@ -20,6 +20,7 @@ public:
 	QAction* drawStreamlineAction;
 	QAction* drawParticleAction;
 	QAction* drawCellFlagAction;
+	QAction* drawCellScalarAction;
 
 	QAction* drawTitleAction;
 	QAction* drawTimeAction;

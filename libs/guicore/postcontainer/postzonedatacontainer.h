@@ -43,6 +43,7 @@ public:
 	bool handleCurrentStepUpdate(const int fn) override;
 	void loadFromCgnsFile(const int fn) override;
 
+	bool cellScalarValueExists() const;
 	bool scalarValueExists() const;
 	bool vectorValueExists() const;
 
@@ -52,6 +53,7 @@ public:
 	void getCellIJKIndex(int index, int* i, int* j, int* k) const;
 
 	void loadIfEmpty(const int fn);
+	bool IBCCellExists() const;
 	bool IBCExists() const;
 	QString elevationName() const;
 
@@ -67,7 +69,9 @@ private:
 	virtual bool loadStructuredGrid(const int fn, const int currentStep);
 	bool loadUnstructuredGrid(const int fn, const int currentStep);
 	bool loadParticle(const int fn, const int currentStep);
-	bool getSoluionId(const int fn, const int currentStep, int* solid);
+	bool findSolutionId(const int fn, const int currentStep, int* solId, const char* arrayName);
+	bool getCellSolutionId(const int fn, const int currentStep, int* solId);
+	bool getSolutionId(const int fn, const int currentStep, int* solId);
 	virtual bool loadGridScalarData(const int fn, const int solid);
 	virtual bool loadGridVectorData(const int fn, const int solid);
 

@@ -2,6 +2,7 @@
 #include "../post2dwindowdatamodel.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowcellflaggroupdataitem.h"
+#include "post2dwindowcellscalargrouptopdataitem.h"
 #include "post2dwindowgraphgroupdataitem.h"
 #include "post2dwindowgridshapedataitem.h"
 #include "post2dwindowgridtypedataitem.h"
@@ -55,6 +56,7 @@
 Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_shapeDataItem {nullptr},
+	m_cellScalarGroupTopDataItem {nullptr},
 	m_scalarGroupTopDataItem {nullptr},
 	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
@@ -99,6 +101,10 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
 
+	if (cont->cellScalarValueExists()) {
+		m_cellScalarGroupTopDataItem = new Post2dWindowCellScalarGroupTopDataItem(this);
+	}
+
 	m_childItems.push_back(m_shapeDataItem);
 	if (cont->vectorValueExists()) {
 		m_childItems.push_back(m_arrowGroupDataItem);
@@ -117,6 +123,9 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 		m_childItems.push_back(m_scalarGroupTopDataItem);
 	}
 	m_childItems.push_back(m_cellFlagGroupDataItem);
+	if (cont->cellScalarValueExists()) {
+		m_childItems.push_back(m_cellScalarGroupTopDataItem);
+	}
 
 	m_showNodeAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showNodeAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
@@ -194,6 +203,10 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! graphNode.isNull() && m_graphGroupDataItem != nullptr) {
 		m_graphGroupDataItem->loadFromProjectMainFile(graphNode);
 	}
+	QDomNode cellScalarNode = iRIC::getChildNode(node, "ScalarCellCenter");
+	if (!cellScalarNode.isNull() && m_cellScalarGroupTopDataItem != nullptr) {
+		m_cellScalarGroupTopDataItem->loadFromProjectMainFile(cellScalarNode);
+	}
 }
 
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -236,6 +249,11 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	if (m_graphGroupDataItem != nullptr) {
 		writer.writeStartElement("GraphGroup");
 		m_graphGroupDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (m_cellScalarGroupTopDataItem != nullptr) {
+		writer.writeStartElement("ScalarCellCenter");
+		m_cellScalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }

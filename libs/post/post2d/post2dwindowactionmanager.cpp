@@ -44,6 +44,9 @@ void Post2dWindowActionManager::setupDrawMenu()
 	drawCellFlagAction = new QAction(tr("&Cell Attributes..."), this);
 	m_drawMenu->addAction(drawCellFlagAction);
 
+	drawCellScalarAction = new QAction(tr("Scalar (Ce&ll Center)..."), this);
+	m_drawMenu->addAction(drawCellScalarAction);
+
 	m_drawMenu->addSeparator();
 
 	drawTitleAction = new QAction(tr("&Title..."), this);
@@ -77,6 +80,7 @@ void Post2dWindowActionManager::connectWithDataModel()
 	connect(drawStreamlineAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(streamlineSetting()));
 	connect(drawParticleAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(particleSetting()));
 	connect(drawCellFlagAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(cellFlagSetting()));
+	connect(drawCellScalarAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(cellScalarSetting()));
 	connect(drawTitleAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(titleSetting()));
 	connect(drawTimeAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(timeSetting()));
 

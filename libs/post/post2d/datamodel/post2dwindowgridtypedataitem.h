@@ -3,6 +3,8 @@
 
 #include "../post2dwindowdataitem.h"
 
+#include <cgnslib.h>
+
 #include <postbase/postwindowgridtypedataiteminterface.h>
 
 #include <QList>
@@ -26,7 +28,9 @@ public:
 	Post2dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
 	Post2dWindowGeoDataTopDataItem* geoDataItem() const {return m_geoDataItem;}
+
 	LookupTableContainer* nodeLookupTable(const std::string& attName) const {return m_nodeLookupTables.value(attName, nullptr);}
+	LookupTableContainer* cellLookupTable(const std::string& attName) const {return m_cellLookupTables.value(attName, nullptr);}
 	LookupTableContainer* particleLookupTable(const std::string& attName) const {return m_particleLookupTables.value(attName, nullptr);}
 	void setupZoneDataItems();
 	void update();
@@ -36,13 +40,16 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
+	void updateCellLookupTableRanges();
 	void updateNodeLookupTableRanges();
 	void updateParticleLookupTableRanges();
 
 	void setupNodeScalarsToColors(const std::string& name);
+	void setupCellScalarsToColors(const std::string& name);
 	void setupParticleScalarsToColors(const std::string& name);
 
 	SolverDefinitionGridType* m_gridType;
+	QMap<std::string, LookupTableContainer*> m_cellLookupTables;
 	QMap<std::string, LookupTableContainer*> m_nodeLookupTables;
 	QMap<std::string, LookupTableContainer*> m_particleLookupTables;
 	QMap<std::string, Post2dWindowZoneDataItem*> m_zoneDataNameMap;

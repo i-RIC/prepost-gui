@@ -14,8 +14,8 @@ class QSignalMapper;
 
 class Post2dWindowGraphGroupDataItem;
 class Post2dWindowGridShapeDataItem;
-class Post2dWindowNodeScalarGroupDataItem;
 class Post2dWindowNodeScalarGroupTopDataItem;
+class Post2dWindowCellScalarGroupTopDataItem;
 class Post2dWindowNodeVectorArrowGroupDataItem;
 class Post2dWindowNodeVectorStreamlineGroupDataItem;
 class Post2dWindowNodeVectorParticleGroupDataItem;
@@ -51,6 +51,7 @@ public:
 	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
 	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
 	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
+	Post2dWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const {return m_cellScalarGroupTopDataItem;}
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
 	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const {return m_graphGroupDataItem;}
 
@@ -85,6 +86,7 @@ protected:
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
+	Post2dWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
 	Post2dWindowNodeVectorArrowGroupDataItem* m_arrowGroupDataItem;
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;

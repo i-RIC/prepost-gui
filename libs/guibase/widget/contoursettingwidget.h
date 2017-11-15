@@ -41,7 +41,11 @@ public:
 	Contour contour() const;
 	void setContour(Contour contour);
 
+	void disableRadioButton(Contour contour);
+	void hideRadioButton(Contour contour);
+
 	void hidePointsRadioButton();
+	void hideIsolinesRadioButton();
 	void forceSelectPointsOnly();
 
 signals:

@@ -1,10 +1,11 @@
 #include "../post2dwindowdatamodel.h"
 #include "post2dwindowcontoursettingdialog.h"
 #include "post2dwindowgridtypedataitem.h"
-#include "post2dwindownodescalargroupdataitem.h"
+#include "post2dwindowcellscalargroupdataitem.h"
 #include "post2dwindownodescalargroupdataitem_shapeexporter.h"
-#include "post2dwindownodescalargrouptopdataitem.h"
+#include "post2dwindowcellscalargrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
+#include "iricactivecellfilter.h"
 
 #include <cs/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
@@ -44,6 +45,7 @@
 #include <vtkAppendPolyData.h>
 #include <vtkCell.h>
 #include <vtkCellData.h>
+#include <vtkCellDataToPointData.h>
 #include <vtkCleanPolyData.h>
 #include <vtkClipPolyData.h>
 #include <vtkContourFilter.h>
@@ -63,17 +65,17 @@
 
 #include <vtkPolyDataWriter.h>
 
-Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Scalar (Cell Center)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	setupActors();
 
-	m_shapeExporter = new ShapeExporter(this);
+	//m_shapeExporter = new ShapeExporter(this);
 }
 
-Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()
+Post2dWindowCellScalarGroupDataItem::~Post2dWindowCellScalarGroupDataItem()
 {
 	vtkRenderer* r = renderer();
 	r->RemoveActor(m_isolineActor);
@@ -92,21 +94,21 @@ Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()
 	m_fringeMapper->Delete();
 	m_scalarBarWidget->Delete();
 
-	delete m_shapeExporter;
+	//delete m_shapeExporter;
 }
 
-std::string Post2dWindowNodeScalarGroupDataItem::target() const
+std::string Post2dWindowCellScalarGroupDataItem::target() const
 {
 	return m_setting.target;
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setTarget(const std::string& target)
+void Post2dWindowCellScalarGroupDataItem::setTarget(const std::string& target)
 {
 	m_setting.target = target.c_str();
 	updateActorSettings();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
+void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
 {
 	// make all the items invisible
 	m_isolineActor->VisibilityOff();
@@ -120,13 +122,14 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	vtkPointSet* ps = cont->data();
 	if (m_setting.target == "") {return;}
 	// update current active scalar
-	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0) {return;}
+	vtkCellData* cd = ps->GetCellData();
+	Q_ASSERT(cd != nullptr);
+	if (cd->GetNumberOfArrays() == 0) { return; }
 
 	std::string targetStr = iRIC::toStr(m_setting.target);
-	ScalarsToColorsContainerUtil::setValueRange(&m_lookupTableContainer, pd->GetArray(targetStr.c_str()));
+	ScalarsToColorsContainerUtil::setValueRange(&m_lookupTableContainer, cd->GetArray(targetStr.c_str()));
 
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	Post2dWindowCellScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowCellScalarGroupTopDataItem*>(parent());
 	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
 	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
 
@@ -158,7 +161,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	updateVisibilityWithoutRendering();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+void Post2dWindowCellScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
 	setTarget(m_setting.target);
@@ -168,13 +171,13 @@ void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	QDomNode ltNode = iRIC::getChildNode(node, "LookupTable");
 	if (ltNode.isNull()) {
 		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-		m_lookupTableContainer = *(gtItem->nodeLookupTable(m_setting.target));
+		m_lookupTableContainer = *(gtItem->cellLookupTable(m_setting.target));
 	} else {
 		m_lookupTableContainer.loadFromProjectMainFile(ltNode);
 	}
 }
 
-void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void Post2dWindowCellScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
@@ -185,7 +188,7 @@ void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	writer.writeEndElement();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupActors()
+void Post2dWindowCellScalarGroupDataItem::setupActors()
 {
 	m_isolineActor = vtkActor::New();
 	m_isolineActor->GetProperty()->SetLighting(false);
@@ -243,12 +246,12 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	updateActorSettings();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
+void Post2dWindowCellScalarGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& range)
+void Post2dWindowCellScalarGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_zDepthRange = range;
 
@@ -257,16 +260,21 @@ void Post2dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& 
 	m_isolineActor->SetPosition(0, 0, range.min());
 }
 
-void Post2dWindowNodeScalarGroupDataItem::update()
+void Post2dWindowCellScalarGroupDataItem::update()
 {
 	updateActorSettings();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting(vtkPolyData* polyData)
+void Post2dWindowCellScalarGroupDataItem::setupIsolineSetting(vtkPolyData* polyData)
 {
+	// transform cell data into point data
+	vtkSmartPointer<vtkCellDataToPointData> cellToPoint = vtkCellDataToPointData::New();
+	cellToPoint->SetInputData(polyData);
+	cellToPoint->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_CELLS, iRIC::toStr(m_setting.target).c_str());
+
 	double range[2];
 	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
-	m_isolineFilter->SetInputData(polyData);
+	m_isolineFilter->SetInputConnection(cellToPoint->GetOutputPort(0));
 	m_isolineFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.target).c_str());
 	m_isolineFilter->GenerateValues(m_setting.numberOfDivisions + 1, range);
 	m_isolineMapper->SetLookupTable(m_lookupTableContainer.vtkObj());
@@ -274,7 +282,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting(vtkPolyData* polyD
 	m_actorCollection->AddItem(m_isolineActor);
 }
 
-vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupLowerClippedPolygon(vtkPolyData* inputData, double value)
+vtkPolyData* Post2dWindowCellScalarGroupDataItem::setupLowerClippedPolygon(vtkPolyData* inputData, double value)
 {
 	vtkClipPolyData* clipper = vtkClipPolyData::New();
 	clipper->SetValue(value);
@@ -292,7 +300,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupLowerClippedPolygon(vtkPo
 	return data;
 }
 
-vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupHigherClippedPolygon(vtkPolyData* inputData, double value)
+vtkPolyData* Post2dWindowCellScalarGroupDataItem::setupHigherClippedPolygon(vtkPolyData* inputData, double value)
 {
 	vtkClipPolyData* clipper = vtkClipPolyData::New();
 	clipper->SetValue(value);
@@ -310,7 +318,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupHigherClippedPolygon(vtkP
 	return data;
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* polyData)
+void Post2dWindowCellScalarGroupDataItem::setupColorContourSetting(vtkPolyData* polyData)
 {
 	double range[2];
 	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
@@ -328,10 +336,10 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* 
 	m_actorCollection->AddItem(m_contourActor);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* polyData)
+void Post2dWindowCellScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* polyData)
 {
 	m_fringeMapper->SetInputData(polyData);
-	m_fringeMapper->SetScalarModeToUsePointFieldData();
+	m_fringeMapper->SetScalarModeToUseCellFieldData();
 	m_fringeMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
 	m_fringeMapper->SetLookupTable(m_lookupTableContainer.vtkObj());
 	m_fringeMapper->UseLookupTableScalarRangeOn();
@@ -339,9 +347,9 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* p
 	m_actorCollection->AddItem(m_fringeActor);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
+void Post2dWindowCellScalarGroupDataItem::setupScalarBarSetting()
 {
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	Post2dWindowCellScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowCellScalarGroupTopDataItem*>(parent());
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(topitem->m_colorbarTitleMap.value(iRIC::toStr(m_setting.target))).c_str());
 	a->SetLookupTable(m_lookupTableContainer.vtkObj());
@@ -365,48 +373,48 @@ void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 	}
 }
 
-void Post2dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
+void Post2dWindowCellScalarGroupDataItem::innerUpdateZScale(double scale)
 {
 	m_contourActor->SetScale(1, scale, 1);
 	m_isolineActor->SetScale(1, scale, 1);
 	m_fringeActor->SetScale(1, scale, 1);
 }
 
-QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
+QDialog* Post2dWindowCellScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	*(gtItem->nodeLookupTable(m_setting.target)) = m_lookupTableContainer;
+	*(gtItem->cellLookupTable(m_setting.target)) = m_lookupTableContainer;
 	dialog->setGridTypeDataItem(gtItem);
 	Post2dWindowZoneDataItem* zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent());
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), Vertex);
-	if (! zItem->dataContainer()->IBCExists()) {
+	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	if (! zItem->dataContainer()->IBCCellExists()) {
 		dialog->disableActive();
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setSetting(m_setting);
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	Post2dWindowCellScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowCellScalarGroupTopDataItem*>(parent());
 	dialog->setColorBarTitleMap(topitem->m_colorbarTitleMap);
 
 	return dialog;
 }
 
-class Post2dWindowNodeScalarGroupDataItem::SetSettingCommand : public QUndoCommand
+class Post2dWindowCellScalarGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item, QUndoCommand* parent = nullptr) :
-		QUndoCommand {Post2dWindowNodeScalarGroupDataItem::tr("Update Contour Setting"), parent},
+	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowCellScalarGroupDataItem* item, QUndoCommand* parent = nullptr) :
+		QUndoCommand {Post2dWindowCellScalarGroupDataItem::tr("Update Contour Setting"), parent},
 		m_newSetting {s},
 		m_newLookupTable {ltc},
 		m_newScalarBarTitle {colorbarTitle},
 		m_oldSetting {item->m_setting},
 		m_oldLookupTable {item->m_lookupTableContainer},
 		m_item {item},
-		m_topItem {dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(item->parent())}
+		m_topItem {dynamic_cast<Post2dWindowCellScalarGroupTopDataItem*>(item->parent())}
 	{
 		m_oldScalarBarTitle = m_topItem->m_colorbarTitleMap[item->target()];
 	}
@@ -439,32 +447,32 @@ private:
 	LookupTableContainer m_oldLookupTable;
 	QString m_oldScalarBarTitle;
 
-	Post2dWindowNodeScalarGroupDataItem* m_item;
-	Post2dWindowNodeScalarGroupTopDataItem* m_topItem;
+	Post2dWindowCellScalarGroupDataItem* m_item;
+	Post2dWindowCellScalarGroupTopDataItem* m_topItem;
 };
 
-void Post2dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+void Post2dWindowCellScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
-vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtkPolyData* polyData)
+vtkPolyData* Post2dWindowCellScalarGroupDataItem::createRangeClippedPolyData(vtkPolyData* polyData)
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 		polyData->Register(0);
 		return polyData;
 	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-		vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
-		clipper->SetInputData(polyData);
-		clipper->SetValue(PostZoneDataContainer::IBCLimit);
-		clipper->InsideOutOff();
-		polyData->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-		clipper->Update();
-		vtkPolyData* clippedData = clipper->GetOutput();
-		clippedData->Register(0);
-		return clippedData;
+		vtkSmartPointer<iricActiveCellFilter> filter = vtkSmartPointer<iricActiveCellFilter>::New();
+		filter->SetInputData(polyData);
+		filter->SetValue(PostZoneDataContainer::IBCLimit);
+		filter->CellClippingOn();
+		polyData->GetCellData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+		filter->Update();
+		vtkPolyData* activeData = filter->GetOutput();
+		activeData->Register(0);
+		return activeData;
 	} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(cont->data());
@@ -479,7 +487,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtk
 	return nullptr;
 }
 
-vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtkPolyData* polyData)
+vtkPolyData* Post2dWindowCellScalarGroupDataItem::createValueClippedPolyData(vtkPolyData* polyData)
 {
 	vtkSmartPointer<vtkPolyData> upperClipped;
 	vtkSmartPointer<vtkPolyData> lowerClipped;
@@ -489,33 +497,34 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtk
 	if (m_setting.fillLower) {
 		lowerClipped = polyData;
 	} else {
-		vtkSmartPointer<vtkClipPolyData> lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
+		vtkSmartPointer<iricActiveCellFilter> lowerClipper = vtkSmartPointer<iricActiveCellFilter>::New();
 		lowerClipper->SetValue(min);
+		lowerClipper->CellClippingOn();
 		lowerClipper->SetInputData(polyData);
 		lowerClipper->InsideOutOff();
-		polyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
-
+		polyData->GetCellData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 		lowerClipper->Update();
 		lowerClipped = lowerClipper->GetOutput();
-		polyData->GetPointData()->SetActiveScalars("");
+		polyData->GetCellData()->SetActiveScalars("");
 	}
 	if (m_setting.fillUpper) {
 		upperClipped = lowerClipped;
 	} else {
-		vtkSmartPointer<vtkClipPolyData> upperClipper = vtkSmartPointer<vtkClipPolyData>::New();
+		vtkSmartPointer<iricActiveCellFilter> upperClipper = vtkSmartPointer<iricActiveCellFilter>::New();
 		upperClipper->SetValue(max);
+		upperClipper->CellClippingOn();
 		upperClipper->SetInputData(lowerClipped);
 		upperClipper->InsideOutOn();
-		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
+		lowerClipped->GetCellData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 		upperClipper->Update();
 		upperClipped = upperClipper->GetOutput();
-		lowerClipped->GetPointData()->SetActiveScalars("");
+		lowerClipped->GetCellData()->SetActiveScalars("");
 	}
 	upperClipped->Register(0);
 	return upperClipped;
 }
 
-vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtkPolyData* polyData)
+vtkPolyData* Post2dWindowCellScalarGroupDataItem::createColorContourPolyData(vtkPolyData* polyData)
 {
 	double range[2];
 	m_lookupTableContainer.getValueRange(&range[0], &range[1]);
@@ -565,7 +574,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtk
 	return ret;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
+bool Post2dWindowCellScalarGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
 	if (m_setting.target == "") {return false;}
@@ -574,49 +583,49 @@ bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 	return true;
 }
 
-void Post2dWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
+void Post2dWindowCellScalarGroupDataItem::updateVisibility(bool visible)
 {
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
 	m_scalarBarWidget->SetEnabled(m_setting.scalarBarSetting.visible.value() && v && (m_setting.target != ""));
 	Post2dWindowDataItem::updateVisibility(visible);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
+void Post2dWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellAttributeBrowser();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellAttributeBrowser();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMousePressEvent(event);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
+void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* /*menu*/)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
-	menu->addAction(abAction);
+	//QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showCellAttributeBrowserAction();
+	//menu->addAction(abAction);
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
+bool Post2dWindowCellScalarGroupDataItem::checkKmlExportCondition()
 {
 	// check the condition.
 	if (m_setting.contour != ContourSettingWidget::ContourFigure) {
@@ -636,7 +645,7 @@ bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
+bool Post2dWindowCellScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
 {
 	writer.writeStartElement("Document");
 	writer.writeTextElement("name", "iRIC Calculation Result");
@@ -671,13 +680,13 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writer)
+bool Post2dWindowCellScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writer)
 {
 	writer.writeEndElement();
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time)
+bool Post2dWindowCellScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
 	auto& stc = m_lookupTableContainer;
@@ -826,12 +835,12 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportContourFigureToShape(const QString& filename, double time)
-{
-	return m_shapeExporter->exportContourFigure(filename, time);
-}
+//bool Post2dWindowCellScalarGroupDataItem::exportContourFigureToShape(const QString& filename, double time)
+//{
+//	return m_shapeExporter->exportContourFigure(filename, time);
+//}
 
-void Post2dWindowNodeScalarGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
+void Post2dWindowCellScalarGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
 {
 	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
 

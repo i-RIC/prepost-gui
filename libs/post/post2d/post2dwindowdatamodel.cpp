@@ -2,6 +2,8 @@
 #include "datamodel/post2dwindowgridshapedataitem.h"
 #include "datamodel/post2dwindowgridtypedataitem.h"
 #include "datamodel/post2dwindowmeasureddatatopdataitem.h"
+#include "datamodel/post2dwindowcellscalargroupdataitem.h"
+#include "datamodel/post2dwindowcellscalargrouptopdataitem.h"
 #include "datamodel/post2dwindownodescalargroupdataitem.h"
 #include "datamodel/post2dwindownodescalargrouptopdataitem.h"
 #include "datamodel/post2dwindownodevectorarrowgroupdataitem.h"
@@ -192,6 +194,23 @@ void Post2dWindowDataModel::cellFlagSetting()
 	if (zItem == nullptr) {return;}
 	Post2dWindowCellFlagGroupDataItem* item = zItem->cellFlagGroupDataItem();
 	item->showPropertyDialog();
+}
+
+void Post2dWindowDataModel::addCellScalar()
+{
+	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	if (zItem == nullptr) { return; }
+	Post2dWindowCellScalarGroupTopDataItem* item = zItem->cellScalarGroupTopDataItem();
+	if (item == nullptr) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Contour setting is not available, because this result does not contain cell scalar values."));
+		return;
+	}
+	item->showAddDialog();
+}
+
+void Post2dWindowDataModel::cellScalarSetting()
+{
+	addCellScalar();
 }
 
 Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()

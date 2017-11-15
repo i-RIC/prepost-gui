@@ -12,6 +12,7 @@
 
 #include <QMessageBox>
 
+#include <vtkCellData.h>
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
@@ -21,6 +22,7 @@ Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget* pare
 {
 	m_activeAvailable = true;
 	m_unstructured = false;
+	m_location = GridLocationNull;
 
 	ui->setupUi(this);
 	ui->contourWidget->hidePointsRadioButton();
@@ -36,12 +38,20 @@ Post2dWindowContourSettingDialog::~Post2dWindowContourSettingDialog()
 	delete ui;
 }
 
-void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
+void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData, GridLocation_t location)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
 	SolverDefinitionGridType* gtype = m_gridTypeDataItem->gridType();
 
-	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	if (location == Vertex) {
+		vtkPointData* pd = zoneData->data()->GetPointData();
+		m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	} else if (location == CellCenter) {
+		vtkCellData* cd = zoneData->data()->GetCellData();
+		m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd);
+		ui->contourWidget->hideRadioButton(ContourSettingWidget::ContourFigure);
+	}
+	m_location = location;
+
 	ComboBoxTool::setupItems(gtype->solutionCaptions(m_solutions), ui->physicalValueComboBox);
 
 	vtkStructuredGrid* stG = dynamic_cast<vtkStructuredGrid*> (zoneData->data());
@@ -122,7 +132,15 @@ const LookupTableContainer& Post2dWindowContourSettingDialog::lookupTable()
 void Post2dWindowContourSettingDialog::targetChanged(int index)
 {
 	std::string sol = m_solutions.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(sol);
+	LookupTableContainer* c;
+	if (this->m_location == Vertex) {
+		c = m_gridTypeDataItem->nodeLookupTable(sol);
+	} else if (this->m_location == CellCenter) {
+		c = m_gridTypeDataItem->cellLookupTable(sol);
+	} else {
+		Q_ASSERT(false);
+	}
+
 	m_lookupTable = *c;
 	ui->colormapWidget->setContainer(&m_lookupTable);
 }
