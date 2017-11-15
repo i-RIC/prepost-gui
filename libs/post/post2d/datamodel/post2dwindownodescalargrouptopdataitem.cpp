@@ -82,10 +82,12 @@ void Post2dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamW
 	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
 	while (i.hasNext()) {
 		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
+		if (i.key().size() > 0) {
+			writer.writeStartElement("ScalarBarTitle");
+			writer.writeAttribute("value", i.key().c_str());
+			writer.writeAttribute("title", i.value());
+			writer.writeEndElement();
+		}
 	}
 	writer.writeEndElement();
 
