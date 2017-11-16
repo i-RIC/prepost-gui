@@ -63,7 +63,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer());
+	dialog->setZoneData(zItem->dataContainer(), Vertex);
 	dialog->hideOpacity();
 	// region setting
 	if (! zItem->dataContainer()->IBCExists()) {

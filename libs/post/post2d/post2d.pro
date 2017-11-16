@@ -184,7 +184,8 @@ win32 {
 }
 
 # Input
-HEADERS += post2d_global.h \
+HEADERS += iricactivecellfilter.h \
+           post2d_global.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -202,6 +203,8 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowcellflagdataitem.h \
            datamodel/post2dwindowcellflaggroupdataitem.h \
            datamodel/post2dwindowcellflagsettingdialog.h \
+           datamodel/post2dwindowcellscalargroupdataitem.h \
+           datamodel/post2dwindowcellscalargrouptopdataitem.h \
            datamodel/post2dwindowcontoursettingdialog.h \
            datamodel/post2dwindowgeodatadataitem.h \
            datamodel/post2dwindowgeodatagroupdataitem.h \
@@ -264,7 +267,8 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowstreamlinestructuredsettingdialog.ui \
          datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui \
          datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui
-SOURCES += post2dgridregionselectdialog.cpp \
+SOURCES += iricactivecellfilter.cpp \
+           post2dgridregionselectdialog.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \
@@ -281,6 +285,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowcellflagdataitem.cpp \
            datamodel/post2dwindowcellflaggroupdataitem.cpp \
            datamodel/post2dwindowcellflagsettingdialog.cpp \
+           datamodel/post2dwindowcellscalargroupdataitem.cpp \
+           datamodel/post2dwindowcellscalargrouptopdataitem.cpp \
            datamodel/post2dwindowcontoursettingdialog.cpp \
            datamodel/post2dwindowgeodatadataitem.cpp \
            datamodel/post2dwindowgeodatagroupdataitem.cpp \

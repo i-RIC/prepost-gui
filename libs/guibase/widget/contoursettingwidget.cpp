@@ -66,7 +66,48 @@ ContourSettingWidget::Contour ContourSettingWidget::contour() const
 
 void ContourSettingWidget::hidePointsRadioButton()
 {
-	ui->pointsButton->hide();
+	hideRadioButton(Points);
+}
+
+void ContourSettingWidget::hideIsolinesRadioButton()
+{
+	hideRadioButton(Isolines);
+}
+
+void ContourSettingWidget::disableRadioButton(Contour contour)
+{
+	switch (contour) {
+	case Points:
+		ui->pointsButton->setDisabled(true);
+		break;
+	case Isolines:
+		ui->isolinesButton->setDisabled(true);
+		break;
+	case ContourFigure:
+		ui->contourFigureButton->setDisabled(true);
+		break;
+	case ColorFringe:
+		ui->colorFringeButton->setDisabled(true);
+		break;
+	}
+}
+
+void ContourSettingWidget::hideRadioButton(Contour contour)
+{
+	switch (contour) {
+	case Points:
+		ui->pointsButton->hide();
+		break;
+	case Isolines:
+		ui->isolinesButton->hide();
+		break;
+	case ContourFigure:
+		ui->contourFigureButton->hide();
+		break;
+	case ColorFringe:
+		ui->colorFringeButton->hide();
+		break;
+	}
 }
 
 void ContourSettingWidget::forceSelectPointsOnly()

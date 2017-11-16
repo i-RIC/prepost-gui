@@ -1,8 +1,8 @@
 #include "../../../guibase/objectbrowserview.h"
 #include "post2dwindowcontoursettingdialog.h"
 #include "post2dwindowgridtypedataitem.h"
-#include "post2dwindownodescalargroupdataitem.h"
-#include "post2dwindownodescalargrouptopdataitem.h"
+#include "post2dwindowcellscalargrouptopdataitem.h"
+#include "post2dwindowcellscalargroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
@@ -21,25 +21,25 @@
 #include <vtkCellData.h>
 #include <vtkPointData.h>
 
-Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Scalar (Cell Center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
 }
 
-Post2dWindowNodeScalarGroupTopDataItem::~Post2dWindowNodeScalarGroupTopDataItem()
+Post2dWindowCellScalarGroupTopDataItem::~Post2dWindowCellScalarGroupTopDataItem()
 {
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+void Post2dWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	if (node.toElement().nodeName() == "Contours") {
-		// multi-contours
+	Q_ASSERT(node.toElement().nodeName() == "ScalarCellCenter");
+	if (node.toElement().nodeName() == "ScalarCellCenter") {
 		QDomNodeList children = node.childNodes();
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
@@ -51,43 +51,27 @@ void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 					m_colorbarTitleMap[val] = title;
 				}
 			} else if (childElem.nodeName() == "ScalarGroup") {
-				Post2dWindowNodeScalarGroupDataItem* item = new Post2dWindowNodeScalarGroupDataItem(this);
+				Post2dWindowCellScalarGroupDataItem* item = new Post2dWindowCellScalarGroupDataItem(this);
 				item->loadFromProjectMainFile(children.at(i));
 				m_childItems.push_back(item);
 			}
 		}
 	}
-	else {
-		// single-contour (old)
-		QDomNodeList titles = node.childNodes();
-		for (int i = 0; i < titles.count(); ++i) {
-			QDomElement titleElem = titles.at(i).toElement();
-			std::string val = iRIC::toStr(titleElem.attribute("value"));
-			QString title = titleElem.attribute("title");
-			m_colorbarTitleMap[val] = title;
-		}
-		// only add child if target is non-empty
-		Post2dWindowContourSetting setting;
-		setting.load(node);
-		if (setting.target != "") {
-			Post2dWindowNodeScalarGroupDataItem* item = new Post2dWindowNodeScalarGroupDataItem(this);
-			item->loadFromProjectMainFile(node);
-			m_childItems.push_back(item);
-		}
-	}
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void Post2dWindowCellScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// scalar bar titles
 	writer.writeStartElement("ScalarBarTitles");
 	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
 	while (i.hasNext()) {
 		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
+		if (i.key().size() > 0) {
+			writer.writeStartElement("ScalarBarTitle");
+			writer.writeAttribute("value", i.key().c_str());
+			writer.writeAttribute("title", i.value());
+			writer.writeEndElement();
+		}
 	}
 	writer.writeEndElement();
 
@@ -99,29 +83,29 @@ void Post2dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamW
 	}
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
+void Post2dWindowCellScalarGroupTopDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount((unsigned int)m_childItems.size());
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
+void Post2dWindowCellScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		typedi->assignActorZValues(range);
 	}
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::update()
+void Post2dWindowCellScalarGroupTopDataItem::update()
 {
 	// forward to children
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		typedi->update();
 	}
 }
 
-QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
+QDialog* Post2dWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 {
 	if (childItems().size() >= 4) {
 		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
@@ -136,13 +120,13 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), Vertex);
-	if (! zItem->dataContainer()->IBCExists()) {
+	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	if (! zItem->dataContainer()->IBCCellExists()) {
 		dialog->disableActive();
 	}
 
 	Post2dWindowContourSetting setting;
-	setting.target = zItem->dataContainer()->data()->GetPointData()->GetArrayName(0);
+	setting.target = zItem->dataContainer()->data()->GetCellData()->GetArrayName(0);
 
 	switch (childItems().size() % 4) {
 	case 0:
@@ -169,52 +153,52 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 	return dialog;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::hasTransparentPart()
+bool Post2dWindowCellScalarGroupTopDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
 	return true;
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::informSelection(VTKGraphicsView* /*v*/)
+void Post2dWindowCellScalarGroupTopDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void Post2dWindowCellScalarGroupTopDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeAttributeBrowser();
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupTopDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupTopDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMousePressEvent(event);
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
+void Post2dWindowCellScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
-	menu->addAction(abAction);
-	menu->addSeparator();
+	//QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
+	//menu->addAction(abAction);
+	//menu->addSeparator();
 	menu->addAction(dataModel()->objectBrowserView()->addAction());
 }
 
-class Post2dWindowNodeScalarGroupTopDataItem::CreateCommand : public QUndoCommand
+class Post2dWindowCellScalarGroupTopDataItem::CreateCommand : public QUndoCommand
 {
 public:
-	CreateCommand(Post2dWindowNodeScalarGroupTopDataItem *item, QDialog* propDialog)
-		: QUndoCommand(QObject::tr("Create Contour"))
+	CreateCommand(Post2dWindowCellScalarGroupTopDataItem *item, QDialog* propDialog)
+		: QUndoCommand(QObject::tr("Create Cell Contour"))
 		, m_topItem(item)
 		, m_firstDialog(true)
 		, m_propDialog(propDialog)
@@ -227,7 +211,7 @@ public:
 		}
 	}
 	void redo() {
-		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem);
+		m_item = new Post2dWindowCellScalarGroupDataItem(m_topItem);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
 		m_undoCommand = new QUndoCommand();
@@ -249,14 +233,14 @@ public:
 		m_topItem->updateItemMap();
 	}
 private:
-	Post2dWindowNodeScalarGroupTopDataItem* m_topItem;
-	Post2dWindowNodeScalarGroupDataItem* m_item;
+	Post2dWindowCellScalarGroupTopDataItem* m_topItem;
+	Post2dWindowCellScalarGroupDataItem* m_item;
 	QDialog* m_propDialog;
 	QUndoCommand* m_undoCommand;
 	bool m_firstDialog;
 };
 
-void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
+void Post2dWindowCellScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
 	iRICUndoStack::instance().push(new CreateCommand(this, propDialog));
 	iRICUndoStack::instance().clear();
@@ -269,11 +253,11 @@ void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 	// Need to be able to remove m_item from m_topItem and reuse m_item.
 }
 
-QList<QString> Post2dWindowNodeScalarGroupTopDataItem::selectedScalars()
+QList<QString> Post2dWindowCellScalarGroupTopDataItem::selectedScalars()
 {
 	QList<QString> ret;
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		if (typedi->standardItem()->checkState() == Qt::Checked) {
 			ret.append(typedi->target().c_str());
 		}
@@ -281,20 +265,20 @@ QList<QString> Post2dWindowNodeScalarGroupTopDataItem::selectedScalars()
 	return ret;
 }
 
-QList<QString> Post2dWindowNodeScalarGroupTopDataItem::availableScalars()
+QList<QString> Post2dWindowCellScalarGroupTopDataItem::availableScalars()
 {
 	QList<QString> ret;
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		ret.append(typedi->target().c_str());
 	}
 	return ret;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::checkKmlExportCondition(const QString& target)
+bool Post2dWindowCellScalarGroupTopDataItem::checkKmlExportCondition(const QString& target)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->checkKmlExportCondition();
 		}
@@ -302,10 +286,10 @@ bool Post2dWindowNodeScalarGroupTopDataItem::checkKmlExportCondition(const QStri
 	return false;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& writer, const QString& target)
+bool Post2dWindowCellScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& writer, const QString& target)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLHeader(writer);
 		}
@@ -313,10 +297,10 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& w
 	return false;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& writer, const QString& target)
+bool Post2dWindowCellScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& writer, const QString& target)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLFooter(writer);
 		}
@@ -324,10 +308,10 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& w
 	return false;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time)
+bool Post2dWindowCellScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLForTimestep(writer, index, time);
 		}
@@ -335,21 +319,21 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWrit
 	return false;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::exportContourFigureToShape(const QString& target, const QString& filename, double time)
+bool Post2dWindowCellScalarGroupTopDataItem::exportContourFigureToShape(const QString& target, const QString& filename, double time)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		if (target == QString(typedi->target().c_str())) {
-			return typedi->exportContourFigureToShape(filename, time);
-		}
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
+		//if (target == QString(typedi->target().c_str())) {
+		//	return typedi->exportContourFigureToShape(filename, time);
+		//}
 	}
 	return false;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::checkShapeExportCondition(const QString& target)
+bool Post2dWindowCellScalarGroupTopDataItem::checkShapeExportCondition(const QString& target)
 {
 	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			if (typedi->contour() == ContourSettingWidget::ContourFigure) {
 				return true;

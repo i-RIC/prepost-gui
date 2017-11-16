@@ -23,6 +23,7 @@ public:
 	const std::string& name() const;
 	Post2dBirdEyeWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
+	LookupTableContainer* cellLookupTable(const std::string& /*attName*/) const override {return nullptr;}
 	LookupTableContainer* nodeLookupTable(const std::string& attName) const override {return m_nodeLookupTables.value(attName, 0);}
 	LookupTableContainer* particleLookupTable(const std::string&) const override {return nullptr;}
 

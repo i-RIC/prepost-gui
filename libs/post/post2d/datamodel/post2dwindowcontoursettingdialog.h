@@ -2,7 +2,6 @@
 #define POST2DWINDOWCONTOURSETTINGDIALOG_H
 
 #include "../post2d_global.h"
-#include "post2dwindownodescalargroupdataitem.h"
 
 #include <guibase/widget/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
@@ -10,7 +9,10 @@
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <postbase/post2dwindowcontoursetting.h>
 
+#include <cgnslib.h>
+
 #include <QDialog>
+#include <QMap>
 #include <QList>
 
 #include <string>
@@ -34,7 +36,7 @@ public:
 	~Post2dWindowContourSettingDialog();
 
 	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
-	void setZoneData(PostZoneDataContainer* zoneData);
+	void setZoneData(PostZoneDataContainer* zoneData, GridLocation_t location);
 	void disableActive();
 	void hideOpacity();
 
@@ -62,6 +64,7 @@ private:
 	LookupTableContainer m_lookupTable;
 	bool m_activeAvailable;
 	bool m_unstructured;
+	GridLocation_t m_location;
 
 	Post2dWindowContourSetting m_setting;
 	QMap<std::string, QString> m_colorBarTitleMap;

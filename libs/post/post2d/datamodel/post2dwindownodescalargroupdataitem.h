@@ -6,6 +6,7 @@
 #include <postbase/post2dwindowcontoursetting.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 
+#include <cgnslib.h>
 #include <QMap>
 
 class NamedGraphicWindowDataItem;

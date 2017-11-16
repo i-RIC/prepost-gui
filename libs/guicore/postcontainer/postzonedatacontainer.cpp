@@ -512,7 +512,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	return true;
 }
 
-bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, int* solid)
+bool PostZoneDataContainer::findSolutionId(const int fn, const int currentStep, int* solId, const char* arrName)
 {
 	int ier;
 	char zoneItername[32];
@@ -529,8 +529,8 @@ bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, in
 			int dimension;
 			cgsize_t dimVector[3];
 			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == "FlowSolutionPointers") {
-				// FlowSolutionPointers found.
+			if (QString(arrayname) == arrName) {
+				// arrName found.
 				char* pointers;
 				// dimension = 2, dimVector = [32, NumberOfSteps].
 				pointers = new char[dimVector[0] * dimVector[1]];
@@ -550,17 +550,28 @@ bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, in
 					ier = cg_sol_info(fn, m_baseId, m_zoneId, j, solname, &location);
 					if (ier != 0) {return false;}
 					if (currentSolution == solname) {
-						*solid = j;
+						*solId = j;
 						return true;
 					}
 				}
+				break;
 			}
 		}
 	} else {
-		*solid = currentStep + 1;
+		*solId = currentStep + 1;
 		return true;
 	}
 	return false;
+}
+
+bool PostZoneDataContainer::getSolutionId(const int fn, const int currentStep, int* solId)
+{
+	return findSolutionId(fn, currentStep, solId, "FlowSolutionPointers");
+}
+
+bool PostZoneDataContainer::getCellSolutionId(const int fn, const int currentStep, int* solId)
+{
+	return findSolutionId(fn, currentStep, solId, "FlowCellSolutionPointers");
 }
 
 template<class T, class DA>
@@ -933,12 +944,19 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 		if (ret == false) {goto ERROR;}
 	}
 	// load solution data.
-	int solid;
-	ret = getSoluionId(fn, currentStep, &solid);
+	int solId;
+	ret = getSolutionId(fn, currentStep, &solId);
 	if (ret == false) {goto ERROR;}
-	ret = loadGridScalarData(fn, solid);
+	ret = loadGridScalarData(fn, solId);
 	if (ret == false) {goto ERROR;}
-	ret = loadGridVectorData(fn, solid);
+
+	// load cell-centered data.
+	int cellSolId;
+	if (getCellSolutionId(fn, currentStep, &cellSolId)) {
+		loadGridScalarData(fn, cellSolId);
+	}
+
+	ret = loadGridVectorData(fn, solId);
 	if (ret == false) {goto ERROR;}
 	ret = loadCellFlagData(fn);
 	if (ret == false) {goto ERROR;}
@@ -1006,6 +1024,11 @@ bool PostZoneDataContainer::scalarValueExists() const
 	return vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData()).size() > 0;
 }
 
+bool PostZoneDataContainer::cellScalarValueExists() const
+{
+	return vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetCellData()).size() > 0;
+}
+
 bool PostZoneDataContainer::vectorValueExists() const
 {
 	return vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(m_data->GetPointData()).size() > 0;
@@ -1015,6 +1038,15 @@ bool PostZoneDataContainer::IBCExists() const
 {
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData())) {
 		if (IBC == name.c_str()) {return true;}
+	}
+
+	return false;
+}
+
+bool PostZoneDataContainer::IBCCellExists() const
+{
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetCellData())) {
+		if (IBC == name.c_str()) { return true; }
 	}
 
 	return false;

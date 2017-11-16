@@ -24,7 +24,8 @@ public:
 	Post3dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const {return m_gridType;}
 	bool isChildCaptionAvailable(const QString& caption);
-	LookupTableContainer* nodeLookupTable(const std::string& attName) const {return m_nodeLookupTables.value(attName, nullptr);}
+	LookupTableContainer* cellLookupTable(const std::string& /*attName*/) const override {return nullptr;}
+	LookupTableContainer* nodeLookupTable(const std::string& attName) const override {return m_nodeLookupTables.value(attName, nullptr);}
 	LookupTableContainer* particleLookupTable(const std::string& attName) const override {return m_particleLookupTables.value(attName, nullptr);}
 	void setValueRange(const std::string& name);
 	void setupZoneDataItems();
