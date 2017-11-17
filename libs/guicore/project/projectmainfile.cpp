@@ -1,4 +1,5 @@
 #include "../base/iricmainwindowinterface.h"
+#include "../misc/cgnsfileopener.h"
 #include "../postcontainer/postsolutioninfo.h"
 #include "../pre/base/preprocessordatamodelinterface.h"
 #include "../pre/base/preprocessorwindowinterface.h"
@@ -579,22 +580,21 @@ QString ProjectMainFile::currentCgnsFileName() const
 
 bool ProjectMainFile::loadCgnsFile(const QString& name)
 {
-	// CGNS file name
-	QString fname = m_projectData->workCgnsFileName(name);
-	// save to current cgns file.
-	int fn;
-	int ret;
-	ret = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	if (ret != 0) {
+	bool ret = false;
+	try {
+		// CGNS file name
+		QString fname = m_projectData->workCgnsFileName(name);
+		CgnsFileOpener opener(iRIC::toStr(fname), CG_MODE_READ);
+		// load data.
+		ret = true;
+		loadFromCgnsFile(opener.fileId());
+	}
+	catch (const std::runtime_error&) {
 		QString shortFilename = name;
 		shortFilename.append(".cgn");
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg(shortFilename));
-		return false;
 	}
-	// load data.
-	loadFromCgnsFile(fn);
-	cg_close(fn);
-	return true;
+	return ret;
 }
 
 bool ProjectMainFile::saveCgnsFile()

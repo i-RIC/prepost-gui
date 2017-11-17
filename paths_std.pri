@@ -75,6 +75,9 @@ INCLUDEPATH += "E:/iricdev_2013/lib/install/gdal-1.11.2/debug/include"
 # vtk
 INCLUDEPATH += "E:/iricdev_2013/lib/install/vtk-6.1.0/debug/include/vtk-6.1"
 
+# hdf5
+INCLUDEPATH += "E:/iricdev_2013/lib/install/hdf5-1.8.14/release/include"
+
 # cgnslib
 INCLUDEPATH += "E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/include"
 

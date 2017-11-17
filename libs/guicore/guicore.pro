@@ -162,6 +162,16 @@ LIBS += \
 	-lvtkRenderingLOD-6.1 \
 	-lvtkRenderingQt-6.1
 
+
+# hdf5
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -lhdf5_D
+	} else {
+		LIBS += -lhdf5
+	}
+}
+
 # cgnslib
 
 win32{
