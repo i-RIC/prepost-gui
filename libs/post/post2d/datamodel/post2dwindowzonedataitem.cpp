@@ -299,6 +299,11 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		m_scalarGroupTopDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
 	}
+	if (m_cellScalarGroupTopDataItem != nullptr) {
+		time.restart();
+		m_cellScalarGroupTopDataItem->update();
+		qDebug("Cell Contour shape: %d", time.elapsed());
+	}
 	if (m_arrowGroupDataItem != nullptr) {
 		time.restart();
 		m_arrowGroupDataItem->update();
