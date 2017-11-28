@@ -1,6 +1,7 @@
 #include "../preprocessordatamodel.h"
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
+#include "attributebrowserhelper.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
@@ -379,8 +380,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowser()
 {
 	initAttributeBrowser();
 	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	SolverDefinitionGridType::GridType gt = gtitem->gridType()->defaultGridType();
-	if (gt == SolverDefinitionGridType::gtStructured2DGrid || gt == SolverDefinitionGridType::gtUnstructured2DGrid) {
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->show();
 	}
@@ -388,7 +388,10 @@ void PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowser()
 
 void PreProcessorGridAttributeNodeGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(m_showAttributeBrowserAction);
+	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
+		menu->addAction(m_showAttributeBrowserAction);
+	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::initAttributeBrowser()

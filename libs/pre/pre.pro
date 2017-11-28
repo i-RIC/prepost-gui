@@ -386,6 +386,7 @@ HEADERS += pre_global.h \
            preprocessorwindowprojectdataitem.h \
            prepropertybrowser.h \
            bc/boundaryconditiondialog.h \
+           datamodel/attributebrowserhelper.h \
            datamodel/graphicssupport.h \
            datamodel/preprocessorbackgroundimagedataitem.h \
            datamodel/preprocessorbackgroundimagesdataitem.h \
@@ -489,6 +490,7 @@ SOURCES += preobjectbrowser.cpp \
            preprocessorwindowprojectdataitem.cpp \
            prepropertybrowser.cpp \
            bc/boundaryconditiondialog.cpp \
+           datamodel/attributebrowserhelper.cpp \
            datamodel/graphicssupport.cpp \
            datamodel/preprocessorbackgroundimagedataitem.cpp \
            datamodel/preprocessorbackgroundimagesdataitem.cpp \
