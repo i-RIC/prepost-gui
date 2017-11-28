@@ -173,6 +173,7 @@ bool Project::load(const QString& filename)
 	impl->m_isModified = false;
 
 	updatePointsAutoSize();
+	mapPointsToCrossSections();
 
 	return true;
 }

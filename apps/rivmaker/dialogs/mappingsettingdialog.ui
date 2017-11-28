@@ -292,7 +292,7 @@
               <double>0.010000000000000</double>
              </property>
              <property name="maximum">
-              <double>100.000000000000000</double>
+              <double>1000.000000000000000</double>
              </property>
              <property name="value">
               <double>5.000000000000000</double>
@@ -315,7 +315,7 @@
               <double>0.010000000000000</double>
              </property>
              <property name="maximum">
-              <double>100.000000000000000</double>
+              <double>1000.000000000000000</double>
              </property>
              <property name="value">
               <double>5.000000000000000</double>
@@ -338,7 +338,7 @@
               <double>0.010000000000000</double>
              </property>
              <property name="maximum">
-              <double>100.000000000000000</double>
+              <double>1000.000000000000000</double>
              </property>
              <property name="value">
               <double>5.000000000000000</double>
@@ -384,7 +384,7 @@
               <double>1.000000000000000</double>
              </property>
              <property name="maximum">
-              <double>10.000000000000000</double>
+              <double>100.000000000000000</double>
              </property>
              <property name="value">
               <double>3.000000000000000</double>
@@ -436,12 +436,6 @@
     </widget>
    </item>
   </layout>
-  <zorder>buttonBox</zorder>
-  <zorder>nearestRadioButton</zorder>
-  <zorder>tinRadioButton</zorder>
-  <zorder>templateRadioButton</zorder>
-  <zorder>verticalSpacer_2</zorder>
-  <zorder>verticalSpacer_3</zorder>
  </widget>
  <resources>
   <include location="../rivmaker.qrc"/>
