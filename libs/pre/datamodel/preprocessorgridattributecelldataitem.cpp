@@ -1,5 +1,6 @@
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
+#include "attributebrowserhelper.h"
 #include "preprocessorgridattributecelldataitem.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgriddataitem.h"
@@ -170,8 +171,11 @@ void PreProcessorGridAttributeCellDataItem::keyReleaseEvent(QKeyEvent* event, VT
 
 void PreProcessorGridAttributeCellDataItem::addCustomMenuItems(QMenu* menu)
 {
-	PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
-	menu->addAction(gitem->showAttributeBrowserAction());
+	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
+		PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
+		menu->addAction(gitem->showAttributeBrowserAction());
+	}
 }
 
 void PreProcessorGridAttributeCellDataItem::editValue()

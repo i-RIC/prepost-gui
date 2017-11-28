@@ -2,13 +2,13 @@
 #include "../preprocessorwindow.h"
 #include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
 #include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h"
+#include "attributebrowserhelper.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
-
 
 #include <guibase/widget/contoursettingwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -253,8 +253,12 @@ void PreProcessorGridAttributeNodeDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_exportAction);
 	menu->addSeparator();
-	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-	menu->addAction(gitem->showAttributeBrowserAction());
+
+	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
+		PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
+		menu->addAction(gitem->showAttributeBrowserAction());
+	}
 }
 
 void PreProcessorGridAttributeNodeDataItem::editValue()
