@@ -9,6 +9,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
+#include <QPointF>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
@@ -39,6 +40,11 @@ DataItemView* RootDataItem::buildPreProcessorDataItemView(Model *model)
 
 void RootDataItem::doLoadFromMainFile(const QDomElement& node)
 {
+	double offsetx, offsety;
+	offsetx = iRIC::getDoubleAttribute(node, "offsetX");
+	offsety = iRIC::getDoubleAttribute(node, "offsetY");
+	m_project->setOffset(QPointF(offsetx, offsety));
+
 	QDomElement epElem = iRIC::getChildNode(node, "ElevationPoints").toElement();
 	if (! epElem.isNull()) {
 		project()->elevationPoints().loadFromMainFile(epElem);
@@ -62,6 +68,10 @@ void RootDataItem::doLoadFromMainFile(const QDomElement& node)
 
 void RootDataItem::doSaveToMainFile(QXmlStreamWriter* writer) const
 {
+	auto offset = m_project->offset();
+	iRIC::setDoubleAttribute(*writer, "offsetX", offset.x());
+	iRIC::setDoubleAttribute(*writer, "offsetY", offset.y());
+
 	writer->writeStartElement("ElevationPoints");
 	project()->elevationPoints().saveToMainFile(writer);
 	writer->writeEndElement();
