@@ -31,6 +31,18 @@ void GeoDataRiverSurveyImporterSettingDialog::setWith4Points(bool with4points)
 	}
 }
 
+void GeoDataRiverSurveyImporterSettingDialog::setAllNamesAreNumber(bool allNumber)
+{
+	if (allNumber) {
+		ui->upToDownRadioButton->setChecked(false);
+		ui->downToUpRadioButton->setChecked(false);
+		ui->upToDownRadioButton->setEnabled(false);
+		ui->downToUpRadioButton->setEnabled(false);
+	} else {
+		ui->upToDownRadioButton->setChecked(true);
+	}
+}
+
 GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting GeoDataRiverSurveyImporterSettingDialog::centerPointSetting() const
 {
 	if (ui->middlePointRadioButton->isChecked()) {
@@ -41,4 +53,9 @@ GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting GeoDataRiverSurveyIm
 		return cpLowWaterWay;
 	}
 	return cpMiddle;
+}
+
+bool GeoDataRiverSurveyImporterSettingDialog::reverseOrder() const
+{
+	return ui->downToUpRadioButton->isChecked();
 }

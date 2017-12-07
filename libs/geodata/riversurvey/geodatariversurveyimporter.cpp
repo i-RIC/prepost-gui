@@ -13,306 +13,228 @@
 #include <QTextStream>
 #include <QVector2D>
 
+#include <algorithm>
 #include <cmath>
-#include <iomanip>
-#include <sstream>
-
-#define	SEPARATOR	" \t"
+#include <vector>
 
 namespace {
 
 const double WRONG_KP = -9999;
 
-} // namespace
-
-PRivPath GeoDataRiverSurveyImporter::RivAlloc(double KP, const char* str)
+class Point2D
 {
-	PRivPath node, p;
-
-	// Search
-	for (p = m_RivRoot; p != NULL; p = p->next) {
-		if (KP == WRONG_KP) {
-			if (p->strKP == str){
-				return p;
-			}
-		} else {
-			if (p->KP == KP) {
-				return p;
-			}
-		}
+public:
+	Point2D() {x = 0; y = 0;}
+	Point2D(double x, double y) {
+		this->x = x; this->y = y;
 	}
 
-	// Not found.
-	if ((node = new RivPath()) == nullptr) {return nullptr;}
+	double x = 0;
+	double y = 0;
+};
 
-	node->KP    = KP;
-	node->strKP = str;
-	node->bank = NULL;
-	node->np   = 0;
-	node->pt   = NULL;
-	node->next = NULL;
-
-	// add to link list.
-	if (! m_RivRoot) {
-		m_RivRoot = node;
-	} else {
-		for (p = m_RivRoot; p->next != NULL; p = p->next)
-			;
-		p->next = node;
-	}
-
-	return node;
-}
-
-// Free memory
-void GeoDataRiverSurveyImporter::RivFree(PRivPath node)
+class Alt
 {
-	PRivPath p;
-
-	if (node->bank) { free(node->bank); }
-	if (node->pt) { free(node->pt); }
-
-	if (node == m_RivRoot) {
-		m_RivRoot = node->next;
-	} else {
-		for (p = m_RivRoot; p->next != node; p = p->next)
-			;
-		p->next = node->next;
+public:
+	Alt() :
+		Alt(0, 0)
+	{}
+	Alt(double dis, double e) {
+		this->distance = dis; this->elevation = e;
 	}
 
-	node->next = NULL;
-	free(node);
-}
+	double distance;
+	double elevation;
+};
 
-// Free all memory.
-void GeoDataRiverSurveyImporter::RivFreeAll()
+class RivPathPoint
 {
-	PRivPath p, pn;
+public:
+	Point2D banksCenter() const
+	{
+		return Point2D((leftBank.x + rightBank.x) * 0.5, (leftBank.y + rightBank.y) * 0.5);
+	}
+	double banksDistance() const
+	{
+		double dx = rightBank.x - leftBank.x;
+		double dy = rightBank.y - leftBank.y;
 
-	p = m_RivRoot;
-	while (p) {
-		if (p->bank) { free(p->bank); }
-		if (p->pt) { free(p->pt); }
-		pn = p->next;
-		free(p);
-		p = pn;
+		return std::sqrt(dx * dx + dy * dy);
+	}
+	QVector2D leftToRight() const
+	{
+		return QVector2D(rightBank.x - leftBank.x, rightBank.y - leftBank.y);
 	}
 
-	m_RivRoot = NULL;
-}
+	std::string strKP; // name in string
+	double realKP;     // name in real
 
-// Set left bank position and right bank position
-bool GeoDataRiverSurveyImporter::RivSetBank(PRivPath node, PPoint2D left, PPoint2D right)
-{
-	if (! node) {
-		return false;
-	}
+	bool banksIsSet = false;
+	Point2D leftBank;
+	Point2D rightBank;
 
-	if ((node->bank = (PPoint2D) malloc(sizeof(Point2D) * 2)) == NULL) {
-		return false;
-	}
-
-	node->bank[0] = *left;
-	node->bank[1] = *right;
-
-	return true;
-}
-
-// Set the center position
-bool GeoDataRiverSurveyImporter::RivSetPath(PRivPath node, int np, PPoint2D pt)
-{
-	if (! node) {
-		return false;
-	}
-
-	node->np = np;
-	node->pt = pt;
-
-	return true;
-}
-
-bool GeoDataRiverSurveyImporter::RivSort(void)
-{
-	PRivPath p, pn, *pa;
-	int i, j, k, n;
-
-	// Delete the data that does not have both position info and crosssection info
-	p = m_RivRoot;
-	n = 0;
-	while (p) {
-		pn = p->next;
-		if (! p->bank || p->np == 0) {
-			RivFree(p);
-		} else {
-			n++;
-		}
-		p = pn;
-	}
-
-	if ((pa = (PRivPath*) malloc(sizeof(PRivPath) * n)) == NULL) {
-		return false;
-	}
-
-	n = 0;
-	for (p = m_RivRoot; p != NULL; p = p->next) {
-		pa[n] = p;
-		n++;
-	}
-
-	// There is no crosssection, or maybe the file is corrupted. Error.
-	if (n < 1) {
-		return false;
-	}
-
-	if (! m_allNamesAreNumber) {
-		m_RivRoot = pa[0];
-		return true;
-	}
-
-	// Sort by KP
-	for (i = 0; i < n; i++) {
-		k = i;
-		for (j = i + 1; j < n; j++) {
-			if (pa[j]->KP > pa[k]->KP) {
-				k = j;
-			}
-		}
-		if (k != i) {
-			p     = pa[i];
-			pa[i] = pa[k];
-			pa[k] = p;
-		}
-	}
-
-	p = m_RivRoot = pa[0];
-	for (i = 1; i < n; i++) {
-		p->next = pa[i];
-		p       = pa[i];
-	}
-	p->next = NULL;
-	return true;
-}
-
-// Read river survey data
-bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
-{
-	QFile file(name);
-	char*         buf;
-	char*         tok;
-	char*         strKP;
-	int mode = 0;
-	double KP;
-	int np, i, j;
+	std::vector<Alt> altitudes;
 	int divIndices[4];
-	Point2D right, left;
-	PPoint2D pt;
-	PRivPath node;
-	QString qstrKP;
+};
+
+RivPathPoint* getPoint(double kp, std::string& kpStr, std::vector<RivPathPoint*>* points)
+{
+	for (RivPathPoint* p : *points) {
+		if (kp == WRONG_KP) {
+			if (p->strKP == kpStr) {
+				return p;
+			}
+		} else {
+			if (p->realKP == kp) {
+				return p;
+			}
+		}
+	}
+	RivPathPoint* newp = new RivPathPoint();
+	newp->realKP = kp;
+	newp->strKP = kpStr;
+	points->push_back(newp);
+	return newp;
+}
+
+void setBanks(RivPathPoint* p, double lx, double ly, double rx, double ry)
+{
+	p->banksIsSet = true;
+	p->leftBank.x = lx;
+	p->leftBank.y = ly;
+	p->rightBank.x = rx;
+	p->rightBank.y = ry;
+}
+
+void removeIncompleteData(std::vector<RivPathPoint*>* points)
+{
+	int idx = 0;
+	while (idx < points->size()) {
+		auto it = points->begin() + idx;
+		RivPathPoint* p = *it;
+		if (! p->banksIsSet || p->altitudes.size() == 0) {
+			// remove this point;
+			points->erase(it);
+		} else {
+			++ idx;
+		}
+	}
+}
+
+void sortReverse(std::vector<RivPathPoint*>* points)
+{
+	std::reverse(points->begin(), points->end());
+}
+
+bool lessKP(RivPathPoint* a1, RivPathPoint* a2)
+{
+	return a1->realKP < a2->realKP;
+}
+
+void sortByKP(std::vector<RivPathPoint*>* points)
+{
+	std::sort(points->begin(), points->end(), lessKP);
+}
+
+void parseKP(const QString& tok, double* realKP, std::string* strKP, bool* allNumber)
+{
 	bool ok;
 
-	m_allNamesAreNumber = true;
+	*realKP = tok.toDouble(&ok);
+	*strKP = iRIC::toStr(tok);
 
+	if (! ok){
+		*allNumber = false;
+		*realKP = WRONG_KP;
+	}
+}
+
+bool readRivFile(const QString& fname, std::vector<RivPathPoint*>* points, bool* with4points, bool* allNamesAreNumber)
+{
+	QFile f(fname);
+
+	*allNamesAreNumber = true;
+	int mode;
 	*with4points = true;
-	m_RivRoot = nullptr;
-	// Open river survey data file
-	file.open(QIODevice::ReadOnly | QIODevice::Text);
 
-	while (! file.atEnd()) {
-		QByteArray line = file.readLine();
-		line = line.replace(static_cast<char>(10), "\0");
-		buf = line.data();
+	// open file
+	f.open(QIODevice::ReadOnly | QIODevice::Text);
+	while (! f.atEnd()) {
+		QString line = f.readLine();
+		QRegExp sep("\\s+");
+		QStringList tokens = line.split(sep, QString::SkipEmptyParts);
 
-		// separate the buffer with SEPARATOR.
-		tok = strtok(buf, SEPARATOR);
-
-		if (tok != NULL) {
-			if (QString(tok) == "#survey") {
+		if (tokens.length() >= 1) {
+			if (tokens.at(0) == "#survey") {
 				mode = 1;
 				continue;
-			} else if (QString(tok) == "#x-section") {
+			} else if (tokens.at(0) == "#x-section") {
 				mode = 2;
 				continue;
 			}
-			switch (mode) {
-			case 1:
-				strKP = tok;
-				qstrKP = strKP;
-				KP = qstrKP.toDouble(&ok);
-				if (! ok) {
-					m_allNamesAreNumber = false;
-					KP = WRONG_KP;
-				}
-				tok = strtok(NULL, SEPARATOR); left.x  = (double) atof(tok);
-				tok = strtok(NULL, SEPARATOR); left.y  = (double) atof(tok);
-				tok = strtok(NULL, SEPARATOR); right.x = (double) atof(tok);
-				tok = strtok(NULL, SEPARATOR); right.y = (double) atof(tok);
-				node = RivAlloc(KP, strKP);
-				RivSetBank(node, &left, &right);
-				break;
+			std::string strKP;
+			double realKP;
+			RivPathPoint* p;
+			int np;
+			std::vector<Alt> alts;
+			int divIndices[4];
 
-			case 2:
-				strKP = tok;
-				qstrKP = strKP;
-				KP = qstrKP.toDouble(&ok);
-				if (! ok) {
-					m_allNamesAreNumber = false;
-					KP = WRONG_KP;
-				}
-				tok = strtok(NULL, SEPARATOR);
-				if (tok == NULL) {break;}
-				np = atoi(tok);
+			if (mode == 1) {
+				parseKP(tokens.at(0), &realKP, &strKP, allNamesAreNumber);
+
+				double leftx = tokens.at(1).toDouble();
+				double lefty = tokens.at(2).toDouble();
+				double rightx = tokens.at(3).toDouble();
+				double righty = tokens.at(4).toDouble();
+
+				p = getPoint(realKP, strKP, points);
+				setBanks(p, leftx, lefty, rightx, righty);
+			} else if (mode == 2) {
+				parseKP(tokens.at(0), &realKP, &strKP, allNamesAreNumber);
+
+				if (tokens.length() < 2) {break;}
+				np = tokens.at(1).toInt();
 				// Tries to read four indices values.
-				for (int k = 0; k < 4; ++k) {
-					if (NULL != (tok = strtok(NULL, SEPARATOR))) {
-						divIndices[k] = atoi(tok);
-					} else {
-						*with4points = false;
+				if (tokens.length() >= 6) {
+					for (int k = 0; k < 4; ++k) {
+						divIndices[k] = tokens.at(k + 2).toInt();
 					}
+				} else {
+					*with4points = false;
 				}
-				node = RivAlloc(KP, strKP);
-				//printf( "%f,%d\n", KP,np );
-				if ((pt = (PPoint2D) malloc(sizeof(Point2D) * np)) == NULL) {
-					printf("error\n");
-				}
-				i = j = 0;
+				p = getPoint(realKP, strKP, points);
+				int i = 0;
 				while (i < np) {
-					if (file.atEnd()) {
+					if (f.atEnd()) {
 						break;
 					}
-					line = file.readLine();
-					line = line.replace(static_cast<char>(10), "\0");
-					buf = line.data();
-					tok = strtok(buf, SEPARATOR);
-					while (tok && i < np) {
-						switch (j) {
-						case 0: pt[i].x = (double) atof(tok); j = 1; break;
-						case 1: pt[i].y = (double) atof(tok); j = 0; i++; break;
-						}
-						tok = strtok(NULL, SEPARATOR);
+					line = f.readLine();
+					tokens = line.split(sep, QString::SkipEmptyParts);
+
+					int k = 0;
+					while (k < tokens.length() - 1) {
+						Alt alt;
+						alt.distance = tokens.at(k++).toDouble();
+						alt.elevation = tokens.at(k++).toDouble();
+						alts.push_back(alt);
+						++ i;
 					}
 				}
 				if (*with4points) {
 					for (int i = 0; i < 4; ++i) {
-						node->divIndices[i] = divIndices[i];
+						p->divIndices[i] = divIndices[i];
 					}
 				}
-				RivSetPath(node, np, pt);
-				break;
-
-			default:
-				// ERROR!
-				;
+				p->altitudes = alts;
 			}
-
 		}
-
 	}
-	file.close();
-	// reading succeeded only when mode == 2.
-	if (mode != 2) {return false;}
+	f.close();
 
-	return RivSort();
+	return (mode == 2);
 }
+
+} // namespace
 
 GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) :
 	GeoDataImporter("riversurvey", tr("River Survey data (*.riv)"), creator)
@@ -320,159 +242,109 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 
 bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	bool ret;
 	bool with4points;
+	bool allNamesAreNumber;
+	std::vector<RivPathPoint*> points;
+
 	// Read river survey data
-	ret = RivRead(filename(), &with4points);
+	bool ret = readRivFile(filename(), &points, &with4points, &allNamesAreNumber);
 	if (! ret) {return false;}
 
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
 	dialog.setWith4Points(with4points);
+	dialog.setAllNamesAreNumber(allNamesAreNumber);
 	int dialogret = dialog.exec();
 	if (dialogret == QDialog::Rejected) {return false;}
-	m_cpSetting = dialog.centerPointSetting();
 
-	GeoDataRiverPathPoint* tail, *newpoint;
+	m_cpSetting = dialog.centerPointSetting();
+	if (allNamesAreNumber) {
+		sortByKP(&points);
+	} else if (dialog.reverseOrder()) {
+		sortReverse(&points);
+	}
+
+	GeoDataRiverPathPoint *tail;
 
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	tail = rs->m_headPoint;
 
-	PRivPath p;
 	double max = 0, left = 0, right = 0;
 	double minpos = 0, minval = 0;
-	int i;
 	bool ok = true;
 
-	for (p = m_RivRoot; p != NULL; p = p->next) {
+	for (int i = 0; i < points.size(); ++i) {
+		RivPathPoint* p = points[i];
+
+		auto centerp = p->banksCenter();
+		auto newPoint = new GeoDataRiverPathPoint(centerp.x, centerp.y);
+		double offset = p->banksDistance() * 0.5;
+
+		newPoint->setName(p->strKP.c_str());
+		newPoint->InhibitInterpolatorUpdate = true;
+		newPoint->setCrosssectionDirection(p->leftToRight().normalized());
+
 		if (with4points) {
-			// Define river center position as the mid-point of the left bank and right bank.
-			newpoint = new GeoDataRiverPathPoint((p->bank[0].x + p->bank[1].x) * 0.5, (p->bank[0].y + p->bank[1].y) * 0.5);
-			double offset = std::sqrt((p->bank[1].x - p->bank[0].x) * (p->bank[1].x - p->bank[0].x) + (p->bank[1].y - p->bank[0].y) * (p->bank[1].y - p->bank[0].y)) / 2.;
+			max = p->altitudes.at(0).elevation;
+			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
+			for (int j = 0; j < p->altitudes.size(); ++j) {
+				const auto& a = p->altitudes.at(j);
+				if (a.elevation > max) {max = a.elevation;}
+				GeoDataRiverCrosssection::Altitude alt(a.distance - offset, a.elevation);
+				if (j + 1 < p->divIndices[0] || i + 1 > p->divIndices[3]) {continue;}
 
-			// Defines direction vector (from left bank to right bank)
-			QVector2D dir(p->bank[1].x - p->bank[0].x, p->bank[1].y - p->bank[0].y);
-			// Normalize direction vector
-			dir.normalize();
-
-			std::ostringstream oss;
-			std::ostringstream oss2;
-			oss << std::showpoint << std::fixed << std::setprecision(3) << p->KP;
-			oss2 << p->strKP;
-
-			newpoint->setName(oss2.str().c_str());
-			newpoint->InhibitInterpolatorUpdate = true;
-			newpoint->setCrosssectionDirection(dir);
-			max = p->pt[0].y;
-			GeoDataRiverCrosssection::Altitude oldalt(0, 0);
-			for (i = 0; i < p->np; i++) {
-				if (p->pt[i].y > max) {
-					max = p->pt[i].y;
-				}
-				GeoDataRiverCrosssection::Altitude alt(p->pt[i].x - offset, p->pt[i].y);
-				// Left points, Rights points are removed.
-				if (i + 1 < p->divIndices[0] || i + 1 > p->divIndices[3]) {continue;}
-				// River center is set to the center of point 1, and 2
-				if (i + 1 == p->divIndices[1]) {
-					left = p->pt[i].x - offset;
-					minpos = p->pt[i].x - offset;
-					minval = p->pt[i].y;
-				}
-				if (i + 1 == p->divIndices[2]) {right = p->pt[i].x - offset;}
-				if (p->pt[i].y < minval) {
-					minpos = p->pt[i].x - offset;
-					minval = p->pt[i].y;
-				}
-				newpoint->crosssection().AltitudeInfo().push_back(alt);
-				if (i >= p->divIndices[0] && oldalt.position() > alt.position() && ok) {
-					QMessageBox::warning(w, tr("Warning"), tr("Crosssection data is not ordered correctly at %1.").arg(newpoint->name()));
+				newPoint->crosssection().AltitudeInfo().push_back(alt);
+				if (j >= p->divIndices[0] && prevAlt.position() > alt.position() && ok) {
+					QMessageBox::warning(w, tr("Warning"), tr("Crosssection data is not ordered correctly at %1.").arg(newPoint->name()));
 					ok = false;
 				}
-				oldalt = alt;
+				prevAlt = alt;
 			}
-			double shiftValue = 0;
-
-			// no option to select lowest elevation point.
-			shiftValue = (left + right) * 0.5;
-
+			left  = p->altitudes.at(p->divIndices[1] - 1).distance - offset;
+			right = p->altitudes.at(p->divIndices[2] - 1).distance - offset;
+			double shiftValue = (left + right) * 0.5;
 			double leftPoint = (left - shiftValue) /
-												 (newpoint->crosssection().leftBank().position() - shiftValue);
+				(newPoint->crosssection().leftBank().position() - shiftValue);
 			double rightPoint = (right - shiftValue) /
-													(newpoint->crosssection().rightBank().position() - shiftValue);
-			newpoint->crosssection().setLeftShift(offset);
-			newpoint->shiftCenter(shiftValue);
-			newpoint->CenterToLeftCtrlPoints.push_back(leftPoint);
-			newpoint->CenterToRightCtrlPoints.push_back(rightPoint);
-			newpoint->InhibitInterpolatorUpdate = false;
-
-			if (rs->m_headPoint == nullptr) {
-				rs->m_headPoint = newpoint;
-			} else {
-				tail->addPathPoint(newpoint);
-			}
-			tail = newpoint;
+				(newPoint->crosssection().rightBank().position() - shiftValue);
+			newPoint->crosssection().setLeftShift(offset);
+			newPoint->shiftCenter(shiftValue);
+			newPoint->CenterToLeftCtrlPoints.push_back(leftPoint);
+			newPoint->CenterToRightCtrlPoints.push_back(rightPoint);
 		} else {
-			// River center point
-			newpoint = new GeoDataRiverPathPoint((p->bank[0].x + p->bank[1].x) * 0.5, (p->bank[0].y + p->bank[1].y) * 0.5);
-			double offset = std::sqrt((p->bank[1].x - p->bank[0].x) * (p->bank[1].x - p->bank[0].x) + (p->bank[1].y - p->bank[0].y) * (p->bank[1].y - p->bank[0].y)) / 2.;
-
-			// vector of direction fron left bank to right bank.
-			QVector2D dir(p->bank[1].x - p->bank[0].x, p->bank[1].y - p->bank[0].y);
-			dir.normalize();
-			std::ostringstream oss;
-			std::ostringstream oss2;
-			oss << std::showpoint << std::fixed << std::setprecision(3) << p->KP;
-			oss2 << p->strKP;
-
-			newpoint->setName(oss2.str().c_str());
-			newpoint->InhibitInterpolatorUpdate = true;
-			newpoint->setCrosssectionDirection(dir);
-			max = p->pt[0].y;
-			GeoDataRiverCrosssection::Altitude oldalt(0, 0);
-			minpos = p->pt[0].x - offset;
-			minval = p->pt[0].y;
-			for (i = 0; i < p->np; i++) {
-				if (p->pt[i].y > max) {
-					max = p->pt[i].y;
+			max = p->altitudes.at(0).elevation;
+			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
+			minpos = p->altitudes.at(0).distance - offset;
+			minval = p->altitudes.at(0).elevation;
+			for (int j = 0; j < p->altitudes.size(); ++j) {
+				const auto& a = p->altitudes.at(j);
+				if (a.elevation > max) {max = a.elevation;}
+				if (a.elevation < minval) {
+					minpos = a.distance - offset;
+					minval = a.elevation;
 				}
-				if (p->pt[i].y < minval) {
-					minpos = p->pt[i].x - offset;
-					minval = p->pt[i].y;
-				}
-				GeoDataRiverCrosssection::Altitude alt(p->pt[i].x - offset, p->pt[i].y);
-				newpoint->crosssection().AltitudeInfo().push_back(alt);
-				if (i > 0 && oldalt.position() > alt.position() && ok) {
-					QMessageBox::warning(w, tr("Warning"), tr("Crosssection data is not ordered correctly at %1.").arg(newpoint->name()));
+				GeoDataRiverCrosssection::Altitude alt(a.distance - offset, a.elevation);
+				newPoint->crosssection().AltitudeInfo().push_back(alt);
+				if (j > 0 && prevAlt.position() > alt.position() && ok) {
+					QMessageBox::warning(w, tr("Warning"), tr("Crosssection data is not ordered correctly at %1.").arg(newPoint->name()));
 					ok = false;
 				}
-				oldalt = alt;
+				prevAlt = alt;
 			}
-			left  = newpoint->crosssection().leftBank().position();
-			right = newpoint->crosssection().rightBank().position();
-
 			double shiftValue = 0;
 			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
+				left = newPoint->crosssection().leftBank().position();
+				right = newPoint->crosssection().rightBank().position();
 				shiftValue = (left + right) * 0.5;
 			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
 			}
-
-			newpoint->crosssection().setLeftShift(offset);
-			newpoint->shiftCenter(shiftValue);
-			newpoint->InhibitInterpolatorUpdate = false;
-
-			if (rs->m_headPoint == nullptr) {
-				rs->m_headPoint = newpoint;
-			} else {
-				tail->addPathPoint(newpoint);
-			}
-			tail = newpoint;
+			newPoint->crosssection().setLeftShift(offset);
+			newPoint->shiftCenter(shiftValue);
 		}
+		newPoint->InhibitInterpolatorUpdate = false;
+		tail->addPathPoint(newPoint);
+		tail = newPoint;
 	}
-
-	// Free all data
-	RivFreeAll();
-
-	// update interpolators
 	if (ok) {
 		rs->updateInterpolators();
 	}
