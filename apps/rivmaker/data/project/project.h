@@ -50,7 +50,13 @@ public:
 	const QPointF& offset() const;
 	void setOffset(const QPointF& offset);
 
-	void updatePointsAutoSize();
+    const QString& rivFileName() const;
+    void setRivFileName(const QString& rivFileName);
+
+    const QString& csvFileName() const;
+    void setCsvFileName(const QString& csvFileName);
+
+    void updatePointsAutoSize();
 
 	MappingMethod mappingMethod() const;
 	void setMappingMethod(MappingMethod method);

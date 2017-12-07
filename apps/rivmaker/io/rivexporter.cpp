@@ -14,19 +14,17 @@
 
 #include <string>
 
-RivExporter::RivExporter() :
-	m_rivFileName {},
-	m_csvFileName {}
+RivExporter::RivExporter()
 {}
 
-bool RivExporter::exportData(const Project& project, QWidget* w)
+bool RivExporter::exportData(Project* project, QWidget* w)
 {
-	QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), m_rivFileName, tr("River Survey Data(*.riv)"));
+    QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), project->rivFileName(), tr("River Survey Data(*.riv)"));
 	if (fname.isNull()) {return false;}
 
-	m_rivFileName = fname;
+    project->setRivFileName(fname);
 	QFileInfo finfo(fname);
-	m_csvFileName = QString("%1/%2_wse.csv").arg(finfo.absolutePath()).arg(finfo.baseName());
+	project->setCsvFileName(QString("%1/%2_wse.csv").arg(finfo.absolutePath()).arg(finfo.baseName()));
 
 	QFile file(fname);
 	if (! file.open(QIODevice::WriteOnly)) {
@@ -35,8 +33,8 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	}
 
 	QTextStream ts(&file);
-	QPointF offset = project.offset();
-	const auto& cs = project.crossSections();
+	QPointF offset = project->offset();
+	const auto& cs = project->crossSections();
 
 	ts.setRealNumberPrecision(12);
 
@@ -72,25 +70,25 @@ bool RivExporter::exportData(const Project& project, QWidget* w)
 	return exportCsvData(project, w);
 }
 
-bool RivExporter::exportCsvData(const Project &project, QWidget *w)
+bool RivExporter::exportCsvData(Project* project, QWidget *w)
 {
 	bool update = true;;
-	if (m_csvFileName.isNull()) {
+    if (project->csvFileName().isNull()) {
 		QString fname = QFileDialog::getSaveFileName(w, tr("CSV File name to export"), "", tr("CSV file(*.csv)"));
 		if (fname.isNull()) {return false;}
 
-		m_csvFileName = fname;
+        project->setCsvFileName(fname);
 		update = false;
 	}
-	QFile file(m_csvFileName);
+	QFile file(project->csvFileName());
 	if (! file.open(QIODevice::WriteOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("%1 could not be opened.").arg(QDir::toNativeSeparators(file.fileName())));
 		return false;
 	}
 
-	const auto& bl = project.baseLine();
+	const auto& bl = project->baseLine();
 
-	const auto& cs = project.crossSections();
+	const auto& cs = project->crossSections();
 	QTextStream ts(&file);
 	for (CrossSection* s : cs.crossSectionVector()) {
 		bool crosses;
@@ -101,7 +99,7 @@ bool RivExporter::exportCsvData(const Project &project, QWidget *w)
 	file.close();
 
 	if (update) {
-		QMessageBox::information(w, tr("Information"), tr("%1 is updated.").arg(QDir::toNativeSeparators(m_csvFileName)));
+		QMessageBox::information(w, tr("Information"), tr("%1 is updated.").arg(QDir::toNativeSeparators(project->csvFileName())));
 	}
 	return true;
 }

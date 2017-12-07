@@ -13,12 +13,8 @@ class RivExporter : public QObject
 public:
 	RivExporter();
 
-	bool exportData(const Project& project, QWidget* w);
-	bool exportCsvData(const Project& project, QWidget* w);
-
-private:
-	QString m_rivFileName;
-	QString m_csvFileName;
+    bool exportData(Project* project, QWidget* w);
+    bool exportCsvData(Project* project, QWidget* w);
 };
 
 #endif // RIVEXPORTER_H

@@ -45,6 +45,9 @@ void RootDataItem::doLoadFromMainFile(const QDomElement& node)
 	offsety = iRIC::getDoubleAttribute(node, "offsetY");
 	m_project->setOffset(QPointF(offsetx, offsety));
 
+    m_project->setRivFileName(node.attribute("rivFileName", ""));
+    m_project->setCsvFileName(node.attribute("csvFileName", ""));
+
 	QDomElement epElem = iRIC::getChildNode(node, "ElevationPoints").toElement();
 	if (! epElem.isNull()) {
 		project()->elevationPoints().loadFromMainFile(epElem);
@@ -71,6 +74,9 @@ void RootDataItem::doSaveToMainFile(QXmlStreamWriter* writer) const
 	auto offset = m_project->offset();
 	iRIC::setDoubleAttribute(*writer, "offsetX", offset.x());
 	iRIC::setDoubleAttribute(*writer, "offsetY", offset.y());
+
+    writer->writeAttribute("rivFileName", m_project->rivFileName());
+    writer->writeAttribute("csvFileName", m_project->csvFileName());
 
 	writer->writeStartElement("ElevationPoints");
 	project()->elevationPoints().saveToMainFile(writer);
