@@ -408,13 +408,17 @@ void GraphicsWindowDataItem::updateZDepthRange()
 
 void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_childItems.size() == 0) {return;}
+	assignActorZValues(range, m_childItems);
+}
 
-	/// the default behavior is to set ZDepthRanges to child items.
-	double rangeWidth = range.width();
+void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range, const std::vector<GraphicsWindowDataItem*>& items)
+{
+	if (items.size() == 0) {return;}
+
+	/// the default behavior is to set ZDepthRanges to child items.double rangeWidth = range.width();
 	double divNum = 0;
-	divNum += m_childItems.size() - 1;
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	divNum += items.size() - 1;
+	for (GraphicsWindowDataItem* child : items) {
 		int itemCount = (child->zDepthRange().itemCount() - 1);
 		if (itemCount > 0) {
 			divNum += itemCount;
@@ -423,7 +427,7 @@ void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range)
 	if (divNum == 0) {divNum = 1;}
 	double divWidth = rangeWidth / divNum;
 	double max = range.max();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (GraphicsWindowDataItem* child : items) {
 		int itemCount = (child->zDepthRange().itemCount() - 1);
 		int itemCount2 = 0;
 		if (itemCount > 0) {
