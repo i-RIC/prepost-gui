@@ -35,6 +35,7 @@ private slots:
 	void handleTableEdit(QStandardItem* editedItem);
 	void exportWaterSurfaceElevation();
 	void resetZoom();
+    void setCsvExportEnabled(bool enabled);
 
 private:
 	void initPlot();

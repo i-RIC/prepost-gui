@@ -162,7 +162,9 @@ VerticalCrossSectionWindow::~VerticalCrossSectionWindow()
 void VerticalCrossSectionWindow::setProject(Project* project)
 {
 	m_project = project;
+    setCsvExportEnabled(project->isCsvFileNameSet());
 	connect(m_project, SIGNAL(updated()), this, SLOT(updateView()));
+    connect(m_project, SIGNAL(csvFileNameSet(bool)), this, SLOT(setCsvExportEnabled(bool)));
 	updateView();
 }
 
@@ -193,6 +195,11 @@ void VerticalCrossSectionWindow::exportWaterSurfaceElevation()
 void VerticalCrossSectionWindow::resetZoom()
 {
 	m_zoomer->zoom(0);
+}
+
+void VerticalCrossSectionWindow::setCsvExportEnabled(bool enabled)
+{
+    ui->exportButton->setEnabled(enabled);
 }
 
 void VerticalCrossSectionWindow::initPlot()
