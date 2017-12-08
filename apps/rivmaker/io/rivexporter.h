@@ -13,8 +13,8 @@ class RivExporter : public QObject
 public:
 	RivExporter();
 
-    bool exportData(Project* project, QWidget* w);
-    bool exportCsvData(Project* project, QWidget* w);
+	bool exportData(Project* project, QWidget* w);
+	bool exportCsvData(Project* project, QWidget* w);
 };
 
 #endif // RIVEXPORTER_H

@@ -272,32 +272,31 @@ void Project::setOffset(const QPointF& offset)
 	impl->m_offset = offset;
 }
 
-
 const QString& Project::rivFileName() const
 {
-    return impl->m_rivFileName;
+	return impl->m_rivFileName;
 }
 
 void Project::setRivFileName(const QString& rivFileName)
 {
-    impl->m_rivFileName = rivFileName;
+	impl->m_rivFileName = rivFileName;
 }
 
 bool Project::isCsvFileNameSet() const
 {
-    return ! impl->m_csvFileName.isEmpty();
+	return ! impl->m_csvFileName.isEmpty();
 }
 
 const QString& Project::csvFileName() const
 {
-    return impl->m_csvFileName;
+	return impl->m_csvFileName;
 }
 
 void Project::setCsvFileName(const QString& csvFileName)
 {
-    impl->m_csvFileName = csvFileName;
+	impl->m_csvFileName = csvFileName;
 
-    emit csvFileNameSet(isCsvFileNameSet());
+	emit csvFileNameSet(isCsvFileNameSet());
 }
 
 void Project::updatePointsAutoSize()

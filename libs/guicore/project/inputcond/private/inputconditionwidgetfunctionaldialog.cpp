@@ -513,7 +513,7 @@ bool InputConditionWidgetFunctionalDialog::checkImportSourceUpdate()
 	QFileInfo finfo(m_importedCsvFileName);
 	if (finfo.lastModified() == m_importedCsvLastModified) {return false;}
 
-    QString msg = tr("File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?").arg(QDir::toNativeSeparators(m_importedCsvFileName)).arg(windowTitle());
+	QString msg = tr("File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?").arg(QDir::toNativeSeparators(m_importedCsvFileName)).arg(windowTitle());
 	int ret = QMessageBox::information(this, tr("Information"), msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (ret == QMessageBox::No) {return false;}
 
