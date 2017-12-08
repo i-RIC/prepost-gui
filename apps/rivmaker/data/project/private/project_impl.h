@@ -35,8 +35,8 @@ public:
 	CrossSectionBuilderI* m_currentBuilder;
 
 	QPointF m_offset;
-    QString m_rivFileName;
-    QString m_csvFileName;
+	QString m_rivFileName;
+	QString m_csvFileName;
 
 	QString m_filename;
 	QString m_tempDir;

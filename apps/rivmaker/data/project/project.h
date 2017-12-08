@@ -50,14 +50,14 @@ public:
 	const QPointF& offset() const;
 	void setOffset(const QPointF& offset);
 
-    const QString& rivFileName() const;
-    void setRivFileName(const QString& rivFileName);
+	const QString& rivFileName() const;
+	void setRivFileName(const QString& rivFileName);
 
-    bool isCsvFileNameSet() const;
-    const QString& csvFileName() const;
-    void setCsvFileName(const QString& csvFileName);
+	bool isCsvFileNameSet() const;
+	const QString& csvFileName() const;
+	void setCsvFileName(const QString& csvFileName);
 
-    void updatePointsAutoSize();
+	void updatePointsAutoSize();
 
 	MappingMethod mappingMethod() const;
 	void setMappingMethod(MappingMethod method);
@@ -95,7 +95,7 @@ public slots:
 
 signals:
 	void updated();
-    void csvFileNameSet(bool set);
+	void csvFileNameSet(bool set);
 
 private:
 	class Impl;
