@@ -283,6 +283,11 @@ void Project::setRivFileName(const QString& rivFileName)
     impl->m_rivFileName = rivFileName;
 }
 
+bool Project::isCsvFileNameSet() const
+{
+    return ! impl->m_csvFileName.isEmpty();
+}
+
 const QString& Project::csvFileName() const
 {
     return impl->m_csvFileName;
@@ -291,6 +296,8 @@ const QString& Project::csvFileName() const
 void Project::setCsvFileName(const QString& csvFileName)
 {
     impl->m_csvFileName = csvFileName;
+
+    emit csvFileNameSet(isCsvFileNameSet());
 }
 
 void Project::updatePointsAutoSize()

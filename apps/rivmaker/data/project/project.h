@@ -53,6 +53,7 @@ public:
     const QString& rivFileName() const;
     void setRivFileName(const QString& rivFileName);
 
+    bool isCsvFileNameSet() const;
     const QString& csvFileName() const;
     void setCsvFileName(const QString& csvFileName);
 
@@ -94,6 +95,7 @@ public slots:
 
 signals:
 	void updated();
+    void csvFileNameSet(bool set);
 
 private:
 	class Impl;
