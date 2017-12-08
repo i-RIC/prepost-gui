@@ -64,7 +64,7 @@
 #include <vtkPolyDataWriter.h>
 
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+	Post2dWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
