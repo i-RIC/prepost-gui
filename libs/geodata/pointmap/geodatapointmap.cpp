@@ -2132,7 +2132,7 @@ void GeoDataPointmap::selectPointsNearPoint(const QVector2D& pos, bool xOr)
 	double point2[3];
 	m_vtkGrid->GetPoint(nearestId, point2);
 	QVector2D vertexPos(point2[0], point2[1]);
-	double limitdist = graphicsView()->stdRadius(5);
+	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
 	double dist = (vertexPos - pos).length();
 	vtkIdType pointToAdd = -1;
 	if (dist < limitdist) {
@@ -2378,7 +2378,7 @@ void GeoDataPointmap::updateMouseEventMode()
 		m_activeBreakLine = 0;
 		for (int i = 0; i < m_breakLines.count(); ++i) {
 			GeoDataPointmapBreakLine* breakLine = m_breakLines[i];
-			if (breakLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (breakLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meBreakLineRemove;
 				m_activeBreakLine = breakLine;
 				break;
@@ -2398,7 +2398,7 @@ bool GeoDataPointmap::isVertexSelectable(const QVector2D& pos)
 	this->m_vtkGrid->GetPoint(m_selectedVertexId2, point);
 	this->m_selectedZPos = this->m_vtkGrid->GetPointData()->GetArray(VALUES)->GetTuple1(this->m_selectedVertexId2);
 	QVector2D vertexPos(point[0], point[1]);
-	double limitdist = graphicsView()->stdRadius(5);
+	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
 	double dist = (vertexPos - pos).length();
 	return (dist < limitdist);
 }

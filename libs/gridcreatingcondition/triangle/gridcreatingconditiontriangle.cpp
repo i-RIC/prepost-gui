@@ -809,14 +809,14 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 	case meAddVertexPrepare:
 		if (m_selectMode == smNone) {return;}
 		if (m_selectMode == smPolygon) {
-			if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meAddVertexPrepare;
 			} else {
 				m_mouseEventMode = meAddVertexNotPossible;
 			}
 		}
 		if (m_selectMode == smLine) {
-			if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meAddVertexPrepare;
 			} else {
 				m_mouseEventMode = meAddVertexNotPossible;
@@ -827,14 +827,14 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 	case meRemoveVertexPrepare:
 		if (m_selectMode == smNone) {return;}
 		if (m_selectMode == smPolygon) {
-			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meRemoveVertexPrepare;
 			} else {
 				m_mouseEventMode = meRemoveVertexNotPossible;
 			}
 		}
 		if (m_selectMode == smLine) {
-			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meRemoveVertexPrepare;
 			} else {
 				m_mouseEventMode = meRemoveVertexNotPossible;
@@ -851,7 +851,7 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 			m_mouseEventMode = meNormal;
 		}
 		if (m_selectMode == smPolygon) {
-			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meMoveVertexPrepare;
 			} else if (m_selectedPolygon->isPolygonSelectable(worldPos)) {
 				m_mouseEventMode = meTranslatePrepare;
@@ -860,9 +860,9 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 			}
 		}
 		if (m_selectMode == smLine) {
-			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meMoveVertexPrepare;
-			} else if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			} else if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meTranslatePrepare;
 			} else {
 				m_mouseEventMode = meNormal;
@@ -1255,7 +1255,7 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 	QPointF p(dx, dy);
 	QVector2D pv(dx, dy);
 
-	double selectlimit = graphicsView()->stdRadius(5);
+	double selectlimit = graphicsView()->stdRadius(iRIC::nearRadius());
 
 	// check whether the division line can be selected.
 	GridCreatingConditionTriangleAbstractLine* newSelLine = nullptr;

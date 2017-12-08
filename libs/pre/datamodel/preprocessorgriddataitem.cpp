@@ -630,7 +630,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 	if (click) {
 		double p[3];
 		VTK2DGraphicsView* v2 = dynamic_cast<VTK2DGraphicsView*>(v);
-		double stdDist = v2->stdRadius(5);
+		double stdDist = v2->stdRadius(iRIC::nearRadius());
 		vtkSmartPointer<vtkIdList> cellIds = vtkSmartPointer<vtkIdList>::New();
 		box->vtkGrid()->GetPoint(0, p);
 		vtkPolyData* pd = buildEdges();

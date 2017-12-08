@@ -789,7 +789,7 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 	v->viewportToWorld(dx, dy);
 	QPointF worldPos(dx, dy);
 
-	double radius = v->stdRadius(5);
+	double radius = v->stdRadius(iRIC::nearRadius());
 
 	switch (m_mouseEventMode) {
 	case meAddVertexNotPossible:

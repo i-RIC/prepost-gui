@@ -735,7 +735,7 @@ void GeoDataPolygon::updateMouseEventMode()
 		if (m_selectMode == smPolygon) {
 			if (shapeUpdating) {
 				m_mouseEventMode = meAddVertexNotPossible;
-			} else if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			} else if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meAddVertexPrepare;
 			} else {
 				m_mouseEventMode = meAddVertexNotPossible;
@@ -748,7 +748,7 @@ void GeoDataPolygon::updateMouseEventMode()
 		if (m_selectMode == smPolygon) {
 			if (shapeUpdating) {
 				m_mouseEventMode = meRemoveVertexNotPossible;
-			} else if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			} else if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meRemoveVertexPrepare;
 			} else {
 				m_mouseEventMode = meRemoveVertexNotPossible;
@@ -765,7 +765,7 @@ void GeoDataPolygon::updateMouseEventMode()
 		if (m_selectMode == smPolygon) {
 			if (shapeUpdating) {
 				m_mouseEventMode = meNormal;
-			} else if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
+			} else if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
 				m_mouseEventMode = meMoveVertexPrepare;
 			} else if (m_selectedPolygon == m_gridRegionPolygon && m_selectedPolygon->isPolygonSelectable(worldPos)) {
 				m_mouseEventMode = meTranslatePrepare;
@@ -1023,7 +1023,7 @@ bool GeoDataPolygon::selectObject(QPoint point)
 	QPointF p(dx, dy);
 	QVector2D pv(dx, dy);
 
-	double selectlimit = graphicsView()->stdRadius(5);
+	double selectlimit = graphicsView()->stdRadius(iRIC::nearRadius());
 
 	// find polygon that contains this point.
 	GeoDataPolygonAbstractPolygon* newSelPol = nullptr;

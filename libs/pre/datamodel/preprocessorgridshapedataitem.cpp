@@ -173,7 +173,7 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 		p[0] = x;
 		p[1] = y;
 		p[2] = 0;
-		double radius = v2->stdRadius(4);
+		double radius = v2->stdRadius(iRIC::nearRadius());
 		double dist2;
 
 		vtkSmartPointer<vtkPointLocator> locator = vtkSmartPointer<vtkPointLocator>::New();
