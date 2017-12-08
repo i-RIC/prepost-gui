@@ -86,6 +86,7 @@ public:
 
 	void setupActors() override;
 	void setupMenu() override;
+	void setupDataItem() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;

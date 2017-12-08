@@ -100,7 +100,9 @@ GeoDataRiverSurveyCrosssectionWindow::Impl::Impl(GeoDataRiverSurveyCrosssectionW
 	m_icon {":/libs/geodata/riversurvey/images/iconRiverCrosssection.png"},
 	m_colorSource {new ColorSource {nullptr}},
 	m_settingUp {false}
-{}
+{
+	m_colorSource->load(":/libs/guicore/data/colorsource_rs.xml");
+}
 
 
 GeoDataRiverSurveyCrosssectionWindow::Impl::~Impl()
@@ -763,15 +765,21 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	impl->m_riverSurveys.clear();
 	impl->m_riverSurveyColors.clear();
 	const auto& items = impl->m_groupDataItem->childItems();
+	std::vector<GeoDataRiverSurvey*> rivDatas;
 	for (int i = 0; i < items.size(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(items.at(i));
 		GeoDataRiverSurvey* geodata = dynamic_cast<GeoDataRiverSurvey*>(item->geoData());
-		if (geodata != nullptr) {
-			impl->m_riverSurveys.append(geodata);
-			impl->m_riverSurveyEnables.append(enableMap.value(geodata, true));
-			impl->m_riverSurveyColors.append(colorMap.value(geodata, impl->m_colorSource->getColor(i)));
-		}
+		if (geodata == nullptr) {continue;}
+
+		rivDatas.push_back(geodata);
 	}
+	for (int i = 0; i < rivDatas.size(); ++i) {
+		GeoDataRiverSurvey* geodata = rivDatas[i];
+		impl->m_riverSurveys.append(geodata);
+		impl->m_riverSurveyEnables.append(enableMap.value(geodata, true));
+		impl->m_riverSurveyColors.append(colorMap.value(geodata, impl->m_colorSource->getColor(rivDatas.size() - i)));
+	}
+
 	if (impl->m_riverSurveys.count() == 0) {
 		impl->m_projectDataItem->requestWindowClose();
 		return;

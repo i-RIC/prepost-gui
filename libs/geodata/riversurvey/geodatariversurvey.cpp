@@ -24,6 +24,7 @@
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
+#include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/errormessage.h>
@@ -449,6 +450,26 @@ void GeoDataRiverSurvey::setupMenu()
 	iMenu = m_rightClickingMenu->addMenu(tr("Interpolation Mode"));
 	iMenu->addAction(m_interpolateSplineAction);
 	iMenu->addAction(m_interpolateLinearAction);
+}
+
+void GeoDataRiverSurvey::setupDataItem()
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent());
+	auto childItems = gItem->childItems();
+	int rcount = 1;
+	for (GraphicsWindowDataItem* child : childItems) {
+		auto i = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (child);
+		if (dynamic_cast<GeoDataRiverSurvey*>(i->geoData()) != nullptr) {
+			++ rcount;
+		}
+	}
+	auto cs = new ColorSource(this);
+	cs->load(":/libs/guicore/data/colorsource_rs.xml");
+
+	m_setting.crosssectionLinesColor = cs->getColor(rcount);
+	delete cs;
+
+	GeoData::setupDataItem();
 }
 
 bool GeoDataRiverSurvey::addToolBarButtons(QToolBar* /*tb*/)
