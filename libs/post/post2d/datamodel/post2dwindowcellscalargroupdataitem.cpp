@@ -66,7 +66,7 @@
 #include <vtkPolyDataWriter.h>
 
 Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar (Cell Center)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
