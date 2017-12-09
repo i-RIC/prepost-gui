@@ -353,7 +353,7 @@ void GridCreatingConditionPoisson::Impl::updateMouseEventMode(const QPoint& mous
 	auto v = m_parent->graphicsView();
 	v->viewportToWorld(x, y);
 	QPointF worldPos(x, y);
-	double radius = v->stdRadius(5);
+	double radius = v->stdRadius(iRIC::nearRadius());
 
 	// switch activeLine
 	int tmp_edgeid;

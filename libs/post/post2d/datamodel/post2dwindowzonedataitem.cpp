@@ -25,6 +25,7 @@
 #include <guicore/solverdef/solverdefinitiongridattributeintegercell.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -507,7 +508,7 @@ vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView*
 	QVector2D vec1(x, y);
 	QVector2D vec2(vertex[0], vertex[1]);
 	double distance = (vec2 - vec1).length();
-	double limitDist = v2->stdRadius(5);
+	double limitDist = v2->stdRadius(iRIC::nearRadius());
 	if (distance > limitDist) {
 		// no point is near.
 		return -1;
@@ -751,7 +752,7 @@ vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsVie
 	QVector2D vec1(x, y);
 	QVector2D vec2(vertex[0], vertex[1]);
 	double distance = (vec2 - vec1).length();
-	double limitDist = v2->stdRadius(5);
+	double limitDist = v2->stdRadius(iRIC::nearRadius());
 	if (distance > limitDist) {
 		// no point is near.
 		return -1;

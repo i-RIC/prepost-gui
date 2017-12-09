@@ -26,6 +26,7 @@
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -517,7 +518,7 @@ vtkIdType PreProcessorGridAttributeNodeGroupDataItem::findVertex(const QPoint& p
 	QVector2D vec1(x, y);
 	QVector2D vec2(vertex[0], vertex[1]);
 	double distance = (vec2 - vec1).length();
-	double limitDist = v2->stdRadius(5);
+	double limitDist = v2->stdRadius(iRIC::nearRadius());
 	if (distance > limitDist) {
 		// no point is near.
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());

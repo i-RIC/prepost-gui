@@ -425,17 +425,17 @@ void DistanceMeasureDataItem::updateMouseEventMode(const QPointF& v, VTKGraphics
 	case Impl::meNormal:
 	case Impl::meMoveVertexPrepare:
 	case Impl::meTranslatePrepare:
-		if (toVec(impl->m_setting.point1 - v).length() < view2->stdRadius(5)) {
+		if (toVec(impl->m_setting.point1 - v).length() < view2->stdRadius(iRIC::nearRadius())) {
 			impl->m_mouseEventMode = Impl::meMoveVertexPrepare;
 			impl->m_dragPointTarget = 1;
-		} else if (toVec(impl->m_setting.point2 - v).length() < view2->stdRadius(5)) {
+		} else if (toVec(impl->m_setting.point2 - v).length() < view2->stdRadius(iRIC::nearRadius())) {
 			impl->m_mouseEventMode = Impl::meMoveVertexPrepare;
 			impl->m_dragPointTarget = 2;
 		} else {
 			QVector2D horizontal = toVec(impl->m_setting.point2 - impl->m_setting.point1);
 			QVector2D vertical = horizontal.normalized();
 			iRIC::rotateVector90(vertical);
-			double width = view2->stdRadius(5);
+			double width = view2->stdRadius(iRIC::nearRadius());
 			vertical *= width;
 			QVector2D posv = toVec(impl->m_setting.point1) - vertical * 0.5;
 			if (iRIC::isInsideParallelogram(toVec(v), posv, horizontal, vertical)) {

@@ -10,6 +10,9 @@ class QPolygonF;
 
 namespace iRIC
 {
+	/// The radius used to decide whether it is near or not
+	int MISCDLL_EXPORT nearRadius();
+	/// Returns true if the distance is smaller than nearRadius()
 	bool MISCDLL_EXPORT isNear(const QPoint& p1, const QPoint& p2);
 	/// The outer product of two-dimensional vectors
 	qreal MISCDLL_EXPORT outerProduct(const QVector2D& v1, const QVector2D& v2);

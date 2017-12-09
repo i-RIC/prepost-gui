@@ -754,7 +754,7 @@ void GridCreatingConditionRiverSurvey::mouseReleaseEvent(QMouseEvent* event, Pre
 				double target_y = box->startPoint().y();
 				v->viewportToWorld(target_x, target_y);
 				QVector2D targetP = QVector2D(target_x, target_y);
-				selectCtrlZone(targetP, graphicsView()->stdRadius(5));
+				selectCtrlZone(targetP, graphicsView()->stdRadius(iRIC::nearRadius()));
 			}
 
 			setActionStatus();

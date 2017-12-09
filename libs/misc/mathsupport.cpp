@@ -12,11 +12,18 @@
 
 namespace iRIC
 {
+	int nearRadius()
+	{
+		return 10;
+	}
+
 	bool isNear(const QPoint& p1, const QPoint& p2)
 	{
+		int r = nearRadius();
+
 		int xDiff = qAbs(p2.x() - p1.x());
 		int yDiff = qAbs(p2.y() - p1.y());
-		return (xDiff < 3 && yDiff < 3);
+		return (xDiff < r && yDiff < r);
 	}
 
 	qreal outerProduct(const QVector2D& v1, const QVector2D& v2)
