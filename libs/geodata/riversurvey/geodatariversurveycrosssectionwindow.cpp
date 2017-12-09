@@ -47,8 +47,8 @@ QList<QString> setupCrosssectionNames(const QList<GeoDataRiverSurvey*>& surveys)
 				double realName = p->name().toDouble(&numerical);
 				all_numerical = all_numerical && numerical;
 				nameMap.insert({realName, p->name()});
-				p = p->nextPoint();
 			}
+			p = p->nextPoint();
 		}
 	}
 
