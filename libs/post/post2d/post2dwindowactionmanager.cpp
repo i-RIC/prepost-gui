@@ -29,7 +29,7 @@ void Post2dWindowActionManager::setupDrawMenu()
 	drawGridAction = new QAction(tr("&Grid Shape..."), this);
 	m_drawMenu->addAction(drawGridAction);
 
-	drawContourAction = new QAction(tr("&Contours..."), this);
+	drawContourAction = new QAction(tr("&Contours (node)..."), this);
 	m_drawMenu->addAction(drawContourAction);
 
 	drawArrowAction = new QAction(tr("&Arrows..."), this);
@@ -44,7 +44,7 @@ void Post2dWindowActionManager::setupDrawMenu()
 	drawCellFlagAction = new QAction(tr("&Cell Attributes..."), this);
 	m_drawMenu->addAction(drawCellFlagAction);
 
-	drawCellScalarAction = new QAction(tr("Scalar (Ce&ll Center)..."), this);
+	drawCellScalarAction = new QAction(tr("Contours (ce&ll center)..."), this);
 	m_drawMenu->addAction(drawCellScalarAction);
 
 	m_drawMenu->addSeparator();

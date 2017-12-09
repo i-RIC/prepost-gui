@@ -22,7 +22,7 @@
 #include <vtkPointData.h>
 
 Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar (Cell Center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
