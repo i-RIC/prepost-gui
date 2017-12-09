@@ -119,12 +119,12 @@ void PreProcessorBCDataItem::loadExternalData(const QString& filename)
 {
 	if (buildNumber() <= 3507) {return;}
 	int fn;
-	int ier = cg_open(iRIC::toStr(filename).c_str(), CG_MODE_MODIFY, &fn);
+	int ier = cg_open(iRIC::toStr(filename).c_str(), CG_MODE_READ, &fn);
 	if (ier != 0) {
 		// Opening CGNS file failed.
 		return;
 	}
-	cg_iRIC_Init(fn);
+	cg_iRIC_InitRead(fn);
 	// when loading, use 1 for number.
 	m_dialog->setNameAndNumber(TMPBCNAME, 1);
 	m_dialog->load(fn);
