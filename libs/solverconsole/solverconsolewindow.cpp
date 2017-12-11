@@ -23,6 +23,12 @@
 #include <QPlainTextEdit>
 #include <QSettings>
 
+namespace {
+
+const int SOLVER_CANCEL_WAITTIME = 30;
+
+} // namespace
+
 SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w) :
 	m_iricMainWindow {mainW},
 	m_process {nullptr},
@@ -331,7 +337,7 @@ void SolverConsoleWindow::terminateSolverSilently()
 		impl->m_iricMainWindow->enterModelessDialogMode();
 		// this solver supports canceling through ".cancel". Create ".cancel".
 		impl->createCancelFile();
-		// wait for 30 secs.
+		// wait for SOLVER_CANCEL_WAITTIME secs.
 		int waited = 0;
 		while (true) {
 			bool ok = impl->m_process->waitForFinished(1000);
@@ -339,10 +345,10 @@ void SolverConsoleWindow::terminateSolverSilently()
 			if (ok) {break;}
 			++ waited;
 
-			if (waited == 30) {
+			if (waited == SOLVER_CANCEL_WAITTIME) {
 				QMessageBox::StandardButton button = QMessageBox::question(
 					this, tr("Confirm Solver Termination"),
-					tr("30 seconds have passed, but the solver do not end. Do you want to kill the solver?"),
+					tr("%1 seconds have passed, but the solver do not end. Do you want to kill the solver?").arg(SOLVER_CANCEL_WAITTIME),
 					QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 				if (QMessageBox::Yes == button) {
 					if (impl->m_process != nullptr) {
