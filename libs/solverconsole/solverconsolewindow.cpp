@@ -25,7 +25,7 @@
 
 namespace {
 
-const int SOLVER_CANCEL_WAITTIME = 30;
+const int SOLVER_CANCEL_WAITTIME = 5;
 
 } // namespace
 
