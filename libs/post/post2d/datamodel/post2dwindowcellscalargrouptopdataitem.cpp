@@ -21,6 +21,9 @@
 #include <vtkCellData.h>
 #include <vtkPointData.h>
 
+#include <set>
+#include <map>
+
 Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
@@ -40,6 +43,9 @@ void Post2dWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 {
 	Q_ASSERT(node.toElement().nodeName() == "ScalarCellCenter");
 	if (node.toElement().nodeName() == "ScalarCellCenter") {
+		std::map<std::string, Post2dWindowCellScalarGroupDataItem*> scalarmap;
+
+		// create contours for all scalars
 		QDomNodeList children = node.childNodes();
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
@@ -49,13 +55,58 @@ void Post2dWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 					std::string val = iRIC::toStr(titles.at(j).toElement().attribute("value"));
 					QString title = titles.at(j).toElement().attribute("title");
 					m_colorbarTitleMap[val] = title;
+
+					Post2dWindowCellScalarGroupDataItem* item = new Post2dWindowCellScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
+					scalarmap[val] = item;
+					m_childItems.push_back(item);
 				}
-			} else if (childElem.nodeName() == "ScalarGroup") {
-				Post2dWindowCellScalarGroupDataItem* item = new Post2dWindowCellScalarGroupDataItem(this);
-				item->loadFromProjectMainFile(children.at(i));
-				m_childItems.push_back(item);
 			}
 		}
+
+		// load contours from main file
+		std::set<Post2dWindowCellScalarGroupDataItem*> missing_quadrant;
+		for (int i = 0; i < children.count(); ++i) {
+			QDomElement childElem = children.at(i).toElement();
+			if (childElem.nodeName() == "ScalarGroup") {
+				std::string solution = iRIC::toStr(children.at(i).toElement().attribute("solution", ""));
+				if (solution.size()) {
+					auto it = scalarmap.find(solution);
+					if (it != scalarmap.end()) {
+						(*it).second->loadFromProjectMainFile(children.at(i));
+						// store checked items that have no quadrant set
+						if ((*it).second->m_standardItem->checkState() != Qt::Unchecked) {
+							if ((*it).second->m_setting.scalarBarSetting.quadrant == ScalarBarSetting::Quadrant::None) {
+								missing_quadrant.insert((*it).second);
+							}
+						}
+						scalarmap.erase(it);
+					}
+				}
+			}
+		}
+
+		Q_ASSERT(missing_quadrant.size() <= 4);
+		std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
+		while (missing_quadrant.size() && quads.size()) {
+			// find closest item to each quadrant
+			auto quad = quads.begin();
+			std::multimap<double, Post2dWindowCellScalarGroupDataItem*> closest;
+			for (auto item : missing_quadrant) {
+				closest.insert({item->m_setting.scalarBarSetting.distanceFromDefault(*quad), item});
+			}
+			closest.begin()->second->m_setting.scalarBarSetting.quadrant = *quad;
+			missing_quadrant.erase(closest.begin()->second);
+			quads.erase(quad);
+		}
+
+		// initialize contours that weren't loaded
+		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+		for (auto it : scalarmap) {
+			it.second->setTarget(it.first);
+			it.second->m_lookupTableContainer = gtItem->cellLookupTable(it.first);
+		}
+		updateItemMap();
+		updateVisibilityWithoutRendering();
 	}
 }
 
@@ -107,11 +158,6 @@ void Post2dWindowCellScalarGroupTopDataItem::update()
 
 QDialog* Post2dWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	if (childItems().size() >= 4) {
-		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
-		return nullptr;
-	}
-
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
@@ -128,29 +174,37 @@ QDialog* Post2dWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 	Post2dWindowContourSetting setting;
 	setting.target = zItem->dataContainer()->data()->GetCellData()->GetArrayName(0);
 
-	switch (childItems().size() % 4) {
-	case 0:
-		setting.scalarBarSetting.positionX = 0.8;
-		setting.scalarBarSetting.positionY = 0.1;
-		break;
-	case 1:
-		setting.scalarBarSetting.positionX = 0.1;
-		setting.scalarBarSetting.positionY = 0.1;
-		break;
-	case 2:
-		setting.scalarBarSetting.positionX = 0.1;
-		setting.scalarBarSetting.positionY = 0.6;
-		break;
-	case 3:
-		setting.scalarBarSetting.positionX = 0.8;
-		setting.scalarBarSetting.positionY = 0.6;
-		break;
+	if (! nextScalarBarSetting(setting.scalarBarSetting)) {
+		return nullptr;
 	}
 
 	dialog->setSetting(setting);
 	dialog->setColorBarTitleMap(m_colorbarTitleMap);
 
 	return dialog;
+}
+
+bool Post2dWindowCellScalarGroupTopDataItem::nextScalarBarSetting(ScalarBarSetting& scalarBarSetting)
+{
+	std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
+
+	for (auto item : m_childItems) {
+		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
+		typedi->m_standardItemCopy;
+		// note use m_standardItemCopy which hasn't been changed yet
+		if (typedi->m_standardItemCopy->checkState() == Qt::Checked) {
+			auto it = quads.find(typedi->m_setting.scalarBarSetting.quadrant);
+			if (it != quads.end()) {
+				quads.erase(it);
+			}
+		}
+	}
+	if (quads.empty()) {
+		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
+		return false;
+	}
+	scalarBarSetting.setDefaultPosition(*quads.begin());
+	return true;
 }
 
 bool Post2dWindowCellScalarGroupTopDataItem::hasTransparentPart()
@@ -211,7 +265,7 @@ public:
 		}
 	}
 	void redo() {
-		m_item = new Post2dWindowCellScalarGroupDataItem(m_topItem);
+		m_item = new Post2dWindowCellScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
 		m_undoCommand = new QUndoCommand();
