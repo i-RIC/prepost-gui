@@ -65,10 +65,10 @@
 
 #include <vtkPolyDataWriter.h>
 
-Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(Post2dWindowDataItem* p) :
+Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag) :
 	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
-	setupStandardItem(Checked, NotReorderable, Deletable);
+	setupStandardItem(cflag, rflag, dflag);
 
 	setupActors();
 
@@ -260,6 +260,28 @@ void Post2dWindowCellScalarGroupDataItem::assignActorZValues(const ZDepthRange& 
 	m_isolineActor->SetPosition(0, 0, range.min());
 }
 
+void Post2dWindowCellScalarGroupDataItem::handleStandardItemChange()
+{
+	if (m_isCommandExecuting) { return; }
+	Post2dWindowCellScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowCellScalarGroupTopDataItem*>(parent());
+	if (m_standardItem->checkState() == Qt::Checked) {
+		Q_ASSERT(m_standardItemCopy->checkState() == Qt::Unchecked);
+		if (! topitem->nextScalarBarSetting(m_setting.scalarBarSetting)) {
+			m_isCommandExecuting = true;
+			m_standardItem->setCheckState(Qt::Unchecked);
+			Q_ASSERT(m_standardItemCopy->checkState() == Qt::Unchecked);
+			m_isCommandExecuting = false;
+			return;
+		}
+	}
+	else {
+		Q_ASSERT(m_standardItemCopy->checkState() == Qt::Checked);
+	}
+	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	updateActorSettings();
+	GraphicsWindowDataItem::handleStandardItemChange();
+}
+
 void Post2dWindowCellScalarGroupDataItem::update()
 {
 	updateActorSettings();
@@ -392,6 +414,7 @@ QDialog* Post2dWindowCellScalarGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	dialog->disablePhysicalValueComboBox();
 	if (! zItem->dataContainer()->IBCCellExists()) {
 		dialog->disableActive();
 	}

@@ -28,7 +28,7 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
+	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag);
 	~Post2dWindowNodeScalarGroupDataItem();
 
 	std::string target() const;
@@ -44,6 +44,7 @@ public:
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
