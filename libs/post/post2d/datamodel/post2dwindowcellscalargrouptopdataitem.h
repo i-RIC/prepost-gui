@@ -52,6 +52,8 @@ public:
 	bool checkShapeExportCondition(const QString& target);
 	bool exportContourFigureToShape(const QString& target, const QString& filename, double time);
 
+	bool nextScalarBarSetting(ScalarBarSetting& scalarBarSetting);
+
 protected:
 	void addCustomMenuItems(QMenu* menu) override;
 	QDialog* addDialog(QWidget* parent) override;

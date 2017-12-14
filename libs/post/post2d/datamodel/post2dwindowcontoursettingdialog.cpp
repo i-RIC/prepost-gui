@@ -72,6 +72,11 @@ void Post2dWindowContourSettingDialog::disableActive()
 	m_activeAvailable = false;
 }
 
+void Post2dWindowContourSettingDialog::disablePhysicalValueComboBox()
+{
+	ui->physicalValueComboBox->setDisabled(true);
+}
+
 void Post2dWindowContourSettingDialog::hideOpacity()
 {
 	ui->transparencyWidget->hide();

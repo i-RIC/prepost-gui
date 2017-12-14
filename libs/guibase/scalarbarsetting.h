@@ -17,6 +17,8 @@ class vtkLegendBoxRepresentation;
 
 #include <QString>
 
+#include <set>
+
 /// Container for scalar bar display setting
 class GUIBASEDLL_EXPORT ScalarBarSetting : public CompositeContainer
 {
@@ -25,6 +27,8 @@ public:
 	static const int DEFAULT_NUMOFLABELS;
 	static const QString DEFAULT_LABELFORMAT;
 	enum class Orientation {Vertical, Horizontal};
+	enum class Quadrant {None, RightLower, LeftLower, LeftUpper, RightUpper};
+	static std::set<Quadrant> getQuadrantSet();
 
 	ScalarBarSetting();
 	ScalarBarSetting(const ScalarBarSetting& setting);
@@ -35,6 +39,9 @@ public:
 
 	void initForLegendBox();
 
+	void setDefaultPosition(Quadrant quadrant);
+	double distanceFromDefault(Quadrant quadrant);
+
 	void loadFromRepresentation(vtkScalarBarRepresentation* rep);
 	void saveToRepresentation(vtkScalarBarRepresentation* rep) const;
 
@@ -44,6 +51,7 @@ public:
 	BoolContainer visible;
 
 	EnumContainerT<Orientation> orientation;
+	EnumContainerT<Quadrant> quadrant;
 	IntContainer numberOfLabels;
 
 	DoubleContainer width;      ///< relative width (0 < width < 1)
