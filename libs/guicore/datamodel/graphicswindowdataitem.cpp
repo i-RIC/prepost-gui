@@ -415,7 +415,8 @@ void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range, const 
 {
 	if (items.size() == 0) {return;}
 
-	/// the default behavior is to set ZDepthRanges to child items.double rangeWidth = range.width();
+	/// the default behavior is to set ZDepthRanges to child items.
+	double rangeWidth = range.width();
 	double divNum = 0;
 	divNum += items.size() - 1;
 	for (GraphicsWindowDataItem* child : items) {
