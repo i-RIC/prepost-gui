@@ -48,8 +48,9 @@ namespace {
 		clearMarkers(markers);
 
 		QVector<QPointF> samples;
+		bool l_internal;
 		for (GeometryPoint* p : points.points()){
-			double pos = baseLine.calcPosition(p->x(), p->y());
+			double pos = baseLine.calcPosition(p->x(), p->y(), &l_internal);
 			samples.push_back(QPointF(pos, p->z()));
 
 			if (! p->name().isNull()) {

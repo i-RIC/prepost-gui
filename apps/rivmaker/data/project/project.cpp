@@ -25,11 +25,14 @@ namespace {
 
 const QString PROJECT_FILENAME = "project.xml";
 
-void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals)
+void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals, bool* all_internal)
 {
+	*all_internal = true;
+	bool l_internal;
 	for (GeometryPoint* p : points.points()) {
-		double pos = line.calcPosition(p->x(), p->y());
+		double pos = line.calcPosition(p->x(), p->y(), &l_internal);
 		vals->insert(std::make_pair(pos, p->z()));
+		*all_internal = *all_internal && l_internal;
 	}
 }
 
@@ -116,8 +119,9 @@ double calcHWMAtCrossSection(CrossSection* cs, BaseLine& bl, Points& hwm)
 	if (! crosses) {return Project::INVALID_HWM;}
 
 	std::map<double, double> vals;
+	bool l_internal;
 	for (GeometryPoint* p : hwm.points()) {
-		double pos = bl.calcPosition(p->x(), p->y());
+		double pos = bl.calcPosition(p->x(), p->y(), &l_internal);
 		vals.insert(std::make_pair(pos, p->z()));
 	}
 
@@ -394,7 +398,7 @@ double Project::calcRightBankHWMAtCrossSection(CrossSection* cs)
 	return calcHWMAtCrossSection(cs, baseLine(), waterSurfaceElevationPoints().rightBankHWM());
 }
 
-void Project::calcCrossSectionElevations()
+void Project::calcCrossSectionElevations(bool* all_internal)
 {
 	auto& bl = baseLine();
 	auto csVec = crossSections().crossSectionVector();
@@ -416,9 +420,15 @@ void Project::calcCrossSectionElevations()
 
 	auto& wse = waterSurfaceElevationPoints();
 
-	addToVector(wse.leftBankHWM(), bl, &vals);
-	addToVector(wse.rightBankHWM(), bl, &vals);
-	addToVector(wse.arbitraryHWM(), bl, &vals);
+	*all_internal = true;
+	bool l_internal;
+
+	addToVector(wse.leftBankHWM(), bl, &vals, &l_internal);
+	*all_internal = *all_internal && l_internal;
+	addToVector(wse.rightBankHWM(), bl, &vals, &l_internal);
+	*all_internal = *all_internal && l_internal;
+	addToVector(wse.arbitraryHWM(), bl, &vals, &l_internal);
+	*all_internal = *all_internal && l_internal;
 
 	std::map<CrossSection*, std::vector<double> > elevVals;
 

@@ -207,7 +207,13 @@ void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataIt
 
 void PreProcessorModel::updateCrossSections()
 {
-	impl->m_project->calcCrossSectionElevations();
+	bool all_internal;
+	impl->m_project->calcCrossSectionElevations(&all_internal);
+	if (! all_internal) {
+		QMessageBox::warning(view(), tr("Warning"),
+			tr("Base line should be long enough to cover extents of HWMs"));
+	}
+
 	impl->m_project->mapPointsToCrossSections();
 	bool sorted = impl->m_project->sortCrossSectionsIfPossible();
 	if (! sorted && impl->m_project->baseLine().polyLine().size() >= 2) {

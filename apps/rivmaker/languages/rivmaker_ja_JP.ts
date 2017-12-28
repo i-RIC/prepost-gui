@@ -36,7 +36,7 @@
 <context>
     <name>BaseLine</name>
     <message>
-        <location filename="../data/baseline/baseline.cpp" line="123"/>
+        <location filename="../data/baseline/baseline.cpp" line="140"/>
         <source>Base Line</source>
         <translation>ベースライン</translation>
     </message>
@@ -650,7 +650,8 @@
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="135"/>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -666,6 +667,11 @@
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
+        <source>Base line should be long enough to cover extents of HWMs</source>
+        <translation>ベースラインは、水面標高の範囲より長い必要があります</translation>
+    </message>
+    <message>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Not all Cross Sections cross Base line</source>
         <translation>ベースラインと交差していない断面があります</translation>
     </message>
@@ -1274,18 +1280,18 @@
         <translation>CSV にエクスポート (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="208"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="210"/>
         <source>Distance Upstream</source>
         <translation>上流方向への距離</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="211"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="356"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="213"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Elevation</source>
         <translation>標高</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="356"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>

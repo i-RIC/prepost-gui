@@ -91,25 +91,42 @@ void BaseLine::getCrossingPoint(CrossSection* cs, bool* crosses, double* x, doub
 	}
 }
 
-double BaseLine::calcPosition(double x, double y) const
+class PosDistance
+{
+public:
+	PosDistance(double d, bool i) :
+		distance{d},
+		internal{i}
+	{}
+	double distance;
+	bool internal;
+};
+
+double BaseLine::calcPosition(double x, double y, bool* internal) const
 {
 	if (impl->m_polyLine.size() < 2) {return 0;}
 
-	std::map<double, double> distanceMap;
+	std::map<double, PosDistance> distanceMap;
 	double pos = 0;
 	for (int i = 0; i < impl->m_polyLine.size() - 1; ++i) {
 		QPointF p1 = impl->m_polyLine.at(i);
 		QPointF p2 = impl->m_polyLine.at(i + 1);
 
-		QPointF np = GeometryUtil::nearestPoint(p1, p2, QPointF(x, y));
+		int posType;
+		QPointF np = GeometryUtil::nearestPoint(p1, p2, QPointF(x, y), &posType);
 		double point_pos = pos + QVector2D(np.x() - p1.x(), np.y() - p1.y()).length();
 		double distSqr = QVector2D(np.x() - x, np.y() - y).lengthSquared();
-		distanceMap.insert(std::make_pair(distSqr, point_pos));
+		bool l_internal = true;
+		if (i == 0 && posType == 1) {l_internal = false;}
+		if (i == impl->m_polyLine.size() - 2 && posType == 2) {l_internal = false;}
+
+		distanceMap.insert(std::make_pair(distSqr, PosDistance(point_pos, l_internal)));
 
 		pos += QVector2D(p2.x() - p1.x(), p2.y() - p1.y()).length();
 	}
 	auto it = distanceMap.begin();
-	return it->second;
+	*internal = it->second.internal;
+	return it->second.distance;
 }
 
 void BaseLine::reverseDirection()

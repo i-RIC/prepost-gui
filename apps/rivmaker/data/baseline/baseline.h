@@ -28,7 +28,7 @@ public:
 	void setCoordinates(const std::vector<QPointF>& coords) override;
 
 	void getCrossingPoint(CrossSection* cs, bool* crosses, double* x, double* y, double* pos) const;
-	double calcPosition(double x, double y) const;
+	double calcPosition(double x, double y, bool *internal) const;
 
 	void reverseDirection();
 

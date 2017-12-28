@@ -80,7 +80,7 @@ public:
 	double calcLeftBankHWMAtCrossSection(CrossSection* cs);
 	double calcRightBankHWMAtCrossSection(CrossSection* cs);
 
-	void calcCrossSectionElevations();
+	void calcCrossSectionElevations(bool* all_internal);
 	void mapPointsToCrossSections();
 	bool sortCrossSectionsIfPossible();
 
