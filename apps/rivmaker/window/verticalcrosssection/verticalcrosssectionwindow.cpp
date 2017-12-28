@@ -89,6 +89,7 @@ namespace {
 			} else {
 				auto spinBox = new QDoubleSpinBox(parent);
 				spinBox->setDecimals(3);
+				spinBox->setSingleStep(0.01);
 				spinBox->setMinimum(-1000);
 				spinBox->setMaximum(10000);
 				return spinBox;
