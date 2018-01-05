@@ -464,6 +464,7 @@ void PreProcessorDataModel::setupGridMenu()
 		// add mapping menu
 		// ----------------------------
 
+		m_gridMenu->addMenu(gItem->generateAttMenu());
 		QMenu* mappingMenu = new QMenu(tr("&Attributes Mapping"), m_gridMenu);
 		m_gridMenu->addMenu(mappingMenu);
 		mappingMenu->addAction(gItem->mappingAction());
