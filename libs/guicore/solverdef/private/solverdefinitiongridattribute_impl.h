@@ -24,6 +24,8 @@ public:
 	QVariant m_variantMaximumValue;
 	QVariant m_variantMinimumValue;
 	Position m_position {Node};
+	QString m_mapping;
+	QString m_mappingArgs;
 	int m_order {0};
 	std::vector<SolverDefinitionGridAttributeDimension*> m_dimensions;
 	SolverDefinition* m_solverDefinition;

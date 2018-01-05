@@ -47,6 +47,8 @@ public:
 	const QVariant& variantMinimumValue() const;
 	Position position() const;
 	bool isOption() const;
+	const QString& mapping() const;
+	const QString& mappingArgs() const;
 	int order() const;
 
 	const std::vector<SolverDefinitionGridAttributeDimension*>& dimensions() const;

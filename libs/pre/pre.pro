@@ -439,6 +439,7 @@ HEADERS += pre_global.h \
            gridimporter/structured2dgridprojectimporter.h \
            gridimporter/unstructured2dgridcgnsimporter.h \
            gridimporter/unstructured2dgridprojectimporter.h \
+           misc/gridattributegeneratorlauncher.h \
            misc/preprocessorgridattributemappingmode.h \
            misc/preprocessorlegendboxeditdialog.h \
            misc/preprocessorscalarbareditdialog.h \
@@ -543,6 +544,7 @@ SOURCES += preobjectbrowser.cpp \
            gridimporter/structured2dgridprojectimporter.cpp \
            gridimporter/unstructured2dgridcgnsimporter.cpp \
            gridimporter/unstructured2dgridprojectimporter.cpp \
+           misc/gridattributegeneratorlauncher.cpp \
            misc/preprocessorgridattributemappingmode.cpp \
            misc/preprocessorlegendboxeditdialog.cpp \
            misc/preprocessorscalarbareditdialog.cpp \

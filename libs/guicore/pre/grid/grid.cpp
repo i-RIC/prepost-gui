@@ -154,6 +154,16 @@ void Grid::addGridAttribute(GridAttributeContainer* cond)
 	impl->m_gridAttributeNameMap.insert(cond->name(), cond);
 }
 
+bool Grid::hasGeneratingAttributes() const
+{
+	bool has = false;
+	for (GridAttributeContainer* att : impl->m_gridAttributes) {
+		SolverDefinitionGridAttribute* def = att->gridAttribute();
+		has = has || (! def->mapping().isEmpty());
+	}
+	return has;
+}
+
 unsigned int Grid::nodeCount() const
 {
 	return impl->m_vtkGrid->GetNumberOfPoints();

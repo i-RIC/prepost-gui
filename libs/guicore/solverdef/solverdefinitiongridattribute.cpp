@@ -54,6 +54,8 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 				m_dimensions.push_back(dim);
 			}
 		}
+		m_mapping = e.attribute("mapping");
+		m_mappingArgs = e.attribute("mappingArgs");
 	}
 }
 
@@ -111,6 +113,16 @@ SolverDefinitionGridAttribute::Position SolverDefinitionGridAttribute::position(
 bool SolverDefinitionGridAttribute::isOption() const
 {
 	return impl->m_isOption;
+}
+
+const QString& SolverDefinitionGridAttribute::mapping() const
+{
+	return impl->m_mapping;
+}
+
+const QString& SolverDefinitionGridAttribute::mappingArgs() const
+{
+	return impl->m_mappingArgs;
 }
 
 int SolverDefinitionGridAttribute::order() const

@@ -16,6 +16,7 @@
 #include "preprocessorgridshapedataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
+#include "../misc/gridattributegeneratorlauncher.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
@@ -35,6 +36,7 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QAction>
@@ -979,6 +981,9 @@ void PreProcessorGridDataItem::setupActions()
 	m_birdEyeWindowAction = new QAction(tr("Open &Bird's-Eye View Window"), this);
 	m_birdEyeWindowAction->setIcon(QIcon(":/libs/pre/images/iconBirdEyeWindow.png"));
 	connect(m_birdEyeWindowAction, SIGNAL(triggered()), this, SLOT(openBirdEyeWindow()));
+
+	m_generateAttMenu = new QMenu(tr("Attributes &Generating"), mainWindow());
+	setupGenerateAttributeActions(m_generateAttMenu);
 }
 
 void PreProcessorGridDataItem::updateZDepthRangeItemCount()
@@ -1065,6 +1070,8 @@ void PreProcessorGridDataItem::updateActionStatus()
 	PreProcessorGridAttributeMappingSettingTopDataItem* mtItem =
 		dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->mappingSettingDataItem();
 	mtItem->customMappingAction()->setEnabled(m_grid != nullptr);
+
+	m_generateAttMenu->setEnabled(m_grid != nullptr && m_grid->hasGeneratingAttributes());
 }
 
 void PreProcessorGridDataItem::silentDeleteGrid()
@@ -1264,6 +1271,27 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 			m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
 		}
 	}
+}
+
+void PreProcessorGridDataItem::setupGenerateAttributeActions(QMenu* menu)
+{
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	for (SolverDefinitionGridAttribute* def : gtItem->gridType()->gridAttributes()) {
+		if (def->mapping().isNull()) {continue;}
+
+		QAction* action = new QAction(tr("Generate %1").arg(def->caption()), menu);
+		action->setData(def->name().c_str());
+		menu->addAction(action);
+		connect(action, SIGNAL(triggered()), this, SLOT(launchAttributeGenerator()));
+	}
+}
+
+void PreProcessorGridDataItem::launchAttributeGenerator()
+{
+	QAction* action = dynamic_cast<QAction*>(sender());
+
+	std::string attName = iRIC::toStr(action->data().toString());
+	GridAttributeGeneratorLauncher::launchGenerator(this, attName, projectData()->workDirectory(), mainWindow());
 }
 
 QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtkIdType>& vertices) const
