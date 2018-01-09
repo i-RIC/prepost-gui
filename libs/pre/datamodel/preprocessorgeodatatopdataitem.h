@@ -60,6 +60,7 @@ signals:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void assignActorZValues(const ZDepthRange& range) override;
 
 	std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*> m_itemNameMap;
 

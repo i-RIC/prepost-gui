@@ -151,6 +151,7 @@ protected:
 
 	PostSolutionInfo* postSolutionInfo();
 	virtual void assignActorZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range, const std::vector<GraphicsWindowDataItem*>& items);
 	virtual GraphicsWindowDataModel* dataModel() const;
 	vtkRenderer* renderer() const;
 	virtual void unregisterChild(GraphicsWindowDataItem* child);

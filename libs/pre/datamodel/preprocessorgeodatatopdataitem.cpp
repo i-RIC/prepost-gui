@@ -185,6 +185,25 @@ void PreProcessorGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 	}
 }
 
+void PreProcessorGeoDataTopDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	std::vector<GraphicsWindowDataItem*> items = m_childItems;
+	GraphicsWindowDataItem* elevItem = 0;
+
+	for (auto it = items.begin(); it != items.end(); ++it) {
+		auto i = *it;
+		auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*> (i);
+		if (gItem->condition()->name() == "Elevation") {
+			elevItem = i;
+			items.erase(it);
+		}
+	}
+	if (elevItem != 0) {
+		items.push_back(elevItem);
+	}
+	GraphicsWindowDataItem::assignActorZValues(range, items);
+}
+
 const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDataItem::groupDataItems() const
 {
 	QList<PreProcessorGeoDataGroupDataItemInterface*> ret;
