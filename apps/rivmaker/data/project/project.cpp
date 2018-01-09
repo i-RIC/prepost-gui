@@ -14,8 +14,10 @@
 #include <QDir>
 #include <QDomDocument>
 #include <QFile>
+#include <QMessageBox>
 #include <QTemporaryDir>
 #include <QXmlStreamWriter>
+#include <QWidget>
 
 #include <map>
 #include <string>
@@ -433,26 +435,36 @@ void Project::calcCrossSectionElevations(bool* all_internal)
 	std::map<CrossSection*, std::vector<double> > elevVals;
 
 	for (auto it = posMap.begin(); it != posMap.end(); ++it) {
+		auto it_b = vals.begin();
+		auto it_e = vals.end();
+
+		// setup it_b
+		if (it != posMap.begin()) {
+			auto it2 = it;
+			-- it2;
+			it_b = vals.lower_bound(it2->first);
+		}
+
+		// setup it_e
 		auto it2 = it;
 		++ it2;
-		if (it2 == posMap.end()) {break;}
-
-		double min = it->first;
-		double max = it2->first;
+		if (it2 != posMap.end()) {
+			it_e = vals.upper_bound(it2->first);
+		}
 
 		std::vector<double> xvec, yvec;
-
-		auto it_b = vals.lower_bound(min);
-		auto it_e = vals.upper_bound(max);
 		for (auto tmp_it = it_b; tmp_it != it_e; ++ tmp_it) {
 			xvec.push_back(tmp_it->first);
 			yvec.push_back(tmp_it->second);
 		}
 		double a, b;
-		MathUtil::leastSquares(xvec, yvec, &a, &b);
-
-		addToElevMap(&elevVals, it->second,  a * min + b);
-		addToElevMap(&elevVals, it2->second, a * max + b);
+		if (xvec.size() > 1) {
+			MathUtil::leastSquares(xvec, yvec, &a, &b);
+			addToElevMap(&elevVals, it->second,  a * it->first + b);
+		} else {
+			// not enough points for interpolation
+			QMessageBox::warning(nullptr, tr("Warning"), tr("Calculating initial WSE for Cross-section %1 failed").arg(it->second->name()));
+		}
 	}
 
 	for (auto pair : elevVals) {
