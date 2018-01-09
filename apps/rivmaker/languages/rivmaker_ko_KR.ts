@@ -36,7 +36,7 @@
 <context>
     <name>BaseLine</name>
     <message>
-        <location filename="../data/baseline/baseline.cpp" line="123"/>
+        <location filename="../data/baseline/baseline.cpp" line="140"/>
         <source>Base Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -625,7 +625,8 @@
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="135"/>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -641,6 +642,11 @@
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
+        <source>Base line should be long enough to cover extents of HWMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Not all Cross Sections cross Base line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -650,6 +656,19 @@
     <message>
         <location filename="../window/preprocessor/preprocessorwindow.cpp" line="37"/>
         <source>Main Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Project</name>
+    <message>
+        <location filename="../data/project/project.cpp" line="466"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/project/project.cpp" line="466"/>
+        <source>Calculating initial WSE for Cross-section %1 failed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -674,44 +693,44 @@
 <context>
     <name>RivExporter</name>
     <message>
-        <location filename="../io/rivexporter.cpp" line="24"/>
+        <location filename="../io/rivexporter.cpp" line="22"/>
         <source>Input File name to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="24"/>
+        <location filename="../io/rivexporter.cpp" line="22"/>
         <source>River Survey Data(*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="33"/>
-        <location filename="../io/rivexporter.cpp" line="87"/>
+        <location filename="../io/rivexporter.cpp" line="31"/>
+        <location filename="../io/rivexporter.cpp" line="85"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="33"/>
-        <location filename="../io/rivexporter.cpp" line="87"/>
+        <location filename="../io/rivexporter.cpp" line="31"/>
+        <location filename="../io/rivexporter.cpp" line="85"/>
         <source>%1 could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="79"/>
+        <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV File name to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="79"/>
+        <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV file(*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="104"/>
+        <location filename="../io/rivexporter.cpp" line="102"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="104"/>
+        <location filename="../io/rivexporter.cpp" line="102"/>
         <source>%1 is updated.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1158,7 +1177,7 @@
     <name>VerticalCrossSectionWindow</name>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="14"/>
-        <source>Vertical Cross Section Window</source>
+        <source>Elevation View Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1207,18 +1226,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="201"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="210"/>
         <source>Distance Upstream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="204"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="349"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="213"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="349"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>

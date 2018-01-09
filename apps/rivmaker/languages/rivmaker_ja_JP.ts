@@ -685,6 +685,19 @@
     </message>
 </context>
 <context>
+    <name>Project</name>
+    <message>
+        <location filename="../data/project/project.cpp" line="466"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../data/project/project.cpp" line="466"/>
+        <source>Calculating initial WSE for Cross-section %1 failed</source>
+        <translation>断面 %1 の水面標高の初期値の計算が失敗しました。</translation>
+    </message>
+</context>
+<context>
     <name>ReferenceMark</name>
     <message>
         <location filename="../data/referencemark/referencemark.cpp" line="16"/>
