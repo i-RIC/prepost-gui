@@ -9,6 +9,7 @@
 
 #include <cs/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
+#include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
@@ -57,7 +58,6 @@
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkScalarBarActor.h>
 #include <vtkScalarsToColors.h>
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
@@ -233,6 +233,7 @@ void Post2dWindowCellScalarGroupDataItem::setupActors()
 	Q_ASSERT(iren != nullptr);
 
 	m_scalarBarWidget = vtkScalarBarWidget::New();
+	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
 	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
 	m_scalarBarWidget->SetInteractor(iren);
 	m_scalarBarWidget->SetEnabled(0);
