@@ -316,13 +316,6 @@
             </item>
            </layout>
           </item>
-          <item row="1" column="0">
-           <widget class="QRadioButton" name="scalarRadioButton">
-            <property name="text">
-             <string>By scalar value</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="1">
            <widget class="QComboBox" name="scalarComboBox">
             <property name="enabled">
@@ -333,6 +326,13 @@
               <width>120</width>
               <height>20</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QRadioButton" name="scalarRadioButton">
+            <property name="text">
+             <string>By scalar value</string>
             </property>
            </widget>
           </item>
@@ -433,6 +433,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="colorbarSettingButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -489,8 +492,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>389</y>
+     <x>191</x>
+     <y>482</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -505,8 +508,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>389</y>
+     <x>191</x>
+     <y>482</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -557,7 +560,7 @@
      <y>234</y>
     </hint>
     <hint type="destinationlabel">
-     <x>148</x>
+     <x>144</x>
      <y>261</y>
     </hint>
    </hints>
@@ -573,7 +576,7 @@
      <y>234</y>
     </hint>
     <hint type="destinationlabel">
-     <x>259</x>
+     <x>251</x>
      <y>261</y>
     </hint>
    </hints>
@@ -623,6 +626,22 @@
     <hint type="destinationlabel">
      <x>160</x>
      <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scalarRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>colorbarSettingButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>58</y>
     </hint>
    </hints>
   </connection>

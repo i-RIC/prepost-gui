@@ -1,6 +1,8 @@
 #include "post2dwindownodevectorarrowdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guicore/datamodel/vtkgraphicsview.h>
+
 #include <QMenu>
 #include <QMouseEvent>
 #include <QStandardItem>
@@ -24,11 +26,18 @@ void Post2dWindowNodeVectorArrowDataItem::informDeselection(VTKGraphicsView*)
 
 void Post2dWindowNodeVectorArrowDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	v->standardMouseMoveEvent(event);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+}
+
+void Post2dWindowNodeVectorArrowDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	v->standardMousePressEvent(event);
 }
 
 void Post2dWindowNodeVectorArrowDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	v->standardMouseReleaseEvent(event);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 

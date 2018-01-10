@@ -22,6 +22,7 @@
 #include <vtkActor2D.h>
 #include <vtkTextActor.h>
 #include <vtkClipPolyData.h>
+#include <vtkScalarBarWidget.h>
 
 #include <QColor>
 
@@ -42,6 +43,7 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void updateActorSettings();
 	void updateZDepthRangeItemCount() override;
@@ -54,8 +56,10 @@ public slots:
 
 protected:
 	std::string target() const override;
+	std::string colorScalar() const;
 	void setTarget(const std::string& target) override;
 
+	void updateVisibility(bool visible) override;
 	void innerUpdate2Ds() override;
 	void updateColorSetting();
 	void updatePolyData();
@@ -67,6 +71,7 @@ protected:
 private:
 	void setupActors();
 	void calculateStandardValue();
+	void setupScalarBarSetting();
 	void innerUpdateZScale(double scale) override;
 
 	virtual void updateActivePoints() = 0;
@@ -82,6 +87,7 @@ protected:
 	vtkSmartPointer<vtkGlyph3D> m_arrowGlyph;
 	vtkSmartPointer<vtkWarpVector> m_warpVector;
 	vtkSmartPointer<vtkConeSource> m_arrowSource;
+	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 
 	vtkSmartPointer<vtkTextActor> m_legendTextActor;
 
@@ -90,6 +96,7 @@ protected:
 	vtkSmartPointer<vtkPolyData> m_activePoints;
 	vtkSmartPointer<vtkTransformFilter> m_transformedActivePoints;
 
+	QMap<std::string, QString> m_colorbarTitleMap;
 	double m_scaleFactor;
 };
 

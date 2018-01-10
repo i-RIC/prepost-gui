@@ -29,16 +29,22 @@ public:
 	void disableActive();
 
 	Post2dWindowNodeVectorArrowStructuredSetting setting() const;
+	QString scalarBarTitle() const;
+
 	void setSetting(const Post2dWindowNodeVectorArrowStructuredSetting& s);
+	void setColorBarTitleMap(const QMap<std::string, QString>& titlemap);
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);
 
 private slots:
 	void showRegionDialog();
+	void showScalarBarDialog();
 	void samplingAllToggle(bool toggled);
 
 private:
+	std::string colorScalar() const;
+
 	std::vector<std::string> m_targets;
 	std::vector<std::string> m_scalars;
 
@@ -48,6 +54,7 @@ private:
 	Post2dWindowGridTypeDataItem* m_gridTypeDataItem;
 
 	Post2dWindowNodeVectorArrowStructuredSetting m_setting;
+	QMap<std::string, QString> m_colorBarTitleMap;
 
 	Ui::Post2dWindowArrowStructuredSettingDialog* ui;
 };

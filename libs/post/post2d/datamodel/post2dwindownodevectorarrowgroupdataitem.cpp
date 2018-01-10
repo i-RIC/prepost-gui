@@ -4,6 +4,7 @@
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
@@ -35,6 +36,8 @@
 #include <vtkProperty.h>
 #include <vtkProperty2D.h>
 #include <vtkRenderer.h>
+#include <vtkRenderWindow.h>
+#include <vtkScalarBarActor.h>
 #include <vtkStructuredGrid.h>
 #include <vtkTextProperty.h>
 #include <vtkTransform.h>
@@ -53,6 +56,10 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 		auto item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
 	}
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())){
+		m_colorbarTitleMap.insert(name, name.c_str());
+	}
+
 	setupActors();
 }
 
@@ -60,6 +67,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataI
 {
 	renderer()->RemoveActor(m_arrowActor);
 	renderer()->RemoveActor(m_baseArrowActor);
+	m_scalarBarWidget->SetInteractor(nullptr);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -141,6 +149,13 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 	m_warpVector->SetInputConnection(m_transformedActivePoints->GetOutputPort());
 
 	renderer()->AddActor2D(m_baseArrowActor);
+
+	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
+	Q_ASSERT(iren != nullptr);
+	m_scalarBarWidget = vtkScalarBarWidget::New();
+	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
+	m_scalarBarWidget->SetInteractor(iren);
+	m_scalarBarWidget->SetEnabled(0);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
@@ -194,6 +209,22 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 	s.minimumValue = 0.001 * s.standardValue;
 }
 
+void Post2dWindowNodeVectorArrowGroupDataItem::setupScalarBarSetting()
+{
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+
+	auto& s = setting();
+
+	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
+	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(iRIC::toStr(s.colorTarget))).c_str());
+	a->SetLookupTable(typedi->nodeLookupTable(s.colorTarget)->vtkObj());
+	a->SetNumberOfLabels(s.scalarBarSetting.numberOfLabels);
+	a->SetMaximumNumberOfColors(256);
+	s.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
+	s.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
+	s.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+}
+
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdateZScale(double scale)
 {
 	vtkSmartPointer<vtkTransform> transform = vtkSmartPointer<vtkTransform>::New();
@@ -213,6 +244,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	m_arrowActor->VisibilityOff();
 	m_legendTextActor->VisibilityOff();
 	m_baseArrowActor->VisibilityOff();
+	m_scalarBarWidget->SetEnabled(0);
 
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
@@ -233,6 +265,11 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	updateColorSetting();
 	updatePolyData();
 	updateLegendData();
+
+	if (s.scalarBarSetting.visible && s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
+		m_scalarBarWidget->SetEnabled(1);
+		setupScalarBarSetting();
+	}
 
 	m_actorCollection->AddItem(m_arrowActor);
 	m_actor2DCollection->AddItem(m_legendTextActor);
@@ -282,11 +319,24 @@ std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
 	return const_cast<Post2dWindowNodeVectorArrowGroupDataItem*> (this)->setting().target;
 }
 
+std::string Post2dWindowNodeVectorArrowGroupDataItem::colorScalar() const
+{
+	return const_cast<Post2dWindowNodeVectorArrowGroupDataItem*> (this)->setting().colorTarget;
+}
+
 void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	setting().target = target.c_str();
 	updateActorSettings();
+}
+
+void Post2dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
+{
+	auto& s = setting();
+	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
+	m_scalarBarWidget->SetEnabled(s.scalarBarSetting.visible.value() && v && (s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) && s.colorTarget != "");
+	Post2dWindowDataItem::updateVisibility(visible);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
@@ -374,21 +424,30 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
+	m_scalarBarWidget->SetRepositionable(1);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
+	m_scalarBarWidget->SetRepositionable(0);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeAttributeBrowser();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	v->standardMouseMoveEvent(event);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+}
+
+void Post2dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	v->standardMousePressEvent(event);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	v->standardMouseReleaseEvent(event);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
