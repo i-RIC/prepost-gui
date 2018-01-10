@@ -17,8 +17,7 @@ win32 {
 }
 
 # Input
-HEADERS += arrowsettingcontainer.h \
-           boolcontainer.h \
+HEADERS += boolcontainer.h \
            colorcontainer.h \
            compositecontainer.h \
            doublecontainer.h \
@@ -76,8 +75,7 @@ HEADERS += arrowsettingcontainer.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui slowmotionspeededitdialog.ui
-SOURCES += arrowsettingcontainer.cpp \
-           boolcontainer.cpp \
+SOURCES += boolcontainer.cpp \
            colorcontainer.cpp \
            compositecontainer.cpp \
            doublecontainer.cpp \
