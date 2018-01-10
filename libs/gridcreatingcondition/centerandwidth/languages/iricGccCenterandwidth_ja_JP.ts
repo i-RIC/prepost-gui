@@ -4,62 +4,62 @@
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="78"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="79"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="81"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="82"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="85"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="86"/>
         <source>Edit C&amp;oordinates...</source>
         <translation>座標の編集(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="88"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="89"/>
         <source>R&amp;everse Center Line Direction</source>
         <translation>中心線の向きを反転(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="91"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="92"/>
         <source>&amp;Import Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>中心線のインポート(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="94"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="95"/>
         <source>&amp;Export Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>中心線のエクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="173"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="177"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="196"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="954"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="174"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="178"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="197"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="173"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="174"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation>格子生成条件の定義が完了していません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="177"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="178"/>
         <source>Grid center line is not defined yet. Please click in the main region to define the grid center line.</source>
         <translation>格子中心線がまだ定義されていません。メイン領域でクリックし、格子中心線を定義してください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="196"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="197"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation>格子点数の最大値は %1 です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="954"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
         <source>Center line not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>中心線がまだ定義されていません。</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditioncenterandwidth_definenewpointcommand.cpp" line="7"/>
@@ -92,12 +92,12 @@
         <translation>中心線の定義の終了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="918"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="918"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>格子の中心線を定義してください。中心線は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.cpp" line="77"/>
         <source>nJ should be even. incrementing by one.</source>
-        <translation type="unfinished"></translation>
+        <translation>nJ は偶数である必要があります。値を1増やします。</translation>
     </message>
     <message>
         <source>Division number in cross-stream direction should be even. incrementing by one.</source>
