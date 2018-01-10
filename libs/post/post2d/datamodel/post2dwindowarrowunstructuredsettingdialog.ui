@@ -407,6 +407,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="colorbarSettingButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -463,8 +466,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>191</x>
-     <y>393</y>
+     <x>200</x>
+     <y>479</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -479,8 +482,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>191</x>
-     <y>393</y>
+     <x>200</x>
+     <y>479</y>
     </hint>
     <hint type="destinationlabel">
      <x>285</x>
@@ -581,6 +584,22 @@
     <hint type="destinationlabel">
      <x>162</x>
      <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scalarRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>colorbarSettingButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>57</y>
     </hint>
    </hints>
   </connection>

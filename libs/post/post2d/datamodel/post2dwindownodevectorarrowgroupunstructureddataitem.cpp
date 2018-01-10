@@ -125,6 +125,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 		dialog->disableActive();
 	}
 	dialog->setSetting(m_setting);
+	dialog->setColorBarTitleMap(m_colorbarTitleMap);
 
 	return dialog;
 }
@@ -132,7 +133,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowArrowUnstructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowUnstructuredSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->scalarBarTitle(), this), this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)

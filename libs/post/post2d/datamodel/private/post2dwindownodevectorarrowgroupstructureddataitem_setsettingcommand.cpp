@@ -7,7 +7,7 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::SetSettingCommand::SetSettin
 	m_oldSetting {item->m_setting},
 	m_item {item}
 {
-	m_oldScalarBarTitle = m_item->m_colorbarTitleMap[item->colorScalar()];
+	m_oldScalarBarTitle = m_item->m_colorbarTitleMap[setting.colorTarget];
 }
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::SetSettingCommand::redo()

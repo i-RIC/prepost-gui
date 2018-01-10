@@ -4,6 +4,7 @@
 #include "post2dwindowarrowunstructuredsettingdialog.h"
 
 #include <guibase/comboboxtool.h>
+#include <guibase/scalarbardialog.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -23,6 +24,7 @@ Post2dWindowArrowUnstructuredSettingDialog::Post2dWindowArrowUnstructuredSetting
 	connect(ui->specificRadioButton, SIGNAL(toggled(bool)), ui->colorEditWidget, SLOT(setEnabled(bool)));
 	connect(ui->scalarRadioButton, SIGNAL(toggled(bool)), ui->scalarComboBox, SLOT(setEnabled(bool)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
+	connect(ui->colorbarSettingButton, SIGNAL(clicked()), this, SLOT(showScalarBarDialog()));
 }
 
 Post2dWindowArrowUnstructuredSettingDialog::~Post2dWindowArrowUnstructuredSettingDialog()
@@ -81,6 +83,11 @@ Post2dWindowNodeVectorArrowUnstructuredSetting Post2dWindowArrowUnstructuredSett
 	return ret;
 }
 
+QString Post2dWindowArrowUnstructuredSettingDialog::scalarBarTitle() const
+{
+		return m_colorBarTitleMap[colorScalar()];
+}
+
 void Post2dWindowArrowUnstructuredSettingDialog::setSetting(const Post2dWindowNodeVectorArrowUnstructuredSetting& setting)
 {
 	m_setting = setting;
@@ -128,6 +135,11 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSetting(const Post2dWindowNo
 	ui->lineWidthSpinBox->setValue(setting.lineWidth);
 }
 
+void Post2dWindowArrowUnstructuredSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)
+{
+	m_colorBarTitleMap = titlemap;
+}
+
 void Post2dWindowArrowUnstructuredSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
@@ -141,6 +153,19 @@ void Post2dWindowArrowUnstructuredSettingDialog::showRegionDialog()
 	if (ret == QDialog::Rejected) {return;}
 
 	m_setting.regionMode = dialog.regionMode();
+}
+
+void Post2dWindowArrowUnstructuredSettingDialog::showScalarBarDialog()
+{
+	ScalarBarDialog dialog(this);
+	dialog.setSetting(m_setting.scalarBarSetting);
+	dialog.setTitle(m_colorBarTitleMap[colorScalar()]);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.scalarBarSetting = dialog.setting();
+	m_colorBarTitleMap[colorScalar()] = dialog.title();
 }
 
 void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
@@ -160,3 +185,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneD
 	}
 }
 
+std::string Post2dWindowArrowUnstructuredSettingDialog::colorScalar() const
+{
+	return m_scalars.at(ui->scalarComboBox->currentIndex());
+}
