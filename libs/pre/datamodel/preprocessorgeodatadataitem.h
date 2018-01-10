@@ -51,6 +51,7 @@ public:
 	bool isExportAvailable();
 	void saveToCgnsFile(const int fn) override;
 	void setDeleteSilently(bool silent);
+	void removeFile();
 
 signals:
 	void captionChanged(const QString& newcaption);
