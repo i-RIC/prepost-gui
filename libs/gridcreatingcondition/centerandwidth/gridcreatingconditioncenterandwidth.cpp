@@ -67,7 +67,8 @@ void setupLabelActor(vtkLabel2DActor* actor)
 } // namespace
 
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	GridCreatingCondition(parent, creator)
+	GridCreatingCondition(parent, creator),
+	m_previewGrid {nullptr}
 {
 	m_upstreamActor.setLabel("Upstream");
 	setupLabelActor(&m_upstreamActor);
@@ -281,10 +282,12 @@ void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog* d)
 
 	Grid* g = createGrid();
 	if (g == 0) {return;}
-	m_previewMapper->SetInputData(g->vtkGrid());
+	if (m_previewGrid != nullptr) {delete m_previewGrid;}
+	m_previewGrid = g;
+
+	m_previewMapper->SetInputData(m_previewGrid->vtkGrid());
 	m_previewActor->VisibilityOn();
 	renderGraphicsView();
-	m_previewActor->VisibilityOff();
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
@@ -294,6 +297,12 @@ void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
 	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
+
+	if (m_previewGrid != nullptr) {
+		delete m_previewGrid;
+		m_previewGrid = nullptr;
+	}
+	m_previewActor->VisibilityOff();
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogRejected(QDialog* /*d*/)
@@ -302,7 +311,14 @@ void GridCreatingConditionCenterAndWidth::handleDialogRejected(QDialog* /*d*/)
 	setJMax(m_oldJMax);
 	setWidth(m_oldWidth);
 	m_splinePoints->Initialize();
-	renderer()->GetRenderWindow()->Render();
+
+	if (m_previewGrid != nullptr) {
+		delete m_previewGrid;
+		m_previewGrid = nullptr;
+	}
+	m_previewActor->VisibilityOff();
+
+	renderGraphicsView();
 }
 
 bool GridCreatingConditionCenterAndWidth::ready() const

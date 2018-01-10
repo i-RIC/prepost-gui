@@ -110,6 +110,7 @@ protected:
 
 	vtkSmartPointer<vtkActor> m_previewActor;
 	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
+	Grid* m_previewGrid;
 
 	vtkSmartPointer<vtkParametricSpline> m_spline;
 	vtkSmartPointer<vtkCardinalSpline> m_xSpline;
