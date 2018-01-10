@@ -108,9 +108,8 @@ protected:
 	vtkLabel2DActor m_upstreamActor;
 	vtkLabel2DActor m_downstreamActor;
 
-	vtkSmartPointer<vtkActor> m_tmpActor;
-
-	vtkSmartPointer<vtkDataSetMapper> m_tmpMapper;
+	vtkSmartPointer<vtkActor> m_previewActor;
+	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
 
 	vtkSmartPointer<vtkParametricSpline> m_spline;
 	vtkSmartPointer<vtkCardinalSpline> m_xSpline;
@@ -132,9 +131,10 @@ protected:
 	int m_jMax;
 	double m_width;
 	double m_length;
-	int m_tmpIMax;
-	int m_tmpJMax;
-	double m_tmpWidth;
+
+	int m_oldIMax;
+	int m_oldJMax;
+	double m_oldWidth;
 
 private slots:
 	void restoreMouseEventMode();
