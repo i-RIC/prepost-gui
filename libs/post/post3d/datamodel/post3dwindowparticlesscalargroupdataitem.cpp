@@ -5,6 +5,7 @@
 #include "post3dwindowzonedataitem.h"
 #include "private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.h"
 
+#include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
@@ -23,7 +24,6 @@
 #include <vtkPointData.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
-#include <vtkScalarBarActor.h>
 
 Post3dWindowParticlesScalarGroupDataItem::Post3dWindowParticlesScalarGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
@@ -183,6 +183,7 @@ void Post3dWindowParticlesScalarGroupDataItem::setupActors()
 	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
 
 	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
+	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
 	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
 	m_scalarBarWidget->SetInteractor(iren);
 	m_scalarBarWidget->SetEnabled(0);
