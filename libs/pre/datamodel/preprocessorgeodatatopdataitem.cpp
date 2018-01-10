@@ -196,6 +196,7 @@ void PreProcessorGeoDataTopDataItem::assignActorZValues(const ZDepthRange& range
 		if (gItem->condition()->name() == "Elevation") {
 			elevItem = i;
 			items.erase(it);
+			break;
 		}
 	}
 	if (elevItem != 0) {
