@@ -2,6 +2,8 @@
 #define ARROWSETTINGCONTAINER_H
 
 #include "guibase_global.h"
+#include "scalarbarsetting.h"
+
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/doublecontainer.h>
@@ -65,6 +67,8 @@ public:
 
 	IntContainer arrowSize;
 	IntContainer lineWidth;
+
+	ScalarBarSetting scalarBarSetting;
 
 	DoubleContainer oldCameraScale;
 };

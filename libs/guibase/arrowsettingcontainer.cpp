@@ -16,7 +16,7 @@ ArrowSettingContainer::ArrowSettingContainer() :
 	CompositeContainer({&target, &samplingMode, &samplingRate, &samplingNumber,
 			&colorMode, &customColor, &colorTarget,
 			&lengthMode, &standardValue, &legendLength, &minimumValue,
-			&arrowSize, &lineWidth}),
+			&arrowSize, &lineWidth, &scalarBarSetting}),
 	target {"attribute"},
 	samplingMode {"samplingMode", SamplingMode::All},
 	samplingRate {"samplingRate", DEFAULT_SAMPLING_RATE},
