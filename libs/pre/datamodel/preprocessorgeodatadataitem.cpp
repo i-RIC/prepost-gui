@@ -324,3 +324,9 @@ void PreProcessorGeoDataDataItem::setDeleteSilently(bool silent)
 {
 	m_deleteSilently = silent;
 }
+
+void PreProcessorGeoDataDataItem::removeFile()
+{
+	if (m_geoData->filename().isEmpty()) {return;}
+	QFile::remove(m_geoData->filename());
+}
