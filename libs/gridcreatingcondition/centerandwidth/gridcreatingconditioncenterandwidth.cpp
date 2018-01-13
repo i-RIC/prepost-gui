@@ -67,7 +67,8 @@ void setupLabelActor(vtkLabel2DActor* actor)
 } // namespace
 
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	GridCreatingCondition(parent, creator)
+	GridCreatingCondition(parent, creator),
+	m_previewGrid {nullptr}
 {
 	m_upstreamActor.setLabel("Upstream");
 	setupLabelActor(&m_upstreamActor);
@@ -128,7 +129,7 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 
 GridCreatingConditionCenterAndWidth::~GridCreatingConditionCenterAndWidth()
 {
-	renderer()->RemoveActor(m_tmpActor);
+	renderer()->RemoveActor(m_previewActor);
 	renderer()->RemoveActor(m_polyLineController.pointsActor());
 	renderer()->RemoveActor(m_polyLineController.linesActor());
 	renderer()->RemoveActor2D(m_upstreamActor.actor());
@@ -255,9 +256,9 @@ void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 	dialog->setWidth(m_width);
 	dialog->setIMax(m_iMax);
 	dialog->setJMax(m_jMax);
-	m_tmpIMax = m_iMax;
-	m_tmpJMax = m_jMax;
-	m_tmpWidth = m_width;
+	m_oldIMax = m_iMax;
+	m_oldJMax = m_jMax;
+	m_oldWidth = m_width;
 
 	int result = dialog->exec();
 	if (result == QDialog::Accepted) {
@@ -281,10 +282,12 @@ void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog* d)
 
 	Grid* g = createGrid();
 	if (g == 0) {return;}
-	m_tmpMapper->SetInputData(g->vtkGrid());
-	m_tmpActor->VisibilityOn();
+	if (m_previewGrid != nullptr) {delete m_previewGrid;}
+	m_previewGrid = g;
+
+	m_previewMapper->SetInputData(m_previewGrid->vtkGrid());
+	m_previewActor->VisibilityOn();
 	renderGraphicsView();
-	m_tmpActor->VisibilityOff();
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
@@ -294,15 +297,28 @@ void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
 	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
+
+	if (m_previewGrid != nullptr) {
+		delete m_previewGrid;
+		m_previewGrid = nullptr;
+	}
+	m_previewActor->VisibilityOff();
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogRejected(QDialog* /*d*/)
 {
-	setIMax(m_tmpIMax);
-	setJMax(m_tmpJMax);
-	setWidth(m_tmpWidth);
+	setIMax(m_oldIMax);
+	setJMax(m_oldJMax);
+	setWidth(m_oldWidth);
 	m_splinePoints->Initialize();
-	renderer()->GetRenderWindow()->Render();
+
+	if (m_previewGrid != nullptr) {
+		delete m_previewGrid;
+		m_previewGrid = nullptr;
+	}
+	m_previewActor->VisibilityOff();
+
+	renderGraphicsView();
 }
 
 bool GridCreatingConditionCenterAndWidth::ready() const
@@ -319,15 +335,15 @@ void GridCreatingConditionCenterAndWidth::setupActors()
 	renderer()->AddActor2D(m_upstreamActor.actor());
 	renderer()->AddActor2D(m_downstreamActor.actor());
 
-	m_tmpActor = vtkSmartPointer<vtkActor>::New();
-	m_tmpActor->GetProperty()->SetLighting(false);
-	m_tmpActor->GetProperty()->SetColor(0, 0, 0);
-	m_tmpActor->GetProperty()->SetRepresentationToWireframe();
+	m_previewActor = vtkSmartPointer<vtkActor>::New();
+	m_previewActor->GetProperty()->SetLighting(false);
+	m_previewActor->GetProperty()->SetColor(0, 0, 0);
+	m_previewActor->GetProperty()->SetRepresentationToWireframe();
 
-	m_tmpMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_tmpActor->SetMapper(m_tmpMapper);
-	renderer()->AddActor(m_tmpActor);
-	m_tmpActor->VisibilityOff();
+	m_previewMapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	m_previewActor->SetMapper(m_previewMapper);
+	renderer()->AddActor(m_previewActor);
+	m_previewActor->VisibilityOff();
 
 //	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
 //	m_labelMapper->SetLabelModeToLabelFieldData();
@@ -748,7 +764,7 @@ void GridCreatingConditionCenterAndWidth::assignActorZValues(const ZDepthRange& 
 {
 	m_polyLineController.pointsActor()->SetPosition(0, 0, range.max());
 	m_polyLineController.linesActor()->SetPosition(0, 0, range.max());
-	m_tmpActor->SetPosition(0, 0, range.max());
+	m_previewActor->SetPosition(0, 0, range.max());
 }
 
 void GridCreatingConditionCenterAndWidth::setIMax(int i)
