@@ -15,9 +15,10 @@ const int ScalarBarSetting::DEFAULT_NUMOFLABELS = 8;
 const QString ScalarBarSetting::DEFAULT_LABELFORMAT = "%-#6.3g";
 
 ScalarBarSetting::ScalarBarSetting() :
-	CompositeContainer({&visible, &orientation, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat, &titleTextSetting, &labelTextSetting}),
+	CompositeContainer({&visible, &orientation, &quadrant, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat, &titleTextSetting, &labelTextSetting}),
 	visible {"visible", true},
 	orientation {"orientation", Orientation::Vertical},
+	quadrant {"quadrant", Quadrant::None},
 	numberOfLabels {"numberOfLabels", DEFAULT_NUMOFLABELS},
 	width {"width", 0.1},
 	height {"height", 0.3},
@@ -55,6 +56,47 @@ void ScalarBarSetting::initForLegendBox()
 	height = 0.25;
 	positionX = 0.65;
 	positionY = 0.1;
+}
+
+std::set<ScalarBarSetting::Quadrant> ScalarBarSetting::getQuadrantSet()
+{
+	std::set<ScalarBarSetting::Quadrant> quads = {
+		ScalarBarSetting::Quadrant::RightLower,
+		ScalarBarSetting::Quadrant::LeftLower,
+		ScalarBarSetting::Quadrant::LeftUpper,
+		ScalarBarSetting::Quadrant::RightUpper
+	};
+	return quads;
+}
+
+void ScalarBarSetting::setDefaultPosition(Quadrant quad)
+{
+	switch (quad) {
+	case ScalarBarSetting::Quadrant::RightLower:
+		positionX = 0.8;
+		positionY = 0.1;
+		break;
+	case ScalarBarSetting::Quadrant::LeftLower:
+		positionX = 0.1;
+		positionY = 0.1;
+		break;
+	case ScalarBarSetting::Quadrant::LeftUpper:
+		positionX = 0.1;
+		positionY = 0.6;
+		break;
+	case ScalarBarSetting::Quadrant::RightUpper:
+		positionX = 0.8;
+		positionY = 0.6;
+		break;
+	}
+	quadrant = quad;
+}
+
+double ScalarBarSetting::distanceFromDefault(Quadrant quadrant)
+{
+	ScalarBarSetting def;
+	def.setDefaultPosition(quadrant);
+	return ::sqrt(::pow((positionX - def.positionX), 2) + ::pow((positionY - def.positionY), 2));
 }
 
 void ScalarBarSetting::loadFromRepresentation(vtkScalarBarRepresentation* rep)

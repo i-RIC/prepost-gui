@@ -182,6 +182,7 @@ void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 	if (m_standardItem == nullptr) {return;}
 	if (m_standardItem->isCheckable()) {
 		m_standardItem->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
+		m_standardItemCopy->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
 	}
 }
 

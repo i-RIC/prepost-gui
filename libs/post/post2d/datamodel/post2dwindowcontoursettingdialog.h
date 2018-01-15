@@ -38,6 +38,7 @@ public:
 	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
 	void setZoneData(PostZoneDataContainer* zoneData, GridLocation_t location);
 	void disableActive();
+	void disablePhysicalValueComboBox();
 	void hideOpacity();
 
 	void setSetting(const Post2dWindowContourSetting& setting);

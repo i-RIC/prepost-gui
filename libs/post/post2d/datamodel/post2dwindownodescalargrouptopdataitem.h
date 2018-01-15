@@ -15,7 +15,7 @@
 #include <QList>
 
 class NamedGraphicWindowDataItem;
-class Post2dWindowNodeScalarDataItem;
+class Post2dWindowNodeScalarGroupDataItem;
 class vtkLODActor;
 class vtkActor;
 class vtkAlgorithm;
@@ -51,6 +51,8 @@ public:
 	bool checkShapeExportCondition(const QString& target);
 	bool exportContourFigureToShape(const QString& target, const QString& filename, double time);
 
+	bool nextScalarBarSetting(ScalarBarSetting& scalarBarSetting);
+
 protected:
 	void addCustomMenuItems(QMenu* menu) override;
 	QDialog* addDialog(QWidget* parent) override;
@@ -61,6 +63,7 @@ protected:
 private:
 	// for scalar bar
 	QMap<std::string, QString> m_colorbarTitleMap;
+	std::map<std::string, Post2dWindowNodeScalarGroupDataItem*> m_scalarmap; // only used by ctor and doLoadFromProjectMainFile
 
 	friend class Post2dWindowNodeScalarGroupDataItem;
 
