@@ -160,6 +160,12 @@ void TmsImageGroupDataItem::setTarget(const std::string &target)
 
 void TmsImageGroupDataItem::rebuildChildItems()
 {
+	auto activeItem = dataModel()->graphicsView()->activeDataItem();
+	for (auto item : childItems()) {
+		if (item == activeItem) {
+			dataModel()->graphicsView()->setActiveDataItem(nullptr);
+		}
+	}
 	clearChildItems();
 	updateItemMap();
 
