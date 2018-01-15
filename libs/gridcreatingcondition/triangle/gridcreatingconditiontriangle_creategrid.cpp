@@ -95,20 +95,30 @@ int findOrAddPointAndGetId(double x, double y, std::multimap<double, PointWithId
 	return newid;
 }
 
+void setupPointsAndSegments(const geos::geom::LineString* str, std::vector<double>* points, std::vector<int>* segments, std::multimap<double, PointWithId>* pointMap)
+{
+	geos::geom::Point* p = nullptr;
+	for (int j = 0; j < str->getNumPoints() - 1; ++j) {
+		p = str->getPointN(j);
+		segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), pointMap, points));
+		p = str->getPointN(j + 1);
+		segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), pointMap, points));
+	}
+}
+
 void setupPointsAndSegments(geos::geom::Geometry* geom, std::vector<double>* points, std::vector<int>* segments)
 {
 	geos::geom::MultiLineString* strs = dynamic_cast<geos::geom::MultiLineString*> (geom);
+	geos::geom::LineString* str = dynamic_cast<geos::geom::LineString*> (geom);
 	std::multimap<double, PointWithId> pointMap;
 
-	for (int i = 0; i < strs->getNumGeometries(); ++i) {
-		auto str = dynamic_cast<const geos::geom::LineString*> (strs->getGeometryN(i));
-		geos::geom::Point* p = nullptr;
-		for (int j = 0; j < str->getNumPoints() - 1; ++j) {
-			p = str->getPointN(j);
-			segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), &pointMap, points));
-			p = str->getPointN(j + 1);
-			segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), &pointMap, points));
+	if (strs != nullptr) {
+		for (int i = 0; i < strs->getNumGeometries(); ++i) {
+			auto str = dynamic_cast<const geos::geom::LineString*> (strs->getGeometryN(i));
+			setupPointsAndSegments(str, points, segments, &pointMap);
 		}
+	} else if (str != nullptr) {
+		setupPointsAndSegments(str, points, segments, &pointMap);
 	}
 }
 
