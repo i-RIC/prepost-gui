@@ -86,7 +86,7 @@ HEADERS += colortool.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
-           vtkCustomScalarBarActorInternal.h \
+           vtkScalarBarActorInternal.h \
            vtkCustomStreamPoints.h \
            vtkdatasetattributestool.h \
            vtklegendboxrepresentation.h \
