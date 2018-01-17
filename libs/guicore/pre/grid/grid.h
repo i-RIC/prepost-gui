@@ -61,6 +61,8 @@ public:
 	GridAttributeContainer* gridAttribute(const std::string& name) const;
 	void addGridAttribute(GridAttributeContainer* cond);
 
+	bool hasGeneratingAttributes() const;
+
 	unsigned int nodeCount() const;
 	virtual unsigned int cellCount() const = 0;
 

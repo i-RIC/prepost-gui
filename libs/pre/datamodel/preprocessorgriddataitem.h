@@ -125,6 +125,7 @@ public:
 	QAction* cellDisplaySettingAction() {return m_cellDisplaySettingAction;}
 	QAction* setupScalarBarAction() {return m_setupScalarBarAction;}
 	QAction* birdEyeWindowAction() {return m_birdEyeWindowAction;}
+	QMenu* generateAttMenu() {return m_generateAttMenu;}
 
 	QMenu* menu() {return m_menu;}
 	vtkPolyData* selectedVerticesPolyData() const {return m_selectedVerticesPolyData;}
@@ -154,11 +155,13 @@ private slots:
 	void showDisplaySettingDialog();
 	void deleteGrid();
 	void openBirdEyeWindow();
+	void launchAttributeGenerator();
 
 private:
 	vtkPolyData* buildEdges() const;
 	void setupActors();
 	void setupActions();
+	void setupGenerateAttributeActions(QMenu* menu);
 	void clearSelection();
 	void updateSelectedVertices(MouseBoundingBox* box, bool xOr);
 	QVector<vtkIdType> getSelectedVertices(MouseBoundingBox* box, bool xOr);
@@ -202,6 +205,7 @@ protected:
 	vtkSmartPointer<vtkActor> m_selectedEdgesActor;
 
 	QMenu* m_menu;
+	QMenu* m_generateAttMenu;
 	Grid* m_grid;
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
 	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
