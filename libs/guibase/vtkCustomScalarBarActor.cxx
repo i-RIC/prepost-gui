@@ -1,6 +1,10 @@
 #include "vtkCustomScalarBarActor.h"
 #include "vtkScalarBarActorInternal.h"
 
+#if (VTK_MAJOR_VERSION != 6) || (VTK_MINOR_VERSION != 1) || (VTK_BUILD_VERSION != 0)
+#error May need to update local vtkScalarBarActorInternal.h
+#endif
+
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkObjectFactory.h>
