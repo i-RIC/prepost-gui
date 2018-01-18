@@ -48,7 +48,9 @@ QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWid
 	if (! cont->IBCExists()) {
 		dialog->disableActive();
 	}
+	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setSetting(m_setting);
+	dialog->setColorBarTitleMap(m_colorbarTitleMap);
 
 	return dialog;
 }
@@ -56,7 +58,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWid
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowArrowStructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowStructuredSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->scalarBarTitle(), this), this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()

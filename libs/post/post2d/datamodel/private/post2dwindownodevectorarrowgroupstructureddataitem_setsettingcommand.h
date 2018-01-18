@@ -8,13 +8,16 @@
 class Post2dWindowNodeVectorArrowGroupStructuredDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const Post2dWindowNodeVectorArrowStructuredSetting& setting, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item);
+	SetSettingCommand(const Post2dWindowNodeVectorArrowStructuredSetting& setting, const QString& colorBarTitle, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item);
 
 	void redo() override;
 	void undo() override;
 
 	Post2dWindowNodeVectorArrowStructuredSetting m_newSetting;
+	QString m_newScalarBarTitle;
+
 	Post2dWindowNodeVectorArrowStructuredSetting m_oldSetting;
+	QString m_oldScalarBarTitle;
 
 	Post2dWindowNodeVectorArrowGroupStructuredDataItem* m_item;
 };

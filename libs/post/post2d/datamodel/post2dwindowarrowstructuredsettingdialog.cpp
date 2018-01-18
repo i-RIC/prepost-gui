@@ -4,6 +4,7 @@
 #include "post2dwindowarrowstructuredsettingdialog.h"
 
 #include <guibase/comboboxtool.h>
+#include <guibase/scalarbardialog.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -20,6 +21,7 @@ Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDial
 	ui->setupUi(this);
 	connect(ui->samplingAllRadioButton, SIGNAL(toggled(bool)), this, SLOT(samplingAllToggle(bool)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
+	connect(ui->colorbarSettingButton, SIGNAL(clicked()), this, SLOT(showScalarBarDialog()));
 	m_activeDisabled = false;
 }
 
@@ -79,6 +81,11 @@ Post2dWindowNodeVectorArrowStructuredSetting Post2dWindowArrowStructuredSettingD
 	return ret;
 }
 
+QString Post2dWindowArrowStructuredSettingDialog::scalarBarTitle() const
+{
+		return m_colorBarTitleMap[colorScalar()];
+}
+
 void Post2dWindowArrowStructuredSettingDialog::setSetting(const Post2dWindowNodeVectorArrowStructuredSetting& s)
 {
 	m_setting = s;
@@ -122,6 +129,11 @@ void Post2dWindowArrowStructuredSettingDialog::setSetting(const Post2dWindowNode
 	ui->jSamplingRateSpinBox->setValue(s.jSampleRate);
 }
 
+void Post2dWindowArrowStructuredSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)
+{
+	m_colorBarTitleMap = titlemap;
+}
+
 void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
@@ -156,9 +168,27 @@ void Post2dWindowArrowStructuredSettingDialog::showRegionDialog()
 	m_setting.range = dialog.region();
 }
 
+void Post2dWindowArrowStructuredSettingDialog::showScalarBarDialog()
+{
+	ScalarBarDialog dialog(this);
+	dialog.setSetting(m_setting.scalarBarSetting);
+	dialog.setTitle(m_colorBarTitleMap[colorScalar()]);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.scalarBarSetting = dialog.setting();
+	m_colorBarTitleMap[colorScalar()] = dialog.title();
+}
+
 void Post2dWindowArrowStructuredSettingDialog::samplingAllToggle(bool toggled)
 {
 	if (! toggled) {return;}
 	ui->iSamplingRateSpinBox->setValue(1);
 	ui->jSamplingRateSpinBox->setValue(1);
+}
+
+std::string Post2dWindowArrowStructuredSettingDialog::colorScalar() const
+{
+	return m_scalars.at(ui->scalarComboBox->currentIndex());
 }

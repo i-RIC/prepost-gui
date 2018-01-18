@@ -3,7 +3,7 @@
 
 #include "../postbase_global.h"
 
-#include <misc/arrowsettingcontainer.h>
+#include <guibase/arrowsettingcontainer.h>
 
 #include <QDialog>
 

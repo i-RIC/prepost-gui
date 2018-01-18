@@ -2,10 +2,10 @@
 
 #include "post3dwindowarrowgroupsettingdialog.h"
 
+#include <guibase/arrowsettingcontainer.h>
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/arrowsettingcontainer.h>
 
 #include <vtkPointData.h>
 

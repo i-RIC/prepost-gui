@@ -64,7 +64,8 @@ win32 {
 }
 
 # Input
-HEADERS += colortool.h \
+HEADERS += arrowsettingcontainer.h \
+           colortool.h \
            comboboxtool.h \
            cursorchanger.h \
            graphicsmisc.h \
@@ -162,7 +163,8 @@ FORMS += scalarbardialog.ui \
          widget/itemselectingdialog.ui \
          widget/transparencywidget.ui \
          widget/waitdialog.ui
-SOURCES += colortool.cpp \
+SOURCES += arrowsettingcontainer.cpp \
+           colortool.cpp \
            comboboxtool.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \

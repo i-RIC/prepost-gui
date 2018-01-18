@@ -1,7 +1,7 @@
 #ifndef MEASUREDDATAVECTORSETTING_H
 #define MEASUREDDATAVECTORSETTING_H
 
-#include <misc/arrowsettingcontainer.h>
+#include <guibase/arrowsettingcontainer.h>
 #include <misc/doublecontainer.h>
 
 class MeasuredDataVectorSetting : public ArrowSettingContainer

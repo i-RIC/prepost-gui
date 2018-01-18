@@ -25,13 +25,18 @@ public:
 	void disableActive();
 
 	Post2dWindowNodeVectorArrowUnstructuredSetting setting() const;
+	QString scalarBarTitle() const;
+
 	void setSetting(const Post2dWindowNodeVectorArrowUnstructuredSetting& setting);
+	void setColorBarTitleMap(const QMap<std::string, QString>& titlemap);
 
 private slots:
 	void showRegionDialog();
+	void showScalarBarDialog();
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);
+	std::string colorScalar() const;
 
 	std::vector<std::string> m_solutions;
 	std::vector<std::string> m_scalars;
@@ -39,6 +44,7 @@ private:
 	bool m_activeAvailable;
 
 	Post2dWindowNodeVectorArrowUnstructuredSetting m_setting;
+	QMap<std::string, QString> m_colorBarTitleMap;
 
 	Ui::Post2dWindowArrowUnstructuredSettingDialog* ui;
 };
