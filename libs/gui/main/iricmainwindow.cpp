@@ -342,7 +342,7 @@ void iRICMainWindow::openProject(const QString& filename)
 			}
 			QDir dir(filename);
 			QFile lockFile(dir.absoluteFilePath("lock"));
-			if (lockFile.exists()) {
+			if (lockFile.exists() && ! lockFile.remove()) {
 				QMessageBox::warning(this, tr("Warning"), tr("This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows."));
 				return;
 			}
