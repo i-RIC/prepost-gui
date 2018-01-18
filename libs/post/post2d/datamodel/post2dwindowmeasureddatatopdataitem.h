@@ -6,7 +6,6 @@
 
 #include <vtkActor2D.h>
 #include <vtkSmartPointer.h>
-#include <vtkScalarBarActor.h>
 #include <vtkLegendBoxActor.h>
 #include <vtkTextMapper.h>
 
@@ -43,7 +42,6 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	vtkSmartPointer<vtkScalarBarActor> m_scalarBarActor;
 	vtkSmartPointer<vtkLegendBoxActor> m_legendBoxActor;
 	vtkSmartPointer<vtkActor2D> m_titleActor;
 	vtkSmartPointer<vtkTextMapper> m_titleMapper;

@@ -7,6 +7,7 @@
 #include "gridbirdeyewindowgraphicsview.h"
 
 #include <guibase/graphicsmisc.h>
+#include <guibase/vtkCustomScalarBarActor.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -21,7 +22,6 @@
 #include <vtkProperty2D.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkScalarBarActor.h>
 #include <vtkTextProperty.h>
 
 #define ELEVATION "Elevation"
@@ -86,6 +86,7 @@ void GridBirdEyeWindowDataModel::init()
 	vtkRenderWindowInteractor* iren = m_graphicsView->mainRenderer()->GetRenderWindow()->GetInteractor();
 
 	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
+	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
 	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
 	m_scalarBarWidget->SetEnabled(0);
 	m_scalarBarWidget->SetInteractor(iren);

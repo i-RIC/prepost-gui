@@ -10,6 +10,7 @@
 #include "preprocessorgeodatatopdataitem.h"
 
 #include <geodata/polygon/geodatapolygontrianglethread.h>
+#include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -32,7 +33,6 @@
 #include <vtkColorTransferFunction.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkScalarBarActor.h>
 #include <vtkSphereSource.h>
 #include <vtkTextProperty.h>
 
@@ -264,6 +264,7 @@ void PreProcessorGeoDataTopDataItem::setupActors()
 {
 	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
 	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
+	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
 	m_scalarBarWidget->SetEnabled(0);
 	m_scalarBarWidget->SetInteractor(iren);
 

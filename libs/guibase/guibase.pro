@@ -56,6 +56,7 @@ LIBS += \
 	-lvtkInteractionWidgets-6.1 \
 	-lvtkRenderingAnnotation-6.1 \
 	-lvtkRenderingCore-6.1 \
+	-lvtkRenderingFreeType-6.1 \
 	-lvtkRenderingLabel-6.1
 
 # Post-Build Event
@@ -85,6 +86,8 @@ HEADERS += arrowsettingcontainer.h \
            structuredgridregionselectwidget.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
+           vtkCustomScalarBarActor.h \
+           vtkScalarBarActorInternal.h \
            vtkCustomStreamPoints.h \
            vtkdatasetattributestool.h \
            vtklegendboxrepresentation.h \
@@ -183,6 +186,7 @@ SOURCES += arrowsettingcontainer.cpp \
            structuredgridregionselectwidget.cpp \
            tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
+           vtkCustomScalarBarActor.cxx \
            vtkCustomStreamPoints.cxx \
            vtkdatasetattributestool.cpp \
            vtklegendboxrepresentation.cpp \

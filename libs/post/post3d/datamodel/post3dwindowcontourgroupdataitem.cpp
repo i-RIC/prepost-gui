@@ -6,6 +6,7 @@
 #include "post3dwindowzonedataitem.h"
 #include "private/post3dwindowcontourgroupdataitem_setsettingcommand.h"
 
+#include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
@@ -37,7 +38,6 @@
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkScalarBarActor.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
@@ -345,6 +345,7 @@ void Post3dWindowContourGroupDataItem::setupScalarBarActor()
 	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
 
 	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
+	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
 	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
 	m_scalarBarWidget->SetEnabled(0);
 	m_scalarBarWidget->SetInteractor(iren);

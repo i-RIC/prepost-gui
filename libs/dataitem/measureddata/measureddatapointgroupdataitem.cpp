@@ -7,6 +7,7 @@
 
 #include <guibase/graphicsmisc.h>
 #include <guibase/scalarbarsetting.h>
+#include <guibase/vtkCustomScalarBarActor.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
@@ -62,7 +63,7 @@ MeasuredDataPointGroupDataItem::Impl::Impl(MeasuredDataPointGroupDataItem* item)
 	m_colorContourPolyData {vtkPolyData::New()},
 	m_item {item}
 {
-
+	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
 }
 
 MeasuredDataPointGroupDataItem::Impl::~Impl()

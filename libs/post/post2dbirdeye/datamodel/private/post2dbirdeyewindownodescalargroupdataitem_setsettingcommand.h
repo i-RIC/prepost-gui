@@ -5,8 +5,6 @@
 
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 
-#include <vtkScalarBarActor.h>
-
 #include <QString>
 #include <QUndoCommand>
 
