@@ -30,8 +30,14 @@ Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(P
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
-		m_colorbarTitleMap.insert(name, name.c_str());
+	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
+		m_colorbarTitleMap.insert(val, val.c_str());
+		auto item = new Post2dWindowCellScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
+		m_scalarmap[val] = item;
+		m_childItems.push_back(item);
+		item->setTarget(val);
+		item->m_lookupTableContainer = gtItem->nodeLookupTable(val);
 	}
 }
 
@@ -43,35 +49,16 @@ void Post2dWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 {
 	Q_ASSERT(node.toElement().nodeName() == "ScalarCellCenter");
 	if (node.toElement().nodeName() == "ScalarCellCenter") {
-		std::map<std::string, Post2dWindowCellScalarGroupDataItem*> scalarmap;
-
-		// create contours for all scalars
-		QDomNodeList children = node.childNodes();
-		for (int i = 0; i < children.count(); ++i) {
-			QDomElement childElem = children.at(i).toElement();
-			if (childElem.nodeName() == "ScalarBarTitles") {
-				QDomNodeList titles = children.at(i).childNodes();
-				for (int j = 0; j < titles.count(); ++j) {
-					std::string val = iRIC::toStr(titles.at(j).toElement().attribute("value"));
-					QString title = titles.at(j).toElement().attribute("title");
-					m_colorbarTitleMap[val] = title;
-
-					Post2dWindowCellScalarGroupDataItem* item = new Post2dWindowCellScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
-					scalarmap[val] = item;
-					m_childItems.push_back(item);
-				}
-			}
-		}
-
 		// load contours from main file
+		QDomNodeList children = node.childNodes();
 		std::set<Post2dWindowCellScalarGroupDataItem*> missing_quadrant;
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
 			if (childElem.nodeName() == "ScalarGroup") {
 				std::string solution = iRIC::toStr(children.at(i).toElement().attribute("solution", ""));
 				if (solution.size()) {
-					auto it = scalarmap.find(solution);
-					if (it != scalarmap.end()) {
+					auto it = m_scalarmap.find(solution);
+					if (it != m_scalarmap.end()) {
 						(*it).second->loadFromProjectMainFile(children.at(i));
 						// store checked items that have no quadrant set
 						if ((*it).second->m_standardItem->checkState() != Qt::Unchecked) {
@@ -79,7 +66,6 @@ void Post2dWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 								missing_quadrant.insert((*it).second);
 							}
 						}
-						scalarmap.erase(it);
 					}
 				}
 			}
@@ -99,12 +85,6 @@ void Post2dWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 			quads.erase(quad);
 		}
 
-		// initialize contours that weren't loaded
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
-		for (auto it : scalarmap) {
-			it.second->setTarget(it.first);
-			it.second->m_lookupTableContainer = gtItem->cellLookupTable(it.first);
-		}
 		updateItemMap();
 		updateVisibilityWithoutRendering();
 	}

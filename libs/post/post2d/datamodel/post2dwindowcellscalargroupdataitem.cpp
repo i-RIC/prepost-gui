@@ -134,6 +134,7 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
 	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
 
 	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
+	if (polyData == nullptr) return;
 	vtkPolyData* rcp = createRangeClippedPolyData(polyData);
 	vtkPolyData* vcp = createValueClippedPolyData(rcp);
 	rcp->Delete();
