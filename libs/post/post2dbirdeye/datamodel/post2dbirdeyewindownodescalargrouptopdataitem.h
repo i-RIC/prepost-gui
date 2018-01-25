@@ -6,6 +6,8 @@
 
 #include <QMap>
 
+class Post2dBirdEyeWindowNodeScalarGroupDataItem;
+
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
@@ -14,6 +16,8 @@ public:
 	~Post2dBirdEyeWindowNodeScalarGroupTopDataItem();
 
 	void update();
+
+	bool nextScalarBarSetting(ScalarBarSetting& scalarBarSetting);
 
 protected:
 	void addCustomMenuItems(QMenu* menu) override;
@@ -27,6 +31,7 @@ private:
 
 	Post2dWindowContourSetting m_setting;
 	QMap<std::string, QString> m_colorbarTitleMap;
+	std::map<std::string, Post2dBirdEyeWindowNodeScalarGroupDataItem*> m_scalarmap; // only used by ctor and doLoadFromProjectMainFile
 	double m_zScale;
 
 	class SetSettingCommand;

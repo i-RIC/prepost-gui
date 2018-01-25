@@ -49,10 +49,10 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
-Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* p) :
-	Post2dBirdEyeWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag) :
+	Post2dBirdEyeWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
-	setupStandardItem(Checked, NotReorderable, Deletable);
+	setupStandardItem(cflag, rflag, dflag);
 
 	setupActors();
 	m_setting.opacity = 0;
@@ -335,6 +335,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 	dialog->setZoneData(zItem->dataContainer(), Vertex);
+	dialog->disablePhysicalValueComboBox();
 	dialog->hideOpacity();
 	// region setting
 	if (! zItem->dataContainer()->IBCExists()) {
@@ -499,4 +500,26 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::undoCommands(QDialog* propDialo
 	new GraphicsWindowDrawOnUndo(this, parent);
 	new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this, parent);
 	new GraphicsWindowDrawOnRedo(this, parent);
+}
+
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::handleStandardItemChange()
+{
+	if (m_isCommandExecuting) { return; }
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*>(parent());
+	if (m_standardItem->checkState() == Qt::Checked) {
+		Q_ASSERT(m_standardItemCopy->checkState() == Qt::Unchecked);
+		if (! topitem->nextScalarBarSetting(m_setting.scalarBarSetting)) {
+			m_isCommandExecuting = true;
+			m_standardItem->setCheckState(Qt::Unchecked);
+			Q_ASSERT(m_standardItemCopy->checkState() == Qt::Unchecked);
+			m_isCommandExecuting = false;
+			return;
+		}
+	}
+	else {
+		Q_ASSERT(m_standardItemCopy->checkState() == Qt::Checked);
+	}
+	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	updateActorSettings();
+	GraphicsWindowDataItem::handleStandardItemChange();
 }
