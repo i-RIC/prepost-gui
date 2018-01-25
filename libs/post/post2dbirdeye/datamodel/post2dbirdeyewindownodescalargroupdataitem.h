@@ -31,7 +31,7 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent);
+	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
 
 	std::string target() const;
@@ -40,6 +40,7 @@ public:
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void handleStandardItemChange() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;

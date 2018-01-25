@@ -68,6 +68,17 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	m_zoneDatas.clear();
 	const QList<PostZoneDataContainer*>& zones = postSolutionInfo()->zoneContainers2D();
+
+	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
+	if (zCont != nullptr) {
+		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
+			vtkPointData* pd = zCont->data()->GetPointData();
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+				setupScalarsToColors(name);
+			}
+		}
+	}
+
 	int num = 0;
 	int zoneNum = 0;
 	for (auto it = zones.begin(); it != zones.end(); ++it) {
@@ -81,14 +92,10 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 		}
 	}
 
-	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
-
 	if (zCont != nullptr) {
-		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
-			vtkPointData* pd = zCont->data()->GetPointData();
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
-				setupScalarsToColors(name);
-			}
+		if (zones.size() != 0) {
+			// must call updateLookupTableRanges after m_zoneDatas is filled
+			// by setupSclarsToColors
 			updateLookupTableRanges();
 		}
 	}

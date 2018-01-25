@@ -23,15 +23,19 @@
 #include <vtkPointData.h>
 
 Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* p) :
-	Post2dBirdEyeWindowDataItem {tr("Contours"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post2dBirdEyeWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPointData* pd = cont->data()->GetPointData();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
-		m_colorbarTitleMap.insert(name, name.c_str());
+	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+		m_colorbarTitleMap.insert(val, val.c_str());
+		auto item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
+		m_scalarmap[val] = item;
+		m_childItems.push_back(item);
+		item->setTarget(val);
 	}
 }
 
@@ -50,11 +54,6 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::update()
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	if (childItems().size() >= 4) {
-		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
-		return nullptr;
-	}
-
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
 	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
@@ -73,29 +72,36 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 	Post2dWindowContourSetting setting;
 	setting.target = zItem->dataContainer()->data()->GetPointData()->GetArrayName(0);
 
-	switch (childItems().size() % 4) {
-	case 0:
-		setting.scalarBarSetting.positionX = 0.8;
-		setting.scalarBarSetting.positionY = 0.1;
-		break;
-	case 1:
-		setting.scalarBarSetting.positionX = 0.1;
-		setting.scalarBarSetting.positionY = 0.1;
-		break;
-	case 2:
-		setting.scalarBarSetting.positionX = 0.1;
-		setting.scalarBarSetting.positionY = 0.6;
-		break;
-	case 3:
-		setting.scalarBarSetting.positionX = 0.8;
-		setting.scalarBarSetting.positionY = 0.6;
-		break;
+	if (!nextScalarBarSetting(setting.scalarBarSetting)) {
+		return nullptr;
 	}
 
 	dialog->setSetting(setting);
 	dialog->setColorBarTitleMap(m_colorbarTitleMap);
 
 	return dialog;
+}
+
+bool Post2dBirdEyeWindowNodeScalarGroupTopDataItem::nextScalarBarSetting(ScalarBarSetting& scalarBarSetting)
+{
+	std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
+
+	for (auto item : m_childItems) {
+		Post2dBirdEyeWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupDataItem*>(item);
+		// note use m_standardItemCopy which hasn't been changed yet
+		if (typedi->m_standardItemCopy->checkState() == Qt::Checked) {
+			auto it = quads.find(typedi->m_setting.scalarBarSetting.quadrant);
+			if (it != quads.end()) {
+				quads.erase(it);
+			}
+		}
+	}
+	if (quads.empty()) {
+		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
+		return false;
+	}
+	scalarBarSetting.setDefaultPosition(*quads.begin());
+	return true;
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::innerUpdateZScale(double scale)
@@ -109,6 +115,7 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(co
 	if (node.toElement().nodeName() == "Contours") {
 		// multi-contours
 		QDomNodeList children = node.childNodes();
+		std::set<Post2dBirdEyeWindowNodeScalarGroupDataItem*> missing_quadrant;
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
 			if (childElem.nodeName() == "ScalarBarTitles") {
@@ -119,32 +126,52 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(co
 					m_colorbarTitleMap[val] = title;
 				}
 			} else if (childElem.nodeName() == "ScalarGroup") {
-				Post2dBirdEyeWindowNodeScalarGroupDataItem* item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this);
-				item->updateZScale(m_zScale);
-				item->loadFromProjectMainFile(children.at(i));
-				m_childItems.push_back(item);
+				std::string solution = iRIC::toStr(children.at(i).toElement().attribute("solution", ""));
+				if (solution.size()) {
+					auto it = m_scalarmap.find(solution);
+					Q_ASSERT(it != m_scalarmap.end());
+					if (it != m_scalarmap.end()) {
+						(*it).second->updateZScale(m_zScale);
+						(*it).second->loadFromProjectMainFile(children.at(i));
+						// store checked items that have no quadrant set
+						if ((*it).second->m_standardItem->checkState() != Qt::Unchecked) {
+							if ((*it).second->m_setting.scalarBarSetting.quadrant == ScalarBarSetting::Quadrant::None) {
+								missing_quadrant.insert((*it).second);
+							}
+						}
+					}
+				}
+
+				Q_ASSERT(missing_quadrant.size() <= 4);
+				std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
+				while (missing_quadrant.size() && quads.size()) {
+					// find closest item to each quadrant
+					auto quad = quads.begin();
+					std::multimap<double, Post2dBirdEyeWindowNodeScalarGroupDataItem*> closest;
+					for (auto item : missing_quadrant) {
+						closest.insert({ item->m_setting.scalarBarSetting.distanceFromDefault(*quad), item });
+					}
+					closest.begin()->second->m_setting.scalarBarSetting.quadrant = *quad;
+					missing_quadrant.erase(closest.begin()->second);
+					quads.erase(quad);
+				}
 			}
 		}
 
 	}
 	else {
 		// single-contour (old)
-		QDomNodeList titles = node.childNodes();
-		for (int i = 0; i < titles.count(); ++i) {
-			QDomElement titleElem = titles.at(i).toElement();
-			std::string val = iRIC::toStr(titleElem.attribute("value"));
-			QString title = titleElem.attribute("title");
-			m_colorbarTitleMap[val] = title;
-		}
 
 		// only add child if target is non-empty
 		Post2dWindowContourSetting setting;
 		setting.load(node);
 		if (setting.target != "") {
-			Post2dBirdEyeWindowNodeScalarGroupDataItem* item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this);
-			item->updateZScale(m_zScale);
-			item->loadFromProjectMainFile(node);
-			m_childItems.push_back(item);
+			auto it = m_scalarmap.find(setting.target);
+			if (it != m_scalarmap.end()) {
+				(*it).second->updateZScale(m_zScale);
+				(*it).second->loadFromProjectMainFile(node);
+				(*it).second->m_setting.scalarBarSetting.quadrant = ScalarBarSetting::Quadrant::RightLower;
+			}
 		}
 	}
 }
@@ -190,7 +217,7 @@ public:
 		}
 	}
 	void redo() {
-		m_item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(m_topItem);
+		m_item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable);
 		m_item->updateZScale(m_topItem->m_zScale);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
