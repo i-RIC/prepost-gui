@@ -186,7 +186,6 @@ bool Post2dWindowNodeScalarGroupTopDataItem::nextScalarBarSetting(ScalarBarSetti
 
 	for (auto item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		typedi->m_standardItemCopy;
 		// note use m_standardItemCopy which hasn't been changed yet
 		if (typedi->m_standardItemCopy->checkState() == Qt::Checked) {
 			auto it = quads.find(typedi->m_setting.scalarBarSetting.quadrant);

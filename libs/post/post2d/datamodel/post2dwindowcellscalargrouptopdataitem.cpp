@@ -190,7 +190,6 @@ bool Post2dWindowCellScalarGroupTopDataItem::nextScalarBarSetting(ScalarBarSetti
 
 	for (auto item : m_childItems) {
 		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
-		typedi->m_standardItemCopy;
 		// note use m_standardItemCopy which hasn't been changed yet
 		if (typedi->m_standardItemCopy->checkState() == Qt::Checked) {
 			auto it = quads.find(typedi->m_setting.scalarBarSetting.quadrant);
