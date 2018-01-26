@@ -121,6 +121,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	if (m_setting.target == "") {return;}
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
+	Q_ASSERT(pd != nullptr);
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	std::string targetStr = iRIC::toStr(m_setting.target);

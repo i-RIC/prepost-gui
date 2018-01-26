@@ -15,7 +15,7 @@
 #include <QList>
 
 class NamedGraphicWindowDataItem;
-//class Post2dWindowNodeScalarDataItem;
+class Post2dWindowCellScalarGroupDataItem;
 class Post2dWindowCellScalarDataItem;
 class vtkLODActor;
 class vtkActor;
@@ -64,6 +64,7 @@ protected:
 private:
 	// for scalar bar
 	QMap<std::string, QString> m_colorbarTitleMap;
+	std::map<std::string, Post2dWindowCellScalarGroupDataItem*> m_scalarmap; // only used by ctor and doLoadFromProjectMainFile
 
 	friend class Post2dWindowCellScalarGroupDataItem;
 
