@@ -163,7 +163,8 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		QDomElement childElem = childNodes.at(i).toElement();
 		std::string condType = iRIC::toStr(childElem.attribute("type"));
 		SolverDefinitionBoundaryCondition* bc = gtItem->gridType()->boundaryCondition(condType);
-		PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this);
+		bool settingHidden = (childElem.attribute("settingHidden") == "true");
+		PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, settingHidden);
 		bcItem->loadFromProjectMainFile(childElem);
 		m_childItems.push_back(bcItem);
 	}
