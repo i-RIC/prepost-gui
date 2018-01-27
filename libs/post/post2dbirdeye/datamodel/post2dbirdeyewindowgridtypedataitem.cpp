@@ -21,6 +21,7 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
+#include <vtkCellData.h>
 #include <vtkPointData.h>
 
 namespace {
@@ -77,6 +78,12 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 				setupScalarsToColors(name);
 			}
 		}
+		if (m_cellLookupTables.count() == 0 && zones.size() != 0) {
+			vtkCellData* cd = zCont->data()->GetCellData();
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
+				setupCellScalarsToColors(name);
+			}
+		}
 	}
 
 	int num = 0;
@@ -129,6 +136,19 @@ void Post2dBirdEyeWindowGridTypeDataItem::updateLookupTableRanges()
 			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr) {continue;}
 			vtkDataArray* dArray = zitem->dataContainer()->data()->GetPointData()->GetArray(name.c_str());
 			if (dArray == nullptr) {continue;}
+			da.push_back(dArray);
+		}
+		ScalarsToColorsContainerUtil::setValueRange(cont, da);
+	}
+	for (auto it = m_cellLookupTables.begin(); it != m_cellLookupTables.end(); ++it) {
+		std::string name = it.key();
+		ScalarsToColorsContainer* cont = it.value();
+		std::vector<vtkDataArray*> da;
+		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
+			Post2dBirdEyeWindowZoneDataItem* zitem = *zit;
+			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr) { continue; }
+			vtkDataArray* dArray = zitem->dataContainer()->data()->GetCellData()->GetArray(name.c_str());
+			if (dArray == nullptr) { continue; }
 			da.push_back(dArray);
 		}
 		ScalarsToColorsContainerUtil::setValueRange(cont, da);
@@ -189,4 +209,10 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupScalarsToColors(const std::string
 {
 	LookupTableContainer* c = new LookupTableContainer(this);
 	m_nodeLookupTables.insert(name, c);
+}
+
+void Post2dBirdEyeWindowGridTypeDataItem::setupCellScalarsToColors(const std::string& name)
+{
+	LookupTableContainer* c = new LookupTableContainer(this);
+	m_cellLookupTables.insert(name, c);
 }

@@ -2,8 +2,8 @@
 #include "../post2dbirdeyewindowgraphicsview.h"
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
-#include "post2dbirdeyewindownodescalargroupdataitem.h"
 #include "post2dbirdeyewindownodescalargrouptopdataitem.h"
+#include "post2dbirdeyewindowcellscalargrouptopdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -36,7 +36,9 @@
 Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
 	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_zoneName (zoneName),
-	m_zoneNumber {zoneNumber}
+	m_zoneNumber {zoneNumber},
+	m_cellScalarGroupTopDataItem {nullptr},
+	m_scalarGroupTopDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -45,13 +47,18 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::stri
 
 	if (cont->scalarValueExists()) {
 		m_scalarGroupTopDataItem = new Post2dBirdEyeWindowNodeScalarGroupTopDataItem(this);
-	} else {
-		m_scalarGroupTopDataItem = nullptr;
+	}
+
+	if (cont->cellScalarValueExists()) {
+		m_cellScalarGroupTopDataItem = new Post2dBirdEyeWindowCellScalarGroupTopDataItem(this);
 	}
 
 	m_childItems.push_back(m_shapeDataItem);
 	if (cont->scalarValueExists()) {
 		m_childItems.push_back(m_scalarGroupTopDataItem);
+	}
+	if (cont->cellScalarValueExists()) {
+		m_childItems.push_back(m_cellScalarGroupTopDataItem);
 	}
 }
 
@@ -71,6 +78,10 @@ void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (! contourGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
 		m_scalarGroupTopDataItem->loadFromProjectMainFile(contourGroupNode);
 	}
+	QDomNode cellScalarNode = iRIC::getChildNode(node, "ScalarCellCenter");
+	if (!cellScalarNode.isNull() && m_cellScalarGroupTopDataItem != nullptr) {
+		m_cellScalarGroupTopDataItem->loadFromProjectMainFile(cellScalarNode);
+	}
 }
 
 void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -83,6 +94,11 @@ void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	if (m_scalarGroupTopDataItem != nullptr) {
 		writer.writeStartElement("Contours");
 		m_scalarGroupTopDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (m_cellScalarGroupTopDataItem != nullptr) {
+		writer.writeStartElement("ScalarCellCenter");
+		m_cellScalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
@@ -118,6 +134,11 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 		time.restart();
 		m_scalarGroupTopDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
+	}
+	if (m_cellScalarGroupTopDataItem != nullptr) {
+		time.restart();
+		m_cellScalarGroupTopDataItem->update();
+		qDebug("Cell Contour shape: %d", time.elapsed());
 	}
 }
 
