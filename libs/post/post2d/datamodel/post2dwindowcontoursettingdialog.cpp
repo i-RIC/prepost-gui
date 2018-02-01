@@ -171,7 +171,9 @@ void Post2dWindowContourSettingDialog::showRegionDialog()
 	if (m_unstructured) {
 		dialog.hideCustom();
 	}
-	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
+	else {
+		dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
+	}
 	dialog.setRegionMode(m_setting.regionMode);
 	dialog.setRegion(m_setting.range);
 	int ret = dialog.exec();
