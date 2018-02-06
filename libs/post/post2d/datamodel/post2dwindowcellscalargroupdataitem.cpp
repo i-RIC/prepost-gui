@@ -5,10 +5,10 @@
 #include "post2dwindownodescalargroupdataitem_shapeexporter.h"
 #include "post2dwindowcellscalargrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "iricactivecellfilter.h"
 
 #include <cs/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
+#include <guibase/iricactivecellfilter.h>
 #include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>

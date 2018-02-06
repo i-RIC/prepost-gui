@@ -8,6 +8,7 @@
 #include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
+#include <guibase/iricactivecellfilter.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
@@ -374,13 +375,13 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::createRangeClippedPolyData()
 		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
-			clipper->SetInputConnection(geoFilter->GetOutputPort());
-			clipper->SetValue(PostZoneDataContainer::IBCLimit);
-			clipper->InsideOutOff();
-			clipper->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-			clipper->Update();
-			m_regionClippedPolyData = clipper->GetOutput();
+			vtkSmartPointer<iricActiveCellFilter> filter = vtkSmartPointer<iricActiveCellFilter>::New();
+			filter->SetInputData(cont->data());
+			filter->SetValue(PostZoneDataContainer::IBCLimit);
+			filter->CellClippingOn();
+			cont->data()->GetCellData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+			filter->Update();
+			m_regionClippedPolyData = filter->GetOutput();
 		}
 	} else {
 		// structured grid.
@@ -390,14 +391,13 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::createRangeClippedPolyData()
 		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
-			vtkPolyData* pd = geoFilter->GetOutput();
-			clipper->SetInputData(pd);
-			clipper->SetValue(PostZoneDataContainer::IBCLimit);
-			clipper->InsideOutOff();
-			pd->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-			clipper->Update();
-			m_regionClippedPolyData = clipper->GetOutput();
+			vtkSmartPointer<iricActiveCellFilter> filter = vtkSmartPointer<iricActiveCellFilter>::New();
+			filter->SetInputData(cont->data());
+			filter->SetValue(PostZoneDataContainer::IBCLimit);
+			filter->CellClippingOn();
+			cont->data()->GetCellData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+			filter->Update();
+			m_regionClippedPolyData = filter->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
 			const StructuredGridRegion::Range2d& r = m_setting.range;
 			geoFilter->SetExtent(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);

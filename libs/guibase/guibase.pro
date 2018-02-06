@@ -71,6 +71,7 @@ HEADERS += arrowsettingcontainer.h \
            cursorchanger.h \
            graphicsmisc.h \
            guibase_global.h \
+           iricactivecellfilter.h \
            irictoolbar.h \
            linestyleinformation.h \
            objectbrowser.h \
@@ -171,6 +172,7 @@ SOURCES += arrowsettingcontainer.cpp \
            comboboxtool.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \
+           iricactivecellfilter.cpp \
            irictoolbar.cpp \
            linestyleinformation.cpp \
            objectbrowser.cpp \

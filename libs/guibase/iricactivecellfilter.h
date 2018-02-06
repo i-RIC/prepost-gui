@@ -1,13 +1,15 @@
 #ifndef __iricActiveCellFilter_h
 #define __iricActiveCellFilter_h
 
+#include "guibase_global.h"
+
 #include <vtkPolyDataAlgorithm.h>
 
 class vtkIncrementalPointLocator;
 
 // based on a combination of vtkGeometryFilter and vtkClipPolyData
 
-class iricActiveCellFilter : public vtkPolyDataAlgorithm
+class GUIBASEDLL_EXPORT iricActiveCellFilter : public vtkPolyDataAlgorithm
 {
 public:
 	static iricActiveCellFilter *New();
