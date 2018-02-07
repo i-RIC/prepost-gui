@@ -91,11 +91,9 @@ int iricActiveCellFilter::RequestData(
 		this->PolyDataExecute(input, output, outInfo);
 		return 1;
 	case  VTK_UNSTRUCTURED_GRID:
-		vtkErrorMacro(<< "iric Untested!!!");
 		this->UnstructuredGridExecute(input, output, outInfo);
 		return 1;
 	case VTK_STRUCTURED_GRID:
-		vtkErrorMacro(<< "iric Untested!!!");
 		this->StructuredGridExecute(input, output, outInfo);
 		return 1;
 	default:

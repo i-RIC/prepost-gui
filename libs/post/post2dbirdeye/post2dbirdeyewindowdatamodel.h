@@ -29,8 +29,10 @@ public:
 
 public slots:
 	void addContour();
+	void addCellScalar();
 	void gridShapeSetting();
 	void contourSetting();
+	void cellScalarSetting();
 	void titleSetting();
 	void timeSetting();
 

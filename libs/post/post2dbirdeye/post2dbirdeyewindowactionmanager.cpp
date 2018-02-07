@@ -27,8 +27,11 @@ void Post2dBirdEyeWindowActionManager::setupDrawMenu()
 	drawGridAction = new QAction(tr("&Grid Shape..."), this);
 	m_drawMenu->addAction(drawGridAction);
 
-	drawContourAction = new QAction(tr("&Contours..."), this);
+	drawContourAction = new QAction(tr("&Contours (node)..."), this);
 	m_drawMenu->addAction(drawContourAction);
+
+	drawCellScalarAction = new QAction(tr("Contours (ce&ll center)..."), this);
+	m_drawMenu->addAction(drawCellScalarAction);
 
 	m_drawMenu->addSeparator();
 
@@ -51,6 +54,7 @@ void Post2dBirdEyeWindowActionManager::connectWithDataModel()
 {
 	connect(drawGridAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(gridShapeSetting()));
 	connect(drawContourAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(contourSetting()));
+	connect(drawCellScalarAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(cellScalarSetting()));
 	connect(drawTitleAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(titleSetting()));
 	connect(drawTimeAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(timeSetting()));
 	connect(backgroundColorAction, SIGNAL(triggered()), m_post2dWindow, SLOT(editBackgroundColor()));

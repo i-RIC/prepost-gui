@@ -2,6 +2,7 @@
 #include "datamodel/post2dbirdeyewindowgridtypedataitem.h"
 #include "datamodel/post2dbirdeyewindownodescalargroupdataitem.h"
 #include "datamodel/post2dbirdeyewindownodescalargrouptopdataitem.h"
+#include "datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.h"
 #include "datamodel/post2dbirdeyewindowrootdataitem.h"
 #include "datamodel/post2dbirdeyewindowzonedataitem.h"
 #include "post2dbirdeyewindow.h"
@@ -114,6 +115,23 @@ void Post2dBirdEyeWindowDataModel::addContour()
 void Post2dBirdEyeWindowDataModel::contourSetting()
 {
 	addContour();
+}
+
+void Post2dBirdEyeWindowDataModel::addCellScalar()
+{
+	Post2dBirdEyeWindowZoneDataItem* zItem = getZoneDataItem();
+	if (zItem == nullptr) { return; }
+	Post2dBirdEyeWindowCellScalarGroupTopDataItem* item = zItem->cellScalarGroupTopDataItem();
+	if (item == nullptr) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Contour setting is not available, because this result does not contain cell scalar values."));
+		return;
+	}
+	item->showAddDialog();
+}
+
+void Post2dBirdEyeWindowDataModel::cellScalarSetting()
+{
+	addCellScalar();
 }
 
 Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()

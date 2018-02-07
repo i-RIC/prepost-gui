@@ -105,7 +105,7 @@
     </message>
     <message>
         <source>Scalar (Ce&amp;ll Center)...</source>
-        <translation type="vanished">スカラー (セル中心) (L)...</translation>
+        <translation type="vanished">スカラー (セル中心) (&amp;L)...</translation>
     </message>
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="32"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="47"/>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation>コンター (セル中心) (L)...</translation>
+        <translation>コンター (セル中心) (&amp;L)...</translation>
     </message>
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="52"/>

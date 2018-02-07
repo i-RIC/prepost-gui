@@ -184,8 +184,7 @@ win32 {
 }
 
 # Input
-HEADERS += iricactivecellfilter.h \
-           post2d_global.h \
+HEADERS += post2d_global.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -267,8 +266,7 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowstreamlinestructuredsettingdialog.ui \
          datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui \
          datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui
-SOURCES += iricactivecellfilter.cpp \
-           post2dgridregionselectdialog.cpp \
+SOURCES += post2dgridregionselectdialog.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \

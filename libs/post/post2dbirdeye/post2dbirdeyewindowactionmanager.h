@@ -16,6 +16,7 @@ public:
 
 	QAction* drawGridAction;
 	QAction* drawContourAction;
+	QAction* drawCellScalarAction;
 
 	QAction* drawTitleAction;
 	QAction* drawTimeAction;

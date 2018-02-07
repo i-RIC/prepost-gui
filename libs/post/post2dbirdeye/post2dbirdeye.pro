@@ -136,10 +136,13 @@ HEADERS += post2dbirdeye_global.h \
            datamodel/post2dbirdeyewindowaxesdataitem.h \
            datamodel/post2dbirdeyewindowgridshapedataitem.h \
            datamodel/post2dbirdeyewindowgridtypedataitem.h \
+           datamodel/post2dbirdeyewindowcellscalargroupdataitem.h \
+           datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.h \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.h \
            datamodel/post2dbirdeyewindownodescalargrouptopdataitem.h \
            datamodel/post2dbirdeyewindowrootdataitem.h \
            datamodel/post2dbirdeyewindowzonedataitem.h \
+           datamodel/private/post2dbirdeyewindowcellscalargroupdataitem_setsettingcommand.h \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.h
 SOURCES += post2dbirdeyeobjectbrowser.cpp \
            post2dbirdeyeobjectbrowserview.cpp \
@@ -152,10 +155,13 @@ SOURCES += post2dbirdeyeobjectbrowser.cpp \
            datamodel/post2dbirdeyewindowaxesdataitem.cpp \
            datamodel/post2dbirdeyewindowgridshapedataitem.cpp \
            datamodel/post2dbirdeyewindowgridtypedataitem.cpp \
+           datamodel/post2dbirdeyewindowcellscalargroupdataitem.cpp \
+           datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp \
            datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp \
            datamodel/post2dbirdeyewindowrootdataitem.cpp \
            datamodel/post2dbirdeyewindowzonedataitem.cpp \
+           datamodel/private/post2dbirdeyewindowcellscalargroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp
 RESOURCES += post2dbirdeye.qrc
 TRANSLATIONS += languages/iricPost2dbirdeye_es_ES.ts \
