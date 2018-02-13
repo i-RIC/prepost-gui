@@ -57,6 +57,7 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues(int fn)
 	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 
 	if (m_dataContainer->data().count() > timesteps.count()) {
+		Q_ASSERT_X(false, "Graph2dHybridWindowGridPointResultDataItem::updateValues", "FIX PostZonePointSeriesDataContainer::loadData");
 		return;
 	}
 	m_xValues.fill(0, timesteps.count());

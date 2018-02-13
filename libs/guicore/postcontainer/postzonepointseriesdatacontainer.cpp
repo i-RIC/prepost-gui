@@ -38,7 +38,7 @@ bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
 	return false;
 }
 
-bool PostZonePointSeriesDataContainer::loadData(const int fn)
+bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t location)
 {
 	bool ret;
 	int ier;
@@ -56,9 +56,14 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 		// shortname
 		tmpPhysName = rx.cap(1);
 	}
+	GridLocation_t loc;
+	char solname[32];
 	for (int i = 1; i <= numSols; ++i) {
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", i, "end");
 		if (ier != 0) {return false;}
+		ier = cg_sol_info(fn, m_baseId, m_zoneId, i, solname, &loc);
+		if (ier != 0) {return false;}
+		if (location != loc) {continue;}
 		int numArrays;
 		ier = cg_narrays(&numArrays);
 		if (ier != 0) {return false;}
@@ -98,4 +103,9 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 		m_data.append(value);
 	}
 	return true;
+}
+
+bool PostZonePointSeriesDataContainer::loadData(const int fn)
+{
+	return loadData(fn, Vertex);
 }
