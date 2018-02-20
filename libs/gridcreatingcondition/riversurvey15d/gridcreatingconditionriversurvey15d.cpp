@@ -325,7 +325,7 @@ void GridCreatingConditionRiverSurvey15D::setupActors()
 	m_blackFixedPointsActor->SetMapper(mapper);
 	m_blackFixedPointsActor->GetProperty()->SetLighting(false);
 	m_blackFixedPointsActor->GetProperty()->SetColor(0, 0, 0);              // black rim.
-	m_blackFixedPointsActor->GetProperty()->SetPointSize(5);
+	m_blackFixedPointsActor->GetProperty()->SetPointSize(3);
 	r->AddActor(m_blackFixedPointsActor);
 
 	// cntrol points
@@ -343,7 +343,7 @@ void GridCreatingConditionRiverSurvey15D::setupActors()
 	m_blackCtrlPointsActor->SetMapper(mapper);
 	m_blackCtrlPointsActor->GetProperty()->SetLighting(false);
 	m_blackCtrlPointsActor->GetProperty()->SetColor(0, 0, 0);               // black rim.
-	m_blackCtrlPointsActor->GetProperty()->SetPointSize(5);
+	m_blackCtrlPointsActor->GetProperty()->SetPointSize(3);
 	r->AddActor(m_blackCtrlPointsActor);
 
 	// selected division points

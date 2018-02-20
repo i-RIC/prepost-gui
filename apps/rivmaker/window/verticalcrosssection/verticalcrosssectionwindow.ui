@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Vertical Cross Section Window</string>
+   <string>Elevation View Window</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../rivmaker.qrc">

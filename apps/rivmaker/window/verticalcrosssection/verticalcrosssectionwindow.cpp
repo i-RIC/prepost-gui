@@ -48,8 +48,9 @@ namespace {
 		clearMarkers(markers);
 
 		QVector<QPointF> samples;
+		bool l_internal;
 		for (GeometryPoint* p : points.points()){
-			double pos = baseLine.calcPosition(p->x(), p->y());
+			double pos = baseLine.calcPosition(p->x(), p->y(), &l_internal);
 			samples.push_back(QPointF(pos, p->z()));
 
 			if (! p->name().isNull()) {
@@ -89,6 +90,7 @@ namespace {
 			} else {
 				auto spinBox = new QDoubleSpinBox(parent);
 				spinBox->setDecimals(3);
+				spinBox->setSingleStep(0.01);
 				spinBox->setMinimum(-1000);
 				spinBox->setMaximum(10000);
 				return spinBox;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -36,7 +36,7 @@
 <context>
     <name>BaseLine</name>
     <message>
-        <location filename="../data/baseline/baseline.cpp" line="123"/>
+        <location filename="../data/baseline/baseline.cpp" line="140"/>
         <source>Base Line</source>
         <translation>ベースライン</translation>
     </message>
@@ -154,11 +154,11 @@
     <name>CrossSection</name>
     <message>
         <source>X%1</source>
-        <translation>X%1</translation>
+        <translation type="vanished">X%1</translation>
     </message>
     <message>
         <source>SEC%1</source>
-        <translation>SEC%1</translation>
+        <translation type="vanished">SEC%1</translation>
     </message>
 </context>
 <context>
@@ -334,7 +334,7 @@
     <name>CrossSectionsPreProcessorController::Impl</name>
     <message>
         <source>Add</source>
-        <translation>追加</translation>
+        <translation type="vanished">追加</translation>
     </message>
 </context>
 <context>
@@ -590,7 +590,7 @@
     <name>PointsPreProcessorController::Impl</name>
     <message>
         <source>&amp;Import...</source>
-        <translation>インポート (&amp;I)...</translation>
+        <translation type="vanished">インポート (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -650,7 +650,8 @@
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="135"/>
-        <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -666,6 +667,11 @@
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
+        <source>Base line should be long enough to cover extents of HWMs</source>
+        <translation>ベースラインは、水面標高の範囲より長い必要があります</translation>
+    </message>
+    <message>
+        <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Not all Cross Sections cross Base line</source>
         <translation>ベースラインと交差していない断面があります</translation>
     </message>
@@ -676,6 +682,19 @@
         <location filename="../window/preprocessor/preprocessorwindow.cpp" line="37"/>
         <source>Main Window</source>
         <translation>メインウィンドウ</translation>
+    </message>
+</context>
+<context>
+    <name>Project</name>
+    <message>
+        <location filename="../data/project/project.cpp" line="466"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../data/project/project.cpp" line="466"/>
+        <source>Calculating initial WSE for Cross-section %1 failed</source>
+        <translation>断面 %1 の水面標高の初期値の計算が失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -699,44 +718,44 @@
 <context>
     <name>RivExporter</name>
     <message>
-        <location filename="../io/rivexporter.cpp" line="24"/>
+        <location filename="../io/rivexporter.cpp" line="22"/>
         <source>Input File name to export</source>
         <translation>エクスポートするファイル名の入力</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="24"/>
+        <location filename="../io/rivexporter.cpp" line="22"/>
         <source>River Survey Data(*.riv)</source>
         <translation>河川測量データ (*.riv)</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="33"/>
-        <location filename="../io/rivexporter.cpp" line="87"/>
+        <location filename="../io/rivexporter.cpp" line="31"/>
+        <location filename="../io/rivexporter.cpp" line="85"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="33"/>
-        <location filename="../io/rivexporter.cpp" line="87"/>
+        <location filename="../io/rivexporter.cpp" line="31"/>
+        <location filename="../io/rivexporter.cpp" line="85"/>
         <source>%1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="79"/>
+        <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV File name to export</source>
         <translation>エクスポートする CSVファイル名</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="79"/>
+        <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV file(*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="104"/>
+        <location filename="../io/rivexporter.cpp" line="102"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../io/rivexporter.cpp" line="104"/>
+        <location filename="../io/rivexporter.cpp" line="102"/>
         <source>%1 is updated.</source>
         <translation>%1 が更新されました。</translation>
     </message>
@@ -745,14 +764,14 @@
     <name>RiverSurveyData</name>
     <message>
         <source>River Survey Data</source>
-        <translation>河川測量データ</translation>
+        <translation type="vanished">河川測量データ</translation>
     </message>
 </context>
 <context>
     <name>RiverSurveyDataDummy</name>
     <message>
         <source>River Survey Data (NO DATA)</source>
-        <translation>河川測量データ (データなし)</translation>
+        <translation type="vanished">河川測量データ (データなし)</translation>
     </message>
 </context>
 <context>
@@ -801,7 +820,7 @@
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation>河川測量データ</translation>
+        <translation type="vanished">河川測量データ</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="131"/>
@@ -1026,7 +1045,7 @@
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation>ツールバー(&amp;T)</translation>
+        <translation type="vanished">ツールバー(&amp;T)</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="472"/>
@@ -1157,7 +1176,7 @@
     </message>
     <message>
         <source>All the data in the project is discarded. Are you sure?</source>
-        <translation>プロジェクトの全てのデータが破棄されます。本当にいいですか?</translation>
+        <translation type="vanished">プロジェクトの全てのデータが破棄されます。本当にいいですか?</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="279"/>
@@ -1166,7 +1185,7 @@
     </message>
     <message>
         <source>Are you sure you want to exit Rivmaker?</source>
-        <translation>本当に Rivmaker を終了していいですか?</translation>
+        <translation type="vanished">本当に Rivmaker を終了していいですか?</translation>
     </message>
 </context>
 <context>
@@ -1183,11 +1202,11 @@
     </message>
     <message>
         <source>SAC GUI input file (*.txt, *.csv)</source>
-        <translation>SAC GUI 入力ファイル (*.txt, *.csv)</translation>
+        <translation type="vanished">SAC GUI 入力ファイル (*.txt, *.csv)</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt)</source>
-        <translation>SAC GUI 入力ファイル (*.txt)</translation>
+        <translation type="vanished">SAC GUI 入力ファイル (*.txt)</translation>
     </message>
 </context>
 <context>
@@ -1220,9 +1239,13 @@
 <context>
     <name>VerticalCrossSectionWindow</name>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="14"/>
         <source>Vertical Cross Section Window</source>
-        <translation>縦断面ウィンドウ</translation>
+        <translation type="vanished">縦断面ウィンドウ</translation>
+    </message>
+    <message>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="14"/>
+        <source>Elevation View Window</source>
+        <translation>標高ビューウィンドウ</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="26"/>
@@ -1270,18 +1293,18 @@
         <translation>CSV にエクスポート (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="201"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="210"/>
         <source>Distance Upstream</source>
         <translation>上流方向への距離</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="204"/>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="349"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="213"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Elevation</source>
         <translation>標高</translation>
     </message>
     <message>
-        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="349"/>
+        <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>

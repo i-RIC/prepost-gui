@@ -14,8 +14,10 @@
 #include <QDir>
 #include <QDomDocument>
 #include <QFile>
+#include <QMessageBox>
 #include <QTemporaryDir>
 #include <QXmlStreamWriter>
+#include <QWidget>
 
 #include <map>
 #include <string>
@@ -25,11 +27,14 @@ namespace {
 
 const QString PROJECT_FILENAME = "project.xml";
 
-void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals)
+void addToVector(const Points& points, const BaseLine& line, std::multimap<double, double>* vals, bool* all_internal)
 {
+	*all_internal = true;
+	bool l_internal;
 	for (GeometryPoint* p : points.points()) {
-		double pos = line.calcPosition(p->x(), p->y());
+		double pos = line.calcPosition(p->x(), p->y(), &l_internal);
 		vals->insert(std::make_pair(pos, p->z()));
+		*all_internal = *all_internal && l_internal;
 	}
 }
 
@@ -116,8 +121,9 @@ double calcHWMAtCrossSection(CrossSection* cs, BaseLine& bl, Points& hwm)
 	if (! crosses) {return Project::INVALID_HWM;}
 
 	std::map<double, double> vals;
+	bool l_internal;
 	for (GeometryPoint* p : hwm.points()) {
-		double pos = bl.calcPosition(p->x(), p->y());
+		double pos = bl.calcPosition(p->x(), p->y(), &l_internal);
 		vals.insert(std::make_pair(pos, p->z()));
 	}
 
@@ -394,7 +400,7 @@ double Project::calcRightBankHWMAtCrossSection(CrossSection* cs)
 	return calcHWMAtCrossSection(cs, baseLine(), waterSurfaceElevationPoints().rightBankHWM());
 }
 
-void Project::calcCrossSectionElevations()
+void Project::calcCrossSectionElevations(bool* all_internal)
 {
 	auto& bl = baseLine();
 	auto csVec = crossSections().crossSectionVector();
@@ -416,33 +422,49 @@ void Project::calcCrossSectionElevations()
 
 	auto& wse = waterSurfaceElevationPoints();
 
-	addToVector(wse.leftBankHWM(), bl, &vals);
-	addToVector(wse.rightBankHWM(), bl, &vals);
-	addToVector(wse.arbitraryHWM(), bl, &vals);
+	*all_internal = true;
+	bool l_internal;
+
+	addToVector(wse.leftBankHWM(), bl, &vals, &l_internal);
+	*all_internal = *all_internal && l_internal;
+	addToVector(wse.rightBankHWM(), bl, &vals, &l_internal);
+	*all_internal = *all_internal && l_internal;
+	addToVector(wse.arbitraryHWM(), bl, &vals, &l_internal);
+	*all_internal = *all_internal && l_internal;
 
 	std::map<CrossSection*, std::vector<double> > elevVals;
 
 	for (auto it = posMap.begin(); it != posMap.end(); ++it) {
+		auto it_b = vals.begin();
+		auto it_e = vals.end();
+
+		// setup it_b
+		if (it != posMap.begin()) {
+			auto it2 = it;
+			-- it2;
+			it_b = vals.lower_bound(it2->first);
+		}
+
+		// setup it_e
 		auto it2 = it;
 		++ it2;
-		if (it2 == posMap.end()) {break;}
-
-		double min = it->first;
-		double max = it2->first;
+		if (it2 != posMap.end()) {
+			it_e = vals.upper_bound(it2->first);
+		}
 
 		std::vector<double> xvec, yvec;
-
-		auto it_b = vals.lower_bound(min);
-		auto it_e = vals.upper_bound(max);
 		for (auto tmp_it = it_b; tmp_it != it_e; ++ tmp_it) {
 			xvec.push_back(tmp_it->first);
 			yvec.push_back(tmp_it->second);
 		}
 		double a, b;
-		MathUtil::leastSquares(xvec, yvec, &a, &b);
-
-		addToElevMap(&elevVals, it->second,  a * min + b);
-		addToElevMap(&elevVals, it2->second, a * max + b);
+		if (xvec.size() > 1) {
+			MathUtil::leastSquares(xvec, yvec, &a, &b);
+			addToElevMap(&elevVals, it->second,  a * it->first + b);
+		} else {
+			// not enough points for interpolation
+			QMessageBox::warning(nullptr, tr("Warning"), tr("Calculating initial WSE for Cross-section %1 failed").arg(it->second->name()));
+		}
 	}
 
 	for (auto pair : elevVals) {
