@@ -41,6 +41,8 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 
+	bool loadData(const int fn, GridLocation_t location);
+
 private:
 	bool setZoneId(const int fn);
 
