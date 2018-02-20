@@ -23,8 +23,10 @@ public:
 	~GeoDataRiverSurveyImporterSettingDialog();
 
 	void setWith4Points(bool with4points);
+	void setAllNamesAreNumber(bool allNumber);
 
 	CenterPointSetting centerPointSetting() const;
+	bool reverseOrder() const;
 
 private:
 	Ui::GeoDataRiverSurveyImporterSettingDialog* ui;

@@ -6,46 +6,77 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>264</width>
-    <height>140</height>
+    <width>384</width>
+    <height>233</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>River Survey Data Import Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Please select where to define river center point:</string>
+    <widget class="QGroupBox" name="centerPointGroupBox">
+     <property name="title">
+      <string>Where to define River center point</string>
      </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="middlePointRadioButton">
+        <property name="text">
+         <string>Middle point of left bank and right bank</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="smallestRadioButton">
+        <property name="text">
+         <string>Where the elevation is the smallest</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="lowWaterWayRadioButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Middle point of Low water way</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
-    <widget class="QRadioButton" name="middlePointRadioButton">
-     <property name="text">
-      <string>Middle point of left bank and right bank</string>
+    <widget class="QGroupBox" name="orderGroupBox">
+     <property name="title">
+      <string>Order of cross sections</string>
      </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QRadioButton" name="smallestRadioButton">
-     <property name="text">
-      <string>Where the elevation is the smallest</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QRadioButton" name="lowWaterWayRadioButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Middle point of Low water way</string>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="upToDownRadioButton">
+        <property name="text">
+         <string>Upstream to downstream</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="downToUpRadioButton">
+        <property name="text">
+         <string>Downstream to upstream</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
