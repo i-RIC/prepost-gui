@@ -59,6 +59,25 @@
 
 namespace {
 
+void deleteCgnsFile(const QString& filename)
+{
+	// delete the CGNS itself
+	QFile(filename).remove();
+
+	// delete linked file like Case1_Solution1.cgn, Case1_Solution2.cgn, ...
+	QFileInfo finfo(filename);
+	QStringList nameFilters;
+	nameFilters.append("*.cgn");
+	QRegExp re(finfo.baseName() + "_Solution[\\d]+");
+	auto files = finfo.absoluteDir().entryList(nameFilters, QDir::Files);
+	for (auto f : files) {
+		QFileInfo f_info(f);
+		if (re.indexIn(f_info.baseName()) != -1) {
+			QFile(finfo.absoluteDir().filePath(f)).remove();
+		}
+	}
+}
+
 void copyCgnsFile(const QString& from, const QString& to)
 {
 	// copy the CGNS itself
@@ -709,6 +728,9 @@ void ProjectMainFile::clearResults()
 
 	// CGNS file name
 	QString fname = currentCgnsFileName();
+	// delete old file
+	deleteCgnsFile(fname);
+
 	// save to current cgns file, with write mode.
 	ProjectCgnsFile::createNewFile(fname, 2, 2);
 	int fn, ier;
