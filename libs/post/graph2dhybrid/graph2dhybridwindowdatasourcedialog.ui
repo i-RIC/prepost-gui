@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>583</width>
-    <height>607</height>
+    <height>640</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -94,6 +94,20 @@
          </item>
          <item>
           <widget class="QComboBox" name="twoDimDataComboBox"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="twoDimGridLocationLabel">
+             <property name="text">
+              <string>Grid Location:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="twoDimGridLocationComboBox"/>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QListWidget" name="twoDimDataListWidget"/>
@@ -258,6 +272,25 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>xAxisComboBox</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>pointDataComboBox</tabstop>
+  <tabstop>pointDataListWidget</tabstop>
+  <tabstop>oneDimDataComboBox</tabstop>
+  <tabstop>oneDimDataListWidget</tabstop>
+  <tabstop>twoDimDataComboBox</tabstop>
+  <tabstop>twoDimDataListWidget</tabstop>
+  <tabstop>threeDimDataComboBox</tabstop>
+  <tabstop>threeDimDataListWidget</tabstop>
+  <tabstop>addPushButton</tabstop>
+  <tabstop>removePushButton</tabstop>
+  <tabstop>selectedDataListWidget</tabstop>
+  <tabstop>settingPushButton</tabstop>
+  <tabstop>importDataList</tabstop>
+  <tabstop>importButton</tabstop>
+  <tabstop>deleteImportDataButton</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
