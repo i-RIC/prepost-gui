@@ -121,6 +121,9 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
+			if (tinfo->gridLocation == CellCenter) {
+				sGrid->GetCellDims(dims);
+			}
 			dims[3] = 1;
 		} else {
 			// unstructured
@@ -128,6 +131,9 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 			dims[1] = 1;
 			dims[2] = 1;
 			dims[3] = cont->data()->GetNumberOfPoints();
+			if (tinfo->gridLocation == CellCenter) {
+				dims[3] = cont->data()->GetNumberOfCells();
+			}
 		}
 	} else {
 		dims[0] = 1;
@@ -455,6 +461,9 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
+			if (tinfo->gridLocation == CellCenter) {
+				sGrid->GetCellDims(dims);
+			}
 			dims[3] = 1;
 		} else {
 			// unstructured
@@ -462,6 +471,9 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 			dims[1] = 1;
 			dims[2] = 1;
 			dims[3] = cont->data()->GetNumberOfPoints();
+			if (tinfo->gridLocation == CellCenter) {
+				dims[3] = cont->data()->GetNumberOfCells();
+			}
 		}
 	} else {
 		dims[0] = 1;
@@ -1330,6 +1342,9 @@ void Graph2dHybridWindowDataModel::showSettingDialog()
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
+			if (tinfo->gridLocation == CellCenter) {
+				sGrid->GetCellDims(dims);
+			}
 		}
 	}
 	if (m_setting.xAxisAutoRange()) {
@@ -1413,6 +1428,9 @@ void Graph2dHybridWindowDataModel::applySettings()
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
+			if (tinfo->gridLocation == CellCenter) {
+				sGrid->GetCellDims(dims);
+			}
 			dims[3] = 1;
 		} else {
 			// unstructured
@@ -1420,6 +1438,9 @@ void Graph2dHybridWindowDataModel::applySettings()
 			dims[1] = 1;
 			dims[2] = 1;
 			dims[3] = cont->data()->GetNumberOfPoints();
+			if (tinfo->gridLocation == CellCenter) {
+				dims[3] = cont->data()->GetNumberOfCells();
+			}
 		}
 	} else {
 		dims[0] = 1;

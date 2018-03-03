@@ -30,7 +30,7 @@ Graph2dHybridWindowGridPointResultDataItem::Graph2dHybridWindowGridPointResultDa
 {
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, setting.name(), s.gridIndex(), this);
+	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, setting.name(), s.gridIndex(), info->gridLocation, this);
 }
 
 Graph2dHybridWindowGridPointResultDataItem::~Graph2dHybridWindowGridPointResultDataItem()
@@ -53,6 +53,8 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues(int fn)
 	m_yValues.clear();
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	m_dataContainer->setPointIndex(s.gridIndex());
+	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
+	m_dataContainer->setGridLocation(info->gridLocation);
 	m_dataContainer->update(fn);
 	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 

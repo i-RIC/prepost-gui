@@ -20,7 +20,7 @@ class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesData
 {
 
 public:
-	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent);
+	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, ProjectDataItem* parent);
 	const QList<double>& data() const {return m_data;}
 	bool handleCurrentStepUpdate(const int /*fn*/) override {
 		// do nothing.
@@ -35,6 +35,8 @@ public:
 	QString caption() const {return zoneName().c_str();}
 	void setPointIndex(int index) {m_pointIndex = index;}
 	int pointIndex() const {return m_pointIndex;}
+	void setGridLocation(GridLocation_t location) { m_gridLocation = location; }
+	GridLocation_t gridLocation() const { return m_gridLocation; }
 
 protected:
 	bool loadData(const int fn) override;
@@ -52,6 +54,7 @@ protected:
 	int m_zoneId;
 	QString m_physName;
 	int m_pointIndex;
+	GridLocation_t m_gridLocation;
 	cgsize_t m_sizes[9];
 };
 
