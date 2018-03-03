@@ -39,6 +39,9 @@ private slots:
 	void changeOneDimComboBox(int index);
 	void changeTwoDimComboBox(int index);
 	void changeThreeDimComboBox(int index);
+
+	void changeTwoDimGridLocationComboBox(int index);
+
 	void pointDataFocus();
 	void oneDimDataFocus();
 	void twoDimDataFocus();
