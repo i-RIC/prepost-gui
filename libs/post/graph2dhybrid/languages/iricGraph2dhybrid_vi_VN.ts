@@ -188,36 +188,36 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="431"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="460"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="454"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="483"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="434"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="473"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="457"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="496"/>
         <source>I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="437"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="476"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="460"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="499"/>
         <source>J</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="440"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="479"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="463"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="502"/>
         <source>K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="462"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="485"/>
         <source>Count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="469"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="492"/>
         <source>Distance</source>
         <translation type="unfinished"></translation>
     </message>
@@ -451,132 +451,132 @@
 <context>
     <name>Graph2dHybridWindowDataModel</name>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="217"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="226"/>
         <source>Snapshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="218"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="227"/>
         <source>Saving snapshots...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="489"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="504"/>
         <source>CSV Export Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="552"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="567"/>
         <source>CSV Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="553"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="568"/>
         <source>Saving csv files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="782"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="911"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1130"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="797"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="926"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1145"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="782"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="797"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="906"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="921"/>
         <source>Export CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="906"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="921"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="911"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="926"/>
         <source>Saving %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="914"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="929"/>
         <source>CSV file successfully exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1063"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1078"/>
         <source>I = %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1066"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1081"/>
         <source>I = %1, J = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1069"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1084"/>
         <source>I = %1, J = %2, K = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1074"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1089"/>
         <source>Index = %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1081"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1096"/>
         <source>Time = %1 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1084"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1099"/>
         <source>Time = %1 sec, J = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1087"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1102"/>
         <source>Time = %1 sec, J = %2, K = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1096"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1111"/>
         <source>Time = %1 sec, I = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1099"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
         <source>Time = %1 sec, I = %2, K = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1108"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1123"/>
         <source>Time = %1 sec, I = %2, J = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1124"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1136"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1548"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1139"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1151"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1574"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1124"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1136"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1139"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1151"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1130"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1145"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1549"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1575"/>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -609,89 +609,102 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="91"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="90"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="117"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="151"/>
+        <source>Grid Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="105"/>
         <source>Two dimensional Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="104"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="139"/>
         <source>Three dimensional Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="137"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="193"/>
         <source>Add &gt;&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="147"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="203"/>
         <source>&lt;&lt; Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="171"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="227"/>
         <source>Selected Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="183"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="239"/>
         <source>&amp;Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="208"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="264"/>
         <source>External</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="219"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="275"/>
         <source>&amp;Import...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="226"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="282"/>
         <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="196"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="586"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="667"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="200"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="455"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="486"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="517"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="749"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="830"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="196"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="200"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="455"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="486"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="517"/>
         <source>Current setting will be discarded, are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="586"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="749"/>
         <source>No data is selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="622"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="785"/>
         <source>Import CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="622"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="785"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="649"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="812"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="649"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="812"/>
         <source>The title of the first column has to be &quot;X&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="667"/>
+        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="830"/>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1003,6 +1016,21 @@
     <message>
         <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="323"/>
         <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="560"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="567"/>
+        <source>Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="560"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="567"/>
+        <source>CellCenter</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
