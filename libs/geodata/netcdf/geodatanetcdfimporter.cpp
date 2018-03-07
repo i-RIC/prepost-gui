@@ -18,6 +18,22 @@
 #include <QString>
 #include <QStringList>
 
+namespace {
+
+class nc_closer {
+public:
+	nc_closer(int id) {m_id = id;}
+	~nc_closer()
+	{
+		nc_close(m_id);
+	}
+
+private:
+	int m_id;
+};
+
+} // namespace
+
 GeoDataNetcdfImporter::GeoDataNetcdfImporter(GeoDataCreator* creator) :
 	GeoDataImporter("netcdf", tr("NetCDF"), creator)
 {}
@@ -56,6 +72,8 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 
 	int ret = nc_open(fname.c_str(), NC_NOWRITE, &ncid);
 	if (ret != 0) {return false;}
+	nc_closer closer(ncid);
+
 	ret = nc_inq(ncid, &ndims, &nvars, &ngatts, &unlimdimid);
 	if (ret != 0) {return false;}
 
@@ -170,6 +188,8 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 
 	ret = nc_open(iRIC::toStr(filename()).c_str(), NC_NOWRITE, &ncid_in);
 	if (ret != NC_NOERR) {return false;}
+	nc_closer closer(ncid_in);
+
 	QFileInfo finfo(netcdf->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());
 
@@ -179,6 +199,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 
 	ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
 	if (ret != NC_NOERR) {return false;}
+	nc_closer closer_new(ncid_out);
 
 	netcdf->m_coordinateSystemType = m_csType;
 
@@ -327,9 +348,6 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	netcdf->outputDimensions(ncid_out, varIds);
 
 	ret = importValues(ncid_in, ncid_out, varOutId, m_xDimId, m_yDimId, m_lonDimId, m_latDimId, dimIds, netcdf);
-
-	nc_close(ncid_in);
-	nc_close(ncid_out);
 
 	netcdf->updateShapeData();
 	netcdf->doHandleDimensionCurrentIndexChange(0, dims->currentIndex());
