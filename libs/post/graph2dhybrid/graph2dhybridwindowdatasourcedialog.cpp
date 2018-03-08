@@ -262,6 +262,8 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->oneDimDataLabel->hide();
 		ui->oneDimDataComboBox->hide();
 		ui->oneDimDataListWidget->hide();
+		ui->oneDimGridLocationLabel->hide();
+		ui->oneDimGridLocationComboBox->hide();
 	} else if (list.count() == 1) {
 		ui->oneDimDataLabel->show();
 		ui->oneDimDataComboBox->hide();
@@ -306,6 +308,8 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->twoDimDataLabel->hide();
 		ui->twoDimDataComboBox->hide();
 		ui->twoDimDataListWidget->hide();
+		ui->twoDimGridLocationLabel->hide();
+		ui->twoDimGridLocationComboBox->hide();
 	} else if (list.count() == 1) {
 		ui->twoDimDataLabel->show();
 		ui->twoDimDataComboBox->hide();
@@ -350,6 +354,8 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->threeDimDataLabel->hide();
 		ui->threeDimDataComboBox->hide();
 		ui->threeDimDataListWidget->hide();
+		ui->threeDimGridLocationLabel->hide();
+		ui->threeDimGridLocationComboBox->hide();
 	} else if (list.count() == 1) {
 		ui->threeDimDataLabel->show();
 		ui->threeDimDataComboBox->hide();
@@ -391,7 +397,7 @@ void Graph2dHybridWindowDataSourceDialog::changePointComboBox(int index)
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[index];
 
 	ui->pointDataListWidget->clear();
-	Q_ASSERT(info->gridLocation == Vertex);
+	Q_ASSERT(info->gridLocation == GridLocationNull);
 	Q_ASSERT(info->dataNamesMap.find(info->gridLocation) != info->dataNamesMap.end());
 	for (auto name : info->dataNamesMap[info->gridLocation]) {
 		ui->pointDataListWidget->addItem(name);
@@ -448,7 +454,7 @@ void Graph2dHybridWindowDataSourceDialog::changeOneDimGridLocationComboBox(int i
 	Graph2dHybridWindowResultSetting::XAxisMode axis = m_xAxisModes[ui->xAxisComboBox->currentIndex()];
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
-	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim2D];
+	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim1D];
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[ui->oneDimDataComboBox->currentIndex()];
 
 	if (ui->selectedDataListWidget->count() > 0) {
@@ -510,7 +516,7 @@ void Graph2dHybridWindowDataSourceDialog::changeThreeDimGridLocationComboBox(int
 	Graph2dHybridWindowResultSetting::XAxisMode axis = m_xAxisModes[ui->xAxisComboBox->currentIndex()];
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
-	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim2D];
+	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim3D];
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[ui->threeDimDataComboBox->currentIndex()];
 
 	if (ui->selectedDataListWidget->count() > 0) {
@@ -635,11 +641,12 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
 
 	QWidget* target = nullptr;
+	QWidget* targetGridLocation = nullptr;
 	if (ui->pointDataListWidget->selectedItems().count() != 0) {
 		// point data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dimBase];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->pointDataComboBox->currentIndex()];
-		Q_ASSERT(type->gridLocation == Vertex);
+		Q_ASSERT(type->gridLocation == GridLocationNull);
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->pointDataListWidget;
 	}
@@ -651,6 +658,7 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 			ui->oneDimGridLocationComboBox->itemText(ui->oneDimGridLocationComboBox->currentIndex()));
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->oneDimDataListWidget;
+		targetGridLocation = ui->oneDimGridLocationComboBox;
 	}
 	if (ui->twoDimDataListWidget->selectedItems().count() != 0) {
 		// 2D data selected
@@ -660,6 +668,7 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 			ui->twoDimGridLocationComboBox->itemText(ui->twoDimGridLocationComboBox->currentIndex()));
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->twoDimDataListWidget;
+		targetGridLocation = ui->twoDimGridLocationComboBox;
 	}
 	if (ui->threeDimDataListWidget->selectedItems().count() != 0) {
 		// 3D data selected
@@ -669,16 +678,21 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 			ui->threeDimGridLocationComboBox->itemText(ui->threeDimGridLocationComboBox->currentIndex()));
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->threeDimDataListWidget;
+		targetGridLocation = ui->threeDimGridLocationComboBox;
 	}
 	ui->pointDataComboBox->setEnabled(false);
 	ui->pointDataListWidget->setEnabled(false);
 	ui->oneDimDataComboBox->setEnabled(false);
+	ui->oneDimGridLocationComboBox->setEnabled(false);
 	ui->oneDimDataListWidget->setEnabled(false);
 	ui->twoDimDataComboBox->setEnabled(false);
+	ui->twoDimGridLocationComboBox->setEnabled(false);
 	ui->twoDimDataListWidget->setEnabled(false);
 	ui->threeDimDataComboBox->setEnabled(false);
+	ui->threeDimGridLocationComboBox->setEnabled(false);
 	ui->threeDimDataListWidget->setEnabled(false);
 	if (target != nullptr) {target->setEnabled(true);}
+	if (targetGridLocation != nullptr) { targetGridLocation->setEnabled(true); }
 }
 
 void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
@@ -686,10 +700,13 @@ void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
 	ui->pointDataComboBox->setEnabled(true);
 	ui->pointDataListWidget->setEnabled(true);
 	ui->oneDimDataComboBox->setEnabled(true);
+	ui->oneDimGridLocationComboBox->setEnabled(true);
 	ui->oneDimDataListWidget->setEnabled(true);
 	ui->twoDimDataComboBox->setEnabled(true);
+	ui->twoDimGridLocationComboBox->setEnabled(true);
 	ui->twoDimDataListWidget->setEnabled(true);
 	ui->threeDimDataComboBox->setEnabled(true);
+	ui->threeDimGridLocationComboBox->setEnabled(true);
 	ui->threeDimDataListWidget->setEnabled(true);
 	m_setting.setTargetDataTypeInfo(nullptr);
 }
