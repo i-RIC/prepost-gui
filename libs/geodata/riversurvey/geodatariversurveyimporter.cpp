@@ -128,7 +128,7 @@ void sortReverse(std::vector<RivPathPoint*>* points)
 
 bool lessKP(RivPathPoint* a1, RivPathPoint* a2)
 {
-	return a1->realKP < a2->realKP;
+	return a1->realKP > a2->realKP;
 }
 
 void sortByKP(std::vector<RivPathPoint*>* points)
