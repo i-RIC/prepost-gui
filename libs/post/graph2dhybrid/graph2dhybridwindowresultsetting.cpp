@@ -119,6 +119,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			ti.dataType = dtBaseIterative;
 			ti.gridType = 0;
 			ti.zoneId = 0;
+			ti.gridLocation = GridLocationNull;
 			for (int i = 1; i <= narrays; ++i) {
 				char arrayname[32];
 				DataType_t datatype;
@@ -127,10 +128,10 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 				cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
 				QString aName(arrayname);
 				if (aName != "TimeValues" && aName != "IterationValues") {
-					ti.dataNamesMap[Vertex].append(aName);
+					ti.dataNamesMap[ti.gridLocation].append(aName);
 				}
 			}
-			if (ti.dataNamesMap[Vertex].count() > 0) {
+			if (ti.dataNamesMap[ti.gridLocation].count() > 0) {
 				m_dataTypeInfos.append(ti);
 			}
 		}
@@ -557,14 +558,22 @@ QwtSymbol::Style Graph2dHybridWindowResultSetting::getSymbolStyle(SymbolType st)
 
 GridLocation_t Graph2dHybridWindowResultSetting::getGridLocation(QString string)
 {
-	static QMap<QString, GridLocation_t> map{ { QObject::tr("Vertex"), Vertex }, { QObject::tr("CellCenter"), CellCenter } };
+	static QMap<QString, GridLocation_t> map{
+		{ QObject::tr("GridLocationNull"), GridLocationNull },
+		{ QObject::tr("Vertex"),           Vertex },
+		{ QObject::tr("CellCenter"),       CellCenter }
+	};
 	Q_ASSERT(map.find(string) != map.end());
 	return map[string];
 }
 
 QString Graph2dHybridWindowResultSetting::getGridLocationString(GridLocation_t location)
 {
-	static QMap<GridLocation_t, QString> map{ { Vertex, QObject::tr("Vertex") }, { CellCenter, QObject::tr("CellCenter") } };
+	static QMap<GridLocation_t, QString> map{
+		{ GridLocationNull, QObject::tr("GridLocationNull") },
+		{ Vertex,           QObject::tr("Vertex") },
+		{ CellCenter,       QObject::tr("CellCenter") }
+	};
 	Q_ASSERT(map.find(location) != map.end());
 	return map[location];
 }
