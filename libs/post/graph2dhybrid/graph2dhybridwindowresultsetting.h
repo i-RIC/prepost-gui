@@ -96,6 +96,9 @@ public:
 	static GridLocation_t getGridLocation(QString string);
 	static QString getGridLocationString(GridLocation_t location);
 
+	static GridLocation_t getGridLocationTranslated(QString string);
+	static QString getGridLocationStringTranslated(GridLocation_t location);
+
 	struct DataTypeInfo;
 	class Setting
 	{

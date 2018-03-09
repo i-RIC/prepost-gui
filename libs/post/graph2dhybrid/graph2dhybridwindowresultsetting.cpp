@@ -559,6 +559,28 @@ QwtSymbol::Style Graph2dHybridWindowResultSetting::getSymbolStyle(SymbolType st)
 GridLocation_t Graph2dHybridWindowResultSetting::getGridLocation(QString string)
 {
 	static QMap<QString, GridLocation_t> map{
+		{ "GridLocationNull", GridLocationNull },
+		{ "Vertex",           Vertex },
+		{ "CellCenter",       CellCenter }
+	};
+	Q_ASSERT(map.find(string) != map.end());
+	return map[string];
+}
+
+QString Graph2dHybridWindowResultSetting::getGridLocationString(GridLocation_t location)
+{
+	static QMap<GridLocation_t, QString> map{
+		{ GridLocationNull, "GridLocationNull" },
+		{ Vertex,           "Vertex" },
+		{ CellCenter,       "CellCenter" }
+	};
+	Q_ASSERT(map.find(location) != map.end());
+	return map[location];
+}
+
+GridLocation_t Graph2dHybridWindowResultSetting::getGridLocationTranslated(QString string)
+{
+	static QMap<QString, GridLocation_t> map{
 		{ QObject::tr("GridLocationNull"), GridLocationNull },
 		{ QObject::tr("Vertex"),           Vertex },
 		{ QObject::tr("CellCenter"),       CellCenter }
@@ -567,7 +589,7 @@ GridLocation_t Graph2dHybridWindowResultSetting::getGridLocation(QString string)
 	return map[string];
 }
 
-QString Graph2dHybridWindowResultSetting::getGridLocationString(GridLocation_t location)
+QString Graph2dHybridWindowResultSetting::getGridLocationStringTranslated(GridLocation_t location)
 {
 	static QMap<GridLocation_t, QString> map{
 		{ GridLocationNull, QObject::tr("GridLocationNull") },
