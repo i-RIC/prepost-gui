@@ -131,6 +131,7 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& map2 = m[m_setting.xAxisMode()];
 	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list;
 	QWidget* targetWidget = nullptr;
+	QWidget* targetGridLocation = nullptr;
 	if (info != nullptr) {
 		switch (info->dataType) {
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
@@ -145,6 +146,7 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 			index = list.indexOf(info);
 			ui->oneDimDataComboBox->setCurrentIndex(index);
 			targetWidget = ui->oneDimDataListWidget;
+			targetGridLocation = ui->oneDimGridLocationComboBox;
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim2DStructured:
 		case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
@@ -152,6 +154,7 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 			index = list.indexOf(info);
 			ui->twoDimDataComboBox->setCurrentIndex(index);
 			targetWidget = ui->twoDimDataListWidget;
+			targetGridLocation = ui->twoDimGridLocationComboBox;
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 		case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
@@ -159,6 +162,7 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 			index = list.indexOf(info);
 			ui->threeDimDataComboBox->setCurrentIndex(index);
 			targetWidget = ui->threeDimDataListWidget;
+			targetGridLocation = ui->threeDimGridLocationComboBox;
 			break;
 		}
 	}
@@ -171,10 +175,13 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 		ui->pointDataListWidget->setEnabled(true);
 		ui->oneDimDataComboBox->setEnabled(true);
 		ui->oneDimDataListWidget->setEnabled(true);
+		ui->oneDimGridLocationComboBox->setEnabled(true);
 		ui->twoDimDataComboBox->setEnabled(true);
 		ui->twoDimDataListWidget->setEnabled(true);
+		ui->twoDimGridLocationComboBox->setEnabled(true);
 		ui->threeDimDataComboBox->setEnabled(true);
 		ui->threeDimDataListWidget->setEnabled(true);
+		ui->threeDimGridLocationComboBox->setEnabled(true);
 	} else {
 		ui->pointDataComboBox->setEnabled(false);
 		ui->oneDimDataComboBox->setEnabled(false);
@@ -184,7 +191,11 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 		ui->oneDimDataListWidget->setEnabled(false);
 		ui->twoDimDataListWidget->setEnabled(false);
 		ui->threeDimDataListWidget->setEnabled(false);
+		ui->oneDimGridLocationComboBox->setEnabled(false);
+		ui->twoDimGridLocationComboBox->setEnabled(false);
+		ui->threeDimGridLocationComboBox->setEnabled(false);
 		targetWidget->setEnabled(true);
+		if (targetGridLocation != nullptr) { targetGridLocation->setEnabled(true); }
 	}
 	resize(QSize(550, 450));
 }
@@ -451,6 +462,7 @@ void Graph2dHybridWindowDataSourceDialog::changeThreeDimComboBox(int index)
 
 void Graph2dHybridWindowDataSourceDialog::changeOneDimGridLocationComboBox(int index)
 {
+	Q_ASSERT(0 <= index && index < ui->oneDimGridLocationComboBox->count());
 	Graph2dHybridWindowResultSetting::XAxisMode axis = m_xAxisModes[ui->xAxisComboBox->currentIndex()];
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
@@ -482,6 +494,7 @@ void Graph2dHybridWindowDataSourceDialog::changeOneDimGridLocationComboBox(int i
 
 void Graph2dHybridWindowDataSourceDialog::changeTwoDimGridLocationComboBox(int index)
 {
+	Q_ASSERT(0 <= index && index < ui->twoDimGridLocationComboBox->count());
 	Graph2dHybridWindowResultSetting::XAxisMode axis = m_xAxisModes[ui->xAxisComboBox->currentIndex()];
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
@@ -513,6 +526,7 @@ void Graph2dHybridWindowDataSourceDialog::changeTwoDimGridLocationComboBox(int i
 
 void Graph2dHybridWindowDataSourceDialog::changeThreeDimGridLocationComboBox(int index)
 {
+	Q_ASSERT(0 <= index && index < ui->threeDimGridLocationComboBox->count());
 	Graph2dHybridWindowResultSetting::XAxisMode axis = m_xAxisModes[ui->xAxisComboBox->currentIndex()];
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];

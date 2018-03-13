@@ -682,10 +682,13 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 		for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 			DataTypeInfo& tmpInfo = m_dataTypeInfos[i];
 			if (tmpInfo == info) {
+				Q_ASSERT(m_targetDataTypeInfo == nullptr);
 				m_targetDataTypeInfo = &tmpInfo;
+				m_targetDataTypeInfo->gridLocation = info.gridLocation;
 			}
 		}
 	}
+	Q_ASSERT(m_targetDataTypeInfo != nullptr);
 	m_targetDatas.clear();
 	QDomNode datasNode = iRIC::getChildNode(node, "TargetDatas");
 	if (! datasNode.isNull()) {
