@@ -10,6 +10,8 @@
 #include <QMap>
 #include <QColor>
 
+#include <cgnslib.h>
+
 class Graph2dHybridWindowResultGroupDataItem;
 class Graph2dHybridWindowResultDataItem;
 class Graph2dWindowDataItem;
@@ -91,6 +93,12 @@ public:
 	static Qt::PenStyle getPenStyle(LineType lt);
 	static QwtSymbol::Style getSymbolStyle(SymbolType st);
 
+	static GridLocation_t getGridLocation(QString string);
+	static QString getGridLocationString(GridLocation_t location);
+
+	static GridLocation_t getGridLocationTranslated(QString string);
+	static QString getGridLocationStringTranslated(GridLocation_t location);
+
 	struct DataTypeInfo;
 	class Setting
 	{
@@ -152,8 +160,9 @@ public:
 		PostSolutionInfo::Dimension dimension;
 		int zoneId;
 		std::string zoneName;
-		QStringList dataNames;
+		QMap<GridLocation_t, QStringList> dataNamesMap;
 		SolverDefinitionGridType* gridType;
+		GridLocation_t gridLocation;
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 		bool operator==(const DataTypeInfo& info) {

@@ -9,12 +9,13 @@
 #include <cgnslib.h>
 #include <cmath>
 
-PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent) :
+PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, ProjectDataItem* parent) :
 	PostSeriesDataContainer(dim, parent),
 	m_zoneName (zoneName),
 	m_zoneId {0},
 	m_physName {pName},
-	m_pointIndex {pointIndex}
+	m_pointIndex {pointIndex},
+	m_gridLocation {gridLocation}
 {}
 
 bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
@@ -80,6 +81,7 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t loc
 			for (int dim = 1; dim <= dimension; ++dim) {
 				dataLen = dataLen * dimVector[dim - 1];
 			}
+			setPointIndex(std::min(m_pointIndex, dataLen - 1));
 			std::vector<double> buffer(dataLen);
 			ier = cg_array_read_as(j, RealDouble, buffer.data());
 			if (magnitude) {
@@ -107,5 +109,5 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t loc
 
 bool PostZonePointSeriesDataContainer::loadData(const int fn)
 {
-	return loadData(fn, Vertex);
+	return loadData(fn, m_gridLocation);
 }

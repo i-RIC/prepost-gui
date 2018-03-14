@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>583</width>
-    <height>607</height>
+    <height>696</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -83,6 +83,20 @@
           <widget class="QComboBox" name="oneDimDataComboBox"/>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="oneDimGridLocationLabel">
+             <property name="text">
+              <string>Grid Location:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="oneDimGridLocationComboBox"/>
+           </item>
+          </layout>
+         </item>
+         <item>
           <widget class="QListWidget" name="oneDimDataListWidget"/>
          </item>
          <item>
@@ -96,7 +110,28 @@
           <widget class="QComboBox" name="twoDimDataComboBox"/>
          </item>
          <item>
-          <widget class="QListWidget" name="twoDimDataListWidget"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="twoDimGridLocationLabel">
+             <property name="text">
+              <string>Grid Location:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="twoDimGridLocationComboBox"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListWidget" name="twoDimDataListWidget">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QLabel" name="threeDimDataLabel">
@@ -109,7 +144,28 @@
           <widget class="QComboBox" name="threeDimDataComboBox"/>
          </item>
          <item>
-          <widget class="QListWidget" name="threeDimDataListWidget"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="threeDimGridLocationLabel">
+             <property name="text">
+              <string>Grid Location:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="threeDimGridLocationComboBox"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListWidget" name="threeDimDataListWidget">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -258,6 +314,28 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>xAxisComboBox</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>pointDataComboBox</tabstop>
+  <tabstop>pointDataListWidget</tabstop>
+  <tabstop>oneDimDataComboBox</tabstop>
+  <tabstop>oneDimGridLocationComboBox</tabstop>
+  <tabstop>oneDimDataListWidget</tabstop>
+  <tabstop>twoDimDataComboBox</tabstop>
+  <tabstop>twoDimGridLocationComboBox</tabstop>
+  <tabstop>twoDimDataListWidget</tabstop>
+  <tabstop>threeDimDataComboBox</tabstop>
+  <tabstop>threeDimGridLocationComboBox</tabstop>
+  <tabstop>threeDimDataListWidget</tabstop>
+  <tabstop>addPushButton</tabstop>
+  <tabstop>removePushButton</tabstop>
+  <tabstop>selectedDataListWidget</tabstop>
+  <tabstop>settingPushButton</tabstop>
+  <tabstop>importButton</tabstop>
+  <tabstop>deleteImportDataButton</tabstop>
+  <tabstop>importDataList</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
