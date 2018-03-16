@@ -159,6 +159,7 @@ void AnimationController::toggleFollowLastStep(bool follow)
 
 void AnimationController::setup(SolverDefinition::IterationType iType)
 {
+	m_currentStepIndex = 0;
 	delete m_animationMenu;
 	m_animationMenu = nullptr;
 
