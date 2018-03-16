@@ -364,6 +364,9 @@ bool ProjectMainFile::save()
 
 bool ProjectMainFile::saveExceptCGNS()
 {
+	// close CGNS file when the solution opened it.
+	impl->m_postSolutionInfo->close();
+
 	// save Project file.
 	QString fname = filename();
 	QFile f(fname);
