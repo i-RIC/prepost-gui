@@ -228,38 +228,24 @@ void iRICMainWindowActionManager::setupFileMenu()
 
 void iRICMainWindowActionManager::setupImportMenu()
 {
-	m_importMenu->clear();
-	m_geoDataImportMenu = m_importMenu->addMenu(tr("G&eographic Data"));
+	QMenu* importMenu = dynamic_cast<QMenu*> (sender());
+	importMenu->clear();
+	m_geoDataImportMenu = importMenu->addMenu(tr("G&eographic Data"));
 	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
 
-	m_geoDataImportFromWebMenu = m_importMenu->addMenu(tr("Geographic Data (from web)"));
+	m_geoDataImportFromWebMenu = importMenu->addMenu(tr("Geographic Data (from web)"));
 	connect(m_geoDataImportFromWebMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportFromWebMenu()));
 
-	m_hydraulicDataImportMenu = m_importMenu->addMenu(tr("&Hydraulic Data"));
+	m_hydraulicDataImportMenu = importMenu->addMenu(tr("&Hydraulic Data"));
 	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
 
-	addGridImportMenu(m_importMenu);
-	m_importMenu->addAction(importCalcCondAction);
-	m_importMenu->addAction(importCgnsAction);
-	m_importMenu->addAction(importMeasuredAction);
-	m_importMenu->addAction(importImageAction);
-	m_importMenu->addAction(importGoogleMapImageAction);
-	m_importMenu->addAction(importVisGraphAction);
-
-	m_importMenuInFileMenu->clear();
-	m_geoDataImportMenu = m_importMenuInFileMenu->addMenu(tr("G&eographic Data"));
-	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
-
-	m_hydraulicDataImportMenu = m_importMenuInFileMenu->addMenu(tr("&Hydraulic Data"));
-	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
-
-	addGridImportMenu(m_importMenuInFileMenu);
-	m_importMenuInFileMenu->addAction(importCalcCondAction);
-	m_importMenuInFileMenu->addAction(importCgnsAction);
-	m_importMenuInFileMenu->addAction(importMeasuredAction);
-	m_importMenuInFileMenu->addAction(importImageAction);
-	m_importMenuInFileMenu->addAction(importGoogleMapImageAction);
-	m_importMenuInFileMenu->addAction(importVisGraphAction);
+	addGridImportMenu(importMenu);
+	importMenu->addAction(importCalcCondAction);
+	importMenu->addAction(importCgnsAction);
+	importMenu->addAction(importMeasuredAction);
+	importMenu->addAction(importImageAction);
+	importMenu->addAction(importGoogleMapImageAction);
+	importMenu->addAction(importVisGraphAction);
 }
 
 void iRICMainWindowActionManager::setupExportMenu()
