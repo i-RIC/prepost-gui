@@ -79,7 +79,7 @@ bool ProjectCgnsFile::writeSolverInfo(int fn, const SolverDefinitionAbstract* so
 	ret = cg_gopath(fn, "/iRIC/SolverInformation");
 	if (ret != 0) {return false;}
 	// add name node
-	dim[0] = solverName.length() + 1;
+	dim[0] = static_cast<cgsize_t>(solverName.length()) + 1;
 	ret = cg_array_write("Name", Character, 1, dim, solverName.c_str());
 	if (ret != 0) {return false;}
 	// add version node
