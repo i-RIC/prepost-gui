@@ -152,14 +152,16 @@ void iRICMainWindowActionManager::setupFileMenu()
 
 	m_fileMenu->addSeparator();
 
-	m_importMenu = new QMenu(tr("&Import"), m_fileMenu);
 	m_importMenuInFileMenu = new QMenu(tr("&Import"), m_menuBar);
 	m_importMenuInFileMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
-	m_fileMenu->addMenu(m_importMenuInFileMenu);
-	m_importMenu->setDisabled(true);
 	m_importMenuInFileMenu->setDisabled(true);
-	connect(m_importMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
 	connect(m_importMenuInFileMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
+	m_fileMenu->addMenu(m_importMenuInFileMenu);
+
+	m_importMenu = new QMenu(tr("&Import"), m_fileMenu);
+	m_importMenu->setDisabled(true);
+	connect(m_importMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
+
 	m_geoDataImportMenu = nullptr;
 
 	importCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
