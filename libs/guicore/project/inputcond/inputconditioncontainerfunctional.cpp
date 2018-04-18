@@ -113,7 +113,7 @@ InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(
 
 int InputConditionContainerFunctional::valueCount() const
 {
-	return impl->m_values.size();
+	return static_cast<int>(impl->m_values.size());
 }
 
 std::vector<double>& InputConditionContainerFunctional::x()
@@ -203,7 +203,6 @@ void InputConditionContainerFunctional::removeAllValues(){
 int InputConditionContainerFunctional::load()
 {
 	cgsize_t length;
-	double* tmpdata;
 	int result;
 
 	std::vector<double> data;
@@ -254,7 +253,7 @@ ERROR:
 
 int InputConditionContainerFunctional::save()
 {
-	cgsize_t length = impl->m_param.values.size();
+	cgsize_t length = static_cast<cgsize_t>(impl->m_param.values.size());
 	cgsize_t tmplength = length;
 	if (tmplength == 0) {tmplength = 1;}
 	std::vector<double> data (tmplength, 0);
