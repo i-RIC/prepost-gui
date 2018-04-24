@@ -461,7 +461,7 @@ void iRICMainWindow::exportCalcCondition()
 void iRICMainWindow::importCalculationResult()
 {
 	QString fname = QFileDialog::getOpenFileName(
-		this, tr("Open Calculation result"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
+		this, tr("Open Calculation result"), LastIODirectory::get(), tr("CGNS file (*.cgn *.cgns)")
 		);
 	if (fname == "") {return;}
 	importCalculationResult(fname);
