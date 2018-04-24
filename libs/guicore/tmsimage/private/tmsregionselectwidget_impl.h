@@ -7,6 +7,7 @@
 #include <QImage>
 #include <QPoint>
 #include <QPointF>
+#include <QTimer>
 
 #include <string>
 
@@ -49,6 +50,7 @@ public:
 
 	QPoint m_previousPos;
 	ViewOperationState m_viewOperationState;
+	QTimer m_timer;
 
 private:
 	TmsRegionSelectWidget* m_widget;

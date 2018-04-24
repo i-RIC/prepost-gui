@@ -43,6 +43,7 @@ public slots:
 
 private slots:
 	void handleImageUpdate(int requestId);
+	void handleTimer();
 
 private:
 	class Impl;
