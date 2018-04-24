@@ -87,6 +87,8 @@ TmsRegionSelectWidget::TmsRegionSelectWidget(QWidget* parent) :
 	impl {new Impl(this)}
 {
 	connect(&(impl->m_loader), SIGNAL(imageUpdated(int)), this, SLOT(handleImageUpdate(int)));
+	impl->m_timer.start(10);
+	connect(&(impl->m_timer), SIGNAL(timeout()), this, SLOT(handleTimer()));
 }
 
 TmsRegionSelectWidget::~TmsRegionSelectWidget()
@@ -244,8 +246,12 @@ double TmsRegionSelectWidget::maxLat() const
 
 void TmsRegionSelectWidget::requestUpdate()
 {
+	static bool updating = false;
+	if (updating) { return; }
+
 	if (impl->m_requestId != -1) {
 		impl->m_loader.cancelRequest(impl->m_requestId);
+		impl->m_requestId = -1;
 	}
 
 	if (impl->m_coordinateSystem == nullptr) {return;}
@@ -260,7 +266,15 @@ void TmsRegionSelectWidget::requestUpdate()
 	tmsloader::TmsRequest* req = manager.buildRequest(QPointF(lon, lat), size(), impl->m_scale, impl->m_mapSetting);
 	if (req == nullptr) {return;}
 
-	impl->m_loader.registerRequest(*req, &impl->m_requestId);
+	int rId;
+	updating = true;
+	impl->m_loader.registerRequest(*req, &rId);
+	updating = false;
+	if (impl->m_requestId != -1) {
+		impl->m_loader.cancelRequest(impl->m_requestId);
+	}
+	impl->m_requestId = rId;
+
 	delete req;
 
 	double x, y;
@@ -288,3 +302,10 @@ void TmsRegionSelectWidget::handleImageUpdate(int requestId)
 	impl->m_image = impl->m_loader.getImage(requestId);
 	update();
 }
+
+void TmsRegionSelectWidget::handleTimer()
+{
+	requestUpdate();
+	impl->m_timer.stop();
+}
+
