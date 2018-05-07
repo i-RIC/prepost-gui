@@ -16994,7 +16994,7 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="235"/>
         <source>Geographic Data (from web)</source>
-        <translation>地理情報データ (Webから)</translation>
+        <translation>地理情報 (Webから)</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="333"/>
