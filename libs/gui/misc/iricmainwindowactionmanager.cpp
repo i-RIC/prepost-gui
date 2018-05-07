@@ -175,7 +175,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 
 	importImageAction = new QAction(tr("&Background Image..."), this);
 
-	importGoogleMapImageAction = new QAction(tr("&Google Map Background Image..."), this);
+	importGoogleMapImageAction = new QAction(tr("G&oogle Map Background Image..."), this);
 	connect(importGoogleMapImageAction, SIGNAL(triggered()), m_parent, SLOT(importGoogleMapImages()));
 
 	importVisGraphAction = new QAction(tr("&Visualization/Graph Settings..."), this);
