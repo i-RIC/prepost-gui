@@ -24,7 +24,7 @@ bool GeoDataPointmapSTLExporter::doExport(GeoData* data, const QString& filename
 	vtkIdType i, numpoints;
 	numpoints = polydata->GetNumberOfPoints();
 	vtkDoubleArray* val = vtkDoubleArray::SafeDownCast(polydata->GetPointData()->GetArray("values"));
-	QVector2D offset = pd->mainfile()->offset();
+	auto offset = pd->mainfile()->offset();
 	for (i = 0; i < numpoints; ++i) {
 		polydata->GetPoints()->GetPoint(i, tmpvec);
 		tmpvec[0] += offset.x();

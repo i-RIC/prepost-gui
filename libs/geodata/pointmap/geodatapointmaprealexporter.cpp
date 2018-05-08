@@ -32,7 +32,7 @@ bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filenam
 		outs << pmap->vtkGrid()->GetPoints()->GetNumberOfPoints() << endl;
 		vtkPoints* points = pmap->vtkGrid()->GetPoints();
 		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
-		QVector2D offset = pd->mainfile()->offset();
+		auto offset = pd->mainfile()->offset();
 		double v[3], val;
 		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, v);
@@ -53,7 +53,7 @@ bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filenam
 		outs.setRealNumberPrecision(10);
 		vtkPoints* points = pmap->vtkGrid()->GetPoints();
 		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
-		QVector2D offset = pd->mainfile()->offset();
+		auto offset = pd->mainfile()->offset();
 		double v[3], val;
 		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, v);

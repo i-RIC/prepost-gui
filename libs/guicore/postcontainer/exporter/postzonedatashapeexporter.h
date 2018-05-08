@@ -10,7 +10,7 @@ public:
 	PostZoneDataShapeExporter(const QString& workDir);
 	~PostZoneDataShapeExporter() {}
 	QString filename(const QString& prefix, int index) const;
-	bool exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QVector2D& offset) const override;
+	bool exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const override;
 
 private:
 	QString m_workDir;

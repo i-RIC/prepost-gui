@@ -172,7 +172,7 @@ protected:
 	void saveCheckState(QXmlStreamWriter& writer);
 	void loadExpandState(const QDomNode& node);
 	void saveExpandState(QXmlStreamWriter& writer);
-	virtual QVector2D getOffset();
+	virtual QPointF getOffset();
 	/// Delete child items
 	void clearChildItems();
 

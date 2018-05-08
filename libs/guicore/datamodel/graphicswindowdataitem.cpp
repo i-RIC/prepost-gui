@@ -522,7 +522,7 @@ void GraphicsWindowDataItem::applyOffset(double x, double y)
 	}
 }
 
-QVector2D GraphicsWindowDataItem::getOffset()
+QPointF GraphicsWindowDataItem::getOffset()
 {
 	GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(parent());
 	return p->getOffset();

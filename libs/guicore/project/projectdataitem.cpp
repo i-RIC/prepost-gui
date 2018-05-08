@@ -161,10 +161,10 @@ void ProjectDataItem::setSubPath(const QString& subPath)
 	impl->m_subPath = subPath;
 }
 
-QVector2D ProjectDataItem::offset() const
+QPointF ProjectDataItem::offset() const
 {
 	auto pd = projectData();
-	if (pd == nullptr) {return QVector2D(0, 0);}
+	if (pd == nullptr) {return QPointF(0, 0);}
 	return pd->mainfile()->offset();
 }
 

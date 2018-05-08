@@ -110,7 +110,7 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_postSolutionInfo {new PostSolutionInfo(parent)},
 	m_postProcessors {new ProjectPostProcessors(parent)},
 	m_coordinateSystem {nullptr},
-	m_offset {QVector2D(0, 0)},
+	m_offset {QPointF(0, 0)},
 	m_isModified {false},
 	m_parent {parent}
 {}
@@ -1018,9 +1018,7 @@ void ProjectMainFile::addMeasuredData()
 	QFileInfo finfo(fname);
 	try {
 		MeasuredDataCsvImporter importer;
-		QVector2D of = offset();
-		QPointF local_offset = QPointF(of.x(), of.y());
-		MeasuredData* md = importer.importData(fname, local_offset, this);
+		MeasuredData* md = importer.importData(fname, offset(), this);
 		impl->m_measuredDatas.push_back(md);
 		emit measuredDataAdded();
 		setModified();
@@ -1131,7 +1129,7 @@ void ProjectMainFile::setCoordinateSystem(CoordinateSystem* system)
 	if (impl->m_coordinateSystem != nullptr) {impl->m_coordinateSystem->init();}
 }
 
-QVector2D ProjectMainFile::offset() const
+QPointF ProjectMainFile::offset() const
 {
 	return impl->m_offset;
 }
@@ -1150,8 +1148,8 @@ void ProjectMainFile::setOffset(double x, double y)
 class ProjectSetOffsetCommand : public QUndoCommand
 {
 public:
-	ProjectSetOffsetCommand(const QVector2D& newoffset, ProjectMainFile* file)
-		: QUndoCommand(QObject::tr("Set offset"))
+	ProjectSetOffsetCommand(const QPointF& newoffset, ProjectMainFile* file) :
+		QUndoCommand(QObject::tr("Set offset"))
 	{
 		m_newOffset = newoffset;
 		m_oldOffset = file->offset();
@@ -1165,8 +1163,8 @@ public:
 	}
 
 private:
-	QVector2D m_newOffset;
-	QVector2D m_oldOffset;
+	QPointF m_newOffset;
+	QPointF m_oldOffset;
 	ProjectMainFile* m_projectMainFile;
 };
 
@@ -1177,7 +1175,7 @@ void ProjectMainFile::setupOffset()
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	iRICUndoStack::instance().push(new ProjectSetOffsetCommand(QVector2D(dialog.offsetX(), dialog.offsetY()), this));
+	iRICUndoStack::instance().push(new ProjectSetOffsetCommand(QPointF(dialog.offsetX(), dialog.offsetY()), this));
 }
 
 int ProjectMainFile::showCoordinateSystemDialog(bool forceSelect)

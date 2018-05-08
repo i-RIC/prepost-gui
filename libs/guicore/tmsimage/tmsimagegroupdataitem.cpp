@@ -23,6 +23,7 @@
 #include <QMessageBox>
 #include <QRectF>
 #include <QXmlStreamWriter>
+#include <QVector2D>
 
 #include <vtkRenderer.h>
 #include <vtkTextureMapToPlane.h>

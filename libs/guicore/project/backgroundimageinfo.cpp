@@ -387,7 +387,7 @@ void BackgroundImageInfo::doLoadFromProjectMainFile(const QDomNode& node)
 	m_visible    = iRIC::getBooleanAttribute(node, "visibility", true);
 	m_fixed      = iRIC::getBooleanAttribute(node, "fixed", false);
 
-	QVector2D offset = this->offset();
+	auto offset = this->offset();
 	m_translateX -= offset.x();
 	m_translateY -= offset.y();
 
@@ -401,7 +401,7 @@ void BackgroundImageInfo::doLoadFromProjectMainFile(const QDomNode& node)
 
 void BackgroundImageInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QVector2D offset = this->offset();
+	auto offset = this->offset();
 	double translateX = m_translateX + offset.x();
 	double translateY = m_translateY + offset.y();
 	writer.writeAttribute("filename", m_filename);

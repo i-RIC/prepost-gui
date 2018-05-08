@@ -6,12 +6,12 @@
 #include "projectdata.h"
 
 #include <QModelIndex>
-#include <QVector2D>
 
 #include <string>
 #include <vector>
 
 class QDomDocument;
+class QPointF;
 
 class BackgroundImageInfo;
 class CgnsFileList;
@@ -109,7 +109,7 @@ public:
 	CoordinateSystem* coordinateSystem() const;
 	void setCoordinateSystem(CoordinateSystem* system);
 
-	QVector2D offset() const;
+	QPointF offset() const;
 	void setOffset(double x, double y);
 
 	bool mkdirBGDIR();

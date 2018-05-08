@@ -72,7 +72,7 @@ bool GeoDataPolygonShapeExporter::doExport(GeoData* data, const QString& filenam
 	std::string fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPCreate(fname.c_str(), SHPT_POLYGON);
 
-	QVector2D offset = pd->mainfile()->offset();
+	auto offset = pd->mainfile()->offset();
 	SHPObject* obj = getSHPObject(pol, shph, 0, offset.x(), offset.y());
 	SHPWriteObject(shph, -1, obj);
 	SHPClose(shph);

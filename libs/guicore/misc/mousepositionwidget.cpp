@@ -25,7 +25,7 @@ void MousePositionWidget::updatePosition(const QVector2D& position)
 	double x = position.x();
 	double y = position.y();
 	if (m_projectData != nullptr) {
-		QVector2D offset = m_projectData->mainfile()->offset();
+		auto offset = m_projectData->mainfile()->offset();
 		x += offset.x();
 		y += offset.y();
 	}

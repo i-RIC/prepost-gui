@@ -222,7 +222,7 @@ QString PostZoneDataShapeExporter::filename(const QString& prefix, int index) co
 	return fname;
 }
 
-bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QVector2D& offset) const
+bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 

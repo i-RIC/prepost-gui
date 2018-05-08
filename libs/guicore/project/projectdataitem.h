@@ -11,7 +11,7 @@ class ProjectData;
 
 class QColor;
 class QDomNode;
-class QVector2D;
+class QPointF;
 class QXmlStreamWriter;
 
 class vtkCamera;
@@ -95,7 +95,7 @@ protected:
 	/// Set sub path
 	void setSubPath(const QString& subPath);
 	/// Offset applied to the data
-	QVector2D offset() const;
+	QPointF offset() const;
 	/// Apply offset the current data.
 	virtual void doApplyOffset(double x, double y);
 	//@}

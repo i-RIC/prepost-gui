@@ -27,7 +27,7 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	GeoDataRiverPathPoint* lastp = rs->headPoint()->nextPoint();
-	QVector2D offset = pd->mainfile()->offset();
+	auto offset = pd->mainfile()->offset();
 
 	// now, export from the first one.
 	GeoDataRiverPathPoint* tmpp = rs->headPoint()->nextPoint();

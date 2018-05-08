@@ -201,7 +201,7 @@ void applyOffsetToPolyLine(PolyLineController* polyLine, double x, double y)
 	polyLine->setPolyLine(line);
 }
 
-void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QVector2D& offset)
+void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QPointF& offset)
 {
 	std::vector<QPointF> line;
 	int size;
@@ -214,7 +214,7 @@ void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QVect
 	polyLine->setPolyLine(line);
 }
 
-void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const QVector2D& offset)
+void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const QPointF& offset)
 {
 	auto line = polyLine.polyLine();
 	int size = line.size();

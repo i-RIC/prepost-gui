@@ -143,7 +143,7 @@ QString PostZoneDataCsvExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataCsvExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QVector2D& offset) const
+bool PostZoneDataCsvExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QPointF& offset) const
 {
 	if (QFile::exists(filename)){
 		bool ok = QFile::remove(filename);
