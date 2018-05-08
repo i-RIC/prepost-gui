@@ -207,7 +207,7 @@ void PreProcessorModel::setupStandardItemAndViewAndController(PreProcessorDataIt
 
 void PreProcessorModel::updateCrossSections()
 {
-	bool all_internal;
+	bool all_internal = true;
 	impl->m_project->calcCrossSectionElevations(&all_internal);
 	if (! all_internal) {
 		QMessageBox::warning(view(), tr("Warning"),
