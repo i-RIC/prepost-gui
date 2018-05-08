@@ -4,40 +4,34 @@
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="79"/>
         <source>&amp;Add Vertex</source>
-        <translation>頂点の追加(&amp;A)</translation>
+        <translation type="vanished">頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="82"/>
         <source>&amp;Remove Vertex</source>
-        <translation>頂点の削除(&amp;R)</translation>
+        <translation type="vanished">頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="86"/>
         <source>Edit C&amp;oordinates...</source>
-        <translation>座標の編集(&amp;O)...</translation>
+        <translation type="vanished">座標の編集(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="89"/>
         <source>R&amp;everse Center Line Direction</source>
-        <translation>中心線の向きを反転(&amp;E)</translation>
+        <translation type="vanished">中心線の向きを反転(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="92"/>
         <source>&amp;Import Center Line...</source>
-        <translation>中心線のインポート(&amp;I)...</translation>
+        <translation type="vanished">中心線のインポート(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="95"/>
         <source>&amp;Export Center Line...</source>
-        <translation>中心線のエクスポート(&amp;E)...</translation>
+        <translation type="vanished">中心線のエクスポート(&amp;E)...</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="174"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="178"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="197"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="967"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -57,7 +51,7 @@
         <translation>格子点数の最大値は %1 です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="967"/>
         <source>Center line not defined yet</source>
         <translation>中心線がまだ定義されていません。</translation>
     </message>
@@ -92,37 +86,39 @@
         <translation>中心線の定義の終了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="931"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="931"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>格子の中心線を定義してください。中心線は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="49"/>
+        <location filename="../private/gridcreatingconditioncenterandwidth_editcoordinatescommand.cpp" line="4"/>
         <source>Edit Center Line Coordinates</source>
         <translation>中心線座標の編集</translation>
+    </message>
+    <message>
+        <location filename="../private/gridcreatingconditioncenterandwidth_coordinateseditor.cpp" line="27"/>
+        <source>Polyline Coordinates</source>
+        <translation>頂点座標</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthCoordinatesEditDialog</name>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.ui" line="14"/>
         <source>Polyline Coordinates</source>
-        <translation>頂点座標</translation>
+        <translation type="vanished">頂点座標</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="136"/>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="vanished">X</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="137"/>
         <source>Y</source>
-        <translation>Y</translation>
+        <translation type="vanished">Y</translation>
     </message>
 </context>
 <context>
