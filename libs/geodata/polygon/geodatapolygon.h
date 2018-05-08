@@ -234,9 +234,10 @@ private:
 	class MoveVertexCommand;
 	class RemoveVertexCommand;
 
+	class CoordinatesEditor;
+
 public:
 	friend class GeoDataPolygonCreator;
-	friend class GeoDataPolygonCoordinatesEditDialog;
 	friend class GeoDataPolygonAbstractPolygon;
 	friend class GeoDataPolygonTriangleThread;
 	friend class GeoDataPolygonImporter;

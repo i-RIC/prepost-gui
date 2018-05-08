@@ -81,7 +81,7 @@
     </message>
     <message>
         <location filename="../geodatapolygon.cpp" line="531"/>
-        <location filename="../geodatapolygon.cpp" line="976"/>
+        <location filename="../geodatapolygon.cpp" line="977"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -96,23 +96,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="948"/>
-        <location filename="../geodatapolygon.cpp" line="1137"/>
+        <location filename="../geodatapolygon.cpp" line="949"/>
+        <location filename="../geodatapolygon.cpp" line="1138"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="948"/>
+        <location filename="../geodatapolygon.cpp" line="949"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="976"/>
+        <location filename="../geodatapolygon.cpp" line="977"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1137"/>
+        <location filename="../geodatapolygon.cpp" line="1138"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -122,12 +122,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1170"/>
+        <location filename="../geodatapolygon.cpp" line="1171"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1171"/>
+        <location filename="../geodatapolygon.cpp" line="1172"/>
         <source>Please input new value in this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,18 +137,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1348"/>
+        <location filename="../geodatapolygon.cpp" line="1349"/>
         <source>Select Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1348"/>
+        <location filename="../geodatapolygon.cpp" line="1349"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="53"/>
+        <location filename="../private/geodatapolygon_editcoordinatescommand.cpp" line="7"/>
         <source>Edit Polygon Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
+        <source>Polygon Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -180,24 +185,6 @@
     <message>
         <location filename="../geodatapolygoncolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPolygonCoordinatesEditDialog</name>
-    <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.ui" line="14"/>
-        <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="157"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygoncoordinateseditdialog.cpp" line="158"/>
-        <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
