@@ -89,7 +89,6 @@ HEADERS += arrowsettingcontainer.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
-           vtkScalarBarActorInternal.h \
            vtkCustomStreamPoints.h \
            vtkCustomStreamTracer.h \
            vtkdatasetattributestool.h \
@@ -97,6 +96,7 @@ HEADERS += arrowsettingcontainer.h \
            vtklegendboxwidget.h \
            vtklinestylecontainer.h \
            vtklinestylewidget.h \
+           vtkScalarBarActorInternal.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
@@ -121,6 +121,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
+           vtktool/vtkpointsutil.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapaintactor.h \
            vtktool/vtkpolydatapointsactor.h \
@@ -222,6 +223,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
+           vtktool/vtkpointsutil.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapaintactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
