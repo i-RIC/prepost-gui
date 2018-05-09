@@ -8,6 +8,7 @@
 
 #include "private/graphicswindowdataitem_modifycommand.h"
 #include "private/graphicswindowdataitem_rendercommand.h"
+#include "private/graphicswindowdataitem_renderredoonlycommand.h"
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
 
 #include <misc/iricundostack.h>
@@ -562,6 +563,16 @@ void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataIt
 void GraphicsWindowDataItem::pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem)
 {
 	QUndoCommand* com2 = new RenderCommand(com, item);
+	if (editItem) {
+		pushCommand(com2, item);
+	} else {
+		pushCommand(com2);
+	}
+}
+
+void GraphicsWindowDataItem::pushRenderRedoOnlyCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem)
+{
+	QUndoCommand* com2 = new RenderRedoOnlyCommand(com, item);
 	if (editItem) {
 		pushCommand(com2, item);
 	} else {

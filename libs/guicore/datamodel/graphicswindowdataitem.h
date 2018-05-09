@@ -167,6 +167,7 @@ protected:
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
 	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
+	void pushRenderRedoOnlyCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void saveCheckState(QXmlStreamWriter& writer);
@@ -200,6 +201,7 @@ public:
 private:
 	class ModifyCommand;
 	class RenderCommand;
+	class RenderRedoOnlyCommand;
 	class StandardItemModifyCommand;
 };
 

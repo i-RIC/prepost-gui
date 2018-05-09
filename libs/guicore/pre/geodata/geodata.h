@@ -152,6 +152,7 @@ protected:
 	PreProcessorGeoDataDataItemInterface* geoDataDataItem() const;
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
+	void pushRenderRedoOnlyCommand(QUndoCommand* com);
 
 	MouseBoundingBox* mouseBoundingBox();
 	PreProcessorDataModelInterface* dataModel();
