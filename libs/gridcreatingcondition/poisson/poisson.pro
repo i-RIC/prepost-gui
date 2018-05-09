@@ -111,7 +111,9 @@ HEADERS += gcc_poisson_global.h \
            springsolver.h \
            springsolverthread.h \
            private/gridcreatingconditionpoisson_addvertexcommand.h \
+           private/gridcreatingconditionpoisson_coordinateseditor.h \
            private/gridcreatingconditionpoisson_definenewpointcommand.h \
+           private/gridcreatingconditionpoisson_editcoordinatescommand.h \
            private/gridcreatingconditionpoisson_finishdefiningcommand.h \
            private/gridcreatingconditionpoisson_impl.h \
            private/gridcreatingconditionpoisson_movecommand.h \
@@ -132,7 +134,9 @@ SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            springsolver.cpp \
            springsolverthread.cpp \
            private/gridcreatingconditionpoisson_addvertexcommand.cpp \
+           private/gridcreatingconditionpoisson_coordinateseditor.cpp \
            private/gridcreatingconditionpoisson_definenewpointcommand.cpp \
+           private/gridcreatingconditionpoisson_editcoordinatescommand.cpp \
            private/gridcreatingconditionpoisson_finishdefiningcommand.cpp \
            private/gridcreatingconditionpoisson_movecommand.cpp \
            private/gridcreatingconditionpoisson_movevertexcommand.cpp \
