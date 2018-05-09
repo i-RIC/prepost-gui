@@ -5,10 +5,11 @@
 #include "gridcreatingconditioncompoundchannelfunctions.h"
 #include "gridcreatingconditioncompoundchannelgridregionpolygon.h"
 #include "gridcreatingconditioncompoundchannellowwaterchannelpolygon.h"
-#include "gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.h"
-#include "gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.h"
 #include "gridcreatingconditioncompoundchannelsettingdialog.h"
 #include "gridcreatingconditioncompoundchannelspline.h"
+
+#include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
+#include "private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -1708,20 +1709,10 @@ void GridCreatingConditionCompoundChannel::reverseCenterLine()
 
 void GridCreatingConditionCompoundChannel::editCoordinates()
 {
-	m_mouseEventMode = meEditVerticesDialog;
 	if (m_selectedPolygon != nullptr) {
-		GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog* dialog = new GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog(m_selectedPolygon, this, preProcessorWindow());
-		dialog->show();
-		iricMainWindow()->enterModelessDialogMode();
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-	}
-	if (m_selectedLine != nullptr) {
-		GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog* dialog = new GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog(m_selectedLine, this, preProcessorWindow());
-		dialog->show();
-		iricMainWindow()->enterModelessDialogMode();
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
+		PolygonCoordinatesEditor::edit(this);
+	} else if (m_selectedLine != nullptr) {
+		PolylineCoordinatesEditor::edit(this);
 	}
 }
 

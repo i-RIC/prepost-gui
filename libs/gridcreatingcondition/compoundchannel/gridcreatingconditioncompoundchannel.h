@@ -222,10 +222,11 @@ private:
 	class RemovePolyLineVertexCommand;
 	class SwitchStatusCommand;
 
+	class PolygonCoordinatesEditor;
+	class PolylineCoordinatesEditor;
+
 public:
 	friend class GridCreatingConditionCompoundChannelCreator;
-	friend class GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog;
-	friend class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog;
 	friend class GridCreatingConditionCompoundChannelAbstractPolygon;
 	friend class GridCreatingConditionCompoundChannelAbstractLine;
 };
