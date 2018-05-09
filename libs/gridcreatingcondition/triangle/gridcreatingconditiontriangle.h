@@ -179,12 +179,13 @@ private:
 	class RemovePolygonVertexCommand;
 	class RemovePolyLineVertexCommand;
 
+	class PolygonCoordinatesEditor;
+	class PolylineCoordinatesEditor;
+
 public:
 	friend class GridCreatingConditionTriangleAbstractLine;
 	friend class GridCreatingConditionTriangleAbstractPolygon;
 	friend class GridCreatingConditionTriangleCreator;
-	friend class GridCreatingConditionTrianglePolygonCoordinatesEditDialog;
-	friend class GridCreatingConditionTrianglePolyLineCoordinatesEditDialog;
 
 	friend class GridCreatingConditionTrianglePolylineFinishDefiningCommand;
 
