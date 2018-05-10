@@ -1,6 +1,7 @@
 #include "gridcreatingconditioncompoundchannel.h"
 #include "gridcreatingconditioncompoundchannelabstractline.h"
 
+#include <guibase/vtktool/vtkpointsutil.h>
 #include <misc/errormessage.h>
 
 #include <QPointF>
@@ -231,6 +232,38 @@ void GridCreatingConditionCompoundChannelAbstractLine::setZDepthRange(double /*m
 {
 	m_vertexActor->SetPosition(0, 0, max);
 	m_edgeActor->SetPosition(0, 0, max);
+}
+
+QPointF GridCreatingConditionCompoundChannelAbstractLine::vertex(int index) const
+{
+	double p[3];
+	getVtkLine()->GetPoints()->GetPoint(index, p);
+	return QPointF(p[0], p[1]);
+}
+
+void GridCreatingConditionCompoundChannelAbstractLine::insertVertex(int index, const QPointF& vertex)
+{
+	auto coords = vtkPointsUtil::getCoordinates(getVtkLine());
+	coords.insert(coords.begin() + index, vertex);
+	vtkPointsUtil::setCoordinates(getVtkLine(), coords);
+	updateShapeData();
+}
+
+void GridCreatingConditionCompoundChannelAbstractLine::setVertex(int index, const QPointF& vertex)
+{
+	auto line = getVtkLine();
+	line->GetPoints()->SetPoint(index, vertex.x(), vertex.y(), 0);
+	line->GetPoints()->Modified();
+	line->Modified();
+	updateShapeData();
+}
+
+void GridCreatingConditionCompoundChannelAbstractLine::removeVertex(int index)
+{
+	auto coords = vtkPointsUtil::getCoordinates(getVtkLine());
+	coords.erase(coords.begin() + index);
+	vtkPointsUtil::setCoordinates(getVtkLine(), coords);
+	updateShapeData();
 }
 
 void GridCreatingConditionCompoundChannelAbstractLine::setActive(bool active)
