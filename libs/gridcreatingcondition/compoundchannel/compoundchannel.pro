@@ -101,9 +101,9 @@ HEADERS += gcc_compoundchannel_global.h \
            private/gridcreatingconditioncompoundchannel_editpolygoncoordinatescommand.h \
            private/gridcreatingconditioncompoundchannel_editpolylinecoordinatescommand.h \
            private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h \
-           private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h
-FORMS += \
-         gridcreatingconditioncompoundchannelsettingdialog.ui
+           private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h \
+           private/gridcreatingconditioncompoundchannel_switchstatuscommand.h
+FORMS += gridcreatingconditioncompoundchannelsettingdialog.ui
 SOURCES += gridcreatingconditioncompoundchannel.cpp \
            gridcreatingconditioncompoundchannelabstractline.cpp \
            gridcreatingconditioncompoundchannelabstractpolygon.cpp \
@@ -117,7 +117,8 @@ SOURCES += gridcreatingconditioncompoundchannel.cpp \
            private/gridcreatingconditioncompoundchannel_editpolygoncoordinatescommand.cpp \
            private/gridcreatingconditioncompoundchannel_editpolylinecoordinatescommand.cpp \
            private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.cpp \
-           private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.cpp
+           private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.cpp \
+           private/gridcreatingconditioncompoundchannel_switchstatuscommand.cpp
 RESOURCES += compoundchannel.qrc
 TRANSLATIONS += languages/iricGccCompoundchannel_es_ES.ts \
                 languages/iricGccCompoundchannel_fr_FR.ts \
