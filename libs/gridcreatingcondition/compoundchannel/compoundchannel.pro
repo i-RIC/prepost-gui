@@ -102,6 +102,7 @@ HEADERS += gcc_compoundchannel_global.h \
            private/gridcreatingconditioncompoundchannel_editpolygoncoordinatescommand.h \
            private/gridcreatingconditioncompoundchannel_editpolylinecoordinatescommand.h \
            private/gridcreatingconditioncompoundchannel_movepolygoncommand.h \
+           private/gridcreatingconditioncompoundchannel_movepolygonvertexcommand.h \
            private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h \
            private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h \
            private/gridcreatingconditioncompoundchannel_switchstatuscommand.h
@@ -120,6 +121,7 @@ SOURCES += gridcreatingconditioncompoundchannel.cpp \
            private/gridcreatingconditioncompoundchannel_editpolygoncoordinatescommand.cpp \
            private/gridcreatingconditioncompoundchannel_editpolylinecoordinatescommand.cpp \
            private/gridcreatingconditioncompoundchannel_movepolygoncommand.cpp \
+           private/gridcreatingconditioncompoundchannel_movepolygonvertexcommand.cpp \
            private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.cpp \
            private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.cpp \
            private/gridcreatingconditioncompoundchannel_switchstatuscommand.cpp
