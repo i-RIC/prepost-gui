@@ -357,7 +357,12 @@ void PreProcessorWindow::handleAdditionalMenusUpdate(const QList<QMenu*>& m)
 void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 {
 	PreProcessorDataModel* m = model();
-	if (m == nullptr) {return;}
+	if (m == nullptr) {
+		// add dummy disabled menu
+		QAction* no = menu->addAction(tr("Grid..."));
+		no->setDisabled(true);
+		return;
+	}
 	m->addGridImportMenu(menu);
 }
 
