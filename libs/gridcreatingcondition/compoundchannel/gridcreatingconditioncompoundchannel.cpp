@@ -12,8 +12,9 @@
 #include "private/gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_definepolylinenewpointcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_movepolygoncommand.h"
-#include "private/gridcreatingconditioncompoundchannel_movepolylinecommand.h"
 #include "private/gridcreatingconditioncompoundchannel_movepolygonvertexcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolylinecommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolylinevertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_switchstatuscommand.h"
@@ -218,75 +219,6 @@ void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*
 	}
 }
 
-class GridCreatingConditionCompoundChannel::MovePolyLineVertexCommand : public QUndoCommand
-{
-public:
-	MovePolyLineVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygonal Line Vertex")}
-	{
-		m_keyDown = keyDown;
-		m_vertexId = vertexId;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] += m_offset.x();
-		p[1] += m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] -= m_offset.x();
-		p[1] -= m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelPolyLineMoveVertex");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolyLineVertexCommand* comm = dynamic_cast<const MovePolyLineVertexCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetLine != m_targetLine) {return false;}
-		if (comm->m_vertexId != m_vertexId) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-	QVector2D m_offset;
-};
-
 class GridCreatingConditionCompoundChannel::AddPolyLineVertexCommand : public QUndoCommand
 {
 public:
@@ -461,7 +393,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 				m_currentPoint = event->pos();
 				break;
 			case meMoveVertex:
-				iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, event->pos(), m_selectedLine->selectedVertexId(), this));
+				pushRenderCommand(new MovePolyLineVertexCommand(false, m_currentPoint, event->pos(), m_selectedLine->selectedVertexId(), this));
 				m_currentPoint = event->pos();
 				break;
 			case meAddVertex:
@@ -762,7 +694,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 					m_mouseEventMode = meMoveVertex;
 					m_currentPoint = event->pos();
 					// push the first move command.
-					iRICUndoStack::instance().push(new MovePolyLineVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedLine->selectedVertexId(), this));
+					pushRenderCommand(new MovePolyLineVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedLine->selectedVertexId(), this));
 					break;
 				case meAddVertexPrepare:
 					m_mouseEventMode = meAddVertex;
