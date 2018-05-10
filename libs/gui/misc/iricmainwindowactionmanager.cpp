@@ -241,6 +241,7 @@ void iRICMainWindowActionManager::setupImportMenu()
 	m_hydraulicDataImportMenu = importMenu->addMenu(tr("&Hydraulic Data"));
 	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
 
+	addGridCreatingConditionImportMenu(importMenu);
 	addGridImportMenu(importMenu);
 	importMenu->addAction(importCalcCondAction);
 	importMenu->addAction(importCgnsAction);
@@ -255,6 +256,7 @@ void iRICMainWindowActionManager::setupExportMenu()
 	m_exportMenu->clear();
 	m_geoDataExportMenu = m_exportMenu->addMenu(tr("G&eographic Data"));
 	connect(m_geoDataExportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataExportMenu()));
+	addGridCreatingConditionExportMenu(m_exportMenu);
 	addGridExportMenu(m_exportMenu);
 //	exportCgnsAction = new QAction(tr("&Case (CGNS file)..."), m_exportMenu);
 //	m_exportMenu->addAction(exportCgnsAction);
@@ -1125,6 +1127,18 @@ void iRICMainWindowActionManager::updateWindowList()
 		m_windowActivationMapper->setMapping(a, w);
 		++i;
 	}
+}
+
+void iRICMainWindowActionManager::addGridCreatingConditionImportMenu(QMenu* menu)
+{
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	pre->addGridCreatingConditionImportMenu(menu);
+}
+
+void iRICMainWindowActionManager::addGridCreatingConditionExportMenu(QMenu* menu)
+{
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	pre->addGridCreatingConditionExportMenu(menu);
 }
 
 void iRICMainWindowActionManager::addGridImportMenu(QMenu* menu)

@@ -384,7 +384,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorDataModel</name>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="143"/>
-        <location filename="../preprocessordatamodel.cpp" line="1267"/>
+        <location filename="../preprocessordatamodel.cpp" line="1431"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
@@ -542,10 +542,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="444"/>
-        <location filename="../preprocessordatamodel.cpp" line="701"/>
-        <location filename="../preprocessordatamodel.cpp" line="713"/>
-        <location filename="../preprocessordatamodel.cpp" line="780"/>
-        <location filename="../preprocessordatamodel.cpp" line="792"/>
+        <location filename="../preprocessordatamodel.cpp" line="858"/>
+        <location filename="../preprocessordatamodel.cpp" line="870"/>
+        <location filename="../preprocessordatamodel.cpp" line="937"/>
+        <location filename="../preprocessordatamodel.cpp" line="949"/>
         <source>&amp;Grid</source>
         <translation type="unfinished"></translation>
     </message>
@@ -576,36 +576,59 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="686"/>
-        <location filename="../preprocessordatamodel.cpp" line="765"/>
+        <location filename="../preprocessordatamodel.cpp" line="714"/>
+        <source>Gr&amp;id Creating Condition...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="742"/>
+        <location filename="../preprocessordatamodel.cpp" line="922"/>
         <source>&amp;Grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="845"/>
-        <location filename="../preprocessordatamodel.cpp" line="875"/>
+        <location filename="../preprocessordatamodel.cpp" line="757"/>
+        <location filename="../preprocessordatamodel.cpp" line="807"/>
+        <location filename="../preprocessordatamodel.cpp" line="819"/>
+        <source>Gr&amp;id Creating Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="769"/>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="1002"/>
+        <location filename="../preprocessordatamodel.cpp" line="1032"/>
         <source>(No data to import)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="969"/>
+        <location filename="../preprocessordatamodel.cpp" line="1126"/>
         <source>(No data to export)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1038"/>
+        <location filename="../preprocessordatamodel.cpp" line="1195"/>
         <source>(No algorithm is selected yet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1095"/>
+        <location filename="../preprocessordatamodel.cpp" line="1199"/>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="1259"/>
         <source>Add New %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="132"/>
-        <location filename="../preprocessordatamodel.cpp" line="1162"/>
-        <location filename="../preprocessordatamodel.cpp" line="1188"/>
-        <location filename="../preprocessordatamodel.cpp" line="1244"/>
+        <location filename="../preprocessordatamodel.cpp" line="1326"/>
+        <location filename="../preprocessordatamodel.cpp" line="1352"/>
+        <location filename="../preprocessordatamodel.cpp" line="1408"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -620,53 +643,53 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1162"/>
+        <location filename="../preprocessordatamodel.cpp" line="1326"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1188"/>
+        <location filename="../preprocessordatamodel.cpp" line="1352"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1202"/>
-        <location filename="../preprocessordatamodel.cpp" line="1271"/>
+        <location filename="../preprocessordatamodel.cpp" line="1366"/>
+        <location filename="../preprocessordatamodel.cpp" line="1435"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1202"/>
+        <location filename="../preprocessordatamodel.cpp" line="1366"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1244"/>
+        <location filename="../preprocessordatamodel.cpp" line="1408"/>
         <source>There is no geographic data to import this hydraulic data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1253"/>
+        <location filename="../preprocessordatamodel.cpp" line="1417"/>
         <source>Select geographic data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1254"/>
+        <location filename="../preprocessordatamodel.cpp" line="1418"/>
         <source>Please select the geographic data to import hydraulic data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1271"/>
+        <location filename="../preprocessordatamodel.cpp" line="1435"/>
         <source>Importing %1 succeeded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1275"/>
+        <location filename="../preprocessordatamodel.cpp" line="1439"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1275"/>
+        <location filename="../preprocessordatamodel.cpp" line="1439"/>
         <source>Importing %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1920,6 +1943,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="362"/>
+        <source>Gr&amp;id Creating Condition...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessorwindow.cpp" line="379"/>
         <source>Grid...</source>
         <translation type="unfinished"></translation>
     </message>

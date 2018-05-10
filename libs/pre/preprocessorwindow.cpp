@@ -354,6 +354,23 @@ void PreProcessorWindow::handleAdditionalMenusUpdate(const QList<QMenu*>& m)
 	emit additionalMenusUpdated(menus);
 }
 
+void PreProcessorWindow::addGridCreatingConditionImportMenu(QMenu* menu)
+{
+	PreProcessorDataModel* m = model();
+	if (m == nullptr) {
+		// add dummy disabled menu
+		QAction* no = menu->addAction(tr("Gr&id Creating Condition..."));
+		no->setDisabled(true);
+		return;
+	}
+	m->addGridCreatingConditionImportMenu(menu);
+}
+
+void PreProcessorWindow::addGridCreatingConditionExportMenu(QMenu* menu)
+{
+	model()->addGridCreatingConditionExportMenu(menu);
+}
+
 void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 {
 	PreProcessorDataModel* m = model();

@@ -62,6 +62,8 @@ public:
 	const QList<QMenu*>& additionalMenus() const {
 		return m_additionalMenus;
 	}
+	void addGridCreatingConditionImportMenu(QMenu* menu);
+	void addGridCreatingConditionExportMenu(QMenu* menu);
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
 	void setupGeoDataImportMenu(QMenu* menu);
@@ -118,9 +120,13 @@ private:
 	static PreProcessorBackgroundImageDataItem* getBackgroundImageItem(GraphicsWindowDataItem* item);
 	static PreProcessorBCSettingDataItem* getBCSettingDataItem(GraphicsWindowDataItem* item);
 
+	bool addGridCreatingConditionImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
+	bool addGridCreatingConditionImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
+	bool addGridCreatingConditionExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
+	bool addGridCreatingConditionExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
 	bool addGridImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
 	bool addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
-	bool addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool setname);
+	bool addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
 	bool addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
 	bool setupGeoDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
 	bool setupGeoDataImportFromWebMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
