@@ -10,6 +10,7 @@
 
 #include "private/gridcreatingconditioncompoundchannel_addpolygonvertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_definepolylinenewpointcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_movepolygoncommand.h"
 #include "private/gridcreatingconditioncompoundchannel_movepolygonvertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
@@ -215,75 +216,6 @@ void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*
 		defineLine(true);
 	}
 }
-
-class GridCreatingConditionCompoundChannel::DefinePolyLineNewPointCommand : public QUndoCommand
-{
-public:
-	DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* cond) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Add New Center Line Point")}
-	{
-		m_keyDown = keyDown;
-		double dx = point.x();
-		double dy = point.y();
-		cond->graphicsView()->viewportToWorld(dx, dy);
-		m_newPoint = QVector2D(dx, dy);
-		m_condition = cond;
-		m_targetLine = m_condition->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown) {
-			// add new point.
-			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 0) {
-				m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meDefining;
-			}
-			line->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-			line->GetPoints()->Modified();
-		} else {
-			// modify the last point.
-			vtkIdType lastId = line->GetNumberOfPoints() - 1;
-			line->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-			line->GetPoints()->Modified();
-		}
-		line->Modified();
-		m_targetLine->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown) {
-			// decrease the number of points. i. e. remove the last point.
-			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 1) {
-				m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meBeforeDefining;
-			}
-			line->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-			line->GetPoints()->Modified();
-		} else {
-			// this does not happen. no implementation needed.
-		}
-		line->Modified();
-		m_targetLine->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelDefinePolyLineNewPoint");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const DefinePolyLineNewPointCommand* comm = dynamic_cast<const DefinePolyLineNewPointCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_condition != m_condition) {return false;}
-		m_newPoint = comm->m_newPoint;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_condition;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-	QVector2D m_newPoint;
-};
 
 class GridCreatingConditionCompoundChannel::MovePolyLineCommand : public QUndoCommand
 {
@@ -532,7 +464,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 		// defining a polyline.
 		// update the position of the last point.
 		if (m_mouseEventMode == meDefining) {
-			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, event->pos(), this));
+			pushRenderCommand(new DefinePolyLineNewPointCommand(false, event->pos(), this));
 		}
 	} else if (m_status == stNormal) {
 		// defining stage finished.
@@ -781,9 +713,9 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 			case meBeforeDefining:
 				// enter defining mode.
 				m_mouseEventMode = meDefining;
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 			case meDefining:
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 				break;
 			default:
 				break;
