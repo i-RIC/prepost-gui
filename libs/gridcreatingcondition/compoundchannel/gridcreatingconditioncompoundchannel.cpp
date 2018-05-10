@@ -18,6 +18,7 @@
 #include "private/gridcreatingconditioncompoundchannel_movepolylinevertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h"
+#include "private/gridcreatingconditioncompoundchannel_removepolygonvertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_switchstatuscommand.h"
 
 #include <guibase/widget/waitdialog.h>
@@ -314,75 +315,6 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 	}
 }
 
-class GridCreatingConditionCompoundChannel::RemovePolygonVertexCommand : public QUndoCommand
-{
-public:
-	RemovePolygonVertexCommand(vtkIdType vertexId, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Remove Polygon Vertex")}
-	{
-		m_vertexId = vertexId;
-		double p[3];
-		pol->m_selectedPolygon->getVtkPolygon()->GetPoints()->GetPoint(m_vertexId, p);
-		m_vertexPosition = QVector2D(p[0], p[1]);
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_polygon->m_mouseEventMode = GridCreatingConditionCompoundChannel::meNormal;
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-private:
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-};
-
 class GridCreatingConditionCompoundChannel::RemovePolyLineVertexCommand : public QUndoCommand
 {
 public:
@@ -541,7 +473,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 						// @todo
 //						deletePolygon(true);
 					} else {
-						iRICUndoStack::instance().push(new RemovePolygonVertexCommand(m_selectedPolygon->selectedVertexId(), this));
+						pushRenderCommand(new RemovePolygonVertexCommand(m_selectedPolygon->selectedVertexId(), this));
 					}
 					m_inhibitSelect = true;
 					break;
