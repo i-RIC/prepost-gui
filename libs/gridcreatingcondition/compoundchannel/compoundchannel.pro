@@ -111,6 +111,7 @@ HEADERS += gcc_compoundchannel_global.h \
            private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h \
            private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h \
            private/gridcreatingconditioncompoundchannel_removepolygonvertexcommand.h \
+           private/gridcreatingconditioncompoundchannel_removepolylinevertexcommand.h \
            private/gridcreatingconditioncompoundchannel_switchstatuscommand.h
 FORMS += gridcreatingconditioncompoundchannelsettingdialog.ui
 SOURCES += gridcreatingconditioncompoundchannel.cpp \
@@ -136,6 +137,7 @@ SOURCES += gridcreatingconditioncompoundchannel.cpp \
            private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.cpp \
            private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.cpp \
            private/gridcreatingconditioncompoundchannel_removepolygonvertexcommand.cpp \
+           private/gridcreatingconditioncompoundchannel_removepolylinevertexcommand.cpp \
            private/gridcreatingconditioncompoundchannel_switchstatuscommand.cpp
 RESOURCES += compoundchannel.qrc
 TRANSLATIONS += languages/iricGccCompoundchannel_es_ES.ts \
