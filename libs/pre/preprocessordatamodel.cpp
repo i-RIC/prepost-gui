@@ -1037,11 +1037,18 @@ void PreProcessorDataModel::setupGridCreationMenuContent()
 	if (dummy == nullptr) {
 		QAction* dummyAction = gridCreationMenu->addAction(tr("(No algorithm is selected yet)"));
 		dummyAction->setDisabled(true);
+		gridCreationMenu->addSeparator();
+		gridCreationMenu->addAction(gcItem->importAction());
+		QAction* dummyExportMenu = gridCreationMenu->addAction(QIcon(":/libs/guibase/images/iconExport.png"), tr("&Export..."));
+		dummyExportMenu->setDisabled(true);
 	} else {
 		gridCreationMenu->addActions(dummy->actions());
 
 		gridCreationMenu->addSeparator();
 		gridCreationMenu->addAction(gcItem->clearAction());
+		gridCreationMenu->addSeparator();
+		gridCreationMenu->addAction(gcItem->importAction());
+		gridCreationMenu->addAction(gcItem->exportAction());
 	}
 }
 
