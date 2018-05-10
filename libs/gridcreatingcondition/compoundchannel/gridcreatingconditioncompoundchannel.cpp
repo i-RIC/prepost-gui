@@ -8,6 +8,7 @@
 #include "gridcreatingconditioncompoundchannelsettingdialog.h"
 #include "gridcreatingconditioncompoundchannelspline.h"
 
+#include "private/gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_switchstatuscommand.h"
@@ -211,69 +212,6 @@ void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*
 		defineLine(true);
 	}
 }
-
-class GridCreatingConditionCompoundChannel::DefinePolygonNewPointCommand : public QUndoCommand
-{
-public:
-	DefinePolygonNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Add New Polygon Point")}
-	{
-		m_keyDown = keyDown;
-		double dx = point.x();
-		double dy = point.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		m_newPoint = QVector2D(dx, dy);
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown) {
-			// add new point.
-			pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-			pol->GetPoints()->Modified();
-		} else {
-			// modify the last point.
-			vtkIdType lastId = pol->GetNumberOfPoints() - 1;
-			pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-			pol->GetPoints()->Modified();
-		}
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown) {
-			// decrease the number of points. i. e. remove the last point.
-			vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
-			pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-			pol->GetPoints()->Modified();
-		} else {
-			// this does not happen. no implementation needed.
-		}
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelPolygonDefineNewPoint");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const DefinePolygonNewPointCommand* comm = dynamic_cast<const DefinePolygonNewPointCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-		m_newPoint = comm->m_newPoint;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-	QVector2D m_newPoint;
-};
 
 class GridCreatingConditionCompoundChannel::MovePolygonCommand : public QUndoCommand
 {
@@ -818,7 +756,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 		// defining a polygon
 		// update the position of the last point.
 		if (m_mouseEventMode == meDefining) {
-			iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefinePolygonNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		}
 	} else if (m_status == stDefiningCenterLine) {
 		// defining a polyline.
@@ -1058,9 +996,9 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 			case meBeforeDefining:
 				// enter defining mode.
 				m_mouseEventMode = meDefining;
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolygonNewPointCommand(true, event->pos(), this));
 			case meDefining:
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolygonNewPointCommand(true, event->pos(), this));
 				break;
 			default:
 				break;
