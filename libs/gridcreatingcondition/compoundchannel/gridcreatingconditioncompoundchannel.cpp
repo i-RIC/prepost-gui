@@ -12,6 +12,7 @@
 #include "private/gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_definepolylinenewpointcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_movepolygoncommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolylinecommand.h"
 #include "private/gridcreatingconditioncompoundchannel_movepolygonvertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h"
@@ -216,75 +217,6 @@ void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*
 		defineLine(true);
 	}
 }
-
-class GridCreatingConditionCompoundChannel::MovePolyLineCommand : public QUndoCommand
-{
-public:
-	MovePolyLineCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygonal Line")}
-	{
-		m_keyDown = keyDown;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double p[3];
-			points->GetPoint(i, p);
-			p[0] += m_offset.x();
-			p[1] += m_offset.y();
-			points->SetPoint(i, p);
-		}
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double p[3];
-			points->GetPoint(i, p);
-			p[0] -= m_offset.x();
-			p[1] -= m_offset.y();
-			points->SetPoint(i, p);
-		}
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelMovePolyLine");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolyLineCommand* comm = dynamic_cast<const MovePolyLineCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetLine != m_targetLine) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-	QVector2D m_offset;
-};
 
 class GridCreatingConditionCompoundChannel::MovePolyLineVertexCommand : public QUndoCommand
 {
@@ -525,7 +457,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 				break;
 			case meTranslate:
 				// execute translation.
-				iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, event->pos(), this));
+				pushRenderCommand(new MovePolyLineCommand(false, m_currentPoint, event->pos(), this));
 				m_currentPoint = event->pos();
 				break;
 			case meMoveVertex:
@@ -823,7 +755,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 						m_mouseEventMode = meTranslate;
 						m_currentPoint = event->pos();
 						// push the first translation command.
-						iRICUndoStack::instance().push(new MovePolyLineCommand(true, m_currentPoint, m_currentPoint, this));
+						pushRenderCommand(new MovePolyLineCommand(true, m_currentPoint, m_currentPoint, this));
 					}
 					break;
 				case meMoveVertexPrepare:
