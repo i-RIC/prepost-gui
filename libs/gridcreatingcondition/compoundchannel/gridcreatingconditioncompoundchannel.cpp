@@ -526,13 +526,13 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 		// defining a polygon
 		// update the position of the last point.
 		if (m_mouseEventMode == meDefining) {
-			pushRenderCommand(new DefinePolygonNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefinePolygonNewPointCommand(false, event->pos(), this));
 		}
 	} else if (m_status == stDefiningCenterLine) {
 		// defining a polyline.
 		// update the position of the last point.
 		if (m_mouseEventMode == meDefining) {
-			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, event->pos(), this));
 		}
 	} else if (m_status == stNormal) {
 		// defining stage finished.
@@ -546,7 +546,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 			case meAddVertexNotPossible:
 			case meRemoveVertexPrepare:
 			case meRemoveVertexNotPossible:
-				m_currentPoint = QPoint(event->x(), event->y());
+				m_currentPoint = event->pos();
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				break;
@@ -557,15 +557,15 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 				break;
 			case meTranslate:
 				// execute translation.
-				pushRenderCommand(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				pushRenderCommand(new MovePolygonCommand(false, m_currentPoint, event->pos(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meMoveVertex:
-				pushRenderCommand(new MovePolygonVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				pushRenderCommand(new MovePolygonVertexCommand(false, m_currentPoint, event->pos(), m_selectedPolygon->selectedVertexId(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meAddVertex:
-				pushRenderCommand(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				pushRenderCommand(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 				break;
 			case meTranslateDialog:
 				break;
@@ -582,7 +582,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 			case meAddVertexNotPossible:
 			case meRemoveVertexPrepare:
 			case meRemoveVertexNotPossible:
-				m_currentPoint = QPoint(event->x(), event->y());
+				m_currentPoint = event->pos();
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				break;
@@ -593,15 +593,15 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 				break;
 			case meTranslate:
 				// execute translation.
-				iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, event->pos(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meMoveVertex:
-				iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedLine->selectedVertexId(), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, event->pos(), m_selectedLine->selectedVertexId(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meAddVertex:
-				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), event->pos(), this));
 				break;
 			case meTranslateDialog:
 				break;
@@ -817,20 +817,20 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 					} else {
 						// start translating
 						m_mouseEventMode = meTranslate;
-						m_currentPoint = QPoint(event->x(), event->y());
+						m_currentPoint = event->pos();
 						// push the first translation command.
 						pushRenderCommand(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
 					}
 					break;
 				case meMoveVertexPrepare:
 					m_mouseEventMode = meMoveVertex;
-					m_currentPoint = QPoint(event->x(), event->y());
+					m_currentPoint = event->pos();
 					// push the first move command.
 					pushRenderCommand(new MovePolygonVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
 					break;
 				case meAddVertexPrepare:
 					m_mouseEventMode = meAddVertex;
-					pushRenderCommand(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+					pushRenderCommand(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 					break;
 				case meAddVertexNotPossible:
 					// do nothing.
@@ -889,20 +889,20 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 					} else {
 						// start translating
 						m_mouseEventMode = meTranslate;
-						m_currentPoint = QPoint(event->x(), event->y());
+						m_currentPoint = event->pos();
 						// push the first translation command.
 						iRICUndoStack::instance().push(new MovePolyLineCommand(true, m_currentPoint, m_currentPoint, this));
 					}
 					break;
 				case meMoveVertexPrepare:
 					m_mouseEventMode = meMoveVertex;
-					m_currentPoint = QPoint(event->x(), event->y());
+					m_currentPoint = event->pos();
 					// push the first move command.
 					iRICUndoStack::instance().push(new MovePolyLineVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedLine->selectedVertexId(), this));
 					break;
 				case meAddVertexPrepare:
 					m_mouseEventMode = meAddVertex;
-					iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+					iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), event->pos(), this));
 					break;
 				case meAddVertexNotPossible:
 					// do nothing.
@@ -949,7 +949,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 		}
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		m_dragStartPoint = event->pos();
 	}
 }
 
@@ -967,7 +967,7 @@ void GridCreatingConditionCompoundChannel::mouseReleaseEvent(QMouseEvent* event,
 		case meTranslate:
 		case meMoveVertex:
 		case meAddVertex:
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			updateActionStatus();
