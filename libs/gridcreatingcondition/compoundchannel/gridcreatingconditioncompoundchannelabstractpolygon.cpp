@@ -1,6 +1,7 @@
 #include "gridcreatingconditioncompoundchannel.h"
 #include "gridcreatingconditioncompoundchannelabstractpolygon.h"
 
+#include <guibase/vtktool/vtkpointsutil.h>
 #include <misc/errormessage.h>
 
 #include <QMap>
@@ -238,6 +239,38 @@ void GridCreatingConditionCompoundChannelAbstractPolygon::setZDepthRange(double 
 	m_vertexActor->SetPosition(0, 0, max);
 	m_edgeActor->SetPosition(0, 0, max);
 	m_paintActor->SetPosition(0, 0, min);
+}
+
+QPointF GridCreatingConditionCompoundChannelAbstractPolygon::vertex(int index) const
+{
+	double p[3];
+	getVtkPolygon()->GetPoints()->GetPoint(index, p);
+	return QPointF(p[0], p[1]);
+}
+
+void GridCreatingConditionCompoundChannelAbstractPolygon::insertVertex(int index, const QPointF& vertex)
+{
+	auto coords = vtkPointsUtil::getCoordinates(getVtkPolygon());
+	coords.insert(coords.begin() + index, vertex);
+	vtkPointsUtil::setCoordinates(getVtkPolygon(), coords);
+	updateShapeData();
+}
+
+void GridCreatingConditionCompoundChannelAbstractPolygon::setVertex(int index, const QPointF& vertex)
+{
+	auto pol = getVtkPolygon();
+	pol->GetPoints()->SetPoint(index, vertex.x(), vertex.y(), 0);
+	pol->GetPoints()->Modified();
+	pol->Modified();
+	updateShapeData();
+}
+
+void GridCreatingConditionCompoundChannelAbstractPolygon::removeVertex(int index)
+{
+	auto coords = vtkPointsUtil::getCoordinates(getVtkPolygon());
+	coords.erase(coords.begin() + index);
+	vtkPointsUtil::setCoordinates(getVtkPolygon(), coords);
+	updateShapeData();
 }
 
 void GridCreatingConditionCompoundChannelAbstractPolygon::setActive(bool active)
