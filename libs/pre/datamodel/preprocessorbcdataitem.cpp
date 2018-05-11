@@ -20,6 +20,7 @@
 #include <QLocale>
 #include <QMenu>
 #include <QMouseEvent>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>

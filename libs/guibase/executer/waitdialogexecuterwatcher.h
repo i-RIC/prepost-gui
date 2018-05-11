@@ -3,6 +3,7 @@
 
 #include "../guibase_global.h"
 #include "executerwatcher.h"
+
 #include <QObject>
 
 class WaitDialog;

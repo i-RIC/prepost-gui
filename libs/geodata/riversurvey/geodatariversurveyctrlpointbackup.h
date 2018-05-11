@@ -2,9 +2,10 @@
 #define GEODATARIVERSURVEYCTRLPOINTBACKUP_H
 
 #include "gd_riversurvey_global.h"
+#include "geodatariverpathpoint.h"
+
 #include <QList>
 #include <QVector>
-#include "geodatariverpathpoint.h"
 
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCtrlPointBackup
 {

@@ -18,12 +18,11 @@
 #include <solverconsole/solverconsolewindow.h>
 
 #include <QAction>
-#include <QComboBox>
-#include <QList>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenuBar>
 #include <QPainter>
+#include <QSignalMapper>
 #include <QStatusBar>
 
 iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)

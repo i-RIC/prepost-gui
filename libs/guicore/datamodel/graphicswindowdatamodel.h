@@ -6,19 +6,20 @@
 #include "../project/projectdataitem.h"
 #include "graphicswindowsimpledatamodel.h"
 
-class QPoint;
-class QMenu;
-class QMainWindow;
-class QToolBar;
-class QModelIndex;
-class QGraphicsItem;
-class QStandardItem;
-class QStandardItemModel;
-class GraphicsWindowRootDataItem;
 class GraphicsWindowDataItem;
+class GraphicsWindowRootDataItem;
 class ObjectBrowserView;
 class ProjectData;
 class VTKGraphicsView;
+
+class QGraphicsItem;
+class QMainWindow;
+class QMenu;
+class QModelIndex;
+class QPoint;
+class QStandardItem;
+class QStandardItemModel;
+class QToolBar;
 
 class GUICOREDLL_EXPORT GraphicsWindowDataModel : public GraphicsWindowSimpleDataModel
 {

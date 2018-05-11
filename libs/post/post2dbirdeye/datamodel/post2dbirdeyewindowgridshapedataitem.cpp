@@ -6,6 +6,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
+#include <QIcon>
 #include <QUndoCommand>
 
 #include <vtkActor2DCollection.h>

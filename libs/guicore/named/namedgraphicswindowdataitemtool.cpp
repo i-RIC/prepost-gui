@@ -1,6 +1,8 @@
 #include "namedgraphicswindowdataitemtool.h"
 #include "namedgraphicwindowdataitem.h"
 
+#include <QStandardItem>
+
 bool NamedGraphicsWindowDataItemTool::checkItemWithName(const std::string& name, const std::vector<GraphicsWindowDataItem*>& items, bool noSignal)
 {
 	NamedGraphicWindowDataItem* itemToCheck = nullptr;

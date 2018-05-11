@@ -1,9 +1,6 @@
 #ifndef GEODATAPOINTMAPBREAKLINE_H
 #define GEODATAPOINTMAPBREAKLINE_H
 
-class QVector2D;
-class PreProcessorGraphicsView;
-class GeoDataPointmap;
 #include <QObject>
 #include <QVector>
 #include <QVector2D>
@@ -13,11 +10,14 @@ class GeoDataPointmap;
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
-#include <vtkDoubleArray.h>
 #include <vtkPolyData.h>
 #include <vtkPolyLine.h>
 
+class GeoDataPointmap;
+class PreProcessorGraphicsView;
+
 class QLineF;
+class QVector2D;
 
 class GeoDataPointmapBreakLine : public QObject
 {

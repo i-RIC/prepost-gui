@@ -4,7 +4,6 @@
 #include "../../guicore_global.h"
 
 #include <QObject>
-#include <QVariant>
 
 #include <string>
 

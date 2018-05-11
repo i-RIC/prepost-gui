@@ -14,6 +14,7 @@
 #include <QMainWindow>
 #include <QMouseEvent>
 #include <QSettings>
+#include <QStandardItem>
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 

@@ -16,6 +16,7 @@
 #include <QMap>
 #include <QMenu>
 #include <QMessageBox>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <iriclib.h>

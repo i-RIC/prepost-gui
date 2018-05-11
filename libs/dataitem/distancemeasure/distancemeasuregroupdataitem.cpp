@@ -8,6 +8,7 @@
 
 #include <QDomNode>
 #include <QMenu>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 DistanceMeasureGroupDataItem::Impl::Impl(DistanceMeasureGroupDataItem *parent) :

@@ -3,7 +3,8 @@
 
 #include "gd_riversurvey_global.h"
 #include <guicore/pre/geodata/geodatacreator.h>
-#include <guicore/solverdef/solverdefinitiongridattributet.h>
+
+class SolverDefinitionGridAttribute;
 
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCreator : public GeoDataCreator
 {

@@ -2,10 +2,11 @@
 #define STARTPAGERECENTSOLVERLIST_H
 
 #include <QWidget>
-#include <QVBoxLayout>
 
 class SolverDefinitionList;
 class SolverDefinitionAbstract;
+
+class QVBoxLayout;
 
 class StartPageRecentSolverList : public QWidget
 {

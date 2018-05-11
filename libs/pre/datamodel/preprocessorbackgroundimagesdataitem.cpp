@@ -12,6 +12,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMainWindow>
+#include <QStandardItem>
 
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>

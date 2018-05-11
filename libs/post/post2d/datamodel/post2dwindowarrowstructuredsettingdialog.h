@@ -6,6 +6,7 @@
 #include "post2dwindownodevectorarrowstructuredsetting.h"
 
 #include <QDialog>
+#include <QMap>
 
 class PostZoneDataContainer;
 class Post2dWindowGridTypeDataItem;

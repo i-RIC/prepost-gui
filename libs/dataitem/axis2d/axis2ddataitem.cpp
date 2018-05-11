@@ -4,6 +4,9 @@
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 
+#include <QIcon>
+#include <QStandardItem>
+
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
 

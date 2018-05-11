@@ -3,9 +3,9 @@
 
 #include "geoio_global.h"
 
-#include <QPointF>
-
 #include <vector>
+
+class QPointF;
 
 using accept_callback = void (*)(const std::vector<QPointF>& coords);
 using reject_callback = void (*)();

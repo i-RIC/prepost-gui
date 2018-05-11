@@ -2,7 +2,6 @@
 #define GEODATANETCDFIMPORTERSETTINGDIALOG_H
 
 #include <QDialog>
-#include <QComboBox>
 
 namespace Ui
 {
@@ -10,6 +9,8 @@ namespace Ui
 }
 
 class SolverDefinitionGridAttribute;
+
+class QComboBox;
 
 class GeoDataNetcdfImporterSettingDialog : public QDialog
 {

@@ -2,16 +2,8 @@
 #define GEODATANETCDFT_H
 
 #include "geodatanetcdf.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <misc/stringtool.h>
+
 #include <vtkSmartPointer.h>
-#include <vtkCellData.h>
-#include <vtkVertex.h>
-#include <vtkIntArray.h>
-#include <vtkDoubleArray.h>
 
 #include <vector>
 

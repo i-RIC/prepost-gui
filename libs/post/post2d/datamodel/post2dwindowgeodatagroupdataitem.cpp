@@ -11,6 +11,7 @@
 
 #include <QDomNodeList>
 #include <QMap>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <algorithm>

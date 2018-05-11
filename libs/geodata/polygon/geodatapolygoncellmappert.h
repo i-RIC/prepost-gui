@@ -5,10 +5,6 @@
 
 #include <guicore/pre/geodata/geodatacellmappert.h>
 
-#include <vtkCell.h>
-#include <vtkDataSetTriangleFilter.h>
-#include <vtkSmartPointer.h>
-
 template <class V, class DA>
 class GeoDataPolygonCellMapperT : public GeoDataCellMapperT<V, DA>
 {

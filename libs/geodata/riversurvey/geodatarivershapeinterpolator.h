@@ -4,9 +4,8 @@
 #include "gd_riversurvey_global.h"
 #include <misc/linearinterpolator.h>
 #include "geodatarivercrosssection.h"
-#include <QList>
+
 #include <QVector>
-#include <QMap>
 
 class GeoDataRiverPathPoint;
 

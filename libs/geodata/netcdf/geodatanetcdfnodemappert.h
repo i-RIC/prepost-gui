@@ -3,9 +3,9 @@
 
 #include "geodatanetcdft.h"
 
-#include <guicore/pre/geodata/geodatamappersettingi.h>
 #include <guicore/pre/geodata/geodatanodemappert.h>
-#include <misc/doublemappingsetting.h>
+
+class GeoDataMapperSettingI;
 
 template <class V, class DA>
 class GeoDataNetcdfNodeMapperT : public GeoDataNodeMapperT<V, DA>

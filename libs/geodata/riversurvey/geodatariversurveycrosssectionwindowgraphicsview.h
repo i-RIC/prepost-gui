@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOWGRAPHICSVIEW_H
 
 #include "geodatarivercrosssection.h"
+
 #include <QAbstractItemView>
 
 class QPainter;

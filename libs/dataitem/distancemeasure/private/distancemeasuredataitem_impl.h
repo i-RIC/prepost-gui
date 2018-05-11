@@ -3,6 +3,9 @@
 
 #include "../distancemeasuredataitem.h"
 
+#include <guibase/vtktool/vtklabel2dactor.h>
+#include <guibase/vtktool/vtklineactor.h>
+
 class DistanceMeasureDataItem::Impl
 {
 public:

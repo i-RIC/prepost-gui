@@ -7,6 +7,7 @@
 #include <QMutexLocker>
 #include <QPointF>
 #include <QPolygonF>
+#include <QVector2D>
 
 #include <vtkPointData.h>
 #include <vtkProperty.h>

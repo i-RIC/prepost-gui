@@ -24,6 +24,7 @@
 #include <QColorDialog>
 #include <QLabel>
 #include <QMessageBox>
+#include <QStandardItem>
 #include <QToolBar>
 #include <QUndoCommand>
 

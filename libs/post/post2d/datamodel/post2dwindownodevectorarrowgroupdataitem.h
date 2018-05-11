@@ -25,6 +25,7 @@
 #include <vtkScalarBarWidget.h>
 
 #include <QColor>
+#include <QMap>
 
 class vtkPointSet;
 class NamedGraphicWindowDataItem;

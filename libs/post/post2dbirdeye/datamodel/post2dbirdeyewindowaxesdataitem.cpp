@@ -3,6 +3,8 @@
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 
+#include <QStandardItem>
+
 #include <vtkActorCollection.h>
 #include <vtkCaptionActor2D.h>
 #include <vtkProperty.h>

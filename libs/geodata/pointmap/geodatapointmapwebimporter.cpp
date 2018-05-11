@@ -20,6 +20,8 @@
 #include <QNetworkReply>
 #include <QThread>
 
+#include <vtkDoubleArray.h>
+
 GeoDataPointmapWebImporter::GeoDataPointmapWebImporter(GeoDataCreator* creator) :
 	GeoDataWebImporter("csvtile", tr("Web CSV tile"), creator),
 	m_webAccessManager {new QNetworkAccessManager(this)},

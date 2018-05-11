@@ -9,9 +9,6 @@
 
 #include <QList>
 
-#include <vtkCell.h>
-#include <vtkSmartPointer.h>
-
 class GeoDataPointmapCellMapperSetting : public GeoDataMapperSettingI
 {
 public:

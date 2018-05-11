@@ -4,13 +4,13 @@
 #include "../guicore_global.h"
 #include "graphicswindowdataitem.h"
 
-#include <vtkSmartPointer.h>
+#include <vtkActor.h>
 #include <vtkAxesActor.h>
 #include <vtkOrientationMarkerWidget.h>
 #include <vtkPolyData.h>
-#include <vtkPolygon.h>
 #include <vtkPolyDataMapper.h>
-#include <vtkActor.h>
+#include <vtkPolygon.h>
+#include <vtkSmartPointer.h>
 
 class QVector2D;
 class QPolygonF;

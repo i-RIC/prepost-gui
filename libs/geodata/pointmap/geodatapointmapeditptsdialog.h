@@ -2,6 +2,7 @@
 #define GEODATAPOINTMAPEDITPTSDIALOG_H
 
 #include <QDialog>
+
 class GeoDataPointmap;
 
 namespace Ui

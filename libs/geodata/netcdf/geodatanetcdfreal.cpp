@@ -1,5 +1,7 @@
 #include "geodatanetcdfreal.h"
 
+#include <vtkDoubleArray.h>
+
 GeoDataNetcdfReal::GeoDataNetcdfReal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
 	GeoDataNetcdfT<double, vtkDoubleArray> {d, creator, condition}
 {}

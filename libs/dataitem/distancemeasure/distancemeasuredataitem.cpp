@@ -20,6 +20,7 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QMouseEvent>
+#include <QStandardItem>
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 

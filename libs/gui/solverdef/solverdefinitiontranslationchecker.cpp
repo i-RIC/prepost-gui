@@ -10,6 +10,7 @@
 #include <QDomElement>
 #include <QDomNode>
 #include <QTextStream>
+#include <QXmlStreamWriter>
 
 void SolverDefinitionTranslationChecker::TranslationMessage::save(QXmlStreamWriter& writer) const
 {

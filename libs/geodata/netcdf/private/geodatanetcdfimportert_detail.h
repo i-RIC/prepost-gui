@@ -3,6 +3,8 @@
 
 #include "../geodatanetcdfimportert.h"
 
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+
 template <class V, class DA>
 GeoDataNetcdfImporterT<V, DA>::GeoDataNetcdfImporterT(GeoDataCreator* creator) :
 	GeoDataNetcdfImporter {creator}

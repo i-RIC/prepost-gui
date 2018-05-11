@@ -72,9 +72,6 @@
 #include <QDesktopServices>
 #include <QDesktopWidget>
 #include <QFileDialog>
-#include <QInputDialog>
-#include <QLabel>
-#include <QMap>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenu>
@@ -89,12 +86,7 @@
 #include <QStatusBar>
 #include <QThread>
 #include <QTime>
-#include <QVector2D>
 #include <QXmlStreamWriter>
-
-#include <vtkGL2PSExporter.h>
-#include <vtkObject.h>
-#include <vtkSmartPointer.h>
 
 const int iRICMainWindow::MAX_RECENT_PROJECTS = 10;
 const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;

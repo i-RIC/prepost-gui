@@ -2,6 +2,7 @@
 #define PREFERENCEPAGEGRAPHICSDEFAULT_H
 
 #include "preferencepage.h"
+
 #include <QSettings>
 
 namespace Ui

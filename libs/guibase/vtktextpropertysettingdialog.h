@@ -2,6 +2,7 @@
 #define VTKTEXTPROPERTYSETTINGDIALOG_H
 
 #include "guibase_global.h"
+
 #include <QDialog>
 #include <QString>
 

@@ -3,6 +3,10 @@
 
 #include "../edge.h"
 
+#include <QHash>
+
+#include <vtkType.h>
+
 inline Edge::Edge()
 {
 	m_vertex1 = 0;

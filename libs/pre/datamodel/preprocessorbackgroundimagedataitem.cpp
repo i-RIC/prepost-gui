@@ -5,6 +5,7 @@
 #include <guicore/project/backgroundimageinfodialog.h>
 
 #include <QAction>
+#include <QStandardItem>
 #include <QToolBar>
 
 #include <vtkRenderer.h>

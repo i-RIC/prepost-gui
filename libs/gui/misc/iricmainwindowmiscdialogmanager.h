@@ -2,10 +2,9 @@
 #define IRICMAINWINDOWMISCDIALOGMANAGER_H
 
 #include <QObject>
-class QDomNode;
+
 class iRICMetaData;
 class iRICMainWindow;
-class SolverDefinitionListDialog;
 class iRICMainWindowAboutDialog;
 
 /// This class manages misc dialogs used from iRICMainWindow

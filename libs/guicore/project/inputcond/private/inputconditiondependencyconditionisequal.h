@@ -3,6 +3,8 @@
 
 #include "../inputconditiondependency.h"
 
+#include <QVariant>
+
 class InputConditionDependencyConditionIsEqual : public InputConditionDependency::Condition
 {
 public:

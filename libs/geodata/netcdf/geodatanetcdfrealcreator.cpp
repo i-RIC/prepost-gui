@@ -4,6 +4,8 @@
 #include "geodatanetcdfrealimporter.h"
 #include "geodatanetcdfxbandimporter.h"
 
+#include <vtkDoubleArray.h>
+
 GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
 	GeoDataNetcdfCreatorT<double, vtkDoubleArray> {"realNetcdf"}
 {

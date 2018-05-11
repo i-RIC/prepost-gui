@@ -7,22 +7,24 @@
 
 #include <misc/zdepthrange.h>
 
-#include <QStandardItem>
-#include <QList>
-#include <QVariant>
-
 #include <vector>
 
-class QStandardItem;
+class BackgroundImageInfo;
+class GraphicsWindowDataModel;
+class GraphicsWindowDataItemStandardItemChangeCommand;
+class ObjectBrowserView;
+class PostSolutionInfo;
 class VTKGraphicsView;
-class QIcon;
-class QMenu;
+
 class QDialog;
-class QToolBar;
-class QTreeView;
+class QIcon;
 class QKeyEvent;
 class QMainWindow;
+class QMenu;
 class QMouseEvent;
+class QStandardItem;
+class QToolBar;
+class QTreeView;
 class QUndoCommand;
 class QWheelEvent;
 class QXmlStreamWriter;
@@ -30,11 +32,6 @@ class QXmlStreamWriter;
 class vtkActorCollection;
 class vtkActor2DCollection;
 class vtkRenderer;
-class GraphicsWindowDataModel;
-class ObjectBrowserView;
-class GraphicsWindowDataItemStandardItemChangeCommand;
-class BackgroundImageInfo;
-class PostSolutionInfo;
 
 class GUICOREDLL_EXPORT GraphicsWindowDataItem : public ProjectDataItem
 {

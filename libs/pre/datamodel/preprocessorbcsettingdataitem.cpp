@@ -21,6 +21,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QStandardItem>
 
 PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent) :
 	PreProcessorGeoDataDataItemInterface {item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
