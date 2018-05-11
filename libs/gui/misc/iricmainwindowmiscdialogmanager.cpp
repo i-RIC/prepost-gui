@@ -41,8 +41,8 @@ void iRICMainWindowMiscDialogManager::solverListDialog()
 void iRICMainWindowMiscDialogManager::aboutCurrentSolver()
 {
 	const SolverDefinitionAbstract* abst = &(m_mainWindow->m_projectData->solverDefinition()->abstract());
-	SolverDefinitionAbstractDialog* dialog = new SolverDefinitionAbstractDialog(abst, m_mainWindow);
-	dialog->exec();
+	SolverDefinitionAbstractDialog dialog(abst, m_mainWindow);
+	dialog.exec();
 }
 
 void iRICMainWindowMiscDialogManager::mouseHelp()
