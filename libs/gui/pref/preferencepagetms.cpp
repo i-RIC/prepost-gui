@@ -42,7 +42,9 @@ void PreferencePageTms::add()
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	m_settings.push_back(dialog.setting());
+	auto setting = dialog.setting();
+	setting.setIsActive(true);
+	m_settings.push_back(setting);
 	updateList();
 
 	ui->listWidget->setCurrentRow(ui->listWidget->count() - 1);
