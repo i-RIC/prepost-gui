@@ -8,15 +8,9 @@ TmsRequestHandlerXYZ::TmsRequestHandlerXYZ(const QString& url, const QPointF& ce
 	TmsRequestHandler(centerLonLat, size, scale, "xyz.html", requestId, view)
 {
 	std::map<QString, QString> args;
-	QStringList optionsStrs;
-	for (auto it = options.begin(); it != options.end(); ++it) {
-		optionsStrs.push_back(QString("%1:'%2'").arg(it->first).arg(it->second));
-	}
-	QString optionsStr = optionsStrs.join(',');
-
 	args.insert({"%URL%", url});
-	args.insert({"%OPTIONS%", optionsStr});
 
+	setOptions(options);
 	setArgs(args);
 	setup();
 }
