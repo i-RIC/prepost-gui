@@ -14,12 +14,14 @@ PreferencePageTms::PreferencePageTms(QWidget *parent) :
 	m_settings = manager.settings();
 
 	connect(ui->addButton, SIGNAL(clicked()), this, SLOT(add()));
+	connect(ui->editButton, SIGNAL(clicked()), this, SLOT(edit()));
 	connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteSelected()));
 	connect(ui->defaultButton, SIGNAL(clicked()), this, SLOT(restoreDefault()));
 
 	connect(ui->upButton, SIGNAL(clicked()), this, SLOT(moveUpSelected()));
 	connect(ui->downButton, SIGNAL(clicked()), this, SLOT(moveDownSelected()));
 
+	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(handleListWidgetSelectChange(int)));
 	connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem*)), this, SLOT(handleListWidgetItemChange(QListWidgetItem*)));
 
 	updateList();
@@ -48,6 +50,28 @@ void PreferencePageTms::add()
 	updateList();
 
 	ui->listWidget->setCurrentRow(ui->listWidget->count() - 1);
+}
+
+void PreferencePageTms::edit()
+{
+	int idx = ui->listWidget->currentRow();
+	TmsImageSetting oldSetting = m_settings[idx];
+
+	PreferencePageTmsAddDialog dialog(this);
+	dialog.setWindowTitle(tr("Background Image (Internet) Edit"));
+	dialog.setCaption(oldSetting.caption());
+	dialog.setUrl(oldSetting.url());
+	dialog.setMaxZoom(oldSetting.maxZoomLevel());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto newSetting = dialog.setting();
+	newSetting.setIsActive(oldSetting.isActive());
+	m_settings[idx] = newSetting;
+
+	updateList();
+	ui->listWidget->setCurrentRow(idx);
 }
 
 void PreferencePageTms::deleteSelected()
@@ -96,6 +120,16 @@ void PreferencePageTms::moveDownSelected()
 
 	updateList();
 	ui->listWidget->setCurrentRow(row + 1);
+}
+
+void PreferencePageTms::handleListWidgetSelectChange(int current)
+{
+	if (current < 0 || current >= m_settings.size()) {
+		ui->editButton->setEnabled(false);
+		return;
+	}
+	TmsImageSetting& s = m_settings[current];
+	ui->editButton->setEnabled(s.isXYZ());
 }
 
 void PreferencePageTms::handleListWidgetItemChange(QListWidgetItem *item)

@@ -19,6 +19,10 @@ public:
 
 	TmsImageSetting setting();
 
+	void setCaption(const QString& caption);
+	void setUrl(const QString& url);
+	void setMaxZoom(int zoom);
+
 private:
 	Ui::PreferencePageTmsAddDialog *ui;
 };

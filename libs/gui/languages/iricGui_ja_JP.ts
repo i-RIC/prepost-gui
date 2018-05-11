@@ -12311,18 +12311,32 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="60"/>
-        <source>&amp;Add</source>
-        <translation>追加(&amp;A)</translation>
+        <source>&amp;Add...</source>
+        <translation>追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagetms.ui" line="67"/>
+        <location filename="../pref/preferencepagetms.ui" line="70"/>
+        <source>&amp;Edit...</source>
+        <translation>編集(&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">追加(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.ui" line="77"/>
         <source>&amp;Delete</source>
         <translation>削除(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagetms.ui" line="87"/>
+        <location filename="../pref/preferencepagetms.ui" line="97"/>
         <source>&amp;Restore Default</source>
         <translation>デフォルトに戻す(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="61"/>
+        <source>Background Image (Internet) Edit</source>
+        <translation>背景画像 (インターネット) 編集</translation>
     </message>
 </context>
 <context>

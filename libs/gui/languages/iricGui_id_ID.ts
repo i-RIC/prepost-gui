@@ -1065,17 +1065,27 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="60"/>
-        <source>&amp;Add</source>
+        <source>&amp;Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagetms.ui" line="67"/>
+        <location filename="../pref/preferencepagetms.ui" line="70"/>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.ui" line="77"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagetms.ui" line="87"/>
+        <location filename="../pref/preferencepagetms.ui" line="97"/>
         <source>&amp;Restore Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="61"/>
+        <source>Background Image (Internet) Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
