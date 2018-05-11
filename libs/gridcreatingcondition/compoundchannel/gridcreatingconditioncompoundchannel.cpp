@@ -253,16 +253,16 @@ private:
 
 void GridCreatingConditionCompoundChannel::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (iRIC::isEnterKey(event->key())) {
-		if (m_status == stDefiningRegion && m_mouseEventMode == meDefining) {
-			definePolygon(false);
-		}
-		if (m_status == stDefiningLowWaterRegion && m_mouseEventMode == meDefining) {
-			definePolygon(false);
-		}
-		if (m_status == stDefiningCenterLine && m_mouseEventMode == meDefining) {
-			defineLine(false);
-		}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+
+	if (m_status == stDefiningRegion && m_mouseEventMode == meDefining) {
+		definePolygon(false);
+	}
+	if (m_status == stDefiningLowWaterRegion && m_mouseEventMode == meDefining) {
+		definePolygon(false);
+	}
+	if (m_status == stDefiningCenterLine && m_mouseEventMode == meDefining) {
+		defineLine(false);
 	}
 }
 
