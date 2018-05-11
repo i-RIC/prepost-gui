@@ -1625,6 +1625,7 @@ void iRICMainWindow::updatePostActionStatus()
 		m_actionManager->windowCreateNew2dBirdEyePostProcessorAction->setDisabled(true);
 		m_actionManager->windowCreateNew3dPostProcessorAction->setDisabled(true);
 		m_actionManager->windowCreateNewGraph2dHybridWindowAction->setDisabled(true);
+		m_actionManager->windowCreateNewGraph2dScatteredWindowAction->setDisabled(true);
 		m_actionManager->windowCreateVerificationDialogAction->setDisabled(true);
 		return;
 	}
@@ -1635,6 +1636,7 @@ void iRICMainWindow::updatePostActionStatus()
 	m_actionManager->windowCreateNew2dBirdEyePostProcessorAction->setEnabled(info->isDataAvailable2D());
 	m_actionManager->windowCreateNew3dPostProcessorAction->setEnabled(info->isDataAvailable3D());
 	m_actionManager->windowCreateNewGraph2dHybridWindowAction->setEnabled(info->isDataAvailable());
+	m_actionManager->windowCreateNewGraph2dScatteredWindowAction->setEnabled(info->isDataAvailable());
 	m_actionManager->windowCreateVerificationDialogAction->setEnabled(info->isDataAvailable2D() && m_projectData->mainfile()->measuredDatas().size() > 0);
 }
 
