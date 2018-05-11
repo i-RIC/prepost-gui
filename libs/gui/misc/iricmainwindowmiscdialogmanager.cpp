@@ -14,12 +14,11 @@
 
 #include <QMessageBox>
 
-iRICMainWindowMiscDialogManager::iRICMainWindowMiscDialogManager(iRICMainWindow* parent)
-	: QObject(parent)
-{
-	m_mainWindow = parent;
-	m_aboutDialog = new iRICMainWindowAboutDialog(m_mainWindow);
-}
+iRICMainWindowMiscDialogManager::iRICMainWindowMiscDialogManager(iRICMainWindow* parent) :
+	QObject(parent),
+	m_mainWindow {parent},
+	m_aboutDialog {new iRICMainWindowAboutDialog(m_mainWindow)}
+{}
 
 void iRICMainWindowMiscDialogManager::setupAboutDialog(const iRICMetaData& metaData)
 {
@@ -28,9 +27,9 @@ void iRICMainWindowMiscDialogManager::setupAboutDialog(const iRICMetaData& metaD
 
 void iRICMainWindowMiscDialogManager::solverDefinitionTranslationWizard()
 {
-	SolverDefinitionTranslationUpdateWizard* wizard = new SolverDefinitionTranslationUpdateWizard(m_mainWindow);
-	wizard->init(m_mainWindow->m_solverDefinitionList, m_mainWindow->m_gridCreatingConditionCreators);
-	wizard->exec();
+	SolverDefinitionTranslationUpdateWizard wizard(m_mainWindow);
+	wizard.init(m_mainWindow->m_solverDefinitionList, m_mainWindow->m_gridCreatingConditionCreators);
+	wizard.exec();
 }
 
 void iRICMainWindowMiscDialogManager::solverListDialog()
@@ -42,8 +41,8 @@ void iRICMainWindowMiscDialogManager::solverListDialog()
 void iRICMainWindowMiscDialogManager::aboutCurrentSolver()
 {
 	const SolverDefinitionAbstract* abst = &(m_mainWindow->m_projectData->solverDefinition()->abstract());
-	SolverDefinitionAbstractDialog* dialog = new SolverDefinitionAbstractDialog(abst, m_mainWindow);
-	dialog->exec();
+	SolverDefinitionAbstractDialog dialog(abst, m_mainWindow);
+	dialog.exec();
 }
 
 void iRICMainWindowMiscDialogManager::mouseHelp()
