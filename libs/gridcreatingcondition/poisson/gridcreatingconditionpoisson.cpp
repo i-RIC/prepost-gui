@@ -817,11 +817,10 @@ void GridCreatingConditionPoisson::viewOperationEnded(PreProcessorGraphicsViewIn
 
 void GridCreatingConditionPoisson::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (iRIC::isEnterKey(event->key())) {
-		if (impl->m_mouseEventMode == Impl::MouseEventMode::Defining) {
-			impl->finishDefiningLine();
-		}
-	}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
+
+	impl->finishDefiningLine();
 }
 
 void GridCreatingConditionPoisson::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
