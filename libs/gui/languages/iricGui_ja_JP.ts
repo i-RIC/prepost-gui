@@ -12351,6 +12351,11 @@ p, li { white-space: pre-wrap; }
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
         <translation>例:  http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
+    <message>
+        <location filename="../pref/private/preferencepagetmsadddialog.ui" line="49"/>
+        <source>Max Zoom Level:</source>
+        <translation>最大ズームレベル:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTile</name>

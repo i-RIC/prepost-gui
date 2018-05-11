@@ -1101,6 +1101,11 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../pref/private/preferencepagetmsadddialog.ui" line="49"/>
+        <source>Max Zoom Level:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTile</name>

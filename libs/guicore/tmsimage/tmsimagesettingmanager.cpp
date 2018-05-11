@@ -103,9 +103,9 @@ void TmsImageSettingManager::setSettings(const std::vector<TmsImageSetting>& set
 	saveSettings(settings);
 }
 
-TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& name, const QString& url)
+TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& name, const QString& url, int maxZoom)
 {
-	return buildSetting(iRIC::toStr(QString("tms=xyz&url=%1").arg(url)), name);
+	return buildSetting(iRIC::toStr(QString("tms=xyz&url=%1&maxNativeZoom=%2").arg(url).arg(maxZoom)), name);
 }
 
 TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& size, double scale, const std::string& setting) const
@@ -154,6 +154,10 @@ TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& s
 	} else if (tms == "xyz") {
 		QString url = query.queryItemValue("url");
 		std::map<QString, QString> options;
+		QString maxZoom = query.queryItemValue("maxNativeZoom");
+		if (! maxZoom.isNull()) {
+			options.insert({"maxNativeZoom", maxZoom});
+		}
 		return new TmsRequestXYZ(centerLonLat, size, scale, url, options);
 	}
 	return nullptr;

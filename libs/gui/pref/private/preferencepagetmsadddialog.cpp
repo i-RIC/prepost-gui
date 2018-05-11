@@ -19,5 +19,5 @@ PreferencePageTmsAddDialog::~PreferencePageTmsAddDialog()
 TmsImageSetting PreferencePageTmsAddDialog::setting()
 {
 	TmsImageSettingManager manager;
-	return manager.setupXYZSetting(ui->nameEdit->text(), ui->urlEdit->text());
+	return manager.setupXYZSetting(ui->nameEdit->text(), ui->urlEdit->text(), ui->maxZoomSpinBox->value());
 }
