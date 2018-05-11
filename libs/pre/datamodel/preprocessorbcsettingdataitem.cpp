@@ -118,13 +118,12 @@ void PreProcessorBCSettingDataItem::viewOperationEnded(VTKGraphicsView* v)
 
 void PreProcessorBCSettingDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
 {
-	if (m_polygon->mouseEventMode() == GeoDataPolygon::meDefining) {
-		if (m_polygon->selectMode() == GeoDataPolygon::smPolygon) {
-			m_polygon->definePolygon(true, true);
-			if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
-				m_bcDataItem->showDialog();
-			}
-		}
+	if (m_polygon->mouseEventMode() != GeoDataPolygon::meDefining) {return;}
+	if (m_polygon->selectMode() != GeoDataPolygon::smPolygon) {return;}
+
+	m_polygon->definePolygon(true, true);
+	if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
+		m_bcDataItem->showDialog();
 	}
 }
 
@@ -151,15 +150,13 @@ void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 
 void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (iRIC::isEnterKey(event->key())) {
-		if (m_polygon->mouseEventMode() == GeoDataPolygon::meDefining) {
-			if (m_polygon->selectMode() == GeoDataPolygon::smPolygon) {
-				m_polygon->definePolygon(false, true);
-				if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
-					m_bcDataItem->showDialog();
-				}
-			}
-		}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (m_polygon->mouseEventMode() != GeoDataPolygon::meDefining) {return;}
+	if (m_polygon->selectMode() != GeoDataPolygon::smPolygon) {return;}
+
+	m_polygon->definePolygon(false, true);
+	if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
+		m_bcDataItem->showDialog();
 	}
 }
 
