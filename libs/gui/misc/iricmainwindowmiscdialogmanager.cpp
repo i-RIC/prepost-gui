@@ -14,12 +14,11 @@
 
 #include <QMessageBox>
 
-iRICMainWindowMiscDialogManager::iRICMainWindowMiscDialogManager(iRICMainWindow* parent)
-	: QObject(parent)
-{
-	m_mainWindow = parent;
-	m_aboutDialog = new iRICMainWindowAboutDialog(m_mainWindow);
-}
+iRICMainWindowMiscDialogManager::iRICMainWindowMiscDialogManager(iRICMainWindow* parent) :
+	QObject(parent),
+	m_mainWindow {parent},
+	m_aboutDialog {new iRICMainWindowAboutDialog(m_mainWindow)}
+{}
 
 void iRICMainWindowMiscDialogManager::setupAboutDialog(const iRICMetaData& metaData)
 {
