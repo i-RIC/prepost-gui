@@ -352,14 +352,13 @@ void GridCreatingConditionTriangle::viewOperationEnded(PreProcessorGraphicsViewI
 
 void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (iRIC::isEnterKey(event->key())) {
-		if (m_mouseEventMode == meDefining) {
-			if (m_selectMode == smPolygon) {
-				definePolygon(false);
-			} else if (m_selectMode == smLine) {
-				defineLine(false);
-			}
-		}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (m_mouseEventMode != meDefining) {return;}
+
+	if (m_selectMode == smPolygon) {
+		definePolygon(false);
+	} else if (m_selectMode == smLine) {
+		defineLine(false);
 	}
 }
 
@@ -368,12 +367,12 @@ void GridCreatingConditionTriangle::keyReleaseEvent(QKeyEvent* /*event*/, PrePro
 
 void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode == meDefining) {
-		if (m_selectMode == smPolygon) {
-			definePolygon(true);
-		} else if (m_selectMode == smLine) {
-			defineLine(true);
-		}
+	if (m_mouseEventMode != meDefining) {return;}
+
+	if (m_selectMode == smPolygon) {
+		definePolygon(true);
+	} else if (m_selectMode == smLine) {
+		defineLine(true);
 	}
 }
 
