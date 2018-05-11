@@ -34,6 +34,7 @@
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -351,7 +352,7 @@ void GridCreatingConditionTriangle::viewOperationEnded(PreProcessorGraphicsViewI
 
 void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return) {
+	if (iRIC::isEnterKey(event->key())) {
 		if (m_mouseEventMode == meDefining) {
 			if (m_selectMode == smPolygon) {
 				definePolygon(false);
