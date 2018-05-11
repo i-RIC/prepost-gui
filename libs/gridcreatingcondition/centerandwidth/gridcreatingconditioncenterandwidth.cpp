@@ -23,6 +23,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
@@ -414,7 +415,7 @@ void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphic
 
 void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
+	if (iRIC::isEnterKey(event->key())) {
 		if (m_mouseEventMode == meDefining) {
 			definePolyLine();
 		}
