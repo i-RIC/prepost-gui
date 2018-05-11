@@ -415,11 +415,10 @@ void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphic
 
 void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (iRIC::isEnterKey(event->key())) {
-		if (m_mouseEventMode == meDefining) {
-			definePolyLine();
-		}
-	}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (m_mouseEventMode != meDefining) {return;}
+
+	definePolyLine();
 }
 
 void GridCreatingConditionCenterAndWidth::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
@@ -427,15 +426,15 @@ void GridCreatingConditionCenterAndWidth::keyReleaseEvent(QKeyEvent* /*event*/, 
 
 void GridCreatingConditionCenterAndWidth::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode == meDefining) {
-		definePolyLine();
-	}
+	if (m_mouseEventMode != meDefining) {return;}
+
+	definePolyLine();
 }
 
 void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int division)
 {
 	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {return;}
-	if (! points->GetNumberOfPoints()) { return; }
+	if (! points->GetNumberOfPoints()) {return;}
 
 	m_spline->SetPoints(points);
 	m_spline->Modified();
