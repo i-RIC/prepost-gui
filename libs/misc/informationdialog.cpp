@@ -54,6 +54,7 @@ void InformationDialog::showDialog(QWidget* parent, const QString& title, const 
 	dialog.setWindowTitle(title);
 	dialog.setMessage(message);
 	dialog.setIcon(pixmap);
+	dialog.resize(450, dialog.minimumHeight());
 	dialog.exec();
 	dontshowagain = dialog.dontShowAgain();
 	settings.setValue(fullname, dontshowagain);
