@@ -8,6 +8,7 @@
 #include <guibase/widget/waitdialog.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include <geodata/polygon/geodatapolygonabstractpolygon.h>
@@ -150,7 +151,7 @@ void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 
 void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (event->key() == Qt::Key_Return) {
+	if (iRIC::isEnterKey(event->key())) {
 		if (m_polygon->mouseEventMode() == GeoDataPolygon::meDefining) {
 			if (m_polygon->selectMode() == GeoDataPolygon::smPolygon) {
 				m_polygon->definePolygon(false, true);
