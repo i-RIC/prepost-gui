@@ -33,7 +33,7 @@ namespace {
 		std::vector<QPointF> ret, errorRet;
 		SHPObject* shpo = SHPReadObject(shph, index);
 		if (shpo->nParts > 1) {
-			QMessageBox::critical(w, PolylineShapeImporter ::tr("Error"), PolylineShapeImporter::tr("This polyline is composed of multiple line strnigs.. This polyline can not be imported."));
+			QMessageBox::critical(w, PolylineShapeImporter ::tr("Error"), PolylineShapeImporter::tr("This polyline is composed of multiple line strings. This polyline can not be imported."));
 			return errorRet;
 		}
 		int start = *(shpo->panPartStart);

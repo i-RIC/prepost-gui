@@ -95,3 +95,12 @@ SOURCES += polygoncsvexporter.cpp \
            polylineshapeimporter.cpp \
            private/csvhelper.cpp \
            private/dbfitemselectdialog.cpp
+TRANSLATIONS += languages/iricGeoIO_ES.ts \
+                languages/iricGeoIO_fr_FR.ts \
+                languages/iricGeoIO_id_ID.ts \
+                languages/iricGeoIO_ja_JP.ts \
+                languages/iricGeoIO_ko_KR.ts \
+                languages/iricGeoIO_ru_RU.ts \
+                languages/iricGeoIO_th_TH.ts \
+                languages/iricGeoIO_vi_VN.ts \
+                languages/iricGeoIO_zh_CN.ts
