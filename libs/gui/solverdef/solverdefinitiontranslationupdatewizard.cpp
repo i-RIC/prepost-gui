@@ -18,10 +18,9 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 
-SolverDefinitionTranslationUpdateWizard::SolverDefinitionTranslationUpdateWizard(QWidget* parent)
-	: QWizard(parent)
+SolverDefinitionTranslationUpdateWizard::SolverDefinitionTranslationUpdateWizard(QWidget* parent) :
+	QWizard(parent)
 {
-	setAttribute(Qt::WA_DeleteOnClose);
 	addPage(new IntroductionPage(this));
 	m_settingPageId = addPage(new SettingPage(this));
 	addPage(new ConfirmPage(this));

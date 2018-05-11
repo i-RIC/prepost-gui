@@ -27,9 +27,9 @@ void iRICMainWindowMiscDialogManager::setupAboutDialog(const iRICMetaData& metaD
 
 void iRICMainWindowMiscDialogManager::solverDefinitionTranslationWizard()
 {
-	SolverDefinitionTranslationUpdateWizard* wizard = new SolverDefinitionTranslationUpdateWizard(m_mainWindow);
-	wizard->init(m_mainWindow->m_solverDefinitionList, m_mainWindow->m_gridCreatingConditionCreators);
-	wizard->exec();
+	SolverDefinitionTranslationUpdateWizard wizard(m_mainWindow);
+	wizard.init(m_mainWindow->m_solverDefinitionList, m_mainWindow->m_gridCreatingConditionCreators);
+	wizard.exec();
 }
 
 void iRICMainWindowMiscDialogManager::solverListDialog()
