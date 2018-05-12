@@ -218,6 +218,8 @@ private slots:
 	void showPreferenceDialog();
 	void updatePostActionStatus();
 
+	void openHelp();
+
 private:
 	void updateWindowZIndices();
 	void reflectWindowZIndices();

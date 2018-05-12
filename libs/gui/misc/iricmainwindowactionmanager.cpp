@@ -622,6 +622,7 @@ void iRICMainWindowActionManager::setupHelpMenu()
 
 	helpAction = new QAction(tr("&Help..."), m_helpMenu);
 	m_helpMenu->addAction(helpAction);
+	connect(helpAction, SIGNAL(triggered()), m_parent, SLOT(openHelp()));
 
 	solverDefinitionListDialogAction = new QAction(tr("&Solver List..."), m_helpMenu);
 	solverDefinitionListDialogAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.png"));
