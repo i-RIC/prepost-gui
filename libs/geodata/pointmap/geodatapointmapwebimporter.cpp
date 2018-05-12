@@ -10,6 +10,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <misc/informationdialog.h>
 #include <misc/networksetting.h>
 
 #include <QApplication>
@@ -96,7 +97,7 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 			}
 
 			if (m_webReply->error() != QNetworkReply::NoError) {
-				QMessageBox::critical(w, tr("Error"), m_webReply->errorString());
+				InformationDialog::critical(w, tr("Error"), m_webReply->errorString(), QString("WebReplyError_%1").arg(m_webReply->error()));
 			}
 
 			for (int row = 0; row < 256; ++row) {
