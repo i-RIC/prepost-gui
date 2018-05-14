@@ -86,7 +86,9 @@ void CrossSectionPreProcessorController::mousePressEvent(QMouseEvent* event, Vie
 
 void CrossSectionPreProcessorController::mouseReleaseEvent(QMouseEvent*, View* v)
 {
-	finishDefining();
+	if (impl->m_mode == Impl::Mode::Defining || impl->m_mode == Impl::Mode::MovePoint) {
+		finishDefining();
+	}
 	updateMouseCursor(v);
 }
 
