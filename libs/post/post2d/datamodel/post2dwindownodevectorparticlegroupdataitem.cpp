@@ -448,3 +448,11 @@ void Post2dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
 	m_particleActors.clear();
 	m_actorCollection->RemoveAllItems();
 }
+
+void Post2dWindowNodeVectorParticleGroupDataItem::clearParticleGrids()
+{
+	for (auto grid : m_particleGrids) {
+		grid->Delete();
+	}
+	m_particleGrids.clear();
+}

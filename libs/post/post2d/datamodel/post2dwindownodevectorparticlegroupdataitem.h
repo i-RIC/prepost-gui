@@ -91,6 +91,7 @@ protected:
 	void addParticles();
 
 	void clearParticleActors();
+	void clearParticleGrids();
 
 private:
 	void innerUpdateZScale(double scale) override;
