@@ -81,9 +81,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 
 Post2dWindowNodeVectorParticleGroupDataItem::~Post2dWindowNodeVectorParticleGroupDataItem()
 {
-	for (int i = 0; i < m_particleActors.size(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-	}
+	clearParticleActors();
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -96,11 +94,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGra
 
 void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 {
-	for (auto actor : m_particleActors) {
-		renderer()->RemoveActor(actor);
-	}
-	m_actorCollection->RemoveAllItems();
-	m_particleActors.clear();
+	clearParticleActors();
 	m_particleMappers.clear();
 	m_particleGrids.clear();
 
@@ -173,11 +167,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setupStreamTracer()
 
 void Post2dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 {
-	for (auto actor : m_particleActors) {
-		renderer()->RemoveActor(actor);
-	}
-	m_actorCollection->RemoveAllItems();
-	m_particleActors.clear();
+	clearParticleActors();
 	m_particleMappers.clear();
 
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
