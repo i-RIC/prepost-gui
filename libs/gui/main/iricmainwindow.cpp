@@ -69,6 +69,7 @@
 #include <QClipboard>
 #include <QCryptographicHash>
 #include <QDomNode>
+#include <QDesktopServices>
 #include <QDesktopWidget>
 #include <QFileDialog>
 #include <QInputDialog>
@@ -1638,6 +1639,11 @@ void iRICMainWindow::updatePostActionStatus()
 	m_actionManager->windowCreateNewGraph2dHybridWindowAction->setEnabled(info->isDataAvailable());
 	m_actionManager->windowCreateNewGraph2dScatteredWindowAction->setEnabled(info->isDataAvailable());
 	m_actionManager->windowCreateVerificationDialogAction->setEnabled(info->isDataAvailable2D() && m_projectData->mainfile()->measuredDatas().size() > 0);
+}
+
+void iRICMainWindow::openHelp()
+{
+	QDesktopServices::openUrl(QUrl(tr("http://iric-gui-user-manual.readthedocs.io/en/latest/")));
 }
 
 void iRICMainWindow::setupAboutDialog()
