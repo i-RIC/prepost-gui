@@ -438,3 +438,13 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addCustomMenuItems(QMenu* menu
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
 }
+
+void Post2dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
+{
+	auto r = renderer();
+	for (auto actor : m_particleActors) {
+		r->RemoveActor(actor);
+	}
+	m_particleActors.clear();
+	m_actorCollection->RemoveAllItems();
+}

@@ -90,6 +90,8 @@ protected:
 	void resetParticles();
 	void addParticles();
 
+	void clearParticleActors();
+
 private:
 	void innerUpdateZScale(double scale) override;
 
