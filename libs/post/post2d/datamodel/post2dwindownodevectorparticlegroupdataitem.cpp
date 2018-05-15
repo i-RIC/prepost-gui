@@ -439,6 +439,22 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addCustomMenuItems(QMenu* menu
 	menu->addAction(abAction);
 }
 
+vtkPolyData* Post2dWindowNodeVectorParticleGroupDataItem::setupPolyDataFromPoints(vtkPoints* points)
+{
+	vtkPolyData* ret = vtkPolyData::New();
+	ret->SetPoints(points);
+
+	vtkIdType numPoints = points->GetNumberOfPoints();
+	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
+	for (vtkIdType i = 0; i < numPoints; ++i) {
+		ca->InsertNextCell(1, &i);
+	}
+	ret->SetVerts(ca);
+	ret->Modified();
+
+	return ret;
+}
+
 void Post2dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
 {
 	auto r = renderer();

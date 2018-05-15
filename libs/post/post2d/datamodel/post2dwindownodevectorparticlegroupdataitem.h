@@ -90,6 +90,7 @@ protected:
 	void resetParticles();
 	void addParticles();
 
+	vtkPolyData* setupPolyDataFromPoints(vtkPoints* points);
 	void clearParticleActors();
 	void clearParticleGrids();
 
