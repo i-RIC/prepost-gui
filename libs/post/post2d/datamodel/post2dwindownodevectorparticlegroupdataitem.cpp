@@ -332,6 +332,8 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		newPoints->SetVerts(ca);
 		newPoints->Modified();
 		m_particleMappers[i]->SetInputData(newPoints);
+
+		m_particleGrids[i]->Delete();
 		m_particleGrids[i] = newPoints;
 	}
 	if (m_setting.timeMode == tmSkip) {
