@@ -11,6 +11,7 @@ GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDi
 	ui->setupUi(this);
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
 	connect(ui->nISpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDI()));
+	connect(ui->nJSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDJ()));
 	connect(ui->nJSpinBox, SIGNAL(editingFinished()), this, SLOT(handleNJChange()));
 	connect(ui->widthSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateDJ()));
 }
