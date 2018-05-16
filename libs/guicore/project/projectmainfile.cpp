@@ -68,6 +68,7 @@ void deleteCgnsFile(const QString& filename)
 	QFileInfo finfo(filename);
 	QStringList nameFilters;
 	nameFilters.append("*.cgn");
+	nameFilters.append("*.cgns");
 	QRegExp re(finfo.baseName() + "_Solution[\\d]+");
 	auto files = finfo.absoluteDir().entryList(nameFilters, QDir::Files);
 	for (auto f : files) {
@@ -89,6 +90,7 @@ void copyCgnsFile(const QString& from, const QString& to)
 
 	QStringList nameFilters;
 	nameFilters.append("*.cgn");
+	nameFilters.append("*.cgns");
 	QRegExp re(from_finfo.baseName() + "_Solution[\\d]+");
 	auto files = from_finfo.absoluteDir().entryList(nameFilters, QDir::Files);
 	for (auto f : files) {
@@ -574,7 +576,7 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 void ProjectMainFile::exportCurrentCgnsFile()
 {
 	QString fname = QFileDialog::getSaveFileName(
-										m_projectData->mainWindow(), tr("Export CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
+										m_projectData->mainWindow(), tr("Export CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgns)")
 									);
 	if (fname == "") {return;}
 	if (QFile::exists(fname)) {

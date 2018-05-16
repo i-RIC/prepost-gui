@@ -140,11 +140,11 @@ void PreProcessorDataModel::importCalcCondition()
 {
 	QString selectedFilter;
 	QString fname = QFileDialog::getOpenFileName(
-		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn);;YAML file (*.yml)"), &selectedFilter);
+		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)"), &selectedFilter);
 	if (fname == "") {return;}
 	if (selectedFilter == tr("iRIC project file (*.ipro)")) {
 		importCalcConditionFromOtherProject(fname);
-	} else if (selectedFilter == tr("CGNS file (*.cgn)")) {
+	} else if (selectedFilter == tr("CGNS file (*.cgn *.cgns)")) {
 		importCalcConditionFromCGNS(fname);
 	} else if (selectedFilter == tr("YAML file (*.yml)")) {
 		importCalcConditionFromYaml(fname);
@@ -233,7 +233,7 @@ void PreProcessorDataModel::importCalcConditionFromYaml(const QString& fname)
 void PreProcessorDataModel::exportCalcCondition()
 {
 	QString fname = QFileDialog::getSaveFileName(
-		projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgn);;YAML file (*.yml)"));
+		projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgns);;YAML file (*.yml)"));
 	if (fname == "") {return;}
 	iRICMainWindowInterface* mainW = projectData()->mainWindow();
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(mainW->preProcessorWindow());

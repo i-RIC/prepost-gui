@@ -72,7 +72,7 @@
     <name>CgnsGridImporter</name>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="31"/>
-        <source>CGNS files (*.cgn)</source>
+        <source>CGNS files (*.cgn *.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -389,13 +389,13 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="145"/>
-        <source>iRIC project file (*.ipro)</source>
+        <location filename="../preprocessordatamodel.cpp" line="143"/>
+        <source>iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="147"/>
-        <source>CGNS file (*.cgn)</source>
+        <location filename="../preprocessordatamodel.cpp" line="145"/>
+        <source>iRIC project file (*.ipro)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -450,8 +450,13 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
+        <source>CGNS file (*.cgn *.cgns)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../preprocessordatamodel.cpp" line="236"/>
-        <source>CGNS file (*.cgn);;YAML file (*.yml)</source>
+        <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -635,11 +640,6 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="132"/>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preprocessordatamodel.cpp" line="143"/>
-        <source>iRIC project file (*.ipro);;CGNS file (*.cgn);;YAML file (*.yml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2122,13 +2122,13 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridexporter/cgnsgridexporter.cpp" line="29"/>
-        <source>CGNS files (*.cgn)</source>
+        <location filename="../preprocessorwindow.cpp" line="307"/>
+        <source>Close PreProcessor Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="307"/>
-        <source>Close PreProcessor Window</source>
+        <location filename="../gridexporter/cgnsgridexporter.cpp" line="29"/>
+        <source>CGNS files (*.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

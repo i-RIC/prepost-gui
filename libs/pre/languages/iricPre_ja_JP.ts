@@ -71,9 +71,13 @@
 <context>
     <name>CgnsGridImporter</name>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="31"/>
         <source>CGNS files (*.cgn)</source>
-        <translation>CGNS ファイル (*.cgn)</translation>
+        <translation type="vanished">CGNS ファイル (*.cgn)</translation>
+    </message>
+    <message>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="31"/>
+        <source>CGNS files (*.cgn *.cgns)</source>
+        <translation>CGNS ファイル (*.cgn *.cgns)</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="37"/>
@@ -408,9 +412,8 @@ Do you really want to import grid from this file?</source>
         <translation>iRIC プロジェクトファイル (*.ipro)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>CGNS file (*.cgn)</source>
-        <translation>CGNS ファイル (*.cgn)</translation>
+        <translation type="vanished">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="149"/>
@@ -464,9 +467,23 @@ Do you really want to import grid from this file?</source>
         <translation>エクスポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="236"/>
         <source>CGNS file (*.cgn);;YAML file (*.yml)</source>
-        <translation>CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
+        <translation type="vanished">CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="143"/>
+        <source>iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
+        <translation>iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn *.cgns);;YAML ファイル (*.yml)</translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
+        <source>CGNS file (*.cgn *.cgns)</source>
+        <translation>CGNS ファイル (*.cgn *.cgns)</translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="236"/>
+        <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
+        <translation>CGNS ファイル (*.cgns);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="240"/>
@@ -638,9 +655,8 @@ Do you really want to import grid from this file?</source>
         <translation>ソルバーが実行中です。計算条件を表示することはできますが、更新できません。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="143"/>
         <source>iRIC project file (*.ipro);;CGNS file (*.cgn);;YAML file (*.yml)</source>
-        <translation>iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
+        <translation type="vanished">iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="686"/>
@@ -2457,9 +2473,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">格子点属性の選択変更</translation>
     </message>
     <message>
-        <location filename="../gridexporter/cgnsgridexporter.cpp" line="29"/>
         <source>CGNS files (*.cgn)</source>
-        <translation>CGNS ファイル (*.cgn)</translation>
+        <translation type="vanished">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <source>RIC-Nays CSV</source>
@@ -2497,6 +2512,11 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../preprocessorwindow.cpp" line="307"/>
         <source>Close PreProcessor Window</source>
         <translation>プリプロセッサウィンドウを閉じる</translation>
+    </message>
+    <message>
+        <location filename="../gridexporter/cgnsgridexporter.cpp" line="29"/>
+        <source>CGNS files (*.cgns)</source>
+        <translation>CGNSファイル (*.cgns)</translation>
     </message>
 </context>
 <context>
