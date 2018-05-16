@@ -300,7 +300,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 				const auto& a = p->altitudes.at(j);
 				if (a.elevation > max) {max = a.elevation;}
 				GeoDataRiverCrosssection::Altitude alt(a.distance - offset, a.elevation);
-				if (j + 1 < p->divIndices[0] || i + 1 > p->divIndices[3]) {continue;}
+				if (j + 1 < p->divIndices[0] || j + 1 > p->divIndices[3]) {continue;}
 
 				newPoint->crosssection().AltitudeInfo().push_back(alt);
 				if (j >= p->divIndices[0] && prevAlt.position() > alt.position() && ok) {
