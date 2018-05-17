@@ -57,9 +57,11 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 #define BANKSUBDIV 3
 #define MIN_IT 5
-#define M_PI 3.1415926535
 #define EPS 0.002
 #define MIN_CENTERLINEDIV 20
 

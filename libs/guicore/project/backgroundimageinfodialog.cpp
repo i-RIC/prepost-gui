@@ -4,8 +4,8 @@
 #include "backgroundimageinfodialog.h"
 
 #include <cmath>
-
-#define M_PI 3.1415926535
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 BackgroundImageInfoDialog::BackgroundImageInfoDialog(QWidget* parent) :
 	QDialog(parent),
