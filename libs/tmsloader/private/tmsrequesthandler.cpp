@@ -1,38 +1,26 @@
 #include "tmsrequesthandler.h"
+#include "../tmsutil.h"
 
 #include <QFile>
 #include <QTextStream>
 #include <QWebView>
 #include <QMutexLocker>
 
-#include <cmath>
-#define _USE_MATH_DEFINES
-#include <math.h>
+using namespace tmsloader;
 
 namespace {
 
 const int TIMER_INTERVAL_MSEC = 100;
 
-// Meter per pixel at equator for zoom level 1 = 40075334.2563 / 512.;
-const double METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1 = 78272.137219;
-
 void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, const QPointF& center, QSize* size, int* zoomLevel)
 {
-	*zoomLevel = 1;
-	double meterPerPixel = METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1;
-	meterPerPixel *= std::cos(center.y() / 180 * M_PI);
-
-	while (meterPerPixel > targetMeterPerPixel) {
-		++ *zoomLevel;
-		meterPerPixel /= 2.;
-	}
-	double rate = targetMeterPerPixel / meterPerPixel;
+	*zoomLevel = TmsUtil::calcNativeZoomLevel(center, targetMeterPerPixel);
+	double mpp = TmsUtil::meterPerPixel(center, *zoomLevel);
+	double rate = targetMeterPerPixel / mpp;
 	*size = QSize(targetSize.width() * rate, targetSize.height() * rate);
 }
 
 } // namespace
-
-using namespace tmsloader;
 
 TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebView* view) :
 	QObject {nullptr},

@@ -21,6 +21,7 @@ HEADERS += tmsloader.h \
            tmsrequestgsi.h \
            tmsrequestopenstreetmap.h \
            tmsrequestxyz.h \
+           tmsutil.h \
            private/tmsloader_impl.h \
            private/tmsrequest_impl.h \
            private/tmsrequestbing_impl.h \
@@ -40,6 +41,7 @@ SOURCES += tmsloader.cpp \
            tmsrequestgsi.cpp \
            tmsrequestopenstreetmap.cpp \
            tmsrequestxyz.cpp \
+           tmsutil.cpp \
            private/tmsrequesthandler.cpp \
            private/tmsrequesthandlerbing.cpp \
            private/tmsrequesthandlergooglemap.cpp \
