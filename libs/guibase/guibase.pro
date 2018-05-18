@@ -122,6 +122,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapaintactor.h \
            vtktool/vtkpolydatapointsactor.h \
+           vtktool/vtkstreamtracerutil.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
            widget/centeredcheckbox.h \
@@ -221,6 +222,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapaintactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
+           vtktool/vtkstreamtracerutil.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \
            widget/centeredcheckbox.cpp \
