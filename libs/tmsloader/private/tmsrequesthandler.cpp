@@ -6,6 +6,8 @@
 #include <QMutexLocker>
 
 #include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 namespace {
 
@@ -18,7 +20,7 @@ void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, c
 {
 	*zoomLevel = 1;
 	double meterPerPixel = METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1;
-	meterPerPixel *= std::cos(center.y() / 180 * 3.141592);
+	meterPerPixel *= std::cos(center.y() / 180 * M_PI);
 
 	while (meterPerPixel > targetMeterPerPixel) {
 		++ *zoomLevel;

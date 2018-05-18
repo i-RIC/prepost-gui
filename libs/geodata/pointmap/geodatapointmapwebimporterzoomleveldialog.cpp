@@ -5,6 +5,8 @@
 #include <cs/webmercatorutil.h>
 
 #include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 namespace {
 
@@ -60,7 +62,7 @@ void GeoDataPointmapWebImporterZoomLevelDialog::updateResolution()
 	int targetZl = zoomLevel();
 	int zl = 1;
 	double meterPerPixel = METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1;
-	meterPerPixel *= std::cos(m_latitude / 180.0 * 3.141592);
+	meterPerPixel *= std::cos(m_latitude / 180.0 * M_PI);
 
 	while (zl < targetZl) {
 		++ zl;

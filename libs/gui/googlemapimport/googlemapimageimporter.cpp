@@ -24,6 +24,8 @@
 #include <QThread>
 
 #include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 // Meter per pixel at equator for zoom level 1 = 40075334.2563 / 512.;
 const double GoogleMapImageImporter::METERPERPIXEL_AT_EQUATOR_1 = 78272.137219; //
@@ -73,7 +75,7 @@ void GoogleMapImageImporter::importImages()
 
 	int zoomlevel = 1;
 	double meterPerPixel = METERPERPIXEL_AT_EQUATOR_1;
-	meterPerPixel *= std::cos(centerLat / 180 * 3.141592);
+	meterPerPixel *= std::cos(centerLat / 180 * M_PI);
 
 	while (width / meterPerPixel < 640 && zoomlevel <= 20) {
 		++ zoomlevel;
@@ -111,7 +113,7 @@ void GoogleMapImageImporter::importImages()
 	zoomlevel = 1;
 	// meterPerPixel at equator for zoom level 1
 	meterPerPixel = METERPERPIXEL_AT_EQUATOR_1;
-	meterPerPixel *= std::cos(centerLat / 180 * 3.141592);
+	meterPerPixel *= std::cos(centerLat / 180 * M_PI);
 
 	while (zoomlevel < zoom) {
 		++ zoomlevel;
