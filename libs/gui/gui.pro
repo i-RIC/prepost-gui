@@ -58,6 +58,20 @@ unix {
 }
 LIBS += -liricGuibase
 
+#iricTmsloader library
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../tmsloader/debug"
+	} else {
+		LIBS += -L"../tmsloader/release"
+	}
+}
+unix {
+	LIBS += -L"../tmsloader"
+}
+LIBS += -liricTmsloader
+
 #iricGuicore library
 
 win32 {
