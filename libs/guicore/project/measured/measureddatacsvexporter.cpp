@@ -19,6 +19,7 @@ void MeasuredDataCsvExporter::exportData(const QString& filename, const Measured
 	}
 
 	QTextStream stream(&file);
+	stream.setRealNumberPrecision(12);
 	auto vtkData = data.pointData();
 	vtkPointData* pd = vtkData->GetPointData();
 	int nArrays = pd->GetNumberOfArrays();
