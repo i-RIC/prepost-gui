@@ -524,6 +524,12 @@ void vtkCustomStreamTracer::Integrate(vtkPointData *input0Data,
 				retVal = STAGNATION;
 				break;
 				}
+			// if accumTime exeeded MaximumIntegrationTime, stop calculation
+			if (accumTime > MaximumIntegrationTime)
+				{
+				retVal = STAGNATION;
+				break;
+				}
 
 			// Convert all intervals to arc length
 			this->ConvertIntervals( step, minStep, maxStep, direction, cellLength );

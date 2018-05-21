@@ -10,8 +10,10 @@ class GUIBASEDLL_EXPORT vtkCustomStreamTracer : public vtkStreamTracer
 public:
 	static vtkCustomStreamTracer *New();
 
-protected:
+	vtkSetMacro(MaximumIntegrationTime, double);
+	vtkGetMacro(MaximumIntegrationTime, double);
 
+protected:
 	vtkCustomStreamTracer();
 	~vtkCustomStreamTracer();
 
@@ -28,10 +30,11 @@ protected:
 								 const char *vecFieldName,
 								 double& propagation,
 								 vtkIdType& numSteps);
-
 private:
 	vtkCustomStreamTracer(const vtkCustomStreamTracer&);  // Not implemented.
 	void operator=(const vtkCustomStreamTracer&);  // Not implemented.
+
+	double MaximumIntegrationTime;
 };
 
 #endif
