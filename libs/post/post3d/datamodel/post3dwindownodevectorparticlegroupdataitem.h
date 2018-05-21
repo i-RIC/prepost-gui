@@ -66,6 +66,8 @@ protected:
 	void resetParticles();
 	void addParticles();
 
+	void clearParticleActors();
+
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
 	QList<vtkPolyData*> m_particleGrids;
