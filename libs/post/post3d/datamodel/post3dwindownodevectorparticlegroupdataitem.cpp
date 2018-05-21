@@ -59,16 +59,9 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 
 Post3dWindowNodeVectorParticleGroupDataItem::~Post3dWindowNodeVectorParticleGroupDataItem()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-	}
-	for (int i = 0; i < m_particleMappers.count(); ++i) {
-		m_particleMappers[i]->Delete();
-	}
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		m_particleGrids[i]->Delete();
-	}
+	clearParticleActors();
+	m_particleMappers.clear();
+	clearParticleGrids();
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -91,15 +84,9 @@ void Post3dWindowNodeVectorParticleGroupDataItem::setDefaultValues()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-		m_particleMappers[i]->Delete();
-	}
-	m_actorCollection->RemoveAllItems();
-	m_particleActors.clear();
+	clearParticleActors();
 	m_particleMappers.clear();
-	m_particleGrids.clear();
+	clearParticleGrids();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
@@ -177,13 +164,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::setupStreamTracer()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-		m_particleMappers[i]->Delete();
-	}
-	m_actorCollection->RemoveAllItems();
-	m_particleActors.clear();
+	clearParticleActors();
 	m_particleMappers.clear();
 
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
@@ -242,10 +223,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::applyZScale()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		m_particleGrids[i]->Delete();
-	}
-	m_particleGrids.clear();
+	clearParticleGrids();
 	for (int i = 0; i < m_particleActors.count(); ++i) {
 		vtkPolyData* grid = vtkPolyData::New();
 		vtkPointSet* pointsGrid = newParticles(i);
