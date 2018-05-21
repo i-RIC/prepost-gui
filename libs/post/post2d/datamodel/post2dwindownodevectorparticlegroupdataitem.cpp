@@ -4,6 +4,7 @@
 #include "post2dwindownodevectorparticlegroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/vtkCustomStreamTracer.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkstreamtracerutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -35,7 +36,6 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkRungeKutta4.h>
-#include <vtkStreamTracer.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkVertex.h>
 
@@ -250,7 +250,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 	QList<double> timeSteps = tSteps->timesteps();
 	double timeDiv = timeSteps[currentStep] - m_previousTime;
 
-	vtkSmartPointer<vtkStreamTracer> tracer = vtkSmartPointer<vtkStreamTracer>::New();
+	vtkSmartPointer<vtkCustomStreamTracer> tracer = vtkSmartPointer<vtkCustomStreamTracer>::New();
 	vtkStreamTracerUtil::setupForParticleTracking(tracer);
 	tracer->SetInputData(getRegion());
 
@@ -258,6 +258,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
 
+		tracer->SetMaximumIntegrationTime(timeDiv);
 		tracer->SetSourceData(m_particleGrids[i]);
 		tracer->Update();
 		vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, timeDiv);
@@ -267,9 +268,11 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 			vtkPointSet* newPoints = newParticles(i);
 			if (m_setting.timeMode == tmSubdivide) {
 				for (int j = 0; j < m_setting.timeDivision - 1; ++j) {
+					double subTime = j * timeDiv / m_setting.timeDivision;
+					tracer->SetMaximumIntegrationTime(subTime);
 					tracer->SetSourceData(newPoints);
 					tracer->Update();
-					vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, j * timeDiv / m_setting.timeDivision);
+					vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
 				}
 			} else {
 				for (vtkIdType j = 0; j < newPoints->GetNumberOfPoints(); ++j) {
