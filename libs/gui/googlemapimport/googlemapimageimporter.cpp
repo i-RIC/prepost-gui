@@ -12,6 +12,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
 #include <misc/networksetting.h>
+#include <tmsloader/tmsutil.h>
 
 #include <QApplication>
 #include <QDir>
@@ -27,9 +28,19 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-// Meter per pixel at equator for zoom level 1 = 40075334.2563 / 512.;
-const double GoogleMapImageImporter::METERPERPIXEL_AT_EQUATOR_1 = 78272.137219; //
 const int GoogleMapImageImporter::MAX_GOOGLEAPI_COUNT = 50;
+
+namespace {
+
+int imageCount(const QSize& size)
+{
+	int iCount = static_cast<int>(std::ceil(size.width() / 640));
+	int jCount = static_cast<int>(std::ceil(size.height() / 640));
+
+	return iCount * jCount;
+}
+
+} // namespace
 
 GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMainWindowInterface* parent) :
 	QObject(parent)
@@ -61,85 +72,74 @@ void GoogleMapImageImporter::importImages()
 	mainWindow()->preProcessorWindow()->dataModel()->graphicsView()->getDataRegion(&xmin, &xmax, &ymin, &ymax);
 	double offsetX = mainFile->offset().x();
 	double offsetY = mainFile->offset().y();
+	xmin += offsetX;
+	xmax += offsetX;
+	ymin += offsetY;
+	ymax += offsetY;
 
-	double xcenter = (xmin + xmax) * 0.5 + offsetX;
-	double ycenter = (ymin + ymax) * 0.5 + offsetY;
+	double xcenter = (xmin + xmax) * 0.5;
+	double ycenter = (ymin + ymax) * 0.5;
 
 	double centerLon, centerLat;
 	double width = qMax(xmax - xmin, ymax - ymin);
+	QSizeF regionSize(xmax - xmin, ymax - ymin);
 	if (width < 1.0E-6) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("This function can not be used when there is no data to be drawn."));
 		return;
 	}
 	coordSystem->mapGridToGeo(xcenter, ycenter, &centerLon, &centerLat);
 
-	int zoomlevel = 1;
-	double meterPerPixel = METERPERPIXEL_AT_EQUATOR_1;
-	meterPerPixel *= std::cos(centerLat / 180 * M_PI);
+	// calculate meterPerPixel and zoomLevel for 1280 pixel width image
+	double mpp = width / 1280;
+	QPointF centerLonLat(centerLon, centerLat);
+	int zoomLevel = tmsloader::TmsUtil::calcNativeZoomLevel(centerLonLat, mpp);
+	if (zoomLevel > 20) {zoomLevel = 20;}
 
-	while (width / meterPerPixel < 640 && zoomlevel <= 20) {
-		++ zoomlevel;
-		meterPerPixel /= 2.;
+	QSize imgSize = tmsloader::TmsUtil::calcPixelSize(centerLonLat, regionSize, zoomLevel);
+
+	int maxZoomLevel = zoomLevel;
+	while (imageCount(imgSize) < MAX_GOOGLEAPI_COUNT) {
+		++ maxZoomLevel;
+		imgSize *= 2;
 	}
+	-- maxZoomLevel;
 
-	int maxzoomlevel = zoomlevel;
-
-	int gcount = 1;
-	while (gcount * gcount <= MAX_GOOGLEAPI_COUNT) {
-		++ gcount;
-	}
-	-- gcount;
-	if (gcount == 0) {gcount = 1;}
-
-	while (width / meterPerPixel < (640 * gcount) && maxzoomlevel <= 20) {
-		++ maxzoomlevel;
-		meterPerPixel /= 2.0;
-	}
-	-- maxzoomlevel;
-	if (maxzoomlevel < zoomlevel) {maxzoomlevel = zoomlevel;}
+	if (maxZoomLevel > 20) {maxZoomLevel = 20;}
 
 	GoogleMapImageImportSettingDialog dialog(mainWindow());
-	dialog.setZoom(zoomlevel);
-	dialog.setZoomMax(maxzoomlevel);
+	dialog.setZoom(zoomLevel);
+	dialog.setZoomMax(maxZoomLevel);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	coordSystem->mapGeoToGrid(centerLon, centerLat, &xcenter, &ycenter);
-
 	int zoom = dialog.zoom();
 	QString maptype = dialog.maptype();
-
-	zoomlevel = 1;
-	// meterPerPixel at equator for zoom level 1
-	meterPerPixel = METERPERPIXEL_AT_EQUATOR_1;
-	meterPerPixel *= std::cos(centerLat / 180 * M_PI);
-
-	while (zoomlevel < zoom) {
-		++ zoomlevel;
-		meterPerPixel /= 2.;
-	}
+	mpp = tmsloader::TmsUtil::meterPerPixel(centerLonLat, zoom);
 
 	// copy to the project file.
 	if (! mainFile->mkdirBGDIR()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
 		return;
 	}
-	int pixelWidth = static_cast<int>(width / meterPerPixel);
-	int icount = ((pixelWidth - 1) / 640) + 1;
-	if (icount > gcount) {icount = gcount;}
+	imgSize = tmsloader::TmsUtil::calcPixelSize(centerLonLat, regionSize, zoom);
+	int icount = static_cast<int>(std::floor(imgSize.width() / 640)) + 1;
+	int jcount = static_cast<int>(std::floor(imgSize.height() / 640)) + 1;
 
 	WaitDialog* wdialog = new WaitDialog(mainWindow());
 	connect(wdialog, SIGNAL(canceled()), this, SLOT(abortGoogleMapRequest()));
 	wdialog->show();
 
-	for (int j = 0; j < icount; ++j) {
+	for (int j = 0; j < jcount; ++j) {
 		for (int i = 0; i < icount; ++i) {
-			double tmpCenterX = xcenter + ((i + 0.5) / icount - 0.5) * width;
-			double tmpCenterY = ycenter + ((j + 0.5) / icount - 0.5) * width;
+			double tmpCenterX = xmin + regionSize.width() * (0.5 + i) / icount;
+			double tmpCenterY = ymin + regionSize.height() * (0.5 + j) / jcount;
 
 			coordSystem->mapGridToGeo(tmpCenterX, tmpCenterY, &centerLon, &centerLat);
-			QString urlstr = QString("http://maps.googleapis.com/maps/api/staticmap?center=%1,%2&zoom=%3&size=640x640&sensor=false&maptype=%4").arg(centerLat).arg(centerLon).arg(zoom).arg(maptype);
+			QString centerLonStr = QString::number(centerLon, 'g', 12);
+			QString centerLatStr = QString::number(centerLat, 'g', 12);
+
+			QString urlstr = QString("http://maps.googleapis.com/maps/api/staticmap?center=%1,%2&zoom=%3&size=640x640&sensor=false&maptype=%4").arg(centerLatStr).arg(centerLonStr).arg(zoom).arg(maptype);
 			m_isWaitingHttpResponse = true;
 
 			QUrl url(urlstr);
@@ -173,11 +173,11 @@ void GoogleMapImageImporter::importImages()
 				f.close();
 				BackgroundImageInfo* image = new BackgroundImageInfo(fname, fname, mainFile);
 
-				double xleft = tmpCenterX - meterPerPixel * 320;
-				double ybottom = tmpCenterY - meterPerPixel * 320;
+				double xleft = tmpCenterX - mpp * 320;
+				double ybottom = tmpCenterY - mpp * 320;
 				image->setTranslateX(xleft - offsetX);
 				image->setTranslateY(ybottom - offsetY);
-				image->setScale(meterPerPixel);
+				image->setScale(mpp);
 
 				mainFile->addBackgroundImage(image);
 			} catch (ErrorMessage m) {
