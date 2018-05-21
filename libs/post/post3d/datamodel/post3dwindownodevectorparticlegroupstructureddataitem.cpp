@@ -185,14 +185,13 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupActors()
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);
 
-		vtkDataSetMapper* mapper = vtkDataSetMapper::New();
+		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 		actor->SetMapper(mapper);
 
-		m_particleActors.append(actor);
-		m_particleMappers.append(mapper);
+		m_particleActors.push_back(actor);
+		m_particleMappers.push_back(mapper);
 	}
 }
-
 
 vtkPointSet* Post3dWindowNodeVectorParticleGroupStructuredDataItem::newParticles(int i)
 {
