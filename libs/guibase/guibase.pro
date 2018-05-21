@@ -51,6 +51,7 @@ LIBS += \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
+	-lvtkCommonMath-6.1 \
 	-lvtkFiltersFlowPaths-6.1 \
 	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
@@ -90,6 +91,7 @@ HEADERS += arrowsettingcontainer.h \
            vtkCustomScalarBarActor.h \
            vtkScalarBarActorInternal.h \
            vtkCustomStreamPoints.h \
+           vtkCustomStreamTracer.h \
            vtkdatasetattributestool.h \
            vtklegendboxrepresentation.h \
            vtklegendboxwidget.h \
@@ -191,6 +193,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomScalarBarActor.cxx \
            vtkCustomStreamPoints.cxx \
+           vtkCustomStreamTracer.cxx \
            vtkdatasetattributestool.cpp \
            vtklegendboxrepresentation.cpp \
            vtklegendboxwidget.cpp \
