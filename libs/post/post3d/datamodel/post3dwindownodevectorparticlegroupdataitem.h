@@ -9,7 +9,6 @@
 
 #include <QMap>
 #include <QColor>
-#include <QList>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -18,6 +17,8 @@
 #include <vtkExtractGrid.h>
 #include <vtkPolyData.h>
 #include <vtkClipPolyData.h>
+
+#include <vector>
 
 class NamedGraphicWindowDataItem;
 class Post3dWindowParticleStructuredSetProperty;
@@ -69,9 +70,9 @@ protected:
 
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
-	QList<vtkPolyData*> m_particleGrids;
-	QList<vtkActor*> m_particleActors;
-	QList<vtkDataSetMapper*> m_particleMappers;
+	std::vector<vtkPolyData*> m_particleGrids;
+	std::vector<vtkActor*> m_particleActors;
+	std::vector<vtkDataSetMapper*> m_particleMappers;
 
 	std::string m_target;
 	TimeMode m_timeMode;
