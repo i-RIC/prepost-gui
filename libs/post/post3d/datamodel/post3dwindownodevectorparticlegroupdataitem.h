@@ -5,7 +5,6 @@
 #include <guibase/structuredgridregion.h>
 #include <guibase/vtksubdividegrid.h>
 #include <guibase/structuredgridregion.h>
-#include <guibase/vtkCustomStreamPoints.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 
 #include <QMap>
@@ -15,7 +14,6 @@
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkUnstructuredGrid.h>
-#include <vtkStreamPoints.h>
 #include <vtkDataSetMapper.h>
 #include <vtkExtractGrid.h>
 #include <vtkPolyData.h>
@@ -61,7 +59,6 @@ protected:
 	virtual vtkPointSet* newParticles(int i) = 0;
 	virtual void setupActors() = 0;
 	virtual void setupParticleSources() = 0;
-	void setupStreamTracer();
 	void setDefaultValues();
 	void resetParticles();
 	void addParticles();
@@ -75,9 +72,6 @@ protected:
 	QList<vtkPolyData*> m_particleGrids;
 	QList<vtkActor*> m_particleActors;
 	QList<vtkDataSetMapper*> m_particleMappers;
-
-	vtkSmartPointer<vtkStreamPoints> m_streamTracer;
-	vtkSmartPointer<vtkCustomStreamPoints> m_streamPoints;
 
 	std::string m_target;
 	TimeMode m_timeMode;

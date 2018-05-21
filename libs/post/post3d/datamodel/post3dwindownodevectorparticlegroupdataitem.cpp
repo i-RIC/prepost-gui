@@ -4,7 +4,9 @@
 #include "post3dwindownodevectorparticlegroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkCustomStreamTracer.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtktool/vtkstreamtracerutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
@@ -98,7 +100,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 	setupActors();
 
 	applyZScale();
-	setupStreamTracer();
 	setupParticleSources();
 	resetParticles();
 	updateVisibilityWithoutRendering();
@@ -149,19 +150,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::assignActorZValues(const ZDept
 	}
 }
 
-
-void Post3dWindowNodeVectorParticleGroupDataItem::setupStreamTracer()
-{
-	m_streamTracer = vtkSmartPointer<vtkStreamPoints>::New();
-	m_streamPoints = vtkSmartPointer<vtkCustomStreamPoints>::New();
-
-	m_streamTracer->SetInputData(getRegion());
-	m_streamTracer->SetIntegrationDirectionToForward();
-
-	m_streamPoints->SetInputData(getRegion());
-	m_streamPoints->SetIntegrationDirectionToForward();
-}
-
 void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 {
 	clearParticleActors();
@@ -181,7 +169,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 		resetParticles();
 		goto TIMEHANDLING;
 	}
-	setupStreamTracer();
 	setupParticleSources();
 	if (currentStep != 0 && (currentStep == m_previousStep + 1 || projectData()->mainWindow()->continuousSnapshotInProgress())) {
 		// one increment add particles!
@@ -260,36 +247,31 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 	QList<double> timeSteps = tSteps->timesteps();
 	double timeDiv = timeSteps[currentStep] - m_previousTime;
 
+	vtkSmartPointer<vtkCustomStreamTracer> tracer = vtkSmartPointer<vtkCustomStreamTracer>::New();
+	vtkStreamTracerUtil::setupForParticleTracking(tracer);
+	tracer->SetInputData(getRegion());
+
 	for (int i = 0; i < m_particleActors.count(); ++i) {
 		// Find the new positions of points already exists.
-		m_streamPoints->SetSourceData(m_particleGrids[i]);
-		m_streamPoints->SetMaximumPropagationTime(timeDiv * 1.1);
-		m_streamPoints->SetTimeIncrement(timeDiv);
-		m_streamPoints->Update();
 
-		vtkPolyData* p = m_streamPoints->GetOutput();
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		for (vtkIdType j = 0; j < p->GetNumberOfPoints(); ++j) {
-			double v[3];
-			p->GetPoint(j, v);
-			points->InsertNextPoint(v);
-		}
+
+		tracer->SetMaximumIntegrationTime(timeDiv);
+		tracer->SetSourceData(m_particleGrids[i]);
+		tracer->Update();
+		vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, timeDiv);
+
 		// add new particles.
 		if (currentStep == m_nextStepToAddParticles) {
 			vtkPointSet* pointsGrid = newParticles(i);
 			if (m_timeMode == tmSubdivide) {
 				for (int j = 0; j < m_timeDivision - 1; ++j) {
-					m_streamTracer->SetSourceData(pointsGrid);
-					m_streamTracer->SetMaximumPropagationTime(timeDiv * (1 - 0.5 / m_timeDivision));
-					m_streamTracer->SetTimeIncrement(timeDiv / m_timeDivision);
-					m_streamTracer->Update();
-					vtkPolyData* p = m_streamTracer->GetOutput();
-					for (vtkIdType k = 0; k < p->GetNumberOfPoints(); ++k) {
-						double v[3];
-						p->GetPoint(k, v);
-						points->InsertNextPoint(v);
-					}
+					double subTime = j * timeDiv / m_timeDivision;
+					tracer->SetMaximumIntegrationTime(subTime);
+					tracer->SetSourceData(pointsGrid);
+					tracer->Update();
+					vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
 				}
 			} else {
 				for (vtkIdType j = 0; j < pointsGrid->GetNumberOfPoints(); ++j) {
