@@ -49,11 +49,11 @@ PURPOSE.  See the above copyright notice for more information.
 
 #include <vector>
 
-vtkObjectFactoryNewMacro(vtkStreamTracer)
-vtkCxxSetObjectMacro(vtkStreamTracer,Integrator,vtkInitialValueProblemSolver);
-vtkCxxSetObjectMacro(vtkStreamTracer,InterpolatorPrototype,vtkAbstractInterpolatedVelocityField);
+vtkObjectFactoryNewMacro(vtkCustomStreamTracer)
+vtkCxxSetObjectMacro(vtkCustomStreamTracer,Integrator,vtkInitialValueProblemSolver);
+vtkCxxSetObjectMacro(vtkCustomStreamTracer,InterpolatorPrototype,vtkAbstractInterpolatedVelocityField);
 
-const double vtkStreamTracer::EPSILON = 1.0E-12;
+const double vtkCustomStreamTracer::EPSILON = 1.0E-12;
 
 namespace
 {
@@ -91,7 +91,7 @@ namespace
 
 }
 
-vtkStreamTracer::vtkStreamTracer()
+vtkCustomStreamTracer::vtkCustomStreamTracer()
 {
   this->Integrator = vtkRungeKutta2::New();
   this->IntegrationDirection = FORWARD;
@@ -128,23 +128,23 @@ vtkStreamTracer::vtkStreamTracer()
   this->HasMatchingPointAttributes = true;
 }
 
-vtkStreamTracer::~vtkStreamTracer()
+vtkCustomStreamTracer::~vtkCustomStreamTracer()
 {
   this->SetIntegrator(0);
   this->SetInterpolatorPrototype(0);
 }
 
-void vtkStreamTracer::SetSourceConnection(vtkAlgorithmOutput* algOutput)
+void vtkCustomStreamTracer::SetSourceConnection(vtkAlgorithmOutput* algOutput)
 {
   this->SetInputConnection(1, algOutput);
 }
 
-void vtkStreamTracer::SetSourceData(vtkDataSet *source)
+void vtkCustomStreamTracer::SetSourceData(vtkDataSet *source)
 {
   this->SetInputData(1, source);
 }
 
-vtkDataSet *vtkStreamTracer::GetSource()
+vtkDataSet *vtkCustomStreamTracer::GetSource()
 {
   if (this->GetNumberOfInputConnections(1) < 1)
     {
@@ -154,7 +154,7 @@ vtkDataSet *vtkStreamTracer::GetSource()
     this->GetExecutive()->GetInputData(1, 0));
 }
 
-int vtkStreamTracer::GetIntegratorType()
+int vtkCustomStreamTracer::GetIntegratorType()
 {
   if (!this->Integrator)
     {
@@ -175,19 +175,19 @@ int vtkStreamTracer::GetIntegratorType()
   return UNKNOWN;
 }
 
-void vtkStreamTracer::SetInterpolatorTypeToDataSetPointLocator()
+void vtkCustomStreamTracer::SetInterpolatorTypeToDataSetPointLocator()
 {
   this->SetInterpolatorType
     (  static_cast<int> ( INTERPOLATOR_WITH_DATASET_POINT_LOCATOR )  );
 }
 
-void vtkStreamTracer::SetInterpolatorTypeToCellLocator()
+void vtkCustomStreamTracer::SetInterpolatorTypeToCellLocator()
 {
   this->SetInterpolatorType
     (  static_cast<int> ( INTERPOLATOR_WITH_CELL_LOCATOR )  );
 }
 
-void vtkStreamTracer::SetInterpolatorType( int interpType )
+void vtkCustomStreamTracer::SetInterpolatorType( int interpType )
 {
   if ( interpType == INTERPOLATOR_WITH_CELL_LOCATOR )
     {
@@ -211,7 +211,7 @@ void vtkStreamTracer::SetInterpolatorType( int interpType )
     }
 }
 
-void vtkStreamTracer::SetIntegratorType(int type)
+void vtkCustomStreamTracer::SetIntegratorType(int type)
 {
   vtkInitialValueProblemSolver* ivp=0;
   switch (type)
@@ -236,7 +236,7 @@ void vtkStreamTracer::SetIntegratorType(int type)
     }
 }
 
-void vtkStreamTracer::SetIntegrationStepUnit( int unit )
+void vtkCustomStreamTracer::SetIntegrationStepUnit( int unit )
 {
   if ( unit != LENGTH_UNIT && unit != CELL_LENGTH_UNIT )
     {
@@ -252,7 +252,7 @@ void vtkStreamTracer::SetIntegrationStepUnit( int unit )
   this->Modified();
 }
 
-double vtkStreamTracer::ConvertToLength(
+double vtkCustomStreamTracer::ConvertToLength(
   double interval, int unit, double cellLength )
 {
   double retVal = 0.0;
@@ -268,13 +268,13 @@ double vtkStreamTracer::ConvertToLength(
   return retVal;
 }
 
-double vtkStreamTracer::ConvertToLength(
-  vtkStreamTracer::IntervalInformation& interval, double cellLength )
+double vtkCustomStreamTracer::ConvertToLength(
+  vtkCustomStreamTracer::IntervalInformation& interval, double cellLength )
 {
   return ConvertToLength( interval.Interval, interval.Unit, cellLength );
 }
 
-void vtkStreamTracer::ConvertIntervals( double& step, double& minStep,
+void vtkCustomStreamTracer::ConvertIntervals( double& step, double& minStep,
   double& maxStep, int direction, double cellLength )
 {
   minStep = maxStep = step =
@@ -294,7 +294,7 @@ void vtkStreamTracer::ConvertIntervals( double& step, double& minStep,
     }
 }
 
-void vtkStreamTracer::CalculateVorticity(vtkGenericCell* cell,
+void vtkCustomStreamTracer::CalculateVorticity(vtkGenericCell* cell,
                                          double pcoords[3],
                                          vtkDoubleArray* cellVectors,
                                          double vorticity[3])
@@ -310,7 +310,7 @@ void vtkStreamTracer::CalculateVorticity(vtkGenericCell* cell,
 
 }
 
-void vtkStreamTracer::InitializeSeeds(vtkDataArray*& seeds,
+void vtkCustomStreamTracer::InitializeSeeds(vtkDataArray*& seeds,
                                       vtkIdList*& seedIds,
                                       vtkIntArray*& integrationDirections,
                                       vtkDataSet *source)
@@ -403,7 +403,7 @@ void vtkStreamTracer::InitializeSeeds(vtkDataArray*& seeds,
     }
 }
 
-int vtkStreamTracer::SetupOutput(vtkInformation* inInfo,
+int vtkCustomStreamTracer::SetupOutput(vtkInformation* inInfo,
                                  vtkInformation* outInfo)
 {
   int piece=outInfo->Get(
@@ -443,7 +443,7 @@ int vtkStreamTracer::SetupOutput(vtkInformation* inInfo,
 
 }
 
-int vtkStreamTracer::RequestData(
+int vtkCustomStreamTracer::RequestData(
   vtkInformation *vtkNotUsed(request),
   vtkInformationVector **inputVector,
   vtkInformationVector *outputVector)
@@ -532,7 +532,7 @@ int vtkStreamTracer::RequestData(
   return 1;
 }
 
-int vtkStreamTracer::CheckInputs(vtkAbstractInterpolatedVelocityField*& func,
+int vtkCustomStreamTracer::CheckInputs(vtkAbstractInterpolatedVelocityField*& func,
                                    int* maxCellSize)
 {
   if (!this->InputData)
@@ -653,7 +653,7 @@ int vtkStreamTracer::CheckInputs(vtkAbstractInterpolatedVelocityField*& func,
   return VTK_OK;
 }
 
-void vtkStreamTracer::Integrate(vtkPointData *input0Data,
+void vtkCustomStreamTracer::Integrate(vtkPointData *input0Data,
                                 vtkPolyData* output,
                                 vtkDataArray* seedSource,
                                 vtkIdList* seedIds,
@@ -856,7 +856,7 @@ void vtkStreamTracer::Integrate(vtkPointData *input0Data,
         {
         inVectors->GetTuples(cell->PointIds, cellVectors);
         func->GetLastLocalCoordinates(pcoords);
-        vtkStreamTracer::CalculateVorticity(cell, pcoords, cellVectors, vort);
+        vtkCustomStreamTracer::CalculateVorticity(cell, pcoords, cellVectors, vort);
         }
       else
         {
@@ -1005,7 +1005,7 @@ void vtkStreamTracer::Integrate(vtkPointData *input0Data,
           {
           inVectors->GetTuples(cell->PointIds, cellVectors);
           func->GetLastLocalCoordinates(pcoords);
-          vtkStreamTracer::CalculateVorticity(cell, pcoords, cellVectors, vort);
+          vtkCustomStreamTracer::CalculateVorticity(cell, pcoords, cellVectors, vort);
           }
         else
           {
@@ -1146,7 +1146,7 @@ void vtkStreamTracer::Integrate(vtkPointData *input0Data,
   return;
 }
 
-void vtkStreamTracer::GenerateNormals(vtkPolyData* output, double* firstNormal,
+void vtkCustomStreamTracer::GenerateNormals(vtkPolyData* output, double* firstNormal,
                                       const char *vecName)
 {
   // Useful pointers
@@ -1223,7 +1223,7 @@ void vtkStreamTracer::GenerateNormals(vtkPolyData* output, double* firstNormal,
 // This is used by sub-classes in certain situations. It
 // does a lot less (for example, does not compute attributes)
 // than Integrate.
-void vtkStreamTracer::SimpleIntegrate(double seed[3],
+void vtkCustomStreamTracer::SimpleIntegrate(double seed[3],
                                       double lastPoint[3],
                                       double stepSize,
                                       vtkAbstractInterpolatedVelocityField* func)
@@ -1295,7 +1295,7 @@ void vtkStreamTracer::SimpleIntegrate(double seed[3],
   integrator->Delete();
 }
 
-int vtkStreamTracer::FillInputPortInformation(int port, vtkInformation *info)
+int vtkCustomStreamTracer::FillInputPortInformation(int port, vtkInformation *info)
 {
   if (port == 0)
     {
@@ -1309,7 +1309,7 @@ int vtkStreamTracer::FillInputPortInformation(int port, vtkInformation *info)
   return 1;
 }
 
-void vtkStreamTracer::PrintSelf(ostream& os, vtkIndent indent)
+void vtkCustomStreamTracer::PrintSelf(ostream& os, vtkIndent indent)
 {
   this->Superclass::PrintSelf(os,indent);
   os << indent << "Start position: "
@@ -1358,7 +1358,7 @@ void vtkStreamTracer::PrintSelf(ostream& os, vtkIndent indent)
   os << indent << "Rotation scale: " << this->RotationScale << endl;
 }
 
-vtkExecutive* vtkStreamTracer::CreateDefaultExecutive()
+vtkExecutive* vtkCustomStreamTracer::CreateDefaultExecutive()
 {
   return vtkCompositeDataPipeline::New();
 }

@@ -1,7 +1,7 @@
 /*=========================================================================
 
   Program:   Visualization Toolkit
-  Module:    vtkStreamTracer.h
+  Module:    vtkCustomStreamTracer.h
 
   Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
   All rights reserved.
@@ -12,18 +12,18 @@
      PURPOSE.  See the above copyright notice for more information.
 
 =========================================================================*/
-// .NAME vtkStreamTracer - Streamline generator
+// .NAME vtkCustomStreamTracer - Streamline generator
 // .SECTION Description
-// vtkStreamTracer is a filter that integrates a vector field to generate
+// vtkCustomStreamTracer is a filter that integrates a vector field to generate
 // streamlines. The integration is performed using a specified integrator,
 // by default Runge-Kutta2.
 //
-// vtkStreamTracer produces polylines as the output, with each cell (i.e.,
+// vtkCustomStreamTracer produces polylines as the output, with each cell (i.e.,
 // polyline) representing a streamline. The attribute values associated
 // with each streamline are stored in the cell data, whereas those
 // associated with streamline-points are stored in the point data.
 //
-// vtkStreamTracer supports forward (the default), backward, and combined
+// vtkCustomStreamTracer supports forward (the default), backward, and combined
 // (i.e., BOTH) integration. The length of a streamline is governed by
 // specifying a maximum value either in physical arc length or in (local)
 // cell length. Otherwise, the integration terminates upon exiting the
@@ -57,7 +57,7 @@
 // are computed only when ComputeVorticity is on). All point data attributes
 // in the source dataset are interpolated on the new streamline points.
 //
-// vtkStreamTracer supports integration through any type of dataset. Thus if
+// vtkCustomStreamTracer supports integration through any type of dataset. Thus if
 // the dataset contains 2D cells like polygons or triangles, the integration
 // is constrained to lie on the surface defined by 2D cells.
 //
@@ -74,8 +74,8 @@
 // vtkCellLocatorInterpolatedVelocityField
 //
 
-#ifndef __vtkStreamTracer_h
-#define __vtkStreamTracer_h
+#ifndef __vtkCustomStreamTracer_h
+#define __vtkCustomStreamTracer_h
 
 #include "vtkFiltersFlowPathsModule.h" // For export macro
 #include "vtkPolyDataAlgorithm.h"
@@ -91,10 +91,10 @@ class vtkIdList;
 class vtkIntArray;
 class vtkAbstractInterpolatedVelocityField;
 
-class VTKFILTERSFLOWPATHS_EXPORT vtkStreamTracer : public vtkPolyDataAlgorithm
+class VTKFILTERSFLOWPATHS_EXPORT vtkCustomStreamTracer : public vtkPolyDataAlgorithm
 {
 public:
-  vtkTypeMacro(vtkStreamTracer,vtkPolyDataAlgorithm);
+  vtkTypeMacro(vtkCustomStreamTracer,vtkPolyDataAlgorithm);
   void PrintSelf(ostream& os, vtkIndent indent);
 
   // Description:
@@ -103,7 +103,7 @@ public:
   // integration step size 0.5 (in cell length unit), maximum number
   // of steps 2000, using Runge-Kutta2, and maximum propagation 1.0
   // (in arc length unit).
-  static vtkStreamTracer *New();
+  static vtkCustomStreamTracer *New();
 
   // Description:
   // Specify the starting point (seed) of a streamline in the global
@@ -299,8 +299,8 @@ public:
 
 protected:
 
-  vtkStreamTracer();
-  ~vtkStreamTracer();
+  vtkCustomStreamTracer();
+  ~vtkCustomStreamTracer();
 
   // Create a default executive.
   virtual vtkExecutive* CreateDefaultExecutive();
@@ -390,8 +390,8 @@ protected:
   friend class PStreamTracerUtils;
 
 private:
-  vtkStreamTracer(const vtkStreamTracer&);  // Not implemented.
-  void operator=(const vtkStreamTracer&);  // Not implemented.
+  vtkCustomStreamTracer(const vtkCustomStreamTracer&);  // Not implemented.
+  void operator=(const vtkCustomStreamTracer&);  // Not implemented.
 };
 
 
