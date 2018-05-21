@@ -136,7 +136,10 @@ void GoogleMapImageImporter::importImages()
 			double tmpCenterY = ymin + regionSize.height() * (0.5 + j) / jcount;
 
 			coordSystem->mapGridToGeo(tmpCenterX, tmpCenterY, &centerLon, &centerLat);
-			QString urlstr = QString("http://maps.googleapis.com/maps/api/staticmap?center=%1,%2&zoom=%3&size=640x640&sensor=false&maptype=%4").arg(centerLat).arg(centerLon).arg(zoom).arg(maptype);
+			QString centerLonStr = QString::number(centerLon, 'g', 12);
+			QString centerLatStr = QString::number(centerLat, 'g', 12);
+
+			QString urlstr = QString("http://maps.googleapis.com/maps/api/staticmap?center=%1,%2&zoom=%3&size=640x640&sensor=false&maptype=%4").arg(centerLatStr).arg(centerLonStr).arg(zoom).arg(maptype);
 			m_isWaitingHttpResponse = true;
 
 			QUrl url(urlstr);
