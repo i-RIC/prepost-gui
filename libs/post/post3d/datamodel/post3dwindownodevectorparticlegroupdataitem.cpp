@@ -225,7 +225,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
 	clearParticleGrids();
 	for (int i = 0; i < m_particleActors.count(); ++i) {
-		vtkPolyData* grid = vtkPolyData::New();
 		vtkPointSet* pointsGrid = newParticles(i);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
@@ -236,15 +235,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 				points->InsertNextPoint(p);
 			}
 		}
-		grid->SetPoints(points);
-		grid->Allocate(points->GetNumberOfPoints());
-		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
-		for (vtkIdType j = 0; j < points->GetNumberOfPoints(); ++j) {
-			vertex->GetPointIds()->SetId(0, j);
-			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
-		}
-		grid->BuildLinks();
-		grid->Modified();
+		vtkPolyData* grid = setupPolyDataFromPoints(points);
 		m_particleMappers[i]->SetInputData(grid);
 		m_particleGrids.append(grid);
 	}
@@ -310,15 +301,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 		}
 		points->Modified();
 
-		vtkPolyData* newPoints = vtkPolyData::New();
-		newPoints->SetPoints(points);
-		vtkIdType numPoints = points->GetNumberOfPoints();
-		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-		for (vtkIdType j = 0; j < numPoints; ++j) {
-			ca->InsertNextCell(1, &j);
-		}
-		newPoints->SetVerts(ca);
-		newPoints->Modified();
+		vtkPolyData* newPoints = setupPolyDataFromPoints(points);
 		m_particleMappers[i]->SetInputData(newPoints);
 		m_particleGrids[i]->Delete();
 		m_particleGrids[i] = newPoints;
