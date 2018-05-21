@@ -364,6 +364,14 @@ void Post3dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
 	m_actorCollection->RemoveAllItems();
 }
 
+void Post3dWindowNodeVectorParticleGroupDataItem::clearParticleGrids()
+{
+		for (auto grid : m_particleGrids) {
+				grid->Delete();
+		}
+		m_particleGrids.clear();
+}
+
 bool Post3dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString& filePrefix, int fileIndex, double time)
 {
 	for (int i = 0; i < m_particleGrids.count(); ++i) {
