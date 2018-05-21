@@ -354,6 +354,22 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 	}
 }
 
+vtkPolyData* Post3dWindowNodeVectorParticleGroupDataItem::setupPolyDataFromPoints(vtkPoints* points)
+{
+	vtkPolyData* ret = vtkPolyData::New();
+	ret->SetPoints(points);
+
+	vtkIdType numPoints = points->GetNumberOfPoints();
+	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
+	for (vtkIdType i = 0; i < numPoints; ++i) {
+			ca->InsertNextCell(1, &i);
+	}
+	ret->SetVerts(ca);
+	ret->Modified();
+
+	return ret;
+}
+
 void Post3dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
 {
 	auto r = renderer();
