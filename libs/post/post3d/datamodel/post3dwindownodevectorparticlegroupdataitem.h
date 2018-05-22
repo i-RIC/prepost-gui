@@ -5,21 +5,20 @@
 #include <guibase/structuredgridregion.h>
 #include <guibase/vtksubdividegrid.h>
 #include <guibase/structuredgridregion.h>
-#include <guibase/vtkCustomStreamPoints.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 
 #include <QMap>
 #include <QColor>
-#include <QList>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkUnstructuredGrid.h>
-#include <vtkStreamPoints.h>
 #include <vtkDataSetMapper.h>
 #include <vtkExtractGrid.h>
 #include <vtkPolyData.h>
 #include <vtkClipPolyData.h>
+
+#include <vector>
 
 class NamedGraphicWindowDataItem;
 class Post3dWindowParticleStructuredSetProperty;
@@ -51,39 +50,45 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
-	void informGridUpdate();
-	vtkPointSet* getRegion();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+private:
+	void informGridUpdate();
+	vtkPointSet* getRegion();
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
 
 	virtual vtkPointSet* newParticles(int i) = 0;
 	virtual void setupActors() = 0;
 	virtual void setupParticleSources() = 0;
-	void setupStreamTracer();
 	void setDefaultValues();
 	void resetParticles();
 	void addParticles();
 
-	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
-	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
-	QList<vtkPolyData*> m_particleGrids;
-	QList<vtkActor*> m_particleActors;
-	QList<vtkDataSetMapper*> m_particleMappers;
+	vtkPolyData* setupPolyDataFromPoints(vtkPoints* points);
+	void clearParticleActors();
+	void clearParticleGrids();
 
-	vtkSmartPointer<vtkStreamPoints> m_streamTracer;
-	vtkSmartPointer<vtkCustomStreamPoints> m_streamPoints;
+protected:
+	std::vector<vtkActor*> m_particleActors;
+	std::vector<vtkDataSetMapper*> m_particleMappers;
 
 	std::string m_target;
-	TimeMode m_timeMode;
 
-	int m_timeSamplingRate;
+	TimeMode m_timeMode;
 	int m_timeDivision;
+	int m_timeSamplingRate;
+	StructuredGridRegion::RegionMode m_regionMode;
+
+private:
+	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
+	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
+	std::vector<vtkPolyData*> m_particleGrids;
+
 	int m_previousStep;
 	double m_previousTime;
 	int m_nextStepToAddParticles;
-	StructuredGridRegion::RegionMode m_regionMode;
 
 	double m_zScale;
 

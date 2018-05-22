@@ -4,7 +4,9 @@
 #include "post3dwindownodevectorparticlegroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkCustomStreamTracer.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtktool/vtkstreamtracerutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
@@ -59,16 +61,9 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 
 Post3dWindowNodeVectorParticleGroupDataItem::~Post3dWindowNodeVectorParticleGroupDataItem()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-	}
-	for (int i = 0; i < m_particleMappers.count(); ++i) {
-		m_particleMappers[i]->Delete();
-	}
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		m_particleGrids[i]->Delete();
-	}
+	clearParticleActors();
+	m_particleMappers.clear();
+	clearParticleGrids();
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -91,15 +86,9 @@ void Post3dWindowNodeVectorParticleGroupDataItem::setDefaultValues()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-		m_particleMappers[i]->Delete();
-	}
-	m_actorCollection->RemoveAllItems();
-	m_particleActors.clear();
+	clearParticleActors();
 	m_particleMappers.clear();
-	m_particleGrids.clear();
+	clearParticleGrids();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
@@ -111,7 +100,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 	setupActors();
 
 	applyZScale();
-	setupStreamTracer();
 	setupParticleSources();
 	resetParticles();
 	updateVisibilityWithoutRendering();
@@ -151,39 +139,20 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateZDepthRangeItemCount()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_particleActors.count() == 0) {return;}
-	if (m_particleActors.count() == 1) {
+	if (m_particleActors.size() == 0) {return;}
+	if (m_particleActors.size() == 1) {
 		m_particleActors[0]->SetPosition(0, 0, range.max());
 		return;
 	}
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		double depth = range.min() + static_cast<double>(i) / (m_particleActors.count() - 1) * (range.max() - range.min());
+	for (int i = 0; i < m_particleActors.size(); ++i) {
+		double depth = range.min() + static_cast<double>(i) / (m_particleActors.size() - 1) * (range.max() - range.min());
 		m_particleActors[i]->SetPosition(0, 0, depth);
 	}
 }
 
-
-void Post3dWindowNodeVectorParticleGroupDataItem::setupStreamTracer()
-{
-	m_streamTracer = vtkSmartPointer<vtkStreamPoints>::New();
-	m_streamPoints = vtkSmartPointer<vtkCustomStreamPoints>::New();
-
-	m_streamTracer->SetInputData(getRegion());
-	m_streamTracer->SetIntegrationDirectionToForward();
-
-	m_streamPoints->SetInputData(getRegion());
-	m_streamPoints->SetIntegrationDirectionToForward();
-}
-
 void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-		m_particleMappers[i]->Delete();
-	}
-	m_actorCollection->RemoveAllItems();
-	m_particleActors.clear();
+	clearParticleActors();
 	m_particleMappers.clear();
 
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
@@ -200,7 +169,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 		resetParticles();
 		goto TIMEHANDLING;
 	}
-	setupStreamTracer();
 	setupParticleSources();
 	if (currentStep != 0 && (currentStep == m_previousStep + 1 || projectData()->mainWindow()->continuousSnapshotInProgress())) {
 		// one increment add particles!
@@ -235,19 +203,15 @@ void Post3dWindowNodeVectorParticleGroupDataItem::innerUpdateZScale(double zscal
 
 void Post3dWindowNodeVectorParticleGroupDataItem::applyZScale()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		m_particleActors[i]->SetScale(1, 1, m_zScale);
+	for (auto actor : m_particleActors) {
+		actor->SetScale(1, 1, m_zScale);
 	}
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		m_particleGrids[i]->Delete();
-	}
-	m_particleGrids.clear();
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		vtkPolyData* grid = vtkPolyData::New();
+	clearParticleGrids();
+	for (int i = 0; i < m_particleActors.size(); ++i) {
 		vtkPointSet* pointsGrid = newParticles(i);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
@@ -258,17 +222,9 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 				points->InsertNextPoint(p);
 			}
 		}
-		grid->SetPoints(points);
-		grid->Allocate(points->GetNumberOfPoints());
-		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
-		for (vtkIdType j = 0; j < points->GetNumberOfPoints(); ++j) {
-			vertex->GetPointIds()->SetId(0, j);
-			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
-		}
-		grid->BuildLinks();
-		grid->Modified();
+		vtkPolyData* grid = setupPolyDataFromPoints(points);
 		m_particleMappers[i]->SetInputData(grid);
-		m_particleGrids.append(grid);
+		m_particleGrids.push_back(grid);
 	}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
@@ -291,36 +247,31 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 	QList<double> timeSteps = tSteps->timesteps();
 	double timeDiv = timeSteps[currentStep] - m_previousTime;
 
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		// Find the new positions of points already exists.
-		m_streamPoints->SetSourceData(m_particleGrids[i]);
-		m_streamPoints->SetMaximumPropagationTime(timeDiv * 1.1);
-		m_streamPoints->SetTimeIncrement(timeDiv);
-		m_streamPoints->Update();
+	vtkSmartPointer<vtkCustomStreamTracer> tracer = vtkSmartPointer<vtkCustomStreamTracer>::New();
+	vtkStreamTracerUtil::setupForParticleTracking(tracer);
+	tracer->SetInputData(getRegion());
 
-		vtkPolyData* p = m_streamPoints->GetOutput();
+	for (int i = 0; i < m_particleActors.size(); ++i) {
+		// Find the new positions of points already exists.
+
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		for (vtkIdType j = 0; j < p->GetNumberOfPoints(); ++j) {
-			double v[3];
-			p->GetPoint(j, v);
-			points->InsertNextPoint(v);
-		}
+
+		tracer->SetMaximumIntegrationTime(timeDiv);
+		tracer->SetSourceData(m_particleGrids[i]);
+		tracer->Update();
+		vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, timeDiv);
+
 		// add new particles.
 		if (currentStep == m_nextStepToAddParticles) {
 			vtkPointSet* pointsGrid = newParticles(i);
 			if (m_timeMode == tmSubdivide) {
 				for (int j = 0; j < m_timeDivision - 1; ++j) {
-					m_streamTracer->SetSourceData(pointsGrid);
-					m_streamTracer->SetMaximumPropagationTime(timeDiv * (1 - 0.5 / m_timeDivision));
-					m_streamTracer->SetTimeIncrement(timeDiv / m_timeDivision);
-					m_streamTracer->Update();
-					vtkPolyData* p = m_streamTracer->GetOutput();
-					for (vtkIdType k = 0; k < p->GetNumberOfPoints(); ++k) {
-						double v[3];
-						p->GetPoint(k, v);
-						points->InsertNextPoint(v);
-					}
+					double subTime = j * timeDiv / m_timeDivision;
+					tracer->SetMaximumIntegrationTime(subTime);
+					tracer->SetSourceData(pointsGrid);
+					tracer->Update();
+					vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
 				}
 			} else {
 				for (vtkIdType j = 0; j < pointsGrid->GetNumberOfPoints(); ++j) {
@@ -332,15 +283,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 		}
 		points->Modified();
 
-		vtkPolyData* newPoints = vtkPolyData::New();
-		newPoints->SetPoints(points);
-		vtkIdType numPoints = points->GetNumberOfPoints();
-		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-		for (vtkIdType j = 0; j < numPoints; ++j) {
-			ca->InsertNextCell(1, &j);
-		}
-		newPoints->SetVerts(ca);
-		newPoints->Modified();
+		vtkPolyData* newPoints = setupPolyDataFromPoints(points);
 		m_particleMappers[i]->SetInputData(newPoints);
 		m_particleGrids[i]->Delete();
 		m_particleGrids[i] = newPoints;
@@ -354,9 +297,43 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 	}
 }
 
+vtkPolyData* Post3dWindowNodeVectorParticleGroupDataItem::setupPolyDataFromPoints(vtkPoints* points)
+{
+	vtkPolyData* ret = vtkPolyData::New();
+	ret->SetPoints(points);
+
+	vtkIdType numPoints = points->GetNumberOfPoints();
+	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
+	for (vtkIdType i = 0; i < numPoints; ++i) {
+			ca->InsertNextCell(1, &i);
+	}
+	ret->SetVerts(ca);
+	ret->Modified();
+
+	return ret;
+}
+
+void Post3dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
+{
+	auto r = renderer();
+	for (auto actor : m_particleActors) {
+		r->RemoveActor(actor);
+	}
+	m_particleActors.clear();
+	m_actorCollection->RemoveAllItems();
+}
+
+void Post3dWindowNodeVectorParticleGroupDataItem::clearParticleGrids()
+{
+		for (auto grid : m_particleGrids) {
+				grid->Delete();
+		}
+		m_particleGrids.clear();
+}
+
 bool Post3dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString& filePrefix, int fileIndex, double time)
 {
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
+	for (int i = 0; i < m_particleGrids.size(); ++i) {
 		QString tempPath = QDir::tempPath();
 		QString tmpFile = iRIC::getTempFileName(tempPath);
 
@@ -372,7 +349,7 @@ bool Post3dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString&
 		writer->Delete();
 
 		QString filename = filePrefix;
-		if (m_particleGrids.count() == 1) {
+		if (m_particleGrids.size() == 1) {
 			filename.append(QString("%1.vtk").arg(fileIndex));
 		} else {
 			filename.append(QString("Group%1_%2.vtk").arg(i + 1).arg(fileIndex));

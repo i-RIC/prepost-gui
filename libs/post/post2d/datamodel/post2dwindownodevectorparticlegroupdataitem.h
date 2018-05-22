@@ -4,7 +4,6 @@
 #include "../post2dwindowdataitem.h"
 #include <guibase/vtksubdividegrid.h>
 #include <guibase/structuredgridregion.h>
-#include <guibase/vtkCustomStreamPoints.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/compositecontainer.h>
 #include <misc/enumcontainert.h>
@@ -18,7 +17,6 @@
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkUnstructuredGrid.h>
-#include <vtkStreamPoints.h>
 #include <vtkDataSetMapper.h>
 #include <vtkExtractGrid.h>
 #include <vtkClipPolyData.h>
@@ -86,9 +84,12 @@ protected:
 	virtual vtkPointSet* newParticles(int i) = 0;
 	virtual void setupActors() = 0;
 	virtual void setupParticleSources() = 0;
-	void setupStreamTracer();
 	void resetParticles();
 	void addParticles();
+
+	vtkPolyData* setupPolyDataFromPoints(vtkPoints* points);
+	void clearParticleActors();
+	void clearParticleGrids();
 
 private:
 	void innerUpdateZScale(double scale) override;
@@ -99,9 +100,6 @@ protected:
 	std::vector<vtkPolyData*> m_particleGrids;
 	std::vector<vtkActor*> m_particleActors;
 	std::vector<vtkDataSetMapper*> m_particleMappers;
-
-	vtkSmartPointer<vtkStreamPoints> m_streamTracer;
-	vtkSmartPointer<vtkCustomStreamPoints> m_streamPoints;
 
 	Setting m_setting;
 
