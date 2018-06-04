@@ -673,7 +673,7 @@ bool ProjectMainFile::saveCgnsFile(const QString& name)
 	}
 	qDebug("saveToCgnsFile(): %d", time.elapsed());
 	time.start();
-	ier = cg_configure(CG_CONFIG_COMPRESS, reinterpret_cast<void*>(1));
+	ier = cg_configure(CG_CONFIG_COMPRESS, reinterpret_cast<void*>(0));
 	if (ier != 0) {goto ERROR;}
 	cg_close(fn);
 	qDebug("cg_close(): %d", time.elapsed());
