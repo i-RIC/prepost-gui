@@ -3,12 +3,14 @@
 
 class MeasuredData;
 
+class QPointF;
+
 class MeasuredDataExporterI
 {
 public:
 	virtual ~MeasuredDataExporterI() {}
 
-	virtual void exportData(const QString& filename, const MeasuredData& data) const = 0;
+	virtual void exportData(const QString& filename, const QPointF& offset, const MeasuredData& data) const = 0;
 };
 
 

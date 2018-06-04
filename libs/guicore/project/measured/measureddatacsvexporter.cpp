@@ -11,7 +11,7 @@
 #include <vtkPointData.h>
 #include <vtkPolyData.h>
 
-void MeasuredDataCsvExporter::exportData(const QString& filename, const MeasuredData& data) const
+void MeasuredDataCsvExporter::exportData(const QString& filename, const QPointF& offset, const MeasuredData& data) const
 {
 	QFile file(filename);
 	if (! file.open(QFile::WriteOnly | QFile::Text)) {
@@ -53,8 +53,8 @@ void MeasuredDataCsvExporter::exportData(const QString& filename, const Measured
 		QVector<double> vals;
 		// output X, Y
 		double* p = vtkData->GetPoint(i);
-		vals << *(p);
-		vals << *(p + 1);
+		vals << *(p) + offset.x();
+		vals << *(p + 1) + offset.y();
 
 		// output scalar and vector data.
 		for (int j = 0; j < nArrays; ++j) {

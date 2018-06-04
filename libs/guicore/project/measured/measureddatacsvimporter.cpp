@@ -7,6 +7,7 @@
 #include <QDir>
 #include <QFile>
 #include <QList>
+#include <QPointF>
 #include <QTextCodec>
 #include <QTextStream>
 
@@ -33,7 +34,7 @@ struct VectorData {
 
 } // namespace
 
-MeasuredData* MeasuredDataCsvImporter::importData(const QString &filename, ProjectDataItem* parent) const
+MeasuredData* MeasuredDataCsvImporter::importData(const QString &filename, const QPointF& offset, ProjectDataItem* parent) const
 {
 	MeasuredData* ret = new MeasuredData(parent);
 
@@ -146,9 +147,9 @@ MeasuredData* MeasuredDataCsvImporter::importData(const QString &filename, Proje
 		ret->pointData()->GetPointData()->AddArray(da);
 		da->Delete();
 	}
-
 	ret->setName(QDir::toNativeSeparators(filename));
 	ret->setupPolyData();
+	ret->applyOffset(offset.x(), offset.y());
 
 	return ret;
 }

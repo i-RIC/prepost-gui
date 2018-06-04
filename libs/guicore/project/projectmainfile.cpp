@@ -1018,7 +1018,9 @@ void ProjectMainFile::addMeasuredData()
 	QFileInfo finfo(fname);
 	try {
 		MeasuredDataCsvImporter importer;
-		MeasuredData* md = importer.importData(fname, this);
+		QVector2D of = offset();
+		QPointF local_offset = QPointF(of.x(), of.y());
+		MeasuredData* md = importer.importData(fname, local_offset, this);
 		impl->m_measuredDatas.push_back(md);
 		emit measuredDataAdded();
 		setModified();

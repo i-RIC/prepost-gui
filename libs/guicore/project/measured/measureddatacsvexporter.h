@@ -8,7 +8,7 @@
 class GUICOREDLL_EXPORT MeasuredDataCsvExporter : public MeasuredDataExporterI
 {
 public:
-	void exportData(const QString& filename, const MeasuredData& data) const override;
+	void exportData(const QString& filename, const QPointF& offset, const MeasuredData& data) const override;
 };
 
 #endif // MEASUREDDATACSVEXPORTER_H
