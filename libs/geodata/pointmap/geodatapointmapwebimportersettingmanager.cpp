@@ -26,7 +26,6 @@ std::vector<GeoDataPointmapWebImporterSetting> standardSettings()
 	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM5A)"), 0, 15, "http://cyberjapandata.gsi.go.jp/xyz/dem5a/{z}/{x}/{y}.txt"));
 	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM5B)"), 0, 15, "http://cyberjapandata.gsi.go.jp/xyz/dem5b/{z}/{x}/{y}.txt"));
 	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM10B)"), 0, 14, "http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt"));
-	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (Global Map ver. 2)"), 0, 8, "http://cyberjapandata.gsi.go.jp/xyz/demgm/{z}/{x}/{y}.txt"));
 
 	return ret;
 }
