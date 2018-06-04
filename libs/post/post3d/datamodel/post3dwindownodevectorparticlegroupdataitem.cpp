@@ -383,6 +383,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::setTarget(const std::string& t
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 
 	m_target = target;
+	updateActorSettings();
 }
 
 vtkPointSet* Post3dWindowNodeVectorParticleGroupDataItem::getRegion()
