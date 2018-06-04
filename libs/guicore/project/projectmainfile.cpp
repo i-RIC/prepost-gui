@@ -54,8 +54,8 @@
 #include <vtkRenderer.h>
 
 #include <cgnslib.h>
-#include <cmath>
 #include <iriclib.h>
+#include <cmath>
 
 namespace {
 
@@ -597,9 +597,7 @@ void ProjectMainFile::exportCurrentCgnsFile()
 
 QString ProjectMainFile::currentCgnsFileName() const
 {
-	auto c = m_cgnsFileList->current();
-	if (c == nullptr) {return "";}
-	return m_projectData->workCgnsFileName(c->filename());
+	return m_projectData->currentCgnsFileName();
 }
 
 bool ProjectMainFile::loadCgnsFile(const QString& name)

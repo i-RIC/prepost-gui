@@ -158,26 +158,17 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 		dialogShowing = false;
 	}
-	if (fn == 0 && projectData()->mainWindow()->isSolverRunning()){
-		close();
-	}
 	return true;
 }
 
 void PostSolutionInfo::informStepsUpdated()
 {
-	close();
-
 	bool ok = open();
-	if (! ok){
-		return;
-	}
-
+	if (!ok) {return;}
 	setupZoneDataContainers(m_opener->fileId());
 	checkBaseIterativeDataExist(m_opener->fileId());
 	emit updated();
 	emit allPostProcessorsUpdated();
-	close();
 }
 
 bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
@@ -415,11 +406,13 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 	}
 	checking = true;
 	close();
+
+	QThread::msleep(1000);
 	bool ok = open();
 	if (! ok) {
 		// error occured while opening.
 		checking = false;
-		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
+		QMessageBox::warning(projectData()->mainWindow(), tr("Warning"), tr("Loading calculation result for visualization failed. Please try again later, or wait until end of calculation."));
 		return;
 	}
 	if (m_timeSteps != nullptr) {
@@ -429,7 +422,6 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		m_iterationSteps->checkStepsUpdate(m_opener->fileId());
 	}
 	checking = false;
-	close();
 }
 
 void PostSolutionInfo::handleIterationStepsUpdate(const QList<int>& steps)

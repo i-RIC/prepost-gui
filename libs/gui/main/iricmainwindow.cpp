@@ -4,6 +4,7 @@
 #include "../factory/postprocessorwindowfactory.h"
 #include "../googlemapimport/googlemapimageimporter.h"
 #include "../misc/animationcontroller.h"
+#include "../misc/flushrequester.h"
 #include "../misc/iricmainwindowactionmanager.h"
 #include "../misc/iricmainwindowmiscdialogmanager.h"
 #include "../misc/newprojectsolverselectingdialog.h"
@@ -2143,7 +2144,14 @@ QString iRICMainWindow::tmpFileName(int len) const
 void iRICMainWindow::checkCgnsStepsUpdate()
 {
 	if (m_projectData == nullptr) {return;}
+	if (! m_projectData->isSolverRunning()) {return;}
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
+	m_projectData->mainfile()->postSolutionInfo()->close();
+	QFile::remove(m_projectData->flushCopyCgnsFileName());
+
+	m_projectData->incrementFlushIndex();
+	FlushRequester::requestFlush(m_projectData->workDirectory(), m_projectData->flushIndex(), 5000);
+
 	m_projectData->mainfile()->postSolutionInfo()->checkCgnsStepsUpdate();
 }
 

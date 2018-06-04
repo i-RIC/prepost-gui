@@ -171,6 +171,7 @@ void SolverConsoleWindow::startSolver()
 
 	impl->m_projectDataItem->open();
 
+	impl->m_projectData->setIsSolverRunning(true);
 	startSolverSilently();
 
 	updateWindowTitle();
@@ -221,6 +222,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	delete impl->m_process;
 	impl->m_process = nullptr;
 	impl->m_projectDataItem->close();
+	impl->m_projectData->setIsSolverRunning(false);
 
 	impl->removeCancelFile();
 	impl->removeCancelOkFile();

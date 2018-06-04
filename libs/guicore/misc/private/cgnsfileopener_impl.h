@@ -3,15 +3,12 @@
 
 #include "../cgnsfileopener.h"
 
-#include <filelocker.h>
-
 class CgnsFileOpener::Impl
 {
 public:
 	Impl(const std::string& filename);
 
 	int m_fileId;
-	FileLocker m_fileLocker;
 };
 
 #endif // CGNSFILEOPENER_IMPL_H

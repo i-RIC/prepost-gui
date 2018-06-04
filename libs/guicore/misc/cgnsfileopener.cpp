@@ -8,33 +8,16 @@
 
 #include <stdexcept>
 
-namespace {
-
-std::string lock_filename(const std::string& filename)
-{
-	std::string l_filename = filename;
-	l_filename.append(".lock");
-
-	return l_filename;
-}
-
-} // namespace
-
 CgnsFileOpener::Impl::Impl(const std::string &filename) :
-	m_fileId {0},
-	m_fileLocker {lock_filename(filename)}
+	m_fileId {0}
 {}
 
 CgnsFileOpener::CgnsFileOpener(const std::string& filename, int openMode) :
 	impl {new Impl {filename}}
 {
-	bool ok = impl->m_fileLocker.lock();
-	if (! ok) {
-		throw std::runtime_error("CGNS file open error");
-	}
 	int ier = cg_open(filename.c_str(), openMode, &(impl->m_fileId));
 	if (ier != 0) {
-		impl->m_fileLocker.unlock();
+		H5close();
 		throw std::runtime_error("CGNS file open error");
 	}
 }
@@ -47,8 +30,6 @@ CgnsFileOpener::~CgnsFileOpener()
 	herr_t err = H5close();
 	Q_ASSERT(err == 0);
 #endif
-	impl->m_fileLocker.unlock();
-
 	delete impl;
 }
 
