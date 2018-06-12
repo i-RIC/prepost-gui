@@ -333,6 +333,7 @@ HEADERS += gui_api.h \
            verification/verificationgraphdialog.h \
            verification/verificationsettingdialog.h \
            main/private/iricmainwindow_snapshotsaver.h \
+           misc/private/cancelhandler.h \
            pref/private/preferencepagetmsadddialog.h \
            pref/private/preferencepagewebcsvtileadddialog.h \
            startpage/private/startpagedialog_impl.h \
@@ -416,6 +417,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            verification/verificationgraphdialog.cpp \
            verification/verificationsettingdialog.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \
+           misc/private/cancelhandler.cpp \
            pref/private/preferencepagetmsadddialog.cpp \
            pref/private/preferencepagewebcsvtileadddialog.cpp
 RESOURCES += gui.qrc

@@ -1,4 +1,7 @@
 #include "flushrequester.h"
+#include "private/cancelhandler.h"
+
+#include <guibase/widget/waitdialog.h>
 
 #include <QCoreApplication>
 #include <QDir>
@@ -6,12 +9,13 @@
 #include <QString>
 #include <QTextStream>
 #include <QThread>
+#include <QWidget>
 
-void FlushRequester::requestFlush(const QString& projectFolder, int idx, int timeOutMSec)
+bool FlushRequester::requestFlush(const QString& projectFolder, int idx, QWidget* parent)
 {
 	QString fname = flushFileName(projectFolder);
 	createFlushFile(fname, idx);
-	waitUntilFlushFileRemoved(fname, timeOutMSec);
+	return waitUntilFlushFileRemoved(fname, parent);
 }
 
 void FlushRequester::createFlushFile(const QString& filename, int idx)
@@ -31,21 +35,25 @@ bool FlushRequester::flushIsCopying(const QString& filename)
 	if (! f.exists()) {
 		return false;
 	}
-
-	f.open(QFile::ReadOnly);
-	QString content = f.readAll().trimmed();
-	return (content == "copying");
+	return true;
 }
 
-void FlushRequester::waitUntilFlushFileRemoved(const QString& filename, int timeOutMSec)
+bool FlushRequester::waitUntilFlushFileRemoved(const QString& filename, QWidget *parent)
 {
 	int waitTimeMSec = 10;
 
-	while (timeOutMSec > 0 && flushIsCopying(filename)) {
+	WaitDialog dialog(parent);
+	CancelHandler handler;
+
+	connect(&dialog, SIGNAL(canceled()), &handler, SLOT(cancel()));
+	dialog.setMessage(tr("Waiting for solver to copy CGNS file..."));
+	dialog.show();
+
+	while (! handler.isCanceled() && flushIsCopying(filename)) {
 		QThread::msleep(waitTimeMSec);
-		timeOutMSec -= waitTimeMSec;
 		qApp->processEvents();
 	}
+	return ! handler.isCanceled();
 }
 
 QString FlushRequester::flushFileName(const QString& projectFolder)
@@ -54,5 +62,6 @@ QString FlushRequester::flushFileName(const QString& projectFolder)
 	return dir.absoluteFilePath(".flush");
 }
 
-FlushRequester::FlushRequester()
+FlushRequester::FlushRequester(QObject* parent) :
+	QObject(parent)
 {}
