@@ -32,7 +32,7 @@
     <message>
         <location filename="../slowmotionspeededitdialog.ui" line="26"/>
         <source>Animation interval in seconds:</source>
-        <translation>アニメーションの描画間隔 (秒):</translation>
+        <translation>アニメーションの描画時間 (秒/コマ):</translation>
     </message>
 </context>
 <context>
