@@ -1584,55 +1584,63 @@ Do you really want to import this file?</source>
     <name>PostSolutionInfo</name>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="158"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="422"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="749"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="741"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="840"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="158"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="422"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="723"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="415"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="715"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="723"/>
+        <source>Calculation result could not be loaded from copied CGNS file.</source>
+        <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="415"/>
+        <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
+        <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="715"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="749"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="741"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="798"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="790"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="802"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="794"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="805"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="808"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="800"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="840"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -1694,38 +1702,38 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectData</name>
     <message>
-        <location filename="../project/projectdata.cpp" line="123"/>
+        <location filename="../project/projectdata.cpp" line="125"/>
         <source>Loading project file...</source>
         <translation>プロジェクトファイルを読み込んでいます...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="204"/>
+        <location filename="../project/projectdata.cpp" line="206"/>
         <source>Saving project file...</source>
         <translation>プロジェクトファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="215"/>
+        <location filename="../project/projectdata.cpp" line="217"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="215"/>
+        <location filename="../project/projectdata.cpp" line="217"/>
         <source>Could not overwrite %1.</source>
         <translation>%1 を上書き保存できませんでした。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="294"/>
+        <location filename="../project/projectdata.cpp" line="317"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="295"/>
+        <location filename="../project/projectdata.cpp" line="318"/>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
         <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="367"/>
-        <location filename="../project/projectdata.cpp" line="416"/>
+        <location filename="../project/projectdata.cpp" line="390"/>
+        <location filename="../project/projectdata.cpp" line="439"/>
         <source>Saving project...</source>
         <translation>プロジェクトを保存しています...</translation>
     </message>
@@ -1741,10 +1749,10 @@ Do you really want to import this file?</source>
         <translation type="vanished">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="541"/>
-        <location filename="../project/projectmainfile.cpp" line="546"/>
-        <location filename="../project/projectmainfile.cpp" line="585"/>
-        <location filename="../project/projectmainfile.cpp" line="619"/>
+        <location filename="../project/projectmainfile.cpp" line="542"/>
+        <location filename="../project/projectmainfile.cpp" line="547"/>
+        <location filename="../project/projectmainfile.cpp" line="586"/>
+        <location filename="../project/projectmainfile.cpp" line="618"/>
         <location filename="../project/projectmainfile.cpp" line="1029"/>
         <location filename="../project/projectmainfile.cpp" line="1076"/>
         <location filename="../project/projectmainfile.cpp" line="1096"/>
@@ -1753,12 +1761,12 @@ Do you really want to import this file?</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="541"/>
+        <location filename="../project/projectmainfile.cpp" line="542"/>
         <source>Solution %1 already exists.</source>
         <translation>ソリューション %1 は既に存在します。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="546"/>
+        <location filename="../project/projectmainfile.cpp" line="547"/>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
         <translation>英数字以外の文字を名前に含む CGNS ファイルは、インポートできません。</translation>
     </message>
@@ -1767,8 +1775,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="651"/>
-        <location filename="../project/projectmainfile.cpp" line="673"/>
+        <location filename="../project/projectmainfile.cpp" line="650"/>
+        <location filename="../project/projectmainfile.cpp" line="672"/>
         <location filename="../project/projectmainfile.cpp" line="785"/>
         <location filename="../project/projectmainfile.cpp" line="792"/>
         <location filename="../project/projectmainfile.cpp" line="802"/>
@@ -1794,28 +1802,28 @@ Do you really want to import this file?</source>
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="579"/>
+        <location filename="../project/projectmainfile.cpp" line="580"/>
         <source>Export CGNS file</source>
         <translation>CNGS ファイルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="579"/>
+        <location filename="../project/projectmainfile.cpp" line="580"/>
         <source>CGNS file (*.cgns)</source>
         <translation>CGNS ファイル (*.cgns)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="585"/>
+        <location filename="../project/projectmainfile.cpp" line="586"/>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
         <translation>CGNS ファイルのエクスポートが失敗しました。指定されたファイルは、他のプロセスが使用中です。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="619"/>
+        <location filename="../project/projectmainfile.cpp" line="618"/>
         <source>Error occured while opening CGNS file in project file : %1</source>
         <translation>プロジェクト内の CGNS ファイルの読み込み中にエラーが発生しました。: %1</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="651"/>
-        <location filename="../project/projectmainfile.cpp" line="673"/>
+        <location filename="../project/projectmainfile.cpp" line="650"/>
+        <location filename="../project/projectmainfile.cpp" line="672"/>
         <source>%1 Saving project file failed.</source>
         <translation>%1 プロジェクトファイルの保存が失敗しました。</translation>
     </message>
@@ -1898,13 +1906,13 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="181"/>
-        <location filename="../project/projectmainfile.cpp" line="186"/>
+        <location filename="../project/projectmainfile.cpp" line="182"/>
+        <location filename="../project/projectmainfile.cpp" line="187"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="185"/>
+        <location filename="../project/projectmainfile.cpp" line="186"/>
         <source> : no such file.</source>
         <translation> : そのようなファイルはありません。</translation>
     </message>

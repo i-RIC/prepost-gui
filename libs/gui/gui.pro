@@ -293,6 +293,7 @@ HEADERS += gui_api.h \
            main/iricmainwindow.h \
            main/iricmergablecommands.h \
            misc/animationcontroller.h \
+           misc/flushrequester.h \
            misc/installertool.h \
            misc/iricmainwindowaboutdialog.h \
            misc/iricmainwindowactionmanager.h \
@@ -376,6 +377,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            googlemapimport/googlemapimageimportsettingdialog.cpp \
            main/iricmainwindow.cpp \
            misc/animationcontroller.cpp \
+           misc/flushrequester.cpp \
            misc/installertool.cpp \
            misc/iricmainwindowaboutdialog.cpp \
            misc/iricmainwindowactionmanager.cpp \
