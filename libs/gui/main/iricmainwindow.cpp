@@ -2150,7 +2150,8 @@ void iRICMainWindow::checkCgnsStepsUpdate()
 	QFile::remove(m_projectData->flushCopyCgnsFileName());
 
 	m_projectData->incrementFlushIndex();
-	FlushRequester::requestFlush(m_projectData->workDirectory(), m_projectData->flushIndex(), 5000);
+	bool ok = FlushRequester::requestFlush(m_projectData->workDirectory(), m_projectData->flushIndex(), this);
+	if (! ok) {return;}
 
 	m_projectData->mainfile()->postSolutionInfo()->checkCgnsStepsUpdate();
 }
