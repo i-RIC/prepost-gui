@@ -29,6 +29,8 @@ public:
 	void mapGeoToGrid(double fromX, double fromY, double* toX, double* toY) const;
 	void mapGridToGeo(double fromX, double fromY, double* toX, double* toY) const;
 
+	bool isLongLat() const;
+
 private:
 	class Impl;
 	Impl* impl;

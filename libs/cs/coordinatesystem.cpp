@@ -105,3 +105,8 @@ void CoordinateSystem::mapGridToGeo(double fromX, double fromY, double* toX, dou
 		*toY = fromY;
 	}
 }
+
+bool CoordinateSystem::isLongLat() const
+{
+	return impl->m_proj4PlaneStr.contains("+proj=longlat");
+}
