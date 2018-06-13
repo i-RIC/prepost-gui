@@ -4,12 +4,14 @@
 class MeasuredData;
 class ProjectDataItem;
 
+class QPointF;
+
 class MeasuredDataImporterI
 {
 public:
 	virtual ~MeasuredDataImporterI() {}
 
-	virtual MeasuredData* importData(const QString& filename, ProjectDataItem* parent) const = 0;
+	virtual MeasuredData* importData(const QString& filename, const QPointF& offset, ProjectDataItem* parent) const = 0;
 };
 
 #endif // MEASUREDDATAIMPORTERI_H

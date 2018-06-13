@@ -22,6 +22,7 @@
 #include <QMessageBox>
 #include <QStandardItem>
 #include <QStatusBar>
+#include <QVector2D>
 #include <QXmlStreamWriter>
 
 MeasuredDataFileDataItem::Impl::Impl(MeasuredData* md) :
@@ -83,7 +84,9 @@ void MeasuredDataFileDataItem::exportToFile()
 
 	try {
 		MeasuredDataCsvExporter exporter;
-		exporter.exportData(fname, *(impl->m_measuredData));
+		QVector2D of = offset();
+		QPointF local_offset = QPointF(of.x(), of.y());
+		exporter.exportData(fname, local_offset, *(impl->m_measuredData));
 
 		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 	} catch (ErrorMessage& message) {

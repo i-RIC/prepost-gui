@@ -6,7 +6,7 @@
 class MeasuredDataCsvImporter : public MeasuredDataImporterI
 {
 public:
-	MeasuredData* importData(const QString &filename, ProjectDataItem* parent) const override;
+	MeasuredData* importData(const QString &filename, const QPointF& offset, ProjectDataItem* parent) const override;
 };
 
 #endif // MEASUREDDATACSVIMPORTER_H
