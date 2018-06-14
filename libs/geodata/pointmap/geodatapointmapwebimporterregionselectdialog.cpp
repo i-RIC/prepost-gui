@@ -4,6 +4,8 @@
 #include <guicore/tmsimage/tmsimagesetting.h>
 #include <guicore/tmsimage/tmsimagesettingmanager.h>
 
+#include <QMessageBox>
+
 GeoDataPointmapWebImporterRegionSelectDialog::GeoDataPointmapWebImporterRegionSelectDialog(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::GeoDataPointmapWebImporterRegionSelectDialog)
@@ -56,6 +58,16 @@ double GeoDataPointmapWebImporterRegionSelectDialog::minLat() const
 double GeoDataPointmapWebImporterRegionSelectDialog::maxLat() const
 {
 	return ui->mapWidget->maxLat();
+}
+
+void GeoDataPointmapWebImporterRegionSelectDialog::accept()
+{
+	if (! ui->mapWidget->isSelected()) {
+		QMessageBox::warning(this, tr("Warning"), tr("Region to import data is not selected yet. Please left drag on the map to select area."));
+		return;
+	}
+
+	QDialog::accept();
 }
 
 void GeoDataPointmapWebImporterRegionSelectDialog::switchMap(int index)
