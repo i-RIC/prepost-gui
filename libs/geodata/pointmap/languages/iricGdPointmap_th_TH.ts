@@ -620,12 +620,12 @@
 <context>
     <name>GeoDataPointmapWebImporter</name>
     <message>
-        <location filename="../geodatapointmapwebimporter.cpp" line="23"/>
+        <location filename="../geodatapointmapwebimporter.cpp" line="24"/>
         <source>Web CSV tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporter.cpp" line="99"/>
+        <location filename="../geodatapointmapwebimporter.cpp" line="100"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -662,6 +662,16 @@
         <source>&amp;Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="66"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="66"/>
+        <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
@@ -683,11 +693,6 @@
     <message>
         <location filename="../geodatapointmapwebimportersettingmanager.cpp" line="28"/>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapointmapwebimportersettingmanager.cpp" line="29"/>
-        <source>GSI elevation tiles (Global Map ver. 2)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -734,17 +739,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="87"/>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
         <source>%1 KB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="91"/>
         <source>%1 MB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="91"/>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="93"/>
         <source> (%1 points)</source>
         <translation type="unfinished"></translation>
     </message>

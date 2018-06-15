@@ -176,8 +176,6 @@ bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribut
 	m_latMin = rsDialog.minLat();
 	m_latMax = rsDialog.maxLat();
 
-	double centerLat = (m_latMin + m_latMax) * 0.5;
-
 	GeoDataPointmapWebImporterZoomLevelDialog zlDialog(w);
 	zlDialog.setArea(m_lonMin, m_lonMax, m_latMin, m_latMax);
 

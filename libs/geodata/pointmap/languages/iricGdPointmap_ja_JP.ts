@@ -624,12 +624,12 @@
 <context>
     <name>GeoDataPointmapWebImporter</name>
     <message>
-        <location filename="../geodatapointmapwebimporter.cpp" line="23"/>
+        <location filename="../geodatapointmapwebimporter.cpp" line="24"/>
         <source>Web CSV tile</source>
         <translation>Web CSV タイル</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporter.cpp" line="99"/>
+        <location filename="../geodatapointmapwebimporter.cpp" line="100"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -666,6 +666,16 @@
         <source>&amp;Cancel</source>
         <translation>キャンセル (&amp;C)</translation>
     </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="66"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="66"/>
+        <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
+        <translation>データをインポートする領域が選択されていません。マウスの左ドラッグにより領域を選択してください。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
@@ -694,9 +704,8 @@
         <translation type="vanished">国土地理院 標高タイル（基盤地図情報数値標高モデル）</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimportersettingmanager.cpp" line="29"/>
         <source>GSI elevation tiles (Global Map ver. 2)</source>
-        <translation>国土地理院 標高タイル（地球地図全球版標高第2版）</translation>
+        <translation type="vanished">国土地理院 標高タイル（地球地図全球版標高第2版）</translation>
     </message>
 </context>
 <context>
@@ -742,17 +751,17 @@
         <translation>ソース</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="87"/>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="91"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="91"/>
+        <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="93"/>
         <source> (%1 points)</source>
         <translation> (点数 = %1)</translation>
     </message>

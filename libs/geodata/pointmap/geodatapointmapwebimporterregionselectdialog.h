@@ -28,6 +28,9 @@ public:
 	double minLat() const;
 	double maxLat() const;
 
+public slots:
+	void accept() override;
+
 private slots:
 	void switchMap(int index);
 
