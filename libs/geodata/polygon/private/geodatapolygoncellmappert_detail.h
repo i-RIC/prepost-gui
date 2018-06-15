@@ -4,6 +4,31 @@
 #include "../geodatapolygoncellmappert.h"
 #include "../geodatapolygoncellmappersetting.h"
 
+namespace {
+
+void getCellCenter(vtkCell* cell, double center[3])
+{
+	double v[3], p[3];
+	for (int i = 0; i < 3; ++i) {
+		v[i] = 0;
+	}
+
+	vtkPoints* points = cell->GetPoints();
+	int num_p = cell->GetNumberOfPoints();
+	for (int i = 0; i < num_p; ++i) {
+		points->GetPoint(i, p);
+		for (int j = 0; j < 3; ++j) {
+			v[j] += p[j];
+		}
+	}
+
+	for (int i = 0; i < 3; ++i) {
+		center[i] = v[i] / num_p;
+	}
+}
+
+}
+
 template <class V, class DA>
 GeoDataPolygonCellMapperT<V, DA>::GeoDataPolygonCellMapperT(GeoDataCreator* parent) :
 	GeoDataCellMapperT<V, DA> ("Polygon cell mapper", parent)
@@ -15,52 +40,45 @@ GeoDataMapperSettingI* GeoDataPolygonCellMapperT<V, DA>::initialize(bool* boolMa
 	GeoDataPolygonCellMapperSetting* s = new GeoDataPolygonCellMapperSetting();
 	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
 	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapper::geoData());
-	// first, triangulate the polygon.
-	vtkDataSet* dataSet = polygon->polyData();
+	vtkPointSet* pointSet = polygon->polyData();
 	double bounds[6];
-	dataSet->GetBounds(bounds);
+	pointSet->GetBounds(bounds);
 	double weights[3];
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
 			// get grid cell.
 			vtkCell* cell = GeoDataMapper::grid()->vtkGrid()->GetCell(i);
-			vtkIdList* ids = cell->GetPointIds();
-			bool cellIsInPolygon = true;
-			int pointCount = ids->GetNumberOfIds();
-			for (int pid = 0; cellIsInPolygon && pid < pointCount; ++pid) {
-				int pindex = cell->GetPointId(pid);
-				double point[3];
-				GeoDataMapper::grid()->vtkGrid()->GetPoint(pindex, point);
-				// investigate whether the point is inside the polygon.
-				// first use bounds for checking.
-				if (point[0] < bounds[0] || // x < xmin
-						point[0] > bounds[1] || // x > xmax
-						point[1] < bounds[2] || // y < ymin
-						point[1] > bounds[3]) { // y > ymax
-					// this point is outside of polygon.
-					cellIsInPolygon = false;
-				} else {
-					vtkIdType cellid;
-					double pcoords[3];
-					int subid;
-					cellid = dataSet->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
-					bool found = (cellid >= 0);
-					if (! found) {
-						// Not found, but if the grid is ugly, sometimes FindCell()
-						// fails, even there is a cell that contains point.
-						for (cellid = 0; ! found && cellid < dataSet->GetNumberOfCells(); ++cellid) {
-							vtkCell* tmpcell = dataSet->GetCell(cellid);
-							double dist2;
-							double closestPoint[3];
-							int ret = tmpcell->EvaluatePosition(point, &(closestPoint[0]), subid, pcoords, dist2, weights);
-							found = (ret == 1);
-						}
+			double point[3];
+			getCellCenter(cell, point);
+			// investigate whether the point is inside the polygon.
+			bool in;
+			// first use bounds for checking.
+			if (point[0] < bounds[0] || // x < xmin
+					point[0] > bounds[1] || // x > xmax
+					point[1] < bounds[2] || // y < ymin
+					point[1] > bounds[3]) { // y > ymax
+				// not in the polygon.
+				in = false;
+			} else {
+				vtkIdType cellid;
+				double pcoords[3];
+				int subid;
+				cellid = pointSet->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
+				in = (cellid >= 0);
+				if (! in) {
+					// Not found, but if the grid is ugly, sometimes FindCell()
+					// fails, even there is a cell that contains point.
+					for (cellid = 0; ! in && cellid < pointSet->GetNumberOfCells(); ++cellid) {
+						vtkCell* tmpcell = pointSet->GetCell(cellid);
+						double dist2;
+						double closestPoint[3];
+						int ret = tmpcell->EvaluatePosition(point, &(closestPoint[0]), subid, pcoords, dist2, weights);
+						in = (ret == 1);
 					}
-					cellIsInPolygon = cellIsInPolygon && found;
 				}
 			}
-			if (cellIsInPolygon) {
+			if (in) {
 				s->ranges.append(i);
 				*(boolMap + i) = true;
 			}
@@ -77,8 +95,7 @@ void GeoDataPolygonCellMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI*
 	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapperT<V>::geoData());
 	V value = GeoDataMapperT<V>::fromVariant(polygon->variantValue());
 	const QList<IntegerRangeContainer::Range>& ranges = setting->ranges.ranges();
-	for (int i = 0; i < ranges.size(); ++i) {
-		const IntegerRangeContainer::Range& r = ranges.at(i);
+	for (const IntegerRangeContainer::Range& r : ranges) {
 		for (unsigned int j = r.from; j <= r.to; ++j) {
 			if (*(boolMap + j) == false) {
 				da->SetValue(static_cast<vtkIdType>(j), value);
