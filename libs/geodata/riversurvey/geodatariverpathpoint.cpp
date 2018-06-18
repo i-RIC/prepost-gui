@@ -302,7 +302,6 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 	std::list<CtrlPointSelectionInfo>& info)
 {
 	if (! m_gridSkip) {
-		unsigned int i;
 		QVector2D tmpv0 = v0;
 		QVector2D tmpv1 = v1;
 		tmpv0.normalize();
@@ -312,7 +311,7 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 		// Rough checking first
 
 		// Investigate left bank
-		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
+		for (int i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
 			QVector2D dv = CtrlPointPosition2D(pposCenterToLeft, i) - point0;
 			double ip0 = QVector2D::dotProduct(dv, tmpv0);
 			double ip1 = QVector2D::dotProduct(dv, tmpv1);
@@ -326,7 +325,7 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 			}
 		}
 		// Investigate right bank
-		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
+		for (int i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
 			QVector2D dv = CtrlPointPosition2D(pposCenterToRight, i) - point0;
 			double ip0 = QVector2D::dotProduct(dv, tmpv0);
 			double ip1 = QVector2D::dotProduct(dv, tmpv1);
@@ -343,7 +342,7 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 		if (m_nextPoint != 0) {
 
 			// Check river center line
-			for (i = 0; i < CenterLineCtrlPoints.size(); ++i) {
+			for (int i = 0; i < CenterLineCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposCenterLine, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
 				double ip1 = QVector2D::dotProduct(dv, tmpv1);
@@ -357,7 +356,7 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 				}
 			}
 			// Check left bank line
-			for (i = 0; i < LeftBankCtrlPoints.size(); ++i) {
+			for (int i = 0; i < LeftBankCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposLeftBank, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
 				double ip1 = QVector2D::dotProduct(dv, tmpv1);
@@ -371,7 +370,7 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 				}
 			}
 			// Check right bank line
-			for (i = 0; i < RightBankCtrlPoints.size(); ++i) {
+			for (int i = 0; i < RightBankCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposRightBank, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
 				double ip1 = QVector2D::dotProduct(dv, tmpv1);

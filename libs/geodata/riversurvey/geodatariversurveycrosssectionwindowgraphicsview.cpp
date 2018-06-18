@@ -128,7 +128,6 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPath
 {
 	if (point == nullptr) {return;}
 	GeoDataRiverCrosssection& cross = point->crosssection();
-	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	bool first = true;
 	QPointF oldpoint, newpoint;
 	painter.setPen(color);
@@ -1193,7 +1192,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectGridLimits(double*
 	std::list<CtrlPointSelectionInfo>& list = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 	std::list<CtrlPointSelectionInfo> tmplist;
 	for (auto it = list.begin(); it != list.end(); ++it) {
-		if (it->Index < it->Point->CtrlPoints(it->Position).size()) {
+		if (it->Index < static_cast<int>(it->Point->CtrlPoints(it->Position).size())) {
 			// valid point.
 			tmplist.push_back(*it);
 		}

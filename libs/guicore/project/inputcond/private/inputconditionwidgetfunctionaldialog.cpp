@@ -630,7 +630,7 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 		} else {
 			setupXYStandard(j, &x, &y);
 		}
-		pc->setSamples(x.data(), y.data(), x.size());
+		pc->setSamples(x.data(), y.data(), static_cast<int>(x.size()));
 
 		if (m_axisSettings[j] == asLeft) {
 			pc->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);

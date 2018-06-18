@@ -49,7 +49,7 @@ ProjectWorkspace::ProjectWorkspace(QWidget* parent) :
 	QObject {parent},
 	impl {new Impl(this)}
 {
-	int trashCount = trashWorkfolders().size();
+	int trashCount = static_cast<int>(trashWorkfolders().size());
 	if (trashCount == 0) {return;}
 
 	QString workPath = QDir::toNativeSeparators(impl->m_workspace.absolutePath());

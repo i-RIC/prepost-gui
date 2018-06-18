@@ -107,7 +107,7 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 
 		std::string workTmpFileNameStr = iRIC::toStr(workTmpFileName);
 
-		bool copyOK = QFile::copy(workTmpFileName, m_tmpFileName);
+		QFile::copy(workTmpFileName, m_tmpFileName);
 		delete tempDir;
 	}
 

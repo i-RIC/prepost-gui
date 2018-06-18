@@ -37,7 +37,7 @@ DistanceMeasureGroupDataItem::~DistanceMeasureGroupDataItem()
 
 void DistanceMeasureGroupDataItem::addMeasure()
 {
-	int count = m_childItems.size();
+	int count = static_cast<int>(m_childItems.size());
 	QString defaultName = tr("Measure%1").arg(count + 1);
 	auto child = new DistanceMeasureDataItem(defaultName, this);
 	m_childItems.push_back(child);

@@ -13,7 +13,7 @@ namespace {
 
 SHPObject* getShpObject(const std::vector<QPointF>& data, SHPHandle shph)
 {
-	int nVertices = data.size();
+	int nVertices = static_cast<int>(data.size());
 	std::vector<double> padfX, padfY;
 	for (int i = 0; i < data.size(); ++i) {
 		padfX.push_back(data.at(i).x());

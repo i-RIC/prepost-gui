@@ -115,10 +115,10 @@ void GridComplexConditionDialog::addItem()
 		// this is the first one. make it the default.
 		newWidget->setIsDefault(true);
 	}
-	newWidget->setColor(m_colorSource->getColor(m_widgets.size()));
+	newWidget->setColor(m_colorSource->getColor(static_cast<int>(m_widgets.size())));
 	m_widgets.push_back(newWidget);
 	updateList();
-	ui->listWidget->setCurrentRow(m_widgets.size() - 1);
+	ui->listWidget->setCurrentRow(static_cast<int>(m_widgets.size()) - 1);
 }
 
 void GridComplexConditionDialog::removeItem()
@@ -137,7 +137,7 @@ void GridComplexConditionDialog::removeItem()
 		ui->widgetContainer->setWidget(w);
 	} else {
 		if (current >= m_widgets.size()) {
-			current = m_widgets.size() - 1;
+			current = static_cast<int>(m_widgets.size()) - 1;
 		}
 		ui->listWidget->setCurrentRow(current);
 	}

@@ -75,7 +75,6 @@ void CrossSections::doLoadFromMainFile(const QDomElement& node)
 {
 	int id = 1;
 	auto children = node.childNodes();
-	auto& cItems = childItems();
 	for (int i = 0; i < children.size(); ++i) {
 		QDomElement c = children.at(i).toElement();
 		CrossSection* cs = new CrossSection(this);

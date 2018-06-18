@@ -172,6 +172,8 @@ PostDataExportDialog::Format PostDataExportDialog::format() const
 	case 4:
 		return Format::ESRIShape;
 		break;
+	default:
+		return Format::VTKASCII;
 	}
 }
 

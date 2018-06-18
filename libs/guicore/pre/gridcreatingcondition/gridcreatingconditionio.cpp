@@ -24,7 +24,7 @@ GridCreatingCondition* GridCreatingConditionIO::importData(GridCreatingCondition
 	QFile f(xmlName);
 
 	QDomDocument doc;
-	bool ok = doc.setContent(&f);
+	doc.setContent(&f);
 
 	GridCreatingCondition* cond = factory->restore(doc.documentElement(), parent);
 

@@ -26,7 +26,7 @@ void ElevationPoints::Impl::buildTriangles()
 	triangulateio in, out;
 
 	auto points = m_parent->points();
-	int pointCount = points.size();
+	int pointCount = static_cast<int>(points.size());
 	std::vector<double> pointList;
 	pointList.reserve(pointCount);
 

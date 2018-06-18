@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-CgnsFileOpener::Impl::Impl(const std::string &filename) :
+CgnsFileOpener::Impl::Impl(const std::string &/*filename*/) :
 	m_fileId {0}
 {}
 
