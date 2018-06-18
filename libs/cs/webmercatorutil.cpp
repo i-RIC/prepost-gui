@@ -11,6 +11,7 @@
 #include <QString>
 
 #include <gdal_priv.h>
+#include <proj_api.h>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
