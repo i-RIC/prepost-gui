@@ -12,51 +12,24 @@
 namespace {
 	QString secondString(double seconds, int secondLength = 0)
 	{
-		if (seconds > INTDISPLAY_LIMIT) {
-			return QString::number(seconds);
-		}
-		int milisec = static_cast<int>(seconds * 1000);
-		int tmpint = milisec - (milisec / 1000) * 1000;
-		QVector<int> seclist;
-		for (int i = 0; i < 3; ++i) {
-			int tmpint2 = tmpint;
-			tmpint2 /= 10;
-			tmpint2 *= 10;
-			seclist.append(tmpint - tmpint2);
-			tmpint = tmpint2 / 10;
-		}
-		int precision = 3;
-		for (int i = 0; i < 3; ++i) {
-			if (seclist[i] == 0) {
-				-- precision;
-			} else {
-				break;
+		if (secondLength == 2) {
+			// show in "00" format, to be used for "3:00", for example.
+			int sec = static_cast<int>(seconds);
+			int milisec = static_cast<int>((seconds - sec) * 1000);
+			QString sec_str, milisec_str;
+			sec_str.sprintf("%02d", sec);
+			milisec_str.sprintf("%03d", milisec);
+			while (milisec_str.length() > 0 && milisec_str.at(milisec_str.length() - 1) == '0') {
+				milisec_str.chop(1);
 			}
-		}
-
-		double sec = milisec / 1000.;
-		if (precision == 0) {
-			int intsec = static_cast<int>(sec);
-			QString str;
-			if (secondLength == 2) {
-				str.sprintf("%02d", intsec);
+			if (milisec_str.length() > 0) {
+				return sec_str + "." + milisec_str;
 			} else {
-				str.sprintf("%d", intsec);
+				return sec_str;
 			}
-			return str;
 		} else {
-			QString str;
-			QString header;
-			QString format("%1.%2f");
-			QString f2;
-			if (secondLength == 2) {
-				header = "%0";
-			} else {
-				header = "%";
-			}
-			f2 = format.arg(precision + 3).arg(precision);
-			header.append(f2);
-			return str.sprintf(iRIC::toStr(header).c_str(), sec);
+			// show in normal format
+			return iRIC::timeSecondValueStr(seconds);
 		}
 	}
 
