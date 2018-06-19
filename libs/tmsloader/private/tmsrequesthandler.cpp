@@ -65,6 +65,11 @@ void TmsRequestHandler::setArgs(const std::map<QString, QString>& args)
 	m_args = args;
 }
 
+void TmsRequestHandler::setOptions(const std::map<QString, QString>& options)
+{
+	m_options = options;
+}
+
 void TmsRequestHandler::setup()
 {
 	// calculate the appropriate window size and zoom level from m_size, m_scale, and m_center.
@@ -90,6 +95,9 @@ void TmsRequestHandler::setup()
 	newArgs.insert({"%ZOOMLEVEL%", QString::number(zoomLevel)});
 	newArgs.insert({"%WIDTH%", QString::number(size.width())});
 	newArgs.insert({"%HEIGHT%", QString::number(size.height())});
+
+	m_options.insert({"maxZoom", QString::number(zoomLevel)});
+	newArgs.insert({"%OPTIONS%", optionsString()});
 
 	for (auto pair : newArgs) {
 		content.replace(pair.first, pair.second);
@@ -126,4 +134,13 @@ void TmsRequestHandler::handleLoaded()
 	m_imageMutex.unlock();
 
 	emit imageUpdated();
+}
+
+QString TmsRequestHandler::optionsString() const
+{
+	QStringList optionsStrs;
+	for (auto it = m_options.begin(); it != m_options.end(); ++it) {
+		optionsStrs.push_back(QString("%1: %2").arg(it->first).arg(it->second));
+	}
+	return optionsStrs.join(',');
 }

@@ -25,7 +25,7 @@ public:
 	std::vector<TmsImageSetting> defaultSettings() const;
 	void setSettings(const std::vector<TmsImageSetting>& settings);
 
-	TmsImageSetting setupXYZSetting(const QString& name, const QString& url);
+	TmsImageSetting setupXYZSetting(const QString& name, const QString& url, int maxZoom);
 
 	tmsloader::TmsRequest* buildRequest(QPointF& centerLonLat, QSize& size, double scale, const std::string& setting) const;
 };

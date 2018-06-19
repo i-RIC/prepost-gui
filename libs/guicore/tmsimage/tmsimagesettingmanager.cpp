@@ -41,11 +41,11 @@ std::vector<TmsImageSetting> standardSettings()
 	ret.push_back(buildSetting("tms=bing&imageryset=road&active=true", TmsImageSettingManager::tr("Bing (Road)")));
 
 	// GSI
-	ret.push_back(buildSetting("tms=gsi&tiletype=std&active=false", TmsImageSettingManager::tr("GSI (Standard) (Japan only)")));
-	ret.push_back(buildSetting("tms=gsi&tiletype=pale&active=false", TmsImageSettingManager::tr("GSI (Pale) (Japan only)")));
-	ret.push_back(buildSetting("tms=gsi&tiletype=english&active=false", TmsImageSettingManager::tr("GSI (English) (Japan only)")));
-	ret.push_back(buildSetting("tms=gsi&tiletype=relief&active=false", TmsImageSettingManager::tr("GSI (Relief) (Japan only)")));
-	ret.push_back(buildSetting("tms=gsi&tiletype=ort&active=false", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Standard) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Pale) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png&maxNativeZoom=11&active=false", TmsImageSettingManager::tr("GSI (English) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png&maxNativeZoom=15&active=false", TmsImageSettingManager::tr("GSI (Relief) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)")));
 
 	return ret;
 }
@@ -103,9 +103,9 @@ void TmsImageSettingManager::setSettings(const std::vector<TmsImageSetting>& set
 	saveSettings(settings);
 }
 
-TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& name, const QString& url)
+TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& name, const QString& url, int maxZoom)
 {
-	return buildSetting(iRIC::toStr(QString("tms=xyz&url=%1").arg(url)), name);
+	return buildSetting(iRIC::toStr(QString("tms=xyz&url=%1&maxNativeZoom=%2").arg(url).arg(maxZoom)), name);
 }
 
 TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& size, double scale, const std::string& setting) const
@@ -154,6 +154,10 @@ TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& s
 	} else if (tms == "xyz") {
 		QString url = query.queryItemValue("url");
 		std::map<QString, QString> options;
+		QString maxZoom = query.queryItemValue("maxNativeZoom");
+		if (! maxZoom.isNull()) {
+			options.insert({"maxNativeZoom", maxZoom});
+		}
 		return new TmsRequestXYZ(centerLonLat, size, scale, url, options);
 	}
 	return nullptr;

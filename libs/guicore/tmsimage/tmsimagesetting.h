@@ -24,6 +24,10 @@ public:
 	bool isActive() const;
 	void setIsActive(bool active);
 
+	bool isXYZ() const;
+	QString url() const;
+	int maxZoomLevel() const;
+
 private:
 	class Impl;
 	Impl* impl;

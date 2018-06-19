@@ -71,3 +71,23 @@ void TmsImageSetting::setIsActive(bool active)
 {
 	impl->m_isActive = active;
 }
+
+bool TmsImageSetting::isXYZ() const
+{
+	QUrlQuery query(impl->m_setting.c_str());
+	return query.queryItemValue("tms") == "xyz";
+}
+
+QString TmsImageSetting::url() const
+{
+	QUrlQuery query(impl->m_setting.c_str());
+	return query.queryItemValue("url");
+}
+
+int TmsImageSetting::maxZoomLevel() const
+{
+	QUrlQuery query(impl->m_setting.c_str());
+	QString zoomLevel = query.queryItemValue("maxNativeZoom");
+	if (zoomLevel.isNull()) {return 24;}
+	return zoomLevel.toInt();
+}

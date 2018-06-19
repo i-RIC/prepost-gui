@@ -25,12 +25,14 @@ public:
 
 private slots:
 	void add();
+	void edit();
 	void deleteSelected();
 	void restoreDefault();
 
 	void moveUpSelected();
 	void moveDownSelected();
 
+	void handleListWidgetSelectChange(int current);
 	void handleListWidgetItemChange(QListWidgetItem *item);
 
 private:

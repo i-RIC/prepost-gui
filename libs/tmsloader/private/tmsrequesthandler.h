@@ -30,6 +30,7 @@ public:
 
 protected:
 	void setArgs(const std::map<QString, QString>& args);
+	void setOptions(const std::map<QString, QString>& options);
 	void setup();
 
 private slots:
@@ -40,6 +41,8 @@ signals:
 	void imageUpdated();
 
 private:
+	QString optionsString() const;
+
 	QPointF m_center;
 	QSize m_size;
 	double m_scale;
@@ -47,6 +50,8 @@ private:
 	int m_requestId;
 
 	std::map<QString, QString> m_args;
+	std::map<QString, QString> m_options;
+
 	QWebView* m_webView;
 	QImage m_image;
 	mutable QMutex m_imageMutex;
