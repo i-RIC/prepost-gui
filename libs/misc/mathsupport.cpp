@@ -165,7 +165,14 @@ namespace iRIC
 
 	QString timeSecondValueStr(double val, int /*length*/)
 	{
-		return QString::number(timeSecondValue(val));
+		QString str = QString::number(timeSecondValue(val), 'f', TIME_PRECISION);
+		while (str.at(str.length() - 1) == '0') {
+			str.chop(1);
+		}
+		if (str.at(str.length() - 1) == '.') {
+			str.chop(1);
+		}
+		return str;
 	}
 
 	bool hasIntersection(const QPolygonF& polygon)
