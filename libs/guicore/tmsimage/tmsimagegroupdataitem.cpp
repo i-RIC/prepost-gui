@@ -6,6 +6,7 @@
 #include "../named/namedgraphicswindowdataitemtool.h"
 
 #include <cs/coordinatesystem.h>
+#include <cs/webmercatorutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -16,6 +17,7 @@
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <tmsloader/tmsrequest.h>
+#include <tmsloader/tmsutil.h>
 
 #include <QDomNode>
 #include <QMessageBox>
@@ -30,22 +32,55 @@
 
 namespace {
 
-void calcImageParameters(QPointF* center, QSize* size, double* scale, const QRectF& rect, const QVector2D& vecX, const QSize& windowSize, const CoordinateSystem& cs)
+QRectF calcRect(VTK2DGraphicsView* view, const QPointF& offset)
 {
+	double xmin, xmax, ymin, ymax;
+
+	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	QRectF rect(xmin, ymin, (xmax - xmin), (ymax - ymin));
+	rect.adjust(offset.x(), offset.y(), offset.x(), offset.y());
+
+	return rect;
+}
+
+QVector2D calcVecX(VTK2DGraphicsView* view)
+{
+	double x, y;
+
+	x = 0;
+	y = 0;
+	view->viewportToWorld(x, y);
+	QVector2D origin(x, y);
+
+	x = 1;
+	y = 0;
+	view->viewportToWorld(x, y);
+	QVector2D p1(x, y);
+
+	return p1 - origin;
+}
+
+void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)
+{
+	double xmin, xmax, ymin, ymax;
 	double centerX, centerY, centerLongitude, centerLatitude;
 
+	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	*lowerLeft = QPointF(xmin, ymin);
+
+	QRectF rect = calcRect(view, offset);
 	centerX = (rect.left() + rect.right()) * 0.5;
 	centerY = (rect.top() + rect.bottom()) * 0.5;
 
 	cs.mapGridToGeo(centerX, centerY, &centerLongitude, &centerLatitude);
-
 	*center = QPointF(centerLongitude, centerLatitude);
 
+	QVector2D vecX = calcVecX(view);
 	*scale = vecX.length();
-
 	QVector2D stdVecX(1, 0);
 
 	double angleRad = iRIC::angleRadian(stdVecX, vecX);
+	QSize windowSize = view->size();
 
 	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() + std::abs(std::sin(angleRad)) * windowSize.height();
 	double newHeight = std::abs(std::sin(angleRad)) * windowSize.width() + std::abs(std::cos(angleRad)) * windowSize.height();
@@ -53,30 +88,53 @@ void calcImageParameters(QPointF* center, QSize* size, double* scale, const QRec
 	*size = QSize(newWidth, newHeight);
 }
 
-void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)
+QRectF trimLonLatRect(const QRectF& rect)
 {
-	double xmin, xmax, ymin, ymax;
-	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
-	QRectF rect(xmin, ymin, (xmax - xmin), (ymax - ymin));
-	rect.adjust(offset.x(), offset.y(), offset.x(), offset.y());
+	QRectF ret = rect;
+	if (ret.left()   < -180) {ret.setLeft (-180);}
+	if (ret.right()  >  180) {ret.setRight( 180);}
+	if (ret.top()    <  -89) {ret.setTop(   -89);}
+	if (ret.bottom() >   89) {ret.setBottom( 89);}
+	return ret;
+}
 
-	double x, y;
+void calcImageParametersLonLat(QPointF* center, QSize* size, double* requestScale, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const QPointF& offset)
+{
+	QRectF rect = calcRect(view, offset);
+	double orig_width = rect.width();
 
-	x = 0;
-	y = 0;
-	view->viewportToWorld(x, y);
-	QVector2D vecOrigin(x, y);
+	rect = trimLonLatRect(rect);
+	double new_width = rect.width();
+	*lowerLeft = QPointF(rect.left() - offset.x(), rect.top() - offset.y());
 
-	x = 1;
-	y = 0;
-	view->viewportToWorld(x, y);
-	QVector2D vecX(x, y);
-
-	*lowerLeft = QPointF(xmin, ymin);
-
+	QVector2D vecX = calcVecX(view);
+	QVector2D stdVecX(1, 0);
+	double angleRad = iRIC::angleRadian(stdVecX, vecX);
 	QSize windowSize = view->size();
 
-	calcImageParameters(center, size, scale, rect, vecX - vecOrigin, windowSize, cs);
+	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() + std::abs(std::sin(angleRad)) * windowSize.height();
+	newWidth *= new_width / orig_width;
+
+	double lonCenter, latCenter;
+	int zoomLevel, width, height;
+	WebMercatorUtil::calcImageZoomAndSize(rect.left(), rect.top(), rect.right(), rect.bottom(), newWidth,
+																				&lonCenter, &latCenter, &zoomLevel, &width, &height);
+
+	*center = QPointF(lonCenter, latCenter);
+	*requestScale = tmsloader::TmsUtil::meterPerPixel(*center, zoomLevel);
+	*size = QSize(width, height);
+
+	*scale = vecX.length() * (newWidth / width);
+}
+
+void calcImageParameters(QPointF* center, QSize* size, double* requestScale, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)
+{
+	if (cs.isLongLat()) {
+		calcImageParametersLonLat(center, size, requestScale, lowerLeft, scale, view, offset);
+	} else {
+		calcImageParameters(center, size, lowerLeft, scale, view, cs, offset);
+		*requestScale = *scale;
+	}
 }
 
 } // namespace
@@ -206,7 +264,16 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 {
 	if (requestId != impl->m_tmsRequestId) {return;}
 
-	impl->m_image = impl->m_tmsLoader.getImage(impl->m_tmsRequestId);
+	auto cs = projectData()->mainfile()->coordinateSystem();
+	if (cs->isLongLat()) {
+		auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
+		QRectF rect = calcRect(view, impl->m_offset);
+		rect = trimLonLatRect(rect);
+		impl->m_image = WebMercatorUtil::convertWebMercatorToLongLat(rect, impl->m_tmsLoader.getImage(impl->m_tmsRequestId), projectData()->workDirectory());
+	} else {
+		impl->m_image = impl->m_tmsLoader.getImage(impl->m_tmsRequestId);
+	}
+
 	// m_image.save("E:/debug.png"); // only for debug
 	impl->m_imgToImg->Modified();
 
@@ -238,11 +305,12 @@ void TmsImageGroupDataItem::requestImage()
 
 	QPointF center;
 	QSize size;
+	double scale;
 
-	calcImageParameters(&center, &size, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs, impl->m_offset);
+	calcImageParameters(&center, &size, &scale, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs, impl->m_offset);
 
 	TmsImageSettingManager manager;
-	tmsloader::TmsRequest* request = manager.buildRequest(center, size, impl->m_imageScale, impl->m_target);
+	tmsloader::TmsRequest* request = manager.buildRequest(center, size, scale, impl->m_target);
 	if (request == nullptr) {return;}
 
 	impl->m_tmsLoader.registerRequest(*request, &(impl->m_tmsRequestId));

@@ -43,6 +43,15 @@ unix {
 	LIBS += -lproj
 }
 
+# GDAL
+
+win32 {
+	LIBS += -lgdal_i
+}
+unix {
+	LIBS += -lgdal
+}
+
 # Post-Build Event
 win32 {
 	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
