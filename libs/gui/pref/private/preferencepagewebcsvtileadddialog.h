@@ -19,6 +19,11 @@ public:
 
 	GeoDataPointmapWebImporterSetting setting() const;
 
+	void setName(const QString& name);
+	void setMinZoom(int zoom);
+	void setMaxZoom(int zoom);
+	void setUrl(const QString& url);
+
 private:
 	Ui::PreferencePageWebCsvTileAddDialog *ui;
 };

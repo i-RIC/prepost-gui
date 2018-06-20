@@ -14,12 +14,14 @@ PreferencePageWebCsvTile::PreferencePageWebCsvTile(QWidget *parent) :
 	m_settings = manager.settings();
 
 	connect(ui->addButton, SIGNAL(clicked()), this, SLOT(add()));
+	connect(ui->editButton, SIGNAL(clicked()), this, SLOT(edit()));
 	connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteSelected()));
 	connect(ui->defaultButton, SIGNAL(clicked()), this, SLOT(restoreDefault()));
 
 	connect(ui->upButton, SIGNAL(clicked()), this, SLOT(moveUpSelected()));
 	connect(ui->downButton, SIGNAL(clicked()), this, SLOT(moveDownSelected()));
 
+	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(handleListWidgetSelectChange(int)));
 	updateList();
 }
 
@@ -44,6 +46,29 @@ void PreferencePageWebCsvTile::add()
 	updateList();
 
 	ui->listWidget->setCurrentRow(ui->listWidget->count() - 1);
+}
+
+void PreferencePageWebCsvTile::edit()
+{
+	int idx = ui->listWidget->currentRow();
+
+	GeoDataPointmapWebImporterSetting oldSetting = m_settings[idx];
+
+	PreferencePageWebCsvTileAddDialog dialog(this);
+	dialog.setWindowTitle(tr("Edit Web Elevation Data"));
+	dialog.setName(oldSetting.caption());
+	dialog.setMinZoom(oldSetting.minZoomLevel());
+	dialog.setMaxZoom(oldSetting.maxZoomLevel());
+	dialog.setUrl(oldSetting.url());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto newSetting = dialog.setting();
+	m_settings[idx] = newSetting;
+
+	updateList();
+	ui->listWidget->setCurrentRow(idx);
 }
 
 void PreferencePageWebCsvTile::deleteSelected()
@@ -92,6 +117,17 @@ void PreferencePageWebCsvTile::moveDownSelected()
 
 	updateList();
 	ui->listWidget->setCurrentRow(row + 1);
+}
+
+void PreferencePageWebCsvTile::handleListWidgetSelectChange(int current)
+{
+	if (current < 0 || current >= m_settings.size()) {
+		ui->editButton->setEnabled(false);
+		ui->deleteButton->setEnabled(false);
+		return;
+	}
+	ui->editButton->setEnabled(true);
+	ui->deleteButton->setEnabled(true);
 }
 
 void PreferencePageWebCsvTile::updateList()

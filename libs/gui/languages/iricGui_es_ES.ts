@@ -1136,17 +1136,27 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="60"/>
-        <source>&amp;Add</source>
+        <source>&amp;Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagewebcsvtile.ui" line="67"/>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="70"/>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="80"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagewebcsvtile.ui" line="87"/>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="100"/>
         <source>&amp;Restore Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.cpp" line="58"/>
+        <source>Edit Web Elevation Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

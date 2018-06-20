@@ -890,7 +890,7 @@ Do you really want to import grid from this file?</source>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="352"/>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="465"/>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="569"/>
-        <source>o</source>
+        <source>º</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12390,18 +12390,32 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="60"/>
-        <source>&amp;Add</source>
-        <translation>追加(&amp;A)</translation>
+        <source>&amp;Add...</source>
+        <translation>追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagewebcsvtile.ui" line="67"/>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="70"/>
+        <source>&amp;Edit...</source>
+        <translation>編集(&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">追加(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="80"/>
         <source>&amp;Delete</source>
         <translation>削除(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagewebcsvtile.ui" line="87"/>
+        <location filename="../pref/preferencepagewebcsvtile.ui" line="100"/>
         <source>&amp;Restore Default</source>
         <translation>デフォルトに戻す(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagewebcsvtile.cpp" line="58"/>
+        <source>Edit Web Elevation Data</source>
+        <translation>Web標高データの編集</translation>
     </message>
 </context>
 <context>
