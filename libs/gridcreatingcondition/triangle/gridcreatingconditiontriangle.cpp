@@ -173,7 +173,8 @@ GridCreatingConditionTriangleAbstractPolygon* selectPolygon(
 } // namespace
 
 GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	GridCreatingCondition {parent, creator}
+	GridCreatingCondition {parent, creator},
+	m_rightClickingMenu {nullptr}
 {
 	initParams();
 
