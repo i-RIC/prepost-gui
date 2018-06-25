@@ -25,6 +25,7 @@
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/zdepthrange.h>
@@ -252,16 +253,16 @@ private:
 
 void GridCreatingConditionCompoundChannel::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return) {
-		if (m_status == stDefiningRegion && m_mouseEventMode == meDefining) {
-			definePolygon(false);
-		}
-		if (m_status == stDefiningLowWaterRegion && m_mouseEventMode == meDefining) {
-			definePolygon(false);
-		}
-		if (m_status == stDefiningCenterLine && m_mouseEventMode == meDefining) {
-			defineLine(false);
-		}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+
+	if (m_status == stDefiningRegion && m_mouseEventMode == meDefining) {
+		definePolygon(false);
+	}
+	if (m_status == stDefiningLowWaterRegion && m_mouseEventMode == meDefining) {
+		definePolygon(false);
+	}
+	if (m_status == stDefiningCenterLine && m_mouseEventMode == meDefining) {
+		defineLine(false);
 	}
 }
 

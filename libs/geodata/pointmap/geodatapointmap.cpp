@@ -24,6 +24,7 @@
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/mathsupport.h>
@@ -1959,7 +1960,7 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		updateMouseCursor(graphicsView());
 		break;
 	case meSMPolygon:
-		if (event->key() == Qt::Key_Return) {
+		if (iRIC::isEnterKey(event->key())) {
 			definePolygon(false, xOr);
 		}
 		break;
@@ -1970,7 +1971,7 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		break;
 	}
 
-	if (event->key() == Qt::Key_Return) {
+	if (iRIC::isEnterKey(event->key())) {
 		if (m_mouseEventMode == meSMPolygon) {
 			definePolygon(false, xOr);
 		} else if (m_mouseEventMode == meSMAddCtrlPoint) {

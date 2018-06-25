@@ -32,6 +32,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
@@ -816,11 +817,10 @@ void GridCreatingConditionPoisson::viewOperationEnded(PreProcessorGraphicsViewIn
 
 void GridCreatingConditionPoisson::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
-		if (impl->m_mouseEventMode == Impl::MouseEventMode::Defining) {
-			impl->finishDefiningLine();
-		}
-	}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
+
+	impl->finishDefiningLine();
 }
 
 void GridCreatingConditionPoisson::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)

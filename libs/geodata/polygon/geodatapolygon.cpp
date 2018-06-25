@@ -38,6 +38,7 @@
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
@@ -267,13 +268,11 @@ void GeoDataPolygon::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 
 void GeoDataPolygon::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return) {
-		if (m_mouseEventMode == meDefining) {
-			if (m_selectMode == smPolygon) {
-				definePolygon(false);
-			}
-		}
-	}
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (m_mouseEventMode != meDefining) {return;}
+	if (m_selectMode != smPolygon) {return;}
+
+	definePolygon(false);
 }
 
 void GeoDataPolygon::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
