@@ -4,7 +4,9 @@
 #include "../tmsregionselectwidget.h"
 #include <tmsloader/tmsloader.h>
 
+#include <QCursor>
 #include <QImage>
+#include <QPixmap>
 #include <QPoint>
 #include <QPointF>
 #include <QTimer>
@@ -52,6 +54,12 @@ public:
 	QPoint m_previousPos;
 	ViewOperationState m_viewOperationState;
 	QTimer m_timer;
+
+	QPixmap m_movePixmap;
+	QPixmap m_zoomPixmap;
+
+	QCursor m_moveCursor;
+	QCursor m_zoomCursor;
 
 private:
 	TmsRegionSelectWidget* m_widget;
