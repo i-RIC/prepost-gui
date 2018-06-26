@@ -120,7 +120,12 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 					if (lat < m_latMin || lat > m_latMax) {continue;}
 
 					double cx, cy;
-					m_coordinateSystem->mapGeoToGrid(lon, lat, &cx, &cy);
+					if (! m_coordinateSystem->isLongLat()) {
+						m_coordinateSystem->mapGeoToGrid(lon, lat, &cx, &cy);
+					} else {
+						cx = lon;
+						cy = lat;
+					}
 
 					points->InsertNextPoint(cx, cy, 0);
 					values->InsertNextValue(v);
