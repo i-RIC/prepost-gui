@@ -738,6 +738,7 @@ void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filena
 	} else {
 		m_mouseEventMode = meBeforeDefining;
 	}
+	updateActionStatus();
 }
 
 void GridCreatingConditionCenterAndWidth::saveExternalData(const QString& filename)
