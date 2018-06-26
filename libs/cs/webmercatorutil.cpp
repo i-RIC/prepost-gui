@@ -213,3 +213,25 @@ QImage WebMercatorUtil::convertWebMercatorToLongLat(const QRectF& rect, const QI
 
 	return result;
 }
+
+void WebMercatorUtil::project(double lon, double lat, double* x, double* y)
+{
+	Impl impl;
+	impl.init(0);
+
+	impl.project_plxel(lon, lat, x, y);
+}
+
+void WebMercatorUtil::unproject(double x, double y, double* lon, double* lat)
+{
+	Impl impl;
+	impl.init(0);
+
+	impl.unproject_pixel(x, y, lon, lat);
+}
+
+double WebMercatorUtil::pixelSize(double zoomLevel)
+{
+	// pixelSize = 1 for zoomlevel 0.
+	return 1 / std::exp(std::log(2.0) * zoomLevel);
+}

@@ -1,6 +1,7 @@
 #include "geodatapointmapwebimporterregionselectdialog.h"
 #include "ui_geodatapointmapwebimporterregionselectdialog.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/tmsimage/tmsimagesetting.h>
 #include <guicore/tmsimage/tmsimagesettingmanager.h>
 
@@ -37,7 +38,10 @@ GeoDataPointmapWebImporterRegionSelectDialog::~GeoDataPointmapWebImporterRegionS
 
 void GeoDataPointmapWebImporterRegionSelectDialog::setCoordinateSystem(CoordinateSystem* cs)
 {
-	ui->mapWidget->setCoordinateSystem(cs);
+	double lon, lat;
+	cs->mapGridToGeo(0, 0, &lon, &lat);
+
+	ui->mapWidget->setCenter(lon, lat);
 }
 
 double GeoDataPointmapWebImporterRegionSelectDialog::minLon() const

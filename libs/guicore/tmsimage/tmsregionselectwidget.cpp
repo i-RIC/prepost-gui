@@ -2,21 +2,21 @@
 #include "private/tmsregionselectwidget_impl.h"
 #include "tmsimagesettingmanager.h"
 
-#include <cs/coordinatesystem.h>
+#include <cs/webmercatorutil.h>
 #include <tmsloader/tmsrequest.h>
+#include <tmsloader/tmsutil.h>
 
 #include <QMouseEvent>
 #include <QPainter>
 #include <QRectF>
 
 TmsRegionSelectWidget::Impl::Impl(TmsRegionSelectWidget* w) :
-	m_centerX {0},
-	m_centerY {0},
-	m_scale {4000},
+	m_centerLon {0},
+	m_centerLat {0},
+	m_zoomLevel {4},
 	m_isSelected {false},
-	m_point1 {0, 0},
-	m_point2 {0, 0},
-	m_coordinateSystem {nullptr},
+	m_pointLonLat1 {0, 0},
+	m_pointLonLat2 {0, 0},
 	m_mapSetting (""),
 	m_requestId {-1},
 	m_loader {w},
@@ -24,7 +24,6 @@ TmsRegionSelectWidget::Impl::Impl(TmsRegionSelectWidget* w) :
 	m_widget {w}
 {
 	m_mapSetting = "tms=gsi&tiletype=std";
-
 }
 
 TmsRegionSelectWidget::Impl::~Impl()
@@ -36,49 +35,53 @@ TmsRegionSelectWidget::Impl::~Impl()
 
 QRectF TmsRegionSelectWidget::Impl::regionRect() const
 {
-	double x1 = qMin(m_point1.x(), m_point2.x());
-	double x2 = qMax(m_point1.x(), m_point2.x());
-	double y1 = qMin(m_point1.y(), m_point2.y());
-	double y2 = qMax(m_point1.y(), m_point2.y());
+	double lonMin = qMin(m_pointLonLat1.x(), m_pointLonLat2.x());
+	double lonMax = qMax(m_pointLonLat1.x(), m_pointLonLat2.x());
+	double latMin = qMin(m_pointLonLat1.y(), m_pointLonLat2.y());
+	double latMax = qMax(m_pointLonLat1.y(), m_pointLonLat2.y());
 
-	QPointF topLeft, bottomRight;
-	XYToPos(x1, y2, m_widget->size(), &topLeft);
-	XYToPos(x2, y1, m_widget->size(), &bottomRight);
+	double xMin, xMax, yMin, yMax;
 
-	return QRectF(topLeft.x(), topLeft.y(), (bottomRight.x() - topLeft.x()), (bottomRight.y() - topLeft.y()));
+	lonLatToXY(m_widget->size(), lonMin, latMax, &xMin, &yMin);
+	lonLatToXY(m_widget->size(), lonMax, latMin, &xMax, &yMax);
+
+	return QRectF(xMin, yMin, (xMax - xMin), (yMax - yMin));
 }
 
 QRectF TmsRegionSelectWidget::Impl::imageRect() const
 {
-	QPointF topLeft, bottomRight;
-	XYToPos(m_imageTopLeft.x(), m_imageTopLeft.y(), m_widget->size(), &topLeft);
-	XYToPos(m_imageBottomRight.x(), m_imageBottomRight.y(), m_widget->size(), &bottomRight);
+	double xMin, xMax, yMin, yMax;
 
-	return QRectF(topLeft.x(), topLeft.y(), (bottomRight.x() - topLeft.x()), (bottomRight.y() - topLeft.y()));
+	lonLatToXY(m_widget->size(), m_imageLonMin, m_imageLatMax, &xMin, &yMin);
+	lonLatToXY(m_widget->size(), m_imageLonMax, m_imageLatMin, &xMax, &yMax);
+
+	return QRectF(xMin, yMin, (xMax - xMin), (yMax - yMin));
 }
 
-void TmsRegionSelectWidget::Impl::posToXY(const QPoint& pos, const QSize& size, double* x, double* y) const
+void TmsRegionSelectWidget::Impl::lonLatToXY(const QSize& size, double lon, double lat, double* x, double* y) const
 {
-	int cx = size.width()  / 2;
-	int cy = size.height() / 2;
-	double dx = pos.x() - cx;
-	double dy = - (pos.y() - cy);
+	double centerX, centerY, px, py;
 
-	*x = m_centerX + dx * m_scale;
-	*y = m_centerY + dy * m_scale;
+	WebMercatorUtil::project(m_centerLon, m_centerLat, &centerX, &centerY);
+	WebMercatorUtil::project(lon, lat, &px, &py);
+	double rate = WebMercatorUtil::pixelSize(m_zoomLevel);
+
+	*x = size.width()  / 2 + (px - centerX) / rate;
+	*y = size.height() / 2 + (py - centerY) / rate;
 }
 
-void TmsRegionSelectWidget::Impl::XYToPos(double x, double y, const QSize& size, QPointF* pos) const
+void TmsRegionSelectWidget::Impl::XYToLonLat(const QSize& size, double x, double y, double* lon, double* lat) const
 {
-	double dx = x - m_centerX;
-	double dy = y - m_centerY;
+	double centerX, centerY, px, py;
 
-	int cx = size.width()  / 2;
-	int cy = size.height() / 2;
+	WebMercatorUtil::project(m_centerLon, m_centerLat, &centerX, &centerY);
+	double rate = WebMercatorUtil::pixelSize(m_zoomLevel);
 
-	*pos = QPointF(cx + dx / m_scale, cy - dy / m_scale);
+	px = centerX + (x - size.width()  / 2) * rate;
+	py = centerY + (y - size.height() / 2) * rate;
+
+	WebMercatorUtil::unproject(px, py, lon, lat);
 }
-
 
 // public interfaces
 
@@ -125,11 +128,11 @@ void TmsRegionSelectWidget::mousePressEvent(QMouseEvent *e)
 	}
 	impl->m_viewOperationState = Impl::ViewOperationState::None;
 
-	double x, y;
-	impl->posToXY(e->pos(), size(), &x, &y);
+	double lon, lat;
+	impl->XYToLonLat(size(), e->x(), e->y(), &lon, &lat);
 
-	impl->m_point1 = QPointF(x, y);
-	impl->m_point2 = impl->m_point1;
+	impl->m_pointLonLat1 = QPointF(lon, lat);
+	impl->m_pointLonLat2 = impl->m_pointLonLat1;
 	impl->m_isSelected = true;
 
 	update();
@@ -149,31 +152,25 @@ void TmsRegionSelectWidget::mouseMoveEvent(QMouseEvent *e)
 		QPoint diff = e->pos() - impl->m_previousPos;
 
 		if (impl->m_viewOperationState == Impl::ViewOperationState::Translating) {
-			impl->m_centerX -= impl->m_scale * diff.x();
-			impl->m_centerY += impl->m_scale * diff.y();
+			double centerX, centerY, rate;
+
+			impl->lonLatToXY(size(), impl->m_centerLon, impl->m_centerLat, &centerX, &centerY);
+			centerX -= diff.x();
+			centerY -= diff.y();
+			impl->XYToLonLat(size(), centerX, centerY, &(impl->m_centerLon), &(impl->m_centerLat));
 		} else if (impl->m_viewOperationState == Impl::ViewOperationState::Zooming) {
-			impl->m_scale *= std::exp(diff.y() * 0.01);
+			impl->m_zoomLevel -= diff.y() * 0.01;
 		}
 		update();
 		impl->m_previousPos = e->pos();
 		return;
 	}
 
-	double x, y;
-	impl->posToXY(e->pos(), size(), &x, &y);
-
-	impl->m_point2 = QPointF(x, y);
+	double lon, lat;
+	impl->XYToLonLat(size(), e->x(), e->y(), &lon, &lat);
+	impl->m_pointLonLat2 = QPointF(lon, lat);
 
 	update();
-}
-
-void TmsRegionSelectWidget::setCoordinateSystem(CoordinateSystem* cs)
-{
-	impl->m_coordinateSystem = cs;
-	if (cs->proj4PlaneStr().contains("+proj=utm")) {
-		impl->m_centerY = 5000000;
-	}
-	requestUpdate();
 }
 
 void TmsRegionSelectWidget::setMapSetting(const std::string& setting)
@@ -182,16 +179,16 @@ void TmsRegionSelectWidget::setMapSetting(const std::string& setting)
 	requestUpdate();
 }
 
-void TmsRegionSelectWidget::setCenter(double x, double y)
+void TmsRegionSelectWidget::setCenter(double lon, double lat)
 {
-	impl->m_centerX = x;
-	impl->m_centerY = y;
+	impl->m_centerLon = lon;
+	impl->m_centerLat = lat;
 	requestUpdate();
 }
 
-void TmsRegionSelectWidget::setScale(double scale)
+void TmsRegionSelectWidget::setZoomLevel(double zoomLevel)
 {
-	impl->m_scale = scale;
+	impl->m_zoomLevel = zoomLevel;
 	requestUpdate();
 }
 
@@ -202,68 +199,39 @@ bool TmsRegionSelectWidget::isSelected() const
 
 double TmsRegionSelectWidget::minLon() const
 {
-	double x = qMin(impl->m_point1.x(), impl->m_point2.x());
-	double y = (impl->m_point1.y() + impl->m_point2.y()) * 0.5;
-
-	double X, Y;
-	impl->m_coordinateSystem->mapGridToGeo(x, y, &X, &Y);
-
-	return X;
+	return qMin(impl->m_pointLonLat1.x(), impl->m_pointLonLat2.x());
 }
 
 double TmsRegionSelectWidget::maxLon() const
 {
-	double x = qMax(impl->m_point1.x(), impl->m_point2.x());
-	double y = (impl->m_point1.y() + impl->m_point2.y()) * 0.5;
-
-	double X, Y;
-	impl->m_coordinateSystem->mapGridToGeo(x, y, &X, &Y);
-
-	return X;
+	return qMax(impl->m_pointLonLat1.x(), impl->m_pointLonLat2.x());
 }
 
 double TmsRegionSelectWidget::minLat() const
 {
-	double x = (impl->m_point1.x() + impl->m_point2.x()) * 0.5;
-	double y = qMin(impl->m_point1.y(), impl->m_point2.y());
-
-	double X, Y;
-	impl->m_coordinateSystem->mapGridToGeo(x, y, &X, &Y);
-
-	return Y;
+	return qMin(impl->m_pointLonLat1.y(), impl->m_pointLonLat2.y());
 }
 
 double TmsRegionSelectWidget::maxLat() const
 {
-	double x = (impl->m_point1.x() + impl->m_point2.x()) * 0.5;
-	double y = qMax(impl->m_point1.y(), impl->m_point2.y());
-
-	double X, Y;
-	impl->m_coordinateSystem->mapGridToGeo(x, y, &X, &Y);
-
-	return Y;
+	return qMax(impl->m_pointLonLat1.y(), impl->m_pointLonLat2.y());
 }
 
 void TmsRegionSelectWidget::requestUpdate()
 {
 	static bool updating = false;
-	if (updating) { return; }
+	if (updating) {return;}
 
 	if (impl->m_requestId != -1) {
 		impl->m_loader.cancelRequest(impl->m_requestId);
 		impl->m_requestId = -1;
 	}
 
-	if (impl->m_coordinateSystem == nullptr) {return;}
-
 	TmsImageSettingManager manager;
-	double lon, lat;
-	impl->m_coordinateSystem->mapGridToGeo(impl->m_centerX, impl->m_centerY, &lon, &lat);
 
-	if (lat > 82) {lat = 82;}
-	if (lat < -82) {lat = -82;}
-
-	tmsloader::TmsRequest* req = manager.buildRequest(QPointF(lon, lat), size(), impl->m_scale, impl->m_mapSetting);
+	QPointF center(impl->m_centerLon, impl->m_centerLat);
+	double scale = tmsloader::TmsUtil::meterPerPixel(center, impl->m_zoomLevel);
+	tmsloader::TmsRequest* req = manager.buildRequest(center, size(), scale, impl->m_mapSetting);
 	if (req == nullptr) {return;}
 
 	int rId;
@@ -277,22 +245,19 @@ void TmsRegionSelectWidget::requestUpdate()
 
 	delete req;
 
-	double x, y;
 	QSize s = size();
-	impl->posToXY(QPoint(0, 0), s, &x, &y);
-	impl->m_imageTopLeft = QPointF(x, y);
-	impl->posToXY(QPoint(s.width() - 1, s.height() - 1), s, &x, &y);
-	impl->m_imageBottomRight = QPointF(x, y);
+	impl->XYToLonLat(s, 0, 0, &(impl->m_imageLonMin), &(impl->m_imageLatMax));
+	impl->XYToLonLat(s, s.width(), s.height(), &(impl->m_imageLonMax), &(impl->m_imageLatMin));
 }
 
 void TmsRegionSelectWidget::zoomIn()
 {
-	setScale(impl->m_scale * 0.5);
+	setZoomLevel(impl->m_zoomLevel + 1);
 }
 
 void TmsRegionSelectWidget::zoomOut()
 {
-	setScale(impl->m_scale * 2.0);
+	setZoomLevel(impl->m_zoomLevel - 1);
 }
 
 void TmsRegionSelectWidget::handleImageUpdate(int requestId)
