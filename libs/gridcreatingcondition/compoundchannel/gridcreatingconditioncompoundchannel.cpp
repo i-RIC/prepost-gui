@@ -67,8 +67,9 @@
 #define EPS 0.002
 #define MIN_CENTERLINEDIV 20
 
-GridCreatingConditionCompoundChannel::GridCreatingConditionCompoundChannel(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingCondition(parent, creator)
+GridCreatingConditionCompoundChannel::GridCreatingConditionCompoundChannel(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator),
+	m_rightClickingMenu {nullptr}
 {
 	initParams();
 

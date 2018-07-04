@@ -69,7 +69,8 @@ void setupLabelActor(vtkLabel2DActor* actor)
 
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
-	m_previewGrid {nullptr}
+	m_previewGrid {nullptr},
+	m_rightClickingMenu {nullptr}
 {
 	m_upstreamActor.setLabel("Upstream");
 	setupLabelActor(&m_upstreamActor);
@@ -371,7 +372,6 @@ void GridCreatingConditionCenterAndWidth::setupActors()
 
 void GridCreatingConditionCenterAndWidth::setupMenu()
 {
-
 	m_menu->addAction(m_addVertexAction);
 	m_menu->addAction(m_removeVertexAction);
 	m_menu->addAction(m_coordEditAction);
