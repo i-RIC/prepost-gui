@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncenterandwidth.h"
-#include "gridcreatingconditioncenterandwidthcoordinateseditdialog.h"
 #include "gridcreatingconditioncenterandwidthdialog.h"
 #include "private/gridcreatingconditioncenterandwidth_addvertexcommand.h"
+#include "private/gridcreatingconditioncenterandwidth_coordinateseditor.h"
 #include "private/gridcreatingconditioncenterandwidth_definenewpointcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_finishdefiningcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_movecommand.h"
@@ -891,9 +891,13 @@ void GridCreatingConditionCenterAndWidth::updateActionStatus()
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::pushUpdateShapeCommand(QUndoCommand* com)
+void GridCreatingConditionCenterAndWidth::pushUpdateShapeCommand(QUndoCommand* com, bool renderRedoOnly)
 {
-	pushRenderCommand(new UpdateShapeCommand(com, this));
+	if (renderRedoOnly) {
+		pushRenderRedoOnlyCommand(new UpdateShapeCommand(com, this));
+	} else {
+		pushRenderCommand(new UpdateShapeCommand(com, this));
+	}
 }
 
 void GridCreatingConditionCenterAndWidth::addVertexMode(bool on)
@@ -918,12 +922,7 @@ void GridCreatingConditionCenterAndWidth::removeVertexMode(bool on)
 
 void GridCreatingConditionCenterAndWidth::editCoordinates()
 {
-	m_mouseEventMode = meEditVerticesDialog;
-	GridCreatingConditionCenterAndWidthCoordinatesEditDialog* dialog = new GridCreatingConditionCenterAndWidthCoordinatesEditDialog(this, preProcessorWindow());
-	dialog->show();
-	iricMainWindow()->enterModelessDialogMode();
-	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-	connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
+	CoordinatesEditor::edit(this);
 }
 
 void GridCreatingConditionCenterAndWidth::clear()

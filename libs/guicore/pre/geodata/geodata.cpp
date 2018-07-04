@@ -325,6 +325,11 @@ void GeoData::pushRenderCommand(QUndoCommand* com)
 	geoDataDataItem()->pushRenderCommand(com, geoDataDataItem());
 }
 
+void GeoData::pushRenderRedoOnlyCommand(QUndoCommand* com)
+{
+	geoDataDataItem()->pushRenderRedoOnlyCommand(com, geoDataDataItem());
+}
+
 PreProcessorGraphicsViewInterface* GeoData::graphicsView()
 {
 	return dynamic_cast<PreProcessorGraphicsViewInterface*>(preProcessorWindow()->centralWidget());

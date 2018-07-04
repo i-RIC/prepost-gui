@@ -25,7 +25,6 @@
 class QMenu;
 class QAction;
 class QToolBar;
-class GridCreatingConditionCenterAndWidthCoordinatesEditDialog;
 
 class GridCreatingConditionCenterAndWidth : public GridCreatingCondition
 {
@@ -154,7 +153,7 @@ private:
 	void updateMouseEventMode();
 	void updateActionStatus();
 
-	void pushUpdateShapeCommand(QUndoCommand* com);
+	void pushUpdateShapeCommand(QUndoCommand* com, bool renderRedoOnly = false);
 
 	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
@@ -182,9 +181,10 @@ private:
 	class MoveVertexCommand;
 	class RemoveVertexCommand;
 
+	class CoordinatesEditor;
+
 public:
 	friend class GridCreatingConditionCreatorCenterAndWidth;
-	friend class GridCreatingConditionCenterAndWidthCoordinatesEditDialog;
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTH_H

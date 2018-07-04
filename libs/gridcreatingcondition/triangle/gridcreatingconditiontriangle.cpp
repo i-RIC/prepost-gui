@@ -3,8 +3,6 @@
 #include "gridcreatingconditiontriangledivisionline.h"
 #include "gridcreatingconditiontrianglegridregionpolygon.h"
 #include "gridcreatingconditiontriangleholepolygon.h"
-#include "gridcreatingconditiontrianglepolygoncoordinateseditdialog.h"
-#include "gridcreatingconditiontrianglepolylinecoordinateseditdialog.h"
 #include "gridcreatingconditiontriangleremeshpolygon.h"
 #include "gridcreatingconditiontrianglesettingdialog.h"
 
@@ -21,6 +19,8 @@
 #include "private/gridcreatingconditiontriangle_movepolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_movepolylinecommand.h"
 #include "private/gridcreatingconditiontriangle_movepolylinevertexcommand.h"
+#include "private/gridcreatingconditiontriangle_polygoncoordinateseditor.h"
+#include "private/gridcreatingconditiontriangle_polylinecoordinateseditor.h"
 #include "private/gridcreatingconditiontriangle_removepolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_removepolylinevertexcommand.h"
 
@@ -1029,29 +1029,10 @@ void GridCreatingConditionTriangle::updateActionStatus()
 
 void GridCreatingConditionTriangle::editCoordinates()
 {
-	/*
-		m_mouseEventMode = meEditVerticesDialog;
-		GridCreatingConditionTriangleCoordinatesEditDialog* dialog = new GridCreatingConditionTriangleCoordinatesEditDialog(this, preProcessorWindow());
-		dialog->show();
-		iricMainWindow()->enterModelessDialogMode();
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-	*/
-
-	m_mouseEventMode = meEditVerticesDialog;
 	if (m_selectedPolygon != nullptr) {
-		GridCreatingConditionTrianglePolygonCoordinatesEditDialog* dialog = new GridCreatingConditionTrianglePolygonCoordinatesEditDialog(this, preProcessorWindow());
-		dialog->show();
-		iricMainWindow()->enterModelessDialogMode();
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-	}
-	if (m_selectedLine != nullptr) {
-		GridCreatingConditionTrianglePolyLineCoordinatesEditDialog* dialog = new GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(this, preProcessorWindow());
-		dialog->show();
-		iricMainWindow()->enterModelessDialogMode();
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
+		PolygonCoordinatesEditor::edit(this);
+	} else if (m_selectedLine != nullptr) {
+		PolylineCoordinatesEditor::edit(this);
 	}
 }
 

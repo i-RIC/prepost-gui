@@ -28,6 +28,7 @@ public:
 		AddVertexNotPossible,
 		RemoveVertexPrepare,
 		RemoveVertexNotPossible,
+		EditCoodinatesDialog,
 	};
 
 	Impl(GridCreatingConditionPoisson* parent);
@@ -40,6 +41,9 @@ public:
 	void updateActionStatus();
 
 	void copyCenterLine(GeoDataRiverSurvey* data, int num);
+	void importLine(PolyLineController* line);
+	void exportLine(PolyLineController* line, const QString& lineName);
+
 	Grid* createGrid();
 
 	PolyLineController m_centerLineController;
@@ -78,14 +82,16 @@ public:
 	QAction* m_buildBankLinesAction;
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;
-	QAction* m_coordEditAction;
 
 	QAction* m_importCenterLineAction;
 	QAction* m_exportCenterLineAction;
+	QAction* m_editCenterLineCoordsAction;
 	QAction* m_importLeftBankLineAction;
 	QAction* m_exportLeftBankLineAction;
+	QAction* m_editLeftBankLineCoordsAction;
 	QAction* m_importRightBankLineAction;
 	QAction* m_exportRightBankLineAction;
+	QAction* m_editRightBankLineCoordsAction;
 
 	QPixmap m_addCursorPixmap;
 	QPixmap m_removeCursorPixmap;

@@ -160,6 +160,11 @@ void GridCreatingCondition::pushRenderCommand(QUndoCommand* com)
 	gccDataItem()->pushRenderCommand(com, gccDataItem());
 }
 
+void GridCreatingCondition::pushRenderRedoOnlyCommand(QUndoCommand* com)
+{
+	gccDataItem()->pushRenderRedoOnlyCommand(com, gccDataItem());
+}
+
 void GridCreatingCondition::updateVisibility()
 {
 	gccDataItem()->updateVisibility();

@@ -28,7 +28,7 @@ bool GeoDataPointmapVTKExporter::doExport(GeoData* data, const QString& filename
 	vtkPolyData* polyData = pmap->delaunayedPolyData();
 
 	// undo offset using transform
-	QVector2D offset = pd->mainfile()->offset();
+	auto offset = pd->mainfile()->offset();
 	vtkSmartPointer<vtkTransform> transform = vtkSmartPointer<vtkTransform>::New();
 	transform->Translate(offset.x(), offset.y(), 0.0);
 	vtkSmartPointer<vtkTransformFilter> filter = vtkSmartPointer<vtkTransformFilter>::New();

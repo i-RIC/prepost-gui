@@ -3,7 +3,6 @@
 
 #include "geodatapolygon.h"
 #include "geodatapolygonabstractpolygon.h"
-#include "geodatapolygoncoordinateseditdialog.h"
 #include "geodatapolygonholepolygon.h"
 #include "geodatapolygonproxy.h"
 #include "geodatapolygonregionpolygon.h"
@@ -11,6 +10,7 @@
 
 #include "private/geodatapolygon_addholepolygoncommand.h"
 #include "private/geodatapolygon_addvertexcommand.h"
+#include "private/geodatapolygon_coordinateseditor.h"
 #include "private/geodatapolygon_editpropertycommand.h"
 #include "private/geodatapolygon_editvaluecommand.h"
 #include "private/geodatapolygon_finishpolygondefinitioncommand.h"
@@ -891,15 +891,7 @@ void GeoDataPolygon::updateActionStatus()
 
 void GeoDataPolygon::editCoordinates()
 {
-	m_mouseEventMode = meEditVerticesDialog;
-	if (m_selectedPolygon != nullptr) {
-		GeoDataPolygonCoordinatesEditDialog* dialog = new GeoDataPolygonCoordinatesEditDialog(this, preProcessorWindow());
-		dialog->show();
-		iricMainWindow()->enterModelessDialogMode();
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(updatePolyData()));
-	}
+	CoordinatesEditor::edit(this);
 }
 
 void GeoDataPolygon::restoreMouseEventMode()

@@ -36,18 +36,20 @@ private slots:
 	void restoreMouseEventMode();
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
-	void editCoordinates();
 
 	void buildBankLines();
 
 	void importCenterLine();
 	void exportCenterLine();
+	void editCenterLineCoordinates();
 
 	void importLeftBankLine();
 	void exportLeftBankLine();
+	void editLeftBankLineCoordinates();
 
 	void importRightBankLine();
 	void exportRightBankLine();
+	void editRightBankLineCoordinates();
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -57,7 +59,7 @@ private:
 
 	void doApplyOffset(double x, double y) override;
 
-	void pushUpdateLabelsCommand(QUndoCommand* com);
+	void pushUpdateLabelsCommand(QUndoCommand* com, bool renderRedoOnly = false);
 
 	class Impl;
 	Impl* impl;
@@ -69,6 +71,9 @@ private:
 	class MoveVertexCommand;
 	class RemoveVertexCommand;
 	class UpdateLabelsCommand;
+	class EditCoordinatesCommand;
+
+	class CoordinatesEditor;
 };
 
 #ifdef _DEBUG

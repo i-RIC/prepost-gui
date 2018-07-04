@@ -167,12 +167,13 @@ protected:
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
 	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
+	void pushRenderRedoOnlyCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void saveCheckState(QXmlStreamWriter& writer);
 	void loadExpandState(const QDomNode& node);
 	void saveExpandState(QXmlStreamWriter& writer);
-	virtual QVector2D getOffset();
+	virtual QPointF getOffset();
 	/// Delete child items
 	void clearChildItems();
 
@@ -200,6 +201,7 @@ public:
 private:
 	class ModifyCommand;
 	class RenderCommand;
+	class RenderRedoOnlyCommand;
 	class StandardItemModifyCommand;
 };
 

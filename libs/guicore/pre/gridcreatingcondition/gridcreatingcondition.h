@@ -92,6 +92,7 @@ protected:
 	void renderGraphicsView();
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
+	void pushRenderRedoOnlyCommand(QUndoCommand* com);
 	PreProcessorGridCreatingConditionDataItemInterface* m_conditionDataItem;
 	GridCreatingConditionCreator* m_creator;
 	QMenu* m_menu;

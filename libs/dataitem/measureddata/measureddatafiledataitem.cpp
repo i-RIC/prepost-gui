@@ -84,9 +84,7 @@ void MeasuredDataFileDataItem::exportToFile()
 
 	try {
 		MeasuredDataCsvExporter exporter;
-		QVector2D of = offset();
-		QPointF local_offset = QPointF(of.x(), of.y());
-		exporter.exportData(fname, local_offset, *(impl->m_measuredData));
+		exporter.exportData(fname, offset(), *(impl->m_measuredData));
 
 		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 	} catch (ErrorMessage& message) {

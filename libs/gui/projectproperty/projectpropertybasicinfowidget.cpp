@@ -101,6 +101,6 @@ void ProjectPropertyBasicInfoWidget::showSetOffsetDialog()
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateOffset()
 {
-	QVector2D offset = m_projectData->mainfile()->offset();
+	auto offset = m_projectData->mainfile()->offset();
 	ui->coValue->setText(QString("(%1, %2)").arg(offset.x()).arg(offset.y()));
 }

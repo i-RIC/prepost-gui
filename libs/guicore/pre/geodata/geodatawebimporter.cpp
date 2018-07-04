@@ -20,7 +20,7 @@ QString GeoDataWebImporter::caption() const
 	return m_caption;
 }
 
-bool GeoDataWebImporter::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
+bool GeoDataWebImporter::isCompatibleWith(SolverDefinitionGridAttribute* /*condition*/) const
 {
 	return false;
 }

@@ -268,7 +268,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 			item = nullptr;
 			failedIds.push_back(i + 1);
 		} else {
-			QVector2D o = offset();
+			auto o = offset();
 			geodata->applyOffset(o.x(), o.y());
 			// the standarditem is set at the last position, so make it the first.
 			QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
@@ -401,7 +401,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 			item = nullptr;
 			failedIds.push_back(i + 1);
 		} else {
-			QVector2D o = offset();
+			auto o = offset();
 			geodata->applyOffset(o.x(), o.y());
 			// the standarditem is set at the last position, so make it the first.
 			QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());

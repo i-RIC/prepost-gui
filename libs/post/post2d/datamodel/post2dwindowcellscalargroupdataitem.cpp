@@ -737,7 +737,7 @@ bool Post2dWindowCellScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str());
 	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*>(ps);
 	bool isStructured = (stGrid != nullptr);
-	QVector2D off = offset();
+	auto off = offset();
 
 	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId) {
 

@@ -7,7 +7,9 @@
 #include "springsolver/edge.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
+#include "private/gridcreatingconditionpoisson_coordinateseditor.h"
 #include "private/gridcreatingconditionpoisson_definenewpointcommand.h"
+#include "private/gridcreatingconditionpoisson_editcoordinatescommand.h"
 #include "private/gridcreatingconditionpoisson_finishdefiningcommand.h"
 #include "private/gridcreatingconditionpoisson_impl.h"
 #include "private/gridcreatingconditionpoisson_movecommand.h"
@@ -18,6 +20,7 @@
 #include <geodata/riversurvey/geodatariversurvey.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geoio/polylineio.h>
+#include <geoio/coordinatesedit.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
@@ -194,15 +197,11 @@ double polyLineLength(std::vector<QPointF>& polyLine)
 
 void applyOffsetToPolyLine(PolyLineController* polyLine, double x, double y)
 {
-	auto line = polyLine->polyLine();
-	for (QPointF& p : line) {
-		p.setX(p.x() - x);
-		p.setY(p.y() - y);
-	}
-	polyLine->setPolyLine(line);
+	auto newLine = CoordinatesEdit::applyOffset(polyLine->polyLine(), - QPointF(x, y));
+	polyLine->setPolyLine(newLine);
 }
 
-void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QVector2D& offset)
+void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QPointF& offset)
 {
 	std::vector<QPointF> line;
 	int size;
@@ -215,10 +214,10 @@ void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QVect
 	polyLine->setPolyLine(line);
 }
 
-void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const QVector2D& offset)
+void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const QPointF& offset)
 {
 	auto line = polyLine.polyLine();
-	int size = line.size();
+	int size = static_cast<int>(line.size());
 	*stream << size;
 	for (QPointF& p : line) {
 		*stream << p.x() + offset.x() << p.y() + offset.y();
@@ -243,13 +242,15 @@ GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
 	m_buildBankLinesAction {new QAction(GridCreatingConditionPoisson::tr("Build Left bank and Right bank lines"), parent)},
 	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GridCreatingConditionPoisson::tr("&Add Vertex"), parent)},
 	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GridCreatingConditionPoisson::tr("&Remove Vertex"), parent)},
-	m_coordEditAction {new QAction(GridCreatingConditionPoisson::tr("Edit &Coordinates"), parent)},
-	m_importCenterLineAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GridCreatingConditionPoisson::tr("&Import Center Line..."), parent)},
-	m_exportCenterLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionPoisson::tr("&Export Center Line..."), parent)},
-	m_importLeftBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GridCreatingConditionPoisson::tr("&Import Left Bank Line..."), parent)},
-	m_exportLeftBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionPoisson::tr("&Export Left Bank Line..."), parent)},
+	m_importCenterLineAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GridCreatingConditionPoisson::tr("Import C&enter Line..."), parent)},
+	m_exportCenterLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionPoisson::tr("Export Ce&nter Line..."), parent)},
+	m_editCenterLineCoordsAction {new QAction(GridCreatingConditionPoisson::tr("Edit Cen&ter Line Coordinates..."), parent)},
+	m_importLeftBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GridCreatingConditionPoisson::tr("Import &Left Bank Line..."), parent)},
+	m_exportLeftBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionPoisson::tr("Export Le&ft Bank Line..."), parent)},
+	m_editLeftBankLineCoordsAction {new QAction(GridCreatingConditionPoisson::tr("Edit Left Bank Line &Coordinates..."), parent)},
 	m_importRightBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GridCreatingConditionPoisson::tr("&Import Right Bank Line..."), parent)},
-	m_exportRightBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionPoisson::tr("&Export Right Bank Line..."), parent)},
+	m_exportRightBankLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionPoisson::tr("Export Ri&ght Bank Line..."), parent)},
+	m_editRightBankLineCoordsAction {new QAction(GridCreatingConditionPoisson::tr("Edit Rig&ht Bank Line Coordinates..."), parent)},
 
 	m_addCursorPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_removeCursorPixmap {":/libs/guibase/images/cursorRemove.png"},
@@ -262,13 +263,15 @@ GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
 	connect(m_buildBankLinesAction, SIGNAL(triggered()), parent, SLOT(buildBankLines()));
 	connect(m_addVertexAction, SIGNAL(triggered(bool)), parent, SLOT(addVertexMode(bool)));
 	connect(m_removeVertexAction, SIGNAL(triggered(bool)), parent, SLOT(removeVertexMode(bool)));
-	connect(m_coordEditAction, SIGNAL(triggered()), parent, SLOT(editCoordinates()));
 	connect(m_importCenterLineAction, SIGNAL(triggered()), parent, SLOT(importCenterLine()));
 	connect(m_exportCenterLineAction, SIGNAL(triggered()), parent, SLOT(exportCenterLine()));
+	connect(m_editCenterLineCoordsAction, SIGNAL(triggered()), parent, SLOT(editCenterLineCoordinates()));
 	connect(m_importLeftBankLineAction, SIGNAL(triggered()), parent, SLOT(importLeftBankLine()));
 	connect(m_exportLeftBankLineAction, SIGNAL(triggered()), parent, SLOT(exportLeftBankLine()));
+	connect(m_editLeftBankLineCoordsAction, SIGNAL(triggered()), parent, SLOT(editLeftBankLineCoordinates()));
 	connect(m_importRightBankLineAction, SIGNAL(triggered()), parent, SLOT(importRightBankLine()));
 	connect(m_exportRightBankLineAction, SIGNAL(triggered()), parent, SLOT(exportRightBankLine()));
+	connect(m_editRightBankLineCoordsAction, SIGNAL(triggered()), parent, SLOT(editRightBankLineCoordinates()));
 }
 
 GridCreatingConditionPoisson::Impl::~Impl()
@@ -401,6 +404,7 @@ void GridCreatingConditionPoisson::Impl::updateMouseEventMode(const QPoint& mous
 		break;
 	case MouseEventMode::BeforeDefining:
 	case MouseEventMode::Defining:
+	case MouseEventMode::EditCoodinatesDialog:
 		// do nothing
 		break;
 	}
@@ -444,7 +448,6 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 		m_addVertexAction->setChecked(false);
 		m_removeVertexAction->setDisabled(true);
 		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(false);
 		break;
 	case MouseEventMode::Normal:
 	case MouseEventMode::MoveVertexPrepare:
@@ -452,7 +455,6 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 		m_addVertexAction->setChecked(false);
 		m_removeVertexAction->setEnabled(m_activeLine->polyData()->GetPoints()->GetNumberOfPoints() > 2);
 		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(true);
 		break;
 	case MouseEventMode::AddVertexPrepare:
 	case MouseEventMode::AddVertexNotPossible:
@@ -461,7 +463,6 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 		m_addVertexAction->setChecked(true);
 		m_removeVertexAction->setDisabled(true);
 		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(false);
 		break;
 	case MouseEventMode::RemoveVertexPrepare:
 	case MouseEventMode::RemoveVertexNotPossible:
@@ -469,10 +470,7 @@ void GridCreatingConditionPoisson::Impl::updateActionStatus()
 		m_addVertexAction->setChecked(false);
 		m_removeVertexAction->setEnabled(true);
 		m_removeVertexAction->setChecked(true);
-		m_coordEditAction->setEnabled(false);
 		break;
-//	case meEditVerticesDialog:
-//		break;
 	}
 }
 
@@ -503,6 +501,30 @@ void GridCreatingConditionPoisson::Impl::copyCenterLine(GeoDataRiverSurvey *data
 	m_mouseEventMode = MouseEventMode::Normal;
 	updateLabelsAndSplines();
 	updateActionStatus();
+}
+
+void GridCreatingConditionPoisson::Impl::importLine(PolyLineController* line)
+{
+	auto polyLine = CoordinatesEdit::unapplyOffset(
+				PolylineIO::importData(m_parent->preProcessorWindow()), m_parent->offset());
+	if (polyLine.size() == 0) {return;}
+
+	line->setPolyLine(polyLine);
+	m_mouseEventMode = MouseEventMode::Normal;
+
+	updateLabelsAndSplines();
+	m_parent->renderGraphicsView();
+}
+
+void GridCreatingConditionPoisson::Impl::exportLine(PolyLineController* line, const QString& lineName)
+{
+	auto l = CoordinatesEdit::applyOffset(line->polyLine(), m_parent->offset());
+	if (l.size() == 0) {
+		QMessageBox::warning(m_parent->preProcessorWindow(), GridCreatingConditionPoisson::tr("Warning"),
+												 GridCreatingConditionPoisson::tr("%1 not defined yet").arg(lineName));
+		return;
+	}
+	PolylineIO::exportData(l, m_parent->preProcessorWindow());
 }
 
 Grid* GridCreatingConditionPoisson::Impl::createGrid()
@@ -637,8 +659,6 @@ void GridCreatingConditionPoisson::showInitialDialog()
 		int defaultVal = (numPoints - 2) / 2;
 		if (defaultVal == 0) {defaultVal = 1;}
 
-		bool ok;
-
 		GridCreatingConditionPoissonCtrlPointsDialog dialog(preProcessorWindow());
 		dialog.setLocale(iricMainWindow()->locale());
 		dialog.setMaximum(numPoints);
@@ -652,7 +672,7 @@ void GridCreatingConditionPoisson::showInitialDialog()
 	}
 }
 
-bool GridCreatingConditionPoisson::create(QWidget* parent)
+bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
 {
 	bool ok = true;
 	ok = ok && impl->m_centerLineController.polyLine().size() >= 2;
@@ -747,7 +767,10 @@ void GridCreatingConditionPoisson::setupMenu()
 	m_menu->addSeparator();
 	m_menu->addAction(impl->m_addVertexAction);
 	m_menu->addAction(impl->m_removeVertexAction);
-	m_menu->addAction(impl->m_coordEditAction);
+	m_menu->addSeparator();
+	m_menu->addAction(impl->m_editCenterLineCoordsAction);
+	m_menu->addAction(impl->m_editLeftBankLineCoordsAction);
+	m_menu->addAction(impl->m_editRightBankLineCoordsAction);
 	m_menu->addSeparator();
 	m_menu->addAction(impl->m_importCenterLineAction);
 	m_menu->addAction(impl->m_importLeftBankLineAction);
@@ -768,7 +791,10 @@ void GridCreatingConditionPoisson::setupMenu()
 	m->addSeparator();
 	m->addAction(impl->m_addVertexAction);
 	m->addAction(impl->m_removeVertexAction);
-	m->addAction(impl->m_coordEditAction);
+	m->addSeparator();
+	m->addAction(impl->m_editCenterLineCoordsAction);
+	m->addAction(impl->m_editLeftBankLineCoordsAction);
+	m->addAction(impl->m_editRightBankLineCoordsAction);
 	m->addSeparator();
 	m->addAction(m_conditionDataItem->clearAction());
 	m->addSeparator();
@@ -904,7 +930,8 @@ void GridCreatingConditionPoisson::mouseReleaseEvent(QMouseEvent* event, PreProc
 		impl->updateMouseCursor(v);
 		impl->updateActionStatus();
 	} else if (event->button() == Qt::RightButton) {
-//		if (m_mouseEventMode == meEditVerticesDialog) {return;}
+		if (impl->m_mouseEventMode == Impl::MouseEventMode::EditCoodinatesDialog) {return;}
+
 		if (iRIC::isNear(impl->m_pressPos, event->pos())) {
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();
@@ -915,7 +942,6 @@ void GridCreatingConditionPoisson::mouseReleaseEvent(QMouseEvent* event, PreProc
 void GridCreatingConditionPoisson::updateZDepthRangeItemCount(ZDepthRange& range)
 {
 	range.setItemCount(1);
-
 }
 
 void GridCreatingConditionPoisson::assignActorZValues(const ZDepthRange& range)
@@ -956,11 +982,6 @@ void GridCreatingConditionPoisson::removeVertexMode(bool on)
 		impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 	}
 	impl->updateActionStatus();
-}
-
-void GridCreatingConditionPoisson::editCoordinates()
-{
-	// @todo implement this
 }
 
 void GridCreatingConditionPoisson::buildBankLines()
@@ -1035,105 +1056,47 @@ void GridCreatingConditionPoisson::buildBankLines()
 
 void GridCreatingConditionPoisson::importCenterLine()
 {
-	auto polyLine = PolylineIO::importData(preProcessorWindow());
-	if (polyLine.size() == 0) {return;}
-
-	auto offset = projectData()->mainfile()->offset();
-	for (QPointF& p : polyLine) {
-		p.setX(p.x() - offset.x());
-		p.setY(p.y() - offset.y());
-	}
-
-	impl->m_centerLineController.setPolyLine(polyLine);
-	impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
-
-	impl->updateLabelsAndSplines();
-	renderGraphicsView();
+	impl->importLine(&(impl->m_centerLineController));
 }
 
 void GridCreatingConditionPoisson::exportCenterLine()
 {
-	auto l = impl->m_centerLineController.polyLine();
-	if (l.size() == 0) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Center line not defined yet"));
-		return;
-	}
-	auto offset = projectData()->mainfile()->offset();
+	impl->exportLine(&(impl->m_centerLineController), tr("Center line"));
+}
 
-	for (QPointF& p : l) {
-		p.setX(p.x() + offset.x());
-		p.setY(p.y() + offset.y());
-	}
-
-	PolylineIO::exportData(l, preProcessorWindow());
+void GridCreatingConditionPoisson::editCenterLineCoordinates()
+{
+	CoordinatesEditor::edit(&(impl->m_centerLineController), tr("Center line"), this);
 }
 
 void GridCreatingConditionPoisson::importLeftBankLine()
 {
-	auto polyLine = PolylineIO::importData(preProcessorWindow());
-	if (polyLine.size() == 0) {return;}
-
-	auto offset = projectData()->mainfile()->offset();
-	for (QPointF& p : polyLine) {
-		p.setX(p.x() - offset.x());
-		p.setY(p.y() - offset.y());
-	}
-
-	impl->m_leftBankLineController.setPolyLine(polyLine);
-	impl->updateLabelsAndSplines();
-
-	renderGraphicsView();
+	impl->importLine(&(impl->m_leftBankLineController));
 }
 
 void GridCreatingConditionPoisson::exportLeftBankLine()
 {
-	auto l = impl->m_leftBankLineController.polyLine();
-	if (l.size() == 0) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Center line not defined yet"));
-		return;
-	}
-	auto offset = projectData()->mainfile()->offset();
+	impl->exportLine(&(impl->m_leftBankLineController), tr("Left bank line"));
+}
 
-	for (QPointF& p : l) {
-		p.setX(p.x() + offset.x());
-		p.setY(p.y() + offset.y());
-	}
-
-	PolylineIO::exportData(l, preProcessorWindow());
+void GridCreatingConditionPoisson::editLeftBankLineCoordinates()
+{
+	CoordinatesEditor::edit(&(impl->m_leftBankLineController), tr("Left bank line"), this);
 }
 
 void GridCreatingConditionPoisson::importRightBankLine()
 {
-	auto polyLine = PolylineIO::importData(preProcessorWindow());
-	if (polyLine.size() == 0) {return;}
-
-	auto offset = projectData()->mainfile()->offset();
-	for (QPointF& p : polyLine) {
-		p.setX(p.x() - offset.x());
-		p.setY(p.y() - offset.y());
-	}
-
-	impl->m_rightBankLineController.setPolyLine(polyLine);
-	impl->updateLabelsAndSplines();
-
-	renderGraphicsView();
+	impl->importLine(&(impl->m_rightBankLineController));
 }
 
 void GridCreatingConditionPoisson::exportRightBankLine()
 {
-	auto l = impl->m_rightBankLineController.polyLine();
-	if (l.size() == 0) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Center line not defined yet"));
-		return;
-	}
-	auto offset = projectData()->mainfile()->offset();
+	impl->exportLine(&(impl->m_rightBankLineController), tr("Right bank line"));
+}
 
-	for (QPointF& p : l) {
-		p.setX(p.x() + offset.x());
-		p.setY(p.y() + offset.y());
-	}
-
-	PolylineIO::exportData(l, preProcessorWindow());
+void GridCreatingConditionPoisson::editRightBankLineCoordinates()
+{
+	CoordinatesEditor::edit(&(impl->m_rightBankLineController), tr("Right bank line"), this);
 }
 
 void GridCreatingConditionPoisson::doLoadFromProjectMainFile(const QDomNode& node)
@@ -1196,7 +1159,11 @@ void GridCreatingConditionPoisson::doApplyOffset(double x, double y)
 	impl->updateLabelsAndSplines();
 }
 
-void GridCreatingConditionPoisson::pushUpdateLabelsCommand(QUndoCommand* com)
+void GridCreatingConditionPoisson::pushUpdateLabelsCommand(QUndoCommand* com, bool renderRedoOnly)
 {
-	pushRenderCommand(new UpdateLabelsCommand(com, this));
+	if (renderRedoOnly) {
+		pushRenderRedoOnlyCommand(new UpdateLabelsCommand(com, this));
+	} else {
+		pushRenderCommand(new UpdateLabelsCommand(com, this));
+	}
 }

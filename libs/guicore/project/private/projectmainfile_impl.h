@@ -5,6 +5,8 @@
 
 #include <misc/versionnumber.h>
 
+#include <QPointF>
+
 #include <string>
 
 class ProjectMainFile::Impl
@@ -32,7 +34,7 @@ public:
 	ProjectPostProcessors* m_postProcessors;
 
 	CoordinateSystem* m_coordinateSystem;
-	QVector2D m_offset;
+	QPointF m_offset;
 
 	bool m_isModified;
 
