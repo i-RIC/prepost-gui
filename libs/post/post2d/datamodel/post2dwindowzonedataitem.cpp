@@ -424,6 +424,15 @@ void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 		r.setRange(min, max);
 		m_scalarGroupTopDataItem->setZDepthRange(r);
 	}
+
+	// Cell Contour
+	if (cont->cellScalarValueExists()) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = m_cellScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		m_cellScalarGroupTopDataItem->setZDepthRange(r);
+	}
 }
 
 void Post2dWindowZoneDataItem::initNodeAttributeBrowser()
