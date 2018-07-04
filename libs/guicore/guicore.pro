@@ -481,6 +481,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditionwidgetfunctional.h \
            project/inputcond/private/inputconditionwidgetfunctionaldelegate.h \
            project/inputcond/private/inputconditionwidgetfunctionaldialog.h \
+           project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.h \
            project/inputcond/private/inputconditionwidgetimage.h \
            project/inputcond/private/inputconditionwidgetinteger.h \
            project/inputcond/private/inputconditionwidgetintegeroption.h \
@@ -518,7 +519,8 @@ FORMS += datamodel/propertybrowserview.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
          pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
-         project/inputcond/private/inputconditionwidgetfunctionaldialog.ui
+         project/inputcond/private/inputconditionwidgetfunctionaldialog.ui \
+         project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui
 SOURCES += base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
            base/snapshotenabledwindowinterface.cpp \
@@ -731,6 +733,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditionwidgetfunctional.cpp \
            project/inputcond/private/inputconditionwidgetfunctionaldelegate.cpp \
            project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp \
+           project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp \
            project/inputcond/private/inputconditionwidgetimage.cpp \
            project/inputcond/private/inputconditionwidgetinteger.cpp \
            project/inputcond/private/inputconditionwidgetintegeroption.cpp \

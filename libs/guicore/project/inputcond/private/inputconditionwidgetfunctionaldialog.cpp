@@ -2,8 +2,10 @@
 #include "inputconditionwidgetfunctional.h"
 #include "inputconditionwidgetfunctionaldelegate.h"
 #include "inputconditionwidgetfunctionaldialog.h"
+#include "inputconditionwidgetfunctionaldownloaddialog.h"
 #include "ui_inputconditionwidgetfunctionaldialog.h"
 
+#include <guibase/overridecursorchanger.h>
 #include <guibase/qwtplotcustomcurve.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
@@ -149,11 +151,18 @@ void InputConditionWidgetFunctionalDialog::setupConnections()
 	connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	connect(m_model, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(updateGraph()));
+
+	connect(ui->importWebButton, SIGNAL(clicked()), this, SLOT(importFromWeb()));
 }
 
 void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t)
 {
 	m_preventSort = (node.toElement().attribute("noSort") == "true");
+
+	// waterML url
+	if (! node.toElement().hasAttribute("wml2:url")) {
+		ui->importWebButton->hide();
+	}
 
 	int valueCount = 0;
 	QDomNode valueNode = node.firstChild();
@@ -344,7 +353,11 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 
 void InputConditionWidgetFunctionalDialog::setupData()
 {
+	OverrideCursorChanger cursorChanger(Qt::WaitCursor);
+	QTime time;
+	time.start();
 	clear();
+	QSignalBlocker signalBlocker(m_model);    // speed up large datasets
 	ui->tableView->setModel(nullptr);
 	for (int i = 0; i < m_container.param().size(); ++i) {
 		QVariant doubletmpx;
@@ -373,6 +386,7 @@ void InputConditionWidgetFunctionalDialog::setupData()
 	}
 	ui->removeButton->setDisabled(true);
 	updateGraph();
+	qDebug("InputConditionWidgetFunctionalDialog::setupData():%d", time.elapsed());
 }
 
 void InputConditionWidgetFunctionalDialog::setupViews()
@@ -464,6 +478,17 @@ void InputConditionWidgetFunctionalDialog::exportToCsv()
 		stream << "\n";
 	}
 	file.close();
+}
+
+
+void InputConditionWidgetFunctionalDialog::importFromWeb()
+{
+	InputConditionWidgetFunctionalDownloadDialog dlg(this);
+	dlg.setData(container());
+	int ret = dlg.exec();
+	if (ret == QDialog::Accepted) {
+		setData(dlg.container());
+	}
 }
 
 void InputConditionWidgetFunctionalDialog::add()

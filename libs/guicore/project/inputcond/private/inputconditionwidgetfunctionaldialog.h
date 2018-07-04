@@ -48,6 +48,7 @@ public slots:
 private slots:
 	void clear();
 	void importFromCsv();
+	void importFromWeb();
 	void exportToCsv();
 	void selectionChange(const QItemSelection& selected, const QItemSelection& deselected);
 	void removeSelected();
@@ -101,7 +102,6 @@ private:
 	std::vector<double> m_valueMin;
 	std::vector<bool> m_valueMaxIsSet;
 	std::vector<double> m_valueMax;
-
 
 	InputConditionContainerFunctional m_container;
 	QStandardItemModel* m_model;

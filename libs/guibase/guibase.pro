@@ -77,6 +77,7 @@ HEADERS += arrowsettingcontainer.h \
            linestyleinformation.h \
            objectbrowser.h \
            objectbrowserview.h \
+           overridecursorchanger.h \
            pointstyleinformation.h \
            qwtplotcustomcurve.h \
            qwtplotcustommarker.h \
@@ -181,6 +182,7 @@ SOURCES += arrowsettingcontainer.cpp \
            linestyleinformation.cpp \
            objectbrowser.cpp \
            objectbrowserview.cpp \
+           overridecursorchanger.cpp \
            pointstyleinformation.cpp \
            qwtplotcustomcurve.cpp \
            qwtplotcustommarker.cpp \
