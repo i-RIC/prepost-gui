@@ -21,6 +21,10 @@ TmsRegionSelectWidget::Impl::Impl(TmsRegionSelectWidget* w) :
 	m_requestId {-1},
 	m_loader {w},
 	m_viewOperationState {ViewOperationState::None},
+	m_movePixmap(":/libs/guibase/images/cursorMove.png"),
+	m_zoomPixmap(":/libs/guibase/images/cursorZoom.png"),
+	m_moveCursor(m_movePixmap),
+	m_zoomCursor(m_zoomPixmap),
 	m_widget {w}
 {
 	m_mapSetting = "tms=gsi&tiletype=std";
@@ -121,8 +125,10 @@ void TmsRegionSelectWidget::mousePressEvent(QMouseEvent *e)
 		impl->m_previousPos = e->pos();
 		if (e->button() == Qt::LeftButton) {
 			impl->m_viewOperationState = Impl::ViewOperationState::Translating;
+			setCursor(impl->m_moveCursor);
 		} else if (e->button() == Qt::MidButton) {
 			impl->m_viewOperationState = Impl::ViewOperationState::Zooming;
+			setCursor(impl->m_zoomCursor);
 		}
 		return;
 	}
@@ -144,6 +150,7 @@ void TmsRegionSelectWidget::mouseReleaseEvent(QMouseEvent *e)
 		requestUpdate();
 	}
 	impl->m_viewOperationState = Impl::ViewOperationState::None;
+	unsetCursor();
 }
 
 void TmsRegionSelectWidget::mouseMoveEvent(QMouseEvent *e)
