@@ -13,13 +13,11 @@ using namespace tmsloader;
 // Meter per pixel at equator for zoom level 1 = 40075334.2563 / 512.;
 const double METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1 = 78272.137219;
 
-double TmsUtil::meterPerPixel(const QPointF& lonlat, int zoomLevel)
+double TmsUtil::meterPerPixel(const QPointF& lonlat, double zoomLevel)
 {
 	double ret = METERPERPIXEL_AT_EQUATOR_ZOOMLEVEL1;
 	ret *= std::cos(lonlat.y() / 180 * M_PI);
-	for (int i = 1; i < zoomLevel; ++i) {
-		ret /= 2;
-	}
+	ret /= std::exp(std::log(2.0) * (zoomLevel - 1));
 	return ret;
 }
 

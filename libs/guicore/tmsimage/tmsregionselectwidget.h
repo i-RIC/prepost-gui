@@ -24,10 +24,9 @@ public:
 	void mouseReleaseEvent(QMouseEvent *);
 	void mouseMoveEvent(QMouseEvent *);
 
-	void setCoordinateSystem(CoordinateSystem* cs);
 	void setMapSetting(const std::string& setting);
 	void setCenter(double lon, double lat);
-	void setScale(double scale);
+	void setZoomLevel(double zoomLevel);
 
 	bool isSelected() const;
 	double minLon() const;

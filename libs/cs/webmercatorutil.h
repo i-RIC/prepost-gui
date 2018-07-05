@@ -22,6 +22,11 @@ public:
 
 	static QImage convertWebMercatorToLongLat(const QRectF& rect, const QImage& image, const QString& workDir);
 
+	/// project long-lat coordinates to x, y coordinates. 0 <= x <= 256 for zoomLevel = 0.
+	static void project(double lon, double lat, double* x, double* y);
+	static void unproject(double x, double y, double* lon, double* lat);
+	static double pixelSize(double zoomLevel);
+
 private:
 	class Impl;
 	Impl* impl;
