@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>527</width>
+    <width>616</width>
     <height>452</height>
    </rect>
   </property>
@@ -77,6 +77,13 @@
       <widget class="QPushButton" name="importButton">
        <property name="text">
         <string>&amp;Import</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="importWebButton">
+       <property name="text">
+        <string>Import Web</string>
        </property>
       </widget>
      </item>

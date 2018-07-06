@@ -19,6 +19,11 @@ public:
 		std::string name;
 		std::vector<double> values;
 	};
+	struct Convert {
+		std::string code;
+		double factor;
+	};
+
 
 	InputConditionContainerFunctional();
 	InputConditionContainerFunctional(const std::string& n, const QString& c, QDomNode defNode, const QDir& dir);
@@ -34,6 +39,8 @@ public:
 	std::vector<double>& param();
 	const std::vector<double>& param() const;
 
+	double paramFactor() const;
+
 	std::vector<double>& value(int index);
 	const std::vector<double>& value(int index) const;
 
@@ -43,7 +50,20 @@ public:
 	std::vector<double>& value(const std::string& name);
 	const std::vector<double>& value(const std::string& name) const;
 
+	int codeCount() const;
+	std::string code(int index) const;
+	double valueFactor(int index) const;
+
 	void setValue(const std::vector<double>& x, const std::vector<double>& y);
+
+	QString& wml2URL() const;
+	QString& site() const;
+	QString& startDate() const;
+	QString& endDate() const;
+
+	void setSite(const QString& site);
+	void setStartDate(const QString& date);
+	void setEndDate(const QString& date);
 
 	void removeAllValues();
 
@@ -58,6 +78,9 @@ public:
 
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);
+
+	bool loadFunctionalString(const char* paramname, QString& str);
+	bool saveFunctionalString(const char* paramname, const QString& str);
 
 signals:
 	void valueChanged();

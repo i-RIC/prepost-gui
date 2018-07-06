@@ -68,8 +68,17 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const std::
 	InputConditionContainer(n, c),
 	impl {new Impl {}}
 {
+	QDomElement defElem = defNode.toElement();
+	if (defElem.hasAttribute("wml2:url")) {
+		impl->m_wml2URL = defElem.attribute("wml2:url");
+	}
+
 	QDomElement paramElem = iRIC::getChildNode(defNode, "Parameter").toElement();
 	impl->m_param.name = iRIC::toStr(paramElem.attribute("name", "Param"));
+	if (! impl->m_wml2URL.isEmpty()) {
+		impl->m_paramConvert.code = "time";
+		impl->m_paramConvert.factor = 1.0 / paramElem.attribute("wml2:secondsPerUnit", "1").toDouble();
+	}
 
 	QDomNode valNode = defNode.firstChild();
 	while (! valNode.isNull()) {
@@ -78,6 +87,12 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const std::
 			Data valData;
 			valData.name = iRIC::toStr(valElem.attribute("name", "Value"));
 			impl->m_values.push_back(valData);
+			if (! impl->m_wml2URL.isEmpty()) {
+				Convert convert;
+				convert.code = iRIC::toStr(valElem.attribute("wml2:nwisCode", "code"));
+				convert.factor = valElem.attribute("wml2:conversionFactor", "1").toDouble();
+				impl->m_valuesConvert.push_back(convert);
+			}
 		}
 		valNode = valNode.nextSibling();
 	}
@@ -136,6 +151,11 @@ const std::vector<double>& InputConditionContainerFunctional::param() const
 	return impl->m_param.values;
 }
 
+double InputConditionContainerFunctional::paramFactor() const
+{
+	return impl->m_paramConvert.factor;
+}
+
 std::vector<double>& InputConditionContainerFunctional::value(int index)
 {
 	return impl->m_values[index].values;
@@ -144,6 +164,21 @@ std::vector<double>& InputConditionContainerFunctional::value(int index)
 const std::vector<double>& InputConditionContainerFunctional::value(int index) const
 {
 	return impl->m_values[index].values;
+}
+
+double InputConditionContainerFunctional::valueFactor(int index) const
+{
+	return impl->m_valuesConvert[index].factor;
+}
+
+int InputConditionContainerFunctional::codeCount() const
+{
+	return static_cast<int>(impl->m_valuesConvert.size());
+}
+
+std::string InputConditionContainerFunctional::code(int index) const
+{
+	return impl->m_valuesConvert[index].code;
 }
 
 std::vector<std::string> InputConditionContainerFunctional::valueNames() const
@@ -193,11 +228,95 @@ void InputConditionContainerFunctional::setValue(const std::vector<double>& x, c
 	impl->m_values.push_back(val);
 }
 
+QString& InputConditionContainerFunctional::wml2URL() const
+{
+	return impl->m_wml2URL;
+}
+
+QString& InputConditionContainerFunctional::site() const
+{
+	return impl->m_siteID;
+}
+
+QString& InputConditionContainerFunctional::startDate() const
+{
+	return impl->m_startDate;
+}
+
+QString& InputConditionContainerFunctional::endDate() const
+{
+	return impl->m_endDate;
+}
+
+void InputConditionContainerFunctional::setSite(const QString& site)
+{
+	impl->m_siteID = site;
+}
+
+void InputConditionContainerFunctional::setStartDate(const QString& date)
+{
+	impl->m_startDate = date;
+}
+
+void InputConditionContainerFunctional::setEndDate(const QString& date)
+{
+	impl->m_endDate = date;
+}
+
 void InputConditionContainerFunctional::removeAllValues(){
 	impl->m_param.values.clear();
 	for (int i = 0; i < impl->m_values.size(); ++i){
 		impl->m_values[i].values.clear();
 	}
+}
+
+bool InputConditionContainerFunctional::loadFunctionalString(const char* paramname, QString& str)
+{
+	int length;
+	std::vector<char> vstr;
+	if (isBoundaryCondition()) {
+		if (cg_iRIC_Read_BC_FunctionalWithName_StringLen(toC(bcName()), bcIndex(), toC(name()), paramname, &length) == 0) {
+			vstr.assign(' ', length + 1);
+			if (cg_iRIC_Read_BC_FunctionalWithName_String(toC(bcName()), bcIndex(), toC(name()), paramname, vstr.data()) == 0) {
+				str = QString::fromStdString(vstr.data());
+				return true;
+			}
+		}
+	}
+	else if (isComplexCondition()) {
+		if (cg_iRIC_Read_Complex_FunctionalWithName_StringLen(toC(complexName()), complexIndex(), toC(name()), paramname, &length) == 0) {
+			vstr.assign(' ', length + 1);
+			if (cg_iRIC_Read_Complex_FunctionalWithName_String(toC(complexName()), complexIndex(), toC(name()), paramname, vstr.data()) == 0) {
+				str = QString::fromStdString(vstr.data());
+				return true;
+			}
+		}
+	}
+	else {
+		if (cg_iRIC_Read_FunctionalWithName_StringLen(toC(name()), paramname, &length) == 0) {
+			vstr.assign(' ', length + 1);
+			if (cg_iRIC_Read_FunctionalWithName_String(toC(name()), paramname, vstr.data()) == 0) {
+				str = QString::fromStdString(vstr.data());
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool InputConditionContainerFunctional::saveFunctionalString(const char* paramname, const QString& str)
+{
+	int result;
+	if (isBoundaryCondition()) {
+		result = cg_iRIC_Write_BC_FunctionalWithName_String(toC(bcName()), bcIndex(), toC(name()), paramname, toC(str.toStdString()));
+	}
+	else if (isComplexCondition()) {
+		result = cg_iRIC_Write_Complex_FunctionalWithName_String(toC(complexName()), complexIndex(), toC(name()), paramname, toC(str.toStdString()));
+	}
+	else {
+		result = cg_iRIC_Write_FunctionalWithName_String(toC(name()), paramname, toC(str.toStdString()));
+	}
+	return (result == 0);
 }
 
 int InputConditionContainerFunctional::load()
@@ -242,6 +361,12 @@ int InputConditionContainerFunctional::load()
 
 		val.values = data;
 	}
+
+	// load wml2 info
+	loadFunctionalString("_siteID", impl->m_siteID);
+	loadFunctionalString("_startDate", impl->m_startDate);
+	loadFunctionalString("_endDate", impl->m_endDate);
+
 	emit valueChanged();
 	return 0;
 
@@ -283,6 +408,14 @@ int InputConditionContainerFunctional::save()
 			cg_iRIC_Write_FunctionalWithName(toC(name()), toC(val.name), length, data.data());
 		}
 	}
+
+	// save wml2 info
+	if (!impl->m_siteID.isEmpty()) {
+		saveFunctionalString("_siteID", impl->m_siteID);
+		saveFunctionalString("_startDate", impl->m_startDate);
+		saveFunctionalString("_endDate", impl->m_endDate);
+	}
+
 	return 0;
 }
 
@@ -328,10 +461,16 @@ bool InputConditionContainerFunctional::saveDataToCsvFile(const QString& filenam
 void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)
 {
 	InputConditionContainer::copyValues(f);
-	impl->m_param = f.impl->m_param;
-	impl->m_values = f.impl->m_values;
-	impl->m_paramDefault = f.impl->m_paramDefault;
+	impl->m_param         = f.impl->m_param;
+	impl->m_values        = f.impl->m_values;
+	impl->m_paramDefault  = f.impl->m_paramDefault;
 	impl->m_valuesDefault = f.impl->m_valuesDefault;
+	impl->m_wml2URL       = f.impl->m_wml2URL;
+	impl->m_paramConvert  = f.impl->m_paramConvert;
+	impl->m_valuesConvert = f.impl->m_valuesConvert;
+	impl->m_siteID        = f.impl->m_siteID;
+	impl->m_startDate     = f.impl->m_startDate;
+	impl->m_endDate       = f.impl->m_endDate;
 }
 
 bool InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)
