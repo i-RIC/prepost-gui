@@ -719,7 +719,7 @@ const std::vector<MeasuredData*>& ProjectMainFile::measuredDatas() const
 	return impl->m_measuredDatas;
 }
 
-const QList<vtkRenderer*>& ProjectMainFile::renderers() const
+const std::vector<vtkRenderer*>& ProjectMainFile::renderers() const
 {
 	return m_renderers;
 }
@@ -941,10 +941,10 @@ void ProjectMainFile::moveDownMeasuredData(const QModelIndex& index)
 
 void ProjectMainFile::addRenderer(vtkRenderer* ren)
 {
-	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it) {
-		if (*it == ren) { return; }
+	for (vtkRenderer* r : m_renderers) {
+		if (r == ren) {return;}
 	}
-	m_renderers.append(ren);
+	m_renderers.push_back(ren);
 }
 
 void ProjectMainFile::clearModified()
