@@ -174,7 +174,7 @@ void ProjectMainFile::Impl::loadBackgrounds(const QDomNode& node)
 		if (finfo.exists()) {
 			try {
 				BackgroundImageInfo* image = new BackgroundImageInfo(absolutePath, absolutePath, m_parent);
-				m_backgroundImages.push_front(image);
+				m_backgroundImages.insert(m_backgroundImages.begin(), image);
 				image->loadFromProjectMainFile(child);
 				emit m_parent->backgroundImageAdded();
 			} catch (ErrorMessage m) {
@@ -709,7 +709,7 @@ void ProjectMainFile::closeCgnsFile()
 }
 
 
-const QList<BackgroundImageInfo*>& ProjectMainFile::backgroundImages() const
+const std::vector<BackgroundImageInfo*>& ProjectMainFile::backgroundImages() const
 {
 	return impl->m_backgroundImages;
 }
@@ -776,7 +776,7 @@ void ProjectMainFile::addBackgroundImage()
 	QFileInfo finfo(fname);
 	// check whether a image file with the same filename exists.
 	QString filename = finfo.fileName();
-	for (int i = 0; i < impl->m_backgroundImages.count(); ++i) {
+	for (int i = 0; i < impl->m_backgroundImages.size(); ++i) {
 		BackgroundImageInfo* imgInfo = impl->m_backgroundImages.at(i);
 		if (imgInfo->fileName().toLower() == filename.toLower()) {
 			// file with the same name already exists.
@@ -817,7 +817,7 @@ void ProjectMainFile::addBackgroundImage()
 
 void ProjectMainFile::addBackgroundImage(BackgroundImageInfo* image)
 {
-	impl->m_backgroundImages.push_front(image);
+	impl->m_backgroundImages.insert(impl->m_backgroundImages.begin(), image);
 	emit backgroundImageAdded();
 	setModified();
 }
@@ -872,10 +872,11 @@ void ProjectMainFile::moveUpImage(const QModelIndex& index)
 		// Can not move up
 		return;
 	}
-	auto it = impl->m_backgroundImages.begin();
-	int i = impl->m_backgroundImages.indexOf(*(it + index.row()));
-	int j = impl->m_backgroundImages.indexOf(*(it + index.row() - 1));
-	impl->m_backgroundImages.swap(i, j);
+	BackgroundImageInfo* i1 = impl->m_backgroundImages.at(index.row());
+	BackgroundImageInfo* i2 = impl->m_backgroundImages.at(index.row() - 1);
+	impl->m_backgroundImages[index.row()] = i2;
+	impl->m_backgroundImages[index.row() - 1] = i1;
+
 	emit backgroundImageMovedUp(index.row());
 	setModified();
 }
@@ -886,10 +887,11 @@ void ProjectMainFile::moveDownImage(const QModelIndex& index)
 		// Can not move down
 		return;
 	}
-	auto it = impl->m_backgroundImages.begin();
-	int i = impl->m_backgroundImages.indexOf(*(it + index.row()));
-	int j = impl->m_backgroundImages.indexOf(*(it + index.row() + 1));
-	impl->m_backgroundImages.swap(i, j);
+	BackgroundImageInfo* i1 = impl->m_backgroundImages.at(index.row());
+	BackgroundImageInfo* i2 = impl->m_backgroundImages.at(index.row() + 1);
+	impl->m_backgroundImages[index.row()] = i2;
+	impl->m_backgroundImages[index.row() + 1] = i1;
+
 	emit backgroundImageMovedDown(index.row());
 	setModified();
 }

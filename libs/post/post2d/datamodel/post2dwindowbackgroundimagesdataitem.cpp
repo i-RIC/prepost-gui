@@ -49,7 +49,7 @@ void Post2dWindowBackgroundImagesDataItem::setupChildItem()
 {
 	if (projectData()->mainfile()->backgroundImages().size() == 0) { return; }
 
-	QList<BackgroundImageInfo*> images = projectData()->mainfile()->backgroundImages();
+	const auto& images = projectData()->mainfile()->backgroundImages();
 	for (auto it = images.begin(); it != images.end(); ++it) {
 		Post2dWindowBackgroundImageDataItem* iItem = new Post2dWindowBackgroundImageDataItem(*it, this);
 		// there is no need to make the standard item top.
@@ -64,7 +64,7 @@ void Post2dWindowBackgroundImagesDataItem::setupChildItem()
 
 void Post2dWindowBackgroundImagesDataItem::addChildItem()
 {
-	BackgroundImageInfo* image = projectData()->mainfile()->backgroundImages().first();
+	BackgroundImageInfo* image = *(projectData()->mainfile()->backgroundImages().begin());
 	Post2dWindowBackgroundImageDataItem* iItem = new Post2dWindowBackgroundImageDataItem(image, this);
 	// make the standard item top.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(iItem->standardItem()->row());

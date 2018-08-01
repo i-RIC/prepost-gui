@@ -91,7 +91,7 @@ public:
 	void toggleGridEditFlag();
 	void closeCgnsFile() override;
 	/// Background images
-	const QList<BackgroundImageInfo*>& backgroundImages() const;
+	const std::vector<BackgroundImageInfo*>& backgroundImages() const;
 	/// Measured data
 	const std::vector<MeasuredData*>& measuredDatas() const;
 	/// Renderers for background images

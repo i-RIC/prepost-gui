@@ -29,7 +29,7 @@ public:
 	VersionNumber m_iRICVersion;
 
 	std::vector<MeasuredData*> m_measuredDatas;
-	QList<BackgroundImageInfo*> m_backgroundImages;
+	std::vector<BackgroundImageInfo*> m_backgroundImages;
 	PostSolutionInfo* m_postSolutionInfo;
 	ProjectPostProcessors* m_postProcessors;
 

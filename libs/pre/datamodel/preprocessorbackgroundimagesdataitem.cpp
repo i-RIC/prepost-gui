@@ -41,7 +41,7 @@ PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(Graph
 
 void PreProcessorBackgroundImagesDataItem::addChildItem()
 {
-	BackgroundImageInfo* image = projectData()->mainfile()->backgroundImages().first();
+	BackgroundImageInfo* image = *(projectData()->mainfile()->backgroundImages().begin());
 	PreProcessorBackgroundImageDataItem* iItem = new PreProcessorBackgroundImageDataItem(image, this);
 	// make the standard item top.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(iItem->standardItem()->row());
