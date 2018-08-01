@@ -3,12 +3,11 @@
 
 #include <QMainWindow>
 
-GraphicsWindowSimpleDataModel::GraphicsWindowSimpleDataModel(QMainWindow* w, ProjectDataItem* parent)
-	: ProjectDataItem(parent)
-{
-	m_mainWindow = w;
-	m_graphicsView = dynamic_cast<VTKGraphicsView*>(w->centralWidget());
-}
+GraphicsWindowSimpleDataModel::GraphicsWindowSimpleDataModel(QMainWindow* w, ProjectDataItem* parent) :
+	ProjectDataItem(parent),
+	m_mainWindow {w},
+	m_graphicsView {dynamic_cast<VTKGraphicsView*>(w->centralWidget())}
+{}
 
 GraphicsWindowSimpleDataModel::~GraphicsWindowSimpleDataModel()
 {}
