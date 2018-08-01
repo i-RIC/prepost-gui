@@ -95,7 +95,7 @@ public:
 	/// Measured data
 	const std::vector<MeasuredData*>& measuredDatas() const;
 	/// Renderers for background images
-	const QList<vtkRenderer*>& renderers() const;
+	const std::vector<vtkRenderer*>& renderers() const;
 
 	void updateActorVisibility(int idx, bool vis);
 	bool importCgnsFile(const QString& filename, const QString& newname);
@@ -163,7 +163,7 @@ private:
 	/// ProjectData
 	ProjectData* m_projectData;
 	/// Renderers for background images
-	QList<vtkRenderer*> m_renderers;
+	std::vector<vtkRenderer*> m_renderers;
 	/// Load data from CGNS file
 	bool loadCgnsFile(const QString& name);
 	/// Soad data from CGNS file
