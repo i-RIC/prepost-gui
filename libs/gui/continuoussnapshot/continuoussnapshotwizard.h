@@ -72,7 +72,7 @@ public:
 	void setTargetWindow(int i) {m_targetWindow = i;}
 	void setTargetBackground(int i) {m_targetBackground = i;}
 	void setKMLFilename(const QString& name) {m_kmlFilename = name;}
-	void setBackgroundList(const QList<BackgroundImageInfo*>& list) {m_backgroundList = list;}
+	void setBackgroundList(const std::vector<BackgroundImageInfo*>& list) {m_backgroundList = list;}
 	void setAngle(double a) {m_angle = a;}
 	void setNorth(double n) {m_north = n;}
 	void setSouth(double s) {m_south = s;}
@@ -104,7 +104,7 @@ public:
 	int targetWindow() {return m_targetWindow;}
 	int targetBackground() {return m_targetBackground;}
 	QString kmlFilename() {return m_kmlFilename;}
-	const QList<BackgroundImageInfo*>& backgroundList() {return m_backgroundList;}
+	const std::vector<BackgroundImageInfo*>& backgroundList() {return m_backgroundList;}
 	double angle() {return m_angle;}
 	double north() {return m_north;}
 	double south() {return m_south;}
@@ -163,7 +163,7 @@ private:
 	int m_targetWindow;
 	int m_targetBackground;
 	QString m_kmlFilename;
-	QList<BackgroundImageInfo*> m_backgroundList;
+	std::vector<BackgroundImageInfo*> m_backgroundList;
 	double m_angle;
 	double m_north;
 	double m_south;
