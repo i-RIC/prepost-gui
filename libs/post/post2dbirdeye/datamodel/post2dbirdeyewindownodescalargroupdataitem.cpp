@@ -134,7 +134,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 	m_warp->SetScaleFactor(1);
 
 	m_isolineActor = vtkActor::New();
-	m_isolineActor->GetProperty()->SetLighting(true);
+	m_isolineActor->GetProperty()->SetLighting(false);
 	m_isolineActor->GetProperty()->SetLineWidth(1);
 	renderer()->AddActor(m_isolineActor);
 
@@ -151,7 +151,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 	m_contourActor->SetNumberOfCloudPoints(5000);
 	// Make the point size a little big.
 	m_contourActor->GetProperty()->SetPointSize(2);
-	m_contourActor->GetProperty()->SetLighting(true);
+	m_contourActor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_contourActor);
 
 	m_contourMapper = vtkDataSetMapper::New();
@@ -165,14 +165,19 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 	m_fringeActor = vtkLODActor::New();
 	m_fringeActor->SetNumberOfCloudPoints(5000);
 	m_fringeActor->GetProperty()->SetPointSize(2);
-	m_fringeActor->GetProperty()->SetLighting(true);
+	m_fringeActor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_fringeActor);
 
 	m_fringeMapper = vtkDataSetMapper::New();
 	m_fringeMapper->SetScalarVisibility(true);
 	m_fringeActor->SetMapper(m_fringeMapper);
 
+	vtkRenderer* ren = renderer();
+	Q_ASSERT(ren != nullptr);
+	vtkRenderWindow* rwin = ren->GetRenderWindow();
+	Q_ASSERT(rwin != nullptr);
 	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
+	Q_ASSERT(iren != nullptr);
 
 	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
 	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
@@ -183,8 +188,8 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 	m_isolineActor->VisibilityOff();
 	m_contourActor->VisibilityOff();
 	m_fringeActor->VisibilityOff();
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 
+	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	updateActorSettings();
 }
 
@@ -367,10 +372,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 			m_regionClippedPolyData = geoFilter->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
 			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
-			clipper->SetInputConnection(geoFilter->GetOutputPort());
+			vtkPolyData* pd = geoFilter->GetOutput();
+			clipper->SetInputData(pd);
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
 			clipper->InsideOutOff();
-			clipper->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+			pd->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
 			clipper->Update();
 			m_regionClippedPolyData = clipper->GetOutput();
 		}
