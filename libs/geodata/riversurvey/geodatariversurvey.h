@@ -83,17 +83,17 @@ public:
 	void setupActors() override;
 	void setupMenu() override;
 	void setupDataItem() override;
-	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	bool getValueRange(double* min, double* max) override;
@@ -145,8 +145,8 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void loadExternalData(const QString& /*filename*/) override;
-	void saveExternalData(const QString& /*filename*/) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 	void updateFilename() override {
 		setFilename(name().append(".dat"));
 	}
