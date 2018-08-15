@@ -193,7 +193,7 @@ bool readRivFile(const QString& fname, std::vector<RivPathPoint*>* points, bool*
 				parseKP(tokens.at(0), &realKP, &strKP, allNamesAreNumber);
 
 				if (tokens.length() < 2) {break;}
-				np = tokens.at(1).toInt();
+				np = static_cast<int>(tokens.at(1).toDouble());
 				// Tries to read four indices values.
 				if (tokens.length() >= 6) {
 					for (int k = 0; k < 4; ++k) {
