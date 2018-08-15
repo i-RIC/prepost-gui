@@ -248,7 +248,7 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 	GeoDataImporter("riversurvey", tr("River Survey data (*.riv)"), creator)
 {}
 
-bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
 {
 	if (! readRivFile(filename, &m_points, &m_with4Points, &m_allNamesAreNumber)) {return false;}
 
