@@ -8,13 +8,10 @@
 #include "geodatariversurveydisplaysetting.h"
 
 #include <vtkSmartPointer.h>
-#include <vtkPolygon.h>
 #include <vtkActor.h>
 #include <vtkLODActor.h>
-#include <vtkDataSetMapper.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkStructuredGrid.h>
-#include <vtkDoubleArray.h>
 #include <vtkLabeledDataMapper.h>
 #include <vtkActor2D.h>
 #include <vtkStringArray.h>
@@ -22,7 +19,6 @@
 #include <QPoint>
 #include <QCursor>
 #include <QPixmap>
-#include <QList>
 
 #include <iriclib.h>
 
