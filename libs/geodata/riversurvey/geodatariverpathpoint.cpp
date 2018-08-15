@@ -167,7 +167,7 @@ void GeoDataRiverPathPoint::UpdateGridInterpolators()
 	}
 }
 
-unsigned int GeoDataRiverPathPoint::gridCounts(GeoDataRiverPathPoint* end)
+unsigned int GeoDataRiverPathPoint::gridCounts(GeoDataRiverPathPoint* end) const
 {
 	if (this == end) {
 		return 1;
@@ -609,6 +609,108 @@ void GeoDataRiverPathPoint::setGridSkip(bool skip)
 	m_gridSkip = skip;
 }
 
+
+
+Interpolator2D1* GeoDataRiverPathPoint::riverCenter() const
+{
+	return m_riverCenter;
+}
+
+void GeoDataRiverPathPoint::setRiverCenter(Interpolator2D1* interpolator)
+{
+	m_riverCenter = interpolator;
+}
+
+Interpolator2D1* GeoDataRiverPathPoint::leftBank() const
+{
+	return m_leftBank;
+}
+
+void GeoDataRiverPathPoint::setLeftBank(Interpolator2D1* interpolator)
+{
+	m_leftBank = interpolator;
+}
+
+Interpolator2D1* GeoDataRiverPathPoint::rightBank() const
+{
+	return m_rightBank;
+}
+
+void GeoDataRiverPathPoint::setRightBank(Interpolator2D1* interpolator)
+{
+	m_rightBank = interpolator;
+}
+
+LinearLXSecInterpolator* GeoDataRiverPathPoint::lXSec() const
+{
+	return m_lXSec;
+}
+
+LinearRXSecInterpolator* GeoDataRiverPathPoint::rXSec() const
+{
+	return m_rXSec;
+}
+
+QVector<Interpolator2D1*>& GeoDataRiverPathPoint::LGridLines()
+{
+	return m_LGridLines;
+}
+
+const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::LGridLines() const
+{
+	return m_LGridLines;
+}
+
+QVector<Interpolator2D1*>& GeoDataRiverPathPoint::RGridLines()
+{
+	return m_RGridLines;
+}
+
+const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::RGridLines() const
+{
+	return m_RGridLines;
+}
+
+QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundLGridLines()
+{
+	return m_backgroundLGridLines;
+}
+
+const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundLGridLines() const
+{
+	return m_backgroundLGridLines;
+}
+
+QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundRGridLines()
+{
+	return m_backgroundRGridLines;
+}
+
+const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundRGridLines() const
+{
+	return m_backgroundRGridLines;
+}
+
+Interpolator2D1* GeoDataRiverPathPoint::LGridLine(unsigned int index) const
+{
+	return m_LGridLines[index];
+}
+
+Interpolator2D1* GeoDataRiverPathPoint::RGridLine(unsigned int index) const
+{
+	return m_RGridLines[index];
+}
+
+Interpolator2D1* GeoDataRiverPathPoint::backgroundLGridLine(unsigned int index) const
+{
+	return m_backgroundLGridLines[index];
+}
+
+Interpolator2D1* GeoDataRiverPathPoint::backgroundRGridLine(unsigned int index) const
+{
+	return m_backgroundRGridLines[index];
+}
+
 void GeoDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCodes)*/
 {
 	if (m_previousPoint == nullptr) {
@@ -628,6 +730,21 @@ void GeoDataRiverPathPoint::setCrosssectionDirection(const QVector2D& v)
 	iRIC::rotateVectorRadian(m_crosssectionDirectionL, rotAngle);
 	iRIC::rotateVectorRadian(m_crosssectionDirectionR, rotAngle);
 	updateRiverShapeInterpolators();
+}
+
+GeoDataRiverPathPoint* GeoDataRiverPathPoint::previousPoint() const
+{
+	return m_previousPoint;
+}
+
+GeoDataRiverPathPoint* GeoDataRiverPathPoint::nextPoint() const
+{
+	return m_nextPoint;
+}
+
+const QString& GeoDataRiverPathPoint::name() const
+{
+	return m_name;
 }
 
 void GeoDataRiverPathPoint::setCrosssectionDirectionL(const QVector2D& direction)
@@ -742,6 +859,11 @@ void GeoDataRiverPathPoint::UpdateCtrlSections()
 	}
 }
 
+vtkStructuredGrid* GeoDataRiverPathPoint::areaGrid() const
+{
+	return m_areaGrid;
+}
+
 QVector2D GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f )() const, double d)
 {
 	int i = 0;
@@ -811,6 +933,31 @@ QVector2D GeoDataRiverPathPoint::crosssectionPosition(double x)
 void GeoDataRiverPathPoint::setName(const QString& newname)
 {
 	m_name = newname;
+}
+
+GeoDataRiverCrosssection& GeoDataRiverPathPoint::crosssection()
+{
+	return m_crosssection;
+}
+
+const GeoDataRiverCrosssection& GeoDataRiverPathPoint::crosssection() const
+{
+	return m_crosssection;
+}
+
+const QVector2D& GeoDataRiverPathPoint::crosssectionDirection() const
+{
+	return m_crosssectionDirection;
+}
+
+const QVector2D& GeoDataRiverPathPoint::crosssectionDirectionL() const
+{
+	return m_crosssectionDirectionL;
+}
+
+const QVector2D& GeoDataRiverPathPoint::crosssectionDirectionR() const
+{
+	return m_crosssectionDirectionR;
 }
 
 void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last)
@@ -1088,7 +1235,7 @@ void GeoDataRiverPathPoint::load(QDataStream& s, const VersionNumber& number)
 	}
 }
 
-void GeoDataRiverPathPoint::save(QDataStream& s)
+void GeoDataRiverPathPoint::save(QDataStream& s) const
 {
 	// name
 	s << m_name;
@@ -1130,6 +1277,43 @@ void GeoDataRiverPathPoint::save(QDataStream& s)
 	// water surface elevation
 	s << wseSpecified;
 	s << m_waterSurfaceElevationValue;
+}
+
+QVector<double>& GeoDataRiverPathPoint::CtrlPoints(CtrlZonePosition position)
+{
+	switch (position) {
+	case zposCenterToLeft:
+		return CenterToLeftCtrlPoints;
+	case zposCenterToRight:
+		return CenterToRightCtrlPoints;
+	case zposCenterLine:
+		return CenterLineCtrlPoints;
+	case zposLeftBank:
+		return LeftBankCtrlPoints;
+	case zposRightBank:
+		return RightBankCtrlPoints;
+	default:
+		return RightBankCtrlPoints;
+	}
+}
+
+QVector<double>& GeoDataRiverPathPoint::CtrlPoints(CtrlPointPosition position)
+{
+	switch (position) {
+	case pposCenterToLeft:
+		return CenterToLeftCtrlPoints;
+	case pposCenterToRight:
+		return CenterToRightCtrlPoints;
+	case pposCenterLine:
+		return CenterLineCtrlPoints;
+	case pposLeftBank:
+		return LeftBankCtrlPoints;
+	case pposRightBank:
+		return RightBankCtrlPoints;
+		// Never used. this is written to avoid warning in compiling.
+	default:
+		return RightBankCtrlPoints;
+	}
 }
 
 void GeoDataRiverPathPoint::centerToBanksRegion(QVector2D& mins, QVector2D& maxs)
