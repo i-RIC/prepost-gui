@@ -1098,7 +1098,7 @@ void GeoDataRiverPathPoint::save(QDataStream& s)
 	s << m_crosssectionDirection;
 	// cross section info
 	// count
-	s << m_crosssection.AltitudeInfo().count();
+	s << m_crosssection.AltitudeInfo().size();
 	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it) {
 		GeoDataRiverCrosssection::Altitude alt = (*it);
 		s << alt.position() << alt.height() << alt.active();
@@ -1373,10 +1373,10 @@ double GeoDataRiverPathPoint::waterSurfaceElevationValue() const
 	return m_waterSurfaceElevationValue;
 }
 
-QList<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
+std::vector<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 {
 	if (! m_waterSurfaceElevationSpecified) {
-		QList<int> ret;
+		std::vector<int> ret;
 		return ret;
 	}
 	GeoDataRiverCrosssection& cross = m_crosssection;
@@ -1403,13 +1403,13 @@ QList<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 		++ idx;
 	}
 
-	QList<int> ret;
+	std::vector<int> ret;
 	for (int i = 0; i < leftlimit; ++i) {
-		ret.append(i);
+		ret.push_back(i);
 	}
 	if (rightlimit != -1) {
-		for (int i = rightlimit + 1; i < alist.length(); ++i) {
-			ret.append(i);
+		for (int i = rightlimit + 1; i < alist.size(); ++i) {
+			ret.push_back(i);
 		}
 	}
 	return ret;
@@ -1450,7 +1450,7 @@ void GeoDataRiverPathPoint::loadFromiRICLibObject(const iRICLib::RiverPathPoint*
 		alt.setPosition(libalt.position);
 		alt.setHeight(libalt.height);
 		alt.setActive(libalt.active == 1);
-		m_crosssection.AltitudeInfo().append(alt);
+		m_crosssection.AltitudeInfo().push_back(alt);
 	}
 	m_crosssection.unsetFixedPointL();
 	if (p->fixedPointLSet) {

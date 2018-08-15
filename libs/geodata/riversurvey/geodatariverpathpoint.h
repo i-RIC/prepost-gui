@@ -4,13 +4,16 @@
 #include "gd_riversurvey_global.h"
 #include "geodatarivercrosssection.h"
 #include <misc/versionnumber.h>
+
 #include <QVector2D>
 #include <QVector>
 #include <QString>
-#include <set>
 
 #include <vtkStructuredGrid.h>
 #include <vtkSmartPointer.h>
+
+#include <set>
+#include <vector>
 
 class Grid;
 class Interpolator2D1;
@@ -18,8 +21,7 @@ class LinearLXSecInterpolator;
 class LinearRXSecInterpolator;
 class Structured2DGrid;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
-//class RiverGridInterpolator;
-//class BStream;
+
 namespace iRICLib
 {
 	class RiverPathPoint;
@@ -270,7 +272,7 @@ public:
 	void thisToNextRegion(QVector2D& mins, QVector2D& maxs);
 	void UpdateCtrlSections();
 	vtkStructuredGrid* areaGrid() {return m_areaGrid;}
-	QList<int> getPointsToInactivateUsingWaterElevation();
+	std::vector<int> getPointsToInactivateUsingWaterElevation();
 	void loadFromiRICLibObject(const iRICLib::RiverPathPoint* p);
 	void saveToiRICLibObject(iRICLib::RiverPathPoint* p);
 

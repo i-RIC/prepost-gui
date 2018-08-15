@@ -55,7 +55,7 @@ public:
 	void updateComboBoxes();
 	void updateRiverSurveys();
 	QTableView* tableView();
-	bool canInactivateSelectedRows(GeoDataRiverCrosssection& cross, QList<int> indices);
+	bool canInactivateSelectedRows(GeoDataRiverCrosssection& cross, const std::vector<int>& indices);
 	void informFocusIn();
 	void toggleGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs);
 	const QIcon& icon() const;

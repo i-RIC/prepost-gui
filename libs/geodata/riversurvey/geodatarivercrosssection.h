@@ -2,8 +2,8 @@
 #define GEODATARIVERCROSSSECTION_H
 
 #include "gd_riversurvey_global.h"
-#include <QList>
-#include <QVector>
+
+#include <vector>
 
 class GeoDataRiverPathPoint;
 /**
@@ -71,7 +71,7 @@ public:
 		bool m_active;
 		bool m_tmpSelected;
 	};
-	typedef QList<Altitude> AltitudeList;
+	typedef std::vector<Altitude> AltitudeList;
 
 	GeoDataRiverCrosssection();
 	~GeoDataRiverCrosssection();
@@ -84,16 +84,16 @@ public:
 	void addPoint(int index, double position, double height);
 	int addPoint(double position, double height);
 	void removePoint(int index) /*throw (ErrorCodes)*/;
-	void removePoint(const QList<int>& indices) /*throw (ErrorCodes)*/;
+	void removePoint(const std::vector<int>& indices) /*throw (ErrorCodes)*/;
 
-	void movePoint(double Hoffset, double Voffset, const QList<int>& Indices);
+	void movePoint(double Hoffset, double Voffset, const std::vector<int>& Indices);
 	void movePoint(int index, double newposition, double newheight);
 	void movePosition(int index, double newposition);
 	void moveHeight(int index, double newheight);
 
 	void activate(int index, bool activate);
-	void activate(const QList<int>& indices, bool a) /*throw (ErrorCodes)*/;
-	QList<int> selectRegion(double position1, double position2, double height1, double height2);
+	void activate(const std::vector<int>& indices, bool a) /*throw (ErrorCodes)*/;
+	std::vector<int> selectRegion(double position1, double position2, double height1, double height2);
 	int leftBankIndex(bool OnlyActive = false) /*throw (ErrorCodes)*/;
 	/**
 	 * @brief Get the left bank

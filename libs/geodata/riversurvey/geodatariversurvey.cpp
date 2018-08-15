@@ -1563,7 +1563,7 @@ void GeoDataRiverSurvey::updateShapeData()
 		double maxHeight = 0;
 		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		// calculate maxHeight.
-		for (int i = 0; i < alist.count(); ++i) {
+		for (int i = 0; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
@@ -1577,7 +1577,7 @@ void GeoDataRiverSurvey::updateShapeData()
 		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
-		for (int i = 1; i < alist.count(); ++i) {
+		for (int i = 1; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
 			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
