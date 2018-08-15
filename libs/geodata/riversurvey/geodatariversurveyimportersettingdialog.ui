@@ -37,16 +37,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QRadioButton" name="lowWaterWayRadioButton">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Middle point of Low water way</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
