@@ -1712,6 +1712,16 @@ void GeoDataRiverSurvey::updateSelectionShapeData()
 	m_selectedCrosssections->Modified();
 }
 
+GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
+{
+	return m_headPoint;
+}
+
+vtkStructuredGrid* GeoDataRiverSurvey::backgroundGrid() const
+{
+	return m_backgroundGrid;
+}
+
 void GeoDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)
 {
 	range.setItemCount(3);
@@ -2361,6 +2371,16 @@ void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black, GeoDataR
 	renderGraphicsView();
 }
 
+void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond)
+{
+	m_gridCreatingCondition = cond;
+}
+
+GridCreatingConditionRiverSurveyInterface* GeoDataRiverSurvey::gridCreatingCondition() const
+{
+	return m_gridCreatingCondition;
+}
+
 void GeoDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPoint* p)
 {
 	grid->Reset();
@@ -2458,6 +2478,16 @@ void GeoDataRiverSurvey::cancelBackgroundGridUpdate()
 GeoDataProxy* GeoDataRiverSurvey::getProxy()
 {
 	return new GeoDataRiverSurveyProxy(this);
+}
+
+void GeoDataRiverSurvey::updateFilename()
+{
+	setFilename(name().append(".dat"));
+}
+
+int GeoDataRiverSurvey::iRICLibType() const
+{
+	return IRIC_GEO_RIVERSURVEY;
 }
 
 void GeoDataRiverSurvey::doApplyOffset(double x, double y)

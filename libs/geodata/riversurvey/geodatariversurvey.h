@@ -104,12 +104,12 @@ public:
 	void updateInterpolators();
 	void updateShapeData();
 	void updateSelectionShapeData();
-	GeoDataRiverPathPoint* headPoint() const {return m_headPoint;}
-	vtkStructuredGrid* backgroundGrid() const {return m_backgroundGrid;}
+	GeoDataRiverPathPoint* headPoint() const;
+	vtkStructuredGrid* backgroundGrid() const;
 	void updateCrossectionWindows();
 	void setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue);
-	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond) {m_gridCreatingCondition = cond;}
-	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() {return m_gridCreatingCondition;}
+	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
+	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() const;
 	void useDivisionPointsForBackgroundGrid(bool use);
 	void refreshBackgroundGrid();
 	void cancelBackgroundGridUpdate();
@@ -147,10 +147,8 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
-	void updateFilename() override {
-		setFilename(name().append(".dat"));
-	}
-	int iRICLibType() const override {return IRIC_GEO_RIVERSURVEY;}
+	void updateFilename() override;
+	int iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
 	/// The pointdata, that has the positions of
 	/// River center, left bank, and right bank
