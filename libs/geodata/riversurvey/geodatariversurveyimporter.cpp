@@ -306,9 +306,21 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 				}
 				prevAlt = alt;
 			}
+			for (int j = p->divIndices[1] - 1; j <= p->divIndices[2] - 1; ++j) {
+				const auto& a = p->altitudes.at(j);
+				if (j == p->divIndices[1] - 1 || a.elevation < minval) {
+					minpos = a.distance;
+					minval = a.elevation;
+				}
+			}
 			left  = p->altitudes.at(p->divIndices[1] - 1).distance;
 			right = p->altitudes.at(p->divIndices[2] - 1).distance;
-			double shiftValue = (left + right) * 0.5;
+			double shiftValue = 0;
+			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
+				shiftValue = (left + right) * 0.5;
+			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
+				shiftValue = minpos;
+			}
 			double leftPoint = (left - shiftValue) /
 				(newPoint->crosssection().leftBank().position() - shiftValue);
 			double rightPoint = (right - shiftValue) /
