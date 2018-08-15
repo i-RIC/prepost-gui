@@ -3,6 +3,30 @@
 
 #include <misc/interpolator.h>
 
+GeoDataRiverCrosssection::GeoDataRiverCrosssection() :
+	m_fixedPointLSet {false},
+	m_fixedPointRSet {false},
+	m_leftShift {0}
+{}
+
+GeoDataRiverCrosssection::~GeoDataRiverCrosssection()
+{}
+
+void GeoDataRiverCrosssection::setParent(GeoDataRiverPathPoint* point)
+{
+	m_parent = point;
+}
+
+double GeoDataRiverCrosssection::leftShift() const
+{
+	return m_leftShift;
+}
+
+void GeoDataRiverCrosssection::setLeftShift(double shift)
+{
+	m_leftShift = shift;
+}
+
 void GeoDataRiverCrosssection::expand(double ratio)
 {
 	if (ratio == 0) {
@@ -154,6 +178,51 @@ unsigned int GeoDataRiverCrosssection::numOfAltitudes(bool OnlyActive)
 	return actives;
 }
 
+GeoDataRiverCrosssection::AltitudeList& GeoDataRiverCrosssection::AltitudeInfo()
+{
+	return m_altitudeInfo;
+}
+
+const GeoDataRiverCrosssection::AltitudeList& GeoDataRiverCrosssection::AltitudeInfo() const
+{
+	return m_altitudeInfo;
+}
+
+GeoDataRiverPathPoint* GeoDataRiverCrosssection::parent() const
+{
+	return m_parent;
+}
+
+bool GeoDataRiverCrosssection::fixedPointLSet() const
+{
+	return m_fixedPointLSet;
+}
+
+const GeoDataRiverCrosssection::Altitude& GeoDataRiverCrosssection::fixedPointL() const
+{
+	return m_altitudeInfo.at(m_fixedPointL);
+}
+
+int GeoDataRiverCrosssection::fixedPointLIndex() const
+{
+	return m_fixedPointL;
+}
+
+bool GeoDataRiverCrosssection::fixedPointRSet() const
+{
+	return m_fixedPointRSet;
+}
+
+const GeoDataRiverCrosssection::Altitude& GeoDataRiverCrosssection::fixedPointR() const
+{
+	return m_altitudeInfo.at(m_fixedPointR);
+}
+
+int GeoDataRiverCrosssection::fixedPointRIndex() const
+{
+	return m_fixedPointR;
+}
+
 QList<int> GeoDataRiverCrosssection::selectRegion(double position1, double position2, double height1, double height2)
 {
 	double posmin, posmax;
@@ -264,6 +333,16 @@ void GeoDataRiverCrosssection::unsetFixedPointR()
 	removePoint(m_altitudeInfo.count() - 1);
 //	Parent()->UpdateXSecInterpolators();
 //	Parent()->UpdateRiverShapeInterpolators();
+}
+
+double GeoDataRiverCrosssection::fixedPointLDiv() const
+{
+	return m_fixedPointLDiv;
+}
+
+double GeoDataRiverCrosssection::fixedPointRDiv() const
+{
+	return m_fixedPointRDiv;
 }
 
 void GeoDataRiverCrosssection::activate(int index, bool a) /*throw (ErrorCodes)*/

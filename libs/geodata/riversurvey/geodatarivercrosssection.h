@@ -72,20 +72,13 @@ public:
 		bool m_tmpSelected;
 	};
 	typedef QList<Altitude> AltitudeList;
-	/// Constructor
-	GeoDataRiverCrosssection() {
-		m_fixedPointLSet = false;
-		m_fixedPointRSet = false;
-		m_leftShift = 0;
-	}
-	/// Destructor
-	~GeoDataRiverCrosssection() {}
+
+	GeoDataRiverCrosssection();
+	~GeoDataRiverCrosssection();
 	/// Set the parent river path point
-	void setParent(GeoDataRiverPathPoint* point) {
-		m_parent = point;
-	}
-	double leftShift() const {return m_leftShift;}
-	void setLeftShift(double shift) {m_leftShift = shift;}
+	void setParent(GeoDataRiverPathPoint* point);
+	double leftShift() const;
+	void setLeftShift(double shift);
 	void moveCenter(double offset);
 	void expand(double ratio);
 	void addPoint(int index, double position, double height);
@@ -118,25 +111,21 @@ public:
 	 * @param OnlyActive If true, count only the active ones.
 	 */
 	unsigned int numOfAltitudes(bool OnlyActive = false);
-	AltitudeList& AltitudeInfo() {return m_altitudeInfo;}
-	const AltitudeList& AltitudeInfo() const {return m_altitudeInfo;}
-	GeoDataRiverPathPoint* parent() const {return m_parent;}
-	bool fixedPointLSet() const {return m_fixedPointLSet;}
-	const Altitude& fixedPointL() const {
-		return m_altitudeInfo.at(m_fixedPointL);
-	}
-	int fixedPointLIndex() const {return m_fixedPointL;}
-	bool fixedPointRSet() const {return m_fixedPointRSet;}
-	const Altitude& fixedPointR() const {
-		return m_altitudeInfo.at(m_fixedPointR);
-	}
-	int fixedPointRIndex() const {return m_fixedPointR;}
+	AltitudeList& AltitudeInfo();
+	const AltitudeList& AltitudeInfo() const;
+	GeoDataRiverPathPoint* parent() const;
+	bool fixedPointLSet() const;
+	const Altitude& fixedPointL() const;
+	int fixedPointLIndex() const;
+	bool fixedPointRSet() const;
+	const Altitude& fixedPointR() const;
+	int fixedPointRIndex() const;
 	void setFixedPointL(int index);
 	void unsetFixedPointL();
 	void setFixedPointR(int index);
 	void unsetFixedPointR();
-	double fixedPointLDiv() const {return m_fixedPointLDiv;}
-	double fixedPointRDiv() const {return m_fixedPointRDiv;}
+	double fixedPointLDiv() const;
+	double fixedPointRDiv() const;
 	void updateFixedPointDivs();
 
 private:
