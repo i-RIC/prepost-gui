@@ -651,42 +651,42 @@ LinearRXSecInterpolator* GeoDataRiverPathPoint::rXSec() const
 	return m_rXSec;
 }
 
-QVector<Interpolator2D1*>& GeoDataRiverPathPoint::LGridLines()
+std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::LGridLines()
 {
 	return m_LGridLines;
 }
 
-const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::LGridLines() const
+const std::vector<Interpolator2D1 *> &GeoDataRiverPathPoint::LGridLines() const
 {
 	return m_LGridLines;
 }
 
-QVector<Interpolator2D1*>& GeoDataRiverPathPoint::RGridLines()
+std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::RGridLines()
 {
 	return m_RGridLines;
 }
 
-const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::RGridLines() const
+const std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::RGridLines() const
 {
 	return m_RGridLines;
 }
 
-QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundLGridLines()
+std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundLGridLines()
 {
 	return m_backgroundLGridLines;
 }
 
-const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundLGridLines() const
+const std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundLGridLines() const
 {
 	return m_backgroundLGridLines;
 }
 
-QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundRGridLines()
+std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundRGridLines()
 {
 	return m_backgroundRGridLines;
 }
 
-const QVector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundRGridLines() const
+const std::vector<Interpolator2D1*>& GeoDataRiverPathPoint::backgroundRGridLines() const
 {
 	return m_backgroundRGridLines;
 }

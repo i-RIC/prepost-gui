@@ -175,15 +175,17 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runStandard()
 				for (auto line : p->backgroundLGridLines()) {
 					delete line;
 				}
-				p->backgroundLGridLines().clear();
-				p->backgroundLGridLines().insert(0, JDIVNUM - 1, 0);
+				auto& lines = p->backgroundLGridLines();
+				lines.clear();
+				lines.insert(lines.begin(), JDIVNUM - 1, 0);
 			}
 			if (p->backgroundRGridLines().size() != JDIVNUM - 1) {
 				for (auto line : p->backgroundRGridLines()) {
 					delete line;
 				}
-				p->backgroundRGridLines().clear();
-				p->backgroundRGridLines().insert(0, JDIVNUM - 1, 0);
+				auto& lines = p->backgroundRGridLines();
+				lines.clear();
+				lines.insert(lines.begin(), JDIVNUM - 1, 0);
 			}
 		}
 		p = p->nextPoint();
@@ -467,10 +469,12 @@ void GeoDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 		for (auto line : p->RGridLines()) {
 			delete line;
 		}
-		p->LGridLines().clear();
-		p->LGridLines().insert(0, lindices, 0);
-		p->RGridLines().clear();
-		p->RGridLines().insert(0, rindices, 0);
+		auto& llines = p->LGridLines();
+		llines.clear();
+		llines.insert(llines.begin(), lindices, 0);
+		auto& rlines = p->RGridLines();
+		rlines.clear();
+		rlines.insert(rlines.begin(), rindices, 0);
 		p = p->nextPoint();
 	}
 	if (m_abort || m_restart || m_canceled) {return;}

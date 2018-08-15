@@ -1544,10 +1544,12 @@ void GridCreatingConditionRiverSurvey::updateGridInterpolators()
 		for (auto i : p->RGridLines()) {
 			delete i;
 		}
-		p->LGridLines().clear();
-		p->LGridLines().insert(0, lindices, 0);
-		p->RGridLines().clear();
-		p->RGridLines().insert(0, rindices, 0);
+		auto& llines = p->LGridLines();
+		llines.clear();
+		llines.insert(llines.begin(), lindices, 0);
+		auto& rlines = p->RGridLines();
+		rlines.clear();
+		rlines.insert(rlines.begin(), rindices, 0);
 		p = p->nextPoint();
 	}
 	for (RiverGridCtrlSolver* solver : m_gridSolvers) {

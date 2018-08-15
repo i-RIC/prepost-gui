@@ -201,14 +201,14 @@ public:
 	void setRightBank(Interpolator2D1* interpolator);
 	LinearLXSecInterpolator* lXSec() const;
 	LinearRXSecInterpolator* rXSec() const;
-	QVector<Interpolator2D1*>& LGridLines();
-	const QVector<Interpolator2D1*>& LGridLines() const;
-	QVector<Interpolator2D1*>& RGridLines();
-	const QVector<Interpolator2D1*>& RGridLines() const;
-	QVector<Interpolator2D1*>& backgroundLGridLines();
-	const QVector<Interpolator2D1*>& backgroundLGridLines() const;
-	QVector<Interpolator2D1*>& backgroundRGridLines();
-	const QVector<Interpolator2D1*>& backgroundRGridLines() const;
+	std::vector<Interpolator2D1*>& LGridLines();
+	const std::vector<Interpolator2D1*>& LGridLines() const;
+	std::vector<Interpolator2D1*>& RGridLines();
+	const std::vector<Interpolator2D1*>& RGridLines() const;
+	std::vector<Interpolator2D1*>& backgroundLGridLines();
+	const std::vector<Interpolator2D1*>& backgroundLGridLines() const;
+	std::vector<Interpolator2D1*>& backgroundRGridLines();
+	const std::vector<Interpolator2D1*>& backgroundRGridLines() const;
 	Interpolator2D1* LGridLine(unsigned int index) const;
 	Interpolator2D1* RGridLine(unsigned int index) const;
 	Interpolator2D1* backgroundLGridLine(unsigned int index) const;
@@ -267,22 +267,16 @@ private:
 	GeoDataRiverCrosssection m_crosssection;
 
 	Interpolator2D1* m_riverCenter;
-
 	Interpolator2D1* m_leftBank;
-
 	Interpolator2D1* m_rightBank;
 
 	LinearLXSecInterpolator* m_lXSec;
-
 	LinearRXSecInterpolator* m_rXSec;
 
-	QVector<Interpolator2D1*> m_LGridLines;
-
-	QVector<Interpolator2D1*> m_RGridLines;
-
-	QVector<Interpolator2D1*> m_backgroundLGridLines;
-
-	QVector<Interpolator2D1*> m_backgroundRGridLines;
+	std::vector<Interpolator2D1*> m_LGridLines;
+	std::vector<Interpolator2D1*> m_RGridLines;
+	std::vector<Interpolator2D1*> m_backgroundLGridLines;
+	std::vector<Interpolator2D1*> m_backgroundRGridLines;
 
 public:
 	friend class GeoDataRiverSurveyBackgroundGridCreateThread;
