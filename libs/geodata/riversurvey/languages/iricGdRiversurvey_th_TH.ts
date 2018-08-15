@@ -302,102 +302,102 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1746"/>
+        <location filename="../geodatariversurvey.cpp" line="1756"/>
         <source>Insert Upstream Side(&amp;B)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1748"/>
+        <location filename="../geodatariversurvey.cpp" line="1758"/>
         <source>Insert Downstream Side(&amp;A)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1750"/>
+        <location filename="../geodatariversurvey.cpp" line="1760"/>
         <source>&amp;Move...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1752"/>
+        <location filename="../geodatariversurvey.cpp" line="1762"/>
         <source>&amp;Rotate...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1754"/>
+        <location filename="../geodatariversurvey.cpp" line="1764"/>
         <source>S&amp;hift Center...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1756"/>
+        <location filename="../geodatariversurvey.cpp" line="1766"/>
         <source>E&amp;xtend Horizontally...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1758"/>
+        <location filename="../geodatariversurvey.cpp" line="1768"/>
         <source>Dele&amp;te Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1760"/>
+        <location filename="../geodatariversurvey.cpp" line="1770"/>
         <source>R&amp;ename Cross Section...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1762"/>
+        <location filename="../geodatariversurvey.cpp" line="1772"/>
         <source>Add &amp;Left Bank Extension Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1764"/>
+        <location filename="../geodatariversurvey.cpp" line="1774"/>
         <source>Add &amp;Right Bank Extension Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1766"/>
+        <location filename="../geodatariversurvey.cpp" line="1776"/>
         <source>Remo&amp;ve Left Bank Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1768"/>
+        <location filename="../geodatariversurvey.cpp" line="1778"/>
         <source>Rem&amp;ove Right Bank Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1770"/>
+        <location filename="../geodatariversurvey.cpp" line="1780"/>
         <source>Display &amp;Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1774"/>
+        <location filename="../geodatariversurvey.cpp" line="1784"/>
         <source>Display &amp;Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1776"/>
+        <location filename="../geodatariversurvey.cpp" line="1786"/>
         <source>Spline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1780"/>
+        <location filename="../geodatariversurvey.cpp" line="1790"/>
         <source>Linear Curve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1848"/>
+        <location filename="../geodatariversurvey.cpp" line="1858"/>
         <source>Delete Traversal Lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1933"/>
+        <location filename="../geodatariversurvey.cpp" line="1943"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1933"/>
+        <location filename="../geodatariversurvey.cpp" line="1943"/>
         <source>River survey data need at least 2 center points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="2016"/>
+        <location filename="../geodatariversurvey.cpp" line="2026"/>
         <source>Remove Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -651,20 +651,20 @@
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="252"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="362"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="248"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="371"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="302"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="333"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="304"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="342"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="302"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="333"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="304"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="342"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -692,22 +692,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="46"/>
+        <location filename="../geodatariversurveyimportersettingdialog.cpp" line="20"/>
         <source>Middle point of Low water way</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="56"/>
+        <location filename="../geodatariversurveyimportersettingdialog.cpp" line="21"/>
+        <source>Where the elevation is the smallest in low water way</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="46"/>
         <source>Order of cross sections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="72"/>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="62"/>
         <source>Downstream to upstream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="62"/>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="52"/>
         <source>Upstream to downstream</source>
         <translation type="unfinished"></translation>
     </message>

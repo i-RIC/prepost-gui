@@ -302,102 +302,102 @@
         <translation>  </translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1746"/>
+        <location filename="../geodatariversurvey.cpp" line="1756"/>
         <source>Insert Upstream Side(&amp;B)...</source>
         <translation>上流側に挿入(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1748"/>
+        <location filename="../geodatariversurvey.cpp" line="1758"/>
         <source>Insert Downstream Side(&amp;A)...</source>
         <translation>下流側に挿入(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1750"/>
+        <location filename="../geodatariversurvey.cpp" line="1760"/>
         <source>&amp;Move...</source>
         <translation>移動(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1752"/>
+        <location filename="../geodatariversurvey.cpp" line="1762"/>
         <source>&amp;Rotate...</source>
         <translation>回転(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1754"/>
+        <location filename="../geodatariversurvey.cpp" line="1764"/>
         <source>S&amp;hift Center...</source>
         <translation>中心点のシフト(&amp;H)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1756"/>
+        <location filename="../geodatariversurvey.cpp" line="1766"/>
         <source>E&amp;xtend Horizontally...</source>
         <translation>左右への伸縮(&amp;X)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1758"/>
+        <location filename="../geodatariversurvey.cpp" line="1768"/>
         <source>Dele&amp;te Cross Section</source>
         <translation>横断線の削除(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1760"/>
+        <location filename="../geodatariversurvey.cpp" line="1770"/>
         <source>R&amp;ename Cross Section...</source>
         <translation>横断線の名前の変更(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1762"/>
+        <location filename="../geodatariversurvey.cpp" line="1772"/>
         <source>Add &amp;Left Bank Extension Line...</source>
         <translation>左岸延長線追加(&amp;K)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1764"/>
+        <location filename="../geodatariversurvey.cpp" line="1774"/>
         <source>Add &amp;Right Bank Extension Line...</source>
         <translation>右岸延長線追加(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1766"/>
+        <location filename="../geodatariversurvey.cpp" line="1776"/>
         <source>Remo&amp;ve Left Bank Extension Line</source>
         <translation>左岸延長線削除(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1768"/>
+        <location filename="../geodatariversurvey.cpp" line="1778"/>
         <source>Rem&amp;ove Right Bank Extension Line</source>
         <translation>右岸延長線削除(&amp;J)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1770"/>
+        <location filename="../geodatariversurvey.cpp" line="1780"/>
         <source>Display &amp;Cross Section</source>
         <translation>横断面の表示 (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1774"/>
+        <location filename="../geodatariversurvey.cpp" line="1784"/>
         <source>Display &amp;Setting</source>
         <translation>表示設定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1776"/>
+        <location filename="../geodatariversurvey.cpp" line="1786"/>
         <source>Spline</source>
         <translation>スプライン補間</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1780"/>
+        <location filename="../geodatariversurvey.cpp" line="1790"/>
         <source>Linear Curve</source>
         <translation>線形補間</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1848"/>
+        <location filename="../geodatariversurvey.cpp" line="1858"/>
         <source>Delete Traversal Lines</source>
         <translation>河川横断線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1933"/>
+        <location filename="../geodatariversurvey.cpp" line="1943"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1933"/>
+        <location filename="../geodatariversurvey.cpp" line="1943"/>
         <source>River survey data need at least 2 center points.</source>
         <translation>最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="2016"/>
+        <location filename="../geodatariversurvey.cpp" line="2026"/>
         <source>Remove Extension Line</source>
         <translation>延長線の削除</translation>
     </message>
@@ -655,20 +655,20 @@
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="252"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="362"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="248"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="371"/>
         <source>River Survey data (*.riv)</source>
         <translation>河川測量データ (*.riv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="302"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="333"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="304"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="342"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="302"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="333"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="304"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="342"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation>%1 の横断データが、小さい順に並んでいません。</translation>
     </message>
@@ -700,22 +700,27 @@
         <translation>最も標高が低い点</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="46"/>
+        <location filename="../geodatariversurveyimportersettingdialog.cpp" line="20"/>
         <source>Middle point of Low water way</source>
         <translation>低水路端点の中点</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="56"/>
+        <location filename="../geodatariversurveyimportersettingdialog.cpp" line="21"/>
+        <source>Where the elevation is the smallest in low water way</source>
+        <translation>低水路の最も標高の低い点</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="46"/>
         <source>Order of cross sections</source>
         <translation>横断線の並び順</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="72"/>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="62"/>
         <source>Downstream to upstream</source>
         <translation>下流側から上流側へ</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimportersettingdialog.ui" line="62"/>
+        <location filename="../geodatariversurveyimportersettingdialog.ui" line="52"/>
         <source>Upstream to downstream</source>
         <translation>上流側から下流側へ</translation>
     </message>
