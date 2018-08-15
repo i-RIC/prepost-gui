@@ -278,7 +278,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	tail = rs->m_headPoint;
 
-	double max = 0, left = 0, right = 0;
+	double left = 0, right = 0;
 	double minpos = 0, minval = 0;
 	bool ok = true;
 
@@ -294,11 +294,9 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 		newPoint->setCrosssectionDirection(p->leftToRight().normalized());
 
 		if (m_with4Points) {
-			max = p->altitudes.at(0).elevation;
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
 			for (int j = 0; j < p->altitudes.size(); ++j) {
 				const auto& a = p->altitudes.at(j);
-				if (a.elevation > max) {max = a.elevation;}
 				GeoDataRiverCrosssection::Altitude alt(a.distance - offset, a.elevation);
 				if (j + 1 < p->divIndices[0] || j + 1 > p->divIndices[3]) {continue;}
 
@@ -321,13 +319,11 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 			newPoint->CenterToLeftCtrlPoints.push_back(leftPoint);
 			newPoint->CenterToRightCtrlPoints.push_back(rightPoint);
 		} else {
-			max = p->altitudes.at(0).elevation;
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
 			minpos = p->altitudes.at(0).distance - offset;
 			minval = p->altitudes.at(0).elevation;
 			for (int j = 0; j < p->altitudes.size(); ++j) {
 				const auto& a = p->altitudes.at(j);
-				if (a.elevation > max) {max = a.elevation;}
 				if (a.elevation < minval) {
 					minpos = a.distance - offset;
 					minval = a.elevation;
