@@ -16,18 +16,9 @@ GeoDataRiverSurveyImporterSettingDialog::~GeoDataRiverSurveyImporterSettingDialo
 
 void GeoDataRiverSurveyImporterSettingDialog::setWith4Points(bool with4points)
 {
-	if (! with4points) {
-		ui->middlePointRadioButton->setEnabled(true);
-		ui->smallestRadioButton->setEnabled(true);
-		ui->lowWaterWayRadioButton->setEnabled(false);
-
-		ui->middlePointRadioButton->setChecked(true);
-	} else {
-		ui->middlePointRadioButton->setEnabled(false);
-		ui->smallestRadioButton->setEnabled(false);
-		ui->lowWaterWayRadioButton->setEnabled(true);
-
-		ui->lowWaterWayRadioButton->setChecked(true);
+	if (with4points) {
+		ui->middlePointRadioButton->setText(tr("Middle point of Low water way"));
+		ui->smallestRadioButton->setText(tr("Where the elevation is the smallest in low water way"));
 	}
 }
 
@@ -49,8 +40,6 @@ GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting GeoDataRiverSurveyIm
 		return cpMiddle;
 	} else if (ui->smallestRadioButton->isChecked()) {
 		return cpElevation;
-	} else if (ui->lowWaterWayRadioButton->isChecked()) {
-		return cpLowWaterWay;
 	}
 	return cpMiddle;
 }

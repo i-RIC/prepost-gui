@@ -47,7 +47,7 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::setLimits()
 		note.append(QString(tr("%1 < ")).arg(m_leftLimit));
 	}
 	note.append(tr("H"));
-	if (m_to == alist.count() - 1) {
+	if (m_to == alist.size() - 1) {
 		m_rightLimitSet = false;
 	} else {
 		m_rightLimitSet = true;

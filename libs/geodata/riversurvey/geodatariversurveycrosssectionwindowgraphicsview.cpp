@@ -493,7 +493,7 @@ QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 		GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints()[i];
 		if (p == nullptr) {continue;}
 		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
-		for (int j = 0; j < alist.count(); ++j) {
+		for (int j = 0; j < alist.size(); ++j) {
 			GeoDataRiverCrosssection::Altitude alt = alist.at(j);
 			if (first || alt.position() < ret.left()) {ret.setLeft(alt.position());}
 			if (first || alt.position() > ret.right()) {ret.setRight(alt.position());}
@@ -1072,10 +1072,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 	GeoDataRiverCrosssection::AltitudeList before, after;
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
-	QList<int> indices;
+	std::vector<int> indices;
 	for (auto it = rows.begin(); it != rows.end(); ++it) {
 		QModelIndex index = *it;
-		indices.append(index.row());
+		indices.push_back(index.row());
 	}
 	if (! m_parentWindow->canInactivateSelectedRows(cross, indices)) {
 		alist = before;
@@ -1159,15 +1159,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectLimits(bool* minli
 		left = 0;
 		*minlimit = false;
 	}
-	if (right == alist.count()) {
-		right = alist.count() - 1;
+	if (right == alist.size()) {
+		right = alist.size() - 1;
 		*maxlimit = false;
 	}
 	double min1, min2, max1, max2;
 	min1 = alist[left].position() - alist[selectedPoints.first().row()].position();
 	max1 = alist[right].position() - alist[selectedPoints.last().row()].position();
-	min2 = 0 - alist.last().position();
-	max2 = 0 - alist.first().position();
+	min2 = 0 - alist.back().position();
+	max2 = 0 - alist.front().position();
 	if (*minlimit) {
 		*max = max1;
 		if (*maxlimit) {

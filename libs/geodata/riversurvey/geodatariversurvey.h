@@ -8,13 +8,10 @@
 #include "geodatariversurveydisplaysetting.h"
 
 #include <vtkSmartPointer.h>
-#include <vtkPolygon.h>
 #include <vtkActor.h>
 #include <vtkLODActor.h>
-#include <vtkDataSetMapper.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkStructuredGrid.h>
-#include <vtkDoubleArray.h>
 #include <vtkLabeledDataMapper.h>
 #include <vtkActor2D.h>
 #include <vtkStringArray.h>
@@ -22,7 +19,6 @@
 #include <QPoint>
 #include <QCursor>
 #include <QPixmap>
-#include <QList>
 
 #include <iriclib.h>
 
@@ -87,17 +83,17 @@ public:
 	void setupActors() override;
 	void setupMenu() override;
 	void setupDataItem() override;
-	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	bool getValueRange(double* min, double* max) override;
@@ -108,12 +104,12 @@ public:
 	void updateInterpolators();
 	void updateShapeData();
 	void updateSelectionShapeData();
-	GeoDataRiverPathPoint* headPoint() const {return m_headPoint;}
-	vtkStructuredGrid* backgroundGrid() const {return m_backgroundGrid;}
+	GeoDataRiverPathPoint* headPoint() const;
+	vtkStructuredGrid* backgroundGrid() const;
 	void updateCrossectionWindows();
 	void setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue);
-	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond) {m_gridCreatingCondition = cond;}
-	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() {return m_gridCreatingCondition;}
+	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
+	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() const;
 	void useDivisionPointsForBackgroundGrid(bool use);
 	void refreshBackgroundGrid();
 	void cancelBackgroundGridUpdate();
@@ -149,12 +145,10 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void loadExternalData(const QString& /*filename*/) override;
-	void saveExternalData(const QString& /*filename*/) override;
-	void updateFilename() override {
-		setFilename(name().append(".dat"));
-	}
-	int iRICLibType() const override {return IRIC_GEO_RIVERSURVEY;}
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+	void updateFilename() override;
+	int iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
 	/// The pointdata, that has the positions of
 	/// River center, left bank, and right bank

@@ -16,7 +16,6 @@ public:
 	enum CenterPointSetting {
 		cpMiddle,
 		cpElevation,
-		cpLowWaterWay
 	};
 
 	explicit GeoDataRiverSurveyImporterSettingDialog(QWidget* parent = nullptr);

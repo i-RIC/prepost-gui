@@ -453,11 +453,11 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 	GeoDataRiverCrosssection::AltitudeList old = cross.AltitudeInfo();
 	auto it = old.begin();
 	// whether activations are valid or not
-	QList<int> indices;
+	std::vector<int> indices;
 	for (int i = 0; i < impl->m_model->rowCount(); ++i) {
 		bool active = impl->m_model->data(impl->m_model->index(i, 0)).toBool();
 		if (active) { continue; }
-		indices.append(i);
+		indices.push_back(i);
 	}
 	if (! canInactivateSelectedRows(cross, indices)) {
 		for (int i = 0; i < impl->m_model->rowCount(); ++i) {
@@ -526,10 +526,10 @@ void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 	QModelIndexList rows = impl->m_selectionModel->selectedRows();
 
 	// delete
-	QList<int> indices;
+	std::vector<int> indices;
 	for (auto it = rows.begin(); it != rows.end(); ++it) {
 		QModelIndex index = *it;
-		indices.append(index.row());
+		indices.push_back(index.row());
 	}
 	try {
 		cross.removePoint(indices);
@@ -558,7 +558,7 @@ void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis()
 {
 	if (! impl->m_editTargetPoint->waterSurfaceElevationSpecified()) {return;}
-	QList<int> indices = impl->m_editTargetPoint->getPointsToInactivateUsingWaterElevation();
+	auto indices = impl->m_editTargetPoint->getPointsToInactivateUsingWaterElevation();
 
 	GeoDataRiverCrosssection::AltitudeList before, after;
 	GeoDataRiverCrosssection::AltitudeList& alist = impl->m_editTargetPoint->crosssection().AltitudeInfo();
@@ -582,7 +582,7 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 			p = p->nextPoint();
 			continue;
 		}
-		QList<int> indices = p->getPointsToInactivateUsingWaterElevation();
+		auto indices = p->getPointsToInactivateUsingWaterElevation();
 		GeoDataRiverCrosssection::AltitudeList before, after;
 		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		before = alist;
@@ -653,7 +653,7 @@ QTableView* GeoDataRiverSurveyCrosssectionWindow::tableView()
 	return ui->tableView;
 }
 
-bool GeoDataRiverSurveyCrosssectionWindow::canInactivateSelectedRows(GeoDataRiverCrosssection& cross, QList<int> indices)
+bool GeoDataRiverSurveyCrosssectionWindow::canInactivateSelectedRows(GeoDataRiverCrosssection& cross, const std::vector<int>& indices)
 {
 	try {
 		cross.activate(indices, false);

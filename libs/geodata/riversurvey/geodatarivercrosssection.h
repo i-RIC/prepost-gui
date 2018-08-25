@@ -2,8 +2,8 @@
 #define GEODATARIVERCROSSSECTION_H
 
 #include "gd_riversurvey_global.h"
-#include <QList>
-#include <QVector>
+
+#include <vector>
 
 class GeoDataRiverPathPoint;
 /**
@@ -71,36 +71,29 @@ public:
 		bool m_active;
 		bool m_tmpSelected;
 	};
-	typedef QList<Altitude> AltitudeList;
-	/// Constructor
-	GeoDataRiverCrosssection() {
-		m_fixedPointLSet = false;
-		m_fixedPointRSet = false;
-		m_leftShift = 0;
-	}
-	/// Destructor
-	~GeoDataRiverCrosssection() {}
+	typedef std::vector<Altitude> AltitudeList;
+
+	GeoDataRiverCrosssection();
+	~GeoDataRiverCrosssection();
 	/// Set the parent river path point
-	void setParent(GeoDataRiverPathPoint* point) {
-		m_parent = point;
-	}
-	double leftShift() const {return m_leftShift;}
-	void setLeftShift(double shift) {m_leftShift = shift;}
+	void setParent(GeoDataRiverPathPoint* point);
+	double leftShift() const;
+	void setLeftShift(double shift);
 	void moveCenter(double offset);
 	void expand(double ratio);
 	void addPoint(int index, double position, double height);
 	int addPoint(double position, double height);
 	void removePoint(int index) /*throw (ErrorCodes)*/;
-	void removePoint(const QList<int>& indices) /*throw (ErrorCodes)*/;
+	void removePoint(const std::vector<int>& indices) /*throw (ErrorCodes)*/;
 
-	void movePoint(double Hoffset, double Voffset, const QList<int>& Indices);
+	void movePoint(double Hoffset, double Voffset, const std::vector<int>& Indices);
 	void movePoint(int index, double newposition, double newheight);
 	void movePosition(int index, double newposition);
 	void moveHeight(int index, double newheight);
 
 	void activate(int index, bool activate);
-	void activate(const QList<int>& indices, bool a) /*throw (ErrorCodes)*/;
-	QList<int> selectRegion(double position1, double position2, double height1, double height2);
+	void activate(const std::vector<int>& indices, bool a) /*throw (ErrorCodes)*/;
+	std::vector<int> selectRegion(double position1, double position2, double height1, double height2);
 	int leftBankIndex(bool OnlyActive = false) /*throw (ErrorCodes)*/;
 	/**
 	 * @brief Get the left bank
@@ -118,25 +111,21 @@ public:
 	 * @param OnlyActive If true, count only the active ones.
 	 */
 	unsigned int numOfAltitudes(bool OnlyActive = false);
-	AltitudeList& AltitudeInfo() {return m_altitudeInfo;}
-	const AltitudeList& AltitudeInfo() const {return m_altitudeInfo;}
-	GeoDataRiverPathPoint* parent() const {return m_parent;}
-	bool fixedPointLSet() const {return m_fixedPointLSet;}
-	const Altitude& fixedPointL() const {
-		return m_altitudeInfo.at(m_fixedPointL);
-	}
-	int fixedPointLIndex() const {return m_fixedPointL;}
-	bool fixedPointRSet() const {return m_fixedPointRSet;}
-	const Altitude& fixedPointR() const {
-		return m_altitudeInfo.at(m_fixedPointR);
-	}
-	int fixedPointRIndex() const {return m_fixedPointR;}
+	AltitudeList& AltitudeInfo();
+	const AltitudeList& AltitudeInfo() const;
+	GeoDataRiverPathPoint* parent() const;
+	bool fixedPointLSet() const;
+	const Altitude& fixedPointL() const;
+	int fixedPointLIndex() const;
+	bool fixedPointRSet() const;
+	const Altitude& fixedPointR() const;
+	int fixedPointRIndex() const;
 	void setFixedPointL(int index);
 	void unsetFixedPointL();
 	void setFixedPointR(int index);
 	void unsetFixedPointR();
-	double fixedPointLDiv() const {return m_fixedPointLDiv;}
-	double fixedPointRDiv() const {return m_fixedPointRDiv;}
+	double fixedPointLDiv() const;
+	double fixedPointRDiv() const;
 	void updateFixedPointDivs();
 
 private:

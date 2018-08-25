@@ -1563,7 +1563,7 @@ void GeoDataRiverSurvey::updateShapeData()
 		double maxHeight = 0;
 		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		// calculate maxHeight.
-		for (int i = 0; i < alist.count(); ++i) {
+		for (int i = 0; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
@@ -1577,7 +1577,7 @@ void GeoDataRiverSurvey::updateShapeData()
 		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
-		for (int i = 1; i < alist.count(); ++i) {
+		for (int i = 1; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
 			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
@@ -1710,6 +1710,16 @@ void GeoDataRiverSurvey::updateSelectionShapeData()
 	m_selectedRiverCenters->Modified();
 	m_selectedCrosssections->SetPoints(m_points);
 	m_selectedCrosssections->Modified();
+}
+
+GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
+{
+	return m_headPoint;
+}
+
+vtkStructuredGrid* GeoDataRiverSurvey::backgroundGrid() const
+{
+	return m_backgroundGrid;
 }
 
 void GeoDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -2361,6 +2371,16 @@ void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black, GeoDataR
 	renderGraphicsView();
 }
 
+void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond)
+{
+	m_gridCreatingCondition = cond;
+}
+
+GridCreatingConditionRiverSurveyInterface* GeoDataRiverSurvey::gridCreatingCondition() const
+{
+	return m_gridCreatingCondition;
+}
+
 void GeoDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPoint* p)
 {
 	grid->Reset();
@@ -2458,6 +2478,16 @@ void GeoDataRiverSurvey::cancelBackgroundGridUpdate()
 GeoDataProxy* GeoDataRiverSurvey::getProxy()
 {
 	return new GeoDataRiverSurveyProxy(this);
+}
+
+void GeoDataRiverSurvey::updateFilename()
+{
+	setFilename(name().append(".dat"));
+}
+
+int GeoDataRiverSurvey::iRICLibType() const
+{
+	return IRIC_GEO_RIVERSURVEY;
 }
 
 void GeoDataRiverSurvey::doApplyOffset(double x, double y)

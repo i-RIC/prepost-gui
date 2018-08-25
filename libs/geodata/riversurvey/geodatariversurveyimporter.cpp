@@ -248,7 +248,7 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 	GeoDataImporter("riversurvey", tr("River Survey data (*.riv)"), creator)
 {}
 
-bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
 {
 	if (! readRivFile(filename, &m_points, &m_with4Points, &m_allNamesAreNumber)) {return false;}
 
@@ -278,28 +278,25 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	tail = rs->m_headPoint;
 
-	double max = 0, left = 0, right = 0;
+	double left = 0, right = 0;
 	double minpos = 0, minval = 0;
 	bool ok = true;
 
 	for (int i = 0; i < m_points.size(); ++i) {
 		RivPathPoint* p = m_points[i];
 
-		auto centerp = p->banksCenter();
-		auto newPoint = new GeoDataRiverPathPoint(centerp.x, centerp.y);
-		double offset = p->banksDistance() * 0.5;
+		auto leftp = p->leftBank;
+		auto newPoint = new GeoDataRiverPathPoint(leftp.x, leftp.y);
 
 		newPoint->setName(p->strKP.c_str());
 		newPoint->InhibitInterpolatorUpdate = true;
 		newPoint->setCrosssectionDirection(p->leftToRight().normalized());
 
 		if (m_with4Points) {
-			max = p->altitudes.at(0).elevation;
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
 			for (int j = 0; j < p->altitudes.size(); ++j) {
 				const auto& a = p->altitudes.at(j);
-				if (a.elevation > max) {max = a.elevation;}
-				GeoDataRiverCrosssection::Altitude alt(a.distance - offset, a.elevation);
+				GeoDataRiverCrosssection::Altitude alt(a.distance, a.elevation);
 				if (j + 1 < p->divIndices[0] || j + 1 > p->divIndices[3]) {continue;}
 
 				newPoint->crosssection().AltitudeInfo().push_back(alt);
@@ -309,30 +306,37 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 				}
 				prevAlt = alt;
 			}
-			left  = p->altitudes.at(p->divIndices[1] - 1).distance - offset;
-			right = p->altitudes.at(p->divIndices[2] - 1).distance - offset;
-			double shiftValue = (left + right) * 0.5;
+			for (int j = p->divIndices[1] - 1; j <= p->divIndices[2] - 1; ++j) {
+				const auto& a = p->altitudes.at(j);
+				if (j == p->divIndices[1] - 1 || a.elevation < minval) {
+					minpos = a.distance;
+					minval = a.elevation;
+				}
+			}
+			left  = p->altitudes.at(p->divIndices[1] - 1).distance;
+			right = p->altitudes.at(p->divIndices[2] - 1).distance;
+			double shiftValue = 0;
+			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
+				shiftValue = (left + right) * 0.5;
+			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
+				shiftValue = minpos;
+			}
 			double leftPoint = (left - shiftValue) /
 				(newPoint->crosssection().leftBank().position() - shiftValue);
 			double rightPoint = (right - shiftValue) /
 				(newPoint->crosssection().rightBank().position() - shiftValue);
-			newPoint->crosssection().setLeftShift(offset);
 			newPoint->shiftCenter(shiftValue);
 			newPoint->CenterToLeftCtrlPoints.push_back(leftPoint);
 			newPoint->CenterToRightCtrlPoints.push_back(rightPoint);
 		} else {
-			max = p->altitudes.at(0).elevation;
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
-			minpos = p->altitudes.at(0).distance - offset;
-			minval = p->altitudes.at(0).elevation;
 			for (int j = 0; j < p->altitudes.size(); ++j) {
 				const auto& a = p->altitudes.at(j);
-				if (a.elevation > max) {max = a.elevation;}
-				if (a.elevation < minval) {
-					minpos = a.distance - offset;
+				if (j == 0 || a.elevation < minval) {
+					minpos = a.distance;
 					minval = a.elevation;
 				}
-				GeoDataRiverCrosssection::Altitude alt(a.distance - offset, a.elevation);
+				GeoDataRiverCrosssection::Altitude alt(a.distance, a.elevation);
 				newPoint->crosssection().AltitudeInfo().push_back(alt);
 				if (j > 0 && prevAlt.position() > alt.position() && ok) {
 					QMessageBox::warning(w, tr("Warning"), tr("Crosssection data is not ordered correctly at %1.").arg(newPoint->name()));
@@ -348,7 +352,6 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
 			}
-			newPoint->crosssection().setLeftShift(offset);
 			newPoint->shiftCenter(shiftValue);
 		}
 		newPoint->InhibitInterpolatorUpdate = false;

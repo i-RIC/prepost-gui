@@ -3,6 +3,30 @@
 
 #include <misc/interpolator.h>
 
+GeoDataRiverCrosssection::GeoDataRiverCrosssection() :
+	m_fixedPointLSet {false},
+	m_fixedPointRSet {false},
+	m_leftShift {0}
+{}
+
+GeoDataRiverCrosssection::~GeoDataRiverCrosssection()
+{}
+
+void GeoDataRiverCrosssection::setParent(GeoDataRiverPathPoint* point)
+{
+	m_parent = point;
+}
+
+double GeoDataRiverCrosssection::leftShift() const
+{
+	return m_leftShift;
+}
+
+void GeoDataRiverCrosssection::setLeftShift(double shift)
+{
+	m_leftShift = shift;
+}
+
 void GeoDataRiverCrosssection::expand(double ratio)
 {
 	if (ratio == 0) {
@@ -39,7 +63,7 @@ int GeoDataRiverCrosssection::addPoint(double position, double height)
 void GeoDataRiverCrosssection::addPoint(int index, double position, double height)
 {
 	Altitude alt(position, height);
-	m_altitudeInfo.insert(index, alt);
+	m_altitudeInfo.insert(m_altitudeInfo.begin() + index, alt);
 //	m_Parent->UpdateRiverShapeInterpolators();
 //	m_Parent->UpdateXSecInterpolators();
 	updateFixedPointDivs();
@@ -47,10 +71,10 @@ void GeoDataRiverCrosssection::addPoint(int index, double position, double heigh
 
 void GeoDataRiverCrosssection::removePoint(int index) /*throw (ErrorCodes)*/
 {
-	if (index < 0 || index >= m_altitudeInfo.count()) {
+	if (index < 0 || index >= m_altitudeInfo.size()) {
 		throw ec_OutOfIndex;
 	}
-	m_altitudeInfo.removeAt(index);
+	m_altitudeInfo.erase(m_altitudeInfo.begin() + index);
 
 	if (! enoughActivePoints()) {
 		throw ec_AltitudesMustExistTwo;
@@ -61,14 +85,14 @@ void GeoDataRiverCrosssection::removePoint(int index) /*throw (ErrorCodes)*/
 	updateFixedPointDivs();
 }
 
-void GeoDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (ErrorCodes)*/
+void GeoDataRiverCrosssection::removePoint(const std::vector<int>& indices) /*throw (ErrorCodes)*/
 {
 	for (auto it = indices.begin(); it != indices.end(); ++it) {
 		int index = *it;
 		if (m_fixedPointLSet && (index == 0 || index == m_fixedPointL)) {
 			throw ec_FixDelete;
 		}
-		if (m_fixedPointRSet && (index == m_altitudeInfo.count() - 1 || index == m_fixedPointR)) {
+		if (m_fixedPointRSet && (index == m_altitudeInfo.size() - 1 || index == m_fixedPointR)) {
 			throw ec_FixDelete;
 		}
 	}
@@ -76,8 +100,8 @@ void GeoDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (E
 	int offset = 0;
 	for (auto it = indices.begin(); it != indices.end(); ++it) {
 		int index = *it - offset;
-		m_altitudeInfo.removeAt(index);
-		++offset;
+		m_altitudeInfo.erase(m_altitudeInfo.begin() + index);
+		++ offset;
 	}
 
 	if (! enoughActivePoints()) {
@@ -96,17 +120,17 @@ void GeoDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (E
 
 int GeoDataRiverCrosssection::leftBankIndex(bool OnlyActive) /*throw (ErrorCodes)*/
 {
-	if (m_altitudeInfo.count() == 0) {
+	if (m_altitudeInfo.size() == 0) {
 		throw ec_NoAltitudeExists;
 	}
 	if (! OnlyActive) {
 		return 0;
 	}
 	int i;
-	for (i = 0; i < m_altitudeInfo.count() && (! m_altitudeInfo.at(i).active()); ++i) {
+	for (i = 0; i < m_altitudeInfo.size() && (! m_altitudeInfo.at(i).active()); ++i) {
 		// try next
 	}
-	if (i == m_altitudeInfo.count()) {
+	if (i == m_altitudeInfo.size()) {
 		throw ec_NoAltitudeExists;
 	}
 	return i;
@@ -123,10 +147,10 @@ int GeoDataRiverCrosssection::rightBankIndex(bool OnlyActive) /*throw (ErrorCode
 		throw ec_NoAltitudeExists;
 	}
 	if (! OnlyActive) {
-		return m_altitudeInfo.count() - 1;
+		return m_altitudeInfo.size() - 1;
 	}
 	int i;
-	for (i = m_altitudeInfo.count() - 1; i >= 0 && (! m_altitudeInfo.at(i).active()); --i) {
+	for (i = m_altitudeInfo.size() - 1; i >= 0 && (! m_altitudeInfo.at(i).active()); --i) {
 		// try next
 	}
 	if (i < 0) {
@@ -143,7 +167,7 @@ GeoDataRiverCrosssection::Altitude& GeoDataRiverCrosssection::rightBank(bool Onl
 unsigned int GeoDataRiverCrosssection::numOfAltitudes(bool OnlyActive)
 {
 	if (! OnlyActive) {
-		return static_cast<unsigned int>(m_altitudeInfo.count());
+		return static_cast<unsigned int>(m_altitudeInfo.size());
 	}
 	unsigned int actives = 0;
 	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it) {
@@ -154,7 +178,52 @@ unsigned int GeoDataRiverCrosssection::numOfAltitudes(bool OnlyActive)
 	return actives;
 }
 
-QList<int> GeoDataRiverCrosssection::selectRegion(double position1, double position2, double height1, double height2)
+GeoDataRiverCrosssection::AltitudeList& GeoDataRiverCrosssection::AltitudeInfo()
+{
+	return m_altitudeInfo;
+}
+
+const GeoDataRiverCrosssection::AltitudeList& GeoDataRiverCrosssection::AltitudeInfo() const
+{
+	return m_altitudeInfo;
+}
+
+GeoDataRiverPathPoint* GeoDataRiverCrosssection::parent() const
+{
+	return m_parent;
+}
+
+bool GeoDataRiverCrosssection::fixedPointLSet() const
+{
+	return m_fixedPointLSet;
+}
+
+const GeoDataRiverCrosssection::Altitude& GeoDataRiverCrosssection::fixedPointL() const
+{
+	return m_altitudeInfo.at(m_fixedPointL);
+}
+
+int GeoDataRiverCrosssection::fixedPointLIndex() const
+{
+	return m_fixedPointL;
+}
+
+bool GeoDataRiverCrosssection::fixedPointRSet() const
+{
+	return m_fixedPointRSet;
+}
+
+const GeoDataRiverCrosssection::Altitude& GeoDataRiverCrosssection::fixedPointR() const
+{
+	return m_altitudeInfo.at(m_fixedPointR);
+}
+
+int GeoDataRiverCrosssection::fixedPointRIndex() const
+{
+	return m_fixedPointR;
+}
+
+std::vector<int> GeoDataRiverCrosssection::selectRegion(double position1, double position2, double height1, double height2)
 {
 	double posmin, posmax;
 	double heightmin, heightmax;
@@ -172,7 +241,7 @@ QList<int> GeoDataRiverCrosssection::selectRegion(double position1, double posit
 		heightmin = height2;
 		heightmax = height1;
 	}
-	QList<int> result;
+	std::vector<int> result;
 	int i = 0;
 	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++i, ++it) {
 		if (
@@ -187,9 +256,9 @@ QList<int> GeoDataRiverCrosssection::selectRegion(double position1, double posit
 	return result;
 }
 
-void GeoDataRiverCrosssection::movePoint(double Hoffset, double Voffset, const QList<int>& Indices)
+void GeoDataRiverCrosssection::movePoint(double Hoffset, double Voffset, const std::vector<int>& Indices)
 {
-	for (int i = 0; i < Indices.count(); ++i) {
+	for (int i = 0; i < Indices.size(); ++i) {
 		if (m_fixedPointLSet && Indices.at(i) == m_fixedPointL) {
 			Hoffset = 0;
 			break;
@@ -199,7 +268,7 @@ void GeoDataRiverCrosssection::movePoint(double Hoffset, double Voffset, const Q
 			break;
 		}
 	}
-	for (int i = 0; i < Indices.count(); ++i) {
+	for (int i = 0; i < Indices.size(); ++i) {
 		Altitude& a = m_altitudeInfo[Indices.at(i)];
 		a.setPosition(a.position() + Hoffset);
 		a.setHeight(a.height() + Voffset);
@@ -261,19 +330,29 @@ void GeoDataRiverCrosssection::unsetFixedPointR()
 {
 	if (! m_fixedPointRSet) {return;}
 	m_fixedPointRSet = false;
-	removePoint(m_altitudeInfo.count() - 1);
+	removePoint(m_altitudeInfo.size() - 1);
 //	Parent()->UpdateXSecInterpolators();
 //	Parent()->UpdateRiverShapeInterpolators();
 }
 
+double GeoDataRiverCrosssection::fixedPointLDiv() const
+{
+	return m_fixedPointLDiv;
+}
+
+double GeoDataRiverCrosssection::fixedPointRDiv() const
+{
+	return m_fixedPointRDiv;
+}
+
 void GeoDataRiverCrosssection::activate(int index, bool a) /*throw (ErrorCodes)*/
 {
-	QList<int> indices;
-	indices.append(index);
+	std::vector<int> indices;
+	indices.push_back(index);
 	activate(indices, a);
 }
 
-void GeoDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*throw (ErrorCodes)*/
+void GeoDataRiverCrosssection::activate(const std::vector<int>& indices, bool a) /*throw (ErrorCodes)*/
 {
 
 	// When fixed points or the end points are included, they can not be inactivated.
@@ -285,7 +364,7 @@ void GeoDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 				throw ec_FixInactivate;
 			}
 			// Right fixed point exists
-			if (m_fixedPointRSet && (index == m_altitudeInfo.count() - 1 || index == m_fixedPointR)) {
+			if (m_fixedPointRSet && (index == m_altitudeInfo.size() - 1 || index == m_fixedPointR)) {
 				throw ec_FixInactivate;
 			}
 		}

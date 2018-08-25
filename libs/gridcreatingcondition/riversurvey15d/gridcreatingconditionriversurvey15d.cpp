@@ -1075,7 +1075,7 @@ void GridCreatingConditionRiverSurvey15D::appendCrossSectionToGrid(GeoDataRiverC
 {
 	Structured15DGridWithCrossSectionCrossSection* crosssection = new Structured15DGridWithCrossSectionCrossSection(name, grid);
 	GeoDataRiverCrosssection::AltitudeList& alist = cs.AltitudeInfo();
-	double offset = alist.first().position();
+	double offset = alist.front().position();
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt;
 		alt.m_position = (*it).position() - offset;
@@ -1194,7 +1194,7 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 
 		auto ai = point->crosssection().AltitudeInfo();
 		std::vector<double> x, y, zeros;
-		for (int j = 0; j < ai.length(); ++j) {
+		for (int j = 0; j < ai.size(); ++j) {
 			auto alt = ai.at(j);
 			if (! alt.active()) {continue;}
 			x.push_back(alt.position());

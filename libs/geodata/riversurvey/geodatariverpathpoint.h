@@ -4,13 +4,16 @@
 #include "gd_riversurvey_global.h"
 #include "geodatarivercrosssection.h"
 #include <misc/versionnumber.h>
+
 #include <QVector2D>
 #include <QVector>
 #include <QString>
-#include <set>
 
 #include <vtkStructuredGrid.h>
 #include <vtkSmartPointer.h>
+
+#include <set>
+#include <vector>
 
 class Grid;
 class Interpolator2D1;
@@ -18,8 +21,7 @@ class LinearLXSecInterpolator;
 class LinearRXSecInterpolator;
 class Structured2DGrid;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
-//class RiverGridInterpolator;
-//class BStream;
+
 namespace iRICLib
 {
 	class RiverPathPoint;
@@ -76,7 +78,7 @@ public:
 	const QVector2D& position() const;
 
 	void load(QDataStream& s, const VersionNumber& number);
-	void save(QDataStream& s);
+	void save(QDataStream& s) const;
 	/// Shift the river center position
 	void shiftCenter(double shiftWidth);
 	/// Set new river center position
@@ -100,21 +102,21 @@ public:
 	void remove();
 	void setCrosssectionDirection(const QVector2D& v);
 	/// The pointer to the previous river path point.
-	GeoDataRiverPathPoint* previousPoint() const {return m_previousPoint;}
+	GeoDataRiverPathPoint* previousPoint() const;
 	/// The pointer to the next river path point.
-	GeoDataRiverPathPoint* nextPoint() const {return m_nextPoint;}
+	GeoDataRiverPathPoint* nextPoint() const;
 	/// Name
-	const QString& name() const {return m_name;}
+	const QString& name() const;
 	/// Set new name
 	void setName(const QString& newname);
-	GeoDataRiverCrosssection& crosssection() {return m_crosssection;}
-	const GeoDataRiverCrosssection& crosssection() const {return m_crosssection;}
+	GeoDataRiverCrosssection& crosssection();
+	const GeoDataRiverCrosssection& crosssection() const;
 	/// The direction of crosssection along left bank to right bank
-	const QVector2D& crosssectionDirection() const {return m_crosssectionDirection;}
+	const QVector2D& crosssectionDirection() const;
 	/// The direction of left-bank side "wing".
-	const QVector2D& crosssectionDirectionL() const {return m_crosssectionDirectionL;}
+	const QVector2D& crosssectionDirectionL() const;
 	/// The direction of right-bank side "wing".
-	const QVector2D& crosssectionDirectionR() const {return m_crosssectionDirectionR;}
+	const QVector2D& crosssectionDirectionR() const;
 	/// Set the direction of crosssection
 	/**
 	 * @angle The angle of crosssection and the line between the center point of this crosssection and the previous crosssection
@@ -148,7 +150,7 @@ public:
 	/// Update the interpolators to calculate the grid node positions
 	void UpdateGridInterpolators();
 	/// Returns the number of grid nodes along I-direction.
-	unsigned int gridCounts(GeoDataRiverPathPoint* end);
+	unsigned int gridCounts(GeoDataRiverPathPoint* end) const;
 	void createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last = false);
 
 	/// True when this point is selected
@@ -186,31 +188,31 @@ public:
 	void setGridSkip(bool skip);
 
 	/// The interpolator to draw river center line (as spline curve)
-	Interpolator2D1* riverCenter() const {return m_riverCenter;}
+	Interpolator2D1* riverCenter() const;
 	/// Set the interpolator to draw river center line (as spline curve)
-	void setRiverCenter(Interpolator2D1* interpolator) {m_riverCenter = interpolator;}
+	void setRiverCenter(Interpolator2D1* interpolator);
 	/// The interpolator to draw river left bank line (as spline curve)
-	Interpolator2D1* leftBank() const {return m_leftBank;}
+	Interpolator2D1* leftBank() const;
 	/// Set the interpolator to draw river left bank line (as spline curve)
-	void setLeftBank(Interpolator2D1* interpolator) {m_leftBank = interpolator;}
+	void setLeftBank(Interpolator2D1* interpolator);
 	/// The interpolator to draw river right bank line (as spline curve)
-	Interpolator2D1* rightBank() const {return m_rightBank;}
+	Interpolator2D1* rightBank() const;
 	/// Set the interpolator to draw river right bank line (as spline curve)
-	void setRightBank(Interpolator2D1* interpolator) {m_rightBank = interpolator;}
-	LinearLXSecInterpolator* lXSec() const {return m_lXSec;}
-	LinearRXSecInterpolator* rXSec() const {return m_rXSec;}
-	QVector<Interpolator2D1*>& LGridLines() {return m_LGridLines;}
-	const QVector<Interpolator2D1*>& LGridLines() const {return m_LGridLines;}
-	QVector<Interpolator2D1*>& RGridLines() {return m_RGridLines;}
-	const QVector<Interpolator2D1*>& RGridLines() const {return m_RGridLines;}
-	QVector<Interpolator2D1*>& backgroundLGridLines() {return m_backgroundLGridLines;}
-	const QVector<Interpolator2D1*>& backgroundLGridLines() const {return m_backgroundLGridLines;}
-	QVector<Interpolator2D1*>& backgroundRGridLines() {return m_backgroundRGridLines;}
-	const QVector<Interpolator2D1*>& backgroundRGridLines() const {return m_backgroundRGridLines;}
-	Interpolator2D1* LGridLine(unsigned int index) const {return m_LGridLines[index];}
-	Interpolator2D1* RGridLine(unsigned int index) const {return m_RGridLines[index];}
-	Interpolator2D1* backgroundLGridLine(unsigned int index) const {return m_backgroundLGridLines[index];}
-	Interpolator2D1* backgroundRGridLine(unsigned int index) const {return m_backgroundRGridLines[index];}
+	void setRightBank(Interpolator2D1* interpolator);
+	LinearLXSecInterpolator* lXSec() const;
+	LinearRXSecInterpolator* rXSec() const;
+	std::vector<Interpolator2D1*>& LGridLines();
+	const std::vector<Interpolator2D1*>& LGridLines() const;
+	std::vector<Interpolator2D1*>& RGridLines();
+	const std::vector<Interpolator2D1*>& RGridLines() const;
+	std::vector<Interpolator2D1*>& backgroundLGridLines();
+	const std::vector<Interpolator2D1*>& backgroundLGridLines() const;
+	std::vector<Interpolator2D1*>& backgroundRGridLines();
+	const std::vector<Interpolator2D1*>& backgroundRGridLines() const;
+	Interpolator2D1* LGridLine(unsigned int index) const;
+	Interpolator2D1* RGridLine(unsigned int index) const;
+	Interpolator2D1* backgroundLGridLine(unsigned int index) const;
+	Interpolator2D1* backgroundRGridLine(unsigned int index) const;
 	//	void UpdateInterpolators() override;
 	/// Division points between river center and left bank
 	QVector<double> CenterToLeftCtrlPoints;
@@ -222,55 +224,13 @@ public:
 	QVector<double> LeftBankCtrlPoints;
 	/// Division points on right bank
 	QVector<double> RightBankCtrlPoints;
-	QVector<double>& CtrlPoints(CtrlZonePosition position) {
-		switch (position) {
-		case zposCenterToLeft:
-			return CenterToLeftCtrlPoints;
-			break;
-		case zposCenterToRight:
-			return CenterToRightCtrlPoints;
-			break;
-		case zposCenterLine:
-			return CenterLineCtrlPoints;
-			break;
-		case zposLeftBank:
-			return LeftBankCtrlPoints;
-			break;
-		case zposRightBank:
-			return RightBankCtrlPoints;
-			break;
-			// Never used. this is written to avoid warning in compiling.
-		default:
-			return RightBankCtrlPoints;
-		}
-	}
-	QVector<double>& CtrlPoints(CtrlPointPosition position) {
-		switch (position) {
-		case pposCenterToLeft:
-			return CenterToLeftCtrlPoints;
-			break;
-		case pposCenterToRight:
-			return CenterToRightCtrlPoints;
-			break;
-		case pposCenterLine:
-			return CenterLineCtrlPoints;
-			break;
-		case pposLeftBank:
-			return LeftBankCtrlPoints;
-			break;
-		case pposRightBank:
-			return RightBankCtrlPoints;
-			break;
-			// Never used. this is written to avoid warning in compiling.
-		default:
-			return RightBankCtrlPoints;
-		}
-	}
+	QVector<double>& CtrlPoints(CtrlZonePosition position);
+	QVector<double>& CtrlPoints(CtrlPointPosition position);
 	void centerToBanksRegion(QVector2D& mins, QVector2D& maxs);
 	void thisToNextRegion(QVector2D& mins, QVector2D& maxs);
 	void UpdateCtrlSections();
-	vtkStructuredGrid* areaGrid() {return m_areaGrid;}
-	QList<int> getPointsToInactivateUsingWaterElevation();
+	vtkStructuredGrid* areaGrid() const;
+	std::vector<int> getPointsToInactivateUsingWaterElevation();
 	void loadFromiRICLibObject(const iRICLib::RiverPathPoint* p);
 	void saveToiRICLibObject(iRICLib::RiverPathPoint* p);
 
@@ -307,22 +267,16 @@ private:
 	GeoDataRiverCrosssection m_crosssection;
 
 	Interpolator2D1* m_riverCenter;
-
 	Interpolator2D1* m_leftBank;
-
 	Interpolator2D1* m_rightBank;
 
 	LinearLXSecInterpolator* m_lXSec;
-
 	LinearRXSecInterpolator* m_rXSec;
 
-	QVector<Interpolator2D1*> m_LGridLines;
-
-	QVector<Interpolator2D1*> m_RGridLines;
-
-	QVector<Interpolator2D1*> m_backgroundLGridLines;
-
-	QVector<Interpolator2D1*> m_backgroundRGridLines;
+	std::vector<Interpolator2D1*> m_LGridLines;
+	std::vector<Interpolator2D1*> m_RGridLines;
+	std::vector<Interpolator2D1*> m_backgroundLGridLines;
+	std::vector<Interpolator2D1*> m_backgroundRGridLines;
 
 public:
 	friend class GeoDataRiverSurveyBackgroundGridCreateThread;
