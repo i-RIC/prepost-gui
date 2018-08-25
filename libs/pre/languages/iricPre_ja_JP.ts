@@ -872,7 +872,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
-        <source>To import the geographic data, specify coodrinate system first.</source>
+        <source>To import the geographic data, specify coordinate system first.</source>
         <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
@@ -2129,7 +2129,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">情報</translation>
     </message>
     <message>
-        <source>To import the geographic data, specify coodrinate system first.</source>
+        <source>To import the geographic data, specify coordinate system first.</source>
         <translation type="vanished">この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>

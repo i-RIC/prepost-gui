@@ -251,7 +251,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 		geodata->setupDataItem();
 		if (geodata->requestCoordinateSystem()) {
 			if (projectData()->mainfile()->coordinateSystem() == nullptr) {
-				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coodrinate system first."), QMessageBox::Ok);
+				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coordinate system first."), QMessageBox::Ok);
 				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog(true);
 				if (dialogRet == QDialog::Rejected) {
 					delete item;
@@ -261,7 +261,9 @@ void PreProcessorGeoDataGroupDataItem::import()
 			}
 		}
 		// import data from the specified file
-		bool ret = importer->importData(geodata, i, wDialog);
+		QWidget *w = wDialog;
+		if (w == nullptr) w = mainWindow();
+		bool ret = importer->importData(geodata, i, w);
 		if (! ret) {
 			// failed.
 			delete item;
