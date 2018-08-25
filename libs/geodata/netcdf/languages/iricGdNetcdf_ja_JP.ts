@@ -94,7 +94,7 @@
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="20"/>
-        <source>Automatic recognization of original time failed. Please specify the original date.</source>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
         <translation>基準日時の自動認識が失敗しました。基準日時を指定して下さい。</translation>
     </message>
     <message>
@@ -230,7 +230,7 @@
         <translation type="vanished">基準日付の指定</translation>
     </message>
     <message>
-        <source>Automatic recognization of original time failed. Please specify the original date.</source>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
         <translation type="vanished">基準日時の自動認識が失敗しました。基準日時を指定して下さい。</translation>
     </message>
     <message>

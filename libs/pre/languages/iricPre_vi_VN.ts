@@ -838,7 +838,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
-        <source>To import the geographic data, specify coodrinate system first.</source>
+        <source>To import the geographic data, specify coordinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -306,7 +306,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		if (c->definition()->name() == "Time") {
 			// if the dimension is time, convert the value using units information.
-			char unitBuffer[200];
+			char unitBuffer[200] = "";
 			ret = nc_get_att_text(ncid_in, varid, "units", unitBuffer);
 			if (ret != NC_NOERR) {
 				// no units information. do nothing;
@@ -454,7 +454,12 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 	if (!zeroDate.isValid()) {
 		GeoDataNetcdfImporterDateSelectDialog dialog(parent);
 		dialog.setUnit(units);
-		dialog.setOriginalDateTime(QDateTime::currentDateTime());
+		// get current time with seconds=0
+		QDateTime current = QDateTime::currentDateTime();
+		QTime t = current.time();
+		t.setHMS(t.hour(), t.minute(), 0);
+		current.setTime(t);
+		dialog.setOriginalDateTime(current);
 		int dialogRet = dialog.exec();
 		if (dialogRet == QDialog::Rejected) {
 			*canceled = true;
@@ -463,18 +468,24 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 		zeroDate = dialog.originalDateTime();
 	}
 
+	qDebug("zeroDate=%s\n", zeroDate.toString(Qt::ISODate).toStdString().c_str());
+	const qlonglong HOURS_PER_DAY      = 24LL;
+	const qlonglong MINUTES_PER_HOUR   = 60LL;
+	const qlonglong SECONDS_PER_MINUTE = 60LL;
+	const qlonglong SECONDS_PER_HOUR   = MINUTES_PER_HOUR * SECONDS_PER_MINUTE;
+	const qlonglong SECONDS_PER_DAY    = HOURS_PER_DAY * SECONDS_PER_HOUR;
 	for (int i = 0; i < values.size(); ++i) {
 		QVariant val = values.at(i);
 		QDateTime d = zeroDate;
 		if (unit == "seconds") {
 			d = d.addSecs(val.toLongLong());
 		} else if (unit == "minutes") {
-			d = d.addSecs(val.toInt() * 60);
+			d = d.addSecs(val.toLongLong() * SECONDS_PER_MINUTE);
 		} else if (unit == "hours") {
-			d = d.addSecs(val.toInt() * 3600);
+			d = d.addSecs(val.toLongLong() * SECONDS_PER_HOUR);
 		} else if (unit == "days") {
 			qlonglong days = val.toLongLong();
-			int secs = static_cast<int>((val.toDouble() - days) * 24 * 60 * 60);
+			qlonglong secs = static_cast<qlonglong>((val.toDouble() - days) * SECONDS_PER_DAY);
 			d = d.addDays(days);
 			d = d.addSecs(secs);
 		} else if (unit == "months") {
@@ -484,6 +495,7 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 			int years = val.toInt();
 			d = d.addYears(years);
 		}
+		qDebug("d=%s\n", d.toString(Qt::ISODate).toStdString().c_str());
 		ret.push_back(d.toTime_t());
 	}
 	return ret;

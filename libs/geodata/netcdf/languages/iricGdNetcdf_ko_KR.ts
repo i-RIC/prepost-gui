@@ -94,7 +94,7 @@
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="20"/>
-        <source>Automatic recognization of original time failed. Please specify the original date.</source>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
