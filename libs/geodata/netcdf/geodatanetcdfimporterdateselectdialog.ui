@@ -17,7 +17,7 @@
    <item>
     <widget class="QLabel" name="warningLabel">
      <property name="text">
-      <string>Automatic recognization of original time failed. Please specify the original date.</string>
+      <string>Automatic recognition of original time failed. Please specify the original date.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
