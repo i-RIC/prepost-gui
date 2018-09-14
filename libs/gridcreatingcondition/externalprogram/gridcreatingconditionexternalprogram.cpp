@@ -121,7 +121,6 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 	SolverDefinitionGridType* gType = gtItem->gridType();
 	// Create grid.
 	Grid* grid = gType->createEmptyGrid();
-	gType->buildGridAttributes(grid);
 
 	// load create grid from cgnsfile. it is always loaded from the first zone in the first base.
 	int fn;
