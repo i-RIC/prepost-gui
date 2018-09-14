@@ -111,8 +111,10 @@ bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidge
 				for (int col = 0; col < cols; ++col) {
 					QString valstr = pieces[col];
 					if (valstr == "e") { continue; }
+					bool ok;
+					double v = valstr.toDouble(&ok);
+					if (! ok) {continue;}
 
-					double v = valstr.toDouble();
 					double lon, lat;
 					m_wmUtil->getCoordinates(x, y, col, row, &lon, &lat);
 
