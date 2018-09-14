@@ -300,7 +300,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 	informValueRangeChange();
 	informDataChange();
 
-	if (failedIds.size() > 0) {
+	if (failedIds.size() > 0 && dataCount > 1) {
 		QStringList idStrs;
 		for (int i = 0; i < failedIds.size(); ++i) {
 			idStrs.push_back(QString::number(failedIds[i]));
@@ -432,7 +432,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 	informValueRangeChange();
 	informDataChange();
 
-	if (failedIds.size() > 0) {
+	if (failedIds.size() > 0 && dataCount > 1) {
 		QStringList idStrs;
 		for (int i = 0; i < failedIds.size(); ++i) {
 			idStrs.push_back(QString::number(failedIds[i]));
