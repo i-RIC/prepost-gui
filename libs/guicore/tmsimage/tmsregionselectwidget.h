@@ -23,6 +23,7 @@ public:
 	void mousePressEvent(QMouseEvent *);
 	void mouseReleaseEvent(QMouseEvent *);
 	void mouseMoveEvent(QMouseEvent *);
+	void wheelEvent(QWheelEvent* event);
 
 	void setMapSetting(const std::string& setting);
 	void setCenter(double lon, double lat);

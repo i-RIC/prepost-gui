@@ -180,6 +180,23 @@ void TmsRegionSelectWidget::mouseMoveEvent(QMouseEvent *e)
 	update();
 }
 
+void TmsRegionSelectWidget::wheelEvent(QWheelEvent* event)
+{
+	int delta = event->delta() / QWheelEvent::DefaultDeltasPerStep;
+	double zoomRate = 1.2;
+	if (delta < 0) {
+		delta = - delta;
+		zoomRate = 1 / zoomRate;
+	}
+	while (delta > 0) {
+		impl->m_zoomLevel *= zoomRate;
+		-- delta;
+	}
+
+	update();
+	requestUpdate();
+}
+
 void TmsRegionSelectWidget::setMapSetting(const std::string& setting)
 {
 	impl->m_mapSetting = setting;
