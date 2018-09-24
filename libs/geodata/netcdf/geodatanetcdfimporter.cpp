@@ -457,7 +457,7 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 		// get current time with seconds=0
 		QDateTime current = QDateTime::currentDateTime();
 		QTime t = current.time();
-		t.setHMS(t.hour(), t.minute(), 0);
+		t.setHMS(0, 0, 0);
 		current.setTime(t);
 		dialog.setOriginalDateTime(current);
 		int dialogRet = dialog.exec();
@@ -466,26 +466,25 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 			return ret;
 		}
 		zeroDate = dialog.originalDateTime();
+		unit = dialog.unit();
 	}
 
 	qDebug("zeroDate=%s\n", zeroDate.toString(Qt::ISODate).toStdString().c_str());
-	const qlonglong HOURS_PER_DAY      = 24LL;
-	const qlonglong MINUTES_PER_HOUR   = 60LL;
-	const qlonglong SECONDS_PER_MINUTE = 60LL;
-	const qlonglong SECONDS_PER_HOUR   = MINUTES_PER_HOUR * SECONDS_PER_MINUTE;
-	const qlonglong SECONDS_PER_DAY    = HOURS_PER_DAY * SECONDS_PER_HOUR;
+	const qlonglong LL_SECS_PER_DAY    = 86400LL;
+	const qlonglong LL_SECS_PER_HOUR   = 3600LL;
+	const qlonglong LL_SECS_PER_MINUTE = 60LL;
 	for (int i = 0; i < values.size(); ++i) {
 		QVariant val = values.at(i);
 		QDateTime d = zeroDate;
 		if (unit == "seconds") {
 			d = d.addSecs(val.toLongLong());
 		} else if (unit == "minutes") {
-			d = d.addSecs(val.toLongLong() * SECONDS_PER_MINUTE);
+			d = d.addSecs(val.toLongLong() * LL_SECS_PER_MINUTE);
 		} else if (unit == "hours") {
-			d = d.addSecs(val.toLongLong() * SECONDS_PER_HOUR);
+			d = d.addSecs(val.toLongLong() * LL_SECS_PER_HOUR);
 		} else if (unit == "days") {
 			qlonglong days = val.toLongLong();
-			qlonglong secs = static_cast<qlonglong>((val.toDouble() - days) * SECONDS_PER_DAY);
+			qlonglong secs = static_cast<qlonglong>((val.toDouble() - days) * LL_SECS_PER_DAY);
 			d = d.addDays(days);
 			d = d.addSecs(secs);
 		} else if (unit == "months") {

@@ -19,6 +19,7 @@ public:
 	void setUnit(const QString& unit);
 	void setOriginalDateTime(const QDateTime& orig);
 	QDateTime originalDateTime() const;
+	QString unit() const;
 
 private:
 	Ui::GeoDataNetcdfImporterDateSelectDialog* ui;
