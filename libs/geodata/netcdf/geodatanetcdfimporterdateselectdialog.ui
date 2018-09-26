@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>337</width>
-    <height>143</height>
+    <height>166</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,13 +41,49 @@
       </widget>
      </item>
      <item row="1" column="0">
+      <widget class="QLabel" name="importUnitsAsLabel">
+       <property name="text">
+        <string>Unit:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="importUnitsAsComboBox">
+       <item>
+        <property name="text">
+         <string>years</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>days</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>hours</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>minutes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>seconds</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
       <widget class="QLabel" name="unitsLabel_2">
        <property name="text">
         <string>Original time:</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="2" column="1">
       <widget class="QDateTimeEdit" name="dateTimeEdit"/>
      </item>
     </layout>
@@ -78,13 +114,12 @@
   </layout>
   <zorder>buttonBox</zorder>
   <zorder>warningLabel</zorder>
-  <zorder>unitsLabel</zorder>
-  <zorder>unitsValueLabel</zorder>
-  <zorder>unitsValueLabel</zorder>
-  <zorder>unitsLabel_2</zorder>
-  <zorder>dateTimeEdit</zorder>
   <zorder>verticalSpacer</zorder>
  </widget>
+ <tabstops>
+  <tabstop>importUnitsAsComboBox</tabstop>
+  <tabstop>dateTimeEdit</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
