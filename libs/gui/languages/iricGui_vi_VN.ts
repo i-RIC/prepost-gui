@@ -1084,8 +1084,28 @@ Do you want to launch iRIC Maintainance?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagetms.cpp" line="61"/>
+        <location filename="../pref/preferencepagetms.ui" line="108"/>
+        <source>&amp;Input Google Maps API key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.ui" line="115"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="73"/>
         <source>Background Image (Internet) Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="165"/>
+        <source>Input Google Maps API Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="165"/>
+        <source>API Key: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
