@@ -3,16 +3,7 @@
 
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
 #include <misc/edge.h>
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkMapper.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkDataSetMapper.h>
-#include <vtkExtractCells.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
 
-#include <QCursor>
 #include <QVector>
 
 class Grid;
@@ -26,11 +17,11 @@ class PreProcessorGridAttributeNodeDataItem;
 class PreProcessorGridAttributeCellGroupDataItem;
 class PreProcessorGridAttributeCellDataItem;
 class PreProcessorBCGroupDataItem;
-class PreProcessorBCDataItem;
 
 class GridPointMouseMoveCommand;
 class GridAttributeEditCommand;
-class GridBirdEyeWindow;
+
+class vtkPolyData;
 
 class PreProcessorGridDataItem : public PreProcessorGridDataItemInterface
 {
@@ -178,66 +169,24 @@ protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 
 
-	vtkSmartPointer<vtkPolyData> m_regionPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
-	vtkSmartPointer<vtkActor> m_regionActor;
-
-	vtkSmartPointer<vtkPolyData> m_selectedVerticesPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_selectedVerticesMapper;
-	vtkSmartPointer<vtkActor> m_selectedVerticesActor;
-
-	vtkSmartPointer<vtkExtractCells> m_selectedCellsGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_selectedCellsMapper;
-	vtkSmartPointer<vtkActor> m_selectedCellsActor;
-
-	vtkSmartPointer<vtkDataSetMapper> m_selectedCellsLinesMapper;
-	vtkSmartPointer<vtkActor> m_selectedCellsLinesActor;
-
-	vtkSmartPointer<vtkPolyData> m_selectedEdgesPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_selectedEdgesMapper;
-	vtkSmartPointer<vtkActor> m_selectedEdgesActor;
-
-	QMenu* m_menu;
-	QMenu* m_generateAttMenu;
-	Grid* m_grid;
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
 	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
 	PreProcessorGridAttributeCellGroupDataItem* m_cellGroupDataItem;
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
-	QAction* m_importAction;
-	QAction* m_exportAction;
-
-	QAction* m_displaySettingAction;
-	QAction* m_polygonSelectAction;
-	QAction* m_deleteAction;
-
-	QAction* m_nodeEditAction;
-	QAction* m_nodeDisplaySettingAction;
-	QAction* m_cellEditAction;
-	QAction* m_cellDisplaySettingAction;
-	QAction* m_birdEyeWindowAction;
-
-	QAction* m_setupScalarBarAction;
-
-	QVector<vtkIdType> m_selectedVertices;
-	QVector<vtkIdType> m_selectedCells;
-	QVector<Edge> m_selectedEdges;
-
-	PreProcessorGridAttributeNodeDataItem* m_nodeDataItem;
-	PreProcessorGridAttributeCellDataItem* m_cellDataItem;
 
 private:
-	GridBirdEyeWindow* m_birdEyeWindow;
 
-	QPixmap m_addPixmap;
-	QCursor m_addCursor;
-
-	bool m_shiftPressed;
+	class Impl;
+	Impl* impl;
 
 public:
 	friend class GridPointMouseMoveCommand;
 	friend class GridAttributeEditCommand;
 	friend class PreProcessorGridAndGridCreatingConditionDataItem;
 };
+
+#ifdef _DEBUG
+	#include "private/preprocessorgriddataitem_impl.h"
+#endif // _DEBUG
 
 #endif // PREPROCESSORGRIDDATAITEM_H

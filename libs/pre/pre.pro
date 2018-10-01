@@ -448,6 +448,7 @@ HEADERS += pre_global.h \
            datamodel/gridshape/preprocessorgridshapedeltadialog.h \
            datamodel/gridshape/preprocessorgridshapenewpositiondialog.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
+           datamodel/private/preprocessorgriddataitem_impl.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.h \
