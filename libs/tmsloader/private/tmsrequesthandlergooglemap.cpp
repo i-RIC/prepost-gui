@@ -1,5 +1,6 @@
 #include "tmsrequesthandlergooglemap.h"
 
+#include <QSettings>
 #include <map>
 
 using namespace tmsloader;
@@ -15,7 +16,12 @@ TmsRequestHandlerGoogleMap::TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapT
 	mapTypeMap.insert({TmsRequestGoogleMap::MapType::TERRAIN, "TERRAIN"});
 
 	std::map<QString, QString> args;
+
+	QSettings setting;
+	QString googleMapkey = setting.value("general/googlemapskey", "").value<QString>();
+
 	args.insert({"%MAPTYPE%", mapTypeMap[mapType]});
+	args.insert({"%GOOGLEMAPKEY%", googleMapkey});
 
 	setArgs(args);
 	setup();

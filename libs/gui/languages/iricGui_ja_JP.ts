@@ -12320,6 +12320,16 @@ p, li { white-space: pre-wrap; }
         <translation>編集(&amp;E)...</translation>
     </message>
     <message>
+        <location filename="../pref/preferencepagetms.ui" line="108"/>
+        <source>&amp;Input Google Maps API key</source>
+        <translation>Google Maps APIキーの入力(&amp;I)</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.ui" line="115"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform では、iRICから Google Maps を利用するためには APIキーが必要です。プリプロセッサ、二次元可視化ウィンドウで背景画像として Google Maps の画像を利用したい場合、Google Maps APIキーを取得して、ここから入力してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>&amp;Add</source>
         <translation type="vanished">追加(&amp;A)</translation>
     </message>
@@ -12334,9 +12344,19 @@ p, li { white-space: pre-wrap; }
         <translation>デフォルトに戻す(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagetms.cpp" line="61"/>
+        <location filename="../pref/preferencepagetms.cpp" line="73"/>
         <source>Background Image (Internet) Edit</source>
         <translation>背景画像 (インターネット) 編集</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="165"/>
+        <source>Input Google Maps API Key</source>
+        <translation>Google Maps APIキーの入力</translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagetms.cpp" line="165"/>
+        <source>API Key: </source>
+        <translation>APIキー: </translation>
     </message>
 </context>
 <context>

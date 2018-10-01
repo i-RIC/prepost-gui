@@ -3,6 +3,10 @@
 #include "private/preferencepagetmsadddialog.h"
 
 #include <guicore/tmsimage/tmsimagesettingmanager.h>
+#include <misc/stringtool.h>
+
+#include <QInputDialog>
+#include <QSettings>
 
 PreferencePageTms::PreferencePageTms(QWidget *parent) :
 	PreferencePage {parent},
@@ -12,6 +16,9 @@ PreferencePageTms::PreferencePageTms(QWidget *parent) :
 
 	TmsImageSettingManager manager;
 	m_settings = manager.settings();
+
+	QSettings setting;
+	m_googleMapsApiKey = iRIC::toStr(setting.value("general/googlemapskey", "").value<QString>());
 
 	connect(ui->addButton, SIGNAL(clicked()), this, SLOT(add()));
 	connect(ui->editButton, SIGNAL(clicked()), this, SLOT(edit()));
@@ -23,6 +30,8 @@ PreferencePageTms::PreferencePageTms(QWidget *parent) :
 
 	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(handleListWidgetSelectChange(int)));
 	connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem*)), this, SLOT(handleListWidgetItemChange(QListWidgetItem*)));
+
+	connect(ui->googleMapsButton, SIGNAL(clicked()), this, SLOT(editGoogleMapsKey()));
 
 	updateList();
 }
@@ -36,6 +45,9 @@ void PreferencePageTms::update()
 {
 	TmsImageSettingManager manager;
 	manager.setSettings(m_settings);
+
+	QSettings setting;
+	setting.setValue("general/googlemapskey", m_googleMapsApiKey.c_str());
 }
 
 void PreferencePageTms::add()
@@ -146,6 +158,16 @@ void PreferencePageTms::handleListWidgetItemChange(QListWidgetItem *item)
 	TmsImageSetting& s = m_settings[changedRow];
 	s.setIsActive(item->checkState() == Qt::Checked);
 }
+
+void PreferencePageTms::editGoogleMapsKey()
+{
+	bool ok;
+	QString newKey = QInputDialog::getText(this, tr("Input Google Maps API Key"), tr("API Key: "), QLineEdit::Normal, m_googleMapsApiKey.c_str(), &ok);
+	if (! ok) {return;}
+
+	m_googleMapsApiKey = iRIC::toStr(newKey);
+}
+
 
 void PreferencePageTms::updateList()
 {
