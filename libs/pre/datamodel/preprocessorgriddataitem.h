@@ -108,8 +108,8 @@ public:
 	void setSelectedVertices(const QVector<vtkIdType>& vertices);
 	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
 	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
-	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item);
-	void unsetBCGroupDataItem();
+	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) override;
+	void unsetBCGroupDataItem() override;
 
 	bool isImportAvailable();
 	bool isExportAvailable();
