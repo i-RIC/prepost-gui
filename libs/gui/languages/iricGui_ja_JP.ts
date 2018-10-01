@@ -16455,8 +16455,12 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2313"/>
+        <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
+        <translation>格子が編集されているか、削除されています。保存すると、計算結果は破棄されます。</translation>
+    </message>
+    <message>
         <source>The grids are edited. When you save, the calculation result is discarded.</source>
-        <translation>格子が編集されています。保存すると、計算結果は破棄されます。</translation>
+        <translation type="vanished">格子が編集されています。保存すると、計算結果は破棄されます。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2333"/>
