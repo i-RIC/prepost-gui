@@ -48,34 +48,34 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 	// Mouse event handlers for grid nodes selecting
 
-	void nodeSelectingMouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void nodeSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void nodeSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void nodeSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void nodeSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void nodeSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 
-	void nodeSelectingKeyPressEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void nodeSelectingKeyReleaseEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void nodeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
+	void nodeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
 
 	// Mouse event handlers for grid cells selecting
 
-	void cellSelectingMouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void cellSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void cellSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void cellSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void cellSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void cellSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 
 	void cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	void cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
 
 	// Mouse event handlers for grid edges selecting
 
-	void edgeSelectingMouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void edgeSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void edgeSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void edgeSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void edgeSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void edgeSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 
 	void edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	void edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
