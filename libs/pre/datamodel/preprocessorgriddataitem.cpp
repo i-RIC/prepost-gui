@@ -339,6 +339,11 @@ void PreProcessorGridDataItem::deleteGrid()
 	renderGraphicsView();
 }
 
+Grid* PreProcessorGridDataItem::grid() const
+{
+	return m_grid;
+}
+
 bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 {
 	delete m_grid;
@@ -826,6 +831,16 @@ void PreProcessorGridDataItem::cellSelectingMouseReleaseEvent(QMouseEvent* event
 	renderGraphicsView();
 }
 
+void PreProcessorGridDataItem::cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
+{
+	nodeSelectingKeyPressEvent(event, v);
+}
+
+void PreProcessorGridDataItem::cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
+{
+	nodeSelectingKeyReleaseEvent(event, v);
+}
+
 void PreProcessorGridDataItem::edgeSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
 {
 //	if (m_grid != nullptr && m_grid->isMasked()){return;}
@@ -859,6 +874,16 @@ void PreProcessorGridDataItem::edgeSelectingMouseReleaseEvent(QMouseEvent* event
 
 	v->restoreUpdateRate();
 	renderGraphicsView();
+}
+
+void PreProcessorGridDataItem::edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
+{
+	nodeSelectingKeyPressEvent(event, v);
+}
+
+void PreProcessorGridDataItem::edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
+{
+	nodeSelectingKeyReleaseEvent(event, v);
 }
 
 void PreProcessorGridDataItem::setupActors()
@@ -1042,12 +1067,97 @@ bool PreProcessorGridDataItem::isExportAvailable()
 	return exporterList.count() > 0;
 }
 
-QAction* PreProcessorGridDataItem::mappingAction()
+QAction* PreProcessorGridDataItem::importAction() const
+{
+	return m_importAction;
+}
+
+QAction* PreProcessorGridDataItem::exportAction() const
+{
+	return m_exportAction;
+}
+
+QAction* PreProcessorGridDataItem::displaySettingAction() const
+{
+	return m_displaySettingAction;
+}
+
+QAction* PreProcessorGridDataItem::deleteAction() const
+{
+	return m_deleteAction;
+}
+
+QAction* PreProcessorGridDataItem::polygonSelectAction() const
+{
+	return m_polygonSelectAction;
+}
+
+QAction* PreProcessorGridDataItem::mappingAction() const
 {
 	PreProcessorGridAndGridCreatingConditionDataItem* item =
 		dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridAttributeMappingSettingTopDataItem* mItem = item->mappingSettingDataItem();
 	return mItem->customMappingAction();
+}
+
+QAction* PreProcessorGridDataItem::nodeEditAction() const
+{
+	return m_nodeEditAction;
+}
+
+QAction* PreProcessorGridDataItem::nodeDisplaySettingAction() const
+{
+	return m_nodeDisplaySettingAction;
+}
+
+QAction* PreProcessorGridDataItem::cellEditAction() const
+{
+	return m_cellEditAction;
+}
+
+QAction* PreProcessorGridDataItem::cellDisplaySettingAction() const
+{
+	return m_cellDisplaySettingAction;
+}
+
+QAction* PreProcessorGridDataItem::setupScalarBarAction() const
+{
+	return m_setupScalarBarAction;
+}
+
+QAction* PreProcessorGridDataItem::birdEyeWindowAction() const
+{
+	return m_birdEyeWindowAction;
+}
+
+QMenu* PreProcessorGridDataItem::generateAttMenu() const
+{
+	return m_generateAttMenu;
+}
+
+QMenu* PreProcessorGridDataItem::menu() const
+{
+	return m_menu;
+}
+
+vtkPolyData* PreProcessorGridDataItem::selectedVerticesPolyData() const
+{
+	return m_selectedVerticesPolyData;
+}
+
+const QVector<vtkIdType>& PreProcessorGridDataItem::selectedVertices() const
+{
+	return m_selectedVertices;
+}
+
+const QVector<vtkIdType>& PreProcessorGridDataItem::selectedCells() const
+{
+	return m_selectedCells;
+}
+
+const QVector<Edge>& PreProcessorGridDataItem::selectedEdges() const
+{
+	return m_selectedEdges;
 }
 
 void PreProcessorGridDataItem::updateActionStatus()
@@ -1092,10 +1202,41 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	iRICUndoStack::instance().clear();
 }
 
+
+PreProcessorGridShapeDataItem* PreProcessorGridDataItem::shapeDataItem() const
+{
+	return m_shapeDataItem;
+}
+
+PreProcessorGridAttributeNodeGroupDataItem* PreProcessorGridDataItem::nodeGroupDataItem() const
+{
+	return m_nodeGroupDataItem;
+}
+
+PreProcessorGridAttributeCellGroupDataItem* PreProcessorGridDataItem::cellGroupDataItem() const
+{
+	return m_cellGroupDataItem;
+}
+
+PreProcessorBCGroupDataItem* PreProcessorGridDataItem::bcGroupDataItem() const
+{
+	return m_bcGroupDataItem;
+}
+
 void PreProcessorGridDataItem::updateAttributeActorSettings()
 {
 	m_nodeGroupDataItem->updateActorSettings();
 	m_cellGroupDataItem->updateActorSettings();
+}
+
+void PreProcessorGridDataItem::setNodeDataItem(PreProcessorGridAttributeNodeDataItem* nodeItem)
+{
+	m_nodeDataItem = nodeItem;
+}
+
+void PreProcessorGridDataItem::setCellDataItem(PreProcessorGridAttributeCellDataItem* cellItem)
+{
+	m_cellDataItem = cellItem;
 }
 
 QCursor PreProcessorGridDataItem::normalCursor()
@@ -1419,6 +1560,11 @@ void PreProcessorGridDataItem::updateRegionPolyData()
 	actorCollection()->RemoveItem(m_regionActor);
 	actorCollection()->AddItem(m_regionActor);
 	updateVisibilityWithoutRendering();
+}
+
+void PreProcessorGridDataItem::renderGraphicsView()
+{
+	GraphicsWindowDataItem::renderGraphicsView();
 }
 
 void PreProcessorGridDataItem::doApplyOffset(double x, double y)

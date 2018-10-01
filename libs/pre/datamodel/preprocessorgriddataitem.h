@@ -40,7 +40,7 @@ public:
 	/// Constructor
 	PreProcessorGridDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridDataItem();
-	Grid* grid() const override {return m_grid;}
+	Grid* grid() const override;
 	bool setGrid(Grid* newGrid) override;
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
@@ -68,13 +68,8 @@ public:
 	void cellSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void cellSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 
-	void cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v) {
-		nodeSelectingKeyPressEvent(event, v);
-	}
-
-	void cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) {
-		nodeSelectingKeyReleaseEvent(event, v);
-	}
+	void cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
+	void cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
 
 	// Mouse event handlers for grid edges selecting
 
@@ -82,13 +77,8 @@ public:
 	void edgeSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void edgeSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 
-	void edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v) {
-		nodeSelectingKeyPressEvent(event, v);
-	}
-
-	void edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) {
-		nodeSelectingKeyReleaseEvent(event, v);
-	}
+	void edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
+	void edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -101,10 +91,12 @@ public:
 	void informGridAttributeChangeAll();
 	void informGridAttributeChange(const std::string& name) override;
 	void silentDeleteGrid() override;
-	PreProcessorGridShapeDataItem* shapeDataItem() {return m_shapeDataItem;}
-	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() {return m_nodeGroupDataItem;}
-	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() {return m_cellGroupDataItem;}
-	PreProcessorBCGroupDataItem* bcGroupDataItem() {return m_bcGroupDataItem;}
+
+	PreProcessorGridShapeDataItem* shapeDataItem() const;
+	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() const;
+	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() const;
+	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
+
 	void setSelectedVertices(const QVector<vtkIdType>& vertices);
 	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
 	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
@@ -113,29 +105,30 @@ public:
 
 	bool isImportAvailable();
 	bool isExportAvailable();
-	QAction* importAction() {return m_importAction;}
-	QAction* exportAction() {return m_exportAction;}
-	QAction* displaySettingAction() {return m_displaySettingAction;}
-	QAction* deleteAction() {return m_deleteAction;}
-	QAction* polygonSelectAction() {return m_polygonSelectAction;}
-	QAction* mappingAction();
-	QAction* nodeEditAction() {return m_nodeEditAction;}
-	QAction* nodeDisplaySettingAction() {return m_nodeDisplaySettingAction;}
-	QAction* cellEditAction() {return m_cellEditAction;}
-	QAction* cellDisplaySettingAction() {return m_cellDisplaySettingAction;}
-	QAction* setupScalarBarAction() {return m_setupScalarBarAction;}
-	QAction* birdEyeWindowAction() {return m_birdEyeWindowAction;}
-	QMenu* generateAttMenu() {return m_generateAttMenu;}
 
-	QMenu* menu() {return m_menu;}
-	vtkPolyData* selectedVerticesPolyData() const {return m_selectedVerticesPolyData;}
-	const QVector<vtkIdType>& selectedVertices() const {return m_selectedVertices;}
-	const QVector<vtkIdType>& selectedCells() const {return m_selectedCells;}
-	const QVector<Edge>& selectedEdges() const {return m_selectedEdges;}
+	QAction* importAction() const;
+	QAction* exportAction() const;
+	QAction* displaySettingAction() const;
+	QAction* deleteAction() const;
+	QAction* polygonSelectAction() const;
+	QAction* mappingAction() const;
+	QAction* nodeEditAction() const;
+	QAction* nodeDisplaySettingAction() const;
+	QAction* cellEditAction() const;
+	QAction* cellDisplaySettingAction() const;
+	QAction* setupScalarBarAction() const;
+	QAction* birdEyeWindowAction() const;
+	QMenu* generateAttMenu() const;
+	QMenu* menu() const;
+
+	vtkPolyData* selectedVerticesPolyData() const;
+	const QVector<vtkIdType>& selectedVertices() const;
+	const QVector<vtkIdType>& selectedCells() const;
+	const QVector<Edge>& selectedEdges() const;
 	void updateAttributeActorSettings() override;
 
-	void setNodeDataItem(PreProcessorGridAttributeNodeDataItem* nodeItem) {m_nodeDataItem = nodeItem;}
-	void setCellDataItem(PreProcessorGridAttributeCellDataItem* cellItem) {m_cellDataItem = cellItem;}
+	void setNodeDataItem(PreProcessorGridAttributeNodeDataItem* nodeItem);
+	void setCellDataItem(PreProcessorGridAttributeCellDataItem* cellItem);
 	QCursor normalCursor();
 	void informGridChange();
 	void informBirdEyeWindowClose();
@@ -176,7 +169,7 @@ private:
 	void informSelectedVerticesChanged();
 
 protected:
-	void renderGraphicsView() {GraphicsWindowDataItem::renderGraphicsView();}
+	void renderGraphicsView();
 	void doApplyOffset(double x, double y) override;
 	virtual void setupMenu() = 0;
 	virtual void updateActionStatus();
