@@ -97,6 +97,8 @@ public:
 	bool isImportAvailable();
 	bool isExportAvailable();
 
+	bool gridIsDeleted() const;
+
 	QAction* importAction() const;
 	QAction* exportAction() const;
 	QAction* displaySettingAction() const;

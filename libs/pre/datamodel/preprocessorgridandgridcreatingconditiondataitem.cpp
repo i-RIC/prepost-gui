@@ -166,7 +166,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::handleStandardItemChange(
 bool PreProcessorGridAndGridCreatingConditionDataItem::isGridEdited() const
 {
 	Grid* g = m_gridDataItem->grid();
-	if (g == nullptr) {return false;}
+	if (g == nullptr) {return m_gridDataItem->gridIsDeleted();}
 	return g->isModified();
 }
 

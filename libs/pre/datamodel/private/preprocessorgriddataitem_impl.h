@@ -71,8 +71,8 @@ public:
 
 	QAction* m_setupScalarBarAction;
 
-
 	bool m_shiftPressed;
+	bool m_gridIsDeleted;
 };
 
 #endif // PREPROCESSORGRIDDATAITEM_IMPL_H

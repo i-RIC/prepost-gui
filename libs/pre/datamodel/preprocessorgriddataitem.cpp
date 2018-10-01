@@ -79,7 +79,8 @@ PreProcessorGridDataItem::Impl::Impl() :
 	m_addCursor {m_addPixmap, 0, 0},
 	m_menu {nullptr},
 	m_generateAttMenu {nullptr},
-	m_shiftPressed {false}
+	m_shiftPressed {false},
+	m_gridIsDeleted {false}
 {}
 
 PreProcessorGridDataItem::Impl::~Impl()
@@ -180,6 +181,8 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->loadFromCgnsFile(fn);
 	}
+	impl->m_gridIsDeleted = false;
+
 	// loading data finished.
 	// now call vtk related functions, and render new grid.
 	updateSimplifiedGrid();
@@ -201,7 +204,13 @@ void PreProcessorGridDataItem::saveToCgnsFile(const int fn)
 				throw m;
 			}
 		}
+	} else if (impl->m_gridIsDeleted) {
+		int B;
+		cg_iRIC_GotoBase(fn, &B);
+		std::string zoneName = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
+		cg_delete_node(zoneName.c_str());
 	}
+	impl->m_gridIsDeleted = false;
 }
 
 void PreProcessorGridDataItem::closeCgnsFile()
@@ -1081,6 +1090,11 @@ bool PreProcessorGridDataItem::isExportAvailable()
 	return exporterList.count() > 0;
 }
 
+bool PreProcessorGridDataItem::gridIsDeleted() const
+{
+	return impl->m_gridIsDeleted;
+}
+
 QAction* PreProcessorGridDataItem::importAction() const
 {
 	return impl->m_importAction;
@@ -1208,6 +1222,7 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	}
 	delete impl->m_grid;
 	impl->m_grid = nullptr;
+	impl->m_gridIsDeleted = true;
 	updateObjectBrowserTree();
 	updateActionStatus();
 	finishGridLoading();
