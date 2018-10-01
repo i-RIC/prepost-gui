@@ -188,7 +188,7 @@ bool InputConditionDialog::importFromYaml(const QString& filename)
 	try {
 		auto opener = new CgnsFileOpener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
 		int ret = cg_iRIC_GotoCC(opener->fileId());
-		if (ret) {
+		if (ret == 0) {
 			ret = m_containerSet->save();
 		}
 		delete opener;
