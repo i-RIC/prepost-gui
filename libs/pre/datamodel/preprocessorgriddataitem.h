@@ -160,14 +160,7 @@ private:
 	void informSelectedVerticesChanged();
 
 protected:
-	void renderGraphicsView();
-	void doApplyOffset(double x, double y) override;
-	virtual void setupMenu() = 0;
 	virtual void updateActionStatus();
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void assignActorZValues(const ZDepthRange& range) override;
-
 
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
 	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
@@ -175,6 +168,14 @@ protected:
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 
 private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void assignActorZValues(const ZDepthRange& range) override;
+
+	void renderGraphicsView();
+
+	void doApplyOffset(double x, double y) override;
+	virtual void setupMenu() = 0;
 
 	class Impl;
 	Impl* impl;
