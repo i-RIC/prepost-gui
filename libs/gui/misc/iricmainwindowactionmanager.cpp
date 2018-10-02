@@ -175,9 +175,6 @@ void iRICMainWindowActionManager::setupFileMenu()
 
 	importImageAction = new QAction(tr("&Background Image..."), this);
 
-	importGoogleMapImageAction = new QAction(tr("G&oogle Map Background Image..."), this);
-	connect(importGoogleMapImageAction, SIGNAL(triggered()), m_parent, SLOT(importGoogleMapImages()));
-
 	importVisGraphAction = new QAction(tr("&Visualization/Graph Settings..."), this);
 	connect(importVisGraphAction, SIGNAL(triggered()), m_parent, SLOT(importVisGraphSetting()));
 
@@ -247,7 +244,6 @@ void iRICMainWindowActionManager::setupImportMenu()
 	importMenu->addAction(importCgnsAction);
 	importMenu->addAction(importMeasuredAction);
 	importMenu->addAction(importImageAction);
-	importMenu->addAction(importGoogleMapImageAction);
 	importMenu->addAction(importVisGraphAction);
 }
 
@@ -683,7 +679,6 @@ void iRICMainWindowActionManager::projectFileOpen()
 	importCgnsAction->setEnabled(true);
 	importMeasuredAction->setEnabled(true);
 	importImageAction->setEnabled(true);
-	importGoogleMapImageAction->setEnabled(true);
 
 	// all export actions are enabled.
 	m_exportMenu->setEnabled(true);
@@ -732,7 +727,6 @@ void iRICMainWindowActionManager::projectFileClose()
 	importCgnsAction->setEnabled(true);
 	importMeasuredAction->setEnabled(false);
 	importImageAction->setEnabled(false);
-	importGoogleMapImageAction->setEnabled(false);
 
 	// all export actions are enabled.
 	m_exportMenu->setEnabled(false);
