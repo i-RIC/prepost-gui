@@ -1934,6 +1934,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main/iricmainwindow.cpp" line="2313"/>
+        <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main/iricmainwindow.cpp" line="167"/>
         <source>Ready</source>
         <translation type="unfinished"></translation>
@@ -2080,11 +2085,6 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2088"/>
         <source>Saving KML files...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main/iricmainwindow.cpp" line="2313"/>
-        <source>The grids are edited. When you save, the calculation result is discarded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

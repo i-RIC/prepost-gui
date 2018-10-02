@@ -29,33 +29,33 @@ PreProcessorUnstructured2dGridDataItem::~PreProcessorUnstructured2dGridDataItem(
 
 void PreProcessorUnstructured2dGridDataItem::setupMenu()
 {
-	m_selectMenu = m_menu->addMenu(tr("&Select vertices"));
-	m_selectMenu->addAction(m_polygonSelectAction);
+	m_selectMenu = menu()->addMenu(tr("&Select vertices"));
+	m_selectMenu->addAction(polygonSelectAction());
 
-	m_editMenu = m_menu->addMenu(tr("&Edit"));
+	m_editMenu = menu()->addMenu(tr("&Edit"));
 	m_editMenu->addAction(m_shapeDataItem->editAction());
-	m_editMenu->addAction(m_nodeEditAction);
-	m_editMenu->addAction(m_cellEditAction);
+	m_editMenu->addAction(nodeEditAction());
+	m_editMenu->addAction(cellEditAction());
 
 	if (m_bcGroupDataItem != nullptr) {
 		m_editMenu->addMenu(m_bcGroupDataItem->bcMenu());
 	}
-	m_menu->addAction(m_deleteAction);
-	m_menu->addSeparator();
+	menu()->addAction(deleteAction());
+	menu()->addSeparator();
 
-	m_displayMenu = m_menu->addMenu(tr("Dis&play Setting..."));
-	m_displayMenu->addAction(m_displaySettingAction);
-	m_displayMenu->addAction(m_nodeDisplaySettingAction);
-	m_displayMenu->addAction(m_cellDisplaySettingAction);
+	m_displayMenu = menu()->addMenu(tr("Dis&play Setting..."));
+	m_displayMenu->addAction(displaySettingAction());
+	m_displayMenu->addAction(nodeDisplaySettingAction());
+	m_displayMenu->addAction(cellDisplaySettingAction());
 	m_displayMenu->addSeparator();
-	m_displayMenu->addAction(m_setupScalarBarAction);
+	m_displayMenu->addAction(setupScalarBarAction());
 }
 
 void PreProcessorUnstructured2dGridDataItem::updateActionStatus()
 {
-	m_selectMenu->setEnabled(m_grid != nullptr);
-	m_editMenu->setEnabled(m_grid != nullptr);
-	m_displayMenu->setEnabled(m_grid != nullptr);
+	m_selectMenu->setEnabled(grid() != nullptr);
+	m_editMenu->setEnabled(grid() != nullptr);
+	m_displayMenu->setEnabled(grid() != nullptr);
 
 	PreProcessorGridDataItem::updateActionStatus();
 }

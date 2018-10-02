@@ -18,6 +18,7 @@
 #include <QInputDialog>
 #include <QUndoCommand>
 
+#include <vtkPointSet.h>
 #include <vtkProperty.h>
 #include <vtkProperty2D.h>
 #include <vtkRenderWindow.h>
