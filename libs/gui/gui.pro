@@ -288,8 +288,6 @@ HEADERS += gui_api.h \
            continuoussnapshot/continuoussnapshotwindowselectionpage.h \
            continuoussnapshot/continuoussnapshotwizard.h \
            factory/postprocessorwindowfactory.h \
-           googlemapimport/googlemapimageimporter.h \
-           googlemapimport/googlemapimageimportsettingdialog.h \
            main/iricmainwindow.h \
            main/iricmergablecommands.h \
            misc/animationcontroller.h \
@@ -374,8 +372,6 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            continuoussnapshot/continuoussnapshotwindowselectionpage.cpp \
            continuoussnapshot/continuoussnapshotwizard.cpp \
            factory/postprocessorwindowfactory.cpp \
-           googlemapimport/googlemapimageimporter.cpp \
-           googlemapimport/googlemapimageimportsettingdialog.cpp \
            main/iricmainwindow.cpp \
            misc/animationcontroller.cpp \
            misc/flushrequester.cpp \

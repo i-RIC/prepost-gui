@@ -2,7 +2,6 @@
 #include "../continuoussnapshot/continuoussnapshotwizard.h"
 #include "../factory/postprocessorwindowfactory.h"
 #include "../factory/postprocessorwindowfactory.h"
-#include "../googlemapimport/googlemapimageimporter.h"
 #include "../misc/animationcontroller.h"
 #include "../misc/flushrequester.h"
 #include "../misc/iricmainwindowactionmanager.h"
@@ -830,12 +829,6 @@ void iRICMainWindow::closeEvent(QCloseEvent* event)
 		return;
 	}
 	event->accept();
-}
-
-void iRICMainWindow::importGoogleMapImages()
-{
-	GoogleMapImageImporter importer(m_projectData, this);
-	importer.importImages();
 }
 
 void iRICMainWindow::showProjectPropertyDialog()

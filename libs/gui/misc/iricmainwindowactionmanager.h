@@ -91,8 +91,6 @@ public:
 	QAction* exportCalcCondAction;
 	/// Action to import background image
 	QAction* importImageAction;
-	/// Action to import background image using Google Map API
-	QAction* importGoogleMapImageAction;
 	/// Action to import measured values from CSV files (or text files).
 	QAction* importMeasuredAction;
 	/// Action to import Visualization/Graph window settings
