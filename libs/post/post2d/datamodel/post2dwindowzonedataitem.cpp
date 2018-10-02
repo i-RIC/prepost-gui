@@ -77,11 +77,14 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (cont->scalarValueExists()) {
 		m_scalarGroupTopDataItem = new Post2dWindowNodeScalarGroupTopDataItem(this);
+	}
 
-		vtkPointSet* data = cont->data();
-		if (dynamic_cast<vtkStructuredGrid*> (data) != nullptr){
-			m_graphGroupDataItem = new Post2dWindowGraphGroupDataItem(this);
-		}
+	if (cont->cellScalarValueExists()) {
+		m_cellScalarGroupTopDataItem = new Post2dWindowCellScalarGroupTopDataItem(this);
+	}
+
+	if (cont->scalarValueExists() && dynamic_cast<vtkStructuredGrid*> (cont->data()) != nullptr) {
+		m_graphGroupDataItem = new Post2dWindowGraphGroupDataItem(this);
 	}
 
 	if (cont->vectorValueExists()) {
@@ -101,10 +104,6 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	}
 
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
-
-	if (cont->cellScalarValueExists()) {
-		m_cellScalarGroupTopDataItem = new Post2dWindowCellScalarGroupTopDataItem(this);
-	}
 
 	m_childItems.push_back(m_shapeDataItem);
 	if (cont->vectorValueExists()) {
