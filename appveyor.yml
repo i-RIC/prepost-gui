@@ -5,6 +5,7 @@ image: Visual Studio 2013
 # called before clone
 init:
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
+  - echo %Configuration%
 
 configuration:
   - Debug
@@ -19,11 +20,13 @@ before_build:
   - call C:\Qt\5.5\msvc2013_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
   - cd %APPVEYOR_BUILD_FOLDER%
+  - echo curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
   - curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
   - 7z x master.zip
   - cd iricdev-master
   - md lib
   - cd lib
+  - echo curl -L -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+%Configuration%"
   - curl -L -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+%Configuration%"
   - md install
   - cd install
