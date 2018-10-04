@@ -26,10 +26,7 @@ before_build:
   - cd iricdev-master
   - md lib
   - cd lib
-  - echo appveyor downloadfile "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+%Configuration%" -FileName install.zip
-  - appveyor downloadfile "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+%Configuration%" -FileName install.zip
-  - REM echo curl -fsSL -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+%Configuration%"
-  - REM curl -fsSL -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+%Configuration%"
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration: $Env:Configuration", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install.zip")
   - md install
   - cd install
   - 7z x ..\install.zip
