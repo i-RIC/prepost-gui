@@ -6,6 +6,8 @@ image: Visual Studio 2013
 init:
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
   - echo %Configuration%
+  - if "%Configuration%"=="Debug"   (set config=debug)
+  - if "%Configuration%"=="Release" (set config=release)
 
 configuration:
   - Debug
@@ -15,12 +17,11 @@ matrix:
   fast_finish: true
 
 # Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
-# It might give unexpected results (use md instead)call create-files.cmd
+# It might give unexpected results (use md instead)
 before_build:
   - call C:\Qt\5.5\msvc2013_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
   - cd %APPVEYOR_BUILD_FOLDER%
-  - echo curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
   - curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
   - 7z x master.zip
   - cd iricdev-master
@@ -42,6 +43,9 @@ before_build:
   - copy /y .\iricdev-master\dirExt.prop .\tools\data\.
   - qmake -recursive -tp vc
 
-# build using cmake tools
 build_script:
   - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+
+artifacts:
+  - path: libdlls\$(Configuration)
+  - path: apps\iricgui\$(config)
