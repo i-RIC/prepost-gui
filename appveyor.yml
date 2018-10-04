@@ -26,10 +26,12 @@ before_build:
   - cd iricdev-master
   - md lib
   - cd lib
-  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+$Env:Configuration", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install.zip")
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install-Debug.zip")
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install-Release.zip")
   - md install
   - cd install
-  - 7z x ..\install.zip
+  - 7z x -aoa ..\install-Debug.zip
+  - 7z x -aoa ..\install-Release.zip
   - cd %APPVEYOR_BUILD_FOLDER%\iricdev-master
   - call create-files.cmd
   - cd %APPVEYOR_BUILD_FOLDER%
