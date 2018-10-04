@@ -1,5 +1,6 @@
 #include "geodatapolygonregionpolygon.h"
 
+#include <vtkActor.h>
 #include <vtkProperty.h>
 
 GeoDataPolygonRegionPolygon::GeoDataPolygonRegionPolygon(GeoDataPolygon* parent) :

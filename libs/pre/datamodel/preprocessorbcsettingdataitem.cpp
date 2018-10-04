@@ -7,6 +7,7 @@
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/grid/grid.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>

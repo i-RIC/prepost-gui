@@ -9,6 +9,7 @@
 #include <QPolygonF>
 #include <QVector2D>
 
+#include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>

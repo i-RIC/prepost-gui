@@ -2,6 +2,7 @@
 #define GEODATAPOLYGONPROXY_H
 
 #include "geodatapolygon.h"
+
 #include <guicore/pre/geodata/geodataproxy.h>
 
 #include <vtkSmartPointer.h>

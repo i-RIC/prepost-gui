@@ -3,23 +3,20 @@
 
 #include "geodatapolygoncolorsettingdialog.h"
 
-#include <QObject>
-#include <QPointF>
-#include <QMutex>
-
-#include <vtkActor.h>
 #include <vtkDataSetMapper.h>
-#include <vtkDoubleArray.h>
 #include <vtkPolygon.h>
 #include <vtkSmartPointer.h>
 #include <vtkUnstructuredGrid.h>
 
+#include <QObject>
+#include <QVector2D>
+
 class GeoDataPolygon;
+
+class vtkScalarsToColors;
 
 class QPolygonF;
 class QVector2D;
-
-class vtkScalarsToColors;
 
 class GeoDataPolygonAbstractPolygon : public QObject
 {

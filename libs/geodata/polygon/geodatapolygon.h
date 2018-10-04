@@ -5,26 +5,16 @@
 #include "geodatapolygoncolorsettingdialog.h"
 
 #include <guicore/pre/geodata/geodata.h>
-#include <guicore/pre/grid/unstructured2dgrid.h>
 #include <misc/zdepthrange.h>
 
-#include <QPoint>
-#include <QPointF>
-#include <QPixmap>
-#include <QCursor>
-#include <QVariant>
-#include <QList>
-
-#include <vtkActor.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkSmartPointer.h>
 
-#include <iriclib.h>
+class QMenu;
+class QAction;
+class QToolBar;
 
-#include <vector>
-
-class GridCreatingConditionCreatorTriangle;
 class GeoDataPolygonAbstractPolygon;
 class GeoDataPolygonRegionPolygon;
 class GeoDataPolygonHolePolygon;

@@ -1,5 +1,6 @@
 #include "geodatapolygonholepolygon.h"
 
+#include <vtkActor.h>
 #include <vtkProperty.h>
 
 GeoDataPolygonHolePolygon::GeoDataPolygonHolePolygon(GeoDataPolygon* parent) :
