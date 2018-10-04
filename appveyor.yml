@@ -26,7 +26,7 @@ before_build:
   - cd iricdev-master
   - md lib
   - cd lib
-  - appveyor DowloadFile "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration: %Configuration%" -FileName "install.zip"
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+$Env:Configuration", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install.zip")
   - md install
   - cd install
   - 7z x ..\install.zip
