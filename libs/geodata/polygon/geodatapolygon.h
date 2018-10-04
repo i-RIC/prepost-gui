@@ -11,18 +11,14 @@
 #include <vtkPolyDataMapper.h>
 #include <vtkSmartPointer.h>
 
-class QMenu;
-class QAction;
-class QToolBar;
-
 class GeoDataPolygonAbstractPolygon;
 class GeoDataPolygonRegionPolygon;
 class GeoDataPolygonHolePolygon;
-class GeoDataPolygonImporter;
-class GeoDataPolygonShapeExporter;
 class GeoDataPolygonTriangleThread;
-class GeoDataPolygonProxy;
-class PreProcessorBCSettingDataItem;
+
+class QAction;
+class QMenu;
+class QToolBar;
 
 class QAction;
 class QMenu;
@@ -227,7 +223,6 @@ private:
 	class CoordinatesEditor;
 
 public:
-	friend class GeoDataPolygonCreator;
 	friend class GeoDataPolygonAbstractPolygon;
 	friend class GeoDataPolygonTriangleThread;
 	friend class GeoDataPolygonImporter;

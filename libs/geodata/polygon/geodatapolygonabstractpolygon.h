@@ -9,7 +9,6 @@
 #include <vtkUnstructuredGrid.h>
 
 #include <QObject>
-#include <QVector2D>
 
 class GeoDataPolygon;
 
