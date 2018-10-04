@@ -113,6 +113,11 @@ const QPolygonF GeoDataPolygonAbstractPolygon::polygon(QPointF offset, bool noCl
 	return ret;
 }
 
+vtkPolygon* GeoDataPolygonAbstractPolygon::getVtkPolygon() const
+{
+	return m_vtkPolygon;
+}
+
 void GeoDataPolygonAbstractPolygon::setPolygon(const QPolygonF& p)
 {
 	QMutexLocker locker(&m_mutex);
@@ -256,6 +261,17 @@ void GeoDataPolygonAbstractPolygon::updateScalarValues()
 	m_scalarValues->Modified();
 }
 
+
+int GeoDataPolygonAbstractPolygon::selectedVertexId() const
+{
+	return m_selectedVertexId;
+}
+
+int GeoDataPolygonAbstractPolygon::selectedEdgeId() const
+{
+	return m_selectedEdgeId;
+}
+
 void GeoDataPolygonAbstractPolygon::setZDepthRange(double /*min*/, double max)
 {
 	m_vertexActor->SetPosition(0, 0, max);
@@ -366,6 +382,9 @@ bool GeoDataPolygonAbstractPolygon::isClockwise() const
 	}
 	return true;
 }
+
+void GeoDataPolygonAbstractPolygon::finishDefinition()
+{}
 
 void GeoDataPolygonAbstractPolygon::setLookupTable(vtkScalarsToColors* t)
 {

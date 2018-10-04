@@ -30,21 +30,28 @@ public:
 	bool isPolygonSelectable(const QVector2D& pos);
 
 	const QPolygonF polygon(QPointF offset = QPointF(0, 0), bool noClean = false) const;
-	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
+
+	vtkPolygon* getVtkPolygon() const;
 	void setPolygon(const QPolygonF& p);
+
 	void setZDepthRange(double min, double max);
+
 	void updateShapeData();
 	void updateScalarValues();
-	int selectedVertexId() {return m_selectedVertexId;}
-	int selectedEdgeId() {return m_selectedEdgeId;}
+
+	int selectedVertexId() const;
+	int selectedEdgeId() const;
 
 	mutable QMutex m_mutex;
 
 	void setActive(bool active);
 	void setSelected(bool selected);
+
 	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;
 	bool isClockwise() const;
-	virtual void finishDefinition() {}
+
+	virtual void finishDefinition();
+
 	void setLookupTable(vtkScalarsToColors* t);
 	void setColor(const QColor& color);
 	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
