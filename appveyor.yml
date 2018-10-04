@@ -26,8 +26,8 @@ before_build:
   - cd iricdev-master
   - md lib
   - cd lib
-  - echo curl -L -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+"%Configuration%
-  - curl -L -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+"%Configuration%
+  - echo curl -fsSL -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+"%Configuration%
+  - curl -fsSL -o install.zip "https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration%3A+"%Configuration%
   - md install
   - cd install
   - 7z x ..\install.zip
