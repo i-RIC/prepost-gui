@@ -916,6 +916,11 @@ void GeoDataPolygon::clear()
 	renderGraphicsView();
 }
 
+bool GeoDataPolygon::ready() const
+{
+	return true;
+}
+
 void GeoDataPolygon::initParams()
 {
 	m_variantValues.clear();
@@ -1419,6 +1424,21 @@ void GeoDataPolygon::unlockMutex()
 	if (m_triangleThread == nullptr) {return;}
 
 	m_triangleThread->unlockMutex();
+}
+
+GeoDataPolygon::MouseEventMode GeoDataPolygon::mouseEventMode() const
+{
+	return m_mouseEventMode;
+}
+
+GeoDataPolygon::SelectMode GeoDataPolygon::selectMode() const
+{
+	return m_selectMode;
+}
+
+void GeoDataPolygon::setBCSettingMode(bool mode)
+{
+	m_bcSettingMode = mode;
 }
 
 geos::geom::Polygon* GeoDataPolygon::getGeosPolygon(const QPointF& offset)

@@ -82,6 +82,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
 	void definePolygon(bool doubleClick, bool noEditVal = false);
 	QColor color() const;
 
@@ -90,7 +91,8 @@ public:
 
 	QColor doubleToColor(double d);
 	void clear();
-	bool ready() const {return true;}
+	bool ready() const;
+
 	void showInitialDialog() override;
 
 	const QVariant& variantValue() const;
@@ -102,11 +104,9 @@ public:
 	void updateFilename() override;
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
-	MouseEventMode mouseEventMode() const {return m_mouseEventMode;}
-	SelectMode selectMode() const {return m_selectMode;}
-	void setBCSettingMode(bool mode) {
-		m_bcSettingMode = mode;
-	}
+	MouseEventMode mouseEventMode() const;
+	SelectMode selectMode() const;
+	void setBCSettingMode(bool mode);
 	geos::geom::Polygon* getGeosPolygon(const QPointF& offset);
 
 public slots:
