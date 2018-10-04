@@ -13,8 +13,6 @@ public:
 	virtual ~vtkActorPolyDataMapperPair();
 
 	vtkActor* actor() const;
-
-protected:
 	vtkPolyDataMapper* mapper() const;
 
 private:
