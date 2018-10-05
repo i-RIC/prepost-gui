@@ -23,8 +23,10 @@ before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
   - cd %APPVEYOR_BUILD_FOLDER%
   - curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
-  - 7z x master.zip
-  - cd iricdev-master
+  - cd \
+  - 7z x %APPVEYOR_BUILD_FOLDER%\master.zip
+  - del %APPVEYOR_BUILD_FOLDER%\master.zip
+  - cd \iricdev-master
   - md lib
   - cd lib
   - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install-Debug.zip")
@@ -33,18 +35,23 @@ before_build:
   - cd install
   - 7z x -aoa ..\install-Debug.zip
   - 7z x -aoa ..\install-Release.zip
-  - cd %APPVEYOR_BUILD_FOLDER%\iricdev-master
+  - cd \iricdev-master
   - call create-files.cmd
   - cd %APPVEYOR_BUILD_FOLDER%
   - if not exist libdlls (md libdlls)
   - if not exist libdlls\Debug (md libdlls\Debug)
   - if not exist libdlls\Release (md libdlls\Release)
-  - copy /y .\iricdev-master\paths.pri .
-  - copy /y .\iricdev-master\dirExt.prop .\tools\data\.
+  - copy /y \iricdev-master\paths.pri .
+  - copy /y \iricdev-master\dirExt.prop .\tools\data\.
   - qmake -recursive -tp vc
 
 build_script:
   - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+
+after_build:
+  - cd %APPVEYOR_BUILD_FOLDER%\tools
+  - python copydllsExt.py
+  - cd %APPVEYOR_BUILD_FOLDER%
 
 artifacts:
   - path: libdlls\$(Configuration)
