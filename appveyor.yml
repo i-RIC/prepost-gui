@@ -46,11 +46,14 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
+  - set SAVE_PATH=%PATH%
+  - set PATH=C:\Python37-x64;%PATH%
   - python copydllsExt.py
+  - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
 
 artifacts:
