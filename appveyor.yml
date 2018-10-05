@@ -46,7 +46,7 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
