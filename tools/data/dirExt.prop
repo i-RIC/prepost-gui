@@ -1,29 +1,35 @@
 [release]
-cgnslib  = C:/iricdev_2013/lib/install/cgnslib-3.2.1/release/bin/
+cgnslib  = C:/iricdev_2013/lib/install/cgnslib-3.2.1-patch1/release/bin/
+expat    = C:/iricdev_2013/lib/install/expat-2.2.6/release/bin/
 gdal     = C:/iricdev_2013/lib/install/gdal-1.11.2/release/bin/
 geos     = C:/iricdev_2013/lib/install/geos-3.4.3/release/bin/
 hdf5     = C:/iricdev_2013/lib/install/hdf5-1.8.14/release/bin/
-iriclib  = C:/iricdev_2013/lib/install/iriclib-26c18ba/release/lib/
+iriclib  = C:/iricdev_2013/lib/install/iriclib-3290bed/release/lib/
 netcdf   = C:/iricdev_2013/lib/install/netcdf-4.3.3/release/bin/
+openssl  = C:/iricdev_2013/lib/install/openssl-1.0.2p/release/bin/
 proj     = C:/iricdev_2013/lib/install/proj-4.8.0/release/bin/
 qwt      = C:/iricdev_2013/lib/install/Qwt-6.1.3/lib/
 shapelib = C:/iricdev_2013/lib/install/shapelib-1.3.0/release/
 szip     = C:/iricdev_2013/lib/install/hdf5-1.8.14/release/bin/
+udunits  = C:/iricdev_2013/lib/install/udunits-2.2.26/release/bin/
 vtk      = C:/iricdev_2013/lib/install/VTK-6.1.0/release/bin/
 yaml-cpp = C:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/bin
 zlib     = C:/iricdev_2013/lib/install/hdf5-1.8.14/release/bin/
 
 [debug]
-cgnslib  = C:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/bin/
+cgnslib  = C:/iricdev_2013/lib/install/cgnslib-3.2.1-patch1/debug/bin/
+expat    = C:/iricdev_2013/lib/install/expat-2.2.6/debug/bin/
 gdal     = C:/iricdev_2013/lib/install/gdal-1.11.2/debug/bin/
 geos     = C:/iricdev_2013/lib/install/geos-3.4.3/debug/bin/
 hdf5     = C:/iricdev_2013/lib/install/hdf5-1.8.14/debug/bin/
-iriclib  = C:/iricdev_2013/lib/install/iriclib-26c18ba/debug/lib/
+iriclib  = C:/iricdev_2013/lib/install/iriclib-3290bed/debug/lib/
 netcdf   = C:/iricdev_2013/lib/install/netcdf-4.3.3/debug/bin/
+openssl  = C:/iricdev_2013/lib/install/openssl-1.0.2p/debug/bin/
 proj     = C:/iricdev_2013/lib/install/proj-4.8.0/release/bin/
 qwt      = C:/iricdev_2013/lib/install/Qwt-6.1.3/lib/
 shapelib = C:/iricdev_2013/lib/install/shapelib-1.3.0/debug/
 szip     = C:/iricdev_2013/lib/install/hdf5-1.8.14/debug/bin/
+udunits  = C:/iricdev_2013/lib/install/udunits-2.2.26/debug/bin/
 vtk      = C:/iricdev_2013/lib/install/VTK-6.1.0/debug/bin/
 yaml-cpp = C:/iricdev_2013/lib/install/yaml-cpp-0.5.2/debug/bin
 zlib     = C:/iricdev_2013/lib/install/hdf5-1.8.14/debug/bin/

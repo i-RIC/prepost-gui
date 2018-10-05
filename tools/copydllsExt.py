@@ -20,7 +20,8 @@ config.read(configFile)
 
 # check config.
 sections = ["release", "debug"]
-options  = ["cgnslib", "gdal", "geos", "hdf5", "iriclib", "netcdf", "proj", "qwt", "shapelib", "szip", "vtk", "yaml-cpp", "zlib"]
+# options  = ["cgnslib", "expat", "gdal", "geos", "hdf5", "iriclib", "netcdf", "openssl", "proj", "qwt", "shapelib", "szip", "udunits", "vtk", "yaml-cpp", "zlib"]
+options  = ["cgnslib", "gdal", "geos", "hdf5", "iriclib", "netcdf", "openssl", "proj", "qwt", "shapelib", "szip", "vtk", "yaml-cpp", "zlib"]
 for section in sections:
   if (section in config.sections()):
     for option in options:
