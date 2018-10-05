@@ -29,8 +29,8 @@ before_build:
   - cd \iricdev-master
   - md lib
   - cd lib
-  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install-Debug.zip")
-  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "$Env:APPVEYOR_BUILD_FOLDER\iricdev-master\lib\install-Release.zip")
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "\iricdev-master\lib\install-Debug.zip")
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "\iricdev-master\lib\install-Release.zip")
   - md install
   - cd install
   - 7z x -aoa ..\install-Debug.zip
@@ -55,4 +55,6 @@ after_build:
 
 artifacts:
   - path: libdlls\$(Configuration)
+    name: libdlls-$(Configuration)
   - path: apps\iricgui\$(config)
+    name: iricgui-$(Configuration)
