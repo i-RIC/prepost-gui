@@ -126,6 +126,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapaintactor.h \
            vtktool/vtkpolydatapointsactor.h \
+           vtktool/vtkpolygonactor.h \
            vtktool/vtkpolygonsactor.h \
            vtktool/vtkstreamtracerutil.h \
            widget/asciionlylineedit.h \
@@ -154,6 +155,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
+           vtktool/private/vtkpolygonactor_impl.h \
            vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
            widget/private/realnumbereditwidget_impl.h
@@ -231,6 +233,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapaintactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
+           vtktool/vtkpolygonactor.cpp \
            vtktool/vtkpolygonsactor.cpp \
            vtktool/vtkstreamtracerutil.cpp \
            widget/asciionlylineedit.cpp \
