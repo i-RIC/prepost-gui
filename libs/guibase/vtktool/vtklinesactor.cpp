@@ -55,8 +55,6 @@ vtkActor* vtkLinesActor::linesActor() const
 
 void vtkLinesActor::setLines(const std::vector<std::vector<QPointF> >& lines)
 {
-	impl->m_polyData->Initialize();
-
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
 
@@ -83,7 +81,13 @@ void vtkLinesActor::setLines(const std::vector<std::vector<QPointF> >& lines)
 	}
 	impl->m_polyData->SetPoints(points);
 	impl->m_polyData->SetLines(linesCells);
+	impl->m_polyData->BuildCells();
+	impl->m_polyData->BuildLinks();
+	impl->m_polyData->Modified();
 
 	impl->m_pointsPolyData->SetPoints(points);
 	impl->m_pointsPolyData->SetVerts(pointsCells);
+	impl->m_pointsPolyData->BuildCells();
+	impl->m_pointsPolyData->BuildLinks();
+	impl->m_pointsPolyData->Modified();
 }
