@@ -4,7 +4,7 @@
 #include "../geodatapolygon.h"
 
 #include <QUndoCommand>
-#include <QVector2D>
+#include <QPointF>
 
 class GeoDataPolygon::MovePolygonCommand : public QUndoCommand
 {
@@ -18,11 +18,11 @@ public:
 	bool mergeWith(const QUndoCommand* other) override;
 
 private:
-	static void movePolygon(GeoDataPolygonAbstractPolygon* polygon, const QVector2D& offset);
+	static void movePolygon(GeoDataPolygonAbstractPolygon* polygon, const QPointF& offset);
 
 	bool m_keyDown;
 	GeoDataPolygon* m_polygon;
-	QVector2D m_offset;
+	QPointF m_offset;
 	bool m_oldMapped;
 };
 

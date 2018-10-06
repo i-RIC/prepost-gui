@@ -15,6 +15,8 @@
 #include <geodata/polygon/geodatapolygonabstractpolygon.h>
 #include <geodata/polygon/geodatapolygonregionpolygon.h>
 
+#include <vtkCell.h>
+
 #include <QAction>
 #include <QFile>
 #include <QKeyEvent>

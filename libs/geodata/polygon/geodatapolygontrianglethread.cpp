@@ -273,7 +273,7 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, const QPointF& offset, const geos::geom::GeometryFactory* f)
 {
 	const geos::geom::CoordinateSequenceFactory* csf = f->getCoordinateSequenceFactory();
-	QPolygonF regionPol = pol->polygon(offset);
+	QPolygonF regionPol = pol->polygon(- offset);
 	geos::geom::CoordinateSequence* cs = csf->create(regionPol.size() , 2);
 
 	std::set<QPointF> points;
@@ -386,8 +386,6 @@ void GeoDataPolygonTriangleThread::runTriangle()
 		ca->InsertNextCell(3, ids);
 	}
 	m_mutex.lock();
-
-//	p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
 
 	freeTriangleOutput(&out);
 

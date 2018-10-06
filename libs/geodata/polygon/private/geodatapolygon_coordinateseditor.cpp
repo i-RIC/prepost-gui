@@ -8,6 +8,8 @@
 #include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
+#include <vtkPolygon.h>
+
 GeoDataPolygon* GeoDataPolygon::CoordinatesEditor::targetPolygon = 0;
 bool GeoDataPolygon::CoordinatesEditor::applied = false;
 

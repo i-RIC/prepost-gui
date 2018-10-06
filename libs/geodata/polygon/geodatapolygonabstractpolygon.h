@@ -3,19 +3,18 @@
 
 #include "geodatapolygoncolorsettingdialog.h"
 
-#include <vtkDataSetMapper.h>
-#include <vtkPolygon.h>
-#include <vtkSmartPointer.h>
-#include <vtkUnstructuredGrid.h>
+#include <guibase/polygon/polygoncontroller.h>
 
 #include <QObject>
 
 class GeoDataPolygon;
 
+class vtkDoubleArray;
+class vtkPolygon;
 class vtkScalarsToColors;
 
 class QPolygonF;
-class QVector2D;
+class QPointF;
 
 class GeoDataPolygonAbstractPolygon : public QObject
 {
@@ -25,29 +24,26 @@ public:
 	GeoDataPolygonAbstractPolygon(GeoDataPolygon* parent);
 	~GeoDataPolygonAbstractPolygon();
 
-	bool isVertexSelectable(const QVector2D& pos, double distlimit);
-	bool isEdgeSelectable(const QVector2D& pos, double distlimit);
-	bool isPolygonSelectable(const QVector2D& pos);
+	QPolygonF polygon(const QPointF& offset = QPointF(0, 0)) const;
+	void setPolygon(const QPolygonF& p);
+	QPolygonF cleanedPolygon(const QPointF& offset = QPointF(0, 0)) const;
 
-	const QPolygonF polygon(QPointF offset = QPointF(0, 0), bool noClean = false) const;
+	bool isVertexSelectable(const QPointF& pos, double distlimit);
+	bool isEdgeSelectable(const QPointF& pos, double distlimit);
+	bool isPolygonSelectable(const QPointF& pos);
 
 	vtkPolygon* getVtkPolygon() const;
-	void setPolygon(const QPolygonF& p);
+	void applyVtkPolygonShape();
 
 	void setZDepthRange(double min, double max);
 
-	void updateShapeData();
 	void updateScalarValues();
 
 	int selectedVertexId() const;
 	int selectedEdgeId() const;
 
-	mutable QMutex m_mutex;
-
 	void setActive(bool active);
 	void setSelected(bool selected);
-
-	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;
 
 	virtual void finishDefinition();
 
@@ -55,31 +51,18 @@ public:
 	void setColor(const QColor& color);
 	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
 
+protected:
+	const PolygonController& polygonController() const;
+
 private:
-	void setupContainers();
-	void setupActors();
+	void setupScalarValues();
 
 	int m_selectedVertexId;
 	int m_selectedEdgeId;
 
-	/// The polygon data container.
-	vtkSmartPointer<vtkPolygon> m_vtkPolygon;
-	/// The grid that has only one cell, that is m_vtkPolygon.
-	vtkSmartPointer<vtkUnstructuredGrid> m_vtkGrid;
-	/// The grid that has cells, those consists of the edge of m_vtkPolygon.
-	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
-	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
-	vtkSmartPointer<vtkDoubleArray> m_scalarValues;
-
-protected:
 	GeoDataPolygon* m_parent;
-
-	vtkSmartPointer<vtkActor> m_paintActor;
-	vtkSmartPointer<vtkActor> m_edgeActor;
-	vtkSmartPointer<vtkActor> m_vertexActor;
-	vtkSmartPointer<vtkDataSetMapper> m_paintMapper;
-	vtkSmartPointer<vtkDataSetMapper> m_edgeMapper;
-	vtkSmartPointer<vtkDataSetMapper> m_vertexMapper;
+	PolygonController m_polygonController;
+	vtkDoubleArray* m_scalarValues;
 };
 
 #endif // GEODATAPOLYGONABSTRACTPOLYGON_H

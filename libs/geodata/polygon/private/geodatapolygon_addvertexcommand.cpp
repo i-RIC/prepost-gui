@@ -4,6 +4,8 @@
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
+#include <vtkPolygon.h>
+
 GeoDataPolygon::AddVertexCommand::AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GeoDataPolygon* pol) :
 	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->m_selectedPolygon, pol, GeoDataPolygon::tr("Insert Polygon Vertex")),
 	m_keyDown {keyDown}
@@ -14,7 +16,7 @@ GeoDataPolygon::AddVertexCommand::AddVertexCommand(bool keyDown, vtkIdType edgeI
 	pol->graphicsView()->viewportToWorld(dx, dy);
 	QPointF newPoint(dx, dy);
 
-	QPolygonF newPolygon(pol->m_selectedPolygon->polygon(QPointF(0, 0), true));
+	QPolygonF newPolygon = pol->m_selectedPolygon->polygon();
 
 	if (keyDown) {
 		newPolygon.insert(vertexId, newPoint);

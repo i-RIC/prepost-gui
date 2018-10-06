@@ -725,7 +725,7 @@ void GeoDataPolygon::updateMouseEventMode()
 	dx = m_currentPoint.x();
 	dy = m_currentPoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
-	QVector2D worldPos(dx, dy);
+	QPointF worldPos(dx, dy);
 	bool shapeUpdating = m_shapeUpdating;
 	shapeUpdating = shapeUpdating || (m_triangleThread != nullptr && m_triangleThread->isOutputting(this));
 	switch (m_mouseEventMode) {
@@ -1018,7 +1018,6 @@ bool GeoDataPolygon::selectObject(QPoint point)
 	double dy = point.y();
 	graphicsView()->viewportToWorld(dx, dy);
 	QPointF p(dx, dy);
-	QVector2D pv(dx, dy);
 
 	double selectlimit = graphicsView()->stdRadius(iRIC::nearRadius());
 
@@ -1029,10 +1028,10 @@ bool GeoDataPolygon::selectObject(QPoint point)
 		GeoDataPolygonAbstractPolygon* pol = m_holePolygons[i];
 		QPolygonF polF = pol->polygon();
 		if (polF.count() <= 3) {
-			if (pol->isEdgeSelectable(pv, selectlimit)) {
+			if (pol->isEdgeSelectable(p, selectlimit)) {
 				newSelPol = pol;
 				selected = true;
-			} else if (pol->isVertexSelectable(pv, selectlimit)) {
+			} else if (pol->isVertexSelectable(p, selectlimit)) {
 				newSelPol = pol;
 				selected = true;
 			}
@@ -1046,10 +1045,10 @@ bool GeoDataPolygon::selectObject(QPoint point)
 	if (! selected) {
 		QPolygonF polF = m_gridRegionPolygon->polygon();
 		if (polF.count() <= 3) {
-			if (m_gridRegionPolygon->isEdgeSelectable(pv, selectlimit)) {
+			if (m_gridRegionPolygon->isEdgeSelectable(p, selectlimit)) {
 				newSelPol = m_gridRegionPolygon;
 				selected = true;
-			} else if (m_gridRegionPolygon->isVertexSelectable(pv, selectlimit)) {
+			} else if (m_gridRegionPolygon->isVertexSelectable(p, selectlimit)) {
 				newSelPol = m_gridRegionPolygon;
 				selected = true;
 			}

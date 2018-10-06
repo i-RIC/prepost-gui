@@ -13,7 +13,7 @@ GeoDataPolygon::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPo
 	pol->graphicsView()->viewportToWorld(dx, dy);
 
 	QPointF newPoint(dx, dy);
-	QPolygonF newPolygon(pol->m_selectedPolygon->polygon(QPointF(0, 0), true));
+	QPolygonF newPolygon = pol->m_selectedPolygon->polygon();
 	if (keyDown) {
 		if (newPolygon.size() == 0) {
 			newPolygon.push_back(newPoint);
