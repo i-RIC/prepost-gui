@@ -117,6 +117,7 @@ HEADERS += arrowsettingcontainer.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           polygon/polygoncontroller.h \
            polyline/polylinecontroller.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtklabel2dactor.h \
@@ -150,6 +151,7 @@ HEADERS += arrowsettingcontainer.h \
            widget/textediti.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
+           polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
            vtktool/private/vtklabel2dactor_impl.h \
@@ -224,6 +226,7 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           polygon/polygoncontroller.cpp \
            polyline/polylinecontroller.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtklabel2dactor.cpp \
