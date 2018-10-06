@@ -1,5 +1,10 @@
 version: '{build}'
 
+# Skipping commits affecting specific files (GitHub only).
+skip_commits:
+  files:
+    - README.md
+
 image: Visual Studio 2013
 
 # called before clone
