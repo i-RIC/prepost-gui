@@ -338,51 +338,6 @@ QPointF GeoDataPolygonAbstractPolygon::innerPoint(QPointF offset) const
 	return QPointF(0, 0);
 }
 
-bool GeoDataPolygonAbstractPolygon::isClockwise() const
-{
-	double v[3];
-	QVector2D basePoint, p1, p2, v1, v2, nom;
-	QPointF nomP;
-	QPolygonF poly = polygon();
-	bool found = false;
-	int baseId = 0;
-	int pnum = m_vtkPolygon->GetNumberOfPoints() - 1;
-
-	bool nomOK = false;
-	for (int i = 0; i < pnum && ! found; ++i) {
-		m_vtkPolygon->GetPoints()->GetPoint(baseId, v);
-		basePoint = QVector2D(v[0], v[1]);
-		m_vtkPolygon->GetPoints()->GetPoint((baseId + 1) % pnum, v);
-		p1 = QVector2D(v[0], v[1]);
-		m_vtkPolygon->GetPoints()->GetPoint((baseId + pnum - 1) % pnum, v);
-		p2 = QVector2D(v[0], v[1]);
-
-		v1 = (p1 - basePoint) * 0.01;
-		v2 = (p2 - basePoint) * 0.01;
-
-		nom = basePoint + v1 + v2;
-		nomP = QPointF(nom.x(), nom.y());
-		if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
-			nomOK = true;
-		} else {
-			nom = basePoint - v1 - v2;
-			nomP = QPointF(nom.x(), nom.y());
-			if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
-				nomOK = true;
-			}
-		}
-		if (nomOK) {
-			// innerPoint found.
-			QVector2D v0 = basePoint - p2;
-			QVector2D v1 = QVector2D(nomP.x() - p2.x(), nomP.y() - p2.y());
-			double op = iRIC::outerProduct(v0, v1);
-			return op < 0;
-		}
-		++ baseId;
-	}
-	return true;
-}
-
 void GeoDataPolygonAbstractPolygon::finishDefinition()
 {}
 

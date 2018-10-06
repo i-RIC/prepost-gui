@@ -48,7 +48,6 @@ public:
 	void setSelected(bool selected);
 
 	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;
-	bool isClockwise() const;
 
 	virtual void finishDefinition();
 
