@@ -11,9 +11,8 @@ class PolyLineController::Impl
 {
 public:
 	Impl();
-	~Impl();
 
-	vtkLineActor m_lineActor;
+	vtkLineActor m_actor;
 };
 
 #endif // POLYLINECONTROLLER_IMPL_H

@@ -22,6 +22,7 @@ public:
 	bool isVertexSelectable(const QPointF& pos, double limitDistance, int* vid);
 	bool isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId);
 
+	vtkPolyData* pointsPolyData() const;
 	vtkPolyData* polyData() const;
 
 	vtkActor* pointsActor() const;
