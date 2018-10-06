@@ -1,0 +1,68 @@
+version: '{build}'
+
+# Skipping commits affecting specific files (GitHub only).
+skip_commits:
+  files:
+    - README.md
+
+image: Visual Studio 2013
+
+# called before clone
+init:
+  - echo %APPVEYOR_BUILD_WORKER_IMAGE%
+  - echo %Configuration%
+  - if "%Configuration%"=="Debug"   (set config=debug)
+  - if "%Configuration%"=="Release" (set config=release)
+
+configuration:
+  - Debug
+  - Release
+
+matrix:
+  fast_finish: true
+
+# Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
+# It might give unexpected results (use md instead)
+before_build:
+  - call C:\Qt\5.5\msvc2013_64\bin\qtenv2.bat
+  - call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
+  - cd \
+  - 7z x %APPVEYOR_BUILD_FOLDER%\master.zip
+  - del %APPVEYOR_BUILD_FOLDER%\master.zip
+  - cd \iricdev-master
+  - md lib
+  - cd lib
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "\iricdev-master\lib\install-Debug.zip")
+  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "\iricdev-master\lib\install-Release.zip")
+  - md install
+  - cd install
+  - 7z x -aoa ..\install-Debug.zip
+  - 7z x -aoa ..\install-Release.zip
+  - cd \iricdev-master
+  - call create-files.cmd
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - if not exist libdlls (md libdlls)
+  - if not exist libdlls\Debug (md libdlls\Debug)
+  - if not exist libdlls\Release (md libdlls\Release)
+  - copy /y \iricdev-master\paths.pri .
+  - copy /y \iricdev-master\dirExt.prop .\tools\data\.
+  - qmake -recursive -tp vc
+
+build_script:
+  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+
+after_build:
+  - cd %APPVEYOR_BUILD_FOLDER%\tools
+  - set SAVE_PATH=%PATH%
+  - set PATH=C:\Python37-x64;%PATH%
+  - python copydllsExt.py
+  - set PATH=%SAVE_PATH%
+  - cd %APPVEYOR_BUILD_FOLDER%
+
+artifacts:
+  - path: libdlls\$(Configuration)
+    name: libdlls-$(Configuration)
+  - path: apps\iricgui\$(config)
+    name: iricgui-$(Configuration)
