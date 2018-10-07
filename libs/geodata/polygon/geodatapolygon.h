@@ -89,7 +89,6 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
 
-	QColor doubleToColor(double d);
 	void clear();
 	bool ready() const;
 

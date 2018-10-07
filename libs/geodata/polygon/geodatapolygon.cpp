@@ -205,11 +205,6 @@ bool GeoDataPolygon::addToolBarButtons(QToolBar* tb)
 	return true;
 }
 
-QColor GeoDataPolygon::doubleToColor(double /*d*/)
-{
-	return Qt::red;
-}
-
 void GeoDataPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)
 {
 	impl->m_setting.mapping = m;
