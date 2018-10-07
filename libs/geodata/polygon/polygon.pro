@@ -145,6 +145,7 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_movevertexcommand.h \
            private/geodatapolygon_pushnewpointcommand.h \
            private/geodatapolygon_removevertexcommand.h \
+           private/geodatapolygonabstractpolygon_impl.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
            private/geodatapolygonnodemappert_detail.h

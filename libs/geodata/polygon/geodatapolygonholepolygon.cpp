@@ -1,5 +1,7 @@
 #include "geodatapolygonholepolygon.h"
 
+#include <guibase/polygon/polygoncontroller.h>
+
 #include <vtkActor.h>
 #include <vtkProperty.h>
 

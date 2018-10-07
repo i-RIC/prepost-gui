@@ -3,13 +3,11 @@
 
 #include "geodatapolygoncolorsettingdialog.h"
 
-#include <guibase/polygon/polygoncontroller.h>
-
 #include <QObject>
 
 class GeoDataPolygon;
+class PolygonController;
 
-class vtkDoubleArray;
 class vtkPolygon;
 class vtkScalarsToColors;
 
@@ -55,14 +53,12 @@ protected:
 	const PolygonController& polygonController() const;
 
 private:
-	void setupScalarValues();
-
-	int m_selectedVertexId;
-	int m_selectedEdgeId;
-
-	GeoDataPolygon* m_parent;
-	PolygonController m_polygonController;
-	vtkDoubleArray* m_scalarValues;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/geodatapolygonabstractpolygon_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATAPOLYGONABSTRACTPOLYGON_H
