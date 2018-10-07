@@ -9,7 +9,7 @@ GeoDataPolygon::EditCoordinatesCommand::EditCoordinatesCommand(bool apply, const
 	QUndoCommand {GeoDataPolygon::tr("Edit Polygon Coordinates")},
 	m_apply {apply},
 	m_newCoords(coords),
-	m_selectedPolygon {pol->m_selectedPolygon},
+	m_selectedPolygon {pol->selectedPolygon()},
 	m_polygon {pol}
 {
 	m_oldCoords = vtkPointsUtil::getCoordinates(m_selectedPolygon->getVtkPolygon());

@@ -140,6 +140,7 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
+           private/geodatapolygon_impl.h \
            private/geodatapolygon_modifyabstractpolygoncommand.h \
            private/geodatapolygon_movepolygoncommand.h \
            private/geodatapolygon_movevertexcommand.h \

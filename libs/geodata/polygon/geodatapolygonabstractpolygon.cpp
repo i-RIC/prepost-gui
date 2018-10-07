@@ -4,7 +4,9 @@
 
 #include <vtkActor.h>
 #include <vtkDoubleArray.h>
+#include <vtkMapper.h>
 #include <vtkPointData.h>
+#include <vtkPolyData.h>
 #include <vtkPolygon.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>

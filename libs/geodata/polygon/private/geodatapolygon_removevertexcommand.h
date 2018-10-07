@@ -7,7 +7,7 @@
 class GeoDataPolygon::RemoveVertexCommand : public GeoDataPolygon::ModifyAbstractPolygonCommand
 {
 public:
-	RemoveVertexCommand(vtkIdType vertexId, GeoDataPolygon* pol);
+	RemoveVertexCommand(int vertexId, GeoDataPolygon* pol);
 };
 
 #endif // GEODATAPOLYGON_REMOVEVERTEXCOMMAND_H

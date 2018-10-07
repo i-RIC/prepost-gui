@@ -21,6 +21,7 @@
 #include <geos/util/GEOSException.h>
 
 #include <vtkCellArray.h>
+#include <vtkPolyData.h>
 #include <vtkProperty.h>
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
@@ -212,7 +213,7 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 	int segmentCount = 0;
 	int regionCount = 1;
 
-	*offset = p->polygon().boundingRect().topLeft();
+	*offset = p->regionPolygon()->polygon().boundingRect().topLeft();
 	geos::geom::Polygon* resultPol = getGeosPolygon(p, *offset);
 	if (resultPol->isEmpty()){
 		throw geos::util::GEOSException("No polygon specified");
@@ -233,8 +234,8 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 	in->numberofpoints = pointCount;
 	in->segmentlist = new int[segmentCount * 2];
 	in->numberofsegments = segmentCount;
-	in->holelist = new double[p->m_holePolygons.count() * 2];
-	in->numberofholes = p->m_holePolygons.count();
+	in->holelist = new double[p->holePolygons().size() * 2];
+	in->numberofholes = p->holePolygons().size();
 	in->regionlist = new double[regionCount * 4];
 	in->numberofregions = regionCount;
 
@@ -261,7 +262,7 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 			*(in->segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
 			*(in->segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (iLS->getNumPoints() - 1) + sOffset + 1;
 		}
-		innerP = polygonInnerPoint(p->m_holePolygons.at(i), emptyHoles, *offset);
+		innerP = polygonInnerPoint(p->holePolygons().at(i), emptyHoles, *offset);
 		*(in->holelist + i * 2	) = innerP.x();
 		*(in->holelist + i * 2 + 1) = innerP.y();
 		pOffset += 2 * (iLS->getNumPoints() - 1);
@@ -296,10 +297,9 @@ geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, con
 
 geos::geom::Polygon* GeoDataPolygonTriangleThread::getGeosPolygon(GeoDataPolygon* pol, const QPointF& offset)
 {
-	geos::geom::LinearRing* regionRing = createLinearRing(pol->m_gridRegionPolygon, offset, m_geomFactory);
+	geos::geom::LinearRing* regionRing = createLinearRing(pol->regionPolygon(), offset, m_geomFactory);
 	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
-	for (int i = 0; i < pol->m_holePolygons.size(); ++i) {
-		GeoDataPolygonAbstractPolygon* h = pol->m_holePolygons.at(i);
+	for (GeoDataPolygonAbstractPolygon* h : pol->holePolygons()) {
 		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
 	}
 	return m_geomFactory->createPolygon(regionRing, holesVec);
@@ -342,8 +342,8 @@ void GeoDataPolygonTriangleThread::runTriangle()
 {
 	m_mutex.lock();
 	GeoDataPolygon* p = m_currentJob->targetPolygon;
-	p->m_polyData->Reset();
-	p->m_polyData->Modified();
+	p->polyData()->Reset();
+	p->polyData()->Modified();
 
 	QPointF offset;
 	triangulateio in, out;

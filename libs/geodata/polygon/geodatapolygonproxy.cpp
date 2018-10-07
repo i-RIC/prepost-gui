@@ -1,5 +1,7 @@
 #include "geodatapolygonproxy.h"
 
+#include <misc/zdepthrange.h>
+
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
@@ -8,8 +10,8 @@ void GeoDataPolygonProxy::setupActors()
 	GeoDataPolygon* pol = dynamic_cast<GeoDataPolygon*>(geoData());
 
 	m_paintActor = vtkSmartPointer<vtkActor>::New();
-	m_paintActor->SetProperty(pol->m_paintActor->GetProperty());
-	m_paintActor->SetMapper(pol->m_paintMapper);
+	m_paintActor->SetProperty(pol->paintActor()->GetProperty());
+	m_paintActor->SetMapper(pol->paintMapper());
 
 	renderer()->AddActor(m_paintActor);
 	actorCollection()->AddItem(m_paintActor);

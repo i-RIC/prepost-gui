@@ -50,12 +50,12 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 	m_rightClickingMenu->setTitle(PreProcessorBCSettingDataItem::tr("Polygon"));
 	m_rightClickingMenu->addAction(m_editAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_polygon->m_addVertexAction);
-	m_rightClickingMenu->addAction(m_polygon->m_removeVertexAction);
-	m_rightClickingMenu->addAction(m_polygon->m_coordEditAction);
+	m_rightClickingMenu->addAction(m_polygon->addVertexAction());
+	m_rightClickingMenu->addAction(m_polygon->removeVertexAction());
+	m_rightClickingMenu->addAction(m_polygon->coordEditAction());
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_polygon->m_holeModeAction);
-	m_rightClickingMenu->addAction(m_polygon->m_deleteAction);
+	m_rightClickingMenu->addAction(m_polygon->holeModeAction());
+	m_rightClickingMenu->addAction(m_polygon->deleteAction());
 
 	PreProcessorBCSettingGroupDataItem* gditem = dynamic_cast<PreProcessorBCSettingGroupDataItem*>(parent);
 	connect(item, SIGNAL(itemUpdated()), this, SLOT(updateItem()));
@@ -103,9 +103,9 @@ void PreProcessorBCSettingDataItem::handleStandardItemChange()
 
 void PreProcessorBCSettingDataItem::informSelection(VTKGraphicsView* v)
 {
-	if (m_polygon->m_selectedPolygon == nullptr) {
-		m_polygon->m_selectMode = GeoDataPolygon::smPolygon;
-		m_polygon->m_selectedPolygon = m_polygon->m_gridRegionPolygon;
+	if (m_polygon->selectedPolygon() == nullptr) {
+		m_polygon->setSelectMode(GeoDataPolygon::smPolygon);
+		m_polygon->setSelectedPolygon(m_polygon->regionPolygon());
 	}
 	m_polygon->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
@@ -126,7 +126,7 @@ void PreProcessorBCSettingDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/
 	if (m_polygon->selectMode() != GeoDataPolygon::smPolygon) {return;}
 
 	m_polygon->definePolygon(true, true);
-	if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
+	if (m_polygon->selectedPolygon() == m_polygon->regionPolygon()) {
 		m_bcDataItem->showDialog();
 	}
 }
@@ -159,7 +159,7 @@ void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsV
 	if (m_polygon->selectMode() != GeoDataPolygon::smPolygon) {return;}
 
 	m_polygon->definePolygon(false, true);
-	if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
+	if (m_polygon->selectedPolygon() == m_polygon->regionPolygon()) {
 		m_bcDataItem->showDialog();
 	}
 }

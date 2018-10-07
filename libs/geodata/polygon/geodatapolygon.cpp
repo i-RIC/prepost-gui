@@ -14,6 +14,7 @@
 #include "private/geodatapolygon_editpropertycommand.h"
 #include "private/geodatapolygon_editvaluecommand.h"
 #include "private/geodatapolygon_finishpolygondefinitioncommand.h"
+#include "private/geodatapolygon_impl.h"
 #include "private/geodatapolygon_movepolygoncommand.h"
 #include "private/geodatapolygon_movevertexcommand.h"
 #include "private/geodatapolygon_pushnewpointcommand.h"
@@ -21,21 +22,15 @@
 
 #include <iriclib_polygon.h>
 
-#include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/unstructured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -43,11 +38,9 @@
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 #include <misc/zdepthrange.h>
-#include <triangle/triangle.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 
 #include <QAction>
-#include <QCoreApplication>
 #include <QFile>
 #include <QInputDialog>
 #include <QMenu>
@@ -55,96 +48,99 @@
 #include <QMouseEvent>
 #include <QPolygonF>
 #include <QStandardItem>
-#include <QTextStream>
 #include <QToolBar>
-#include <QVector>
-#include <QVector2D>
-#include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkIdList.h>
 #include <vtkPointData.h>
 #include <vtkPoints.h>
+#include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkPolygon.h>
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkTriangle.h>
-#include <vtkVertex.h>
+
+GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
+	m_parent {parent},
+	m_regionPolygon {new GeoDataPolygonRegionPolygon(m_parent)},
+	m_selectedPolygon {m_regionPolygon},
+	m_triangleThread {nullptr},
+	m_inhibitSelect {false},
+	m_shapeUpdating {false},
+	m_bcSettingMode {false},
+	m_selectMode {smPolygon},
+	m_polyData {vtkPolyData::New()},
+	m_scalarValues {vtkDoubleArray::New()},
+	m_rightClickingMenu {new QMenu()},
+	m_holeModeAction {new QAction(QIcon(":/libs/guibase/images/iconPolygonHole.png"), GeoDataPolygon::tr("Add &Hole Region"), m_parent)},
+	m_deleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), GeoDataPolygon::tr("&Delete Hole Region..."), m_parent)},
+	m_editValueAction {new QAction(GeoDataPolygon::tr("Edit &Value..."), m_parent)},
+	m_copyAction {new QAction(GeoDataPolygon::tr("&Copy..."), m_parent)},
+	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GeoDataPolygon::tr("&Add Vertex"), m_parent)},
+	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GeoDataPolygon::tr("&Remove Vertex"), m_parent)},
+	m_coordEditAction {new QAction(GeoDataPolygon::tr("Edit &Coordinates..."), m_parent)},
+	m_editColorSettingAction {new QAction(GeoDataPolygon::tr("Color &Setting..."), m_parent)},
+	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
+	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
+	m_movePointPixmap {":/libs/guibase/images/cursorOpenHandPoint.png"},
+	m_addCursor {m_addPixmap, 0, 0},
+	m_removeCursor {m_removePixmap, 0, 0},
+	m_movePointCursor {m_movePointPixmap}
+{
+	m_regionPolygon->setSelected(true);
+
+	m_holeModeAction->setCheckable(true);
+	m_holeModeAction->setDisabled(true);
+
+	m_addVertexAction->setCheckable(true);
+	m_removeVertexAction->setCheckable(true);
+
+	QObject::connect(m_holeModeAction, SIGNAL(triggered()), m_parent, SLOT(addHolePolygon()));
+	QObject::connect(m_deleteAction, SIGNAL(triggered()), m_parent, SLOT(deletePolygon()));
+	QObject::connect(m_editValueAction, SIGNAL(triggered()), m_parent, SLOT(editValue()));
+	QObject::connect(m_copyAction, SIGNAL(triggered()), m_parent, SLOT(copy()));
+	QObject::connect(m_addVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(addVertexMode(bool)));
+	QObject::connect(m_removeVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(removeVertexMode(bool)));
+	QObject::connect(m_coordEditAction, SIGNAL(triggered()), m_parent, SLOT(editCoordinates()));
+	QObject::connect(m_editColorSettingAction, SIGNAL(triggered()), m_parent, SLOT(editColorSetting()));
+}
+
+GeoDataPolygon::Impl::~Impl()
+{
+	m_scalarValues->Delete();
+	m_polyData->Delete();
+	delete m_rightClickingMenu;
+	delete m_regionPolygon;
+}
 
 GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoData(d, creator, condition)
+	GeoData(d, creator, condition),
+	impl {new Impl {this}}
 {
 	initParams();
 
-	m_shapeUpdating = false;
-	m_triangleThread = nullptr;
-
-	m_gridRegionPolygon = new GeoDataPolygonRegionPolygon(this);
-	m_gridRegionPolygon->setSelected(true);
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
-		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
+		impl->m_regionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
 
-	m_selectMode = smPolygon;
-	m_selectedPolygon = m_gridRegionPolygon;
+	impl->m_mouseEventMode = meBeforeDefining;
 
-	m_editValueAction = new QAction(tr("Edit &Value..."), this);
-	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
-	m_copyAction = new QAction(tr("&Copy..."), this);
-	connect(m_copyAction, SIGNAL(triggered()), this, SLOT(copy()));
-	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this);
-	m_addVertexAction->setCheckable(true);
-	connect(m_addVertexAction, SIGNAL(triggered(bool)), this, SLOT(addVertexMode(bool)));
-	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), this);
-	m_removeVertexAction->setCheckable(true);
-	connect(m_removeVertexAction, SIGNAL(triggered(bool)), this, SLOT(removeVertexMode(bool)));
-	m_coordEditAction = new QAction(tr("Edit &Coordinates..."), this);
-	connect(m_coordEditAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
-	m_holeModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonHole.png"), tr("Add &Hole Region"), this);
-	m_holeModeAction->setCheckable(true);
-	m_holeModeAction->setDisabled(true);
-	connect(m_holeModeAction, SIGNAL(triggered()), this, SLOT(addHolePolygon()));
+	impl->m_scalarValues->SetName("polygonvalue");
+	impl->m_polyData->GetPointData()->AddArray(impl->m_scalarValues);
+	impl->m_polyData->GetPointData()->SetActiveScalars("polygonvalue");
 
-	m_deleteAction = new QAction(tr("&Delete Hole Region..."), this);
-	m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
-	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deletePolygon()));
-	m_editColorSettingAction = new QAction(tr("Color &Setting..."), this);
-	connect(m_editColorSettingAction, SIGNAL(triggered()), this, SLOT(editColorSetting()));
-
-	// Set cursors for mouse view change events.
-	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
-	m_removePixmap = QPixmap(":/libs/guibase/images/cursorRemove.png");
-	m_movePointPixmap = QPixmap(":/libs/guibase/images/cursorOpenHandPoint.png");
-	m_addCursor = QCursor(m_addPixmap, 0, 0);
-	m_removeCursor = QCursor(m_removePixmap, 0, 0);
-	m_movePointCursor = QCursor(m_movePointPixmap);
-
-	m_mouseEventMode = meBeforeDefining;
-
-	m_polyData = vtkSmartPointer<vtkPolyData>::New();
-
-	m_scalarValues = vtkSmartPointer<vtkDoubleArray>::New();
-	m_scalarValues->SetName("polygonvalue");
-	m_polyData->GetPointData()->AddArray(m_scalarValues);
-	m_polyData->GetPointData()->SetActiveScalars("polygonvalue");
-
-	m_paintMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	auto mapper = impl->m_actor.mapper();
 	if (stcc != nullptr) {
-		m_paintMapper->SetLookupTable(stcc->vtkObj());
+		mapper->SetLookupTable(stcc->vtkObj());
 	}
-	m_paintMapper->SetUseLookupTableScalarRange(true);
-	m_paintMapper->SetInputData(m_polyData);
+	mapper->SetUseLookupTableScalarRange(true);
+	mapper->SetInputData(impl->m_polyData);
 
-	m_paintActor = vtkSmartPointer<vtkActor>::New();
-	m_paintActor->GetProperty()->SetLighting(false);
-	m_paintActor->SetMapper(m_paintMapper);
-
-	actorCollection()->AddItem(m_paintActor);
-	renderer()->AddActor(m_paintActor);
+	actorCollection()->AddItem(impl->m_actor.actor());
+	renderer()->AddActor(impl->m_actor.actor());
 
 	updateActorSettings();
 	updateActionStatus();
@@ -152,62 +148,60 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 
 GeoDataPolygon::~GeoDataPolygon()
 {
-	if (m_triangleThread != nullptr) {
-		m_triangleThread->cancelJobs(this);
+	if (impl->m_triangleThread != nullptr) {
+		impl->m_triangleThread->cancelJobs(this);
 	}
-	delete m_gridRegionPolygon;
 	clearHolePolygons();
 
-	delete m_rightClickingMenu;
-
 	vtkRenderer* r = renderer();
-	r->RemoveActor(m_paintActor);
+	r->RemoveActor(impl->m_actor.actor());
+
+	delete impl;
 }
 
 void GeoDataPolygon::setupMenu()
 {
 	m_menu->setTitle(tr("&Polygon"));
 	m_menu->addAction(m_editNameAction);
-	m_menu->addAction(m_editValueAction);
+	m_menu->addAction(impl->m_editValueAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_copyAction);
+	m_menu->addAction(impl->m_copyAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_addVertexAction);
-	m_menu->addAction(m_removeVertexAction);
-	m_menu->addAction(m_coordEditAction);
+	m_menu->addAction(impl->m_addVertexAction);
+	m_menu->addAction(impl->m_removeVertexAction);
+	m_menu->addAction(impl->m_coordEditAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_holeModeAction);
-	m_menu->addAction(m_deleteAction);
+	m_menu->addAction(impl->m_holeModeAction);
+	m_menu->addAction(impl->m_deleteAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_editColorSettingAction);
+	m_menu->addAction(impl->m_editColorSettingAction);
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
-	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(m_editValueAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_copyAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addVertexAction);
-	m_rightClickingMenu->addAction(m_removeVertexAction);
-	m_rightClickingMenu->addAction(m_coordEditAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_holeModeAction);
-	m_rightClickingMenu->addAction(m_deleteAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_editColorSettingAction);
+	impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_copyAction);
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_addVertexAction);
+	impl->m_rightClickingMenu->addAction(impl->m_removeVertexAction);
+	impl->m_rightClickingMenu->addAction(impl->m_coordEditAction);
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_holeModeAction);
+	impl->m_rightClickingMenu->addAction(impl->m_deleteAction);
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_editColorSettingAction);
 }
 
 bool GeoDataPolygon::addToolBarButtons(QToolBar* tb)
 {
-	tb->addAction(m_holeModeAction);
+	tb->addAction(impl->m_holeModeAction);
 
 	tb->addSeparator();
-	tb->addAction(m_addVertexAction);
-	tb->addAction(m_removeVertexAction);
+	tb->addAction(impl->m_addVertexAction);
+	tb->addAction(impl->m_removeVertexAction);
 
 	tb->addSeparator();
-	tb->addAction(m_deleteAction);
+	tb->addAction(impl->m_deleteAction);
 	return true;
 }
 
@@ -218,46 +212,66 @@ QColor GeoDataPolygon::doubleToColor(double /*d*/)
 
 void GeoDataPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)
 {
-	m_setting.mapping = m;
+	impl->m_setting.mapping = m;
 	updateActorSettings();
 }
 
 void GeoDataPolygon::setOpacity(int opacity)
 {
-	m_setting.opacity = opacity;
+	impl->m_setting.opacity = opacity;
 	updateActorSettings();
 }
 
 void GeoDataPolygon::setColor(const QColor& color)
 {
-	m_setting.color = color;
+	impl->m_setting.color = color;
 	updateActorSettings();
+}
+
+void GeoDataPolygon::setMouseEventMode(MouseEventMode mode)
+{
+	impl->m_mouseEventMode = mode;
+}
+
+void GeoDataPolygon::setSelectMode(SelectMode mode)
+{
+	impl->m_selectMode = mode;
+}
+
+GeoDataPolygonColorSettingDialog::Setting GeoDataPolygon::colorSetting() const
+{
+	return impl->m_setting;
+}
+
+void GeoDataPolygon::setColorSetting(GeoDataPolygonColorSettingDialog::Setting setting)
+{
+	impl->m_setting = setting;
 }
 
 void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
 {
-	m_gridRegionPolygon->setActive(true);
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
+	impl->m_regionPolygon->setActive(true);
+	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
+		GeoDataPolygonHolePolygon* p = impl->m_holePolygons.at(i);
 		p->setActive(true);
 	}
 
-	m_selectMode = smPolygon;
-	m_gridRegionPolygon->setSelected(true);
-	m_selectedPolygon = m_gridRegionPolygon;
+	impl->m_selectMode = smPolygon;
+	impl->m_regionPolygon->setSelected(true);
+	impl->m_selectedPolygon = impl->m_regionPolygon;
 
 	updateMouseCursor(v);
 }
 
 void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
-	m_gridRegionPolygon->setActive(false);
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
+	impl->m_regionPolygon->setActive(false);
+	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
+		GeoDataPolygonHolePolygon* p = impl->m_holePolygons.at(i);
 		p->setActive(false);
 	}
-	if (m_selectedPolygon != nullptr) {
-		m_selectedPolygon->setSelected(false);
+	if (impl->m_selectedPolygon != nullptr) {
+		impl->m_selectedPolygon->setSelected(false);
 	}
 	v->unsetCursor();
 }
@@ -270,8 +284,8 @@ void GeoDataPolygon::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 void GeoDataPolygon::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
-	if (m_mouseEventMode != meDefining) {return;}
-	if (m_selectMode != smPolygon) {return;}
+	if (impl->m_mouseEventMode != meDefining) {return;}
+	if (impl->m_selectMode != smPolygon) {return;}
 
 	definePolygon(false);
 }
@@ -281,8 +295,8 @@ void GeoDataPolygon::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsV
 
 void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode == meDefining) {
-		if (m_selectMode == smPolygon) {
+	if (impl->m_mouseEventMode == meDefining) {
+		if (impl->m_selectMode == smPolygon) {
 			definePolygon(true);
 		}
 	}
@@ -291,7 +305,7 @@ void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorG
 
 void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
+	switch (impl->m_mouseEventMode) {
 	case meNormal:
 	case meTranslatePrepare:
 	case meMoveVertexPrepare:
@@ -299,7 +313,7 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 	case meAddVertexNotPossible:
 	case meRemoveVertexPrepare:
 	case meRemoveVertexNotPossible:
-		m_currentPoint = QPoint(event->x(), event->y());
+		impl->m_currentPoint = event->pos();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
@@ -308,26 +322,26 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 		break;
 	case meDefining:
 		// update the position of the last point.
-		if (m_selectMode == smPolygon) {
-			pushRenderCommand(new PushNewPointCommand(false, QPoint(event->x(), event->y()), this));
+		if (impl->m_selectMode == smPolygon) {
+			pushRenderCommand(new PushNewPointCommand(false, event->pos(), this));
 		}
 		break;
 	case meTranslate:
 		// execute translation.
-		if (m_selectMode == smPolygon) {
-			pushRenderCommand(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+		if (impl->m_selectMode == smPolygon) {
+			pushRenderCommand(new MovePolygonCommand(false, impl->m_currentPoint, event->pos(), this));
 		}
-		m_currentPoint = QPoint(event->x(), event->y());
+		impl->m_currentPoint = event->pos();
 		break;
 	case meMoveVertex:
-		if (m_selectMode == smPolygon) {
-			pushRenderCommand(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
+		if (impl->m_selectMode == smPolygon) {
+			pushRenderCommand(new MoveVertexCommand(false, impl->m_currentPoint, event->pos(), impl->m_selectedPolygon->selectedVertexId(), this));
 		}
-		m_currentPoint = QPoint(event->x(), event->y());
+		impl->m_currentPoint = event->pos();
 		break;
 	case meAddVertex:
-		if (m_selectMode == smPolygon) {
-			pushRenderCommand(new AddVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+		if (impl->m_selectMode == smPolygon) {
+			pushRenderCommand(new AddVertexCommand(false, impl->m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 		}
 		break;
 	case meTranslateDialog:
@@ -346,7 +360,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 		double worldY = static_cast<double>(event->y());
 		v->viewportToWorld(worldX, worldY);
 
-		switch (m_mouseEventMode) {
+		switch (impl->m_mouseEventMode) {
 		case meNormal:
 			// new selected polygon.
 			if (selectObject(event->pos())) {
@@ -359,14 +373,14 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			break;
 		case meBeforeDefining:
 			// enter defining mode.
-			m_mouseEventMode = meDefining;
-			if (m_selectMode == smPolygon) {
-				pushRenderCommand(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			impl->m_mouseEventMode = meDefining;
+			if (impl->m_selectMode == smPolygon) {
+				pushRenderCommand(new PushNewPointCommand(true, event->pos(), this));
 			}
 			break;
 		case meDefining:
-			if (m_selectMode == smPolygon) {
-				pushRenderCommand(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			if (impl->m_selectMode == smPolygon) {
+				pushRenderCommand(new PushNewPointCommand(true, event->pos(), this));
 			}
 			break;
 		case meTranslatePrepare:
@@ -378,43 +392,43 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 				renderGraphicsView();
 			} else {
 				// start translating
-				m_mouseEventMode = meTranslate;
-				m_currentPoint = QPoint(event->x(), event->y());
+				impl->m_mouseEventMode = meTranslate;
+				impl->m_currentPoint = event->pos();
 				updateMouseCursor(v);
 				// push the first translation command.
-				if (m_selectMode == smPolygon) {
-					pushRenderCommand(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
+				if (impl->m_selectMode == smPolygon) {
+					pushRenderCommand(new MovePolygonCommand(true, impl->m_currentPoint, impl->m_currentPoint, this));
 				}
 			}
 			break;
 		case meMoveVertexPrepare:
-			m_mouseEventMode = meMoveVertex;
-			m_currentPoint = QPoint(event->x(), event->y());
+			impl->m_mouseEventMode = meMoveVertex;
+			impl->m_currentPoint = event->pos();
 			// push the first move command.
-			if (m_selectMode == smPolygon) {
-				pushRenderCommand(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
+			if (impl->m_selectMode == smPolygon) {
+				pushRenderCommand(new MoveVertexCommand(true, impl->m_currentPoint, impl->m_currentPoint, impl->m_selectedPolygon->selectedVertexId(), this));
 			}
 			break;
 		case meAddVertexPrepare:
-			m_mouseEventMode = meAddVertex;
-			if (m_selectMode == smPolygon) {
-				pushRenderCommand(new AddVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			impl->m_mouseEventMode = meAddVertex;
+			if (impl->m_selectMode == smPolygon) {
+				pushRenderCommand(new AddVertexCommand(true, impl->m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 			}
 			break;
 		case meAddVertexNotPossible:
 			// do nothing.
 			break;
 		case meRemoveVertexPrepare:
-			if (m_selectMode == smPolygon) {
-				if (m_selectedPolygon->polygon().count() == 1) {
+			if (impl->m_selectMode == smPolygon) {
+				if (impl->m_selectedPolygon->polygon().count() == 1) {
 					// you are going to remove the last point.
 					deletePolygon(true);
 				} else {
-					m_mouseEventMode = meNormal;
-					pushRenderCommand(new RemoveVertexCommand(m_selectedPolygon->selectedVertexId(), this));
+					impl->m_mouseEventMode = meNormal;
+					pushRenderCommand(new RemoveVertexCommand(impl->m_selectedPolygon->selectedVertexId(), this));
 				}
 			}
-			m_inhibitSelect = true;
+			impl->m_inhibitSelect = true;
 			break;
 		case meRemoveVertexNotPossible:
 			// do nothing.
@@ -437,14 +451,14 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 		updateActionStatus();
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		impl->m_dragStartPoint = event->pos();
 	}
 }
 
 void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		switch (m_mouseEventMode) {
+		switch (impl->m_mouseEventMode) {
 		case meNormal:
 		case meTranslatePrepare:
 		case meMoveVertexPrepare:
@@ -455,7 +469,7 @@ void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsV
 		case meTranslate:
 		case meMoveVertex:
 		case meAddVertex:
-			m_currentPoint = QPoint(event->x(), event->y());
+			impl->m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			updateActionStatus();
@@ -467,20 +481,20 @@ void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsV
 		default:
 			break;
 		}
-		m_inhibitSelect = false;
+		impl->m_inhibitSelect = false;
 	} else if (event->button() == Qt::RightButton) {
-		if (m_mouseEventMode == meEditVerticesDialog) {return;}
-		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
+		if (impl->m_mouseEventMode == meEditVerticesDialog) {return;}
+		if (iRIC::isNear(impl->m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
-			m_rightClickingMenu->move(event->globalPos());
-			m_rightClickingMenu->show();
+			impl->m_rightClickingMenu->move(event->globalPos());
+			impl->m_rightClickingMenu->show();
 		}
 	}
 }
 
 void GeoDataPolygon::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
+	switch (impl->m_mouseEventMode) {
 	case meNormal:
 	case meAddVertexNotPossible:
 	case meRemoveVertexNotPossible:
@@ -496,13 +510,13 @@ void GeoDataPolygon::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::OpenHandCursor);
 		break;
 	case meMoveVertexPrepare:
-		v->setCursor(m_movePointCursor);
+		v->setCursor(impl->m_movePointCursor);
 		break;
 	case meAddVertexPrepare:
-		v->setCursor(m_addCursor);
+		v->setCursor(impl->m_addCursor);
 		break;
 	case meRemoveVertexPrepare:
-		v->setCursor(m_removeCursor);
+		v->setCursor(impl->m_removeCursor);
 		break;
 	case meTranslate:
 	case meMoveVertex:
@@ -515,9 +529,9 @@ void GeoDataPolygon::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 void GeoDataPolygon::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_editNameAction);
-	menu->addAction(m_editValueAction);
+	menu->addAction(impl->m_editValueAction);
 	menu->addSeparator();
-	menu->addAction(m_copyAction);
+	menu->addAction(impl->m_copyAction);
 }
 
 void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
@@ -526,8 +540,8 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 	if (doubleClick) {
 		minCount = 3;
 	}
-	if (m_selectedPolygon == nullptr) {return;}
-	if (m_selectedPolygon->polygon().count() <= minCount) {
+	if (impl->m_selectedPolygon == nullptr) {return;}
+	if (impl->m_selectedPolygon->polygon().count() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
 	}
@@ -537,22 +551,22 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 	// finish defining the polygon.
 	stack.push(new FinishPolygonDefiningCommand(this));
 	stack.endMacro();
-	if (m_selectedPolygon == m_gridRegionPolygon && (! noEditVal)) {
+	if (impl->m_selectedPolygon == impl->m_regionPolygon && (! noEditVal)) {
 		editValue();
 	}
 }
 
 QColor GeoDataPolygon::color() const
 {
-	return m_setting.color;
+	return impl->m_setting.color;
 }
 
 void GeoDataPolygon::addVertexMode(bool on)
 {
 	if (on) {
-		m_mouseEventMode = meAddVertexNotPossible;
+		impl->m_mouseEventMode = meAddVertexNotPossible;
 	} else {
-		m_mouseEventMode = meNormal;
+		impl->m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
 }
@@ -560,9 +574,9 @@ void GeoDataPolygon::addVertexMode(bool on)
 void GeoDataPolygon::removeVertexMode(bool on)
 {
 	if (on) {
-		m_mouseEventMode = meRemoveVertexNotPossible;
+		impl->m_mouseEventMode = meRemoveVertexNotPossible;
 	} else {
-		m_mouseEventMode = meNormal;
+		impl->m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
 }
@@ -570,20 +584,20 @@ void GeoDataPolygon::removeVertexMode(bool on)
 void GeoDataPolygon::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
-	m_setting.load(node);
+	impl->m_setting.load(node);
 }
 
 void GeoDataPolygon::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	m_setting.save(writer);
+	impl->m_setting.save(writer);
 }
 
 void GeoDataPolygon::loadExternalData(const QString& filename)
 {
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
-		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
+		impl->m_regionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
 	if (projectData()->version().build() >= 3607) {
 		iRICLib::Polygon* pol = new iRICLib::Polygon();
@@ -594,16 +608,16 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 		}
 
 		pol->load(iRIC::toStr(filename).c_str(), noDim);
-		m_variantValues.clear();
+		impl->m_variantValues.clear();
 		for (unsigned int i = 0; i < pol->values.size(); ++i) {
-			m_variantValues.push_back(pol->values[i]);
+			impl->m_variantValues.push_back(pol->values[i]);
 		}
 		QPolygonF qpol;
 		iRICLib::InternalPolygon* regionPolygon = pol->polygon;
 		for (int i = 0; i < regionPolygon->pointCount; ++i) {
 			qpol << QPointF(*(regionPolygon->x + i), *(regionPolygon->y + i));
 		}
-		m_gridRegionPolygon->setPolygon(qpol);
+		impl->m_regionPolygon->setPolygon(qpol);
 
 		for (unsigned int i = 0; i < pol->holes.size(); ++i) {
 			qpol.clear();
@@ -615,7 +629,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 			holePol->setPolygon(qpol);
 			holePol->setActive(false);
 			holePol->setSelected(false);
-			m_holePolygons.append(holePol);
+			impl->m_holePolygons.push_back(holePol);
 		}
 		delete pol;
 	} else {
@@ -633,7 +647,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 			}
 			poly << poly.at(0);
 		}
-		m_gridRegionPolygon->setPolygon(poly);
+		impl->m_regionPolygon->setPolygon(poly);
 
 		// for newer than 2870, holes are supported.
 		if (projectData()->version().build() >= 2870) {
@@ -646,19 +660,19 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 				holePol->setPolygon(pol);
 				holePol->setActive(false);
 				holePol->setSelected(false);
-				m_holePolygons.append(holePol);
+				impl->m_holePolygons.push_back(holePol);
 			}
 		}
 		f.close();
 	}
 
-	if (m_gridRegionPolygon->polygon().size() > 0) {
-		m_mouseEventMode = meNormal;
+	if (impl->m_regionPolygon->polygon().size() > 0) {
+		impl->m_mouseEventMode = meNormal;
 		informDeselection(graphicsView());
 	} else {
-		m_mouseEventMode = meBeforeDefining;
-		m_selectMode = smPolygon;
-		m_selectedPolygon = m_gridRegionPolygon;
+		impl->m_mouseEventMode = meBeforeDefining;
+		impl->m_selectMode = smPolygon;
+		impl->m_selectedPolygon = impl->m_regionPolygon;
 	}
 	deselectAll();
 	updatePolyData(true);
@@ -670,11 +684,11 @@ void GeoDataPolygon::saveExternalData(const QString& filename)
 {
 	iRICLib::Polygon pol;
 	pol.values.clear();
-	for (int i = 0; i < m_variantValues.size(); ++i) {
-		pol.values.push_back(m_variantValues.at(i).toDouble());
+	for (int i = 0; i < impl->m_variantValues.size(); ++i) {
+		pol.values.push_back(impl->m_variantValues.at(i).toDouble());
 	}
 	iRICLib::InternalPolygon* regionPolygon = new iRICLib::InternalPolygon();
-	QPolygonF qpol = polygon();
+	QPolygonF qpol = impl->m_regionPolygon->polygon();
 	regionPolygon->pointCount = qpol.count();
 	regionPolygon->x = new double[regionPolygon->pointCount];
 	regionPolygon->y = new double[regionPolygon->pointCount];
@@ -683,9 +697,9 @@ void GeoDataPolygon::saveExternalData(const QString& filename)
 		*(regionPolygon->y + i) = qpol.at(i).y();
 	}
 	pol.polygon = regionPolygon;
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
+	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
 		iRICLib::InternalPolygon* holePolygon = new iRICLib::InternalPolygon();
-		QPolygonF hqpol = m_holePolygons[i]->polygon();
+		QPolygonF hqpol = impl->m_holePolygons[i]->polygon();
 		holePolygon->pointCount = hqpol.count();
 		holePolygon->x = new double[holePolygon->pointCount];
 		holePolygon->y = new double[holePolygon->pointCount];
@@ -710,48 +724,48 @@ void GeoDataPolygon::updateZDepthRangeItemCount(ZDepthRange& range)
 
 void GeoDataPolygon::assignActorZValues(const ZDepthRange& range)
 {
-	m_depthRange = range;
-	m_gridRegionPolygon->setZDepthRange(range.min(), range.max());
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* p = m_holePolygons[i];
+	impl->m_depthRange = range;
+	impl->m_regionPolygon->setZDepthRange(range.min(), range.max());
+	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
+		GeoDataPolygonHolePolygon* p = impl->m_holePolygons[i];
 		p->setZDepthRange(range.min(), range.max());
 	}
-	m_paintActor->SetPosition(0, 0, range.min());
+	impl->m_actor.actor()->SetPosition(0, 0, range.min());
 }
 
 void GeoDataPolygon::updateMouseEventMode()
 {
 	double dx, dy;
-	dx = m_currentPoint.x();
-	dy = m_currentPoint.y();
+	dx = impl->m_currentPoint.x();
+	dy = impl->m_currentPoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
 	QPointF worldPos(dx, dy);
-	bool shapeUpdating = m_shapeUpdating;
-	shapeUpdating = shapeUpdating || (m_triangleThread != nullptr && m_triangleThread->isOutputting(this));
-	switch (m_mouseEventMode) {
+	bool shapeUpdating = impl->m_shapeUpdating;
+	shapeUpdating = shapeUpdating || (impl->m_triangleThread != nullptr && impl->m_triangleThread->isOutputting(this));
+	switch (impl->m_mouseEventMode) {
 	case meAddVertexNotPossible:
 	case meAddVertexPrepare:
-		if (m_selectMode == smNone) {return;}
-		if (m_selectMode == smPolygon) {
+		if (impl->m_selectMode == smNone) {return;}
+		if (impl->m_selectMode == smPolygon) {
 			if (shapeUpdating) {
-				m_mouseEventMode = meAddVertexNotPossible;
-			} else if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
-				m_mouseEventMode = meAddVertexPrepare;
+				impl->m_mouseEventMode = meAddVertexNotPossible;
+			} else if (impl->m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
+				impl->m_mouseEventMode = meAddVertexPrepare;
 			} else {
-				m_mouseEventMode = meAddVertexNotPossible;
+				impl->m_mouseEventMode = meAddVertexNotPossible;
 			}
 		}
 		break;
 	case meRemoveVertexNotPossible:
 	case meRemoveVertexPrepare:
-		if (m_selectMode == smNone) {return;}
-		if (m_selectMode == smPolygon) {
+		if (impl->m_selectMode == smNone) {return;}
+		if (impl->m_selectMode == smPolygon) {
 			if (shapeUpdating) {
-				m_mouseEventMode = meRemoveVertexNotPossible;
-			} else if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
-				m_mouseEventMode = meRemoveVertexPrepare;
+				impl->m_mouseEventMode = meRemoveVertexNotPossible;
+			} else if (impl->m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
+				impl->m_mouseEventMode = meRemoveVertexPrepare;
 			} else {
-				m_mouseEventMode = meRemoveVertexNotPossible;
+				impl->m_mouseEventMode = meRemoveVertexNotPossible;
 			}
 		}
 		break;
@@ -761,16 +775,16 @@ void GeoDataPolygon::updateMouseEventMode()
 	case meTranslate:
 	case meMoveVertex:
 	case meAddVertex:
-		if (m_selectMode == smNone) {return;}
-		if (m_selectMode == smPolygon) {
+		if (impl->m_selectMode == smNone) {return;}
+		if (impl->m_selectMode == smPolygon) {
 			if (shapeUpdating) {
-				m_mouseEventMode = meNormal;
-			} else if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
-				m_mouseEventMode = meMoveVertexPrepare;
-			} else if (m_selectedPolygon == m_gridRegionPolygon && m_selectedPolygon->isPolygonSelectable(worldPos)) {
-				m_mouseEventMode = meTranslatePrepare;
+				impl->m_mouseEventMode = meNormal;
+			} else if (impl->m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
+				impl->m_mouseEventMode = meMoveVertexPrepare;
+			} else if (impl->m_selectedPolygon == impl->m_regionPolygon && impl->m_selectedPolygon->isPolygonSelectable(worldPos)) {
+				impl->m_mouseEventMode = meTranslatePrepare;
 			} else {
-				m_mouseEventMode = meNormal;
+				impl->m_mouseEventMode = meNormal;
 			}
 		}
 		break;
@@ -787,102 +801,102 @@ void GeoDataPolygon::updateMouseEventMode()
 
 void GeoDataPolygon::updateActionStatus()
 {
-	switch (m_mouseEventMode) {
+	switch (impl->m_mouseEventMode) {
 	case meBeforeDefining:
 	case meDefining:
-		m_addVertexAction->setDisabled(true);
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setDisabled(true);
-		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(false);
+		impl->m_addVertexAction->setDisabled(true);
+		impl->m_addVertexAction->setChecked(false);
+		impl->m_removeVertexAction->setDisabled(true);
+		impl->m_removeVertexAction->setChecked(false);
+		impl->m_coordEditAction->setEnabled(false);
 
-		m_holeModeAction->setDisabled(true);
-		m_holeModeAction->setChecked(false);
-		m_deleteAction->setDisabled(true);
-		if (dynamic_cast<GeoDataPolygonRegionPolygon*>(m_selectedPolygon) != nullptr) {
+		impl->m_holeModeAction->setDisabled(true);
+		impl->m_holeModeAction->setChecked(false);
+		impl->m_deleteAction->setDisabled(true);
+		if (dynamic_cast<GeoDataPolygonRegionPolygon*>(impl->m_selectedPolygon) != nullptr) {
 //			m_defineModeAction->setChecked(true);
-		} else if (dynamic_cast<GeoDataPolygonHolePolygon*>(m_selectedPolygon) != nullptr) {
-			m_holeModeAction->setChecked(true);
+		} else if (dynamic_cast<GeoDataPolygonHolePolygon*>(impl->m_selectedPolygon) != nullptr) {
+			impl->m_holeModeAction->setChecked(true);
 		}
 		break;
 	case meTranslate:
 	case meMoveVertex:
-		m_addVertexAction->setDisabled(true);
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setDisabled(true);
-		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setDisabled(true);
+		impl->m_addVertexAction->setDisabled(true);
+		impl->m_addVertexAction->setChecked(false);
+		impl->m_removeVertexAction->setDisabled(true);
+		impl->m_removeVertexAction->setChecked(false);
+		impl->m_coordEditAction->setDisabled(true);
 
-		m_holeModeAction->setDisabled(true);
-		m_deleteAction->setDisabled(true);
+		impl->m_holeModeAction->setDisabled(true);
+		impl->m_deleteAction->setDisabled(true);
 		break;
 
 		break;
 	case meNormal:
 	case meTranslatePrepare:
 	case meMoveVertexPrepare:
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setChecked(false);
+		impl->m_addVertexAction->setChecked(false);
+		impl->m_removeVertexAction->setChecked(false);
 
-		if (m_selectMode != smNone) {
-			m_addVertexAction->setEnabled(true);
-			if (m_selectMode == smPolygon) {
-				m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
+		if (impl->m_selectMode != smNone) {
+			impl->m_addVertexAction->setEnabled(true);
+			if (impl->m_selectMode == smPolygon) {
+				impl->m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
 			}
-			m_coordEditAction->setEnabled(true);
+			impl->m_coordEditAction->setEnabled(true);
 		} else {
-			m_addVertexAction->setDisabled(true);
-			m_removeVertexAction->setDisabled(true);
-			m_coordEditAction->setDisabled(true);
+			impl->m_addVertexAction->setDisabled(true);
+			impl->m_removeVertexAction->setDisabled(true);
+			impl->m_coordEditAction->setDisabled(true);
 		}
 
-		m_holeModeAction->setEnabled(true);
-		m_holeModeAction->setChecked(false);
-		if (m_selectedPolygon != nullptr) {
-			m_addVertexAction->setEnabled(true);
-			m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
-			m_coordEditAction->setEnabled(true);
-			m_deleteAction->setEnabled(m_selectedPolygon != m_gridRegionPolygon);
+		impl->m_holeModeAction->setEnabled(true);
+		impl->m_holeModeAction->setChecked(false);
+		if (impl->m_selectedPolygon != nullptr) {
+			impl->m_addVertexAction->setEnabled(true);
+			impl->m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
+			impl->m_coordEditAction->setEnabled(true);
+			impl->m_deleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
 		} else {
-			m_addVertexAction->setDisabled(true);
-			m_removeVertexAction->setDisabled(true);
-			m_coordEditAction->setDisabled(true);
-			m_deleteAction->setDisabled(true);
+			impl->m_addVertexAction->setDisabled(true);
+			impl->m_removeVertexAction->setDisabled(true);
+			impl->m_coordEditAction->setDisabled(true);
+			impl->m_deleteAction->setDisabled(true);
 		}
 		break;
 	case meAddVertexPrepare:
 	case meAddVertexNotPossible:
 	case meAddVertex:
-		m_addVertexAction->setChecked(true);
-		m_removeVertexAction->setChecked(false);
+		impl->m_addVertexAction->setChecked(true);
+		impl->m_removeVertexAction->setChecked(false);
 
-		if (m_selectMode != smNone) {
-			m_addVertexAction->setEnabled(true);
-			if (m_selectMode == smPolygon) {
-				m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
+		if (impl->m_selectMode != smNone) {
+			impl->m_addVertexAction->setEnabled(true);
+			if (impl->m_selectMode == smPolygon) {
+				impl->m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
 			}
-			m_coordEditAction->setEnabled(true);
+			impl->m_coordEditAction->setEnabled(true);
 		} else {
-			m_addVertexAction->setDisabled(true);
-			m_removeVertexAction->setDisabled(true);
-			m_coordEditAction->setDisabled(true);
+			impl->m_addVertexAction->setDisabled(true);
+			impl->m_removeVertexAction->setDisabled(true);
+			impl->m_coordEditAction->setDisabled(true);
 		}
-		m_holeModeAction->setDisabled(true);
-		m_holeModeAction->setChecked(false);
-		m_deleteAction->setEnabled(m_selectedPolygon != m_gridRegionPolygon);
+		impl->m_holeModeAction->setDisabled(true);
+		impl->m_holeModeAction->setChecked(false);
+		impl->m_deleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
 
 		break;
 	case meRemoveVertexPrepare:
 	case meRemoveVertexNotPossible:
-		m_addVertexAction->setEnabled(true);
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setEnabled(true);
-		m_removeVertexAction->setChecked(true);
-		m_coordEditAction->setEnabled(false);
+		impl->m_addVertexAction->setEnabled(true);
+		impl->m_addVertexAction->setChecked(false);
+		impl->m_removeVertexAction->setEnabled(true);
+		impl->m_removeVertexAction->setChecked(true);
+		impl->m_coordEditAction->setEnabled(false);
 
-		m_holeModeAction->setDisabled(true);
-		m_holeModeAction->setChecked(false);
-		m_deleteAction->setEnabled(m_selectedPolygon != m_gridRegionPolygon);
+		impl->m_holeModeAction->setDisabled(true);
+		impl->m_holeModeAction->setChecked(false);
+		impl->m_deleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
 		break;
 	case meTranslateDialog:
 	case meEditVerticesDialog:
@@ -897,20 +911,20 @@ void GeoDataPolygon::editCoordinates()
 
 void GeoDataPolygon::restoreMouseEventMode()
 {
-	m_mouseEventMode = meNormal;
+	impl->m_mouseEventMode = meNormal;
 }
 
 void GeoDataPolygon::clear()
 {
 	initParams();
 	clearHolePolygons();
-	delete m_gridRegionPolygon;
+	delete impl->m_regionPolygon;
 
-	m_gridRegionPolygon = new GeoDataPolygonRegionPolygon(this);
-	m_gridRegionPolygon->setSelected(true);
-	m_gridRegionPolygon->setZDepthRange(m_depthRange.min(), m_depthRange.max());
-	m_mouseEventMode = meBeforeDefining;
-	m_selectedPolygon = m_gridRegionPolygon;
+	impl->m_regionPolygon = new GeoDataPolygonRegionPolygon(this);
+	impl->m_regionPolygon->setSelected(true);
+	impl->m_regionPolygon->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
+	impl->m_mouseEventMode = meBeforeDefining;
+	impl->m_selectedPolygon = impl->m_regionPolygon;
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
@@ -923,7 +937,7 @@ bool GeoDataPolygon::ready() const
 
 void GeoDataPolygon::initParams()
 {
-	m_variantValues.clear();
+	impl->m_variantValues.clear();
 
 	int maxIndex = 1;
 	GridAttributeDimensionsContainer* dims = dimensions();
@@ -940,15 +954,15 @@ void GeoDataPolygon::initParams()
 	}
 
 	for (int i = 0; i <= maxIndex; ++i) {
-		m_variantValues.push_back(defaultValue);
+		impl->m_variantValues.push_back(defaultValue);
 	}
 }
 
 void GeoDataPolygon::addHolePolygon()
 {
 	auto holePol = setupHolePolygon();
-	if (m_selectedPolygon != nullptr) {
-		m_selectedPolygon->setSelected(false);
+	if (impl->m_selectedPolygon != nullptr) {
+		impl->m_selectedPolygon->setSelected(false);
 	}
 	pushRenderCommand(new AddHolePolygonCommand(holePol, this));
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
@@ -956,47 +970,47 @@ void GeoDataPolygon::addHolePolygon()
 
 vtkPolyData* GeoDataPolygon::polyData() const
 {
-	return m_polyData;
+	return impl->m_polyData;
 }
 
 GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 {
 	GeoDataPolygonHolePolygon* pol = new GeoDataPolygonHolePolygon(this);
 
-	pol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
+	pol->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		pol->setLookupTable(scalarsToColorsContainer()->vtkDarkObj());
 	}
 	pol->setActive(true);
-	pol->setMapping(m_setting.mapping);
-	pol->setColor(m_setting.color);
+	pol->setMapping(impl->m_setting.mapping);
+	pol->setColor(impl->m_setting.color);
 
 	return pol;
 }
 
 void GeoDataPolygon::deletePolygon(bool force)
 {
-	if (m_selectedPolygon == nullptr) {return;}
+	if (impl->m_selectedPolygon == nullptr) {return;}
 	if (! force) {
 		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove this polygon?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
-	if (dynamic_cast<GeoDataPolygonRegionPolygon*>(m_selectedPolygon) != nullptr) {
-		delete m_gridRegionPolygon;
-		m_gridRegionPolygon = new GeoDataPolygonRegionPolygon(this);
-		m_gridRegionPolygon->setActive(true);
-		m_gridRegionPolygon->setSelected(true);
-		m_gridRegionPolygon->setZDepthRange(m_depthRange.min(), m_depthRange.max());
-		m_selectedPolygon = m_gridRegionPolygon;
-		m_mouseEventMode = meBeforeDefining;
-	} else if (dynamic_cast<GeoDataPolygonHolePolygon*>(m_selectedPolygon) != nullptr) {
-		GeoDataPolygonHolePolygon* tmpPoly = dynamic_cast<GeoDataPolygonHolePolygon*>(m_selectedPolygon);
-		m_holePolygons.removeOne(tmpPoly);
-		delete m_selectedPolygon;
-		m_selectedPolygon = nullptr;
-		m_selectMode = smNone;
-		m_mouseEventMode = meNormal;
+	if (dynamic_cast<GeoDataPolygonRegionPolygon*>(impl->m_selectedPolygon) != nullptr) {
+		delete impl->m_regionPolygon;
+		impl->m_regionPolygon = new GeoDataPolygonRegionPolygon(this);
+		impl->m_regionPolygon->setActive(true);
+		impl->m_regionPolygon->setSelected(true);
+		impl->m_regionPolygon->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
+		impl->m_selectedPolygon = impl->m_regionPolygon;
+		impl->m_mouseEventMode = meBeforeDefining;
+	} else if (dynamic_cast<GeoDataPolygonHolePolygon*>(impl->m_selectedPolygon) != nullptr) {
+		GeoDataPolygonHolePolygon* tmpPoly = dynamic_cast<GeoDataPolygonHolePolygon*>(impl->m_selectedPolygon);
+		impl->m_holePolygons.removeOne(tmpPoly);
+		delete impl->m_selectedPolygon;
+		impl->m_selectedPolygon = nullptr;
+		impl->m_selectMode = smNone;
+		impl->m_mouseEventMode = meNormal;
 	}
 	// This operation is not undoable.
 	iRICUndoStack::instance().clear();
@@ -1010,8 +1024,8 @@ void GeoDataPolygon::deletePolygon(bool force)
 
 bool GeoDataPolygon::selectObject(QPoint point)
 {
-	SelectMode oldSelectMode = m_selectMode;
-	GeoDataPolygonAbstractPolygon* oldSelectedPolygon = m_selectedPolygon;
+	SelectMode oldSelectMode = impl->m_selectMode;
+	GeoDataPolygonAbstractPolygon* oldSelectedPolygon = impl->m_selectedPolygon;
 	deselectAll();
 
 	double dx = point.x();
@@ -1024,8 +1038,8 @@ bool GeoDataPolygon::selectObject(QPoint point)
 	// find polygon that contains this point.
 	GeoDataPolygonAbstractPolygon* newSelPol = nullptr;
 	bool selected = false;
-	for (int i = m_holePolygons.count() - 1; i >= 0 && (! selected); --i) {
-		GeoDataPolygonAbstractPolygon* pol = m_holePolygons[i];
+	for (int i = impl->m_holePolygons.size() - 1; i >= 0 && (!selected); --i) {
+		GeoDataPolygonAbstractPolygon* pol = impl->m_holePolygons[i];
 		QPolygonF polF = pol->polygon();
 		if (polF.count() <= 3) {
 			if (pol->isEdgeSelectable(p, selectlimit)) {
@@ -1043,35 +1057,35 @@ bool GeoDataPolygon::selectObject(QPoint point)
 		}
 	}
 	if (! selected) {
-		QPolygonF polF = m_gridRegionPolygon->polygon();
+		QPolygonF polF = impl->m_regionPolygon->polygon();
 		if (polF.count() <= 3) {
-			if (m_gridRegionPolygon->isEdgeSelectable(p, selectlimit)) {
-				newSelPol = m_gridRegionPolygon;
+			if (impl->m_regionPolygon->isEdgeSelectable(p, selectlimit)) {
+				newSelPol = impl->m_regionPolygon;
 				selected = true;
-			} else if (m_gridRegionPolygon->isVertexSelectable(p, selectlimit)) {
-				newSelPol = m_gridRegionPolygon;
+			} else if (impl->m_regionPolygon->isVertexSelectable(p, selectlimit)) {
+				newSelPol = impl->m_regionPolygon;
 				selected = true;
 			}
 		} else {
-			if (m_gridRegionPolygon->polygon().containsPoint(p, Qt::OddEvenFill)) {
-				newSelPol = m_gridRegionPolygon;
+			if (impl->m_regionPolygon->polygon().containsPoint(p, Qt::OddEvenFill)) {
+				newSelPol = impl->m_regionPolygon;
 				selected = true;
 			}
 		}
 	}
 	if (newSelPol != nullptr) {
-		m_selectMode = smPolygon;
-		m_selectedPolygon = newSelPol;
-		m_selectedPolygon->setSelected(true);
+		impl->m_selectMode = smPolygon;
+		impl->m_selectedPolygon = newSelPol;
+		impl->m_selectedPolygon->setSelected(true);
 	}
 	if (! selected) {
-		m_selectMode = smNone;
-		m_selectedPolygon = nullptr;
+		impl->m_selectMode = smNone;
+		impl->m_selectedPolygon = nullptr;
 	}
 
-	if (m_selectMode != oldSelectMode) {return true;}
-	if (m_selectMode == smPolygon) {
-		return m_selectedPolygon != oldSelectedPolygon;
+	if (impl->m_selectMode != oldSelectMode) {return true;}
+	if (impl->m_selectMode == smPolygon) {
+		return impl->m_selectedPolygon != oldSelectedPolygon;
 	}
 	return false;
 }
@@ -1079,29 +1093,29 @@ bool GeoDataPolygon::selectObject(QPoint point)
 void GeoDataPolygon::deselectAll()
 {
 //	m_editMaxAreaAction->disconnect();
-	if (m_selectMode == smPolygon) {
-		if (m_selectedPolygon != nullptr) {
-			m_selectedPolygon->setSelected(false);
-			m_selectedPolygon = nullptr;
+	if (impl->m_selectMode == smPolygon) {
+		if (impl->m_selectedPolygon != nullptr) {
+			impl->m_selectedPolygon->setSelected(false);
+			impl->m_selectedPolygon = nullptr;
 		}
 	}
-	m_selectMode = smNone;
+	impl->m_selectMode = smNone;
 }
 
 bool GeoDataPolygon::checkCondition()
 {
-	if (m_gridRegionPolygon->polygon().count() < 4) {
+	if (impl->m_regionPolygon->polygon().count() < 4) {
 //		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region polygon have to consists of more than three vertices."));
 		return false;
 	}
-	if (iRIC::hasIntersection(m_gridRegionPolygon->polygon())) {
+	if (iRIC::hasIntersection(impl->m_regionPolygon->polygon())) {
 //		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region polygon shape is invalid."));
 		return false;
 	}
-	QPolygonF gridPol = m_gridRegionPolygon->polygon();
+	QPolygonF gridPol = impl->m_regionPolygon->polygon();
 	QList<QPolygonF> polygons;
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hpol = m_holePolygons[i];
+	for (int i = 0; i < impl->m_holePolygons.count(); ++i) {
+		GeoDataPolygonHolePolygon* hpol = impl->m_holePolygons[i];
 		if (hpol->polygon().count() < 4) {
 //			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Hole polygon have to consists of more than three vertices"));
 			return false;
@@ -1132,8 +1146,8 @@ bool GeoDataPolygon::checkCondition()
 
 bool GeoDataPolygon::activePolygonHasFourVertices()
 {
-	if (m_selectedPolygon == nullptr) {return false;}
-	QPolygonF pol = m_selectedPolygon->polygon();
+	if (impl->m_selectedPolygon == nullptr) {return false;}
+	QPolygonF pol = impl->m_selectedPolygon->polygon();
 	return pol.count() > 4;
 }
 
@@ -1149,7 +1163,7 @@ const QVariant& GeoDataPolygon::variantValue() const
 	if (dims != nullptr) {
 		index = dims->currentIndex();
 	}
-	return m_variantValues.at(index);
+	return impl->m_variantValues.at(index);
 }
 
 void GeoDataPolygon::setVariantValue(const QVariant &v, bool disableInform)
@@ -1159,7 +1173,7 @@ void GeoDataPolygon::setVariantValue(const QVariant &v, bool disableInform)
 	if (dims != nullptr) {
 		index = dims->currentIndex();
 	}
-	m_variantValues[index] = v;
+	impl->m_variantValues[index] = v;
 	updateScalarValues();
 	if (! disableInform) {
 		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
@@ -1176,7 +1190,7 @@ void GeoDataPolygon::editValue()
 	dialog->setLabel(tr("Please input new value in this polygon.").arg(i->condition()->caption()));
 	i->setupEditWidget(dialog->widget());
 	dialog->setVariantValue(variantValue());
-	if (m_mouseEventMode == meDefining || m_mouseEventMode == meBeforeDefining) {
+	if (impl->m_mouseEventMode == meDefining || impl->m_mouseEventMode == meBeforeDefining) {
 		dialog->disableCancel();
 	}
 	int ret = dialog->exec();
@@ -1184,53 +1198,43 @@ void GeoDataPolygon::editValue()
 	pushCommand(new EditValueCommand(dialog->variantValue(), this));
 }
 
-void GeoDataPolygon::setPolygon(const QPolygonF& p)
-{
-	m_gridRegionPolygon->setPolygon(p);
-}
-
 void GeoDataPolygon::addHolePolygon(const QPolygonF& p)
 {
 	auto newPol = setupHolePolygon();
 	newPol->setSelected(false);
 	newPol->setPolygon(p);
-	m_holePolygons.append(newPol);
-}
-
-const QPolygonF GeoDataPolygon::polygon() const
-{
-	return m_gridRegionPolygon->polygon();
+	impl->m_holePolygons.append(newPol);
 }
 
 void GeoDataPolygon::updateScalarValues()
 {
-	vtkPoints* points = m_polyData->GetPoints();
+	vtkPoints* points = impl->m_polyData->GetPoints();
 	if (points == nullptr) {return;}
-	m_scalarValues->Reset();
+	impl->m_scalarValues->Reset();
 	double doubleval = variantValue().toDouble();
 	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
-		m_scalarValues->InsertNextValue(doubleval);
+		impl->m_scalarValues->InsertNextValue(doubleval);
 	}
-	m_scalarValues->Modified();
-	m_gridRegionPolygon->updateScalarValues();
-	for (auto hole : m_holePolygons) {
+	impl->m_scalarValues->Modified();
+	impl->m_regionPolygon->updateScalarValues();
+	for (auto hole : impl->m_holePolygons) {
 		hole->updateScalarValues();
 	}
 }
 
 void GeoDataPolygon::updatePolyData(bool noDraw)
 {
-	if (m_triangleThread != nullptr && m_triangleThread->isOutputting(this)){
+	if (impl->m_triangleThread != nullptr && impl->m_triangleThread->isOutputting(this)){
 		// it has already started outputting. Wait until it ends.
-		while (m_triangleThread->isOutputting(this)){
-			m_triangleThread->wait(100);
+		while (impl->m_triangleThread->isOutputting(this)){
+			impl->m_triangleThread->wait(100);
 		}
 	}
 	setupTriangleThread();
 
-	m_triangleThread->addJob(this, noDraw);
+	impl->m_triangleThread->addJob(this, noDraw);
 	if (! noDraw){
-		m_paintActor->SetVisibility(0);
+		impl->m_actor.actor()->SetVisibility(0);
 	}
 }
 
@@ -1242,31 +1246,31 @@ void GeoDataPolygon::editColorSetting()
 void GeoDataPolygon::updateActorSettings()
 {
 	// color
-	m_gridRegionPolygon->setColor(m_setting.color);
-	for (auto hole : m_holePolygons) {
-		hole->setColor(m_setting.color);
+	impl->m_regionPolygon->setColor(impl->m_setting.color);
+	for (auto hole : impl->m_holePolygons) {
+		hole->setColor(impl->m_setting.color);
 	}
-	m_paintActor->GetProperty()->SetColor(m_setting.color);
+	impl->m_actor.actor()->GetProperty()->SetColor(impl->m_setting.color);
 
 	// opacity
-	m_paintActor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_actor.actor()->GetProperty()->SetOpacity(impl->m_setting.opacity);
 
 	// mapping
-	if (m_setting.mapping == GeoDataPolygonColorSettingDialog::Arbitrary) {
-		m_paintMapper->SetScalarVisibility(false);
+	if (impl->m_setting.mapping == GeoDataPolygonColorSettingDialog::Arbitrary) {
+		impl->m_actor.mapper()->SetScalarVisibility(false);
 	} else {
-		m_paintMapper->SetScalarVisibility(true);
+		impl->m_actor.mapper()->SetScalarVisibility(true);
 	}
-	m_gridRegionPolygon->setMapping(m_setting.mapping);
-	for (auto hole : m_holePolygons) {
-		hole->setMapping(m_setting.mapping);
+	impl->m_regionPolygon->setMapping(impl->m_setting.mapping);
+	for (auto hole : impl->m_holePolygons) {
+		hole->setMapping(impl->m_setting.mapping);
 	}
 }
 
 QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
 {
 	GeoDataPolygonColorSettingDialog* dialog = new GeoDataPolygonColorSettingDialog(parent);
-	dialog->setSetting(m_setting);
+	dialog->setSetting(impl->m_setting);
 
 	return dialog;
 }
@@ -1281,8 +1285,8 @@ bool GeoDataPolygon::getValueRange(double* min, double* max)
 {
 	*min = variantValue().toDouble();
 	*max = variantValue().toDouble();
-	if (m_selectedPolygon != m_gridRegionPolygon) {return true;}
-	switch (m_mouseEventMode) {
+	if (impl->m_selectedPolygon != impl->m_regionPolygon) {return true;}
+	switch (impl->m_mouseEventMode) {
 	case meBeforeDefining:
 	case meDefining:
 		return false;
@@ -1300,7 +1304,7 @@ void GeoDataPolygon::updateFilename()
 void GeoDataPolygon::renderGraphics()
 {
 	int visibility = isVisible() ? 1 : 0;
-	m_paintActor->SetVisibility(visibility);
+	impl->m_actor.actor()->SetVisibility(visibility);
 	renderGraphicsView();
 }
 
@@ -1308,23 +1312,23 @@ void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, v
 {
 	if (polygon != this) {return;}
 
-	m_triangleThread->lockMutex();
+	impl->m_triangleThread->lockMutex();
 
-	m_polyData->SetPoints(points);
+	impl->m_polyData->SetPoints(points);
 	points->Delete();
 
-	m_polyData->SetPolys(ca);
+	impl->m_polyData->SetPolys(ca);
 	ca->Delete();
 
 	updateScalarValues();
 
-	m_polyData->BuildCells();
-	m_polyData->BuildLinks();
-	m_polyData->Modified();
+	impl->m_polyData->BuildCells();
+	impl->m_polyData->BuildLinks();
+	impl->m_polyData->Modified();
 
-	m_triangleThread->unlockMutex();
+	impl->m_triangleThread->unlockMutex();
 
-	m_paintActor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_actor.actor()->GetProperty()->SetOpacity(impl->m_setting.opacity);
 
 	if (noDraw) {return;}
 
@@ -1362,17 +1366,17 @@ void GeoDataPolygon::copy()
 
 void GeoDataPolygon::copyShape(GeoDataPolygon* polygon)
 {
-	setPolygon(polygon->polygon());
-	for (int i = 0; i < polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* p = polygon->m_holePolygons.at(i);
+	impl->m_regionPolygon->setPolygon(polygon->regionPolygon()->polygon());
+	for (int i = 0; i < polygon->holePolygons().size(); ++i) {
+		GeoDataPolygonHolePolygon* p = polygon->holePolygons().at(i);
 		auto holePol = setupHolePolygon();
 		holePol->setPolygon(p->polygon());
 		holePol->setActive(false);
 		holePol->setSelected(false);
-		m_holePolygons.append(holePol);
+		impl->m_holePolygons.append(holePol);
 	}
 	updatePolyData();
-	m_mouseEventMode = meNormal;
+	impl->m_mouseEventMode = meNormal;
 	editValue();
 	// copy command is not undo-able.
 	iRICUndoStack::instance().clear();
@@ -1380,11 +1384,16 @@ void GeoDataPolygon::copyShape(GeoDataPolygon* polygon)
 
 void GeoDataPolygon::doApplyOffset(double x, double y)
 {
-	applyOffsetToAbstractPolygon(m_gridRegionPolygon, x, y);
-	for (auto it = m_holePolygons.begin(); it != m_holePolygons.end(); ++it) {
-		applyOffsetToAbstractPolygon(*it, x, y);
+	applyOffsetToAbstractPolygon(impl->m_regionPolygon, x, y);
+	for (GeoDataPolygonHolePolygon* pol : impl->m_holePolygons) {
+		applyOffsetToAbstractPolygon(pol, x, y);
 	}
 	updatePolyData(true);
+}
+
+int GeoDataPolygon::iRICLibType() const
+{
+	return IRIC_GEO_POLYGON;
 }
 
 void GeoDataPolygon::applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y)
@@ -1405,51 +1414,116 @@ void GeoDataPolygon::handleDimensionValuesChange(const std::vector<QVariant>& /*
 
 void GeoDataPolygon::clearHolePolygons()
 {
-	for (auto p : m_holePolygons) {
+	for (auto p : impl->m_holePolygons) {
 		delete p;
 	}
-	m_holePolygons.clear();
+	impl->m_holePolygons.clear();
 }
 
 void GeoDataPolygon::lockMutex()
 {
-	if (m_triangleThread == nullptr) {return;}
+	if (impl->m_triangleThread == nullptr) {return;}
 
-	m_triangleThread->lockMutex();
+	impl->m_triangleThread->lockMutex();
 }
 
 void GeoDataPolygon::unlockMutex()
 {
-	if (m_triangleThread == nullptr) {return;}
+	if (impl->m_triangleThread == nullptr) {return;}
 
-	m_triangleThread->unlockMutex();
+	impl->m_triangleThread->unlockMutex();
 }
 
 GeoDataPolygon::MouseEventMode GeoDataPolygon::mouseEventMode() const
 {
-	return m_mouseEventMode;
+	return impl->m_mouseEventMode;
 }
 
 GeoDataPolygon::SelectMode GeoDataPolygon::selectMode() const
 {
-	return m_selectMode;
+	return impl->m_selectMode;
 }
 
 void GeoDataPolygon::setBCSettingMode(bool mode)
 {
-	m_bcSettingMode = mode;
+	impl->m_bcSettingMode = mode;
 }
 
 geos::geom::Polygon* GeoDataPolygon::getGeosPolygon(const QPointF& offset)
 {
 	setupTriangleThread();
-	return m_triangleThread->getGeosPolygon(this, offset);
+	return impl->m_triangleThread->getGeosPolygon(this, offset);
 }
 
 void GeoDataPolygon::setupTriangleThread()
 {
-	if (m_triangleThread != nullptr) {return;}
+	if (impl->m_triangleThread != nullptr) {return;}
 
-	m_triangleThread = GeoDataPolygonTriangleThread::instance();
-	connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)));
+	impl->m_triangleThread = GeoDataPolygonTriangleThread::instance();
+	connect(impl->m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)));
+}
+
+GeoDataPolygonRegionPolygon* GeoDataPolygon::regionPolygon() const
+{
+	return impl->m_regionPolygon;
+}
+
+GeoDataPolygonAbstractPolygon* GeoDataPolygon::selectedPolygon() const
+{
+	return impl->m_selectedPolygon;
+}
+
+void GeoDataPolygon::setSelectedPolygon(GeoDataPolygonAbstractPolygon* pol)
+{
+	impl->m_selectedPolygon = pol;
+}
+
+const QList<GeoDataPolygonHolePolygon*>& GeoDataPolygon::holePolygons() const
+{
+	return impl->m_holePolygons;
+}
+
+QList<GeoDataPolygonHolePolygon*>& GeoDataPolygon::holePolygons()
+{
+	return impl->m_holePolygons;
+}
+
+vtkActor* GeoDataPolygon::paintActor() const
+{
+	return impl->m_actor.actor();
+}
+
+vtkMapper* GeoDataPolygon::paintMapper() const
+{
+	return impl->m_actor.mapper();
+}
+
+QAction* GeoDataPolygon::addVertexAction() const
+{
+	return impl->m_addVertexAction;
+}
+
+QAction* GeoDataPolygon::removeVertexAction() const
+{
+	return impl->m_removeVertexAction;
+}
+
+QAction* GeoDataPolygon::coordEditAction() const
+{
+	return impl->m_coordEditAction;
+}
+
+QAction* GeoDataPolygon::holeModeAction() const
+{
+	return impl->m_holeModeAction;
+}
+
+QAction* GeoDataPolygon::deleteAction() const
+{
+	return impl->m_deleteAction;
+}
+
+void GeoDataPolygon::setShapeUpdating(bool updating)
+{
+	impl->m_shapeUpdating = updating;
 }

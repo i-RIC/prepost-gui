@@ -25,26 +25,26 @@ GeoDataPolygon::MovePolygonCommand::MovePolygonCommand(bool keyDown, const QPoin
 void GeoDataPolygon::MovePolygonCommand::redo()
 {
 	m_polygon->setMapped(false);
-	m_polygon->m_shapeUpdating = true;
-	movePolygon(m_polygon->m_gridRegionPolygon, m_offset);
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hp = m_polygon->m_holePolygons.at(i);
+	m_polygon->setShapeUpdating(true);
+	movePolygon(m_polygon->regionPolygon(), m_offset);
+	for (int i = 0; i < m_polygon->holePolygons().size(); ++i) {
+		GeoDataPolygonHolePolygon* hp = m_polygon->holePolygons().at(i);
 		movePolygon(hp, m_offset);
 	}
-	m_polygon->m_shapeUpdating = false;
+	m_polygon->setShapeUpdating(false);
 	m_polygon->updatePolyData();
 }
 
 void GeoDataPolygon::MovePolygonCommand::undo()
 {
 	m_polygon->setMapped(m_oldMapped);
-	m_polygon->m_shapeUpdating = true;
-	movePolygon(m_polygon->m_gridRegionPolygon, - m_offset);
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hp = m_polygon->m_holePolygons.at(i);
+	m_polygon->setShapeUpdating(true);
+	movePolygon(m_polygon->regionPolygon(), - m_offset);
+	for (int i = 0; i < m_polygon->holePolygons().size(); ++i) {
+		GeoDataPolygonHolePolygon* hp = m_polygon->holePolygons().at(i);
 		movePolygon(hp, - m_offset);
 	}
-	m_polygon->m_shapeUpdating = false;
+	m_polygon->setShapeUpdating(false);
 	m_polygon->updatePolyData();
 }
 

@@ -1,5 +1,6 @@
 #include "geodatapolygon.h"
 #include "geodatapolygonholepolygon.h"
+#include "geodatapolygonregionpolygon.h"
 #include "geodatapolygonimporter.h"
 #include "geodatapolygonimportersettingdialog.h"
 
@@ -210,7 +211,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 				).arg(index + 1);
 
 	try {
-		poly->setPolygon(region);
+		poly->regionPolygon()->setPolygon(region);
 		for (int i = 0; i < holes.size(); ++i){
 			poly->addHolePolygon(holes.at(i));
 		}

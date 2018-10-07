@@ -9,7 +9,7 @@
 class GeoDataPolygon::MoveVertexCommand : public GeoDataPolygon::ModifyAbstractPolygonCommand
 {
 public:
-	MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GeoDataPolygon* pol);
+	MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, int vertexId, GeoDataPolygon* pol);
 
 	int id() const override;
 	bool mergeWith(const QUndoCommand* other) override;

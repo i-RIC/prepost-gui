@@ -5,16 +5,16 @@
 #include "geodatapolygoncolorsettingdialog.h"
 
 #include <guicore/pre/geodata/geodata.h>
-#include <misc/zdepthrange.h>
-
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkSmartPointer.h>
 
 class GeoDataPolygonAbstractPolygon;
 class GeoDataPolygonRegionPolygon;
 class GeoDataPolygonHolePolygon;
-class GeoDataPolygonTriangleThread;
+
+class vtkActor;
+class vtkCellArray;
+class vtkMapper;
+class vtkPoints;
+class vtkPolyData;
 
 class QAction;
 class QMenu;
@@ -100,14 +100,17 @@ public:
 
 	void addHolePolygon(const QPolygonF& p);
 	vtkPolyData* polyData() const;
+	geos::geom::Polygon* getGeosPolygon(const QPointF& offset);
+
 	bool getValueRange(double* min, double* max) override;
 	void updateFilename() override;
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
+
 	MouseEventMode mouseEventMode() const;
 	SelectMode selectMode() const;
+
 	void setBCSettingMode(bool mode);
-	geos::geom::Polygon* getGeosPolygon(const QPointF& offset);
 
 public slots:
 	void editValue();
@@ -127,23 +130,26 @@ private slots:
 	void updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca, bool noDraw);
 	void copy();
 
-protected:
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void loadExternalData(const QString& filename) override;
-	void saveExternalData(const QString& filename) override;
-	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
-	void setOpacity(int opacity);
-	void setColor(const QColor& color);
-	int iRICLibType() const override {return IRIC_GEO_POLYGON;}
-	void doApplyOffset(double x, double y) override;
-
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	const QPolygonF polygon() const;
-	void setPolygon(const QPolygonF& p);
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+	void doApplyOffset(double x, double y) override;
+	int iRICLibType() const override;
+
+	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
+	void setOpacity(int opacity);
+	void setColor(const QColor& color);
+
+	void setMouseEventMode(MouseEventMode mode);
+	void setSelectMode(SelectMode mode);
+
+	GeoDataPolygonColorSettingDialog::Setting colorSetting() const;
+	void setColorSetting(GeoDataPolygonColorSettingDialog::Setting);
 
 	bool checkCondition();
+	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateScalarValues();
 	void updateActorSettings();
 	bool selectObject(QPoint point);
@@ -161,53 +167,23 @@ private:
 
 	void setupTriangleThread();
 
-	ZDepthRange m_depthRange;
+	GeoDataPolygonRegionPolygon* regionPolygon() const;
+	GeoDataPolygonAbstractPolygon* selectedPolygon() const;
+	void setSelectedPolygon(GeoDataPolygonAbstractPolygon* pol);
+	const QList<GeoDataPolygonHolePolygon*>& holePolygons() const;
+	QList<GeoDataPolygonHolePolygon*>& holePolygons();
 
-	QPoint m_dragStartPoint;
-	QPoint m_currentPoint;
+	vtkActor* paintActor() const;
+	vtkMapper* paintMapper() const;
 
-	SelectMode m_selectMode;
-	MouseEventMode m_mouseEventMode;
+	QAction* addVertexAction() const;
+	QAction* removeVertexAction() const;
+	QAction* coordEditAction() const;
+	QAction* holeModeAction() const;
+	QAction* deleteAction() const;
 
-	GeoDataPolygonRegionPolygon* m_gridRegionPolygon;
-	QList<GeoDataPolygonHolePolygon*> m_holePolygons;
+	void setShapeUpdating(bool updating);
 
-	GeoDataPolygonAbstractPolygon* m_selectedPolygon;
-
-	QAction* m_holeModeAction;
-	QAction* m_deleteAction;
-
-	QAction* m_editValueAction;
-	QAction* m_copyAction;
-	QAction* m_addVertexAction;
-	QAction* m_removeVertexAction;
-	QAction* m_coordEditAction;
-	QAction* m_editColorSettingAction;
-	QMenu* m_rightClickingMenu;
-
-	GeoDataPolygonColorSettingDialog::Setting m_setting;
-
-	std::vector<QVariant> m_variantValues;
-
-	vtkSmartPointer<vtkPolyData> m_polyData;
-	vtkSmartPointer<vtkActor> m_paintActor;
-	vtkSmartPointer<vtkPolyDataMapper> m_paintMapper;
-	vtkSmartPointer<vtkDoubleArray> m_scalarValues;
-
-	bool m_inhibitSelect {false};
-	bool m_shapeUpdating {false};
-	QPixmap m_addPixmap;
-	QPixmap m_removePixmap;
-	QPixmap m_movePointPixmap;
-	QCursor m_addCursor;
-	QCursor m_removeCursor;
-	QCursor m_movePointCursor;
-
-	GeoDataPolygonTriangleThread* m_triangleThread;
-
-	bool m_bcSettingMode {false};
-
-private:
 	class AddHolePolygonCommand;
 	class AddVertexCommand;
 	class PushNewPointCommand;
@@ -221,6 +197,9 @@ private:
 	class RemoveVertexCommand;
 
 	class CoordinatesEditor;
+
+	class Impl;
+	Impl* impl;
 
 public:
 	friend class GeoDataPolygonAbstractPolygon;

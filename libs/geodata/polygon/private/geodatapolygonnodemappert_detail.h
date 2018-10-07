@@ -3,6 +3,8 @@
 
 #include "../geodatapolygonnodemappert.h"
 
+#include <vtkPolyData.h>
+
 template <class V, class DA>
 GeoDataPolygonNodeMapperT<V, DA>::GeoDataPolygonNodeMapperT(GeoDataCreator* parent) :
 	GeoDataNodeMapperT<V, DA> ("Polygon node mapper", parent)
