@@ -36,10 +36,6 @@ std::vector<TmsImageSetting> standardSettings()
 	// Open Street Map
 	ret.push_back(buildSetting("tms=openstreetmap&active=true", TmsImageSettingManager::tr("Open Street Map")));
 
-	// Bing
-	ret.push_back(buildSetting("tms=bing&imageryset=aerial&active=true", TmsImageSettingManager::tr("Bing (Aerial)")));
-	ret.push_back(buildSetting("tms=bing&imageryset=road&active=true", TmsImageSettingManager::tr("Bing (Road)")));
-
 	// GSI
 	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Standard) (Japan only)")));
 	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Pale) (Japan only)")));
