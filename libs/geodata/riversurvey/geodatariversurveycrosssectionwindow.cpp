@@ -777,7 +777,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 		GeoDataRiverSurvey* geodata = rivDatas[i];
 		impl->m_riverSurveys.append(geodata);
 		impl->m_riverSurveyEnables.append(enableMap.value(geodata, true));
-		impl->m_riverSurveyColors.append(colorMap.value(geodata, impl->m_colorSource->getColor(rivDatas.size() - i)));
+		impl->m_riverSurveyColors.append(colorMap.value(geodata, impl->m_colorSource->getColor(static_cast<int>(rivDatas.size()) - i)));
 	}
 
 	if (impl->m_riverSurveys.count() == 0) {

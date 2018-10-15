@@ -162,7 +162,7 @@ void GeoDataPointmapInterpolatePoints::accept()
 	}
 
 	int numPts = this->m_pmap->getVtkInterpPolygon()->GetNumberOfPoints();
-	numZPts = zpoint.size();
+	numZPts = static_cast<int>(zpoint.size());
 	numInterpPts = static_cast<int>(stot / ui->incrementEditWidget->value()) + 1;
 
 	temp.resize(numInterpPts);
@@ -174,7 +174,7 @@ void GeoDataPointmapInterpolatePoints::accept()
 	for (int i = 0; i < numInterpPts; i++) {
 		sout.push_back(i*(stot/(numInterpPts-1)));
 	}
-	int nump = xpoint.size();
+	int nump = static_cast<int>(xpoint.size());
 	if (nump < 3) {
 		std::vector<double> sitmp;
 		sitmp.push_back(si[0]);

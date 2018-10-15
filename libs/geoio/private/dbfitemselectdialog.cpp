@@ -107,7 +107,7 @@ void DBFItemSelectDialog::setLabels(const QStringList& labels)
 
 void DBFItemSelectDialog::setData(const std::vector<std::vector<QVariant> >& data)
 {
-	ui->itemsTableWidget->setRowCount(data.size() + 1);
+	ui->itemsTableWidget->setRowCount(static_cast<int>(data.size()) + 1);
 	for (int i = 0; i < data.size(); ++i) {
 		QTableWidgetItem* item = new QTableWidgetItem(QString("%1").arg(i + 1));
 		ui->itemsTableWidget->setItem(i, 0, item);

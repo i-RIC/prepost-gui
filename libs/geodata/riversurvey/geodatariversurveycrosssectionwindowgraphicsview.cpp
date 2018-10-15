@@ -128,7 +128,6 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPath
 {
 	if (point == nullptr) {return;}
 	GeoDataRiverCrosssection& cross = point->crosssection();
-	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	bool first = true;
 	QPointF oldpoint, newpoint;
 	painter.setPen(color);
@@ -1160,7 +1159,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectLimits(bool* minli
 		*minlimit = false;
 	}
 	if (right == alist.size()) {
-		right = alist.size() - 1;
+		right = static_cast<int>(alist.size()) - 1;
 		*maxlimit = false;
 	}
 	double min1, min2, max1, max2;

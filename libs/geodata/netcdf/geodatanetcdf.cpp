@@ -664,7 +664,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vec
 int GeoDataNetcdf::defineValue(int ncid, int xId, int yId, const std::vector<int> &dimIds, int* varId)
 {
 	int ret;
-	int ndims = dimensions()->containers().size() + 2;
+	int ndims = static_cast<int>(dimensions()->containers().size()) + 2;
 	std::vector<int> dimids(ndims);
 	std::vector<size_t> chunksizes(ndims);
 

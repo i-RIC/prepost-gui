@@ -55,4 +55,5 @@ bool GridCreatingConditionCenterAndWidth::DefineNewPointCommand::mergeWith(const
 	if (comm->m_condition != m_condition) {return false;}
 
 	m_newPoint = comm->m_newPoint;
+	return true;
 }

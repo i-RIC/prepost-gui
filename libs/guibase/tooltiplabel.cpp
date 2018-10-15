@@ -8,7 +8,7 @@ TooltipLabel::TooltipLabel(QWidget* parent) :
 	setPixmap(QPixmap(":/libs/guibase/images/iconQuestion.png"));
 }
 
-void TooltipLabel::mousePressEvent(QMouseEvent* event)
+void TooltipLabel::mousePressEvent(QMouseEvent* /*event*/)
 {
 	QMessageBox::information(this, tr("Help"), toolTip());
 }

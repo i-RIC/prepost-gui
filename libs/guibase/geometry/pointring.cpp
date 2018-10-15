@@ -49,9 +49,9 @@ vtkPoints* PointRing::getVtkPoints() const
 	return m_vtkPoints;
 }
 
-bool PointRing::merge(PointRing* otherRing, PointRing** another, int rotateCount)
+bool PointRing::merge(PointRing* otherRing, PointRing** /*another*/, int /*rotateCount*/)
 {
-	int otherSize = otherRing->points().size();
+	int otherSize = static_cast<int>(otherRing->points().size());
 	for (int i = 0; i < otherSize; ++i) {
 		vtkIdType p1 = otherRing->points().at(i);
 		if (! contains(p1)) {continue;}
@@ -86,7 +86,7 @@ bool PointRing::merge(PointRing* otherRing, PointRing** another, int rotateCount
 			newPoints.push_back(m_points.at(id));
 		}
 		newPoints.push_back(m_points.at(0));
-		for (int id = otherRing->points().size() - 1; id > last; --id) {
+		for (int id = static_cast<int>(otherRing->points().size()) - 1; id > last; --id) {
 			newPoints.push_back(otherRing->points().at(id));
 		}
 		m_points = newPoints;
