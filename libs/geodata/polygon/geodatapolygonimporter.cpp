@@ -162,7 +162,7 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 	DBFClose(dbfh);
 
 	m_shapeInfos = buildPolygonShapeInfos(fname);
-	*count = m_shapeInfos.size();
+	*count = static_cast<int>(m_shapeInfos.size());
 
 	GridAttributeEditWidget* widget = condition->editWidget(0);
 	item->setupEditWidget(widget);

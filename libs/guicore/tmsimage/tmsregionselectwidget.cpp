@@ -144,7 +144,7 @@ void TmsRegionSelectWidget::mousePressEvent(QMouseEvent *e)
 	update();
 }
 
-void TmsRegionSelectWidget::mouseReleaseEvent(QMouseEvent *e)
+void TmsRegionSelectWidget::mouseReleaseEvent(QMouseEvent * /*e*/)
 {
 	if (impl->m_viewOperationState != Impl::ViewOperationState::None) {
 		requestUpdate();

@@ -147,7 +147,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 
 			auto it = std::find(dimids.begin(), dimids.end(), dimid);
 			if (it != dimids.end()) {
-				auto idx = it - dimids.begin();
+				auto idx = static_cast<unsigned int>(it - dimids.begin());
 				if (idx < dims.size()) {
 					v.dimensions.push_back(dims[it - dimids.begin()]);
 				}

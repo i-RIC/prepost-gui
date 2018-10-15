@@ -186,8 +186,8 @@ void AttributeBrowserTargetDataItem::assignActorZValues(const ZDepthRange& range
 	m_vertexActor->SetPosition(0, 0, range.max());
 }
 
-void AttributeBrowserTargetDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+void AttributeBrowserTargetDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}
 
-void AttributeBrowserTargetDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void AttributeBrowserTargetDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}

@@ -19,7 +19,7 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* mainW, QWidget* parent) :
+GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* /*mainW*/, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
 {

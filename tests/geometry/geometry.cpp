@@ -24,7 +24,7 @@ void outputRegion(const PolygonRegion& region)
 	}
 }
 
-int main(int argc, char* argv[])
+int main(int /*argc*/, char* /*argv*/[])
 {
 	vtkPoints* points = nullptr;
 

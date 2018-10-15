@@ -153,7 +153,7 @@ void ColorMapCustomSettingDialog::setCustomSetting(const ColorMapCustomSetting& 
 		ui->typeComboBox->setCurrentIndex(2);
 		ui->arbitraryTableWidget->blockSignals(true);
 
-		ui->arbitraryTableWidget->setRowCount(setting.arbitrarySettings.size());
+		ui->arbitraryTableWidget->setRowCount(static_cast<int>(setting.arbitrarySettings.size()));
 		int i = 0;
 		for (auto s : setting.arbitrarySettings) {
 			double value = s.value;

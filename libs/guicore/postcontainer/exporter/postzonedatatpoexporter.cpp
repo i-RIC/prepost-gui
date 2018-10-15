@@ -88,7 +88,7 @@ QString PostZoneDataTpoExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* projectdata, const QPointF& offset) const
+bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* /*projectdata*/, const QPointF& offset) const
 {
 	QString componentName;
 

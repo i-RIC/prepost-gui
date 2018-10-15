@@ -94,7 +94,7 @@ void SolverDefinition::Impl::setupIterationType(const QDomElement& elem)
 	}
 }
 
-void SolverDefinition::Impl::setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& translator)
+void SolverDefinition::Impl::setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& /*translator*/)
 {
 	QDomNode child = node.firstChild();
 	bool isPrimary = true;
