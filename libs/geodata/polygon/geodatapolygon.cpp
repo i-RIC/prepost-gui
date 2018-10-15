@@ -54,6 +54,7 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPolygonF>
+#include <QStandardItem>
 #include <QTextStream>
 #include <QToolBar>
 #include <QVector>

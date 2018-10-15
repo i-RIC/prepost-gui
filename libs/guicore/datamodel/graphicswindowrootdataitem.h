@@ -3,6 +3,7 @@
 
 #include "../guicore_global.h"
 #include "graphicswindowdataitem.h"
+
 #include <QMap>
 
 class GraphicsWindowDataModel;

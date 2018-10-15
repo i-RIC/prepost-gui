@@ -4,8 +4,8 @@
 #include "guibase_global.h"
 #include "colormapcustomsetting.h"
 
-#include <QDialog>
 #include <QColor>
+#include <QDialog>
 
 #include <vector>
 

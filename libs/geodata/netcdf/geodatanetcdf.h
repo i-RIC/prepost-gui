@@ -3,8 +3,6 @@
 
 #include <guicore/pre/geodata/geodata.h>
 #include <vtkSmartPointer.h>
-#include <vtkPolygon.h>
-#include <vtkDoubleArray.h>
 #include <vtkStructuredGrid.h>
 #include <vtkDataSetMapper.h>
 #include <vtkThreshold.h>
@@ -13,8 +11,6 @@
 #include <vtkPolyDataMapper.h>
 
 #include <netcdf.h>
-
-#include <QList>
 
 class QAction;
 class QPolygonF;

@@ -2,6 +2,7 @@
 #define STARTPAGERECENTPROJECT_H
 
 #include "startpagelabel.h"
+
 #include <QString>
 
 class StartPageRecentProject : public StartPageLabel

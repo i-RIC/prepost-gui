@@ -1,7 +1,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include <vtkObject.h>
+#include <vtkType.h>
 
 class QDataStream;
 

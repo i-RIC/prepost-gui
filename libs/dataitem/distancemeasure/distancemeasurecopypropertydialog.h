@@ -4,9 +4,8 @@
 #include "distancemeasure_api.h"
 #include "distancemeasuresetting.h"
 
-#include <guibase/vtktool/vtklabel2dactor.h>
-
 #include <QDialog>
+
 class QVector2D;
 
 namespace Ui

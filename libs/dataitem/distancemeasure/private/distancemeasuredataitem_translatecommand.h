@@ -4,7 +4,6 @@
 #include "../distancemeasuredataitem.h"
 
 #include <QUndoCommand>
-#include <QVector2D>
 
 class DistanceMeasureDataItem::TranslateCommand : public QUndoCommand
 {

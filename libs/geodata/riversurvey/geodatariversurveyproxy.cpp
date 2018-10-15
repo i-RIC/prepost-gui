@@ -1,3 +1,4 @@
+#include "geodatariversurvey.h"
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurveyproxy_setsettingcommand.h"

@@ -2,7 +2,6 @@
 #define GEODATAPOINTMAPREALIMPORTER_H
 
 #include <guicore/pre/geodata/geodataimporter.h>
-#include <QMap>
 
 class GDALDataset;
 class GDALRasterBand;

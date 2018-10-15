@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include <vector>
+
 class GeoDataPointmap;
 
 namespace Ui

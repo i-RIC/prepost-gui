@@ -2,12 +2,14 @@
 #define GRIDCREATINGCONDITIONRIVERSURVEYINTERFACE_H
 
 #include "gd_riversurvey_global.h"
-#include <list>
 #include "geodatariverpathpoint.h"
+
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/misc/qundocommandhelper.h>
 
 #include <QUndoCommand>
+
+#include <list>
 
 class GridCreatingConditionCtrlPointMoveCommand;
 

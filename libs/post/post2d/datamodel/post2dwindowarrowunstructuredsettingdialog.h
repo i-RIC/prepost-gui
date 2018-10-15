@@ -5,6 +5,8 @@
 #include "post2dwindownodevectorarrowunstructuredsetting.h"
 
 #include <QDialog>
+#include <QMap>
+
 #include <vector>
 
 class PostZoneDataContainer;

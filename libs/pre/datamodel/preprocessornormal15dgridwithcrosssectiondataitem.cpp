@@ -9,6 +9,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QAction>
+#include <QStandardItem>
 #include <QMenu>
 
 PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWithCrossSectionDataItem(PreProcessorDataItem* parent) :

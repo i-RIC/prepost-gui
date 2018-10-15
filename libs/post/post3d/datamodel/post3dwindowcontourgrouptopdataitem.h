@@ -3,6 +3,8 @@
 
 #include "../post3dwindowdataitem.h"
 
+#include <QMap>
+
 class Post3dWindowContourGroupTopDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT

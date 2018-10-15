@@ -4,16 +4,6 @@
 #include "geodatanetcdft.h"
 #include "geodatanetcdfimporter.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
-#include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
-#include <misc/stringtool.h>
-
-#include <vtkIntArray.h>
-#include <vtkDoubleArray.h>
-
-#include <QList>
-
 #include <vector>
 
 template <class V, class DA>

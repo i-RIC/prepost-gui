@@ -2,6 +2,7 @@
 #define PREFERENCEPAGEGRIDCHECK_H
 
 #include "preferencepage.h"
+
 #include <QSettings>
 
 namespace Ui

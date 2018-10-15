@@ -4,8 +4,8 @@
 #include "../guicore_global.h"
 #include "propertybrowserattribute.h"
 
-#include <QWidget>
 #include <QList>
+#include <QWidget>
 
 #include <vtkIdTypeArray.h>
 

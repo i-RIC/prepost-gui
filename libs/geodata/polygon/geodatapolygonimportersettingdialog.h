@@ -4,7 +4,6 @@
 #include <QDialog>
 #include <QList>
 #include <QVariant>
-#include <QStringList>
 
 namespace Ui
 {
@@ -12,6 +11,8 @@ namespace Ui
 }
 
 class GridAttributeEditWidget;
+
+class QStringList;
 
 class GeoDataPolygonImporterSettingDialog : public QDialog
 {

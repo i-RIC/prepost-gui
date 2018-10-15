@@ -2,7 +2,6 @@
 #define COORDINATESEDITDIALOG_H
 
 #include <QDialog>
-#include <QPointF>
 
 #include <vector>
 
@@ -11,6 +10,7 @@ class CoordinatesEditDialog;
 }
 
 class QAbstractButton;
+class QPointF;
 class QStandardItemModel;
 
 using accept_callback = void (*)(const std::vector<QPointF>& coords);

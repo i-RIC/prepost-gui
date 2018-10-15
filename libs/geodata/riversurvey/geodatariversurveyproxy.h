@@ -3,13 +3,14 @@
 
 #include "geodatariversurveydisplaysetting.h"
 
+#include <guicore/pre/geodata/geodataproxy.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkActor2D.h>
 #include <vtkUnstructuredGrid.h>
 
-#include <guicore/pre/geodata/geodataproxy.h>
-#include "geodatariversurvey.h"
+class GeoDataRiverSurvey;
 
 class GeoDataRiverSurveyProxy : public GeoDataProxy
 {

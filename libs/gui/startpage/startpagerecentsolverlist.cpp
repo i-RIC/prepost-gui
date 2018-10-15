@@ -2,7 +2,10 @@
 #include "startpagerecentsolver.h"
 #include "startpagerecentsolverlist.h"
 
+#include <guicore/solverdef/solverdefinitionabstract.h>
+
 #include <QSettings>
+#include <QVBoxLayout>
 
 StartPageRecentSolverList::StartPageRecentSolverList(QWidget* parent) :
 	QWidget(parent)

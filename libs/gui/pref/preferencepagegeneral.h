@@ -1,10 +1,11 @@
 #ifndef PREFERENCEPAGEGENERAL_H
 #define PREFERENCEPAGEGENERAL_H
 
-#include <QWidget>
+#include "preferencepage.h"
+
 #include <QList>
 #include <QLocale>
-#include "preferencepage.h"
+#include <QWidget>
 
 namespace Ui
 {

@@ -18,6 +18,7 @@
 #include <postbase/particle/postparticlescalarpropertydialog.h>
 
 #include <QDomElement>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <vtkPointData.h>

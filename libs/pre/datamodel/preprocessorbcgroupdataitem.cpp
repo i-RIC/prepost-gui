@@ -14,6 +14,7 @@
 #include <QDomNode>
 #include <QMainWindow>
 #include <QMenu>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <iriclib.h>

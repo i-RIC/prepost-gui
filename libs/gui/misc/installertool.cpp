@@ -4,11 +4,9 @@
 #include <misc/iricrootpath.h>
 
 #include <QAbstractButton>
-#include <QApplication>
 #include <QDir>
 #include <QMessageBox>
 #include <QProcess>
-#include <QString>
 
 InstallerTool::InstallerTool()
 {}

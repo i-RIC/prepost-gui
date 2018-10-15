@@ -3,6 +3,8 @@
 #include "geodatapointmap.h"
 #include "geodatapointmapaddpointdialog.h"
 
+#include <vtkDoubleArray.h>
+
 GeoDataPointmapAddPointDialog::GeoDataPointmapAddPointDialog(GeoDataPointmap* pmap, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GeoDataPointmapAddPointDialog)

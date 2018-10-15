@@ -9,8 +9,10 @@
 #include <QVector>
 #include <QString>
 
-#include <vtkStructuredGrid.h>
 #include <vtkSmartPointer.h>
+#include <vtkStructuredGrid.h>
+
+#include <set>
 
 #include <set>
 #include <vector>

@@ -1,6 +1,8 @@
 #include "distancemeasuredataitem_setsettingcommand.h"
 #include "distancemeasuredataitem_impl.h"
 
+#include <QStandardItem>
+
 DistanceMeasureDataItem::SetSettingCommand::SetSettingCommand(const QString& name, const DistanceMeasureSetting& setting, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Edit Distance Measure Property")),
 	m_newName {name},

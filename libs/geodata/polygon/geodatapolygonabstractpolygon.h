@@ -1,23 +1,25 @@
 #ifndef GEODATAPOLYGONABSTRACTPOLYGON_H
 #define GEODATAPOLYGONABSTRACTPOLYGON_H
 
-class GeoDataPolygon;
-class vtkScalarsToColors;
-class QVector2D;
-class QPolygonF;
-
-
 #include "geodatapolygoncolorsettingdialog.h"
+
 #include <QObject>
-#include <QVector2D>
 #include <QPointF>
 #include <QMutex>
-#include <vtkSmartPointer.h>
+
 #include <vtkActor.h>
 #include <vtkDataSetMapper.h>
 #include <vtkDoubleArray.h>
-#include <vtkUnstructuredGrid.h>
 #include <vtkPolygon.h>
+#include <vtkSmartPointer.h>
+#include <vtkUnstructuredGrid.h>
+
+class GeoDataPolygon;
+
+class QPolygonF;
+class QVector2D;
+
+class vtkScalarsToColors;
 
 class GeoDataPolygonAbstractPolygon : public QObject
 {

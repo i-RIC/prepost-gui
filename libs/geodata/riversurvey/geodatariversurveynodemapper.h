@@ -2,12 +2,8 @@
 #define GEODATARIVERSURVEYNODEMAPPER_H
 
 #include <guicore/pre/geodata/geodatanodemappert.h>
-#include "geodatariversurvey.h"
-#include <vtkCell.h>
-#include <vtkSmartPointer.h>
+
 #include <vtkDoubleArray.h>
-#include <vtkPointData.h>
-#include <misc/doublemappingsetting.h>
 
 class GeoDataRiverSurveyNodeMapper : public GeoDataNodeMapperT<double, vtkDoubleArray>
 {

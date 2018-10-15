@@ -2,6 +2,8 @@
 #include "targeteditemsettargetcommandtool.h"
 #include "../../named/namedgraphicwindowdataitem.h"
 
+#include <QStandardItem>
+
 QUndoCommand* TargetedItemSetTargetCommandTool::buildFromNamedItem(NamedGraphicWindowDataItem* item, TargetedItemI* targetedItem, const QString& comName)
 {
 	if (item->standardItem()->checkState() == Qt::Checked) {

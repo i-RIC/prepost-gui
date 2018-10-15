@@ -1,12 +1,11 @@
 #ifndef SOLVERDEFINITIONTRANSLATIONCHECKER_H
 #define SOLVERDEFINITIONTRANSLATIONCHECKER_H
 
-#include <QLocale>
-#include <QSet>
 #include <QMap>
-#include <QXmlStreamWriter>
+#include <QSet>
 
 class QDomNode;
+class QLocale;
 class QXmlStreamWriter;
 
 /// This class implements the checking logics for solver definition translation files.

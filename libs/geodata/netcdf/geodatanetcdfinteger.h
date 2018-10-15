@@ -3,7 +3,7 @@
 
 #include "geodatanetcdft.h"
 
-#include <vtkIntArray.h>
+class vtkIntArray;
 
 class GeoDataNetcdfInteger : public GeoDataNetcdfT<int, vtkIntArray>
 {

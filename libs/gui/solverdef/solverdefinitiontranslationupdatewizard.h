@@ -1,16 +1,17 @@
 #ifndef SOLVERDEFINITIONTRANSLATIONUPDATEWIZARD_H
 #define SOLVERDEFINITIONTRANSLATIONUPDATEWIZARD_H
 
-#include <QWizard>
 #include <QList>
+#include <QWizard>
 
-class QLabel;
-class QComboBox;
-class QRadioButton;
-class QCheckBox;
-class QTextEdit;
-class SolverDefinitionList;
 class GridCreatingConditionCreator;
+class SolverDefinitionList;
+
+class QCheckBox;
+class QComboBox;
+class QLabel;
+class QRadioButton;
+class QTextEdit;
 
 class IntroductionPage : public QWizardPage
 {

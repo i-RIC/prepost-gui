@@ -4,6 +4,8 @@
 #include "../geodatapolygoncellmappert.h"
 #include "../geodatapolygoncellmappersetting.h"
 
+#include <vtkCell.h>
+
 namespace {
 
 void getCellCenter(vtkCell* cell, double center[3])

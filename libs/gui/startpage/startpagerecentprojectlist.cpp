@@ -2,6 +2,7 @@
 #include "startpagerecentprojectlist.h"
 
 #include <QSettings>
+#include <QVBoxLayout>
 
 StartPageRecentProjectList::StartPageRecentProjectList(QWidget* parent) :
 	QWidget(parent)

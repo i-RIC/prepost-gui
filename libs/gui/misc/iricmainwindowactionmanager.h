@@ -3,20 +3,20 @@
 
 #include <QObject>
 #include <QList>
-#include <QSignalMapper>
-#include <QMap>
 
-#include <guicore/solverdef/solverdefinition.h>
 #include <guicore/project/cgnsfilelist.h>
 
-class QMenu;
-class QMenuBar;
-class QToolBar;
-class QAction;
-class QActionGroup;
+class iRICMainWindow;
 class ProjectData;
 class SolverDefinitionList;
-class iRICMainWindow;
+
+class QAction;
+class QActionGroup;
+class QMenu;
+class QMenuBar;
+class QSignalMapper;
+class QToolBar;
+
 
 /// This class manages the actions on iRIC main window,
 /// that is an instance of iRICMainWindow.
@@ -311,8 +311,6 @@ private:
 	QMenuBar* m_menuBar;
 	/// Signal mapper to map signals to create new project.
 	QSignalMapper* m_newProjectSignals;
-//	QSignalMapper* m_gridModeSignals;
-//	QMap<SolverDefinition::GridType, QAction*> m_gridModeActions;
 	/// File menu
 	QMenu* m_fileMenu;
 	/// Edit menu

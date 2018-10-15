@@ -8,7 +8,6 @@
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkPolygon.h>
-#include <vtkDoubleArray.h>
 #include <vtkActor.h>
 #include <vtkLODActor.h>
 #include <vtkDataSetMapper.h>

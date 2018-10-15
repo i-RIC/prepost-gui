@@ -2,32 +2,27 @@
 #define GEODATAPOLYGON_H
 
 #include "gd_polygon_global.h"
-#include <guicore/pre/geodata/geodata.h>
 #include "geodatapolygoncolorsettingdialog.h"
 
+#include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/grid/unstructured2dgrid.h>
 #include <misc/zdepthrange.h>
 
-#include <vtkActor.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkSmartPointer.h>
-#include <QVector>
 #include <QPoint>
 #include <QPointF>
-#include <QPolygonF>
 #include <QPixmap>
 #include <QCursor>
 #include <QVariant>
 #include <QList>
 
+#include <vtkActor.h>
+#include <vtkPolyData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkSmartPointer.h>
+
 #include <iriclib.h>
 
 #include <vector>
-
-class QMenu;
-class QAction;
-class QToolBar;
 
 class GridCreatingConditionCreatorTriangle;
 class GeoDataPolygonAbstractPolygon;
@@ -38,6 +33,11 @@ class GeoDataPolygonShapeExporter;
 class GeoDataPolygonTriangleThread;
 class GeoDataPolygonProxy;
 class PreProcessorBCSettingDataItem;
+
+class QAction;
+class QMenu;
+class QPolygonF;
+class QToolBar;
 
 namespace geos {
 namespace geom{

@@ -2,8 +2,8 @@
 #define STARTPAGERECENTSOLVER_H
 
 #include "startpagelabel.h"
-#include <guicore/solverdef/solverdefinitionabstract.h>
-#include <QString>
+
+class SolverDefinitionAbstract;
 
 class StartPageRecentSolver : public StartPageLabel
 {

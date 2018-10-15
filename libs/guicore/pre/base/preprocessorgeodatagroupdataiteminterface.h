@@ -5,6 +5,8 @@
 #include "preprocessordataitem.h"
 #include "../../solverdef/solverdefinitiongridattribute.h"
 
+#include <QIcon>
+
 class Grid;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
@@ -17,8 +19,8 @@ class GUICOREDLL_EXPORT PreProcessorGeoDataGroupDataItemInterface : public PrePr
 {
 
 public:
-	PreProcessorGeoDataGroupDataItemInterface(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
-		: PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+	PreProcessorGeoDataGroupDataItemInterface(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
+		PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 	{}
 	virtual SolverDefinitionGridAttribute* condition() = 0;
 	ProjectData* projectData() const {return ProjectDataItem::projectData();}

@@ -3,6 +3,12 @@
 
 #include "../geodatanetcdft.h"
 
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <misc/stringtool.h>
+
+#include <vtkCellData.h>
+
 template <class V, class DA>
 GeoDataNetcdfT<V, DA>::GeoDataNetcdfT(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
 	GeoDataNetcdf {d, creator, condition}

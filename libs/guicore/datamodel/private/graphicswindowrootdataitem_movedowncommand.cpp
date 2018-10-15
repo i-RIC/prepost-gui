@@ -2,6 +2,8 @@
 
 #include <guibase/objectbrowserview.h>
 
+#include <QStandardItem>
+
 GraphicsWindowRootDataItem::MoveDownCommand::MoveDownCommand(GraphicsWindowDataItem* item, ObjectBrowserView* view) :
 	QUndoCommand(QObject::tr("Move down item")),
 	m_item {item},

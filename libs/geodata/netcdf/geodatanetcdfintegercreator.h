@@ -3,7 +3,8 @@
 
 #include "gd_netcdf_global.h"
 #include "geodatanetcdfcreatort.h"
-#include <vtkIntArray.h>
+
+class vtkIntArray;
 
 class GD_NETCDF_EXPORT GeoDataNetcdfIntegerCreator : public GeoDataNetcdfCreatorT<int, vtkIntArray>
 {

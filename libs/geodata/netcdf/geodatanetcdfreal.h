@@ -3,7 +3,7 @@
 
 #include "geodatanetcdft.h"
 
-#include <vtkDoubleArray.h>
+class vtkDoubleArray;
 
 class GeoDataNetcdfReal : public GeoDataNetcdfT<double, vtkDoubleArray>
 {

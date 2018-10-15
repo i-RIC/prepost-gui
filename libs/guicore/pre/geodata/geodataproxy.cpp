@@ -2,6 +2,7 @@
 #include "geodata.h"
 #include "geodataproxy.h"
 
+#include <QStandardItem>
 
 GeoDataProxy::GeoDataProxy(GeoData* geodata) :
 	ProjectDataItem(nullptr),

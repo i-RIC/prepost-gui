@@ -1,5 +1,7 @@
 #include "geodatanetcdfrealimporter.h"
 
+#include <vtkDoubleArray.h>
+
 GeoDataNetcdfRealImporter::GeoDataNetcdfRealImporter(GeoDataCreator* creator) :
 	GeoDataNetcdfImporterT<double, vtkDoubleArray>(creator)
 {}

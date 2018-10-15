@@ -3,7 +3,6 @@
 #include "mousehelpdialog.h"
 
 #include <QCloseEvent>
-#include <QFile>
 #include <QLocale>
 #include <QSettings>
 

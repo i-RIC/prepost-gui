@@ -14,8 +14,10 @@ class GeoDataPointmapRepresentationDialog : public QDialog
 
 public:
 	enum Representation {Points, Wireframe, Surface};
+
 	GeoDataPointmapRepresentationDialog(QWidget* parent = nullptr);
 	~GeoDataPointmapRepresentationDialog();
+
 	void setRepresentation(Representation r);
 	void setOpacityPercent(int opacity);
 	void setHideBreakLines(bool hide);

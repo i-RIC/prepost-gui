@@ -2,9 +2,9 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOWPROJECTDATAITEM_H
 
 #include "gd_riversurvey_global.h"
+
 #include <guicore/project/projectdataitem.h>
 
-class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindow;
 class PreProcessorGeoDataGroupDataItemInterface;
 

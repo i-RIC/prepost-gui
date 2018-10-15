@@ -1,10 +1,11 @@
 #ifndef PREFERENCEPAGEPROXY_H
 #define PREFERENCEPAGEPROXY_H
 
-#include <QWidget>
 #include "preferencepage.h"
 
 #include <misc/networksetting.h>
+
+#include <QWidget>
 
 namespace Ui
 {

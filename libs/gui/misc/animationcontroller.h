@@ -4,16 +4,16 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/base/animationcontrollerinterface.h>
 
-#include <QObject>
-#include <QMenu>
 #include <QList>
+#include <QObject>
 
-class QWidget;
 class QAction;
-class QToolBar;
 class QLabel;
+class QMenu;
 class QSlider;
 class QTimer;
+class QToolBar;
+class QWidget;
 
 /// AnimationContoller controls which timestep (or iteration process) to
 /// display on post-processing windows.

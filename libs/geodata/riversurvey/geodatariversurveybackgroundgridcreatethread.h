@@ -2,13 +2,14 @@
 #define GEODATARIVERSURVEYBACKGROUNDGRIDCREATETHREAD_H
 
 #include "geodatariversurvey.h"
-#include <QThread>
-#include <QMutex>
+
 #include <QMap>
+#include <QMutex>
+#include <QThread>
 #include <QWaitCondition>
+
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
-#include <vtkUnstructuredGrid.h>
 
 class GeoDataRiverPathPoint;
 class RiverGridCtrlSolver;

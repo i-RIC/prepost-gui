@@ -19,6 +19,7 @@
 #include <QAction>
 #include <QColorDialog>
 #include <QLabel>
+#include <QStandardItem>
 #include <QToolBar>
 #include <QUndoCommand>
 

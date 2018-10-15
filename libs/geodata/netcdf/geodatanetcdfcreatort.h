@@ -5,7 +5,7 @@
 #include "geodatanetcdft.h"
 #include "geodatanetcdfimportert.h"
 
-#include <guicore/solverdef/solverdefinitiongridattributet.h>
+class SolverDefinitionGridAttribute;
 
 template <class V, class DA>
 class GeoDataNetcdfCreatorT : public GeoDataNetcdfCreator

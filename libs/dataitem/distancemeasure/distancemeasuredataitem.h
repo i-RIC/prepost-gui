@@ -5,19 +5,9 @@
 #include "distancemeasuresetting.h"
 #include "distancemeasurecopypropertydialog.h"
 
-#include <guibase/vtktool/vtklabel2dactor.h>
-#include <guibase/vtktool/vtklineactor.h>
 #include <guicore/datamodel/graphicswindowdataitem.h>
 
-#include <QVector2D>
-#include <QPoint>
-#include <QColor>
-#include <QPixmap>
-#include <QCursor>
-
 class QMenu;
-class QAction;
-class DistanceMeasureDialog;
 
 class DISTANCEMEASURE_API DistanceMeasureDataItem : public GraphicsWindowDataItem
 {

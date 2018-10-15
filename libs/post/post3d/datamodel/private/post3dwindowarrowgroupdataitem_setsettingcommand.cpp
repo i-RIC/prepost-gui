@@ -2,6 +2,8 @@
 
 #include <misc/qttool.h>
 
+#include <QStandardItem>
+
 Post3dWindowArrowGroupDataItem::SetSettingCommand::SetSettingCommand(const ArrowSettingContainer& setting, Post3dWindowArrowGroupDataItem* g) :
 	QUndoCommand(),
 	m_newEnabled {true},

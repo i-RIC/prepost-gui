@@ -2,7 +2,8 @@
 #define STARTPAGERECENTPROJECTLIST_H
 
 #include <QWidget>
-#include <QVBoxLayout>
+
+class QVBoxLayout;
 
 class StartPageRecentProjectList : public QWidget
 {

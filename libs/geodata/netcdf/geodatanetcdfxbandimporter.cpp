@@ -11,7 +11,6 @@
 #include <misc/iricrootpath.h>
 #include <misc/stringtool.h>
 
-#include <QApplication>
 #include <QDir>
 #include <QFileInfo>
 #include <QList>
@@ -19,6 +18,8 @@
 #include <QProcess>
 #include <QTemporaryDir>
 #include <QTextCodec>
+
+#include <vtkDoubleArray.h>
 
 #include <string>
 

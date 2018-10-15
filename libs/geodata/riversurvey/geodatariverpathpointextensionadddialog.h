@@ -3,10 +3,12 @@
 
 #include <QDialog>
 #include <QVector2D>
+
 class QAbstractButton;
 class GeoDataRiverPathPoint;
 class GeoDataRiverSurvey;
 class QVector2D;
+
 namespace Ui
 {
 	class GeoDataRiverPathPointExtensionAddDialog;

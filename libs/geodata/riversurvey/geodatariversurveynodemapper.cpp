@@ -1,6 +1,12 @@
+#include "geodatariversurvey.h"
 #include "geodatariversurveynodemapper.h"
 
 #include <guicore/pre/geodata/geodatamappersettingi.h>
+#include <misc/doublemappingsetting.h>
+
+#include <vtkCell.h>
+#include <vtkSmartPointer.h>
+
 #include <set>
 
 namespace {

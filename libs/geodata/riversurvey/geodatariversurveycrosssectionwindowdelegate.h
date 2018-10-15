@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOWDELEGATE_H
 
 #include <QStyledItemDelegate>
+
 class GeoDataRiverCrosssection;
 class CenteredCheckBox;
 

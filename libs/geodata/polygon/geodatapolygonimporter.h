@@ -1,8 +1,13 @@
 #ifndef GEODATAPOLYGONIMPORTER_H
 #define GEODATAPOLYGONIMPORTER_H
 
-#include <guicore/pre/geodata/geodataimporter.h>
 #include "geodatapolygonimportersettingdialog.h"
+
+#include <guicore/pre/geodata/geodataimporter.h>
+
+#include <QVariant>
+
+#include <vector>
 
 class GeoDataPolygonImporter : public GeoDataImporter
 {

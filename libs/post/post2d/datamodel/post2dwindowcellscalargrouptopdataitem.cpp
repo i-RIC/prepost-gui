@@ -16,6 +16,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <vtkCellData.h>

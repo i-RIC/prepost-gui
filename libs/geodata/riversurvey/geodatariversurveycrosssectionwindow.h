@@ -4,6 +4,7 @@
 #include "gd_riversurvey_global.h"
 #include "geodatariversurvey.h"
 #include "geodatarivercrosssection.h"
+
 #include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/base/additionalmenuwindowi.h>
 
@@ -12,7 +13,6 @@
 #include <QUndoCommand>
 
 class GeoDataRiverPathPoint;
-class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 class PreProcessorGeoDataGroupDataItemInterface;

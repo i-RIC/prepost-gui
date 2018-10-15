@@ -4,6 +4,8 @@
 #include "../../guicore_global.h"
 #include "preprocessordataitem.h"
 
+#include <QIcon>
+
 class Grid;
 class GridAttributeContainer;
 class PreProcessorBCGroupDataItem;
@@ -12,8 +14,8 @@ class GUICOREDLL_EXPORT PreProcessorGridDataItemInterface : public PreProcessorD
 {
 
 public:
-	PreProcessorGridDataItemInterface(PreProcessorDataItem* parent)
-		: PreProcessorDataItem(PreProcessorDataItem::tr("Grid"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+	PreProcessorGridDataItemInterface(PreProcessorDataItem* parent) :
+		PreProcessorDataItem(PreProcessorDataItem::tr("Grid"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 	{}
 	virtual void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) = 0;
 	virtual void informGridAttributeChange(const std::string& name) = 0;

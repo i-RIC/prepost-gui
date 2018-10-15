@@ -5,7 +5,6 @@
 
 #include <QAction>
 #include <QIcon>
-#include <QInputDialog>
 #include <QLabel>
 #include <QMenu>
 #include <QSlider>

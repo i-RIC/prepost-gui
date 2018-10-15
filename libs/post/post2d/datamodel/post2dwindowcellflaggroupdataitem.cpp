@@ -14,6 +14,7 @@
 #include <misc/stringtool.h>
 
 #include <QMouseEvent>
+#include <QStandardItem>
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 

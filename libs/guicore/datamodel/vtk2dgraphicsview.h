@@ -2,8 +2,8 @@
 #define VTK2DGRAPHICSVIEW_H
 
 #include "../guicore_global.h"
-
 #include "vtkgraphicsview.h"
+
 class QVector2D;
 
 class GUICOREDLL_EXPORT VTK2DGraphicsView : public VTKGraphicsView

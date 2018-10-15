@@ -17,6 +17,7 @@
 #include <misc/stringtool.h>
 
 #include <QDomElement>
+#include <QIcon>
 #include <QSettings>
 #include <QVector2D>
 

@@ -5,8 +5,6 @@
 
 #include "inputconditionwidget.h"
 
-#include <QLineEdit>
-
 class AsciiOnlyLineEdit;
 class InputConditionContainerString;
 class SolverDefinitionTranslator;

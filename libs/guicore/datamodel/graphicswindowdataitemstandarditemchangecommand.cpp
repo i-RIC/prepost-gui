@@ -1,6 +1,8 @@
 #include "graphicswindowdataitem.h"
 #include "graphicswindowdataitemstandarditemchangecommand.h"
 
+#include <QStandardItem>
+
 namespace {
 
 void applySettingToQStandardItem(const QVariant& text, const QVariant& checkState, QStandardItem* item)

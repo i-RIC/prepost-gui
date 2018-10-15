@@ -15,6 +15,7 @@
 #include <QAction>
 #include <QDomNode>
 #include <QMenu>
+#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <vtkRenderer.h>

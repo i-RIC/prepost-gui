@@ -3,6 +3,11 @@
 
 #include "../geodatanetcdfcellmappert.h"
 
+#include <guicore/pre/geodata/geodatamappersettingi.h>
+#include <misc/doublemappingsetting.h>
+
+#include <vtkCell.h>
+
 #include <vector>
 
 class GeoDataNetcdfCellMapperSetting : public GeoDataMapperSettingI

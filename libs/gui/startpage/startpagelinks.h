@@ -2,6 +2,7 @@
 #define STARTPAGELINKS_H
 
 #include <QWidget>
+
 class QVBoxLayout;
 
 class StartPageLinks : public QWidget

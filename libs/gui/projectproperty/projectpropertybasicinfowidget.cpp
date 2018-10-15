@@ -7,10 +7,7 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/solverdef/solverdefinition.h>
 #include <pre/preprocessorwindow.h>
-#include <pre/preprocessorwindow.h>
-#include <pre/preprocessorwindowprojectdataitem.h>
 
 #include <QDateTime>
 #include <QFileInfo>
