@@ -4,52 +4,42 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="93"/>
+        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="95"/>
-        <source>&amp;Copy...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="97"/>
+        <location filename="../geodatapolyline.cpp" line="54"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="100"/>
+        <location filename="../geodatapolyline.cpp" line="55"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="103"/>
+        <location filename="../geodatapolyline.cpp" line="56"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
-        <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="110"/>
-        <source>&amp;Delete Hole Region...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="113"/>
+        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="167"/>
+        <location filename="../geodatapolyline.cpp" line="105"/>
         <source>&amp;PolyLine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="536"/>
+        <location filename="../geodatapolyline.cpp" line="390"/>
+        <source>PolyLine must have two vertices at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="395"/>
         <location filename="../private/geodatapolyline_finishpolylinedefinitioncommand.cpp" line="5"/>
         <source>Finish Defining PolyLine</source>
         <translation type="unfinished"></translation>
@@ -60,7 +50,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_movepolylinecommand.cpp" line="9"/>
+        <location filename="../private/geodatapolyline_movepolylinecommand.cpp" line="8"/>
         <source>Move PolyLine</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70,7 +60,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_addvertexcommand.cpp" line="8"/>
+        <location filename="../private/geodatapolyline_addvertexcommand.cpp" line="10"/>
         <source>Insert PolyLine Vertex</source>
         <translation type="unfinished"></translation>
     </message>
@@ -80,39 +70,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="531"/>
-        <location filename="../geodatapolyline.cpp" line="977"/>
+        <location filename="../geodatapolyline.cpp" line="390"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="531"/>
-        <source>PolyLine must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapolyline_addholepolylinecommand.cpp" line="6"/>
-        <source>Add New Hole PolyLine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="949"/>
-        <location filename="../geodatapolyline.cpp" line="1138"/>
+        <location filename="../geodatapolyline.cpp" line="685"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="949"/>
-        <source>Please define hole region. Hole region can be defined as polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="977"/>
-        <source>Are you sure you want to remove this polyline?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="1138"/>
+        <location filename="../geodatapolyline.cpp" line="685"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -122,12 +90,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1171"/>
+        <location filename="../geodatapolyline.cpp" line="718"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1172"/>
+        <location filename="../geodatapolyline.cpp" line="719"/>
         <source>Please input new value in this polyline.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,31 +105,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1349"/>
-        <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="1349"/>
-        <source>Please select which geographic data to copy this polyline.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="7"/>
+        <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="9"/>
         <source>Edit PolyLine Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_coordinateseditor.cpp" line="31"/>
+        <location filename="../private/geodatapolyline_coordinateseditor.cpp" line="30"/>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPolyLineAbstractPolyLine</name>
-    <message>
-        <location filename="../geodatapolylineabstractpolyline.cpp" line="122"/>
-        <source>Please specify a closed polyline!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -189,6 +139,19 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineColorSimpleSettingDialog</name>
+    <message>
+        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
+        <source>PolyLine Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineCreator</name>
     <message>
         <location filename="../geodatapolylinecreator.cpp" line="12"/>
@@ -204,51 +167,35 @@
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="112"/>
+        <location filename="../geodatapolylineimporter.cpp" line="77"/>
         <source>ESRI Shape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="121"/>
+        <location filename="../geodatapolylineimporter.cpp" line="86"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="144"/>
-        <location filename="../geodatapolylineimporter.cpp" line="152"/>
-        <location filename="../geodatapolylineimporter.cpp" line="159"/>
+        <location filename="../geodatapolylineimporter.cpp" line="109"/>
+        <location filename="../geodatapolylineimporter.cpp" line="117"/>
+        <location filename="../geodatapolylineimporter.cpp" line="124"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="144"/>
+        <location filename="../geodatapolylineimporter.cpp" line="109"/>
         <source>The shape type contained in this shape file is not polyline.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="152"/>
+        <location filename="../geodatapolylineimporter.cpp" line="117"/>
         <source>Opening %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="159"/>
+        <location filename="../geodatapolylineimporter.cpp" line="124"/>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolylineimporter.cpp" line="203"/>
-        <source>%1 th polyline can not be imported. PolyLine like below can not be imported:
-- It has less than three points
-- It is not closed
-- Lines of polyline intersect each other
-- Hole polyline is outside of region polyline
-- PolyLine passes the same point several times</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolylineimporter.cpp" line="220"/>
-        <location filename="../geodatapolylineimporter.cpp" line="223"/>
-        <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -304,12 +251,12 @@
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="17"/>
+        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
         <source>ESRI Shape file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="134"/>
+        <location filename="../geodatapolylineshapeexporter.cpp" line="123"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>

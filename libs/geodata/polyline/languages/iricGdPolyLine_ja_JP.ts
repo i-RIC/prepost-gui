@@ -4,165 +4,158 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="93"/>
+        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
         <translation>値の編集(&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="95"/>
         <source>&amp;Copy...</source>
-        <translation>コピー(&amp;C)...</translation>
+        <translation type="vanished">コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="97"/>
+        <location filename="../geodatapolyline.cpp" line="54"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="100"/>
+        <location filename="../geodatapolyline.cpp" line="55"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="103"/>
+        <location filename="../geodatapolyline.cpp" line="56"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
         <source>Add &amp;Hole Region</source>
-        <translation>穴領域の追加(&amp;H)</translation>
+        <translation type="vanished">穴領域の追加(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="110"/>
         <source>&amp;Delete Hole Region...</source>
-        <translation>穴領域の削除(&amp;D)...</translation>
+        <translation type="vanished">穴領域の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="113"/>
+        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
         <translation>表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="167"/>
+        <location filename="../geodatapolyline.cpp" line="105"/>
         <source>&amp;PolyLine</source>
-        <translation>ポリゴン (&amp;P)</translation>
+        <translation>折れ線 (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="536"/>
+        <location filename="../geodatapolyline.cpp" line="390"/>
+        <source>PolyLine must have two vertices at least.</source>
+        <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="395"/>
         <location filename="../private/geodatapolyline_finishpolylinedefinitioncommand.cpp" line="5"/>
         <source>Finish Defining PolyLine</source>
-        <translation>ポリゴンの定義の完了</translation>
+        <translation>折れ線の定義の完了</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_pushnewpointcommand.cpp" line="8"/>
         <source>Add New PolyLine Point</source>
-        <translation>ポリゴンの頂点の追加</translation>
+        <translation>折れ線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_movepolylinecommand.cpp" line="9"/>
+        <location filename="../private/geodatapolyline_movepolylinecommand.cpp" line="8"/>
         <source>Move PolyLine</source>
-        <translation>ポリゴンの移動</translation>
+        <translation>折れ線の移動</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_movevertexcommand.cpp" line="10"/>
         <source>Move PolyLine Vertex</source>
-        <translation>ポリゴンの頂点の移動</translation>
+        <translation>折れ線の頂点の移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_addvertexcommand.cpp" line="8"/>
+        <location filename="../private/geodatapolyline_addvertexcommand.cpp" line="10"/>
         <source>Insert PolyLine Vertex</source>
-        <translation>ポリゴンの頂点の追加</translation>
+        <translation>折れ線の頂点の追加</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_removevertexcommand.cpp" line="8"/>
         <source>Remove PolyLine Vertex</source>
-        <translation>ポリゴンの頂点の削除</translation>
+        <translation>折れ線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="531"/>
-        <location filename="../geodatapolyline.cpp" line="977"/>
+        <location filename="../geodatapolyline.cpp" line="390"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="531"/>
         <source>PolyLine must have three vertices at least.</source>
-        <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
+        <translation type="vanished">折れ線は、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_addholepolylinecommand.cpp" line="6"/>
         <source>Add New Hole PolyLine</source>
-        <translation>穴領域の追加</translation>
+        <translation type="vanished">穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="949"/>
-        <location filename="../geodatapolyline.cpp" line="1138"/>
+        <location filename="../geodatapolyline.cpp" line="685"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="949"/>
         <source>Please define hole region. Hole region can be defined as polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation type="vanished">穴領域を定義してください。穴領域領域は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="977"/>
         <source>Are you sure you want to remove this polyline?</source>
-        <translation>本当にこのポリゴンを削除していいですか?</translation>
+        <translation type="vanished">本当にこの折れ線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1138"/>
+        <location filename="../geodatapolyline.cpp" line="685"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation>折れ線を、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
         <source>PolyLine value change</source>
-        <translation>ポリゴン値編集</translation>
+        <translation>折れ線値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1171"/>
+        <location filename="../geodatapolyline.cpp" line="718"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1172"/>
+        <location filename="../geodatapolyline.cpp" line="719"/>
         <source>Please input new value in this polyline.</source>
-        <translation>このポリゴン内での値を入力してください。</translation>
+        <translation>この折れ線上での値を入力してください。</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
         <source>PolyLine property edit</source>
-        <translation>ポリゴン属性編集</translation>
+        <translation>折れ線属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1349"/>
         <source>Select Geographic Data</source>
-        <translation>地理情報の選択</translation>
+        <translation type="vanished">地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="1349"/>
         <source>Please select which geographic data to copy this polyline.</source>
-        <translation>どの地理情報にコピーするか、選択してください。</translation>
+        <translation type="vanished">どの地理情報にコピーするか、選択してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="7"/>
+        <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="9"/>
         <source>Edit PolyLine Coordinates</source>
-        <translation>ポリゴンの座標の編集</translation>
+        <translation>折れ線の座標の編集</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_coordinateseditor.cpp" line="31"/>
+        <location filename="../private/geodatapolyline_coordinateseditor.cpp" line="30"/>
         <source>PolyLine Coordinates</source>
-        <translation>ポリゴンの頂点座標</translation>
+        <translation>折れ線の頂点座標</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineAbstractPolyLine</name>
     <message>
-        <location filename="../geodatapolylineabstractpolyline.cpp" line="122"/>
         <source>Please specify a closed polyline!</source>
-        <translation>閉じたポリゴンを指定してください!</translation>
+        <translation type="vanished">閉じた折れ線を指定してください!</translation>
     </message>
 </context>
 <context>
@@ -170,7 +163,7 @@
     <message>
         <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>PolyLine Color Setting</source>
-        <translation>ポリゴンの表示色設定</translation>
+        <translation>折れ線の表示色設定</translation>
     </message>
     <message>
         <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
@@ -189,10 +182,23 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineColorSimpleSettingDialog</name>
+    <message>
+        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
+        <source>PolyLine Color Setting</source>
+        <translation>折れ線の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineCoordinatesEditDialog</name>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="vanished">ポリゴンの頂点座標</translation>
+        <translation type="vanished">折れ線の頂点座標</translation>
     </message>
     <message>
         <source>X</source>
@@ -208,62 +214,61 @@
     <message>
         <location filename="../geodatapolylinecreator.cpp" line="12"/>
         <source>PolyLine</source>
-        <translation>ポリゴン</translation>
+        <translation>折れ線</translation>
     </message>
     <message>
         <location filename="../geodatapolylinecreator.cpp" line="25"/>
         <source>PolyLine%1</source>
-        <translation>ポリゴン%1</translation>
+        <translation>折れ線%1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="112"/>
+        <location filename="../geodatapolylineimporter.cpp" line="77"/>
         <source>ESRI Shape</source>
         <translation>ESRI シェープ</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="121"/>
+        <location filename="../geodatapolylineimporter.cpp" line="86"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="144"/>
-        <location filename="../geodatapolylineimporter.cpp" line="152"/>
-        <location filename="../geodatapolylineimporter.cpp" line="159"/>
+        <location filename="../geodatapolylineimporter.cpp" line="109"/>
+        <location filename="../geodatapolylineimporter.cpp" line="117"/>
+        <location filename="../geodatapolylineimporter.cpp" line="124"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="144"/>
+        <location filename="../geodatapolylineimporter.cpp" line="109"/>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation>このシェープファイルに含まれているデータは、ポリゴンではありません。</translation>
+        <translation>このシェープファイルに含まれているデータは、折れ線ではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="152"/>
+        <location filename="../geodatapolylineimporter.cpp" line="117"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="159"/>
+        <location filename="../geodatapolylineimporter.cpp" line="124"/>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation>*shp ファイルと *.dbf ファイルで、含まれているポリゴンの数が一致していません。</translation>
+        <translation>*shp ファイルと *.dbf ファイルで、含まれている折れ線の数が一致していません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="203"/>
         <source>%1 th polyline can not be imported. PolyLine like below can not be imported:
 - It has less than three points
 - It is not closed
 - Lines of polyline intersect each other
 - Hole polyline is outside of region polyline
 - PolyLine passes the same point several times</source>
-        <translation>%1 番目のポリゴンはインポートできませんでした。以下のようなポリゴンはインポートできません:
+        <translation type="vanished">%1 番目の折れ線はインポートできませんでした。以下のような折れ線はインポートできません:
 - 頂点の数が2以下
 - 閉じていない
-- ポリゴンの線分同士が交差している
-- 穴のポリゴンが領域ポリゴンからはみ出している
-- ポリゴンの線分が、同じ点を何度も通過している</translation>
+- 折れ線の線分同士が交差している
+- 穴の折れ線が領域折れ線からはみ出している
+- 折れ線の線分が、同じ点を何度も通過している</translation>
     </message>
     <message>
         <source>%th polyline can not be imported. PolyLine like below can not be imported:
@@ -281,18 +286,16 @@
 - PolyLine passes the same point several times</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="220"/>
-        <location filename="../geodatapolylineimporter.cpp" line="223"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Importing PolyLine failed. Could not read data</source>
-        <translation type="vanished">ポリゴンのインポートが失敗しました。データが読み込めません。</translation>
+        <translation type="vanished">折れ線のインポートが失敗しました。データが読み込めません。</translation>
     </message>
     <message>
         <source>Importing PolyLine failed: %1</source>
-        <translation type="vanished">ポリゴンのインポートが失敗しました。: %1</translation>
+        <translation type="vanished">折れ線のインポートが失敗しました。: %1</translation>
     </message>
 </context>
 <context>
@@ -300,7 +303,7 @@
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="14"/>
         <source>PolyLine Import Setting</source>
-        <translation>ポリゴンインポート設定</translation>
+        <translation>折れ線インポート設定</translation>
     </message>
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="26"/>
@@ -321,7 +324,7 @@
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. PolyLine1)</source>
-        <translation>自動的に設定する (例: ポリゴン1)</translation>
+        <translation>自動的に設定する (例: 折れ線1)</translation>
     </message>
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="126"/>
@@ -347,12 +350,12 @@
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="17"/>
+        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
         <source>ESRI Shape file</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="134"/>
+        <location filename="../geodatapolylineshapeexporter.cpp" line="123"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
@@ -361,11 +364,11 @@
     <name>QObject</name>
     <message>
         <source>PolyLine value change</source>
-        <translation type="vanished">ポリゴン値編集</translation>
+        <translation type="vanished">折れ線値編集</translation>
     </message>
     <message>
         <source>PolyLine property edit</source>
-        <translation type="vanished">ポリゴン属性編集</translation>
+        <translation type="vanished">折れ線属性編集</translation>
     </message>
 </context>
 <context>
@@ -404,31 +407,31 @@
     </message>
     <message>
         <source>&amp;PolyLine</source>
-        <translation type="vanished">ポリゴン (&amp;P)</translation>
+        <translation type="vanished">折れ線 (&amp;P)</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation type="vanished">ポリゴンの定義の完了</translation>
+        <translation type="vanished">折れ線の定義の完了</translation>
     </message>
     <message>
         <source>Add New PolyLine Point</source>
-        <translation type="vanished">ポリゴンの頂点の追加</translation>
+        <translation type="vanished">折れ線の頂点の追加</translation>
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation type="vanished">ポリゴンの移動</translation>
+        <translation type="vanished">折れ線の移動</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
-        <translation type="vanished">ポリゴンの頂点の移動</translation>
+        <translation type="vanished">折れ線の頂点の移動</translation>
     </message>
     <message>
         <source>Insert PolyLine Vertex</source>
-        <translation type="vanished">ポリゴンの頂点の追加</translation>
+        <translation type="vanished">折れ線の頂点の追加</translation>
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation type="vanished">ポリゴンの頂点の削除</translation>
+        <translation type="vanished">折れ線の頂点の削除</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -436,7 +439,7 @@
     </message>
     <message>
         <source>PolyLine must have three vertices at least.</source>
-        <translation type="vanished">ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
+        <translation type="vanished">折れ線は、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
         <source>Add New Hole PolyLine</source>
@@ -448,15 +451,15 @@
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="vanished">穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation type="vanished">穴領域を定義してください。穴領域領域は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polyline?</source>
-        <translation type="vanished">本当にこのポリゴンを削除していいですか?</translation>
+        <translation type="vanished">本当にこの折れ線を削除していいですか?</translation>
     </message>
     <message>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="vanished">ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation type="vanished">折れ線を、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
@@ -464,7 +467,7 @@
     </message>
     <message>
         <source>Please input new value in this polyline.</source>
-        <translation type="vanished">このポリゴン内での値を入力してください。</translation>
+        <translation type="vanished">この折れ線内での値を入力してください。</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
@@ -476,21 +479,21 @@
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation type="vanished">ポリゴンの座標の編集</translation>
+        <translation type="vanished">折れ線の座標の編集</translation>
     </message>
 </context>
 <context>
     <name>RawDataPolyLineAbstractPolyLine</name>
     <message>
         <source>Please specify a closed polyline!</source>
-        <translation type="vanished">閉じたポリゴンを指定してください!</translation>
+        <translation type="vanished">閉じた折れ線を指定してください!</translation>
     </message>
 </context>
 <context>
     <name>RawDataPolyLineColorSettingDialog</name>
     <message>
         <source>PolyLine Color Setting</source>
-        <translation type="vanished">ポリゴンの表示色設定</translation>
+        <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
         <source>Color</source>
@@ -509,7 +512,7 @@
     <name>RawDataPolyLineCoordinatesEditDialog</name>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="vanished">ポリゴンの頂点座標</translation>
+        <translation type="vanished">折れ線の頂点座標</translation>
     </message>
     <message>
         <source>X</source>
@@ -524,11 +527,11 @@
     <name>RawDataPolyLineCreator</name>
     <message>
         <source>PolyLine</source>
-        <translation type="vanished">ポリゴン</translation>
+        <translation type="vanished">折れ線</translation>
     </message>
     <message>
         <source>PolyLine%1</source>
-        <translation type="vanished">ポリゴン%1</translation>
+        <translation type="vanished">折れ線%1</translation>
     </message>
 </context>
 <context>
@@ -543,11 +546,11 @@
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation type="vanished">このシェープファイルに含まれているデータは、ポリゴンではありません。</translation>
+        <translation type="vanished">このシェープファイルに含まれているデータは、折れ線ではありません。</translation>
     </message>
     <message>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="vanished">*shp ファイルと *.dbf ファイルで、含まれているポリゴンの数が一致していません。</translation>
+        <translation type="vanished">*shp ファイルと *.dbf ファイルで、含まれている折れ線の数が一致していません。</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -555,14 +558,14 @@
     </message>
     <message>
         <source>Importing PolyLine failed: %1</source>
-        <translation type="vanished">ポリゴンのインポートが失敗しました。: %1</translation>
+        <translation type="vanished">折れ線のインポートが失敗しました。: %1</translation>
     </message>
 </context>
 <context>
     <name>RawDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation type="vanished">ポリゴンインポート設定</translation>
+        <translation type="vanished">折れ線インポート設定</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -578,7 +581,7 @@
     </message>
     <message>
         <source>Name is set automatically (ex. PolyLine1)</source>
-        <translation type="vanished">自動的に設定する (例: ポリゴン1)</translation>
+        <translation type="vanished">自動的に設定する (例: 折れ線1)</translation>
     </message>
     <message>
         <source>Value</source>
