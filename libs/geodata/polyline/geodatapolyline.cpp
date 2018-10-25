@@ -1,4 +1,5 @@
 #include "geodatapolyline.h"
+#include "geodatapolylinecolorsettingdialog.h"
 #include "geodatapolylineproxy.h"
 #include "geodatapolylineimplpolyline.h"
 
@@ -134,29 +135,17 @@ QColor GeoDataPolyLine::doubleToColor(double /*d*/)
 	return Qt::red;
 }
 
-void GeoDataPolyLine::setMapping(GeoDataPolyLineColorSettingDialog::Mapping m)
-{
-	impl->m_setting.mapping = m;
-	updateActorSettings();
-}
-
-void GeoDataPolyLine::setColor(const QColor& color)
-{
-	impl->m_setting.color = color;
-	updateActorSettings();
-}
-
 void GeoDataPolyLine::setMouseEventMode(MouseEventMode mode)
 {
 	impl->m_mouseEventMode = mode;
 }
 
-GeoDataPolyLineColorSettingDialog::Setting GeoDataPolyLine::colorSetting() const
+GeoDataPolyLineColorSimpleSettingDialog::Setting GeoDataPolyLine::colorSetting() const
 {
 	return impl->m_setting;
 }
 
-void GeoDataPolyLine::setColorSetting(GeoDataPolyLineColorSettingDialog::Setting setting)
+void GeoDataPolyLine::setColorSetting(GeoDataPolyLineColorSimpleSettingDialog::Setting setting)
 {
 	impl->m_setting = setting;
 }
@@ -751,12 +740,13 @@ void GeoDataPolyLine::editColorSetting()
 void GeoDataPolyLine::updateActorSettings()
 {
 	impl->m_polyLine->setColor(impl->m_setting.color);
-	impl->m_polyLine->setMapping(impl->m_setting.mapping);
+//	impl->m_polyLine->setMapping(impl->m_setting.mapping);
+	impl->m_polyLine->setMapping(GeoDataPolyLineColorSettingDialog::Arbitrary);
 }
 
 QDialog* GeoDataPolyLine::propertyDialog(QWidget* parent)
 {
-	GeoDataPolyLineColorSettingDialog* dialog = new GeoDataPolyLineColorSettingDialog(parent);
+	auto dialog = new GeoDataPolyLineColorSimpleSettingDialog(parent);
 	dialog->setSetting(impl->m_setting);
 
 	return dialog;
@@ -764,7 +754,7 @@ QDialog* GeoDataPolyLine::propertyDialog(QWidget* parent)
 
 void GeoDataPolyLine::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	auto dialog = dynamic_cast<GeoDataPolyLineColorSettingDialog*>(propDialog);
+	auto dialog = dynamic_cast<GeoDataPolyLineColorSimpleSettingDialog*>(propDialog);
 	pushRenderCommand(new EditPropertyCommand(dialog->setting(), this));
 }
 

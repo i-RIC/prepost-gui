@@ -1,6 +1,6 @@
 #include "geodatapolyline_editpropertycommand.h"
 
-GeoDataPolyLine::EditPropertyCommand::EditPropertyCommand(const GeoDataPolyLineColorSettingDialog::Setting& s, GeoDataPolyLine* p) :
+GeoDataPolyLine::EditPropertyCommand::EditPropertyCommand(const GeoDataPolyLineColorSimpleSettingDialog::Setting& s, GeoDataPolyLine* p) :
 	QUndoCommand {GeoDataPolyLine::tr("PolyLine property edit")},
 	m_newSetting {s},
 	m_oldSetting {p->colorSetting()},

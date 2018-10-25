@@ -121,6 +121,7 @@ HEADERS += gd_polyline_global.h \
            geodatapolylinecellmappersetting.h \
            geodatapolylinecellmappert.h \
            geodatapolylinecolorsettingdialog.h \
+           geodatapolylinecolorsimplesettingdialog.h \
            geodatapolylinecreator.h \
            geodatapolylinecreatort.h \
            geodatapolylineimplpolyline.h \
@@ -148,11 +149,13 @@ HEADERS += gd_polyline_global.h \
            private/geodatapolylinecreatort_detail.h \
            private/geodatapolylinenodemappert_detail.h
 FORMS += geodatapolylinecolorsettingdialog.ui \
+         geodatapolylinecolorsimplesettingdialog.ui \
          geodatapolylineimportersettingdialog.ui
 SOURCES += geodatapolyline.cpp \
            geodatapolylineabstractpolyline.cpp \
            geodatapolylinecellmappersetting.cpp \
            geodatapolylinecolorsettingdialog.cpp \
+           geodatapolylinecolorsimplesettingdialog.cpp \
            geodatapolylinecreator.cpp \
            geodatapolylineimplpolyline.cpp \
            geodatapolylineimporter.cpp \

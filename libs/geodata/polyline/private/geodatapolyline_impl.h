@@ -15,7 +15,7 @@ public:
 
 	GeoDataPolyLineImplPolyLine* m_polyLine;
 
-	GeoDataPolyLineColorSettingDialog::Setting m_setting;
+	GeoDataPolyLineColorSimpleSettingDialog::Setting m_setting;
 	std::vector<QVariant> m_variantValues;
 
 	ZDepthRange m_depthRange;

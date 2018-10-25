@@ -2,7 +2,7 @@
 #define GEODATAPOLYLINE_H
 
 #include "gd_polyline_global.h"
-#include "geodatapolylinecolorsettingdialog.h"
+#include "geodatapolylinecolorsimplesettingdialog.h"
 
 #include <guicore/pre/geodata/geodata.h>
 
@@ -115,13 +115,10 @@ private:
 	void doApplyOffset(double x, double y) override;
 	int iRICLibType() const override;
 
-	void setMapping(GeoDataPolyLineColorSettingDialog::Mapping m);
-	void setColor(const QColor& color);
-
 	void setMouseEventMode(MouseEventMode mode);
 
-	GeoDataPolyLineColorSettingDialog::Setting colorSetting() const;
-	void setColorSetting(GeoDataPolyLineColorSettingDialog::Setting);
+	GeoDataPolyLineColorSimpleSettingDialog::Setting colorSetting() const;
+	void setColorSetting(GeoDataPolyLineColorSimpleSettingDialog::Setting);
 
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateScalarValues();

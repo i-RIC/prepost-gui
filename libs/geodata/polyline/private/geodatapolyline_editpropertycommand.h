@@ -8,14 +8,14 @@
 class GeoDataPolyLine::EditPropertyCommand : public QUndoCommand
 {
 public:
-	EditPropertyCommand(const GeoDataPolyLineColorSettingDialog::Setting& s, GeoDataPolyLine* p);
+	EditPropertyCommand(const GeoDataPolyLineColorSimpleSettingDialog::Setting& s, GeoDataPolyLine* p);
 
 	void redo() override;
 	void undo() override;
 
 private:
-	GeoDataPolyLineColorSettingDialog::Setting m_newSetting;
-	GeoDataPolyLineColorSettingDialog::Setting m_oldSetting;
+	GeoDataPolyLineColorSimpleSettingDialog::Setting m_newSetting;
+	GeoDataPolyLineColorSimpleSettingDialog::Setting m_oldSetting;
 	GeoDataPolyLine* m_polyline;
 };
 
