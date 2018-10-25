@@ -104,7 +104,7 @@ void GeoDataPolyLine::setupMenu()
 {
 	m_menu->setTitle(tr("&PolyLine"));
 	m_menu->addAction(m_editNameAction);
-	m_menu->addAction(impl->m_editValueAction);
+//	m_menu->addAction(impl->m_editValueAction);
 	m_menu->addSeparator();
 	m_menu->addAction(impl->m_addVertexAction);
 	m_menu->addAction(impl->m_removeVertexAction);
@@ -114,8 +114,8 @@ void GeoDataPolyLine::setupMenu()
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
-	impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
-	impl->m_rightClickingMenu->addSeparator();
+//	impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
+//	impl->m_rightClickingMenu->addSeparator();
 	impl->m_rightClickingMenu->addAction(impl->m_addVertexAction);
 	impl->m_rightClickingMenu->addAction(impl->m_removeVertexAction);
 	impl->m_rightClickingMenu->addAction(impl->m_coordEditAction);
@@ -377,7 +377,7 @@ void GeoDataPolyLine::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 void GeoDataPolyLine::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_editNameAction);
-	menu->addAction(impl->m_editValueAction);
+//	menu->addAction(impl->m_editValueAction);
 }
 
 void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
@@ -397,7 +397,7 @@ void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
 	stack.push(new FinishPolyLineDefiningCommand(this));
 	stack.endMacro();
 	if (! noEditVal) {
-		editValue();
+//		editValue();
 	}
 }
 
