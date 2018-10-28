@@ -145,9 +145,11 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addSeparator();
 	menu->addAction(m_deleteAllAction);
 
-	menu->addSeparator();
-	menu->addAction(m_editColorMapAction);
-	menu->addAction(m_setupScalarBarAction);
+	if (! m_condition->isReferenceInformation()) {
+		menu->addSeparator();
+		menu->addAction(m_editColorMapAction);
+		menu->addAction(m_setupScalarBarAction);
+	}
 }
 
 void PreProcessorGeoDataGroupDataItem::closeCgnsFile()
@@ -845,6 +847,8 @@ void PreProcessorGeoDataGroupDataItem::editScalarsToColors()
 {
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	ScalarsToColorsContainer* stc = typedi->scalarsToColors(condition()->name());
+	if (stc == nullptr) {return;}
+
 	ScalarsToColorsEditDialog* dialog = condition()->createScalarsToColorsEditDialog(preProcessorWindow());
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
 	dialog->setContainer(stc);
