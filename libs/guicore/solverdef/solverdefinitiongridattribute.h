@@ -51,6 +51,9 @@ public:
 	const QString& mappingArgs() const;
 	int order() const;
 
+	bool isReferenceInformation() const;
+	void setIsReferenceInformation(bool ref);
+
 	const std::vector<SolverDefinitionGridAttributeDimension*>& dimensions() const;
 	std::vector<SolverDefinitionGridAttributeDimension*>& dimensions();
 	//@}

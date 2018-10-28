@@ -19,6 +19,7 @@
 #include <QSettings>
 
 SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
+	m_isReferenceInformation {false},
 	m_solverDefinition {solverDef},
 	m_parent {parent}
 {
@@ -128,6 +129,16 @@ const QString& SolverDefinitionGridAttribute::mappingArgs() const
 int SolverDefinitionGridAttribute::order() const
 {
 	return impl->m_order;
+}
+
+bool SolverDefinitionGridAttribute::isReferenceInformation() const
+{
+	return impl->m_isReferenceInformation;
+}
+
+void SolverDefinitionGridAttribute::setIsReferenceInformation(bool ref)
+{
+	impl->m_isReferenceInformation = ref;
 }
 
 const std::vector<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions() const
