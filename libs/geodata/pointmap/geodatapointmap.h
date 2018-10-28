@@ -34,6 +34,9 @@ class GeoDataPointmap : public GeoData
 {
 	Q_OBJECT
 
+private:
+	static const char* VALUES;
+
 public:
 	enum MappingMode {
 		mmTIN,
@@ -235,8 +238,6 @@ protected:
 	QAction* m_selectionModePolygon;
 	QAction* m_addPointAction;
 	QAction* m_interpolatePointAction;
-	//QAction* m_editAction;
-	QAction* m_mappingModeAction;
 	QAction* m_displaySettingAction;
 
 	QAction* m_editPointsAction;
@@ -268,7 +269,6 @@ private:
 	class InterpolateLineAddPointCommand;
 	class AddPointsCommand;
 	class AddInterpolatePointsCommand;
-	class DeletePointsCommand;
 	class DeletePointsCommand;
 	class InsertNewPointsCommand;
 	class EditPointsCommand;
