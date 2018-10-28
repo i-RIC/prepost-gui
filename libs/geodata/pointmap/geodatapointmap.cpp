@@ -11,6 +11,7 @@
 #include "geodatapointmaprepresentationdialog.h"
 #include "private/geodatapointmap_deletepointscommand.h"
 #include "private/geodatapointmap_editpointscommand.h"
+#include "private/geodatapointmap_editsinglepointcommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -68,56 +69,6 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
-
-class GeoDataPointmap::EditSinglePointCommand : public QUndoCommand
-{
-public:
-	EditSinglePointCommand(double x, double y, double value, vtkIdType editedPoint, GeoDataPointmap* p) :
-		QUndoCommand {GeoDataPointmap::tr("Edit Points")}
-	{
-		m_pointMap = p;
-		m_newX = x;
-		m_newY = y;
-		m_newValue = value;
-
-		double point[3];
-		p->vtkGrid()->GetPoint(editedPoint, point);
-		m_oldX = point[0];
-		m_oldY = point[1];
-		vtkDataArray* vals = p->vtkGrid()->GetPointData()->GetArray(VALUES);
-		m_oldValue = vals->GetTuple1(editedPoint);
-
-		m_editedPoint = editedPoint;
-	}
-	void redo() override {
-		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_newX, m_newY, 0);
-		m_pointMap->vtkGrid()->GetPoints()->Modified();
-		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_newValue);
-		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-	void undo() override {
-		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_oldX, m_oldY, 0);
-		m_pointMap->vtkGrid()->GetPoints()->Modified();
-		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_oldValue);
-		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-private:
-	double m_newX;
-	double m_newY;
-	double m_newValue;
-
-	double m_oldX;
-	double m_oldY;
-	double m_oldValue;
-
-	vtkIdType m_editedPoint;
-
-	GeoDataPointmap* m_pointMap;
-};
 
 class GeoDataPointmap::AddPointSetReferenceCommand : public QUndoCommand
 {
