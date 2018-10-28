@@ -166,6 +166,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_deletepointscommand.h \
            private/geodatapointmap_editpointscommand.h \
            private/geodatapointmap_editsinglepointcommand.h \
+           private/geodatapointmap_interpolatelineaddpointcommand.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
            private/geodatapointmapt_detail.h \
@@ -211,7 +212,8 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_breaklinefinishdefinitioncommand.cpp \
            private/geodatapointmap_deletepointscommand.cpp \
            private/geodatapointmap_editpointscommand.cpp \
-           private/geodatapointmap_editsinglepointcommand.cpp
+           private/geodatapointmap_editsinglepointcommand.cpp \
+           private/geodatapointmap_interpolatelineaddpointcommand.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_es_ES.ts \
                 languages/iricGdPointmap_fr_FR.ts \
