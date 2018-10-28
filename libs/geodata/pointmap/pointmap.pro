@@ -157,6 +157,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmapwebimportersettingmanager.h \
            geodatapointmapwebimporterzoomleveldialog.h \
            private/geodatapointmap_deletepointscommand.h \
+           private/geodatapointmap_editpointscommand.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
            private/geodatapointmapt_detail.h \
@@ -193,7 +194,8 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapwebimportersetting.cpp \
            geodatapointmapwebimportersettingmanager.cpp \
            geodatapointmapwebimporterzoomleveldialog.cpp \
-           private/geodatapointmap_deletepointscommand.cpp
+           private/geodatapointmap_deletepointscommand.cpp \
+           private/geodatapointmap_editpointscommand.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_es_ES.ts \
                 languages/iricGdPointmap_fr_FR.ts \

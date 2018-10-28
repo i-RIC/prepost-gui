@@ -10,6 +10,7 @@
 #include "geodatapointmapinterpolatepoints.h"
 #include "geodatapointmaprepresentationdialog.h"
 #include "private/geodatapointmap_deletepointscommand.h"
+#include "private/geodatapointmap_editpointscommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -67,52 +68,6 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
-
-class GeoDataPointmap::EditPointsCommand : public QUndoCommand
-{
-public:
-	EditPointsCommand(double value, QVector<vtkIdType> editedPoints, GeoDataPointmap* p) :
-		QUndoCommand {GeoDataPointmap::tr("Edit Points")}
-	{
-		m_pointMap = p;
-		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
-
-		QString name = m_oldValues->GetClassName();
-		if (name == "vtkIntArray") {
-			m_newValues = vtkSmartPointer<vtkIntArray>::New();
-		} else if (name == "vtkDoubleArray") {
-			m_newValues = vtkSmartPointer<vtkDoubleArray>::New();
-		}
-		m_newValues->SetName(VALUES);
-		m_newValues->DeepCopy(m_oldValues);
-
-		for (int i = 0; i < editedPoints.count(); ++i) {
-			vtkIdType id = editedPoints[i];
-			m_newValues->SetTuple1(id, value);
-		}
-		m_newValues->Modified();
-	}
-	void redo() override {
-		m_pointMap->vtkGrid()->GetPointData()->Initialize();
-		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_newValues);
-		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-	void undo() override {
-		m_pointMap->vtkGrid()->GetPointData()->Initialize();
-		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_oldValues);
-		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-private:
-	vtkSmartPointer<vtkDataArray> m_newValues;
-
-	vtkSmartPointer<vtkDataArray> m_oldValues;
-
-	GeoDataPointmap* m_pointMap;
-};
 
 class GeoDataPointmap::EditSinglePointCommand : public QUndoCommand
 {
