@@ -161,6 +161,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_addpointsetreferencecommand.h \
            private/geodatapointmap_breaklineaddcommand.h \
            private/geodatapointmap_breaklineaddpointcommand.h \
+           private/geodatapointmap_breaklinecanceldefinitioncommand.h \
            private/geodatapointmap_breaklinefinishdefinitioncommand.h \
            private/geodatapointmap_deletepointscommand.h \
            private/geodatapointmap_editpointscommand.h \
@@ -206,6 +207,7 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_addpointsetreferencecommand.cpp \
            private/geodatapointmap_breaklineaddcommand.cpp \
            private/geodatapointmap_breaklineaddpointcommand.cpp \
+           private/geodatapointmap_breaklinecanceldefinitioncommand.cpp \
            private/geodatapointmap_breaklinefinishdefinitioncommand.cpp \
            private/geodatapointmap_deletepointscommand.cpp \
            private/geodatapointmap_editpointscommand.cpp \
