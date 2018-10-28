@@ -598,6 +598,11 @@ void PreProcessorGeoDataGroupDataItem::addBackground()
 	geodata->setupDataItem();
 }
 
+void PreProcessorGeoDataGroupDataItem::cancelImport()
+{
+	m_cancelImport = true;
+}
+
 void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
@@ -1190,6 +1195,12 @@ void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
 	}
 	cg_gorel(fn, "..", 0, NULL);
 }
+
+void PreProcessorGeoDataGroupDataItem::saveComplexGroupsToCgnsFile(const int /*fn*/)
+{}
+
+void PreProcessorGeoDataGroupDataItem::setupEditWidget(GridAttributeEditWidget* /*widget*/)
+{}
 
 void PreProcessorGeoDataGroupDataItem::openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection)
 {
