@@ -1,9 +1,11 @@
 #ifndef SOLVERDEFINITIONGRIDATTRIBUTEREALNODE_H
 #define SOLVERDEFINITIONGRIDATTRIBUTEREALNODE_H
 
+#include "../guicore_global.h"
+
 #include "solverdefinitiongridattributereal.h"
 
-class SolverDefinitionGridAttributeRealNode : public SolverDefinitionGridAttributeReal
+class GUICOREDLL_EXPORT SolverDefinitionGridAttributeRealNode : public SolverDefinitionGridAttributeReal
 {
 public:
 	SolverDefinitionGridAttributeRealNode(const QDomElement& elem, SolverDefinition* solverDef, int order);
