@@ -98,7 +98,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 		m_scalarBarSetting.initForLegendBox();
 	}
 	// for scalar bar / legend box
-	m_title = m_condition->englishCaption().c_str();
+	m_scalarBarTitle = m_condition->englishCaption().c_str();
 
 	// add dimensions container
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
@@ -901,7 +901,7 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 		PreProcessorScalarBarEditDialog scalarbarDialog(dialog);
 		scalarbarDialog.hideDisplayCheckBox();
 		scalarbarDialog.setOrientation(m_scalarBarSetting.orientation);
-		scalarbarDialog.setScalarBarTitle(m_title);
+		scalarbarDialog.setScalarBarTitle(m_scalarBarTitle);
 		scalarbarDialog.setNumberOfLabels(m_scalarBarSetting.numberOfLabels);
 		scalarbarDialog.setWidth(m_scalarBarSetting.width);
 		scalarbarDialog.setHeight(m_scalarBarSetting.height);
@@ -913,7 +913,7 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 
 		if (scalarbarDialog.exec() == QDialog::Accepted) {
 			m_scalarBarSetting.orientation = scalarbarDialog.orientation();
-			m_title = scalarbarDialog.scalarBarTitle();
+			m_scalarBarTitle = scalarbarDialog.scalarBarTitle();
 			m_scalarBarSetting.numberOfLabels = scalarbarDialog.numberOfLabels();
 			m_scalarBarSetting.width = scalarbarDialog.width();
 			m_scalarBarSetting.height = scalarbarDialog.height();
@@ -932,9 +932,9 @@ ScalarBarSetting& PreProcessorGeoDataGroupDataItem::scalarBarSetting()
 	return m_scalarBarSetting;
 }
 
-const QString& PreProcessorGeoDataGroupDataItem::title() const
+const QString& PreProcessorGeoDataGroupDataItem::scalarBarTitle() const
 {
-	return m_title;
+	return m_scalarBarTitle;
 }
 
 QAction* PreProcessorGeoDataGroupDataItem::importAction() const

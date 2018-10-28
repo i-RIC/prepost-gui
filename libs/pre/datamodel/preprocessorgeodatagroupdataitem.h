@@ -49,7 +49,7 @@ public:
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting();
-	const QString& title() const;
+	const QString& scalarBarTitle() const;
 	QAction* importAction() const;
 	bool addImportAction(QMenu* menu);
 	bool addImportFromWebAction(QMenu* menu);
@@ -119,8 +119,8 @@ protected:
 	GridAttributeDimensionsContainer* m_dimensions;
 
 	ScalarBarSetting m_scalarBarSetting;
+	QString m_scalarBarTitle;
 
-	QString m_title;
 	PreProcessorGeoDataDataItem* m_backgroundItem;
 
 private:

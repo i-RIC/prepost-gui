@@ -321,7 +321,7 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		vtkScalarBarActor* scalarBarActor = m_scalarBarWidget->GetScalarBarActor();
 		scalarBarActor->SetLookupTable(cont->vtkObj());
 		scalarBarActor->SetNumberOfLabels(sbSetting.numberOfLabels);
-		scalarBarActor->SetTitle(iRIC::toStr(rdgItem->title()).c_str());
+		scalarBarActor->SetTitle(iRIC::toStr(rdgItem->scalarBarTitle()).c_str());
 		scalarBarActor->SetLabelFormat(iRIC::toStr(sbSetting.labelFormat).c_str());
 		m_titleTextSetting.applySetting(scalarBarActor->GetTitleTextProperty());
 		m_labelTextSetting.applySetting(scalarBarActor->GetLabelTextProperty());
