@@ -12,6 +12,7 @@
 #include "private/geodatapointmap_addinterpolatepointscommand.h"
 #include "private/geodatapointmap_addpointscommand.h"
 #include "private/geodatapointmap_addpointsetreferencecommand.h"
+#include "private/geodatapointmap_breaklineaddcommand.h"
 #include "private/geodatapointmap_deletepointscommand.h"
 #include "private/geodatapointmap_editpointscommand.h"
 #include "private/geodatapointmap_editsinglepointcommand.h"
@@ -72,39 +73,6 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
-
-class GeoDataPointmap::BreakLineAddCommand : public QUndoCommand
-{
-public:
-	BreakLineAddCommand(GeoDataPointmap* parent) {
-		m_breakLine = new GeoDataPointmapBreakLine(parent);
-		m_pointMap = parent;
-	}
-	void redo() override {
-		m_pointMap->m_mouseEventMode = GeoDataPointmap::meBreakLineAddNotPossible;
-		m_breakLine->setActive(true);
-		m_pointMap->m_activeBreakLine = m_breakLine;
-		m_pointMap->m_breakLines.append(m_breakLine);
-		m_pointMap->assignActorZValues(m_pointMap->m_zDepthRange);
-		m_pointMap->updateActionStatus();
-		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-	void undo() override {
-		m_pointMap->m_mouseEventMode = GeoDataPointmap::meNormal;
-		m_breakLine->setActive(false);
-		m_pointMap->m_activeBreakLine = 0;
-		m_pointMap->m_breakLines.removeOne(m_breakLine);
-		m_pointMap->updateActionStatus();
-		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-private:
-	GeoDataPointmapBreakLine* m_breakLine;
-	GeoDataPointmap* m_pointMap;
-};
 
 class GeoDataPointmap::BreakLineAddPointCommand : public QUndoCommand
 {
