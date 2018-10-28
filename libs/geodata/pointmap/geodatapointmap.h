@@ -235,7 +235,6 @@ protected:
 	QAction* m_selectionModePolygon;
 	QAction* m_addPointAction;
 	QAction* m_interpolatePointAction;
-	QAction* m_mappingModeAction;
 	QAction* m_displaySettingAction;
 
 	QAction* m_editPointsAction;
