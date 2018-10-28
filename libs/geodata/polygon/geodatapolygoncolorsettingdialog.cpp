@@ -35,6 +35,14 @@ GeoDataPolygonColorSettingDialog::~GeoDataPolygonColorSettingDialog()
 	delete ui;
 }
 
+void GeoDataPolygonColorSettingDialog::setIsReferenceInformation(bool isRef)
+{
+	if (! isRef) {return;}
+
+	ui->arbitraryRadioButton->setChecked(true);
+	ui->byValueRadioButton->setDisabled(true);
+}
+
 void GeoDataPolygonColorSettingDialog::setSetting(const Setting& setting)
 {
 	// mapping

@@ -127,6 +127,9 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	}
 
 	impl->m_mouseEventMode = meBeforeDefining;
+	if (gridAttribute() && gridAttribute()->isReferenceInformation()) {
+		impl->m_setting.mapping = GeoDataPolygonColorSettingDialog::Arbitrary;
+	}
 
 	impl->m_scalarValues->SetName("polygonvalue");
 	impl->m_polyData->GetPointData()->AddArray(impl->m_scalarValues);
@@ -161,9 +164,16 @@ GeoDataPolygon::~GeoDataPolygon()
 
 void GeoDataPolygon::setupMenu()
 {
+	bool isRef = false;
+	if (gridAttribute()) {
+		isRef = gridAttribute()->isReferenceInformation();
+	}
+
 	m_menu->setTitle(tr("&Polygon"));
 	m_menu->addAction(m_editNameAction);
-	m_menu->addAction(impl->m_editValueAction);
+	if (! isRef) {
+		m_menu->addAction(impl->m_editValueAction);
+	}
 	m_menu->addSeparator();
 	m_menu->addAction(impl->m_copyAction);
 	m_menu->addSeparator();
@@ -178,8 +188,10 @@ void GeoDataPolygon::setupMenu()
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
-	impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
-	impl->m_rightClickingMenu->addSeparator();
+	if (! isRef) {
+		impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
+		impl->m_rightClickingMenu->addSeparator();
+	}
 	impl->m_rightClickingMenu->addAction(impl->m_copyAction);
 	impl->m_rightClickingMenu->addSeparator();
 	impl->m_rightClickingMenu->addAction(impl->m_addVertexAction);
@@ -524,7 +536,10 @@ void GeoDataPolygon::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 void GeoDataPolygon::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_editNameAction);
-	menu->addAction(impl->m_editValueAction);
+	if (gridAttribute() && ! gridAttribute()->isReferenceInformation()) {
+		menu->addAction(impl->m_editValueAction);
+	}
+
 	menu->addSeparator();
 	menu->addAction(impl->m_copyAction);
 }
@@ -1179,6 +1194,8 @@ void GeoDataPolygon::setVariantValue(const QVariant &v, bool disableInform)
 
 void GeoDataPolygon::editValue()
 {
+	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
+
 	GridAttributeEditDialog* dialog = m_gridAttribute->editDialog(preProcessorWindow());
 	PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
@@ -1266,6 +1283,10 @@ QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
 {
 	GeoDataPolygonColorSettingDialog* dialog = new GeoDataPolygonColorSettingDialog(parent);
 	dialog->setSetting(impl->m_setting);
+	auto gridAtt = gridAttribute();
+	if (gridAtt != nullptr) {
+		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
+	}
 
 	return dialog;
 }

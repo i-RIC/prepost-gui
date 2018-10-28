@@ -34,6 +34,8 @@ public:
 	GeoDataPolygonColorSettingDialog(QWidget* parent = nullptr);
 	~GeoDataPolygonColorSettingDialog();
 
+	void setIsReferenceInformation(bool isRef);
+
 	void setSetting(const Setting &setting);
 	Setting setting() const;
 
