@@ -194,10 +194,10 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < cmNode.childNodes().count(); ++i) {
 			QDomElement elem = cmNode.childNodes().at(i).toElement();
 			std::string name = iRIC::toStr(elem.attribute("name"));
-			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, 0);
-			if (cont != 0) {
-				cont->loadFromProjectMainFile(elem);
-			}
+			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, nullptr);
+			if (cont == nullptr) {continue;}
+
+			cont->loadFromProjectMainFile(elem);
 		}
 	}
 
