@@ -57,7 +57,7 @@ signals:
 	void valueRangeChanged(const std::string& name);
 	void dataChanged();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
