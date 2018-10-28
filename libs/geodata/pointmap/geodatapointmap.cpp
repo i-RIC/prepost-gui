@@ -9,6 +9,7 @@
 #include "geodatapointmapeditptsdialog.h"
 #include "geodatapointmapinterpolatepoints.h"
 #include "geodatapointmaprepresentationdialog.h"
+#include "private/geodatapointmap_addpointsetreferencecommand.h"
 #include "private/geodatapointmap_deletepointscommand.h"
 #include "private/geodatapointmap_editpointscommand.h"
 #include "private/geodatapointmap_editsinglepointcommand.h"
@@ -69,33 +70,6 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
-
-class GeoDataPointmap::AddPointSetReferenceCommand : public QUndoCommand
-{
-public:
-	AddPointSetReferenceCommand(double value, GeoDataPointmap* p) :
-		QUndoCommand {GeoDataPointmap::tr("Select Refecence Point")}
-	{
-		m_value = value;
-		m_pointMap = p;
-	}
-	void redo() {
-		m_pointMap->m_mouseEventMode = GeoDataPointmap::meAddPoint;
-		m_pointMap->m_newPointValue = m_value;
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
-	}
-	void undo() {
-		m_pointMap->m_mouseEventMode = GeoDataPointmap::meAddPointSelectReferenceNotPossible;
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
-	}
-private:
-	GeoDataPointmap* m_pointMap;
-	double m_value;
-};
 
 class GeoDataPointmap::AddPointsCommand : public QUndoCommand
 {
