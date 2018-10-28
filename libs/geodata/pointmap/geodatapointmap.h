@@ -269,7 +269,6 @@ private:
 	class AddPointsCommand;
 	class AddInterpolatePointsCommand;
 	class DeletePointsCommand;
-	class DeletePointsCommand;
 	class InsertNewPointsCommand;
 	class EditPointsCommand;
 	class EditSinglePointCommand;
