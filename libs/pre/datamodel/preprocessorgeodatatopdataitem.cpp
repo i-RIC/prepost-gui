@@ -131,8 +131,8 @@ void removeNonGroupedComplexAttributes(PreProcessorGeoDataTopDataItem* item)
 
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_visible {"visible", true},
-	m_condition {nullptr}
+	m_condition {nullptr},
+	m_visible {"visible", true}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("geographicdata");
