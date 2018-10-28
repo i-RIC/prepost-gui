@@ -780,118 +780,118 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="184"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
         <source>All importable files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="189"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="308"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="440"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1154"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="220"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="363"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="367"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
         <source>Import failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
         <source>Importing data from %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="220"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <source>%1 contains no data to import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="233"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="380"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="235"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="382"/>
         <source>Importing data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="242"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
         <source>Canceled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="242"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
         <source>Importing canceled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>To import the geographic data, specify coordinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="308"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="440"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="363"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
         <source>Importing data failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="367"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
         <source>No data to import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="496"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
         <source>Select data to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="496"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
         <source>Please select which data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="868"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="853"/>
         <source>%1 Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1099"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
         <source>Export Polygons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1099"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1154"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -899,8 +899,13 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="133"/>
+        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="152"/>
         <source>Geographic Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="236"/>
+        <source>Reference Information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

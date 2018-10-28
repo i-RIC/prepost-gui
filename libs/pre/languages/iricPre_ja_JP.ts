@@ -818,89 +818,89 @@ Do you really want to import grid from this file?</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="184"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
         <source>All importable files (%1)</source>
         <translation>全てのインポート可能なファイル (%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="189"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="308"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="440"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1154"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="201"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation>データの種類が拡張子から認識できません。 : %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="220"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="363"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="367"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
         <source>Import failed</source>
         <translation>インポート失敗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
         <source>Importing data from %1 failed.</source>
         <translation>%1 からデータをインポートするのに失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="220"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <source>%1 contains no data to import.</source>
         <translation>%1 にはインポートできるデータが含まれていません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="233"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="380"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="235"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="382"/>
         <source>Importing data...</source>
         <translation>データをインポートしています...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="242"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
         <source>Canceled</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="242"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
         <source>Importing canceled.</source>
         <translation>インポートがキャンセルされました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>To import the geographic data, specify coordinate system first.</source>
         <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="308"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="440"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
         <translation>指定されたファイルには不正なデータがあり、無視されました。無視されたデータは以下の通りです。:
 %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="363"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
         <source>Importing data failed.</source>
         <translation>データのインポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="367"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
         <source>No data to import.</source>
         <translation>インポートするデータがありません。</translation>
     </message>
@@ -909,32 +909,32 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">%1からのデータのインポートが失敗しました。「無視」ボタンを押すと、このデータを無視し、残りのデータのインポートを試みます。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="496"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
         <source>Select data to export</source>
         <translation>エクスポートするデータの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="496"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
         <source>Please select which data to export.</source>
         <translation>エクスポートするデータを選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="868"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="853"/>
         <source>%1 Color Setting</source>
         <translation>%1 表示色設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1099"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
         <source>Export Polygons</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1099"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1154"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
     </message>
@@ -942,9 +942,14 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="133"/>
+        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="152"/>
         <source>Geographic Data</source>
         <translation>地理情報</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="236"/>
+        <source>Reference Information</source>
+        <translation>参照情報</translation>
     </message>
 </context>
 <context>
