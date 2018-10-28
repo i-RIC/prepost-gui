@@ -157,6 +157,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmapwebimportersettingmanager.h \
            geodatapointmapwebimporterzoomleveldialog.h \
            private/geodatapointmap_addinterpolatepointscommand.h \
+           private/geodatapointmap_addpointcommand.h \
            private/geodatapointmap_addpointscommand.h \
            private/geodatapointmap_addpointsetreferencecommand.h \
            private/geodatapointmap_breaklineaddcommand.h \
@@ -204,6 +205,7 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapwebimportersettingmanager.cpp \
            geodatapointmapwebimporterzoomleveldialog.cpp \
            private/geodatapointmap_addinterpolatepointscommand.cpp \
+           private/geodatapointmap_addpointcommand.cpp \
            private/geodatapointmap_addpointscommand.cpp \
            private/geodatapointmap_addpointsetreferencecommand.cpp \
            private/geodatapointmap_breaklineaddcommand.cpp \
