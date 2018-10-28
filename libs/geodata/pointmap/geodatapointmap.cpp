@@ -14,6 +14,7 @@
 #include "private/geodatapointmap_addpointsetreferencecommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
 #include "private/geodatapointmap_breaklineaddpointcommand.h"
+#include "private/geodatapointmap_breaklinefinishdefinitioncommand.h"
 #include "private/geodatapointmap_deletepointscommand.h"
 #include "private/geodatapointmap_editpointscommand.h"
 #include "private/geodatapointmap_editsinglepointcommand.h"
@@ -74,38 +75,6 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
-
-class GeoDataPointmap::BreakLineFinishDefinitionCommand : public QUndoCommand
-{
-public:
-	BreakLineFinishDefinitionCommand(GeoDataPointmap* parent) :
-		QUndoCommand {GeoDataPointmap::tr("Finish Defining Break Line")}
-	{
-		m_pointMap = parent;
-		m_breakLine = m_pointMap->m_activeBreakLine;
-	}
-	void redo() override {
-		m_pointMap->m_mouseEventMode = GeoDataPointmap::meNormal;
-		m_breakLine->setActive(false);
-		m_pointMap->m_activeBreakLine = 0;
-		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
-		m_pointMap->updateActionStatus();
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-	void undo() override {
-		m_pointMap->m_mouseEventMode = GeoDataPointmap::meBreakLineAddNotPossible;
-		m_pointMap->m_activeBreakLine = m_breakLine;
-		m_breakLine->setActive(true);
-		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
-		m_pointMap->updateActionStatus();
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-	}
-private:
-	GeoDataPointmapBreakLine* m_breakLine;
-	GeoDataPointmap* m_pointMap;
-};
 
 class GeoDataPointmap::BreakLineCancelDefinitionCommand : public QUndoCommand
 {
