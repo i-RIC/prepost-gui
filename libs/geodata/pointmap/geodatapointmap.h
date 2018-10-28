@@ -34,6 +34,9 @@ class GeoDataPointmap : public GeoData
 {
 	Q_OBJECT
 
+private:
+	static const char* VALUES;
+
 public:
 	enum MappingMode {
 		mmTIN,

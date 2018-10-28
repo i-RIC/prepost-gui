@@ -1,6 +1,5 @@
 #define REAL double
 #define VOID void
-#define VALUES "values"
 
 #include "geodatapointmap.h"
 #include "geodatapointmapaddpointdialog.h"
@@ -530,6 +529,8 @@ private:
 	GeoDataPointmapBreakLine* m_breakLine;
 	GeoDataPointmap* m_pointMap;
 };
+
+const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att}
