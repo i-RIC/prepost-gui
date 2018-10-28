@@ -831,30 +831,6 @@ void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(10);
 }
 
-/*
-	 bool PreProcessorGeoDataGroupDataItem::setupImportMenu(QMenu* menu)
-	 {
-		bool ok = false;
-		GeoDataFactory& factory = GeoDataFactory::instance();
-		const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
-
-		if (m_importSignalMapper){delete m_importSignalMapper;}
-		m_importSignalMapper = new QSignalMapper(this);
-		for (auto it = creators.begin(); it != creators.end(); ++it){
-				const QList<GeoDataImporter*>& importers = (*it)->importers();
-				for (auto imp_it = importers.begin(); imp_it != importers.end(); ++imp_it){
-						QString title = (*imp_it)->caption();
-						QAction* importAction = menu->addAction(title.append("..."));
-						m_importSignalMapper->setMapping(importAction, *imp_it);
-						connect(importAction, SIGNAL(triggered()), m_importSignalMapper, SLOT(map()));
-						ok = true;
-				}
-		}
-		connect(m_importSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(importGeoData(QObject*)));
-		return ok;
-	 }
- */
-
 const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataItem::geoDatas() const
 {
 	QList<PreProcessorGeoDataDataItemInterface*> ret;
