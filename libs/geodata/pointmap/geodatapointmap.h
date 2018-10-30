@@ -265,17 +265,11 @@ protected:
 	ZDepthRange m_zDepthRange;
 
 private:
-	class EditCommand;
 	class AddPointCommand;
-	class FinishDefiningCommand;
-	class EditPointsLessThanCommand;
-	class EditPointsGreaterThanCommand;
-	class EditPointsValueCommand;
 	class InterpolateLineAddPointCommand;
 	class AddPointsCommand;
 	class AddInterpolatePointsCommand;
 	class DeletePointsCommand;
-	class InsertNewPointsCommand;
 	class EditPointsCommand;
 	class EditSinglePointCommand;
 	class BreakLineAddCommand;
