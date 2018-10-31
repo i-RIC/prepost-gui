@@ -26,6 +26,7 @@ PreProcessorGridAttributeCustomMappingDialog::~PreProcessorGridAttributeCustomMa
 
 void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PreProcessorGridAttributeMappingSettingDataItem*>& atts, const QList<PreProcessorBCSettingDataItem*>& bcs, const PreProcessorCustomMappingSetting& setting)
 {
+	QVBoxLayout* layout = new QVBoxLayout(this);
 	if (atts.size() != 0) {
 		QGroupBox* gbox = new QGroupBox(tr("Geographic Data"), this);
 		QVBoxLayout* glayout = new QVBoxLayout(gbox);
@@ -42,7 +43,7 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 		}
 		glayout->addStretch(1);
 		gbox->setLayout(glayout);
-		ui->layout->addWidget(gbox);
+		layout->addWidget(gbox);
 	}
 
 	if (bcs.size() != 0) {
@@ -61,9 +62,11 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 		}
 		blayout->addStretch(1);
 		bbox->setLayout(blayout);
-		ui->layout->addWidget(bbox);
+		layout->addWidget(bbox);
 	}
-	ui->layout->addStretch(1);
+	layout->addStretch(1);
+	ui->scrollAreaWidgetContents->setLayout(layout);
+
 	adjustSize();
 }
 
