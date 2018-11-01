@@ -26,8 +26,7 @@ public:
 
 	bool checkImportSourceUpdate();
 	void clear();
-	void disableWidgets();
-	void enableWidgets();
+	void toggleReadOnly(bool readonly);
 
 private:
 	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC);

@@ -306,20 +306,15 @@ void InputConditionWidgetSet::addTooltip(InputConditionWidget* widget, QDomNode 
 	widget->addTooltip(t.translate(tooltip));
 }
 
-void InputConditionWidgetSet::disableWidgets()
+void InputConditionWidgetSet::toggleReadOnly(bool readonly)
 {
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
 		InputConditionWidget* w = it.value();
-		w->setDisabled(true);
+		w->toggleReadOnly(readonly);
 	}
-}
 
-void InputConditionWidgetSet::enableWidgets()
-{
-	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
-		InputConditionWidget* w = it.value();
-		w->setEnabled(true);
-	}
+	if (readonly) {return;}
+
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
 		InputConditionWidget* w = it.value();
 		for (auto dep : w->dependencies()) {
