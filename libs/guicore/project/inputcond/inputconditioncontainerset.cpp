@@ -51,15 +51,15 @@ void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDef
 
 void InputConditionContainerSet::setBCProperty(const std::string& bcname, int bcindex)
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->setBCProperty(bcname, bcindex);
+	for (auto& pair : m_containers) {
+		pair.second->setBCProperty(bcname, bcindex);
 	}
 }
 
 void InputConditionContainerSet::setComplexProperty(const std::string& compname, int compindex)
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->setComplexProperty(compname, compindex);
+	for (auto& pair : m_containers) {
+		pair.second->setComplexProperty(compname, compindex);
 	}
 }
 
@@ -150,23 +150,23 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 
 void InputConditionContainerSet::setDefaultValues()
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->clear();
+	for (auto& pair : m_containers) {
+		pair.second->clear();
 	}
 }
 
 int InputConditionContainerSet::load()
 {
 	// @todo no error checking (for example, wrong value, lacking nodes..) are implemented.
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->load();
+	for (auto& pair : m_containers) {
+		pair.second->load();
 	}
 	return 0;
 }
 int InputConditionContainerSet::save()
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		int ret = it->second->save();
+	for (auto& pair : m_containers) {
+		int ret = pair.second->save();
 		if (ret != 0) {return ret;}
 	}
 	return 0;
@@ -174,8 +174,8 @@ int InputConditionContainerSet::save()
 
 void InputConditionContainerSet::reset()
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->clear();
+	for (auto& pair : m_containers) {
+		pair.second->clear();
 	}
 }
 
