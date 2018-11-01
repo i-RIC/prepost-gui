@@ -15,6 +15,7 @@
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
 #include "private/geodatariversurvey_mouserotaterivercrosssectioncommand.h"
+#include "private/geodatariversurvey_mouseshiftriverpathcentercommand.h"
 #include "private/geodatariversurvey_setdisplaysettingcommand.h"
 
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -702,76 +703,6 @@ private:
 	QList<GeoDataRiverPathPoint*> m_points;
 	QList<QVector2D> m_oldPositions;
 	QList<QVector2D> m_newPositions;
-	GeoDataRiverSurvey* m_rs;
-};
-
-class GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand : public QUndoCommand
-{
-public:
-	MouseShiftRiverPathCenterCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Shift Center Point")}
-	{
-		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
-		m_rs = data;
-		double fromX, fromY, toX, toY;
-		fromX = from.x();
-		fromY = from.y();
-		toX = to.x();
-		toY = to.y();
-		gview->viewportToWorld(fromX, fromY);
-		gview->viewportToWorld(toX, toY);
-		QVector2D offset(toX - fromX, toY - fromY);
-		GeoDataRiverPathPoint* first = nullptr;
-
-		GeoDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				m_points.append(p);
-				if (first == nullptr) {first = p;}
-			}
-			p = p->nextPoint();
-		}
-		m_shiftValue = QVector2D::dotProduct(offset, first->crosssectionDirection());
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i) {
-			m_points[i]->shiftCenter(m_shiftValue);
-		}
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-		m_rs->setMapped(false);
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i) {
-			m_points[i]->shiftCenter(- m_shiftValue);
-		}
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GeoDataRiverSurveyMouseShift");
-	}
-	virtual bool mergeWith(const QUndoCommand* other) {
-		const MouseShiftRiverPathCenterCommand* other2 = dynamic_cast<const MouseShiftRiverPathCenterCommand*>(other);
-		if (other2 == nullptr) { return false; }
-		if (other2->m_points == m_points) {
-			m_shiftValue += other2->m_shiftValue;
-			return true;
-		}
-		return false;
-	}
-
-private:
-	QList<GeoDataRiverPathPoint*> m_points;
-	double m_shiftValue;
 	GeoDataRiverSurvey* m_rs;
 };
 
