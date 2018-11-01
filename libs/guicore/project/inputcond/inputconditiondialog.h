@@ -60,6 +60,7 @@ private:
 	void reset();
 
 	InputConditionContainerSet* m_containerSet;
+	InputConditionContainerSet* m_containerSetBackup;
 	InputConditionWidgetSet* m_widgetSet;
 
 	SolverDefinition* m_solverDefinition;
