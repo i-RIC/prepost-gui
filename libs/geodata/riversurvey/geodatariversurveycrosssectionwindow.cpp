@@ -2,6 +2,7 @@
 
 #include "geodatarivercrosssection.h"
 #include "geodatariversurvey.h"
+#include "geodatariversurveycrosssectioneditfrompointdialog.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "private/geodatariversurveycrosssectionwindow_datatabledelegate.h"
@@ -135,8 +136,10 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 {
 	impl->m_inactivateByWEOnlyThisAction = new QAction(tr("&This cross-section only"), this);
 	impl->m_inactivateByWEAllAction = new QAction(tr("All cross-sections"), this);
+	impl->m_editFromSelectedPointAction = new QAction(tr("&Edit cross section from the selected point..."), this);
 	impl->m_deleteAction = new QAction(tr("&Delete"), this);
 
+	connect(impl->m_editFromSelectedPointAction, SIGNAL(triggered()), this, SLOT(editFromSelectedPoint()));
 	connect(impl->m_inactivateByWEOnlyThisAction, SIGNAL(triggered()), this, SLOT(inactivateByWEOnlyThis()));
 	connect(impl->m_inactivateByWEAllAction, SIGNAL(triggered()), this, SLOT(inactivateByWEAll()));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedRows()));
@@ -155,6 +158,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupMenu()
 	submenu->addAction(impl->m_inactivateByWEAllAction);
 
 	impl->m_elevationPointMenu->addSeparator();
+	impl->m_elevationPointMenu->addAction(impl->m_editFromSelectedPointAction);
 	impl->m_elevationPointMenu->addAction(gview->moveAction());
 	impl->m_elevationPointMenu->addAction(impl->m_deleteAction);
 }
@@ -268,6 +272,11 @@ struct SelectionRange {
 QAction* GeoDataRiverSurveyCrosssectionWindow::deleteAction() const
 {
 	return impl->m_deleteAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPointAction() const
+{
+	return impl->m_editFromSelectedPointAction;
 }
 
 QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThisAction() const
@@ -537,6 +546,21 @@ void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 	impl->m_selectionModel->clear();
 }
 
+void GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPoint()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+	int row = rows.at(0).row();
+
+	ui->graphicsView->informModelessDialogOpen();
+	auto dialog = new GeoDataRiverSurveyCrossSectionEditFromPointDialog(row, impl->m_editTargetPoint, impl->m_targetRiverSurvey, this, this);
+	connect(dialog, SIGNAL(destroyed(QObject*)), ui->graphicsView, SLOT(informModelessDialogClose()));
+	dialog->show();
+}
+
 void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis()
 {
 	int index;
@@ -593,6 +617,7 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 void GeoDataRiverSurveyCrosssectionWindow::updateActionStatus()
 {
 	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	impl->m_editFromSelectedPointAction->setEnabled(rows.count() > 0);
 	impl->m_deleteAction->setEnabled(rows.count() > 0);
 }
 
@@ -682,6 +707,15 @@ QToolBar* GeoDataRiverSurveyCrosssectionWindow::getAdditionalToolBar() const
 PreProcessorGeoDataGroupDataItemInterface* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const
 {
 	return impl->m_groupDataItem;
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedRow(int row)
+{
+	QItemSelection sel;
+	auto topLeft = impl->m_model->index(row, 0);
+	auto bottomRight = impl->m_model->index(row, 3);
+	sel.select(topLeft, bottomRight);
+	impl->m_selectionModel->select(sel, QItemSelectionModel::ClearAndSelect);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()

@@ -6,6 +6,8 @@
 
 #include <QUndoCommand>
 
+class PreProcessorGeoDataGroupDataItemInterface;
+
 class GeoDataRiverSurvey::EditCrosssectionCommand : public QUndoCommand
 {
 public:
@@ -22,6 +24,7 @@ private:
 	GeoDataRiverCrosssection::AltitudeList m_before;
 	GeoDataRiverCrosssection::AltitudeList m_after;
 	GeoDataRiverSurveyCrosssectionWindow* m_window;
+	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
 	GeoDataRiverSurvey* m_rs;
 };
 

@@ -35,6 +35,7 @@ class GeoDataRiverPathPointExtensionAddDialog;
 class GeoDataRiverPathPointExpandDialog;
 class GeoDataRiverPathPointInsertDialog;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
+class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
 class GeoDataRiverCrosssectionAltitudeMoveDialog;
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 class GridCreatingConditionRiverSurveyInterface;
@@ -295,6 +296,7 @@ public:
 	friend class GeoDataRiverPathPointInsertDialog;
 	friend class GeoDataRiverPathPointExpandDialog;
 	friend class GeoDataRiverCrosssectionAltitudeMoveDialog;
+	friend class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
 	friend class GeoDataRiverSurveyCrosssectionWindow;
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 
