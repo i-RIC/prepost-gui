@@ -158,6 +158,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_renameriverpathpointcommand.h \
            private/geodatariversurvey_rotaterivercrosssectioncommand.h \
            private/geodatariversurvey_setdisplaysettingcommand.h \
+           private/geodatariversurvey_shiftriverpathcentercommand.h \
            private/geodatariversurvey_translateriverpathpointcommand.h \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
@@ -217,6 +218,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_renameriverpathpointcommand.cpp \
            private/geodatariversurvey_rotaterivercrosssectioncommand.cpp \
            private/geodatariversurvey_setdisplaysettingcommand.cpp \
+           private/geodatariversurvey_shiftriverpathcentercommand.cpp \
            private/geodatariversurvey_translateriverpathpointcommand.cpp \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \

@@ -4,6 +4,7 @@
 #include "geodatariverpathpointshiftdialog.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
+#include "private/geodatariversurvey_shiftriverpathcentercommand.h"
 
 #include <misc/iricundostack.h>
 
@@ -44,67 +45,6 @@ GeoDataRiverPathPointShiftDialog::~GeoDataRiverPathPointShiftDialog()
 {
 	delete ui;
 }
-
-
-class GeoDataRiverSurvey::ShiftRiverPathCenterCommand : public QUndoCommand
-{
-public:
-	ShiftRiverPathCenterCommand(bool apply, double offset, GeoDataRiverSurvey* rs) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Shift River Center Points")}
-	{
-		m_apply = apply;
-
-		GeoDataRiverPathPoint* p = rs->headPoint();
-		p = p->nextPoint();
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				m_points.append(p);
-				m_oldPositions.append(p->position());
-				m_oldCrosssections.append(p->crosssection().AltitudeInfo());
-				p->shiftCenter(offset);
-				m_newPositions.append(p->position());
-				m_newCrosssections.append(p->crosssection().AltitudeInfo());
-			}
-			p = p->nextPoint();
-		}
-		m_rs = rs;
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i) {
-			m_points[i]->setPosition(m_oldPositions[i]);
-			m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
-		}
-		if (! m_apply) {
-			m_rs->headPoint()->updateAllXSecInterpolators();
-			m_rs->headPoint()->updateRiverShapeInterpolators();
-			m_rs->updateShapeData();
-			m_rs->renderGraphicsView();
-			m_rs->updateCrossectionWindows();
-		}
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i) {
-			m_points[i]->setPosition(m_newPositions[i]);
-			m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
-		}
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->setModified();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-private:
-	bool m_apply;
-	QList<GeoDataRiverPathPoint*> m_points;
-	QList<QVector2D> m_oldPositions;
-	QList<QVector2D> m_newPositions;
-	QList<GeoDataRiverCrosssection::AltitudeList> m_oldCrosssections;
-	QList<GeoDataRiverCrosssection::AltitudeList> m_newCrosssections;
-	GeoDataRiverSurvey* m_rs;
-};
 
 void GeoDataRiverPathPointShiftDialog::accept()
 {
