@@ -47,6 +47,7 @@ public:
 	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const;
 	QAction* deleteAction() const;
+	QAction* editFromSelectedPointAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
 	void setupData();
@@ -63,6 +64,7 @@ public:
 	QToolBar* getAdditionalToolBar() const override;
 
 	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const;
+	void setSelectedRow(int row);
 
 public slots:
 	void updateView();
@@ -82,6 +84,7 @@ public slots:
 private slots:
 	void updateActionStatus();
 	void deleteSelectedRows();
+	void editFromSelectedPoint();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
 	void crosssectionComboBoxChange(int newindex);

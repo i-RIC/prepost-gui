@@ -58,6 +58,10 @@ public:
 	void cameraZoomOutY();
 	void toggleGridCreatingMode(bool gridMode);
 
+public slots:
+	void informModelessDialogOpen();
+	void informModelessDialogClose();
+
 private slots:
 	void activateSelectedRows();
 	void inactivateSelectedRows();
@@ -137,6 +141,7 @@ private:
 	QRubberBand* m_rubberBand;
 	QRectF m_drawnRegion;
 	MouseEventMode m_mouseEventMode;
+	bool m_modelessDialogIsOpen;
 	QRectF m_shownRegion;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;

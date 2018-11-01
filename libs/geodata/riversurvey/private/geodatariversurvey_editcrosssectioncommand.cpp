@@ -12,6 +12,7 @@ GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply,
 	m_before (before),
 	m_after (after),
 	m_window {w},
+	m_groupDataItem {w->groupDataItem()},
 	m_rs {rs}
 {}
 
@@ -25,7 +26,7 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
 	} else {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_window->groupDataItem()->updateCrossectionWindows();
+		m_groupDataItem->updateCrossectionWindows();
 		m_rs->setMapped(false);
 	}
 	m_first = false;
@@ -39,6 +40,6 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::undo()
 	if (! m_apply) {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_window->groupDataItem()->updateCrossectionWindows();
+		m_groupDataItem->updateCrossectionWindows();
 	}
 }

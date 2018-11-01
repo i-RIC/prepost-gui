@@ -101,6 +101,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurvey.h \
            geodatariversurveybackgroundgridcreatethread.h \
            geodatariversurveycreator.h \
+           geodatariversurveycrosssectioneditfrompointdialog.h \
            geodatariversurveycrosssectionwindow.h \
            geodatariversurveycrosssectionwindowdelegate.h \
            geodatariversurveycrosssectionwindowgraphicsview.h \
@@ -143,6 +144,7 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointrenamedialog.ui \
          geodatariverpathpointrotatedialog.ui \
          geodatariverpathpointshiftdialog.ui \
+         geodatariversurveycrosssectioneditfrompointdialog.ui \
          geodatariversurveycrosssectionwindow.ui \
          geodatariversurveydisplaysettingdialog.ui \
          geodatariversurveyimportersettingdialog.ui
@@ -160,6 +162,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurvey.cpp \
            geodatariversurveybackgroundgridcreatethread.cpp \
            geodatariversurveycreator.cpp \
+           geodatariversurveycrosssectioneditfrompointdialog.cpp \
            geodatariversurveycrosssectionwindow.cpp \
            geodatariversurveycrosssectionwindowdelegate.cpp \
            geodatariversurveycrosssectionwindowgraphicsview.cpp \

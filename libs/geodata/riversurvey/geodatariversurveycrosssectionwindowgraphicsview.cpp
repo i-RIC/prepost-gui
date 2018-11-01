@@ -35,6 +35,7 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	fTopMargin {0.2},
 	fBottomMargin {0.2},
 	m_mouseEventMode {meNormal},
+	m_modelessDialogIsOpen {false},
 	m_rubberBand {nullptr},
 	m_rightClickingMenu {nullptr},
 	m_gridMode {false}
@@ -80,6 +81,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		submenu->addAction(m_parentWindow->inactivateByWEAllAction());
 
 		m_rightClickingMenu->addSeparator();
+		m_rightClickingMenu->addAction(m_parentWindow->editFromSelectedPointAction());
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
 	}
@@ -674,7 +676,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 	int diffx = event->x() - m_oldPosition.x();
 	int diffy = event->y() - m_oldPosition.y();
 
-	if (m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) {
+	if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) && ! m_modelessDialogIsOpen) {
 		m_mouseEventMode = meNormal;
 		if (m_gridMode) {
 			// find selected points near the mouse cursor.
@@ -802,7 +804,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			}
 			m_oldPosition = event->pos();
 			updateMouseCursor();
-		} else {
+		} else if (! m_modelessDialogIsOpen){
 			if (event->button() == Qt::LeftButton) {
 				// start selecting.
 				m_mouseEventMode = meSelecting;
@@ -845,7 +847,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 	switch (m_mouseEventMode) {
 	case meNormal:
 	case meMovePrepare:
-		if (event->button() == Qt::RightButton) {
+		if (event->button() == Qt::RightButton && ! m_modelessDialogIsOpen) {
 			if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
@@ -1064,6 +1066,16 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateActionStatus()
 		}
 		m_moveAction->setEnabled(continuous);
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogOpen()
+{
+	m_modelessDialogIsOpen = true;
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogClose()
+{
+	m_modelessDialogIsOpen = false;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
