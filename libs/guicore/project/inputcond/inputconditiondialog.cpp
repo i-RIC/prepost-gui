@@ -254,12 +254,11 @@ void InputConditionDialog::setModified()
 void InputConditionDialog::setReadOnly(bool readonly)
 {
 	m_readonly = readonly;
+	m_widgetSet->toggleReadOnly(readonly);
 	if (readonly) {
-		m_widgetSet->disableWidgets();
 		ui->buttonBox->button(QDialogButtonBox::Save)->setDisabled(true);
 		ui->buttonBox->button(QDialogButtonBox::Reset)->setDisabled(true);
 	} else {
-		m_widgetSet->enableWidgets();
 		ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
 		ui->buttonBox->button(QDialogButtonBox::Reset)->setEnabled(true);
 	}

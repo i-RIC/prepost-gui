@@ -49,6 +49,11 @@ bool InputConditionWidgetFunctional::checkImportSourceUpdate()
 	return ret;
 }
 
+void InputConditionWidgetFunctional::toggleReadOnly(bool readonly)
+{
+	m_dialog->toggleReadOnly(readonly);
+}
+
 void InputConditionWidgetFunctional::openDialog()
 {
 	m_dialog->setData(*m_container);

@@ -22,6 +22,7 @@ public:
 	void setCaption(const QString& caption);
 	void addTooltip(const QString& tooltip) override;
 	bool checkImportSourceUpdate() override;
+	void toggleReadOnly(bool readonly) override;
 
 private slots:
 	void openDialog();

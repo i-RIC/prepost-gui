@@ -25,6 +25,7 @@ public:
 
 	virtual void addTooltip(const QString& tooltip) = 0;
 	virtual bool checkImportSourceUpdate();
+	virtual void toggleReadOnly(bool readonly);
 
 	static const int margin = 0;
 	static QList<QDomNode> getEnums(QDomNode defNode);
