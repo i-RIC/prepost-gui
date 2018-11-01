@@ -14,6 +14,7 @@
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
+#include "private/geodatariversurvey_mousemoveextensioncommand.h"
 #include "private/geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseshiftriverpathcentercommand.h"
 #include "private/geodatariversurvey_removeextensioncommand.h"
@@ -639,83 +640,6 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProces
 	}
 	openCrossSectionWindow();
 }
-
-class GeoDataRiverSurvey::MouseMoveExtensionCommand : public QUndoCommand
-{
-public:
-	MouseMoveExtensionCommand(bool left, QPoint to, GeoDataRiverSurvey* data) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Move Extension Line End")}
-	{
-		m_left = left;
-		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
-		m_rs = data;
-		double toX, toY;
-		toX = to.x();
-		toY = to.y();
-		gview->viewportToWorld(toX, toY);
-
-		GeoDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				m_point = p;
-				break;
-			}
-			p = p->nextPoint();
-		}
-		m_newPosition = QVector2D(toX, toY);
-		if (m_left) {
-			m_oldPosition = m_point->crosssectionPosition(m_point->crosssection().leftBank(true).position());
-		} else {
-			m_oldPosition = m_point->crosssectionPosition(m_point->crosssection().rightBank(true).position());
-		}
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		if (m_left) {
-			m_point->moveExtentionPointLeft(m_newPosition);
-		} else {
-			m_point->moveExtentionPointRight(m_newPosition);
-		}
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-		m_rs->setMapped(false);
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		if (m_left) {
-			m_point->moveExtentionPointLeft(m_oldPosition);
-		} else {
-			m_point->moveExtentionPointRight(m_oldPosition);
-		}
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GeoDataRiverPathPointMouseMoveExtension");
-	}
-	virtual bool mergeWith(const QUndoCommand* other) {
-		const MouseMoveExtensionCommand* other2 = dynamic_cast<const MouseMoveExtensionCommand*>(other);
-		if (other2 == nullptr) { return false; }
-		if (other2->m_point == m_point && other2->m_left == m_left) {
-			m_newPosition = other2->m_newPosition;
-			return true;
-		}
-		return false;
-	}
-
-private:
-	bool m_left;
-	QVector2D m_oldPosition;
-	QVector2D m_newPosition;
-	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurvey* m_rs;
-};
 
 void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
