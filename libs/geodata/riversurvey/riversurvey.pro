@@ -122,6 +122,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_expandcrosssectioncommand.h \
            private/geodatariversurvey_insertriverpathpointcommand.h \
            private/geodatariversurvey_mouseeditcrosssectioncommand.h \
+           private/geodatariversurvey_mousemoveextensioncommand.h \
            private/geodatariversurvey_mouserotaterivercrosssectioncommand.h \
            private/geodatariversurvey_mouseshiftriverpathcentercommand.h \
            private/geodatariversurvey_moveriverpathpointcommand.h \
@@ -176,6 +177,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_expandcrosssectioncommand.cpp \
            private/geodatariversurvey_insertriverpathpointcommand.cpp \
            private/geodatariversurvey_mouseeditcrosssectioncommand.cpp \
+           private/geodatariversurvey_mousemoveextensioncommand.cpp \
            private/geodatariversurvey_mouserotaterivercrosssectioncommand.cpp \
            private/geodatariversurvey_mouseshiftriverpathcentercommand.cpp \
            private/geodatariversurvey_moveriverpathpointcommand.cpp \
