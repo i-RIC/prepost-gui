@@ -13,6 +13,7 @@
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
+#include "private/geodatariversurvey_deleteriverpathpointcommand.h"
 #include "private/geodatariversurvey_setdisplaysettingcommand.h"
 
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -1782,81 +1783,6 @@ void GeoDataRiverSurvey::moveSelectedPoints()
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
 }
-
-class GeoDataRiverSurvey::DeleteRiverPathPointCommand : public QUndoCommand
-{
-public:
-	DeleteRiverPathPointCommand(GeoDataRiverSurvey* rs) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Delete Traversal Lines")}
-	{
-		m_redoed = false;
-		m_rs = rs;
-		GeoDataRiverPathPoint* p = m_rs->headPoint();
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				m_deletedPoints.append(p);
-				m_beforePoints.append(p->previousPoint());
-				m_prevSkips.append(p->previousPoint()->gridSkip());
-				if (p->nextPoint() != nullptr) {
-					m_nextSkips.append(p->nextPoint()->gridSkip());
-				} else {
-					m_nextSkips.append(false);
-				}
-			}
-			p = p->nextPoint();
-		}
-	}
-	~DeleteRiverPathPointCommand() {
-		if (m_redoed) {
-			// remove the points.
-			for (auto point : m_deletedPoints) {
-				delete point;
-			}
-		}
-	}
-
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_deletedPoints.count(); ++i) {
-			m_beforePoints[i]->addPathPoint(m_deletedPoints.at(i));
-		}
-		for (int i = 0; i < m_deletedPoints.count(); ++i) {
-			GeoDataRiverPathPoint* p = m_deletedPoints[i];
-			p->previousPoint()->setGridSkip(m_prevSkips[i]);
-			if (p->nextPoint() != nullptr) {
-				p->nextPoint()->setGridSkip(m_nextSkips[i]);
-			}
-		}
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->updateSelectionShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-		m_redoed = false;
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it) {
-			GeoDataRiverPathPoint* p = (*it);
-			p->remove();
-		}
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->updateSelectionShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-		m_redoed = true;
-		m_rs->setMapped(false);
-	}
-
-private:
-	QList<GeoDataRiverPathPoint*> m_deletedPoints;
-	QList<GeoDataRiverPathPoint*> m_beforePoints;
-	QList<bool> m_prevSkips;
-	QList<bool> m_nextSkips;
-	GeoDataRiverSurvey* m_rs;
-	bool m_redoed;
-};
 
 void GeoDataRiverSurvey::deleteSelectedPoints()
 {
