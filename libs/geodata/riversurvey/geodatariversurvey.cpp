@@ -16,6 +16,7 @@
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
 #include "private/geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseshiftriverpathcentercommand.h"
+#include "private/geodatariversurvey_removeextensioncommand.h"
 #include "private/geodatariversurvey_setdisplaysettingcommand.h"
 
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -1743,53 +1744,6 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
 }
-
-class GeoDataRiverSurvey::RemoveExtensionCommand : public QUndoCommand
-{
-public:
-	RemoveExtensionCommand(bool left, const QVector2D& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Remove Extension Line")}
-	{
-		m_left = left;
-		m_position = pos;
-		m_point = p;
-		m_rs = rs;
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		if (m_left) {
-			m_point->addExtentionPointLeft(m_position);
-		} else {
-			m_point->addExtentionPointRight(m_position);
-		}
-		m_rs->updateActionStatus();
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		if (m_left) {
-			m_point->removeExtentionPointLeft();
-		} else {
-			m_point->removeExtentionPointRight();
-		}
-		m_rs->updateActionStatus();
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-		m_rs->setMapped(false);
-	}
-private:
-	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurvey* m_rs;
-	bool m_left;
-	QVector2D m_position;
-};
 
 void GeoDataRiverSurvey::removeLeftExtensionPoint()
 {
