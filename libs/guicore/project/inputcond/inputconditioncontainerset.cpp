@@ -179,6 +179,14 @@ void InputConditionContainerSet::reset()
 	}
 }
 
+template<typename V>
+void insertToMapT(std::map<std::string, V>& from, std::map<std::string, InputConditionContainer*>& to)
+{
+	for (auto& pair : from) {
+		to.insert(std::make_pair(pair.first, &(pair.second)));
+	}
+}
+
 InputConditionContainerSet* InputConditionContainerSet::clone() const
 {
 	InputConditionContainerSet* ret = new InputConditionContainerSet();
@@ -187,36 +195,28 @@ InputConditionContainerSet* InputConditionContainerSet::clone() const
 	ret->m_strings = m_strings;
 	ret->m_functionals = m_functionals;
 
-	for (auto it = ret->m_integers.begin(); it != ret->m_integers.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
-	for (auto it = ret->m_reals.begin(); it != ret->m_reals.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
-	for (auto it = ret->m_strings.begin(); it != ret->m_strings.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
-	for (auto it = ret->m_functionals.begin(); it != ret->m_functionals.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
+	insertToMapT(ret->m_integers, ret->m_containers);
+	insertToMapT(ret->m_reals, ret->m_containers);
+	insertToMapT(ret->m_strings, ret->m_containers);
+	insertToMapT(ret->m_functionals, ret->m_containers);
 
 	return ret;
 }
 
+template<typename V>
+void copyValuesT(const std::map<std::string, V>& from, std::map<std::string, V>& to)
+{
+	for (auto& pair : to) {
+		pair.second = from.at(pair.first);
+	}
+}
+
 void InputConditionContainerSet::copyValues(const InputConditionContainerSet* set)
 {
-	for (auto it = m_integers.begin(); it != m_integers.end(); ++it) {
-		it->second = set->m_integers.at(it->first);
-	}
-	for (auto it = m_reals.begin(); it != m_reals.end(); ++it) {
-		it->second = set->m_reals.at(it->first);
-	}
-	for (auto it = m_strings.begin(); it != m_strings.end(); ++it) {
-		it->second = set->m_strings.at(it->first);
-	}
-	for (auto it = m_functionals.begin(); it != m_functionals.end(); ++it) {
-		it->second = set->m_functionals.at(it->first);
-	}
+	copyValuesT(set->m_integers, m_integers);
+	copyValuesT(set->m_reals, m_reals);
+	copyValuesT(set->m_strings, m_strings);
+	copyValuesT(set->m_functionals, m_functionals);
 }
 
 bool InputConditionContainerSet::importFromYaml(const QString& filename)
