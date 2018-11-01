@@ -26,16 +26,15 @@
 
 InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::InputConditionDialog)
+	m_containerSet {new InputConditionContainerSet()},
+	m_widgetSet {new InputConditionWidgetSet()},
+	m_solverDefinition {solverDef},
+	m_modified {false},
+	m_readonly {false},
+	ui {new Ui::InputConditionDialog}
 {
-	m_modified = false;
-	m_readonly = false;
-	m_solverDefinition = solverDef;
-
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet();
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
-	m_widgetSet = new InputConditionWidgetSet();
 	// create connections.
 	connect(ui->m_pageList, SIGNAL(selectChanged(QString)),
 					ui->m_pageContainer, SLOT(pageSelected(QString)));
