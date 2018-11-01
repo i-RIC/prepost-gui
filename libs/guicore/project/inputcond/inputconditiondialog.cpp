@@ -100,7 +100,7 @@ void InputConditionDialog::save(const int fn)
 	m_modified = false;
 }
 
-bool InputConditionDialog::import(const QString& filename)
+bool InputConditionDialog::importFromCgns(const QString& filename)
 {
 	// load from the specified file.
 	int fn, ret;
@@ -197,7 +197,7 @@ bool InputConditionDialog::importFromYaml(const QString& filename)
 	}
 }
 
-bool InputConditionDialog::doExport(const QString& filename)
+bool InputConditionDialog::exportToCgns(const QString& filename)
 {
 	// Create an empty CGNS file first. Use temporary name,
 	// because cg_open() does not supports file names with Non-ASCII characters.
