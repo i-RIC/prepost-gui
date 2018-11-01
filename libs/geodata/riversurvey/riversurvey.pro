@@ -126,6 +126,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_mouseshiftriverpathcentercommand.h \
            private/geodatariversurvey_moveriverpathpointcommand.h \
            private/geodatariversurvey_removeextensioncommand.h \
+           private/geodatariversurvey_renameriverpathpointcommand.h \
            private/geodatariversurvey_setdisplaysettingcommand.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
            private/geodatariversurveyproxy_setsettingcommand.h
@@ -178,6 +179,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_mouseshiftriverpathcentercommand.cpp \
            private/geodatariversurvey_moveriverpathpointcommand.cpp \
            private/geodatariversurvey_removeextensioncommand.cpp \
+           private/geodatariversurvey_renameriverpathpointcommand.cpp \
            private/geodatariversurvey_setdisplaysettingcommand.cpp \
            private/geodatariversurveyproxy_setsettingcommand.cpp
 RESOURCES += riversurvey.qrc

@@ -3,6 +3,7 @@
 #include "geodatariverpathpoint.h"
 #include "geodatariverpathpointrenamedialog.h"
 #include "geodatariversurvey.h"
+#include "private/geodatariversurvey_renameriverpathpointcommand.h"
 
 #include <misc/iricundostack.h>
 
@@ -32,37 +33,6 @@ GeoDataRiverPathPointRenameDialog::~GeoDataRiverPathPointRenameDialog()
 {
 	delete ui;
 }
-
-class GeoDataRiverSurvey::RenameRiverPathPointCommand : public QUndoCommand
-{
-public:
-	RenameRiverPathPointCommand(const QString& newname, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
-		QUndoCommand{GeoDataRiverSurvey::tr("Rename Traversal Line")}
-	{
-		m_point = p;
-		m_rs = rs;
-		m_newName = newname;
-		m_oldName = m_point->name();
-	}
-	void undo() {
-		m_point->setName(m_oldName);
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-	void redo() {
-		m_point->setName(m_newName);
-		m_rs->setModified();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-private:
-	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurvey* m_rs;
-	QString m_oldName;
-	QString m_newName;
-};
 
 void GeoDataRiverPathPointRenameDialog::accept()
 {
