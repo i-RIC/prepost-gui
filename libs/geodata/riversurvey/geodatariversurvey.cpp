@@ -14,6 +14,7 @@
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
+#include "private/geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "private/geodatariversurvey_setdisplaysettingcommand.h"
 
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -701,71 +702,6 @@ private:
 	QList<GeoDataRiverPathPoint*> m_points;
 	QList<QVector2D> m_oldPositions;
 	QList<QVector2D> m_newPositions;
-	GeoDataRiverSurvey* m_rs;
-};
-
-class GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand : public QUndoCommand
-{
-public:
-	MouseRotateRiverCrosssectionCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Rotate Traversal Line")}
-	{
-		GeoDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				m_point = p;
-				break;
-			}
-			p = p->nextPoint();
-		}
-		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
-		m_rs = data;
-		m_oldDirection = m_point->crosssectionDirection();
-
-		double fromX, fromY, toX, toY;
-		fromX = from.x();
-		fromY = from.y();
-		toX = to.x();
-		toY = to.y();
-		gview->viewportToWorld(fromX, fromY);
-		gview->viewportToWorld(toX, toY);
-		QVector2D vec1 = QVector2D(fromX - m_point->position().x(), fromY - m_point->position().y());
-		QVector2D vec2 = QVector2D(toX - m_point->position().x(), toY - m_point->position().y());
-		double angle = iRIC::angleRadian(vec1, vec2);
-
-		m_newDirection = m_oldDirection;
-		iRIC::rotateVectorRadian(m_newDirection, angle);
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		m_point->setCrosssectionDirection(m_newDirection);
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->setMapped(false);
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		m_point->setCrosssectionDirection(m_oldDirection);
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GeoDataRiverSurveyMouseRotate");
-	}
-	virtual bool mergeWith(const QUndoCommand* other) {
-		const MouseRotateRiverCrosssectionCommand* other2 = dynamic_cast<const MouseRotateRiverCrosssectionCommand*>(other);
-		if (other2 == nullptr) { return false; }
-		if (other2->m_point == m_point) {
-			m_newDirection = other2->m_newDirection;
-			return true;
-		}
-		return false;
-	}
-
-private:
-	GeoDataRiverPathPoint* m_point;
-	QVector2D m_oldDirection;
-	QVector2D m_newDirection;
 	GeoDataRiverSurvey* m_rs;
 };
 
