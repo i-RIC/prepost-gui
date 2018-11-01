@@ -116,6 +116,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
            gridcreatingconditionriversurveyinterface.h \
+           private/geodatariversurvey_addextensioncommand.h \
            private/geodatariversurvey_setdisplaysettingcommand.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
            private/geodatariversurveyproxy_setsettingcommand.h
@@ -158,6 +159,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveynodemapper.cpp \
            geodatariversurveyproxy.cpp \
            geodatariversurveyvtkexporter.cpp \
+           private/geodatariversurvey_addextensioncommand.cpp \
            private/geodatariversurvey_setdisplaysettingcommand.cpp \
            private/geodatariversurveyproxy_setsettingcommand.cpp
 RESOURCES += riversurvey.qrc
