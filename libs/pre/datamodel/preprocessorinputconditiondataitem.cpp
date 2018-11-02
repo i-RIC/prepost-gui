@@ -66,13 +66,9 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 {
 	projectData()->mainfile()->postSolutionInfo()->close();
 
-	auto fname = projectData()->currentCgnsFileName();
-	auto opener = new CgnsFileOpener(iRIC::toStr(fname), CG_MODE_READ);
-	loadFromCgnsFile(opener->fileId());
-	delete opener;
-
 	// set default folder for filename input conditions.
 	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
+	auto fname = projectData()->currentCgnsFileName();
 	m_dialog->setFileName(fname);
 	// show dialog
 	m_dialog->setReadOnly(readonly);
@@ -108,7 +104,7 @@ bool PreProcessorInputConditionDataItem::importInputCondition(const QString& fil
 	if (finfo.suffix() == "yml") {
 		ret = m_dialog->importFromYaml(filename);
 	} else {
-		ret = m_dialog->import(filename);
+		ret = m_dialog->importFromCgns(filename);
 	}
 	if (ret) {m_isSet = true;}
 	return ret;
@@ -123,7 +119,7 @@ bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& fil
 	if (finfo.suffix() == "yml") {
 		return m_dialog->exportToYaml(filename);
 	} else {
-		return m_dialog->doExport(filename);
+		return m_dialog->exportToCgns(filename);
 	}
 }
 

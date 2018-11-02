@@ -51,15 +51,15 @@ void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDef
 
 void InputConditionContainerSet::setBCProperty(const std::string& bcname, int bcindex)
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->setBCProperty(bcname, bcindex);
+	for (auto& pair : m_containers) {
+		pair.second->setBCProperty(bcname, bcindex);
 	}
 }
 
 void InputConditionContainerSet::setComplexProperty(const std::string& compname, int compindex)
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->setComplexProperty(compname, compindex);
+	for (auto& pair : m_containers) {
+		pair.second->setComplexProperty(compname, compindex);
 	}
 }
 
@@ -150,23 +150,23 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 
 void InputConditionContainerSet::setDefaultValues()
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->clear();
+	for (auto& pair : m_containers) {
+		pair.second->clear();
 	}
 }
 
 int InputConditionContainerSet::load()
 {
 	// @todo no error checking (for example, wrong value, lacking nodes..) are implemented.
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->load();
+	for (auto& pair : m_containers) {
+		pair.second->load();
 	}
 	return 0;
 }
 int InputConditionContainerSet::save()
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		int ret = it->second->save();
+	for (auto& pair : m_containers) {
+		int ret = pair.second->save();
 		if (ret != 0) {return ret;}
 	}
 	return 0;
@@ -174,8 +174,16 @@ int InputConditionContainerSet::save()
 
 void InputConditionContainerSet::reset()
 {
-	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
-		it->second->clear();
+	for (auto& pair : m_containers) {
+		pair.second->clear();
+	}
+}
+
+template<typename V>
+void insertToMapT(std::map<std::string, V>& from, std::map<std::string, InputConditionContainer*>& to)
+{
+	for (auto& pair : from) {
+		to.insert(std::make_pair(pair.first, &(pair.second)));
 	}
 }
 
@@ -187,36 +195,28 @@ InputConditionContainerSet* InputConditionContainerSet::clone() const
 	ret->m_strings = m_strings;
 	ret->m_functionals = m_functionals;
 
-	for (auto it = ret->m_integers.begin(); it != ret->m_integers.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
-	for (auto it = ret->m_reals.begin(); it != ret->m_reals.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
-	for (auto it = ret->m_strings.begin(); it != ret->m_strings.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
-	for (auto it = ret->m_functionals.begin(); it != ret->m_functionals.end(); ++it) {
-		ret->m_containers.insert(std::make_pair(it->first, &(it->second)));
-	}
+	insertToMapT(ret->m_integers, ret->m_containers);
+	insertToMapT(ret->m_reals, ret->m_containers);
+	insertToMapT(ret->m_strings, ret->m_containers);
+	insertToMapT(ret->m_functionals, ret->m_containers);
 
 	return ret;
 }
 
+template<typename V>
+void copyValuesT(const std::map<std::string, V>& from, std::map<std::string, V>& to)
+{
+	for (auto& pair : to) {
+		pair.second = from.at(pair.first);
+	}
+}
+
 void InputConditionContainerSet::copyValues(const InputConditionContainerSet* set)
 {
-	for (auto it = m_integers.begin(); it != m_integers.end(); ++it) {
-		it->second = set->m_integers.at(it->first);
-	}
-	for (auto it = m_reals.begin(); it != m_reals.end(); ++it) {
-		it->second = set->m_reals.at(it->first);
-	}
-	for (auto it = m_strings.begin(); it != m_strings.end(); ++it) {
-		it->second = set->m_strings.at(it->first);
-	}
-	for (auto it = m_functionals.begin(); it != m_functionals.end(); ++it) {
-		it->second = set->m_functionals.at(it->first);
-	}
+	copyValuesT(set->m_integers, m_integers);
+	copyValuesT(set->m_reals, m_reals);
+	copyValuesT(set->m_strings, m_strings);
+	copyValuesT(set->m_functionals, m_functionals);
 }
 
 bool InputConditionContainerSet::importFromYaml(const QString& filename)

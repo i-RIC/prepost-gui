@@ -26,16 +26,16 @@
 
 InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::InputConditionDialog)
+	m_containerSet {new InputConditionContainerSet()},
+	m_containerSetBackup {nullptr},
+	m_widgetSet {new InputConditionWidgetSet()},
+	m_solverDefinition {solverDef},
+	m_modified {false},
+	m_readonly {false},
+	ui {new Ui::InputConditionDialog}
 {
-	m_modified = false;
-	m_readonly = false;
-	m_solverDefinition = solverDef;
-
 	ui->setupUi(this);
-	m_containerSet = new InputConditionContainerSet();
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
-	m_widgetSet = new InputConditionWidgetSet();
 	// create connections.
 	connect(ui->m_pageList, SIGNAL(selectChanged(QString)),
 					ui->m_pageContainer, SLOT(pageSelected(QString)));
@@ -52,6 +52,8 @@ InputConditionDialog::~InputConditionDialog()
 	delete ui;
 	m_containerSet->clear();
 	delete m_containerSet;
+	m_containerSetBackup->clear();
+	delete m_containerSetBackup;
 	m_widgetSet->clear();
 	delete m_widgetSet;
 }
@@ -74,6 +76,7 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	QDomNode condNode = iRIC::getChildNode(def.document().documentElement(), "CalculationCondition");
 	// setup ContainerSet first.
 	m_containerSet->setup(condNode, def, t);
+	m_containerSetBackup = m_containerSet->clone();
 	// setup WidgetSet.
 	m_widgetSet->setup(condNode, *m_containerSet, def, t);
 	// setup PageList.
@@ -88,6 +91,7 @@ void InputConditionDialog::load(const int fn)
 {
 	cg_iRIC_GotoCC(fn);
 	m_containerSet->load();
+	m_containerSetBackup->copyValues(m_containerSet);
 
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
@@ -98,10 +102,11 @@ void InputConditionDialog::save(const int fn)
 {
 	cg_iRIC_GotoCC(fn);
 	m_containerSet->save();
+	m_containerSetBackup->copyValues(m_containerSet);
 	m_modified = false;
 }
 
-bool InputConditionDialog::import(const QString& filename)
+bool InputConditionDialog::importFromCgns(const QString& filename)
 {
 	// load from the specified file.
 	int fn, ret;
@@ -151,54 +156,22 @@ bool InputConditionDialog::import(const QString& filename)
 	ret = cg_close(fn);
 	if (ret != 0) {return false;}
 
-	// now save the loaded data to the current CGNS file.
-	try {
-		auto opener = new CgnsFileOpener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
-		ret = cg_iRIC_GotoCC(opener->fileId());
-		if (ret == 0) {
-			ret = m_containerSet->save();
-		}
-		delete opener;
-		if (ret != 0) {
-			goto ERROR_AFTER_CLOSE;
-		}
-		m_modified = false;
-		QFile::remove(tmpname);
-		return true;
-	} catch (const std::runtime_error&) {
-		goto ERROR_AFTER_CLOSE;
-	}
+	m_modified = false;
+	QFile::remove(tmpname);
+	return true;
 
 ERROR_BEFORE_CLOSE:
 	cg_close(fn);
-	QFile::remove(tmpname);
-	return false;
-
-ERROR_AFTER_CLOSE:
 	QFile::remove(tmpname);
 	return false;
 }
 
 bool InputConditionDialog::importFromYaml(const QString& filename)
 {
-	// load data from yaml file
-	bool ret = m_containerSet->importFromYaml(filename);
-	if (! ret) {return false;}
-
-	try {
-		auto opener = new CgnsFileOpener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
-		int ret = cg_iRIC_GotoCC(opener->fileId());
-		if (ret == 0) {
-			ret = m_containerSet->save();
-		}
-		delete opener;
-		return (ret == 0);
-	} catch (const std::runtime_error&) {
-		return false;
-	}
+	return m_containerSet->importFromYaml(filename);
 }
 
-bool InputConditionDialog::doExport(const QString& filename)
+bool InputConditionDialog::exportToCgns(const QString& filename)
 {
 	// Create an empty CGNS file first. Use temporary name,
 	// because cg_open() does not supports file names with Non-ASCII characters.
@@ -260,14 +233,7 @@ void InputConditionDialog::accept()
 		QMessageBox::critical(parentWidget(), tr("Error"), tr("The solver is running currently, so you can not save calculation condition. Please press Cancel button."));
 		return;
 	}
-
-	try {
-		CgnsFileOpener opener(iRIC::toStr(m_fileName), CG_MODE_MODIFY);
-		save(opener.fileId());
-		QDialog::accept();
-	} catch (const std::runtime_error&) {
-		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
-	}
+	QDialog::accept();
 }
 
 void InputConditionDialog::reject()
@@ -275,15 +241,9 @@ void InputConditionDialog::reject()
 	if (m_modified && (QMessageBox::Cancel == QMessageBox::warning(this, tr("Warning"), tr("Modifications you made will be discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel))) {
 		return;
 	}
-	// reload.
-	try {
-		CgnsFileOpener opener(iRIC::toStr(m_fileName), CG_MODE_READ);
-		load(opener.fileId());
-		m_modified = false;
-		QDialog::reject();
-	} catch (const std::runtime_error&) {
-		return;
-	}
+	m_containerSet->copyValues(m_containerSetBackup);
+	m_modified = false;
+	QDialog::reject();
 }
 
 void InputConditionDialog::setModified()
