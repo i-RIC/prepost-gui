@@ -5,6 +5,7 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowgraphicsview.h"
+#include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseeditcrosssectioncommand.h"
 
 #include <geodata/polyline/geodatapolyline.h>
