@@ -49,6 +49,11 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	setupActions();
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setParentWindow(GeoDataRiverSurveyCrosssectionWindow* w)
+{
+	m_parentWindow = w;
+}
+
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupActions()
 {
 	m_activateAction = new QAction(tr("&Activate"), this);
@@ -124,6 +129,73 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		// draw selected yellow squares.
 		drawSelectionSquare(painter);
 	}
+}
+
+QRect GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRect(const QModelIndex&) const
+{
+	return QRect();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::scrollTo(const QModelIndex&, ScrollHint)
+{}
+
+QModelIndex GeoDataRiverSurveyCrosssectionWindowGraphicsView::indexAt(const QPoint&) const
+{
+	viewport()->update();
+	return QModelIndex();
+}
+
+QModelIndex GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers)
+{
+	viewport()->update();
+	return QModelIndex();
+}
+
+int GeoDataRiverSurveyCrosssectionWindowGraphicsView::horizontalOffset() const
+{
+	return 0;
+}
+
+int GeoDataRiverSurveyCrosssectionWindowGraphicsView::verticalOffset() const
+{
+	return 0;
+}
+
+bool GeoDataRiverSurveyCrosssectionWindowGraphicsView::isIndexHidden(const QModelIndex&) const
+{
+	return false;
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSelection(const QRect& /*rect*/, QItemSelectionModel::SelectionFlags /*command*/)
+{
+	viewport()->update();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectionChanged(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/)
+{
+	updateActionStatus();
+	viewport()->update();
+}
+
+QRegion GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRegionForSelection(const QItemSelection&) const
+{
+	return QRegion();
+}
+
+
+QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateAction() const
+{
+	return m_activateAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateAction() const
+{
+	return m_inactivateAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveAction() const
+{
+	return m_moveAction;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter)
