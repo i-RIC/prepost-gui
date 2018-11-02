@@ -242,6 +242,7 @@ void InputConditionDialog::reject()
 		return;
 	}
 	m_containerSet->copyValues(m_containerSetBackup);
+	m_modified = false;
 	QDialog::reject();
 }
 
