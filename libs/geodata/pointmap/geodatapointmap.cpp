@@ -1183,10 +1183,10 @@ void GeoDataPointmap::setupActions()
 	m_removeBreakLineAction->setCheckable(true);
 	connect(m_removeBreakLineAction, SIGNAL(triggered()), this, SLOT(removeBreakLine()));
 
-	m_removeAllBreakLinesAction = new QAction(tr("Rem&ove All Break Lines..."), this);
+	m_removeAllBreakLinesAction = new QAction(tr("Re&move All Break Lines..."), this);
 	connect(m_removeAllBreakLinesAction, SIGNAL(triggered()), this, SLOT(removeAllBreakLines()));
 
-	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles with L&ong edge..."), this);
+	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles &with Long edge..."), this);
 	connect(m_removeTrianglesWithLongEdgeAction, SIGNAL(triggered()), this, SLOT(removeTrianglesWithLongEdgeStart()));
 }
 
