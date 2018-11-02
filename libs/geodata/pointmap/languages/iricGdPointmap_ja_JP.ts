@@ -189,13 +189,21 @@
     </message>
     <message>
         <location filename="../geodatapointmap.cpp" line="1186"/>
-        <source>Rem&amp;ove All Break Lines...</source>
-        <translation>全分割線の削除(&amp;O)...</translation>
+        <source>Re&amp;move All Break Lines...</source>
+        <translation>全分割線の削除 (&amp;M)...</translation>
     </message>
     <message>
         <location filename="../geodatapointmap.cpp" line="1189"/>
+        <source>Remove Triangles &amp;with Long edge...</source>
+        <translation>長い辺を持つ三角形を削除 (W)...</translation>
+    </message>
+    <message>
+        <source>Rem&amp;ove All Break Lines...</source>
+        <translation type="vanished">全分割線の削除(&amp;O)...</translation>
+    </message>
+    <message>
         <source>Remove Triangles with L&amp;ong edge...</source>
-        <translation>長い辺を持つ三角形を削除 (O)...</translation>
+        <translation type="vanished">長い辺を持つ三角形を削除 (O)...</translation>
     </message>
     <message>
         <location filename="../geodatapointmap.cpp" line="1280"/>
