@@ -177,13 +177,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 	}
 }
 
-
 QRect GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRect(const QModelIndex&) const
 {
 	return QRect();
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::scrollTo(const QModelIndex& /*index*/, ScrollHint /*hint*/)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::scrollTo(const QModelIndex&, ScrollHint)
 {}
 
 QModelIndex GeoDataRiverSurveyCrosssectionWindowGraphicsView::indexAt(const QPoint&) const
