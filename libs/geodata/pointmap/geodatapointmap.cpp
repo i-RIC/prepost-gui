@@ -21,6 +21,7 @@
 #include "private/geodatapointmap_editpointscommand.h"
 #include "private/geodatapointmap_editsinglepointcommand.h"
 #include "private/geodatapointmap_interpolatelineaddpointcommand.h"
+#include "private/geodatapointmap_triangleswithlongedgeremover.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -82,7 +83,8 @@
 const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
-	GeoData {d, creator, att}
+	GeoData {d, creator, att},
+	m_longEdgeRemover {nullptr}
 {
 	doubleclick = false;
 	m_vtkPolygon = vtkSmartPointer<vtkPolygon>::New();
@@ -927,6 +929,7 @@ void GeoDataPointmap::setupMenu()
 	m_menu->addAction(this->m_removeAllBreakLinesAction);
 	m_menu->addSeparator();
 	m_menu->addAction(this->m_remeshAction);
+	m_menu->addAction(this->m_removeTrianglesWithLongEdgeAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_displaySettingAction);
 	m_menu->addSeparator();
@@ -950,6 +953,7 @@ void GeoDataPointmap::setupMenu()
 	m_rightClickingMenu->addAction(this->m_removeAllBreakLinesAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(this->m_remeshAction);
+	m_rightClickingMenu->addAction(this->m_removeTrianglesWithLongEdgeAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_displaySettingAction);
 	m_rightClickingMenu->addSeparator();
@@ -1179,8 +1183,11 @@ void GeoDataPointmap::setupActions()
 	m_removeBreakLineAction->setCheckable(true);
 	connect(m_removeBreakLineAction, SIGNAL(triggered()), this, SLOT(removeBreakLine()));
 
-	m_removeAllBreakLinesAction = new QAction(tr("Rem&ove All Break Lines..."), this);
+	m_removeAllBreakLinesAction = new QAction(tr("Re&move All Break Lines..."), this);
 	connect(m_removeAllBreakLinesAction, SIGNAL(triggered()), this, SLOT(removeAllBreakLines()));
+
+	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles &with Long edge..."), this);
+	connect(m_removeTrianglesWithLongEdgeAction, SIGNAL(triggered()), this, SLOT(removeTrianglesWithLongEdgeStart()));
 }
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
@@ -1969,6 +1976,27 @@ void GeoDataPointmap::removeAllBreakLines()
 	iRICUndoStack::instance().clear();
 	renderGraphicsView();
 	m_needRemeshing = true;
+}
+
+void GeoDataPointmap::removeTrianglesWithLongEdgeStart()
+{
+	if (m_representation != GeoDataPointmapRepresentationDialog::Surface) {
+		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you want to remove triangles with long edges, you have to switch Display Method to Surface."), QMessageBox::Ok | QMessageBox::Cancel);
+		if (result == QMessageBox::Cancel) {return;}
+
+		if (m_needRemeshing) {
+			remeshTINS();
+		}
+		m_representation = GeoDataPointmapRepresentationDialog::Surface;
+		updateActorSettings();
+	}
+	m_longEdgeRemover = new TrianglesWithLongEdgeRemover(this);
+}
+
+void GeoDataPointmap::removeTrianglesWithLongEdgeEnd()
+{
+	delete m_longEdgeRemover;
+	m_longEdgeRemover = nullptr;
 }
 
 void GeoDataPointmap::editPoints()
