@@ -189,12 +189,12 @@
     </message>
     <message>
         <location filename="../geodatapointmap.cpp" line="1186"/>
-        <source>Rem&amp;ove All Break Lines...</source>
+        <source>Re&amp;move All Break Lines...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapointmap.cpp" line="1189"/>
-        <source>Remove Triangles with L&amp;ong edge...</source>
+        <source>Remove Triangles &amp;with Long edge...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
