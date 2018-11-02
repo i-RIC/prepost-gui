@@ -6,6 +6,7 @@
 #include "geodatariversurveycrosssectionwindowdelegate.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
+#include "private/geodatariversurvey_editcrosssectioncommand.h"
 
 #include <guibase/widget/centeredcheckbox.h>
 #include <guibase/widget/coloreditwidget.h>
@@ -605,47 +606,6 @@ void GeoDataRiverSurveyCrosssectionWindow::updateActionStatus()
 {
 	QModelIndexList rows = impl->m_selectionModel->selectedRows();
 	impl->m_deleteAction->setEnabled(rows.count() > 0);
-}
-
-GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction, QUndoCommand* parentcommand)
-	: QUndoCommand(title, parentcommand)
-{
-	m_apply = apply;
-	m_point = p;
-	m_before = before;
-	m_after = after;
-	m_window = w;
-	m_rs = rs;
-	m_tableaction = tableaction;
-	m_first = true;
-}
-
-void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
-{
-	m_point->crosssection().AltitudeInfo() = m_after;
-	m_point->updateXSecInterpolators();
-	m_point->updateRiverShapeInterpolators();
-	if (m_apply || (m_tableaction && m_first)) {
-		m_window->updateView();
-	} else {
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_window->groupDataItem()->updateCrossectionWindows();
-		m_rs->setMapped(false);
-	}
-	m_first = false;
-}
-
-void GeoDataRiverSurvey::EditCrosssectionCommand::undo()
-{
-	m_point->crosssection().AltitudeInfo() = m_before;
-	m_point->updateXSecInterpolators();
-	m_point->updateRiverShapeInterpolators();
-	if (! m_apply) {
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_window->groupDataItem()->updateCrossectionWindows();
-	}
 }
 
 QTableView* GeoDataRiverSurveyCrosssectionWindow::tableView()

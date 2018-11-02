@@ -65,6 +65,8 @@
 #include <solverconsole/solverconsolewindow.h>
 #include <solverconsole/solverconsolewindowprojectdataitem.h>
 
+#include <vtkObject.h>
+
 #include <QApplication>
 #include <QClipboard>
 #include <QCryptographicHash>
