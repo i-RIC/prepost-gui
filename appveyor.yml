@@ -1,4 +1,4 @@
-version: '{build}'
+version: '{branch}-{build}'
 
 # Skipping commits affecting specific files (GitHub only).
 skip_commits:
