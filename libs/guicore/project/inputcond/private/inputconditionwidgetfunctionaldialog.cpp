@@ -555,6 +555,7 @@ void InputConditionWidgetFunctionalDialog::toggleReadOnly(bool readonly)
 	widgets.push_back(ui->addButton);
 	widgets.push_back(ui->importButton);
 	widgets.push_back(ui->clearButton);
+	widgets.push_back(ui->buttonBox->button(QDialogButtonBox::Ok));
 
 	for (QWidget* w : widgets) {
 		w->setDisabled(readonly);
