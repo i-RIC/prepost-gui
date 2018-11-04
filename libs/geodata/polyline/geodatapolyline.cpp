@@ -102,7 +102,7 @@ GeoDataPolyLine::~GeoDataPolyLine()
 
 void GeoDataPolyLine::setupMenu()
 {
-	m_menu->setTitle(tr("&Polyline"));
+	m_menu->setTitle(tr("Poly&line"));
 	m_menu->addAction(m_editNameAction);
 //	m_menu->addAction(impl->m_editValueAction);
 	m_menu->addSeparator();

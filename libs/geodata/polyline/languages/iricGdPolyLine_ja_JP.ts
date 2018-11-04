@@ -29,16 +29,20 @@
     </message>
     <message>
         <location filename="../geodatapolyline.cpp" line="105"/>
-        <source>&amp;Polyline</source>
-        <translation>折れ線 (&amp;P)</translation>
+        <source>Poly&amp;line</source>
+        <translation>折れ線 (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="390"/>
+        <source>&amp;Polyline</source>
+        <translation type="vanished">折れ線 (&amp;P)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="387"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="395"/>
+        <location filename="../geodatapolyline.cpp" line="392"/>
         <source>Finish Defining Polyline</source>
         <translation>折れ線の定義の完了</translation>
     </message>
@@ -94,7 +98,7 @@
         <translation>折れ線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="390"/>
+        <location filename="../geodatapolyline.cpp" line="387"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -107,7 +111,7 @@
         <translation type="vanished">穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="685"/>
+        <location filename="../geodatapolyline.cpp" line="682"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
@@ -120,7 +124,7 @@
         <translation type="vanished">本当にこの折れ線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="685"/>
+        <location filename="../geodatapolyline.cpp" line="682"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>折れ線を、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -130,12 +134,12 @@
         <translation>折れ線値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="718"/>
+        <location filename="../geodatapolyline.cpp" line="715"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="719"/>
+        <location filename="../geodatapolyline.cpp" line="716"/>
         <source>Please input new value in this polyline.</source>
         <translation>この折れ線上での値を入力してください。</translation>
     </message>

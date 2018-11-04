@@ -30,7 +30,7 @@
     </message>
     <message>
         <location filename="../geodatapolyline.cpp" line="105"/>
-        <source>&amp;Polyline</source>
+        <source>Poly&amp;line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -64,27 +64,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="390"/>
+        <location filename="../geodatapolyline.cpp" line="387"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="390"/>
+        <location filename="../geodatapolyline.cpp" line="387"/>
         <source>Polyline must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="395"/>
+        <location filename="../geodatapolyline.cpp" line="392"/>
         <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="685"/>
+        <location filename="../geodatapolyline.cpp" line="682"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="685"/>
+        <location filename="../geodatapolyline.cpp" line="682"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -94,12 +94,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="718"/>
+        <location filename="../geodatapolyline.cpp" line="715"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="719"/>
+        <location filename="../geodatapolyline.cpp" line="716"/>
         <source>Please input new value in this polyline.</source>
         <translation type="unfinished"></translation>
     </message>
