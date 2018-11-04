@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PolyLine Color Setting</string>
+   <string>Polyline Color Setting</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

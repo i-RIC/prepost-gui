@@ -113,7 +113,7 @@
           <item>
            <widget class="QRadioButton" name="nameAutoRadioButton">
             <property name="text">
-             <string>Name is set automatically (ex. PolyLine1)</string>
+             <string>Name is set automatically (ex. Polyline1)</string>
             </property>
            </widget>
           </item>

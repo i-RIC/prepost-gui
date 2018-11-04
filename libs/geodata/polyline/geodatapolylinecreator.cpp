@@ -9,7 +9,7 @@
 #include <QIcon>
 
 GeoDataPolyLineCreator::GeoDataPolyLineCreator(const QString& typeName) :
-	GeoDataCreator {typeName, tr("PolyLine")}
+	GeoDataCreator {typeName, tr("Polyline")}
 {
 	importers().push_back(new GeoDataPolyLineImporter(this));
 	exporters().push_back(new GeoDataPolyLineShapeExporter(this));
@@ -22,7 +22,7 @@ QString GeoDataPolyLineCreator::name(unsigned int index) const
 
 QString GeoDataPolyLineCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("PolyLine%1")).arg(index);
+	return QString(tr("Polyline%1")).arg(index);
 }
 
 bool GeoDataPolyLineCreator::isCreatable() const

@@ -28,6 +28,21 @@
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
+        <location filename="../geodatapolyline.cpp" line="105"/>
+        <source>&amp;Polyline</source>
+        <translation>折れ線 (&amp;P)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="390"/>
+        <source>Polyline must have two vertices at least.</source>
+        <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="395"/>
+        <source>Finish Defining Polyline</source>
+        <translation>折れ線の定義の完了</translation>
+    </message>
+    <message>
         <source>Add &amp;Hole Region</source>
         <translation type="vanished">穴領域の追加(&amp;H)</translation>
     </message>
@@ -41,17 +56,14 @@
         <translation>表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
         <source>&amp;PolyLine</source>
-        <translation>折れ線 (&amp;P)</translation>
+        <translation type="vanished">折れ線 (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="390"/>
         <source>PolyLine must have two vertices at least.</source>
-        <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
+        <translation type="vanished">折れ線は最低限2つの点をもつ必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="395"/>
         <location filename="../private/geodatapolyline_finishpolylinedefinitioncommand.cpp" line="5"/>
         <source>Finish Defining PolyLine</source>
         <translation>折れ線の定義の完了</translation>
@@ -161,8 +173,12 @@
 <context>
     <name>GeoDataPolyLineColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>PolyLine Color Setting</source>
+        <translation type="vanished">折れ線の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
+        <source>Polyline Color Setting</source>
         <translation>折れ線の表示色設定</translation>
     </message>
     <message>
@@ -184,8 +200,12 @@
 <context>
     <name>GeoDataPolyLineColorSimpleSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
         <source>PolyLine Color Setting</source>
+        <translation type="vanished">折れ線の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
+        <source>Polyline Color Setting</source>
         <translation>折れ線の表示色設定</translation>
     </message>
     <message>
@@ -212,13 +232,21 @@
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="12"/>
         <source>PolyLine</source>
+        <translation type="vanished">折れ線</translation>
+    </message>
+    <message>
+        <source>PolyLine%1</source>
+        <translation type="vanished">折れ線%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinecreator.cpp" line="12"/>
+        <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
         <location filename="../geodatapolylinecreator.cpp" line="25"/>
-        <source>PolyLine%1</source>
+        <source>Polyline%1</source>
         <translation>折れ線%1</translation>
     </message>
 </context>
@@ -323,8 +351,12 @@
     </message>
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="116"/>
-        <source>Name is set automatically (ex. PolyLine1)</source>
+        <source>Name is set automatically (ex. Polyline1)</source>
         <translation>自動的に設定する (例: 折れ線1)</translation>
+    </message>
+    <message>
+        <source>Name is set automatically (ex. PolyLine1)</source>
+        <translation type="vanished">自動的に設定する (例: 折れ線1)</translation>
     </message>
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="126"/>

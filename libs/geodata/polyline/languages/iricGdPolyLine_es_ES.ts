@@ -30,16 +30,10 @@
     </message>
     <message>
         <location filename="../geodatapolyline.cpp" line="105"/>
-        <source>&amp;PolyLine</source>
+        <source>&amp;Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="390"/>
-        <source>PolyLine must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="395"/>
         <location filename="../private/geodatapolyline_finishpolylinedefinitioncommand.cpp" line="5"/>
         <source>Finish Defining PolyLine</source>
         <translation type="unfinished"></translation>
@@ -72,6 +66,16 @@
     <message>
         <location filename="../geodatapolyline.cpp" line="390"/>
         <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="390"/>
+        <source>Polyline must have two vertices at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="395"/>
+        <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -119,7 +123,7 @@
     <name>GeoDataPolyLineColorSettingDialog</name>
     <message>
         <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
-        <source>PolyLine Color Setting</source>
+        <source>Polyline Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -142,7 +146,7 @@
     <name>GeoDataPolyLineColorSimpleSettingDialog</name>
     <message>
         <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
-        <source>PolyLine Color Setting</source>
+        <source>Polyline Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -155,12 +159,12 @@
     <name>GeoDataPolyLineCreator</name>
     <message>
         <location filename="../geodatapolylinecreator.cpp" line="12"/>
-        <source>PolyLine</source>
+        <source>Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolylinecreator.cpp" line="25"/>
-        <source>PolyLine%1</source>
+        <source>Polyline%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -224,7 +228,7 @@
     </message>
     <message>
         <location filename="../geodatapolylineimportersettingdialog.ui" line="116"/>
-        <source>Name is set automatically (ex. PolyLine1)</source>
+        <source>Name is set automatically (ex. Polyline1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

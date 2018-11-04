@@ -102,7 +102,7 @@ GeoDataPolyLine::~GeoDataPolyLine()
 
 void GeoDataPolyLine::setupMenu()
 {
-	m_menu->setTitle(tr("&PolyLine"));
+	m_menu->setTitle(tr("&Polyline"));
 	m_menu->addAction(m_editNameAction);
 //	m_menu->addAction(impl->m_editValueAction);
 	m_menu->addSeparator();
@@ -387,12 +387,12 @@ void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
 		minCount = 2;
 	}
 	if (impl->m_polyLine->polyLine().size() <= minCount) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("PolyLine must have two vertices at least."));
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polyline must have two vertices at least."));
 		return;
 	}
 	iRICUndoStack& stack = iRICUndoStack::instance();
 	stack.undo();
-	stack.beginMacro(tr("Finish Defining PolyLine"));
+	stack.beginMacro(tr("Finish Defining Polyline"));
 	// finish defining the polyline.
 	stack.push(new FinishPolyLineDefiningCommand(this));
 	stack.endMacro();
