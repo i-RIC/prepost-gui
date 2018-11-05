@@ -21,7 +21,7 @@ public:
 	void redo() override;
 	void undo() override;
 
-private:
+protected:
 	std::vector<QPointF> m_newPolyLine;
 	std::vector<QPointF> m_oldPolyLine;
 

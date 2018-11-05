@@ -40,3 +40,11 @@ bool GeoDataPolyLine::PushNewPointCommand::mergeWith(const QUndoCommand* other)
 
 	return ModifyAbstractPolyLineCommand::mergeWith(other);
 }
+
+void GeoDataPolyLine::PushNewPointCommand::undo()
+{
+	ModifyAbstractPolyLineCommand::undo();
+	if (m_targetPolyLine->polyLine().size() == 0) {
+		m_polyline->setMouseEventMode(meBeforeDefining);
+	}
+}
