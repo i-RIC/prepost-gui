@@ -130,8 +130,7 @@ private slots:
 	void cancel() {m_canceled = true;}
 	void reverseCenterLine();
 
-protected:
-
+private:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -141,8 +140,6 @@ protected:
 	void updateFilename() override {
 		setFilename("gridcreatingcondition.dat");
 	}
-
-private:
 
 	bool checkCondition();
 	bool selectObject(QPoint point);
