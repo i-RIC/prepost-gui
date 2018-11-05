@@ -382,10 +382,7 @@ void GeoDataPolyLine::addCustomMenuItems(QMenu* menu)
 
 void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
 {
-	int minCount = 3;
-	if (doubleClick) {
-		minCount = 2;
-	}
+	int minCount = 2;
 	if (impl->m_polyLine->polyLine().size() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polyline must have two vertices at least."));
 		return;
