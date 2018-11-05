@@ -634,6 +634,11 @@ void GridCreatingConditionCompoundChannel::defineLine(bool doubleClick)
 	stack.endMacro();
 }
 
+const QColor& GridCreatingConditionCompoundChannel::color() const
+{
+	return m_color;
+}
+
 void GridCreatingConditionCompoundChannel::addVertexMode(bool on)
 {
 	if (on) {
@@ -740,6 +745,11 @@ void GridCreatingConditionCompoundChannel::saveExternalData(const QString& filen
 	s << m_lowWaterChannelPolygon->polygon(QPointF(-off.x(), -off.y()));
 	s << m_centerLine->polyLine(QPointF(-off.x(), -off.y()));
 	f.close();
+}
+
+void GridCreatingConditionCompoundChannel::updateFilename()
+{
+	setFilename("gridcreatingcondition.dat");
 }
 
 void GridCreatingConditionCompoundChannel::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -923,6 +933,11 @@ void GridCreatingConditionCompoundChannel::restoreMouseEventMode()
 	m_mouseEventMode = meNormal;
 }
 
+void GridCreatingConditionCompoundChannel::cancel()
+{
+	m_canceled = true;
+}
+
 bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 {
 	if (! checkCondition()) {return false;}
@@ -974,6 +989,11 @@ void GridCreatingConditionCompoundChannel::clear()
 
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
+}
+
+bool GridCreatingConditionCompoundChannel::ready() const
+{
+	return true;
 }
 
 void GridCreatingConditionCompoundChannel::showInitialDialog()
