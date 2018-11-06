@@ -44,3 +44,11 @@ bool GeoDataPolygon::PushNewPointCommand::mergeWith(const QUndoCommand* other)
 
 	return ModifyAbstractPolygonCommand::mergeWith(other);
 }
+
+void GeoDataPolygon::PushNewPointCommand::undo()
+{
+	ModifyAbstractPolygonCommand::undo();
+	if (m_targetPolygon->polygon().size() == 0) {
+		m_polygon->setMouseEventMode(meBeforeDefining);
+	}
+}

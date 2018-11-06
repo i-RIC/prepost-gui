@@ -15,6 +15,8 @@ public:
 	int id() const override;
 	bool mergeWith(const QUndoCommand* other) override;
 
+	void undo() override;
+
 private:
 	bool m_keyDown;
 };
