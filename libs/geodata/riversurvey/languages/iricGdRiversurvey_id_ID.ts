@@ -444,79 +444,109 @@
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="46"/>
-        <source>Horizontal Distance to Edit</source>
+        <source>Distance to Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="54"/>
-        <source>Specify distance</source>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="52"/>
+        <source>Specify horizontal distance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="80"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="78"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="114"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="150"/>
         <source>m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="89"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="85"/>
+        <source>Specify vertical distance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="121"/>
+        <source>Specify elevation of end point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="157"/>
         <source>To the point where it crosses the cross section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="102"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="170"/>
         <source>Gradient</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="110"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="178"/>
         <source>Specify slope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="133"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="201"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="144"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="212"/>
         <source>Specify fraction  1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="173"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="241"/>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="204"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="258"/>
         <source>Upward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="209"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="263"/>
         <source>Downward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="263"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="317"/>
         <source>Edit &amp;Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="45"/>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="73"/>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="93"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="49"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="77"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="97"/>
         <source>Edit Crosssection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="295"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="341"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="346"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="351"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="356"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="295"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="341"/>
         <source>There is no cross point. Please check the setting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="346"/>
+        <source>When you specify vertical distance, the slope should not be 0.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="351"/>
+        <source>The settings of elevation and gradient are invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="356"/>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -598,97 +628,97 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="436"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="434"/>
         <source>Edit Elevation Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="531"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="534"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="537"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="677"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="681"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="684"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1046"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="529"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="532"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="535"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="675"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="679"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="682"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1044"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="531"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="681"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="529"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="679"/>
         <source>At least, two points should be active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="534"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="532"/>
         <source>Fixed points and end points cannot be deleted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="537"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="684"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="535"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="682"/>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="545"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="543"/>
         <source>Delete Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="553"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="551"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="553"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="551"/>
         <source>To use this function, please select only one point.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="582"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="593"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="606"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="580"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="591"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="604"/>
         <source>Inactivate Elevation Points using water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="677"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="675"/>
         <source>Fixed points and end points cannot be inactivated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="826"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="824"/>
         <source>River Survey Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="827"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="825"/>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1009"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1007"/>
         <source>Delete Water Surface Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1009"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1007"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1046"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1044"/>
         <source>Water surface elevation data does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1056"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1054"/>
         <source>Select Water Surface Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1056"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1054"/>
         <source>Select Water Surface Elevation to use</source>
         <translation type="unfinished"></translation>
     </message>

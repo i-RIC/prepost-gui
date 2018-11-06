@@ -450,17 +450,17 @@
         <translation>右岸側</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="46"/>
         <source>Horizontal Distance to Edit</source>
-        <translation>編集する水平方向の距離</translation>
+        <translation type="vanished">編集する水平方向の距離</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="54"/>
         <source>Specify distance</source>
-        <translation>距離を指定</translation>
+        <translation type="vanished">距離を指定</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="80"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="78"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="114"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="150"/>
         <source>m</source>
         <translation>m</translation>
     </message>
@@ -474,47 +474,67 @@
         <translation>選択した点を起点に編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="89"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="46"/>
+        <source>Distance to Edit</source>
+        <translation>編集する距離の指定</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="52"/>
+        <source>Specify horizontal distance</source>
+        <translation>水平方向の距離</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="85"/>
+        <source>Specify vertical distance</source>
+        <translation>垂直方向の距離</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="121"/>
+        <source>Specify elevation of end point</source>
+        <translation>終点の標高</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="157"/>
         <source>To the point where it crosses the cross section</source>
         <translation>既存の横断線と交差するところまで</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="102"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="170"/>
         <source>Gradient</source>
         <translation>勾配</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="110"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="178"/>
         <source>Specify slope</source>
         <translation>傾斜率を指定</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="133"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="201"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="144"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="212"/>
         <source>Specify fraction  1:</source>
         <translation>法勾配を指定  1:</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="173"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="241"/>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation>縦方向の距離と横方向の距離の日を指定して下さい。例えば 10 と入力すれば 10%勾配、20 と入力すれば 5%勾配になります。</translation>
+        <translation>縦方向の距離と横方向の距離の比を指定して下さい。例えば 10 と入力すれば 10%勾配、20 と入力すれば 5%勾配になります。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="204"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="258"/>
         <source>Upward</source>
         <translation>上向き</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="209"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="263"/>
         <source>Downward</source>
         <translation>下向き</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="263"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="317"/>
         <source>Edit &amp;Next</source>
         <translation>連続編集 (&amp;N)</translation>
     </message>
@@ -523,21 +543,39 @@
         <translation type="vanished">連続編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="45"/>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="73"/>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="93"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="49"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="77"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="97"/>
         <source>Edit Crosssection</source>
         <translation>横断線の編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="295"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="341"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="346"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="351"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="356"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="295"/>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="341"/>
         <source>There is no cross point. Please check the setting.</source>
         <translation>交点がありません。設定を確認してください。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="346"/>
+        <source>When you specify vertical distance, the slope should not be 0.</source>
+        <translation>垂直方向の距離を指定する場合、傾斜率に 0 は指定できません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="351"/>
+        <source>The settings of elevation and gradient are invalid.</source>
+        <translation>標高と勾配の設定が不正です。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="356"/>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>終点の標高を指定する場合は、始点の標高と同じ値を指定することはできません。水平な線を引きたい場合は、&quot;水平方向の距離を指定&quot;を選択して下さい。</translation>
     </message>
 </context>
 <context>
@@ -630,82 +668,82 @@
         <translation>横断面ウィンドウ: %2</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="436"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="434"/>
         <source>Edit Elevation Point</source>
         <translation>標高点の編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="531"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="534"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="537"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="677"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="681"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="684"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1046"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="529"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="532"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="535"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="675"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="679"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="682"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1044"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="531"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="681"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="529"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="679"/>
         <source>At least, two points should be active.</source>
         <translation>最低でも2つの点が有効でなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="534"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="532"/>
         <source>Fixed points and end points cannot be deleted.</source>
         <translation>固定点と端点は削除できません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="537"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="684"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="535"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="682"/>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
         <translation>左岸側、右岸側それぞれに最低1つ標高点がなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="545"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="543"/>
         <source>Delete Elevation Points</source>
         <translation>標高点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="553"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="551"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="553"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="551"/>
         <source>To use this function, please select only one point.</source>
         <translation>この機能を利用するには、点を1つだけ選択して下さい。。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="582"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="593"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="606"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="580"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="591"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="604"/>
         <source>Inactivate Elevation Points using water elevation</source>
         <translation>水位に基づいて無効化</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="677"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="675"/>
         <source>Fixed points and end points cannot be inactivated.</source>
         <translation>固定点と端点は無効化できません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="826"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="824"/>
         <source>River Survey Data</source>
         <translation>河川測量データ</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="827"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="825"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1009"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1007"/>
         <source>Delete Water Surface Elevation</source>
         <translation>水位の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1009"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1007"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>本当に %1 を削除していいですか?</translation>
     </message>
@@ -714,17 +752,17 @@
         <translation type="vanished">水面標高 名前</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1046"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1044"/>
         <source>Water surface elevation data does not exist.</source>
         <translation>水位が存在しません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1056"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1054"/>
         <source>Select Water Surface Elevation</source>
         <translation>水位の選択</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1056"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1054"/>
         <source>Select Water Surface Elevation to use</source>
         <translation>使用する水位を選択</translation>
     </message>
