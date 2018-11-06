@@ -260,7 +260,7 @@
      <item>
       <widget class="QPushButton" name="continueButton">
        <property name="text">
-        <string>Continuous Edit</string>
+        <string>Edit &amp;Next</string>
        </property>
       </widget>
      </item>

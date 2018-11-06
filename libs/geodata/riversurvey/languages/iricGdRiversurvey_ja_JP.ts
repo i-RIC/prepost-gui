@@ -511,8 +511,12 @@
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="263"/>
+        <source>Edit &amp;Next</source>
+        <translation>連続編集 (&amp;N)</translation>
+    </message>
+    <message>
         <source>Continuous Edit</source>
-        <translation>連続編集</translation>
+        <translation type="vanished">連続編集</translation>
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectioneditfrompointdialog.cpp" line="45"/>
