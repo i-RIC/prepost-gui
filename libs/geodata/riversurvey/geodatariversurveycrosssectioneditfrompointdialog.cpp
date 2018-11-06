@@ -26,6 +26,10 @@ GeoDataRiverSurveyCrossSectionEditFromPointDialog::GeoDataRiverSurveyCrossSectio
 	ui->setupUi(this);
 	connect(ui->continueButton, SIGNAL(clicked()), this, SLOT(continueEdit()));
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
+
+	auto& data = m_point->crosssection().AltitudeInfo();
+	auto startPoint = data.at(m_startIndex);
+	ui->elevationSpinBox->setValue(startPoint.height());
 }
 
 GeoDataRiverSurveyCrossSectionEditFromPointDialog::~GeoDataRiverSurveyCrossSectionEditFromPointDialog()
@@ -100,25 +104,12 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::update(int* newIndex)
 	auto startPoint = data.at(m_startIndex);
 	*newIndex = m_startIndex;
 
-	double distance = ui->distanceSpinBox->value();
-
 	if (ui->leftRadioButton->isChecked()) {
 		// left side
 		int eraseEnd = m_startIndex;
 		int eraseBegin = eraseEnd;
-		if (ui->distanceRadioButton->isChecked()) {
-			// distance
-			double limitPos = startPoint.position() - distance;
-			for (int i = 0; i < m_startIndex; ++i) {
-				if (data.at(i).position() >= limitPos) {
-					eraseBegin = i;
-					break;
-				}
-			}
-			*newIndex = m_startIndex - (eraseEnd - eraseBegin) + 1;
-			data.push_back(buildAltitudeForDistance());
-			data.erase(data.begin() + eraseBegin, data.begin() + eraseEnd);
-		} else {
+
+		if (ui->crossRadioButton->isChecked()) {
 			// cross-point
 			if (m_startIndex == 0) {
 				showWarningDialogForNotCrossing();
@@ -154,23 +145,28 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::update(int* newIndex)
 				showWarningDialogForNotCrossing();
 				return;
 			}
+		} else {
+			// distance
+			double horizontalDistance = calcHorizontalDistance();
+			if (horizontalDistance == 0) {
+				return;
+			}
+			double limitPos = startPoint.position() - horizontalDistance;
+			for (int i = 0; i < m_startIndex; ++i) {
+				if (data.at(i).position() >= limitPos) {
+					eraseBegin = i;
+					break;
+				}
+			}
+			*newIndex = m_startIndex - (eraseEnd - eraseBegin) + 1;
+			data.push_back(buildAltitudeForDistance());
+			data.erase(data.begin() + eraseBegin, data.begin() + eraseEnd);
 		}
 	} else {
 		// right side
 		int eraseBegin = m_startIndex + 1;
 		int eraseEnd = eraseBegin;
-		if (ui->distanceRadioButton->isChecked()) {
-			// distance
-			double limitPos = startPoint.position() + distance;
-			for (int i = m_startIndex + 1; i <= data.size(); ++i) {
-				eraseEnd = i;
-				if (i == data.size() || data.at(i).position() > limitPos) {
-					break;
-				}
-			}
-			data.push_back(buildAltitudeForDistance());
-			data.erase(data.begin() + eraseBegin, data.begin() + eraseEnd);
-		} else {
+		if (ui->crossRadioButton->isChecked()) {
 			// cross-point
 			if (m_startIndex == data.size() - 1) {
 				showWarningDialogForNotCrossing();
@@ -204,6 +200,21 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::update(int* newIndex)
 				showWarningDialogForNotCrossing();
 				return;
 			}
+		} else {
+			// distance
+			double horizontalDistance = calcHorizontalDistance();
+			if (horizontalDistance == 0) {
+				return;
+			}
+			double limitPos = startPoint.position() + horizontalDistance;
+			for (int i = m_startIndex + 1; i <= data.size(); ++i) {
+				eraseEnd = i;
+				if (i == data.size() || data.at(i).position() > limitPos) {
+					break;
+				}
+			}
+			data.push_back(buildAltitudeForDistance());
+			data.erase(data.begin() + eraseBegin, data.begin() + eraseEnd);
 		}
 	}
 	std::sort(data.begin(), data.end());
@@ -218,18 +229,53 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::reset()
 	m_window->setSelectedRow(m_startIndex);
 }
 
-GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrossSectionEditFromPointDialog::buildAltitudeForDistance() const
+double GeoDataRiverSurveyCrossSectionEditFromPointDialog::calcHorizontalDistance()
 {
-	double distance = ui->distanceSpinBox->value();
-	double vdist = distance * slope();
+	if (ui->hDistanceRadioButton->isChecked()) {
+		return ui->hDistanceSpinBox->value();
+	} else if (ui->vDistanceRadioButton->isChecked()) {
+		double s = std::fabs(slope());
+		if (s == 0) {
+			showWarningDialogForVerticalDistance();
+			return 0;
+		}
+		return ui->vDistanceSpinBox->value() / s;
+	} else if (ui->elevationRadioButton->isChecked()) {
+		double s = slope();
+		if (s == 0) {
+			showWarningDialogForVerticalDistance();
+			return 0;
+		}
+		auto& data = m_point->crosssection().AltitudeInfo();
+		auto startPoint = data.at(m_startIndex);
+		double vdist = ui->elevationSpinBox->value() - startPoint.height();
+		if (vdist == 0) {
+			showWarningDialogForSameElevation();
+			return 0;
+		}
+		if (s * vdist < 0) {
+			showWarningDialogForSlopeAndElevation();
+			return 0;
+		}
+
+		return vdist / s;
+	} else {
+		return 1;
+	}
+}
+
+GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrossSectionEditFromPointDialog::buildAltitudeForDistance()
+{
+	double hDistance = calcHorizontalDistance();
+	double vdist = hDistance * slope();
 
 	auto& data = m_point->crosssection().AltitudeInfo();
 	auto startPoint = data.at(m_startIndex);
 	double pos = 0;
 	if (ui->leftRadioButton->isChecked()) {
-		pos = startPoint.position() - distance;
+		pos = startPoint.position() - hDistance;
 	} else {
-		pos = startPoint.position() + distance;
+		pos = startPoint.position() + hDistance;
 	}
 
 	GeoDataRiverCrosssection::Altitude alt;
@@ -283,9 +329,9 @@ double GeoDataRiverSurveyCrossSectionEditFromPointDialog::slope() const
 		ret = ui->slopeSpinBox->value() / 100;
 	} else {
 		ret = 1.0 / ui->fractionSpinBox->value();
-	}
-	if (ui->upDownComboBox->currentIndex() == 1) {
-		ret *= -1;
+		if (ui->upDownComboBox->currentIndex() == 1) {
+			ret *= -1;
+		}
 	}
 	return ret;
 }
@@ -293,4 +339,19 @@ double GeoDataRiverSurveyCrossSectionEditFromPointDialog::slope() const
 void GeoDataRiverSurveyCrossSectionEditFromPointDialog::showWarningDialogForNotCrossing()
 {
 	QMessageBox::warning(this, tr("Warning"), tr("There is no cross point. Please check the setting."));
+}
+
+void GeoDataRiverSurveyCrossSectionEditFromPointDialog::showWarningDialogForVerticalDistance()
+{
+	QMessageBox::warning(this, tr("Warning"), tr("When you specify vertical distance, the slope should not be 0."));
+}
+
+void GeoDataRiverSurveyCrossSectionEditFromPointDialog::showWarningDialogForSlopeAndElevation()
+{
+	QMessageBox::warning(this, tr("Warning"), tr("The settings of elevation and gradient are invalid."));
+}
+
+void GeoDataRiverSurveyCrossSectionEditFromPointDialog::showWarningDialogForSameElevation()
+{
+	QMessageBox::warning(this, tr("Warning"), tr("When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select \"Specify horizontal distance\"."));
 }

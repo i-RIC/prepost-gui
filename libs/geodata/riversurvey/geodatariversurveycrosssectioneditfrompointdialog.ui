@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>374</width>
-    <height>323</height>
+    <width>366</width>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Edit Cross Section From Selected Point</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QGroupBox" name="directionGroupBox">
      <property name="title">
@@ -43,47 +43,115 @@
    <item>
     <widget class="QGroupBox" name="horizontalDistanceGroupBox">
      <property name="title">
-      <string>Horizontal Distance to Edit</string>
+      <string>Distance to Edit</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QRadioButton" name="distanceRadioButton">
-          <property name="text">
-           <string>Specify distance</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="distanceSpinBox">
-          <property name="decimals">
-           <number>3</number>
-          </property>
-          <property name="minimum">
-           <double>0.001000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>10000.000000000000000</double>
-          </property>
-          <property name="value">
-           <double>10.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="distanceUnitLabel">
-          <property name="text">
-           <string>m</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="hDistanceRadioButton">
+        <property name="text">
+         <string>Specify horizontal distance</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
-      <item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="hDistanceSpinBox">
+        <property name="decimals">
+         <number>3</number>
+        </property>
+        <property name="minimum">
+         <double>0.001000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>10000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>10.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="hDistanceUnitLabel">
+        <property name="text">
+         <string>m</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="vDistanceRadioButton">
+        <property name="text">
+         <string>Specify vertical distance</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="vDistanceSpinBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="decimals">
+         <number>3</number>
+        </property>
+        <property name="minimum">
+         <double>0.001000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>10000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>10.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="vDistanceUnitLabel">
+        <property name="text">
+         <string>m</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QRadioButton" name="elevationRadioButton">
+        <property name="text">
+         <string>Specify elevation of end point</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QDoubleSpinBox" name="elevationSpinBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="decimals">
+         <number>3</number>
+        </property>
+        <property name="minimum">
+         <double>-10000.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>10000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>10.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="vDistanceUnitLabel_2">
+        <property name="text">
+         <string>m</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
        <widget class="QRadioButton" name="crossRadioButton">
         <property name="text">
          <string>To the point where it crosses the cross section</string>
@@ -120,7 +188,7 @@
            <number>2</number>
           </property>
           <property name="minimum">
-           <double>0.000000000000000</double>
+           <double>-10000.000000000000000</double>
           </property>
           <property name="maximum">
            <double>10000.000000000000000</double>
@@ -181,24 +249,10 @@
          </widget>
         </item>
         <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
          <widget class="QComboBox" name="upDownComboBox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <item>
            <property name="text">
             <string>Upward</string>
@@ -212,7 +266,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="horizontalSpacer_2">
+         <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -237,7 +291,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>4</height>
+       <height>6</height>
       </size>
      </property>
     </spacer>
@@ -290,9 +344,9 @@
  </resources>
  <connections>
   <connection>
-   <sender>distanceRadioButton</sender>
+   <sender>hDistanceRadioButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>distanceSpinBox</receiver>
+   <receiver>hDistanceSpinBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -300,8 +354,8 @@
      <y>119</y>
     </hint>
     <hint type="destinationlabel">
-     <x>162</x>
-     <y>115</y>
+     <x>266</x>
+     <y>126</y>
     </hint>
    </hints>
   </connection>
@@ -312,12 +366,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>80</x>
-     <y>230</y>
+     <x>131</x>
+     <y>285</y>
     </hint>
     <hint type="destinationlabel">
-     <x>173</x>
-     <y>229</y>
+     <x>215</x>
+     <y>287</y>
     </hint>
    </hints>
   </connection>
@@ -328,12 +382,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>81</x>
-     <y>200</y>
+     <x>111</x>
+     <y>257</y>
     </hint>
     <hint type="destinationlabel">
-     <x>130</x>
-     <y>202</y>
+     <x>193</x>
+     <y>259</y>
     </hint>
    </hints>
   </connection>
@@ -344,8 +398,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>290</y>
+     <x>355</x>
+     <y>343</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -360,12 +414,60 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>290</y>
+     <x>355</x>
+     <y>343</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fractionRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>upDownComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vDistanceRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>vDistanceSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>elevationRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>elevationSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>207</x>
+     <y>170</y>
     </hint>
    </hints>
   </connection>
