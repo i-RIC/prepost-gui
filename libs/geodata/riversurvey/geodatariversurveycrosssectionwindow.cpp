@@ -292,8 +292,6 @@ QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAllAction() const
 void GeoDataRiverSurveyCrosssectionWindow::setupData()
 {
 	impl->m_settingUp = true;
-	// detach table view once.
-	ui->tableView->setModel(nullptr);
 	// keep selection status
 	QItemSelection selection = impl->m_selectionModel->selection();
 	QList<SelectionRange> sel;
