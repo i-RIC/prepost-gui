@@ -43,12 +43,16 @@ private:
 	void update(int* newIndex);
 	void reset();
 
-	GeoDataRiverCrosssection::Altitude buildAltitudeForDistance() const;
+	double calcHorizontalDistance();
+	GeoDataRiverCrosssection::Altitude buildAltitudeForDistance();
 	GeoDataRiverCrosssection::Altitude buildAltitudeForCrossPoint(const GeoDataRiverCrosssection::Altitude& a1, const GeoDataRiverCrosssection::Altitude& a2) const;
 	CrossCondition conditionForLine(const GeoDataRiverCrosssection::Altitude& alt);
 	double heightForLine(double pos) const;
 	double slope() const;
 	void showWarningDialogForNotCrossing();
+	void showWarningDialogForVerticalDistance();
+	void showWarningDialogForSlopeAndElevation();
+	void showWarningDialogForSameElevation();
 
 	int m_startIndex;
 	GeoDataRiverPathPoint* m_point;
