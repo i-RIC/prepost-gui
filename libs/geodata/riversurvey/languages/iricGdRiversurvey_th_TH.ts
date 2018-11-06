@@ -499,7 +499,7 @@
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectioneditfrompointdialog.ui" line="263"/>
-        <source>Continuous Edit</source>
+        <source>Edit &amp;Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
