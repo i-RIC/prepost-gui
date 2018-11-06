@@ -1409,14 +1409,11 @@ void PreProcessorDataModel::importHydraulicData()
 
 	PreProcessorRootDataItem* ritem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> titems = ritem->gridTypeDataItems();
-	for (auto tit = titems.begin(); tit != titems.end(); ++tit) {
-		PreProcessorGridTypeDataItem* titem = *tit;
-		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = titem->geoDataTop()->groupDataItems();
-		for (auto git = gitems.begin(); git != gitems.end(); ++git) {
-			PreProcessorGeoDataGroupDataItemInterface* gitem = *git;
-			QList<PreProcessorGeoDataDataItemInterface*> ditems = gitem->geoDatas();
-			for (auto dit = ditems.begin(); dit != ditems.end(); ++dit) {
-				PreProcessorGeoDataDataItemInterface* ditem = *dit;
+	for (auto titem : titems) {
+		auto& gitems = titem->geoDataTop()->groupDataItems();
+		for (auto gitem : gitems) {
+			auto& ditems = gitem->geoDatas();
+			for (auto ditem : ditems) {
 				GeoData* rdata = ditem->geoData();
 				if (importer->canImportTo(rdata)) {
 					// this importer can used for this raw data.
