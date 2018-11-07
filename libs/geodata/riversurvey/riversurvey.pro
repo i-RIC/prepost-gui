@@ -132,6 +132,7 @@ HEADERS += gd_riversurvey_global.h \
            gridcreatingconditionriversurveyinterface.h \
            private/geodatariversurvey_setdisplaysettingcommand.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
+           private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h \
            private/geodatariversurveyproxy_setsettingcommand.h
 FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointexpanddialog.ui \
@@ -173,6 +174,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveyproxy.cpp \
            geodatariversurveyvtkexporter.cpp \
            private/geodatariversurvey_setdisplaysettingcommand.cpp \
+           private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \
            private/geodatariversurveyproxy_setsettingcommand.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricGdRiversurvey_es_ES.ts \

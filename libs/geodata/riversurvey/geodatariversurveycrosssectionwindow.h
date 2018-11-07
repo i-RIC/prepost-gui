@@ -122,6 +122,8 @@ private:
 	class Impl;
 	Impl* impl;
 
+	class RiverSurveyTableDelegate;
+
 public:
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 };

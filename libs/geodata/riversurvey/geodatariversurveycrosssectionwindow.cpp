@@ -6,9 +6,8 @@
 #include "geodatariversurveycrosssectionwindowdelegate.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
+#include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
 
-#include <guibase/widget/centeredcheckbox.h>
-#include <guibase/widget/coloreditwidget.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/project/colorsource.h>
@@ -17,7 +16,7 @@
 #include <QAction>
 #include <QColorDialog>
 #include <QComboBox>
-#include <QItemDelegate>
+#include <QCheckBox>
 #include <QItemSelectionModel>
 #include <QLabel>
 #include <QMenu>
@@ -66,30 +65,6 @@ QList<QString> setupCrosssectionNames(const QList<GeoDataRiverSurvey*>& surveys)
 }
 
 } // namespace
-
-class GeoDataRiverSurveyCrosssectionWindowTableDelegate : public QItemDelegate
-{
-public:
-	GeoDataRiverSurveyCrosssectionWindowTableDelegate(QObject* parent = nullptr): QItemDelegate(parent) {}
-	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
-		if (index.column() == 0) {
-			QVariant dat = index.model()->data(index, Qt::DisplayRole);
-			CenteredCheckBox checkbox(nullptr);
-			checkbox.setChecked(dat.toBool());
-			checkbox.resize(option.rect.size());
-			QPixmap pixmap(option.rect.size());
-			checkbox.render(&pixmap);
-			painter->drawPixmap(option.rect, pixmap);
-		} else if (index.column() == 2) {
-			QVariant dat = index.model()->data(index, Qt::DisplayRole);
-			QColor col = dat.value<QColor>();
-			QBrush brush(col);
-			painter->fillRect(option.rect, brush);
-		} else {
-			QItemDelegate::paint(painter, option, index);
-		}
-	}
-};
 
 GeoDataRiverSurveyCrosssectionWindow::Impl::Impl(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi) :
 	m_targetRiverSurvey {nullptr},
@@ -808,7 +783,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupSurveyTable()
 	ui->surveysTableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	ui->surveysTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	ui->surveysTableWidget->setItemDelegate(new GeoDataRiverSurveyCrosssectionWindowTableDelegate());
+	ui->surveysTableWidget->setItemDelegate(new RiverSurveyTableDelegate());
 	ui->surveysTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
