@@ -72,7 +72,7 @@ GeoDataRiverSurveyCrosssectionWindow::Impl::Impl(GeoDataRiverSurveyCrosssectionW
 	m_colorSource {new ColorSource {nullptr}},
 	m_settingUp {false}
 {
-	m_colorSource->load(":/libs/guicore/data/colorsource_rs.xml");
+	m_colorSource->load(":/libs/geodata/riversurvey/data/colorsource_rs.xml");
 }
 
 

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/libs/geodata/riversurvey">
+        <file>data/colorsource_rs.xml</file>
         <file>images/cursorCrosssectionRotate.png</file>
         <file>images/cursorExpand.png</file>
         <file>images/cursorShiftCenter.png</file>

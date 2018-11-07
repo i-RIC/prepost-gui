@@ -464,7 +464,7 @@ void GeoDataRiverSurvey::setupDataItem()
 		}
 	}
 	auto cs = new ColorSource(this);
-	cs->load(":/libs/guicore/data/colorsource_rs.xml");
+	cs->load(":/libs/geodata/riversurvey/data/colorsource_rs.xml");
 
 	m_setting.crosssectionLinesColor = cs->getColor(rcount);
 	delete cs;
