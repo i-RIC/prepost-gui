@@ -324,6 +324,9 @@ HEADERS += guicore_global.h \
            pre/base/preprocessorgridcreatingconditiondataiteminterface.h \
            pre/base/preprocessorgriddataiteminterface.h \
            pre/base/preprocessorgridtypedataiteminterface.h \
+           pre/base/preprocessorhydraulicdatadataiteminterface.h \
+           pre/base/preprocessorhydraulicdatagroupdataiteminterface.h \
+           pre/base/preprocessorhydraulicdatatopdataiteminterface.h \
            pre/base/preprocessorwindowinterface.h \
            pre/complex/gridcomplexconditiondialog.h \
            pre/complex/gridcomplexconditiongroup.h \
@@ -368,7 +371,11 @@ HEADERS += guicore_global.h \
            pre/gridcreatingcondition/gridcreatingconditioncreator.h \
            pre/gridcreatingcondition/gridcreatingconditionfactoryi.h \
            pre/gridcreatingcondition/gridcreatingconditionio.h \
+           pre/hydraulicdata/hydraulicdata.h \
+           pre/hydraulicdata/hydraulicdatacreator.h \
+           pre/hydraulicdata/hydraulicdataexporter.h \
            pre/hydraulicdata/hydraulicdataimporter.h \
+           pre/hydraulicdata/hydraulicdatamultiexporter.h \
            project/inputcond/inputconditioncontainer.h \
            project/inputcond/inputconditioncontainerfunctional.h \
            project/inputcond/inputconditioncontainerinteger.h \
@@ -461,6 +468,11 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealeditwidget.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
+           pre/hydraulicdata/private/hydraulicdata_impl.h \
+           pre/hydraulicdata/private/hydraulicdatacreator_impl.h \
+           pre/hydraulicdata/private/hydraulicdataexporter_impl.h \
+           pre/hydraulicdata/private/hydraulicdataimporter_impl.h \
+           pre/hydraulicdata/private/hydraulicdatamultiexporter_impl.h \
            project/inputcond/private/inputconditioncontainer_impl.h \
            project/inputcond/private/inputconditioncontainerfunctional_impl.h \
            project/inputcond/private/inputconditioncontainerinteger_impl.h \
@@ -638,6 +650,9 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/base/preprocessorgraphicsviewinterface.cpp \
            pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.cpp \
            pre/base/preprocessorgridcreatingconditiondataiteminterface.cpp \
+           pre/base/preprocessorhydraulicdatadataiteminterface.cpp \
+           pre/base/preprocessorhydraulicdatagroupdataiteminterface.cpp \
+           pre/base/preprocessorhydraulicdatatopdataiteminterface.cpp \
            pre/base/preprocessorwindowinterface.cpp \
            pre/complex/gridcomplexconditiondialog.cpp \
            pre/complex/gridcomplexconditiongroup.cpp \
@@ -672,6 +687,11 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
            pre/gridcreatingcondition/gridcreatingconditionio.cpp \
+           pre/hydraulicdata/hydraulicdata.cpp \
+           pre/hydraulicdata/hydraulicdatacreator.cpp \
+           pre/hydraulicdata/hydraulicdataexporter.cpp \
+           pre/hydraulicdata/hydraulicdataimporter.cpp \
+           pre/hydraulicdata/hydraulicdatamultiexporter.cpp \
            project/inputcond/inputconditioncontainer.cpp \
            project/inputcond/inputconditioncontainerfunctional.cpp \
            project/inputcond/inputconditioncontainerinteger.cpp \

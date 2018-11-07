@@ -25,6 +25,7 @@ public:
 	SolverDefinitionGridType* gridType() const override;
 
 	PreProcessorGeoDataTopDataItemInterface* geoDataTop() const override;
+	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTop() const override;
 
 	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override;
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const std::string& name) const;
@@ -55,6 +56,7 @@ private:
 
 	SolverDefinitionGridType* m_gridType;
 	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
+	PreProcessorHydraulicDataTopDataItemInterface* m_hydraulicDataTop;
 	QMap<std::string, ScalarsToColorsContainer*> m_scalarsToColors;
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
 	/// Action to add new condition.

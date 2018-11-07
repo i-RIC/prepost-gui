@@ -72,6 +72,20 @@ unix {
 }
 LIBS += -liricGdPolyLine
 
+# iricHdRiversurveywaterelevation
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../hydraulicdata/riversurveywaterelevation/debug"
+	} else {
+		LIBS += -L"../../hydraulicdata/riversurveywaterelevation/release"
+	}
+}
+unix {
+	LIBS += -L"../../hydraulicdata/riversurveywaterelevation"
+}
+LIBS += -liricHdRiversurveywaterelevation
+
 ######################
 # External libraries #
 ######################
@@ -119,6 +133,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveycrosssectionwindowgraphicsview.h \
            geodatariversurveycrosssectionwindowprojectdataitem.h \
            geodatariversurveycrosssectionwindowtableview.h \
+           geodatariversurveycrosssectionwindowwsetablewidget.h \
            geodatariversurveyctrlpointbackup.h \
            geodatariversurveydisplaysetting.h \
            geodatariversurveydisplaysettingdialog.h \
@@ -133,6 +148,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h \
+           private/geodatariversurveycrosssectionwindow_wsetabledelegate.h \
            private/geodatariversurveyproxy_setsettingcommand.h
 FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointexpanddialog.ui \
@@ -163,6 +179,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveycrosssectionwindowgraphicsview.cpp \
            geodatariversurveycrosssectionwindowprojectdataitem.cpp \
            geodatariversurveycrosssectionwindowtableview.cpp \
+           geodatariversurveycrosssectionwindowwsetablewidget.cpp \
            geodatariversurveyctrlpointbackup.cpp \
            geodatariversurveydisplaysetting.cpp \
            geodatariversurveydisplaysettingdialog.cpp \
@@ -175,6 +192,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_setdisplaysettingcommand.cpp \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \
+           private/geodatariversurveycrosssectionwindow_wsetabledelegate.cpp \
            private/geodatariversurveyproxy_setsettingcommand.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricGdRiversurvey_es_ES.ts \

@@ -4,6 +4,8 @@
 #include "datamodel/preprocessorbcgroupdataitem.h"
 #include "datamodel/preprocessorbcsettingdataitem.h"
 #include "datamodel/preprocessorbcsettinggroupdataitem.h"
+#include "datamodel/preprocessorhydraulicdatagroupdataitem.h"
+#include "datamodel/preprocessorhydraulicdatatopdataitem.h"
 #include "datamodel/preprocessorgridandgridcreatingconditiondataitem.h"
 #include "datamodel/preprocessorgridattributecelldataitem.h"
 #include "datamodel/preprocessorgridattributemappingsettingtopdataitem.h"
@@ -19,7 +21,6 @@
 #include "datamodel/preprocessorgeodatagroupdataitem.h"
 #include "datamodel/preprocessorgeodatatopdataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
-#include "factory/hydraulicdataimporterfactory.h"
 #include "factory/geodatafactory.h"
 #include "preobjectbrowserview.h"
 #include "preprocessordatamodel.h"
@@ -69,6 +70,7 @@
 #include <vtkRenderWindow.h>
 
 #include <cmath>
+#include <vector>
 
 PreProcessorDataModel::PreProcessorDataModel(PreProcessorWindow* w, ProjectDataItem* parent)
 	: PreProcessorDataModelInterface(w, parent)
@@ -1063,12 +1065,19 @@ void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu* menu)
 {
 	// clear menu first.
 	menu->clear();
-
-	QList<HydraulicDataImporter*> importers = HydraulicDataImporterFactory::instance().importers();
-	for (auto it = importers.begin(); it != importers.end(); ++it) {
-		HydraulicDataImporter* imp = *it;
-		QAction* action = menu->addAction(imp->caption());
-		connect(action, SIGNAL(triggered()), this, SLOT(importHydraulicData()));
+	// find how many grid types exists
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	auto gridTypes = root->gridTypeDataItems();
+	if (gridTypes.count() == 0) {
+		// no menu available.
+		QAction* no = menu->addAction(tr("(No data to import)"));
+		no->setDisabled(true);
+		return;
+	}
+	PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
+	auto topItem = gt->hydraulicDataTop();
+	for (auto groupItem : topItem->groupDataItems()) {
+		groupItem->addImportAction(menu);
 	}
 }
 
@@ -1390,81 +1399,20 @@ bool PreProcessorDataModel::checkMappingStatus()
 	return ! mapExexuted;
 }
 
-void PreProcessorDataModel::importHydraulicData()
-{
-	QAction* action = dynamic_cast<QAction*>(sender());
-
-	QList<HydraulicDataImporter*> importers = HydraulicDataImporterFactory::instance().importers();
-	HydraulicDataImporter* importer = nullptr;
-	for (auto it = importers.begin(); it != importers.end(); ++it) {
-		HydraulicDataImporter* imp = *it;
-		if (imp->caption() == action->text()) {
-			importer = imp;
-			break;
-		}
-	}
-	if (importer == nullptr) {return;}
-	// scan all geodata.
-	QList<GeoData*> geodatas;
-
-	PreProcessorRootDataItem* ritem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
-	QList<PreProcessorGridTypeDataItem*> titems = ritem->gridTypeDataItems();
-	for (auto titem : titems) {
-		auto& gitems = titem->geoDataTop()->groupDataItems();
-		for (auto gitem : gitems) {
-			auto& ditems = gitem->geoDatas();
-			for (auto ditem : ditems) {
-				GeoData* rdata = ditem->geoData();
-				if (importer->canImportTo(rdata)) {
-					// this importer can used for this raw data.
-					geodatas.append(rdata);
-				}
-			}
-		}
-	}
-	GeoData* targetGeoData = nullptr;
-	if (geodatas.count() == 0) {
-		QMessageBox::warning(mainWindow(), tr("Warning"), tr("There is no geographic data to import this hydraulic data."));
-		return;
-	} else if (geodatas.count() > 1) {
-		ItemSelectingDialog dialog(mainWindow());
-		QList<QString> items;
-		for (int i = 0; i < geodatas.count(); ++i) {
-			items.append(geodatas.at(i)->caption());
-		}
-		dialog.setItems(items);
-		dialog.setWindowTitle(tr("Select geographic data"));
-		dialog.setMessage(tr("Please select the geographic data to import hydraulic data."));
-		int ret = dialog.exec();
-		if (ret == QDialog::Rejected) {return;}
-		targetGeoData = geodatas.at(dialog.selectedIndex());
-	} else {
-		// there was only one geodata.
-		targetGeoData = geodatas.at(0);
-	}
-	// get filename.
-	QString dir = LastIODirectory::get();
-	QString selectedFilter;
-	// Select the file to import.
-	QStringList filters = importer->fileDialogFilters();
-	QString filename = QFileDialog::getOpenFileName(mainWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
-	if (filename.isNull()) {return;}
-	bool result = importer->import(targetGeoData, filename, selectedFilter, mainWindow());
-	if (result) {
-		QMessageBox::information(mainWindow(), tr("Information"), tr("Importing %1 succeeded.").arg(QDir::toNativeSeparators(filename)));
-		QFileInfo finfo(filename);
-		LastIODirectory::set(finfo.absolutePath());
-	} else {
-		QMessageBox::critical(mainWindow(), tr("Error"), tr("Importing %1 failed.").arg(QDir::toNativeSeparators(filename)));
-	}
-}
-
 PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem(const std::string& type) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
 	if (tItem == nullptr) {return nullptr;}
 	return tItem->geoDataTop();
+}
+
+PreProcessorHydraulicDataTopDataItemInterface* PreProcessorDataModel::hydraulicDataTopDataItem(const std::string& type) const
+{
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
+	if (tItem == nullptr) {return nullptr;}
+	return tItem->hydraulicDataTop();
 }
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const

@@ -17,8 +17,12 @@ class GeoDataExporter;
 class GeoDataMapper;
 class PreProcessorWindowInterface;
 class PreProcessorDataModelInterface;
+class PreProcessorGeoDataTopDataItemInterface;
+class PreProcessorGeoDataGroupDataItemInterface;
 class PreProcessorGeoDataDataItemInterface;
 class PreProcessorGraphicsViewInterface;
+class PreProcessorHydraulicDataTopDataItemInterface;
+class PreProcessorHydraulicDataGroupDataItemInterface;
 class ZDepthRange;
 class ScalarsToColorsContainer;
 class MouseBoundingBox;
@@ -149,13 +153,17 @@ protected:
 
 	PreProcessorWindowInterface* preProcessorWindow();
 	PreProcessorGraphicsViewInterface* graphicsView();
+	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const;
+	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
 	PreProcessorGeoDataDataItemInterface* geoDataDataItem() const;
+	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem() const;
+	PreProcessorHydraulicDataGroupDataItemInterface* hydraulicDataGroupDataItem(const std::string& name) const;
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com);
 
 	MouseBoundingBox* mouseBoundingBox();
-	PreProcessorDataModelInterface* dataModel();
+	PreProcessorDataModelInterface* dataModel() const;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	virtual int iRICLibType() const;

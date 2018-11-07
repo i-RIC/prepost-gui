@@ -1225,14 +1225,6 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 			n_h_v.value("TOPN") = zeros;
 		}
 
-		if (cs->container("wse") != nullptr) {
-			double wse_val = 0;
-			if (point->waterSurfaceElevationSpecified()) {
-				wse_val = point->waterSurfaceElevationValue();
-			}
-			cs->real("wse").setValue(wse_val);
-		}
-
 		point = point->nextPoint();
 	}
 }

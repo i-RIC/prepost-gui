@@ -4,6 +4,8 @@
 
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainert.h>
+#include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
+#include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationitem.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
@@ -54,8 +56,6 @@ void GeoDataRiverPathPoint::initializeInnerValues()
 	m_gridSkip = false;
 	m_CtrlSections.reserve(1);
 	m_CtrlSections.push_back(1);
-	m_waterSurfaceElevationSpecified = false;
-	m_waterSurfaceElevationValue = 0;
 	IsSelected = false;
 	InhibitInterpolatorUpdate = false;
 	m_crosssectionDirectionL = QVector2D(1, 0);
@@ -1227,11 +1227,6 @@ void GeoDataRiverPathPoint::load(QDataStream& s, const VersionNumber& number)
 		double wseValue;
 		s >> wseSpecified;
 		s >> wseValue;
-		m_waterSurfaceElevationSpecified = (wseSpecified == 1);
-		m_waterSurfaceElevationValue = wseValue;
-	} else {
-		m_waterSurfaceElevationSpecified = false;
-		m_waterSurfaceElevationValue = 0;
 	}
 }
 
@@ -1273,10 +1268,10 @@ void GeoDataRiverPathPoint::save(QDataStream& s) const
 	// left shift
 	s << m_crosssection.leftShift();
 	int wseSpecified = 0;
-	if (m_waterSurfaceElevationSpecified) {wseSpecified = 1;}
+	double wseValue = 0;
 	// water surface elevation
 	s << wseSpecified;
-	s << m_waterSurfaceElevationValue;
+	s << wseValue;
 }
 
 QVector<double>& GeoDataRiverPathPoint::CtrlPoints(CtrlZonePosition position)
@@ -1536,33 +1531,17 @@ void GeoDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 	}
 }
 
-void GeoDataRiverPathPoint::clearWaterSurfaceElevation()
+std::vector<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation(HydraulicDataRiverSurveyWaterElevation *we)
 {
-	m_waterSurfaceElevationSpecified = false;
-}
-
-void GeoDataRiverPathPoint::setWaterSurfaceElevation(double value)
-{
-	m_waterSurfaceElevationSpecified = true;
-	m_waterSurfaceElevationValue = value;
-}
-
-bool GeoDataRiverPathPoint::waterSurfaceElevationSpecified() const
-{
-	return m_waterSurfaceElevationSpecified;
-}
-
-double GeoDataRiverPathPoint::waterSurfaceElevationValue() const
-{
-	return m_waterSurfaceElevationValue;
-}
-
-std::vector<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
-{
-	if (! m_waterSurfaceElevationSpecified) {
-		std::vector<int> ret;
+	std::vector<int> ret;
+	auto item = we->getItem(m_name);
+	if (item == nullptr) {
 		return ret;
 	}
+	if (! item->isSpecified()) {
+		return ret;
+	}
+
 	GeoDataRiverCrosssection& cross = m_crosssection;
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 
@@ -1572,7 +1551,7 @@ std::vector<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		GeoDataRiverCrosssection::Altitude alt = *it;
 		if (alt.position() > 0) {break;}
-		if (alt.height() > m_waterSurfaceElevationValue) {
+		if (alt.height() > item->value()) {
 			leftlimit = idx;
 		}
 		++ idx;
@@ -1580,14 +1559,13 @@ std::vector<int> GeoDataRiverPathPoint::getPointsToInactivateUsingWaterElevation
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		GeoDataRiverCrosssection::Altitude alt = *it;
 		if (alt.position() < 0) {continue;}
-		if (alt.height() > m_waterSurfaceElevationValue) {
+		if (alt.height() > item->value()) {
 			rightlimit = idx;
 			break;
 		}
 		++ idx;
 	}
 
-	std::vector<int> ret;
 	for (int i = 0; i < leftlimit; ++i) {
 		ret.push_back(i);
 	}
@@ -1656,9 +1634,6 @@ void GeoDataRiverPathPoint::loadFromiRICLibObject(const iRICLib::RiverPathPoint*
 	moveData(p->centerLineCtrlPoints, CenterLineCtrlPoints);
 	moveData(p->leftBankCtrlPoints, LeftBankCtrlPoints);
 	moveData(p->rightBankCtrlPoints, RightBankCtrlPoints);
-
-	m_waterSurfaceElevationSpecified = p->wseSpecified;
-	m_waterSurfaceElevationValue = p->waterSurfaceElevation;
 }
 
 void GeoDataRiverPathPoint::saveToiRICLibObject(iRICLib::RiverPathPoint* p)
@@ -1707,7 +1682,4 @@ void GeoDataRiverPathPoint::saveToiRICLibObject(iRICLib::RiverPathPoint* p)
 	moveData(CenterLineCtrlPoints, p->centerLineCtrlPoints);
 	moveData(LeftBankCtrlPoints, p->leftBankCtrlPoints);
 	moveData(RightBankCtrlPoints, p->rightBankCtrlPoints);
-
-	p->wseSpecified = m_waterSurfaceElevationSpecified;
-	p->waterSurfaceElevation = m_waterSurfaceElevationValue;
 }

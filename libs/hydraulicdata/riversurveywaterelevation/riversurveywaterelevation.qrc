@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/hydraulicdata/riversurveywaterelevation">
+        <file>data/colorsource_wse.xml</file>
+    </qresource>
+</RCC>

@@ -19,15 +19,12 @@ public:
 	void setEditorData(QWidget* editor, const QModelIndex& index) const override;
 	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const override;
 	void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
-	QWidget* editor() const {return dynamic_cast<QWidget*>(m_editor);}
 
 private slots:
-	void handleEditorDestroy(QObject* editor);
 	void handleCheckboxToggle(bool toggled);
 
 private:
 	GeoDataRiverCrosssection* m_crosssection;
-	mutable QObject* m_editor;
 	mutable CenteredCheckBox* m_checkBox;
 	mutable QAbstractItemModel* m_model;
 	mutable QModelIndex m_index;

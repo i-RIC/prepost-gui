@@ -6,70 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>535</width>
-    <height>461</height>
+    <width>680</width>
+    <height>526</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QSplitter" name="horizontalSplitter">
+     <widget class="QSplitter" name="hSplitter">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
       <widget class="GeoDataRiverSurveyCrosssectionWindowGraphicsView" name="graphicsView" native="true"/>
-      <widget class="QSplitter" name="verticalSplitter">
+      <widget class="QSplitter" name="vSplitter">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="QTableWidget" name="surveysTableWidget"/>
-       <widget class="QWidget" name="layoutWidget">
-        <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
-         <property name="spacing">
-          <number>1</number>
-         </property>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QCheckBox" name="weCheckBox">
-             <property name="text">
-              <string>Specify water elevation</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QDoubleSpinBox" name="weSpinBox">
-             <property name="minimum">
-              <double>-10000.000000000000000</double>
-             </property>
-             <property name="maximum">
-              <double>10000.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="GeoDataRiverSurveyCrosssectionWindowTableView" name="tableView"/>
-         </item>
-        </layout>
+       <widget class="QTableWidget" name="surveysTableWidget">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
        </widget>
+       <widget class="GeoDataRiverSurveyCrosssectionWindowWseTableWidget" name="wsesTableWidget"/>
+       <widget class="GeoDataRiverSurveyCrosssectionWindowTableView" name="tableView"/>
       </widget>
      </widget>
     </item>
@@ -98,6 +60,11 @@
    <class>GeoDataRiverSurveyCrosssectionWindowTableView</class>
    <extends>QTableView</extends>
    <header>geodatariversurveycrosssectionwindowtableview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>geodatariversurveycrosssectionwindowwsetablewidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

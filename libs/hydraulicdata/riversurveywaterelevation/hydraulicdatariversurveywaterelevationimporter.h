@@ -9,13 +9,15 @@ class HD_RIVERSURVEYWATERELEVATION_EXPORT HydraulicDataRiverSurveyWaterElevation
 	Q_OBJECT
 
 public:
-	/// Constructor
-	HydraulicDataRiverSurveyWaterElevationImporter();
-	/// Import hydraulicdata from the specified file.
-	bool import(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w) override;
-	/// Returns true if the hydraulic data can be imported to the specified geodata.
-	bool canImportTo(GeoData* data) override;
-	const QStringList fileDialogFilters() override;
+	HydraulicDataRiverSurveyWaterElevationImporter(HydraulicDataCreator* creator);
+
+	QStringList fileDialogFilters() override;
+	QStringList acceptableExtensions() override;
+
+	bool importData(HydraulicData* data, int index, const std::set<QString>& usedCaptions, QWidget* w) override;
+
+private:
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, QWidget* w) override;
 };
 
 #endif // HYDRAULICDATARIVERSURVEYWATERELEVATIONIMPORTER_H

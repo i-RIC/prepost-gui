@@ -30,19 +30,19 @@ unix {
 }
 LIBS += -liricGuicore
 
-# iricGdRiversurvey
+# iricMisc
 
 win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geodata/riversurvey/debug"
-	} else {
-		LIBS += -L"../../geodata/riversurvey/release"
-	}
+  CONFIG(debug, debug|release) {
+    LIBS += -L"../../misc/debug"
+  } else {
+    LIBS += -L"../../misc/release"
+  }
 }
 unix {
-	LIBS += -L"../../geodata/riversurvey"
+  LIBS += -L"../../misc"
 }
-LIBS += -liricGdRiversurvey
+LIBS += -liricMisc
 
 # Post-Build Event
 win32 {
@@ -51,8 +51,22 @@ win32 {
 
 # Input
 HEADERS += hd_riversurveywaterelevation_global.h \
-           hydraulicdatariversurveywaterelevationimporter.h
-SOURCES += hydraulicdatariversurveywaterelevationimporter.cpp
+           hydraulicdatariversurveywaterelevation.h \
+           hydraulicdatariversurveywaterelevationcreator.h \
+           hydraulicdatariversurveywaterelevationimporter.h \
+           hydraulicdatariversurveywaterelevationitem.h \
+           private/hydraulicdatariversurveywaterelevation_editcaptioncommand.h \
+           private/hydraulicdatariversurveywaterelevation_editcolorcommand.h \
+           private/hydraulicdatariversurveywaterelevation_edititemcommand.h \
+           private/hydraulicdatariversurveywaterelevation_impl.h
+SOURCES += hydraulicdatariversurveywaterelevation.cpp \
+           hydraulicdatariversurveywaterelevationcreator.cpp \
+           hydraulicdatariversurveywaterelevationimporter.cpp \
+           hydraulicdatariversurveywaterelevationitem.cpp \
+           private/hydraulicdatariversurveywaterelevation_editcaptioncommand.cpp \
+           private/hydraulicdatariversurveywaterelevation_editcolorcommand.cpp \
+           private/hydraulicdatariversurveywaterelevation_edititemcommand.cpp
+RESOURCES += riversurveywaterelevation.qrc
 TRANSLATIONS += languages/iricHdRiversurveywaterelevation_es_ES.ts \
                 languages/iricHdRiversurveywaterelevation_fr_FR.ts \
                 languages/iricHdRiversurveywaterelevation_id_ID.ts \

@@ -38,6 +38,8 @@ class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCrosssectionWindow :
 public:
 	const static int TABLE_CHECK_WIDTH = 20;
 	const static int TABLE_DATA_WIDTH = 160;
+	const static int TABLE_NAME_WIDTH = 100;
+	const static int TABLE_REALVAL_WIDTH = 60;
 	const static int TABLE_COLOR_WIDTH = 40;
 	const static int TABLE_ROWHEIGHT = 24;
 
@@ -52,6 +54,7 @@ public:
 	QAction* inactivateByWEAllAction() const;
 	void setupData();
 	void updateSurveysTable();
+	void updateWaterSurfaceElevationTable();
 	void updateComboBoxes();
 	void updateRiverSurveys();
 	QTableView* tableView();
@@ -87,16 +90,21 @@ private slots:
 	void inactivateByWEAll();
 	void crosssectionComboBoxChange(int newindex);
 	void handleDataChange();
-	void weCheckboxChange(bool checked);
-	void weValueChange(double val);
 	void handleSurveyTableItemEdit(QTableWidgetItem* item);
 	void handleSurveyTableItemClick(QTableWidgetItem* item);
+	void handleWseTableItemEdit(QTableWidgetItem* item);
+	void handleWseTableItemClick(QTableWidgetItem* item);
 	void handleSurveyTablecurrentCellChange(int currentRow, int currentColumn, int previousRow, int previousColumn);
+
+	void moveUpWse(int index);
+	void moveDownWse(int index);
+	void deleteWse(int index);
 
 private:
 	static const int defaultRowHeight = 20;
 
 	void setupSurveyTable();
+	void setupWaterSurfaceElevationTable();
 	bool syncData();
 	void updateRiverPathPoints();
 	void setupActions();
@@ -106,6 +114,7 @@ private:
 	void setupModel();
 	void setupView();
 	void updateEditTargetPoint();
+	bool selectWSEIndex(int* index);
 
 	GeoDataRiverSurvey* targetRiverSurvey() const;
 	GeoDataRiverSurvey* gridCreatingConditionRiverSurvey() const;
@@ -116,6 +125,8 @@ private:
 	const QList<QColor>& riverSurveyColors() const;
 
 	QItemSelectionModel* selectionModel() const;
+	PreProcessorHydraulicDataGroupDataItemInterface* waterElevationGroup();
+	HydraulicDataRiverSurveyWaterElevation* waterElevation(int index);
 
 	Ui::GeoDataRiverSurveyCrosssectionWindow* ui;
 
@@ -124,6 +135,7 @@ private:
 
 	class DataTableDelegate;
 	class RiverSurveyTableDelegate;
+	class WseTableDelegate;
 
 public:
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;

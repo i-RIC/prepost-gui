@@ -1,10 +1,12 @@
 #include "geodatariversurveycrosssectionwindow_datatabledelegate.h"
 
 #include <guibase/widget/centeredcheckbox.h>
+#include <guibase/widget/realnumbereditwidget.h>
+
+#include <QPainter>
 
 GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::DataTableDelegate() :
 	m_crosssection {nullptr},
-	m_editor {nullptr},
 	m_checkBox {nullptr},
 	m_model {nullptr}
 {}
@@ -41,8 +43,6 @@ QWidget* GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::createEditor(Q
 	if (dat.type() == QVariant::Double) {
 		// Float. Edit with RealEdit
 		RealNumberEditWidget* w = new RealNumberEditWidget(parent);
-		m_editor = w;
-		connect(m_editor, SIGNAL(destroyed(QObject*)), this, SLOT(handleEditorDestroy(QObject*)));
 		return w;
 	} else if (dat.type() == QVariant::Bool) {
 		// Bool. Edit with Checkbox.
@@ -53,8 +53,6 @@ QWidget* GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::createEditor(Q
 		return m_checkBox;
 	} else {
 		QWidget* w = QStyledItemDelegate::createEditor(parent, option, index);
-		m_editor = w;
-		connect(m_editor, SIGNAL(destroyed(QObject*)), this, SLOT(handleEditorDestroy(QObject*)));
 		return w;
 	}
 }
@@ -108,11 +106,4 @@ void GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::updateEditorGeomet
 void GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::handleCheckboxToggle(bool toggled)
 {
 	m_model->setData(m_index, toggled);
-}
-
-void GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::handleEditorDestroy(QObject* e)
-{
-	if (m_editor == e) {
-		m_editor = nullptr;
-	}
 }

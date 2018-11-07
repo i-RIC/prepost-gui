@@ -1,28 +1,40 @@
 #ifndef HYDRAULICDATAIMPORTER_H
 #define HYDRAULICDATAIMPORTER_H
 
+#include "../../guicore_global.h"
+
 #include <QObject>
 #include <QString>
 
-class GeoData;
+#include <set>
+#include <string>
+
 class HydraulicData;
 class HydraulicDataCreator;
 
-class HydraulicDataImporter : public QObject
+class GUICOREDLL_EXPORT HydraulicDataImporter : public QObject
 {
-
 public:
-	/// Constructor
-	HydraulicDataImporter() {}
-	/// Import hydraulicdata from the specified file.
-	virtual bool import(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w) = 0;
-	/// Returns true if the hydraulic data can be imported to the specified geodata.
-	virtual bool canImportTo(GeoData* data) = 0;
-	virtual const QStringList fileDialogFilters() = 0;
-	const QString& caption() const {return m_caption;}
+	HydraulicDataImporter(HydraulicDataCreator* creator);
+	virtual ~HydraulicDataImporter();
+
+	HydraulicDataCreator* creator() const;
+
+	virtual QStringList fileDialogFilters() = 0;
+	virtual QStringList acceptableExtensions() = 0;
+
+	bool init(const QString& filename, const QString& selectedFilter, int* count, QWidget* w);
+	virtual bool importData(HydraulicData* data, int index, const std::set<QString>& usedCaptions, QWidget* w) = 0;
 
 protected:
-	QString m_caption;
+	const QString& filename() const;
+	const QString& selectedFilter() const;
+
+private:
+	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, QWidget* w);
+
+	class Impl;
+	Impl* impl;
 };
 
 #endif // HYDRAULICDATAIMPORTER_H

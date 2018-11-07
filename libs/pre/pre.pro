@@ -429,6 +429,9 @@ HEADERS += pre_global.h \
            datamodel/preprocessorgriddataitem.h \
            datamodel/preprocessorgridshapedataitem.h \
            datamodel/preprocessorgridtypedataitem.h \
+           datamodel/preprocessorhydraulicdatadataitem.h \
+           datamodel/preprocessorhydraulicdatagroupdataitem.h \
+           datamodel/preprocessorhydraulicdatatopdataitem.h \
            datamodel/preprocessorinputconditiondataitem.h \
            datamodel/preprocessormeasureddatatopdataitem.h \
            datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h \
@@ -442,7 +445,7 @@ HEADERS += pre_global.h \
            factory/gridcreatingconditionfactory.h \
            factory/gridexporterfactory.h \
            factory/gridimporterfactory.h \
-           factory/hydraulicdataimporterfactory.h \
+           factory/hydraulicdatafactory.h \
            factory/preprocessorgriddataitemfactory.h \
            gridexporter/cgnsgridexporter.h \
            gridimporter/cgnsgridimporter.h \
@@ -535,6 +538,9 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/preprocessorgriddataitem.cpp \
            datamodel/preprocessorgridshapedataitem.cpp \
            datamodel/preprocessorgridtypedataitem.cpp \
+           datamodel/preprocessorhydraulicdatadataitem.cpp \
+           datamodel/preprocessorhydraulicdatagroupdataitem.cpp \
+           datamodel/preprocessorhydraulicdatatopdataitem.cpp \
            datamodel/preprocessorinputconditiondataitem.cpp \
            datamodel/preprocessormeasureddatatopdataitem.cpp \
            datamodel/preprocessornormal15dgridwithcrosssectiondataitem.cpp \
@@ -548,7 +554,7 @@ SOURCES += preobjectbrowser.cpp \
            factory/gridcreatingconditionfactory.cpp \
            factory/gridexporterfactory.cpp \
            factory/gridimporterfactory.cpp \
-           factory/hydraulicdataimporterfactory.cpp \
+           factory/hydraulicdatafactory.cpp \
            factory/preprocessorgriddataitemfactory.cpp \
            gridexporter/cgnsgridexporter.cpp \
            gridimporter/cgnsgridimporter.cpp \
