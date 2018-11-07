@@ -3,8 +3,8 @@
 #include "geodatarivercrosssection.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveycrosssectionwindow.h"
-#include "geodatariversurveycrosssectionwindowdelegate.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
+#include "private/geodatariversurveycrosssectionwindow_datatabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
 #include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
 
@@ -13,18 +13,14 @@
 #include <guicore/project/colorsource.h>
 #include <misc/iricundostack.h>
 
-#include <QAction>
+#include <QCheckBox>
 #include <QColorDialog>
 #include <QComboBox>
-#include <QCheckBox>
-#include <QItemSelectionModel>
 #include <QLabel>
 #include <QMenu>
 #include <QMessageBox>
-#include <QModelIndexList>
 #include <QPainter>
 #include <QStandardItemModel>
-#include <QUndoGroup>
 
 #include <set>
 #include <map>
@@ -335,8 +331,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupView()
 	ui->tableView->setModel(impl->m_model);
 	ui->tableView->setSelectionModel(impl->m_selectionModel);
 
-	GeoDataRiverSurveyCrosssectionWindowDelegate* del = new GeoDataRiverSurveyCrosssectionWindowDelegate();
-	ui->tableView->setItemDelegate(del);
+	ui->tableView->setItemDelegate(new DataTableDelegate());
 
 	ui->graphicsView->setParentWindow(this);
 	ui->graphicsView->setModel(impl->m_model);
@@ -865,8 +860,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 		impl->m_editTargetPoint = impl->m_riverPathPoints[index];
 	}
 
-	GeoDataRiverSurveyCrosssectionWindowDelegate* del =
-		dynamic_cast<GeoDataRiverSurveyCrosssectionWindowDelegate*>(ui->tableView->itemDelegate());
+	auto del = dynamic_cast<DataTableDelegate*>(ui->tableView->itemDelegate());
 	if (impl->m_editTargetPoint == nullptr) {
 		del->setCrosssection(nullptr);
 	} else {

@@ -122,6 +122,7 @@ private:
 	class Impl;
 	Impl* impl;
 
+	class DataTableDelegate;
 	class RiverSurveyTableDelegate;
 
 public:
