@@ -22,7 +22,6 @@ public:
 	GridCreatingConditionCompoundChannelAbstractPolygon(GridCreatingConditionCompoundChannel* parent);
 	~GridCreatingConditionCompoundChannelAbstractPolygon();
 
-
 	bool isVertexSelectable(const QVector2D& pos, double distlimit);
 	bool isEdgeSelectable(const QVector2D& pos, double distlimit);
 	bool isPolygonSelectable(const QVector2D& pos);
@@ -34,6 +33,11 @@ public:
 	void updateShapeData();
 	int selectedVertexId() const {return m_selectedVertexId;}
 	int selectedEdgeId() const {return m_selectedEdgeId;}
+
+	QPointF vertex(int index) const;
+	void insertVertex(int index, const QPointF& vertex);
+	void setVertex(int index, const QPointF& vertex);
+	void removeVertex(int index);
 
 	void setActive(bool active);
 	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;

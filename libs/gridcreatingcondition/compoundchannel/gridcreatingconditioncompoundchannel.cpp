@@ -8,8 +8,19 @@
 #include "gridcreatingconditioncompoundchannelsettingdialog.h"
 #include "gridcreatingconditioncompoundchannelspline.h"
 
+#include "private/gridcreatingconditioncompoundchannel_addpolygonvertexcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_addpolylinevertexcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_definepolylinenewpointcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolygoncommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolygonvertexcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolylinecommand.h"
+#include "private/gridcreatingconditioncompoundchannel_movepolylinevertexcommand.h"
 #include "private/gridcreatingconditioncompoundchannel_polygoncoordinateseditor.h"
 #include "private/gridcreatingconditioncompoundchannel_polylinecoordinateseditor.h"
+#include "private/gridcreatingconditioncompoundchannel_removepolygonvertexcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_removepolylinevertexcommand.h"
+#include "private/gridcreatingconditioncompoundchannel_switchstatuscommand.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -180,79 +191,6 @@ void GridCreatingConditionCompoundChannel::viewOperationEnded(PreProcessorGraphi
 	updateMouseCursor(v);
 }
 
-class GridCreatingConditionCompoundChannel::SwitchStatusCommand : public QUndoCommand
-{
-public:
-	SwitchStatusCommand(GridCreatingConditionCompoundChannel::Status newStatus, GridCreatingConditionCompoundChannel* polygon) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Finish Defining Polygon or Polygonal line")}
-	{
-		m_newStatus = newStatus;
-		m_condition = polygon;
-	}
-	void undo() {
-		switch (m_newStatus) {
-		case GridCreatingConditionCompoundChannel::stDefiningLowWaterRegion:
-			m_condition->m_status = GridCreatingConditionCompoundChannel::stDefiningRegion;
-			m_condition->m_selectedPolygon = m_condition->m_gridRegionPolygon;
-			m_condition->m_gridRegionPolygon->setActive(true);
-			m_condition->m_lowWaterChannelPolygon->setActive(false);
-			break;
-		case GridCreatingConditionCompoundChannel::stDefiningCenterLine:
-			m_condition->m_status = GridCreatingConditionCompoundChannel::stDefiningLowWaterRegion;
-			m_condition->m_selectedPolygon = m_condition->m_lowWaterChannelPolygon;
-			m_condition->m_lowWaterChannelPolygon->setActive(true);
-			m_condition->m_centerLine->setActive(false);
-			break;
-		case GridCreatingConditionCompoundChannel::stNormal:
-			m_condition->m_status = GridCreatingConditionCompoundChannel::stDefiningCenterLine;
-			m_condition->m_selectedLine = m_condition->m_centerLine;
-			m_condition->m_centerLine->setActive(true);
-			break;
-		default:
-			break;
-		}
-		m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meDefining;
-
-		m_condition->updateMouseCursor(m_condition->graphicsView());
-		m_condition->updateActionStatus();
-		m_condition->renderGraphicsView();
-	}
-	void redo() {
-		m_condition->m_status = m_newStatus;
-		switch (m_newStatus) {
-		case GridCreatingConditionCompoundChannel::stDefiningLowWaterRegion:
-			m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meBeforeDefining;
-			m_condition->m_selectedPolygon = m_condition->m_lowWaterChannelPolygon;
-			m_condition->m_gridRegionPolygon->setActive(false);
-			m_condition->m_lowWaterChannelPolygon->setActive(true);
-			InformationDialog::information(m_condition->preProcessorWindow(), GridCreatingConditionCompoundChannel::tr("Information"), GridCreatingConditionCompoundChannel::tr("Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gccompoundchannel_lowwater");
-			break;
-		case GridCreatingConditionCompoundChannel::stDefiningCenterLine:
-			m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meBeforeDefining;
-			m_condition->m_selectedLine = m_condition->m_centerLine;
-			m_condition->m_lowWaterChannelPolygon->setActive(false);
-			m_condition->m_centerLine->setActive(true);
-			InformationDialog::information(m_condition->preProcessorWindow(), GridCreatingConditionCompoundChannel::tr("Information"), GridCreatingConditionCompoundChannel::tr("Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gccompoundchannel_centerline");
-			break;
-		case GridCreatingConditionCompoundChannel::stNormal:
-			m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meNormal;
-			m_condition->m_selectMode = GridCreatingConditionCompoundChannel::smLine;
-			m_condition->m_selectedLine = m_condition->m_centerLine;
-			m_condition->m_centerLine->setActive(true);
-			m_condition->create(m_condition->preProcessorWindow());
-			break;
-		default:
-			break;
-		}
-		m_condition->updateMouseCursor(m_condition->graphicsView());
-		m_condition->updateActionStatus();
-		m_condition->renderGraphicsView();
-	}
-private:
-	GridCreatingConditionCompoundChannel::Status m_newStatus;
-	GridCreatingConditionCompoundChannel* m_condition;
-};
-
 void GridCreatingConditionCompoundChannel::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
@@ -284,619 +222,19 @@ void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*
 	}
 }
 
-class GridCreatingConditionCompoundChannel::DefinePolygonNewPointCommand : public QUndoCommand
-{
-public:
-	DefinePolygonNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Add New Polygon Point")}
-	{
-		m_keyDown = keyDown;
-		double dx = point.x();
-		double dy = point.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		m_newPoint = QVector2D(dx, dy);
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown) {
-			// add new point.
-			pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-			pol->GetPoints()->Modified();
-		} else {
-			// modify the last point.
-			vtkIdType lastId = pol->GetNumberOfPoints() - 1;
-			pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-			pol->GetPoints()->Modified();
-		}
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown) {
-			// decrease the number of points. i. e. remove the last point.
-			vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
-			pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-			pol->GetPoints()->Modified();
-		} else {
-			// this does not happen. no implementation needed.
-		}
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelPolygonDefineNewPoint");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const DefinePolygonNewPointCommand* comm = dynamic_cast<const DefinePolygonNewPointCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-		m_newPoint = comm->m_newPoint;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-	QVector2D m_newPoint;
-};
-
-class GridCreatingConditionCompoundChannel::MovePolygonCommand : public QUndoCommand
-{
-public:
-	MovePolygonCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygon")}
-	{
-		m_keyDown = keyDown;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double p[3];
-			points->GetPoint(i, p);
-			p[0] += m_offset.x();
-			p[1] += m_offset.y();
-			points->SetPoint(i, p);
-		}
-		points->Modified();
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double p[3];
-			points->GetPoint(i, p);
-			p[0] -= m_offset.x();
-			p[1] -= m_offset.y();
-			points->SetPoint(i, p);
-		}
-		points->Modified();
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelMovePolygonCommand");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolygonCommand* comm = dynamic_cast<const MovePolygonCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-	QVector2D m_offset;
-};
-
-class GridCreatingConditionCompoundChannel::MovePolygonVertexCommand : public QUndoCommand
-{
-public:
-	MovePolygonVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygon Vertex")}
-	{
-		m_keyDown = keyDown;
-		m_vertexId = vertexId;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] += m_offset.x();
-		p[1] += m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] -= m_offset.x();
-		p[1] -= m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelPolygonMoveVertex");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolygonVertexCommand* comm = dynamic_cast<const MovePolygonVertexCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-		if (comm->m_vertexId != m_vertexId) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-	QVector2D m_offset;
-};
-
-class GridCreatingConditionCompoundChannel::AddPolygonVertexCommand : public QUndoCommand
-{
-public:
-	AddPolygonVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Insert Polygon Vertex")}
-	{
-		m_keyDown = keyDown;
-		m_vertexId = (edgeId + 1) % (pol->m_selectedPolygon->getVtkPolygon()->GetNumberOfPoints() + 1);
-		double dx = point.x();
-		double dy = point.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		m_vertexPosition = QVector2D(dx, dy);
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		if (m_keyDown) {
-			// add vertex.
-			vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-			QVector<QVector2D> positions;
-			positions.reserve(points->GetNumberOfPoints());
-			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			positions.append(m_vertexPosition);
-			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i) {
-				QVector2D v = positions.at(i);
-				points->SetPoint(i, v.x(), v.y(), 0);
-			}
-			points->Modified();
-		} else {
-			// just modify the vertex position
-			vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-			points->SetPoint(m_vertexId, m_vertexPosition.x(), m_vertexPosition.y(), 0);
-			points->Modified();
-		}
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		if (m_keyDown) {
-			// remove vertex.
-			vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-			QVector<QVector2D> positions;
-			positions.reserve(points->GetNumberOfPoints());
-			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			// skip vertex in m_vertexId[
-			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i) {
-				QVector2D v = positions.at(i);
-				points->SetPoint(i, v.x(), v.y(), 0);
-			}
-			points->Modified();
-			m_targetPolygon->getVtkPolygon()->Modified();
-			m_targetPolygon->updateShapeData();
-			m_polygon->renderGraphicsView();
-		} else {
-			// this never happens.
-		}
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelAddPolygonVertex");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const AddPolygonVertexCommand* comm = dynamic_cast<const AddPolygonVertexCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (m_polygon != comm->m_polygon) {return false;}
-		if (m_vertexId != comm->m_vertexId) {return false;}
-		m_vertexPosition = comm->m_vertexPosition;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-};
-
-class GridCreatingConditionCompoundChannel::DefinePolyLineNewPointCommand : public QUndoCommand
-{
-public:
-	DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* cond) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Add New Center Line Point")}
-	{
-		m_keyDown = keyDown;
-		double dx = point.x();
-		double dy = point.y();
-		cond->graphicsView()->viewportToWorld(dx, dy);
-		m_newPoint = QVector2D(dx, dy);
-		m_condition = cond;
-		m_targetLine = m_condition->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown) {
-			// add new point.
-			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 0) {
-				m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meDefining;
-			}
-			line->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-			line->GetPoints()->Modified();
-		} else {
-			// modify the last point.
-			vtkIdType lastId = line->GetNumberOfPoints() - 1;
-			line->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-			line->GetPoints()->Modified();
-		}
-		line->Modified();
-		m_targetLine->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown) {
-			// decrease the number of points. i. e. remove the last point.
-			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 1) {
-				m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meBeforeDefining;
-			}
-			line->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-			line->GetPoints()->Modified();
-		} else {
-			// this does not happen. no implementation needed.
-		}
-		line->Modified();
-		m_targetLine->updateShapeData();
-		m_condition->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelDefinePolyLineNewPoint");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const DefinePolyLineNewPointCommand* comm = dynamic_cast<const DefinePolyLineNewPointCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_condition != m_condition) {return false;}
-		m_newPoint = comm->m_newPoint;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_condition;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-	QVector2D m_newPoint;
-};
-
-class GridCreatingConditionCompoundChannel::MovePolyLineCommand : public QUndoCommand
-{
-public:
-	MovePolyLineCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygonal Line")}
-	{
-		m_keyDown = keyDown;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double p[3];
-			points->GetPoint(i, p);
-			p[0] += m_offset.x();
-			p[1] += m_offset.y();
-			points->SetPoint(i, p);
-		}
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double p[3];
-			points->GetPoint(i, p);
-			p[0] -= m_offset.x();
-			p[1] -= m_offset.y();
-			points->SetPoint(i, p);
-		}
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelMovePolyLine");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolyLineCommand* comm = dynamic_cast<const MovePolyLineCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetLine != m_targetLine) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-
-private:
-	bool m_keyDown;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-	QVector2D m_offset;
-};
-
-class GridCreatingConditionCompoundChannel::MovePolyLineVertexCommand : public QUndoCommand
-{
-public:
-	MovePolyLineVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygonal Line Vertex")}
-	{
-		m_keyDown = keyDown;
-		m_vertexId = vertexId;
-		double dx = from.x();
-		double dy = from.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D fromVec(dx, dy);
-		dx = to.x();
-		dy = to.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		QVector2D toVec(dx, dy);
-		m_offset = toVec - fromVec;
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] += m_offset.x();
-		p[1] += m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPolyLine* pol = m_targetLine->getVtkLine();
-		vtkPoints* points = pol->GetPoints();
-		double p[3];
-		points->GetPoint(m_vertexId, p);
-		p[0] -= m_offset.x();
-		p[1] -= m_offset.y();
-		points->SetPoint(m_vertexId, p);
-
-		points->Modified();
-		pol->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelPolyLineMoveVertex");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const MovePolyLineVertexCommand* comm = dynamic_cast<const MovePolyLineVertexCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetLine != m_targetLine) {return false;}
-		if (comm->m_vertexId != m_vertexId) {return false;}
-		m_offset += comm->m_offset;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-	QVector2D m_offset;
-};
-
-class GridCreatingConditionCompoundChannel::AddPolyLineVertexCommand : public QUndoCommand
-{
-public:
-	AddPolyLineVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Insert Polygonal Line Vertex")}
-	{
-		m_keyDown = keyDown;
-		m_vertexId = edgeId + 1;
-		double dx = point.x();
-		double dy = point.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		m_vertexPosition = QVector2D(dx, dy);
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		if (m_keyDown) {
-			// add vertex.
-			vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
-			QVector<QVector2D> positions;
-			positions.reserve(points->GetNumberOfPoints());
-			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			positions.append(m_vertexPosition);
-			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i) {
-				QVector2D v = positions.at(i);
-				points->SetPoint(i, v.x(), v.y(), 0);
-			}
-			points->Modified();
-		} else {
-			// just modify the vertex position
-			vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
-			points->SetPoint(m_vertexId, m_vertexPosition.x(), m_vertexPosition.y(), 0);
-			points->Modified();
-		}
-		m_targetLine->getVtkLine()->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		if (m_keyDown) {
-			// remove vertex.
-			vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
-			QVector<QVector2D> positions;
-			positions.reserve(points->GetNumberOfPoints());
-			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			// skip vertex in m_vertexId[
-			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-				points->GetPoint(i, p);
-				positions.append(QVector2D(p[0], p[1]));
-			}
-			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i) {
-				QVector2D v = positions.at(i);
-				points->SetPoint(i, v.x(), v.y(), 0);
-			}
-			points->Modified();
-			m_targetLine->getVtkLine()->Modified();
-			m_targetLine->updateShapeData();
-			m_polygon->renderGraphicsView();
-		} else {
-			// this never happens.
-		}
-	}
-	int id() const {
-		return iRIC::generateCommandId("GridCreatingConditionCompoundChannelAddPolyLineVertex");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const AddPolyLineVertexCommand* comm = dynamic_cast<const AddPolyLineVertexCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (m_polygon != comm->m_polygon) {return false;}
-		if (m_targetLine != comm->m_targetLine) {return false;}
-		if (m_vertexId != comm->m_vertexId) {return false;}
-		m_vertexPosition = comm->m_vertexPosition;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-};
-
 void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (m_status == stDefiningRegion || m_status == stDefiningLowWaterRegion) {
 		// defining a polygon
 		// update the position of the last point.
 		if (m_mouseEventMode == meDefining) {
-			iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefinePolygonNewPointCommand(false, event->pos(), this));
 		}
 	} else if (m_status == stDefiningCenterLine) {
 		// defining a polyline.
 		// update the position of the last point.
 		if (m_mouseEventMode == meDefining) {
-			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefinePolyLineNewPointCommand(false, event->pos(), this));
 		}
 	} else if (m_status == stNormal) {
 		// defining stage finished.
@@ -910,7 +248,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 			case meAddVertexNotPossible:
 			case meRemoveVertexPrepare:
 			case meRemoveVertexNotPossible:
-				m_currentPoint = QPoint(event->x(), event->y());
+				m_currentPoint = event->pos();
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				break;
@@ -921,15 +259,15 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 				break;
 			case meTranslate:
 				// execute translation.
-				iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				pushRenderCommand(new MovePolygonCommand(false, m_currentPoint, event->pos(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meMoveVertex:
-				iRICUndoStack::instance().push(new MovePolygonVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				pushRenderCommand(new MovePolygonVertexCommand(false, m_currentPoint, event->pos(), m_selectedPolygon->selectedVertexId(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meAddVertex:
-				iRICUndoStack::instance().push(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				pushRenderCommand(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 				break;
 			case meTranslateDialog:
 				break;
@@ -946,7 +284,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 			case meAddVertexNotPossible:
 			case meRemoveVertexPrepare:
 			case meRemoveVertexNotPossible:
-				m_currentPoint = QPoint(event->x(), event->y());
+				m_currentPoint = event->pos();
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				break;
@@ -957,15 +295,15 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 				break;
 			case meTranslate:
 				// execute translation.
-				iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				pushRenderCommand(new MovePolyLineCommand(false, m_currentPoint, event->pos(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meMoveVertex:
-				iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedLine->selectedVertexId(), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				pushRenderCommand(new MovePolyLineVertexCommand(false, m_currentPoint, event->pos(), m_selectedLine->selectedVertexId(), this));
+				m_currentPoint = event->pos();
 				break;
 			case meAddVertex:
-				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				pushRenderCommand(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), event->pos(), this));
 				break;
 			case meTranslateDialog:
 				break;
@@ -977,144 +315,6 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 		}
 	}
 }
-
-class GridCreatingConditionCompoundChannel::RemovePolygonVertexCommand : public QUndoCommand
-{
-public:
-	RemovePolygonVertexCommand(vtkIdType vertexId, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Remove Polygon Vertex")}
-	{
-		m_vertexId = vertexId;
-		double p[3];
-		pol->m_selectedPolygon->getVtkPolygon()->GetPoints()->GetPoint(m_vertexId, p);
-		m_vertexPosition = QVector2D(p[0], p[1]);
-		m_polygon = pol;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_polygon->m_mouseEventMode = GridCreatingConditionCompoundChannel::meNormal;
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_targetPolygon->getVtkPolygon()->Modified();
-		m_targetPolygon->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-private:
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractPolygon* m_targetPolygon;
-};
-
-class GridCreatingConditionCompoundChannel::RemovePolyLineVertexCommand : public QUndoCommand
-{
-public:
-	RemovePolyLineVertexCommand(vtkIdType vertexId, GridCreatingConditionCompoundChannel* pol) :
-		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Remove Polygonal Line Vertex")}
-	{
-		m_vertexId = vertexId;
-		double p[3];
-		pol->m_selectedLine->getVtkLine()->GetPoints()->GetPoint(m_vertexId, p);
-		m_vertexPosition = QVector2D(p[0], p[1]);
-		m_polygon = pol;
-		m_targetLine = m_polygon->m_selectedLine;
-	}
-	void redo() {
-		vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_polygon->m_mouseEventMode = GridCreatingConditionCompoundChannel::meNormal;
-		m_targetLine->getVtkLine()->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-	void undo() {
-		vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
-		QVector<QVector2D> positions;
-		positions.reserve(points->GetNumberOfPoints());
-		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			positions.append(QVector2D(p[0], p[1]));
-		}
-		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i) {
-			QVector2D v = positions.at(i);
-			points->SetPoint(i, v.x(), v.y(), 0);
-		}
-		points->Modified();
-		m_targetLine->getVtkLine()->Modified();
-		m_targetLine->updateShapeData();
-		m_polygon->renderGraphicsView();
-	}
-private:
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GridCreatingConditionCompoundChannel* m_polygon;
-	GridCreatingConditionCompoundChannelAbstractLine* m_targetLine;
-};
 
 void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
@@ -1130,9 +330,9 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 			case meBeforeDefining:
 				// enter defining mode.
 				m_mouseEventMode = meDefining;
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolygonNewPointCommand(true, event->pos(), this));
 			case meDefining:
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolygonNewPointCommand(true, event->pos(), this));
 				break;
 			default:
 				break;
@@ -1145,9 +345,9 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 			case meBeforeDefining:
 				// enter defining mode.
 				m_mouseEventMode = meDefining;
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 			case meDefining:
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
+				pushRenderCommand(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 				break;
 			default:
 				break;
@@ -1181,20 +381,20 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 					} else {
 						// start translating
 						m_mouseEventMode = meTranslate;
-						m_currentPoint = QPoint(event->x(), event->y());
+						m_currentPoint = event->pos();
 						// push the first translation command.
-						iRICUndoStack::instance().push(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
+						pushRenderCommand(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
 					}
 					break;
 				case meMoveVertexPrepare:
 					m_mouseEventMode = meMoveVertex;
-					m_currentPoint = QPoint(event->x(), event->y());
+					m_currentPoint = event->pos();
 					// push the first move command.
-					iRICUndoStack::instance().push(new MovePolygonVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
+					pushRenderCommand(new MovePolygonVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
 					break;
 				case meAddVertexPrepare:
 					m_mouseEventMode = meAddVertex;
-					iRICUndoStack::instance().push(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+					pushRenderCommand(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 					break;
 				case meAddVertexNotPossible:
 					// do nothing.
@@ -1205,7 +405,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 						// @todo
 //						deletePolygon(true);
 					} else {
-						iRICUndoStack::instance().push(new RemovePolygonVertexCommand(m_selectedPolygon->selectedVertexId(), this));
+						pushRenderCommand(new RemovePolygonVertexCommand(m_selectedPolygon->selectedVertexId(), this));
 					}
 					m_inhibitSelect = true;
 					break;
@@ -1253,20 +453,20 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 					} else {
 						// start translating
 						m_mouseEventMode = meTranslate;
-						m_currentPoint = QPoint(event->x(), event->y());
+						m_currentPoint = event->pos();
 						// push the first translation command.
-						iRICUndoStack::instance().push(new MovePolyLineCommand(true, m_currentPoint, m_currentPoint, this));
+						pushRenderCommand(new MovePolyLineCommand(true, m_currentPoint, m_currentPoint, this));
 					}
 					break;
 				case meMoveVertexPrepare:
 					m_mouseEventMode = meMoveVertex;
-					m_currentPoint = QPoint(event->x(), event->y());
+					m_currentPoint = event->pos();
 					// push the first move command.
-					iRICUndoStack::instance().push(new MovePolyLineVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedLine->selectedVertexId(), this));
+					pushRenderCommand(new MovePolyLineVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedLine->selectedVertexId(), this));
 					break;
 				case meAddVertexPrepare:
 					m_mouseEventMode = meAddVertex;
-					iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+					pushRenderCommand(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), event->pos(), this));
 					break;
 				case meAddVertexNotPossible:
 					// do nothing.
@@ -1275,7 +475,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 					if (m_selectedLine->polyLine().count() == 1) {
 						// ignore.
 					} else {
-						iRICUndoStack::instance().push(new RemovePolyLineVertexCommand(m_selectedLine->selectedVertexId(), this));
+						pushRenderCommand(new RemovePolyLineVertexCommand(m_selectedLine->selectedVertexId(), this));
 					}
 					m_inhibitSelect = true;
 					break;
@@ -1313,7 +513,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 		}
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		m_dragStartPoint = event->pos();
 	}
 }
 
@@ -1331,7 +531,7 @@ void GridCreatingConditionCompoundChannel::mouseReleaseEvent(QMouseEvent* event,
 		case meTranslate:
 		case meMoveVertex:
 		case meAddVertex:
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			updateActionStatus();
@@ -1408,9 +608,9 @@ void GridCreatingConditionCompoundChannel::definePolygon(bool doubleClick)
 	stack.beginMacro(tr("Finish Defining Polygon"));
 	// finish defining the polygon.
 	if (m_status == stDefiningRegion) {
-		stack.push(new SwitchStatusCommand(stDefiningLowWaterRegion, this));
+		pushRenderCommand(new SwitchStatusCommand(stDefiningLowWaterRegion, this));
 	} else if (m_status == stDefiningLowWaterRegion) {
-		stack.push(new SwitchStatusCommand(stDefiningCenterLine, this));
+		pushRenderCommand(new SwitchStatusCommand(stDefiningCenterLine, this));
 	}
 	stack.endMacro();
 }
@@ -1430,8 +630,13 @@ void GridCreatingConditionCompoundChannel::defineLine(bool doubleClick)
 	stack.undo();
 	stack.beginMacro(tr("Finish Defining Polygonal line"));
 	// finish defining the line.
-	stack.push(new SwitchStatusCommand(stNormal, this));
+	pushRenderCommand(new SwitchStatusCommand(stNormal, this));
 	stack.endMacro();
+}
+
+const QColor& GridCreatingConditionCompoundChannel::color() const
+{
+	return m_color;
 }
 
 void GridCreatingConditionCompoundChannel::addVertexMode(bool on)
@@ -1540,6 +745,11 @@ void GridCreatingConditionCompoundChannel::saveExternalData(const QString& filen
 	s << m_lowWaterChannelPolygon->polygon(QPointF(-off.x(), -off.y()));
 	s << m_centerLine->polyLine(QPointF(-off.x(), -off.y()));
 	f.close();
+}
+
+void GridCreatingConditionCompoundChannel::updateFilename()
+{
+	setFilename("gridcreatingcondition.dat");
 }
 
 void GridCreatingConditionCompoundChannel::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -1723,6 +933,11 @@ void GridCreatingConditionCompoundChannel::restoreMouseEventMode()
 	m_mouseEventMode = meNormal;
 }
 
+void GridCreatingConditionCompoundChannel::cancel()
+{
+	m_canceled = true;
+}
+
 bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 {
 	if (! checkCondition()) {return false;}
@@ -1774,6 +989,11 @@ void GridCreatingConditionCompoundChannel::clear()
 
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
+}
+
+bool GridCreatingConditionCompoundChannel::ready() const
+{
+	return true;
 }
 
 void GridCreatingConditionCompoundChannel::showInitialDialog()

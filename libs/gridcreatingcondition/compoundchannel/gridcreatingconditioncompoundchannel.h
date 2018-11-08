@@ -95,9 +95,9 @@ public:
 		meTranslateDialog,
 		meEditVerticesDialog
 	};
-	/// Constructor
 	GridCreatingConditionCompoundChannel(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionCompoundChannel();
+
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
@@ -114,10 +114,10 @@ public:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
-	const QColor& color() const {return m_color;}
+	const QColor& color() const;
 	void setupScalarArray();
 	void clear() override;
-	bool ready() const override {return true;}
+	bool ready() const override;
 	bool create(QWidget* parent) override;
 	void update2Ds() override;
 	void showInitialDialog() override;
@@ -127,22 +127,17 @@ private slots:
 	void removeVertexMode(bool on);
 	void editCoordinates();
 	void restoreMouseEventMode();
-	void cancel() {m_canceled = true;}
+	void cancel();
 	void reverseCenterLine();
 
-protected:
-
+private:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doApplyOffset(double x, double y) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
-	void updateFilename() override {
-		setFilename("gridcreatingcondition.dat");
-	}
-
-private:
+	void updateFilename() override;
 
 	bool checkCondition();
 	bool selectObject(QPoint point);

@@ -41,6 +41,11 @@ public:
 	int selectedVertexId() const {return m_selectedVertexId;}
 	int selectedEdgeId() const {return m_selectedEdgeId;}
 
+	QPointF vertex(int index) const;
+	void insertVertex(int index, const QPointF& vertex);
+	void setVertex(int index, const QPointF& vertex);
+	void removeVertex(int index);
+
 	void setActive(bool active);
 	virtual void finishDefinition() {}
 	void reverseDirection();
