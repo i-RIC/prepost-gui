@@ -28,6 +28,11 @@ bool InputConditionWidget::checkImportSourceUpdate()
 	return false;
 }
 
+void InputConditionWidget::toggleReadOnly(bool readonly)
+{
+	setDisabled(readonly);
+}
+
 QList<QDomNode> InputConditionWidget::getEnums(QDomNode defNode)
 {
 	QDomNode enumsNode = iRIC::getChildNode(defNode, "Enumerations");

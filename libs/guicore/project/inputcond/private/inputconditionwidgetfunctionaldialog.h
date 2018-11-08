@@ -41,6 +41,7 @@ public:
 	void setData(const InputConditionContainerFunctional& c);
 
 	bool checkImportSourceUpdate();
+	void toggleReadOnly(bool readonly);
 
 public slots:
 	void accept() override;
