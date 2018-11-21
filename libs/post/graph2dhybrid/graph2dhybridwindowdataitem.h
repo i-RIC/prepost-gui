@@ -6,6 +6,8 @@
 #include "graph2dhybridwindowdatamodel.h"
 #include <QList>
 
+#define STEPWISE 1
+
 class Graph2dHybridWindow;
 class Graph2dHybridWindowDataModel;
 class PostSolutionInfo;

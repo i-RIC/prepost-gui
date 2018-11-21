@@ -30,9 +30,34 @@ void Graph2dHybridWindowDataItem::buildData(
 	QVector<double> indexvals;
 	QVector<double> srcxvals;
 	bool xIsIndex = false;
-	for (int i = 0; i < xvals.count(); ++i) {
-		indexvals.append(i + 1);
+	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s1.targetDataTypeInfo();
+	indexvals.reserve(xvals.size());
+	if (info->gridLocation == Vertex || s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+		for (int i = 0; i < xvals.count(); ++i) {
+			indexvals.append(i + 1);
+		}
+	} else if (info->gridLocation == CellCenter) {
+#if STEPWISE
+		int size = (xvals.size() + 2) / 2;
+		for (int i = 0; i < size; ++i) {
+			if (i == 0) {
+				indexvals.append(i + 1);
+			} else if (i == size - 1) {
+				indexvals.append(i + 1);
+			} else {
+				indexvals.append(i + 1);
+				indexvals.append(i + 1);
+			}
+		}
+#else
+		for (int i = 0; i < xvals.count(); ++i) {
+			indexvals.append(i + 1);
+		}
+#endif
+	} else {
+		Q_ASSERT(false);   //   Unhandled GridLocation_t
 	}
+	Q_ASSERT(indexvals.size() == xvals.size());
 	if (s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 		xIsIndex = s1.timeValueType() == Graph2dHybridWindowResultSetting::tvtTimeStep;
 	} else {
