@@ -198,6 +198,15 @@
         <translation>長い辺を持つ三角形を削除 (W)...</translation>
     </message>
     <message>
+        <location filename="../geodatapointmap.cpp" line="1984"/>
+        <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
+        <translation>長い辺を持つ三角形を削除するには、先に「表示方法」を「ワイヤーフレーム」もしくは「補間された面」に切り替える必要があります。OK ボタンを押すと、「表示方法」を「ワイヤーフレーム」に切り替えます。</translation>
+    </message>
+    <message>
+        <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Surface</source>
+        <translation type="vanished">長い辺を持つ三角形を削除するには、先に「表示方法」を「ワイヤーフレーム」もしくは「補間された面」に切り替える必要があります。OK ボタンを押すと、「表示方法」を「補間された面」に切り替えます。</translation>
+    </message>
+    <message>
         <source>Rem&amp;ove All Break Lines...</source>
         <translation type="vanished">全分割線の削除(&amp;O)...</translation>
     </message>
@@ -246,9 +255,8 @@
         <translation>本当に全ての分割線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1984"/>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Surface.</source>
-        <translation>長い辺を持つ三角形を削除するには、先に「表示方法」を「補間された面」に切り替える必要があります。</translation>
+        <translation type="vanished">長い辺を持つ三角形を削除するには、先に「表示方法」を「補間された面」に切り替える必要があります。</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch the representation to surface</source>

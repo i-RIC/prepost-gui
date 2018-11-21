@@ -239,7 +239,7 @@
     </message>
     <message>
         <location filename="../geodatapointmap.cpp" line="1984"/>
-        <source>When you want to remove triangles with long edges, you have to switch Display Method to Surface.</source>
+        <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
