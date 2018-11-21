@@ -66,7 +66,9 @@ public:
 		meBreakLineAddNotPossible,
 		meBreakLineAdd,
 		meBreakLineRemoveNotPossible,
-		meBreakLineRemove
+		meBreakLineRemove,
+
+		meLongEdgeRemoveDialog,
 	};
 	GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~GeoDataPointmap();
@@ -162,6 +164,8 @@ private slots:
 	void addBreakLine();
 	void removeBreakLine();
 	void removeAllBreakLines();
+	void removeTrianglesWithLongEdgeStart();
+	void removeTrianglesWithLongEdgeEnd();
 
 	void editPoints();
 	void editPointsDelete();
@@ -238,6 +242,7 @@ protected:
 	QAction* m_selectionModePolygon;
 	QAction* m_addPointAction;
 	QAction* m_interpolatePointAction;
+	QAction* m_removeTrianglesWithLongEdgeAction;
 	QAction* m_displaySettingAction;
 
 	QAction* m_editPointsAction;
@@ -278,6 +283,11 @@ private:
 	class BreakLineFinishDefinitionCommand;
 	class BreakLineCancelDefinitionCommand;
 	class AddPointSetReferenceCommand;
+	class RemoveTrianglesCommand;
+
+	class TrianglesWithLongEdgeRemover;
+
+	TrianglesWithLongEdgeRemover* m_longEdgeRemover;
 
 public:
 	friend class GeoDataPointmapBreakLine;
