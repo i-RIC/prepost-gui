@@ -1980,14 +1980,14 @@ void GeoDataPointmap::removeAllBreakLines()
 
 void GeoDataPointmap::removeTrianglesWithLongEdgeStart()
 {
-	if (m_representation != GeoDataPointmapRepresentationDialog::Surface) {
-		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you want to remove triangles with long edges, you have to switch Display Method to Surface."), QMessageBox::Ok | QMessageBox::Cancel);
+	if (m_representation == GeoDataPointmapRepresentationDialog::Points) {
+		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe"), QMessageBox::Ok | QMessageBox::Cancel);
 		if (result == QMessageBox::Cancel) {return;}
 
 		if (m_needRemeshing) {
 			remeshTINS();
 		}
-		m_representation = GeoDataPointmapRepresentationDialog::Surface;
+		m_representation = GeoDataPointmapRepresentationDialog::Wireframe;
 		updateActorSettings();
 	}
 	m_longEdgeRemover = new TrianglesWithLongEdgeRemover(this);
