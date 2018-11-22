@@ -83,11 +83,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 	if (info->gridLocation == Vertex) {
 		updateValuesVertex(extractedGrid);
 	} else if (info->gridLocation == CellCenter) {
-#if STEPWISE
-		updateValuesCellCenterStepWise(extractedGrid);
-#else
 		updateValuesCellCenter(extractedGrid);
-#endif
 	} else {
 		Q_ASSERT(false);   //   Unhandled GridLocation_t
 	}
