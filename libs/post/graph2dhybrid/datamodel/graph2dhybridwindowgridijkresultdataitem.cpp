@@ -16,6 +16,7 @@
 #include <QStandardItem>
 #include <QVector3D>
 
+#include <vtkCellData.h>
 #include <vtkDoubleArray.h>
 #include <vtkExtractGrid.h>
 #include <vtkPointData.h>
@@ -79,12 +80,25 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 	extract->Update();
 
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = extract->GetOutput();
+	if (info->gridLocation == Vertex) {
+		updateValuesVertex(extractedGrid);
+	} else if (info->gridLocation == CellCenter) {
+		updateValuesCellCenter(extractedGrid);
+	} else {
+		Q_ASSERT(false);   //   Unhandled GridLocation_t
+	}
+}
+
+void Graph2dHybridWindowGridIJKResultDataItem::updateValuesVertex(vtkStructuredGrid* extractedGrid)
+{
 	vtkDataArray* da = extractedGrid->GetPointData()->GetArray(iRIC::toStr(m_physVal).c_str());
 	if (da == 0) {
 		// no data found.
 		return;
 	}
 	int numT = da->GetNumberOfTuples();
+	Q_ASSERT(extractedGrid->GetNumberOfPoints() == numT);
+
 	m_xValues.fill(0, numT);
 	m_yValues.fill(0, numT);
 
@@ -114,6 +128,101 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
 		}
 		m_yValues[i] = value;
+		oldp[0] = p[0];
+		oldp[1] = p[1];
+		oldp[2] = p[2];
+	}
+}
+
+void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenterStepWise(vtkStructuredGrid* extractedGrid)
+{
+	vtkDataArray* da = extractedGrid->GetCellData()->GetArray(iRIC::toStr(m_physVal).c_str());
+	if (da == 0) {
+		// no data found.
+		return;
+	}
+	int numT = da->GetNumberOfTuples();
+	Q_ASSERT(extractedGrid->GetNumberOfPoints() - 1 == numT);
+	m_xValues.clear(); m_xValues.reserve(numT * 2);
+	m_yValues.clear(); m_yValues.reserve(numT * 2);
+
+	double distance = 0;
+	double oldp[3];
+	double previous_value;
+	int npts = extractedGrid->GetNumberOfPoints();
+	for (int i = 0; i < npts; ++i) {
+		// X value setting
+		double p[3];
+		extractedGrid->GetPoint(i, p);
+		if (i == 0) {
+			oldp[0] = p[0];
+			oldp[1] = p[1];
+			oldp[2] = p[2];
+		} else {
+			QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
+			distance = distance + d.length();
+		}
+
+		// y value
+		double value = 0;
+		if (da->GetNumberOfComponents() == 1) {
+			value = da->GetTuple1(i);
+		} else if (da->GetNumberOfComponents() == 3) {
+			double* v;
+			v = da->GetTuple3(i);
+			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
+		}
+
+		if (i == 0) {
+			m_xValues.append(distance); m_yValues.append(value);
+		} else if (i == npts - 1) {
+			m_xValues.append(distance); m_yValues.append(previous_value);
+		} else {
+			m_xValues.append(distance); m_yValues.append(previous_value);
+			m_xValues.append(distance); m_yValues.append(value);
+		}
+
+		previous_value = value;
+		oldp[0] = p[0];
+		oldp[1] = p[1];
+		oldp[2] = p[2];
+	}
+}
+
+void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenter(vtkStructuredGrid* extractedGrid)
+{
+	vtkDataArray* da = extractedGrid->GetCellData()->GetArray(iRIC::toStr(m_physVal).c_str());
+	if (da == 0) {
+		// no data found.
+		return;
+	}
+	int numT = da->GetNumberOfTuples();
+	Q_ASSERT(extractedGrid->GetNumberOfPoints() - 1 == numT);
+	m_xValues.clear(); m_xValues.reserve(numT);
+	m_yValues.clear(); m_yValues.reserve(numT);
+
+	double distance = 0;
+	double oldp[3];
+	extractedGrid->GetPoint(0, oldp);
+	for (int i = 0; i < numT; ++i) {
+		// X value setting
+		double p[3];
+		extractedGrid->GetPoint(i + 1, p);
+		QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
+		distance = distance + d.length() / 2;
+
+		// y value
+		double value = 0;
+		if (da->GetNumberOfComponents() == 1) {
+			value = da->GetTuple1(i);
+		}
+		else if (da->GetNumberOfComponents() == 3) {
+			double* v;
+			v = da->GetTuple3(i);
+			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
+		}
+		m_xValues.append(distance); m_yValues.append(value);
+
 		oldp[0] = p[0];
 		oldp[1] = p[1];
 		oldp[2] = p[2];

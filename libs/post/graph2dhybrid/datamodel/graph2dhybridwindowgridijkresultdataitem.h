@@ -5,6 +5,8 @@
 #include "../graph2dhybridwindowresultsetting.h"
 #include "graph2dhybridwindowresultdataitem.h"
 
+class vtkStructuredGrid;
+
 class Graph2dHybridWindowGridIJKResultDataItem : public Graph2dHybridWindowResultDataItem
 {
 
@@ -17,6 +19,9 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateValues(int fn) override;
+	void updateValuesVertex(vtkStructuredGrid* extractedGrid);
+	void updateValuesCellCenter(vtkStructuredGrid* extractedGrid);
+	void updateValuesCellCenterStepWise(vtkStructuredGrid* extractedGrid);
 
 private:
 	QString m_physVal;
