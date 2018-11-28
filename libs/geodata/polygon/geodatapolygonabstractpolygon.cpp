@@ -102,7 +102,9 @@ QPolygonF GeoDataPolygonAbstractPolygon::cleanedPolygon(const QPointF& offset) c
 	while (idx < pol.size()) {
 		if (pol.at(idx) == pol.at(idx - 1)) {
 			pol.remove(idx);
+			continue;
 		}
+		++ idx;
 	}
 	return pol;
 }

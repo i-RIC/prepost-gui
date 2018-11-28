@@ -536,7 +536,7 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 		minCount = 3;
 	}
 	if (impl->m_selectedPolygon == nullptr) {return;}
-	if (impl->m_selectedPolygon->polygon().count() <= minCount) {
+	if (impl->m_selectedPolygon->cleanedPolygon().count() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
 	}
