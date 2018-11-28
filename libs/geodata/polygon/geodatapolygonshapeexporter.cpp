@@ -19,21 +19,21 @@ GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator
 
 SHPObject* GeoDataPolygonShapeExporter::getSHPObject(GeoDataPolygon* polygon, SHPHandle shp, int index, double xoffset, double yoffset)
 {
-	int nParts = polygon->m_holePolygons.count() + 1;
+	int nParts = polygon->holePolygons().size() + 1;
 	std::vector<int> partStart (nParts);
 	int nVertices = 0;
 	QList<double> xlist, ylist;
 
 	// output region first.
-	QPolygonF region = polygon->m_gridRegionPolygon->polygon();
+	QPolygonF region = polygon->regionPolygon()->polygon();
 	partStart[0] = 0;
 	nVertices += region.count();
 	for (QPointF p : region) {
 		xlist.append(p.x() + xoffset);
 		ylist.append(p.y() + yoffset);
 	}
-	for (int i = 0; i < polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* holepol = polygon->m_holePolygons.at(i);
+	for (int i = 0; i < polygon->holePolygons().size(); ++i) {
+		GeoDataPolygonHolePolygon* holepol = polygon->holePolygons().at(i);
 		QPolygonF hole = holepol->polygon();
 		partStart[i + 1] = nVertices;
 		nVertices += hole.count();

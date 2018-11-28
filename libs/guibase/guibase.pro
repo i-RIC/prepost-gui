@@ -117,6 +117,7 @@ HEADERS += arrowsettingcontainer.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           polygon/polygoncontroller.h \
            polyline/polylinecontroller.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtklabel2dactor.h \
@@ -126,6 +127,8 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapaintactor.h \
            vtktool/vtkpolydatapointsactor.h \
+           vtktool/vtkpolygonactor.h \
+           vtktool/vtkpolygonsactor.h \
            vtktool/vtkstreamtracerutil.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
@@ -148,11 +151,14 @@ HEADERS += arrowsettingcontainer.h \
            widget/textediti.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
+           polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
+           vtktool/private/vtkpolygonactor_impl.h \
+           vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
            widget/private/realnumbereditwidget_impl.h
 FORMS += scalarbardialog.ui \
@@ -220,6 +226,7 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           polygon/polygoncontroller.cpp \
            polyline/polylinecontroller.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtklabel2dactor.cpp \
@@ -229,6 +236,8 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapaintactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
+           vtktool/vtkpolygonactor.cpp \
+           vtktool/vtkpolygonsactor.cpp \
            vtktool/vtkstreamtracerutil.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \

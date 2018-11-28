@@ -27,10 +27,9 @@ public:
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
-protected:
-	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
-
 private:
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
+
 	static std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileName);
 
 	GeoDataPolygonImporterSettingDialog::NameSetting m_nameSetting;

@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include <QList>
-#include <QVariant>
+
+class QStringList;
+class QVariant;
 
 namespace Ui
 {

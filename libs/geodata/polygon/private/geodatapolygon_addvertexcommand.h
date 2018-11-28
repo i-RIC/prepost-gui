@@ -9,7 +9,7 @@
 class GeoDataPolygon::AddVertexCommand : public GeoDataPolygon::ModifyAbstractPolygonCommand
 {
 public:
-	AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GeoDataPolygon* pol);
+	AddVertexCommand(bool keyDown, int edgeId, QPoint point, GeoDataPolygon* pol);
 
 	int id() const override;
 	bool mergeWith(const QUndoCommand* other) override;

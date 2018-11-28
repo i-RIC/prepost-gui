@@ -2,19 +2,13 @@
 
 #include "private/polylinecontroller_impl.h"
 
+#include <vtkPolyData.h>
+
 #include <QPointF>
 #include <QVector2D>
 
-#include <vtkActor.h>
-#include <vtkCellArray.h>
-#include <vtkPolyData.h>
-#include <vtkProperty.h>
-
 PolyLineController::Impl::Impl() :
-	m_lineActor {}
-{}
-
-PolyLineController::Impl::~Impl()
+	m_actor {}
 {}
 
 PolyLineController::PolyLineController() :
@@ -28,17 +22,17 @@ PolyLineController::~PolyLineController()
 
 std::vector<QPointF> PolyLineController::polyLine() const
 {
-	return impl->m_lineActor.line();
+	return impl->m_actor.line();
 }
 
 void PolyLineController::setPolyLine(const std::vector<QPointF>& polyLine)
 {
-	impl->m_lineActor.setLine(polyLine);
+	impl->m_actor.setLine(polyLine);
 }
 
 bool PolyLineController::isVertexSelectable(const QPointF& pos, double limitDistance, int* vid)
 {
-	auto polydata = impl->m_lineActor.pointsPolyData();
+	auto polydata = impl->m_actor.pointsPolyData();
 	*vid = polydata->FindPoint(pos.x(), pos.y(), 0.0);
 
 	if (*vid == -1) {return false;}
@@ -59,24 +53,29 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 
 	double d2 = limitDistance * limitDistance;
 
-	vtkIdType id = impl->m_lineActor.linesPolyData()->FindCell(x, NULL, 0, d2, subId, pcoords, weights);
+	vtkIdType id = impl->m_actor.linesPolyData()->FindCell(x, nullptr, 0, d2, subId, pcoords, weights);
 	if (id < 0) {return false;}
 
 	*edgeId = id;
 	return true;
 }
 
+vtkPolyData* PolyLineController::pointsPolyData() const
+{
+	return impl->m_actor.pointsPolyData();
+}
+
 vtkPolyData* PolyLineController::polyData() const
 {
-	return impl->m_lineActor.pointsPolyData();
+	return impl->m_actor.linesPolyData();
 }
 
 vtkActor* PolyLineController::pointsActor() const
 {
-	return impl->m_lineActor.pointsActor();
+	return impl->m_actor.pointsActor();
 }
 
 vtkActor* PolyLineController::linesActor() const
 {
-	return impl->m_lineActor.lineActor();
+	return impl->m_actor.lineActor();
 }

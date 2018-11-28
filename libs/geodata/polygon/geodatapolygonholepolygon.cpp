@@ -1,12 +1,18 @@
 #include "geodatapolygonholepolygon.h"
 
+#include <guibase/polygon/polygoncontroller.h>
+
+#include <vtkActor.h>
 #include <vtkProperty.h>
 
 GeoDataPolygonHolePolygon::GeoDataPolygonHolePolygon(GeoDataPolygon* parent) :
 	GeoDataPolygonAbstractPolygon {parent}
 {
-	m_paintActor->GetProperty()->SetColor(0, 0, 0);
-	m_paintActor->GetProperty()->SetOpacity(0.1);
-	m_edgeActor->GetProperty()->SetColor(0, 0, 1);
-	m_vertexActor->GetProperty()->SetColor(0, 0, 1);
+	const auto& ctrl = polygonController();
+	auto paintProp = ctrl.paintActor()->GetProperty();
+	paintProp->SetColor(0, 0, 0);
+	paintProp->SetOpacity(0.1);
+
+	ctrl.linesActor()->GetProperty()->SetColor(0, 0, 1);
+	ctrl.pointsActor()->GetProperty()->SetColor(0, 0, 1);
 }

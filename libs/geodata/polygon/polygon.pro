@@ -140,11 +140,13 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
+           private/geodatapolygon_impl.h \
            private/geodatapolygon_modifyabstractpolygoncommand.h \
            private/geodatapolygon_movepolygoncommand.h \
            private/geodatapolygon_movevertexcommand.h \
            private/geodatapolygon_pushnewpointcommand.h \
            private/geodatapolygon_removevertexcommand.h \
+           private/geodatapolygonabstractpolygon_impl.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
            private/geodatapolygonnodemappert_detail.h

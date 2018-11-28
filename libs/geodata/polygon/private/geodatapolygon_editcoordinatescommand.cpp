@@ -3,11 +3,13 @@
 
 #include <guibase/vtktool/vtkpointsutil.h>
 
+#include <vtkPolygon.h>
+
 GeoDataPolygon::EditCoordinatesCommand::EditCoordinatesCommand(bool apply, const std::vector<QPointF>& coords, GeoDataPolygon* pol) :
 	QUndoCommand {GeoDataPolygon::tr("Edit Polygon Coordinates")},
 	m_apply {apply},
 	m_newCoords(coords),
-	m_selectedPolygon {pol->m_selectedPolygon},
+	m_selectedPolygon {pol->selectedPolygon()},
 	m_polygon {pol}
 {
 	m_oldCoords = vtkPointsUtil::getCoordinates(m_selectedPolygon->getVtkPolygon());
@@ -31,5 +33,5 @@ void GeoDataPolygon::EditCoordinatesCommand::undo()
 void GeoDataPolygon::EditCoordinatesCommand::applyCoords(const std::vector<QPointF>& coords)
 {
 	vtkPointsUtil::setCoordinates(m_selectedPolygon->getVtkPolygon(), coords);
-	m_selectedPolygon->updateShapeData();
+	m_selectedPolygon->applyVtkPolygonShape();
 }

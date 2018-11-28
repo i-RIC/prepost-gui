@@ -23,11 +23,11 @@ void GeoDataPolygon::AddHolePolygonCommand::redo()
 	m_polygon->setMapped(false);
 	m_polygon->deselectAll();
 
-	m_polygon->m_mouseEventMode = GeoDataPolygon::meBeforeDefining;
-	m_polygon->m_selectMode = GeoDataPolygon::smPolygon;
+	m_polygon->setMouseEventMode(meBeforeDefining);
+	m_polygon->setSelectMode(smPolygon);
 	m_targetPolygon->setSelected(true);
-	m_polygon->m_selectedPolygon = m_targetPolygon;
-	m_polygon->m_holePolygons.append(m_targetPolygon);
+	m_polygon->setSelectedPolygon(m_targetPolygon);
+	m_polygon->holePolygons().push_back(m_targetPolygon);
 	m_polygon->updateActionStatus();
 	m_polygon->updateMouseCursor(m_polygon->graphicsView());
 	m_undoed = false;
@@ -37,8 +37,8 @@ void GeoDataPolygon::AddHolePolygonCommand::undo()
 {
 	m_polygon->setMapped(m_oldMapped);
 	m_polygon->deselectAll();
-	m_polygon->m_mouseEventMode = GeoDataPolygon::meNormal;
-	m_polygon->m_holePolygons.removeOne(m_targetPolygon);
+	m_polygon->setMouseEventMode(meNormal);
+	m_polygon->holePolygons().removeOne(m_targetPolygon);
 	m_polygon->updateActionStatus();
 	m_polygon->updateMouseCursor(m_polygon->graphicsView());
 	m_undoed = true;

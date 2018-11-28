@@ -4,10 +4,10 @@
 
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
-GeoDataPolygon::RemoveVertexCommand::RemoveVertexCommand(vtkIdType vertexId, GeoDataPolygon* pol) :
-	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->m_selectedPolygon, pol, GeoDataPolygon::tr("Remove Polygon Vertex"))
+GeoDataPolygon::RemoveVertexCommand::RemoveVertexCommand(int vertexId, GeoDataPolygon* pol) :
+	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->selectedPolygon(), pol, GeoDataPolygon::tr("Remove Polygon Vertex"))
 {
-	QPolygonF newPolygon = pol->m_selectedPolygon->polygon();
+	QPolygonF newPolygon = pol->selectedPolygon()->polygon();
 	newPolygon.removeAt(vertexId);
 	if (vertexId == 0) {
 		newPolygon.removeLast();

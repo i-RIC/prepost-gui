@@ -12,11 +12,11 @@ GeoDataPolygon::MovePolygonCommand::MovePolygonCommand(bool keyDown, const QPoin
 	double dx = from.x();
 	double dy = from.y();
 	pol->graphicsView()->viewportToWorld(dx, dy);
-	QVector2D fromVec(dx, dy);
+	QPointF fromVec(dx, dy);
 	dx = to.x();
 	dy = to.y();
 	pol->graphicsView()->viewportToWorld(dx, dy);
-	QVector2D toVec(dx, dy);
+	QPointF toVec(dx, dy);
 	m_offset = toVec - fromVec;
 	m_oldMapped = pol->isMapped();
 	m_polygon = pol;
@@ -25,26 +25,26 @@ GeoDataPolygon::MovePolygonCommand::MovePolygonCommand(bool keyDown, const QPoin
 void GeoDataPolygon::MovePolygonCommand::redo()
 {
 	m_polygon->setMapped(false);
-	m_polygon->m_shapeUpdating = true;
-	movePolygon(m_polygon->m_gridRegionPolygon, m_offset);
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hp = m_polygon->m_holePolygons.at(i);
+	m_polygon->setShapeUpdating(true);
+	movePolygon(m_polygon->regionPolygon(), m_offset);
+	for (int i = 0; i < m_polygon->holePolygons().size(); ++i) {
+		GeoDataPolygonHolePolygon* hp = m_polygon->holePolygons().at(i);
 		movePolygon(hp, m_offset);
 	}
-	m_polygon->m_shapeUpdating = false;
+	m_polygon->setShapeUpdating(false);
 	m_polygon->updatePolyData();
 }
 
 void GeoDataPolygon::MovePolygonCommand::undo()
 {
 	m_polygon->setMapped(m_oldMapped);
-	m_polygon->m_shapeUpdating = true;
-	movePolygon(m_polygon->m_gridRegionPolygon, - m_offset);
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hp = m_polygon->m_holePolygons.at(i);
+	m_polygon->setShapeUpdating(true);
+	movePolygon(m_polygon->regionPolygon(), - m_offset);
+	for (int i = 0; i < m_polygon->holePolygons().size(); ++i) {
+		GeoDataPolygonHolePolygon* hp = m_polygon->holePolygons().at(i);
 		movePolygon(hp, - m_offset);
 	}
-	m_polygon->m_shapeUpdating = false;
+	m_polygon->setShapeUpdating(false);
 	m_polygon->updatePolyData();
 }
 
@@ -63,18 +63,8 @@ bool GeoDataPolygon::MovePolygonCommand::mergeWith(const QUndoCommand* other)
 	return true;
 }
 
-void GeoDataPolygon::MovePolygonCommand::movePolygon(GeoDataPolygonAbstractPolygon* polygon, const QVector2D& offset)
+void GeoDataPolygon::MovePolygonCommand::movePolygon(GeoDataPolygonAbstractPolygon* polygon, const QPointF& offset)
 {
-	vtkPolygon* pol = polygon->getVtkPolygon();
-	vtkPoints* points = pol->GetPoints();
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-		double p[3];
-		points->GetPoint(i, p);
-		p[0] += offset.x();
-		p[1] += offset.y();
-		points->SetPoint(i, p);
-	}
-	points->Modified();
-	pol->Modified();
-	polygon->updateShapeData();
+	auto newPol = polygon->polygon(offset);
+	polygon->setPolygon(newPol);
 }

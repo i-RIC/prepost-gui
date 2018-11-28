@@ -5,7 +5,7 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
 GeoDataPolygon::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolygon* pol) :
-	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->m_selectedPolygon, pol, GeoDataPolygon::tr("Add New Polygon Point")),
+	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->selectedPolygon(), pol, GeoDataPolygon::tr("Add New Polygon Point")),
 	m_keyDown {keyDown}
 {
 	double dx = point.x();
@@ -13,7 +13,7 @@ GeoDataPolygon::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPo
 	pol->graphicsView()->viewportToWorld(dx, dy);
 
 	QPointF newPoint(dx, dy);
-	QPolygonF newPolygon(pol->m_selectedPolygon->polygon(QPointF(0, 0), true));
+	QPolygonF newPolygon = pol->selectedPolygon()->polygon();
 	if (keyDown) {
 		if (newPolygon.size() == 0) {
 			newPolygon.push_back(newPoint);
@@ -43,4 +43,12 @@ bool GeoDataPolygon::PushNewPointCommand::mergeWith(const QUndoCommand* other)
 	if (comm->m_keyDown) {return false;}
 
 	return ModifyAbstractPolygonCommand::mergeWith(other);
+}
+
+void GeoDataPolygon::PushNewPointCommand::undo()
+{
+	ModifyAbstractPolygonCommand::undo();
+	if (m_targetPolygon->polygon().size() == 0) {
+		m_polygon->setMouseEventMode(meBeforeDefining);
+	}
 }

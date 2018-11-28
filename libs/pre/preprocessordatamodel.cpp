@@ -49,6 +49,8 @@
 #include <geodata/pointmap/geodatapointmap.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geodata/polygon/geodatapolygoncreator.h>
+#include <geodata/polyline/geodatapolyline.h>
+#include <geodata/polyline/geodatapolylinecreator.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
 
 #include <QApplication>
@@ -292,6 +294,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_geographicDataMenu->addSeparator();
 
 	GeoDataCreator* polygonCreator = nullptr;
+	GeoDataCreator* polylineCreator = nullptr;
 
 	if (item != nullptr) {
 		// GeoData dataitem is selected.
@@ -299,6 +302,9 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		for (auto creator : creators) {
 			if (dynamic_cast<GeoDataPolygonCreator*>(creator) != nullptr) {
 				polygonCreator = creator;
+			}
+			if (dynamic_cast<GeoDataPolyLineCreator*>(creator) != nullptr) {
+				polylineCreator = creator;
 			}
 		}
 		setupGeoDataAddActions(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent()));
@@ -331,6 +337,16 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy->addActions(pol->menu()->actions());
 		}
 		m_geographicDataMenu->addMenu(dummy);
+
+		GeoDataPolyLine* line = dynamic_cast<GeoDataPolyLine*>(raw);
+		dummy = new QMenu(tr("Poly&line"), m_geographicDataMenu);
+		dummy->addAction(m_geoDataAddActions.value(polylineCreator));
+		if (line != nullptr) {
+			dummy->addSeparator();
+			dummy->addActions(line->menu()->actions());
+		}
+		m_geographicDataMenu->addMenu(dummy);
+
 		deleteAllAction->setDisabled(true);
 		exportAllPolygonsAction->setDisabled(true);
 	} else {
@@ -341,6 +357,9 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			for (auto creator : creators) {
 				if (dynamic_cast<GeoDataPolygonCreator*>(creator) != nullptr) {
 					polygonCreator = creator;
+				}
+				if (dynamic_cast<GeoDataPolyLineCreator*>(creator) != nullptr) {
+					polylineCreator = creator;
 				}
 			}
 			setupGeoDataAddActions(gitem);
@@ -353,6 +372,9 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("&Polygon"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polygonCreator));
+			m_geographicDataMenu->addMenu(dummy);
+			dummy = new QMenu(tr("Poly&line"), m_geographicDataMenu);
+			dummy->addAction(m_geoDataAddActions.value(polylineCreator));
 			m_geographicDataMenu->addMenu(dummy);
 
 			PreProcessorGeoDataComplexGroupDataItem* cgitem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItem*>(gitem);
@@ -373,6 +395,9 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("&Polygon"), mainWindow());
+			dummy->setDisabled(true);
+			m_geographicDataMenu->addMenu(dummy);
+			dummy = new QMenu(tr("Poly&line"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			deleteAllAction->setDisabled(true);

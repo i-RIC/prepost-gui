@@ -19,7 +19,7 @@ public:
 	void redo() override;
 	void undo() override;
 
-private:
+protected:
 	QPolygonF m_newPolygon;
 	QPolygonF m_oldPolygon;
 

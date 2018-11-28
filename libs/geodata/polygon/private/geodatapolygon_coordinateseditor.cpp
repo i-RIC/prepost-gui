@@ -8,18 +8,20 @@
 #include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
+#include <vtkPolygon.h>
+
 GeoDataPolygon* GeoDataPolygon::CoordinatesEditor::targetPolygon = 0;
 bool GeoDataPolygon::CoordinatesEditor::applied = false;
 
 void GeoDataPolygon::CoordinatesEditor::edit(GeoDataPolygon* polygon)
 {
-	polygon->m_mouseEventMode = meEditVerticesDialog;
+	polygon->setMouseEventMode(meEditVerticesDialog);
 	polygon->iricMainWindow()->enterModelessDialogMode();
 
 	targetPolygon = polygon;
 	applied = false;
 
-	auto coords = vtkPointsUtil::getCoordinates(polygon->m_selectedPolygon->getVtkPolygon());
+	auto coords = vtkPointsUtil::getCoordinates(polygon->selectedPolygon()->getVtkPolygon());
 	auto coords2 = applyOffset(coords);
 
 	CoordinatesEdit::edit(coords2, polygon->preProcessorWindow(),

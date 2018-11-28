@@ -6,11 +6,11 @@
 
 #include <QPointF>
 
-GeoDataPolygon::MoveVertexCommand::MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GeoDataPolygon* pol) :
-	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->m_selectedPolygon, pol, GeoDataPolygon::tr("Move Polygon Vertex")),
+GeoDataPolygon::MoveVertexCommand::MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, int vertexId, GeoDataPolygon* pol) :
+	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->selectedPolygon(), pol, GeoDataPolygon::tr("Move Polygon Vertex")),
 	m_keyDown {keyDown}
 {
-	QPolygonF oldPolygon = (pol->m_selectedPolygon->polygon());
+	QPolygonF oldPolygon = (pol->selectedPolygon()->polygon());
 	QPolygonF newPolygon = oldPolygon;
 
 	double dx = from.x();
