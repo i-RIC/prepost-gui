@@ -30,10 +30,12 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setDisplay(bool disp)
 void PreProcessorScalarBarLegendBoxSettingDialog::setupComboBox(PreProcessorGeoDataTopDataItemInterface* item)
 {
 	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = item->groupDataItems();
-	for (auto it = groups.begin(); it != groups.end(); ++it) {
-		PreProcessorGeoDataGroupDataItemInterface* group = *it;
-		QString text = group->condition()->caption();
-		int position = static_cast<int>(group->condition()->position());
+	for (auto group : groups) {
+		auto condition = group->condition();
+		if (condition->isReferenceInformation()) {continue;}
+
+		QString text = condition->caption();
+		int position = static_cast<int>(condition->position());
 		ui->scalarComboBox->addItem(text, QVariant(position));
 		m_itemMap.insert(text, group);
 	}

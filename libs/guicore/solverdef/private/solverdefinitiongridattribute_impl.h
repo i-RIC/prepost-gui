@@ -27,6 +27,7 @@ public:
 	QString m_mapping;
 	QString m_mappingArgs;
 	int m_order {0};
+	bool m_isReferenceInformation;
 	std::vector<SolverDefinitionGridAttributeDimension*> m_dimensions;
 	SolverDefinition* m_solverDefinition;
 

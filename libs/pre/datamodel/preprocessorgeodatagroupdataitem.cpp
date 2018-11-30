@@ -98,7 +98,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 		m_scalarBarSetting.initForLegendBox();
 	}
 	// for scalar bar / legend box
-	m_title = m_condition->englishCaption().c_str();
+	m_scalarBarTitle = m_condition->englishCaption().c_str();
 
 	// add dimensions container
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
@@ -145,9 +145,11 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addSeparator();
 	menu->addAction(m_deleteAllAction);
 
-	menu->addSeparator();
-	menu->addAction(m_editColorMapAction);
-	menu->addAction(m_setupScalarBarAction);
+	if (! m_condition->isReferenceInformation()) {
+		menu->addSeparator();
+		menu->addAction(m_editColorMapAction);
+		menu->addAction(m_setupScalarBarAction);
+	}
 }
 
 void PreProcessorGeoDataGroupDataItem::closeCgnsFile()
@@ -598,6 +600,11 @@ void PreProcessorGeoDataGroupDataItem::addBackground()
 	geodata->setupDataItem();
 }
 
+void PreProcessorGeoDataGroupDataItem::cancelImport()
+{
+	m_cancelImport = true;
+}
+
 void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
@@ -826,30 +833,6 @@ void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(10);
 }
 
-/*
-	 bool PreProcessorGeoDataGroupDataItem::setupImportMenu(QMenu* menu)
-	 {
-		bool ok = false;
-		GeoDataFactory& factory = GeoDataFactory::instance();
-		const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
-
-		if (m_importSignalMapper){delete m_importSignalMapper;}
-		m_importSignalMapper = new QSignalMapper(this);
-		for (auto it = creators.begin(); it != creators.end(); ++it){
-				const QList<GeoDataImporter*>& importers = (*it)->importers();
-				for (auto imp_it = importers.begin(); imp_it != importers.end(); ++imp_it){
-						QString title = (*imp_it)->caption();
-						QAction* importAction = menu->addAction(title.append("..."));
-						m_importSignalMapper->setMapping(importAction, *imp_it);
-						connect(importAction, SIGNAL(triggered()), m_importSignalMapper, SLOT(map()));
-						ok = true;
-				}
-		}
-		connect(m_importSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(importGeoData(QObject*)));
-		return ok;
-	 }
- */
-
 const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataItem::geoDatas() const
 {
 	QList<PreProcessorGeoDataDataItemInterface*> ret;
@@ -864,6 +847,8 @@ void PreProcessorGeoDataGroupDataItem::editScalarsToColors()
 {
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	ScalarsToColorsContainer* stc = typedi->scalarsToColors(condition()->name());
+	if (stc == nullptr) {return;}
+
 	ScalarsToColorsEditDialog* dialog = condition()->createScalarsToColorsEditDialog(preProcessorWindow());
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
 	dialog->setContainer(stc);
@@ -896,7 +881,7 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 		PreProcessorScalarBarEditDialog scalarbarDialog(dialog);
 		scalarbarDialog.hideDisplayCheckBox();
 		scalarbarDialog.setOrientation(m_scalarBarSetting.orientation);
-		scalarbarDialog.setScalarBarTitle(m_title);
+		scalarbarDialog.setScalarBarTitle(m_scalarBarTitle);
 		scalarbarDialog.setNumberOfLabels(m_scalarBarSetting.numberOfLabels);
 		scalarbarDialog.setWidth(m_scalarBarSetting.width);
 		scalarbarDialog.setHeight(m_scalarBarSetting.height);
@@ -908,7 +893,7 @@ void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 
 		if (scalarbarDialog.exec() == QDialog::Accepted) {
 			m_scalarBarSetting.orientation = scalarbarDialog.orientation();
-			m_title = scalarbarDialog.scalarBarTitle();
+			m_scalarBarTitle = scalarbarDialog.scalarBarTitle();
 			m_scalarBarSetting.numberOfLabels = scalarbarDialog.numberOfLabels();
 			m_scalarBarSetting.width = scalarbarDialog.width();
 			m_scalarBarSetting.height = scalarbarDialog.height();
@@ -927,9 +912,9 @@ ScalarBarSetting& PreProcessorGeoDataGroupDataItem::scalarBarSetting()
 	return m_scalarBarSetting;
 }
 
-const QString& PreProcessorGeoDataGroupDataItem::title() const
+const QString& PreProcessorGeoDataGroupDataItem::scalarBarTitle() const
 {
-	return m_title;
+	return m_scalarBarTitle;
 }
 
 QAction* PreProcessorGeoDataGroupDataItem::importAction() const
@@ -1190,6 +1175,12 @@ void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
 	}
 	cg_gorel(fn, "..", 0, NULL);
 }
+
+void PreProcessorGeoDataGroupDataItem::saveComplexGroupsToCgnsFile(const int /*fn*/)
+{}
+
+void PreProcessorGeoDataGroupDataItem::setupEditWidget(GridAttributeEditWidget* /*widget*/)
+{}
 
 void PreProcessorGeoDataGroupDataItem::openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection)
 {

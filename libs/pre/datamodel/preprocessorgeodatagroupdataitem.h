@@ -2,25 +2,24 @@
 #define PREPROCESSORGEODATAGROUPDATAITEM_H
 
 #include "../pre_global.h"
-#include "../misc/preprocessorwindowscalarbarsettingwidget.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guibase/scalarbarsetting.h>
-
-#include <QSignalMapper>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataDataItem;
 class PreProcessorScalarBarLegendBoxSettingDialog;
 class GridAttributeEditWidget;
 class Grid;
-class QMenu;
-class QModelIndex;
 class GeoDataImporter;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 class WaitDialog;
+
+class QMenu;
+class QModelIndex;
+class QSignalMapper;
 
 class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDataGroupDataItemInterface
 {
@@ -29,12 +28,15 @@ class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDat
 public:
 	PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 	virtual ~PreProcessorGeoDataGroupDataItem();
+
 	void addCustomMenuItems(QMenu* menu) override;
 	void closeCgnsFile() override;
 	SolverDefinitionGridAttribute* condition() override;
 	bool isChildCaptionAvailable(const QString& cap);
+
 	int mappingCount() const;
 	void executeMapping(Grid* grid, WaitDialog* dialog);
+
 	void setDefaultValue(Grid* grid);
 	void informValueRangeChange();
 	void informDataChange();
@@ -47,7 +49,7 @@ public:
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting();
-	const QString& title() const;
+	const QString& scalarBarTitle() const;
 	QAction* importAction() const;
 	bool addImportAction(QMenu* menu);
 	bool addImportFromWebAction(QMenu* menu);
@@ -65,15 +67,15 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool polygonExists() const;
-	virtual void saveToCgnsFile(const int fn) override;
-	virtual void saveComplexGroupsToCgnsFile(const int /*fn*/) {}
-	virtual void setupEditWidget(GridAttributeEditWidget* /*widget*/) override {}
+	void saveToCgnsFile(const int fn) override;
+	virtual void saveComplexGroupsToCgnsFile(const int fn);
+	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void updateCrossectionWindows() override;
 	void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) override;
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs) override;
 	void informCtrlPointUpdateToCrosssectionWindows() override;
 	void requestCrosssectionWindowDelete(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* item) override;
-	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	bool addToolBarButtons(QToolBar* parent) override;
 	QStringList containedFiles() override;
 	void setDimensionsToFirst();
 
@@ -91,7 +93,7 @@ public slots:
 	void deleteAll();
 
 private slots:
-	void cancelImport() {m_cancelImport = true;}
+	void cancelImport();
 
 signals:
 	void selectGeoData(const QModelIndex& current);
@@ -117,8 +119,8 @@ protected:
 	GridAttributeDimensionsContainer* m_dimensions;
 
 	ScalarBarSetting m_scalarBarSetting;
+	QString m_scalarBarTitle;
 
-	QString m_title;
 	PreProcessorGeoDataDataItem* m_backgroundItem;
 
 private:

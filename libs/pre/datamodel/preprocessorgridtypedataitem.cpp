@@ -194,10 +194,10 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < cmNode.childNodes().count(); ++i) {
 			QDomElement elem = cmNode.childNodes().at(i).toElement();
 			std::string name = iRIC::toStr(elem.attribute("name"));
-			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, 0);
-			if (cont != 0) {
-				cont->loadFromProjectMainFile(elem);
-			}
+			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, nullptr);
+			if (cont == nullptr) {continue;}
+
+			cont->loadFromProjectMainFile(elem);
 		}
 	}
 
@@ -289,6 +289,9 @@ void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType
 
 void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 {
+	auto stc = m_scalarsToColors.value(name, nullptr);
+	if (stc == nullptr) {return;}
+
 	// The value range of the specified grid related condition is changed.
 	// Check the new min and max values.
 	bool valueExist = false;
@@ -304,6 +307,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 		Grid* g = (*it)->gridDataItem()->grid();
 		if (g != nullptr) {
 			GridAttributeContainer* c = g->gridAttribute(name);
+			if (c == nullptr) {continue;}
 			double tmpmin, tmpmax;
 			if (c->getValueRange(&tmpmin, &tmpmax)) {
 				if (tmpmin < min || (! valueExist)) {min = tmpmin;}
@@ -324,7 +328,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 	}
 
 	// Now, new min, max are stored.
-	m_scalarsToColors.value(name)->setValueRange(min, max);
+	stc->setValueRange(min, max);
 	renderGraphicsView();
 }
 

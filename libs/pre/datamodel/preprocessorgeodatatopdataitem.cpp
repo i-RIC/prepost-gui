@@ -21,10 +21,13 @@
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributerealnode.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
+#include <QDomDocument>
+#include <QDomElement>
 #include <QDomNode>
 #include <QIcon>
 #include <QStandardItem>
@@ -43,11 +46,23 @@
 // namespace for local functions
 namespace {
 
+void setupReferenceInformation(
+		std::vector <GraphicsWindowDataItem*>* children,
+		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		SolverDefinitionGridAttribute* refAtt,
+		PreProcessorDataItem* parent)
+{
+	auto i = new PreProcessorGeoDataGroupDataItem(refAtt, parent);
+	children->push_back(i);
+	nameMap->insert({refAtt->name(), i});
+}
+
 void setupChildrenInGroups(
 		const QList<SolverDefinitionGridAttribute*>& stdAtts,
 		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector <GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)
 {
 	// node simple items
@@ -78,12 +93,15 @@ void setupChildrenInGroups(
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
+	setupReferenceInformation(children, nameMap, refAtt, parent);
 }
+
 void setupChildrenInOrder(
 		const QList<SolverDefinitionGridAttribute*>& stdAtts,
 		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector <GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)
 {
 	std::map<int, PreProcessorDataItem*> itemsInOrder;
@@ -102,6 +120,7 @@ void setupChildrenInOrder(
 		nameMap->insert({att->name(), i});
 		itemsInOrder.insert({att->order(), i});
 	}
+	setupReferenceInformation(children, nameMap, refAtt, parent);
 
 	int rowC = parent->standardItem()->rowCount();
 	for (int i = 0; i < rowC; ++i) {
@@ -131,19 +150,21 @@ void removeNonGroupedComplexAttributes(PreProcessorGeoDataTopDataItem* item)
 
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_condition {nullptr},
 	m_visible {"visible", true},
-	m_condition {nullptr}
+	m_referenceInformationAttribute {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("geographicdata");
+	buildReferenceInformationAttribute();
 
 	m_titleTextSetting.setPrefix("title");
 	m_labelTextSetting.setPrefix("label");
 
 	if (gridType()->isKeepOrder()) {
-		setupChildrenInOrder(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, this);
+		setupChildrenInOrder(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, m_referenceInformationAttribute, this);
 	} else {
-		setupChildrenInGroups(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, this);
+		setupChildrenInGroups(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, m_referenceInformationAttribute, this);
 	}
 	removeNonGroupedComplexAttributes(this);
 
@@ -154,6 +175,8 @@ PreProcessorGeoDataTopDataItem::~PreProcessorGeoDataTopDataItem()
 {
 	m_scalarBarWidget->SetInteractor(nullptr);
 	m_legendBoxWidget->SetInteractor(nullptr);
+
+	delete m_referenceInformationAttribute;
 }
 
 void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -203,6 +226,18 @@ void PreProcessorGeoDataTopDataItem::assignActorZValues(const ZDepthRange& range
 		items.push_back(elevItem);
 	}
 	GraphicsWindowDataItem::assignActorZValues(range, items);
+}
+
+void PreProcessorGeoDataTopDataItem::buildReferenceInformationAttribute()
+{
+	QDomDocument doc;
+	auto itemElem = doc.createElement("Item");
+	itemElem.setAttribute("name", "_referenceinformation");
+	itemElem.setAttribute("caption", tr("Reference Information"));
+
+	auto solverDef = projectData()->solverDefinition();
+	m_referenceInformationAttribute = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, 10000);
+	m_referenceInformationAttribute->setIsReferenceInformation(true);
 }
 
 const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDataItem::groupDataItems() const
@@ -321,7 +356,7 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		vtkScalarBarActor* scalarBarActor = m_scalarBarWidget->GetScalarBarActor();
 		scalarBarActor->SetLookupTable(cont->vtkObj());
 		scalarBarActor->SetNumberOfLabels(sbSetting.numberOfLabels);
-		scalarBarActor->SetTitle(iRIC::toStr(rdgItem->title()).c_str());
+		scalarBarActor->SetTitle(iRIC::toStr(rdgItem->scalarBarTitle()).c_str());
 		scalarBarActor->SetLabelFormat(iRIC::toStr(sbSetting.labelFormat).c_str());
 		m_titleTextSetting.applySetting(scalarBarActor->GetTitleTextProperty());
 		m_labelTextSetting.applySetting(scalarBarActor->GetLabelTextProperty());
