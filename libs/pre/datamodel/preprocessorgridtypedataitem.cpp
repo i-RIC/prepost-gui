@@ -73,6 +73,21 @@ const std::string& PreProcessorGridTypeDataItem::name() const
 	return m_gridType->name();
 }
 
+SolverDefinitionGridType* PreProcessorGridTypeDataItem::gridType() const
+{
+	return m_gridType;
+}
+
+PreProcessorGeoDataTopDataItemInterface* PreProcessorGridTypeDataItem::geoDataTop() const
+{
+	return m_geoDataTop;
+}
+
+const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& PreProcessorGridTypeDataItem::conditions() const
+{
+	return m_conditions;
+}
+
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const std::string& zonename) const
 {
 	for (auto cond : m_conditions) {
@@ -184,6 +199,16 @@ bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& captio
 		}
 	}
 	return true;
+}
+
+ScalarsToColorsContainer* PreProcessorGridTypeDataItem::scalarsToColors(const std::string& attName) const
+{
+	return m_scalarsToColors.value(attName, nullptr);
+}
+
+QAction* PreProcessorGridTypeDataItem::addNewGridAction() const
+{
+	return m_addNewGridAction;
 }
 
 void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
