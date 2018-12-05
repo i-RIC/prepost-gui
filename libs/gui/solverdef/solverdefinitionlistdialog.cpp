@@ -89,7 +89,6 @@ void SolverDefinitionListDialog::showDetailOfCurrent()
 void SolverDefinitionListDialog::showDetail(int index)
 {
 	SolverDefinitionAbstract* abst = m_solverList->solverList().at(index);
-	SolverDefinitionAbstractDialog* dialog = new SolverDefinitionAbstractDialog(abst, this);
-	dialog->setModal(true);
-	dialog->show();
+	SolverDefinitionAbstractDialog dialog(abst, this);
+	dialog.exec();
 }
