@@ -27,7 +27,6 @@ public slots:
 
 private:
 	double limitLength() const;
-	bool rescuePoint() const;
 	void preview();
 
 	TrianglesWithLongEdgeRemover* m_remover;

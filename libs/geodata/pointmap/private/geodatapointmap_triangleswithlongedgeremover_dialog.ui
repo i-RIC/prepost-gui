@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>298</width>
-    <height>147</height>
+    <height>110</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,46 +32,6 @@
         <double>10000000.000000000000000</double>
        </property>
       </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QCheckBox" name="rescuePointCheckBox">
-       <property name="text">
-        <string>Make sure all points are used</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="TooltipLabel" name="rescuePointHelpLabel">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If all triangles that contains a certain point are removed, the triangle with shortest edges are restored, to make sure all points in the data is used by at least one triangle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../../../guibase/guibase.qrc">:/libs/guibase/images/iconQuestion.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -110,16 +70,7 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>TooltipLabel</class>
-   <extends>QLabel</extends>
-   <header>guibase/tooltiplabel.h</header>
-  </customwidget>
- </customwidgets>
- <resources>
-  <include location="../../../guibase/guibase.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>

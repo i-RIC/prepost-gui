@@ -25,7 +25,7 @@ void GeoDataPointmap::TrianglesWithLongEdgeRemover::Dialog::setlimitLength(doubl
 
 void GeoDataPointmap::TrianglesWithLongEdgeRemover::Dialog::accept()
 {
-	m_remover->removeTriangles(limitLength(), rescuePoint());
+	m_remover->removeTriangles(limitLength(), false);
 	QDialog::accept();
 }
 
@@ -41,12 +41,7 @@ double GeoDataPointmap::TrianglesWithLongEdgeRemover::Dialog::limitLength() cons
 	return ui->lengthSpinBox->value();
 }
 
-bool GeoDataPointmap::TrianglesWithLongEdgeRemover::Dialog::rescuePoint() const
-{
-	return ui->rescuePointCheckBox->isChecked();
-}
-
 void GeoDataPointmap::TrianglesWithLongEdgeRemover::Dialog::preview()
 {
-	m_remover->updatePreviewPolyData(limitLength(), rescuePoint());
+	m_remover->updatePreviewPolyData(limitLength(), false);
 }
