@@ -33,7 +33,7 @@ public:
 	const std::vector<SolverDefinitionAbstract*>& solverList() const;
 	std::vector<QAction*> actionList();
 
-	SolverDefinitionListDialog* dialog(QWidget* parent);
+	void showListDialog(QWidget* parent);
 	QString supportingSolverFolder(ProjectData* p);
 
 protected slots:

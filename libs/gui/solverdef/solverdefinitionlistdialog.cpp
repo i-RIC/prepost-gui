@@ -21,6 +21,8 @@ SolverDefinitionListDialog::SolverDefinitionListDialog(SolverDefinitionList* lis
 	// initialize solver list
 	connect(ui->solverListTable, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(handleCellDoubleClick(int, int)));
 	connect(ui->showDetailButton, SIGNAL(clicked()), this, SLOT(showDetailOfCurrent()));
+
+	setup();
 }
 
 SolverDefinitionListDialog::~SolverDefinitionListDialog()
@@ -49,7 +51,6 @@ void SolverDefinitionListDialog::setup()
 	// setup basic properties
 	table->setEditTriggers(QAbstractItemView::NoEditTriggers);
 	table->setSortingEnabled(false);
-
 
 	// set column headers
 	table->setColumnCount(2);

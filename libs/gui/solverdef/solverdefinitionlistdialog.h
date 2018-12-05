@@ -18,8 +18,6 @@ class SolverDefinitionListDialog : public QDialog
 public:
 	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent = nullptr);
 	~SolverDefinitionListDialog();
-	/// Setup dialog items
-	void setup();
 	/// Show detail dialog on the specified index (row)
 	void showDetail(int index);
 
@@ -31,6 +29,8 @@ public slots:
 
 private:
 	void changeEvent(QEvent* e) override;
+
+	void setup();
 
 private:
 	Ui::SolverDefinitionListDialog* ui;

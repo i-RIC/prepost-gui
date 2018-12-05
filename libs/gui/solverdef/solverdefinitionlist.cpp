@@ -31,6 +31,7 @@ SolverDefinitionList::SolverDefinitionList(const QString& targetDir, const QLoca
 SolverDefinitionList::~SolverDefinitionList()
 {
 	clean();
+	delete m_dialog;
 }
 
 void SolverDefinitionList::updateSolverList()
@@ -86,13 +87,12 @@ std::vector<QAction*> SolverDefinitionList::actionList()
 	return ret;
 }
 
-SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
+void SolverDefinitionList::showListDialog(QWidget* parent)
 {
 	if (m_dialog == nullptr) {
 		m_dialog = new SolverDefinitionListDialog(this, parent);
 	}
-	m_dialog->setup();
-	return m_dialog;
+	m_dialog->exec();
 }
 
 QString SolverDefinitionList::supportingSolverFolder(ProjectData* p)
