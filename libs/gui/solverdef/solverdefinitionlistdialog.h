@@ -21,6 +21,9 @@ public:
 	SolverDefinitionListDialog(const std::vector<SolverDefinitionAbstract*>& list, QWidget* parent = nullptr);
 	~SolverDefinitionListDialog();
 
+	int execToSelectSolver();
+	int selectedSolver() const;
+
 public slots:
 	/// Handler for double clicking on solver definition table;
 	void handleCellDoubleClick(int row, int column);

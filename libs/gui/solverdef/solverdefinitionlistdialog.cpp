@@ -30,6 +30,19 @@ SolverDefinitionListDialog::~SolverDefinitionListDialog()
 	delete ui;
 }
 
+int SolverDefinitionListDialog::execToSelectSolver()
+{
+	setWindowTitle(tr("Select Solver to open project"));
+	ui->buttonBox->setStandardButtons(QDialogButtonBox::Ok);
+
+	return exec();
+}
+
+int SolverDefinitionListDialog::selectedSolver() const
+{
+	return ui->solverListTable->currentRow();
+}
+
 void SolverDefinitionListDialog::changeEvent(QEvent* e)
 {
 	QDialog::changeEvent(e);
