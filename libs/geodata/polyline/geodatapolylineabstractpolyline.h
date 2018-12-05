@@ -1,6 +1,7 @@
 #ifndef GEODATAPOLYLINEABSTRACTPOLYLINE_H
 #define GEODATAPOLYLINEABSTRACTPOLYLINE_H
 
+#include "gd_polyline_global.h"
 #include "geodatapolylinecolorsettingdialog.h"
 
 #include <QObject>
@@ -14,7 +15,7 @@ class vtkScalarsToColors;
 
 class QPointF;
 
-class GeoDataPolyLineAbstractPolyLine : public QObject
+class GD_POLYLINE_EXPORT GeoDataPolyLineAbstractPolyLine : public QObject
 {
 	Q_OBJECT
 

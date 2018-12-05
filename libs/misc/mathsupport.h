@@ -42,6 +42,8 @@ namespace iRIC
 	QString MISCDLL_EXPORT timeSecondValueStr(double val, int length = 0);
 	/// Returns true if polygon edges cross with other edge of the polygon
 	bool MISCDLL_EXPORT hasIntersection(const QPolygonF& polygon);
+	/// Returns intersection point of two lines
+	bool MISCDLL_EXPORT intersectionPoint(const QPointF& p1, const QPointF& p2, const QPointF& q1, const QPointF& q2, QPointF* interSection, double* r, double* s);
 }
 
 #endif // MATHSUPPORT_H

@@ -82,6 +82,8 @@ private:
 	void drawSelectionSquare(QPainter& painter);
 	void drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter);
 	void drawWaterSurfaceElevation(GeoDataRiverPathPoint* point, QPainter& painter, const QMatrix& matrix);
+	void drawCrossPoint(const QPointF& origin, const QVector2D& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
+	void drawPolyLineCrossPoints(QPainter& painter);
 	void zoom(double scaleX, double scaleY);
 	void selectPoints(const QPoint& from, const QPoint& to);
 	void translate(int x, int y);
