@@ -90,7 +90,7 @@ std::vector<QAction*> SolverDefinitionList::actionList()
 void SolverDefinitionList::showListDialog(QWidget* parent)
 {
 	if (m_dialog == nullptr) {
-		m_dialog = new SolverDefinitionListDialog(this, parent);
+		m_dialog = new SolverDefinitionListDialog(this->solverList(), parent);
 	}
 	m_dialog->exec();
 }

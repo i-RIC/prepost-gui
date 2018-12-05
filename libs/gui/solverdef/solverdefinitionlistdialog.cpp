@@ -11,11 +11,11 @@
 #include <QMessageBox>
 #include <QTableWidgetItem>
 
-SolverDefinitionListDialog::SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent) :
+SolverDefinitionListDialog::SolverDefinitionListDialog(const std::vector<SolverDefinitionAbstract*>& list, QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::SolverDefinitionListDialog)
+	ui(new Ui::SolverDefinitionListDialog),
+	m_solverList (list)
 {
-	m_solverList = list;
 	ui->setupUi(this);
 
 	// initialize solver list
@@ -60,11 +60,10 @@ void SolverDefinitionListDialog::setup()
 	table->setColumnWidth(0, 200);
 	table->setColumnWidth(1, 80);
 
-	auto solvers = m_solverList->solverList();
-	table->setRowCount(solvers.size());
+	table->setRowCount(m_solverList.size());
 	QTableWidgetItem* item;
 	int i = 0;
-	for (SolverDefinitionAbstract* abst : solvers) {
+	for (SolverDefinitionAbstract* abst : m_solverList) {
 		item = new QTableWidgetItem(abst->caption());
 		table->setItem(i, 0, item);
 		item = new QTableWidgetItem(abst->version().toString());
@@ -89,7 +88,7 @@ void SolverDefinitionListDialog::showDetailOfCurrent()
 
 void SolverDefinitionListDialog::showDetail(int index)
 {
-	SolverDefinitionAbstract* abst = m_solverList->solverList().at(index);
+	SolverDefinitionAbstract* abst = m_solverList.at(index);
 	SolverDefinitionAbstractDialog dialog(abst, this);
 	dialog.exec();
 }

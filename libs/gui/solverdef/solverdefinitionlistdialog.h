@@ -3,7 +3,9 @@
 
 #include <QDialog>
 
-class SolverDefinitionList;
+#include <vector>
+
+class SolverDefinitionAbstract;
 
 namespace Ui
 {
@@ -16,10 +18,8 @@ class SolverDefinitionListDialog : public QDialog
 	Q_OBJECT
 
 public:
-	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent = nullptr);
+	SolverDefinitionListDialog(const std::vector<SolverDefinitionAbstract*>& list, QWidget* parent = nullptr);
 	~SolverDefinitionListDialog();
-	/// Show detail dialog on the specified index (row)
-	void showDetail(int index);
 
 public slots:
 	/// Handler for double clicking on solver definition table;
@@ -31,10 +31,11 @@ private:
 	void changeEvent(QEvent* e) override;
 
 	void setup();
+	void showDetail(int index);
 
 private:
 	Ui::SolverDefinitionListDialog* ui;
-	SolverDefinitionList* m_solverList;
+	std::vector<SolverDefinitionAbstract*> m_solverList;
 };
 
 #endif // SOLVERDEFINITIONLISTDIALOG_H
