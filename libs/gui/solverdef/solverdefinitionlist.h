@@ -34,7 +34,7 @@ public:
 	std::vector<QAction*> actionList();
 
 	void showListDialog(QWidget* parent);
-	QString supportingSolverFolder(ProjectData* p);
+	QString supportingSolverFolder(ProjectData* p, QWidget* parent);
 
 protected slots:
 	/// Update solver list

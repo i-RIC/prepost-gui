@@ -32,7 +32,7 @@ SolverDefinitionListDialog::~SolverDefinitionListDialog()
 
 int SolverDefinitionListDialog::execToSelectSolver()
 {
-	setWindowTitle(tr("Select Solver to open project"));
+	setWindowTitle(tr("Select solver to open project"));
 	ui->buttonBox->setStandardButtons(QDialogButtonBox::Ok);
 
 	return exec();
