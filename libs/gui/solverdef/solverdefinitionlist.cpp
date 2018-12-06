@@ -13,6 +13,8 @@
 #include <QFileSystemWatcher>
 #include <QMessageBox>
 
+#include <vector>
+
 SolverDefinitionList::SolverDefinitionList(const QString& targetDir, const QLocale& locale, QObject* parent) :
 	QObject(parent),
 	m_locale {locale},
@@ -31,6 +33,7 @@ SolverDefinitionList::SolverDefinitionList(const QString& targetDir, const QLoca
 SolverDefinitionList::~SolverDefinitionList()
 {
 	clean();
+	delete m_dialog;
 }
 
 void SolverDefinitionList::updateSolverList()
@@ -86,22 +89,30 @@ std::vector<QAction*> SolverDefinitionList::actionList()
 	return ret;
 }
 
-SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
+void SolverDefinitionList::showListDialog(QWidget* parent)
 {
 	if (m_dialog == nullptr) {
-		m_dialog = new SolverDefinitionListDialog(this, parent);
+		m_dialog = new SolverDefinitionListDialog(this->solverList(), parent);
 	}
-	m_dialog->setup();
-	return m_dialog;
+	m_dialog->exec();
 }
 
-QString SolverDefinitionList::supportingSolverFolder(ProjectData* p)
+QString SolverDefinitionList::supportingSolverFolder(ProjectData* p, QWidget* parent)
 {
+	std::vector<SolverDefinitionAbstract*> compatibleSolvers;
+
 	for (SolverDefinitionAbstract* solver : m_solverList) {
 		if (solver->name() == p->mainfile()->solverName() &&
 				solver->version().compatibleWith(p->mainfile()->solverVersion())) {
-			return solver->folderName();
+			compatibleSolvers.push_back(solver);
 		}
 	}
-	return QString::null;
+	if (compatibleSolvers.size() == 0) {return QString::null;}
+	if (compatibleSolvers.size() == 1) {return compatibleSolvers.at(0)->folderName();}
+
+	SolverDefinitionListDialog dialog(compatibleSolvers, parent);
+	dialog.execToSelectSolver();
+
+	auto selectedSolver = compatibleSolvers.at(dialog.selectedSolver());
+	return selectedSolver->folderName();
 }

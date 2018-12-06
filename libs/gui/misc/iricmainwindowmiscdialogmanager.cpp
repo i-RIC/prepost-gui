@@ -1,7 +1,6 @@
 #include "../main/iricmainwindow.h"
 #include "../solverdef/solverdefinitionabstractdialog.h"
 #include "../solverdef/solverdefinitionlist.h"
-#include "../solverdef/solverdefinitionlistdialog.h"
 #include "../solverdef/solverdefinitiontranslationupdatewizard.h"
 #include "installertool.h"
 #include "iricmainwindowaboutdialog.h"
@@ -34,8 +33,7 @@ void iRICMainWindowMiscDialogManager::solverDefinitionTranslationWizard()
 
 void iRICMainWindowMiscDialogManager::solverListDialog()
 {
-	SolverDefinitionListDialog* dialog = m_mainWindow->m_solverDefinitionList->dialog(m_mainWindow);
-	dialog->exec();
+	m_mainWindow->m_solverDefinitionList->showListDialog(m_mainWindow);
 }
 
 void iRICMainWindowMiscDialogManager::aboutCurrentSolver()

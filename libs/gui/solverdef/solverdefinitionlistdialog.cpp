@@ -11,21 +11,36 @@
 #include <QMessageBox>
 #include <QTableWidgetItem>
 
-SolverDefinitionListDialog::SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent) :
+SolverDefinitionListDialog::SolverDefinitionListDialog(const std::vector<SolverDefinitionAbstract*>& list, QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::SolverDefinitionListDialog)
+	ui(new Ui::SolverDefinitionListDialog),
+	m_solverList (list)
 {
-	m_solverList = list;
 	ui->setupUi(this);
 
 	// initialize solver list
 	connect(ui->solverListTable, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(handleCellDoubleClick(int, int)));
 	connect(ui->showDetailButton, SIGNAL(clicked()), this, SLOT(showDetailOfCurrent()));
+
+	setup();
 }
 
 SolverDefinitionListDialog::~SolverDefinitionListDialog()
 {
 	delete ui;
+}
+
+int SolverDefinitionListDialog::execToSelectSolver()
+{
+	setWindowTitle(tr("Select solver to open project"));
+	ui->buttonBox->setStandardButtons(QDialogButtonBox::Ok);
+
+	return exec();
+}
+
+int SolverDefinitionListDialog::selectedSolver() const
+{
+	return ui->solverListTable->currentRow();
 }
 
 void SolverDefinitionListDialog::changeEvent(QEvent* e)
@@ -50,7 +65,6 @@ void SolverDefinitionListDialog::setup()
 	table->setEditTriggers(QAbstractItemView::NoEditTriggers);
 	table->setSortingEnabled(false);
 
-
 	// set column headers
 	table->setColumnCount(2);
 	QStringList labels;
@@ -59,11 +73,10 @@ void SolverDefinitionListDialog::setup()
 	table->setColumnWidth(0, 200);
 	table->setColumnWidth(1, 80);
 
-	auto solvers = m_solverList->solverList();
-	table->setRowCount(solvers.size());
+	table->setRowCount(m_solverList.size());
 	QTableWidgetItem* item;
 	int i = 0;
-	for (SolverDefinitionAbstract* abst : solvers) {
+	for (SolverDefinitionAbstract* abst : m_solverList) {
 		item = new QTableWidgetItem(abst->caption());
 		table->setItem(i, 0, item);
 		item = new QTableWidgetItem(abst->version().toString());
@@ -88,8 +101,7 @@ void SolverDefinitionListDialog::showDetailOfCurrent()
 
 void SolverDefinitionListDialog::showDetail(int index)
 {
-	SolverDefinitionAbstract* abst = m_solverList->solverList().at(index);
-	SolverDefinitionAbstractDialog* dialog = new SolverDefinitionAbstractDialog(abst, this);
-	dialog->setModal(true);
-	dialog->show();
+	SolverDefinitionAbstract* abst = m_solverList.at(index);
+	SolverDefinitionAbstractDialog dialog(abst, this);
+	dialog.exec();
 }

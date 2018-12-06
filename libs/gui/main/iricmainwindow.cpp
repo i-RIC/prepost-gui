@@ -371,7 +371,7 @@ void iRICMainWindow::openProject(const QString& filename)
 		return;
 	}
 	// make sure whether supporting solver exists.
-	QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData);
+	QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData, this);
 	QString solFolder;
 	if (folder.isNull()){
 		m_projectData->setPostOnlyMode();
@@ -490,7 +490,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 		m_projectData->mainfile()->setSolverVersion(versionNumber);
 
 		// make sure whether supporting solver exists.
-		QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData);
+		QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData, this);
 		if (folder.isNull()){
 			m_projectData->setPostOnlyMode();
 			solFolder = ":/data/unknownsolver";
