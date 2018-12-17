@@ -649,8 +649,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 
 	auto targetPoint = m_parentWindow->target();
 	QPointF origin = toQPointF(targetPoint->position());
-	QPointF left = toQPointF(targetPoint->leftBank()->interpolate(0));
-	QPointF right = toQPointF(targetPoint->rightBank()->interpolate(0));
+	QPointF left, right;
+	if (targetPoint->nextPoint() == nullptr) {
+		auto prevPoint = targetPoint->previousPoint();
+		left = toQPointF(prevPoint->leftBank()->interpolate(1));
+		right = toQPointF(prevPoint->rightBank()->interpolate(1));
+	} else {
+		left = toQPointF(targetPoint->leftBank()->interpolate(0));
+		right = toQPointF(targetPoint->rightBank()->interpolate(0));
+	}
 	QPointF marginedLeft = origin + marginRate * (left - origin);
 	QPointF marginedRight = origin + marginRate * (right - origin);
 
