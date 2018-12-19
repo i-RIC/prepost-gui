@@ -648,6 +648,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 	auto refGroupDataItem = gridTypeDataItem->groupDataItem("_referenceinformation");
 
 	auto targetPoint = m_parentWindow->target();
+	if (targetPoint == nullptr) {return;}
+
 	QPointF origin = toQPointF(targetPoint->position());
 	QPointF left, right;
 	if (targetPoint->nextPoint() == nullptr) {
