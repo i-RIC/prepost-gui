@@ -1331,15 +1331,12 @@ bool PreProcessorDataModel::isSetupCorrectly() const
 bool PreProcessorDataModel::checkMappingStatus()
 {
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
-	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
 	bool mapExexuted = false;
-	for (auto it = gtItems.begin(); it != gtItems.end(); ++it) {
+	for (auto gtItem : r->gridTypeDataItems()) {
 		QStringList notMapped;
-		PreProcessorGridTypeDataItem* gtItem = *it;
-		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = gtItem->geoDataTop()->groupDataItems();
 		QList<PreProcessorGeoDataGroupDataItemInterface*> groupsToMap;
-		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
-			PreProcessorGeoDataGroupDataItemInterface* gItem = *it2;
+		for (auto gItem : gtItem->geoDataTop()->groupDataItems()) {
+			if (gItem->condition()->isReferenceInformation()) {continue;}
 			QStringList geodatasNotMapped = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->getGeoDatasNotMapped();
 			if (geodatasNotMapped.count() > 0) {
 				groupsToMap.append(gItem);
