@@ -226,6 +226,11 @@ void GeoDataRiverSurveyCrosssectionWindow::setRiverSurvey(GeoDataRiverSurvey* rs
 	impl->m_targetRiverSurvey = rs;
 }
 
+QString GeoDataRiverSurveyCrosssectionWindow::crosssectionName() const
+{
+	return impl->m_crosssectionName;
+}
+
 void GeoDataRiverSurveyCrosssectionWindow::setCrosssection(const QString& crosssection)
 {
 	impl->m_crosssectionName = crosssection;

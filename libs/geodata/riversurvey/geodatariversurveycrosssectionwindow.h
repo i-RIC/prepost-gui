@@ -47,6 +47,8 @@ public:
 	~GeoDataRiverSurveyCrosssectionWindow();
 
 	void setRiverSurvey(GeoDataRiverSurvey* rs);
+
+	QString crosssectionName() const;
 	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const;
 	QAction* deleteAction() const;

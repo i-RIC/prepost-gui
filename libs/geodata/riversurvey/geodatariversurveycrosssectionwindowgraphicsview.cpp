@@ -572,7 +572,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation
 	auto weGroup = m_parentWindow->waterElevationGroup();
 	if (weGroup == nullptr) {return;}
 
-	auto name = m_parentWindow->target()->name();
+	auto name = m_parentWindow->crosssectionName();
 	auto we = m_parentWindow->waterElevation(index);
 
 	bool specified = false;
