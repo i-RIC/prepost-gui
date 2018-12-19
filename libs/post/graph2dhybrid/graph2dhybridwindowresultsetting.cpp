@@ -5,7 +5,14 @@
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowresultsetting.h"
 
+#include <geodata/polyline/geodatapolyline.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 
 #if defined(_MSC_VER)
 // disable macro redefinition warnings
@@ -100,6 +107,9 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 		delete opener;
 		return false;
 	}
+
+	// Scott, please use this.
+	auto lines = polyLines(sol);
 
 	for (int baseid = 1; baseid <= nbases; ++baseid) {
 		int celldim, physdim;
@@ -306,6 +316,23 @@ void Graph2dHybridWindowResultSetting::setupMap()
 		}
 		m_dataTypeInfoMap.insert(xaIndex, tmpmap);
 	*/
+}
+
+QList<GeoDataPolyLine*> Graph2dHybridWindowResultSetting::polyLines(PostSolutionInfo* info)
+{
+	auto preModel = info->iricMainWindow()->preProcessorWindow()->dataModel();
+	auto refGroup = preModel->geoDataTopDataItem()->groupDataItem(std::string("_referenceinformation"));
+
+	QList<GeoDataPolyLine*> ret;
+
+	for (auto item : refGroup->geoDatas()) {
+		auto data = item->geoData();
+		auto polyLine = dynamic_cast<GeoDataPolyLine*>(data);
+		if (polyLine == nullptr) {continue;}
+
+		ret.push_back(polyLine);
+	}
+	return ret;
 }
 
 Graph2dHybridWindowResultSetting::DimType Graph2dHybridWindowResultSetting::dimTypeFromDataType(DataType dt)

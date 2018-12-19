@@ -12,6 +12,7 @@
 
 #include <cgnslib.h>
 
+class GeoDataPolyLine;
 class Graph2dHybridWindowResultGroupDataItem;
 class Graph2dHybridWindowResultDataItem;
 class Graph2dWindowDataItem;
@@ -262,6 +263,7 @@ public:
 private:
 	static DimType dimTypeFromDataType(DataType dt);
 	void setupMap();
+	static QList<GeoDataPolyLine*> polyLines(PostSolutionInfo* info);
 
 	QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > > m_dataTypeInfoMap;
 	QList<DataTypeInfo> m_dataTypeInfos;
