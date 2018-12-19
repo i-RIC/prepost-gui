@@ -821,11 +821,6 @@ void GeoDataRiverSurveyCrosssectionWindow::updateSurveysTable()
 
 void GeoDataRiverSurveyCrosssectionWindow::updateWaterSurfaceElevationTable()
 {
-	if (impl->m_editTargetPoint == nullptr) {
-		ui->wsesTableWidget->setRowCount(0);
-		return;
-	}
-
 	auto weList = waterElevationGroup()->hydraulicDatas();
 
 	ui->wsesTableWidget->blockSignals(true);
@@ -834,7 +829,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateWaterSurfaceElevationTable()
 	for (int i = 0; i < weList.size(); ++i) {
 		QTableWidgetItem* item = nullptr;
 		auto we = dynamic_cast<HydraulicDataRiverSurveyWaterElevation*>(weList.at(i)->hydraulicData());
-		auto weItem = we->getItem(impl->m_editTargetPoint->name());
+		auto weItem = we->getItem(crosssectionName());
 
 		item = new QTableWidgetItem();
 		item->setData(Qt::DisplayRole, weItem != nullptr && weItem->isSpecified());
