@@ -6,12 +6,18 @@
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowgraphicsview.h"
 
+#include <geodata/polyline/geodatapolyline.h>
+#include <geodata/polyline/geodatapolylineimplpolyline.h>
 #include <guicore/misc/qundocommandhelper.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/project/projectdataitem.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 
 #include <QAction>
+#include <QFontMetricsF>
 #include <QItemSelection>
 #include <QMenu>
 #include <QMessageBox>
@@ -20,11 +26,45 @@
 #include <QPainter>
 #include <QRect>
 #include <QSet>
+#include <QStandardItem>
 #include <QTableView>
 #include <QTextStream>
 #include <QWheelEvent>
+#include <QRect>
 
 #include <cmath>
+
+namespace {
+
+QPointF toQPointF(const QVector2D& v)
+{
+	return QPointF(v.x(), v.y());
+}
+
+int findRowToDraw(int rowToTry, const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRects)
+{
+	if (rowToTry == drawnRects->size()) {
+		std::vector<QRectF> newRowData;
+		newRowData.push_back(rect);
+		drawnRects->push_back(newRowData);
+		return rowToTry;
+	}
+	auto& rowData = (*drawnRects)[rowToTry];
+	for (const auto& r : rowData) {
+		if (rect.intersects(r)) {
+			return findRowToDraw(rowToTry + 1, rect, drawnRects);
+		}
+	}
+	rowData.push_back(rect);
+	return rowToTry;
+}
+
+int findRowToDraw(const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRects)
+{
+	return findRowToDraw(0, rect, drawnRects);
+}
+
+} // namespace
 
 GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w) :
 	QAbstractItemView {w},
@@ -45,6 +85,11 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	m_moveCursor = QCursor(m_movePixmap);
 	setMouseTracking(true);
 	setupActions();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setParentWindow(GeoDataRiverSurveyCrosssectionWindow* w)
+{
+	m_parentWindow = w;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupActions()
@@ -94,6 +139,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 	drawScales(painter, matrix);
 	// draw water surface.
 	drawWaterSurfaceElevation(m_parentWindow->target(), painter, matrix);
+	// draw poly line cross points.
+	drawPolyLineCrossPoints(painter);
 
 	if (! m_gridMode) {
 		// draw lines.
@@ -122,6 +169,73 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		// draw selected yellow squares.
 		drawSelectionSquare(painter);
 	}
+}
+
+
+QRect GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRect(const QModelIndex&) const
+{
+	return QRect();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::scrollTo(const QModelIndex& /*index*/, ScrollHint /*hint*/)
+{}
+
+QModelIndex GeoDataRiverSurveyCrosssectionWindowGraphicsView::indexAt(const QPoint&) const
+{
+	viewport()->update();
+	return QModelIndex();
+}
+
+QModelIndex GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers)
+{
+	viewport()->update();
+	return QModelIndex();
+}
+
+int GeoDataRiverSurveyCrosssectionWindowGraphicsView::horizontalOffset() const
+{
+	return 0;
+}
+
+int GeoDataRiverSurveyCrosssectionWindowGraphicsView::verticalOffset() const
+{
+	return 0;
+}
+
+bool GeoDataRiverSurveyCrosssectionWindowGraphicsView::isIndexHidden(const QModelIndex&) const
+{
+	return false;
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSelection(const QRect& /*rect*/, QItemSelectionModel::SelectionFlags /*command*/)
+{
+	viewport()->update();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectionChanged(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/)
+{
+	updateActionStatus();
+	viewport()->update();
+}
+
+QRegion GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRegionForSelection(const QItemSelection& /*selection*/) const
+{
+	return QRegion();
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateAction() const
+{
+	return m_activateAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateAction() const
+{
+	return m_inactivateAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveAction() const
+{
+	return m_moveAction;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter)
@@ -482,6 +596,87 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation
 	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignVCenter, QString::number(ele, 'g', precision));
 
 	painter.setPen(oldPen);
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPointF& origin, const QVector2D& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter)
+{
+	int topMargin = 80;
+	int lineHeight = 15;
+	int lineMargin = 10;
+	int fontMargin = 5;
+	int fontHeight = 18;
+
+	int rowHeight = 35;
+
+	QPointF crossPoint;
+	double r, s;
+	bool crosses = iRIC::intersectionPoint(left, right, q1, q2, &crossPoint, &r, &s);
+	if (! crosses) {return;}
+	if (r < 0 || r > 1) {return;}
+	if (s < 0 || s > 1) {return;}
+
+	QVector2D diff(crossPoint.x() - origin.x(), crossPoint.y() - origin.y());
+	double pos = QVector2D::dotProduct(direction, diff);
+
+	QPointF mappedPos = m_matrix.map(QPointF(pos, 0));
+
+	painter.save();
+	painter.setPen(color);
+
+	QFontMetricsF metrics(painter.font());
+	QRectF rect = metrics.boundingRect(name);
+	QRectF textRect(mappedPos.x(), 0, rect.width() + lineMargin, fontHeight);
+
+	int row = findRowToDraw(textRect, drawnRects);
+
+	painter.drawLine(QPointF(mappedPos.x(), topMargin + row * rowHeight), QPointF(mappedPos.x(), topMargin + lineHeight + row * rowHeight));
+	painter.drawLine(QPointF(mappedPos.x(), topMargin + row * rowHeight), QPointF(mappedPos.x() + rect.width() + lineMargin, topMargin + row * rowHeight));
+	QRectF fontRect(mappedPos.x() + fontMargin, topMargin - fontHeight + row * rowHeight, rect.width(), fontHeight);
+
+	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, name);
+	painter.restore();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(QPainter& painter)
+{
+	std::vector<std::vector<QRectF> > drawnRects;
+
+	double marginRate = 3;
+
+	auto gridTypeDataItem = dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>
+			(m_parentWindow->targetRiverSurvey()->geoDataDataItem()->parent()->parent());
+	auto refGroupDataItem = gridTypeDataItem->groupDataItem("_referenceinformation");
+
+	auto targetPoint = m_parentWindow->target();
+	if (targetPoint == nullptr) {return;}
+
+	QPointF origin = toQPointF(targetPoint->position());
+	QPointF left, right;
+	if (targetPoint->nextPoint() == nullptr) {
+		auto prevPoint = targetPoint->previousPoint();
+		left = toQPointF(prevPoint->leftBank()->interpolate(1));
+		right = toQPointF(prevPoint->rightBank()->interpolate(1));
+	} else {
+		left = toQPointF(targetPoint->leftBank()->interpolate(0));
+		right = toQPointF(targetPoint->rightBank()->interpolate(0));
+	}
+	QPointF marginedLeft = origin + marginRate * (left - origin);
+	QPointF marginedRight = origin + marginRate * (right - origin);
+
+	for (auto child : refGroupDataItem->childItems()) {
+		auto geoDataItem = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (child);
+		if (geoDataItem->standardItem()->checkState() != Qt::Checked) {continue;}
+		auto polyLine = dynamic_cast<GeoDataPolyLine*> (geoDataItem->geoData());
+		if (polyLine == nullptr) {continue;}
+
+		auto line = polyLine->polyLine()->polyLine();
+		for (int i = 0; i < static_cast<int>(line.size()) - 1; ++i) {
+			QPointF p1 = line.at(i);
+			QPointF p2 = line.at(i + 1);
+
+			drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, polyLine->caption(), polyLine->color(), &drawnRects, painter);
+		}
+	}
 }
 
 QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()

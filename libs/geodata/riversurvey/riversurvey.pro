@@ -58,6 +58,20 @@ unix {
 }
 LIBS += -liricGuicore
 
+# iricGdPolyLine
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../geodata/polyline/debug"
+	} else {
+		LIBS += -L"../../geodata/polyline/release"
+	}
+}
+unix {
+	LIBS += -L"../../geodata/polyline"
+}
+LIBS += -liricGdPolyLine
+
 ######################
 # External libraries #
 ######################

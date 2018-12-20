@@ -95,6 +95,8 @@ public:
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolyLine* polyline);
 
+	GeoDataPolyLineImplPolyLine* polyLine() const;
+
 public slots:
 	void editValue();
 	void restoreMouseEventMode();
@@ -127,8 +129,6 @@ private:
 	void initParams();
 	void updateMouseEventMode();
 	void updateActionStatus();
-
-	GeoDataPolyLineImplPolyLine* polyLine() const;
 
 	class AddVertexCommand;
 	class PushNewPointCommand;

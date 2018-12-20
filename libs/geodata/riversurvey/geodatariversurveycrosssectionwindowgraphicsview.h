@@ -26,36 +26,24 @@ public:
 		meMovePrepare
 	};
 	GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w);
-	void setParentWindow(GeoDataRiverSurveyCrosssectionWindow* w) {
-		m_parentWindow = w;
-	}
+
+	void setParentWindow(GeoDataRiverSurveyCrosssectionWindow* w);
 	void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
 	void paintEvent(QPaintEvent* event) override;
-	QRect visualRect(const QModelIndex&) const override {return QRect();}
-	void scrollTo(const QModelIndex& /*index*/, ScrollHint /*hint*/) override {}
-	QModelIndex indexAt(const QPoint&) const override {
-		viewport()->update();
-		return QModelIndex();
-	}
-	QModelIndex moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers) override {
-		viewport()->update();
-		return QModelIndex();
-	}
-	int horizontalOffset() const override {return 0;}
-	int verticalOffset() const override {return 0;}
-	bool isIndexHidden(const QModelIndex&) const override {return false;}
-	void setSelection(const QRect& /*rect*/, QItemSelectionModel::SelectionFlags /*command*/) override {
-		viewport()->update();
-	}
-	void selectionChanged(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/) override {
-		updateActionStatus();
-		viewport()->update();
-	}
-	QRegion visualRegionForSelection(const QItemSelection& /*selection*/) const override {return QRegion();}
+	QRect visualRect(const QModelIndex&) const override;
+	void scrollTo(const QModelIndex& index, ScrollHint hint) override;
+	QModelIndex indexAt(const QPoint&) const override;
+	QModelIndex moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers) override;
+	int horizontalOffset() const override;
+	int verticalOffset() const override;
+	bool isIndexHidden(const QModelIndex&) const override;
+	void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags command) override;
+	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
+	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
 
-	QAction* activateAction() const {return m_activateAction;}
-	QAction* inactivateAction() const {return m_inactivateAction;}
-	QAction* moveAction() const {return m_moveAction;}
+	QAction* activateAction() const;
+	QAction* inactivateAction() const;
+	QAction* moveAction() const;
 
 	void cameraFit();
 	void cameraMoveLeft();
@@ -94,6 +82,8 @@ private:
 	void drawSelectionSquare(QPainter& painter);
 	void drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter);
 	void drawWaterSurfaceElevation(GeoDataRiverPathPoint* point, QPainter& painter, const QMatrix& matrix);
+	void drawCrossPoint(const QPointF& origin, const QVector2D& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
+	void drawPolyLineCrossPoints(QPainter& painter);
 	void zoom(double scaleX, double scaleY);
 	void selectPoints(const QPoint& from, const QPoint& to);
 	void translate(int x, int y);
