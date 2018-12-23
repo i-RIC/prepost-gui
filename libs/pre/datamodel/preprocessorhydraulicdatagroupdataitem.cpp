@@ -118,7 +118,7 @@ void PreProcessorHydraulicDataGroupDataItem::import()
 				QString ext = finfo.suffix();
 				auto it = extMap.find(ext);
 				if (it == extMap.end()) {
-					QMessageBox::warning(pre, tr("Warning"), tr("File type can not be recognized from the file extension. : %1").arg(finfo.fileName()));
+					QMessageBox::warning(pre, tr("Warning"), tr("File type cannot be recognized from the file extension. : %1").arg(finfo.fileName()));
 					return;
 				}
 				importer = it->second;
