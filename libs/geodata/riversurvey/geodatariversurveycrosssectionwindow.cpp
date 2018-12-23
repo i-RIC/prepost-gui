@@ -618,7 +618,7 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
 	} else {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_window->groupDataItem()->updateCrossectionWindows();
+		m_rs->updateCrossectionWindows();
 		m_rs->setMapped(false);
 	}
 	m_first = false;
@@ -632,7 +632,7 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::undo()
 	if (! m_apply) {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_window->groupDataItem()->updateCrossectionWindows();
+		m_rs->updateCrossectionWindows();
 	}
 }
 
