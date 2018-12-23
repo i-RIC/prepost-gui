@@ -93,7 +93,7 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::doInit(const QString& filen
 		if (! line.isEmpty()) {
 			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::KeepEmptyParts);
 			if (*count != pieces.size() - 1) {
-				QMessageBox::critical(w, tr("Error"), tr("The number of items must be the same in every lines."));
+				QMessageBox::critical(w, tr("Error"), tr("The number of items must be the same in every line."));
 				return false;
 			}
 		}
