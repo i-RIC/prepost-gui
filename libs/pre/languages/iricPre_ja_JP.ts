@@ -397,8 +397,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="145"/>
-        <location filename="../preprocessordatamodel.cpp" line="1456"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
@@ -407,7 +406,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="147"/>
+        <location filename="../preprocessordatamodel.cpp" line="149"/>
         <source>iRIC project file (*.ipro)</source>
         <translation>iRIC プロジェクトファイル (*.ipro)</translation>
     </message>
@@ -416,53 +415,53 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="151"/>
+        <location filename="../preprocessordatamodel.cpp" line="153"/>
         <source>YAML file (*.yml)</source>
         <translation>YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="190"/>
+        <location filename="../preprocessordatamodel.cpp" line="192"/>
         <source>Select case</source>
         <translation>計算ケースの選択</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="190"/>
+        <location filename="../preprocessordatamodel.cpp" line="192"/>
         <source>Please select from which case in %1 to import calculation conditions.</source>
         <translation>%1 内のどの計算ケースから計算条件をインポートするか選択してください。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="200"/>
-        <location filename="../preprocessordatamodel.cpp" line="213"/>
-        <location filename="../preprocessordatamodel.cpp" line="226"/>
+        <location filename="../preprocessordatamodel.cpp" line="202"/>
+        <location filename="../preprocessordatamodel.cpp" line="215"/>
+        <location filename="../preprocessordatamodel.cpp" line="228"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="200"/>
-        <location filename="../preprocessordatamodel.cpp" line="226"/>
+        <location filename="../preprocessordatamodel.cpp" line="202"/>
+        <location filename="../preprocessordatamodel.cpp" line="228"/>
         <source>Calculation Condition is successfully imported from the specified file.</source>
         <translation>計算条件のインポートが成功しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="213"/>
+        <location filename="../preprocessordatamodel.cpp" line="215"/>
         <source>Calculation Condition is successfully imported from %1.</source>
         <translation>計算条件が %1 からインポートされました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="218"/>
-        <location filename="../preprocessordatamodel.cpp" line="231"/>
-        <location filename="../preprocessordatamodel.cpp" line="249"/>
+        <location filename="../preprocessordatamodel.cpp" line="220"/>
+        <location filename="../preprocessordatamodel.cpp" line="233"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Fail</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="218"/>
-        <location filename="../preprocessordatamodel.cpp" line="231"/>
+        <location filename="../preprocessordatamodel.cpp" line="220"/>
+        <location filename="../preprocessordatamodel.cpp" line="233"/>
         <source>Importing calculation condition failed.</source>
         <translation>計算条件のインポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="238"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイルの選択</translation>
     </message>
@@ -471,80 +470,80 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="145"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
         <translation>iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn *.cgns);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
+        <location filename="../preprocessordatamodel.cpp" line="151"/>
         <source>CGNS file (*.cgn *.cgns)</source>
         <translation>CGNS ファイル (*.cgn *.cgns)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="238"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
         <translation>CGNS ファイル (*.cgns);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="244"/>
         <source>Exporting calculation condition...</source>
         <translation>計算条件をエクスポートしています...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="244"/>
+        <location filename="../preprocessordatamodel.cpp" line="246"/>
         <source>Calculation Condition is successfully exported to %1.</source>
         <translation>計算条件は %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="249"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Exporting calculation condition failed.</source>
         <translation>計算条件のエクスポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="282"/>
+        <location filename="../preprocessordatamodel.cpp" line="284"/>
         <source>G&amp;eographic Data</source>
         <translation>地理情報(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="288"/>
+        <location filename="../preprocessordatamodel.cpp" line="290"/>
         <source>Edit &amp;Groups...</source>
         <translation>グループの編集(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="290"/>
+        <location filename="../preprocessordatamodel.cpp" line="292"/>
         <source>Delete &amp;All...</source>
         <translation>すべて削除(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="291"/>
+        <location filename="../preprocessordatamodel.cpp" line="293"/>
         <source>Export All Polygons...</source>
         <translation>すべてのポリゴンをエクスポート...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="315"/>
-        <location filename="../preprocessordatamodel.cpp" line="367"/>
-        <location filename="../preprocessordatamodel.cpp" line="391"/>
+        <location filename="../preprocessordatamodel.cpp" line="317"/>
+        <location filename="../preprocessordatamodel.cpp" line="369"/>
+        <location filename="../preprocessordatamodel.cpp" line="393"/>
         <source>&amp;River Survey</source>
         <translation>河川測量データ (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="324"/>
-        <location filename="../preprocessordatamodel.cpp" line="370"/>
-        <location filename="../preprocessordatamodel.cpp" line="394"/>
+        <location filename="../preprocessordatamodel.cpp" line="326"/>
+        <location filename="../preprocessordatamodel.cpp" line="372"/>
+        <location filename="../preprocessordatamodel.cpp" line="396"/>
         <source>P&amp;ointset Data</source>
         <translation>DEMデータ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="333"/>
-        <location filename="../preprocessordatamodel.cpp" line="373"/>
-        <location filename="../preprocessordatamodel.cpp" line="397"/>
+        <location filename="../preprocessordatamodel.cpp" line="335"/>
+        <location filename="../preprocessordatamodel.cpp" line="375"/>
+        <location filename="../preprocessordatamodel.cpp" line="399"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="342"/>
-        <location filename="../preprocessordatamodel.cpp" line="376"/>
-        <location filename="../preprocessordatamodel.cpp" line="400"/>
+        <location filename="../preprocessordatamodel.cpp" line="344"/>
+        <location filename="../preprocessordatamodel.cpp" line="378"/>
+        <location filename="../preprocessordatamodel.cpp" line="402"/>
         <source>Poly&amp;line</source>
         <translation>折れ線 (&amp;L)</translation>
     </message>
@@ -553,66 +552,66 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">折れ線 (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="412"/>
+        <location filename="../preprocessordatamodel.cpp" line="414"/>
         <source>&amp;Color Setting...</source>
         <translation>表示色設定(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="415"/>
+        <location filename="../preprocessordatamodel.cpp" line="417"/>
         <source>Set Up Scalarbar...</source>
         <translation>凡例の設定...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="438"/>
+        <location filename="../preprocessordatamodel.cpp" line="440"/>
         <source>Import</source>
         <translation>インポート</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="442"/>
+        <location filename="../preprocessordatamodel.cpp" line="444"/>
         <source>Export</source>
         <translation>エクスポート</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="452"/>
+        <location filename="../preprocessordatamodel.cpp" line="454"/>
         <source>&amp;Grid Creating Condition</source>
         <translation>格子生成条件(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="459"/>
+        <location filename="../preprocessordatamodel.cpp" line="461"/>
         <source>B&amp;oundary Condition Setting</source>
         <translation>境界条件設定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="469"/>
-        <location filename="../preprocessordatamodel.cpp" line="883"/>
-        <location filename="../preprocessordatamodel.cpp" line="895"/>
-        <location filename="../preprocessordatamodel.cpp" line="962"/>
-        <location filename="../preprocessordatamodel.cpp" line="974"/>
+        <location filename="../preprocessordatamodel.cpp" line="471"/>
+        <location filename="../preprocessordatamodel.cpp" line="885"/>
+        <location filename="../preprocessordatamodel.cpp" line="897"/>
+        <location filename="../preprocessordatamodel.cpp" line="964"/>
+        <location filename="../preprocessordatamodel.cpp" line="976"/>
         <source>&amp;Grid</source>
         <translation>格子(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="493"/>
+        <location filename="../preprocessordatamodel.cpp" line="495"/>
         <source>&amp;Attributes Mapping</source>
         <translation>属性のマッピング(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="573"/>
+        <location filename="../preprocessordatamodel.cpp" line="575"/>
         <source>&amp;Measured Values</source>
         <translation>実測値(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="574"/>
+        <location filename="../preprocessordatamodel.cpp" line="576"/>
         <source>&amp;Scalar...</source>
         <translation>スカラー(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="575"/>
+        <location filename="../preprocessordatamodel.cpp" line="577"/>
         <source>&amp;Arrows...</source>
         <translation>ベクトル(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="577"/>
+        <location filename="../preprocessordatamodel.cpp" line="579"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
@@ -621,47 +620,47 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">格子生成条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="767"/>
-        <location filename="../preprocessordatamodel.cpp" line="947"/>
+        <location filename="../preprocessordatamodel.cpp" line="769"/>
+        <location filename="../preprocessordatamodel.cpp" line="949"/>
         <source>&amp;Grid...</source>
         <translation>格子(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="794"/>
+        <location filename="../preprocessordatamodel.cpp" line="796"/>
         <source>Grid Creating Condition</source>
         <translation>格子生成条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1027"/>
-        <location filename="../preprocessordatamodel.cpp" line="1057"/>
+        <location filename="../preprocessordatamodel.cpp" line="1029"/>
+        <location filename="../preprocessordatamodel.cpp" line="1059"/>
+        <location filename="../preprocessordatamodel.cpp" line="1073"/>
         <source>(No data to import)</source>
         <translation>(インポートできる地理情報がありません)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1151"/>
+        <location filename="../preprocessordatamodel.cpp" line="1160"/>
         <source>(No data to export)</source>
         <translation>(エクスポートできる地理情報がありません)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1220"/>
+        <location filename="../preprocessordatamodel.cpp" line="1229"/>
         <source>(No algorithm is selected yet)</source>
         <translation>(アルゴリズムが選択されていません)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1284"/>
+        <location filename="../preprocessordatamodel.cpp" line="1293"/>
         <source>Add New %1</source>
         <translation>新しい%1を追加</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="134"/>
-        <location filename="../preprocessordatamodel.cpp" line="1351"/>
-        <location filename="../preprocessordatamodel.cpp" line="1377"/>
-        <location filename="../preprocessordatamodel.cpp" line="1433"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
+        <location filename="../preprocessordatamodel.cpp" line="1357"/>
+        <location filename="../preprocessordatamodel.cpp" line="1383"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="134"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
         <translation>ソルバーが実行中です。計算条件を表示することはできますが、更新できません。</translation>
     </message>
@@ -670,73 +669,66 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="711"/>
-        <location filename="../preprocessordatamodel.cpp" line="739"/>
+        <location filename="../preprocessordatamodel.cpp" line="713"/>
+        <location filename="../preprocessordatamodel.cpp" line="741"/>
         <source>Gr&amp;id Creating Condition...</source>
         <translation>格子生成条件 (&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="782"/>
-        <location filename="../preprocessordatamodel.cpp" line="832"/>
-        <location filename="../preprocessordatamodel.cpp" line="844"/>
+        <location filename="../preprocessordatamodel.cpp" line="784"/>
+        <location filename="../preprocessordatamodel.cpp" line="834"/>
+        <location filename="../preprocessordatamodel.cpp" line="846"/>
         <source>Gr&amp;id Creating Condition</source>
         <translation>格子生成条件 (&amp;I)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1224"/>
+        <location filename="../preprocessordatamodel.cpp" line="1233"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1351"/>
+        <location filename="../preprocessordatamodel.cpp" line="1357"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation>%1 を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1377"/>
+        <location filename="../preprocessordatamodel.cpp" line="1383"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
         <translation>境界条件設定 &quot;%1&quot; を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1391"/>
-        <location filename="../preprocessordatamodel.cpp" line="1460"/>
+        <location filename="../preprocessordatamodel.cpp" line="1397"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1391"/>
+        <location filename="../preprocessordatamodel.cpp" line="1397"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation>地形データと境界条件のマッピングが完了しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1433"/>
         <source>There is no geographic data to import this hydraulic data.</source>
-        <translation>この水理情報をインポートできる地理情報がありません。</translation>
+        <translation type="vanished">この水理情報をインポートできる地理情報がありません。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1442"/>
         <source>Select geographic data</source>
-        <translation>地理情報の選択</translation>
+        <translation type="vanished">地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1443"/>
         <source>Please select the geographic data to import hydraulic data.</source>
-        <translation>この水理情報をインポートする対象の地理情報を選択してください。</translation>
+        <translation type="vanished">この水理情報をインポートする対象の地理情報を選択してください。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1460"/>
         <source>Importing %1 succeeded.</source>
-        <translation>%1 のインポートが成功しました。</translation>
+        <translation type="vanished">%1 のインポートが成功しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1464"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1464"/>
         <source>Importing %1 failed.</source>
-        <translation>%1 のインポートが失敗しました。</translation>
+        <translation type="vanished">%1 のインポートが失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -836,8 +828,12 @@ Do you really want to import grid from this file?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
         <source>File type can not be recognized from the file extension. : %1</source>
+        <translation type="vanished">データの種類が拡張子から認識できません。 : %1</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
+        <source>File type cannot be recognized from the file extension. : %1</source>
         <translation>データの種類が拡張子から認識できません。 : %1</translation>
     </message>
     <message>
@@ -1970,14 +1966,71 @@ This algorithm can be used only for structured grids.</source>
         <translation>新しい格子を追加</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="129"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="149"/>
         <source>Region</source>
         <translation>領域</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="134"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="154"/>
         <source>Region%1</source>
         <translation>領域%1</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorHydraulicDataGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="105"/>
+        <source>All importable files (%1)</source>
+        <translation>全てのインポート可能なファイル (%1)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="109"/>
+        <source>Select file to import</source>
+        <translation>インポートするファイルの選択</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="121"/>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="121"/>
+        <source>File type cannot be recognized from the file extension. : %1</source>
+        <translation>データの種類が拡張子から認識できません。 : %1</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="135"/>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="139"/>
+        <source>Import failed</source>
+        <translation>インポート失敗</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="135"/>
+        <source>Importing data from %1 failed.</source>
+        <translation>%1 からデータをインポートするのに失敗しました。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="139"/>
+        <source>%1 contains no data to import.</source>
+        <translation>%1 にはインポートできるデータが含まれていません。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+%1</source>
+        <translation>指定されたファイルには不正なデータがあり、無視されました。無視されたデータは以下の通りです。:
+%1</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>
+        <source>Data is successfully imported from %1.</source>
+        <translation>データが %1 からインポートされました。</translation>
     </message>
 </context>
 <context>
