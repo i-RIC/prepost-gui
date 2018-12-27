@@ -20,16 +20,21 @@ class PREDLL_EXPORT PreProcessorGridTypeDataItem : public PreProcessorGridTypeDa
 public:
 	PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~PreProcessorGridTypeDataItem();
-	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override {return m_conditions;}
+
 	const std::string& name() const;
-	PreProcessorGeoDataTopDataItemInterface* geoDataTop() const override {return m_geoDataTop;}
+	SolverDefinitionGridType* gridType() const override;
+
+	PreProcessorGeoDataTopDataItemInterface* geoDataTop() const override;
+	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTop() const override;
+
+	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override;
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const std::string& name) const;
-	SolverDefinitionGridType* gridType() const override {return m_gridType;}
+
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
-	ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const override {return m_scalarsToColors.value(attName, 0);}
-	QAction* addNewGridAction() {return m_addNewGridAction;}
+	ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const override;
+	QAction* addNewGridAction() const;
 	bool isGridEdited() const;
 	void setGridEdited();
 
@@ -48,8 +53,10 @@ private:
 	void setupScalarsToColors(SolverDefinitionGridType* type);
 	QString nextChildCaption();
 	std::string nextChildZonename();
+
 	SolverDefinitionGridType* m_gridType;
 	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
+	PreProcessorHydraulicDataTopDataItemInterface* m_hydraulicDataTop;
 	QMap<std::string, ScalarsToColorsContainer*> m_scalarsToColors;
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
 	/// Action to add new condition.

@@ -31,6 +31,7 @@
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
 #include <QAction>
@@ -67,8 +68,10 @@
 
 #include <iriclib_riversurvey.h>
 
-GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att)
-	: GeoData(d, creator, att)
+const int GeoDataRiverSurvey::WSE_NAME_MAXLENGTH = 16;
+
+GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
+	GeoData(d, creator, att)
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
@@ -413,9 +416,6 @@ void GeoDataRiverSurvey::setupMenu()
 	m_menu->addSeparator();
 	m_menu->addAction(m_showBackgroundAction);
 
-//	m_menu->addSeparator();
-//	m_menu->addAction(m_reverseAction);
-
 	m_menu->addSeparator();
 	QMenu* iMenu = m_menu->addMenu(tr("Interpolation Mode"));
 	iMenu->addAction(m_interpolateSplineAction);
@@ -464,7 +464,7 @@ void GeoDataRiverSurvey::setupDataItem()
 		}
 	}
 	auto cs = new ColorSource(this);
-	cs->load(":/libs/guicore/data/colorsource_rs.xml");
+	cs->load(":/libs/geodata/riversurvey/data/colorsource_rs.xml");
 
 	m_setting.crosssectionLinesColor = cs->getColor(rcount);
 	delete cs;
@@ -1779,8 +1779,7 @@ void GeoDataRiverSurvey::setupActions()
 	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), this, SLOT(removeRightExtensionPoint()));
 	m_openCrossSectionWindowAction = new QAction(tr("Display &Cross Section"), this);
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
-//	m_openVerticalSectionWindowAction = new QAction(tr("Display &Vertical Section"), this);
-//	m_reverseAction = new QAction(tr("Reverse &KP Representation"), this);
+
 	m_showBackgroundAction = new QAction(tr("Display &Setting"), this);
 	connect(m_showBackgroundAction, SIGNAL(triggered()), this, SLOT(displaySetting()));
 	m_interpolateSplineAction = new QAction(tr("Spline"), this);

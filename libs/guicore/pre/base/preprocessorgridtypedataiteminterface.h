@@ -8,6 +8,7 @@ class QString;
 class ScalarsToColorsContainer;
 class SolverDefinitionGridType;
 class PreProcessorGeoDataTopDataItemInterface;
+class PreProcessorHydraulicDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
 
 class PreProcessorGridTypeDataItemInterface : public PreProcessorDataItem
@@ -23,6 +24,7 @@ public:
 	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const = 0;
 	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTop() const = 0;
+	virtual PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTop() const = 0;
 };
 
 #endif // PREPROCESSORGRIDTYPEDATAITEMINTERFACE_H

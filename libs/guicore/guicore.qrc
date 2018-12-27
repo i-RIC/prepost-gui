@@ -4,7 +4,6 @@
         <file>images/iconPinFree.png</file>
         <file>data/colorsource.xml</file>
         <file>data/colorsource_cell.xml</file>
-        <file>data/colorsource_rs.xml</file>
         <file>images/cursorImageMove.png</file>
         <file>images/cursorImageRotate.png</file>
         <file>images/cursorImageZoom.png</file>

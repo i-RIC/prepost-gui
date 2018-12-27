@@ -1,73 +1,103 @@
+#include "hydraulicdatariversurveywaterelevation.h"
 #include "hydraulicdatariversurveywaterelevationimporter.h"
 
-#include <geodata/riversurvey/geodatariversurvey.h>
-
 #include <QFile>
-#include <QMap>
 #include <QMessageBox>
-#include <QStringList>
+#include <QString>
 #include <QTextStream>
 
-HydraulicDataRiverSurveyWaterElevationImporter::HydraulicDataRiverSurveyWaterElevationImporter()
+HydraulicDataRiverSurveyWaterElevationImporter::HydraulicDataRiverSurveyWaterElevationImporter(HydraulicDataCreator* creator) :
+	HydraulicDataImporter {creator}
+{}
+
+QStringList HydraulicDataRiverSurveyWaterElevationImporter::fileDialogFilters()
 {
-	m_caption = tr("Water Elevation");
+	QStringList ret;
+	ret.append(tr("CSV file (*.csv)"));
+	ret.append(tr("Text file (*.txt)"));
+	return ret;
 }
 
-bool HydraulicDataRiverSurveyWaterElevationImporter::import(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
+QStringList HydraulicDataRiverSurveyWaterElevationImporter::acceptableExtensions()
 {
-	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
+	QStringList ret;
+	ret << "csv" << "txt";
+	return ret;
+}
 
+bool HydraulicDataRiverSurveyWaterElevationImporter::importData(HydraulicData* data, int index, const std::set<QString>& usedCaptions, QWidget* w)
+{
+	QFile file(filename());
+	if (! file.open(QIODevice::ReadOnly)) {
+		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(filename()));
+		return false;
+	}
+
+	auto we = dynamic_cast<HydraulicDataRiverSurveyWaterElevation*> (data);
+
+	QTextStream in(&file);
+
+	QString line = in.readLine();
+	QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::KeepEmptyParts);
+	QString origCaption = pieces.at(index + 1);
+	QString caption = origCaption;
+
+	int copyIndex = 1;
+	while (usedCaptions.find(caption) != usedCaptions.end()) {
+		caption = QString("%1(%2)").arg(origCaption).arg(copyIndex);
+		++ copyIndex;
+	}
+	we->setCaption(caption);
+	we->clear();
+
+	do {
+		line = in.readLine();
+		if (! line.isEmpty()) {
+			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::KeepEmptyParts);
+			QString name = pieces.at(0);
+			QString val = pieces.at(index + 1);
+			bool ok;
+			double doubleVal = val.toDouble(&ok);
+			if (! ok) {
+				int result = QMessageBox::warning(w, tr("Warning"), tr("In the column for %1, the value \"%2\" for cross section \"%3\" is invalid. The value is ignored.").
+																					arg(origCaption).arg(val).arg(name),
+																					QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
+				if (result == QMessageBox::Cancel) {
+					QMessageBox::information(w, tr("Information"), tr("Importing %1 canceled.").arg(origCaption));
+					return false;
+				}
+			} else {
+				we->addItem(name, true, doubleVal);
+			}
+		}
+	} while (! line.isEmpty());
+	file.close();
+	return true;
+}
+
+bool HydraulicDataRiverSurveyWaterElevationImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, QWidget* w)
+{
 	QFile file(filename);
 	if (! file.open(QIODevice::ReadOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(filename));
 		return false;
 	}
 
-	QMap<QString, GeoDataRiverPathPoint*> pmap;
-	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	while (p != nullptr) {
-		pmap.insert(p->name(), p);
-		p = p->nextPoint();
-	}
 	QTextStream in(&file);
-	QStringList skipped;
 
-	// skip the first line (header).
-	QString header;
-	header = in.readLine();
-	QString line;
+	QString line = in.readLine();
+	QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::KeepEmptyParts);
+	*count = pieces.size() - 1;
 	do {
 		line = in.readLine();
 		if (! line.isEmpty()) {
-			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-			QString kp = pieces.value(0);
-			double height = pieces.value(1).toDouble();
-			GeoDataRiverPathPoint* point = pmap.value(kp, nullptr);
-			if (point == nullptr) {
-				skipped.append(kp);
-			} else {
-				point->setWaterSurfaceElevation(height);
+			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::KeepEmptyParts);
+			if (*count != pieces.size() - 1) {
+				QMessageBox::critical(w, tr("Error"), tr("The number of items must be the same in every line."));
+				return false;
 			}
 		}
 	} while (! line.isEmpty());
 	file.close();
-
-	if (skipped.size() > 0) {
-		QMessageBox::warning(w, tr("Warning"), tr("Data with KP values %1 are ignored.").arg(skipped.join(", ")));
-	}
 	return true;
-}
-
-bool HydraulicDataRiverSurveyWaterElevationImporter::canImportTo(GeoData* data)
-{
-	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
-	return (rs != nullptr);
-}
-
-const QStringList HydraulicDataRiverSurveyWaterElevationImporter::fileDialogFilters()
-{
-	QStringList ret;
-	ret.append(tr("CSV file (*.csv)"));
-	ret.append(tr("Text file (*.txt)"));
-	return ret;
 }

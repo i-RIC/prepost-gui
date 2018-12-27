@@ -200,7 +200,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 				if (extMap.contains(extension)) {
 					importer = extMap.value(extension);
 				} else {
-					QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("File type can not be recognized from the file extension. : %1").arg(finfo.fileName()));
+					QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("File type cannot be recognized from the file extension. : %1").arg(finfo.fileName()));
 					return;
 				}
 			} else {

@@ -23,15 +23,12 @@ class PreProcessorGeoDataTopDataItem : public PreProcessorGeoDataTopDataItemInte
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent);
-	/// Destructor
 	~PreProcessorGeoDataTopDataItem();
-	SolverDefinitionGridType* gridType() override {
-		return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent())->gridType();
-	}
+
+	SolverDefinitionGridType* gridType() const override;
 	const QList<PreProcessorGeoDataGroupDataItemInterface*> groupDataItems() const override;
-	PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) override;
+	PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) const override;
 	void informValueRangeChange(const std::string& name);
 	void informDataChange();
 	void setupActors();

@@ -51,6 +51,8 @@ class GD_RIVERSURVEY_EXPORT GeoDataRiverSurvey : public GeoData
 	Q_OBJECT
 
 public:
+	static const int WSE_NAME_MAXLENGTH;
+
 	enum MouseEventMode {
 		meNormal,
 		meTranslate,
@@ -115,6 +117,7 @@ public:
 	void cancelBackgroundGridUpdate();
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode);
 	void informCtrlPointUpdateToCrosssectionWindows();
+
 	GeoDataProxy* getProxy() override;
 
 private slots:
@@ -145,6 +148,7 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void updateFilename() override;

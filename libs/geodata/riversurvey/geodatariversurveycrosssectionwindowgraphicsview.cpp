@@ -12,7 +12,10 @@
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataiteminterface.h>
 #include <guicore/project/projectdataitem.h>
+#include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
+#include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationitem.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 
@@ -63,6 +66,7 @@ int findRowToDraw(const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRe
 {
 	return findRowToDraw(0, rect, drawnRects);
 }
+const int WSE_WIDTH = 120;
 
 } // namespace
 
@@ -72,9 +76,9 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	fRightMargin {0.2},
 	fTopMargin {0.2},
 	fBottomMargin {0.2},
-	m_mouseEventMode {meNormal},
-	m_rubberBand {nullptr},
 	m_rightClickingMenu {nullptr},
+	m_rubberBand {nullptr},
+	m_mouseEventMode {meNormal},
 	m_gridMode {false}
 {
 	// Set cursors for mouse view change events.
@@ -138,7 +142,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 	// Draw scales.
 	drawScales(painter, matrix);
 	// draw water surface.
-	drawWaterSurfaceElevation(m_parentWindow->target(), painter, matrix);
+	drawWaterSurfaceElevations(painter, matrix);
 	// draw poly line cross points.
 	drawPolyLineCrossPoints(painter);
 
@@ -553,11 +557,34 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 	painter.setPen(oldPen);
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation(GeoDataRiverPathPoint* point, QPainter& painter, const QMatrix& matrix)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix)
 {
-	if (point == nullptr) {return;}
-	if (! point->waterSurfaceElevationSpecified()) {return;}
-	double ele = point->waterSurfaceElevationValue();
+	auto weGroup = m_parentWindow->waterElevationGroup();
+	if (weGroup == nullptr) {return;}
+
+	for (int i = 0; i < weGroup->hydraulicDatas().size(); ++i) {
+		drawWaterSurfaceElevation(i, painter, matrix);
+	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix)
+{
+	auto weGroup = m_parentWindow->waterElevationGroup();
+	if (weGroup == nullptr) {return;}
+
+	auto name = m_parentWindow->crosssectionName();
+	auto we = m_parentWindow->waterElevation(index);
+
+	bool specified = false;
+	double val = 0;
+
+	auto weItem = we->getItem(name);
+	if (weItem != nullptr) {
+		specified = weItem->isSpecified();
+		val = weItem->value();
+	}
+
+	if (! specified) {return;}
 
 	QWidget* w = viewport();
 	QMatrix invMatrix = matrix.inverted();
@@ -565,35 +592,38 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation
 	mins = invMatrix.map(QPointF(0, w->height()));
 	maxs = invMatrix.map(QPointF(w->width(), 0));
 
-	QPointF from = matrix.map(QPointF(0, ele));
+	QPointF from = matrix.map(QPointF(0, val));
 	from.setX(0);
 	QPointF to(w->width(), from.y());
 
 	QPen oldPen = painter.pen();
-	QPen pen(Qt::blue);
+	QPen pen(we->color());
 	painter.setPen(pen);
 	painter.drawLine(from, to);
 
 	QPointF points[6];
-	points[0] = QPointF(w->width() * 0.5, from.y() - 5);
-	points[1] = QPointF(w->width() * 0.5 + 5, from.y() - 15);
+
+	int wse_offset = w->width() - WSE_WIDTH;
+
+	points[0] = QPointF(wse_offset, from.y() - 5);
+	points[1] = QPointF(wse_offset + 5, from.y() - 15);
 	points[2] = points[1];
-	points[3] = QPointF(w->width() * 0.5 - 5, from.y() - 15);
+	points[3] = QPointF(wse_offset - 5, from.y() - 15);
 	points[4] = points[3];
 	points[5] = points[0];
 
 	painter.drawLines(points, 3);
 
 	QRectF fontRect;
-	fontRect = QRectF(w->width() * 0.5 + 10, from.y() - 20, 40, 20);
+	fontRect = QRectF(wse_offset + 10, from.y() - 20, WSE_WIDTH, 20);
 	int precision = 2;
 	double limit = 1;
 	for (int i = 0; i < 5; ++i) {
-		if (ele <= -limit || limit <= ele) {++ precision;}
+		if (val <= -limit || limit <= val) {++ precision;}
 		limit *= 10;
 	}
-
-	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignVCenter, QString::number(ele, 'g', precision));
+	QString caption = QString("%1: %2").arg(we->caption()).arg(QString::number(val, 'g', precision));
+	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignVCenter, caption);
 
 	painter.setPen(oldPen);
 }

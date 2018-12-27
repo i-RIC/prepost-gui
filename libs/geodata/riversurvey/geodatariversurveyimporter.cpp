@@ -355,6 +355,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 			newPoint->shiftCenter(shiftValue);
 		}
 		newPoint->InhibitInterpolatorUpdate = false;
+
 		tail->addPathPoint(newPoint);
 		tail = newPoint;
 	}

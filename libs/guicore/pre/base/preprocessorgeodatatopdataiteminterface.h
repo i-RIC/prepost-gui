@@ -15,9 +15,9 @@ public:
 	PreProcessorGeoDataTopDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorGeoDataTopDataItemInterface();
 
-	virtual SolverDefinitionGridType* gridType() = 0;
+	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGeoDataGroupDataItemInterface*> groupDataItems() const = 0;
-	virtual PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) = 0;
+	virtual PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) const = 0;
 	/// Set all dimensions to the first.
 	virtual void setDimensionsToFirst() = 0;
 };

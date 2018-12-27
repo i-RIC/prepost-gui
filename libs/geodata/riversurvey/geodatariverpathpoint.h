@@ -23,6 +23,7 @@ class LinearLXSecInterpolator;
 class LinearRXSecInterpolator;
 class Structured2DGrid;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
+class HydraulicDataRiverSurveyWaterElevation;
 
 namespace iRICLib
 {
@@ -180,10 +181,6 @@ public:
 
 	QVector2D CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index);
 	QVector2D CtrlPointPosition2D(CtrlPointPosition pos, double d);
-	void clearWaterSurfaceElevation();
-	void setWaterSurfaceElevation(double value);
-	bool waterSurfaceElevationSpecified() const;
-	double waterSurfaceElevationValue() const;
 
 	QList<QVector2D> CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num);
 	bool gridSkip() const;
@@ -232,7 +229,7 @@ public:
 	void thisToNextRegion(QVector2D& mins, QVector2D& maxs);
 	void UpdateCtrlSections();
 	vtkStructuredGrid* areaGrid() const;
-	std::vector<int> getPointsToInactivateUsingWaterElevation();
+	std::vector<int> getPointsToInactivateUsingWaterElevation(HydraulicDataRiverSurveyWaterElevation* we);
 	void loadFromiRICLibObject(const iRICLib::RiverPathPoint* p);
 	void saveToiRICLibObject(iRICLib::RiverPathPoint* p);
 
@@ -252,8 +249,6 @@ private:
 	GeoDataRiverPathPoint* m_previousPoint;
 	GeoDataRiverPathPoint* m_nextPoint;
 	QVector2D m_position;
-	bool m_waterSurfaceElevationSpecified;
-	double m_waterSurfaceElevationValue;
 
 	QVector2D m_crosssectionDirection;
 

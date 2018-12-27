@@ -7,11 +7,15 @@
 #include "../base/preprocessorgridtypedataiteminterface.h"
 #include "../base/preprocessorgeodatadataiteminterface.h"
 #include "../base/preprocessorgeodatagroupdataiteminterface.h"
+#include "../base/preprocessorgeodatatopdataiteminterface.h"
 #include "../base/preprocessorwindowinterface.h"
 #include "geodata.h"
 #include "geodatacreator.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessorhydraulicdatatopdataiteminterface.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/zdepthrange.h>
 
@@ -310,9 +314,34 @@ PreProcessorWindowInterface* GeoData::preProcessorWindow()
 	return dynamic_cast<PreProcessorWindowInterface*>(geoDataDataItem()->mainWindow());
 }
 
+
+PreProcessorGeoDataTopDataItemInterface* GeoData::geoDataTopDataItem() const
+{
+	return dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>(geoDataGroupDataItem()->parent());
+}
+
+PreProcessorGeoDataGroupDataItemInterface* GeoData::geoDataGroupDataItem() const
+{
+	return dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(geoDataDataItem()->parent());
+}
+
 PreProcessorGeoDataDataItemInterface* GeoData::geoDataDataItem() const
 {
 	return dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+}
+
+PreProcessorHydraulicDataTopDataItemInterface* GeoData::hydraulicDataTopDataItem() const
+{
+	auto gridTypeName = geoDataTopDataItem()->gridType()->name();
+	return dataModel()->hydraulicDataTopDataItem(gridTypeName);
+}
+
+PreProcessorHydraulicDataGroupDataItemInterface* GeoData::hydraulicDataGroupDataItem(const std::string& name) const
+{
+	auto topDataItem = hydraulicDataTopDataItem();
+	if (topDataItem == nullptr) {return nullptr;}
+
+	return topDataItem->groupDataItem(name);
 }
 
 void GeoData::pushCommand(QUndoCommand* com)
@@ -373,7 +402,7 @@ MouseBoundingBox* GeoData::mouseBoundingBox()
 	return r->mouseBoundingBox();
 }
 
-PreProcessorDataModelInterface* GeoData::dataModel()
+PreProcessorDataModelInterface* GeoData::dataModel() const
 {
 	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->dataModel();

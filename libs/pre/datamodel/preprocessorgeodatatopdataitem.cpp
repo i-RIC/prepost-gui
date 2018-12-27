@@ -240,6 +240,11 @@ void PreProcessorGeoDataTopDataItem::buildReferenceInformationAttribute()
 	m_referenceInformationAttribute->setIsReferenceInformation(true);
 }
 
+SolverDefinitionGridType* PreProcessorGeoDataTopDataItem::gridType() const
+{
+	return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent())->gridType();
+}
+
 const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDataItem::groupDataItems() const
 {
 	QList<PreProcessorGeoDataGroupDataItemInterface*> ret;
@@ -250,7 +255,7 @@ const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDa
 	return ret;
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const std::string& name)
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const std::string& name) const
 {
 	auto it = m_itemNameMap.find(name);
 	if (it == m_itemNameMap.end()) {return nullptr;}

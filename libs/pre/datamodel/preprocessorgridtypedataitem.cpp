@@ -4,12 +4,9 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
+#include "preprocessorhydraulicdatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 
-#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
-#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -41,6 +38,9 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	connect(m_geoDataTop, SIGNAL(valueRangeChanged(std::string)), this, SLOT(changeValueRange(std::string)));
 	m_childItems.push_back(m_geoDataTop);
 
+	m_hydraulicDataTop = new PreProcessorHydraulicDataTopDataItem(this);
+	m_childItems.push_back(m_hydraulicDataTop);
+
 	// add default grid, if this gridtype is not optional
 	if (! type->isOptional()) {
 		std::string zonename;
@@ -71,6 +71,26 @@ PreProcessorGridTypeDataItem::~PreProcessorGridTypeDataItem()
 const std::string& PreProcessorGridTypeDataItem::name() const
 {
 	return m_gridType->name();
+}
+
+SolverDefinitionGridType* PreProcessorGridTypeDataItem::gridType() const
+{
+	return m_gridType;
+}
+
+PreProcessorGeoDataTopDataItemInterface* PreProcessorGridTypeDataItem::geoDataTop() const
+{
+	return m_geoDataTop;
+}
+
+PreProcessorHydraulicDataTopDataItemInterface* PreProcessorGridTypeDataItem::hydraulicDataTop() const
+{
+	return m_hydraulicDataTop;
+}
+
+const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& PreProcessorGridTypeDataItem::conditions() const
+{
+	return m_conditions;
 }
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const std::string& zonename) const
@@ -186,6 +206,16 @@ bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& captio
 	return true;
 }
 
+ScalarsToColorsContainer* PreProcessorGridTypeDataItem::scalarsToColors(const std::string& attName) const
+{
+	return m_scalarsToColors.value(attName, nullptr);
+}
+
+QAction* PreProcessorGridTypeDataItem::addNewGridAction() const
+{
+	return m_addNewGridAction;
+}
+
 void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	// load colormap data
@@ -208,6 +238,11 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		m_geoDataTop->loadFromProjectMainFile(gdNode);
 	} else if (! rdNode.isNull()) {
 		m_geoDataTop->loadFromProjectMainFile(rdNode);
+	}
+	// load hydraulic data.
+	QDomNode hdNode = iRIC::getChildNode(node, "HydraulicData");
+	if (! hdNode.isNull()) {
+		m_hydraulicDataTop->loadFromProjectMainFile(hdNode);
 	}
 
 	// load region datas.
@@ -263,6 +298,11 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	// write raw data.
 	writer.writeStartElement("GeoData");
 	m_geoDataTop->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	// write hydraulic data.
+	writer.writeStartElement("HydraulicData");
+	m_hydraulicDataTop->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	// write region datas.
