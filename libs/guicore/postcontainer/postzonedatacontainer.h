@@ -11,6 +11,7 @@
 #include <vtkSmartPointer.h>
 #include <cgnslib.h>
 
+#include <map>
 #include <string>
 
 class RectRegion;
@@ -33,6 +34,9 @@ public:
 	vtkPointSet* data() const;
 	vtkPointSet* labelData() const;
 	vtkPolyData* particleData() const;
+	const std::map<std::string, vtkSmartPointer<vtkPolyData> >& polyDataMap() const;
+	vtkPolyData* polyData(const std::string& name) const;
+
 	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 
 	int baseId() const;
@@ -69,24 +73,20 @@ public:
 	std::vector<PostCalculatedResult*> detachCalculatedResult();
 	void attachCalculatedResult(std::vector<PostCalculatedResult*> results);
 
-protected:
-	void doApplyOffset(double x, double y) override;
-
 private:
 	bool setBaseId(const int fn);
 	bool setZoneId(const int fn);
 	bool loadZoneSize(const int fn);
 	virtual bool loadStructuredGrid(const int fn, const int currentStep);
 	bool loadUnstructuredGrid(const int fn, const int currentStep);
-	bool loadParticle(const int fn, const int currentStep);
 	bool findSolutionId(const int fn, const int currentStep, int* solId, const char* arrayName);
 	bool getCellSolutionId(const int fn, const int currentStep, int* solId);
 	bool getSolutionId(const int fn, const int currentStep, int* solId);
 	virtual bool loadGridScalarData(const int fn, const int solid);
 	virtual bool loadGridVectorData(const int fn, const int solid);
 
-	bool loadScalarData(vtkDataSetAttributes* atts, int firstAtt = 1);
-	bool loadVectorData(vtkDataSetAttributes* atts, int firstAtt = 1);
+	static bool loadScalarData(vtkDataSetAttributes* atts, int firstAtt = 1);
+	static bool loadVectorData(vtkDataSetAttributes* atts, int firstAtt = 1);
 
 	bool loadCellFlagData(const int fn);
 	bool setupIndexData();
@@ -95,6 +95,8 @@ private:
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x_diff, double y_diff) override;
+	void doApplyOffset(vtkPointSet* ps, double x_diff, double y_diff);
 
 	vtkPolyData* filteredDataStructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	vtkPolyData* filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
@@ -111,6 +113,7 @@ private:
 	vtkSmartPointer<vtkPointSet> m_labelData;
 	vtkSmartPointer<vtkPolyData> m_particleData;
 	std::vector<PostCalculatedResult*> m_calculatedResults;
+	std::map<std::string, vtkSmartPointer<vtkPolyData> > m_polyDataMap;
 	std::string m_baseName;
 	std::string m_zoneName;
 	int m_baseId;
@@ -120,6 +123,9 @@ private:
 
 	bool m_loadOK;
 	bool m_loadedOnce;
+
+	class ParticleLoader;
+	class PolyDataLoader;
 };
 
 #endif // POSTZONEDATACONTAINER_H

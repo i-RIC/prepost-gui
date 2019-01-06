@@ -4,8 +4,8 @@
 #include "../postbase_global.h"
 
 #include <misc/compositecontainer.h>
-#include <misc/intcontainer.h>
 #include <misc/colorcontainer.h>
+#include <misc/intcontainer.h>
 
 class POSTBASEDLL_EXPORT PostParticleBasicSetting : public CompositeContainer
 {
@@ -13,7 +13,7 @@ public:
 	PostParticleBasicSetting();
 	PostParticleBasicSetting(const PostParticleBasicSetting& s);
 
-	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+	PostParticleBasicSetting& operator=(const PostParticleBasicSetting& s);
 
 	ColorContainer color;
 	IntContainer size;

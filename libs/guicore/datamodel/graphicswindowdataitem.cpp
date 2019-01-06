@@ -529,6 +529,12 @@ QPointF GraphicsWindowDataItem::getOffset()
 	return p->getOffset();
 }
 
+void GraphicsWindowDataItem::addChildItem(GraphicsWindowDataItem* child)
+{
+	if (child == nullptr) {return;}
+	m_childItems.push_back(child);
+}
+
 void GraphicsWindowDataItem::clearChildItems()
 {
 	auto copy = m_childItems;

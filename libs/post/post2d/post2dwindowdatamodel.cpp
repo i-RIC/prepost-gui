@@ -9,6 +9,7 @@
 #include "datamodel/post2dwindownodevectorarrowgroupdataitem.h"
 #include "datamodel/post2dwindownodevectorparticlegroupdataitem.h"
 #include "datamodel/post2dwindownodevectorstreamlinegroupdataitem.h"
+#include "datamodel/post2dwindowpolydatagroupdataitem.h"
 #include "datamodel/post2dwindowrootdataitem.h"
 #include "datamodel/post2dwindowzonedataitem.h"
 #include "post2dwindow.h"
@@ -188,6 +189,14 @@ void Post2dWindowDataModel::particleSetting()
 	item->showPropertyDialog();
 }
 
+void Post2dWindowDataModel::polygonSetting()
+{
+	auto item = getPolyDataGroupItem();
+	if (item == nullptr) {return;}
+
+	item->showPropertyDialog();
+}
+
 void Post2dWindowDataModel::cellFlagSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
@@ -254,6 +263,17 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 		zitem = zonelist.at(0);
 		return zitem;
 	}
+}
+
+Post2dWindowPolyDataGroupDataItem* Post2dWindowDataModel::getPolyDataGroupItem()
+{
+	GraphicsWindowDataItem* item = m_selectedItem;
+	while (item != nullptr) {
+		auto mitem = dynamic_cast<Post2dWindowPolyDataGroupDataItem*> (item);
+		if (mitem != nullptr) {return mitem;}
+		item = dynamic_cast<GraphicsWindowDataItem*> (item->parent());
+	}
+	return nullptr;
 }
 
 MeasuredDataFileDataItem* Post2dWindowDataModel::getMeasuredDataFileDataItem()

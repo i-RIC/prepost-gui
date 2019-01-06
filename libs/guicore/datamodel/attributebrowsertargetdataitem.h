@@ -4,16 +4,13 @@
 #include "../guicore_global.h"
 #include "graphicswindowdataitem.h"
 
-#include <vtkActor.h>
-#include <vtkAxesActor.h>
-#include <vtkOrientationMarkerWidget.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkPolygon.h>
-#include <vtkSmartPointer.h>
+#include <guibase/polygon/polygoncontroller.h>
+#include <guibase/polyline/polylinecontroller.h>
 
-class QVector2D;
+class QPointF;
 class QPolygonF;
+
+class vtkCell;
 
 class GUICOREDLL_EXPORT AttributeBrowserTargetDataItem : public GraphicsWindowDataItem
 {
@@ -26,33 +23,20 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
-	void setPoint(const QVector2D& v);
+	void setPoint(const QPointF& v);
 	void setPolygon(const QPolygonF& p);
+	void setPolyline(const std::vector<QPointF>& l);
+	void setCell(vtkCell* cell);
 	void clear();
 
 private:
-	void setupContainers();
 	void setupActors();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	vtkSmartPointer<vtkPolygon> m_polygon;
-
-	vtkSmartPointer<vtkPolyData> m_vertex;
-	vtkSmartPointer<vtkPolyData> m_polygonEdge;
-	vtkSmartPointer<vtkPolyData> m_polygonPaint;
-
-	vtkSmartPointer<vtkPolyDataMapper> m_paintMapper;
-	vtkSmartPointer<vtkPolyDataMapper> m_edgeMapper;
-	vtkSmartPointer<vtkPolyDataMapper> m_vertexMapper;
-
-	vtkSmartPointer<vtkActor> m_paintActor;
-	vtkSmartPointer<vtkActor> m_edgeActor;
-	vtkSmartPointer<vtkActor> m_vertexActor;
-
-	vtkSmartPointer<vtkAxesActor> m_actor;
-	vtkSmartPointer<vtkOrientationMarkerWidget> m_widget;
+	PolygonController m_polygonController;
+	PolyLineController m_polylineController;
 };
 
 #endif // ATTRIBUTEBROWSERTARGETDATAITEM_H

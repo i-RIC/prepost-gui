@@ -171,7 +171,7 @@ protected:
 	void loadExpandState(const QDomNode& node);
 	void saveExpandState(QXmlStreamWriter& writer);
 	virtual QPointF getOffset();
-	/// Delete child items
+	void addChildItem(GraphicsWindowDataItem* child);
 	void clearChildItems();
 
 	std::vector<GraphicsWindowDataItem*> m_childItems;

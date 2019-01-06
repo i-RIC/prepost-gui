@@ -14,6 +14,7 @@ public:
 	virtual LookupTableContainer* nodeLookupTable(const std::string& attName) = 0;
 	virtual LookupTableContainer* cellLookupTable(const std::string& attName) = 0;
 	virtual LookupTableContainer* particleLookupTable(const std::string& attName) = 0;
+	virtual LookupTableContainer* polyDataLookupTable(const std::string& attName) = 0;
 };
 
 #endif // POSTWINDOWGRIDTYPEDATAITEMINTERFACE_H

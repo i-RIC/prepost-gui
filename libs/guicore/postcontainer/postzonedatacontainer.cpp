@@ -9,6 +9,8 @@
 #include "postcalculatedresult.h"
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
+#include "private/postzonedatacontainer_particleloader.h"
+#include "private/postzonedatacontainer_polydataloader.h"
 
 #include <cs/coordinatesystem.h>
 #include <guibase/vtkdatasetattributestool.h>
@@ -106,6 +108,7 @@ const double PostZoneDataContainer::IBCLimit {0.99};
 PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent) :
 	PostDataContainer {parent},
 	m_gridType {gridtype},
+	m_particleData {nullptr},
 	m_baseName (baseName),
 	m_zoneName (zoneName),
 	m_baseId {0},
@@ -138,6 +141,19 @@ vtkPointSet* PostZoneDataContainer::labelData() const
 vtkPolyData* PostZoneDataContainer::particleData() const
 {
 	return m_particleData;
+}
+
+const std::map<std::string, vtkSmartPointer<vtkPolyData> >& PostZoneDataContainer::polyDataMap() const
+{
+	return m_polyDataMap;
+}
+
+vtkPolyData* PostZoneDataContainer::polyData(const std::string& name) const
+{
+	auto it = m_polyDataMap.find(name);
+	if (it == m_polyDataMap.end()) {return nullptr;}
+
+	return it->second.Get();
 }
 
 int PostZoneDataContainer::baseId() const
@@ -443,97 +459,6 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 			insertQuadCells(fn, m_baseId, m_zoneId, S, grid);
 		}
 	}
-	return true;
-}
-
-bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
-{
-	int ier;
-
-	if (m_particleData != nullptr) {
-		m_particleData->Initialize();
-	} else {
-		m_particleData = vtkSmartPointer<vtkPolyData>::New();
-	}
-	// Find ParticleResult node.
-	char nodeName[ProjectCgnsFile::BUFFERLEN];
-	QString tmpNodeName = QString("ParticleSolution%1").arg(currentStep + 1);
-	strcpy(nodeName, iRIC::toStr(tmpNodeName).c_str());
-	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, nodeName, 0, "end");
-	if (ier != 0) {
-		// particle data does not exists.
-		// and it is not an error, because particle is optional data.
-		m_particleData = vtkSmartPointer<vtkPolyData>();
-
-		return true;
-	}
-
-	CgnsLinkFollower linkFollower;
-
-	// get array info in order to know the number of particles.
-	char aName[ProjectCgnsFile::BUFFERLEN];
-	DataType_t dType;
-	int d;
-	cgsize_t dVector[3];
-
-	// get the number of particles.
-	cg_array_info(1, aName, &dType, &d, dVector);
-
-	size_t numParticles = dVector[0];
-	std::vector<double> dataX(numParticles, 0);
-	std::vector<double> dataY(numParticles, 0);
-	std::vector<double> dataZ(numParticles, 0);
-
-	int firstAttId = 4;
-
-	// Read X
-	ier = cg_array_info(1, aName, &dType, &d, dVector);
-	if (ier != 0 || QString(aName) != "CoordinateX" || dVector[0] != numParticles) {
-		return false;
-	}
-	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	if (ier != 0) {return false;}
-
-	// Read Y
-	ier = cg_array_info(2, aName, &dType, &d, dVector);
-	if (ier != 0 || QString(aName) != "CoordinateY" || dVector[0] != numParticles) {
-		return false;
-	}
-	ier = cg_array_read_as(2, RealDouble, dataY.data());
-	if (ier != 0) {return false;}
-
-	// Read Z (optional)
-	ier = cg_array_info(3, aName, &dType, &d, dVector);
-	if (ier != 0 || QString(aName) != "CoordinateZ") {
-		// Z data does not exist;
-		firstAttId = 3;
-	} else {
-		if (dVector[0] != numParticles) {
-			return false;
-		}
-		ier = cg_array_read_as(3, RealDouble, dataZ.data());
-		if (ier != 0) {return false;}
-	}
-
-	// X, Y, Z are setup.
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkCellArray> verts = vtkSmartPointer<vtkCellArray>::New();
-	for (size_t i = 0; i < numParticles; ++i) {
-		points->InsertNextPoint(dataX[i], dataY[i], dataZ[i]);
-		vtkIdType pId = i;
-		verts->InsertNextCell(1, &pId);
-	}
-	points->Modified();
-	m_particleData->SetPoints(points);
-	m_particleData->SetVerts(verts);
-
-	vtkPointData* pd = m_particleData->GetPointData();
-
-	loadScalarData(pd, firstAttId);
-	loadVectorData(pd, firstAttId);
-
-	m_particleData->Modified();
-
 	return true;
 }
 
@@ -993,7 +918,9 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 	ret = setupIndexData();
 
 	// load particles
-	ret = loadParticle(fn, currentStep);
+	ret = ParticleLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_particleData, this->offset());
+	// load polydata
+	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_polyDataMap, this->offset());
 
 	if (! disableCalculatedResult) {
 		addCalculatedResultArrays();
@@ -1360,9 +1287,16 @@ void PostZoneDataContainer::applyOffset(double x_diff, double y_diff)
 
 void PostZoneDataContainer::doApplyOffset(double x_diff, double y_diff)
 {
-	vtkPointSet* grid = m_data;
+	doApplyOffset(m_data, x_diff, y_diff);
+	doApplyOffset(m_particleData, x_diff, y_diff);
+	for (auto pair : m_polyDataMap) {
+		doApplyOffset(pair.second, x_diff, y_diff);
+	}
+}
 
-	vtkPoints* points = grid->GetPoints();
+void PostZoneDataContainer::doApplyOffset(vtkPointSet* ps, double x_diff, double y_diff)
+{
+	vtkPoints* points = ps->GetPoints();
 	vtkIdType numPoints = points->GetNumberOfPoints();
 	double v[3];
 	for (vtkIdType id = 0; id < numPoints; ++id) {

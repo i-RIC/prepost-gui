@@ -84,7 +84,7 @@
     </message>
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="35"/>
-        <location filename="../post2dwindowactionmanager.cpp" line="66"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="69"/>
         <source>&amp;Arrows...</source>
         <translation>ベクトル(&amp;A)...</translation>
     </message>
@@ -99,7 +99,7 @@
         <translation>パーティクル(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="44"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="47"/>
         <source>&amp;Cell Attributes...</source>
         <translation>セル属性(&amp;C)...</translation>
     </message>
@@ -113,32 +113,37 @@
         <translation>コンター (格子点)(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="47"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="44"/>
+        <source>P&amp;olygons...</source>
+        <translation>ポリゴン (&amp;O)...</translation>
+    </message>
+    <message>
+        <location filename="../post2dwindowactionmanager.cpp" line="50"/>
         <source>Contours (ce&amp;ll center)...</source>
         <translation>コンター (セル中心) (&amp;L)...</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="52"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="55"/>
         <source>&amp;Title...</source>
         <translation>タイトル(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="55"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="58"/>
         <source>Ti&amp;me...</source>
         <translation>時刻(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="61"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="64"/>
         <source>&amp;Measured Data</source>
         <translation>実測値(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="63"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="66"/>
         <source>&amp;Scalar...</source>
         <translation>スカラー(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../post2dwindowactionmanager.cpp" line="71"/>
+        <location filename="../post2dwindowactionmanager.cpp" line="74"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
@@ -547,46 +552,46 @@
 <context>
     <name>Post2dWindowDataModel</name>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="112"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="113"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="112"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="113"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="144"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="161"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="173"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="185"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="205"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="145"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="162"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="174"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="186"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="214"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="144"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="145"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation>スカラー量の計算結果がないため、コンター設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="161"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="162"/>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
         <translation>ベクトル量の計算結果がないため、ベクトル設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="173"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="174"/>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
         <translation>ベクトル量の計算結果がないため、流線設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="185"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="186"/>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
         <translation>ベクトル量の計算結果がないため、パーティクル設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="205"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="214"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
         <translation>計算結果にセル中心での値が含まれていないため、コンター設定は行なえません。</translation>
     </message>
@@ -1334,6 +1339,27 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowPolyDataGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowpolydatagroupdataitem.cpp" line="229"/>
+        <source>PolyData value change</source>
+        <translation>ポリゴンの値変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.cpp" line="4"/>
+        <source>Edit Polygon Setting</source>
+        <translation>ポリゴンの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowpolydatatopdataitem.cpp" line="12"/>
+        <source>Polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowRawDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
@@ -1575,9 +1601,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="124"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="127"/>
         <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="130"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="133"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="136"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
@@ -1640,6 +1666,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="235"/>
         <source>Create Cell Contour</source>
         <translation>セルコンターの作成</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.cpp" line="10"/>
+        <source>Update Polygon Scalar Setting</source>
+        <translation>ポリゴンの値設定の更新</translation>
     </message>
 </context>
 </TS>

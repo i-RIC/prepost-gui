@@ -190,6 +190,57 @@
     </message>
 </context>
 <context>
+    <name>PostPolyDataBasicSettingDialog</name>
+    <message>
+        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="14"/>
+        <source>Polygon Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="22"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="53"/>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PostPolyDataScalarPropertyDialog</name>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="14"/>
+        <source>Polygon Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="26"/>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="64"/>
+        <source>Color by attribute value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="89"/>
+        <source>Attribute:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="127"/>
+        <source>Line Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="171"/>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PostTimeDataItem</name>
     <message>
         <location filename="../time/posttimedataitem.cpp" line="35"/>

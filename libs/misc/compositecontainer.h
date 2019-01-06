@@ -15,8 +15,8 @@ public:
 
 	/// @name XML file I/O functions
 	//@{
-	void load(const QDomNode&);
-	virtual void save(QXmlStreamWriter&) const;
+	void load(const QDomNode& node);
+	virtual void save(QXmlStreamWriter& writer) const;
 	//@}
 
 	/// @name Property setting functions
@@ -29,6 +29,7 @@ protected:
 	/// @name Protected constructors
 	//@{
 	CompositeContainer(std::initializer_list<XmlAttributeContainer*> list);
+	CompositeContainer() = delete;
 	CompositeContainer(const CompositeContainer& c) = delete;
 	//@}
 

@@ -40,6 +40,15 @@ PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContaine
 	return nullptr;
 }
 
+void insertLookupTableContainer(const std::string& name, QMap<std::string, LookupTableContainer*>* lookupTables, ProjectDataItem* parent)
+{
+	auto c = lookupTables->value(name, nullptr);
+	if (c != nullptr) {return;}
+
+	auto newContainer = new LookupTableContainer(parent);
+	lookupTables->insert(name, newContainer);
+}
+
 } // namespace
 
 Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
@@ -68,14 +77,14 @@ Post2dWindowGridTypeDataItem::~Post2dWindowGridTypeDataItem()
 	}
 }
 
+const std::string& Post2dWindowGridTypeDataItem::name() const
+{
+	return m_gridType->name();
+}
+
 const QList<Post2dWindowZoneDataItem*>& Post2dWindowGridTypeDataItem::zoneDatas() const
 {
 	return m_zoneDatas;
-}
-
-const std::string& Post2dWindowGridTypeDataItem::name()
-{
-	return m_gridType->name();
 }
 
 Post2dWindowZoneDataItem* Post2dWindowGridTypeDataItem::zoneData(const std::string& name) const
@@ -117,6 +126,14 @@ LookupTableContainer* Post2dWindowGridTypeDataItem::particleLookupTable(const st
 	return m_particleLookupTables.value(attName, nullptr);
 }
 
+LookupTableContainer* Post2dWindowGridTypeDataItem::polyDataLookupTable(const std::string& attName)
+{
+	if (m_polyDataLookupTables.find(attName) == m_polyDataLookupTables.end()) {
+		setupPolyDataScalarsToColors(attName);
+	}
+	return m_polyDataLookupTables.value(attName, nullptr);
+}
+
 void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 {
 	// first, clear the current zonedata.
@@ -142,26 +159,35 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 
 	if (zCont != nullptr) {
 		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
-			vtkPointData* pd = zCont->data()->GetPointData();
+			auto pd = zCont->data()->GetPointData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 				setupNodeScalarsToColors(name);
 			}
 			updateNodeLookupTableRanges();
 		}
 		if (m_cellLookupTables.count() == 0 && zones.size() != 0) {
-			vtkCellData* cd = zCont->data()->GetCellData();
+			auto cd = zCont->data()->GetCellData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
 				setupCellScalarsToColors(name);
 			}
 			updateCellLookupTableRanges();
 		}
 		if (zCont->particleData() != nullptr && m_particleLookupTables.count() == 0 && zones.size() != 0) {
-			vtkPointData* pd = zCont->particleData()->GetPointData();
+			auto pd = zCont->particleData()->GetPointData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 				setupParticleScalarsToColors(name);
 			}
 			updateParticleLookupTableRanges();
 		}
+		if (zCont->polyDataMap().size() > 0 && m_polyDataLookupTables.size() == 0 && zones.size() != 0) {
+			for (auto pair : zCont->polyDataMap()) {
+				auto cd = pair.second->GetCellData();
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
+					setupPolyDataScalarsToColors(name);
+				}
+			}
+		}
+		updatePolyDataLookupTableRanges();
 	}
 	assignActorZValues(m_zDepthRange);
 	m_isZoneDataItemsSetup = (zoneNum != 0);
@@ -175,7 +201,9 @@ void Post2dWindowGridTypeDataItem::update()
 	}
 	// update LookupTable range.
 	updateNodeLookupTableRanges();
+	updateCellLookupTableRanges();
 	updateParticleLookupTableRanges();
+	updatePolyDataLookupTableRanges();
 
 	// update child items.
 	for (Post2dWindowZoneDataItem* item : m_zoneDatas) {
@@ -234,6 +262,25 @@ void Post2dWindowGridTypeDataItem::updateParticleLookupTableRanges()
 	}
 }
 
+void Post2dWindowGridTypeDataItem::updatePolyDataLookupTableRanges()
+{
+	for (auto it = m_polyDataLookupTables.begin(); it != m_polyDataLookupTables.end(); ++it) {
+		std::string name = it.key();
+		ScalarsToColorsContainer* cont = it.value();
+		std::vector<vtkDataArray*> da;
+		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
+			Post2dWindowZoneDataItem* zitem = *zit;
+			if (zitem->dataContainer() == nullptr) {continue;}
+			for (auto pair : zitem->dataContainer()->polyDataMap()) {
+				vtkDataArray* dArray = pair.second->GetCellData()->GetArray(name.c_str());
+				if (dArray == nullptr) {continue;}
+				da.push_back(dArray);
+			}
+		}
+		ScalarsToColorsContainerUtil::setValueRange(cont, da);
+	}
+}
+
 void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode ltNode = iRIC::getChildNode(node, "LookupTables");
@@ -260,6 +307,18 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 			}
 		}
 	}
+	QDomNode pdltNode = iRIC::getChildNode(node, "PolyDataLookupTables");
+	if (!pltNode.isNull()) {
+		QDomNodeList tables = pdltNode.childNodes();
+		for (int i = 0; i < tables.length(); ++i) {
+			QDomNode ltNode = tables.at(i);
+			std::string ltName = iRIC::toStr(ltNode.toElement().attribute("name"));
+			LookupTableContainer* cont = m_polyDataLookupTables.value(ltName, nullptr);
+			if (cont != nullptr) {
+				cont->loadFromProjectMainFile(ltNode);
+			}
+		}
+	}
 	QDomNode rNode = iRIC::getChildNode(node, "GeoData");
 	if (! rNode.isNull() && m_geoDataItem != nullptr) {
 		m_geoDataItem->loadFromProjectMainFile(rNode);
@@ -281,6 +340,7 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_gridType->name().c_str());
+
 	writer.writeStartElement("LookupTables");
 	for (auto lit = m_nodeLookupTables.begin(); lit != m_nodeLookupTables.end(); ++lit) {
 		writer.writeStartElement("LookupTable");
@@ -290,8 +350,19 @@ void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
+
 	writer.writeStartElement("ParticleLookupTables");
 	for (auto lit = m_particleLookupTables.begin(); lit != m_particleLookupTables.end(); ++lit) {
+		writer.writeStartElement("LookupTable");
+		writer.writeAttribute("name", lit.key().c_str());
+		LookupTableContainer* cont = lit.value();
+		cont->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	writer.writeEndElement();
+
+	writer.writeStartElement("PolyDataLookupTables");
+	for (auto lit = m_polyDataLookupTables.begin(); lit != m_polyDataLookupTables.end(); ++lit) {
 		writer.writeStartElement("LookupTable");
 		writer.writeAttribute("name", lit.key().c_str());
 		LookupTableContainer* cont = lit.value();
@@ -317,18 +388,20 @@ void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 
 void Post2dWindowGridTypeDataItem::setupNodeScalarsToColors(const std::string& name)
 {
-	LookupTableContainer* c = new LookupTableContainer(this);
-	m_nodeLookupTables.insert(name, c);
+	insertLookupTableContainer(name, &m_nodeLookupTables, this);
 }
 
 void Post2dWindowGridTypeDataItem::setupCellScalarsToColors(const std::string& name)
 {
-	LookupTableContainer* c = new LookupTableContainer(this);
-	m_cellLookupTables.insert(name, c);
+	insertLookupTableContainer(name, &m_cellLookupTables, this);
 }
 
 void Post2dWindowGridTypeDataItem::setupParticleScalarsToColors(const std::string& name)
 {
-	LookupTableContainer* c = new LookupTableContainer(this);
-	m_particleLookupTables.insert(name, c);
+	insertLookupTableContainer(name, &m_particleLookupTables, this);
+}
+
+void Post2dWindowGridTypeDataItem::setupPolyDataScalarsToColors(const std::string& name)
+{
+	insertLookupTableContainer(name, &m_polyDataLookupTables, this);
 }

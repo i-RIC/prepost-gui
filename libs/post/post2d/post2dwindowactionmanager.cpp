@@ -41,6 +41,9 @@ void Post2dWindowActionManager::setupDrawMenu()
 	drawParticleAction = new QAction(tr("&Particles..."), this);
 	m_drawMenu->addAction(drawParticleAction);
 
+	drawPolygonAction = new QAction(tr("P&olygons..."), this);
+	m_drawMenu->addAction(drawPolygonAction);
+
 	drawCellFlagAction = new QAction(tr("&Cell Attributes..."), this);
 	m_drawMenu->addAction(drawCellFlagAction);
 
@@ -79,6 +82,7 @@ void Post2dWindowActionManager::connectWithDataModel()
 	connect(drawArrowAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(vectorSetting()));
 	connect(drawStreamlineAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(streamlineSetting()));
 	connect(drawParticleAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(particleSetting()));
+	connect(drawPolygonAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(polygonSetting()));
 	connect(drawCellFlagAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(cellFlagSetting()));
 	connect(drawCellScalarAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(cellScalarSetting()));
 	connect(drawTitleAction, SIGNAL(triggered()), m_post2dWindow->m_dataModel, SLOT(titleSetting()));

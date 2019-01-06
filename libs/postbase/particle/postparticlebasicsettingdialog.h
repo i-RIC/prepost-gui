@@ -5,10 +5,6 @@
 
 #include "postparticlebasicsetting.h"
 
-#include <misc/compositecontainer.h>
-#include <misc/intcontainer.h>
-#include <misc/colorcontainer.h>
-
 #include <QDialog>
 
 class QColor;
@@ -23,7 +19,7 @@ class POSTBASEDLL_EXPORT PostParticleBasicSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PostParticleBasicSettingDialog(QWidget* parent = 0);
+	explicit PostParticleBasicSettingDialog(QWidget* parent = nullptr);
 	~PostParticleBasicSettingDialog();
 
 	PostParticleBasicSetting setting() const;

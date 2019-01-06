@@ -27,6 +27,7 @@ public:
 	LookupTableContainer* nodeLookupTable(const std::string& attName) override;
 	LookupTableContainer* cellLookupTable(const std::string& attName) override;
 	LookupTableContainer* particleLookupTable(const std::string& attName) override;
+	LookupTableContainer* polyDataLookupTable(const std::string&) override {return nullptr;}
 	void setValueRange(const std::string& name);
 	void setupZoneDataItems();
 	void update();

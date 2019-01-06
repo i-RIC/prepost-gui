@@ -324,6 +324,8 @@ HEADERS += guicore_global.h \
            postcontainer/exporter/postzonedatatpoexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.h \
+           postcontainer/private/postzonedatacontainer_particleloader.h \
+           postcontainer/private/postzonedatacontainer_polydataloader.h \
            pre/base/preprocessordataitem.h \
            pre/base/preprocessordatamodelinterface.h \
            pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h \
@@ -692,6 +694,8 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/exporter/postzonedatatpoexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.cpp \
+           postcontainer/private/postzonedatacontainer_particleloader.cpp \
+           postcontainer/private/postzonedatacontainer_polydataloader.cpp \
            pre/base/preprocessordataitem.cpp \
            pre/base/preprocessordatamodelinterface.cpp \
            pre/base/preprocessorgeodatatopdataiteminterface.cpp \
