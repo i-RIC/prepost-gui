@@ -574,151 +574,156 @@
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectionwindow.cpp" line="139"/>
-        <source>&amp;Edit cross section from the selected point...</source>
+        <source>&amp;Edit cross section from the selected point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectionwindow.cpp" line="140"/>
+        <source>&amp;Edit from Dialog...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="141"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="150"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="152"/>
         <source>&amp;Elevation Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="156"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="158"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="172"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="174"/>
         <source>Crosssection: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="183"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="185"/>
         <source>Auto rescale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="193"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="195"/>
         <source>Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="194"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="196"/>
         <source>Distance from left bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="195"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="197"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="196"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="198"/>
         <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="257"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="259"/>
         <source>Crosssection Window : %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="434"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="441"/>
         <source>Edit Elevation Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="529"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="532"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="535"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="675"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="679"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="682"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1044"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="536"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="539"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="542"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="647"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="651"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="654"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="999"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="529"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="679"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="536"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="651"/>
         <source>At least, two points should be active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="532"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="539"/>
         <source>Fixed points and end points cannot be deleted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="535"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="682"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="542"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="654"/>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="543"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="550"/>
         <source>Delete Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="551"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="558"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="551"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="558"/>
         <source>To use this function, please select only one point.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="580"/>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="591"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="593"/>
         <location filename="../geodatariversurveycrosssectionwindow.cpp" line="604"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="617"/>
         <source>Inactivate Elevation Points using water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="675"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="647"/>
         <source>Fixed points and end points cannot be inactivated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="824"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="779"/>
         <source>River Survey Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="825"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="780"/>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1007"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="962"/>
         <source>Delete Water Surface Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1007"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="962"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1044"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="999"/>
         <source>Water surface elevation data does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1054"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1009"/>
         <source>Select Water Surface Elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1054"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="1009"/>
         <source>Select Water Surface Elevation to use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -726,33 +731,48 @@
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="104"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="109"/>
         <source>&amp;Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="106"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="111"/>
         <source>&amp;Inactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="108"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="113"/>
         <source>&amp;Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="123"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="128"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="555"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="567"/>
         <source>Left Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="559"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="571"/>
         <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1581"/>
+        <source>Edit Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1596"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1596"/>
+        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -761,8 +781,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1246"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1267"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1310"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1331"/>
         <source>Inactivate Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
