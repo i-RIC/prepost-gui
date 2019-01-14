@@ -41,6 +41,7 @@ public:
 
 	QMenu* m_elevationPointMenu;
 	QAction* m_editFromSelectedPointAction;
+	QAction* m_editFromSelectedPointWithDialogAction;
 	QAction* m_inactivateByWEOnlyThisAction;
 	QAction* m_inactivateByWEAllAction;
 	QAction* m_deleteAction;

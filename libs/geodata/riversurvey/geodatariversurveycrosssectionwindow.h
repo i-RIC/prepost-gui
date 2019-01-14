@@ -54,6 +54,7 @@ public:
 	GeoDataRiverPathPoint* target() const;
 	QAction* deleteAction() const;
 	QAction* editFromSelectedPointAction() const;
+	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
 	void setupData();
@@ -92,6 +93,7 @@ private slots:
 	void updateActionStatus();
 	void deleteSelectedRows();
 	void editFromSelectedPoint();
+	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
 	void crosssectionComboBoxChange(int newindex);

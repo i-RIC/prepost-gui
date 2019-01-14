@@ -18,7 +18,9 @@
 #include <guicore/project/projectdataitem.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationitem.h>
+#include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 
 #include <QAction>
@@ -31,6 +33,7 @@
 #include <QPainter>
 #include <QRect>
 #include <QSet>
+#include <QSettings>
 #include <QStandardItem>
 #include <QTableView>
 #include <QTextStream>
@@ -78,10 +81,12 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	fRightMargin {0.2},
 	fTopMargin {0.2},
 	fBottomMargin {0.2},
-	m_modelessDialogIsOpen {false},
 	m_rightClickingMenu {nullptr},
+	m_rightClickingMenuForEditCrosssectionMode {nullptr},
 	m_rubberBand {nullptr},
 	m_mouseEventMode {meNormal},
+	m_viewMouseEventMode {vmeNormal},
+	m_modelessDialogIsOpen {false},
 	m_gridMode {false}
 {
 	// Set cursors for mouse view change events.
@@ -129,6 +134,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
 	}
+	if (m_rightClickingMenuForEditCrosssectionMode == nullptr) {
+		m_rightClickingMenuForEditCrosssectionMode = new QMenu(this);
+		m_rightClickingMenuForEditCrosssectionMode->addAction(m_parentWindow->editFromSelectedPointWithDialogAction());
+	}
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::dataChanged(const QModelIndex& /*topLeft*/, const QModelIndex& /*bottomRight*/)
@@ -164,12 +173,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 			QColor c = m_parentWindow->riverSurveyColors().at(i);
 			drawLine(p, c, painter);
 		}
+		// draw edit preview
+		drawEditPreview(painter);
 
 		// draw circles.
 		drawCircle(painter);
 		// draw selected circles.
 		drawSelectionCircle(painter);
-	} else {
+	}
+	else {
 		// draw black lines.
 		drawLine(m_parentWindow->gridCreatingConditionPoint(), Qt::black, painter);
 		// draw yellow squares.
@@ -712,6 +724,27 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 	}
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter& painter)
+{
+	if (m_mouseEventMode != meEditCrosssection) {return;}
+
+	const auto index = selectionModel()->selectedIndexes().at(0);
+	auto& xsec = m_parentWindow->target()->crosssection();
+	const auto& alist = xsec.AltitudeInfo();
+	const auto& selectedAlt = alist.at(index.row());
+
+	auto startP = m_matrix.map(QPointF(selectedAlt.position(), selectedAlt.height()));
+	auto endP = m_matrix.map(QPointF(m_editAltitudePreview.position(), m_editAltitudePreview.height()));
+
+	painter.save();
+	painter.setPen(Qt::black);
+	painter.drawLine(QLineF(startP, endP));
+
+	QPointF p = (startP + endP) / 2.0;
+	painter.drawText(p, m_editRatio);
+	painter.restore();
+}
+
 QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 {
 	QRectF ret(0., 0., 0., 0.);
@@ -828,7 +861,17 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 	int diffx = event->x() - m_oldPosition.x();
 	int diffy = event->y() - m_oldPosition.y();
 
-	if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) && ! m_modelessDialogIsOpen) {
+	if (m_viewMouseEventMode == vmeTranslating) {
+		translate(diffx, diffy);
+	} else if (m_viewMouseEventMode == vmeZooming) {
+		double scaleX = 1 + diffx * 0.02;
+		double scaleY = 1 - diffy * 0.02;
+		if (scaleX < 0.5) {scaleX = 0.5;}
+		if (scaleY < 0.5) {scaleY = 0.5;}
+		if (scaleX > 2) {scaleX = 2;}
+		if (scaleY > 2) {scaleY = 2;}
+		zoom(scaleX, scaleY);
+	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) && ! m_modelessDialogIsOpen) {
 		m_mouseEventMode = meNormal;
 		if (m_gridMode) {
 			// find selected points near the mouse cursor.
@@ -893,16 +936,6 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			}
 		}
 		updateMouseCursor();
-	} else if (m_mouseEventMode == meTranslating) {
-		translate(diffx, diffy);
-	} else if (m_mouseEventMode == meZooming) {
-		double scaleX = 1 + diffx * 0.02;
-		double scaleY = 1 - diffy * 0.02;
-		if (scaleX < 0.5) {scaleX = 0.5;}
-		if (scaleY < 0.5) {scaleY = 0.5;}
-		if (scaleX > 2) {scaleX = 2;}
-		if (scaleY > 2) {scaleY = 2;}
-		zoom(scaleX, scaleY);
 	} else if (m_mouseEventMode == meSelecting) {
 		QPoint topLeft(qMin(m_rubberOrigin.x(), event->x()), qMin(m_rubberOrigin.y(), event->y()));
 		QSize size(qAbs(m_rubberOrigin.x() - event->x()), qAbs(m_rubberOrigin.y() - event->y()));
@@ -932,31 +965,36 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
 			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->target(), newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->targetRiverSurvey(), true));
 		}
+	} else if (m_mouseEventMode == meEditCrosssection) {
+		m_editAltitudePreview = createAltitude(event->pos(), &m_editRatio);
+		viewport()->update();
 	}
 	m_oldPosition = event->pos();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent* event)
 {
+	if (event->modifiers() == Qt::ControlModifier) {
+		switch (event->button()) {
+		case Qt::LeftButton:
+			// translate
+			m_viewMouseEventMode = vmeTranslating;
+			break;
+		case Qt::MidButton:
+			// zoom.
+			m_viewMouseEventMode = vmeZooming;
+			break;
+		default:
+			break;
+		}
+		m_oldPosition = event->pos();
+		updateMouseCursor();
+		return;
+	}
+
 	switch (m_mouseEventMode) {
 	case meNormal:
-		if (event->modifiers() == Qt::ControlModifier) {
-			switch (event->button()) {
-			case Qt::LeftButton:
-				// translate
-				m_mouseEventMode = meTranslating;
-				break;
-			case Qt::MidButton:
-				// zoom.
-				m_mouseEventMode = meZooming;
-				break;
-			default:
-				// do nothing.
-				break;
-			}
-			m_oldPosition = event->pos();
-			updateMouseCursor();
-		} else if (! m_modelessDialogIsOpen){
+		if (! m_modelessDialogIsOpen) {
 			if (event->button() == Qt::LeftButton) {
 				// start selecting.
 				m_mouseEventMode = meSelecting;
@@ -969,6 +1007,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			} else if (event->button() == Qt::RightButton) {
 				m_dragStartPoint = event->pos();
 			}
+		}
+		break;
+	case meEditCrosssection:
+		if (event->button() == Qt::RightButton) {
+			m_dragStartPoint = event->pos();
 		}
 		break;
 	case meMovePrepare:
@@ -996,23 +1039,31 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 {
+	if (m_viewMouseEventMode != vmeNormal) {
+		m_viewMouseEventMode = vmeNormal;
+		updateMouseCursor();
+		return;
+	}
+
 	switch (m_mouseEventMode) {
 	case meNormal:
 	case meMovePrepare:
+	case meEditCrosssection:
 		if (event->button() == Qt::RightButton && ! m_modelessDialogIsOpen) {
 			if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
-				m_rightClickingMenu->move(event->globalPos());
-				m_rightClickingMenu->show();
+				QMenu* m = m_rightClickingMenu;
+				if (m_mouseEventMode == meEditCrosssection) {
+					m = m_rightClickingMenuForEditCrosssectionMode;
+				}
+				m->move(event->globalPos());
+				m->show();
 			}
+		} else if (m_mouseEventMode == meEditCrosssection && event->button() == Qt::LeftButton) {
+			auto newAltitude = createAltitude(event->pos());
+			editCrossSection(newAltitude);
 		}
-		break;
-	case meTranslating:
-	case meZooming:
-		m_mouseEventMode = meNormal;
-		// go back to normal mode.
-		updateMouseCursor();
 		break;
 	case meSelecting:
 		// finish selecting.
@@ -1045,6 +1096,23 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 		}
 		updateMouseCursor();
 		break;
+	}
+}
+
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseDoubleClickEvent(QMouseEvent* event)
+{
+	if (m_mouseEventMode == meEditCrosssection && event->button() == Qt::LeftButton) {
+		m_mouseEventMode = meNormal;
+		updateMouseCursor();
+	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::keyReleaseEvent(QKeyEvent* event)
+{
+	if (m_mouseEventMode == meEditCrosssection && iRIC::isEnterKey(event->key())) {
+		m_mouseEventMode = meNormal;
+		updateMouseCursor();
 	}
 }
 
@@ -1103,24 +1171,18 @@ int GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveWidth()
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateMouseCursor()
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-		setCursor(Qt::ArrowCursor);
-		break;
-	case meZooming:
+	if (m_viewMouseEventMode == vmeZooming) {
 		setCursor(m_zoomCursor);
-		break;
-	case meTranslating:
+	} else if (m_viewMouseEventMode == vmeTranslating) {
 		setCursor(m_moveCursor);
-		break;
-	case meMove:
+	} else if (m_mouseEventMode == meMove) {
 		setCursor(Qt::ClosedHandCursor);
-		break;
-	case meMovePrepare:
+	} else if (m_mouseEventMode == meMovePrepare) {
 		setCursor(Qt::OpenHandCursor);
-		break;
-	default:
-		break;
+	} else if (m_mouseEventMode == meEditCrosssection) {
+		setCursor(Qt::CrossCursor);
+	} else {
+		setCursor(Qt::ArrowCursor);
 	}
 }
 
@@ -1222,7 +1284,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateActionStatus()
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogOpen()
 {
+	m_mouseEventMode = meNormal;
 	m_modelessDialogIsOpen = true;
+	updateMouseCursor();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogClose()
@@ -1430,8 +1494,113 @@ bool GeoDataRiverSurveyCrosssectionWindowGraphicsView::continuousGridSelection()
 	}
 }
 
+std::vector<double> GeoDataRiverSurveyCrosssectionWindowGraphicsView::loadSlopeRatios()
+{
+	QSettings settings;
+	auto ratios = settings.value("riversurvey/slopeangles", QString("0.5,1,2,3,4,5,10,20")).toString().split(",");
+	std::vector<double> ret;
+	for (auto r : ratios) {
+		ret.push_back(r.toDouble());
+	}
+	return ret;
+}
+
+struct CreateAltitudeInfo
+{
+	GeoDataRiverCrosssection::Altitude altitude;
+	QString ratio;
+};
+
+GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsView::createAltitude(const QPoint& pos, QString* ratio)
+{
+	const auto index = selectionModel()->selectedIndexes().at(0);
+	auto& xsec = m_parentWindow->target()->crosssection();
+	const auto& alist = xsec.AltitudeInfo();
+	const auto& selectedAlt = alist.at(index.row());
+
+	QMatrix invMatrix = m_matrix.inverted();
+	QPointF posF(pos.x(), pos.y());
+	auto mappedPos = invMatrix.map(posF);
+
+	double distX = mappedPos.x() - selectedAlt.position();
+	double distY = mappedPos.y() - selectedAlt.height();
+	double sign = 1;
+	if (distX * distY < 0) {sign = -1;}
+
+	std::map<double, CreateAltitudeInfo> diffs;
+	GeoDataRiverCrosssection::Altitude a(mappedPos.x(), selectedAlt.height());
+	CreateAltitudeInfo ainfo{a, ""};
+	diffs.insert({std::abs(distY), ainfo});
+	for (double r : loadSlopeRatios()) {
+		double dy = distX * sign / r;
+		GeoDataRiverCrosssection::Altitude a(mappedPos.x(), selectedAlt.height() + dy);
+		CreateAltitudeInfo ainfo{a, QString::number(r)};
+		double diff = mappedPos.y() - (a.height());
+		diffs.insert({std::abs(diff), ainfo});
+	}
+	// get the CreateAltitudeInfo with the smallest diff
+	auto pair = diffs.begin();
+	if  (ratio != nullptr) {
+		if (pair->second.ratio == "") {
+			*ratio = "";
+		} else {
+			*ratio = QString("1:%1").arg(pair->second.ratio);
+		}
+	}
+	return pair->second.altitude;
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editCrossSection(GeoDataRiverCrosssection::Altitude& alt)
+{
+	auto before = m_parentWindow->target()->crosssection().AltitudeInfo();
+	auto after = before;
+	const auto index = selectionModel()->selectedIndexes().at(0);
+	const auto& selectedAlt = after.at(index.row());
+	auto eraseBegin = after.begin();
+	auto eraseEnd = eraseBegin;
+	int newIndex = index.row();
+	if (alt.position() > selectedAlt.position()) {
+		eraseBegin = after.begin() + index.row() + 1;
+		eraseEnd = eraseBegin;
+		while (eraseEnd != after.end() && eraseEnd->position() <= alt.position()) {
+			++ eraseEnd;
+		}
+		newIndex = newIndex + 1;
+	} else {
+		eraseEnd = after.begin() + index.row();
+		eraseBegin = eraseEnd;
+		while (eraseBegin != after.begin() && eraseBegin->position() > alt.position()) {
+			-- eraseBegin;
+		}
+		newIndex = newIndex - (eraseEnd - eraseBegin);
+	}
+	after.erase(eraseBegin, eraseEnd);
+	after.push_back(alt);
+	std::sort(after.begin(), after.end());
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Cross Section"), m_parentWindow->target(), after, before, m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	QItemSelection sel(model()->index(newIndex, 0), model()->index(newIndex, 2));
+	auto selModel = selectionModel();
+	selModel->clearSelection();
+	selModel->select(sel, QItemSelectionModel::Select | QItemSelectionModel::Rows);
+}
+
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::toggleGridCreatingMode(bool gridMode)
 {
 	m_gridMode = gridMode;
 	viewport()->update();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode()
+{
+	InformationDialog::information(this, tr("Information"), tr("Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key."), "riversurveyedit");
+	m_mouseEventMode = meEditCrosssection;
+
+	const auto index = selectionModel()->selectedIndexes().at(0);
+	auto& xsec = m_parentWindow->target()->crosssection();
+	const auto& alist = xsec.AltitudeInfo();
+	const auto& selectedAlt = alist.at(index.row());
+	m_editAltitudePreview = selectedAlt;
+
+	updateMouseCursor();
 }
