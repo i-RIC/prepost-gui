@@ -78,11 +78,20 @@ public slots:
 	void showCellAttributeBrowser();
 	void showParticleBrowser();
 
-protected:
+private:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
+	void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
+
+	void setupActors();
+
+	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
+	void updateNodeAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
+	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
+	void updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
+	void updateParticleBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
@@ -93,16 +102,6 @@ protected:
 	Post2dWindowCellFlagGroupDataItem* m_cellFlagGroupDataItem;
 	Post2dWindowParticlesTopDataItem* m_particlesDataItem;
 	Post2dWindowGraphGroupDataItem* m_graphGroupDataItem;
-
-private:
-	void setupActors();
-
-	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
-	void updateNodeAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
-	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
-	void updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
-	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
-	void updateParticleBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
