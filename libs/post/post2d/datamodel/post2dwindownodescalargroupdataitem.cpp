@@ -627,7 +627,7 @@ void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -638,7 +638,9 @@ void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VT
 void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	if (event->button() == Qt::LeftButton) {
+		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeResultAttributeBrowser(event->pos(), v);
+	}
 }
 
 void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
