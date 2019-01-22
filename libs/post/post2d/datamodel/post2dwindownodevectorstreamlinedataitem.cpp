@@ -39,6 +39,6 @@ void Post2dWindowNodeVectorStreamlineDataItem::mouseReleaseEvent(QMouseEvent* ev
 
 void Post2dWindowNodeVectorStreamlineDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 }

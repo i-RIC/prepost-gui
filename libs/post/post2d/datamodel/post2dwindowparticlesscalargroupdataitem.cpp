@@ -136,7 +136,7 @@ void Post2dWindowParticlesScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 
 void Post2dWindowParticlesScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showParticleBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForParticleResult();
 	menu->addAction(abAction);
 }
 

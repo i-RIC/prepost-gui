@@ -638,7 +638,7 @@ void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 
 void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 }
 

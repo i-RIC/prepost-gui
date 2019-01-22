@@ -69,9 +69,9 @@ public:
 	void updateParticleBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateRegionPolyData();
 
-	QAction* showNodeAttributeBrowserAction() const {return m_showNodeAttributeBrowserAction;}
-	QAction* showCellAttributeBrowserAction() const {return m_showCellAttributeBrowserAction;}
-	QAction* showParticleBrowserAction() const {return m_showParticleBrowserAction;}
+	QAction* showAttributeBrowserActionForCellInput() const {return m_showAttributeBrowserActionForCellInput;}
+	QAction* showAttributeBrowserActionForNodeResult() const {return m_showAttributeBrowserActionForNodeResult;}
+	QAction* showAttributeBrowserActionForParticleResult() const {return m_showAttributeBrowserActionForParticleResult;}
 
 public slots:
 	void showNodeAttributeBrowser();
@@ -109,9 +109,9 @@ private:
 
 	vtkSmartPointer<vtkPolyData> m_filteredData;
 
-	QAction* m_showNodeAttributeBrowserAction;
-	QAction* m_showCellAttributeBrowserAction;
-	QAction* m_showParticleBrowserAction;
+	QAction* m_showAttributeBrowserActionForCellInput;
+	QAction* m_showAttributeBrowserActionForNodeResult;
+	QAction* m_showAttributeBrowserActionForParticleResult;
 
 	std::string m_zoneName;
 	int m_zoneNumber;

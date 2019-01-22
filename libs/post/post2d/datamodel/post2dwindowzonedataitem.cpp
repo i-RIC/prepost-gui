@@ -127,12 +127,12 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 		m_childItems.push_back(m_cellScalarGroupTopDataItem);
 	}
 
-	m_showNodeAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
-	connect(m_showNodeAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
-	m_showCellAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
-	connect(m_showCellAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
-	m_showParticleBrowserAction = new QAction(tr("Show Attribute Browser"), this);
-	connect(m_showParticleBrowserAction, SIGNAL(triggered()), this, SLOT(showParticleBrowser()));
+	m_showAttributeBrowserActionForNodeResult = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
+	connect(m_showAttributeBrowserActionForNodeResult, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
+	m_showAttributeBrowserActionForCellInput = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
+	connect(m_showAttributeBrowserActionForCellInput, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
+	m_showAttributeBrowserActionForParticleResult = new QAction(tr("Show Attribute Browser"), this);
+	connect(m_showAttributeBrowserActionForParticleResult, SIGNAL(triggered()), this, SLOT(showParticleBrowser()));
 
 	setupActors();
 	updateRegionPolyData();

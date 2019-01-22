@@ -389,7 +389,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::mouseReleaseEvent(QMouseEvent*
 
 void Post2dWindowNodeVectorParticleGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 }
 
