@@ -308,6 +308,7 @@ HEADERS += gui_api.h \
            pref/preferencepagegraphicsdefault.h \
            pref/preferencepagegridcheck.h \
            pref/preferencepageproxy.h \
+           pref/preferencepageriversurvey.h \
            pref/preferencepagetms.h \
            pref/preferencepagewebcsvtile.h \
            projectproperty/projectpropertybasicinfowidget.h \
@@ -332,6 +333,7 @@ HEADERS += gui_api.h \
            verification/verificationsettingdialog.h \
            main/private/iricmainwindow_snapshotsaver.h \
            misc/private/cancelhandler.h \
+           pref/private/preferencepageriversurveyfractionadddialog.h \
            pref/private/preferencepagetmsadddialog.h \
            pref/private/preferencepagewebcsvtileadddialog.h \
            startpage/private/startpagedialog_impl.h \
@@ -352,6 +354,7 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          pref/preferencepagegraphicsdefault.ui \
          pref/preferencepagegridcheck.ui \
          pref/preferencepageproxy.ui \
+         pref/preferencepageriversurvey.ui \
          pref/preferencepagetms.ui \
          pref/preferencepagewebcsvtile.ui \
          projectproperty/projectpropertybasicinfowidget.ui \
@@ -363,6 +366,7 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          startpage/startpagelaunchtabwidget.ui \
          verification/verificationgraphdialog.ui \
          verification/verificationsettingdialog.ui \
+         pref/private/preferencepageriversurveyfractionadddialog.ui \
          pref/private/preferencepagetmsadddialog.ui \
          pref/private/preferencepagewebcsvtileadddialog.ui
 SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
@@ -390,6 +394,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            pref/preferencepagegraphicsdefault.cpp \
            pref/preferencepagegridcheck.cpp \
            pref/preferencepageproxy.cpp \
+           pref/preferencepageriversurvey.cpp \
            pref/preferencepagetms.cpp \
            pref/preferencepagewebcsvtile.cpp \
            projectproperty/projectpropertybasicinfowidget.cpp \
@@ -414,6 +419,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            verification/verificationsettingdialog.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \
            misc/private/cancelhandler.cpp \
+           pref/private/preferencepageriversurveyfractionadddialog.cpp \
            pref/private/preferencepagetmsadddialog.cpp \
            pref/private/preferencepagewebcsvtileadddialog.cpp
 RESOURCES += gui.qrc
