@@ -55,18 +55,21 @@ public:
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
 	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const;
 
-	void initNodeAttributeBrowser();
-	void clearNodeAttributeBrowser();
-	void fixNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void updateNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void initCellAttributeBrowser();
-	void clearCellAttributeBrowser();
-	void fixCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void updateCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void initParticleBrowser();
-	void clearParticleBrowser();
-	void fixParticleBrowser(const QPoint& p, VTKGraphicsView* v);
-	void updateParticleBrowser(const QPoint& p, VTKGraphicsView* v);
+	void initCellInputAttributeBrowser();
+	void clearCellInputAttributeBrowser();
+	void fixCellInputAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateCellInputAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
+	void initNodeResultAttributeBrowser();
+	void clearNodeResultAttributeBrowser();
+	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
+	void initParticleResultAttributeBrowser();
+	void clearParticleResultAttributeBrowser();
+	void fixParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
 	void updateRegionPolyData();
 
 	QAction* showAttributeBrowserActionForCellInput() const;
@@ -87,11 +90,11 @@ private:
 	void setupActors();
 
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
-	void updateNodeAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
+	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
 	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
-	void updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	void updateCellInputAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
-	void updateParticleBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
+	void updateParticleResultAttributeBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;

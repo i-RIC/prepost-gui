@@ -499,7 +499,7 @@ void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 	}
 }
 
-void Post2dWindowZoneDataItem::initNodeAttributeBrowser()
+void Post2dWindowZoneDataItem::initNodeResultAttributeBrowser()
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -515,7 +515,7 @@ void Post2dWindowZoneDataItem::initNodeAttributeBrowser()
 	}
 }
 
-void Post2dWindowZoneDataItem::clearNodeAttributeBrowser()
+void Post2dWindowZoneDataItem::clearNodeResultAttributeBrowser()
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -523,7 +523,7 @@ void Post2dWindowZoneDataItem::clearNodeAttributeBrowser()
 	m_attributeBrowserFixed = false;
 }
 
-void Post2dWindowZoneDataItem::fixNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -539,10 +539,10 @@ void Post2dWindowZoneDataItem::fixNodeAttributeBrowser(const QPoint& p, VTKGraph
 	double vertex[3];
 	dataContainer()->data()->GetPoint(vid, vertex);
 
-	updateNodeAttributeBrowser(vid, vertex[0], vertex[1], v);
+	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v);
 }
 
-void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
@@ -559,7 +559,7 @@ void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(const QPoint& p, VTKGr
 	double vertex[3];
 	dataContainer()->data()->GetPoint(vid, vertex);
 
-	updateNodeAttributeBrowser(vid, vertex[0], vertex[1], v);
+	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v);
 }
 
 vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView* v)
@@ -589,7 +589,7 @@ vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView*
 	return vid;
 }
 
-void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/)
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/)
 {
 	PostZoneDataContainer* cont = dataContainer();
 	QList<PropertyBrowserAttribute> atts;
@@ -633,7 +633,7 @@ void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(vtkIdType vid, double 
 	}
 }
 
-void Post2dWindowZoneDataItem::initCellAttributeBrowser()
+void Post2dWindowZoneDataItem::initCellInputAttributeBrowser()
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -647,14 +647,14 @@ void Post2dWindowZoneDataItem::initCellAttributeBrowser()
 	}
 }
 
-void Post2dWindowZoneDataItem::clearCellAttributeBrowser()
+void Post2dWindowZoneDataItem::clearCellInputAttributeBrowser()
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	pb->view()->hideAll();
 }
 
-void Post2dWindowZoneDataItem::fixCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::fixCellInputAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -667,10 +667,10 @@ void Post2dWindowZoneDataItem::fixCellAttributeBrowser(const QPoint& p, VTKGraph
 		pb->view()->resetAttributes();
 		return;
 	}
-	updateCellAttributeBrowser(cellid, v);
+	updateCellInputAttributeBrowser(cellid, v);
 }
 
-void Post2dWindowZoneDataItem::updateCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::updateCellInputAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -683,7 +683,7 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(const QPoint& p, VTKGr
 		pb->view()->resetAttributes();
 		return;
 	}
-	updateCellAttributeBrowser(cellid, v);
+	updateCellInputAttributeBrowser(cellid, v);
 }
 
 vtkIdType Post2dWindowZoneDataItem::findCell(const QPoint& p, VTKGraphicsView* v)
@@ -703,7 +703,7 @@ vtkIdType Post2dWindowZoneDataItem::findCell(const QPoint& p, VTKGraphicsView* v
 	return cont->data()->FindCell(point, hintCell, 0, 1e-4, subid, pcoords, weights);
 }
 
-void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* /*v*/)
+void Post2dWindowZoneDataItem::updateCellInputAttributeBrowser(vtkIdType cellid, VTKGraphicsView* /*v*/)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -754,21 +754,21 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 	}
 }
 
-void Post2dWindowZoneDataItem::initParticleBrowser()
+void Post2dWindowZoneDataItem::initParticleResultAttributeBrowser()
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	pb->view()->resetForParticle();
 }
 
-void Post2dWindowZoneDataItem::clearParticleBrowser()
+void Post2dWindowZoneDataItem::clearParticleResultAttributeBrowser()
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	pb->view()->hideAll();
 }
 
-void Post2dWindowZoneDataItem::fixParticleBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::fixParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -784,10 +784,10 @@ void Post2dWindowZoneDataItem::fixParticleBrowser(const QPoint& p, VTKGraphicsVi
 	double vertex[3];
 	dataContainer()->particleData()->GetPoint(pid, vertex);
 
-	updateParticleBrowser(pid, vertex[0], vertex[1], v);
+	updateParticleResultAttributeBrowser(pid, vertex[0], vertex[1], v);
 }
 
-void Post2dWindowZoneDataItem::updateParticleBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -803,7 +803,7 @@ void Post2dWindowZoneDataItem::updateParticleBrowser(const QPoint& p, VTKGraphic
 	double vertex[3];
 	dataContainer()->particleData()->GetPoint(pid, vertex);
 
-	updateParticleBrowser(pid, vertex[0], vertex[1], v);
+	updateParticleResultAttributeBrowser(pid, vertex[0], vertex[1], v);
 }
 
 vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsView* v)
@@ -833,7 +833,7 @@ vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsVie
 	return pid;
 }
 
-void Post2dWindowZoneDataItem::updateParticleBrowser(vtkIdType pid, double x, double y, VTKGraphicsView* /*v*/)
+void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(vtkIdType pid, double x, double y, VTKGraphicsView* /*v*/)
 {
 	PostZoneDataContainer* cont = dataContainer();
 	QList<PropertyBrowserAttribute> atts;
@@ -871,21 +871,21 @@ void Post2dWindowZoneDataItem::updateParticleBrowser(vtkIdType pid, double x, do
 
 void Post2dWindowZoneDataItem::showNodeAttributeBrowser()
 {
-	initNodeAttributeBrowser();
+	initNodeResultAttributeBrowser();
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }
 
 void Post2dWindowZoneDataItem::showCellAttributeBrowser()
 {
-	initCellAttributeBrowser();
+	initCellInputAttributeBrowser();
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }
 
 void Post2dWindowZoneDataItem::showParticleBrowser()
 {
-	initParticleBrowser();
+	initParticleResultAttributeBrowser();
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }

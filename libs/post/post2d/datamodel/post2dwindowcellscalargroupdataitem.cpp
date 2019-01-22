@@ -618,19 +618,19 @@ void Post2dWindowCellScalarGroupDataItem::updateVisibility(bool visible)
 void Post2dWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellInputAttributeBrowser();
 }
 
 void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellInputAttributeBrowser();
 }
 
 void Post2dWindowCellScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellInputAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -641,7 +641,7 @@ void Post2dWindowCellScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VT
 void Post2dWindowCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellInputAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* /*menu*/)
