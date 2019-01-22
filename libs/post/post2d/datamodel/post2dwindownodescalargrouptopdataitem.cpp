@@ -211,18 +211,18 @@ bool Post2dWindowNodeScalarGroupTopDataItem::hasTransparentPart()
 
 void Post2dWindowNodeScalarGroupTopDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -233,12 +233,12 @@ void Post2dWindowNodeScalarGroupTopDataItem::mousePressEvent(QMouseEvent* event,
 void Post2dWindowNodeScalarGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 	menu->addSeparator();
 	menu->addAction(dataModel()->objectBrowserView()->addAction());

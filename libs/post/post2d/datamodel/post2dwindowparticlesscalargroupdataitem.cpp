@@ -108,19 +108,19 @@ void Post2dWindowParticlesScalarGroupDataItem::setTarget(const std::string& targ
 void Post2dWindowParticlesScalarGroupDataItem::informSelection(VTKGraphicsView*)
 {
 	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initParticleBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initParticleResultAttributeBrowser();
 }
 
 void Post2dWindowParticlesScalarGroupDataItem::informDeselection(VTKGraphicsView*)
 {
 	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearParticleBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearParticleResultAttributeBrowser();
 }
 
 void Post2dWindowParticlesScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateParticleBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateParticleResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowParticlesScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -131,12 +131,12 @@ void Post2dWindowParticlesScalarGroupDataItem::mousePressEvent(QMouseEvent* even
 void Post2dWindowParticlesScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixParticleBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixParticleResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowParticlesScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showParticleBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForParticleResult();
 	menu->addAction(abAction);
 }
 

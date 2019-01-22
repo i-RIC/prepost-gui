@@ -618,19 +618,19 @@ void Post2dWindowCellScalarGroupDataItem::updateVisibility(bool visible)
 void Post2dWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellResultAttributeBrowser();
 }
 
 void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellResultAttributeBrowser();
 }
 
 void Post2dWindowCellScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -641,13 +641,15 @@ void Post2dWindowCellScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VT
 void Post2dWindowCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	if (event->button() == Qt::LeftButton) {
+		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellResultAttributeBrowser(event->pos(), v);
+	}
 }
 
-void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* /*menu*/)
+void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	//QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showCellAttributeBrowserAction();
-	//menu->addAction(abAction);
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForCellResult();
+	menu->addAction(abAction);
 }
 
 bool Post2dWindowCellScalarGroupDataItem::checkKmlExportCondition()

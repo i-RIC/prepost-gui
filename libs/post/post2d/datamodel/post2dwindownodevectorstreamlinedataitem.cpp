@@ -19,26 +19,26 @@ Post2dWindowNodeVectorStreamlineDataItem::~Post2dWindowNodeVectorStreamlineDataI
 
 void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView*)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::informDeselection(VTKGraphicsView*)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 }

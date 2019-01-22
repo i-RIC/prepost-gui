@@ -178,20 +178,20 @@ bool Post2dWindowCellFlagGroupDataItem::hasTransparentPart()
 
 void Post2dWindowCellFlagGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initCellInputAttributeBrowser();
 }
 
 void Post2dWindowCellFlagGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearCellInputAttributeBrowser();
 }
 
 void Post2dWindowCellFlagGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateCellInputAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowCellFlagGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixCellInputAttributeBrowser(QPoint(event->x(), event->y()), v);
 }

@@ -246,6 +246,11 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	updateActorSettings();
 }
 
+ContourSettingWidget::Contour Post2dWindowNodeScalarGroupDataItem::contour() const
+{
+	return m_setting.contour;
+}
+
 void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(1);
@@ -610,19 +615,19 @@ void Post2dWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -633,12 +638,14 @@ void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VT
 void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
+	if (event->button() == Qt::LeftButton) {
+		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeResultAttributeBrowser(event->pos(), v);
+	}
 }
 
 void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 }
 

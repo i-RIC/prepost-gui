@@ -40,49 +40,68 @@ public:
 	void updateZDepthRangeItemCount() override;
 
 	PostZoneDataContainer* dataContainer();
-	vtkPolyData* filteredData() const {return m_filteredData;}
-	bool isMasked() const {return m_isMasked;}
-	int zoneNumber() const {return m_zoneNumber;}
-	std::string zoneName() const {return m_zoneName;}
+	vtkPolyData* filteredData() const;
+	bool isMasked() const;
+	int zoneNumber() const;
+	std::string zoneName() const;
 	void update(bool noparticle = false);
-	Post2dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
-	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const {return m_scalarGroupTopDataItem;}
-	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
-	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
-	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
-	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
-	Post2dWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const {return m_cellScalarGroupTopDataItem;}
-	Post2dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
-	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const {return m_graphGroupDataItem;}
+	Post2dWindowGridShapeDataItem* gridShapeDataItem() const;
+	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const;
+	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const;
+	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const;
+	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const;
+	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const;
+	Post2dWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const;
+	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
+	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const;
 
-	void initNodeAttributeBrowser();
-	void clearNodeAttributeBrowser();
-	void fixNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void updateNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void initCellAttributeBrowser();
-	void clearCellAttributeBrowser();
-	void fixCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void updateCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	void initParticleBrowser();
-	void clearParticleBrowser();
-	void fixParticleBrowser(const QPoint& p, VTKGraphicsView* v);
-	void updateParticleBrowser(const QPoint& p, VTKGraphicsView* v);
+	void initCellInputAttributeBrowser();
+	void clearCellInputAttributeBrowser();
+	void fixCellInputAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateCellInputAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
+	void initNodeResultAttributeBrowser();
+	void clearNodeResultAttributeBrowser();
+	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
+	void initCellResultAttributeBrowser();
+	void clearCellResultAttributeBrowser();
+	void fixCellResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateCellResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
+	void initParticleResultAttributeBrowser();
+	void clearParticleResultAttributeBrowser();
+	void fixParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
 	void updateRegionPolyData();
 
-	QAction* showNodeAttributeBrowserAction() const {return m_showNodeAttributeBrowserAction;}
-	QAction* showCellAttributeBrowserAction() const {return m_showCellAttributeBrowserAction;}
-	QAction* showParticleBrowserAction() const {return m_showParticleBrowserAction;}
+	QAction* showAttributeBrowserActionForCellInput() const;
+	QAction* showAttributeBrowserActionForNodeResult() const;
+	QAction* showAttributeBrowserActionForCellResult() const;
+	QAction* showAttributeBrowserActionForParticleResult() const;
 
 public slots:
 	void showNodeAttributeBrowser();
 	void showCellAttributeBrowser();
 	void showParticleBrowser();
 
-protected:
+private:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
+	void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
+
+	void setupActors();
+
+	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
+	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
+	void updateCellInputAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
+	void updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
+	void updateParticleResultAttributeBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
@@ -94,25 +113,16 @@ protected:
 	Post2dWindowParticlesTopDataItem* m_particlesDataItem;
 	Post2dWindowGraphGroupDataItem* m_graphGroupDataItem;
 
-private:
-	void setupActors();
-
-	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
-	void updateNodeAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
-	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
-	void updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
-	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
-	void updateParticleBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
-
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
 	vtkSmartPointer<vtkActor> m_regionActor;
 
 	vtkSmartPointer<vtkPolyData> m_filteredData;
 
-	QAction* m_showNodeAttributeBrowserAction;
-	QAction* m_showCellAttributeBrowserAction;
-	QAction* m_showParticleBrowserAction;
+	QAction* m_showAttributeBrowserActionForCellInput;
+	QAction* m_showAttributeBrowserActionForNodeResult;
+	QAction* m_showAttributeBrowserActionForCellResult;
+	QAction* m_showAttributeBrowserActionForParticleResult;
 
 	std::string m_zoneName;
 	int m_zoneNumber;

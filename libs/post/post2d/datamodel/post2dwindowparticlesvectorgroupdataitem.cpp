@@ -386,18 +386,18 @@ void Post2dWindowParticlesVectorGroupDataItem::doSaveToProjectMainFile(QXmlStrea
 
 void Post2dWindowParticlesVectorGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initParticleBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initParticleResultAttributeBrowser();
 }
 
 void Post2dWindowParticlesVectorGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearParticleBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearParticleResultAttributeBrowser();
 }
 
 void Post2dWindowParticlesVectorGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateParticleBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateParticleResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowParticlesVectorGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -408,12 +408,12 @@ void Post2dWindowParticlesVectorGroupDataItem::mousePressEvent(QMouseEvent* even
 void Post2dWindowParticlesVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixParticleBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixParticleResultAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowParticlesVectorGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showParticleBrowserAction();
+	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForParticleResult();
 	menu->addAction(abAction);
 }
 

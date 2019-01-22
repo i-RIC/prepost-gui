@@ -135,20 +135,20 @@ void Post2dWindowCellFlagDataItem::innerUpdateZScale(double scale)
 
 void Post2dWindowCellFlagDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellInputAttributeBrowser();
 }
 
 void Post2dWindowCellFlagDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellAttributeBrowser();
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearCellInputAttributeBrowser();
 }
 
 void Post2dWindowCellFlagDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateCellInputAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
 void Post2dWindowCellFlagDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellAttributeBrowser(QPoint(event->x(), event->y()), v);
+	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixCellInputAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
