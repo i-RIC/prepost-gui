@@ -129,6 +129,10 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	m_showAttributeBrowserActionForNodeResult = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForNodeResult, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
+
+	m_showAttributeBrowserActionForCellResult = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
+	connect(m_showAttributeBrowserActionForCellResult, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
+
 	m_showAttributeBrowserActionForCellInput = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForCellInput, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
 	m_showAttributeBrowserActionForParticleResult = new QAction(tr("Show Attribute Browser"), this);
@@ -544,7 +548,6 @@ void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VT
 
 void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	if (! pb->isVisible()) {return;}
@@ -560,6 +563,62 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p,
 	dataContainer()->data()->GetPoint(vid, vertex);
 
 	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v);
+}
+
+void Post2dWindowZoneDataItem::initCellResultAttributeBrowser()
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	PostZoneDataContainer* cont = dataContainer();
+	if (cont == nullptr) {return;}
+
+	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
+	if (sgrid != nullptr) {
+		pb->view()->resetForVertex(true);
+	} else if (usgrid != nullptr) {
+		pb->view()->resetForVertex(false);
+	}
+}
+
+void Post2dWindowZoneDataItem::clearCellResultAttributeBrowser()
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	pb->view()->hideAll();
+	m_attributeBrowserFixed = false;
+}
+
+void Post2dWindowZoneDataItem::fixCellResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (! pb->isVisible()) {return;}
+
+	vtkIdType cellid = findCell(p, v);
+	m_attributeBrowserFixed = (cellid >= 0);
+	if (cellid < 0) {
+		// no point is near.
+		pb->view()->resetAttributes();
+		return;
+	}
+	updateCellResultAttributeBrowser(cellid, v);
+}
+
+void Post2dWindowZoneDataItem::updateCellResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (! pb->isVisible()) {return;}
+	if (m_attributeBrowserFixed) {return;}
+
+	vtkIdType cellid = findCell(p, v);
+	if (cellid < 0) {
+		// no point is near.
+		pb->view()->resetAttributes();
+		return;
+	}
+	updateCellResultAttributeBrowser(cellid, v);
 }
 
 vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView* v)
@@ -630,6 +689,64 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, d
 		pb->view()->setVertexAttributes(i, j, x, y, atts);
 	} else if (usgrid != nullptr) {
 		pb->view()->setVertexAttributes(vid, x, y, atts);
+	}
+}
+
+void Post2dWindowZoneDataItem::updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView*)
+{
+	QList<PropertyBrowserAttribute> atts;
+
+	auto cont = dataContainer();
+	auto cellData = cont->data()->GetCellData();
+
+	int count = cellData->GetNumberOfArrays();
+	for (int i = 0; i < count; ++i) {
+		auto arr = cellData->GetAbstractArray(i);
+		auto da = dynamic_cast<vtkDataArray*>(arr);
+		if (da == nullptr) {continue;}
+		if (da->GetNumberOfComponents() == 1) {
+			// scalar value
+			double val = da->GetComponent(cellid, 0);
+			PropertyBrowserAttribute att(da->GetName(), val);
+			atts.append(att);
+		} else if (da->GetNumberOfComponents() == 3) {
+			// vector value
+			double val = da->GetComponent(cellid, 0);
+			QString attName = da->GetName();
+			attName.append("X");
+			PropertyBrowserAttribute att(attName, val);
+			atts.append(att);
+
+			val = da->GetComponent(cellid, 1);
+			attName = da->GetName();
+			attName.append("Y");
+			att = PropertyBrowserAttribute(attName, val);
+			atts.append(att);
+		}
+	}
+
+	QPolygonF polygon;
+	vtkCell* cell = cont->data()->GetCell(cellid);
+	vtkPoints* points = cont->data()->GetPoints();
+	double* vv;
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
+		vv = points->GetPoint(cell->GetPointIds()->GetId(i));
+		polygon.append(QPointF(*vv, *(vv + 1)));
+	}
+	vv = points->GetPoint(cell->GetPointIds()->GetId(0));
+	polygon.append(QPointF(*vv, *(vv + 1)));
+
+	auto sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	auto usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
+
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (sgrid != nullptr) {
+		int i, j, k;
+		cont->getCellIJKIndex(cellid, &i, &j, &k);
+		pb->view()->setCellAttributes(i, j, polygon, atts);
+	} else if (usgrid != nullptr) {
+		pb->view()->setCellAttributes(cellid, polygon, atts);
 	}
 }
 
@@ -930,6 +1047,11 @@ QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForCellInput() cons
 QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForNodeResult() const
 {
 	return m_showAttributeBrowserActionForNodeResult;
+}
+
+QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForCellResult() const
+{
+	return m_showAttributeBrowserActionForCellResult;
 }
 
 QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForParticleResult() const

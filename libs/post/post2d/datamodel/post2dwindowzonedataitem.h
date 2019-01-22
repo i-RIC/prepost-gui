@@ -65,6 +65,11 @@ public:
 	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 
+	void initCellResultAttributeBrowser();
+	void clearCellResultAttributeBrowser();
+	void fixCellResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateCellResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+
 	void initParticleResultAttributeBrowser();
 	void clearParticleResultAttributeBrowser();
 	void fixParticleResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
@@ -74,6 +79,7 @@ public:
 
 	QAction* showAttributeBrowserActionForCellInput() const;
 	QAction* showAttributeBrowserActionForNodeResult() const;
+	QAction* showAttributeBrowserActionForCellResult() const;
 	QAction* showAttributeBrowserActionForParticleResult() const;
 
 public slots:
@@ -90,9 +96,10 @@ private:
 	void setupActors();
 
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
-	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
 	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
 	void updateCellInputAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
+	void updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
 	void updateParticleResultAttributeBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 
@@ -114,6 +121,7 @@ private:
 
 	QAction* m_showAttributeBrowserActionForCellInput;
 	QAction* m_showAttributeBrowserActionForNodeResult;
+	QAction* m_showAttributeBrowserActionForCellResult;
 	QAction* m_showAttributeBrowserActionForParticleResult;
 
 	std::string m_zoneName;
