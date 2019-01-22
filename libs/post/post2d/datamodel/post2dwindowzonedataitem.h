@@ -40,20 +40,20 @@ public:
 	void updateZDepthRangeItemCount() override;
 
 	PostZoneDataContainer* dataContainer();
-	vtkPolyData* filteredData() const {return m_filteredData;}
-	bool isMasked() const {return m_isMasked;}
-	int zoneNumber() const {return m_zoneNumber;}
-	std::string zoneName() const {return m_zoneName;}
+	vtkPolyData* filteredData() const;
+	bool isMasked() const;
+	int zoneNumber() const;
+	std::string zoneName() const;
 	void update(bool noparticle = false);
-	Post2dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
-	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const {return m_scalarGroupTopDataItem;}
-	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
-	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
-	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
-	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
-	Post2dWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const {return m_cellScalarGroupTopDataItem;}
-	Post2dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
-	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const {return m_graphGroupDataItem;}
+	Post2dWindowGridShapeDataItem* gridShapeDataItem() const;
+	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const;
+	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const;
+	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const;
+	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const;
+	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const;
+	Post2dWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const;
+	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
+	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const;
 
 	void initNodeAttributeBrowser();
 	void clearNodeAttributeBrowser();
@@ -69,9 +69,9 @@ public:
 	void updateParticleBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateRegionPolyData();
 
-	QAction* showAttributeBrowserActionForCellInput() const {return m_showAttributeBrowserActionForCellInput;}
-	QAction* showAttributeBrowserActionForNodeResult() const {return m_showAttributeBrowserActionForNodeResult;}
-	QAction* showAttributeBrowserActionForParticleResult() const {return m_showAttributeBrowserActionForParticleResult;}
+	QAction* showAttributeBrowserActionForCellInput() const;
+	QAction* showAttributeBrowserActionForNodeResult() const;
+	QAction* showAttributeBrowserActionForParticleResult() const;
 
 public slots:
 	void showNodeAttributeBrowser();

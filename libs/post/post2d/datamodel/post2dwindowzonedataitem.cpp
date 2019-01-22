@@ -278,6 +278,26 @@ PostZoneDataContainer* Post2dWindowZoneDataItem::dataContainer()
 	return postSolutionInfo()->zoneContainer2D(m_zoneName);
 }
 
+vtkPolyData* Post2dWindowZoneDataItem::filteredData() const
+{
+	return m_filteredData;
+}
+
+bool Post2dWindowZoneDataItem::isMasked() const
+{
+	return m_isMasked;
+}
+
+int Post2dWindowZoneDataItem::zoneNumber() const
+{
+	return m_zoneNumber;
+}
+
+std::string Post2dWindowZoneDataItem::zoneName() const
+{
+	return m_zoneName;
+}
+
 void Post2dWindowZoneDataItem::update(bool noparticle)
 {
 	double xmin, xmax, ymin, ymax;
@@ -335,6 +355,51 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		qDebug("Graphs: %d", time.elapsed());
 	}
 	updateRegionPolyData();
+}
+
+Post2dWindowGridShapeDataItem* Post2dWindowZoneDataItem::gridShapeDataItem() const
+{
+	return m_shapeDataItem;
+}
+
+Post2dWindowNodeScalarGroupTopDataItem* Post2dWindowZoneDataItem::scalarGroupTopDataItem() const
+{
+	return m_scalarGroupTopDataItem;
+}
+
+Post2dWindowNodeVectorArrowGroupDataItem* Post2dWindowZoneDataItem::arrowGroupDataItem() const
+{
+	return m_arrowGroupDataItem;
+}
+
+Post2dWindowNodeVectorStreamlineGroupDataItem* Post2dWindowZoneDataItem::streamlineDataItem() const
+{
+	return m_streamlineGroupDataItem;
+}
+
+Post2dWindowNodeVectorParticleGroupDataItem* Post2dWindowZoneDataItem::particleDataItem() const
+{
+	return m_particleGroupDataItem;
+}
+
+Post2dWindowCellFlagGroupDataItem* Post2dWindowZoneDataItem::cellFlagGroupDataItem() const
+{
+	return m_cellFlagGroupDataItem;
+}
+
+Post2dWindowCellScalarGroupTopDataItem* Post2dWindowZoneDataItem::cellScalarGroupTopDataItem() const
+{
+	return m_cellScalarGroupTopDataItem;
+}
+
+Post2dWindowParticlesTopDataItem* Post2dWindowZoneDataItem::particlesDataItem() const
+{
+	return m_particlesDataItem;
+}
+
+Post2dWindowGraphGroupDataItem* Post2dWindowZoneDataItem::graphGroupDataItem() const
+{
+	return m_graphGroupDataItem;
 }
 
 void Post2dWindowZoneDataItem::updateZDepthRangeItemCount()
@@ -855,4 +920,19 @@ void Post2dWindowZoneDataItem::updateRegionPolyData()
 	actorCollection()->RemoveItem(m_regionActor);
 	actorCollection()->AddItem(m_regionActor);
 	updateVisibilityWithoutRendering();
+}
+
+QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForCellInput() const
+{
+	return m_showAttributeBrowserActionForCellInput;
+}
+
+QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForNodeResult() const
+{
+	return m_showAttributeBrowserActionForNodeResult;
+}
+
+QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForParticleResult() const
+{
+	return m_showAttributeBrowserActionForParticleResult;
 }
