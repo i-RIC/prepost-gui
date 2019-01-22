@@ -65,7 +65,7 @@ void PostTitleDataItem::updateActorSettings()
 	// To avoid VTK warning
 	if (m_setting.title.value().isEmpty()) {
 		m_titleActor->VisibilityOff();
-		updateVisibility();
+		updateVisibilityWithoutRendering();
 		return;
 	}
 	actor2DCollection()->AddItem(m_titleActor);
@@ -82,5 +82,5 @@ void PostTitleDataItem::updateActorSettings()
 	prop->SetFontSize(m_setting.fontSize);
 	prop->SetJustificationToCentered();
 	prop->SetVerticalJustificationToTop();
-	updateVisibility();
+	updateVisibilityWithoutRendering();
 }
