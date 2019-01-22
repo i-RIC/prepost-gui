@@ -740,8 +740,28 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 	painter.setPen(Qt::black);
 	painter.drawLine(QLineF(startP, endP));
 
+	// draw ratio
 	QPointF p = (startP + endP) / 2.0;
 	painter.drawText(p, m_editRatio);
+
+	painter.setPen(Qt::blue);
+
+	QPointF endPH = m_matrix.map(QPointF(m_editAltitudePreview.position(), selectedAlt.height()));
+	painter.drawLine(QLineF(startP, endPH));
+	painter.drawLine(QLineF(endP, endPH));
+
+	// draw horizontal distance
+	double distH = std::fabs(selectedAlt.position() - m_editAltitudePreview.position());
+	QPointF p2(p.x(), startP.y());
+	painter.drawText(p2, QString::number(distH));
+
+	// draw vertical distance
+	double distV = std::fabs(selectedAlt.height() - m_editAltitudePreview.height());
+	QPointF p3(endP.x(), p.y());
+	if (distV != 0) {
+		painter.drawText(p3, QString::number(distV));
+	}
+
 	painter.restore();
 }
 
@@ -1105,14 +1125,16 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseDoubleClickEvent(QMo
 	if (m_mouseEventMode == meEditCrosssection && event->button() == Qt::LeftButton) {
 		m_mouseEventMode = meNormal;
 		updateMouseCursor();
+		viewport()->update();
 	}
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::keyReleaseEvent(QKeyEvent* event)
 {
-	if (m_mouseEventMode == meEditCrosssection && iRIC::isEnterKey(event->key())) {
+	if (m_mouseEventMode == meEditCrosssection && (iRIC::isEnterKey(event->key()) || event->key() == Qt::Key_Escape)) {
 		m_mouseEventMode = meNormal;
 		updateMouseCursor();
+		viewport()->update();
 	}
 }
 
