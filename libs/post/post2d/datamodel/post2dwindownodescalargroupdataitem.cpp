@@ -246,6 +246,11 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	updateActorSettings();
 }
 
+ContourSettingWidget::Contour Post2dWindowNodeScalarGroupDataItem::contour() const
+{
+	return m_setting.contour;
+}
+
 void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(1);

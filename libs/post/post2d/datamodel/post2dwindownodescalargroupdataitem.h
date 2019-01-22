@@ -34,7 +34,7 @@ public:
 	std::string target() const;
 	void setTarget(const std::string& target);
 
-	ContourSettingWidget::Contour contour() const {return m_setting.contour;}
+	ContourSettingWidget::Contour contour() const;
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
