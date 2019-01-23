@@ -23,15 +23,15 @@ class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public PostWin
 public:
 	Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dWindowGridTypeDataItem();
-	const QList<Post2dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
+	const QList<Post2dWindowZoneDataItem*>& zoneDatas() const;
 	const std::string& name();
-	Post2dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
-	SolverDefinitionGridType* gridType() const override {return m_gridType;}
-	Post2dWindowGeoDataTopDataItem* geoDataItem() const {return m_geoDataItem;}
+	Post2dWindowZoneDataItem* zoneData(const std::string& name) const;
+	SolverDefinitionGridType* gridType() const override;
+	Post2dWindowGeoDataTopDataItem* geoDataItem() const;
 
-	LookupTableContainer* nodeLookupTable(const std::string& attName) const {return m_nodeLookupTables.value(attName, nullptr);}
-	LookupTableContainer* cellLookupTable(const std::string& attName) const {return m_cellLookupTables.value(attName, nullptr);}
-	LookupTableContainer* particleLookupTable(const std::string& attName) const {return m_particleLookupTables.value(attName, nullptr);}
+	LookupTableContainer* nodeLookupTable(const std::string& attName) override;
+	LookupTableContainer* cellLookupTable(const std::string& attName) override;
+	LookupTableContainer* particleLookupTable(const std::string& attName) override;
 	void setupZoneDataItems();
 	void update();
 

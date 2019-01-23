@@ -1,5 +1,8 @@
 #include "../project/projectcgnsfile.h"
+#include "postcalculatedresult.h"
+#include "postcalculatedresultargument.h"
 #include "postsolutioninfo.h"
+#include "postzonedatacontainer.h"
 #include "postzonepointseriesdatacontainer.h"
 
 #include <misc/stringtool.h>
@@ -9,8 +12,8 @@
 #include <cgnslib.h>
 #include <cmath>
 
-PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, ProjectDataItem* parent) :
-	PostSeriesDataContainer(dim, parent),
+PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, PostSolutionInfo* sinfo) :
+	PostSeriesDataContainer(dim, sinfo),
 	m_zoneName (zoneName),
 	m_zoneId {0},
 	m_physName {pName},
@@ -84,70 +87,119 @@ bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
 	return false;
 }
 
-bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t location)
+bool PostZonePointSeriesDataContainer::loadData(int fn, int solId, const QString& name, double* value)
+{
+	auto zc = zoneDataContainer();
+	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
+	for (PostCalculatedResult* result : calcResults) {
+		if (name == result->name().c_str()) {
+			return loadCalculatedData(fn, solId, result, value);
+		}
+	}
+	return loadResultData(fn, solId, name, value);
+}
+
+bool PostZonePointSeriesDataContainer::loadCalculatedData(int fn, int solId, PostCalculatedResult* result, double* value)
+{
+	// calculated value
+	std::vector<double> args;
+	for (PostCalculatedResultArgument* arg : result->arguments()) {
+		double argVal;
+		bool ok = loadData(fn, solId, arg->name().c_str(), &argVal);
+		if (! ok) {return false;}
+		args.push_back(argVal);
+	}
+	*value = result->calculateValue(args);
+}
+
+bool PostZonePointSeriesDataContainer::loadResultData(int fn, int solId, const QString& name, double* value)
 {
 	bool ret;
 	int ier;
-	int numSols;
 	ret = setZoneId(fn);
 	if (! ret) {return false;}
 
+	QRegExp rx("^(.+) \\(magnitude\\)$");
+	bool magnitude = (rx.indexIn(name) != -1);
+
+	QString tmpPhysName = name;
+	if (magnitude) {rx.cap(1);}
+
+	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solId, "end");
+	if (ier != 0) {return false;}
+	int numArrays;
+	ier = cg_narrays(&numArrays);
+	if (ier != 0) {return false;}
+	*value = 0;
+	for (int j = 1; j <= numArrays; ++j) {
+		DataType_t datatype;
+		int dimension;
+		cgsize_t dimVector[3];
+		char arrayname[30];
+		ier = cg_array_info(j, arrayname, &datatype, &dimension, dimVector);
+		if (ier != 0) {return false;}
+		QString name(arrayname);
+		int dataLen = 1;
+		for (int dim = 1; dim <= dimension; ++dim) {
+			dataLen = dataLen * dimVector[dim - 1];
+		}
+		setPointIndex(std::min(m_pointIndex, dataLen - 1));
+		std::vector<double> buffer(dataLen);
+		ier = cg_array_read_as(j, RealDouble, buffer.data());
+		if (magnitude) {
+			if (
+				name == QString(tmpPhysName).append("X") ||
+				name == QString(tmpPhysName).append("Y") ||
+				name == QString(tmpPhysName).append("Z")
+			) {
+				double currVal = buffer[m_pointIndex];
+				*value += currVal * currVal;
+			}
+		} else {
+			if (tmpPhysName == name) {
+				*value = buffer[m_pointIndex];
+			}
+		}
+	}
+	if (magnitude) {
+		*value = std::sqrt(*value);
+	}
+	return true;
+}
+
+PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() const
+{
+	return solutionInfo()->zoneContainer(m_dimension, m_zoneName);
+}
+
+bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t location)
+{
+	m_data.clear();
+	auto zc = zoneDataContainer();
+
+	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
+	for (PostCalculatedResult* r : calcResults) {
+		r->updateFunction();
+	}
+
+	int ier;
+	int numSols;
+	bool ret = setZoneId(fn);
+	if (! ret) {return false;}
 	ier = cg_nsols(fn, m_baseId, m_zoneId, &numSols);
 	if (ier != 0) {return false;}
-	m_data.clear();
-	QRegExp rx("^(.+) \\(magnitude\\)$");
-	bool magnitude = (rx.indexIn(m_physName) != -1);
-	QString tmpPhysName = m_physName;
-	if (magnitude) {
-		// shortname
-		tmpPhysName = rx.cap(1);
-	}
+
 	GridLocation_t loc;
 	char solname[32];
 	for (int i = 1; i <= numSols; ++i) {
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", i, "end");
-		if (ier != 0) {return false;}
 		ier = cg_sol_info(fn, m_baseId, m_zoneId, i, solname, &loc);
 		if (ier != 0) {return false;}
 		if (location != loc) {continue;}
-		int numArrays;
-		ier = cg_narrays(&numArrays);
-		if (ier != 0) {return false;}
-		double value = 0;
-		for (int j = 1; j <= numArrays; ++j) {
-			DataType_t datatype;
-			int dimension;
-			cgsize_t dimVector[3];
-			char arrayname[30];
-			ier = cg_array_info(j, arrayname, &datatype, &dimension, dimVector);
-			if (ier != 0) {return false;}
-			QString name(arrayname);
-			int dataLen = 1;
-			for (int dim = 1; dim <= dimension; ++dim) {
-				dataLen = dataLen * dimVector[dim - 1];
-			}
-			setPointIndex(std::min(m_pointIndex, dataLen - 1));
-			std::vector<double> buffer(dataLen);
-			ier = cg_array_read_as(j, RealDouble, buffer.data());
-			if (magnitude) {
-				if (
-					name == QString(tmpPhysName).append("X") ||
-					name == QString(tmpPhysName).append("Y") ||
-					name == QString(tmpPhysName).append("Z")
-				) {
-					double currVal = buffer[m_pointIndex];
-					value += currVal * currVal;
-				}
-			} else {
-				if (tmpPhysName == name) {
-					value = buffer[m_pointIndex];
-				}
-			}
-		}
-		if (magnitude) {
-			value = std::sqrt(value);
-		}
-		m_data.append(value);
+
+		double val;
+		bool ok = loadData(fn, i, m_physName, &val);
+		if (! ok) {return false;}
+		m_data.append(val);
 	}
 	return true;
 }

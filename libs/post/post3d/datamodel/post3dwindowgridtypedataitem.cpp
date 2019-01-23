@@ -55,9 +55,45 @@ Post3dWindowGridTypeDataItem::~Post3dWindowGridTypeDataItem()
 	}
 }
 
+const QList<Post3dWindowZoneDataItem*>& Post3dWindowGridTypeDataItem::zoneDatas() const
+{
+	return m_zoneDatas;
+}
+
 const std::string& Post3dWindowGridTypeDataItem::name() const
 {
 	return m_gridType->name();
+}
+
+Post3dWindowZoneDataItem* Post3dWindowGridTypeDataItem::zoneData(const std::string& name) const
+{
+	return m_zoneDataNameMap.value(name);
+}
+
+SolverDefinitionGridType* Post3dWindowGridTypeDataItem::gridType() const
+{
+	return m_gridType;
+}
+
+LookupTableContainer* Post3dWindowGridTypeDataItem::nodeLookupTable(const std::string& attName)
+{
+	if (m_nodeLookupTables.find(attName) == m_nodeLookupTables.end()) {
+		setupNodeScalarsToColors(attName);
+	}
+	return m_nodeLookupTables.value(attName, nullptr);
+}
+
+LookupTableContainer* Post3dWindowGridTypeDataItem::cellLookupTable(const std::string& attName)
+{
+	return nullptr;
+}
+
+LookupTableContainer* Post3dWindowGridTypeDataItem::particleLookupTable(const std::string& attName)
+{
+	if (m_particleLookupTables.find(attName) == m_particleLookupTables.end()) {
+		setupParticleScalarsToColors(attName);
+	}
+	return m_particleLookupTables.value(attName, nullptr);
 }
 
 void Post3dWindowGridTypeDataItem::setupZoneDataItems()

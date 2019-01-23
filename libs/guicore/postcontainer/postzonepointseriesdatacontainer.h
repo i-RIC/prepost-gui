@@ -12,6 +12,7 @@
 #define cgsize_t int
 #endif
 
+class PostCalculatedResult;
 class SolverDefinitionGridType;
 class ScalarsToColorsContainer;
 class ScalarsToColorsEditDialog;
@@ -20,7 +21,7 @@ class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesData
 {
 
 public:
-	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, ProjectDataItem* parent);
+	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, PostSolutionInfo* sinfo);
 	const QList<double>& data() const;
 
 	bool handleCurrentStepUpdate(const int fn) override;
@@ -43,6 +44,10 @@ protected:
 
 private:
 	bool setZoneId(const int fn);
+	bool loadData(int fn, int solId, const QString& name, double* value);
+	bool loadCalculatedData(int fn, int solId, PostCalculatedResult* result, double* value);
+	bool loadResultData(int fn, int solId, const QString& name, double* value);
+	PostZoneDataContainer* zoneDataContainer() const;
 
 protected:
 	QList<double> m_data;

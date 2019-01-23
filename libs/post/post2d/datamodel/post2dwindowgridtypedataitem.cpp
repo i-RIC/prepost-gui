@@ -68,9 +68,53 @@ Post2dWindowGridTypeDataItem::~Post2dWindowGridTypeDataItem()
 	}
 }
 
+const QList<Post2dWindowZoneDataItem*>& Post2dWindowGridTypeDataItem::zoneDatas() const
+{
+	return m_zoneDatas;
+}
+
 const std::string& Post2dWindowGridTypeDataItem::name()
 {
 	return m_gridType->name();
+}
+
+Post2dWindowZoneDataItem* Post2dWindowGridTypeDataItem::zoneData(const std::string& name) const
+{
+	return m_zoneDataNameMap.value(name);
+}
+
+SolverDefinitionGridType* Post2dWindowGridTypeDataItem::gridType() const
+{
+	return m_gridType;
+}
+
+Post2dWindowGeoDataTopDataItem* Post2dWindowGridTypeDataItem::geoDataItem() const
+{
+	return m_geoDataItem;
+}
+
+LookupTableContainer* Post2dWindowGridTypeDataItem::nodeLookupTable(const std::string& attName)
+{
+	if (m_nodeLookupTables.find(attName) == m_nodeLookupTables.end()) {
+		setupNodeScalarsToColors(attName);
+	}
+	return m_nodeLookupTables.value(attName, nullptr);
+}
+
+LookupTableContainer* Post2dWindowGridTypeDataItem::cellLookupTable(const std::string& attName)
+{
+	if (m_cellLookupTables.find(attName) == m_cellLookupTables.end()) {
+		setupCellScalarsToColors(attName);
+	}
+	return m_cellLookupTables.value(attName, nullptr);
+}
+
+LookupTableContainer* Post2dWindowGridTypeDataItem::particleLookupTable(const std::string& attName)
+{
+	if (m_particleLookupTables.find(attName) == m_particleLookupTables.end()) {
+		setupParticleScalarsToColors(attName);
+	}
+	return m_particleLookupTables.value(attName, nullptr);
 }
 
 void Post2dWindowGridTypeDataItem::setupZoneDataItems()

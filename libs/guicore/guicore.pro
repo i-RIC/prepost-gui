@@ -10,7 +10,7 @@ win32 {
 
 include( ../../paths.pri )
 
-QT += network widgets xml
+QT += network qml widgets xml
 
 ######################
 # Internal libraries #
@@ -231,6 +231,11 @@ HEADERS += guicore_global.h \
            postcontainer/postabstractsteps.h \
            postcontainer/postbaseiterativeseriesdatacontainer.h \
            postcontainer/postbaseselectingdialog.h \
+           postcontainer/postcalculatedresult.h \
+           postcontainer/postcalculatedresultargument.h \
+           postcontainer/postcalculatedresultargumenteditdialog.h \
+           postcontainer/postcalculatedresulteditdialog.h \
+           postcontainer/postcalculatedresultlistdialog.h \
            postcontainer/postdatacontainer.h \
            postcontainer/postdataexportdialog.h \
            postcontainer/postexportsetting.h \
@@ -313,6 +318,7 @@ HEADERS += guicore_global.h \
            postcontainer/exporter/postzonedatashapeexporter.h \
            postcontainer/exporter/postzonedatatpoexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
+           postcontainer/private/postcalculatedresulteditdialog_tabledelegate.h \
            pre/base/preprocessordataitem.h \
            pre/base/preprocessordatamodelinterface.h \
            pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h \
@@ -515,6 +521,9 @@ FORMS += datamodel/propertybrowserview.ui \
          misc/mousepositionwidget.ui \
          post/postzoneselectingdialog.ui \
          postcontainer/postbaseselectingdialog.ui \
+         postcontainer/postcalculatedresultargumenteditdialog.ui \
+         postcontainer/postcalculatedresulteditdialog.ui \
+         postcontainer/postcalculatedresultlistdialog.ui \
          postcontainer/postdataexportdialog.ui \
          project/backgroundimageinfodialog.ui \
          project/offsetsettingdialog.ui \
@@ -570,6 +579,11 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/postabstractsteps.cpp \
            postcontainer/postbaseiterativeseriesdatacontainer.cpp \
            postcontainer/postbaseselectingdialog.cpp \
+           postcontainer/postcalculatedresult.cpp \
+           postcontainer/postcalculatedresultargument.cpp \
+           postcontainer/postcalculatedresultargumenteditdialog.cpp \
+           postcontainer/postcalculatedresulteditdialog.cpp \
+           postcontainer/postcalculatedresultlistdialog.cpp \
            postcontainer/postdatacontainer.cpp \
            postcontainer/postdataexportdialog.cpp \
            postcontainer/postexportsetting.cpp \
@@ -644,6 +658,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/exporter/postzonedatashapeexporter.cpp \
            postcontainer/exporter/postzonedatatpoexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \
+           postcontainer/private/postcalculatedresulteditdialog_tabledelegate.cpp \
            pre/base/preprocessordataitem.cpp \
            pre/base/preprocessordatamodelinterface.cpp \
            pre/base/preprocessorgeodatatopdataiteminterface.cpp \

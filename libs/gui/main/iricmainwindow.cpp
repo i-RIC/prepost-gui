@@ -14,6 +14,7 @@
 #include "../startpage/startpagedialog.h"
 #include "../verification/verificationgraphdialog.h"
 #include "iricmainwindow.h"
+#include "private/iricmainwindow_calculatedresultmanager.h"
 #include "private/iricmainwindow_snapshotsaver.h"
 
 #include <cs/coordinatesystembuilder.h>
@@ -1745,6 +1746,11 @@ void iRICMainWindow::clearCalculationResult()
 
 	m_projectData->mainfile()->clearResults();
 	statusBar()->showMessage(tr("Calculation result cleared."), STATUSBAR_DISPLAYTIME);
+}
+
+void iRICMainWindow::manageCalculatedResults()
+{
+	CalculatedResultManager::openManageDialog(this);
 }
 
 void iRICMainWindow::restoreWindowState()

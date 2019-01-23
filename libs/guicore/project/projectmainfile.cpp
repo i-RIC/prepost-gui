@@ -456,6 +456,12 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->loadMeasuredDatas(tmpNode);
 	}
 
+	// read calculation result
+	tmpNode = iRIC::getChildNode(node, "CalculationResult");
+	if (! tmpNode.isNull()) {
+		impl->m_postSolutionInfo->loadFromProjectMainFile(tmpNode);
+	}
+
 	// read setting about Backgrounds
 	tmpNode = iRIC::getChildNode(node, "Backgrounds");
 	if (! tmpNode.isNull()) {
@@ -486,6 +492,11 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	// write measured data
 	writer.writeStartElement("MeasuredDatas");
 	impl->saveMeasuredDatas(writer);
+	writer.writeEndElement();
+
+	// write setting about CalculationResult
+	writer.writeStartElement("CalculationResult");
+	impl->m_postSolutionInfo->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	// write setting about PostProcessors

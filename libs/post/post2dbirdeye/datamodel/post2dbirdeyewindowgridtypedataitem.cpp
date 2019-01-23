@@ -56,9 +56,45 @@ Post2dBirdEyeWindowGridTypeDataItem::~Post2dBirdEyeWindowGridTypeDataItem()
 	}
 }
 
+const QList<Post2dBirdEyeWindowZoneDataItem*>& Post2dBirdEyeWindowGridTypeDataItem::zoneDatas() const
+{
+	return m_zoneDatas;
+}
+
 const std::string& Post2dBirdEyeWindowGridTypeDataItem::name() const
 {
 	return m_gridType->name();
+}
+
+Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowGridTypeDataItem::zoneData(const std::string& name) const
+{
+	return m_zoneDataNameMap.value(name);
+}
+
+SolverDefinitionGridType* Post2dBirdEyeWindowGridTypeDataItem::gridType() const
+{
+	return m_gridType;
+}
+
+LookupTableContainer* Post2dBirdEyeWindowGridTypeDataItem::nodeLookupTable(const std::string& attName)
+{
+	if (m_nodeLookupTables.find(attName) == m_nodeLookupTables.end()) {
+		setupNodeScalarsToColors(attName);
+	}
+	return m_nodeLookupTables.value(attName, nullptr);
+}
+
+LookupTableContainer* Post2dBirdEyeWindowGridTypeDataItem::cellLookupTable(const std::string& attName)
+{
+	if (m_cellLookupTables.find(attName) == m_cellLookupTables.end()) {
+		setupCellScalarsToColors(attName);
+	}
+	return m_cellLookupTables.value(attName, nullptr);
+}
+
+LookupTableContainer* Post2dBirdEyeWindowGridTypeDataItem::particleLookupTable(const std::string&)
+{
+	return nullptr;
 }
 
 void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
@@ -75,7 +111,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
 			vtkPointData* pd = zCont->data()->GetPointData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
-				setupScalarsToColors(name);
+				setupNodeScalarsToColors(name);
 			}
 		}
 		if (m_cellLookupTables.count() == 0 && zones.size() != 0) {
@@ -205,7 +241,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	writer.writeEndElement();
 }
 
-void Post2dBirdEyeWindowGridTypeDataItem::setupScalarsToColors(const std::string& name)
+void Post2dBirdEyeWindowGridTypeDataItem::setupNodeScalarsToColors(const std::string& name)
 {
 	LookupTableContainer* c = new LookupTableContainer(this);
 	m_nodeLookupTables.insert(name, c);

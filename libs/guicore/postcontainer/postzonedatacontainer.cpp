@@ -6,6 +6,7 @@
 #include "../solverdef/solverdefinitiongridattributeinteger.h"
 #include "../solverdef/solverdefinitiongridattributereal.h"
 #include "../solverdef/solverdefinitiongridtype.h"
+#include "postcalculatedresult.h"
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
 
@@ -14,11 +15,13 @@
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
+#include <QDomNode>
 #include <QFile>
 #include <QLineF>
 #include <QPointF>
 #include <QRegExp>
 #include <QTextStream>
+#include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
@@ -83,6 +86,17 @@ void insertQuadCells(int fn, int baseId, int zoneId, int secId, vtkUnstructuredG
 	}
 }
 
+vtkDoubleArray* buildDoubleArray(const std::string& name, vtkIdType size)
+{
+	vtkDoubleArray* ret = vtkDoubleArray::New();
+	ret->SetName(name.c_str());
+	ret->Allocate(size);
+	for (vtkIdType i = 0; i < size; ++i) {
+		ret->InsertNextValue(0);
+	}
+	return ret;
+}
+
 } // namespace
 
 const QString PostZoneDataContainer::labelName {"_LABEL"};
@@ -99,6 +113,12 @@ PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const 
 	m_cellDim {0},
 	m_loadedOnce {false}
 {}
+PostZoneDataContainer::~PostZoneDataContainer()
+{
+	for (auto r : m_calculatedResults) {
+		delete r;
+	}
+}
 
 SolverDefinitionGridType* PostZoneDataContainer::gridType() const
 {
@@ -142,7 +162,12 @@ QString PostZoneDataContainer::caption() const
 
 bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn)
 {
-	loadFromCgnsFile(fn);
+	return handleCurrentStepUpdate(fn, false);
+}
+
+bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn, bool disableCalculatedResult)
+{
+	loadFromCgnsFile(fn, disableCalculatedResult);
 	return m_loadOK;
 }
 
@@ -921,6 +946,11 @@ bool PostZoneDataContainer::setupIndexData()
 
 void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 {
+	loadFromCgnsFile(fn, false);
+}
+
+void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculatedResult)
+{
 	m_loadOK = true;
 	int currentStep = dynamic_cast<PostSolutionInfo*>(parent())->currentStep();
 
@@ -964,6 +994,10 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 
 	// load particles
 	ret = loadParticle(fn, currentStep);
+
+	if (! disableCalculatedResult) {
+		addCalculatedResultArrays();
+	}
 
 	m_data->Modified();
 
@@ -1032,6 +1066,16 @@ bool PostZoneDataContainer::cellScalarValueExists() const
 bool PostZoneDataContainer::vectorValueExists() const
 {
 	return vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(m_data->GetPointData()).size() > 0;
+}
+
+std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResults()
+{
+	return m_calculatedResults;
+}
+
+const std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResults() const
+{
+	return m_calculatedResults;
 }
 
 bool PostZoneDataContainer::IBCExists() const
@@ -1328,4 +1372,49 @@ void PostZoneDataContainer::doApplyOffset(double x_diff, double y_diff)
 		points->SetPoint(id, v);
 	}
 	points->Modified();
+}
+
+void PostZoneDataContainer::addCalculatedResultArrays()
+{
+	for (auto result : m_calculatedResults) {
+		if (result->dataType() == PostCalculatedResult::GridNode) {
+			auto vals = buildDoubleArray(result->name(), m_data->GetNumberOfPoints());
+			m_data->GetPointData()->AddArray(vals);
+			vals->Delete();
+		} else if (result->dataType() == PostCalculatedResult::GridCell) {
+			auto vals = buildDoubleArray(result->name(), m_data->GetNumberOfCells());
+			m_data->GetCellData()->AddArray(vals);
+			vals->Delete();
+		} else if (result->dataType() == PostCalculatedResult::Particle) {
+			auto vals = buildDoubleArray(result->name(), m_data->GetNumberOfPoints());
+			m_data->GetPointData()->AddArray(vals);
+			vals->Delete();
+		} else if (result->dataType() == PostCalculatedResult::PolyData) {
+			// @todo implement this.
+		}
+		result->updateValues();
+	}
+}
+
+void PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	for (int i = 0; i < node.childNodes().size(); ++i) {
+		auto childNode = node.childNodes().at(i);
+		if (childNode.nodeName() == "SimpleOperationResult") {
+			auto cr = new PostCalculatedResult(this);
+			cr->loadFromProjectMainFile(childNode);
+			m_calculatedResults.push_back(cr);
+		}
+	}
+}
+
+void PostZoneDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	writer.writeAttribute("name", m_zoneName.c_str());
+
+	for (auto result : m_calculatedResults) {
+		writer.writeStartElement("SimpleOperationResult");
+		result->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }
