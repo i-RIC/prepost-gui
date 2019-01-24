@@ -32,6 +32,16 @@ public:
 	std::vector<GcpTableRow>* gcpTable();
 	AddibleGcpTableModel* gcpTableModel();
 
+	double leftBottomX() const {return m_leftbottomX;}
+	double leftBottomY() const {return m_leftbottomY;}
+	double scale() const {return m_scale;}
+	double angle() const {return m_angle;}
+
+	double origLeftBottomX() const {return m_origLeftbottomX;}
+	double origLeftBottomY() const {return m_origLeftbottomY;}
+	double origScale() const {return m_origScale;}
+	double origAngle() const {return m_origAngle;}
+
 public slots:
 	void reject() override;
 	void apply();
@@ -52,6 +62,17 @@ private:
 	void setHideButtonText();
 
 	BackgroundImageInfo* m_info;
+
+	double m_leftbottomX;
+	double m_leftbottomY;
+	double m_scale;
+	double m_angle;
+
+	double m_origLeftbottomX;
+	double m_origLeftbottomY;
+	double m_origScale;
+	double m_origAngle;
+
 	std::unique_ptr<AddibleGcpTableModel> m_gcpTableModel;
 	Ui::BackgroundImageInfoGeoreferenceDialog *ui;
 

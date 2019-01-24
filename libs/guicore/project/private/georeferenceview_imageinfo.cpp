@@ -142,6 +142,24 @@ std::vector<GeoreferenceViewHelper*>& GeoreferenceView::ImageInfo::viewHelpers()
 
 void GeoreferenceView::ImageInfo::doPaintView(QPainter* painter, const QTransform&, const QRectF&) const
 {
+	QImage img {m_backgroundImageInfo->name()};
+
+	painter->save();
+
+	// translate
+	QPointF topLeft = modelView()->conv(QPointF {});
+	painter->translate(topLeft);
+
+	// scale
+	double s = modelView()->scale();
+	painter->scale(s, s);
+
+	// rotate
+	// painter->rotate(- img->m_backgroundImageInfo->angle()); // Rotation disabled.
+
+	painter->drawImage(0, 0, img);
+
+	painter->restore();
 }
 
 void GeoreferenceView::ImageInfo::paintHelpers(QPainter* painter, const QTransform& transform, const QRectF& rect) const

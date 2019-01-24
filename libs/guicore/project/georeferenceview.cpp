@@ -31,6 +31,7 @@ GeoreferenceView::~GeoreferenceView()
 
 void GeoreferenceView::setInfo(BackgroundImageInfo* info, AddibleGcpTableModel* gcpTableModel)
 {
+	auto s = info->filename().toStdString();
 	m_info = new GeoreferenceView::ImageInfo {info, gcpTableModel, this};
 	setupTransform();
 }
@@ -93,6 +94,7 @@ void GeoreferenceView::wheelEvent(QWheelEvent* event)
 
 void GeoreferenceView::resizeEvent(QResizeEvent*)
 {
+	setupTransform();
 }
 
 std::vector<GcpTableRow>* GeoreferenceView::gcpTable()
@@ -102,6 +104,23 @@ std::vector<GcpTableRow>* GeoreferenceView::gcpTable()
 
 void GeoreferenceView::setupTransform()
 {
+	QImage img {m_info->backgroundImageInfo()->name()};
+	auto bbox = img.rect();
+
+	auto center = bbox.center();
+	center.setY(-center.ry());
+
+	QSize s = size();
+	double scaleX = static_cast<double> (s.width()) / bbox.width();
+	double scaleY = static_cast<double> (s.height()) / bbox.height();
+
+	auto angleDegree = m_info->backgroundImageInfo()->angle();
+
+	setCenterPoint(center);
+	setScale(std::min(scaleX, scaleY));
+	setAngleDegree(angleDegree);
+
+	updateTransform();
 }
 
 QPixmap GeoreferenceView::drawModel()

@@ -18,6 +18,14 @@
 BackgroundImageInfoGeoreferenceDialog::BackgroundImageInfoGeoreferenceDialog(BackgroundImageInfo* info, QWidget* parent) :
 	QDialog {parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint},
 	m_info {info},
+	m_leftbottomX {info->translateX()},
+	m_leftbottomY {info->translateY()},
+	m_scale {info->scale()},
+	m_angle {info->angle()},
+	m_origLeftbottomX {info->translateX()},
+	m_origLeftbottomY {info->translateY()},
+	m_origScale {info->scale()},
+	m_origAngle {info->angle()},
 	m_gcpTableModel {new AddibleGcpTableModel()},
 	ui (new Ui::BackgroundImageInfoGeoreferenceDialog)
 {
@@ -32,6 +40,7 @@ BackgroundImageInfoGeoreferenceDialog::BackgroundImageInfoGeoreferenceDialog(Bac
 		ui->gcpTableView->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
 	}
 
+	auto s = info->filename().toStdString();
 	ui->imageWidget->setInfo(info, m_gcpTableModel.get());
 	ui->imageWidget->setDialog(this);
 
@@ -78,10 +87,21 @@ AddibleGcpTableModel* BackgroundImageInfoGeoreferenceDialog::gcpTableModel()
 
 void BackgroundImageInfoGeoreferenceDialog::reject()
 {
+	m_info->m_translateX = m_origLeftbottomX;
+	m_info->m_translateY = m_origLeftbottomY;
+	m_info->m_scale = m_origScale;
+	m_info->m_angle = m_origAngle;
+	m_info->informChange();
+	QDialog::reject();
 }
 
 void BackgroundImageInfoGeoreferenceDialog::apply()
 {
+	m_info->m_translateX = m_leftbottomX;
+	m_info->m_translateY = m_leftbottomY;
+	m_info->m_scale = m_scale;
+	m_info->m_angle = m_angle;
+	m_info->informChange();
 }
 
 void BackgroundImageInfoGeoreferenceDialog::handleSelectionChanged(const QItemSelection&, const QItemSelection&)

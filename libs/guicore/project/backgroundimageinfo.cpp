@@ -493,9 +493,15 @@ GcpTableModel* BackgroundImageInfo::gcpTableModel()
 	return dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (m_georeferenceDialog)->gcpTableModel();
 }
 
-void BackgroundImageInfo::handleGeoreferenceDialogAccepted(QDialog* dialog)
+void BackgroundImageInfo::handleGeoreferenceDialogAccepted(QDialog* d)
 {
-	BackgroundImageInfoGeoreferenceDialog* d = dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (dialog);
+	BackgroundImageInfoGeoreferenceDialog* dialog = dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (d);
+	m_oldTheta = dialog->origAngle();
+	m_oldScale = dialog->origScale();
+	m_oldTranslateX = dialog->origLeftBottomX();
+	m_oldTranslateY = dialog->origLeftBottomY();
+
+	iRICUndoStack::instance().push(new SetActorPropertyCommand(dialog->leftBottomX(), dialog->leftBottomY(), dialog->scale(), dialog->angle(), this));
 }
 
 void BackgroundImageInfo::selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices)

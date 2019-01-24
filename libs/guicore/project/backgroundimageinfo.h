@@ -171,6 +171,7 @@ private:
 
 public:
 	friend class BackgroundImageInfoDialog;
+	friend class BackgroundImageInfoGeoreferenceDialog;
 };
 
 #endif // BACKGROUNDIMAGEINFO_H
