@@ -404,6 +404,7 @@ HEADERS += guicore_global.h \
            project/private/backgroundimageinfogeoreferencedialog_styleditemdelegate.h \
            project/private/cgnsfileentry_impl.h \
            project/private/colorsource_impl.h \
+           project/private/georeferenceview_imageinfo.h \
            project/private/projectdatacopythread.h \
            project/private/projectdataitem_impl.h \
            project/private/projectdatamovethread.h \
@@ -722,6 +723,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/measured/measureddatacsvimporter.cpp \
            project/private/backgroundimageinfo_setactorpropertycommand.cpp \
            project/private/backgroundimageinfogeoreferencedialog_styleditemdelegate.cpp \
+           project/private/georeferenceview_imageinfo.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \

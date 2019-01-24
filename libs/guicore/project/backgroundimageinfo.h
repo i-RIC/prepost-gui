@@ -16,6 +16,8 @@
 #include <QPixmap>
 #include <QCursor>
 
+#include <unordered_set>
+
 class QMouseEvent;
 class QAction;
 class VTKGraphicsWindowDataItem;
@@ -74,7 +76,6 @@ public:
 	std::vector<GcpTableRow>* BackgroundImageInfo::gcpTable();
 	GcpTableModel* gcpTableModel();
 	void handleGeoreferenceDialogAccepted(QDialog* dialog);
-	void showGeoreferenceDialog();
 	void closeGeoreferenceDialog();
 
 	void hide();
@@ -83,12 +84,19 @@ public:
 
 	bool isVisible();
 
+public slots:
+	void selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices);
+	void startGcpSelect();
+	void showGeoreferenceDialog();
+
 protected slots:
 	void editName() {}
 	void toggleFixState();
 
 signals:
 	void isChanged();
+	void gcpDefined(const QPointF&);
+	void selectedIndexChanged(const std::unordered_set<std::vector<GcpTableRow>::size_type>&);
 	void isGeoreferenceDialogClosed();
 
 protected:

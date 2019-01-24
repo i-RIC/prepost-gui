@@ -498,6 +498,15 @@ void BackgroundImageInfo::handleGeoreferenceDialogAccepted(QDialog* dialog)
 	BackgroundImageInfoGeoreferenceDialog* d = dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (dialog);
 }
 
+void BackgroundImageInfo::selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices)
+{
+}
+
+void BackgroundImageInfo::startGcpSelect()
+{
+	QMessageBox::information(iricMainWindow(), tr("Information"), tr("Select a corresponding point on Main Window."));
+}
+
 void BackgroundImageInfo::showGeoreferenceDialog()
 {
 	if (m_georeferenceDialog == nullptr) {

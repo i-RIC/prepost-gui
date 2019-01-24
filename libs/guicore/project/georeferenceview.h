@@ -31,8 +31,12 @@ public:
 	std::vector<GcpTableRow>* gcpTable();
 
 private:
+	class ImageInfo;
+
 	void setupTransform();
 	QPixmap drawModel() override;
+
+	ImageInfo* m_info;
 };
 
 #endif // GEOREFERENCEVIEW_H
