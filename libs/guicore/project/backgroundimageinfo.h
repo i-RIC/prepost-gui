@@ -12,6 +12,7 @@
 #include <vtkPlaneSource.h>
 #include <vtkPolyDataMapper.h>
 
+#include <QDialog>
 #include <QPixmap>
 #include <QCursor>
 
@@ -19,6 +20,8 @@ class QMouseEvent;
 class QAction;
 class VTKGraphicsWindowDataItem;
 class VTKGraphicsView;
+class GcpTableModel;
+class GcpTableRow;
 
 class GUICOREDLL_EXPORT BackgroundImageInfo : public ProjectDataItem
 {
@@ -67,6 +70,18 @@ public:
 	QDialog* propertyDialog();
 	void handlePropertyDialogAccepted(QDialog* dialog);
 	void applyOffset(double x, double y);
+	QDialog* georeferenceDialog(/*QWidget* w*/);
+	std::vector<GcpTableRow>* BackgroundImageInfo::gcpTable();
+	GcpTableModel* gcpTableModel();
+	void handleGeoreferenceDialogAccepted(QDialog* dialog);
+	void showGeoreferenceDialog();
+	void closeGeoreferenceDialog();
+
+	void hide();
+	void show();
+	void toggleVisibility();
+
+	bool isVisible();
 
 protected slots:
 	void editName() {}
@@ -74,6 +89,7 @@ protected slots:
 
 signals:
 	void isChanged();
+	void isGeoreferenceDialogClosed();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -132,12 +148,16 @@ private:
 
 	bool m_fixed;
 
+	bool m_hide; // for georeference
+
 	QPixmap m_movePixmap;
 	QPixmap m_rotatePixmap;
 	QPixmap m_zoomPixmap;
 	QCursor m_moveCursor;
 	QCursor m_rotateCursor;
 	QCursor m_zoomCursor;
+
+	QDialog* m_georeferenceDialog;
 
 	class SetActorPropertyCommand;
 

@@ -240,11 +240,16 @@ HEADERS += guicore_global.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
+           project/addiblegcptablemodel.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
+           project/backgroundimageinfogeoreferencedialog.h \
            project/cgnsfileentry.h \
            project/cgnsfilelist.h \
            project/colorsource.h \
+           project/gcptablemodel.h \
+           project/gcptablerow.h \
+           project/georeferenceview.h \
            project/offsetsettingdialog.h \
            project/projectcgnsfile.h \
            project/projectdata.h \
@@ -396,6 +401,7 @@ HEADERS += guicore_global.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
            project/private/backgroundimageinfo_setactorpropertycommand.h \
+           project/private/backgroundimageinfogeoreferencedialog_styleditemdelegate.h \
            project/private/cgnsfileentry_impl.h \
            project/private/colorsource_impl.h \
            project/private/projectdatacopythread.h \
@@ -517,6 +523,7 @@ FORMS += datamodel/propertybrowserview.ui \
          postcontainer/postbaseselectingdialog.ui \
          postcontainer/postdataexportdialog.ui \
          project/backgroundimageinfodialog.ui \
+         project/backgroundimageinfogeoreferencedialog.ui \
          project/offsetsettingdialog.ui \
          scalarstocolors/colortransferfunctioneditwidget.ui \
          scalarstocolors/lookuptableeditwidget.ui \
@@ -579,11 +586,15 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
+           project/addiblegcptablemodel.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
+           project/backgroundimageinfogeoreferencedialog.cpp \
            project/cgnsfileentry.cpp \
            project/cgnsfilelist.cpp \
            project/colorsource.cpp \
+           project/gcptablemodel.cpp \
+           project/georeferenceview.cpp \
            project/offsetsettingdialog.cpp \
            project/projectcgnsfile.cpp \
            project/projectdata.cpp \
@@ -710,6 +721,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/measured/measureddatacsvexporter.cpp \
            project/measured/measureddatacsvimporter.cpp \
            project/private/backgroundimageinfo_setactorpropertycommand.cpp \
+           project/private/backgroundimageinfogeoreferencedialog_styleditemdelegate.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \

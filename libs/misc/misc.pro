@@ -36,9 +36,11 @@ HEADERS += boolcontainer.h \
            linearinterpolator.h \
            mathsupport.h \
            misc_global.h \
+           multicelloperabletableview.h \
            networksetting.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
+           primitiveview.h \
            qpointfcontainer.h \
            qttool.h \
            simplevaluecontainert.h \
@@ -71,7 +73,7 @@ HEADERS += boolcontainer.h \
            private/versionnumber_impl.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
-FORMS += informationdialog.ui slowmotionspeededitdialog.ui
+FORMS += informationdialog.ui primitiveview.ui slowmotionspeededitdialog.ui
 SOURCES += boolcontainer.cpp \
            colorcontainer.cpp \
            compositecontainer.cpp \
@@ -90,8 +92,10 @@ SOURCES += boolcontainer.cpp \
            latitudelongitudeangle.cpp \
            linearinterpolator.cpp \
            mathsupport.cpp \
+           multicelloperabletableview.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \
+           primitiveview.cpp \
            qpointfcontainer.cpp \
            qttool.cpp \
            slowmotionspeededitdialog.cpp \

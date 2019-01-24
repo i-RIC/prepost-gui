@@ -5,6 +5,8 @@
 #include "../datamodel/graphicswindowdataitem.h"
 //#include "project/projectmainfile.h"
 #include "backgroundimageinfodialog.h"
+#include "backgroundimageinfogeoreferencedialog.h"
+#include "addiblegcptablemodel.h"
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../pre/base/preprocessordatamodelinterface.h"
 #include "../datamodel/vtkgraphicsview.h"
@@ -65,6 +67,7 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 	m_translateX = -offset().x();
 	m_translateY = -offset().y();
 	m_visible = true;
+	m_hide = false; // for georeference
 
 	m_imageWidth = 0;
 	m_imageHeight = 0;
@@ -87,6 +90,8 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 
 	m_refActor = vtkSmartPointer<vtkActor>::New();
 	setupActor(m_refActor);
+
+	m_georeferenceDialog = nullptr;
 }
 
 BackgroundImageInfo::~BackgroundImageInfo()
@@ -469,4 +474,68 @@ void BackgroundImageInfo::applyOffset(double x_diff, double y_diff)
 {
 	m_translateX -= x_diff;
 	m_translateY -= y_diff;
+}
+
+QDialog* BackgroundImageInfo::georeferenceDialog(/*QWidget* w*/)
+{
+	BackgroundImageInfoGeoreferenceDialog* dialog = new BackgroundImageInfoGeoreferenceDialog(this, nullptr /*w*/);
+
+	return dialog;
+}
+
+std::vector<GcpTableRow>* BackgroundImageInfo::gcpTable()
+{
+	return dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (m_georeferenceDialog)->gcpTable();
+}
+
+GcpTableModel* BackgroundImageInfo::gcpTableModel()
+{
+	return dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (m_georeferenceDialog)->gcpTableModel();
+}
+
+void BackgroundImageInfo::handleGeoreferenceDialogAccepted(QDialog* dialog)
+{
+	BackgroundImageInfoGeoreferenceDialog* d = dynamic_cast<BackgroundImageInfoGeoreferenceDialog*> (dialog);
+}
+
+void BackgroundImageInfo::showGeoreferenceDialog()
+{
+	if (m_georeferenceDialog == nullptr) {
+		m_georeferenceDialog = georeferenceDialog(/*mainWindow()*/);
+
+		auto f = [&]() {handleGeoreferenceDialogAccepted(m_georeferenceDialog);};
+		connect(m_georeferenceDialog, &BackgroundImageInfoGeoreferenceDialog::accepted, this, f);
+	}
+
+	m_georeferenceDialog->show();
+	m_georeferenceDialog->raise();
+	m_georeferenceDialog->activateWindow();
+}
+
+void BackgroundImageInfo::closeGeoreferenceDialog()
+{
+	delete m_georeferenceDialog;
+	m_georeferenceDialog = nullptr;
+
+	emit isGeoreferenceDialogClosed();
+}
+
+void BackgroundImageInfo::hide()
+{
+	m_hide = true;
+}
+
+void BackgroundImageInfo::show()
+{
+	m_hide = false;
+}
+
+void BackgroundImageInfo::toggleVisibility()
+{
+	m_hide = ! m_hide;
+}
+
+bool BackgroundImageInfo::isVisible()
+{
+	return ! m_hide;
 }
