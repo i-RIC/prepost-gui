@@ -510,7 +510,7 @@ void BackgroundImageInfo::selectPoints(const std::unordered_set<std::vector<GcpT
 
 void BackgroundImageInfo::startGcpSelect()
 {
-	QMessageBox::information(iricMainWindow(), tr("Information"), tr("Select a corresponding point on Main Window."));
+	QMessageBox::information(/*iricMainWindow()*/nullptr, tr("Information"), tr("Select a corresponding point on Main Window."));
 }
 
 void BackgroundImageInfo::showGeoreferenceDialog()
