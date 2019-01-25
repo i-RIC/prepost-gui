@@ -79,6 +79,8 @@ HEADERS += arrowsettingcontainer.h \
            objectbrowserview.h \
            overridecursorchanger.h \
            pointstyleinformation.h \
+           qpainterpenbrushchanger.h \
+           qpainterpenbrushrestorer.h \
            qwtplotcustomcurve.h \
            qwtplotcustommarker.h \
            scalarbardialog.h \
@@ -190,6 +192,8 @@ SOURCES += arrowsettingcontainer.cpp \
            objectbrowserview.cpp \
            overridecursorchanger.cpp \
            pointstyleinformation.cpp \
+           qpainterpenbrushchanger.cpp \
+           qpainterpenbrushrestorer.cpp \
            qwtplotcustomcurve.cpp \
            qwtplotcustommarker.cpp \
            scalarbardialog.cpp \

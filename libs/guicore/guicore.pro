@@ -411,11 +411,15 @@ HEADERS += guicore_global.h \
            project/private/projectmainfile_impl.h \
            project/private/projectworkspace_impl.h \
            project/private/workfolderinfo_impl.h \
+           project/util/gcptablegeoreferenceviewhelper.h \
            project/util/georeferenceview_imageinfo_selectionhelper.h \
            project/util/georeferenceviewhelper.h \
            project/util/georeferenceviewselectionhelper.h \
            project/util/georeferenceviewselectionhelpert.h \
            project/util/georeferenceviewselectionhelpert_detail.h \
+           project/util/pointsgeoreferenceviewhelper.h \
+           project/util/polygongeoreferenceviewhelper.h \
+           project/util/rectgeoreferenceviewhelper.h \
            project/util/selectionhelper.h \
            project/util/selectionhelpert.h \
            project/util/selectionhelpert_detail.h \
@@ -737,9 +741,13 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/private/georeferenceview_imageinfo.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
+           project/util/gcptablegeoreferenceviewhelper.cpp \
            project/util/georeferenceview_imageinfo_selectionhelper.cpp \
            project/util/georeferenceviewhelper.cpp \
            project/util/georeferenceviewselectionhelper.cpp \
+           project/util/pointsgeoreferenceviewhelper.cpp \
+           project/util/polygongeoreferenceviewhelper.cpp \
+           project/util/rectgeoreferenceviewhelper.cpp \
            project/util/selectionhelper.cpp \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
