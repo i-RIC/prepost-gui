@@ -1,4 +1,7 @@
 #include "georeferenceview_imageinfo_selectionhelper.h"
+#include "georeferenceview_imageinfo_initselectionhelper.h"
+#include "georeferenceview_imageinfo_voidselectionhelper.h"
+#include "georeferenceview_imageinfo_waitingselectionhelper.h"
 #include "../private/georeferenceview_imageinfo.h"
 #include "../addiblegcptablemodel.h"
 #include "../georeferenceview.h"
@@ -32,10 +35,56 @@ QPointF qPointF(const std::vector<GcpTableRow>& gcpTable, const std::vector<std:
 
 QRectF boundingRect(const std::vector<QPointF>& points)
 {
+	if (points.empty()) {
+		return QRectF {};
+	}
+
 	auto minmaxX = std::minmax_element(points.begin(), points.end(), [](const QPointF& a, const QPointF& b) {return a.x() < b.x();});
 	auto minmaxY = std::minmax_element(points.begin(), points.end(), [](const QPointF& a, const QPointF& b) {return a.y() < b.y();});
 
 	return QRectF {minmaxX.first->x(), minmaxY.first->y(), minmaxX.second->x() - minmaxX.first->x(), minmaxY.second->y() - minmaxY.first->y()};
+}
+
+template <typename POINT, typename POINTS>
+std::vector<typename POINTS::size_type> findPointsInPolygon(std::function<POINT(typename POINTS::size_type i)>psAt, typename POINTS::size_type psSize, const QPolygonF& polygon)
+{
+	// Brute force
+
+	std::vector<std::vector<double>::size_type> ret;
+
+	for (auto j = 0; j < psSize; ++j) {
+		auto p = psAt(j);
+
+		std::vector<QPointF>::size_type count = 0;
+		double previousEval;
+		bool isInside = true;
+		bool first = true;
+		for (auto i = 0; i < polygon.size(); ++i) {
+			auto p1 = polygon.at(i);
+			auto p2 = polygon.at((i + 1) % polygon.size());
+			auto dx = p2.x() - p1.x();
+			auto dy = p2.y() - p1.y();
+
+			if (dx != 0 || dy != 0) {++count;}
+
+			double eval = dx * (p.y() - p1.y()) - dy * (p.x() - p1.x());
+			if (! first) {
+				if (previousEval * eval <= 0) {
+					isInside = false;
+					break;
+				}
+			} else {
+				first = false;
+			}
+			previousEval = eval;
+		}
+
+		if (count < 3) {isInside = false;} // polygon is not valid (no inner region).
+
+		if (isInside) {ret.push_back(j);}
+	}
+
+	return ret;
 }
 
 template <typename VIEW>
@@ -110,6 +159,45 @@ INDEX nearestPoint(std::function<std::vector<INDEX>(const POINTS&, const QPolygo
 		return pointIndices.at(minIndex);
 	}
 }
+
+template <typename VIEW>
+typename bool isPointInRect(const QRectF& rect, const QPointF point, double xMargin, double yMargin, bool hasMultiplePoints, VIEW* view) {
+	if (! rect.isValid()) {
+		return false;
+	}
+
+	auto p = view->rconv(point);
+	std::vector<QPointF> ps;
+	ps.push_back(QPointF {p.x(), p.y()});
+
+	auto dxy = view->rconv(QPointF {point.x() + xMargin, point.y() + yMargin}) - p;
+	QPointF dx {dxy.x(), 0.};
+	QPointF dy {0., dxy.y()};
+
+	if (! hasMultiplePoints) {
+		// Lax judgement.
+		QPointF p {rect.topLeft()};
+		QPolygonF boundingBox {{p + dx, p + dy, p - dx, p - dy}};
+		return boundingBox.containsPoint(ps.at(0), Qt::OddEvenFill);
+	}
+
+	bool rectEnoughWidth {rect.width() > 2 * dx.x()};
+	bool rectEnoughHeight {rect.height() > 2 * dy.y()};
+	if (rectEnoughWidth && rectEnoughHeight) {
+		return rect.contains(ps.at(0));
+	} else {
+		// Lax judgement.
+		if (rectEnoughWidth) {
+			dx.setX(rect.width() / 2.);
+		}
+		if (rectEnoughHeight) {
+			dy.setY(rect.height() / 2.);
+		}
+		QPointF p = {rect.center()};
+		QPolygonF boundingBox {{p + dx, p + dy, p - dx, p - dy}};
+		return boundingBox.containsPoint(ps.at(0), Qt::OddEvenFill);
+	}
+}
 }
 
 const int GeoreferenceView::ImageInfo::SelectionHelper::RADIUS = 3;
@@ -163,17 +251,17 @@ void GeoreferenceView::ImageInfo::SelectionHelper::selectPoints(const std::unord
 
 GeoreferenceView::ImageInfo::SelectionHelper* GeoreferenceView::ImageInfo::SelectionHelper::voidSelectionHelper()
 {
-	return this;
+	return new VoidSelectionHelper {std::move(*this)};
 }
 
 GeoreferenceView::ImageInfo::SelectionHelper* GeoreferenceView::ImageInfo::SelectionHelper::initSelectionHelper()
 {
-	return this;
+	return new InitSelectionHelper {std::move(*this)};
 }
 
 GeoreferenceView::ImageInfo::SelectionHelper* GeoreferenceView::ImageInfo::SelectionHelper::waitingSelectionHelper()
 {
-	return this;
+	return new WaitingSelectionHelper {std::move(*this)};
 }
 
 GeoreferenceView::ImageInfo* GeoreferenceView::ImageInfo::SelectionHelper::info()
@@ -206,6 +294,20 @@ std::vector<std::vector<GcpTableRow>::size_type> GeoreferenceView::ImageInfo::Se
 
 std::vector<GcpTableRow>::size_type GeoreferenceView::ImageInfo::SelectionHelper::nearestPoint(std::vector<GcpTableRow>* gcpTable, const QPoint& point, GeoreferenceView* view)
 {
-	std::function<QPointF(const std::vector<GcpTableRow>&, const std::vector<std::vector<GcpTableRow>::size_type>&, std::vector<GcpTableRow>::size_type)> f = qPointF;
-	return ::nearestPoint<std::vector<GcpTableRow>::size_type, std::vector<GcpTableRow>, GeoreferenceView>(::findPointsInPolygon, f, "Empty GcpTable.", *gcpTable, point, view);
+	std::function<QPointF(const std::vector<GcpTableRow>&, const std::vector<std::vector<GcpTableRow>::size_type>&, std::vector<GcpTableRow>::size_type)> f = ::qPointF;
+	std::function<std::vector<std::vector<GcpTableRow>::size_type>(const std::vector<GcpTableRow>&, const QPolygonF&)> f1 = ::findPointsInPolygon;
+	return ::nearestPoint(f1, f, "Empty GcpTable.", *gcpTable, point, view);
+
+	// std::function<QPointF(const std::vector<GcpTableRow>&, const std::vector<std::vector<GcpTableRow>::size_type>&, std::vector<GcpTableRow>::size_type)> f = ::qPointF;
+	// // return ::nearestPoint<std::vector<GcpTableRow>::size_type, std::vector<GcpTableRow>, GeoreferenceView>(::findPointsInPolygon, f, "Empty GcpTable.", *gcpTable, point, view);
+	// return ::nearestPoint(::findPointsInPolygon, f, "Empty GcpTable.", *gcpTable, point, view);
+}
+
+void GeoreferenceView::ImageInfo::SelectionHelper::setRectPolygon(QPolygonF* polygon, const QPoint& p1, const QPoint& p2, GeoreferenceView* view)
+{
+	::setRectPolygon<GeoreferenceView>(polygon, p1, p2, view);
+}
+
+bool GeoreferenceView::ImageInfo::SelectionHelper::isPointInRect(const QRectF& rect, const QPointF point, double xMargin, double yMargin, bool hasMultiplePoints, GeoreferenceView* view) {
+	return ::isPointInRect<GeoreferenceView>(rect, point, xMargin, yMargin, hasMultiplePoints, view);
 }

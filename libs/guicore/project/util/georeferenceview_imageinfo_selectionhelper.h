@@ -36,6 +36,8 @@ protected:
 	std::vector<std::vector<GcpTableRow>::size_type> findPointsInPolygon(const QPolygonF& polygon);
 
 	static std::vector<GcpTableRow>::size_type nearestPoint(std::vector<GcpTableRow>* gcpTable, const QPoint& point, GeoreferenceView* view);
+	static void setRectPolygon(QPolygonF* polygon, const QPoint& p1, const QPoint& p2, GeoreferenceView* view);
+	static bool isPointInRect(const QRectF& rect, const QPointF point, double xMargin, double yMargin, bool hasMultiplePoints, GeoreferenceView* view);
 
 	const static int RADIUS;
 

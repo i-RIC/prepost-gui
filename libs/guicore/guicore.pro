@@ -412,7 +412,13 @@ HEADERS += guicore_global.h \
            project/private/projectworkspace_impl.h \
            project/private/workfolderinfo_impl.h \
            project/util/gcptablegeoreferenceviewhelper.h \
+           project/util/georeferenceview_imageinfo_destinationoperationwaitingselectionhelper.h \
+           project/util/georeferenceview_imageinfo_initselectionhelper.h \
+           project/util/georeferenceview_imageinfo_pointsinrectangleselectionhelper.h \
            project/util/georeferenceview_imageinfo_selectionhelper.h \
+           project/util/georeferenceview_imageinfo_translationselectionhelper.h \
+           project/util/georeferenceview_imageinfo_voidselectionhelper.h \
+           project/util/georeferenceview_imageinfo_waitingselectionhelper.h \
            project/util/georeferenceviewhelper.h \
            project/util/georeferenceviewselectionhelper.h \
            project/util/georeferenceviewselectionhelpert.h \
@@ -742,7 +748,13 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
            project/util/gcptablegeoreferenceviewhelper.cpp \
+           project/util/georeferenceview_imageinfo_destinationoperationwaitingselectionhelper.cpp \
+           project/util/georeferenceview_imageinfo_initselectionhelper.cpp \
+           project/util/georeferenceview_imageinfo_pointsinrectangleselectionhelper.cpp \
            project/util/georeferenceview_imageinfo_selectionhelper.cpp \
+           project/util/georeferenceview_imageinfo_translationselectionhelper.cpp \
+           project/util/georeferenceview_imageinfo_voidselectionhelper.cpp \
+           project/util/georeferenceview_imageinfo_waitingselectionhelper.cpp \
            project/util/georeferenceviewhelper.cpp \
            project/util/georeferenceviewselectionhelper.cpp \
            project/util/pointsgeoreferenceviewhelper.cpp \
