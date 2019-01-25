@@ -85,6 +85,66 @@ AddibleGcpTableModel* BackgroundImageInfoGeoreferenceDialog::gcpTableModel()
 	return m_gcpTableModel.get();
 }
 
+void BackgroundImageInfoGeoreferenceDialog::calculate()
+{
+	auto table = ui->imageWidget->gcpTable();
+
+	// Helmert transformation.
+	auto n = table->size();
+
+	decltype(GcpTableRow::sourceX) x = 0.;
+	decltype(GcpTableRow::sourceY) y = 0.;
+	decltype(GcpTableRow::destX) X = 0.;
+	decltype(GcpTableRow::destY) Y = 0.;
+
+	decltype(GcpTableRow::sourceX) x2_plus_y2 = 0.;
+	decltype(GcpTableRow::sourceX) xX_plus_yY = 0.;
+	decltype(GcpTableRow::sourceX) yX_minus_xY = 0.;
+
+	decltype(GcpTableRow::destX) XAve = 0.;
+	decltype(GcpTableRow::destX) YAve = 0.;
+	for (const auto& row : *table) {
+		XAve += row.destX;
+		YAve += row.destY;
+	}
+	XAve /= n;
+	YAve /= n;
+
+	for (const auto& row : *table) {
+		x += row.sourceX;
+		y += row.sourceY;
+		X += (row.destX - XAve);
+		Y += (row.destY - YAve);
+
+		x2_plus_y2  += row.sourceX * row.sourceX          + row.sourceY * row.sourceY;
+		xX_plus_yY  += row.sourceX * (row.destX - XAve)   + row.sourceY * (row.destY - YAve);
+		yX_minus_xY += row.sourceY * (row.destX - XAve)   - row.sourceX * (row.destY - YAve);
+	}
+
+	auto a = (x * X + y * Y - n * xX_plus_yY) / (x * x + y * y - n * x2_plus_y2);
+	auto b = (y * X - x * Y - n * yX_minus_xY) / (x * x + y * y - n * x2_plus_y2);
+	auto c = (X - a * x - b * y) / n;
+	auto d = (Y - a * y + b * x) / n;
+
+	c += XAve;
+	d += YAve;
+
+	auto s = std::hypot(a, b);
+	decltype(GcpTableRow::sourceX) k;
+	if (a > 0) {
+		k = std::atan(-b / a);
+	} else if (a < 0) {
+		k = std::atan(-b / a) + M_PI;
+	} else {
+		k = M_PI * (b > 0 ? 0.5 : -0.5);
+	}
+
+	m_angle = k * 180 / M_PI;
+	m_leftbottomX = c;
+	m_leftbottomY = d;
+	m_scale = s;
+}
+
 void BackgroundImageInfoGeoreferenceDialog::reject()
 {
 	m_info->m_translateX = m_origLeftbottomX;
@@ -95,8 +155,16 @@ void BackgroundImageInfoGeoreferenceDialog::reject()
 	QDialog::reject();
 }
 
+void BackgroundImageInfoGeoreferenceDialog::accept()
+{
+	calculate();
+	QDialog::accept();
+}
+
 void BackgroundImageInfoGeoreferenceDialog::apply()
 {
+	calculate();
+
 	m_info->m_translateX = m_leftbottomX;
 	m_info->m_translateY = m_leftbottomY;
 	m_info->m_scale = m_scale;

@@ -43,6 +43,7 @@ public:
 	double origAngle() const {return m_origAngle;}
 
 public slots:
+	void accept() override;
 	void reject() override;
 	void apply();
 
@@ -60,6 +61,7 @@ private slots:
 
 private:
 	void setHideButtonText();
+	void calculate();
 
 	BackgroundImageInfo* m_info;
 
