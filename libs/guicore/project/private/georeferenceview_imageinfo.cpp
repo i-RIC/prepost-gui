@@ -4,6 +4,8 @@
 #include "../addiblegcptablemodel.h"
 #include "../gcptablerow.h"
 #include "../backgroundimageinfogeoreferencedialog.h"
+#include "../util/georeferenceview_imageinfo_selectionhelper.h"
+#include "../util/georeferenceviewhelper.h"
 
 #include <QMessageBox>
 #include <QPainter>
@@ -14,7 +16,8 @@ GeoreferenceView::ImageInfo::ImageInfo(BackgroundImageInfo* info, AddibleGcpTabl
 	m_backgroundImageInfo {info},
 	m_gcpTableModel {gcpTableModel},
 	m_dialog {nullptr},
-	m_rightClickMenu {/*modelView()*/}
+	m_rightClickMenu {/*modelView()*/},
+	m_selectionHelper {(new SelectionHelper(this))->initSelectionHelper()}
 {
 	m_deletePointsAction = new QAction(QIcon(""), tr("Delete Points"), this);
 
@@ -75,26 +78,34 @@ void GeoreferenceView::ImageInfo::addCustomMenuItems(QMenu* menu)
 
 void GeoreferenceView::ImageInfo::keyPressEvent(QKeyEvent* event, GeoreferenceView* view)
 {
+	if (m_selectionHelper) {
+		updateSelectionHelper(m_selectionHelper->keyPressEvent(event, view));
+	}
 }
 
 void GeoreferenceView::ImageInfo::mouseDoubleClickEvent(QMouseEvent* event, GeoreferenceView* view)
 {
+	updateSelectionHelper(m_selectionHelper->mouseDoubleClickEvent(event, view));
 }
 
 void GeoreferenceView::ImageInfo::mouseMoveEvent(QMouseEvent* event, GeoreferenceView* view)
 {
+	updateSelectionHelper(m_selectionHelper->mouseMoveEvent(event, view));
 }
 
 void GeoreferenceView::ImageInfo::mousePressEvent(QMouseEvent* event, GeoreferenceView* view)
 {
+	updateSelectionHelper(m_selectionHelper->mousePressEvent(event, view));
 }
 
 void GeoreferenceView::ImageInfo::mouseReleaseEvent(QMouseEvent* event, GeoreferenceView* view)
 {
+	updateSelectionHelper(m_selectionHelper->mouseReleaseEvent(event, view));
 }
 
 void GeoreferenceView::ImageInfo::wheelEvent(QWheelEvent* event, GeoreferenceView* view)
 {
+	updateSelectionHelper(m_selectionHelper->wheelEvent(event, view));
 }
 
 QMenu* GeoreferenceView::ImageInfo::rightClickMenu()
@@ -104,6 +115,7 @@ QMenu* GeoreferenceView::ImageInfo::rightClickMenu()
 
 void GeoreferenceView::ImageInfo::selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices)
 {
+	m_selectionHelper->selectPoints(indices);
 }
 
 void GeoreferenceView::ImageInfo::updateTableSelection(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices)
@@ -114,6 +126,17 @@ void GeoreferenceView::ImageInfo::updateTableSelection(const std::unordered_set<
 
 void GeoreferenceView::ImageInfo::deletePoints()
 {
+	if (m_selectionHelper->selectedPointsSize() == 0) {
+		QMessageBox::warning(modelView(), tr("Warning"), tr("No point is selected."));
+		return;
+	}
+
+	if (gcpTable()->size() < 1) {
+		QMessageBox::warning(modelView(), tr("Warning"), tr("No point can be further deleted."));
+		return;
+	}
+
+	m_selectionHelper->deleteSelectedPoints();
 }
 
 void GeoreferenceView::ImageInfo::startGcpSelect(const QPointF& point)
@@ -126,6 +149,27 @@ void GeoreferenceView::ImageInfo::startGcpSelect(const QPointF& point)
 	gcpTableModel()->replaceDestinationData(indices, points);
 
 	QMessageBox::information(modelView(), tr("Information"), tr("Select a point on Georeference dialog."));
+	updateSelectionHelper(m_selectionHelper->waitingSelectionHelper());
+}
+
+void GeoreferenceView::ImageInfo::updateSelectionHelper(::SelectionHelper* selectionHelper)
+{
+	auto helper = dynamic_cast<SelectionHelper*>(selectionHelper);
+
+	if (m_selectionHelper.get() == helper) {return;}
+
+	// Delete viewHelpers associated with old selectionHelper.
+	for (auto& viewHelper : m_selectionHelper->viewHelpers()) {
+		m_viewHelpers.erase(std::remove(m_viewHelpers.begin(), m_viewHelpers.end(), viewHelper.get()), m_viewHelpers.end());
+	}
+
+	// Replace selectionHelper.
+	m_selectionHelper.reset(helper);
+
+	// Add new viewHelpers.
+	for (auto& viewHelper : m_selectionHelper->viewHelpers()) {
+		m_viewHelpers.push_back(viewHelper.get());
+	}
 }
 
 // VIEW
@@ -164,4 +208,7 @@ void GeoreferenceView::ImageInfo::doPaintView(QPainter* painter, const QTransfor
 
 void GeoreferenceView::ImageInfo::paintHelpers(QPainter* painter, const QTransform& transform, const QRectF& rect) const
 {
+	for (const auto& viewHelper : m_viewHelpers) {
+		viewHelper->paintView(painter, transform, rect);
+	}
 }

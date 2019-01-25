@@ -2,6 +2,7 @@
 #define GEOREFERENCEVIEW_IMAGEINFO_H
 
 #include "../georeferenceview.h"
+#include "../util/selectionhelper.h"
 
 class BackgroundImageInfo;
 class AddibleGcpTableModel;
@@ -75,6 +76,17 @@ private:
 	QMenu m_rightClickMenu;
 
 	QAction* m_deletePointsAction;
+
+	void updateSelectionHelper(::SelectionHelper* selectionHelper);
+
+	class SelectionHelper;
+	class VoidSelectionHelper;
+	class InitSelectionHelper;
+	class DestinationOperationWaitingSelectionHelper;
+	class PointsInRectangleSelectionHelper;
+	class TranslationSelectionHelper;
+	class WaitingSelectionHelper;
+	std::unique_ptr<SelectionHelper> m_selectionHelper;
 
 // VIEW
 public:
