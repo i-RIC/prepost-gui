@@ -19,7 +19,7 @@ GeoreferenceView::ImageInfo::ImageInfo(BackgroundImageInfo* info, AddibleGcpTabl
 	m_rightClickMenu {/*modelView()*/},
 	m_selectionHelper {(new SelectionHelper(this))->initSelectionHelper()}
 {
-	m_deletePointsAction = new QAction(QIcon(""), tr("Delete Points"), this);
+	m_deletePointsAction = new QAction(QIcon(""), tr("Delete Points"), this); // @todo icon
 
 	addCustomMenuItems(&m_rightClickMenu);
 
@@ -187,6 +187,7 @@ std::vector<GeoreferenceViewHelper*>& GeoreferenceView::ImageInfo::viewHelpers()
 void GeoreferenceView::ImageInfo::doPaintView(QPainter* painter, const QTransform&, const QRectF&) const
 {
 	QImage img {m_backgroundImageInfo->name()};
+	// @todo Check if image's resizeScale should be taken into account.
 
 	painter->save();
 

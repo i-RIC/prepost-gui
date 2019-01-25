@@ -7,6 +7,7 @@
 #include "backgroundimageinfodialog.h"
 #include "backgroundimageinfogeoreferencedialog.h"
 #include "addiblegcptablemodel.h"
+#include "gcptablerow.h"
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../pre/base/preprocessordatamodelinterface.h"
 #include "../datamodel/vtkgraphicsview.h"
@@ -25,6 +26,7 @@
 #include <vtkPNGReader.h>
 #include <vtkTIFFReader.h>
 #include <vtkExtractVOI.h>
+#include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
 #include <vtkMapperCollection.h>
@@ -52,6 +54,9 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 	m_isRotating {false},
 	m_isZooming {false},
 	m_isTranslating {false},
+	m_isGeoReferencing {false},
+	m_isGeoReferenceSelectingPoint {false},
+	m_geoReferenceParentWindow {nullptr},
 	m_hasWorldFile {false},
 	m_scale {1},
 	m_angle {0},
@@ -86,6 +91,9 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 
 	m_refActor = vtkSmartPointer<vtkActor>::New();
 	setupActor(m_refActor);
+
+	m_geoReferencePointsActor.pointsActor()->GetProperty()->SetPointSize(5);
+	m_geoReferencePointsActor.pointsActor()->GetProperty()->SetColor(0, 0, 255);
 }
 
 BackgroundImageInfo::~BackgroundImageInfo()
@@ -296,6 +304,8 @@ void BackgroundImageInfo::fitImageToData()
 void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_fixed) {return;}
+	if (m_isGeoReferencing) {return;}
+
 	switch (event->button()) {
 	case Qt::LeftButton:
 		m_isTranslating = true;
@@ -334,6 +344,7 @@ void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, V
 void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_fixed) {return;}
+	if (m_isGeoReferencing) {return;}
 	if (!(m_isRotating || m_isZooming || m_isTranslating)) { return; }
 	double worldX = event->x();
 	double worldY = event->y();
@@ -367,9 +378,19 @@ void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VT
 	view->GetRenderWindow()->Render();
 }
 
-void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* /*event*/, VTKGraphicsView* v)
+void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_fixed) {return;}
+	if (m_isGeoReferencing && m_isGeoReferenceSelectingPoint) {
+		double worldX = event->x();
+		double worldY = event->y();
+		VTK2DGraphicsView* view = dynamic_cast<VTK2DGraphicsView*>(v);
+		view->viewportToWorld(worldX, worldY);
+		emit gcpDefined(QPointF(worldX, worldY));
+
+		updateGeoReferencePointsActor();
+		return;
+	}
 	m_isRotating = false;
 	m_isZooming = false;
 	m_isTranslating = false;
@@ -557,11 +578,22 @@ void BackgroundImageInfo::applyOffset(double x_diff, double y_diff)
 	m_translateY -= y_diff;
 }
 
-QDialog* BackgroundImageInfo::georeferenceDialog(/*QWidget* w*/)
+QDialog* BackgroundImageInfo::georeferenceDialog(QWidget* w)
 {
-	BackgroundImageInfoGeoreferenceDialog* dialog = new BackgroundImageInfoGeoreferenceDialog(this, nullptr /*w*/);
+	m_geoReferenceParentWindow = w;
+	return new BackgroundImageInfoGeoreferenceDialog(this, w);
+}
 
-	return dialog;
+void BackgroundImageInfo::updateGeoReferencePointsActor()
+{
+	auto table = gcpTable();
+	std::vector<QPointF> points;
+	for (GcpTableRow row : *table) {
+		QPointF p(row.destX, row.destY);
+		points.push_back(p);
+	}
+	m_geoReferencePointsActor.setLine(points);
+	m_geoReferenceGraphicsView->render();
 }
 
 std::vector<GcpTableRow>* BackgroundImageInfo::gcpTable()
@@ -587,21 +619,32 @@ void BackgroundImageInfo::handleGeoreferenceDialogAccepted(QDialog* d)
 
 void BackgroundImageInfo::selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices)
 {
+	// @todo Add 'select' effect for the points with the specified indices.
+	// selectionHelper()->selectPoints(indices);
 }
 
 void BackgroundImageInfo::startGcpSelect()
 {
-	QMessageBox::information(/*iricMainWindow()*/nullptr, tr("Information"), tr("Select a corresponding point on Main Window."));
+	QMessageBox::information(m_geoReferenceParentWindow, tr("Information"), tr("Select a corresponding point on Main Window."));
+	m_isGeoReferenceSelectingPoint = true;
 }
 
-void BackgroundImageInfo::showGeoreferenceDialog()
+void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double depth, QWidget* w)
 {
 	if (m_georeferenceDialog == nullptr) {
-		m_georeferenceDialog = georeferenceDialog(/*mainWindow()*/);
+		m_georeferenceDialog = georeferenceDialog(w);
 
 		auto f = [&]() {handleGeoreferenceDialogAccepted(m_georeferenceDialog);};
 		connect(m_georeferenceDialog, &BackgroundImageInfoGeoreferenceDialog::accepted, this, f);
 	}
+	m_geoReferenceActor = actor;
+	m_geoReferenceGraphicsView = v;
+	m_geoReferencePointsActor.pointsActor()->SetPosition(0, 0, depth);
+	m_geoReferenceGraphicsView->mainRenderer()->AddActor(m_geoReferencePointsActor.pointsActor());
+	updateGeoReferencePointsActor();
+
+	m_isGeoReferencing = true;
+	m_isGeoReferenceSelectingPoint = false;
 
 	m_georeferenceDialog->show();
 	m_georeferenceDialog->raise();
@@ -610,6 +653,9 @@ void BackgroundImageInfo::showGeoreferenceDialog()
 
 void BackgroundImageInfo::closeGeoreferenceDialog()
 {
+	m_isGeoReferencing = false;
+	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferencePointsActor.pointsActor());
+
 	delete m_georeferenceDialog;
 	m_georeferenceDialog = nullptr;
 
@@ -619,16 +665,24 @@ void BackgroundImageInfo::closeGeoreferenceDialog()
 void BackgroundImageInfo::hide()
 {
 	m_hide = true;
+	m_geoReferenceActor->VisibilityOff();
+	m_geoReferenceGraphicsView->render();
 }
 
 void BackgroundImageInfo::show()
 {
 	m_hide = false;
+	m_geoReferenceActor->VisibilityOn();
+	m_geoReferenceGraphicsView->render();
 }
 
 void BackgroundImageInfo::toggleVisibility()
 {
 	m_hide = ! m_hide;
+	int vis = 1;
+	if (m_hide) {vis = 0;}
+	m_geoReferenceActor->SetVisibility(vis);
+	m_geoReferenceGraphicsView->render();
 }
 
 bool BackgroundImageInfo::isVisible()

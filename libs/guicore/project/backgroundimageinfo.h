@@ -4,6 +4,8 @@
 #include "../guicore_global.h"
 #include "projectdataitem.h"
 
+#include <guibase/vtktool/vtklineactor.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkDataSetMapper.h>
 #include <vtkActor.h>
@@ -69,7 +71,7 @@ public:
 	QDialog* propertyDialog();
 	void handlePropertyDialogAccepted(QDialog* dialog);
 	void applyOffset(double x, double y);
-	QDialog* georeferenceDialog(/*QWidget* w*/);
+
 	std::vector<GcpTableRow>* BackgroundImageInfo::gcpTable();
 	GcpTableModel* gcpTableModel();
 	void handleGeoreferenceDialogAccepted(QDialog* dialog);
@@ -80,11 +82,11 @@ public:
 	void toggleVisibility();
 
 	bool isVisible();
+	void showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double depth, QWidget* w);
 
 public slots:
 	void selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices);
 	void startGcpSelect();
-	void showGeoreferenceDialog();
 
 protected slots:
 	void editName() {}
@@ -93,6 +95,7 @@ protected slots:
 signals:
 	void isChanged();
 	void gcpDefined(const QPointF&);
+	// @todo Emit selectedIndexChanged(const std::unordered_set<std::vector<GcpTableRow>::size_type>&) after GCP points are selected.
 	void selectedIndexChanged(const std::unordered_set<std::vector<GcpTableRow>::size_type>&);
 	void isGeoreferenceDialogClosed();
 
@@ -108,6 +111,8 @@ private:
 	void initializePosition();
 	void informChange();
 	QString static getThumbnailFileName(const QString& origname);
+	QDialog* georeferenceDialog(QWidget* w);
+	void updateGeoReferencePointsActor();
 
 	QAction* m_editNameAction;
 	QAction* m_fixAction;
@@ -124,6 +129,14 @@ private:
 	bool m_isRotating;
 	bool m_isZooming;
 	bool m_isTranslating;
+
+	bool m_isGeoReferencing;
+	bool m_isGeoReferenceSelectingPoint;
+
+	vtkActor* m_geoReferenceActor;
+	vtkLineActor m_geoReferencePointsActor;
+	VTKGraphicsView* m_geoReferenceGraphicsView;
+	QWidget* m_geoReferenceParentWindow;
 
 	double lastX;
 	double lastY;

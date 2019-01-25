@@ -1,6 +1,8 @@
 #include "preprocessorbackgroundimagedataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/backgroundimageinfodialog.h>
 
@@ -32,7 +34,7 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 
 	m_georeferenceAction = new QAction(PreProcessorBackgroundImageDataItem::tr("&Georeference..."), this);
 
-	connect(m_georeferenceAction, SIGNAL(triggered(bool)), this, SLOT(showGeoreferenceDialog()));
+	connect(m_georeferenceAction, SIGNAL(triggered()), this, SLOT(showGeoreferenceDialog()));
 	connect(image, SIGNAL(isChanged()), this, SLOT(applyImageChange()));
 }
 
@@ -114,7 +116,7 @@ void PreProcessorBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* 
 
 void PreProcessorBackgroundImageDataItem::showGeoreferenceDialog()
 {
-	m_imageInfo->showGeoreferenceDialog();
+	m_imageInfo->showGeoreferenceDialog(m_actor, dataModel()->graphicsView(), m_zDepthRange.max(), preProcessorWindow());
 
 	connect(m_imageInfo, SIGNAL(isGeoreferenceDialogClosed()), this, SLOT(enableObjectBrowserView()));
 	setEnableObjectBrowserView(false);
