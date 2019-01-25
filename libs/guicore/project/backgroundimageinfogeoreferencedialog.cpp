@@ -140,8 +140,10 @@ void BackgroundImageInfoGeoreferenceDialog::calculate()
 	}
 
 	m_angle = k * 180 / M_PI;
-	m_leftbottomX = c;
-	m_leftbottomY = d;
+
+	QPixmap pixmap {m_info->name()};
+	m_leftbottomX = c + s * pixmap.height() * std::sin(k); // (c, d) is the top-left coordinate.
+	m_leftbottomY = d - s * pixmap.height() * std::cos(k); //
 	m_scale = s;
 }
 
