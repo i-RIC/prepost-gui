@@ -35,14 +35,13 @@ public:
 	BackgroundImageInfo(const QString& filename, const QString& origFilename, ProjectDataItem* d);
 	~BackgroundImageInfo();
 
-	const QString& name() const {return m_name;}
-	void setName(const QString& name) {
-		m_name = name;
-	}
-	const QString& caption() const {return m_caption;}
-	void setCaption(const QString& cap) {m_caption = cap;}
+	const QString& name() const;
+	void setName(const QString& name);
 
-	const QString& fileName() const {return m_filename;}
+	const QString& caption() const;
+	void setCaption(const QString& cap);
+
+	const QString& fileName() const;
 
 	void mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
@@ -51,24 +50,22 @@ public:
 	int imageHeight() const {return m_imageHeight;}
 
 	vtkActor* refActor();
-	QAction* fixAction() const {return m_fixAction;}
-	QAction* fixActionWithIcon() const {return m_fixActionWithIcon;}
-	double aspectRatio() const {return m_aspectRatio;}
+	QAction* fixAction() const;
+	QAction* fixActionWithIcon() const;
+	double aspectRatio() const;
 	void setupActor(vtkActor* actor);
-	bool visible() const {return m_visible;}
-	void setVisible(bool visible) {m_visible = visible;}
+	bool visible() const;
+	void setVisible(bool visible);
 	void applySettingToActor(vtkActor* actor);
 
-	double translateX() const {return m_translateX;}
-	double translateY() const {return m_translateY;}
-	double scale() const {return m_scale;}
-	double angle() const {return m_angle;}
-	void setPreProcessorActor(vtkActor* actor) {
-		m_preProcessorActor = actor;
-	}
-	void setTranslateX(double x) {m_translateX = x;}
-	void setTranslateY(double y) {m_translateY = y;}
-	void setScale(double scale) {m_scale = scale;}
+	double translateX() const;
+	double translateY() const;
+	double scale() const;
+	double angle() const;
+	void setPreProcessorActor(vtkActor* actor);
+	void setTranslateX(double x);
+	void setTranslateY(double y);
+	void setScale(double scale);
 	QDialog* propertyDialog();
 	void handlePropertyDialogAccepted(QDialog* dialog);
 	void applyOffset(double x, double y);

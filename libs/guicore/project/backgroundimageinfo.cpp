@@ -98,6 +98,31 @@ BackgroundImageInfo::~BackgroundImageInfo()
 {
 }
 
+const QString& BackgroundImageInfo::name() const
+{
+	return m_name;
+}
+
+void BackgroundImageInfo::setName(const QString& name)
+{
+	m_name = name;
+}
+
+const QString& BackgroundImageInfo::caption() const
+{
+	return m_caption;
+}
+
+void BackgroundImageInfo::setCaption(const QString& cap)
+{
+	m_caption = cap;
+}
+
+const QString& BackgroundImageInfo::fileName() const
+{
+	return m_filename;
+}
+
 void BackgroundImageInfo::readImageData(const QString& filename, const QString& origFilename)
 {
 	QFileInfo finfo(origFilename);
@@ -425,6 +450,16 @@ void BackgroundImageInfo::setupActor(vtkActor* actor)
 	applySettingToActor(actor);
 }
 
+bool BackgroundImageInfo::visible() const
+{
+	return m_visible;
+}
+
+void BackgroundImageInfo::setVisible(bool visible)
+{
+	m_visible = visible;
+}
+
 void BackgroundImageInfo::applySettingToActor(vtkActor* actor)
 {
 	double pos[3];
@@ -438,10 +473,65 @@ void BackgroundImageInfo::applySettingToActor(vtkActor* actor)
 //	actor->SetVisibility(m_visible);
 }
 
+double BackgroundImageInfo::translateX() const
+{
+	return m_translateX;
+}
+
+double BackgroundImageInfo::translateY() const
+{
+	return m_translateY;
+}
+
+double BackgroundImageInfo::scale() const
+{
+	return m_scale;
+}
+
+double BackgroundImageInfo::angle() const
+{
+	return m_angle;
+}
+
+void BackgroundImageInfo::setPreProcessorActor(vtkActor* actor)
+{
+	m_preProcessorActor = actor;
+}
+
+void BackgroundImageInfo::setTranslateX(double x)
+{
+	m_translateX = x;
+}
+
+void BackgroundImageInfo::setTranslateY(double y)
+{
+	m_translateY = y;
+}
+
+void BackgroundImageInfo::setScale(double scale)
+{
+	m_scale = scale;
+}
+
 vtkActor* BackgroundImageInfo::refActor()
 {
 	applySettingToActor(m_refActor);
 	return m_refActor;
+}
+
+QAction* BackgroundImageInfo::fixAction() const
+{
+	return m_fixAction;
+}
+
+QAction* BackgroundImageInfo::fixActionWithIcon() const
+{
+	return m_fixActionWithIcon;
+}
+
+double BackgroundImageInfo::aspectRatio() const
+{
+	return m_aspectRatio;
 }
 
 QString BackgroundImageInfo::getThumbnailFileName(const QString& origname)
