@@ -46,38 +46,35 @@
 
 const int BackgroundImageInfo::MAXWIDTH = 2048;
 
-BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString& origFilename, ProjectDataItem* d)
-	: ProjectDataItem(d)
+BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString& origFilename, ProjectDataItem* d) :
+	ProjectDataItem(d),
+	m_name {filename},
+	m_isRotating {false},
+	m_isZooming {false},
+	m_isTranslating {false},
+	m_hasWorldFile {false},
+	m_scale {1},
+	m_angle {0},
+	m_visible {true},
+	m_imageWidth {0},
+	m_imageHeight {0},
+	m_resizeScale {1},
+	m_fixed {false},
+	m_movePixmap {":/libs/guicore/images/cursorImageMove.png"},
+	m_rotatePixmap {":/libs/guicore/images/cursorImageRotate.png"},
+	m_zoomPixmap {":/libs/guicore/images/cursorImageZoom.png"},
+	m_moveCursor {m_movePixmap},
+	m_rotateCursor {m_rotatePixmap},
+	m_zoomCursor {m_zoomPixmap},
+	m_georeferenceDialog {nullptr}
 {
 	QFileInfo finfo(filename);
-	m_name = filename;
 	m_filename = finfo.fileName();
 	m_caption = finfo.fileName();
 
-	m_isRotating = false;
-	m_isZooming = false;
-	m_isTranslating = false;
-
-	m_fixed = false;
-
-	m_hasWorldFile = false;
-	m_angle = 0;
-	m_scale = 1;
 	m_translateX = -offset().x();
 	m_translateY = -offset().y();
-	m_visible = true;
 	m_hide = false; // for georeference
-
-	m_imageWidth = 0;
-	m_imageHeight = 0;
-	m_resizeScale = 1;
-
-	m_movePixmap = QPixmap(":/libs/guicore/images/cursorImageMove.png");
-	m_rotatePixmap = QPixmap(":/libs/guicore/images/cursorImageRotate.png");
-	m_zoomPixmap = QPixmap(":/libs/guicore/images/cursorImageZoom.png");
-	m_moveCursor = QCursor(m_movePixmap);
-	m_rotateCursor = QCursor(m_rotatePixmap);
-	m_zoomCursor = QCursor(m_zoomPixmap);
 
 	m_fixAction = new QAction(tr("Fix Image position"), this);
 	m_fixAction->setCheckable(true);
@@ -89,8 +86,6 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 
 	m_refActor = vtkSmartPointer<vtkActor>::New();
 	setupActor(m_refActor);
-
-	m_georeferenceDialog = nullptr;
 }
 
 BackgroundImageInfo::~BackgroundImageInfo()
