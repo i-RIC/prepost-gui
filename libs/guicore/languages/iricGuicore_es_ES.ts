@@ -114,6 +114,16 @@
         <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="239"/>
+        <source>Hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="241"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
@@ -137,22 +147,22 @@
     <name>GcpTableModel</name>
     <message>
         <location filename="../project/gcptablemodel.cpp" line="99"/>
-        <source>source X</source>
+        <source>srcX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/gcptablemodel.cpp" line="101"/>
-        <source>source Y</source>
+        <source>srcY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/gcptablemodel.cpp" line="103"/>
-        <source>dest X</source>
+        <source>dstX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/gcptablemodel.cpp" line="105"/>
-        <source>dest Y</source>
+        <source>dstY</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
