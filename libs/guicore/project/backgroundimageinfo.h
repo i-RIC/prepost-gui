@@ -148,7 +148,6 @@ private:
 	double m_oldTranslateY;
 	double m_oldScale;
 
-	bool m_isMoving;
 	double m_aspectRatio;   // height / width
 
 	bool m_fixed;

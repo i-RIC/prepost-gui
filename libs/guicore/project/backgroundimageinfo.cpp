@@ -57,7 +57,6 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 	m_isRotating = false;
 	m_isZooming = false;
 	m_isTranslating = false;
-	m_isMoving = false;
 
 	m_fixed = false;
 
@@ -319,7 +318,6 @@ void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, V
 		// do nothing
 		break;
 	}
-	m_isMoving = true;
 
 	double pos[3];
 	double scale[3];
@@ -377,13 +375,11 @@ void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VT
 void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* /*event*/, VTKGraphicsView* v)
 {
 	if (m_fixed) {return;}
-	if (! m_isMoving) {return;}
 	m_isRotating = false;
 	m_isZooming = false;
 	m_isTranslating = false;
 
 	iRICUndoStack::instance().push(new SetActorPropertyCommand(m_translateX, m_translateY, m_scale, m_angle, this));
-	m_isMoving = false;
 	v->unsetCursor();
 }
 
