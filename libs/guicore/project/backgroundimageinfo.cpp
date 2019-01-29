@@ -601,6 +601,7 @@ void BackgroundImageInfo::updateGeoReferencePointsActor(const std::unordered_set
 
 	std::vector<QPointF> selectedPoints;
 	for (auto idx : indice) {
+		if (idx > table->size()) {continue;}
 		auto row = table->at(idx);
 		QPointF p(row.destX, row.destY);
 		selectedPoints.push_back(p);
