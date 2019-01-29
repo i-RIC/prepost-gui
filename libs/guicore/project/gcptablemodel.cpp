@@ -96,13 +96,13 @@ QVariant GcpTableModel::headerData(int section, Qt::Orientation orientation, int
 		case 0:
 			return QVariant {};
 		case 1:
-			return tr("source X");
+			return tr("srcX");
 		case 2:
-			return tr("source Y");
+			return tr("srcY");
 		case 3:
-			return tr("dest X");
+			return tr("dstX");
 		case 4:
-			return tr("dest Y");
+			return tr("dstY");
 		default:
 			return QVariant {};
 		}
