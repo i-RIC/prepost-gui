@@ -75,7 +75,6 @@ public:
 	std::vector<GcpTableRow>* BackgroundImageInfo::gcpTable();
 	GcpTableModel* gcpTableModel();
 	void handleGeoreferenceDialogAccepted(QDialog* dialog);
-	void closeGeoreferenceDialog();
 
 	void hide();
 	void show();
@@ -91,6 +90,9 @@ public slots:
 protected slots:
 	void editName() {}
 	void toggleFixState();
+
+private slots:
+	void handleGeoreferenceDialogClosed();
 
 signals:
 	void isChanged();

@@ -392,7 +392,6 @@ void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* ev
 		view->viewportToWorld(worldX, worldY);
 		emit gcpDefined(QPointF(worldX, worldY));
 
-
 		std::unordered_set<std::vector<GcpTableRow>::size_type> indices;
 		updateGeoReferencePointsActor(indices);
 		return;
@@ -651,6 +650,7 @@ void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsVie
 
 		auto f = [&]() {handleGeoreferenceDialogAccepted(m_georeferenceDialog);};
 		connect(m_georeferenceDialog, &BackgroundImageInfoGeoreferenceDialog::accepted, this, f);
+		connect(m_georeferenceDialog, SIGNAL(destroyed()), this, SLOT(handleGeoreferenceDialogClosed()));
 	}
 	m_geoReferenceActor = actor;
 	m_geoReferenceGraphicsView = v;
@@ -670,14 +670,14 @@ void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsVie
 	m_georeferenceDialog->activateWindow();
 }
 
-void BackgroundImageInfo::closeGeoreferenceDialog()
+void BackgroundImageInfo::handleGeoreferenceDialogClosed()
 {
 	m_isGeoReferencing = false;
 	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferencePointsActor.pointsActor());
 	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferenceSelectedPointsActor.pointsActor());
 
-	delete m_georeferenceDialog;
 	m_georeferenceDialog = nullptr;
+	show();
 
 	emit isGeoreferenceDialogClosed();
 }

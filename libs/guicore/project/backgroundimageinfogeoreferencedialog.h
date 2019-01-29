@@ -50,13 +50,8 @@ public slots:
 signals:
 	void selectionChanged(const std::unordered_set<std::vector<GcpTableRow>::size_type>& rowIndices);
 
-protected:
-	void closeEvent(QCloseEvent* event) override;
-
 private slots:
 	void handleSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
-	void handleAccepted();
-	void handleRejected();
 	void handleHideButtonClicked();
 
 private:

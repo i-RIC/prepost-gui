@@ -30,6 +30,7 @@ BackgroundImageInfoGeoreferenceDialog::BackgroundImageInfoGeoreferenceDialog(Bac
 	ui (new Ui::BackgroundImageInfoGeoreferenceDialog)
 {
 	ui->setupUi(this);
+	setAttribute(Qt::WA_DeleteOnClose);
 
 	ui->gcpTableView->setModel(m_gcpTableModel.get());
 	ui->gcpTableView->setItemDelegate(new StyledItemDelegate(this));
@@ -46,8 +47,6 @@ BackgroundImageInfoGeoreferenceDialog::BackgroundImageInfoGeoreferenceDialog(Bac
 
 	connect(ui->gcpTableView->selectionModel(), SIGNAL(selectionChanged(const QItemSelection&, const QItemSelection&)), this, SLOT(handleSelectionChanged(const QItemSelection&, const QItemSelection&)));
 
-	connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(handleAccepted()));
-	connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(handleRejected()));
 	connect(ui->buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), this, SLOT(apply()));
 	connect(ui->hideButton, SIGNAL(clicked()), this, SLOT(handleHideButtonClicked()));
 
@@ -194,12 +193,14 @@ void BackgroundImageInfoGeoreferenceDialog::reject()
 	m_info->m_scale = m_origScale;
 	m_info->m_angle = m_origAngle;
 	m_info->informChange();
+
 	QDialog::reject();
 }
 
 void BackgroundImageInfoGeoreferenceDialog::accept()
 {
 	calculate();
+
 	QDialog::accept();
 }
 
@@ -226,26 +227,10 @@ void BackgroundImageInfoGeoreferenceDialog::handleSelectionChanged(const QItemSe
 	emit selectionChanged(rowIndices);
 }
 
-void BackgroundImageInfoGeoreferenceDialog::handleAccepted()
-{
-	closeEvent(nullptr);
-}
-
-void BackgroundImageInfoGeoreferenceDialog::handleRejected()
-{
-	closeEvent(nullptr);
-}
-
 void BackgroundImageInfoGeoreferenceDialog::handleHideButtonClicked()
 {
 	m_info->toggleVisibility();
 	setHideButtonText();
-}
-
-void BackgroundImageInfoGeoreferenceDialog::closeEvent(QCloseEvent*)
-{
-	m_info->show();
-	m_info->closeGeoreferenceDialog();
 }
 
 void BackgroundImageInfoGeoreferenceDialog::setHideButtonText()
