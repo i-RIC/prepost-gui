@@ -35,29 +35,29 @@
 <context>
     <name>Post2dWindow</name>
     <message>
-        <location filename="../post2dwindow.cpp" line="45"/>
+        <location filename="../post2dwindow.cpp" line="46"/>
         <source>Post-processing (2D): %1</source>
         <translation>可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="221"/>
-        <location filename="../post2dwindow.cpp" line="245"/>
+        <location filename="../post2dwindow.cpp" line="222"/>
+        <location filename="../post2dwindow.cpp" line="246"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="221"/>
+        <location filename="../post2dwindow.cpp" line="222"/>
         <source>No contours have been defined</source>
         <translation>コンターが提起されていません</translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="227"/>
-        <location filename="../post2dwindow.cpp" line="251"/>
+        <location filename="../post2dwindow.cpp" line="228"/>
+        <location filename="../post2dwindow.cpp" line="252"/>
         <source>Please select which scalar to export:</source>
         <translation>どのスカラーをエクスポートするか選択して下さい:</translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="245"/>
+        <location filename="../post2dwindow.cpp" line="246"/>
         <source>No contour is drawn now.</source>
         <translation>コンターが描画されていません。</translation>
     </message>
@@ -227,7 +227,7 @@
         <translation>色を指定</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowarrowstructuredsettingdialog.ui" line="322"/>
+        <location filename="../datamodel/post2dwindowarrowstructuredsettingdialog.ui" line="335"/>
         <source>By scalar value</source>
         <translation>スカラー値により設定</translation>
     </message>
@@ -252,7 +252,7 @@
         <translation>領域設定(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowarrowstructuredsettingdialog.ui" line="442"/>
+        <location filename="../datamodel/post2dwindowarrowstructuredsettingdialog.ui" line="445"/>
         <source>&amp;Color Bar Setting</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
@@ -361,9 +361,17 @@
         <translation>領域設定(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowarrowunstructuredsettingdialog.ui" line="416"/>
+        <location filename="../datamodel/post2dwindowarrowunstructuredsettingdialog.ui" line="419"/>
         <source>&amp;Color Bar Setting</source>
         <translation>カラーバー設定(&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBackgroundImageDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagedataitem.cpp" line="29"/>
+        <source>&amp;Georeference...</source>
+        <translation>ジオレファレンス (&amp;G)...</translation>
     </message>
 </context>
 <context>
@@ -397,7 +405,7 @@
 <context>
     <name>Post2dWindowCellFlagGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="21"/>
+        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="22"/>
         <source>Cell attributes</source>
         <translation>セル属性</translation>
     </message>
@@ -443,29 +451,29 @@
         <translation>スカラー (セル中心)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="410"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="435"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="632"/>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="636"/>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="641"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="659"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="663"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="668"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="632"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="659"/>
         <source>To export KML for street view, display with Contour Figure.</source>
         <translation>ストリートビュー用のKML をエクスポートするには、コンターを描画して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="636"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="663"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="641"/>
+        <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="668"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
     </message>
@@ -473,27 +481,27 @@
 <context>
     <name>Post2dWindowCellScalarGroupTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="25"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="29"/>
         <source>Scalar (cell center)</source>
         <translation>スカラー (セル中心)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="111"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="111"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
         <source>A maximum of four contours may be defined.</source>
         <translation>コンターは最大で4つまでしか描画できません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="343"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="343"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>シェープファイルをエクスポートするには、表示設定を &quot;面塗りコンター&quot; に切り替えてください。</translation>
     </message>
@@ -526,12 +534,12 @@
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="152"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="152"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -786,12 +794,12 @@
         <translation>スカラー (格子点)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="402"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="433"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="623"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
         <source>To export KML for street view, display with Contour Figure.</source>
         <translation>ストリートビュー用のKML をエクスポートするには、コンターを描画して下さい。</translation>
     </message>
@@ -800,9 +808,9 @@
         <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="623"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="627"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="632"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -811,12 +819,12 @@
         <translation type="vanished">ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="627"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="632"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
     </message>
@@ -832,27 +840,27 @@
         <translation type="vanished">追加...</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="25"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="30"/>
         <source>Scalar (node)</source>
         <translation>スカラー (格子点)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="129"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="129"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
         <source>A maximum of four contours may be defined.</source>
         <translation>コンターは最大で4つまでしか描画できません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="361"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="361"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>シェープファイルをエクスポートするには、表示設定を &quot;面塗りコンター&quot; に切り替えてください。</translation>
     </message>
@@ -860,12 +868,12 @@
 <context>
     <name>Post2dWindowNodeVectorArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="46"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="49"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="69"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="77"/>
         <source>Arrow Physical Value Change</source>
         <translation>矢印 物理量変更</translation>
     </message>
@@ -893,12 +901,12 @@
         <translation type="vanished">パーティクル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="63"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="65"/>
         <source>Particles (auto)</source>
         <translation>パーティクル (自動)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="93"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="94"/>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
     </message>
@@ -1276,12 +1284,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowParticlesScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="28"/>
+        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="29"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="146"/>
+        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="147"/>
         <source>Particle Scalar value change</source>
         <translation>パーティクル属性値の変更</translation>
     </message>
@@ -1568,7 +1576,8 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowZoneDataItem</name>
     <message>
         <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="130"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="132"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="133"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="136"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
@@ -1623,12 +1632,12 @@ p, li { white-space: pre-wrap; }
         <translation>パーティクルのスカラー設定の変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="219"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="251"/>
         <source>Create Contour</source>
         <translation>コンターの作成</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="201"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="235"/>
         <source>Create Cell Contour</source>
         <translation>セルコンターの作成</translation>
     </message>

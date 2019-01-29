@@ -12,24 +12,28 @@
 <context>
     <name>BackgroundImageInfo</name>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="80"/>
-        <location filename="../project/backgroundimageinfo.cpp" line="82"/>
-        <source>Fix Image position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="130"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="165"/>
         <source>Unable to read image %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="265"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="265"/>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfo.cpp" line="642"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfo.cpp" line="642"/>
+        <source>Select a corresponding point on Main Window.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -99,6 +103,19 @@
     </message>
 </context>
 <context>
+    <name>BackgroundImageInfoGeoreferenceDialog</name>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="20"/>
+        <source>Georeference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="54"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <location filename="../scalarstocolors/colortransferfunctioneditwidget.ui" line="14"/>
@@ -117,9 +134,32 @@
     </message>
 </context>
 <context>
+    <name>GcpTableModel</name>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="99"/>
+        <source>source X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="101"/>
+        <source>source Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="103"/>
+        <source>dest X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="105"/>
+        <source>dest Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoData</name>
     <message>
-        <location filename="../pre/geodata/geodata.cpp" line="38"/>
+        <location filename="../pre/geodata/geodata.cpp" line="42"/>
         <source>Edit &amp;Name...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -185,9 +225,38 @@
     </message>
 </context>
 <context>
+    <name>GeoreferenceView::ImageInfo</name>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="130"/>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="135"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="130"/>
+        <source>No point is selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="135"/>
+        <source>No point can be further deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="151"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="151"/>
+        <source>Select a point on Georeference dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GraphicsWindowDataItem</name>
     <message>
-        <location filename="../datamodel/graphicswindowdataitemstandarditemchangecommand.cpp" line="15"/>
+        <location filename="../datamodel/graphicswindowdataitemstandarditemchangecommand.cpp" line="17"/>
         <source>Object Browser Item Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -431,60 +500,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
-        <source>&amp;Save and Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="120"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="144"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="260"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="269"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="317"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="121"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="275"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="127"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="145"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="260"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="269"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="317"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="275"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
         <source>Modifications you made will be discarded.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -538,86 +600,151 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="86"/>
-        <source>&amp;Export</source>
+        <source>Import Web</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="93"/>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="100"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="32"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="34"/>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="39"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="41"/>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="446"/>
         <source>Choose a text file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="432"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="446"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="81"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="455"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="83"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="469"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="81"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="455"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="83"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="469"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="320"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="329"/>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="446"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="460"/>
         <source>Specify file name to save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="446"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="460"/>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="541"/>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="517"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="579"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="623"/>
         <source>The following problems found: 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="582"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="626"/>
         <source>
  ... and other %1 errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="584"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="628"/>
         <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctionalDownloadDialog</name>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui" line="14"/>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui" line="22"/>
+        <source>Site Number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui" line="36"/>
+        <source>Start Date:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui" line="68"/>
+        <source>End Date:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui" line="99"/>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="93"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="99"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="107"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="93"/>
+        <source>Please enter a site number.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="99"/>
+        <source>Invalid site number.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="107"/>
+        <source>Start date not prior to end date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="244"/>
+        <source>Import failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="244"/>
+        <source>No data to import.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -673,22 +800,22 @@ Do you really want to import this file?</source>
     <name>MeasuredData</name>
     <message>
         <location filename="../project/measured/measureddatacsvexporter.cpp" line="18"/>
-        <location filename="../project/measured/measureddatacsvimporter.cpp" line="42"/>
+        <location filename="../project/measured/measureddatacsvimporter.cpp" line="43"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/measured/measureddatacsvimporter.cpp" line="49"/>
+        <location filename="../project/measured/measureddatacsvimporter.cpp" line="50"/>
         <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/measured/measureddatacsvimporter.cpp" line="55"/>
+        <location filename="../project/measured/measureddatacsvimporter.cpp" line="56"/>
         <source>The data file has to consist of only English characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/measured/measureddatacsvimporter.cpp" line="140"/>
+        <location filename="../project/measured/measureddatacsvimporter.cpp" line="141"/>
         <source>Wrong data found: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -912,27 +1039,27 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="395"/>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="324"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="326"/>
         <source>Show &amp;Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="300"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="302"/>
         <source>Select Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="310"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="310"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
         <source>Folder %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="322"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="324"/>
         <source>&amp;Hide Detail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1045,7 +1172,7 @@ Do you really want to import this file?</source>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
-        <location filename="../pre/base/preprocessorgriddataiteminterface.h" line="16"/>
+        <location filename="../pre/base/preprocessorgriddataiteminterface.h" line="18"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1053,7 +1180,7 @@ Do you really want to import this file?</source>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
-        <location filename="../pre/base/preprocessorgridcreatingconditiondataiteminterface.cpp" line="4"/>
+        <location filename="../pre/base/preprocessorgridcreatingconditiondataiteminterface.cpp" line="6"/>
         <source>Grid Creating Condition</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1100,10 +1227,10 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectMainFile</name>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="542"/>
-        <location filename="../project/projectmainfile.cpp" line="547"/>
-        <location filename="../project/projectmainfile.cpp" line="586"/>
-        <location filename="../project/projectmainfile.cpp" line="618"/>
+        <location filename="../project/projectmainfile.cpp" line="541"/>
+        <location filename="../project/projectmainfile.cpp" line="546"/>
+        <location filename="../project/projectmainfile.cpp" line="585"/>
+        <location filename="../project/projectmainfile.cpp" line="617"/>
         <location filename="../project/projectmainfile.cpp" line="1029"/>
         <location filename="../project/projectmainfile.cpp" line="1076"/>
         <location filename="../project/projectmainfile.cpp" line="1096"/>
@@ -1112,77 +1239,77 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="542"/>
+        <location filename="../project/projectmainfile.cpp" line="541"/>
         <source>Solution %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="547"/>
+        <location filename="../project/projectmainfile.cpp" line="546"/>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="650"/>
-        <location filename="../project/projectmainfile.cpp" line="672"/>
-        <location filename="../project/projectmainfile.cpp" line="785"/>
-        <location filename="../project/projectmainfile.cpp" line="792"/>
-        <location filename="../project/projectmainfile.cpp" line="802"/>
-        <location filename="../project/projectmainfile.cpp" line="813"/>
-        <location filename="../project/projectmainfile.cpp" line="816"/>
+        <location filename="../project/projectmainfile.cpp" line="649"/>
+        <location filename="../project/projectmainfile.cpp" line="671"/>
+        <location filename="../project/projectmainfile.cpp" line="783"/>
+        <location filename="../project/projectmainfile.cpp" line="790"/>
+        <location filename="../project/projectmainfile.cpp" line="800"/>
+        <location filename="../project/projectmainfile.cpp" line="811"/>
+        <location filename="../project/projectmainfile.cpp" line="814"/>
         <location filename="../project/projectmainfile.cpp" line="1085"/>
         <location filename="../project/projectmainfile.cpp" line="1197"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="580"/>
+        <location filename="../project/projectmainfile.cpp" line="579"/>
         <source>Export CGNS file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="580"/>
+        <location filename="../project/projectmainfile.cpp" line="579"/>
         <source>CGNS file (*.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="586"/>
+        <location filename="../project/projectmainfile.cpp" line="585"/>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="618"/>
+        <location filename="../project/projectmainfile.cpp" line="617"/>
         <source>Error occured while opening CGNS file in project file : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="650"/>
-        <location filename="../project/projectmainfile.cpp" line="672"/>
+        <location filename="../project/projectmainfile.cpp" line="649"/>
+        <location filename="../project/projectmainfile.cpp" line="671"/>
         <source>%1 Saving project file failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="773"/>
+        <location filename="../project/projectmainfile.cpp" line="771"/>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="775"/>
+        <location filename="../project/projectmainfile.cpp" line="773"/>
         <source>Open Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="785"/>
+        <location filename="../project/projectmainfile.cpp" line="783"/>
         <source>A background image with the same name already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="792"/>
-        <location filename="../project/projectmainfile.cpp" line="802"/>
+        <location filename="../project/projectmainfile.cpp" line="790"/>
+        <location filename="../project/projectmainfile.cpp" line="800"/>
         <source>The background image was not added. Please try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="816"/>
+        <location filename="../project/projectmainfile.cpp" line="814"/>
         <source>Invalid image file is specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1235,13 +1362,13 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="182"/>
-        <location filename="../project/projectmainfile.cpp" line="187"/>
+        <location filename="../project/projectmainfile.cpp" line="181"/>
+        <location filename="../project/projectmainfile.cpp" line="186"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="186"/>
+        <location filename="../project/projectmainfile.cpp" line="185"/>
         <source> : no such file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1343,12 +1470,12 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp" line="6"/>
+        <location filename="../datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp" line="8"/>
         <source>Move up item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp" line="6"/>
+        <location filename="../datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp" line="8"/>
         <source>Move down item</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1482,23 +1609,23 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="115"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="174"/>
         <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="143"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="143"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="260"/>
         <source>Background Image change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1532,36 +1659,26 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="40"/>
-        <source>Bing (Aerial)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
-        <source>Bing (Road)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
         <source>GSI (Standard) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="45"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
         <source>GSI (Pale) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="46"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="42"/>
         <source>GSI (English) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="47"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="43"/>
         <source>GSI (Relief) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="48"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
         <source>GSI (Ortho images) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
