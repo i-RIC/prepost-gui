@@ -211,8 +211,8 @@ void BackgroundImageInfoGeoreferenceDialog::closeEvent(QCloseEvent*)
 void BackgroundImageInfoGeoreferenceDialog::setHideButtonText()
 {
 	if (m_info->isVisible()) {
-		ui->hideButton->setText("Hide");
+		ui->hideButton->setText(tr("Hide"));
 	} else {
-		ui->hideButton->setText("Show");
+		ui->hideButton->setText(tr("Show"));
 	}
 }
