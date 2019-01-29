@@ -116,7 +116,7 @@ void PreProcessorBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* 
 
 void PreProcessorBackgroundImageDataItem::showGeoreferenceDialog()
 {
-	m_imageInfo->showGeoreferenceDialog(m_actor, dataModel()->graphicsView(), m_zDepthRange.max(), preProcessorWindow());
+	m_imageInfo->showGeoreferenceDialog(m_actor, dataModel()->graphicsView(), m_zDepthRange.min(), m_zDepthRange.max(), preProcessorWindow());
 
 	connect(m_imageInfo, SIGNAL(isGeoreferenceDialogClosed()), this, SLOT(enableObjectBrowserView()));
 	setEnableObjectBrowserView(false);

@@ -82,7 +82,7 @@ public:
 	void toggleVisibility();
 
 	bool isVisible();
-	void showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double depth, QWidget* w);
+	void showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double minDepth, double maxDepth, QWidget* w);
 
 public slots:
 	void selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices);
@@ -112,7 +112,7 @@ private:
 	void informChange();
 	QString static getThumbnailFileName(const QString& origname);
 	QDialog* georeferenceDialog(QWidget* w);
-	void updateGeoReferencePointsActor();
+	void updateGeoReferencePointsActor(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indice);
 
 	QAction* m_editNameAction;
 	QAction* m_fixAction;
@@ -135,6 +135,7 @@ private:
 
 	vtkActor* m_geoReferenceActor;
 	vtkLineActor m_geoReferencePointsActor;
+	vtkLineActor m_geoReferenceSelectedPointsActor;
 	VTKGraphicsView* m_geoReferenceGraphicsView;
 	QWidget* m_geoReferenceParentWindow;
 

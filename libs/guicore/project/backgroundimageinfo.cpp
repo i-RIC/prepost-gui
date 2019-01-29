@@ -94,6 +94,9 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 
 	m_geoReferencePointsActor.pointsActor()->GetProperty()->SetPointSize(5);
 	m_geoReferencePointsActor.pointsActor()->GetProperty()->SetColor(0, 0, 255);
+
+	m_geoReferenceSelectedPointsActor.pointsActor()->GetProperty()->SetPointSize(7);
+	m_geoReferenceSelectedPointsActor.pointsActor()->GetProperty()->SetColor(0, 0, 0);
 }
 
 BackgroundImageInfo::~BackgroundImageInfo()
@@ -388,7 +391,9 @@ void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* ev
 		view->viewportToWorld(worldX, worldY);
 		emit gcpDefined(QPointF(worldX, worldY));
 
-		updateGeoReferencePointsActor();
+
+		std::unordered_set<std::vector<GcpTableRow>::size_type> indices;
+		updateGeoReferencePointsActor(indices);
 		return;
 	}
 	m_isRotating = false;
@@ -584,7 +589,7 @@ QDialog* BackgroundImageInfo::georeferenceDialog(QWidget* w)
 	return new BackgroundImageInfoGeoreferenceDialog(this, w);
 }
 
-void BackgroundImageInfo::updateGeoReferencePointsActor()
+void BackgroundImageInfo::updateGeoReferencePointsActor(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indice)
 {
 	auto table = gcpTable();
 	std::vector<QPointF> points;
@@ -593,6 +598,15 @@ void BackgroundImageInfo::updateGeoReferencePointsActor()
 		points.push_back(p);
 	}
 	m_geoReferencePointsActor.setLine(points);
+
+	std::vector<QPointF> selectedPoints;
+	for (auto idx : indice) {
+		auto row = table->at(idx);
+		QPointF p(row.destX, row.destY);
+		selectedPoints.push_back(p);
+	}
+	m_geoReferenceSelectedPointsActor.setLine(selectedPoints);
+
 	m_geoReferenceGraphicsView->render();
 }
 
@@ -619,8 +633,7 @@ void BackgroundImageInfo::handleGeoreferenceDialogAccepted(QDialog* d)
 
 void BackgroundImageInfo::selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices)
 {
-	// @todo Add 'select' effect for the points with the specified indices.
-	// selectionHelper()->selectPoints(indices);
+	updateGeoReferencePointsActor(indices);
 }
 
 void BackgroundImageInfo::startGcpSelect()
@@ -629,7 +642,7 @@ void BackgroundImageInfo::startGcpSelect()
 	m_isGeoReferenceSelectingPoint = true;
 }
 
-void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double depth, QWidget* w)
+void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double minDepth, double maxDepth, QWidget* w)
 {
 	if (m_georeferenceDialog == nullptr) {
 		m_georeferenceDialog = georeferenceDialog(w);
@@ -639,9 +652,13 @@ void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsVie
 	}
 	m_geoReferenceActor = actor;
 	m_geoReferenceGraphicsView = v;
-	m_geoReferencePointsActor.pointsActor()->SetPosition(0, 0, depth);
+	m_geoReferencePointsActor.pointsActor()->SetPosition(0, 0, maxDepth);
 	m_geoReferenceGraphicsView->mainRenderer()->AddActor(m_geoReferencePointsActor.pointsActor());
-	updateGeoReferencePointsActor();
+	m_geoReferenceSelectedPointsActor.pointsActor()->SetPosition(0, 0, (minDepth + maxDepth) * 0.5);
+	m_geoReferenceGraphicsView->mainRenderer()->AddActor(m_geoReferenceSelectedPointsActor.pointsActor());
+
+	std::unordered_set<std::vector<GcpTableRow>::size_type> indices;
+	updateGeoReferencePointsActor(indices);
 
 	m_isGeoReferencing = true;
 	m_isGeoReferenceSelectingPoint = false;
@@ -655,6 +672,7 @@ void BackgroundImageInfo::closeGeoreferenceDialog()
 {
 	m_isGeoReferencing = false;
 	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferencePointsActor.pointsActor());
+	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferenceSelectedPointsActor.pointsActor());
 
 	delete m_georeferenceDialog;
 	m_georeferenceDialog = nullptr;
