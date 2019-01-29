@@ -84,9 +84,9 @@ PrimitiveView::PrimitiveView(QWidget *parent, bool reverseY) :
 	m_previousPos {},
 	m_drawOffset {},
 	m_rightClickPos {},
-	m_zoomCursor {QPixmap {":/images/cursorZoom.png"}, 16, 16},
-	m_moveCursor {QPixmap {":/images/cursorMove.png"}, 16, 16},
-	m_rotateCursor {QPixmap {":/images/cursorRotate.png"}, 16, 16},
+	m_zoomCursor {QPixmap {":/libs/guibase/images/cursorZoom.png"}, 16, 16},
+	m_moveCursor {QPixmap {":/libs/guibase/images/cursorMove.png"}, 16, 16},
+	m_rotateCursor {QPixmap {":/libs/guibase/images/cursorRotate.png"}, 16, 16},
 	ui {new Ui::PrimitiveView}
 {
 	setMouseTracking(true);
