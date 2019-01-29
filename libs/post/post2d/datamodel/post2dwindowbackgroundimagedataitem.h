@@ -17,6 +17,8 @@ public:
 	Post2dWindowBackgroundImageDataItem(BackgroundImageInfo* image, Post2dWindowDataItem* parent);
 	~Post2dWindowBackgroundImageDataItem();
 
+	void addCustomMenuItems(QMenu* menu) override;
+
 	void handleStandardItemChange() override;
 	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
@@ -28,6 +30,8 @@ public:
 
 private slots:
 	void applyImageChange();
+	void showGeoreferenceDialog();
+	void enableObjectBrowserView();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) override {}
@@ -35,9 +39,11 @@ protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* dialog) override;
+	void setEnableObjectBrowserView(bool enabled);
 	void doApplyOffset(double x, double y) override;
 
 private:
+	QAction* m_georeferenceAction;
 	vtkSmartPointer<vtkActor> m_actor;
 	BackgroundImageInfo* m_imageInfo;
 	QString m_filename;

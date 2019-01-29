@@ -1,4 +1,6 @@
 #include "post2dwindowbackgroundimagedataitem.h"
+#include "../post2dwindow.h"
+#include "../post2dwindowgraphicsview.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/project/backgroundimageinfo.h>
@@ -7,6 +9,7 @@
 #include <guicore/project/projectmainfile.h>
 
 #include <QAction>
+#include <QMenu>
 #include <QStandardItem>
 
 #include <vtkRenderer.h>
@@ -23,12 +26,20 @@ Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(Backgro
 	m_actor->VisibilityOff();
 	actorCollection()->AddItem(m_actor);
 
+	m_georeferenceAction = new QAction(Post2dWindowBackgroundImageDataItem::tr("&Georeference..."), this);
+
+	connect(m_georeferenceAction, SIGNAL(triggered()), this, SLOT(showGeoreferenceDialog()));
 	connect(image, SIGNAL(isChanged()), this, SLOT(applyImageChange()));
 }
 
 Post2dWindowBackgroundImageDataItem::~Post2dWindowBackgroundImageDataItem()
 {
 	renderer()->RemoveActor(m_actor);
+}
+
+void Post2dWindowBackgroundImageDataItem::addCustomMenuItems(QMenu *menu)
+{
+	menu->addAction(m_georeferenceAction);
 }
 
 void Post2dWindowBackgroundImageDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -85,6 +96,30 @@ void Post2dWindowBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* 
 {
 	BackgroundImageInfoDialog* infoDialog = dynamic_cast<BackgroundImageInfoDialog*>(dialog);
 	m_imageInfo->handlePropertyDialogAccepted(infoDialog);
+}
+
+void Post2dWindowBackgroundImageDataItem::showGeoreferenceDialog()
+{
+	m_imageInfo->showGeoreferenceDialog(m_actor, dataModel()->graphicsView(), m_zDepthRange.min(), m_zDepthRange.max(), postProcessorWindow());
+
+	connect(m_imageInfo, SIGNAL(isGeoreferenceDialogClosed()), this, SLOT(enableObjectBrowserView()));
+	setEnableObjectBrowserView(false);
+}
+
+void Post2dWindowBackgroundImageDataItem::enableObjectBrowserView()
+{
+	setEnableObjectBrowserView(true);
+}
+
+void Post2dWindowBackgroundImageDataItem::setEnableObjectBrowserView(bool enabled)
+{
+	m_georeferenceAction->setEnabled(enabled);
+
+	ObjectBrowserView* oview = dataModel()->objectBrowserView();
+	oview->deleteAction()->setEnabled(enabled);
+	oview->propertyAction()->setEnabled(enabled);
+
+	oview->setEnabled(enabled);
 }
 
 void Post2dWindowBackgroundImageDataItem::doApplyOffset(double /*x_diff*/, double /*y_diff*/)
