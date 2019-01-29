@@ -32,15 +32,15 @@ public:
 	std::vector<GcpTableRow>* gcpTable();
 	AddibleGcpTableModel* gcpTableModel();
 
-	double leftBottomX() const {return m_leftbottomX;}
-	double leftBottomY() const {return m_leftbottomY;}
-	double scale() const {return m_scale;}
-	double angle() const {return m_angle;}
+	double leftBottomX() const;
+	double leftBottomY() const;
+	double scale() const;
+	double angle() const;
 
-	double origLeftBottomX() const {return m_origLeftbottomX;}
-	double origLeftBottomY() const {return m_origLeftbottomY;}
-	double origScale() const {return m_origScale;}
-	double origAngle() const {return m_origAngle;}
+	double origLeftBottomX() const;
+	double origLeftBottomY() const;
+	double origScale() const;
+	double origAngle() const;
 
 public slots:
 	void accept() override;

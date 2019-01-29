@@ -85,6 +85,46 @@ AddibleGcpTableModel* BackgroundImageInfoGeoreferenceDialog::gcpTableModel()
 	return m_gcpTableModel.get();
 }
 
+double BackgroundImageInfoGeoreferenceDialog::leftBottomX() const
+{
+	return m_leftbottomX;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::leftBottomY() const
+{
+	return m_leftbottomY;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::scale() const
+{
+	return m_scale;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::angle() const
+{
+	return m_angle;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::origLeftBottomX() const
+{
+	return m_origLeftbottomX;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::origLeftBottomY() const
+{
+	return m_origLeftbottomY;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::origScale() const
+{
+	return m_origScale;
+}
+
+double BackgroundImageInfoGeoreferenceDialog::origAngle() const
+{
+	return m_origAngle;
+}
+
 void BackgroundImageInfoGeoreferenceDialog::calculate()
 {
 	auto table = ui->imageWidget->gcpTable();
