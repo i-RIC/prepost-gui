@@ -236,6 +236,7 @@ void BackgroundImageInfo::initializePosition()
 void BackgroundImageInfo::informChange()
 {
 	emit isChanged();
+	show();
 }
 
 void BackgroundImageInfo::readWorldFile(const QString& name)
@@ -687,6 +688,7 @@ void BackgroundImageInfo::hide()
 	m_hide = true;
 	m_geoReferenceActor->VisibilityOff();
 	m_geoReferenceGraphicsView->render();
+	emit isVisibilityChanged();
 }
 
 void BackgroundImageInfo::show()
@@ -694,6 +696,7 @@ void BackgroundImageInfo::show()
 	m_hide = false;
 	m_geoReferenceActor->VisibilityOn();
 	m_geoReferenceGraphicsView->render();
+	emit isVisibilityChanged();
 }
 
 void BackgroundImageInfo::toggleVisibility()
@@ -703,6 +706,7 @@ void BackgroundImageInfo::toggleVisibility()
 	if (m_hide) {vis = 0;}
 	m_geoReferenceActor->SetVisibility(vis);
 	m_geoReferenceGraphicsView->render();
+	emit isVisibilityChanged();
 }
 
 bool BackgroundImageInfo::isVisible()

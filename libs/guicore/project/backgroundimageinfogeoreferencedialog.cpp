@@ -51,6 +51,7 @@ BackgroundImageInfoGeoreferenceDialog::BackgroundImageInfoGeoreferenceDialog(Bac
 	connect(ui->hideButton, SIGNAL(clicked()), this, SLOT(handleHideButtonClicked()));
 
 	setHideButtonText();
+	connect(info, SIGNAL(isVisibilityChanged()), this, SLOT(setHideButtonText()));
 }
 
 BackgroundImageInfoGeoreferenceDialog::~BackgroundImageInfoGeoreferenceDialog()
@@ -230,7 +231,6 @@ void BackgroundImageInfoGeoreferenceDialog::handleSelectionChanged(const QItemSe
 void BackgroundImageInfoGeoreferenceDialog::handleHideButtonClicked()
 {
 	m_info->toggleVisibility();
-	setHideButtonText();
 }
 
 void BackgroundImageInfoGeoreferenceDialog::setHideButtonText()

@@ -53,9 +53,9 @@ signals:
 private slots:
 	void handleSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
 	void handleHideButtonClicked();
+	void setHideButtonText();
 
 private:
-	void setHideButtonText();
 	void calculate();
 
 	BackgroundImageInfo* m_info;

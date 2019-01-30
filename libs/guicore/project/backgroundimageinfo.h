@@ -100,6 +100,7 @@ signals:
 	// @todo Emit selectedIndexChanged(const std::unordered_set<std::vector<GcpTableRow>::size_type>&) after GCP points are selected.
 	void selectedIndexChanged(const std::unordered_set<std::vector<GcpTableRow>::size_type>&);
 	void isGeoreferenceDialogClosed();
+	void isVisibilityChanged();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
