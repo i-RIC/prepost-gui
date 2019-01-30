@@ -162,9 +162,11 @@ INDEX nearestPoint(std::function<std::vector<INDEX>(const POINTS&, const QPolygo
 
 template <typename VIEW>
 typename bool isPointInRect(const QRectF& rect, const QPointF point, double xMargin, double yMargin, bool hasMultiplePoints, VIEW* view) {
-	if (! rect.isValid()) {
-		return false;
-	}
+	// QRectF with height == 0 and width == 0 is invalid.
+	// Therefore, bbox for single point is always invalid.
+	// if (! rect.isValid()) {
+	// 	return false;
+	// }
 
 	auto p = view->rconv(point);
 	std::vector<QPointF> ps;
