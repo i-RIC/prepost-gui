@@ -21,27 +21,23 @@ class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesData
 
 public:
 	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, ProjectDataItem* parent);
-	const QList<double>& data() const {return m_data;}
-	bool handleCurrentStepUpdate(const int /*fn*/) override {
-		// do nothing.
-		return true;
-	}
-	void update(const int fn) {
-		loadFromCgnsFile(fn);
-	}
-	const std::string& zoneName() const {return m_zoneName;}
+	const QList<double>& data() const;
+
+	bool handleCurrentStepUpdate(const int fn) override;
+	void update(const int fn);
+	const std::string& zoneName() const;
 	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
-	QString caption() const {return zoneName().c_str();}
-	void setPointIndex(int index) {m_pointIndex = index;}
-	int pointIndex() const {return m_pointIndex;}
-	void setGridLocation(GridLocation_t location) { m_gridLocation = location; }
-	GridLocation_t gridLocation() const { return m_gridLocation; }
+	QString caption() const;
+	void setPointIndex(int index);
+	int pointIndex() const;
+	void setGridLocation(GridLocation_t location);
+	GridLocation_t gridLocation() const;
 
 protected:
 	bool loadData(const int fn) override;
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	bool loadData(const int fn, GridLocation_t location);
 

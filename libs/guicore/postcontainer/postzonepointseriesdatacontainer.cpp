@@ -18,6 +18,51 @@ PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionI
 	m_gridLocation {gridLocation}
 {}
 
+const QList<double>& PostZonePointSeriesDataContainer::data() const
+{
+	return m_data;
+}
+
+bool PostZonePointSeriesDataContainer::handleCurrentStepUpdate(const int /*fn*/)
+{
+	return true;
+}
+
+void PostZonePointSeriesDataContainer::update(const int fn)
+{
+	loadFromCgnsFile(fn);
+}
+
+const std::string& PostZonePointSeriesDataContainer::zoneName() const
+{
+	return m_zoneName;
+}
+
+QString PostZonePointSeriesDataContainer::caption() const
+{
+	return zoneName().c_str();
+}
+
+void PostZonePointSeriesDataContainer::setPointIndex(int index)
+{
+	m_pointIndex = index;
+}
+
+int PostZonePointSeriesDataContainer::pointIndex() const
+{
+	return m_pointIndex;
+}
+
+void PostZonePointSeriesDataContainer::setGridLocation(GridLocation_t location)
+{
+	m_gridLocation = location;
+}
+
+GridLocation_t PostZonePointSeriesDataContainer::gridLocation() const
+{
+	return m_gridLocation;
+}
+
 bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
 {
 	// if m_zoneID is already set, we do not have to do it again.
@@ -111,3 +156,9 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 {
 	return loadData(fn, m_gridLocation);
 }
+
+void PostZonePointSeriesDataContainer::doLoadFromProjectMainFile(const QDomNode& /*node*/)
+{}
+
+void PostZonePointSeriesDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
+{}
