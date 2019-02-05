@@ -386,8 +386,9 @@ void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VT
 void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_fixed) {return;}
-	if (event->button() != Qt::LeftButton) {return;}
 	if (m_isGeoReferencing && m_isGeoReferenceSelectingPoint) {
+		if (event->button() != Qt::LeftButton) {return;}
+
 		double worldX = event->x();
 		double worldY = event->y();
 		VTK2DGraphicsView* view = dynamic_cast<VTK2DGraphicsView*>(v);
