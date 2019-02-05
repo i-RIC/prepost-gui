@@ -505,6 +505,11 @@ double BackgroundImageInfo::scale() const
 	return m_scale;
 }
 
+double BackgroundImageInfo::resizeScale() const
+{
+	return m_resizeScale;
+}
+
 double BackgroundImageInfo::angle() const
 {
 	return m_angle;

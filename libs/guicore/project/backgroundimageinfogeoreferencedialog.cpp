@@ -127,6 +127,7 @@ double BackgroundImageInfoGeoreferenceDialog::origAngle() const
 void BackgroundImageInfoGeoreferenceDialog::calculate()
 {
 	auto table = ui->imageWidget->gcpTable();
+	auto resizeScale = m_info->resizeScale();
 
 	// Helmert transformation.
 	auto n = table->size();
@@ -150,14 +151,16 @@ void BackgroundImageInfoGeoreferenceDialog::calculate()
 	YAve /= n;
 
 	for (const auto& row : *table) {
-		x += row.sourceX;
-		y += row.sourceY;
+		auto row_sourceX = row.sourceX * resizeScale;
+		auto row_sourceY = row.sourceY * resizeScale;
+		x += row_sourceX;
+		y += row_sourceY;
 		X += (row.destX - XAve);
 		Y += (row.destY - YAve);
 
-		x2_plus_y2  += row.sourceX * row.sourceX          + row.sourceY * row.sourceY;
-		xX_plus_yY  += row.sourceX * (row.destX - XAve)   + row.sourceY * (row.destY - YAve);
-		yX_minus_xY += row.sourceY * (row.destX - XAve)   - row.sourceX * (row.destY - YAve);
+		x2_plus_y2  += row_sourceX * row_sourceX          + row_sourceY * row_sourceY;
+		xX_plus_yY  += row_sourceX * (row.destX - XAve)   + row_sourceY * (row.destY - YAve);
+		yX_minus_xY += row_sourceY * (row.destX - XAve)   - row_sourceX * (row.destY - YAve);
 	}
 
 	auto a = (x * X + y * Y - n * xX_plus_yY) / (x * x + y * y - n * x2_plus_y2);
@@ -181,8 +184,8 @@ void BackgroundImageInfoGeoreferenceDialog::calculate()
 	m_angle = k * 180 / M_PI;
 
 	QPixmap pixmap {m_info->name()};
-	m_leftbottomX = c + s * pixmap.height() * std::sin(k); // (c, d) is the top-left coordinate.
-	m_leftbottomY = d - s * pixmap.height() * std::cos(k); //
+	m_leftbottomX = c + s * pixmap.height() * resizeScale * std::sin(k); // (c, d) is the top-left coordinate.
+	m_leftbottomY = d - s * pixmap.height() * resizeScale * std::cos(k); //
 	m_scale = s;
 }
 
