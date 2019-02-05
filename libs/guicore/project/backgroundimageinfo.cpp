@@ -56,6 +56,7 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, const QString&
 	m_isTranslating {false},
 	m_isGeoReferencing {false},
 	m_isGeoReferenceSelectingPoint {false},
+	m_geoReferenceActor {nullptr},
 	m_geoReferenceParentWindow {nullptr},
 	m_hasWorldFile {false},
 	m_scale {1},
@@ -682,6 +683,7 @@ void BackgroundImageInfo::handleGeoreferenceDialogClosed()
 	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferencePointsActor.pointsActor());
 	m_geoReferenceGraphicsView->mainRenderer()->RemoveActor(m_geoReferenceSelectedPointsActor.pointsActor());
 
+	m_geoReferenceActor = nullptr;
 	m_georeferenceDialog = nullptr;
 	show();
 
@@ -690,6 +692,8 @@ void BackgroundImageInfo::handleGeoreferenceDialogClosed()
 
 void BackgroundImageInfo::hide()
 {
+	if (! m_isGeoReferencing) {return;}
+
 	m_hide = true;
 	m_geoReferenceActor->VisibilityOff();
 	m_geoReferenceGraphicsView->render();
@@ -698,6 +702,8 @@ void BackgroundImageInfo::hide()
 
 void BackgroundImageInfo::show()
 {
+	if (! m_isGeoReferencing) {return;}
+
 	m_hide = false;
 	m_geoReferenceActor->VisibilityOn();
 	m_geoReferenceGraphicsView->render();
@@ -706,6 +712,8 @@ void BackgroundImageInfo::show()
 
 void BackgroundImageInfo::toggleVisibility()
 {
+	if (! m_isGeoReferencing) {return;}
+
 	m_hide = ! m_hide;
 	int vis = 1;
 	if (m_hide) {vis = 0;}
