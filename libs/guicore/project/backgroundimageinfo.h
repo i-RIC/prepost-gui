@@ -63,6 +63,7 @@ public:
 	double translateX() const;
 	double translateY() const;
 	double scale() const;
+	double resizeScale() const;
 	double angle() const;
 	void setPreProcessorActor(vtkActor* actor);
 	void setTranslateX(double x);
