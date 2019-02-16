@@ -66,6 +66,9 @@ public:
 
 	void applyOffset(double x, double y);
 
+	std::vector<PostCalculatedResult*> detachCalculatedResult();
+	void attachCalculatedResult(std::vector<PostCalculatedResult*> results);
+
 protected:
 	void doApplyOffset(double x, double y) override;
 

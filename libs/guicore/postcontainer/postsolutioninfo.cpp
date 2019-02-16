@@ -9,6 +9,7 @@
 #include "exporter/postzonedatatpoexporter.h"
 #include "exporter/postzonedatavtkexporter.h"
 #include "postbaseselectingdialog.h"
+#include "postcontainer/postcalculatedresult.h"
 #include "postdataexportdialog.h"
 //#include "postdummy3dzonedatacontainer.h"
 #include "postiterationsteps.h"
@@ -77,6 +78,9 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 PostSolutionInfo::~PostSolutionInfo()
 {
 	close();
+	clearCalculatedResults(&m_calculatedResults1D);
+	clearCalculatedResults(&m_calculatedResults2D);
+	clearCalculatedResults(&m_calculatedResults3D);
 	delete m_loadedElement;
 }
 
@@ -196,7 +200,7 @@ void PostSolutionInfo::informStepsUpdated()
 	emit allPostProcessorsUpdated();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
 	int ier, nbases;
 	ier = cg_nbases(fn, &nbases);
@@ -248,7 +252,11 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		return false;
 	}
 	*zoneNames = tmpZoneNames;
+
 	// clear the current zone containers first.
+	for (auto c : *containers) {
+		results->insert(c->zoneName(), c->detachCalculatedResult());
+	}
 	clearContainers(containers);
 	containerNameMap->clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
@@ -284,6 +292,17 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 			containers->append(cont);
 			containerNameMap->insert(zoneName, cont);
 		}
+	}
+	std::vector<std::string> namesToRemove;
+	for (auto it = results->begin(); it != results->end(); ++it) {
+		auto c = containerNameMap->value(it.key(), nullptr);
+		if (c != nullptr) {
+			c->attachCalculatedResult(it.value());
+			namesToRemove.push_back(it.key());
+		}
+	}
+	for (auto name : namesToRemove) {
+		results->remove(name);
 	}
 	return true;
 }
@@ -362,13 +381,13 @@ void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D);
+	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D);
+	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D);
+	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	// only for 3D demonstration.
 //	ret = innerSetupDummy3DZoneDataContainers(fn, m_zoneNames3D, m_zoneContainers3D, m_zoneContainerNameMap3D);
 	if (ret) {emit zoneList3DUpdated();}
@@ -992,5 +1011,14 @@ void PostSolutionInfo::applyOffset(double x_diff, double y_diff)
 	}
 	for (auto c3 : m_zoneContainers3D) {
 		c3->applyOffset(x_diff, y_diff);
+	}
+}
+
+void PostSolutionInfo::clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results)
+{
+	for (auto list : *results) {
+		for (auto r : list) {
+			delete r;
+		}
 	}
 }

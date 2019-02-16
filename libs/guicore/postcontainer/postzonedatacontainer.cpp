@@ -1418,3 +1418,24 @@ void PostZoneDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		writer.writeEndElement();
 	}
 }
+
+std::vector<PostCalculatedResult*> PostZoneDataContainer::detachCalculatedResult()
+{
+	std::vector<PostCalculatedResult*> ret;
+
+	for (auto r : m_calculatedResults) {
+		r->setParent(nullptr);
+		ret.push_back(r);
+	}
+	m_calculatedResults.clear();
+
+	return ret;
+}
+
+void PostZoneDataContainer::attachCalculatedResult(std::vector<PostCalculatedResult*> results)
+{
+	for (auto r : results) {
+		r->setParent(this);
+		m_calculatedResults.push_back(r);
+	}
+}
