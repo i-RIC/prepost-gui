@@ -1615,7 +1615,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::toggleGridCreatingMode(bo
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode()
 {
-	InformationDialog::information(this, tr("Information"), tr("Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key."), "riversurveyedit");
+	InformationDialog::information(this, tr("Information"), tr("Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.\nYou can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from \"Edit from Dialog\" in the right-clicking menu."), "riversurveyedit");
 	m_mouseEventMode = meEditCrosssection;
 
 	const auto index = selectionModel()->selectedIndexes().at(0);

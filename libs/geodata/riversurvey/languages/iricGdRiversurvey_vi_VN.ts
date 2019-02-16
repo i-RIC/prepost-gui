@@ -761,18 +761,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1581"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1603"/>
         <source>Edit Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1596"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1618"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1596"/>
-        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.</source>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1618"/>
+        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -781,8 +782,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1310"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1331"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1332"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1353"/>
         <source>Inactivate Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>

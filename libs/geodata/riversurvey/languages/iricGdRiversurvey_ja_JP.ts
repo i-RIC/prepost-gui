@@ -809,19 +809,25 @@
         <translation>右岸側</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1581"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1603"/>
         <source>Edit Cross Section</source>
         <translation>断面の編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1596"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1618"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1596"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1618"/>
+        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。
+ダイアログから、数値を入力して精密な編集を行うこともできます。ダイアログから編集するには、右クリックメニューから&quot;ダイアログから編集&quot;を選択してください。</translation>
+    </message>
+    <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.</source>
-        <translation>マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation type="vanished">マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_mouseeditcrosssectioncommand.cpp" line="8"/>
@@ -829,8 +835,8 @@
         <translation>標高点の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1310"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1331"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1332"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1353"/>
         <source>Inactivate Elevation Points</source>
         <translation>標高点の無効化</translation>
     </message>
