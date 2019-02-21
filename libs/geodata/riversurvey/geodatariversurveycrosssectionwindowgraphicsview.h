@@ -20,10 +20,14 @@ public:
 	enum MouseEventMode {
 		meNormal,
 		meSelecting,
-		meZooming,
-		meTranslating,
 		meMove,
-		meMovePrepare
+		meMovePrepare,
+		meEditCrosssection
+	};
+	enum ViewMouseEventMode {
+		vmeNormal,
+		vmeZooming,
+		vmeTranslating
 	};
 	GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w);
 
@@ -57,20 +61,27 @@ public:
 	void cameraZoomInY();
 	void cameraZoomOutY();
 	void toggleGridCreatingMode(bool gridMode);
+	void enterEditCrosssectionMode();
+
+public slots:
+	void informModelessDialogOpen();
+	void informModelessDialogClose();
 
 private slots:
 	void activateSelectedRows();
 	void inactivateSelectedRows();
 	void moveSelectedRows();
 
-protected:
+private:
 	int moveWidth();
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
 	void mouseReleaseEvent(QMouseEvent* event) override;
+	void mouseDoubleClickEvent(QMouseEvent* event) override;
+	void keyReleaseEvent(QKeyEvent* event) override;
+
 	void wheelEvent(QWheelEvent* event) override;
 
-private:
 	void setupActions();
 	void updateAltitudeList(GeoDataRiverCrosssection::AltitudeList& alist, const QPoint& start, const QPoint& end);
 	double getGridCtrlPointOffset(const QPoint& start, const QPoint& end);
@@ -85,6 +96,7 @@ private:
 	void drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix);
 	void drawCrossPoint(const QPointF& origin, const QVector2D& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
 	void drawPolyLineCrossPoints(QPainter& painter);
+	void drawEditPreview(QPainter& painter);
 	void zoom(double scaleX, double scaleY);
 	void selectPoints(const QPoint& from, const QPoint& to);
 	void translate(int x, int y);
@@ -93,6 +105,9 @@ private:
 	void inspectGridLimits(double* min, double* max);
 	bool continuousSelection();
 	bool continuousGridSelection();
+	std::vector<double> loadSlopeRatios();
+	GeoDataRiverCrosssection::Altitude createAltitude(const QPoint& pos, QString* ratio = nullptr);
+	void editCrossSection(GeoDataRiverCrosssection::Altitude& alt);
 
 	const static int iLeftMargin = 20;
 	const static int iRightMargin = 20;
@@ -125,6 +140,7 @@ private:
 	void drawScales(QPainter& painter, const QMatrix& matrix);
 
 	QMenu* m_rightClickingMenu;
+	QMenu* m_rightClickingMenuForEditCrosssectionMode;
 	QAction* m_activateAction;
 	QAction* m_inactivateAction;
 	QAction* m_moveAction;
@@ -140,11 +156,15 @@ private:
 	QRubberBand* m_rubberBand;
 	QRectF m_drawnRegion;
 	MouseEventMode m_mouseEventMode;
+	ViewMouseEventMode m_viewMouseEventMode;
+	bool m_modelessDialogIsOpen;
 	QRectF m_shownRegion;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;
 	QPoint m_dragStartPoint;
 	QMatrix m_matrix;
+	GeoDataRiverCrosssection::Altitude m_editAltitudePreview;
+	QString m_editRatio;
 	bool m_gridMode;
 };
 

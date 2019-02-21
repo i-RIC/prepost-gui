@@ -4,6 +4,7 @@
 #include "geodatariverpathpointexpanddialog.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
+#include "private/geodatariversurvey_expandcrosssectioncommand.h"
 
 #include <misc/iricundostack.h>
 
@@ -68,55 +69,6 @@ void GeoDataRiverPathPointExpandDialog::handleButtonClick(QAbstractButton* butto
 		doReset();
 	}
 }
-
-class GeoDataRiverSurvey::ExpandCrosssectionCommand : public QUndoCommand
-{
-public:
-	ExpandCrosssectionCommand(bool apply, QList<GeoDataRiverPathPoint*>& points, QList<double> ratios, GeoDataRiverSurvey* rs) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Expand Traversal Lines")}
-	{
-		m_apply = apply;
-		m_points = points;
-		for (int i = 0; i < points.count(); ++i) {
-			m_oldCrosssections.append(points[i]->crosssection().AltitudeInfo());
-			m_points[i]->crosssection().expand(ratios[i]);
-			m_newCrosssections.append(points[i]->crosssection().AltitudeInfo());
-		}
-		m_rs = rs;
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i) {
-			m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
-		}
-		if (! m_apply) {
-			m_rs->headPoint()->updateAllXSecInterpolators();
-			m_rs->headPoint()->updateRiverShapeInterpolators();
-			m_rs->updateShapeData();
-			m_rs->renderGraphicsView();
-			m_rs->updateCrossectionWindows();
-		}
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i) {
-			m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
-		}
-		m_rs->headPoint()->updateAllXSecInterpolators();
-		m_rs->headPoint()->updateRiverShapeInterpolators();
-		m_rs->setModified();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-	}
-private:
-	bool m_apply;
-	QList<GeoDataRiverPathPoint*> m_points;
-	QList<GeoDataRiverCrosssection::AltitudeList> m_newCrosssections;
-	QList<GeoDataRiverCrosssection::AltitudeList> m_oldCrosssections;
-	GeoDataRiverSurvey* m_rs;
-};
-
 
 void GeoDataRiverPathPointExpandDialog::accept()
 {

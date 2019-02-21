@@ -2,7 +2,6 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOW_H
 
 #include "gd_riversurvey_global.h"
-#include "geodatariversurvey.h"
 #include "geodatarivercrosssection.h"
 
 #include <guicore/base/snapshotenabledwindowinterface.h>
@@ -10,12 +9,14 @@
 
 #include <QMainWindow>
 #include <QList>
-#include <QUndoCommand>
 
 class GeoDataRiverPathPoint;
+class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
+class HydraulicDataRiverSurveyWaterElevation;
 class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorHydraulicDataGroupDataItemInterface;
 
 class QAction;
 class QIcon;
@@ -52,6 +53,8 @@ public:
 	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const;
 	QAction* deleteAction() const;
+	QAction* editFromSelectedPointAction() const;
+	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
 	void setupData();
@@ -69,6 +72,7 @@ public:
 	QToolBar* getAdditionalToolBar() const override;
 
 	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const;
+	void setSelectedRow(int row);
 
 public slots:
 	void updateView();
@@ -88,6 +92,8 @@ public slots:
 private slots:
 	void updateActionStatus();
 	void deleteSelectedRows();
+	void editFromSelectedPoint();
+	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
 	void crosssectionComboBoxChange(int newindex);
@@ -141,25 +147,6 @@ private:
 
 public:
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
-};
-
-class GeoDataRiverSurvey::EditCrosssectionCommand : public QUndoCommand
-{
-
-public:
-	EditCrosssectionCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = nullptr);
-	void redo() override;
-	void undo() override;
-
-private:
-	bool m_apply;
-	bool m_first;
-	bool m_tableaction;
-	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverCrosssection::AltitudeList m_before;
-	GeoDataRiverCrosssection::AltitudeList m_after;
-	GeoDataRiverSurveyCrosssectionWindow* m_window;
-	GeoDataRiverSurvey* m_rs;
 };
 
 #if _DEBUG

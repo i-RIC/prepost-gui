@@ -4,6 +4,7 @@
 #include "geodatariverpathpointinsertdialog.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
+#include "private/geodatariversurvey_insertriverpathpointcommand.h"
 
 #include <misc/interpolator.h>
 #include <misc/iricundostack.h>
@@ -75,55 +76,6 @@ void GeoDataRiverPathPointInsertDialog::handleButtonClick(QAbstractButton* butto
 		apply();
 	}
 }
-
-class GeoDataRiverSurvey::InsertRiverPathPointCommand : public QUndoCommand
-{
-public:
-	InsertRiverPathPointCommand(bool apply, GeoDataRiverPathPoint* prev, GeoDataRiverPathPoint* newpoint, GeoDataRiverSurvey* rs) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Insert Traversal Line")}
-	{
-		m_apply = apply;
-		m_previousPoint = prev;
-		m_newPoint = newpoint;
-		m_rs = rs;
-		m_redoed = false;
-	}
-	~InsertRiverPathPointCommand() {
-		if ((! m_redoed) && (! m_apply)) {
-			delete m_newPoint;
-		}
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-		m_previousPoint->addPathPoint(m_newPoint);
-		m_previousPoint->UpdateCtrlSections();
-		m_rs->updateSplineSolvers();
-		m_rs->updateShapeData();
-		m_rs->updateSelectionShapeData();
-		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
-		m_redoed = true;
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-		m_newPoint->remove();
-		m_previousPoint->UpdateCtrlSections();
-		m_rs->updateSplineSolvers();
-		if (! m_apply) {
-			m_rs->updateShapeData();
-			m_rs->updateSelectionShapeData();
-			m_rs->renderGraphicsView();
-			m_rs->updateCrossectionWindows();
-		}
-		m_redoed = false;
-	}
-private:
-	GeoDataRiverPathPoint* m_previousPoint;
-	GeoDataRiverPathPoint* m_newPoint;
-	GeoDataRiverSurvey* m_rs;
-	bool m_apply;
-	bool m_redoed;
-};
 
 void GeoDataRiverPathPointInsertDialog::accept()
 {

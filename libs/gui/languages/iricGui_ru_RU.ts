@@ -682,21 +682,26 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="45"/>
-        <source>Network Proxy</source>
+        <source>River Survey Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="50"/>
-        <source>Background Images (Internet)</source>
+        <source>Network Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="55"/>
-        <source>Web Elevation Data</source>
+        <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="60"/>
+        <source>Web Elevation Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencedialog.ui" line="65"/>
         <source>Background Grid</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1006,6 +1011,78 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="123"/>
         <source>Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageRiverSurvey</name>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.ui" line="20"/>
+        <source>List of fractions for cross section editing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.ui" line="39"/>
+        <source>&amp;Add...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.ui" line="46"/>
+        <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.ui" line="66"/>
+        <source>&amp;Restore Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.cpp" line="58"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.cpp" line="58"/>
+        <source>This value already exists in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.cpp" line="72"/>
+        <location filename="../pref/preferencepageriversurvey.cpp" line="84"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.cpp" line="72"/>
+        <source>Are you sure you want to delete the selected item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepageriversurvey.cpp" line="84"/>
+        <source>Are you sure you want to restore default values?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageRiverSurveyFractionAddDialog</name>
+    <message>
+        <location filename="../pref/private/preferencepageriversurveyfractionadddialog.ui" line="14"/>
+        <source>Add fraction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepageriversurveyfractionadddialog.ui" line="20"/>
+        <source>Specify the fraction to add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/private/preferencepageriversurveyfractionadddialog.ui" line="29"/>
+        <source>1:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1764,63 +1841,63 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
 <context>
     <name>iRICMainWindow</name>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="250"/>
-        <location filename="../main/iricmainwindow.cpp" line="256"/>
-        <location filename="../main/iricmainwindow.cpp" line="369"/>
-        <location filename="../main/iricmainwindow.cpp" line="390"/>
-        <location filename="../main/iricmainwindow.cpp" line="708"/>
-        <location filename="../main/iricmainwindow.cpp" line="712"/>
-        <location filename="../main/iricmainwindow.cpp" line="753"/>
-        <location filename="../main/iricmainwindow.cpp" line="779"/>
-        <location filename="../main/iricmainwindow.cpp" line="783"/>
-        <location filename="../main/iricmainwindow.cpp" line="804"/>
-        <location filename="../main/iricmainwindow.cpp" line="1842"/>
-        <location filename="../main/iricmainwindow.cpp" line="1906"/>
-        <location filename="../main/iricmainwindow.cpp" line="1938"/>
-        <location filename="../main/iricmainwindow.cpp" line="2002"/>
-        <location filename="../main/iricmainwindow.cpp" line="2040"/>
-        <location filename="../main/iricmainwindow.cpp" line="2110"/>
+        <location filename="../main/iricmainwindow.cpp" line="252"/>
+        <location filename="../main/iricmainwindow.cpp" line="258"/>
+        <location filename="../main/iricmainwindow.cpp" line="371"/>
+        <location filename="../main/iricmainwindow.cpp" line="392"/>
+        <location filename="../main/iricmainwindow.cpp" line="710"/>
+        <location filename="../main/iricmainwindow.cpp" line="714"/>
+        <location filename="../main/iricmainwindow.cpp" line="755"/>
+        <location filename="../main/iricmainwindow.cpp" line="781"/>
+        <location filename="../main/iricmainwindow.cpp" line="785"/>
+        <location filename="../main/iricmainwindow.cpp" line="806"/>
+        <location filename="../main/iricmainwindow.cpp" line="1844"/>
+        <location filename="../main/iricmainwindow.cpp" line="1908"/>
+        <location filename="../main/iricmainwindow.cpp" line="1940"/>
+        <location filename="../main/iricmainwindow.cpp" line="2004"/>
+        <location filename="../main/iricmainwindow.cpp" line="2042"/>
+        <location filename="../main/iricmainwindow.cpp" line="2112"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="250"/>
-        <location filename="../main/iricmainwindow.cpp" line="256"/>
+        <location filename="../main/iricmainwindow.cpp" line="252"/>
+        <location filename="../main/iricmainwindow.cpp" line="258"/>
         <source>Error occured while loading Solver definition file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="286"/>
+        <location filename="../main/iricmainwindow.cpp" line="288"/>
         <source>Open iRIC project file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="286"/>
+        <location filename="../main/iricmainwindow.cpp" line="288"/>
         <source>iRIC project file (*.ipro project.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="305"/>
-        <location filename="../main/iricmainwindow.cpp" line="334"/>
-        <location filename="../main/iricmainwindow.cpp" line="340"/>
-        <location filename="../main/iricmainwindow.cpp" line="348"/>
-        <location filename="../main/iricmainwindow.cpp" line="468"/>
-        <location filename="../main/iricmainwindow.cpp" line="577"/>
-        <location filename="../main/iricmainwindow.cpp" line="818"/>
-        <location filename="../main/iricmainwindow.cpp" line="869"/>
-        <location filename="../main/iricmainwindow.cpp" line="883"/>
-        <location filename="../main/iricmainwindow.cpp" line="901"/>
-        <location filename="../main/iricmainwindow.cpp" line="967"/>
-        <location filename="../main/iricmainwindow.cpp" line="1127"/>
-        <location filename="../main/iricmainwindow.cpp" line="1244"/>
-        <location filename="../main/iricmainwindow.cpp" line="1717"/>
-        <location filename="../main/iricmainwindow.cpp" line="1721"/>
-        <location filename="../main/iricmainwindow.cpp" line="1744"/>
-        <location filename="../main/iricmainwindow.cpp" line="2189"/>
-        <location filename="../main/iricmainwindow.cpp" line="2315"/>
-        <location filename="../main/iricmainwindow.cpp" line="2335"/>
+        <location filename="../main/iricmainwindow.cpp" line="307"/>
+        <location filename="../main/iricmainwindow.cpp" line="336"/>
+        <location filename="../main/iricmainwindow.cpp" line="342"/>
+        <location filename="../main/iricmainwindow.cpp" line="350"/>
+        <location filename="../main/iricmainwindow.cpp" line="470"/>
+        <location filename="../main/iricmainwindow.cpp" line="579"/>
+        <location filename="../main/iricmainwindow.cpp" line="820"/>
+        <location filename="../main/iricmainwindow.cpp" line="871"/>
+        <location filename="../main/iricmainwindow.cpp" line="885"/>
+        <location filename="../main/iricmainwindow.cpp" line="903"/>
+        <location filename="../main/iricmainwindow.cpp" line="969"/>
+        <location filename="../main/iricmainwindow.cpp" line="1129"/>
+        <location filename="../main/iricmainwindow.cpp" line="1246"/>
+        <location filename="../main/iricmainwindow.cpp" line="1719"/>
+        <location filename="../main/iricmainwindow.cpp" line="1723"/>
+        <location filename="../main/iricmainwindow.cpp" line="1746"/>
+        <location filename="../main/iricmainwindow.cpp" line="2191"/>
+        <location filename="../main/iricmainwindow.cpp" line="2317"/>
+        <location filename="../main/iricmainwindow.cpp" line="2337"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
@@ -1828,119 +1905,119 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="305"/>
+        <location filename="../main/iricmainwindow.cpp" line="307"/>
         <source>Project file %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="334"/>
+        <location filename="../main/iricmainwindow.cpp" line="336"/>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="340"/>
+        <location filename="../main/iricmainwindow.cpp" line="342"/>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="349"/>
+        <location filename="../main/iricmainwindow.cpp" line="351"/>
         <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="457"/>
+        <location filename="../main/iricmainwindow.cpp" line="459"/>
         <source>Open Calculation result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="468"/>
+        <location filename="../main/iricmainwindow.cpp" line="470"/>
         <source>CGNS file %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="578"/>
+        <location filename="../main/iricmainwindow.cpp" line="580"/>
         <source>This Project is modified. Do you want to save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="693"/>
+        <location filename="../main/iricmainwindow.cpp" line="695"/>
         <source>Save iRIC project file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="693"/>
+        <location filename="../main/iricmainwindow.cpp" line="695"/>
         <source>iRIC project file (*.ipro)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="705"/>
+        <location filename="../main/iricmainwindow.cpp" line="707"/>
         <source>Save iRIC project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="708"/>
+        <location filename="../main/iricmainwindow.cpp" line="710"/>
         <source>Project folder path has to consist of only English characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="712"/>
+        <location filename="../main/iricmainwindow.cpp" line="714"/>
         <source>The project folder has to be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="779"/>
+        <location filename="../main/iricmainwindow.cpp" line="781"/>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="783"/>
+        <location filename="../main/iricmainwindow.cpp" line="785"/>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="810"/>
+        <location filename="../main/iricmainwindow.cpp" line="812"/>
         <source>Project successfully saved to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1222"/>
+        <location filename="../main/iricmainwindow.cpp" line="1224"/>
         <source>iRIC %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
         <source>%1 - iRIC %2 [%3]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2046"/>
+        <location filename="../main/iricmainwindow.cpp" line="2048"/>
         <source>Please select which zone to use:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2335"/>
+        <location filename="../main/iricmainwindow.cpp" line="2337"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="159"/>
+        <location filename="../main/iricmainwindow.cpp" line="161"/>
         <source>Ready</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="457"/>
+        <location filename="../main/iricmainwindow.cpp" line="459"/>
         <source>CGNS file (*.cgn *.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="753"/>
-        <location filename="../main/iricmainwindow.cpp" line="804"/>
+        <location filename="../main/iricmainwindow.cpp" line="755"/>
+        <location filename="../main/iricmainwindow.cpp" line="806"/>
         <source>Saving project failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="819"/>
+        <location filename="../main/iricmainwindow.cpp" line="821"/>
         <source>The solver is still running. Really quit?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1981,193 +2058,193 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="869"/>
-        <location filename="../main/iricmainwindow.cpp" line="883"/>
+        <location filename="../main/iricmainwindow.cpp" line="871"/>
+        <location filename="../main/iricmainwindow.cpp" line="885"/>
         <source>This windows does not support snapshot function.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="892"/>
+        <location filename="../main/iricmainwindow.cpp" line="894"/>
         <source>Copied snapshot to clipboard.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="901"/>
+        <location filename="../main/iricmainwindow.cpp" line="903"/>
         <source>This menu is not available while the solver is running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="967"/>
+        <location filename="../main/iricmainwindow.cpp" line="969"/>
         <source>This windows does not support continuous snapshot function.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1009"/>
+        <location filename="../main/iricmainwindow.cpp" line="1011"/>
         <source>Continuous Snapshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1010"/>
+        <location filename="../main/iricmainwindow.cpp" line="1012"/>
         <source>saving continuous snapshot...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1127"/>
+        <location filename="../main/iricmainwindow.cpp" line="1129"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1227"/>
+        <location filename="../main/iricmainwindow.cpp" line="1229"/>
         <source>Untitled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1244"/>
+        <location filename="../main/iricmainwindow.cpp" line="1246"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1519"/>
+        <location filename="../main/iricmainwindow.cpp" line="1521"/>
         <source>&amp;%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1644"/>
+        <location filename="../main/iricmainwindow.cpp" line="1646"/>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1717"/>
+        <location filename="../main/iricmainwindow.cpp" line="1719"/>
         <source>Unknown options specified. They are neglected. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1721"/>
+        <location filename="../main/iricmainwindow.cpp" line="1723"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1744"/>
+        <location filename="../main/iricmainwindow.cpp" line="1746"/>
         <source>Are you sure you want to delete the calculation result?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1748"/>
+        <location filename="../main/iricmainwindow.cpp" line="1750"/>
         <source>Calculation result cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1814"/>
-        <location filename="../main/iricmainwindow.cpp" line="1828"/>
-        <location filename="../main/iricmainwindow.cpp" line="1834"/>
-        <location filename="../main/iricmainwindow.cpp" line="1924"/>
-        <location filename="../main/iricmainwindow.cpp" line="1930"/>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
-        <location filename="../main/iricmainwindow.cpp" line="2032"/>
+        <location filename="../main/iricmainwindow.cpp" line="1816"/>
+        <location filename="../main/iricmainwindow.cpp" line="1830"/>
+        <location filename="../main/iricmainwindow.cpp" line="1836"/>
+        <location filename="../main/iricmainwindow.cpp" line="1926"/>
+        <location filename="../main/iricmainwindow.cpp" line="1932"/>
+        <location filename="../main/iricmainwindow.cpp" line="2028"/>
+        <location filename="../main/iricmainwindow.cpp" line="2034"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1814"/>
-        <location filename="../main/iricmainwindow.cpp" line="1834"/>
-        <location filename="../main/iricmainwindow.cpp" line="1930"/>
-        <location filename="../main/iricmainwindow.cpp" line="2032"/>
+        <location filename="../main/iricmainwindow.cpp" line="1816"/>
+        <location filename="../main/iricmainwindow.cpp" line="1836"/>
+        <location filename="../main/iricmainwindow.cpp" line="1932"/>
+        <location filename="../main/iricmainwindow.cpp" line="2034"/>
         <source>Calculation result does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1828"/>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
+        <location filename="../main/iricmainwindow.cpp" line="1830"/>
+        <location filename="../main/iricmainwindow.cpp" line="2028"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1842"/>
+        <location filename="../main/iricmainwindow.cpp" line="1844"/>
         <source>No particle is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1871"/>
-        <location filename="../main/iricmainwindow.cpp" line="1883"/>
+        <location filename="../main/iricmainwindow.cpp" line="1873"/>
+        <location filename="../main/iricmainwindow.cpp" line="1885"/>
         <source>Export Particles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1884"/>
+        <location filename="../main/iricmainwindow.cpp" line="1886"/>
         <source>Saving particles as VTK files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1906"/>
-        <location filename="../main/iricmainwindow.cpp" line="2002"/>
-        <location filename="../main/iricmainwindow.cpp" line="2110"/>
+        <location filename="../main/iricmainwindow.cpp" line="1908"/>
+        <location filename="../main/iricmainwindow.cpp" line="2004"/>
+        <location filename="../main/iricmainwindow.cpp" line="2112"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1924"/>
+        <location filename="../main/iricmainwindow.cpp" line="1926"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1938"/>
+        <location filename="../main/iricmainwindow.cpp" line="1940"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1969"/>
+        <location filename="../main/iricmainwindow.cpp" line="1971"/>
         <source>Export contour figure to ESRI Shape files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1979"/>
+        <location filename="../main/iricmainwindow.cpp" line="1981"/>
         <source>Export contour figure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1980"/>
+        <location filename="../main/iricmainwindow.cpp" line="1982"/>
         <source>Saving contour figure as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2040"/>
+        <location filename="../main/iricmainwindow.cpp" line="2042"/>
         <source>No contour is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2067"/>
-        <location filename="../main/iricmainwindow.cpp" line="2089"/>
+        <location filename="../main/iricmainwindow.cpp" line="2069"/>
+        <location filename="../main/iricmainwindow.cpp" line="2091"/>
         <source>Export Google Earth KML for street view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2090"/>
+        <location filename="../main/iricmainwindow.cpp" line="2092"/>
         <source>Saving KML files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2182"/>
+        <location filename="../main/iricmainwindow.cpp" line="2184"/>
         <source>Import Visualization/Graph Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2182"/>
-        <location filename="../main/iricmainwindow.cpp" line="2204"/>
+        <location filename="../main/iricmainwindow.cpp" line="2184"/>
+        <location filename="../main/iricmainwindow.cpp" line="2206"/>
         <source>Setting file (*.vgsetting)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2189"/>
+        <location filename="../main/iricmainwindow.cpp" line="2191"/>
         <source>File %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2204"/>
+        <location filename="../main/iricmainwindow.cpp" line="2206"/>
         <source>Export Visualization/Graph Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2315"/>
+        <location filename="../main/iricmainwindow.cpp" line="2317"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation type="unfinished"></translation>
     </message>

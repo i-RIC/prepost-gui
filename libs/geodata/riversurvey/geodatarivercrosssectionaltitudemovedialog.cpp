@@ -5,6 +5,7 @@
 #include "geodatariverpathpoint.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveycrosssectionwindow.h"
+#include "private/geodatariversurvey_editcrosssectioncommand.h"
 
 #include <misc/iricundostack.h>
 

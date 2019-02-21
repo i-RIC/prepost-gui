@@ -40,6 +40,11 @@
        <string>Grid Checking</string>
       </attribute>
      </widget>
+     <widget class="PreferencePageRiverSurvey" name="riverSurveyTab">
+      <attribute name="title">
+       <string>River Survey Data</string>
+      </attribute>
+     </widget>
      <widget class="PreferencePageProxy" name="proxyTab">
       <attribute name="title">
        <string>Network Proxy</string>
@@ -115,6 +120,12 @@
    <class>PreferencePageBackgroundGrid</class>
    <extends>QWidget</extends>
    <header>pref/preferencepagebackgroundgrid.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageRiverSurvey</class>
+   <extends>QWidget</extends>
+   <header>pref/preferencepageriversurvey.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

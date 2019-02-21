@@ -4,6 +4,7 @@
 #include "geodatariverpathpointrotatedialog.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
+#include "private/geodatariversurvey_rotaterivercrosssectioncommand.h"
 
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -37,53 +38,6 @@ void GeoDataRiverPathPointRotateDialog::setCurrentRelativeAngle(double current)
 	m_currentRelativeAngle = current;
 	ui->relativeEdit->setValue(current);
 }
-
-class GeoDataRiverSurvey::RotateRiverCrosssectionCommand : public QUndoCommand
-{
-public:
-	RotateRiverCrosssectionCommand(bool apply, double angle, GeoDataRiverSurvey* rs) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Rotate Traversal Line")}
-	{
-		m_apply = apply;
-		GeoDataRiverPathPoint* p = rs->headPoint();
-		p = p->nextPoint();
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				m_point = p;
-				break;
-			}
-			p = p->nextPoint();
-		}
-		m_oldDirection = m_point->crosssectionDirection();
-		m_newDirection = m_oldDirection;
-		iRIC::rotateVector(m_newDirection, angle);
-		m_rs = rs;
-	}
-	void undo() {
-		m_rs->m_gridThread->cancel();
-
-		m_point->setCrosssectionDirection(m_oldDirection);
-		if (! m_apply) {
-			m_rs->updateShapeData();
-			m_rs->renderGraphicsView();
-		}
-	}
-	void redo() {
-		m_rs->m_gridThread->cancel();
-
-		m_point->setCrosssectionDirection(m_newDirection);
-
-		m_rs->setModified();
-		m_rs->updateShapeData();
-		m_rs->renderGraphicsView();
-	}
-private:
-	bool m_apply;
-	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurvey* m_rs;
-	QVector2D m_oldDirection;
-	QVector2D m_newDirection;
-};
 
 void GeoDataRiverPathPointRotateDialog::accept()
 {
