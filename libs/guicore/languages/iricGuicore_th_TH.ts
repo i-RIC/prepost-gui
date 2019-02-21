@@ -12,24 +12,28 @@
 <context>
     <name>BackgroundImageInfo</name>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="80"/>
-        <location filename="../project/backgroundimageinfo.cpp" line="82"/>
-        <source>Fix Image position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="130"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="166"/>
         <source>Unable to read image %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="267"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="267"/>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfo.cpp" line="650"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfo.cpp" line="650"/>
+        <source>Select a corresponding point on Main Window.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -99,6 +103,29 @@
     </message>
 </context>
 <context>
+    <name>BackgroundImageInfoGeoreferenceDialog</name>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="20"/>
+        <source>Georeference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="54"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="242"/>
+        <source>Hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="244"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <location filename="../scalarstocolors/colortransferfunctioneditwidget.ui" line="14"/>
@@ -113,6 +140,29 @@
     <message>
         <location filename="../scalarstocolors/colortransferfunctioneditwidget.cpp" line="54"/>
         <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GcpTableModel</name>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="99"/>
+        <source>srcX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="101"/>
+        <source>srcY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="103"/>
+        <source>dstX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="105"/>
+        <source>dstY</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -181,6 +231,35 @@
     <message>
         <location filename="../pre/geodatabackground/geodatabackgroundeditdialog.ui" line="36"/>
         <source>Custom value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoreferenceView::ImageInfo</name>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="130"/>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="135"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="130"/>
+        <source>No point is selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="135"/>
+        <source>No point can be further deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="151"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="151"/>
+        <source>Select a point on Georeference dialog.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1239,60 +1318,60 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="183"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="903"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="187"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="823"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="922"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="183"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="187"/>
         <source>Error occured while loading calculation result.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="466"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="485"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="466"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="485"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="823"/>
         <source>Calculation result does not contain grid data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="853"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="872"/>
         <source>Export Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="857"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="876"/>
         <source>Saving calculation result as VTK files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="860"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="879"/>
         <source>Saving calculation result as CSV files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="863"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="882"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="903"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="922"/>
         <source>Error occured while saving %1</source>
         <translation type="unfinished"></translation>
     </message>

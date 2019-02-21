@@ -26,25 +26,33 @@
 <context>
     <name>BackgroundImageInfo</name>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="80"/>
-        <location filename="../project/backgroundimageinfo.cpp" line="82"/>
         <source>Fix Image position</source>
-        <translation>位置の固定</translation>
+        <translation type="vanished">位置の固定</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="130"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="166"/>
         <source>Unable to read image %1</source>
         <translation>%1 を読み込めませんでした。</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="267"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="230"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="267"/>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
         <translation>ファイル %1 で、X方向のピクセルごとの増分と、Y方向のピクセル方向の増分が一致していません。このままでも読み込むことはできますが、恐らく設定が間違っています。</translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfo.cpp" line="650"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfo.cpp" line="650"/>
+        <source>Select a corresponding point on Main Window.</source>
+        <translation>メインウィンドウで、対応する点を選択してください。</translation>
     </message>
 </context>
 <context>
@@ -110,6 +118,29 @@
         <location filename="../project/backgroundimageinfodialog.ui" line="253"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;X軸と画像の底辺のなす角を指定して下さい。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>BackgroundImageInfoGeoreferenceDialog</name>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="20"/>
+        <source>Georeference</source>
+        <translation>ジオレファレンス</translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="54"/>
+        <source>PushButton</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="242"/>
+        <source>Hide</source>
+        <translation>隠す</translation>
+    </message>
+    <message>
+        <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="244"/>
+        <source>Show</source>
+        <translation>表示する</translation>
     </message>
 </context>
 <context>
@@ -418,6 +449,29 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>GcpTableModel</name>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="99"/>
+        <source>srcX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="101"/>
+        <source>srcY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="103"/>
+        <source>dstX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/gcptablemodel.cpp" line="105"/>
+        <source>dstY</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoData</name>
     <message>
         <location filename="../pre/geodata/geodata.cpp" line="42"/>
@@ -483,6 +537,35 @@ Do you really want to import this file?</source>
         <location filename="../pre/geodatabackground/geodatabackgroundeditdialog.ui" line="36"/>
         <source>Custom value</source>
         <translation>指定した値</translation>
+    </message>
+</context>
+<context>
+    <name>GeoreferenceView::ImageInfo</name>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="130"/>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="135"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="130"/>
+        <source>No point is selected.</source>
+        <translation>点が選択されていません。</translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="135"/>
+        <source>No point can be further deleted.</source>
+        <translation>これ以上削除できる点がありません。</translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="151"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../project/private/georeferenceview_imageinfo.cpp" line="151"/>
+        <source>Select a point on Georeference dialog.</source>
+        <translation>ジオレファレンスダイアログで、点を選択してください。</translation>
     </message>
 </context>
 <context>
@@ -1885,20 +1968,20 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="183"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="903"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="187"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="823"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="922"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="183"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="187"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="466"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="485"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1907,42 +1990,42 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="466"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="485"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="823"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="853"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="872"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="857"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="876"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="860"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="879"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="863"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="882"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="903"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="922"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>

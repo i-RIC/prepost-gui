@@ -1,10 +1,13 @@
 #include "preprocessorbackgroundimagedataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/backgroundimageinfodialog.h>
 
 #include <QAction>
+#include <QMenu>
 #include <QStandardItem>
 #include <QToolBar>
 
@@ -29,12 +32,20 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 	}
 	updateVisibilityWithoutRendering();
 
+	m_georeferenceAction = new QAction(PreProcessorBackgroundImageDataItem::tr("&Georeference..."), this);
+
+	connect(m_georeferenceAction, SIGNAL(triggered()), this, SLOT(showGeoreferenceDialog()));
 	connect(image, SIGNAL(isChanged()), this, SLOT(applyImageChange()));
 }
 
 PreProcessorBackgroundImageDataItem::~PreProcessorBackgroundImageDataItem()
 {
 	renderer()->RemoveActor(m_actor);
+}
+
+void PreProcessorBackgroundImageDataItem::addCustomMenuItems(QMenu* menu)
+{
+	menu->addAction(m_georeferenceAction);
 }
 
 void PreProcessorBackgroundImageDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -101,6 +112,30 @@ void PreProcessorBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* 
 {
 	BackgroundImageInfoDialog* infoDialog = dynamic_cast<BackgroundImageInfoDialog*>(dialog);
 	m_imageInfo->handlePropertyDialogAccepted(infoDialog);
+}
+
+void PreProcessorBackgroundImageDataItem::showGeoreferenceDialog()
+{
+	m_imageInfo->showGeoreferenceDialog(m_actor, dataModel()->graphicsView(), m_zDepthRange.min(), m_zDepthRange.max(), preProcessorWindow());
+
+	connect(m_imageInfo, SIGNAL(isGeoreferenceDialogClosed()), this, SLOT(enableObjectBrowserView()));
+	setEnableObjectBrowserView(false);
+}
+
+void PreProcessorBackgroundImageDataItem::enableObjectBrowserView()
+{
+	setEnableObjectBrowserView(true);
+}
+
+void PreProcessorBackgroundImageDataItem::setEnableObjectBrowserView(bool enabled)
+{
+	m_georeferenceAction->setEnabled(enabled);
+
+	ObjectBrowserView* oview = dataModel()->objectBrowserView();
+	oview->deleteAction()->setEnabled(enabled);
+	oview->propertyAction()->setEnabled(enabled);
+
+	oview->setEnabled(enabled);
 }
 
 void PreProcessorBackgroundImageDataItem::doApplyOffset(double x, double y)

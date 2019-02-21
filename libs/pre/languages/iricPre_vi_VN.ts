@@ -353,6 +353,14 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBackgroundImageDataItem</name>
+    <message>
+        <location filename="../datamodel/preprocessorbackgroundimagedataitem.cpp" line="35"/>
+        <source>&amp;Georeference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="23"/>

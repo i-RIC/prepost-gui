@@ -1,0 +1,12 @@
+#ifndef GEOREFERENCEVIEW_IMAGEINFO_DESTINATIONOPERATIONWAITINGSELECTIONHELPER_H
+#define GEOREFERENCEVIEW_IMAGEINFO_DESTINATIONOPERATIONWAITINGSELECTIONHELPER_H
+
+#include "georeferenceview_imageinfo_selectionhelper.h"
+
+class GeoreferenceView::ImageInfo::DestinationOperationWaitingSelectionHelper : public SelectionHelper
+{
+public:
+	DestinationOperationWaitingSelectionHelper(SelectionHelper&& selectionHelper);
+};
+
+#endif // GEOREFERENCEVIEW_IMAGEINFO_DESTINATIONOPERATIONWAITINGSELECTIONHELPER_H
