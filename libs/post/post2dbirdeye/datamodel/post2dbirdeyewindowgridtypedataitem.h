@@ -18,14 +18,14 @@ class Post2dBirdEyeWindowGridTypeDataItem : public Post2dBirdEyeWindowDataItem, 
 public:
 	Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dBirdEyeWindowGridTypeDataItem();
-	const QList<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
+	const QList<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const;
 
 	const std::string& name() const;
-	Post2dBirdEyeWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
-	SolverDefinitionGridType* gridType() const override {return m_gridType;}
-	LookupTableContainer* cellLookupTable(const std::string& attName) const override {return m_cellLookupTables.value(attName, nullptr);}
-	LookupTableContainer* nodeLookupTable(const std::string& attName) const override {return m_nodeLookupTables.value(attName, nullptr);}
-	LookupTableContainer* particleLookupTable(const std::string&) const override {return nullptr;}
+	Post2dBirdEyeWindowZoneDataItem* zoneData(const std::string& name) const;
+	SolverDefinitionGridType* gridType() const override;
+	LookupTableContainer* nodeLookupTable(const std::string& attName) override;
+	LookupTableContainer* cellLookupTable(const std::string& attName) override;
+	LookupTableContainer* particleLookupTable(const std::string&) override;
 
 	void setupZoneDataItems();
 	void update();
@@ -36,7 +36,7 @@ protected:
 
 private:
 	void updateLookupTableRanges();
-	void setupScalarsToColors(const std::string& name);
+	void setupNodeScalarsToColors(const std::string& name);
 	void setupCellScalarsToColors(const std::string& name);
 
 	SolverDefinitionGridType* m_gridType;

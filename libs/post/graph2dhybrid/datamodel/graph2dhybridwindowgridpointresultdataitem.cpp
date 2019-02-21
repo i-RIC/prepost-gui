@@ -25,27 +25,22 @@
 #include <cmath>
 #include <qwt_plot_curve.h>
 
-Graph2dHybridWindowGridPointResultDataItem::Graph2dHybridWindowGridPointResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
+Graph2dHybridWindowGridPointResultDataItem::Graph2dHybridWindowGridPointResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
+	Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
 {
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, setting.name(), s.gridIndex(), info->gridLocation, this);
+	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, setting.name(), s.gridIndex(), info->gridLocation, postSolutionInfo());
 }
 
 Graph2dHybridWindowGridPointResultDataItem::~Graph2dHybridWindowGridPointResultDataItem()
-{
-}
+{}
 
 void Graph2dHybridWindowGridPointResultDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{
-
-}
+{}
 
 void Graph2dHybridWindowGridPointResultDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{
-
-}
+{}
 
 void Graph2dHybridWindowGridPointResultDataItem::updateValues(int fn)
 {

@@ -550,6 +550,12 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 
 	m_resultMenu->addSeparator();
 
+	calcResultManageCalculatedResultAction = new QAction(tr("&Manage simple operation results"), m_resultMenu);
+	m_resultMenu->addAction(calcResultManageCalculatedResultAction);
+	connect(calcResultManageCalculatedResultAction, SIGNAL(triggered()), m_parent, SLOT(manageCalculatedResults()));
+
+	m_resultMenu->addSeparator();
+
 	importCgnsActionInCalcMenu = new QAction(tr("&Import..."), m_resultMenu);
 	importCgnsActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	connect(importCgnsActionInCalcMenu, SIGNAL(triggered()), m_parent, SLOT(importCalculationResult()));

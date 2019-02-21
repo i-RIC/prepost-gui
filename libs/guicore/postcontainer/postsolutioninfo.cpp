@@ -9,6 +9,7 @@
 #include "exporter/postzonedatatpoexporter.h"
 #include "exporter/postzonedatavtkexporter.h"
 #include "postbaseselectingdialog.h"
+#include "postcontainer/postcalculatedresult.h"
 #include "postdataexportdialog.h"
 //#include "postdummy3dzonedatacontainer.h"
 #include "postiterationsteps.h"
@@ -20,6 +21,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QCoreApplication>
 #include <QDomElement>
@@ -41,6 +43,24 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+namespace {
+
+void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& zones, QXmlStreamWriter& writer)
+{
+	if (zones.size() == 0) {return;}
+
+	writer.writeStartElement("Base");
+	writer.writeAttribute("dimension", QString::number(dim));
+	for (auto c : zones) {
+		writer.writeStartElement("Zone");
+		c->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	writer.writeEndElement();
+}
+
+} // namespace
+
 PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	ProjectDataItem {parent},
 	m_currentStep {0},
@@ -50,12 +70,18 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_opener {nullptr},
 	m_iterationType {SolverDefinition::NoIteration},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
-	m_particleExportPrefix {"Particle_"}
+	m_disableCalculatedResult {false},
+	m_particleExportPrefix {"Particle_"},
+	m_loadedElement {nullptr}
 {}
 
 PostSolutionInfo::~PostSolutionInfo()
 {
 	close();
+	clearCalculatedResults(&m_calculatedResults1D);
+	clearCalculatedResults(&m_calculatedResults2D);
+	clearCalculatedResults(&m_calculatedResults3D);
+	delete m_loadedElement;
 }
 
 SolverDefinition::IterationType PostSolutionInfo::iterationType() const
@@ -129,17 +155,20 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 	setupZoneDataContainers(tmpfn);
 	checkBaseIterativeDataExist(tmpfn);
 	qDebug("setupZoneDataContainer(): %d", time.elapsed());
+
+	loadCalculatedResult();
+
 	bool errorOccured = false;
 	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it) {
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn));
+		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
 	}
 	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it) {
 		time.start();
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn));
+		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 2D: %d", time.elapsed());
 	}
 	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it) {
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn));
+		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
 	for (auto it2 = m_otherContainers.begin(); it2 != m_otherContainers.end(); ++it2) {
@@ -171,7 +200,7 @@ void PostSolutionInfo::informStepsUpdated()
 	emit allPostProcessorsUpdated();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
 	int ier, nbases;
 	ier = cg_nbases(fn, &nbases);
@@ -223,7 +252,11 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		return false;
 	}
 	*zoneNames = tmpZoneNames;
+
 	// clear the current zone containers first.
+	for (auto c : *containers) {
+		results->insert(c->zoneName(), c->detachCalculatedResult());
+	}
 	clearContainers(containers);
 	containerNameMap->clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
@@ -259,6 +292,17 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 			containers->append(cont);
 			containerNameMap->insert(zoneName, cont);
 		}
+	}
+	std::vector<std::string> namesToRemove;
+	for (auto it = results->begin(); it != results->end(); ++it) {
+		auto c = containerNameMap->value(it.key(), nullptr);
+		if (c != nullptr) {
+			c->attachCalculatedResult(it.value());
+			namesToRemove.push_back(it.key());
+		}
+	}
+	for (auto name : namesToRemove) {
+		results->remove(name);
 	}
 	return true;
 }
@@ -337,13 +381,13 @@ void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D);
+	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D);
+	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D);
+	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	// only for 3D demonstration.
 //	ret = innerSetupDummy3DZoneDataContainers(fn, m_zoneNames3D, m_zoneContainers3D, m_zoneContainerNameMap3D);
 	if (ret) {emit zoneList3DUpdated();}
@@ -385,6 +429,32 @@ void PostSolutionInfo::checkBaseIterativeDataExist(int fn)
 			}
 		}
 	}
+}
+
+void PostSolutionInfo::loadCalculatedResult()
+{
+	if (m_loadedElement == nullptr) {return;}
+
+	for (int i = 0; i < m_loadedElement->childNodes().size(); ++i) {
+		auto baseNode = m_loadedElement->childNodes().at(i);
+		int dim = iRIC::getIntAttribute(baseNode, "dimension");
+		QMap<std::string, PostZoneDataContainer*>* conts = nullptr;
+		if (dim == 1) {conts = &m_zoneContainerNameMap1D;}
+		if (dim == 2) {conts = &m_zoneContainerNameMap2D;}
+		if (dim == 3) {conts = &m_zoneContainerNameMap3D;}
+		if (conts == nullptr) {continue;}
+
+		for (int j = 0; j < baseNode.childNodes().size(); ++j) {
+			auto zoneElem = baseNode.childNodes().at(j).toElement();
+			auto zoneName = iRIC::toStr(zoneElem.attribute("name"));
+			auto z = conts->value(zoneName, nullptr);
+			if (z == nullptr) {continue;}
+			z->loadFromProjectMainFile(zoneElem);
+		}
+	}
+
+	delete m_loadedElement;
+	m_loadedElement = nullptr;
 }
 
 bool PostSolutionInfo::hasResults()
@@ -462,6 +532,9 @@ void PostSolutionInfo::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
 	m_currentStep = elem.attribute("currentStep").toInt();
+
+	m_loadedElement = new QDomElement();
+	*m_loadedElement = elem;
 }
 
 void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -469,6 +542,10 @@ void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	QString cstep;
 	cstep.setNum(m_currentStep);
 	writer.writeAttribute("currentStep", cstep);
+
+	writeZonesToProjectMainFile(1, zoneContainers1D(), writer);
+	writeZonesToProjectMainFile(2, zoneContainers2D(), writer);
+	writeZonesToProjectMainFile(3, zoneContainers3D(), writer);
 }
 
 void PostSolutionInfo::loadFromCgnsFile(const int fn)
@@ -687,6 +764,11 @@ int PostSolutionInfo::fileId() const
 	if (m_opener == nullptr) {return 0;}
 
 	return m_opener->fileId();
+}
+
+void PostSolutionInfo::setCalculatedResultDisabled(bool disabled)
+{
+	m_disableCalculatedResult = disabled;
 }
 
 void PostSolutionInfo::exportCalculationResult()
@@ -929,5 +1011,14 @@ void PostSolutionInfo::applyOffset(double x_diff, double y_diff)
 	}
 	for (auto c3 : m_zoneContainers3D) {
 		c3->applyOffset(x_diff, y_diff);
+	}
+}
+
+void PostSolutionInfo::clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results)
+{
+	for (auto list : *results) {
+		for (auto r : list) {
+			delete r;
+		}
 	}
 }

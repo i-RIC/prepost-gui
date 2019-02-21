@@ -12,10 +12,13 @@
 #include <QStringList>
 
 class CgnsFileOpener;
+class PostCalculatedResult;
+class PostDataContainer;
 class PostIterationSteps;
 class PostTimeSteps;
-class PostDataContainer;
 class PostZoneDataContainer;
+
+class QDomElement;
 
 class GUICOREDLL_EXPORT PostSolutionInfo : public ProjectDataItem
 {
@@ -65,6 +68,7 @@ public:
 
 	/// File ID that can be used with cgnslib functions.
 	int fileId() const;
+	void setCalculatedResultDisabled(bool disabled);
 
 	void exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format);
 
@@ -72,7 +76,7 @@ public:
 
 protected:
 	void timerEvent(QTimerEvent*) override;
-	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
+	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
 //	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -104,6 +108,8 @@ private:
 	bool stepsExist() const;
 	void setupZoneDataContainers(int fn);
 	void checkBaseIterativeDataExist(int fn);
+	void loadCalculatedResult();
+	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
 	static const int TIMERINTERVAL = 500;
 	SolverDefinition::IterationType m_iterationType;
 	PostIterationSteps* m_iterationSteps;
@@ -125,10 +131,17 @@ private:
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap2D;
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
+	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
+	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;
+	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults3D;
+
 	PostDataExportDialog::Format m_exportFormat;
+	bool m_disableCalculatedResult;
 
 	PostExportSetting m_exportSetting;
 	QString m_particleExportPrefix;
+
+	QDomElement* m_loadedElement;
 };
 
 #endif // POSTSOLUTIONINFO_H

@@ -202,6 +202,8 @@ public:
 	/// Action to reload Calculation Result.
 	QAction* calcResultReloadAction;
 	QAction* calcResultReloadToolBarAction;
+	/// Action to manage calculated results
+	QAction* calcResultManageCalculatedResultAction;
 
 	/// Action to show language setting.
 	QAction* optionPreferencesAction;

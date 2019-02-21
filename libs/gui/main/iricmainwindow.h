@@ -183,6 +183,8 @@ public slots:
 	void setupRecentProjectsMenu();
 	/// Clear calculation result in the current CGNS file.
 	void clearCalculationResult();
+	/// Manage calculated results;
+	void manageCalculatedResults();
 	void tileSubWindows();
 
 signals:
@@ -330,6 +332,7 @@ private:
 
 	QProcessEnvironment m_processEnvironment;
 
+	class CalculatedResultManager;
 	class SnapshotSaver;
 
 public:

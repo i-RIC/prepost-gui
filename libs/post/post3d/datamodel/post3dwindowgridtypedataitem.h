@@ -19,14 +19,14 @@ class Post3dWindowGridTypeDataItem : public Post3dWindowDataItem, public PostWin
 public:
 	Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~Post3dWindowGridTypeDataItem();
-	const QList<Post3dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
+	const QList<Post3dWindowZoneDataItem*>& zoneDatas() const;
 	const std::string& name() const;
-	Post3dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
-	SolverDefinitionGridType* gridType() const {return m_gridType;}
+	Post3dWindowZoneDataItem* zoneData(const std::string& name) const;
+	SolverDefinitionGridType* gridType() const;
 	bool isChildCaptionAvailable(const QString& caption);
-	LookupTableContainer* cellLookupTable(const std::string& /*attName*/) const override {return nullptr;}
-	LookupTableContainer* nodeLookupTable(const std::string& attName) const override {return m_nodeLookupTables.value(attName, nullptr);}
-	LookupTableContainer* particleLookupTable(const std::string& attName) const override {return m_particleLookupTables.value(attName, nullptr);}
+	LookupTableContainer* nodeLookupTable(const std::string& attName) override;
+	LookupTableContainer* cellLookupTable(const std::string& attName) override;
+	LookupTableContainer* particleLookupTable(const std::string& attName) override;
 	void setValueRange(const std::string& name);
 	void setupZoneDataItems();
 	void update();

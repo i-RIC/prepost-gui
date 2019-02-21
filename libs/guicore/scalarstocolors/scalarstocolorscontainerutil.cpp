@@ -28,7 +28,9 @@ void ScalarsToColorsContainerUtil::setValueRange(ScalarsToColorsContainer* c, co
 void ScalarsToColorsContainerUtil::setValueRange(ScalarsToColorsContainer* c, vtkDataArray* data)
 {
 	std::vector<vtkDataArray*> v;
-	v.push_back(data);
+	if (data != nullptr) {
+		v.push_back(data);
+	}
 	setValueRange(c, v);
 }
 

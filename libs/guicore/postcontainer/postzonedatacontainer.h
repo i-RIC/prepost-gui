@@ -15,6 +15,7 @@
 
 class RectRegion;
 class SolverDefinitionGridType;
+class PostCalculatedResult;
 class PostExportSetting;
 
 class GUICOREDLL_EXPORT PostZoneDataContainer : public PostDataContainer
@@ -26,6 +27,7 @@ public:
 	const static double IBCLimit;
 
 	PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent);
+	~PostZoneDataContainer();
 
 	SolverDefinitionGridType* gridType() const;
 	vtkPointSet* data() const;
@@ -41,11 +43,16 @@ public:
 	QString caption() const;
 
 	bool handleCurrentStepUpdate(const int fn) override;
+	bool handleCurrentStepUpdate(const int fn, bool disableCalculatedResult);
 	void loadFromCgnsFile(const int fn) override;
+	void loadFromCgnsFile(const int fn, bool disableCalculatedResult);
 
 	bool cellScalarValueExists() const;
 	bool scalarValueExists() const;
 	bool vectorValueExists() const;
+
+	std::vector<PostCalculatedResult*>& calculatedResults();
+	const std::vector<PostCalculatedResult*>& calculatedResults() const;
 
 	int nodeIndex(int i, int j, int k) const;
 	void getNodeIJKIndex(int index, int* i, int* j, int* k) const;
@@ -58,6 +65,9 @@ public:
 	QString elevationName() const;
 
 	void applyOffset(double x, double y);
+
+	std::vector<PostCalculatedResult*> detachCalculatedResult();
+	void attachCalculatedResult(std::vector<PostCalculatedResult*> results);
 
 protected:
 	void doApplyOffset(double x, double y) override;
@@ -80,8 +90,11 @@ private:
 
 	bool loadCellFlagData(const int fn);
 	bool setupIndexData();
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+
+	void addCalculatedResultArrays();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	vtkPolyData* filteredDataStructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	vtkPolyData* filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
@@ -97,6 +110,7 @@ private:
 	vtkSmartPointer<vtkPointSet> m_data;
 	vtkSmartPointer<vtkPointSet> m_labelData;
 	vtkSmartPointer<vtkPolyData> m_particleData;
+	std::vector<PostCalculatedResult*> m_calculatedResults;
 	std::string m_baseName;
 	std::string m_zoneName;
 	int m_baseId;
