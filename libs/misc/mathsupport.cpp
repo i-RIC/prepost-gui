@@ -3,7 +3,6 @@
 #include "mathsupport.h"
 #include <QPolygonF>
 #include <QLineF>
-#include <QVector2D>
 #include <QString>
 
 // Precision of time
@@ -26,21 +25,21 @@ namespace iRIC
 		return (xDiff < r && yDiff < r);
 	}
 
-	qreal outerProduct(const QVector2D& v1, const QVector2D& v2)
+	qreal outerProduct(const QPointF& v1, const QPointF& v2)
 	{
 		return v1.x() * v2.y() - v1.y() * v2.x();
 	}
 
-	qreal angleRadian(const QVector2D& v1, const QVector2D& v2)
+	qreal angleRadian(const QPointF& v1, const QPointF& v2)
 	{
-		qreal dotprod = QVector2D::dotProduct(v1, v2);
-		double cosVal = dotprod / (v1.length() * v2.length());
+		qreal dotprod = QPointF::dotProduct(v1, v2);
+		double cosVal = dotprod / (length(v1) * length(v2));
 		if (cosVal <= -1) {return M_PI;}
 		if (cosVal >= 1) {return 0;}
 		qreal angle1 = acos(cosVal);
-		QVector2D tmp = v1;
+		QPointF tmp = v1;
 		rotateVector90(tmp);
-		if (QVector2D::dotProduct(tmp, v2) < 0) {
+		if (QPointF::dotProduct(tmp, v2) < 0) {
 			return 2 * M_PI - angle1;
 		} else {
 			return angle1;
@@ -49,42 +48,53 @@ namespace iRIC
 
 	qreal distance(const QPointF& p1, const QPointF& p2)
 	{
-		QVector2D v(p2.x() - p1.x(), p2.y() - p1.y());
-		return v.length();
+		QPointF v(p2.x() - p1.x(), p2.y() - p1.y());
+		return length(v);
 	}
 
-	qreal angle(const QVector2D& v1, const QVector2D& v2)
+	QPointF normalize(const QPointF& v)
+	{
+		return v / length(v);
+	}
+
+	qreal angle(const QPointF& v1, const QPointF& v2)
 	{
 		return angleRadian(v1, v2) / M_PI * 180.;
 	}
 
-	void rotateVector90(QVector2D& v)
+	QPointF rotateVector90(QPointF& v)
 	{
 		double tmp = v.x();
 		v.setX(- v.y());
 		v.setY(tmp);
+
+		return v;
 	}
 
-	void rotateVector180(QVector2D& v)
+	QPointF rotateVector180(QPointF& v)
 	{
 		v.setX(- v.x());
 		v.setY(- v.y());
+
+		return v;
 	}
 
-	void rotateVector270(QVector2D& v)
+	QPointF rotateVector270(QPointF& v)
 	{
 		double tmp = v.x();
 		v.setX(v.y());
 		v.setY(- tmp);
+
+		return v;
 	}
 
-	void rotateVector(QVector2D& v, double angle)
+	QPointF rotateVector(QPointF& v, double angle)
 	{
 		double radianAngle = angle / 180. * M_PI;
-		rotateVectorRadian(v, radianAngle);
+		return rotateVectorRadian(v, radianAngle);
 	}
 
-	void rotateVectorRadian(QVector2D& v, double radianAngle)
+	QPointF rotateVectorRadian(QPointF& v, double radianAngle)
 	{
 		double cosVal = std::cos(radianAngle);
 		double sinVal = std::sin(radianAngle);
@@ -92,25 +102,25 @@ namespace iRIC
 		double newY = sinVal * v.x() + cosVal * v.y();
 		v.setX(newX);
 		v.setY(newY);
+
+		return v;
 	}
 
-	bool isInsideParallelogram(const QVector2D& target, const QVector2D& vertex, const QVector2D& dir1, const QVector2D& dir2)
+	bool isInsideParallelogram(const QPointF& target, const QPointF& vertex, const QPointF& dir1, const QPointF& dir2)
 	{
-		if (dir1.lengthSquared() < VERYSMALL) {return false;}
-		if (dir2.lengthSquared() < VERYSMALL) {return false;}
-		QVector2D dv = target - vertex;
-		QVector2D v1 = dir1;
-		v1.normalize();
-		QVector2D v2 = dir2;
-		v2.normalize();
-		double length1 = dir1.length();
-		double length2 = dir2.length();
-		double innerprod1 = QVector2D::dotProduct(dv, v1);
-		double innerprod2 = QVector2D::dotProduct(dv, v2);
+		if (lengthSquared(dir1) < VERYSMALL) {return false;}
+		if (lengthSquared(dir2) < VERYSMALL) {return false;}
+		QPointF dv = target - vertex;
+		QPointF v1 = normalize(dir1);
+		QPointF v2 = normalize(dir2);
+		double length1 = length(dir1);
+		double length2 = length(dir2);
+		double innerprod1 = QPointF::dotProduct(dv, v1);
+		double innerprod2 = QPointF::dotProduct(dv, v2);
 		return (
-						 0 <= innerprod1 && innerprod1 <= length1 &&
-						 0 <= innerprod2 && innerprod2 <= length2
-					 );
+			0 <= innerprod1 && innerprod1 <= length1 &&
+			0 <= innerprod2 && innerprod2 <= length2
+		);
 	}
 
 	double roundedValue(double val, int precision)
@@ -192,6 +202,16 @@ namespace iRIC
 		return false;
 	}
 
+	double lengthSquared(const QPointF& p)
+	{
+		return p.x() * p.x() + p.y() * p.y();
+	}
+
+	double length(const QPointF& p)
+	{
+		return std::sqrt(lengthSquared(p));
+	}
+
 	bool intersectionPoint(const QPointF& p1, const QPointF& p2, const QPointF& q1, const QPointF& q2, QPointF* interSection, double* r, double* s)
 	{
 		double M =
@@ -208,5 +228,16 @@ namespace iRIC
 
 		return true;
 	}
-}
 
+	double perpendicularLineOfLeg(const QPointF& p1, const QPointF& p2, const QPointF& x, QPointF* leg)
+	{
+		double dx = p2.x() - p1.x();
+		double dy = p2.y() - p1.y();
+		double r = ((p2.x() - p1.x()) * (x.x() - p1.x()) + (p2.y() - p1.y()) * (x.y() - p1.y())) /
+				(dx * dx + dy * dy);
+		leg->setX((1 - r) * p1.x() + r * p2.x());
+		leg->setY((1 - r) * p1.y() + r * p2.y());
+
+		return r;
+	}
+}

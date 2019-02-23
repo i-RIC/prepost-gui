@@ -22,12 +22,12 @@
 #include <QGraphicsItemGroup>
 #include <QGraphicsLineItem>
 #include <QGraphicsTextItem>
-#include <QPen>
-#include <QSettings>
-#include <QMessageBox>
-#include <QTextStream>
 #include <QLineF>
-#include <QVector2D>
+#include <QMessageBox>
+#include <QPen>
+#include <QPointF>
+#include <QSettings>
+#include <QTextStream>
 
 #include <vector>
 
@@ -88,24 +88,24 @@ void Structured2DGrid::getCellIJIndex(unsigned int index, unsigned int* i, unsig
 	*j = index / (m_dimensionI - 1);
 }
 
-QVector2D Structured2DGrid::vertex(unsigned int index) const
+QPointF Structured2DGrid::vertex(unsigned int index) const
 {
 	double v[3];
 	vtkGrid()->GetPoints()->GetPoint(index, v);
-	return QVector2D(v[0], v[1]);
+	return QPointF(v[0], v[1]);
 }
 
-QVector2D Structured2DGrid::vertex(unsigned int i, unsigned int j) const
+QPointF Structured2DGrid::vertex(unsigned int i, unsigned int j) const
 {
 	return vertex(vertexIndex(i, j));
 }
 
-void Structured2DGrid::setVertex(unsigned int i, unsigned int j, const QVector2D& v)
+void Structured2DGrid::setVertex(unsigned int i, unsigned int j, const QPointF& v)
 {
 	setVertex(vertexIndex(i, j), v);
 }
 
-void Structured2DGrid::setVertex(unsigned int index, const QVector2D& v)
+void Structured2DGrid::setVertex(unsigned int index, const QPointF& v)
 {
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
@@ -278,10 +278,10 @@ bool Structured2DGrid::isValid(QTextStream& stream) const
 	stream << tr("* Cells where edges intersect") << endl;
 	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j) {
 		for (unsigned int i = 0; i < m_dimensionI - 1; ++i) {
-			QVector2D v0 = vertex(i, j);
-			QVector2D v1 = vertex(i + 1, j);
-			QVector2D v2 = vertex(i + 1, j + 1);
-			QVector2D v3 = vertex(i, j + 1);
+			QPointF v0 = vertex(i, j);
+			QPointF v1 = vertex(i + 1, j);
+			QPointF v2 = vertex(i + 1, j + 1);
+			QPointF v3 = vertex(i, j + 1);
 			double tmpv1, tmpv2;
 			tmpv1 = iRIC::outerProduct(v2 - v1, v0 - v1);
 			tmpv2 = iRIC::outerProduct(v0 - v3, v2 - v3);
@@ -305,7 +305,7 @@ bool Structured2DGrid::isValid(QTextStream& stream) const
 bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream& stream)
 {
 	double lengths[4];
-	QVector2D v[4];
+	QPointF v[4];
 	bool allOk = true;
 	stream << tr("* Cells where aspect ratio of cell edges exceed %1").arg(limit) << endl;
 	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j) {
@@ -316,7 +316,7 @@ bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream& stream)
 			v[3] = vertex(i, j + 1);
 
 			for (int k = 0; k < 4; ++k) {
-				lengths[k] = (v[(k + 1) % 4] - v[k]).length();
+				lengths[k] = iRIC::length(v[(k + 1) % 4] - v[k]);
 			}
 			for (int k = 0; k < 4; ++k) {
 				// check whether the length is too small.
@@ -352,7 +352,7 @@ bool Structured2DGrid::isAngleOk(double limitAngle, QTextStream& stream)
 {
 	bool allOk = true;
 	stream << tr("* Cells where angle of cell vertex is below %1").arg(limitAngle) << endl;
-	QVector2D v[4];
+	QPointF v[4];
 	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j) {
 		for (unsigned int i = 0; i < m_dimensionI - 1; ++i) {
 			v[0] = vertex(i, j);
@@ -361,11 +361,11 @@ bool Structured2DGrid::isAngleOk(double limitAngle, QTextStream& stream)
 			v[3] = vertex(i, j + 1);
 
 			for (int k = 0; k < 4; ++k) {
-				QVector2D vec0 = v[(k + 1) % 4] - v[k];
-				QVector2D vec1 = v[(k + 3) % 4] - v[k];
+				QPointF vec0 = v[(k + 1) % 4] - v[k];
+				QPointF vec1 = v[(k + 3) % 4] - v[k];
 
-				double dotProd = QVector2D::dotProduct(vec0, vec1);
-				double cosVal = dotProd / (vec0.length() * vec1.length());
+				double dotProd = QPointF::dotProduct(vec0, vec1);
+				double cosVal = dotProd / (iRIC::length(vec0) * iRIC::length(vec1));
 				double angle = acos(cosVal) / M_PI * 180.;
 				if (angle < limitAngle) {
 					if (allOk) {
@@ -389,7 +389,7 @@ bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& 
 	bool iAllOk = true;
 	stream << tr("* Cells where variation of cell length along i-direction exceed %1").arg(ilimit) << endl;
 	double lengths[2];
-	QVector2D v[3];
+	QPointF v[3];
 	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
 		for (unsigned int i = 0; i < m_dimensionI - 2; ++i) {
 			v[0] = vertex(i, j);
@@ -397,7 +397,7 @@ bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& 
 			v[2] = vertex(i + 2, j);
 
 			for (int k = 0; k < 2; ++k) {
-				lengths[k] = (v[k + 1] - v[k]).length();
+				lengths[k] = iRIC::length(v[k + 1] - v[k]);
 			}
 			double variation = lengths[1] / lengths[0];
 			if (variation < 1) {variation = 1. / variation;}
@@ -426,7 +426,7 @@ bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& 
 			v[2] = vertex(i, j + 2);
 
 			for (int k = 0; k < 2; ++k) {
-				lengths[k] = (v[k + 1] - v[k]).length();
+				lengths[k] = iRIC::length(v[k + 1] - v[k]);
 			}
 			double variation = lengths[1] / lengths[0];
 			if (variation < 1) {variation = 1. / variation;}

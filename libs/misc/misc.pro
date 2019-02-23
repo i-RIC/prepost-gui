@@ -45,6 +45,7 @@ HEADERS += boolcontainer.h \
            qttool.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
+           splineinterpolator.h \
            standarderrormessages.h \
            stringcontainer.h \
            stringtool.h \
@@ -83,6 +84,7 @@ SOURCES += boolcontainer.cpp \
            informationdialog.cpp \
            intcontainer.cpp \
            integerrangecontainer.cpp \
+           interpolator.cpp \
            intvectorcontainer.cpp \
            iricrootpath.cpp \
            iricundostack.cpp \
@@ -99,6 +101,7 @@ SOURCES += boolcontainer.cpp \
            qpointfcontainer.cpp \
            qttool.cpp \
            slowmotionspeededitdialog.cpp \
+           splineinterpolator.cpp \
            standarderrormessages.cpp \
            stringcontainer.cpp \
            stringtool.cpp \

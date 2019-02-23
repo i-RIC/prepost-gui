@@ -240,6 +240,20 @@ unix {
 }
 LIBS += -liricGccGridgenerator
 
+# iricGccLaplace
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/laplace/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/laplace/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/laplace"
+}
+LIBS += -liricGccLaplace
+
 # iricGccRectangularregion
 
 win32 {

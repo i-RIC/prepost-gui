@@ -8,7 +8,7 @@
 class GeoDataRiverSurvey::MoveRiverPathPointCommand : public QUndoCommand
 {
 public:
-	MoveRiverPathPointCommand(bool apply, QVector2D offset, GeoDataRiverSurvey* rs);
+	MoveRiverPathPointCommand(bool apply, const QPointF& offset, GeoDataRiverSurvey* rs);
 
 	void redo() override;
 	void undo() override;
@@ -16,8 +16,8 @@ public:
 private:
 	bool m_apply;
 	QList<GeoDataRiverPathPoint*> m_points;
-	QList<QVector2D> m_oldPositions;
-	QList<QVector2D> m_newPositions;
+	QList<QPointF> m_oldPositions;
+	QList<QPointF> m_newPositions;
 	GeoDataRiverSurvey* m_rs;
 };
 

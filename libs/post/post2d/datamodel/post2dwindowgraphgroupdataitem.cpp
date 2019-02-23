@@ -74,72 +74,58 @@ void getDirectionVertical(Post2dWindowGraphSetting::Direction dir, int i, int j,
 	*x = 0;
 	*y = 0;
 
-	QVector2D v;
+	QPointF v;
 	if (dir == Post2dWindowGraphSetting::dirI) {
 		if (j == 0) {
 			grid->GetPoint(i, j, 0, v0);
 			grid->GetPoint(i, j + 1, 0, v1);
 
-			v = QVector2D(v1[0] - v0[0], v1[1] - v0[1]);
-			v.normalize();
-
+			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
 			iRIC::rotateVector270(v);
 		} else if (j == dims[1] - 1) {
 			grid->GetPoint(i, j - 1, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 
-			v = QVector2D(v1[0] - v0[0], v1[1] - v0[1]);
-			v.normalize();
-
+			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
 			iRIC::rotateVector270(v);
 		} else {
 			grid->GetPoint(i, j - 1, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 			grid->GetPoint(i, j + 1, 0, v2);
 
-			QVector2D tmpV1(v1[0] - v0[0], v1[1] - v0[1]);
-			tmpV1.normalize();
+			QPointF tmpV1 = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
 			iRIC::rotateVector270(tmpV1);
 
-			QVector2D tmpV2(v2[0] - v1[0], v2[1] - v1[1]);
-			tmpV2.normalize();
+			QPointF tmpV2 = iRIC::normalize(QPointF(v2[0] - v1[0], v2[1] - v1[1]));
 			iRIC::rotateVector270(tmpV2);
 
-			v = tmpV1 + tmpV2;
-			v.normalize();
+			v = iRIC::normalize(tmpV1 + tmpV2);
 		}
 	} else {
 		if (i == 0) {
 			grid->GetPoint(i, j, 0, v0);
 			grid->GetPoint(i + 1, j, 0, v1);
 
-			v = QVector2D(v1[0] - v0[0], v1[1] - v0[1]);
-			v.normalize();
-
+			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
 			iRIC::rotateVector90(v);
 		} else if (i == dims[0] - 1) {
 			grid->GetPoint(i - 1, j, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 
-			v = QVector2D(v1[0] - v0[0], v1[1] - v0[1]);
-			v.normalize();
-
+			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
 			iRIC::rotateVector90(v);
 		} else {
 			grid->GetPoint(i - 1, j, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 			grid->GetPoint(i + 1, j, 0, v2);
 
-			QVector2D tmpV1(v1[0] - v0[0], v1[1] - v0[1]);
-			tmpV1.normalize();
+			QPointF tmpV1 = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
 			iRIC::rotateVector90(tmpV1);
 
-			QVector2D tmpV2(v2[0] - v1[0], v2[1] - v1[1]);
-			tmpV2.normalize();
+			QPointF tmpV2 = iRIC::normalize(QPointF(v2[0] - v1[0], v2[1] - v1[1]));
 			iRIC::rotateVector90(tmpV2);
 
-			v = tmpV1 + tmpV2;
-			v.normalize();
+			v = iRIC::normalize(tmpV1 + tmpV2);
 		}
 	}
 

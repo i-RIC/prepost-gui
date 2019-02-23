@@ -54,15 +54,15 @@ void Structured15DGridWithCrossSection::init()
 	m_vertexGrid = vtkUnstructuredGrid::New();
 }
 
-QVector2D Structured15DGridWithCrossSection::vertex(unsigned int index) const
+QPointF Structured15DGridWithCrossSection::vertex(unsigned int index) const
 {
 	double points[3];
 	vtkGrid()->GetPoints()->GetPoint(index, points);
 
-	return QVector2D(points[0], points[1]);
+	return QPointF(points[0], points[1]);
 }
 
-void Structured15DGridWithCrossSection::setVertex(unsigned int index, const QVector2D& v)
+void Structured15DGridWithCrossSection::setVertex(unsigned int index, const QPointF& v)
 {
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0.0);
 }

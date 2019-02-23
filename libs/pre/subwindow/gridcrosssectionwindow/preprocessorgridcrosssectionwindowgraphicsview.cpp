@@ -987,17 +987,17 @@ double PreProcessorGridCrosssectionWindowGraphicsView::getDistance(int index, in
 	Structured2DGrid* grid = m_parentWindow->grid();
 	double distance = 0;
 	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
-		QVector2D p0 = grid->vertex(startIndex, index);
+		QPointF p0 = grid->vertex(startIndex, index);
 		for (int i = startIndex; i <= endIndex; ++i) {
-			QVector2D p1 = grid->vertex(i, index);
-			distance += (p1 - p0).length();
+			QPointF p1 = grid->vertex(i, index);
+			distance += iRIC::length(p1 - p0);
 			p0 = p1;
 		}
 	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
-		QVector2D p0 = grid->vertex(index, startIndex);
+		QPointF p0 = grid->vertex(index, startIndex);
 		for (int j = startIndex; j <= endIndex; ++j) {
-			QVector2D p1 = grid->vertex(index, j);
-			distance += (p1 - p0).length();
+			QPointF p1 = grid->vertex(index, j);
+			distance += iRIC::length(p1 - p0);
 			p0 = p1;
 		}
 	}

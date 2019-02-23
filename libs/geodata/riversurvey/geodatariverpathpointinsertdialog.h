@@ -25,7 +25,7 @@ public:
 public slots:
 	void accept() override;
 	void reject() override;
-	void setPoint(const QVector2D& position);
+	void setPoint(const QPointF& position);
 	void setDefaultName();
 
 private slots:

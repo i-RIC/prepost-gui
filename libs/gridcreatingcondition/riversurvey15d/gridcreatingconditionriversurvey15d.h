@@ -12,19 +12,15 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkAppendPolyData.h>
 
-#include <QVector>
-#include <QVector2D>
-#include <QPixmap>
 #include <QCursor>
+#include <QPixmap>
+#include <QPointF>
+#include <QVector>
 
 class QAction;
 class QToolBar;
 class GeoDataRiverSurvey;
 class RiverGridCtrlSolver;
-//class GridCreatingConditionRiverSurvey15DPointAddDialog;
-//class GridCreatingConditionRiverSurvey15DPointAddCommand;
-//class GridCreatingConditionRiverSurvey15DPointRepositionDialog;
-//class GridCreatingConditionCtrlPointRepositionCommand15D;
 
 class GridCreatingConditionRiverSurvey15D : public GridCreatingCondition
 {
@@ -80,7 +76,7 @@ public:
 	bool checkCtrlPointsRegion(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end);
 
 	struct GridCtrlOffsetInfo {
-		QVector2D direction;
+		QPointF direction;
 		double length;
 		double lowerLimit;
 		double upperLimit;
@@ -99,8 +95,8 @@ protected:
 private:
 	const static int LINEDIVS = 36;
 	static const int ZONEDIV = 30;
-	void selectCtrlZone(const QVector2D& point, double width);
-	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QVector2D& point, double width);
+	void selectCtrlZone(const QPointF& point, double width);
+	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QPointF& point, double width);
 
 	void setupCrosssections(Grid* grid);
 
@@ -108,8 +104,8 @@ private:
 	void updateShapeData();
 	void allActorsOff();
 
-	bool ctrlPointSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
-	bool ctrlPointXORSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
+	bool ctrlPointSelectRegion(const QPointF& p0, const QPointF& v0, const QPointF& v1);
+	bool ctrlPointXORSelectRegion(const QPointF& p0, const QPointF& v0, const QPointF& v1);
 
 	void processCtrlPoints(int* index, Grid* grid, GeoDataRiverPathPoint* p, int dataNum);
 	void appendCrossSectionToGrid(GeoDataRiverCrosssection& cs, Grid* grid, const QString& name);

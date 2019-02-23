@@ -19,7 +19,7 @@ class GD_RIVERSURVEY_EXPORT GridCreatingConditionRiverSurveyInterface : public G
 
 public:
 	struct GridCtrlOffsetInfo {
-		QVector2D direction;
+		QPointF direction;
 		double length;
 		double lowerLimit;
 		double upperLimit;

@@ -16,7 +16,7 @@ GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::MouseShiftRiverPathCenterC
 	toY = to.y();
 	gview->viewportToWorld(fromX, fromY);
 	gview->viewportToWorld(toX, toY);
-	QVector2D offset(toX - fromX, toY - fromY);
+	QPointF offset(toX - fromX, toY - fromY);
 	GeoDataRiverPathPoint* first = nullptr;
 
 	GeoDataRiverPathPoint* p = data->m_headPoint->nextPoint();
@@ -27,7 +27,7 @@ GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::MouseShiftRiverPathCenterC
 		}
 		p = p->nextPoint();
 	}
-	m_shiftValue = QVector2D::dotProduct(offset, first->crosssectionDirection());
+	m_shiftValue = QPointF::dotProduct(offset, first->crosssectionDirection());
 }
 
 void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::redo()

@@ -5,7 +5,7 @@
 #include "geodatarivercrosssection.h"
 #include <misc/versionnumber.h>
 
-#include <QVector2D>
+#include <QPointF>
 #include <QVector>
 #include <QString>
 
@@ -78,14 +78,14 @@ public:
 	virtual ~GeoDataRiverPathPoint();
 
 	/// River center position
-	const QVector2D& position() const;
+	const QPointF& position() const;
 
 	void load(QDataStream& s, const VersionNumber& number);
 	void save(QDataStream& s) const;
 	/// Shift the river center position
 	void shiftCenter(double shiftWidth);
 	/// Set new river center position
-	void setPosition(const QVector2D& v);
+	void setPosition(const QPointF& v);
 	/// move the position of the river center position along the crosssection direction
 	/**
 	 * @param offset offset along the crosssection direction. positive value = right-bank side
@@ -96,14 +96,14 @@ public:
 	 * @note The first point is the dummy point. It does not have crosssection information.
 	 */
 	bool firstPoint() const;
-	QVector2D crosssectionPosition(double x);
+	QPointF crosssectionPosition(double x);
 	/// Add new river path point before this point.
 	void insertPathPoint(GeoDataRiverPathPoint* p);
 	/// Add new river path point after this point.
 	void addPathPoint(GeoDataRiverPathPoint* p);
 	/// Remove this point.
 	void remove();
-	void setCrosssectionDirection(const QVector2D& v);
+	void setCrosssectionDirection(const QPointF& v);
 	/// The pointer to the previous river path point.
 	GeoDataRiverPathPoint* previousPoint() const;
 	/// The pointer to the next river path point.
@@ -115,32 +115,32 @@ public:
 	GeoDataRiverCrosssection& crosssection();
 	const GeoDataRiverCrosssection& crosssection() const;
 	/// The direction of crosssection along left bank to right bank
-	const QVector2D& crosssectionDirection() const;
+	const QPointF& crosssectionDirection() const;
 	/// The direction of left-bank side "wing".
-	const QVector2D& crosssectionDirectionL() const;
+	const QPointF& crosssectionDirectionL() const;
 	/// The direction of right-bank side "wing".
-	const QVector2D& crosssectionDirectionR() const;
+	const QPointF& crosssectionDirectionR() const;
 	/// Set the direction of crosssection
 	/**
 	 * @angle The angle of crosssection and the line between the center point of this crosssection and the previous crosssection
 	 */
 	void setCrosssectionAngle(double angle) /* throw (ErrorCodes)*/;
 	/// Set the direction of crosssection along left bank to right bank
-	void setCrosssectiondirection(const QVector2D& v);
+	void setCrosssectiondirection(const QPointF& v);
 	/// Set the direction of left-bank side "wing".
-	void setCrosssectionDirectionL(const QVector2D& direction);
+	void setCrosssectionDirectionL(const QPointF& direction);
 	/// Set the direction of right-bank side "wing".
-	void setCrosssectionDirectionR(const QVector2D& direction);
-	QVector2D GridCtrlPosition(Bank bank, unsigned int index1, double param);
-	QVector2D backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param);
+	void setCrosssectionDirectionR(const QPointF& direction);
+	QPointF GridCtrlPosition(Bank bank, unsigned int index1, double param);
+	QPointF backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param);
 	/// Add the extention point on the left bank (that is the start point of the "wing")
-	void addExtentionPointLeft(const QVector2D& pos);
+	void addExtentionPointLeft(const QPointF& pos);
 	/// Add the extention point on the right bank (that is the start point of the "wing")
-	void addExtentionPointRight(const QVector2D& pos);
+	void addExtentionPointRight(const QPointF& pos);
 	/// Move the extention point on the left bank (that is the start point of the "wing")
-	void moveExtentionPointLeft(const QVector2D& pos);
+	void moveExtentionPointLeft(const QPointF& pos);
 	/// Move the extention point on the right bank (that is the start point of the "wing")
-	void moveExtentionPointRight(const QVector2D& pos);
+	void moveExtentionPointRight(const QPointF& pos);
 	/// Remove the extention point on the left bank (that is the start point of the "wing")
 	void removeExtentionPointLeft();
 	/// Remove the extention point on the right bank (that is the start point of the "wing")
@@ -169,9 +169,9 @@ public:
 	 * @param v0 vector1
 	 * @param v1 vector2
 	 */
-	void selectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1);
-	void XORSelectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1);
-	void SelectCtrlPointsRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1, std::list<CtrlPointSelectionInfo>& info);
+	void selectRegion(const QPointF& point0, const QPointF& v0, const QPointF& v1);
+	void XORSelectRegion(const QPointF& point0, const QPointF& v0, const QPointF& v1);
+	void SelectCtrlPointsRegion(const QPointF& point0, const QPointF& v0, const QPointF& v1, std::list<CtrlPointSelectionInfo>& info);
 
 	void clearSelection();
 
@@ -179,10 +179,10 @@ public:
 	void reposCtrlPoints(CtrlPointPosition position, int minindex, int maxindex, CtrlPointsAddMethod method);
 	void removeCtrlPoints(CtrlZonePosition position, std::set<int> indices);
 
-	QVector2D CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index);
-	QVector2D CtrlPointPosition2D(CtrlPointPosition pos, double d);
+	QPointF CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index);
+	QPointF CtrlPointPosition2D(CtrlPointPosition pos, double d);
 
-	QList<QVector2D> CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num);
+	QList<QPointF> CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num);
 	bool gridSkip() const;
 	void setGridSkip(bool skip);
 
@@ -225,8 +225,8 @@ public:
 	QVector<double> RightBankCtrlPoints;
 	QVector<double>& CtrlPoints(CtrlZonePosition position);
 	QVector<double>& CtrlPoints(CtrlPointPosition position);
-	void centerToBanksRegion(QVector2D& mins, QVector2D& maxs);
-	void thisToNextRegion(QVector2D& mins, QVector2D& maxs);
+	void centerToBanksRegion(QPointF& mins, QPointF& maxs);
+	void thisToNextRegion(QPointF& mins, QPointF& maxs);
 	void UpdateCtrlSections();
 	vtkStructuredGrid* areaGrid() const;
 	std::vector<int> getPointsToInactivateUsingWaterElevation(HydraulicDataRiverSurveyWaterElevation* we);
@@ -240,20 +240,20 @@ protected:
 
 private:
 	double GridCtrlParameter(Bank bank, int index1, int index2);
-	QVector2D myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::*f)() const, double d);
-	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d);
-	QVector2D myBgCtrlPointPosition2D(Interpolator2D1 * (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d);
+	QPointF myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::*f)() const, double d);
+	QPointF myCtrlPointPosition2D(Interpolator2D1 * (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d);
+	QPointF myBgCtrlPointPosition2D(Interpolator2D1 * (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d);
 	double myHeight(GeoDataRiverPathPoint::Bank bank, double t0, double t1, double d);
 
 	QString m_name;
 	GeoDataRiverPathPoint* m_previousPoint;
 	GeoDataRiverPathPoint* m_nextPoint;
-	QVector2D m_position;
+	QPointF m_position;
 
-	QVector2D m_crosssectionDirection;
+	QPointF m_crosssectionDirection;
 
-	QVector2D m_crosssectionDirectionL;
-	QVector2D m_crosssectionDirectionR;
+	QPointF m_crosssectionDirectionL;
+	QPointF m_crosssectionDirectionR;
 
 	bool m_firstPoint;
 

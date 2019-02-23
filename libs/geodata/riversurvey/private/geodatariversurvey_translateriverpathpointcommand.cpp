@@ -16,7 +16,7 @@ GeoDataRiverSurvey::TranslateRiverPathPointCommand::TranslateRiverPathPointComma
 	toY = to.y();
 	gview->viewportToWorld(fromX, fromY);
 	gview->viewportToWorld(toX, toY);
-	QVector2D offset(toX - fromX, toY - fromY);
+	QPointF offset(toX - fromX, toY - fromY);
 
 	GeoDataRiverPathPoint* p = data->m_headPoint->nextPoint();
 	while (p != nullptr) {

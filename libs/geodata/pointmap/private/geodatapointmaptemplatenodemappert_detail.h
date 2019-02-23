@@ -5,6 +5,7 @@
 #include "../geodatapointmapt.h"
 
 #include <guicore/pre/grid/structured2dgrid.h>
+#include <misc/mathsupport.h>
 
 #include <QVector2D>
 
@@ -39,12 +40,12 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(boo
 
 			bool found = false;
 			// get the grid node coordinates.
-			QVector2D vec2d = grid2d->vertex(i, j);
+			QPointF vec2d = grid2d->vertex(i, j);
 			double p[3];
-			QVector2D vecI;
-			QVector2D vecJ;
-			QList<QVector2D> ivecs;
-			QList<QVector2D> jvecs;
+			QPointF vecI;
+			QPointF vecJ;
+			QList<QPointF> ivecs;
+			QList<QPointF> jvecs;
 
 			p[0] = vec2d.x();
 			p[1] = vec2d.y();
@@ -73,16 +74,16 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(boo
 			vecJ /= jvecs.count();
 
 			// vecI, vecJ is setup.
-			double iDist = vecI.length();
+			double iDist = iRIC::length(vecI);
 			if (! m_autoMode) {
 				iDist = m_streamWiseLength;
 			}
-			double jDist = vecJ.length();
+			double jDist = iRIC::length(vecJ);
 			if (! m_autoMode) {
 				jDist = m_crossStreamLegnth;
 			}
-			vecI.normalize();
-			vecJ.normalize();
+			vecI = iRIC::normalize(vecI);
+			vecJ = iRIC::normalize(vecJ);
 			double radius = qMax(iDist, jDist);
 
 			double rsum = 0;
@@ -103,10 +104,10 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(boo
 					double tmpPoint[3];
 					auto idx = idlist->GetId(k);
 					pointSet->GetPoint(idx, tmpPoint);
-					QVector2D tmpV(tmpPoint[0], tmpPoint[1]);
-					QVector2D dv = tmpV - vec2d;
-					double tmpDistI = qAbs(QVector2D::dotProduct(dv, vecI));
-					double tmpDistJ = qAbs(QVector2D::dotProduct(dv, vecJ));
+					QPointF tmpV(tmpPoint[0], tmpPoint[1]);
+					QPointF dv = tmpV - vec2d;
+					double tmpDistI = qAbs(QPointF::dotProduct(dv, vecI));
+					double tmpDistJ = qAbs(QPointF::dotProduct(dv, vecJ));
 
 					if (tmpDistI < searchIRadius && tmpDistJ < searchJRadius) {
 						// it is near.
@@ -120,7 +121,7 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(boo
 							found = true;
 						} else {
 							++ pointsUsed;
-							double r = ::pow(dv.length(), m_weightPowVal);
+							double r = ::pow(iRIC::length(dv), m_weightPowVal);
 							setting.indices.append(idx);
 							setting.weights.append(1 / r);
 							rsum += 1 / r;

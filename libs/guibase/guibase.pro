@@ -48,6 +48,7 @@ unix {
 # VTK
 
 LIBS += \
+	-lvtkCommonComputationalGeometry-6.1 \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
@@ -125,6 +126,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
+           vtktool/vtkparametricsplineutil.h \
            vtktool/vtkpointsutil.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapaintactor.h \
@@ -236,6 +238,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
+           vtktool/vtkparametricsplineutil.cpp \
            vtktool/vtkpointsutil.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapaintactor.cpp \

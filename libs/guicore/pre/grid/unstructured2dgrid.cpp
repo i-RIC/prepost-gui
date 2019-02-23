@@ -4,9 +4,9 @@
 
 #include <misc/stringtool.h>
 
+#include <QPointF>
 #include <QSet>
 #include <QString>
-#include <QVector2D>
 
 #include <vtkCellArray.h>
 #include <vtkMaskPolyData.h>
@@ -49,14 +49,14 @@ unsigned int Unstructured2DGrid::cellCount() const
 	return vtkGrid()->GetNumberOfCells();
 }
 
-QVector2D Unstructured2DGrid::vertex(unsigned int index) const
+QPointF Unstructured2DGrid::vertex(unsigned int index) const
 {
 	double v[3];
 	vtkGrid()->GetPoints()->GetPoint(index, v);
-	return QVector2D(v[0], v[1]);
+	return QPointF(v[0], v[1]);
 }
 
-void Unstructured2DGrid::setVertex(unsigned int index, const QVector2D& v)
+void Unstructured2DGrid::setVertex(unsigned int index, const QPointF& v)
 {
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }

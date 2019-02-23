@@ -15,8 +15,8 @@ public:
 
 private:
 	bool m_apply;
-	QVector2D m_newDirection;
-	QVector2D m_oldDirection;
+	QPointF m_newDirection;
+	QPointF m_oldDirection;
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverSurvey* m_rs;
 };

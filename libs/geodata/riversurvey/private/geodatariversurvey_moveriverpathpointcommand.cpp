@@ -1,7 +1,7 @@
 #include "geodatariversurvey_moveriverpathpointcommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-GeoDataRiverSurvey::MoveRiverPathPointCommand::MoveRiverPathPointCommand(bool apply, QVector2D offset, GeoDataRiverSurvey* rs) :
+GeoDataRiverSurvey::MoveRiverPathPointCommand::MoveRiverPathPointCommand(bool apply, const QPointF& offset, GeoDataRiverSurvey* rs) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Move Traversal Lines")}
 {
 	m_apply = apply;
@@ -23,7 +23,7 @@ void GeoDataRiverSurvey::MoveRiverPathPointCommand::redo()
 	m_rs->m_gridThread->cancel();
 
 	for (int i = 0; i < m_points.count(); ++i) {
-		QVector2D newpos = m_newPositions.at(i);
+		auto newpos = m_newPositions.at(i);
 		m_points[i]->setPosition(newpos);
 	}
 	m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -38,7 +38,7 @@ void GeoDataRiverSurvey::MoveRiverPathPointCommand::undo()
 	m_rs->m_gridThread->cancel();
 
 	for (int i = 0; i < m_points.count(); ++i) {
-		QVector2D oldpos = m_oldPositions.at(i);
+		auto oldpos = m_oldPositions.at(i);
 		m_points[i]->setPosition(oldpos);
 	}
 	if (! m_apply) {

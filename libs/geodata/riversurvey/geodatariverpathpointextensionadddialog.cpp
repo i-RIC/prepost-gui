@@ -32,6 +32,11 @@ GeoDataRiverPathPointExtensionAddDialog::~GeoDataRiverPathPointExtensionAddDialo
 	delete ui;
 }
 
+void GeoDataRiverPathPointExtensionAddDialog::setLineMode(LineMode lm)
+{
+	m_lineMode = lm;
+}
+
 void GeoDataRiverPathPointExtensionAddDialog::accept()
 {
 	if (m_applyed) {
@@ -90,7 +95,7 @@ void GeoDataRiverPathPointExtensionAddDialog::handleButtonClick(QAbstractButton*
 	}
 }
 
-void GeoDataRiverPathPointExtensionAddDialog::setPoint(const QVector2D& position)
+void GeoDataRiverPathPointExtensionAddDialog::setPoint(const QPointF &position)
 {
 	if (! ui->clickRadioButton->isChecked()) {return;}
 	m_position = position;

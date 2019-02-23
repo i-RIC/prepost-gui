@@ -20,7 +20,7 @@ public:
 	explicit GeoDataRiverPathPointMoveDialog(GeoDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~GeoDataRiverPathPointMoveDialog();
 	void setSingleSelection(bool single);
-	void setCurrentCenter(const QVector2D& current);
+	void setCurrentCenter(const QPointF& current);
 
 public slots:
 	void accept() override;
@@ -36,7 +36,7 @@ private:
 	void apply();
 
 	Ui::GeoDataRiverPathPointMoveDialog* ui;
-	QVector2D m_currentCenter;
+	QPointF m_currentCenter;
 	GeoDataRiverSurvey* m_rs;
 	bool m_applyed;
 };

@@ -33,8 +33,8 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	GeoDataRiverPathPoint* tmpp = rs->headPoint()->nextPoint();
 	outstream << "#survey" << endl;
 	while (1) {
-		QVector2D leftBank  = tmpp->crosssectionPosition(tmpp->crosssection().leftBank(true).position());
-		QVector2D rightBank = tmpp->crosssectionPosition(tmpp->crosssection().rightBank(true).position());
+		QPointF leftBank  = tmpp->crosssectionPosition(tmpp->crosssection().leftBank(true).position());
+		QPointF rightBank = tmpp->crosssectionPosition(tmpp->crosssection().rightBank(true).position());
 		outstream
 				<< tmpp->name()
 				<< "\t" << leftBank.x() + offset.x() << "\t" << leftBank.y() + offset.y()

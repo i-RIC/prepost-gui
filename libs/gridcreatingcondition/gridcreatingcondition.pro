@@ -10,6 +10,7 @@ SUBDIRS = \
 	externalprogram \
 	gridcombine \
 	gridgenerator \
+	laplace \
 	poisson \
 	rectangularregion \
 	rectangularregionlonlat \

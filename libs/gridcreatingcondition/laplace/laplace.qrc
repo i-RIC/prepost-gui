@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/libs/gridcreatingcondition/laplace">
+        <file>images/imgCtrlCrossSections.png</file>
+        <file>images/imgGridCreationLaplace.png</file>
+        <file>images/ja_JP/imgCtrlCrossSections.png</file>
+    </qresource>
+</RCC>
