@@ -33,6 +33,16 @@
       <widget class="QComboBox" name="xAxisComboBox"/>
      </item>
      <item>
+      <widget class="QLabel" name="polyLineLabel">
+       <property name="text">
+        <string>Polyline:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="polyLineComboBox"/>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -316,6 +326,7 @@
  </widget>
  <tabstops>
   <tabstop>xAxisComboBox</tabstop>
+  <tabstop>polyLineComboBox</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>pointDataComboBox</tabstop>
   <tabstop>pointDataListWidget</tabstop>

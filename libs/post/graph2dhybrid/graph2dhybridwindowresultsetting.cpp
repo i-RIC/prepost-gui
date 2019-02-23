@@ -1,6 +1,7 @@
 #include "datamodel/graph2dhybridwindowbaseiterativeresultdataitem.h"
 #include "datamodel/graph2dhybridwindowgridijkresultdataitem.h"
 #include "datamodel/graph2dhybridwindowgridpointresultdataitem.h"
+#include "datamodel/graph2dhybridwindowgridpolylineresultdataitem.h"
 #include "datamodel/graph2dhybridwindowresultgroupdataitem.h"
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowresultsetting.h"
@@ -57,6 +58,9 @@ Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
 	m_xAxisLog = false;
 
 	m_targetDataTypeInfo = nullptr;
+	m_targetPolyLine = nullptr;
+	m_postSolutionInfo = nullptr;
+
 	m_colorSource = new ColorSource(nullptr);
 
 	m_addIndicesToTitle = false;
@@ -108,8 +112,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 		return false;
 	}
 
-	// Scott, please use this.
-	auto lines = polyLines(sol);
+	m_postSolutionInfo = sol;
 
 	for (int baseid = 1; baseid <= nbases; ++baseid) {
 		int celldim, physdim;
@@ -200,9 +203,11 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			m_dataTypeInfos.append(ti);
 		}
 	}
+
 	delete opener;
 
 	setupMap();
+	setupPolyLines();
 	return (m_dataTypeInfos.size() > 0);
 }
 
@@ -292,6 +297,37 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	}
 	m_dataTypeInfoMap.insert(xaK, tmpmap);
 
+	// for Polyline
+	if (m_polyLines.size() == 0) return;
+	tmpmap.clear();
+	tmpmap.insert(dimBase, emptylist);
+	tmpmap.insert(dim1D, emptylist);
+	tmpmap.insert(dim2D, emptylist);
+	tmpmap.insert(dim3D, emptylist);
+
+	for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
+		DataTypeInfo& di = m_dataTypeInfos[i];
+		DimType dt;
+		switch (di.dataType) {
+		case dtDim1DStructured:
+		case dtDim1DUnstructured:
+			// @todo implement this!
+			break;
+		case dtDim2DStructured:
+		case dtDim2DUnstructured:
+			dt = dimTypeFromDataType(di.dataType);
+			tmpmap[dt].append(&di);
+			break;
+		case dtDim3DStructured:
+		case dtDim3DUnstructured:
+			// @todo implement this!
+			break;
+		default:
+			;
+		}
+	}
+	m_dataTypeInfoMap.insert(xaPolyline, tmpmap);
+
 	/*
 		// for index
 		tmpmap.clear();
@@ -318,7 +354,15 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	*/
 }
 
-QList<GeoDataPolyLine*> Graph2dHybridWindowResultSetting::polyLines(PostSolutionInfo* info)
+void Graph2dHybridWindowResultSetting::setupPolyLines()
+{
+	m_polyLines.clear();
+	if (m_postSolutionInfo) {
+		m_polyLines = polyLines(m_postSolutionInfo);
+	}
+}
+
+QList<GeoDataPolyLine*> Graph2dHybridWindowResultSetting::polyLines(const PostSolutionInfo* info)
 {
 	auto preModel = info->iricMainWindow()->preProcessorWindow()->dataModel();
 	auto refGroup = preModel->geoDataTopDataItem()->groupDataItem(std::string("_referenceinformation"));
@@ -380,6 +424,12 @@ QList<Graph2dWindowDataItem*> Graph2dHybridWindowResultSetting::setupItems(Graph
 				ret.append(item);
 			}
 		}
+	} else if (m_xAxisMode == xaPolyline) {
+		// xaxis is distance (using a polyline)
+		for (int i = 0; i < m_targetDatas.count(); ++i) {
+			Graph2dHybridWindowGridPolylineResultDataItem* item = new Graph2dHybridWindowGridPolylineResultDataItem(m_targetDatas[i], i, gItem);
+			ret.append(item);
+		}
 	} else {
 		// xaxis is I or J or K
 		for (int i = 0; i < m_targetDatas.count(); ++i) {
@@ -438,7 +488,11 @@ Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(co
 
 	m_dataTypeInfos = s.m_dataTypeInfos;
 	m_targetDatas = s.m_targetDatas;
+	m_polyLines = s.m_polyLines;
+	m_targetPolyLine = s.m_targetPolyLine;
+	m_postSolutionInfo = s.m_postSolutionInfo;
 	setupMap();
+	setupPolyLines();
 	if (s.m_targetDataTypeInfo == nullptr) {
 		m_targetDataTypeInfo = nullptr;
 	} else {
@@ -489,6 +543,9 @@ QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResu
 		break;
 	case Graph2dHybridWindowResultSetting::xaK:
 		return Graph2dHybridWindow::tr("K");
+		break;
+	case Graph2dHybridWindowResultSetting::xaPolyline:
+		return Graph2dHybridWindow::tr("Polyline");
 		break;
 	}
 	return "";
@@ -725,6 +782,21 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 			m_targetDatas.append(setting);
 		}
 	}
+
+	m_targetPolyLine = nullptr;
+	QDomNode targetPolyLineNode = iRIC::getChildNode(node, "TargetPolyLine");
+	if (! targetPolyLineNode.isNull()) {
+		QDomElement targetPolyLineElement = targetPolyLineNode.toElement();
+		QString name = targetPolyLineElement.attribute("name", "nullptr");
+		for (auto &line : m_polyLines) {
+			if (line->name() == name) {
+				m_targetPolyLine = line;
+				break;
+			}
+		}
+		if (name == "nullptr") Q_ASSERT(m_targetPolyLine == nullptr);
+		Q_ASSERT(m_targetPolyLine == nullptr || name != "nullptr");
+	}
 }
 
 void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
@@ -774,11 +846,19 @@ void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& w
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
+
+	writer.writeStartElement("TargetPolyLine");
+	if (m_targetPolyLine == nullptr) {
+		writer.writeAttribute("name", "nullptr");
+	} else {
+		writer.writeAttribute("name", m_targetPolyLine->name());
+	}
+	writer.writeEndElement();
 }
 
 void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
+	QDomElement elem = node.toElement();	// targetDataType
 	dataType = static_cast<DataType>(iRIC::getIntAttribute(node, "dataType"));
 	dimension = static_cast<PostSolutionInfo::Dimension>(iRIC::getIntAttribute(node, "dimension"));
 	zoneId = iRIC::getIntAttribute(node, "zoneId");

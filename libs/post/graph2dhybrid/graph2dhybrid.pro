@@ -86,6 +86,20 @@ unix {
 }
 LIBS += -liricGraph2d
 
+# iricGdPolyLine
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../geodata/polyline/debug"
+	} else {
+		LIBS += -L"../../geodata/polyline/release"
+	}
+}
+unix {
+	LIBS += -L"../../geodata/polyline"
+}
+LIBS += -liricGdPolyLine
+
 # iricGdRiversurvey
 
 win32 {
@@ -128,6 +142,7 @@ LIBS += \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
+	-lvtkFiltersCore-6.1 \
 	-lvtkFiltersExtraction-6.1
 
 # cgnslib
@@ -163,6 +178,7 @@ HEADERS += graph2dhybrid_global.h \
 					 datamodel/graph2dhybridwindowdrawsettingdialog.h \
 					 datamodel/graph2dhybridwindowgridijkresultdataitem.h \
 					 datamodel/graph2dhybridwindowgridpointresultdataitem.h \
+					 datamodel/graph2dhybridwindowgridpolylineresultdataitem.h \
 					 datamodel/graph2dhybridwindowimportdatadataitem.h \
 					 datamodel/graph2dhybridwindowimportdatagroupdataitem.h \
 					 datamodel/graph2dhybridwindowresultcopydataitem.h \
@@ -197,6 +213,7 @@ SOURCES += graph2dhybridsettingdialog.cpp \
 					 datamodel/graph2dhybridwindowdrawsettingdialog.cpp \
 					 datamodel/graph2dhybridwindowgridijkresultdataitem.cpp \
 					 datamodel/graph2dhybridwindowgridpointresultdataitem.cpp \
+					 datamodel/graph2dhybridwindowgridpolylineresultdataitem.cpp \
 					 datamodel/graph2dhybridwindowimportdatadataitem.cpp \
 					 datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp \
 					 datamodel/graph2dhybridwindowresultcopydataitem.cpp \

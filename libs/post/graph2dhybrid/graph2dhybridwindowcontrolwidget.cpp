@@ -105,8 +105,10 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 	case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-		ui->indexLabel->show();
-		ui->indexSlider->show();
+		if (setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaPolyline) {
+			ui->indexLabel->show();
+			ui->indexSlider->show();
+		}
 		break;
 	}
 	adjustSize();
