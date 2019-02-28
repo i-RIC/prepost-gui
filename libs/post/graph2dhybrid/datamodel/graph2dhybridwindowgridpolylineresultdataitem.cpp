@@ -20,6 +20,7 @@
 #include <QVector3D>
 
 
+#include <vtkCell.h>
 #include <vtkCellData.h>
 #include <vtkCutter.h>
 #include <vtkDoubleArray.h>
@@ -33,6 +34,12 @@
 
 #include <cmath>
 #include <qwt_plot_curve.h>
+
+namespace {
+
+	const double MINIMUM_DIFF = 0.001;  // 1 millmeter
+
+}
 
 Graph2dHybridWindowGridPolylineResultDataItem::Graph2dHybridWindowGridPolylineResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
 	: Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
@@ -54,12 +61,16 @@ Graph2dHybridWindowGridPolylineResultDataItem::~Graph2dHybridWindowGridPolylineR
 
 void Graph2dHybridWindowGridPolylineResultDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {
-
+	// ProjectDataItem::doLoadFromProjectMainFile is abstract
+	// loaded in:
+	// void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& node)
 }
 
 void Graph2dHybridWindowGridPolylineResultDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {
-
+	// ProjectDataItem::doSaveToProjectMainFile is abstract
+	// saved in:
+	// void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
 }
 
 void Graph2dHybridWindowGridPolylineResultDataItem::updateValues(int /*fn*/)
@@ -139,6 +150,12 @@ void Graph2dHybridWindowGridPolylineResultDataItem::updateValuesVertex(vtkPointS
 		max[0] = std::max(a[0], b[0]);
 		min[1] = std::min(a[1], b[1]);
 		max[1] = std::max(a[1], b[1]);
+		for (int i = 0; i < 2; ++i) {
+			if (max[i] - min[i] < MINIMUM_DIFF) {
+				min[i] -= MINIMUM_DIFF / 2;
+				max[i] += MINIMUM_DIFF / 2;
+			}
+		}
 
 		origin[0] = pts[idx].x();
 		origin[1] = pts[idx].y();
@@ -244,16 +261,32 @@ void Graph2dHybridWindowGridPolylineResultDataItem::updateValuesCellCenter(vtkPo
 		max[0] = std::max(a[0], b[0]);
 		min[1] = std::min(a[1], b[1]);
 		max[1] = std::max(a[1], b[1]);
+		for (int i = 0; i < 2; ++i) {
+			if (max[i] - min[i] < MINIMUM_DIFF) {
+				min[i] -= MINIMUM_DIFF / 2;
+				max[i] += MINIMUM_DIFF / 2;
+			}
+		}
 
 		origin[0] = pts[idx].x();
 		origin[1] = pts[idx].y();
 
 		amap.clear();
 		int numT = da->GetNumberOfTuples();
-		int npts = cutter->GetOutput()->GetNumberOfPoints();
 		for (int i = 0; i < numT; ++i) {
 			double p[3];
-			cutter->GetOutput()->GetPoint(i, p);
+			// determine center of cell
+			vtkCell* cell = cutter->GetOutput()->GetCell(i);
+			vtkIdType npoints = cell->GetPoints()->GetNumberOfPoints();
+			p[0] = p[1] = 0;
+			for (vtkIdType n = 0; n < npoints; ++n) {
+				double x[3];
+				cell->GetPoints()->GetPoint(n, x);
+				p[0] += x[0];
+				p[1] += x[1];
+			}
+			p[0] /= npoints;
+			p[1] /= npoints;
 
 			// y value
 			double value = 0;
