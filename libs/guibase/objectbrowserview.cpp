@@ -78,11 +78,18 @@ QSize ObjectBrowserView::sizeHint() const
 
 void ObjectBrowserView::deleteCurrentItem()
 {
-	if (QMessageBox::No == QMessageBox::warning(this, tr("Delete item"), tr("Are you sure you want to delete this item?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
-		return;
-	}
 	QModelIndex selected = *(selectedIndexes().begin());
 	QStandardItemModel* itemModel = dynamic_cast<QStandardItemModel*>(model());
+	QStandardItem* selectedItem = itemModel->itemFromIndex(selected);
+	QString text = selectedItem->data(Qt::UserRole + 20).toString();
+
+	if (text.isEmpty()) {
+		text = tr("Are you sure you want to delete this item?");
+	}
+	if (QMessageBox::No == QMessageBox::warning(this, tr("Delete item"), tr(text.toStdString().c_str()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
+		return;
+	}
+
 	QStandardItem* parentItem = itemModel->itemFromIndex(selected.parent());
 	QString qstr = parentItem->data(Qt::UserRole + 10).toString();
 	if (qstr == "BACKGROUNDIMAGES") {

@@ -12,6 +12,7 @@
 
 #include <cgnslib.h>
 
+class GeoDataPolyLine;
 class Graph2dHybridWindowResultGroupDataItem;
 class Graph2dHybridWindowResultDataItem;
 class Graph2dWindowDataItem;
@@ -50,7 +51,8 @@ public:
 		xaTime,
 		xaI,
 		xaJ,
-		xaK
+		xaK,
+		xaPolyline
 	};
 
 	enum DimType {
@@ -246,6 +248,12 @@ public:
 	void setTargetDataTypeInfo(DataTypeInfo* type) {m_targetDataTypeInfo = type;}
 	QList<Setting>& targetDatas() {return m_targetDatas;}
 	const QList<Setting>& targetDatas() const {return m_targetDatas;}
+
+	const QList<GeoDataPolyLine*>& polyLines() const {return m_polyLines;}
+
+	const GeoDataPolyLine* targetPolyLine() const {return m_targetPolyLine;}
+	void setTargetPolyLine(const GeoDataPolyLine* polyline) {m_targetPolyLine = polyline;}
+
 	QColor autoColor(int index) const ;
 	int gridI() const {return m_I;}
 	void setGridI(int i) {m_I = i;}
@@ -262,6 +270,8 @@ public:
 private:
 	static DimType dimTypeFromDataType(DataType dt);
 	void setupMap();
+	static QList<GeoDataPolyLine*> polyLines(const PostSolutionInfo* info);
+	void setupPolyLines();
 
 	QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > > m_dataTypeInfoMap;
 	QList<DataTypeInfo> m_dataTypeInfos;
@@ -269,6 +279,9 @@ private:
 	XAxisMode m_xAxisMode;
 	DataTypeInfo* m_targetDataTypeInfo;
 	QList<Setting> m_targetDatas;
+	QList<GeoDataPolyLine*> m_polyLines;
+	const GeoDataPolyLine* m_targetPolyLine;
+	const PostSolutionInfo* m_postSolutionInfo;
 
 	QString m_title;
 	bool m_addIndicesToTitle;

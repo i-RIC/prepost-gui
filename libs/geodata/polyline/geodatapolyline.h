@@ -109,6 +109,9 @@ private slots:
 	void editCoordinates();
 	void editColorSetting();
 
+signals:
+	void modified();
+
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -152,5 +155,9 @@ public:
 	friend class GeoDataPolyLineShapeExporter;
 	friend class GeoDataPolyLineProxy;
 };
+
+#ifdef _DEBUG
+	#include "private/geodatapolyline_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATAPOLYLINE_H

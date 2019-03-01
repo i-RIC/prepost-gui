@@ -6,12 +6,14 @@
 #include "datamodel/graph2dhybridwindowresultdataitem.h"
 #include "datamodel/graph2dhybridwindowresultgroupdataitem.h"
 #include "datamodel/graph2dhybridwindowrootdataitem.h"
+#include "geodata/polyline/geodatapolyline.h"
 #include "graph2dhybridsettingdialog.h"
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowcontinuousexportdialog.h"
 #include "graph2dhybridwindowcontrolwidget.h"
 #include "graph2dhybridwindowdatamodel.h"
 #include "graph2dhybridwindowdatasourcedialog.h"
+#include "graph2dhybridwindowprojectdataitem.h"
 #include "graph2dhybridwindowview.h"
 
 #define _USE_MATH_DEFINES
@@ -1410,6 +1412,11 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	view()->replot();
 }
 
+void Graph2dHybridWindowDataModel::applySettingsSlot()
+{
+	applySettings();
+}
+
 void Graph2dHybridWindowDataModel::applySettings()
 {
 	// update axis setting.
@@ -1607,4 +1614,11 @@ void Graph2dHybridWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	writer.writeStartElement("Setting");
 	m_setting.saveToProjectMainFile(writer);
 	writer.writeEndElement();
+}
+
+void Graph2dHybridWindowDataModel::targetPolyLineDestroyed()
+{
+	Graph2dHybridWindowProjectDataItem* item = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(parent());
+	QWidget* widget = dynamic_cast<QWidget*>(item->window()->parent());
+	widget->close();
 }

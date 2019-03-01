@@ -18,6 +18,7 @@ public:
 	PreProcessorDataModelInterface(PreProcessorWindowInterface* w, ProjectDataItem* parent);
 	virtual ~PreProcessorDataModelInterface() {}
 	virtual MouseBoundingBox* mouseBoundingBox() = 0;
+	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const = 0;
 	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const std::string& type) const = 0;
 	virtual PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem(const std::string& type) const = 0;
 	virtual PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const = 0;

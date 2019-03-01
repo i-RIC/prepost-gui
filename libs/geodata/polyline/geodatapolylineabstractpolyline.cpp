@@ -86,6 +86,7 @@ void GeoDataPolyLineAbstractPolyLine::setPolyLine(const std::vector<QPointF>& p)
 {
 	impl->m_polylineController.setPolyLine(p);
 	updateScalarValues();
+	emit impl->m_parent->modified();
 }
 
 std::vector<QPointF> GeoDataPolyLineAbstractPolyLine::cleanedPolyLine(const QPointF& offset) const

@@ -6,6 +6,8 @@
 #include "graph2dhybridwindowlinesettingdialog.h"
 #include "graph2dhybridwindowresultsetting.h"
 
+#include "../../../geodata/polyline/geodatapolyline.h"
+
 #include <guicore/base/iricmainwindowinterface.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -16,6 +18,9 @@
 #include <QMessageBox>
 #include <QSet>
 #include <QTextStream>
+#include <QVariant.h>
+
+Q_DECLARE_METATYPE(const GeoDataPolyLine*)   // this type must match the template of the QVariant.value method (including the const)
 
 Graph2dHybridWindowDataSourceDialog::Graph2dHybridWindowDataSourceDialog(QWidget* parent) :
 	QDialog(parent),
@@ -38,6 +43,12 @@ Graph2dHybridWindowDataSourceDialog::Graph2dHybridWindowDataSourceDialog(QWidget
 	connect(ui->twoDimDataListWidget, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(twoDimDataFocus()));
 	connect(ui->threeDimDataListWidget, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(threeDimDataFocus()));
 	connect(ui->selectedDataListWidget, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(selectedFocus()));
+
+	connect(ui->pointDataListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addSetting()));
+	connect(ui->oneDimDataListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addSetting()));
+	connect(ui->twoDimDataListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addSetting()));
+	connect(ui->threeDimDataListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addSetting()));
+	connect(ui->selectedDataListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeSetting()));
 
 	connect(ui->addPushButton, SIGNAL(clicked()), this, SLOT(addSetting()));
 	connect(ui->removePushButton, SIGNAL(clicked()), this, SLOT(removeSetting()));
@@ -122,7 +133,18 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 			changeAxis(0);
 		}
 	}
-	m_setting = setting;
+	m_setting = setting;  // this is required for the 'Selected Data' list to be populated
+	ui->polyLineComboBox->blockSignals(true);
+	for (auto &line : m_setting.polyLines()) {
+		const GeoDataPolyLine* pline = line;
+		ui->polyLineComboBox->addItem(pline->caption(), QVariant::fromValue(pline));
+	}
+	if (m_setting.targetPolyLine()) {
+		int n = ui->polyLineComboBox->findData(QVariant::fromValue(m_setting.targetPolyLine()));
+		Q_ASSERT(n != -1);
+		if (n != -1) ui->polyLineComboBox->setCurrentIndex(n);
+	}
+	ui->polyLineComboBox->blockSignals(false);
 	if (setting.xAxisLabel().isEmpty()) {
 		m_setting.setAutoXAxisLabel();
 	}
@@ -397,6 +419,15 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		changeThreeDimGridLocationComboBox(index);
 	}
 	ui->threeDimGridLocationComboBox->blockSignals(false);
+
+	if (axis == Graph2dHybridWindowResultSetting::xaPolyline && m_setting.polyLines().size() > 0) {
+		ui->polyLineLabel->show();
+		ui->polyLineComboBox->show();
+	} else {
+		ui->polyLineLabel->hide();
+		ui->polyLineComboBox->hide();
+		m_setting.setTargetPolyLine(nullptr);
+	}
 }
 
 void Graph2dHybridWindowDataSourceDialog::changePointComboBox(int index)
@@ -779,6 +810,14 @@ void Graph2dHybridWindowDataSourceDialog::accept()
 	if (m_setting.targetDataTypeInfo() == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("No data is selected."));
 		return;
+	}
+	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyline) {
+		const GeoDataPolyLine* pline = ui->polyLineComboBox->currentData().value<const GeoDataPolyLine*>();
+		Q_ASSERT(pline != nullptr);
+		m_setting.setTargetPolyLine(pline);
+	}
+	else {
+		m_setting.setTargetPolyLine(nullptr);
 	}
 	m_importDataGroup->setData(m_data);
 	for (int i = 0; i < m_deletedData.count(); ++i) {

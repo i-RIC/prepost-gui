@@ -48,7 +48,9 @@ public slots:
 	void specialCsvExport();
 	void copyCalculationResult();
 	void exportCsv();
-
+	void targetPolyLineDestroyed();
+	void applySettingsSlot();
+	
 private slots:
 	void updateTime();
 	void updateData(int fn);

@@ -6,9 +6,10 @@
 #include <QMainWindow>
 #include <QIcon>
 
-class ProjectData;
 class PostSolutionInfo;
 class PostProcessorWindowProjectDataItem;
+class PreProcessorGeoDataGroupDataItemInterface;
+class ProjectData;
 
 /// Abstract Post processor window
 class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindow, public SnapshotEnabledWindowInterface
@@ -34,6 +35,8 @@ public slots:
 
 protected:
 	PostSolutionInfo* postSolutionInfo();
+	PreProcessorGeoDataGroupDataItemInterface* refDataGroupDataItem();
+
 	PostProcessorWindowProjectDataItem* m_projectDataItem;
 	int m_index;
 	QIcon m_icon;
