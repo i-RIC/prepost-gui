@@ -308,6 +308,9 @@ QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 	QVector2D v1, v2;
 
 	std::vector<QPointF> line = impl->m_lineActor.line();
+	if (line.size() < 2) {
+		return nullptr;
+	}
 	v1 = QVector2D(line.at(0).x(), line.at(0).y());
 	v2 = QVector2D(line.at(1).x(), line.at(1).y());
 
