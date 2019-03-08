@@ -1043,6 +1043,21 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="38"/>
+        <source>Result name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="38"/>
+        <source>Variable name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="38"/>
+        <source>Value for testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="59"/>
         <source>Grid node</source>
         <translation type="unfinished"></translation>

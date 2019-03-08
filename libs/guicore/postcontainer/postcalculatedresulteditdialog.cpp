@@ -35,7 +35,7 @@ PostCalculatedResultEditDialog::PostCalculatedResultEditDialog(QWidget *parent) 
 
 	m_model.setColumnCount(3);
 	QStringList labels;
-	labels << tr("Result name") << tr("Variable name") << tr("Value for testing");
+	labels << PostCalculatedResultEditDialog::tr("Result name") << PostCalculatedResultEditDialog::tr("Variable name") << PostCalculatedResultEditDialog::tr("Value for testing");
 	m_model.setHorizontalHeaderLabels(labels);
 }
 

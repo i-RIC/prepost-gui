@@ -1681,6 +1681,21 @@ Do you really want to import this file?</source>
         <translation>----</translation>
     </message>
     <message>
+        <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="38"/>
+        <source>Result name</source>
+        <translation>計算結果名</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="38"/>
+        <source>Variable name</source>
+        <translation>変数名</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="38"/>
+        <source>Value for testing</source>
+        <translation>テスト用の値</translation>
+    </message>
+    <message>
         <location filename="../postcontainer/postcalculatedresulteditdialog.cpp" line="59"/>
         <source>Grid node</source>
         <translation>格子点</translation>
