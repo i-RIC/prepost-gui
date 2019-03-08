@@ -4,10 +4,41 @@
 # Project settings
 #---------------------------------------------------------------------------
 
-PROJECT_NAME           = "iricMisc library"
+PROJECT_NAME           = "iRIC"
 PROJECT_NUMBER         =
 PROJECT_BRIEF          =
-PROJECT_LOGO           =
-
-INPUT                  = . ../../../libs/misc ../../../libs/dataitem ../../../libs/geodata ../../../libs/geoio ../../../libs/gridcreatingcondition ../../../libs/gui ../../../libs/guibase ../../../libs/guicore ../../../libs/hydraulicdata ../../../libs/iricpython ../../../libs/post ../../../libs/postbase ../../../libs/pre ../../../libs/solverconsole ../../../libs/tmsloader ../../../libs/triangle
+PROJECT_LOGO           = ../../../apps/iricgui/images/iricicon_64.png
+INPUT                  = ../../../apps \
+                         ../../../libs
 EXCLUDE                =
+TAGFILES               = $(QTDIR)/Docs/Qt-5.5/activeqt/activeqt.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qdoc/qdoc.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qt3dcollision/qt3dcollision.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qt3dcore/qt3dcore.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qt3dlogic/qt3dlogic.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qt3drenderer/qt3drenderer.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtbluetooth/qtbluetooth.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtconcurrent/qtconcurrent.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtcore/qtcore.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtgraphicaleffects/qtgraphicaleffects.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtgui/qtgui.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtlocation/qtlocation.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtnetwork/qtnetwork.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtnfc/qtnfc.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtpositioning/qtpositioning.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtprintsupport/qtprintsupport.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtqml/qtqml.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtquick/qtquick.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtquickcontrols/qtquickcontrols.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtsensors/qtsensors.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtsql/qtsql.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtsvg/qtsvg.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qttestlib/qttestlib.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtwebchannel/qtwebchannel.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtwebengine/qtwebengine.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtwebenginewidgets/qtwebenginewidgets.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtwebsockets/qtwebsockets.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtwidgets/qtwidgets.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtxml/qtxml.tags=https://doc.qt.io/archives/qt-5.5/ \
+                         $(QTDIR)/Docs/Qt-5.5/qtxmlpatterns/qtxmlpatterns.tags=https://doc.qt.io/archives/qt-5.5/
+COLS_IN_ALPHA_INDEX    = 1
