@@ -510,6 +510,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
+        <source>&amp;Save and Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
