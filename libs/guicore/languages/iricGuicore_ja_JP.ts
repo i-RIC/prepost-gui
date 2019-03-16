@@ -926,8 +926,9 @@ Do you really want to import this file?</source>
         <translation>計算条件</translation>
     </message>
     <message>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
         <source>&amp;Save and Close</source>
-        <translation type="vanished">保存して閉じる(&amp;S)</translation>
+        <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
