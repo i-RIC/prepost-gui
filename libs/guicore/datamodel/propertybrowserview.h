@@ -40,7 +40,8 @@ public:
 	void setCellAttributes(vtkIdType index, const QPolygonF& polygon, const QList<PropertyBrowserAttribute>& attr);
 	void setCellAttributes(unsigned int i, unsigned int j, const QPolygonF& polygon, const QList<PropertyBrowserAttribute>& attr);
 	void setParticleAttributes(vtkIdType index, double x, double y, const QList<PropertyBrowserAttribute>& attr);
-	void setPolyDataAttributes(vtkCell* cell, vtkIdType index, const QList<PropertyBrowserAttribute>& attr);
+	void setPolyDataAttributes(const std::vector<QPolygonF>& polygons, vtkIdType index, const QList<PropertyBrowserAttribute>& attr);
+	void setPolyDataAttributes(const std::vector<QPointF>& polyline, vtkIdType index, const QList<PropertyBrowserAttribute>& attr);
 
 private:
 	void resetBase(bool structured);

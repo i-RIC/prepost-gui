@@ -161,13 +161,23 @@ void PropertyBrowserView::setParticleAttributes(vtkIdType index, double x, doubl
 	}
 }
 
-void PropertyBrowserView::setPolyDataAttributes(vtkCell* cell, vtkIdType index, const QList<PropertyBrowserAttribute>& attr)
+void PropertyBrowserView::setPolyDataAttributes(const std::vector<QPolygonF>& polygons, vtkIdType index, const QList<PropertyBrowserAttribute>& attr)
 {
 	resetAttributes(true);
 	updateIndex(index);
 	updateAttributes(attr);
 	if (m_targetDataItem) {
-		m_targetDataItem->setCell(cell);
+		m_targetDataItem->setPolygons(polygons);
+	}
+}
+
+void PropertyBrowserView::setPolyDataAttributes(const std::vector<QPointF>& polyline, vtkIdType index, const QList<PropertyBrowserAttribute>& attr)
+{
+	resetAttributes(true);
+	updateIndex(index);
+	updateAttributes(attr);
+	if (m_targetDataItem) {
+		m_targetDataItem->setPolyline(polyline);
 	}
 }
 

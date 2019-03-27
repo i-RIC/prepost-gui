@@ -4,8 +4,8 @@
 #include "../guicore_global.h"
 #include "graphicswindowdataitem.h"
 
-#include <guibase/polygon/polygoncontroller.h>
-#include <guibase/polyline/polylinecontroller.h>
+#include <guibase/vtktool/vtklineactor.h>
+#include <guibase/vtktool/vtkpolygonsactor.h>
 
 class QPointF;
 class QPolygonF;
@@ -25,8 +25,8 @@ public:
 
 	void setPoint(const QPointF& v);
 	void setPolygon(const QPolygonF& p);
+	void setPolygons(const std::vector<QPolygonF>& p);
 	void setPolyline(const std::vector<QPointF>& l);
-	void setCell(vtkCell* cell);
 	void clear();
 
 private:
@@ -35,8 +35,8 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	PolygonController m_polygonController;
-	PolyLineController m_polylineController;
+	vtkPolygonsActor m_polygonsActor;
+	vtkLineActor m_lineActor;
 };
 
 #endif // ATTRIBUTEBROWSERTARGETDATAITEM_H

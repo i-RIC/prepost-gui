@@ -45,7 +45,9 @@
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkDataArray.h>
+#include <vtkLine.h>
 #include <vtkPointData.h>
+#include <vtkPolyLine.h>
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
@@ -1015,7 +1017,7 @@ vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsVie
 	return pid;
 }
 
-vtkIdType Post2dWindowZoneDataItem::findPolyDataCell(const std::string& name, const QPoint& p, VTKGraphicsView* v)
+int Post2dWindowZoneDataItem::findPolyDataCell(const std::string& name, const QPoint& p, VTKGraphicsView* v)
 {
 	double x = p.x();
 	double y = p.y();
@@ -1031,7 +1033,10 @@ vtkIdType Post2dWindowZoneDataItem::findPolyDataCell(const std::string& name, co
 	double limitDist = v2->stdRadius(iRIC::nearRadius());
 	double d2 = limitDist * limitDist;
 	int subid;
-	return cont->polyData(name)->FindCell(point, hintCell, 0, d2, subid, pcoords, weights);
+	vtkIdType cellid = cont->polyData(name)->FindCell(point, hintCell, 0, d2, subid, pcoords, weights);
+	if (cellid < 0) {return cellid;}
+
+	return cont->polyDataCellIds(name).at(cellid);
 }
 
 void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(vtkIdType pid, double x, double y, VTKGraphicsView* /*v*/)
@@ -1069,31 +1074,35 @@ void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(vtkIdType pi
 	pb->view()->setParticleAttributes(pid, x, y, atts);
 }
 
-void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::string& name, vtkIdType cellid, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* v)
 {
 	PostZoneDataContainer* cont = dataContainer();
 	QList<PropertyBrowserAttribute> atts;
 	auto polyData = cont->polyData(name);
+	const auto& polyDataCellIds = cont->polyDataCellIds(name);
+	auto s_it = std::lower_bound(polyDataCellIds.begin(), polyDataCellIds.end(), cellid);
+	auto first_id = s_it - polyDataCellIds.begin();
 
 	int count = polyData->GetCellData()->GetNumberOfArrays();
+
 	for (int i = 0; i < count; ++i) {
 		vtkAbstractArray* arr = polyData->GetCellData()->GetAbstractArray(i);
 		vtkDataArray* da = dynamic_cast<vtkDataArray*>(arr);
 		if (da == nullptr) {continue;}
 		if (da->GetNumberOfComponents() == 1) {
 			// scalar value
-			double val = da->GetComponent(cellid, 0);
+			double val = da->GetComponent(first_id, 0);
 			PropertyBrowserAttribute att(da->GetName(), val);
 			atts.append(att);
 		} else if (da->GetNumberOfComponents() == 3) {
 			// vector value
-			double val = da->GetComponent(cellid, 0);
+			double val = da->GetComponent(first_id, 0);
 			QString attName = da->GetName();
 			attName.append("X");
 			PropertyBrowserAttribute att(attName, val);
 			atts.append(att);
 
-			val = da->GetComponent(cellid, 1);
+			val = da->GetComponent(first_id, 1);
 			attName = da->GetName();
 			attName.append("Y");
 			att = PropertyBrowserAttribute(attName, val);
@@ -1102,7 +1111,41 @@ void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::s
 	}
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
-	pb->view()->setPolyDataAttributes(polyData->GetCell(cellid), cellid, atts);
+
+	std::vector<QPolygonF> polygons;
+	for (auto it = s_it; *it == cellid; ++it) {
+		auto tmp_id = it - polyDataCellIds.begin();
+		vtkCell* cell = polyData->GetCell(tmp_id);
+		auto line = dynamic_cast<vtkLine*>(cell);
+		auto polyline = dynamic_cast<vtkPolyLine*>(cell);
+		if (line != nullptr || polyline != nullptr) {
+			auto points = cell->GetPoints();
+			auto ids = cell->GetPointIds();
+			std::vector<QPointF> l;
+			for (vtkIdType i = 0; i < ids->GetNumberOfIds(); ++i) {
+				double v[3];
+				points->GetPoint(i, v);
+				l.push_back(QPointF(v[0], v[1]));
+			}
+			pb->view()->setPolyDataAttributes(l, cellid, atts);
+			return;
+		} else {
+			auto points = cell->GetPoints();
+			auto ids = cell->GetPointIds();
+			QPolygonF p;
+			for (vtkIdType i = 0; i < ids->GetNumberOfIds(); ++i) {
+				double v[3];
+				points->GetPoint(i, v);
+				p.push_back(QPointF(v[0], v[1]));
+			}
+			double v[3];
+			points->GetPoint(0, v);
+			p.push_back(QPointF(v[0], v[1]));
+
+			polygons.push_back(p);
+		}
+	}
+	pb->view()->setPolyDataAttributes(polygons, cellid, atts);
 }
 
 void Post2dWindowZoneDataItem::showNodeAttributeBrowser()

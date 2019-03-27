@@ -156,6 +156,16 @@ vtkPolyData* PostZoneDataContainer::polyData(const std::string& name) const
 	return it->second.Get();
 }
 
+const std::vector<int>& PostZoneDataContainer::polyDataCellIds(const std::string& name) const
+{
+	auto it = m_polyDataCellIdsMap.find(name);
+	if (it == m_polyDataCellIdsMap.end()) {
+		// returns the first.
+		it = m_polyDataCellIdsMap.begin();
+	}
+	return it->second;
+}
+
 int PostZoneDataContainer::baseId() const
 {
 	return m_baseId;
@@ -920,7 +930,7 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 	// load particles
 	ret = ParticleLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_particleData, this->offset());
 	// load polydata
-	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_polyDataMap, this->offset());
+	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_polyDataMap, &m_polyDataCellIdsMap, this->offset());
 
 	if (! disableCalculatedResult) {
 		addCalculatedResultArrays();

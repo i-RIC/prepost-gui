@@ -36,6 +36,7 @@ public:
 	vtkPolyData* particleData() const;
 	const std::map<std::string, vtkSmartPointer<vtkPolyData> >& polyDataMap() const;
 	vtkPolyData* polyData(const std::string& name) const;
+	const std::vector<int>& polyDataCellIds(const std::string& name) const;
 
 	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 
@@ -114,6 +115,7 @@ private:
 	vtkSmartPointer<vtkPolyData> m_particleData;
 	std::vector<PostCalculatedResult*> m_calculatedResults;
 	std::map<std::string, vtkSmartPointer<vtkPolyData> > m_polyDataMap;
+	std::map<std::string, std::vector<int> > m_polyDataCellIdsMap;
 	std::string m_baseName;
 	std::string m_zoneName;
 	int m_baseId;

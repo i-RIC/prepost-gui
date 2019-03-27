@@ -66,7 +66,7 @@ int loadArrayWithName(const std::string& name, const std::string& suffix, std::v
 	return loadArrayWithName(tmpname, vals);
 }
 
-int loadPolyData(const std::string& name, vtkPolyData* polyData, const QPointF& offset)
+int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int>* ids, const QPointF& offset)
 {
 	std::vector<int> typeVec;
 	std::vector<int> sizeVec;
@@ -112,18 +112,20 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, const QPointF& 
 					tri_ids[j] = triIds->GetId(triFirst + j) + startIdx;
 				}
 				polys->InsertNextCell(3, tri_ids);
+				ids->push_back(i);
 				triFirst += 3;
 				++ cellCount;
 			}
 			cellCounts.push_back(cellCount);
 		} else {
-			std::vector<vtkIdType> ids;
+			std::vector<vtkIdType> tmp_ids;
 			for (int j = 0; j < s; ++j) {
 				points->InsertNextPoint(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y(), 0);
-				ids.push_back(startIdx + j);
+				tmp_ids.push_back(startIdx + j);
 			}
-			lines->InsertNextCell(ids.size(), ids.data());
+			lines->InsertNextCell(tmp_ids.size(), tmp_ids.data());
 			cellCounts.push_back(1);
+			ids->push_back(i);
 		}
 		startIdx += s;
 	}
@@ -202,7 +204,7 @@ std::vector<std::string> loadPolyDataNames()
 
 } // namespace
 
-bool PostZoneDataContainer::PolyDataLoader::load(int fid, int bid, int zid, int step, std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, const QPointF& offset)
+bool PostZoneDataContainer::PolyDataLoader::load(int fid, int bid, int zid, int step, std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, const QPointF& offset)
 {
 	polyDataMap->clear();
 	std::ostringstream ss;
@@ -213,10 +215,12 @@ bool PostZoneDataContainer::PolyDataLoader::load(int fid, int bid, int zid, int 
 	auto names = loadPolyDataNames();
 	for (auto name : names) {
 		vtkSmartPointer<vtkPolyData> polyData = vtkSmartPointer<vtkPolyData>::New();
-		int ret = loadPolyData(name, polyData.Get(), offset);
+		std::vector<int> ids;
+		int ret = loadPolyData(name, polyData.Get(), &ids, offset);
 		if (ret != 0) {return false;}
 
 		polyDataMap->insert({name, polyData});
+		polyDataCellIdsMap->insert({name, ids});
 	}
 	return true;
 }

@@ -107,12 +107,12 @@ private:
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
 	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
 	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
-	vtkIdType findPolyDataCell(const std::string& name, const QPoint& p, VTKGraphicsView* v);
+	int findPolyDataCell(const std::string& name, const QPoint& p, VTKGraphicsView* v);
 	void updateCellInputAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
 	void updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	void updateParticleResultAttributeBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
-	void updatePolyDataResultAttributeBrowser(const std::string& name, vtkIdType cellid, VTKGraphicsView* v);
+	void updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* v);
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
