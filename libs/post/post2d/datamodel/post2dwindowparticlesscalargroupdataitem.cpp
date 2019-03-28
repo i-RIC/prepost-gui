@@ -44,7 +44,7 @@ Post2dWindowParticlesScalarGroupDataItem::~Post2dWindowParticlesScalarGroupDataI
 {
 	vtkRenderer* r = renderer();
 	r->RemoveActor(m_actor);
-	m_scalarBarWidget->SetInteractor(0);
+	m_scalarBarWidget->SetInteractor(nullptr);
 }
 
 void Post2dWindowParticlesScalarGroupDataItem::updateZDepthRangeItemCount()

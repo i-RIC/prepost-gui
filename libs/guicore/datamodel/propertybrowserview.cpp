@@ -56,6 +56,17 @@ void PropertyBrowserView::resetForParticle()
 	resetAttributes();
 }
 
+void PropertyBrowserView::resetForPolyData()
+{
+	ui->indicesGroupBox->show();
+	ui->coordinatesGroupBox->hide();
+	ui->attLabel->show();
+	ui->attributesTable->show();
+	resetBase(false);
+	updateGeometry();
+	resetAttributes();
+}
+
 void PropertyBrowserView::hideAll()
 {
 	ui->indicesGroupBox->hide();
@@ -104,7 +115,7 @@ void PropertyBrowserView::setVertexAttributes(vtkIdType index, double x, double 
 	updateCoords(x, y);
 	updateAttributes(attr);
 	if (m_targetDataItem) {
-		m_targetDataItem->setPoint(QVector2D(x, y));
+		m_targetDataItem->setPoint(QPointF(x, y));
 	}
 }
 
@@ -115,7 +126,7 @@ void PropertyBrowserView::setVertexAttributes(unsigned int i, unsigned int j, do
 	updateCoords(x, y);
 	updateAttributes(attr);
 	if (m_targetDataItem) {
-		m_targetDataItem->setPoint(QVector2D(x, y));
+		m_targetDataItem->setPoint(QPointF(x, y));
 	}
 }
 
@@ -146,7 +157,27 @@ void PropertyBrowserView::setParticleAttributes(vtkIdType index, double x, doubl
 	updateCoords(x, y);
 	updateAttributes(attr);
 	if (m_targetDataItem) {
-		m_targetDataItem->setPoint(QVector2D(x, y));
+		m_targetDataItem->setPoint(QPointF(x, y));
+	}
+}
+
+void PropertyBrowserView::setPolyDataAttributes(const std::vector<QPolygonF>& polygons, vtkIdType index, const QList<PropertyBrowserAttribute>& attr)
+{
+	resetAttributes(true);
+	updateIndex(index);
+	updateAttributes(attr);
+	if (m_targetDataItem) {
+		m_targetDataItem->setPolygons(polygons);
+	}
+}
+
+void PropertyBrowserView::setPolyDataAttributes(const std::vector<QPointF>& polyline, vtkIdType index, const QList<PropertyBrowserAttribute>& attr)
+{
+	resetAttributes(true);
+	updateIndex(index);
+	updateAttributes(attr);
+	if (m_targetDataItem) {
+		m_targetDataItem->setPolyline(polyline);
 	}
 }
 

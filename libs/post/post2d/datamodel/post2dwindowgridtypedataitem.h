@@ -22,36 +22,40 @@ class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public PostWin
 
 public:
 	Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
-	virtual ~Post2dWindowGridTypeDataItem();
+	~Post2dWindowGridTypeDataItem() override;
+	const std::string& name() const;
 	const QList<Post2dWindowZoneDataItem*>& zoneDatas() const;
-	const std::string& name();
 	Post2dWindowZoneDataItem* zoneData(const std::string& name) const;
 	SolverDefinitionGridType* gridType() const override;
 	Post2dWindowGeoDataTopDataItem* geoDataItem() const;
 
-	LookupTableContainer* nodeLookupTable(const std::string& attName) override;
-	LookupTableContainer* cellLookupTable(const std::string& attName) override;
-	LookupTableContainer* particleLookupTable(const std::string& attName) override;
+	LookupTableContainer* nodeLookupTable(const std::string& attName);
+	LookupTableContainer* cellLookupTable(const std::string& attName);
+	LookupTableContainer* particleLookupTable(const std::string& attName);
+	LookupTableContainer* polyDataLookupTable(const std::string& attName);
+
 	void setupZoneDataItems();
 	void update();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
 	void updateCellLookupTableRanges();
 	void updateNodeLookupTableRanges();
 	void updateParticleLookupTableRanges();
+	void updatePolyDataLookupTableRanges();
 
 	void setupNodeScalarsToColors(const std::string& name);
 	void setupCellScalarsToColors(const std::string& name);
 	void setupParticleScalarsToColors(const std::string& name);
+	void setupPolyDataScalarsToColors(const std::string& name);
 
 	SolverDefinitionGridType* m_gridType;
 	QMap<std::string, LookupTableContainer*> m_cellLookupTables;
 	QMap<std::string, LookupTableContainer*> m_nodeLookupTables;
 	QMap<std::string, LookupTableContainer*> m_particleLookupTables;
+	QMap<std::string, LookupTableContainer*> m_polyDataLookupTables;
 	QMap<std::string, Post2dWindowZoneDataItem*> m_zoneDataNameMap;
 	Post2dWindowGeoDataTopDataItem* m_geoDataItem;
 	QList<Post2dWindowZoneDataItem*> m_zoneDatas;

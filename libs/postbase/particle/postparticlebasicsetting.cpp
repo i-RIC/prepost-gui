@@ -19,8 +19,8 @@ PostParticleBasicSetting::PostParticleBasicSetting(const PostParticleBasicSettin
 	CompositeContainer::copyValue(s);
 }
 
-XmlAttributeContainer& PostParticleBasicSetting::operator=(const XmlAttributeContainer& c)
+PostParticleBasicSetting& PostParticleBasicSetting::operator=(const PostParticleBasicSetting& s)
 {
-	CompositeContainer::copyValue(dynamic_cast<const PostParticleBasicSetting&> (c));
+	CompositeContainer::copyValue(s);
 	return *this;
 }

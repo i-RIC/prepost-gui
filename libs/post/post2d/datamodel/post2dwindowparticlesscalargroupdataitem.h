@@ -32,20 +32,17 @@ public:
 	void updateZDepthRangeItemCount();
 	void assignActionZValues(const ZDepthRange& range);
 	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void addCustomMenuItems(QMenu* menu);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
-
-protected:
-	void updateVisibility(bool visible) override;
 
 private:
 	void setupActors();
@@ -54,6 +51,7 @@ private:
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void updateVisibility(bool visible) override;
 
 	ScalarSettingContainer m_setting;
 	QMap<std::string, QString> m_scalarbarTitleMap;

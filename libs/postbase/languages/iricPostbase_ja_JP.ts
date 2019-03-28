@@ -205,6 +205,57 @@
     </message>
 </context>
 <context>
+    <name>PostPolyDataBasicSettingDialog</name>
+    <message>
+        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="14"/>
+        <source>Polygon Setting</source>
+        <translation>ポリゴン設定</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="22"/>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="53"/>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
+    </message>
+</context>
+<context>
+    <name>PostPolyDataScalarPropertyDialog</name>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="14"/>
+        <source>Polygon Setting</source>
+        <translation>ポリゴン設定</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="26"/>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="64"/>
+        <source>Color by attribute value</source>
+        <translation>属性値により自動設定</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="89"/>
+        <source>Attribute:</source>
+        <translation>属性:</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="127"/>
+        <source>Line Width</source>
+        <translation>線の幅:</translation>
+    </message>
+    <message>
+        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="171"/>
+        <source>&amp;Color Bar Setting</source>
+        <translation>カラーバー設定(&amp;C)</translation>
+    </message>
+</context>
+<context>
     <name>PostTimeDataItem</name>
     <message>
         <location filename="../time/posttimedataitem.cpp" line="35"/>

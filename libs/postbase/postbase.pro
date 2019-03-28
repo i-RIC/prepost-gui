@@ -87,6 +87,9 @@ HEADERS += cfshapeexportwindowi.h \
            particle/postparticlebasicsettingdialog.h \
            particle/postparticlescalarpropertydialog.h \
            particle/postparticlevectorpropertydialog.h \
+           polydata/postpolydatabasicsetting.h \
+           polydata/postpolydatabasicsettingdialog.h \
+           polydata/postpolydatascalarpropertydialog.h \
            time/posttimedataitem.h \
            time/posttimeeditdialog.h \
            title/posttitledataitem.h \
@@ -98,6 +101,8 @@ FORMS += postallzoneselectingdialog.ui \
          particle/postparticlebasicsettingdialog.ui \
          particle/postparticlescalarpropertydialog.ui \
          particle/postparticlevectorpropertydialog.ui \
+         polydata/postpolydatabasicsettingdialog.ui \
+         polydata/postpolydatascalarpropertydialog.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
 SOURCES += post2dwindowcontoursetting.cpp \
@@ -106,6 +111,9 @@ SOURCES += post2dwindowcontoursetting.cpp \
            particle/postparticlebasicsettingdialog.cpp \
            particle/postparticlescalarpropertydialog.cpp \
            particle/postparticlevectorpropertydialog.cpp \
+           polydata/postpolydatabasicsetting.cpp \
+           polydata/postpolydatabasicsettingdialog.cpp \
+           polydata/postpolydatascalarpropertydialog.cpp \
            time/posttimedataitem.cpp \
            time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \

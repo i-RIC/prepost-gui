@@ -25,6 +25,7 @@ public:
 	vtkPolyData* polygonsPolyData() const;
 
 	void setPolygons(const std::vector<QPolygonF>& polygons);
+	void setPolygon(const QPolygonF& polygon);
 
 private:
 	class Impl;

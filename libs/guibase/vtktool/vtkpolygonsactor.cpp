@@ -134,3 +134,11 @@ void vtkPolygonsActor::setPolygons(const std::vector<QPolygonF>& polygons)
 	impl->m_pointsPolyData->BuildLinks();
 	impl->m_pointsPolyData->Modified();
 }
+
+void vtkPolygonsActor::setPolygon(const QPolygonF& polygon)
+{
+	std::vector<QPolygonF> polygons;
+
+	polygons.push_back(polygon);
+	setPolygons(polygons);
+}

@@ -15,6 +15,7 @@
 #include "post2dwindownodevectorstreamlinegroupstructureddataitem.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 #include "post2dwindowparticlestopdataitem.h"
+#include "post2dwindowpolydatatopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/base/propertybrowser.h>
@@ -44,7 +45,9 @@
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkDataArray.h>
+#include <vtkLine.h>
 #include <vtkPointData.h>
+#include <vtkPolyLine.h>
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
@@ -57,13 +60,14 @@
 Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_shapeDataItem {nullptr},
-	m_cellScalarGroupTopDataItem {nullptr},
 	m_scalarGroupTopDataItem {nullptr},
+	m_cellScalarGroupTopDataItem {nullptr},
 	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
 	m_particleGroupDataItem {nullptr},
 	m_cellFlagGroupDataItem {nullptr},
 	m_particlesDataItem {nullptr},
+	m_polyDataDataItem {nullptr},
 	m_graphGroupDataItem {nullptr},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber},
@@ -102,30 +106,22 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	if (cont->particleData() != nullptr) {
 		m_particlesDataItem = new Post2dWindowParticlesTopDataItem(this);
 	}
+	if (cont->polyDataMap().size() > 0) {
+		m_polyDataDataItem = new Post2dWindowPolyDataTopDataItem(this);
+	}
 
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
 
-	m_childItems.push_back(m_shapeDataItem);
-	if (cont->vectorValueExists()) {
-		m_childItems.push_back(m_arrowGroupDataItem);
-		if (m_particleGroupDataItem != nullptr) {
-			m_childItems.push_back(m_particleGroupDataItem);
-		}
-		m_childItems.push_back(m_streamlineGroupDataItem);
-	}
-	if (cont->particleData() != nullptr) {
-		m_childItems.push_back(m_particlesDataItem);
-	}
-	if (m_graphGroupDataItem != nullptr) {
-		m_childItems.push_back(m_graphGroupDataItem);
-	}
-	if (cont->scalarValueExists()) {
-		m_childItems.push_back(m_scalarGroupTopDataItem);
-	}
-	m_childItems.push_back(m_cellFlagGroupDataItem);
-	if (cont->cellScalarValueExists()) {
-		m_childItems.push_back(m_cellScalarGroupTopDataItem);
-	}
+	addChildItem(m_shapeDataItem);
+	addChildItem(m_arrowGroupDataItem);
+	addChildItem(m_particleGroupDataItem);
+	addChildItem(m_streamlineGroupDataItem);
+	addChildItem(m_particlesDataItem);
+	addChildItem(m_polyDataDataItem);
+	addChildItem(m_graphGroupDataItem);
+	addChildItem(m_scalarGroupTopDataItem);
+	addChildItem(m_cellFlagGroupDataItem);
+	addChildItem(m_cellScalarGroupTopDataItem);
 
 	m_showAttributeBrowserActionForNodeResult = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForNodeResult, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
@@ -135,8 +131,12 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	m_showAttributeBrowserActionForCellInput = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForCellInput, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
+
 	m_showAttributeBrowserActionForParticleResult = new QAction(tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForParticleResult, SIGNAL(triggered()), this, SLOT(showParticleBrowser()));
+
+	m_showAttributeBrowserActionForPolyDataResult = new QAction(tr("Show Attribute Browser"), this);
+	connect(m_showAttributeBrowserActionForPolyDataResult, SIGNAL(triggered()), this, SLOT(showPolyDataBrowser()));
 
 	setupActors();
 	updateRegionPolyData();
@@ -145,6 +145,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 Post2dWindowZoneDataItem::~Post2dWindowZoneDataItem()
 {
 	renderer()->RemoveActor(m_regionActor);
+	delete m_polyDataDataItem;
 }
 
 void Post2dWindowZoneDataItem::setupActors()
@@ -203,6 +204,10 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! particlesNode.isNull() && m_particlesDataItem != nullptr) {
 		m_particlesDataItem->loadFromProjectMainFile(particlesNode);
 	}
+	QDomNode polyDataNode = iRIC::getChildNode(node, "SolverPolyData");
+	if (! polyDataNode.isNull() && m_polyDataDataItem != nullptr) {
+		m_polyDataDataItem->loadFromProjectMainFile(polyDataNode);
+	}
 	QDomNode graphNode = iRIC::getChildNode(node, "GraphGroup");
 	if (! graphNode.isNull() && m_graphGroupDataItem != nullptr) {
 		m_graphGroupDataItem->loadFromProjectMainFile(graphNode);
@@ -248,6 +253,11 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	if (m_particlesDataItem != nullptr) {
 		writer.writeStartElement("SolverParticles");
 		m_particlesDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (m_polyDataDataItem != nullptr) {
+		writer.writeStartElement("SolverPolyData");
+		m_polyDataDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	if (m_graphGroupDataItem != nullptr) {
@@ -353,6 +363,11 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		m_particlesDataItem->update();
 		qDebug("Solver Particles: %d", time.elapsed());
 	}
+	if (m_polyDataDataItem != nullptr) {
+		time.restart();
+		m_polyDataDataItem->update();
+		qDebug("Solver PolyData: %d", time.elapsed());
+	}
 	if (m_graphGroupDataItem != nullptr) {
 		time.restart();
 		m_graphGroupDataItem->update();
@@ -399,6 +414,11 @@ Post2dWindowCellScalarGroupTopDataItem* Post2dWindowZoneDataItem::cellScalarGrou
 Post2dWindowParticlesTopDataItem* Post2dWindowZoneDataItem::particlesDataItem() const
 {
 	return m_particlesDataItem;
+}
+
+Post2dWindowPolyDataTopDataItem* Post2dWindowZoneDataItem::polyDataDataItem() const
+{
+	return m_polyDataDataItem;
 }
 
 Post2dWindowGraphGroupDataItem* Post2dWindowZoneDataItem::graphGroupDataItem() const
@@ -923,6 +943,53 @@ void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(const QPoint
 	updateParticleResultAttributeBrowser(pid, vertex[0], vertex[1], v);
 }
 
+void Post2dWindowZoneDataItem::initPolyDataResultAttributeBrowser()
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	pb->view()->resetForPolyData();
+}
+
+void Post2dWindowZoneDataItem::clearPolyDataResultAttributeBrowser()
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	pb->view()->hideAll();
+}
+
+void Post2dWindowZoneDataItem::fixPolyDataResultAttributeBrowser(const std::string& name, const QPoint& p, VTKGraphicsView* v)
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (! pb->isVisible()) {return;}
+
+	vtkIdType pid = findPolyDataCell(name, p, v);
+	m_attributeBrowserFixed = (pid >= 0);
+	if (pid < 0) {
+		// no cell is near.
+		pb->view()->resetAttributes();
+		return;
+	}
+
+	updatePolyDataResultAttributeBrowser(name, p, v);
+}
+
+void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::string& name, const QPoint& p, VTKGraphicsView* v)
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (! pb->isVisible()) {return;}
+	if (m_attributeBrowserFixed) {return;}
+
+	vtkIdType pid = findPolyDataCell(name, p, v);
+	if (pid < 0) {
+		// no cell is near
+		pb->view()->resetAttributes();
+		return;
+	}
+	updatePolyDataResultAttributeBrowser(name, pid, v);
+}
+
 vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsView* v)
 {
 	double x = p.x();
@@ -948,6 +1015,28 @@ vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsVie
 		return -1;
 	}
 	return pid;
+}
+
+int Post2dWindowZoneDataItem::findPolyDataCell(const std::string& name, const QPoint& p, VTKGraphicsView* v)
+{
+	double x = p.x();
+	double y = p.y();
+	Post2dWindowGraphicsView* v2 = dynamic_cast<Post2dWindowGraphicsView*>(v);
+	v2->viewportToWorld(x, y);
+
+	PostZoneDataContainer* cont = dataContainer();
+	double point[3];
+	point[0] = x; point[1] = y; point[2] = 0;
+	vtkCell* hintCell = nullptr;
+	double pcoords[4];
+	double weights[4];
+	double limitDist = v2->stdRadius(iRIC::nearRadius());
+	double d2 = limitDist * limitDist;
+	int subid;
+	vtkIdType cellid = cont->polyData(name)->FindCell(point, hintCell, 0, d2, subid, pcoords, weights);
+	if (cellid < 0) {return cellid;}
+
+	return cont->polyDataCellIds(name).at(cellid);
 }
 
 void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(vtkIdType pid, double x, double y, VTKGraphicsView* /*v*/)
@@ -985,6 +1074,79 @@ void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(vtkIdType pi
 	pb->view()->setParticleAttributes(pid, x, y, atts);
 }
 
+void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* v)
+{
+	PostZoneDataContainer* cont = dataContainer();
+	QList<PropertyBrowserAttribute> atts;
+	auto polyData = cont->polyData(name);
+	const auto& polyDataCellIds = cont->polyDataCellIds(name);
+	auto s_it = std::lower_bound(polyDataCellIds.begin(), polyDataCellIds.end(), cellid);
+	auto first_id = s_it - polyDataCellIds.begin();
+
+	int count = polyData->GetCellData()->GetNumberOfArrays();
+
+	for (int i = 0; i < count; ++i) {
+		vtkAbstractArray* arr = polyData->GetCellData()->GetAbstractArray(i);
+		vtkDataArray* da = dynamic_cast<vtkDataArray*>(arr);
+		if (da == nullptr) {continue;}
+		if (da->GetNumberOfComponents() == 1) {
+			// scalar value
+			double val = da->GetComponent(first_id, 0);
+			PropertyBrowserAttribute att(da->GetName(), val);
+			atts.append(att);
+		} else if (da->GetNumberOfComponents() == 3) {
+			// vector value
+			double val = da->GetComponent(first_id, 0);
+			QString attName = da->GetName();
+			attName.append("X");
+			PropertyBrowserAttribute att(attName, val);
+			atts.append(att);
+
+			val = da->GetComponent(first_id, 1);
+			attName = da->GetName();
+			attName.append("Y");
+			att = PropertyBrowserAttribute(attName, val);
+			atts.append(att);
+		}
+	}
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+
+	std::vector<QPolygonF> polygons;
+	for (auto it = s_it; *it == cellid; ++it) {
+		auto tmp_id = it - polyDataCellIds.begin();
+		vtkCell* cell = polyData->GetCell(tmp_id);
+		auto line = dynamic_cast<vtkLine*>(cell);
+		auto polyline = dynamic_cast<vtkPolyLine*>(cell);
+		if (line != nullptr || polyline != nullptr) {
+			auto points = cell->GetPoints();
+			auto ids = cell->GetPointIds();
+			std::vector<QPointF> l;
+			for (vtkIdType i = 0; i < ids->GetNumberOfIds(); ++i) {
+				double v[3];
+				points->GetPoint(i, v);
+				l.push_back(QPointF(v[0], v[1]));
+			}
+			pb->view()->setPolyDataAttributes(l, cellid, atts);
+			return;
+		} else {
+			auto points = cell->GetPoints();
+			auto ids = cell->GetPointIds();
+			QPolygonF p;
+			for (vtkIdType i = 0; i < ids->GetNumberOfIds(); ++i) {
+				double v[3];
+				points->GetPoint(i, v);
+				p.push_back(QPointF(v[0], v[1]));
+			}
+			double v[3];
+			points->GetPoint(0, v);
+			p.push_back(QPointF(v[0], v[1]));
+
+			polygons.push_back(p);
+		}
+	}
+	pb->view()->setPolyDataAttributes(polygons, cellid, atts);
+}
 
 void Post2dWindowZoneDataItem::showNodeAttributeBrowser()
 {
@@ -1003,6 +1165,13 @@ void Post2dWindowZoneDataItem::showCellAttributeBrowser()
 void Post2dWindowZoneDataItem::showParticleBrowser()
 {
 	initParticleResultAttributeBrowser();
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	w->propertyBrowser()->show();
+}
+
+void Post2dWindowZoneDataItem::showPolyDataBrowser()
+{
+	initPolyDataResultAttributeBrowser();
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }
@@ -1057,4 +1226,9 @@ QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForCellResult() con
 QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForParticleResult() const
 {
 	return m_showAttributeBrowserActionForParticleResult;
+}
+
+QAction* Post2dWindowZoneDataItem::showAttributeBrowserActionForPolyDataResult() const
+{
+	return m_showAttributeBrowserActionForPolyDataResult;
 }

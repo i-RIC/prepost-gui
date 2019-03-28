@@ -240,6 +240,9 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowparticlesvectordataitem.h \
            datamodel/post2dwindowparticlesvectorgroupdataitem.h \
            datamodel/post2dwindowparticleunstructuredsettingdialog.h \
+           datamodel/post2dwindowpolydatagroupdataitem.h \
+           datamodel/post2dwindowpolydatatopdataitem.h \
+           datamodel/post2dwindowpolydatavaluedataitem.h \
            datamodel/post2dwindowrootdataitem.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
@@ -254,7 +257,9 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.h
+           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.h \
+           datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.h
 FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowarrowstructuredsettingdialog.ui \
          datamodel/post2dwindowarrowunstructuredsettingdialog.ui \
@@ -321,6 +326,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowparticlesvectordataitem.cpp \
            datamodel/post2dwindowparticlesvectorgroupdataitem.cpp \
            datamodel/post2dwindowparticleunstructuredsettingdialog.cpp \
+           datamodel/post2dwindowpolydatagroupdataitem.cpp \
+           datamodel/post2dwindowpolydatatopdataitem.cpp \
+           datamodel/post2dwindowpolydatavaluedataitem.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
@@ -333,7 +341,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp
+           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.cpp \
+           datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.cpp
 RESOURCES += post2d.qrc
 TRANSLATIONS += languages/iricPost2d_es_ES.ts \
                 languages/iricPost2d_fr_FR.ts \

@@ -5,11 +5,12 @@
 #include <guicore/datamodel/graphics2dwindowdatamodel.h>
 
 class PostSolutionInfo;
-class Post2dWindow;
-class Post2dWindowRootDataItem;
-class Post2dWindowGraphicsView;
 class Post2dObjectBrowser;
 class Post2dObjectBrowserView;
+class Post2dWindow;
+class Post2dWindowGraphicsView;
+class Post2dWindowRootDataItem;
+class Post2dWindowPolyDataGroupDataItem;
 class Post2dWindowZoneDataItem;
 class MeasuredDataFileDataItem;
 
@@ -42,6 +43,7 @@ public slots:
 	void vectorSetting();
 	void streamlineSetting();
 	void particleSetting();
+	void polygonSetting();
 	void cellFlagSetting();
 	void cellScalarSetting();
 	void titleSetting();
@@ -59,6 +61,7 @@ private:
 
 	Post2dWindowRootDataItem* rootDataItem() const;
 	Post2dWindowZoneDataItem* getZoneDataItem();
+	Post2dWindowPolyDataGroupDataItem* getPolyDataGroupItem();
 	MeasuredDataFileDataItem* getMeasuredDataFileDataItem();
 	double m_zScale;
 
