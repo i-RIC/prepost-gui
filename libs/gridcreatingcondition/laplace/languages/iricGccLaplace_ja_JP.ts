@@ -221,8 +221,12 @@
     </message>
     <message>
         <location filename="../gridcreatingconditionlaplacebuildbanklinesdialog.ui" line="65"/>
-        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the tenter line.</source>
+        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
         <translation>ヒント: 左岸線と右岸線は、中心線から、指定した距離だけ中心線から離れた点を繋いで生成されます。</translation>
+    </message>
+    <message>
+        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the tenter line.</source>
+        <translation type="vanished">ヒント: 左岸線と右岸線は、中心線から、指定した距離だけ中心線から離れた点を繋いで生成されます。</translation>
     </message>
 </context>
 <context>

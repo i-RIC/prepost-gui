@@ -221,7 +221,7 @@
     </message>
     <message>
         <location filename="../gridcreatingconditionlaplacebuildbanklinesdialog.ui" line="65"/>
-        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the tenter line.</source>
+        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

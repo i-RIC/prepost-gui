@@ -17,85 +17,85 @@
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="241"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="242"/>
         <source>Build Left bank and Right bank lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="242"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="243"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="243"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="244"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="250"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="251"/>
         <source>&amp;Import Right Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="244"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="245"/>
         <source>Import C&amp;enter Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="245"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="246"/>
         <source>Export Ce&amp;nter Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="246"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="247"/>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="247"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="248"/>
         <source>Import &amp;Left Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="248"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="249"/>
         <source>Export Le&amp;ft Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="249"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="250"/>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="251"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="252"/>
         <source>Export Ri&amp;ght Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="252"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="253"/>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="522"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="669"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="681"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="523"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="682"/>
         <location filename="../gridcreatingconditionpoisson.cpp" line="991"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="523"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="524"/>
         <source>%1 not defined yet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="669"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="681"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="682"/>
         <source>Grid region not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -105,16 +105,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1059"/>
         <location filename="../gridcreatingconditionpoisson.cpp" line="1064"/>
         <source>Center line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1074"/>
         <location filename="../gridcreatingconditionpoisson.cpp" line="1079"/>
         <source>Left bank line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1089"/>
         <location filename="../gridcreatingconditionpoisson.cpp" line="1094"/>
         <source>Right bank line</source>
         <translation type="unfinished"></translation>
@@ -150,12 +153,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditionpoisson_coordinateseditor.cpp" line="34"/>
+        <location filename="../private/gridcreatingconditionpoisson_coordinateseditor.cpp" line="35"/>
         <source>%1 Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditionpoisson_editcoordinatescommand.cpp" line="6"/>
+        <location filename="../private/gridcreatingconditionpoisson_editcoordinatescommand.cpp" line="8"/>
         <source>Edit %1 Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -163,12 +166,12 @@
 <context>
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="534"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="535"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="534"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="535"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -197,7 +200,7 @@
     </message>
     <message>
         <location filename="../gridcreatingconditionpoissonbuildbanklinesdialog.ui" line="65"/>
-        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the tenter line.</source>
+        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
