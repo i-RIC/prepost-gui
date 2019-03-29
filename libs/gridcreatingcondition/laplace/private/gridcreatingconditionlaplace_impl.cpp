@@ -1386,6 +1386,7 @@ void GridCreatingConditionLaplace::Impl::buildBankLines()
 
 	m_previousLeftBankDistance = leftDist;
 	m_previousRightBankDistance = rightDist;
+	iRICUndoStack::instance().clear();
 }
 
 void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProcessorGraphicsViewInterface* v)

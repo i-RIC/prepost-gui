@@ -1047,6 +1047,7 @@ void GridCreatingConditionPoisson::buildBankLines()
 	impl->updateLabelsAndSplines();
 
 	renderGraphicsView();
+	iRICUndoStack::instance().clear();
 }
 
 void GridCreatingConditionPoisson::importCenterLine()
