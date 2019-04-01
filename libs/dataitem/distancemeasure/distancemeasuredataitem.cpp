@@ -37,15 +37,6 @@
 
 #define LABEL "Label"
 
-namespace {
-
-QVector2D toVec(const QPointF v)
-{
-	return QVector2D(v.x(), v.y());
-}
-
-} // namespace
-
 DistanceMeasureDataItem::Impl::Impl(DistanceMeasureDataItem* parent) :
 	m_dragPointTarget {0},
 	m_mouseEventMode {meBeforeDefining},
@@ -329,7 +320,7 @@ void DistanceMeasureDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 
 QString DistanceMeasureDataItem::autoLabel() const
 {
-	return QString::number(toVec(impl->m_setting.point2 - impl->m_setting.point1).length());
+	return QString::number(iRIC::length(impl->m_setting.point2 - impl->m_setting.point1));
 }
 
 void DistanceMeasureDataItem::showPropDialog()
@@ -429,20 +420,20 @@ void DistanceMeasureDataItem::updateMouseEventMode(const QPointF& v, VTKGraphics
 	case Impl::meNormal:
 	case Impl::meMoveVertexPrepare:
 	case Impl::meTranslatePrepare:
-		if (toVec(impl->m_setting.point1 - v).length() < view2->stdRadius(iRIC::nearRadius())) {
+		if (iRIC::length(impl->m_setting.point1 - v) < view2->stdRadius(iRIC::nearRadius())) {
 			impl->m_mouseEventMode = Impl::meMoveVertexPrepare;
 			impl->m_dragPointTarget = 1;
-		} else if (toVec(impl->m_setting.point2 - v).length() < view2->stdRadius(iRIC::nearRadius())) {
+		} else if (iRIC::length(impl->m_setting.point2 - v) < view2->stdRadius(iRIC::nearRadius())) {
 			impl->m_mouseEventMode = Impl::meMoveVertexPrepare;
 			impl->m_dragPointTarget = 2;
 		} else {
-			QVector2D horizontal = toVec(impl->m_setting.point2 - impl->m_setting.point1);
-			QVector2D vertical = horizontal.normalized();
+			QPointF horizontal = impl->m_setting.point2 - impl->m_setting.point1;
+			QPointF vertical = iRIC::normalize(horizontal);
 			iRIC::rotateVector90(vertical);
 			double width = view2->stdRadius(iRIC::nearRadius());
 			vertical *= width;
-			QVector2D posv = toVec(impl->m_setting.point1) - vertical * 0.5;
-			if (iRIC::isInsideParallelogram(toVec(v), posv, horizontal, vertical)) {
+			QPointF posv = impl->m_setting.point1 - vertical * 0.5;
+			if (iRIC::isInsideParallelogram(v, posv, horizontal, vertical)) {
 				impl->m_mouseEventMode = Impl::meTranslatePrepare;
 			} else {
 				impl->m_mouseEventMode = Impl::meNormal;

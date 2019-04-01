@@ -18,8 +18,8 @@ public:
 
 private:
 	GeoDataRiverPathPoint* m_point;
-	QVector2D m_oldDirection;
-	QVector2D m_newDirection;
+	QPointF m_oldDirection;
+	QPointF m_newDirection;
 	GeoDataRiverSurvey* m_rs;
 };
 

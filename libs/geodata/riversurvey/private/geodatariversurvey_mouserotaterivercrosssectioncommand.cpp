@@ -27,8 +27,8 @@ GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::MouseRotateRiverCrossse
 	toY = to.y();
 	gview->viewportToWorld(fromX, fromY);
 	gview->viewportToWorld(toX, toY);
-	QVector2D vec1 = QVector2D(fromX - m_point->position().x(), fromY - m_point->position().y());
-	QVector2D vec2 = QVector2D(toX - m_point->position().x(), toY - m_point->position().y());
+	QPointF vec1 = QPointF(fromX - m_point->position().x(), fromY - m_point->position().y());
+	QPointF vec2 = QPointF(toX - m_point->position().x(), toY - m_point->position().y());
 	double angle = iRIC::angleRadian(vec1, vec2);
 
 	m_newDirection = m_oldDirection;

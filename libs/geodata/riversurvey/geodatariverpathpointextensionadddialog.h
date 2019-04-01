@@ -21,15 +21,13 @@ class GeoDataRiverPathPointExtensionAddDialog : public QDialog
 public:
 	enum LineMode {Left, Right};
 	explicit GeoDataRiverPathPointExtensionAddDialog(GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs, QWidget* parent = nullptr);
-	~GeoDataRiverPathPointExtensionAddDialog();
-	void setLineMode(LineMode lm) {
-		m_lineMode = lm;
-	}
+	~GeoDataRiverPathPointExtensionAddDialog() override;
+	void setLineMode(LineMode lm);
 
 public slots:
 	void accept() override;
 	void reject() override;
-	void setPoint(const QVector2D& position);
+	void setPoint(const QPointF& position);
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);
@@ -39,7 +37,7 @@ private:
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverSurvey* m_rs;
 	bool m_applyed;
-	QVector2D m_position;
+	QPointF m_position;
 
 private:
 	Ui::GeoDataRiverPathPointExtensionAddDialog* ui;

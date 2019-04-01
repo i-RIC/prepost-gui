@@ -62,7 +62,7 @@
    <item>
     <widget class="QLabel" name="hintLabel">
      <property name="text">
-      <string>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the tenter line.</string>
+      <string>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

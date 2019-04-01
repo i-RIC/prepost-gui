@@ -18,6 +18,7 @@ public:
 
 	std::vector<QPointF> polyLine() const;
 	void setPolyLine(const std::vector<QPointF>& polyLine);
+	void clear();
 
 	bool isVertexSelectable(const QPointF& pos, double limitDistance, int* vid);
 	bool isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId);

@@ -10,7 +10,7 @@
 
 class QLineF;
 class QTextStream;
-class QVector2D;
+class QPointF;
 
 class RectRegion
 {
@@ -63,11 +63,11 @@ public:
 	unsigned int cellIndex(unsigned int i, unsigned int j) const;
 	void getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j);
 
-	QVector2D vertex(unsigned int index) const override;
-	QVector2D vertex(unsigned int i, unsigned int j) const;
+	QPointF vertex(unsigned int index) const override;
+	QPointF vertex(unsigned int i, unsigned int j) const;
 
-	void setVertex(unsigned int i, unsigned int j, const QVector2D& v);
-	void setVertex(unsigned int index, const QVector2D& v) override;
+	void setVertex(unsigned int i, unsigned int j, const QPointF& v);
+	void setVertex(unsigned int index, const QPointF& v) override;
 
 	bool loadFromCgnsFile(const int fn, int base, int zoneid) override;
 	bool saveToCgnsFile(const int fn, int base, const char* zonename) override;

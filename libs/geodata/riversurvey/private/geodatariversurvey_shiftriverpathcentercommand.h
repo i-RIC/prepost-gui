@@ -16,8 +16,8 @@ public:
 private:
 	bool m_apply;
 	QList<GeoDataRiverPathPoint*> m_points;
-	QList<QVector2D> m_oldPositions;
-	QList<QVector2D> m_newPositions;
+	QList<QPointF> m_oldPositions;
+	QList<QPointF> m_newPositions;
 	QList<GeoDataRiverCrosssection::AltitudeList> m_oldCrosssections;
 	QList<GeoDataRiverCrosssection::AltitudeList> m_newCrosssections;
 	GeoDataRiverSurvey* m_rs;

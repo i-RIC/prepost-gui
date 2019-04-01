@@ -28,7 +28,7 @@ GeoDataRiverPathPoint::GeoDataRiverPathPoint(double x, double y)
 {
 	initializeInnerValues();
 	initializeInterpolators();
-	m_position = QVector2D(x, y);
+	m_position = QPointF(x, y);
 }
 
 GeoDataRiverPathPoint::GeoDataRiverPathPoint(const QString& name, double x, double y)
@@ -36,13 +36,13 @@ GeoDataRiverPathPoint::GeoDataRiverPathPoint(const QString& name, double x, doub
 	initializeInnerValues();
 	initializeInterpolators();
 	m_name = name;
-	m_position = QVector2D(x, y);
+	m_position = QPointF(x, y);
 }
 
 GeoDataRiverPathPoint::~GeoDataRiverPathPoint()
 {}
 
-const QVector2D& GeoDataRiverPathPoint::position() const
+const QPointF& GeoDataRiverPathPoint::position() const
 {
 	return m_position;
 }
@@ -58,8 +58,8 @@ void GeoDataRiverPathPoint::initializeInnerValues()
 	m_CtrlSections.push_back(1);
 	IsSelected = false;
 	InhibitInterpolatorUpdate = false;
-	m_crosssectionDirectionL = QVector2D(1, 0);
-	m_crosssectionDirectionR = QVector2D(1, 0);
+	m_crosssectionDirectionL = QPointF(1, 0);
+	m_crosssectionDirectionR = QPointF(1, 0);
 	m_areaGrid = vtkSmartPointer<vtkStructuredGrid>::New();
 }
 
@@ -115,7 +115,7 @@ void GeoDataRiverPathPoint::remove()
 void GeoDataRiverPathPoint::movePosition(double offset)
 {
 	// Calculate the new position.
-	QVector2D newPosition = crosssectionPosition(offset);
+	QPointF newPosition = crosssectionPosition(offset);
 	m_crosssection.moveCenter(offset);
 	m_position = newPosition;
 }
@@ -180,7 +180,7 @@ unsigned int GeoDataRiverPathPoint::gridCounts(GeoDataRiverPathPoint* end) const
 	}
 }
 
-QVector2D GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index) /* throw (ErrorCodes)*/
+QPointF GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index) /* throw (ErrorCodes)*/
 {
 	int idx = static_cast<int>(index);
 	switch (pos) {
@@ -206,11 +206,11 @@ QVector2D GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsi
 		break;
 	default:
 		// Never used. Just to avoid compiler warning.
-		return QVector2D(0, 0);
+		return QPointF(0, 0);
 	}
 }
 
-QVector2D GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, double d)
+QPointF GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, double d)
 {
 	if (d < 0 || d > 1) {throw ec_OutOfCtrlPointRange;}
 	GeoDataRiverCrosssection::Altitude altitude;
@@ -233,7 +233,7 @@ QVector2D GeoDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, doub
 		return myCtrlPointPosition2D(&GeoDataRiverPathPoint::rightBank, d);
 		break;
 	default:
-		return QVector2D(0, 0);
+		return QPointF(0, 0);
 	}
 }
 
@@ -258,18 +258,16 @@ void GeoDataRiverPathPoint::clearSelection()
 	m_nextPoint->clearSelection();
 }
 
-void GeoDataRiverPathPoint::selectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1)
+void GeoDataRiverPathPoint::selectRegion(const QPointF& point0, const QPointF& v0, const QPointF& v1)
 {
-	QVector2D dv = m_position - point0;
-	QVector2D tmpv0 = v0;
-	tmpv0.normalize();
-	QVector2D tmpv1 = v1;
-	tmpv1.normalize();
-	double d0 = QVector2D::dotProduct(dv, tmpv0);
-	double d1 = QVector2D::dotProduct(dv, tmpv1);
+	QPointF dv = m_position - point0;
+	QPointF tmpv0 = iRIC::normalize(v0);
+	QPointF tmpv1 = iRIC::normalize(v1);
+	double d0 = QPointF::dotProduct(dv, tmpv0);
+	double d1 = QPointF::dotProduct(dv, tmpv1);
 	if ((! firstPoint()) &&
-			0 < d0 && d0 < v0.length() &&
-			0 < d1 && d1 < v1.length()) {
+			0 < d0 && d0 < iRIC::length(v0) &&
+			0 < d1 && d1 < iRIC::length(v1)) {
 		IsSelected = true;
 	} else {
 		IsSelected = false;
@@ -279,17 +277,17 @@ void GeoDataRiverPathPoint::selectRegion(const QVector2D& point0, const QVector2
 	}
 }
 
-void GeoDataRiverPathPoint::XORSelectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1)
+void GeoDataRiverPathPoint::XORSelectRegion(const QPointF& point0, const QPointF& v0, const QPointF& v1)
 {
-	QVector2D dv = m_position - point0;
-	QVector2D tmpv0 = v0;
-	tmpv0.normalize();
-	QVector2D tmpv1 = v1;
-	tmpv1.normalize();
-	double d0 = QVector2D::dotProduct(dv, tmpv0);
-	double d1 = QVector2D::dotProduct(dv, tmpv1);
-	if (0 < d0 && d0 < v0.length() &&
-			0 < d1 && d1 < v1.length()) {
+	QPointF dv = m_position - point0;
+	QPointF tmpv0 = v0;
+	iRIC::normalize(tmpv0);
+	QPointF tmpv1 = v1;
+	iRIC::normalize(tmpv1);
+	double d0 = QPointF::dotProduct(dv, tmpv0);
+	double d1 = QPointF::dotProduct(dv, tmpv1);
+	if (0 < d0 && d0 < iRIC::length(v0) &&
+		0 < d1 && d1 < iRIC::length(v1)) {
 		IsSelected = ! IsSelected;
 	}
 	if (m_nextPoint != nullptr) {
@@ -298,24 +296,24 @@ void GeoDataRiverPathPoint::XORSelectRegion(const QVector2D& point0, const QVect
 }
 
 void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
-	const QVector2D& point0, const QVector2D& v0, const QVector2D& v1,
+	const QPointF& point0, const QPointF& v0, const QPointF& v1,
 	std::list<CtrlPointSelectionInfo>& info)
 {
 	if (! m_gridSkip) {
 		unsigned int i;
-		QVector2D tmpv0 = v0;
-		QVector2D tmpv1 = v1;
-		tmpv0.normalize();
-		tmpv1.normalize();
-		double l0 = v0.length();
-		double l1 = v1.length();
+		QPointF tmpv0 = v0;
+		QPointF tmpv1 = v1;
+		iRIC::normalize(tmpv0);
+		iRIC::normalize(tmpv1);
+		double l0 = iRIC::length(v0);
+		double l1 = iRIC::length(v1);
 		// Rough checking first
 
 		// Investigate left bank
 		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
-			QVector2D dv = CtrlPointPosition2D(pposCenterToLeft, i) - point0;
-			double ip0 = QVector2D::dotProduct(dv, tmpv0);
-			double ip1 = QVector2D::dotProduct(dv, tmpv1);
+			QPointF dv = CtrlPointPosition2D(pposCenterToLeft, i) - point0;
+			double ip0 = QPointF::dotProduct(dv, tmpv0);
+			double ip1 = QPointF::dotProduct(dv, tmpv1);
 			if (0 < ip0 && ip0 < l0 &&
 					0 < ip1 && ip1 < l1) {
 				CtrlPointSelectionInfo sinfo;
@@ -327,9 +325,9 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 		}
 		// Investigate right bank
 		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
-			QVector2D dv = CtrlPointPosition2D(pposCenterToRight, i) - point0;
-			double ip0 = QVector2D::dotProduct(dv, tmpv0);
-			double ip1 = QVector2D::dotProduct(dv, tmpv1);
+			QPointF dv = CtrlPointPosition2D(pposCenterToRight, i) - point0;
+			double ip0 = QPointF::dotProduct(dv, tmpv0);
+			double ip1 = QPointF::dotProduct(dv, tmpv1);
 			if (0 < ip0 && ip0 < l0 &&
 					0 < ip1 && ip1 < l1) {
 				CtrlPointSelectionInfo sinfo;
@@ -344,9 +342,9 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 
 			// Check river center line
 			for (i = 0; i < CenterLineCtrlPoints.size(); ++i) {
-				QVector2D dv = CtrlPointPosition2D(pposCenterLine, i) - point0;
-				double ip0 = QVector2D::dotProduct(dv, tmpv0);
-				double ip1 = QVector2D::dotProduct(dv, tmpv1);
+				QPointF dv = CtrlPointPosition2D(pposCenterLine, i) - point0;
+				double ip0 = QPointF::dotProduct(dv, tmpv0);
+				double ip1 = QPointF::dotProduct(dv, tmpv1);
 				if (0 < ip0 && ip0 < l0 &&
 						0 < ip1 && ip1 < l1) {
 					CtrlPointSelectionInfo sinfo;
@@ -358,9 +356,9 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 			}
 			// Check left bank line
 			for (i = 0; i < LeftBankCtrlPoints.size(); ++i) {
-				QVector2D dv = CtrlPointPosition2D(pposLeftBank, i) - point0;
-				double ip0 = QVector2D::dotProduct(dv, tmpv0);
-				double ip1 = QVector2D::dotProduct(dv, tmpv1);
+				QPointF dv = CtrlPointPosition2D(pposLeftBank, i) - point0;
+				double ip0 = QPointF::dotProduct(dv, tmpv0);
+				double ip1 = QPointF::dotProduct(dv, tmpv1);
 				if (0 < ip0 && ip0 < l0 &&
 						0 < ip1 && ip1 < l1) {
 					CtrlPointSelectionInfo sinfo;
@@ -372,9 +370,9 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 			}
 			// Check right bank line
 			for (i = 0; i < RightBankCtrlPoints.size(); ++i) {
-				QVector2D dv = CtrlPointPosition2D(pposRightBank, i) - point0;
-				double ip0 = QVector2D::dotProduct(dv, tmpv0);
-				double ip1 = QVector2D::dotProduct(dv, tmpv1);
+				QPointF dv = CtrlPointPosition2D(pposRightBank, i) - point0;
+				double ip0 = QPointF::dotProduct(dv, tmpv0);
+				double ip1 = QPointF::dotProduct(dv, tmpv1);
 				if (0 < ip0 && ip0 < l0 &&
 						0 < ip1 && ip1 < l1) {
 					CtrlPointSelectionInfo sinfo;
@@ -392,7 +390,7 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 }
 
 
-QVector2D GeoDataRiverPathPoint::GridCtrlPosition(Bank bank, unsigned int index1, double param)
+QPointF GeoDataRiverPathPoint::GridCtrlPosition(Bank bank, unsigned int index1, double param)
 {
 	if (bank == bk_LeftBank) {
 		return GeoDataRiverPathPoint::myCtrlPointPosition2D(&GeoDataRiverPathPoint::LGridLine, index1, param);
@@ -401,7 +399,7 @@ QVector2D GeoDataRiverPathPoint::GridCtrlPosition(Bank bank, unsigned int index1
 	}
 }
 
-QVector2D GeoDataRiverPathPoint::backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param)
+QPointF GeoDataRiverPathPoint::backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param)
 {
 	if (bank == bk_LeftBank) {
 		return GeoDataRiverPathPoint::myBgCtrlPointPosition2D(&GeoDataRiverPathPoint::backgroundLGridLine, index1, param);
@@ -426,9 +424,9 @@ double GeoDataRiverPathPoint::GridCtrlParameter(Bank bank, int index1, int index
 	return ((t1 - t0) * s0 + t0) / (1 - (t1 - t0) * (s1 - s0));
 }
 
-QList<QVector2D> GeoDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num)
+QList<QPointF> GeoDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num)
 {
-	QList<QVector2D> result;
+	QList<QPointF> result;
 	QVector<double> tmpdbls;
 	double t0;
 	double t1;
@@ -716,14 +714,14 @@ void GeoDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCo
 	if (m_previousPoint == nullptr) {
 		throw ec_PreviousPointDontExist;
 	}
-	QVector2D dv = m_previousPoint->position() - m_position;
-	dv.normalize();
+	QPointF dv = m_previousPoint->position() - m_position;
+	iRIC::normalize(dv);
 
 	iRIC::rotateVector(dv, angle);
 	setCrosssectionDirection(dv);
 }
 
-void GeoDataRiverPathPoint::setCrosssectionDirection(const QVector2D& v)
+void GeoDataRiverPathPoint::setCrosssectionDirection(const QPointF& v)
 {
 	double rotAngle = iRIC::angleRadian(m_crosssectionDirection, v);
 	m_crosssectionDirection = v;
@@ -747,23 +745,23 @@ const QString& GeoDataRiverPathPoint::name() const
 	return m_name;
 }
 
-void GeoDataRiverPathPoint::setCrosssectionDirectionL(const QVector2D& direction)
+void GeoDataRiverPathPoint::setCrosssectionDirectionL(const QPointF& direction)
 {
 	m_crosssectionDirectionL = direction;
 }
 
-void GeoDataRiverPathPoint::setCrosssectionDirectionR(const QVector2D& direction)
+void GeoDataRiverPathPoint::setCrosssectionDirectionR(const QPointF& direction)
 {
 	m_crosssectionDirectionR = direction;
 }
 
-void GeoDataRiverPathPoint::addExtentionPointLeft(const QVector2D& pos)
+void GeoDataRiverPathPoint::addExtentionPointLeft(const QPointF& pos)
 {
 	GeoDataRiverCrosssection::Altitude& alt = m_crosssection.leftBank(true);
-	QVector2D fixPoint = crosssectionPosition(alt.position());
-	QVector2D newdirection = pos - fixPoint;
-	double distance = newdirection.length();
-	newdirection.normalize();
+	QPointF fixPoint = crosssectionPosition(alt.position());
+	QPointF newdirection = pos - fixPoint;
+	double distance = iRIC::length(newdirection);
+	iRIC::normalize(newdirection);
 	setCrosssectionDirectionL(- newdirection);
 	if (m_crosssection.fixedPointRSet()) {
 		m_crosssection.setFixedPointR(m_crosssection.fixedPointRIndex() + 1);
@@ -772,26 +770,26 @@ void GeoDataRiverPathPoint::addExtentionPointLeft(const QVector2D& pos)
 	m_crosssection.setFixedPointL(1);
 }
 
-void GeoDataRiverPathPoint::addExtentionPointRight(const QVector2D& pos)
+void GeoDataRiverPathPoint::addExtentionPointRight(const QPointF& pos)
 {
 	GeoDataRiverCrosssection::Altitude& alt = m_crosssection.rightBank(true);
-	QVector2D fixPoint = crosssectionPosition(alt.position());
-	QVector2D newdirection = pos - fixPoint;
-	double distance = newdirection.length();
-	newdirection.normalize();
+	QPointF fixPoint = crosssectionPosition(alt.position());
+	QPointF newdirection = pos - fixPoint;
+	double distance = iRIC::length(newdirection);
+	iRIC::normalize(newdirection);
 	setCrosssectionDirectionR(newdirection);
 	int rightBankIndex = m_crosssection.rightBankIndex(true);
 	m_crosssection.addPoint(alt.position() + distance, alt.height());
 	m_crosssection.setFixedPointR(rightBankIndex);
 }
 
-void GeoDataRiverPathPoint::moveExtentionPointLeft(const QVector2D& pos)
+void GeoDataRiverPathPoint::moveExtentionPointLeft(const QPointF& pos)
 {
 	crosssection().unsetFixedPointL();
 	addExtentionPointLeft(pos);
 }
 
-void GeoDataRiverPathPoint::moveExtentionPointRight(const QVector2D& pos)
+void GeoDataRiverPathPoint::moveExtentionPointRight(const QPointF& pos)
 {
 	crosssection().unsetFixedPointR();
 	addExtentionPointRight(pos);
@@ -822,7 +820,7 @@ void GeoDataRiverPathPoint::shiftCenter(double shiftWidth)
 	m_crosssection.moveCenter(width);
 }
 
-void GeoDataRiverPathPoint::setPosition(const QVector2D& v)
+void GeoDataRiverPathPoint::setPosition(const QPointF& v)
 {
 	m_position = v;
 }
@@ -835,12 +833,12 @@ void GeoDataRiverPathPoint::UpdateCtrlSections()
 	} else {
 		std::vector<double> lengths;
 		if (m_nextPoint != nullptr) {
-			lengths.push_back((m_nextPoint->position() - position()).length());
+			lengths.push_back(iRIC::length(m_nextPoint->position() - position()));
 		}
 		GeoDataRiverPathPoint* tmpp = this;
 		while (tmpp->nextPoint() && tmpp->nextPoint()->gridSkip()) {
 			tmpp = tmpp->nextPoint();
-			lengths.push_back((tmpp->nextPoint()->position() - tmpp->position()).length());
+			lengths.push_back(iRIC::length(tmpp->nextPoint()->position() - tmpp->position()));
 		}
 		double lengthsum = 0;
 		for (auto it = lengths.begin(); it != lengths.end(); ++it) {
@@ -864,7 +862,7 @@ vtkStructuredGrid* GeoDataRiverPathPoint::areaGrid() const
 	return m_areaGrid;
 }
 
-QVector2D GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f )() const, double d)
+QPointF GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f )() const, double d)
 {
 	int i = 0;
 	double d0 = 0;
@@ -881,7 +879,7 @@ QVector2D GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoData
 	return interpolator->interpolate(subd);
 }
 
-QVector2D GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d)
+QPointF GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d)
 {
 	int i = 0;
 	double d0 = 0;
@@ -898,20 +896,20 @@ QVector2D GeoDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (GeoData
 	return interpolator->interpolate(subd);
 }
 
-QVector2D GeoDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d)
+QPointF GeoDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (GeoDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d)
 {
 	Interpolator2D1* interpolator = (this->*f)(index);
 	return interpolator->interpolate(d);
 }
 
-QVector2D GeoDataRiverPathPoint::crosssectionPosition(double x)
+QPointF GeoDataRiverPathPoint::crosssectionPosition(double x)
 {
-	QVector2D dir = m_crosssectionDirection;
-	QVector2D dirl;
+	QPointF dir = m_crosssectionDirection;
+	QPointF dirl;
 	dirl = m_crosssectionDirectionL;
-	QVector2D dirr;
+	QPointF dirr;
 	dirr = m_crosssectionDirectionR;
-	QVector2D tmpv;
+	QPointF tmpv;
 	if (
 		m_crosssection.fixedPointLSet() &&
 		x < m_crosssection.fixedPointL().position()
@@ -945,17 +943,17 @@ const GeoDataRiverCrosssection& GeoDataRiverPathPoint::crosssection() const
 	return m_crosssection;
 }
 
-const QVector2D& GeoDataRiverPathPoint::crosssectionDirection() const
+const QPointF& GeoDataRiverPathPoint::crosssectionDirection() const
 {
 	return m_crosssectionDirection;
 }
 
-const QVector2D& GeoDataRiverPathPoint::crosssectionDirectionL() const
+const QPointF& GeoDataRiverPathPoint::crosssectionDirectionL() const
 {
 	return m_crosssectionDirectionL;
 }
 
-const QVector2D& GeoDataRiverPathPoint::crosssectionDirectionR() const
+const QPointF& GeoDataRiverPathPoint::crosssectionDirectionR() const
 {
 	return m_crosssectionDirectionR;
 }
@@ -963,7 +961,7 @@ const QVector2D& GeoDataRiverPathPoint::crosssectionDirectionR() const
 void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last)
 {
 	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridAttribute("Elevation"));
-	QVector2D vec2d;
+	QPointF vec2d;
 	int index;
 	if (last) {
 		// export grid points only crosssections.
@@ -1188,7 +1186,7 @@ void GeoDataRiverPathPoint::load(QDataStream& s, const VersionNumber& number)
 		m_crosssection.AltitudeInfo().push_back(alt);
 	}
 	bool tmpbool;
-	QVector2D dir;
+	QPointF dir;
 	int index;
 	// left fixed point
 	s >> tmpbool;
@@ -1311,10 +1309,10 @@ QVector<double>& GeoDataRiverPathPoint::CtrlPoints(CtrlPointPosition position)
 	}
 }
 
-void GeoDataRiverPathPoint::centerToBanksRegion(QVector2D& mins, QVector2D& maxs)
+void GeoDataRiverPathPoint::centerToBanksRegion(QPointF& mins, QPointF& maxs)
 {
-	QVector2D leftbank = crosssectionPosition(m_crosssection.leftBank(true).position());
-	QVector2D rightbank = crosssectionPosition(m_crosssection.rightBank(true).position());
+	QPointF leftbank = crosssectionPosition(m_crosssection.leftBank(true).position());
+	QPointF rightbank = crosssectionPosition(m_crosssection.rightBank(true).position());
 	double xmin, xmax, ymin, ymax;
 	// from left bank, right bank.
 	if (leftbank.x() < rightbank.x()) {
@@ -1333,30 +1331,30 @@ void GeoDataRiverPathPoint::centerToBanksRegion(QVector2D& mins, QVector2D& maxs
 	}
 	// if fixed points set, take them into account.
 	if (m_crosssection.fixedPointLSet()) {
-		QVector2D tmpv = crosssectionPosition(m_crosssection.fixedPointL().position());
+		QPointF tmpv = crosssectionPosition(m_crosssection.fixedPointL().position());
 		if (tmpv.x() < xmin) {xmin = tmpv.x();}
 		if (tmpv.x() > xmax) {xmax = tmpv.x();}
 		if (tmpv.y() < ymin) {ymin = tmpv.y();}
 		if (tmpv.y() > ymax) {ymax = tmpv.y();}
 	}
 	if (m_crosssection.fixedPointRSet()) {
-		QVector2D tmpv = crosssectionPosition(m_crosssection.fixedPointR().position());
+		QPointF tmpv = crosssectionPosition(m_crosssection.fixedPointR().position());
 		if (tmpv.x() < xmin) {xmin = tmpv.x();}
 		if (tmpv.x() > xmax) {xmax = tmpv.x();}
 		if (tmpv.y() < ymin) {ymin = tmpv.y();}
 		if (tmpv.y() > ymax) {ymax = tmpv.y();}
 	}
-	mins = QVector2D(xmin, ymin);
-	maxs = QVector2D(xmax, ymax);
+	mins = QPointF(xmin, ymin);
+	maxs = QPointF(xmax, ymax);
 }
 
-void GeoDataRiverPathPoint::thisToNextRegion(QVector2D& mins, QVector2D& maxs)
+void GeoDataRiverPathPoint::thisToNextRegion(QPointF& mins, QPointF& maxs)
 {
 	double xmin, xmax, ymin, ymax;
-	QVector2D leftbank  = crosssectionPosition(m_crosssection.leftBank(true).position());
-	QVector2D rightbank = crosssectionPosition(m_crosssection.rightBank(true).position());
-	QVector2D nextleftbank  = m_nextPoint->crosssectionPosition(m_nextPoint->m_crosssection.leftBank(true).position());
-	QVector2D nextrightbank = m_nextPoint->crosssectionPosition(m_nextPoint->m_crosssection.rightBank(true).position());
+	QPointF leftbank  = crosssectionPosition(m_crosssection.leftBank(true).position());
+	QPointF rightbank = crosssectionPosition(m_crosssection.rightBank(true).position());
+	QPointF nextleftbank  = m_nextPoint->crosssectionPosition(m_nextPoint->m_crosssection.leftBank(true).position());
+	QPointF nextrightbank = m_nextPoint->crosssectionPosition(m_nextPoint->m_crosssection.rightBank(true).position());
 	xmin = leftbank.x();
 	if (rightbank.x() < xmin) {xmin = rightbank.x();}
 	if (nextleftbank.x() < xmin) {xmin = nextleftbank.x();}
@@ -1373,8 +1371,8 @@ void GeoDataRiverPathPoint::thisToNextRegion(QVector2D& mins, QVector2D& maxs)
 	if (rightbank.y() > ymax) {ymax = rightbank.y();}
 	if (nextleftbank.y() > ymax) {ymax = nextleftbank.y();}
 	if (nextrightbank.y() > ymax) {ymax = nextrightbank.y();}
-	mins = QVector2D(xmin, ymin);
-	maxs = QVector2D(xmax, ymax);
+	mins = QPointF(xmin, ymin);
+	maxs = QPointF(xmax, ymax);
 }
 
 void addCtrlPointsToVector(QVector<double>& values, unsigned int index, GeoDataRiverPathPoint::CtrlPointsAddMethod method)

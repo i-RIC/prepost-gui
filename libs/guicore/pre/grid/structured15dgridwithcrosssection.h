@@ -9,7 +9,6 @@ class Structured15DGridWithCrossSectionCrossSection;
 
 class GUICOREDLL_EXPORT Structured15DGridWithCrossSection : public Grid2D
 {
-
 public:
 	Structured15DGridWithCrossSection(ProjectDataItem* parent);
 	Structured15DGridWithCrossSection(const std::string& zonename, ProjectDataItem* parent);
@@ -20,8 +19,8 @@ public:
 	unsigned int vertexCount() const override;
 	unsigned int cellCount() const override;
 
-	QVector2D vertex(unsigned int index) const override;
-	void setVertex(unsigned int index, const QVector2D& v) override;
+	QPointF vertex(unsigned int index) const override;
+	void setVertex(unsigned int index, const QPointF& v) override;
 
 	bool loadFromCgnsFile(const int fn, int B, int Z) override;
 	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;

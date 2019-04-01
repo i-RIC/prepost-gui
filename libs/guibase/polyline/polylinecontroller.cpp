@@ -30,6 +30,12 @@ void PolyLineController::setPolyLine(const std::vector<QPointF>& polyLine)
 	impl->m_actor.setLine(polyLine);
 }
 
+void PolyLineController::clear()
+{
+	std::vector<QPointF> empty;
+	setPolyLine(empty);
+}
+
 bool PolyLineController::isVertexSelectable(const QPointF& pos, double limitDistance, int* vid)
 {
 	auto polydata = impl->m_actor.pointsPolyData();

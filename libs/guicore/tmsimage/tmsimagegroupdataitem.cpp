@@ -23,7 +23,6 @@
 #include <QMessageBox>
 #include <QRectF>
 #include <QXmlStreamWriter>
-#include <QVector2D>
 
 #include <vtkRenderer.h>
 #include <vtkTextureMapToPlane.h>
@@ -44,19 +43,19 @@ QRectF calcRect(VTK2DGraphicsView* view, const QPointF& offset)
 	return rect;
 }
 
-QVector2D calcVecX(VTK2DGraphicsView* view)
+QPointF calcVecX(VTK2DGraphicsView* view)
 {
 	double x, y;
 
 	x = 0;
 	y = 0;
 	view->viewportToWorld(x, y);
-	QVector2D origin(x, y);
+	QPointF origin(x, y);
 
 	x = 1;
 	y = 0;
 	view->viewportToWorld(x, y);
-	QVector2D p1(x, y);
+	QPointF p1(x, y);
 
 	return p1 - origin;
 }
@@ -76,9 +75,9 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 	cs.mapGridToGeo(centerX, centerY, &centerLongitude, &centerLatitude);
 	*center = QPointF(centerLongitude, centerLatitude);
 
-	QVector2D vecX = calcVecX(view);
-	*scale = vecX.length();
-	QVector2D stdVecX(1, 0);
+	QPointF vecX = calcVecX(view);
+	*scale = iRIC::length(vecX);
+	QPointF stdVecX(1, 0);
 
 	double angleRad = iRIC::angleRadian(stdVecX, vecX);
 	QSize windowSize = view->size();
@@ -108,8 +107,8 @@ void calcImageParametersLonLat(QPointF* center, QSize* size, double* requestScal
 	double new_width = rect.width();
 	*lowerLeft = QPointF(rect.left() - offset.x(), rect.top() - offset.y());
 
-	QVector2D vecX = calcVecX(view);
-	QVector2D stdVecX(1, 0);
+	QPointF vecX = calcVecX(view);
+	QPointF stdVecX(1, 0);
 	double angleRad = iRIC::angleRadian(stdVecX, vecX);
 	QSize windowSize = view->size();
 
@@ -125,7 +124,7 @@ void calcImageParametersLonLat(QPointF* center, QSize* size, double* requestScal
 	*requestScale = tmsloader::TmsUtil::meterPerPixel(*center, zoomLevel);
 	*size = QSize(width, height);
 
-	*scale = vecX.length() * (newWidth / width);
+	*scale = iRIC::length(vecX) * (newWidth / width);
 }
 
 void calcImageParameters(QPointF* center, QSize* size, double* requestScale, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)

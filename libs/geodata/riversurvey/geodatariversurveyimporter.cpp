@@ -5,6 +5,7 @@
 #include "geodatariversurveyimportersettingdialog.h"
 
 #include <misc/errormessage.h>
+#include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
 #include <QFile>
@@ -61,9 +62,9 @@ public:
 
 		return std::sqrt(dx * dx + dy * dy);
 	}
-	QVector2D leftToRight() const
+	QPointF leftToRight() const
 	{
-		return QVector2D(rightBank.x - leftBank.x, rightBank.y - leftBank.y);
+		return QPointF(rightBank.x - leftBank.x, rightBank.y - leftBank.y);
 	}
 
 	std::string strKP; // name in string
@@ -290,7 +291,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 
 		newPoint->setName(p->strKP.c_str());
 		newPoint->InhibitInterpolatorUpdate = true;
-		newPoint->setCrosssectionDirection(p->leftToRight().normalized());
+		newPoint->setCrosssectionDirection(iRIC::normalize(p->leftToRight()));
 
 		if (m_with4Points) {
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);

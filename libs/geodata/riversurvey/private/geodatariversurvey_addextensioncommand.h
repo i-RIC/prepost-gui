@@ -19,7 +19,7 @@ public:
 
 private:
 	bool m_apply;
-	QVector2D m_position;
+	QPointF m_position;
 	GeoDataRiverPathPointExtensionAddDialog::LineMode m_lineMode;
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverSurvey* m_rs;

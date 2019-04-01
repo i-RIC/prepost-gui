@@ -12,13 +12,11 @@
 #include <vtkStructuredGrid.h>
 #include <vtkAppendPolyData.h>
 
-#include <QVector>
-#include <QVector2D>
-
-#include <QPointF>
-#include <QPixmap>
 #include <QCursor>
+#include <QPixmap>
+#include <QPointF>
 #include <QUndoCommand>
+#include <QVector>
 
 class QAction;
 class QToolBar;
@@ -109,16 +107,16 @@ protected:
 private:
 	const static int LINEDIVS = 16;
 	static const int ZONEDIV = 10;
-	void selectCtrlZone(const QVector2D& point, double width);
-	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QVector2D& point, double width);
+	void selectCtrlZone(const QPointF& point, double width);
+	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QPointF& point, double width);
 
 	void setupVtkContainers();
 	void updateGridInterpolators();
 	void allActorsOff();
 	void cancelBackgroundGridUpdate() override;
 
-	bool ctrlPointSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
-	bool ctrlPointXORSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
+	bool ctrlPointSelectRegion(const QPointF& p0, const QPointF& v0, const QPointF& v1);
+	bool ctrlPointXORSelectRegion(const QPointF& p0, const QPointF& v0, const QPointF& v1);
 	void informCtrlPointUpdateToCrosssectionWindows() override;
 
 	void setAnalogyCtrlPoints();

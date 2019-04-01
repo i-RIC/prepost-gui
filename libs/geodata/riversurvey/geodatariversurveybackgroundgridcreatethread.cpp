@@ -147,16 +147,16 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runStandard()
 	QList<RiverBackgroundGridCtrlSolver*> solvers;
 	for (int i = 0; i < JDIVNUM - 1; ++i) {
 		RiverBackgroundGridCtrlSolver* solver = new RiverBackgroundGridCtrlSolver();
-		solver->SetBankSide(RiverBackgroundGridCtrlSolver::bs_LeftBank);
-		solver->SetIndex(i);
+		solver->setBankSide(RiverBackgroundGridCtrlSolver::bs_LeftBank);
+		solver->setIndex(i);
 		solver->setParameter((i + 1) / static_cast<double>(JDIVNUM));
 		solver->setHeadPoint(rs->headPoint());
 		solvers.append(solver);
 	}
 	for (int i = 0; i < JDIVNUM - 1; ++i) {
 		RiverBackgroundGridCtrlSolver* solver = new RiverBackgroundGridCtrlSolver();
-		solver->SetBankSide(RiverBackgroundGridCtrlSolver::bs_RightBank);
-		solver->SetIndex(i);
+		solver->setBankSide(RiverBackgroundGridCtrlSolver::bs_RightBank);
+		solver->setIndex(i);
 		solver->setParameter((i + 1) / static_cast<double>(JDIVNUM));
 		solver->setHeadPoint(rs->headPoint());
 		solvers.append(solver);
@@ -226,7 +226,7 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		if (m_canceled) {break;}
 
 		// create Grid.
-		QVector2D vec;
+		QPointF vec;
 		double height;
 		vtkIdType index;
 
@@ -441,8 +441,8 @@ void GeoDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 	// center to left
 	for (int i = 0; i < p->CenterToLeftCtrlPoints.size(); ++i) {
 		RiverGridCtrlSolver* solver = new RiverGridCtrlSolver();
-		solver->SetBankSide(RiverGridCtrlSolver::bs_LeftBank);
-		solver->SetIndex(i);
+		solver->setBankSide(RiverGridCtrlSolver::bs_LeftBank);
+		solver->setIndex(i);
 		solver->setHeadPoint(rs->headPoint());
 		m_gridSolvers.push_back(solver);
 	}
@@ -451,8 +451,8 @@ void GeoDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 	// center to right
 	for (int i = 0; i < p->CenterToRightCtrlPoints.size(); ++i) {
 		RiverGridCtrlSolver* solver = new RiverGridCtrlSolver();
-		solver->SetBankSide(RiverGridCtrlSolver::bs_RightBank);
-		solver->SetIndex(i);
+		solver->setBankSide(RiverGridCtrlSolver::bs_RightBank);
+		solver->setIndex(i);
 		solver->setHeadPoint(rs->headPoint());
 		m_gridSolvers.push_back(solver);
 	}

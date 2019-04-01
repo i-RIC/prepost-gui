@@ -1005,31 +1005,26 @@ void GridCreatingConditionPoisson::buildBankLines()
 	std::vector<QPointF> leftBankLine, rightBankLine;
 
 	for (int i = 0; i < centerLine.size(); ++i) {
-		QVector2D v;
+		QPointF v;
 		if (i == 0) {
 			QPointF p1 = centerLine.at(0);
 			QPointF p2 = centerLine.at(1);
-			v = QVector2D(p2.x() - p1.x(), p2.y() - p1.y());
-			v.normalize();
+			v = iRIC::normalize(p2 - p1);
 			iRIC::rotateVector270(v);
 		} else if (i == centerLine.size() - 1) {
 			QPointF p1 = centerLine.at(centerLine.size() - 2);
 			QPointF p2 = centerLine.at(centerLine.size() - 1);
-			v = QVector2D(p2.x() - p1.x(), p2.y() - p1.y());
-			v.normalize();
+			v = iRIC::normalize(p2 - p1);
 			iRIC::rotateVector270(v);
 		} else {
 			QPointF p1 = centerLine.at(i - 1);
 			QPointF p2 = centerLine.at(i);
 			QPointF p3 = centerLine.at(i + 1);
-			QVector2D v1(p2.x() - p1.x(), p2.y() - p1.y());
-			v1.normalize();
+			QPointF v1 = iRIC::normalize(p2 - p1);
 			iRIC::rotateVector270(v1);
-			QVector2D v2(p3.x() - p2.x(), p3.y() - p2.y());
-			v2.normalize();
+			QPointF v2 = iRIC::normalize(p3 - p2);
 			iRIC::rotateVector270(v2);
-			v = v1 + v2;
-			v.normalize();
+			v = iRIC::normalize(v1 + v2);
 		}
 
 		QPointF lb = centerLine.at(i);
@@ -1052,6 +1047,7 @@ void GridCreatingConditionPoisson::buildBankLines()
 	impl->updateLabelsAndSplines();
 
 	renderGraphicsView();
+	iRICUndoStack::instance().clear();
 }
 
 void GridCreatingConditionPoisson::importCenterLine()

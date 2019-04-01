@@ -576,9 +576,9 @@ void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, 
 			v->viewportToWorld(p2_x, p2_y);
 
 			// parameter for SelectCtrlPointsRegion
-			QVector2D startP = QVector2D(p0_x, p0_y);
-			QVector2D vec1 = QVector2D(p1_x - p0_x, p1_y - p0_y);
-			QVector2D vec2 = QVector2D(p2_x - p0_x, p2_y - p0_y);
+			QPointF startP = QPointF(p0_x, p0_y);
+			QPointF vec1 = QPointF(p1_x - p0_x, p1_y - p0_y);
+			QPointF vec2 = QPointF(p2_x - p0_x, p2_y - p0_y);
 
 			box->disable();
 			v->restoreUpdateRate();
@@ -597,7 +597,7 @@ void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, 
 				double target_x = box->startPoint().x();
 				double target_y = box->startPoint().y();
 				v->viewportToWorld(target_x, target_y);
-				QVector2D targetP = QVector2D(target_x, target_y);
+				QPointF targetP = QPointF(target_x, target_y);
 				selectCtrlZone(targetP, graphicsView()->stdRadius(iRIC::nearRadius()));
 			}
 
@@ -794,7 +794,7 @@ void GridCreatingConditionRiverSurvey15D::deletePoints()
 }
 
 bool GridCreatingConditionRiverSurvey15D::ctrlPointSelectRegion(
-	const QVector2D& p0, const QVector2D& v0, const QVector2D& v1)
+	const QPointF& p0, const QPointF& v0, const QPointF& v1)
 {
 	m_selectedCtrlPointInfoList.clear();
 
@@ -806,7 +806,7 @@ bool GridCreatingConditionRiverSurvey15D::ctrlPointSelectRegion(
 }
 
 bool GridCreatingConditionRiverSurvey15D::ctrlPointXORSelectRegion(
-	const QVector2D& p0, const QVector2D& v0, const QVector2D& v1)
+	const QPointF& p0, const QPointF& v0, const QPointF& v1)
 {
 	std::list<CtrlPointSelectionInfo> tmplist;
 	GeoDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
@@ -879,7 +879,7 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 		// control points
 		if (p->nextPoint() != nullptr) {
 			for (auto cit = p->CenterLineCtrlPoints.begin(); cit != p->CenterLineCtrlPoints.end(); ++cit) {
-				QVector2D vec = p->CtrlPointPosition2D(GeoDataRiverPathPoint::pposCenterLine, *cit);
+				QPointF vec = p->CtrlPointPosition2D(GeoDataRiverPathPoint::pposCenterLine, *cit);
 				point[0] = vec.x();
 				point[1] = vec.y();
 				m_ctrlPointPoints->InsertNextPoint(point);
@@ -894,7 +894,7 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 		}
 
 		// river center line
-		QVector2D tmpp;
+		QPointF tmpp;
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		centerLinePoints->InsertNextPoint(point);
@@ -914,12 +914,12 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 	if (m_selectedZone.point != nullptr) {
 		// zone is selected!
 		GeoDataRiverPathPoint* p = m_selectedZone.point;
-		QList<QVector2D> pointlist = p->CtrlZonePoints(m_selectedZone.position, m_selectedZone.index, ZONEDIV);
+		QList<QPointF> pointlist = p->CtrlZonePoints(m_selectedZone.position, m_selectedZone.index, ZONEDIV);
 		m_selectedCtrlZone->SetDimensions(pointlist.count(), 1, 1);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
 		for (auto it = pointlist.begin(); it != pointlist.end(); ++it) {
-			QVector2D v = (*it);
+			QPointF v = (*it);
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
 		m_selectedCtrlZone->SetPoints(points);
@@ -988,7 +988,7 @@ void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* star
 		points->InsertNextPoint(point);
 
 		for (auto it = p->CenterLineCtrlPoints.begin(); it != p->CenterLineCtrlPoints.end(); ++it) {
-			QVector2D v = p->CtrlPointPosition2D(GeoDataRiverPathPoint::pposCenterLine, *it);
+			QPointF v = p->CtrlPointPosition2D(GeoDataRiverPathPoint::pposCenterLine, *it);
 			point[0] = v.x();
 			point[1] = v.y();
 			points->InsertNextPoint(point);
@@ -1036,7 +1036,7 @@ void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* gr
 		LinearInterpolator1D1 interpolator;
 		GeoDataRiverPathPoint* fromP = p;
 		GeoDataRiverPathPoint* toP = p->nextPoint();
-		QVector2D ctrlPoint = p->CtrlPointPosition2D(GeoDataRiverPathPoint::pposCenterLine, ratio);
+		QPointF ctrlPoint = p->CtrlPointPosition2D(GeoDataRiverPathPoint::pposCenterLine, ratio);
 
 		//center
 		double tmpdbl1, tmpdbl2;
@@ -1046,8 +1046,8 @@ void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* gr
 		crosssection.addPoint(0, interpolator.interpolate(ratio));
 
 		// left bank.
-		QVector2D leftbank = p->leftBank()->interpolate(ratio);
-		double leftbankdist = (leftbank - ctrlPoint).length();
+		QPointF leftbank = p->leftBank()->interpolate(ratio);
+		double leftbankdist = iRIC::length(leftbank - ctrlPoint);
 		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->lXSec()->interpolate(tmpt).height();
@@ -1056,8 +1056,8 @@ void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* gr
 			crosssection.addPoint(- leftbankdist * tmpt, interpolator.interpolate(ratio));
 		}
 		//right bank.
-		QVector2D rightbank = p->rightBank()->interpolate(ratio);
-		double rightbankdist = (rightbank - ctrlPoint).length();
+		QPointF rightbank = p->rightBank()->interpolate(ratio);
+		double rightbankdist = iRIC::length(rightbank - ctrlPoint);
 		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->rXSec()->interpolate(tmpt).height();
@@ -1092,7 +1092,7 @@ void GridCreatingConditionRiverSurvey15D::selectCreateRegion(GeoDataRiverPathPoi
 	vtkSmartPointer<vtkPoints> createRegionPoints = vtkSmartPointer<vtkPoints>::New();
 	createRegionPoints->SetDataTypeToDouble();
 
-	QVector2D tmpp;
+	QPointF tmpp;
 	double point[3];
 	point[0] = p->position().x();
 	point[1] = p->position().y();
@@ -1133,7 +1133,7 @@ void GridCreatingConditionRiverSurvey15D::allActorsOff()
 	m_createRegionActor->VisibilityOff();
 }
 
-void GridCreatingConditionRiverSurvey15D::selectCtrlZone(const QVector2D& point, double width)
+void GridCreatingConditionRiverSurvey15D::selectCtrlZone(const QPointF& point, double width)
 {
 	m_selectedZone.point = nullptr;
 	GeoDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
@@ -1145,7 +1145,7 @@ void GridCreatingConditionRiverSurvey15D::selectCtrlZone(const QVector2D& point,
 			p = p->nextPoint();
 			continue;
 		}
-		QVector2D mins, maxs;
+		QPointF mins, maxs;
 		p->centerToBanksRegion(mins, maxs);
 		double xwidth = maxs.x() - mins.x();
 		double ywidth = maxs.y() - mins.y();
@@ -1229,22 +1229,22 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 	}
 }
 
-bool GridCreatingConditionRiverSurvey15D::selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QVector2D& point, double width)
+bool GridCreatingConditionRiverSurvey15D::selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QPointF& point, double width)
 {
 	bool found = false;
 	unsigned int maxindex = static_cast<unsigned int>(p->CtrlPoints(pos).size());
 	for (unsigned int i = 0; ! found && i <= maxindex; ++i) {
-		QList<QVector2D> vectorlist = p->CtrlZonePoints(pos, i, ZONEDIV);
-		QVector2D v0, v1;
+		QList<QPointF> vectorlist = p->CtrlZonePoints(pos, i, ZONEDIV);
+		QPointF v0, v1;
 		auto it = vectorlist.begin();
 		v0 = *it++;
 		while (! found && it != vectorlist.end()) {
 			v1 = *it++;
-			QVector2D horizontal = v1 - v0;
-			QVector2D vertical = (v1 - v0).normalized();
+			QPointF horizontal = v1 - v0;
+			QPointF vertical = iRIC::normalize((v1 - v0));
 			iRIC::rotateVector90(vertical);
 			vertical *= width;
-			QVector2D posv = v0 - vertical * 0.5;
+			QPointF posv = v0 - vertical * 0.5;
 			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)) {
 				found = true;
 				m_selectedZone.point = p;
@@ -1315,24 +1315,20 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 		}
 		double d = info.Point->CtrlPoints(info.Position)[info.Index];
 		if ((d + 0.01) > 1) {
-			m_GCPOffsetInfo.direction = (
+			m_GCPOffsetInfo.direction = iRIC::normalize(
 					info.Point->CtrlPointPosition2D(info.Position, d) -
-					info.Point->CtrlPointPosition2D(info.Position, d - 0.01)
-					).normalized();
+					info.Point->CtrlPointPosition2D(info.Position, d - 0.01));
 		} else {
-			m_GCPOffsetInfo.direction = (
+			m_GCPOffsetInfo.direction = iRIC::normalize(
 					info.Point->CtrlPointPosition2D(info.Position, d + 0.01) -
-					info.Point->CtrlPointPosition2D(info.Position, d)
-					).normalized();
+					info.Point->CtrlPointPosition2D(info.Position, d));
 		}
 		if (info.Position == GeoDataRiverPathPoint::pposCenterToLeft) {
 			m_GCPOffsetInfo.length = std::abs(info.Point->crosssection().leftBank(true).position());
 		} else if (info.Position == GeoDataRiverPathPoint::pposCenterToRight) {
 			m_GCPOffsetInfo.length = std::abs(info.Point->crosssection().rightBank(true).position());
 		} else {
-			m_GCPOffsetInfo.length = (
-					info.Point->nextPoint()->position() - info.Point->position()
-					).length();
+			m_GCPOffsetInfo.length = iRIC::length(info.Point->nextPoint()->position() - info.Point->position());
 		}
 	}
 }

@@ -4,10 +4,11 @@
 #include "gridcreatingconditionriversurvey.h"
 #include "gridcreatingconditionriversurveypointregionadddialog.h"
 
-#include <misc/iricundostack.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
 #include <geodata/riversurvey/geodatariversurveyctrlpointbackup.h>
+#include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 
 #include <QMessageBox>
 #include <QUndoCommand>
@@ -71,7 +72,7 @@ private:
 		while (tmpp != end) {
 			int tmppoints = 0;
 			if (specifydistance) {
-				double tmpdist = (tmpp->position() - tmpp->nextPoint()->position()).length();
+				double tmpdist = iRIC::length(tmpp->position() - tmpp->nextPoint()->position());
 				tmppoints = static_cast<int>(floor(tmpdist / distance));
 			} else {
 				tmppoints = points;
@@ -142,7 +143,7 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(GeoDataRiverS
 	while (p != nullptr) {
 		m_points.push_back(p);
 		if (p->nextPoint() != nullptr) {
-			lengthSum += (p->position() - p->nextPoint()->position()).length();
+			lengthSum += iRIC::length(p->position() - p->nextPoint()->position());
 			++ numSections;
 		}
 		p = p->nextPoint();

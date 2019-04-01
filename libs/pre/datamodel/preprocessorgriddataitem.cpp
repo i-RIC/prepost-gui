@@ -673,15 +673,15 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 			// check whether cell is clicked.
 			double tmpp[3];
 			pd->GetPoint(cell->GetPointId(0), tmpp);
-			QVector2D v0(tmpp[0], tmpp[1]);
+			QPointF v0(tmpp[0], tmpp[1]);
 			pd->GetPoint(cell->GetPointId(1), tmpp);
-			QVector2D v1(tmpp[0], tmpp[1]);
+			QPointF v1(tmpp[0], tmpp[1]);
 
-			QVector2D horizontal = v1 - v0;
-			QVector2D vertical = (v1 - v0).normalized() * stdDist;
+			QPointF horizontal = v1 - v0;
+			QPointF vertical = iRIC::normalize(v1 - v0) * stdDist;
 			iRIC::rotateVector90(vertical);
-			QVector2D posv = v0 - vertical * 0.5;
-			QVector2D point(p[0], p[1]);
+			QPointF posv = v0 - vertical * 0.5;
+			QPointF point(p[0], p[1]);
 			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)) {
 				selectedEdgesVector.append(edge);
 				break;

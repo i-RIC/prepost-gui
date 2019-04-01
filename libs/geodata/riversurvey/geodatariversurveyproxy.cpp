@@ -128,19 +128,19 @@ void GeoDataRiverSurveyProxy::updateGraphics()
 			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
 		// now draw lines.
-		QVector2D offsetDir = p->crosssectionDirection();
+		QPointF offsetDir = p->crosssectionDirection();
 		iRIC::rotateVector270(offsetDir);
 
 		double offset;
 		GeoDataRiverCrosssection::Altitude alt = alist[0];
 		offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
+		QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
 		for (int i = 1; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
+			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 			++ pointNum;
 			vtkSmartPointer<vtkLine> tmpline = vtkSmartPointer<vtkLine>::New();

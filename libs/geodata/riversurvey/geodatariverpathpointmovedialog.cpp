@@ -37,7 +37,7 @@ GeoDataRiverPathPointMoveDialog::~GeoDataRiverPathPointMoveDialog()
 }
 
 
-void GeoDataRiverPathPointMoveDialog::setCurrentCenter(const QVector2D& current)
+void GeoDataRiverPathPointMoveDialog::setCurrentCenter(const QPointF &current)
 {
 	m_currentCenter = current;
 	ui->coordX->setValue(current.x());
@@ -59,7 +59,7 @@ void GeoDataRiverPathPointMoveDialog::accept()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	QVector2D offset(ui->offsetX->value(), ui->offsetY->value());
+	QPointF offset(ui->offsetX->value(), ui->offsetY->value());
 	iRICUndoStack::instance().push(new GeoDataRiverSurvey::MoveRiverPathPointCommand(false, offset, m_rs));
 	QDialog::accept();
 }
@@ -101,7 +101,7 @@ void GeoDataRiverPathPointMoveDialog::apply()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	QVector2D offset(ui->offsetX->value(), ui->offsetY->value());
+	QPointF offset(ui->offsetX->value(), ui->offsetY->value());
 	iRICUndoStack::instance().push(new GeoDataRiverSurvey::MoveRiverPathPointCommand(true, offset, m_rs));
 	m_applyed = true;
 }

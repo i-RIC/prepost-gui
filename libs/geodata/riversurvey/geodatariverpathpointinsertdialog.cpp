@@ -111,7 +111,7 @@ void GeoDataRiverPathPointInsertDialog::apply()
 	m_applyed = true;
 }
 
-void GeoDataRiverPathPointInsertDialog::setPoint(const QVector2D& position)
+void GeoDataRiverPathPointInsertDialog::setPoint(const QPointF &position)
 {
 	if (! ui->coordClickRadioButton->isChecked()) {return;}
 	m_newPoint->setPosition(position);
@@ -124,7 +124,7 @@ void GeoDataRiverPathPointInsertDialog::updatePoint()
 {
 	m_newPoint->InhibitInterpolatorUpdate = true;
 	// direction.
-	QVector2D dir;
+	QPointF dir;
 	double ratio = 0;
 	// name
 	m_newPoint->setName(ui->nameEdit->text());
@@ -135,32 +135,30 @@ void GeoDataRiverPathPointInsertDialog::updatePoint()
 		} else {
 			dir = m_newPoint->position() - m_insertTarget->position();
 		}
-		iRIC::rotateVector270(dir);
-		dir.normalize();
+		dir = iRIC::normalize(iRIC::rotateVector270(dir));
 		m_newPoint->setCrosssectionDirection(dir);
 	} else if (ui->coordValueRadioButton->isChecked()) {
-		m_newPoint->setPosition(QVector2D(ui->coordXEdit->value(), ui->coordYEdit->value()));
+		m_newPoint->setPosition(QPointF(ui->coordXEdit->value(), ui->coordYEdit->value()));
 		if (m_insert) {
 			dir = m_insertTarget->nextPoint()->position() - m_newPoint->position();
 		} else {
 			dir = m_newPoint->position() - m_insertTarget->position();
 		}
-		iRIC::rotateVector270(dir);
-		dir.normalize();
+		dir = iRIC::normalize(iRIC::rotateVector270(dir));
 		m_newPoint->setCrosssectionDirection(dir);
 	} else if (ui->coordRatioRadioButton->isChecked()) {
 		ratio = ui->coordRatioSpinBox->value();
-		QVector2D pos;
+		QPointF pos;
 		if (m_insert) {
 			pos = m_lineCenter->interpolate(1 - ratio);
 			// modify direction.
-			dir = (m_lineCenter->interpolate(1 - ratio) -
-						 m_lineCenter->interpolate(1 - ratio - 0.01)).normalized();
+			dir = iRIC::normalize(m_lineCenter->interpolate(1 - ratio) -
+						 m_lineCenter->interpolate(1 - ratio - 0.01));
 		} else {
 			pos = m_lineCenter->interpolate(ratio);
 			// modify direction.
-			dir = (m_lineCenter->interpolate(ratio + 0.01) -
-						 m_lineCenter->interpolate(ratio)).normalized();
+			dir = iRIC::normalize(m_lineCenter->interpolate(ratio + 0.01) -
+						 m_lineCenter->interpolate(ratio));
 		}
 		m_newPoint->setPosition(pos);
 		ui->coordXEdit->setValue(pos.x());
@@ -243,13 +241,13 @@ void GeoDataRiverPathPointInsertDialog::updatePoint()
 		m_newPoint->crosssection().addPoint(0, interpolator.interpolate(ratio));
 
 		// left bank.
-		QVector2D leftbank;
+		QPointF leftbank;
 		if (m_insert) {
 			leftbank = m_insertTarget->leftBank()->interpolate(1. - ratio);
 		} else {
 			leftbank = m_insertTarget->leftBank()->interpolate(ratio);
 		}
-		double leftbankdist = (leftbank - m_newPoint->position()).length();
+		double leftbankdist = iRIC::length(leftbank - m_newPoint->position());
 		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->lXSec()->interpolate(tmpt).height();
@@ -258,13 +256,13 @@ void GeoDataRiverPathPointInsertDialog::updatePoint()
 			m_newPoint->crosssection().addPoint(- leftbankdist * tmpt, interpolator.interpolate(ratio));
 		}
 		// right bank.
-		QVector2D rightbank;
+		QPointF rightbank;
 		if (m_insert) {
 			rightbank = m_insertTarget->rightBank()->interpolate(1. - ratio);
 		} else {
 			rightbank = m_insertTarget->rightBank()->interpolate(ratio);
 		}
-		double rightbankdist = (rightbank - m_newPoint->position()).length();
+		double rightbankdist = iRIC::length(rightbank - m_newPoint->position());
 		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->rXSec()->interpolate(tmpt).height();
@@ -336,17 +334,17 @@ void GeoDataRiverPathPointInsertDialog::setDefaultName()
 
 void GeoDataRiverPathPointInsertDialog::setDefaultPosition()
 {
-	QVector2D defaultPosition;
+	QPointF defaultPosition;
 	if (m_insert) {
 		if (m_insertTarget->firstPoint()) {
-			QVector2D diff = m_insertTarget->position() - m_insertTarget->nextPoint()->position();
+			QPointF diff = m_insertTarget->position() - m_insertTarget->nextPoint()->position();
 			defaultPosition = m_insertTarget->position() + diff;
 		} else {
 			defaultPosition = m_insertTarget->position() * 0.5 + m_insertTarget->nextPoint()->position() * 0.5;
 		}
 	} else {
 		if (m_insertTarget->nextPoint() == nullptr) {
-			QVector2D diff = m_insertTarget->position() - m_insertTarget->previousPoint()->position();
+			QPointF diff = m_insertTarget->position() - m_insertTarget->previousPoint()->position();
 			defaultPosition = m_insertTarget->position() + diff;
 		} else {
 			defaultPosition = m_insertTarget->position() * 0.5 + m_insertTarget->nextPoint()->position() * 0.5;

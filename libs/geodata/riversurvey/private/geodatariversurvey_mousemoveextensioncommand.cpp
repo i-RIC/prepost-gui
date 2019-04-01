@@ -23,7 +23,7 @@ GeoDataRiverSurvey::MouseMoveExtensionCommand::MouseMoveExtensionCommand(bool le
 		}
 		p = p->nextPoint();
 	}
-	m_newPosition = QVector2D(toX, toY);
+	m_newPosition = QPointF(toX, toY);
 	if (m_left) {
 		m_oldPosition = m_point->crosssectionPosition(m_point->crosssection().leftBank(true).position());
 	} else {
@@ -58,7 +58,7 @@ bool GeoDataRiverSurvey::MouseMoveExtensionCommand::mergeWith(const QUndoCommand
 	return false;
 }
 
-void GeoDataRiverSurvey::MouseMoveExtensionCommand::applyPosition(const QVector2D& pos)
+void GeoDataRiverSurvey::MouseMoveExtensionCommand::applyPosition(const QPointF& pos)
 {
 	m_rs->m_gridThread->cancel();
 	if (m_left) {

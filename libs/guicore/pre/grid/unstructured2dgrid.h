@@ -20,8 +20,8 @@ public:
 	unsigned int vertexCount() const override;
 	unsigned int cellCount() const override;
 
-	QVector2D vertex(unsigned int index) const override;
-	void setVertex(unsigned int index, const QVector2D& v) override;
+	QPointF vertex(unsigned int index) const override;
+	void setVertex(unsigned int index, const QPointF& v) override;
 
 	bool loadFromCgnsFile(const int fn, int B, int Z) override;
 	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;

@@ -12,16 +12,16 @@ GeoDataRiverSurvey::ChangeSelectionCommand::ChangeSelectionCommand(GeoDataRiverS
 	// now, update the selection statuses of river path points.
 	double point[3];
 	vtkPoints* points = box->vtkGrid()->GetPoints();
-	QVector2D leftTop, rightTop, leftBottom;
+	QPointF leftTop, rightTop, leftBottom;
 	// left top
 	points->GetPoint(0, point);
-	leftTop = QVector2D(point[0], point[1]);
+	leftTop = QPointF(point[0], point[1]);
 	// right top
 	points->GetPoint(1, point);
-	rightTop = QVector2D(point[0], point[1]);
+	rightTop = QPointF(point[0], point[1]);
 	// left bottom
 	points->GetPoint(3, point);
-	leftBottom = QVector2D(point[0], point[1]);
+	leftBottom = QPointF(point[0], point[1]);
 
 	// do the selection!
 	m_rs->headPoint()->selectRegion(leftTop, rightTop - leftTop, leftBottom - leftTop);

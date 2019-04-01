@@ -44,11 +44,6 @@
 
 namespace {
 
-QPointF toQPointF(const QVector2D& v)
-{
-	return QPointF(v.x(), v.y());
-}
-
 int findRowToDraw(int rowToTry, const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRects)
 {
 	if (rowToTry == drawnRects->size()) {
@@ -643,7 +638,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation
 	painter.setPen(oldPen);
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPointF& origin, const QVector2D& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter)
 {
 	int topMargin = 80;
 	int lineHeight = 15;
@@ -660,8 +655,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPoi
 	if (r < 0 || r > 1) {return;}
 	if (s < 0 || s > 1) {return;}
 
-	QVector2D diff(crossPoint.x() - origin.x(), crossPoint.y() - origin.y());
-	double pos = QVector2D::dotProduct(direction, diff);
+	QPointF diff(crossPoint.x() - origin.x(), crossPoint.y() - origin.y());
+	double pos = QPointF::dotProduct(direction, diff);
 
 	QPointF mappedPos = m_matrix.map(QPointF(pos, 0));
 
@@ -695,15 +690,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 	auto targetPoint = m_parentWindow->target();
 	if (targetPoint == nullptr) {return;}
 
-	QPointF origin = toQPointF(targetPoint->position());
+	QPointF origin = targetPoint->position();
 	QPointF left, right;
 	if (targetPoint->nextPoint() == nullptr) {
 		auto prevPoint = targetPoint->previousPoint();
-		left = toQPointF(prevPoint->leftBank()->interpolate(1));
-		right = toQPointF(prevPoint->rightBank()->interpolate(1));
+		left = prevPoint->leftBank()->interpolate(1);
+		right = prevPoint->rightBank()->interpolate(1);
 	} else {
-		left = toQPointF(targetPoint->leftBank()->interpolate(0));
-		right = toQPointF(targetPoint->rightBank()->interpolate(0));
+		left = targetPoint->leftBank()->interpolate(0);
+		right = targetPoint->rightBank()->interpolate(0);
 	}
 	QPointF marginedLeft = origin + marginRate * (left - origin);
 	QPointF marginedRight = origin + marginRate * (right - origin);

@@ -17,11 +17,11 @@ public:
 	bool mergeWith(const QUndoCommand* other) override;
 
 private:
-	void applyPosition(const QVector2D& pos);
+	void applyPosition(const QPointF& pos);
 
 	bool m_left;
-	QVector2D m_oldPosition;
-	QVector2D m_newPosition;
+	QPointF m_oldPosition;
+	QPointF m_newPosition;
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverSurvey* m_rs;
 };

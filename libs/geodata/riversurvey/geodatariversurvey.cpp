@@ -1049,14 +1049,14 @@ void GeoDataRiverSurvey::updateShapeData()
 	while (p != nullptr) {
 		firstOrLast = first || (p->nextPoint() == nullptr);
 		// left bank
-		QVector2D leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+		QPointF leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 		point[0] = leftBank.x();
 		point[1] = leftBank.y();
 		m_points->InsertNextPoint(point);
 		++index;
 
 		// left fixed point
-		QVector2D leftFixed;
+		QPointF leftFixed;
 		if (p->crosssection().fixedPointLSet()) {
 			leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
 		} else {
@@ -1099,7 +1099,7 @@ void GeoDataRiverSurvey::updateShapeData()
 		++index;
 
 		// right fixed point
-		QVector2D rightFixed;
+		QPointF rightFixed;
 		if (p->crosssection().fixedPointRSet()) {
 			rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
 		} else {
@@ -1122,7 +1122,7 @@ void GeoDataRiverSurvey::updateShapeData()
 		++index;
 
 		// right bank
-		QVector2D rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+		QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 		point[0] = rightBank.x();
 		point[1] = rightBank.y();
 		m_points->InsertNextPoint(point);
@@ -1139,7 +1139,7 @@ void GeoDataRiverSurvey::updateShapeData()
 
 		++index;
 
-		QVector2D tmpp;
+		QPointF tmpp;
 		// river center line
 		point[0] = p->position().x();
 		point[1] = p->position().y();
@@ -1226,19 +1226,19 @@ void GeoDataRiverSurvey::updateShapeData()
 			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
 		// now draw lines.
-		QVector2D offsetDir = p->crosssectionDirection();
+		QPointF offsetDir = p->crosssectionDirection();
 		iRIC::rotateVector270(offsetDir);
 
 		double offset;
 		GeoDataRiverCrosssection::Altitude alt = alist[0];
 		offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
+		QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
 		for (int i = 1; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
+			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 			++ pointNum;
 			vtkSmartPointer<vtkLine> tmpline = vtkSmartPointer<vtkLine>::New();
@@ -1551,7 +1551,7 @@ void GeoDataRiverSurvey::expandSelectedPoints()
 void GeoDataRiverSurvey::rotateSelectedPoint()
 {
 	GeoDataRiverPathPoint* selected = selectedPoint();
-	QVector2D dir = selected->previousPoint()->position() - selected->position();
+	QPointF dir = selected->previousPoint()->position() - selected->position();
 	if (selected->previousPoint()->firstPoint() && selected->nextPoint() != nullptr) {
 		dir = selected->position() - selected->nextPoint()->position();
 	}
@@ -1581,7 +1581,7 @@ void GeoDataRiverSurvey::addLeftExtensionPoint()
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().leftBank(true).position()));
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	m_mouseEventMode = meAddingExtension;
-	connect(graphicsView(), SIGNAL(worldPositionChanged(QVector2D)), dialog, SLOT(setPoint(QVector2D)));
+	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
@@ -1595,7 +1595,7 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().rightBank(true).position()));
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	m_mouseEventMode = meAddingExtension;
-	connect(graphicsView(), SIGNAL(worldPositionChanged(QVector2D)), dialog, SLOT(setPoint(QVector2D)));
+	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
@@ -1640,7 +1640,7 @@ void GeoDataRiverSurvey::insertNewPoint()
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	m_mouseEventMode = meInserting;
 
-	connect(graphicsView(), SIGNAL(worldPositionChanged(QVector2D)), dialog, SLOT(setPoint(QVector2D)));
+	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
@@ -1653,7 +1653,7 @@ void GeoDataRiverSurvey::addNewPoint()
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	m_mouseEventMode = meInserting;
 
-	connect(graphicsView(), SIGNAL(worldPositionChanged(QVector2D)), dialog, SLOT(setPoint(QVector2D)));
+	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
@@ -1665,7 +1665,7 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 	dx = m_currentPoint.x();
 	dy = m_currentPoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
-	QVector2D worldPos(dx, dy);
+	QPointF worldPos(dx, dy);
 	double stdLen = graphicsView()->stdRadius(1);
 	double stdLen2 = stdLen * stdLen;
 	int selectCount = m_headPoint->selectedPoints();
@@ -1677,7 +1677,7 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 			selected = selected->nextPoint();
 		}
 		// only one point is selected.
-		if ((selected->position() - worldPos).lengthSquared() < stdLen2 * 9) {
+		if (iRIC::lengthSquared(selected->position() - worldPos) < stdLen2 * 9) {
 			// cursor is near to the river center point
 			if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
@@ -1691,8 +1691,8 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 			}
 		} else {
 			m_mouseEventMode = meNormal;
-			QVector2D lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
-			if ((lbank - worldPos).lengthSquared() < stdLen2 * 9) {
+			QPointF lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
+			if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
 				// cursor is near left bank.
 				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
@@ -1706,8 +1706,8 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 					m_mouseEventMode = meMoveExtensionEndPointPrepareLeft;
 				}
 			}
-			QVector2D rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
-			if ((rbank - worldPos).lengthSquared() < stdLen2 * 9) {
+			QPointF rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
+			if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
 				// cursor is near right bank.
 				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
@@ -1728,7 +1728,7 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 		m_mouseEventMode = meNormal;
 		while (p != nullptr) {
 			if (p->IsSelected) {
-				if ((p->position() - worldPos).lengthSquared() < stdLen2 * 9) {
+				if (iRIC::lengthSquared(p->position() - worldPos) < stdLen2 * 9) {
 					// cursor is near to the river center point
 					if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
@@ -1744,8 +1744,8 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 					}
 				} else {
 					m_mouseEventMode = meNormal;
-					QVector2D lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-					if ((lbank - worldPos).lengthSquared() < stdLen2 * 9) {
+					QPointF lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+					if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
 						// cursor is near left bank.
 						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
@@ -1754,8 +1754,8 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 							return;
 						}
 					}
-					QVector2D rbank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-					if ((rbank - worldPos).lengthSquared() < stdLen2 * 9) {
+					QPointF rbank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+					if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
 						// cursor is near right bank.
 						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
@@ -1929,13 +1929,13 @@ void GeoDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPo
 	grid->SetPoints(points);
 
 	// left bank
-	QVector2D leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+	QPointF leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 	point[0] = leftBank.x();
 	point[1] = leftBank.y();
 	points->InsertNextPoint(point);
 
 	// left fixed point
-	QVector2D leftFixed;
+	QPointF leftFixed;
 	if (p->crosssection().fixedPointLSet()) {
 		leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
 	} else {
@@ -1964,7 +1964,7 @@ void GeoDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPo
 	grid->InsertNextCell(line->GetCellType(), line->GetPointIds());
 
 	// right fixed point
-	QVector2D rightFixed;
+	QPointF rightFixed;
 	if (p->crosssection().fixedPointRSet()) {
 		rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
 	} else {
@@ -1982,7 +1982,7 @@ void GeoDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPo
 	grid->InsertNextCell(line->GetCellType(), line->GetPointIds());
 
 	// right bank
-	QVector2D rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+	QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 	point[0] = rightBank.x();
 	point[1] = rightBank.y();
 	points->InsertNextPoint(point);
@@ -2029,7 +2029,7 @@ void GeoDataRiverSurvey::doApplyOffset(double x, double y)
 {
 	GeoDataRiverPathPoint* p = this->m_headPoint->nextPoint();
 	while (p != nullptr) {
-		QVector2D v = p->position();
+		QPointF v = p->position();
 		v.setX(v.x() - x);
 		v.setY(v.y() - y);
 		p->setPosition(v);

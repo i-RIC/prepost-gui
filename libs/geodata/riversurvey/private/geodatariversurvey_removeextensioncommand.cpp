@@ -1,7 +1,7 @@
 #include "geodatariversurvey_removeextensioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-GeoDataRiverSurvey::RemoveExtensionCommand::RemoveExtensionCommand(bool left, const QVector2D& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
+GeoDataRiverSurvey::RemoveExtensionCommand::RemoveExtensionCommand(bool left, const QPointF &pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Remove Extension Line")},
 	m_point {p},
 	m_rs {rs},

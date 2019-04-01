@@ -17,8 +17,8 @@ public:
 	bool mergeWith(const QUndoCommand* other) override;
 
 private:
-	QList<QVector2D> m_newPositions;
-	QList<QVector2D> m_oldPositions;
+	QList<QPointF> m_newPositions;
+	QList<QPointF> m_oldPositions;
 	QList<GeoDataRiverPathPoint*> m_points;
 	GeoDataRiverSurvey* m_rs;
 };

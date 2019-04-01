@@ -252,21 +252,21 @@ void ContinuousSnapshotGoogleEarthSettingPage::worldToImage(QPointF& p)
 	// image width
 	m_imageWidth = bg->imageWidth();
 
-	QVector2D axisX = QVector2D(1, 0);
+	QPointF axisX(1, 0);
 	iRIC::rotateVector(axisX, bg->angle());
-	QVector2D axisY = axisX;
+	QPointF axisY = axisX;
 	iRIC::rotateVector90(axisY);
 
-	QVector2D diff(p.x() - bg->translateX(), p.y() - bg->translateY());
-	p.setX(QVector2D::dotProduct(diff, axisX) / bg->scale());
-	p.setY(QVector2D::dotProduct(diff, axisY) / bg->scale());
+	QPointF diff(p.x() - bg->translateX(), p.y() - bg->translateY());
+	p.setX(QPointF::dotProduct(diff, axisX) / bg->scale());
+	p.setY(QPointF::dotProduct(diff, axisY) / bg->scale());
 }
 
 void ContinuousSnapshotGoogleEarthSettingPage::imageToLatLong(QPointF& p)
 {
-	QVector2D point0(m_wizard->leftLongitude(), m_wizard->leftLatitude());
-	QVector2D point1(m_wizard->rightLongitude(), m_wizard->rightLatitude());
-	QVector2D dv = point1 - point0;
+	QPointF point0(m_wizard->leftLongitude(), m_wizard->leftLatitude());
+	QPointF point1(m_wizard->rightLongitude(), m_wizard->rightLatitude());
+	QPointF dv = point1 - point0;
 
 	// overlay on the boundary of east/west longitude
 	if (point0.x() * point1.x() < 0) {
@@ -276,16 +276,16 @@ void ContinuousSnapshotGoogleEarthSettingPage::imageToLatLong(QPointF& p)
 			point1.setX(point1.x() + 360);
 		}
 	}
-	if (dv.lengthSquared() > (point1 - point0).lengthSquared()) {
+	if (iRIC::lengthSquared(dv) > iRIC::lengthSquared(point1 - point0)) {
 		dv = point1 - point0;
 	}
 
-	QVector2D axisX = dv / m_imageWidth;
+	QPointF axisX = dv / m_imageWidth;
 	double angle = point0.y() * M_PI / 180.;
 	m_rate = std::cos(angle);
-	QVector2D axisY(- axisX.y() / m_rate, axisX.x() * m_rate);
+	QPointF axisY(-axisX.y() / m_rate, axisX.x() * m_rate);
 
-	QVector2D ret = point0 + axisX * p.x() + axisY * p.y();
+	QPointF ret = point0 + axisX * p.x() + axisY * p.y();
 	p.setX(ret.x());
 	p.setY(ret.y());
 }
@@ -312,12 +312,12 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 	m_wizard->setAngle(angle * 180 / M_PI);
 
 	// calculate north/south/east/west
-	QVector2D centerV(targetSnapshotSize().width() / 2., targetSnapshotSize().height() / 2.);
-	QVector2D centerRightV(targetSnapshotSize().width(), targetSnapshotSize().height() / 2.);
-	QVector2D centerTopV(targetSnapshotSize().width() / 2., 0);
+	QPointF centerV(targetSnapshotSize().width() / 2., targetSnapshotSize().height() / 2.);
+	QPointF centerRightV(targetSnapshotSize().width(), targetSnapshotSize().height() / 2.);
+	QPointF centerTopV(targetSnapshotSize().width() / 2., 0);
 
-	QVector2D dx = centerRightV - centerV;
-	QVector2D dy = centerTopV - centerV;
+	QPointF dx = centerRightV - centerV;
+	QPointF dy = centerTopV - centerV;
 	// reflection
 	dx.setY(- dx.y());
 	dy.setY(- dy.y());
@@ -330,8 +330,8 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 	dx.setY(- dx.y());
 	dy.setY(- dy.y());
 
-	QVector2D rightTopV = centerV + dx + dy;
-	QVector2D leftBottomV = centerV - dx - dy;
+	QPointF rightTopV = centerV + dx + dy;
+	QPointF leftBottomV = centerV - dx - dy;
 
 	QPointF rightTop(rightTopV.x(), rightTopV.y());
 	QPointF leftBottom(leftBottomV.x(), leftBottomV.y());
