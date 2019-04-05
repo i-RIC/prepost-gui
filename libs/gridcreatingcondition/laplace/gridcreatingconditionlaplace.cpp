@@ -425,8 +425,33 @@ void GridCreatingConditionLaplace::updateZDepthRangeItemCount(ZDepthRange& range
 void GridCreatingConditionLaplace::assignActorZValues(const ZDepthRange& range)
 {
 	impl->m_zDepthRange = range;
+
+	impl->m_ctrlPointsController.pointsActor()->SetPosition(0, 0, range.max());
+
 	impl->m_centerLine.pointsActor()->SetPosition(0, 0, range.max());
 	impl->m_centerLineSpline.linesActor()->SetPosition(0, 0, range.min());
+
+	impl->m_newEdgeLine.pointsActor()->SetPosition(0, 0, range.max());
+	impl->m_newEdgeLine.linesActor()->SetPosition(0, 0, range.min());
+
+	for (auto l : impl->m_edgeLinesCrossSection) {
+		l->pointsActor()->SetPosition(0, 0, range.max());
+	}
+	for (auto l : impl->m_edgeLinesStreamWise) {
+		l->pointsActor()->SetPosition(0, 0, range.max());
+	}
+	for (auto l : impl->m_edgeLinesCrossSectionForEdgeSelection) {
+		l->linesActor()->SetPosition(0, 0, range.min());
+	}
+	for (auto l : impl->m_edgeLinesStreamWiseForEdgeSelection) {
+		l->linesActor()->SetPosition(0, 0, range.min());
+	}
+	for (auto l : impl->m_edgeLinesCrossSectionForDivisionPreview) {
+		l->pointsActor()->SetPosition(0, 0, range.max());
+	}
+	for (auto l : impl->m_edgeLinesStreamWiseForDivisionPreview) {
+		l->pointsActor()->SetPosition(0, 0, range.max());
+	}
 }
 
 void GridCreatingConditionLaplace::buildBankLines()
