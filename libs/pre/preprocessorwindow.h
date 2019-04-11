@@ -79,6 +79,7 @@ public:
 	QList<QMenu*> getAdditionalMenus() const override;
 	QToolBar* getAdditionalToolBar() const override;
 	ObjectBrowser* objectBrowser() const override;
+	QMenu* calcCondMenu() const;
 	void addGridCreatingConditionImportMenu(QMenu* menu);
 	void addGridCreatingConditionExportMenu(QMenu* menu);
 	void addGridImportMenu(QMenu* menu);

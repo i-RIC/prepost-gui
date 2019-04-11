@@ -240,7 +240,6 @@ QList<QMenu*> PreProcessorWindow::getAdditionalMenus() const
 	if (m_dataModel != nullptr) {
 		menus.append(model->additionalMenus());
 	}
-	menus.append(m_actionManager->calcCondMenu());
 	return menus;
 }
 
@@ -350,8 +349,12 @@ void PreProcessorWindow::handleAdditionalMenusUpdate(const QList<QMenu*>& m)
 {
 	QList<QMenu*> menus;
 	menus.append(m);
-	menus.append(m_actionManager->calcCondMenu());
 	emit additionalMenusUpdated(menus);
+}
+
+QMenu* PreProcessorWindow::calcCondMenu() const
+{
+	return m_actionManager->calcCondMenu();
 }
 
 void PreProcessorWindow::addGridCreatingConditionImportMenu(QMenu* menu)
