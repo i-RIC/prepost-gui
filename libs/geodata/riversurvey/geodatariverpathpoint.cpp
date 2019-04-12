@@ -280,10 +280,8 @@ void GeoDataRiverPathPoint::selectRegion(const QPointF& point0, const QPointF& v
 void GeoDataRiverPathPoint::XORSelectRegion(const QPointF& point0, const QPointF& v0, const QPointF& v1)
 {
 	QPointF dv = m_position - point0;
-	QPointF tmpv0 = v0;
-	iRIC::normalize(tmpv0);
-	QPointF tmpv1 = v1;
-	iRIC::normalize(tmpv1);
+	QPointF tmpv0 = iRIC::normalize(v0);
+	QPointF tmpv1 = iRIC::normalize(v1);
 	double d0 = QPointF::dotProduct(dv, tmpv0);
 	double d1 = QPointF::dotProduct(dv, tmpv1);
 	if (0 < d0 && d0 < iRIC::length(v0) &&
@@ -301,10 +299,8 @@ void GeoDataRiverPathPoint::SelectCtrlPointsRegion(
 {
 	if (! m_gridSkip) {
 		unsigned int i;
-		QPointF tmpv0 = v0;
-		QPointF tmpv1 = v1;
-		iRIC::normalize(tmpv0);
-		iRIC::normalize(tmpv1);
+		QPointF tmpv0 = iRIC::normalize(v0);
+		QPointF tmpv1 = iRIC::normalize(v1);
 		double l0 = iRIC::length(v0);
 		double l1 = iRIC::length(v1);
 		// Rough checking first
@@ -714,8 +710,7 @@ void GeoDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCo
 	if (m_previousPoint == nullptr) {
 		throw ec_PreviousPointDontExist;
 	}
-	QPointF dv = m_previousPoint->position() - m_position;
-	iRIC::normalize(dv);
+	QPointF dv = iRIC::normalize(m_previousPoint->position() - m_position);
 
 	iRIC::rotateVector(dv, angle);
 	setCrosssectionDirection(dv);
@@ -761,7 +756,7 @@ void GeoDataRiverPathPoint::addExtentionPointLeft(const QPointF& pos)
 	QPointF fixPoint = crosssectionPosition(alt.position());
 	QPointF newdirection = pos - fixPoint;
 	double distance = iRIC::length(newdirection);
-	iRIC::normalize(newdirection);
+	newdirection = iRIC::normalize(newdirection);
 	setCrosssectionDirectionL(- newdirection);
 	if (m_crosssection.fixedPointRSet()) {
 		m_crosssection.setFixedPointR(m_crosssection.fixedPointRIndex() + 1);
@@ -776,7 +771,7 @@ void GeoDataRiverPathPoint::addExtentionPointRight(const QPointF& pos)
 	QPointF fixPoint = crosssectionPosition(alt.position());
 	QPointF newdirection = pos - fixPoint;
 	double distance = iRIC::length(newdirection);
-	iRIC::normalize(newdirection);
+	newdirection = iRIC::normalize(newdirection);
 	setCrosssectionDirectionR(newdirection);
 	int rightBankIndex = m_crosssection.rightBankIndex(true);
 	m_crosssection.addPoint(alt.position() + distance, alt.height());
