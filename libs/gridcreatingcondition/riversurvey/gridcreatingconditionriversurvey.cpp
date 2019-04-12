@@ -1027,6 +1027,7 @@ bool GridCreatingConditionRiverSurvey::ctrlPointXORSelectRegion(
 			if (*it == *it2) {
 				found = true;
 				tmplist.erase(it2);
+				break;
 			}
 		}
 		if (! found) {
