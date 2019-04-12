@@ -158,14 +158,13 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
 
 	if (zCont != nullptr) {
-		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
+		if (zones.size() != 0) {
 			auto pd = zCont->data()->GetPointData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 				setupNodeScalarsToColors(name);
 			}
 			updateNodeLookupTableRanges();
-		}
-		if (m_cellLookupTables.count() == 0 && zones.size() != 0) {
+
 			auto cd = zCont->data()->GetCellData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
 				setupCellScalarsToColors(name);
