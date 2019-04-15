@@ -9,33 +9,7 @@ class iRICMainWindow;
 class ContinuousSnapshotWizard;
 class CoordinateSystem;
 
-class QLabel;
-class QListWidget;
 class QMdiSubWindow;
-
-class ContinuousSnapshotIntroductionPage : public QWizardPage
-{
-	Q_OBJECT
-
-public:
-	ContinuousSnapshotIntroductionPage(QWidget* parent = nullptr);
-
-private:
-	QLabel* m_label;
-};
-
-class ContinuousSnapshotConfirmPage : public QWizardPage
-{
-	Q_OBJECT
-
-public:
-	ContinuousSnapshotConfirmPage(QWidget* parent = nullptr);
-	void initializePage() override;
-
-private:
-	ContinuousSnapshotWizard* m_wizard;
-	QListWidget* m_fileList;
-};
 
 class ContinuousSnapshotWizard : public QWizard
 {
