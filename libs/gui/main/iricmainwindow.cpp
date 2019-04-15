@@ -1173,16 +1173,16 @@ void iRICMainWindow::addKMLElement(int time, QString url, double north, double s
 
 	writer->writeStartElement("LatLonBox");
 	writer->writeStartElement("north");
-	writer->writeCharacters(QString::number(north));
+	writer->writeCharacters(QString::number(north, 'g', 10));
 	writer->writeEndElement();
 	writer->writeStartElement("south");
-	writer->writeCharacters(QString::number(south));
+	writer->writeCharacters(QString::number(south, 'g', 10));
 	writer->writeEndElement();
 	writer->writeStartElement("east");
-	writer->writeCharacters(QString::number(east));
+	writer->writeCharacters(QString::number(east, 'g', 10));
 	writer->writeEndElement();
 	writer->writeStartElement("west");
-	writer->writeCharacters(QString::number(west));
+	writer->writeCharacters(QString::number(west, 'g', 10));
 	writer->writeEndElement();
 	writer->writeStartElement("rotation");
 	writer->writeCharacters(QString::number(angle));
