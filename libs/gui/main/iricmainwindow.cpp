@@ -908,6 +908,7 @@ void iRICMainWindow::continuousSnapshot()
 	if (enableWindow != nullptr) {
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
 
+		wizard->setCoordinateSystem(m_projectData->mainfile()->coordinateSystem());
 		wizard->setOutput(m_output);
 		wizard->setLayout(m_layout);
 		wizard->setTransparent(m_transparent);
@@ -924,18 +925,9 @@ void iRICMainWindow::continuousSnapshot()
 		wizard->setStop(m_stop);
 		wizard->setSamplingRate(m_samplingRate);
 		wizard->setGoogleEarth(m_googleEarth);
-		wizard->setLeftLatitude(m_leftLatitude);
-		wizard->setLeftLongitude(m_leftLongitude);
-		wizard->setRightLatitude(m_rightLatitude);
-		wizard->setRightLongitude(m_rightLongitude);
 		wizard->setTargetWindow(0);
 		wizard->setKMLFilename(m_kmlFilename);
 		wizard->setBackgroundList(m_projectData->mainfile()->backgroundImages());
-		wizard->setAngle(m_angle);
-		wizard->setNorth(m_north);
-		wizard->setSouth(m_south);
-		wizard->setEast(m_east);
-		wizard->setWest(m_west);
 
 		if (wizard->exec() == QDialog::Accepted) {
 			handleWizardAccepted(wizard);
@@ -991,10 +983,6 @@ void iRICMainWindow::handleWizardAccepted(ContinuousSnapshotWizard* wizard)
 	m_samplingRate = wizard->samplingRate();
 
 	m_googleEarth = wizard->googleEarth();
-	m_leftLatitude = wizard->leftLatitude();
-	m_leftLongitude = wizard->leftLongitude();
-	m_rightLatitude = wizard->rightLatitude();
-	m_rightLongitude = wizard->rightLongitude();
 	m_kmlFilename = wizard->kmlFilename();
 	m_angle = wizard->angle();
 	m_north = wizard->north();
@@ -1490,10 +1478,6 @@ void iRICMainWindow::initSetting()
 	m_stop = -1;
 	m_samplingRate = 1;
 	m_googleEarth = false;
-	m_leftLatitude = 0;
-	m_leftLongitude = 0;
-	m_rightLatitude = 0;
-	m_rightLongitude = 0;
 	m_kmlFilename = QString("output.kml");
 	m_angle = 0;
 	m_north = 0;

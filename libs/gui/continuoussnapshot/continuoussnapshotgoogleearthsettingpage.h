@@ -21,15 +21,14 @@ public:
 
 	void initializePage() override;
 	bool validatePage() override;
-	void setupWindowComboBox();
-	void setupBackgroundComboBox();
+
 	void calculateKMLInformation();
 	QSize targetSnapshotSize();
 
 private:
 	void snapshotToWorld(QPointF& p);
-	void worldToImage(QPointF& p);
-	void imageToLatLong(QPointF& p);
+	void worldToLatLong(QPointF& p);
+
 	void snapshotToLatLong(QPointF& p);
 
 	iRICMainWindow* m_mainWindow;

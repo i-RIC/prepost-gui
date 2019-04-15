@@ -309,12 +309,6 @@ private:
 	bool m_continuousSnapshotInProgress;
 
 	bool m_googleEarth;
-	double m_leftLatitude;
-	double m_leftLongitude;
-	double m_rightLatitude;
-	double m_rightLongitude;
-	QPoint bottomLeft;
-	QPoint bottomRight;
 	QString m_kmlFilename;
 	double m_angle;
 	double m_north;

@@ -15,8 +15,9 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-ContinuousSnapshotWizard::ContinuousSnapshotWizard(QWidget* parent)
-	: QWizard(parent)
+ContinuousSnapshotWizard::ContinuousSnapshotWizard(QWidget* parent) :
+	QWizard(parent),
+	m_coordinateSystem {nullptr}
 {
 	addPage(new ContinuousSnapshotIntroductionPage(this));
 	addPage(new ContinuousSnapshotWindowSelectionPage(this));
