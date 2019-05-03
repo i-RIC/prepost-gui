@@ -35,7 +35,6 @@ private:
 	ContinuousSnapshotWizard* m_wizard;
 
 	int m_imageWidth;
-	double m_rate;
 
 	Ui::ContinuousSnapshotGoogleEarthSettingPage* ui;
 };

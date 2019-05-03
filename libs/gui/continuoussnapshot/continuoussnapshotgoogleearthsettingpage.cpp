@@ -139,7 +139,6 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 
 	// calculate angle (radian)
 	QPointF dv = centerRight - center;
-	dv.setX(dv.x() * m_rate);
 	double angle = std::atan(dv.y() / dv.x());
 	m_wizard->setAngle(angle * 180 / M_PI);
 
