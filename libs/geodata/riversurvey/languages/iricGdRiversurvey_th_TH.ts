@@ -731,47 +731,47 @@
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="109"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="104"/>
         <source>&amp;Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="111"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="106"/>
         <source>&amp;Inactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="113"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="108"/>
         <source>&amp;Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="128"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="123"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="567"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="562"/>
         <source>Left Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="571"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="566"/>
         <source>Right Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1603"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1598"/>
         <source>Edit Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1618"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1613"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1618"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1613"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation type="unfinished"></translation>
@@ -782,8 +782,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1332"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1353"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1327"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1348"/>
         <source>Inactivate Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -871,20 +871,20 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="248"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="372"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="249"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="373"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="304"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="342"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="305"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="343"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="304"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="342"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="305"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="343"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation type="unfinished"></translation>
     </message>

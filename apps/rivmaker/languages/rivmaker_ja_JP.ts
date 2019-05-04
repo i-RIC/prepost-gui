@@ -169,18 +169,18 @@
         <translation>座標の編集(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="115"/>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="124"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="117"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="126"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="115"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="117"/>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
         <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
     </message>
     <message>
-        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="124"/>
+        <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="126"/>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
     </message>

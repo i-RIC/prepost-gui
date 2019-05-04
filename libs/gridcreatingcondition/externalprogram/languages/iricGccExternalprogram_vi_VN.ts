@@ -19,8 +19,8 @@
     <name>GridCreatingConditionExternalProgram</name>
     <message>
         <location filename="../gridcreatingconditionexternalprogram.cpp" line="81"/>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="135"/>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="142"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="134"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="151"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -35,7 +35,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="142"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="151"/>
         <source>Grid Creation failed.</source>
         <translation type="unfinished"></translation>
     </message>

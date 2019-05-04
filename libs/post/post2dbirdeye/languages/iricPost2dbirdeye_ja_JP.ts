@@ -72,7 +72,7 @@
 <context>
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowaxesdataitem.cpp" line="15"/>
+        <location filename="../datamodel/post2dbirdeyewindowaxesdataitem.cpp" line="17"/>
         <source>Axes</source>
         <translation>座標軸</translation>
     </message>
@@ -140,7 +140,7 @@
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="24"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="25"/>
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
@@ -195,7 +195,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="209"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="210"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>

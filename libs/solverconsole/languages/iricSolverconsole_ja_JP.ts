@@ -73,54 +73,54 @@
         <translation>ソルバーの実行ファイル %1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="189"/>
-        <location filename="../solverconsolewindow.cpp" line="350"/>
+        <location filename="../solverconsolewindow.cpp" line="190"/>
+        <location filename="../solverconsolewindow.cpp" line="352"/>
         <source>Confirm Solver Termination</source>
         <translation>ソルバーの中止の確認</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="190"/>
+        <location filename="../solverconsolewindow.cpp" line="191"/>
         <source>Do you really want to kill the solver?</source>
         <translation>本当にソルバーの実行を中止していいですか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="242"/>
-        <location filename="../solverconsolewindow.cpp" line="245"/>
+        <location filename="../solverconsolewindow.cpp" line="244"/>
+        <location filename="../solverconsolewindow.cpp" line="247"/>
         <source>Solver Finished</source>
         <translation>ソルバー終了</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="242"/>
+        <location filename="../solverconsolewindow.cpp" line="244"/>
         <source>The solver finished calculation.</source>
         <translation>ソルバーの計算が終了しました.</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="245"/>
+        <location filename="../solverconsolewindow.cpp" line="247"/>
         <source>The solver finished abnormally.</source>
         <translation>ソルバーが異常終了しました。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="254"/>
+        <location filename="../solverconsolewindow.cpp" line="256"/>
         <source>Solver Console</source>
         <translation>ソルバーコンソール</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="260"/>
+        <location filename="../solverconsolewindow.cpp" line="262"/>
         <source>running</source>
         <translation>実行中</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="262"/>
+        <location filename="../solverconsolewindow.cpp" line="264"/>
         <source>stopped</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="264"/>
+        <location filename="../solverconsolewindow.cpp" line="266"/>
         <source>Solver Console [%1] (%2)</source>
         <translation>ソルバーコンソール [%1] (%2)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="351"/>
+        <location filename="../solverconsolewindow.cpp" line="353"/>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
         <translation>%1秒経過しましたが、ソルバが終了しません。ソルバを強制終了しますか?</translation>
     </message>
@@ -133,7 +133,7 @@
         <translation type="vanished">30秒経過しましたが、ソルバが終了しません。ソルバを強制終了しますか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="377"/>
+        <location filename="../solverconsolewindow.cpp" line="379"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>

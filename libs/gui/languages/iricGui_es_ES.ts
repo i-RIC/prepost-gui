@@ -228,7 +228,7 @@
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="60"/>
-        <source>Note: This function can be enabled only when you specified coordinate system.</source>
+        <source>Note: This feature is available only when a coordinate system has been specified.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -256,7 +256,7 @@
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotintroductionpage.cpp" line="10"/>
-        <source>This wizard will generate continuous snapshots.You need to specify some informations for that.</source>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -771,7 +771,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="100"/>
-        <source>Note: When a image is loaded that has width (or height) larger than the Max Size, it is resized automatically.</source>
+        <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

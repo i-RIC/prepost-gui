@@ -783,17 +783,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="43"/>
-        <source>Make sure all points are used</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="53"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If all triangles that contains a certain point are removed, the triangle with shortest edges are restored, to make sure all points in the data is used by at least one triangle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="81"/>
+        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="41"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>

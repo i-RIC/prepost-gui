@@ -61,20 +61,20 @@
         <translation type="vanished">右岸線のエクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1059"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1064"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1060"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1065"/>
         <source>Center line</source>
         <translation>中心線</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1074"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1079"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1075"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1080"/>
         <source>Left bank line</source>
         <translation>左岸線</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1089"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1094"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1090"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="1095"/>
         <source>Right bank line</source>
         <translation>右岸線</translation>
     </message>

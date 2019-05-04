@@ -835,8 +835,12 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="60"/>
-        <source>Note: This function can be enabled only when you specified coordinate system.</source>
+        <source>Note: This feature is available only when a coordinate system has been specified.</source>
         <translation>注意: この機能は、座標系を指定したときのみ有効です。</translation>
+    </message>
+    <message>
+        <source>Note: This function can be enabled only when you specified coordinate system.</source>
+        <translation type="vanished">注意: この機能は、座標系を指定したときのみ有効です。</translation>
     </message>
     <message>
         <source>This function can be enabled only when you imported a background image.</source>
@@ -939,8 +943,12 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotintroductionpage.cpp" line="10"/>
-        <source>This wizard will generate continuous snapshots.You need to specify some informations for that.</source>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
         <translation>このウィザードを使って、連続スナップショットの出力に必要な情報を指定します。</translation>
+    </message>
+    <message>
+        <source>This wizard will generate continuous snapshots.You need to specify some informations for that.</source>
+        <translation type="vanished">このウィザードを使って、連続スナップショットの出力に必要な情報を指定します。</translation>
     </message>
 </context>
 <context>
@@ -11963,8 +11971,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="100"/>
-        <source>Note: When a image is loaded that has width (or height) larger than the Max Size, it is resized automatically.</source>
+        <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
         <translation>注意: 幅 (もしくは高さ) が最大サイズより大きい画像を読み込んだ時は、自動的にリサイズされます。</translation>
+    </message>
+    <message>
+        <source>Note: When a image is loaded that has width (or height) larger than the Max Size, it is resized automatically.</source>
+        <translation type="vanished">注意: 幅 (もしくは高さ) が最大サイズより大きい画像を読み込んだ時は、自動的にリサイズされます。</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="130"/>

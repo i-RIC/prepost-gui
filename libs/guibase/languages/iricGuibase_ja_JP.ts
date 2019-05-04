@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -203,12 +203,12 @@
 <context>
     <name>CoordinateEditWidget</name>
     <message>
-        <location filename="../widget/coordinateeditwidget.cpp" line="47"/>
+        <location filename="../widget/coordinateeditwidget.cpp" line="48"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../widget/coordinateeditwidget.cpp" line="47"/>
+        <location filename="../widget/coordinateeditwidget.cpp" line="48"/>
         <source>It is not a real value</source>
         <translation>これは実数値ではありません</translation>
     </message>
@@ -217,15 +217,15 @@
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>
-        <translation>座標系の選択</translation>
+        <translation type="vanished">座標系の選択</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>検索:</translation>
+        <translation type="vanished">検索:</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation>(指定されていない)</translation>
+        <translation type="vanished">(指定されていない)</translation>
     </message>
 </context>
 <context>
@@ -254,7 +254,7 @@
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../widget/doublespinboxwithhelp.cpp" line="63"/>
+        <location filename="../widget/doublespinboxwithhelp.cpp" line="61"/>
         <source>Min: %1, Max: %2</source>
         <translation>最小値: %1, 最大値: %2</translation>
     </message>
@@ -346,23 +346,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation type="vanished">X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation>Y: ------</translation>
+        <translation type="vanished">Y: ------</translation>
     </message>
 </context>
 <context>
@@ -394,12 +394,12 @@
         <translation>プロパティ(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="81"/>
+        <location filename="../objectbrowserview.cpp" line="89"/>
         <source>Delete item</source>
         <translation>項目の削除</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="81"/>
+        <location filename="../objectbrowserview.cpp" line="87"/>
         <source>Are you sure you want to delete this item?</source>
         <translation>本当にこの項目を削除していいですか?</translation>
     </message>
@@ -408,7 +408,7 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation>選択状態の変更</translation>
+        <translation type="vanished">選択状態の変更</translation>
     </message>
 </context>
 <context>
@@ -423,7 +423,7 @@
     <name>RealNumberEditWidget</name>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <location filename="../widget/realnumbereditwidget.cpp" line="129"/>
@@ -509,7 +509,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
    &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;-%3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;-%.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
@@ -517,7 +517,7 @@
         <source>Specify the number format in printf format. For example:
    &quot;%-.3f&quot; for 3.141592 --&gt; 3.141
    &quot;%-.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;%-3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;%-.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>

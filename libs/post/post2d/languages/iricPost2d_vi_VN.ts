@@ -595,12 +595,12 @@
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="206"/>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="192"/>
         <source>Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="374"/>
         <source>Graph Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1257,7 +1257,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowPolyDataGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowpolydatagroupdataitem.cpp" line="229"/>
+        <location filename="../datamodel/post2dwindowpolydatagroupdataitem.cpp" line="224"/>
         <source>PolyData value change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1494,9 +1494,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="124"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="127"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="130"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="126"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="129"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="132"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>

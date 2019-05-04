@@ -57,7 +57,7 @@
         <string notr="true">color: rgb(255, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Note: This function can be enabled only when you specified coordinate system.</string>
+        <string>Note: This feature is available only when a coordinate system has been specified.</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>

@@ -4,7 +4,7 @@
 <context>
     <name>Axis3dDataItem</name>
     <message>
-        <location filename="../axis3ddataitem.cpp" line="39"/>
+        <location filename="../axis3ddataitem.cpp" line="41"/>
         <source>Axes</source>
         <translation>座標軸</translation>
     </message>

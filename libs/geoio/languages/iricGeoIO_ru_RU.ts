@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
+    <name>CoordinatesEditDialog</name>
+    <message>
+        <location filename="../coordinateseditdialog.ui" line="14"/>
+        <source>Edit Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../coordinateseditdialog.cpp" line="26"/>
+        <source>X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../coordinateseditdialog.cpp" line="27"/>
+        <source>Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DBFItemSelectDialog</name>
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="14"/>
@@ -129,7 +147,7 @@
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="36"/>
-        <source>This polyline is composed of multiple line strnigs.. This polyline can not be imported.</source>
+        <source>This polyline is composed of multiple line strings. This polyline can not be imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

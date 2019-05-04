@@ -103,12 +103,12 @@
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="58"/>
+        <location filename="../distancemeasuredataitem.cpp" line="50"/>
         <source>Property</source>
         <translation>プロパティ</translation>
     </message>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="60"/>
+        <location filename="../distancemeasuredataitem.cpp" line="52"/>
         <source>Redefine</source>
         <translation>再定義</translation>
     </message>
@@ -128,7 +128,7 @@
         <translation>距離計測の再定義</translation>
     </message>
     <message>
-        <location filename="../private/distancemeasuredataitem_setsettingcommand.cpp" line="5"/>
+        <location filename="../private/distancemeasuredataitem_setsettingcommand.cpp" line="7"/>
         <source>Edit Distance Measure Property</source>
         <translation>距離計測プロパティの編集</translation>
     </message>
@@ -141,17 +141,17 @@
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
-        <location filename="../distancemeasuregroupdataitem.cpp" line="14"/>
+        <location filename="../distancemeasuregroupdataitem.cpp" line="15"/>
         <source>&amp;Add Measure...</source>
         <translation>計測の追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../distancemeasuregroupdataitem.cpp" line="18"/>
+        <location filename="../distancemeasuregroupdataitem.cpp" line="19"/>
         <source>Distance Measures</source>
         <translation>距離計測</translation>
     </message>
     <message>
-        <location filename="../distancemeasuregroupdataitem.cpp" line="41"/>
+        <location filename="../distancemeasuregroupdataitem.cpp" line="42"/>
         <source>Measure%1</source>
         <translation>計測%1</translation>
     </message>

@@ -97,7 +97,7 @@
         <item>
          <widget class="QLabel" name="backgroundNoteLabel">
           <property name="text">
-           <string>Note: When a image is loaded that has width (or height) larger than the Max Size, it is resized automatically.</string>
+           <string>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>

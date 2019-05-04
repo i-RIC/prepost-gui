@@ -8,8 +8,7 @@ ContinuousSnapshotIntroductionPage::ContinuousSnapshotIntroductionPage(QWidget* 
 {
 	setTitle(tr("Introduction"));
 	m_label = new QLabel(tr(
-			"This wizard will generate continuous snapshots."
-			"You need to specify some informations for that."
+			"Use this wizard to specify the requirements to generate continuous snapshot output."
 				));
 	m_label->setWordWrap(true);
 	QVBoxLayout* layout = new QVBoxLayout();

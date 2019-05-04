@@ -17,22 +17,22 @@
 <context>
     <name>GridCreatingConditionRectangularRegion</name>
     <message>
-        <location filename="../gridcreatingconditionrectangularregion.cpp" line="289"/>
+        <location filename="../gridcreatingconditionrectangularregion.cpp" line="325"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregion.cpp" line="289"/>
+        <location filename="../gridcreatingconditionrectangularregion.cpp" line="325"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregion.cpp" line="354"/>
+        <location filename="../gridcreatingconditionrectangularregion.cpp" line="389"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregion.cpp" line="354"/>
+        <location filename="../gridcreatingconditionrectangularregion.cpp" line="389"/>
         <source>Please define grid region by mouse-dragging.</source>
         <translation type="unfinished"></translation>
     </message>

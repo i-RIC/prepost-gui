@@ -203,12 +203,12 @@
 <context>
     <name>CoordinateEditWidget</name>
     <message>
-        <location filename="../widget/coordinateeditwidget.cpp" line="47"/>
+        <location filename="../widget/coordinateeditwidget.cpp" line="48"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widget/coordinateeditwidget.cpp" line="47"/>
+        <location filename="../widget/coordinateeditwidget.cpp" line="48"/>
         <source>It is not a real value</source>
         <translation type="unfinished"></translation>
     </message>
@@ -239,7 +239,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widget/doublespinboxwithhelp.cpp" line="63"/>
+        <location filename="../widget/doublespinboxwithhelp.cpp" line="61"/>
         <source>Min: %1, Max: %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -356,12 +356,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="81"/>
+        <location filename="../objectbrowserview.cpp" line="89"/>
         <source>Delete item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="81"/>
+        <location filename="../objectbrowserview.cpp" line="87"/>
         <source>Are you sure you want to delete this item?</source>
         <translation type="unfinished"></translation>
     </message>
