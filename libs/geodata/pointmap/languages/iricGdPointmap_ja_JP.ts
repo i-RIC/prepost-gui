@@ -815,17 +815,15 @@
         <translation>しきい値の辺の長さ:</translation>
     </message>
     <message>
-        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="43"/>
         <source>Make sure all points are used</source>
-        <translation>すべての点が使われるようにする</translation>
+        <translation type="vanished">すべての点が使われるようにする</translation>
     </message>
     <message>
-        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If all triangles that contains a certain point are removed, the triangle with shortest edges are restored, to make sure all points in the data is used by at least one triangle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;もしある点を含む全ての三角形が削除される場合、それらのうち一番辺の長さが短い三角形を削除対象から外すことで、すべての点が少なくとも1つの三角形で使われるようにします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;もしある点を含む全ての三角形が削除される場合、それらのうち一番辺の長さが短い三角形を削除対象から外すことで、すべての点が少なくとも1つの三角形で使われるようにします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="81"/>
+        <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="41"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>

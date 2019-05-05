@@ -4,37 +4,12 @@
 #include <QWizard>
 #include <QList>
 
-class QLabel;
-class QListWidget;
-class QMdiSubWindow;
-
+class BackgroundImageInfo;
 class iRICMainWindow;
 class ContinuousSnapshotWizard;
-class BackgroundImageInfo;
+class CoordinateSystem;
 
-class ContinuousSnapshotIntroductionPage : public QWizardPage
-{
-	Q_OBJECT
-
-public:
-	ContinuousSnapshotIntroductionPage(QWidget* parent = nullptr);
-
-private:
-	QLabel* m_label;
-};
-
-class ContinuousSnapshotConfirmPage : public QWizardPage
-{
-	Q_OBJECT
-
-public:
-	ContinuousSnapshotConfirmPage(QWidget* parent = nullptr);
-	void initializePage() override;
-
-private:
-	ContinuousSnapshotWizard* m_wizard;
-	QListWidget* m_fileList;
-};
+class QMdiSubWindow;
 
 class ContinuousSnapshotWizard : public QWizard
 {
@@ -47,6 +22,7 @@ public:
 	ContinuousSnapshotWizard(QWidget* parent);
 	void accept() override;
 
+	void setCoordinateSystem(CoordinateSystem* cs) {m_coordinateSystem = cs;}
 	void setOutput(Output o) {m_output = o;}
 	void setLayout(Layout l) {m_layout = l;}
 	void setSnapshotSize(QSize s) {m_snapshotSize = s;}
@@ -65,12 +41,7 @@ public:
 	void setStop(int s) {m_stop = s;}
 	void setSamplingRate(int r) {m_samplingRate = r;}
 	void setGoogleEarth(bool on) {m_googleEarth = on;}
-	void setLeftLatitude(double deg) {m_leftLatitude = deg;}
-	void setLeftLongitude(double deg) {m_leftLongitude = deg;}
-	void setRightLatitude(double deg) {m_rightLatitude = deg;}
-	void setRightLongitude(double deg) {m_rightLongitude = deg;}
 	void setTargetWindow(int i) {m_targetWindow = i;}
-	void setTargetBackground(int i) {m_targetBackground = i;}
 	void setKMLFilename(const QString& name) {m_kmlFilename = name;}
 	void setBackgroundList(const std::vector<BackgroundImageInfo*>& list) {m_backgroundList = list;}
 	void setAngle(double a) {m_angle = a;}
@@ -79,6 +50,7 @@ public:
 	void setEast(double e) {m_east = e;}
 	void setWest(double w) {m_west = w;}
 
+	CoordinateSystem* coordinateSystem() const {return m_coordinateSystem;}
 	Output output() {return m_output;}
 	Layout layout() {return m_layout;}
 	QSize snapshotSize() {return m_snapshotSize;}
@@ -97,12 +69,7 @@ public:
 	int stop() {return m_stop;}
 	int samplingRate() {return m_samplingRate;}
 	bool googleEarth() {return m_googleEarth;}
-	double leftLatitude() {return m_leftLatitude;}
-	double leftLongitude() {return m_leftLongitude;}
-	double rightLatitude() {return m_rightLatitude;}
-	double rightLongitude() {return m_rightLongitude;}
 	int targetWindow() {return m_targetWindow;}
-	int targetBackground() {return m_targetBackground;}
 	QString kmlFilename() {return m_kmlFilename;}
 	const std::vector<BackgroundImageInfo*>& backgroundList() {return m_backgroundList;}
 	double angle() {return m_angle;}
@@ -129,6 +96,7 @@ private:
 
 	// window selection
 	QList<QMdiSubWindow*> m_windowList;
+	CoordinateSystem* m_coordinateSystem;
 	Output m_output;
 	Layout m_layout;
 	QSize m_snapshotSize;
@@ -156,12 +124,7 @@ private:
 
 	// google earth
 	bool m_googleEarth;
-	double m_leftLatitude;
-	double m_leftLongitude;
-	double m_rightLatitude;
-	double m_rightLongitude;
 	int m_targetWindow;
-	int m_targetBackground;
 	QString m_kmlFilename;
 	std::vector<BackgroundImageInfo*> m_backgroundList;
 	double m_angle;

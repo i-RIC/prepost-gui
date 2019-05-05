@@ -244,12 +244,12 @@
         <translation type="vanished">折れ線%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="12"/>
+        <location filename="../geodatapolylinecreator.cpp" line="14"/>
         <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="25"/>
+        <location filename="../geodatapolylinecreator.cpp" line="27"/>
         <source>Polyline%1</source>
         <translation>折れ線%1</translation>
     </message>

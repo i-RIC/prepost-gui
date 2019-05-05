@@ -53,34 +53,34 @@
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="22"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="38"/>
         <source>NetCDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="31"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="47"/>
         <source>NetCDF file (*.nc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="144"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="304"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="112"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="162"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="325"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="112"/>
         <source>%1 does not have longitude and latitude data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="144"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="162"/>
         <source>%1 does not have variable that can be imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="304"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="325"/>
         <source>Dimension values for %1 mismatch.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -109,6 +109,36 @@
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="46"/>
+        <source>Unit:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="54"/>
+        <source>years</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="59"/>
+        <source>days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="64"/>
+        <source>hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="69"/>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="74"/>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="82"/>
         <source>Original time:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -134,42 +164,42 @@
 <context>
     <name>GeoDataNetcdfXbandImporter</name>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="21"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="31"/>
         <source>XBand MP RADER data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="30"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="40"/>
         <source>X band MP rader data (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="48"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="58"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="48"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="58"/>
         <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="59"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="86"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="59"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="86"/>
         <source>%1 files in the folder %2 are imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="151"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="187"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfxbandimporter.cpp" line="151"/>
+        <location filename="../geodatanetcdfxbandimporter.cpp" line="187"/>
         <source>Dimension values for time mismatch.</source>
         <translation type="unfinished"></translation>
     </message>

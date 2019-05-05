@@ -79,12 +79,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1577"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="1580"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1577"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="1580"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -94,7 +94,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="28"/>
+        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="29"/>
         <source>Add Control Points regionally</source>
         <translation type="unfinished"></translation>
     </message>
@@ -188,12 +188,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="220"/>
+        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="221"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="221"/>
+        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="222"/>
         <source>The control points which already exist in this region are overwritten.</source>
         <translation type="unfinished"></translation>
     </message>

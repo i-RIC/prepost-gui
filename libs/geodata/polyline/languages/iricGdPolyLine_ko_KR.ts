@@ -158,12 +158,12 @@
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="12"/>
+        <location filename="../geodatapolylinecreator.cpp" line="14"/>
         <source>Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="25"/>
+        <location filename="../geodatapolylinecreator.cpp" line="27"/>
         <source>Polyline%1</source>
         <translation type="unfinished"></translation>
     </message>

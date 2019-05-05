@@ -4,52 +4,52 @@
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="93"/>
+        <location filename="../geodatapolygon.cpp" line="79"/>
         <source>Edit &amp;Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="80"/>
         <source>&amp;Copy...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="81"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="82"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="103"/>
+        <location filename="../geodatapolygon.cpp" line="83"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="105"/>
+        <location filename="../geodatapolygon.cpp" line="77"/>
         <source>Add &amp;Hole Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="110"/>
+        <location filename="../geodatapolygon.cpp" line="78"/>
         <source>&amp;Delete Hole Region...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="113"/>
+        <location filename="../geodatapolygon.cpp" line="84"/>
         <source>Color &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="167"/>
+        <location filename="../geodatapolygon.cpp" line="172"/>
         <source>&amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="536"/>
+        <location filename="../geodatapolygon.cpp" line="560"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation type="unfinished"></translation>
@@ -70,7 +70,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_addvertexcommand.cpp" line="8"/>
+        <location filename="../private/geodatapolygon_addvertexcommand.cpp" line="10"/>
         <source>Insert Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
@@ -80,13 +80,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="531"/>
-        <location filename="../geodatapolygon.cpp" line="977"/>
+        <location filename="../geodatapolygon.cpp" line="555"/>
+        <location filename="../geodatapolygon.cpp" line="1006"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="531"/>
+        <location filename="../geodatapolygon.cpp" line="555"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -96,23 +96,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="949"/>
-        <location filename="../geodatapolygon.cpp" line="1138"/>
+        <location filename="../geodatapolygon.cpp" line="978"/>
+        <location filename="../geodatapolygon.cpp" line="1166"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="949"/>
+        <location filename="../geodatapolygon.cpp" line="978"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="977"/>
+        <location filename="../geodatapolygon.cpp" line="1006"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1138"/>
+        <location filename="../geodatapolygon.cpp" line="1166"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -122,12 +122,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1171"/>
+        <location filename="../geodatapolygon.cpp" line="1201"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1172"/>
+        <location filename="../geodatapolygon.cpp" line="1202"/>
         <source>Please input new value in this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,31 +137,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1349"/>
+        <location filename="../geodatapolygon.cpp" line="1373"/>
         <source>Select Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1349"/>
+        <location filename="../geodatapolygon.cpp" line="1373"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editcoordinatescommand.cpp" line="7"/>
+        <location filename="../private/geodatapolygon_editcoordinatescommand.cpp" line="9"/>
         <source>Edit Polygon Coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPolygonAbstractPolygon</name>
-    <message>
-        <location filename="../geodatapolygonabstractpolygon.cpp" line="122"/>
-        <source>Please specify a closed polygon!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -204,39 +196,39 @@
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="112"/>
+        <location filename="../geodatapolygonimporter.cpp" line="113"/>
         <source>ESRI Shape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="121"/>
+        <location filename="../geodatapolygonimporter.cpp" line="122"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="144"/>
-        <location filename="../geodatapolygonimporter.cpp" line="152"/>
-        <location filename="../geodatapolygonimporter.cpp" line="159"/>
+        <location filename="../geodatapolygonimporter.cpp" line="145"/>
+        <location filename="../geodatapolygonimporter.cpp" line="153"/>
+        <location filename="../geodatapolygonimporter.cpp" line="160"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="144"/>
+        <location filename="../geodatapolygonimporter.cpp" line="145"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="152"/>
+        <location filename="../geodatapolygonimporter.cpp" line="153"/>
         <source>Opening %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="159"/>
+        <location filename="../geodatapolygonimporter.cpp" line="160"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="203"/>
+        <location filename="../geodatapolygonimporter.cpp" line="204"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -246,8 +238,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="220"/>
-        <location filename="../geodatapolygonimporter.cpp" line="223"/>
+        <location filename="../geodatapolygonimporter.cpp" line="221"/>
+        <location filename="../geodatapolygonimporter.cpp" line="224"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>

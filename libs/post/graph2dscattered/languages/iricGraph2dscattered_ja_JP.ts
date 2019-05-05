@@ -232,33 +232,33 @@
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="115"/>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="196"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="118"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="199"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="115"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="118"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation>スナップショット画像 %1 の保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="180"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="183"/>
         <source>Time = %1 sec</source>
         <translation>時刻 = %1 sec</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="190"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="193"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="190"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="193"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="196"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="199"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation>グラフウィンドウの初期化に失敗しました。計算結果が正しく読み込まれていません。</translation>
     </message>

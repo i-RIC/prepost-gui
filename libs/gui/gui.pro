@@ -281,8 +281,10 @@ win32 {
 
 # Input
 HEADERS += gui_api.h \
+           continuoussnapshot/continuoussnapshotconfirmpage.h \
            continuoussnapshot/continuoussnapshotfilepropertypage.h \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.h \
+           continuoussnapshot/continuoussnapshotintroductionpage.h \
            continuoussnapshot/continuoussnapshotmoviepropertypage.h \
            continuoussnapshot/continuoussnapshottimestepsettingpage.h \
            continuoussnapshot/continuoussnapshotwindowselectionpage.h \
@@ -370,8 +372,10 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          pref/private/preferencepageriversurveyfractionadddialog.ui \
          pref/private/preferencepagetmsadddialog.ui \
          pref/private/preferencepagewebcsvtileadddialog.ui
-SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
+SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
+           continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.cpp \
+           continuoussnapshot/continuoussnapshotintroductionpage.cpp \
            continuoussnapshot/continuoussnapshotmoviepropertypage.cpp \
            continuoussnapshot/continuoussnapshottimestepsettingpage.cpp \
            continuoussnapshot/continuoussnapshotwindowselectionpage.cpp \

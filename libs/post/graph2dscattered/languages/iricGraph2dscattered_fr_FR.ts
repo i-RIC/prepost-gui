@@ -216,33 +216,33 @@
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="115"/>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="196"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="118"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="199"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="115"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="118"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="180"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="183"/>
         <source>Time = %1 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="190"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="193"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="190"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="193"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="196"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="199"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation type="unfinished"></translation>
     </message>

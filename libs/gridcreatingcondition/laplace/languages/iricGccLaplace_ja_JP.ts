@@ -18,10 +18,10 @@
     <name>GridCreatingConditionLaplace</name>
     <message>
         <location filename="../gridcreatingconditionlaplace.cpp" line="106"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="482"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="484"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="491"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="493"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="507"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="509"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="516"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="518"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -31,24 +31,24 @@
         <translation>河川測量データが見つかりません。中心線を、自分で作成してください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="469"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="494"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="469"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="494"/>
         <source>To divide region, click on the edge of the region first, and click on the another edge.</source>
         <translation>領域を分割するには、領域の縁をはじめにクリックし、その後反対側の領域の縁をクリックしてください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="482"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="491"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="507"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="516"/>
         <source>Please select edge line inside the region when you want to join regions.</source>
         <translation>領域を結合する時は、領域の内側の線を選択してください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="484"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="493"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="509"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="518"/>
         <source>Are you sure you join the regions divided with the selected edge?</source>
         <translation>選択された線で隔てられた領域を結合していいですか?</translation>
     </message>

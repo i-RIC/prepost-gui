@@ -4,7 +4,7 @@
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
-        <location filename="../datamodel/attributebrowsertargetdataitem.cpp" line="103"/>
+        <location filename="../datamodel/attributebrowsertargetdataitem.cpp" line="80"/>
         <source>Please specify a closed polygon!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1867,23 +1867,23 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="174"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="173"/>
         <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="260"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
         <source>Background Image change</source>
         <translation type="unfinished"></translation>
     </message>

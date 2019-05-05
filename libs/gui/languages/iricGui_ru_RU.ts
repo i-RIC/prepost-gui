@@ -70,12 +70,12 @@
 <context>
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
-        <location filename="../continuoussnapshot/continuoussnapshotwizard.cpp" line="56"/>
+        <location filename="../continuoussnapshot/continuoussnapshotconfirmpage.cpp" line="12"/>
         <source>Confirm the result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../continuoussnapshot/continuoussnapshotwizard.cpp" line="57"/>
+        <location filename="../continuoussnapshot/continuoussnapshotconfirmpage.cpp" line="13"/>
         <source>The files in the list below will be created or updated. </source>
         <translation type="unfinished"></translation>
     </message>
@@ -228,111 +228,21 @@
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="60"/>
-        <source>Note: This function can be enabled only when you imported a background image.</source>
+        <source>Note: This feature is available only when a coordinate system has been specified.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="75"/>
-        <source>Window/Background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="95"/>
-        <source>Window :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="147"/>
-        <source>Background :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="191"/>
-        <source>Latitude/Longitude</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="197"/>
-        <source>Bottom left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="211"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="428"/>
-        <source>Latitude :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="225"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="442"/>
-        <source>N</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="230"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="447"/>
-        <source>S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="248"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="352"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="465"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="569"/>
-        <source>º</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="265"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="369"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="482"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="586"/>
-        <source>&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="285"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="389"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="502"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="606"/>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="315"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="532"/>
-        <source>Longitude :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="329"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="546"/>
-        <source>E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="334"/>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="551"/>
-        <source>W</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="414"/>
-        <source>Bottom right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="637"/>
         <source>KML file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="643"/>
+        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="81"/>
         <source>Name :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="656"/>
+        <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="94"/>
         <source>output.kml</source>
         <translation type="unfinished"></translation>
     </message>
@@ -340,13 +250,13 @@
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
-        <location filename="../continuoussnapshot/continuoussnapshotwizard.cpp" line="42"/>
+        <location filename="../continuoussnapshot/continuoussnapshotintroductionpage.cpp" line="9"/>
         <source>Introduction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../continuoussnapshot/continuoussnapshotwizard.cpp" line="43"/>
-        <source>This wizard will generate continuous snapshots.You need to specify some informations for that.</source>
+        <location filename="../continuoussnapshot/continuoussnapshotintroductionpage.cpp" line="10"/>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -528,14 +438,6 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.cpp" line="118"/>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ContinuousSnapshotWizard</name>
-    <message>
-        <location filename="../continuoussnapshot/continuoussnapshotwizard.cpp" line="28"/>
-        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -840,65 +742,65 @@ Do you want to launch iRIC Maintainance?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="24"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="22"/>
         <source>Grid Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="30"/>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="165"/>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="232"/>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="268"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="28"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="163"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="230"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="297"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="60"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="58"/>
         <source>Color Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="72"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="70"/>
         <source>Background Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="80"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="78"/>
         <source>Max Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="102"/>
-        <source>Note: When a image is loaded that has width (or height) larger than the Max Size, it is resized automatically.</source>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="100"/>
+        <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="132"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="130"/>
         <source>Vector</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="138"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="136"/>
         <source>Factor:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="196"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="194"/>
         <source>Arrow Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="226"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="224"/>
         <source>Stream Lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="262"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="260"/>
         <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegraphicsdefault.ui" line="299"/>
+        <location filename="../pref/preferencepagegraphicsdefault.ui" line="290"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1851,12 +1753,12 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <location filename="../main/iricmainwindow.cpp" line="781"/>
         <location filename="../main/iricmainwindow.cpp" line="785"/>
         <location filename="../main/iricmainwindow.cpp" line="806"/>
-        <location filename="../main/iricmainwindow.cpp" line="1844"/>
-        <location filename="../main/iricmainwindow.cpp" line="1908"/>
-        <location filename="../main/iricmainwindow.cpp" line="1940"/>
-        <location filename="../main/iricmainwindow.cpp" line="2004"/>
-        <location filename="../main/iricmainwindow.cpp" line="2042"/>
-        <location filename="../main/iricmainwindow.cpp" line="2112"/>
+        <location filename="../main/iricmainwindow.cpp" line="1828"/>
+        <location filename="../main/iricmainwindow.cpp" line="1892"/>
+        <location filename="../main/iricmainwindow.cpp" line="1924"/>
+        <location filename="../main/iricmainwindow.cpp" line="1988"/>
+        <location filename="../main/iricmainwindow.cpp" line="2026"/>
+        <location filename="../main/iricmainwindow.cpp" line="2096"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
@@ -1889,15 +1791,15 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <location filename="../main/iricmainwindow.cpp" line="871"/>
         <location filename="../main/iricmainwindow.cpp" line="885"/>
         <location filename="../main/iricmainwindow.cpp" line="903"/>
-        <location filename="../main/iricmainwindow.cpp" line="969"/>
-        <location filename="../main/iricmainwindow.cpp" line="1129"/>
-        <location filename="../main/iricmainwindow.cpp" line="1246"/>
-        <location filename="../main/iricmainwindow.cpp" line="1719"/>
-        <location filename="../main/iricmainwindow.cpp" line="1723"/>
-        <location filename="../main/iricmainwindow.cpp" line="1746"/>
-        <location filename="../main/iricmainwindow.cpp" line="2191"/>
-        <location filename="../main/iricmainwindow.cpp" line="2317"/>
-        <location filename="../main/iricmainwindow.cpp" line="2337"/>
+        <location filename="../main/iricmainwindow.cpp" line="961"/>
+        <location filename="../main/iricmainwindow.cpp" line="1117"/>
+        <location filename="../main/iricmainwindow.cpp" line="1234"/>
+        <location filename="../main/iricmainwindow.cpp" line="1703"/>
+        <location filename="../main/iricmainwindow.cpp" line="1707"/>
+        <location filename="../main/iricmainwindow.cpp" line="1730"/>
+        <location filename="../main/iricmainwindow.cpp" line="2175"/>
+        <location filename="../main/iricmainwindow.cpp" line="2301"/>
+        <location filename="../main/iricmainwindow.cpp" line="2321"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
@@ -1980,22 +1882,22 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1224"/>
+        <location filename="../main/iricmainwindow.cpp" line="1212"/>
         <source>iRIC %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1239"/>
+        <location filename="../main/iricmainwindow.cpp" line="1227"/>
         <source>%1 - iRIC %2 [%3]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2048"/>
+        <location filename="../main/iricmainwindow.cpp" line="2032"/>
         <source>Please select which zone to use:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2337"/>
+        <location filename="../main/iricmainwindow.cpp" line="2321"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
@@ -2074,177 +1976,177 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="969"/>
+        <location filename="../main/iricmainwindow.cpp" line="961"/>
         <source>This windows does not support continuous snapshot function.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1011"/>
+        <location filename="../main/iricmainwindow.cpp" line="999"/>
         <source>Continuous Snapshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1012"/>
+        <location filename="../main/iricmainwindow.cpp" line="1000"/>
         <source>saving continuous snapshot...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1129"/>
+        <location filename="../main/iricmainwindow.cpp" line="1117"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1229"/>
+        <location filename="../main/iricmainwindow.cpp" line="1217"/>
         <source>Untitled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1246"/>
+        <location filename="../main/iricmainwindow.cpp" line="1234"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1521"/>
+        <location filename="../main/iricmainwindow.cpp" line="1505"/>
         <source>&amp;%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1646"/>
+        <location filename="../main/iricmainwindow.cpp" line="1630"/>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1719"/>
+        <location filename="../main/iricmainwindow.cpp" line="1703"/>
         <source>Unknown options specified. They are neglected. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1723"/>
+        <location filename="../main/iricmainwindow.cpp" line="1707"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1746"/>
+        <location filename="../main/iricmainwindow.cpp" line="1730"/>
         <source>Are you sure you want to delete the calculation result?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1750"/>
+        <location filename="../main/iricmainwindow.cpp" line="1734"/>
         <source>Calculation result cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1816"/>
-        <location filename="../main/iricmainwindow.cpp" line="1830"/>
-        <location filename="../main/iricmainwindow.cpp" line="1836"/>
-        <location filename="../main/iricmainwindow.cpp" line="1926"/>
-        <location filename="../main/iricmainwindow.cpp" line="1932"/>
-        <location filename="../main/iricmainwindow.cpp" line="2028"/>
-        <location filename="../main/iricmainwindow.cpp" line="2034"/>
+        <location filename="../main/iricmainwindow.cpp" line="1800"/>
+        <location filename="../main/iricmainwindow.cpp" line="1814"/>
+        <location filename="../main/iricmainwindow.cpp" line="1820"/>
+        <location filename="../main/iricmainwindow.cpp" line="1910"/>
+        <location filename="../main/iricmainwindow.cpp" line="1916"/>
+        <location filename="../main/iricmainwindow.cpp" line="2012"/>
+        <location filename="../main/iricmainwindow.cpp" line="2018"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1816"/>
-        <location filename="../main/iricmainwindow.cpp" line="1836"/>
-        <location filename="../main/iricmainwindow.cpp" line="1932"/>
-        <location filename="../main/iricmainwindow.cpp" line="2034"/>
+        <location filename="../main/iricmainwindow.cpp" line="1800"/>
+        <location filename="../main/iricmainwindow.cpp" line="1820"/>
+        <location filename="../main/iricmainwindow.cpp" line="1916"/>
+        <location filename="../main/iricmainwindow.cpp" line="2018"/>
         <source>Calculation result does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1830"/>
-        <location filename="../main/iricmainwindow.cpp" line="2028"/>
+        <location filename="../main/iricmainwindow.cpp" line="1814"/>
+        <location filename="../main/iricmainwindow.cpp" line="2012"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1844"/>
+        <location filename="../main/iricmainwindow.cpp" line="1828"/>
         <source>No particle is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1873"/>
-        <location filename="../main/iricmainwindow.cpp" line="1885"/>
+        <location filename="../main/iricmainwindow.cpp" line="1857"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
         <source>Export Particles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1886"/>
+        <location filename="../main/iricmainwindow.cpp" line="1870"/>
         <source>Saving particles as VTK files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1908"/>
-        <location filename="../main/iricmainwindow.cpp" line="2004"/>
-        <location filename="../main/iricmainwindow.cpp" line="2112"/>
+        <location filename="../main/iricmainwindow.cpp" line="1892"/>
+        <location filename="../main/iricmainwindow.cpp" line="1988"/>
+        <location filename="../main/iricmainwindow.cpp" line="2096"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1926"/>
+        <location filename="../main/iricmainwindow.cpp" line="1910"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1940"/>
+        <location filename="../main/iricmainwindow.cpp" line="1924"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1971"/>
+        <location filename="../main/iricmainwindow.cpp" line="1955"/>
         <source>Export contour figure to ESRI Shape files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1981"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
         <source>Export contour figure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1982"/>
+        <location filename="../main/iricmainwindow.cpp" line="1966"/>
         <source>Saving contour figure as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2042"/>
+        <location filename="../main/iricmainwindow.cpp" line="2026"/>
         <source>No contour is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2069"/>
-        <location filename="../main/iricmainwindow.cpp" line="2091"/>
+        <location filename="../main/iricmainwindow.cpp" line="2053"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
         <source>Export Google Earth KML for street view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2092"/>
+        <location filename="../main/iricmainwindow.cpp" line="2076"/>
         <source>Saving KML files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2184"/>
+        <location filename="../main/iricmainwindow.cpp" line="2168"/>
         <source>Import Visualization/Graph Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2184"/>
-        <location filename="../main/iricmainwindow.cpp" line="2206"/>
+        <location filename="../main/iricmainwindow.cpp" line="2168"/>
+        <location filename="../main/iricmainwindow.cpp" line="2190"/>
         <source>Setting file (*.vgsetting)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2191"/>
+        <location filename="../main/iricmainwindow.cpp" line="2175"/>
         <source>File %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2206"/>
+        <location filename="../main/iricmainwindow.cpp" line="2190"/>
         <source>Export Visualization/Graph Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2317"/>
+        <location filename="../main/iricmainwindow.cpp" line="2301"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation type="unfinished"></translation>
     </message>

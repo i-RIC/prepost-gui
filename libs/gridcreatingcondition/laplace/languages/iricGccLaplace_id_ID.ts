@@ -18,10 +18,10 @@
     <name>GridCreatingConditionLaplace</name>
     <message>
         <location filename="../gridcreatingconditionlaplace.cpp" line="106"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="482"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="484"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="491"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="493"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="507"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="509"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="516"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="518"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -31,24 +31,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="469"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="494"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="469"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="494"/>
         <source>To divide region, click on the edge of the region first, and click on the another edge.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="482"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="491"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="507"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="516"/>
         <source>Please select edge line inside the region when you want to join regions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="484"/>
-        <location filename="../gridcreatingconditionlaplace.cpp" line="493"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="509"/>
+        <location filename="../gridcreatingconditionlaplace.cpp" line="518"/>
         <source>Are you sure you join the regions divided with the selected edge?</source>
         <translation type="unfinished"></translation>
     </message>

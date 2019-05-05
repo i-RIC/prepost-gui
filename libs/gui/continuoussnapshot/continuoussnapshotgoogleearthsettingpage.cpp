@@ -7,6 +7,7 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 
+#include <cs/coordinatesystem.h>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <misc/mathsupport.h>
@@ -14,7 +15,6 @@
 #include <post/post2d/post2dwindowgraphicsview.h>
 
 #include <QMdiSubWindow>
-#include <QVector2D>
 
 ContinuousSnapshotGoogleEarthSettingPage::ContinuousSnapshotGoogleEarthSettingPage(QWidget* parent) :
 	QWizardPage(parent),
@@ -33,157 +33,25 @@ ContinuousSnapshotGoogleEarthSettingPage::~ContinuousSnapshotGoogleEarthSettingP
 
 void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 {
-	ui->googleEarthCheckBox->setChecked(m_wizard->googleEarth());
-	setupWindowComboBox();
-	setupBackgroundComboBox();
-
-	if (m_wizard->backgroundList().size() == 0) {
+	if (m_wizard->coordinateSystem() == nullptr) {
 		ui->googleEarthCheckBox->setChecked(false);
 		this->setEnabled(false);
-		return;
 	} else {
+		ui->googleEarthCheckBox->setChecked(m_wizard->googleEarth());
+		ui->kmlEdit->setText(m_wizard->kmlFilename());
 		this->setEnabled(true);
 	}
-
-	int d, m;
-	double tmp;
-	// bottom left latitude
-	tmp = m_wizard->leftLatitude();
-	if (tmp < 0) {
-		// North (+) / South (-)
-		ui->leftLatitudeComboBox->setCurrentIndex(1);
-		tmp = - tmp;
-	} else {
-		ui->leftLatitudeComboBox->setCurrentIndex(0);
-	}
-	d = static_cast<int>(tmp);
-	tmp = (tmp - d) * 60.;
-	m = static_cast<int>(tmp);
-	tmp = (tmp - m) * 60.;
-	ui->leftLatitudeDegreeSpinBox->setValue(d);
-	ui->leftLatitudeMinuteSpinBox->setValue(m);
-	ui->leftLatitudeSecondSpinBox->setValue(tmp);
-	// bottom left longitude
-	tmp = m_wizard->leftLongitude();
-	if (tmp < 0) {
-		// East (+) / West (-)
-		ui->leftLongitudeComboBox->setCurrentIndex(1);
-		tmp = - tmp;
-	} else {
-		ui->leftLongitudeComboBox->setCurrentIndex(0);
-	}
-	d = static_cast<int>(tmp);
-	tmp = (tmp - d) * 60.;
-	m = static_cast<int>(tmp);
-	tmp = (tmp - m) * 60.;
-	ui->leftLongitudeDegreeSpinBox->setValue(d);
-	ui->leftLongitudeMinuteSpinBox->setValue(m);
-	ui->leftLongitudeSecondSpinBox->setValue(tmp);
-
-	// bottom right latitude
-	tmp = m_wizard->rightLatitude();
-	if (tmp < 0) {
-		ui->rightLatitudeComboBox->setCurrentIndex(1);
-		tmp = - tmp;
-	} else {
-		ui->rightLatitudeComboBox->setCurrentIndex(0);
-	}
-	d = static_cast<int>(tmp);
-	tmp = (tmp - d) * 60.;
-	m = static_cast<int>(tmp);
-	tmp = (tmp - m) * 60.;
-	ui->rightLatitudeDegreeSpinBox->setValue(d);
-	ui->rightLatitudeMinuteSpinBox->setValue(m);
-	ui->rightLatitudeSecondSpinBox->setValue(tmp);
-	// bottom right longitude
-	tmp = m_wizard->rightLongitude();
-	if (tmp < 0) {
-		ui->rightLongitudeComboBox->setCurrentIndex(1);
-		tmp = - tmp;
-	} else {
-		ui->rightLongitudeComboBox->setCurrentIndex(0);
-	}
-	d = static_cast<int>(tmp);
-	tmp = (tmp - d) * 60.;
-	m = static_cast<int>(tmp);
-	tmp = (tmp - m) * 60.;
-	ui->rightLongitudeDegreeSpinBox->setValue(d);
-	ui->rightLongitudeMinuteSpinBox->setValue(m);
-	ui->rightLongitudeSecondSpinBox->setValue(tmp);
-
-	// kml file name
-	ui->kmlEdit->setText(m_wizard->kmlFilename());
 }
 
 bool ContinuousSnapshotGoogleEarthSettingPage::validatePage()
 {
-	if (! ui->googleEarthCheckBox->isChecked()) { return true; }
-
-	// set the latitude and longitude
-	int flag;
 	m_wizard->setGoogleEarth(ui->googleEarthCheckBox->isChecked());
-	flag = 1 - 2 * ui->leftLatitudeComboBox->currentIndex();
-	m_wizard->setLeftLatitude((ui->leftLatitudeDegreeSpinBox->value()
-		                       + ui->leftLatitudeMinuteSpinBox->value() / 60.
-		                       + ui->leftLatitudeSecondSpinBox->value() / 3600.) * flag);
-	flag = 1 - 2 * ui->leftLongitudeComboBox->currentIndex();
-	m_wizard->setLeftLongitude((ui->leftLongitudeDegreeSpinBox->value()
-		                        + ui->leftLongitudeMinuteSpinBox->value() / 60.
-		                        + ui->leftLongitudeSecondSpinBox->value() / 3600.) * flag);
-	flag = 1 - 2 * ui->rightLatitudeComboBox->currentIndex();
-	m_wizard->setRightLatitude((ui->rightLatitudeDegreeSpinBox->value()
-		                        + ui->rightLatitudeMinuteSpinBox->value() / 60.
-		                        + ui->rightLatitudeSecondSpinBox->value() / 3600.) * flag);
-	flag = 1 - 2 * ui->rightLongitudeComboBox->currentIndex();
-	m_wizard->setRightLongitude((ui->rightLongitudeDegreeSpinBox->value()
-		                         + ui->rightLongitudeMinuteSpinBox->value() / 60.
-		                         + ui->rightLongitudeSecondSpinBox->value() / 3600.) * flag);
-
-	int current;
-	// set target window index of m_wizard->windowList()
-	current = ui->windowComboBox->currentIndex();
-	m_wizard->setTargetWindow(ui->windowComboBox->itemData(current).toInt());
-	// set target background index of m_wizard->backgroundList()
-	current = ui->backgroundComboBox->currentIndex();
-	m_wizard->setTargetBackground(ui->backgroundComboBox->itemData(current).toInt());
-
-	// set the kml file name
 	m_wizard->setKMLFilename(ui->kmlEdit->text());
 
 	// calculate angle/north/south/east/west
 	calculateKMLInformation();
 
 	return true;
-}
-
-void ContinuousSnapshotGoogleEarthSettingPage::setupWindowComboBox()
-{
-	int idx = 0;
-	ui->windowComboBox->clear();
-	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it, ++idx) {
-		Post2dWindow* post = dynamic_cast<Post2dWindow*>((*it)->widget());
-		if (post == nullptr) { continue; }
-		// add only post2dwindows.
-		ui->windowComboBox->addItem((*it)->windowTitle(), QVariant(idx));
-		// idx is the index of (*it) in the list m_wizard->windowList().
-	}
-	int current = ui->windowComboBox->findData(QVariant(m_wizard->targetWindow()), Qt::UserRole);
-	if (current < 0) { current = 0; }
-	ui->windowComboBox->setCurrentIndex(current);
-}
-
-void ContinuousSnapshotGoogleEarthSettingPage::setupBackgroundComboBox()
-{
-	int idx = 0;
-	ui->backgroundComboBox->clear();
-	for (auto it = m_wizard->backgroundList().begin(); it != m_wizard->backgroundList().end(); ++it, ++idx) {
-		BackgroundImageInfo* bg = *it;
-		ui->backgroundComboBox->addItem(bg->caption(), QVariant(idx));
-		// idx is the index of (*it) in the list of m_wizard->backgroundList().
-	}
-	int current = ui->backgroundComboBox->findData(QVariant(m_wizard->targetBackground()), Qt::UserRole);
-	if (current < 0) { current = 0; }
-	ui->backgroundComboBox->setCurrentIndex(current);
 }
 
 void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
@@ -241,80 +109,43 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 	p.setY(worldY);
 }
 
-void ContinuousSnapshotGoogleEarthSettingPage::worldToImage(QPointF& p)
+void ContinuousSnapshotGoogleEarthSettingPage::worldToLatLong(QPointF& p)
 {
-//	double newx, newy;
+	auto cs = m_wizard->coordinateSystem();
+	double x, y, lon, lat;
+	x = p.x();
+	y = p.y();
 
-	// m_wizard->backgroundList().size() should be positive
-	auto it = m_wizard->backgroundList().begin() + m_wizard->targetBackground();
-	BackgroundImageInfo* bg = *it;
-
-	// image width
-	m_imageWidth = bg->imageWidth();
-
-	QPointF axisX(1, 0);
-	iRIC::rotateVector(axisX, bg->angle());
-	QPointF axisY = axisX;
-	iRIC::rotateVector90(axisY);
-
-	QPointF diff(p.x() - bg->translateX(), p.y() - bg->translateY());
-	p.setX(QPointF::dotProduct(diff, axisX) / bg->scale());
-	p.setY(QPointF::dotProduct(diff, axisY) / bg->scale());
-}
-
-void ContinuousSnapshotGoogleEarthSettingPage::imageToLatLong(QPointF& p)
-{
-	QPointF point0(m_wizard->leftLongitude(), m_wizard->leftLatitude());
-	QPointF point1(m_wizard->rightLongitude(), m_wizard->rightLatitude());
-	QPointF dv = point1 - point0;
-
-	// overlay on the boundary of east/west longitude
-	if (point0.x() * point1.x() < 0) {
-		if (point1.x() > 0) {
-			point0.setX(point0.x() + 360);
-		} else {
-			point1.setX(point1.x() + 360);
-		}
-	}
-	if (iRIC::lengthSquared(dv) > iRIC::lengthSquared(point1 - point0)) {
-		dv = point1 - point0;
-	}
-
-	QPointF axisX = dv / m_imageWidth;
-	double angle = point0.y() * M_PI / 180.;
-	m_rate = std::cos(angle);
-	QPointF axisY(-axisX.y() / m_rate, axisX.x() * m_rate);
-
-	QPointF ret = point0 + axisX * p.x() + axisY * p.y();
-	p.setX(ret.x());
-	p.setY(ret.y());
+	cs->mapGridToGeo(x, y, &lon, &lat);
+	p.setX(lon);
+	p.setY(lat);
 }
 
 void ContinuousSnapshotGoogleEarthSettingPage::snapshotToLatLong(QPointF& p)
 {
 	snapshotToWorld(p);
-	worldToImage(p);
-	imageToLatLong(p);
+	worldToLatLong(p);
 }
 
 void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 {
-	QPointF center, centerRight, centerTop;
-	center = QPointF(targetSnapshotSize().width() / 2., targetSnapshotSize().height() / 2.);
-	centerRight = QPointF(targetSnapshotSize().width(), targetSnapshotSize().height() / 2.);
+	QPointF center, centerRight;
+	auto snapshotSize = targetSnapshotSize();
+
+	center = QPointF(snapshotSize.width() / 2., snapshotSize.height() / 2.);
+	centerRight = QPointF(snapshotSize.width(), snapshotSize.height() / 2.);
 	snapshotToLatLong(center);
 	snapshotToLatLong(centerRight);
 
 	// calculate angle (radian)
 	QPointF dv = centerRight - center;
-	dv.setX(dv.x() * m_rate);
 	double angle = std::atan(dv.y() / dv.x());
 	m_wizard->setAngle(angle * 180 / M_PI);
 
 	// calculate north/south/east/west
-	QPointF centerV(targetSnapshotSize().width() / 2., targetSnapshotSize().height() / 2.);
-	QPointF centerRightV(targetSnapshotSize().width(), targetSnapshotSize().height() / 2.);
-	QPointF centerTopV(targetSnapshotSize().width() / 2., 0);
+	QPointF centerV(snapshotSize.width() / 2., snapshotSize.height() / 2.);
+	QPointF centerRightV(snapshotSize.width(), snapshotSize.height() / 2.);
+	QPointF centerTopV(snapshotSize.width() / 2., 0);
 
 	QPointF dx = centerRightV - centerV;
 	QPointF dy = centerTopV - centerV;

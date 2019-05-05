@@ -20,8 +20,8 @@
     <name>GridCreatingConditionExternalProgram</name>
     <message>
         <location filename="../gridcreatingconditionexternalprogram.cpp" line="81"/>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="135"/>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="142"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="134"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="151"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -36,7 +36,7 @@
         <translation>格子を生成しています...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="142"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="151"/>
         <source>Grid Creation failed.</source>
         <translation>格子生成が失敗しました。</translation>
     </message>
