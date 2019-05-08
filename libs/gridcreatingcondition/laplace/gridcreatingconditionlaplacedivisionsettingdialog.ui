@@ -6,25 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>193</width>
-    <height>77</height>
+    <width>296</width>
+    <height>283</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Division Number Setting</string>
+   <string>Division Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="divisionNumberLabel">
        <property name="text">
         <string>Division Number:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox">
+      <widget class="QSpinBox" name="divisionNumberSpinBox">
        <property name="minimum">
         <number>1</number>
        </property>
@@ -34,6 +34,160 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="deploySettingGroupBox">
+     <property name="title">
+      <string>Deploy Setting</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="autoRadioButton">
+        <property name="text">
+         <string>Auto</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="equalRadioButton">
+        <property name="text">
+         <string>Equally divided</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="geometricRadioButton">
+        <property name="text">
+         <string>Geometric division</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="commonRatioLabel">
+          <property name="text">
+           <string>Common ratio:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="commonRatioSpinBox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>0.000001000000000</double>
+          </property>
+          <property name="maximum">
+           <double>99.999999000000003</double>
+          </property>
+          <property name="value">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="deploySettingTargetGroupBox">
+     <property name="title">
+      <string>Deploy Setting Target</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="thisOnlyRadioButton">
+        <property name="text">
+         <string>This line only</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QRadioButton" name="thisAndParallelRadioButton">
+          <property name="text">
+           <string>This line and lines in parallel positions</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="TooltipLabel" name="thisAndParallelHelpLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../../guibase/guibase.qrc">:/libs/guibase/images/iconQuestion.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <spacer name="verticalSpacer">
@@ -60,7 +214,16 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../guibase/guibase.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
@@ -85,12 +248,28 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>286</x>
+     <y>273</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>geometricRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>commonRatioSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>136</y>
     </hint>
    </hints>
   </connection>

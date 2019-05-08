@@ -108,12 +108,15 @@ HEADERS += gcc_laplace_global.h \
            gridcreatingconditionlaplacectrlpointsdialog.h \
            gridcreatingconditionlaplacedeploysettingdialog.h \
            gridcreatingconditionlaplacedivisionsettingdialog.h \
+           gridcreatingconditionlaplacesubregiondeploysettingdialog.h \
            gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h \
            private/gridcreatingconditionlaplace_banklinesbuilder.h \
+           private/gridcreatingconditionlaplace_buildsubgridpointsthread.h \
            private/gridcreatingconditionlaplace_centerlinecoordinateseditor.h \
            private/gridcreatingconditionlaplace_centerlinefinishdefiningcommand.h \
            private/gridcreatingconditionlaplace_centerlinestartdefinitioncommand.h \
            private/gridcreatingconditionlaplace_centerlineupdatelabelsandsplinecommand.h \
+           private/gridcreatingconditionlaplace_commonratiooptimizethread.h \
            private/gridcreatingconditionlaplace_ctrlpointmovecommand.h \
            private/gridcreatingconditionlaplace_deploysettingcommand.h \
            private/gridcreatingconditionlaplace_divisionsettingcommand.h \
@@ -127,12 +130,14 @@ HEADERS += gcc_laplace_global.h \
            private/gridcreatingconditionlaplace_polylineeditcoordinatescommand.h \
            private/gridcreatingconditionlaplace_polylinemovevertexcommand.h \
            private/gridcreatingconditionlaplace_polylineremovevertexcommand.h \
+           private/gridcreatingconditionlaplace_subregiondeploysettingcommand.h \
            private/gridcreatingconditionlaplace_updateedgelinesforedgeselectioncommand.h \
            private/gridcreatingconditionlaplace_wholeregiondivisionsettingcommand.h
 FORMS += gridcreatingconditionlaplacebuildbanklinesdialog.ui \
          gridcreatingconditionlaplacectrlpointsdialog.ui \
          gridcreatingconditionlaplacedeploysettingdialog.ui \
          gridcreatingconditionlaplacedivisionsettingdialog.ui \
+         gridcreatingconditionlaplacesubregiondeploysettingdialog.ui \
          gridcreatingconditionlaplacewholeregiondivisionsettingdialog.ui
 SOURCES += gridcreatingconditioncreatorlaplace.cpp \
            gridcreatingconditionlaplace.cpp \
@@ -140,12 +145,15 @@ SOURCES += gridcreatingconditioncreatorlaplace.cpp \
            gridcreatingconditionlaplacectrlpointsdialog.cpp \
            gridcreatingconditionlaplacedeploysettingdialog.cpp \
            gridcreatingconditionlaplacedivisionsettingdialog.cpp \
+           gridcreatingconditionlaplacesubregiondeploysettingdialog.cpp \
            gridcreatingconditionlaplacewholeregiondivisionsettingdialog.cpp \
            private/gridcreatingconditionlaplace_banklinesbuilder.cpp \
+           private/gridcreatingconditionlaplace_buildsubgridpointsthread.cpp \
            private/gridcreatingconditionlaplace_centerlinecoordinateseditor.cpp \
            private/gridcreatingconditionlaplace_centerlinefinishdefiningcommand.cpp \
            private/gridcreatingconditionlaplace_centerlinestartdefinitioncommand.cpp \
            private/gridcreatingconditionlaplace_centerlineupdatelabelsandsplinecommand.cpp \
+           private/gridcreatingconditionlaplace_commonratiooptimizethread.cpp \
            private/gridcreatingconditionlaplace_ctrlpointmovecommand.cpp \
            private/gridcreatingconditionlaplace_deploysettingcommand.cpp \
            private/gridcreatingconditionlaplace_divisionsettingcommand.cpp \
@@ -159,6 +167,7 @@ SOURCES += gridcreatingconditioncreatorlaplace.cpp \
            private/gridcreatingconditionlaplace_polylineeditcoordinatescommand.cpp \
            private/gridcreatingconditionlaplace_polylinemovevertexcommand.cpp \
            private/gridcreatingconditionlaplace_polylineremovevertexcommand.cpp \
+           private/gridcreatingconditionlaplace_subregiondeploysettingcommand.cpp \
            private/gridcreatingconditionlaplace_updateedgelinesforedgeselectioncommand.cpp \
            private/gridcreatingconditionlaplace_wholeregiondivisionsettingcommand.cpp
 RESOURCES += laplace.qrc

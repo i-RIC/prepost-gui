@@ -14,6 +14,22 @@ public:
 		Geometric,
 	};
 
+	enum class DeploySetting {
+		Ratio,
+		Poisson,
+	};
+
+	class DeployParameter {
+	public:
+		DeploySetting setting;
+		double manualP;
+		double manualQ;
+
+		DeployParameter();
+	};
+
+	const static double POISSONPARAM_FACTOR;
+
 	GridCreatingConditionLaplace(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionLaplace() override;
 
@@ -38,10 +54,14 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void updateDeployParameterForSelectedSubRegion(const DeployParameter& p);
+
+	public slots:
+	void requestPreviewSubRegionGrid();
+	void hidePreviewGrid();
+
 private slots:
 	void buildBankLines();
-	void switchModeToShape();
-	void switchModeToDivide();
 	void interpolateModeSprine();
 	void interpolateModeLinear();
 	void newEdgeMode(bool on);
@@ -49,9 +69,14 @@ private slots:
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
 	void editCoorinates();
-	void wholeRegionDivisionSetting();
+	bool wholeRegionDivisionSetting(bool gridCreateButton = false);
 	void divisionSetting();
 	void deploySetting();
+	void subRegionDeploySetting();
+	void clearDivisionSetting();
+
+	void informCommonRatioUpdate();
+	void informPreviewGridPointsUpdate(int i, int j);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -81,12 +106,15 @@ private:
 	class WholeRegionDivisionSettingCommand;
 	class DivisionSettingCommand;
 	class DeploySettingCommand;
+	class SubRegionDeploySettingCommand;
 
 	class UpdateEdgeLinesForEdgeSelectionCommand;
 
 	class CenterLineCoordinatesEditor;
 	class EdgeCoordinatesEditor;
 	class BankLinesBuilder;
+	class BuildSubGridPointsThread;
+	class CommonRatioOptimizeThread;
 };
 
 #ifdef _DEBUG

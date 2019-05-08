@@ -26,6 +26,8 @@ public:
 	void setILength(double len);
 	void setJLength(double len);
 
+	void setGridCreateMode();
+
 private slots:
 	void updateDI();
 	void updateDJ();

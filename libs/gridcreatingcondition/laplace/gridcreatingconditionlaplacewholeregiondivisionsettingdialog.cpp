@@ -1,6 +1,8 @@
 #include "gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h"
 #include "ui_gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h"
 
+#include <QPushButton>
+
 GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog::GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog)
@@ -59,14 +61,20 @@ void GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog::setJLength(do
 	m_jLength = len;
 }
 
+void GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog::setGridCreateMode()
+{
+	auto button = ui->buttonBox->button(QDialogButtonBox::StandardButton::Ok);
+	button->setText(tr("Create &Grid"));
+}
+
 void GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog::updateDI()
 {
-	double d = m_iLength / (iDiv() - 1);
+	double d = m_iLength / iDiv();
 	ui->dIValue->setText(QString::number(d));
 }
 
 void GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog::updateDJ()
 {
-	double d = m_jLength / (jDiv() - 1);
+	double d = m_jLength / jDiv();
 	ui->dJValue->setText(QString::number(d));
 }

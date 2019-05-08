@@ -3,6 +3,7 @@
 
 #include "../gridcreatingconditionlaplace.h"
 
+#include <guibase/polygon/polygoncontroller.h>
 #include <guibase/polyline/polylinecontroller.h>
 #include <guibase/vtktool/vtklabel2dactor.h>
 #include <misc/zdepthrange.h>
@@ -12,7 +13,10 @@
 #include <QPointF>
 
 class GeoDataRiverSurvey;
-class Grid;
+class Structured2DGrid;
+
+class vtkActor;
+class vtkDataSetMapper;
 
 class QAction;
 class QMenu;
@@ -64,19 +68,22 @@ public:
 
 	enum class EditMode {
 		CenterLineOnly,
-		RegionDefined,
-		DivideSetting,
+		RegionDefined
 	};
 
 	Impl(GridCreatingConditionLaplace* cond);
 	~Impl();
 
-	Grid* createGrid();
-	static std::vector<QPointF> buildSubGrid(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2);
+	Structured2DGrid* createGrid();
+	Structured2DGrid* createSubRegionGrid(int i, int j);
+	static std::vector<QPointF> buildSubGrid(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp);
+	static std::vector<QPointF> buildSubGridByRatio(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp);
+	static std::vector<QPointF> buildSubGridByPoisson(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp);
 
 	int ctrlPointCountI() const;
 	int ctrlpointCountJ() const;
 	QPointF& ctrlPoint(int i, int j);
+	bool divideSettingExists() const;
 
 	void copyCenterLine(GeoDataRiverSurvey* data, int num);
 	static int getNumPoints(GeoDataRiverSurvey* riverSurvey);
@@ -91,6 +98,7 @@ public:
 	PolyLineController& edgeLineCrossSectionForEdgeSelection(int i, int j);
 	PolyLineController& edgeLineStreamWiseForDivisionPreview(int i, int j);
 	PolyLineController& edgeLineCrossSectionForDivisionPreview(int i, int j);
+	PolygonController& subRegionPolygons(int i, int j);
 
 	void insertEdgeLineStreamWise(PolyLineController* line, int idx = -1);
 	void insertEdgeLineCrossSection(PolyLineController* line, int idx = -1);
@@ -100,6 +108,8 @@ public:
 
 	double& divCommonRatioStreamWise(int i, int j);
 	double& divCommonRatioCrossSection(int i, int j);
+
+	DeployParameter& subRegionPoissonParameter(int i, int j);
 
 	PolyLineController* selectedSectionForEdgeSelection() const;
 	InterpolationType selectedSectionInterpolateType() const;
@@ -115,6 +125,7 @@ public:
 	void updateActionStatus();
 	void updateMouseEventMode(const QPoint& pos, bool updateSelect = false);
 	PolyLineController* updateHoveredSection(const QPoint& pos);
+	PolygonController* updateSelectedSubRegion(const QPoint& pos);
 	bool setupNewEdgeSetting();
 	bool isNewEdgeFinishReady();
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
@@ -124,10 +135,13 @@ public:
 
 	void updateCenterLineLabelsAndSpline();
 	void updateEdgeLinesForSelection();
+	void updateEdgeLinesForDivisionPreview();
 	void clearCtrlPointsAndEdges();
 
 	void setupLabelsForCenterLine(vtkActor2DCollection* col);
 	void setupLabelsForRegionDefined();
+
+	void requestPreviewSubRegionGrid();
 
 	void pushCenterLineStartDefinitionCommand(bool keyDown, const QPoint& p);
 	void pushCenterLineFinishDefinitionCommand();
@@ -148,14 +162,19 @@ public:
 	void pushCtrlPointMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, int pointId);
 	void pushEdgeSetInterpolationModeCommand(InterpolationType type);
 	void pushDeploySettingCommand(bool streamWise, int edgeId, DivisionMode mode, double commonRatio);
-	void pushDivisionSettingCommand(bool streamWise, int edgeId, int divNum);
+	void pushDivisionSettingCommand(bool streamWise, int edgeId, int divNum, DivisionMode mode, double commonRatio, bool thisLineOnly);
 	void pushWholeRegionDivisionSettingCommand(const std::vector<int>& streamWiseDivCounts, const std::vector<int>& crossSectionDivCounts);
+	void pushSubRegionDeploySettingCommand(const DeployParameter& param, int index);
 	void pushUpdateLineForEdgeSelectionCommand(QUndoCommand* comm, bool renderRedoOnly = false);
+
+	void optimizeCommonRatios();
 
 	static std::vector<QPointF> buildLinesForSelection(const std::vector<std::vector<QPointF> >& lines, const std::vector<InterpolationType>& types);
 	static std::vector<QPointF> buildLinesForDivisionPreview(const std::vector<std::vector<QPointF> >& lines, const std::vector<int>& divNums, const std::vector<DivisionMode>& divModes, const std::vector<double>& commonRatios);
 	static std::vector<double> buildLengthsForPoints(double length, int divNum, DivisionMode divMode, double commonRatio);
 	static std::vector<double> buildLengths(const std::vector<QPointF>& line);
+	static double edgeOptimizeFunc(const std::vector<double>& lengths, const std::vector<int>& divNums, const std::vector<DivisionMode>& divModes, const std::vector<double>& commonRatios);
+	static double edgeOptimizeFuncEx(int n, const double* x0, void* ex);
 
 	static void makeLineWideWithPoints(PolyLineController* controller);
 	static void makeLineNarrowNoPoints(PolyLineController* controller);
@@ -163,8 +182,12 @@ public:
 
 	void addEdgeLinesStreamWiseForSelectionAndPreview(vtkRenderer* renderer);
 	void addEdgeLinesCrossSectionForSelectionAndPreview(vtkRenderer* renderer);
+	void addSubRegionPolygon(vtkRenderer* r);
 	void removeEdgeLinesStreamWiseForSelectionAndPreview(vtkActorCollection* col, vtkRenderer* r);
 	void removeEdgeLinesCrossSectionForSelectionAndPreview(vtkActorCollection* col, vtkRenderer* r);
+	void removeSubRegionPolygon(vtkActorCollection* col, vtkRenderer* r);
+	void clearDivisionSetting();
+	void updateManualDivSetting();
 
 	template<typename V>
 	static void loadValueVector(QDataStream* stream, std::vector<V>* vals);
@@ -190,6 +213,8 @@ public:
 	int m_ctrlPointCountI;
 	int m_ctrlPointCountJ;
 
+	int m_loadVersion;
+
 	std::vector<QPointF> m_ctrlPoints;
 	PolyLineController m_ctrlPointsController;
 
@@ -204,6 +229,10 @@ public:
 
 	std::vector<double> m_divCommonRatiosStreamWise;
 	std::vector<double> m_divCommonRatiosCrossSection;
+	std::vector<double> m_tmpDivCommonRatiosStreamWise;
+	std::vector<double> m_tmpDivCommonRatiosCrossSection;
+
+	std::vector<DeployParameter> m_subRegionDeployParameters;
 
 	std::vector<PolyLineController*> m_edgeLinesStreamWise;
 	std::vector<PolyLineController*> m_edgeLinesCrossSection;
@@ -217,11 +246,22 @@ public:
 	std::vector<PolyLineController*> m_edgeLinesStreamWiseForDivisionPreview;
 	std::vector<PolyLineController*> m_edgeLinesCrossSectionForDivisionPreview;
 
+	std::vector<PolygonController*> m_subRegionPolygons;
+	Structured2DGrid* m_previewGrid;
+	std::vector<QPointF> m_previewGridPoints;
+	vtkDataSetMapper* m_previewGridMapper;
+	vtkActor* m_previewGridActor;
+
+	CommonRatioOptimizeThread* m_optimizeThread;
+	BuildSubGridPointsThread* m_buildThread;
+
 	vtkLabel2DActor m_upstreamActor;
 	vtkLabel2DActor m_downstreamActor;
 
 	EdgeType m_selectedSectionEdgeType;
 	int m_selectedSectionId;
+
+	int m_selectedSubRegionId;
 
 	EdgeType m_hoveredSectionEdgeType;
 	int m_hoveredSectionId;
@@ -237,6 +277,7 @@ public:
 
 	bool m_itemSelected;
 	ZDepthRange m_zDepthRange;
+	bool m_manualDivSetting;
 
 	double m_previousLeftBankDistance;
 	double m_previousRightBankDistance;
@@ -254,10 +295,6 @@ public:
 
 	QAction* m_buildBankLinesAction;
 
-	QMenu* m_modeMenu;
-	QAction* m_modeShapeAction;
-	QAction* m_modeDivideAction;
-
 	QMenu* m_interpolateMenu;
 	QAction* m_interpolateSplineAction;
 	QAction* m_interpolateLinearAction;
@@ -272,6 +309,8 @@ public:
 	QAction* m_wholeRegionDivisionSettingAction;
 	QAction* m_divisionSettingAction;
 	QAction* m_deploySettingAction;
+	QAction* m_deploySubRegionSettingAction;
+	QAction* m_clearDivisionSettingAction;
 
 private:
 	GridCreatingConditionLaplace* m_condition;
