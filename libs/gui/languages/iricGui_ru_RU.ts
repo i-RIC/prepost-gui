@@ -1892,6 +1892,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main/iricmainwindow.cpp" line="2026"/>
+        <source>No Contour Figure is drawn now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main/iricmainwindow.cpp" line="2032"/>
         <source>Please select which zone to use:</source>
         <translation type="unfinished"></translation>
@@ -2106,11 +2111,6 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1966"/>
         <source>Saving contour figure as ESRI Shape files...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
-        <source>No contour is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

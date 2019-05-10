@@ -1882,6 +1882,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main/iricmainwindow.cpp" line="2026"/>
+        <source>No Contour Figure is drawn now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main/iricmainwindow.cpp" line="2301"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation type="unfinished"></translation>
@@ -2012,11 +2017,6 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1966"/>
         <source>Saving contour figure as ESRI Shape files...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
-        <source>No contour is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

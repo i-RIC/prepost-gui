@@ -16487,9 +16487,8 @@ Do you really want to import grid from this file?</source>
         <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
         <source>No contour is drawn now.</source>
-        <translation>コンターが描画されていません。</translation>
+        <translation type="vanished">コンターが描画されていません。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2032"/>
@@ -16549,6 +16548,11 @@ Option -&gt; Preferences</source>
         <location filename="../main/iricmainwindow.cpp" line="2096"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2026"/>
+        <source>No Contour Figure is drawn now.</source>
+        <translation>面塗りコンターが描画されていません。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2168"/>

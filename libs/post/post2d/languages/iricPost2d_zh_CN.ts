@@ -58,7 +58,7 @@
     </message>
     <message>
         <location filename="../post2dwindow.cpp" line="246"/>
-        <source>No contour is drawn now.</source>
+        <source>No Contour Figure is drawn now.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
