@@ -2023,7 +2023,7 @@ void iRICMainWindow::exportStKML()
 	QString zoneName;
 	if (zones.count() == 0) {
 		// No valid grid.
-		QMessageBox::warning(this, tr("Error"), tr("No contour is drawn now."));
+		QMessageBox::warning(this, tr("Error"), tr("No Contour Figure is drawn now."));
 		return;
 	} else if (zones.count() == 1) {
 		zoneName = zones.at(0);

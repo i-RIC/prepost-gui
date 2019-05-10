@@ -243,7 +243,7 @@ bool Post2dWindow::checkKmlExportCondition(const QString& zoneName) const
 	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
 	QList<QString> scalars = sItem->selectedScalars();
 	if (scalars.count() == 0) {
-		QMessageBox::warning(window(), tr("Error"), tr("No contour is drawn now."));
+		QMessageBox::warning(window(), tr("Error"), tr("No Contour Figure is drawn now."));
 		return false;
 	} else if (scalars.count() == 1) {
 		m_exportScalarName = scalars.at(0);
