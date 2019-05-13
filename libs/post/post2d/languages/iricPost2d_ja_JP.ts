@@ -58,8 +58,12 @@
     </message>
     <message>
         <location filename="../post2dwindow.cpp" line="246"/>
+        <source>No Contour Figure is drawn now.</source>
+        <translation>面塗りコンターが描画されていません。</translation>
+    </message>
+    <message>
         <source>No contour is drawn now.</source>
-        <translation>コンターが描画されていません。</translation>
+        <translation type="vanished">コンターが描画されていません。</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -470,7 +474,7 @@
     <message>
         <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="659"/>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>ストリートビュー用のKML をエクスポートするには、コンターを描画して下さい。</translation>
+        <translation>ストリートビュー用のKML をエクスポートするには、面塗りコンターを描画して下さい。</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowcellscalargroupdataitem.cpp" line="663"/>
