@@ -455,6 +455,10 @@ GridCreatingConditionLaplace::Impl::~Impl()
 
 Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 {
+	if (m_editMode == EditMode::CenterLineOnly) {
+		QMessageBox::warning(m_condition->preProcessorWindow(), GridCreatingConditionLaplace::tr("Warning"), GridCreatingConditionLaplace::tr("Please build left bank and right bank lines before creating grid."));
+		return nullptr;
+	}
 	if (! divideSettingExists()) {
 		bool ok = m_condition->wholeRegionDivisionSetting(true);
 		if (! ok) {return nullptr;}

@@ -23,6 +23,7 @@
         <location filename="../gridcreatingconditionlaplace.cpp" line="522"/>
         <location filename="../gridcreatingconditionlaplace.cpp" line="524"/>
         <location filename="../gridcreatingconditionlaplace.cpp" line="740"/>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="459"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -205,6 +206,11 @@
         <translation>分割設定の削除 (&amp;C)...</translation>
     </message>
     <message>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="459"/>
+        <source>Please build left bank and right bank lines before creating grid.</source>
+        <translation>格子を生成する前に、左岸線・右岸線を生成してください。</translation>
+    </message>
+    <message>
         <source>&amp;Division Setting...</source>
         <translation type="vanished">分割設定 (&amp;D)...</translation>
     </message>
@@ -236,12 +242,12 @@
 <context>
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
-        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1608"/>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1612"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1608"/>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1612"/>
         <source>Center Line is not defined yet.</source>
         <translation>中心線がまだ定義されていません。</translation>
     </message>

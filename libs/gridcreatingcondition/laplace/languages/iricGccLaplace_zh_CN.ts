@@ -23,6 +23,7 @@
         <location filename="../gridcreatingconditionlaplace.cpp" line="522"/>
         <location filename="../gridcreatingconditionlaplace.cpp" line="524"/>
         <location filename="../gridcreatingconditionlaplace.cpp" line="740"/>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="459"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -174,6 +175,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="459"/>
+        <source>Please build left bank and right bank lines before creating grid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../private/gridcreatingconditionlaplace_newedgestartdefinitioncommand.cpp" line="8"/>
         <location filename="../private/gridcreatingconditionlaplace_newedgestartdefinitioncommand.cpp" line="19"/>
         <source>Start adding new edge</source>
@@ -188,12 +194,12 @@
 <context>
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
-        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1608"/>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1612"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1608"/>
+        <location filename="../private/gridcreatingconditionlaplace_impl.cpp" line="1612"/>
         <source>Center Line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
