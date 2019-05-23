@@ -497,7 +497,7 @@ void GridCreatingConditionLaplace::newEdgeMode(bool on)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {return;}
 	if (on) {
-		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To divide region, click on the edge of the region first, and click on the another edge."), "gridcreatingconditionlaplace_divideregion");
+		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To divide the region, click on the edge of the region first, then click on the opposite edge."), "gridcreatingconditionlaplace_divideregion");
 		impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::AddEdgeLineNotPossible;
 	} else {
 		impl->m_newEdgeLine.clear();
@@ -510,18 +510,18 @@ void GridCreatingConditionLaplace::joinRegions()
 	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::StreamWise) {
 		int j = impl->m_selectedSectionId / (impl->m_ctrlPointCountI - 1);
 		if (j == 0 || j == impl->m_ctrlPointCountJ - 1) {
-			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select edge line inside the region when you want to join regions."));
+			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select an edge line inside the region when you want to join regions."));
 		} else {
-			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you join the regions divided with the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (ret == QMessageBox::No) {return;}
+			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to join the regions divided by the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			if (ret == QMessageBox::No) { return; }
 			impl->removeEdgeLineStreamWise(j);
 		}
 	} else if (impl->m_selectedSectionEdgeType == Impl::EdgeType::CrossSection) {
 		int i = impl->m_selectedSectionId % impl->m_ctrlPointCountI;
 		if (i == 0 || i == impl->m_ctrlPointCountI - 1) {
-			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select edge line inside the region when you want to join regions."));
+			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select an edge line inside the region when you want to join regions."));
 		} else {
-			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you join the regions divided with the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to join the regions divided by the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::No) {return;}
 			impl->removeEdgeLineCrossSection(i);
 		}

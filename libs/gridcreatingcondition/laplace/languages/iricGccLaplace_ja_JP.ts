@@ -39,20 +39,32 @@
     </message>
     <message>
         <location filename="../gridcreatingconditionlaplace.cpp" line="500"/>
-        <source>To divide region, click on the edge of the region first, and click on the another edge.</source>
+        <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
         <translation>領域を分割するには、領域の縁をはじめにクリックし、その後反対側の領域の縁をクリックしてください。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionlaplace.cpp" line="513"/>
         <location filename="../gridcreatingconditionlaplace.cpp" line="522"/>
-        <source>Please select edge line inside the region when you want to join regions.</source>
+        <source>Please select an edge line inside the region when you want to join regions.</source>
         <translation>領域を結合する時は、領域の内側の線を選択してください。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionlaplace.cpp" line="515"/>
         <location filename="../gridcreatingconditionlaplace.cpp" line="524"/>
-        <source>Are you sure you join the regions divided with the selected edge?</source>
+        <source>Are you sure you want to join the regions divided by the selected edge?</source>
         <translation>選択された線で隔てられた領域を結合していいですか?</translation>
+    </message>
+    <message>
+        <source>To divide region, click on the edge of the region first, and click on the another edge.</source>
+        <translation type="vanished">領域を分割するには、領域の縁をはじめにクリックし、その後反対側の領域の縁をクリックしてください。</translation>
+    </message>
+    <message>
+        <source>Please select edge line inside the region when you want to join regions.</source>
+        <translation type="vanished">領域を結合する時は、領域の内側の線を選択してください。</translation>
+    </message>
+    <message>
+        <source>Are you sure you join the regions divided with the selected edge?</source>
+        <translation type="vanished">選択された線で隔てられた領域を結合していいですか?</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionlaplace.cpp" line="740"/>
