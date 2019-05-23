@@ -1,8 +1,10 @@
 #include "gridcreatingconditionlaplace_impl.h"
 #include "gridcreatingconditionlaplace_banklinesbuilder.h"
+#include "gridcreatingconditionlaplace_buildsubgridpointsthread.h"
 #include "gridcreatingconditionlaplace_centerlinefinishdefiningcommand.h"
 #include "gridcreatingconditionlaplace_centerlinestartdefinitioncommand.h"
 #include "gridcreatingconditionlaplace_centerlineupdatelabelsandsplinecommand.h"
+#include "gridcreatingconditionlaplace_commonratiooptimizethread.h"
 #include "gridcreatingconditionlaplace_ctrlpointmovecommand.h"
 #include "gridcreatingconditionlaplace_deploysettingcommand.h"
 #include "gridcreatingconditionlaplace_divisionsettingcommand.h"
@@ -14,6 +16,7 @@
 #include "gridcreatingconditionlaplace_polylineeditcoordinatescommand.h"
 #include "gridcreatingconditionlaplace_polylinemovevertexcommand.h"
 #include "gridcreatingconditionlaplace_polylineremovevertexcommand.h"
+#include "gridcreatingconditionlaplace_subregiondeploysettingcommand.h"
 #include "gridcreatingconditionlaplace_updateedgelinesforedgeselectioncommand.h"
 #include "gridcreatingconditionlaplace_wholeregiondivisionsettingcommand.h"
 #include "../gridcreatingconditionlaplacebuildbanklinesdialog.h"
@@ -27,12 +30,15 @@
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
+#include <misc/anms.h>
 #include <misc/iricundostack.h>
 #include <misc/linearinterpolator.h>
 #include <misc/mathsupport.h>
 #include <misc/splineinterpolator.h>
 
+#include <vtkActor.h>
 #include <vtkActor2DCollection.h>
+#include <vtkDataSetMapper.h>
 #include <vtkPolyData.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
@@ -49,7 +55,7 @@ namespace {
 const int LINEWIDTH_WIDE = 2;
 const int LINEWIDTH_NARROW = 1;
 const int POINTSIZE = 5;
-const int POINTSIZE_DIVPREVIEW = 5;
+const int POINTSIZE_DIVPREVIEW = 3;
 const int SPLINE_FACTOR = 10;
 const int SUBDIVNUM = 20;
 const int FONTSIZE = 17;
@@ -79,6 +85,21 @@ void clearPolylines(std::vector<PolyLineController*>* lines, vtkActorCollection*
 	lines->clear();
 }
 
+void clearPolygon(PolygonController* polygon, vtkActorCollection* col, vtkRenderer* r)
+{
+	col->RemoveItem(polygon->paintActor());
+	r->RemoveActor(polygon->paintActor());
+	delete polygon;
+}
+
+void clearPolygons(std::vector<PolygonController*>* polygons, vtkActorCollection* col, vtkRenderer* r)
+{
+	for (auto p : *polygons) {
+		clearPolygon(p, col, r);
+	}
+	polygons->clear();
+}
+
 LinePair divideLine(std::vector<QPointF>& line, int edgeId)
 {
 	LinePair ret;
@@ -101,7 +122,7 @@ void setupEdgeControllerForEdgeSelection(PolyLineController* line, const ZDepthR
 {
 	line->pointsActor()->SetPosition(0, 0, zRange.max());
 	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
-	line->linesActor()->SetPosition(0, 0, zRange.min());
+	line->linesActor()->SetPosition(0, 0, (zRange.min() + zRange.max()) * 0.5);
 	line->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_NARROW);
 }
 
@@ -109,6 +130,14 @@ void setupEdgeControllerForDivisionPreview(PolyLineController* line, const ZDept
 {
 	line->pointsActor()->SetPosition(0, 0, zRange.max());
 	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE_DIVPREVIEW);
+	line->pointsActor()->GetProperty()->SetColor(0.3, 0.3, 0.3);
+}
+
+void setupSubRegionPolygon(PolygonController* polygon, const ZDepthRange& zRange)
+{
+	polygon->paintActor()->SetPosition(0, 0, zRange.min());
+	polygon->paintActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
+	polygon->paintActor()->GetProperty()->SetOpacity(0.7);
 }
 
 bool getPerpendicularLineOfLeg(const QPointF& p, PolyLineController& l, QPointF* leg)
@@ -230,6 +259,36 @@ void setupLabelActor(vtkLabel2DActor* actor)
 	prop->BoldOn();
 }
 
+std::vector<double> setupPoissonPotential(const std::vector<double>& lengths)
+{
+	std::vector<double> ret;
+	ret.push_back(0);
+	for (int i = 1; i < lengths.size() - 1; ++i) {
+		auto l1 = lengths.at(i) - lengths.at(i - 1);
+		auto l2 = lengths.at(i + 1) - lengths.at(i);
+		double ratio = l2 / l1;
+
+		ret.push_back(ratio / (ratio + 1));
+	}
+	ret.push_back(0);
+	return ret;
+}
+
+std::vector<double> setupRatios(const std::vector<double>& lengths)
+{
+	std::vector<double> ret;
+	ret.push_back(0);
+	for (int i = 1; i < lengths.size() - 1; ++i) {
+		auto l1 = lengths.at(i) - lengths.at(i - 1);
+		auto l2 = lengths.at(i + 1) - lengths.at(i);
+		double ratio = l2 / l1;
+
+		ret.push_back(1 / (ratio + 1));
+	}
+	ret.push_back(0);
+	return ret;
+}
+
 class TmpGrid {
 public:
 	TmpGrid(int isize, int jsize) :
@@ -250,6 +309,14 @@ private:
 	std::vector<double> m_y;
 };
 
+class CROptimizeParams {
+public:
+	std::vector<double> lengths;
+	std::vector<int> divNums;
+	std::vector<GridCreatingConditionLaplace::DivisionMode> divModes;
+	std::vector<double> commonRatios;
+};
+
 } // namespace
 
 GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
@@ -257,8 +324,14 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	m_centerLineOnlyMouseEventMode {CenterLineOnlyMouseEventMode::Normal},
 	m_regionDefinedMouseEventMode {RegionDefinedMouseEventMode::Normal},
 	m_centerLineIndex {-1},
+	m_previewGrid {nullptr},
+	m_previewGridMapper {vtkDataSetMapper::New()},
+	m_previewGridActor {vtkActor::New()},
+	m_optimizeThread {new CommonRatioOptimizeThread{this}},
+	m_buildThread {new BuildSubGridPointsThread{this}},
 	m_selectedSectionEdgeType {EdgeType::None},
 	m_selectedSectionId {-1},
+	m_selectedSubRegionId {-1},
 	m_hoveredSectionEdgeType {EdgeType::None},
 	m_hoveredSectionId {-1},
 	m_hoveredEdgeId {-1},
@@ -269,6 +342,7 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	m_newEdgeEndEdgeId {-1},
 	m_newEdgeFromZero {false},
 	m_itemSelected {false},
+	m_manualDivSetting {false},
 	m_previousLeftBankDistance {10},
 	m_previousRightBankDistance {10},
 	m_addCursorPixmap {":/libs/guibase/images/cursorAdd.png"},
@@ -277,22 +351,28 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	m_removeCursor {m_removeCursorPixmap, 0, 0},
 	m_rightClickingMenu {new QMenu(cond->preProcessorWindow())},
 	m_buildBankLinesAction {new QAction(GridCreatingConditionLaplace::tr("&Build left bank and right bank lines"), cond)},
-	m_modeMenu {new QMenu(GridCreatingConditionLaplace::tr("&Switch Mode"), cond->preProcessorWindow())},
-	m_modeShapeAction {new QAction(GridCreatingConditionLaplace::tr("&Shape Edit Mode"), cond)},
-	m_modeDivideAction {new QAction(GridCreatingConditionLaplace::tr("&Division Setting Mode"), cond)},
 	m_interpolateMenu {new QMenu(GridCreatingConditionLaplace::tr("&Interpolation Mode"), cond->preProcessorWindow())},
 	m_interpolateSplineAction {new QAction(GridCreatingConditionLaplace::tr("&Spline"), cond)},
 	m_interpolateLinearAction {new QAction(GridCreatingConditionLaplace::tr("&Linear"), cond)},
-	m_addNewEdgeAction {new QAction(GridCreatingConditionLaplace::tr("&Divide region"), cond)},
-	m_joinRegionsAction {new QAction(GridCreatingConditionLaplace::tr("&Join regions"), cond)},
+	m_addNewEdgeAction {new QAction(GridCreatingConditionLaplace::tr("Add &Division line"), cond)},
+	m_joinRegionsAction {new QAction(GridCreatingConditionLaplace::tr("Remove D&ivision Line"), cond)},
 	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GridCreatingConditionLaplace::tr("&Add Vertex"), cond)},
 	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GridCreatingConditionLaplace::tr("&Remove Vertex"), cond)},
 	m_editCoordinatesAction {new QAction(GridCreatingConditionLaplace::tr("&Edit coordinates..."), cond)},
 	m_wholeRegionDivisionSettingAction {new QAction(GridCreatingConditionLaplace::tr("Division Setting for &whole region..."), cond)},
-	m_divisionSettingAction {new QAction(GridCreatingConditionLaplace::tr("&Division Setting..."), cond)},
-	m_deploySettingAction {new QAction(GridCreatingConditionLaplace::tr("&Points Deploying Setting..."), cond)},
+	m_divisionSettingAction {new QAction(GridCreatingConditionLaplace::tr("&Division Setting for selected line..."), cond)},
+	m_deploySettingAction {new QAction(GridCreatingConditionLaplace::tr("&Edge Points Deploying Setting..."), cond)},
+	m_deploySubRegionSettingAction {new QAction(GridCreatingConditionLaplace::tr("&Deploying Setting for selected area..."), cond)},
+	m_clearDivisionSettingAction {new QAction(GridCreatingConditionLaplace::tr("&Clear Division Setting..."), cond)},
 	m_condition {cond}
 {
+	m_previewGridActor->SetMapper(m_previewGridMapper);
+	m_previewGridActor->GetProperty()->SetRepresentationToWireframe();
+	m_previewGridActor->GetProperty()->SetLighting(false);
+	m_previewGridActor->GetProperty()->SetColor(0.2, 0.2, 0.2);
+	m_previewGridActor->GetProperty()->SetLineWidth(1);
+	m_previewGridActor->VisibilityOff();
+
 	auto r = cond->renderer();
 	r->AddActor(m_centerLine.pointsActor());
 	r->AddActor(m_centerLineSpline.linesActor());
@@ -300,6 +380,7 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	r->AddActor(m_ctrlPointsController.pointsActor());
 	r->AddActor(m_newEdgeLine.pointsActor());
 	r->AddActor(m_newEdgeLine.linesActor());
+	r->AddActor(m_previewGridActor);
 
 	r->AddActor2D(m_upstreamActor.actor());
 	r->AddActor2D(m_downstreamActor.actor());
@@ -320,20 +401,13 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	m_addNewEdgeAction->setCheckable(true);
 	m_addVertexAction->setCheckable(true);
 	m_removeVertexAction->setCheckable(true);
-	m_modeShapeAction->setCheckable(true);
-	m_modeDivideAction->setCheckable(true);
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateLinearAction->setCheckable(true);
-
-	m_modeMenu->addAction(m_modeShapeAction);
-	m_modeMenu->addAction(m_modeDivideAction);
 
 	m_interpolateMenu->addAction(m_interpolateSplineAction);
 	m_interpolateMenu->addAction(m_interpolateLinearAction);
 
 	connect(m_buildBankLinesAction, SIGNAL(triggered()), cond, SLOT(buildBankLines()));
-	connect(m_modeShapeAction, SIGNAL(triggered()), cond, SLOT(switchModeToShape()));
-	connect(m_modeDivideAction, SIGNAL(triggered()), cond, SLOT(switchModeToDivide()));
 	connect(m_interpolateSplineAction, SIGNAL(triggered()), cond, SLOT(interpolateModeSprine()));
 	connect(m_interpolateLinearAction, SIGNAL(triggered()), cond, SLOT(interpolateModeLinear()));
 	connect(m_addNewEdgeAction, SIGNAL(triggered(bool)), cond, SLOT(newEdgeMode(bool)));
@@ -344,6 +418,13 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	connect(m_wholeRegionDivisionSettingAction, SIGNAL(triggered()), cond, SLOT(wholeRegionDivisionSetting()));
 	connect(m_divisionSettingAction, SIGNAL(triggered()), cond, SLOT(divisionSetting()));
 	connect(m_deploySettingAction, SIGNAL(triggered()), cond, SLOT(deploySetting()));
+	connect(m_deploySubRegionSettingAction, SIGNAL(triggered()), cond, SLOT(subRegionDeploySetting()));
+	connect(m_clearDivisionSettingAction, SIGNAL(triggered()), cond, SLOT(clearDivisionSetting()));
+	connect(m_optimizeThread, SIGNAL(optimizeFinished()), cond, SLOT(informCommonRatioUpdate()));
+	connect(m_buildThread, SIGNAL(buildFinished(int,int)), cond, SLOT(informPreviewGridPointsUpdate(int,int)));
+
+	m_optimizeThread->start();
+	m_buildThread->start();
 }
 
 GridCreatingConditionLaplace::Impl::~Impl()
@@ -354,15 +435,35 @@ GridCreatingConditionLaplace::Impl::~Impl()
 	r->RemoveActor(m_ctrlPointsController.pointsActor());
 	r->RemoveActor(m_newEdgeLine.pointsActor());
 	r->RemoveActor(m_newEdgeLine.linesActor());
+	r->RemoveActor(m_previewGridActor);
 
 	r->RemoveActor2D(m_upstreamActor.actor());
 	r->RemoveActor2D(m_downstreamActor.actor());
 
+	delete m_previewGrid;
+	m_previewGridMapper->Delete();
+	m_previewGridActor->Delete();
+
 	clearCtrlPointsAndEdges();
+
+	m_optimizeThread->finish();
+	delete m_optimizeThread;
+
+	m_buildThread->finish();
+	delete m_buildThread;
 }
 
-Grid* GridCreatingConditionLaplace::Impl::createGrid()
+Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 {
+	if (m_editMode == EditMode::CenterLineOnly) {
+		QMessageBox::warning(m_condition->preProcessorWindow(), GridCreatingConditionLaplace::tr("Warning"), GridCreatingConditionLaplace::tr("Please build left bank and right bank lines before creating grid."));
+		return nullptr;
+	}
+	if (! divideSettingExists()) {
+		bool ok = m_condition->wholeRegionDivisionSetting(true);
+		if (! ok) {return nullptr;}
+	}
+
 	int iMax = m_ctrlPointCountI;
 	for (auto div : m_divCountsStreamWise) {
 		iMax += div - 1;
@@ -440,7 +541,7 @@ Grid* GridCreatingConditionLaplace::Impl::createGrid()
 			auto edgeLineStreamWise2 = edgeLineStreamWiseForDivisionPreview(i, j + 1).polyLine();
 			auto edgeLineCrossSection1 = edgeLineCrossSectionForDivisionPreview(i, j).polyLine();
 			auto edgeLineCrossSection2 = edgeLineCrossSectionForDivisionPreview(i + 1, j).polyLine();
-			auto subPoints = buildSubGrid(edgeLineStreamWise1, edgeLineStreamWise2, edgeLineCrossSection1, edgeLineCrossSection2);
+			auto subPoints = buildSubGrid(edgeLineStreamWise1, edgeLineStreamWise2, edgeLineCrossSection1, edgeLineCrossSection2, subRegionPoissonParameter(i, j));
 			int idx = 0;
 			for (int jj = 0; jj < m_divCountsCrossSection[j] - 1; ++jj) {
 				for (int ii = 0; ii < m_divCountsStreamWise[i] - 1; ++ii) {
@@ -463,19 +564,98 @@ Grid* GridCreatingConditionLaplace::Impl::createGrid()
 	return grid;
 }
 
-std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGrid(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2)
+Structured2DGrid* GridCreatingConditionLaplace::Impl::createSubRegionGrid(int i, int j)
+{
+	int iMax = m_divCountsStreamWise[i] + 1;
+	int jMax = m_divCountsCrossSection[j] + 1;
+
+	auto grid = new Structured2DGrid(nullptr);
+	grid->setDimensions(iMax, jMax);
+
+	auto points = vtkPoints::New();
+	points->SetDataTypeToDouble();
+	points->Allocate(iMax * jMax);
+	for (int idx = 0; idx < iMax * jMax; ++idx) {
+		points->InsertNextPoint(0, 0, 0);
+	}
+
+	// Set CtrlPoints
+	int jIdx = 0;
+	for (int jj = 0; jj < 2; ++jj) {
+		int iIdx = 0;
+		for (int ii = 0; ii < 2; ++ii) {
+			setGridPoint(points, ctrlPoint(i + ii, j + jj), iIdx, jIdx, iMax);
+			iIdx += m_divCountsStreamWise.at(i);
+		}
+		jIdx += m_divCountsCrossSection.at(j);
+	}
+
+	// Set points on edges
+	jIdx = 0;
+	for (int jj = 0; jj < 2; ++jj) {
+		auto line = edgeLineStreamWiseForDivisionPreview(i, j + jj).polyLine();
+		for (int k = 1; k < line.size() - 1; ++k) {
+			const auto& p = line.at(k);
+			int idx = k + jIdx * iMax;
+			points->SetPoint(idx, p.x(), p.y(), 0);
+		}
+		jIdx += m_divCountsCrossSection.at(j);
+	}
+
+	int iIdx = 0;
+	for (int ii = 0; ii < 2; ++ii) {
+		auto line = edgeLineCrossSectionForDivisionPreview(i + ii, j).polyLine();
+		for (int k = 1; k < line.size() - 1; ++k) {
+			const auto& p = line.at(k);
+			int idx = iIdx + k * iMax;
+			points->SetPoint(idx, p.x(), p.y(), 0);
+		}
+		iIdx += m_divCountsStreamWise.at(i);
+	}
+
+	// Set Points for subregions
+	int idx = 0;
+	for (int jj = 0; jj < m_divCountsCrossSection[j] - 1; ++jj) {
+		for (int ii = 0; ii < m_divCountsStreamWise[i] - 1; ++ii) {
+			setGridPoint(points, m_previewGridPoints.at(idx), ii + 1, jj + 1, iMax);
+			++idx;
+		}
+	}
+	grid->vtkGrid()->SetPoints(points);
+	points->Delete();
+	grid->setModified();
+	return grid;
+}
+
+std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGrid(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp)
+{
+	if (pp.setting == DeploySetting::Ratio) {
+		return buildSubGridByRatio(edgeLineStreamWise1, edgeLineStreamWise2, edgeLineCrossSection1, edgeLineCrossSection2, pp);
+	} else {
+		return buildSubGridByPoisson(edgeLineStreamWise1, edgeLineStreamWise2, edgeLineCrossSection1, edgeLineCrossSection2, pp);
+	}
+}
+
+std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByRatio(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp)
 {
 	std::vector<double> lenStreamWise1, lenStreamWise2, lenCrossSection1, lenCrossSection2;
+	std::vector<double> p0, p1, q0, q1;
 	lenStreamWise1 = buildLengths(edgeLineStreamWise1);
 	lenStreamWise2 = buildLengths(edgeLineStreamWise2);
 	lenCrossSection1 = buildLengths(edgeLineCrossSection1);
 	lenCrossSection2 = buildLengths(edgeLineCrossSection2);
+
+	p0 = setupRatios(lenStreamWise1);
+	p1 = setupRatios(lenStreamWise2);
+	q0 = setupRatios(lenCrossSection1);
+	q1 = setupRatios(lenCrossSection2);
 
 	int isize = edgeLineStreamWise1.size();
 	int jsize = edgeLineCrossSection1.size();
 
 	TmpGrid grid(isize, jsize);
 	TmpGrid newGrid(isize, jsize);
+	TmpGrid ratioGrid(isize, jsize);
 
 	for (int j = 0; j < edgeLineCrossSection1.size(); ++j) {
 		grid.x(0, j) = edgeLineCrossSection1.at(j).x();
@@ -493,6 +673,99 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGrid(const std:
 	// initialize the grid
 	for (int j = 1; j < edgeLineCrossSection1.size() - 1; ++j) {
 		double r_c = (lenCrossSection1[j] / lenCrossSection1.back() + lenCrossSection2[j] / lenCrossSection2.back()) * 0.5;
+		double s = j / static_cast<double>(jsize);
+		for (int i = 1; i < edgeLineStreamWise1.size() - 1; ++i) {
+			double r_s = (lenStreamWise1[i] / lenStreamWise1.back() + lenStreamWise2[i] / lenStreamWise2.back()) * 0.5;
+			double r = i / static_cast<double>(isize);
+
+			auto p_s = edgeLineStreamWise1.at(i) * (1 - r_c) + edgeLineStreamWise2.at(i) * r_c;
+			grid.x(i, j) = p_s.x();
+			grid.y(i, j) = p_s.y();
+
+			ratioGrid.x(i, j) = p0[i] * (1 - s) + p1[i] * s;
+			ratioGrid.y(i, j) = q0[j] * (1 - r) + q1[j] * r;
+		}
+	}
+
+	// @todo loop count should be optimized
+	double ax = 1;
+
+	for (int c = 0; c < 1000; ++c) {
+		newGrid = grid;
+		for (int j = 1; j < jsize - 1; ++j) {
+			for (int i = 1; i < isize - 1; ++i) {
+				int i0 = i - 1;
+				int i1 = i + 1;
+				int j0 = j - 1;
+				int j1 = j + 1;
+				double p = ratioGrid.x(i, j);
+				double q = ratioGrid.y(i, j);
+
+				double x1 = (1 - p) * grid.x(i0, j) + p * grid.x(i1, j);
+				double y1 = (1 - p) * grid.y(i0, j) + p * grid.y(i1, j);
+				double dx1 = (grid.x(i1, j) - grid.x(i0 , j));
+				double dy1 = (grid.y(i1, j) - grid.y(i0 , j));
+				double len1 = dx1 * dx1 + dy1 * dy1;
+				double x2 = (1 - q) * grid.x(i, j0) + q * grid.x(i, j1);
+				double y2 = (1 - q) * grid.y(i, j0) + q * grid.y(i, j1);
+				double dx2 = (grid.x(i, j1) - grid.x(i, j0));
+				double dy2 = (grid.y(i, j1) - grid.y(i, j0));
+				double len2 = dx2 * dx2 + dy2 * dy2;
+
+				newGrid.x(i, j) = (x1 * len2 + x2 * len1) / (len1 + len2);
+				newGrid.y(i, j) = (y1 * len2 + y2 * len1) / (len1 + len2);
+			}
+		}
+		for (int j = 1; j < jsize - 1; ++j) {
+			for (int i = 1; i < isize - 1; ++i) {
+				grid.x(i, j) = ax * newGrid.x(i, j) + (1 - ax) * grid.x(i, j);
+				grid.y(i, j) = ax * newGrid.y(i, j) + (1 - ax) * grid.y(i, j);
+			}
+		}
+	}
+
+	std::vector<QPointF> ret;
+	for (int j = 1; j < jsize - 1; ++j) {
+		for (int i = 1; i < isize - 1; ++i) {
+			ret.push_back(QPointF(grid.x(i, j), grid.y(i, j)));
+		}
+	}
+
+	return ret;
+}
+
+std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByPoisson(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp)
+{
+	std::vector<double> lenStreamWise1, lenStreamWise2, lenCrossSection1, lenCrossSection2;
+	lenStreamWise1 = buildLengths(edgeLineStreamWise1);
+	lenStreamWise2 = buildLengths(edgeLineStreamWise2);
+	lenCrossSection1 = buildLengths(edgeLineCrossSection1);
+	lenCrossSection2 = buildLengths(edgeLineCrossSection2);
+
+	int isize = edgeLineStreamWise1.size();
+	int jsize = edgeLineCrossSection1.size();
+
+	TmpGrid grid(isize, jsize);
+	TmpGrid newGrid(isize, jsize);
+	TmpGrid PQGrid(isize, jsize);
+
+	for (int j = 0; j < edgeLineCrossSection1.size(); ++j) {
+		grid.x(0, j) = edgeLineCrossSection1.at(j).x();
+		grid.y(0, j) = edgeLineCrossSection1.at(j).y();
+		grid.x(isize - 1, j) = edgeLineCrossSection2.at(j).x();
+		grid.y(isize - 1, j) = edgeLineCrossSection2.at(j).y();
+	}
+	for (int i = 0; i < edgeLineStreamWise1.size(); ++i) {
+		grid.x(i, 0) = edgeLineStreamWise1.at(i).x();
+		grid.y(i, 0) = edgeLineStreamWise1.at(i).y();
+		grid.x(i, jsize - 1) = edgeLineStreamWise2.at(i).x();
+		grid.y(i, jsize - 1) = edgeLineStreamWise2.at(i).y();
+	}
+
+
+	// initialize the grid
+	for (int j = 1; j < edgeLineCrossSection1.size() - 1; ++j) {
+		double r_c = (lenCrossSection1[j] / lenCrossSection1.back() + lenCrossSection2[j] / lenCrossSection2.back()) * 0.5;
 		for (int i = 1; i < edgeLineStreamWise1.size() - 1; ++i) {
 			double r_s = (lenStreamWise1[i] / lenStreamWise1.back() + lenStreamWise2[i] / lenStreamWise2.back()) * 0.5;
 
@@ -504,6 +777,10 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGrid(const std:
 
 	// @todo loop count should be optimized
 	double ax = 0.3;
+
+	double p = pp.manualP;
+	double q = pp.manualQ;
+
 	for (int c = 0; c < 1000; ++c) {
 		newGrid = grid;
 		for (int j = 1; j < jsize - 1; ++j) {
@@ -522,8 +799,6 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGrid(const std:
 				double beta = dxdxi * dxdeta + dydxi * dydeta;
 				double gamma = dxdxi * dxdxi + dydxi * dydxi;
 				double sj = dxdxi * dydeta - dydxi * dxdeta;
-				double p = 0;
-				double q = 0;
 
 				double w1, w2, w3, w4;
 
@@ -572,6 +847,11 @@ int GridCreatingConditionLaplace::Impl::ctrlpointCountJ() const
 QPointF& GridCreatingConditionLaplace::Impl::ctrlPoint(int i, int j)
 {
 	return m_ctrlPoints[i + j * m_ctrlPointCountI];
+}
+
+bool GridCreatingConditionLaplace::Impl::divideSettingExists() const
+{
+	return m_manualDivSetting;
 }
 
 void GridCreatingConditionLaplace::Impl::copyCenterLine(GeoDataRiverSurvey* data, int num)
@@ -668,6 +948,11 @@ PolyLineController& GridCreatingConditionLaplace::Impl::edgeLineCrossSectionForD
 	return *(m_edgeLinesCrossSectionForDivisionPreview[i + j * m_ctrlPointCountI]);
 }
 
+PolygonController& GridCreatingConditionLaplace::Impl::subRegionPolygons(int i, int j)
+{
+	return *(m_subRegionPolygons[i + j * (m_ctrlPointCountI - 1)]);
+}
+
 void GridCreatingConditionLaplace::Impl::insertEdgeLineStreamWise(PolyLineController* line, int idx)
 {
 	auto r = m_condition->renderer();
@@ -710,6 +995,11 @@ double& GridCreatingConditionLaplace::Impl::divCommonRatioStreamWise(int i, int 
 double& GridCreatingConditionLaplace::Impl::divCommonRatioCrossSection(int i, int j)
 {
 	return m_divCommonRatiosCrossSection[i + j * m_ctrlPointCountI];
+}
+
+GridCreatingConditionLaplace::DeployParameter& GridCreatingConditionLaplace::Impl::subRegionPoissonParameter(int i, int j)
+{
+	return m_subRegionDeployParameters[i + j * (m_ctrlPointCountI - 1)];
 }
 
 PolyLineController* GridCreatingConditionLaplace::Impl::selectedSectionForEdgeSelection() const
@@ -800,6 +1090,14 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLineStreamWise(int idx)
 	m_ctrlPoints.erase(start3, end3);
 
 	m_divCountsCrossSection.erase(m_divCountsCrossSection.begin() + idx);
+
+	auto r_start = m_subRegionDeployParameters.begin() + (m_ctrlPointCountI - 1) * idx;
+	auto r_end = r_start + (m_ctrlPointCountI - 1);
+	for (auto it = r_start; it != r_end; ++it) {
+		removeSubRegionPolygon(col, r);
+	}
+	m_subRegionDeployParameters.erase(r_start, r_end);
+
 	if (idx == m_centerLineIndex) {
 		-- m_centerLineIndex;
 		if (m_centerLineIndex == 0 && m_ctrlPointCountJ > 2) {
@@ -845,6 +1143,12 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLineCrossSection(int idx)
 	}
 
 	m_divCountsStreamWise.erase(m_divCountsStreamWise.begin() + idx);
+
+	for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
+		m_subRegionDeployParameters.erase(m_subRegionDeployParameters.begin() + (m_ctrlPointCountI - 1) * (m_ctrlPointCountJ - 2 - j) + idx);
+		removeSubRegionPolygon(col, r);
+	}
+
 	m_ctrlPointCountI -= 1;
 	m_selectedSectionEdgeType = EdgeType::None;
 
@@ -883,6 +1187,9 @@ void GridCreatingConditionLaplace::Impl::updateActorSetting()
 	for (auto line : m_edgeLinesCrossSectionForDivisionPreview) {
 		line->pointsActor()->VisibilityOff();
 	}
+	for (auto polygon : m_subRegionPolygons) {
+		polygon->paintActor()->VisibilityOff();
+	}
 
 	auto col = m_condition->actorCollection();
 	auto col2 = m_condition->actor2DCollection();
@@ -895,7 +1202,7 @@ void GridCreatingConditionLaplace::Impl::updateActorSetting()
 		}
 		col->AddItem(m_centerLineSpline.linesActor());
 		setupLabelsForCenterLine(col2);
-	} else if (m_editMode == EditMode::RegionDefined) {
+	} else {
 		if (m_itemSelected) {
 			col->AddItem(m_ctrlPointsController.pointsActor());
 			col->AddItem(m_newEdgeLine.pointsActor());
@@ -915,36 +1222,26 @@ void GridCreatingConditionLaplace::Impl::updateActorSetting()
 				col->AddItem(line->pointsActor());
 			}
 		}
-		for (auto line : m_edgeLinesCrossSectionForEdgeSelection) {
-			col->AddItem(line->linesActor());
-		}
-
-		auto selectedEdge = selectedSectionForEdgeSelection();
-		if (selectedEdge != nullptr) {
-			selectedEdge->linesActor()->GetProperty()->SetLineWidth(3);
-		}
-		col2->AddItem(m_upstreamActor.actor());
-		col2->AddItem(m_downstreamActor.actor());
-	} else {
-		for (auto line : m_edgeLinesStreamWiseForEdgeSelection) {
-			col->AddItem(line->linesActor());
-		}
-		if (m_itemSelected) {
+		if (m_editMode == EditMode::RegionDefined && m_itemSelected) {
 			for (auto line : m_edgeLinesStreamWiseForDivisionPreview) {
 				col->AddItem(line->pointsActor());
 			}
-		}
-		for (auto line : m_edgeLinesCrossSectionForEdgeSelection) {
-			col->AddItem(line->linesActor());
-		}
-		if (m_itemSelected) {
 			for (auto line : m_edgeLinesCrossSectionForDivisionPreview) {
 				col->AddItem(line->pointsActor());
 			}
 		}
-		auto selectedEdge = selectedSectionForEdgeSelection();
-		if (selectedEdge != nullptr) {
-			selectedEdge->linesActor()->GetProperty()->SetLineWidth(3);
+		for (auto line : m_edgeLinesCrossSectionForEdgeSelection) {
+			col->AddItem(line->linesActor());
+		}
+		if (m_itemSelected) {
+			auto selectedEdge = selectedSectionForEdgeSelection();
+			if (selectedEdge != nullptr) {
+				selectedEdge->linesActor()->GetProperty()->SetLineWidth(3);
+			}
+			if (m_selectedSubRegionId != -1) {
+				auto region = m_subRegionPolygons[m_selectedSubRegionId];
+				col->AddItem(region->paintActor());
+			}
 		}
 		col2->AddItem(m_upstreamActor.actor());
 		col2->AddItem(m_downstreamActor.actor());
@@ -960,9 +1257,7 @@ void GridCreatingConditionLaplace::Impl::updateActionStatus()
 	m_addVertexAction->setEnabled(true);
 	m_removeVertexAction->setChecked(false);
 	m_removeVertexAction->setEnabled(true);
-	m_modeMenu->setEnabled(true);
-	m_modeShapeAction->setChecked(false);
-	m_modeDivideAction->setChecked(false);
+	m_deploySubRegionSettingAction->setEnabled(false);
 
 	m_interpolateMenu->setEnabled(false);
 	m_interpolateSplineAction->setChecked(false);
@@ -970,7 +1265,6 @@ void GridCreatingConditionLaplace::Impl::updateActionStatus()
 
 	if (m_editMode == EditMode::CenterLineOnly) {
 		m_editCoordinatesAction->setEnabled(true);
-		m_modeMenu->setEnabled(false);
 		switch (m_centerLineOnlyMouseEventMode) {
 		case CenterLineOnlyMouseEventMode::BeforeDefining:
 		case CenterLineOnlyMouseEventMode::Defining:
@@ -989,20 +1283,20 @@ void GridCreatingConditionLaplace::Impl::updateActionStatus()
 		default:
 			break;
 		}
-	} else if (m_editMode == EditMode::RegionDefined) {
-		m_modeShapeAction->setChecked(true);
+	} else {
+		bool lineSelected = (m_selectedSectionEdgeType != EdgeType::None);
+
 		m_addNewEdgeAction->setEnabled(true);
-		m_joinRegionsAction->setEnabled(false);
-		m_editCoordinatesAction->setEnabled(false);
-		if (selectedSectionForEdgeSelection() != nullptr) {
-			m_interpolateMenu->setEnabled(true);
-			m_joinRegionsAction->setEnabled(true);
-			m_editCoordinatesAction->setEnabled(true);
-			if (selectedSectionInterpolateType() == InterpolationType::Spline) {
-				m_interpolateSplineAction->setChecked(true);
-			} else if (selectedSectionInterpolateType() == InterpolationType::Linear) {
-				m_interpolateLinearAction->setChecked(true);
-			}
+		m_joinRegionsAction->setEnabled(lineSelected);
+		m_editCoordinatesAction->setEnabled(lineSelected);
+		m_divisionSettingAction->setEnabled(lineSelected);
+		m_deploySettingAction->setEnabled(lineSelected);
+		m_deploySubRegionSettingAction->setEnabled(m_selectedSubRegionId != -1);
+
+		if (selectedSectionInterpolateType() == InterpolationType::Spline) {
+			m_interpolateSplineAction->setChecked(true);
+		} else if (selectedSectionInterpolateType() == InterpolationType::Linear) {
+			m_interpolateLinearAction->setChecked(true);
 		}
 		switch (m_regionDefinedMouseEventMode) {
 		case RegionDefinedMouseEventMode::AddEdgeLine:
@@ -1025,8 +1319,6 @@ void GridCreatingConditionLaplace::Impl::updateActionStatus()
 		default:
 			break;
 		}
-	} else {
-		m_modeDivideAction->setChecked(true);
 	}
 }
 
@@ -1130,6 +1422,10 @@ void GridCreatingConditionLaplace::Impl::updateMouseEventMode(const QPoint& pos,
 				if (updateSelect && iRIC::isNear(m_pressPos, pos)) {
 					m_selectedSectionEdgeType = m_hoveredSectionEdgeType;
 					m_selectedSectionId = m_hoveredSectionId;
+					m_selectedSubRegionId = -1;
+					if (m_selectedSectionEdgeType == EdgeType::None) {
+						updateSelectedSubRegion(pos);
+					}
 				}
 			}
 			break;
@@ -1169,6 +1465,28 @@ PolyLineController* GridCreatingConditionLaplace::Impl::updateHoveredSection(con
 	}
 
 	return hoveredSectionForEdgeSelection();
+}
+
+PolygonController* GridCreatingConditionLaplace::Impl::updateSelectedSubRegion(const QPoint& pos)
+{
+	double x = pos.x();
+	double y = pos.y();
+	auto v = m_condition->graphicsView();
+	v->viewportToWorld(x, y);
+	QPointF worldPos(x, y);
+
+	m_selectedSubRegionId = -1;
+	for (int i = 0; i < m_subRegionPolygons.size(); ++i) {
+		auto region = m_subRegionPolygons.at(i);
+		if (region->isAreaSelectable(worldPos)) {
+			m_selectedSubRegionId = i;
+			break;
+		}
+	}
+	if (m_selectedSubRegionId == -1) {
+		return nullptr;
+	}
+	return m_subRegionPolygons[m_selectedSubRegionId];
 }
 
 bool GridCreatingConditionLaplace::Impl::setupNewEdgeSetting()
@@ -1361,6 +1679,12 @@ void GridCreatingConditionLaplace::Impl::buildBankLines()
 
 		addEdgeLinesCrossSectionForSelectionAndPreview(r);
 	}
+	for (int i = 0; i < 2; ++i) {
+		DeployParameter p;
+		m_subRegionDeployParameters.push_back(p);
+		addSubRegionPolygon(r);
+	}
+
 	rightBank.pop_back();
 	rightBank.erase(rightBank.begin());
 	m_edgeLinesStreamWise[0]->setPolyLine(rightBank);
@@ -1371,8 +1695,8 @@ void GridCreatingConditionLaplace::Impl::buildBankLines()
 	leftBank.erase(leftBank.begin());
 	m_edgeLinesStreamWise[2]->setPolyLine(leftBank);
 
-	m_divCountsCrossSection.assign(2, 10);
-	m_divCountsStreamWise.assign(1, 10);
+	m_divCountsCrossSection.assign(2, 1);
+	m_divCountsStreamWise.assign(1, 1);
 	m_divModesCrossSection.assign(4, DivisionMode::Auto);
 	m_divModesStreamWise.assign(3, DivisionMode::Auto);
 	m_divCommonRatiosCrossSection.assign(4, 1);
@@ -1467,6 +1791,14 @@ void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProces
 
 			addEdgeLinesCrossSectionForSelectionAndPreview(renderer);
 		}
+
+		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
+			auto it = m_subRegionDeployParameters.begin() + m_newEdgeCtrlPointId - 1 + j * m_ctrlPointCountI;
+			auto pp = *it;
+			m_subRegionDeployParameters.insert(it + 1, pp);
+			addSubRegionPolygon(renderer);
+		}
+
 		m_divCountsStreamWise.insert(m_divCountsStreamWise.begin() + m_newEdgeCtrlPointId, 1);
 		++m_ctrlPointCountI;
 		updateEdgeLinesForSelection();
@@ -1537,6 +1869,12 @@ void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProces
 
 			addEdgeLinesStreamWiseForSelectionAndPreview(renderer);
 		}
+		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
+			auto pp = subRegionPoissonParameter(i, m_newEdgeCtrlPointId - 1);
+			m_subRegionDeployParameters.insert(m_subRegionDeployParameters.begin() + i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1), pp);
+			addSubRegionPolygon(renderer);
+		}
+
 		m_divCountsCrossSection.insert(m_divCountsCrossSection.begin() + m_newEdgeCtrlPointId, 1);
 		++m_ctrlPointCountJ;
 		updateEdgeLinesForSelection();
@@ -1631,24 +1969,6 @@ void GridCreatingConditionLaplace::Impl::updateEdgeLinesForSelection()
 			offset += pointCount - 1;
 			selLines.push_back(line);
 		}
-
-		std::vector<DivisionMode> divModes;
-		std::vector<double> commonRatios;
-		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
-			divModes.push_back(divModeStreamWise(i, j));
-			commonRatios.push_back(divCommonRatioStreamWise(i, j));
-		}
-		auto previewPoints = buildLinesForDivisionPreview(selLines, m_divCountsStreamWise, divModes, commonRatios);
-
-		offset = 0;
-		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
-			std::vector<QPointF> line;
-			for (int k = 0; k <= m_divCountsStreamWise[i]; ++k) {
-				line.push_back(previewPoints.at(k + offset));
-			}
-			edgeLineStreamWiseForDivisionPreview(i, j).setPolyLine(line);
-			offset += m_divCountsStreamWise[i];
-		}
 	}
 
 	// build edgeLineCrossSection
@@ -1682,16 +2002,91 @@ void GridCreatingConditionLaplace::Impl::updateEdgeLinesForSelection()
 			offset += pointCount - 1;
 			selLines.push_back(line);
 		}
+	}
 
+	// build subRegionPolygons
+	for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
+		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
+			QPolygonF polygon;
+			polygon.push_back(ctrlPoint(i, j));
+			auto line = edgeLineStreamWiseForEdgeSelection(i, j).polyLine();
+			line.erase(line.begin());
+			line.pop_back();
+			for (auto p : line) {
+				polygon.push_back(p);
+			}
+			polygon.push_back(ctrlPoint(i + 1, j));
+			line = edgeLineCrossSectionForEdgeSelection(i + 1, j).polyLine();
+			line.erase(line.begin());
+			line.pop_back();
+			for (auto p : line) {
+				polygon.push_back(p);
+			}
+			polygon.push_back(ctrlPoint(i + 1, j + 1));
+			line = edgeLineStreamWiseForEdgeSelection(i, j + 1).polyLine();
+			std::reverse(line.begin(), line.end());
+			line.erase(line.begin());
+			line.pop_back();
+			for (auto p : line) {
+				polygon.push_back(p);
+			}
+			polygon.push_back(ctrlPoint(i, j + 1));
+			line = edgeLineCrossSectionForEdgeSelection(i, j).polyLine();
+			std::reverse(line.begin(), line.end());
+			line.erase(line.begin());
+			line.pop_back();
+			for (auto p : line) {
+				polygon.push_back(p);
+			}
+			polygon.push_back(ctrlPoint(i, j));
+			subRegionPolygons(i, j).setPolygon(polygon);
+		}
+	}
+
+	updateEdgeLinesForDivisionPreview();
+
+	setupLabelsForRegionDefined();
+	optimizeCommonRatios();
+}
+
+void GridCreatingConditionLaplace::Impl::updateEdgeLinesForDivisionPreview()
+{
+	// streamWise
+	for (int j = 0; j < m_ctrlPointCountJ; ++j) {
+		std::vector<std::vector<QPointF> > selLines;
+		std::vector<DivisionMode> divModes;
+		std::vector<double> commonRatios;
+		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
+			selLines.push_back(edgeLineStreamWiseForEdgeSelection(i, j).polyLine());
+			divModes.push_back(divModeStreamWise(i, j));
+			commonRatios.push_back(divCommonRatioStreamWise(i, j));
+		}
+		auto previewPoints = buildLinesForDivisionPreview(selLines, m_divCountsStreamWise, divModes, commonRatios);
+
+		int offset = 0;
+		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
+			std::vector<QPointF> line;
+			for (int k = 0; k <= m_divCountsStreamWise[i]; ++k) {
+				line.push_back(previewPoints.at(k + offset));
+			}
+			edgeLineStreamWiseForDivisionPreview(i, j).setPolyLine(line);
+			offset += m_divCountsStreamWise[i];
+		}
+	}
+
+	// crossSection
+	for (int i = 0; i < m_ctrlPointCountI; ++i) {
+		std::vector<std::vector<QPointF> > selLines;
 		std::vector<DivisionMode> divModes;
 		std::vector<double> commonRatios;
 		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
+			selLines.push_back(edgeLineCrossSectionForEdgeSelection(i, j).polyLine());
 			divModes.push_back(divModeCrossSection(i, j));
 			commonRatios.push_back(divCommonRatioCrossSection(i, j));
 		}
 		auto previewPoints = buildLinesForDivisionPreview(selLines, m_divCountsCrossSection, divModes, commonRatios);
 
-		offset = 0;
+		int offset = 0;
 		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
 			std::vector<QPointF> line;
 			for (int k = 0; k <= m_divCountsCrossSection[j]; ++k) {
@@ -1701,7 +2096,6 @@ void GridCreatingConditionLaplace::Impl::updateEdgeLinesForSelection()
 			offset += m_divCountsCrossSection[j];
 		}
 	}
-	setupLabelsForRegionDefined();
 }
 
 void GridCreatingConditionLaplace::Impl::clearCtrlPointsAndEdges()
@@ -1729,6 +2123,7 @@ void GridCreatingConditionLaplace::Impl::clearCtrlPointsAndEdges()
 	clearPolylines(&m_edgeLinesCrossSectionForEdgeSelection, col, r);
 	clearPolylines(&m_edgeLinesStreamWiseForDivisionPreview, col, r);
 	clearPolylines(&m_edgeLinesCrossSectionForDivisionPreview, col, r);
+	clearPolygons(&m_subRegionPolygons, col, r);
 }
 
 void GridCreatingConditionLaplace::Impl::setupLabelsForCenterLine(vtkActor2DCollection* col)
@@ -1751,6 +2146,16 @@ void GridCreatingConditionLaplace::Impl::setupLabelsForRegionDefined()
 
 	auto lastp = ctrlPoint(m_ctrlPointCountI - 1, m_centerLineIndex);
 	m_downstreamActor.setPosition(lastp);
+}
+
+void GridCreatingConditionLaplace::Impl::requestPreviewSubRegionGrid()
+{
+	if (m_selectedSubRegionId == -1) {return;}
+
+	int i = m_selectedSubRegionId % (m_ctrlPointCountI - 1);
+	int j = m_selectedSubRegionId / (m_ctrlPointCountI - 1);
+
+	m_buildThread->restartBuild(i, j);
 }
 
 void GridCreatingConditionLaplace::Impl::pushCenterLineStartDefinitionCommand(bool keyDown, const QPoint& p)
@@ -1876,14 +2281,19 @@ void GridCreatingConditionLaplace::Impl::pushDeploySettingCommand(bool streamWis
 	pushUpdateLineForEdgeSelectionCommand(new DeploySettingCommand(streamWise, edgeId, mode, commonRatio, this));
 }
 
-void GridCreatingConditionLaplace::Impl::pushDivisionSettingCommand(bool streamWise, int edgeId, int divNum)
+void GridCreatingConditionLaplace::Impl::pushDivisionSettingCommand(bool streamWise, int edgeId, int divNum, DivisionMode mode, double commonRatio, bool thisLineOnly)
 {
-	pushUpdateLineForEdgeSelectionCommand(new DivisionSettingCommand(streamWise, edgeId, divNum, this));
+	pushUpdateLineForEdgeSelectionCommand(new DivisionSettingCommand(streamWise, edgeId, divNum, mode, commonRatio, thisLineOnly, this));
 }
 
 void GridCreatingConditionLaplace::Impl::pushWholeRegionDivisionSettingCommand(const std::vector<int>& streamWiseDivCounts, const std::vector<int>& crossSectionDivCounts)
 {
 	pushUpdateLineForEdgeSelectionCommand(new WholeRegionDivisionSettingCommand(streamWiseDivCounts, crossSectionDivCounts, this));
+}
+
+void GridCreatingConditionLaplace::Impl::pushSubRegionDeploySettingCommand(const DeployParameter& param, int index)
+{
+	pushUpdateLineForEdgeSelectionCommand(new SubRegionDeploySettingCommand(param, index, this));
 }
 
 void GridCreatingConditionLaplace::Impl::pushUpdateLineForEdgeSelectionCommand(QUndoCommand* comm, bool renderRedoOnly)
@@ -1893,6 +2303,11 @@ void GridCreatingConditionLaplace::Impl::pushUpdateLineForEdgeSelectionCommand(Q
 	}	else {
 		m_condition->pushRenderCommand(new UpdateEdgeLinesForEdgeSelectionCommand(comm, this));
 	}
+}
+
+void GridCreatingConditionLaplace::Impl::optimizeCommonRatios()
+{
+	m_optimizeThread->restartOpt();
 }
 
 std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildLinesForSelection(const std::vector<std::vector<QPointF> >& lines, const std::vector<InterpolationType>& types)
@@ -1942,7 +2357,7 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildLinesForDivisionPr
 		std::vector<double> lengthsForPoints;
 		if (divMode == DivisionMode::Auto) {
 			// @todo fix this
-			lengthsForPoints = buildLengthsForPoints(lengths.back(), divNum, DivisionMode::Equally, commonRatio);
+			lengthsForPoints = buildLengthsForPoints(lengths.back(), divNum, DivisionMode::Geometric, commonRatio);
 		} else {
 			lengthsForPoints = buildLengthsForPoints(lengths.back(), divNum, divMode, commonRatio);
 		}
@@ -1997,6 +2412,60 @@ std::vector<double> GridCreatingConditionLaplace::Impl::buildLengths(const std::
 	}
 
 	return ret;
+}
+
+double GridCreatingConditionLaplace::Impl::edgeOptimizeFunc(const std::vector<double>& lengths, const std::vector<int>& divNums, const std::vector<DivisionMode>& divModes, const std::vector<double>& commonRatios)
+{
+	std::vector<std::pair<double, double> > firstAndLastEdgeLengths;
+
+	double r_weight = 0.5;
+	double ret = 0;
+
+	for (int i = 0; i < lengths.size(); ++i) {
+		auto len = lengths.at(i);
+		auto divNum = divNums.at(i);
+		auto divMode = divModes.at(i);
+		auto commonRatio = commonRatios.at(i);
+
+		double r = commonRatio;
+		if (r < 1) {r = 1 / r;}
+		if (divMode == DivisionMode::Auto) {
+			ret += r_weight * r;
+		}
+		std::vector<double> lengthsForPoints;
+		if (divMode == DivisionMode::Auto) {
+			lengthsForPoints = buildLengthsForPoints(len, divNum, DivisionMode::Geometric, commonRatio);
+		} else {
+			lengthsForPoints = buildLengthsForPoints(len, divNum, divMode, commonRatio);
+		}
+		auto first = *(lengthsForPoints.begin() + 1) - *(lengthsForPoints.begin());
+		auto last = *(lengthsForPoints.begin() + lengthsForPoints.size() - 1) - *(lengthsForPoints.begin() + lengthsForPoints.size() - 2);
+		firstAndLastEdgeLengths.push_back(std::make_pair(first, last));
+	}
+
+	for (int i = 0; i < firstAndLastEdgeLengths.size() - 1; ++i) {
+		auto& pair1 = firstAndLastEdgeLengths[i];
+		auto& pair2 = firstAndLastEdgeLengths[i + 1];
+
+		double ratio = pair1.second / pair2.first;
+		if (ratio < 1) {ratio = 1 / ratio;}
+		ret += ratio;
+	}
+	return ret;
+}
+
+double GridCreatingConditionLaplace::Impl::edgeOptimizeFuncEx(int n, const double* x0, void* ex)
+{
+	auto params = reinterpret_cast<CROptimizeParams*> (ex);
+	std::vector<double> ratios = params->commonRatios;
+	int idx = 0;
+	for (int i = 0; i < params->divModes.size(); ++i) {
+		if (params->divModes.at(i) == GridCreatingConditionLaplace::DivisionMode::Auto) {
+			ratios[i] = *(x0 + idx);
+			++ idx;
+		}
+	}
+	return edgeOptimizeFunc(params->lengths, params->divNums, params->divModes, ratios);
 }
 
 void GridCreatingConditionLaplace::Impl::makeLineWideWithPoints(PolyLineController* controller)
@@ -2075,4 +2544,74 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLinesCrossSectionForSelection
 	m_edgeLinesCrossSectionForNodeSelection.pop_back();
 	clearPolyline(m_edgeLinesCrossSectionForDivisionPreview.back(), col, r);
 	m_edgeLinesCrossSectionForDivisionPreview.pop_back();
+}
+
+void GridCreatingConditionLaplace::Impl::addSubRegionPolygon(vtkRenderer* r)
+{
+	auto newPolygon = new PolygonController();
+	setupSubRegionPolygon(newPolygon, m_zDepthRange);
+	newPolygon->paintActor()->VisibilityOff();
+	r->AddActor(newPolygon->paintActor());
+	m_subRegionPolygons.push_back(newPolygon);
+}
+
+void GridCreatingConditionLaplace::Impl::removeSubRegionPolygon(vtkActorCollection* col, vtkRenderer* r)
+{
+	clearPolygon(m_subRegionPolygons.back(), col, r);
+	m_subRegionPolygons.pop_back();
+}
+
+void GridCreatingConditionLaplace::Impl::clearDivisionSetting()
+{
+	DeployParameter defaultPoissonParam;
+	for (auto& p : m_subRegionDeployParameters) {
+		p = defaultPoissonParam;
+	}
+	for (auto& c : m_divCountsStreamWise) {
+		c = 1;
+	}
+	for (auto& c : m_divCountsCrossSection) {
+		c = 1;
+	}
+	for (auto& m : m_divModesStreamWise) {
+		m = DivisionMode::Auto;
+	}
+	for (auto& m : m_divModesCrossSection) {
+		m = DivisionMode::Auto;
+	}
+	for (auto& r : m_divCommonRatiosStreamWise) {
+		r = 1;
+	}
+	for (auto& r : m_divCommonRatiosCrossSection) {
+		r = 1;
+	}
+	m_manualDivSetting = false;
+
+	updateEdgeLinesForSelection();
+}
+
+void GridCreatingConditionLaplace::Impl::updateManualDivSetting()
+{
+	m_manualDivSetting = false;
+	for (const auto& p : m_subRegionDeployParameters) {
+		if (p.setting != DeploySetting::Ratio) {goto SETTRUE;}
+		if (p.manualP != 0) {goto SETTRUE;}
+		if (p.manualQ != 0) {goto SETTRUE;}
+	}
+	for (const auto& m : m_divModesStreamWise) {
+		if (m != DivisionMode::Auto) {goto SETTRUE;}
+	}
+	for (const auto& m : m_divModesCrossSection) {
+		if (m != DivisionMode::Auto) {goto SETTRUE;}
+	}
+	for (const auto& r : m_divCommonRatiosStreamWise) {
+		if (r != 1) {goto SETTRUE;}
+	}
+	for (const auto& r : m_divCommonRatiosCrossSection) {
+		if (r != 1) {goto SETTRUE;}
+	}
+	return;
+
+SETTRUE:
+	m_manualDivSetting = true;
 }

@@ -2,6 +2,7 @@
 #include "gridcreatingconditionlaplacectrlpointsdialog.h"
 #include "gridcreatingconditionlaplacedeploysettingdialog.h"
 #include "gridcreatingconditionlaplacedivisionsettingdialog.h"
+#include "gridcreatingconditionlaplacesubregiondeploysettingdialog.h"
 #include "gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h"
 #include "private/gridcreatingconditionlaplace_centerlinecoordinateseditor.h"
 #include "private/gridcreatingconditionlaplace_edgecoordinateseditor.h"
@@ -16,11 +17,15 @@
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/grid/structured2dgrid.h>
 
 #include <misc/informationdialog.h>
+#include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
+
+#include <vtkDataSetMapper.h>
 
 #include <QLocale>
 #include <QMenu>
@@ -79,7 +84,32 @@ void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const
 	savePoints(stream, polyLine.polyLine(), offset);
 }
 
+void loadPoissonParameter(QDataStream* stream, GridCreatingConditionLaplace::DeployParameter* pp)
+{
+	int setting;
+	*stream >> setting;
+	pp->setting = static_cast<GridCreatingConditionLaplace::DeploySetting> (setting);
+	*stream >> pp->manualP;
+	*stream >> pp->manualQ;
+}
+
+void savePoissonParameter(QDataStream* stream, const GridCreatingConditionLaplace::DeployParameter& pp)
+{
+	int setting = static_cast<int> (pp.setting);
+	*stream << setting;
+	*stream << pp.manualP;
+	*stream << pp.manualQ;
+}
+
 } // namespace
+
+GridCreatingConditionLaplace::DeployParameter::DeployParameter() :
+	setting {DeploySetting::Ratio},
+	manualP {0},
+	manualQ {0}
+{}
+
+const double GridCreatingConditionLaplace::POISSONPARAM_FACTOR = 0.03;
 
 GridCreatingConditionLaplace::GridCreatingConditionLaplace(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
@@ -126,6 +156,10 @@ void GridCreatingConditionLaplace::showInitialDialog()
 bool GridCreatingConditionLaplace::create(QWidget* parent)
 {
 	Grid* grid = impl->createGrid();
+	if (grid == nullptr) {
+		return false;
+	}
+
 	emit gridCreated(grid);
 
 	return true;
@@ -170,55 +204,33 @@ void GridCreatingConditionLaplace::setupMenu()
 		m_menu->addSeparator();
 		m_menu->addAction(impl->m_buildBankLinesAction);
 		m_menu->addSeparator();
-		m_menu->addMenu(impl->m_modeMenu);
-		m_menu->addSeparator();
 		m_menu->addAction(impl->m_addNewEdgeAction);
 		m_menu->addAction(impl->m_joinRegionsAction);
-		m_menu->addSeparator();
-		m_menu->addMenu(impl->m_interpolateMenu);
-		m_menu->addSeparator();
 		m_menu->addAction(impl->m_addVertexAction);
 		m_menu->addAction(impl->m_removeVertexAction);
-		m_menu->addAction(impl->m_editCoordinatesAction);
+		m_menu->addSeparator();
+		m_menu->addAction(impl->m_divisionSettingAction);
+		m_menu->addAction(impl->m_deploySubRegionSettingAction);
+		m_menu->addSeparator();
+		m_menu->addAction(impl->m_clearDivisionSettingAction);
 
 		m->addAction(m_conditionDataItem->createAction());
 		m->addSeparator();
 		m->addAction(impl->m_buildBankLinesAction);
 		m->addSeparator();
-		m->addMenu(impl->m_modeMenu);
-		m->addSeparator();
 		m->addAction(impl->m_addNewEdgeAction);
 		m->addAction(impl->m_joinRegionsAction);
-		m->addSeparator();
-		m->addMenu(impl->m_interpolateMenu);
-		m->addSeparator();
 		m->addAction(impl->m_addVertexAction);
 		m->addAction(impl->m_removeVertexAction);
-		m->addAction(impl->m_editCoordinatesAction);
-	} else {
-		m_menu->addAction(m_conditionDataItem->createAction());
-		m_menu->addSeparator();
-		m_menu->addMenu(impl->m_modeMenu);
-		m_menu->addSeparator();
-		m_menu->addAction(impl->m_wholeRegionDivisionSettingAction);
-		m_menu->addAction(impl->m_divisionSettingAction);
-		m_menu->addAction(impl->m_deploySettingAction);
-
-		m->addAction(m_conditionDataItem->createAction());
 		m->addSeparator();
-		m->addMenu(impl->m_modeMenu);
-		m->addSeparator();
-		m->addAction(impl->m_wholeRegionDivisionSettingAction);
 		m->addAction(impl->m_divisionSettingAction);
-		m->addAction(impl->m_deploySettingAction);
+		m->addAction(impl->m_deploySubRegionSettingAction);
+		m->addSeparator();
+		m->addAction(impl->m_clearDivisionSettingAction);
 	}
 	m_menu->addSeparator();
 	m_menu->addAction(m_conditionDataItem->importAction());
 	m_menu->addAction(m_conditionDataItem->exportAction());
-
-	m->addSeparator();
-	m->addAction(m_conditionDataItem->importAction());
-	m->addAction(m_conditionDataItem->exportAction());
 }
 
 void GridCreatingConditionLaplace::informSelection(PreProcessorGraphicsViewInterface* v)
@@ -286,7 +298,7 @@ void GridCreatingConditionLaplace::mouseMoveEvent(QMouseEvent* event, PreProcess
 		default:
 			break;
 		}
-	} else if (impl->m_editMode == Impl::EditMode::RegionDefined) {
+	} else {
 		switch (impl->m_regionDefinedMouseEventMode) {
 		case Impl::RegionDefinedMouseEventMode::Normal:
 		case Impl::RegionDefinedMouseEventMode::MoveVertexPrepare:
@@ -350,7 +362,7 @@ void GridCreatingConditionLaplace::mousePressEvent(QMouseEvent* event, PreProces
 			impl->updateMouseCursor(v);
 			impl->updateActionStatus();
 		}
-	} else if (impl->m_editMode == Impl::EditMode::RegionDefined){
+	} else {
 		if (event->button() == Qt::LeftButton) {
 			switch (impl->m_regionDefinedMouseEventMode) {
 			case Impl::RegionDefinedMouseEventMode::AddEdgeLinePrepare:
@@ -434,6 +446,8 @@ void GridCreatingConditionLaplace::assignActorZValues(const ZDepthRange& range)
 	impl->m_newEdgeLine.pointsActor()->SetPosition(0, 0, range.max());
 	impl->m_newEdgeLine.linesActor()->SetPosition(0, 0, range.min());
 
+	impl->m_previewGridActor->SetPosition(0, 0, range.max());
+
 	for (auto l : impl->m_edgeLinesCrossSection) {
 		l->pointsActor()->SetPosition(0, 0, range.max());
 	}
@@ -452,29 +466,21 @@ void GridCreatingConditionLaplace::assignActorZValues(const ZDepthRange& range)
 	for (auto l : impl->m_edgeLinesStreamWiseForDivisionPreview) {
 		l->pointsActor()->SetPosition(0, 0, range.max());
 	}
+	for (auto a : impl->m_subRegionPolygons) {
+		a->paintActor()->SetPosition(0, 0, range.min());
+	}
+}
+
+void GridCreatingConditionLaplace::updateDeployParameterForSelectedSubRegion(const DeployParameter& p)
+{
+	if (impl->m_selectedSubRegionId == -1) {return;}
+
+	impl->m_subRegionDeployParameters[impl->m_selectedSubRegionId] = p;
 }
 
 void GridCreatingConditionLaplace::buildBankLines()
 {
 	impl->buildBankLines();
-}
-
-void GridCreatingConditionLaplace::switchModeToShape()
-{
-	impl->m_editMode = Impl::EditMode::RegionDefined;
-	impl->updateActorSetting();
-	impl->updateActionStatus();
-	setupMenu();
-	renderGraphicsView();
-}
-
-void GridCreatingConditionLaplace::switchModeToDivide()
-{
-	impl->m_editMode = Impl::EditMode::DivideSetting;
-	impl->updateActorSetting();
-	impl->updateActionStatus();
-	setupMenu();
-	renderGraphicsView();
 }
 
 void GridCreatingConditionLaplace::interpolateModeSprine()
@@ -489,9 +495,9 @@ void GridCreatingConditionLaplace::interpolateModeLinear()
 
 void GridCreatingConditionLaplace::newEdgeMode(bool on)
 {
-	if (impl->m_editMode != Impl::EditMode::RegionDefined) {return;}
+	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {return;}
 	if (on) {
-		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To divide region, click on the edge of the region first, and click on the another edge."), "gridcreatingconditionlaplace_divideregion");
+		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To divide the region, click on the edge of the region first, then click on the opposite edge."), "gridcreatingconditionlaplace_divideregion");
 		impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::AddEdgeLineNotPossible;
 	} else {
 		impl->m_newEdgeLine.clear();
@@ -504,18 +510,18 @@ void GridCreatingConditionLaplace::joinRegions()
 	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::StreamWise) {
 		int j = impl->m_selectedSectionId / (impl->m_ctrlPointCountI - 1);
 		if (j == 0 || j == impl->m_ctrlPointCountJ - 1) {
-			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select edge line inside the region when you want to join regions."));
+			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select an edge line inside the region when you want to join regions."));
 		} else {
-			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you join the regions divided with the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (ret == QMessageBox::No) {return;}
+			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to join the regions divided by the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			if (ret == QMessageBox::No) { return; }
 			impl->removeEdgeLineStreamWise(j);
 		}
 	} else if (impl->m_selectedSectionEdgeType == Impl::EdgeType::CrossSection) {
 		int i = impl->m_selectedSectionId % impl->m_ctrlPointCountI;
 		if (i == 0 || i == impl->m_ctrlPointCountI - 1) {
-			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select edge line inside the region when you want to join regions."));
+			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Please select an edge line inside the region when you want to join regions."));
 		} else {
-			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you join the regions divided with the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to join the regions divided by the selected edge?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::No) {return;}
 			impl->removeEdgeLineCrossSection(i);
 		}
@@ -576,9 +582,13 @@ void GridCreatingConditionLaplace::editCoorinates()
 	}
 }
 
-void GridCreatingConditionLaplace::wholeRegionDivisionSetting()
+bool GridCreatingConditionLaplace::wholeRegionDivisionSetting(bool gridCreateButton)
 {
 	GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog dialog(preProcessorWindow());
+	if (gridCreateButton) {
+		dialog.setGridCreateMode();
+	}
+
 	int idiv = 0;
 	int jdiv = 0;
 	for (auto d : impl->m_divCountsStreamWise) {
@@ -618,7 +628,7 @@ void GridCreatingConditionLaplace::wholeRegionDivisionSetting()
 	dialog.setJDiv(jdiv);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {return;}
+	if (ret == QDialog::Rejected) {return false;}
 
 	int iDiv = dialog.iDiv();
 	int jDiv = dialog.jDiv();
@@ -655,6 +665,7 @@ void GridCreatingConditionLaplace::wholeRegionDivisionSetting()
 		jDivVec[maxIdx] += (jDiv - divSum);
 	}
 	impl->pushWholeRegionDivisionSettingCommand(iDivVec, jDivVec);
+	return true;
 }
 
 void GridCreatingConditionLaplace::divisionSetting()
@@ -666,18 +677,24 @@ void GridCreatingConditionLaplace::divisionSetting()
 	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::StreamWise) {
 		edgeId = impl->m_selectedSectionId % (impl->m_ctrlPointCountI - 1);
 		dialog.setDivisionNumber(impl->m_divCountsStreamWise[edgeId]);
+		dialog.setDivisionMode(impl->m_divModesStreamWise[impl->m_selectedSectionId]);
+		dialog.setCommonRatio(impl->m_divCommonRatiosStreamWise[impl->m_selectedSectionId]);
 	} else {
 		edgeId = impl->m_selectedSectionId / impl->m_ctrlPointCountI;
 		dialog.setDivisionNumber(impl->m_divCountsCrossSection[edgeId]);
+		dialog.setDivisionMode(impl->m_divModesCrossSection[impl->m_selectedSectionId]);
+		dialog.setCommonRatio(impl->m_divCommonRatiosCrossSection[impl->m_selectedSectionId]);
 	}
 
 	int result = dialog.exec();
 	if (result == QDialog::Rejected) {return;}
 
 	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::StreamWise) {
-		impl->pushDivisionSettingCommand(true, edgeId, dialog.divisionNumber());
+		impl->pushDivisionSettingCommand(true, impl->m_selectedSectionId, dialog.divisionNumber(),
+																		 dialog.divisionMode(), dialog.commonRatio(), dialog.thisLineOnly());
 	} else {
-		impl->pushDivisionSettingCommand(false, edgeId, dialog.divisionNumber());
+		impl->pushDivisionSettingCommand(false, impl->m_selectedSectionId, dialog.divisionNumber(),
+																		 dialog.divisionMode(), dialog.commonRatio(), dialog.thisLineOnly());
 	}
 }
 
@@ -704,8 +721,66 @@ void GridCreatingConditionLaplace::deploySetting()
 	}
 }
 
+void GridCreatingConditionLaplace::subRegionDeploySetting()
+{
+	if (impl->m_selectedSubRegionId < 0) {return;}
+
+	GridCreatingConditionLaplaceSubRegionDeploySettingDialog dialog(this, preProcessorWindow());
+	dialog.setParameter(impl->m_subRegionDeployParameters.at(impl->m_selectedSubRegionId));
+	int result = dialog.exec();
+	if (result == QDialog::Rejected) {return;}
+
+	auto param = dialog.parameter();
+
+	impl->pushSubRegionDeploySettingCommand(param, impl->m_selectedSubRegionId);
+}
+
+void GridCreatingConditionLaplace::clearDivisionSetting()
+{
+	int result = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to clear division setting?"), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+	if (result == QMessageBox::Cancel) {return;}
+
+	impl->clearDivisionSetting();
+
+	// This operation is not undo-able.
+	iRICUndoStack::instance().clear();
+
+	renderGraphicsView();
+}
+
+void GridCreatingConditionLaplace::requestPreviewSubRegionGrid()
+{
+	impl->requestPreviewSubRegionGrid();
+}
+
+void GridCreatingConditionLaplace::hidePreviewGrid()
+{
+	impl->m_previewGridActor->VisibilityOff();
+	renderGraphicsView();
+}
+
+void GridCreatingConditionLaplace::informCommonRatioUpdate()
+{
+	impl->m_divCommonRatiosStreamWise = impl->m_tmpDivCommonRatiosStreamWise;
+	impl->m_divCommonRatiosCrossSection = impl->m_tmpDivCommonRatiosCrossSection;
+	impl->updateEdgeLinesForDivisionPreview();
+
+	renderGraphicsView();
+}
+
+void GridCreatingConditionLaplace::informPreviewGridPointsUpdate(int i, int j)
+{
+	delete impl->m_previewGrid;
+	impl->m_previewGrid = impl->createSubRegionGrid(i, j);
+	impl->m_previewGridMapper->SetInputData(impl->m_previewGrid->vtkGrid());
+	impl->m_previewGridActor->VisibilityOn();
+
+	renderGraphicsView();
+}
+
 void GridCreatingConditionLaplace::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	impl->m_loadVersion = iRIC::getIntAttribute(node, "version", 1);
 	impl->m_ctrlPointCountI = iRIC::getIntAttribute(node, "ctrlPointCountI", 2);
 	impl->m_ctrlPointCountJ = iRIC::getIntAttribute(node, "ctrlPointCountJ", 3);
 	impl->m_previousLeftBankDistance = iRIC::getDoubleAttribute(node, "leftDist", 10);
@@ -715,6 +790,7 @@ void GridCreatingConditionLaplace::doLoadFromProjectMainFile(const QDomNode& nod
 
 void GridCreatingConditionLaplace::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	iRIC::setIntAttribute(writer, "version", 2);
 	iRIC::setIntAttribute(writer, "ctrlPointCountI", impl->m_ctrlPointCountI);
 	iRIC::setIntAttribute(writer, "ctrlPointCountJ", impl->m_ctrlPointCountJ);
 	iRIC::setDoubleAttribute(writer, "leftDist", impl->m_previousLeftBankDistance);
@@ -757,6 +833,21 @@ void GridCreatingConditionLaplace::loadExternalData(const QString& filename)
 			impl->addEdgeLinesCrossSectionForSelectionAndPreview(r);
 		}
 	}
+	for (int j = 0; j < impl->m_ctrlPointCountJ - 1; ++j) {
+		for (int i = 0; i < impl->m_ctrlPointCountI - 1; ++i) {
+			DeployParameter pp;
+			if (impl->m_loadVersion >= 2) {
+				loadPoissonParameter(&s, &pp);
+			}
+			impl->m_subRegionDeployParameters.push_back(pp);
+		}
+	}
+
+	for (int j = 0; j < impl->m_ctrlPointCountJ - 1; ++j) {
+		for (int i = 0; i < impl->m_ctrlPointCountI - 1; ++i) {
+			impl->addSubRegionPolygon(r);
+		}
+	}
 
 	f.close();
 	impl->updateCenterLineLabelsAndSpline();
@@ -772,6 +863,7 @@ void GridCreatingConditionLaplace::loadExternalData(const QString& filename)
 			impl->m_centerLineOnlyMouseEventMode = Impl::CenterLineOnlyMouseEventMode::Normal;
 		}
 	}
+	impl->updateManualDivSetting();
 	impl->updateActionStatus();
 	impl->updateActorSetting();
 }
@@ -808,6 +900,9 @@ void GridCreatingConditionLaplace::saveExternalData(const QString& filename)
 			savePolyLine(&s, *(impl->m_edgeLinesCrossSection[idx]), offset());
 			++idx;
 		}
+	}
+	for (const auto& pp : impl->m_subRegionDeployParameters) {
+		savePoissonParameter(&s, pp);
 	}
 }
 

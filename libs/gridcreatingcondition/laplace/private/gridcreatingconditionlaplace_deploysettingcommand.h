@@ -20,6 +20,7 @@ private:
 
 	DivisionMode m_oldMode;
 	double m_oldCommonRatio;
+	bool m_oldManualDivSetting;
 
 	bool m_streamWise;
 	int m_edgeId;

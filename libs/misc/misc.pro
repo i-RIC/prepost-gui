@@ -13,11 +13,13 @@ win32 {
 }
 
 # Input
-HEADERS += boolcontainer.h \
+HEADERS += anms.h \
+           boolcontainer.h \
            colorcontainer.h \
            compositecontainer.h \
            doublecontainer.h \
            doublemappingsetting.h \
+           dvector.h \
            edge.h \
            enumcontainert.h \
            errormessage.h \
@@ -75,7 +77,8 @@ HEADERS += boolcontainer.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui primitiveview.ui slowmotionspeededitdialog.ui
-SOURCES += boolcontainer.cpp \
+SOURCES += anms.cpp \
+           boolcontainer.cpp \
            colorcontainer.cpp \
            compositecontainer.cpp \
            doublecontainer.cpp \

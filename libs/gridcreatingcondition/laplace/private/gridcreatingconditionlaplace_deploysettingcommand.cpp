@@ -3,6 +3,7 @@
 GridCreatingConditionLaplace::DeploySettingCommand::DeploySettingCommand(bool streamWise, int edgeId, DivisionMode mode, double commonRatio, GridCreatingConditionLaplace::Impl* impl) :
 	m_newMode {mode},
 	m_newCommonRatio {commonRatio},
+	m_oldManualDivSetting {impl->m_manualDivSetting},
 	m_streamWise {streamWise},
 	m_edgeId {edgeId},
 	m_impl {impl}
@@ -25,6 +26,7 @@ void GridCreatingConditionLaplace::DeploySettingCommand::redo()
 		m_impl->m_divModesCrossSection[m_edgeId] = m_newMode;
 		m_impl->m_divCommonRatiosCrossSection[m_edgeId] = m_newCommonRatio;
 	}
+	m_impl->m_manualDivSetting = true;
 }
 
 void GridCreatingConditionLaplace::DeploySettingCommand::undo()
@@ -36,4 +38,5 @@ void GridCreatingConditionLaplace::DeploySettingCommand::undo()
 		m_impl->m_divModesCrossSection[m_edgeId] = m_oldMode;
 		m_impl->m_divCommonRatiosCrossSection[m_edgeId] = m_oldCommonRatio;
 	}
+	m_impl->m_manualDivSetting = m_oldManualDivSetting;
 }
