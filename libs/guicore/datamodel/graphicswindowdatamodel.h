@@ -47,7 +47,6 @@ public:
 
 public slots:
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);
-	void handleObjectBrowserClick(const QModelIndex& index);
 	void handleObjectBrowserDoubleClick(const QModelIndex& index);
 	void handleObjectBrowserChange(QStandardItem* changeditem);
 
