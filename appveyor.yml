@@ -13,9 +13,14 @@ init:
   - echo %Configuration%
   - if "%Configuration%"=="Debug"   (set config=debug)
   - if "%Configuration%"=="Release" (set config=release)
+  - echo %APPVEYOR_BUILD_WORKER_IMAGE%
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017 Win64" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" ( set generator="Visual Studio 14 2015 Win64" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( set generator="Visual Studio 12 2013 Win64" )
+  - echo %generator%
 
 configuration:
-  - Debug
+#  - Debug
   - Release
 
 matrix:
@@ -51,7 +56,7 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -60,6 +65,14 @@ after_build:
   - python copydllsExt.py
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
+  - ps: |
+      if ($env:APPVEYOR_REPO_BRANCH -eq "auto-dev" -AND $env:Configuration -eq "Release") {
+        md $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        cmake --version
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:generator ..
+        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+      }
 
 artifacts:
   - path: libdlls\$(Configuration)
