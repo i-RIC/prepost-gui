@@ -152,7 +152,6 @@ void GraphicsWindowDataModel::handleObjectBrowserClick(const QModelIndex& index)
 {
 	// Investigate which node was clicked.
 	QStandardItem* clickedItem = m_itemModel->itemFromIndex(index);
-	m_rootDataItem->handleItemClick(clickedItem);
 
 	GraphicsWindowDataItem* i = m_rootDataItem->modelItemFromItem(clickedItem);
 	if (i == nullptr) {return;}

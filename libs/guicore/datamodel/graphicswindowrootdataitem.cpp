@@ -32,13 +32,6 @@ void GraphicsWindowRootDataItem::handleItemChange(QStandardItem* changedItem)
 	dataItem->handleStandardItemChange();
 }
 
-void GraphicsWindowRootDataItem::handleItemClick(QStandardItem* clickedItem)
-{
-	GraphicsWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == nullptr) {return;}
-	dataItem->handleStandardItemClicked();
-}
-
 void GraphicsWindowRootDataItem::handleItemDoubleClick(QStandardItem* clickedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(clickedItem);

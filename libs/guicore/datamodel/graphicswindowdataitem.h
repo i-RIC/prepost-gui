@@ -66,8 +66,6 @@ public:
 	void innerUpdateItemMap(QMap<QStandardItem*, GraphicsWindowDataItem*>& map);
 	/// Handle the event that the corresponding standardItem is changed.
 	virtual void handleStandardItemChange();
-	/// Handle the event that the corresponding standardItem is clicked.
-	virtual void handleStandardItemClicked() {}
 	/// Handle the event that the corresponding standardItem is double-clicked.
 	virtual void handleStandardItemDoubleClicked() {}
 	/// Load data from CGNS file

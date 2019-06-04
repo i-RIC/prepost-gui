@@ -17,7 +17,6 @@ public:
 	virtual ~GraphicsWindowRootDataItem();
 
 	void handleItemChange(QStandardItem* changedItem);
-	void handleItemClick(QStandardItem* clickedItem);
 	void handleItemDoubleClick(QStandardItem* clickedItem);
 
 	void moveUpItem(QStandardItem* item);

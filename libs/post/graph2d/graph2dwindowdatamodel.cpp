@@ -104,18 +104,7 @@ void Graph2dWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, 
 		m_rightClickMenu->show();
 	}
 }
-void Graph2dWindowDataModel::handleObjectBrowserClick(const QModelIndex& index)
-{
-	// Investigate which node was clicked.
-	QStandardItem* clickedItem = m_itemModel->itemFromIndex(index);
-	m_rootDataItem->handleItemClick(clickedItem);
 
-	// active dataitem is changed.
-	Graph2dWindowDataItem* i = m_rootDataItem->modelItemFromItem(clickedItem);
-	if (i != nullptr) {
-//		m_graphicsView->setActiveDataItem(i);
-	}
-}
 void Graph2dWindowDataModel::handleObjectBrowserDoubleClick(const QModelIndex& index)
 {
 	// Investigate which node was clicked.

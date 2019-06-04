@@ -23,7 +23,6 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
 	//void handleStandardItemChange() override;
-	void handleStandardItemClicked() override;
 	void handleStandardItemDoubleClicked() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
