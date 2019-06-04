@@ -51,7 +51,7 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -66,3 +66,34 @@ artifacts:
     name: libdlls-$(Configuration)
   - path: apps\iricgui\$(config)
     name: iricgui-$(Configuration)
+
+on_success:
+  - ps: |
+      if ($env:APPVEYOR_REPO_BRANCH -eq "auto-dev" -AND $env:Configuration -eq "Release") {
+        Write-Output "This is the Release of the auto-dev branch"
+        Set-Location \
+        git clone -q --branch=master https://github.com/i-RIC/online_update.git
+        Set-Location .\online_update
+        git checkout -qf master
+        $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
+        $v[3] = 1 + $v[3]
+        $env:VERSION = $v -join "."
+        $tokyo_tz = [System.TimeZoneInfo]::FindSystemTimeZoneById("Tokyo Standard Time")
+        $tokyo_date = [System.TimeZoneInfo]::ConvertTimeFromUtc((Get-Date).ToUniversalTime(), $tokyo_tz)
+        $env:RELEASE_DATE = $(Get-Date $tokyo_date -Format s).Substring(0,10)
+        $env:RELEASE = $env:RELEASE_DATE -replace '-', '.'
+        $env:CAPTION = "iRIC GUI " + $v[0] + "." + $v[1] + "." + $v[2]
+        $files=@('dev_src\packages\gui.prepost\data\definition.xml', `
+                 'dev_src\packages\gui.prepost\meta\package.xml')
+        foreach ($file in $files) {
+          (Get-Content $file) | Foreach-Object {
+            $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           "$env:VERSION" `
+               -replace "`" version=`"([^`"]*)`"",                    "`" version=`"$env:VERSION`"" `
+               -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   "$env:RELEASE_DATE" `
+               -replace "release=`"([^`"]*)`"",                       "release=`"$env:RELEASE`"" `
+               -replace "caption=`"([^`"]*)`"",                       "caption=`"$env:CAPTION`"" `
+               -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
+          } | Set-Content $file
+        }
+        git diff
+      }
