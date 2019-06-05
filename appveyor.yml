@@ -77,7 +77,6 @@ after_build:
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         cmake --version
         cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:psgenerator ..
-        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
 
 artifacts:
@@ -114,5 +113,8 @@ on_success:
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
+        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        Set-Location \online_update
         git diff
       }
