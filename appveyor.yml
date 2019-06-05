@@ -69,11 +69,13 @@ after_build:
       if ($env:APPVEYOR_REPO_BRANCH -eq "auto-dev" -AND $env:Configuration -eq "Release") {
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        $env:gen="Visual Studio 12 2013 Win64"
         cmake --version
-        echo cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:generator" ..
-        echo msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        echo cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:gen" ..
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:gen" ..
+        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
-  - cmake -DPREPOST_GUI:PATH=%APPVEYOR_BUILD_FOLDER% -G %generator% ..
+#  - cmake -DPREPOST_GUI:PATH=%APPVEYOR_BUILD_FOLDER% -G %generator% ..
 
 #artifacts:
 #  - path: libdlls\$(Configuration)
