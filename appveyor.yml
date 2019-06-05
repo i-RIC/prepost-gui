@@ -56,7 +56,7 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -70,7 +70,7 @@ after_build:
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         cmake --version
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:generator ..
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:generator" ..
         msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
 
