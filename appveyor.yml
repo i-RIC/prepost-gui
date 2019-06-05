@@ -74,7 +74,7 @@ after_build:
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         cmake --version
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:psgenerator ..
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:psgenerator" ..
         msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
 
