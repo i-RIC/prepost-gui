@@ -8,6 +8,8 @@ skip_commits:
 image: Visual Studio 2013
 
 # called before clone
+# Note that environment variables don't seem to transfer correctly from cmd to ps when
+# they contain spaces
 init:
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
   - echo %Configuration%
@@ -17,11 +19,9 @@ init:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017 Win64" )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" ( set generator="Visual Studio 14 2015 Win64" )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( set generator="Visual Studio 12 2013 Win64" )
-  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2017") {$env:psgenerator = "Visual Studio 15 2017 Win64"}
-  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
-  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
-
   - echo %generator%
+  - ps: $env:psgenerator = $env:APPVEYOR_BUILD_WORKER_IMAGE + " Win64"
+  - ps: Write-Output $env:psgenerator
 
 configuration:
 #  - Debug
@@ -60,7 +60,7 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -74,16 +74,15 @@ after_build:
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         cmake --version
-        echo cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:psgenerator" ..
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:psgenerator" ..
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:psgenerator ..
         msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
 
-#artifacts:
-#  - path: libdlls\$(Configuration)
-#    name: libdlls-$(Configuration)
-#  - path: apps\iricgui\$(config)
-#    name: iricgui-$(Configuration)
+artifacts:
+  - path: libdlls\$(Configuration)
+    name: libdlls-$(Configuration)
+  - path: apps\iricgui\$(config)
+    name: iricgui-$(Configuration)
 
 on_success:
   - ps: |
