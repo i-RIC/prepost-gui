@@ -70,15 +70,16 @@ after_build:
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         cmake --version
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:generator" ..
-        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        echo cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:generator" ..
+        echo msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
+  - cmake -DPREPOST_GUI:PATH=%APPVEYOR_BUILD_FOLDER% -G %generator% ..
 
-artifacts:
-  - path: libdlls\$(Configuration)
-    name: libdlls-$(Configuration)
-  - path: apps\iricgui\$(config)
-    name: iricgui-$(Configuration)
+#artifacts:
+#  - path: libdlls\$(Configuration)
+#    name: libdlls-$(Configuration)
+#  - path: apps\iricgui\$(config)
+#    name: iricgui-$(Configuration)
 
 on_success:
   - ps: |
