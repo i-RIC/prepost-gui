@@ -17,6 +17,10 @@ init:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017 Win64" )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" ( set generator="Visual Studio 14 2015 Win64" )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( set generator="Visual Studio 12 2013 Win64" )
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2017") {$env:psgenerator = "Visual Studio 15 2017 Win64"}
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
+
   - echo %generator%
 
 configuration:
@@ -69,13 +73,11 @@ after_build:
       if ($env:APPVEYOR_REPO_BRANCH -eq "auto-dev" -AND $env:Configuration -eq "Release") {
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
-        $env:gen="Visual Studio 12 2013 Win64"
         cmake --version
-        echo cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:gen" ..
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:gen" ..
+        echo cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:psgenerator" ..
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G "$env:psgenerator" ..
         msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
       }
-#  - cmake -DPREPOST_GUI:PATH=%APPVEYOR_BUILD_FOLDER% -G %generator% ..
 
 #artifacts:
 #  - path: libdlls\$(Configuration)
