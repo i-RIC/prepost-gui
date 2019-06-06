@@ -1,5 +1,11 @@
 version: '{branch}-{build}'
 
+environment:
+  scharlton2_access_token:
+    secure: Kt5VLMSJeqiQyx3Ox3sphU62h9OlWJeiOi7da6DSCuSjv3sp7Ab2LB4m717mCtN2
+  iric_access_token:
+    secure: ee8J3ZdtlbFttFmkcumsXr1/FKYOkf/vkN2ZC6lkymz3uOVTs23CXfQS4uMi/zVt
+
 # Skipping commits affecting specific files (GitHub only).
 skip_commits:
   files:
@@ -24,6 +30,8 @@ init:
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
   - ps: Write-Output $env:psgenerator
+  # Currently only commit and push to test-auto-dev branch (for testing)
+  - ps: $env:CommitBranch = test-auto-dev
 
 configuration:
 #  - Debug
@@ -72,7 +80,7 @@ after_build:
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
   - ps: |
-      if ($env:APPVEYOR_REPO_BRANCH -eq "auto-dev" -AND $env:Configuration -eq "Release") {
+      if ($env:APPVEYOR_REPO_BRANCH -eq $env:CommitBranch -AND $env:Configuration -eq "Release") {
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         cmake --version
@@ -87,12 +95,15 @@ artifacts:
 
 on_success:
   - ps: |
-      if ($env:APPVEYOR_REPO_BRANCH -eq "auto-dev" -AND $env:Configuration -eq "Release") {
-        Write-Output "This is the Release of the auto-dev branch"
+      if ($env:APPVEYOR_REPO_BRANCH -eq $env:CommitBranch -AND $env:Configuration -eq "Release") {
+        Write-Output "This is the Release of the $env:CommitBranch branch"
         Set-Location \
         git clone -q --branch=master https://github.com/i-RIC/online_update.git
         Set-Location .\online_update
         git checkout -qf master
+        # the next line is temporary (used for testing)
+        git checkout -b _$env:APPVEYOR_JOB_ID
+        # update data\definition.xml and meta\package.xml from dev_src\packages\gui.prepost
         $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
         $v[3] = 1 + $v[3]
         $env:VERSION = $v -join "."
@@ -113,8 +124,20 @@ on_success:
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
+        # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
         msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        # commit and push to https://github.com/i-RIC/online_update.git
         Set-Location \online_update
-        git diff
+        git config --global credential.helper store
+        # the access token will need to change when called from i-RIC appveyor
+        Add-Content "$HOME\.git-credentials" "https://$($env:scharlton2_access_token):x-oauth-basic@github.com`n"
+        git config --global user.email "iric.appveyor@gmail.com"
+        git config --global user.name "iric.appveyor"
+        git commit -am"built by iric.appveyor"
+        # change this to master after testing
+        git push --set-upstream origin _$env:APPVEYOR_JOB_ID
+        git status
+        # display environment variables
+        Get-ChildItem env:
       }
