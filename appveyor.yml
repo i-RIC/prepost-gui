@@ -136,7 +136,7 @@ on_success:
         git config --global user.name "iric.appveyor"
         git commit -am"built by iric.appveyor"
         # change this to master after testing
-        git push --set-upstream origin _$env:APPVEYOR_JOB_ID
+        git push -q --set-upstream origin _$env:APPVEYOR_JOB_ID
         git status
         # display environment variables
         Get-ChildItem env:
