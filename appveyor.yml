@@ -31,7 +31,7 @@ init:
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
   - ps: Write-Output $env:psgenerator
   # Currently only commit and push to test-auto-dev branch (for testing)
-  - ps: $env:CommitBranch = test-auto-dev
+  - ps: $env:CommitBranch = "test-auto-dev"
 
 configuration:
 #  - Debug
