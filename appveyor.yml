@@ -102,7 +102,7 @@ on_success:
         Set-Location .\online_update
         git checkout -qf master
         # the next line is temporary (used for testing)
-        git checkout -b _$env:APPVEYOR_JOB_ID
+        git checkout -qb __$env:APPVEYOR_JOB_ID
         # update data\definition.xml and meta\package.xml from dev_src\packages\gui.prepost
         $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
         $v[3] = 1 + $v[3]
@@ -136,7 +136,7 @@ on_success:
         git config --global user.name "iric.appveyor"
         git commit -am"built by iric.appveyor"
         # change this to master after testing
-        git push -q --set-upstream origin _$env:APPVEYOR_JOB_ID
+        git push --set-upstream origin __$env:APPVEYOR_JOB_ID 2>&1 | Out-Null
         git status
         # display environment variables
         Get-ChildItem env:
