@@ -133,7 +133,7 @@ on_success:
         # run repogen to build packages and Updates.xml
         Set-Location \online_update\dev_src
         # create qt_ifw_path.py
-        Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\2.0'" > \online_update\dev_src\qt_ifw_path.py
+        Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\2.0'" | Out-File -FilePath \online_update\dev_src\qt_ifw_path.py -Encoding ascii
         py build_update_repository.py
         # commit and push to https://github.com/i-RIC/online_update.git
         Set-Location \online_update
