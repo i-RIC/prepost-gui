@@ -46,13 +46,6 @@ void Graph2dWindowRootDataItem::handleItemChange(QStandardItem* changedItem)
 	dataItem->handleStandardItemChange();
 }
 
-void Graph2dWindowRootDataItem::handleItemClick(QStandardItem* clickedItem)
-{
-	Graph2dWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == nullptr) {return;}
-	dataItem->handleStandardItemClicked();
-}
-
 void Graph2dWindowRootDataItem::handleItemDoubleClick(QStandardItem* clickedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(clickedItem);

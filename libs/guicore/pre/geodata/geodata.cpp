@@ -189,9 +189,6 @@ QMenu* GeoData::menu() const
 void GeoData::handleStandardItemChange()
 {}
 
-void GeoData::handleStandardItemClicked()
-{}
-
 void GeoData::handleStandardItemDoubleClicked()
 {}
 

@@ -298,12 +298,6 @@ QAction* PreProcessorGridCreatingConditionDataItem::exportAction() const
 	return impl->m_exportAction;
 }
 
-void PreProcessorGridCreatingConditionDataItem::handleStandardItemClicked()
-{
-	if (impl->m_condition == nullptr) {return;}
-	impl->m_condition->handleStandardItemClicked();
-}
-
 void PreProcessorGridCreatingConditionDataItem::handleStandardItemDoubleClicked()
 {
 	if (impl->m_condition == nullptr) {return;}

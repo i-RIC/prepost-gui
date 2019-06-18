@@ -161,11 +161,6 @@ void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* vie
 	view->moveDownAction()->setDisabled(isLast);
 }
 
-void PreProcessorGeoDataDataItem::handleStandardItemClicked()
-{
-	m_geoData->handleStandardItemClicked();
-}
-
 void PreProcessorGeoDataDataItem::handleStandardItemDoubleClicked()
 {
 	m_geoData->handleStandardItemDoubleClicked();

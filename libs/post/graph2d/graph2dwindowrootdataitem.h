@@ -19,7 +19,6 @@ public:
 	~Graph2dWindowRootDataItem();
 
 	void handleItemChange(QStandardItem* changedItem);
-	void handleItemClick(QStandardItem* clickedItem);
 	void handleItemDoubleClick(QStandardItem* clickedItem);
 	void deleteItem(QStandardItem* item);
 	void moveUpItem(QStandardItem* item);

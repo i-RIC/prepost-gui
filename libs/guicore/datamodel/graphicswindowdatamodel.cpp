@@ -148,18 +148,6 @@ void GraphicsWindowDataModel::handleObjectBrowserPress(const QModelIndex& index,
 	m_rightClickMenu->show();
 }
 
-void GraphicsWindowDataModel::handleObjectBrowserClick(const QModelIndex& index)
-{
-	// Investigate which node was clicked.
-	QStandardItem* clickedItem = m_itemModel->itemFromIndex(index);
-	m_rootDataItem->handleItemClick(clickedItem);
-
-	GraphicsWindowDataItem* i = m_rootDataItem->modelItemFromItem(clickedItem);
-	if (i == nullptr) {return;}
-
-	graphicsView()->setActiveDataItem(i);
-}
-
 void GraphicsWindowDataModel::handleObjectBrowserDoubleClick(const QModelIndex& index)
 {
 	QStandardItem* clickedItem = m_itemModel->itemFromIndex(index);

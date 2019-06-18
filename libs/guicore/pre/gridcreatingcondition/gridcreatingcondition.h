@@ -53,7 +53,6 @@ public:
 	virtual void setupActors() {}
 	virtual void setupMenu() {}
 	virtual void handleStandardItemChange() {}
-	virtual void handleStandardItemClicked() {}
 	virtual void handleStandardItemDoubleClicked() {}
 	virtual void informSelection(PreProcessorGraphicsViewInterface* /*v*/) {}
 	virtual void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) {}

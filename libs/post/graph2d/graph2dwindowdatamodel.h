@@ -61,8 +61,6 @@ protected:
 public slots:
 	/// Handle mouse press event on object browser.
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);
-	/// Handle click event on object browser.
-	void handleObjectBrowserClick(const QModelIndex& index);
 	/// Handle double click event on object browser.
 	void handleObjectBrowserDoubleClick(const QModelIndex& index);
 	/// Delete the item currently selected on object browser.

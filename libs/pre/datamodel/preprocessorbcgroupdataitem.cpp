@@ -212,7 +212,7 @@ void PreProcessorBCGroupDataItem::addCondition()
 	if (! ok) {
 		// Cancel button is clicked.
 		delete item;
-		dataModel()->handleObjectBrowserClick(m_standardItem->index());
+		dataModel()->handleObjectBrowserSelection(m_standardItem->index());
 		updateItemMap();
 	}
 }
@@ -261,20 +261,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	emit itemsUpdated();
 
 	return item;
-	/*
-		dataModel()->objectBrowserView()->expand(m_standardItem->index());
-		dataModel()->objectBrowserView()->select(item->standardItem()->index());
-		dataModel()->handleObjectBrowserSelection(item->standardItem()->index());
-		bool ok = item->showDialog();
-		if (! ok){
-			// Cancel button is clicked.
-			delete item;
-			dataModel()->handleObjectBrowserClick(m_standardItem->index());
-			updateItemMap();
-		}
-	*/
 }
-
 
 void PreProcessorBCGroupDataItem::updateZDepthRangeItemCount()
 {

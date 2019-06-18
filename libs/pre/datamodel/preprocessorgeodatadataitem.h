@@ -27,7 +27,6 @@ public:
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void updateMoveUpDownActions(ObjectBrowserView* view) override;
 	void handleStandardItemChange() override;
-	void handleStandardItemClicked() override;
 	void handleStandardItemDoubleClicked() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;

@@ -54,7 +54,6 @@ void PreProcessorWindowProjectDataItem::createConnections()
 
 	parent->m_actionManager->connectWithDataModel();
 	// make connections between QTreeView and datamodel.
-	connect(parent->m_objectBrowser->view(), SIGNAL(clicked(QModelIndex)), parent->m_dataModel, SLOT(handleObjectBrowserClick(QModelIndex)));
 	connect(parent->m_objectBrowser->view(), SIGNAL(doubleClicked(QModelIndex)), parent->m_dataModel, SLOT(handleObjectBrowserDoubleClick(QModelIndex)));
 	connect(parent->m_objectBrowser->view(), SIGNAL(pressed(QModelIndex, QPoint)), parent->m_dataModel, SLOT(handleObjectBrowserPress(QModelIndex, QPoint)));
 	connect(parent->m_objectBrowser->view(), SIGNAL(requestDeleteItem(QModelIndex)), parent->m_dataModel, SLOT(deleteItem(QModelIndex)));
