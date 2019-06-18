@@ -123,7 +123,7 @@ bool PostZonePointSeriesDataContainer::loadResultData(int fn, int solId, const Q
 	bool magnitude = (rx.indexIn(name) != -1);
 
 	QString tmpPhysName = name;
-	if (magnitude) {rx.cap(1);}
+	if (magnitude) {tmpPhysName = rx.cap(1);}
 
 	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solId, "end");
 	if (ier != 0) {return false;}
