@@ -5,7 +5,7 @@
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
         <location filename="../gridcreatingconditioncreatorlaplace.cpp" line="8"/>
-        <source>Create grid shape solving Laplace equation</source>
+        <source>General purpose grid generation tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

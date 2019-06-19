@@ -5,7 +5,7 @@ GridCreatingConditionCreatorLaplace::GridCreatingConditionCreatorLaplace() :
 	GridCreatingConditionCreator()
 {
 	m_name = "laplace";
-	m_caption = tr("Create grid shape solving Laplace equation");
+	m_caption = tr("General purpose grid generation tool");
 	m_description = tr(
 		"You can create smooth grid shape solving laplace equation.");
 }

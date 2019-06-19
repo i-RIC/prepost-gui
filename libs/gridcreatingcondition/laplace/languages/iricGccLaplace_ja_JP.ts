@@ -4,9 +4,13 @@
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorlaplace.cpp" line="8"/>
         <source>Create grid shape solving Laplace equation</source>
-        <translation>ラプラス方程式を解いて格子を生成</translation>
+        <translation type="vanished">ラプラス方程式を解いて格子を生成</translation>
+    </message>
+    <message>
+        <location filename="../gridcreatingconditioncreatorlaplace.cpp" line="8"/>
+        <source>General purpose grid generation tool</source>
+        <translation>汎用格子生成ツール</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorlaplace.cpp" line="9"/>
