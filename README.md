@@ -38,3 +38,10 @@ i-RIC/online_update repository:
    2. Run msbuild to distribute the prepost-gui files
 
 5. Run repogen to build packages and Updates.xml for online update
+   1. Run python script dev_src/build_update_repository.py
+
+6. Commit and push results to i-RIC/online_update
+   1. Create new user iric-appveyor
+   2. Add user iric-appveyor as collaborator on i-RIC/online_update repository
+   3. Add personal access token in Settings / Developer settings (in iric-appveyor account)
+   4. Use appveyor website to encrypt personal access token from i-RIC account
