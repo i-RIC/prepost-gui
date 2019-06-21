@@ -2,7 +2,7 @@
 #define DISTANCEMEASURESETTING_H
 
 #include <guibase/vtktool/vtklabel2dactor.h>
-
+#include <guibase/vtktextpropertysettingcontainer.h>
 #include <misc/boolcontainer.h>
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
@@ -34,7 +34,7 @@ public:
 	BoolContainer showLabel;
 	EnumContainerT<LabelMode> labelMode;
 	EnumContainerT<vtkLabel2DActor::LabelPosition> labelPosition;
-	IntContainer labelFontSize;
+	vtkTextPropertySettingContainer labelFontSetting;
 	StringContainer customLabel;
 
 	BoolContainer showMarkers;

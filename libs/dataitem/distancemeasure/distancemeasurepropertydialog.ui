@@ -185,7 +185,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="vtkTextPropertySettingWidget" name="fontSettingWidget" native="true"/>
+          <widget class="vtkTextPropertySettingWidget" name="labelFontSettingWidget" native="true"/>
          </item>
         </layout>
        </widget>
@@ -319,7 +319,7 @@
   <customwidget>
    <class>RealNumberEditWidget</class>
    <extends>QLineEdit</extends>
-   <header>widget/realnumbereditwidget.h</header>
+   <header>guibase/widget/realnumbereditwidget.h</header>
   </customwidget>
   <customwidget>
    <class>vtkTextPropertySettingWidget</class>

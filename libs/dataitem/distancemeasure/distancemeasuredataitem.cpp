@@ -1,4 +1,5 @@
 #include "distancemeasuredataitem.h"
+#include "distancemeasurepropertydialog.h"
 #include "private/distancemeasuredataitem_definecommand.h"
 #include "private/distancemeasuredataitem_impl.h"
 #include "private/distancemeasuredataitem_movevertexcommand.h"
@@ -267,7 +268,7 @@ void DistanceMeasureDataItem::updateActorSettings()
 	impl->m_labelActor.setLabelPosition(impl->m_setting.labelPosition);
 
 	vtkTextProperty* txtProp = impl->m_labelActor.labelTextProperty();
-	txtProp->SetFontSize(impl->m_setting.labelFontSize);
+	impl->m_setting.labelFontSetting.applySetting(txtProp);
 	txtProp->SetColor(impl->m_setting.color);
 
 	impl->m_lineActor.pointsActor()->GetProperty()->SetColor(impl->m_setting.color);

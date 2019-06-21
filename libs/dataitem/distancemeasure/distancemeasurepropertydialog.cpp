@@ -9,6 +9,8 @@ DistanceMeasurePropertyDialog::DistanceMeasurePropertyDialog(QWidget* parent) :
 	ui {new Ui::DistanceMeasurePropertyDialog}
 {
 	ui->setupUi(this);
+	ui->labelFontSettingWidget->hideColor();
+
 	connect(ui->startPointXEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 	connect(ui->startPointYEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 	connect(ui->endPointXEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
@@ -55,13 +57,14 @@ DistanceMeasureSetting DistanceMeasurePropertyDialog::setting() const
 		ret.labelPosition = vtkLabel2DActor::lpMiddleRight;
 	}
 
-	ret.labelFontSize = ui->fontSizeSpinBox->value();
+	ret.labelFontSetting = ui->labelFontSettingWidget->setting();
 	ret.customLabel = ui->customLabelLineEdit->text();
 
 	ret.showMarkers = ui->showMarkersCheckBox->isChecked();
 	ret.markerSize = ui->markerSizeSpinBox->value();
 
 	ret.color = ui->colorWidget->color();
+	ret.labelFontSetting.fontColor = ret.color;
 
 	return ret;
 }
@@ -100,7 +103,7 @@ void DistanceMeasurePropertyDialog::setSetting(const DistanceMeasureSetting& set
 		ui->lpCenterTop->setChecked(true);
 	}
 
-	ui->fontSizeSpinBox->setValue(setting.labelFontSize);
+	ui->labelFontSettingWidget->setSetting(setting.labelFontSetting);
 	ui->customLabelLineEdit->setText(setting.customLabel);
 
 	ui->showMarkersCheckBox->setChecked(setting.showMarkers);
