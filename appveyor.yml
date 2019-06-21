@@ -33,7 +33,7 @@ init:
   # Currently only commit and push to test-auto-dev branch (for testing)
   - ps: $(Get-ChildItem env:)
   #  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "test-auto-dev") -AND ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "test-auto-dev") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
 
 configuration:
@@ -141,7 +141,7 @@ on_success:
         # commit and push to https://github.com/i-RIC/online_update.git
         git config --global credential.helper store
         # the access token will need to change when called from i-RIC appveyor
-        Add-Content "$HOME\.git-credentials" "https://$($env:scharlton2_access_token):x-oauth-basic@github.com`n"
+        Add-Content "$HOME\.git-credentials" "https://$($env:iric_access_token):x-oauth-basic@github.com`n"
         git config --global user.email "iric.appveyor@gmail.com"
         git config --global user.name "iric.appveyor"
         git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
