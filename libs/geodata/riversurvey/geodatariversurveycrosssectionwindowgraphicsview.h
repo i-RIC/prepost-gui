@@ -106,7 +106,7 @@ private:
 	bool continuousSelection();
 	bool continuousGridSelection();
 	std::vector<double> loadSlopeRatios();
-	GeoDataRiverCrosssection::Altitude createAltitude(const QPoint& pos, QString* ratio = nullptr);
+	GeoDataRiverCrosssection::Altitude createAltitude(const QPoint& pos, QString* ratio = nullptr, bool freeSlope = false);
 	void editCrossSection(GeoDataRiverCrosssection::Altitude& alt);
 
 	const static int iLeftMargin = 20;

@@ -981,7 +981,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->target(), newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->targetRiverSurvey(), true));
 		}
 	} else if (m_mouseEventMode == meEditCrosssection) {
-		m_editAltitudePreview = createAltitude(event->pos(), &m_editRatio);
+		bool ctrlPressed = ((event->modifiers() & Qt::ControlModifier) == Qt::ControlModifier);
+		m_editAltitudePreview = createAltitude(event->pos(), &m_editRatio, ctrlPressed);
 		viewport()->update();
 	}
 	m_oldPosition = event->pos();
@@ -1076,7 +1077,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 				m->show();
 			}
 		} else if (m_mouseEventMode == meEditCrosssection && event->button() == Qt::LeftButton) {
-			auto newAltitude = createAltitude(event->pos());
+			QString ratio;
+			bool ctrlPressed = ((event->modifiers() & Qt::ControlModifier) == Qt::ControlModifier);
+			auto newAltitude = createAltitude(event->pos(), &ratio, ctrlPressed);
 			editCrossSection(newAltitude);
 		}
 		break;
@@ -1528,7 +1531,7 @@ struct CreateAltitudeInfo
 	QString ratio;
 };
 
-GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsView::createAltitude(const QPoint& pos, QString* ratio)
+GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsView::createAltitude(const QPoint& pos, QString* ratio, bool freeSlope)
 {
 	const auto index = selectionModel()->selectedIndexes().at(0);
 	auto& xsec = m_parentWindow->target()->crosssection();
@@ -1544,27 +1547,37 @@ GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsV
 	double sign = 1;
 	if (distX * distY < 0) {sign = -1;}
 
-	std::map<double, CreateAltitudeInfo> diffs;
-	GeoDataRiverCrosssection::Altitude a(mappedPos.x(), selectedAlt.height());
-	CreateAltitudeInfo ainfo{a, ""};
-	diffs.insert({std::abs(distY), ainfo});
-	for (double r : loadSlopeRatios()) {
-		double dy = distX * sign / r;
-		GeoDataRiverCrosssection::Altitude a(mappedPos.x(), selectedAlt.height() + dy);
-		CreateAltitudeInfo ainfo{a, QString::number(r)};
-		double diff = mappedPos.y() - (a.height());
-		diffs.insert({std::abs(diff), ainfo});
-	}
-	// get the CreateAltitudeInfo with the smallest diff
-	auto pair = diffs.begin();
-	if  (ratio != nullptr) {
-		if (pair->second.ratio == "") {
+	if (freeSlope) {
+		double r = std::abs((mappedPos.y() - selectedAlt.height()) / (mappedPos.x() - selectedAlt.position()));
+		if (r == 0) {
 			*ratio = "";
 		} else {
-			*ratio = QString("1:%1").arg(pair->second.ratio);
+			*ratio = QString("1:%1").arg(1.0 / r);
 		}
+		return GeoDataRiverCrosssection::Altitude(mappedPos.x(), mappedPos.y());
+	} else {
+		std::map<double, CreateAltitudeInfo> diffs;
+		GeoDataRiverCrosssection::Altitude a(mappedPos.x(), selectedAlt.height());
+		CreateAltitudeInfo ainfo{a, ""};
+		diffs.insert({std::abs(distY), ainfo});
+		for (double r : loadSlopeRatios()) {
+			double dy = distX * sign / r;
+			GeoDataRiverCrosssection::Altitude a(mappedPos.x(), selectedAlt.height() + dy);
+			CreateAltitudeInfo ainfo{a, QString::number(r)};
+			double diff = mappedPos.y() - (a.height());
+			diffs.insert({std::abs(diff), ainfo});
+		}
+		// get the CreateAltitudeInfo with the smallest diff
+		auto pair = diffs.begin();
+		if  (ratio != nullptr) {
+			if (pair->second.ratio == "") {
+				*ratio = "";
+			} else {
+				*ratio = QString("1:%1").arg(pair->second.ratio);
+			}
+		}
+		return pair->second.altitude;
 	}
-	return pair->second.altitude;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editCrossSection(GeoDataRiverCrosssection::Altitude& alt)
