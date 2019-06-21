@@ -3,6 +3,7 @@
 
 #include "../postbase_global.h"
 
+#include <guibase/vtktextpropertysettingcontainer.h>
 #include <guicore/datamodel/graphicswindowdataitem.h>
 #include <misc/timeformat.h>
 #include <misc/compositecontainer.h>
@@ -28,8 +29,8 @@ public:
 
 		/// Time format
 		EnumContainerT<TimeFormat::Format> timeFormat;
-		/// Color
-		ColorContainer color;
+		/// Font setting
+		vtkTextPropertySettingContainer fontSetting;
 	};
 
 	/// Constructor
