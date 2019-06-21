@@ -1,12 +1,12 @@
-#include "ui_distancemeasurecopypropertydialog.h"
+#include "ui_distancemeasurepropertydialog.h"
 
-#include "distancemeasurecopypropertydialog.h"
+#include "distancemeasurepropertydialog.h"
 
 #include <QVector2D>
 
-DistanceMeasureCopyPropertyDialog::DistanceMeasureCopyPropertyDialog(QWidget* parent) :
+DistanceMeasurePropertyDialog::DistanceMeasurePropertyDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::DistanceMeasureCopyPropertyDialog}
+	ui {new Ui::DistanceMeasurePropertyDialog}
 {
 	ui->setupUi(this);
 	connect(ui->startPointXEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
@@ -15,22 +15,22 @@ DistanceMeasureCopyPropertyDialog::DistanceMeasureCopyPropertyDialog(QWidget* pa
 	connect(ui->endPointYEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 }
 
-DistanceMeasureCopyPropertyDialog::~DistanceMeasureCopyPropertyDialog()
+DistanceMeasurePropertyDialog::~DistanceMeasurePropertyDialog()
 {
 	delete ui;
 }
 
-QString DistanceMeasureCopyPropertyDialog::name() const
+QString DistanceMeasurePropertyDialog::name() const
 {
 	return ui->nameLineEdit->text();
 }
 
-void DistanceMeasureCopyPropertyDialog::setName(const QString& name)
+void DistanceMeasurePropertyDialog::setName(const QString& name)
 {
 	ui->nameLineEdit->setText(name.trimmed());
 }
 
-DistanceMeasureSetting DistanceMeasureCopyPropertyDialog::setting() const
+DistanceMeasureSetting DistanceMeasurePropertyDialog::setting() const
 {
 	DistanceMeasureSetting ret = m_setting;
 
@@ -66,7 +66,7 @@ DistanceMeasureSetting DistanceMeasureCopyPropertyDialog::setting() const
 	return ret;
 }
 
-void DistanceMeasureCopyPropertyDialog::setSetting(const DistanceMeasureSetting& setting)
+void DistanceMeasurePropertyDialog::setSetting(const DistanceMeasureSetting& setting)
 {
 	m_setting = setting;
 
@@ -109,12 +109,12 @@ void DistanceMeasureCopyPropertyDialog::setSetting(const DistanceMeasureSetting&
 	ui->colorWidget->setColor(setting.color);
 }
 
-void DistanceMeasureCopyPropertyDialog::updateAutoLabel()
+void DistanceMeasurePropertyDialog::updateAutoLabel()
 {
 	ui->autoLabelLabel->setText(autoLabel());
 }
 
-QString DistanceMeasureCopyPropertyDialog::autoLabel() const
+QString DistanceMeasurePropertyDialog::autoLabel() const
 {
 	QVector2D v1(ui->startPointXEdit->value(), ui->startPointYEdit->value());
 	QVector2D v2(ui->endPointXEdit->value(), ui->endPointYEdit->value());

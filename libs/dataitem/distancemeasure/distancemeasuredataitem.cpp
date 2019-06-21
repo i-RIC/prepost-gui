@@ -305,7 +305,7 @@ QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 	v1 = QVector2D(line.at(0).x(), line.at(0).y());
 	v2 = QVector2D(line.at(1).x(), line.at(1).y());
 
-	DistanceMeasureCopyPropertyDialog* dialog = new DistanceMeasureCopyPropertyDialog(parent);
+	auto dialog = new DistanceMeasurePropertyDialog(parent);
 	dialog->setName(m_standardItem->text().trimmed());
 	dialog->setSetting(impl->m_setting);
 
@@ -314,7 +314,7 @@ QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 
 void DistanceMeasureDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	DistanceMeasureCopyPropertyDialog* dialog = dynamic_cast<DistanceMeasureCopyPropertyDialog*>(propDialog);
+	auto dialog = dynamic_cast<DistanceMeasurePropertyDialog*>(propDialog);
 	iRICUndoStack::instance().push(new SetSettingCommand(dialog->name(), dialog->setting(), this));
 }
 

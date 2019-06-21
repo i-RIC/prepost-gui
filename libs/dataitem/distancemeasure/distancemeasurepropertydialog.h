@@ -1,5 +1,5 @@
-#ifndef DISTANCEMEASURECOPYPROPERTYDIALOG_H
-#define DISTANCEMEASURECOPYPROPERTYDIALOG_H
+#ifndef DISTANCEMEASUREPROPERTYDIALOG_H
+#define DISTANCEMEASUREPROPERTYDIALOG_H
 
 #include "distancemeasure_api.h"
 #include "distancemeasuresetting.h"
@@ -10,17 +10,17 @@ class QVector2D;
 
 namespace Ui
 {
-	class DistanceMeasureCopyPropertyDialog;
+	class DistanceMeasurePropertyDialog;
 }
 
-class DISTANCEMEASURE_API DistanceMeasureCopyPropertyDialog : public QDialog
+class DISTANCEMEASURE_API DistanceMeasurePropertyDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
 
-	explicit DistanceMeasureCopyPropertyDialog(QWidget* parent = nullptr);
-	~DistanceMeasureCopyPropertyDialog();
+	explicit DistanceMeasurePropertyDialog(QWidget* parent = nullptr);
+	~DistanceMeasurePropertyDialog();
 
 	QString name() const;
 	void setName(const QString& name);
@@ -35,7 +35,7 @@ private:
 	QString autoLabel() const;
 
 	DistanceMeasureSetting m_setting;
-	Ui::DistanceMeasureCopyPropertyDialog* ui;
+	Ui::DistanceMeasurePropertyDialog* ui;
 };
 
-#endif // DISTANCEMEASURECOPYPROPERTYDIALOG_H
+#endif // DISTANCEMEASUREPROPERTYDIALOG_H

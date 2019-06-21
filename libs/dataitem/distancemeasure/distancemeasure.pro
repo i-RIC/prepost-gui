@@ -73,9 +73,9 @@ win32 {
 
 # Input
 HEADERS += distancemeasure_api.h \
-           distancemeasurecopypropertydialog.h \
            distancemeasuredataitem.h \
            distancemeasuregroupdataitem.h \
+           distancemeasurepropertydialog.h \
            distancemeasuresetting.h \
            private/distancemeasuredataitem_definecommand.h \
            private/distancemeasuredataitem_impl.h \
@@ -84,10 +84,11 @@ HEADERS += distancemeasure_api.h \
            private/distancemeasuredataitem_setsettingcommand.h \
            private/distancemeasuredataitem_translatecommand.h \
            private/distancemeasuregroupdataitem_impl.h
-FORMS += distancemeasurecopypropertydialog.ui
-SOURCES += distancemeasurecopypropertydialog.cpp \
+FORMS += distancemeasurepropertydialog.ui
+SOURCES += \
            distancemeasuredataitem.cpp \
            distancemeasuregroupdataitem.cpp \
+           distancemeasurepropertydialog.cpp \
            distancemeasuresetting.cpp \
            private/distancemeasuredataitem_definecommand.cpp \
            private/distancemeasuredataitem_movevertexcommand.cpp \
