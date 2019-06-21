@@ -3,11 +3,12 @@
 #include <QColor>
 
 PostTitleSetting::PostTitleSetting() :
-	CompositeContainer({&title, &fontSize, &color}),
+	CompositeContainer({&title, &fontSetting}),
 	title {"title"},
-	fontSize {"fontSize", 20},
-	color {"color", Qt::black}
-{}
+	fontSetting {}
+{
+	fontSetting.fontSize = 20;
+}
 
 PostTitleSetting::PostTitleSetting(const PostTitleSetting &setting) :
 	PostTitleSetting()

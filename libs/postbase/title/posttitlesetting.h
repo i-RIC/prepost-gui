@@ -3,9 +3,8 @@
 
 #include "../postbase_global.h"
 
-#include <misc/colorcontainer.h>
+#include <guibase/vtktextpropertysettingcontainer.h>
 #include <misc/compositecontainer.h>
-#include <misc/intcontainer.h>
 #include <misc/stringcontainer.h>
 
 class POSTBASEDLL_EXPORT PostTitleSetting : public CompositeContainer
@@ -17,8 +16,7 @@ public:
 	PostTitleSetting& operator=(const PostTitleSetting& setting);
 
 	StringContainer title;
-	IntContainer fontSize;
-	ColorContainer color;
+	vtkTextPropertySettingContainer fontSetting;
 };
 
 #endif // POSTTITLESETTING_H
