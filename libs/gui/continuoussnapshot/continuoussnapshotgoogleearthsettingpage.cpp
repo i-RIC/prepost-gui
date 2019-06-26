@@ -48,6 +48,8 @@ bool ContinuousSnapshotGoogleEarthSettingPage::validatePage()
 	m_wizard->setGoogleEarth(ui->googleEarthCheckBox->isChecked());
 	m_wizard->setKMLFilename(ui->kmlEdit->text());
 
+	if (! m_wizard->googleEarth()) {return true;}
+
 	// calculate angle/north/south/east/west
 	calculateKMLInformation();
 
