@@ -830,8 +830,12 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="20"/>
+        <source>Please specify the properties of output files.</source>
+        <translation>出力されるファイルについて設定してください。</translation>
+    </message>
+    <message>
         <source>Please specify the window and the background image in it. Then, set the latitude and the longitude of the bottom left corner and bottom right corner of the image. </source>
-        <translation>位置合わせに利用するウィンドウと、背景画像を選択してください。また、選択した背景画像の左下、右下の点の緯度・経度の値を入力してください。</translation>
+        <translation type="vanished">位置合わせに利用するウィンドウと、背景画像を選択してください。また、選択した背景画像の左下、右下の点の緯度・経度の値を入力してください。</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="60"/>

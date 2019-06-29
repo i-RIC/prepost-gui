@@ -17,7 +17,7 @@
    <string>Output to the Google Earth</string>
   </property>
   <property name="subTitle">
-   <string>Please specify the window and the background image in it. Then, set the latitude and the longitude of the bottom left corner and bottom right corner of the image. </string>
+   <string>Please specify the properties of output files.</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>

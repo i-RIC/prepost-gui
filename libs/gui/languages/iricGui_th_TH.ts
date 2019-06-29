@@ -223,7 +223,7 @@
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="20"/>
-        <source>Please specify the window and the background image in it. Then, set the latitude and the longitude of the bottom left corner and bottom right corner of the image. </source>
+        <source>Please specify the properties of output files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
