@@ -20,36 +20,36 @@ set(GRID_EXPORTER.structured2dgridnayscsv
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnayscsvexporter/release/structured2dgridnayscsvexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnayscsvexporter/languages/structured2dgridnayscsvexporter_ja_JP.qm
   )
-install(FILES ${GRID_EXPORTER.structured2dgridnayscsv}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.structured2dgridnayscsv/data
-  )
+#install(FILES ${GRID_EXPORTER.structured2dgridnayscsv}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.structured2dgridnayscsv/data
+#  )
 
 # GRID_EXPORTER.structured2dgridnaysgrid
 set(GRID_EXPORTER.structured2dgridnaysgrid
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnaysgridexporter/release/structured2dgridnaysgridexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnaysgridexporter/languages/structured2dgridnaysgridexporter_ja_JP.qm
   )
-install(FILES ${GRID_EXPORTER.structured2dgridnaysgrid}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.structured2dgridnaysgrid/data
-  )
+#install(FILES ${GRID_EXPORTER.structured2dgridnaysgrid}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.structured2dgridnaysgrid/data
+#  )
 
 # GRID_EXPORTER.structured2dgridvtk
 set(GRID_EXPORTER.structured2dgridvtk
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridvtkexporter/release/structured2dgridvtkexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridvtkexporter/languages/structured2dgridvtkexporter_ja_JP.qm
   )
-install(FILES ${GRID_EXPORTER.structured2dgridvtk}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.structured2dgridvtk/data
-  )
+#install(FILES ${GRID_EXPORTER.structured2dgridvtk}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.structured2dgridvtk/data
+#  )
 
 # GRID_EXPORTER.unstructured2dgridvtk
 set(GRID_EXPORTER.unstructured2dgridvtk
   ${PREPOST_GUI}/plugins/gridexporter/unstructured2dgridvtkexporter/release/unstructured2dgridvtkexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/unstructured2dgridvtkexporter/languages/unstructured2dgridvtkexporter_ja_JP.qm
   )
-install(FILES ${GRID_EXPORTER.unstructured2dgridvtk}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.unstructured2dgridvtk/data
-  )
+#install(FILES ${GRID_EXPORTER.unstructured2dgridvtk}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridexporter_plugin.unstructured2dgridvtk/data
+#  )
 
 
 # GRID_IMPORTER.structured2dgridnayscsv
@@ -57,27 +57,27 @@ set(GRID_IMPORTER.structured2dgridnayscsv
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnayscsvimporter/release/structured2dgridnayscsvimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnayscsvimporter/languages/structured2dgridnayscsvimporter_ja_JP.qm
   )
-install(FILES ${GRID_IMPORTER.structured2dgridnayscsv}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridimporter_plugin.structured2dgridnayscsv/data
-  )
+#install(FILES ${GRID_IMPORTER.structured2dgridnayscsv}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridimporter_plugin.structured2dgridnayscsv/data
+#  )
 
 # GRID_IMPORTER.structured2dgridnaysgrid
 set(GRID_IMPORTER.structured2dgridnaysgrid
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnaysgridimporter/release/structured2dgridnaysgridimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnaysgridimporter/languages/structured2dgridnaysgridimporter_ja_JP.qm
   )
-install(FILES ${GRID_IMPORTER.structured2dgridnaysgrid}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridimporter_plugin.structured2dgridnaysgrid/data
-  )
+#install(FILES ${GRID_IMPORTER.structured2dgridnaysgrid}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridimporter_plugin.structured2dgridnaysgrid/data
+#  )
 
 # GRID_IMPORTER.unstructured2dgridtriangle
 set(GRID_IMPORTER.unstructured2dgridtriangle
   ${PREPOST_GUI}/plugins/gridimporter/unstructured2dgridtriangleimporter/release/unstructured2dgridtriangleimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/unstructured2dgridtriangleimporter/languages/unstructured2dgridtriangleimporter_ja_JP.qm
   )
-install(FILES ${GRID_IMPORTER.unstructured2dgridtriangle}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridimporter_plugin.unstructured2dgridtriangle/data
-  )
+#install(FILES ${GRID_IMPORTER.unstructured2dgridtriangle}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gridimporter_plugin.unstructured2dgridtriangle/data
+#  )
 
 
 # IRIC_ICO
@@ -224,9 +224,9 @@ set(RIVMAKER_JP
   )
 
 # Install RIVMAKER  
-install(FILES ${RIVMAKER_ICO} ${RIVMAKER_EXE} ${RIVMAKER_DLLS}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.rivmaker/data
-  )
-install(FILES ${RIVMAKER_JP}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.rivmaker/data/languages
-  )
+#install(FILES ${RIVMAKER_ICO} ${RIVMAKER_EXE} ${RIVMAKER_DLLS}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.rivmaker/data
+#  )
+#install(FILES ${RIVMAKER_JP}
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.rivmaker/data/languages
+#  )
