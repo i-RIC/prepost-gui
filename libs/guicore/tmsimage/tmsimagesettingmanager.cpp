@@ -41,7 +41,7 @@ std::vector<TmsImageSetting> standardSettings()
 	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Pale) (Japan only)")));
 	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png&maxNativeZoom=11&active=false", TmsImageSettingManager::tr("GSI (English) (Japan only)")));
 	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png&maxNativeZoom=15&active=false", TmsImageSettingManager::tr("GSI (Relief) (Japan only)")));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)")));
 
 	return ret;
 }
