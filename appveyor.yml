@@ -1,5 +1,11 @@
 version: '{branch}-{build}'
 
+environment:
+  scharlton2_access_token:
+    secure: Kt5VLMSJeqiQyx3Ox3sphU62h9OlWJeiOi7da6DSCuSjv3sp7Ab2LB4m717mCtN2
+  iric_access_token:
+    secure: ee8J3ZdtlbFttFmkcumsXr1/FKYOkf/vkN2ZC6lkymz3uOVTs23CXfQS4uMi/zVt
+
 # Skipping commits affecting specific files (GitHub only).
 skip_commits:
   files:
@@ -8,11 +14,27 @@ skip_commits:
 image: Visual Studio 2013
 
 # called before clone
+# Note that environment variables don't seem to transfer correctly from cmd to ps when
+# they contain spaces
 init:
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
   - echo %Configuration%
   - if "%Configuration%"=="Debug"   (set config=debug)
   - if "%Configuration%"=="Release" (set config=release)
+  - echo %APPVEYOR_BUILD_WORKER_IMAGE%
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017 Win64" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" ( set generator="Visual Studio 14 2015 Win64" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( set generator="Visual Studio 12 2013 Win64" )
+  - echo %generator%
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2017") {$env:psgenerator = "Visual Studio 15 2017 Win64"}
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
+  - ps: Write-Output $env:psgenerator
+  # Currently only commit and push to test-auto-dev branch (for testing)
+  - ps: $(Get-ChildItem env:)
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  # - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "test-auto-dev") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  - ps: Write-Output $CommitAndPush
 
 configuration:
   - Debug
@@ -60,9 +82,75 @@ after_build:
   - python copydllsExt.py
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
+  - ps: |
+      if ($CommitAndPush) {
+        md $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        cmake --version
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:psgenerator ..
+      }
 
 artifacts:
   - path: libdlls\$(Configuration)
     name: libdlls-$(Configuration)
   - path: apps\iricgui\$(config)
     name: iricgui-$(Configuration)
+
+on_success:
+  - ps: |
+      if ($CommitAndPush) {
+        Write-Output "This is the Release of the $env:CommitBranch branch"
+        Set-Location \
+        git clone -q --branch=master https://github.com/i-RIC/online_update.git
+        Set-Location .\online_update
+        git checkout -qf master
+        # the next line is temporary (used for testing)
+        # git checkout -qb __$env:APPVEYOR_JOB_ID
+        # update data\definition.xml and meta\package.xml from dev_src\packages\gui.prepost
+        $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
+        $v[3] = 1 + $v[3]
+        $env:VERSION = $v -join "."
+        $tokyo_tz = [System.TimeZoneInfo]::FindSystemTimeZoneById("Tokyo Standard Time")
+        $tokyo_date = [System.TimeZoneInfo]::ConvertTimeFromUtc((Get-Date).ToUniversalTime(), $tokyo_tz)
+        $env:RELEASE_DATE = $(Get-Date $tokyo_date -Format s).Substring(0,10)
+        $env:RELEASE = $env:RELEASE_DATE -replace '-', '.'
+        $env:CAPTION = "iRIC GUI " + $v[0] + "." + $v[1] + "." + $v[2]
+        $files=@('dev_src\packages\gui.prepost\data\definition.xml', `
+                 'dev_src\packages\gui.prepost\meta\package.xml')
+        foreach ($file in $files) {
+          (Get-Content $file) | Foreach-Object {
+            $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           "$env:VERSION" `
+               -replace "`" version=`"([^`"]*)`"",                    "`" version=`"$env:VERSION`"" `
+               -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   "$env:RELEASE_DATE" `
+               -replace "release=`"([^`"]*)`"",                       "release=`"$env:RELEASE`"" `
+               -replace "caption=`"([^`"]*)`"",                       "caption=`"$env:CAPTION`"" `
+               -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
+          } | Set-Content $file
+        }
+        # distribute files built by prepost-gui
+        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        # run repogen to build packages and Updates.xml
+        Set-Location \online_update\dev_src
+        # create qt_ifw_path.py
+        Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\2.0'" | Out-File -FilePath \online_update\dev_src\qt_ifw_path.py -Encoding ascii
+        py build_update_repository.py
+        Set-Location \online_update
+        # run normalize_updatexml.py to normalize Updates.xml.
+        py normalize_updatexml.py
+        # commit and push to https://github.com/i-RIC/online_update.git
+        git config --global credential.helper store
+        # the access token will need to change when called from i-RIC appveyor
+        Add-Content "$HOME\.git-credentials" "https://$($env:iric_access_token):x-oauth-basic@github.com`n"
+        git config --global user.email "iric.appveyor@gmail.com"
+        git config --global user.name "iric.appveyor"
+        git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
+        # Qt dictionaries are now included in gui.runtime package.
+        git reset **/qt_*.qm
+        git commit -m "built by iric.appveyor"
+        # change this to master after testing
+        git push --set-upstream origin master 2>&1 | Out-Null
+        git status
+        # display environment variables
+        Get-ChildItem env:
+      }
