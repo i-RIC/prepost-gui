@@ -145,6 +145,8 @@ on_success:
         git config --global user.email "iric.appveyor@gmail.com"
         git config --global user.name "iric.appveyor"
         git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
+        # Qt dictionaries are now included in gui.runtime package.
+        git reset **/qt_*.qm
         git commit -m "built by iric.appveyor"
         # change this to master after testing
         git push --set-upstream origin __$env:APPVEYOR_JOB_ID 2>&1 | Out-Null
