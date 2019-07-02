@@ -9,6 +9,7 @@
 
 #include <misc/stringtool.h>
 
+#include <QLocale>
 #include <QSettings>
 #include <QUrlQuery>
 
@@ -16,9 +17,15 @@ using namespace tmsloader;
 
 namespace {
 
-TmsImageSetting buildSetting(const std::string& setting, const QString& caption)
+TmsImageSetting buildSetting(const std::string& setting, const QString& caption, bool active = true)
 {
-	QUrlQuery query(setting.c_str());
+	std::string s = setting;
+	if (active) {
+		s.append("&active=true");
+	} else {
+		s.append("&active=false");
+	}
+	QUrlQuery query(s.c_str());
 	query.addQueryItem("caption", caption);
 	return TmsImageSetting(iRIC::toStr(query.toString(QUrl::FullyEncoded)));
 }
@@ -28,20 +35,24 @@ std::vector<TmsImageSetting> standardSettings()
 	std::vector<TmsImageSetting> ret;
 
 	// Google Map
-	ret.push_back(buildSetting("tms=googlemap&mapType=roadmap&active=true", TmsImageSettingManager::tr("Google Map (Road)")));
-	ret.push_back(buildSetting("tms=googlemap&mapType=satellite&active=true", TmsImageSettingManager::tr("Google Map (Satellite)")));
-	ret.push_back(buildSetting("tms=googlemap&mapType=hybrid&active=true", TmsImageSettingManager::tr("Google Map (Hybrid)")));
-	ret.push_back(buildSetting("tms=googlemap&mapType=terrain&active=true", TmsImageSettingManager::tr("Google Map (Terrain)")));
+	ret.push_back(buildSetting("tms=googlemap&mapType=roadmap", TmsImageSettingManager::tr("Google Map (Road)")));
+	ret.push_back(buildSetting("tms=googlemap&mapType=satellite", TmsImageSettingManager::tr("Google Map (Satellite)")));
+	ret.push_back(buildSetting("tms=googlemap&mapType=hybrid", TmsImageSettingManager::tr("Google Map (Hybrid)")));
+	ret.push_back(buildSetting("tms=googlemap&mapType=terrain", TmsImageSettingManager::tr("Google Map (Terrain)")));
 
 	// Open Street Map
-	ret.push_back(buildSetting("tms=openstreetmap&active=true", TmsImageSettingManager::tr("Open Street Map")));
+	ret.push_back(buildSetting("tms=openstreetmap", TmsImageSettingManager::tr("Open Street Map")));
+
+	QSettings settings;
+	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
+	bool japanese = (locale == "ja_JP");
 
 	// GSI
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Standard) (Japan only)")));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Pale) (Japan only)")));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png&maxNativeZoom=11&active=false", TmsImageSettingManager::tr("GSI (English) (Japan only)")));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png&maxNativeZoom=15&active=false", TmsImageSettingManager::tr("GSI (Relief) (Japan only)")));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg&maxNativeZoom=18&active=false", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)")));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Standard) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Pale) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png&maxNativeZoom=11", TmsImageSettingManager::tr("GSI (English) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png&maxNativeZoom=15", TmsImageSettingManager::tr("GSI (Relief) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)"), japanese));
 
 	return ret;
 }
