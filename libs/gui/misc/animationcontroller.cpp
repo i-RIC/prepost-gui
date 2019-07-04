@@ -31,6 +31,31 @@ AnimationController::AnimationController(QWidget* parent)
 	connect(m_timer, SIGNAL(timeout()), this, SLOT(handleTimerTimeout()));
 }
 
+bool AnimationController::followLastStep() const
+{
+	return m_followLastStep;
+}
+
+unsigned int AnimationController::currentStepIndex() const
+{
+	return m_currentStepIndex;
+}
+
+const QString& AnimationController::currentStep() const
+{
+	return m_stepList[m_currentStepIndex];
+}
+
+QMenu* AnimationController::animationMenu() const
+{
+	return m_animationMenu;
+}
+
+QToolBar* AnimationController::animationToolBar() const
+{
+	return m_animationToolBar;
+}
+
 void AnimationController::setupConnections()
 {
 	connect(m_animationActions->actionStepFirst, SIGNAL(triggered()), this, SLOT(stepFirst()));
@@ -374,4 +399,9 @@ void AnimationController::clearSteps()
 	m_slider->setMaximum(0);
 	m_slider->setDisabled(true);
 	m_currentLabel->setText("");
+}
+
+const QList<QString>& AnimationController::stepList() const
+{
+	return m_stepList;
 }

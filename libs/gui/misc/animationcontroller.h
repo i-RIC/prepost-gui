@@ -33,15 +33,15 @@ public:
 	/// constructor
 	AnimationController(QWidget* parent);
 	/// Current setting of followLastStep.
-	bool followLastStep() {return m_followLastStep;}
+	bool followLastStep() const;
 	/// Returns the index of current step
-	unsigned int currentStepIndex() {return m_currentStepIndex;}
+	unsigned int currentStepIndex() const;
 	/// Returns the label of current index
-	const QString& currentStep() {return m_stepList[m_currentStepIndex];}
+	const QString& currentStep() const;
 	/// Animation menu
-	QMenu* animationMenu() {return m_animationMenu;}
+	QMenu* animationMenu() const;
 	/// Animation toolbar
-	QToolBar* animationToolBar() {return m_animationToolBar;}
+	QToolBar* animationToolBar() const;
 	/// Setup menus, toolbar for the specified iteration type.
 	void setup(SolverDefinition::IterationType iType);
 	/// Setup animation menu.
@@ -51,7 +51,7 @@ public:
 	/// Clear Steps data.
 	void clearSteps();
 	/// Returns the step list.
-	const QList<QString>& stepList() {return m_stepList;}
+	const QList<QString>& stepList() const;
 
 public slots:
 	/// Step to next step
