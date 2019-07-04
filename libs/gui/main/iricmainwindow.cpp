@@ -2305,6 +2305,11 @@ bool iRICMainWindow::clearResultsIfGridIsEdited()
 	return true;
 }
 
+ProjectData* iRICMainWindow::projectData() const
+{
+	return m_projectData;
+}
+
 void iRICMainWindow::setProjectData(ProjectData* projectData)
 {
 	projectData->mainfile()->postProcessors()->setFactory(m_postWindowFactory);

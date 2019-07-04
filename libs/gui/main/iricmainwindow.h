@@ -84,6 +84,7 @@ public:
 	void toggleGridEditFlag() override;
 	void clearResults() override;
 	bool clearResultsIfGridIsEdited() override;
+	ProjectData* projectData() const;
 	void setProjectData(ProjectData* projectData) override;
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
