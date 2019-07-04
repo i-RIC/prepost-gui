@@ -110,6 +110,7 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_postSolutionInfo {new PostSolutionInfo(parent)},
 	m_postProcessors {new ProjectPostProcessors(parent)},
 	m_coordinateSystem {nullptr},
+	m_zeroDateTime {},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
 	m_parent {parent}
@@ -438,6 +439,12 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->m_coordinateSystem->init();
 	}
 
+	// zero data time
+	QString dt = element.attribute("zeroDateTime", "");
+	if (! dt.isEmpty()) {
+		impl->m_zeroDateTime = QDateTime::fromString(dt, Qt::ISODate);
+	}
+
 	// coordinate offset
 	double offsetX = iRIC::getDoubleAttribute(node, "offsetX");
 	double offsetY = iRIC::getDoubleAttribute(node, "offsetY");
@@ -478,6 +485,10 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	if (impl->m_coordinateSystem != nullptr) {
 		writer.writeAttribute("coordinateSystem", impl->m_coordinateSystem->name());
+	}
+
+	if (! impl->m_zeroDateTime.isNull()) {
+		writer.writeAttribute("zeroDateTime", impl->m_zeroDateTime.toString(Qt::ISODate));
 	}
 
 	iRIC::setDoubleAttribute(writer, "offsetX", impl->m_offset.x());
@@ -1140,6 +1151,16 @@ void ProjectMainFile::setCoordinateSystem(CoordinateSystem* system)
 	}
 	impl->m_coordinateSystem = system;
 	if (impl->m_coordinateSystem != nullptr) {impl->m_coordinateSystem->init();}
+}
+
+const QDateTime& ProjectMainFile::zeroDateTime() const
+{
+	return impl->m_zeroDateTime;
+}
+
+void ProjectMainFile::setZeroDateTime(const QDateTime& dt)
+{
+	impl->m_zeroDateTime = dt;
 }
 
 QPointF ProjectMainFile::offset() const

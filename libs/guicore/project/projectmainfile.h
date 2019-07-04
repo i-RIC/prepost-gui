@@ -109,6 +109,9 @@ public:
 	CoordinateSystem* coordinateSystem() const;
 	void setCoordinateSystem(CoordinateSystem* system);
 
+	const QDateTime& zeroDateTime() const;
+	void setZeroDateTime(const QDateTime& dt);
+
 	QPointF offset() const;
 	void setOffset(double x, double y);
 
