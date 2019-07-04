@@ -261,6 +261,7 @@ HEADERS += guicore_global.h \
            project/projectdataitem.h \
            project/projectmainfile.h \
            project/projectpostprocessors.h \
+           project/projecttimesettingdialog.h \
            project/projectworkspace.h \
            project/workfolderinfo.h \
            scalarstocolors/colortransferfunctioncontainer.h \
@@ -558,6 +559,7 @@ FORMS += datamodel/propertybrowserview.ui \
          project/backgroundimageinfodialog.ui \
          project/backgroundimageinfogeoreferencedialog.ui \
          project/offsetsettingdialog.ui \
+         project/projecttimesettingdialog.ui \
          scalarstocolors/colortransferfunctioneditwidget.ui \
          scalarstocolors/lookuptableeditwidget.ui \
          scalarstocolors/scalarstocolorseditdialog.ui \
@@ -639,6 +641,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/projectdataitem.cpp \
            project/projectmainfile.cpp \
            project/projectpostprocessors.cpp \
+           project/projecttimesettingdialog.cpp \
            project/projectworkspace.cpp \
            project/workfolderinfo.cpp \
            scalarstocolors/colortransferfunctioncontainer.cpp \

@@ -1214,7 +1214,7 @@ void ProjectMainFile::setupOffset()
 
 int ProjectMainFile::showCoordinateSystemDialog(bool forceSelect)
 {
-	iRICMainWindowInterface* mainW = projectData()->mainWindow();
+	auto mainW = projectData()->mainWindow();
 	CoordinateSystemSelectDialog dialog(mainW);
 	dialog.setBuilder(mainW->coordinateSystemBuilder());
 	dialog.setCoordinateSystem(coordinateSystem());
@@ -1232,4 +1232,10 @@ int ProjectMainFile::showCoordinateSystemDialog(bool forceSelect)
 
 	setCoordinateSystem(cs);
 	return QDialog::Accepted;
+}
+
+void ProjectMainFile::showTimeSettingDialog()
+{
+	auto mainW = projectData()->mainWindow();
+
 }
