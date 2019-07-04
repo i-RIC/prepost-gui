@@ -20,6 +20,8 @@ ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget* parent) 
 	ui->setupUi(this);
 	connect(ui->csEditButton, SIGNAL(clicked()), this, SLOT(showSelectCoordinateSystemDialog()));
 	connect(ui->coEditButton, SIGNAL(clicked()), this, SLOT(showSetOffsetDialog()));
+	connect(ui->timeEdit, SIGNAL(dateTimeChanged(QDateTime)), this, SLOT(updateZeroDateTime(QDateTime)));
+	connect(ui->timeDisableCheckBox, SIGNAL(toggled(bool)), this, SLOT(setZeroDateTimeDisabled(bool)));
 }
 
 ProjectPropertyBasicInfoWidget::~ProjectPropertyBasicInfoWidget()
@@ -70,6 +72,15 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 	} else {
 		ui->resultWidget->setText(tr("No data"));
 	}
+
+	auto dt = data->mainfile()->zeroDateTime();
+	ui->timeDisableCheckBox->setChecked(dt.isNull());
+	if (dt.isNull()) {
+		ui->timeEdit->setDateTime(QDateTime::currentDateTime());
+	} else {
+		ui->timeEdit->setDateTime(dt);
+	}
+
 	updateCoordinateSystem();
 	updateCoordinateOffset();
 }
@@ -94,6 +105,26 @@ void ProjectPropertyBasicInfoWidget::showSetOffsetDialog()
 {
 	m_projectData->mainfile()->setupOffset();
 	updateCoordinateOffset();
+}
+
+void ProjectPropertyBasicInfoWidget::updateZeroDateTime(const QDateTime& datetime)
+{
+	auto mf = m_projectData->mainfile();
+	if (ui->timeDisableCheckBox->isChecked()) {
+		mf->setZeroDateTime(QDateTime());
+	} else {
+		mf->setZeroDateTime(datetime);
+	}
+}
+
+void ProjectPropertyBasicInfoWidget::setZeroDateTimeDisabled(bool disabled)
+{
+	auto mf = m_projectData->mainfile();
+	if (disabled) {
+		mf->setZeroDateTime(QDateTime());
+	} else {
+		mf->setZeroDateTime(ui->timeEdit->dateTime());
+	}
 }
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateOffset()
