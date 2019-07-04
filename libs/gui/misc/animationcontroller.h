@@ -64,7 +64,7 @@ public slots:
 	/// Step to the last step
 	void stepLast();
 	/// Start animation in slowmotion
-	void startSlowmotionAnimation();
+	void startAnimation();
 	/// Stop animation
 	void stopAnimation();
 	/// Turn on/off the followLastStep flag

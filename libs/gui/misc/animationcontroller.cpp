@@ -63,7 +63,7 @@ void AnimationController::setupConnections()
 	connect(m_animationActions->actionStepBackward, SIGNAL(triggered()), this, SLOT(stepBackward()));
 	connect(m_animationActions->actionStepForward, SIGNAL(triggered()), this, SLOT(stepForward()));
 	connect(m_animationActions->actionStepLast, SIGNAL(triggered()), this, SLOT(stepLast()));
-	connect(m_animationActions->actionStartAnimation, SIGNAL(triggered()), this, SLOT(startSlowmotionAnimation()));
+	connect(m_animationActions->actionStartAnimation, SIGNAL(triggered()), this, SLOT(startAnimation()));
 	connect(m_animationActions->actionStopAnimation, SIGNAL(triggered()), this, SLOT(stopAnimation()));
 	connect(m_animationActions->actionToggleFollowLastStep, SIGNAL(triggered()), this, SLOT(toggleFollowLastStep()));
 	connect(m_animationActions->actionEditSpeed, SIGNAL(triggered()), this, SLOT(editSlowmotionSpeed()));
@@ -121,7 +121,7 @@ void AnimationController::stepLast()
 	setCurrentStepIndex(m_stepList.count() - 1);
 }
 
-void AnimationController::startSlowmotionAnimation()
+void AnimationController::startAnimation()
 {
 	if (m_runMode != NotRunning) {
 		// It is already running.
