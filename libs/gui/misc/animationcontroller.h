@@ -64,8 +64,6 @@ public slots:
 	void stepFirst();
 	/// Step to the last step
 	void stepLast();
-	/// Start animation
-	void startAnimation();
 	/// Start animation in slowmotion
 	void startSlowmotionAnimation();
 	/// Stop animation

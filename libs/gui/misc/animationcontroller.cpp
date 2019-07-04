@@ -122,25 +122,6 @@ void AnimationController::stepLast()
 	setCurrentStepIndex(m_stepList.count() - 1);
 }
 
-void AnimationController::startAnimation()
-{
-	if (m_runMode != NotRunning) {
-		// It is already running.
-		// user wants to stop running.
-		stopAnimation();
-		return;
-	}
-	// stop animation first.
-	stopAnimation();
-	m_runMode = Running;
-	updateStartButtonIcon();
-	disableSteppingActions();
-
-	// set the interval to a very small value.
-	m_stepInterval = m_fastInterval;
-	// start animation!
-	animationStep();
-}
 void AnimationController::startSlowmotionAnimation()
 {
 	if (m_runMode != NotRunning) {
