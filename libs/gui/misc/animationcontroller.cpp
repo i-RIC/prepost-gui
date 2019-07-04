@@ -1,4 +1,5 @@
 #include "animationcontroller.h"
+#include "../main/iricmainwindow.h"
 
 #include <guibase/irictoolbar.h>
 #include <misc/slowmotionspeededitdialog.h>
@@ -10,7 +11,7 @@
 #include <QSlider>
 #include <QTimer>
 
-AnimationController::AnimationController(QWidget* parent)
+AnimationController::AnimationController(iRICMainWindow *parent)
 {
 	m_currentStepIndex = 0;
 	m_followLastStep = true;

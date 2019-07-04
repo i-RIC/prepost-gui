@@ -7,6 +7,8 @@
 #include <QList>
 #include <QObject>
 
+class iRICMainWindow;
+
 class QAction;
 class QLabel;
 class QMenu;
@@ -31,7 +33,7 @@ private:
 public:
 	const static int SLIDERWIDTH_MAX = 100;
 	/// constructor
-	AnimationController(QWidget* parent);
+	AnimationController(iRICMainWindow* parent);
 	/// Current setting of followLastStep.
 	bool followLastStep() const;
 	/// Returns the index of current step
@@ -119,7 +121,7 @@ private:
 	AnimationActions* m_animationActions;
 	QMenu* m_animationMenu;
 	QToolBar* m_animationToolBar;
-	QWidget* m_parent;
+	iRICMainWindow* m_parent;
 	QSlider* m_slider;
 	QLabel* m_currentLabel;
 	QList<QString> m_stepList;
