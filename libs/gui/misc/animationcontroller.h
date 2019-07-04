@@ -26,8 +26,7 @@ class AnimationController : public AnimationControllerInterface
 private:
 	enum RunMode {
 		NotRunning,
-		Running,
-		SlowRunning
+		Running
 	};
 
 public:
@@ -127,8 +126,6 @@ private:
 	unsigned int m_currentStepIndex;
 	RunMode m_runMode;
 	double m_stepInterval;
-	double m_fastInterval;
-	double m_slowInterval;
 
 	bool m_timeouted;
 	bool m_rendered;

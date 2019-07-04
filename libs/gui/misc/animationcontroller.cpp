@@ -20,8 +20,7 @@ AnimationController::AnimationController(iRICMainWindow *parent) :
 	m_timer {new QTimer(this)},
 	m_currentStepIndex {0},
 	m_runMode {NotRunning},
-	m_fastInterval {0.01},
-	m_slowInterval {0.01}
+	m_stepInterval {0.01}
 {
 	m_animationActions->actionToggleFollowLastStep->setChecked(m_followLastStep);
 	setupConnections();
@@ -132,12 +131,10 @@ void AnimationController::startSlowmotionAnimation()
 	}
 	// stop animation first.
 	stopAnimation();
-	m_runMode = SlowRunning;
+	m_runMode = Running;
 	updateStartButtonIcon();
 	disableSteppingActions();
 
-	// set the interval to the slow value.
-	m_stepInterval = m_slowInterval;
 	// start animation!
 	animationStep();
 }
@@ -361,8 +358,6 @@ void AnimationController::updateStartButtonIcon()
 		icon = QIcon(":/images/iconAnimationRun.png");
 	} else if (m_runMode == Running) {
 		icon = QIcon(":/images/iconAnimationStop.png");
-	} else if (m_runMode == SlowRunning) {
-		icon = QIcon(":/images/iconAnimationStop.png");
 	}
 	m_animationActions->actionStartAnimation->setIcon(icon);
 }
@@ -370,9 +365,10 @@ void AnimationController::updateStartButtonIcon()
 void AnimationController::editSlowmotionSpeed()
 {
 	SlowmotionSpeedEditDialog dialog(m_parent);
-	dialog.setInterval(m_slowInterval);
+	dialog.setInterval(m_stepInterval);
+
 	if (QDialog::Accepted == dialog.exec()) {
-		m_slowInterval = dialog.interval();
+		m_stepInterval = dialog.interval();
 	}
 }
 
