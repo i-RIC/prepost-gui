@@ -97,7 +97,6 @@ private:
 	void updateStartButtonIcon();
 	/// Update the time (or iteration) step label.
 	void updateStepLabel(const QString& label);
-	bool m_followLastStep;
 
 public:
 	/// Menu that has actions related to animation control
@@ -118,6 +117,7 @@ public:
 	};
 
 private:
+	bool m_followLastStep;
 	AnimationActions* m_animationActions;
 	QMenu* m_animationMenu;
 	QToolBar* m_animationToolBar;
