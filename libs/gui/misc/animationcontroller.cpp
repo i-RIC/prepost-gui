@@ -11,24 +11,25 @@
 #include <QSlider>
 #include <QTimer>
 
-AnimationController::AnimationController(iRICMainWindow *parent)
+AnimationController::AnimationController(iRICMainWindow *parent) :
+	m_followLastStep {true},
+	m_animationActions {new AnimationController::AnimationActions(this)},
+	m_animationMenu {nullptr},
+	m_animationToolBar {nullptr},
+	m_parent {parent},
+	m_timer {new QTimer(this)},
+	m_currentStepIndex {0},
+	m_runMode {NotRunning},
+	m_fastInterval {0.01},
+	m_slowInterval {0.01}
 {
-	m_currentStepIndex = 0;
-	m_followLastStep = true;
-	m_animationActions = new AnimationController::AnimationActions(this);
 	m_animationActions->actionToggleFollowLastStep->setChecked(m_followLastStep);
-	m_animationMenu = nullptr;
-	m_animationToolBar = nullptr;
 	setupConnections();
 	setup(SolverDefinition::NoIteration);
-	m_parent = parent;
-	m_runMode = NotRunning;
 	// interval used in fast animation = 10 ms.
-	m_fastInterval = 0.01;
 	// default interval in slow motion animation = 500 ms.
-	m_slowInterval = 0.01;
-	m_timer = new QTimer(this);
 	m_timer->setSingleShot(true);
+
 	connect(m_timer, SIGNAL(timeout()), this, SLOT(handleTimerTimeout()));
 }
 
