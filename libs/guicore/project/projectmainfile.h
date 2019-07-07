@@ -5,6 +5,8 @@
 #include "projectdataitem.h"
 #include "projectdata.h"
 
+#include <guibase/timeformat/timeformat.h>
+
 #include <QModelIndex>
 
 #include <string>
@@ -111,6 +113,9 @@ public:
 
 	const QDateTime& zeroDateTime() const;
 	void setZeroDateTime(const QDateTime& dt);
+
+	TimeFormat timeFormat() const;
+	void setTimeFormat(TimeFormat format);
 
 	QPointF offset() const;
 	void setOffset(double x, double y);

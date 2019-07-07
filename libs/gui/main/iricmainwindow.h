@@ -27,6 +27,7 @@ class QXmlStreamWriter;
 class QDomNode;
 class iRICMetaData;
 
+class AnimationController;
 class SolverConsoleWindow;
 class PostProcessorWindow;
 class SolverDefinitionList;
@@ -283,7 +284,7 @@ private:
 	/// The definition information of the solver currently used
 	SolverDefinition* m_solverDefinition;
 
-	AnimationControllerInterface* m_animationController;
+	AnimationController* m_animationController;
 
 	// This value is true only when opening a project file.
 	bool m_isOpening {false};

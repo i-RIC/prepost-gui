@@ -63,12 +63,12 @@ void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& z
 
 PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	ProjectDataItem {parent},
-	m_currentStep {0},
+	m_iterationType {SolverDefinition::NoIteration},
 	m_iterationSteps {nullptr},
 	m_timeSteps {nullptr},
+	m_currentStep {0},
 	m_timerId {0},
 	m_opener {nullptr},
-	m_iterationType {SolverDefinition::NoIteration},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_disableCalculatedResult {false},
 	m_particleExportPrefix {"Particle_"},
@@ -102,12 +102,14 @@ void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 	switch (m_iterationType) {
 	case SolverDefinition::ConvergenceIteration:
 		m_iterationSteps = new PostIterationSteps(this);
-		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SLOT(handleIterationStepsUpdate(QList<int>)));
+		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SIGNAL(cgnsIterationStepsUpdated(QList<int>)));
+		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SLOT(informStepsUpdated()));
 		connect(m_iterationSteps, SIGNAL(stepsUpdated(int)), this, SIGNAL(cgnsStepsUpdated(int)));
 		break;
 	case SolverDefinition::TimeIteration:
 		m_timeSteps = new PostTimeSteps(this);
-		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SLOT(handleTimeStepsUpdate(QList<double>)));
+		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SIGNAL(cgnsTimeStepsUpdated(QList<double>)));
+		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SLOT(informStepsUpdated()));
 		connect(m_timeSteps, SIGNAL(stepsUpdated(int)), this, SIGNAL(cgnsStepsUpdated(int)));
 		break;
 	case SolverDefinition::NoIteration:
@@ -492,30 +494,6 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		m_iterationSteps->checkStepsUpdate(m_opener->fileId());
 	}
 	checking = false;
-}
-
-void PostSolutionInfo::handleIterationStepsUpdate(const QList<int>& steps)
-{
-	QList<QString> strSteps;
-	for (auto it = steps.begin(); it != steps.end(); ++it) {
-		strSteps.push_back(QString("i = %1").arg(*it));
-	}
-	// inform the containers that the steps are updated.
-	informStepsUpdated();
-	// inform to the animation controller that the steps are updated.
-	emit cgnsStepsUpdated(strSteps);
-}
-
-void PostSolutionInfo::handleTimeStepsUpdate(const QList<double>& steps)
-{
-	QList<QString> strSteps;
-	for (auto it = steps.begin(); it != steps.end(); ++it) {
-		strSteps.push_back(QString("t = %1 s").arg(iRIC::timeSecondValueStr(*it)));
-	}
-	// inform the containers that the steps are updated.
-	informStepsUpdated();
-	// inform to the animation controller that the steps are updated.
-	emit cgnsStepsUpdated(strSteps);
 }
 
 void PostSolutionInfo::informCgnsSteps()

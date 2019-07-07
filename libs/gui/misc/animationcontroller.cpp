@@ -2,6 +2,9 @@
 #include "../main/iricmainwindow.h"
 
 #include <guibase/irictoolbar.h>
+#include <guibase/timeformat/timeformatutil.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/slowmotionspeededitdialog.h>
 
 #include <QAction>
@@ -17,6 +20,7 @@ AnimationController::AnimationController(iRICMainWindow *parent) :
 	m_animationMenu {nullptr},
 	m_animationToolBar {nullptr},
 	m_parent {parent},
+	m_stepMode {StepMode::Time},
 	m_timer {new QTimer(this)},
 	m_currentStepIndex {0},
 	m_runMode {NotRunning},
@@ -42,11 +46,6 @@ unsigned int AnimationController::currentStepIndex() const
 	return m_currentStepIndex;
 }
 
-const QString& AnimationController::currentStep() const
-{
-	return m_stepList[m_currentStepIndex];
-}
-
 QMenu* AnimationController::animationMenu() const
 {
 	return m_animationMenu;
@@ -55,6 +54,47 @@ QMenu* AnimationController::animationMenu() const
 QToolBar* AnimationController::animationToolBar() const
 {
 	return m_animationToolBar;
+}
+
+int AnimationController::stepCount() const
+{
+	if (m_stepMode == StepMode::Time) {
+		return static_cast<int>(m_timeSteps.size());
+	} else {
+		return static_cast<int>(m_iterationSteps.size());
+	}
+}
+
+void AnimationController::setStepCount(int count)
+{
+	// update the slider.
+	m_slider->setMinimum(0);
+	if (count == 0) {
+		m_slider->setMaximum(0);
+		setCurrentStepIndex(0);
+		m_slider->setDisabled(true);
+		return;
+	}
+	m_slider->setEnabled(true);
+	m_slider->setMaximum(count - 1);
+
+	int tickInterval = count / 20;
+	if (tickInterval == 0) {tickInterval = 1;}
+	m_slider->setTickInterval(tickInterval);
+
+	unsigned int lastIndex;
+	lastIndex = static_cast<unsigned int>(count - 1);
+	if (m_currentStepIndex > lastIndex) {
+		if (m_followLastStep) {
+			setCurrentStepIndex(lastIndex);
+		} else {
+			setCurrentStepIndex(0);
+		}
+		return;
+	}
+	if (m_followLastStep && (m_currentStepIndex != lastIndex)) {
+		setCurrentStepIndex(lastIndex);
+	}
 }
 
 void AnimationController::setupConnections()
@@ -99,7 +139,7 @@ void AnimationController::setupToolBar()
 
 void AnimationController::stepForward()
 {
-	if (m_currentStepIndex == m_stepList.count() - 1) {return;}
+	if (m_currentStepIndex == stepCount() - 1) {return;}
 	setCurrentStepIndex(m_currentStepIndex + 1);
 }
 
@@ -117,8 +157,8 @@ void AnimationController::stepFirst()
 
 void AnimationController::stepLast()
 {
-	if (m_currentStepIndex == m_stepList.count() - 1) {return;}
-	setCurrentStepIndex(m_stepList.count() - 1);
+	if (m_currentStepIndex == stepCount() - 1) {return;}
+	setCurrentStepIndex(stepCount() - 1);
 }
 
 void AnimationController::startAnimation()
@@ -156,7 +196,7 @@ void AnimationController::toggleFollowLastStep(bool follow)
 	m_followLastStep = follow;
 	m_animationActions->actionToggleFollowLastStep->setChecked(m_followLastStep);
 	if (m_followLastStep) {
-		unsigned int lastIndex = static_cast<unsigned int>(m_stepList.count() - 1);
+		unsigned int lastIndex = static_cast<unsigned int>(stepCount() - 1);
 		setCurrentStepIndex(lastIndex);
 	}
 }
@@ -229,62 +269,59 @@ AnimationController::AnimationActions::AnimationActions(QObject* /* parent*/)
 	actionEditSpeed->setIcon(QIcon(":/images/iconAnimationSpeedEdit.png"));
 }
 
-void AnimationController::updateStepList(const QList<QString>& steps)
+void AnimationController::updateTimeSteps(const QList<double>& steps)
 {
-	m_stepList = steps;
-	// update the slider.
-	m_slider->setMinimum(0);
-	if (steps.count() == 0) {
-		m_slider->setMaximum(0);
-		setCurrentStepIndex(0);
-		m_slider->setDisabled(true);
-		return;
-	}
-	m_slider->setEnabled(true);
-	m_slider->setMaximum(steps.count() - 1);
+	m_stepMode = StepMode::Time;
+	m_timeSteps = steps;
+	setStepCount(steps.size());
+}
 
-	int tickInterval = steps.count() / 20;
-	if (tickInterval == 0) {tickInterval = 1;}
-	m_slider->setTickInterval(tickInterval);
-
-	unsigned int lastIndex;
-	lastIndex = static_cast<unsigned int>(m_stepList.count() - 1);
-	if (m_currentStepIndex > lastIndex) {
-		if (m_followLastStep) {
-			setCurrentStepIndex(lastIndex);
-		} else {
-			setCurrentStepIndex(0);
-		}
-		return;
-	}
-	if (m_followLastStep && (m_currentStepIndex != lastIndex)) {
-		setCurrentStepIndex(lastIndex);
-	}
-	updateStepLabel(m_stepList.at(m_currentStepIndex));
+void AnimationController::updateIterationSteps(const QList<int>& steps)
+{
+	m_stepMode = StepMode::Iteration;
+	m_iterationSteps = steps;
+	setStepCount(steps.size());
 }
 
 void AnimationController::setCurrentStepIndex(unsigned int i)
 {
 	m_currentStepIndex = i;
 	m_slider->setValue(i);
-	if (m_stepList.isEmpty()) {
-		updateStepLabel("");
+	if (stepCount() == 0) {
+		m_currentLabel->setText("");
 	} else {
-		updateStepLabel(m_stepList.at(m_currentStepIndex));
+		updateStepLabel(m_currentStepIndex);
 	}
 }
 
-void AnimationController::updateStepLabel(const QString& label)
+void AnimationController::updateStepLabel(int step)
 {
-	m_currentLabel->setText(label);
+	if (m_stepMode == StepMode::Time) {
+		if (step >= m_timeSteps.size()) {
+			m_currentLabel->setText("---");
+			return;
+		}
+		auto mainFile = m_parent->projectData()->mainfile();
+		double time = m_timeSteps.at(step);
+		auto zt = mainFile->zeroDateTime();
+		auto f = mainFile->timeFormat();
+		m_currentLabel->setText(TimeFormatUtil::formattedString(zt, time, f));
+	} else {
+		if (step >= m_iterationSteps.size()) {
+			m_currentLabel->setText("---");
+			return;
+		}
+		QString labelStr("i = %1");
+		m_currentLabel->setText(labelStr.arg(m_iterationSteps.at(step)));
+	}
 }
 
 void AnimationController::handleSliderMove(int val)
 {
-	if (val < m_stepList.count()) {
-		updateStepLabel(m_stepList.at(val));
+	if (val < stepCount()) {
+		updateStepLabel(val);
 	} else {
-		updateStepLabel("");
+		m_currentLabel->setText("");
 	}
 }
 
@@ -336,7 +373,7 @@ void AnimationController::animationStep()
 	// if the user stopped running, finish.
 	if (m_runMode == NotRunning) {return;}
 	// if it reached the last step, stop running.
-	if (m_currentStepIndex == m_stepList.count() - 1) {
+	if (m_currentStepIndex == stepCount() - 1) {
 		stopAnimation();
 		return;
 	}
@@ -380,7 +417,8 @@ void AnimationController::clearSteps()
 	m_currentLabel->setText("");
 }
 
-const QList<QString>& AnimationController::stepList() const
+void AnimationController::updateLabelAndPostWindows()
 {
-	return m_stepList;
+	updateStepLabel(m_currentStepIndex);
+	emit indexChanged(m_currentStepIndex);
 }

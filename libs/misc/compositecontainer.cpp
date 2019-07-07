@@ -57,3 +57,8 @@ void CompositeContainer::addContainer(XmlAttributeContainer* c)
 {
 	impl->m_containers.push_back(c);
 }
+
+const std::vector<XmlAttributeContainer*>& CompositeContainer::containers() const
+{
+	return impl->m_containers;
+}

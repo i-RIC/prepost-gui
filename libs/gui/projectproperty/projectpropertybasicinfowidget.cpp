@@ -4,9 +4,11 @@
 #include "projectpropertybasicinfowidget.h"
 
 #include <cs/coordinatesystem.h>
+#include <guibase/timeformat/timeformatutil.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/project/projecttimesettingdialog.h>
 #include <pre/preprocessorwindow.h>
 
 #include <QDateTime>
@@ -20,8 +22,7 @@ ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget* parent) 
 	ui->setupUi(this);
 	connect(ui->csEditButton, SIGNAL(clicked()), this, SLOT(showSelectCoordinateSystemDialog()));
 	connect(ui->coEditButton, SIGNAL(clicked()), this, SLOT(showSetOffsetDialog()));
-	connect(ui->timeEdit, SIGNAL(dateTimeChanged(QDateTime)), this, SLOT(updateZeroDateTime(QDateTime)));
-	connect(ui->timeDisableCheckBox, SIGNAL(toggled(bool)), this, SLOT(setZeroDateTimeDisabled(bool)));
+	connect(ui->timeEditButton, SIGNAL(clicked()), this, SLOT(showTimeDialog()));
 }
 
 ProjectPropertyBasicInfoWidget::~ProjectPropertyBasicInfoWidget()
@@ -73,16 +74,9 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 		ui->resultWidget->setText(tr("No data"));
 	}
 
-	auto dt = data->mainfile()->zeroDateTime();
-	ui->timeDisableCheckBox->setChecked(dt.isNull());
-	if (dt.isNull()) {
-		ui->timeEdit->setDateTime(QDateTime::currentDateTime());
-	} else {
-		ui->timeEdit->setDateTime(dt);
-	}
-
 	updateCoordinateSystem();
 	updateCoordinateOffset();
+	updateTimeString();
 }
 
 void ProjectPropertyBasicInfoWidget::showSelectCoordinateSystemDialog()
@@ -90,6 +84,23 @@ void ProjectPropertyBasicInfoWidget::showSelectCoordinateSystemDialog()
 	int ret = m_projectData->mainfile()->showCoordinateSystemDialog();
 	if (ret == QDialog::Rejected) {return;}
 	updateCoordinateSystem();
+}
+
+void ProjectPropertyBasicInfoWidget::showTimeDialog()
+{
+	auto mainFile = m_projectData->mainfile();
+
+	ProjectTimeSettingDialog dialog(this);
+	dialog.setZeroDateTime(mainFile->zeroDateTime());
+	dialog.setTimeFormat(mainFile->timeFormat());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	mainFile->setZeroDateTime(dialog.zeroDateTime());
+	mainFile->setTimeFormat(dialog.timeFormat());
+
+	updateTimeString();
 }
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateSystem()
@@ -107,28 +118,23 @@ void ProjectPropertyBasicInfoWidget::showSetOffsetDialog()
 	updateCoordinateOffset();
 }
 
-void ProjectPropertyBasicInfoWidget::updateZeroDateTime(const QDateTime& datetime)
-{
-	auto mf = m_projectData->mainfile();
-	if (ui->timeDisableCheckBox->isChecked()) {
-		mf->setZeroDateTime(QDateTime());
-	} else {
-		mf->setZeroDateTime(datetime);
-	}
-}
-
-void ProjectPropertyBasicInfoWidget::setZeroDateTimeDisabled(bool disabled)
-{
-	auto mf = m_projectData->mainfile();
-	if (disabled) {
-		mf->setZeroDateTime(QDateTime());
-	} else {
-		mf->setZeroDateTime(ui->timeEdit->dateTime());
-	}
-}
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateOffset()
 {
 	auto offset = m_projectData->mainfile()->offset();
 	ui->coValue->setText(QString("(%1, %2)").arg(offset.x()).arg(offset.y()));
+}
+
+void ProjectPropertyBasicInfoWidget::updateTimeString()
+{
+	auto mainFile = m_projectData->mainfile();
+
+	QString timeStr = tr("(Not specified)");
+	auto zdt = mainFile->zeroDateTime();
+	if (! zdt.isNull()) {
+		timeStr = TimeFormatUtil::formattedString(zdt, 0, TimeFormat::actual_yyyy_mm_dd_HH_MM_SS);
+	}
+	QString formatStr = TimeFormatUtil::formatString(mainFile->timeFormat());
+
+	ui->timeValueLabel->setText(QString("%1 : %2").arg(timeStr).arg(formatStr));
 }

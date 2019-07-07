@@ -80,7 +80,6 @@ protected:
 //	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void informStepsUpdated();
 	static void clearContainers(QList<PostZoneDataContainer*>* conts);
 
 public slots:
@@ -90,15 +89,15 @@ public slots:
 	void checkCgnsStepsUpdate();
 	void exportCalculationResult();
 
-protected slots:
-	void handleIterationStepsUpdate(const QList<int>& steps);
-	void handleTimeStepsUpdate(const QList<double>& steps);
+private slots:
+	void informStepsUpdated();
 
 signals:
 	void currentStepUpdated();
 	void updated();
 	void allPostProcessorsUpdated();
-	void cgnsStepsUpdated(const QList<QString>& steps);
+	void cgnsTimeStepsUpdated(const QList<double>& steps);
+	void cgnsIterationStepsUpdated(const QList<int>& steps);
 	void cgnsStepsUpdated(int fn);
 	void zoneList1DUpdated();
 	void zoneList2DUpdated();

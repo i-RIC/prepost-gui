@@ -52,7 +52,6 @@ HEADERS += anms.h \
            stringcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
-           timeformat.h \
            valuechangert.h \
            valuerestorert.h \
            versionnumber.h \
@@ -109,7 +108,6 @@ SOURCES += anms.cpp \
            stringcontainer.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
-           timeformat.cpp \
            versionnumber.cpp \
            windowgeometrycontainer.cpp \
            xmlattributecontainer.cpp \

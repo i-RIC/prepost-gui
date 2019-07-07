@@ -14,6 +14,10 @@
 #define cgsize_t int
 #endif
 
+PostTimeSteps::PostTimeSteps(ProjectDataItem* parent) :
+	PostAbstractSteps(parent)
+{}
+
 void PostTimeSteps::loadFromCgnsFile(const int fn)
 {
 	QList<double> tmplist;
@@ -79,6 +83,16 @@ ERRORMSG:
 	QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 }
 
+const QList<double>& PostTimeSteps::timesteps() const
+{
+	return m_timesteps;
+}
+
+bool PostTimeSteps::dataExists() const
+{
+	return m_timesteps.size() > 0;
+}
+
 void PostTimeSteps::checkStepsUpdate(int fn)
 {
 	loadFromCgnsFile(fn);
@@ -88,4 +102,9 @@ void PostTimeSteps::checkStepsUpdate(int fn)
 void PostTimeSteps::informSteps()
 {
 	emit stepsUpdated(m_timesteps);
+}
+
+void PostTimeSteps::clearArray()
+{
+	m_timesteps.clear();
 }

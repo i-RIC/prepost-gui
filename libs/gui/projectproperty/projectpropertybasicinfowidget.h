@@ -24,12 +24,13 @@ public:
 private slots:
 	void showSelectCoordinateSystemDialog();
 	void showSetOffsetDialog();
-	void updateZeroDateTime(const QDateTime& datetime);
-	void setZeroDateTimeDisabled(bool disabled);
+	void showTimeDialog();
 
 private:
 	void updateCoordinateSystem();
 	void updateCoordinateOffset();
+	void updateTimeString();
+
 	ProjectData* m_projectData;
 	Ui::ProjectPropertyBasicInfoWidget* ui;
 };

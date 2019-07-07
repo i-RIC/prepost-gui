@@ -28,6 +28,10 @@ private:
 		NotRunning,
 		Running
 	};
+	enum StepMode {
+		Time,
+		Iteration,
+	};
 
 public:
 	const static int SLIDERWIDTH_MAX = 100;
@@ -37,8 +41,6 @@ public:
 	bool followLastStep() const;
 	/// Returns the index of current step
 	unsigned int currentStepIndex() const;
-	/// Returns the label of current index
-	const QString& currentStep() const;
 	/// Animation menu
 	QMenu* animationMenu() const;
 	/// Animation toolbar
@@ -51,8 +53,8 @@ public:
 	void setupToolBar();
 	/// Clear Steps data.
 	void clearSteps();
-	/// Returns the step list.
-	const QList<QString>& stepList() const;
+
+	void updateLabelAndPostWindows();
 
 public slots:
 	/// Step to next step
@@ -74,7 +76,8 @@ public slots:
 	/// Show Dialog to edit slowmotion speed
 	void editSlowmotionSpeed();
 	/// Update the list of step
-	void updateStepList(const QList<QString>& steps);
+	void updateTimeSteps(const QList<double>& steps);
+	void updateIterationSteps(const QList<int>& steps);
 	void setCurrentStepIndex(unsigned int i) override;
 	void handleRenderingEnded();
 
@@ -88,18 +91,19 @@ signals:
 	void indexChanged(unsigned int index);
 
 private:
+	int stepCount() const;
+	void setStepCount(int count);
 	void setupConnections();
 	void disableSteppingActions(bool disable = true);
 	void animationStep();
 	void updateStartButtonIcon();
 	/// Update the time (or iteration) step label.
-	void updateStepLabel(const QString& label);
+	void updateStepLabel(int step);
 
 public:
 	/// Menu that has actions related to animation control
 	class AnimationActions : public QObject
 	{
-
 	public:
 		/// Constructor
 		AnimationActions(QObject* parent);
@@ -121,7 +125,9 @@ private:
 	iRICMainWindow* m_parent;
 	QSlider* m_slider;
 	QLabel* m_currentLabel;
-	QList<QString> m_stepList;
+	StepMode m_stepMode;
+	QList<double> m_timeSteps;
+	QList<int> m_iterationSteps;
 	QTimer* m_timer;
 	unsigned int m_currentStepIndex;
 	RunMode m_runMode;

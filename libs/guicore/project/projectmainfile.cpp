@@ -21,7 +21,7 @@
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemselectdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guibase/timeformat/timeformatutil.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
@@ -111,6 +111,7 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_postProcessors {new ProjectPostProcessors(parent)},
 	m_coordinateSystem {nullptr},
 	m_zeroDateTime {},
+	m_timeFormat {TimeFormat::elapsed_SS_sec},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
 	m_parent {parent}
@@ -444,6 +445,9 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! dt.isEmpty()) {
 		impl->m_zeroDateTime = QDateTime::fromString(dt, Qt::ISODate);
 	}
+	// time format
+	QString f = element.attribute("timeFormat", "");
+	impl->m_timeFormat = TimeFormatUtil::fromString(f);
 
 	// coordinate offset
 	double offsetX = iRIC::getDoubleAttribute(node, "offsetX");
@@ -490,6 +494,7 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	if (! impl->m_zeroDateTime.isNull()) {
 		writer.writeAttribute("zeroDateTime", impl->m_zeroDateTime.toString(Qt::ISODate));
 	}
+	writer.writeAttribute("timeFormat", TimeFormatUtil::toString(impl->m_timeFormat));
 
 	iRIC::setDoubleAttribute(writer, "offsetX", impl->m_offset.x());
 	iRIC::setDoubleAttribute(writer, "offsetY", impl->m_offset.y());
@@ -1161,6 +1166,16 @@ const QDateTime& ProjectMainFile::zeroDateTime() const
 void ProjectMainFile::setZeroDateTime(const QDateTime& dt)
 {
 	impl->m_zeroDateTime = dt;
+}
+
+TimeFormat ProjectMainFile::timeFormat() const
+{
+	return impl->m_timeFormat;
+}
+
+void ProjectMainFile::setTimeFormat(TimeFormat format)
+{
+	impl->m_timeFormat = format;
 }
 
 QPointF ProjectMainFile::offset() const

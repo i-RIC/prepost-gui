@@ -632,7 +632,7 @@ void iRICMainWindow::setupForNewProjectData()
 	updatePostActionStatus();
 
 	// update animationcontroller
-	AnimationController* ac = dynamic_cast<AnimationController*>(m_animationController);
+	auto ac = m_animationController;
 	ac->setup(m_projectData->solverDefinition()->iterationType());
 	QToolBar* at = ac->animationToolBar();
 	if (at != nullptr) {addToolBar(at);}
@@ -842,6 +842,8 @@ void iRICMainWindow::showProjectPropertyDialog()
 	ProjectPropertyDialog dialog(this);
 	dialog.setProjectData(m_projectData);
 	dialog.exec();
+
+	m_animationController->updateLabelAndPostWindows();
 }
 
 void iRICMainWindow::cut()
@@ -1251,7 +1253,7 @@ void iRICMainWindow::switchCgnsFile(const QString& newcgns)
 		return;
 	}
 	// clear animation tool bar steps.
-	AnimationController* ac = dynamic_cast<AnimationController*>(m_animationController);
+	auto ac = m_animationController;
 	ac->clearSteps();
 	// switch cgns file.
 	m_projectData->mainfile()->switchCgnsFile(newcgns);
@@ -1270,7 +1272,9 @@ const VersionNumber& iRICMainWindow::versionNumber() const
 
 void iRICMainWindow::setupAnimationToolbar()
 {
-	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(cgnsStepsUpdated(QList<QString>)), m_animationController, SLOT(updateStepList(QList<QString>)));
+	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(cgnsTimeStepsUpdated(QList<double>)), m_animationController, SLOT(updateTimeSteps(QList<double>)));
+	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(cgnsIterationStepsUpdated(QList<int>)), m_animationController, SLOT(updateIterationSteps(QList<int>)));
+
 	m_projectData->mainfile()->postSolutionInfo()->informCgnsSteps();
 }
 

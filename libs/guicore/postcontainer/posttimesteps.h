@@ -3,6 +3,7 @@
 
 #include "../guicore_global.h"
 #include "postabstractsteps.h"
+
 #include <QList>
 
 /// This class stores the timesteps included in cgns file.
@@ -11,16 +12,15 @@ class GUICOREDLL_EXPORT PostTimeSteps : public PostAbstractSteps
 	Q_OBJECT
 
 public:
-	/// Constructor
-	PostTimeSteps(ProjectDataItem* parent) : PostAbstractSteps(parent) {}
+	PostTimeSteps(ProjectDataItem* parent);
 	void loadFromCgnsFile(const int fn) override;
-	const QList<double>& timesteps() const {return m_timesteps;}
-	bool dataExists() const override {return m_timesteps.count() > 0;}
+	const QList<double>& timesteps() const;
+	bool dataExists() const override;
 	void checkStepsUpdate(int fn);
 	void informSteps();
 
 protected:
-	void clearArray() override {m_timesteps.clear();}
+	void clearArray() override;
 
 signals:
 	void stepsUpdated(QList<double> steps);

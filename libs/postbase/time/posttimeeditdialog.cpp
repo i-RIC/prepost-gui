@@ -16,35 +16,21 @@ PostTimeEditDialog::~PostTimeEditDialog()
 
 void PostTimeEditDialog::setSetting(const PostTimeDataItem::Setting& setting)
 {
-	switch (TimeFormat::Format(setting.timeFormat)) {
-	case TimeFormat::Format::Second:
-		ui->secondRadioButton->setChecked(true);
-		break;
-	case TimeFormat::Format::MinuteSecond:
-		ui->minuteSecondRadioButton->setChecked(true);
-		break;
-	case TimeFormat::Format::HourMinuteSecond:
-		ui->hourMinuteSecondRadioButton->setChecked(true);
-		break;
-	case TimeFormat::Format::DayHourMinuteSecond:
-		ui->dayHourMinuteSecondRadioButton->setChecked(true);
-		break;
-	}
+	ui->useProjectSettingCheckBox->setChecked(setting.useProjectSetting);
+	ui->timeFormatEditWidget->setTimeFormat(setting.timeFormat.value());
 	ui->fontSettingWidget->setSetting(setting.fontSetting);
 }
 
 PostTimeDataItem::Setting PostTimeEditDialog::setting() const
 {
 	PostTimeDataItem::Setting ret;
-	if (ui->secondRadioButton->isChecked()) {
-		ret.timeFormat = TimeFormat::Format::Second;
-	} else if (ui->minuteSecondRadioButton->isChecked()) {
-		ret.timeFormat = TimeFormat::Format::MinuteSecond;
-	} else if (ui->hourMinuteSecondRadioButton->isChecked()) {
-		ret.timeFormat = TimeFormat::Format::HourMinuteSecond;
-	} else {
-		ret.timeFormat = TimeFormat::Format::DayHourMinuteSecond;
-	}
+	ret.useProjectSetting = ui->useProjectSettingCheckBox->isChecked();
+	ret.timeFormat = ui->timeFormatEditWidget->timeFormat();
 	ret.fontSetting = ui->fontSettingWidget->setting();
 	return ret;
+}
+
+void PostTimeEditDialog::setActualTimeAvailable(bool available)
+{
+	ui->timeFormatEditWidget->setActualTimeAvailable(available);
 }
