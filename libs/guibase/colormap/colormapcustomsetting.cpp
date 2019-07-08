@@ -5,7 +5,7 @@
 #include <QXmlStreamWriter>
 
 ColorMapCustomSetting::ColorMapCustomSetting():
-	type {"type", Type::TwoColors},
+	type {"type", Type::ThreeColors},
 	maxColor {"maxColor", Qt::red},
 	midColor {"midColor", Qt::white},
 	minColor {"minColor", Qt::blue},
