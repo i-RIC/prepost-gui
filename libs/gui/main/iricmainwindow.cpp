@@ -139,7 +139,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 
 	setMenuBar(m_actionManager->menuBar());
 	addToolBar(m_actionManager->mainToolBar());
-	addToolBar(Qt::RightToolBarArea, m_actionManager->windowsToolBar());
+	addToolBar(Qt::LeftToolBarArea, m_actionManager->windowsToolBar());
 	addToolBarBreak(Qt::TopToolBarArea);
 
 	// Update "New" submenu using the solver definition list.
