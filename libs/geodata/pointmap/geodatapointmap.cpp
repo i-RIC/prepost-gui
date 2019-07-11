@@ -1025,7 +1025,7 @@ void GeoDataPointmap::assignActorZValues(const ZDepthRange& range)
 	m_polyEdgeActor->SetPosition(0, 0, range.max());
 	m_InterpLineActor->SetPosition(0, 0, range.max());
 
-	double breakLineDepth = range.max() * 0.1 + range.min() * 0.9;
+	double breakLineDepth = range.max() * 0.9 + range.min() * 0.1;
 	for (int i = 0; i < m_breakLines.count(); ++i) {
 		m_breakLines[i]->setZDepthRange(breakLineDepth, breakLineDepth);
 	}
