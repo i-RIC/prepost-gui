@@ -1234,6 +1234,11 @@ void iRICMainWindow::warnSolverRunning() const
 	QMessageBox::warning(t, tr("Warning"), tr("The solver is running now. Please stop solver, to do this action."), QMessageBox::Ok);
 }
 
+const QLocale iRICMainWindow::locale() const
+{
+	return m_locale;
+}
+
 bool iRICMainWindow::isSolverRunning() const
 {
 	return m_solverConsoleWindow->isSolverRunning();
@@ -1251,6 +1256,16 @@ void iRICMainWindow::switchCgnsFile(const QString& newcgns)
 	// switch cgns file.
 	m_projectData->mainfile()->switchCgnsFile(newcgns);
 	updatePostActionStatus();
+}
+
+ProjectWorkspace* iRICMainWindow::workspace()
+{
+	return m_workspace;
+}
+
+const VersionNumber& iRICMainWindow::versionNumber() const
+{
+	return m_versionNumber;
 }
 
 void iRICMainWindow::setupAnimationToolbar()
@@ -1670,6 +1685,21 @@ void iRICMainWindow::setDebugMode(bool debug)
 	} else {
 		vtkObject::GlobalWarningDisplayOff();
 	}
+}
+
+bool iRICMainWindow::isDebugMode() const
+{
+	return m_debugMode;
+}
+
+bool iRICMainWindow::continuousSnapshotInProgress() const
+{
+	return m_continuousSnapshotInProgress;
+}
+
+void iRICMainWindow::setContinuousSnapshotInProgress(bool prog)
+{
+	m_continuousSnapshotInProgress = prog;
 }
 
 void iRICMainWindow::parseArgs()
@@ -2127,6 +2157,16 @@ QString iRICMainWindow::tmpFileName(int len) const
 		filename = hash.result().toHex();
 	}
 	return workDir.absoluteFilePath(filename);
+}
+
+AnimationControllerInterface* iRICMainWindow::animationController() const
+{
+	return m_animationController;
+}
+
+CoordinateSystemBuilder* iRICMainWindow::coordinateSystemBuilder() const
+{
+	return m_coordinateSystemBuilder;
 }
 
 void iRICMainWindow::checkCgnsStepsUpdate()
