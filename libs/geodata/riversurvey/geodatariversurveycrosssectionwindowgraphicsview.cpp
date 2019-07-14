@@ -44,6 +44,7 @@
 
 namespace {
 
+const int PREVIEW_LABEL_OFFSET = 3;
 int findRowToDraw(int rowToTry, const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRects)
 {
 	if (rowToTry == drawnRects->size()) {
@@ -747,14 +748,22 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 
 	// draw horizontal distance
 	double distH = std::fabs(selectedAlt.position() - m_editAltitudePreview.position());
-	QPointF p2(p.x(), startP.y());
+	QPointF p2(p.x(), startP.y() - PREVIEW_LABEL_OFFSET);
 	painter.drawText(p2, QString::number(distH));
 
 	// draw vertical distance
 	double distV = std::fabs(selectedAlt.height() - m_editAltitudePreview.height());
 	QPointF p3(endP.x(), p.y());
 	if (distV != 0) {
-		painter.drawText(p3, QString::number(distV));
+		QFontMetricsF metrics(painter.font());
+		auto distVStr = QString::number(distV);
+		auto rect = metrics.boundingRect(distVStr);
+
+		QRectF textRect(QPointF(p3.x() + PREVIEW_LABEL_OFFSET, p3.y()), rect.size());
+		if ((m_editAltitudePreview.position() - selectedAlt.position()) < 0) {
+			textRect = QRectF(QPointF(p3.x() - PREVIEW_LABEL_OFFSET - rect.width(), p3.y()), rect.size());
+		}
+		painter.drawText(textRect, distVStr);
 	}
 
 	painter.restore();
