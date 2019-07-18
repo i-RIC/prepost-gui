@@ -244,6 +244,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	m_arrowActor->VisibilityOff();
 	m_legendTextActor->VisibilityOff();
 	m_baseArrowActor->VisibilityOff();
+	m_scalarBarWidget->GetScalarBarActor()->VisibilityOff();
 	m_scalarBarWidget->SetEnabled(0);
 
 	m_actorCollection->RemoveAllItems();
@@ -254,6 +255,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
+	setupScalarBarSetting();  // avoid a null vtkScalarBarActor::LookupTable when using color 'By scalar value'
 	if (s.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
@@ -265,11 +267,6 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	updateColorSetting();
 	updatePolyData();
 	updateLegendData();
-
-	if (s.scalarBarSetting.visible && s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
-		m_scalarBarWidget->SetEnabled(1);
-		setupScalarBarSetting();
-	}
 
 	m_actorCollection->AddItem(m_arrowActor);
 	m_actor2DCollection->AddItem(m_legendTextActor);
