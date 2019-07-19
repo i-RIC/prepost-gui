@@ -4,7 +4,7 @@
 
 DistanceMeasureSetting::DistanceMeasureSetting() :
 	CompositeContainer({&defined, &point1, &point2,
-		&showLabel, &labelMode, &labelPosition, &labelFontSize, &customLabel,
+		&showLabel, &labelMode, &labelPosition, &labelFontSetting, &customLabel,
 		&showMarkers, &markerSize, &color}),
 	defined {"defined", false},
 	point1 {"point1"},
@@ -12,12 +12,14 @@ DistanceMeasureSetting::DistanceMeasureSetting() :
 	showLabel {"showLabel", true},
 	labelMode {"labelMode", Auto},
 	labelPosition {"labelPosition", vtkLabel2DActor::lpTopCenter},
-	labelFontSize {"fontSize", 12},
+	labelFontSetting {},
 	customLabel {"customLabel"},
 	showMarkers {"showMarkers", true},
 	markerSize {"markerSize", 7},
 	color {"color", Qt::black}
-{}
+{
+	labelFontSetting.fontSize = 12;
+}
 
 DistanceMeasureSetting::DistanceMeasureSetting(const DistanceMeasureSetting& setting) :
 	DistanceMeasureSetting {}

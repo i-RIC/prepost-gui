@@ -30,7 +30,7 @@ void PostTimeEditDialog::setSetting(const PostTimeDataItem::Setting& setting)
 		ui->dayHourMinuteSecondRadioButton->setChecked(true);
 		break;
 	}
-	ui->colorWidget->setColor(setting.color);
+	ui->fontSettingWidget->setSetting(setting.fontSetting);
 }
 
 PostTimeDataItem::Setting PostTimeEditDialog::setting() const
@@ -45,6 +45,6 @@ PostTimeDataItem::Setting PostTimeEditDialog::setting() const
 	} else {
 		ret.timeFormat = TimeFormat::Format::DayHourMinuteSecond;
 	}
-	ret.color = ui->colorWidget->color();
+	ret.fontSetting = ui->fontSettingWidget->setting();
 	return ret;
 }

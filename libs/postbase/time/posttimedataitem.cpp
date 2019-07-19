@@ -14,10 +14,12 @@
 #include <vtkTextProperty.h>
 
 PostTimeDataItem::Setting::Setting() :
-	CompositeContainer ({&timeFormat, &color}),
+	CompositeContainer ({&timeFormat, &fontSetting}),
 	timeFormat {"format", TimeFormat::Format::Second},
-	color {"color", Qt::black}
-{}
+	fontSetting {}
+{
+	fontSetting.fontSize = FONTSIZE;
+}
 
 PostTimeDataItem::Setting::Setting(const Setting& s) :
 	Setting()
@@ -98,9 +100,7 @@ void PostTimeDataItem::updateActorSettings()
 	m_timeActor->SetPosition(0.4, 0.05);
 
 	vtkTextProperty* prop = m_timeActor->GetTextProperty();
-	prop->SetColor(m_setting.color);
-	prop->SetFontFamilyToArial();
-	prop->SetFontSize(FONTSIZE);
+	m_setting.fontSetting.applySetting(prop);
 	prop->SetJustificationToLeft();
 	prop->SetVerticalJustificationToBottom();
 }

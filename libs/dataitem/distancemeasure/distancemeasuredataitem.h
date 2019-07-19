@@ -3,7 +3,6 @@
 
 #include "distancemeasure_api.h"
 #include "distancemeasuresetting.h"
-#include "distancemeasurecopypropertydialog.h"
 
 #include <guicore/datamodel/graphicswindowdataitem.h>
 

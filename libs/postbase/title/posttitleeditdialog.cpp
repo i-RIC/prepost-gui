@@ -27,15 +27,13 @@ bool PostTitleEditDialog::isEnabled() const
 void PostTitleEditDialog::setSetting(const PostTitleSetting& setting)
 {
 	ui->titleLineEdit->setText(setting.title);
-	ui->fontSizeSpinBox->setValue(setting.fontSize);
-	ui->colorWidget->setColor(setting.color);
+	ui->fontSettingWidget->setSetting(setting.fontSetting);
 }
 
 const PostTitleSetting PostTitleEditDialog::setting()
 {
 	PostTitleSetting ret;
 	ret.title = ui->titleLineEdit->text().trimmed();
-	ret.fontSize = ui->fontSizeSpinBox->value();
-	ret.color = ui->colorWidget->color();
+	ret.fontSetting = ui->fontSettingWidget->setting();
 	return ret;
 }

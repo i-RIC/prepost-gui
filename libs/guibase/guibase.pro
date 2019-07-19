@@ -104,6 +104,7 @@ HEADERS += arrowsettingcontainer.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
+           vtktextpropertysettingwidget.h \
            xyaxisdisplaysettingdialog.h \
            colormap/colormapcustomsetting.h \
            colormap/colormapcustomsettingcolor.h \
@@ -170,6 +171,7 @@ FORMS += scalarbardialog.ui \
          structuredgridregionselectwidget.ui \
          vtklinestylewidget.ui \
          vtktextpropertysettingdialog.ui \
+         vtktextpropertysettingwidget.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
@@ -217,6 +219,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtksubdividegrid.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
+           vtktextpropertysettingwidget.cpp \
            xyaxisdisplaysettingdialog.cpp \
            colormap/colormapcustomsetting.cpp \
            colormap/colormapcustomsettingcolor.cpp \

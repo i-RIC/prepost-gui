@@ -75,11 +75,7 @@ void PostTitleDataItem::updateActorSettings()
 	m_titleActor->SetPosition(0.5, 0.99);
 
 	vtkTextProperty* prop = m_titleActor->GetTextProperty();
-	double c[3];
-	iRIC::QColorToVTKColor(m_setting.color, c);
-	prop->SetColor(c);
-	prop->SetFontFamilyToArial();
-	prop->SetFontSize(m_setting.fontSize);
+	m_setting.fontSetting.applySetting(prop);
 	prop->SetJustificationToCentered();
 	prop->SetVerticalJustificationToTop();
 	updateVisibilityWithoutRendering();

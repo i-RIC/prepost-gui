@@ -1,36 +1,38 @@
-#include "ui_distancemeasurecopypropertydialog.h"
+#include "ui_distancemeasurepropertydialog.h"
 
-#include "distancemeasurecopypropertydialog.h"
+#include "distancemeasurepropertydialog.h"
 
 #include <QVector2D>
 
-DistanceMeasureCopyPropertyDialog::DistanceMeasureCopyPropertyDialog(QWidget* parent) :
+DistanceMeasurePropertyDialog::DistanceMeasurePropertyDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::DistanceMeasureCopyPropertyDialog}
+	ui {new Ui::DistanceMeasurePropertyDialog}
 {
 	ui->setupUi(this);
+	ui->labelFontSettingWidget->hideColor();
+
 	connect(ui->startPointXEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 	connect(ui->startPointYEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 	connect(ui->endPointXEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 	connect(ui->endPointYEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));
 }
 
-DistanceMeasureCopyPropertyDialog::~DistanceMeasureCopyPropertyDialog()
+DistanceMeasurePropertyDialog::~DistanceMeasurePropertyDialog()
 {
 	delete ui;
 }
 
-QString DistanceMeasureCopyPropertyDialog::name() const
+QString DistanceMeasurePropertyDialog::name() const
 {
 	return ui->nameLineEdit->text();
 }
 
-void DistanceMeasureCopyPropertyDialog::setName(const QString& name)
+void DistanceMeasurePropertyDialog::setName(const QString& name)
 {
 	ui->nameLineEdit->setText(name.trimmed());
 }
 
-DistanceMeasureSetting DistanceMeasureCopyPropertyDialog::setting() const
+DistanceMeasureSetting DistanceMeasurePropertyDialog::setting() const
 {
 	DistanceMeasureSetting ret = m_setting;
 
@@ -55,18 +57,19 @@ DistanceMeasureSetting DistanceMeasureCopyPropertyDialog::setting() const
 		ret.labelPosition = vtkLabel2DActor::lpMiddleRight;
 	}
 
-	ret.labelFontSize = ui->fontSizeSpinBox->value();
+	ret.labelFontSetting = ui->labelFontSettingWidget->setting();
 	ret.customLabel = ui->customLabelLineEdit->text();
 
 	ret.showMarkers = ui->showMarkersCheckBox->isChecked();
 	ret.markerSize = ui->markerSizeSpinBox->value();
 
 	ret.color = ui->colorWidget->color();
+	ret.labelFontSetting.fontColor = ret.color;
 
 	return ret;
 }
 
-void DistanceMeasureCopyPropertyDialog::setSetting(const DistanceMeasureSetting& setting)
+void DistanceMeasurePropertyDialog::setSetting(const DistanceMeasureSetting& setting)
 {
 	m_setting = setting;
 
@@ -100,7 +103,7 @@ void DistanceMeasureCopyPropertyDialog::setSetting(const DistanceMeasureSetting&
 		ui->lpCenterTop->setChecked(true);
 	}
 
-	ui->fontSizeSpinBox->setValue(setting.labelFontSize);
+	ui->labelFontSettingWidget->setSetting(setting.labelFontSetting);
 	ui->customLabelLineEdit->setText(setting.customLabel);
 
 	ui->showMarkersCheckBox->setChecked(setting.showMarkers);
@@ -109,12 +112,12 @@ void DistanceMeasureCopyPropertyDialog::setSetting(const DistanceMeasureSetting&
 	ui->colorWidget->setColor(setting.color);
 }
 
-void DistanceMeasureCopyPropertyDialog::updateAutoLabel()
+void DistanceMeasurePropertyDialog::updateAutoLabel()
 {
 	ui->autoLabelLabel->setText(autoLabel());
 }
 
-QString DistanceMeasureCopyPropertyDialog::autoLabel() const
+QString DistanceMeasurePropertyDialog::autoLabel() const
 {
 	QVector2D v1(ui->startPointXEdit->value(), ui->startPointYEdit->value());
 	QVector2D v2(ui->endPointXEdit->value(), ui->endPointYEdit->value());
