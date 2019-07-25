@@ -40,6 +40,9 @@ void GeoDataPointmapWebImporterRegionSelectDialog::setCoordinateSystem(Coordinat
 {
 	double lon, lat;
 	cs->mapGridToGeo(0, 0, &lon, &lat);
+	if (lat < -80 || lat > 80) {
+		lat = 0;
+	}
 
 	ui->mapWidget->setCenter(lon, lat);
 }
