@@ -45,7 +45,7 @@ public:
 	bool checkKmlExportCondition(const QString& target);
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& target);
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& target);
-	bool exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time);
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time, bool oneShot);
 
 	QList<QString> availableScalars();
 	bool checkShapeExportCondition(const QString& target);

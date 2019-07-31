@@ -2116,6 +2116,7 @@ void iRICMainWindow::exportStKML()
 
 	int step = s.startStep;
 	int fileIndex = 1;
+	bool oneShot = (s.startStep == s.endStep);
 	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
@@ -2125,7 +2126,7 @@ void iRICMainWindow::exportStKML()
 		}
 		m_animationController->setCurrentStepIndex(step);
 		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
-		bool ok = ew->exportKMLForTimestep(w, fileIndex, time, zoneName);
+		bool ok = ew->exportKMLForTimestep(w, fileIndex, time, zoneName, oneShot);
 		if (! ok) {
 			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
 			m_continuousSnapshotInProgress = false;
