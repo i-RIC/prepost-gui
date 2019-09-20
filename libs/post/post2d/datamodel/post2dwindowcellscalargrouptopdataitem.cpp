@@ -32,7 +32,9 @@ Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(P
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
-	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
+	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
+		if (PostZoneDataContainer::hasInputDataPrefix(val)) {continue;}
+
 		m_colorbarTitleMap.insert(val, val.c_str());
 		auto item = new Post2dWindowCellScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
 		m_scalarmap[val] = item;

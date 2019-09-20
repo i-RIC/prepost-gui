@@ -85,7 +85,7 @@ void Post2dWindowCellFlagDataItem::update()
 	if (cont == nullptr) {return;}
 	vtkPointSet* set = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
 	if (set == nullptr) {return;}
-	vtkIntArray* cellvals = vtkIntArray::SafeDownCast(set->GetCellData()->GetArray(m_attributeName.c_str()));
+	vtkIntArray* cellvals = vtkIntArray::SafeDownCast(set->GetCellData()->GetArray(PostZoneDataContainer::addInputDataPrefix(m_attributeName).c_str()));
 	if (cellvals == nullptr) {
 		// no data available.
 		return;

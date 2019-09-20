@@ -44,10 +44,18 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 
 	if (location == Vertex) {
 		vtkPointData* pd = zoneData->data()->GetPointData();
-		m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+		m_solutions.clear();
+		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+			if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
+			m_solutions.push_back(name);
+		}
 	} else if (location == CellCenter) {
 		vtkCellData* cd = zoneData->data()->GetCellData();
-		m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd);
+		m_solutions.clear();
+		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
+			if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
+			m_solutions.push_back(name);
+		}
 		ui->contourWidget->hideRadioButton(ContourSettingWidget::ContourFigure);
 	}
 	m_location = location;
