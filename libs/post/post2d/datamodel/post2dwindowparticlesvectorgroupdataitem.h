@@ -35,7 +35,7 @@ public:
 
 	void updateActorSettings();
 	void updateZDepthRangeItemCount() override;
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
