@@ -1383,3 +1383,28 @@ void PostZoneDataContainer::attachCalculatedResult(std::vector<PostCalculatedRes
 		m_calculatedResults.push_back(r);
 	}
 }
+
+std::string PostZoneDataContainer::inputDataPrefix()
+{
+	return "__input__";
+}
+
+std::string PostZoneDataContainer::addInputDataPrefix(const std::string& name)
+{
+	std::string newName = inputDataPrefix();
+	newName.append(name.c_str());
+	return newName;
+}
+
+std::string PostZoneDataContainer::removeInputDataPrefix(const std::string& name)
+{
+	auto prefix = inputDataPrefix();
+	return name.substr(prefix.size());
+}
+
+bool PostZoneDataContainer::hasInputDataPrefix(const std::string& name)
+{
+	auto prefix = inputDataPrefix();
+	auto subName = name.substr(0, prefix.size());
+	return subName == prefix;
+}
