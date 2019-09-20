@@ -3,6 +3,7 @@
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
+#include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
@@ -62,17 +63,25 @@ bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 	m_count = *count;
 
 	m_sr = new OGRSpatialReference();
-	char* geoRef;
-	geoRef = const_cast<char*>(m_dataset->GetProjectionRef());
-	OGRErr err = m_sr->importFromWkt(&geoRef);
+	std::string geoRef = m_dataset->GetProjectionRef();
+	char* geoRefPointer = const_cast<char*>(geoRef.c_str());
+	OGRErr err = m_sr->importFromWkt(&geoRefPointer);
 	if (err != OGRERR_NONE) {return false;}
 
 	char* projDef;
 
 	m_sr->exportToProj4(&projDef);
-	m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(projDef);
-	m_coordinateSystem->setName(projDef);
-	if (m_coordinateSystem == nullptr) {return false;}
+	if (*projDef != '\0') {
+		m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(projDef);
+		m_coordinateSystem->setName(projDef);
+		if (m_coordinateSystem == nullptr) {return false;}
+	} else {
+		int epsg = GdalUtil::wkt2Epsg(geoRef.c_str());
+		auto name = QString("EPSG:%1").arg(epsg);
+		m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->system(name);
+		m_coordinateSystem->setName(name);
+		if (m_coordinateSystem == nullptr) {return false;}
+	}
 
 	CPLFree(projDef);
 

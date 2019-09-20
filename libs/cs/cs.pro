@@ -62,6 +62,7 @@ HEADERS += coordinatesystem.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
            cs_api.h \
+           gdalutil.h \
            webmercatorutil.h \
            private/coordinatesystem_impl.h \
            private/webmercatorutil_impl.h
@@ -69,6 +70,7 @@ FORMS += coordinatesystemselectdialog.ui
 SOURCES += coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemselectdialog.cpp \
+           gdalutil.cpp \
            webmercatorutil.cpp
 RESOURCES += cs.qrc
 TRANSLATIONS += languages/iricCs_es_ES.ts \
