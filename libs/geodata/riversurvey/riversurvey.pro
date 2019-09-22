@@ -143,6 +143,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveyhonryuexportersettingdialog.h \
            geodatariversurveyimporter.h \
            geodatariversurveyimportersettingdialog.h \
+           geodatariversurveylandxmlexporter.h \
            geodatariversurveynodemapper.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
@@ -210,6 +211,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveyhonryuexportersettingdialog.cpp \
            geodatariversurveyimporter.cpp \
            geodatariversurveyimportersettingdialog.cpp \
+           geodatariversurveylandxmlexporter.cpp \
            geodatariversurveynodemapper.cpp \
            geodatariversurveyproxy.cpp \
            geodatariversurveyvtkexporter.cpp \
