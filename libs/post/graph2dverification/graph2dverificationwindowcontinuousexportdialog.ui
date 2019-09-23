@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Graph2dVerificationWindowContinuousExportDialog</class>
+ <widget class="QDialog" name="Graph2dVerificationWindowContinuousExportDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>357</width>
+    <height>593</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Snapshot Setting</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QGroupBox" name="directoryGroupBox">
+     <property name="title">
+      <string>Folder &amp;&amp; Prefix</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="folderLabel">
+        <property name="text">
+         <string>Folder:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DirnameEditWidget" name="directoryEditWidget" native="true"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="prefixLabel">
+        <property name="text">
+         <string>Prefix:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="prefixEdit"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Region</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="currentRegionCheckBox">
+          <property name="text">
+           <string>Current Only</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="fullRegionCheckBox">
+          <property name="text">
+           <string>Full Region</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="iMinLabel">
+        <property name="text">
+         <string>I Min:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="SliderWithValue" name="iMinSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="iMaxLabel">
+        <property name="text">
+         <string>I Max:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="SliderWithValue" name="iMaxSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="jMinLabel">
+        <property name="text">
+         <string>J Min:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="SliderWithValue" name="jMinSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="jMaxLabel">
+        <property name="text">
+         <string>J Max:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="SliderWithValue" name="jMaxSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="kMinLabel">
+        <property name="text">
+         <string>K Min:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="SliderWithValue" name="kMinSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="kMaxLabel">
+        <property name="text">
+         <string>K Max:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="SliderWithValue" name="kMaxSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="indexMinLabel">
+        <property name="text">
+         <string>Index Min:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="SliderWithValue" name="indexMinSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="indexMaxLabel">
+        <property name="text">
+         <string>Index Max:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="SliderWithValue" name="indexMaxSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="timeRangeGroupBox">
+     <property name="title">
+      <string>Time</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QCheckBox" name="timeCurrentOnlyCheckBox">
+          <property name="text">
+           <string>Current Only</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="timeAllCheckBox">
+          <property name="text">
+           <string>All Timesteps</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QLabel" name="dataStartLabel">
+          <property name="text">
+           <string>Start:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="SliderWithValue" name="timeStartSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="dataEndLabel">
+          <property name="text">
+           <string>End:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="SliderWithValue" name="timeEndSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="samplingLabel">
+          <property name="text">
+           <string>Skip rate :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QSpinBox" name="samplingSpinBox">
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SliderWithValue</class>
+   <extends>QSlider</extends>
+   <header>guibase/widget/sliderwithvalue.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DirnameEditWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/widget/dirnameeditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Graph2dVerificationWindowContinuousExportDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>569</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Graph2dVerificationWindowContinuousExportDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>iMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>iMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>jMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>138</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>238</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>jMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>256</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>indexMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>indexMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>290</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeCurrentOnlyCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeStartSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeCurrentOnlyCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeEndSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>485</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeCurrentOnlyCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>samplingSpinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>518</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeAllCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeStartSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>228</x>
+     <y>477</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeAllCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeEndSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>429</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>509</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeAllCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>samplingSpinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>95</x>
+     <y>527</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>iMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>82</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>iMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>83</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>jMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>30</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>jMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>83</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>80</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>82</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>indexMinSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>85</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>indexMaxSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>82</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

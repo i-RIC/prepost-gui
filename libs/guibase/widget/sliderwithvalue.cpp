@@ -39,7 +39,7 @@ void SliderWithValue::setValue(int val)
 	updateSpinBox();
 }
 
-int SliderWithValue::value()
+int SliderWithValue::value() const
 {
 	return m_slider->value();
 }

@@ -198,6 +198,21 @@ unix {
 }
 LIBS += -liricGraph2dscattered
 
+
+#iricGraph2dVerification library
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../post/graph2dverification/debug"
+	} else {
+		LIBS += -L"../post/graph2dverification/release"
+	}
+}
+unix {
+	LIBS += -L"../post/graph2dverification"
+}
+LIBS += -liricGraph2dVerification
+
 #iricGdRiversurvey library
 
 win32 {
