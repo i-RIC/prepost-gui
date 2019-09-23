@@ -282,7 +282,7 @@ void Post2dWindowParticlesVectorGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
-void Post2dWindowParticlesVectorGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowParticlesVectorGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_arrowActor->SetPosition(0, 0, range.max());
 }

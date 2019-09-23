@@ -52,7 +52,7 @@ void Post2dWindowParticlesScalarGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post2dWindowParticlesScalarGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowParticlesScalarGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
 }

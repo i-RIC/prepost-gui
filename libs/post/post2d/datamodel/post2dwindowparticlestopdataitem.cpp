@@ -122,8 +122,21 @@ void Post2dWindowParticlesTopDataItem::updateZDepthRangeItemCount(ZDepthRange& r
 
 void Post2dWindowParticlesTopDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_actor == nullptr) {return;}
-	m_actor->SetPosition(0, 0, range.min());
+	if (m_actor != nullptr){
+		m_actor->SetPosition(0, 0, range.min());
+	}
+	double center = (range.min() + range.max()) * 0.5;
+	if (m_scalarGroupDataItem != nullptr) {
+		auto r2 = range;
+		r2.setMin(center);
+		m_scalarGroupDataItem->assignActorZValues(r2);
+	}
+	if (m_vectorGroupDataItem != nullptr) {
+		auto r2 = range;
+		r2.setMax(center);
+		m_vectorGroupDataItem->assignActorZValues(r2);
+	}
+
 }
 
 void Post2dWindowParticlesTopDataItem::update()

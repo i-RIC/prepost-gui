@@ -29,8 +29,8 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
-	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void updateZDepthRangeItemCount() override;
+	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
