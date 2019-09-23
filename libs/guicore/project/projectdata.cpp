@@ -405,7 +405,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 	return lock();
 }
 
-bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
+bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder, bool openMessage)
 {
 	if (QFile::exists(newWorkFolder)) {
 		QFileInfo finfo(newWorkFolder);
@@ -436,7 +436,11 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 	} else {
 		watcher = std::unique_ptr<ExecuterWatcher> {mw->buildExecuteWatcher(executer)};
 	}
-	watcher->setMessage(tr("Saving project..."));
+	if (openMessage) {
+		watcher->setMessage(tr("Opening project..."));
+	} else {
+		watcher->setMessage(tr("Saving project..."));
+	}
 	watcher->execute();
 
 	if (executer->isCanceled()) {
