@@ -326,7 +326,7 @@ void iRICMainWindow::openProject(const QString& filename)
 			m_projectData = new ProjectData(filename, this);
 			// open project file. copying folder executed.
 			qApp->processEvents();
-			if (! m_projectData->copyTo(wFolder, true)) {
+			if (! m_projectData->copyTo(wFolder, true, true)) {
 				// copying failed or canceled.
 				closeProject();
 				return;

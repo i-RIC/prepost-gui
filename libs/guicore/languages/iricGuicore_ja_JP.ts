@@ -2134,9 +2134,14 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/projectdata.cpp" line="390"/>
-        <location filename="../project/projectdata.cpp" line="439"/>
+        <location filename="../project/projectdata.cpp" line="442"/>
         <source>Saving project...</source>
         <translation>プロジェクトを保存しています...</translation>
+    </message>
+    <message>
+        <location filename="../project/projectdata.cpp" line="440"/>
+        <source>Opening project...</source>
+        <translation>プロジェクトを開いています...</translation>
     </message>
 </context>
 <context>
@@ -2686,27 +2691,27 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="31"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="38"/>
         <source>Google Map (Road)</source>
         <translation>Google Map (道路)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="32"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="39"/>
         <source>Google Map (Satellite)</source>
         <translation>Google Map (衛星写真)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="33"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="40"/>
         <source>Google Map (Hybrid)</source>
         <translation>Google Map (ハイブリッド)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="34"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
         <source>Google Map (Terrain)</source>
         <translation>Google Map (地形)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="37"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
         <source>Open Street Map</source>
         <translation>Open Street Map</translation>
     </message>
@@ -2723,27 +2728,27 @@ Do you really want to import this file?</source>
         <translation type="vanished">Bing (道路地図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="40"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="51"/>
         <source>GSI (Standard) (Japan only)</source>
         <translation>国土地理院 (標準地図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="52"/>
         <source>GSI (Pale) (Japan only)</source>
         <translation>国土地理院 (淡色地図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="42"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="53"/>
         <source>GSI (English) (Japan only)</source>
         <translation>国土地理院 (English)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="43"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="54"/>
         <source>GSI (Relief) (Japan only)</source>
         <translation>国土地理院 (色別標高図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="55"/>
         <source>GSI (Ortho images) (Japan only)</source>
         <translation>国土地理院 (写真)</translation>
     </message>

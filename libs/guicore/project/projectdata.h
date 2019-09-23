@@ -85,7 +85,7 @@ public:
 	/// Move the work folder to the specified folder. Old folder is removed.
 	bool moveTo(const QString& newWorkFolder);
 	/// Copy the work folder to the specified folder. Old folder also is kept.
-	bool copyTo(const QString& newWorkFolder, bool switchToNewFolder);
+    bool copyTo(const QString& newWorkFolder, bool switchToNewFolder, bool openMessage = false);
 	/// Whether it is a folder project.
 	bool folderProject() const {return m_folderProject;}
 	/// Returns true when CGNS file size exceeds 2 GB.
