@@ -35,12 +35,15 @@ public:
 	/// if a file under baseFolder is selected, file name fill be the relative file name.
 	void setBaseFolder(const QString& folder);
 
+	void setSaveMode(bool saveMode);
+
 private slots:
 	void openDialog();
 
 private:
 	QString m_filter;
 	QString m_baseFolder;
+	bool m_saveMode;
 
 	Ui::FilenameEditWidget* ui;
 };
