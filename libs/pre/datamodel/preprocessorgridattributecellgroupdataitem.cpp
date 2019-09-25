@@ -3,6 +3,8 @@
 #include "../preprocessorwindow.h"
 #include "attributebrowserhelper.h"
 #include "preprocessorgridattributecelldataitem.h"
+#include "preprocessorgeodatacomplexgroupdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
@@ -13,9 +15,11 @@
 #include <guicore/datamodel/propertybrowserview.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guicore/pre/complex/gridcomplexconditiongroup.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
 #include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
 #include <guicore/pre/gridcond/container/gridattributerealcellcontainer.h>
 #include <guicore/project/projectdata.h>
@@ -309,14 +313,17 @@ void PreProcessorGridAttributeCellGroupDataItem::updateAttributeBrowser(vtkIdTyp
 	Grid* grid = gitem->grid();
 
 	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto geoTopItem = gtitem->geoDataTop();
 	SolverDefinitionGridType::GridType gt = gtitem->gridType()->defaultGridType();
 
 	QList<PropertyBrowserAttribute> atts;
 	const QList<GridAttributeContainer*> conds = grid->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		GridAttributeContainer* cond = *it;
-		GridAttributeIntegerCellContainer* icond = dynamic_cast<GridAttributeIntegerCellContainer*>(cond);
-		GridAttributeRealCellContainer* rcond = dynamic_cast<GridAttributeRealCellContainer*>(cond);
+		auto icond = dynamic_cast<GridAttributeIntegerCellContainer*>(cond);
+		auto rcond = dynamic_cast<GridAttributeRealCellContainer*>(cond);
+		auto ccond = dynamic_cast<GridComplexAttributeContainer*>(cond);
+
 		if (icond != nullptr) {
 			if (icond->gridAttribute()->isOption()) {
 				SolverDefinitionGridAttributeIntegerOptionCell* optCond =
@@ -329,6 +336,15 @@ void PreProcessorGridAttributeCellGroupDataItem::updateAttributeBrowser(vtkIdTyp
 			}
 		} else if (rcond != nullptr) {
 			PropertyBrowserAttribute att(rcond->gridAttribute()->caption(), rcond->value(cellid));
+			atts.append(att);
+		} else if (ccond != nullptr) {
+			auto group = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*>
+							(geoTopItem->groupDataItem(ccond->name()));
+			if (group->condition()->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
+
+			auto v = ccond->value(cellid);
+			GridComplexConditionGroup* g = group->groups().at(v - 1);
+			PropertyBrowserAttribute att(group->condition()->caption(), g->caption());
 			atts.append(att);
 		}
 	}
