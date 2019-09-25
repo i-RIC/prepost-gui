@@ -781,7 +781,7 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 
 			m_data->GetCellData()->AddArray(iarray);
 
-			return true;
+			continue;
 		}
 		// Find "Value" array.
 		int narrays;
