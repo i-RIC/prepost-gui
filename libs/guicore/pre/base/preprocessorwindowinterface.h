@@ -7,6 +7,8 @@
 class PreProcessorDataModelInterface;
 class PropertyBrowser;
 
+class QMenu;
+
 class GUICOREDLL_EXPORT PreProcessorWindowInterface : public QMainWindow
 {
 
@@ -14,6 +16,7 @@ public:
 	PreProcessorWindowInterface(QWidget* widget);
 	virtual ~PreProcessorWindowInterface();
 
+	virtual QMenu* calcCondMenu() const = 0;
 	virtual PreProcessorDataModelInterface* dataModel() const = 0;
 	virtual bool checkMappingStatus() = 0;
 	virtual void checkCalculationConditionImportSourceUpdate() = 0;

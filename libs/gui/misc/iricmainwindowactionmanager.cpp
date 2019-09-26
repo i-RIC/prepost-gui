@@ -878,6 +878,7 @@ void iRICMainWindowActionManager::updateMenuBar()
 	for (QMenu* m : m_additionalMenus) {
 		m_menuBar->addMenu(m);
 	}
+	m_menuBar->addMenu(m_parent->preProcessorWindow()->calcCondMenu());
 	m_menuBar->addMenu(m_simulationMenu);
 	if (m_animationMenu != nullptr) {
 		viewAnimationToolBarAction->setVisible(true);
