@@ -48,7 +48,7 @@ InputConditionWidgetImage::InputConditionWidgetImage(QDomNode defNode, const Sol
 	m_label->setPixmap(m_image);
 	m_label->setMaximumSize(m_image.size());
 
-	m_checkSubImages = new InputConditionDependencyCheckSubimages(this);
+	m_checkSubImages = new InputConditionDependencyCheckSubImages(this);
 }
 
 void InputConditionWidgetImage::addTooltip(const QString &)
@@ -69,7 +69,7 @@ void InputConditionWidgetImage::inactivateSubImages()
 	m_label->setPixmap(m_image);
 }
 
-InputConditionDependencyCheckSubimages* InputConditionWidgetImage::checkSubImages() const
+InputConditionDependencyCheckSubImages* InputConditionWidgetImage::checkSubImages() const
 {
 	return m_checkSubImages;
 }

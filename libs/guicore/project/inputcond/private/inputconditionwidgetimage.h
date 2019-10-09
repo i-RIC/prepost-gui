@@ -8,7 +8,7 @@
 
 #include <map>
 
-class InputConditionDependencyCheckSubimages;
+class InputConditionDependencyCheckSubImages;
 class SolverDefinitionTranslator;
 
 class QDir;
@@ -26,14 +26,14 @@ public:
 	void activateSubImage(const QString& name);
 	void inactivateSubImages();
 
-	InputConditionDependencyCheckSubimages* checkSubImages() const;
+	InputConditionDependencyCheckSubImages* checkSubImages() const;
 
 private:
 	QLabel* m_label;
 	QPixmap m_image;
 	std::map<QString, QPixmap> m_subImages;
 
-	InputConditionDependencyCheckSubimages* m_checkSubImages;
+	InputConditionDependencyCheckSubImages* m_checkSubImages;
 };
 
 #endif // INPUTCONDITIONWIDGETIMAGE_H
