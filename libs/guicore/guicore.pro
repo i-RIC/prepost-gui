@@ -515,6 +515,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditioncontainerinteger_impl.h \
            project/inputcond/private/inputconditioncontainerreal_impl.h \
            project/inputcond/private/inputconditioncontainerstring_impl.h \
+           project/inputcond/private/inputconditiondependencychecksubcaptions.h \
            project/inputcond/private/inputconditiondependencychecksubimages.h \
            project/inputcond/private/inputconditiondependencyconditionalways.h \
            project/inputcond/private/inputconditiondependencyconditionand.h \
@@ -525,6 +526,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditiondependencyconditionislessthan.h \
            project/inputcond/private/inputconditiondependencyconditionnot.h \
            project/inputcond/private/inputconditiondependencyconditionor.h \
+           project/inputcond/private/inputconditiondependencysetsubcaptionaction.h \
            project/inputcond/private/inputconditiondependencysetsubimageaction.h \
            project/inputcond/private/inputconditionwidgetfoldername.h \
            project/inputcond/private/inputconditionwidgetfunctional.h \
@@ -534,6 +536,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditionwidgetimage.h \
            project/inputcond/private/inputconditionwidgetinteger.h \
            project/inputcond/private/inputconditionwidgetintegeroption.h \
+           project/inputcond/private/inputconditionwidgetlabel.h \
            project/inputcond/private/inputconditionwidgetreal.h \
            project/inputcond/private/inputconditionwidgetrealoption.h \
            project/inputcond/private/inputconditionwidgetstring.h \
@@ -809,6 +812,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/editwidget/gridattributerealeditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
+           project/inputcond/private/inputconditiondependencychecksubcaptions.cpp \
            project/inputcond/private/inputconditiondependencychecksubimages.cpp \
            project/inputcond/private/inputconditiondependencyconditionalways.cpp \
            project/inputcond/private/inputconditiondependencyconditionand.cpp \
@@ -819,6 +823,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditiondependencyconditionislessthan.cpp \
            project/inputcond/private/inputconditiondependencyconditionnot.cpp \
            project/inputcond/private/inputconditiondependencyconditionor.cpp \
+           project/inputcond/private/inputconditiondependencysetsubcaptionaction.cpp \
            project/inputcond/private/inputconditiondependencysetsubimageaction.cpp \
            project/inputcond/private/inputconditionwidgetfoldername.cpp \
            project/inputcond/private/inputconditionwidgetfunctional.cpp \
@@ -828,6 +833,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditionwidgetimage.cpp \
            project/inputcond/private/inputconditionwidgetinteger.cpp \
            project/inputcond/private/inputconditionwidgetintegeroption.cpp \
+           project/inputcond/private/inputconditionwidgetlabel.cpp \
            project/inputcond/private/inputconditionwidgetreal.cpp \
            project/inputcond/private/inputconditionwidgetrealoption.cpp \
            project/inputcond/private/inputconditionwidgetstring.cpp \
