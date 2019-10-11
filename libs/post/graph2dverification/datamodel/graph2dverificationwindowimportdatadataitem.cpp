@@ -1,3 +1,4 @@
+#if SKIP
 #include "../graph2dverificationwindowview.h"
 #include "graph2dverificationwindowimportdatadataitem.h"
 #include "graph2dverificationwindowimportdatagroupdataitem.h"
@@ -174,3 +175,4 @@ bool Graph2dVerificationWindowImportDataDataItem::axisNeeded(Graph2dVerification
 {
 	return (m_setting.axisSide() == as);
 }
+#endif

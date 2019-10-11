@@ -1,3 +1,4 @@
+#if SKIP
 #include "../graph2dverificationwindowresultsetting.h"
 #include "../graph2dverificationwindowview.h"
 #include "graph2dverificationwindowbaseiterativeresultdataitem.h"
@@ -66,3 +67,4 @@ Graph2dVerificationWindowResultCopyDataItem* Graph2dVerificationWindowBaseIterat
 
 	return ret;
 }
+#endif

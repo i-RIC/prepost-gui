@@ -1,3 +1,4 @@
+#if SKIP
 #include "graph2dverificationwindowresultcopydataitem.h"
 #include "graph2dverificationwindowresultcopygroupdataitem.h"
 #include "graph2dverificationwindowresultdataitem.h"
@@ -71,3 +72,4 @@ bool Graph2dVerificationWindowResultCopyGroupDataItem::axisNeeded(Graph2dVerific
 	}
 	return needed;
 }
+#endif

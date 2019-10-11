@@ -189,16 +189,8 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationwindowresultsetting.h \
 					 graph2dverificationwindowview.h \
 					 graph2dverificationwindowprojectdataitem.h \
-					 datamodel/graph2dverificationwindowbaseiterativeresultdataitem.h \
 					 datamodel/graph2dverificationwindowdrawsettingdialog.h \
-					 datamodel/graph2dverificationwindowgridijkresultdataitem.h \
-					 datamodel/graph2dverificationwindowgridpointresultdataitem.h \
 					 datamodel/graph2dverificationwindowgridpolylineresultdataitem.h \
-					 datamodel/graph2dverificationwindowimportdatadataitem.h \
-					 datamodel/graph2dverificationwindowimportdatagroupdataitem.h \
-					 datamodel/graph2dverificationwindowresultcopydataitem.h \
-					 datamodel/graph2dverificationwindowresultcopygroupdataitem.h \
-					 datamodel/graph2dverificationwindowresultdataitem.h \
 					 datamodel/graph2dverificationwindowresultgroupdataitem.h \
 					 datamodel/graph2dverificationwindowrootdataitem.h \
 					 datamodel/graph2dverificationwindowsettingwidget.h \
@@ -227,16 +219,8 @@ SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindowresultsetting.cpp \
 					 graph2dverificationwindowview.cpp \
 					 graph2dverificationwindowprojectdataitem.cpp \
-					 datamodel/graph2dverificationwindowbaseiterativeresultdataitem.cpp \
 					 datamodel/graph2dverificationwindowdrawsettingdialog.cpp \
-					 datamodel/graph2dverificationwindowgridijkresultdataitem.cpp \
-					 datamodel/graph2dverificationwindowgridpointresultdataitem.cpp \
 					 datamodel/graph2dverificationwindowgridpolylineresultdataitem.cpp \
-					 datamodel/graph2dverificationwindowimportdatadataitem.cpp \
-					 datamodel/graph2dverificationwindowimportdatagroupdataitem.cpp \
-					 datamodel/graph2dverificationwindowresultcopydataitem.cpp \
-					 datamodel/graph2dverificationwindowresultcopygroupdataitem.cpp \
-					 datamodel/graph2dverificationwindowresultdataitem.cpp \
 					 datamodel/graph2dverificationwindowresultgroupdataitem.cpp \
 					 datamodel/graph2dverificationwindowrootdataitem.cpp \
 					 datamodel/graph2dverificationwindowsettingwidget.cpp \

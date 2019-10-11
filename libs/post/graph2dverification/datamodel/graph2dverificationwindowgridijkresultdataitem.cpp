@@ -1,3 +1,4 @@
+#if SKIP
 #include "../graph2dverificationwindow.h"
 #include "../graph2dverificationwindowcontrolwidget.h"
 #include "../graph2dverificationwindowresultsetting.h"
@@ -507,3 +508,4 @@ Graph2dVerificationWindowResultCopyDataItem* Graph2dVerificationWindowGridIJKRes
 #endif
 	return ret;
 }
+#endif
