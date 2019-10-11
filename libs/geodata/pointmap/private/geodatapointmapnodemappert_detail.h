@@ -19,6 +19,15 @@ DoubleMappingSetting setupSetting(unsigned int target, vtkCell* cell, double* we
 	return setting;
 }
 
+bool isNodeInsideBounds(double point[3], double bounds[6])
+{
+	for (int i = 0; i < 3; ++i) {
+		if (point[i] < bounds[i * 2]) {return false;}
+		if (point[i] > bounds[i * 2 + 1]) {return false;}
+	}
+	return true;
+}
+
 } // namespace
 
 template <class V, class DA>
@@ -42,12 +51,17 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapperT<V, DA>::initialize(bool* boolM
 
 
 	} else {
+		double bounds[6];
+		tmpgrid->GetBounds(bounds);
+
 		for (unsigned int i = 0; i < count; ++i) {
 			if (*(boolMap + i)) {continue;}
 
 			// not mapped yet.
 			double point[3];
 			GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
+			if (!isNodeInsideBounds(point, bounds)) { continue; }
+
 			// investigate whether the point is inside one of the cells.
 			vtkIdType cellid;
 			double pcoords[3];
