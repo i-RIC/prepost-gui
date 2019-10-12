@@ -147,6 +147,12 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 	delete m_rightClickingMenu;
 }
 
+void GeoDataRiverSurvey::setCaption(const QString& cap)
+{
+	GeoData::setCaption(cap);
+	updateCrossectionWindows();
+}
+
 void GeoDataRiverSurvey::setupActors()
 {
 	vtkSmartPointer<vtkDataSetMapper> mapper;

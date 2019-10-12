@@ -83,6 +83,7 @@ public:
 	GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	~GeoDataRiverSurvey();
 
+	void setCaption(const QString& cap) override;
 	void setupActors() override;
 	void setupMenu() override;
 	void setupDataItem() override;
