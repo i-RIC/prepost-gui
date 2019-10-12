@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOWGRAPHICSVIEW_H
 
 #include "geodatarivercrosssection.h"
+#include "geodatariverpathpoint.h"
 
 #include <QAbstractItemView>
 
@@ -164,6 +165,7 @@ private:
 	QPoint m_dragStartPoint;
 	QMatrix m_matrix;
 	GeoDataRiverCrosssection::Altitude m_editAltitudePreview;
+	GeoDataRiverPathPoint m_oldLine;
 	QString m_editRatio;
 	bool m_gridMode;
 };

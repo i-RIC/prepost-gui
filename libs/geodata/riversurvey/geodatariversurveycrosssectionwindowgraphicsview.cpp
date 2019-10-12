@@ -167,6 +167,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 			drawLine(refPoint, c, painter);
 		}
 
+		drawLine(&m_oldLine, Qt::gray, painter);
 		for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
 			GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints().at(i);
 			if (p == nullptr) {continue;}
@@ -1137,6 +1138,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseDoubleClickEvent(QMo
 {
 	if (m_mouseEventMode == meEditCrosssection && event->button() == Qt::LeftButton) {
 		m_mouseEventMode = meNormal;
+		m_oldLine.crosssection().AltitudeInfo().clear();
 		updateMouseCursor();
 		viewport()->update();
 	}
@@ -1146,6 +1148,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::keyReleaseEvent(QKeyEvent
 {
 	if (m_mouseEventMode == meEditCrosssection && (iRIC::isEnterKey(event->key()) || event->key() == Qt::Key_Escape)) {
 		m_mouseEventMode = meNormal;
+		m_oldLine.crosssection().AltitudeInfo().clear();
 		updateMouseCursor();
 		viewport()->update();
 	}
@@ -1646,6 +1649,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode
 	const auto& alist = xsec.AltitudeInfo();
 	const auto& selectedAlt = alist.at(index.row());
 	m_editAltitudePreview = selectedAlt;
+	m_oldLine.crosssection().AltitudeInfo() = alist;
 
 	updateMouseCursor();
 }
