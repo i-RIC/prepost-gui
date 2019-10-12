@@ -24,7 +24,7 @@ void GeoDataRiverSurvey::AddExtensionCommand::redo()
 	m_rs->setModified();
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();
-	m_rs->updateCrossectionWindows();
+	m_rs->updateCrosssectionWindows();
 }
 
 void GeoDataRiverSurvey::AddExtensionCommand::undo()
@@ -41,6 +41,6 @@ void GeoDataRiverSurvey::AddExtensionCommand::undo()
 		m_rs->headPoint()->updateRiverShapeInterpolators();
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
+		m_rs->updateCrosssectionWindows();
 	}
 }

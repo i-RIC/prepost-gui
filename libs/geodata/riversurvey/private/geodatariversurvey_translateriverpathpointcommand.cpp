@@ -38,7 +38,7 @@ void GeoDataRiverSurvey::TranslateRiverPathPointCommand::redo()
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();
-	m_rs->updateCrossectionWindows();
+	m_rs->updateCrosssectionWindows();
 	m_rs->setMapped(false);
 }
 
@@ -51,7 +51,7 @@ void GeoDataRiverSurvey::TranslateRiverPathPointCommand::undo()
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();
-	m_rs->updateCrossectionWindows();
+	m_rs->updateCrosssectionWindows();
 }
 
 int GeoDataRiverSurvey::TranslateRiverPathPointCommand::id() const

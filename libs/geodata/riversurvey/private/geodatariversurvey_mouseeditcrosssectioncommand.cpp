@@ -24,7 +24,7 @@ void GeoDataRiverSurvey::MouseEditCrosssectionCommand::redo()
 	} else {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
+		m_rs->updateCrosssectionWindows();
 	}
 }
 
@@ -35,7 +35,7 @@ void GeoDataRiverSurvey::MouseEditCrosssectionCommand::undo()
 	m_point->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();
-	m_rs->updateCrossectionWindows();
+	m_rs->updateCrosssectionWindows();
 }
 
 int GeoDataRiverSurvey::MouseEditCrosssectionCommand::id() const

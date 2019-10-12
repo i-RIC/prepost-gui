@@ -150,7 +150,7 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 void GeoDataRiverSurvey::setCaption(const QString& cap)
 {
 	GeoData::setCaption(cap);
-	updateCrossectionWindows();
+	updateCrosssectionWindows();
 }
 
 void GeoDataRiverSurvey::setupActors()
@@ -1844,7 +1844,7 @@ void GeoDataRiverSurvey::openCrossSectionWindow()
 	gItem->openCrossSectionWindow(this, selectedPoint()->name());
 }
 
-void GeoDataRiverSurvey::updateCrossectionWindows()
+void GeoDataRiverSurvey::updateCrosssectionWindows()
 {
 	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 	gItem->updateCrossectionWindows();
