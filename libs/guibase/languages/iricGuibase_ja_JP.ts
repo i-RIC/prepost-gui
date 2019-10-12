@@ -635,6 +635,85 @@
     </message>
 </context>
 <context>
+    <name>TimeFormatEditWidget</name>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="20"/>
+        <source>Value type</source>
+        <translation>値の種類</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="26"/>
+        <source>Show elapsed time</source>
+        <translation>経過時間を表示</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="36"/>
+        <source>Show actual time</source>
+        <translation>日付・時刻を表示</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="46"/>
+        <source>Elapsed time format</source>
+        <translation>経過時間の書式</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="52"/>
+        <source>SS sec</source>
+        <translation>SS sec</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="62"/>
+        <source>MM:SS</source>
+        <translation>MM:SS</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="69"/>
+        <location filename="../timeformat/timeformateditwidget.ui" line="126"/>
+        <source>HH:MM:SS</source>
+        <translation>HH:MM:SS</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="76"/>
+        <source>DD:HH:MM:SS</source>
+        <translation>DD:HH:MM:SS</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="89"/>
+        <source>Actual time format</source>
+        <translation>日付・時刻の書式</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="95"/>
+        <source>yyyy/mm/dd HH:MM:SS</source>
+        <translation>yyyy/mm/dd HH:MM:SS</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="105"/>
+        <source>yyyy/mm/dd HH:MM</source>
+        <translation>yyyy/mm/dd HH:MM</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="112"/>
+        <source>mm/dd HH:MM:SS</source>
+        <translation>mm/dd HH:MM:SS</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="119"/>
+        <source>mm/dd HH:MM</source>
+        <translation>mm/dd HH:MM</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="133"/>
+        <source>HH:MM</source>
+        <translation>HH:MM</translation>
+    </message>
+</context>
+<context>
     <name>TooltipLabel</name>
     <message>
         <location filename="../tooltiplabel.cpp" line="13"/>
@@ -778,62 +857,118 @@
         <translation>フォント設定</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="22"/>
+        <source>Font:</source>
+        <translation type="vanished">フォント:</translation>
+    </message>
+    <message>
+        <source>Arial</source>
+        <translation type="vanished">Arial</translation>
+    </message>
+    <message>
+        <source>Courier</source>
+        <translation type="vanished">Courier</translation>
+    </message>
+    <message>
+        <source>Times</source>
+        <translation type="vanished">Times</translation>
+    </message>
+    <message>
+        <source>Bold</source>
+        <translation type="vanished">太字</translation>
+    </message>
+    <message>
+        <source>B</source>
+        <translation type="vanished">B</translation>
+    </message>
+    <message>
+        <source>Italic</source>
+        <translation type="vanished">斜体</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="vanished">I</translation>
+    </message>
+    <message>
+        <source>Shadow</source>
+        <translation type="vanished">影</translation>
+    </message>
+    <message>
+        <source>S</source>
+        <translation type="vanished">S</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">色:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">サイズ:</translation>
+    </message>
+</context>
+<context>
+    <name>vtkTextPropertySettingWidget</name>
+    <message>
+        <location filename="../vtktextpropertysettingwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <location filename="../vtktextpropertysettingwidget.ui" line="48"/>
         <source>Font:</source>
         <translation>フォント:</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="32"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="58"/>
         <source>Arial</source>
         <translation>Arial</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="37"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="63"/>
         <source>Courier</source>
         <translation>Courier</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="42"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="68"/>
         <source>Times</source>
         <translation>Times</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="62"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="88"/>
         <source>Bold</source>
         <translation>太字</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="65"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="91"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="91"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="117"/>
         <source>Italic</source>
         <translation>斜体</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="94"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="120"/>
         <source>I</source>
         <translation>I</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="121"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="147"/>
         <source>Shadow</source>
         <translation>影</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="124"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="150"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="152"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="178"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="186"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="212"/>
         <source>Size:</source>
         <translation>サイズ:</translation>
     </message>

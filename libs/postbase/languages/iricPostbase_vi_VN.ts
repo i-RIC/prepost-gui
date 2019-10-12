@@ -243,7 +243,7 @@
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="35"/>
+        <location filename="../time/posttimedataitem.cpp" line="67"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
@@ -262,32 +262,12 @@
     </message>
     <message>
         <location filename="../time/posttimeeditdialog.ui" line="20"/>
-        <source>Format</source>
+        <source>Use project setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../time/posttimeeditdialog.ui" line="26"/>
-        <source>ss sec</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../time/posttimeeditdialog.ui" line="33"/>
-        <source>mm:ss</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../time/posttimeeditdialog.ui" line="40"/>
-        <source>hh:mm:ss</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../time/posttimeeditdialog.ui" line="47"/>
-        <source>dd:hh:mm:ss</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../time/posttimeeditdialog.ui" line="59"/>
-        <source>Color:</source>
+        <location filename="../time/posttimeeditdialog.ui" line="30"/>
+        <source>Time Format</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -314,16 +294,6 @@
     <message>
         <location filename="../title/posttitleeditdialog.ui" line="56"/>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../title/posttitleeditdialog.ui" line="65"/>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../title/posttitleeditdialog.ui" line="96"/>
-        <source>Font size:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

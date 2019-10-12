@@ -4,42 +4,42 @@
 <context>
     <name>AnimationController</name>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="48"/>
+        <location filename="../misc/animationcontroller.cpp" line="114"/>
         <source>Animation ToolBar</source>
         <translation>アニメーションツールバー</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="186"/>
+        <location filename="../misc/animationcontroller.cpp" line="231"/>
         <source>&amp;Animation</source>
         <translation>アニメーション(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="201"/>
+        <location filename="../misc/animationcontroller.cpp" line="246"/>
         <source>Step &amp;Backward</source>
         <translation>一つ前へ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="204"/>
+        <location filename="../misc/animationcontroller.cpp" line="249"/>
         <source>Step &amp;Forward</source>
         <translation>一つ次へ(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="210"/>
+        <location filename="../misc/animationcontroller.cpp" line="255"/>
         <source>Go to &amp;Last Step</source>
         <translation>最後のステップへ(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="213"/>
+        <location filename="../misc/animationcontroller.cpp" line="258"/>
         <source>&amp;Start/Stop Animation</source>
         <translation>開始/停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="216"/>
+        <location filename="../misc/animationcontroller.cpp" line="261"/>
         <source>S&amp;top Animation</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="223"/>
+        <location filename="../misc/animationcontroller.cpp" line="268"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation>再生速度を設定(&amp;E)...</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="obsolete">一つ次へ(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="207"/>
+        <location filename="../misc/animationcontroller.cpp" line="252"/>
         <source>&amp;Reset</source>
         <translation>先頭へ(&amp;R)</translation>
     </message>
@@ -69,7 +69,7 @@
         <translation type="obsolete">停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="219"/>
+        <location filename="../misc/animationcontroller.cpp" line="264"/>
         <source>Toggle &amp;following last step</source>
         <translation>常に最後のステップを表示(&amp;F)</translation>
     </message>
@@ -12870,6 +12870,7 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="239"/>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="277"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="315"/>
         <source>&amp;Edit...</source>
         <translation>編集(&amp;E)...</translation>
     </message>
@@ -12879,54 +12880,60 @@ Do you really want to import this file?</source>
         <translation>座標 オフセット:</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="34"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="299"/>
+        <source>Date for t = 0:</source>
+        <translation>t = 0 の日付</translation>
+    </message>
+    <message>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="37"/>
         <source>(No data)</source>
         <translation>(まだ保存していません)</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="41"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="44"/>
         <source>(Not saved yet)</source>
         <translation>(まだ保存していません)</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="53"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="56"/>
         <source>Setup finished</source>
         <translation>設定完了</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="56"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="59"/>
         <source>Setup unfinished</source>
         <translation>設定が未完了</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="59"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="62"/>
         <source>Setup partially unfinished</source>
         <translation>一部の格子で設定が未完了</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="64"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="67"/>
         <source>Already set</source>
         <translation>設定済み</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="66"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="69"/>
         <source>Not set yet</source>
         <translation>未設定</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="69"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="72"/>
         <source>Data exists</source>
         <translation>データあり</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="71"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="74"/>
         <source>No data</source>
         <translation>データなし</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="89"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="111"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="132"/>
         <source>(Not specified)</source>
-        <translation>(指定されていない)</translation>
+        <translation>(未設定)</translation>
     </message>
 </context>
 <context>
@@ -16095,18 +16102,18 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="470"/>
         <location filename="../main/iricmainwindow.cpp" line="579"/>
         <location filename="../main/iricmainwindow.cpp" line="820"/>
-        <location filename="../main/iricmainwindow.cpp" line="871"/>
-        <location filename="../main/iricmainwindow.cpp" line="885"/>
-        <location filename="../main/iricmainwindow.cpp" line="903"/>
-        <location filename="../main/iricmainwindow.cpp" line="961"/>
-        <location filename="../main/iricmainwindow.cpp" line="1117"/>
-        <location filename="../main/iricmainwindow.cpp" line="1234"/>
-        <location filename="../main/iricmainwindow.cpp" line="1703"/>
-        <location filename="../main/iricmainwindow.cpp" line="1707"/>
-        <location filename="../main/iricmainwindow.cpp" line="1730"/>
-        <location filename="../main/iricmainwindow.cpp" line="2175"/>
-        <location filename="../main/iricmainwindow.cpp" line="2301"/>
-        <location filename="../main/iricmainwindow.cpp" line="2321"/>
+        <location filename="../main/iricmainwindow.cpp" line="873"/>
+        <location filename="../main/iricmainwindow.cpp" line="887"/>
+        <location filename="../main/iricmainwindow.cpp" line="905"/>
+        <location filename="../main/iricmainwindow.cpp" line="963"/>
+        <location filename="../main/iricmainwindow.cpp" line="1119"/>
+        <location filename="../main/iricmainwindow.cpp" line="1236"/>
+        <location filename="../main/iricmainwindow.cpp" line="1737"/>
+        <location filename="../main/iricmainwindow.cpp" line="1741"/>
+        <location filename="../main/iricmainwindow.cpp" line="1764"/>
+        <location filename="../main/iricmainwindow.cpp" line="2219"/>
+        <location filename="../main/iricmainwindow.cpp" line="2345"/>
+        <location filename="../main/iricmainwindow.cpp" line="2370"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
@@ -16204,13 +16211,13 @@ Do you really want to import grid from this file?</source>
         <translation>スナップショットは %1 に保存されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="871"/>
-        <location filename="../main/iricmainwindow.cpp" line="885"/>
+        <location filename="../main/iricmainwindow.cpp" line="873"/>
+        <location filename="../main/iricmainwindow.cpp" line="887"/>
         <source>This windows does not support snapshot function.</source>
         <translation>このウィンドウでは、スナップショットを保存することはできません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1730"/>
+        <location filename="../main/iricmainwindow.cpp" line="1764"/>
         <source>Are you sure you want to delete the calculation result?</source>
         <translation>本当に計算結果を消去していいですか?</translation>
     </message>
@@ -16219,32 +16226,32 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">本当に、計算結果を消去していいですか?</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1734"/>
+        <location filename="../main/iricmainwindow.cpp" line="1768"/>
         <source>Calculation result cleared.</source>
         <translation>計算結果が消去されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1800"/>
-        <location filename="../main/iricmainwindow.cpp" line="1814"/>
-        <location filename="../main/iricmainwindow.cpp" line="1820"/>
-        <location filename="../main/iricmainwindow.cpp" line="1910"/>
-        <location filename="../main/iricmainwindow.cpp" line="1916"/>
-        <location filename="../main/iricmainwindow.cpp" line="2012"/>
-        <location filename="../main/iricmainwindow.cpp" line="2018"/>
+        <location filename="../main/iricmainwindow.cpp" line="1834"/>
+        <location filename="../main/iricmainwindow.cpp" line="1848"/>
+        <location filename="../main/iricmainwindow.cpp" line="1854"/>
+        <location filename="../main/iricmainwindow.cpp" line="1944"/>
+        <location filename="../main/iricmainwindow.cpp" line="1950"/>
+        <location filename="../main/iricmainwindow.cpp" line="2046"/>
+        <location filename="../main/iricmainwindow.cpp" line="2052"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1814"/>
-        <location filename="../main/iricmainwindow.cpp" line="2012"/>
+        <location filename="../main/iricmainwindow.cpp" line="1848"/>
+        <location filename="../main/iricmainwindow.cpp" line="2046"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation>可視化ウィンドウがアクティブな時に、このメニューを選択してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1800"/>
-        <location filename="../main/iricmainwindow.cpp" line="1820"/>
-        <location filename="../main/iricmainwindow.cpp" line="1916"/>
-        <location filename="../main/iricmainwindow.cpp" line="2018"/>
+        <location filename="../main/iricmainwindow.cpp" line="1834"/>
+        <location filename="../main/iricmainwindow.cpp" line="1854"/>
+        <location filename="../main/iricmainwindow.cpp" line="1950"/>
+        <location filename="../main/iricmainwindow.cpp" line="2052"/>
         <source>Calculation result does not exists.</source>
         <translation>計算結果が存在しません。</translation>
     </message>
@@ -16269,33 +16276,33 @@ Do you really want to import grid from this file?</source>
         <translation>プロジェクト内のファイル数が多すぎるため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="894"/>
+        <location filename="../main/iricmainwindow.cpp" line="896"/>
         <source>Copied snapshot to clipboard.</source>
         <translation>スナップショットをクリップボードにコピーしました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1212"/>
+        <location filename="../main/iricmainwindow.cpp" line="1214"/>
         <source>iRIC %1</source>
         <translation>iRIC %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1227"/>
+        <location filename="../main/iricmainwindow.cpp" line="1229"/>
         <source>%1 - iRIC %2 [%3]</source>
         <translation>%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1828"/>
+        <location filename="../main/iricmainwindow.cpp" line="1862"/>
         <source>No particle is drawn now.</source>
         <translation>パーティクルが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1857"/>
-        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1891"/>
+        <location filename="../main/iricmainwindow.cpp" line="1903"/>
         <source>Export Particles</source>
         <translation>パーティクルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1870"/>
+        <location filename="../main/iricmainwindow.cpp" line="1904"/>
         <source>Saving particles as VTK files...</source>
         <translation>パーティクルを VTKファイルに保存しています...</translation>
     </message>
@@ -16308,17 +16315,17 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">このメニューは、ソルバー実行中は利用できません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="961"/>
+        <location filename="../main/iricmainwindow.cpp" line="963"/>
         <source>This windows does not support continuous snapshot function.</source>
         <translation>このウィンドウは、連続スナップショット機能をサポートしていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="999"/>
+        <location filename="../main/iricmainwindow.cpp" line="1001"/>
         <source>Continuous Snapshot</source>
         <translation>連続スナップショット</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1000"/>
+        <location filename="../main/iricmainwindow.cpp" line="1002"/>
         <source>saving continuous snapshot...</source>
         <translation>連続スナップショットを保存中です...</translation>
     </message>
@@ -16327,17 +16334,17 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">iRIC</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1217"/>
+        <location filename="../main/iricmainwindow.cpp" line="1219"/>
         <source>Untitled</source>
         <translation>無題</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1703"/>
+        <location filename="../main/iricmainwindow.cpp" line="1737"/>
         <source>Unknown options specified. They are neglected. %1</source>
         <translation>不明なオプションが指定されました。これらは無視されます。: %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1707"/>
+        <location filename="../main/iricmainwindow.cpp" line="1741"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
         <translation>2つ以上のプロジェクトファイルが引数に指定されました。2つ目以降は無視されます。: %1</translation>
     </message>
@@ -16350,7 +16357,7 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">現在の計算ケースを削除</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1505"/>
+        <location filename="../main/iricmainwindow.cpp" line="1524"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -16373,12 +16380,12 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="781"/>
         <location filename="../main/iricmainwindow.cpp" line="785"/>
         <location filename="../main/iricmainwindow.cpp" line="806"/>
-        <location filename="../main/iricmainwindow.cpp" line="1828"/>
-        <location filename="../main/iricmainwindow.cpp" line="1892"/>
-        <location filename="../main/iricmainwindow.cpp" line="1924"/>
-        <location filename="../main/iricmainwindow.cpp" line="1988"/>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
-        <location filename="../main/iricmainwindow.cpp" line="2096"/>
+        <location filename="../main/iricmainwindow.cpp" line="1862"/>
+        <location filename="../main/iricmainwindow.cpp" line="1926"/>
+        <location filename="../main/iricmainwindow.cpp" line="1958"/>
+        <location filename="../main/iricmainwindow.cpp" line="2022"/>
+        <location filename="../main/iricmainwindow.cpp" line="2060"/>
+        <location filename="../main/iricmainwindow.cpp" line="2130"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
@@ -16451,42 +16458,42 @@ Do you really want to import grid from this file?</source>
         <translation>不正なファイル名が指定されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="903"/>
+        <location filename="../main/iricmainwindow.cpp" line="905"/>
         <source>This menu is not available while the solver is running.</source>
         <translation>このメニューは、ソルバー実行中は利用できません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1117"/>
+        <location filename="../main/iricmainwindow.cpp" line="1119"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
         <translation>%1 は既に存在し、削除できませんでした。この動画ファイルは出力されません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1630"/>
+        <location filename="../main/iricmainwindow.cpp" line="1649"/>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation>http://iric-gui-user-manual.readthedocs.io/ja/latest/</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1910"/>
+        <location filename="../main/iricmainwindow.cpp" line="1944"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
         <translation>現在アクティブなサブウィンドウは、面塗りコンターのエクスポートをサポートしていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1924"/>
+        <location filename="../main/iricmainwindow.cpp" line="1958"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1955"/>
+        <location filename="../main/iricmainwindow.cpp" line="1989"/>
         <source>Export contour figure to ESRI Shape files</source>
         <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="1999"/>
         <source>Export contour figure</source>
         <translation>面塗りコンターのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1966"/>
+        <location filename="../main/iricmainwindow.cpp" line="2000"/>
         <source>Saving contour figure as ESRI Shape files...</source>
         <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
@@ -16495,23 +16502,23 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">コンターが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2032"/>
+        <location filename="../main/iricmainwindow.cpp" line="2066"/>
         <source>Please select which zone to use:</source>
         <translation>使用するゾーンを選択して下さい:</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2053"/>
-        <location filename="../main/iricmainwindow.cpp" line="2075"/>
+        <location filename="../main/iricmainwindow.cpp" line="2087"/>
+        <location filename="../main/iricmainwindow.cpp" line="2109"/>
         <source>Export Google Earth KML for street view</source>
         <translation>ストリートビュー用 Google Earth KML の出力</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2076"/>
+        <location filename="../main/iricmainwindow.cpp" line="2110"/>
         <source>Saving KML files...</source>
         <translation>KML ファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2301"/>
+        <location filename="../main/iricmainwindow.cpp" line="2345"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation>格子が編集されているか、削除されています。保存すると、計算結果は破棄されます。</translation>
     </message>
@@ -16520,7 +16527,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">格子が編集されています。保存すると、計算結果は破棄されます。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2321"/>
+        <location filename="../main/iricmainwindow.cpp" line="2370"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
         <translation>現在の作業ディレクトリ (%1) に、ASCII文字列以外の文字が含まれています。プロジェクトを開始する前に、以下のメニューから作業ディレクトリを変更して下さい。
@@ -16547,35 +16554,35 @@ Option -&gt; Preferences</source>
         <translation type="obsolete">英数字のみで構成された名前を入力してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1892"/>
-        <location filename="../main/iricmainwindow.cpp" line="1988"/>
-        <location filename="../main/iricmainwindow.cpp" line="2096"/>
+        <location filename="../main/iricmainwindow.cpp" line="1926"/>
+        <location filename="../main/iricmainwindow.cpp" line="2022"/>
+        <location filename="../main/iricmainwindow.cpp" line="2130"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2026"/>
+        <location filename="../main/iricmainwindow.cpp" line="2060"/>
         <source>No Contour Figure is drawn now.</source>
         <translation>面塗りコンターが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2168"/>
+        <location filename="../main/iricmainwindow.cpp" line="2212"/>
         <source>Import Visualization/Graph Settings</source>
         <translation>可視化・グラフ設定のインポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2168"/>
-        <location filename="../main/iricmainwindow.cpp" line="2190"/>
+        <location filename="../main/iricmainwindow.cpp" line="2212"/>
+        <location filename="../main/iricmainwindow.cpp" line="2234"/>
         <source>Setting file (*.vgsetting)</source>
         <translation>設定ファイル (*.vgsetting)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2175"/>
+        <location filename="../main/iricmainwindow.cpp" line="2219"/>
         <source>File %1 does not exists.</source>
         <translation>%1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2190"/>
+        <location filename="../main/iricmainwindow.cpp" line="2234"/>
         <source>Export Visualization/Graph Settings</source>
         <translation>可視化・グラフ設定のエクスポート</translation>
     </message>
@@ -16592,7 +16599,7 @@ Option -&gt; Preferences</source>
         <translation type="obsolete">本当に現在のシミュレーションを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1234"/>
+        <location filename="../main/iricmainwindow.cpp" line="1236"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
         <translation>ソルバーが実行中です。この操作を行いたい場合は、ソルバーを停止して下さい。</translation>
     </message>
@@ -17213,7 +17220,7 @@ Option -&gt; Preferences</source>
         <translation>可視化・グラフ設定のエクスポート...</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1181"/>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1182"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
