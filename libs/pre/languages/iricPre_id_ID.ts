@@ -998,17 +998,17 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAttributeCellGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="58"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="62"/>
         <source>Cell attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="88"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="92"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="112"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="116"/>
         <source>Cell Attribute Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1169,16 +1169,6 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
-        <source>Open &amp;Crosssection Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
-        <source>Open &amp;Vertical Crosssection Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="113"/>
         <source>Grid Node Attribute Display Setting</source>
         <translation type="unfinished"></translation>
@@ -1197,6 +1187,16 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="84"/>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
         <source>Edit %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
+        <source>Open &amp;Cross Section Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
+        <source>Open &amp;Longitudinal Cross Section Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1222,8 +1222,12 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
+        <source>To open a Cross Section Window, Please select only one grid node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
-        <source>To open a Crosssection Window, Please select only one grid node.</source>
+        <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1255,17 +1259,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridAttributeNodeGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="59"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="63"/>
         <source>Node attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="91"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="95"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="105"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="109"/>
         <source>Node Attribute Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1366,9 +1370,9 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="180"/>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="209"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="384"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="446"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="478"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="378"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="440"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="472"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1393,33 +1397,33 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="378"/>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="437"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="431"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="437"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="482"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="431"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="476"/>
         <source>iRIC grid creating condition file(*.igcc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="446"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="440"/>
         <source>The grid creating condition in this file is not compatible with the solver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="478"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="472"/>
         <source>No data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="482"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="476"/>
         <source>Select file to export</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1647,12 +1651,12 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="70"/>
-        <source>Open &amp;Crosssection Window</source>
+        <source>Open &amp;Cross Section Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="74"/>
-        <source>Open &amp;Vertical Crosssection Window</source>
+        <source>Open &amp;Longitudinal Cross Section Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1986,12 +1990,12 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="362"/>
+        <location filename="../preprocessorwindow.cpp" line="365"/>
         <source>Gr&amp;id Creating Condition...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="379"/>
+        <location filename="../preprocessorwindow.cpp" line="382"/>
         <source>Grid...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2160,13 +2164,13 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="223"/>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="361"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="227"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="365"/>
         <source>Object Browser Item Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="307"/>
+        <location filename="../preprocessorwindow.cpp" line="306"/>
         <source>Close PreProcessor Window</source>
         <translation type="unfinished"></translation>
     </message>
