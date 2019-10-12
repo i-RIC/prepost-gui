@@ -60,7 +60,7 @@ public:
 	void setupData();
 	void updateSurveysTable();
 	void updateWaterSurfaceElevationTable();
-	void updateComboBoxes();
+	void updateCrossSectionComboBox();
 	void updateRiverSurveys();
 	QTableView* tableView();
 	bool canInactivateSelectedRows(GeoDataRiverCrosssection& cross, const std::vector<int>& indices);

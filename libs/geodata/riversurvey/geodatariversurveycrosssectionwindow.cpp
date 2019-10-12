@@ -201,7 +201,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 	connect(impl->m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
 }
 
-void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
+void GeoDataRiverSurveyCrosssectionWindow::updateCrossSectionComboBox()
 {
 	// update crosssectionNames.
 	impl->m_crosssectionNames = setupCrosssectionNames(impl->m_riverSurveys);
@@ -768,7 +768,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	}
 	updateRiverPathPoints();
 	updateSurveysTable();
-	updateComboBoxes();
+	updateCrossSectionComboBox();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupSurveyTable()
