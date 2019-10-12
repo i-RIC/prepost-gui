@@ -72,11 +72,11 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_editVariationAction->setDisabled(true);
 	connect(m_editVariationAction, SIGNAL(triggered()), this, SLOT(editVariation()));
 
-	m_openXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Crosssection Window"), this);
+	m_openXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Cross Section Window"), this);
 	m_openXsectionWindowAction->setDisabled(true);
 	connect(m_openXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
-	m_openVXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Vertical Crosssection Window"), this);
+	m_openVXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Longitudinal Cross Section Window"), this);
 	m_openVXsectionWindowAction ->setDisabled(true);
 	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
 
@@ -355,7 +355,7 @@ void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (gItem->selectedVertices().count() > 1) {
-		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Crosssection Window, Please select only one grid node."));
+		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Cross Section Window, Please select only one grid node."));
 		return;
 	}
 	unsigned int index = gItem->selectedVertices().at(0);
@@ -381,7 +381,7 @@ void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (gItem->selectedVertices().count() > 1) {
-		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Crosssection Window, Please select only one grid node."));
+		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Longitudinal Cross Section Window, Please select only one grid node."));
 		return;
 	}
 	unsigned int index = gItem->selectedVertices().at(0);
