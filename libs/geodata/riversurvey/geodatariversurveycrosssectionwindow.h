@@ -61,6 +61,7 @@ public:
 	void updateSurveysTable();
 	void updateWaterSurfaceElevationTable();
 	void updateCrossSectionComboBox();
+	void updateReferenceComboBox();
 	void updateRiverSurveys();
 	QTableView* tableView();
 	bool canInactivateSelectedRows(GeoDataRiverCrosssection& cross, const std::vector<int>& indices);
@@ -127,6 +128,8 @@ private:
 	GeoDataRiverSurvey* targetRiverSurvey() const;
 	GeoDataRiverSurvey* gridCreatingConditionRiverSurvey() const;
 	GeoDataRiverPathPoint* gridCreatingConditionPoint() const;
+	GeoDataRiverPathPoint* referenceRiverPathPoint() const;
+	QColor referenceRiverPathPointColor() const;
 
 	const QList<bool>& riverSurveyEnables() const;
 	const QList<GeoDataRiverPathPoint*>& riverPathPoints() const;
