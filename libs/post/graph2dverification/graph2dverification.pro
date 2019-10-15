@@ -177,7 +177,6 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationsettingdialog.h \
 					 graph2dverificationwindow.h \
 					 graph2dverificationwindowactionmanager.h \
-					 graph2dverificationwindowcontinuousexportdialog.h \
 					 graph2dverificationwindowcontrolwidget.h \
 					 graph2dverificationwindowdataitem.h \
 					 graph2dverificationwindowdatamodel.h \
@@ -189,25 +188,18 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationwindowresultsetting.h \
 					 graph2dverificationwindowview.h \
 					 graph2dverificationwindowprojectdataitem.h \
-					 datamodel/graph2dverificationwindowdrawsettingdialog.h \
-					 datamodel/graph2dverificationwindowgridpolylineresultdataitem.h \
 					 datamodel/graph2dverificationwindowresultgroupdataitem.h \
 					 datamodel/graph2dverificationwindowrootdataitem.h \
-					 datamodel/graph2dverificationwindowsettingwidget.h \
     graph2dverificationwindowtopwidget.h
 FORMS += graph2dverificationsettingdialog.ui \
 				 graph2dverificationwindow.ui \
-				 graph2dverificationwindowcontinuousexportdialog.ui \
 				 graph2dverificationwindowcontrolwidget.ui \
 				 graph2dverificationwindowdatasourcedialog.ui \
 				 graph2dverificationwindowlinesettingdialog.ui \
-				 datamodel/graph2dverificationwindowdrawsettingdialog.ui \
-				 datamodel/graph2dverificationwindowsettingwidget.ui \
     graph2dverificationwindowtopwidget.ui
 SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindow.cpp \
 					 graph2dverificationwindowactionmanager.cpp \
-					 graph2dverificationwindowcontinuousexportdialog.cpp \
 					 graph2dverificationwindowcontrolwidget.cpp \
 					 graph2dverificationwindowdataitem.cpp \
 					 graph2dverificationwindowdatamodel.cpp \
@@ -219,11 +211,8 @@ SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindowresultsetting.cpp \
 					 graph2dverificationwindowview.cpp \
 					 graph2dverificationwindowprojectdataitem.cpp \
-					 datamodel/graph2dverificationwindowdrawsettingdialog.cpp \
-					 datamodel/graph2dverificationwindowgridpolylineresultdataitem.cpp \
 					 datamodel/graph2dverificationwindowresultgroupdataitem.cpp \
 					 datamodel/graph2dverificationwindowrootdataitem.cpp \
-					 datamodel/graph2dverificationwindowsettingwidget.cpp \
     graph2dverificationwindowtopwidget.cpp
 TRANSLATIONS += languages/iricGraph2dhybrid_es_ES.ts \
 								languages/iricGraph2dhybrid_fr_FR.ts \

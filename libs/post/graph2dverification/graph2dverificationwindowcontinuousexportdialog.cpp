@@ -1,3 +1,4 @@
+#if SKIP
 #include "ui_graph2dverificationwindowcontinuousexportdialog.h"
 
 #include "graph2dverificationwindowcontinuousexportdialog.h"
@@ -499,3 +500,4 @@ void Graph2dVerificationWindowContinuousExportDialog::timeEndChanged(int end)
 		ui->timeStartSlider->setValue(end);
 	}
 }
+#endif

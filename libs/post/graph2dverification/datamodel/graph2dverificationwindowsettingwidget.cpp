@@ -1,3 +1,4 @@
+#if SKIP
 #include "ui_graph2dverificationwindowsettingwidget.h"
 
 #include "../graph2dverificationwindowresultsetting.h"
@@ -142,3 +143,4 @@ void Graph2dVerificationWindowSettingWidget::clear()
 	ui->symbolStyleComboBox->setCurrentIndex(0);
 	ui->barChartCheckBox->setChecked(false);
 }
+#endif

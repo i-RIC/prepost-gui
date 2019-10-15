@@ -1,3 +1,4 @@
+#if SKIP
 #include "../../../geodata/polyline/geodatapolyline.h"
 #include "../../../geodata/polyline/geodatapolylineimplpolyline.h"
 #include "../graph2dverificationwindow.h"
@@ -390,3 +391,4 @@ Graph2dVerificationWindowResultCopyDataItem* Graph2dVerificationWindowGridPolyli
 #endif
 	return ret;
 }
+#endif

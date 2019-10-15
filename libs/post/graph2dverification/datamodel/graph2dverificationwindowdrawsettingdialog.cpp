@@ -1,3 +1,4 @@
+#if SKIP
 #include "ui_graph2dverificationwindowdrawsettingdialog.h"
 
 #include "graph2dverificationwindowdrawsettingdialog.h"
@@ -170,3 +171,4 @@ int Graph2dVerificationWindowDrawSettingDialog::importDataIndex(int index)
 	}
 	return 0;
 }
+#endif
