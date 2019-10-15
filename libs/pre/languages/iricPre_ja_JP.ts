@@ -1069,17 +1069,17 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAttributeCellGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="58"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="62"/>
         <source>Cell attributes</source>
         <translation>セルの属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="88"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="92"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="112"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="116"/>
         <source>Cell Attribute Change</source>
         <translation>セル属性の変更</translation>
     </message>
@@ -1253,14 +1253,12 @@ This algorithm can be used only for structured grids.</source>
         <translation>変化量を指定して値を編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
         <source>Open &amp;Crosssection Window</source>
-        <translation>横断面ウィンドウを開く(&amp;C)</translation>
+        <translation type="vanished">横断面ウィンドウを開く(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
         <source>Open &amp;Vertical Crosssection Window</source>
-        <translation>縦断面ウィンドウを開く(&amp;V)</translation>
+        <translation type="vanished">縦断面ウィンドウを開く(&amp;V)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="113"/>
@@ -1282,6 +1280,16 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
+        <source>Open &amp;Cross Section Window</source>
+        <translation>横断面ウィンドウを開く(&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
+        <source>Open &amp;Longitudinal Cross Section Window</source>
+        <translation>縦断面ウィンドウを開く(&amp;L)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="291"/>
@@ -1306,9 +1314,17 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
+        <source>To open a Cross Section Window, Please select only one grid node.</source>
+        <translation>横断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
+    </message>
+    <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
+        <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
+        <translation>縦断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
+    </message>
+    <message>
         <source>To open a Crosssection Window, Please select only one grid node.</source>
-        <translation>断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
+        <translation type="vanished">断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="451"/>
@@ -1339,17 +1355,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridAttributeNodeGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="59"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="63"/>
         <source>Node attributes</source>
         <translation>格子点の属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="91"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="95"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="105"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="109"/>
         <source>Node Attribute Change</source>
         <translation>格子点属性の選択変更</translation>
     </message>
@@ -1454,9 +1470,9 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="180"/>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="209"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="384"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="446"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="478"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="378"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="440"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="472"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1481,33 +1497,33 @@ This algorithm can be used only for structured grids.</source>
         <translation>本当に格子生成条件を初期状態に戻していいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="378"/>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
         <translation>格子生成アルゴリズムを切り替えると、現在の格子と格子生成条件は破棄されます。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="437"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="431"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="437"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="482"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="431"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="476"/>
         <source>iRIC grid creating condition file(*.igcc)</source>
         <translation>iRIC 格子生成条件ファイル(*.igcc)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="446"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="440"/>
         <source>The grid creating condition in this file is not compatible with the solver</source>
         <translation>このファイルに含まれる格子生成条件は、ソルバと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="478"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="472"/>
         <source>No data to export.</source>
         <translation>エクスポートするデータがありません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="482"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="476"/>
         <source>Select file to export</source>
         <translation>エクスポートするファイルの選択</translation>
     </message>
@@ -1886,13 +1902,21 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="70"/>
-        <source>Open &amp;Crosssection Window</source>
+        <source>Open &amp;Cross Section Window</source>
         <translation>横断面ウィンドウを開く(&amp;C)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="74"/>
+        <source>Open &amp;Longitudinal Cross Section Window</source>
+        <translation>縦断面ウィンドウを開く(&amp;L)</translation>
+    </message>
+    <message>
+        <source>Open &amp;Crosssection Window</source>
+        <translation type="vanished">横断面ウィンドウを開く(&amp;C)</translation>
+    </message>
+    <message>
         <source>Open &amp;Vertical Crosssection Window</source>
-        <translation>縦断面ウィンドウを開く(&amp;V)</translation>
+        <translation type="vanished">縦断面ウィンドウを開く(&amp;V)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="91"/>
@@ -2358,12 +2382,12 @@ This algorithm can be used only for structured grids.</source>
         <translation>格子 %1 をチェックしています...</translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="379"/>
+        <location filename="../preprocessorwindow.cpp" line="382"/>
         <source>Grid...</source>
         <translation>格子...</translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="362"/>
+        <location filename="../preprocessorwindow.cpp" line="365"/>
         <source>Gr&amp;id Creating Condition...</source>
         <translation>格子生成条件 (&amp;I)...</translation>
     </message>
@@ -2540,8 +2564,8 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="223"/>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="361"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="227"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="365"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
@@ -2586,7 +2610,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">背景色の設定</translation>
     </message>
     <message>
-        <location filename="../preprocessorwindow.cpp" line="307"/>
+        <location filename="../preprocessorwindow.cpp" line="306"/>
         <source>Close PreProcessor Window</source>
         <translation>プリプロセッサウィンドウを閉じる</translation>
     </message>
