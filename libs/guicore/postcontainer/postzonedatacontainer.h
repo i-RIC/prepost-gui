@@ -74,6 +74,11 @@ public:
 	std::vector<PostCalculatedResult*> detachCalculatedResult();
 	void attachCalculatedResult(std::vector<PostCalculatedResult*> results);
 
+	static std::string inputDataPrefix();
+	static std::string addInputDataPrefix(const std::string& name);
+	static std::string removeInputDataPrefix(const std::string& name);
+	static bool hasInputDataPrefix(const std::string& name);
+
 private:
 	bool setBaseId(const int fn);
 	bool setZoneId(const int fn);

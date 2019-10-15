@@ -777,7 +777,7 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 			for (vtkIdType i = 0; i < m_data->GetNumberOfCells(); ++i) {
 				iarray->InsertNextValue(defaultVal);
 			}
-			iarray->SetName(cond->name().c_str());
+			iarray->SetName(addInputDataPrefix(cond->name()).c_str());
 
 			m_data->GetCellData()->AddArray(iarray);
 
@@ -802,7 +802,7 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 				for (int val : data) {
 					iarray->InsertNextValue(val);
 				}
-				iarray->SetName(cond->name().c_str());
+				iarray->SetName(addInputDataPrefix(cond->name()).c_str());
 
 				m_data->GetCellData()->AddArray(iarray);
 			}
@@ -992,12 +992,22 @@ void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) c
 
 bool PostZoneDataContainer::scalarValueExists() const
 {
-	return vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData()).size() > 0;
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData());
+	for (const auto& name : names) {
+		if (hasInputDataPrefix(name)) {continue;}
+		return true;
+	}
+	return false;
 }
 
 bool PostZoneDataContainer::cellScalarValueExists() const
 {
-	return vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetCellData()).size() > 0;
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetCellData());
+	for (const auto& name : names) {
+		if (hasInputDataPrefix(name)) {continue;}
+		return true;
+	}
+	return false;
 }
 
 bool PostZoneDataContainer::vectorValueExists() const
@@ -1382,4 +1392,29 @@ void PostZoneDataContainer::attachCalculatedResult(std::vector<PostCalculatedRes
 		r->setParent(this);
 		m_calculatedResults.push_back(r);
 	}
+}
+
+std::string PostZoneDataContainer::inputDataPrefix()
+{
+	return "__input__";
+}
+
+std::string PostZoneDataContainer::addInputDataPrefix(const std::string& name)
+{
+	std::string newName = inputDataPrefix();
+	newName.append(name.c_str());
+	return newName;
+}
+
+std::string PostZoneDataContainer::removeInputDataPrefix(const std::string& name)
+{
+	auto prefix = inputDataPrefix();
+	return name.substr(prefix.size());
+}
+
+bool PostZoneDataContainer::hasInputDataPrefix(const std::string& name)
+{
+	auto prefix = inputDataPrefix();
+	auto subName = name.substr(0, prefix.size());
+	return subName == prefix;
 }

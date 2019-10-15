@@ -31,7 +31,9 @@ Post2dBirdEyeWindowCellScalarGroupTopDataItem::Post2dBirdEyeWindowCellScalarGrou
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
 	vtkCellData* cd = cont->data()->GetCellData();
-	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
+	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
+		if (PostZoneDataContainer::hasInputDataPrefix(val)) {continue;}
+
 		m_colorbarTitleMap.insert(val, val.c_str());
 		auto item = new Post2dBirdEyeWindowCellScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
 		m_scalarmap[val] = item;
