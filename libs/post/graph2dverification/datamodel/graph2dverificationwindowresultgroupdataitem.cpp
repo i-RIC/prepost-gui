@@ -1,3 +1,4 @@
+#if SKIP
 #include "../graph2dverificationsettingdialog.h"
 #include "../graph2dverificationwindow.h"
 #include "../graph2dverificationwindowcontrolwidget.h"
@@ -131,3 +132,4 @@ bool Graph2dVerificationWindowResultGroupDataItem::axisNeeded(Graph2dVerificatio
 	}
 	return needed;
 }
+#endif
