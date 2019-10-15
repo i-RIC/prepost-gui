@@ -22,65 +22,9 @@ namespace {
 
 const double WRONG_KP = -9999;
 
-class Point2D
+GeoDataRiverSurveyImporter::RivPathPoint* getPoint(double kp, std::string& kpStr, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
-public:
-	Point2D() {x = 0; y = 0;}
-	Point2D(double x, double y) {
-		this->x = x; this->y = y;
-	}
-
-	double x = 0;
-	double y = 0;
-};
-
-class Alt
-{
-public:
-	Alt() :
-		Alt(0, 0)
-	{}
-	Alt(double dis, double e) {
-		this->distance = dis; this->elevation = e;
-	}
-
-	double distance;
-	double elevation;
-};
-
-class RivPathPoint
-{
-public:
-	Point2D banksCenter() const
-	{
-		return Point2D((leftBank.x + rightBank.x) * 0.5, (leftBank.y + rightBank.y) * 0.5);
-	}
-	double banksDistance() const
-	{
-		double dx = rightBank.x - leftBank.x;
-		double dy = rightBank.y - leftBank.y;
-
-		return std::sqrt(dx * dx + dy * dy);
-	}
-	QPointF leftToRight() const
-	{
-		return QPointF(rightBank.x - leftBank.x, rightBank.y - leftBank.y);
-	}
-
-	std::string strKP; // name in string
-	double realKP;     // name in real
-
-	bool banksIsSet = false;
-	Point2D leftBank;
-	Point2D rightBank;
-
-	std::vector<Alt> altitudes;
-	int divIndices[4];
-};
-
-RivPathPoint* getPoint(double kp, std::string& kpStr, std::vector<RivPathPoint*>* points)
-{
-	for (RivPathPoint* p : *points) {
+	for (auto p : *points) {
 		if (kp == WRONG_KP) {
 			if (p->strKP == kpStr) {
 				return p;
@@ -91,28 +35,28 @@ RivPathPoint* getPoint(double kp, std::string& kpStr, std::vector<RivPathPoint*>
 			}
 		}
 	}
-	RivPathPoint* newp = new RivPathPoint();
+	auto newp = new GeoDataRiverSurveyImporter::RivPathPoint();
 	newp->realKP = kp;
 	newp->strKP = kpStr;
 	points->push_back(newp);
 	return newp;
 }
 
-void setBanks(RivPathPoint* p, double lx, double ly, double rx, double ry)
+void setBanks(GeoDataRiverSurveyImporter::RivPathPoint* p, double lx, double ly, double rx, double ry)
 {
 	p->banksIsSet = true;
-	p->leftBank.x = lx;
-	p->leftBank.y = ly;
-	p->rightBank.x = rx;
-	p->rightBank.y = ry;
+	p->leftBank.setX(lx);
+	p->leftBank.setY(ly);
+	p->rightBank.setX(rx);
+	p->rightBank.setY(ry);
 }
 
-void removeIncompleteData(std::vector<RivPathPoint*>* points)
+void removeIncompleteData(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
 	int idx = 0;
 	while (idx < points->size()) {
 		auto it = points->begin() + idx;
-		RivPathPoint* p = *it;
+		auto p = *it;
 		if (! p->banksIsSet || p->altitudes.size() == 0) {
 			// remove this point;
 			points->erase(it);
@@ -122,17 +66,17 @@ void removeIncompleteData(std::vector<RivPathPoint*>* points)
 	}
 }
 
-void sortReverse(std::vector<RivPathPoint*>* points)
+void sortReverse(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
 	std::reverse(points->begin(), points->end());
 }
 
-bool lessKP(RivPathPoint* a1, RivPathPoint* a2)
+bool lessKP(GeoDataRiverSurveyImporter::RivPathPoint* a1, GeoDataRiverSurveyImporter::RivPathPoint* a2)
 {
 	return a1->realKP > a2->realKP;
 }
 
-void sortByKP(std::vector<RivPathPoint*>* points)
+void sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
 	std::sort(points->begin(), points->end(), lessKP);
 }
@@ -150,7 +94,7 @@ void parseKP(const QString& tok, double* realKP, std::string* strKP, bool* allNu
 	}
 }
 
-bool readRivFile(const QString& fname, std::vector<RivPathPoint*>* points, bool* with4points, bool* allNamesAreNumber)
+bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points, bool* with4points, bool* allNamesAreNumber)
 {
 	QFile f(fname);
 
@@ -175,9 +119,9 @@ bool readRivFile(const QString& fname, std::vector<RivPathPoint*>* points, bool*
 			}
 			std::string strKP;
 			double realKP;
-			RivPathPoint* p;
+			GeoDataRiverSurveyImporter::RivPathPoint* p;
 			int np;
-			std::vector<Alt> alts;
+			std::vector<GeoDataRiverSurveyImporter::Alt> alts;
 			int divIndices[4];
 
 			if (mode == 1) {
@@ -214,7 +158,7 @@ bool readRivFile(const QString& fname, std::vector<RivPathPoint*>* points, bool*
 
 					int k = 0;
 					while (k < tokens.length() - 1) {
-						Alt alt;
+						GeoDataRiverSurveyImporter::Alt alt;
 						alt.distance = tokens.at(k++).toDouble();
 						alt.elevation = tokens.at(k++).toDouble();
 						alts.push_back(alt);
@@ -244,6 +188,33 @@ bool readRivFile(const QString& fname, std::vector<RivPathPoint*>* points, bool*
 }
 
 } // namespace
+
+GeoDataRiverSurveyImporter::Alt::Alt() :
+	Alt(0, 0)
+{}
+
+GeoDataRiverSurveyImporter::Alt::Alt(double dis, double e) :
+	distance {dis},
+	elevation {e}
+{}
+
+QPointF GeoDataRiverSurveyImporter::RivPathPoint::banksCenter() const
+{
+	return QPointF((leftBank.x() + rightBank.x()) * 0.5, (leftBank.y() + rightBank.y()) * 0.5);
+}
+
+double GeoDataRiverSurveyImporter::RivPathPoint::banksDistance() const
+{
+	double dx = rightBank.x() - leftBank.x();
+	double dy = rightBank.y() - leftBank.y();
+
+	return std::sqrt(dx * dx + dy * dy);
+}
+
+QPointF GeoDataRiverSurveyImporter::RivPathPoint::leftToRight() const
+{
+	return QPointF(rightBank.x() - leftBank.x(), rightBank.y() - leftBank.y());
+}
 
 GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) :
 	GeoDataImporter("riversurvey", tr("River Survey data (*.riv)"), creator)
@@ -287,7 +258,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 		RivPathPoint* p = m_points[i];
 
 		auto leftp = p->leftBank;
-		auto newPoint = new GeoDataRiverPathPoint(leftp.x, leftp.y);
+		auto newPoint = new GeoDataRiverPathPoint(leftp.x(), leftp.y());
 
 		newPoint->setName(p->strKP.c_str());
 		newPoint->InhibitInterpolatorUpdate = true;
