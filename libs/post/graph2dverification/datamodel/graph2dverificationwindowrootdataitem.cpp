@@ -3,9 +3,9 @@
 #include "../graph2dverificationwindowdatamodel.h"
 #include "../graph2dverificationwindowobjectbrowser.h"
 #include "../graph2dverificationwindowview.h"
-#include "graph2dverificationwindowimportdatagroupdataitem.h"
-#include "graph2dverificationwindowresultcopygroupdataitem.h"
-#include "graph2dverificationwindowresultgroupdataitem.h"
+//#include "graph2dverificationwindowimportdatagroupdataitem.h"
+//#include "graph2dverificationwindowresultcopygroupdataitem.h"
+//#include "graph2dverificationwindowresultgroupdataitem.h"
 #include "graph2dverificationwindowrootdataitem.h"
 
 #include <guibase/objectbrowserview.h>

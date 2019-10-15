@@ -62,6 +62,7 @@ void Graph2dVerificationWindowControlWidget::setSetting(const Graph2dVerificatio
 	//ui->indexLabel->hide();
 	//ui->indexSlider->hide();
 	if (info == nullptr) {return;}
+#if SKIP
 	switch (info->dataType) {
 	case Graph2dVerificationWindowResultSetting::dtBaseIterative:
 		break;
@@ -120,6 +121,7 @@ void Graph2dVerificationWindowControlWidget::setSetting(const Graph2dVerificatio
 		break;
 	}
 #endif
+#endif
 	adjustSize();
 	updateGeometry();
 	fitSize();
@@ -131,6 +133,7 @@ void Graph2dVerificationWindowControlWidget::setComment(const QString& title)
 	ui->commentLabel->setText(title);
 }
 
+#if SKIP
 void Graph2dVerificationWindowControlWidget::setIValue(int i)
 {
 	//ui->iSlider->setValue(i + 1);
@@ -174,6 +177,7 @@ int Graph2dVerificationWindowControlWidget::indexValue() const
 	//return ui->indexSlider->value() - 1;
 	return 0;
 }
+#endif
 
 void Graph2dVerificationWindowControlWidget::fitSize()
 {
@@ -184,6 +188,7 @@ void Graph2dVerificationWindowControlWidget::fitSize()
 
 void Graph2dVerificationWindowControlWidget::loadFromProjectMainFile(const QDomNode& node)
 {
+#if SKIP
 	int val;
 	val = iRIC::getIntAttribute(node, "i");
 	setIValue(val);
@@ -193,14 +198,17 @@ void Graph2dVerificationWindowControlWidget::loadFromProjectMainFile(const QDomN
 	setKValue(val);
 	val = iRIC::getIntAttribute(node, "index");
 	setIndexValue(val);
+#endif
 }
 
 void Graph2dVerificationWindowControlWidget::saveToProjectMainFile(QXmlStreamWriter& writer) const
 {
+#if SKIP
 	iRIC::setIntAttribute(writer, "i", iValue());
 	iRIC::setIntAttribute(writer, "j", jValue());
 	iRIC::setIntAttribute(writer, "k", kValue());
 	iRIC::setIntAttribute(writer, "index", indexValue());
+#endif
 }
 
 void Graph2dVerificationWindowControlWidget::handleSettingButtonClicked()

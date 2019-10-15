@@ -32,22 +32,11 @@ void Graph2dVerificationSettingDialog::setSetting(const Graph2dVerificationWindo
 	m_setting = setting;
 
 	setPostSolutionInfo(m_setting.postSolutionInfo());
-	//this->setMeasuredDatas(m_setting.m_measuredData);
 	setMeasuredDatas(m_setting.measuredData());
-
-	//this->setTimeStep(m_setting.m_timeStep);
 	setTimeStep(m_setting.timeStep());
-
-	//this->setPostZoneDataContainer(m_setting.m_activePostData);
 	setPostZoneDataContainer(m_setting.activePostData());
-
-	//this->setActiveResult(m_setting.m_activeResult);
 	setActiveResult(m_setting.activeResult());
-
-	//this->setMeasuredData(m_setting.m_activeMeasuredData);
-
 	setActiveFile(m_setting.activeFile());
-
 	setActiveValue(m_setting.activeValue());
 }
 
@@ -72,8 +61,8 @@ void Graph2dVerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* inf
 	}
 	selectZone(0);
 	if (ui->gridComboBox->count() == 1) {
-		///ui->gridLabel->hide();
-		///ui->gridComboBox->hide();
+		ui->gridLabel->hide();
+		ui->gridComboBox->hide();
 	}
 
 	PostTimeSteps* timesteps = m_postSolutionInfo->timeSteps();

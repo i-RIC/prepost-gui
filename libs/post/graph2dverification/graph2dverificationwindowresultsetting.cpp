@@ -1,8 +1,6 @@
-#include "datamodel/graph2dverificationwindowbaseiterativeresultdataitem.h"
-#include "datamodel/graph2dverificationwindowgridijkresultdataitem.h"
-#include "datamodel/graph2dverificationwindowgridpointresultdataitem.h"
-#include "datamodel/graph2dverificationwindowgridpolylineresultdataitem.h"
-#include "datamodel/graph2dverificationwindowresultgroupdataitem.h"
+#define _USE_MATH_DEFINES  1  // set to 1 to match qwt_math.h
+#include <cmath>
+
 #include "graph2dverificationwindow.h"
 #include "graph2dverificationwindowresultsetting.h"
 
@@ -14,24 +12,9 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-
 #include <guicore/project/measured/measureddata.h>
-
-
-#if defined(_MSC_VER)
-// disable macro redefinition warnings
-#pragma warning( push )
-#pragma warning( disable : 4005 )
-#endif
-
 #include <guibase/qwtplotcustomcurve.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-
-#if defined(_MSC_VER)
-// re-enable macro redefinition warnings
-#pragma warning( pop )
-#endif
-
 #include <guicore/misc/cgnsfileopener.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectcgnsfile.h>
@@ -41,6 +24,7 @@
 
 #include <QDomNode>
 #include <QList>
+#include <QXmlStreamWriter>
 
 #include <vtkCellData.h>
 #include <vtkPointData.h>
@@ -55,14 +39,13 @@
 Graph2dVerificationWindowResultSetting::Graph2dVerificationWindowResultSetting()
 {
 	m_xAxisMode = xaTime;
+#if SKIP
 	m_timeValueType = tvtTime;
 	m_positionValueType = pvtDistance;
 	m_xAxisReverse = false;
 	m_xAxisLog = false;
 
-#if 0 || 1
 	m_targetDataTypeInfo = nullptr;
-#endif
 	m_targetPolyLine = nullptr;
 	m_postSolutionInfo = nullptr;
 
@@ -87,19 +70,19 @@ Graph2dVerificationWindowResultSetting::Graph2dVerificationWindowResultSetting()
 	m_J = 0;
 	m_K = 0;
 	m_index = 0;
+#endif
 
-	//{{
 	m_timeStep = 0;
 	m_graphType = Graph2dVerificationWindowResultSetting::gtSWDvsValues;
 	m_activePostData = nullptr;
 	m_activeMeasuredData = nullptr;
-	//m_iricMainWindow = nullptr;
-	//}}
 }
 
 Graph2dVerificationWindowResultSetting::~Graph2dVerificationWindowResultSetting()
 {
+#if SKIP
 	delete m_colorSource;
+#endif
 }
 
 bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData, const QString& cgnsFilename)
@@ -147,7 +130,6 @@ bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const Q
 			cg_goto(fn, baseid, bitername, 0, "end");
 			int narrays;
 			cg_narrays(&narrays);
-#if 0 || 1
 			DataTypeInfo ti;
 			ti.dimension = PostSolutionInfo::fromIntDimension(celldim);
 			ti.dataType = dtBaseIterative;
@@ -168,7 +150,6 @@ bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const Q
 			if (ti.dataNamesMap[ti.gridLocation].count() > 0) {
 				m_dataTypeInfos.append(ti);
 			}
-#endif
 		}
 		// setup zone datas.
 		// for zone datas, use sol.
@@ -176,7 +157,6 @@ bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const Q
 		QList<PostZoneDataContainer*> conts = sol->zoneContainers(dim);
 		for (int i = 0; i < conts.count(); ++i) {
 			PostZoneDataContainer* cont = conts.at(i);
-#if 0 || 1
 			DataTypeInfo ti;
 			ti.dimension = dim;
 			vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
@@ -224,24 +204,21 @@ bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const Q
 				ti.dataNamesMap[CellCenter].append(name.c_str());
 			}
 			m_dataTypeInfos.append(ti);
-#endif
 		}
 	}
 
 	delete opener;
 
 	setupMap();
+#if SKIP
 	setupPolyLines();
-#if 0 || 1
-	return (m_dataTypeInfos.size() > 0);
-#else
-	return true;
 #endif
+	return (m_dataTypeInfos.size() > 0);
 }
 
 void Graph2dVerificationWindowResultSetting::setupMap()
 {
-#if 0 || 1
+#if SKIP
 	m_dataTypeInfoMap.clear();
 
 	// setup properly. setup map next.
@@ -357,33 +334,9 @@ void Graph2dVerificationWindowResultSetting::setupMap()
 	}
 	m_dataTypeInfoMap.insert(xaPolyline, tmpmap);
 #endif
-
-	/*
-		// for index
-		tmpmap.clear();
-		tmpmap.insert(dimBase, emptylist);
-		tmpmap.insert(dim1D, emptylist);
-		tmpmap.insert(dim2D, emptylist);
-		tmpmap.insert(dim3D, emptylist);
-
-		for (int i = 0; i < m_dataTypeInfos.count(); ++i){
-			DataTypeInfo& di = m_dataTypeInfos[i];
-			DimType dt;
-			switch (di.dataType){
-			case dtDim1DUnstructured:
-			case dtDim2DUnstructured:
-			case dtDim3DUnstructured:
-				dt = dimTypeFromDataType(di.dataType);
-				tmpmap[dt].append(&di);
-				break;
-			default:
-				;
-			}
-		}
-		m_dataTypeInfoMap.insert(xaIndex, tmpmap);
-	*/
 }
 
+#if SKIP
 void Graph2dVerificationWindowResultSetting::setupPolyLines()
 {
 	m_polyLines.clear();
@@ -408,6 +361,8 @@ QList<GeoDataPolyLine*> Graph2dVerificationWindowResultSetting::polyLines(const 
 	}
 	return ret;
 }
+#endif
+
 
 Graph2dVerificationWindowResultSetting::DimType Graph2dVerificationWindowResultSetting::dimTypeFromDataType(DataType dt)
 {
@@ -436,42 +391,46 @@ bool Graph2dVerificationWindowResultSetting::settingExists()
 #if 0 || 1
 	if (m_targetDataTypeInfo == nullptr) {return false;}
 #endif
+#if SKIP
 	if (m_targetDatas.count() == 0) {return false;}
+#endif
 	return true;
 }
 
 QList<Graph2dWindowDataItem*> Graph2dVerificationWindowResultSetting::setupItems(Graph2dVerificationWindowResultGroupDataItem* gItem) const
 {
 	QList<Graph2dWindowDataItem*> ret;
-#if 0 || 1
 	if (m_targetDataTypeInfo == nullptr) {return ret;}
-#endif
 	if (m_xAxisMode == xaTime) {
-#if 0 || 1
 		if (m_targetDataTypeInfo->dataType == Graph2dVerificationWindowResultSetting::dtBaseIterative) {
+#if SKIP
 			for (int i = 0; i < m_targetDatas.count(); ++i) {
 				Graph2dVerificationWindowBaseIterativeResultDataItem* item = new Graph2dVerificationWindowBaseIterativeResultDataItem(m_targetDatas[i], i, gItem);
 				ret.append(item);
 			}
+#endif
 		} else {
+#if SKIP
 			for (int i = 0; i < m_targetDatas.count(); ++i) {
 				Graph2dVerificationWindowGridPointResultDataItem* item = new Graph2dVerificationWindowGridPointResultDataItem(m_targetDatas[i], i, gItem);
 				ret.append(item);
 			}
-		}
 #endif
-	} else if (m_xAxisMode == xaPolyline) {
-		// xaxis is distance (using a polyline)
-		for (int i = 0; i < m_targetDatas.count(); ++i) {
-			Graph2dVerificationWindowGridPolylineResultDataItem* item = new Graph2dVerificationWindowGridPolylineResultDataItem(m_targetDatas[i], i, gItem);
-			ret.append(item);
 		}
+	//} else if (m_xAxisMode == xaPolyline) {
+	//	// xaxis is distance (using a polyline)
+	//	for (int i = 0; i < m_targetDatas.count(); ++i) {
+	//		Graph2dVerificationWindowGridPolylineResultDataItem* item = new Graph2dVerificationWindowGridPolylineResultDataItem(m_targetDatas[i], i, gItem);
+	//		ret.append(item);
+	//	}
 	} else {
 		// xaxis is I or J or K
+#if SKIP
 		for (int i = 0; i < m_targetDatas.count(); ++i) {
 			Graph2dVerificationWindowGridIJKResultDataItem* item = new Graph2dVerificationWindowGridIJKResultDataItem(m_targetDatas[i], i, gItem);
 			ret.append(item);
 		}
+#endif
 	}
 	return ret;
 }
@@ -479,21 +438,25 @@ QList<Graph2dWindowDataItem*> Graph2dVerificationWindowResultSetting::setupItems
 QString Graph2dVerificationWindowResultSetting::autoYAxisLabel(AxisSide as) const
 {
 	QStringList labels;
+#if SKIP
 	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
 		if (s.axisSide() == as) {
 			labels.append(s.name());
 		}
 	}
+#endif
 	return labels.join(", ");
 }
 
 bool Graph2dVerificationWindowResultSetting::axisNeeded(AxisSide as)
 {
+#if SKIP
 	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
 		if (s.axisSide() == as) {return true;}
 	}
+#endif
 	return false;
 }
 
@@ -516,6 +479,7 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 #endif
 
 	m_xAxisMode = s.m_xAxisMode;
+#if SKIP
 	m_timeValueType = s.m_timeValueType;
 	m_positionValueType = s.m_positionValueType;
 	m_xAxisLabel = s.m_xAxisLabel;
@@ -537,16 +501,21 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 	m_yAxisRightTitle = s.m_yAxisRightTitle;
 	m_yAxisRightReverse = s.m_yAxisRightReverse;
 	m_yAxisRightLog = s.m_yAxisRightLog;
+#endif
 
 #if 0 || 1
 	m_dataTypeInfos = s.m_dataTypeInfos;
 #endif
+#if SKIP
 	m_targetDatas = s.m_targetDatas;
 	m_polyLines = s.m_polyLines;
 	m_targetPolyLine = s.m_targetPolyLine;
+#endif
 	m_postSolutionInfo = s.m_postSolutionInfo;
 	setupMap();
+#if SKIP
 	setupPolyLines();
+#endif
 #if 0 || 1
 	if (s.m_targetDataTypeInfo == nullptr) {
 		m_targetDataTypeInfo = nullptr;
@@ -560,28 +529,33 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 		}
 	}
 #endif
+#if SKIP
 	m_title = s.m_title;
 	m_addIndicesToTitle = s.m_addIndicesToTitle;
 
-	m_I     = s.m_I;
+	m_I = s.m_I;
 	m_J     = s.m_J;
 	m_K     = s.m_K;
 	m_index = s.m_index;
+#endif
 	return *this;
 }
 
 bool Graph2dVerificationWindowResultSetting::dataAvailable()
 {
 #if 0 || 1
+#if SKIP
 	for (auto it = m_dataTypeInfoMap.begin(); it != m_dataTypeInfoMap.end(); ++it) {
 		for (auto it2 = it.value().begin(); it2 != it.value().end(); ++it2) {
 			if (it2.value().count() > 0) {return true;}
 		}
 	}
 #endif
+#endif
 	return false;
 }
 
+#if SKIP
 QColor Graph2dVerificationWindowResultSetting::autoColor(int index) const
 {
 	return m_colorSource->getColor(index);
@@ -650,6 +624,8 @@ QString Graph2dVerificationWindowResultSetting::autoXAxisPositionLabel(Graph2dVe
 	}
 	return "";
 }
+#endif
+
 
 Qt::PenStyle Graph2dVerificationWindowResultSetting::getPenStyle(LineType lt)
 {
@@ -742,6 +718,7 @@ QString Graph2dVerificationWindowResultSetting::getGridLocationStringTranslated(
 	return map[location];
 }
 
+#if SKIP
 void Graph2dVerificationWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve* curve) const
 {
 	if (m_axisSide == Graph2dVerificationWindowResultSetting::asLeft) {
@@ -781,11 +758,13 @@ void Graph2dVerificationWindowResultSetting::Setting::setupCurve(QwtPlotCustomCu
 		curve->setSymbol(symbol);
 	}
 }
+#endif
 
 void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
 	m_xAxisMode = static_cast<XAxisMode>(iRIC::getIntAttribute(node, "xAxisMode"));
+#if SKIP
 	m_title = elem.attribute("title");
 	m_addIndicesToTitle = iRIC::getBooleanAttribute(node, "addIndicesToTitle");
 	m_timeValueType = static_cast<TimeValueType>(iRIC::getIntAttribute(node, "timeValueType"));
@@ -812,10 +791,13 @@ void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomN
 	m_xAxisValueMin = iRIC::getDoubleAttribute(node, "xAxisValueMin");
 	m_xAxisValueMax = iRIC::getDoubleAttribute(node, "xAxisValueMax");
 
+#if 0
 	m_I = iRIC::getIntAttribute(node, "i");
 	m_J = iRIC::getIntAttribute(node, "j");
 	m_K = iRIC::getIntAttribute(node, "k");
+#endif
 	m_index = iRIC::getIntAttribute(node, "index");
+#endif
 
 
 	//{{
@@ -859,6 +841,7 @@ void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomN
 #if 0
 	Q_ASSERT(m_targetDataTypeInfo != nullptr);
 #endif
+#if SKIP
 	m_targetDatas.clear();
 	QDomNode datasNode = iRIC::getChildNode(node, "TargetDatas");
 	if (! datasNode.isNull()) {
@@ -883,12 +866,14 @@ void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomN
 		if (name == "nullptr") Q_ASSERT(m_targetPolyLine == nullptr);
 		Q_ASSERT(m_targetPolyLine == nullptr || name != "nullptr");
 	}
+#endif
 }
 
 void Graph2dVerificationWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	//// targetDatas
 	iRIC::setIntAttribute(writer, "xAxisMode", static_cast<int>(m_xAxisMode));
+#if SKIP
 	writer.writeAttribute("title", m_title);
 	iRIC::setBooleanAttribute(writer, "addIndicesToTitle", m_addIndicesToTitle);
 	iRIC::setIntAttribute(writer, "timeValueType", static_cast<int>(m_timeValueType));
@@ -915,10 +900,13 @@ void Graph2dVerificationWindowResultSetting::saveToProjectMainFile(QXmlStreamWri
 	iRIC::setDoubleAttribute(writer, "xAxisValueMin", m_xAxisValueMin);
 	iRIC::setDoubleAttribute(writer, "xAxisValueMax", m_xAxisValueMax);
 
+#if 0
 	iRIC::setIntAttribute(writer, "i", m_I);
 	iRIC::setIntAttribute(writer, "j", m_J);
 	iRIC::setIntAttribute(writer, "k", m_K);
+#endif
 	iRIC::setIntAttribute(writer, "index", m_index);
+#endif
 
 	//{{
 	iRIC::setIntAttribute(writer, "graphType", static_cast<int>(m_graphType));
@@ -1009,6 +997,7 @@ void Graph2dVerificationWindowResultSetting::DataTypeInfo::saveToProjectMainFile
 }
 #endif
 
+#if SKIP
 void Graph2dVerificationWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
@@ -1034,3 +1023,4 @@ void Graph2dVerificationWindowResultSetting::Setting::saveToProjectMainFile(QXml
 	iRIC::setIntAttribute(writer, "symbolType", static_cast<int>(m_symbolType));
 	iRIC::setBooleanAttribute(writer, "barChart", m_barChart);
 }
+#endif

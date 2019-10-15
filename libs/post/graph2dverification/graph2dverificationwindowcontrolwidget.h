@@ -21,6 +21,7 @@ public:
 	~Graph2dVerificationWindowControlWidget();
 	void setSetting(const Graph2dVerificationWindowResultSetting& setting);
 	void setComment(const QString& comment);
+#if SKIP
 	void setIValue(int i);
 	void setJValue(int j);
 	void setKValue(int k);
@@ -29,6 +30,7 @@ public:
 	int jValue() const;
 	int kValue() const;
 	int indexValue() const;
+#endif
 	void fitSize();
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer) const;

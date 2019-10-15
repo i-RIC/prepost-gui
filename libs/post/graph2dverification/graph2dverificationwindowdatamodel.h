@@ -6,7 +6,7 @@
 //}}
 #include <post/graph2d/graph2dwindowdatamodel.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include "graph2dverificationwindowcontinuousexportdialog.h"
+//#include "graph2dverificationwindowcontinuousexportdialog.h"
 #include "graph2dverificationwindowresultsetting.h"
 
 #include <QVector>
@@ -53,14 +53,14 @@ public slots:
 	void axisSetting();
 	void drawSetting();
 	void markerSettiing();
-	void addKPMarkers();
+	//void addKPMarkers();
+#if SKIP
 	void specialSnapshot();
+#endif
 	void specialCsvExport();
 	void copyCalculationResult();
-#if 0
-	void exportCsv();
-#endif
-	void targetPolyLineDestroyed();
+	//void exportCsv();
+	//void targetPolyLineDestroyed();
 	void applySettingsSlot();
 
 	void setType(int type);
@@ -85,7 +85,9 @@ private:
 	void applySettings();
 	bool savePixmap(const QPixmap& pixmap, const QString& filename);
 	void showErrorMessage(const QString& filename);
+#if SKIP
 	void updateTitle();
+#endif
 	const QList<PostZoneDataContainer*>& zoneContainers();
 	QString formattedNumber(int number, int max);
 #if 0
@@ -99,7 +101,9 @@ private:
 	// parameters related to special snapshot.
 	QString m_prefix;
 
+#if SKIP
 	Graph2dVerificationWindowContinuousExportDialog::RegionMode m_regionMode;
+#endif
 	int m_iMin;
 	int m_iMax;
 	int m_jMin;
@@ -109,7 +113,9 @@ private:
 	int m_indexMin;
 	int m_indexMax;
 
+#if SKIP
 	Graph2dVerificationWindowContinuousExportDialog::TimeMode m_timeMode;
+#endif
 	int m_timeStart;
 	int m_timeEnd;
 	int m_timeSkip;

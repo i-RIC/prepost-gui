@@ -32,10 +32,12 @@ public:
 protected:
 	PostSolutionInfo* postSolutionInfo();
 	Graph2dVerificationWindowDataModel* dataModel();
+#if SKIP
 	static void buildData(const QVector<double>& xvals, const QVector<double>& yvals,
 												const Graph2dVerificationWindowResultSetting& s1,
 												const Graph2dVerificationWindowResultSetting::Setting& s2,
 												QVector<double>& modxvals, QVector<double>& modyvals);
+#endif
 	static void buildXY(const QVector<double>& xvals, const QVector<double>& yvals, double** x, double** y);
 };
 

@@ -21,6 +21,7 @@ Graph2dVerificationWindowDataModel* Graph2dVerificationWindowDataItem::dataModel
 }
 
 
+#if SKIP
 void Graph2dVerificationWindowDataItem::buildData(
 	const QVector<double>& xvals, const QVector<double>& yvals,
 	const Graph2dVerificationWindowResultSetting& s1,
@@ -55,6 +56,7 @@ void Graph2dVerificationWindowDataItem::buildData(
 		srcxvals = xvals;
 	}
 }
+#endif
 
 void Graph2dVerificationWindowDataItem::buildXY(const QVector<double>& xvals, const QVector<double>& yvals, double** x, double** y)
 {

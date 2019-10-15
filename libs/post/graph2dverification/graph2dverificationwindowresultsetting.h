@@ -1,9 +1,6 @@
 #ifndef GRAPH2DVERIFICATIONWINDOWRESULTSETTING_H
 #define GRAPH2DVERIFICATIONWINDOWRESULTSETTING_H
 
-//{{
-//#include <gui/verification/verificationgraphdialog.h>
-//}}
 #include <guicore/postcontainer/postsolutioninfo.h>
 
 #include <qwt_symbol.h>
@@ -116,6 +113,7 @@ public:
 	static QString getGridLocationStringTranslated(GridLocation_t location);
 
 	//struct DataTypeInfo;
+#ifdef SAVE
 	class Setting
 	{
 
@@ -170,6 +168,7 @@ public:
 		SymbolType m_symbolType;
 		bool m_barChart;
 	};
+#endif
 
 #if 0 || 1
 	struct DataTypeInfo {
@@ -204,7 +203,8 @@ public:
 	QString autoYAxisLabel(AxisSide as) const;
 	bool axisNeeded(AxisSide as);
 
-	TimeValueType timeValueType() const {return m_timeValueType;}
+#if SKIP
+	TimeValueType timeValueType() const { return m_timeValueType; }
 	void setTimeValueType(TimeValueType t) {m_timeValueType = t;}
 	PositionValueType positionValueType() const {return m_positionValueType;}
 	void setPositionValueType(PositionValueType t) {m_positionValueType = t;}
@@ -256,21 +256,27 @@ public:
 	void setTitle(const QString& t) {m_title = t;}
 	bool addIndicesToTitle() const {return m_addIndicesToTitle;}
 	void setAddIndicesToTitle(bool add) {m_addIndicesToTitle = add;}
+#endif
 	Graph2dVerificationWindowResultSetting& operator=(const Graph2dVerificationWindowResultSetting& s);
 	bool dataAvailable();
-	void setXAxisMode(XAxisMode m) {m_xAxisMode = m;}
+#if SKIP
+	void setXAxisMode(XAxisMode m) { m_xAxisMode = m; }
 	XAxisMode xAxisMode() const {return m_xAxisMode;}
 	const QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > >& dataTypeInfoMap() {return m_dataTypeInfoMap;}
+#endif
 	DataTypeInfo* targetDataTypeInfo() const {return m_targetDataTypeInfo;}
 	void setTargetDataTypeInfo(DataTypeInfo* type) {m_targetDataTypeInfo = type;}
-	QList<Setting>& targetDatas() {return m_targetDatas;}
+#if SKIP
+	QList<Setting>& targetDatas() { return m_targetDatas; }
 	const QList<Setting>& targetDatas() const {return m_targetDatas;}
 
 	const QList<GeoDataPolyLine*>& polyLines() const {return m_polyLines;}
 
 	const GeoDataPolyLine* targetPolyLine() const {return m_targetPolyLine;}
 	void setTargetPolyLine(const GeoDataPolyLine* polyline) {m_targetPolyLine = polyline;}
+#endif
 
+#if SKIP
 	QColor autoColor(int index) const ;
 	int gridI() const {return m_I;}
 	void setGridI(int i) {m_I = i;}
@@ -280,6 +286,7 @@ public:
 	void setGridK(int k) {m_K = k;}
 	int gridIndex() const {return m_index;}
 	void setGridIndex(int i) {m_index = i;}
+#endif
 
 	PostSolutionInfo* postSolutionInfo() const { return m_postSolutionInfo; };
 	std::vector<MeasuredData*> measuredData() const { return m_measuredData; };
@@ -314,11 +321,15 @@ public:
 private:
 	static DimType dimTypeFromDataType(DataType dt);
 	void setupMap();
+#if SKIP
 	static QList<GeoDataPolyLine*> polyLines(const PostSolutionInfo* info);
 	void setupPolyLines();
+#endif
 
 #if 0 || 1
+#if SKIP
 	QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > > m_dataTypeInfoMap;
+#endif
 	QList<DataTypeInfo> m_dataTypeInfos;
 #endif
 
@@ -326,6 +337,7 @@ private:
 #if 0 || 1
 	DataTypeInfo* m_targetDataTypeInfo;
 #endif
+#if SKIP
 	QList<Setting> m_targetDatas;
 	QList<GeoDataPolyLine*> m_polyLines;
 	const GeoDataPolyLine* m_targetPolyLine;
@@ -363,6 +375,7 @@ private:
 	int m_J;
 	int m_K;
 	int m_index;
+#endif
 
 	friend class Graph2dVerificationWindowDataModel;
 	PostSolutionInfo* m_postSolutionInfo;

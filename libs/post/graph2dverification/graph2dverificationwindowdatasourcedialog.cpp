@@ -1,3 +1,4 @@
+#if SKIP
 #include "ui_graph2dverificationwindowdatasourcedialog.h"
 
 #include "datamodel/graph2dverificationwindowimportdatadataitem.h"
@@ -960,3 +961,4 @@ void Graph2dVerificationWindowDataSourceDialog::updateImportDataList()
 		ui->importDataList->addItem(item->title());
 	}
 }
+#endif
