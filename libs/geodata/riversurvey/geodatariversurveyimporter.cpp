@@ -383,8 +383,7 @@ const QStringList GeoDataRiverSurveyImporter::acceptableExtensions()
 
 void GeoDataRiverSurveyImporter::clearPoints()
 {
-	for (auto p : m_points)
-	{
+	for (auto p : m_points) {
 		delete p;
 	}
 	m_points.clear();
