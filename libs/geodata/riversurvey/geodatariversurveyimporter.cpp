@@ -66,19 +66,9 @@ void removeIncompleteData(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>
 	}
 }
 
-void sortReverse(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
-{
-	std::reverse(points->begin(), points->end());
-}
-
 bool lessKP(GeoDataRiverSurveyImporter::RivPathPoint* a1, GeoDataRiverSurveyImporter::RivPathPoint* a2)
 {
 	return a1->realKP > a2->realKP;
-}
-
-void sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
-{
-	std::sort(points->begin(), points->end(), lessKP);
 }
 
 void parseKP(const QString& tok, double* realKP, std::string* strKP, bool* allNumber)
@@ -229,7 +219,7 @@ bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& 
 	dialog.setAllNamesAreNumber(m_allNamesAreNumber);
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
-		clearPoints();
+		clearPoints(&m_points);
 		return false;
 	}
 
@@ -245,17 +235,35 @@ bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& 
 
 bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	GeoDataRiverPathPoint *tail;
-
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
-	tail = rs->m_headPoint;
+
+	return importData(rs, &m_points, m_cpSetting, m_with4Points, w);
+}
+
+const QStringList GeoDataRiverSurveyImporter::fileDialogFilters()
+{
+	QStringList ret;
+	ret << tr("River Survey data (*.riv)");
+	return ret;
+}
+
+const QStringList GeoDataRiverSurveyImporter::acceptableExtensions()
+{
+	QStringList ret;
+	ret << "riv";
+	return ret;
+}
+
+bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<RivPathPoint*>* points, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, QWidget* w)
+{
+	GeoDataRiverPathPoint *tail = rs->m_headPoint;
 
 	double left = 0, right = 0;
 	double minpos = 0, minval = 0;
 	bool ok = true;
 
-	for (int i = 0; i < m_points.size(); ++i) {
-		RivPathPoint* p = m_points[i];
+	for (int i = 0; i < points->size(); ++i) {
+		RivPathPoint* p = points->at(i);
 
 		auto leftp = p->leftBank;
 		auto newPoint = new GeoDataRiverPathPoint(leftp.x(), leftp.y());
@@ -264,7 +272,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 		newPoint->InhibitInterpolatorUpdate = true;
 		newPoint->setCrosssectionDirection(iRIC::normalize(p->leftToRight()));
 
-		if (m_with4Points) {
+		if (with4Points) {
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
 			for (int j = 0; j < p->altitudes.size(); ++j) {
 				const auto& a = p->altitudes.at(j);
@@ -288,9 +296,9 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 			left  = p->altitudes.at(p->divIndices[1] - 1).distance;
 			right = p->altitudes.at(p->divIndices[2] - 1).distance;
 			double shiftValue = 0;
-			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
+			if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
 				shiftValue = (left + right) * 0.5;
-			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
+			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
 			}
 			double leftPoint = (left - shiftValue) /
@@ -317,11 +325,11 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 				prevAlt = alt;
 			}
 			double shiftValue = 0;
-			if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
+			if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpMiddle) {
 				left = newPoint->crosssection().leftBank().position();
 				right = newPoint->crosssection().rightBank().position();
 				shiftValue = (left + right) * 0.5;
-			} else if (m_cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
+			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
 			}
 			newPoint->shiftCenter(shiftValue);
@@ -334,28 +342,24 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 	if (ok) {
 		rs->updateInterpolators();
 	}
-	clearPoints();
+	clearPoints(points);
 	return ok;
 }
 
-const QStringList GeoDataRiverSurveyImporter::fileDialogFilters()
+void GeoDataRiverSurveyImporter::clearPoints(std::vector<RivPathPoint*>* points)
 {
-	QStringList ret;
-	ret << tr("River Survey data (*.riv)");
-	return ret;
-}
-
-const QStringList GeoDataRiverSurveyImporter::acceptableExtensions()
-{
-	QStringList ret;
-	ret << "riv";
-	return ret;
-}
-
-void GeoDataRiverSurveyImporter::clearPoints()
-{
-	for (auto p : m_points) {
+	for (auto p : *points) {
 		delete p;
 	}
-	m_points.clear();
+	points->clear();
+}
+
+void GeoDataRiverSurveyImporter::sortReverse(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
+{
+	std::reverse(points->begin(), points->end());
+}
+
+void GeoDataRiverSurveyImporter::sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
+{
+	std::sort(points->begin(), points->end(), lessKP);
 }

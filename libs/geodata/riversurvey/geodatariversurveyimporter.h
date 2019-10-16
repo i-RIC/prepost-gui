@@ -7,9 +7,7 @@
 
 #include <vector>
 
-namespace {
-class RivPathPoint;
-}
+class GeoDataRiverSurvey;
 
 class GeoDataRiverSurveyImporter : public GeoDataImporter
 {
@@ -48,9 +46,14 @@ public:
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 
+	static bool importData(GeoDataRiverSurvey* data, std::vector<RivPathPoint*>* inputData, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, QWidget* w);
+	static void clearPoints(std::vector<RivPathPoint*>* points);
+
+	static void sortReverse(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points);
+	static void sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points);
+
 private:
 	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
-	void clearPoints();
 
 	std::vector<RivPathPoint*> m_points;
 	bool m_with4Points;
