@@ -19,6 +19,8 @@ public:
 		Alt();
 		Alt(double dis, double e);
 
+		bool operator==(const Alt& other) const;
+
 		double distance;
 		double elevation;
 	};
@@ -36,7 +38,10 @@ public:
 		QPointF leftBank;
 		QPointF rightBank;
 
+		QString crossSectionFileName;
 		std::vector<Alt> altitudes;
+		std::vector<double> uniquedDistances;
+		bool sorted;
 		int divIndices[4];
 	};
 
@@ -47,10 +52,17 @@ public:
 	const QStringList acceptableExtensions() override;
 
 	static bool importData(GeoDataRiverSurvey* data, std::vector<RivPathPoint*>* inputData, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, QWidget* w);
+	static void removePointsWithoutBanks(std::vector<RivPathPoint*>* points);
+	static void removePointsWithoutAltitudes(std::vector<RivPathPoint*>* points);
 	static void clearPoints(std::vector<RivPathPoint*>* points);
 
 	static void sortReverse(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points);
 	static void sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points);
+
+	static void sortAlts(std::vector<Alt>* altitudes, bool* sorted);
+	// remove altitudes with the same distance
+	static void uniqueAlts(std::vector<Alt>* altitudes, std::vector<double>* distlist);
+	static QString distListString(const std::vector<double>& distlist);
 
 private:
 	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
@@ -60,6 +72,9 @@ private:
 	bool m_allNamesAreNumber;
 	bool m_reverseOrder;
 	GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting m_cpSetting;
+
+public:
+	class ProblemsDialog;
 };
 
 #endif // GEODATARIVERSURVEYIMPORTER_H
