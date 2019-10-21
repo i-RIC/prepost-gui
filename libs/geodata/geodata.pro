@@ -8,5 +8,6 @@ SUBDIRS = \
 	netcdf \
 	pointmap \
 	polygon \
+	polygongroup \
 	polyline \
 	riversurvey

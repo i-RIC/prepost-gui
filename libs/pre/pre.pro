@@ -143,6 +143,20 @@ unix {
 }
 LIBS += -liricGdPolygon
 
+# iricGdPolygonGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/polygongroup/debug"
+        } else {
+                LIBS += -L"../geodata/polygongroup/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/polygongroup"
+}
+LIBS += -liricGdPolygonGroup
+
 # iricGdPolyline
 
 win32 {

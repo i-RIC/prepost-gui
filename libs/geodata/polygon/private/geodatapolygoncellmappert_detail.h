@@ -4,32 +4,9 @@
 #include "../geodatapolygoncellmappert.h"
 #include "../geodatapolygoncellmappersetting.h"
 
+#include <guibase/vtktool/vtkpointsutil.h>
+
 #include <vtkCell.h>
-
-namespace {
-
-void getCellCenter(vtkCell* cell, double center[3])
-{
-	double v[3], p[3];
-	for (int i = 0; i < 3; ++i) {
-		v[i] = 0;
-	}
-
-	vtkPoints* points = cell->GetPoints();
-	int num_p = cell->GetNumberOfPoints();
-	for (int i = 0; i < num_p; ++i) {
-		points->GetPoint(i, p);
-		for (int j = 0; j < 3; ++j) {
-			v[j] += p[j];
-		}
-	}
-
-	for (int i = 0; i < 3; ++i) {
-		center[i] = v[i] / num_p;
-	}
-}
-
-}
 
 template <class V, class DA>
 GeoDataPolygonCellMapperT<V, DA>::GeoDataPolygonCellMapperT(GeoDataCreator* parent) :
@@ -52,7 +29,10 @@ GeoDataMapperSettingI* GeoDataPolygonCellMapperT<V, DA>::initialize(bool* boolMa
 			// get grid cell.
 			vtkCell* cell = GeoDataMapper::grid()->vtkGrid()->GetCell(i);
 			double point[3];
-			getCellCenter(cell, point);
+			QPointF center = vtkPointsUtil::getCenter(cell);
+			point[0] = center.x();
+			point[1] = center.y();
+			point[2] = 0;
 			// investigate whether the point is inside the polygon.
 			bool in;
 			// first use bounds for checking.

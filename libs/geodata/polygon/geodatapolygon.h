@@ -86,6 +86,8 @@ public:
 	void definePolygon(bool doubleClick, bool noEditVal = false);
 	QColor color() const;
 
+	void setShape(geos::geom::Polygon* polygon);
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
 
@@ -175,6 +177,7 @@ private:
 	vtkActor* paintActor() const;
 	vtkMapper* paintMapper() const;
 
+	QAction* editValueAction() const;
 	QAction* addVertexAction() const;
 	QAction* removeVertexAction() const;
 	QAction* coordEditAction() const;
@@ -203,6 +206,7 @@ private:
 public:
 	friend class GeoDataPolygonAbstractPolygon;
 	friend class GeoDataPolygonTriangleThread;
+	friend class GeoDataPolygonGroup;
 	friend class GeoDataPolygonImporter;
 	friend class GeoDataPolygonShapeExporter;
 	friend class GeoDataPolygonProxy;
