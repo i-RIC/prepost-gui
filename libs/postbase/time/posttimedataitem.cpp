@@ -8,6 +8,8 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <misc/stringtool.h>
 
+#include <QDateTime>
+#include <QDomNode>
 #include <QIcon>
 #include <QSettings>
 #include <QStandardItem>

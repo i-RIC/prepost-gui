@@ -8,6 +8,7 @@
 #include <misc/slowmotionspeededitdialog.h>
 
 #include <QAction>
+#include <QDateTime>
 #include <QIcon>
 #include <QLabel>
 #include <QMenu>
