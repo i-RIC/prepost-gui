@@ -90,6 +90,9 @@ HEADERS += arrowsettingcontainer.h \
            scalarsettingcontainer.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
+           timeformat/timeformat.h \
+           timeformat/timeformateditwidget.h \
+           timeformat/timeformatutil.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
@@ -169,6 +172,7 @@ HEADERS += arrowsettingcontainer.h \
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
+         timeformat/timeformateditwidget.ui \
          vtklinestylewidget.ui \
          vtktextpropertysettingdialog.ui \
          vtktextpropertysettingwidget.ui \
@@ -206,6 +210,8 @@ SOURCES += arrowsettingcontainer.cpp \
            scalarsettingcontainer.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
+           timeformat/timeformateditwidget.cpp \
+           timeformat/timeformatutil.cpp \
            tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomScalarBarActor.cxx \

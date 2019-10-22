@@ -568,6 +568,85 @@
     </message>
 </context>
 <context>
+    <name>TimeFormatEditWidget</name>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="20"/>
+        <source>Value type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="26"/>
+        <source>Show elapsed time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="36"/>
+        <source>Show actual time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="46"/>
+        <source>Elapsed time format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="52"/>
+        <source>SS sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="62"/>
+        <source>MM:SS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="69"/>
+        <location filename="../timeformat/timeformateditwidget.ui" line="126"/>
+        <source>HH:MM:SS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="76"/>
+        <source>DD:HH:MM:SS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="89"/>
+        <source>Actual time format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="95"/>
+        <source>yyyy/mm/dd HH:MM:SS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="105"/>
+        <source>yyyy/mm/dd HH:MM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="112"/>
+        <source>mm/dd HH:MM:SS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="119"/>
+        <source>mm/dd HH:MM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="133"/>
+        <source>HH:MM</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TooltipLabel</name>
     <message>
         <location filename="../tooltiplabel.cpp" line="13"/>
@@ -710,63 +789,71 @@
         <source>Font Setting</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>vtkTextPropertySettingWidget</name>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="22"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtktextpropertysettingwidget.ui" line="48"/>
         <source>Font:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="32"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="58"/>
         <source>Arial</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="37"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="63"/>
         <source>Courier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="42"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="68"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="62"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="88"/>
         <source>Bold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="65"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="91"/>
         <source>B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="91"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="117"/>
         <source>Italic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="94"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="120"/>
         <source>I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="121"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="147"/>
         <source>Shadow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="124"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="150"/>
         <source>S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="152"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="178"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vtktextpropertysettingdialog.ui" line="186"/>
+        <location filename="../vtktextpropertysettingwidget.ui" line="212"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>

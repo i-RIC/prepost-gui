@@ -10,6 +10,8 @@ namespace Ui
 
 class ProjectData;
 
+class QDateTime;
+
 class ProjectPropertyBasicInfoWidget : public QWidget
 {
 	Q_OBJECT
@@ -22,10 +24,13 @@ public:
 private slots:
 	void showSelectCoordinateSystemDialog();
 	void showSetOffsetDialog();
+	void showTimeDialog();
 
 private:
 	void updateCoordinateSystem();
 	void updateCoordinateOffset();
+	void updateTimeString();
+
 	ProjectData* m_projectData;
 	Ui::ProjectPropertyBasicInfoWidget* ui;
 };

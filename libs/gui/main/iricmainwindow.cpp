@@ -632,7 +632,7 @@ void iRICMainWindow::setupForNewProjectData()
 	updatePostActionStatus();
 
 	// update animationcontroller
-	AnimationController* ac = dynamic_cast<AnimationController*>(m_animationController);
+	auto ac = m_animationController;
 	ac->setup(m_projectData->solverDefinition()->iterationType());
 	QToolBar* at = ac->animationToolBar();
 	if (at != nullptr) {addToolBar(at);}
@@ -842,6 +842,8 @@ void iRICMainWindow::showProjectPropertyDialog()
 	ProjectPropertyDialog dialog(this);
 	dialog.setProjectData(m_projectData);
 	dialog.exec();
+
+	m_animationController->updateLabelAndPostWindows();
 }
 
 void iRICMainWindow::cut()
@@ -1234,6 +1236,11 @@ void iRICMainWindow::warnSolverRunning() const
 	QMessageBox::warning(t, tr("Warning"), tr("The solver is running now. Please stop solver, to do this action."), QMessageBox::Ok);
 }
 
+const QLocale iRICMainWindow::locale() const
+{
+	return m_locale;
+}
+
 bool iRICMainWindow::isSolverRunning() const
 {
 	return m_solverConsoleWindow->isSolverRunning();
@@ -1246,16 +1253,28 @@ void iRICMainWindow::switchCgnsFile(const QString& newcgns)
 		return;
 	}
 	// clear animation tool bar steps.
-	AnimationController* ac = dynamic_cast<AnimationController*>(m_animationController);
+	auto ac = m_animationController;
 	ac->clearSteps();
 	// switch cgns file.
 	m_projectData->mainfile()->switchCgnsFile(newcgns);
 	updatePostActionStatus();
 }
 
+ProjectWorkspace* iRICMainWindow::workspace()
+{
+	return m_workspace;
+}
+
+const VersionNumber& iRICMainWindow::versionNumber() const
+{
+	return m_versionNumber;
+}
+
 void iRICMainWindow::setupAnimationToolbar()
 {
-	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(cgnsStepsUpdated(QList<QString>)), m_animationController, SLOT(updateStepList(QList<QString>)));
+	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(cgnsTimeStepsUpdated(QList<double>)), m_animationController, SLOT(updateTimeSteps(QList<double>)));
+	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(cgnsIterationStepsUpdated(QList<int>)), m_animationController, SLOT(updateIterationSteps(QList<int>)));
+
 	m_projectData->mainfile()->postSolutionInfo()->informCgnsSteps();
 }
 
@@ -1670,6 +1689,21 @@ void iRICMainWindow::setDebugMode(bool debug)
 	} else {
 		vtkObject::GlobalWarningDisplayOff();
 	}
+}
+
+bool iRICMainWindow::isDebugMode() const
+{
+	return m_debugMode;
+}
+
+bool iRICMainWindow::continuousSnapshotInProgress() const
+{
+	return m_continuousSnapshotInProgress;
+}
+
+void iRICMainWindow::setContinuousSnapshotInProgress(bool prog)
+{
+	m_continuousSnapshotInProgress = prog;
 }
 
 void iRICMainWindow::parseArgs()
@@ -2129,6 +2163,16 @@ QString iRICMainWindow::tmpFileName(int len) const
 	return workDir.absoluteFilePath(filename);
 }
 
+AnimationControllerInterface* iRICMainWindow::animationController() const
+{
+	return m_animationController;
+}
+
+CoordinateSystemBuilder* iRICMainWindow::coordinateSystemBuilder() const
+{
+	return m_coordinateSystemBuilder;
+}
+
 void iRICMainWindow::checkCgnsStepsUpdate()
 {
 	if (m_projectData == nullptr) {return;}
@@ -2303,6 +2347,11 @@ bool iRICMainWindow::clearResultsIfGridIsEdited()
 		m_projectData->mainfile()->clearResults();
 	}
 	return true;
+}
+
+ProjectData* iRICMainWindow::projectData() const
+{
+	return m_projectData;
 }
 
 void iRICMainWindow::setProjectData(ProjectData* projectData)

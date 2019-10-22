@@ -2,20 +2,27 @@
 #include "posttimeeditdialog.h"
 #include "private/posttimedataitem_setsettingcommand.h"
 
+#include <guibase/timeformat/timeformatutil.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <misc/stringtool.h>
 
+#include <QDateTime>
+#include <QDomNode>
 #include <QIcon>
 #include <QSettings>
 #include <QStandardItem>
+#include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
 PostTimeDataItem::Setting::Setting() :
-	CompositeContainer ({&timeFormat, &fontSetting}),
-	timeFormat {"format", TimeFormat::Format::Second},
+	CompositeContainer ({&useProjectSetting, &timeFormat, &fontSetting}),
+	useProjectSetting {"useProjectSetting", true},
+	timeFormat {"format", TimeFormat::elapsed_SS_sec},
 	fontSetting {}
 {
 	fontSetting.fontSize = FONTSIZE;
@@ -31,6 +38,31 @@ PostTimeDataItem::Setting& PostTimeDataItem::Setting::operator=(const Setting& s
 {
 	CompositeContainer::copyValue(s);
 	return *this;
+}
+
+void PostTimeDataItem::Setting::load(const QDomNode& node)
+{
+	for (XmlAttributeContainer* c : containers()) {
+		auto timeFormatContainer = dynamic_cast<EnumContainerT<TimeFormat>*> (c);
+		if (timeFormatContainer != nullptr) {
+			auto elem = node.toElement();
+			*timeFormatContainer = TimeFormatUtil::fromString(elem.attribute("timeFormat"));
+		} else {
+			c->load(node);
+		}
+	}
+}
+
+void PostTimeDataItem::Setting::save(QXmlStreamWriter& writer) const
+{
+	for (XmlAttributeContainer* c : containers()) {
+		auto timeFormatContainer = dynamic_cast<EnumContainerT<TimeFormat>*> (c);
+		if (timeFormatContainer != nullptr) {
+			writer.writeAttribute("timeFormat", TimeFormatUtil::toString(timeFormatContainer->value()));
+		} else {
+			c->save(writer);
+		}
+	}
 }
 
 PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent) :
@@ -73,7 +105,14 @@ void PostTimeDataItem::setupActors()
 
 QDialog* PostTimeDataItem::propertyDialog(QWidget* parent)
 {
+	auto mainFile = projectData()->mainfile();
+	QDateTime zeroDateTime = mainFile->zeroDateTime();
+	if (m_setting.useProjectSetting) {
+		m_setting.timeFormat = mainFile->timeFormat();
+	}
+
 	PostTimeEditDialog* dialog = new PostTimeEditDialog(parent);
+	dialog->setActualTimeAvailable(! zeroDateTime.isNull());
 	dialog->setSetting(m_setting);
 	return dialog;
 }
@@ -91,8 +130,17 @@ void PostTimeDataItem::update()
 
 void PostTimeDataItem::updateActorSettings()
 {
+	auto mainFile = projectData()->mainfile();
+
+	QDateTime zeroDateTime = mainFile->zeroDateTime();
+	TimeFormat format = mainFile->timeFormat();
+
 	double time = postSolutionInfo()->currentTimeStep();
-	QString timeStr = QString("Time: %1").arg(TimeFormat::formattedString(time, m_setting.timeFormat));
+
+	if (! m_setting.useProjectSetting) {
+		format = m_setting.timeFormat.value();
+	}
+	QString timeStr = QString("Time: %1").arg(TimeFormatUtil::formattedString(zeroDateTime, time, format));
 
 	m_timeActor->SetInput(iRIC::toStr(timeStr).c_str());
 	m_timeActor->SetTextScaleModeToNone();

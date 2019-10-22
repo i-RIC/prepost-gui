@@ -14,6 +14,10 @@
 #define cgsize_t int
 #endif
 
+PostIterationSteps::PostIterationSteps(ProjectDataItem* parent) :
+	PostAbstractSteps(parent)
+{}
+
 void PostIterationSteps::loadFromCgnsFile(const int fn)
 {
 	QList<int> tmplist;
@@ -31,8 +35,8 @@ void PostIterationSteps::loadFromCgnsFile(const int fn)
 	if (ier != 0) {
 		// there's no BaseIterativeData_t.
 		// skip loading and emit signal.
-		if (tmplist != m_iterationsteps) {
-			m_iterationsteps = tmplist;
+		if (tmplist != m_iterationSteps) {
+			m_iterationSteps = tmplist;
 			emit stepsUpdated(tmplist);
 		}
 		return;
@@ -68,16 +72,26 @@ void PostIterationSteps::loadFromCgnsFile(const int fn)
 			break;
 		}
 	}
-	changed = (tmplist != m_iterationsteps);
-	m_iterationsteps = tmplist;
+	changed = (tmplist != m_iterationSteps);
+	m_iterationSteps = tmplist;
 	if (changed) {
-		emit stepsUpdated(m_iterationsteps);
+		emit stepsUpdated(m_iterationSteps);
 		emit stepsUpdated(fn);
 	}
 	return;
 
 ERRORMSG:
 	QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
+}
+
+const QList<int>& PostIterationSteps::iterationSteps() const
+{
+	return m_iterationSteps;
+}
+
+bool PostIterationSteps::dataExists() const
+{
+	return m_iterationSteps.size() > 0;
 }
 
 void PostIterationSteps::checkStepsUpdate(int fn)
@@ -87,5 +101,10 @@ void PostIterationSteps::checkStepsUpdate(int fn)
 
 void PostIterationSteps::informSteps()
 {
-	emit stepsUpdated(m_iterationsteps);
+	emit stepsUpdated(m_iterationSteps);
+}
+
+void PostIterationSteps::clearArray()
+{
+	m_iterationSteps.clear();
 }

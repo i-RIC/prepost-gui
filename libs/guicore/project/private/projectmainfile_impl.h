@@ -3,8 +3,10 @@
 
 #include "../projectmainfile.h"
 
+#include <guibase/timeformat/timeformat.h>
 #include <misc/versionnumber.h>
 
+#include <QDateTime>
 #include <QPointF>
 
 #include <string>
@@ -34,6 +36,9 @@ public:
 	ProjectPostProcessors* m_postProcessors;
 
 	CoordinateSystem* m_coordinateSystem;
+	QDateTime m_zeroDateTime; // time that corresponds to t = 0
+	TimeFormat m_timeFormat;
+
 	QPointF m_offset;
 
 	bool m_isModified;

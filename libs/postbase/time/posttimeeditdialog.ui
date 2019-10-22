@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>318</width>
-    <height>196</height>
+    <width>345</width>
+    <height>315</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,36 +15,25 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
+    <widget class="QCheckBox" name="useProjectSettingCheckBox">
+     <property name="text">
+      <string>Use project setting</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QGroupBox" name="formatGroupBox">
      <property name="title">
-      <string>Format</string>
+      <string>Time Format</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QRadioButton" name="secondRadioButton">
-        <property name="text">
-         <string>ss sec</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="minuteSecondRadioButton">
-        <property name="text">
-         <string>mm:ss</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="hourMinuteSecondRadioButton">
-        <property name="text">
-         <string>hh:mm:ss</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="dayHourMinuteSecondRadioButton">
-        <property name="text">
-         <string>dd:hh:mm:ss</string>
+       <widget class="TimeFormatEditWidget" name="timeFormatEditWidget" native="true">
+        <property name="enabled">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -86,6 +75,12 @@
    <header>guibase/vtktextpropertysettingwidget.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>TimeFormatEditWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/timeformat/timeformateditwidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
@@ -96,8 +91,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>167</x>
-     <y>225</y>
+     <x>164</x>
+     <y>322</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -112,12 +107,28 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>167</x>
-     <y>225</y>
+     <x>164</x>
+     <y>322</y>
     </hint>
     <hint type="destinationlabel">
      <x>176</x>
      <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>useProjectSettingCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeFormatEditWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>74</x>
+     <y>127</y>
     </hint>
    </hints>
   </connection>

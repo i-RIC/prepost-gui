@@ -20,6 +20,7 @@ public:
 
 	PostTimeDataItem::Setting setting() const;
 	void setSetting(const PostTimeDataItem::Setting& setting);
+	void setActualTimeAvailable(bool available);
 
 private:
 	Ui::PostTimeEditDialog* ui;

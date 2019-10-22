@@ -45,7 +45,7 @@ public:
 	virtual void clearResults() = 0;
 	virtual QStringList containedFiles() const = 0;
 	virtual ProjectWorkspace* workspace() = 0;
-	virtual const VersionNumber versionNumber() const = 0;
+	virtual const VersionNumber& versionNumber() const = 0;
 	virtual bool clearResultsIfGridIsEdited() = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;
 	virtual const QLocale locale() const = 0;

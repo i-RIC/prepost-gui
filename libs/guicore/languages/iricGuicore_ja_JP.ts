@@ -1971,12 +1971,12 @@ Do you really want to import this file?</source>
 <context>
     <name>PostIterationSteps</name>
     <message>
-        <location filename="../postcontainer/postiterationsteps.cpp" line="80"/>
+        <location filename="../postcontainer/postiterationsteps.cpp" line="84"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postiterationsteps.cpp" line="80"/>
+        <location filename="../postcontainer/postiterationsteps.cpp" line="84"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
@@ -1984,20 +1984,20 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="187"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="823"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="922"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="189"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="801"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="900"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="187"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="189"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="485"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="487"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="775"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2006,42 +2006,42 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="485"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="487"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="775"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="823"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="801"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="872"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="850"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="876"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="854"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="879"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="857"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="882"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="860"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="922"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="900"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -2049,12 +2049,12 @@ Do you really want to import this file?</source>
 <context>
     <name>PostTimeSteps</name>
     <message>
-        <location filename="../postcontainer/posttimesteps.cpp" line="79"/>
+        <location filename="../postcontainer/posttimesteps.cpp" line="83"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/posttimesteps.cpp" line="79"/>
+        <location filename="../postcontainer/posttimesteps.cpp" line="83"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
@@ -2155,24 +2155,24 @@ Do you really want to import this file?</source>
         <translation type="vanished">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="552"/>
-        <location filename="../project/projectmainfile.cpp" line="557"/>
-        <location filename="../project/projectmainfile.cpp" line="596"/>
-        <location filename="../project/projectmainfile.cpp" line="628"/>
-        <location filename="../project/projectmainfile.cpp" line="1040"/>
-        <location filename="../project/projectmainfile.cpp" line="1087"/>
-        <location filename="../project/projectmainfile.cpp" line="1107"/>
-        <location filename="../project/projectmainfile.cpp" line="1114"/>
+        <location filename="../project/projectmainfile.cpp" line="568"/>
+        <location filename="../project/projectmainfile.cpp" line="573"/>
+        <location filename="../project/projectmainfile.cpp" line="612"/>
+        <location filename="../project/projectmainfile.cpp" line="644"/>
+        <location filename="../project/projectmainfile.cpp" line="1056"/>
+        <location filename="../project/projectmainfile.cpp" line="1103"/>
+        <location filename="../project/projectmainfile.cpp" line="1123"/>
+        <location filename="../project/projectmainfile.cpp" line="1130"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="552"/>
+        <location filename="../project/projectmainfile.cpp" line="568"/>
         <source>Solution %1 already exists.</source>
         <translation>ソリューション %1 は既に存在します。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="557"/>
+        <location filename="../project/projectmainfile.cpp" line="573"/>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
         <translation>英数字以外の文字を名前に含む CGNS ファイルは、インポートできません。</translation>
     </message>
@@ -2181,15 +2181,15 @@ Do you really want to import this file?</source>
         <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="660"/>
-        <location filename="../project/projectmainfile.cpp" line="682"/>
-        <location filename="../project/projectmainfile.cpp" line="794"/>
-        <location filename="../project/projectmainfile.cpp" line="801"/>
-        <location filename="../project/projectmainfile.cpp" line="811"/>
-        <location filename="../project/projectmainfile.cpp" line="822"/>
-        <location filename="../project/projectmainfile.cpp" line="825"/>
-        <location filename="../project/projectmainfile.cpp" line="1096"/>
-        <location filename="../project/projectmainfile.cpp" line="1208"/>
+        <location filename="../project/projectmainfile.cpp" line="676"/>
+        <location filename="../project/projectmainfile.cpp" line="698"/>
+        <location filename="../project/projectmainfile.cpp" line="810"/>
+        <location filename="../project/projectmainfile.cpp" line="817"/>
+        <location filename="../project/projectmainfile.cpp" line="827"/>
+        <location filename="../project/projectmainfile.cpp" line="838"/>
+        <location filename="../project/projectmainfile.cpp" line="841"/>
+        <location filename="../project/projectmainfile.cpp" line="1112"/>
+        <location filename="../project/projectmainfile.cpp" line="1244"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2208,69 +2208,69 @@ Do you really want to import this file?</source>
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="590"/>
+        <location filename="../project/projectmainfile.cpp" line="606"/>
         <source>Export CGNS file</source>
         <translation>CNGS ファイルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="590"/>
+        <location filename="../project/projectmainfile.cpp" line="606"/>
         <source>CGNS file (*.cgns)</source>
         <translation>CGNS ファイル (*.cgns)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="596"/>
+        <location filename="../project/projectmainfile.cpp" line="612"/>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
         <translation>CGNS ファイルのエクスポートが失敗しました。指定されたファイルは、他のプロセスが使用中です。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="628"/>
+        <location filename="../project/projectmainfile.cpp" line="644"/>
         <source>Error occured while opening CGNS file in project file : %1</source>
         <translation>プロジェクト内の CGNS ファイルの読み込み中にエラーが発生しました。: %1</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="660"/>
-        <location filename="../project/projectmainfile.cpp" line="682"/>
+        <location filename="../project/projectmainfile.cpp" line="676"/>
+        <location filename="../project/projectmainfile.cpp" line="698"/>
         <source>%1 Saving project file failed.</source>
         <translation>%1 プロジェクトファイルの保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="782"/>
+        <location filename="../project/projectmainfile.cpp" line="798"/>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
         <translation>すべての画像(*.jpg *.jpeg *.png *.tif);;JPEG 画像(*.jpg *.jpeg);;PNG 画像(*.png);;TIFF 画像(*.tif)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="784"/>
+        <location filename="../project/projectmainfile.cpp" line="800"/>
         <source>Open Image file</source>
         <translation>画像ファイルを開く</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="794"/>
+        <location filename="../project/projectmainfile.cpp" line="810"/>
         <source>A background image with the same name already exists.</source>
         <translation>同じファイル名の背景画像が既に存在します。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="801"/>
-        <location filename="../project/projectmainfile.cpp" line="811"/>
+        <location filename="../project/projectmainfile.cpp" line="817"/>
+        <location filename="../project/projectmainfile.cpp" line="827"/>
         <source>The background image was not added. Please try again.</source>
         <translation>背景画像は追加されませんでした。もう一度試してみてください。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="825"/>
+        <location filename="../project/projectmainfile.cpp" line="841"/>
         <source>Invalid image file is specified.</source>
         <translation>不正な画像ファイルが指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1003"/>
+        <location filename="../project/projectmainfile.cpp" line="1019"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。古い iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1005"/>
+        <location filename="../project/projectmainfile.cpp" line="1021"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1208"/>
+        <location filename="../project/projectmainfile.cpp" line="1244"/>
         <source>Coordinate system not selected.</source>
         <translation>座標系が選択されていません。</translation>
     </message>
@@ -2279,32 +2279,32 @@ Do you really want to import this file?</source>
         <translation type="vanished"> : そのようなファイルはありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1027"/>
+        <location filename="../project/projectmainfile.cpp" line="1043"/>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1028"/>
+        <location filename="../project/projectmainfile.cpp" line="1044"/>
         <source>Open Measured Data File</source>
         <translation>実測値データファイルを開く</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1087"/>
+        <location filename="../project/projectmainfile.cpp" line="1103"/>
         <source>Error occured while loading %1.</source>
         <translation>%1 の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1096"/>
+        <location filename="../project/projectmainfile.cpp" line="1112"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
         <translation>このファイルは、ソルバ %1 %2 用のものです。現在お使いのソルバと互換性がないため、インポートは失敗する可能性があります。本当にこのファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1107"/>
+        <location filename="../project/projectmainfile.cpp" line="1123"/>
         <source>There is no visualization/graph windows.</source>
         <translation>可視化・グラフウィンドウがありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1114"/>
+        <location filename="../project/projectmainfile.cpp" line="1130"/>
         <source>File %1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
@@ -2312,15 +2312,38 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="181"/>
-        <location filename="../project/projectmainfile.cpp" line="186"/>
+        <location filename="../project/projectmainfile.cpp" line="183"/>
+        <location filename="../project/projectmainfile.cpp" line="188"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="185"/>
+        <location filename="../project/projectmainfile.cpp" line="187"/>
         <source> : no such file.</source>
         <translation> : そのようなファイルはありません。</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectTimeSettingDialog</name>
+    <message>
+        <location filename="../project/projecttimesettingdialog.ui" line="14"/>
+        <source>Date for t = 0 setting</source>
+        <translation>t = 0 の日付の設定</translation>
+    </message>
+    <message>
+        <location filename="../project/projecttimesettingdialog.ui" line="22"/>
+        <source>Time for t = 0:</source>
+        <translation>t = 0 の日付:</translation>
+    </message>
+    <message>
+        <location filename="../project/projecttimesettingdialog.ui" line="36"/>
+        <source>Not specified</source>
+        <translation>未設定</translation>
+    </message>
+    <message>
+        <location filename="../project/projecttimesettingdialog.ui" line="61"/>
+        <source>Time display format</source>
+        <translation>時間の表示書式</translation>
     </message>
 </context>
 <context>
@@ -2500,7 +2523,7 @@ Do you really want to import this file?</source>
         <translation>背景色</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1165"/>
+        <location filename="../project/projectmainfile.cpp" line="1201"/>
         <source>Set offset</source>
         <translation>オフセットの指定</translation>
     </message>
