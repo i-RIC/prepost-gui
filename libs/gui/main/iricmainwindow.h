@@ -160,8 +160,8 @@ public slots:
 	void exportParticles();
 	/// Export Coutour figure as ESRI Shape files.
 	void exportCfShape();
-	/// Export Google Earth KML for street view
-	void exportStKML();
+	/// Export Google Earth KMZ for street view
+	void exportStKMZ();
 	/// Import Visualization/Graph settings.
 	void importVisGraphSetting();
 	/// Export Visualization/Graph settings.

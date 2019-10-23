@@ -198,7 +198,7 @@ public:
 	/// Action to export Contour Figure (in post2d window) into ESRI Shape files
 	QAction* cfShapeExportAction;
 	/// Action to export Google Earth KML for street view.
-	QAction* svKmlExportAction;
+	QAction* svKmzExportAction;
 	/// Action to reload Calculation Result.
 	QAction* calcResultReloadAction;
 	QAction* calcResultReloadToolBarAction;
