@@ -725,6 +725,10 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	if (! oneShot) {
 		// TimeStamp Start
 		QDateTime datetime(QDate(2011, 1, 1));
+		auto zeroDateTime = projectData()->mainfile()->zeroDateTime();
+		if (! zeroDateTime.isNull()) {
+			datetime = zeroDateTime;
+		}
 		datetime = datetime.addSecs(static_cast<int>(time));
 		writer.writeStartElement("TimeStamp");
 		writer.writeTextElement("when", datetime.toString("yyyy-MM-ddTHH:mm:ssZ"));

@@ -1197,15 +1197,15 @@ void iRICMainWindow::addKMLElement(int time, QString url, double north, double s
 
 QString iRICMainWindow::timeString(int time)
 {
-	QString str;
-	int hour = time / 3600;
-	int minutes = time % 3600;
-	int minute = minutes / 60;
-	int second = minutes % 60;
-	str = QString("2011-01-01T%1:%2:%3").arg(hour, 2, 10, QChar('0'))
-				.arg(minute, 2, 10, QChar('0'))
-				.arg(second, 2, 10, QChar('0'));
-	return str;
+	QDateTime datetime(QDate(2011, 1, 1));
+	auto zeroDateTime = projectData()->mainfile()->zeroDateTime();
+	if (! zeroDateTime.isNull()) {
+		datetime = zeroDateTime;
+	}
+	auto secs = m_projectData->mainfile()->postSolutionInfo()->timeSteps()->timesteps().at(time);
+	datetime = datetime.addSecs(static_cast<int>(secs));
+
+	return datetime.toString("yyyy-MM-ddTHH:mm:ssZ");
 }
 
 void iRICMainWindow::updateWindowTitle()
