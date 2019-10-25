@@ -49,8 +49,6 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 	}
 	GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 
-	c = grid2d->gridAttribute("CellCondition");
-	GridAttributeIntegerCellContainer* cellcond = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 	QTextStream o(&f);
 	o.setRealNumberPrecision(8);
 	o << "IMAX,JMAX,KMAX " << endl;
@@ -65,17 +63,6 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 					<< grid2d->vertex(i, j).x() << ","
 					<< grid2d->vertex(i, j).y() << ","
 					<< container->value(grid2d->vertexIndex(i, j)) << endl;
-			}
-		}
-	}
-	if (cellcond != 0){
-		o << "I , J , K , FLAGS" << endl;
-		for (int k = 0; k < kmax - 1; k++){
-			for (int j = 0; j < jmax - 1; j++){
-				for (int i = 0; i < imax - 1; i++){
-					o << i << "," << j << "," << k << ","
-						<< cellcond->value(grid2d->cellIndex(i, j)) << endl;
-				}
 			}
 		}
 	}
