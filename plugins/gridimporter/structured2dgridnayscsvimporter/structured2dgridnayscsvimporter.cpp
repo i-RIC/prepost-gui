@@ -36,8 +36,6 @@ QStringList Structured2DGridNaysCSVImporter::fileDialogFilters() const
 
 bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
-	// Show warning dialog first.
-	QMessageBox::warning(parent, tr("Warning"), tr("Cell flag values will not be loaded."), QMessageBox::Ok);
 	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
 
 	QFile f(filename);
