@@ -410,12 +410,12 @@
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="15"/>
+        <location filename="../geodatariversurveycreator.cpp" line="16"/>
         <source>River Survey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="40"/>
+        <location filename="../geodatariversurveycreator.cpp" line="42"/>
         <source>RiverSurvey %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -731,47 +731,47 @@
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="104"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="105"/>
         <source>&amp;Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="106"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="107"/>
         <source>&amp;Inactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="108"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="109"/>
         <source>&amp;Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="123"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="124"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="562"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="563"/>
         <source>Left Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="566"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="567"/>
         <source>Right Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1598"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1620"/>
         <source>Edit Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1613"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1635"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1613"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1635"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation type="unfinished"></translation>
@@ -782,8 +782,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1327"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1348"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1339"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1360"/>
         <source>Inactivate Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -865,6 +865,103 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../geodatariversurveyexporter.cpp" line="75"/>
         <source>River Survey data(*.riv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyHonryuExporter</name>
+    <message>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="51"/>
+        <source>RiverSurvey data HONRYU export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="57"/>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="129"/>
+        <source>CSV File (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="128"/>
+        <source>Text File (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="14"/>
+        <source>Export Format Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="31"/>
+        <source>Comma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="41"/>
+        <source>Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="48"/>
+        <source>Space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="22"/>
+        <source>Separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="70"/>
+        <source>Header:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="77"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="84"/>
+        <source>Longitudinal Distance:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="94"/>
+        <source>Distance from previous Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="99"/>
+        <source>Distance from first Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="109"/>
+        <source>Columns:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="119"/>
+        <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="124"/>
+        <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="129"/>
+        <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="134"/>
+        <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
