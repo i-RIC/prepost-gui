@@ -27,7 +27,7 @@ unsigned int GridAttributeNodeContainerT<V, DA>::dataCount() const
 }
 
 template <class V, class DA>
-V GridAttributeNodeContainerT<V, DA>::value(unsigned int index)
+V GridAttributeNodeContainerT<V, DA>::value(unsigned int index) const
 {
 	return dataArray()->GetValue(static_cast<vtkIdType>(index));
 }

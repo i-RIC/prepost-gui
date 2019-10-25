@@ -15,7 +15,7 @@ public:
 
 	unsigned int dataCount() const override;
 
-	int value(unsigned int index) override;
+	int value(unsigned int index) const override;
 	void setValue(unsigned int index, int value) override;
 
 	void allocate() override;

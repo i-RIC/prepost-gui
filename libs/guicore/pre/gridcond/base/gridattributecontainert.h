@@ -13,7 +13,7 @@ public:
 	GridAttributeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond);
 	virtual ~GridAttributeContainerT();
 
-	virtual V value(unsigned int index) = 0;
+	virtual V value(unsigned int index) const = 0;
 	virtual void setValue(unsigned int index, V value) = 0;
 
 	bool loadFromCgnsFile(int fn, int B, int Z) override;

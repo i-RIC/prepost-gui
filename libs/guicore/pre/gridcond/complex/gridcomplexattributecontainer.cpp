@@ -19,7 +19,7 @@ GridComplexAttributeContainer::GridComplexAttributeContainer(Grid* grid, SolverD
 GridComplexAttributeContainer::~GridComplexAttributeContainer()
 {}
 
-int GridComplexAttributeContainer::value(unsigned int index)
+int GridComplexAttributeContainer::value(unsigned int index) const
 {
 	return dataArray()->GetValue(index);
 }
