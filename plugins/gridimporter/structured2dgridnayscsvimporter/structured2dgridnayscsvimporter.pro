@@ -25,6 +25,20 @@ unix {
 }
 LIBS += -liricGuicore
 
+# iricMisc library
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../../../libs/misc/debug"
+        } else {
+                LIBS += -L"../../../libs/misc/release"
+        }
+}
+unix {
+        LIBS += -L"../../../libs/misc"
+}
+LIBS += -liricMisc
+
 # VTK
 
 LIBS += \
