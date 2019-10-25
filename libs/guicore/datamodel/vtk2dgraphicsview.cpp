@@ -231,6 +231,18 @@ void VTK2DGraphicsView::translate(int x, int y)
 	r->GetActiveCamera()->SetFocalPoint(focalpoint);
 }
 
+void VTK2DGraphicsView::panTo(double x, double y)
+{
+	auto camera = mainRenderer()->GetActiveCamera();
+
+	double pos[3];
+	camera->GetPosition(pos);
+	camera->SetPosition(x, y, pos[2]);
+	camera->GetFocalPoint(pos);
+	camera->SetFocalPoint(x, y, pos[2]);
+	render();
+}
+
 void VTK2DGraphicsView::cameraResetRotation()
 {
 	resetRoll();

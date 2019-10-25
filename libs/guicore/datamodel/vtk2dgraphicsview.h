@@ -22,6 +22,7 @@ public:
 	void ResetCameraClippingRange();
 	double stdRadius(int pixels) const;
 	void translate(int x, int y) override;
+	void panTo(double x, double y);
 	void emitPosition(int x, int y);
 	void emitWorldPosition(int x, int y);
 
