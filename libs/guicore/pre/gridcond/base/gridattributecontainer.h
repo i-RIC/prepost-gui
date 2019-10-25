@@ -16,11 +16,6 @@ class GUICOREDLL_EXPORT GridAttributeContainer : public GridAttributeBaseObject
 	Q_OBJECT
 
 public:
-	enum DefinitionPosition {
-		CellCenter,
-		Node,
-	};
-
 	GridAttributeContainer(Grid* grid, SolverDefinitionGridAttribute* cond);
 	virtual ~GridAttributeContainer();
 
