@@ -26,20 +26,8 @@ class vtkProperty;
 class QAction;
 class QPolygonF;
 
-class GeoDataRiverSurveyCrosssectionWindow;
-class GeoDataRiverPathPointMoveDialog;
-class GeoDataRiverPathPointShiftDialog;
-class GeoDataRiverPathPointRenameDialog;
-class GeoDataRiverPathPointRotateDialog;
-class GeoDataRiverPathPointExtensionAddDialog;
-class GeoDataRiverPathPointExpandDialog;
-class GeoDataRiverPathPointInsertDialog;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
-class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
-class GeoDataRiverCrosssectionAltitudeMoveDialog;
-class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 class GridCreatingConditionRiverSurveyInterface;
-class GeoDataRiverSurveyProxy;
 
 /// Polygon container.
 /**
