@@ -26,6 +26,10 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_riverCenterPointsActor {vtkActor::New()},
 	m_selectedRiverCenterPoints {vtkPolyData::New()},
 	m_selectedRiverCenterPointsActor {vtkActor::New()},
+	m_selectedLeftBankPoints {vtkPolyData::New()},
+	m_selectedLeftBankPointsActor {vtkActor::New()},
+	m_selectedRightBankPoints {vtkPolyData::New()},
+	m_selectedRightBankPointsActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -51,12 +55,18 @@ GeoDataRiverSurvey::Impl::~Impl()
 	auto r = m_rs->renderer();
 	r->RemoveActor(m_riverCenterPointsActor);
 	r->RemoveActor(m_selectedRiverCenterPointsActor);
+	r->RemoveActor(m_selectedLeftBankPointsActor);
+	r->RemoveActor(m_selectedRightBankPointsActor);
 
 	m_pointPoints->Delete();
 	m_riverCenterPoints->Delete();
 	m_riverCenterPointsActor->Delete();
 	m_selectedRiverCenterPoints->Delete();
 	m_selectedRiverCenterPointsActor->Delete();
+	m_selectedLeftBankPoints->Delete();
+	m_selectedLeftBankPointsActor->Delete();
+	m_selectedRightBankPoints->Delete();
+	m_selectedRightBankPointsActor->Delete();
 
 	delete m_rightClickingMenu;
 }
@@ -121,6 +131,26 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	prop->SetColor(0, 0, 1);
 	m_selectedRiverCenterPointsActor->VisibilityOff();
 	r->AddActor(m_selectedRiverCenterPointsActor);
+
+	// selected left bank points
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_selectedLeftBankPoints);
+	m_selectedLeftBankPointsActor->SetMapper(mapper);
+	prop = m_selectedLeftBankPointsActor->GetProperty();
+	prop->SetPointSize(5);
+	prop->SetColor(1, 0, 0);
+	m_selectedLeftBankPointsActor->VisibilityOff();
+	r->AddActor(m_selectedLeftBankPointsActor);
+
+	// selected right bank points
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_selectedRightBankPoints);
+	m_selectedRightBankPointsActor->SetMapper(mapper);
+	prop = m_selectedRightBankPointsActor->GetProperty();
+	prop->SetPointSize(5);
+	prop->SetColor(0, 1, 0);
+	m_selectedRightBankPointsActor->VisibilityOff();
+	r->AddActor(m_selectedRightBankPointsActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
@@ -258,8 +288,12 @@ void GeoDataRiverSurvey::Impl::updateVtkPointsObjects()
 void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 {
 	auto selectedCenterPoints = vtkSmartPointer<vtkCellArray>::New();
+	auto selectedLeftBankPoints = vtkSmartPointer<vtkCellArray>::New();
+	auto selectedRightBankPoints = vtkSmartPointer<vtkCellArray>::New();
 
 	m_selectedRiverCenterPoints->Initialize();
+	m_selectedLeftBankPoints->Initialize();
+	m_selectedRightBankPoints->Initialize();
 
 	auto p = m_rs->headPoint()->nextPoint();
 	int pointId = 0;
@@ -269,6 +303,10 @@ void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 		if (p->IsSelected) {
 			ids[0] = pointId * 5 + 2;
 			selectedCenterPoints->InsertNextCell(1, ids);
+			ids[0] = pointId * 5 + 0;
+			selectedLeftBankPoints->InsertNextCell(1, ids);
+			ids[0] = pointId * 5 + 4;
+			selectedRightBankPoints->InsertNextCell(1, ids);
 		}
 
 		p = p->nextPoint();
@@ -276,6 +314,10 @@ void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 	}
 	m_selectedRiverCenterPoints->SetPoints(m_pointPoints);
 	m_selectedRiverCenterPoints->SetVerts(selectedCenterPoints);
+	m_selectedLeftBankPoints->SetPoints(m_pointPoints);
+	m_selectedLeftBankPoints->SetVerts(selectedLeftBankPoints);
+	m_selectedRightBankPoints->SetPoints(m_pointPoints);
+	m_selectedRightBankPoints->SetVerts(selectedRightBankPoints);
 }
 
 void GeoDataRiverSurvey::Impl::setupCursors()

@@ -63,6 +63,12 @@ public:
 	vtkPolyData* m_selectedRiverCenterPoints;
 	vtkActor* m_selectedRiverCenterPointsActor;
 
+	vtkPolyData* m_selectedLeftBankPoints;
+	vtkActor* m_selectedLeftBankPointsActor;
+
+	vtkPolyData* m_selectedRightBankPoints;
+	vtkActor* m_selectedRightBankPointsActor;
+
 	QMenu* m_rightClickingMenu;
 
 	QAction* m_addUpperSideAction;
