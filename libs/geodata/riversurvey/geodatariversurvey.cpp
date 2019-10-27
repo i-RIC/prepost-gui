@@ -641,7 +641,7 @@ void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsV
 
 void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	GeoDataRiverPathPoint* selP = selectedPoint();
+	GeoDataRiverPathPoint* selP = singleSelectedPoint();
 	if (selP == nullptr) {
 		// no point is selected.
 		return;
@@ -1425,7 +1425,7 @@ void GeoDataRiverSurvey::moveSelectedPoints()
 	bool singleSelection = (selectCount == 1);
 	GeoDataRiverPathPoint* selected = nullptr;
 	if (singleSelection) {
-		selected = selectedPoint();
+		selected = singleSelectedPoint();
 	}
 	dialog->setSingleSelection(singleSelection);
 	if (singleSelection) {
@@ -1479,7 +1479,7 @@ void GeoDataRiverSurvey::expandSelectedPoints()
 
 void GeoDataRiverSurvey::rotateSelectedPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	QPointF dir = selected->previousPoint()->position() - selected->position();
 	if (selected->previousPoint()->firstPoint() && selected->nextPoint() != nullptr) {
 		dir = selected->position() - selected->nextPoint()->position();
@@ -1497,14 +1497,14 @@ void GeoDataRiverSurvey::rotateSelectedPoint()
 
 void GeoDataRiverSurvey::renameSelectedPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointRenameDialog dialog(selected, this, preProcessorWindow());
 	dialog.exec();
 }
 
 void GeoDataRiverSurvey::addLeftExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointExtensionAddDialog* dialog = new GeoDataRiverPathPointExtensionAddDialog(selected, this, preProcessorWindow());
 	dialog->setLineMode(GeoDataRiverPathPointExtensionAddDialog::Left);
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().leftBank(true).position()));
@@ -1518,7 +1518,7 @@ void GeoDataRiverSurvey::addLeftExtensionPoint()
 
 void GeoDataRiverSurvey::addRightExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointExtensionAddDialog* dialog = new GeoDataRiverPathPointExtensionAddDialog(selected, this, preProcessorWindow());
 	dialog->setLineMode(GeoDataRiverPathPointExtensionAddDialog::Right);
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().rightBank(true).position()));
@@ -1532,13 +1532,13 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 
 void GeoDataRiverSurvey::removeLeftExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	iRICUndoStack::instance().push(new RemoveExtensionCommand(true, selected->leftBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::removeRightExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	iRICUndoStack::instance().push(new RemoveExtensionCommand(false, selected->rightBank()->interpolate(0), selected, this));
 }
 
@@ -1549,7 +1549,7 @@ void GeoDataRiverSurvey::restoreMouseEventMode()
 
 void GeoDataRiverSurvey::insertNewPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointInsertDialog* dialog = new GeoDataRiverPathPointInsertDialog(selected, true, this, preProcessorWindow());
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	impl->m_mouseEventMode = Impl::meInserting;
@@ -1562,7 +1562,7 @@ void GeoDataRiverSurvey::insertNewPoint()
 
 void GeoDataRiverSurvey::addNewPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointInsertDialog* dialog = new GeoDataRiverPathPointInsertDialog(selected, false, this, preProcessorWindow());
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	impl->m_mouseEventMode = Impl::meInserting;
@@ -1686,7 +1686,7 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 }
 
 
-GeoDataRiverPathPoint* GeoDataRiverSurvey::selectedPoint()
+GeoDataRiverPathPoint* GeoDataRiverSurvey::singleSelectedPoint()
 {
 	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
 	while (p != nullptr) {
@@ -1749,7 +1749,7 @@ void GeoDataRiverSurvey::updateInterpolators()
 void GeoDataRiverSurvey::openCrossSectionWindow()
 {
 	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	gItem->openCrossSectionWindow(this, selectedPoint()->name());
+	gItem->openCrossSectionWindow(this, singleSelectedPoint()->name());
 }
 
 void GeoDataRiverSurvey::updateCrosssectionWindows()

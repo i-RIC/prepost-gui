@@ -71,7 +71,7 @@ void GeoDataRiverSurvey::Impl::updateActionStatus()
 	bool selectionExists = (selectCount > 0);
 	GeoDataRiverPathPoint* selected = nullptr;
 	if (singleSelection) {
-		selected = m_rs->selectedPoint();
+		selected = m_rs->singleSelectedPoint();
 	}
 	m_addUpperSideAction->setEnabled(singleSelection);
 	m_addLowerSideAction->setEnabled(singleSelection);

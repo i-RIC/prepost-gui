@@ -166,7 +166,7 @@ protected:
 	vtkSmartPointer<vtkActor2D> m_labelActor;
 
 private:
-	GeoDataRiverPathPoint* selectedPoint();
+	GeoDataRiverPathPoint* singleSelectedPoint();
 	void setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPoint* p);
 
 	void allActorsOff();
