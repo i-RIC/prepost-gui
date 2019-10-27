@@ -118,7 +118,7 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	connect(m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
 	impl->setupCursors();
-	setupActions();
+	impl->setupActions();
 
 	RiverSplineSolver::setLinearMode(false, m_headPoint);
 }
@@ -410,61 +410,61 @@ void GeoDataRiverSurvey::setupMenu()
 	m_menu->addAction(m_editNameAction);
 
 	m_menu->addSeparator();
-	m_menu->addAction(m_openCrossSectionWindowAction);
+	m_menu->addAction(impl->m_openCrossSectionWindowAction);
 
 	m_menu->addSeparator();
-	m_menu->addAction(m_addUpperSideAction);
-	m_menu->addAction(m_addLowerSideAction);
-	m_menu->addAction(m_moveAction);
-	m_menu->addAction(m_rotateAction);
-	m_menu->addAction(m_shiftAction);
-	m_menu->addAction(m_expandAction);
-	m_menu->addAction(m_deleteAction);
-	m_menu->addAction(m_renameAction);
+	m_menu->addAction(impl->m_addUpperSideAction);
+	m_menu->addAction(impl->m_addLowerSideAction);
+	m_menu->addAction(impl->m_moveAction);
+	m_menu->addAction(impl->m_rotateAction);
+	m_menu->addAction(impl->m_shiftAction);
+	m_menu->addAction(impl->m_expandAction);
+	m_menu->addAction(impl->m_deleteAction);
+	m_menu->addAction(impl->m_renameAction);
 
 	m_menu->addSeparator();
-	m_menu->addAction(m_addLeftExtensionPointAction);
-	m_menu->addAction(m_addRightExtensionPointAction);
-	m_menu->addAction(m_removeLeftExtensionPointAction);
-	m_menu->addAction(m_removeRightExtensionPointAction);
+	m_menu->addAction(impl->m_addLeftExtensionPointAction);
+	m_menu->addAction(impl->m_addRightExtensionPointAction);
+	m_menu->addAction(impl->m_removeLeftExtensionPointAction);
+	m_menu->addAction(impl->m_removeRightExtensionPointAction);
 
 	m_menu->addSeparator();
-	m_menu->addAction(m_showBackgroundAction);
+	m_menu->addAction(impl->m_showBackgroundAction);
 
 	m_menu->addSeparator();
 	QMenu* iMenu = m_menu->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(m_interpolateSplineAction);
-	iMenu->addAction(m_interpolateLinearAction);
+	iMenu->addAction(impl->m_interpolateSplineAction);
+	iMenu->addAction(impl->m_interpolateLinearAction);
 
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
 	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(m_openCrossSectionWindowAction);
+	m_rightClickingMenu->addAction(impl->m_openCrossSectionWindowAction);
 
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addUpperSideAction);
-	m_rightClickingMenu->addAction(m_addLowerSideAction);
-	m_rightClickingMenu->addAction(m_moveAction);
-	m_rightClickingMenu->addAction(m_rotateAction);
-	m_rightClickingMenu->addAction(m_shiftAction);
-	m_rightClickingMenu->addAction(m_expandAction);
-	m_rightClickingMenu->addAction(m_deleteAction);
-	m_rightClickingMenu->addAction(m_renameAction);
+	m_rightClickingMenu->addAction(impl->m_addUpperSideAction);
+	m_rightClickingMenu->addAction(impl->m_addLowerSideAction);
+	m_rightClickingMenu->addAction(impl->m_moveAction);
+	m_rightClickingMenu->addAction(impl->m_rotateAction);
+	m_rightClickingMenu->addAction(impl->m_shiftAction);
+	m_rightClickingMenu->addAction(impl->m_expandAction);
+	m_rightClickingMenu->addAction(impl->m_deleteAction);
+	m_rightClickingMenu->addAction(impl->m_renameAction);
 
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addLeftExtensionPointAction);
-	m_rightClickingMenu->addAction(m_addRightExtensionPointAction);
-	m_rightClickingMenu->addAction(m_removeLeftExtensionPointAction);
-	m_rightClickingMenu->addAction(m_removeRightExtensionPointAction);
+	m_rightClickingMenu->addAction(impl->m_addLeftExtensionPointAction);
+	m_rightClickingMenu->addAction(impl->m_addRightExtensionPointAction);
+	m_rightClickingMenu->addAction(impl->m_removeLeftExtensionPointAction);
+	m_rightClickingMenu->addAction(impl->m_removeRightExtensionPointAction);
 
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_showBackgroundAction);
+	m_rightClickingMenu->addAction(impl->m_showBackgroundAction);
 
 	m_rightClickingMenu->addSeparator();
 	iMenu = m_rightClickingMenu->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(m_interpolateSplineAction);
-	iMenu->addAction(m_interpolateLinearAction);
+	iMenu->addAction(impl->m_interpolateSplineAction);
+	iMenu->addAction(impl->m_interpolateLinearAction);
 }
 
 void GeoDataRiverSurvey::setupDataItem()
@@ -913,8 +913,8 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 	bool lMode = (linearMode != 0);
 	RiverSplineSolver::setLinearMode(lMode, m_headPoint);
 	if (lMode) {
-		m_interpolateSplineAction->setChecked(false);
-		m_interpolateLinearAction->setChecked(true);
+		impl->m_interpolateSplineAction->setChecked(false);
+		impl->m_interpolateLinearAction->setChecked(true);
 	}
 }
 
@@ -1417,85 +1417,6 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	m_backgroundActor->SetPosition(0, 0, background);
 }
 
-void GeoDataRiverSurvey::setupActions()
-{
-	m_addUpperSideAction = new QAction(tr("Insert Upstream Side(&B)..."), this);
-	connect(m_addUpperSideAction, SIGNAL(triggered()), this, SLOT(insertNewPoint()));
-	m_addLowerSideAction = new QAction(tr("Insert Downstream Side(&A)..."), this);
-	connect(m_addLowerSideAction, SIGNAL(triggered()), this, SLOT(addNewPoint()));
-	m_moveAction = new QAction(tr("&Move..."), this);
-	connect(m_moveAction, SIGNAL(triggered()), this, SLOT(moveSelectedPoints()));
-	m_rotateAction = new QAction(tr("&Rotate..."), this);
-	connect(m_rotateAction, SIGNAL(triggered()), this, SLOT(rotateSelectedPoint()));
-	m_shiftAction = new QAction(tr("S&hift Center..."), this);
-	connect(m_shiftAction, SIGNAL(triggered()), this, SLOT(shiftSelectedPoints()));
-	m_expandAction = new QAction(tr("E&xtend Horizontally..."), this);
-	connect(m_expandAction, SIGNAL(triggered()), this, SLOT(expandSelectedPoints()));
-	m_deleteAction = new QAction(tr("Dele&te Cross Section"), this);
-	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedPoints()));
-	m_renameAction = new QAction(tr("R&ename Cross Section..."), this);
-	connect(m_renameAction, SIGNAL(triggered()), this, SLOT(renameSelectedPoint()));
-	m_addLeftExtensionPointAction = new QAction(tr("Add &Left Bank Extension Line..."), this);
-	connect(m_addLeftExtensionPointAction, SIGNAL(triggered()), this, SLOT(addLeftExtensionPoint()));
-	m_addRightExtensionPointAction = new QAction(tr("Add &Right Bank Extension Line..."), this);
-	connect(m_addRightExtensionPointAction, SIGNAL(triggered()), this, SLOT(addRightExtensionPoint()));
-	m_removeLeftExtensionPointAction = new QAction(tr("Remo&ve Left Bank Extension Line"), this);
-	connect(m_removeLeftExtensionPointAction, SIGNAL(triggered()), this, SLOT(removeLeftExtensionPoint()));
-	m_removeRightExtensionPointAction = new QAction(tr("Rem&ove Right Bank Extension Line"), this);
-	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), this, SLOT(removeRightExtensionPoint()));
-	m_openCrossSectionWindowAction = new QAction(tr("Display &Cross Section"), this);
-	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
-
-	m_showBackgroundAction = new QAction(tr("Display &Setting"), this);
-	connect(m_showBackgroundAction, SIGNAL(triggered()), this, SLOT(displaySetting()));
-	m_interpolateSplineAction = new QAction(tr("Spline"), this);
-	connect(m_interpolateSplineAction, SIGNAL(triggered()), this, SLOT(switchInterpolateModeToSpline()));
-	m_interpolateSplineAction->setCheckable(true);
-	m_interpolateSplineAction->setChecked(true);
-	m_interpolateLinearAction = new QAction(tr("Linear Curve"), this);
-	connect(m_interpolateLinearAction, SIGNAL(triggered()), this, SLOT(switchInterpolateModeToLinear()));
-	m_interpolateLinearAction->setCheckable(true);
-
-	m_addUpperSideAction->setEnabled(false);
-	m_addLowerSideAction->setEnabled(false);
-	m_moveAction->setEnabled(false);
-	m_rotateAction->setEnabled(false);
-	m_shiftAction->setEnabled(false);
-	m_expandAction->setEnabled(false);
-	m_deleteAction->setEnabled(false);
-	m_renameAction->setEnabled(false);
-	m_addLeftExtensionPointAction->setEnabled(false);
-	m_addRightExtensionPointAction->setEnabled(false);
-	m_removeLeftExtensionPointAction->setEnabled(false);
-	m_removeRightExtensionPointAction->setEnabled(false);
-	m_openCrossSectionWindowAction->setEnabled(false);
-}
-
-void GeoDataRiverSurvey::updateActionStatus()
-{
-	int selectCount = m_headPoint->selectedPoints();
-	bool singleSelection = (selectCount == 1);
-	bool selectionExists = (selectCount > 0);
-	GeoDataRiverPathPoint* selected = nullptr;
-	if (singleSelection) {
-		selected = selectedPoint();
-	}
-	m_addUpperSideAction->setEnabled(singleSelection);
-	m_addLowerSideAction->setEnabled(singleSelection);
-	m_moveAction->setEnabled(selectionExists);
-	m_rotateAction->setEnabled(singleSelection);
-	m_shiftAction->setEnabled(selectionExists);
-	m_expandAction->setEnabled(selectionExists);
-	m_deleteAction->setEnabled(selectionExists);
-	m_renameAction->setEnabled(singleSelection);
-
-	m_addLeftExtensionPointAction->setEnabled(singleSelection && ! selected->crosssection().fixedPointLSet());
-	m_addRightExtensionPointAction->setEnabled(singleSelection && ! selected->crosssection().fixedPointRSet());
-	m_removeLeftExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointLSet());
-	m_removeRightExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointRSet());
-	m_openCrossSectionWindowAction->setEnabled(selectionExists);
-}
-
 void GeoDataRiverSurvey::moveSelectedPoints()
 {
 	GeoDataRiverPathPointMoveDialog* dialog = new GeoDataRiverPathPointMoveDialog(this, preProcessorWindow());
@@ -1863,16 +1784,16 @@ void GeoDataRiverSurvey::displaySetting()
 void GeoDataRiverSurvey::switchInterpolateModeToLinear()
 {
 	RiverSplineSolver::setLinearMode(true, m_headPoint);
-	m_interpolateLinearAction->setChecked(true);
-	m_interpolateSplineAction->setChecked(false);
+	impl->m_interpolateLinearAction->setChecked(true);
+	impl->m_interpolateSplineAction->setChecked(false);
 	updateInterpolators();
 }
 
 void GeoDataRiverSurvey::switchInterpolateModeToSpline()
 {
 	RiverSplineSolver::setLinearMode(false, m_headPoint);
-	m_interpolateLinearAction->setChecked(false);
-	m_interpolateSplineAction->setChecked(true);
+	impl->m_interpolateLinearAction->setChecked(false);
+	impl->m_interpolateSplineAction->setChecked(true);
 	updateInterpolators();
 }
 

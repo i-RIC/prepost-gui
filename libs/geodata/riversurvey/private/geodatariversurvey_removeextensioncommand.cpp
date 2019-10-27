@@ -34,7 +34,7 @@ void GeoDataRiverSurvey::RemoveExtensionCommand::undo()
 
 void GeoDataRiverSurvey::RemoveExtensionCommand::updateData()
 {
-	m_rs->updateActionStatus();
+	m_rs->impl->updateActionStatus();
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();

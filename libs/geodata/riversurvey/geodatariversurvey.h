@@ -21,7 +21,6 @@
 #include <iriclib.h>
 
 class vtkProperty;
-class QAction;
 class QPolygonF;
 
 class GeoDataRiverSurveyBackgroundGridCreateThread;
@@ -172,10 +171,8 @@ private:
 
 	void allActorsOff();
 	void updateSplineSolvers();
-	void setupActions();
 	void updateMouseEventMode();
 	/// Enable or disable actions depending on the selection status.
-	void updateActionStatus();
 
 	GeoDataRiverPathPoint* m_headPoint;
 
@@ -184,23 +181,6 @@ private:
 	RiverCenterLineSolver m_CenterLineSolver;
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
-
-	QAction* m_addUpperSideAction;
-	QAction* m_addLowerSideAction;
-	QAction* m_moveAction;
-	QAction* m_rotateAction;
-	QAction* m_shiftAction;
-	QAction* m_expandAction;
-	QAction* m_deleteAction;
-	QAction* m_renameAction;
-	QAction* m_addLeftExtensionPointAction;
-	QAction* m_addRightExtensionPointAction;
-	QAction* m_removeLeftExtensionPointAction;
-	QAction* m_removeRightExtensionPointAction;
-	QAction* m_openCrossSectionWindowAction;
-	QAction* m_showBackgroundAction;
-	QAction* m_interpolateSplineAction;
-	QAction* m_interpolateLinearAction;
 
 	QMenu* m_rightClickingMenu;
 

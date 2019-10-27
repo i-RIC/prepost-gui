@@ -6,6 +6,7 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
 #include "private/geodatariversurvey_addextensioncommand.h"
+#include "private/geodatariversurvey_impl.h"
 
 #include <misc/iricundostack.h>
 
@@ -60,7 +61,7 @@ void GeoDataRiverPathPointExtensionAddDialog::reject()
 	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
-		m_rs->updateActionStatus();
+		m_rs->impl->updateActionStatus();
 		m_rs->headPoint()->updateAllXSecInterpolators();
 		m_rs->headPoint()->updateRiverShapeInterpolators();
 		m_rs->updateShapeData();

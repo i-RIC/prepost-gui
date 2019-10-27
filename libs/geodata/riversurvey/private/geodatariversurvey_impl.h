@@ -6,6 +6,8 @@
 #include <QCursor>
 #include <QPixmap>
 
+class QAction;
+
 class GeoDataRiverSurvey::Impl
 {
 public:
@@ -39,9 +41,29 @@ public:
 	Impl(GeoDataRiverSurvey* rs);
 	~Impl();
 
+	void setupActions();
+	void updateActionStatus();
+
 	void setupCursors();
 
 	MouseEventMode m_mouseEventMode;
+
+	QAction* m_addUpperSideAction;
+	QAction* m_addLowerSideAction;
+	QAction* m_moveAction;
+	QAction* m_rotateAction;
+	QAction* m_shiftAction;
+	QAction* m_expandAction;
+	QAction* m_deleteAction;
+	QAction* m_renameAction;
+	QAction* m_addLeftExtensionPointAction;
+	QAction* m_addRightExtensionPointAction;
+	QAction* m_removeLeftExtensionPointAction;
+	QAction* m_removeRightExtensionPointAction;
+	QAction* m_openCrossSectionWindowAction;
+	QAction* m_showBackgroundAction;
+	QAction* m_interpolateSplineAction;
+	QAction* m_interpolateLinearAction;
 
 	QPixmap m_pixmapMove;
 	QPixmap m_pixmapRotate;
