@@ -17,8 +17,6 @@
 #include <vtkStringArray.h>
 
 #include <QPoint>
-#include <QCursor>
-#include <QPixmap>
 
 #include <iriclib.h>
 
@@ -200,21 +198,10 @@ private:
 
 	void allActorsOff();
 	void updateSplineSolvers();
-	void setupCursors();
 	void setupActions();
 	void updateMouseEventMode();
 	/// Enable or disable actions depending on the selection status.
 	void updateActionStatus();
-
-	QPixmap m_pixmapMove;
-	QPixmap m_pixmapRotate;
-	QPixmap m_pixmapExpand;
-	QPixmap m_pixmapShift;
-
-	QCursor m_cursorMove;
-	QCursor m_cursorRotate;
-	QCursor m_cursorExpand;
-	QCursor m_cursorShift;
 
 	GeoDataRiverPathPoint* m_headPoint;
 
@@ -274,6 +261,9 @@ private:
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
 
+	class Impl;
+	Impl* impl;
+
 public:
 	friend class GeoDataRiverSurveyCreator;
 	friend class GeoDataRiverSurveyImporter;
@@ -291,5 +281,9 @@ public:
 
 	friend class GeoDataRiverSurveyProxy;
 };
+
+#ifdef _DEBUG
+	#include "private/geodatariversurvey_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATAPOLYGON_H

@@ -78,7 +78,8 @@
 const int GeoDataRiverSurvey::WSE_NAME_MAXLENGTH = 16;
 
 GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
-	GeoData(d, creator, att)
+	GeoData(d, creator, att),
+	impl {new Impl {this}}
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
@@ -117,7 +118,7 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	m_gridThread = new GeoDataRiverSurveyBackgroundGridCreateThread(this);
 	connect(m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
-	setupCursors();
+	impl->setupCursors();
 	setupActions();
 
 	RiverSplineSolver::setLinearMode(false, m_headPoint);
@@ -145,6 +146,8 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 
 	delete m_gridThread;
 	delete m_rightClickingMenu;
+
+	delete impl;
 }
 
 void GeoDataRiverSurvey::setCaption(const QString& cap)
@@ -864,29 +867,29 @@ void GeoDataRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		break;
 	case meTranslate:
 	case meTranslatePrepare:
-		v->setCursor(m_cursorMove);
+		v->setCursor(impl->m_cursorMove);
 		break;
 	case meRotateRight:
 	case meRotatePrepareRight:
 	case meRotateLeft:
 	case meRotatePrepareLeft:
-		v->setCursor(m_cursorRotate);
+		v->setCursor(impl->m_cursorRotate);
 		break;
 	case meShift:
 	case meShiftPrepare:
-		v->setCursor(m_cursorShift);
+		v->setCursor(impl->m_cursorShift);
 		break;
 	case meMoveExtentionEndPointLeft:
 	case meMoveExtensionEndPointPrepareLeft:
 	case meMoveExtentionEndPointRight:
 	case meMoveExtensionEndPointPrepareRight:
-		v->setCursor(m_cursorMove);
+		v->setCursor(impl->m_cursorMove);
 		break;
 	case meExpansionRight:
 	case meExpansionPrepareRight:
 	case meExpansionLeft:
 	case meExpansionPrepareLeft:
-		v->setCursor(m_cursorExpand);
+		v->setCursor(impl->m_cursorExpand);
 		break;
 	default:
 		break;
@@ -1622,21 +1625,6 @@ void GeoDataRiverSurvey::removeRightExtensionPoint()
 void GeoDataRiverSurvey::restoreMouseEventMode()
 {
 	m_mouseEventMode = meNormal;
-}
-
-void GeoDataRiverSurvey::setupCursors()
-{
-	m_pixmapMove = QPixmap(":/libs/guibase/images/cursorItemMove.png");
-	m_cursorMove = QCursor(m_pixmapMove, 7, 2);
-
-	m_pixmapRotate = QPixmap(":/libs/geodata/riversurvey/images/cursorCrosssectionRotate.png");
-	m_cursorRotate = QCursor(m_pixmapRotate, 7, 2);
-
-	m_pixmapExpand = QPixmap(":/libs/geodata/riversurvey/images/cursorExpand.png");
-	m_cursorExpand = QCursor(m_pixmapExpand, 7, 2);
-
-	m_pixmapShift = QPixmap(":/libs/geodata/riversurvey/images/cursorShiftCenter.png");
-	m_cursorShift = QCursor(m_pixmapShift, 7, 2);
 }
 
 void GeoDataRiverSurvey::insertNewPoint()
