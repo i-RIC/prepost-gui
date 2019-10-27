@@ -121,8 +121,6 @@ protected:
 	vtkSmartPointer<vtkPoints> m_points;
 	vtkSmartPointer<vtkPoints> m_rightBankPoints;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_riverCenters;
-	vtkSmartPointer<vtkUnstructuredGrid> m_selectedRiverCenters;
 	vtkSmartPointer<vtkUnstructuredGrid> m_selectedLeftBanks;
 	vtkSmartPointer<vtkUnstructuredGrid> m_selectedRightBanks;
 	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
@@ -140,8 +138,6 @@ protected:
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
 
-	vtkSmartPointer<vtkActor> m_riverCenterActor;
-	vtkSmartPointer<vtkActor> m_selectedRiverCenterActor;
 	vtkSmartPointer<vtkActor> m_selectedLeftBankActor;
 	vtkSmartPointer<vtkActor> m_selectedRightBankActor;
 

@@ -1,10 +1,31 @@
 #include "geodatariversurvey_impl.h"
 
+#include <vtkCellArray.h>
+#include <vtkPolyData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
+#include <vtkSmartPointer.h>
+
 #include <QAction>
 #include <QMenu>
 
+namespace {
+
+void addPoint(vtkPoints* points, const QPointF& p)
+{
+	points->InsertNextPoint(p.x(), p.y(), 0);
+}
+
+} // namespace
+
 GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_mouseEventMode {meNormal},
+	m_pointPoints {vtkPoints::New()},
+	m_riverCenterPoints {vtkPolyData::New()},
+	m_riverCenterPointsActor {vtkActor::New()},
+	m_selectedRiverCenterPoints {vtkPolyData::New()},
+	m_selectedRiverCenterPointsActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -27,6 +48,16 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 
 GeoDataRiverSurvey::Impl::~Impl()
 {
+	auto r = m_rs->renderer();
+	r->RemoveActor(m_riverCenterPointsActor);
+	r->RemoveActor(m_selectedRiverCenterPointsActor);
+
+	m_pointPoints->Delete();
+	m_riverCenterPoints->Delete();
+	m_riverCenterPointsActor->Delete();
+	m_selectedRiverCenterPoints->Delete();
+	m_selectedRiverCenterPointsActor->Delete();
+
 	delete m_rightClickingMenu;
 }
 
@@ -65,6 +96,31 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	m_removeLeftExtensionPointAction->setEnabled(false);
 	m_removeRightExtensionPointAction->setEnabled(false);
 	m_openCrossSectionWindowAction->setEnabled(false);
+}
+
+void GeoDataRiverSurvey::Impl::setupVtkObjects()
+{
+	auto r = m_rs->renderer();
+
+	// river center points
+	auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_riverCenterPoints);
+	m_riverCenterPointsActor->SetMapper(mapper);
+	auto prop = m_riverCenterPointsActor->GetProperty();
+	prop->SetPointSize(5);
+	prop->SetColor(0, 0, 1);
+	m_riverCenterPointsActor->VisibilityOff();
+	r->AddActor(m_riverCenterPointsActor);
+
+	// selected river center points
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_selectedRiverCenterPoints);
+	m_selectedRiverCenterPointsActor->SetMapper(mapper);
+	prop = m_selectedRiverCenterPointsActor->GetProperty();
+	prop->SetPointSize(9);
+	prop->SetColor(0, 0, 1);
+	m_selectedRiverCenterPointsActor->VisibilityOff();
+	r->AddActor(m_selectedRiverCenterPointsActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
@@ -155,6 +211,71 @@ void GeoDataRiverSurvey::Impl::updateActionStatus()
 	m_removeLeftExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointLSet());
 	m_removeRightExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointRSet());
 	m_openCrossSectionWindowAction->setEnabled(selectionExists);
+}
+
+void GeoDataRiverSurvey::Impl::updateVtkPointsObjects()
+{
+	m_pointPoints->Initialize();
+	m_pointPoints->SetDataTypeToDouble();
+
+	auto centerPoints = vtkSmartPointer<vtkCellArray>::New();
+
+	m_riverCenterPoints->Initialize();
+
+	auto p = m_rs->headPoint()->nextPoint();
+	int pointId = 0;
+	while (p != nullptr) {
+		// left bank
+		addPoint(m_pointPoints, p->crosssectionPosition(p->crosssection().leftBank(true).position()));
+		// left fixed point
+		if (p->crosssection().fixedPointLSet()) {
+			addPoint(m_pointPoints, p->crosssectionPosition(p->crosssection().fixedPointL().position()));
+		} else {
+			addPoint(m_pointPoints, p->crosssectionPosition(p->crosssection().leftBank(true).position()));
+		}
+		// center
+		addPoint(m_pointPoints, p->position());
+		// right fixed point
+		if (p->crosssection().fixedPointRSet()) {
+			addPoint(m_pointPoints, p->crosssectionPosition(p->crosssection().fixedPointR().position()));
+		} else {
+			addPoint(m_pointPoints, p->crosssectionPosition(p->crosssection().rightBank(true).position()));
+		}
+		// right bank
+		addPoint(m_pointPoints, p->crosssectionPosition(p->crosssection().rightBank(true).position()));
+
+		vtkIdType ids[5];
+		ids[0] = pointId * 5 + 2;
+		centerPoints->InsertNextCell(1, ids);
+
+		p = p->nextPoint();
+		++ pointId;
+	}
+	m_riverCenterPoints->SetPoints(m_pointPoints);
+	m_riverCenterPoints->SetVerts(centerPoints);
+}
+
+void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
+{
+	auto selectedCenterPoints = vtkSmartPointer<vtkCellArray>::New();
+
+	m_selectedRiverCenterPoints->Initialize();
+
+	auto p = m_rs->headPoint()->nextPoint();
+	int pointId = 0;
+	while (p != nullptr) {
+		vtkIdType ids[5];
+
+		if (p->IsSelected) {
+			ids[0] = pointId * 5 + 2;
+			selectedCenterPoints->InsertNextCell(1, ids);
+		}
+
+		p = p->nextPoint();
+		++ pointId;
+	}
+	m_selectedRiverCenterPoints->SetPoints(m_pointPoints);
+	m_selectedRiverCenterPoints->SetVerts(selectedCenterPoints);
 }
 
 void GeoDataRiverSurvey::Impl::setupCursors()

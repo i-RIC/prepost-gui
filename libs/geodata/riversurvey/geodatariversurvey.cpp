@@ -88,8 +88,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	m_rightBankPoints = vtkSmartPointer<vtkPoints>::New();
 	m_rightBankPoints->SetDataTypeToDouble();
 	// setup grid.
-	m_riverCenters = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_selectedRiverCenters = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	m_selectedLeftBanks = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	m_selectedRightBanks = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	m_rightBankPointSet = vtkSmartPointer<vtkUnstructuredGrid>::New();
@@ -125,8 +123,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 GeoDataRiverSurvey::~GeoDataRiverSurvey()
 {
 	vtkRenderer* r = renderer();
-	r->RemoveActor(m_riverCenterActor);
-	r->RemoveActor(m_selectedRiverCenterActor);
 	r->RemoveActor(m_selectedLeftBankActor);
 	r->RemoveActor(m_selectedRightBankActor);
 	r->RemoveActor(m_crossectionsActor);
@@ -153,32 +149,12 @@ void GeoDataRiverSurvey::setCaption(const QString& cap)
 
 void GeoDataRiverSurvey::setupActors()
 {
+	impl->setupVtkObjects();
+
 	vtkSmartPointer<vtkDataSetMapper> mapper;
 	vtkRenderer* r = renderer();
 
-	// River center points
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_riverCenters);
-
-	m_riverCenterActor = vtkSmartPointer<vtkActor>::New();
-	m_riverCenterActor->SetMapper(mapper);
-	m_riverCenterActor->GetProperty()->SetPointSize(5);
-	m_riverCenterActor->GetProperty()->SetColor(0, 0, 1.0);
-	m_riverCenterActor->VisibilityOff();
-	r->AddActor(m_riverCenterActor);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_selectedRiverCenters);
-
-	m_selectedRiverCenterActor = vtkSmartPointer<vtkActor>::New();
-	m_selectedRiverCenterActor->SetMapper(mapper);
-	m_selectedRiverCenterActor->GetProperty()->SetPointSize(9);
-	m_selectedRiverCenterActor->GetProperty()->SetColor(0, 0, 1.0);
-	r->AddActor(m_selectedRiverCenterActor);
-
 	// Left bank points
-
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	mapper->SetInputData(m_selectedLeftBanks);
 
@@ -420,8 +396,8 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	vtkActor2DCollection* col2 = actor2DCollection();
 	col->RemoveAllItems();
 
-	col->AddItem(m_riverCenterActor);
-	col->AddItem(m_selectedRiverCenterActor);
+	col->AddItem(impl->m_riverCenterPointsActor);
+	col->AddItem(impl->m_selectedRiverCenterPointsActor);
 	col->AddItem(m_selectedLeftBankActor);
 	col->AddItem(m_selectedRightBankActor);
 	col->AddItem(m_riverCenterLineActor);
@@ -467,8 +443,6 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 
 void GeoDataRiverSurvey::allActorsOff()
 {
-	m_riverCenterActor->VisibilityOff();
-	m_selectedRiverCenterActor->VisibilityOff();
 	m_selectedLeftBankActor->VisibilityOff();
 	m_selectedRightBankActor->VisibilityOff();
 	m_riverCenterLineActor->VisibilityOff();
@@ -480,6 +454,9 @@ void GeoDataRiverSurvey::allActorsOff()
 	m_backgroundActor->VisibilityOff();
 	m_labelActor->VisibilityOff();
 	m_crosssectionLinesActor->VisibilityOff();
+
+	impl->m_riverCenterPointsActor->VisibilityOff();
+	impl->m_selectedRiverCenterPointsActor->VisibilityOff();
 }
 
 void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
@@ -939,7 +916,6 @@ void GeoDataRiverSurvey::updateShapeData()
 {
 	m_points->Reset();
 	m_rightBankPoints->Reset();
-	m_riverCenters->Reset();
 	m_firstAndLastCrosssections->Reset();
 	m_crosssections->Reset();
 	m_leftBankLine->Initialize();
@@ -966,7 +942,6 @@ void GeoDataRiverSurvey::updateShapeData()
 	double point[3];
 	point[2] = 0;
 	int index = 0;
-	vtkVertex* nextVertex;
 	vtkLine* line;
 	bool firstOrLast = false;
 	bool first = true;
@@ -1006,10 +981,6 @@ void GeoDataRiverSurvey::updateShapeData()
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		m_points->InsertNextPoint(point);
-		nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, index);
-		m_riverCenters->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		nextVertex->Delete();
 
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
@@ -1107,8 +1078,6 @@ void GeoDataRiverSurvey::updateShapeData()
 	}
 	m_points->Modified();
 	m_rightBankPoints->Modified();
-	m_riverCenters->SetPoints(m_points);
-	m_riverCenters->Modified();
 	m_firstAndLastCrosssections->SetPoints(m_points);
 	m_firstAndLastCrosssections->Modified();
 	m_crosssections->SetPoints(m_points);
@@ -1198,6 +1167,8 @@ void GeoDataRiverSurvey::updateShapeData()
 	vtkActor2DCollection* col2 = actor2DCollection();
 	col2->AddItem(m_labelActor);
 
+	impl->updateVtkPointsObjects();
+
 	updateVisibilityWithoutRendering();
 
 	emit dataUpdated();
@@ -1207,7 +1178,6 @@ void GeoDataRiverSurvey::updateShapeData()
 void GeoDataRiverSurvey::updateSelectionShapeData()
 {
 	m_selectedCrosssections->Reset();
-	m_selectedRiverCenters->Reset();
 	m_selectedLeftBanks->Reset();
 	m_selectedRightBanks->Reset();
 
@@ -1235,14 +1205,6 @@ void GeoDataRiverSurvey::updateSelectionShapeData()
 		line->Delete();
 
 		++index;
-
-		// river center
-		nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected) {
-			m_selectedRiverCenters->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		}
-		nextVertex->Delete();
 
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
@@ -1288,10 +1250,10 @@ void GeoDataRiverSurvey::updateSelectionShapeData()
 	m_selectedLeftBanks->Modified();
 	m_selectedRightBanks->SetPoints(m_points);
 	m_selectedRightBanks->Modified();
-	m_selectedRiverCenters->SetPoints(m_points);
-	m_selectedRiverCenters->Modified();
 	m_selectedCrosssections->SetPoints(m_points);
 	m_selectedCrosssections->Modified();
+
+	impl->updateSelectedVtkObjects();
 }
 
 GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
@@ -1316,8 +1278,6 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	double lines = .5 * range.min() + .5 * range.max();
 	double points = range.max();
 
-	m_riverCenterActor->SetPosition(0, 0, points);
-	m_selectedRiverCenterActor->SetPosition(0, 0, points);
 	m_selectedLeftBankActor->SetPosition(0, 0, points);
 	m_selectedRightBankActor->SetPosition(0, 0, points);
 	m_firstAndLastCrosssectionsActor->SetPosition(0, 0, lines);
@@ -1329,6 +1289,9 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	m_blackCrossectionsActor->SetPosition(0, 0, backlines);
 	m_crosssectionLinesActor->SetPosition(0, 0, backlines);
 	m_backgroundActor->SetPosition(0, 0, background);
+
+	impl->m_riverCenterPointsActor->SetPosition(0, 0, points);
+	impl->m_selectedRiverCenterPointsActor->SetPosition(0, 0, points);
 }
 
 void GeoDataRiverSurvey::moveSelectedPoints()

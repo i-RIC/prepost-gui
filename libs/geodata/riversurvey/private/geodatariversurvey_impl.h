@@ -6,6 +6,9 @@
 #include <QCursor>
 #include <QPixmap>
 
+class vtkActor;
+class vtkPolyData;
+
 class QAction;
 
 class GeoDataRiverSurvey::Impl
@@ -42,12 +45,23 @@ public:
 	~Impl();
 
 	void setupActions();
+	void setupVtkObjects();
 	void setupMenu();
-	void updateActionStatus();
 
+	void updateActionStatus();
+	void updateVtkPointsObjects();
+	void updateSelectedVtkObjects();
 	void setupCursors();
 
 	MouseEventMode m_mouseEventMode;
+
+	vtkPoints* m_pointPoints;
+
+	vtkPolyData* m_riverCenterPoints;
+	vtkActor* m_riverCenterPointsActor;
+
+	vtkPolyData* m_selectedRiverCenterPoints;
+	vtkActor* m_selectedRiverCenterPointsActor;
 
 	QMenu* m_rightClickingMenu;
 
