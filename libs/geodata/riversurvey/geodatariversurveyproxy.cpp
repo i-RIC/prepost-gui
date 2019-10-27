@@ -28,7 +28,6 @@ GeoDataRiverSurveyProxy::~GeoDataRiverSurveyProxy()
 	auto r = renderer();
 
 	r->RemoveActor(m_centerAndBankLinesActor);
-	r->RemoveActor(m_firstAndLastCrosssectionsActor);
 	r->RemoveActor(m_crossectionsActor);
 	r->RemoveActor(m_backgroundActor);
 	r->RemoveActor(m_crosssectionLinesActor);
@@ -47,12 +46,6 @@ void GeoDataRiverSurveyProxy::setupActors()
 	m_centerAndBankLinesActor->SetProperty(rs->impl->m_centerAndBankLinesActor->GetProperty());
 	r->AddActor(m_centerAndBankLinesActor);
 	col->AddItem(m_centerAndBankLinesActor);
-
-	m_firstAndLastCrosssectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_firstAndLastCrosssectionsActor->SetMapper(rs->m_firstAndLastCrosssectionsActor->GetMapper());
-	m_firstAndLastCrosssectionsActor->SetProperty(rs->m_firstAndLastCrosssectionsActor->GetProperty());
-	r->AddActor(m_firstAndLastCrosssectionsActor);
-	col->AddItem(m_firstAndLastCrosssectionsActor);
 
 	m_crossectionsActor = vtkSmartPointer<vtkActor>::New();
 	m_crossectionsActor->SetMapper(rs->impl->m_crossSectionLinesActor->GetMapper());
@@ -171,7 +164,6 @@ void GeoDataRiverSurveyProxy::assignActorZValues(const ZDepthRange& range)
 	double backlines = range.min() * 0.5 + range.max() * 0.5;
 	double lines = range.max();
 
-	m_firstAndLastCrosssectionsActor->SetPosition(0, 0, lines);
 	m_crossectionsActor->SetPosition(0, 0, lines);
 	m_centerAndBankLinesActor->SetPosition(0, 0, lines);
 	m_crosssectionLinesActor->SetPosition(0, 0, backlines);

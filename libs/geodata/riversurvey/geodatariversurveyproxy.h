@@ -38,8 +38,6 @@ private:
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
 	vtkSmartPointer<vtkActor> m_centerAndBankLinesActor;
-
-	vtkSmartPointer<vtkActor> m_firstAndLastCrosssectionsActor;
 	vtkSmartPointer<vtkActor> m_crossectionsActor;
 
 	vtkSmartPointer<vtkActor> m_backgroundActor;

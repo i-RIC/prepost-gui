@@ -124,12 +124,10 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
 	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_firstAndLastCrosssections;
 	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
 
-	vtkSmartPointer<vtkActor> m_firstAndLastCrosssectionsActor;
 	vtkSmartPointer<vtkActor> m_blackCrossectionsActor;
 
 	vtkSmartPointer<vtkActor> m_backgroundActor;
