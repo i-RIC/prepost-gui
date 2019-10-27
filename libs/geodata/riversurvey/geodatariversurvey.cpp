@@ -84,8 +84,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
-	m_points = vtkSmartPointer<vtkPoints>::New();
-	m_points->SetDataTypeToDouble();
 	m_rightBankPoints = vtkSmartPointer<vtkPoints>::New();
 	m_rightBankPoints->SetDataTypeToDouble();
 	// setup grid.
@@ -744,93 +742,22 @@ void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog*)
 
 void GeoDataRiverSurvey::updateShapeData()
 {
-	m_points->Reset();
 	m_rightBankPoints->Reset();
 
 	auto p = m_headPoint->nextPoint();
 	double point[3];
 	point[2] = 0;
 	int index = 0;
-	vtkLine* line;
-	bool firstOrLast = false;
-	bool first = true;
 	while (p != nullptr) {
-		firstOrLast = first || (p->nextPoint() == nullptr);
-		// left bank
-		QPointF leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-		point[0] = leftBank.x();
-		point[1] = leftBank.y();
-		m_points->InsertNextPoint(point);
-		++index;
-
-		// left fixed point
-		QPointF leftFixed;
-		if (p->crosssection().fixedPointLSet()) {
-			leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
-		} else {
-			// use left bank.
-			leftFixed = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-		}
-		point[0] = leftFixed.x();
-		point[1] = leftFixed.y();
-		m_points->InsertNextPoint(point);
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		line->Delete();
-
-		++index;
-
-		// river center
-		point[0] = p->position().x();
-		point[1] = p->position().y();
-		m_points->InsertNextPoint(point);
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		line->Delete();
-
-		++index;
-
-		// right fixed point
-		QPointF rightFixed;
-		if (p->crosssection().fixedPointRSet()) {
-			rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
-		} else {
-			// use right bank.
-			rightFixed = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-		}
-		point[0] = rightFixed.x();
-		point[1] = rightFixed.y();
-		m_points->InsertNextPoint(point);
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		line->Delete();
-
-		++index;
-
 		// right bank
 		QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 		point[0] = rightBank.x();
 		point[1] = rightBank.y();
-		m_points->InsertNextPoint(point);
 		m_rightBankPoints->InsertNextPoint(point);
 
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		line->Delete();
-
 		++index;
-
 		p = p->nextPoint();
-		first = false;
 	}
-	m_points->Modified();
 	m_rightBankPoints->Modified();
 
 	m_rightBankPointSet->SetPoints(m_rightBankPoints);

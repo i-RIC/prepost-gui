@@ -116,9 +116,6 @@ protected:
 	void updateFilename() override;
 	int iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
-	/// The pointdata, that has the positions of
-	/// River center, left bank, and right bank
-	vtkSmartPointer<vtkPoints> m_points;
 	vtkSmartPointer<vtkPoints> m_rightBankPoints;
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
