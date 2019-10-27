@@ -110,7 +110,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 
 	m_definingBoundingBox = false;
 	m_leftButtonDown = false;
-	m_mouseEventMode = meNormal;
 
 	m_gridCreatingCondition = nullptr;
 	m_rightClickingMenu = nullptr;
@@ -574,68 +573,68 @@ void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v
 
 void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meTranslatePrepare:
-	case meRotatePrepareRight:
-	case meRotatePrepareLeft:
-	case meShiftPrepare:
-	case meMoveExtensionEndPointPrepareLeft:
-	case meMoveExtensionEndPointPrepareRight:
-	case meExpansionPrepareRight:
-	case meExpansionPrepareLeft:
+	switch (impl->m_mouseEventMode) {
+	case Impl::meNormal:
+	case Impl::meTranslatePrepare:
+	case Impl::meRotatePrepareRight:
+	case Impl::meRotatePrepareLeft:
+	case Impl::meShiftPrepare:
+	case Impl::meMoveExtensionEndPointPrepareLeft:
+	case Impl::meMoveExtensionEndPointPrepareRight:
+	case Impl::meExpansionPrepareRight:
+	case Impl::meExpansionPrepareLeft:
 		m_keyboardModifiers = event->modifiers();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
-	case meTranslate:
-	case meRotateRight:
-	case meRotateLeft:
-	case meShift:
-	case meMoveExtentionEndPointLeft:
-	case meMoveExtentionEndPointRight:
-	case meExpansionRight:
-	case meExpansionLeft:
-	case meAddingExtension:
-	case meInserting:
-	case meTranslateDialog:
-	case meRotateDialog:
-	case meShiftDialog:
-	case meExpansionDialog:
+	case Impl::meTranslate:
+	case Impl::meRotateRight:
+	case Impl::meRotateLeft:
+	case Impl::meShift:
+	case Impl::meMoveExtentionEndPointLeft:
+	case Impl::meMoveExtentionEndPointRight:
+	case Impl::meExpansionRight:
+	case Impl::meExpansionLeft:
+	case Impl::meAddingExtension:
+	case Impl::meInserting:
+	case Impl::meTranslateDialog:
+	case Impl::meRotateDialog:
+	case Impl::meShiftDialog:
+	case Impl::meExpansionDialog:
 		break;
 	}
 }
 
 void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meTranslatePrepare:
-	case meRotatePrepareRight:
-	case meRotatePrepareLeft:
-	case meShiftPrepare:
-	case meMoveExtensionEndPointPrepareLeft:
-	case meMoveExtensionEndPointPrepareRight:
-	case meExpansionPrepareRight:
-	case meExpansionPrepareLeft:
+	switch (impl->m_mouseEventMode) {
+	case Impl::meNormal:
+	case Impl::meTranslatePrepare:
+	case Impl::meRotatePrepareRight:
+	case Impl::meRotatePrepareLeft:
+	case Impl::meShiftPrepare:
+	case Impl::meMoveExtensionEndPointPrepareLeft:
+	case Impl::meMoveExtensionEndPointPrepareRight:
+	case Impl::meExpansionPrepareRight:
+	case Impl::meExpansionPrepareLeft:
 		m_keyboardModifiers = event->modifiers();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
-	case meTranslate:
-	case meRotateRight:
-	case meRotateLeft:
-	case meShift:
-	case meMoveExtentionEndPointLeft:
-	case meMoveExtentionEndPointRight:
-	case meExpansionRight:
-	case meExpansionLeft:
-	case meAddingExtension:
-	case meInserting:
-	case meTranslateDialog:
-	case meRotateDialog:
-	case meShiftDialog:
-	case meExpansionDialog:
+	case Impl::meTranslate:
+	case Impl::meRotateRight:
+	case Impl::meRotateLeft:
+	case Impl::meShift:
+	case Impl::meMoveExtentionEndPointLeft:
+	case Impl::meMoveExtentionEndPointRight:
+	case Impl::meExpansionRight:
+	case Impl::meExpansionLeft:
+	case Impl::meAddingExtension:
+	case Impl::meInserting:
+	case Impl::meTranslateDialog:
+	case Impl::meRotateDialog:
+	case Impl::meShiftDialog:
+	case Impl::meExpansionDialog:
 		break;
 	}
 }
@@ -652,7 +651,7 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProces
 
 void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if ((m_mouseEventMode == meAddingExtension || m_mouseEventMode == meInserting) && m_leftButtonDown) {
+	if ((impl->m_mouseEventMode == Impl::meAddingExtension || impl->m_mouseEventMode == Impl::meInserting) && m_leftButtonDown) {
 		graphicsView()->emitWorldPosition(event->x(), event->y());
 	} else {
 		if (m_definingBoundingBox) {
@@ -661,59 +660,59 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 			box->setEndPoint(event->x(), event->y());
 			renderGraphicsView();
 		} else {
-			switch (m_mouseEventMode) {
-			case meNormal:
-			case meTranslatePrepare:
-			case meRotatePrepareRight:
-			case meRotatePrepareLeft:
-			case meShiftPrepare:
-			case meMoveExtensionEndPointPrepareLeft:
-			case meMoveExtensionEndPointPrepareRight:
-			case meExpansionPrepareRight:
-			case meExpansionPrepareLeft:
+			switch (impl->m_mouseEventMode) {
+			case Impl::meNormal:
+			case Impl::meTranslatePrepare:
+			case Impl::meRotatePrepareRight:
+			case Impl::meRotatePrepareLeft:
+			case Impl::meShiftPrepare:
+			case Impl::meMoveExtensionEndPointPrepareLeft:
+			case Impl::meMoveExtensionEndPointPrepareRight:
+			case Impl::meExpansionPrepareRight:
+			case Impl::meExpansionPrepareLeft:
 				m_currentPoint = QPoint(event->x(), event->y());
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				break;
-			case meTranslate:
+			case Impl::meTranslate:
 				// execute translation.
 				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
-			case meRotateRight:
+			case Impl::meRotateRight:
 				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
-			case meRotateLeft:
+			case Impl::meRotateLeft:
 				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
-			case meShift:
+			case Impl::meShift:
 				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
-			case meMoveExtentionEndPointLeft:
+			case Impl::meMoveExtentionEndPointLeft:
 				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
-			case meMoveExtentionEndPointRight:
+			case Impl::meMoveExtentionEndPointRight:
 				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
-			case meExpansionRight:
-			case meExpansionLeft:
+			case Impl::meExpansionRight:
+			case Impl::meExpansionLeft:
 				// not used.
 				break;
-			case meAddingExtension:
-			case meInserting:
+			case Impl::meAddingExtension:
+			case Impl::meInserting:
 				if (m_leftButtonDown) {
 					graphicsView()->emitWorldPosition(event->x(), event->y());
 				}
 				break;
-			case meTranslateDialog:
-			case meRotateDialog:
-			case meShiftDialog:
-			case meExpansionDialog:
+			case Impl::meTranslateDialog:
+			case Impl::meRotateDialog:
+			case Impl::meShiftDialog:
+			case Impl::meExpansionDialog:
 				break;
 			}
 		}
@@ -725,8 +724,8 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 	if (event->button() == Qt::LeftButton) {
 		m_dragStartPoint = QPoint(event->x(), event->y());
 
-		switch (m_mouseEventMode) {
-		case meNormal: {
+		switch (impl->m_mouseEventMode) {
+		case Impl::meNormal: {
 				// start drawing the mouse bounding box.
 				m_definingBoundingBox = true;
 				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
@@ -736,47 +735,47 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 				renderGraphicsView();
 			}
 			break;
-		case meTranslatePrepare:
-			m_mouseEventMode = meTranslate;
+		case Impl::meTranslatePrepare:
+			impl->m_mouseEventMode = Impl::meTranslate;
 			break;
-		case meRotatePrepareRight:
-			m_mouseEventMode = meRotateRight;
+		case Impl::meRotatePrepareRight:
+			impl->m_mouseEventMode = Impl::meRotateRight;
 			break;
-		case meRotatePrepareLeft:
-			m_mouseEventMode = meRotateLeft;
+		case Impl::meRotatePrepareLeft:
+			impl->m_mouseEventMode = Impl::meRotateLeft;
 			break;
-		case meShiftPrepare:
-			m_mouseEventMode = meShift;
+		case Impl::meShiftPrepare:
+			impl->m_mouseEventMode = Impl::meShift;
 			break;
-		case meMoveExtensionEndPointPrepareLeft:
-			m_mouseEventMode = meMoveExtentionEndPointLeft;
+		case Impl::meMoveExtensionEndPointPrepareLeft:
+			impl->m_mouseEventMode = Impl::meMoveExtentionEndPointLeft;
 			break;
-		case meMoveExtensionEndPointPrepareRight:
-			m_mouseEventMode = meMoveExtentionEndPointRight;
+		case Impl::meMoveExtensionEndPointPrepareRight:
+			impl->m_mouseEventMode = Impl::meMoveExtentionEndPointRight;
 			break;
-		case meExpansionPrepareRight:
-		case meExpansionPrepareLeft:
+		case Impl::meExpansionPrepareRight:
+		case Impl::meExpansionPrepareLeft:
 			// do nothing. mouse expansion is not used.
 			break;
-		case meTranslate:
-		case meRotateRight:
-		case meRotateLeft:
-		case meShift:
-		case meMoveExtentionEndPointLeft:
-		case meMoveExtentionEndPointRight:
-		case meExpansionRight:
-		case meExpansionLeft:
+		case Impl::meTranslate:
+		case Impl::meRotateRight:
+		case Impl::meRotateLeft:
+		case Impl::meShift:
+		case Impl::meMoveExtentionEndPointLeft:
+		case Impl::meMoveExtentionEndPointRight:
+		case Impl::meExpansionRight:
+		case Impl::meExpansionLeft:
 			// these does not happen.
 			break;
-		case meAddingExtension:
-		case meInserting:
+		case Impl::meAddingExtension:
+		case Impl::meInserting:
 			m_leftButtonDown = true;
 			graphicsView()->emitWorldPosition(event->x(), event->y());
 			break;
-		case meTranslateDialog:
-		case meRotateDialog:
-		case meShiftDialog:
-		case meExpansionDialog:
+		case Impl::meTranslateDialog:
+		case Impl::meRotateDialog:
+		case Impl::meShiftDialog:
+		case Impl::meExpansionDialog:
 			// do nothing.
 			break;
 		}
@@ -788,8 +787,8 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		switch (m_mouseEventMode) {
-		case meNormal:
+		switch (impl->m_mouseEventMode) {
+		case Impl::meNormal:
 			if (m_definingBoundingBox) {
 				// bounding box selecting ended.
 				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
@@ -813,37 +812,37 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			break;
-		case meTranslatePrepare:
-		case meRotatePrepareRight:
-		case meRotatePrepareLeft:
-		case meShiftPrepare:
-		case meMoveExtensionEndPointPrepareLeft:
-		case meMoveExtensionEndPointPrepareRight:
-		case meExpansionPrepareRight:
-		case meExpansionPrepareLeft:
+		case Impl::meTranslatePrepare:
+		case Impl::meRotatePrepareRight:
+		case Impl::meRotatePrepareLeft:
+		case Impl::meShiftPrepare:
+		case Impl::meMoveExtensionEndPointPrepareLeft:
+		case Impl::meMoveExtensionEndPointPrepareRight:
+		case Impl::meExpansionPrepareRight:
+		case Impl::meExpansionPrepareLeft:
 			// do nothing.
 			break;
-		case meTranslate:
-		case meRotateRight:
-		case meRotateLeft:
-		case meShift:
-		case meMoveExtentionEndPointLeft:
-		case meMoveExtentionEndPointRight:
-		case meExpansionRight:
-		case meExpansionLeft:
+		case Impl::meTranslate:
+		case Impl::meRotateRight:
+		case Impl::meRotateLeft:
+		case Impl::meShift:
+		case Impl::meMoveExtentionEndPointLeft:
+		case Impl::meMoveExtentionEndPointRight:
+		case Impl::meExpansionRight:
+		case Impl::meExpansionLeft:
 			// operation ended.
 			m_currentPoint = QPoint(event->x(), event->y());
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			break;
-		case meAddingExtension:
-		case meInserting:
+		case Impl::meAddingExtension:
+		case Impl::meInserting:
 			m_leftButtonDown = false;
 			break;
-		case meTranslateDialog:
-		case meRotateDialog:
-		case meShiftDialog:
-		case meExpansionDialog:
+		case Impl::meTranslateDialog:
+		case Impl::meRotateDialog:
+		case Impl::meShiftDialog:
+		case Impl::meExpansionDialog:
 			// do nothing.
 			break;
 		}
@@ -860,35 +859,35 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 
 void GeoDataRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meAddingExtension:
+	switch (impl->m_mouseEventMode) {
+	case Impl::meNormal:
+	case Impl::meAddingExtension:
 		v->setCursor(Qt::ArrowCursor);
 		break;
-	case meTranslate:
-	case meTranslatePrepare:
+	case Impl::meTranslate:
+	case Impl::meTranslatePrepare:
 		v->setCursor(impl->m_cursorMove);
 		break;
-	case meRotateRight:
-	case meRotatePrepareRight:
-	case meRotateLeft:
-	case meRotatePrepareLeft:
+	case Impl::meRotateRight:
+	case Impl::meRotatePrepareRight:
+	case Impl::meRotateLeft:
+	case Impl::meRotatePrepareLeft:
 		v->setCursor(impl->m_cursorRotate);
 		break;
-	case meShift:
-	case meShiftPrepare:
+	case Impl::meShift:
+	case Impl::meShiftPrepare:
 		v->setCursor(impl->m_cursorShift);
 		break;
-	case meMoveExtentionEndPointLeft:
-	case meMoveExtensionEndPointPrepareLeft:
-	case meMoveExtentionEndPointRight:
-	case meMoveExtensionEndPointPrepareRight:
+	case Impl::meMoveExtentionEndPointLeft:
+	case Impl::meMoveExtensionEndPointPrepareLeft:
+	case Impl::meMoveExtentionEndPointRight:
+	case Impl::meMoveExtensionEndPointPrepareRight:
 		v->setCursor(impl->m_cursorMove);
 		break;
-	case meExpansionRight:
-	case meExpansionPrepareRight:
-	case meExpansionLeft:
-	case meExpansionPrepareLeft:
+	case Impl::meExpansionRight:
+	case Impl::meExpansionPrepareRight:
+	case Impl::meExpansionLeft:
+	case Impl::meExpansionPrepareLeft:
 		v->setCursor(impl->m_cursorExpand);
 		break;
 	default:
@@ -1500,7 +1499,7 @@ void GeoDataRiverSurvey::updateActionStatus()
 void GeoDataRiverSurvey::moveSelectedPoints()
 {
 	GeoDataRiverPathPointMoveDialog* dialog = new GeoDataRiverPathPointMoveDialog(this, preProcessorWindow());
-	m_mouseEventMode = meTranslateDialog;
+	impl->m_mouseEventMode = Impl::meTranslateDialog;
 	int selectCount = m_headPoint->selectedPoints();
 	bool singleSelection = (selectCount == 1);
 	GeoDataRiverPathPoint* selected = nullptr;
@@ -1540,7 +1539,7 @@ void GeoDataRiverSurvey::deleteSelectedPoints()
 void GeoDataRiverSurvey::shiftSelectedPoints()
 {
 	GeoDataRiverPathPointShiftDialog* dialog = new GeoDataRiverPathPointShiftDialog(this, preProcessorWindow());
-	m_mouseEventMode = meShiftDialog;
+	impl->m_mouseEventMode = Impl::meShiftDialog;
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1550,7 +1549,7 @@ void GeoDataRiverSurvey::shiftSelectedPoints()
 void GeoDataRiverSurvey::expandSelectedPoints()
 {
 	GeoDataRiverPathPointExpandDialog* dialog = new GeoDataRiverPathPointExpandDialog(this, preProcessorWindow());
-	m_mouseEventMode = meExpansionDialog;
+	impl->m_mouseEventMode = Impl::meExpansionDialog;
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1568,7 +1567,7 @@ void GeoDataRiverSurvey::rotateSelectedPoint()
 
 	GeoDataRiverPathPointRotateDialog* dialog = new GeoDataRiverPathPointRotateDialog(this, preProcessorWindow());
 	dialog->setCurrentRelativeAngle(angle);
-	m_mouseEventMode = meRotateDialog;
+	impl->m_mouseEventMode = Impl::meRotateDialog;
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1589,7 +1588,7 @@ void GeoDataRiverSurvey::addLeftExtensionPoint()
 	dialog->setLineMode(GeoDataRiverPathPointExtensionAddDialog::Left);
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().leftBank(true).position()));
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meAddingExtension;
+	impl->m_mouseEventMode = Impl::meAddingExtension;
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1603,7 +1602,7 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 	dialog->setLineMode(GeoDataRiverPathPointExtensionAddDialog::Right);
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().rightBank(true).position()));
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meAddingExtension;
+	impl->m_mouseEventMode = Impl::meAddingExtension;
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1624,7 +1623,7 @@ void GeoDataRiverSurvey::removeRightExtensionPoint()
 
 void GeoDataRiverSurvey::restoreMouseEventMode()
 {
-	m_mouseEventMode = meNormal;
+	impl->m_mouseEventMode = Impl::meNormal;
 }
 
 void GeoDataRiverSurvey::insertNewPoint()
@@ -1632,7 +1631,7 @@ void GeoDataRiverSurvey::insertNewPoint()
 	GeoDataRiverPathPoint* selected = selectedPoint();
 	GeoDataRiverPathPointInsertDialog* dialog = new GeoDataRiverPathPointInsertDialog(selected, true, this, preProcessorWindow());
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meInserting;
+	impl->m_mouseEventMode = Impl::meInserting;
 
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
@@ -1645,7 +1644,7 @@ void GeoDataRiverSurvey::addNewPoint()
 	GeoDataRiverPathPoint* selected = selectedPoint();
 	GeoDataRiverPathPointInsertDialog* dialog = new GeoDataRiverPathPointInsertDialog(selected, false, this, preProcessorWindow());
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meInserting;
+	impl->m_mouseEventMode = Impl::meInserting;
 
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
@@ -1676,28 +1675,28 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 			if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 				// preparing for moving
-				m_mouseEventMode = meTranslatePrepare;
+				impl->m_mouseEventMode = Impl::meTranslatePrepare;
 			}
 			if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 				// preparing for center-point shift
-				m_mouseEventMode = meShiftPrepare;
+				impl->m_mouseEventMode = Impl::meShiftPrepare;
 			}
 		} else {
-			m_mouseEventMode = meNormal;
+			impl->m_mouseEventMode = Impl::meNormal;
 			QPointF lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
 			if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
 				// cursor is near left bank.
 				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 					// preparing for rotating
-					m_mouseEventMode = meRotatePrepareLeft;
+					impl->m_mouseEventMode = Impl::meRotatePrepareLeft;
 				}
 				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
 						selected->crosssection().fixedPointLSet()) {
 					// preparing for center-point shift
-					m_mouseEventMode = meMoveExtensionEndPointPrepareLeft;
+					impl->m_mouseEventMode = Impl::meMoveExtensionEndPointPrepareLeft;
 				}
 			}
 			QPointF rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
@@ -1706,20 +1705,20 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 					// preparing for rotating
-					m_mouseEventMode = meRotatePrepareRight;
+					impl->m_mouseEventMode = Impl::meRotatePrepareRight;
 				}
 				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
 						selected->crosssection().fixedPointRSet()) {
 					// preparing for center-point shift
-					m_mouseEventMode = meMoveExtensionEndPointPrepareRight;
+					impl->m_mouseEventMode = Impl::meMoveExtensionEndPointPrepareRight;
 				}
 			}
 		}
 	} else {
 		// multiple selection, or none.
 		GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-		m_mouseEventMode = meNormal;
+		impl->m_mouseEventMode = Impl::meNormal;
 		while (p != nullptr) {
 			if (p->IsSelected) {
 				if (iRIC::lengthSquared(p->position() - worldPos) < stdLen2 * 9) {
@@ -1727,24 +1726,24 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 					if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
 							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 						// preparing for moving
-						m_mouseEventMode = meTranslatePrepare;
+						impl->m_mouseEventMode = Impl::meTranslatePrepare;
 						return;
 					}
 					if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 						// preparing for center-point shift
-						m_mouseEventMode = meShiftPrepare;
+						impl->m_mouseEventMode = Impl::meShiftPrepare;
 						return;
 					}
 				} else {
-					m_mouseEventMode = meNormal;
+					impl->m_mouseEventMode = Impl::meNormal;
 					QPointF lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 					if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
 						// cursor is near left bank.
 						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 							// preparing for center-point shift
-							m_mouseEventMode = meExpansionPrepareLeft;
+							impl->m_mouseEventMode = Impl::meExpansionPrepareLeft;
 							return;
 						}
 					}
@@ -1754,7 +1753,7 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 							// preparing for center-point shift
-							m_mouseEventMode = meExpansionPrepareRight;
+							impl->m_mouseEventMode = Impl::meExpansionPrepareRight;
 							return;
 						}
 					}

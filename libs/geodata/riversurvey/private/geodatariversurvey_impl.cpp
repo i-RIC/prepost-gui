@@ -1,6 +1,7 @@
 #include "geodatariversurvey_impl.h"
 
 GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
+	m_mouseEventMode {meNormal},
 	m_rs {rs}
 {}
 

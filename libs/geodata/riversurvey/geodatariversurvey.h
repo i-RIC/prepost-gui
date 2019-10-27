@@ -40,32 +40,6 @@ class GD_RIVERSURVEY_EXPORT GeoDataRiverSurvey : public GeoData
 public:
 	static const int WSE_NAME_MAXLENGTH;
 
-	enum MouseEventMode {
-		meNormal,
-		meTranslate,
-		meTranslatePrepare,
-		meRotateRight,
-		meRotatePrepareRight,
-		meRotateLeft,
-		meRotatePrepareLeft,
-		meShift,
-		meShiftPrepare,
-		meMoveExtentionEndPointLeft,
-		meMoveExtensionEndPointPrepareLeft,
-		meMoveExtentionEndPointRight,
-		meMoveExtensionEndPointPrepareRight,
-		meExpansionRight,
-		meExpansionPrepareRight,
-		meExpansionLeft,
-		meExpansionPrepareLeft,
-		meAddingExtension,
-		meInserting,
-
-		meTranslateDialog,
-		meRotateDialog,
-		meShiftDialog,
-		meExpansionDialog
-	};
 	GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	~GeoDataRiverSurvey();
 
@@ -238,7 +212,6 @@ private:
 	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
 
-	MouseEventMode m_mouseEventMode;
 	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
 
