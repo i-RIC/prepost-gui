@@ -60,6 +60,9 @@ public:
 	vtkPolyData* m_riverCenterPoints;
 	vtkActor* m_riverCenterPointsActor;
 
+	vtkPolyData* m_crossSectionLines;
+	vtkActor* m_crossSectionLinesActor;
+
 	vtkPolyData* m_selectedRiverCenterPoints;
 	vtkActor* m_selectedRiverCenterPointsActor;
 

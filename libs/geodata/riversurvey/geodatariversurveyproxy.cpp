@@ -1,6 +1,7 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
+#include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurveyproxy_setsettingcommand.h"
 
 #include <misc/mathsupport.h>
@@ -68,8 +69,8 @@ void GeoDataRiverSurveyProxy::setupActors()
 	col->AddItem(m_firstAndLastCrosssectionsActor);
 
 	m_crossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_crossectionsActor->SetMapper(rs->m_crossectionsActor->GetMapper());
-	m_crossectionsActor->SetProperty(rs->m_crossectionsActor->GetProperty());
+	m_crossectionsActor->SetMapper(rs->impl->m_crossSectionLinesActor->GetMapper());
+	m_crossectionsActor->SetProperty(rs->impl->m_crossSectionLinesActor->GetProperty());
 	r->AddActor(m_crossectionsActor);
 	col->AddItem(m_crossectionsActor);
 
