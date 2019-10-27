@@ -302,11 +302,10 @@ void GeoDataPolygon::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsV
 
 void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (impl->m_mouseEventMode == meDefining) {
-		if (impl->m_selectMode == smPolygon) {
-			definePolygon(true);
-		}
-	}
+	if (impl->m_mouseEventMode != meDefining) {return;}
+	if (impl->m_selectMode != smPolygon) {return;}
+
+	definePolygon(true);
 }
 
 
