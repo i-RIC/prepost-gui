@@ -42,11 +42,14 @@ public:
 	~Impl();
 
 	void setupActions();
+	void setupMenu();
 	void updateActionStatus();
 
 	void setupCursors();
 
 	MouseEventMode m_mouseEventMode;
+
+	QMenu* m_rightClickingMenu;
 
 	QAction* m_addUpperSideAction;
 	QAction* m_addLowerSideAction;

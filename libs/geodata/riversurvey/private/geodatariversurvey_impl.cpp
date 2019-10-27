@@ -1,51 +1,54 @@
 #include "geodatariversurvey_impl.h"
 
 #include <QAction>
+#include <QMenu>
 
 GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_mouseEventMode {meNormal},
+	m_rightClickingMenu {nullptr},
+	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
+	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
+	m_moveAction {new QAction(GeoDataRiverSurvey::tr("&Move..."), rs)},
+	m_rotateAction {new QAction(GeoDataRiverSurvey::tr("&Rotate..."), rs)},
+	m_shiftAction {new QAction(GeoDataRiverSurvey::tr("S&hift Center..."), rs)},
+	m_expandAction {new QAction(GeoDataRiverSurvey::tr("E&xtend Horizontally..."), rs)},
+	m_deleteAction {new QAction(GeoDataRiverSurvey::tr("Dele&te Cross Section"), rs)},
+	m_renameAction{ new QAction(GeoDataRiverSurvey::tr("R&ename Cross Section..."), rs) },
+	m_addLeftExtensionPointAction{ new QAction(GeoDataRiverSurvey::tr("Add &Left Bank Extension Line..."), rs) },
+	m_addRightExtensionPointAction{ new QAction(GeoDataRiverSurvey::tr("Add &Right Bank Extension Line..."), rs) },
+	m_removeLeftExtensionPointAction{ new QAction(GeoDataRiverSurvey::tr("Remo&ve Left Bank Extension Line"), rs) },
+	m_removeRightExtensionPointAction{ new QAction(GeoDataRiverSurvey::tr("Rem&ove Right Bank Extension Line"), rs) },
+	m_openCrossSectionWindowAction{ new QAction(GeoDataRiverSurvey::tr("Display &Cross Section"), rs) },
+	m_showBackgroundAction{ new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs) },
+	m_interpolateSplineAction{ new QAction(GeoDataRiverSurvey::tr("Spline"), rs) },
+	m_interpolateLinearAction{ new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs) },
 	m_rs {rs}
 {}
 
 GeoDataRiverSurvey::Impl::~Impl()
-{}
+{
+	delete m_rightClickingMenu;
+}
 
 void GeoDataRiverSurvey::Impl::setupActions()
 {
-	m_addUpperSideAction = new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), m_rs);
 	connect(m_addUpperSideAction, SIGNAL(triggered()), m_rs, SLOT(insertNewPoint()));
-	m_addLowerSideAction = new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), m_rs);
 	connect(m_addLowerSideAction, SIGNAL(triggered()), m_rs, SLOT(addNewPoint()));
-	m_moveAction = new QAction(GeoDataRiverSurvey::tr("&Move..."), m_rs);
 	connect(m_moveAction, SIGNAL(triggered()), m_rs, SLOT(moveSelectedPoints()));
-	m_rotateAction = new QAction(GeoDataRiverSurvey::tr("&Rotate..."), m_rs);
 	connect(m_rotateAction, SIGNAL(triggered()), m_rs, SLOT(rotateSelectedPoint()));
-	m_shiftAction = new QAction(GeoDataRiverSurvey::tr("S&hift Center..."), m_rs);
 	connect(m_shiftAction, SIGNAL(triggered()), m_rs, SLOT(shiftSelectedPoints()));
-	m_expandAction = new QAction(GeoDataRiverSurvey::tr("E&xtend Horizontally..."), m_rs);
 	connect(m_expandAction, SIGNAL(triggered()), m_rs, SLOT(expandSelectedPoints()));
-	m_deleteAction = new QAction(GeoDataRiverSurvey::tr("Dele&te Cross Section"), m_rs);
 	connect(m_deleteAction, SIGNAL(triggered()), m_rs, SLOT(deleteSelectedPoints()));
-	m_renameAction = new QAction(GeoDataRiverSurvey::tr("R&ename Cross Section..."), m_rs);
 	connect(m_renameAction, SIGNAL(triggered()), m_rs, SLOT(renameSelectedPoint()));
-	m_addLeftExtensionPointAction = new QAction(GeoDataRiverSurvey::tr("Add &Left Bank Extension Line..."), m_rs);
 	connect(m_addLeftExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(addLeftExtensionPoint()));
-	m_addRightExtensionPointAction = new QAction(GeoDataRiverSurvey::tr("Add &Right Bank Extension Line..."), m_rs);
 	connect(m_addRightExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(addRightExtensionPoint()));
-	m_removeLeftExtensionPointAction = new QAction(GeoDataRiverSurvey::tr("Remo&ve Left Bank Extension Line"), m_rs);
 	connect(m_removeLeftExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeLeftExtensionPoint()));
-	m_removeRightExtensionPointAction = new QAction(GeoDataRiverSurvey::tr("Rem&ove Right Bank Extension Line"), m_rs);
 	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeRightExtensionPoint()));
-	m_openCrossSectionWindowAction = new QAction(GeoDataRiverSurvey::tr("Display &Cross Section"), m_rs);
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), m_rs, SLOT(openCrossSectionWindow()));
-
-	m_showBackgroundAction = new QAction(GeoDataRiverSurvey::tr("Display &Setting"), m_rs);
 	connect(m_showBackgroundAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
-	m_interpolateSplineAction = new QAction(GeoDataRiverSurvey::tr("Spline"), m_rs);
 	connect(m_interpolateSplineAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToSpline()));
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateSplineAction->setChecked(true);
-	m_interpolateLinearAction = new QAction(GeoDataRiverSurvey::tr("Linear Curve"), m_rs);
 	connect(m_interpolateLinearAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToLinear()));
 	m_interpolateLinearAction->setCheckable(true);
 
@@ -62,6 +65,71 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	m_removeLeftExtensionPointAction->setEnabled(false);
 	m_removeRightExtensionPointAction->setEnabled(false);
 	m_openCrossSectionWindowAction->setEnabled(false);
+}
+
+void GeoDataRiverSurvey::Impl::setupMenu()
+{
+	auto m = m_rs->m_menu;
+	m->setTitle(tr("&River Survey"));
+	m->addAction(m_rs->m_editNameAction);
+
+	m->addSeparator();
+	m->addAction(m_openCrossSectionWindowAction);
+
+	m->addSeparator();
+	m->addAction(m_addUpperSideAction);
+	m->addAction(m_addLowerSideAction);
+	m->addAction(m_moveAction);
+	m->addAction(m_rotateAction);
+	m->addAction(m_shiftAction);
+	m->addAction(m_expandAction);
+	m->addAction(m_deleteAction);
+	m->addAction(m_renameAction);
+
+	m->addSeparator();
+	m->addAction(m_addLeftExtensionPointAction);
+	m->addAction(m_addRightExtensionPointAction);
+	m->addAction(m_removeLeftExtensionPointAction);
+	m->addAction(m_removeRightExtensionPointAction);
+
+	m->addSeparator();
+	m->addAction(m_showBackgroundAction);
+
+	m->addSeparator();
+	QMenu* iMenu = m->addMenu(tr("Interpolation Mode"));
+	iMenu->addAction(m_interpolateSplineAction);
+	iMenu->addAction(m_interpolateLinearAction);
+
+	m->addSeparator();
+	m->addAction(m_rs->deleteAction());
+
+	m_rightClickingMenu = new QMenu();
+	m = m_rightClickingMenu;
+	m->addAction(m_openCrossSectionWindowAction);
+
+	m->addSeparator();
+	m->addAction(m_addUpperSideAction);
+	m->addAction(m_addLowerSideAction);
+	m->addAction(m_moveAction);
+	m->addAction(m_rotateAction);
+	m->addAction(m_shiftAction);
+	m->addAction(m_expandAction);
+	m->addAction(m_deleteAction);
+	m->addAction(m_renameAction);
+
+	m->addSeparator();
+	m->addAction(m_addLeftExtensionPointAction);
+	m->addAction(m_addRightExtensionPointAction);
+	m->addAction(m_removeLeftExtensionPointAction);
+	m->addAction(m_removeRightExtensionPointAction);
+
+	m->addSeparator();
+	m->addAction(m_showBackgroundAction);
+
+	m->addSeparator();
+	iMenu = m->addMenu(tr("Interpolation Mode"));
+	iMenu->addAction(m_interpolateSplineAction);
+	iMenu->addAction(m_interpolateLinearAction);
 }
 
 void GeoDataRiverSurvey::Impl::updateActionStatus()

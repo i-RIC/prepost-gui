@@ -112,7 +112,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	m_leftButtonDown = false;
 
 	m_gridCreatingCondition = nullptr;
-	m_rightClickingMenu = nullptr;
 
 	m_gridThread = new GeoDataRiverSurveyBackgroundGridCreateThread(this);
 	connect(m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
@@ -144,7 +143,6 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 	r->RemoveActor(m_crosssectionLinesActor);
 
 	delete m_gridThread;
-	delete m_rightClickingMenu;
 
 	delete impl;
 }
@@ -406,65 +404,7 @@ void GeoDataRiverSurvey::setupActors()
 
 void GeoDataRiverSurvey::setupMenu()
 {
-	m_menu->setTitle(tr("&River Survey"));
-	m_menu->addAction(m_editNameAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(impl->m_openCrossSectionWindowAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(impl->m_addUpperSideAction);
-	m_menu->addAction(impl->m_addLowerSideAction);
-	m_menu->addAction(impl->m_moveAction);
-	m_menu->addAction(impl->m_rotateAction);
-	m_menu->addAction(impl->m_shiftAction);
-	m_menu->addAction(impl->m_expandAction);
-	m_menu->addAction(impl->m_deleteAction);
-	m_menu->addAction(impl->m_renameAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(impl->m_addLeftExtensionPointAction);
-	m_menu->addAction(impl->m_addRightExtensionPointAction);
-	m_menu->addAction(impl->m_removeLeftExtensionPointAction);
-	m_menu->addAction(impl->m_removeRightExtensionPointAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(impl->m_showBackgroundAction);
-
-	m_menu->addSeparator();
-	QMenu* iMenu = m_menu->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(impl->m_interpolateSplineAction);
-	iMenu->addAction(impl->m_interpolateLinearAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(deleteAction());
-
-	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(impl->m_openCrossSectionWindowAction);
-
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(impl->m_addUpperSideAction);
-	m_rightClickingMenu->addAction(impl->m_addLowerSideAction);
-	m_rightClickingMenu->addAction(impl->m_moveAction);
-	m_rightClickingMenu->addAction(impl->m_rotateAction);
-	m_rightClickingMenu->addAction(impl->m_shiftAction);
-	m_rightClickingMenu->addAction(impl->m_expandAction);
-	m_rightClickingMenu->addAction(impl->m_deleteAction);
-	m_rightClickingMenu->addAction(impl->m_renameAction);
-
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(impl->m_addLeftExtensionPointAction);
-	m_rightClickingMenu->addAction(impl->m_addRightExtensionPointAction);
-	m_rightClickingMenu->addAction(impl->m_removeLeftExtensionPointAction);
-	m_rightClickingMenu->addAction(impl->m_removeRightExtensionPointAction);
-
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(impl->m_showBackgroundAction);
-
-	m_rightClickingMenu->addSeparator();
-	iMenu = m_rightClickingMenu->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(impl->m_interpolateSplineAction);
-	iMenu->addAction(impl->m_interpolateLinearAction);
+	impl->setupMenu();
 }
 
 void GeoDataRiverSurvey::setupDataItem()
@@ -851,8 +791,8 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 	} else if (event->button() == Qt::RightButton) {
 		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
-			m_rightClickingMenu->move(event->globalPos());
-			m_rightClickingMenu->show();
+			impl->m_rightClickingMenu->move(event->globalPos());
+			impl->m_rightClickingMenu->show();
 		}
 	}
 }

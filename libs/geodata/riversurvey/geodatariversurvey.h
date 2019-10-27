@@ -182,8 +182,6 @@ private:
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
-	QMenu* m_rightClickingMenu;
-
 	bool m_definingBoundingBox;
 	bool m_leftButtonDown;
 
