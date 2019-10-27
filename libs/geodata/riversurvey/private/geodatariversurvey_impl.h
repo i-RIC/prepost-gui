@@ -69,6 +69,9 @@ public:
 	vtkPolyData* m_selectedRightBankPoints;
 	vtkActor* m_selectedRightBankPointsActor;
 
+	vtkPolyData* m_selectedCrossSectionLines;
+	vtkActor* m_selectedCrossSectionLinesActor;
+
 	QMenu* m_rightClickingMenu;
 
 	QAction* m_addUpperSideAction;

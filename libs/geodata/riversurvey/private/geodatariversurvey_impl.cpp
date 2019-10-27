@@ -30,6 +30,8 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_selectedLeftBankPointsActor {vtkActor::New()},
 	m_selectedRightBankPoints {vtkPolyData::New()},
 	m_selectedRightBankPointsActor {vtkActor::New()},
+	m_selectedCrossSectionLines {vtkPolyData::New()},
+	m_selectedCrossSectionLinesActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -57,6 +59,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	r->RemoveActor(m_selectedRiverCenterPointsActor);
 	r->RemoveActor(m_selectedLeftBankPointsActor);
 	r->RemoveActor(m_selectedRightBankPointsActor);
+	r->RemoveActor(m_selectedCrossSectionLinesActor);
 
 	m_pointPoints->Delete();
 	m_riverCenterPoints->Delete();
@@ -67,6 +70,8 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_selectedLeftBankPointsActor->Delete();
 	m_selectedRightBankPoints->Delete();
 	m_selectedRightBankPointsActor->Delete();
+	m_selectedCrossSectionLines->Delete();
+	m_selectedCrossSectionLinesActor->Delete();
 
 	delete m_rightClickingMenu;
 }
@@ -151,6 +156,16 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	prop->SetColor(0, 1, 0);
 	m_selectedRightBankPointsActor->VisibilityOff();
 	r->AddActor(m_selectedRightBankPointsActor);
+
+	// selected cross section lines
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_selectedCrossSectionLines);
+	m_selectedCrossSectionLinesActor->SetMapper(mapper);
+	prop = m_selectedCrossSectionLinesActor->GetProperty();
+	prop->SetLineWidth(3);
+	prop->SetColor(0, 0, 0);
+	m_selectedCrossSectionLinesActor->VisibilityOff();
+	r->AddActor(m_selectedCrossSectionLinesActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
@@ -290,10 +305,12 @@ void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 	auto selectedCenterPoints = vtkSmartPointer<vtkCellArray>::New();
 	auto selectedLeftBankPoints = vtkSmartPointer<vtkCellArray>::New();
 	auto selectedRightBankPoints = vtkSmartPointer<vtkCellArray>::New();
+	auto selectedCrossSectionLines = vtkSmartPointer<vtkCellArray>::New();
 
 	m_selectedRiverCenterPoints->Initialize();
 	m_selectedLeftBankPoints->Initialize();
 	m_selectedRightBankPoints->Initialize();
+	m_selectedCrossSectionLines->Initialize();
 
 	auto p = m_rs->headPoint()->nextPoint();
 	int pointId = 0;
@@ -301,14 +318,14 @@ void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 		vtkIdType ids[5];
 
 		if (p->IsSelected) {
-			ids[0] = pointId * 5 + 2;
-			selectedCenterPoints->InsertNextCell(1, ids);
-			ids[0] = pointId * 5 + 0;
-			selectedLeftBankPoints->InsertNextCell(1, ids);
-			ids[0] = pointId * 5 + 4;
-			selectedRightBankPoints->InsertNextCell(1, ids);
+			for (int i = 0; i < 5; ++i) {
+				ids[i] = pointId * 5 + i;
+			}
+			selectedCenterPoints->InsertNextCell(1, &(ids[2]));
+			selectedLeftBankPoints->InsertNextCell(1, &(ids[0]));
+			selectedRightBankPoints->InsertNextCell(1, &(ids[4]));
+			selectedCrossSectionLines->InsertNextCell(5, &(ids[0]));
 		}
-
 		p = p->nextPoint();
 		++ pointId;
 	}
@@ -318,6 +335,8 @@ void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 	m_selectedLeftBankPoints->SetVerts(selectedLeftBankPoints);
 	m_selectedRightBankPoints->SetPoints(m_pointPoints);
 	m_selectedRightBankPoints->SetVerts(selectedRightBankPoints);
+	m_selectedCrossSectionLines->SetPoints(m_pointPoints);
+	m_selectedCrossSectionLines->SetLines(selectedCrossSectionLines);
 }
 
 void GeoDataRiverSurvey::Impl::setupCursors()

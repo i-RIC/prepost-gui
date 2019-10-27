@@ -131,7 +131,6 @@ protected:
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_firstAndLastCrosssections;
 	vtkSmartPointer<vtkUnstructuredGrid> m_crosssections;
-	vtkSmartPointer<vtkUnstructuredGrid> m_selectedCrosssections;
 	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
@@ -142,7 +141,6 @@ protected:
 
 	vtkSmartPointer<vtkActor> m_firstAndLastCrosssectionsActor;
 	vtkSmartPointer<vtkActor> m_crossectionsActor;
-	vtkSmartPointer<vtkActor> m_selectedCrossectionsActor;
 
 	vtkSmartPointer<vtkActor> m_blackCrossectionsActor;
 
