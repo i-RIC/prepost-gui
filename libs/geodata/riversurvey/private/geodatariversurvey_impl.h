@@ -50,6 +50,7 @@ public:
 
 	void updateActionStatus();
 	void updateVtkPointsObjects();
+	void updateVtkCenterAndBankLinesObjects();
 	void updateSelectedVtkObjects();
 	void setupCursors();
 
@@ -62,6 +63,9 @@ public:
 
 	vtkPolyData* m_crossSectionLines;
 	vtkActor* m_crossSectionLinesActor;
+
+	vtkPolyData* m_centerAndBankLines;
+	vtkActor* m_centerAndBankLinesActor;
 
 	vtkPolyData* m_selectedRiverCenterPoints;
 	vtkActor* m_selectedRiverCenterPointsActor;
