@@ -356,7 +356,7 @@ void GeoDataPolygonTriangleThread::runTriangle()
 		return;
 	}
 
-	char arg[] = "pDQ";
+	char arg[] = "pQ";
 	clearTrianglateio(&out);
 	triangulate(&(arg[0]), &in, &out, 0);
 
