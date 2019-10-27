@@ -1,3 +1,4 @@
+#include "geodatariversurvey_impl.h"
 #include "geodatariversurvey_removeextensioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 

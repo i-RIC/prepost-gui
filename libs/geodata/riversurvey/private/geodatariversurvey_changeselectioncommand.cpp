@@ -1,4 +1,5 @@
 #include "geodatariversurvey_changeselectioncommand.h"
+#include "geodatariversurvey_impl.h"
 
 #include <guicore/misc/mouseboundingbox.h>
 

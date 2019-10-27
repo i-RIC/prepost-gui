@@ -14,6 +14,7 @@
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
+#include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurvey_mousemoveextensioncommand.h"
 #include "private/geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseshiftriverpathcentercommand.h"
