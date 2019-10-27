@@ -69,12 +69,14 @@ public:
 	GeoDataRiverPathPoint* headPoint() const;
 	vtkStructuredGrid* backgroundGrid() const;
 	void updateCrosssectionWindows();
-	void setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue);
+	void setColoredPoints(GeoDataRiverPathPoint* black);
 	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
 	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() const;
 	void useDivisionPointsForBackgroundGrid(bool use);
+
 	void refreshBackgroundGrid();
 	void cancelBackgroundGridUpdate();
+
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode);
 	void informCtrlPointUpdateToCrosssectionWindows();
 
@@ -137,8 +139,6 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
-	vtkSmartPointer<vtkUnstructuredGrid> m_redCrosssection;
-	vtkSmartPointer<vtkUnstructuredGrid> m_blueCrosssection;
 
 	vtkSmartPointer<vtkActor> m_riverCenterActor;
 	vtkSmartPointer<vtkActor> m_selectedRiverCenterActor;
@@ -154,8 +154,6 @@ protected:
 	vtkSmartPointer<vtkActor> m_selectedCrossectionsActor;
 
 	vtkSmartPointer<vtkActor> m_blackCrossectionsActor;
-	vtkSmartPointer<vtkActor> m_redCrossectionsActor;
-	vtkSmartPointer<vtkActor> m_blueCrossectionsActor;
 
 	vtkSmartPointer<vtkActor> m_backgroundActor;
 	vtkSmartPointer<vtkActor> m_crosssectionLinesActor;

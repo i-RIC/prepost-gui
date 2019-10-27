@@ -516,7 +516,6 @@ QTableView* PreProcessorGridCrosssectionWindow::tableView() const
 
 void PreProcessorGridCrosssectionWindow::informFocusIn()
 {
-//	m_riverSurvey->setColoredPoints(m_blackLinePoint, m_redLinePoint, m_blueLinePoint);
 }
 
 Structured2DGrid* PreProcessorGridCrosssectionWindow::grid() const

@@ -138,8 +138,6 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 	r->RemoveActor(m_backgroundActor);
 	r->RemoveActor(m_labelActor);
 	r->RemoveActor(m_blackCrossectionsActor);
-	r->RemoveActor(m_redCrossectionsActor);
-	r->RemoveActor(m_blueCrossectionsActor);
 	r->RemoveActor(m_crosssectionLinesActor);
 
 	delete m_gridThread;
@@ -355,28 +353,6 @@ void GeoDataRiverSurvey::setupActors()
 	m_blackCrossectionsActor->GetProperty()->SetOpacity(0.3);
 	m_blackCrossectionsActor->VisibilityOff();
 	r->AddActor(m_blackCrossectionsActor);
-
-	m_redCrosssection = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_redCrosssection);
-	m_redCrossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_redCrossectionsActor->SetMapper(mapper);
-	m_redCrossectionsActor->GetProperty()->SetColor(1.0, 0, 0);
-	m_redCrossectionsActor->GetProperty()->SetLineWidth(7);
-	m_redCrossectionsActor->GetProperty()->SetOpacity(0.3);
-	m_redCrossectionsActor->VisibilityOff();
-	r->AddActor(m_redCrossectionsActor);
-
-	m_blueCrosssection = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_blueCrosssection);
-	m_blueCrossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_blueCrossectionsActor->SetMapper(mapper);
-	m_blueCrossectionsActor->GetProperty()->SetColor(0, 0, 1.0);
-	m_blueCrossectionsActor->GetProperty()->SetLineWidth(7);
-	m_blueCrossectionsActor->GetProperty()->SetOpacity(0.3);
-	m_blueCrossectionsActor->VisibilityOff();
-	r->AddActor(m_blueCrossectionsActor);
 
 	// background color.
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
@@ -1351,8 +1327,6 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	m_rightBankLineActor->SetPosition(0, 0, lines);
 	m_selectedCrossectionsActor->SetPosition(0, 0, lines);
 	m_blackCrossectionsActor->SetPosition(0, 0, backlines);
-	m_redCrossectionsActor->SetPosition(0, 0, backlines);
-	m_blueCrossectionsActor->SetPosition(0, 0, backlines);
 	m_crosssectionLinesActor->SetPosition(0, 0, backlines);
 	m_backgroundActor->SetPosition(0, 0, background);
 }
@@ -1737,25 +1711,13 @@ void GeoDataRiverSurvey::switchInterpolateModeToSpline()
 	updateInterpolators();
 }
 
-void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue)
+void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black)
 {
 	if (black == nullptr) {
 		m_blackCrossectionsActor->VisibilityOff();
 	} else {
 		setupLine(m_blackCrosssection, black);
 		m_blackCrossectionsActor->VisibilityOn();
-	}
-	if (red == nullptr) {
-		m_redCrossectionsActor->VisibilityOff();
-	} else {
-		setupLine(m_redCrosssection, red);
-		m_redCrossectionsActor->VisibilityOn();
-	}
-	if (blue == nullptr) {
-		m_blueCrossectionsActor->VisibilityOff();
-	} else {
-		setupLine(m_blueCrosssection, blue);
-		m_blueCrossectionsActor->VisibilityOn();
 	}
 	renderGraphicsView();
 }
