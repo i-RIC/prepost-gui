@@ -712,6 +712,23 @@
         <source>HH:MM</source>
         <translation>HH:MM</translation>
     </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="142"/>
+        <source>Custom</source>
+        <translation>カスタム</translation>
+    </message>
+    <message>
+        <location filename="../timeformat/timeformateditwidget.ui" line="152"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;カスタム書式は、以下の記号を使って定義します。&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;年: YYYY, YY&lt;/li&gt;&lt;li&gt;月: M, MM, MMM, MMMM (MMM は Jan など, MMMM は January など)&lt;/li&gt;&lt;li&gt;日: d, dd, ddd, dddd (ddd は Mon など, dddd は Monday など)&lt;/li&gt;&lt;li&gt;時間: H, HH, h, hh (h, hh は AM / PM 表示用)&lt;/li&gt;&lt;li&gt;分: m, mm&lt;/li&gt;&lt;li&gt;秒: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: D, DD, DDD, DDDD (DDD for Mon etc., DDDD for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;カスタム書式は、以下の記号を使って定義します。&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;年: YYYY, YY&lt;/li&gt;&lt;li&gt;月: M, MM, MMM, MMMM (MMM は Jan など, MMMM は January など)&lt;/li&gt;&lt;li&gt;日: D, DD, DDD, DDDD (DDD は Mon など, DDDD は Monday など)&lt;/li&gt;&lt;li&gt;時間: H, HH, h, hh (h, hh は AM / PM 表示用)&lt;/li&gt;&lt;li&gt;分: m, mm&lt;/li&gt;&lt;li&gt;秒: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
