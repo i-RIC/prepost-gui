@@ -12,7 +12,8 @@ enum class TimeFormat {
 	actual_mm_dd_HH_MM_SS      = 103,
 	actual_mm_dd_HH_MM         = 104,
 	actual_HH_MM_SS            = 105,
-	actual_HH_MM               = 106
+	actual_HH_MM               = 106,
+	actual_Custom              = 107
 };
 
 #endif // TIMEFORMAT_H

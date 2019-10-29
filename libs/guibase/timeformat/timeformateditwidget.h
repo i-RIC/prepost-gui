@@ -25,6 +25,16 @@ public slots:
 public:
 	TimeFormat timeFormat() const;
 	void setTimeFormat(TimeFormat timeFormat);
+	QString customTimeFormat() const;
+	void setCustomTimeFormat(const QString& customTimeFormat);
+
+private slots:
+	void actual_yyyy_mm_dd_HH_MM_SS_toggled(bool toggled);
+	void actual_yyyy_mm_dd_HH_MM_toggled(bool toggled);
+	void actual_mm_dd_HH_MM_SS_toggled(bool toggled);
+	void actual_mm_dd_HH_MM_toggled(bool toggled);
+	void actual_HH_MM_SS_toggled(bool toggled);
+	void actual_HH_MM_toggled(bool toggled);
 
 private:
 	Ui::TimeFormatEditWidget *ui;

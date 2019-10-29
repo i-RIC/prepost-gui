@@ -25,6 +25,9 @@ public:
 	TimeFormat timeFormat() const;
 	void setTimeFormat(TimeFormat timeFormat);
 
+	QString customTimeFormat() const;
+	void setCustomTimeFormat(const QString& format);
+
 private:
 	Ui::ProjectTimeSettingDialog *ui;
 };

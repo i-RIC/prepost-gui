@@ -38,6 +38,7 @@ public:
 	CoordinateSystem* m_coordinateSystem;
 	QDateTime m_zeroDateTime; // time that corresponds to t = 0
 	TimeFormat m_timeFormat;
+	QString m_customTimeFormat;
 
 	QPointF m_offset;
 

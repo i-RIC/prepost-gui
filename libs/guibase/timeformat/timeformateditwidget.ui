@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>326</width>
-    <height>378</height>
+    <width>303</width>
+    <height>406</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <widget class="QGroupBox" name="valueTypeGroupBox">
      <property name="title">
@@ -88,7 +88,7 @@
      <property name="title">
       <string>Actual time format</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QRadioButton" name="actualYYYYMMDDHHHHMMSSRadioButton">
         <property name="text">
@@ -134,6 +134,33 @@
         </property>
        </widget>
       </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0">
+        <item>
+         <widget class="QRadioButton" name="actualCustomRadioButton">
+          <property name="text">
+           <string>Custom</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="actualCustomLineEdit"/>
+        </item>
+        <item>
+         <widget class="TooltipLabel" name="actualCustomHelpLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../guibase.qrc">:/libs/guibase/images/iconQuestion.png</pixmap>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
      </layout>
     </widget>
    </item>
@@ -152,7 +179,16 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>guibase/tooltiplabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../guibase.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>showElapsedRadioButton</sender>
@@ -183,6 +219,22 @@
     <hint type="destinationlabel">
      <x>81</x>
      <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actualCustomRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actualCustomLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>373</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>371</y>
     </hint>
    </hints>
   </connection>

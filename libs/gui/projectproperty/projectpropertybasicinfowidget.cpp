@@ -93,12 +93,14 @@ void ProjectPropertyBasicInfoWidget::showTimeDialog()
 	ProjectTimeSettingDialog dialog(this);
 	dialog.setZeroDateTime(mainFile->zeroDateTime());
 	dialog.setTimeFormat(mainFile->timeFormat());
+	dialog.setCustomTimeFormat(mainFile->customTimeFormat());
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
 	mainFile->setZeroDateTime(dialog.zeroDateTime());
 	mainFile->setTimeFormat(dialog.timeFormat());
+	mainFile->setCustomTimeFormat(dialog.customTimeFormat());
 
 	updateTimeString();
 }
@@ -132,9 +134,9 @@ void ProjectPropertyBasicInfoWidget::updateTimeString()
 	QString timeStr = tr("(Not specified)");
 	auto zdt = mainFile->zeroDateTime();
 	if (! zdt.isNull()) {
-		timeStr = TimeFormatUtil::formattedString(zdt, 0, TimeFormat::actual_yyyy_mm_dd_HH_MM_SS);
+		timeStr = TimeFormatUtil::formattedString(zdt, 0, TimeFormat::actual_yyyy_mm_dd_HH_MM_SS, "");
 	}
-	QString formatStr = TimeFormatUtil::formatString(mainFile->timeFormat());
+	QString formatStr = TimeFormatUtil::formatString(mainFile->timeFormat(), mainFile->customTimeFormat());
 
 	ui->timeValueLabel->setText(QString("%1 : %2").arg(timeStr).arg(formatStr));
 }
