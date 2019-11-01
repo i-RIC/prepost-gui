@@ -3,6 +3,7 @@
 #include <misc/mathsupport.h>
 
 #include <QDateTime>
+#include <QLocale>
 
 #include <cmath>
 
@@ -80,7 +81,7 @@ QString DD_HH_MM_SS_String(double seconds)
 
 } // namespace
 
-QString TimeFormatUtil::formattedString(const QDateTime& zeroDateTime, double elapsed, TimeFormat format)
+QString TimeFormatUtil::formattedString(const QDateTime& zeroDateTime, double elapsed, TimeFormat format, const QString& customFormat)
 {
 	if (format == TimeFormat::elapsed_SS_sec) {
 		return SS_sec_String(elapsed);
@@ -109,14 +110,16 @@ QString TimeFormatUtil::formattedString(const QDateTime& zeroDateTime, double el
 		} else if (format == TimeFormat::actual_HH_MM_SS) {
 			formatStr = "HH:mm:ss";
 		} else if (format == TimeFormat::actual_HH_MM) {
-			formatStr = "HH:mm:ss";
+			formatStr = "HH:mm";
+		} else if (format == TimeFormat::actual_Custom) {
+			formatStr = customFormat;
 		}
-
-		return time.toString(formatStr);
+		auto locale = QLocale(QLocale::English, QLocale::Country::UnitedStates);
+		return locale.toString(time, formatStr);
 	}
 }
 
-QString TimeFormatUtil::formatString(TimeFormat format)
+QString TimeFormatUtil::formatString(TimeFormat format, const QString& customFormat)
 {
 	if (format == TimeFormat::elapsed_SS_sec) {
 		return "SS sec";
@@ -138,6 +141,8 @@ QString TimeFormatUtil::formatString(TimeFormat format)
 		return "HH:MM:SS";
 	} else if (format == TimeFormat::actual_HH_MM) {
 		return "HH:MM";
+	} else if (format == TimeFormat::actual_Custom) {
+		return customFormat;
 	} else {
 		return "SS sec";
 	}
@@ -165,6 +170,8 @@ QString TimeFormatUtil::toString(TimeFormat format)
 		return "actual|HH:MM:SS";
 	} else if (format == TimeFormat::actual_HH_MM) {
 		return "actual|HH:MM";
+	} else if (format == TimeFormat::actual_Custom) {
+		return "actual|custom";
 	} else {
 		return "elapsed|SS sec";
 	}
@@ -192,6 +199,8 @@ TimeFormat TimeFormatUtil::fromString(const QString& format)
 		return TimeFormat::actual_HH_MM_SS;
 	} else if (format == "actual|HH:MM") {
 		return TimeFormat::actual_HH_MM;
+	} else if (format == "actual|custom") {
+		return TimeFormat::actual_Custom;
 	} else {
 		return TimeFormat::elapsed_SS_sec;
 	}

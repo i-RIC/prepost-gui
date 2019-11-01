@@ -10,6 +10,7 @@
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/enumcontainert.h>
+#include <misc/stringcontainer.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkTextActor.h>
@@ -31,6 +32,7 @@ public:
 
 		BoolContainer useProjectSetting;
 		EnumContainerT<TimeFormat> timeFormat;
+		StringContainer customTimeFormat;
 		vtkTextPropertySettingContainer fontSetting;
 	};
 

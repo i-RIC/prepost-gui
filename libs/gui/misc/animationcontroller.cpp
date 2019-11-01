@@ -306,7 +306,8 @@ void AnimationController::updateStepLabel(int step)
 		double time = m_timeSteps.at(step);
 		auto zt = mainFile->zeroDateTime();
 		auto f = mainFile->timeFormat();
-		m_currentLabel->setText(TimeFormatUtil::formattedString(zt, time, f));
+		auto cf = mainFile->customTimeFormat();
+		m_currentLabel->setText(TimeFormatUtil::formattedString(zt, time, f, cf));
 	} else {
 		if (step >= m_iterationSteps.size()) {
 			m_currentLabel->setText("---");

@@ -1,3 +1,4 @@
+#include "timeformatutil.h"
 #include "timeformateditwidget.h"
 #include "ui_timeformateditwidget.h"
 
@@ -6,6 +7,13 @@ TimeFormatEditWidget::TimeFormatEditWidget(QWidget *parent) :
 	ui(new Ui::TimeFormatEditWidget)
 {
 	ui->setupUi(this);
+
+	connect(ui->actualYYYYMMDDHHHHMMSSRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_yyyy_mm_dd_HH_MM_SS_toggled(bool)));
+	connect(ui->actualYYYYMMDDHHHHMMRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_yyyy_mm_dd_HH_MM_toggled(bool)));
+	connect(ui->actualMMDDHHMMSSRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_mm_dd_HH_MM_SS_toggled(bool)));
+	connect(ui->actualMMDDHHMMRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_mm_dd_HH_MM_toggled(bool)));
+	connect(ui->actualHHMMSSRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_HH_MM_SS_toggled(bool)));
+	connect(ui->actualHHMMRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_HH_MM_toggled(bool)));
 }
 
 TimeFormatEditWidget::~TimeFormatEditWidget()
@@ -41,6 +49,8 @@ TimeFormat TimeFormatEditWidget::timeFormat() const
 			return TimeFormat::actual_mm_dd_HH_MM;
 		} else if (ui->actualHHMMSSRadioButton->isChecked()) {
 			return TimeFormat::actual_HH_MM_SS;
+		} else if (ui->actualCustomRadioButton->isChecked()) {
+			return TimeFormat::actual_Custom;
 		} else {
 			return TimeFormat::actual_HH_MM;
 		}
@@ -77,6 +87,9 @@ void TimeFormatEditWidget::setTimeFormat(TimeFormat timeFormat)
 	} else if (timeFormat == TimeFormat::actual_HH_MM) {
 		ui->showActualRadioButton->setChecked(true);
 		ui->actualHHMMRadioButton->setChecked(true);
+	} else if (timeFormat == TimeFormat::actual_Custom) {
+		ui->showActualRadioButton->setChecked(true);
+		ui->actualCustomRadioButton->setChecked(true);
 	} else if (timeFormat == TimeFormat::elapsed_SS_sec) {
 		ui->showElapsedRadioButton->setChecked(true);
 		ui->elapsedSSRadioButton->setChecked(true);
@@ -90,4 +103,57 @@ void TimeFormatEditWidget::setTimeFormat(TimeFormat timeFormat)
 		ui->showElapsedRadioButton->setChecked(true);
 		ui->elapsedDDHHMMSSRadioButton->setChecked(true);
 	}
+	ui->actualCustomLineEdit->setEnabled(ui->actualCustomRadioButton->isChecked());
+}
+
+QString TimeFormatEditWidget::customTimeFormat() const
+{
+	return ui->actualCustomLineEdit->text();
+}
+
+void TimeFormatEditWidget::setCustomTimeFormat(const QString& customFormat)
+{
+	ui->actualCustomLineEdit->setText(customFormat);
+}
+
+void TimeFormatEditWidget::actual_yyyy_mm_dd_HH_MM_SS_toggled(bool toggled)
+{
+	if (! toggled) {return;}
+
+	ui->actualCustomLineEdit->setText("yyyy/MM/dd hh:mm:ss");
+}
+
+void TimeFormatEditWidget::actual_yyyy_mm_dd_HH_MM_toggled(bool toggled)
+{
+	if (! toggled) {return;}
+
+	ui->actualCustomLineEdit->setText("yyyy/MM/dd hh:mm");
+}
+
+void TimeFormatEditWidget::actual_mm_dd_HH_MM_SS_toggled(bool toggled)
+{
+	if (! toggled) {return;}
+
+	ui->actualCustomLineEdit->setText("MM/dd hh:mm:ss");
+}
+
+void TimeFormatEditWidget::actual_mm_dd_HH_MM_toggled(bool toggled)
+{
+	if (! toggled) {return;}
+
+	ui->actualCustomLineEdit->setText("MM/dd hh:mm");
+}
+
+void TimeFormatEditWidget::actual_HH_MM_SS_toggled(bool toggled)
+{
+	if (! toggled) {return;}
+
+	ui->actualCustomLineEdit->setText("hh:mm:ss");
+}
+
+void TimeFormatEditWidget::actual_HH_MM_toggled(bool toggled)
+{
+	if (! toggled) {return;}
+
+	ui->actualCustomLineEdit->setText("hh:mm");
 }

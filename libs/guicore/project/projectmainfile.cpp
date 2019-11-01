@@ -448,6 +448,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	// time format
 	QString f = element.attribute("timeFormat", "");
 	impl->m_timeFormat = TimeFormatUtil::fromString(f);
+	impl->m_customTimeFormat = element.attribute("customTimeFormat", "");
 
 	// coordinate offset
 	double offsetX = iRIC::getDoubleAttribute(node, "offsetX");
@@ -495,6 +496,7 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		writer.writeAttribute("zeroDateTime", impl->m_zeroDateTime.toString(Qt::ISODate));
 	}
 	writer.writeAttribute("timeFormat", TimeFormatUtil::toString(impl->m_timeFormat));
+	writer.writeAttribute("customTimeFormat", impl->m_customTimeFormat);
 
 	iRIC::setDoubleAttribute(writer, "offsetX", impl->m_offset.x());
 	iRIC::setDoubleAttribute(writer, "offsetY", impl->m_offset.y());
@@ -1176,6 +1178,16 @@ TimeFormat ProjectMainFile::timeFormat() const
 void ProjectMainFile::setTimeFormat(TimeFormat format)
 {
 	impl->m_timeFormat = format;
+}
+
+QString ProjectMainFile::customTimeFormat() const
+{
+	return impl->m_customTimeFormat;
+}
+
+void ProjectMainFile::setCustomTimeFormat(const QString& format)
+{
+	impl->m_customTimeFormat = format;
 }
 
 QPointF ProjectMainFile::offset() const

@@ -47,3 +47,13 @@ void ProjectTimeSettingDialog::setTimeFormat(TimeFormat timeFormat)
 {
 	ui->timeFormatWidget->setTimeFormat(timeFormat);
 }
+
+QString ProjectTimeSettingDialog::customTimeFormat() const
+{
+	return ui->timeFormatWidget->customTimeFormat();
+}
+
+void ProjectTimeSettingDialog::setCustomTimeFormat(const QString& format)
+{
+	ui->timeFormatWidget->setCustomTimeFormat(format);
+}
