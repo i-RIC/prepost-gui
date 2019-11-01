@@ -194,8 +194,8 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(particleExportAction, SIGNAL(triggered()), m_parent, SLOT(exportParticles()));
 	cfShapeExportAction = new QAction(tr("&Contour Figure as ESRI Shape files..."), this);
 	connect(cfShapeExportAction, SIGNAL(triggered()), m_parent, SLOT(exportCfShape()));
-	svKmlExportAction = new QAction(tr("&Google Earth KML for street view"), this);
-	connect(svKmlExportAction, SIGNAL(triggered()), m_parent, SLOT(exportStKML()));
+	svKmzExportAction = new QAction(tr("&Google Earth KMZ for street view"), this);
+	connect(svKmzExportAction, SIGNAL(triggered()), m_parent, SLOT(exportStKMZ()));
 
 	m_fileMenu->addSeparator();
 
@@ -264,7 +264,7 @@ void iRICMainWindowActionManager::setupExportMenu()
 	m_exportMenu->addAction(calcResultExportActionInFileMenu);
 	m_exportMenu->addAction(cfShapeExportAction);
 	m_exportMenu->addAction(particleExportAction);
-	m_exportMenu->addAction(svKmlExportAction);
+	m_exportMenu->addAction(svKmzExportAction);
 	m_exportMenu->addAction(exportVisGraphAction);
 }
 

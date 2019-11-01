@@ -276,12 +276,12 @@ bool Post2dWindow::exportKMLFooter(QXmlStreamWriter& writer, const QString& zone
 	return sItem->exportKMLFooter(writer, m_exportScalarName);
 }
 
-bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zoneName)
+bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zoneName, bool oneShot)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
 	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
-	return sItem->exportKMLForTimestep(writer, m_exportScalarName, index, time);
+	return sItem->exportKMLForTimestep(writer, m_exportScalarName, index, time, oneShot);
 }
 
 void Post2dWindow::updateTmsList()

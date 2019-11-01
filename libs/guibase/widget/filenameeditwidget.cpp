@@ -25,6 +25,7 @@ QString getRelativePath(const QString& filename, const QString& baseFolder)
 FilenameEditWidget::FilenameEditWidget(QWidget* parent) :
 	QWidget(parent),
 	m_filter {tr("All files (*.*)")},
+	m_saveMode {false},
 	ui(new Ui::FilenameEditWidget)
 {
 	ui->setupUi(this);
@@ -58,12 +59,23 @@ void FilenameEditWidget::setBaseFolder(const QString& folder)
 	m_baseFolder = folder;
 }
 
+void FilenameEditWidget::setSaveMode(bool saveMode)
+{
+	m_saveMode = saveMode;
+}
+
 void FilenameEditWidget::openDialog()
 {
 	QFileInfo finfo(ui->lineEdit->text());
 	QString dir = finfo.absolutePath();
 
-	QString fname = QFileDialog::getOpenFileName(this, tr("Select File"), dir, m_filter);
+	QString fname;
+	if (m_saveMode) {
+		fname = QFileDialog::getSaveFileName(this, tr("Select File"), dir, m_filter);
+	} else {
+		fname = QFileDialog::getOpenFileName(this, tr("Select File"), dir, m_filter);
+	}
+
 	if (fname.isNull()) {return;}
 
 	ui->lineEdit->setText(getRelativePath(fname, m_baseFolder));

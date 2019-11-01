@@ -10,6 +10,7 @@ PostDataExportDialog::PostDataExportDialog(QWidget* parent) :
 	ui {new Ui::PostDataExportDialog}
 {
 	ui->setupUi(this);
+	ui->fileEdit->setSaveMode(true);
 
 	ui->fileLabel->hide();
 	ui->fileEdit->hide();

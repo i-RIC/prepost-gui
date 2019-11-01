@@ -53,6 +53,7 @@
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
+#include <misc/ziparchive.h>
 #include <postbase/cfshapeexportwindowi.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
@@ -1196,15 +1197,15 @@ void iRICMainWindow::addKMLElement(int time, QString url, double north, double s
 
 QString iRICMainWindow::timeString(int time)
 {
-	QString str;
-	int hour = time / 3600;
-	int minutes = time % 3600;
-	int minute = minutes / 60;
-	int second = minutes % 60;
-	str = QString("2011-01-01T%1:%2:%3").arg(hour, 2, 10, QChar('0'))
-				.arg(minute, 2, 10, QChar('0'))
-				.arg(second, 2, 10, QChar('0'));
-	return str;
+	QDateTime datetime(QDate(2011, 1, 1));
+	auto zeroDateTime = projectData()->mainfile()->zeroDateTime();
+	if (! zeroDateTime.isNull()) {
+		datetime = zeroDateTime;
+	}
+	auto secs = m_projectData->mainfile()->postSolutionInfo()->timeSteps()->timesteps().at(time);
+	datetime = datetime.addSecs(static_cast<int>(secs));
+
+	return datetime.toString("yyyy-MM-ddTHH:mm:ssZ");
 }
 
 void iRICMainWindow::updateWindowTitle()
@@ -2029,12 +2030,12 @@ void iRICMainWindow::exportCfShape()
 	m_continuousSnapshotInProgress = false;
 }
 
-void iRICMainWindow::exportStKML()
+void iRICMainWindow::exportStKMZ()
 {
 	static QString outputFileName;
 	if (outputFileName == "") {
 		QDir dir(LastIODirectory::get());
-		outputFileName = dir.absoluteFilePath("output.kml");
+		outputFileName = dir.absoluteFilePath("output.kmz");
 	}
 
 	if (m_solverConsoleWindow->isSolverRunning()) {
@@ -2084,7 +2085,7 @@ void iRICMainWindow::exportStKML()
 	PostExportSetting s = pInfo->exportSetting();
 	s.filename = outputFileName;
 	expDialog.setExportSetting(s);
-	expDialog.setWindowTitle(tr("Export Google Earth KML for street view"));
+	expDialog.setWindowTitle(tr("Export Google Earth KMZ for street view"));
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
 
@@ -2092,7 +2093,16 @@ void iRICMainWindow::exportStKML()
 	pInfo->setExportSetting(s);
 
 	outputFileName = s.filename;
-	QFile mainKML(outputFileName);
+	if (QFile::exists(outputFileName)) {
+		bool ok = QFile(outputFileName).remove();
+		if (! ok) {
+			QMessageBox::critical(this, tr("Error"), tr("%1 can not be overwritten.").arg(QDir::toNativeSeparators(outputFileName)));
+			return;
+		}
+	}
+
+	QString tmpKmlName = m_workspace->workspace().absoluteFilePath("doc.kml");
+	QFile mainKML(tmpKmlName);
 	bool ok = mainKML.open(QFile::WriteOnly);
 	QXmlStreamWriter w(&mainKML);
 	w.setAutoFormatting(true);
@@ -2106,8 +2116,8 @@ void iRICMainWindow::exportStKML()
 	// start exporting.
 	QProgressDialog dialog(this);
 	dialog.setRange(s.startStep, s.endStep);
-	dialog.setWindowTitle(tr("Export Google Earth KML for street view"));
-	dialog.setLabelText(tr("Saving KML files..."));
+	dialog.setWindowTitle(tr("Export Google Earth KMZ for street view"));
+	dialog.setLabelText(tr("Saving KMZ file..."));
 	dialog.setFixedSize(300, 100);
 	dialog.setModal(true);
 	dialog.show();
@@ -2116,6 +2126,7 @@ void iRICMainWindow::exportStKML()
 
 	int step = s.startStep;
 	int fileIndex = 1;
+	bool oneShot = (s.startStep == s.endStep);
 	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
@@ -2125,7 +2136,7 @@ void iRICMainWindow::exportStKML()
 		}
 		m_animationController->setCurrentStepIndex(step);
 		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
-		bool ok = ew->exportKMLForTimestep(w, fileIndex, time, zoneName);
+		bool ok = ew->exportKMLForTimestep(w, fileIndex, time, zoneName, oneShot);
 		if (! ok) {
 			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
 			m_continuousSnapshotInProgress = false;
@@ -2140,6 +2151,16 @@ void iRICMainWindow::exportStKML()
 	w.writeEndElement();
 	w.writeEndDocument();
 	mainKML.close();
+
+	QString tmpZipName = m_workspace->tmpFileName();
+	tmpZipName.append(".zip");
+	QStringList list;
+	list << "doc.kml";
+	iRIC::ZipArchive(tmpZipName, m_workspace->workspace().absolutePath(), list);
+	ok = QFile::rename(tmpZipName, outputFileName);
+	mainKML.remove();
+
+	statusBar()->showMessage(tr("Google Earth KMZ is exported to %1 successfully.").arg(QDir::toNativeSeparators(outputFileName)), STATUSBAR_DISPLAYTIME);
 
 	m_continuousSnapshotInProgress = false;
 }

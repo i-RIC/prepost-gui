@@ -66,7 +66,7 @@ public:
 	bool checkKmlExportCondition(const QString &zonename) const override;
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
-	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename, bool oneShot) override;
 
 	void applyOffset(double x_diff, double y_diff) override;
 

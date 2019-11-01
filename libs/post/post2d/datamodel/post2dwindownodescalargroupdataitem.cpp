@@ -685,17 +685,20 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 		col.setRedF(rgb[0]);
 		col.setGreenF(rgb[1]);
 		col.setBlueF(rgb[2]);
-		QString colorStr = QString("%1%2%3%4").arg("c8").arg(col.blue(), 2, 16, QChar('0')).arg(col.green(), 2, 16, QChar('0')).arg(col.red(), 2, 16, QChar('0'));
+		QString colorStr = QString("%1%2%3%4").arg("b3").arg(col.blue(), 2, 16, QChar('0')).arg(col.green(), 2, 16, QChar('0')).arg(col.red(), 2, 16, QChar('0'));
 
 		writer.writeStartElement("Style");
-		writer.writeAttribute("id", QString("PolyColor%1").arg(i + 1));
+		writer.writeAttribute("id", QString("Rank%1").arg(i + 1));
 
 		writer.writeStartElement("LineStyle");
 		writer.writeTextElement("color", colorStr);
+		writer.writeTextElement("width", "0");
 		writer.writeEndElement();
 
 		writer.writeStartElement("PolyStyle");
 		writer.writeTextElement("color", colorStr);
+		writer.writeTextElement("fill", "true");
+		writer.writeTextElement("outline", "false");
 		writer.writeEndElement();
 
 		writer.writeEndElement();
@@ -710,7 +713,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writ
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time)
+bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time, bool oneShot)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
 	auto& stc = m_lookupTableContainer;
@@ -719,13 +722,19 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 	// Folder start
 	writer.writeStartElement("Folder");
-	// TimeStamp Start
-	QDateTime datetime(QDate(2011, 1, 1));
-	datetime = datetime.addSecs(static_cast<int>(time));
-	writer.writeStartElement("TimeStamp");
-	writer.writeTextElement("when", datetime.toString("yyyy-MM-ddTHH:mm:ssZ"));
-	// TimeStamp End
-	writer.writeEndElement();
+	if (! oneShot) {
+		// TimeStamp Start
+		QDateTime datetime(QDate(2011, 1, 1));
+		auto zeroDateTime = projectData()->mainfile()->zeroDateTime();
+		if (! zeroDateTime.isNull()) {
+			datetime = zeroDateTime;
+		}
+		datetime = datetime.addSecs(static_cast<int>(time));
+		writer.writeStartElement("TimeStamp");
+		writer.writeTextElement("when", datetime.toString("yyyy-MM-ddTHH:mm:ssZ"));
+		// TimeStamp End
+		writer.writeEndElement();
+	}
 
 	// name
 	writer.writeTextElement("name", QString("iRIC output t = %1").arg(time));
@@ -738,17 +747,22 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	bool isStructured = (stGrid != nullptr);
 	auto off = offset();
 
+	std::vector<std::vector<std::vector<QVector3D> > > polygons;
+	std::vector<std::vector<QVector3D> > emptyList;
+	for (int i = 0; i < m_setting.numberOfDivisions; ++i) {
+		polygons.push_back(emptyList);
+	}
+
 	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId) {
-
-		QList<QVector3D> points;
+		std::vector<QVector3D> points;
 		vtkCell* cell = ps->GetCell(cellId);
-		QList<vtkIdType> pointIds;
-
+		std::vector<vtkIdType> pointIds;
 		for (int pId = 0; pId < cell->GetNumberOfPoints(); ++pId) {
 			vtkIdType pointId = cell->GetPointId(pId);
-			pointIds.append(pointId);
+			pointIds.push_back(pointId);
 		}
 
+		double sum = 0;
 		for (int i = 0; i < pointIds.size(); ++i) {
 			vtkIdType pointId = pointIds.at(i);
 			double v[3];
@@ -758,104 +772,52 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 			v[1] += off.y();
 			cs->mapGridToGeo(v[0], v[1], &lon, &lat);
 			double val = da->GetTuple1(pointId);
-			points.append(QVector3D(lon, lat, val));
+			points.push_back(QVector3D(lon, lat, val));
+			sum += val;
 		}
-		// find north, south, west, east
-		double north = 0, south = 0, west = 0, east = 0;
-		double minval = 0;
-		double maxval = 0;
-		double sum = 0;
-		for (int i = 0; i < points.size(); ++i) {
-			QVector3D v = points.at(i);
-			sum += v.z();
-			if (i == 0 || v.y() > north) {north = v.y();}
-			if (i == 0 || v.y() < south) {south = v.y();}
-			if (i == 0 || v.x() > east) {east = v.x();}
-			if (i == 0 || v.x() < west) {west = v.x();}
-			if (i == 0 || v.z() > maxval) {maxval = v.z();}
-			if (i == 0 || v.z() < minval) {minval = v.z();}
-		}
-
 		double averageDepth = sum / points.size();
 
-		if (averageDepth < stc.manualMin()) {continue;}
+		if (averageDepth <= stc.manualMin()) {continue;}
+
+		int colorIndex = static_cast<int>((averageDepth - stc.manualMin()) / div);
+		if (colorIndex >= polygons.size()) {
+			colorIndex = polygons.size() - 1;
+		}
+		auto& pols = polygons[colorIndex];
+		pols.push_back(points);
+	}
+	for (int i = 0; i < polygons.size(); ++i) {
+		double min = stc.manualMin() + div * i;
+		double max = min + div;
 
 		writer.writeStartElement("Placemark");
-		// name
-		writer.writeTextElement("name", QString("depth = %1 [m]").arg(averageDepth));
-		// description
-		QString descString;
-		if (isStructured) {
-			int i, j, k;
-			cont->getCellIJKIndex(static_cast<int>(cellId), &i, &j, &k);
-			descString = QString("i = %1 j = %2").arg(i + 1).arg(j + 1);
-		} else {
-			descString = QString("index = %1").arg(cellId + 1);
+		auto name = QString("%1 - %2 m").arg(min).arg(max);
+		writer.writeTextElement("name", name);
+		writer.writeTextElement("styleUrl", QString("#Rank%1").arg(i + 1));
+		writer.writeStartElement("MultiGeometry");
+
+		auto& pols = polygons.at(i);
+		for (auto& points : pols) {
+			QStringList coordinates;
+			for (int i = 0; i <= points.size(); ++i) {
+				const auto& p = points.at(i % points.size());
+				coordinates.push_back(QString("%1,%2,%3").arg(QString::number(p.x(), 'g', 16)).arg(QString::number(p.y(), 'g', 16)).arg(QString::number(p.z(), 'g', 8)));
+			}
+			writer.writeStartElement("Polygon");
+			writer.writeTextElement("altitudeMode", "relativeToGround");
+			writer.writeStartElement("outerBoundaryIs");
+			writer.writeStartElement("LinearRing");
+			writer.writeTextElement("coordinates", coordinates.join("\r\n"));
+			writer.writeEndElement(); // LinearRing
+			writer.writeEndElement(); // outerBoundaryIs
+			writer.writeEndElement(); // Polygon
 		}
-		writer.writeTextElement("description", descString);
-		// styleurl
-		int colorIndex = (averageDepth / div) + 1;
-		if (colorIndex < 1) {colorIndex = 1;}
-		if (colorIndex > m_setting.numberOfDivisions) {colorIndex = m_setting.numberOfDivisions;}
 
-		QString styleUrl = QString("#PolyColor%1").arg(colorIndex);
-		writer.writeTextElement("styleUrl", styleUrl);
-		// Region Start
-		writer.writeStartElement("Region");
-
-		// LOD
-//		writer.writeStartElement("Lod");
-//		writer.writeTextElement("minLodPixels", "10");
-//		writer.writeEndElement();
-
-		// LatLonAltBox Start
-		writer.writeStartElement("LatLonAltBox");
-		writer.writeTextElement("north", QString::number(north, 'g', 12));
-		writer.writeTextElement("south", QString::number(south, 'g', 12));
-		writer.writeTextElement("east", QString::number(east, 'g', 12));
-		writer.writeTextElement("west", QString::number(west, 'g', 12));
-		writer.writeTextElement("minAltitude", QString::number(minval, 'g', 12));
-		writer.writeTextElement("maxAltitude", QString::number(maxval, 'g', 12));
-		writer.writeTextElement("altitudeMode", "relativeToGround");
-		// LatLonAltBox End
-		writer.writeEndElement();
-
-		// Region End
-		writer.writeEndElement();
-		// Polygon Start
-		writer.writeStartElement("Polygon");
-		writer.writeTextElement("extrude", "1");
-		writer.writeTextElement("altitudeMode", "relativeToGround");
-		// outerBoundaryIs Start
-		writer.writeStartElement("outerBoundaryIs");
-		// LinearRing Start
-		writer.writeStartElement("LinearRing");
-		QStringList coords;
-		for (int i = 0; i < points.size(); ++i) {
-			QVector3D v = points.at(i);
-			coords.append(QString("%1,%2,%3").arg(QString::number(v.x(), 'f', 12)).arg(QString::number(v.y(), 'f', 12)).arg(QString::number(v.z(), 'g', 12)));
-		}
-		QVector3D vlast = points.at(0);
-		coords.append(QString("%1,%2,%3").arg(QString::number(vlast.x(), 'f', 12)).arg(QString::number(vlast.y(), 'f', 12)).arg(QString::number(vlast.z(), 'g', 12)));
-		QString coordsStr("\r\n");
-		coordsStr.append(coords.join("\r\n"));
-		coordsStr.append("\r\n");
-		writer.writeTextElement("coordinates", coordsStr);
-
-		// LinearRing End
-		writer.writeEndElement();
-		// outerBoundaryIs End
-		writer.writeEndElement();
-
-		// Polygon End
-		writer.writeEndElement();
-
-		// Placemark end
-		writer.writeEndElement();
+		writer.writeEndElement(); // MultiGeometry
+		writer.writeEndElement(); // Placemark
 	}
 
-	// Folder end
-	writer.writeEndElement();
+	writer.writeEndElement(); // Folder
 	return true;
 }
 

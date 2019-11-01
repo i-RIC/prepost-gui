@@ -358,12 +358,12 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& w
 	return false;
 }
 
-bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time)
+bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time, bool oneShot)
 {
 	for (auto item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
-			return typedi->exportKMLForTimestep(writer, index, time);
+			return typedi->exportKMLForTimestep(writer, index, time, oneShot);
 		}
 	}
 	return false;
