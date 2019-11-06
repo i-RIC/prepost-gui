@@ -35,5 +35,9 @@ PostSolutionInfo* PostProcessorWindow::postSolutionInfo()
 PreProcessorGeoDataGroupDataItemInterface* PostProcessorWindow::refDataGroupDataItem()
 {
 	auto preModel = postSolutionInfo()->iricMainWindow()->preProcessorWindow()->dataModel();
+	if (preModel->geoDataTopDataItem() == nullptr) {
+		// Post Only mode
+		return nullptr;
+	}
 	return preModel->geoDataTopDataItem()->groupDataItem(std::string("_referenceinformation"));
 }
