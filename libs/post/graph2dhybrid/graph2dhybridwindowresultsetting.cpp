@@ -365,6 +365,10 @@ void Graph2dHybridWindowResultSetting::setupPolyLines()
 QList<GeoDataPolyLine*> Graph2dHybridWindowResultSetting::polyLines(const PostSolutionInfo* info)
 {
 	auto preModel = info->iricMainWindow()->preProcessorWindow()->dataModel();
+	if (preModel->geoDataTopDataItem() == nullptr) {
+		// Post Only mode
+		return QList<GeoDataPolyLine*>();
+	}
 	auto refGroup = preModel->geoDataTopDataItem()->groupDataItem(std::string("_referenceinformation"));
 
 	QList<GeoDataPolyLine*> ret;
