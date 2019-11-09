@@ -159,7 +159,6 @@ private:
 	MouseEventMode m_mouseEventMode;
 	ViewMouseEventMode m_viewMouseEventMode;
 	bool m_modelessDialogIsOpen;
-	QRectF m_shownRegion;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;
 	QPoint m_dragStartPoint;
