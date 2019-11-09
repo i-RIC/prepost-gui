@@ -809,32 +809,30 @@ QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 
 QMatrix GeoDataRiverSurveyCrosssectionWindowGraphicsView::getMatrix(QRect& viewport)
 {
-	QRectF region = m_drawnRegion;
 	QMatrix translate1, scale, translate2;
-	double xlength = region.right() - region.left();
-	double ylength = region.bottom() - region.top();
-	if (xlength == 0) {xlength = 1;}
-	if (ylength == 0) {ylength = 1;}
 
-	translate1 = QMatrix(1, 0, 0, 1, - (region.left() - fLeftMargin * xlength), - (region.bottom() + fBottomMargin * ylength));
-
-	double xscale =
-		(viewport.right() - viewport.left() - iLeftMargin - iRightMargin) /
-		(region.right() - region.left() + (fLeftMargin + fRightMargin) * xlength);
-	double yscale = -
-									(viewport.bottom() - viewport.top() - iTopMargin - iBottomMargin) /
-									(region.bottom() - region.top() + (fTopMargin + fBottomMargin) * ylength);
-	scale = QMatrix(xscale, 0, 0, yscale, 0, 0);
-
-	translate2 = QMatrix(1, 0, 0, 1, viewport.left() + iLeftMargin, viewport.top() + iTopMargin);
+	translate1 = QMatrix(1, 0, 0, 1, - m_center.x(), - m_center.y());
+	scale = QMatrix(m_scaleX, 0, 0, - m_scaleY, 0, 0);
+	translate2 = QMatrix(1, 0, 0, 1, viewport.width() * 0.5, viewport.height() * 0.5);
 
 	return translate1 * scale * translate2;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::cameraFit()
 {
-	m_drawnRegion = getRegion();
+	auto r = getRegion();
+	if (! m_parentWindow->isRegionFixed()) {
+		m_center.setX((r.left() + r.right()) * 0.5);
+		m_center.setY((r.top() + r.bottom()) * 0.5);
+	}
+
+	if (! m_parentWindow->isRegionFixed() && ! m_parentWindow->isAspectRatioFixed()) {
+		m_scaleX = (viewport()->width() - iLeftMargin - iRightMargin) / (r.width() * (1 + fLeftMargin + fRightMargin));
+		m_scaleY = (viewport()->height() - iTopMargin - iBottomMargin) / (r.height() * (1 + fTopMargin + fBottomMargin));
+	}
+
 	viewport()->update();
+	emit drawnRegionChanged();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::cameraMoveLeft()
@@ -901,7 +899,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		if (scaleY < 0.5) {scaleY = 0.5;}
 		if (scaleX > 2) {scaleX = 2;}
 		if (scaleY > 2) {scaleY = 2;}
-		zoom(scaleX, scaleY);
+		if (m_parentWindow->isAspectRatioFixed()) {
+			zoom(scaleY, scaleY);
+		} else {
+			zoom(scaleX, scaleY);
+		}
 	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) && ! m_modelessDialogIsOpen) {
 		m_mouseEventMode = meNormal;
 		if (m_gridMode) {
@@ -1010,11 +1012,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 		switch (event->button()) {
 		case Qt::LeftButton:
 			// translate
-			m_viewMouseEventMode = vmeTranslating;
+			if (! m_parentWindow->isRegionFixed()) {
+				m_viewMouseEventMode = vmeTranslating;
+			}
 			break;
 		case Qt::MidButton:
 			// zoom.
-			m_viewMouseEventMode = vmeZooming;
+			if (! m_parentWindow->isRegionFixed()) {
+				m_viewMouseEventMode = vmeZooming;
+			}
 			break;
 		default:
 			break;
@@ -1166,38 +1172,27 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::wheelEvent(QWheelEvent* e
 	}
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::resizeEvent(QResizeEvent*)
+{
+	emit drawnRegionChanged();
+}
+
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::zoom(double scaleX, double scaleY)
 {
-	qreal drawnRegionCenterX = (m_drawnRegion.left() + m_drawnRegion.right()) * .5;
-	qreal drawnRegionCenterY = (m_drawnRegion.top() + m_drawnRegion.bottom()) * .5;
-	qreal xWidth = m_drawnRegion.right() - m_drawnRegion.left();
-	qreal yWidth = m_drawnRegion.bottom() - m_drawnRegion.top();
-
-	qreal newxWidth = xWidth / scaleX;
-	qreal newyWidth = yWidth / scaleY;
-
-	if (newxWidth < 1E-6) {newxWidth = 1E-6;}
-	if (newyWidth < 1E-6) {newyWidth = 1E-6;}
-
-	m_drawnRegion.setLeft(drawnRegionCenterX - newxWidth * 0.5);
-	m_drawnRegion.setRight(drawnRegionCenterX + newxWidth * 0.5);
-	m_drawnRegion.setTop(drawnRegionCenterY - newyWidth * 0.5);
-	m_drawnRegion.setBottom(drawnRegionCenterY + newyWidth * 0.5);
+	m_scaleX *= scaleX;
+	m_scaleY *= scaleY;
 	viewport()->update();
+
+	emit drawnRegionChanged();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::translate(int x, int y)
 {
-	QWidget* w = viewport();
-	QRect rect = w->rect();
-	double xscale = (m_drawnRegion.width() / rect.width());
-	double yscale = (m_drawnRegion.height() / rect.height());
-
-	m_drawnRegion.setLeft(m_drawnRegion.left() - x * xscale);
-	m_drawnRegion.setRight(m_drawnRegion.right() - x * xscale);
-	m_drawnRegion.setTop(m_drawnRegion.top() + y * yscale);
-	m_drawnRegion.setBottom(m_drawnRegion.bottom() + y * yscale);
+	m_center.setX(m_center.x() - x / m_scaleX);
+	m_center.setY(m_center.y() + y / m_scaleY);
 	viewport()->update();
+
+	emit drawnRegionChanged();
 }
 
 int GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveWidth()
@@ -1631,6 +1626,20 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editCrossSection(GeoDataR
 	auto selModel = selectionModel();
 	selModel->clearSelection();
 	selModel->select(sel, QItemSelectionModel::Select | QItemSelectionModel::Rows);
+}
+
+double GeoDataRiverSurveyCrosssectionWindowGraphicsView::aspectRatio() const
+{
+	return m_scaleY / m_scaleX;
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setAspectRatio(double ratio)
+{
+	double currentRatio = aspectRatio();
+	double rate = currentRatio / ratio;
+	if (rate > 0.999 && rate < 1.001) {return;}
+
+	zoom(1.0, ratio / currentRatio);
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::toggleGridCreatingMode(bool gridMode)
