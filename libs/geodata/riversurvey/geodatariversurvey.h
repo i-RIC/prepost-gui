@@ -20,6 +20,7 @@
 
 #include <iriclib.h>
 
+class vtkPolyData;
 class vtkProperty;
 class QPolygonF;
 
@@ -121,10 +122,6 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
 	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
-
-	vtkSmartPointer<vtkActor> m_blackCrossectionsActor;
-
 	vtkSmartPointer<vtkActor> m_backgroundActor;
 
 	vtkSmartPointer<vtkStringArray> m_labelArray;
@@ -133,7 +130,7 @@ protected:
 
 private:
 	GeoDataRiverPathPoint* singleSelectedPoint();
-	void setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPoint* p);
+	void setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p);
 
 	void allActorsOff();
 	void updateSplineSolvers();

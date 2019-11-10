@@ -83,6 +83,9 @@ public:
 	vtkPolyData* m_verticalCrossSectionLines;
 	vtkActor* m_verticalCrossSectionLinesActor;
 
+	vtkPolyData* m_blackCrossSection;
+	vtkActor* m_blackCrossSectionActor;
+
 	QMenu* m_rightClickingMenu;
 
 	QAction* m_addUpperSideAction;

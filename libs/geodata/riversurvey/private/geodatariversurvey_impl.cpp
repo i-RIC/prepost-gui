@@ -40,6 +40,8 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_selectedCrossSectionLinesActor {vtkActor::New()},
 	m_verticalCrossSectionLines {vtkPolyData::New()},
 	m_verticalCrossSectionLinesActor {vtkActor::New()},
+	m_blackCrossSection {vtkPolyData::New()},
+	m_blackCrossSectionActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -71,6 +73,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	r->RemoveActor(m_selectedRightBankPointsActor);
 	r->RemoveActor(m_selectedCrossSectionLinesActor);
 	r->RemoveActor(m_verticalCrossSectionLinesActor);
+	r->RemoveActor(m_blackCrossSectionActor);
 
 	m_pointPoints->Delete();
 	m_riverCenterPoints->Delete();
@@ -89,6 +92,8 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_selectedCrossSectionLinesActor->Delete();
 	m_verticalCrossSectionLines->Delete();
 	m_verticalCrossSectionLinesActor->Delete();
+	m_blackCrossSection->Delete();
+	m_blackCrossSectionActor->Delete();
 
 	delete m_rightClickingMenu;
 }
@@ -213,6 +218,17 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	prop->SetLineWidth(1);
 	m_verticalCrossSectionLinesActor->VisibilityOff();
 	r->AddActor(m_verticalCrossSectionLinesActor);
+
+	// black cross section
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_blackCrossSection);
+	m_blackCrossSectionActor->SetMapper(mapper);
+	prop = m_blackCrossSectionActor->GetProperty();
+	prop->SetColor(0, 0, 0);
+	prop->SetLineWidth(7);
+	prop->SetOpacity(0.3);
+	m_blackCrossSectionActor->VisibilityOff();
+	r->AddActor(m_blackCrossSectionActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
