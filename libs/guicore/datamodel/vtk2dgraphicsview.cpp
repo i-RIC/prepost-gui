@@ -133,6 +133,15 @@ void VTK2DGraphicsView::viewportToWorld(double& x, double& y) const
 	r->ViewToWorld(x, y, z);
 }
 
+QPointF VTK2DGraphicsView::viewportToWorld(const QPoint p) const
+{
+	double x = p.x();
+	double y = p.y();
+	viewportToWorld(x, y);
+
+	return QPointF(x, y);
+}
+
 void VTK2DGraphicsView::worldToViewport(double& x, double& y) const
 {
 	vtkRenderer* r = const_cast<vtkRenderer*> (mainRenderer());
@@ -141,6 +150,15 @@ void VTK2DGraphicsView::worldToViewport(double& x, double& y) const
 	y = -y;
 	r->ViewToNormalizedViewport(x, y, z);
 	r->NormalizedViewportToViewport(x, y);
+}
+
+QPointF VTK2DGraphicsView::worldToViewport(QPointF p) const
+{
+	double x = p.x();
+	double y = p.y();
+	worldToViewport(x, y);
+
+	return QPointF(x, y);
 }
 
 void VTK2DGraphicsView::ResetCameraClippingRange()
