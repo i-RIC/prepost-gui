@@ -22,7 +22,7 @@ void addPoint(vtkPoints* points, const QPointF& p)
 } // namespace
 
 GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
-	m_mouseEventMode {meNormal},
+	m_editMouseEventMode {EditMouseEventMode::Normal},
 	m_pointPoints {vtkPoints::New()},
 	m_riverCenterPoints {vtkPolyData::New()},
 	m_riverCenterPointsActor {vtkActor::New()},

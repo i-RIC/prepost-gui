@@ -14,31 +14,31 @@ class QAction;
 class GeoDataRiverSurvey::Impl
 {
 public:
-	enum MouseEventMode {
-		meNormal,
-		meTranslate,
-		meTranslatePrepare,
-		meRotateRight,
-		meRotatePrepareRight,
-		meRotateLeft,
-		meRotatePrepareLeft,
-		meShift,
-		meShiftPrepare,
-		meMoveExtentionEndPointLeft,
-		meMoveExtensionEndPointPrepareLeft,
-		meMoveExtentionEndPointRight,
-		meMoveExtensionEndPointPrepareRight,
-		meExpansionRight,
-		meExpansionPrepareRight,
-		meExpansionLeft,
-		meExpansionPrepareLeft,
-		meAddingExtension,
-		meInserting,
+	enum class EditMouseEventMode {
+		Normal,
+		Translate,
+		TranslatePrepare,
+		RotateRight,
+		RotatePrepareRight,
+		RotateLeft,
+		RotatePrepareLeft,
+		Shift,
+		ShiftPrepare,
+		MoveExtentionEndPointLeft,
+		MoveExtensionEndPointPrepareLeft,
+		MoveExtentionEndPointRight,
+		MoveExtensionEndPointPrepareRight,
+		ExpansionRight,
+		ExpansionPrepareRight,
+		ExpansionLeft,
+		ExpansionPrepareLeft,
+		AddingExtension,
+		Inserting,
 
-		meTranslateDialog,
-		meRotateDialog,
-		meShiftDialog,
-		meExpansionDialog
+		TranslateDialog,
+		RotateDialog,
+		ShiftDialog,
+		ExpansionDialog
 	};
 
 	Impl(GeoDataRiverSurvey* rs);
@@ -55,7 +55,7 @@ public:
 	void updateVtkVerticalCenterLinesObjects();
 	void setupCursors();
 
-	MouseEventMode m_mouseEventMode;
+	EditMouseEventMode m_editMouseEventMode;
 
 	vtkPoints* m_pointPoints;
 
