@@ -59,8 +59,6 @@ public:
 
 	vtkLabel2DActor m_upstreamActor;
 	vtkLabel2DActor m_downstreamActor;
-	vtkLabel2DActor m_leftBankActor;
-	vtkLabel2DActor m_rightBankActor;
 
 	PolyLineController* m_activePoints;
 	PolyLineController* m_activeLine;
