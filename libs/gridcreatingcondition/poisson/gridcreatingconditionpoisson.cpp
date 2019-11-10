@@ -22,6 +22,7 @@
 #include <geoio/polylineio.h>
 #include <geoio/coordinatesedit.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
+#include <guibase/polyline/polylineutil.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
@@ -121,81 +122,6 @@ void setupLabelActor(vtkLabel2DActor* actor)
 	prop->BoldOn();
 }
 
-const int SUBDIV_NUM = 3;
-
-std::vector<QPointF> buildSplinePoints(vtkPoints* points, int divNum)
-{
-	auto xSpline = vtkSmartPointer<vtkCardinalSpline>::New();
-	auto ySpline = vtkSmartPointer<vtkCardinalSpline>::New();
-	auto zSpline = vtkSmartPointer<vtkCardinalSpline>::New();
-	auto spline = vtkSmartPointer<vtkParametricSpline>::New();
-
-	spline->SetXSpline(xSpline);
-	spline->SetYSpline(ySpline);
-	spline->SetZSpline(zSpline);
-
-	spline->SetPoints(points);
-
-	int d = divNum * SUBDIV_NUM;
-
-	std::vector<double> length(d + 1);
-	length[0] = 0;
-	double u[3], v_prev[3], v[3], Du[9];
-	u[0] = 0; u[1] = 0; u[2] = 0;
-	spline->Evaluate(u, v_prev, Du);
-	for (int i = 1; i <= d; ++i) {
-		u[0] = i / static_cast<double>(d);
-		spline->Evaluate(u, v, Du);
-		double dx = v[0] - v_prev[0];
-		double dy = v[1] - v_prev[1];
-		length[i] = length[i - 1] + sqrt(dx * dx + dy * dy);
-
-		for (int j = 0; j < 3; ++j) {
-			v_prev[j] = v[j];
-		}
-	}
-	double wholeLen = length.at(length.size() - 1);
-
-	int idx = 0;
-	std::vector<QPointF> ret;
-
-	for (int i = 0; i <= divNum; ++i) {
-		double param = 0;
-		if (i != 0) {
-			double r = i / static_cast<double>(divNum);
-			if (r > 1) {r = 1;}
-			double targetLen = wholeLen * r;
-			while (length[idx + 1] < targetLen) {
-				++ idx;
-			}
-			double l1 = length[idx];
-			double l2 = length[idx + 1];
-			double target_idx = idx + 1.0 / (l2 - l1) * (targetLen - l1);
-			param = target_idx / d;
-		}
-		u[0] = param;
-		spline->Evaluate(u, v, Du);
-
-		ret.push_back(QPointF(v[0], v[1]));
-	}
-	return ret;
-}
-
-double polyLineLength(std::vector<QPointF>& polyLine)
-{
-	double len = 0;
-
-	QPointF prev_p = polyLine.at(0);
-	for (QPointF p : polyLine) {
-		double dx = p.x() - prev_p.x();
-		double dy = p.y() - prev_p.y();
-
-		len = len + sqrt(dx * dx + dy * dy);
-		prev_p = p;
-	}
-	return len;
-}
-
 } // namespace
 
 GridCreatingConditionPoisson::Impl::Impl(GridCreatingConditionPoisson *parent) :
@@ -271,19 +197,19 @@ void GridCreatingConditionPoisson::Impl::updateLabelsAndSplines()
 
 	std::vector<QPointF> empty;
 	if (center.size() >= 2) {
-		auto centerLineSpline = buildSplinePoints(m_centerLineController.polyData()->GetPoints(), center.size() * SPLINE_FACTOR);
+		auto centerLineSpline = PolyLineUtil::buildSplinePoints(m_centerLineController.polyData()->GetPoints(), center.size() * SPLINE_FACTOR);
 		m_centerLineSplineController.setPolyLine(centerLineSpline);
 	} else {
 		m_centerLineSplineController.setPolyLine(empty);
 	}
 	if (left.size() >= 2) {
-		auto leftBankLineSpline = buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), left.size() * SPLINE_FACTOR);
+		auto leftBankLineSpline = PolyLineUtil::buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), left.size() * SPLINE_FACTOR);
 		m_leftBankLineSplineController.setPolyLine(leftBankLineSpline);
 	} else {
 		m_leftBankLineSplineController.setPolyLine(empty);
 	}
 	if (right.size() >= 2) {
-		auto rightBankLineSpline = buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), right.size() * SPLINE_FACTOR);
+		auto rightBankLineSpline = PolyLineUtil::buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), right.size() * SPLINE_FACTOR);
 		m_rightBankLineSplineController.setPolyLine(rightBankLineSpline);
 	}
 
@@ -520,8 +446,8 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 	points->SetDataTypeToDouble();
 	points->Allocate(iMax * jMax);
 
-	auto leftBankPoints = buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), m_iDiv);
-	auto rightBankPoints = buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), m_iDiv);
+	auto leftBankPoints = PolyLineUtil::buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), m_iDiv);
+	auto rightBankPoints = PolyLineUtil::buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), m_iDiv);
 
 	double xOffset = 0;
 	double yOffset = 0;
@@ -657,10 +583,10 @@ bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
 
 	GridCreatingConditionPoissonGridGenerateDialog dialog(preProcessorWindow());
 
-	double iLen = polyLineLength(impl->m_centerLineController.polyLine());
+	double iLen = PolyLineUtil::length(impl->m_centerLineController.polyLine());
 	double jLen = 0.5 * (
-				polyLineLength(impl->m_upstreamLineController.polyLine()) +
-				polyLineLength(impl->m_downstreamLineController.polyLine()));
+				PolyLineUtil::length(impl->m_upstreamLineController.polyLine()) +
+				PolyLineUtil::length(impl->m_downstreamLineController.polyLine()));
 	dialog.setILength(iLen);
 	dialog.setJLength(jLen);
 

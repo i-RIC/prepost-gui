@@ -153,6 +153,7 @@ HEADERS += arrowsettingcontainer.h \
            polygon/polygoncontroller.h \
            polyline/polylinecontroller.h \
            polyline/polylinecontrollerutil.h \
+           polyline/polylineutil.h \
            timeformat/timeformat.h \
            timeformat/timeformateditwidget.h \
            timeformat/timeformatutil.h \
@@ -273,6 +274,7 @@ SOURCES += arrowsettingcontainer.cpp \
            polygon/polygoncontroller.cpp \
            polyline/polylinecontroller.cpp \
            polyline/polylinecontrollerutil.cpp \
+           polyline/polylineutil.cpp \
            timeformat/timeformateditwidget.cpp \
            timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
