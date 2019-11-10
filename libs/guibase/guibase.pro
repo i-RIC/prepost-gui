@@ -150,7 +150,12 @@ HEADERS += arrowsettingcontainer.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           polygon/polygonaddvertexcommand.h \
            polygon/polygoncontroller.h \
+           polygon/polygoneditcoordinatescommand.h \
+           polygon/polygonmovevertexcommand.h \
+           polygon/polygonpushvertexcommand.h \
+           polygon/polygonremovevertexcommand.h \
            polyline/polylineaddvertexcommand.h \
            polyline/polylinecontroller.h \
            polyline/polylinecontrollerutil.h \
@@ -276,7 +281,12 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           polygon/polygonaddvertexcommand.cpp \
            polygon/polygoncontroller.cpp \
+           polygon/polygoneditcoordinatescommand.cpp \
+           polygon/polygonmovevertexcommand.cpp \
+           polygon/polygonpushvertexcommand.cpp \
+           polygon/polygonremovevertexcommand.cpp \
            polyline/polylineaddvertexcommand.cpp \
            polyline/polylinecontroller.cpp \
            polyline/polylinecontrollerutil.cpp \
