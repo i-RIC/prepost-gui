@@ -121,14 +121,11 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
 	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
-
 	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
 
 	vtkSmartPointer<vtkActor> m_blackCrossectionsActor;
 
 	vtkSmartPointer<vtkActor> m_backgroundActor;
-	vtkSmartPointer<vtkActor> m_crosssectionLinesActor;
 
 	vtkSmartPointer<vtkStringArray> m_labelArray;
 	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;

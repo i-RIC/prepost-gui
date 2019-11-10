@@ -91,8 +91,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 
 	m_backgroundGrid = vtkSmartPointer<vtkStructuredGrid>::New();
 
-	m_crosssectionLines = vtkSmartPointer<vtkUnstructuredGrid>::New();
-
 	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
 	m_labelArray->SetName("Label");
 
@@ -116,10 +114,8 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 	r->RemoveActor(m_backgroundActor);
 	r->RemoveActor(m_labelActor);
 	r->RemoveActor(m_blackCrossectionsActor);
-	r->RemoveActor(m_crosssectionLinesActor);
 
 	delete m_gridThread;
-
 	delete impl;
 }
 
@@ -177,16 +173,6 @@ void GeoDataRiverSurvey::setupActors()
 	m_backgroundActor->SetMapper(mapper);
 	m_backgroundActor->VisibilityOff();
 	r->AddActor(m_backgroundActor);
-
-	// crosssection lines
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_crosssectionLines);
-	m_crosssectionLinesActor = vtkSmartPointer<vtkActor>::New();
-	m_crosssectionLinesActor->SetMapper(mapper);
-	m_crosssectionLinesActor->GetProperty()->SetColor(0, 0, 0);
-	m_crosssectionLinesActor->GetProperty()->SetLineWidth(1);
-	m_crosssectionLinesActor->VisibilityOff();
-	r->AddActor(m_crosssectionLinesActor);
 }
 
 void GeoDataRiverSurvey::setupMenu()
@@ -242,7 +228,7 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 		col->AddItem(m_backgroundActor);
 	}
 	if (m_setting.showLines) {
-		col->AddItem(m_crosssectionLinesActor);
+		col->AddItem(impl->m_verticalCrossSectionLinesActor);
 	}
 
 	col2->RemoveAllItems();
@@ -264,7 +250,7 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 		col->AddItem(m_backgroundActor);
 	}
 	if (m_setting.showLines) {
-		col->AddItem(m_crosssectionLinesActor);
+		col->AddItem(impl->m_verticalCrossSectionLinesActor);
 	}
 	col2->RemoveAllItems();
 	col2->AddItem(m_labelActor);
@@ -276,7 +262,6 @@ void GeoDataRiverSurvey::allActorsOff()
 {
 	m_backgroundActor->VisibilityOff();
 	m_labelActor->VisibilityOff();
-	m_crosssectionLinesActor->VisibilityOff();
 
 	impl->m_riverCenterPointsActor->VisibilityOff();
 	impl->m_crossSectionLinesActor->VisibilityOff();
@@ -285,6 +270,7 @@ void GeoDataRiverSurvey::allActorsOff()
 	impl->m_selectedLeftBankPointsActor->VisibilityOff();
 	impl->m_selectedRightBankPointsActor->VisibilityOff();
 	impl->m_selectedCrossSectionLinesActor->VisibilityOff();
+	impl->m_verticalCrossSectionLinesActor->VisibilityOff();
 }
 
 void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
@@ -774,48 +760,6 @@ void GeoDataRiverSurvey::updateShapeData()
 
 	m_backgroundActor->VisibilityOff();
 
-	m_crosssectionLines->Reset();
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-
-	p = m_headPoint->nextPoint();
-	vtkIdType pointNum = 0;
-	while (p != nullptr) {
-		double maxHeight = 0;
-		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
-		// calculate maxHeight.
-		for (int i = 0; i < alist.size(); ++i) {
-			GeoDataRiverCrosssection::Altitude alt = alist[i];
-			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
-		}
-		// now draw lines.
-		QPointF offsetDir = p->crosssectionDirection();
-		iRIC::rotateVector270(offsetDir);
-
-		double offset;
-		GeoDataRiverCrosssection::Altitude alt = alist[0];
-		offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-		QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
-		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
-		++ pointNum;
-		for (int i = 1; i < alist.size(); ++i) {
-			GeoDataRiverCrosssection::Altitude alt = alist[i];
-			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
-			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
-			++ pointNum;
-			vtkSmartPointer<vtkLine> tmpline = vtkSmartPointer<vtkLine>::New();
-			tmpline->GetPointIds()->SetId(0, pointNum - 2);
-			tmpline->GetPointIds()->SetId(1, pointNum - 1);
-			m_crosssectionLines->InsertNextCell(tmpline->GetCellType(), tmpline->GetPointIds());
-		}
-		p = p->nextPoint();
-	}
-	m_crosssectionLines->SetPoints(points);
-	points->Modified();
-	m_crosssectionLines->Modified();
-	m_crosssectionLines->BuildLinks();
-
 	vtkActorCollection* col = actorCollection();
 	col->RemoveAllItems();
 
@@ -823,19 +767,14 @@ void GeoDataRiverSurvey::updateShapeData()
 		col->AddItem(m_backgroundActor);
 		m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
 	}
-	m_crosssectionLinesActor->VisibilityOff();
-
-	if (m_setting.showLines) {
-		col->AddItem(m_crosssectionLinesActor);
-		m_crosssectionLinesActor->GetProperty()->SetColor(m_setting.crosssectionLinesColor);
-	}
 
 	vtkActor2DCollection* col2 = actor2DCollection();
 	col2->AddItem(m_labelActor);
 
 	impl->updateVtkPointsObjects();
 	impl->updateVtkCenterAndBankLinesObjects();
-	impl->updateSelectedVtkObjects();
+	impl->updateVtkSelectedObjects();
+	impl->updateVtkVerticalCenterLinesObjects();
 
 	updateVisibilityWithoutRendering();
 
@@ -845,7 +784,7 @@ void GeoDataRiverSurvey::updateShapeData()
 
 void GeoDataRiverSurvey::updateSelectionShapeData()
 {
-	impl->updateSelectedVtkObjects();
+	impl->updateVtkSelectedObjects();
 }
 
 GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
@@ -871,7 +810,6 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	double points = range.max();
 
 	m_blackCrossectionsActor->SetPosition(0, 0, backlines);
-	m_crosssectionLinesActor->SetPosition(0, 0, backlines);
 	m_backgroundActor->SetPosition(0, 0, background);
 
 	impl->m_riverCenterPointsActor->SetPosition(0, 0, points);
@@ -881,6 +819,7 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedLeftBankPointsActor->SetPosition(0, 0, points);
 	impl->m_selectedRightBankPointsActor->SetPosition(0, 0, points);
 	impl->m_selectedCrossSectionLinesActor->SetPosition(0, 0, lines);
+	impl->m_verticalCrossSectionLinesActor->SetPosition(0, 0, backlines);
 }
 
 void GeoDataRiverSurvey::moveSelectedPoints()

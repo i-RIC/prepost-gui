@@ -51,7 +51,8 @@ public:
 	void updateActionStatus();
 	void updateVtkPointsObjects();
 	void updateVtkCenterAndBankLinesObjects();
-	void updateSelectedVtkObjects();
+	void updateVtkSelectedObjects();
+	void updateVtkVerticalCenterLinesObjects();
 	void setupCursors();
 
 	MouseEventMode m_mouseEventMode;
@@ -78,6 +79,9 @@ public:
 
 	vtkPolyData* m_selectedCrossSectionLines;
 	vtkActor* m_selectedCrossSectionLinesActor;
+
+	vtkPolyData* m_verticalCrossSectionLines;
+	vtkActor* m_verticalCrossSectionLinesActor;
 
 	QMenu* m_rightClickingMenu;
 

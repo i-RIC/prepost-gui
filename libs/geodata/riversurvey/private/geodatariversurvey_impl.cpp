@@ -1,5 +1,7 @@
 #include "geodatariversurvey_impl.h"
 
+#include <misc/mathsupport.h>
+
 #include <vtkCellArray.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
@@ -36,6 +38,8 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_selectedRightBankPointsActor {vtkActor::New()},
 	m_selectedCrossSectionLines {vtkPolyData::New()},
 	m_selectedCrossSectionLinesActor {vtkActor::New()},
+	m_verticalCrossSectionLines {vtkPolyData::New()},
+	m_verticalCrossSectionLinesActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -66,6 +70,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	r->RemoveActor(m_selectedLeftBankPointsActor);
 	r->RemoveActor(m_selectedRightBankPointsActor);
 	r->RemoveActor(m_selectedCrossSectionLinesActor);
+	r->RemoveActor(m_verticalCrossSectionLinesActor);
 
 	m_pointPoints->Delete();
 	m_riverCenterPoints->Delete();
@@ -82,6 +87,8 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_selectedRightBankPointsActor->Delete();
 	m_selectedCrossSectionLines->Delete();
 	m_selectedCrossSectionLinesActor->Delete();
+	m_verticalCrossSectionLines->Delete();
+	m_verticalCrossSectionLinesActor->Delete();
 
 	delete m_rightClickingMenu;
 }
@@ -196,6 +203,16 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	prop->SetColor(0, 0, 0);
 	m_selectedCrossSectionLinesActor->VisibilityOff();
 	r->AddActor(m_selectedCrossSectionLinesActor);
+
+	// vertical cross section lines
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(m_verticalCrossSectionLines);
+	m_verticalCrossSectionLinesActor->SetMapper(mapper);
+	prop = m_verticalCrossSectionLinesActor->GetProperty();
+	prop->SetColor(0, 0, 0);
+	prop->SetLineWidth(1);
+	m_verticalCrossSectionLinesActor->VisibilityOff();
+	r->AddActor(m_verticalCrossSectionLinesActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
@@ -386,7 +403,7 @@ void GeoDataRiverSurvey::Impl::updateVtkCenterAndBankLinesObjects()
 	m_centerAndBankLines->SetLines(lines);
 }
 
-void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
+void GeoDataRiverSurvey::Impl::updateVtkSelectedObjects()
 {
 	auto selectedCenterPoints = vtkSmartPointer<vtkCellArray>::New();
 	auto selectedLeftBankPoints = vtkSmartPointer<vtkCellArray>::New();
@@ -423,6 +440,50 @@ void GeoDataRiverSurvey::Impl::updateSelectedVtkObjects()
 	m_selectedRightBankPoints->SetVerts(selectedRightBankPoints);
 	m_selectedCrossSectionLines->SetPoints(m_pointPoints);
 	m_selectedCrossSectionLines->SetLines(selectedCrossSectionLines);
+}
+
+void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
+{
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	auto verticalLines = vtkSmartPointer<vtkCellArray>::New();
+
+	m_verticalCrossSectionLines->Initialize();
+
+	auto p = m_rs->headPoint()->nextPoint();
+	while (p != nullptr) {
+		double maxHeight = 0;
+		const auto& alist = p->crosssection().AltitudeInfo();
+		for (int i = 0; i < alist.size(); ++i) {
+			const auto& alt = alist[i];
+			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
+		}
+		QPointF offsetDir = p->crosssectionDirection();
+		iRIC::rotateVector270(offsetDir);
+
+		vtkIdType firstId = points->GetNumberOfPoints();
+		std::vector<vtkIdType> ids;
+		ids.reserve(alist.size());
+
+		for (int i = 0; i < alist.size(); ++i) {
+			const auto& alt = alist[i];
+			double offset = (maxHeight - alt.height()) * m_rs->m_setting.crosssectionLinesScale;
+			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
+			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
+			ids.push_back(firstId + i);
+		}
+		verticalLines->InsertNextCell(ids.size(), ids.data());
+		p = p->nextPoint();
+	}
+	m_verticalCrossSectionLines->SetPoints(points);
+	m_verticalCrossSectionLines->SetLines(verticalLines);
+
+	if (m_rs->m_setting.showLines) {
+		m_verticalCrossSectionLinesActor->VisibilityOn();
+		m_verticalCrossSectionLinesActor->GetProperty()->SetColor(m_rs->m_setting.crosssectionLinesColor);
+	}	else {
+		m_verticalCrossSectionLinesActor->VisibilityOff();
+	}
 }
 
 void GeoDataRiverSurvey::Impl::setupCursors()
