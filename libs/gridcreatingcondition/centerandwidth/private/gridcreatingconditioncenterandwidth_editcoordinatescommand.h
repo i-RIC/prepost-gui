@@ -3,20 +3,12 @@
 
 #include "../gridcreatingconditioncenterandwidth.h"
 
-#include <QUndoCommand>
+#include <guibase/polyline/polylineeditcoordinatescommand.h>
 
-class GridCreatingConditionCenterAndWidth::EditCoordinatesCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::EditCoordinatesCommand : public PolyLineEditCoordinatesCommand
 {
 public:
 	EditCoordinatesCommand(const std::vector<QPointF>& coords, GridCreatingConditionCenterAndWidth* cond);
-
-	void redo() override;
-	void undo() override;
-
-private:
-	std::vector<QPointF> m_newCoords;
-	std::vector<QPointF> m_oldCoords;
-	GridCreatingConditionCenterAndWidth* m_condition;
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTH_EDITCOORDINATESCOMMAND_H

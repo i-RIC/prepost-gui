@@ -174,11 +174,11 @@ private:
 private:
 	class UpdateShapeCommand;
 	class AddVertexCommand;
-	class DefineNewPointCommand;
 	class EditCoordinatesCommand;
 	class FinishDefiningCommand;
 	class MoveCommand;
 	class MoveVertexCommand;
+	class PushVertexCommand;
 	class RemoveVertexCommand;
 
 	class CoordinatesEditor;

@@ -3,24 +3,18 @@
 
 #include "../gridcreatingconditioncenterandwidth.h"
 
-#include <QUndoCommand>
-#include <QPointF>
+#include <guibase/polyline/polylinepushvertexcommand.h>
 
-class GridCreatingConditionCenterAndWidth::DefineNewPointCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::PushVertexCommand : public PolyLinePushVertexCommand
 {
 public:
-	DefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond);
+	PushVertexCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond);
 
 	void redo() override;
 	void undo() override;
 
-	int id() const override;
-	bool mergeWith(const QUndoCommand* other) override;
-
 private:
-	bool m_keyDown;
 	GridCreatingConditionCenterAndWidth* m_condition;
-	QPointF m_newPoint;
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTH_DEFINENEWPOINTCOMMAND_H

@@ -20,6 +20,9 @@ void PolyLinePushVertexCommand::redo()
 	auto line = m_polyLine->polyLine();
 	if (m_keyDown) {
 		line.push_back(m_point);
+		if (line.size() == 1) {
+			line.push_back(m_point);
+		}
 	} else {
 		line[line.size() - 1] = m_point;
 	}
@@ -31,6 +34,9 @@ void PolyLinePushVertexCommand::undo()
 	auto line = m_polyLine->polyLine();
 	if (m_keyDown) {
 		line.pop_back();
+		if (line.size() == 1) {
+			line.clear();
+		}
 	}
 	m_polyLine->setPolyLine(line);
 }
