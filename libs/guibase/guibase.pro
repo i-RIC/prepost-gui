@@ -26,6 +26,20 @@ unix {
 }
 LIBS += -liricCs
 
+# iricGeoio
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geoio/debug"
+        } else {
+                LIBS += -L"../geoio/release"
+        }
+}
+unix {
+        LIBS += -L"../geoio"
+}
+LIBS += -liricGeoio
+
 # iricMisc
 
 win32 {
@@ -105,9 +119,6 @@ HEADERS += arrowsettingcontainer.h \
            scalarsettingcontainer.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
-           timeformat/timeformat.h \
-           timeformat/timeformateditwidget.h \
-           timeformat/timeformatutil.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
@@ -141,6 +152,10 @@ HEADERS += arrowsettingcontainer.h \
            geometry/rect.h \
            polygon/polygoncontroller.h \
            polyline/polylinecontroller.h \
+           polyline/polylinecontrollerutil.h \
+           timeformat/timeformat.h \
+           timeformat/timeformateditwidget.h \
+           timeformat/timeformatutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
@@ -187,13 +202,13 @@ HEADERS += arrowsettingcontainer.h \
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
-         timeformat/timeformateditwidget.ui \
          vtklinestylewidget.ui \
          vtktextpropertysettingdialog.ui \
          vtktextpropertysettingwidget.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
+         timeformat/timeformateditwidget.ui \
          widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
          widget/dirnameeditwidget.ui \
@@ -226,8 +241,6 @@ SOURCES += arrowsettingcontainer.cpp \
            scalarsettingcontainer.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
-           timeformat/timeformateditwidget.cpp \
-           timeformat/timeformatutil.cpp \
            tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomScalarBarActor.cxx \
@@ -259,6 +272,9 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/rect.cpp \
            polygon/polygoncontroller.cpp \
            polyline/polylinecontroller.cpp \
+           polyline/polylinecontrollerutil.cpp \
+           timeformat/timeformateditwidget.cpp \
+           timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \

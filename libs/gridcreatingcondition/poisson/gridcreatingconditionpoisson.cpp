@@ -21,6 +21,7 @@
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geoio/polylineio.h>
 #include <geoio/coordinatesedit.h>
+#include <guibase/polyline/polylinecontrollerutil.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
@@ -193,35 +194,6 @@ double polyLineLength(std::vector<QPointF>& polyLine)
 		prev_p = p;
 	}
 	return len;
-}
-
-void applyOffsetToPolyLine(PolyLineController* polyLine, double x, double y)
-{
-	auto newLine = CoordinatesEdit::applyOffset(polyLine->polyLine(), - QPointF(x, y));
-	polyLine->setPolyLine(newLine);
-}
-
-void loadPolyLine(QDataStream* stream, PolyLineController* polyLine, const QPointF& offset)
-{
-	std::vector<QPointF> line;
-	int size;
-	*stream >> size;
-	for (int i = 0; i < size; ++i) {
-		qreal x, y;
-		*stream >> x >> y;
-		line.push_back(QPointF(x - offset.x(), y - offset.y()));
-	}
-	polyLine->setPolyLine(line);
-}
-
-void savePolyLine(QDataStream* stream, const PolyLineController& polyLine, const QPointF& offset)
-{
-	auto line = polyLine.polyLine();
-	int size = static_cast<int>(line.size());
-	*stream << size;
-	for (QPointF& p : line) {
-		*stream << p.x() + offset.x() << p.y() + offset.y();
-	}
 }
 
 } // namespace
@@ -1119,9 +1091,9 @@ void GridCreatingConditionPoisson::loadExternalData(const QString& filename)
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
 
-	loadPolyLine(&s, &(impl->m_centerLineController), offset());
-	loadPolyLine(&s, &(impl->m_leftBankLineController), offset());
-	loadPolyLine(&s, &(impl->m_rightBankLineController), offset());
+	PolyLineControllerUtil::loadPolyLine(&s, &(impl->m_centerLineController), offset());
+	PolyLineControllerUtil::loadPolyLine(&s, &(impl->m_leftBankLineController), offset());
+	PolyLineControllerUtil::loadPolyLine(&s, &(impl->m_rightBankLineController), offset());
 
 	f.close();
 	if (impl->m_centerLineController.polyLine().size() > 0) {
@@ -1139,18 +1111,18 @@ void GridCreatingConditionPoisson::saveExternalData(const QString& filename)
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
 
-	savePolyLine(&s, impl->m_centerLineController, offset());
-	savePolyLine(&s, impl->m_leftBankLineController, offset());
-	savePolyLine(&s, impl->m_rightBankLineController, offset());
+	PolyLineControllerUtil::savePolyLine(&s, impl->m_centerLineController, offset());
+	PolyLineControllerUtil::savePolyLine(&s, impl->m_leftBankLineController, offset());
+	PolyLineControllerUtil::savePolyLine(&s, impl->m_rightBankLineController, offset());
 
 	f.close();
 }
 
 void GridCreatingConditionPoisson::doApplyOffset(double x, double y)
 {
-	applyOffsetToPolyLine(&(impl->m_centerLineController), x, y);
-	applyOffsetToPolyLine(&(impl->m_leftBankLineController), x, y);
-	applyOffsetToPolyLine(&(impl->m_rightBankLineController), x, y);
+	PolyLineControllerUtil::applyOffset(&(impl->m_centerLineController), x, y);
+	PolyLineControllerUtil::applyOffset(&(impl->m_leftBankLineController), x, y);
+	PolyLineControllerUtil::applyOffset(&(impl->m_rightBankLineController), x, y);
 
 	impl->updateLabelsAndSplines();
 }
