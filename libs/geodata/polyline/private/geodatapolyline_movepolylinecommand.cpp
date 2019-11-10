@@ -1,8 +1,8 @@
 #include "geodatapolyline_movepolylinecommand.h"
 #include "../geodatapolylineimplpolyline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataPolyLine::MovePolyLineCommand::MovePolyLineCommand(bool keyDown, const QPoint& from, const QPoint& to, GeoDataPolyLine* pol) :
 	QUndoCommand {GeoDataPolyLine::tr("Move PolyLine")}

@@ -1,8 +1,8 @@
 #include "gridcreatingconditionpoisson_impl.h"
 #include "gridcreatingconditionpoisson_movecommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionPoisson::MoveCommand::MoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionPoisson* cond) :
 	QUndoCommand {GridCreatingConditionPoisson::tr("Move Line")},

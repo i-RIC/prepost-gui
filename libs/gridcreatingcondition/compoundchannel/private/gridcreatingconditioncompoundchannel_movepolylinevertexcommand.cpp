@@ -1,8 +1,8 @@
 #include "gridcreatingconditioncompoundchannel_movepolylinevertexcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::MovePolyLineVertexCommand::MovePolyLineVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCompoundChannel* cond) :
 	QUndoCommand {GridCreatingConditionCompoundChannel::tr("Move Polygonal Line Vertex")},

@@ -1,8 +1,8 @@
 #include "geodatariversurvey_rotaterivercrosssectioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <misc/mathsupport.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::RotateRiverCrosssectionCommand::RotateRiverCrosssectionCommand(bool apply, double angle, GeoDataRiverSurvey* rs) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Rotate Traversal Line")},

@@ -1,8 +1,8 @@
 #include "geodatariversurvey_translateriverpathpointcommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::TranslateRiverPathPointCommand::TranslateRiverPathPointCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Move Traversal Line")},

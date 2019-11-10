@@ -1,6 +1,6 @@
 #include "distancemeasuredataitem_movevertexcommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 DistanceMeasureDataItem::MoveVertexCommand::MoveVertexCommand(int point, const QPointF& v, bool finish, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Move Distance Measure Point")),

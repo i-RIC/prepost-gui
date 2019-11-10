@@ -1,7 +1,7 @@
 #include "geodatapolygon_addvertexcommand.h"
 #include "../geodatapolygonabstractpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
 #include <vtkPolygon.h>

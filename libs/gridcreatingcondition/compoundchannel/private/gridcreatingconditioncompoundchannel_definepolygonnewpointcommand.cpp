@@ -1,8 +1,8 @@
 #include "gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::DefinePolygonNewPointCommand::DefinePolygonNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* cond) :
 	QUndoCommand {GridCreatingConditionCompoundChannel::tr("Add New Polygon Point")},

@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncenterandwidth_addvertexcommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 #include <vtkPolyData.h>
 

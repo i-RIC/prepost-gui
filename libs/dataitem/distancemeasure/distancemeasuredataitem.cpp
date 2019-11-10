@@ -9,7 +9,7 @@
 
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>

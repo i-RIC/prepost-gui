@@ -1,9 +1,9 @@
 #include "geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <misc/mathsupport.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::MouseRotateRiverCrosssectionCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Rotate Traversal Line")}

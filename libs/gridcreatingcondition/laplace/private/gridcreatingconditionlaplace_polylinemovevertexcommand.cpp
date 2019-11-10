@@ -1,8 +1,8 @@
 #include "gridcreatingconditionlaplace_polylinemovevertexcommand.h"
 
 #include <guibase/polyline/polylinecontroller.h>
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::PolyLineMoveVertexCommand::PolyLineMoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, PolyLineController* line, int vertexId, GridCreatingConditionLaplace* cond) :
 	QUndoCommand(GridCreatingConditionLaplace::tr("Move Line Vertex")),

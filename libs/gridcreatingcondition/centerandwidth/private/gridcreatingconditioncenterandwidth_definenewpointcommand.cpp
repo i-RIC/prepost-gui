@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncenterandwidth_definenewpointcommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCenterAndWidth::DefineNewPointCommand::DefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond) :
 	QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Add New Center Line Point")},

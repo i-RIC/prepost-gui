@@ -2,8 +2,8 @@
 #include "../geodatapolygonholepolygon.h"
 #include "../geodatapolygonregionpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataPolygon::MovePolygonCommand::MovePolygonCommand(bool keyDown, const QPoint& from, const QPoint& to, GeoDataPolygon* pol) :
 	QUndoCommand {GeoDataPolygon::tr("Move Polygon")}

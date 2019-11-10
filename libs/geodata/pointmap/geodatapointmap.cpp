@@ -26,7 +26,7 @@
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>

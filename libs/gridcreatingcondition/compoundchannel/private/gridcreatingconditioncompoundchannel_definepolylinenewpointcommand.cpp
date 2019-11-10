@@ -1,8 +1,8 @@
 #include "gridcreatingconditioncompoundchannel_definepolylinenewpointcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::DefinePolyLineNewPointCommand::DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* cond) :
 	QUndoCommand {GridCreatingConditionCompoundChannel::tr("Add New Center Line Point")},

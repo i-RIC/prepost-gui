@@ -25,7 +25,6 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -39,6 +38,7 @@
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 

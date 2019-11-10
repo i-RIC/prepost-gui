@@ -1,6 +1,6 @@
 #include "geodatapointmap_addpointcommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
 GeoDataPointmap::AddPointCommand::AddPointCommand(bool keyDown, const QPoint& point, GeoDataPointmap* ptmap) :

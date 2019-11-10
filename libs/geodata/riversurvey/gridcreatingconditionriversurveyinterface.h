@@ -5,7 +5,7 @@
 #include "geodatariverpathpoint.h"
 
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 #include <QUndoCommand>
 

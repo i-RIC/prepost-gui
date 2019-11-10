@@ -1,8 +1,8 @@
 #include "gridcreatingconditioncompoundchannel_addpolygonvertexcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::AddPolygonVertexCommand::AddPolygonVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCompoundChannel* cond) :
 	QUndoCommand {GridCreatingConditionCompoundChannel::tr("Insert Polygon Vertex")},

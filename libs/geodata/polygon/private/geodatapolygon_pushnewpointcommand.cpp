@@ -1,8 +1,8 @@
 #include "geodatapolygon_pushnewpointcommand.h"
 #include "../geodatapolygonabstractpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataPolygon::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolygon* pol) :
 	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->selectedPolygon(), pol, GeoDataPolygon::tr("Add New Polygon Point")),

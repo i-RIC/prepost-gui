@@ -1,8 +1,8 @@
 #include "geodatariversurvey_mousemoveextensioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::MouseMoveExtensionCommand::MouseMoveExtensionCommand(bool left, QPoint to, GeoDataRiverSurvey* data) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Move Extension Line End")},

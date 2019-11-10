@@ -1,8 +1,8 @@
 #include "gridcreatingconditionlaplace_ctrlpointmovecommand.h"
 #include "gridcreatingconditionlaplace_impl.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::CtrlPointMoveCommand::CtrlPointMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, int pointId, GridCreatingConditionLaplace* cond) :
 	QUndoCommand(GridCreatingConditionLaplace::tr("Move Point")),

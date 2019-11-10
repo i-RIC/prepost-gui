@@ -24,7 +24,6 @@
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>

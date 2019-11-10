@@ -1,8 +1,8 @@
 #include "gridcreatingconditiontriangle_movepolygonvertexcommand.h"
 #include "../gridcreatingconditiontriangleabstractpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::MovePolygonVertexCommand::MovePolygonVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionTriangle* pol) :
 	QUndoCommand {GridCreatingConditionTriangle::tr("Move Polygon Vertex")},

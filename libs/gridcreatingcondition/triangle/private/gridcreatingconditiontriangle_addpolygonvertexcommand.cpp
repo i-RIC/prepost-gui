@@ -1,8 +1,8 @@
 #include "gridcreatingconditiontriangle_addpolygonvertexcommand.h"
 #include "../gridcreatingconditiontriangleabstractpolygon.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::AddPolygonVertexCommand::AddPolygonVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionTriangle* pol) :
 	QUndoCommand(GridCreatingConditionTriangle::tr("Insert Polygon Vertex")),

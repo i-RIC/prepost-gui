@@ -1,8 +1,8 @@
 #include "gridcreatingconditionlaplace_newedgestartdefinitioncommand.h"
 #include "gridcreatingconditionlaplace_impl.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::NewEdgeStartDefinitionCommand::NewEdgeStartDefinitionCommand(const QPoint& point, GridCreatingConditionLaplace* cond) :
 	QUndoCommand(GridCreatingConditionLaplace::tr("Start adding new edge")),
