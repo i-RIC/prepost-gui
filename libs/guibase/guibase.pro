@@ -151,8 +151,13 @@ HEADERS += arrowsettingcontainer.h \
            geometry/polygonregion.h \
            geometry/rect.h \
            polygon/polygoncontroller.h \
+           polyline/polylineaddvertexcommand.h \
            polyline/polylinecontroller.h \
            polyline/polylinecontrollerutil.h \
+           polyline/polylineeditcoordinatescommand.h \
+           polyline/polylinemovevertexcommand.h \
+           polyline/polylinepushvertexcommand.h \
+           polyline/polylineremovevertexcommand.h \
            polyline/polylineutil.h \
            timeformat/timeformat.h \
            timeformat/timeformateditwidget.h \
@@ -272,8 +277,13 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
            polygon/polygoncontroller.cpp \
+           polyline/polylineaddvertexcommand.cpp \
            polyline/polylinecontroller.cpp \
            polyline/polylinecontrollerutil.cpp \
+           polyline/polylineeditcoordinatescommand.cpp \
+           polyline/polylinemovevertexcommand.cpp \
+           polyline/polylinepushvertexcommand.cpp \
+           polyline/polylineremovevertexcommand.cpp \
            polyline/polylineutil.cpp \
            timeformat/timeformateditwidget.cpp \
            timeformat/timeformatutil.cpp \
