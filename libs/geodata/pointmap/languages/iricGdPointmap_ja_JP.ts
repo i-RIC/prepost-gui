@@ -455,14 +455,60 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlExporter</name>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="17"/>
+        <source>LandXML</source>
+        <translation>LandXML</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="25"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="25"/>
+        <source>Error occured while exporting to %1</source>
+        <translation>%1 へのエクスポート中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="95"/>
+        <source>LandXML file (*.xml)</source>
+        <translation>LandXML ファイル (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapLandXmlImporter</name>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="34"/>
+        <source>LandXML (*.xml)</source>
+        <translation>LandXML (*.xml)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="47"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="47"/>
+        <source>Parse error %1 at line %2 column %3</source>
+        <translation>%1 の読み込みに失敗しました。%2 行目 %3列</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="95"/>
+        <source>LandXML File (*.xml)</source>
+        <translation>LandXML ファイル (*.xml)</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="15"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="17"/>
         <source>Points</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="44"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="48"/>
         <source>Points%1</source>
         <translation>地勢データ%1</translation>
     </message>
@@ -703,12 +749,12 @@
         <translation>キャンセル (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="70"/>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="73"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="70"/>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="73"/>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
         <translation>データをインポートする領域が選択されていません。マウスの左ドラッグにより領域を選択してください。</translation>
     </message>

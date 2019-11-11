@@ -435,14 +435,60 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlExporter</name>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="17"/>
+        <source>LandXML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="25"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="25"/>
+        <source>Error occured while exporting to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlexporter.cpp" line="95"/>
+        <source>LandXML file (*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapLandXmlImporter</name>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="34"/>
+        <source>LandXML (*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="47"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="47"/>
+        <source>Parse error %1 at line %2 column %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointmaplandxmlimporter.cpp" line="95"/>
+        <source>LandXML File (*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="15"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="17"/>
         <source>Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="44"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="48"/>
         <source>Points%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -679,12 +725,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="70"/>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="73"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="70"/>
+        <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="73"/>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
         <translation type="unfinished"></translation>
     </message>
