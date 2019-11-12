@@ -1,20 +1,16 @@
 #include "inputconditiondependencychecksubimages.h"
 #include "inputconditionwidgetimage.h"
 
-InputConditionDependencyCheckSubimages::InputConditionDependencyCheckSubimages(InputConditionWidgetImage* image) :
+InputConditionDependencyCheckSubImages::InputConditionDependencyCheckSubImages(InputConditionWidgetImage* image) :
 	InputConditionDependency(),
 	m_image (image)
 {}
 
-void InputConditionDependencyCheckSubimages::check()
+void InputConditionDependencyCheckSubImages::check()
 {
 	m_image->inactivateSubImages();
 
-	const std::vector<InputConditionDependency*>& deps = m_image->dependencies();
-	std::vector<InputConditionDependency*>::const_iterator it;
-
-	for (it = deps.begin(); it != deps.end(); ++it) {
-		InputConditionDependency* dep = *it;
+	for (auto dep : m_image->dependencies()) {
 		dep->check();
 	}
 }

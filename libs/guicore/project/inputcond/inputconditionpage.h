@@ -31,7 +31,7 @@ private:
 	QObject* loadRec(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
 	void loadBL(QBoxLayout* l, const QDomNodeList& list, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
 	void loadGL(QGridLayout* l, const QDomNodeList& list, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	QLabel* getCaption(const QString& caption);
+
 	QString m_name;
 };
 

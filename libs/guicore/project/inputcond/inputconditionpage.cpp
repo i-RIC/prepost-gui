@@ -78,8 +78,9 @@ QLayout* InputConditionPage::loadSimple(const QDomNode& node, InputConditionWidg
 	for (int i = 0; i < items.length(); ++i) {
 		elem = items.item(i).toElement();
 		if (elem.nodeName() == "Item") {
+			std::string lname = iRIC::toStr(InputConditionWidgetSet::labelName(elem));
 			std::string itemname = iRIC::toStr(elem.attribute("name"));
-			layout->addRow(t.translate(elem.attribute("caption")), ws->widget(itemname));
+			layout->addRow(ws->widget(lname), ws->widget(itemname));
 		} else if (elem.nodeName() == "GroupBox") {
 			QString caption = t.translate(elem.attribute("caption"));
 			QGroupBox* g = new QGroupBox(caption, this);
@@ -111,8 +112,8 @@ QObject* InputConditionPage::loadRec(const QDomNode& node, InputConditionWidgetS
 		std::string itemName = iRIC::toStr(elem.attribute("name"));
 		return ws->widget(itemName);
 	} else if (nodeName == "Label") {
-		QString caption = t.translate(elem.attribute("caption"));
-		return getCaption(caption);
+		std::string lName = iRIC::toStr(InputConditionWidgetSet::labelName(node));
+		return ws->widget(lName);
 	} else if (nodeName == "Image"){
 		std::string itemName = iRIC::toStr(elem.attribute("src"));
 		return ws->widget(itemName);
@@ -175,11 +176,4 @@ void InputConditionPage::loadGL(QGridLayout* layout, const QDomNodeList& list, I
 		}
 	}
 
-}
-
-QLabel* InputConditionPage::getCaption(const QString& caption)
-{
-	QLabel* l = new QLabel(this);
-	l->setText(caption);
-	return l;
 }

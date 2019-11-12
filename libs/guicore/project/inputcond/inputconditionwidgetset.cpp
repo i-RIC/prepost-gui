@@ -5,13 +5,16 @@
 #include "inputconditionwidgetfilename.h"
 #include "inputconditionwidgetset.h"
 
+#include "private/inputconditiondependencysetsubcaptionaction.h"
 #include "private/inputconditiondependencysetsubimageaction.h"
+#include "private/inputconditiondependencychecksubcaptions.h"
 #include "private/inputconditiondependencychecksubimages.h"
 #include "private/inputconditionwidgetfoldername.h"
 #include "private/inputconditionwidgetfunctional.h"
 #include "private/inputconditionwidgetimage.h"
 #include "private/inputconditionwidgetinteger.h"
 #include "private/inputconditionwidgetintegeroption.h"
+#include "private/inputconditionwidgetlabel.h"
 #include "private/inputconditionwidgetreal.h"
 #include "private/inputconditionwidgetrealoption.h"
 #include "private/inputconditionwidgetstring.h"
@@ -48,8 +51,7 @@ InputConditionWidget* InputConditionWidgetSet::widget(const std::string& name) c
 bool InputConditionWidgetSet::checkImportSourceUpdate()
 {
 	bool ret = false;
-	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
-		InputConditionWidget* w = *it;
+	for (auto w : m_widgets) {
 		ret = ret || w->checkImportSourceUpdate();
 	}
 	return ret;
@@ -57,8 +59,8 @@ bool InputConditionWidgetSet::checkImportSourceUpdate()
 
 void InputConditionWidgetSet::clear()
 {
-	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
-		delete(*it);
+	for (auto w : m_widgets) {
+		delete(w);
 	}
 	m_widgets.clear();
 }
@@ -103,9 +105,14 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 			if (c.nodeName() == "Item") {
 				// build item.
 				buildWidget(c, cset, t);
+				if (c.toElement().attributes().contains("caption")) {
+					buildLabel(c, t);
+				}
 			} else if (c.nodeName() == "Image"){
 				// build image.
 				buildImage(c, def, t);
+			} else if (c.nodeName() == "Label"){
+				buildLabel(c, t);
 			} else {
 				// search item recursively.
 				buildWidgetsCustomRec(c, cset, def, t);
@@ -173,11 +180,19 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	}
 }
 
+void InputConditionWidgetSet::buildLabel(QDomNode& itemNode, const SolverDefinitionTranslator& t)
+{
+	auto itemElem = itemNode.toElement();
+	auto name = iRIC::toStr(labelName(itemNode));
+	auto widget = new InputConditionWidgetLabel(itemElem, t);
+	m_widgets.insert(name, widget);
+}
+
 void InputConditionWidgetSet::buildImage(QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
-	QDomElement itemElem = itemNode.toElement();
-	std::string src = iRIC::toStr(itemElem.attribute("src"));
-	InputConditionWidget* widget = new InputConditionWidgetImage(itemElem, t, def.folder());
+	auto itemElem = itemNode.toElement();
+	auto src = iRIC::toStr(itemElem.attribute("src"));
+	auto widget = new InputConditionWidgetImage(itemElem, t, def.folder());
 	m_widgets.insert(src, widget);
 }
 
@@ -221,16 +236,21 @@ void InputConditionWidgetSet::buildDepsCustom(const QDomNode& pageNode, InputCon
 }
 void InputConditionWidgetSet::buildDepsCustomRec(const QDomNode& node, InputConditionContainerSet& cset)
 {
-	QDomNodeList children = node.childNodes();
+	auto children = node.childNodes();
 	for (int i = 0; i < children.length(); ++i) {
-		QDomNode c = children.item(i);
+		auto c = children.item(i);
 		if (c.nodeType() == QDomNode::ElementNode) {
 			if (c.nodeName() == "Item") {
 				// build dependency.
 				buildDepsItem(c, cset);
+				if (c.toElement().attributes().contains("caption")) {
+					buildDepsLabel(c, cset);
+				}
 			} else if (c.nodeName() == "Image") {
 				// build dependency for image (subimages)
 				buildDepsImage(c, cset);
+			} else if (c.nodeName() == "Label") {
+				buildDepsLabel(c, cset);
 			} else {
 				// search item recursively.
 				buildDepsCustomRec(c, cset);
@@ -240,43 +260,69 @@ void InputConditionWidgetSet::buildDepsCustomRec(const QDomNode& node, InputCond
 }
 void InputConditionWidgetSet::buildDepsItem(const QDomNode& itemNode, InputConditionContainerSet& cset)
 {
-	std::string parameterName = iRIC::toStr(itemNode.toElement().attribute("name"));
+	auto parameterName = iRIC::toStr(itemNode.toElement().attribute("name"));
 	// get the definition node;
 	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 	if (defNode.isNull()) {
 		// this item doesn't contain "Definition" Node!".
 		throw(ErrorMessage("Definition node does not exist!"));
 	}
-	InputConditionWidget* w = this->widget(parameterName);
+	auto w = this->widget(parameterName);
 
 	// Search for "Dependency" node.
-	QDomNode depNode = iRIC::getChildNode(defNode, "Dependency");
+	auto depNode = iRIC::getChildNode(defNode, "Dependency");
 	if (! depNode.isNull()) {
-		QDomNode condNode = iRIC::getChildNode(depNode, "Condition");
+		auto condNode = iRIC::getChildNode(depNode, "Condition");
 		if (condNode.isNull()) {return;}
 		buildDep(condNode, cset, w);
 	} else {
 		// support "Condition" node just under definition node.
-		QDomNode condNode = iRIC::getChildNode(defNode, "Condition");
+		auto condNode = iRIC::getChildNode(defNode, "Condition");
 		if (condNode.isNull()) {return;}
 		buildDep(condNode, cset, w);
 	}
 }
 
+void InputConditionWidgetSet::buildDepsLabel(const QDomNode& labelNode, InputConditionContainerSet& cset)
+{
+	auto lName = iRIC::toStr(labelName(labelNode));
+	auto label = dynamic_cast<InputConditionWidgetLabel*> (this->widget(lName));
+
+	auto children = labelNode.childNodes();
+	for (int i = 0; i < children.count(); ++i) {
+		auto subCaptionNode = children.at(i);
+		if (subCaptionNode.nodeName() != "SubCaption") {
+			continue;
+		}
+		auto condNode = iRIC::getChildNode(subCaptionNode, "Condition");
+		auto caption = subCaptionNode.toElement().attribute("caption");
+		auto dep = new InputConditionDependency();
+		auto cond = InputConditionDependency::buildCondition(condNode, &cset, label->checkSubCaptions());
+		dep->setCondition(cond);
+		auto a = new InputConditionDependencySetSubCaptionAction(label, caption);
+		dep->addAction(a);
+		label->addDependency(dep);
+	}
+	label->checkSubCaptions()->check();
+}
+
 void InputConditionWidgetSet::buildDepsImage(const QDomNode& imageNode, InputConditionContainerSet& cset)
 {
-	std::string imageName = iRIC::toStr(imageNode.toElement().attribute("src"));
-	InputConditionWidgetImage* img = dynamic_cast<InputConditionWidgetImage*> (this->widget(imageName));
+	auto imageName = iRIC::toStr(imageNode.toElement().attribute("src"));
+	auto img = dynamic_cast<InputConditionWidgetImage*> (this->widget(imageName));
 
-	QDomNodeList children = imageNode.childNodes();
+	auto children = imageNode.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
-		QDomNode subImageNode = children.at(i);
-		QDomNode condNode = iRIC::getChildNode(subImageNode, "Condition");
-		QString name = subImageNode.toElement().attribute("src");
-		InputConditionDependency* dep = new InputConditionDependency();
-		InputConditionDependency::Condition* cond = InputConditionDependency::buildCondition(condNode, &cset, img->checkSubImages());
+		auto subImageNode = children.at(i);
+		if (subImageNode.nodeName() != "SubImage") {
+			continue;
+		}
+		auto condNode = iRIC::getChildNode(subImageNode, "Condition");
+		auto name = subImageNode.toElement().attribute("src");
+		auto dep = new InputConditionDependency();
+		auto cond = InputConditionDependency::buildCondition(condNode, &cset, img->checkSubImages());
 		dep->setCondition(cond);
-		InputConditionDependencySetSubimageAction* a = new InputConditionDependencySetSubimageAction(img, name);
+		auto a = new InputConditionDependencySetSubimageAction(img, name);
 		dep->addAction(a);
 		img->addDependency(dep);
 	}
@@ -286,11 +332,11 @@ void InputConditionWidgetSet::buildDepsImage(const QDomNode& imageNode, InputCon
 void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionContainerSet& cset, InputConditionWidget* w)
 {
 	// Find condition node
-	InputConditionDependency* dep = new InputConditionDependency();
-	InputConditionDependency::Condition* cond = InputConditionDependency::buildCondition(condNode, &cset, dep);
+	auto dep = new InputConditionDependency();
+	auto cond = InputConditionDependency::buildCondition(condNode, &cset, dep);
 	dep->setCondition(cond);
 	// Action corresponding to Condition is now enabling only.
-	InputConditionDependency::Action* a = new InputConditionDependency::ActionEnable(w);
+	auto a = new InputConditionDependency::ActionEnable(w);
 	dep->addAction(a);
 	w->addDependency(dep);
 	// Initial Check
@@ -299,8 +345,8 @@ void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionC
 
 void InputConditionWidgetSet::addTooltip(InputConditionWidget* widget, QDomNode itemNode, const SolverDefinitionTranslator& t)
 {
-	QDomElement itemElem = itemNode.toElement();
-	QString tooltip = itemElem.attribute("tooltips");
+	auto itemElem = itemNode.toElement();
+	auto tooltip = itemElem.attribute("tooltips");
 	if (tooltip == "") {return;}
 
 	widget->addTooltip(t.translate(tooltip));
@@ -320,5 +366,17 @@ void InputConditionWidgetSet::toggleReadOnly(bool readonly)
 		for (auto dep : w->dependencies()) {
 			dep->check();
 		}
+	}
+}
+
+QString InputConditionWidgetSet::labelName(const QDomNode& itemNode)
+{
+	auto itemElem = itemNode.toElement();
+	if (itemElem.attributes().contains("name")) {
+		return itemElem.attribute("name") + "_caption";
+	} else if (itemElem.attributes().contains("caption")){
+		return "caption_" + itemElem.attribute("caption");
+	} else {
+		return "caption_default";
 	}
 }

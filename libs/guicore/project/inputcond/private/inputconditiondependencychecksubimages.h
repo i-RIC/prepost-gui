@@ -5,12 +5,12 @@
 
 class InputConditionWidgetImage;
 
-class InputConditionDependencyCheckSubimages : public InputConditionDependency
+class InputConditionDependencyCheckSubImages : public InputConditionDependency
 {
 	Q_OBJECT
 
 public:
-	InputConditionDependencyCheckSubimages(InputConditionWidgetImage* image);
+	InputConditionDependencyCheckSubImages(InputConditionWidgetImage* image);
 
 public slots:
 	void check() override;
