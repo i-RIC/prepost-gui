@@ -12,7 +12,7 @@ public:
 
 	unsigned int dataCount() const override;
 
-	V value(unsigned int index) override;
+	V value(unsigned int index) const override;
 	void setValue(unsigned int index, V val) override;
 
 	DA* dataArray() const override;

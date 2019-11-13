@@ -1,7 +1,8 @@
 #include "structured2dgridnayscsvimporter.h"
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainert.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
+#include <misc/stringtool.h>
 
 #include <QObject>
 #include <QFile>
@@ -11,11 +12,26 @@
 #include <QMessageBox>
 #include <sstream>
 
-Structured2DGridNaysCSVImporter::Structured2DGridNaysCSVImporter()
-	: GridImporterInterface(), QObject()
-{
+namespace {
 
-}
+struct AttributeData {
+	enum ValueType {Real, Int};
+	enum Position {Node, Cell};
+
+	bool valid = true;
+	ValueType valueType;
+	Position position;
+
+	GridAttributeContainerT<double>* realContainer = nullptr;
+	GridAttributeContainerT<int>* intContainer = nullptr;
+};
+
+
+} // namespace
+
+Structured2DGridNaysCSVImporter::Structured2DGridNaysCSVImporter() :
+	GridImporterInterface(), QObject()
+{}
 
 QString Structured2DGridNaysCSVImporter::caption() const
 {
@@ -36,20 +52,10 @@ QStringList Structured2DGridNaysCSVImporter::fileDialogFilters() const
 
 bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
-	// Show warning dialog first.
-	QMessageBox::warning(parent, tr("Warning"), tr("Cell flag values will not be loaded."), QMessageBox::Ok);
 	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
 
 	QFile f(filename);
 	if (f.open(QFile::ReadOnly | QFile::Truncate | QIODevice::Text)){
-		GridAttributeContainer* c = grid2d->gridAttribute("Elevation");
-		if (c == 0){
-			// this grid does not have elevation. Impossible to import.
-			f.close();
-			return false;
-		}
-		GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
-
 		QTextStream in(&f);
 		QString qstr;
 		std::string str;
@@ -72,8 +78,45 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 		}
 		grid2d->setDimensions(imax, jmax);
 
-		// Skip the third line.
 		qstr = in.readLine();
+		QStringList headerFrags = qstr.split(",");
+		for (int i = 0; i < 6; ++i) {
+			headerFrags.pop_front();
+		}
+		std::vector<AttributeData> attData;
+		for (int i = 0; i < headerFrags.size(); ++i) {
+			QString n = headerFrags.at(i);
+			QStringRef name(&n, 2, n.length() - 2);
+			QStringRef typeFlag(&n, 0, 1);
+
+			AttributeData data;
+			auto att = grid2d->gridAttribute(iRIC::toStr(name.toString()));
+			if (att == nullptr) {
+				data.valid = false;
+				attData.push_back(data);
+				continue;
+			}
+
+			if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Node && typeFlag == "N") {
+				data.position = AttributeData::Node;
+			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::CellCenter && typeFlag == "C") {
+				data.position = AttributeData::Cell;
+			} else {
+				data.valid = false;
+				attData.push_back(data);
+				continue;
+			}
+			auto realAtt = dynamic_cast<GridAttributeContainerT<double>* > (att);
+			auto intAtt = dynamic_cast<GridAttributeContainerT<int>* > (att);
+			if (realAtt != nullptr) {
+				data.valueType = AttributeData::Real;
+				data.realContainer = realAtt;
+			} else if (intAtt != nullptr) {
+				data.valueType = AttributeData::Int;
+				data.intContainer = intAtt;
+			}
+			attData.push_back(data);
+		}
 
 		vtkPoints* points = vtkPoints::New();
 		points->SetDataTypeToDouble();
@@ -102,7 +145,30 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 					if (k == 1){continue;}
 					unsigned int id = grid2d->vertexIndex(i, j);
 					points->InsertPoint(id, x, y, 0);
-					container->setValue(id, z);
+
+					for (const AttributeData& data : attData) {
+						if (! data.valid) {
+							// ignore this column
+							double dummy;
+							iss >> dummy;
+							continue;
+						}
+						if (data.position == AttributeData::Cell && (i == imax - 1 || j == jmax - 1)) {continue;}
+						if (data.position == AttributeData::Node) {
+							id = grid2d->vertexIndex(i, j);
+						} else {
+							id = grid2d->cellIndex(i, j);
+						}
+						if (data.valueType == AttributeData::Real) {
+							double v;
+							iss >> v;
+							data.realContainer->setValue(id, v);
+						} else {
+							int v;
+							iss >> v;
+							data.intContainer->setValue(id, v);
+						}
+					}
 				}
 			}
 		}
