@@ -519,6 +519,8 @@ void GeoDataPolygonGroup::mergeEditTargetPolygon()
 	updateMenu();
 	impl->updateSelectedPolygonsVtkObjects();
 	impl->updateActionStatus();
+
+	iRICUndoStack::instance().clear();
 }
 
 void GeoDataPolygonGroup::updateMenu()
