@@ -103,10 +103,17 @@ GeoDataPolygonGroup::Impl::~Impl()
 void GeoDataPolygonGroup::Impl::updateActorSetting()
 {
 	// color
-	m_edgesActor->GetProperty()->SetColor(m_colorSetting.color);
+	double rate = 0.8;
+	QColor c = m_colorSetting.color;
+	QColor darkColor;
+	darkColor.setRedF(c.redF() * rate);
+	darkColor.setGreenF(c.greenF() * rate);
+	darkColor.setBlueF(c.blueF() * rate);
+
+	m_edgesActor->GetProperty()->SetColor(darkColor.redF(), darkColor.greenF(), darkColor.blueF());
 	m_paintActor->GetProperty()->SetColor(m_colorSetting.color);
-	m_selectedPolygonsEdgesActor->GetProperty()->SetColor(m_colorSetting.color);
-	m_selectedPolygonsPointsActor->GetProperty()->SetColor(m_colorSetting.color);
+	m_selectedPolygonsEdgesActor->GetProperty()->SetColor(darkColor.redF(), darkColor.greenF(), darkColor.blueF());
+	m_selectedPolygonsPointsActor->GetProperty()->SetColor(darkColor.redF(), darkColor.greenF(), darkColor.blueF());
 
 	// opacity
 	m_paintActor->GetProperty()->SetOpacity(m_colorSetting.opacity);
