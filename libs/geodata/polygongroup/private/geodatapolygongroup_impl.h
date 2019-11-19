@@ -84,6 +84,7 @@ public:
 	QAction* m_selectAction;
 	QAction* m_mergeAction;
 	QAction* m_deleteAction;
+	QAction* m_editColorSettingAction;
 
 	QPoint m_dragStartPoint;
 

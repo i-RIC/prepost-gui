@@ -55,6 +55,7 @@ private slots:
 	void selectPolygons();
 	void mergePolygonsAndPolygonGroups();
 	void deleteSelectedPolygons();
+	void editColorSetting();
 
 private:
 	GeoDataPolygonGroupColorSettingDialog::Setting colorSetting() const;

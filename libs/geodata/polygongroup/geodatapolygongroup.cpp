@@ -493,6 +493,11 @@ void GeoDataPolygonGroup::deleteSelectedPolygons()
 	impl->updateActionStatus();
 }
 
+void GeoDataPolygonGroup::editColorSetting()
+{
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
+}
+
 GeoDataPolygonGroupColorSettingDialog::Setting GeoDataPolygonGroup::colorSetting() const
 {
 	return impl->m_colorSetting;
@@ -566,6 +571,9 @@ void GeoDataPolygonGroup::updateMenu()
 
 	impl->m_rightClickingMenu->addSeparator();
 	impl->m_rightClickingMenu->addAction(impl->m_deleteAction);
+
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_editColorSettingAction);
 }
 
 void GeoDataPolygonGroup::makeConnections()
@@ -574,6 +582,7 @@ void GeoDataPolygonGroup::makeConnections()
 	connect(impl->m_selectAction, SIGNAL(triggered()), this, SLOT(selectPolygons()));
 	connect(impl->m_mergeAction, SIGNAL(triggered()), this, SLOT(mergePolygonsAndPolygonGroups()));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedPolygons()));
+	connect(impl->m_editColorSettingAction, SIGNAL(triggered()), this, SLOT(editColorSetting()));
 }
 
 void GeoDataPolygonGroup::doLoadFromProjectMainFile(const QDomNode& node)
