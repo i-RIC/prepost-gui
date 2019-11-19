@@ -547,7 +547,22 @@ void GeoDataPolygonGroup::updateMenu()
 	m_menu->addAction(impl->m_mergeAction);
 
 	m_menu->addSeparator();
+	m_menu->addAction(p->editValueAction());
+
+	m_menu->addSeparator();
+	m_menu->addAction(p->addVertexAction());
+	m_menu->addAction(p->removeVertexAction());
+	m_menu->addAction(p->coordEditAction());
+
+	m_menu->addSeparator();
+	m_menu->addAction(p->holeModeAction());
+	m_menu->addAction(p->deleteAction());
+
+	m_menu->addSeparator();
 	m_menu->addAction(impl->m_deleteAction);
+
+	m_menu->addSeparator();
+	m_menu->addAction(impl->m_editColorSettingAction);
 
 	impl->m_rightClickingMenu->clear();
 

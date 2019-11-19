@@ -93,6 +93,9 @@ public slots:
 	void setupGridCreationMenuContent();
 	void setupBoundaryConditionSettingMenuContent();
 
+private slots:
+	void setupGeoDataSubMenu();
+
 signals:
 	void additionalMenusUpdated(const QList<QMenu*>& menus);
 
