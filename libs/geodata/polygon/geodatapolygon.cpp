@@ -50,6 +50,9 @@
 #include <QStandardItem>
 #include <QToolBar>
 
+#include <geos/geom/Polygon.h>
+#include <geos/geom/LineString.h>
+
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkIdList.h>
@@ -61,6 +64,20 @@
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
+
+namespace {
+
+QPolygonF buildPolygon(const geos::geom::LineString* ls)
+{
+	QPolygonF pol;
+	for (int i = 0; i < ls->getNumPoints(); ++i) {
+		const auto& coord = ls->getCoordinateN(i);
+		pol.push_back(QPointF(coord.x, coord.y));
+	}
+	return pol;
+}
+
+} // namespace
 
 GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 	m_parent {parent},
@@ -302,13 +319,11 @@ void GeoDataPolygon::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsV
 
 void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (impl->m_mouseEventMode == meDefining) {
-		if (impl->m_selectMode == smPolygon) {
-			definePolygon(true);
-		}
-	}
-}
+	if (impl->m_mouseEventMode != meDefining) {return;}
+	if (impl->m_selectMode != smPolygon) {return;}
 
+	definePolygon(true);
+}
 
 void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
@@ -569,6 +584,24 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 QColor GeoDataPolygon::color() const
 {
 	return impl->m_setting.color;
+}
+
+void GeoDataPolygon::setShape(geos::geom::Polygon* polygon)
+{
+	auto ls = polygon->getExteriorRing();
+	impl->m_regionPolygon->setPolygon(buildPolygon(ls));
+	clearHolePolygons();
+
+	for (int i = 0; i < polygon->getNumInteriorRing(); ++i) {
+		auto holePol = setupHolePolygon();
+		holePol->setActive(false);
+		ls = polygon->getInteriorRingN(i);
+		holePol->setPolygon(buildPolygon(ls));
+		impl->m_holePolygons.push_back(holePol);
+	}
+	impl->m_selectedPolygon = impl->m_regionPolygon;
+	updatePolyData();
+	updateActionStatus();
 }
 
 void GeoDataPolygon::addVertexMode(bool on)
@@ -1512,6 +1545,11 @@ vtkActor* GeoDataPolygon::paintActor() const
 vtkMapper* GeoDataPolygon::paintMapper() const
 {
 	return impl->m_actor.mapper();
+}
+
+QAction* GeoDataPolygon::editValueAction() const
+{
+	return impl->m_editValueAction;
 }
 
 QAction* GeoDataPolygon::addVertexAction() const
