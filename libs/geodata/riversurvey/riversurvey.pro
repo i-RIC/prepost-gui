@@ -139,6 +139,8 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveydisplaysetting.h \
            geodatariversurveydisplaysettingdialog.h \
            geodatariversurveyexporter.h \
+           geodatariversurveyhonryuexporter.h \
+           geodatariversurveyhonryuexportersettingdialog.h \
            geodatariversurveyimporter.h \
            geodatariversurveyimportersettingdialog.h \
            geodatariversurveynodemapper.h \
@@ -178,6 +180,7 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariversurveycrosssectioneditfrompointdialog.ui \
          geodatariversurveycrosssectionwindow.ui \
          geodatariversurveydisplaysettingdialog.ui \
+         geodatariversurveyhonryuexportersettingdialog.ui \
          geodatariversurveyimportersettingdialog.ui
 SOURCES += geodatarivercrosssection.cpp \
            geodatarivercrosssectionaltitudemovedialog.cpp \
@@ -203,6 +206,8 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveydisplaysetting.cpp \
            geodatariversurveydisplaysettingdialog.cpp \
            geodatariversurveyexporter.cpp \
+           geodatariversurveyhonryuexporter.cpp \
+           geodatariversurveyhonryuexportersettingdialog.cpp \
            geodatariversurveyimporter.cpp \
            geodatariversurveyimportersettingdialog.cpp \
            geodatariversurveynodemapper.cpp \

@@ -418,12 +418,12 @@
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="15"/>
+        <location filename="../geodatariversurveycreator.cpp" line="16"/>
         <source>River Survey data</source>
         <translation>河川測量データ</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="40"/>
+        <location filename="../geodatariversurveycreator.cpp" line="42"/>
         <source>RiverSurvey %1</source>
         <translation>河川測量データ %1</translation>
     </message>
@@ -779,47 +779,47 @@
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="104"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="105"/>
         <source>&amp;Activate</source>
         <translation>有効化(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="106"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="107"/>
         <source>&amp;Inactivate</source>
         <translation>無効化(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="108"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="109"/>
         <source>&amp;Move</source>
         <translation>移動(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="123"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="124"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation>水位に基づいて無効化 (&amp;W)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="562"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="563"/>
         <source>Left Bank Side</source>
         <translation>左岸側</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="566"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="567"/>
         <source>Right Bank Side</source>
         <translation>右岸側</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1598"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1620"/>
         <source>Edit Cross Section</source>
         <translation>断面の編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1613"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1635"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1613"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1635"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。
@@ -835,8 +835,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>標高点の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1327"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1348"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1339"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1360"/>
         <source>Inactivate Elevation Points</source>
         <translation>標高点の無効化</translation>
     </message>
@@ -919,6 +919,115 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <location filename="../geodatariversurveyexporter.cpp" line="75"/>
         <source>River Survey data(*.riv)</source>
         <translation>河川測量データ(*.riv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyHonryuExporter</name>
+    <message>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="51"/>
+        <source>RiverSurvey data HONRYU export</source>
+        <translation>河川測量データ奔流エクスポート</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="57"/>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="129"/>
+        <source>CSV File (*.csv)</source>
+        <translation>CSVファイル (*.csv)</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexporter.cpp" line="128"/>
+        <source>Text File (*.txt)</source>
+        <translation>テキストファイル (*.txt)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="14"/>
+        <source>Export Format Setting</source>
+        <translation>エキスポートフォーマット設定</translation>
+    </message>
+    <message>
+        <source>Separator</source>
+        <translation type="vanished">区切り文字</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="31"/>
+        <source>Comma</source>
+        <translation>カンマ</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="41"/>
+        <source>Tab</source>
+        <translation>タブ</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="48"/>
+        <source>Space</source>
+        <translation>スペース</translation>
+    </message>
+    <message>
+        <source>Add header</source>
+        <translation type="vanished">ヘッダを出力する</translation>
+    </message>
+    <message>
+        <source>Longitudinal Distance Type:</source>
+        <translation type="vanished">流れ方向の距離:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="22"/>
+        <source>Separator:</source>
+        <translation>区切り文字:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="70"/>
+        <source>Header:</source>
+        <translation>ヘッダ行:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="77"/>
+        <source>Add</source>
+        <translation>追加する</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="84"/>
+        <source>Longitudinal Distance:</source>
+        <translation>縦断方向距離:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="94"/>
+        <source>Distance from previous Cross Section</source>
+        <translation>一つ手前の断面からの距離</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="99"/>
+        <source>Distance from first Cross Section</source>
+        <translation>最初の断面からの距離</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="109"/>
+        <source>Columns:</source>
+        <translation>列:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="119"/>
+        <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
+        <translation>名前, 流れ方向の距離, 横断方向の距離, 標高</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="124"/>
+        <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
+        <translation>流れ方向の距離, 名前, 横断方向の距離, 標高</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="129"/>
+        <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
+        <translation>横断方向の距離, 標高, 名前, 流れ方向の距離</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="134"/>
+        <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
+        <translation>横断方向の距離, 標高, 流れ方向の距離, 名前</translation>
     </message>
 </context>
 <context>
