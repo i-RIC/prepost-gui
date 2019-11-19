@@ -21,6 +21,7 @@ GeoDataPolygonGroupShpExporter::GeoDataPolygonGroupShpExporter(GeoDataCreator* c
 bool GeoDataPolygonGroupShpExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
+	group->mergeEditTargetPolygon();
 
 	SHPHandle shph = getSHPHandle(filename);
 
@@ -89,28 +90,22 @@ SHPObject* GeoDataPolygonGroupShpExporter::getSHPObject(GeoDataPolygonGroupPolyg
 	// region first.
 	auto elr = pol->getExteriorRing();
 	partStart[0] = 0;
-	nVertices += elr->getNumPoints() + 1;
+	nVertices += elr->getNumPoints();
 	for (int i = 0; i < elr->getNumPoints(); ++i) {
 		const auto& coord = elr->getCoordinateN(i);
 		xlist.push_back(coord.x + xoffset);
 		ylist.push_back(coord.y + yoffset);
 	}
-	const auto& coord = elr->getCoordinateN(0);
-	xlist.push_back(coord.x + xoffset);
-	ylist.push_back(coord.y + yoffset);
 
 	for (int i = 0; i < pol->getNumInteriorRing(); ++i) {
 		auto ilr = pol->getInteriorRingN(i);
 		partStart[i + 1] = nVertices;
-		nVertices += (ilr->getNumPoints() + 1);
+		nVertices += ilr->getNumPoints();
 		for (int j = 0; j < ilr->getNumPoints(); ++j) {
-			const auto& coord = elr->getCoordinateN(j);
+			const auto& coord = ilr->getCoordinateN(j);
 			xlist.push_back(coord.x + xoffset);
 			ylist.push_back(coord.y + yoffset);
 		}
-		const auto& coord = elr->getCoordinateN(0);
-		xlist.push_back(coord.x + xoffset);
-		ylist.push_back(coord.y + yoffset);
 	}
 
 	SHPObject* ret = SHPCreateObject(SHPT_POLYGON, index, nParts, partStart.data(), NULL, nVertices, xlist.data(), ylist.data(), NULL, NULL);
