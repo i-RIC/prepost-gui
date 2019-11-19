@@ -51,21 +51,23 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* cre
 	impl {new Impl {this}}
 {
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	auto mapper = impl->m_paintActor->GetMapper();
-	mapper->SetLookupTable(stcc->vtkObj());
-	mapper->SetUseLookupTableScalarRange(true);
+	if (stcc != nullptr) {
+		auto mapper = impl->m_paintActor->GetMapper();
+		mapper->SetLookupTable(stcc->vtkObj());
+		mapper->SetUseLookupTableScalarRange(true);
 
-	mapper = impl->m_edgesActor->GetMapper();
-	mapper->SetLookupTable(stcc->vtkDarkObj());
-	mapper->SetUseLookupTableScalarRange(true);
+		mapper = impl->m_edgesActor->GetMapper();
+		mapper->SetLookupTable(stcc->vtkDarkObj());
+		mapper->SetUseLookupTableScalarRange(true);
 
-	mapper = impl->m_selectedPolygonsEdgesActor->GetMapper();
-	mapper->SetLookupTable(stcc->vtkDarkObj());
-	mapper->SetUseLookupTableScalarRange(true);
+		mapper = impl->m_selectedPolygonsEdgesActor->GetMapper();
+		mapper->SetLookupTable(stcc->vtkDarkObj());
+		mapper->SetUseLookupTableScalarRange(true);
 
-	mapper = impl->m_selectedPolygonsPointsActor->GetMapper();
-	mapper->SetLookupTable(stcc->vtkDarkObj());
-	mapper->SetUseLookupTableScalarRange(true);
+		mapper = impl->m_selectedPolygonsPointsActor->GetMapper();
+		mapper->SetLookupTable(stcc->vtkDarkObj());
+		mapper->SetUseLookupTableScalarRange(true);
+	}
 
 	actorCollection()->AddItem(impl->m_paintActor);
 	actorCollection()->AddItem(impl->m_edgesActor);
@@ -76,6 +78,11 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* cre
 	renderer()->AddActor(impl->m_selectedPolygonsPointsActor);
 
 	makeConnections();
+
+	if (gridAttribute() && gridAttribute()->isReferenceInformation()) {
+		impl->m_colorSetting.mapping = GeoDataPolygonGroupColorSettingDialog::Arbitrary;
+	}
+
 	impl->updateActorSetting();
 }
 
@@ -351,6 +358,10 @@ QDialog* GeoDataPolygonGroup::propertyDialog(QWidget* parent)
 {
 	auto dialog = new GeoDataPolygonGroupColorSettingDialog(parent);
 	dialog->setSetting(impl->m_colorSetting);
+	auto gridAtt = gridAttribute();
+	if (gridAtt != nullptr) {
+		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
+	}
 	return dialog;
 }
 
