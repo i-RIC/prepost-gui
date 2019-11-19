@@ -45,7 +45,7 @@ GeoDataPolygonGroup::Impl::Impl(GeoDataPolygonGroup* group) :
 	m_selectAction {new QAction(GeoDataPolygonGroup::tr("&Select..."), group)},
 	m_mergeAction {new QAction(GeoDataPolygonGroup::tr("&Merge..."), group)},
 	m_deleteAction {new QAction(GeoDataPolygonGroup::tr("&Delete"), group)},
-	m_editColorSettingAction {new QAction(GeoDataPolygonGroup::tr("Color &Setting"), group)},
+	m_editColorSettingAction {new QAction(GeoDataPolygonGroup::tr("Color &Setting..."), group)},
 	m_mode {Normal},
 	m_group {group}
 {

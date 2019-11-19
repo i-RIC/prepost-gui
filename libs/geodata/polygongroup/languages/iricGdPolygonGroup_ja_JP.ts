@@ -4,23 +4,23 @@
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="190"/>
+        <location filename="../geodatapolygongroup.cpp" line="197"/>
         <source>P&amp;olygon Group</source>
         <translation>ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="426"/>
-        <location filename="../geodatapolygongroup.cpp" line="455"/>
+        <location filename="../geodatapolygongroup.cpp" line="437"/>
+        <location filename="../geodatapolygongroup.cpp" line="466"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="426"/>
+        <location filename="../geodatapolygongroup.cpp" line="437"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation>&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="455"/>
+        <location filename="../geodatapolygongroup.cpp" line="466"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>本当に選択されたポリゴンを削除していいですか?</translation>
     </message>
@@ -48,6 +48,11 @@
         <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
         <source>&amp;Delete</source>
         <translation>削除 (&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
+        <source>Color &amp;Setting...</source>
+        <translation>表示色設定 (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -117,7 +122,7 @@
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpexporter.cpp" line="54"/>
+        <location filename="../geodatapolygongroupshpexporter.cpp" line="55"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRIシェープファイル (*.shp)</translation>
     </message>
