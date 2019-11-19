@@ -120,6 +120,21 @@ void GeoDataPolygonGroup::Impl::updateActorSetting()
 	m_paintActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	m_selectedPolygonsEdgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	m_selectedPolygonsPointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+
+	updateActorSettingForEditTargetPolygon();
+}
+
+void GeoDataPolygonGroup::Impl::updateActorSettingForEditTargetPolygon()
+{
+	if (m_editTargetPolygon == nullptr) {return;}
+
+	m_editTargetPolygon->setColor(m_colorSetting.color);
+	m_editTargetPolygon->setOpacity(m_colorSetting.opacity);
+	if (m_colorSetting.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
+		m_editTargetPolygon->setMapping(GeoDataPolygonColorSettingDialog::Arbitrary);
+	} else {
+		m_editTargetPolygon->setMapping(GeoDataPolygonColorSettingDialog::Value);
+	}
 }
 
 void GeoDataPolygonGroup::Impl::updateSelectedPolygonsVtkObjects()
@@ -240,6 +255,8 @@ void GeoDataPolygonGroup::Impl::setupNewEditTargetPolygon()
 	m_editTargetPolygon->assignActorZValues(m_depthRange);
 	m_editTargetPolygon->informSelection(m_group->graphicsView());
 	m_mode = EditPolygon;
+
+	updateActorSettingForEditTargetPolygon();
 }
 
 void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
@@ -268,6 +285,7 @@ void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 	m_group->updateIndex();
 	m_group->updateMenu();
 	updateSelectedPolygonsVtkObjects();
+	updateActorSettingForEditTargetPolygon();
 }
 
 void GeoDataPolygonGroup::Impl::updateActionStatus()

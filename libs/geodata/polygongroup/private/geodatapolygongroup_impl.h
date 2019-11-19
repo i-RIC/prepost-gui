@@ -39,6 +39,7 @@ public:
 	~Impl();
 
 	void updateActorSetting();
+	void updateActorSettingForEditTargetPolygon();
 	void updateSelectedPolygonsVtkObjects();
 	void setupDummyPolygonForMenu();
 
