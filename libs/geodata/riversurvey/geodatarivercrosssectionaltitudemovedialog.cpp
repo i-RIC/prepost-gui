@@ -79,7 +79,7 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::reject()
 		iRICUndoStack::instance().undo();
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
+		m_rs->updateCrosssectionWindows();
 	}
 	QDialog::reject();
 }
@@ -93,7 +93,7 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::doReset()
 		iRICUndoStack::instance().undo();
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_rs->updateCrossectionWindows();
+		m_rs->updateCrosssectionWindows();
 	}
 	m_applyed = false;
 }

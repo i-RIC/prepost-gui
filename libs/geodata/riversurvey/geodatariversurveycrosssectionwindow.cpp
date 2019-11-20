@@ -186,7 +186,20 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBar()
 	impl->m_autoRescaleCheckBox->setChecked(true);
 	ui->toolBar->addWidget(impl->m_autoRescaleCheckBox);
 
+	impl->m_referenceCheckBox = new QCheckBox(this);
+	impl->m_referenceCheckBox->setText(tr("Reference"));
+	impl->m_referenceCheckBox->setChecked(false);
+	ui->toolBar->addWidget(impl->m_referenceCheckBox);
+
+	impl->m_referenceComboBox = new QComboBox(this);
+	impl->m_referenceComboBox->setMinimumWidth(100);
+	impl->m_referenceComboBox->setEnabled(false);
+	ui->toolBar->addWidget(impl->m_referenceComboBox);
+
 	connect(impl->m_crosssectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(crosssectionComboBoxChange(int)));
+	connect(impl->m_referenceCheckBox, SIGNAL(toggled(bool)), impl->m_referenceComboBox, SLOT(setEnabled(bool)));
+	connect(impl->m_referenceCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(impl->m_referenceComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateView()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupModel()
@@ -201,7 +214,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 	connect(impl->m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
 }
 
-void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
+void GeoDataRiverSurveyCrosssectionWindow::updateCrossSectionComboBox()
 {
 	// update crosssectionNames.
 	impl->m_crosssectionNames = setupCrosssectionNames(impl->m_riverSurveys);
@@ -226,6 +239,33 @@ void GeoDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 			setCrosssection(nullptr);
 		}
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::updateReferenceComboBox()
+{
+	GeoDataRiverPathPoint* oldPoint = nullptr;
+	if (impl->m_referenceRiverPathPoints.size() > 0 && impl->m_referenceComboBox->currentIndex() >= 0) {
+		oldPoint = impl->m_referenceRiverPathPoints.at(impl->m_referenceComboBox->currentIndex()).point;
+	}
+	int newIndex = 0;
+
+	impl->m_referenceComboBox->clear();
+	impl->m_referenceRiverPathPoints.clear();
+
+	int idx = 0;
+	for (auto survey : impl->m_riverSurveys) {
+		auto point = survey->headPoint()->nextPoint();
+		while (point != nullptr) {
+			auto name = QString("%1 : %2").arg(survey->caption()).arg(point->name());
+			impl->m_referenceComboBox->addItem(name);
+			ReferenceRiverPathPoint rp {idx, point};
+			impl->m_referenceRiverPathPoints.push_back(rp);
+			if (oldPoint == point) {newIndex = impl->m_referenceRiverPathPoints.size() - 1;}
+			point = point->nextPoint();
+		}
+		++ idx;
+	}
+	impl->m_referenceComboBox->setCurrentIndex(newIndex);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setRiverSurvey(GeoDataRiverSurvey* rs)
@@ -768,7 +808,8 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	}
 	updateRiverPathPoints();
 	updateSurveysTable();
-	updateComboBoxes();
+	updateCrossSectionComboBox();
+	updateReferenceComboBox();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupSurveyTable()
@@ -1026,6 +1067,27 @@ GeoDataRiverSurvey* GeoDataRiverSurveyCrosssectionWindow::gridCreatingConditionR
 GeoDataRiverPathPoint* GeoDataRiverSurveyCrosssectionWindow::gridCreatingConditionPoint() const
 {
 	return impl->m_gridCreatingConditionPoint;
+}
+
+GeoDataRiverPathPoint* GeoDataRiverSurveyCrosssectionWindow::referenceRiverPathPoint() const
+{
+	if (! impl->m_referenceCheckBox->isChecked())	{return nullptr;}
+
+	int idx = impl->m_referenceComboBox->currentIndex();
+	auto rp = impl->m_referenceRiverPathPoints.at(idx);
+	return rp.point;
+}
+
+QColor GeoDataRiverSurveyCrosssectionWindow::referenceRiverPathPointColor() const
+{
+	if (! impl->m_referenceCheckBox->isChecked())	{return Qt::black;}
+
+	int idx = impl->m_referenceComboBox->currentIndex();
+	auto rp = impl->m_referenceRiverPathPoints.at(idx);
+
+	QColor color = impl->m_riverSurveyColors.at(rp.dataIndex);
+	color.setAlphaF(0.4);
+	return color;
 }
 
 const QList<bool>& GeoDataRiverSurveyCrosssectionWindow::riverSurveyEnables() const

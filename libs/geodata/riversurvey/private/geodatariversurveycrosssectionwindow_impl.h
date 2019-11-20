@@ -11,6 +11,11 @@ class QCheckBox;
 class QComboBox;
 class QStandardItemModel;
 
+struct ReferenceRiverPathPoint {
+	int dataIndex;
+	GeoDataRiverPathPoint* point;
+};
+
 class GeoDataRiverSurveyCrosssectionWindow::Impl
 {
 public:
@@ -30,8 +35,11 @@ public:
 	QList<QColor> m_riverSurveyColors;
 	QList<GeoDataRiverPathPoint*> m_riverPathPoints;
 	QList<QString> m_crosssectionNames;
+	QList<ReferenceRiverPathPoint> m_referenceRiverPathPoints;
 
 	QComboBox* m_crosssectionComboBox;
+	QComboBox* m_referenceComboBox;
+	QCheckBox* m_referenceCheckBox;
 	QCheckBox* m_autoRescaleCheckBox;
 
 	QStandardItemModel* m_model;

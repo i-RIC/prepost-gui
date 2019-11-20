@@ -161,6 +161,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		QPen pen = QPen(Qt::black, 1);
 		painter.setPen(pen);
 
+		auto refPoint = m_parentWindow->referenceRiverPathPoint();
+		if (refPoint != nullptr) {
+			QColor c = m_parentWindow->referenceRiverPathPointColor();
+			drawLine(refPoint, c, painter);
+		}
+
 		for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
 			GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints().at(i);
 			if (p == nullptr) {continue;}

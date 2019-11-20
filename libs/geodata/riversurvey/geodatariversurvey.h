@@ -83,6 +83,7 @@ public:
 	GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	~GeoDataRiverSurvey();
 
+	void setCaption(const QString& cap) override;
 	void setupActors() override;
 	void setupMenu() override;
 	void setupDataItem() override;
@@ -109,7 +110,7 @@ public:
 	void updateSelectionShapeData();
 	GeoDataRiverPathPoint* headPoint() const;
 	vtkStructuredGrid* backgroundGrid() const;
-	void updateCrossectionWindows();
+	void updateCrosssectionWindows();
 	void setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue);
 	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
 	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() const;

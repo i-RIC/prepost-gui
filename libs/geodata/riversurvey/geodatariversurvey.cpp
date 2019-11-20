@@ -147,6 +147,12 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 	delete m_rightClickingMenu;
 }
 
+void GeoDataRiverSurvey::setCaption(const QString& cap)
+{
+	GeoData::setCaption(cap);
+	updateCrosssectionWindows();
+}
+
 void GeoDataRiverSurvey::setupActors()
 {
 	vtkSmartPointer<vtkDataSetMapper> mapper;
@@ -1838,7 +1844,7 @@ void GeoDataRiverSurvey::openCrossSectionWindow()
 	gItem->openCrossSectionWindow(this, selectedPoint()->name());
 }
 
-void GeoDataRiverSurvey::updateCrossectionWindows()
+void GeoDataRiverSurvey::updateCrosssectionWindows()
 {
 	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 	gItem->updateCrossectionWindows();

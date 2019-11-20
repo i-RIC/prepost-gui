@@ -24,5 +24,5 @@ void GeoDataRiverSurvey::RenameRiverPathPointCommand::setName(const QString& nam
 	m_point->setName(name);
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();
-	m_rs->updateCrossectionWindows();
+	m_rs->updateCrosssectionWindows();
 }
