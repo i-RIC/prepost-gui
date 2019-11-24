@@ -3,11 +3,12 @@
 #include "geodatarivercrosssectionaltitudemovedialog.h"
 #include "geodatariverpathpoint.h"
 #include "geodatariversurvey.h"
+#include "geodatariversurveycrosssectiondisplaysettingdialog.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowgraphicsview.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseeditcrosssectioncommand.h"
-
+#include "private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h"
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
 #include <guicore/misc/qundocommandhelper.h>
@@ -24,6 +25,7 @@
 #include <misc/mathsupport.h>
 
 #include <QAction>
+#include <QCheckBox>
 #include <QFontMetricsF>
 #include <QItemSelection>
 #include <QMenu>
@@ -44,7 +46,15 @@
 
 namespace {
 
+const int bankHOffset = 10;
+const int bankVOffset = 35;
 const int PREVIEW_LABEL_OFFSET = 3;
+const int WSE_WIDTH = 120;
+
+const int ASPECT_RATIO_RIGHT_MARGIN = 10;
+const int ASPECT_RATIO_BOTTOM_MARGIN = 10;
+const int MIN_SCALE_COUNT = 3;
+
 int findRowToDraw(int rowToTry, const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRects)
 {
 	if (rowToTry == drawnRects->size()) {
@@ -67,7 +77,35 @@ int findRowToDraw(const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRe
 {
 	return findRowToDraw(0, rect, drawnRects);
 }
-const int WSE_WIDTH = 120;
+
+void calcAutoScale(double width, double* scale, double* subScale)
+{
+	double w = width / MIN_SCALE_COUNT;
+	int i = 0;
+	while (w > 10) {
+		w /= 10;
+		++i;
+	}
+	while (w < 1) {
+		w *= 10;
+		--i;
+	}
+	double pow10 = 10;
+	if (i < 0) {
+		pow10 = 0.1;
+		i = -i;
+	}
+	if (w > 5) {
+		*scale = 5 * std::pow(pow10, i);
+		*subScale = *scale * 0.2;
+	} else if (w > 2) {
+		*scale = 2 * std::pow(pow10, i);
+		*subScale = *scale * 0.5;
+	} else {
+		*scale = std::pow(pow10, i);
+		*subScale = *scale * 0.2;
+	}
+}
 
 } // namespace
 
@@ -192,6 +230,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		// draw selected yellow squares.
 		drawSelectionSquare(painter);
 	}
+	drawAspectRatio(painter);
 }
 
 QRect GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRect(const QModelIndex&) const
@@ -427,7 +466,6 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 	maxs = invMatrix.map(QPointF(w->width(), 0));
 
 	// set pen.
-	QPen oldPen = painter.pen();
 	QPen scalePen(QColor(160, 160, 50), 1, Qt::SolidLine, Qt::RoundCap);
 	painter.setPen(scalePen);
 
@@ -437,142 +475,205 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 	double mainruler = 5;
 	double subruler = 3;
 
-	double xdwidth = (maxs.x() - mins.x()) / 3;
-	int i = 0;
-	while (xdwidth > 10) {
-		xdwidth /= 10.;
-		++i;
-	}
-	while (xdwidth < 1) {
-		xdwidth *= 10.;
-		--i;
-	}
-	// now 1 < xdwidth < 10.
-	double dx;
-	double pow10 = 10;
-	if (i < 0) {
-		pow10 = 0.1;
-		i = - i;
-	}
-	if (xdwidth > 5) {
-		xdwidth = 5 * std::pow(pow10, i);
-		dx = 0.2;
-	} else if (xdwidth > 2) {
-		xdwidth = 2 * std::pow(pow10, i);
-		dx = 0.5;
-	} else {
-		xdwidth = std::pow(pow10, i);
-		dx = 1.0;
-	}
-	double rulemin = std::floor(mins.x() / xdwidth) * xdwidth;
+	double xScale = m_displaySetting.bgHScaleInterval;
+	double xSubScale = m_displaySetting.bgHSubScaleInterval;
+	double yScale = m_displaySetting.bgVScaleInterval;
+	double ySubScale = m_displaySetting.bgVSubScaleInterval;
 
-	// draw X main scales.
-	QPointF from, to;
-	from = QPointF(0, yoffset);
-	to = QPointF(w->width(), yoffset);
-	painter.drawLine(from, to);
+	if (m_displaySetting.bgHScaleAuto) {
+		calcAutoScale(maxs.x() - mins.x(), &xScale, &xSubScale);
+	}
+	if (m_displaySetting.bgVScaleAuto) {
+		calcAutoScale(maxs.y() - mins.y(), &yScale, &ySubScale);
+	}
 
-	double x = rulemin;
-	while (x < maxs.x()) {
-		from = matrix.map(QPointF(x, maxs.y()));
-		from.setY(yoffset);
-		to = matrix.map(QPointF(x, maxs.y()));
-		to.setY(yoffset + mainruler);
+	if (m_parentWindow->impl->m_gridDisplayCheckBox->isChecked()) {
+		painter.save();
+
+		if (m_displaySetting.bgGridType == GeoDataRiverSurveyCrossSectionDisplaySetting::BackgroundGridType::Lines) {
+			// lines
+			// scales
+			QPen pen(m_displaySetting.bgGridColor);
+			pen.setStyle(Qt::SolidLine);
+			painter.setPen(pen);
+
+			double x = std::floor(mins.x() / xScale) * xScale;
+			while (x < maxs.x()) {
+				auto from = matrix.map(QPointF(x, maxs.y()));
+				auto to = from;
+				to.setY(w->height());
+				painter.drawLine(from, to);
+				x += xScale;
+			}
+			double y = std::floor(mins.y() / yScale) * yScale;
+			while (y < maxs.y()) {
+				auto from = matrix.map(QPointF(mins.x(), y));
+				auto to = from;
+				to.setX(w->width());
+				painter.drawLine(from, to);
+				y += yScale;
+			}
+			// subscales
+			pen.setStyle(Qt::DashLine);
+			painter.setPen(pen);
+			x = std::floor(mins.x() / xSubScale) * xSubScale;
+			while (x < maxs.x()) {
+				auto from = matrix.map(QPointF(x, maxs.y()));
+				auto to = from;
+				to.setY(w->height());
+				painter.drawLine(from, to);
+				x += xSubScale;
+			}
+			y = std::floor(mins.y() / ySubScale) * ySubScale;
+			while (y < maxs.y()) {
+				auto from = matrix.map(QPointF(mins.x(), y));
+				auto to = from;
+				to.setX(w->width());
+				painter.drawLine(from, to);
+				y += ySubScale;
+			}
+		} else {
+			// dots
+			QPen pen(m_displaySetting.bgGridColor);
+			pen.setStyle(Qt::SolidLine);
+			painter.setPen(pen);
+			QBrush brush(m_displaySetting.bgGridColor);
+			painter.setBrush(brush);
+
+			double x = std::floor(mins.x() / xScale) * xScale;
+			while (x < maxs.x()) {
+				double y = std::floor(mins.y() / yScale) * yScale;
+				while (y < maxs.y()) {
+					auto from = matrix.map(QPointF(x, y));
+					from.setX(from.x() - 1);
+					from.setY(from.y() - 1);
+					QPointF to(from.x() + 2, from.y() + 2);
+					painter.drawRect(QRectF(from, to));
+					y += yScale;
+				}
+				x += xScale;
+			}
+			x = std::floor(mins.x() / xSubScale) * xSubScale;
+			while (x < maxs.x()) {
+				double y = std::floor(mins.y() / ySubScale) * ySubScale;
+				while (y < maxs.y()) {
+					auto p = matrix.map(QPointF(x, y));
+					painter.drawPoint(p);
+					y += ySubScale;
+				}
+				x += xSubScale;
+			}
+		}
+		painter.restore();
+	}
+
+	if (m_parentWindow->impl->m_scaleDisplayCheckBox->isChecked()) {
+		painter.save();
+
+		painter.setPen(m_displaySetting.distanceMarkersColor);
+		painter.setFont(m_displaySetting.distanceMarkersFont);
+		QFontMetrics metrics(m_displaySetting.distanceMarkersFont);
+
+		// Horizontal line
+		QPointF from, to;
+		from = QPointF(0, yoffset);
+		to = QPointF(w->width(), yoffset);
 		painter.drawLine(from, to);
-		QPointF fontPos = to;
-		fontPos.setY(yoffset + mainruler + fontoffset);
-		QRectF fontRect(QPointF(fontPos.x() - fontRectWidth / 2, fontPos.y()), QPointF(fontPos.x() + fontRectWidth / 2, fontPos.y() + fontRectHeight));
-		QString str = QString("%1").arg(x);
-		painter.drawText(fontRect, Qt::AlignHCenter | Qt::AlignTop, str);
-		x += xdwidth;
-	}
-	// draw X sub scales.
-	x = rulemin;
-	while (x < maxs.x()) {
-		x += xdwidth * dx;
-		from = matrix.map(QPointF(x, maxs.y()));
-		from.setY(from.y() + yoffset);
-		to = matrix.map(QPointF(x, maxs.y()));
-		to.setY(to.y() + yoffset + subruler);
+
+		// draw X scales
+		double x = std::floor(mins.x() / xScale) * xScale;
+		while (x < maxs.x()) {
+			from = matrix.map(QPointF(x, maxs.y()));
+			from.setY(yoffset);
+			to = from;
+			to.setY(yoffset + mainruler);
+			painter.drawLine(from, to);
+
+			QPointF fontPos = to;
+			fontPos.setY(yoffset + mainruler + fontoffset);
+			QString str = QString("%1").arg(x);
+			auto rect = metrics.boundingRect(str);
+			QRectF fontRect(fontPos.x() - rect.width() / 2, fontPos.y(), rect.width() + 5, rect.height() + 5);
+			painter.drawText(fontRect, Qt::AlignHCenter | Qt::AlignTop, str);
+			x += xScale;
+		}
+		// draw X sub scales.
+		x = std::floor(mins.x() / xSubScale) * xSubScale;
+		while (x < maxs.x()) {
+			from = matrix.map(QPointF(x, maxs.y()));
+			from.setY(from.y() + yoffset);
+			to = from;
+			to.setY(to.y() + yoffset + subruler);
+			painter.drawLine(from, to);
+			x += xSubScale;
+		}
+
+		// Vertical line
+		from = QPointF(xoffset, 0);
+		to = QPointF(xoffset, w->height());
 		painter.drawLine(from, to);
+
+		// draw Y scales
+		double y = std::floor(mins.y() / yScale) * yScale;
+		while (y < maxs.y()) {
+			from = matrix.map(QPointF(mins.x(), y));
+			from.setX(xoffset);
+			to.setX(xoffset + mainruler);
+			to.setY(from.y());
+			painter.drawLine(from, to);
+
+			QPointF fontPos = to;
+			fontPos.setX(xoffset + mainruler + fontoffset);
+			QString str = QString("%1").arg(y);
+			auto rect = metrics.boundingRect(str);
+			QRectF fontRect(fontPos.x(), fontPos.y() - rect.height() / 2, rect.width() + 5, rect.height() + 5);
+			painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignVCenter, str);
+			y += yScale;
+		}
+		// draw Y sub scales.
+		y = std::floor(mins.y() / ySubScale) * ySubScale;
+		while (y < maxs.y()) {
+			from = matrix.map(QPointF(mins.x(), y));
+			from.setX(xoffset);
+			to.setX(xoffset + subruler);
+			to.setY(from.y());
+			painter.drawLine(from, to);
+			y += ySubScale;
+		}
+		painter.restore();
 	}
 
-	// next, for y.
-	double ydwidth = std::abs((maxs.y() - mins.y()) / 3);
-	i = 0;
-	while (ydwidth > 10) {
-		ydwidth /= 10.;
-		++i;
-	}
-	while (ydwidth < 1) {
-		ydwidth *= 10.;
-		--i;
-	}
-	// now 1 < ydwidth < 10.
-	double dy;
-	pow10 = 10;
-	if (i < 0) {
-		pow10 = 0.1;
-		i = - i;
-	}
-	if (ydwidth > 5) {
-		ydwidth = 5 * std::pow(pow10, i);
-		dy = 0.2;
-	} else if (ydwidth > 2) {
-		ydwidth = 2 * std::pow(pow10, i);
-		dy = 0.5;
-	} else {
-		ydwidth = std::pow(pow10, i);
-		dy = 1.0;
-	}
-	rulemin = std::floor(mins.y() / ydwidth) * ydwidth;
+	if (m_parentWindow->impl->m_markersDisplayCheckBox->isChecked()) {
+		painter.save();
 
-	// draw Y main scales.
-	from = QPointF(xoffset, 0);
-	to = QPointF(xoffset, w->height());
-	painter.drawLine(from, to);
+		// line at x = 0;
+		auto from = matrix.map(QPointF(0, 0));
+		from.setY(0);
+		auto to = from;
+		to.setY(w->height());
 
-	double y = rulemin;
-	while (y < maxs.y()) {
-		from = matrix.map(QPointF(mins.x(), y));
-		from.setX(xoffset);
-		to.setX(xoffset + mainruler);
-		to.setY(from.y());
+		QPen pen(m_displaySetting.lbBankMarkersColor);
+		pen.setStyle(Qt::DotLine);
+		painter.setPen(pen);
 		painter.drawLine(from, to);
-		QPointF fontPos = to;
-		fontPos.setX(xoffset + mainruler + fontoffset);
-		QRectF fontRect(QPointF(fontPos.x(), fontPos.y() - fontRectHeight / 2), QPointF(fontPos.x() + fontRectWidth, fontPos.y() + fontRectHeight / 2));
-		QString str = QString("%1").arg(y);
-		painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignVCenter, str);
-		y += ydwidth;
-	}
-	// draw Y sub scales.
-	y = rulemin;
-	while (y < maxs.y()) {
-		y += ydwidth * dy;
-		from = matrix.map(QPointF(mins.x(), y));
-		from.setX(xoffset);
-		to.setX(xoffset + subruler);
-		to.setY(from.y());
-		painter.drawLine(from, to);
-	}
-	// line at x = 0;
-	from = matrix.map(QPointF(0, 0));
-	from.setY(0);
-	to.setX(from.x());
-	to.setY(w->height());
-	scalePen.setStyle(Qt::DotLine);
-	painter.drawLine(from, to);
 
-	// left bank
-	QRectF fontRect;
-	fontRect = QRectF(from.x() - bankHOffset - fontRectWidth, yoffset + bankVOffset, fontRectWidth, fontRectHeight);
-	painter.drawText(fontRect, Qt::AlignRight | Qt::AlignVCenter, tr("Left Bank Side"));
+		painter.setFont(m_displaySetting.lbBankMarkersFont);
+		QFontMetricsF metrics(m_displaySetting.lbBankMarkersFont);
 
-	// right bank side
-	fontRect = QRectF(from.x() + bankHOffset, yoffset + bankVOffset, fontRectWidth, fontRectHeight);
-	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignVCenter, tr("Right Bank Side"));
-	painter.setPen(oldPen);
+		// left bank
+		QString label = tr("Left Bank Side");
+		auto rect = metrics.boundingRect(label);
+		QRectF fontRect = QRectF(from.x() - bankHOffset - rect.width(), bankVOffset, rect.width() + 5, rect.height() + 5);
+		painter.drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
+
+		// right bank side
+		label = tr("Right Bank Side");
+		rect = metrics.boundingRect(label);
+		fontRect = QRectF(from.x() + bankHOffset, bankVOffset, rect.width() + 5, rect.height() + 5);
+		painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
+
+		painter.restore();
+	}
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix)
@@ -682,6 +783,29 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPoi
 	QRectF fontRect(mappedPos.x() + fontMargin, topMargin - fontHeight + row * rowHeight, rect.width(), fontHeight);
 
 	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, name);
+	painter.restore();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawAspectRatio(QPainter& painter)
+{
+	painter.save();
+
+	painter.setPen(m_displaySetting.aspectRatioColor);
+	painter.setFont(m_displaySetting.aspectRatioFont);
+
+	if (! m_parentWindow->impl->m_aspectRatioDisplayCheckBox->isChecked()) {return;}
+
+	QSize windowSize = size();
+
+	auto aspectRatioStr = tr("Aspect ratio: 1 / %1").arg(aspectRatio());
+	QFontMetricsF metrics(painter.font());
+	auto rect = metrics.boundingRect(aspectRatioStr);
+
+	auto left = windowSize.width() - ASPECT_RATIO_RIGHT_MARGIN - rect.width();
+	auto top = windowSize.height() - ASPECT_RATIO_BOTTOM_MARGIN - rect.height();
+	QRectF fontRect(left, top, rect.width() + 1, rect.height() + 1);
+	painter.drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, aspectRatioStr);
+
 	painter.restore();
 }
 
@@ -1663,4 +1787,28 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode
 	m_oldLine.crosssection().AltitudeInfo() = alist;
 
 	updateMouseCursor();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editDisplaySetting()
+{
+	QWidget* w = viewport();
+	auto matrix = getMatrix(w->rect());
+	QMatrix invMatrix = matrix.inverted();
+	QPointF mins, maxs;
+	mins = invMatrix.map(QPointF(0, w->height()));
+	maxs = invMatrix.map(QPointF(w->width(), 0));
+
+	if (m_displaySetting.bgHScaleAuto) {
+		calcAutoScale(maxs.x() - mins.x(), &m_displaySetting.bgHScaleInterval, &m_displaySetting.bgHSubScaleInterval);
+	}
+	if (m_displaySetting.bgVScaleAuto) {
+		calcAutoScale(maxs.y() - mins.y(), &m_displaySetting.bgVScaleInterval, &m_displaySetting.bgVSubScaleInterval);
+	}
+	GeoDataRiverSurveyCrossSectionDisplaySettingDialog dialog(this);
+	dialog.setSetting(m_displaySetting);
+
+	int ret = dialog.exec();
+	if (ret != QDialog::Accepted) {return;}
+
+	iRICUndoStack::instance().push(new SetDisplaySettingCommand(dialog.setting(), this));
 }

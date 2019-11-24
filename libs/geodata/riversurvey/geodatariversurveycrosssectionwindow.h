@@ -115,6 +115,8 @@ private slots:
 	void moveDownWse(int index);
 	void deleteWse(int index);
 
+	void editDisplaySetting();
+
 private:
 	static const int defaultRowHeight = 20;
 

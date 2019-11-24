@@ -59,6 +59,17 @@
     <bool>false</bool>
    </attribute>
   </widget>
+  <widget class="QToolBar" name="displayToolBar">
+   <property name="windowTitle">
+    <string>Display Setting ToolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>

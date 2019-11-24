@@ -43,6 +43,11 @@ public:
 	QCheckBox* m_referenceCheckBox;
 	QCheckBox* m_autoRescaleCheckBox;
 
+	QCheckBox* m_gridDisplayCheckBox;
+	QCheckBox* m_scaleDisplayCheckBox;
+	QCheckBox* m_aspectRatioDisplayCheckBox;
+	QCheckBox* m_markersDisplayCheckBox;
+
 	RealNumberEditWidget* m_aspectRatioEdit;
 	QCheckBox* m_fixAspectRatioCheckBox;
 	QCheckBox* m_fixRegionCheckBox;

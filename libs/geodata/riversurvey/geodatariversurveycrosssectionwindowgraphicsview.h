@@ -3,6 +3,7 @@
 
 #include "geodatarivercrosssection.h"
 #include "geodatariverpathpoint.h"
+#include "geodatariversurveycrosssectiondisplaysetting.h"
 
 #include <QAbstractItemView>
 
@@ -66,6 +67,7 @@ public:
 	void cameraZoomOutY();
 	void toggleGridCreatingMode(bool gridMode);
 	void enterEditCrosssectionMode();
+	void editDisplaySetting();
 
 public slots:
 	void informModelessDialogOpen();
@@ -96,6 +98,7 @@ private:
 	void setupMenu();
 	void updateActionStatus();
 	void drawCircle(QPainter& painter);
+	void drawScales(QPainter& painter, const QMatrix& matrix);
 	void drawSelectionCircle(QPainter& painter);
 	void drawSquare(QPainter& painter);
 	void drawSelectionSquare(QPainter& painter);
@@ -103,6 +106,7 @@ private:
 	void drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix);
 	void drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix);
 	void drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
+	void drawAspectRatio(QPainter &painter);
 	void drawPolyLineCrossPoints(QPainter& painter);
 	void drawEditPreview(QPainter& painter);
 	void zoom(double scaleX, double scaleY);
@@ -128,8 +132,6 @@ private:
 	const static int selectedSquareR = 4;
 	const static int fontRectWidth = 250;
 	const static int fontRectHeight = 14;
-	const static int bankHOffset = 10;
-	const static int bankVOffset = 30;
 
 	double fLeftMargin;
 	double fRightMargin;
@@ -145,7 +147,6 @@ private:
 	QPointF getPointF(double x, double y, const QRect& viewport);
 	QRectF getRegion();
 	QMatrix getMatrix(QRect& viewport);
-	void drawScales(QPainter& painter, const QMatrix& matrix);
 
 	QMenu* m_rightClickingMenu;
 	QMenu* m_rightClickingMenuForEditCrosssectionMode;
@@ -178,6 +179,9 @@ private:
 	GeoDataRiverPathPoint m_oldLine;
 	QString m_editRatio;
 	bool m_gridMode;
+	GeoDataRiverSurveyCrossSectionDisplaySetting m_displaySetting;
+
+	class SetDisplaySettingCommand;
 };
 
 #endif // GEODATARIVERSURVEYCROSSSECTIONWINDOWGRAPHICSVIEW_H
