@@ -1035,6 +1035,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyLandXmlExporter</name>
+    <message>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="34"/>
+        <source>LandXml (*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="71"/>
+        <source>LandXml file(*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <location filename="../private/geodatariversurveyproxy_setsettingcommand.cpp" line="4"/>

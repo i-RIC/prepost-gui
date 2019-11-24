@@ -138,6 +138,8 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmapdelptslessthandialog.h \
            geodatapointmapeditptsdialog.h \
            geodatapointmapinterpolatepoints.h \
+           geodatapointmaplandxmlimporter.h \
+           geodatapointmaplandxmlexporter.h \
            geodatapointmapmappingmode.h \
            geodatapointmapnodemappert.h \
            geodatapointmaprealcreator.h \
@@ -193,6 +195,8 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapdelptslessthandialog.cpp \
            geodatapointmapeditptsdialog.cpp \
            geodatapointmapinterpolatepoints.cpp \
+           geodatapointmaplandxmlimporter.cpp \
+           geodatapointmaplandxmlexporter.cpp \
            geodatapointmapmappingmode.cpp \
            geodatapointmaprealcreator.cpp \
            geodatapointmaprealexporter.cpp \

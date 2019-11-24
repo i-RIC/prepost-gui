@@ -1,4 +1,5 @@
 #include "geodatapointmapcellmappert.h"
+#include "geodatapointmaplandxmlimporter.h"
 #include "geodatapointmapnodemappert.h"
 #include "geodatapointmaprealcreator.h"
 #include "geodatapointmaprealexporter.h"
@@ -6,6 +7,7 @@
 #include "geodatapointmapstlexporter.h"
 #include "geodatapointmapstlimporter.h"
 #include "geodatapointmapt.h"
+#include "geodatapointmaplandxmlexporter.h"
 #include "geodatapointmapvtkexporter.h"
 #include "geodatapointmapwebimporter.h"
 
@@ -16,9 +18,11 @@ GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
 {
 	importers().push_back(new GeoDataPointmapRealImporter(this));
 	importers().push_back(new GeoDataPointmapSTLImporter(this));
+	importers().push_back(new GeoDataPointmapLandXmlImporter(this));
 
 	webImporters().push_back(new GeoDataPointmapWebImporter(this));
 
+	exporters().push_back(new GeoDataPointmapLandXmlExporter(this));
 	exporters().push_back(new GeoDataPointmapRealExporter(this));
 	exporters().push_back(new GeoDataPointmapSTLExporter(this));
 	exporters().push_back(new GeoDataPointmapVTKExporter(this));

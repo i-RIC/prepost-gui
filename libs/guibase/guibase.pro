@@ -12,6 +12,20 @@ include( ../../paths.pri )
 # Internal libraries #
 ######################
 
+# iricCs
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../cs/debug"
+	} else {
+		LIBS += -L"../cs/release"
+	}
+}
+unix {
+	LIBS += -L"../cs"
+}
+LIBS += -liricCs
+
 # iricMisc
 
 win32 {
@@ -75,6 +89,7 @@ HEADERS += arrowsettingcontainer.h \
            guibase_global.h \
            iricactivecellfilter.h \
            irictoolbar.h \
+           landxmlutil.h \
            linestyleinformation.h \
            objectbrowser.h \
            objectbrowserview.h \
@@ -195,6 +210,7 @@ SOURCES += arrowsettingcontainer.cpp \
            graphicsmisc.cpp \
            iricactivecellfilter.cpp \
            irictoolbar.cpp \
+           landxmlutil.cpp \
            linestyleinformation.cpp \
            objectbrowser.cpp \
            objectbrowserview.cpp \

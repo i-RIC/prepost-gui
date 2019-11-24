@@ -3,6 +3,7 @@
 #include "geodatariversurveyexporter.h"
 #include "geodatariversurveyhonryuexporter.h"
 #include "geodatariversurveyimporter.h"
+#include "geodatariversurveylandxmlexporter.h"
 #include "geodatariversurveynodemapper.h"
 #include "geodatariversurveyvtkexporter.h"
 
@@ -20,6 +21,7 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyVTKExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
+	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
 
 	nodeMappers().push_back(new GeoDataRiverSurveyNodeMapper(this));
 }
