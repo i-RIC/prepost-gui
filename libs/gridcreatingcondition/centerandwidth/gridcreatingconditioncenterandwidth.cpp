@@ -528,11 +528,6 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		// left click
-		double worldX = static_cast<double>(event->x());
-		double worldY = static_cast<double>(event->y());
-		v->viewportToWorld(worldX, worldY);
-
 		switch (m_mouseEventMode) {
 		case meNormal:
 			// do nothing.
@@ -541,6 +536,7 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
 			pushUpdateShapeCommand(new PushVertexCommand(true, event->pos(), this));
+			break;
 		case meDefining:
 			pushUpdateShapeCommand(new PushVertexCommand(true, event->pos(), this));
 			break;
