@@ -1163,6 +1163,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::keyReleaseEvent(QKeyEvent
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::wheelEvent(QWheelEvent* event)
 {
 	if (event->orientation() == Qt::Horizontal) {return;}
+	if (m_parentWindow->isRegionFixed()) {return;}
+
 	int numDegrees = event->delta() / 8;
 	int numSteps = numDegrees / 15;
 	if (numSteps > 0) {
