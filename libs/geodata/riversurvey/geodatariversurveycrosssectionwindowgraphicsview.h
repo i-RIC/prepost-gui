@@ -46,6 +46,9 @@ public:
 	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
 	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
 
+	double aspectRatio() const;
+	void setAspectRatio(double ratio);
+
 	QAction* activateAction() const;
 	QAction* inactivateAction() const;
 	QAction* moveAction() const;
@@ -73,6 +76,9 @@ private slots:
 	void inactivateSelectedRows();
 	void moveSelectedRows();
 
+signals:
+	void drawnRegionChanged();
+
 private:
 	int moveWidth();
 	void mouseMoveEvent(QMouseEvent* event) override;
@@ -82,6 +88,7 @@ private:
 	void keyReleaseEvent(QKeyEvent* event) override;
 
 	void wheelEvent(QWheelEvent* event) override;
+	void resizeEvent(QResizeEvent* event) override;
 
 	void setupActions();
 	void updateAltitudeList(GeoDataRiverCrosssection::AltitudeList& alist, const QPoint& start, const QPoint& end);
@@ -155,11 +162,14 @@ private:
 	} m_dragLimit;
 	GeoDataRiverSurveyCrosssectionWindow* m_parentWindow;
 	QRubberBand* m_rubberBand;
-	QRectF m_drawnRegion;
+
+	QPointF m_center;
+	double m_scaleX;
+	double m_scaleY;
+
 	MouseEventMode m_mouseEventMode;
 	ViewMouseEventMode m_viewMouseEventMode;
 	bool m_modelessDialogIsOpen;
-	QRectF m_shownRegion;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;
 	QPoint m_dragStartPoint;

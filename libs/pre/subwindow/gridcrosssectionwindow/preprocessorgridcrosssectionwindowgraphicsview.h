@@ -126,7 +126,6 @@ private:
 	QRubberBand* m_rubberBand;
 	QRectF m_drawnRegion;
 	MouseEventMode m_mouseEventMode;
-	QRectF m_shownRegion;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;
 	QPoint m_dragStartPoint;

@@ -6,6 +6,7 @@
 #include <QIcon>
 
 class ColorSource;
+class RealNumberEditWidget;
 
 class QCheckBox;
 class QComboBox;
@@ -41,6 +42,10 @@ public:
 	QComboBox* m_referenceComboBox;
 	QCheckBox* m_referenceCheckBox;
 	QCheckBox* m_autoRescaleCheckBox;
+
+	RealNumberEditWidget* m_aspectRatioEdit;
+	QCheckBox* m_fixAspectRatioCheckBox;
+	QCheckBox* m_fixRegionCheckBox;
 
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;

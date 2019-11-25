@@ -74,6 +74,8 @@ public:
 
 	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const;
 	void setSelectedRow(int row);
+	bool isAspectRatioFixed() const;
+	bool isRegionFixed() const;
 
 public slots:
 	void updateView();
@@ -104,6 +106,10 @@ private slots:
 	void handleWseTableItemEdit(QTableWidgetItem* item);
 	void handleWseTableItemClick(QTableWidgetItem* item);
 	void handleSurveyTablecurrentCellChange(int currentRow, int currentColumn, int previousRow, int previousColumn);
+	void handleAspectRatioEdit(double ratio);
+	void handleFixAspectRatio(bool fix);
+	void handleFixRegion(bool fix);
+	void handleDrawnRegionChanged();
 
 	void moveUpWse(int index);
 	void moveDownWse(int index);
@@ -119,7 +125,7 @@ private:
 	void setupActions();
 	void setupMenu();
 	void clear();
-	void setupToolBar();
+	void setupToolBars();
 	void setupModel();
 	void setupView();
 	void updateEditTargetPoint();
