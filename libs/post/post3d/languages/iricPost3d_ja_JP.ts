@@ -482,14 +482,22 @@
         <translation type="vanished">パーティクル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="42"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="66"/>
         <source>Particles (auto)</source>
         <translation>パーティクル (自動)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="73"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="97"/>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Particle Setting</source>
+        <translation>パーティクル設定</translation>
     </message>
 </context>
 <context>
@@ -532,11 +540,16 @@
     </message>
     <message>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="40"/>
+        <source>Generate periodically</source>
+        <translation>一定時間おきに生成</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="50"/>
         <source>Generation time interval</source>
         <translation>発生する時間間隔</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="48"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="58"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
@@ -558,92 +571,102 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="86"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="459"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="96"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="503"/>
         <source>-</source>
         <translation>減らす</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="103"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="476"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="113"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="520"/>
         <source>+</source>
         <translation>増やす</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="148"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="521"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="158"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="565"/>
         <source>min</source>
         <translation>min</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="173"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="546"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="183"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="590"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="201"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="574"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="211"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="618"/>
         <source>max</source>
         <translation>max</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="241"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="232"/>
+        <source>Generate at arbitrary time</source>
+        <translation>任意のタイミングで生成</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="242"/>
+        <source>Edit...</source>
+        <translation>編集...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="285"/>
         <source>Start Position</source>
         <translation>発生位置</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="247"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="291"/>
         <source>Range</source>
         <translation>範囲</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="255"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="299"/>
         <source>Specify the area to generate particles.</source>
         <translation>パーティクルを発生させる位置を指定します。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="262"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="306"/>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
         <translation>パーティクルを発生させる位置を、格子のインデックス (I, J, K) の範囲で指定してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="290"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="334"/>
         <source>I Min</source>
         <translation>I 最小</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="310"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="354"/>
         <source>I Max</source>
         <translation>I 最大</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="330"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="374"/>
         <source>J Min</source>
         <translation>J 最小</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="350"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="394"/>
         <source>J Max</source>
         <translation>J 最大</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="370"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="414"/>
         <source>K Min</source>
         <translation>K 最小</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="390"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="434"/>
         <source>K Max</source>
         <translation>K 最大</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="413"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="457"/>
         <source>Generation space interval</source>
         <translation>生成間隔</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="421"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="465"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -664,17 +687,17 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="595"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="639"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="622"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="666"/>
         <source>Size:</source>
         <translation>大きさ:</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="629"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="673"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -687,12 +710,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;画面上でのピクセル数を指定します&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="680"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="724"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="687"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="731"/>
         <source>&amp;Remove</source>
         <translation>削除(&amp;R)</translation>
     </message>
@@ -944,9 +967,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">パーティクル 物理量の変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="42"/>
         <source>Update Particle Setting</source>
-        <translation>パーティクル設定</translation>
+        <translation type="vanished">パーティクル設定</translation>
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
