@@ -25,6 +25,7 @@ HEADERS += anms.h \
            errormessage.h \
            filesystemfunction.h \
            informationdialog.h \
+           intarraycontainer.h \
            intcontainer.h \
            integerrangecontainer.h \
            interpolator.h \
@@ -52,6 +53,7 @@ HEADERS += anms.h \
            stringcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
+           valuearraycontainert.h \
            valuechangert.h \
            valuerestorert.h \
            versionnumber.h \
@@ -70,6 +72,7 @@ HEADERS += anms.h \
            private/numericvaluecontainert_detail.h \
            private/qpointfcontainer_impl.h \
            private/simplevaluecontainert_detail.h \
+           private/valuearraycontainert_detail.h \
            private/valuechangert_detail.h \
            private/valuerestorert_detail.h \
            private/versionnumber_impl.h \
@@ -84,6 +87,7 @@ SOURCES += anms.cpp \
            errormessage.cpp \
            filesystemfunction.cpp \
            informationdialog.cpp \
+           intarraycontainer.cpp \
            intcontainer.cpp \
            integerrangecontainer.cpp \
            interpolator.cpp \

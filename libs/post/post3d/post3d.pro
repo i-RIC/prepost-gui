@@ -169,6 +169,7 @@ HEADERS += post3d_global.h \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.h \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.h \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
            datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.h \
            datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h
@@ -223,6 +224,7 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.cpp \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.cpp \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp

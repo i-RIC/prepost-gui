@@ -6,18 +6,18 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
+#include <postbase/particle/particlearbitrarytimeeditdialog.h>
 
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
 Post3dWindowParticleStructuredSettingDialog::Post3dWindowParticleStructuredSettingDialog(QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::Post3dWindowParticleStructuredSettingDialog)
+	ui(new Ui::Post3dWindowParticleStructuredSettingDialog),
+	m_applying {false}
 {
 	ui->setupUi(this);
-
-	m_timeMode = Post3dWindowNodeVectorParticleGroupDataItem::tmNormal;
-	m_applying = false;
 
 	setupNominations();
 	ui->timeSlider->setTracking(true);
@@ -37,11 +37,18 @@ Post3dWindowParticleStructuredSettingDialog::Post3dWindowParticleStructuredSetti
 
 	connect(ui->addPushButton, SIGNAL(clicked()), this, SLOT(addData()));
 	connect(ui->removePushButton, SIGNAL(clicked()), this, SLOT(removeData()));
+
+	connect(ui->arbitraryEditButton, SIGNAL(clicked()), this, SLOT(editArbitraryTimes()));
 }
 
 Post3dWindowParticleStructuredSettingDialog::~Post3dWindowParticleStructuredSettingDialog()
 {
 	delete ui;
+}
+
+void Post3dWindowParticleStructuredSettingDialog::setProjectMainFile(ProjectMainFile* file)
+{
+	m_mainFile = file;
 }
 
 void Post3dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -58,70 +65,80 @@ void Post3dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContai
 	setupSolutionComboBox(zoneData);
 }
 
-void Post3dWindowParticleStructuredSettingDialog::setSolution(const std::string& sol)
+void Post3dWindowParticleStructuredSettingDialog::setActiveAvailable(bool available)
 {
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
+	m_activeAvailable = available;
+}
+
+void Post3dWindowParticleStructuredSettingDialog::setSetting(const Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting& setting)
+{
+	m_setting = setting;
+
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(setting.target.value()));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
-}
 
-std::string Post3dWindowParticleStructuredSettingDialog::solution() const
-{
-	int index = ui->solutionComboBox->currentIndex();
-	return m_solutions.at(index);
-}
-
-void Post3dWindowParticleStructuredSettingDialog::setTimeMode(Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm)
-{
-	m_timeMode = tm;
-	if (m_timeMode == Post3dWindowNodeVectorParticleGroupDataItem::tmNormal) {
-		ui->timeSlider->setValue(m_skipNominations.count());
-	}
-}
-
-Post3dWindowNodeVectorParticleGroupDataItem::TimeMode Post3dWindowParticleStructuredSettingDialog::timeMode() const
-{
-	if (ui->timeSlider->value() == m_skipNominations.count()) {
-		return Post3dWindowNodeVectorParticleGroupDataItem::tmNormal;
-	} else if (ui->timeSlider->value() < m_skipNominations.count()) {
-		return Post3dWindowNodeVectorParticleGroupDataItem::tmSkip;
+	if (setting.generateMode == Post3dWindowNodeVectorParticleGroupDataItem::gmPeriodical) {
+		ui->periodicalRadioButton->setChecked(true);
 	} else {
-		return Post3dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
+		ui->arbitraryRadioButton->setChecked(true);
 	}
-}
 
-void Post3dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
-{
-	if (m_timeMode != Post3dWindowNodeVectorParticleGroupDataItem::tmSkip) {return;}
-	for (int i = 0; i < m_skipNominations.count(); ++i) {
-		if (m_skipNominations.at(i) == sr) {
-			ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
-			return;
+	if (setting.timeMode == Post3dWindowNodeVectorParticleGroupDataItem::tmNormal) {
+		ui->timeSlider->setValue(m_skipNominations.count());
+	} else if (setting.timeMode == Post3dWindowNodeVectorParticleGroupDataItem::tmSkip) {
+		for (int i = 0; i < m_skipNominations.count(); ++i) {
+			if (m_skipNominations.at(i) == setting.timeSamplingRate) {
+				ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
+				return;
+			}
+		}
+	} else {
+		for (int i = 0; i < m_subDivNominations.count(); ++i) {
+			if (m_subDivNominations.at(i) == setting.timeDivision) {
+				ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
+				return;
+			}
 		}
 	}
 }
 
-int Post3dWindowParticleStructuredSettingDialog::timeSamplingRate() const
+void Post3dWindowParticleStructuredSettingDialog::setSettings(const QList<Post3dWindowStructuredParticleSetSetting>& settings)
 {
-	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
-	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
+	m_settings = settings;
+	setupSettingList();
 }
 
-void Post3dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
+Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting Post3dWindowParticleStructuredSettingDialog::setting() const
 {
-	if (m_timeMode != Post3dWindowNodeVectorParticleGroupDataItem::tmSubdivide) {return;}
-	for (int i = 0; i < m_subDivNominations.count(); ++i) {
-		if (m_subDivNominations.at(i) == sd) {
-			ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
-			return;
-		}
+	auto ret = m_setting;
+	ret.target = m_solutions.at(ui->solutionComboBox->currentIndex()).c_str();
+
+	if (ui->periodicalRadioButton->isChecked()) {
+		ret.generateMode = Post3dWindowNodeVectorParticleGroupDataItem::gmPeriodical;
+	} else {
+		ret.generateMode = Post3dWindowNodeVectorParticleGroupDataItem::gmArbitrary;
 	}
+
+	ret.timeDivision = 1;
+	ret.timeSamplingRate = 1;
+
+	if (ui->timeSlider->value() == m_skipNominations.count()) {
+		ret.timeMode = Post3dWindowNodeVectorParticleGroupDataItem::tmNormal;
+	} else if (ui->timeSlider->value() < m_skipNominations.count()) {
+		ret.timeMode = Post3dWindowNodeVectorParticleGroupDataItem::tmSkip;
+		ret.timeSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
+	} else {
+		ret.timeMode = Post3dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
+		ret.timeDivision = m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
+	}
+
+	return ret;
 }
 
-int Post3dWindowParticleStructuredSettingDialog::timeDivision() const
+const QList<Post3dWindowStructuredParticleSetSetting>& Post3dWindowParticleStructuredSettingDialog::settings() const
 {
-	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
-	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
+	return m_settings;
 }
 
 void Post3dWindowParticleStructuredSettingDialog::activeDataChanged(int index)
@@ -349,6 +366,18 @@ void Post3dWindowParticleStructuredSettingDialog::removeData()
 	m_activeSetting = &(m_settings[current]);
 	applySettings();
 	updateRemoveButtonStatus();
+}
+
+void Post3dWindowParticleStructuredSettingDialog::editArbitraryTimes()
+{
+	ParticleArbitraryTimeEditDialog dialog(this);
+	dialog.setMainFile(m_mainFile);
+	dialog.setTimeSteps(m_setting.arbitraryTimes.value());
+	int ret = dialog.exec();
+
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.arbitraryTimes.setValue(dialog.timeSteps());
 }
 
 void Post3dWindowParticleStructuredSettingDialog::updateRemoveButtonStatus()

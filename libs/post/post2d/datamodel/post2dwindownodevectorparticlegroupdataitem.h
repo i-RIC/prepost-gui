@@ -7,6 +7,7 @@
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/compositecontainer.h>
 #include <misc/enumcontainert.h>
+#include <misc/intarraycontainer.h>
 #include <misc/intcontainer.h>
 #include <misc/stringcontainer.h>
 #include <misc/doublecontainer.h>
@@ -34,22 +35,23 @@ protected:
 	const static int DEFAULT_SIZE = 3;
 
 public:
+	enum GenerateMode {gmPeriodical, gmArbitrary};
 	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
 
 	struct Setting : public CompositeContainer
 	{
-		/// Constructor
 		Setting();
-		/// Copy constructor
 		Setting(const Setting& s);
-		/// Copy operator
+
 		Setting& operator=(const Setting& s);
 
 		StringContainer target;
+		EnumContainerT<GenerateMode> generateMode;
 		EnumContainerT<TimeMode> timeMode;
 
 		IntContainer timeSamplingRate;
 		IntContainer timeDivision;
+		IntArrayContainer arbitraryTimes;
 		IntContainer particleSize;
 		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
 	};

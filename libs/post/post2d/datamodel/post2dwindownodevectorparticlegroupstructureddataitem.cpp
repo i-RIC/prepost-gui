@@ -4,7 +4,7 @@
 #include "private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/iricundostack.h>
+#include <guicore/project/projectdata.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
@@ -49,6 +49,7 @@ QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 		delete dialog;
 		return 0;
 	}
+	dialog->setProjectMainFile(projectData()->mainfile());
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 

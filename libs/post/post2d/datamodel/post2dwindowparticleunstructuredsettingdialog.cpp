@@ -10,6 +10,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
+#include <postbase/particle/particlearbitrarytimeeditdialog.h>
 
 #include <QPushButton>
 #include <QVector2D>
@@ -40,6 +41,7 @@ Post2dWindowParticleUnstructuredSettingDialog::Post2dWindowParticleUnstructuredS
 	connect(ui->addPushButton, SIGNAL(clicked()), this, SLOT(addData()));
 	connect(ui->removePushButton, SIGNAL(clicked()), this, SLOT(removeData()));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
+	connect(ui->arbitraryEditButton, SIGNAL(clicked()), this, SLOT(editArbitraryTimes()));
 
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonPress(QAbstractButton*)));
 
@@ -50,6 +52,11 @@ Post2dWindowParticleUnstructuredSettingDialog::Post2dWindowParticleUnstructuredS
 Post2dWindowParticleUnstructuredSettingDialog::~Post2dWindowParticleUnstructuredSettingDialog()
 {
 	delete ui;
+}
+
+void Post2dWindowParticleUnstructuredSettingDialog::setProjectMainFile(ProjectMainFile* file)
+{
+	m_mainFile = file;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -65,6 +72,12 @@ void Post2dWindowParticleUnstructuredSettingDialog::setSettings(const Post2dWind
 	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
+
+	if (s.generateMode == Post2dWindowNodeVectorParticleGroupDataItem::gmPeriodical) {
+		ui->periodicalRadioButton->setChecked(true);
+	} else {
+		ui->arbitraryRadioButton->setChecked(true);
+	}
 
 	// timemode
 	if (s.timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
@@ -93,6 +106,12 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting Post2dWindowParticleUnstruc
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
 	ret.target = m_solutions.at(index).c_str();
+
+	if (ui->periodicalRadioButton->isChecked()) {
+		ret.generateMode = Post2dWindowNodeVectorParticleGroupDataItem::gmPeriodical;
+	} else {
+		ret.generateMode = Post2dWindowNodeVectorParticleGroupDataItem::gmArbitrary;
+	}
 
 	// timeMode
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
@@ -252,6 +271,18 @@ void Post2dWindowParticleUnstructuredSettingDialog::showRegionDialog()
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 	m_setting.regionMode = dialog.regionMode();
+}
+
+void Post2dWindowParticleUnstructuredSettingDialog::editArbitraryTimes()
+{
+	ParticleArbitraryTimeEditDialog dialog(this);
+	dialog.setMainFile(m_mainFile);
+	dialog.setTimeSteps(m_setting.arbitraryTimes.value());
+	int ret = dialog.exec();
+
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.arbitraryTimes.setValue(dialog.timeSteps());
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::apply()

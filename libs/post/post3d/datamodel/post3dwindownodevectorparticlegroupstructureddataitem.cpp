@@ -1,8 +1,10 @@
 #include "post3dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post3dwindowparticlestructuredsettingdialog.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/project/projectdata.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
 
@@ -14,6 +16,12 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
+Post3dWindowNodeVectorParticleGroupStructuredDataItem::Post3dWindowNodeVectorParticleGroupStructuredDataItem(Post3dWindowDataItem* parent) :
+	Post3dWindowNodeVectorParticleGroupDataItem(parent)
+{
+	setDefaultValues();
+}
+
 QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
 	Post3dWindowParticleStructuredSettingDialog* dialog = new Post3dWindowParticleStructuredSettingDialog(p);
@@ -22,94 +30,20 @@ QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 		delete dialog;
 		return 0;
 	}
+	dialog->setProjectMainFile(projectData()->mainfile());
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 
-	dialog->setSolution(m_target);
-	dialog->setTimeMode(m_timeMode);
-	dialog->setTimeSamplingRate(m_timeSamplingRate);
-	dialog->setTimeDivision(m_timeDivision);
+	dialog->setSetting(m_setting);
 	dialog->setSettings(m_settings);
-	dialog->setRegionMode(m_regionMode);
 
 	return dialog;
 }
 
-class Post3dWindowParticleStructuredSetProperty : public QUndoCommand
-{
-public:
-	Post3dWindowParticleStructuredSetProperty(const std::string& sol, Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm, int tsr, int tdiv, const QList<Post3dWindowStructuredParticleSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post3dWindowNodeVectorParticleGroupStructuredDataItem* item) :
-		QUndoCommand(QObject::tr("Update Particle Setting"))
-	{
-		m_newEnabled = true;
-		m_newSolution = sol;
-		m_newTimeMode = tm;
-		m_newTimeSamplingRate = tsr;
-		m_newTimeDivision = tdiv;
-		m_newSettings = settings;
-		m_newRegionMode = rm;
-
-		m_oldEnabled = item->isEnabled();
-		m_oldSolution = item->m_target;
-		m_oldTimeMode = item->m_timeMode;
-		m_oldTimeSamplingRate = item->m_timeSamplingRate;
-		m_oldTimeDivision = item->m_timeDivision;
-		m_oldSettings = item->m_settings;
-		m_oldRegionMode = item->m_regionMode;
-
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setEnabled(m_oldEnabled);
-		m_item->setTarget(m_oldSolution);
-		m_item->m_timeMode = m_oldTimeMode;
-		m_item->m_timeSamplingRate = m_oldTimeSamplingRate;
-		m_item->m_timeDivision = m_oldTimeDivision;
-		m_item->m_settings = m_oldSettings;
-		m_item->m_regionMode = m_oldRegionMode;
-
-		m_item->updateActorSettings();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setEnabled(m_newEnabled);
-		m_item->setTarget(m_newSolution);
-		m_item->m_timeMode = m_newTimeMode;
-		m_item->m_timeSamplingRate = m_newTimeSamplingRate;
-		m_item->m_timeDivision = m_newTimeDivision;
-		m_item->m_settings = m_newSettings;
-		m_item->m_regionMode = m_newRegionMode;
-
-		m_item->updateActorSettings();
-		m_item->setIsCommandExecuting(false);
-	}
-
-private:
-	bool m_oldEnabled;
-	std::string m_oldSolution;
-	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_oldTimeMode;
-	int m_oldTimeSamplingRate;
-	int m_oldTimeDivision;
-	QList<Post3dWindowStructuredParticleSetSetting> m_oldSettings;
-	StructuredGridRegion::RegionMode m_oldRegionMode;
-
-	bool m_newEnabled;
-	std::string m_newSolution;
-	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_newTimeMode;
-	int m_newTimeSamplingRate;
-	int m_newTimeDivision;
-	QList<Post3dWindowStructuredParticleSetSetting> m_newSettings;
-	StructuredGridRegion::RegionMode m_newRegionMode;
-
-	Post3dWindowNodeVectorParticleGroupStructuredDataItem* m_item;
-};
-
 void Post3dWindowNodeVectorParticleGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post3dWindowParticleStructuredSettingDialog* dialog = dynamic_cast<Post3dWindowParticleStructuredSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post3dWindowParticleStructuredSetProperty(dialog->solution(), dialog->timeMode(), dialog->timeSamplingRate(), dialog->timeDivision(), dialog->settings(), dialog->regionMode(), this));
+	iRICUndoStack::instance().push(new SetSettingCommand(dialog->setting(), dialog->settings(), this));
 }
 
 void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>351</width>
-    <height>642</height>
+    <width>377</width>
+    <height>703</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,6 +33,16 @@
          <widget class="QComboBox" name="solutionComboBox"/>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="periodicalRadioButton">
+        <property name="text">
+         <string>Generate periodically</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QGroupBox" name="generationTimeIntervalGroupBox">
@@ -213,6 +223,40 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <zorder></zorder>
         <zorder></zorder>
        </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_12">
+        <item>
+         <widget class="QRadioButton" name="arbitraryRadioButton">
+          <property name="text">
+           <string>Generate at arbitrary time</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="arbitraryEditButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Edit...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>18</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -704,14 +748,14 @@ p, li { white-space: pre-wrap; }
     </layout>
    </item>
    <item>
-    <spacer name="verticalSpacer">
+    <spacer name="verticalSpacer_4">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>1</height>
+       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -757,8 +801,8 @@ p, li { white-space: pre-wrap; }
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>413</y>
+     <x>266</x>
+     <y>693</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -773,12 +817,44 @@ p, li { white-space: pre-wrap; }
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
-     <y>413</y>
+     <x>313</x>
+     <y>693</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>periodicalRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>generationTimeIntervalGroupBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>arbitraryRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>arbitraryEditButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>189</y>
     </hint>
    </hints>
   </connection>

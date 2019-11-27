@@ -38,6 +38,30 @@
 #include <vtkUnstructuredGridWriter.h>
 #include <vtkVertex.h>
 
+
+Post3dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
+	CompositeContainer ({&target, &generateMode, &timeMode, &timeSamplingRate, &timeDivision, &arbitraryTimes, &regionMode}),
+	target {"solution"},
+	generateMode {"generationMode", gmPeriodical},
+	timeMode {"timeMode", tmNormal},
+	timeSamplingRate {"timeSamplingRate", 2},
+	timeDivision {"timeDivision", 2},
+	arbitraryTimes {"arbitraryTimes"},
+	regionMode {"regionMode", StructuredGridRegion::rmFull}
+{}
+
+Post3dWindowNodeVectorParticleGroupDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post3dWindowNodeVectorParticleGroupDataItem::Setting& Post3dWindowNodeVectorParticleGroupDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_previousStep {-2},
@@ -76,12 +100,12 @@ void Post3dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGra
 
 void Post3dWindowNodeVectorParticleGroupDataItem::setDefaultValues()
 {
-	m_target= "";
+	m_setting.target= "";
 
-	m_timeMode = tmNormal;
-	m_timeSamplingRate = 2;
-	m_timeDivision = 2;
-	m_regionMode = StructuredGridRegion::rmFull;
+	m_setting.timeMode = tmNormal;
+	m_setting.timeSamplingRate = 2;
+	m_setting.timeDivision = 2;
+	m_setting.regionMode = StructuredGridRegion::rmFull;
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
@@ -92,7 +116,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	if (m_target == "") {return;}
+	if (m_setting.target == "") { return; }
 	vtkPointSet* ps = cont->data();
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
@@ -107,21 +131,14 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	setTarget(iRIC::toStr(elem.attribute("solution")));
-	m_timeMode = static_cast<TimeMode>(elem.attribute("timeMode").toInt());
-	m_timeSamplingRate = elem.attribute("timeSamplingRate").toInt();
-	m_timeDivision = elem.attribute("timeDivision").toInt();
-	m_regionMode = static_cast<StructuredGridRegion::RegionMode>(elem.attribute("regionMode").toInt());
+	m_setting.load(node);
+	setTarget(m_setting.target);
+	updateActorSettings();
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_target.c_str());
-	writer.writeAttribute("timeMode", QString::number(static_cast<int>(m_timeMode)));
-	writer.writeAttribute("timeSamplingRate", QString::number(m_timeSamplingRate));
-	writer.writeAttribute("timeDivision", QString::number(m_timeDivision));
-	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
+	m_setting.save(writer);
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::setupClipper()
@@ -156,7 +173,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	m_particleMappers.clear();
 
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
-	if (m_target == "") {return;}
+	if (m_setting.target == "") {return;}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (zoneContainer == nullptr) {return;}
 	int currentStep = 0;
@@ -211,25 +228,44 @@ void Post3dWindowNodeVectorParticleGroupDataItem::applyZScale()
 void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
 	clearParticleGrids();
-	for (int i = 0; i < m_particleActors.size(); ++i) {
-		vtkPointSet* pointsGrid = newParticles(i);
-		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-		points->SetDataTypeToDouble();
-		if (pointsGrid != nullptr) {
-			for (vtkIdType i = 0; i < pointsGrid->GetNumberOfPoints(); ++i) {
-				double p[3];
-				pointsGrid->GetPoint(i, p);
-				points->InsertNextPoint(p);
-			}
+	bool add = true;
+	if (m_setting.generateMode == gmPeriodical) {
+		// continue
+	} else {
+		const auto& timeVals = m_setting.arbitraryTimes.value();
+		PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+		int s = zoneContainer->solutionInfo()->currentStep();
+		bool found = std::binary_search(timeVals.begin(), timeVals.end(), s);
+		if (! found) {
+			add = false;
 		}
-		vtkPolyData* grid = setupPolyDataFromPoints(points);
-		m_particleMappers[i]->SetInputData(grid);
-		m_particleGrids.push_back(grid);
+	}
+	for (int i = 0; i < m_particleActors.size(); ++i) {
+		if (add) {
+			vtkPointSet* pointsGrid = newParticles(i);
+			vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+			points->SetDataTypeToDouble();
+			if (pointsGrid != nullptr) {
+				for (vtkIdType i = 0; i < pointsGrid->GetNumberOfPoints(); ++i) {
+					double p[3];
+					pointsGrid->GetPoint(i, p);
+					points->InsertNextPoint(p);
+				}
+			}
+			vtkPolyData* grid = setupPolyDataFromPoints(points);
+			m_particleMappers[i]->SetInputData(grid);
+			m_particleGrids.push_back(grid);
+		} else {
+			vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+			points->SetDataTypeToDouble();
+			vtkPolyData* polyData = setupPolyDataFromPoints(points);
+			m_particleGrids.push_back(polyData);
+		}
 	}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
-	if (m_timeMode == tmSkip) {
-		m_nextStepToAddParticles = currentStep + m_timeSamplingRate;
+	if (m_setting.timeMode == tmSkip) {
+		m_nextStepToAddParticles = currentStep + m_setting.timeSamplingRate;
 	} else {
 		m_nextStepToAddParticles = currentStep + 1;
 	}
@@ -239,7 +275,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPointSet* ps = zoneContainer->data();
-	ps->GetPointData()->SetActiveVectors(m_target.c_str());
+	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
 
 	int currentStep = zoneContainer->solutionInfo()->currentStep();
 
@@ -263,20 +299,36 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 		vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, timeDiv);
 
 		// add new particles.
-		if (currentStep == m_nextStepToAddParticles) {
-			vtkPointSet* pointsGrid = newParticles(i);
-			if (m_timeMode == tmSubdivide) {
-				for (int j = 0; j < m_timeDivision - 1; ++j) {
-					double subTime = j * timeDiv / m_timeDivision;
-					tracer->SetMaximumIntegrationTime(subTime);
-					tracer->SetSourceData(pointsGrid);
-					tracer->Update();
-					vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
+		if (m_setting.generateMode == gmPeriodical) {
+			// periodical
+			if (currentStep == m_nextStepToAddParticles) {
+				vtkPointSet* pointsGrid = newParticles(i);
+				if (m_setting.timeMode == tmSubdivide) {
+					for (int j = 0; j < m_setting.timeDivision - 1; ++j) {
+						double subTime = j * timeDiv / m_setting.timeDivision;
+						tracer->SetMaximumIntegrationTime(subTime);
+						tracer->SetSourceData(pointsGrid);
+						tracer->Update();
+						vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
+					}
+				} else {
+					for (vtkIdType j = 0; j < pointsGrid->GetNumberOfPoints(); ++j) {
+						double v[3];
+						pointsGrid->GetPoint(j, v);
+						points->InsertNextPoint(v);
+					}
 				}
-			} else {
-				for (vtkIdType j = 0; j < pointsGrid->GetNumberOfPoints(); ++j) {
+			}
+		} else {
+			// arbitrary
+			const auto& timeVals = m_setting.arbitraryTimes.value();
+			int s = currentStep;
+			bool found = std::binary_search(timeVals.begin(), timeVals.end(), s);
+			if (found) {
+				vtkPointSet* newPoints = newParticles(i);
+				for (vtkIdType j = 0; j < newPoints->GetNumberOfPoints(); ++j) {
 					double v[3];
-					pointsGrid->GetPoint(j, v);
+					newPoints->GetPoint(j, v);
 					points->InsertNextPoint(v);
 				}
 			}
@@ -288,9 +340,9 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 		m_particleGrids[i]->Delete();
 		m_particleGrids[i] = newPoints;
 	}
-	if (m_timeMode == tmSkip) {
+	if (m_setting.timeMode == tmSkip) {
 		if (currentStep == m_nextStepToAddParticles) {
-			m_nextStepToAddParticles = currentStep + m_timeSamplingRate;
+			m_nextStepToAddParticles = currentStep + m_setting.timeSamplingRate;
 		}
 	} else {
 		m_nextStepToAddParticles = currentStep + 1;
@@ -375,23 +427,23 @@ bool Post3dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString&
 
 std::string Post3dWindowNodeVectorParticleGroupDataItem::target() const
 {
-	return m_target;
+	return m_setting.target;
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 
-	m_target = target;
+	m_setting.target.setValue(target.c_str());
 	updateActorSettings();
 }
 
 vtkPointSet* Post3dWindowNodeVectorParticleGroupDataItem::getRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();
-	if (m_regionMode == StructuredGridRegion::rmFull) {
+	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 		return ps;
-	} else if (m_regionMode == StructuredGridRegion::rmActive) {
+	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();

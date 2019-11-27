@@ -4,8 +4,6 @@
 #include "post3dwindownodevectorparticlegroupdataitem.h"
 #include <QList>
 
-class Post3dWindowParticleStructuredSetProperty;
-
 struct Post3dWindowStructuredParticleSetSetting {
 	enum SpaceMode {smNormal, smSubdivide, smSkip};
 	/// Range to generate grid
@@ -24,10 +22,7 @@ class Post3dWindowNodeVectorParticleGroupStructuredDataItem : public Post3dWindo
 	Q_OBJECT
 
 public:
-	Post3dWindowNodeVectorParticleGroupStructuredDataItem(Post3dWindowDataItem* parent)
-		: Post3dWindowNodeVectorParticleGroupDataItem(parent) {
-		setDefaultValues();
-	}
+	Post3dWindowNodeVectorParticleGroupStructuredDataItem(Post3dWindowDataItem* parent);
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -46,8 +41,7 @@ private:
 
 	QList<Post3dWindowStructuredParticleSetSetting> m_settings;
 
-public:
-	friend class Post3dWindowParticleStructuredSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST3DWINDOWNODEVECTORPARTICLEGROUPSTRUCTUREDDATAITEM_H

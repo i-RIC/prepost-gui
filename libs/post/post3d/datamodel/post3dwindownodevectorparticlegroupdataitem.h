@@ -6,6 +6,12 @@
 #include <guibase/vtksubdividegrid.h>
 #include <guibase/structuredgridregion.h>
 #include <guicore/misc/targeted/targeteditemi.h>
+#include <misc/compositecontainer.h>
+#include <misc/doublecontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/intarraycontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/stringcontainer.h>
 
 #include <QMap>
 #include <QColor>
@@ -31,10 +37,28 @@ private:
 	const static int DEFAULT_SIZE = 3;
 
 public:
+	enum GenerateMode {gmPeriodical, gmArbitrary};
 	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
 
 	Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeVectorParticleGroupDataItem();
+
+	struct Setting : public CompositeContainer
+	{
+		Setting();
+		Setting(const Setting& s);
+
+		Setting& operator=(const Setting& s);
+
+		StringContainer target;
+		EnumContainerT<GenerateMode> generateMode;
+		EnumContainerT<TimeMode> timeMode;
+
+		IntContainer timeSamplingRate;
+		IntContainer timeDivision;
+		IntArrayContainer arbitraryTimes;
+		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
+	};
 
 	void updateActorSettings();
 	void setupClipper();
@@ -74,12 +98,7 @@ protected:
 	std::vector<vtkActor*> m_particleActors;
 	std::vector<vtkDataSetMapper*> m_particleMappers;
 
-	std::string m_target;
-
-	TimeMode m_timeMode;
-	int m_timeDivision;
-	int m_timeSamplingRate;
-	StructuredGridRegion::RegionMode m_regionMode;
+	Setting m_setting;
 
 private:
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;

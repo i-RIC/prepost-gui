@@ -83,6 +83,7 @@ HEADERS += cfshapeexportwindowi.h \
            postbase_global.h \
            postwindowgridtypedataiteminterface.h \
            svkmlexportwindowi.h \
+           particle/particlearbitrarytimeeditdialog.h \
            particle/postparticlebasicsetting.h \
            particle/postparticlebasicsettingdialog.h \
            particle/postparticlescalarpropertydialog.h \
@@ -98,6 +99,7 @@ HEADERS += cfshapeexportwindowi.h \
            time/private/posttimedataitem_setsettingcommand.h \
            title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
+         particle/particlearbitrarytimeeditdialog.ui \
          particle/postparticlebasicsettingdialog.ui \
          particle/postparticlescalarpropertydialog.ui \
          particle/postparticlevectorpropertydialog.ui \
@@ -107,6 +109,7 @@ FORMS += postallzoneselectingdialog.ui \
          title/posttitleeditdialog.ui
 SOURCES += post2dwindowcontoursetting.cpp \
            postallzoneselectingdialog.cpp \
+           particle/particlearbitrarytimeeditdialog.cpp \
            particle/postparticlebasicsetting.cpp \
            particle/postparticlebasicsettingdialog.cpp \
            particle/postparticlescalarpropertydialog.cpp \
