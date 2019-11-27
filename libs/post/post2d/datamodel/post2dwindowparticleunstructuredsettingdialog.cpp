@@ -2,6 +2,7 @@
 
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowparticleunstructuredsettingdialog.h"
+#include "private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.h"
 
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
@@ -136,44 +137,6 @@ void Post2dWindowParticleUnstructuredSettingDialog::updateMousePosition(const QV
 		apply();
 	}
 }
-
-class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::SetSettingCommand : public QUndoCommand
-{
-public:
-	SetSettingCommand(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting>& unsts, Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item) :
-		QUndoCommand(Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::tr("Update Particle Setting")),
-		m_newSetting {s},
-		m_newUnstSettings (unsts),
-		m_oldEnabled {item->isEnabled()},
-		m_oldSetting {item->m_setting},
-		m_oldUnstSettings (item->m_unstSettings),
-		m_item {item}
-	{}
-	void redo() {
-		m_item->setEnabled(true);
-		m_item->m_setting = m_newSetting;
-		m_item->setTarget(m_newSetting.target);
-		m_item->m_unstSettings = m_newUnstSettings;
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->setEnabled(m_oldEnabled);
-		m_item->m_setting = m_newSetting;
-		m_item->setTarget(m_newSetting.target);
-		m_item->m_unstSettings = m_newUnstSettings;
-		m_item->updateActorSettings();
-	}
-
-private:
-	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_newSetting;
-	QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting> m_newUnstSettings;
-
-	bool m_oldEnabled;
-	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_oldSetting;
-	QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting> m_oldUnstSettings;
-
-	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* m_item;
-};
 
 void Post2dWindowParticleUnstructuredSettingDialog::accept()
 {

@@ -259,6 +259,7 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h \
+           datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h \
@@ -347,6 +348,7 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp \
