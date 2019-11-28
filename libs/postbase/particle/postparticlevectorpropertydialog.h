@@ -14,22 +14,28 @@ namespace Ui {
 class PostParticleVectorPropertyDialog;
 }
 
-class PostZoneDataContainer;
+class PostWindowGridTypeDataItemInterface;
+
+class vtkPolyData;
 
 class POSTBASEDLL_EXPORT PostParticleVectorPropertyDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit PostParticleVectorPropertyDialog(QWidget *parent = nullptr);
 	~PostParticleVectorPropertyDialog();
 
-	void setZoneData(PostZoneDataContainer* data);
+	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
+	void setData(vtkPolyData* data);
 
 	ArrowSettingContainer setting() const;
 	void setSetting(const ArrowSettingContainer& setting);
 
 private:
-	void setupComboBoxes(PostZoneDataContainer *zoneData);
+	void setupComboBoxes(vtkPolyData *data);
+
+	PostWindowGridTypeDataItemInterface* m_gridTypeDataItem;
 
 	std::vector<std::string> m_targets;
 	std::vector<std::string> m_colorTargets;

@@ -1,4 +1,5 @@
 #include "postparticlevectorpropertydialog.h"
+#include "postwindowgridtypedataiteminterface.h"
 #include "ui_postparticlevectorpropertydialog.h"
 
 #include <guibase/comboboxtool.h>
@@ -21,9 +22,14 @@ PostParticleVectorPropertyDialog::~PostParticleVectorPropertyDialog()
 	delete ui;
 }
 
-void PostParticleVectorPropertyDialog::setZoneData(PostZoneDataContainer* data)
+void PostParticleVectorPropertyDialog::setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item)
 {
-	ui->samplingNumberSpinBox->setMaximum(data->particleData()->GetNumberOfPoints());
+	m_gridTypeDataItem = item;
+}
+
+void PostParticleVectorPropertyDialog::setData(vtkPolyData* data)
+{
+	ui->samplingNumberSpinBox->setMaximum(data->GetNumberOfPoints());
 	setupComboBoxes(data);
 }
 
@@ -106,10 +112,10 @@ void PostParticleVectorPropertyDialog::setSetting(const ArrowSettingContainer& s
 	ui->lineWidthSpinBox->setValue(s.lineWidth);
 }
 
-void PostParticleVectorPropertyDialog::setupComboBoxes(PostZoneDataContainer* zoneData)
+void PostParticleVectorPropertyDialog::setupComboBoxes(vtkPolyData* data)
 {
-	vtkPointData* pd = zoneData->particleData()->GetPointData();
-	SolverDefinitionGridType* gt = zoneData->gridType();
+	auto pd = data->GetPointData();
+	auto gt = m_gridTypeDataItem->gridType();
 
 	m_targets = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
 	ComboBoxTool::setupItems(gt->solutionCaptions(m_targets), ui->targetComboBox);

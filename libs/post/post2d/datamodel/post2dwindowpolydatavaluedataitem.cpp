@@ -42,9 +42,8 @@ void Post2dWindowPolyDataValueDataItem::mouseReleaseEvent(QMouseEvent* event, VT
 
 void Post2dWindowPolyDataValueDataItem::addCustomMenuItems(QMenu* menu)
 {
-	// @todo implement this
-	// QAction* a = zoneDataItem()->showParticleBrowserAction();
-	// menu->addAction(a);
+	QAction* a = zoneDataItem()->showAttributeBrowserActionForPolyDataResult();
+	menu->addAction(a);
 }
 
 Post2dWindowZoneDataItem* Post2dWindowPolyDataValueDataItem::zoneDataItem() const

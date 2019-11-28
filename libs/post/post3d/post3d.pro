@@ -151,12 +151,15 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindownodevectorstreamlinedataitem.h \
            datamodel/post3dwindownodevectorstreamlinegroupdataitem.h \
            datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.h \
-           datamodel/post3dwindowparticlesscalardataitem.h \
-           datamodel/post3dwindowparticlesscalargroupdataitem.h \
+           datamodel/post3dwindowparticlegrouprootdataitem.h \
+           datamodel/post3dwindowparticlegrouptopdataitem.h \
+           datamodel/post3dwindowparticlesbasescalardataitem.h \
+           datamodel/post3dwindowparticlesbasescalargroupdataitem.h \
+           datamodel/post3dwindowparticlesbasetopdataitem.h \
+           datamodel/post3dwindowparticlesbasevectordataitem.h \
+           datamodel/post3dwindowparticlesbasevectorgroupdataitem.h \
            datamodel/post3dwindowparticlestopdataitem.h \
            datamodel/post3dwindowparticlestructuredsettingdialog.h \
-           datamodel/post3dwindowparticlesvectordataitem.h \
-           datamodel/post3dwindowparticlesvectorgroupdataitem.h \
            datamodel/post3dwindowrootdataitem.h \
            datamodel/post3dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post3dwindowsurfacedataitem.h \
@@ -166,9 +169,9 @@ HEADERS += post3d_global.h \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.h \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.h \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.h
+           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h
 FORMS += datamodel/post3dwindowarrowgroupsettingdialog.ui \
          datamodel/post3dwindowcontourgroupsettingdialog.ui \
          datamodel/post3dwindowfacesettingwidget.ui \
@@ -202,12 +205,15 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindownodevectorstreamlinedataitem.cpp \
            datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp \
            datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp \
-           datamodel/post3dwindowparticlesscalardataitem.cpp \
-           datamodel/post3dwindowparticlesscalargroupdataitem.cpp \
+           datamodel/post3dwindowparticlegrouprootdataitem.cpp \
+           datamodel/post3dwindowparticlegrouptopdataitem.cpp \
+           datamodel/post3dwindowparticlesbasescalardataitem.cpp \
+           datamodel/post3dwindowparticlesbasescalargroupdataitem.cpp \
+           datamodel/post3dwindowparticlesbasetopdataitem.cpp \
+           datamodel/post3dwindowparticlesbasevectordataitem.cpp \
+           datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp \
            datamodel/post3dwindowparticlestopdataitem.cpp \
            datamodel/post3dwindowparticlestructuredsettingdialog.cpp \
-           datamodel/post3dwindowparticlesvectordataitem.cpp \
-           datamodel/post3dwindowparticlesvectorgroupdataitem.cpp \
            datamodel/post3dwindowrootdataitem.cpp \
            datamodel/post3dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post3dwindowsurfacedataitem.cpp \
@@ -217,9 +223,9 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.cpp \
            datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.cpp \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp
+           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp
 RESOURCES += post3d.qrc
 TRANSLATIONS += languages/iricPost3d_es_ES.ts \
                 languages/iricPost3d_fr_FR.ts \

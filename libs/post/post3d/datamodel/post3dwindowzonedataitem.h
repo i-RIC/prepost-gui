@@ -19,6 +19,7 @@ class Post3dWindowNodeScalarGroupTopDataItem;
 class Post3dWindowArrowGroupDataItem;
 class Post3dWindowNodeVectorStreamlineGroupDataItem;
 class Post3dWindowNodeVectorParticleGroupDataItem;
+class Post3dWindowParticleGroupRootDataItem;
 class Post3dWindowParticlesTopDataItem;
 class PostZoneDataContainer;
 
@@ -27,7 +28,6 @@ class Post3dWindowZoneDataItem : public Post3dWindowDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent);
 
 	// Standard mouse event handlers
@@ -58,6 +58,7 @@ private:
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post3dWindowParticlesTopDataItem* m_particlesDataItem;
+	Post3dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
 
 	std::string m_zoneName;
 	int m_zoneNumber;

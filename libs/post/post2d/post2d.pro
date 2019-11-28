@@ -233,12 +233,15 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindownodevectorstreamlinegroupdataitem.h \
            datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.h \
            datamodel/post2dwindownodevectorstreamlinegroupunstructureddataitem.h \
-           datamodel/post2dwindowparticlesscalardataitem.h \
-           datamodel/post2dwindowparticlesscalargroupdataitem.h \
+           datamodel/post2dwindowparticlegrouprootdataitem.h \
+           datamodel/post2dwindowparticlegrouptopdataitem.h \
+           datamodel/post2dwindowparticlesbasescalardataitem.h \
+           datamodel/post2dwindowparticlesbasescalargroupdataitem.h \
+           datamodel/post2dwindowparticlesbasetopdataitem.h \
+           datamodel/post2dwindowparticlesbasevectordataitem.h \
+           datamodel/post2dwindowparticlesbasevectorgroupdataitem.h \
            datamodel/post2dwindowparticlestopdataitem.h \
            datamodel/post2dwindowparticlestructuredsettingdialog.h \
-           datamodel/post2dwindowparticlesvectordataitem.h \
-           datamodel/post2dwindowparticlesvectorgroupdataitem.h \
            datamodel/post2dwindowparticleunstructuredsettingdialog.h \
            datamodel/post2dwindowpolydatagroupdataitem.h \
            datamodel/post2dwindowpolydatatopdataitem.h \
@@ -255,9 +258,9 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.h \
            datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.h
 FORMS += post2dgridregionselectdialog.ui \
@@ -319,12 +322,15 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupunstructureddataitem.cpp \
-           datamodel/post2dwindowparticlesscalardataitem.cpp \
-           datamodel/post2dwindowparticlesscalargroupdataitem.cpp \
+           datamodel/post2dwindowparticlegrouprootdataitem.cpp \
+           datamodel/post2dwindowparticlegrouptopdataitem.cpp \
+           datamodel/post2dwindowparticlesbasescalardataitem.cpp \
+           datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp \
+           datamodel/post2dwindowparticlesbasetopdataitem.cpp \
+           datamodel/post2dwindowparticlesbasevectordataitem.cpp \
+           datamodel/post2dwindowparticlesbasevectorgroupdataitem.cpp \
            datamodel/post2dwindowparticlestopdataitem.cpp \
            datamodel/post2dwindowparticlestructuredsettingdialog.cpp \
-           datamodel/post2dwindowparticlesvectordataitem.cpp \
-           datamodel/post2dwindowparticlesvectorgroupdataitem.cpp \
            datamodel/post2dwindowparticleunstructuredsettingdialog.cpp \
            datamodel/post2dwindowpolydatagroupdataitem.cpp \
            datamodel/post2dwindowpolydatatopdataitem.cpp \
@@ -339,9 +345,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.cpp \
            datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.cpp
 RESOURCES += post2d.qrc

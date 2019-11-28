@@ -13,7 +13,7 @@ Post2dWindowPolyDataTopDataItem::Post2dWindowPolyDataTopDataItem(Post2dWindowDat
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	const auto& map = cont->polyDataMap();
 
 	for (auto pair : map) {

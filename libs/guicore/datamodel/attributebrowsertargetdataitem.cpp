@@ -56,8 +56,8 @@ void AttributeBrowserTargetDataItem::setPoint(const QPointF& v)
 {
 	m_polygonsActor.linesActor()->VisibilityOff();
 	m_polygonsActor.paintActor()->VisibilityOff();
-	m_polygonsActor.linesActor()->VisibilityOff();
-	m_polygonsActor.pointsActor()->VisibilityOn();
+	m_lineActor.lineActor()->VisibilityOff();
+	m_lineActor.pointsActor()->VisibilityOn();
 
 	std::vector<QPointF> points;
 	points.push_back(v);

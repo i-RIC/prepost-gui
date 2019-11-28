@@ -1,4 +1,5 @@
 #include "../misc/cgnslinkfollower.h"
+#include "../misc/cgnsutil.h"
 #include "../pre/grid/structured2dgrid.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
@@ -9,6 +10,7 @@
 #include "postcalculatedresult.h"
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
+#include "private/postzonedatacontainer_particlegrouploader.h"
 #include "private/postzonedatacontainer_particleloader.h"
 #include "private/postzonedatacontainer_polydataloader.h"
 
@@ -143,9 +145,22 @@ vtkPolyData* PostZoneDataContainer::particleData() const
 	return m_particleData;
 }
 
+const std::map<std::string, vtkSmartPointer<vtkPolyData> >& PostZoneDataContainer::particleGroupMap() const
+{
+	return m_particleGroupMap;
+}
+
 const std::map<std::string, vtkSmartPointer<vtkPolyData> >& PostZoneDataContainer::polyDataMap() const
 {
 	return m_polyDataMap;
+}
+
+vtkPolyData* PostZoneDataContainer::particleGroup(const std::string& name) const
+{
+	auto it = m_particleGroupMap.find(name);
+	if (it == m_particleGroupMap.end()) {return nullptr;}
+
+	return it->second.Get();
 }
 
 vtkPolyData* PostZoneDataContainer::polyData(const std::string& name) const
@@ -534,29 +549,6 @@ bool PostZoneDataContainer::getCellSolutionId(const int fn, const int currentSte
 	return findSolutionId(fn, currentStep, solId, "FlowCellSolutionPointers");
 }
 
-template<class T, class DA>
-static void loadScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen)
-{
-	std::vector<T> data(datalen, 0);
-	cg_array_read(index, data.data());
-	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
-	tmpArray->SetName(iRIC::toStr(name).c_str());
-	tmpArray->Allocate(datalen);
-	if (PostZoneDataContainer::IBC == name) {
-		// for IBC values, special handling is done: 0 is inactive the others are all active.
-		for (int i = 0; i < datalen; ++i) {
-			int val = static_cast<int>(data[i]);
-			if (val != 0) {val = 1;}
-			tmpArray->InsertNextValue(val);
-		}
-	} else {
-		for (int i = 0; i < datalen; ++i) {
-			tmpArray->InsertNextValue(data[i]);
-		}
-	}
-	atts->AddArray(tmpArray);
-}
-
 bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int firstAtt)
 {
 	int narrays;
@@ -579,74 +571,15 @@ bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int first
 			datalen *= dimVector[j];
 		}
 		if (datatype == Integer) {
-			loadScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen);
+			CgnsUtil::loadScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen, IBC);
 		} else if (datatype == RealSingle) {
-			loadScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen);
+			CgnsUtil::loadScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, IBC);
 		} else if (datatype == RealDouble) {
-			loadScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen);
+			CgnsUtil::loadScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, IBC);
 		}
 	}
 	atts->Modified();
 	return true;
-}
-
-static int findArray(const QString& name, DataType_t dt, int dim, int narrays)
-{
-	for (int i = 1; i <= narrays; ++i) {
-		char arrayname[30];
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
-		if (name == arrayname && dt == datatype && dim == dimension) {
-			return i;
-		}
-	}
-	return 0;
-}
-
-template<class T, class DA>
-static void loadVectorDataT(const QString& name, vtkDataSetAttributes* atts, int iX, int iY, int iZ, int datalen)
-{
-	std::vector<T> dataX(datalen, 0);
-	std::vector<T> dataY(datalen, 0);
-	std::vector<T> dataZ(datalen, 0);
-	std::vector<double> dataMag(datalen, 0);
-	// read x.
-	cg_array_read(iX, dataX.data());
-	// read y.
-	if (iY != 0) {
-		cg_array_read(iY, dataY.data());
-	}
-	// read z
-	if (iZ != 0){
-		cg_array_read(iZ, dataZ.data());
-	}
-	for (int i = 0; i < datalen; ++i) {
-		double sum = 0;
-		sum += dataX[i] * dataX[i];
-		sum += dataY[i] * dataY[i];
-		sum += dataZ[i] * dataZ[i];
-		dataMag[i] = std::sqrt(sum);
-	}
-	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
-	tmpArray->SetName(iRIC::toStr(name).c_str());
-	tmpArray->SetNumberOfComponents(3);
-	tmpArray->Allocate(datalen);
-	for (int i = 0; i < datalen; ++i) {
-		tmpArray->InsertNextTuple3(dataX[i], dataY[i], dataZ[i]);
-	}
-	atts->AddArray(tmpArray);
-
-	vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
-	QString magName = name;
-	magName.append(" (magnitude)");
-	magArray->SetName(iRIC::toStr(magName).c_str());
-	magArray->Allocate(datalen);
-	for (int i = 0; i < datalen; ++i) {
-		magArray->InsertNextValue(dataMag[i]);
-	}
-	atts->AddArray(magArray);
 }
 
 bool PostZoneDataContainer::loadVectorData(vtkDataSetAttributes* atts, int firstAtt)
@@ -677,12 +610,12 @@ bool PostZoneDataContainer::loadVectorData(vtkDataSetAttributes* atts, int first
 			// try to find Y component. i.e. "VelocityY"
 			QString yname = vectorName;
 			yname.append("Y");
-			indexY = findArray(yname, datatype, dimension, narrays);
+			indexY = CgnsUtil::findArray(yname, datatype, dimension, narrays);
 			if (indexY != 0) {
 				// try to find Z component. i.e. "VelocityZ"
 				QString zname = vectorName;
 				zname.append("Z");
-				indexZ = findArray(zname, datatype, dimension, narrays);
+				indexZ = CgnsUtil::findArray(zname, datatype, dimension, narrays);
 			}
 			// indexX, indexY, indexZ are set correctly.
 			unsigned int datalen = 1;
@@ -690,11 +623,11 @@ bool PostZoneDataContainer::loadVectorData(vtkDataSetAttributes* atts, int first
 				datalen *= dimVector[j];
 			}
 			if (datatype == Integer) {
-				loadVectorDataT<int, vtkIntArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
+				CgnsUtil::loadVectorDataT<int, vtkIntArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
 			} else if (datatype == RealSingle) {
-				loadVectorDataT<float, vtkFloatArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
+				CgnsUtil::loadVectorDataT<float, vtkFloatArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
 			} else if (datatype == RealDouble) {
-				loadVectorDataT<double, vtkDoubleArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
+				CgnsUtil::loadVectorDataT<double, vtkDoubleArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
 			}
 		}
 	}
@@ -929,6 +862,8 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 
 	// load particles
 	ret = ParticleLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_particleData, this->offset());
+	// load particleGroup
+	ret = ParticleGroupLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_particleGroupMap, this->offset());
 	// load polydata
 	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_polyDataMap, &m_polyDataCellIdsMap, this->offset());
 
