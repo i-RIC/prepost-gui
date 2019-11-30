@@ -490,6 +490,14 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticleGroupRootDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlegrouprootdataitem.cpp" line="12"/>
+        <source>Particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="14"/>
@@ -654,46 +662,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>Post3dWindowParticlesScalarGroupDataItem</name>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="30"/>
+        <location filename="../datamodel/post3dwindowparticlesbasescalargroupdataitem.cpp" line="30"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="128"/>
+        <location filename="../datamodel/post3dwindowparticlesbasescalargroupdataitem.cpp" line="127"/>
         <source>Particle Scalar value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseTopDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Edit Particle Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp" line="48"/>
+        <source>Vector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp" line="72"/>
+        <source>Vector Attribute Select Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="22"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="7"/>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Post3dWindowParticlesVectorGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="47"/>
-        <source>Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="70"/>
-        <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -853,7 +864,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <location filename="../datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp" line="10"/>
         <source>Update Particles Scalar Setting</source>
         <translation type="unfinished"></translation>
     </message>
