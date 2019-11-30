@@ -119,6 +119,10 @@ unix {
 	LIBS += -lgdal
 }
 
+# udunits
+
+LIBS += -ludunits2
+
 # Post-Build Event
 win32 {
 	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
