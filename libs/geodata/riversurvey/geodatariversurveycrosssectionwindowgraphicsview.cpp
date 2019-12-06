@@ -9,6 +9,8 @@
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseeditcrosssectioncommand.h"
 #include "private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h"
+#include "private/geodatariversurveycrosssectionwindow_impl.h"
+
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
 #include <guicore/misc/qundocommandhelper.h>
