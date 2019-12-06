@@ -6,6 +6,7 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 
+#include <QDateTime>
 #include <QInputDialog>
 
 #include <algorithm>

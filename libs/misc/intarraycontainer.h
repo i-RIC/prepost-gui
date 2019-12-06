@@ -4,6 +4,8 @@
 #include "misc_global.h"
 #include "valuearraycontainert.h"
 
+#include <QString>
+
 class MISCDLL_EXPORT IntArrayContainer : public ValueArrayContainerT<int>
 {
 public:
