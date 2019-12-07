@@ -6,7 +6,7 @@
     <message>
         <location filename="../axis3ddataitem.cpp" line="41"/>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>坐标轴</translation>
     </message>
 </context>
 </TS>
