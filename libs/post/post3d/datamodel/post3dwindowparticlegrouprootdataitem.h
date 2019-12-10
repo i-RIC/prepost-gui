@@ -5,6 +5,8 @@
 
 class Post3dWindowParticleGroupRootDataItem : public Post3dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post3dWindowParticleGroupRootDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowParticleGroupRootDataItem();
