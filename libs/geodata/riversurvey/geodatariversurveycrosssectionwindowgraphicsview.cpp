@@ -756,14 +756,14 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 	// draw horizontal distance
 	double distH = std::fabs(selectedAlt.position() - m_editAltitudePreview.position());
 	QPointF p2(p.x(), startP.y() - PREVIEW_LABEL_OFFSET);
-	painter.drawText(p2, QString::number(distH));
+	painter.drawText(p2, QString::number(distH, 'f', 2));
 
 	// draw vertical distance
 	double distV = std::fabs(selectedAlt.height() - m_editAltitudePreview.height());
 	QPointF p3(endP.x(), p.y());
 	if (distV != 0) {
 		QFontMetricsF metrics(painter.font());
-		auto distVStr = QString::number(distV);
+		auto distVStr = QString::number(distV, 'f', 2);
 		auto rect = metrics.boundingRect(distVStr);
 
 		QRectF textRect(QPointF(p3.x() + PREVIEW_LABEL_OFFSET, p3.y()), rect.size());
@@ -1567,7 +1567,7 @@ GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsV
 		if (r == 0) {
 			*ratio = "";
 		} else {
-			*ratio = QString("1:%1").arg(1.0 / r);
+			*ratio = QString("1:%1").arg(QString::number(1.0 / r, 'f', 2));
 		}
 		return GeoDataRiverCrosssection::Altitude(mappedPos.x(), mappedPos.y());
 	} else {
