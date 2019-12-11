@@ -438,7 +438,7 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 	ut_unit* unit = ut_parse(unitSystem, unitsStr.c_str(), UT_ASCII);
 	if (unit == nullptr) {
 		// error occured while parsing time units
-		QMessageBox::critical(parent, tr("Error"), tr("Error occued while parsing time definition: %1").arg(units));
+		QMessageBox::critical(parent, tr("Error"), tr("Error occured while parsing time definition: %1").arg(units));
 		*canceled = true;
 	}
 
