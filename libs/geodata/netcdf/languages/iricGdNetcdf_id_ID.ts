@@ -30,22 +30,22 @@
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="24"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
         <source>GDAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="33"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
         <source>GeoTiff files(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -53,35 +53,41 @@
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="38"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="40"/>
         <source>NetCDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="47"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="49"/>
         <source>NetCDF file (*.nc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="112"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="162"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="325"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="114"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="164"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="327"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="112"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <source>%1 does not have longitude and latitude data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="162"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <source>%1 does not have variable that can be imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="325"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="327"/>
         <source>Dimension values for %1 mismatch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <source>Error occured while parsing time definition: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
