@@ -54,21 +54,6 @@ void setBanks(GeoDataRiverSurveyImporter::RivPathPoint* p, double lx, double ly,
 	p->rightBank.setY(ry);
 }
 
-void removeIncompleteData(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
-{
-	int idx = 0;
-	while (idx < points->size()) {
-		auto it = points->begin() + idx;
-		auto p = *it;
-		if (! p->banksIsSet || p->altitudes.size() == 0) {
-			// remove this point;
-			points->erase(it);
-		} else {
-			++ idx;
-		}
-	}
-}
-
 bool lessKP(GeoDataRiverSurveyImporter::RivPathPoint* a1, GeoDataRiverSurveyImporter::RivPathPoint* a2)
 {
 	return a1->realKP > a2->realKP;
