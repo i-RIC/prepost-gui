@@ -30,22 +30,22 @@
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="24"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="33"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation>GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
     </message>
@@ -53,36 +53,42 @@
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="38"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="40"/>
         <source>NetCDF</source>
         <translation>NetCDF</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="47"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="49"/>
         <source>NetCDF file (*.nc)</source>
         <translation>NetCDF ファイル (*.nc)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="112"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="162"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="325"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="114"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="164"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="327"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="112"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <source>%1 does not have longitude and latitude data.</source>
         <translation>%1 は、経度と緯度のデータを持っていません。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="162"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <source>%1 does not have variable that can be imported.</source>
         <translation>%1 には、インポート可能な変数がありません。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="325"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="327"/>
         <source>Dimension values for %1 mismatch.</source>
         <translation>次元 %1 の値が一致しません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <source>Error occured while parsing time definition: %1</source>
+        <translation>日付定義の読み込みでエラーが発生しました: %1</translation>
     </message>
 </context>
 <context>
@@ -110,32 +116,32 @@
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="46"/>
         <source>Unit:</source>
-        <translation type="unfinished"></translation>
+        <translation>単位:</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="54"/>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>年</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="59"/>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>日</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="64"/>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>時間</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="69"/>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>分</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="74"/>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>秒</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfimporterdateselectdialog.ui" line="82"/>
