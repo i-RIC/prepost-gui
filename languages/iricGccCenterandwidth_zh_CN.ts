@@ -54,7 +54,7 @@
     <message>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="199"/>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation></translation>
+        <translation>网格节点的最大数目是 %1</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
@@ -104,12 +104,12 @@
     <message>
         <location filename="../private/gridcreatingconditioncenterandwidth_editcoordinatescommand.cpp" line="4"/>
         <source>Edit Center Line Coordinates</source>
-        <translation></translation>
+        <translation>编辑中心线坐标</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditioncenterandwidth_coordinateseditor.cpp" line="27"/>
         <source>Polyline Coordinates</source>
-        <translation></translation>
+        <translation>折线坐标</translation>
     </message>
 </context>
 <context>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.ui" line="14"/>
         <source>Grid Creation</source>
-        <translation></translation>
+        <translation>创建网格</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.ui" line="135"/>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.cpp" line="78"/>
         <source>Warning</source>
-        <translation></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.cpp" line="78"/>
         <source>nJ should be even. incrementing by one.</source>
-        <translation></translation>
+        <translation>nJ应是偶数 加1</translation>
     </message>
 </context>
 <context>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../gridcreatingconditioncreatorcenterandwidth.cpp" line="13"/>
         <source>Create grid from polygonal line and width</source>
-        <translation></translation>
+        <translation>通过多边线和宽创建网格</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorcenterandwidth.cpp" line="14"/>
         <source>First, please define polygonal line, by mouse-clicking. The polygonal line is used as the center line of the grid. Then, you define the width, division number of grid in I direction and J direction.</source>
-        <translation></translation>
+        <translation>首先，请通过鼠标单击定义多边形线。多边形线用作网格的中心线。然后，定义网格在I方向和J方向的宽度、分区数</translation>
     </message>
 </context>
 </TS>
