@@ -135,7 +135,7 @@
     <message>
         <location filename="../private/distancemeasuredataitem_translatecommand.cpp" line="7"/>
         <source>Translate Distance Measure</source>
-        <translation></translation>
+        <translation>平移距离测量</translation>
     </message>
 </context>
 <context>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../distancemeasuregroupdataitem.cpp" line="15"/>
         <source>&amp;Add Measure...</source>
-        <translation></translation>
+        <translation>&amp;添加测量</translation>
     </message>
     <message>
         <location filename="../distancemeasuregroupdataitem.cpp" line="19"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../distancemeasuregroupdataitem.cpp" line="42"/>
         <source>Measure%1</source>
-        <translation></translation>
+        <translation>测量%1</translation>
     </message>
 </context>
 </TS>
