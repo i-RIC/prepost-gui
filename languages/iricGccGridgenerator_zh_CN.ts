@@ -6,12 +6,12 @@
     <message>
         <location filename="../gridcreatingconditioncreatorgridgenerator.cpp" line="8"/>
         <source>Create geometric shape grids</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">创建几何形状网格</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorgridgenerator.cpp" line="9"/>
         <source>You can create straight grids or sine curve grids by specifying parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您可以通过指定参数来创建直线网格或正弦曲线网格</translation>
     </message>
 </context>
 <context>
@@ -19,12 +19,12 @@
     <message>
         <location filename="../gridcreatingconditiongridgenerator.cpp" line="223"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgenerator.cpp" line="223"/>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格节点的最大数量为 %1</translation>
     </message>
 </context>
 <context>
@@ -32,22 +32,22 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="14"/>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格生成</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="36"/>
         <source>Channel and Bed shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河道河床形状</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="42"/>
         <source>Channel Shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河道形状</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="48"/>
         <source>Simple cross section</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">简单横截面</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="58"/>
@@ -62,27 +62,27 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="78"/>
         <source>Channel Property</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河道属性</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="84"/>
         <source>Fixed bed (only flood channels)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">固定河床（仅限洪水道）</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="94"/>
         <source>Movable bed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">可移动河床</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="120"/>
         <source>Bed Shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河床形状</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="126"/>
         <source>Flat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">平坦</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="136"/>
