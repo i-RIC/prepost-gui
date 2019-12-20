@@ -87,32 +87,32 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="136"/>
         <source>Alternate bar shape in low water channel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">低水道中的备用条形</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="143"/>
         <source>Parabolic shape cross section</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">抛物线型横截面</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="153"/>
         <source>Amplitude (Depth)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高度（深度）</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="159"/>
         <source>Alternate bar : Amplitude of cross sectional bed shape [m]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">备用条形：横截面河床形状的高度</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="166"/>
         <source>Parabolic shape : Depth of center of cross section [m]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">抛物线型：横截面中心深度（m）</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="215"/>
         <source>Lag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">延迟</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="221"/>
@@ -122,37 +122,37 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="284"/>
         <source>Common parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">常用参数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="290"/>
         <source>Meander wave length [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">弯曲波长（m）</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="336"/>
         <source>Wave number :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">波个数：</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="382"/>
         <source>Meander angle (degree, zero for a straight channel) :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">弯曲角度（° 0度为直水道）</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="428"/>
         <source>Channel slope :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">水道斜率：</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="474"/>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">纵向一个波长的格栅数：</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="531"/>
         <source>Channel shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">水道形状</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="537"/>
@@ -162,12 +162,12 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="543"/>
         <source>Channel width [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">水道宽</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="592"/>
         <source>Number of grids in the cross sectional direction :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面方向格栅数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="638"/>
