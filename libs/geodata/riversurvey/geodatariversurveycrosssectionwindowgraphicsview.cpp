@@ -128,8 +128,6 @@ void calcAutoScale(double width, double* scale, double* subScale)
 	}
 }
 
-const int WSE_WIDTH = 120;
-
 } // namespace
 
 GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w) :
