@@ -31,6 +31,9 @@ CONFIG(debug, debug|release) {
 
 	# yaml-cpp
 	LIBS += -L"E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/debug/lib"
+
+	# udunits
+	LIBS += -L"E:/iricdev_2013/lib/install/udunits-2.2.26/debug/lib"
 }
 else {
 	# gdal
@@ -65,6 +68,9 @@ else {
 
 	# yaml-cpp
 	LIBS += -L"E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/lib"
+
+	# udunits
+	LIBS += -L"E:/iricdev_2013/lib/install/udunits-2.2.26/release/lib"
 }
 
 INCLUDEPATH += .
@@ -104,6 +110,9 @@ INCLUDEPATH += "E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/include"
 
 # boost
 INCLUDEPATH += "C:/usr/src/boost-1.59.0"
+
+# udunits
+INCLUDEPATH += "E:/iricdev_2013/lib/install/udunits-2.2.26/release/include"
 
 #internal libs
 INCLUDEPATH += "E:/iricdev_2013/src/libs"

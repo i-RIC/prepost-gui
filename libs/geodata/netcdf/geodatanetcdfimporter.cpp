@@ -18,6 +18,8 @@
 #include <QString>
 #include <QStringList>
 
+#include <udunits2.h>
+
 namespace {
 
 class nc_closer {
@@ -426,76 +428,27 @@ int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled)
 {
 	*canceled = false;
-	QRegExp rx("(.+) since (.+)");
-	if (rx.indexIn(units) == -1) {
-		// not matched!
-		return values;
-	}
-	QString unit = rx.cap(1);
-	QString since = rx.cap(2);
-	QDateTime zeroDate;
 
-	QRegExp rxDateTime("(([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(|\\.([0-9]+)))(| +0:00)");
-	QRegExp rxDateTime2("(([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(|\\.([0-9]+)))(| +0:00)");
-	QRegExp rxDate("(([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}))");
-	QRegExp rxDate2("(([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}))");
+	ut_system* unitSystem = ut_read_xml(nullptr);
 
-	if (rxDateTime.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(rxDateTime.cap(1), "yyyy-M-d H:m:s");
-	} else if (rxDateTime2.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(rxDateTime2.cap(1), "yyyy/M/d H:m:s");
-	} else if (rxDate.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(rxDate.cap(1), "yyyy-M-d");
-	} else if (rxDate2.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(rxDate2.cap(1), "yyyy/M/d");
+	ut_unit* second = ut_get_unit_by_name(unitSystem, "second");
+	ut_unit* unixTime = ut_offset_by_time(second, ut_encode_time(1970, 1, 1, 0, 0, 0.0));
+
+	auto unitsStr = iRIC::toStr(units);
+	ut_unit* unit = ut_parse(unitSystem, unitsStr.c_str(), UT_ASCII);
+	if (unit == nullptr) {
+		// error occured while parsing time units
+		QMessageBox::critical(parent, tr("Error"), tr("Error occured while parsing time definition: %1").arg(units));
+		*canceled = true;
 	}
+
+	cv_converter* converter = ut_get_converter(unit, unixTime);
 
 	std::vector<QVariant> ret;
-	if (!zeroDate.isValid()) {
-		GeoDataNetcdfImporterDateSelectDialog dialog(parent);
-		dialog.setUnit(units);
-		// get current time with seconds=0
-		QDateTime current = QDateTime::currentDateTime();
-		QTime t = current.time();
-		t.setHMS(0, 0, 0);
-		current.setTime(t);
-		dialog.setOriginalDateTime(current);
-		int dialogRet = dialog.exec();
-		if (dialogRet == QDialog::Rejected) {
-			*canceled = true;
-			return ret;
-		}
-		zeroDate = dialog.originalDateTime();
-		unit = dialog.unit();
-	}
-
-	qDebug("zeroDate=%s\n", zeroDate.toString(Qt::ISODate).toStdString().c_str());
-	const qlonglong LL_SECS_PER_DAY    = 86400LL;
-	const qlonglong LL_SECS_PER_HOUR   = 3600LL;
-	const qlonglong LL_SECS_PER_MINUTE = 60LL;
 	for (int i = 0; i < values.size(); ++i) {
-		QVariant val = values.at(i);
-		QDateTime d = zeroDate;
-		if (unit == "seconds") {
-			d = d.addSecs(val.toLongLong());
-		} else if (unit == "minutes") {
-			d = d.addSecs(val.toLongLong() * LL_SECS_PER_MINUTE);
-		} else if (unit == "hours") {
-			d = d.addSecs(val.toLongLong() * LL_SECS_PER_HOUR);
-		} else if (unit == "days") {
-			qlonglong days = val.toLongLong();
-			qlonglong secs = static_cast<qlonglong>((val.toDouble() - days) * LL_SECS_PER_DAY);
-			d = d.addDays(days);
-			d = d.addSecs(secs);
-		} else if (unit == "months") {
-			int months = val.toInt();
-			d = d.addMonths(months);
-		} else if (unit == "years") {
-			int years = val.toInt();
-			d = d.addYears(years);
-		}
-		qDebug("d=%s\n", d.toString(Qt::ISODate).toStdString().c_str());
-		ret.push_back(d.toTime_t());
+		double val = values.at(i).toDouble();
+		double unitTimeVal = cv_convert_double(converter, val);
+		ret.push_back(unitTimeVal);
 	}
 	return ret;
 }

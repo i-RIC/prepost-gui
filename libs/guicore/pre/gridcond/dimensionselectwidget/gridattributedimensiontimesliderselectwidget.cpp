@@ -12,6 +12,7 @@
 #include <QSlider>
 #include <QTextStream>
 #include <QTimer>
+#include <QTimeZone>
 #include <QVariant>
 
 GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent) :
@@ -94,17 +95,19 @@ QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index) const
 	if (m_isTime) {
 		double dblDatetime = value.toDouble();
 		int intDateTime = static_cast<int>(dblDatetime);
-		QDateTime dateTime = QDateTime::fromTime_t(intDateTime);
+		QDateTime dateTime = QDateTime::fromTime_t(intDateTime, Qt::UTC);
 		int msec = static_cast<int>((dblDatetime - intDateTime) * 1000);
 
 		QString ret;
 		QTextStream out(&ret);
 		out << dateTime.toString("yyyy-MM-dd HH:mm:ss");
-		out << ".";
-		out.setFieldWidth(3);
-		out.setFieldAlignment(QTextStream::AlignRight);
-		out.setPadChar('0');
-		out << msec;
+		if (msec != 0) {
+			out << ".";
+			out.setFieldWidth(3);
+			out.setFieldAlignment(QTextStream::AlignRight);
+			out.setPadChar('0');
+			out << msec;
+		}
 		return ret;
 	} else {
 		return value.toString();

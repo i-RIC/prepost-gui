@@ -4,6 +4,7 @@
 #include "geodatariversurveyhonryuexporter.h"
 #include "geodatariversurveyimporter.h"
 #include "geodatariversurveylandxmlexporter.h"
+#include "geodatariversurveymlitimporter.h"
 #include "geodatariversurveynodemapper.h"
 #include "geodatariversurveyvtkexporter.h"
 
@@ -17,6 +18,7 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	GeoDataCreator {"riversurvey", tr("River Survey data")}
 {
 	importers().push_back(new GeoDataRiverSurveyImporter(this));
+	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
 
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyVTKExporter(this));

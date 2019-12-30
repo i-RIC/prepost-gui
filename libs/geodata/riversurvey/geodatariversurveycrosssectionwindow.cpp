@@ -29,6 +29,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPainter>
+#include <QPushButton>
 #include <QStandardItemModel>
 
 #include <set>
@@ -171,7 +172,9 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
 {
 	ui->crossSectionToolBar->setFloatable(false);
 	ui->viewToolBar->setFloatable(false);
+	ui->displayToolBar->setFloatable(false);
 
+	// crossSectionToolBar
 	QLabel* l = nullptr;
 	QWidget* spacer = nullptr;
 	l = new QLabel(tr("Crosssection: "), ui->crossSectionToolBar);
@@ -194,6 +197,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
 	impl->m_referenceComboBox->setEnabled(false);
 	ui->crossSectionToolBar->addWidget(impl->m_referenceComboBox);
 
+	// viewToolBar
 	impl->m_autoRescaleCheckBox = new QCheckBox(this);
 	impl->m_autoRescaleCheckBox->setText(tr("Auto rescale"));
 	impl->m_autoRescaleCheckBox->setChecked(true);
@@ -220,6 +224,30 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
 	impl->m_fixRegionCheckBox = new QCheckBox(tr("Fix region"), this);
 	ui->viewToolBar->addWidget(impl->m_fixRegionCheckBox);
 
+	// displayToolBar
+	impl->m_gridDisplayCheckBox = new QCheckBox(this);
+	impl->m_gridDisplayCheckBox->setText(tr("Grid"));
+	impl->m_gridDisplayCheckBox->setChecked(true);
+	ui->displayToolBar->addWidget(impl->m_gridDisplayCheckBox);
+
+	impl->m_scaleDisplayCheckBox = new QCheckBox(this);
+	impl->m_scaleDisplayCheckBox->setText(tr("Scale"));
+	impl->m_scaleDisplayCheckBox->setChecked(true);
+	ui->displayToolBar->addWidget(impl->m_scaleDisplayCheckBox);
+
+	impl->m_markersDisplayCheckBox = new QCheckBox(this);
+	impl->m_markersDisplayCheckBox->setText(tr("Left/right bank markers"));
+	impl->m_markersDisplayCheckBox->setChecked(true);
+	ui->displayToolBar->addWidget(impl->m_markersDisplayCheckBox);
+
+	impl->m_aspectRatioDisplayCheckBox = new QCheckBox(this);
+	impl->m_aspectRatioDisplayCheckBox->setText(tr("Aspect ratio"));
+	impl->m_aspectRatioDisplayCheckBox->setChecked(true);
+	ui->displayToolBar->addWidget(impl->m_aspectRatioDisplayCheckBox);
+
+	auto displaySettingButton = new QPushButton(tr("Display Setting"), this);
+	ui->displayToolBar->addWidget(displaySettingButton);
+
 	connect(impl->m_crosssectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(crosssectionComboBoxChange(int)));
 	connect(impl->m_referenceCheckBox, SIGNAL(toggled(bool)), impl->m_referenceComboBox, SLOT(setEnabled(bool)));
 	connect(impl->m_referenceCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
@@ -228,6 +256,12 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
 	connect(impl->m_aspectRatioEdit, SIGNAL(valueChanged(double)), this, SLOT(handleAspectRatioEdit(double)));
 	connect(impl->m_fixAspectRatioCheckBox, SIGNAL(toggled(bool)), this, SLOT(handleFixAspectRatio(bool)));
 	connect(impl->m_fixRegionCheckBox, SIGNAL(toggled(bool)), this, SLOT(handleFixRegion(bool)));
+
+	connect(impl->m_gridDisplayCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(impl->m_scaleDisplayCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(impl->m_aspectRatioDisplayCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(impl->m_markersDisplayCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	connect(displaySettingButton, SIGNAL(clicked()), this, SLOT(editDisplaySetting()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupModel()
@@ -1116,6 +1150,11 @@ bool GeoDataRiverSurveyCrosssectionWindow::selectWSEIndex(int* index)
 		*index = names.indexOf(name);
 	}
 	return true;
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::editDisplaySetting()
+{
+	ui->graphicsView->editDisplaySetting();
 }
 
 GeoDataRiverSurvey* GeoDataRiverSurveyCrosssectionWindow::targetRiverSurvey() const
