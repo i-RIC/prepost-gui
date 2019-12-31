@@ -80,6 +80,25 @@ int findRowToDraw(const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRe
 	return findRowToDraw(0, rect, drawnRects);
 }
 
+void drawTextWithWhiteLines(QPainter* painter, const QPointF& point, const QString& str)
+{
+	painter->save();
+	painter->setPen(Qt::white);
+
+	for (int i = -1; i <= 1; ++i) {
+		for (int j = -1; j <= 1; ++j) {
+			if (i == 0 && j == 0) {continue;}
+
+			auto p = point;
+			p += QPointF(i, j);
+			painter->drawText(p, str);
+		}
+	}
+	painter->restore();
+
+	painter->drawText(point, str);
+}
+
 void calcAutoScale(double width, double* scale, double* subScale)
 {
 	double w = width / MIN_SCALE_COUNT;
@@ -216,13 +235,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 			QColor c = m_parentWindow->riverSurveyColors().at(i);
 			drawLine(p, c, painter);
 		}
-		// draw edit preview
-		drawEditPreview(painter);
-
 		// draw circles.
 		drawCircle(painter);
 		// draw selected circles.
 		drawSelectionCircle(painter);
+		// draw edit preview
+		drawEditPreview(painter);
 	}
 	else {
 		// draw black lines.
@@ -871,7 +889,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 
 	// draw ratio
 	QPointF p = (startP + endP) / 2.0;
-	painter.drawText(p, m_editRatio);
+	drawTextWithWhiteLines(&painter, p, m_editRatio);
 
 	painter.setPen(Qt::blue);
 
@@ -882,21 +900,21 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 	// draw horizontal distance
 	double distH = std::fabs(selectedAlt.position() - m_editAltitudePreview.position());
 	QPointF p2(p.x(), startP.y() - PREVIEW_LABEL_OFFSET);
-	painter.drawText(p2, QString::number(distH));
+	drawTextWithWhiteLines(&painter, p2, QString::number(distH, 'f', 2));
 
 	// draw vertical distance
 	double distV = std::fabs(selectedAlt.height() - m_editAltitudePreview.height());
 	QPointF p3(endP.x(), p.y());
 	if (distV != 0) {
 		QFontMetricsF metrics(painter.font());
-		auto distVStr = QString::number(distV);
+		auto distVStr = QString::number(distV, 'f', 2);
 		auto rect = metrics.boundingRect(distVStr);
 
-		QRectF textRect(QPointF(p3.x() + PREVIEW_LABEL_OFFSET, p3.y()), rect.size());
+		p2 = QPointF(p3.x() + PREVIEW_LABEL_OFFSET, p3.y());
 		if ((m_editAltitudePreview.position() - selectedAlt.position()) < 0) {
-			textRect = QRectF(QPointF(p3.x() - PREVIEW_LABEL_OFFSET - rect.width(), p3.y()), rect.size());
+			p2 = QPointF(p3.x() - PREVIEW_LABEL_OFFSET - rect.width(), p3.y());
 		}
-		painter.drawText(textRect, distVStr);
+		drawTextWithWhiteLines(&painter, p2, distVStr);
 	}
 
 	painter.restore();
@@ -1693,7 +1711,7 @@ GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsV
 		if (r == 0) {
 			*ratio = "";
 		} else {
-			*ratio = QString("1:%1").arg(1.0 / r);
+			*ratio = QString("1:%1").arg(QString::number(1.0 / r, 'f', 2));
 		}
 		return GeoDataRiverCrosssection::Altitude(mappedPos.x(), mappedPos.y());
 	} else {
