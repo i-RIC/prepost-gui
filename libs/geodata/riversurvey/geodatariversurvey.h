@@ -132,7 +132,6 @@ private:
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
-	bool m_definingBoundingBox;
 	bool m_leftButtonDown;
 
 	GeoDataRiverSurveyDisplaySetting m_setting;

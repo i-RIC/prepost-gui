@@ -135,6 +135,8 @@ public:
 	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
 
+	bool m_definingBoundingBox;
+
 	GeoDataRiverSurvey* m_rs;
 };
 

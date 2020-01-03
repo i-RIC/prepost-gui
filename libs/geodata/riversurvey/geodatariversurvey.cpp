@@ -68,7 +68,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
-	m_definingBoundingBox = false;
 	m_leftButtonDown = false;
 
 	m_gridCreatingCondition = nullptr;
@@ -284,7 +283,7 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 	if ((impl->m_editMouseEventMode == Impl::EditMouseEventMode::AddingExtension || impl->m_editMouseEventMode == Impl::EditMouseEventMode::Inserting) && m_leftButtonDown) {
 		graphicsView()->emitWorldPosition(event->x(), event->y());
 	} else {
-		if (m_definingBoundingBox) {
+		if (impl->m_definingBoundingBox) {
 			// drawing bounding box using mouse dragging.
 			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 			box->setEndPoint(event->x(), event->y());
@@ -355,7 +354,7 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 		switch (impl->m_editMouseEventMode) {
 		case Impl::EditMouseEventMode::Normal: {
 				// start drawing the mouse bounding box.
-				m_definingBoundingBox = true;
+				impl->m_definingBoundingBox = true;
 				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 				box->setStartPoint(event->x(), event->y());
 				box->enable();
@@ -416,7 +415,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_editMouseEventMode) {
 		case Impl::EditMouseEventMode::Normal:
-			if (m_definingBoundingBox) {
+			if (impl->m_definingBoundingBox) {
 				// bounding box selecting ended.
 				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 				box->setEndPoint(event->x(), event->y());
@@ -434,7 +433,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 				ChangeSelectionCommand com(this, box);
 				com.redo();
 			}
-			m_definingBoundingBox = false;
+			impl->m_definingBoundingBox = false;
 			impl->m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);

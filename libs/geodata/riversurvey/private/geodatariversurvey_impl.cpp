@@ -74,6 +74,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_showBackgroundAction{ new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs) },
 	m_interpolateSplineAction{ new QAction(GeoDataRiverSurvey::tr("Spline"), rs) },
 	m_interpolateLinearAction{ new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs) },
+	m_definingBoundingBox {false},
 	m_rs {rs}
 {
 	m_rightBankPoints->SetDataTypeToDouble();
