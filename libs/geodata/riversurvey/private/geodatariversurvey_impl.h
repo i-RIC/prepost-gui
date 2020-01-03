@@ -138,6 +138,7 @@ public:
 	bool m_definingBoundingBox;
 	bool m_leftButtonDown;
 
+	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
 
 	GeoDataRiverSurvey* m_rs;

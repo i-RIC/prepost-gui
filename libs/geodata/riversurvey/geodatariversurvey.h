@@ -134,8 +134,6 @@ private:
 
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
-	Qt::KeyboardModifiers m_keyboardModifiers;
-
 private:
 	class AddExtensionCommand;
 	class ChangeSelectionCommand;

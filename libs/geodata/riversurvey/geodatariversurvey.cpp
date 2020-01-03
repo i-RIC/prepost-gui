@@ -208,7 +208,7 @@ void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsVie
 	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
-		m_keyboardModifiers = event->modifiers();
+		impl->m_keyboardModifiers = event->modifiers();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
@@ -242,7 +242,7 @@ void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsV
 	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
-		m_keyboardModifiers = event->modifiers();
+		impl->m_keyboardModifiers = event->modifiers();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
@@ -869,13 +869,13 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 		// only one point is selected.
 		if (iRIC::lengthSquared(selected->position() - worldPos) < stdLen2 * 9) {
 			// cursor is near to the river center point
-			if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+			if ((impl->m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+					(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 				// preparing for moving
 				impl->m_editMouseEventMode = Impl::EditMouseEventMode::TranslatePrepare;
 			}
-			if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+			if ((impl->m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+					(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 				// preparing for center-point shift
 				impl->m_editMouseEventMode = Impl::EditMouseEventMode::ShiftPrepare;
 			}
@@ -884,13 +884,13 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 			QPointF lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
 			if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
 				// cursor is near left bank.
-				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+				if ((impl->m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+						(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 					// preparing for rotating
 					impl->m_editMouseEventMode = Impl::EditMouseEventMode::RotatePrepareLeft;
 				}
-				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
+				if ((impl->m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+						(impl->m_keyboardModifiers & Qt::ControlModifier) == 0 &&
 						selected->crosssection().fixedPointLSet()) {
 					// preparing for center-point shift
 					impl->m_editMouseEventMode = Impl::EditMouseEventMode::MoveExtensionEndPointPrepareLeft;
@@ -899,13 +899,13 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 			QPointF rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
 			if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
 				// cursor is near right bank.
-				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+				if ((impl->m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+						(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 					// preparing for rotating
 					impl->m_editMouseEventMode = Impl::EditMouseEventMode::RotatePrepareRight;
 				}
-				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
+				if ((impl->m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+						(impl->m_keyboardModifiers & Qt::ControlModifier) == 0 &&
 						selected->crosssection().fixedPointRSet()) {
 					// preparing for center-point shift
 					impl->m_editMouseEventMode = Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight;
@@ -920,14 +920,14 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 			if (p->IsSelected) {
 				if (iRIC::lengthSquared(p->position() - worldPos) < stdLen2 * 9) {
 					// cursor is near to the river center point
-					if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+					if ((impl->m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+							(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 						// preparing for moving
 						impl->m_editMouseEventMode = Impl::EditMouseEventMode::TranslatePrepare;
 						return;
 					}
-					if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+					if ((impl->m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+							(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 						// preparing for center-point shift
 						impl->m_editMouseEventMode = Impl::EditMouseEventMode::ShiftPrepare;
 						return;
@@ -937,8 +937,8 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 					QPointF lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 					if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
 						// cursor is near left bank.
-						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+						if ((impl->m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+								(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 							// preparing for center-point shift
 							impl->m_editMouseEventMode = Impl::EditMouseEventMode::ExpansionPrepareLeft;
 							return;
@@ -947,8 +947,8 @@ void GeoDataRiverSurvey::updateMouseEventMode()
 					QPointF rbank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 					if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
 						// cursor is near right bank.
-						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+						if ((impl->m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+								(impl->m_keyboardModifiers & Qt::ControlModifier) == 0) {
 							// preparing for center-point shift
 							impl->m_editMouseEventMode = Impl::EditMouseEventMode::ExpansionPrepareRight;
 							return;
