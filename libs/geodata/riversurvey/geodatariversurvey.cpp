@@ -626,7 +626,7 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 		f.close();
 	}
 	updateInterpolators();
-	informDeselection(0);
+	informDeselection(nullptr);
 }
 
 void GeoDataRiverSurvey::saveExternalData(const QString& filename)
