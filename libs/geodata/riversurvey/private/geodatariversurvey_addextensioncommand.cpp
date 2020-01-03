@@ -13,7 +13,7 @@ GeoDataRiverSurvey::AddExtensionCommand::AddExtensionCommand(bool apply, GeoData
 
 void GeoDataRiverSurvey::AddExtensionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_lineMode == GeoDataRiverPathPointExtensionAddDialog::Left) {
 		m_point->addExtentionPointLeft(m_position);
 	} else {
@@ -30,7 +30,7 @@ void GeoDataRiverSurvey::AddExtensionCommand::redo()
 
 void GeoDataRiverSurvey::AddExtensionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_lineMode == GeoDataRiverPathPointExtensionAddDialog::Left) {
 		m_point->removeExtentionPointLeft();
 	} else {

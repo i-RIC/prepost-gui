@@ -34,7 +34,7 @@ GeoDataRiverSurvey::DeleteRiverPathPointCommand::~DeleteRiverPathPointCommand()
 
 void GeoDataRiverSurvey::DeleteRiverPathPointCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it) {
 		GeoDataRiverPathPoint* p = (*it);
 		p->remove();
@@ -50,7 +50,7 @@ void GeoDataRiverSurvey::DeleteRiverPathPointCommand::redo()
 
 void GeoDataRiverSurvey::DeleteRiverPathPointCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_deletedPoints.count(); ++i) {
 		m_beforePoints[i]->addPathPoint(m_deletedPoints.at(i));
 	}

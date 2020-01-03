@@ -22,17 +22,14 @@
 #define DATA "Data"
 
 GeoDataRiverSurveyBackgroundGridCreateThread::GeoDataRiverSurveyBackgroundGridCreateThread(GeoDataRiverSurvey* rs) :
-	QThread(rs)
-{
-	m_useDivisionPoints = false;
-
-	m_restart = false;
-	m_abort = false;
-	m_canceled = false;
-	m_copyingBGGrid = false;
-
-	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
-}
+	QThread(rs),
+	m_grid {vtkSmartPointer<vtkStructuredGrid>::New()},
+	m_useDivisionPoints {false},
+	m_restart {false},
+	m_canceled {false},
+	m_abort {false},
+	m_copyingBGGrid {false}
+{}
 
 GeoDataRiverSurveyBackgroundGridCreateThread::~GeoDataRiverSurveyBackgroundGridCreateThread()
 {
@@ -59,6 +56,17 @@ void GeoDataRiverSurveyBackgroundGridCreateThread::cancel()
 	QMutexLocker locker(&m_mutex);
 	m_canceled = true;
 	m_cancelCondition.wait(&m_mutex);
+}
+
+
+vtkStructuredGrid* GeoDataRiverSurveyBackgroundGridCreateThread::grid() const
+{
+	return m_grid;
+}
+
+vtkPointSet* GeoDataRiverSurveyBackgroundGridCreateThread::partialGrid(GeoDataRiverPathPoint* p) const
+{
+	return m_partialGrids.value(p, 0);
 }
 
 vtkIdType GeoDataRiverSurveyBackgroundGridCreateThread::gridIndex(int i, int j, int ISize)
@@ -482,6 +490,11 @@ void GeoDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 		(*it)->update();
 		if (m_abort || m_restart || m_canceled) {return;}
 	}
+}
+
+void GeoDataRiverSurveyBackgroundGridCreateThread::setUseDivisionPoints(bool use)
+{
+	m_useDivisionPoints = use;
 }
 
 void GeoDataRiverSurveyBackgroundGridCreateThread::startBGGridCopy()

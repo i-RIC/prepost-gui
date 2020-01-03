@@ -32,7 +32,7 @@ GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::MouseShiftRiverPathCenterC
 
 void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->shiftCenter(m_shiftValue);
 	}
@@ -46,7 +46,7 @@ void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::redo()
 
 void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->shiftCenter(- m_shiftValue);
 	}

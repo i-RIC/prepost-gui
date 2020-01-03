@@ -60,7 +60,7 @@ bool GeoDataRiverSurvey::MouseMoveExtensionCommand::mergeWith(const QUndoCommand
 
 void GeoDataRiverSurvey::MouseMoveExtensionCommand::applyPosition(const QPointF& pos)
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_left) {
 		m_point->moveExtentionPointLeft(pos);
 	} else {

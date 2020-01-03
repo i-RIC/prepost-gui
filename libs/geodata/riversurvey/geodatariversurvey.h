@@ -21,7 +21,6 @@ class vtkPolyData;
 class vtkProperty;
 class QPolygonF;
 
-class GeoDataRiverSurveyBackgroundGridCreateThread;
 class GridCreatingConditionRiverSurveyInterface;
 
 /// Polygon container.
@@ -125,8 +124,6 @@ private:
 	/// Enable or disable actions depending on the selection status.
 
 	GeoDataRiverPathPoint* m_headPoint;
-
-	GeoDataRiverSurveyBackgroundGridCreateThread* m_gridThread;
 
 	RiverCenterLineSolver m_CenterLineSolver;
 	RiverLeftBankSolver m_LeftBankSolver;

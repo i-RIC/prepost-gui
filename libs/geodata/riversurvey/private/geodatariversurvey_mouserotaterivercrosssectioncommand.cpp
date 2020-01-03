@@ -37,7 +37,7 @@ GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::MouseRotateRiverCrossse
 
 void GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	m_point->setCrosssectionDirection(m_newDirection);
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();
@@ -46,7 +46,7 @@ void GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::redo()
 
 void GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	m_point->setCrosssectionDirection(m_oldDirection);
 	m_rs->updateShapeData();
 	m_rs->renderGraphicsView();

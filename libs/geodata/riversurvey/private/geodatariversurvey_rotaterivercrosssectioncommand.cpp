@@ -25,7 +25,7 @@ GeoDataRiverSurvey::RotateRiverCrosssectionCommand::RotateRiverCrosssectionComma
 
 void GeoDataRiverSurvey::RotateRiverCrosssectionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 
 	m_point->setCrosssectionDirection(m_newDirection);
 
@@ -36,7 +36,7 @@ void GeoDataRiverSurvey::RotateRiverCrosssectionCommand::redo()
 
 void GeoDataRiverSurvey::RotateRiverCrosssectionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 
 	m_point->setCrosssectionDirection(m_oldDirection);
 	if (! m_apply) {

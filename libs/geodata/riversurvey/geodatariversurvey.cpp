@@ -67,9 +67,7 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	impl {new Impl {this}}
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
-
-	m_gridThread = new GeoDataRiverSurveyBackgroundGridCreateThread(this);
-	connect(m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
+	connect(impl->m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
 	impl->setupCursors();
 	impl->setupActions();
@@ -79,7 +77,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 
 GeoDataRiverSurvey::~GeoDataRiverSurvey()
 {
-	delete m_gridThread;
 	delete impl;
 }
 
@@ -651,7 +648,7 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->updateVtkBackgroundObjects();
 
 	emit dataUpdated();
-	m_gridThread->update();
+	impl->m_gridThread->update();
 }
 
 void GeoDataRiverSurvey::updateSelectionShapeData()
@@ -981,19 +978,19 @@ void GeoDataRiverSurvey::updateSplineSolvers()
 
 void GeoDataRiverSurvey::updateBackgroundGrid()
 {
-	impl->m_backgroundGrid = m_gridThread->grid();
+	impl->m_backgroundGrid = impl->m_gridThread->grid();
 	impl->m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
 
 	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-	m_gridThread->startBGGridCopy();
+	impl->m_gridThread->startBGGridCopy();
 	while (p != nullptr) {
-		vtkPointSet* grid = m_gridThread->partialGrid(p);
+		vtkPointSet* grid = impl->m_gridThread->partialGrid(p);
 		if (grid != nullptr) {
 			p->areaGrid()->DeepCopy(grid);
 		}
 		p = p->nextPoint();
 	}
-	m_gridThread->finishBGGridCopy();
+	impl->m_gridThread->finishBGGridCopy();
 	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(impl->m_backgroundActor->GetMapper());
 	mapper->SetInputData(impl->m_backgroundGrid);
 	if (isVisible() && m_setting.showBackground) {
@@ -1143,18 +1140,18 @@ void GeoDataRiverSurvey::setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint*
 
 void GeoDataRiverSurvey::useDivisionPointsForBackgroundGrid(bool use)
 {
-	m_gridThread->setUseDivisionPoints(use);
-	m_gridThread->update();
+	impl->m_gridThread->setUseDivisionPoints(use);
+	impl->m_gridThread->update();
 }
 
 void GeoDataRiverSurvey::refreshBackgroundGrid()
 {
-	m_gridThread->update();
+	impl->m_gridThread->update();
 }
 
 void GeoDataRiverSurvey::cancelBackgroundGridUpdate()
 {
-	m_gridThread->cancel();
+	impl->m_gridThread->cancel();
 }
 
 GeoDataProxy* GeoDataRiverSurvey::getProxy()

@@ -3,15 +3,19 @@
 
 #include "../geodatariversurvey.h"
 
+#include <vtkStructuredGrid.h>
+#include <vtkSmartPointer.h>
+
 #include <QCursor>
 #include <QPixmap>
+
+class GeoDataRiverSurveyBackgroundGridCreateThread;
 
 class vtkActor;
 class vtkActor2D;
 class vtkLabeledDataMapper;
 class vtkPolyData;
 class vtkStringArray;
-class vtkStructuredGrid;
 class vtkUnstructuredGrid;
 
 class QAction;
@@ -100,7 +104,7 @@ public:
 	vtkLabeledDataMapper* m_labelMapper;
 	vtkActor2D* m_labelActor;
 
-	vtkStructuredGrid* m_backgroundGrid;
+	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
 	vtkActor* m_backgroundActor;
 
 	QMenu* m_rightClickingMenu;
@@ -140,6 +144,7 @@ public:
 
 	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
+	GeoDataRiverSurveyBackgroundGridCreateThread* m_gridThread;
 
 	GeoDataRiverSurvey* m_rs;
 };

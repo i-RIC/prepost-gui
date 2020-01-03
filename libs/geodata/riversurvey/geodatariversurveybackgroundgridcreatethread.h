@@ -24,13 +24,12 @@ public:
 
 	void update();
 	void cancel();
-	vtkStructuredGrid* grid() const {return m_grid;}
-	vtkPointSet* partialGrid(GeoDataRiverPathPoint* p) const {
-		return m_partialGrids.value(p, 0);
-	}
-	void setUseDivisionPoints(bool use) {
-		m_useDivisionPoints = use;
-	}
+
+	vtkStructuredGrid* grid() const;
+	vtkPointSet* partialGrid(GeoDataRiverPathPoint* p) const;
+
+	void setUseDivisionPoints(bool use);
+
 	void startBGGridCopy();
 	void finishBGGridCopy();
 
@@ -45,6 +44,7 @@ private:
 	bool runUsingDivisionPoints();
 	void updateGridInterpolators();
 	vtkIdType gridIndex(int i, int j, int ISize);
+
 	vtkSmartPointer<vtkStructuredGrid> m_grid;
 	QMap<GeoDataRiverPathPoint*, vtkPointSet*> m_partialGrids;
 	QMutex m_mutex;

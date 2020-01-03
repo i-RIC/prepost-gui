@@ -12,7 +12,7 @@ GeoDataRiverSurvey::RemoveExtensionCommand::RemoveExtensionCommand(bool left, co
 
 void GeoDataRiverSurvey::RemoveExtensionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_left) {
 		m_point->removeExtentionPointLeft();
 	} else {
@@ -24,7 +24,7 @@ void GeoDataRiverSurvey::RemoveExtensionCommand::redo()
 
 void GeoDataRiverSurvey::RemoveExtensionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_left) {
 		m_point->addExtentionPointLeft(m_position);
 	} else {

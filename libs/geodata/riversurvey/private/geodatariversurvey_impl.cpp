@@ -1,4 +1,5 @@
 #include "geodatariversurvey_impl.h"
+#include "../geodatariversurveybackgroundgridcreatethread.h"
 
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
@@ -13,7 +14,6 @@
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
-#include <vtkSmartPointer.h>
 #include <vtkStringArray.h>
 #include <vtkTextProperty.h>
 
@@ -55,7 +55,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_labelArray {vtkStringArray::New()},
 	m_labelMapper {vtkLabeledDataMapper::New()},
 	m_labelActor {vtkActor2D::New()},
-	m_backgroundGrid {vtkStructuredGrid::New()},
+	m_backgroundGrid {vtkSmartPointer<vtkStructuredGrid>::New()},
 	m_backgroundActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
@@ -77,6 +77,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_definingBoundingBox {false},
 	m_leftButtonDown {false},
 	m_gridCreatingCondition {nullptr},
+	m_gridThread {new GeoDataRiverSurveyBackgroundGridCreateThread(rs)},
 	m_rs {rs}
 {
 	m_rightBankPoints->SetDataTypeToDouble();
@@ -122,10 +123,10 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_labelArray->Delete();
 	m_labelMapper->Delete();
 	m_labelActor->Delete();
-	m_backgroundGrid->Delete();
 	m_backgroundActor->Delete();
 
 	delete m_rightClickingMenu;
+	delete m_gridThread;
 }
 
 void GeoDataRiverSurvey::Impl::setupActions()
