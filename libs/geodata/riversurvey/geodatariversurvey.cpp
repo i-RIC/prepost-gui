@@ -68,8 +68,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
-	m_leftButtonDown = false;
-
 	m_gridCreatingCondition = nullptr;
 
 	m_gridThread = new GeoDataRiverSurveyBackgroundGridCreateThread(this);
@@ -280,7 +278,7 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProces
 
 void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if ((impl->m_editMouseEventMode == Impl::EditMouseEventMode::AddingExtension || impl->m_editMouseEventMode == Impl::EditMouseEventMode::Inserting) && m_leftButtonDown) {
+	if ((impl->m_editMouseEventMode == Impl::EditMouseEventMode::AddingExtension || impl->m_editMouseEventMode == Impl::EditMouseEventMode::Inserting) && impl->m_leftButtonDown) {
 		graphicsView()->emitWorldPosition(event->x(), event->y());
 	} else {
 		if (impl->m_definingBoundingBox) {
@@ -334,7 +332,7 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 				break;
 			case Impl::EditMouseEventMode::AddingExtension:
 			case Impl::EditMouseEventMode::Inserting:
-				if (m_leftButtonDown) {
+				if (impl->m_leftButtonDown) {
 					graphicsView()->emitWorldPosition(event->x(), event->y());
 				}
 				break;
@@ -396,7 +394,7 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 			break;
 		case Impl::EditMouseEventMode::AddingExtension:
 		case Impl::EditMouseEventMode::Inserting:
-			m_leftButtonDown = true;
+			impl->m_leftButtonDown = true;
 			graphicsView()->emitWorldPosition(event->x(), event->y());
 			break;
 		case Impl::EditMouseEventMode::TranslateDialog:
@@ -463,7 +461,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 			break;
 		case Impl::EditMouseEventMode::AddingExtension:
 		case Impl::EditMouseEventMode::Inserting:
-			m_leftButtonDown = false;
+			impl->m_leftButtonDown = false;
 			break;
 		case Impl::EditMouseEventMode::TranslateDialog:
 		case Impl::EditMouseEventMode::RotateDialog:

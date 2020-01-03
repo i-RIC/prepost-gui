@@ -132,8 +132,6 @@ private:
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
-	bool m_leftButtonDown;
-
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
 	Qt::KeyboardModifiers m_keyboardModifiers;

@@ -136,6 +136,7 @@ public:
 	QPoint m_currentPoint;
 
 	bool m_definingBoundingBox;
+	bool m_leftButtonDown;
 
 	GeoDataRiverSurvey* m_rs;
 };
