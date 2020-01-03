@@ -115,11 +115,6 @@ protected:
 	int iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
 
-	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
-
-	vtkSmartPointer<vtkActor> m_backgroundActor;
-
-
 private:
 	GeoDataRiverPathPoint* singleSelectedPoint();
 	void setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p);

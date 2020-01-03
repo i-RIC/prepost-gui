@@ -11,6 +11,7 @@ class vtkActor2D;
 class vtkLabeledDataMapper;
 class vtkPolyData;
 class vtkStringArray;
+class vtkStructuredGrid;
 class vtkUnstructuredGrid;
 
 class QAction;
@@ -58,6 +59,7 @@ public:
 	void updateVtkSelectedObjects();
 	void updateVtkVerticalCenterLinesObjects();
 	void updateVtkNameLabelObjects();
+	void updateVtkBackgroundObjects();
 	void setupCursors();
 
 	EditMouseEventMode m_editMouseEventMode;
@@ -97,6 +99,9 @@ public:
 	vtkStringArray* m_labelArray;
 	vtkLabeledDataMapper* m_labelMapper;
 	vtkActor2D* m_labelActor;
+
+	vtkStructuredGrid* m_backgroundGrid;
+	vtkActor* m_backgroundActor;
 
 	QMenu* m_rightClickingMenu;
 

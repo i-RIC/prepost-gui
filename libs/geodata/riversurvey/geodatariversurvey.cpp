@@ -22,25 +22,17 @@
 #include "private/geodatariversurvey_setdisplaysettingcommand.h"
 #include "private/geodatariversurvey_translateriverpathpointcommand.h"
 
-#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/pre/base/preprocessordataitem.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <misc/errormessage.h>
-#include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
-#include <misc/qundocommandhelper.h>
-#include <misc/xmlsupport.h>
-#include <misc/zdepthrange.h>
+#include <misc/iricundostack.h>
 
 #include <QAction>
 #include <QDomElement>
@@ -76,8 +68,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
-	m_backgroundGrid = vtkSmartPointer<vtkStructuredGrid>::New();
-
 	m_definingBoundingBox = false;
 	m_leftButtonDown = false;
 
@@ -94,9 +84,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 
 GeoDataRiverSurvey::~GeoDataRiverSurvey()
 {
-	vtkRenderer* r = renderer();
-	r->RemoveActor(m_backgroundActor);
-
 	delete m_gridThread;
 	delete impl;
 }
@@ -110,22 +97,6 @@ void GeoDataRiverSurvey::setCaption(const QString& cap)
 void GeoDataRiverSurvey::setupActors()
 {
 	impl->setupVtkObjects();
-
-	vtkSmartPointer<vtkDataSetMapper> mapper;
-	vtkRenderer* r = renderer();
-
-	// background color.
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_backgroundGrid);
-	mapper->SetScalarModeToUsePointData();
-	mapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	mapper->UseLookupTableScalarRangeOn();
-	mapper->SetScalarVisibility(true);
-
-	m_backgroundActor = vtkSmartPointer<vtkActor>::New();
-	m_backgroundActor->SetMapper(mapper);
-	m_backgroundActor->VisibilityOff();
-	r->AddActor(m_backgroundActor);
 }
 
 void GeoDataRiverSurvey::setupMenu()
@@ -178,7 +149,7 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	col->AddItem(impl->m_selectedRightBankPointsActor);
 	col->AddItem(impl->m_selectedCrossSectionLinesActor);
 	if (m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
+		col->AddItem(impl->m_backgroundActor);
 	}
 	if (m_setting.showLines) {
 		col->AddItem(impl->m_verticalCrossSectionLinesActor);
@@ -200,7 +171,7 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 	col->AddItem(impl->m_crossSectionLinesActor);
 	col->AddItem(impl->m_centerAndBankLinesActor);
 	if (m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
+		col->AddItem(impl->m_backgroundActor);
 	}
 	if (m_setting.showLines) {
 		col->AddItem(impl->m_verticalCrossSectionLinesActor);
@@ -213,8 +184,6 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 
 void GeoDataRiverSurvey::allActorsOff()
 {
-	m_backgroundActor->VisibilityOff();
-
 	impl->m_riverCenterPointsActor->VisibilityOff();
 	impl->m_crossSectionLinesActor->VisibilityOff();
 	impl->m_centerAndBankLinesActor->VisibilityOff();
@@ -224,6 +193,7 @@ void GeoDataRiverSurvey::allActorsOff()
 	impl->m_selectedCrossSectionLinesActor->VisibilityOff();
 	impl->m_verticalCrossSectionLinesActor->VisibilityOff();
 	impl->m_labelActor->VisibilityOff();
+	impl->m_backgroundActor->VisibilityOff();
 }
 
 void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
@@ -566,7 +536,7 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 
 	m_setting.load(node);
 
-	m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
 
 	QDomElement elem = node.toElement();
 	int linearMode = elem.attribute("interpolateLinear").toInt();
@@ -657,7 +627,7 @@ void GeoDataRiverSurvey::saveExternalData(const QString& filename)
 bool GeoDataRiverSurvey::getValueRange(double* min, double* max)
 {
 	double range[2];
-	vtkDataArray* data = m_backgroundGrid->GetPointData()->GetArray("Data");
+	vtkDataArray* data = impl->m_backgroundGrid->GetPointData()->GetArray("Data");
 	if (data == nullptr) {
 		return false;
 	}
@@ -681,21 +651,12 @@ void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog*)
 
 void GeoDataRiverSurvey::updateShapeData()
 {
-	m_backgroundActor->VisibilityOff();
-
-	vtkActorCollection* col = actorCollection();
-	col->RemoveAllItems();
-
-	if (m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
-		m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
-	}
-
 	impl->updateVtkPointsObjects();
 	impl->updateVtkCenterAndBankLinesObjects();
 	impl->updateVtkSelectedObjects();
 	impl->updateVtkVerticalCenterLinesObjects();
 	impl->updateVtkNameLabelObjects();
+	impl->updateVtkBackgroundObjects();
 
 	emit dataUpdated();
 	m_gridThread->update();
@@ -713,7 +674,7 @@ GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
 
 vtkStructuredGrid* GeoDataRiverSurvey::backgroundGrid() const
 {
-	return m_backgroundGrid;
+	return impl->m_backgroundGrid;
 }
 
 void GeoDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -728,8 +689,6 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	double lines = .5 * range.min() + .5 * range.max();
 	double points = range.max();
 
-	m_backgroundActor->SetPosition(0, 0, background);
-
 	impl->m_riverCenterPointsActor->SetPosition(0, 0, points);
 	impl->m_crossSectionLinesActor->SetPosition(0, 0, lines);
 	impl->m_centerAndBankLinesActor->SetPosition(0, 0, lines);
@@ -739,6 +698,7 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedCrossSectionLinesActor->SetPosition(0, 0, lines);
 	impl->m_verticalCrossSectionLinesActor->SetPosition(0, 0, backlines);
 	impl->m_blackCrossSectionActor->SetPosition(0, 0, backlines);
+	impl->m_backgroundActor->SetPosition(0, 0, background);
 }
 
 void GeoDataRiverSurvey::moveSelectedPoints()
@@ -1029,8 +989,8 @@ void GeoDataRiverSurvey::updateSplineSolvers()
 
 void GeoDataRiverSurvey::updateBackgroundGrid()
 {
-	m_backgroundGrid = m_gridThread->grid();
-	m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
+	impl->m_backgroundGrid = m_gridThread->grid();
+	impl->m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
 
 	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
 	m_gridThread->startBGGridCopy();
@@ -1042,10 +1002,10 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 		p = p->nextPoint();
 	}
 	m_gridThread->finishBGGridCopy();
-	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(m_backgroundActor->GetMapper());
-	mapper->SetInputData(m_backgroundGrid);
+	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(impl->m_backgroundActor->GetMapper());
+	mapper->SetInputData(impl->m_backgroundGrid);
 	if (isVisible() && m_setting.showBackground) {
-		m_backgroundActor->VisibilityOn();
+		impl->m_backgroundActor->VisibilityOn();
 	}
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
 }

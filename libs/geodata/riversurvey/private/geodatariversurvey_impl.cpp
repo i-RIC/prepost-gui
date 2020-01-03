@@ -1,10 +1,12 @@
 #include "geodatariversurvey_impl.h"
 
+#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
 #include <vtkActor2D.h>
 #include <vtkCellArray.h>
+#include <vtkDataSetMapper.h>
 #include <vtkLabeledDataMapper.h>
 #include <vtkPointData.h>
 #include <vtkPolyData.h>
@@ -53,6 +55,8 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_labelArray {vtkStringArray::New()},
 	m_labelMapper {vtkLabeledDataMapper::New()},
 	m_labelActor {vtkActor2D::New()},
+	m_backgroundGrid {vtkStructuredGrid::New()},
+	m_backgroundActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -89,6 +93,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	r->RemoveActor(m_verticalCrossSectionLinesActor);
 	r->RemoveActor(m_blackCrossSectionActor);
 	r->RemoveActor(m_labelActor);
+	r->RemoveActor(m_backgroundActor);
 
 	m_pointPoints->Delete();
 	m_riverCenterPoints->Delete();
@@ -114,6 +119,8 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_labelArray->Delete();
 	m_labelMapper->Delete();
 	m_labelActor->Delete();
+	m_backgroundGrid->Delete();
+	m_backgroundActor->Delete();
 
 	delete m_rightClickingMenu;
 }
@@ -265,6 +272,18 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 
 	m_labelActor->SetMapper(m_labelMapper);
 	r->AddActor(m_labelActor);
+
+	// background color
+	auto dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	dsmapper->SetInputData(m_backgroundGrid);
+	dsmapper->SetScalarModeToUsePointData();
+	dsmapper->SetLookupTable(m_rs->scalarsToColorsContainer()->vtkObj());
+	dsmapper->UseLookupTableScalarRangeOn();
+	dsmapper->SetScalarVisibility(true);
+
+	m_backgroundActor->SetMapper(dsmapper);
+	m_backgroundActor->VisibilityOff();
+	r->AddActor(m_backgroundActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
@@ -565,6 +584,19 @@ void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
 		p = p->nextPoint();
 	}
 	m_rightBankPointSet->Modified();
+}
+
+void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
+{
+	m_backgroundActor->VisibilityOff();
+	auto col = m_rs->actorCollection();
+	col->RemoveItem(m_backgroundActor);
+
+	if (m_rs->m_setting.showBackground) {
+		col->AddItem(m_backgroundActor);
+		m_backgroundActor->GetProperty()->SetOpacity(m_rs->m_setting.opacity);
+		m_rs->updateVisibilityWithoutRendering();
+	}
 }
 
 void GeoDataRiverSurvey::Impl::setupCursors()

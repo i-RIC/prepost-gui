@@ -55,7 +55,7 @@ void GeoDataRiverSurveyProxy::setupActors()
 	col->AddItem(m_crossectionsActor);
 
 	m_backgroundActor = vtkSmartPointer<vtkActor>::New();
-	m_backgroundActor->SetMapper(rs->m_backgroundActor->GetMapper());
+	m_backgroundActor->SetMapper(rs->impl->m_backgroundActor->GetMapper());
 	r->AddActor(m_backgroundActor);
 	col->AddItem(m_backgroundActor);
 
