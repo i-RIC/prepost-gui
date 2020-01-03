@@ -137,8 +137,6 @@ private:
 
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
-	QPoint m_currentPoint;
-
 	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
 

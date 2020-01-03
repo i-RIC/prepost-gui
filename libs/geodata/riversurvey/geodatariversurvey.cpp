@@ -300,34 +300,34 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 			case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
 			case Impl::EditMouseEventMode::ExpansionPrepareRight:
 			case Impl::EditMouseEventMode::ExpansionPrepareLeft:
-				m_currentPoint = QPoint(event->x(), event->y());
+				impl->m_currentPoint = event->pos();
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				break;
 			case Impl::EditMouseEventMode::Translate:
 				// execute translation.
-				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::RotateRight:
-				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::RotateLeft:
-				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::Shift:
-				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::MoveExtentionEndPointLeft:
-				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, event->pos(), this));
+				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::MoveExtentionEndPointRight:
-				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
+				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, event->pos(), this));
+				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::ExpansionRight:
 			case Impl::EditMouseEventMode::ExpansionLeft:
@@ -435,7 +435,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 				com.redo();
 			}
 			m_definingBoundingBox = false;
-			m_currentPoint = QPoint(event->x(), event->y());
+			impl->m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			break;
@@ -458,7 +458,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 		case Impl::EditMouseEventMode::ExpansionRight:
 		case Impl::EditMouseEventMode::ExpansionLeft:
 			// operation ended.
-			m_currentPoint = QPoint(event->x(), event->y());
+			impl->m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			break;
@@ -857,8 +857,8 @@ void GeoDataRiverSurvey::addNewPoint()
 void GeoDataRiverSurvey::updateMouseEventMode()
 {
 	double dx, dy;
-	dx = m_currentPoint.x();
-	dy = m_currentPoint.y();
+	dx = impl->m_currentPoint.x();
+	dy = impl->m_currentPoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
 	QPointF worldPos(dx, dy);
 	double stdLen = graphicsView()->stdRadius(1);

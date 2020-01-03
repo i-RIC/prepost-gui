@@ -133,6 +133,7 @@ public:
 	QCursor m_cursorShift;
 
 	QPoint m_dragStartPoint;
+	QPoint m_currentPoint;
 
 	GeoDataRiverSurvey* m_rs;
 };
