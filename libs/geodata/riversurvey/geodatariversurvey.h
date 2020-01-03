@@ -12,9 +12,6 @@
 #include <vtkLODActor.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkStructuredGrid.h>
-#include <vtkLabeledDataMapper.h>
-#include <vtkActor2D.h>
-#include <vtkStringArray.h>
 
 #include <QPoint>
 
@@ -117,16 +114,11 @@ protected:
 	void updateFilename() override;
 	int iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
-	vtkSmartPointer<vtkPoints> m_rightBankPoints;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
 	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
 
 	vtkSmartPointer<vtkActor> m_backgroundActor;
 
-	vtkSmartPointer<vtkStringArray> m_labelArray;
-	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
-	vtkSmartPointer<vtkActor2D> m_labelActor;
 
 private:
 	GeoDataRiverPathPoint* singleSelectedPoint();

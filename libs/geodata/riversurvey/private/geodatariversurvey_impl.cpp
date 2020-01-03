@@ -1,13 +1,19 @@
 #include "geodatariversurvey_impl.h"
 
 #include <misc/mathsupport.h>
+#include <misc/stringtool.h>
 
+#include <vtkActor2D.h>
 #include <vtkCellArray.h>
+#include <vtkLabeledDataMapper.h>
+#include <vtkPointData.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
+#include <vtkStringArray.h>
+#include <vtkTextProperty.h>
 
 #include <QAction>
 #include <QMenu>
@@ -42,6 +48,11 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_verticalCrossSectionLinesActor {vtkActor::New()},
 	m_blackCrossSection {vtkPolyData::New()},
 	m_blackCrossSectionActor {vtkActor::New()},
+	m_rightBankPoints {vtkPoints::New()},
+	m_rightBankPointSet {vtkUnstructuredGrid::New()},
+	m_labelArray {vtkStringArray::New()},
+	m_labelMapper {vtkLabeledDataMapper::New()},
+	m_labelActor {vtkActor2D::New()},
 	m_rightClickingMenu {nullptr},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
@@ -60,7 +71,10 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_interpolateSplineAction{ new QAction(GeoDataRiverSurvey::tr("Spline"), rs) },
 	m_interpolateLinearAction{ new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs) },
 	m_rs {rs}
-{}
+{
+	m_rightBankPoints->SetDataTypeToDouble();
+	m_labelArray->SetName("Label");
+}
 
 GeoDataRiverSurvey::Impl::~Impl()
 {
@@ -74,6 +88,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	r->RemoveActor(m_selectedCrossSectionLinesActor);
 	r->RemoveActor(m_verticalCrossSectionLinesActor);
 	r->RemoveActor(m_blackCrossSectionActor);
+	r->RemoveActor(m_labelActor);
 
 	m_pointPoints->Delete();
 	m_riverCenterPoints->Delete();
@@ -94,6 +109,11 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_verticalCrossSectionLinesActor->Delete();
 	m_blackCrossSection->Delete();
 	m_blackCrossSectionActor->Delete();
+	m_rightBankPoints->Delete();
+	m_rightBankPointSet->Delete();
+	m_labelArray->Delete();
+	m_labelMapper->Delete();
+	m_labelActor->Delete();
 
 	delete m_rightClickingMenu;
 }
@@ -229,6 +249,22 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	prop->SetOpacity(0.3);
 	m_blackCrossSectionActor->VisibilityOff();
 	r->AddActor(m_blackCrossSectionActor);
+
+	// name label
+	m_rightBankPointSet->GetPointData()->AddArray(m_labelArray);
+	m_labelMapper->SetInputData(m_rightBankPointSet);
+	m_labelMapper->SetLabelModeToLabelFieldData();
+	m_labelMapper->SetFieldDataName(m_labelArray->GetName());
+	m_labelMapper->GetLabelTextProperty()->SetColor(0, 0, 0);
+	m_labelMapper->GetLabelTextProperty()->SetFontSize(15);
+	m_labelMapper->GetLabelTextProperty()->BoldOff();
+	m_labelMapper->GetLabelTextProperty()->ItalicOff();
+	m_labelMapper->GetLabelTextProperty()->ShadowOff();
+	m_labelMapper->GetLabelTextProperty()->SetJustificationToLeft();
+	m_labelMapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
+
+	m_labelActor->SetMapper(m_labelMapper);
+	r->AddActor(m_labelActor);
 }
 
 void GeoDataRiverSurvey::Impl::setupMenu()
@@ -500,6 +536,35 @@ void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 	}	else {
 		m_verticalCrossSectionLinesActor->VisibilityOff();
 	}
+}
+
+void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
+{
+	auto p = m_rs->m_headPoint->nextPoint();
+
+	m_rightBankPoints->Reset();
+	double point[3];
+	point[2] = 0;
+	while (p != nullptr) {
+		QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+		point[0] = rightBank.x();
+		point[1] = rightBank.y();
+		m_rightBankPoints->InsertNextPoint(point);
+		p = p->nextPoint();
+	}
+	m_rightBankPoints->Modified();
+
+	m_rightBankPointSet->SetPoints(m_rightBankPoints);
+
+	m_labelArray->Reset();
+	p = m_rs->m_headPoint->nextPoint();
+	while (p != nullptr) {
+		QString name = p->name();
+		name.prepend(tr("  "));
+		m_labelArray->InsertNextValue(iRIC::toStr(name).c_str());
+		p = p->nextPoint();
+	}
+	m_rightBankPointSet->Modified();
 }
 
 void GeoDataRiverSurvey::Impl::setupCursors()

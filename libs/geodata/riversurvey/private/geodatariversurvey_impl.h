@@ -7,7 +7,11 @@
 #include <QPixmap>
 
 class vtkActor;
+class vtkActor2D;
+class vtkLabeledDataMapper;
 class vtkPolyData;
+class vtkStringArray;
+class vtkUnstructuredGrid;
 
 class QAction;
 
@@ -53,6 +57,7 @@ public:
 	void updateVtkCenterAndBankLinesObjects();
 	void updateVtkSelectedObjects();
 	void updateVtkVerticalCenterLinesObjects();
+	void updateVtkNameLabelObjects();
 	void setupCursors();
 
 	EditMouseEventMode m_editMouseEventMode;
@@ -85,6 +90,13 @@ public:
 
 	vtkPolyData* m_blackCrossSection;
 	vtkActor* m_blackCrossSectionActor;
+
+	vtkPoints* m_rightBankPoints;
+	vtkUnstructuredGrid* m_rightBankPointSet;
+
+	vtkStringArray* m_labelArray;
+	vtkLabeledDataMapper* m_labelMapper;
+	vtkActor2D* m_labelActor;
 
 	QMenu* m_rightClickingMenu;
 

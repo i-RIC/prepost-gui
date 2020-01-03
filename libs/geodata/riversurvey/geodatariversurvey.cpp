@@ -57,22 +57,14 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 
+#include <vtkActorCollection.h>
 #include <vtkActor2DCollection.h>
 #include <vtkCellArray.h>
-#include <vtkDoubleArray.h>
-#include <vtkExtractGrid.h>
-#include <vtkIdList.h>
-#include <vtkLine.h>
 #include <vtkPointData.h>
-#include <vtkPoints.h>
-#include <vtkPolygon.h>
+#include <vtkPolyData.h>
 #include <vtkProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkStructuredGridGeometryFilter.h>
-#include <vtkTextProperty.h>
-#include <vtkVertex.h>
+#include <vtkRenderWindow.h>
 
 #include <iriclib_riversurvey.h>
 
@@ -84,15 +76,7 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
-	m_rightBankPoints = vtkSmartPointer<vtkPoints>::New();
-	m_rightBankPoints->SetDataTypeToDouble();
-	// setup grid.
-	m_rightBankPointSet = vtkSmartPointer<vtkUnstructuredGrid>::New();
-
 	m_backgroundGrid = vtkSmartPointer<vtkStructuredGrid>::New();
-
-	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
-	m_labelArray->SetName("Label");
 
 	m_definingBoundingBox = false;
 	m_leftButtonDown = false;
@@ -112,7 +96,6 @@ GeoDataRiverSurvey::~GeoDataRiverSurvey()
 {
 	vtkRenderer* r = renderer();
 	r->RemoveActor(m_backgroundActor);
-	r->RemoveActor(m_labelActor);
 
 	delete m_gridThread;
 	delete impl;
@@ -130,24 +113,6 @@ void GeoDataRiverSurvey::setupActors()
 
 	vtkSmartPointer<vtkDataSetMapper> mapper;
 	vtkRenderer* r = renderer();
-
-	// Label
-	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	m_rightBankPointSet->GetPointData()->AddArray(m_labelArray);
-	m_labelMapper->SetInputData(m_rightBankPointSet);
-	m_labelMapper->SetLabelModeToLabelFieldData();
-	m_labelMapper->SetFieldDataName(m_labelArray->GetName());
-	m_labelMapper->GetLabelTextProperty()->SetColor(0, 0, 0);
-	m_labelMapper->GetLabelTextProperty()->SetFontSize(15);
-	m_labelMapper->GetLabelTextProperty()->BoldOff();
-	m_labelMapper->GetLabelTextProperty()->ItalicOff();
-	m_labelMapper->GetLabelTextProperty()->ShadowOff();
-	m_labelMapper->GetLabelTextProperty()->SetJustificationToLeft();
-	m_labelMapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
-
-	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	m_labelActor->SetMapper(m_labelMapper);
-	r->AddActor(m_labelActor);
 
 	// background color.
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
@@ -220,7 +185,7 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	}
 
 	col2->RemoveAllItems();
-	col2->AddItem(m_labelActor);
+	col2->AddItem(impl->m_labelActor);
 
 	updateVisibilityWithoutRendering();
 }
@@ -241,7 +206,7 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 		col->AddItem(impl->m_verticalCrossSectionLinesActor);
 	}
 	col2->RemoveAllItems();
-	col2->AddItem(m_labelActor);
+	col2->AddItem(impl->m_labelActor);
 
 	updateVisibilityWithoutRendering();
 }
@@ -249,7 +214,6 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 void GeoDataRiverSurvey::allActorsOff()
 {
 	m_backgroundActor->VisibilityOff();
-	m_labelActor->VisibilityOff();
 
 	impl->m_riverCenterPointsActor->VisibilityOff();
 	impl->m_crossSectionLinesActor->VisibilityOff();
@@ -259,6 +223,7 @@ void GeoDataRiverSurvey::allActorsOff()
 	impl->m_selectedRightBankPointsActor->VisibilityOff();
 	impl->m_selectedCrossSectionLinesActor->VisibilityOff();
 	impl->m_verticalCrossSectionLinesActor->VisibilityOff();
+	impl->m_labelActor->VisibilityOff();
 }
 
 void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
@@ -716,36 +681,6 @@ void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog*)
 
 void GeoDataRiverSurvey::updateShapeData()
 {
-	m_rightBankPoints->Reset();
-
-	auto p = m_headPoint->nextPoint();
-	double point[3];
-	point[2] = 0;
-	int index = 0;
-	while (p != nullptr) {
-		// right bank
-		QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-		point[0] = rightBank.x();
-		point[1] = rightBank.y();
-		m_rightBankPoints->InsertNextPoint(point);
-
-		++index;
-		p = p->nextPoint();
-	}
-	m_rightBankPoints->Modified();
-
-	m_rightBankPointSet->SetPoints(m_rightBankPoints);
-	m_labelArray->Reset();
-	p = m_headPoint->nextPoint();
-	while (p != nullptr) {
-		QString name = p->name();
-		name.prepend(tr("  "));
-		m_labelArray->InsertNextValue(iRIC::toStr(name).c_str());
-		p = p->nextPoint();
-	}
-
-	m_rightBankPointSet->Modified();
-
 	m_backgroundActor->VisibilityOff();
 
 	vtkActorCollection* col = actorCollection();
@@ -756,15 +691,11 @@ void GeoDataRiverSurvey::updateShapeData()
 		m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
 	}
 
-	vtkActor2DCollection* col2 = actor2DCollection();
-	col2->AddItem(m_labelActor);
-
 	impl->updateVtkPointsObjects();
 	impl->updateVtkCenterAndBankLinesObjects();
 	impl->updateVtkSelectedObjects();
 	impl->updateVtkVerticalCenterLinesObjects();
-
-	updateVisibilityWithoutRendering();
+	impl->updateVtkNameLabelObjects();
 
 	emit dataUpdated();
 	m_gridThread->update();

@@ -13,6 +13,7 @@
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
 #include <vtkDataSetMapper.h>
+#include <vtkLabeledDataMapper.h>
 #include <vtkLine.h>
 #include <vtkPoints.h>
 #include <vtkProperty.h>
@@ -70,7 +71,7 @@ void GeoDataRiverSurveyProxy::setupActors()
 	col->AddItem(m_crosssectionLinesActor);
 
 	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	m_labelActor->SetMapper(rs->m_labelMapper);
+	m_labelActor->SetMapper(rs->impl->m_labelMapper);
 	r->AddActor2D(m_labelActor);
 	actor2DCollection()->AddItem(m_labelActor);
 
