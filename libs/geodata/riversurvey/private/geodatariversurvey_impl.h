@@ -138,6 +138,8 @@ public:
 	bool m_definingBoundingBox;
 	bool m_leftButtonDown;
 
+	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
+
 	GeoDataRiverSurvey* m_rs;
 };
 

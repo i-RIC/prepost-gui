@@ -68,8 +68,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
 
-	m_gridCreatingCondition = nullptr;
-
 	m_gridThread = new GeoDataRiverSurveyBackgroundGridCreateThread(this);
 	connect(m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
@@ -1088,12 +1086,12 @@ void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black)
 
 void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond)
 {
-	m_gridCreatingCondition = cond;
+	impl->m_gridCreatingCondition = cond;
 }
 
 GridCreatingConditionRiverSurveyInterface* GeoDataRiverSurvey::gridCreatingCondition() const
 {
-	return m_gridCreatingCondition;
+	return impl->m_gridCreatingCondition;
 }
 
 void GeoDataRiverSurvey::setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p)

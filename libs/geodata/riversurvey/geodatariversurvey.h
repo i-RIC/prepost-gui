@@ -135,7 +135,6 @@ private:
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
 	Qt::KeyboardModifiers m_keyboardModifiers;
-	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
 
 private:
 	class AddExtensionCommand;
