@@ -1,11 +1,17 @@
 #include "geodatariversurvey_impl.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
+#include <geoio/coordinatesedit.h>
+#include <geoio/polylineio.h>
+#include <guibase/polyline/polylinecontrollerutil.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
 #include <vtkActor2D.h>
+#include <vtkActor2DCollection.h>
 #include <vtkCellArray.h>
 #include <vtkDataSetMapper.h>
 #include <vtkLabeledDataMapper.h>
@@ -18,19 +24,38 @@
 #include <vtkTextProperty.h>
 
 #include <QAction>
+#include <QMessageBox>
 #include <QMenu>
 
 namespace {
+
+const int SPLINE_FACTOR = 10;
+const int POINTSIZE = 5;
+const int FONTSIZE = 17;
 
 void addPoint(vtkPoints* points, const QPointF& p)
 {
 	points->InsertNextPoint(p.x(), p.y(), 0);
 }
 
+void setupLabelActor(vtkLabel2DActor* actor)
+{
+	actor->setLabelPosition(vtkLabel2DActor::lpMiddleLeft);
+	auto prop = actor->labelTextProperty();
+	prop->SetFontSize(FONTSIZE);
+	prop->BoldOn();
+}
+
 } // namespace
 
 GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
+	m_mode {Mode::CreateMode},
+	m_createMouseEventMode {CreateMouseEventMode::BeforeDefining},
 	m_editMouseEventMode {EditMouseEventMode::Normal},
+	m_activePoints {&m_centerLineController},
+	m_activeLine {&m_centerLineSplineController},
+	m_previousLeftBankDistance {10},
+	m_previousRightBankDistance {10},
 	m_pointPoints {vtkPoints::New()},
 	m_riverCenterPoints {vtkPolyData::New()},
 	m_riverCenterPointsActor {vtkActor::New()},
@@ -58,6 +83,13 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_backgroundGrid {vtkSmartPointer<vtkStructuredGrid>::New()},
 	m_backgroundActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
+	m_menuIsSetup {false},
+	m_generateAction {new QAction(GeoDataRiverSurvey::tr("Generate River Survey data"), rs)},
+	m_buildBankLinesAction {new QAction(GeoDataRiverSurvey::tr("Build Left bank and Right bank lines"), rs)},
+	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GeoDataRiverSurvey::tr("&Add Vertex"), rs)},
+	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GeoDataRiverSurvey::tr("&Remove Vertex"), rs)},
+	m_importCenterLineAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GeoDataRiverSurvey::tr("Import C&enter Line..."), rs)},
+	m_exportCenterLineAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GeoDataRiverSurvey::tr("Export Ce&nter Line..."), rs)},
 	m_addUpperSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Upstream Side(&B)..."), rs)},
 	m_addLowerSideAction {new QAction(GeoDataRiverSurvey::tr("Insert Downstream Side(&A)..."), rs)},
 	m_moveAction {new QAction(GeoDataRiverSurvey::tr("&Move..."), rs)},
@@ -74,6 +106,19 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_showBackgroundAction {new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs)},
 	m_interpolateSplineAction {new QAction(GeoDataRiverSurvey::tr("Spline"), rs)},
 	m_interpolateLinearAction {new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs)},
+	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map points data"), rs)},
+	m_pixmapAdd {":/libs/guibase/images/cursorAdd.png"},
+	m_pixmapRemove {":/libs/guibase/images/cursorRemove.png"},
+	m_pixmapMove {":/libs/guibase/images/cursorItemMove.png"},
+	m_pixmapRotate {":/libs/geodata/riversurvey/images/cursorCrosssectionRotate.png"},
+	m_pixmapExpand {":/libs/geodata/riversurvey/images/cursorExpand.png"},
+	m_pixmapShift {":/libs/geodata/riversurvey/images/cursorShiftCenter.png"},
+	m_cursorAdd {m_pixmapAdd, 0, 0},
+	m_cursorRemove {m_pixmapRemove, 0, 0},
+	m_cursorMove {m_pixmapMove, 7, 2},
+	m_cursorRotate {m_pixmapRotate, 7, 2},
+	m_cursorExpand {m_pixmapExpand, 7, 2},
+	m_cursorShift {m_pixmapShift, 7, 2},
 	m_definingBoundingBox {false},
 	m_leftButtonDown {false},
 	m_gridCreatingCondition {nullptr},
@@ -82,11 +127,31 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 {
 	m_rightBankPoints->SetDataTypeToDouble();
 	m_labelArray->SetName("Label");
+
+	m_addVertexAction->setCheckable(true);
+	m_removeVertexAction->setCheckable(true);
+
+	m_centerLineController.pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
+	m_leftBankLineController.pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
+	m_rightBankLineController.pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
 }
 
 GeoDataRiverSurvey::Impl::~Impl()
 {
 	auto r = m_rs->renderer();
+
+	r->RemoveActor2D(m_upstreamActor.actor());
+	r->RemoveActor2D(m_downstreamActor.actor());
+
+	r->RemoveActor(m_centerLineSplineController.linesActor());
+	r->RemoveActor(m_centerLineController.pointsActor());
+	r->RemoveActor(m_leftBankLineSplineController.linesActor());
+	r->RemoveActor(m_leftBankLineController.pointsActor());
+	r->RemoveActor(m_rightBankLineSplineController.linesActor());
+	r->RemoveActor(m_rightBankLineController.pointsActor());
+	r->RemoveActor(m_upstreamLineController.linesActor());
+	r->RemoveActor(m_downstreamLineController.linesActor());
+
 	r->RemoveActor(m_riverCenterPointsActor);
 	r->RemoveActor(m_crossSectionLinesActor);
 	r->RemoveActor(m_centerAndBankLinesActor);
@@ -131,6 +196,12 @@ GeoDataRiverSurvey::Impl::~Impl()
 
 void GeoDataRiverSurvey::Impl::setupActions()
 {
+	connect(m_generateAction, SIGNAL(triggered()), m_rs, SLOT(generateData()));
+	connect(m_buildBankLinesAction, SIGNAL(triggered()), m_rs, SLOT(buildBankLines()));
+	connect(m_addVertexAction, SIGNAL(triggered(bool)), m_rs, SLOT(addVertexMode(bool)));
+	connect(m_removeVertexAction, SIGNAL(triggered(bool)), m_rs, SLOT(removeVertexMode(bool)));
+	connect(m_importCenterLineAction, SIGNAL(triggered()), m_rs, SLOT(importCenterLine()));
+	connect(m_exportCenterLineAction, SIGNAL(triggered()), m_rs, SLOT(exportCenterLine()));
 	connect(m_addUpperSideAction, SIGNAL(triggered()), m_rs, SLOT(insertNewPoint()));
 	connect(m_addLowerSideAction, SIGNAL(triggered()), m_rs, SLOT(addNewPoint()));
 	connect(m_moveAction, SIGNAL(triggered()), m_rs, SLOT(moveSelectedPoints()));
@@ -146,6 +217,7 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), m_rs, SLOT(openCrossSectionWindow()));
 	connect(m_showBackgroundAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
 	connect(m_interpolateSplineAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToSpline()));
+	connect(m_mapPointsAction, SIGNAL(triggered()), m_rs, SLOT(mapPointsData()));
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateSplineAction->setChecked(true);
 	connect(m_interpolateLinearAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToLinear()));
@@ -169,6 +241,24 @@ void GeoDataRiverSurvey::Impl::setupActions()
 void GeoDataRiverSurvey::Impl::setupVtkObjects()
 {
 	auto r = m_rs->renderer();
+
+	r->AddActor2D(m_upstreamActor.actor());
+	r->AddActor2D(m_downstreamActor.actor());
+	r->AddActor(m_centerLineSplineController.linesActor());
+	r->AddActor(m_centerLineController.pointsActor());
+	r->AddActor(m_leftBankLineSplineController.linesActor());
+	r->AddActor(m_leftBankLineController.pointsActor());
+	r->AddActor(m_rightBankLineSplineController.linesActor());
+	r->AddActor(m_rightBankLineController.pointsActor());
+	r->AddActor(m_upstreamLineController.linesActor());
+	r->AddActor(m_downstreamLineController.linesActor());
+
+	m_upstreamActor.setLabel("Upstream");
+	setupLabelActor(&m_upstreamActor);
+	m_downstreamActor.setLabel("Downstream");
+	setupLabelActor(&m_downstreamActor);
+	m_upstreamActor.actor()->VisibilityOff();
+	m_downstreamActor.actor()->VisibilityOff();
 
 	// river center points
 	auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
@@ -292,11 +382,49 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 
 void GeoDataRiverSurvey::Impl::setupMenu()
 {
+	if (m_menuIsSetup) {return;}
+
 	auto m = m_rs->m_menu;
+	m->clear();
+	delete m_rightClickingMenu;
+	m_rightClickingMenu = new QMenu();
+
 	m->setTitle(tr("&River Survey"));
 	m->addAction(m_rs->m_editNameAction);
 
+	if (m_mode == Mode::CreateMode) {
+		m->addSeparator();
+		setupCreateModeMenu(m);
+		setupCreateModeMenu(m_rightClickingMenu);
+	} else if (m_mode == Mode::EditMode) {
+		m->addSeparator();
+		setupEditModeMenu(m);
+		setupEditModeMenu(m_rightClickingMenu);
+	}
+	m_menuIsSetup = true;
+}
+
+void GeoDataRiverSurvey::Impl::setupCreateModeMenu(QMenu* m)
+{
+	m->addAction(m_generateAction);
+
 	m->addSeparator();
+
+	m->addAction(m_buildBankLinesAction);
+
+	m->addSeparator();
+
+	m->addAction(m_addVertexAction);
+	m->addAction(m_removeVertexAction);
+
+	m->addSeparator();
+
+	m->addAction(m_importCenterLineAction);
+	m->addAction(m_exportCenterLineAction);
+}
+
+void GeoDataRiverSurvey::Impl::setupEditModeMenu(QMenu* m)
+{
 	m->addAction(m_openCrossSectionWindowAction);
 
 	m->addSeparator();
@@ -319,43 +447,113 @@ void GeoDataRiverSurvey::Impl::setupMenu()
 	m->addAction(m_showBackgroundAction);
 
 	m->addSeparator();
-	QMenu* iMenu = m->addMenu(tr("Interpolation Mode"));
+	QMenu* iMenu = m->addMenu(GeoDataRiverSurvey::tr("Interpolation Mode"));
 	iMenu->addAction(m_interpolateSplineAction);
 	iMenu->addAction(m_interpolateLinearAction);
+
+	m->addSeparator();
+	m->addAction(m_mapPointsAction);
 
 	m->addSeparator();
 	m->addAction(m_rs->deleteAction());
+}
 
-	m_rightClickingMenu = new QMenu();
-	m = m_rightClickingMenu;
-	m->addAction(m_openCrossSectionWindowAction);
+void GeoDataRiverSurvey::Impl::updateLabelsAndSplines()
+{
+	auto col = m_rs->actor2DCollection();
 
-	m->addSeparator();
-	m->addAction(m_addUpperSideAction);
-	m->addAction(m_addLowerSideAction);
-	m->addAction(m_moveAction);
-	m->addAction(m_rotateAction);
-	m->addAction(m_shiftAction);
-	m->addAction(m_expandAction);
-	m->addAction(m_deleteAction);
-	m->addAction(m_renameAction);
+	m_centerLineSplineController.setPolyLine(PolyLineControllerUtil::buildSplinePoints(m_centerLineController, SPLINE_FACTOR));
+	m_leftBankLineSplineController.setPolyLine(PolyLineControllerUtil::buildSplinePoints(m_leftBankLineController, SPLINE_FACTOR));
+	m_rightBankLineSplineController.setPolyLine(PolyLineControllerUtil::buildSplinePoints(m_rightBankLineController, SPLINE_FACTOR));
 
-	m->addSeparator();
-	m->addAction(m_addLeftExtensionPointAction);
-	m->addAction(m_addRightExtensionPointAction);
-	m->addAction(m_removeLeftExtensionPointAction);
-	m->addAction(m_removeRightExtensionPointAction);
+	m_upstreamActor.actor()->VisibilityOff();
+	m_downstreamActor.actor()->VisibilityOff();
+	col->RemoveItem(m_upstreamActor.actor());
+	col->RemoveItem(m_downstreamActor.actor());
 
-	m->addSeparator();
-	m->addAction(m_showBackgroundAction);
+	m_upstreamLineController.clear();
+	m_downstreamLineController.clear();
 
-	m->addSeparator();
-	iMenu = m->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(m_interpolateSplineAction);
-	iMenu->addAction(m_interpolateLinearAction);
+	auto line = m_centerLineController.polyLine();
+	if (line.size() < 2) {return;}
+
+	m_upstreamActor.setPosition(line.at(0));
+	m_downstreamActor.setPosition(line.at(line.size() - 1));
+	col->AddItem(m_upstreamActor.actor());
+	col->AddItem(m_downstreamActor.actor());
+
+	if (m_leftBankLineController.polyLine().size() > 0 && m_rightBankLineController.polyLine().size() > 0) {
+		std::vector<QPointF> upstream, downstream;
+
+		auto center = m_centerLineController.polyLine();
+		auto left = m_leftBankLineController.polyLine();
+		auto right = m_rightBankLineController.polyLine();
+
+		upstream.push_back(left.at(0));
+		upstream.push_back(center.at(0));
+		upstream.push_back(right.at(0));
+
+		downstream.push_back(left.at(left.size() - 1));
+		downstream.push_back(center.at(center.size() - 1));
+		downstream.push_back(right.at(right.size() - 1));
+
+		m_upstreamLineController.setPolyLine(upstream);
+		m_downstreamLineController.setPolyLine(downstream);
+	}
+
+	m_rs->updateVisibilityWithoutRendering();
 }
 
 void GeoDataRiverSurvey::Impl::updateActionStatus()
+{
+	if (m_mode == Mode::CreateMode) {
+		createModeUpdateActionStatus();
+	} else if (m_mode == Mode::EditMode) {
+		editModeUpdateActionStatus();
+	}
+}
+
+void GeoDataRiverSurvey::Impl::createModeUpdateActionStatus()
+{
+	switch (m_createMouseEventMode) {
+	case CreateMouseEventMode::BeforeDefining:
+	case CreateMouseEventMode::Defining:
+	case CreateMouseEventMode::MoveVertex:
+		m_addVertexAction->setDisabled(true);
+		m_addVertexAction->setChecked(false);
+		m_removeVertexAction->setDisabled(true);
+		m_removeVertexAction->setChecked(false);
+		break;
+	case CreateMouseEventMode::Normal:
+	case CreateMouseEventMode::MoveVertexPrepare:
+		m_addVertexAction->setEnabled(true);
+		m_addVertexAction->setChecked(false);
+		m_removeVertexAction->setEnabled(true);
+		m_removeVertexAction->setChecked(false);
+		break;
+	case CreateMouseEventMode::AddVertexPrepare:
+	case CreateMouseEventMode::AddVertexNotPossible:
+	case CreateMouseEventMode::AddVertex:
+		m_addVertexAction->setEnabled(true);
+		m_addVertexAction->setChecked(true);
+		m_removeVertexAction->setDisabled(true);
+		m_removeVertexAction->setChecked(false);
+		break;
+	case CreateMouseEventMode::RemoveVertexPrepare:
+	case CreateMouseEventMode::RemoveVertexNotPossible:
+		m_addVertexAction->setDisabled(true);
+		m_addVertexAction->setChecked(false);
+		m_removeVertexAction->setEnabled(true);
+		m_removeVertexAction->setChecked(true);
+		break;
+	}
+	m_buildBankLinesAction->setEnabled(m_centerLineController.polyLine().size() >= 2);
+	m_generateAction->setEnabled(
+				m_leftBankLineController.polyLine().size() >= 2 &&
+				m_rightBankLineController.polyLine().size() >= 2);
+}
+
+void GeoDataRiverSurvey::Impl::editModeUpdateActionStatus()
 {
 	int selectCount = m_rs->m_headPoint->selectedPoints();
 	bool singleSelection = (selectCount == 1);
@@ -377,6 +575,7 @@ void GeoDataRiverSurvey::Impl::updateActionStatus()
 	m_addRightExtensionPointAction->setEnabled(singleSelection && ! selected->crosssection().fixedPointRSet());
 	m_removeLeftExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointLSet());
 	m_removeRightExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointRSet());
+	m_mapPointsAction->setEnabled(selectionExists);
 	m_openCrossSectionWindowAction->setEnabled(selectionExists);
 }
 
@@ -603,17 +802,267 @@ void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 	}
 }
 
-void GeoDataRiverSurvey::Impl::setupCursors()
+void GeoDataRiverSurvey::Impl::importLine(PolyLineController* line)
 {
-	m_pixmapMove = QPixmap(":/libs/guibase/images/cursorItemMove.png");
-	m_cursorMove = QCursor(m_pixmapMove, 7, 2);
+	auto polyLine = CoordinatesEdit::unapplyOffset(
+				PolylineIO::importData(m_rs->preProcessorWindow()), m_rs->offset());
+	if (polyLine.size() == 0) {return;}
 
-	m_pixmapRotate = QPixmap(":/libs/geodata/riversurvey/images/cursorCrosssectionRotate.png");
-	m_cursorRotate = QCursor(m_pixmapRotate, 7, 2);
+	line->setPolyLine(polyLine);
+	m_createMouseEventMode = CreateMouseEventMode::Normal;
 
-	m_pixmapExpand = QPixmap(":/libs/geodata/riversurvey/images/cursorExpand.png");
-	m_cursorExpand = QCursor(m_pixmapExpand, 7, 2);
+	updateLabelsAndSplines();
+	m_rs->renderGraphicsView();
+}
 
-	m_pixmapShift = QPixmap(":/libs/geodata/riversurvey/images/cursorShiftCenter.png");
-	m_cursorShift = QCursor(m_pixmapShift, 7, 2);
+void GeoDataRiverSurvey::Impl::exportLine(PolyLineController* line, const QString& lineName)
+{
+	auto polyLine = CoordinatesEdit::applyOffset(line->polyLine(), m_rs->offset());
+	if (polyLine.size() == 0) {
+		QMessageBox::warning(m_rs->preProcessorWindow(), GeoDataRiverSurvey::tr("Warning"),
+												 GeoDataRiverSurvey::tr("%1 is not defined yet").arg(lineName));
+		return;
+	}
+	PolylineIO::exportData(polyLine, m_rs->preProcessorWindow());
+}
+
+void GeoDataRiverSurvey::Impl::createModeUpdateMouseEventMode(const QPoint& mousePosition)
+{
+	auto v = m_rs->graphicsView();
+	auto p = v->viewportToWorld(mousePosition);
+	double radius = v->stdRadius(iRIC::nearRadius());
+
+	// switch active line;
+	int tmp_edgeid;
+	if (m_leftBankLineSplineController.isEdgeSelectable(p, radius, &tmp_edgeid)) {
+		m_activePoints = &m_leftBankLineController;
+		m_activeLine = &m_leftBankLineSplineController;
+	} else if (m_rightBankLineSplineController.isEdgeSelectable(p, radius, &tmp_edgeid)) {
+		m_activePoints = &m_rightBankLineController;
+		m_activeLine = &m_rightBankLineSplineController;
+	} else {
+		m_activePoints = &m_centerLineController;
+		m_activeLine = &m_centerLineSplineController;
+	}
+
+	switch (m_createMouseEventMode) {
+	case CreateMouseEventMode::AddVertexPrepare:
+	case CreateMouseEventMode::AddVertexNotPossible:
+		if (m_activeLine->isEdgeSelectable(p, radius, &m_selectedEdgeId)) {
+			m_selectedEdgeId = m_activePoints->findNearestLine(p);
+			m_createMouseEventMode = CreateMouseEventMode::AddVertexPrepare;
+		} else {
+			m_createMouseEventMode = CreateMouseEventMode::AddVertexNotPossible;
+		}
+		break;
+	case CreateMouseEventMode::RemoveVertexPrepare:
+	case CreateMouseEventMode::RemoveVertexNotPossible:
+		if (m_activePoints->isVertexSelectable(p, radius, &m_selectedVertexId)) {
+			m_createMouseEventMode = CreateMouseEventMode::RemoveVertexPrepare;
+		} else {
+			m_createMouseEventMode = CreateMouseEventMode::RemoveVertexNotPossible;
+		}
+		break;
+	case CreateMouseEventMode::Normal:
+	case CreateMouseEventMode::MoveVertexPrepare:
+	case CreateMouseEventMode::MoveVertex:
+	case CreateMouseEventMode::AddVertex:
+		if (m_activePoints->isVertexSelectable(p, radius, &m_selectedVertexId)) {
+			m_createMouseEventMode = CreateMouseEventMode::MoveVertexPrepare;
+		} else {
+			m_createMouseEventMode = CreateMouseEventMode::Normal;
+		}
+		break;
+
+	default:
+		break;
+	}
+}
+
+void GeoDataRiverSurvey::Impl::editModeUpdateMouseEventMode()
+{
+	double dx, dy;
+	dx = m_currentPoint.x();
+	dy = m_currentPoint.y();
+	m_rs->graphicsView()->viewportToWorld(dx, dy);
+	QPointF worldPos(dx, dy);
+	double stdLen = m_rs->graphicsView()->stdRadius(1);
+	double stdLen2 = stdLen * stdLen;
+	int selectCount = m_rs->m_headPoint->selectedPoints();
+	GeoDataRiverPathPoint* selected = nullptr;
+	if (selectCount == 1) {
+		selected = m_rs->m_headPoint->nextPoint();
+		while (1) {
+			if (selected->IsSelected) {break;}
+			selected = selected->nextPoint();
+		}
+		// only one point is selected.
+		if (iRIC::lengthSquared(selected->position() - worldPos) < stdLen2 * 9) {
+			// cursor is near to the river center point
+			if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+				// preparing for moving
+				m_editMouseEventMode = EditMouseEventMode::TranslatePrepare;
+			}
+			if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+				// preparing for center-point shift
+				m_editMouseEventMode = EditMouseEventMode::ShiftPrepare;
+			}
+		} else {
+			m_editMouseEventMode = EditMouseEventMode::Normal;
+			QPointF lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
+			if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
+				// cursor is near left bank.
+				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+					// preparing for rotating
+					m_editMouseEventMode = EditMouseEventMode::RotatePrepareLeft;
+				}
+				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
+						selected->crosssection().fixedPointLSet()) {
+					// preparing for center-point shift
+					m_editMouseEventMode = EditMouseEventMode::MoveExtensionEndPointPrepareLeft;
+				}
+			}
+			QPointF rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
+			if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
+				// cursor is near right bank.
+				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+					// preparing for rotating
+					m_editMouseEventMode = EditMouseEventMode::RotatePrepareRight;
+				}
+				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
+						selected->crosssection().fixedPointRSet()) {
+					// preparing for center-point shift
+					m_editMouseEventMode = EditMouseEventMode::MoveExtensionEndPointPrepareRight;
+				}
+			}
+		}
+	} else {
+		// multiple selection, or none.
+		GeoDataRiverPathPoint* p = m_rs->m_headPoint->nextPoint();
+		m_editMouseEventMode = EditMouseEventMode::Normal;
+		while (p != nullptr) {
+			if (p->IsSelected) {
+				if (iRIC::lengthSquared(p->position() - worldPos) < stdLen2 * 9) {
+					// cursor is near to the river center point
+					if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
+							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+						// preparing for moving
+						m_editMouseEventMode = EditMouseEventMode::TranslatePrepare;
+						return;
+					}
+					if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+						// preparing for center-point shift
+						m_editMouseEventMode = EditMouseEventMode::ShiftPrepare;
+						return;
+					}
+				} else {
+					m_editMouseEventMode = EditMouseEventMode::Normal;
+					QPointF lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+					if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
+						// cursor is near left bank.
+						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+							// preparing for center-point shift
+							m_editMouseEventMode = EditMouseEventMode::ExpansionPrepareLeft;
+							return;
+						}
+					}
+					QPointF rbank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+					if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
+						// cursor is near right bank.
+						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
+								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
+							// preparing for center-point shift
+							m_editMouseEventMode = EditMouseEventMode::ExpansionPrepareRight;
+							return;
+						}
+					}
+				}
+			}
+			p = p->nextPoint();
+		}
+	}
+}
+
+void GeoDataRiverSurvey::Impl::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+{
+	if (m_mode == Mode::CreateMode) {
+		createModeUpdateMouseCursor(v);
+	} else if (m_mode == Mode::EditMode) {
+		editModeUpdateMouseCursor(v);
+	}
+}
+
+void GeoDataRiverSurvey::Impl::createModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v)
+{
+	switch (m_createMouseEventMode) {
+	case CreateMouseEventMode::Normal:
+	case CreateMouseEventMode::AddVertexNotPossible:
+	case CreateMouseEventMode::RemoveVertexNotPossible:
+	case CreateMouseEventMode::EditCoodinatesDialog:
+		v->setCursor(Qt::ArrowCursor);
+		break;
+	case CreateMouseEventMode::BeforeDefining:
+	case CreateMouseEventMode::Defining:
+		v->setCursor(Qt::CrossCursor);
+		break;
+	case CreateMouseEventMode::MoveVertexPrepare:
+		v->setCursor(Qt::OpenHandCursor);
+		break;
+	case CreateMouseEventMode::AddVertexPrepare:
+		v->setCursor(m_cursorAdd);
+		break;
+	case CreateMouseEventMode::RemoveVertexPrepare:
+		v->setCursor(m_cursorRemove);
+		break;
+	case CreateMouseEventMode::MoveVertex:
+	case CreateMouseEventMode::AddVertex:
+		v->setCursor(Qt::ClosedHandCursor);
+		break;
+	}
+}
+
+void GeoDataRiverSurvey::Impl::editModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v)
+{
+	switch (m_editMouseEventMode) {
+	case Impl::EditMouseEventMode::Normal:
+	case Impl::EditMouseEventMode::AddingExtension:
+		v->setCursor(Qt::ArrowCursor);
+		break;
+	case Impl::EditMouseEventMode::Translate:
+	case Impl::EditMouseEventMode::TranslatePrepare:
+		v->setCursor(m_cursorMove);
+		break;
+	case Impl::EditMouseEventMode::RotateRight:
+	case Impl::EditMouseEventMode::RotatePrepareRight:
+	case Impl::EditMouseEventMode::RotateLeft:
+	case Impl::EditMouseEventMode::RotatePrepareLeft:
+		v->setCursor(m_cursorRotate);
+		break;
+	case Impl::EditMouseEventMode::Shift:
+	case Impl::EditMouseEventMode::ShiftPrepare:
+		v->setCursor(m_cursorShift);
+		break;
+	case Impl::EditMouseEventMode::MoveExtentionEndPointLeft:
+	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareLeft:
+	case Impl::EditMouseEventMode::MoveExtentionEndPointRight:
+	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
+		v->setCursor(m_cursorMove);
+		break;
+	case Impl::EditMouseEventMode::ExpansionRight:
+	case Impl::EditMouseEventMode::ExpansionPrepareRight:
+	case Impl::EditMouseEventMode::ExpansionLeft:
+	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
+		v->setCursor(m_cursorExpand);
+		break;
+	default:
+		break;
+	}
 }

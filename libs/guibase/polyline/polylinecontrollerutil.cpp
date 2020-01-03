@@ -1,7 +1,10 @@
 #include "polylinecontroller.h"
 #include "polylinecontrollerutil.h"
+#include "polylineutil.h"
 
 #include <geoio/coordinatesedit.h>
+
+#include <vtkPolyData.h>
 
 #include <QDataStream>
 #include <QPointF>
@@ -33,6 +36,16 @@ void PolyLineControllerUtil::savePolyLine(QDataStream* stream, const PolyLineCon
 	for (QPointF& p : line) {
 		*stream << p.x() + offset.x() << p.y() + offset.y();
 	}
+}
+
+std::vector<QPointF> PolyLineControllerUtil::buildSplinePoints(const PolyLineController& controller, int factor)
+{
+	const auto line = controller.polyLine();
+	if (line.size() < 2) {
+		std::vector<QPointF> empty;
+		return empty;
+	}
+	return PolyLineUtil::buildSplinePoints(controller.polyData()->GetPoints(), static_cast<int>(line.size()) * factor);
 }
 
 PolyLineControllerUtil::PolyLineControllerUtil()

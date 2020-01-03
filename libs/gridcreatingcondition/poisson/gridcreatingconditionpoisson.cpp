@@ -191,35 +191,17 @@ void GridCreatingConditionPoisson::Impl::updateLabelsAndSplines()
 {
 	auto col = m_parent->actor2DCollection();
 
-	auto center = m_centerLineController.polyLine();
-	auto left = m_leftBankLineController.polyLine();
-	auto right = m_rightBankLineController.polyLine();
-
-	std::vector<QPointF> empty;
-	if (center.size() >= 2) {
-		auto centerLineSpline = PolyLineUtil::buildSplinePoints(m_centerLineController.polyData()->GetPoints(), center.size() * SPLINE_FACTOR);
-		m_centerLineSplineController.setPolyLine(centerLineSpline);
-	} else {
-		m_centerLineSplineController.setPolyLine(empty);
-	}
-	if (left.size() >= 2) {
-		auto leftBankLineSpline = PolyLineUtil::buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), left.size() * SPLINE_FACTOR);
-		m_leftBankLineSplineController.setPolyLine(leftBankLineSpline);
-	} else {
-		m_leftBankLineSplineController.setPolyLine(empty);
-	}
-	if (right.size() >= 2) {
-		auto rightBankLineSpline = PolyLineUtil::buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), right.size() * SPLINE_FACTOR);
-		m_rightBankLineSplineController.setPolyLine(rightBankLineSpline);
-	}
+	m_centerLineSplineController.setPolyLine(PolyLineControllerUtil::buildSplinePoints(m_centerLineController, SPLINE_FACTOR));
+	m_leftBankLineSplineController.setPolyLine(PolyLineControllerUtil::buildSplinePoints(m_leftBankLineController, SPLINE_FACTOR));
+	m_rightBankLineSplineController.setPolyLine(PolyLineControllerUtil::buildSplinePoints(m_rightBankLineController, SPLINE_FACTOR));
 
 	m_upstreamActor.actor()->VisibilityOff();
 	m_downstreamActor.actor()->VisibilityOff();
 	col->RemoveItem(m_upstreamActor.actor());
 	col->RemoveItem(m_downstreamActor.actor());
 
-	m_upstreamLineController.setPolyLine(empty);
-	m_downstreamLineController.setPolyLine(empty);
+	m_upstreamLineController.clear();
+	m_downstreamLineController.clear();
 
 	auto line = m_centerLineController.polyLine();
 	if (line.size() < 2) {return;}
@@ -231,6 +213,10 @@ void GridCreatingConditionPoisson::Impl::updateLabelsAndSplines()
 
 	if (m_leftBankLineController.polyLine().size() > 0 && m_rightBankLineController.polyLine().size() > 0) {
 		std::vector<QPointF> upstream, downstream;
+
+		auto center = m_centerLineController.polyLine();
+		auto left = m_leftBankLineController.polyLine();
+		auto right = m_rightBankLineController.polyLine();
 
 		upstream.push_back(left.at(0));
 		upstream.push_back(center.at(0));

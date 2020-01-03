@@ -6,6 +6,7 @@
 #include <vtkSmartPointer.h>
 
 #include <QPointF>
+#include <QRectF>
 
 namespace {
 
@@ -84,6 +85,21 @@ double PolyLineUtil::length(std::vector<QPointF>& polyLine)
 		prev_p = p;
 	}
 	return len;
+}
+
+QRectF PolyLineUtil::boundingRect(std::vector<QPointF>& polyLine)
+{
+	double xmin, xmax, ymin, ymax;
+	for (int i = 0; i < polyLine.size(); ++i) {
+		const auto& p = polyLine.at(i);
+		double x = p.x();
+		double y = p.y();
+		if (i == 0 || x < xmin) {xmin = x;}
+		if (i == 0 || x > xmax) {xmax = x;}
+		if (i == 0 || y < ymin) {ymin = y;}
+		if (i == 0 || y > ymax) {ymax = y;}
+	}
+	return QRectF(xmin, ymin, xmax - xmin, ymax - ymin);
 }
 
 PolyLineUtil::PolyLineUtil()

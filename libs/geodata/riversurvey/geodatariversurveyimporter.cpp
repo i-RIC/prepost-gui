@@ -324,6 +324,7 @@ bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& 
 bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
+	rs->setEditMode();
 
 	return importData(rs, &m_points, m_cpSetting, m_with4Points, w);
 }

@@ -12,6 +12,9 @@ class PolyLineController::Impl
 public:
 	Impl();
 
+	QPointF nearestPoint(int lineId, const QPointF& point);
+	static QPointF nearestPoint(const QPointF& a, const QPointF& b, const QPointF& point);
+
 	vtkLineActor m_actor;
 };
 

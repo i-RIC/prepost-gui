@@ -37,6 +37,8 @@ public:
 	GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	~GeoDataRiverSurvey();
 
+	void setEditMode();
+
 	void setCaption(const QString& cap) override;
 	void setupActors() override;
 	void setupMenu() override;
@@ -58,6 +60,8 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
 
+	void showInitialDialog() override;
+
 	void updateInterpolators();
 	void updateShapeData();
 	void updateSelectionShapeData();
@@ -78,6 +82,13 @@ public:
 	GeoDataProxy* getProxy() override;
 
 private slots:
+	void generateData();
+	void buildBankLines();
+	void addVertexMode(bool on);
+	void removeVertexMode(bool on);
+	void importCenterLine();
+	void exportCenterLine();
+
 	void moveSelectedPoints();
 	void deleteSelectedPoints();
 	void shiftSelectedPoints();
@@ -96,13 +107,13 @@ private slots:
 	void displaySetting();
 	void switchInterpolateModeToLinear();
 	void switchInterpolateModeToSpline();
+	void mapPointsData();
 
 signals:
 	void dataUpdated();
 
 protected:
 	const static int LINEDIVS = 36;
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
@@ -113,13 +124,28 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
+	void createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+
+	void editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+
+	void pushUpdateLabelsCommand(QUndoCommand* com, bool renderRedoOnly = false);
+	void finishDefiningLine();
+
 	GeoDataRiverPathPoint* singleSelectedPoint();
 	void setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p);
 
 	void allActorsOff();
 	void updateSplineSolvers();
-	void updateMouseEventMode();
-	/// Enable or disable actions depending on the selection status.
 
 	GeoDataRiverPathPoint* m_headPoint;
 
@@ -130,6 +156,10 @@ private:
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
 private:
+	class PolyLineFinishDefiningCommand;
+	class PolyLineUpdateLabelsCommand;
+	class PolyLineCoordinatesEditor;
+
 	class AddExtensionCommand;
 	class ChangeSelectionCommand;
 	class DeleteRiverPathPointCommand;

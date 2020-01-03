@@ -7,6 +7,7 @@
 
 class vtkPoints;
 
+class QRectF;
 class QPointF;
 
 class GUIBASEDLL_EXPORT PolyLineUtil
@@ -14,6 +15,7 @@ class GUIBASEDLL_EXPORT PolyLineUtil
 public:
 	static std::vector<QPointF> buildSplinePoints(vtkPoints* points, int divNum);
 	static double length(std::vector<QPointF>& polyLine);
+	static QRectF boundingRect(std::vector<QPointF>& polyLine);
 
 private:
 	PolyLineUtil();
