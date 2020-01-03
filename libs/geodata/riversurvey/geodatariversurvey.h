@@ -18,8 +18,6 @@
 #include <iriclib.h>
 
 class vtkPolyData;
-class vtkProperty;
-class QPolygonF;
 
 class GridCreatingConditionRiverSurveyInterface;
 
