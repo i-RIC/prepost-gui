@@ -137,7 +137,6 @@ private:
 
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
-	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
 
 	Qt::KeyboardModifiers m_keyboardModifiers;

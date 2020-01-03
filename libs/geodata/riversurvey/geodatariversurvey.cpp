@@ -352,8 +352,6 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		m_dragStartPoint = QPoint(event->x(), event->y());
-
 		switch (impl->m_editMouseEventMode) {
 		case Impl::EditMouseEventMode::Normal: {
 				// start drawing the mouse bounding box.
@@ -409,9 +407,8 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 			// do nothing.
 			break;
 		}
-	} else if (event->button() == Qt::RightButton) {
-		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
+	impl->m_dragStartPoint = event->pos();
 }
 
 void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
@@ -479,7 +476,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 
 
 	} else if (event->button() == Qt::RightButton) {
-		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
+		if (iRIC::isNear(impl->m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();

@@ -132,6 +132,8 @@ public:
 	QCursor m_cursorExpand;
 	QCursor m_cursorShift;
 
+	QPoint m_dragStartPoint;
+
 	GeoDataRiverSurvey* m_rs;
 };
 
