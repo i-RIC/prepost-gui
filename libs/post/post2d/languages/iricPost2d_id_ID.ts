@@ -479,22 +479,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -527,12 +527,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -910,6 +910,14 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticleGroupRootDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlegrouprootdataitem.cpp" line="12"/>
+        <source>Particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="14"/>
@@ -1211,46 +1219,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>Post2dWindowParticlesScalarGroupDataItem</name>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="29"/>
+        <location filename="../datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp" line="32"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="147"/>
+        <location filename="../datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp" line="153"/>
         <source>Particle Scalar value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseTopDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Edit Particle Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesbasevectorgroupdataitem.cpp" line="44"/>
+        <source>Vector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesbasevectorgroupdataitem.cpp" line="67"/>
+        <source>Vector Attribute Select Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="22"/>
+        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="7"/>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticlesVectorGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/post2dwindowparticlesvectorgroupdataitem.cpp" line="45"/>
-        <source>Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticlesvectorgroupdataitem.cpp" line="67"/>
-        <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1494,9 +1505,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="126"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="129"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="132"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="134"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="137"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="140"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1514,7 +1525,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <location filename="../datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp" line="11"/>
         <source>Update Particles Scalar Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1524,7 +1535,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="235"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="237"/>
         <source>Create Cell Contour</source>
         <translation type="unfinished"></translation>
     </message>

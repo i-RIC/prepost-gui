@@ -33,9 +33,9 @@ void PostParticleScalarPropertyDialog::setGridTypeDataItem(PostWindowGridTypeDat
 	m_gridTypeDataItem = item;
 }
 
-void PostParticleScalarPropertyDialog::setZoneData(PostZoneDataContainer* zoneData)
+void PostParticleScalarPropertyDialog::setData(vtkPolyData* data)
 {
-	vtkPointData* pd = zoneData->particleData()->GetPointData();
+	auto pd = data->GetPointData();
 	SolverDefinitionGridType* gtype = m_gridTypeDataItem->gridType();
 
 	m_targets = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);

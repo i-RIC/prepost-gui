@@ -14,7 +14,8 @@
 #include <vector>
 
 class PostWindowGridTypeDataItemInterface;
-class PostZoneDataContainer;
+
+class vtkPolyData;
 
 namespace Ui {
 class PostParticleScalarPropertyDialog;
@@ -25,11 +26,11 @@ class POSTBASEDLL_EXPORT PostParticleScalarPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PostParticleScalarPropertyDialog(QWidget *parent = 0);
+	explicit PostParticleScalarPropertyDialog(QWidget *parent = nullptr);
 	~PostParticleScalarPropertyDialog();
 
 	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
-	void setZoneData(PostZoneDataContainer* zoneData);
+	void setData(vtkPolyData* data);
 
 	ScalarSettingContainer setting() const;
 	void setSetting(const ScalarSettingContainer setting);

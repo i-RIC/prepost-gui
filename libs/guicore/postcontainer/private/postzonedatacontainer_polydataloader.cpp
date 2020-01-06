@@ -1,3 +1,4 @@
+#include "../../misc/cgnsutil.h"
 #include "../../project/projectcgnsfile.h"
 #include "postzonedatacontainer_polydataloader.h"
 
@@ -20,52 +21,6 @@
 
 namespace {
 
-int arrayIdWithName(const std::string& name)
-{
-	int ier;
-	int numArrays;
-
-	ier = cg_narrays(&numArrays);
-	for (int A = 1; A <= numArrays; ++A) {
-		char n[ProjectCgnsFile::BUFFERLEN];
-		DataType_t dataType;
-		int dim;
-		cgsize_t dimVec;
-
-		ier = cg_array_info(A, n, &dataType, &dim, &dimVec);
-		if (strcmp(name.c_str(), n) == 0) {return A;}
-	}
-	return 0;
-}
-
-template<typename V>
-int loadArrayWithName(const std::string& name, std::vector<V>* vals)
-{
-	int id = arrayIdWithName(name);
-
-	char n[ProjectCgnsFile::BUFFERLEN];
-	DataType_t dataType;
-	int dim;
-	cgsize_t dimVec;
-	int ier;
-
-	ier = cg_array_info(id, n, &dataType, &dim, &dimVec);
-	if (ier != 0) {return ier;}
-
-	vals->assign(dimVec, 0);
-	return cg_array_read(id, vals->data());
-}
-
-template<typename V>
-int loadArrayWithName(const std::string& name, const std::string& suffix, std::vector<V>* vals)
-{
-	std::string tmpname = name;
-	tmpname.append("_");
-	tmpname.append(suffix);
-
-	return loadArrayWithName(tmpname, vals);
-}
-
 int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int>* ids, const QPointF& offset)
 {
 	std::vector<int> typeVec;
@@ -77,10 +32,10 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 	std::vector<int> cellIntVals;
 	std::vector<double> cellRealVals;
 
-	loadArrayWithName(name, "type", &typeVec);
-	loadArrayWithName(name, "size", &sizeVec);
-	loadArrayWithName(name, "coordinateX", &coordXVec);
-	loadArrayWithName(name, "coordinateY", &coordYVec);
+	CgnsUtil::loadArrayWithName(name, "type", &typeVec);
+	CgnsUtil::loadArrayWithName(name, "size", &sizeVec);
+	CgnsUtil::loadArrayWithName(name, "coordinateX", &coordXVec);
+	CgnsUtil::loadArrayWithName(name, "coordinateY", &coordYVec);
 
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();

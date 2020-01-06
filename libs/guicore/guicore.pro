@@ -218,6 +218,7 @@ HEADERS += guicore_global.h \
            executer/iricmainwindowexecuterwatcher.h \
            misc/cgnsfileopener.h \
            misc/cgnslinkfollower.h \
+           misc/cgnsutil.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
@@ -316,6 +317,7 @@ HEADERS += guicore_global.h \
            datamodel/private/vtkgraphicsview_impl.h \
            misc/private/cgnsfileopener_impl.h \
            misc/private/cgnslinkfollower_impl.h \
+           misc/private/cgnsutil_detail.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
            misc/targeted/targeteditemsettargetcommandtool.h \
@@ -325,6 +327,7 @@ HEADERS += guicore_global.h \
            postcontainer/exporter/postzonedatatpoexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.h \
+           postcontainer/private/postzonedatacontainer_particlegrouploader.h \
            postcontainer/private/postzonedatacontainer_particleloader.h \
            postcontainer/private/postzonedatacontainer_polydataloader.h \
            pre/base/preprocessordataitem.h \
@@ -602,6 +605,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
            misc/cgnsfileopener.cpp \
            misc/cgnslinkfollower.cpp \
+           misc/cgnsutil.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
@@ -700,6 +704,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/exporter/postzonedatatpoexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.cpp \
+           postcontainer/private/postzonedatacontainer_particlegrouploader.cpp \
            postcontainer/private/postzonedatacontainer_particleloader.cpp \
            postcontainer/private/postzonedatacontainer_polydataloader.cpp \
            pre/base/preprocessordataitem.cpp \

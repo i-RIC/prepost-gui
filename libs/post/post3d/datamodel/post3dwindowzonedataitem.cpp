@@ -9,6 +9,7 @@
 #include "post3dwindownodescalargrouptopdataitem.h"
 #include "post3dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post3dwindownodevectorstreamlinegroupstructureddataitem.h"
+#include "post3dwindowparticlegrouprootdataitem.h"
 #include "post3dwindowparticlestopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
@@ -54,6 +55,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	m_streamlineGroupDataItem {nullptr},
 	m_particleGroupDataItem {nullptr},
 	m_particlesDataItem {nullptr},
+	m_particleGroupRootDataItem {nullptr},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber}
 {
@@ -75,6 +77,10 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (cont->particleData() != nullptr) {
 		m_particlesDataItem = new Post3dWindowParticlesTopDataItem(this);
+		m_particlesDataItem->setup();
+	}
+	if (cont->particleGroupMap().size() > 0) {
+		m_particleGroupRootDataItem = new Post3dWindowParticleGroupRootDataItem(this);
 	}
 
 	m_childItems.push_back(m_shapeDataItem);
@@ -92,6 +98,9 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (m_particlesDataItem != nullptr) {
 		m_childItems.push_back(m_particlesDataItem);
+	}
+	if (m_particleGroupRootDataItem != nullptr) {
+		m_childItems.push_back(m_particleGroupRootDataItem);
 	}
 }
 
