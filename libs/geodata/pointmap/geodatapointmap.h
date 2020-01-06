@@ -30,7 +30,10 @@ class GeoDataPointmapBreakLine;
  *
  * All Z values of vertices are 0.
  */
-class GeoDataPointmap : public GeoData
+
+#include "gd_pointmap_global.h"
+
+class GD_POINTMAP_EXPORT GeoDataPointmap : public GeoData
 {
 	Q_OBJECT
 
@@ -76,6 +79,9 @@ public:
 	vtkPolyData* vtkGrid() const;
 	vtkPolyData* delaunayedPolyData() const;
 	const QPolygonF polygon();
+
+	bool getValueAt(double x, double y, double* value);
+	bool getValueAt(const QPointF& pos, double* value);
 
 	/// Execute the delaunay division.
 	bool doDelaunay(bool allowCancel = false);
