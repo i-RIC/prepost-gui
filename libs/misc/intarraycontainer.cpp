@@ -29,7 +29,7 @@ void IntArrayContainer::load(const QDomNode& node)
 		bool ok;
 		int val;
 		val = f.toInt(&ok);
-		if (! val) {continue;}
+		if (! ok) {continue;}
 		m_value.push_back(val);
 	}
 }
