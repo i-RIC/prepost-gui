@@ -52,7 +52,7 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="58"/>
         <source>Simple compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">复合横截面</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="65"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="159"/>
         <source>Alternate bar : Amplitude of cross sectional bed shape [m]</source>
-        <translation type="unfinished">备用条形：横截面河床形状的高度</translation>
+        <translation type="unfinished">备用条形：横截面河床形状的高度 [m]</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="166"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="537"/>
         <source>Simple channel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">简单河道</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="543"/>
@@ -177,18 +177,18 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="644"/>
         <source>Width of the left flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左洪道宽度[m]</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="690"/>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="846"/>
         <source>Width of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">低水道宽度[m]</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="736"/>
         <source>Width of the right flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右洪道宽度[m]</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="785"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="791"/>
         <source>Total width between banks [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河岸间总宽度[m]</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="915"/>
@@ -208,73 +208,73 @@
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="921"/>
         <source>Number of grids for the left flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左洪道格子数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="964"/>
         <source>Number of grids for the low water channel :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">低水道格子数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1007"/>
         <source>Number of grids for the right flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右洪道格子数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1050"/>
         <source>Depth of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">低水道深度(m)</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1096"/>
         <source>Slope of the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">低水道河岸斜率</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1142"/>
         <source>Number of grids for the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">低水位河岸的网格数量 ：</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1199"/>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1205"/>
         <source>Width change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">宽变化</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1211"/>
         <source>Constant</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">常量</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1218"/>
         <source>Change in flow direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">水流方向变化</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1228"/>
         <source>Width change type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">宽度改变形式</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1234"/>
         <source>Left and right banks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左右河岸</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1241"/>
         <source>Left bank only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左河岸</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1248"/>
         <source>Right bank only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右河岸</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiongridgeneratorsettingdialog.ui" line="1258"/>
         <source>Width variation [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">宽度变化(m) :</translation>
     </message>
 </context>
 </TS>
