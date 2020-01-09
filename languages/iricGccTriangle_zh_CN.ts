@@ -6,12 +6,12 @@
     <message>
         <location filename="../gridcreatingconditioncreatortriangle.cpp" line="13"/>
         <source>Create grid from polygon shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">从多边形形状创建网格</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatortriangle.cpp" line="14"/>
         <source>Please define a polygon as the region to create grid.You can additionally define holes and refinement areas as restrictions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请定义一个多边形作为创建网格的区域。您还可以定义孔和细化区域作为限制。</translation>
     </message>
 </context>
 <context>
@@ -19,119 +19,119 @@
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="186"/>
         <source>Define Grid Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">定义网格区域</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="189"/>
         <source>Add &amp;Refinement Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加细化区域</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="193"/>
         <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加孔区域</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="197"/>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加断线</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="202"/>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="205"/>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="208"/>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑坐标...</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="211"/>
         <source>&amp;Delete Region or Break Line...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除区域或断线...</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="216"/>
         <source>Edit &amp;Maximum Area for Cells...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑最大单元格面积...</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="219"/>
         <source>&amp;Redivide Break Line...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重新划分断线</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="251"/>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> 多线</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="640"/>
         <location filename="../private/gridcreatingconditiontriangle_finishpolygondefiningcommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">完成定义多边形</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="659"/>
         <location filename="../private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.cpp" line="5"/>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">完成定义断线</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_definepolygonnewpointcommand.cpp" line="8"/>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新多边形点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_movepolygoncommand.cpp" line="8"/>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动多边形</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_movepolygonvertexcommand.cpp" line="8"/>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动多边形顶点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_addpolygonvertexcommand.cpp" line="8"/>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入多边形顶点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_definepolylinenewpointcommand.cpp" line="8"/>
         <source>Add New Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新短线点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_movepolylinecommand.cpp" line="8"/>
         <source>Move Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动断线</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_movepolylinevertexcommand.cpp" line="8"/>
         <source>Move Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动断线顶点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_addpolylinevertexcommand.cpp" line="8"/>
         <source>Insert Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入断线顶点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_removepolygonvertexcommand.cpp" line="5"/>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除多边形顶点</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_removepolylinevertexcommand.cpp" line="5"/>
         <source>Remove Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除断线顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="635"/>
@@ -149,27 +149,27 @@
         <location filename="../gridcreatingconditiontriangle.cpp" line="1416"/>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1425"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="635"/>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">多边形至少3个顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="654"/>
         <source>Break line must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">断线至少两个顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle_creategrid.cpp" line="304"/>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">正在生成网格...</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_addremeshpolygoncommand.cpp" line="5"/>
         <source>Add New Remesh Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新刷新多边形</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
@@ -178,67 +178,67 @@
         <location filename="../gridcreatingconditiontriangle.cpp" line="1447"/>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1469"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请定义优化区域。 可以通过单击鼠标将细化区域定义为多边形。 双击或按回车键完成定义。</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_addholepolygoncommand.cpp" line="5"/>
         <source>Add New Hole Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新孔多边形</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1134"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请定义孔区域。 可以通过单击鼠标将孔区域定义为多边形。 双击或按回车键完成定义</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_adddivisionlinecommand.cpp" line="5"/>
         <source>Add New Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新断线</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1144"/>
         <source>Input divide number</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入分隔数</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1144"/>
         <source>Divide number</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">分隔数量</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1165"/>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请定义中断线。 可以通过单击鼠标将折断线定义为折线。 通过双击或按回车键完成定义</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1172"/>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定删除此多边形吗？</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1209"/>
         <source>Are you sure you want to remove this line?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定删除此线吗？</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1374"/>
         <source>Grid region polygon have to consists of more than three vertices.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格区域多边形需至少3个顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1378"/>
         <source>Grid region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格区域多边形形状无效</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1386"/>
         <source>Remesh polygon have to consists of more than three vertices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重新网格多边形必须包含三个以上的顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1390"/>
