@@ -862,12 +862,12 @@
 <context>
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="65"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="69"/>
         <source>Particles (auto)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="94"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="98"/>
         <source>Particle Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -875,7 +875,7 @@
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp" line="63"/>
+        <location filename="../datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp" line="4"/>
         <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -883,7 +883,7 @@
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.cpp" line="144"/>
+        <location filename="../datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.cpp" line="4"/>
         <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -936,11 +936,16 @@
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="44"/>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="54"/>
         <source>Generation time interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="52"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="62"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
@@ -954,82 +959,92 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="90"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="423"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="100"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="467"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="107"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="440"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="117"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="484"/>
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="152"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="485"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="162"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="529"/>
         <source>min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="177"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="510"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="187"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="554"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="205"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="538"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="215"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="582"/>
         <source>max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="245"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="236"/>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="246"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="289"/>
         <source>Start Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="251"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="295"/>
         <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="259"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="303"/>
         <source>Specify the area to generate particles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="266"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="310"/>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="294"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="338"/>
         <source>I Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="314"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="358"/>
         <source>I Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="334"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="378"/>
         <source>J Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="354"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="398"/>
         <source>J Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="377"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="421"/>
         <source>Generation space interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="385"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="429"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1042,17 +1057,17 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="559"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="603"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="586"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="630"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="593"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="637"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1061,17 +1076,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="644"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="688"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="651"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="695"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="682"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="739"/>
         <source>&amp;Region Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1095,12 +1110,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="44"/>
-        <source>Generation interval</source>
+        <source>Generate periodically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="52"/>
-        <source>Specify time interval for particles generation.</source>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="54"/>
+        <source>Generation interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1143,58 +1158,68 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="256"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="237"/>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="247"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="290"/>
         <source>Start Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="262"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="296"/>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="272"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="306"/>
         <source>Mouse Drag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="282"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="316"/>
         <source>Coordinate Values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="309"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="343"/>
         <source>Point 1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="323"/>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="351"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="357"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="385"/>
         <source>,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="337"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="371"/>
         <source>Point 2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="384"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="418"/>
         <source>Number of points:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="420"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="454"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="447"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="481"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="454"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1203,17 +1228,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="505"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="539"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="512"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="546"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="543"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="590"/>
         <source>&amp;Region Setting</source>
         <translation type="unfinished"></translation>
     </message>

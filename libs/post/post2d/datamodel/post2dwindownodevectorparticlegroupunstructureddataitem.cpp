@@ -6,6 +6,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/project/projectdata.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
 
@@ -57,6 +58,7 @@ QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog
 		delete dialog;
 		return nullptr;
 	}
+	dialog->setProjectMainFile(projectData()->mainfile());
 	dialog->setDataItem(this);
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());

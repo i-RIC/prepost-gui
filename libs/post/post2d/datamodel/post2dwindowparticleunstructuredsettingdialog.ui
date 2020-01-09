@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>478</width>
-    <height>511</height>
+    <width>482</width>
+    <height>536</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_6">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_11">
+    <layout class="QHBoxLayout" name="horizontalLayout_12">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -39,23 +39,23 @@
            </layout>
           </item>
           <item>
+           <widget class="QRadioButton" name="periodicalRadioButton">
+            <property name="text">
+             <string>Generate periodically</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
              <string>Generation interval</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0">
-               <item>
-                <widget class="QLabel" name="intervalDescLabel">
-                 <property name="text">
-                  <string>Specify time interval for particles generation.</string>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
                 <widget class="TooltipLabel" name="timeHelpLabel">
                  <property name="enabled">
@@ -81,14 +81,14 @@ p {margin-top: 3px; margin-bottom: 3px;}
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_2">
+                <spacer name="verticalSpacer">
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Vertical</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>20</width>
+                   <height>40</height>
                   </size>
                  </property>
                 </spacer>
@@ -228,6 +228,40 @@ p {margin-top: 3px; margin-bottom: 3px;}
              </item>
             </layout>
            </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QRadioButton" name="arbitraryRadioButton">
+              <property name="text">
+               <string>Generate at arbitrary time</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="arbitraryEditButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Edit...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>18</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -528,6 +562,19 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>4</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </item>
      <item>
@@ -560,19 +607,6 @@ p, li { white-space: pre-wrap; }
       </layout>
      </item>
     </layout>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>4</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -615,8 +649,8 @@ p, li { white-space: pre-wrap; }
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>165</x>
-     <y>322</y>
+     <x>174</x>
+     <y>526</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -631,8 +665,8 @@ p, li { white-space: pre-wrap; }
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>165</x>
-     <y>322</y>
+     <x>174</x>
+     <y>526</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -647,12 +681,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>329</x>
-     <y>146</y>
+     <x>342</x>
+     <y>328</y>
     </hint>
     <hint type="destinationlabel">
-     <x>196</x>
-     <y>183</y>
+     <x>224</x>
+     <y>356</y>
     </hint>
    </hints>
   </connection>
@@ -663,12 +697,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>156</y>
+     <x>342</x>
+     <y>328</y>
     </hint>
     <hint type="destinationlabel">
-     <x>326</x>
-     <y>183</y>
+     <x>336</x>
+     <y>356</y>
     </hint>
    </hints>
   </connection>
@@ -679,12 +713,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>309</x>
-     <y>148</y>
+     <x>342</x>
+     <y>328</y>
     </hint>
     <hint type="destinationlabel">
-     <x>196</x>
-     <y>207</y>
+     <x>224</x>
+     <y>382</y>
     </hint>
    </hints>
   </connection>
@@ -695,12 +729,44 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>289</x>
-     <y>148</y>
+     <x>342</x>
+     <y>328</y>
     </hint>
     <hint type="destinationlabel">
-     <x>326</x>
-     <y>207</y>
+     <x>336</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>periodicalRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>65</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>arbitraryRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>arbitraryEditButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>

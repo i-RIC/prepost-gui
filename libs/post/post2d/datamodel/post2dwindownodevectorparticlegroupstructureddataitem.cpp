@@ -1,9 +1,10 @@
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post2dwindowparticlestructuredsettingdialog.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/iricundostack.h>
+#include <guicore/project/projectdata.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
@@ -48,6 +49,7 @@ QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 		delete dialog;
 		return 0;
 	}
+	dialog->setProjectMainFile(projectData()->mainfile());
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 
@@ -55,44 +57,6 @@ QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 
 	return dialog;
 }
-
-class Post2dWindowNodeVectorParticleGroupStructuredDataItem::SetSettingCommand  : public QUndoCommand
-{
-public:
-	SetSettingCommand(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting>& settings, Post2dWindowNodeVectorParticleGroupStructuredDataItem* item) :
-		QUndoCommand (Post2dWindowNodeVectorParticleGroupStructuredDataItem::tr("Update Particle Setting")),
-		m_newSetting {s},
-		m_newStSettings (settings),
-		m_oldEnabled {item->isEnabled()},
-		m_oldSetting {item->m_setting},
-		m_oldStSettings (item->m_stSettings),
-		m_item {item}
-	{}
-	void redo() {
-		m_item->setEnabled(true);
-		m_item->m_setting = m_newSetting;
-		m_item->setTarget(m_newSetting.target);
-		m_item->m_stSettings = m_newStSettings;
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->setEnabled(m_oldEnabled);
-		m_item->m_setting = m_oldSetting;
-		m_item->setTarget(m_oldSetting.target);
-		m_item->m_stSettings = m_oldStSettings;
-		m_item->updateActorSettings();
-	}
-
-private:
-	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_newSetting;
-	QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting> m_newStSettings;
-
-	bool m_oldEnabled;
-	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_oldSetting;
-	QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting> m_oldStSettings;
-
-	Post2dWindowNodeVectorParticleGroupStructuredDataItem* m_item;
-};
 
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {

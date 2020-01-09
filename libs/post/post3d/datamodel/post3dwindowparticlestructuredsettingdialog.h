@@ -13,6 +13,7 @@ namespace Ui
 	class Post3dWindowParticleStructuredSettingDialog;
 }
 class PostZoneDataContainer;
+class ProjectMainFile;
 
 class Post3dWindowParticleStructuredSettingDialog : public QDialog
 {
@@ -21,24 +22,16 @@ class Post3dWindowParticleStructuredSettingDialog : public QDialog
 public:
 	explicit Post3dWindowParticleStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowParticleStructuredSettingDialog();
-	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const std::string& sol);
-	void setTimeMode(Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
-	void setTimeSamplingRate(int sr);
-	void setTimeDivision(int sd);
-	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
-	void setSettings(const QList<Post3dWindowStructuredParticleSetSetting>& settings) {
-		m_settings = settings;
-		setupSettingList();
-	}
-	std::string solution() const;
-	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
-	int timeSamplingRate() const;
-	int timeDivision() const;
-	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
-	const QList<Post3dWindowStructuredParticleSetSetting>& settings() const {return m_settings;}
+	void setProjectMainFile(ProjectMainFile* file);
+	void setZoneData(PostZoneDataContainer* data);
+	void setActiveAvailable(bool available);
+
+	void setSetting(const Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting& setting);
+	void setSettings(const QList<Post3dWindowStructuredParticleSetSetting>& settings);
+
+	Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting setting() const;
+	const QList<Post3dWindowStructuredParticleSetSetting>& settings() const;
 
 private slots:
 	void activeDataChanged(int index);
@@ -56,6 +49,7 @@ private slots:
 
 	void addData();
 	void removeData();
+	void editArbitraryTimes();
 
 private:
 	void setupNominations();
@@ -67,7 +61,7 @@ private:
 	Ui::Post3dWindowParticleStructuredSettingDialog* ui;
 	std::vector<std::string> m_solutions;
 
-	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;
+	Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting m_setting;
 	QList<Post3dWindowStructuredParticleSetSetting> m_settings;
 	Post3dWindowStructuredParticleSetSetting* m_activeSetting;
 	bool m_activeAvailable;
@@ -76,7 +70,7 @@ private:
 	QList<int> m_subDivNominations;
 	QList<int> m_skipNominations;
 
-	StructuredGridRegion::RegionMode m_regionMode;
+	ProjectMainFile* m_mainFile;
 };
 
 #endif // POST3DWINDOWPARTICLESTRUCTUREDSETTINGDIALOG_H

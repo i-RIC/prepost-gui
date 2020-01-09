@@ -39,12 +39,16 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkVertex.h>
 
+#include <algorithm>
+
 Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
-	CompositeContainer ({&target, &timeMode, &timeSamplingRate, &timeDivision, &particleSize, &regionMode}),
+	CompositeContainer ({&target, &generateMode, &timeMode, &timeSamplingRate, &timeDivision, &arbitraryTimes, &particleSize, &regionMode}),
 	target {"solution"},
+	generateMode {"generationMode", gmPeriodical},
 	timeMode {"timeMode", tmNormal},
 	timeSamplingRate {"timeSamplingRate", 2},
 	timeDivision {"timeDivision", 2},
+	arbitraryTimes {"arbitraryTimes"},
 	particleSize {"particleSize", DEFAULT_SIZE},
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}
@@ -214,20 +218,39 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setTarget(const std::string& t
 void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
 	clearParticleGrids();
-	for (int i = 0; i < m_particleActors.size(); ++i) {
-		vtkPointSet* pointsGrid = newParticles(i);
-		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-		points->SetDataTypeToDouble();
-		if (pointsGrid != nullptr) {
-			for (vtkIdType i = 0; i < pointsGrid->GetNumberOfPoints(); ++i) {
-				double p[3];
-				pointsGrid->GetPoint(i, p);
-				points->InsertNextPoint(p);
-			}
+	bool add = true;
+	if (m_setting.generateMode == gmPeriodical) {
+		// continue
+	} else {
+		const auto& timeVals = m_setting.arbitraryTimes.value();
+		PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+		int s = zoneContainer->solutionInfo()->currentStep();
+		bool found = std::binary_search(timeVals.begin(), timeVals.end(), s);
+		if (! found) {
+			add = false;
 		}
-		vtkPolyData* polyData = setupPolyDataFromPoints(points);
-		m_particleMappers[i]->SetInputData(polyData);
-		m_particleGrids.push_back(polyData);
+	}
+	for (int i = 0; i < m_particleActors.size(); ++i) {
+		if (add) {
+			vtkPointSet* pointsGrid = newParticles(i);
+			vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+			points->SetDataTypeToDouble();
+			if (pointsGrid != nullptr) {
+				for (vtkIdType i = 0; i < pointsGrid->GetNumberOfPoints(); ++i) {
+					double p[3];
+					pointsGrid->GetPoint(i, p);
+					points->InsertNextPoint(p);
+				}
+			}
+			vtkPolyData* polyData = setupPolyDataFromPoints(points);
+			m_particleMappers[i]->SetInputData(polyData);
+			m_particleGrids.push_back(polyData);
+		} else {
+			vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+			points->SetDataTypeToDouble();
+			vtkPolyData* polyData = setupPolyDataFromPoints(points);
+			m_particleGrids.push_back(polyData);
+		}
 	}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
@@ -264,17 +287,33 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, timeDiv);
 
 		// add new particles.
-		if (currentStep == m_nextStepToAddParticles) {
-			vtkPointSet* newPoints = newParticles(i);
-			if (m_setting.timeMode == tmSubdivide) {
-				for (int j = 0; j < m_setting.timeDivision - 1; ++j) {
-					double subTime = j * timeDiv / m_setting.timeDivision;
-					tracer->SetMaximumIntegrationTime(subTime);
-					tracer->SetSourceData(newPoints);
-					tracer->Update();
-					vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
+		if (m_setting.generateMode == gmPeriodical) {
+			// periodical
+			if (currentStep == m_nextStepToAddParticles) {
+				vtkPointSet* newPoints = newParticles(i);
+				if (m_setting.timeMode == tmSubdivide) {
+					for (int j = 0; j < m_setting.timeDivision - 1; ++j) {
+						double subTime = j * timeDiv / m_setting.timeDivision;
+						tracer->SetMaximumIntegrationTime(subTime);
+						tracer->SetSourceData(newPoints);
+						tracer->Update();
+						vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
+					}
+				} else {
+					for (vtkIdType j = 0; j < newPoints->GetNumberOfPoints(); ++j) {
+						double v[3];
+						newPoints->GetPoint(j, v);
+						points->InsertNextPoint(v);
+					}
 				}
-			} else {
+			}
+		} else {
+			// arbitrary
+			const auto& timeVals = m_setting.arbitraryTimes.value();
+			int s = currentStep;
+			bool found = std::binary_search(timeVals.begin(), timeVals.end(), s);
+			if (found) {
+				vtkPointSet* newPoints = newParticles(i);
 				for (vtkIdType j = 0; j < newPoints->GetNumberOfPoints(); ++j) {
 					double v[3];
 					newPoints->GetPoint(j, v);

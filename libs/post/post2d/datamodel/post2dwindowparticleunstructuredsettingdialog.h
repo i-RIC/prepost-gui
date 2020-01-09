@@ -16,6 +16,7 @@ namespace Ui
 
 class QAbstractButton;
 class PostZoneDataContainer;
+class ProjectMainFile;
 
 class Post2dWindowParticleUnstructuredSettingDialog : public QDialog
 {
@@ -27,6 +28,7 @@ public:
 	void setDataItem(Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item) {
 		m_dataItem = item;
 	}
+	void setProjectMainFile(ProjectMainFile* file);
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
@@ -54,6 +56,7 @@ private slots:
 	void addData();
 	void removeData();
 	void showRegionDialog();
+	void editArbitraryTimes();
 
 private:
 	void apply();
@@ -81,6 +84,7 @@ private:
 
 	QList<int> m_subDivNominations;
 	QList<int> m_skipNominations;
+	ProjectMainFile* m_mainFile;
 };
 
 #endif // POST2DWINDOWPARTICLEUNSTRUCTUREDSETTINGDIALOG_H

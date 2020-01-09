@@ -13,7 +13,9 @@ namespace Ui
 {
 	class Post2dWindowParticleStructuredSettingDialog;
 }
+
 class PostZoneDataContainer;
+class ProjectMainFile;
 
 class Post2dWindowParticleStructuredSettingDialog : public QDialog
 {
@@ -22,6 +24,7 @@ class Post2dWindowParticleStructuredSettingDialog : public QDialog
 public:
 	explicit Post2dWindowParticleStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowParticleStructuredSettingDialog();
+	void setProjectMainFile(ProjectMainFile* file);
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
@@ -44,6 +47,7 @@ private slots:
 	void addData();
 	void removeData();
 	void showRegionDialog();
+	void editArbitraryTimes();
 
 private:
 	void setupNominations();
@@ -65,6 +69,7 @@ private:
 	QList<int> m_skipNominations;
 
 	StructuredGridRegion::RegionMode m_regionMode;
+	ProjectMainFile* m_mainFile;
 };
 
 #endif // POST2DWINDOWPARTICLESTRUCTUREDSETTINGDIALOG_H

@@ -8,6 +8,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
+#include <postbase/particle/particlearbitrarytimeeditdialog.h>
 
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
@@ -36,11 +37,17 @@ Post2dWindowParticleStructuredSettingDialog::Post2dWindowParticleStructuredSetti
 	connect(ui->addPushButton, SIGNAL(clicked()), this, SLOT(addData()));
 	connect(ui->removePushButton, SIGNAL(clicked()), this, SLOT(removeData()));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
+	connect(ui->arbitraryEditButton, SIGNAL(clicked()), this, SLOT(editArbitraryTimes()));
 }
 
 Post2dWindowParticleStructuredSettingDialog::~Post2dWindowParticleStructuredSettingDialog()
 {
 	delete ui;
+}
+
+void Post2dWindowParticleStructuredSettingDialog::setProjectMainFile(ProjectMainFile* file)
+{
+	m_mainFile = file;
 }
 
 void Post2dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -64,6 +71,12 @@ void Post2dWindowParticleStructuredSettingDialog::setSettings(const Post2dWindow
 	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
+
+	if (s.generateMode == Post2dWindowNodeVectorParticleGroupDataItem::gmPeriodical) {
+		ui->periodicalRadioButton->setChecked(true);
+	} else {
+		ui->arbitraryRadioButton->setChecked(true);
+	}
 
 	// timemode
 	if (s.timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
@@ -92,6 +105,12 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting Post2dWindowParticleStructu
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
 	ret.target = m_solutions.at(index).c_str();
+
+	if (ui->periodicalRadioButton->isChecked()) {
+		ret.generateMode = Post2dWindowNodeVectorParticleGroupDataItem::gmPeriodical;
+	} else {
+		ret.generateMode = Post2dWindowNodeVectorParticleGroupDataItem::gmArbitrary;
+	}
 
 	// timemode
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
@@ -321,6 +340,18 @@ void Post2dWindowParticleStructuredSettingDialog::showRegionDialog()
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 	m_setting.regionMode = dialog.regionMode();
+}
+
+void Post2dWindowParticleStructuredSettingDialog::editArbitraryTimes()
+{
+	ParticleArbitraryTimeEditDialog dialog(this);
+	dialog.setMainFile(m_mainFile);
+	dialog.setTimeSteps(m_setting.arbitraryTimes.value());
+	int ret = dialog.exec();
+
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.arbitraryTimes.setValue(dialog.timeSteps());
 }
 
 void Post2dWindowParticleStructuredSettingDialog::updateRemoveButtonStatus()
