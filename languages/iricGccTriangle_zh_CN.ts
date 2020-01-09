@@ -384,12 +384,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="97"/>
         <source>Specify maximum area for cells</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定单元格最大面积</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="104"/>
         <source>By specifying small values, you can generate fine grids.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">通过指定较小的值，可以生成精细的网格</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="124"/>
