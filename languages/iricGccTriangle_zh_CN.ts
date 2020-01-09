@@ -169,7 +169,7 @@
     <message>
         <location filename="../private/gridcreatingconditiontriangle_addremeshpolygoncommand.cpp" line="5"/>
         <source>Add New Remesh Polygon</source>
-        <translation type="unfinished">添加新刷新多边形</translation>
+        <translation type="unfinished">添加新重塑多边形</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
@@ -243,67 +243,67 @@
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1390"/>
         <source>Remesh polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重塑多边形形状无效</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1394"/>
         <source>Remesh polygon have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重塑多边形需在网格区域内</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1402"/>
         <source>Hole polygon have to consists of more than three vertices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">孔多边形必须包含三个以上的顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1406"/>
         <source>Hole polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">孔多边形形状无效</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1410"/>
         <source>Hole polygon have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">孔多边形必须在网格区域内</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1416"/>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重新网格多边形和孔多边形不能有相交。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1425"/>
         <source>Break line have to consists of more more than two vertices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">折断线必须包含两个以上的顶点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1447"/>
         <source>Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">折断线可以与多边形相交，但是折断线不应将多边形划分为多个区域。 如果以这种方式设置折断线，则结果将不明确。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangle.cpp" line="1469"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请定义网格创建区域。 可以通过单击鼠标将网格创建区域定义为多边形。 通过双击或按回车键完成定义。</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_editpolygoncoordinatescommand.cpp" line="7"/>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑多边形坐标</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_editpolylinecoordinatescommand.cpp" line="7"/>
         <source>Edit Break Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑断线坐标</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_polygoncoordinateseditor.cpp" line="29"/>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">多边形坐标</translation>
     </message>
     <message>
         <location filename="../private/gridcreatingconditiontriangle_polylinecoordinateseditor.cpp" line="29"/>
         <source>Break Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">断线坐标</translation>
     </message>
 </context>
 <context>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../gridcreatingconditiontriangleabstractpolygon.cpp" line="111"/>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请指明一个闭合多边形</translation>
     </message>
 </context>
 <context>
@@ -319,12 +319,12 @@
     <message>
         <location filename="../gridcreatingconditiontriangleremeshdialog.ui" line="14"/>
         <source>Refinement maximum area</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">细化最大区域</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangleremeshdialog.ui" line="20"/>
         <source>Enter maximum area for cells inside refinement polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入细化多边形内单元的最大面积。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangleremeshdialog.ui" line="45"/>
@@ -338,12 +338,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="43"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="43"/>
         <source>Please specify positive value.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请指定正值。</translation>
     </message>
 </context>
 <context>
@@ -351,7 +351,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gridcreatingconditiontriangleremeshpolygon.cpp" line="39"/>
         <source>Edit refinement maximum area</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑细化最大区域</translation>
     </message>
 </context>
 <context>
@@ -359,27 +359,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="14"/>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格创建</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="24"/>
         <source>Specify minimum angle for cell vertices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指明单元格顶点的最小角度</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="31"/>
         <source>By specifying minimum angle, you can avoid generating thin and long triangle cells.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">通过指定最小角度，可以避免生成细的和长的三角形单元格。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="60"/>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">角度</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="85"/>
         <source>When polygon has vertices that has smaller angle than the value above, the condition is not applyed to the cells that include those vertices.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果多边形的顶点的角度小于上面的值，则该条件不适用于包含这些顶点的单元格。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="97"/>
