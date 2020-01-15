@@ -545,6 +545,8 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 			dataCount = (m_jMax - m_jMin + 1);
 		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1);
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyline) {
+			dataCount = 1;
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -667,6 +669,17 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 					}
 					++ imageIndex;
 				}
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyline) {
+				filename = QDir(folder).absoluteFilePath(m_csvPrefix);
+				auto lineName = m_setting.targetPolyLine()->caption();
+				filename.append(QString("_Time=%1_%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(lineName));
+				ok = exportCsv(filename);
+				if (! ok) {
+					showErrorMessage(filename);
+					return;
+				}
+				++ imageIndex;
+				break;
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim3DStructured:
