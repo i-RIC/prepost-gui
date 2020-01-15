@@ -16,6 +16,23 @@ PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim
 	m_cellDim {0}
 {}
 
+
+const QList<double>& PostSeriesDataContainer::data() const
+{
+	return m_data;
+}
+
+bool PostSeriesDataContainer::handleCurrentStepUpdate(const int /*fn*/)
+{
+	// do nothing.
+	return true;
+}
+
+void PostSeriesDataContainer::update(const int fn)
+{
+	loadFromCgnsFile(fn);
+}
+
 bool PostSeriesDataContainer::setBaseId(const int fn)
 {
 	// if m_baseID is already set, we do not have to do it again.
