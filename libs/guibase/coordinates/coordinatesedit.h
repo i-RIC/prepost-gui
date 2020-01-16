@@ -1,7 +1,7 @@
 #ifndef COORDINATESEDIT_H
 #define COORDINATESEDIT_H
 
-#include "geoio_global.h"
+#include "../guibase_global.h"
 
 #include <vector>
 
@@ -14,7 +14,7 @@ using apply_callback = void (*)(const std::vector<QPointF>& coords);
 class QString;
 class QWidget;
 
-class GEOIODLL_EXPORT CoordinatesEdit
+class GUIBASEDLL_EXPORT CoordinatesEdit
 {
 public:
 	static void edit(const std::vector<QPointF>& coords, QWidget* parent,

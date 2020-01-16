@@ -3,10 +3,10 @@
 #include "../gridcreatingconditioncompoundchannel.h"
 #include "../gridcreatingconditioncompoundchannelabstractpolygon.h"
 
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/vtktool/vtkpointsutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
 GridCreatingConditionCompoundChannel* GridCreatingConditionCompoundChannel::PolygonCoordinatesEditor::targetCondition = 0;

@@ -2,9 +2,9 @@
 #include "gridcreatingconditioncenterandwidth_editcoordinatescommand.h"
 #include "../gridcreatingconditioncenterandwidth.h"
 
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
 GridCreatingConditionCenterAndWidth* GridCreatingConditionCenterAndWidth::CoordinatesEditor::targetCond = 0;

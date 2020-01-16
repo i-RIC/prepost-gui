@@ -26,20 +26,6 @@ unix {
 }
 LIBS += -liricCs
 
-# iricGeoio
-
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../geoio/debug"
-        } else {
-                LIBS += -L"../geoio/release"
-        }
-}
-unix {
-        LIBS += -L"../geoio"
-}
-LIBS += -liricGeoio
-
 # iricMisc
 
 win32 {
@@ -139,6 +125,8 @@ HEADERS += arrowsettingcontainer.h \
            colormap/colormapcustomsettingcolor.h \
            colormap/colormapcustomsettingdialog.h \
            colormap/colormapsettingwidget.h \
+           coordinates/coordinatesedit.h \
+           coordinates/coordinateseditdialog.h \
            executer/executeri.h \
            executer/executerwatcher.h \
            executer/processexecuter.h \
@@ -200,6 +188,7 @@ HEADERS += arrowsettingcontainer.h \
            widget/textediti.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
+           coordinates/private/coordinateseditdialogdelegate.h \
            polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
@@ -219,6 +208,7 @@ FORMS += scalarbardialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
+         coordinates/coordinateseditdialog.ui \
          timeformat/timeformateditwidget.ui \
          widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
@@ -271,6 +261,8 @@ SOURCES += arrowsettingcontainer.cpp \
            colormap/colormapcustomsettingcolor.cpp \
            colormap/colormapcustomsettingdialog.cpp \
            colormap/colormapsettingwidget.cpp \
+           coordinates/coordinatesedit.cpp \
+           coordinates/coordinateseditdialog.cpp \
            executer/executerwatcher.cpp \
            executer/processexecuter.cpp \
            executer/silentexecuterwatcher.cpp \
@@ -328,7 +320,8 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/realnumbereditwidget.cpp \
            widget/sliderwithvalue.cpp \
            widget/transparencywidget.cpp \
-           widget/waitdialog.cpp
+           widget/waitdialog.cpp \
+           coordinates/private/coordinateseditdialogdelegate.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

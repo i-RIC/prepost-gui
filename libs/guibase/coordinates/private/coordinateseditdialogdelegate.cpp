@@ -1,6 +1,6 @@
+#include "../../widget/coordinateeditwidget.h"
 #include "coordinateseditdialogdelegate.h"
 
-#include <guibase/widget/coordinateeditwidget.h>
 
 #include <QPainter>
 

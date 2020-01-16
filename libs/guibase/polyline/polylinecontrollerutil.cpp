@@ -2,7 +2,7 @@
 #include "polylinecontrollerutil.h"
 #include "polylineutil.h"
 
-#include <geoio/coordinatesedit.h>
+#include "../coordinates/coordinatesedit.h"
 
 #include <vtkPolyData.h>
 

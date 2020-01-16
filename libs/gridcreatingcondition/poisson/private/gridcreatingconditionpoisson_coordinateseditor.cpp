@@ -3,11 +3,11 @@
 #include "gridcreatingconditionpoisson_impl.h"
 #include "../gridcreatingconditionpoisson.h"
 
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
 #include <QString>

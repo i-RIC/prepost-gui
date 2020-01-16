@@ -20,7 +20,7 @@
 #include <geodata/riversurvey/geodatariversurvey.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geoio/polylineio.h>
-#include <geoio/coordinatesedit.h>
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guibase/polyline/polylineutil.h>
 #include <guibase/widget/waitdialog.h>

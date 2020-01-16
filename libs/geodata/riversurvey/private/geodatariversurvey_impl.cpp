@@ -1,8 +1,8 @@
 #include "geodatariversurvey_impl.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <geoio/coordinatesedit.h>
 #include <geoio/polylineio.h>
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
