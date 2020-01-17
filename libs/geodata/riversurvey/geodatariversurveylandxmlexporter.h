@@ -16,6 +16,7 @@ public:
 private:
 	static void writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs);
 	static void writeAlignmentsForRightDistanceMark(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs);
+	static void writeSurfaces(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs);
 };
 
 #endif // GEODATARIVERSURVEYLANDXMLEXPORTER_H
