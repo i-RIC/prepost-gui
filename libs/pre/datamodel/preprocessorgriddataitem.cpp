@@ -31,6 +31,7 @@
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
@@ -329,7 +330,8 @@ EXPORT_ERROR_BEFORE_OPEN:
 EXPORT_SUCCEED:
 		;
 	} else {
-		ret = exporter->doExport(impl->m_grid, filename, selectedFilter, projectData()->mainWindow());
+		auto cs = projectData()->mainfile()->coordinateSystem();
+		ret = exporter->doExport(impl->m_grid, filename, selectedFilter, cs, projectData()->mainWindow());
 	}
 	if (ret) {
 		// exporting succeeded.

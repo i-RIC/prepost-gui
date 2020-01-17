@@ -19,7 +19,7 @@ public:
 		return gt == SolverDefinitionGridType::gtStructured2DGrid;
 	}
 	QStringList fileDialogFilters() const override;
-	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
+	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, CoordinateSystem* cs, QWidget* parent) override;
 };
 
 #endif // STRUCTURED2DGRIDNAYSGRIDEXPORTER_H

@@ -4,7 +4,9 @@
 #include "../../solverdef/solverdefinitiongridtype.h"
 #include <QtPlugin>
 
+class CoordinateSystem;
 class Grid;
+
 class QString;
 class QStringList;
 class QWidget;
@@ -21,7 +23,7 @@ public:
 	/// Return filter string for QFileDialog
 	virtual QStringList fileDialogFilters() const = 0;
 	/// Export grid data into external file.
-	virtual bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) = 0;
+	virtual bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, CoordinateSystem* cs, QWidget* parent) = 0;
 };
 
 #define GridExporterInterface_iid "org.iric.GUI.Plugin.GridExporterInterface"

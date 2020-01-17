@@ -30,7 +30,7 @@ QStringList CgnsGridExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool CgnsGridExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*parent*/)
+bool CgnsGridExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
 	QString tmpname;
 	int fn, B;
