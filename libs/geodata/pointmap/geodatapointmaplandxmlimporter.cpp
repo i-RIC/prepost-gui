@@ -67,8 +67,8 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 	for (int i = 0; i < pntsNode.childNodes().count(); ++i) {
 		auto pNode = pntsNode.childNodes().at(i);
 		QStringList frags = pNode.toElement().text().split(" ");
-		double x = frags.at(0).toDouble();
-		double y = frags.at(1).toDouble();
+		double y = frags.at(0).toDouble();
+		double x = frags.at(1).toDouble();
 		double z = frags.at(2).toDouble();
 
 		points->InsertNextPoint(x, y, 0);
