@@ -105,6 +105,11 @@ void GraphicsWindowDataModel::viewOperationEndedGlobal()
 	m_rootDataItem->viewOperationEndedGlobal(graphicsView());
 }
 
+void GraphicsWindowDataModel::handleResize()
+{
+	m_rootDataItem->handleResize(graphicsView());
+}
+
 void GraphicsWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos)
 {
 	QStandardItem* pressedItem = m_itemModel->itemFromIndex(index);

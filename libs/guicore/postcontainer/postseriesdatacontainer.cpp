@@ -9,7 +9,7 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem* parent) :
+PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, PostSolutionInfo* parent) :
 	PostDataContainer {parent},
 	m_dimension {dim},
 	m_baseId {0},
@@ -22,9 +22,8 @@ const QList<double>& PostSeriesDataContainer::data() const
 	return m_data;
 }
 
-bool PostSeriesDataContainer::handleCurrentStepUpdate(const int /*fn*/)
+bool PostSeriesDataContainer::handleCurrentStepUpdate(const int /*fn*/, const int /*timeStep*/)
 {
-	// do nothing.
 	return true;
 }
 

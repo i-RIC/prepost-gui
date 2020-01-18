@@ -122,8 +122,8 @@ ProjectMainFile::Impl::~Impl()
 	if (m_coordinateSystem != nullptr) {
 		m_coordinateSystem->free();
 	}
-	delete m_postSolutionInfo;
 	delete m_postProcessors;
+	delete m_postSolutionInfo;
 }
 
 void ProjectMainFile::Impl::loadMeasuredDatas(const QDomNode& node)

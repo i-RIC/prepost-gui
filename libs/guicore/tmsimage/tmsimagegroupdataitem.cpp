@@ -327,6 +327,11 @@ void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)
 	impl->m_actor->SetPosition(pos);
 }
 
+void TmsImageGroupDataItem::doHandleResize(VTKGraphicsView*)
+{
+	requestImage();
+}
+
 void TmsImageGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_offset.setX(offset().x());

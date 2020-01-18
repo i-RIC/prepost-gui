@@ -2,6 +2,9 @@
 #define POST2DWINDOWZONEDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
+
+#include <guicore/post/postzonedataitem.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
@@ -26,9 +29,10 @@ class Post2dWindowNodeVectorParticleGroupDataItem;
 class Post2dWindowParticleGroupRootDataItem;
 class Post2dWindowParticlesTopDataItem;
 class Post2dWindowPolyDataTopDataItem;
+class PostStringResultDataItem;
 class PostZoneDataContainer;
 
-class Post2dWindowZoneDataItem : public Post2dWindowDataItem
+class Post2dWindowZoneDataItem : public Post2dWindowDataItem, public PostZoneDataItem
 {
 	Q_OBJECT
 
@@ -44,7 +48,7 @@ public:
 
 	void updateZDepthRangeItemCount() override;
 
-	PostZoneDataContainer* dataContainer();
+	PostZoneDataContainer* dataContainer() override;
 	vtkPolyData* filteredData() const;
 	vtkPolyData* filteredData(GridLocation_t location) const;
 	bool isMasked() const;
@@ -63,6 +67,7 @@ public:
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
 	Post2dWindowPolyDataTopDataItem* polyDataDataItem() const;
 	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const;
+	PostStringResultDataItem* stringDataItem() const;
 
 	void initCellInputAttributeBrowser();
 	void clearCellInputAttributeBrowser();
@@ -139,6 +144,7 @@ private:
 	Post2dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
 	Post2dWindowPolyDataTopDataItem* m_polyDataDataItem;
 	Post2dWindowGraphGroupDataItem* m_graphGroupDataItem;
+	PostStringResultDataItem* m_stringDataItem;
 
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;

@@ -486,6 +486,7 @@ void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 	QSize size = event->size();
 	impl->m_logoActor->SetPosition(size.width() - impl->m_logoImage.width() - 10, 5);
 	impl->m_logoActor->Modified();
+	impl->m_model->handleResize();
 	QVTKWidget::resizeEvent(event);
 }
 

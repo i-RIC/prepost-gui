@@ -44,6 +44,7 @@ public:
 
 	void fitOnDataLoad();
 	void viewOperationEndedGlobal() override;
+	void handleResize() override;
 
 public slots:
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);

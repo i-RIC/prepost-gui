@@ -37,6 +37,7 @@ private:
 	void requestImage();
 
 	void assignActorZValues(const ZDepthRange& range) override;
+	void doHandleResize(VTKGraphicsView* v) override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

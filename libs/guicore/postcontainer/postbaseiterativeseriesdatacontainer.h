@@ -9,7 +9,7 @@
 class GUICOREDLL_EXPORT PostBaseIterativeSeriesDataContainer : public PostSeriesDataContainer
 {
 public:
-	PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, ProjectDataItem* parent);
+	PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, PostSolutionInfo* parent);
 
 private:
 	bool loadData(const int fn) override;

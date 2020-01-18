@@ -107,7 +107,7 @@ const QString PostZoneDataContainer::labelName {"_LABEL"};
 const QString PostZoneDataContainer::IBC {"IBC"};
 const double PostZoneDataContainer::IBCLimit {0.99};
 
-PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent) :
+PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent) :
 	PostDataContainer {parent},
 	m_gridType {gridtype},
 	m_particleData {nullptr},
@@ -235,14 +235,14 @@ QString PostZoneDataContainer::caption() const
 	return zoneName().c_str();
 }
 
-bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn)
+bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep)
 {
-	return handleCurrentStepUpdate(fn, false);
+	return handleCurrentStepUpdate(fn, timeStep, false);
 }
 
-bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn, bool disableCalculatedResult)
+bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep, bool disableCalculatedResult)
 {
-	loadFromCgnsFile(fn, disableCalculatedResult);
+	loadFromCgnsFile(fn, timeStep, disableCalculatedResult);
 	return m_loadOK;
 }
 
@@ -1070,13 +1070,13 @@ bool PostZoneDataContainer::setupIndexData()
 
 void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 {
-	loadFromCgnsFile(fn, false);
+	int currentStep = dynamic_cast<PostSolutionInfo*>(parent())->currentStep();
+	loadFromCgnsFile(fn, currentStep, false);
 }
 
-void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculatedResult)
+void PostZoneDataContainer::loadFromCgnsFile(const int fn, const int timeStep, bool disableCalculatedResult)
 {
 	m_loadOK = true;
-	int currentStep = dynamic_cast<PostSolutionInfo*>(parent())->currentStep();
 
 	bool ret;
 	// set baseId.
@@ -1091,34 +1091,34 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 	ret = loadZoneSize(fn);
 	if (ret == false) {goto ERROR;}
 	if (type == Structured) {
-		ret = loadStructuredGrid(fn, currentStep);
+		ret = loadStructuredGrid(fn, timeStep);
 		if (ret == false) {goto ERROR;}
 	} else {
-		ret = loadUnstructuredGrid(fn, currentStep);
+		ret = loadUnstructuredGrid(fn, timeStep);
 		if (ret == false) {goto ERROR;}
 	}
 	// load solution data.
 	int solId;
-	ret = getSolutionId(fn, currentStep, &solId);
+	ret = getSolutionId(fn, timeStep, &solId);
 	if (ret == false) {goto ERROR;}
 	ret = loadGridScalarData(fn, solId);
 	if (ret == false) {goto ERROR;}
 
 	// load cell-centered data.
 	int cellSolId;
-	if (getCellSolutionId(fn, currentStep, &cellSolId)) {
+	if (getCellSolutionId(fn, timeStep, &cellSolId)) {
 		loadGridScalarData(fn, cellSolId);
 	}
 
 	// load edgeI data
 	int edgeISolId;
-	if (getEdgeISolutionId(fn, currentStep, &edgeISolId)) {
+	if (getEdgeISolutionId(fn, timeStep, &edgeISolId)) {
 		loadGridScalarData(fn, edgeISolId);
 	}
 
 	// load jface data
 	int edgeJSolId;
-	if (getEdgeJSolutionId(fn, currentStep, &edgeJSolId)) {
+	if (getEdgeJSolutionId(fn, timeStep, &edgeJSolId)) {
 		loadGridScalarData(fn, edgeJSolId);
 	}
 
@@ -1129,11 +1129,11 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 	ret = setupIndexData();
 
 	// load particles
-	ret = ParticleLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_particleData, this->offset());
+	ret = ParticleLoader::load(fn, m_baseId, m_zoneId, timeStep, &m_particleData, this->offset());
 	// load particleGroup
-	ret = ParticleGroupLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_particleGroupMap, this->offset());
+	ret = ParticleGroupLoader::load(fn, m_baseId, m_zoneId, timeStep, &m_particleGroupMap, this->offset());
 	// load polydata
-	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, currentStep, &m_polyDataMap, &m_polyDataCellIdsMap, this->offset());
+	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, timeStep, &m_polyDataMap, &m_polyDataCellIdsMap, this->offset());
 
 	if (! disableCalculatedResult) {
 		addCalculatedResultArrays();
@@ -1144,6 +1144,7 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 	m_loadedOnce = true;
 	emit dataUpdated();
 	return;
+
 ERROR:
 	m_loadOK = false;
 	m_data = nullptr;

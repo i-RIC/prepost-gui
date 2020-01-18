@@ -18,6 +18,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
+#include <postbase/string/poststringresultdataitem.h>
 
 #include <QAction>
 #include <QDomNode>
@@ -56,6 +57,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	m_particleGroupDataItem {nullptr},
 	m_particlesDataItem {nullptr},
 	m_particleGroupRootDataItem {nullptr},
+	m_stringDataItem {nullptr},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber}
 {
@@ -83,6 +85,8 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 		m_particleGroupRootDataItem = new Post3dWindowParticleGroupRootDataItem(this);
 	}
 
+	m_stringDataItem = new PostStringResultDataItem(this);
+
 	m_childItems.push_back(m_shapeDataItem);
 
 	if (cont->scalarValueExists()) {
@@ -102,6 +106,17 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	if (m_particleGroupRootDataItem != nullptr) {
 		m_childItems.push_back(m_particleGroupRootDataItem);
 	}
+	m_childItems.push_back(m_stringDataItem);
+}
+
+Post3dWindowZoneDataItem::~Post3dWindowZoneDataItem()
+{
+	delete m_stringDataItem;
+}
+
+PostStringResultDataItem* Post3dWindowZoneDataItem::stringDataItem() const
+{
+	return m_stringDataItem;
 }
 
 void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)

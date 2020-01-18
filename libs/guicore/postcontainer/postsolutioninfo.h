@@ -12,6 +12,8 @@
 #include <QStringList>
 
 class CgnsFileOpener;
+class PostBaseIterativeNumericalDataContainer;
+class PostBaseIterativeStringDataContainer;
 class PostCalculatedResult;
 class PostDataContainer;
 class PostIterationSteps;
@@ -41,6 +43,7 @@ public:
 	void informCgnsSteps();
 	void loadFromCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
+
 	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers2D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers3D() const;
@@ -51,11 +54,17 @@ public:
 	PostZoneDataContainer* zoneContainer(Dimension dim, const std::string& zoneName) const;
 	PostZoneDataContainer* firstZoneContainer() const;
 
+	const std::map<std::string, PostBaseIterativeStringDataContainer*>& baseIterativeStringResults() const;
+	const std::map<std::string, PostBaseIterativeNumericalDataContainer*>& baseIterativeNumericalResults() const;
+	PostBaseIterativeStringDataContainer* baseIterativeStringResult(const std::string& name) const;
+	PostBaseIterativeNumericalDataContainer* baseIterativeNumericalResult(const std::string& name) const;
+
 	bool isDataAvailable() const;
 	bool isDataAvailable1D() const;
 	bool isDataAvailable2D() const;
 	bool isDataAvailable3D() const;
 	bool isDataAvailableBase() const;
+
 	static int toIntDimension(Dimension dim);
 	static Dimension fromIntDimension(int dim);
 	bool open();
@@ -98,10 +107,12 @@ signals:
 private:
 	bool stepsExist() const;
 	void setupZoneDataContainers(int fn);
-	void checkBaseIterativeDataExist(int fn);
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
 	bool innerSetupZoneDataContainers(int fn, int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+
+	bool setupBaseIterativeResults(int fn, int baseId);
+	void clearBaseIterativeResults();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -119,17 +130,19 @@ private:
 	QList<PostZoneDataContainer*> m_zoneContainers1D;
 	QList<PostZoneDataContainer*> m_zoneContainers2D;
 	QList<PostZoneDataContainer*> m_zoneContainers3D;
-	bool m_baseIterativeDataExists;
-	int m_timerId;
-	CgnsFileOpener* m_opener;
-
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap1D;
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap2D;
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
+	int m_timerId;
+	CgnsFileOpener* m_opener;
+
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults3D;
+
+	std::map<std::string, PostBaseIterativeStringDataContainer*> m_baseIterativeStringResults;
+	std::map<std::string, PostBaseIterativeNumericalDataContainer*> m_baseIterativeNumericalResults;
 
 	PostDataExportDialog::Format m_exportFormat;
 	bool m_disableCalculatedResult;

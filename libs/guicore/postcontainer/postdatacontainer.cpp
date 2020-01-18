@@ -1,11 +1,11 @@
 #include "postdatacontainer.h"
 #include "postsolutioninfo.h"
 
-PostDataContainer::PostDataContainer(ProjectDataItem* parent) :
+PostDataContainer::PostDataContainer(PostSolutionInfo *parent) :
 	ProjectDataItem {parent}
 {}
 
-bool PostDataContainer::handleCurrentStepUpdate(const int)
+bool PostDataContainer::handleCurrentStepUpdate(const int /*fn*/, const int /*timeStep*/)
 {
 	return true;
 }

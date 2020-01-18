@@ -10,7 +10,6 @@ class QColor;
 
 class Graph2dHybridWindowBaseIterativeResultDataItem : public Graph2dHybridWindowResultDataItem
 {
-
 public:
 	Graph2dHybridWindowBaseIterativeResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowBaseIterativeResultDataItem();
