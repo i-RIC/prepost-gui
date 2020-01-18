@@ -74,14 +74,6 @@ public:
 
 	void applyOffset(double x_diff, double y_diff);
 
-protected:
-	void timerEvent(QTimerEvent*) override;
-	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
-//	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
-	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	static void clearContainers(QList<PostZoneDataContainer*>* conts);
-
 public slots:
 	void informSolverStart();
 	void informSolverFinish();
@@ -109,6 +101,14 @@ private:
 	void checkBaseIterativeDataExist(int fn);
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
+	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void timerEvent(QTimerEvent*) override;
+
+	static void clearContainers(QList<PostZoneDataContainer*>* conts);
+
 	static const int TIMERINTERVAL = 500;
 	SolverDefinition::IterationType m_iterationType;
 	PostIterationSteps* m_iterationSteps;

@@ -11,7 +11,6 @@
 #include "postbaseselectingdialog.h"
 #include "postcontainer/postcalculatedresult.h"
 #include "postdataexportdialog.h"
-//#include "postdummy3dzonedatacontainer.h"
 #include "postiterationsteps.h"
 #include "postsolutioninfo.h"
 #include "posttimesteps.h"
@@ -304,76 +303,6 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 	return true;
 }
 
-/*
-bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
-{
-	int ier;
-	int nbases;
-	ier = cg_nbases(fn, &nbases);
-	if (ier != 0) {return false;}
-	int baseid = 0;
-	std::string baseName;
-	for (int B = 1; B <= nbases; ++B) {
-		char bname[32];
-		int cell_dim;
-		int phys_dim;
-		ier = cg_base_read(fn, B, bname, &cell_dim, &phys_dim);
-		if (ier != 0) {return false;}
-		if (cell_dim == 2) {
-			// target base found!
-			baseid = B;
-			baseName = bname;
-		}
-	}
-	if (baseid == 0) {
-		// no base for dimension dim.
-		if (zoneNames->size() == 0) {return false;}
-		zoneNames->clear();
-		clearContainers(containers);
-		return true;
-	}
-	int nzones;
-	ier = cg_nzones(fn, baseid, &nzones);
-	if (ier != 0) {return false;}
-	std::vector<std::string> tmpZoneNames;
-	for (int Z = 1; Z <= nzones; ++Z) {
-		cgsize_t sizes[9];
-		char zoneName[32];
-		cg_zone_read(fn, baseid, Z, zoneName, sizes);
-		tmpZoneNames.push_back(std::string(zoneName));
-	}
-	if (*zoneNames == tmpZoneNames) {
-		// zone names are equal to those already read.
-		return false;
-	}
-	*zoneNames = tmpZoneNames;
-	// clear the current zone containers first.
-	clearContainers(containers);
-	containerNameMap->clear();
-	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	for (std::string zoneName : *zoneNames) {
-		if (zoneName == "iRICZone") {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
-					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
-					containers->append(cont);
-					containerNameMap->insert(zoneName, cont);
-				}
-			}
-		} else {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if (zoneName.find((*gtit)->name()) != std::string::npos) {
-					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
-					containers->append(cont);
-					containerNameMap->insert(zoneName, cont);
-				}
-			}
-		}
-	}
-	return true;
-}
-*/
-
 void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
 	bool ret;
@@ -385,8 +314,6 @@ void PostSolutionInfo::setupZoneDataContainers(int fn)
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
 	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
-	// only for 3D demonstration.
-//	ret = innerSetupDummy3DZoneDataContainers(fn, m_zoneNames3D, m_zoneContainers3D, m_zoneContainerNameMap3D);
 	if (ret) {emit zoneList3DUpdated();}
 }
 
