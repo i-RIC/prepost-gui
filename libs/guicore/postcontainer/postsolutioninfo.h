@@ -118,7 +118,6 @@ private:
 	QList<PostZoneDataContainer*> m_zoneContainers2D;
 	QList<PostZoneDataContainer*> m_zoneContainers3D;
 	bool m_baseIterativeDataExists;
-	QList<PostDataContainer*> m_otherContainers;
 	int m_timerId;
 	CgnsFileOpener* m_opener;
 

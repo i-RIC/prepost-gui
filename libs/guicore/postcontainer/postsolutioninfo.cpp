@@ -173,11 +173,6 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
-	for (auto it2 = m_otherContainers.begin(); it2 != m_otherContainers.end(); ++it2) {
-		time.start();
-		errorOccured = errorOccured || (!(*it2)->handleCurrentStepUpdate(tmpfn));
-		qDebug("handleCurrentStepUpdate() for others: %d", time.elapsed());
-	}
 	qDebug("Loading result from CGNS file: %d", wholetime.elapsed());
 	// inform that the current step is updated.
 	emit currentStepUpdated();
