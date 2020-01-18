@@ -196,8 +196,13 @@ void PostSolutionInfo::informStepsUpdated()
 	emit allPostProcessorsUpdated();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
+	std::vector<std::string> zoneNames;
+	for (PostZoneDataContainer* c : *containers) {
+		zoneNames.push_back(c->zoneName());
+	}
+
 	int ier, nbases;
 	ier = cg_nbases(fn, &nbases);
 	if (ier != 0) {return false;}
@@ -216,9 +221,6 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		}
 	}
 	if (baseid == 0) {
-		// no base for dimension dim.
-		if (zoneNames->size() == 0) {return false;}
-		zoneNames->clear();
 		clearContainers(containers);
 		containerNameMap->clear();
 		return true;
@@ -240,14 +242,14 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		if (narrays == 0) {continue;}
 		tmpZoneNames.push_back(std::string(zoneName));
 	}
-	if (*zoneNames == tmpZoneNames) {
+	if (zoneNames == tmpZoneNames) {
 		// zone names are equal to those already read.
 		for (int i = 0; i < containers->count(); ++i) {
 			(*containers)[i]->loadIfEmpty(fn);
 		}
 		return false;
 	}
-	*zoneNames = tmpZoneNames;
+	zoneNames = tmpZoneNames;
 
 	// clear the current zone containers first.
 	for (auto c : *containers) {
@@ -256,7 +258,10 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 	clearContainers(containers);
 	containerNameMap->clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	for (std::string zoneName : *zoneNames) {
+
+	int step = currentStep();
+
+	for (const auto& zoneName : zoneNames) {
 		bool found = false;
 		if (zoneName == "iRICZone") {
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
@@ -307,13 +312,13 @@ void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
+	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
+	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
+	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	if (ret) {emit zoneList3DUpdated();}
 }
 
@@ -473,9 +478,6 @@ void PostSolutionInfo::closeCgnsFile()
 	m_zoneContainerNameMap2D.clear();
 	clearContainers(&m_zoneContainers3D);
 	m_zoneContainerNameMap3D.clear();
-	m_zoneNames1D.clear();
-	m_zoneNames2D.clear();
-	m_zoneNames3D.clear();
 	emit zoneList1DUpdated();
 	emit zoneList2DUpdated();
 	emit zoneList3DUpdated();

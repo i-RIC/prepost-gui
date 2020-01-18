@@ -101,7 +101,7 @@ private:
 	void checkBaseIterativeDataExist(int fn);
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
-	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+	bool innerSetupZoneDataContainers(int fn, int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -111,19 +111,17 @@ private:
 
 	static const int TIMERINTERVAL = 500;
 	SolverDefinition::IterationType m_iterationType;
+
 	PostIterationSteps* m_iterationSteps;
 	PostTimeSteps* m_timeSteps;
 	int m_currentStep;
+
 	QList<PostZoneDataContainer*> m_zoneContainers1D;
 	QList<PostZoneDataContainer*> m_zoneContainers2D;
 	QList<PostZoneDataContainer*> m_zoneContainers3D;
 	bool m_baseIterativeDataExists;
 	int m_timerId;
 	CgnsFileOpener* m_opener;
-
-	std::vector<std::string> m_zoneNames1D;
-	std::vector<std::string> m_zoneNames2D;
-	std::vector<std::string> m_zoneNames3D;
 
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap1D;
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap2D;
