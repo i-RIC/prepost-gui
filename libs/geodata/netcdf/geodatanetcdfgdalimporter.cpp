@@ -3,11 +3,14 @@
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemselectdialog.h>
 #include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -32,6 +35,7 @@ const QStringList GeoDataNetcdfGdalImporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret.append(tr("GeoTiff files(*.tif)"));
+	ret.append(tr("ArcInfo ASCII files(*.asc)"));
 	return ret;
 }
 
@@ -39,6 +43,7 @@ const QStringList GeoDataNetcdfGdalImporter::acceptableExtensions()
 {
 	QStringList ret;
 	ret.append("tif");
+	ret.append("asc");
 	return ret;
 }
 
@@ -66,24 +71,41 @@ bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 	std::string geoRef = m_dataset->GetProjectionRef();
 	char* geoRefPointer = const_cast<char*>(geoRef.c_str());
 	OGRErr err = m_sr->importFromWkt(&geoRefPointer);
-	if (err != OGRERR_NONE) {return false;}
+	if (err == OGRERR_NONE) {
+		char* projDef;
 
-	char* projDef;
+		m_sr->exportToProj4(&projDef);
+		if (*projDef != '\0') {
+			m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(projDef);
+			m_coordinateSystem->setName(projDef);
+			if (m_coordinateSystem == nullptr) {return false;}
+		} else {
+			int epsg = GdalUtil::wkt2Epsg(geoRef.c_str());
+			auto name = QString("EPSG:%1").arg(epsg);
+			m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->system(name);
+			m_coordinateSystem->setName(name);
+			if (m_coordinateSystem == nullptr) {return false;}
+		}
 
-	m_sr->exportToProj4(&projDef);
-	if (*projDef != '\0') {
-		m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(projDef);
-		m_coordinateSystem->setName(projDef);
-		if (m_coordinateSystem == nullptr) {return false;}
+		CPLFree(projDef);
 	} else {
-		int epsg = GdalUtil::wkt2Epsg(geoRef.c_str());
-		auto name = QString("EPSG:%1").arg(epsg);
-		m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->system(name);
-		m_coordinateSystem->setName(name);
-		if (m_coordinateSystem == nullptr) {return false;}
-	}
+		// Failed to load coordinate system information.
+		// This happens for *.asc or GeoTIFF without coordinate system information.
+		// User should select coordinate system.
 
-	CPLFree(projDef);
+		auto csb = item->iricMainWindow()->coordinateSystemBuilder();
+		QFileInfo finfo(filename);
+		QMessageBox::warning(w, tr("Warning"), tr("Coordinate system is not specified for %1. Please select coordinate system manually.").arg(finfo.fileName()));
+
+		CoordinateSystemSelectDialog csDialog(w);
+		csDialog.setBuilder(csb);
+		csDialog.setCoordinateSystem(item->projectData()->mainfile()->coordinateSystem());
+		csDialog.setForceSelect(true);
+
+		int ret = csDialog.exec();
+		if (ret == QDialog::Rejected) {return false;}
+		m_coordinateSystem = csDialog.coordinateSystem();
+	}
 
 	err = m_dataset->GetGeoTransform(m_transform);
 	if (err != CE_None) {

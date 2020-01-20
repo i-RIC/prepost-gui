@@ -23,6 +23,7 @@ public:
 	~CoordinateSystemSelectDialog();
 
 	void setBuilder(CoordinateSystemBuilder* builder);
+	void setForceSelect(bool force);
 
 	CoordinateSystem* coordinateSystem() const;
 	void setCoordinateSystem(CoordinateSystem* cs);
@@ -32,10 +33,13 @@ private slots:
 	void updateCurrent(int index);
 
 private:
+	void updateOkButtonStatus();
+
 	CoordinateSystemBuilder* m_builder;
 
 	QList<CoordinateSystem*> m_listSystems;
 	CoordinateSystem* m_currentSystem;
+	bool m_forceSelect;
 
 	Ui::CoordinateSystemSelectDialog* ui;
 };
