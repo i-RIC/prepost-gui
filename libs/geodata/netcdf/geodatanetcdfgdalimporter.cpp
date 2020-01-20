@@ -127,11 +127,11 @@ bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int index, QWidget* /*
 	netcdf->m_coordinateSystemName = m_coordinateSystem->name();
 	netcdf->m_xValues.clear();
 	for (int i = 0; i < xsize; ++i) {
-		netcdf->m_xValues.push_back(m_transform[0] + m_transform[1] * i);
+		netcdf->m_xValues.push_back(m_transform[0] + m_transform[1] * (i + 0.5));
 	}
 	netcdf->m_yValues.clear();
 	for (int i = 0; i < ysize; ++i) {
-		netcdf->m_yValues.push_back(m_transform[3] + m_transform[5] * (ysize - 1 - i));
+		netcdf->m_yValues.push_back(m_transform[3] + m_transform[5] * (ysize - i - 0.5));
 	}
 
 	netcdf->m_lonValues.clear();
