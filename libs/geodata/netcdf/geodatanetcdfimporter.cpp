@@ -448,8 +448,8 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 
 	for (int i = 0; i < values.size(); ++i) {
 		double val = values.at(i).toDouble();
-		double unitTimeVal = cv_convert_double(converter, val);
-		ret.push_back(unitTimeVal);
+		double unixTimeVal = cv_convert_double(converter, val);
+		ret.push_back(unixTimeVal);
 	}
 	return ret;
 }

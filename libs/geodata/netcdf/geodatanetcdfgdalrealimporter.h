@@ -12,6 +12,7 @@ public:
 
 private:
 	int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data) override;
+	int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataNetcdf* data) override;
 };
 
 #endif // GEODATANETCDFGDALREALIMPORTER_H

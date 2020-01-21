@@ -634,7 +634,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vec
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		size_t len = c->count();
 		// time is the special dimension: it is defined as unlimited.
-		if (c->definition()->name() == "time") {len = NC_UNLIMITED;}
+		if (c->definition()->name() == "Time") {len = NC_UNLIMITED;}
 		ret = nc_def_dim(ncid, c->definition()->name().c_str(), len, &dimId);
 		if (ret != NC_NOERR) {return ret;}
 		dimIds->push_back(dimId);
@@ -650,7 +650,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vec
 
 		// for special dimensions
 		QString tmp;
-		if (c->definition()->name() == "time") {
+		if (c->definition()->name() == "Time") {
 			// time is normalized to seconds since 1970-01-01 00:00:00
 			tmp = "time of measurement";
 			ret = nc_put_att_text(ncid, varId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
