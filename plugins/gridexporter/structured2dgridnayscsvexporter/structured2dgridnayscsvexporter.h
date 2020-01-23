@@ -16,7 +16,7 @@ public:
 	QString caption() const override;
 	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override;
 	QStringList fileDialogFilters() const override;
-	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
+	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, CoordinateSystem* cs, QWidget* parent) override;
 };
 
 #endif // STRUCTURED2DGRIDNAYSCSVEXPORTER_H

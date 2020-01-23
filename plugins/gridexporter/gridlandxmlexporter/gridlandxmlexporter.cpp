@@ -41,7 +41,7 @@ QStringList GridLandXmlExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool GridLandXmlExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
+bool GridLandXmlExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* cs, QWidget* parent)
 {
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
@@ -57,7 +57,7 @@ bool GridLandXmlExporter::doExport(Grid* grid, const QString& filename, const QS
 
 	LandXmlUtil::writeProjectForMlit(&writer, "grid");
 	LandXmlUtil::writeApplication(&writer);
-	// @todo CoordinateSystem
+	LandXmlUtil::writeCoordinateSystem(&writer, cs);
 	LandXmlUtil::writeUnits(&writer);
 
 	writer.writeStartElement("Surfaces");

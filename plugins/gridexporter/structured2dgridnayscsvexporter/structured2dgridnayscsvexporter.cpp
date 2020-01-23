@@ -109,7 +109,7 @@ QStringList Structured2DGridNaysCSVExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*parent*/)
+bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
 	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
 	int imax = grid2d->dimensionI();
