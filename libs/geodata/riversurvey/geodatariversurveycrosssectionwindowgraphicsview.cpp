@@ -1781,6 +1781,8 @@ double GeoDataRiverSurveyCrosssectionWindowGraphicsView::aspectRatio() const
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setAspectRatio(double ratio)
 {
+	if (ratio == 0) {ratio = 1;}
+
 	double currentRatio = aspectRatio();
 	double rate = currentRatio / ratio;
 	if (rate > 0.999 && rate < 1.001) {return;}
