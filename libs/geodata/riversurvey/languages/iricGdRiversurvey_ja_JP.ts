@@ -1240,7 +1240,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../geodatariversurveygeneratedialog.ui" line="124"/>
         <source>Name of most upstream cross section</source>
-        <translation>最上流の河川横断戦の名前:</translation>
+        <translation>最上流の河川横断線の名前:</translation>
     </message>
     <message>
         <location filename="../geodatariversurveygeneratedialog.ui" line="144"/>
