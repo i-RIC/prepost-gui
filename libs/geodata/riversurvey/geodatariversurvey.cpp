@@ -629,14 +629,14 @@ void GeoDataRiverSurvey::generateData()
 			QPointF p1 = centerLine.at(0);
 			QPointF p2 = centerLine.at(1);
 			dir = iRIC::normalize(p2 - p1);
-			iRIC::rotateVector90(dir);
+			iRIC::rotateVector270(dir);
 			distL = iRIC::distance(leftLine.at(0), centerLine.at(0));
 			distR = iRIC::distance(rightLine.at(0), centerLine.at(0));
 		} else if (i == centerLine.size() - 1) {
 			QPointF p1 = centerLine.at(centerLine.size() - 2);
 			QPointF p2 = centerLine.at(centerLine.size() - 1);
 			dir = iRIC::normalize(p2 - p1);
-			iRIC::rotateVector90(dir);
+			iRIC::rotateVector270(dir);
 			distL = iRIC::distance(leftLine.at(leftLine.size() - 1), centerLine.at(centerLine.size() - 1));
 			distR = iRIC::distance(rightLine.at(rightLine.size() - 1), centerLine.at(centerLine.size() - 1));
 		} else {
@@ -644,14 +644,14 @@ void GeoDataRiverSurvey::generateData()
 			QPointF p2 = centerLine.at(i);
 			QPointF p3 = centerLine.at(i + 1);
 			QPointF v1 = iRIC::normalize(p2 - p1);
-			iRIC::rotateVector90(v1);
+			iRIC::rotateVector270(v1);
 			QPointF v2 = iRIC::normalize(p3 - p2);
-			iRIC::rotateVector90(v2);
+			iRIC::rotateVector270(v2);
 			dir = iRIC::normalize(v1 + v2);
 
-			QPointF nearestL = nearestInterSection(p2, p2 - dir * maxLen, rightLine);
+			QPointF nearestL = nearestInterSection(p2, p2 - dir * maxLen, leftLine);
 			distL = iRIC::distance(p2, nearestL);
-			QPointF nearestR = nearestInterSection(p2, p2 + dir * maxLen, leftLine);
+			QPointF nearestR = nearestInterSection(p2, p2 + dir * maxLen, rightLine);
 			distR = iRIC::distance(p2, nearestR);
 		}
 
