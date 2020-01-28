@@ -23,6 +23,7 @@
 namespace {
 
 const double WRONG_KP = -9999;
+const double SHIFT_LEN = 0.001;
 
 GeoDataRiverSurveyImporter::RivPathPoint* getPoint(double kp, std::string& kpStr, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
@@ -195,6 +196,7 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 						++ i;
 					}
 				}
+				GeoDataRiverSurveyImporter::shiftUniqueAlts(&alts, &(p->shifted));
 				GeoDataRiverSurveyImporter::sortAlts(&alts, &(p->sorted));
 				GeoDataRiverSurveyImporter::uniqueAlts(&alts, &(p->uniquedDistances));
 				if (*with4points) {
@@ -226,6 +228,9 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 				problems.push_back(problem);
 			} else if (p->sorted) {
 				problem.problem = GeoDataRiverSurveyImporter::tr("#x-section data is not correctly ordered. Will be sorted automatically.");
+				problems.push_back(problem);
+			} else if (p->shifted) {
+				problem.problem = GeoDataRiverSurveyImporter::tr("#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.");
 				problems.push_back(problem);
 			}
 		}
@@ -471,6 +476,28 @@ void GeoDataRiverSurveyImporter::sortReverse(std::vector<GeoDataRiverSurveyImpor
 void GeoDataRiverSurveyImporter::sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
 	std::sort(points->begin(), points->end(), lessKP);
+}
+
+void GeoDataRiverSurveyImporter::shiftUniqueAlts(std::vector<GeoDataRiverSurveyImporter::Alt>* altitudes, bool* shifted)
+{
+	*shifted = false;
+	for (int i = 1; i < altitudes->size(); ++i) {
+		Alt& a = altitudes->at(i);
+		const Alt& a_prev = altitudes->at(i - 1);
+		if (a.distance != a_prev.distance) {continue;}
+
+		if (i < altitudes->size() - 1) {
+			const Alt& a_next = altitudes->at(i + 1);
+			if (a_next.distance > a.distance && a_next.distance < a.distance + SHIFT_LEN) {
+				a.distance = (a.distance + a_next.distance) * 0.5;
+			} else {
+				a.distance += SHIFT_LEN;
+			}
+		} else {
+			a.distance += SHIFT_LEN;
+		}
+		*shifted = true;
+	}
 }
 
 void GeoDataRiverSurveyImporter::sortAlts(std::vector<GeoDataRiverSurveyImporter::Alt>* altitudes, bool* sorted)
