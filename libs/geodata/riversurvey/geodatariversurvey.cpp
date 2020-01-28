@@ -693,11 +693,11 @@ void GeoDataRiverSurvey::generateData()
 	impl->m_menuIsSetup = false;
 	iRICUndoStack::instance().clear();
 
-	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("River survey data is generated using Points data.\n"
-																																						 "If you want to adjust cross section position and map Points data again, you can use \"Map points data\""), "riversurvey_mapping_dem");
-
 	informSelection(graphicsView());
 	renderGraphicsView();
+
+	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("River survey data is generated using Points data.\n"
+																																						 "If you want to adjust cross section position and map Points data again, you can use \"Map points data\""), "riversurvey_mapping_dem");
 }
 
 void GeoDataRiverSurvey::buildBankLines()
