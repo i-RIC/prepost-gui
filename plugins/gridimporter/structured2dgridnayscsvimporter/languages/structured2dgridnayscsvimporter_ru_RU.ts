@@ -4,23 +4,24 @@
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="22"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="38"/>
         <source>iRIC Grid CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="49"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
-        <source>Warning</source>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
+        <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
-        <source>Cell flag values will not be loaded.</source>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
+        <source>The following columns were ignored.
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
