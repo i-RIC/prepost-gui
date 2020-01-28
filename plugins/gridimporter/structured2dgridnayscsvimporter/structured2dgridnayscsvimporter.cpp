@@ -84,6 +84,7 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 			headerFrags.pop_front();
 		}
 		std::vector<AttributeData> attData;
+		QStringList ignoredCols;
 		for (int i = 0; i < headerFrags.size(); ++i) {
 			QString n = headerFrags.at(i);
 			QStringRef name(&n, 2, n.length() - 2);
@@ -94,6 +95,7 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 			if (att == nullptr) {
 				data.valid = false;
 				attData.push_back(data);
+				ignoredCols.push_back(n);
 				continue;
 			}
 
@@ -171,6 +173,9 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 					}
 				}
 			}
+		}
+		if (ignoredCols.size() > 0) {
+			QMessageBox::information(parent, tr("Information"), tr("The following columns were ignored.\n%1").arg(ignoredCols.join(", ")));
 		}
 	}
 	f.close();
