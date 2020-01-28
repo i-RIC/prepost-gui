@@ -1094,7 +1094,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		switch (wizard->output()) {
 		case ContinuousSnapshotWizard::Onefile:
 			inputFilename = QString("img_%%1d%2").arg(wizard->suffixLength()).arg(wizard->extension());
-			outputFilename = QString("img.wmv");
+			outputFilename = QString("img.mp4");
 			inputFilenames.append(inputFilename);
 			outputFilenames.append(outputFilename);
 			break;
@@ -1102,7 +1102,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			int idx = 0;
 			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it) {
 				inputFilename = QString("window%1_%%2d%3").arg(idx + 1).arg(wizard->suffixLength()).arg(wizard->extension());
-				outputFilename = QString("window%1.wmv").arg(idx + 1);
+				outputFilename = QString("window%1.mp4").arg(idx + 1);
 				inputFilenames.append(inputFilename);
 				outputFilenames.append(outputFilename);
 				++idx;

@@ -33,14 +33,14 @@ void ContinuousSnapshotMoviePropertyPage::initializePage()
 	case ContinuousSnapshotWizard::Onefile:
 		ui->filenameTableWidget->setRowCount(1);
 		ui->filenameTableWidget->setVerticalHeaderItem(0, new QTableWidgetItem(tr("Output file")));
-		ui->filenameTableWidget->setItem(0, 0, new QTableWidgetItem("img.wmv"));
+		ui->filenameTableWidget->setItem(0, 0, new QTableWidgetItem("img.mp4"));
 		break;
 	case ContinuousSnapshotWizard::Respectively:
 		ui->filenameTableWidget->setRowCount(m_wizard->windowList().size());
 		int idx = 0;
 		for (QMdiSubWindow* sub : m_wizard->windowList()) {
 			ui->filenameTableWidget->setVerticalHeaderItem(idx, new QTableWidgetItem(sub->windowTitle()));
-			ui->filenameTableWidget->setItem(idx, 0, new QTableWidgetItem(QString("window%1.wmv").arg(idx + 1)));
+			ui->filenameTableWidget->setItem(idx, 0, new QTableWidgetItem(QString("window%1.mp4").arg(idx + 1)));
 			++idx;
 		}
 		break;
@@ -87,7 +87,7 @@ QStringList ContinuousSnapshotMoviePropertyPage::getProfile(int profileid)
 	switch (profileid) {
 	case 0:
 	default:
-		ret << "-qscale" << "0" << "-vcodec" << "wmv2";
+		ret << "-qscale" << "0" << "-vcodec" << "libx264" << "-pix_fmt" << "yuv420p";
 		break;
 	}
 	return ret;
