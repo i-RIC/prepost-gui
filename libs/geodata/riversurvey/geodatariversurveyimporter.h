@@ -41,6 +41,7 @@ public:
 		QString crossSectionFileName;
 		std::vector<Alt> altitudes;
 		std::vector<double> uniquedDistances;
+		bool shifted;
 		bool sorted;
 		int divIndices[4];
 	};
@@ -59,6 +60,7 @@ public:
 	static void sortReverse(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points);
 	static void sortByKP(std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points);
 
+	static void shiftUniqueAlts(std::vector<Alt>* altitudes, bool* shifted);
 	static void sortAlts(std::vector<Alt>* altitudes, bool* sorted);
 	// remove altitudes with the same distance
 	static void uniqueAlts(std::vector<Alt>* altitudes, std::vector<double>* distlist);

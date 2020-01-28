@@ -150,7 +150,7 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 		*with4Points = true;
 	}
 	f.close();
-
+	GeoDataRiverSurveyImporter::shiftUniqueAlts(&(point->altitudes), &(point->shifted));
 	GeoDataRiverSurveyImporter::sortAlts(&(point->altitudes), &(point->sorted));
 	GeoDataRiverSurveyImporter::uniqueAlts(&(point->altitudes), &(point->uniquedDistances));
 
@@ -198,13 +198,19 @@ bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImpo
 				GeoDataRiverSurveyMlitImporter::ProblemsDialog::Problem problem;
 				problem.name = p->strKP.c_str();
 				problem.relatedFile = p->crossSectionFileName;
-				problem.problem = GeoDataRiverSurveyImporter::tr("Cross Section data contained data with same distances. Data with lowest elevation is used.: %1").arg(distances);
+				problem.problem = GeoDataRiverSurveyMlitImporter::tr("Cross Section data contained data with same distances. Data with lowest elevation is used.: %1").arg(distances);
 				problems.push_back(problem);
 			} else if (p->sorted) {
 				GeoDataRiverSurveyMlitImporter::ProblemsDialog::Problem problem;
 				problem.name = p->strKP.c_str();
 				problem.relatedFile = p->crossSectionFileName;
 				problem.problem = GeoDataRiverSurveyMlitImporter::tr("Cross Section data is not correctly ordered. Will be sorted automatically.");
+				problems.push_back(problem);
+			} else if (p->shifted) {
+				GeoDataRiverSurveyMlitImporter::ProblemsDialog::Problem problem;
+				problem.name = p->strKP.c_str();
+				problem.relatedFile = p->crossSectionFileName;
+				problem.problem = GeoDataRiverSurveyMlitImporter::tr("Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.");
 				problems.push_back(problem);
 			}
 		}

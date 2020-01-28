@@ -938,52 +938,52 @@
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="145"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="164"/>
         <source>&amp;Activate</source>
         <translation>有効化(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="147"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="166"/>
         <source>&amp;Inactivate</source>
         <translation>無効化(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="149"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="168"/>
         <source>&amp;Move</source>
         <translation>移動(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="164"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="183"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation>水位に基づいて無効化 (&amp;W)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="666"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="684"/>
         <source>Left Bank Side</source>
         <translation>左岸側</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="672"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="690"/>
         <source>Right Bank Side</source>
         <translation>右岸側</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="802"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="820"/>
         <source>Aspect ratio: 1 / %1</source>
         <translation>縦横比: 1 / %1</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1752"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1770"/>
         <source>Edit Cross Section</source>
         <translation>断面の編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1781"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1799"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1781"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1799"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。
@@ -999,8 +999,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>標高点の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1471"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1492"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1489"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1510"/>
         <source>Inactivate Elevation Points</source>
         <translation>標高点の無効化</translation>
     </message>
@@ -1202,15 +1202,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="119"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="125"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="131"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="137"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="150"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="159"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="171"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="184"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="190"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="120"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="126"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="132"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="138"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="151"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="160"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="172"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="185"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="191"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1235,12 +1235,12 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 %2行目 &quot;%3&quot;: 横断線点数が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="159"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="160"/>
         <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
         <translation>%1 %2行目 &quot;%3&quot;: インデックスの値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="171"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="172"/>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 %2行目 %3 の横断データの数が不足しています</translation>
     </message>
@@ -1261,86 +1261,90 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">#x-section データがありません</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="119"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="120"/>
         <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; LX の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="125"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="126"/>
         <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; LY の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="131"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="132"/>
         <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; RX の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="137"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="138"/>
         <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; RY の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="150"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="151"/>
         <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; 点の数が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="184"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="185"/>
         <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; 距離の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="190"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="191"/>
         <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot; 標高の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="217"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="219"/>
         <source>#survey data is not found. Will be ignored.</source>
         <translation>#survey data がありません。無視されます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="220"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="222"/>
         <source>#x-section data is not found. Will be ignored.</source>
         <translation>#x-section データがありません。無視されます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="225"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="227"/>
         <source>#x-section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation>#x-section データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="228"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="230"/>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
         <translation>#x-section のデータの距離が正しい順番に並んでいません。自動的にソートされます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="292"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="329"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="233"/>
+        <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
+        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。:%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyimporter.cpp" line="297"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="334"/>
         <source>River Survey data (*.riv)</source>
         <translation>河川測量データ (*.riv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="367"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="405"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="372"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="410"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="367"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="372"/>
         <source>Cross Section data is not ordered correctly at %1.</source>
         <translation>%1 の横断データの並び順が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="405"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="410"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation>%1 の横断データが、小さい順に並んでいません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="201"/>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation>横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
+        <translation type="vanished">横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
     </message>
 </context>
 <context>
@@ -1509,6 +1513,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>横断データがありません。無視されます。</translation>
     </message>
     <message>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="201"/>
+        <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
+        <translation>横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
+    </message>
+    <message>
         <source>Does not exist in %1</source>
         <translation type="vanished">%1 にありません</translation>
     </message>
@@ -1542,12 +1551,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>横断データの距離が正しい順番に並んでいません。自動的にソートされます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="226"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="213"/>
+        <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
+        <translation>横断データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="232"/>
         <source>MLIT River Survey Data(*.csv)</source>
         <translation>国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="239"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="245"/>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>
