@@ -6,7 +6,7 @@
     <message>
         <location filename="../structured2dgridnaysgridexporter.cpp" line="23"/>
         <source>RIC-Nays grid files (*.grid)</source>
-        <translation type="unfinished"></translation>
+        <translation type>RIC-Nays网格文件 (*.grid)</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../structured2dgridnaysgridexporter.cpp" line="17"/>
         <source>RIC-Nays Grid file</source>
-        <translation type="unfinished"></translation>
+        <translation type>RIC-Nays网格文件</translation>
     </message>
 </context>
 </TS>

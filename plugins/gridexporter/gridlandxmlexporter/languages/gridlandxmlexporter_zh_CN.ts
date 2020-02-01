@@ -6,17 +6,17 @@
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="29"/>
         <source>LandXml file</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml 文件</translation>
     </message>
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="48"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="48"/>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>导出 %1时发生错误 </translation>
     </message>
 </context>
 <context>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="40"/>
         <source>LandXml files (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>文件 (*.xml)</translation>
     </message>
 </context>
 </TS>

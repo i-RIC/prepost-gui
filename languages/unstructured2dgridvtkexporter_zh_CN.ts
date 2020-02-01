@@ -6,7 +6,7 @@
     <message>
         <location filename="../unstructured2dgridvtkexporter.cpp" line="30"/>
         <source>VTK files (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK文件 (*.vtk)</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../unstructured2dgridvtkexporter.cpp" line="19"/>
         <source>VTK file</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK文件</translation>
     </message>
 </context>
 </TS>

@@ -6,24 +6,24 @@
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="25"/>
         <source>TRIANGLE node files (*.node)</source>
-        <translation type="unfinished"></translation>
+        <translation>TRIANGLE node 文件 (*.node)</translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="31"/>
         <source>TRIANGLE output (*.node, *.ele)</source>
-        <translation type="unfinished"></translation>
+        <translation>TRIANGLE output (*.node, *.ele)</translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="53"/>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="57"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="53"/>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="57"/>
         <source>%1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 不存在</translation>
     </message>
 </context>
 </TS>
