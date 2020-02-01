@@ -354,10 +354,9 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 	auto elem = node.toElement();
 	GeoData::doLoadFromProjectMainFile(node);
 	auto mode = elem.attribute("mode");
+	impl->m_mode = Impl::Mode::EditMode;
 	if (mode == "create") {
 		impl->m_mode = Impl::Mode::CreateMode;
-	} else {
-		impl->m_mode = Impl::Mode::EditMode;
 	}
 	m_setting.load(node);
 
@@ -370,6 +369,7 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->m_interpolateSplineAction->setChecked(false);
 		impl->m_interpolateLinearAction->setChecked(true);
 	}
+	impl->m_menuIsSetup = false;
 }
 
 void GeoDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer)
