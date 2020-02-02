@@ -393,22 +393,22 @@
     <message>
         <location filename="../geodatapointmapeditptsdialog.ui" line="85"/>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最大值：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapeditptsdialog.ui" line="120"/>
         <source>X-location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">X-位置</translation>
     </message>
     <message>
         <location filename="../geodatapointmapeditptsdialog.ui" line="141"/>
         <source>Y-location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Y-位置</translation>
     </message>
     <message>
         <location filename="../geodatapointmapeditptsdialog.ui" line="162"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">值</translation>
     </message>
 </context>
 <context>
@@ -416,22 +416,22 @@
     <message>
         <location filename="../geodatapointmapinterpolatepoints.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对话</translation>
     </message>
     <message>
         <location filename="../geodatapointmapinterpolatepoints.ui" line="20"/>
         <source>Interpolate Increment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">内插增量</translation>
     </message>
     <message>
         <location filename="../geodatapointmapinterpolatepoints.ui" line="26"/>
         <source>Interpolation Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插补线长：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapinterpolatepoints.ui" line="40"/>
         <source>Set Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置插值增量：</translation>
     </message>
 </context>
 <context>
@@ -444,12 +444,12 @@
     <message>
         <location filename="../geodatapointmaplandxmlexporter.cpp" line="25"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmaplandxmlexporter.cpp" line="25"/>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出 %1 时发生错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmaplandxmlexporter.cpp" line="95"/>
@@ -467,12 +467,12 @@
     <message>
         <location filename="../geodatapointmaplandxmlimporter.cpp" line="47"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmaplandxmlimporter.cpp" line="47"/>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在行 %2的列 %3处分析错误 %1</translation>
     </message>
     <message>
         <location filename="../geodatapointmaplandxmlimporter.cpp" line="95"/>
@@ -485,12 +485,12 @@
     <message>
         <location filename="../geodatapointmaprealcreator.cpp" line="17"/>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealcreator.cpp" line="48"/>
         <source>Points%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点 %1</translation>
     </message>
 </context>
 <context>
@@ -498,7 +498,7 @@
     <message>
         <location filename="../geodatapointmaprealexporter.cpp" line="15"/>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点集 (DEM等）</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealexporter.cpp" line="22"/>
@@ -510,13 +510,13 @@
         <location filename="../geodatapointmaprealexporter.cpp" line="25"/>
         <location filename="../geodatapointmaprealexporter.cpp" line="48"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealexporter.cpp" line="25"/>
         <location filename="../geodatapointmaprealexporter.cpp" line="48"/>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出到 %1时发生错误。</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealexporter.cpp" line="45"/>
@@ -541,12 +541,12 @@
     <message>
         <location filename="../geodatapointmaprealimporter.cpp" line="54"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealimporter.cpp" line="54"/>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出到 %1时发生错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealimporter.cpp" line="49"/>
@@ -566,17 +566,17 @@
     <message>
         <location filename="../geodatapointmaprealimporterfilterdialog.ui" line="14"/>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">过滤设定</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealimporterfilterdialog.ui" line="20"/>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果要过滤数据集，请指定大于1的值。</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealimporterfilterdialog.ui" line="42"/>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">筛选：</translation>
     </message>
 </context>
 <context>
@@ -584,37 +584,37 @@
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="14"/>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示设置</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="20"/>
         <source>Display Method</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示方式</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="26"/>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="36"/>
         <source>Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">线框</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="43"/>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">表面</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="55"/>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点尺寸：</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="94"/>
         <source>Hide Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">隐藏断线</translation>
     </message>
 </context>
 <context>
@@ -622,13 +622,13 @@
     <message>
         <location filename="../geodatapointmapstlexporter.cpp" line="14"/>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">立体光刻 (STL)</translation>
     </message>
     <message>
         <location filename="../geodatapointmapstlexporter.cpp" line="36"/>
         <location filename="../geodatapointmapstlexporter.cpp" line="54"/>
         <source>Binary STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">二元立体光刻 (*.stl)</translation>
     </message>
     <message>
         <location filename="../geodatapointmapstlexporter.cpp" line="53"/>
@@ -641,29 +641,29 @@
     <message>
         <location filename="../geodatapointmapstlimporter.cpp" line="17"/>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">立体光刻 (STL)</translation>
     </message>
     <message>
         <location filename="../geodatapointmapstlimporter.cpp" line="62"/>
         <source>Stereolithography file (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">立体光刻文件 (*.stl)</translation>
     </message>
     <message>
         <location filename="../geodatapointmapstlimporter.cpp" line="79"/>
         <location filename="../geodatapointmapstlimporter.cpp" line="95"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmapstlimporter.cpp" line="79"/>
         <location filename="../geodatapointmapstlimporter.cpp" line="95"/>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开 %1时发生文件打开错误</translation>
     </message>
     <message>
         <location filename="../geodatapointmapstlimporter.cpp" line="103"/>
         <source>solid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">固体</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@
     <message>
         <location filename="../geodatapointmapvtkexporter.cpp" line="19"/>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点集 (DEM etc.)</translation>
     </message>
     <message>
         <location filename="../geodatapointmapvtkexporter.cpp" line="68"/>
@@ -684,12 +684,12 @@
     <message>
         <location filename="../geodatapointmapwebimporter.cpp" line="26"/>
         <source>Web CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Web CSV磁贴</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporter.cpp" line="102"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
 </context>
 <context>
@@ -697,42 +697,42 @@
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="14"/>
         <source>Select Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择区域</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="25"/>
         <source>Background Image:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="35"/>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">放大</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="42"/>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">缩小</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="62"/>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">下一个</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.ui" line="69"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">取消</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="73"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterregionselectdialog.cpp" line="73"/>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">尚未选择要导入数据的区域。 请在地图上向左拖动以选择区域。</translation>
     </message>
 </context>
 <context>
@@ -763,22 +763,22 @@
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="14"/>
         <source>Zoom Level Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">缩放等级设定</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="20"/>
         <source>Specify the zoom level of data you want to import.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定要导入的数据的缩放级别。</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="47"/>
         <source>Zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">缩放等级：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="81"/>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解像度：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="88"/>
@@ -788,7 +788,7 @@
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="95"/>
         <source>Data size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数据大小：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="102"/>
@@ -798,7 +798,7 @@
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.ui" line="109"/>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">资源：</translation>
     </message>
     <message>
         <location filename="../geodatapointmapwebimporterzoomleveldialog.cpp" line="89"/>
@@ -821,17 +821,17 @@
     <message>
         <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="14"/>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移除长边三角形</translation>
     </message>
     <message>
         <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="22"/>
         <source>Limit edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">极限边长：</translation>
     </message>
     <message>
         <location filename="../private/geodatapointmap_triangleswithlongedgeremover_dialog.ui" line="41"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">头身跨度样式字体粗细：600； 注意跨度：单击“应用”按钮时，将被删除的三角形将被涂成深灰色</translation>
     </message>
 </context>
 <context>
@@ -839,12 +839,12 @@
     <message>
         <location filename="../private/geodatapointmap_addpointscommand.cpp" line="9"/>
         <source>Add Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加点</translation>
     </message>
     <message>
         <location filename="../private/geodatapointmap_addinterpolatepointscommand.cpp" line="10"/>
         <source>Add Interpolation Pts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加插值点</translation>
     </message>
 </context>
 </TS>
