@@ -6,22 +6,22 @@
     <message>
         <location filename="../geodatarivercrosssectionaltitudemovedialog.ui" line="14"/>
         <source>Move Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动高程点</translation>
     </message>
     <message>
         <location filename="../geodatarivercrosssectionaltitudemovedialog.ui" line="24"/>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横向变化 (H) :</translation>
     </message>
     <message>
         <location filename="../geodatarivercrosssectionaltitudemovedialog.ui" line="49"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文字标签</translation>
     </message>
     <message>
         <location filename="../geodatarivercrosssectionaltitudemovedialog.ui" line="58"/>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">纵向变化：</translation>
     </message>
     <message>
         <location filename="../geodatarivercrosssectionaltitudemovedialog.cpp" line="48"/>
@@ -42,7 +42,7 @@
         <location filename="../geodatarivercrosssectionaltitudemovedialog.cpp" line="71"/>
         <location filename="../geodatarivercrosssectionaltitudemovedialog.cpp" line="111"/>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动高程点</translation>
     </message>
 </context>
 <context>
@@ -50,22 +50,22 @@
     <message>
         <location filename="../geodatariverpathpointexpanddialog.ui" line="14"/>
         <source>Extend Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">延伸导线</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointexpanddialog.ui" line="22"/>
         <source>Set Distance between River Center and Left Bank</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置河中心和左岸之间的距离</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointexpanddialog.ui" line="45"/>
         <source>Increment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">增长</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointexpanddialog.ui" line="68"/>
         <source>Extension Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">延伸比率</translation>
     </message>
 </context>
 <context>
@@ -73,22 +73,22 @@
     <message>
         <location filename="../geodatariverpathpointextensionadddialog.ui" line="14"/>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加延伸线</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointextensionadddialog.ui" line="20"/>
         <source>End Point of Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">结束延伸线点</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointextensionadddialog.ui" line="29"/>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">鼠标点击</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointextensionadddialog.ui" line="53"/>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">位置</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointextensionadddialog.ui" line="63"/>
@@ -101,27 +101,27 @@
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="14"/>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入遍历线</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="22"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称：</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="34"/>
         <source>River Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河中心点坐标</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="40"/>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">鼠标点击</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="47"/>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">坐标数值</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="69"/>
@@ -131,27 +131,27 @@
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="104"/>
         <source>Ratio between Back and Forth (0-1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">前后比（0-1）</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="150"/>
         <source>Cross Section Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面信息</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="156"/>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入三个高度点0</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="165"/>
         <source>Copy Next River Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">复制下一个河横截面</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointinsertdialog.ui" line="192"/>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">创建前后断面：插值数据的编号</translation>
     </message>
 </context>
 <context>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../geodatariverpathpointmovedialog.ui" line="14"/>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动遍历线</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointmovedialog.ui" line="25"/>
@@ -170,12 +170,12 @@
     <message>
         <location filename="../geodatariverpathpointmovedialog.ui" line="35"/>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">转换量</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointmovedialog.ui" line="55"/>
         <source>Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">中心点坐标</translation>
     </message>
 </context>
 <context>
@@ -183,12 +183,12 @@
     <message>
         <location filename="../geodatariverpathpointrenamedialog.ui" line="14"/>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重命名遍历线</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointrenamedialog.ui" line="22"/>
         <source>New Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">新名称：</translation>
     </message>
 </context>
 <context>
@@ -196,17 +196,17 @@
     <message>
         <location filename="../geodatariverpathpointrotatedialog.ui" line="14"/>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">旋转遍历线</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointrotatedialog.ui" line="22"/>
         <source>Relative Angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">相对角度</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointrotatedialog.ui" line="45"/>
         <source>Increment Angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">增加角度</translation>
     </message>
 </context>
 <context>
@@ -214,17 +214,17 @@
     <message>
         <location filename="../geodatariverpathpointshiftdialog.ui" line="14"/>
         <source>Shift River Center</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动河中心</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointshiftdialog.ui" line="22"/>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">转换量</translation>
     </message>
     <message>
         <location filename="../geodatariverpathpointshiftdialog.cpp" line="41"/>
         <source>Transfer Quality s (%1 &lt; s &lt; %2)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">转换量s (%1 &lt; s &lt; %2)</translation>
     </message>
 </context>
 <context>
@@ -232,69 +232,69 @@
     <message>
         <location filename="../private/geodatariversurvey_expandcrosssectioncommand.cpp" line="5"/>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">扩大遍历线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_addextensioncommand.cpp" line="5"/>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加延长线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_insertriverpathpointcommand.cpp" line="5"/>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入遍历线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_moveriverpathpointcommand.cpp" line="5"/>
         <source>Move Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动遍历线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_renameriverpathpointcommand.cpp" line="4"/>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重命名遍历线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_mouserotaterivercrosssectioncommand.cpp" line="9"/>
         <location filename="../private/geodatariversurvey_rotaterivercrosssectioncommand.cpp" line="8"/>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">旋转遍历线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_shiftriverpathcentercommand.cpp" line="5"/>
         <source>Shift River Center Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动河中心点</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="407"/>
         <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河流勘测</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="433"/>
         <location filename="../geodatariversurvey.cpp" line="463"/>
         <source>Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插补模式</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_translateriverpathpointcommand.cpp" line="8"/>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动遍历线</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_mouseshiftriverpathcentercommand.cpp" line="8"/>
         <source>Shift Center Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动中心点</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_mousemoveextensioncommand.cpp" line="8"/>
         <source>Move Extension Line End</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动延长线末端</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_changeselectioncommand.cpp" line="6"/>
         <source>Selection Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择变更</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="1211"/>
@@ -304,12 +304,12 @@
     <message>
         <location filename="../geodatariversurvey.cpp" line="1420"/>
         <source>Insert Upstream Side(&amp;B)...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入上流端(&amp;B)...</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="1422"/>
         <source>Insert Downstream Side(&amp;A)...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">插入下流端(&amp;A)...</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="1424"/>
