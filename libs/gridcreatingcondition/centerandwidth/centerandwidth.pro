@@ -93,25 +93,24 @@ HEADERS += gcc_centerandwidth_global.h \
            gridcreatingconditioncreatorcenterandwidth.h \
            private/gridcreatingconditioncenterandwidth_addvertexcommand.h \
            private/gridcreatingconditioncenterandwidth_coordinateseditor.h \
-           private/gridcreatingconditioncenterandwidth_definenewpointcommand.h \
            private/gridcreatingconditioncenterandwidth_editcoordinatescommand.h \
            private/gridcreatingconditioncenterandwidth_finishdefiningcommand.h \
            private/gridcreatingconditioncenterandwidth_movecommand.h \
            private/gridcreatingconditioncenterandwidth_movevertexcommand.h \
+           private/gridcreatingconditioncenterandwidth_pushvertexcommand.h \
            private/gridcreatingconditioncenterandwidth_removevertexcommand.h \
            private/gridcreatingconditioncenterandwidth_updateshapecommand.h
-FORMS += \
-         gridcreatingconditioncenterandwidthdialog.ui
+FORMS += gridcreatingconditioncenterandwidthdialog.ui
 SOURCES += gridcreatingconditioncenterandwidth.cpp \
            gridcreatingconditioncenterandwidthdialog.cpp \
            gridcreatingconditioncreatorcenterandwidth.cpp \
            private/gridcreatingconditioncenterandwidth_addvertexcommand.cpp \
            private/gridcreatingconditioncenterandwidth_coordinateseditor.cpp \
-           private/gridcreatingconditioncenterandwidth_definenewpointcommand.cpp \
            private/gridcreatingconditioncenterandwidth_editcoordinatescommand.cpp \
            private/gridcreatingconditioncenterandwidth_finishdefiningcommand.cpp \
            private/gridcreatingconditioncenterandwidth_movecommand.cpp \
            private/gridcreatingconditioncenterandwidth_movevertexcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_pushvertexcommand.cpp \
            private/gridcreatingconditioncenterandwidth_removevertexcommand.cpp \
            private/gridcreatingconditioncenterandwidth_updateshapecommand.cpp
 RESOURCES += centerandwidth.qrc

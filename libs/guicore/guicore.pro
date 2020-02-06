@@ -222,7 +222,6 @@ HEADERS += guicore_global.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
-           misc/qundocommandhelper.h \
            named/namedgraphicswindowdataitemtool.h \
            named/namedgraphicwindowdataitem.h \
            post/postprocessorwindow.h \
@@ -609,7 +608,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
-           misc/qundocommandhelper.cpp \
            named/namedgraphicswindowdataitemtool.cpp \
            named/namedgraphicwindowdataitem.cpp \
            post/postprocessorwindow.cpp \

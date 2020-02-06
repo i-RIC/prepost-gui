@@ -2,10 +2,10 @@
 #include "geodatapolyline_editcoordinatescommand.h"
 #include "../geodatapolylineimplpolyline.h"
 
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/vtktool/vtkpointsutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
 #include <vtkPolyLine.h>

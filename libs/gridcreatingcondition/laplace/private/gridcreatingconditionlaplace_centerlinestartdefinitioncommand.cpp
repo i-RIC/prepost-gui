@@ -1,8 +1,8 @@
 #include "gridcreatingconditionlaplace_centerlinestartdefinitioncommand.h"
 #include "gridcreatingconditionlaplace_impl.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::CenterLineStartDefinitionCommand::CenterLineStartDefinitionCommand(bool keyDown, const QPoint& point, GridCreatingConditionLaplace* cond) :
 	QUndoCommand(GridCreatingConditionLaplace::tr("Start defining center line")),

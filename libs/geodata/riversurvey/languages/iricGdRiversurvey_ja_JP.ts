@@ -235,7 +235,7 @@
         <translation>河川横断線の伸縮</translation>
     </message>
     <message>
-        <location filename="../private/geodatariversurvey_addextensioncommand.cpp" line="5"/>
+        <location filename="../private/geodatariversurvey_addextensioncommand.cpp" line="6"/>
         <source>Add Extension Line</source>
         <translation>延長線の追加</translation>
     </message>
@@ -266,13 +266,11 @@
         <translation>河川横断線の中心点のシフト</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="407"/>
         <source>&amp;River Survey</source>
-        <translation>河川測量データ (&amp;R)</translation>
+        <translation type="vanished">河川測量データ (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="433"/>
-        <location filename="../geodatariversurvey.cpp" line="463"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="450"/>
         <source>Interpolation Mode</source>
         <translation>補間モード</translation>
     </message>
@@ -292,94 +290,137 @@
         <translation>延長線の端点の移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatariversurvey_changeselectioncommand.cpp" line="6"/>
+        <location filename="../private/geodatariversurvey_changeselectioncommand.cpp" line="7"/>
         <source>Selection Change</source>
         <translation>選択状態の変更</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1211"/>
         <source>  </source>
-        <translation>  </translation>
+        <translation type="vanished">  </translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1420"/>
+        <source>Generate data</source>
+        <translation type="vanished">データの生成</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="87"/>
+        <source>Generate River Survey data</source>
+        <translation>河川測量データの生成</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="88"/>
+        <source>Build Left bank and Right bank lines</source>
+        <translation>左岸線・右岸線の生成</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="89"/>
+        <source>&amp;Add Vertex</source>
+        <translation>頂点の追加 (&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="90"/>
+        <source>&amp;Remove Vertex</source>
+        <translation>頂点の削除 (&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="91"/>
+        <source>Import C&amp;enter Line...</source>
+        <translation>中心線のインポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="92"/>
+        <source>Export Ce&amp;nter Line...</source>
+        <translation>中心線のエクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="93"/>
         <source>Insert Upstream Side(&amp;B)...</source>
         <translation>上流側に挿入(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1422"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="94"/>
         <source>Insert Downstream Side(&amp;A)...</source>
         <translation>下流側に挿入(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1424"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="95"/>
         <source>&amp;Move...</source>
         <translation>移動(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1426"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="96"/>
         <source>&amp;Rotate...</source>
         <translation>回転(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1428"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="97"/>
         <source>S&amp;hift Center...</source>
         <translation>中心点のシフト(&amp;H)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1430"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="98"/>
         <source>E&amp;xtend Horizontally...</source>
         <translation>左右への伸縮(&amp;X)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1432"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="99"/>
         <source>Dele&amp;te Cross Section</source>
         <translation>横断線の削除(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1434"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="100"/>
         <source>R&amp;ename Cross Section...</source>
         <translation>横断線の名前の変更(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1436"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="101"/>
         <source>Add &amp;Left Bank Extension Line...</source>
         <translation>左岸延長線追加(&amp;K)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1438"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="102"/>
         <source>Add &amp;Right Bank Extension Line...</source>
         <translation>右岸延長線追加(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="103"/>
         <source>Remo&amp;ve Left Bank Extension Line</source>
         <translation>左岸延長線削除(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1442"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="104"/>
         <source>Rem&amp;ove Right Bank Extension Line</source>
         <translation>右岸延長線削除(&amp;J)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1444"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="105"/>
         <source>Display &amp;Cross Section</source>
         <translation>横断面の表示 (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1447"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="106"/>
         <source>Display &amp;Setting</source>
         <translation>表示設定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1449"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="107"/>
         <source>Spline</source>
         <translation>スプライン補間</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1453"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="108"/>
         <source>Linear Curve</source>
         <translation>線形補間</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="109"/>
+        <source>Map points data</source>
+        <translation>地勢データのマッピング</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="823"/>
+        <source>%1 is not defined yet</source>
+        <translation>%1はまだ定義されていません</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_deleteriverpathpointcommand.cpp" line="5"/>
@@ -387,17 +428,55 @@
         <translation>河川横断線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1531"/>
+        <location filename="../geodatariversurvey.cpp" line="589"/>
+        <location filename="../geodatariversurvey.cpp" line="706"/>
+        <location filename="../geodatariversurvey.cpp" line="833"/>
+        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="822"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1531"/>
+        <location filename="../geodatariversurvey.cpp" line="589"/>
+        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <source>No points data to map is found. Please import points data.</source>
+        <translation>地勢データが見つかりません。地勢データをインポートして下さい。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="695"/>
+        <location filename="../geodatariversurvey.cpp" line="1349"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="695"/>
+        <source>River survey data is generated using Points data.
+If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
+        <translation>地勢データから、河川測量データが生成されました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="706"/>
+        <source>Center Line is not defined yet.</source>
+        <translation>中心線がまだ定義されていません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="796"/>
+        <source>Center line</source>
+        <translation>中心線</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="833"/>
         <source>River survey data need at least 2 center points.</source>
         <translation>最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../private/geodatariversurvey_removeextensioncommand.cpp" line="5"/>
+        <location filename="../geodatariversurvey.cpp" line="1349"/>
+        <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
+        <translation>中心線をマウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_removeextensioncommand.cpp" line="6"/>
         <source>Remove Extension Line</source>
         <translation>延長線の削除</translation>
     </message>
@@ -413,6 +492,52 @@
     <message>
         <source>Edit Water Surface Elevation</source>
         <translation type="vanished">水面標高の編集</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_polylinefinishdefiningcommand.cpp" line="5"/>
+        <source>Finish Defining Polyline</source>
+        <translation>中心線の定義の終了</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="392"/>
+        <source>&amp;River Survey</source>
+        <translation>河川測量データ (&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="785"/>
+        <source>  </source>
+        <translation>  </translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="14"/>
+        <source>Build Bank Lines</source>
+        <translation>左右岸線の生成</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="20"/>
+        <source>Input the distance from center line</source>
+        <translation>中心線からの距離を入力</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="29"/>
+        <source>Left bank:</source>
+        <translation>左岸線:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="46"/>
+        <source>Right bank:</source>
+        <translation>右岸線:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="65"/>
+        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
+        <translation>ヒント: 左岸線と右岸線は、指定した距離だけ中心線から離れた点を繋いで生成されます。</translation>
     </message>
 </context>
 <context>
@@ -978,12 +1103,12 @@
         <translation>断面の編集</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1799"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1799"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。
@@ -1088,6 +1213,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <location filename="../geodatariversurveyexporter.cpp" line="75"/>
         <source>River Survey data(*.riv)</source>
         <translation>河川測量データ(*.riv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyGenerateDialog</name>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="14"/>
+        <source>Generate River Survey Data</source>
+        <translation>河川測量データの生成</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="22"/>
+        <source>Number of cross sections:</source>
+        <translation>横断線の数</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="56"/>
+        <source>Distance between cross sections [m]:</source>
+        <translation>河川横断線の生成間隔 [m]:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="87"/>
+        <source>Distance between elevation points[m]:</source>
+        <translation>横断方向の分割間隔 [m]:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="124"/>
+        <source>Name of most upstream cross section</source>
+        <translation>最上流の河川横断線の名前:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="144"/>
+        <source>Points data to map:</source>
+        <translation>マップする地勢データ:</translation>
     </message>
 </context>
 <context>
@@ -1322,23 +1480,23 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <location filename="../geodatariversurveyimporter.cpp" line="297"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="334"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="335"/>
         <source>River Survey data (*.riv)</source>
         <translation>河川測量データ (*.riv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="372"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="410"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="373"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="411"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="372"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="373"/>
         <source>Cross Section data is not ordered correctly at %1.</source>
         <translation>%1 の横断データの並び順が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="410"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="411"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation>%1 の横断データが、小さい順に並んでいません。</translation>
     </message>
@@ -1437,6 +1595,24 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <location filename="../geodatariversurveylandxmlexporter.cpp" line="71"/>
         <source>LandXml file(*.xml)</source>
         <translation>LandXML ファイル (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMapPointsDialog</name>
+    <message>
+        <location filename="../geodatariversurveymappointsdialog.ui" line="14"/>
+        <source>Map points data</source>
+        <translation>地勢データのマッピング</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymappointsdialog.ui" line="22"/>
+        <source>Distance between elevation points[m]:</source>
+        <translation>横断方向の分割間隔 [m]:</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymappointsdialog.ui" line="59"/>
+        <source>Points data to map:</source>
+        <translation>マップする地勢データ:</translation>
     </message>
 </context>
 <context>
@@ -1561,7 +1737,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="245"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="246"/>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>

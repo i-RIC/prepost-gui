@@ -3,10 +3,9 @@
 
 #include "../gridcreatingconditioncenterandwidth.h"
 
-#include <QUndoCommand>
-#include <QPointF>
+#include <guibase/polyline/polylineremovevertexcommand.h>
 
-class GridCreatingConditionCenterAndWidth::RemoveVertexCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::RemoveVertexCommand : public PolyLineRemoveVertexCommand
 {
 public:
 	RemoveVertexCommand(vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond);
@@ -15,8 +14,6 @@ public:
 	void undo() override;
 
 private:
-	vtkIdType m_vertexId;
-	QPointF m_vertexPosition;
 	GridCreatingConditionCenterAndWidth* m_condition;
 };
 

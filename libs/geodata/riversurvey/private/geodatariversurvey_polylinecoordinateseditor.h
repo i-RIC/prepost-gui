@@ -1,0 +1,11 @@
+#ifndef GEODATARIVERSURVEY_POLYLINECOORDINATESEDITOR_H
+#define GEODATARIVERSURVEY_POLYLINECOORDINATESEDITOR_H
+
+
+class GeoDataRiverSurvey_PolyLineCoordinatesEditor
+{
+public:
+	GeoDataRiverSurvey_PolyLineCoordinatesEditor();
+};
+
+#endif // GEODATARIVERSURVEY_POLYLINECOORDINATESEDITOR_H

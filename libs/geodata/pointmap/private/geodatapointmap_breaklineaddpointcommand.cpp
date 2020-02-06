@@ -2,7 +2,7 @@
 
 #include "../geodatapointmapbreakline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataPointmap::BreakLineAddPointCommand::BreakLineAddPointCommand(bool preview, vtkIdType addedPoint, GeoDataPointmap* parent) :
 	QUndoCommand {GeoDataPointmap::tr("Add Break Line Point")}

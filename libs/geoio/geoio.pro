@@ -60,9 +60,7 @@ win32 {
 }
 
 # Input
-HEADERS += coordinatesedit.h \
-           coordinateseditdialog.h \
-           geoio_global.h \
+HEADERS += geoio_global.h \
            io.h \
            polygoncsvexporter.h \
            polygoncsvimporter.h \
@@ -83,17 +81,14 @@ HEADERS += coordinatesedit.h \
            polylineio.h \
            polylineshapeexporter.h \
            polylineshapeimporter.h \
-           private/coordinateseditdialogdelegate.h \
            private/csvhelper.h \
            private/dbfitemselectdialog.h \
            private/polygonexporterfactory_impl.h \
            private/polygonimporterfactory_impl.h \
            private/polylineexporterfactory_impl.h \
            private/polylineimporterfactory_impl.h
-FORMS += coordinateseditdialog.ui private/dbfitemselectdialog.ui
-SOURCES += coordinatesedit.cpp \
-           coordinateseditdialog.cpp \
-           polygoncsvexporter.cpp \
+FORMS += private/dbfitemselectdialog.ui
+SOURCES += polygoncsvexporter.cpp \
            polygoncsvimporter.cpp \
            polygonexporterfactory.cpp \
            polygonimporterfactory.cpp \
@@ -108,7 +103,6 @@ SOURCES += coordinatesedit.cpp \
            polylineio.cpp \
            polylineshapeexporter.cpp \
            polylineshapeimporter.cpp \
-           private/coordinateseditdialogdelegate.cpp \
            private/csvhelper.cpp \
            private/dbfitemselectdialog.cpp
 TRANSLATIONS += languages/iricGeoIO_ES.ts \

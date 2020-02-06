@@ -8,38 +8,46 @@
 #include "geodatariverpathpointshiftdialog.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
+#include "geodatariversurveybuildbanklinesdialog.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "geodatariversurveydisplaysettingdialog.h"
+#include "geodatariversurveygeneratedialog.h"
+#include "geodatariversurveymappointsdialog.h"
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
+#include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurvey_mousemoveextensioncommand.h"
 #include "private/geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseshiftriverpathcentercommand.h"
+#include "private/geodatariversurvey_polylinecoordinateseditor.h"
+#include "private/geodatariversurvey_polylinefinishdefiningcommand.h"
+#include "private/geodatariversurvey_polylineupdatelabelscommand.h"
 #include "private/geodatariversurvey_removeextensioncommand.h"
 #include "private/geodatariversurvey_setdisplaysettingcommand.h"
 #include "private/geodatariversurvey_translateriverpathpointcommand.h"
 
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <geodata/pointmap/geodatapointmap.h>
+#include <guibase/polyline/polylineaddvertexcommand.h>
+#include <guibase/polyline/polylinecontrollerutil.h>
+#include <guibase/polyline/polylinemovevertexcommand.h>
+#include <guibase/polyline/polylinepushvertexcommand.h>
+#include <guibase/polyline/polylineremovevertexcommand.h>
+#include <guibase/polyline/polylineutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/misc/qundocommandhelper.h>
-#include <guicore/pre/base/preprocessordataitem.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <misc/errormessage.h>
-#include <misc/iricundostack.h>
+#include <misc/informationdialog.h>
+#include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
-#include <misc/xmlsupport.h>
-#include <misc/zdepthrange.h>
+#include <misc/iricundostack.h>
 
 #include <QAction>
 #include <QDomElement>
@@ -56,95 +64,82 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 
+#include <vtkActorCollection.h>
 #include <vtkActor2DCollection.h>
 #include <vtkCellArray.h>
-#include <vtkDoubleArray.h>
-#include <vtkExtractGrid.h>
-#include <vtkIdList.h>
-#include <vtkLine.h>
 #include <vtkPointData.h>
-#include <vtkPoints.h>
-#include <vtkPolygon.h>
+#include <vtkPolyData.h>
 #include <vtkProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkStructuredGridGeometryFilter.h>
-#include <vtkTextProperty.h>
-#include <vtkVertex.h>
+#include <vtkRenderWindow.h>
 
 #include <iriclib_riversurvey.h>
+
+namespace {
+
+QPointF nearestInterSection(const QPointF& p1, const QPointF& p2, std::vector<QPointF>& polyLine)
+{
+	double dist2 = iRIC::lengthSquared(p2 - p1) * 2;
+	QPointF ret;
+	for (int i = 0; i < polyLine.size() - 1; ++i) {
+		const QPointF& q1 = polyLine.at(i);
+		const QPointF& q2 = polyLine.at(i + 1);
+		QPointF xsec;
+		double r, s;
+		bool found = iRIC::intersectionPoint(p1, p2, q1, q2, &xsec, &r, &s);
+
+		if (! found) {continue;}
+		if (r < 0 || r > 1) {continue;}
+		if (s < 0 || s > 1) {continue;}
+
+		double d = iRIC::lengthSquared(xsec - p1);
+		if (d < dist2) {
+			dist2 = d;
+			ret = xsec;
+		}
+	}
+	return ret;
+}
+
+void addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<double, GeoDataRiverCrosssection::Altitude>* alts, GeoDataPointmap* pointMap)
+{
+	QPointF p = pos + dir * dist;
+	double val;
+
+	bool ok = pointMap->getValueAt(p, &val);
+	if (! ok) {return;}
+
+	alts->insert({dist, GeoDataRiverCrosssection::Altitude(dist, val)});
+}
+
+} // namespace
 
 const int GeoDataRiverSurvey::WSE_NAME_MAXLENGTH = 16;
 
 GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
-	GeoData(d, creator, att)
+	GeoData(d, creator, att),
+	impl {new Impl {this}}
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
+	connect(impl->m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
-	m_points = vtkSmartPointer<vtkPoints>::New();
-	m_points->SetDataTypeToDouble();
-	m_rightBankPoints = vtkSmartPointer<vtkPoints>::New();
-	m_rightBankPoints->SetDataTypeToDouble();
-	// setup grid.
-	m_riverCenters = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_selectedRiverCenters = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_selectedLeftBanks = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_selectedRightBanks = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_rightBankPointSet = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_firstAndLastCrosssections = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_crosssections = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_selectedCrosssections = vtkSmartPointer<vtkUnstructuredGrid>::New();
-
-	m_leftBankLine = vtkSmartPointer<vtkStructuredGrid>::New();
-	m_rightBankLine = vtkSmartPointer<vtkStructuredGrid>::New();
-	m_riverCenterLine = vtkSmartPointer<vtkStructuredGrid>::New();
-
-	m_backgroundGrid = vtkSmartPointer<vtkStructuredGrid>::New();
-
-	m_crosssectionLines = vtkSmartPointer<vtkUnstructuredGrid>::New();
-
-	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
-	m_labelArray->SetName("Label");
-
-	m_definingBoundingBox = false;
-	m_leftButtonDown = false;
-	m_mouseEventMode = meNormal;
-
-	m_gridCreatingCondition = nullptr;
-	m_rightClickingMenu = nullptr;
-
-	m_gridThread = new GeoDataRiverSurveyBackgroundGridCreateThread(this);
-	connect(m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
-
-	setupCursors();
-	setupActions();
+	impl->setupActions();
 
 	RiverSplineSolver::setLinearMode(false, m_headPoint);
+	impl->updateMouseCursor(graphicsView());
 }
 
 GeoDataRiverSurvey::~GeoDataRiverSurvey()
 {
-	vtkRenderer* r = renderer();
-	r->RemoveActor(m_riverCenterActor);
-	r->RemoveActor(m_selectedRiverCenterActor);
-	r->RemoveActor(m_selectedLeftBankActor);
-	r->RemoveActor(m_selectedRightBankActor);
-	r->RemoveActor(m_crossectionsActor);
-	r->RemoveActor(m_firstAndLastCrosssectionsActor);
-	r->RemoveActor(m_selectedCrossectionsActor);
-	r->RemoveActor(m_leftBankLineActor);
-	r->RemoveActor(m_rightBankLineActor);
-	r->RemoveActor(m_riverCenterLineActor);
-	r->RemoveActor(m_backgroundActor);
-	r->RemoveActor(m_labelActor);
-	r->RemoveActor(m_blackCrossectionsActor);
-	r->RemoveActor(m_redCrossectionsActor);
-	r->RemoveActor(m_blueCrossectionsActor);
-	r->RemoveActor(m_crosssectionLinesActor);
+	delete impl;
+}
 
-	delete m_gridThread;
-	delete m_rightClickingMenu;
+void GeoDataRiverSurvey::setEditMode()
+{
+	impl->m_mode = Impl::Mode::EditMode;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::Normal;
+	impl->m_menuIsSetup = false;
+	impl->updateMouseCursor(graphicsView());
 }
 
 void GeoDataRiverSurvey::setCaption(const QString& cap)
@@ -155,314 +150,12 @@ void GeoDataRiverSurvey::setCaption(const QString& cap)
 
 void GeoDataRiverSurvey::setupActors()
 {
-	vtkSmartPointer<vtkDataSetMapper> mapper;
-	vtkRenderer* r = renderer();
-
-	// River center points
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_riverCenters);
-
-	m_riverCenterActor = vtkSmartPointer<vtkActor>::New();
-	m_riverCenterActor->SetMapper(mapper);
-	m_riverCenterActor->GetProperty()->SetPointSize(5);
-	m_riverCenterActor->GetProperty()->SetColor(0, 0, 1.0);
-	m_riverCenterActor->VisibilityOff();
-	r->AddActor(m_riverCenterActor);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_selectedRiverCenters);
-
-	m_selectedRiverCenterActor = vtkSmartPointer<vtkActor>::New();
-	m_selectedRiverCenterActor->SetMapper(mapper);
-	m_selectedRiverCenterActor->GetProperty()->SetPointSize(9);
-	m_selectedRiverCenterActor->GetProperty()->SetColor(0, 0, 1.0);
-	r->AddActor(m_selectedRiverCenterActor);
-
-	// Left bank points
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_selectedLeftBanks);
-
-	m_selectedLeftBankActor = vtkSmartPointer<vtkActor>::New();
-	m_selectedLeftBankActor->SetMapper(mapper);
-	m_selectedLeftBankActor->GetProperty()->SetPointSize(5);
-	m_selectedLeftBankActor->GetProperty()->SetColor(1.0, 0, 0);
-	r->AddActor(m_selectedLeftBankActor);
-
-	// Right bank points
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_selectedRightBanks);
-
-	m_selectedRightBankActor = vtkSmartPointer<vtkActor>::New();
-	m_selectedRightBankActor->SetMapper(mapper);
-	m_selectedRightBankActor->GetProperty()->SetPointSize(5);
-	m_selectedRightBankActor->GetProperty()->SetColor(0, 1.0, 0);
-	r->AddActor(m_selectedRightBankActor);
-
-	// Label
-
-	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	m_rightBankPointSet->GetPointData()->AddArray(m_labelArray);
-	m_labelMapper->SetInputData(m_rightBankPointSet);
-	m_labelMapper->SetLabelModeToLabelFieldData();
-	m_labelMapper->SetFieldDataName(m_labelArray->GetName());
-	m_labelMapper->GetLabelTextProperty()->SetColor(0, 0, 0);
-	m_labelMapper->GetLabelTextProperty()->SetFontSize(15);
-	m_labelMapper->GetLabelTextProperty()->BoldOff();
-	m_labelMapper->GetLabelTextProperty()->ItalicOff();
-	m_labelMapper->GetLabelTextProperty()->ShadowOff();
-	m_labelMapper->GetLabelTextProperty()->SetJustificationToLeft();
-	m_labelMapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
-
-	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	m_labelActor->SetMapper(m_labelMapper);
-	r->AddActor(m_labelActor);
-
-	// Cross section lines
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_firstAndLastCrosssections);
-
-	m_firstAndLastCrosssectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_firstAndLastCrosssectionsActor->SetMapper(mapper);
-	// lines are black.
-	m_firstAndLastCrosssectionsActor->GetProperty()->SetLighting(false);
-	m_firstAndLastCrosssectionsActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_firstAndLastCrosssectionsActor);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_crosssections);
-
-	m_crossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_crossectionsActor->SetMapper(mapper);
-	// lines are black.
-	m_crossectionsActor->GetProperty()->SetLighting(false);
-	m_crossectionsActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_crossectionsActor);
-
-	vtkSmartPointer<vtkStructuredGridGeometryFilter> f = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-	f->SetInputData(m_riverCenterLine);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputConnection(f->GetOutputPort());
-
-	m_riverCenterLineActor = vtkSmartPointer<vtkLODActor>::New();
-	m_riverCenterLineActor->VisibilityOff();
-	m_riverCenterLineActor->SetMapper(mapper);
-
-	// register grid with lower resolution.
-	vtkSmartPointer<vtkStructuredGrid> tmpgrid = m_riverCenterLine;
-	for (int i = 0; i < 2; ++i) {
-		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
-		ext->SetInputData(tmpgrid);
-		ext->SetSampleRate(3, 1, 1);
-		f = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		f->SetInputConnection(ext->GetOutputPort());
-
-		mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		mapper->SetInputConnection(f->GetOutputPort());
-		m_riverCenterLineActor->AddLODMapper(mapper);
-		tmpgrid = ext->GetOutput();
-	}
-
-	m_riverCenterLineActor->GetProperty()->SetLighting(false);
-	m_riverCenterLineActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_riverCenterLineActor);
-
-	// Left bank line
-	f = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-	f->SetInputData(m_leftBankLine);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputConnection(f->GetOutputPort());
-
-	m_leftBankLineActor = vtkSmartPointer<vtkLODActor>::New();
-	m_leftBankLineActor->SetMapper(mapper);
-
-	// register grid with lower resolution.
-	tmpgrid = m_leftBankLine;
-	for (int i = 0; i < 2; ++i) {
-		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
-		ext->SetInputData(tmpgrid);
-		ext->SetSampleRate(3, 1, 1);
-		f = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		f->SetInputConnection(ext->GetOutputPort());
-
-		mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		mapper->SetInputConnection(f->GetOutputPort());
-		m_leftBankLineActor->AddLODMapper(mapper);
-		tmpgrid = ext->GetOutput();
-	}
-
-	m_leftBankLineActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_leftBankLineActor);
-	m_leftBankLineActor->GetProperty()->SetLighting(false);
-	m_leftBankLineActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_leftBankLineActor);
-
-	// Right bank line
-	f = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-	f->SetInputData(m_rightBankLine);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputConnection(f->GetOutputPort());
-
-	m_rightBankLineActor = vtkSmartPointer<vtkLODActor>::New();
-	m_rightBankLineActor->SetMapper(mapper);
-
-	// register grid with lower resolution.
-	tmpgrid = m_rightBankLine;
-	for (int i = 0; i < 2; ++i) {
-		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
-		ext->SetInputData(tmpgrid);
-		ext->SetSampleRate(3, 1, 1);
-		f = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		f->SetInputConnection(ext->GetOutputPort());
-
-		mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		mapper->SetInputConnection(f->GetOutputPort());
-		m_rightBankLineActor->AddLODMapper(mapper);
-		tmpgrid = ext->GetOutput();
-	}
-
-	m_rightBankLineActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_rightBankLineActor);
-	m_rightBankLineActor->GetProperty()->SetLighting(false);
-	m_rightBankLineActor->GetProperty()->SetColor(0, 0, 0);
-	r->AddActor(m_rightBankLineActor);
-
-	// Selected cross section lines
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_selectedCrosssections);
-
-	m_selectedCrossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_selectedCrossectionsActor->SetMapper(mapper);
-	// lines are black, and bold
-	m_selectedCrossectionsActor->GetProperty()->SetColor(0, 0, 0);
-	m_selectedCrossectionsActor->GetProperty()->SetLineWidth(3);
-	r->AddActor(m_selectedCrossectionsActor);
-
-	// black, red, and blue lines
-	m_blackCrosssection = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_blackCrosssection);
-	m_blackCrossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_blackCrossectionsActor->SetMapper(mapper);
-	m_blackCrossectionsActor->GetProperty()->SetColor(0, 0, 0);
-	m_blackCrossectionsActor->GetProperty()->SetLineWidth(7);
-	m_blackCrossectionsActor->GetProperty()->SetOpacity(0.3);
-	m_blackCrossectionsActor->VisibilityOff();
-	r->AddActor(m_blackCrossectionsActor);
-
-	m_redCrosssection = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_redCrosssection);
-	m_redCrossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_redCrossectionsActor->SetMapper(mapper);
-	m_redCrossectionsActor->GetProperty()->SetColor(1.0, 0, 0);
-	m_redCrossectionsActor->GetProperty()->SetLineWidth(7);
-	m_redCrossectionsActor->GetProperty()->SetOpacity(0.3);
-	m_redCrossectionsActor->VisibilityOff();
-	r->AddActor(m_redCrossectionsActor);
-
-	m_blueCrosssection = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_blueCrosssection);
-	m_blueCrossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_blueCrossectionsActor->SetMapper(mapper);
-	m_blueCrossectionsActor->GetProperty()->SetColor(0, 0, 1.0);
-	m_blueCrossectionsActor->GetProperty()->SetLineWidth(7);
-	m_blueCrossectionsActor->GetProperty()->SetOpacity(0.3);
-	m_blueCrossectionsActor->VisibilityOff();
-	r->AddActor(m_blueCrossectionsActor);
-
-	// background color.
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_backgroundGrid);
-	mapper->SetScalarModeToUsePointData();
-	mapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	mapper->UseLookupTableScalarRangeOn();
-	mapper->SetScalarVisibility(true);
-
-	m_backgroundActor = vtkSmartPointer<vtkActor>::New();
-	m_backgroundActor->SetMapper(mapper);
-	m_backgroundActor->VisibilityOff();
-	r->AddActor(m_backgroundActor);
-
-	// crosssection lines
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_crosssectionLines);
-	m_crosssectionLinesActor = vtkSmartPointer<vtkActor>::New();
-	m_crosssectionLinesActor->SetMapper(mapper);
-	m_crosssectionLinesActor->GetProperty()->SetColor(0, 0, 0);
-	m_crosssectionLinesActor->GetProperty()->SetLineWidth(1);
-	m_crosssectionLinesActor->VisibilityOff();
-	r->AddActor(m_crosssectionLinesActor);
+	impl->setupVtkObjects();
 }
 
 void GeoDataRiverSurvey::setupMenu()
 {
-	m_menu->setTitle(tr("&River Survey"));
-	m_menu->addAction(m_editNameAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(m_openCrossSectionWindowAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(m_addUpperSideAction);
-	m_menu->addAction(m_addLowerSideAction);
-	m_menu->addAction(m_moveAction);
-	m_menu->addAction(m_rotateAction);
-	m_menu->addAction(m_shiftAction);
-	m_menu->addAction(m_expandAction);
-	m_menu->addAction(m_deleteAction);
-	m_menu->addAction(m_renameAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(m_addLeftExtensionPointAction);
-	m_menu->addAction(m_addRightExtensionPointAction);
-	m_menu->addAction(m_removeLeftExtensionPointAction);
-	m_menu->addAction(m_removeRightExtensionPointAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(m_showBackgroundAction);
-
-	m_menu->addSeparator();
-	QMenu* iMenu = m_menu->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(m_interpolateSplineAction);
-	iMenu->addAction(m_interpolateLinearAction);
-
-	m_menu->addSeparator();
-	m_menu->addAction(deleteAction());
-
-	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(m_openCrossSectionWindowAction);
-
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addUpperSideAction);
-	m_rightClickingMenu->addAction(m_addLowerSideAction);
-	m_rightClickingMenu->addAction(m_moveAction);
-	m_rightClickingMenu->addAction(m_rotateAction);
-	m_rightClickingMenu->addAction(m_shiftAction);
-	m_rightClickingMenu->addAction(m_expandAction);
-	m_rightClickingMenu->addAction(m_deleteAction);
-	m_rightClickingMenu->addAction(m_renameAction);
-
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addLeftExtensionPointAction);
-	m_rightClickingMenu->addAction(m_addRightExtensionPointAction);
-	m_rightClickingMenu->addAction(m_removeLeftExtensionPointAction);
-	m_rightClickingMenu->addAction(m_removeRightExtensionPointAction);
-
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_showBackgroundAction);
-
-	m_rightClickingMenu->addSeparator();
-	iMenu = m_rightClickingMenu->addMenu(tr("Interpolation Mode"));
-	iMenu->addAction(m_interpolateSplineAction);
-	iMenu->addAction(m_interpolateLinearAction);
+	impl->setupMenu();
 }
 
 void GeoDataRiverSurvey::setupDataItem()
@@ -500,26 +193,36 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	allActorsOff();
 	vtkActorCollection* col = actorCollection();
 	vtkActor2DCollection* col2 = actor2DCollection();
+
 	col->RemoveAllItems();
-
-	col->AddItem(m_riverCenterActor);
-	col->AddItem(m_selectedRiverCenterActor);
-	col->AddItem(m_selectedLeftBankActor);
-	col->AddItem(m_selectedRightBankActor);
-	col->AddItem(m_riverCenterLineActor);
-	col->AddItem(m_leftBankLineActor);
-	col->AddItem(m_rightBankLineActor);
-	col->AddItem(m_crossectionsActor);
-	col->AddItem(m_selectedCrossectionsActor);
-	if (m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
-	}
-	if (m_setting.showLines) {
-		col->AddItem(m_crosssectionLinesActor);
-	}
-
 	col2->RemoveAllItems();
-	col2->AddItem(m_labelActor);
+
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		col->AddItem(impl->m_centerLineController.pointsActor());
+		col->AddItem(impl->m_centerLineSplineController.linesActor());
+		col->AddItem(impl->m_leftBankLineController.pointsActor());
+		col->AddItem(impl->m_leftBankLineSplineController.linesActor());
+		col->AddItem(impl->m_rightBankLineController.pointsActor());
+		col->AddItem(impl->m_rightBankLineSplineController.linesActor());
+		col->AddItem(impl->m_upstreamLineController.linesActor());
+		col->AddItem(impl->m_downstreamLineController.linesActor());
+		impl->updateLabelsAndSplines();
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		col->AddItem(impl->m_riverCenterPointsActor);
+		col->AddItem(impl->m_crossSectionLinesActor);
+		col->AddItem(impl->m_centerAndBankLinesActor);
+		col->AddItem(impl->m_selectedRiverCenterPointsActor);
+		col->AddItem(impl->m_selectedLeftBankPointsActor);
+		col->AddItem(impl->m_selectedRightBankPointsActor);
+		col->AddItem(impl->m_selectedCrossSectionLinesActor);
+		if (m_setting.showBackground) {
+			col->AddItem(impl->m_backgroundActor);
+		}
+		if (m_setting.showLines) {
+			col->AddItem(impl->m_verticalCrossSectionLinesActor);
+		}
+		col2->AddItem(impl->m_labelActor);
+	}
 
 	updateVisibilityWithoutRendering();
 }
@@ -530,366 +233,114 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 	vtkActorCollection* col = actorCollection();
 	vtkActor2DCollection* col2 = actor2DCollection();
 	col->RemoveAllItems();
-
-	col->AddItem(m_leftBankLineActor);
-	col->AddItem(m_rightBankLineActor);
-	col->AddItem(m_firstAndLastCrosssectionsActor);
-	col->AddItem(m_crossectionsActor);
-	if (m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
-	}
-	if (m_setting.showLines) {
-		col->AddItem(m_crosssectionLinesActor);
-	}
 	col2->RemoveAllItems();
-	col2->AddItem(m_labelActor);
+
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		col->AddItem(impl->m_centerLineController.pointsActor());
+		col->AddItem(impl->m_centerLineSplineController.linesActor());
+		col->AddItem(impl->m_leftBankLineController.pointsActor());
+		col->AddItem(impl->m_leftBankLineSplineController.linesActor());
+		col->AddItem(impl->m_rightBankLineController.pointsActor());
+		col->AddItem(impl->m_rightBankLineSplineController.linesActor());
+		col->AddItem(impl->m_upstreamLineController.linesActor());
+		col->AddItem(impl->m_downstreamLineController.linesActor());
+		impl->updateLabelsAndSplines();
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		col->AddItem(impl->m_crossSectionLinesActor);
+		col->AddItem(impl->m_centerAndBankLinesActor);
+		if (m_setting.showBackground) {
+			col->AddItem(impl->m_backgroundActor);
+		}
+		if (m_setting.showLines) {
+			col->AddItem(impl->m_verticalCrossSectionLinesActor);
+		}
+		col2->AddItem(impl->m_labelActor);
+	}
 
 	updateVisibilityWithoutRendering();
 }
 
 void GeoDataRiverSurvey::allActorsOff()
 {
-	m_riverCenterActor->VisibilityOff();
-	m_selectedRiverCenterActor->VisibilityOff();
-	m_selectedLeftBankActor->VisibilityOff();
-	m_selectedRightBankActor->VisibilityOff();
-	m_riverCenterLineActor->VisibilityOff();
-	m_leftBankLineActor->VisibilityOff();
-	m_rightBankLineActor->VisibilityOff();
-	m_crossectionsActor->VisibilityOff();
-	m_firstAndLastCrosssectionsActor->VisibilityOff();
-	m_selectedCrossectionsActor->VisibilityOff();
-	m_backgroundActor->VisibilityOff();
-	m_labelActor->VisibilityOff();
-	m_crosssectionLinesActor->VisibilityOff();
+	impl->m_centerLineController.pointsActor()->VisibilityOff();
+	impl->m_centerLineSplineController.linesActor()->VisibilityOff();
+	impl->m_leftBankLineController.pointsActor()->VisibilityOff();
+	impl->m_leftBankLineSplineController.linesActor()->VisibilityOff();
+	impl->m_rightBankLineController.pointsActor()->VisibilityOff();
+	impl->m_rightBankLineSplineController.linesActor()->VisibilityOff();
+	impl->m_upstreamLineController.linesActor()->VisibilityOff();
+	impl->m_downstreamLineController.linesActor()->VisibilityOff();
+	impl->m_upstreamActor.actor()->VisibilityOff();
+	impl->m_downstreamActor.actor()->VisibilityOff();
+
+	impl->m_riverCenterPointsActor->VisibilityOff();
+	impl->m_crossSectionLinesActor->VisibilityOff();
+	impl->m_centerAndBankLinesActor->VisibilityOff();
+	impl->m_selectedRiverCenterPointsActor->VisibilityOff();
+	impl->m_selectedLeftBankPointsActor->VisibilityOff();
+	impl->m_selectedRightBankPointsActor->VisibilityOff();
+	impl->m_selectedCrossSectionLinesActor->VisibilityOff();
+	impl->m_verticalCrossSectionLinesActor->VisibilityOff();
+	impl->m_labelActor->VisibilityOff();
+	impl->m_backgroundActor->VisibilityOff();
 }
 
 void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 {
-	updateMouseCursor(v);
+	impl->updateMouseCursor(v);
 }
 
 void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meTranslatePrepare:
-	case meRotatePrepareRight:
-	case meRotatePrepareLeft:
-	case meShiftPrepare:
-	case meMoveExtensionEndPointPrepareLeft:
-	case meMoveExtensionEndPointPrepareRight:
-	case meExpansionPrepareRight:
-	case meExpansionPrepareLeft:
-		m_keyboardModifiers = event->modifiers();
-		updateMouseEventMode();
-		updateMouseCursor(v);
-		break;
-	case meTranslate:
-	case meRotateRight:
-	case meRotateLeft:
-	case meShift:
-	case meMoveExtentionEndPointLeft:
-	case meMoveExtentionEndPointRight:
-	case meExpansionRight:
-	case meExpansionLeft:
-	case meAddingExtension:
-	case meInserting:
-	case meTranslateDialog:
-	case meRotateDialog:
-	case meShiftDialog:
-	case meExpansionDialog:
-		break;
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		createModeKeyPressEvent(event, v);
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		editModeKeyPressEvent(event, v);
 	}
 }
 
 void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meTranslatePrepare:
-	case meRotatePrepareRight:
-	case meRotatePrepareLeft:
-	case meShiftPrepare:
-	case meMoveExtensionEndPointPrepareLeft:
-	case meMoveExtensionEndPointPrepareRight:
-	case meExpansionPrepareRight:
-	case meExpansionPrepareLeft:
-		m_keyboardModifiers = event->modifiers();
-		updateMouseEventMode();
-		updateMouseCursor(v);
-		break;
-	case meTranslate:
-	case meRotateRight:
-	case meRotateLeft:
-	case meShift:
-	case meMoveExtentionEndPointLeft:
-	case meMoveExtentionEndPointRight:
-	case meExpansionRight:
-	case meExpansionLeft:
-	case meAddingExtension:
-	case meInserting:
-	case meTranslateDialog:
-	case meRotateDialog:
-	case meShiftDialog:
-	case meExpansionDialog:
-		break;
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		createModeKeyReleaseEvent(event, v);
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		editModeKeyReleaseEvent(event, v);
 	}
 }
 
-void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	GeoDataRiverPathPoint* selP = selectedPoint();
-	if (selP == nullptr) {
-		// no point is selected.
-		return;
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		createModeMouseDoubleClickEvent(event, v);
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		editModeMouseDoubleClickEvent(event, v);
 	}
-	openCrossSectionWindow();
 }
 
 void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if ((m_mouseEventMode == meAddingExtension || m_mouseEventMode == meInserting) && m_leftButtonDown) {
-		graphicsView()->emitWorldPosition(event->x(), event->y());
-	} else {
-		if (m_definingBoundingBox) {
-			// drawing bounding box using mouse dragging.
-			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
-			box->setEndPoint(event->x(), event->y());
-			renderGraphicsView();
-		} else {
-			switch (m_mouseEventMode) {
-			case meNormal:
-			case meTranslatePrepare:
-			case meRotatePrepareRight:
-			case meRotatePrepareLeft:
-			case meShiftPrepare:
-			case meMoveExtensionEndPointPrepareLeft:
-			case meMoveExtensionEndPointPrepareRight:
-			case meExpansionPrepareRight:
-			case meExpansionPrepareLeft:
-				m_currentPoint = QPoint(event->x(), event->y());
-				updateMouseEventMode();
-				updateMouseCursor(v);
-				break;
-			case meTranslate:
-				// execute translation.
-				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
-				break;
-			case meRotateRight:
-				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
-				break;
-			case meRotateLeft:
-				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
-				break;
-			case meShift:
-				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
-				break;
-			case meMoveExtentionEndPointLeft:
-				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
-				break;
-			case meMoveExtentionEndPointRight:
-				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, QPoint(event->x(), event->y()), this));
-				m_currentPoint = QPoint(event->x(), event->y());
-				break;
-			case meExpansionRight:
-			case meExpansionLeft:
-				// not used.
-				break;
-			case meAddingExtension:
-			case meInserting:
-				if (m_leftButtonDown) {
-					graphicsView()->emitWorldPosition(event->x(), event->y());
-				}
-				break;
-			case meTranslateDialog:
-			case meRotateDialog:
-			case meShiftDialog:
-			case meExpansionDialog:
-				break;
-			}
-		}
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		createModeMouseMoveEvent(event, v);
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		editModeMouseMoveEvent(event, v);
 	}
 }
 
 void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton) {
-		m_dragStartPoint = QPoint(event->x(), event->y());
-
-		switch (m_mouseEventMode) {
-		case meNormal: {
-				// start drawing the mouse bounding box.
-				m_definingBoundingBox = true;
-				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
-				box->setStartPoint(event->x(), event->y());
-				box->enable();
-				v->GetRenderWindow()->SetDesiredUpdateRate(PreProcessorDataItem::dragUpdateRate);
-				renderGraphicsView();
-			}
-			break;
-		case meTranslatePrepare:
-			m_mouseEventMode = meTranslate;
-			break;
-		case meRotatePrepareRight:
-			m_mouseEventMode = meRotateRight;
-			break;
-		case meRotatePrepareLeft:
-			m_mouseEventMode = meRotateLeft;
-			break;
-		case meShiftPrepare:
-			m_mouseEventMode = meShift;
-			break;
-		case meMoveExtensionEndPointPrepareLeft:
-			m_mouseEventMode = meMoveExtentionEndPointLeft;
-			break;
-		case meMoveExtensionEndPointPrepareRight:
-			m_mouseEventMode = meMoveExtentionEndPointRight;
-			break;
-		case meExpansionPrepareRight:
-		case meExpansionPrepareLeft:
-			// do nothing. mouse expansion is not used.
-			break;
-		case meTranslate:
-		case meRotateRight:
-		case meRotateLeft:
-		case meShift:
-		case meMoveExtentionEndPointLeft:
-		case meMoveExtentionEndPointRight:
-		case meExpansionRight:
-		case meExpansionLeft:
-			// these does not happen.
-			break;
-		case meAddingExtension:
-		case meInserting:
-			m_leftButtonDown = true;
-			graphicsView()->emitWorldPosition(event->x(), event->y());
-			break;
-		case meTranslateDialog:
-		case meRotateDialog:
-		case meShiftDialog:
-		case meExpansionDialog:
-			// do nothing.
-			break;
-		}
-	} else if (event->button() == Qt::RightButton) {
-		m_dragStartPoint = QPoint(event->x(), event->y());
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		createModeMousePressEvent(event, v);
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		editModeMousePressEvent(event, v);
 	}
 }
 
 void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton) {
-		switch (m_mouseEventMode) {
-		case meNormal:
-			if (m_definingBoundingBox) {
-				// bounding box selecting ended.
-				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
-				box->setEndPoint(event->x(), event->y());
-				box->disable();
-				if (iRIC::isNear(box->startPoint(), box->endPoint())) {
-					int x = (box->startPoint().x() + box->endPoint().x()) / 2;
-					int y = (box->startPoint().y() + box->endPoint().y()) / 2;
-					box->setStartPoint(x - 8, y - 8);
-					box->setEndPoint(x + 8, y + 8);
-				}
-
-				v->restoreUpdateRate();
-
-				// selection change is made not undo-able
-				ChangeSelectionCommand com(this, box);
-				com.redo();
-			}
-			m_definingBoundingBox = false;
-			m_currentPoint = QPoint(event->x(), event->y());
-			updateMouseEventMode();
-			updateMouseCursor(v);
-			break;
-		case meTranslatePrepare:
-		case meRotatePrepareRight:
-		case meRotatePrepareLeft:
-		case meShiftPrepare:
-		case meMoveExtensionEndPointPrepareLeft:
-		case meMoveExtensionEndPointPrepareRight:
-		case meExpansionPrepareRight:
-		case meExpansionPrepareLeft:
-			// do nothing.
-			break;
-		case meTranslate:
-		case meRotateRight:
-		case meRotateLeft:
-		case meShift:
-		case meMoveExtentionEndPointLeft:
-		case meMoveExtentionEndPointRight:
-		case meExpansionRight:
-		case meExpansionLeft:
-			// operation ended.
-			m_currentPoint = QPoint(event->x(), event->y());
-			updateMouseEventMode();
-			updateMouseCursor(v);
-			break;
-		case meAddingExtension:
-		case meInserting:
-			m_leftButtonDown = false;
-			break;
-		case meTranslateDialog:
-		case meRotateDialog:
-		case meShiftDialog:
-		case meExpansionDialog:
-			// do nothing.
-			break;
-		}
-
-
-	} else if (event->button() == Qt::RightButton) {
-		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
-			// show right-clicking menu.
-			m_rightClickingMenu->move(event->globalPos());
-			m_rightClickingMenu->show();
-		}
-	}
-}
-
-void GeoDataRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
-{
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meAddingExtension:
-		v->setCursor(Qt::ArrowCursor);
-		break;
-	case meTranslate:
-	case meTranslatePrepare:
-		v->setCursor(m_cursorMove);
-		break;
-	case meRotateRight:
-	case meRotatePrepareRight:
-	case meRotateLeft:
-	case meRotatePrepareLeft:
-		v->setCursor(m_cursorRotate);
-		break;
-	case meShift:
-	case meShiftPrepare:
-		v->setCursor(m_cursorShift);
-		break;
-	case meMoveExtentionEndPointLeft:
-	case meMoveExtensionEndPointPrepareLeft:
-	case meMoveExtentionEndPointRight:
-	case meMoveExtensionEndPointPrepareRight:
-		v->setCursor(m_cursorMove);
-		break;
-	case meExpansionRight:
-	case meExpansionPrepareRight:
-	case meExpansionLeft:
-	case meExpansionPrepareLeft:
-		v->setCursor(m_cursorExpand);
-		break;
-	default:
-		break;
+	if (impl->m_mode == Impl::Mode::CreateMode) {
+		createModeMouseReleaseEvent(event, v);
+	} else if (impl->m_mode == Impl::Mode::EditMode) {
+		editModeMouseReleaseEvent(event, v);
 	}
 }
 
@@ -900,26 +351,36 @@ void GeoDataRiverSurvey::addCustomMenuItems(QMenu* menu)
 
 void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	auto elem = node.toElement();
 	GeoData::doLoadFromProjectMainFile(node);
-
+	auto mode = elem.attribute("mode");
+	impl->m_mode = Impl::Mode::EditMode;
+	if (mode == "create") {
+		impl->m_mode = Impl::Mode::CreateMode;
+	}
 	m_setting.load(node);
 
-	m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
 
-	QDomElement elem = node.toElement();
 	int linearMode = elem.attribute("interpolateLinear").toInt();
 	bool lMode = (linearMode != 0);
 	RiverSplineSolver::setLinearMode(lMode, m_headPoint);
 	if (lMode) {
-		m_interpolateSplineAction->setChecked(false);
-		m_interpolateLinearAction->setChecked(true);
+		impl->m_interpolateSplineAction->setChecked(false);
+		impl->m_interpolateLinearAction->setChecked(true);
 	}
+	impl->m_menuIsSetup = false;
+	impl->updateMouseCursor(graphicsView());
 }
 
 void GeoDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-
+	QString mode = "create";
+	if (impl->m_mode == Impl::Mode::EditMode) {
+		mode = "edit";
+	}
+	writer.writeAttribute("mode", mode);
 	m_setting.save(writer);
 
 	int lMode = 0;
@@ -932,19 +393,39 @@ void GeoDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 {
 	if (projectData()->version().build() >= 3607) {
-		iRICLib::RiverSurvey* rs = new iRICLib::RiverSurvey();
+		if (impl->m_mode == Impl::Mode::EditMode) {
+			iRICLib::RiverSurvey* rs = new iRICLib::RiverSurvey();
 
-		rs->load(iRIC::toStr(filename).c_str());
-		GeoDataRiverPathPoint* before = m_headPoint;
-		GeoDataRiverPathPoint* newPoint;
-		for (unsigned int i = 0; i < rs->points.size(); ++i) {
-			iRICLib::RiverPathPoint* libp = rs->points.at(i);
-			newPoint = new GeoDataRiverPathPoint();
-			newPoint->loadFromiRICLibObject(libp);
-			before->addPathPoint(newPoint);
-			before = newPoint;
+			rs->load(iRIC::toStr(filename).c_str());
+			GeoDataRiverPathPoint* before = m_headPoint;
+			GeoDataRiverPathPoint* newPoint;
+			for (unsigned int i = 0; i < rs->points.size(); ++i) {
+				iRICLib::RiverPathPoint* libp = rs->points.at(i);
+				newPoint = new GeoDataRiverPathPoint();
+				newPoint->loadFromiRICLibObject(libp);
+				before->addPathPoint(newPoint);
+				before = newPoint;
+			}
+			delete rs;
+		} else if (impl->m_mode == Impl::Mode::CreateMode) {
+			// implement this
+			QFile f(filename);
+			f.open(QIODevice::ReadOnly);
+			QDataStream s(&f);
+
+			PolyLineControllerUtil::loadPolyLine(&s, &(impl->m_centerLineController));
+			PolyLineControllerUtil::loadPolyLine(&s, &(impl->m_leftBankLineController));
+			PolyLineControllerUtil::loadPolyLine(&s, &(impl->m_rightBankLineController));
+			f.close();
+
+			if (impl->m_centerLineController.polyLine().size() > 0) {
+				impl->m_createMouseEventMode = Impl::CreateMouseEventMode::Normal;
+			} else {
+				impl->m_createMouseEventMode = Impl::CreateMouseEventMode::BeforeDefining;
+			}
+			impl->updateLabelsAndSplines();
+			impl->updateActionStatus();
 		}
-		delete rs;
 	} else {
 		QFile f(filename);
 		f.open(QIODevice::ReadOnly);
@@ -964,38 +445,49 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 		f.close();
 	}
 	updateInterpolators();
-	informDeselection(0);
+	informDeselection(nullptr);
 }
 
 void GeoDataRiverSurvey::saveExternalData(const QString& filename)
 {
-	iRICLib::RiverSurvey* rs = new iRICLib::RiverSurvey();
-	bool first = true;
+	if (impl->m_mode == Impl::Mode::EditMode) {
+		iRICLib::RiverSurvey* rs = new iRICLib::RiverSurvey();
+		bool first = true;
 
-	iRICLib::RiverPathPoint* prevP = nullptr;
-	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-	while (p != nullptr) {
-		iRICLib::RiverPathPoint* libp = new iRICLib::RiverPathPoint();
-		p->saveToiRICLibObject(libp);
-		if (first) {
-			rs->firstPoint = libp;
-			first = false;
-		} else {
-			prevP->nextPoint = libp;
+		iRICLib::RiverPathPoint* prevP = nullptr;
+		GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
+		while (p != nullptr) {
+			iRICLib::RiverPathPoint* libp = new iRICLib::RiverPathPoint();
+			p->saveToiRICLibObject(libp);
+			if (first) {
+				rs->firstPoint = libp;
+				first = false;
+			} else {
+				prevP->nextPoint = libp;
+			}
+			prevP = libp;
+
+			p = p->nextPoint();
 		}
-		prevP = libp;
+		rs->save(iRIC::toStr(filename).c_str());
 
-		p = p->nextPoint();
+		delete rs;
+	} else if (impl->m_mode == Impl::Mode::CreateMode) {
+		QFile f(filename);
+		f.open(QIODevice::WriteOnly);
+		QDataStream s(&f);
+
+		PolyLineControllerUtil::savePolyLine(&s, impl->m_centerLineController);
+		PolyLineControllerUtil::savePolyLine(&s, impl->m_leftBankLineController);
+		PolyLineControllerUtil::savePolyLine(&s, impl->m_rightBankLineController);
+		f.close();
 	}
-	rs->save(iRIC::toStr(filename).c_str());
-
-	delete rs;
 }
 
 bool GeoDataRiverSurvey::getValueRange(double* min, double* max)
 {
 	double range[2];
-	vtkDataArray* data = m_backgroundGrid->GetPointData()->GetArray("Data");
+	vtkDataArray* data = impl->m_backgroundGrid->GetPointData()->GetArray("Data");
 	if (data == nullptr) {
 		return false;
 	}
@@ -1019,361 +511,20 @@ void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog*)
 
 void GeoDataRiverSurvey::updateShapeData()
 {
-	m_points->Reset();
-	m_rightBankPoints->Reset();
-	m_riverCenters->Reset();
-	m_firstAndLastCrosssections->Reset();
-	m_crosssections->Reset();
-	m_leftBankLine->Initialize();
-	m_rightBankLine->Initialize();
-	m_riverCenterLine->Initialize();
-
-	vtkSmartPointer<vtkPoints> centerLinePoints = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkPoints> leftBankPoints = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkPoints> rightBankPoints = vtkSmartPointer<vtkPoints>::New();
-
-	// calculate the number of grid size of m_riverCenterLine etc.
-	int pointCount = 0;
-	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-	while (p != nullptr) {
-		++pointCount;
-		p = p->nextPoint();
-	}
-	int gridSize = pointCount + (pointCount - 1) * (LINEDIVS - 1);
-	m_riverCenterLine->SetDimensions(gridSize, 1, 1);
-	m_leftBankLine->SetDimensions(gridSize, 1, 1);
-	m_rightBankLine->SetDimensions(gridSize, 1, 1);
-
-	p = m_headPoint->nextPoint();
-	double point[3];
-	point[2] = 0;
-	int index = 0;
-	vtkVertex* nextVertex;
-	vtkLine* line;
-	bool firstOrLast = false;
-	bool first = true;
-	while (p != nullptr) {
-		firstOrLast = first || (p->nextPoint() == nullptr);
-		// left bank
-		QPointF leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-		point[0] = leftBank.x();
-		point[1] = leftBank.y();
-		m_points->InsertNextPoint(point);
-		++index;
-
-		// left fixed point
-		QPointF leftFixed;
-		if (p->crosssection().fixedPointLSet()) {
-			leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
-		} else {
-			// use left bank.
-			leftFixed = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-		}
-		point[0] = leftFixed.x();
-		point[1] = leftFixed.y();
-		m_points->InsertNextPoint(point);
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast) {
-			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		// river center
-		point[0] = p->position().x();
-		point[1] = p->position().y();
-		m_points->InsertNextPoint(point);
-		nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, index);
-		m_riverCenters->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		nextVertex->Delete();
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast) {
-			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		// right fixed point
-		QPointF rightFixed;
-		if (p->crosssection().fixedPointRSet()) {
-			rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
-		} else {
-			// use right bank.
-			rightFixed = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-		}
-		point[0] = rightFixed.x();
-		point[1] = rightFixed.y();
-		m_points->InsertNextPoint(point);
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast) {
-			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		// right bank
-		QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-		point[0] = rightBank.x();
-		point[1] = rightBank.y();
-		m_points->InsertNextPoint(point);
-		m_rightBankPoints->InsertNextPoint(point);
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast) {
-			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		QPointF tmpp;
-		// river center line
-		point[0] = p->position().x();
-		point[1] = p->position().y();
-		centerLinePoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr) {
-			for (int i = 1; i < LINEDIVS; ++i) {
-				tmpp = p->riverCenter()->interpolate(i / static_cast<double>(LINEDIVS));
-				point[0] = tmpp.x();
-				point[1] = tmpp.y();
-				centerLinePoints->InsertNextPoint(point);
-			}
-		}
-		// left bank line
-		tmpp = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-		point[0] = tmpp.x();
-		point[1] = tmpp.y();
-		leftBankPoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr) {
-			for (int i = 1; i < LINEDIVS; ++i) {
-				tmpp = p->leftBank()->interpolate(i / static_cast<double>(LINEDIVS));
-				point[0] = tmpp.x();
-				point[1] = tmpp.y();
-				leftBankPoints->InsertNextPoint(point);
-			}
-		}
-		// right bank line
-		tmpp = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-		point[0] = tmpp.x();
-		point[1] = tmpp.y();
-		rightBankPoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr) {
-			for (int i = 1; i < LINEDIVS; ++i) {
-				tmpp = p->rightBank()->interpolate(i / static_cast<double>(LINEDIVS));
-				point[0] = tmpp.x();
-				point[1] = tmpp.y();
-				rightBankPoints->InsertNextPoint(point);
-			}
-		}
-		p = p->nextPoint();
-		first = false;
-	}
-	m_points->Modified();
-	m_rightBankPoints->Modified();
-	m_riverCenters->SetPoints(m_points);
-	m_riverCenters->Modified();
-	m_firstAndLastCrosssections->SetPoints(m_points);
-	m_firstAndLastCrosssections->Modified();
-	m_crosssections->SetPoints(m_points);
-	m_crosssections->Modified();
-
-	m_riverCenterLine->SetPoints(centerLinePoints);
-	m_riverCenterLine->Modified();
-	m_leftBankLine->SetPoints(leftBankPoints);
-	m_leftBankLine->Modified();
-	m_rightBankLine->SetPoints(rightBankPoints);
-	m_rightBankLine->Modified();
-
-	m_rightBankPointSet->SetPoints(m_rightBankPoints);
-	m_labelArray->Reset();
-	p = m_headPoint->nextPoint();
-	while (p != nullptr) {
-		QString name = p->name();
-		name.prepend(tr("  "));
-		m_labelArray->InsertNextValue(iRIC::toStr(name).c_str());
-		p = p->nextPoint();
-	}
-
-	m_rightBankPointSet->Modified();
-
-	m_backgroundActor->VisibilityOff();
-
-	m_crosssectionLines->Reset();
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-
-	p = m_headPoint->nextPoint();
-	vtkIdType pointNum = 0;
-	while (p != nullptr) {
-		double maxHeight = 0;
-		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
-		// calculate maxHeight.
-		for (int i = 0; i < alist.size(); ++i) {
-			GeoDataRiverCrosssection::Altitude alt = alist[i];
-			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
-		}
-		// now draw lines.
-		QPointF offsetDir = p->crosssectionDirection();
-		iRIC::rotateVector270(offsetDir);
-
-		double offset;
-		GeoDataRiverCrosssection::Altitude alt = alist[0];
-		offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-		QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
-		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
-		++ pointNum;
-		for (int i = 1; i < alist.size(); ++i) {
-			GeoDataRiverCrosssection::Altitude alt = alist[i];
-			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
-			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
-			++ pointNum;
-			vtkSmartPointer<vtkLine> tmpline = vtkSmartPointer<vtkLine>::New();
-			tmpline->GetPointIds()->SetId(0, pointNum - 2);
-			tmpline->GetPointIds()->SetId(1, pointNum - 1);
-			m_crosssectionLines->InsertNextCell(tmpline->GetCellType(), tmpline->GetPointIds());
-		}
-		p = p->nextPoint();
-	}
-	m_crosssectionLines->SetPoints(points);
-	points->Modified();
-	m_crosssectionLines->Modified();
-	m_crosssectionLines->BuildLinks();
-
-	vtkActorCollection* col = actorCollection();
-	col->RemoveAllItems();
-
-	col->AddItem(m_leftBankLineActor);
-	col->AddItem(m_rightBankLineActor);
-	col->AddItem(m_firstAndLastCrosssectionsActor);
-	col->AddItem(m_crossectionsActor);
-	if (m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
-		m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
-	}
-	m_crosssectionLinesActor->VisibilityOff();
-
-	if (m_setting.showLines) {
-		col->AddItem(m_crosssectionLinesActor);
-		m_crosssectionLinesActor->GetProperty()->SetColor(m_setting.crosssectionLinesColor);
-	}
-
-	vtkActor2DCollection* col2 = actor2DCollection();
-	col2->AddItem(m_labelActor);
-
-	updateVisibilityWithoutRendering();
+	impl->updateVtkPointsObjects();
+	impl->updateVtkCenterAndBankLinesObjects();
+	impl->updateVtkSelectedObjects();
+	impl->updateVtkVerticalCenterLinesObjects();
+	impl->updateVtkNameLabelObjects();
+	impl->updateVtkBackgroundObjects();
 
 	emit dataUpdated();
-	m_gridThread->update();
+	impl->m_gridThread->update();
 }
 
 void GeoDataRiverSurvey::updateSelectionShapeData()
 {
-	m_selectedCrosssections->Reset();
-	m_selectedRiverCenters->Reset();
-	m_selectedLeftBanks->Reset();
-	m_selectedRightBanks->Reset();
-
-	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-	int index = 0;
-	vtkVertex* nextVertex;
-	vtkLine* line;
-	while (p != nullptr) {
-		// left bank
-		nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected) {
-			m_selectedLeftBanks->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		}
-		nextVertex->Delete();
-		++index;
-
-		// left fixed point
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected) {
-			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		// river center
-		nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected) {
-			m_selectedRiverCenters->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		}
-		nextVertex->Delete();
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected) {
-			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		// right fixed point
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected) {
-			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-
-		// right bank
-		nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected) {
-			m_selectedRightBanks->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		}
-		nextVertex->Delete();
-
-		line = vtkLine::New();
-		line->GetPointIds()->SetId(0, index - 1);
-		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected) {
-			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		}
-		line->Delete();
-
-		++index;
-		p = p->nextPoint();
-	}
-	m_selectedLeftBanks->SetPoints(m_points);
-	m_selectedLeftBanks->Modified();
-	m_selectedRightBanks->SetPoints(m_points);
-	m_selectedRightBanks->Modified();
-	m_selectedRiverCenters->SetPoints(m_points);
-	m_selectedRiverCenters->Modified();
-	m_selectedCrosssections->SetPoints(m_points);
-	m_selectedCrosssections->Modified();
+	impl->updateVtkSelectedObjects();
 }
 
 GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
@@ -1383,7 +534,7 @@ GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
 
 vtkStructuredGrid* GeoDataRiverSurvey::backgroundGrid() const
 {
-	return m_backgroundGrid;
+	return impl->m_backgroundGrid;
 }
 
 void GeoDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -1398,111 +549,264 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	double lines = .5 * range.min() + .5 * range.max();
 	double points = range.max();
 
-	m_riverCenterActor->SetPosition(0, 0, points);
-	m_selectedRiverCenterActor->SetPosition(0, 0, points);
-	m_selectedLeftBankActor->SetPosition(0, 0, points);
-	m_selectedRightBankActor->SetPosition(0, 0, points);
-	m_firstAndLastCrosssectionsActor->SetPosition(0, 0, lines);
-	m_crossectionsActor->SetPosition(0, 0, lines);
-	m_riverCenterLineActor->SetPosition(0, 0, lines);
-	m_leftBankLineActor->SetPosition(0, 0, lines);
-	m_rightBankLineActor->SetPosition(0, 0, lines);
-	m_selectedCrossectionsActor->SetPosition(0, 0, lines);
-	m_blackCrossectionsActor->SetPosition(0, 0, backlines);
-	m_redCrossectionsActor->SetPosition(0, 0, backlines);
-	m_blueCrossectionsActor->SetPosition(0, 0, backlines);
-	m_crosssectionLinesActor->SetPosition(0, 0, backlines);
-	m_backgroundActor->SetPosition(0, 0, background);
+	impl->m_centerLineController.pointsActor()->SetPosition(0, 0, points);
+	impl->m_leftBankLineController.pointsActor()->SetPosition(0, 0, points);
+	impl->m_rightBankLineController.pointsActor()->SetPosition(0, 0, points);
+	impl->m_centerLineSplineController.linesActor()->SetPosition(0, 0, lines);
+	impl->m_leftBankLineSplineController.linesActor()->SetPosition(0, 0, lines);
+	impl->m_rightBankLineSplineController.linesActor()->SetPosition(0, 0, lines);
+	impl->m_upstreamLineController.linesActor()->SetPosition(0, 0, lines);
+	impl->m_downstreamLineController.linesActor()->SetPosition(0, 0, lines);
+
+	impl->m_riverCenterPointsActor->SetPosition(0, 0, points);
+	impl->m_crossSectionLinesActor->SetPosition(0, 0, lines);
+	impl->m_centerAndBankLinesActor->SetPosition(0, 0, lines);
+	impl->m_selectedRiverCenterPointsActor->SetPosition(0, 0, points);
+	impl->m_selectedLeftBankPointsActor->SetPosition(0, 0, points);
+	impl->m_selectedRightBankPointsActor->SetPosition(0, 0, points);
+	impl->m_selectedCrossSectionLinesActor->SetPosition(0, 0, lines);
+	impl->m_verticalCrossSectionLinesActor->SetPosition(0, 0, backlines);
+	impl->m_blackCrossSectionActor->SetPosition(0, 0, backlines);
+	impl->m_backgroundActor->SetPosition(0, 0, background);
 }
 
-void GeoDataRiverSurvey::setupActions()
+void GeoDataRiverSurvey::generateData()
 {
-	m_addUpperSideAction = new QAction(tr("Insert Upstream Side(&B)..."), this);
-	connect(m_addUpperSideAction, SIGNAL(triggered()), this, SLOT(insertNewPoint()));
-	m_addLowerSideAction = new QAction(tr("Insert Downstream Side(&A)..."), this);
-	connect(m_addLowerSideAction, SIGNAL(triggered()), this, SLOT(addNewPoint()));
-	m_moveAction = new QAction(tr("&Move..."), this);
-	connect(m_moveAction, SIGNAL(triggered()), this, SLOT(moveSelectedPoints()));
-	m_rotateAction = new QAction(tr("&Rotate..."), this);
-	connect(m_rotateAction, SIGNAL(triggered()), this, SLOT(rotateSelectedPoint()));
-	m_shiftAction = new QAction(tr("S&hift Center..."), this);
-	connect(m_shiftAction, SIGNAL(triggered()), this, SLOT(shiftSelectedPoints()));
-	m_expandAction = new QAction(tr("E&xtend Horizontally..."), this);
-	connect(m_expandAction, SIGNAL(triggered()), this, SLOT(expandSelectedPoints()));
-	m_deleteAction = new QAction(tr("Dele&te Cross Section"), this);
-	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedPoints()));
-	m_renameAction = new QAction(tr("R&ename Cross Section..."), this);
-	connect(m_renameAction, SIGNAL(triggered()), this, SLOT(renameSelectedPoint()));
-	m_addLeftExtensionPointAction = new QAction(tr("Add &Left Bank Extension Line..."), this);
-	connect(m_addLeftExtensionPointAction, SIGNAL(triggered()), this, SLOT(addLeftExtensionPoint()));
-	m_addRightExtensionPointAction = new QAction(tr("Add &Right Bank Extension Line..."), this);
-	connect(m_addRightExtensionPointAction, SIGNAL(triggered()), this, SLOT(addRightExtensionPoint()));
-	m_removeLeftExtensionPointAction = new QAction(tr("Remo&ve Left Bank Extension Line"), this);
-	connect(m_removeLeftExtensionPointAction, SIGNAL(triggered()), this, SLOT(removeLeftExtensionPoint()));
-	m_removeRightExtensionPointAction = new QAction(tr("Rem&ove Right Bank Extension Line"), this);
-	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), this, SLOT(removeRightExtensionPoint()));
-	m_openCrossSectionWindowAction = new QAction(tr("Display &Cross Section"), this);
-	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
+	double length = PolyLineUtil::length(impl->m_centerLineSplineController.polyLine());
+	std::vector<GeoDataPointmap*> pointMapDataList;
+	std::vector<QString> pointMapDataNameList;
 
-	m_showBackgroundAction = new QAction(tr("Display &Setting"), this);
-	connect(m_showBackgroundAction, SIGNAL(triggered()), this, SLOT(displaySetting()));
-	m_interpolateSplineAction = new QAction(tr("Spline"), this);
-	connect(m_interpolateSplineAction, SIGNAL(triggered()), this, SLOT(switchInterpolateModeToSpline()));
-	m_interpolateSplineAction->setCheckable(true);
-	m_interpolateSplineAction->setChecked(true);
-	m_interpolateLinearAction = new QAction(tr("Linear Curve"), this);
-	connect(m_interpolateLinearAction, SIGNAL(triggered()), this, SLOT(switchInterpolateModeToLinear()));
-	m_interpolateLinearAction->setCheckable(true);
+	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent())->childItems();
+	for (int i = 0; i < childItems.size(); ++i) {
+		auto c = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (childItems.at(i));
+		auto geoData = c->geoData();
+		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
+		if (pointMapData == nullptr) {continue;}
 
-	m_addUpperSideAction->setEnabled(false);
-	m_addLowerSideAction->setEnabled(false);
-	m_moveAction->setEnabled(false);
-	m_rotateAction->setEnabled(false);
-	m_shiftAction->setEnabled(false);
-	m_expandAction->setEnabled(false);
-	m_deleteAction->setEnabled(false);
-	m_renameAction->setEnabled(false);
-	m_addLeftExtensionPointAction->setEnabled(false);
-	m_addRightExtensionPointAction->setEnabled(false);
-	m_removeLeftExtensionPointAction->setEnabled(false);
-	m_removeRightExtensionPointAction->setEnabled(false);
-	m_openCrossSectionWindowAction->setEnabled(false);
-}
-
-void GeoDataRiverSurvey::updateActionStatus()
-{
-	int selectCount = m_headPoint->selectedPoints();
-	bool singleSelection = (selectCount == 1);
-	bool selectionExists = (selectCount > 0);
-	GeoDataRiverPathPoint* selected = nullptr;
-	if (singleSelection) {
-		selected = selectedPoint();
+		pointMapDataList.push_back(pointMapData);
+		pointMapDataNameList.push_back(pointMapData->caption());
 	}
-	m_addUpperSideAction->setEnabled(singleSelection);
-	m_addLowerSideAction->setEnabled(singleSelection);
-	m_moveAction->setEnabled(selectionExists);
-	m_rotateAction->setEnabled(singleSelection);
-	m_shiftAction->setEnabled(selectionExists);
-	m_expandAction->setEnabled(selectionExists);
-	m_deleteAction->setEnabled(selectionExists);
-	m_renameAction->setEnabled(singleSelection);
 
-	m_addLeftExtensionPointAction->setEnabled(singleSelection && ! selected->crosssection().fixedPointLSet());
-	m_addRightExtensionPointAction->setEnabled(singleSelection && ! selected->crosssection().fixedPointRSet());
-	m_removeLeftExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointLSet());
-	m_removeRightExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointRSet());
-	m_openCrossSectionWindowAction->setEnabled(selectionExists);
+	if (pointMapDataList.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No points data to map is found. Please import points data."));
+		return;
+	}
+
+	GeoDataRiverSurveyGenerateDialog dialog(preProcessorWindow());
+	dialog.setDEMDatas(pointMapDataNameList);
+	dialog.setCenterLineLength(length);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	int numPoints = dialog.numberOfCrossSections();
+	double divDist = dialog.divDistance();
+	double upstreamName = dialog.upstreamName();
+	GeoDataPointmap* mapData = pointMapDataList.at(dialog.demData());
+
+	double nameDistance = std::floor(length / (numPoints - 1) / 100) / 10;
+	if (nameDistance == 0) {nameDistance = 0.1;}
+
+	auto centerLine = PolyLineUtil::buildSplinePoints(impl->m_centerLineController.polyData()->GetPoints(), numPoints - 1);
+	auto leftLine = impl->m_leftBankLineSplineController.polyLine();
+	auto rightLine = impl->m_rightBankLineSplineController.polyLine();
+	QRectF rectL = PolyLineUtil::boundingRect(impl->m_leftBankLineController.polyLine());
+	QRectF rectR = PolyLineUtil::boundingRect(impl->m_rightBankLineController.polyLine());
+	QRectF rect = rectL.united(rectR);
+	double maxLen = std::sqrt(rect.width() * rect.width() + rect.height() * rect.height());
+
+	GeoDataRiverPathPoint* prev = m_headPoint;
+
+	double nextName = upstreamName;
+	for (int i = 0; i < centerLine.size(); ++i) {
+		auto newPoint = new GeoDataRiverPathPoint();
+		newPoint->InhibitInterpolatorUpdate = true;
+		newPoint->setName(QString::number(nextName, 'f', 1));
+		newPoint->setPosition(centerLine.at(i));
+
+		QPointF dir;
+		double distL, distR;
+		if (i == 0) {
+			QPointF p1 = centerLine.at(0);
+			QPointF p2 = centerLine.at(1);
+			dir = iRIC::normalize(p2 - p1);
+			iRIC::rotateVector270(dir);
+			distL = iRIC::distance(leftLine.at(0), centerLine.at(0));
+			distR = iRIC::distance(rightLine.at(0), centerLine.at(0));
+		} else if (i == centerLine.size() - 1) {
+			QPointF p1 = centerLine.at(centerLine.size() - 2);
+			QPointF p2 = centerLine.at(centerLine.size() - 1);
+			dir = iRIC::normalize(p2 - p1);
+			iRIC::rotateVector270(dir);
+			distL = iRIC::distance(leftLine.at(leftLine.size() - 1), centerLine.at(centerLine.size() - 1));
+			distR = iRIC::distance(rightLine.at(rightLine.size() - 1), centerLine.at(centerLine.size() - 1));
+		} else {
+			QPointF p1 = centerLine.at(i - 1);
+			QPointF p2 = centerLine.at(i);
+			QPointF p3 = centerLine.at(i + 1);
+			QPointF v1 = iRIC::normalize(p2 - p1);
+			iRIC::rotateVector270(v1);
+			QPointF v2 = iRIC::normalize(p3 - p2);
+			iRIC::rotateVector270(v2);
+			dir = iRIC::normalize(v1 + v2);
+
+			QPointF nearestL = nearestInterSection(p2, p2 - dir * maxLen, leftLine);
+			distL = iRIC::distance(p2, nearestL);
+			QPointF nearestR = nearestInterSection(p2, p2 + dir * maxLen, rightLine);
+			distR = iRIC::distance(p2, nearestR);
+		}
+
+		newPoint->setCrosssectionDirection(dir);
+		std::map<double, GeoDataRiverCrosssection::Altitude> alts;
+
+		const QPointF p;
+		double pos;
+		// center
+		addPointAt(newPoint->position(), dir, 0, &alts, mapData);
+		// left
+		pos = - divDist;
+		while (pos > - distL) {
+			addPointAt(newPoint->position(), dir, pos, &alts, mapData);
+			pos -= divDist;
+		}
+		addPointAt(newPoint->position(), dir, - distL, &alts, mapData);
+		// right
+		pos = divDist;
+		while (pos < distR) {
+			addPointAt(newPoint->position(), dir, pos, &alts, mapData);
+			pos += divDist;
+		}
+		addPointAt(newPoint->position(), dir, distR, &alts, mapData);
+
+		auto& altList = newPoint->crosssection().AltitudeInfo();
+		for (const auto& pair : alts) {
+			altList.push_back(pair.second);
+		}
+		newPoint->InhibitInterpolatorUpdate = false;
+
+		prev->addPathPoint(newPoint);
+
+		prev = newPoint;
+		nextName -= nameDistance;
+	}
+	updateInterpolators();
+	impl->m_mode = Impl::Mode::EditMode;
+	impl->m_menuIsSetup = false;
+	iRICUndoStack::instance().clear();
+
+	informSelection(graphicsView());
+	renderGraphicsView();
+
+	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("River survey data is generated using Points data.\n"
+																																						 "If you want to adjust cross section position and map Points data again, you can use \"Map points data\""), "riversurvey_mapping_dem");
+}
+
+void GeoDataRiverSurvey::buildBankLines()
+{
+	auto centerLine = impl->m_centerLineController.polyLine();
+	if (centerLine.size() < 2) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Center Line is not defined yet."));
+		return;
+	}
+
+	GeoDataRiverSurveyBuildBankLinesDialog dialog(preProcessorWindow());
+	dialog.setLeftBankDistance(impl->m_previousLeftBankDistance);
+	dialog.setRightBankDistance(impl->m_previousRightBankDistance);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	double leftDistance = dialog.leftBankDistance();
+	double rightDistance = dialog.rightBankDistance();
+
+	std::vector<QPointF> leftBankLine, rightBankLine;
+
+	for (int i = 0; i < centerLine.size(); ++i) {
+		QPointF v;
+		if (i == 0) {
+			QPointF p1 = centerLine.at(0);
+			QPointF p2 = centerLine.at(1);
+			v = iRIC::normalize(p2 - p1);
+			iRIC::rotateVector270(v);
+		} else if (i == centerLine.size() - 1) {
+			QPointF p1 = centerLine.at(centerLine.size() - 2);
+			QPointF p2 = centerLine.at(centerLine.size() - 1);
+			v = iRIC::normalize(p2 - p1);
+			iRIC::rotateVector270(v);
+		} else {
+			QPointF p1 = centerLine.at(i - 1);
+			QPointF p2 = centerLine.at(i);
+			QPointF p3 = centerLine.at(i + 1);
+			QPointF v1 = iRIC::normalize(p2 - p1);
+			iRIC::rotateVector270(v1);
+			QPointF v2 = iRIC::normalize(p3 - p2);
+			iRIC::rotateVector270(v2);
+			v = iRIC::normalize(v1 + v2);
+		}
+
+		QPointF lb = centerLine.at(i);
+		lb.setX(lb.x() - leftDistance * v.x());
+		lb.setY(lb.y() - leftDistance * v.y());
+		leftBankLine.push_back(lb);
+
+		QPointF rb = centerLine.at(i);
+		rb.setX(rb.x() + rightDistance * v.x());
+		rb.setY(rb.y() + rightDistance * v.y());
+		rightBankLine.push_back(rb);
+	}
+
+	impl->m_leftBankLineController.setPolyLine(leftBankLine);
+	impl->m_rightBankLineController.setPolyLine(rightBankLine);
+
+	impl->m_previousLeftBankDistance = leftDistance;
+	impl->m_previousRightBankDistance = rightDistance;
+
+	impl->createModeUpdateActionStatus();
+	impl->updateLabelsAndSplines();
+
+	renderGraphicsView();
+	iRICUndoStack::instance().clear();
+}
+
+void GeoDataRiverSurvey::addVertexMode(bool on)
+{
+	if (on) {
+		impl->m_createMouseEventMode = Impl::CreateMouseEventMode::AddVertexNotPossible;
+	} else {
+		impl->m_createMouseEventMode = Impl::CreateMouseEventMode::Normal;
+	}
+	impl->createModeUpdateActionStatus();
+}
+
+void GeoDataRiverSurvey::removeVertexMode(bool on)
+{
+	if (on) {
+		impl->m_createMouseEventMode = Impl::CreateMouseEventMode::RemoveVertexNotPossible;
+	} else {
+		impl->m_createMouseEventMode = Impl::CreateMouseEventMode::Normal;
+	}
+	impl->createModeUpdateActionStatus();
+}
+
+void GeoDataRiverSurvey::importCenterLine()
+{
+	impl->importLine(&impl->m_centerLineController);
+}
+
+void GeoDataRiverSurvey::exportCenterLine()
+{
+	impl->exportLine(&impl->m_centerLineController, tr("Center line"));
 }
 
 void GeoDataRiverSurvey::moveSelectedPoints()
 {
 	GeoDataRiverPathPointMoveDialog* dialog = new GeoDataRiverPathPointMoveDialog(this, preProcessorWindow());
-	m_mouseEventMode = meTranslateDialog;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::TranslateDialog;
 	int selectCount = m_headPoint->selectedPoints();
 	bool singleSelection = (selectCount == 1);
 	GeoDataRiverPathPoint* selected = nullptr;
 	if (singleSelection) {
-		selected = selectedPoint();
+		selected = singleSelectedPoint();
 	}
 	dialog->setSingleSelection(singleSelection);
 	if (singleSelection) {
@@ -1537,7 +841,7 @@ void GeoDataRiverSurvey::deleteSelectedPoints()
 void GeoDataRiverSurvey::shiftSelectedPoints()
 {
 	GeoDataRiverPathPointShiftDialog* dialog = new GeoDataRiverPathPointShiftDialog(this, preProcessorWindow());
-	m_mouseEventMode = meShiftDialog;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::ShiftDialog;
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1547,7 +851,7 @@ void GeoDataRiverSurvey::shiftSelectedPoints()
 void GeoDataRiverSurvey::expandSelectedPoints()
 {
 	GeoDataRiverPathPointExpandDialog* dialog = new GeoDataRiverPathPointExpandDialog(this, preProcessorWindow());
-	m_mouseEventMode = meExpansionDialog;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::ExpansionDialog;
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1556,7 +860,7 @@ void GeoDataRiverSurvey::expandSelectedPoints()
 
 void GeoDataRiverSurvey::rotateSelectedPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	QPointF dir = selected->previousPoint()->position() - selected->position();
 	if (selected->previousPoint()->firstPoint() && selected->nextPoint() != nullptr) {
 		dir = selected->position() - selected->nextPoint()->position();
@@ -1565,7 +869,7 @@ void GeoDataRiverSurvey::rotateSelectedPoint()
 
 	GeoDataRiverPathPointRotateDialog* dialog = new GeoDataRiverPathPointRotateDialog(this, preProcessorWindow());
 	dialog->setCurrentRelativeAngle(angle);
-	m_mouseEventMode = meRotateDialog;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::RotateDialog;
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1574,19 +878,19 @@ void GeoDataRiverSurvey::rotateSelectedPoint()
 
 void GeoDataRiverSurvey::renameSelectedPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointRenameDialog dialog(selected, this, preProcessorWindow());
 	dialog.exec();
 }
 
 void GeoDataRiverSurvey::addLeftExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointExtensionAddDialog* dialog = new GeoDataRiverPathPointExtensionAddDialog(selected, this, preProcessorWindow());
 	dialog->setLineMode(GeoDataRiverPathPointExtensionAddDialog::Left);
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().leftBank(true).position()));
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meAddingExtension;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::AddingExtension;
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1595,12 +899,12 @@ void GeoDataRiverSurvey::addLeftExtensionPoint()
 
 void GeoDataRiverSurvey::addRightExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointExtensionAddDialog* dialog = new GeoDataRiverPathPointExtensionAddDialog(selected, this, preProcessorWindow());
 	dialog->setLineMode(GeoDataRiverPathPointExtensionAddDialog::Right);
 	dialog->setPoint(selected->crosssectionPosition(selected->crosssection().rightBank(true).position()));
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meAddingExtension;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::AddingExtension;
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
@@ -1609,42 +913,27 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 
 void GeoDataRiverSurvey::removeLeftExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	iRICUndoStack::instance().push(new RemoveExtensionCommand(true, selected->leftBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::removeRightExtensionPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	iRICUndoStack::instance().push(new RemoveExtensionCommand(false, selected->rightBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::restoreMouseEventMode()
 {
-	m_mouseEventMode = meNormal;
-}
-
-void GeoDataRiverSurvey::setupCursors()
-{
-	m_pixmapMove = QPixmap(":/libs/guibase/images/cursorItemMove.png");
-	m_cursorMove = QCursor(m_pixmapMove, 7, 2);
-
-	m_pixmapRotate = QPixmap(":/libs/geodata/riversurvey/images/cursorCrosssectionRotate.png");
-	m_cursorRotate = QCursor(m_pixmapRotate, 7, 2);
-
-	m_pixmapExpand = QPixmap(":/libs/geodata/riversurvey/images/cursorExpand.png");
-	m_cursorExpand = QCursor(m_pixmapExpand, 7, 2);
-
-	m_pixmapShift = QPixmap(":/libs/geodata/riversurvey/images/cursorShiftCenter.png");
-	m_cursorShift = QCursor(m_pixmapShift, 7, 2);
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::Normal;
 }
 
 void GeoDataRiverSurvey::insertNewPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointInsertDialog* dialog = new GeoDataRiverPathPointInsertDialog(selected, true, this, preProcessorWindow());
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meInserting;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::Inserting;
 
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
@@ -1654,10 +943,10 @@ void GeoDataRiverSurvey::insertNewPoint()
 
 void GeoDataRiverSurvey::addNewPoint()
 {
-	GeoDataRiverPathPoint* selected = selectedPoint();
+	GeoDataRiverPathPoint* selected = singleSelectedPoint();
 	GeoDataRiverPathPointInsertDialog* dialog = new GeoDataRiverPathPointInsertDialog(selected, false, this, preProcessorWindow());
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
-	m_mouseEventMode = meInserting;
+	impl->m_editMouseEventMode = Impl::EditMouseEventMode::Inserting;
 
 	connect(graphicsView(), SIGNAL(worldPositionChanged(QPointF)), dialog, SLOT(setPoint(QPointF)));
 	connect(dialog, SIGNAL(destroyed()), dataModel()->iricMainWindow(), SLOT(exitModelessDialogMode()));
@@ -1665,120 +954,359 @@ void GeoDataRiverSurvey::addNewPoint()
 	dialog->show();
 }
 
-void GeoDataRiverSurvey::updateMouseEventMode()
+void GeoDataRiverSurvey::createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	double dx, dy;
-	dx = m_currentPoint.x();
-	dy = m_currentPoint.y();
-	graphicsView()->viewportToWorld(dx, dy);
-	QPointF worldPos(dx, dy);
-	double stdLen = graphicsView()->stdRadius(1);
-	double stdLen2 = stdLen * stdLen;
-	int selectCount = m_headPoint->selectedPoints();
-	GeoDataRiverPathPoint* selected = nullptr;
-	if (selectCount == 1) {
-		selected = m_headPoint->nextPoint();
-		while (1) {
-			if (selected->IsSelected) {break;}
-			selected = selected->nextPoint();
+	if (! iRIC::isEnterKey(event->key())) {return;}
+	if (impl->m_createMouseEventMode != Impl::CreateMouseEventMode::Defining) {return;}
+
+	finishDefiningLine();
+}
+
+void GeoDataRiverSurvey::createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+{}
+
+void GeoDataRiverSurvey::createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	if (impl->m_createMouseEventMode == Impl::CreateMouseEventMode::Defining) {
+		finishDefiningLine();
+	}
+}
+
+void GeoDataRiverSurvey::createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	switch (impl->m_createMouseEventMode) {
+	case Impl::CreateMouseEventMode::Normal:
+	case Impl::CreateMouseEventMode::MoveVertexPrepare:
+	case Impl::CreateMouseEventMode::AddVertexPrepare:
+	case Impl::CreateMouseEventMode::AddVertexNotPossible:
+	case Impl::CreateMouseEventMode::RemoveVertexPrepare:
+	case Impl::CreateMouseEventMode::RemoveVertexNotPossible:
+		impl->createModeUpdateMouseEventMode(event->pos());
+		impl->createModeUpdateMouseCursor(v);
+		break;
+	case Impl::CreateMouseEventMode::Defining:
+		pushUpdateLabelsCommand(new PolyLinePushVertexCommand(false, v->viewportToWorld(event->pos()), impl->m_activePoints));
+		break;
+	case Impl::CreateMouseEventMode::MoveVertex:
+		pushUpdateLabelsCommand(new PolyLineMoveVertexCommand(false, impl->m_selectedVertexId, v->viewportToWorld(event->pos()), impl->m_activePoints));
+		break;
+	case Impl::CreateMouseEventMode::AddVertex:
+		 pushUpdateLabelsCommand(new PolyLineAddVertexCommand(false, impl->m_selectedEdgeId, v->viewportToWorld(event->pos()), impl->m_activePoints));
+		break;
+
+	default:
+		break;
+	}
+	impl->m_currentPoint = event->pos();
+}
+
+void GeoDataRiverSurvey::createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	if (event->button() == Qt::LeftButton) {
+		switch (impl->m_createMouseEventMode) {
+		case Impl::CreateMouseEventMode::BeforeDefining:
+			impl->m_createMouseEventMode = Impl::CreateMouseEventMode::Defining;
+			pushUpdateLabelsCommand(new PolyLinePushVertexCommand(true, v->viewportToWorld(event->pos()), impl->m_activePoints));
+			break;
+		case Impl::CreateMouseEventMode::Defining:
+			pushUpdateLabelsCommand(new PolyLinePushVertexCommand(true, v->viewportToWorld(event->pos()), impl->m_activePoints));
+			break;
+		case Impl::CreateMouseEventMode::MoveVertexPrepare:
+			impl->m_createMouseEventMode = Impl::CreateMouseEventMode::MoveVertex;
+			pushUpdateLabelsCommand(new PolyLineMoveVertexCommand(true, impl->m_selectedVertexId, v->viewportToWorld(event->pos()), impl->m_activePoints));
+			break;
+		case Impl::CreateMouseEventMode::AddVertexPrepare:
+			impl->m_createMouseEventMode = Impl::CreateMouseEventMode::AddVertex;
+			pushUpdateLabelsCommand(new PolyLineAddVertexCommand(true, impl->m_selectedEdgeId, v->viewportToWorld(event->pos()), impl->m_activePoints));
+			break;
+		case Impl::CreateMouseEventMode::RemoveVertexPrepare:
+			impl->m_createMouseEventMode = Impl::CreateMouseEventMode::Normal;
+			pushUpdateLabelsCommand(new PolyLineRemoveVertexCommand(impl->m_selectedVertexId, impl->m_activePoints));
+			break;
+		default:
+			break;
 		}
-		// only one point is selected.
-		if (iRIC::lengthSquared(selected->position() - worldPos) < stdLen2 * 9) {
-			// cursor is near to the river center point
-			if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-				// preparing for moving
-				m_mouseEventMode = meTranslatePrepare;
-			}
-			if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-				// preparing for center-point shift
-				m_mouseEventMode = meShiftPrepare;
-			}
-		} else {
-			m_mouseEventMode = meNormal;
-			QPointF lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
-			if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
-				// cursor is near left bank.
-				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-					// preparing for rotating
-					m_mouseEventMode = meRotatePrepareLeft;
-				}
-				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
-						selected->crosssection().fixedPointLSet()) {
-					// preparing for center-point shift
-					m_mouseEventMode = meMoveExtensionEndPointPrepareLeft;
-				}
-			}
-			QPointF rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
-			if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
-				// cursor is near right bank.
-				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-					// preparing for rotating
-					m_mouseEventMode = meRotatePrepareRight;
-				}
-				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
-						selected->crosssection().fixedPointRSet()) {
-					// preparing for center-point shift
-					m_mouseEventMode = meMoveExtensionEndPointPrepareRight;
-				}
-			}
-		}
-	} else {
-		// multiple selection, or none.
-		GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-		m_mouseEventMode = meNormal;
-		while (p != nullptr) {
-			if (p->IsSelected) {
-				if (iRIC::lengthSquared(p->position() - worldPos) < stdLen2 * 9) {
-					// cursor is near to the river center point
-					if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-						// preparing for moving
-						m_mouseEventMode = meTranslatePrepare;
-						return;
-					}
-					if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-						// preparing for center-point shift
-						m_mouseEventMode = meShiftPrepare;
-						return;
-					}
-				} else {
-					m_mouseEventMode = meNormal;
-					QPointF lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-					if (iRIC::lengthSquared(lbank - worldPos) < stdLen2 * 9) {
-						// cursor is near left bank.
-						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-							// preparing for center-point shift
-							m_mouseEventMode = meExpansionPrepareLeft;
-							return;
-						}
-					}
-					QPointF rbank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-					if (iRIC::lengthSquared(rbank - worldPos) < stdLen2 * 9) {
-						// cursor is near right bank.
-						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
-							// preparing for center-point shift
-							m_mouseEventMode = meExpansionPrepareRight;
-							return;
-						}
-					}
-				}
-			}
-			p = p->nextPoint();
+		impl->createModeUpdateMouseCursor(v);
+		impl->updateActionStatus();
+	}
+
+	impl->m_currentPoint = event->pos();
+}
+
+void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	if (event->button() == Qt::LeftButton) {
+		impl->createModeUpdateMouseEventMode(event->pos());
+		impl->createModeUpdateMouseCursor(v);
+		impl->updateActionStatus();
+	} else if (event->button() == Qt::RightButton) {
+		if (impl->m_createMouseEventMode == Impl::CreateMouseEventMode::EditCoodinatesDialog) {return;}
+
+		if (iRIC::isNear(impl->m_currentPoint, event->pos())) {
+			impl->setupMenu();
+			impl->m_rightClickingMenu->move(event->globalPos());
+			impl->m_rightClickingMenu->show();
 		}
 	}
 }
 
+void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	switch (impl->m_editMouseEventMode) {
+	case Impl::EditMouseEventMode::Normal:
+	case Impl::EditMouseEventMode::TranslatePrepare:
+	case Impl::EditMouseEventMode::RotatePrepareRight:
+	case Impl::EditMouseEventMode::RotatePrepareLeft:
+	case Impl::EditMouseEventMode::ShiftPrepare:
+	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareLeft:
+	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
+	case Impl::EditMouseEventMode::ExpansionPrepareRight:
+	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
+		impl->m_keyboardModifiers = event->modifiers();
+		impl->editModeUpdateMouseEventMode();
+		impl->editModeUpdateMouseCursor(v);
+		break;
 
-GeoDataRiverPathPoint* GeoDataRiverSurvey::selectedPoint()
+	default:
+		break;
+	}
+}
+
+void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	switch (impl->m_editMouseEventMode) {
+	case Impl::EditMouseEventMode::Normal:
+	case Impl::EditMouseEventMode::TranslatePrepare:
+	case Impl::EditMouseEventMode::RotatePrepareRight:
+	case Impl::EditMouseEventMode::RotatePrepareLeft:
+	case Impl::EditMouseEventMode::ShiftPrepare:
+	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareLeft:
+	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
+	case Impl::EditMouseEventMode::ExpansionPrepareRight:
+	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
+		impl->m_keyboardModifiers = event->modifiers();
+		impl->editModeUpdateMouseEventMode();
+		impl->editModeUpdateMouseCursor(v);
+		break;
+
+	default:
+		break;
+	}
+}
+
+void GeoDataRiverSurvey::editModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	GeoDataRiverPathPoint* selP = singleSelectedPoint();
+	if (selP == nullptr) {
+		// no point is selected.
+		return;
+	}
+	openCrossSectionWindow();
+}
+
+void GeoDataRiverSurvey::editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	if ((impl->m_editMouseEventMode == Impl::EditMouseEventMode::AddingExtension || impl->m_editMouseEventMode == Impl::EditMouseEventMode::Inserting) && impl->m_leftButtonDown) {
+		graphicsView()->emitWorldPosition(event->x(), event->y());
+	} else {
+		if (impl->m_definingBoundingBox) {
+			// drawing bounding box using mouse dragging.
+			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
+			box->setEndPoint(event->x(), event->y());
+			renderGraphicsView();
+		} else {
+			switch (impl->m_editMouseEventMode) {
+			case Impl::EditMouseEventMode::Normal:
+			case Impl::EditMouseEventMode::TranslatePrepare:
+			case Impl::EditMouseEventMode::RotatePrepareRight:
+			case Impl::EditMouseEventMode::RotatePrepareLeft:
+			case Impl::EditMouseEventMode::ShiftPrepare:
+			case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareLeft:
+			case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
+			case Impl::EditMouseEventMode::ExpansionPrepareRight:
+			case Impl::EditMouseEventMode::ExpansionPrepareLeft:
+				impl->m_currentPoint = event->pos();
+				impl->editModeUpdateMouseEventMode();
+				impl->editModeUpdateMouseCursor(v);
+				break;
+			case Impl::EditMouseEventMode::Translate:
+				// execute translation.
+				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
+				break;
+			case Impl::EditMouseEventMode::RotateRight:
+				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
+				break;
+			case Impl::EditMouseEventMode::RotateLeft:
+				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
+				break;
+			case Impl::EditMouseEventMode::Shift:
+				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(impl->m_currentPoint, event->pos(), this));
+				impl->m_currentPoint = event->pos();
+				break;
+			case Impl::EditMouseEventMode::MoveExtentionEndPointLeft:
+				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, event->pos(), this));
+				impl->m_currentPoint = event->pos();
+				break;
+			case Impl::EditMouseEventMode::MoveExtentionEndPointRight:
+				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, event->pos(), this));
+				impl->m_currentPoint = event->pos();
+				break;
+			case Impl::EditMouseEventMode::ExpansionRight:
+			case Impl::EditMouseEventMode::ExpansionLeft:
+				// not used.
+				break;
+			case Impl::EditMouseEventMode::AddingExtension:
+			case Impl::EditMouseEventMode::Inserting:
+				if (impl->m_leftButtonDown) {
+					graphicsView()->emitWorldPosition(event->x(), event->y());
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+}
+
+void GeoDataRiverSurvey::editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	if (event->button() == Qt::LeftButton) {
+		switch (impl->m_editMouseEventMode) {
+		case Impl::EditMouseEventMode::Normal: {
+				// start drawing the mouse bounding box.
+				impl->m_definingBoundingBox = true;
+				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
+				box->setStartPoint(event->x(), event->y());
+				box->enable();
+				v->GetRenderWindow()->SetDesiredUpdateRate(PreProcessorDataItem::dragUpdateRate);
+				renderGraphicsView();
+			}
+			break;
+		case Impl::EditMouseEventMode::TranslatePrepare:
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::Translate;
+			break;
+		case Impl::EditMouseEventMode::RotatePrepareRight:
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::RotateRight;
+			break;
+		case Impl::EditMouseEventMode::RotatePrepareLeft:
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::RotateLeft;
+			break;
+		case Impl::EditMouseEventMode::ShiftPrepare:
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::Shift;
+			break;
+		case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareLeft:
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::MoveExtentionEndPointLeft;
+			break;
+		case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::MoveExtentionEndPointRight;
+			break;
+		case Impl::EditMouseEventMode::ExpansionPrepareRight:
+		case Impl::EditMouseEventMode::ExpansionPrepareLeft:
+			// do nothing. mouse expansion is not used.
+			break;
+		case Impl::EditMouseEventMode::Translate:
+		case Impl::EditMouseEventMode::RotateRight:
+		case Impl::EditMouseEventMode::RotateLeft:
+		case Impl::EditMouseEventMode::Shift:
+		case Impl::EditMouseEventMode::MoveExtentionEndPointLeft:
+		case Impl::EditMouseEventMode::MoveExtentionEndPointRight:
+		case Impl::EditMouseEventMode::ExpansionRight:
+		case Impl::EditMouseEventMode::ExpansionLeft:
+			// these does not happen.
+			break;
+		case Impl::EditMouseEventMode::AddingExtension:
+		case Impl::EditMouseEventMode::Inserting:
+			impl->m_leftButtonDown = true;
+			graphicsView()->emitWorldPosition(event->x(), event->y());
+			break;
+
+		default:
+			break;
+		}
+	}
+	impl->m_dragStartPoint = event->pos();
+}
+
+void GeoDataRiverSurvey::editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+{
+	if (event->button() == Qt::LeftButton) {
+		switch (impl->m_editMouseEventMode) {
+		case Impl::EditMouseEventMode::Normal:
+			if (impl->m_definingBoundingBox) {
+				// bounding box selecting ended.
+				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
+				box->setEndPoint(event->x(), event->y());
+				box->disable();
+				if (iRIC::isNear(box->startPoint(), box->endPoint())) {
+					int x = (box->startPoint().x() + box->endPoint().x()) / 2;
+					int y = (box->startPoint().y() + box->endPoint().y()) / 2;
+					box->setStartPoint(x - 8, y - 8);
+					box->setEndPoint(x + 8, y + 8);
+				}
+
+				v->restoreUpdateRate();
+
+				// selection change is made not undo-able
+				ChangeSelectionCommand com(this, box);
+				com.redo();
+			}
+			impl->m_definingBoundingBox = false;
+			impl->m_currentPoint = event->pos();
+			impl->editModeUpdateMouseEventMode();
+			impl->editModeUpdateMouseCursor(v);
+			break;
+		case Impl::EditMouseEventMode::Translate:
+		case Impl::EditMouseEventMode::RotateRight:
+		case Impl::EditMouseEventMode::RotateLeft:
+		case Impl::EditMouseEventMode::Shift:
+		case Impl::EditMouseEventMode::MoveExtentionEndPointLeft:
+		case Impl::EditMouseEventMode::MoveExtentionEndPointRight:
+		case Impl::EditMouseEventMode::ExpansionRight:
+		case Impl::EditMouseEventMode::ExpansionLeft:
+			// operation ended.
+			impl->m_currentPoint = event->pos();
+			impl->editModeUpdateMouseEventMode();
+			impl->editModeUpdateMouseCursor(v);
+			break;
+		case Impl::EditMouseEventMode::AddingExtension:
+		case Impl::EditMouseEventMode::Inserting:
+			impl->m_leftButtonDown = false;
+			break;
+
+		default:
+			break;
+		}
+	} else if (event->button() == Qt::RightButton) {
+		if (iRIC::isNear(impl->m_dragStartPoint, event->pos())) {
+			impl->setupMenu();
+			impl->m_rightClickingMenu->move(event->globalPos());
+			impl->m_rightClickingMenu->show();
+		}
+	}
+}
+
+void GeoDataRiverSurvey::pushUpdateLabelsCommand(QUndoCommand* com, bool renderRedoOnly)
+{
+	if (renderRedoOnly) {
+		pushRenderRedoOnlyCommand(new PolyLineUpdateLabelsCommand(com, this));
+	} else {
+		pushRenderCommand(new PolyLineUpdateLabelsCommand(com, this));
+	}
+}
+
+void GeoDataRiverSurvey::finishDefiningLine()
+{
+	if (impl->m_activeLine->polyLine().size() < 2) {return;}
+
+	iRICUndoStack::instance().undo();
+	pushCommand(new PolyLineFinishDefiningCommand(this));
+}
+
+GeoDataRiverPathPoint* GeoDataRiverSurvey::singleSelectedPoint()
 {
 	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
 	while (p != nullptr) {
@@ -1797,25 +1325,30 @@ void GeoDataRiverSurvey::updateSplineSolvers()
 
 void GeoDataRiverSurvey::updateBackgroundGrid()
 {
-	m_backgroundGrid = m_gridThread->grid();
-	m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
+	impl->m_backgroundGrid = impl->m_gridThread->grid();
+	impl->m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
 
 	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
-	m_gridThread->startBGGridCopy();
+	impl->m_gridThread->startBGGridCopy();
 	while (p != nullptr) {
-		vtkPointSet* grid = m_gridThread->partialGrid(p);
+		vtkPointSet* grid = impl->m_gridThread->partialGrid(p);
 		if (grid != nullptr) {
 			p->areaGrid()->DeepCopy(grid);
 		}
 		p = p->nextPoint();
 	}
-	m_gridThread->finishBGGridCopy();
-	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(m_backgroundActor->GetMapper());
-	mapper->SetInputData(m_backgroundGrid);
+	impl->m_gridThread->finishBGGridCopy();
+	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(impl->m_backgroundActor->GetMapper());
+	mapper->SetInputData(impl->m_backgroundGrid);
 	if (isVisible() && m_setting.showBackground) {
-		m_backgroundActor->VisibilityOn();
+		impl->m_backgroundActor->VisibilityOn();
 	}
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
+}
+
+void GeoDataRiverSurvey::showInitialDialog()
+{
+	InformationDialog::information(preProcessorWindow(), GeoDataRiverSurvey::tr("Information"), GeoDataRiverSurvey::tr("Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key."), "geodatariversurveyinit");
 }
 
 void GeoDataRiverSurvey::updateInterpolators()
@@ -1841,7 +1374,7 @@ void GeoDataRiverSurvey::updateInterpolators()
 void GeoDataRiverSurvey::openCrossSectionWindow()
 {
 	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	gItem->openCrossSectionWindow(this, selectedPoint()->name());
+	gItem->openCrossSectionWindow(this, singleSelectedPoint()->name());
 }
 
 void GeoDataRiverSurvey::updateCrosssectionWindows()
@@ -1876,144 +1409,169 @@ void GeoDataRiverSurvey::displaySetting()
 void GeoDataRiverSurvey::switchInterpolateModeToLinear()
 {
 	RiverSplineSolver::setLinearMode(true, m_headPoint);
-	m_interpolateLinearAction->setChecked(true);
-	m_interpolateSplineAction->setChecked(false);
+	impl->m_interpolateLinearAction->setChecked(true);
+	impl->m_interpolateSplineAction->setChecked(false);
 	updateInterpolators();
 }
 
 void GeoDataRiverSurvey::switchInterpolateModeToSpline()
 {
 	RiverSplineSolver::setLinearMode(false, m_headPoint);
-	m_interpolateLinearAction->setChecked(false);
-	m_interpolateSplineAction->setChecked(true);
+	impl->m_interpolateLinearAction->setChecked(false);
+	impl->m_interpolateSplineAction->setChecked(true);
 	updateInterpolators();
 }
 
-void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue)
+void GeoDataRiverSurvey::mapPointsData()
+{
+	std::vector<GeoDataPointmap*> pointMapDataList;
+	std::vector<QString> pointMapDataNameList;
+
+	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent())->childItems();
+	for (int i = 0; i < childItems.size(); ++i) {
+		auto c = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (childItems.at(i));
+		auto geoData = c->geoData();
+		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
+		if (pointMapData == nullptr) {continue;}
+
+		pointMapDataList.push_back(pointMapData);
+		pointMapDataNameList.push_back(pointMapData->caption());
+	}
+
+	if (pointMapDataList.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No points data to map is found. Please import points data."));
+		return;
+	}
+
+	GeoDataRiverSurveyMapPointsDialog dialog(preProcessorWindow());
+	dialog.setDEMDatas(pointMapDataNameList);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	double divDist = dialog.divDistance();
+	GeoDataPointmap* mapData = pointMapDataList.at(dialog.demData());
+
+	auto p = m_headPoint;
+	p = p->nextPoint();
+	while (p != nullptr) {
+		double left = p->crosssection().leftBank(true).position();
+		double right = p->crosssection().rightBank(true).position();
+
+		std::map<double, GeoDataRiverCrosssection::Altitude> alts;
+		double pos;
+
+		// center
+		addPointAt(p->position(), p->crosssectionDirection(), 0, &alts, mapData);
+		// left
+		pos = - divDist;
+		while (pos > left) {
+			addPointAt(p->position(), p->crosssectionDirection(), pos, &alts, mapData);
+			pos -= divDist;
+		}
+		addPointAt(p->position(), p->crosssectionDirection(), left, &alts, mapData);
+		// right
+		pos = divDist;
+		while (pos < right) {
+			addPointAt(p->position(), p->crosssectionDirection(), pos, &alts, mapData);
+			pos += divDist;
+		}
+		addPointAt(p->position(), p->crosssectionDirection(), right, &alts, mapData);
+
+		auto& altList = p->crosssection().AltitudeInfo();
+		altList.clear();
+		for (const auto& pair : alts) {
+			altList.push_back(pair.second);
+		}
+		p = p->nextPoint();
+	}
+	updateInterpolators();
+
+	iRICUndoStack::instance().clear();
+}
+
+void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black)
 {
 	if (black == nullptr) {
-		m_blackCrossectionsActor->VisibilityOff();
+		impl->m_blackCrossSectionActor->VisibilityOff();
 	} else {
-		setupLine(m_blackCrosssection, black);
-		m_blackCrossectionsActor->VisibilityOn();
-	}
-	if (red == nullptr) {
-		m_redCrossectionsActor->VisibilityOff();
-	} else {
-		setupLine(m_redCrosssection, red);
-		m_redCrossectionsActor->VisibilityOn();
-	}
-	if (blue == nullptr) {
-		m_blueCrossectionsActor->VisibilityOff();
-	} else {
-		setupLine(m_blueCrosssection, blue);
-		m_blueCrossectionsActor->VisibilityOn();
+		setupLine(impl->m_blackCrossSection, black);
+		impl->m_blackCrossSectionActor->VisibilityOn();
 	}
 	renderGraphicsView();
 }
 
 void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond)
 {
-	m_gridCreatingCondition = cond;
+	impl->m_gridCreatingCondition = cond;
 }
 
 GridCreatingConditionRiverSurveyInterface* GeoDataRiverSurvey::gridCreatingCondition() const
 {
-	return m_gridCreatingCondition;
+	return impl->m_gridCreatingCondition;
 }
 
-void GeoDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPoint* p)
+void GeoDataRiverSurvey::setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p)
 {
-	grid->Reset();
-	grid->Allocate(5, 5);
-
-	double point[3];
-	point[2] = 0;
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkLine> line;
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	grid->SetPoints(points);
+	auto cells = vtkSmartPointer<vtkCellArray>::New();
 
 	// left bank
-	QPointF leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-	point[0] = leftBank.x();
-	point[1] = leftBank.y();
-	points->InsertNextPoint(point);
+	auto point = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+	points->InsertNextPoint(point.x(), point.y(), 0);
 
 	// left fixed point
-	QPointF leftFixed;
 	if (p->crosssection().fixedPointLSet()) {
-		leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
+		point = p->crosssectionPosition(p->crosssection().fixedPointL().position());
 	} else {
 		// use left bank.
-		leftFixed = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+		point = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 	}
-	point[0] = leftFixed.x();
-	point[1] = leftFixed.y();
-	points->InsertNextPoint(point);
-
-	// line between left bank and left fixed point
-	line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 0);
-	line->GetPointIds()->SetId(1, 1);
-	grid->InsertNextCell(line->GetCellType(), line->GetPointIds());
+	points->InsertNextPoint(point.x(), point.y(), 0);
 
 	// river center
-	point[0] = p->position().x();
-	point[1] = p->position().y();
-	points->InsertNextPoint(point);
-
-	// line between left fixed point and river center
-	line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 1);
-	line->GetPointIds()->SetId(1, 2);
-	grid->InsertNextCell(line->GetCellType(), line->GetPointIds());
+	point = p->position();
+	points->InsertNextPoint(point.x(), point.y(), 0);
 
 	// right fixed point
-	QPointF rightFixed;
 	if (p->crosssection().fixedPointRSet()) {
-		rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
+		point = p->crosssectionPosition(p->crosssection().fixedPointR().position());
 	} else {
 		// use right bank.
-		rightFixed = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+		point = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 	}
-	point[0] = rightFixed.x();
-	point[1] = rightFixed.y();
-	points->InsertNextPoint(point);
-
-	// line between river center and right fixed point.
-	line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 2);
-	line->GetPointIds()->SetId(1, 3);
-	grid->InsertNextCell(line->GetCellType(), line->GetPointIds());
+	points->InsertNextPoint(point.x(), point.y(), 0);
 
 	// right bank
-	QPointF rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-	point[0] = rightBank.x();
-	point[1] = rightBank.y();
-	points->InsertNextPoint(point);
+	point = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+	points->InsertNextPoint(point.x(), point.y(), 0);
 
-	// line betwen right fixed point and right bank
-	line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 3);
-	line->GetPointIds()->SetId(1, 4);
-	grid->InsertNextCell(line->GetCellType(), line->GetPointIds());
+	vtkIdType ids[5];
+	for (vtkIdType i = 0; i < 5; ++i) {
+		ids[i] = i;
+	}
+	cells->InsertNextCell(5, ids);
+
+	polyData->Initialize();
+	polyData->SetPoints(points);
+	polyData->SetLines(cells);
 }
 
 void GeoDataRiverSurvey::useDivisionPointsForBackgroundGrid(bool use)
 {
-	m_gridThread->setUseDivisionPoints(use);
-	m_gridThread->update();
+	impl->m_gridThread->setUseDivisionPoints(use);
+	impl->m_gridThread->update();
 }
 
 void GeoDataRiverSurvey::refreshBackgroundGrid()
 {
-	m_gridThread->update();
+	impl->m_gridThread->update();
 }
 
 void GeoDataRiverSurvey::cancelBackgroundGridUpdate()
 {
-	m_gridThread->cancel();
+	impl->m_gridThread->cancel();
 }
 
 GeoDataProxy* GeoDataRiverSurvey::getProxy()
@@ -2033,6 +1591,10 @@ int GeoDataRiverSurvey::iRICLibType() const
 
 void GeoDataRiverSurvey::doApplyOffset(double x, double y)
 {
+	PolyLineControllerUtil::applyOffset(&(impl->m_centerLineController), x, y);
+	PolyLineControllerUtil::applyOffset(&(impl->m_leftBankLineController), x, y);
+	PolyLineControllerUtil::applyOffset(&(impl->m_rightBankLineController), x, y);
+
 	GeoDataRiverPathPoint* p = this->m_headPoint->nextPoint();
 	while (p != nullptr) {
 		QPointF v = p->position();
@@ -2041,6 +1603,8 @@ void GeoDataRiverSurvey::doApplyOffset(double x, double y)
 		p->setPosition(v);
 		p = p->nextPoint();
 	}
-	this->headPoint()->updateRiverShapeInterpolators();
-	this->updateShapeData();
+	impl->updateLabelsAndSplines();
+
+	headPoint()->updateRiverShapeInterpolators();
+	updateShapeData();
 }

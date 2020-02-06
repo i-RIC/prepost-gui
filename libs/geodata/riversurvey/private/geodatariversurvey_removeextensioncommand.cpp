@@ -1,3 +1,4 @@
+#include "geodatariversurvey_impl.h"
 #include "geodatariversurvey_removeextensioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
@@ -11,7 +12,7 @@ GeoDataRiverSurvey::RemoveExtensionCommand::RemoveExtensionCommand(bool left, co
 
 void GeoDataRiverSurvey::RemoveExtensionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_left) {
 		m_point->removeExtentionPointLeft();
 	} else {
@@ -23,7 +24,7 @@ void GeoDataRiverSurvey::RemoveExtensionCommand::redo()
 
 void GeoDataRiverSurvey::RemoveExtensionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_left) {
 		m_point->addExtentionPointLeft(m_position);
 	} else {
@@ -34,7 +35,7 @@ void GeoDataRiverSurvey::RemoveExtensionCommand::undo()
 
 void GeoDataRiverSurvey::RemoveExtensionCommand::updateData()
 {
-	m_rs->updateActionStatus();
+	m_rs->impl->updateActionStatus();
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();

@@ -2,7 +2,7 @@
 #include "../geodatariversurveycrosssectionwindow.h"
 #include "../geodatariversurveycrosssectionwindowgraphicsview.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::MouseEditCrosssectionCommand::MouseEditCrosssectionCommand(GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool dragging) :
 	QUndoCommand {GeoDataRiverSurveyCrosssectionWindowGraphicsView::tr("Altitude Points Move")},

@@ -1,8 +1,8 @@
 #include "gridcreatingconditionpoisson_definenewpointcommand.h"
 #include "gridcreatingconditionpoisson_impl.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionPoisson::DefineNewPointCommand::DefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionPoisson* cond) :
 	QUndoCommand {GridCreatingConditionPoisson::tr("Add New Line Point")},

@@ -1,4 +1,5 @@
 #include "geodatariversurvey_addextensioncommand.h"
+#include "geodatariversurvey_impl.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
 GeoDataRiverSurvey::AddExtensionCommand::AddExtensionCommand(bool apply, GeoDataRiverPathPointExtensionAddDialog::LineMode lm, const QPointF& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
@@ -12,13 +13,13 @@ GeoDataRiverSurvey::AddExtensionCommand::AddExtensionCommand(bool apply, GeoData
 
 void GeoDataRiverSurvey::AddExtensionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_lineMode == GeoDataRiverPathPointExtensionAddDialog::Left) {
 		m_point->addExtentionPointLeft(m_position);
 	} else {
 		m_point->addExtentionPointRight(m_position);
 	}
-	m_rs->updateActionStatus();
+	m_rs->impl->updateActionStatus();
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->setModified();
@@ -29,14 +30,14 @@ void GeoDataRiverSurvey::AddExtensionCommand::redo()
 
 void GeoDataRiverSurvey::AddExtensionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_lineMode == GeoDataRiverPathPointExtensionAddDialog::Left) {
 		m_point->removeExtentionPointLeft();
 	} else {
 		m_point->removeExtentionPointRight();
 	}
 	if (! m_apply) {
-		m_rs->updateActionStatus();
+		m_rs->impl->updateActionStatus();
 		m_rs->headPoint()->updateAllXSecInterpolators();
 		m_rs->headPoint()->updateRiverShapeInterpolators();
 		m_rs->updateShapeData();

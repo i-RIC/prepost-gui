@@ -235,6 +235,7 @@ GeoDataRiverSurveyMlitImporter::GeoDataRiverSurveyMlitImporter(GeoDataCreator* c
 bool GeoDataRiverSurveyMlitImporter::importData(GeoData* data, int /* index */, QWidget* w)
 {
 	auto rs = dynamic_cast<GeoDataRiverSurvey*> (data);
+	rs->setEditMode();
 
 	return GeoDataRiverSurveyImporter::importData(rs, &m_points, m_cpSetting, m_with4Points, w);
 }

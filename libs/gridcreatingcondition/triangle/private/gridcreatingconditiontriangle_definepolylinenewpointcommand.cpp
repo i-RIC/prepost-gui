@@ -1,8 +1,8 @@
 #include "gridcreatingconditiontriangle_definepolylinenewpointcommand.h"
 #include "../gridcreatingconditiontriangleabstractline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::DefinePolyLineNewPointCommand::DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionTriangle* cond) :
 	QUndoCommand {GridCreatingConditionTriangle::tr("Add New Break Line Point")},

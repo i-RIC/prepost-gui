@@ -12,34 +12,14 @@
 #include <vtkLODActor.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkStructuredGrid.h>
-#include <vtkLabeledDataMapper.h>
-#include <vtkActor2D.h>
-#include <vtkStringArray.h>
 
 #include <QPoint>
-#include <QCursor>
-#include <QPixmap>
 
 #include <iriclib.h>
 
-class vtkProperty;
-class QAction;
-class QPolygonF;
+class vtkPolyData;
 
-class GeoDataRiverSurveyCrosssectionWindow;
-class GeoDataRiverPathPointMoveDialog;
-class GeoDataRiverPathPointShiftDialog;
-class GeoDataRiverPathPointRenameDialog;
-class GeoDataRiverPathPointRotateDialog;
-class GeoDataRiverPathPointExtensionAddDialog;
-class GeoDataRiverPathPointExpandDialog;
-class GeoDataRiverPathPointInsertDialog;
-class GeoDataRiverSurveyBackgroundGridCreateThread;
-class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
-class GeoDataRiverCrosssectionAltitudeMoveDialog;
-class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 class GridCreatingConditionRiverSurveyInterface;
-class GeoDataRiverSurveyProxy;
 
 /// Polygon container.
 /**
@@ -54,34 +34,10 @@ class GD_RIVERSURVEY_EXPORT GeoDataRiverSurvey : public GeoData
 public:
 	static const int WSE_NAME_MAXLENGTH;
 
-	enum MouseEventMode {
-		meNormal,
-		meTranslate,
-		meTranslatePrepare,
-		meRotateRight,
-		meRotatePrepareRight,
-		meRotateLeft,
-		meRotatePrepareLeft,
-		meShift,
-		meShiftPrepare,
-		meMoveExtentionEndPointLeft,
-		meMoveExtensionEndPointPrepareLeft,
-		meMoveExtentionEndPointRight,
-		meMoveExtensionEndPointPrepareRight,
-		meExpansionRight,
-		meExpansionPrepareRight,
-		meExpansionLeft,
-		meExpansionPrepareLeft,
-		meAddingExtension,
-		meInserting,
-
-		meTranslateDialog,
-		meRotateDialog,
-		meShiftDialog,
-		meExpansionDialog
-	};
 	GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	~GeoDataRiverSurvey();
+
+	void setEditMode();
 
 	void setCaption(const QString& cap) override;
 	void setupActors() override;
@@ -103,26 +59,36 @@ public:
 	bool getValueRange(double* min, double* max) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
-	QColor doubleToColor(double d);
-	void setupScalarArray();
+
+	void showInitialDialog() override;
+
 	void updateInterpolators();
 	void updateShapeData();
 	void updateSelectionShapeData();
 	GeoDataRiverPathPoint* headPoint() const;
 	vtkStructuredGrid* backgroundGrid() const;
 	void updateCrosssectionWindows();
-	void setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue);
+	void setColoredPoints(GeoDataRiverPathPoint* black);
 	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
 	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() const;
 	void useDivisionPointsForBackgroundGrid(bool use);
+
 	void refreshBackgroundGrid();
 	void cancelBackgroundGridUpdate();
+
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode);
 	void informCtrlPointUpdateToCrosssectionWindows();
 
 	GeoDataProxy* getProxy() override;
 
 private slots:
+	void generateData();
+	void buildBankLines();
+	void addVertexMode(bool on);
+	void removeVertexMode(bool on);
+	void importCenterLine();
+	void exportCenterLine();
+
 	void moveSelectedPoints();
 	void deleteSelectedPoints();
 	void shiftSelectedPoints();
@@ -141,13 +107,13 @@ private slots:
 	void displaySetting();
 	void switchInterpolateModeToLinear();
 	void switchInterpolateModeToSpline();
+	void mapPointsData();
 
 signals:
 	void dataUpdated();
 
 protected:
 	const static int LINEDIVS = 36;
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
@@ -156,118 +122,44 @@ protected:
 	void updateFilename() override;
 	int iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
-	/// The pointdata, that has the positions of
-	/// River center, left bank, and right bank
-	vtkSmartPointer<vtkPoints> m_points;
-	vtkSmartPointer<vtkPoints> m_rightBankPoints;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_riverCenters;
-	vtkSmartPointer<vtkUnstructuredGrid> m_selectedRiverCenters;
-	vtkSmartPointer<vtkUnstructuredGrid> m_selectedLeftBanks;
-	vtkSmartPointer<vtkUnstructuredGrid> m_selectedRightBanks;
-	vtkSmartPointer<vtkUnstructuredGrid> m_rightBankPointSet;
-
-	vtkSmartPointer<vtkStructuredGrid> m_riverCenterLine;
-	vtkSmartPointer<vtkStructuredGrid> m_leftBankLine;
-	vtkSmartPointer<vtkStructuredGrid> m_rightBankLine;
-
-	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_firstAndLastCrosssections;
-	vtkSmartPointer<vtkUnstructuredGrid> m_crosssections;
-	vtkSmartPointer<vtkUnstructuredGrid> m_selectedCrosssections;
-	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_blackCrosssection;
-	vtkSmartPointer<vtkUnstructuredGrid> m_redCrosssection;
-	vtkSmartPointer<vtkUnstructuredGrid> m_blueCrosssection;
-
-	vtkSmartPointer<vtkActor> m_riverCenterActor;
-	vtkSmartPointer<vtkActor> m_selectedRiverCenterActor;
-	vtkSmartPointer<vtkActor> m_selectedLeftBankActor;
-	vtkSmartPointer<vtkActor> m_selectedRightBankActor;
-
-	vtkSmartPointer<vtkLODActor> m_riverCenterLineActor;
-	vtkSmartPointer<vtkLODActor> m_leftBankLineActor;
-	vtkSmartPointer<vtkLODActor> m_rightBankLineActor;
-
-	vtkSmartPointer<vtkActor> m_firstAndLastCrosssectionsActor;
-	vtkSmartPointer<vtkActor> m_crossectionsActor;
-	vtkSmartPointer<vtkActor> m_selectedCrossectionsActor;
-
-	vtkSmartPointer<vtkActor> m_blackCrossectionsActor;
-	vtkSmartPointer<vtkActor> m_redCrossectionsActor;
-	vtkSmartPointer<vtkActor> m_blueCrossectionsActor;
-
-	vtkSmartPointer<vtkActor> m_backgroundActor;
-	vtkSmartPointer<vtkActor> m_crosssectionLinesActor;
-
-	vtkSmartPointer<vtkStringArray> m_labelArray;
-	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
-	vtkSmartPointer<vtkActor2D> m_labelActor;
 
 private:
-	GeoDataRiverPathPoint* selectedPoint();
-	void setupLine(vtkUnstructuredGrid* grid, GeoDataRiverPathPoint* p);
+	void createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+
+	void editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+
+	void pushUpdateLabelsCommand(QUndoCommand* com, bool renderRedoOnly = false);
+	void finishDefiningLine();
+
+	GeoDataRiverPathPoint* singleSelectedPoint();
+	void setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p);
 
 	void allActorsOff();
 	void updateSplineSolvers();
-	void setupCursors();
-	void setupActions();
-	void updateMouseEventMode();
-	/// Enable or disable actions depending on the selection status.
-	void updateActionStatus();
-
-	QPixmap m_pixmapMove;
-	QPixmap m_pixmapRotate;
-	QPixmap m_pixmapExpand;
-	QPixmap m_pixmapShift;
-
-	QCursor m_cursorMove;
-	QCursor m_cursorRotate;
-	QCursor m_cursorExpand;
-	QCursor m_cursorShift;
 
 	GeoDataRiverPathPoint* m_headPoint;
-
-	GeoDataRiverSurveyBackgroundGridCreateThread* m_gridThread;
 
 	RiverCenterLineSolver m_CenterLineSolver;
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
-	QAction* m_addUpperSideAction;
-	QAction* m_addLowerSideAction;
-	QAction* m_moveAction;
-	QAction* m_rotateAction;
-	QAction* m_shiftAction;
-	QAction* m_expandAction;
-	QAction* m_deleteAction;
-	QAction* m_renameAction;
-	QAction* m_addLeftExtensionPointAction;
-	QAction* m_addRightExtensionPointAction;
-	QAction* m_removeLeftExtensionPointAction;
-	QAction* m_removeRightExtensionPointAction;
-	QAction* m_openCrossSectionWindowAction;
-	QAction* m_showBackgroundAction;
-	QAction* m_interpolateSplineAction;
-	QAction* m_interpolateLinearAction;
-
-	QMenu* m_rightClickingMenu;
-
-	bool m_definingBoundingBox;
-	bool m_leftButtonDown;
-
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
-	QPoint m_dragStartPoint;
-	QPoint m_currentPoint;
-
-	MouseEventMode m_mouseEventMode;
-	Qt::KeyboardModifiers m_keyboardModifiers;
-	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
-
 private:
+	class PolyLineFinishDefiningCommand;
+	class PolyLineUpdateLabelsCommand;
+	class PolyLineCoordinatesEditor;
+
 	class AddExtensionCommand;
 	class ChangeSelectionCommand;
 	class DeleteRiverPathPointCommand;
@@ -286,6 +178,9 @@ private:
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
 
+	class Impl;
+	Impl* impl;
+
 public:
 	friend class GeoDataRiverSurveyCreator;
 	friend class GeoDataRiverSurveyImporter;
@@ -303,5 +198,9 @@ public:
 
 	friend class GeoDataRiverSurveyProxy;
 };
+
+#ifdef _DEBUG
+	#include "private/geodatariversurvey_impl.h"
+#endif // _DEBUG
 
 #endif // GEODATAPOLYGON_H

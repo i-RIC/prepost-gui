@@ -1,4 +1,5 @@
 #include "geodatariversurvey_changeselectioncommand.h"
+#include "geodatariversurvey_impl.h"
 
 #include <guicore/misc/mouseboundingbox.h>
 
@@ -48,7 +49,7 @@ void GeoDataRiverSurvey::ChangeSelectionCommand::applySelection(const QSet<GeoDa
 		p->IsSelected = selected.contains(p);
 		p = p->nextPoint();
 	}
-	m_rs->updateActionStatus();
+	m_rs->impl->updateActionStatus();
 	m_rs->updateSelectionShapeData();
 	m_rs->renderGraphicsView();
 }

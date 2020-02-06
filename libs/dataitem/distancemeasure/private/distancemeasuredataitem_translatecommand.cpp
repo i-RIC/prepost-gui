@@ -1,7 +1,7 @@
 #include "distancemeasuredataitem_translatecommand.h"
 #include "distancemeasuredataitem_impl.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 DistanceMeasureDataItem::TranslateCommand::TranslateCommand(const QPointF& p1, const QPointF& p2, bool finish, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Translate Distance Measure")),

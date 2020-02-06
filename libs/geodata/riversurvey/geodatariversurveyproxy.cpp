@@ -1,6 +1,7 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
+#include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurveyproxy_setsettingcommand.h"
 
 #include <misc/mathsupport.h>
@@ -12,6 +13,7 @@
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
 #include <vtkDataSetMapper.h>
+#include <vtkLabeledDataMapper.h>
 #include <vtkLine.h>
 #include <vtkPoints.h>
 #include <vtkProperty.h>
@@ -26,10 +28,7 @@ GeoDataRiverSurveyProxy::~GeoDataRiverSurveyProxy()
 {
 	auto r = renderer();
 
-	r->RemoveActor(m_riverCenterLineActor);
-	r->RemoveActor(m_leftBankLineActor);
-	r->RemoveActor(m_rightBankLineActor);
-	r->RemoveActor(m_firstAndLastCrosssectionsActor);
+	r->RemoveActor(m_centerAndBankLinesActor);
 	r->RemoveActor(m_crossectionsActor);
 	r->RemoveActor(m_backgroundActor);
 	r->RemoveActor(m_crosssectionLinesActor);
@@ -43,38 +42,20 @@ void GeoDataRiverSurveyProxy::setupActors()
 	vtkRenderer* r = renderer();
 	vtkActorCollection* col = actorCollection();
 
-	m_riverCenterLineActor = vtkSmartPointer<vtkActor>::New();
-	m_riverCenterLineActor->SetMapper(rs->m_riverCenterLineActor->GetMapper());
-	m_riverCenterLineActor->SetProperty(rs->m_riverCenterLineActor->GetProperty());
-	r->AddActor(m_riverCenterLineActor);
-	col->AddItem(m_riverCenterLineActor);
-
-	m_leftBankLineActor = vtkSmartPointer<vtkActor>::New();
-	m_leftBankLineActor->SetMapper(rs->m_leftBankLineActor->GetMapper());
-	m_leftBankLineActor->SetProperty(rs->m_leftBankLineActor->GetProperty());
-	r->AddActor(m_leftBankLineActor);
-	col->AddItem(m_leftBankLineActor);
-
-	m_rightBankLineActor = vtkSmartPointer<vtkActor>::New();
-	m_rightBankLineActor->SetMapper(rs->m_rightBankLineActor->GetMapper());
-	m_rightBankLineActor->SetProperty(rs->m_rightBankLineActor->GetProperty());
-	r->AddActor(m_rightBankLineActor);
-	col->AddItem(m_rightBankLineActor);
-
-	m_firstAndLastCrosssectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_firstAndLastCrosssectionsActor->SetMapper(rs->m_firstAndLastCrosssectionsActor->GetMapper());
-	m_firstAndLastCrosssectionsActor->SetProperty(rs->m_firstAndLastCrosssectionsActor->GetProperty());
-	r->AddActor(m_firstAndLastCrosssectionsActor);
-	col->AddItem(m_firstAndLastCrosssectionsActor);
+	m_centerAndBankLinesActor = vtkSmartPointer<vtkActor>::New();
+	m_centerAndBankLinesActor->SetMapper(rs->impl->m_centerAndBankLinesActor->GetMapper());
+	m_centerAndBankLinesActor->SetProperty(rs->impl->m_centerAndBankLinesActor->GetProperty());
+	r->AddActor(m_centerAndBankLinesActor);
+	col->AddItem(m_centerAndBankLinesActor);
 
 	m_crossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_crossectionsActor->SetMapper(rs->m_crossectionsActor->GetMapper());
-	m_crossectionsActor->SetProperty(rs->m_crossectionsActor->GetProperty());
+	m_crossectionsActor->SetMapper(rs->impl->m_crossSectionLinesActor->GetMapper());
+	m_crossectionsActor->SetProperty(rs->impl->m_crossSectionLinesActor->GetProperty());
 	r->AddActor(m_crossectionsActor);
 	col->AddItem(m_crossectionsActor);
 
 	m_backgroundActor = vtkSmartPointer<vtkActor>::New();
-	m_backgroundActor->SetMapper(rs->m_backgroundActor->GetMapper());
+	m_backgroundActor->SetMapper(rs->impl->m_backgroundActor->GetMapper());
 	r->AddActor(m_backgroundActor);
 	col->AddItem(m_backgroundActor);
 
@@ -90,7 +71,7 @@ void GeoDataRiverSurveyProxy::setupActors()
 	col->AddItem(m_crosssectionLinesActor);
 
 	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	m_labelActor->SetMapper(rs->m_labelMapper);
+	m_labelActor->SetMapper(rs->impl->m_labelMapper);
 	r->AddActor2D(m_labelActor);
 	actor2DCollection()->AddItem(m_labelActor);
 
@@ -184,11 +165,8 @@ void GeoDataRiverSurveyProxy::assignActorZValues(const ZDepthRange& range)
 	double backlines = range.min() * 0.5 + range.max() * 0.5;
 	double lines = range.max();
 
-	m_firstAndLastCrosssectionsActor->SetPosition(0, 0, lines);
 	m_crossectionsActor->SetPosition(0, 0, lines);
-	m_riverCenterLineActor->SetPosition(0, 0, lines);
-	m_leftBankLineActor->SetPosition(0, 0, lines);
-	m_rightBankLineActor->SetPosition(0, 0, lines);
+	m_centerAndBankLinesActor->SetPosition(0, 0, lines);
 	m_crosssectionLinesActor->SetPosition(0, 0, backlines);
 	m_backgroundActor->SetPosition(0, 0, background);
 }

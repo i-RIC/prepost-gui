@@ -1,32 +1,20 @@
 #include "gridcreatingconditioncenterandwidth_movevertexcommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 #include <vtkPolyData.h>
 
 GridCreatingConditionCenterAndWidth::MoveVertexCommand::MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond) :
-	QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Move Center Line Vertex")},
-	m_keyDown {keyDown},
-	m_vertexId {vertexId},
+	PolyLineMoveVertexCommand {GridCreatingConditionCenterAndWidth::tr("Move Center Line Vertex"), keyDown, vertexId,
+														(cond->m_polyLineController.polyLine().at(vertexId) + cond->graphicsView()->viewportToWorld(to) - cond->graphicsView()->viewportToWorld(from)),
+														&(cond->m_polyLineController)},
 	m_condition {cond}
-{
-	double dx = from.x();
-	double dy = from.y();
-	cond->graphicsView()->viewportToWorld(dx, dy);
-	QPointF fromVec(dx, dy);
-	dx = to.x();
-	dy = to.y();
-	cond->graphicsView()->viewportToWorld(dx, dy);
-	QPointF toVec(dx, dy);
-	m_offset = toVec - fromVec;
-}
+{}
 
 void GridCreatingConditionCenterAndWidth::MoveVertexCommand::redo()
 {
-	auto line = m_condition->polyLine();
-	line[m_vertexId] += m_offset;
-	m_condition->setPolyLine(line);
+	PolyLineMoveVertexCommand::redo();
 	if (m_condition->m_isGridCreated) {
 		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
@@ -35,9 +23,7 @@ void GridCreatingConditionCenterAndWidth::MoveVertexCommand::redo()
 
 void GridCreatingConditionCenterAndWidth::MoveVertexCommand::undo()
 {
-	auto line = m_condition->polyLine();
-	line[m_vertexId] -= m_offset;
-	m_condition->setPolyLine(line);
+	PolyLineMoveVertexCommand::undo();
 	if (m_condition->m_isGridCreated) {
 		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
@@ -53,10 +39,6 @@ bool GridCreatingConditionCenterAndWidth::MoveVertexCommand::mergeWith(const QUn
 {
 	const MoveVertexCommand* comm = dynamic_cast<const MoveVertexCommand*>(other);
 	if (comm == nullptr) {return false;}
-	if (comm->m_keyDown) {return false;}
 	if (comm->m_condition != m_condition) {return false;}
-	if (comm->m_vertexId != m_vertexId) {return false;}
-
-	m_offset += comm->m_offset;
-	return true;
+	return PolyLineMoveVertexCommand::mergeWith(other);
 }

@@ -1,8 +1,8 @@
 #include "geodatariversurvey_translateriverpathpointcommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::TranslateRiverPathPointCommand::TranslateRiverPathPointCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Move Traversal Line")},
@@ -31,7 +31,7 @@ GeoDataRiverSurvey::TranslateRiverPathPointCommand::TranslateRiverPathPointComma
 
 void GeoDataRiverSurvey::TranslateRiverPathPointCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->setPosition(m_newPositions[i]);
 	}
@@ -44,7 +44,7 @@ void GeoDataRiverSurvey::TranslateRiverPathPointCommand::redo()
 
 void GeoDataRiverSurvey::TranslateRiverPathPointCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->setPosition(m_oldPositions[i]);
 	}

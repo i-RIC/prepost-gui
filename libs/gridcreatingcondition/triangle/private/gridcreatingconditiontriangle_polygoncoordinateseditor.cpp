@@ -3,10 +3,10 @@
 #include "../gridcreatingconditiontriangle.h"
 #include "../gridcreatingconditiontriangleabstractpolygon.h"
 
+#include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/vtktool/vtkpointsutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <geoio/coordinatesedit.h>
 #include <misc/iricundostack.h>
 
 GridCreatingConditionTriangle* GridCreatingConditionTriangle::PolygonCoordinatesEditor::targetCondition = 0;

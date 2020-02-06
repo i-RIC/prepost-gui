@@ -1,8 +1,8 @@
 #include "geodatariversurvey_mousemoveextensioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::MouseMoveExtensionCommand::MouseMoveExtensionCommand(bool left, QPoint to, GeoDataRiverSurvey* data) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Move Extension Line End")},
@@ -60,7 +60,7 @@ bool GeoDataRiverSurvey::MouseMoveExtensionCommand::mergeWith(const QUndoCommand
 
 void GeoDataRiverSurvey::MouseMoveExtensionCommand::applyPosition(const QPointF& pos)
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	if (m_left) {
 		m_point->moveExtentionPointLeft(pos);
 	} else {

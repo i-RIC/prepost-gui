@@ -23,7 +23,7 @@ GeoDataRiverSurvey::ShiftRiverPathCenterCommand::ShiftRiverPathCenterCommand(boo
 
 void GeoDataRiverSurvey::ShiftRiverPathCenterCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->setPosition(m_newPositions[i]);
 		m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
@@ -38,7 +38,7 @@ void GeoDataRiverSurvey::ShiftRiverPathCenterCommand::redo()
 
 void GeoDataRiverSurvey::ShiftRiverPathCenterCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->setPosition(m_oldPositions[i]);
 		m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];

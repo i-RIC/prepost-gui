@@ -2,7 +2,7 @@
 #include "gridcreatingconditioncenterandwidthdialog.h"
 #include "private/gridcreatingconditioncenterandwidth_addvertexcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_coordinateseditor.h"
-#include "private/gridcreatingconditioncenterandwidth_definenewpointcommand.h"
+#include "private/gridcreatingconditioncenterandwidth_pushvertexcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_finishdefiningcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_movecommand.h"
 #include "private/gridcreatingconditioncenterandwidth_movevertexcommand.h"
@@ -506,19 +506,19 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 		break;
 	case meDefining:
 		// update the position of the last point.
-		pushRenderCommand(new DefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+		pushUpdateShapeCommand(new PushVertexCommand(false, event->pos(), this));
 		break;
 	case meTranslate:
 		// execute translation.
-		pushUpdateShapeCommand(new MoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+		pushUpdateShapeCommand(new MoveCommand(false, m_currentPoint, event->pos(), this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
-		pushUpdateShapeCommand(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
+		pushUpdateShapeCommand(new MoveVertexCommand(false, m_currentPoint, event->pos(), m_selectedVertexId, this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
-		 pushUpdateShapeCommand(new AddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
+		 pushUpdateShapeCommand(new AddVertexCommand(false, m_selectedEdgeId, event->pos(), this));
 		break;
 	case meEditVerticesDialog:
 		break;
@@ -528,11 +528,6 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		// left click
-		double worldX = static_cast<double>(event->x());
-		double worldY = static_cast<double>(event->y());
-		v->viewportToWorld(worldX, worldY);
-
 		switch (m_mouseEventMode) {
 		case meNormal:
 			// do nothing.
@@ -540,31 +535,32 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 		case meBeforeDefining:
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
-			pushRenderCommand(new DefineNewPointCommand(true, event->pos(), this));
+			pushUpdateShapeCommand(new PushVertexCommand(true, event->pos(), this));
+			break;
 		case meDefining:
-			pushRenderCommand(new DefineNewPointCommand(true, event->pos(), this));
+			pushUpdateShapeCommand(new PushVertexCommand(true, event->pos(), this));
 			break;
 		case meTranslatePrepare:
 			m_mouseEventMode = meTranslate;
 			m_currentPoint = event->pos();
 			// push the first translation command.
-			pushRenderCommand(new MoveCommand(true, event->pos(), event->pos(), this));
+			pushUpdateShapeCommand(new MoveCommand(true, event->pos(), event->pos(), this));
 			break;
 		case meMoveVertexPrepare:
 			m_mouseEventMode = meMoveVertex;
 			m_currentPoint = event->pos();
 			// push the first move command.
-			pushRenderCommand(new MoveVertexCommand(true, event->pos(), event->pos(), m_selectedVertexId, this));
+			pushUpdateShapeCommand(new MoveVertexCommand(true, event->pos(), event->pos(), m_selectedVertexId, this));
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
-			pushRenderCommand(new AddVertexCommand(true, m_selectedEdgeId, event->pos(), this));
+			pushUpdateShapeCommand(new AddVertexCommand(true, m_selectedEdgeId, event->pos(), this));
 			break;
 		case meAddVertexNotPossible:
 			// do nothing.
 			break;
 		case meRemoveVertexPrepare:
-			pushRenderCommand(new RemoveVertexCommand(m_selectedVertexId, this));
+			pushUpdateShapeCommand(new RemoveVertexCommand(m_selectedVertexId, this));
 			break;
 		case meRemoveVertexNotPossible:
 			// do nothing.

@@ -26,7 +26,7 @@
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -79,6 +79,21 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
+
+namespace {
+
+double interpolatedValue(vtkPolyData* data, vtkIdType cellId, double* weights, vtkDoubleArray* values)
+{
+	vtkCell* cell = data->GetCell(cellId);
+	double v = 0;
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
+		vtkIdType vid = cell->GetPointId(i);
+		v += *(weights + i) * values->GetValue(vid);
+	}
+	return v;
+}
+
+} // namespace
 
 const char* GeoDataPointmap::VALUES = "values";
 
@@ -542,6 +557,57 @@ bool GeoDataPointmap::checkBreakLines()
 		}
 	}
 	return true;
+}
+
+bool GeoDataPointmap::getValueAt(double x, double y, double* value)
+{
+	if (needRemeshing()) {
+		remeshTINS(true);
+	}
+
+	vtkPolyData* delaunayedData = delaunayedPolyData();
+	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(delaunayedData->GetPointData()->GetArray(VALUES));
+	double bounds[6];
+
+	delaunayedData->GetBounds(bounds);
+	if (x < bounds[0]) {return false;}
+	if (x > bounds[1]) {return false;}
+	if (y < bounds[2]) {return false;}
+	if (y > bounds[3]) {return false;}
+
+	vtkIdType cellid;
+	double pcoords[3];
+	double weights[3];
+	double point[3];
+	int subid;
+
+	point[0] = x;
+	point[1] = y;
+	point[2] = 0;
+
+	// Fast search with vtkPolyData::FindCell
+	cellid = delaunayedData->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
+	if (cellid >= 0) {
+		*value = interpolatedValue(delaunayedData, cellid, weights, values);
+		return true;
+	}
+
+	// Slow search: try all cells
+	for (vtkIdType j = 0; j < delaunayedData->GetNumberOfCells(); ++j) {
+		double closestPoint[3];
+		double dist;
+		vtkCell* probeCell = delaunayedData->GetCell(j);
+		if (1 == probeCell->EvaluatePosition(point, closestPoint, subid, pcoords, dist, weights)) {
+			*value = interpolatedValue(delaunayedData, j, weights, values);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool GeoDataPointmap::getValueAt(const QPointF& pos, double* value)
+{
+	return getValueAt(pos.x(), pos.y(), value);
 }
 
 bool GeoDataPointmap::doDelaunay(bool allowCancel)

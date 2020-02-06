@@ -18,7 +18,7 @@ GeoDataRiverSurvey::InsertRiverPathPointCommand::~InsertRiverPathPointCommand() 
 
 void GeoDataRiverSurvey::InsertRiverPathPointCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	m_previousPoint->addPathPoint(m_newPoint);
 	m_previousPoint->UpdateCtrlSections();
 	m_rs->updateSplineSolvers();
@@ -31,7 +31,7 @@ void GeoDataRiverSurvey::InsertRiverPathPointCommand::redo()
 
 void GeoDataRiverSurvey::InsertRiverPathPointCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	m_newPoint->remove();
 	m_previousPoint->UpdateCtrlSections();
 	m_rs->updateSplineSolvers();

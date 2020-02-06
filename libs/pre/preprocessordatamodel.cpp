@@ -1364,7 +1364,7 @@ void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
 				PreProcessorGeoDataDataItemInterface* dItem = *it3;
 				GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(dItem->geoData());
 				if (rs != nullptr) {
-					rs->setColoredPoints(0, 0, 0);
+					rs->setColoredPoints(nullptr);
 				}
 			}
 		}

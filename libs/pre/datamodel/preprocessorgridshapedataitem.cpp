@@ -11,7 +11,6 @@
 #include <guibase/graphicsmisc.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
@@ -19,6 +18,7 @@
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/xmlsupport.h>
 
 #include <QAction>

@@ -66,3 +66,8 @@ bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* 
 	if (condition->dimensions().size() != 0) {return false;}
 	return true;
 }
+
+bool GeoDataRiverSurveyCreator::isCreatable() const
+{
+	return true;
+}

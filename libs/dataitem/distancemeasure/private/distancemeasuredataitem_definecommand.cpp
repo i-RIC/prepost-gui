@@ -1,7 +1,7 @@
 #include "distancemeasuredataitem_definecommand.h"
 #include "distancemeasuredataitem_impl.h"
 
-#include <guicore/misc/qundocommandhelper.h>
+#include <misc/qundocommandhelper.h>
 
 DistanceMeasureDataItem::DefineCommand::DefineCommand(const QPointF& v1, const QPointF& v2, bool finish, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Define Distance Measure")),

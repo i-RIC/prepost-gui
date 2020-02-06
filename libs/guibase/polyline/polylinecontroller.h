@@ -23,6 +23,8 @@ public:
 	bool isVertexSelectable(const QPointF& pos, double limitDistance, int* vid);
 	bool isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId);
 
+	int findNearestLine(const QPointF& pos);
+
 	vtkPolyData* pointsPolyData() const;
 	vtkPolyData* polyData() const;
 

@@ -3,10 +3,9 @@
 
 #include "../gridcreatingconditioncenterandwidth.h"
 
-#include <QUndoCommand>
-#include <QPointF>
+#include <guibase/polyline/polylinemovevertexcommand.h>
 
-class GridCreatingConditionCenterAndWidth::MoveVertexCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::MoveVertexCommand : public PolyLineMoveVertexCommand
 {
 public:
 	MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond);
@@ -18,9 +17,6 @@ public:
 	bool mergeWith(const QUndoCommand* other) override;
 
 private:
-	bool m_keyDown;
-	vtkIdType m_vertexId;
-	QPointF m_offset;
 	GridCreatingConditionCenterAndWidth* m_condition;
 };
 

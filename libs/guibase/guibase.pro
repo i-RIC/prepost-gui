@@ -105,9 +105,6 @@ HEADERS += arrowsettingcontainer.h \
            scalarsettingcontainer.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
-           timeformat/timeformat.h \
-           timeformat/timeformateditwidget.h \
-           timeformat/timeformatutil.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
@@ -128,6 +125,8 @@ HEADERS += arrowsettingcontainer.h \
            colormap/colormapcustomsettingcolor.h \
            colormap/colormapcustomsettingdialog.h \
            colormap/colormapsettingwidget.h \
+           coordinates/coordinatesedit.h \
+           coordinates/coordinateseditdialog.h \
            executer/executeri.h \
            executer/executerwatcher.h \
            executer/processexecuter.h \
@@ -139,8 +138,23 @@ HEADERS += arrowsettingcontainer.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           polygon/polygonaddvertexcommand.h \
            polygon/polygoncontroller.h \
+           polygon/polygoneditcoordinatescommand.h \
+           polygon/polygonmovevertexcommand.h \
+           polygon/polygonpushvertexcommand.h \
+           polygon/polygonremovevertexcommand.h \
+           polyline/polylineaddvertexcommand.h \
            polyline/polylinecontroller.h \
+           polyline/polylinecontrollerutil.h \
+           polyline/polylineeditcoordinatescommand.h \
+           polyline/polylinemovevertexcommand.h \
+           polyline/polylinepushvertexcommand.h \
+           polyline/polylineremovevertexcommand.h \
+           polyline/polylineutil.h \
+           timeformat/timeformat.h \
+           timeformat/timeformateditwidget.h \
+           timeformat/timeformatutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
@@ -174,6 +188,7 @@ HEADERS += arrowsettingcontainer.h \
            widget/textediti.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
+           coordinates/private/coordinateseditdialogdelegate.h \
            polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
@@ -187,13 +202,14 @@ HEADERS += arrowsettingcontainer.h \
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
-         timeformat/timeformateditwidget.ui \
          vtklinestylewidget.ui \
          vtktextpropertysettingdialog.ui \
          vtktextpropertysettingwidget.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
+         coordinates/coordinateseditdialog.ui \
+         timeformat/timeformateditwidget.ui \
          widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
          widget/dirnameeditwidget.ui \
@@ -226,8 +242,6 @@ SOURCES += arrowsettingcontainer.cpp \
            scalarsettingcontainer.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
-           timeformat/timeformateditwidget.cpp \
-           timeformat/timeformatutil.cpp \
            tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomScalarBarActor.cxx \
@@ -247,6 +261,8 @@ SOURCES += arrowsettingcontainer.cpp \
            colormap/colormapcustomsettingcolor.cpp \
            colormap/colormapcustomsettingdialog.cpp \
            colormap/colormapsettingwidget.cpp \
+           coordinates/coordinatesedit.cpp \
+           coordinates/coordinateseditdialog.cpp \
            executer/executerwatcher.cpp \
            executer/processexecuter.cpp \
            executer/silentexecuterwatcher.cpp \
@@ -257,8 +273,22 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           polygon/polygonaddvertexcommand.cpp \
            polygon/polygoncontroller.cpp \
+           polygon/polygoneditcoordinatescommand.cpp \
+           polygon/polygonmovevertexcommand.cpp \
+           polygon/polygonpushvertexcommand.cpp \
+           polygon/polygonremovevertexcommand.cpp \
+           polyline/polylineaddvertexcommand.cpp \
            polyline/polylinecontroller.cpp \
+           polyline/polylinecontrollerutil.cpp \
+           polyline/polylineeditcoordinatescommand.cpp \
+           polyline/polylinemovevertexcommand.cpp \
+           polyline/polylinepushvertexcommand.cpp \
+           polyline/polylineremovevertexcommand.cpp \
+           polyline/polylineutil.cpp \
+           timeformat/timeformateditwidget.cpp \
+           timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
@@ -290,7 +320,8 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/realnumbereditwidget.cpp \
            widget/sliderwithvalue.cpp \
            widget/transparencywidget.cpp \
-           widget/waitdialog.cpp
+           widget/waitdialog.cpp \
+           coordinates/private/coordinateseditdialogdelegate.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

@@ -19,7 +19,9 @@ public:
 	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
-	virtual GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+	GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+	bool isCreatable() const override;
 };
 
 #endif // GEODATARIVERSURVEYCREATOR_H

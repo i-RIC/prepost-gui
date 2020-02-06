@@ -1,8 +1,8 @@
 #include "geodatariversurvey_mouseshiftriverpathcentercommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::MouseShiftRiverPathCenterCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
 	QUndoCommand {GeoDataRiverSurvey::tr("Shift Center Point")},
@@ -32,7 +32,7 @@ GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::MouseShiftRiverPathCenterC
 
 void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->shiftCenter(m_shiftValue);
 	}
@@ -46,7 +46,7 @@ void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::redo()
 
 void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->shiftCenter(- m_shiftValue);
 	}

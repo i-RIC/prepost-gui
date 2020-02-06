@@ -2,6 +2,8 @@
 
 #include "private/polylinecontroller_impl.h"
 
+#include <misc/mathsupport.h>
+
 #include <vtkPolyData.h>
 
 #include <QPointF>
@@ -10,6 +12,38 @@
 PolyLineController::Impl::Impl() :
 	m_actor {}
 {}
+
+
+QPointF PolyLineController::Impl::nearestPoint(int lineId, const QPointF& point)
+{
+	auto l = m_actor.line();
+	auto a = l.at(lineId);
+	auto b = l.at(lineId + 1);
+	return nearestPoint(a, b, point);
+}
+
+QPointF PolyLineController::Impl::nearestPoint(const QPointF& a, const QPointF& b, const QPointF& p)
+{
+	double abx = b.x() - a.x();
+	double aby = b.y() - a.y();
+	double apx = p.x() - a.x();
+	double apy = p.y() - a.y();
+
+	double ab_len = sqrt(abx * abx + aby * aby);
+	if (ab_len == 0) {return a;}
+
+	double abunitx = abx / ab_len;
+	double abunity = aby / ab_len;
+
+	double r = (apx * abunitx + apy* abunity) / ab_len;
+	if (r < 0) {
+		return a;
+	} else if (r > 1) {
+		return b;
+	} else {
+		return a + (b - a) * r;
+	}
+}
 
 PolyLineController::PolyLineController() :
 	impl {new Impl {}}
@@ -64,6 +98,23 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 
 	*edgeId = id;
 	return true;
+}
+
+int PolyLineController::findNearestLine(const QPointF& pos)
+{
+	int edgeId = 0;
+	double minDistSquared;
+	QPointF ret;
+	int lineSize = polyLine().size() - 1;
+	for (int i = 0; i < lineSize; ++i) {
+		ret = impl->nearestPoint(i, pos);
+		double distSquared = iRIC::lengthSquared(pos - ret);
+		if (i == 0 || distSquared < minDistSquared) {
+			minDistSquared = distSquared;
+			edgeId = i;
+		}
+	}
+	return edgeId;
 }
 
 vtkPolyData* PolyLineController::pointsPolyData() const

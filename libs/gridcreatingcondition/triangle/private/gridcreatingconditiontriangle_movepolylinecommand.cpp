@@ -1,8 +1,8 @@
 #include "gridcreatingconditiontriangle_movepolylinecommand.h"
 #include "../gridcreatingconditiontriangleabstractline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::MovePolyLineCommand::MovePolyLineCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionTriangle* pol) :
 	QUndoCommand {GridCreatingConditionTriangle::tr("Move Break Line")},

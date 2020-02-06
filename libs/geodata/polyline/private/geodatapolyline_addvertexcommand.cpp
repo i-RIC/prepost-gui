@@ -1,8 +1,8 @@
 #include "geodatapolyline_addvertexcommand.h"
 #include "../geodatapolylineimplpolyline.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 #include <vtkPolyLine.h>
 

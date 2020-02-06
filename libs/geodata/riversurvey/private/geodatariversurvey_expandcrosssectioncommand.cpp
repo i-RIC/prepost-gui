@@ -16,7 +16,7 @@ GeoDataRiverSurvey::ExpandCrosssectionCommand::ExpandCrosssectionCommand(bool ap
 
 void GeoDataRiverSurvey::ExpandCrosssectionCommand::redo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
 	}
@@ -30,7 +30,7 @@ void GeoDataRiverSurvey::ExpandCrosssectionCommand::redo()
 
 void GeoDataRiverSurvey::ExpandCrosssectionCommand::undo()
 {
-	m_rs->m_gridThread->cancel();
+	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
 	}

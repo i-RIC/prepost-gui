@@ -1,8 +1,8 @@
 #include "gridcreatingconditionlaplace_polylineaddvertexcommand.h"
 
 #include <guibase/polyline/polylinecontroller.h>
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::PolyLineAddVertexCommand::PolyLineAddVertexCommand(bool keyDown, PolyLineController* line, int edgeId, QPoint point, GridCreatingConditionLaplace* cond) :
 	QUndoCommand(GridCreatingConditionLaplace::tr("Insert Line Vertex")),

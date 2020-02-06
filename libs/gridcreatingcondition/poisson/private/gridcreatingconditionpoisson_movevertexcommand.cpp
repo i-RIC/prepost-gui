@@ -1,8 +1,8 @@
 #include "gridcreatingconditionpoisson_impl.h"
 #include "gridcreatingconditionpoisson_movevertexcommand.h"
 
-#include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <misc/qundocommandhelper.h>
 
 GridCreatingConditionPoisson::MoveVertexCommand::MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, int vertexId, GridCreatingConditionPoisson* cond) :
 	QUndoCommand {GridCreatingConditionPoisson::tr("Move Line Vertex")},
