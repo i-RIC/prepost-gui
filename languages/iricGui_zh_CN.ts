@@ -6,52 +6,52 @@
     <message>
         <location filename="../misc/animationcontroller.cpp" line="115"/>
         <source>Animation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">动画工具栏</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="232"/>
         <source>&amp;Animation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;动画</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="247"/>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向后退</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="250"/>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向前进</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="253"/>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重置</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="256"/>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">跳到最后一步</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="259"/>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;开始/结束动画</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="262"/>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">结束动画</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="265"/>
         <source>Toggle &amp;following last step</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">切换到最后一步&amp;</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="269"/>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">动画速度设置...</translation>
     </message>
 </context>
 <context>
@@ -59,12 +59,12 @@
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="185"/>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确认结果</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="186"/>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">下面列表中的文件将被创建或更新。 请使用Qt语言学家打开这些文件，并完成翻译词典。</translation>
     </message>
 </context>
 <context>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotconfirmpage.cpp" line="12"/>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确认结果</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotconfirmpage.cpp" line="13"/>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">下面列表中的文件将被创建或更新。</translation>
     </message>
 </context>
 <context>
@@ -85,42 +85,42 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向导页</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="17"/>
         <source>File Properties</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件属性</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="20"/>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请指定输出文件的属性。</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="26"/>
         <source>Directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">目录</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="38"/>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件名</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="44"/>
         <source>Prefix :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">前缀：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="91"/>
         <source>Suffix length :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">后缀长度：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="127"/>
         <source>Format :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">格式：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="16"/>
@@ -175,12 +175,12 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="41"/>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">前缀</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="45"/>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输出文件</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="46"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="84"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="84"/>
@@ -200,12 +200,12 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="87"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.cpp" line="87"/>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">创建文件夹 %1时失败</translation>
     </message>
 </context>
 <context>
@@ -213,23 +213,23 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向导页</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="17"/>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="26"/>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输出到谷歌地球</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="20"/>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请指明输出文件属性</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="60"/>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注意：仅当指定坐标系时，此功能才可用。</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="75"/>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="81"/>
         <source>Name :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui" line="94"/>
@@ -252,12 +252,12 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotintroductionpage.cpp" line="9"/>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">介绍</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotintroductionpage.cpp" line="10"/>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">使用此向导可以指定生成连续快照输出的要求。</translation>
     </message>
 </context>
 <context>
@@ -265,58 +265,58 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向导页</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="17"/>
         <source>Movie Properties</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">影片属性</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="20"/>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请指明输出文件属性</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="26"/>
         <source>Output movie files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输出影片文件</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="33"/>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.cpp" line="31"/>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件名称</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="72"/>
         <source>Play speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">播放速度</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="78"/>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指明影片长度[秒]</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="98"/>
         <source>Specify frames per second</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定每秒帧数</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.ui" line="128"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">档案：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.cpp" line="35"/>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输出文件</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotmoviepropertypage.cpp" line="62"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">默认</translation>
     </message>
 </context>
 <context>
@@ -324,32 +324,32 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshottimestepsettingpage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向导页</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshottimestepsettingpage.ui" line="17"/>
         <source>Timestep Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">时间步设置</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshottimestepsettingpage.ui" line="20"/>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请指定开始时间步长，停止时间步长和跳过率</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshottimestepsettingpage.ui" line="40"/>
         <source>start :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">开始：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshottimestepsettingpage.ui" line="73"/>
         <source>stop :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">结束：</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshottimestepsettingpage.ui" line="107"/>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">跳过率：</translation>
     </message>
 </context>
 <context>
@@ -357,88 +357,88 @@
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向导页</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="17"/>
         <source>Window Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">窗口选择</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="20"/>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请选择目标窗口并指定要输出文件的方式。</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="29"/>
         <source>Target windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">目标窗口</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="50"/>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输出文件</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="56"/>
         <source>In one file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">到一个文件</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="66"/>
         <source>Respectively</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">分别</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="96"/>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">页面</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="102"/>
         <source>As is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">照原样</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="112"/>
         <source>Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横向</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="119"/>
         <source>Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">纵向</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="133"/>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="139"/>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">白</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.ui" line="149"/>
         <source>transparent</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">透明</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.cpp" line="113"/>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.cpp" line="118"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.cpp" line="113"/>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">一个以上的可视化窗口具有透明区域。 它们无法保存到透明背景图像中。 请选择白色背景，或取消和禁用轮廓等的透明度。</translation>
     </message>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotwindowselectionpage.cpp" line="118"/>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">当前无选定窗口</translation>
     </message>
 </context>
 <context>
@@ -446,7 +446,7 @@
     <message>
         <location filename="../misc/flushrequester.cpp" line="49"/>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">正在等待求解器复制CGNS文件...</translation>
     </message>
 </context>
 <context>
@@ -454,37 +454,37 @@
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="14"/>
         <source>Google Map Image Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">谷歌地图图片导入设置...</translation>
     </message>
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="22"/>
         <source>Zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">缩放：</translation>
     </message>
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="53"/>
         <source>Map Type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地图种类：</translation>
     </message>
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="61"/>
         <source>Satellite Photo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">卫星照片</translation>
     </message>
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="66"/>
         <source>Roadmap</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">公路图</translation>
     </message>
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="71"/>
         <source>Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地形</translation>
     </message>
     <message>
         <location filename="../googlemapimport/googlemapimageimportsettingdialog.ui" line="76"/>
         <source>Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">混合</translation>
     </message>
 </context>
 <context>
@@ -492,18 +492,19 @@
     <message>
         <location filename="../misc/installertool.cpp" line="19"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="20"/>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">更新iRIC时，需要在启动iRIC维护之前关闭iRIC。
+如果您还有其他iRIC窗口，请手动将其关闭。</translation>
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="23"/>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">关闭iRIS并启动iRIS维护</translation>
     </message>
 </context>
 <context>
@@ -511,13 +512,14 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="63"/>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">介绍</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="64"/>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此功能供求解器开发人员或网格创建程序开发人员而非用户使用。
+该向导将为注册到iRIC系统的求解器定义文件和网格创建程序定义文件生成或更新翻译文件。 您需要指定求解器（或网格创建程序）名称，以及要创建或更新翻译文件的语言列表。</translation>
     </message>
 </context>
 <context>
@@ -525,7 +527,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <location filename="../misc/mousehelpdialog.ui" line="14"/>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">鼠标提示</translation>
     </message>
 </context>
 <context>
@@ -533,12 +535,12 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <location filename="../misc/newprojectsolverselectingdialog.ui" line="14"/>
         <source>Select Solver</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择解算器</translation>
     </message>
     <message>
         <location filename="../misc/newprojectsolverselectingdialog.ui" line="31"/>
         <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按&quot;OK&quot;按钮。</translation>
     </message>
 </context>
 <context>
@@ -546,18 +548,19 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="35"/>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">检查更新</translation>
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="36"/>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">上次启动iRIC Maintenance后已%1天。
+您要启动iRIC维护吗？</translation>
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="38"/>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">启用 iRIC 维护</translation>
     </message>
 </context>
 <context>
@@ -565,47 +568,47 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencedialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">优先</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="30"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">通用</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="35"/>
         <source>Graphics Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图片默认</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="40"/>
         <source>Grid Checking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格检查</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="45"/>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河流勘测数据</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="50"/>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网络代理</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="55"/>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片（网络）</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="60"/>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网络海拔数据</translation>
     </message>
     <message>
         <location filename="../pref/preferencedialog.ui" line="65"/>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景网格</translation>
     </message>
 </context>
 <context>
@@ -613,22 +616,22 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepagebackgroundgrid.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图表</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagebackgroundgrid.ui" line="20"/>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">河流勘测数据</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagebackgroundgrid.ui" line="28"/>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面方向：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagebackgroundgrid.ui" line="48"/>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面间部分：</translation>
     </message>
 </context>
 <context>
@@ -636,102 +639,102 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="20"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">语言</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="55"/>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注意：下次启动iRIC时将应用语言设置。</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="68"/>
         <source>Working Directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">工作目录</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="77"/>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注意：工作目录用于存储iRIC使用的文件</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="84"/>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开时将文件夹项目复制到工作目录</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="94"/>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">检查更新</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="100"/>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">周期性检查更新</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="128"/>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">间隔检查天数：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="163"/>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图纸网格上单元格剔除</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="169"/>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">启用</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="197"/>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">绘制的最大单元数：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="243"/>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">绘制的最大指数数：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="281"/>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告：如果禁用剔除并创建一个很大的网格，则可能由于内存不足而导致iRIC GUI崩溃。</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="294"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">撤回</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.ui" line="300"/>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">撤回限制：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">工作目录包含非ASCII字符。</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">工作目录已更改，但是在退出iRIC GUI之后将使用新的工作目录！</translation>
     </message>
 </context>
 <context>
@@ -739,12 +742,12 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="22"/>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格颜色</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="28"/>
@@ -752,57 +755,57 @@ Do you want to launch iRIC Maintainance?</source>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="230"/>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="297"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="58"/>
         <source>Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">色图：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="70"/>
         <source>Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="78"/>
         <source>Max Size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最大型号：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="100"/>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注意：加载宽度（或高度）大于最大值的图像会自动调整大小。</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="130"/>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">向量</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="136"/>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">因数：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="194"/>
         <source>Arrow Size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">箭头大小：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="224"/>
         <source>Stream Lines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流线</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="260"/>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颗粒</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegraphicsdefault.ui" line="290"/>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">大小：</translation>
     </message>
 </context>
 <context>
@@ -810,62 +813,62 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="20"/>
         <source>Checking Timing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">时间检查</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="26"/>
         <source>Before Running Solver</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在运行求解器之前</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="36"/>
         <source>Before Exporting Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出网格前</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="49"/>
         <source>Attributes to Check</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">要检查的属性</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="58"/>
         <source>Whether cell edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">单元格边缘是否相交</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="70"/>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">检查单元格边缘的长宽比是否小于</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="116"/>
         <source>Check variation of cell edge length is less than</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">检查单元边缘长度的变化是否小于</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="164"/>
         <source>I-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I方向</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="190"/>
         <source>J-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">J方向</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="235"/>
         <source>Check angle of cell is more than</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">格角大于</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagegridcheck.ui" line="291"/>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注意：此页面上的设置仅适用于结构化网格。</translation>
     </message>
 </context>
 <context>
@@ -873,47 +876,47 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="20"/>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">不要使用代理</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="30"/>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">使用系统代理设置</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="37"/>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">使用自定义代理设置</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="46"/>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HTTP代理：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="60"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">端</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="82"/>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">需要HTTP代理身份验证</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="109"/>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">用户名：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageproxy.ui" line="123"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">密码：</translation>
     </message>
 </context>
 <context>
@@ -921,53 +924,53 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepageriversurvey.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.ui" line="20"/>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">用于横截面编辑的组分列表：</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.ui" line="39"/>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加...</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.ui" line="46"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.ui" line="66"/>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;恢复默认</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.cpp" line="58"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.cpp" line="58"/>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此数值已存在于列表中</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.cpp" line="72"/>
         <location filename="../pref/preferencepageriversurvey.cpp" line="84"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.cpp" line="72"/>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定删除选定项目？</translation>
     </message>
     <message>
         <location filename="../pref/preferencepageriversurvey.cpp" line="84"/>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定恢复默认值？</translation>
     </message>
 </context>
 <context>
@@ -975,12 +978,12 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/private/preferencepageriversurveyfractionadddialog.ui" line="14"/>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加分数</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepageriversurveyfractionadddialog.ui" line="20"/>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指明添加分数：</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepageriversurveyfractionadddialog.ui" line="29"/>
@@ -993,62 +996,62 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="27"/>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;上</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="34"/>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;下</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="60"/>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加...</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="70"/>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑...</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="77"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="97"/>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;恢复默认</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="108"/>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;输入Google Maps API密钥</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.ui" line="115"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform现在需要API密钥才能通过iRIC使用Google Maps。 请获取您自己的Google Maps API密钥并在此处输入，以将Google Maps图像用作背景图像在预处理器和2D后处理Windows上。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.cpp" line="73"/>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片（网络）编辑</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.cpp" line="165"/>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入Google Maps API密钥</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagetms.cpp" line="165"/>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">API 密钥：</translation>
     </message>
 </context>
 <context>
@@ -1056,12 +1059,12 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/private/preferencepagetmsadddialog.ui" line="14"/>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片（网络）添加</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepagetmsadddialog.ui" line="22"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称：</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepagetmsadddialog.ui" line="32"/>
@@ -1076,7 +1079,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/private/preferencepagetmsadddialog.ui" line="49"/>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最大缩放等级:</translation>
     </message>
 </context>
 <context>
@@ -1084,42 +1087,42 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="27"/>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;上</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="34"/>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;下</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="60"/>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加...</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="70"/>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑...</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="80"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.ui" line="100"/>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;恢复默认设置</translation>
     </message>
     <message>
         <location filename="../pref/preferencepagewebcsvtile.cpp" line="58"/>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑网络海拔数据</translation>
     </message>
 </context>
 <context>
@@ -1127,22 +1130,22 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="14"/>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加网络海拔数据</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="22"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称：</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="32"/>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最小缩放等级：</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="63"/>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最大所缩放等级：</translation>
     </message>
     <message>
         <location filename="../pref/private/preferencepagewebcsvtileadddialog.ui" line="97"/>
@@ -1160,110 +1163,110 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="22"/>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件名</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="56"/>
         <source>Last update time:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">上次更新时间：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="90"/>
         <source>Solver:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解算器：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="124"/>
         <source>Grid(s):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="155"/>
         <source>Calculation condition:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算条件：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="189"/>
         <source>Calculation result:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算结果：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="223"/>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">坐标系统：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="239"/>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="277"/>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="315"/>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑...</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="261"/>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">坐标抵消：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.ui" line="299"/>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">t=0 日期：</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="37"/>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（无数据）</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="44"/>
         <source>(Not saved yet)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（未保存）</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="56"/>
         <source>Setup finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置完成</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="59"/>
         <source>Setup unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置未完成</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="62"/>
         <source>Setup partially unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">部分设置完成</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="67"/>
         <source>Already set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">已设定</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="69"/>
         <source>Not set yet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未设定</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="72"/>
         <source>Data exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数据存在</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="74"/>
         <source>No data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无数据</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="111"/>
         <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="132"/>
         <source>(Not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（未明确）</translation>
     </message>
 </context>
 <context>
@@ -1271,12 +1274,12 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../projectproperty/projectpropertydialog.ui" line="14"/>
         <source>Project Property</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目属性</translation>
     </message>
     <message>
         <location filename="../projectproperty/projectpropertydialog.ui" line="28"/>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基本信息</translation>
     </message>
 </context>
 <context>
@@ -1284,22 +1287,22 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../misc/projecttypeselectdialog.ui" line="14"/>
         <source>Select How to Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择如何保存项目</translation>
     </message>
     <message>
         <location filename="../misc/projecttypeselectdialog.ui" line="20"/>
         <source>Please select how to save project from the followings:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请从以下选项中选择如何保存项目：</translation>
     </message>
     <message>
         <location filename="../misc/projecttypeselectdialog.ui" line="27"/>
         <source>Save as File (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存为文件 (*.ipro)</translation>
     </message>
     <message>
         <location filename="../misc/projecttypeselectdialog.ui" line="37"/>
         <source>Save as Project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存为项目</translation>
     </message>
 </context>
 <context>
@@ -1307,32 +1310,32 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="81"/>
         <source>Select Program and Languages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择程序与语言</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="82"/>
         <source>Specify for which solver (or grid creating program) you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定要为其创建或更新翻译文件的求解器（或网格创建程序）</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="87"/>
         <source>Target Program</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">目标程序</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="89"/>
         <source>&amp;Solver</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;解算器</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="92"/>
         <source>&amp;Grid Creating Program</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格生成项目</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="113"/>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">语言</translation>
     </message>
 </context>
 <context>
@@ -1340,52 +1343,52 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="17"/>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解算器信息</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="27"/>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基本信息</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="33"/>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="40"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="47"/>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="54"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版本</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="61"/>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="68"/>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版权</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="75"/>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="82"/>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">发布</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="89"/>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="96"/>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主页</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="110"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">描述</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractdialog.ui" line="120"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">执照</translation>
     </message>
 </context>
 <context>
@@ -1393,52 +1396,52 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="17"/>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解算器信息</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="23"/>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基本信息</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="29"/>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="36"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="43"/>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="50"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版本</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="57"/>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="64"/>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版权</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="71"/>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="78"/>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">发布</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="85"/>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="92"/>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主页</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="106"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">描述</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionabstractwidget.ui" line="116"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">执照</translation>
     </message>
 </context>
 <context>
@@ -1446,13 +1449,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../solverdef/solverdefinitionlist.cpp" line="55"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlist.cpp" line="55"/>
         <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在文件夹&quot;%1&quot;中加载求解器定义文件时发生错误。 该求解器将被忽略。
+%2</translation>
     </message>
 </context>
 <context>
@@ -1460,27 +1464,27 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../solverdef/solverdefinitionlistdialog.ui" line="17"/>
         <source>Solver List</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">求解器名单</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlistdialog.ui" line="32"/>
         <source>&amp;Show Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;显示细节...</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlistdialog.cpp" line="35"/>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择求解器以打开项目</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlistdialog.cpp" line="71"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlistdialog.cpp" line="71"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版本</translation>
     </message>
 </context>
 <context>
@@ -1488,7 +1492,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="27"/>
         <source>Definition File Translation Update Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">定义文件转换更新向导</translation>
     </message>
 </context>
 <context>
@@ -1496,7 +1500,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="14"/>
         <source>iRIC Start Page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">iRIC 初始页面</translation>
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="41"/>
@@ -1507,17 +1511,18 @@ Do you want to launch iRIC Maintainance?</source>
         <location filename="../startpage/startpagedialog.ui" line="66"/>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">欢迎来到iRIC！
+iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="178"/>
         <source>Start Simulation Project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">开始模拟项目</translation>
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="183"/>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">支持</translation>
     </message>
 </context>
 <context>
@@ -1525,27 +1530,27 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <location filename="../startpage/startpagelaunchtabwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../startpage/startpagelaunchtabwidget.ui" line="35"/>
         <source>Create &amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">创建&amp;新项目</translation>
     </message>
     <message>
         <location filename="../startpage/startpagelaunchtabwidget.ui" line="68"/>
         <source>&amp;Open Project File...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;打开项目文件...</translation>
     </message>
     <message>
         <location filename="../startpage/startpagelaunchtabwidget.ui" line="102"/>
         <source>Recent Solvers:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">近期使用解算器：</translation>
     </message>
     <message>
         <location filename="../startpage/startpagelaunchtabwidget.ui" line="114"/>
         <source>Recent Projects:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">近期项目：</translation>
     </message>
 </context>
 <context>
@@ -1553,57 +1558,57 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <location filename="../verification/verificationgraphdialog.ui" line="14"/>
         <source>Verification</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">认证</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.ui" line="26"/>
         <source>Chart Type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图表类型：</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.ui" line="41"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文字标签</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.ui" line="66"/>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;设置...</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.ui" line="73"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.ui" line="80"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;关闭</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="120"/>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流向距离与测量值和计算结果</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="121"/>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流向距离与残余误差</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="123"/>
         <source>Measured Values vs. Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量值与计算结果</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="124"/>
         <source>Measured Values vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量值与残留误差</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出CSV文件</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
@@ -1613,7 +1618,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
