@@ -1623,45 +1623,45 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>%1 cound not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法打开%1</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数据成功导出到%1</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="375"/>
         <source>Root Mean Squared Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">均方根误差：%1</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="398"/>
         <source>Measured Values (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量值(%1)</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="402"/>
         <location filename="../verification/verificationgraphdialog.cpp" line="420"/>
         <location filename="../verification/verificationgraphdialog.cpp" line="428"/>
         <source>Calculation Result (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算结果(%1)</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="405"/>
         <location filename="../verification/verificationgraphdialog.cpp" line="414"/>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流向距离</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="406"/>
         <source>Values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数值</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="410"/>
@@ -1669,13 +1669,13 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../verification/verificationgraphdialog.cpp" line="433"/>
         <location filename="../verification/verificationgraphdialog.cpp" line="438"/>
         <source>Residual Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">残留误差</translation>
     </message>
     <message>
         <location filename="../verification/verificationgraphdialog.cpp" line="427"/>
         <location filename="../verification/verificationgraphdialog.cpp" line="437"/>
         <source>Measured Value (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量值(%1)</translation>
     </message>
 </context>
 <context>
@@ -1683,73 +1683,73 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="14"/>
         <source>Verification Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">认证设置</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="20"/>
         <source>Timestep</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">时间步</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="26"/>
         <source>Select the timestep of calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择计算结果时间步</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="46"/>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算结果</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="52"/>
         <source>Select which physical value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择用于比较的物理值</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="61"/>
         <source>Grid:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="71"/>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">物理值：</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="86"/>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量值</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="92"/>
         <source>Select which measured value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择用于比较的测量值。</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="101"/>
         <source>File:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件：</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.ui" line="111"/>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数值：</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
         <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
         <source>No Physical Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无选定物理值</translation>
     </message>
     <message>
         <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>No Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无选定值</translation>
     </message>
 </context>
 <context>
@@ -1775,18 +1775,18 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="253"/>
         <location filename="../main/iricmainwindow.cpp" line="259"/>
         <source>Error occured while loading Solver definition file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">加载规划求解定义文件时发生错误。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="289"/>
         <source>Open iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开iRIC项目文件</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="289"/>
@@ -1817,47 +1817,47 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="308"/>
         <source>Project file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目文件%1不存在</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="337"/>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目文件夹路径必须仅包含英文字符。 请移动或重命名项目文件夹。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="343"/>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该项目似乎已由另一个iRIC GUI窗口打开。 您无法从多个GUI窗口打开项目文件夹。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="352"/>
         <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">已打开的项目不会复制到工作目录中，并且您将被迫保存对此项目所做的修改。 如果要保留当前项目，请先将其保存到另一个项目</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="460"/>
         <source>Open Calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开计算结果</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="471"/>
         <source>CGNS file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">CGNS文件%1不存在</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="581"/>
         <source>This Project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此项目被修改 是否保存？</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="696"/>
         <source>Save iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存iRIC项目文件</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="696"/>
@@ -1867,58 +1867,58 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="708"/>
         <source>Save iRIC project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存iRIC项目</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="711"/>
         <source>Project folder path has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目文件夹路径必须仅包含英文字符。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="715"/>
         <source>The project folder has to be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目文件夹必须为空。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="782"/>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该项目有巨大的计算结果，因此无法另存为文件（* .ipro）。 请另存为项目。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="786"/>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该项目文件过多，因此无法另存为文件（* .ipro）。 请另存为项目。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="813"/>
         <source>Project successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目已成功保存到%1</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">现在没有绘制轮廓图。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2099"/>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">％1不能被覆盖。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2088"/>
         <location filename="../main/iricmainwindow.cpp" line="2119"/>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出Google Earth KMZ以查看街景</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2120"/>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存KMZ文件中...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2366"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格被编辑或删除。 保存后，计算结果将被丢弃</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="162"/>
@@ -1929,17 +1929,17 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
         <location filename="../main/iricmainwindow.cpp" line="807"/>
         <source>Saving project failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存项目失败</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="822"/>
         <source>The solver is still running. Really quit?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解算器运行中，是否确认取消？</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="30"/>
         <source>Save Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存截图</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="26"/>
@@ -1954,59 +1954,59 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <source>This window do not support snapshot with this file type.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该窗口不支持此文件类型的快照。</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Saving snapshot failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">截图保存失败</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
         <source>Wrong file name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定的文件名错误。</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="81"/>
         <source>Snapshot successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">截图成功保存到 %1</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="874"/>
         <location filename="../main/iricmainwindow.cpp" line="888"/>
         <source>This windows does not support snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该窗口不支持截图功能。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="897"/>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">已将截图复制到剪贴板。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="906"/>
         <source>This menu is not available while the solver is running.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解算器运行时此菜单不可用</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="964"/>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该窗口不支持连续截图功能。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1002"/>
         <source>Continuous Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">连续截图</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1003"/>
         <source>saving continuous snapshot...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存连续截图中...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1120"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1已经存在，无法删除。电影文件不输出。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1215"/>
@@ -2026,43 +2026,44 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1945"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">当前活动的子窗口不支持导出轮廓图。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1959"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">要导出形状文件，请切换 &quot;显示设置&quot; 到 &quot;轮廓图像&quot;, 不是 &quot;彩色条纹&quot; 或 &quot;等值线&quot;</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1990"/>
         <source>Export contour figure to ESRI Shape files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">将轮廓图导出到ESRI Shape文件</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2000"/>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出轮廓图</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2001"/>
         <source>Saving contour figure as ESRI Shape files...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">将轮廓图另存为ESRI Shape文件...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请选择要使用的区域：</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2391"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">当前工作目录（%1）包含非ASCII字符。 在开始新项目之前，请从以下菜单更改工作目录：
+        选项 -&gt; 优先</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1220"/>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未命名</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="460"/>
@@ -2072,7 +2073,7 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1237"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">求解器正在运行。 请停止求解器，以执行此操作。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1525"/>
@@ -2082,22 +2083,22 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1738"/>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定了未知选项。 他们已被忽略。 %1</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1742"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">传递了两个以上的项目文件作为参数。 他们已被忽略。 %1</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1765"/>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您确定要删除计算结果吗？</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1769"/>
         <source>Calculation result cleared.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算结果已清除</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1835"/>
@@ -2108,7 +2109,7 @@ Option -&gt; Preferences</source>
         <location filename="../main/iricmainwindow.cpp" line="2047"/>
         <location filename="../main/iricmainwindow.cpp" line="2053"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1835"/>
@@ -2116,46 +2117,46 @@ Option -&gt; Preferences</source>
         <location filename="../main/iricmainwindow.cpp" line="1951"/>
         <location filename="../main/iricmainwindow.cpp" line="2053"/>
         <source>Calculation result does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算结果不存在</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1849"/>
         <location filename="../main/iricmainwindow.cpp" line="2047"/>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"可视化窗口处于活动状态时，请选择此菜单。></translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1863"/>
         <source>No particle is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">现在没有绘制任何粒子。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1892"/>
         <location filename="../main/iricmainwindow.cpp" line="1904"/>
         <source>Export Particles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出粒子</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1905"/>
         <source>Saving particles as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">将粒子另存为VTK文件...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1927"/>
         <location filename="../main/iricmainwindow.cpp" line="2023"/>
         <location filename="../main/iricmainwindow.cpp" line="2141"/>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存时发生错误。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2163"/>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Google Earth KMZ已成功导出到%1。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2233"/>
         <source>Import Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入可视化/图形设置</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2233"/>
@@ -2166,42 +2167,42 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2240"/>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件%1不存在</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2255"/>
         <source>Export Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出可视化/图形设置</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="29"/>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1d</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="34"/>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2d</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="39"/>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3d</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">没有计算数据，因此无法定义简单的运算结果</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="49"/>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择维度</translation>
     </message>
     <message>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="49"/>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">维度</translation>
     </message>
 </context>
 <context>
@@ -2209,27 +2210,27 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.ui" line="14"/>
         <source>About iRIC</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">关于iRIC</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.ui" line="25"/>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图片标签</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.ui" line="41"/>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">标题</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.ui" line="48"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文字标签</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.ui" line="55"/>
         <source>copyright</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版权</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.cpp" line="26"/>
@@ -2239,17 +2240,17 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.cpp" line="27"/>
         <source>Released on %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">发布于%1</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.cpp" line="28"/>
         <source>Copyright %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版权%1</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.cpp" line="40"/>
         <source>Terms of use: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">使用条款：</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowaboutdialog.cpp" line="42"/>
@@ -2262,12 +2263,12 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="90"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;文件</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="92"/>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;新项目...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="94"/>
@@ -2277,7 +2278,7 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="99"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;打开...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="101"/>
@@ -2287,12 +2288,12 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="102"/>
         <source>Open iRIC Project files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开iRIC项目文件</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="107"/>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;保存</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="109"/>
@@ -2302,132 +2303,132 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="114"/>
         <source>Save &amp;As File(*.ipro)...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存&amp;为文件(*.ipro)...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="119"/>
         <source>Save As &amp;Project...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存为项目...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="126"/>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;属性...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="134"/>
         <source>Save S&amp;napshot...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存截图...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="140"/>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">复制截图到剪贴板</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="146"/>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">连续截图/电影/谷歌地球导出...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="154"/>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="160"/>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="166"/>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="189"/>
         <source>&amp;Calculation Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;计算条件...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="169"/>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="191"/>
         <source>Calculation &amp;Result...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算结果...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="172"/>
         <source>&amp;Measured Values...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;测量数值...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="175"/>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;背景图片...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="177"/>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="180"/>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;视图/图像设置...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="183"/>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="193"/>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;颗粒...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
         <source>&amp;Contour Figure as ESRI Shape files...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;轮廓图作为ESRI形状文件...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="197"/>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Google Earth KMZ街景</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="204"/>
         <source>Open &amp;Work Directory...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开工作目录...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="210"/>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;近期项目</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="216"/>
         <source>Show iRIC Start Page...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示iRIC开始页面...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="222"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">退出</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="231"/>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="252"/>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="234"/>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据（网络）</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="237"/>
         <source>&amp;Hydraulic Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;水力数据</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="260"/>
         <source>Solver Console &amp;Log...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">求解器控制台记录</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="273"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="277"/>
@@ -2442,77 +2443,77 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="289"/>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">剪切</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="294"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;复制</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="299"/>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;粘贴</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="307"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;显示</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="310"/>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;工具栏</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="313"/>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;主工具栏</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="318"/>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;视窗清单工具栏</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="323"/>
         <source>&amp;Animation Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;动画工具栏</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="328"/>
         <source>&amp;Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;对象浏览器</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="332"/>
         <source>&amp;Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;属性浏览器</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="336"/>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;状态条</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="345"/>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;背景颜色...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="350"/>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Z方向缩放...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="356"/>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">将投影设置为</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="359"/>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">平行</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="360"/>
@@ -2522,7 +2523,7 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="364"/>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;角度</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="365"/>
@@ -2537,97 +2538,97 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="387"/>
         <source>Ca&amp;mera Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;相机控制</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="389"/>
         <source>&amp;Fit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;适配</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="392"/>
         <source>&amp;Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;旋转重置</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="395"/>
         <source>R&amp;otate 90</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;旋转90</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="398"/>
         <source>XY Plane</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">XY平面</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="401"/>
         <source>YZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">YZ平面</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="404"/>
         <source>XZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">XZ平面</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="407"/>
         <source>Move &amp;Left</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;左移</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="410"/>
         <source>Move &amp;Right</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;右移</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="413"/>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;上移</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="416"/>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;下移</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="419"/>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;放大</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="422"/>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;缩小</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="425"/>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">X方向放大</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="428"/>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">X方向缩小</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="431"/>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Y方向放大</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="434"/>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Y方向缩小</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="440"/>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;模拟</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="442"/>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;运行</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="444"/>
@@ -2638,162 +2639,162 @@ Option -&gt; Preferences</source>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="448"/>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;停止解算器</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="455"/>
         <source>&amp;Solver Information...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;解算器信息...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="473"/>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;焦点预处理器窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="478"/>
         <source>Focus &amp;Solver Console Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;焦点解算器控制台窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="487"/>
         <source>&amp;Tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;工具</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="502"/>
         <source>Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;计算结果</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="504"/>
         <source>Open new 2D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开新的2D后处理窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="509"/>
         <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开新的2D鸟瞰后处理窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="514"/>
         <source>Open new 3D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开新的3D后处理窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="521"/>
         <source>Open new Graph Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开新图像窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="526"/>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开新散点图窗口</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
         <source>Compare with measured values...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">与测量值做对比...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="538"/>
         <source>&amp;Reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;重新加载</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="540"/>
         <source>&amp;Reload Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;重新加载计算结果</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="546"/>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="553"/>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;管理简单操作结果</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="559"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="564"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="573"/>
         <source>Import Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入视图/图像设置...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="578"/>
         <source>Export Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出视图/图像设置...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="589"/>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;选项</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="591"/>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;优先...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="597"/>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;工具</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="610"/>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;维护</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="616"/>
         <source>&amp;Create/Update Translation Files...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;创建/更新翻译文件</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="624"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;帮助</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="626"/>
         <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;帮助...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="630"/>
         <source>&amp;Solver List...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;解算器清单...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="635"/>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;鼠标提示...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="642"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;关于...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="761"/>
         <source>Main ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主工具栏</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="831"/>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">窗口清单工具栏</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="1182"/>
