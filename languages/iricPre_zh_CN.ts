@@ -7,57 +7,57 @@
         <location filename="../bc/boundaryconditiondialog.ui" line="14"/>
         <location filename="../bc/boundaryconditiondialog.cpp" line="206"/>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边界条件</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="22"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">类型：</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="36"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称：</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="46"/>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="53"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色：</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="104"/>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">点大小：</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="141"/>
         <source>Show name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示名称</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.cpp" line="53"/>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">行宽：</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.cpp" line="138"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.cpp" line="138"/>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称只能为英文字符</translation>
     </message>
     <message>
         <location filename="../bc/boundaryconditiondialog.cpp" line="213"/>
         <source>Boundary Condition Property</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边界条件属性</translation>
     </message>
 </context>
 <context>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../gridexporter/cgnsgridexporter.cpp" line="23"/>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">CGNS文件</translation>
     </message>
 </context>
 <context>
@@ -84,29 +84,31 @@
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="52"/>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="118"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="53"/>
         <source>Error occured while importing grid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入网格时发生错误</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此CGNS文件是为%1版本%2创建的。 它与当前求解器不兼容。 也许只有一部分网格会被导入。
+您是否真的要从此文件导入网格？</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="124"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此CGNS文件没有求解器信息。 我们无法检查此CGNS文件是否与求解器兼容。 如果不兼容，则可能仅导入网格的一部分。
+您是否真的要从此文件导入网格？</translation>
     </message>
 </context>
 <context>
@@ -114,12 +116,12 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../misc/gridattributegeneratorlauncher.cpp" line="46"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../misc/gridattributegeneratorlauncher.cpp" line="46"/>
         <source>Attribute Generator %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性生成器%1不存在。</translation>
     </message>
 </context>
 <context>
@@ -127,7 +129,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp" line="32"/>
         <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格鸟瞰窗口</translation>
     </message>
 </context>
 <context>
@@ -135,22 +137,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp" line="27"/>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;绘制</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp" line="29"/>
         <source>&amp;Display Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;显示设置...</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp" line="35"/>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;背景颜色...</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp" line="40"/>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Z方向比率</translation>
     </message>
 </context>
 <context>
@@ -158,17 +160,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.ui" line="14"/>
         <source>Axes Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">坐标轴设置</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.ui" line="20"/>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">可视</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.ui" line="29"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色：</translation>
     </message>
 </context>
 <context>
@@ -176,27 +178,27 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="14"/>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示设置</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="20"/>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格颜色</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="26"/>
         <source>Node attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">节点属性</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="40"/>
         <source>Cell attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">单元格属性</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="54"/>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">自定义颜色</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="91"/>
@@ -206,12 +208,12 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="97"/>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">可视</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui" line="106"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色：</translation>
     </message>
 </context>
 <context>
@@ -219,22 +221,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑Z方向比率</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Z方向比率</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入新Z方向比率</translation>
     </message>
     <message>
         <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
         <source>Edit Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑颜色设置</translation>
     </message>
 </context>
 <context>
@@ -242,7 +244,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../preobjectbrowser.cpp" line="13"/>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对象浏览器</translation>
     </message>
 </context>
 <context>
@@ -250,22 +252,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorbcdataitem.cpp" line="41"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">新项目</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcdataitem.cpp" line="69"/>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑条件...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcdataitem.cpp" line="71"/>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;分配条件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcdataitem.cpp" line="74"/>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;发布条件</translation>
     </message>
 </context>
 <context>
@@ -273,37 +275,37 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="23"/>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边界条件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="34"/>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="40"/>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑条件...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="42"/>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="45"/>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;分配条件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="47"/>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;发布条件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="50"/>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;边界条件</translation>
     </message>
 </context>
 <context>
@@ -311,22 +313,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="43"/>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑条件...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="50"/>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">多边形</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="214"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="214"/>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">没有网格时，无法执行条件。</translation>
     </message>
 </context>
 <context>
@@ -334,22 +336,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="25"/>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边界条件设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="130"/>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="162"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="162"/>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无网格时无法执行条件</translation>
     </message>
 </context>
 <context>
@@ -357,7 +359,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagedataitem.cpp" line="35"/>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;地理参考</translation>
     </message>
 </context>
 <context>
@@ -365,27 +367,27 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="23"/>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="28"/>
         <source>&amp;Add Image...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加图片...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="29"/>
         <source>&amp;Delete All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除全部</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="148"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="148"/>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定删除所有背景图片吗？</translation>
     </message>
 </context>
 <context>
@@ -393,7 +395,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="149"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="149"/>
@@ -413,48 +415,48 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="194"/>
         <source>Select case</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择案例</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="194"/>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请从%1的哪种情况中选择导入计算条件。</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="204"/>
         <location filename="../preprocessordatamodel.cpp" line="217"/>
         <location filename="../preprocessordatamodel.cpp" line="230"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">成功</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="204"/>
         <location filename="../preprocessordatamodel.cpp" line="230"/>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">成功导入选定文件的计算条件</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="217"/>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算条件已成功从%1导入</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="222"/>
         <location filename="../preprocessordatamodel.cpp" line="235"/>
         <location filename="../preprocessordatamodel.cpp" line="253"/>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">失败</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="222"/>
         <location filename="../preprocessordatamodel.cpp" line="235"/>
         <source>Importing calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">加载计算条件时失败</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="242"/>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导出文件</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="153"/>
@@ -469,95 +471,95 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="246"/>
         <source>Exporting calculation condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出计算条件...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="248"/>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算条件已成功导出到%1</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="253"/>
         <source>Exporting calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算条件导出失败</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="286"/>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="292"/>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑组...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="294"/>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">全部删除...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="295"/>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出所有多边形...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="323"/>
         <location filename="../preprocessordatamodel.cpp" line="387"/>
         <location filename="../preprocessordatamodel.cpp" line="414"/>
         <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;河流勘测</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="332"/>
         <location filename="../preprocessordatamodel.cpp" line="390"/>
         <location filename="../preprocessordatamodel.cpp" line="417"/>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;点集数据</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="341"/>
         <location filename="../preprocessordatamodel.cpp" line="393"/>
         <location filename="../preprocessordatamodel.cpp" line="420"/>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;多边形</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="350"/>
         <location filename="../preprocessordatamodel.cpp" line="396"/>
         <location filename="../preprocessordatamodel.cpp" line="423"/>
         <source>Polygon&amp;Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;多边形组</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="438"/>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;颜色设置...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="441"/>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置设置标量栏...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="464"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="468"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="478"/>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格创建条件</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="485"/>
         <source>B&amp;oundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;边界条件设置</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="495"/>
@@ -566,122 +568,122 @@ Do you really want to import grid from this file?</source>
         <location filename="../preprocessordatamodel.cpp" line="988"/>
         <location filename="../preprocessordatamodel.cpp" line="1000"/>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="519"/>
         <source>&amp;Attributes Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;属性制图</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="599"/>
         <source>&amp;Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;测量数值</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="600"/>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;标量...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="601"/>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;箭头...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="603"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="737"/>
         <location filename="../preprocessordatamodel.cpp" line="765"/>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格创建条件...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="793"/>
         <location filename="../preprocessordatamodel.cpp" line="973"/>
         <source>&amp;Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="808"/>
         <location filename="../preprocessordatamodel.cpp" line="858"/>
         <location filename="../preprocessordatamodel.cpp" line="870"/>
         <source>Gr&amp;id Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格创建条件</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="820"/>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格创建条件</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1053"/>
         <location filename="../preprocessordatamodel.cpp" line="1083"/>
         <location filename="../preprocessordatamodel.cpp" line="1097"/>
         <source>(No data to import)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（无导入数据）</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1184"/>
         <source>(No data to export)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（无导出数据）</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1253"/>
         <source>(No algorithm is selected yet)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（无选定算法）</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1257"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1333"/>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新%1</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="138"/>
         <location filename="../preprocessordatamodel.cpp" line="1397"/>
         <location filename="../preprocessordatamodel.cpp" line="1423"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="138"/>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解算器正在运行中。您可以看到计算条件设置，但不能覆写。</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="359"/>
         <location filename="../preprocessordatamodel.cpp" line="399"/>
         <location filename="../preprocessordatamodel.cpp" line="426"/>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">折线</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1397"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1上次编辑后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1423"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">上次编辑边界条件设置&quot;%1&quot;后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1437"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="1437"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据制图，边界条件成功完成</translation>
     </message>
 </context>
 <context>
@@ -689,17 +691,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="57"/>
         <source>%1 Group Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1组设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="59"/>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑&amp;组...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="116"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加</translation>
     </message>
 </context>
 <context>
@@ -707,22 +709,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="41"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="86"/>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="86"/>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您不能将此名称用于此数据。 具有相同名称的地理数据已经存在。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="138"/>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导出文件</translation>
     </message>
 </context>
 <context>
@@ -730,47 +732,47 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="71"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="75"/>
         <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;从网络导入</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="79"/>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;全部删除...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="82"/>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出所有多边形...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="85"/>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;颜色设置...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="87"/>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置标量栏...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="122"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">所有可载入文件(%1)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
@@ -778,12 +780,12 @@ Do you really want to import grid from this file?</source>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法通过文件扩展名识别文件类型。 ：%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
@@ -791,82 +793,83 @@ Do you really want to import grid from this file?</source>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">从%1导入数据失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1不包含导入数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="235"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="382"/>
         <source>Importing data...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">正在载入数据...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">取消</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
         <source>Importing canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">取消载入</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"要导入地理数据，请首先指定坐标系。></translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定的文件包含无效数据，这些数据被忽略。 忽略的数据如下：
+        %1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
         <source>Importing data failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">载入数据失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无载入数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
         <source>Select data to export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导出数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
         <source>Please select which data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请选择要导出的数据。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="853"/>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1色彩设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
         <source>Export Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出多边形</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
@@ -876,7 +879,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定删除%1组内的全部项目？</translation>
     </message>
 </context>
 <context>
@@ -884,12 +887,12 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="152"/>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="236"/>
         <source>Reference Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">参考信息</translation>
     </message>
 </context>
 <context>
@@ -897,42 +900,42 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="102"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除网格创建条件和网格形状...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您确定要舍弃网格创建条件和网格吗？</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="404"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
         <source>Importing grid failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入网格失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确认</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您是否要立即将地理数据映射到网格属性？</translation>
     </message>
 </context>
 <context>
@@ -940,48 +943,48 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="48"/>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑数值...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="52"/>
         <source>Edit value by specifying variation...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">通过指定变量来编辑值...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="75"/>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">单元网格属性显示设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="194"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="194"/>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请只选择一个节点</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="200"/>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="205"/>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="206"/>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在选定的网格单元中输入%1的新值。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="228"/>
         <source>Apply variation to %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">应用变量到%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="229"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在选定的网格节点上输入%1的变化。</translation>
     </message>
 </context>
 <context>
@@ -989,17 +992,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对话框</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp" line="49"/>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp" line="50"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色</translation>
     </message>
 </context>
 <context>
@@ -1007,17 +1010,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="62"/>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">单元格属性</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="92"/>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示属性浏览器</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="116"/>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">单元格属性变更</translation>
     </message>
 </context>
 <context>
@@ -1025,22 +1028,22 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributecustommappingdialog.ui" line="14"/>
         <source>Attribute Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性映射</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecustommappingdialog.ui" line="39"/>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">全选</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecustommappingdialog.cpp" line="31"/>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecustommappingdialog.cpp" line="50"/>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边界条件设置</translation>
     </message>
 </context>
 <context>
@@ -1048,19 +1051,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="42"/>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">执行映射</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="45"/>
         <source>&amp;Execute...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;执行...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
