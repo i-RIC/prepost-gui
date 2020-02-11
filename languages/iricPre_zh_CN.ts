@@ -1069,28 +1069,28 @@ Do you really want to import grid from this file?</source>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
         <source>Mapping geographic data finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据映射成功完成。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
         <source>Mapping geographic data finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据映射完成。</translation>
     </message>
 </context>
 <context>
@@ -1098,17 +1098,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="14"/>
         <source>Grid Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格属性映射设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="20"/>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">执行映射</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="29"/>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">自动</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="44"/>
@@ -1122,43 +1122,44 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="75"/>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">手动</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="90"/>
         <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">仅当您手动选择执行菜单时才执行属性&quot;映射&quot;</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="105"/>
         <source>Geographic data mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">地理数据映射</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="111"/>
         <source>Mapping with TINs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TINs映射</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="136"/>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">从地理数据创建的TIN用于映射。 网格节点属性值计算为TIN节点值的加权平均值。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="148"/>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">模板映射</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="175"/>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">查找有关网格单元格形状的，靠近网格节点的地理数据点，并使用这些点上的值进行插值。
+该算法只能用于结构化网格。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="191"/>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;细节...</translation>
     </message>
 </context>
 <context>
@@ -1166,79 +1167,79 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="64"/>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑数值...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="68"/>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="71"/>
         <source>Edit value by specifying variation...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">通过指定变化来编辑值...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="113"/>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格节点属性显示设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请只选择一个节点</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="84"/>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开&amp;横截面窗口</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开&amp;纵向横截面窗口</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="291"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在选定的网格节点上输入%1的新值。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="314"/>
         <source>Apply variation to %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在%1应用变化</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="315"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在选定的网格节点上输入%1的变化。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">要打开“横截面”窗口，请仅选择一个网格节点。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">要打开纵向横截面窗口，请仅选择一个网格节点。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="451"/>
@@ -1248,22 +1249,22 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="453"/>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出为地形数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="459"/>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开文件时出现错误</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="479"/>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格条件已成功导出到%1。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="483"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
 </context>
 <context>
@@ -1271,17 +1272,17 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="63"/>
         <source>Node attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">节点属性</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="95"/>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示属性浏览器</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="109"/>
         <source>Node Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">节点属性变更</translation>
     </message>
 </context>
 <context>
@@ -1289,42 +1290,42 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="14"/>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">模板映射设置</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="20"/>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">搜索区域</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="26"/>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">自动</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="33"/>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">手动</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="60"/>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流向长度[m]：</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="86"/>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"横流宽度[m]:></translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="134"/>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">模板扩展数：</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="171"/>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">加权指数：</translation>
     </message>
 </context>
 <context>
@@ -1332,17 +1333,17 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui" line="14"/>
         <source>Select Grid Creating Algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择网格生成算法</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui" line="39"/>
         <source>Algorithm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">算法：</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui" line="53"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">描述：</translation>
     </message>
 </context>
 <context>
@@ -1350,32 +1351,32 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="45"/>
         <source>&amp;Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;创建网格</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="49"/>
         <source>&amp;Select Algorithm to Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;选择算法生成网格...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="52"/>
         <source>Reset to &amp;Default...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">恢复为&amp;默认</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="54"/>
         <source>&amp;Delete Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除网格生成条件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="58"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"><&amp;导入.../translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="61"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="180"/>
@@ -1384,37 +1385,37 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="440"/>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="472"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="181"/>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此操作将丢弃已经存在的网格。 你确定吗？</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="210"/>
         <source>Are you sure you want to discard the grid creating condition?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您确定要放弃网格创建条件吗？</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="228"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确认</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="229"/>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">您确定要将网格创建条件重置为默认状态吗？</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="378"/>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">当您切换算法以创建网格时，该网格和您创建的网格创建条件将被丢弃。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="431"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="431"/>
@@ -1425,17 +1426,17 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="440"/>
         <source>The grid creating condition in this file is not compatible with the solver</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此文件中的网格创建条件与求解器不兼容</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="472"/>
         <source>No data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无导出文件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="476"/>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导出文件</translation>
     </message>
 </context>
 <context>
@@ -1443,48 +1444,48 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主窗口</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui" line="37"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">工具栏</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="75"/>
         <source>Direction: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">方向：</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="86"/>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">黑线：</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="96"/>
         <source>Red line: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">红线：</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="106"/>
         <source>Blue line: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">蓝线：</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="139"/>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="140"/>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(无数据)</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="189"/>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格横截面 (%1): J = %2</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp" line="192"/>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格横截面 (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -1492,27 +1493,27 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="119"/>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑...</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="429"/>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左河岸</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="433"/>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右河岸</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="963"/>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑%1</translation>
     </message>
     <message>
         <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="964"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在选定的网格节点上输入％1的新值。</translation>
     </message>
 </context>
 <context>
@@ -1520,116 +1521,116 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1410"/>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="317"/>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="340"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="253"/>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在此网格中发现以下问题。 您真的要导出网格吗？</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="261"/>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示细节</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="262"/>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="359"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="284"/>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导出文件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="295"/>
         <source>Exporting Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出网格</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="336"/>
         <source>Grid successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格成功导出到%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="340"/>
         <source>Exporting grid to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格导出到%1失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="359"/>
         <source>Are you sure you want to discard the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">确定清除网格吗</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1003"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1007"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1011"/>
         <source>Grid &amp;Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格形状...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1014"/>
         <source>&amp;Select Polygon Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;选择多边形区域</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1016"/>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1020"/>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1021"/>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1022"/>
         <source>&amp;Node Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;节点属性...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1024"/>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1025"/>
         <source>&amp;Cell Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;单元格属性...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1027"/>
         <source>Set &amp;Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;设置标量栏</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1031"/>
         <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;打开鸟瞰窗口</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1035"/>
         <source>Attributes &amp;Generating</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;属性生成</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1413"/>
         <source> [No Data]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[无数据]</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1423"/>
@@ -1644,7 +1645,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1454"/>
         <source>Generate %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">生成%1</translation>
     </message>
 </context>
 <context>
@@ -1652,27 +1653,27 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="56"/>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格形状</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="67"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑坐标...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="70"/>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开&amp;横截面窗口</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="74"/>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开&amp;纵向截面窗口</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="91"/>
         <source>Move Grid Point(s)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动网格点</translation>
     </message>
 </context>
 <context>
@@ -1680,12 +1681,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/gridshape/preprocessorgridshapedeltadialog.ui" line="14"/>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑网格坐标</translation>
     </message>
     <message>
         <location filename="../datamodel/gridshape/preprocessorgridshapedeltadialog.ui" line="20"/>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请输入所选网格节点的增量坐标。</translation>
     </message>
     <message>
         <location filename="../datamodel/gridshape/preprocessorgridshapedeltadialog.ui" line="44"/>
@@ -1703,12 +1704,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/gridshape/preprocessorgridshapenewpositiondialog.ui" line="14"/>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑网格坐标</translation>
     </message>
     <message>
         <location filename="../datamodel/gridshape/preprocessorgridshapenewpositiondialog.ui" line="20"/>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">请输入所选网格节点的新坐标。</translation>
     </message>
     <message>
         <location filename="../datamodel/gridshape/preprocessorgridshapenewpositiondialog.ui" line="44"/>
@@ -1746,17 +1747,17 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="59"/>
         <source>Add New Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加新网格</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="149"/>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">区域</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="154"/>
         <source>Region%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">区域%1</translation>
     </message>
 </context>
 <context>
@@ -1764,55 +1765,56 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="105"/>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">所有可导入的文件(%1)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="109"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="121"/>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="121"/>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法通过文件扩展名识别文件类型。 ：%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="135"/>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="139"/>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导入失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="135"/>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数据导入到%1时失败</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="139"/>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1无可导入数据</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定的文件包含无效数据，这些数据被忽略。 忽略的数据如下：
+%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>
         <source>Data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数据成功从%1导入</translation>
     </message>
 </context>
 <context>
@@ -1820,42 +1822,42 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="14"/>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色图例设置</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="20"/>
         <source>Legend box</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图例框</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="26"/>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">字体设置：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="35"/>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="65"/>
         <source>Size (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">大小（比例）</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="71"/>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">宽：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="94"/>
         <source>Hight :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="120"/>
         <source>Position (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">位置（比例）</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorlegendboxeditdialog.ui" line="126"/>
@@ -1873,12 +1875,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="32"/>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量值</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="43"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
 </context>
 <context>
@@ -1886,12 +1888,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessornormal15dgridwithcrosssectiondataitem.cpp" line="43"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessornormal15dgridwithcrosssectiondataitem.cpp" line="54"/>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;显示设置...</translation>
     </message>
 </context>
 <context>
@@ -1899,7 +1901,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.cpp" line="26"/>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示&amp;横截面</translation>
     </message>
 </context>
 <context>
@@ -1907,12 +1909,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorrootdataitem.cpp" line="86"/>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;设置...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorrootdataitem.cpp" line="219"/>
         <source>Change Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">改变属性映射设置</translation>
     </message>
 </context>
 <context>
@@ -1920,7 +1922,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../misc/preprocessorscalarbareditdialog.ui" line="14"/>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色图例设置</translation>
     </message>
 </context>
 <context>
@@ -1928,22 +1930,22 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../misc/preprocessorscalarbarlegendboxsettingdialog.ui" line="14"/>
         <source>Scalarbar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">标量栏设置</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorscalarbarlegendboxsettingdialog.ui" line="20"/>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">可视</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorscalarbarlegendboxsettingdialog.ui" line="30"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">值</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorscalarbarlegendboxsettingdialog.ui" line="58"/>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑...</translation>
     </message>
 </context>
 <context>
@@ -1951,17 +1953,17 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorstructured2dgriddataitem.cpp" line="25"/>
         <source>Select I-J &amp;Region...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择 &amp;I-J区域</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorstructured2dgriddataitem.cpp" line="37"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorstructured2dgriddataitem.cpp" line="48"/>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;显示设置</translation>
     </message>
 </context>
 <context>
@@ -1969,17 +1971,17 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorunstructured2dgriddataitem.cpp" line="32"/>
         <source>&amp;Select vertices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;选择顶点</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorunstructured2dgriddataitem.cpp" line="35"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorunstructured2dgriddataitem.cpp" line="46"/>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;显示设置...</translation>
     </message>
 </context>
 <context>
@@ -1987,27 +1989,27 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../preprocessorwindow.cpp" line="43"/>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">预处理窗口</translation>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="179"/>
         <source>Grid is not created or imported yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格未被生成或导入</translation>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="185"/>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">检查网格%1...</translation>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="365"/>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;网格生成条件...</translation>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="382"/>
         <source>Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格...</translation>
     </message>
 </context>
 <context>
@@ -2015,22 +2017,22 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../preprocessorwindowactionmanager.cpp" line="27"/>
         <source>&amp;Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;计算条件</translation>
     </message>
     <message>
         <location filename="../preprocessorwindowactionmanager.cpp" line="29"/>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;设置...</translation>
     </message>
     <message>
         <location filename="../preprocessorwindowactionmanager.cpp" line="34"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../preprocessorwindowactionmanager.cpp" line="38"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
 </context>
 <context>
@@ -2038,104 +2040,104 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="20"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="38"/>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">可见</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="45"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">标题</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="51"/>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">标题：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="61"/>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="189"/>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">字体设置：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="70"/>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="198"/>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑...</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="98"/>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">标签显示</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="104"/>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">标签个数：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="138"/>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">格式：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="148"/>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">方向：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="157"/>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">纵向</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="167"/>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横向</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="231"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">大小</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="237"/>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定彩条大小作为窗口大小的比率。</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="249"/>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">宽：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="256"/>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果指定1，则彩条宽度与窗口宽度相同。</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="285"/>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高：</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="292"/>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果指定1，则彩条宽度与窗口宽度相同。</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="326"/>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">位置</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="332"/>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定彩条左下角的位置作为窗口大小的比率</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="350"/>
@@ -2145,7 +2147,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="357"/>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果指定0，则彩条的左边缘位于窗口的左边缘。</translation>
     </message>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="392"/>
@@ -2155,7 +2157,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../misc/preprocessorwindowscalarbarsettingwidget.ui" line="399"/>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">如果指定0，则彩条底部位于窗口底部。</translation>
     </message>
 </context>
 <context>
@@ -2163,7 +2165,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../gridimporter/projectgridimporter.cpp" line="31"/>
         <source>Project file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目文件</translation>
     </message>
     <message>
         <location filename="../gridimporter/projectgridimporter.cpp" line="37"/>
@@ -2177,12 +2179,12 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="227"/>
         <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="365"/>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对象浏览器项目变更</translation>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="306"/>
         <source>Close PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">关闭预处理窗口</translation>
     </message>
     <message>
         <location filename="../gridexporter/cgnsgridexporter.cpp" line="29"/>
@@ -2195,22 +2197,22 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对话框</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui" line="24"/>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横向变化 (H):</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui" line="49"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文字标签</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui" line="58"/>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">纵向变化：</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.cpp" line="47"/>
@@ -2231,7 +2233,7 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.cpp" line="70"/>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.cpp" line="106"/>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动高程点</translation>
     </message>
 </context>
 <context>
@@ -2239,43 +2241,43 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主页面</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui" line="31"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">工具栏</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="49"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="58"/>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">黑线：</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="70"/>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">位置</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="71"/>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高程</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="131"/>
         <source>%1 : CrossSection %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 : 横截面 %2</translation>
     </message>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="271"/>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp" line="308"/>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑高程点</translation>
     </message>
 </context>
 <context>
@@ -2283,7 +2285,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.cpp" line="36"/>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;移动</translation>
     </message>
 </context>
 </TS>
