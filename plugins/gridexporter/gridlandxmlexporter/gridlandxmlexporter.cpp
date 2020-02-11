@@ -90,7 +90,7 @@ bool GridLandXmlExporter::doExport(Grid* grid, const QString& filename, const QS
 		auto zstr = QString::number(val, 'f', 3);
 		writer.writeStartElement("P");
 		writer.writeAttribute("id", QString::number(i + 1));
-		writer.writeCharacters(QString("%1 %2 %3").arg(xstr).arg(ystr).arg(zstr));
+		writer.writeCharacters(QString("%1 %2 %3").arg(ystr).arg(xstr).arg(zstr));
 		writer.writeEndElement(); // P
 	}
 	writer.writeEndElement(); // Pnts
