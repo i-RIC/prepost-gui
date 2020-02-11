@@ -454,7 +454,7 @@
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="374"/>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">加权指数：</translation>
     </message>
 </context>
 <context>
@@ -462,7 +462,7 @@
     <message>
         <location filename="../data/base/model.cpp" line="18"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除</translation>
     </message>
 </context>
 <context>
@@ -470,7 +470,7 @@
     <message>
         <location filename="../dialogs/mousehelpdialog.ui" line="14"/>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">鼠标提示</translation>
     </message>
 </context>
 <context>
@@ -478,7 +478,7 @@
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="47"/>
@@ -506,7 +506,7 @@
     <message>
         <location filename="../window/preprocessor/objectbrowser/objectbrowser.cpp" line="8"/>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对象浏览器</translation>
     </message>
 </context>
 <context>
@@ -524,22 +524,22 @@
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="32"/>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">筛选设置</translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="32"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">筛选</translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="37"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="37"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法打开%1</translation>
     </message>
 </context>
 <context>
@@ -547,12 +547,12 @@
     <message>
         <location filename="../io/points/pointsimporter.cpp" line="22"/>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">所有可导出文件(%1)</translation>
     </message>
     <message>
         <location filename="../io/points/pointsimporter.cpp" line="23"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
 </context>
 <context>
@@ -560,12 +560,12 @@
     <message>
         <location filename="../data/points/pointspreprocessorcontroller.cpp" line="15"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入</translation>
     </message>
     <message>
         <location filename="../data/points/pointspreprocessorcontroller.cpp" line="16"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除</translation>
     </message>
 </context>
 <context>
@@ -578,12 +578,12 @@
     <message>
         <location filename="../io/polyline/polylinecsvexporter.cpp" line="30"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../io/polyline/polylinecsvexporter.cpp" line="30"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法打开%1</translation>
     </message>
 </context>
 <context>
@@ -596,12 +596,12 @@
     <message>
         <location filename="../io/polyline/polylinecsvimporter.cpp" line="30"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../io/polyline/polylinecsvimporter.cpp" line="30"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法打开%1</translation>
     </message>
 </context>
 <context>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../io/polyline/polylineexporter.cpp" line="17"/>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入文件名导出</translation>
     </message>
 </context>
 <context>
@@ -617,7 +617,7 @@
     <message>
         <location filename="../io/polyline/polylineimporter.cpp" line="17"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件</translation>
     </message>
 </context>
 <context>
@@ -628,27 +628,27 @@
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在对象浏览器选择要删除的横截面</translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="135"/>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在对象浏览器选择要编辑的横截面坐标</translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基线应足够长以涵盖HWM的范围</translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Not all Cross Sections cross Base line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">不是所有横截面与底线交叉</translation>
     </message>
 </context>
 <context>
@@ -656,7 +656,7 @@
     <message>
         <location filename="../window/preprocessor/preprocessorwindow.cpp" line="37"/>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主窗口</translation>
     </message>
 </context>
 <context>
@@ -664,12 +664,12 @@
     <message>
         <location filename="../data/project/project.cpp" line="466"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../data/project/project.cpp" line="466"/>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">计算横截面%1的初始WSE失败</translation>
     </message>
 </context>
 <context>
@@ -678,7 +678,7 @@
         <location filename="../data/referencemark/referencemark.cpp" line="16"/>
         <location filename="../data/referencemark/referencemark.cpp" line="21"/>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">参考标注</translation>
     </message>
 </context>
 <context>
@@ -687,7 +687,7 @@
         <location filename="../data/rightbankhwm/rightbankhwm.cpp" line="16"/>
         <location filename="../data/rightbankhwm/rightbankhwm.cpp" line="21"/>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右河岸HWM</translation>
     </message>
 </context>
 <context>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../io/rivexporter.cpp" line="22"/>
         <source>Input File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入要导出的文件名</translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="22"/>
@@ -706,18 +706,18 @@
         <location filename="../io/rivexporter.cpp" line="31"/>
         <location filename="../io/rivexporter.cpp" line="85"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="31"/>
         <location filename="../io/rivexporter.cpp" line="85"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法打开%1</translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">要导出的CSV文件名称</translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="77"/>
@@ -727,12 +727,12 @@
     <message>
         <location filename="../io/rivexporter.cpp" line="102"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="102"/>
         <source>%1 is updated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1已更新</translation>
     </message>
 </context>
 <context>
@@ -745,69 +745,69 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="32"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;文件</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="36"/>
         <location filename="../main/rivmakermainwindow.ui" line="86"/>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="44"/>
         <location filename="../main/rivmakermainwindow.ui" line="90"/>
         <source>&amp;Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;地理数据</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="56"/>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="68"/>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;近期项目</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="102"/>
         <source>&amp;Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;底线</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="116"/>
         <source>&amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;横截面</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="131"/>
         <source>&amp;River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;河流勘测数据</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="137"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;视图</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="146"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;帮助</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="154"/>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;选项</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="171"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">工具栏</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="208"/>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;新项目...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="211"/>
@@ -817,17 +817,17 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="216"/>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;另存为</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="225"/>
         <source>Property...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="230"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;退出</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="233"/>
@@ -837,23 +837,23 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="238"/>
         <source>Dummy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">虚拟</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="243"/>
         <source>&amp;Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;高程</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="248"/>
         <source>&amp;Water Surface Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;水面高程</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="257"/>
         <location filename="../main/rivmakermainwindow.ui" line="266"/>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;背景图片...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="271"/>
@@ -863,12 +863,12 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="276"/>
         <source>&amp;Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;高程</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="281"/>
         <source>&amp;Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;水面高程</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="286"/>
@@ -879,106 +879,106 @@
         <location filename="../main/rivmakermainwindow.ui" line="291"/>
         <location filename="../main/rivmakermainwindow.ui" line="383"/>
         <source>&amp;Create...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;创建...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="300"/>
         <location filename="../main/rivmakermainwindow.ui" line="401"/>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="309"/>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加顶点</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="318"/>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;移除顶点</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="323"/>
         <location filename="../main/rivmakermainwindow.ui" line="351"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑坐标...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="332"/>
         <location filename="../main/rivmakermainwindow.ui" line="369"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="341"/>
         <location filename="../main/rivmakermainwindow.ui" line="378"/>
         <location filename="../main/rivmakermainwindow.ui" line="392"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="346"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="360"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="410"/>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;鼠标提示...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="415"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;关于...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="420"/>
         <location filename="../main/rivmakermainwindow.ui" line="430"/>
         <location filename="../main/rivmakermainwindow.ui" line="445"/>
         <source>&amp;Base Line...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;底线...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="425"/>
         <location filename="../main/rivmakermainwindow.ui" line="435"/>
         <location filename="../main/rivmakermainwindow.ui" line="450"/>
         <source>&amp;Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;横截面...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="440"/>
         <source>&amp;River Survey Data...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;河流勘测数据...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="461"/>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;主工具栏</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="578"/>
         <source>&amp;Windows Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;窗口工具栏</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="583"/>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;映射设置...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="588"/>
         <source>&amp;Graphics Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;图表设置...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="597"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;打开...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="600"/>
@@ -988,7 +988,7 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="612"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="615"/>
@@ -998,70 +998,70 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="623"/>
         <source>dummy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">虚设</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="472"/>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;状态栏</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="481"/>
         <source>&amp;Open &amp;New Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;打开&amp;新横截面窗口</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="490"/>
         <source>Fit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">适配</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="499"/>
         <location filename="../main/rivmakermainwindow.ui" line="502"/>
         <source>Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重置旋转</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="511"/>
         <source>Rotate 90 degrees</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">旋转90度</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="520"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">放大</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="529"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">缩小</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="538"/>
         <location filename="../main/rivmakermainwindow.ui" line="541"/>
         <source>Focus Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">聚焦主窗口</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="550"/>
         <location filename="../main/rivmakermainwindow.ui" line="553"/>
         <source>Focus Vertical Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">聚焦纵向横截面窗口</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="562"/>
         <source>Open Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开横截面窗口</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="567"/>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">反转&amp;方向</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="108"/>
         <source>Open project file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开项目文件</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="108"/>
@@ -1073,7 +1073,7 @@
         <location filename="../main/rivmakermainwindow.cpp" line="126"/>
         <location filename="../main/rivmakermainwindow.cpp" line="144"/>
         <source>Project saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目已存到%1</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="130"/>
@@ -1082,30 +1082,30 @@
         <location filename="../main/rivmakermainwindow.cpp" line="216"/>
         <location filename="../main/rivmakermainwindow.cpp" line="477"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="130"/>
         <location filename="../main/rivmakermainwindow.cpp" line="148"/>
         <source>Saving project file to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目存到%1失败</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="138"/>
         <source>Save project file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存项目文件</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="207"/>
         <location filename="../main/rivmakermainwindow.cpp" line="216"/>
         <source>No data to export exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无要导出的数据</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="279"/>
         <location filename="../main/rivmakermainwindow.cpp" line="507"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="461"/>
@@ -1115,22 +1115,22 @@
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="477"/>
         <source>Opening project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开项目文件失败</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="507"/>
         <source>The project data is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">项目数据已被修改 是否保存？</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="41"/>
         <source>Window List Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">窗口清单工具栏</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="279"/>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未定义横截面时，无法打开“横截面窗口”。</translation>
     </message>
 </context>
 <context>
@@ -1138,7 +1138,7 @@
     <message>
         <location filename="../io/sacguiimporter.cpp" line="43"/>
         <source>Select SAC GUI input file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择 SAC GUI导入文件</translation>
     </message>
     <message>
         <location filename="../io/sacguiimporter.cpp" line="43"/>
@@ -1152,7 +1152,7 @@
         <location filename="../data/streamgage/streamgage.cpp" line="16"/>
         <location filename="../data/streamgage/streamgage.cpp" line="21"/>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流规</translation>
     </message>
 </context>
 <context>
@@ -1160,17 +1160,17 @@
     <message>
         <location filename="../widgets/valuewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../widgets/valuewidget.ui" line="47"/>
         <source>Value: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数值：</translation>
     </message>
     <message>
         <location filename="../widgets/valuewidget.cpp" line="23"/>
         <source>Value: ------</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数值： ------</translation>
     </message>
 </context>
 <context>
@@ -1178,68 +1178,68 @@
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="14"/>
         <source>Elevation View Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高程视图窗口</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="26"/>
         <source>&amp;Reset zoom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;重置缩放</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="59"/>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">任意HWM</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="73"/>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基准</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="87"/>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">参考标记</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="101"/>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量或转折点</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="115"/>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左河岸HWM</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="129"/>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右河岸HWM</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="143"/>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流规</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="162"/>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入到</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="210"/>
         <source>Distance Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">上游距离</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="213"/>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高程</translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名称</translation>
     </message>
 </context>
 <context>
@@ -1247,7 +1247,7 @@
     <message>
         <location filename="../data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp" line="104"/>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">水高程点</translation>
     </message>
 </context>
 </TS>
