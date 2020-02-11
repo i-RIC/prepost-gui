@@ -6,7 +6,7 @@
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="14"/>
         <source>About rivmaker</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">关于rivmaker</translation>
     </message>
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="41"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="48"/>
         <source>Release Date: 2017/3/31</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">发布日期： 2017/3/31</translation>
     </message>
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="55"/>
         <source>Copyright: USGS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版权： USGS</translation>
     </message>
 </context>
 <context>
@@ -30,7 +30,7 @@
         <location filename="../data/arbitraryhwm/arbitraryhwm.cpp" line="16"/>
         <location filename="../data/arbitraryhwm/arbitraryhwm.cpp" line="21"/>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">任意HWM</translation>
     </message>
 </context>
 <context>
@@ -38,7 +38,7 @@
     <message>
         <location filename="../data/baseline/baseline.cpp" line="140"/>
         <source>Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">底线</translation>
     </message>
 </context>
 <context>
@@ -46,55 +46,55 @@
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;添加顶点</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;删除顶点</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑坐标...</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="32"/>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;相反方向</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="33"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="253"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="273"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="286"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="253"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="286"/>
         <source>Base line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未定义底线</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="273"/>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">只有两点时无法删除点</translation>
     </message>
 </context>
 <context>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../data/baseline/baselinepreprocessorviewlabelhelper.cpp" line="39"/>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">下游</translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorviewlabelhelper.cpp" line="44"/>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">上游</translation>
     </message>
 </context>
 <context>
@@ -116,7 +116,7 @@
         <location filename="../data/benchmark/benchmark.cpp" line="16"/>
         <location filename="../data/benchmark/benchmark.cpp" line="21"/>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基准</translation>
     </message>
 </context>
 <context>
@@ -124,12 +124,12 @@
     <message>
         <location filename="../dialogs/private/coordinateeditwidget.cpp" line="48"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../dialogs/private/coordinateeditwidget.cpp" line="48"/>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">不是真实值</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../dialogs/coordinateseditdialog.ui" line="14"/>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑坐标</translation>
     </message>
     <message>
         <location filename="../dialogs/coordinateseditdialog.cpp" line="104"/>
@@ -155,23 +155,23 @@
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="20"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;编辑坐标...</translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="117"/>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="126"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="117"/>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无效的横截面名称。 名称应该为 &quot;X1&quot;, &quot;X2&quot;, ...</translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="126"/>
         <source>Cross Section is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面未定义</translation>
     </message>
 </context>
 <context>
@@ -193,42 +193,42 @@
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="213"/>
         <source>Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面窗口</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="42"/>
         <source>Cross Section:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面：</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="52"/>
         <source>&amp;Reset Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;调整缩放</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="98"/>
         <source>Distance from Left bank</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">到左河岸距离</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="101"/>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高程</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="132"/>
         <source>Left bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左河岸HWM</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="142"/>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">右河岸HWM</translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="216"/>
         <source>Cross Section Window : %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面窗口：%1</translation>
     </message>
 </context>
 <context>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../data/crosssections/crosssections.cpp" line="41"/>
         <source>Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横截面</translation>
     </message>
 </context>
 <context>
@@ -249,12 +249,12 @@
     <message>
         <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="31"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="31"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1无法被打开</translation>
     </message>
 </context>
 <context>
@@ -267,12 +267,12 @@
     <message>
         <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="31"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="31"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1无法被打开</translation>
     </message>
 </context>
 <context>
@@ -280,7 +280,7 @@
     <message>
         <location filename="../io/crosssections/crosssectionsexporter.cpp" line="17"/>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">输入要导出的文件名</translation>
     </message>
 </context>
 <context>
@@ -288,7 +288,7 @@
     <message>
         <location filename="../io/crosssections/crosssectionsimporter.cpp" line="16"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择导入文件名</translation>
     </message>
 </context>
 <context>
@@ -296,27 +296,27 @@
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="18"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加</translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="19"/>
         <source>&amp;Import..</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导入...</translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="20"/>
         <source>&amp;Export..</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;导出...</translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Cross Section lines not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未定义横截面线</translation>
     </message>
 </context>
 <context>
@@ -325,7 +325,7 @@
         <location filename="../data/elevationpoints/elevationpoints.cpp" line="128"/>
         <location filename="../data/elevationpoints/elevationpoints.cpp" line="133"/>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高程点</translation>
     </message>
 </context>
 <context>
@@ -333,36 +333,36 @@
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="14"/>
         <source>Graphics Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">图表设置</translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="20"/>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">高程点</translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="26"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="128"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">大小</translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="32"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="134"/>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">自动</translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="42"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="144"/>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">手动</translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="100"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="202"/>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">透明度：</translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="110"/>
@@ -373,7 +373,7 @@
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="122"/>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">水位高程点</translation>
     </message>
 </context>
 <context>
@@ -382,7 +382,7 @@
         <location filename="../data/hub/hub.cpp" line="16"/>
         <location filename="../data/hub/hub.cpp" line="21"/>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量或转折点</translation>
     </message>
 </context>
 <context>
@@ -391,7 +391,7 @@
         <location filename="../data/leftbankhwm/leftbankhwm.cpp" line="16"/>
         <location filename="../data/leftbankhwm/leftbankhwm.cpp" line="21"/>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">左河岸HWM</translation>
     </message>
 </context>
 <context>
@@ -399,57 +399,57 @@
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="14"/>
         <source>Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">映射设置</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="24"/>
         <source>All points are mapped to the nearest CrossSection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">所有点都映射到最近的横截面</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="52"/>
         <source>Appropriate for data in which points are all near CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">适用于所有点都在横截面附近的数据</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="111"/>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TIN用于横截面的插值</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="136"/>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">适用于在整个区域中点密度几乎相同的数据</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="195"/>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">模板映射</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="220"/>
         <source>Appropriate for data for which we can not generate good TIN</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">适用于我们无法生成良好TIN的数据</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="282"/>
         <source>Cross section resolution[m]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">截面分辨率[m]</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="305"/>
         <source>Stream-wise length[m]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">流向长度 [m]</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="328"/>
         <source>Cross-stream width[m]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">横流宽度[m]</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="351"/>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">模板扩展数：</translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="374"/>
