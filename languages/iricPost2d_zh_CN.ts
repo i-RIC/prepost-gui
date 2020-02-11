@@ -6,22 +6,22 @@
     <message>
         <location filename="../post2dgridregionselectdialog.ui" line="14"/>
         <source>Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">区域设置</translation>
     </message>
     <message>
         <location filename="../post2dgridregionselectdialog.ui" line="20"/>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">全部</translation>
     </message>
     <message>
         <location filename="../post2dgridregionselectdialog.ui" line="27"/>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">活跃区域</translation>
     </message>
     <message>
         <location filename="../post2dgridregionselectdialog.ui" line="34"/>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">自定义区域</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../post2dobjectbrowser.cpp" line="15"/>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对象浏览器</translation>
     </message>
 </context>
 <context>
@@ -37,18 +37,18 @@
     <message>
         <location filename="../post2dwindow.cpp" line="46"/>
         <source>Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">预处理(2D): %1</translation>
     </message>
     <message>
         <location filename="../post2dwindow.cpp" line="222"/>
         <location filename="../post2dwindow.cpp" line="246"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">错误</translation>
     </message>
     <message>
         <location filename="../post2dwindow.cpp" line="222"/>
         <source>No contours have been defined</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无定义轮廓</translation>
     </message>
     <message>
         <location filename="../post2dwindow.cpp" line="228"/>
