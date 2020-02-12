@@ -1583,12 +1583,12 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1019"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法读取此项目文件，因为它是由较旧的iRIC（版本%1）创建的。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1021"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法读取此项目文件，因为它是由较新的iRIC（版本%1）创建的。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1043"/>
@@ -1598,32 +1598,32 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1044"/>
         <source>Open Measured Data File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">测量数据文件</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1103"/>
         <source>Error occured while loading %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">加载%1时错误</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1112"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该文件用于求解器%1%2。 它与您使用的求解器不兼容，因此导入此文件可能会失败。 您真的要导入该文件吗？</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1123"/>
         <source>There is no visualization/graph windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">没有可视化/图形窗口。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1130"/>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法打开文件%1。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1244"/>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未选择坐标系</translation>
     </message>
 </context>
 <context>
@@ -1632,12 +1632,12 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="183"/>
         <location filename="../project/projectmainfile.cpp" line="188"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="187"/>
         <source> : no such file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无此文件</translation>
     </message>
 </context>
 <context>
@@ -1645,22 +1645,22 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/projecttimesettingdialog.ui" line="14"/>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">t = 0 时间设定</translation>
     </message>
     <message>
         <location filename="../project/projecttimesettingdialog.ui" line="22"/>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">t = 0 时间</translation>
     </message>
     <message>
         <location filename="../project/projecttimesettingdialog.ui" line="36"/>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未指明</translation>
     </message>
     <message>
         <location filename="../project/projecttimesettingdialog.ui" line="61"/>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">时间显示格式</translation>
     </message>
 </context>
 <context>
@@ -1668,12 +1668,12 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/projectworkspace.cpp" line="56"/>
         <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Workspace &quot;%1&quot;具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
     </message>
     <message>
         <location filename="../project/projectworkspace.cpp" line="58"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">信息</translation>
     </message>
 </context>
 <context>
@@ -1681,7 +1681,7 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../base/propertybrowser.cpp" line="10"/>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性浏览器</translation>
     </message>
 </context>
 <context>
@@ -1689,12 +1689,12 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">形式</translation>
     </message>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="28"/>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指数</translation>
     </message>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="36"/>
@@ -1718,12 +1718,12 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="80"/>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指数：</translation>
     </message>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="105"/>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">坐标</translation>
     </message>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="113"/>
@@ -1738,17 +1738,17 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="167"/>
         <source>Attributes:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性：</translation>
     </message>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="175"/>
         <source>Attribute Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">属性名称：</translation>
     </message>
     <message>
         <location filename="../datamodel/propertybrowserview.ui" line="180"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">数值</translation>
     </message>
 </context>
 <context>
@@ -1757,48 +1757,48 @@ Do you really want to import this file?</source>
         <location filename="../datamodel/graphicswindowdrawcommands.cpp" line="5"/>
         <location filename="../datamodel/graphicswindowdrawcommands.cpp" line="16"/>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">绘制</translation>
     </message>
     <message>
         <location filename="../datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp" line="8"/>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">上移</translation>
     </message>
     <message>
         <location filename="../datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp" line="8"/>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">下移</translation>
     </message>
     <message>
         <location filename="../datamodel/vtkgraphicsview.cpp" line="396"/>
         <source>Arbitrary Move</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">任意移动</translation>
     </message>
     <message>
         <location filename="../project/private/backgroundimageinfo_setactorpropertycommand.cpp" line="4"/>
         <source>Reallocate Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重定位背景图片</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="18"/>
         <location filename="../solverdef/solverdefinitiongridtype.cpp" line="74"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">默认</translation>
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="67"/>
         <source>(Undefined)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（未定义）</translation>
     </message>
     <message>
         <location filename="../bgcolor/backgroundcoloreditinterface.cpp" line="15"/>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景颜色</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="1201"/>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置抵消</translation>
     </message>
 </context>
 <context>
@@ -1806,7 +1806,7 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../scalarstocolors/scalarstocolorseditdialog.ui" line="14"/>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色设置</translation>
     </message>
 </context>
 <context>
@@ -1814,7 +1814,7 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../solverdef/solverdefinition.cpp" line="72"/>
         <source>%1 Grids</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 网格</translation>
     </message>
 </context>
 <context>
@@ -1822,27 +1822,27 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="250"/>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">一条边线与该网格中另一个单元的边线相交。</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="256"/>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">多个单元格中网格单元的长宽比超过极限值%1。</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="263"/>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">网格单元边缘长度的变化在一个以上的单元中超过了极限值（I方向：%1，J方向：%2）</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="269"/>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在多个单元中，网格单元边缘的角度下降到极限值%1以下。</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="278"/>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">*边缘相交的单元格</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="299"/>
@@ -1856,44 +1856,44 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="310"/>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">不存在</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="325"/>
         <location filename="../pre/grid/structured2dgrid.cpp" line="335"/>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I,J长宽比</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="327"/>
         <source>Edge length too small</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">边缘长度太小</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="354"/>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">*单元顶点角小于%1的单元</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="372"/>
         <source>I, J, Angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I,J角度</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="390"/>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">*像元长度沿i方向变化超过%1的像元</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="406"/>
         <location filename="../pre/grid/structured2dgrid.cpp" line="435"/>
         <source>I, J, Variation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I,J,变化</translation>
     </message>
     <message>
         <location filename="../pre/grid/structured2dgrid.cpp" line="421"/>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">*像元长度沿j方向变化超过%1的像元</translation>
     </message>
 </context>
 <context>
@@ -1901,23 +1901,24 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="173"/>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片(网络)</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">要从互联网获取背景图像，请从以下菜单中指定项目的协调系统。
+  文件-&gt;属性</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">背景图片变更</translation>
     </message>
 </context>
 <context>
@@ -1925,27 +1926,27 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="38"/>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">谷歌地图（道路）</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="39"/>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">谷歌地图（卫星）</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="40"/>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">谷歌地图（混合）</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">谷歌地图（地形）</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">打开街道地图</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="51"/>
@@ -1978,7 +1979,7 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../misc/iricmetadata.cpp" line="64"/>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未指定版本号的内部版本号。</translation>
     </message>
 </context>
 </TS>
