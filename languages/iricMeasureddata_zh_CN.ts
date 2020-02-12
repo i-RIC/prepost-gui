@@ -39,7 +39,7 @@
     <message>
         <location filename="../measureddatapointgroupdataitem.cpp" line="379"/>
         <source>Scalar</source>
-        <translation type="unfinished">矢量</translation>
+        <translation type="unfinished">标量</translation>
     </message>
     <message>
         <location filename="../measureddatapointgroupdataitem.cpp" line="480"/>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../measureddatapointsettingdialog.ui" line="14"/>
         <source>Scalar Setting</source>
-        <translation type="unfinished">矢量设置</translation>
+        <translation type="unfinished">标量设置</translation>
     </message>
     <message>
         <location filename="../measureddatapointsettingdialog.ui" line="26"/>
@@ -164,7 +164,7 @@
     <message>
         <location filename="../measureddatavectorsettingdialog.ui" line="226"/>
         <source>By scalar value</source>
-        <translation type="unfinished">根据矢量值</translation>
+        <translation type="unfinished">根据标量值</translation>
     </message>
     <message>
         <location filename="../measureddatavectorsettingdialog.ui" line="274"/>
