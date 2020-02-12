@@ -78,7 +78,7 @@
     <message>
         <location filename="../datamodel/post2dbirdeyewindowcellscalargroupdataitem.cpp" line="55"/>
         <source>Scalar</source>
-        <translation type="unfinished">矢量</translation>
+        <translation type="unfinished">标量</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post2dbirdeyewindowcellscalargroupdataitem_setsettingcommand.cpp" line="10"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="53"/>
         <source>Scalar</source>
-        <translation type="unfinished">矢量</translation>
+        <translation type="unfinished">标量</translation>
     </message>
 </context>
 <context>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="26"/>
         <source>Scalar (node)</source>
-        <translation type="unfinished">矢量（节点）</translation>
+        <translation type="unfinished">标量（节点）</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="100"/>
