@@ -161,6 +161,7 @@ set(IRIC_JP
   ${PREPOST_GUI}/libs/geodata/netcdf/languages/iricGdNetcdf_ja_JP.qm
   ${PREPOST_GUI}/libs/geodata/pointmap/languages/iricGdPointmap_ja_JP.qm
   ${PREPOST_GUI}/libs/geodata/polygon/languages/iricGdPolygon_ja_JP.qm
+  ${PREPOST_GUI}/libs/geodata/polygongroup/languages/iricGdPolygonGroup_ja_JP.qm
   ${PREPOST_GUI}/libs/geodata/polyline/languages/iricGdPolyLine_ja_JP.qm
   ${PREPOST_GUI}/libs/geodata/riversurvey/languages/iricGdRiversurvey_ja_JP.qm
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_ja_JP.qm
@@ -181,7 +182,49 @@ set(IRIC_JP
   ${PREPOST_GUI}/libs/solverconsole/languages/iricSolverconsole_ja_JP.qm
   ${PREPOST_GUI}/libs/gui/languages/qt_ja_JP.qm
   )
-  
+
+set(IRIC_CN
+  ${PREPOST_GUI}/libs/dataitem/axis2d/languages/iricAxis2d_zh_CN.qm
+  ${PREPOST_GUI}/libs/dataitem/axis3d/languages/iricAxis3d_zh_CN.qm
+  ${PREPOST_GUI}/libs/cs/languages/iricCs_zh_CN.qm
+  ${PREPOST_GUI}/libs/dataitem/distancemeasure/languages/iricDistancemeasure_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/centerandwidth/languages/iricGccCenterandwidth_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/compoundchannel/languages/iricGccCompoundchannel_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/externalprogram/languages/iricGccExternalprogram_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/gridcombine/languages/iricGccGridcombine_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/gridgenerator/languages/iricGccGridgenerator_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/laplace/languages/iricGccLaplace_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/poisson/languages/iricGccPoisson_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/rectangularregion/languages/iricGccRectangularregion_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/rectangularregionlonlat/languages/iricGccRectangularregionlonlat_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/riversurvey/languages/iricGccRiversurvey_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/riversurvey15d/languages/iricGccRiversurvey15d_zh_CN.qm
+  ${PREPOST_GUI}/libs/gridcreatingcondition/triangle/languages/iricGccTriangle_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/netcdf/languages/iricGdNetcdf_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/pointmap/languages/iricGdPointmap_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/polygon/languages/iricGdPolygon_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/polygongroup/languages/iricGdPolygonGroup_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/polyline/languages/iricGdPolyLine_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/riversurvey/languages/iricGdRiversurvey_zh_CN.qm
+  ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/graph2d/languages/iricGraph2d_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/graph2dhybrid/languages/iricGraph2dhybrid_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/graph2dscattered/languages/iricGraph2dscattered_zh_CN.qm
+  ${PREPOST_GUI}/libs/gui/languages/iricGui_zh_CN.qm
+  ${PREPOST_GUI}/libs/guibase/languages/iricGuibase_zh_CN.qm
+  ${PREPOST_GUI}/libs/guicore/languages/iricGuicore_zh_CN.qm
+  ${PREPOST_GUI}/libs/hydraulicdata/riversurveywaterelevation/languages/iricHdRiversurveywaterelevation_zh_CN.qm
+  ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_zh_CN.qm
+  ${PREPOST_GUI}/libs/misc/languages/iricMisc_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/post2d/languages/iricPost2d_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/post2dbirdeye/languages/iricPost2dbirdeye_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/post3d/languages/iricPost3d_zh_CN.qm
+  ${PREPOST_GUI}/libs/postbase/languages/iricPostbase_zh_CN.qm
+  ${PREPOST_GUI}/libs/pre/languages/iricPre_zh_CN.qm
+  ${PREPOST_GUI}/libs/solverconsole/languages/iricSolverconsole_zh_CN.qm
+  ${PREPOST_GUI}/libs/gui/languages/qt_zh_CN.qm
+  )
+
 # IRIC_PY
 set(IRIC_PY
   ${PREPOST_GUI}/apps/iricpython/iric.py
@@ -192,6 +235,9 @@ install(FILES ${IRIC_ICO} ${IRIC_EXE} ${IRIC_DLLS}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data
   )
 install(FILES ${IRIC_JP}
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data/languages
+  )
+install(FILES ${IRIC_CN}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data/languages
   )
 install(FILES ${IRIC_PY}
