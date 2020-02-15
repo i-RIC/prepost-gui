@@ -22,7 +22,7 @@
         <location filename="../distancemeasurecopypropertydialog.ui" line="46"/>
         <location filename="../distancemeasurecopypropertydialog.ui" line="66"/>
         <source>, </source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="56"/>

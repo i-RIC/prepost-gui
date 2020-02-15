@@ -124,7 +124,7 @@
         <location filename="../gridcreatingconditioncenterandwidthdialog.ui" line="241"/>
         <location filename="../gridcreatingconditioncenterandwidthdialog.ui" line="298"/>
         <source>m</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.cpp" line="78"/>

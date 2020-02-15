@@ -1371,7 +1371,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="58"/>
         <source>&amp;Import...</source>
-        <translation type="unfinished"><&amp;导入.../translation>
+        <translation><&amp;导入.../translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="61"/>

@@ -6,12 +6,12 @@
     <message>
         <location filename="../misc/animationcontroller.cpp" line="115"/>
         <source>Animation ToolBar</source>
-        <translation type="unfinished">애니메이션 도구 모음</translation>
+        <translation>애니메이션 도구 모음</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="232"/>
         <source>&amp;Animation</source>
-        <translation type="unfinished">&amp; 애니메이션</translation>
+        <translation>&amp; 애니메이션</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="247"/>

@@ -130,7 +130,7 @@
     <message>
         <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="54"/>
         <source>PushButton</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="242"/>
@@ -1200,14 +1200,14 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui" line="99"/>
         <source>Test</source>
-        <translation type="unfinished">テスト</translation>
+        <translation>テスト</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="93"/>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="99"/>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="107"/>
         <source>Error</source>
-        <translation type="unfinished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.cpp" line="93"/>
@@ -1603,7 +1603,7 @@ Do you really want to import this file?</source>
         <location filename="../postcontainer/postcalculatedresultargumenteditdialog.cpp" line="75"/>
         <location filename="../postcontainer/postcalculatedresultargumenteditdialog.cpp" line="80"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../postcontainer/postcalculatedresultargumenteditdialog.cpp" line="75"/>

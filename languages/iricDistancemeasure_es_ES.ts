@@ -97,7 +97,7 @@
     <message>
         <location filename="../distancemeasurecopypropertydialog.ui" line="283"/>
         <source>Color:</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
