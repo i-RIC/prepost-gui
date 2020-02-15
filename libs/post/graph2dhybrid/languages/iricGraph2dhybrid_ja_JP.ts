@@ -188,41 +188,41 @@
         <translation>コントローラー</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="536"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="568"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="540"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="572"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="539"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="581"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="543"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="585"/>
         <source>I</source>
         <translation>I</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="542"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="584"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="546"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="588"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="545"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="587"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="549"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="591"/>
         <source>K</source>
         <translation>K</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="548"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="552"/>
         <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="570"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="574"/>
         <source>Count</source>
         <translation>カウント</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="577"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="581"/>
         <source>Distance</source>
         <translation>距離</translation>
     </message>
@@ -1032,20 +1032,20 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="668"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="679"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="672"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="683"/>
         <source>GridLocationNull</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="669"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="680"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="673"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="684"/>
         <source>Vertex</source>
         <translation>格子点</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="670"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="681"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="674"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="685"/>
         <source>CellCenter</source>
         <translation>セル中心</translation>
     </message>

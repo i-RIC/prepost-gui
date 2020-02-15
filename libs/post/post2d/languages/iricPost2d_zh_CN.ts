@@ -479,22 +479,22 @@
         <translation>标量（单元格中心）</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>A maximum of four contours may be defined.</source>
         <translation>最多定义四个轮廓</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>如果导出形状文件, 切换 &quot;显示设置&quot; 到 &quot;轮廓图形&quot;, 不是 &quot;颜色条纹&quot; 或者 &quot;等值线&quot;.</translation>
     </message>
@@ -527,12 +527,12 @@
         <translation>&amp;颜色条设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>对于值范围，最大值小于最小值。</translation>
     </message>
@@ -1570,7 +1570,7 @@ p, li { white-space: pre-wrap; }
         <translation>创建轮廓</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="235"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="237"/>
         <source>Create Cell Contour</source>
         <translation>创建单元格轮廓</translation>
     </message>

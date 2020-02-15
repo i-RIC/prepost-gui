@@ -243,7 +243,7 @@
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="67"/>
+        <location filename="../time/posttimedataitem.cpp" line="70"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>

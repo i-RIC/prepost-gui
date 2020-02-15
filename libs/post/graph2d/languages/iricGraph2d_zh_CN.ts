@@ -4,12 +4,12 @@
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="280"/>
         <source>Title Setting</source>
         <translation>标题设置</translation>
     </message>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="280"/>
         <source>Please input the title.</source>
         <translation>请输入标题</translation>
     </message>
@@ -197,12 +197,12 @@
         <translation>对象浏览器项目更改</translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="81"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="74"/>
         <source>Move up item</source>
         <translation>上移项目</translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="115"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="108"/>
         <source>Move down item</source>
         <translation>下移项目</translation>
     </message>

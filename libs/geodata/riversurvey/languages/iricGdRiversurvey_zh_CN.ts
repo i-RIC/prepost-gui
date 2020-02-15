@@ -410,12 +410,12 @@
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="16"/>
+        <location filename="../geodatariversurveycreator.cpp" line="17"/>
         <source>River Survey data</source>
         <translation>河流勘测数据</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="42"/>
+        <location filename="../geodatariversurveycreator.cpp" line="44"/>
         <source>RiverSurvey %1</source>
         <translation>河流勘测数据 %1</translation>
     </message>
@@ -776,27 +776,27 @@
         <translation>通过使用水位高位停用</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="569"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="570"/>
         <source>Left Bank Side</source>
         <translation>左河岸</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="573"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="574"/>
         <source>Right Bank Side</source>
         <translation>右河岸</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1621"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1626"/>
         <source>Edit Cross Section</source>
         <translation>编辑横截面</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1650"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1655"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1650"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1655"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>通过单击鼠标来编辑横截面。 通过双击或按回车键完成编辑。
@@ -808,8 +808,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>海拔点移动</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1340"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1361"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1345"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1366"/>
         <source>Inactivate Elevation Points</source>
         <translation>禁用高程点</translation>
     </message>

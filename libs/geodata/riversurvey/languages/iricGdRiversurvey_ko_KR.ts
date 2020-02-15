@@ -410,12 +410,12 @@
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="16"/>
+        <location filename="../geodatariversurveycreator.cpp" line="17"/>
         <source>River Survey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="42"/>
+        <location filename="../geodatariversurveycreator.cpp" line="44"/>
         <source>RiverSurvey %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -776,27 +776,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="569"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="570"/>
         <source>Left Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="573"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="574"/>
         <source>Right Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1621"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1626"/>
         <source>Edit Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1650"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1655"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1650"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1655"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation type="unfinished"></translation>
@@ -807,8 +807,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1340"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1361"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1345"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1366"/>
         <source>Inactivate Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>

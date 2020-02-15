@@ -4,7 +4,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../structured2dgridnayscsvexporter.cpp" line="31"/>
+        <location filename="../structured2dgridnayscsvexporter.cpp" line="108"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12,7 +12,7 @@
 <context>
     <name>Structured2DGridNaysCSVExporter</name>
     <message>
-        <location filename="../structured2dgridnayscsvexporter.cpp" line="20"/>
+        <location filename="../structured2dgridnayscsvexporter.cpp" line="97"/>
         <source>RIC-Nays CSV</source>
         <translation type="unfinished"></translation>
     </message>

@@ -20,7 +20,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="54"/>
         <source>Warning</source>
         <translation>警告</translation>
-    </message> 
+    </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="54"/>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>

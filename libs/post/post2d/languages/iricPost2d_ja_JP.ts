@@ -495,22 +495,22 @@
         <translation>スカラー (セル中心)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>A maximum of four contours may be defined.</source>
         <translation>コンターは最大で4つまでしか描画できません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>シェープファイルをエクスポートするには、表示設定を &quot;面塗りコンター&quot; に切り替えてください。</translation>
     </message>
@@ -543,12 +543,12 @@
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -1667,7 +1667,7 @@ p, li { white-space: pre-wrap; }
         <translation>コンターの作成</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="235"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="237"/>
         <source>Create Cell Contour</source>
         <translation>セルコンターの作成</translation>
     </message>

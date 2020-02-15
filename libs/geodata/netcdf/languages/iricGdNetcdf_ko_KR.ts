@@ -30,22 +30,22 @@
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="24"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
         <source>GDAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="33"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
         <source>GeoTiff files(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation type="unfinished"></translation>
     </message>

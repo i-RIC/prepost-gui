@@ -82,7 +82,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="1580"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="1580"/>

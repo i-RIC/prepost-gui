@@ -262,7 +262,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widget/filenameeditwidget.cpp" line="66"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="74"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="76"/>
         <source>Select File</source>
         <translation type="unfinished"></translation>
     </message>

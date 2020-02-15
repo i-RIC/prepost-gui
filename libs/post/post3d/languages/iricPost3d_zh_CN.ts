@@ -808,7 +808,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="343"/>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最小</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="368"/>
@@ -818,12 +818,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="396"/>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">最大</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="417"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">颜色：</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="444"/>

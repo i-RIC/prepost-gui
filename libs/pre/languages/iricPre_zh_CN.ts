@@ -78,7 +78,7 @@
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="37"/>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">CGNS文件</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="52"/>

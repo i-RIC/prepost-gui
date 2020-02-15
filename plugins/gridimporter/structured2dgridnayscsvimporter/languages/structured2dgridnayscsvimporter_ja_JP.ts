@@ -4,24 +4,22 @@
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="22"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="38"/>
         <source>iRIC Grid CSV file</source>
         <translation>iRIC 格子 CSVファイル</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="49"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation>iRIC 格子 CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Cell flag values will not be loaded.</source>
-        <translation>セルフラグの値は読み込まれません。</translation>
+        <translation type="vanished">セルフラグの値は読み込まれません。</translation>
     </message>
 </context>
 </TS>
