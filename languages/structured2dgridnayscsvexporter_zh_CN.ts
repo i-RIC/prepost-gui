@@ -6,7 +6,7 @@
     <message>
         <location filename="../structured2dgridnayscsvexporter.cpp" line="31"/>
         <source>iRIC Grid CSV files (*.csv)</source>
-        <translation type="unfinished">iRIC Grid CSV 文件(*.csv)</translation>
+        <translation>iRIC Grid CSV 文件(*.csv)</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../structured2dgridnayscsvexporter.cpp" line="20"/>
         <source>RIC-Nays CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-Nays CSV</translation>
     </message>
 </context>
 </TS>
