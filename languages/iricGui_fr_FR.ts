@@ -1260,8 +1260,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="111"/>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="132"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="113"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="134"/>
         <source>(Not specified)</source>
         <translation type="unfinished"></translation>
     </message>

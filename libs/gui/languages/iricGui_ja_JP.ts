@@ -688,7 +688,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation></translation>
+        <translation type="unfinished">ウィザードページ</translation>
     </message>
     <message>
         <source>File Propertys</source>
@@ -12930,8 +12930,8 @@ Do you really want to import this file?</source>
         <translation>データなし</translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="111"/>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="132"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="113"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="134"/>
         <source>(Not specified)</source>
         <translation>(未設定)</translation>
     </message>

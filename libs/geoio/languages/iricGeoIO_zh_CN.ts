@@ -4,19 +4,16 @@
 <context>
     <name>CoordinatesEditDialog</name>
     <message>
-        <location filename="../coordinateseditdialog.ui" line="14"/>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">编辑坐标</translation>
     </message>
     <message>
-        <location filename="../coordinateseditdialog.cpp" line="26"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">X</translation>
     </message>
     <message>
-        <location filename="../coordinateseditdialog.cpp" line="27"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Y</translation>
     </message>
 </context>
 <context>
@@ -24,17 +21,17 @@
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>对话框</translation>
     </message>
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="20"/>
         <source>Please select item to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>请选择导入项目</translation>
     </message>
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="29"/>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>编码:</translation>
     </message>
 </context>
 <context>
@@ -42,7 +39,7 @@
     <message>
         <location filename="../polygoncsvexporter.cpp" line="18"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV file (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -50,7 +47,7 @@
     <message>
         <location filename="../polygoncsvimporter.cpp" line="31"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV file (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -58,7 +55,7 @@
     <message>
         <location filename="../polygonshapeexporter.cpp" line="62"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shape file (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -67,22 +64,22 @@
         <location filename="../polygonshapeimporter.cpp" line="37"/>
         <location filename="../polygonshapeimporter.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../polygonshapeimporter.cpp" line="37"/>
         <source>This polygon contains holes. This polygon can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>此多边形有孔，不能被导入</translation>
     </message>
     <message>
         <location filename="../polygonshapeimporter.cpp" line="73"/>
         <source>The shape type contained in this file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>此文件中包含的形状类型不是多边形。</translation>
     </message>
     <message>
         <location filename="../polygonshapeimporter.cpp" line="95"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shape file (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -90,12 +87,12 @@
     <message>
         <location filename="../polylinecsvexporter.cpp" line="16"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../polylinecsvexporter.cpp" line="34"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV file (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -103,30 +100,30 @@
     <message>
         <location filename="../polylinecsvimporter.cpp" line="17"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="30"/>
         <location filename="../polylinecsvimporter.cpp" line="52"/>
         <location filename="../polylinecsvimporter.cpp" line="57"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="30"/>
         <location filename="../polylinecsvimporter.cpp" line="52"/>
         <source>Data need two columns.</source>
-        <translation type="unfinished"></translation>
+        <translation>数据需要两列</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="57"/>
         <source>Data must be real numbers.</source>
-        <translation type="unfinished"></translation>
+        <translation>数据必须是实数。</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="74"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV file (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -134,7 +131,7 @@
     <message>
         <location filename="../polylineshapeexporter.cpp" line="62"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shape file (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -143,22 +140,22 @@
         <location filename="../polylineshapeimporter.cpp" line="36"/>
         <location filename="../polylineshapeimporter.cpp" line="69"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="36"/>
         <source>This polyline is composed of multiple line strings. This polyline can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>该折线由多个线串组成。 该折线无法导入。</translation>
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="69"/>
         <source>The shape type contained in this file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>此文件中包含的形状类型不是折线。</translation>
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="91"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shape file (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -166,27 +163,27 @@
     <message>
         <location filename="../io.h" line="29"/>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>所有可导入文件 (%1)</translation>
     </message>
     <message>
         <location filename="../io.h" line="35"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>选择导入文件</translation>
     </message>
     <message>
         <location filename="../io.h" line="48"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../io.h" line="48"/>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>无法通过文件扩展名识别文件类型 :%1</translation>
     </message>
     <message>
         <location filename="../io.h" line="82"/>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>选择导出文件</translation>
     </message>
 </context>
 </TS>

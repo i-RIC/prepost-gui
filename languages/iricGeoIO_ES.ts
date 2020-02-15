@@ -2,24 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
-    <name>CoordinatesEditDialog</name>
-    <message>
-        <location filename="../coordinateseditdialog.ui" line="14"/>
-        <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../coordinateseditdialog.cpp" line="26"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../coordinateseditdialog.cpp" line="27"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DBFItemSelectDialog</name>
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="14"/>

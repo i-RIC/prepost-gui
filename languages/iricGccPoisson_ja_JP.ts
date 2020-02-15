@@ -17,17 +17,17 @@
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="242"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="140"/>
         <source>Build Left bank and Right bank lines</source>
         <translation>左岸線・右岸線の生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="243"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="141"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加 (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="244"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="142"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除 (&amp;R)</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="vanished">左岸線のエクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="251"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="149"/>
         <source>&amp;Import Right Bank Line...</source>
         <translation>右岸線のインポート(&amp;I)...</translation>
     </message>
@@ -61,20 +61,20 @@
         <translation type="vanished">右岸線のエクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1060"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1065"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="944"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="949"/>
         <source>Center line</source>
         <translation>中心線</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1075"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1080"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="959"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="964"/>
         <source>Left bank line</source>
         <translation>左岸線</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1090"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1095"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="974"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="979"/>
         <source>Right bank line</source>
         <translation>右岸線</translation>
     </message>
@@ -87,70 +87,70 @@
         <translation type="vanished">コントロール断面数</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="245"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="143"/>
         <source>Import C&amp;enter Line...</source>
         <translation>中心線のインポート (&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="246"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="144"/>
         <source>Export Ce&amp;nter Line...</source>
         <translation>中心線のエクスポート (&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="247"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="145"/>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
         <translation>中心線の座標編集 (&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="248"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="146"/>
         <source>Import &amp;Left Bank Line...</source>
         <translation>左岸線のインポート (&amp;L)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="249"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="147"/>
         <source>Export Le&amp;ft Bank Line...</source>
         <translation>左岸線のエクスポート (&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="250"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="148"/>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
         <translation>左岸線の座標編集 (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="252"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="150"/>
         <source>Export Ri&amp;ght Bank Line...</source>
         <translation>右岸線のエクスポート (&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="253"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="151"/>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
         <translation>右岸線の座標編集 (&amp;H)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="523"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="682"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="991"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="407"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="554"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="566"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="875"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="524"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="408"/>
         <source>%1 not defined yet</source>
         <translation>%1はまだ定義されていません</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="554"/>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
         <translation>河川測量データが見つかりません。中心線を自分で定義して下さい。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="682"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="566"/>
         <source>Grid region not defined yet.</source>
         <translation>格子領域がまだ定義されていません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="991"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="875"/>
         <source>Center Line is not defined yet.</source>
         <translation>中心線がまだ定義されていません。</translation>
     </message>
@@ -202,12 +202,12 @@
 <context>
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="535"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="419"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="535"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="419"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation>格子点の最大数は %1 です。</translation>
     </message>

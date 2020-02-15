@@ -416,49 +416,49 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="589"/>
-        <location filename="../geodatariversurvey.cpp" line="706"/>
-        <location filename="../geodatariversurvey.cpp" line="833"/>
-        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../geodatariversurvey.cpp" line="591"/>
+        <location filename="../geodatariversurvey.cpp" line="708"/>
+        <location filename="../geodatariversurvey.cpp" line="835"/>
+        <location filename="../geodatariversurvey.cpp" line="1442"/>
         <location filename="../private/geodatariversurvey_impl.cpp" line="822"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="589"/>
-        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../geodatariversurvey.cpp" line="591"/>
+        <location filename="../geodatariversurvey.cpp" line="1442"/>
         <source>No points data to map is found. Please import points data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="695"/>
-        <location filename="../geodatariversurvey.cpp" line="1349"/>
+        <location filename="../geodatariversurvey.cpp" line="700"/>
+        <location filename="../geodatariversurvey.cpp" line="1351"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="695"/>
+        <location filename="../geodatariversurvey.cpp" line="700"/>
         <source>River survey data is generated using Points data.
 If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="706"/>
+        <location filename="../geodatariversurvey.cpp" line="708"/>
         <source>Center Line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="796"/>
+        <location filename="../geodatariversurvey.cpp" line="798"/>
         <source>Center line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="833"/>
+        <location filename="../geodatariversurvey.cpp" line="835"/>
         <source>River survey data need at least 2 center points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1349"/>
+        <location filename="../geodatariversurvey.cpp" line="1351"/>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1457,12 +1457,12 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
-        <location filename="../geodatariversurveylandxmlexporter.cpp" line="34"/>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="38"/>
         <source>LandXml (*.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveylandxmlexporter.cpp" line="71"/>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="76"/>
         <source>LandXml file(*.xml)</source>
         <translation type="unfinished"></translation>
     </message>

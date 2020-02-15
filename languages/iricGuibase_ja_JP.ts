@@ -229,6 +229,24 @@
     </message>
 </context>
 <context>
+    <name>CoordinatesEditDialog</name>
+    <message>
+        <location filename="../coordinates/coordinateseditdialog.ui" line="14"/>
+        <source>Edit Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../coordinates/coordinateseditdialog.cpp" line="26"/>
+        <source>X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../coordinates/coordinateseditdialog.cpp" line="27"/>
+        <source>Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DirnameEditWidget</name>
     <message>
         <location filename="../widget/dirnameeditwidget.ui" line="14"/>
@@ -277,7 +295,8 @@
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../widget/filenameeditwidget.cpp" line="66"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="74"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="76"/>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>
@@ -402,6 +421,86 @@
         <location filename="../objectbrowserview.cpp" line="87"/>
         <source>Are you sure you want to delete this item?</source>
         <translation>本当にこの項目を削除していいですか?</translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineAddVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylineaddvertexcommand.cpp" line="7"/>
+        <source>Insert Line Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineEditCoordinatesCommand</name>
+    <message>
+        <location filename="../polyline/polylineeditcoordinatescommand.cpp" line="5"/>
+        <source>Edit Line Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineMoveVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylinemovevertexcommand.cpp" line="7"/>
+        <source>Move Line Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLinePushVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylinepushvertexcommand.cpp" line="8"/>
+        <source>Add New Line Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineRemoveVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylineremovevertexcommand.cpp" line="5"/>
+        <source>Remove Line Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonAddVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonaddvertexcommand.cpp" line="9"/>
+        <source>Insert Polygon Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonEditCoordinatesCommand</name>
+    <message>
+        <location filename="../polygon/polygoneditcoordinatescommand.cpp" line="7"/>
+        <source>Edit Polygon Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonMoveVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonmovevertexcommand.cpp" line="7"/>
+        <source>Move Polygon Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonPushVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonpushvertexcommand.cpp" line="9"/>
+        <source>Add New Polygon Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonRemoveVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonremovevertexcommand.cpp" line="7"/>
+        <source>Remove Polygon Vertex</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -757,6 +856,13 @@
         <location filename="../widget/waitdialog.ui" line="20"/>
         <source>Please wait...</source>
         <translation>お待ちください...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="obsolete">お待ちください...</translation>
     </message>
 </context>
 <context>

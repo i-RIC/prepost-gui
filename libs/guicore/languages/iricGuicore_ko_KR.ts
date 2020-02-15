@@ -295,37 +295,37 @@
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="287"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="290"/>
         <source>Step &amp;Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="290"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="293"/>
         <source>Step &amp;Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="293"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="296"/>
         <source>&amp;Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="296"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="299"/>
         <source>Go to &amp;Last Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="299"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="302"/>
         <source>&amp;Start/Stop Animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="302"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="305"/>
         <source>S&amp;top Animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="305"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="308"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1297,27 +1297,27 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="395"/>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="326"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="327"/>
         <source>Show &amp;Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="302"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="303"/>
         <source>Select Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="313"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="313"/>
         <source>Folder %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="324"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="325"/>
         <source>&amp;Hide Detail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1490,134 +1490,134 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectMainFile</name>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="568"/>
-        <location filename="../project/projectmainfile.cpp" line="573"/>
-        <location filename="../project/projectmainfile.cpp" line="612"/>
-        <location filename="../project/projectmainfile.cpp" line="644"/>
-        <location filename="../project/projectmainfile.cpp" line="1056"/>
-        <location filename="../project/projectmainfile.cpp" line="1103"/>
-        <location filename="../project/projectmainfile.cpp" line="1123"/>
-        <location filename="../project/projectmainfile.cpp" line="1130"/>
+        <location filename="../project/projectmainfile.cpp" line="570"/>
+        <location filename="../project/projectmainfile.cpp" line="575"/>
+        <location filename="../project/projectmainfile.cpp" line="614"/>
+        <location filename="../project/projectmainfile.cpp" line="646"/>
+        <location filename="../project/projectmainfile.cpp" line="1058"/>
+        <location filename="../project/projectmainfile.cpp" line="1105"/>
+        <location filename="../project/projectmainfile.cpp" line="1125"/>
+        <location filename="../project/projectmainfile.cpp" line="1132"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="568"/>
+        <location filename="../project/projectmainfile.cpp" line="570"/>
         <source>Solution %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="573"/>
+        <location filename="../project/projectmainfile.cpp" line="575"/>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="676"/>
-        <location filename="../project/projectmainfile.cpp" line="698"/>
-        <location filename="../project/projectmainfile.cpp" line="810"/>
-        <location filename="../project/projectmainfile.cpp" line="817"/>
-        <location filename="../project/projectmainfile.cpp" line="827"/>
-        <location filename="../project/projectmainfile.cpp" line="838"/>
-        <location filename="../project/projectmainfile.cpp" line="841"/>
-        <location filename="../project/projectmainfile.cpp" line="1112"/>
-        <location filename="../project/projectmainfile.cpp" line="1244"/>
+        <location filename="../project/projectmainfile.cpp" line="678"/>
+        <location filename="../project/projectmainfile.cpp" line="700"/>
+        <location filename="../project/projectmainfile.cpp" line="812"/>
+        <location filename="../project/projectmainfile.cpp" line="819"/>
+        <location filename="../project/projectmainfile.cpp" line="829"/>
+        <location filename="../project/projectmainfile.cpp" line="840"/>
+        <location filename="../project/projectmainfile.cpp" line="843"/>
+        <location filename="../project/projectmainfile.cpp" line="1114"/>
+        <location filename="../project/projectmainfile.cpp" line="1256"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="606"/>
+        <location filename="../project/projectmainfile.cpp" line="608"/>
         <source>Export CGNS file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="606"/>
+        <location filename="../project/projectmainfile.cpp" line="608"/>
         <source>CGNS file (*.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="612"/>
+        <location filename="../project/projectmainfile.cpp" line="614"/>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="644"/>
+        <location filename="../project/projectmainfile.cpp" line="646"/>
         <source>Error occured while opening CGNS file in project file : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="676"/>
-        <location filename="../project/projectmainfile.cpp" line="698"/>
+        <location filename="../project/projectmainfile.cpp" line="678"/>
+        <location filename="../project/projectmainfile.cpp" line="700"/>
         <source>%1 Saving project file failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="798"/>
+        <location filename="../project/projectmainfile.cpp" line="800"/>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="800"/>
+        <location filename="../project/projectmainfile.cpp" line="802"/>
         <source>Open Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="810"/>
+        <location filename="../project/projectmainfile.cpp" line="812"/>
         <source>A background image with the same name already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="817"/>
-        <location filename="../project/projectmainfile.cpp" line="827"/>
+        <location filename="../project/projectmainfile.cpp" line="819"/>
+        <location filename="../project/projectmainfile.cpp" line="829"/>
         <source>The background image was not added. Please try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="841"/>
+        <location filename="../project/projectmainfile.cpp" line="843"/>
         <source>Invalid image file is specified.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1019"/>
+        <location filename="../project/projectmainfile.cpp" line="1021"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1021"/>
+        <location filename="../project/projectmainfile.cpp" line="1023"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1043"/>
+        <location filename="../project/projectmainfile.cpp" line="1045"/>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1044"/>
+        <location filename="../project/projectmainfile.cpp" line="1046"/>
         <source>Open Measured Data File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1103"/>
+        <location filename="../project/projectmainfile.cpp" line="1105"/>
         <source>Error occured while loading %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1112"/>
+        <location filename="../project/projectmainfile.cpp" line="1114"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1123"/>
+        <location filename="../project/projectmainfile.cpp" line="1125"/>
         <source>There is no visualization/graph windows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1130"/>
+        <location filename="../project/projectmainfile.cpp" line="1132"/>
         <source>File %1 could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1244"/>
+        <location filename="../project/projectmainfile.cpp" line="1256"/>
         <source>Coordinate system not selected.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1792,7 +1792,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1201"/>
+        <location filename="../project/projectmainfile.cpp" line="1213"/>
         <source>Set offset</source>
         <translation type="unfinished"></translation>
     </message>

@@ -4,24 +4,37 @@
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="22"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="38"/>
         <source>iRIC Grid CSV file</source>
         <translation>iRIC Grid CSV 文件</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="49"/>
+        <source>iRIC Grid CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
+        <source>The following columns were ignored.
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>RIC-Nays grid files (*.grid)</source>
-        <translation>RIC-Nays 网格文件 (*.grid)</translation>
+        <translation type="vanished">RIC-Nays 网格文件 (*.grid)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Cell flag values will not be loaded.</source>
-        <translation>单元标志值将不会被加载</translation>
+        <translation type="vanished">单元标志值将不会被加载</translation>
     </message>
 </context>
 </TS>

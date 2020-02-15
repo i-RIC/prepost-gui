@@ -2,6 +2,34 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>ParticleArbitraryTimeEditDialog</name>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="14"/>
+        <source>Particle generate time setting</source>
+        <translation>パーティクル生成時刻設定</translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="32"/>
+        <source>&amp;Add...</source>
+        <translation>追加 (&amp;A) ...</translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="39"/>
+        <source>&amp;Delete</source>
+        <translation>削除 (&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
+        <source>Add time step</source>
+        <translation>タイムステップの追加</translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
+        <source>Select Time step to add</source>
+        <translation>追加するタイムステップを選択してください</translation>
+    </message>
+</context>
+<context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
         <location filename="../postallzoneselectingdialog.ui" line="14"/>
@@ -258,7 +286,7 @@
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="67"/>
+        <location filename="../time/posttimedataitem.cpp" line="70"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>

@@ -17,68 +17,68 @@
 <context>
     <name>GridCreatingConditionTriangle</name>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="186"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="185"/>
         <source>Define Grid Region</source>
         <translation>定义网格区域</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="189"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="188"/>
         <source>Add &amp;Refinement Region</source>
         <translation>添加细化区域</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="193"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="192"/>
         <source>Add &amp;Hole Region</source>
         <translation>添加孔区域</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="197"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="196"/>
         <source>Add &amp;Break Line</source>
         <translation>添加断线</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="202"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="201"/>
         <source>&amp;Add Vertex</source>
         <translation>添加顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="205"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="204"/>
         <source>&amp;Remove Vertex</source>
         <translation>删除顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="208"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="207"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>编辑坐标...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="211"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="210"/>
         <source>&amp;Delete Region or Break Line...</source>
         <translation>删除区域或断线...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="216"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="215"/>
         <source>Edit &amp;Maximum Area for Cells...</source>
         <translation>编辑最大单元格面积...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="219"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="218"/>
         <source>&amp;Redivide Break Line...</source>
         <translation>重新划分断线</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="251"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="250"/>
         <source>&amp;Polygon</source>
         <translation>多线</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="640"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="639"/>
         <location filename="../private/gridcreatingconditiontriangle_finishpolygondefiningcommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>完成定义多边形</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="659"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="658"/>
         <location filename="../private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.cpp" line="5"/>
         <source>Finish Defining Break Line</source>
         <translation>完成定义断线</translation>
@@ -134,30 +134,30 @@
         <translation>删除断线顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="635"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="654"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1172"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1209"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1374"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1378"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1386"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1390"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1394"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1402"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1406"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1410"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1416"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1425"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="634"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="653"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1171"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1208"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1373"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1377"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1385"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1389"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1393"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1401"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1405"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1409"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1415"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1424"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="635"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="634"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>多边形至少3个顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="654"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="653"/>
         <source>Break line must have two vertices at least.</source>
         <translation>断线至少两个顶点</translation>
     </message>
@@ -172,16 +172,16 @@
         <translation>添加新重塑多边形</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1134"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1165"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1447"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1469"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1115"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1133"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1164"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1446"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1468"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1115"/>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义优化区域。 可以通过单击鼠标将细化区域定义为多边形。 双击或按回车键完成定义。</translation>
     </message>
@@ -191,7 +191,7 @@
         <translation>添加新孔多边形</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1134"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1133"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义孔区域。 可以通过单击鼠标将孔区域定义为多边形。 双击或按回车键完成定义</translation>
     </message>
@@ -201,87 +201,87 @@
         <translation>添加新断线</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1144"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1143"/>
         <source>Input divide number</source>
         <translation>输入分隔数</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1144"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1143"/>
         <source>Divide number</source>
         <translation>分隔数量</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1165"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1164"/>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义中断线。 可以通过单击鼠标将折断线定义为折线。 通过双击或按回车键完成定义</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1172"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1171"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>确定删除此多边形吗？</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1209"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1208"/>
         <source>Are you sure you want to remove this line?</source>
         <translation>确定删除此线吗？</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1374"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1373"/>
         <source>Grid region polygon have to consists of more than three vertices.</source>
         <translation>网格区域多边形需至少3个顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1378"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1377"/>
         <source>Grid region polygon shape is invalid.</source>
         <translation>网格区域多边形形状无效</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1386"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1385"/>
         <source>Remesh polygon have to consists of more than three vertices</source>
         <translation>重新网格多边形必须包含三个以上的顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1390"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1389"/>
         <source>Remesh polygon shape is invalid.</source>
         <translation>重塑多边形形状无效</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1394"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1393"/>
         <source>Remesh polygon have to be inside grid region.</source>
         <translation>重塑多边形需在网格区域内</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1402"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1401"/>
         <source>Hole polygon have to consists of more than three vertices</source>
         <translation>孔多边形必须包含三个以上的顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1406"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1405"/>
         <source>Hole polygon shape is invalid.</source>
         <translation>孔多边形形状无效</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1410"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1409"/>
         <source>Hole polygon have to be inside grid region.</source>
         <translation>孔多边形必须在网格区域内</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1416"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1415"/>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
         <translation>重新网格多边形和孔多边形不能有相交。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1425"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1424"/>
         <source>Break line have to consists of more more than two vertices</source>
         <translation>折断线必须包含两个以上的顶点</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1447"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1446"/>
         <source>Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous.</source>
         <translation>折断线可以与多边形相交，但是折断线不应将多边形划分为多个区域。 如果以这种方式设置折断线，则结果将不明确。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1469"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1468"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义网格创建区域。 可以通过单击鼠标将网格创建区域定义为多边形。 通过双击或按回车键完成定义。</translation>
     </message>

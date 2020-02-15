@@ -6,12 +6,12 @@
     <message>
         <location filename="../misc/animationcontroller.cpp" line="115"/>
         <source>Animation ToolBar</source>
-        <translation type="unfinished">애니메이션 도구 모음</translation>
+        <translation>애니메이션 도구 모음</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="232"/>
         <source>&amp;Animation</source>
-        <translation type="unfinished">&amp; 애니메이션</translation>
+        <translation>&amp; 애니메이션</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="247"/>
@@ -1260,8 +1260,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="111"/>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="132"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="113"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="134"/>
         <source>(Not specified)</source>
         <translation type="unfinished"></translation>
     </message>

@@ -157,7 +157,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <location filename="../gridcreatingconditionriversurveypointmovedialog.ui" line="45"/>
         <source>-1 &lt; s &lt; 1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

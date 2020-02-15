@@ -77,113 +77,14 @@
 </context>
 <!-- iricDistancemeasure_ko_KR.ts -->
 <context>
-    <name>DistanceMeasureCopyPropertyDialog</name>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="14"/>
-        <source>Distance Measure Property</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="22"/>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="36"/>
-        <source>Start Point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="46"/>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="66"/>
-        <source>, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="56"/>
-        <source>End Point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="78"/>
-        <source>Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="84"/>
-        <source>Show Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="94"/>
-        <source>Content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="100"/>
-        <source>Auto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="114"/>
-        <source>Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="129"/>
-        <source>Position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="135"/>
-        <source>Center-Top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="145"/>
-        <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="152"/>
-        <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="159"/>
-        <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="186"/>
-        <source>Font Size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="221"/>
-        <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="249"/>
-        <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasurecopypropertydialog.ui" line="283"/>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DistanceMeasureDataItem</name>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="50"/>
+        <location filename="../distancemeasuredataitem.cpp" line="51"/>
         <source>Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../distancemeasuredataitem.cpp" line="52"/>
+        <location filename="../distancemeasuredataitem.cpp" line="53"/>
         <source>Redefine</source>
         <translation type="unfinished"></translation>
     </message>
@@ -231,6 +132,105 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>DistanceMeasurePropertyDialog</name>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="14"/>
+        <source>Distance Measure Property</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="22"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="36"/>
+        <source>Start Point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="46"/>
+        <location filename="../distancemeasurepropertydialog.ui" line="66"/>
+        <source>, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="56"/>
+        <source>End Point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="78"/>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="84"/>
+        <source>Show Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="94"/>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="100"/>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="114"/>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="129"/>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="135"/>
+        <source>Center-Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="145"/>
+        <source>Middle-Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="152"/>
+        <source>Middle-Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="159"/>
+        <source>Center-Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="184"/>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="199"/>
+        <source>Show End Markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="227"/>
+        <source>Marker Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../distancemeasurepropertydialog.ui" line="261"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricGccCenterandwidth_ko_KR.ts -->
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -268,7 +268,7 @@
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="176"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="180"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="199"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="968"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -288,12 +288,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="968"/>
         <source>Center line not defined yet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditioncenterandwidth_definenewpointcommand.cpp" line="7"/>
+        <location filename="../private/gridcreatingconditioncenterandwidth_pushvertexcommand.cpp" line="7"/>
         <source>Add New Center Line Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -323,12 +323,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="932"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="932"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -390,7 +390,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1001"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1000"/>
         <location filename="../private/gridcreatingconditioncompoundchannel_switchstatuscommand.cpp" line="24"/>
         <location filename="../private/gridcreatingconditioncompoundchannel_switchstatuscommand.cpp" line="31"/>
         <source>Information</source>
@@ -457,68 +457,68 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="603"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="626"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1362"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1367"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1371"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1377"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1384"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="602"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="625"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1361"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1366"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1370"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1376"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1383"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="603"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="602"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="608"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="607"/>
         <source>Finish Defining Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="626"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="625"/>
         <source>Polygonal line must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="631"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="630"/>
         <source>Finish Defining Polygonal line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1001"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1000"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1057"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1056"/>
         <source>Generating grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1362"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1361"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1367"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1366"/>
         <source>Grid creating region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1371"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1370"/>
         <source>Low water channel region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1377"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1376"/>
         <source>Low water channel region have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1384"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1383"/>
         <source>Center line have to be inside low water channel region.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1510,108 +1510,108 @@ The low water channel region should be included in grid creation region, andRive
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="242"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="140"/>
         <source>Build Left bank and Right bank lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="243"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="141"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="244"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="142"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="251"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="149"/>
         <source>&amp;Import Right Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="245"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="143"/>
         <source>Import C&amp;enter Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="246"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="144"/>
         <source>Export Ce&amp;nter Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="247"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="145"/>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="248"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="146"/>
         <source>Import &amp;Left Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="249"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="147"/>
         <source>Export Le&amp;ft Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="250"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="148"/>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="252"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="150"/>
         <source>Export Ri&amp;ght Bank Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="253"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="151"/>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="523"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="682"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="991"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="407"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="554"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="566"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="875"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="524"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="408"/>
         <source>%1 not defined yet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="554"/>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="682"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="566"/>
         <source>Grid region not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="991"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="875"/>
         <source>Center Line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1060"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1065"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="944"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="949"/>
         <source>Center line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1075"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1080"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="959"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="964"/>
         <source>Left bank line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1090"/>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="1095"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="974"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="979"/>
         <source>Right bank line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1659,12 +1659,12 @@ The low water channel region should be included in grid creation region, andRive
 <context>
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="535"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="419"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionpoisson.cpp" line="535"/>
+        <location filename="../gridcreatingconditionpoisson.cpp" line="419"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2379,68 +2379,68 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 <context>
     <name>GridCreatingConditionTriangle</name>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="186"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="185"/>
         <source>Define Grid Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="189"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="188"/>
         <source>Add &amp;Refinement Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="193"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="192"/>
         <source>Add &amp;Hole Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="197"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="196"/>
         <source>Add &amp;Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="202"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="201"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="205"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="204"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="208"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="207"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="211"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="210"/>
         <source>&amp;Delete Region or Break Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="216"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="215"/>
         <source>Edit &amp;Maximum Area for Cells...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="219"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="218"/>
         <source>&amp;Redivide Break Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="251"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="250"/>
         <source>&amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="640"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="639"/>
         <location filename="../private/gridcreatingconditiontriangle_finishpolygondefiningcommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="659"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="658"/>
         <location filename="../private/gridcreatingconditiontriangle_finishpolylinedefiningcommand.cpp" line="5"/>
         <source>Finish Defining Break Line</source>
         <translation type="unfinished"></translation>
@@ -2496,30 +2496,30 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="635"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="654"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1172"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1209"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1374"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1378"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1386"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1390"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1394"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1402"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1406"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1410"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1416"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1425"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="634"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="653"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1171"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1208"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1373"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1377"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1385"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1389"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1393"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1401"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1405"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1409"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1415"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1424"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="635"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="634"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="654"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="653"/>
         <source>Break line must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2534,16 +2534,16 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1134"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1165"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1447"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1469"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1115"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1133"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1164"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1446"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1468"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1116"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1115"/>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2553,7 +2553,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1134"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1133"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2563,87 +2563,87 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1144"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1143"/>
         <source>Input divide number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1144"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1143"/>
         <source>Divide number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1165"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1164"/>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1172"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1171"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1209"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1208"/>
         <source>Are you sure you want to remove this line?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1374"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1373"/>
         <source>Grid region polygon have to consists of more than three vertices.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1378"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1377"/>
         <source>Grid region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1386"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1385"/>
         <source>Remesh polygon have to consists of more than three vertices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1390"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1389"/>
         <source>Remesh polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1394"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1393"/>
         <source>Remesh polygon have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1402"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1401"/>
         <source>Hole polygon have to consists of more than three vertices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1406"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1405"/>
         <source>Hole polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1410"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1409"/>
         <source>Hole polygon have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1416"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1415"/>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1425"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1424"/>
         <source>Break line have to consists of more more than two vertices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1447"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1446"/>
         <source>Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1469"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1468"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3046,246 +3046,246 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="536"/>
-        <location filename="../geodatapointmap.cpp" line="1280"/>
-        <location filename="../geodatapointmap.cpp" line="1466"/>
-        <location filename="../geodatapointmap.cpp" line="1968"/>
-        <location filename="../geodatapointmap.cpp" line="2039"/>
-        <location filename="../geodatapointmap.cpp" line="2099"/>
-        <location filename="../geodatapointmap.cpp" line="2124"/>
+        <location filename="../geodatapointmap.cpp" line="551"/>
+        <location filename="../geodatapointmap.cpp" line="1346"/>
+        <location filename="../geodatapointmap.cpp" line="1532"/>
+        <location filename="../geodatapointmap.cpp" line="2034"/>
+        <location filename="../geodatapointmap.cpp" line="2105"/>
+        <location filename="../geodatapointmap.cpp" line="2165"/>
+        <location filename="../geodatapointmap.cpp" line="2190"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="536"/>
+        <location filename="../geodatapointmap.cpp" line="551"/>
         <source>Break line have to have no intersection with other break lines.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="687"/>
+        <location filename="../geodatapointmap.cpp" line="753"/>
         <source>Remeshing TINs...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="912"/>
+        <location filename="../geodatapointmap.cpp" line="978"/>
         <source>P&amp;ointset Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1062"/>
-        <location filename="../geodatapointmap.cpp" line="1915"/>
-        <location filename="../geodatapointmap.cpp" line="1926"/>
-        <location filename="../geodatapointmap.cpp" line="1937"/>
-        <location filename="../geodatapointmap.cpp" line="1948"/>
-        <location filename="../geodatapointmap.cpp" line="1958"/>
-        <location filename="../geodatapointmap.cpp" line="1984"/>
-        <location filename="../geodatapointmap.cpp" line="2006"/>
-        <location filename="../geodatapointmap.cpp" line="2029"/>
-        <location filename="../geodatapointmap.cpp" line="2085"/>
-        <location filename="../geodatapointmap.cpp" line="2110"/>
-        <location filename="../geodatapointmap.cpp" line="2203"/>
-        <location filename="../geodatapointmap.cpp" line="2211"/>
-        <location filename="../geodatapointmap.cpp" line="2229"/>
-        <location filename="../geodatapointmap.cpp" line="2238"/>
+        <location filename="../geodatapointmap.cpp" line="1128"/>
+        <location filename="../geodatapointmap.cpp" line="1981"/>
+        <location filename="../geodatapointmap.cpp" line="1992"/>
+        <location filename="../geodatapointmap.cpp" line="2003"/>
+        <location filename="../geodatapointmap.cpp" line="2014"/>
+        <location filename="../geodatapointmap.cpp" line="2024"/>
+        <location filename="../geodatapointmap.cpp" line="2050"/>
+        <location filename="../geodatapointmap.cpp" line="2072"/>
+        <location filename="../geodatapointmap.cpp" line="2095"/>
+        <location filename="../geodatapointmap.cpp" line="2151"/>
+        <location filename="../geodatapointmap.cpp" line="2176"/>
+        <location filename="../geodatapointmap.cpp" line="2269"/>
+        <location filename="../geodatapointmap.cpp" line="2277"/>
+        <location filename="../geodatapointmap.cpp" line="2295"/>
+        <location filename="../geodatapointmap.cpp" line="2304"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1062"/>
+        <location filename="../geodatapointmap.cpp" line="1128"/>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1129"/>
+        <location filename="../geodatapointmap.cpp" line="1195"/>
         <source>&amp;Add New Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1134"/>
+        <location filename="../geodatapointmap.cpp" line="1200"/>
         <source>&amp;Interpolate Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1139"/>
+        <location filename="../geodatapointmap.cpp" line="1205"/>
         <source>Display &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1142"/>
+        <location filename="../geodatapointmap.cpp" line="1208"/>
         <source>Select point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1146"/>
+        <location filename="../geodatapointmap.cpp" line="1212"/>
         <source>Select Points With &amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1151"/>
+        <location filename="../geodatapointmap.cpp" line="1217"/>
         <source>&amp;Edit Selected Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1155"/>
+        <location filename="../geodatapointmap.cpp" line="1221"/>
         <source>Delete Selected P&amp;oints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1159"/>
+        <location filename="../geodatapointmap.cpp" line="1225"/>
         <source>E&amp;xport Selected Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1163"/>
+        <location filename="../geodatapointmap.cpp" line="1229"/>
         <source>Delete Selected Points &amp;Less Than Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1167"/>
+        <location filename="../geodatapointmap.cpp" line="1233"/>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1173"/>
+        <location filename="../geodatapointmap.cpp" line="1239"/>
         <source>Remesh &amp;TINs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1176"/>
+        <location filename="../geodatapointmap.cpp" line="1242"/>
         <source>Add &amp;Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1181"/>
+        <location filename="../geodatapointmap.cpp" line="1247"/>
         <source>&amp;Remove Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1186"/>
+        <location filename="../geodatapointmap.cpp" line="1252"/>
         <source>Re&amp;move All Break Lines...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1189"/>
+        <location filename="../geodatapointmap.cpp" line="1255"/>
         <source>Remove Triangles &amp;with Long edge...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1280"/>
+        <location filename="../geodatapointmap.cpp" line="1346"/>
         <source>Are you sure you want to remove this break line?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1466"/>
+        <location filename="../geodatapointmap.cpp" line="1532"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1915"/>
+        <location filename="../geodatapointmap.cpp" line="1981"/>
         <source>Remeshing TINs finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1926"/>
+        <location filename="../geodatapointmap.cpp" line="1992"/>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1937"/>
+        <location filename="../geodatapointmap.cpp" line="2003"/>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1948"/>
+        <location filename="../geodatapointmap.cpp" line="2014"/>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1958"/>
+        <location filename="../geodatapointmap.cpp" line="2024"/>
         <source>Click on the break line you want to remove.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1968"/>
+        <location filename="../geodatapointmap.cpp" line="2034"/>
         <source>Are you sure you want to remove ALL break lines?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1984"/>
+        <location filename="../geodatapointmap.cpp" line="2050"/>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2006"/>
+        <location filename="../geodatapointmap.cpp" line="2072"/>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2029"/>
-        <location filename="../geodatapointmap.cpp" line="2085"/>
-        <location filename="../geodatapointmap.cpp" line="2110"/>
+        <location filename="../geodatapointmap.cpp" line="2095"/>
+        <location filename="../geodatapointmap.cpp" line="2151"/>
+        <location filename="../geodatapointmap.cpp" line="2176"/>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2039"/>
-        <location filename="../geodatapointmap.cpp" line="2099"/>
-        <location filename="../geodatapointmap.cpp" line="2124"/>
+        <location filename="../geodatapointmap.cpp" line="2105"/>
+        <location filename="../geodatapointmap.cpp" line="2165"/>
+        <location filename="../geodatapointmap.cpp" line="2190"/>
         <source>You can not delete points used for break lines.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2042"/>
+        <location filename="../geodatapointmap.cpp" line="2108"/>
         <source>Delete Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2050"/>
+        <location filename="../geodatapointmap.cpp" line="2116"/>
         <source>Select File to Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2050"/>
+        <location filename="../geodatapointmap.cpp" line="2116"/>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2056"/>
+        <location filename="../geodatapointmap.cpp" line="2122"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2056"/>
+        <location filename="../geodatapointmap.cpp" line="2122"/>
         <source>Error occured while exporting to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2096"/>
+        <location filename="../geodatapointmap.cpp" line="2162"/>
         <source>Delete points less than %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2121"/>
+        <location filename="../geodatapointmap.cpp" line="2187"/>
         <source>Delete points greater than %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2203"/>
+        <location filename="../geodatapointmap.cpp" line="2269"/>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2211"/>
+        <location filename="../geodatapointmap.cpp" line="2277"/>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2229"/>
+        <location filename="../geodatapointmap.cpp" line="2295"/>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2238"/>
+        <location filename="../geodatapointmap.cpp" line="2304"/>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4056,52 +4056,52 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="79"/>
+        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Edit &amp;Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="80"/>
+        <location filename="../geodatapolygon.cpp" line="97"/>
         <source>&amp;Copy...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="81"/>
+        <location filename="../geodatapolygon.cpp" line="98"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="82"/>
+        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="83"/>
+        <location filename="../geodatapolygon.cpp" line="100"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="77"/>
+        <location filename="../geodatapolygon.cpp" line="94"/>
         <source>Add &amp;Hole Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="78"/>
+        <location filename="../geodatapolygon.cpp" line="95"/>
         <source>&amp;Delete Hole Region...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="84"/>
+        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>Color &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="172"/>
+        <location filename="../geodatapolygon.cpp" line="189"/>
         <source>&amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="560"/>
+        <location filename="../geodatapolygon.cpp" line="575"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation type="unfinished"></translation>
@@ -4132,13 +4132,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="555"/>
-        <location filename="../geodatapolygon.cpp" line="1006"/>
+        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="1039"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="555"/>
+        <location filename="../geodatapolygon.cpp" line="570"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4148,23 +4148,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="978"/>
-        <location filename="../geodatapolygon.cpp" line="1166"/>
+        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="1199"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="978"/>
+        <location filename="../geodatapolygon.cpp" line="1011"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1006"/>
+        <location filename="../geodatapolygon.cpp" line="1039"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1166"/>
+        <location filename="../geodatapolygon.cpp" line="1199"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4174,12 +4174,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1201"/>
+        <location filename="../geodatapolygon.cpp" line="1234"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1202"/>
+        <location filename="../geodatapolygon.cpp" line="1235"/>
         <source>Please input new value in this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4189,12 +4189,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1373"/>
+        <location filename="../geodatapolygon.cpp" line="1406"/>
         <source>Select Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1373"/>
+        <location filename="../geodatapolygon.cpp" line="1406"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4858,7 +4858,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatariversurvey_addextensioncommand.cpp" line="5"/>
+        <location filename="../private/geodatariversurvey_addextensioncommand.cpp" line="6"/>
         <source>Add Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4889,13 +4889,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="407"/>
-        <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatariversurvey.cpp" line="433"/>
-        <location filename="../geodatariversurvey.cpp" line="463"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="450"/>
         <source>Interpolation Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4915,93 +4909,128 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatariversurvey_changeselectioncommand.cpp" line="6"/>
+        <location filename="../private/geodatariversurvey_changeselectioncommand.cpp" line="7"/>
         <source>Selection Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1211"/>
-        <source>  </source>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="87"/>
+        <source>Generate River Survey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1420"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="88"/>
+        <source>Build Left bank and Right bank lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="89"/>
+        <source>&amp;Add Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="90"/>
+        <source>&amp;Remove Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="91"/>
+        <source>Import C&amp;enter Line...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="92"/>
+        <source>Export Ce&amp;nter Line...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="93"/>
         <source>Insert Upstream Side(&amp;B)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1422"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="94"/>
         <source>Insert Downstream Side(&amp;A)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1424"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="95"/>
         <source>&amp;Move...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1426"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="96"/>
         <source>&amp;Rotate...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1428"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="97"/>
         <source>S&amp;hift Center...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1430"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="98"/>
         <source>E&amp;xtend Horizontally...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1432"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="99"/>
         <source>Dele&amp;te Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1434"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="100"/>
         <source>R&amp;ename Cross Section...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1436"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="101"/>
         <source>Add &amp;Left Bank Extension Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1438"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="102"/>
         <source>Add &amp;Right Bank Extension Line...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="103"/>
         <source>Remo&amp;ve Left Bank Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1442"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="104"/>
         <source>Rem&amp;ove Right Bank Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1444"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="105"/>
         <source>Display &amp;Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1447"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="106"/>
         <source>Display &amp;Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1449"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="107"/>
         <source>Spline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1453"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="108"/>
         <source>Linear Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="109"/>
+        <source>Map points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="823"/>
+        <source>%1 is not defined yet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5010,23 +5039,106 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1531"/>
+        <location filename="../geodatariversurvey.cpp" line="591"/>
+        <location filename="../geodatariversurvey.cpp" line="708"/>
+        <location filename="../geodatariversurvey.cpp" line="835"/>
+        <location filename="../geodatariversurvey.cpp" line="1442"/>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="822"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1531"/>
+        <location filename="../geodatariversurvey.cpp" line="591"/>
+        <location filename="../geodatariversurvey.cpp" line="1442"/>
+        <source>No points data to map is found. Please import points data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="700"/>
+        <location filename="../geodatariversurvey.cpp" line="1351"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="700"/>
+        <source>River survey data is generated using Points data.
+If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="708"/>
+        <source>Center Line is not defined yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="798"/>
+        <source>Center line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurvey.cpp" line="835"/>
         <source>River survey data need at least 2 center points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatariversurvey_removeextensioncommand.cpp" line="5"/>
+        <location filename="../geodatariversurvey.cpp" line="1351"/>
+        <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_removeextensioncommand.cpp" line="6"/>
         <source>Remove Extension Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_setdisplaysettingcommand.cpp" line="4"/>
         <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_polylinefinishdefiningcommand.cpp" line="5"/>
+        <source>Finish Defining Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="392"/>
+        <source>&amp;River Survey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatariversurvey_impl.cpp" line="785"/>
+        <source>  </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="14"/>
+        <source>Build Bank Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="20"/>
+        <source>Input the distance from center line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="29"/>
+        <source>Left bank:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="46"/>
+        <source>Right bank:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveybuildbanklinesdialog.ui" line="65"/>
+        <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5509,52 +5621,52 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="145"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="164"/>
         <source>&amp;Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="147"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="166"/>
         <source>&amp;Inactivate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="149"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="168"/>
         <source>&amp;Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="164"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="183"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="666"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="684"/>
         <source>Left Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="672"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="690"/>
         <source>Right Bank Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="802"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="820"/>
         <source>Aspect ratio: 1 / %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1752"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1770"/>
         <source>Edit Cross Section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1781"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1781"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation type="unfinished"></translation>
@@ -5565,8 +5677,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1471"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1492"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1489"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1510"/>
         <source>Inactivate Elevation Points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5653,6 +5765,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../geodatariversurveyexporter.cpp" line="75"/>
         <source>River Survey data(*.riv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyGenerateDialog</name>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="14"/>
+        <source>Generate River Survey Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="22"/>
+        <source>Number of cross sections:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="56"/>
+        <source>Distance between cross sections [m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="87"/>
+        <source>Distance between elevation points[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="124"/>
+        <source>Name of most upstream cross section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveygeneratedialog.ui" line="144"/>
+        <source>Points data to map:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5756,108 +5901,108 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="119"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="125"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="131"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="137"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="150"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="159"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="171"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="184"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="190"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="120"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="126"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="132"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="138"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="151"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="160"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="172"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="185"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="191"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="119"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="120"/>
         <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="125"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="126"/>
         <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="131"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="132"/>
         <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="137"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="138"/>
         <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="150"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="151"/>
         <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="159"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="160"/>
         <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="171"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="172"/>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="184"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="185"/>
         <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="190"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="191"/>
         <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="217"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="219"/>
         <source>#survey data is not found. Will be ignored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="220"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="222"/>
         <source>#x-section data is not found. Will be ignored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="225"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="227"/>
         <source>#x-section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="228"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="230"/>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="292"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="329"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="233"/>
+        <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveyimporter.cpp" line="297"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="335"/>
         <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="367"/>
-        <location filename="../geodatariversurveyimporter.cpp" line="405"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="373"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="411"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="367"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="373"/>
         <source>Cross Section data is not ordered correctly at %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveyimporter.cpp" line="405"/>
+        <location filename="../geodatariversurveyimporter.cpp" line="411"/>
         <source>Crosssection data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="201"/>
-        <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5935,13 +6080,31 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
-        <location filename="../geodatariversurveylandxmlexporter.cpp" line="34"/>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="38"/>
         <source>LandXml (*.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveylandxmlexporter.cpp" line="71"/>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="76"/>
         <source>LandXml file(*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMapPointsDialog</name>
+    <message>
+        <location filename="../geodatariversurveymappointsdialog.ui" line="14"/>
+        <source>Map points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymappointsdialog.ui" line="22"/>
+        <source>Distance between elevation points[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymappointsdialog.ui" line="59"/>
+        <source>Points data to map:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6023,17 +6186,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="201"/>
+        <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../geodatariversurveymlitimporter.cpp" line="207"/>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="226"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="213"/>
+        <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="232"/>
         <source>MLIT River Survey Data(*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="239"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="246"/>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6096,24 +6269,6 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <!-- iricGeoIO_ko_KR.ts -->
-<context>
-    <name>CoordinatesEditDialog</name>
-    <message>
-        <location filename="../coordinateseditdialog.ui" line="14"/>
-        <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../coordinateseditdialog.cpp" line="26"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../coordinateseditdialog.cpp" line="27"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -6472,41 +6627,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="536"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="568"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="540"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="572"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="539"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="581"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="543"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="585"/>
         <source>I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="542"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="584"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="546"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="588"/>
         <source>J</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="545"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="587"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="549"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="591"/>
         <source>K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="548"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="552"/>
         <source>Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="570"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="574"/>
         <source>Count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="577"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="581"/>
         <source>Distance</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6755,117 +6910,117 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="569"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="571"/>
         <source>CSV Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="570"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="572"/>
         <source>Saving csv files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="799"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="928"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1147"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="812"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="941"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1160"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="799"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="812"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="923"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="936"/>
         <source>Export CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="923"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="936"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="928"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="941"/>
         <source>Saving %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="931"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="944"/>
         <source>CSV file successfully exported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1080"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1093"/>
         <source>I = %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1083"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1096"/>
         <source>I = %1, J = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1086"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1099"/>
         <source>I = %1, J = %2, K = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1091"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1104"/>
         <source>Index = %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1098"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1111"/>
         <source>Time = %1 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1101"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
         <source>Time = %1 sec, J = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1104"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1117"/>
         <source>Time = %1 sec, J = %2, K = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1113"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1126"/>
         <source>Time = %1 sec, I = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1116"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1129"/>
         <source>Time = %1 sec, I = %2, K = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1125"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1138"/>
         <source>Time = %1 sec, I = %2, J = %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1141"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1153"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1581"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1154"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1166"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1594"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1141"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1153"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1154"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1166"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1147"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1160"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1582"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1595"/>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7316,20 +7471,20 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="668"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="679"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="672"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="683"/>
         <source>GridLocationNull</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="669"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="680"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="673"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="684"/>
         <source>Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="670"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="681"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="674"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="685"/>
         <source>CellCenter</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7738,12 +7893,12 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="280"/>
         <source>Title Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="280"/>
         <source>Please input the title.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7931,12 +8086,12 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="81"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="74"/>
         <source>Move up item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="115"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="108"/>
         <source>Move down item</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8155,6 +8310,24 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>CoordinatesEditDialog</name>
+    <message>
+        <location filename="../coordinates/coordinateseditdialog.ui" line="14"/>
+        <source>Edit Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../coordinates/coordinateseditdialog.cpp" line="26"/>
+        <source>X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../coordinates/coordinateseditdialog.cpp" line="27"/>
+        <source>Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DirnameEditWidget</name>
     <message>
         <location filename="../widget/dirnameeditwidget.ui" line="14"/>
@@ -8203,7 +8376,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widget/filenameeditwidget.cpp" line="66"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="74"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="76"/>
         <source>Select File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8304,6 +8478,86 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../objectbrowserview.cpp" line="87"/>
         <source>Are you sure you want to delete this item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineAddVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylineaddvertexcommand.cpp" line="7"/>
+        <source>Insert Line Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineEditCoordinatesCommand</name>
+    <message>
+        <location filename="../polyline/polylineeditcoordinatescommand.cpp" line="5"/>
+        <source>Edit Line Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineMoveVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylinemovevertexcommand.cpp" line="7"/>
+        <source>Move Line Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLinePushVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylinepushvertexcommand.cpp" line="8"/>
+        <source>Add New Line Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolyLineRemoveVertexCommand</name>
+    <message>
+        <location filename="../polyline/polylineremovevertexcommand.cpp" line="5"/>
+        <source>Remove Line Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonAddVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonaddvertexcommand.cpp" line="9"/>
+        <source>Insert Polygon Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonEditCoordinatesCommand</name>
+    <message>
+        <location filename="../polygon/polygoneditcoordinatescommand.cpp" line="7"/>
+        <source>Edit Polygon Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonMoveVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonmovevertexcommand.cpp" line="7"/>
+        <source>Move Polygon Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonPushVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonpushvertexcommand.cpp" line="9"/>
+        <source>Add New Polygon Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolygonRemoveVertexCommand</name>
+    <message>
+        <location filename="../polygon/polygonremovevertexcommand.cpp" line="7"/>
+        <source>Remove Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9104,37 +9358,37 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="287"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="290"/>
         <source>Step &amp;Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="290"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="293"/>
         <source>Step &amp;Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="293"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="296"/>
         <source>&amp;Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="296"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="299"/>
         <source>Go to &amp;Last Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="299"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="302"/>
         <source>&amp;Start/Stop Animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="302"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="305"/>
         <source>S&amp;top Animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="305"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp" line="308"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10106,27 +10360,27 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="395"/>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="326"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="327"/>
         <source>Show &amp;Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="302"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="303"/>
         <source>Select Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="313"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="313"/>
         <source>Folder %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="324"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="325"/>
         <source>&amp;Hide Detail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10299,134 +10553,134 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectMainFile</name>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="568"/>
-        <location filename="../project/projectmainfile.cpp" line="573"/>
-        <location filename="../project/projectmainfile.cpp" line="612"/>
-        <location filename="../project/projectmainfile.cpp" line="644"/>
-        <location filename="../project/projectmainfile.cpp" line="1056"/>
-        <location filename="../project/projectmainfile.cpp" line="1103"/>
-        <location filename="../project/projectmainfile.cpp" line="1123"/>
-        <location filename="../project/projectmainfile.cpp" line="1130"/>
+        <location filename="../project/projectmainfile.cpp" line="570"/>
+        <location filename="../project/projectmainfile.cpp" line="575"/>
+        <location filename="../project/projectmainfile.cpp" line="614"/>
+        <location filename="../project/projectmainfile.cpp" line="646"/>
+        <location filename="../project/projectmainfile.cpp" line="1058"/>
+        <location filename="../project/projectmainfile.cpp" line="1105"/>
+        <location filename="../project/projectmainfile.cpp" line="1125"/>
+        <location filename="../project/projectmainfile.cpp" line="1132"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="568"/>
+        <location filename="../project/projectmainfile.cpp" line="570"/>
         <source>Solution %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="573"/>
+        <location filename="../project/projectmainfile.cpp" line="575"/>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="676"/>
-        <location filename="../project/projectmainfile.cpp" line="698"/>
-        <location filename="../project/projectmainfile.cpp" line="810"/>
-        <location filename="../project/projectmainfile.cpp" line="817"/>
-        <location filename="../project/projectmainfile.cpp" line="827"/>
-        <location filename="../project/projectmainfile.cpp" line="838"/>
-        <location filename="../project/projectmainfile.cpp" line="841"/>
-        <location filename="../project/projectmainfile.cpp" line="1112"/>
-        <location filename="../project/projectmainfile.cpp" line="1244"/>
+        <location filename="../project/projectmainfile.cpp" line="678"/>
+        <location filename="../project/projectmainfile.cpp" line="700"/>
+        <location filename="../project/projectmainfile.cpp" line="812"/>
+        <location filename="../project/projectmainfile.cpp" line="819"/>
+        <location filename="../project/projectmainfile.cpp" line="829"/>
+        <location filename="../project/projectmainfile.cpp" line="840"/>
+        <location filename="../project/projectmainfile.cpp" line="843"/>
+        <location filename="../project/projectmainfile.cpp" line="1114"/>
+        <location filename="../project/projectmainfile.cpp" line="1256"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="606"/>
+        <location filename="../project/projectmainfile.cpp" line="608"/>
         <source>Export CGNS file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="606"/>
+        <location filename="../project/projectmainfile.cpp" line="608"/>
         <source>CGNS file (*.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="612"/>
+        <location filename="../project/projectmainfile.cpp" line="614"/>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="644"/>
+        <location filename="../project/projectmainfile.cpp" line="646"/>
         <source>Error occured while opening CGNS file in project file : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="676"/>
-        <location filename="../project/projectmainfile.cpp" line="698"/>
+        <location filename="../project/projectmainfile.cpp" line="678"/>
+        <location filename="../project/projectmainfile.cpp" line="700"/>
         <source>%1 Saving project file failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="798"/>
+        <location filename="../project/projectmainfile.cpp" line="800"/>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="800"/>
+        <location filename="../project/projectmainfile.cpp" line="802"/>
         <source>Open Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="810"/>
+        <location filename="../project/projectmainfile.cpp" line="812"/>
         <source>A background image with the same name already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="817"/>
-        <location filename="../project/projectmainfile.cpp" line="827"/>
+        <location filename="../project/projectmainfile.cpp" line="819"/>
+        <location filename="../project/projectmainfile.cpp" line="829"/>
         <source>The background image was not added. Please try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="841"/>
+        <location filename="../project/projectmainfile.cpp" line="843"/>
         <source>Invalid image file is specified.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1019"/>
+        <location filename="../project/projectmainfile.cpp" line="1021"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1021"/>
+        <location filename="../project/projectmainfile.cpp" line="1023"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1043"/>
+        <location filename="../project/projectmainfile.cpp" line="1045"/>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1044"/>
+        <location filename="../project/projectmainfile.cpp" line="1046"/>
         <source>Open Measured Data File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1103"/>
+        <location filename="../project/projectmainfile.cpp" line="1105"/>
         <source>Error occured while loading %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1112"/>
+        <location filename="../project/projectmainfile.cpp" line="1114"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1123"/>
+        <location filename="../project/projectmainfile.cpp" line="1125"/>
         <source>There is no visualization/graph windows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1130"/>
+        <location filename="../project/projectmainfile.cpp" line="1132"/>
         <source>File %1 could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1244"/>
+        <location filename="../project/projectmainfile.cpp" line="1256"/>
         <source>Coordinate system not selected.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10601,7 +10855,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1201"/>
+        <location filename="../project/projectmainfile.cpp" line="1213"/>
         <source>Set offset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10792,12 +11046,12 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="115"/>
         <source>Animation ToolBar</source>
-        <translation type="unfinished">애니메이션 도구 모음</translation>
+        <translation>애니메이션 도구 모음</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="232"/>
         <source>&amp;Animation</source>
-        <translation type="unfinished">&amp; 애니메이션</translation>
+        <translation>&amp; 애니메이션</translation>
     </message>
     <message>
         <location filename="../misc/animationcontroller.cpp" line="247"/>
@@ -12046,8 +12300,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="111"/>
-        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="132"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="113"/>
+        <location filename="../projectproperty/projectpropertybasicinfowidget.cpp" line="134"/>
         <source>(Not specified)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13951,12 +14205,12 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="101"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="103"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="101"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="103"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14042,7 +14296,7 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="208"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="210"/>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="207"/>
         <source>Create Contour</source>
         <translation type="unfinished"></translation>
@@ -14527,22 +14781,22 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="183"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="185"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="377"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14575,12 +14829,12 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="157"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14910,12 +15164,12 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="65"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="69"/>
         <source>Particles (auto)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="94"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="98"/>
         <source>Particle Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14923,7 +15177,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp" line="63"/>
+        <location filename="../datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp" line="4"/>
         <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14931,7 +15185,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.cpp" line="144"/>
+        <location filename="../datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.cpp" line="4"/>
         <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14958,6 +15212,14 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticleGroupRootDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlegrouprootdataitem.cpp" line="12"/>
+        <source>Particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="14"/>
@@ -14976,11 +15238,16 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="44"/>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="54"/>
         <source>Generation time interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="52"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="62"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
@@ -14994,82 +15261,92 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="90"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="423"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="100"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="467"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="107"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="440"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="117"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="484"/>
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="152"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="485"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="162"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="529"/>
         <source>min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="177"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="510"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="187"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="554"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="205"/>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="538"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="215"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="582"/>
         <source>max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="245"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="236"/>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="246"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="289"/>
         <source>Start Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="251"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="295"/>
         <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="259"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="303"/>
         <source>Specify the area to generate particles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="266"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="310"/>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="294"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="338"/>
         <source>I Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="314"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="358"/>
         <source>I Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="334"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="378"/>
         <source>J Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="354"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="398"/>
         <source>J Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="377"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="421"/>
         <source>Generation space interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="385"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="429"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -15082,17 +15359,17 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="559"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="603"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="586"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="630"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="593"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="637"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -15101,17 +15378,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="644"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="688"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="651"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="695"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="682"/>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="739"/>
         <source>&amp;Region Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15135,12 +15412,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="44"/>
-        <source>Generation interval</source>
+        <source>Generate periodically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="52"/>
-        <source>Specify time interval for particles generation.</source>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="54"/>
+        <source>Generation interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -15183,58 +15460,68 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="256"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="237"/>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="247"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="290"/>
         <source>Start Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="262"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="296"/>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="272"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="306"/>
         <source>Mouse Drag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="282"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="316"/>
         <source>Coordinate Values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="309"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="343"/>
         <source>Point 1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="323"/>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="351"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="357"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="385"/>
         <source>,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="337"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="371"/>
         <source>Point 2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="384"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="418"/>
         <source>Number of points:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="420"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="454"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="447"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="481"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="454"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -15243,62 +15530,65 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="505"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="539"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="512"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="546"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="543"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="590"/>
         <source>&amp;Region Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowParticlesScalarGroupDataItem</name>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="29"/>
+        <location filename="../datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp" line="32"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="147"/>
+        <location filename="../datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp" line="153"/>
         <source>Particle Scalar value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseTopDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Edit Particle Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesbasevectorgroupdataitem.cpp" line="44"/>
+        <source>Vector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesbasevectorgroupdataitem.cpp" line="67"/>
+        <source>Vector Attribute Select Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="22"/>
+        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="7"/>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticlesVectorGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/post2dwindowparticlesvectorgroupdataitem.cpp" line="45"/>
-        <source>Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticlesvectorgroupdataitem.cpp" line="67"/>
-        <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15542,9 +15832,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="126"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="129"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="132"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="134"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="137"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="140"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15562,7 +15852,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <location filename="../datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp" line="11"/>
         <source>Update Particles Scalar Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15572,7 +15862,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="235"/>
+        <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="237"/>
         <source>Create Cell Contour</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16048,13 +16338,21 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="42"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="66"/>
         <source>Particles (auto)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="73"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="97"/>
         <source>Particle Physical Value Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16068,6 +16366,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="65"/>
         <source>Streamline Physical Value Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticleGroupRootDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlegrouprootdataitem.cpp" line="12"/>
+        <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16090,11 +16396,16 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="40"/>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="50"/>
         <source>Generation time interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="48"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="58"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
@@ -16108,92 +16419,102 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="86"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="459"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="96"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="503"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="103"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="476"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="113"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="520"/>
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="148"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="521"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="158"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="565"/>
         <source>min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="173"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="546"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="183"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="590"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="201"/>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="574"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="211"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="618"/>
         <source>max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="241"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="232"/>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="242"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="285"/>
         <source>Start Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="247"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="291"/>
         <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="255"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="299"/>
         <source>Specify the area to generate particles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="262"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="306"/>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="290"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="334"/>
         <source>I Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="310"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="354"/>
         <source>I Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="330"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="374"/>
         <source>J Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="350"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="394"/>
         <source>J Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="370"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="414"/>
         <source>K Min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="390"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="434"/>
         <source>K Max</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="413"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="457"/>
         <source>Generation space interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="421"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="465"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -16206,17 +16527,17 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="595"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="639"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="622"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="666"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="629"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="673"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -16225,57 +16546,60 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="680"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="724"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="687"/>
+        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="731"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Post3dWindowParticlesScalarGroupDataItem</name>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="30"/>
+        <location filename="../datamodel/post3dwindowparticlesbasescalargroupdataitem.cpp" line="30"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="128"/>
+        <location filename="../datamodel/post3dwindowparticlesbasescalargroupdataitem.cpp" line="127"/>
         <source>Particle Scalar value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseTopDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Edit Particle Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp" line="48"/>
+        <source>Vector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp" line="72"/>
+        <source>Vector Attribute Select Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="22"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="7"/>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Post3dWindowParticlesVectorGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="47"/>
-        <source>Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="70"/>
-        <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
-        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16425,17 +16749,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="42"/>
-        <source>Update Particle Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
         <source>Update Streamline Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <location filename="../datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp" line="10"/>
         <source>Update Particles Scalar Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16462,6 +16781,34 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <!-- iricPostbase_ko_KR.ts -->
+<context>
+    <name>ParticleArbitraryTimeEditDialog</name>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="14"/>
+        <source>Particle generate time setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="32"/>
+        <source>&amp;Add...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="39"/>
+        <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
+        <source>Add time step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
+        <source>Select Time step to add</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
@@ -16704,7 +17051,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="67"/>
+        <location filename="../time/posttimedataitem.cpp" line="70"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18273,131 +18620,131 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1410"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1412"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="317"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="340"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="318"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="342"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="253"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="254"/>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="261"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="262"/>
         <source>Show Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="262"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="359"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="361"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="284"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="285"/>
         <source>Select File to Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="295"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="296"/>
         <source>Exporting Grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="336"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="338"/>
         <source>Grid successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="340"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="342"/>
         <source>Exporting grid to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="359"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="361"/>
         <source>Are you sure you want to discard the grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1003"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1005"/>
         <source>&amp;Import...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1007"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1009"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1011"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1013"/>
         <source>Grid &amp;Shape...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1014"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1016"/>
         <source>&amp;Select Polygon Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1016"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1018"/>
         <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1020"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1022"/>
         <source>&amp;Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1021"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1022"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1023"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1024"/>
         <source>&amp;Node Attribute...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1024"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1025"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1026"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1027"/>
         <source>&amp;Cell Attribute...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1027"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1029"/>
         <source>Set &amp;Up Scalarbar...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1031"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1033"/>
         <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1035"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1037"/>
         <source>Attributes &amp;Generating</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1413"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1415"/>
         <source> [No Data]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1423"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1425"/>
         <source> (%1 x %2 = %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1426"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1428"/>
         <source> (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1454"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1456"/>
         <source>Generate %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19045,121 +19392,121 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>SolverConsoleWindow</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="44"/>
+        <location filename="../solverconsolewindow.cpp" line="45"/>
         <source>&amp;Export solver console log...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="138"/>
+        <location filename="../solverconsolewindow.cpp" line="139"/>
         <source>Show Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="139"/>
-        <location filename="../solverconsolewindow.cpp" line="150"/>
+        <location filename="../solverconsolewindow.cpp" line="140"/>
+        <location filename="../solverconsolewindow.cpp" line="151"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="139"/>
+        <location filename="../solverconsolewindow.cpp" line="140"/>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="143"/>
+        <location filename="../solverconsolewindow.cpp" line="144"/>
         <source>The simulation has result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="143"/>
+        <location filename="../solverconsolewindow.cpp" line="144"/>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="150"/>
+        <location filename="../solverconsolewindow.cpp" line="151"/>
         <source>Error occured. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="123"/>
-        <location filename="../solverconsolewindow.cpp" line="154"/>
+        <location filename="../solverconsolewindow.cpp" line="124"/>
+        <location filename="../solverconsolewindow.cpp" line="155"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="123"/>
+        <location filename="../solverconsolewindow.cpp" line="124"/>
         <source>This project is opened in post only mode. You can not run the solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="154"/>
+        <location filename="../solverconsolewindow.cpp" line="155"/>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="168"/>
+        <location filename="../solverconsolewindow.cpp" line="169"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="168"/>
+        <location filename="../solverconsolewindow.cpp" line="169"/>
         <source>Solver executable file %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="190"/>
-        <location filename="../solverconsolewindow.cpp" line="352"/>
+        <location filename="../solverconsolewindow.cpp" line="191"/>
+        <location filename="../solverconsolewindow.cpp" line="360"/>
         <source>Confirm Solver Termination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="191"/>
+        <location filename="../solverconsolewindow.cpp" line="192"/>
         <source>Do you really want to kill the solver?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="244"/>
-        <location filename="../solverconsolewindow.cpp" line="247"/>
+        <location filename="../solverconsolewindow.cpp" line="252"/>
+        <location filename="../solverconsolewindow.cpp" line="255"/>
         <source>Solver Finished</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="244"/>
+        <location filename="../solverconsolewindow.cpp" line="252"/>
         <source>The solver finished calculation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="247"/>
+        <location filename="../solverconsolewindow.cpp" line="255"/>
         <source>The solver finished abnormally.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="256"/>
+        <location filename="../solverconsolewindow.cpp" line="264"/>
         <source>Solver Console</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="262"/>
+        <location filename="../solverconsolewindow.cpp" line="270"/>
         <source>running</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="264"/>
+        <location filename="../solverconsolewindow.cpp" line="272"/>
         <source>stopped</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="266"/>
+        <location filename="../solverconsolewindow.cpp" line="274"/>
         <source>Solver Console [%1] (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="353"/>
+        <location filename="../solverconsolewindow.cpp" line="361"/>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="379"/>
+        <location filename="../solverconsolewindow.cpp" line="387"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20456,7 +20803,7 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../structured2dgridnayscsvexporter.cpp" line="31"/>
+        <location filename="../structured2dgridnayscsvexporter.cpp" line="108"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20464,7 +20811,7 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>Structured2DGridNaysCSVExporter</name>
     <message>
-        <location filename="../structured2dgridnayscsvexporter.cpp" line="20"/>
+        <location filename="../structured2dgridnayscsvexporter.cpp" line="97"/>
         <source>RIC-Nays CSV</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20473,23 +20820,24 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="22"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="38"/>
         <source>iRIC Grid CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="49"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
-        <source>Warning</source>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
+        <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
-        <source>Cell flag values will not be loaded.</source>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
+        <source>The following columns were ignored.
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -42,7 +42,7 @@
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>

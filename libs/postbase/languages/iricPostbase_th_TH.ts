@@ -19,12 +19,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="66"/>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
         <source>Add time step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="66"/>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
         <source>Select Time step to add</source>
         <translation type="unfinished"></translation>
     </message>

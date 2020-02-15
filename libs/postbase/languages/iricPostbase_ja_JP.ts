@@ -19,12 +19,12 @@
         <translation>削除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="66"/>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
         <source>Add time step</source>
         <translation>タイムステップの追加</translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="66"/>
+        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
         <source>Select Time step to add</source>
         <translation>追加するタイムステップを選択してください</translation>
     </message>

@@ -37,7 +37,7 @@
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="176"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="180"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="199"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="968"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -57,12 +57,12 @@
         <translation>网格节点的最大数目是 %1</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="968"/>
         <source>Center line not defined yet</source>
         <translation>未定义中心线</translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditioncenterandwidth_definenewpointcommand.cpp" line="7"/>
+        <location filename="../private/gridcreatingconditioncenterandwidth_pushvertexcommand.cpp" line="7"/>
         <source>Add New Center Line Point</source>
         <translation>添加中心线点</translation>
     </message>
@@ -92,12 +92,12 @@
         <translation>完成定义多线</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="932"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="932"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义网格中心线</translation>
     </message>
@@ -124,7 +124,7 @@
         <location filename="../gridcreatingconditioncenterandwidthdialog.ui" line="241"/>
         <location filename="../gridcreatingconditioncenterandwidthdialog.ui" line="298"/>
         <source>m</source>
-        <translation></translation>
+        <translation>m</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncenterandwidthdialog.cpp" line="78"/>

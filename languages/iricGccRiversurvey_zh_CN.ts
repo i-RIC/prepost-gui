@@ -6,24 +6,25 @@
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
         <source>Create grid from river survey data</source>
-        <translation type="unfinished"></translation>
+        <translation>根据河流调查数据创建网格</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="22"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>网格形状是使用河流调查数据自动定义的。 通过在河流横截面，河流中心，左岸和右岸上添加网格创建控制点，可以指定网格划分号。
+注意：此算法仅在加载河流测量数据时才可用！导入河流测量数据后，请切换到该算法。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>现在，地理数据中不存在河流调查数据。 该算法不可用。</translation>
     </message>
 </context>
 <context>
@@ -31,37 +32,37 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="52"/>
         <source>Delete Selected Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>删除选定的控制点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="283"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="283"/>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>没有河流调查数据。 此网格创建条件不可用。</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="877"/>
         <source>&amp;Add Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加分割点...</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="878"/>
         <source>Add Division Points &amp;Regionally...</source>
-        <translation type="unfinished"></translation>
+        <translation>局部添加分割点..</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="879"/>
         <source>&amp;Move Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>更多分割点...</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="880"/>
         <source>Re&amp;position Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>重定位分割点</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="881"/>
@@ -81,7 +82,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="1580"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey.cpp" line="1580"/>

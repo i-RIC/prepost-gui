@@ -94,12 +94,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="101"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="103"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="101"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="103"/>
         <source>A maximum of four contours may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -185,7 +185,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="208"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="210"/>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="207"/>
         <source>Create Contour</source>
         <translation type="unfinished"></translation>

@@ -37,7 +37,7 @@
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="176"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="180"/>
         <location filename="../gridcreatingconditioncenterandwidth.cpp" line="199"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="968"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -57,12 +57,12 @@
         <translation>格子点数の最大値は %1 です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="972"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="968"/>
         <source>Center line not defined yet</source>
         <translation>中心線がまだ定義されていません。</translation>
     </message>
     <message>
-        <location filename="../private/gridcreatingconditioncenterandwidth_definenewpointcommand.cpp" line="7"/>
+        <location filename="../private/gridcreatingconditioncenterandwidth_pushvertexcommand.cpp" line="7"/>
         <source>Add New Center Line Point</source>
         <translation>中心線の頂点の追加</translation>
     </message>
@@ -92,12 +92,12 @@
         <translation>中心線の定義の終了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="932"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="936"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="932"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>格子の中心線を定義してください。中心線は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>

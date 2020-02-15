@@ -98,12 +98,12 @@
         <translation>スカラー (セル中心)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="101"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="103"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="101"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="103"/>
         <source>A maximum of four contours may be defined.</source>
         <translation>コンターは最大で4つまでしか描画できません。</translation>
     </message>
@@ -213,7 +213,7 @@
         <translation>背景色の設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="208"/>
+        <location filename="../datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp" line="210"/>
         <location filename="../datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp" line="207"/>
         <source>Create Contour</source>
         <translation>コンターの作成</translation>

@@ -1041,7 +1041,7 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="623"/>
         <source>dummy</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>

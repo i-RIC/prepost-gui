@@ -428,50 +428,50 @@
         <translation>河川横断線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="589"/>
-        <location filename="../geodatariversurvey.cpp" line="706"/>
-        <location filename="../geodatariversurvey.cpp" line="833"/>
-        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../geodatariversurvey.cpp" line="591"/>
+        <location filename="../geodatariversurvey.cpp" line="708"/>
+        <location filename="../geodatariversurvey.cpp" line="835"/>
+        <location filename="../geodatariversurvey.cpp" line="1442"/>
         <location filename="../private/geodatariversurvey_impl.cpp" line="822"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="589"/>
-        <location filename="../geodatariversurvey.cpp" line="1440"/>
+        <location filename="../geodatariversurvey.cpp" line="591"/>
+        <location filename="../geodatariversurvey.cpp" line="1442"/>
         <source>No points data to map is found. Please import points data.</source>
         <translation>地勢データが見つかりません。地勢データをインポートして下さい。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="695"/>
-        <location filename="../geodatariversurvey.cpp" line="1349"/>
+        <location filename="../geodatariversurvey.cpp" line="700"/>
+        <location filename="../geodatariversurvey.cpp" line="1351"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="695"/>
+        <location filename="../geodatariversurvey.cpp" line="700"/>
         <source>River survey data is generated using Points data.
 If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
         <translation>地勢データから、河川測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="706"/>
+        <location filename="../geodatariversurvey.cpp" line="708"/>
         <source>Center Line is not defined yet.</source>
         <translation>中心線がまだ定義されていません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="796"/>
+        <location filename="../geodatariversurvey.cpp" line="798"/>
         <source>Center line</source>
         <translation>中心線</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="833"/>
+        <location filename="../geodatariversurvey.cpp" line="835"/>
         <source>River survey data need at least 2 center points.</source>
         <translation>最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1349"/>
+        <location filename="../geodatariversurvey.cpp" line="1351"/>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>中心線をマウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -1587,12 +1587,12 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
-        <location filename="../geodatariversurveylandxmlexporter.cpp" line="34"/>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="38"/>
         <source>LandXml (*.xml)</source>
         <translation>LandXML (*.xml)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveylandxmlexporter.cpp" line="71"/>
+        <location filename="../geodatariversurveylandxmlexporter.cpp" line="76"/>
         <source>LandXml file(*.xml)</source>
         <translation>LandXML ファイル (*.xml)</translation>
     </message>

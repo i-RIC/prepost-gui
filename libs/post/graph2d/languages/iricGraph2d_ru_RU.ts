@@ -4,12 +4,12 @@
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="280"/>
         <source>Title Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="280"/>
         <source>Please input the title.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -197,12 +197,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="81"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="74"/>
         <source>Move up item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="115"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="108"/>
         <source>Move down item</source>
         <translation type="unfinished"></translation>
     </message>
