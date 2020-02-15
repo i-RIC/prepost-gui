@@ -688,7 +688,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File Propertys</source>

@@ -11,7 +11,7 @@
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="31"/>
         <source>TRIANGLE output (*.node, *.ele)</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="53"/>

@@ -6,22 +6,22 @@
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="22"/>
         <source>iRIC Grid CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Grid CSV 文件</translation>
     </message>
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
-        <source>iRIC Grid CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <source>RIC-Nays grid files (*.grid)</source>
+        <translation>RIC-Nays 网格文件 (*.grid)</translation>
     </message>
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Cell flag values will not be loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>单元标志值将不会被加载</translation>
     </message>
 </context>
 </TS>

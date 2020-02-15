@@ -505,7 +505,7 @@
     <message>
         <location filename="../geodatapointmaprealcreator.cpp" line="17"/>
         <source>Points</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapointmaprealcreator.cpp" line="48"/>

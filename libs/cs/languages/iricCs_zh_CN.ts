@@ -6,12 +6,12 @@
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="14"/>
         <source>Select Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>选择坐标系</translation>
     </message>
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="22"/>
         <source>Search:</source>
-        <translation type="unfinished"></translation>
+        <translation>检索：</translation>
     </message>
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="54"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
         <source>(Not Specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>未指定</translation>
     </message>
 </context>
 </TS>
