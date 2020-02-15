@@ -371,7 +371,7 @@
     <message>
         <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="298"/>
         <source>Skip rate :</source>
-        <translation跳过率:></translation>
+        <translation>跳过率:</translation>
     </message>
     <message>
         <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="369"/>

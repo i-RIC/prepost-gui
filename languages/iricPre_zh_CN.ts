@@ -831,7 +831,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation要导入地理数据，请首先指定坐标系。></translation>
+        <translation>要导入地理数据，请首先指定坐标系。</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
@@ -1315,7 +1315,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="86"/>
         <source>Cross-stream width[m]:</source>
-        <translation横流宽度[m]:></translation>
+        <translation>横流宽度[m]:</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui" line="134"/>
@@ -1371,7 +1371,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="58"/>
         <source>&amp;Import...</source>
-        <translation><&amp;导入.../translation>
+        <translation>&amp;导入...</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="61"/>

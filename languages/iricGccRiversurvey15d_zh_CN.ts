@@ -77,7 +77,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <location filename="../gridcreatingconditionriversurvey15d.cpp" line="783"/>
         <source>Are you sure you want to delete these control points?</source>
-        <translation确定删除这些控制点吗？></translation>
+        <translation>确定删除这些控制点吗？</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionriversurvey15d.cpp" line="1069"/>

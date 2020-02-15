@@ -87,7 +87,7 @@
     <message>
         <location filename="../gridcreatingconditionpoisson.cpp" line="524"/>
         <source>%1 not defined yet</source>
-        <translation>&1 未被定义</translation>
+        <translation>%1 未被定义</translation>
     </message>
     <message>
         <location filename="../gridcreatingconditionpoisson.cpp" line="670"/>

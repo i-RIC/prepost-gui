@@ -44,7 +44,7 @@
     <message>
         <location filename="../measureddatapointgroupdataitem.cpp" line="480"/>
         <source>Contour Physical Value Change</source>
-        <translation><轮廓物理值变化/translation>
+        <translation>轮廓物理值变化</translation>
     </message>
 </context>
 <context>

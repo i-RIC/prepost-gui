@@ -2123,7 +2123,7 @@ Option -&gt; Preferences</source>
         <location filename="../main/iricmainwindow.cpp" line="1849"/>
         <location filename="../main/iricmainwindow.cpp" line="2047"/>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation可视化窗口处于活动状态时，请选择此菜单。></translation>
+        <translation>可视化窗口处于活动状态时，请选择此菜单。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1863"/>
