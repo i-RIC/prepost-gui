@@ -61,6 +61,7 @@ protected:
 	void applyAxisSetting() override;
 
 private:
+	void getDims(int dims[4]);
 	void updateData();
 	void init();
 	void setupTimeMarker();

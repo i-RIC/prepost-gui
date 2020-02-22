@@ -3,6 +3,8 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowcellflaggroupdataitem.h"
 #include "post2dwindowcellscalargrouptopdataitem.h"
+#include "post2dwindowedgeiscalargrouptopdataitem.h"
+#include "post2dwindowedgejscalargrouptopdataitem.h"
 #include "post2dwindowgraphgroupdataitem.h"
 #include "post2dwindowgridshapedataitem.h"
 #include "post2dwindowgridtypedataitem.h"
@@ -63,6 +65,8 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	m_shapeDataItem {nullptr},
 	m_scalarGroupTopDataItem {nullptr},
 	m_cellScalarGroupTopDataItem {nullptr},
+	m_edgeIScalarGroupTopDataItem {nullptr},
+	m_edgeJScalarGroupTopDataItem {nullptr},
 	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
 	m_particleGroupDataItem {nullptr},
@@ -88,6 +92,14 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (cont->cellScalarValueExists()) {
 		m_cellScalarGroupTopDataItem = new Post2dWindowCellScalarGroupTopDataItem(this);
+	}
+
+	if (cont->edgeIScalarValueExists()) {
+		m_edgeIScalarGroupTopDataItem = new Post2dWindowEdgeIScalarGroupTopDataItem(this);
+	}
+
+	if (cont->edgeJScalarValueExists()) {
+		m_edgeJScalarGroupTopDataItem = new Post2dWindowEdgeJScalarGroupTopDataItem(this);
 	}
 
 	if (cont->scalarValueExists() && dynamic_cast<vtkStructuredGrid*> (cont->data()) != nullptr) {
@@ -130,6 +142,8 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	addChildItem(m_scalarGroupTopDataItem);
 	addChildItem(m_cellFlagGroupDataItem);
 	addChildItem(m_cellScalarGroupTopDataItem);
+	addChildItem(m_edgeIScalarGroupTopDataItem);
+	addChildItem(m_edgeJScalarGroupTopDataItem);
 
 	m_showAttributeBrowserActionForNodeResult = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForNodeResult, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
@@ -221,6 +235,14 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (!cellScalarNode.isNull() && m_cellScalarGroupTopDataItem != nullptr) {
 		m_cellScalarGroupTopDataItem->loadFromProjectMainFile(cellScalarNode);
 	}
+	QDomNode edgeINode = iRIC::getChildNode(node, "ScalarEdgeI");
+	if (!edgeINode.isNull() && m_edgeIScalarGroupTopDataItem != nullptr) {
+		m_edgeIScalarGroupTopDataItem->loadFromProjectMainFile(edgeINode);
+	}
+	QDomNode edgeJNode = iRIC::getChildNode(node, "ScalarEdgeJ");
+	if (!edgeJNode.isNull() && m_edgeJScalarGroupTopDataItem != nullptr) {
+		m_edgeJScalarGroupTopDataItem->loadFromProjectMainFile(edgeJNode);
+	}
 }
 
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -275,6 +297,16 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		m_cellScalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+	if (m_edgeIScalarGroupTopDataItem != nullptr) {
+		writer.writeStartElement("ScalarEdgeI");
+		m_edgeIScalarGroupTopDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (m_edgeJScalarGroupTopDataItem != nullptr) {
+		writer.writeStartElement("ScalarEdgeJ");
+		m_edgeJScalarGroupTopDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }
 
 void Post2dWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
@@ -299,6 +331,19 @@ PostZoneDataContainer* Post2dWindowZoneDataItem::dataContainer()
 
 vtkPolyData* Post2dWindowZoneDataItem::filteredData() const
 {
+	return m_filteredData;
+}
+
+vtkPolyData* Post2dWindowZoneDataItem::filteredData(GridLocation_t location) const
+{
+	switch (location) {
+	case IFaceCenter:
+		return m_filteredEdgeIData;
+		break;
+	case JFaceCenter:
+		return m_filteredEdgeJData;
+		break;
+	}
 	return m_filteredData;
 }
 
@@ -327,6 +372,14 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		m_filteredData = dataContainer()->filteredData(xmin, xmax, ymin, ymax, m_isMasked);
 		m_filteredData->UnRegister(0);
 	}
+	if (cont != nullptr && cont->edgeidata() != nullptr) {
+		m_filteredEdgeIData = dataContainer()->filteredEdgeIData(xmin, xmax, ymin, ymax, m_isMasked);
+		m_filteredEdgeIData->UnRegister(0);
+	}
+	if (cont != nullptr && cont->edgejdata() != nullptr) {
+		m_filteredEdgeJData = dataContainer()->filteredEdgeJData(xmin, xmax, ymin, ymax, m_isMasked);
+		m_filteredEdgeJData->UnRegister(0);
+	}
 
 	QTime time;
 	time.start();
@@ -342,6 +395,16 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		time.restart();
 		m_cellScalarGroupTopDataItem->update();
 		qDebug("Cell Contour shape: %d", time.elapsed());
+	}
+	if (m_edgeIScalarGroupTopDataItem != nullptr) {
+		time.restart();
+		m_edgeIScalarGroupTopDataItem->update();
+		qDebug("EdgeI Contour shape: %d", time.elapsed());
+	}
+	if (m_edgeJScalarGroupTopDataItem != nullptr) {
+		time.restart();
+		m_edgeJScalarGroupTopDataItem->update();
+		qDebug("EdgeJ Contour shape: %d", time.elapsed());
 	}
 	if (m_arrowGroupDataItem != nullptr) {
 		time.restart();
@@ -414,6 +477,16 @@ Post2dWindowCellFlagGroupDataItem* Post2dWindowZoneDataItem::cellFlagGroupDataIt
 Post2dWindowCellScalarGroupTopDataItem* Post2dWindowZoneDataItem::cellScalarGroupTopDataItem() const
 {
 	return m_cellScalarGroupTopDataItem;
+}
+
+Post2dWindowEdgeIScalarGroupTopDataItem* Post2dWindowZoneDataItem::edgeIScalarGroupTopDataItem() const
+{
+	return m_edgeIScalarGroupTopDataItem;
+}
+
+Post2dWindowEdgeJScalarGroupTopDataItem* Post2dWindowZoneDataItem::edgeJScalarGroupTopDataItem() const
+{
+	return m_edgeJScalarGroupTopDataItem;
 }
 
 Post2dWindowParticlesTopDataItem* Post2dWindowZoneDataItem::particlesDataItem() const
@@ -536,6 +609,24 @@ void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 		r.setRange(min, max);
 		m_cellScalarGroupTopDataItem->setZDepthRange(r);
 	}
+
+	// EdgeI Contour
+	if (cont->edgeIScalarValueExists()) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = m_edgeIScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		m_edgeIScalarGroupTopDataItem->setZDepthRange(r);
+	}
+
+	// EdgeJ Contour
+	if (cont->edgeJScalarValueExists()) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = m_edgeJScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		m_edgeJScalarGroupTopDataItem->setZDepthRange(r);
+	}
 }
 
 void Post2dWindowZoneDataItem::initNodeResultAttributeBrowser()
@@ -562,7 +653,7 @@ void Post2dWindowZoneDataItem::clearNodeResultAttributeBrowser()
 	m_attributeBrowserFixed = false;
 }
 
-void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -576,12 +667,27 @@ void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VT
 		return;
 	}
 	double vertex[3];
-	dataContainer()->data()->GetPoint(vid, vertex);
+	dataContainer()->data(gridLocation)->GetPoint(vid, vertex);
 
-	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v);
+	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v, gridLocation);
 }
 
-void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	fixNodeResultAttributeBrowser(p, v, Vertex);
+}
+
+void Post2dWindowZoneDataItem::fixEdgeIResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	fixNodeResultAttributeBrowser(p, v, IFaceCenter);
+}
+
+void Post2dWindowZoneDataItem::fixEdgeJResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	fixNodeResultAttributeBrowser(p, v, JFaceCenter);
+}
+
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -595,9 +701,24 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p,
 		return;
 	}
 	double vertex[3];
-	dataContainer()->data()->GetPoint(vid, vertex);
+	dataContainer()->data(gridLocation)->GetPoint(vid, vertex);
 
-	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v);
+	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v, gridLocation);
+}
+
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	updateNodeResultAttributeBrowser(p, v, Vertex);
+}
+
+void Post2dWindowZoneDataItem::updateEdgeIResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	updateNodeResultAttributeBrowser(p, v, IFaceCenter);
+}
+
+void Post2dWindowZoneDataItem::updateEdgeJResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	updateNodeResultAttributeBrowser(p, v, JFaceCenter);
 }
 
 void Post2dWindowZoneDataItem::initCellResultAttributeBrowser()
@@ -683,14 +804,14 @@ vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView*
 	return vid;
 }
 
-void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/)
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/, GridLocation_t gridLocation)
 {
 	PostZoneDataContainer* cont = dataContainer();
 	QList<PropertyBrowserAttribute> atts;
 
-	int count = cont->data()->GetPointData()->GetNumberOfArrays();
+	int count = cont->data(gridLocation)->GetPointData()->GetNumberOfArrays();
 	for (int i = 0; i < count; ++i) {
-		vtkAbstractArray* arr = cont->data()->GetPointData()->GetAbstractArray(i);
+		vtkAbstractArray* arr = cont->data(gridLocation)->GetPointData()->GetAbstractArray(i);
 		vtkDataArray* da = dynamic_cast<vtkDataArray*>(arr);
 		if (da == nullptr) {continue;}
 		if (da->GetNumberOfComponents() == 1) {
@@ -713,8 +834,8 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, d
 			atts.append(att);
 		}
 	}
-	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
+	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data(gridLocation));
+	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data(gridLocation));
 
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -725,6 +846,11 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, d
 	} else if (usgrid != nullptr) {
 		pb->view()->setVertexAttributes(vid, x, y, atts);
 	}
+}
+
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v)
+{
+	updateNodeResultAttributeBrowser(vid, x, y, v, Vertex);
 }
 
 void Post2dWindowZoneDataItem::updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView*)

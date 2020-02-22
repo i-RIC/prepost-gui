@@ -135,6 +135,40 @@ vtkPointSet* PostZoneDataContainer::data() const
 	return m_data;
 }
 
+vtkPointSet* PostZoneDataContainer::edgeidata() const
+{
+	return m_edgeidata;
+}
+
+vtkPointSet* PostZoneDataContainer::edgejdata() const
+{
+	return m_edgejdata;
+}
+
+vtkPointSet* PostZoneDataContainer::ifacedata() const
+{
+	return m_ifacedata;
+}
+
+vtkPointSet* PostZoneDataContainer::jfacedata() const
+{
+	return m_jfacedata;
+}
+
+vtkPointSet* PostZoneDataContainer::data(GridLocation_t gridLocation) const
+{
+	if (gridLocation == Vertex || gridLocation == CellCenter) {
+		return m_data;
+	}
+	if (gridLocation == IFaceCenter) {
+		return m_edgeidata;
+	}
+	if (gridLocation == JFaceCenter) {
+		return m_edgejdata;
+	}
+	return nullptr;
+}
+
 vtkPointSet* PostZoneDataContainer::labelData() const
 {
 	return m_labelData;
@@ -267,9 +301,17 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 {
 	if (m_data != nullptr) {
 		m_data->Initialize();
+		m_edgeidata->Initialize();
+		m_edgejdata->Initialize();
+		m_ifacedata->Initialize();
+		m_jfacedata->Initialize();
 		m_labelData->Initialize();
 	} else {
 		m_data = vtkSmartPointer<vtkStructuredGrid>::New();
+		m_edgeidata = vtkSmartPointer<vtkStructuredGrid>::New();
+		m_edgejdata = vtkSmartPointer<vtkStructuredGrid>::New();
+		m_ifacedata = vtkSmartPointer<vtkStructuredGrid>::New();
+		m_jfacedata = vtkSmartPointer<vtkStructuredGrid>::New();
 		m_labelData = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	}
 	vtkPointSet* p1 = m_data;
@@ -289,6 +331,20 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 		NVertexK = m_sizes[2];
 	}
 	grid->SetDimensions(NVertexI, NVertexJ, NVertexK);
+
+	vtkStructuredGrid* igrid = dynamic_cast<vtkStructuredGrid*>(m_edgeidata.Get());
+	igrid->SetDimensions(NVertexI, NVertexJ, NVertexK);
+
+	vtkStructuredGrid* jgrid = dynamic_cast<vtkStructuredGrid*>(m_edgejdata.Get());
+	jgrid->SetDimensions(NVertexI, NVertexJ, NVertexK);
+
+	vtkStructuredGrid* ifacegrid = dynamic_cast<vtkStructuredGrid*>(m_ifacedata.Get());
+	ifacegrid->SetDimensions(NVertexI, NVertexJ-1, NVertexK);
+
+	vtkStructuredGrid* jfacegrid = dynamic_cast<vtkStructuredGrid*>(m_jfacedata.Get());
+	jfacegrid->SetDimensions(NVertexI-1, NVertexJ, NVertexK);
+
+
 	// Find zone iterative data.
 	char zoneItername[32];
 	int ier;
@@ -370,8 +426,119 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 			}
 		}
 	}
+
 	grid->SetPoints(points);
 	grid->Modified();
+
+
+	//
+	//  Vertex(Ni=5, Nj=3) (m_data m_edgeidata m_edgejdata)
+	//
+	//   V(0,2)------------------V(1,2)------------------V(2,2)------------------V(3,2)------------------V(4,2)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   V(0,1)------------------V(1,1)------------------V(2,1)------------------V(3,1)------------------V(4,1)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   V(0,0)------------------V(1,0)------------------V(2,0)------------------V(3,0)------------------V(4,0)
+	//
+	//
+	//
+	//
+	//  Vertex(Ni=5, Nj=3)
+	//  IFaceCenter(Ni=5 ,Nj=2) (m_ifacedata)
+	//
+	//
+	//   V(0,2)------------------V(1,2)------------------V(2,2)------------------V(3,2)------------------V(4,2)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   I(0,1)                  I(1,1)                  I(2,1)                  I(3,1)                   I(4,1)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   V(0,1)------------------V(1,1)------------------V(2,1)------------------V(3,1)------------------V(4,1)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   I(0,0)                  I(1,0)                  I(2,0)                  I(3,0)                   I(4,0)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   V(0,0)------------------V(1,0)------------------V(2,0)------------------V(3,0)------------------V(4,0)
+	//
+	//
+	//
+	//
+	//  Vertex(Ni=5, Nj=3)
+	//  JFaceCenter(Ni=4, Nj=3) (m_jfacedata)
+	//
+	//
+	//   V(0,2)------J(0,2)------V(1,2)------J(1,2)------V(2,2)------J(2,2)------V(3,2)------J(3,2)------V(4,2)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   V(0,1)------J(0,1)------V(1,1)------J(1,1)------V(2,1)------J(2,1)------V(3,1)------J(3,1)------V(4,1)
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//      |                       |                       |                       |                       |
+	//   V(0,0)------J(0,0)------V(1,0)------J(1,0)------V(2,0)------J(2,0)------V(3,0)------J(3,0)------V(4,0)
+	//
+	//
+
+	if (m_cellDim >= 2) {
+
+		m_edgeidata->SetPoints(points);
+		m_edgeidata->Modified();
+		m_edgejdata->SetPoints(points);
+		m_edgejdata->Modified();
+
+		vtkSmartPointer<vtkPoints> iface_points = vtkSmartPointer<vtkPoints>::New();
+		iface_points->SetDataTypeToDouble();
+		for (int k = 0; k < NVertexK; ++k) {
+			for (int j = 0; j < (NVertexJ - 1); ++j) {
+				for (int i = 0; i < NVertexI; ++i) {
+					int idx1 = i + NVertexI * (j + NVertexJ * k);
+					int idx2 = i + NVertexI * ((j + 1) + NVertexJ * k); // j + 1
+					if (m_cellDim == 2) {
+						iface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), dataZ[idx1]);
+					}
+					else {
+						int idx3 = i + NVertexI * (j + NVertexJ * (k + 1)); // k + 1
+						iface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), (dataZ[idx1] + dataZ[idx3]) * 0.5);
+					}
+				}
+			}
+		}
+
+		vtkSmartPointer<vtkPoints> jface_points = vtkSmartPointer<vtkPoints>::New();
+		jface_points->SetDataTypeToDouble();
+		for (int k = 0; k < NVertexK; ++k) {
+			for (int j = 0; j < NVertexJ; ++j) {
+				for (int i = 0; i < (NVertexI - 1); ++i) {
+					int idx1 = i + NVertexI * (j + NVertexJ * k);
+					int idx2 = 1 + i + NVertexI * (j + NVertexJ * k); // i + 1
+					if (m_cellDim == 2) {
+						jface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), dataZ[idx1]);
+					}
+					else {
+						int idx3 = i + NVertexI * (j + NVertexJ * (k + 1)); // k + 1
+						jface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), (dataZ[idx1] + dataZ[idx3]) * 0.5);
+					}
+				}
+			}
+		}
+		m_ifacedata->SetPoints(iface_points);
+		m_ifacedata->Modified();
+		m_jfacedata->SetPoints(jface_points);
+		m_jfacedata->Modified();
+	}
 
 	return true;
 }
@@ -549,6 +716,16 @@ bool PostZoneDataContainer::getCellSolutionId(const int fn, const int currentSte
 	return findSolutionId(fn, currentStep, solId, "FlowCellSolutionPointers");
 }
 
+bool PostZoneDataContainer::getEdgeISolutionId(const int fn, const int currentStep, int* solId)
+{
+	return findSolutionId(fn, currentStep, solId, "FlowIFaceSolutionPointers");
+}
+
+bool PostZoneDataContainer::getEdgeJSolutionId(const int fn, const int currentStep, int* solId)
+{
+	return findSolutionId(fn, currentStep, solId, "FlowJFaceSolutionPointers");
+}
+
 bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int firstAtt)
 {
 	int narrays;
@@ -576,6 +753,72 @@ bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int first
 			CgnsUtil::loadScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, IBC);
 		} else if (datatype == RealDouble) {
 			CgnsUtil::loadScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, IBC);
+		}
+	}
+	atts->Modified();
+	return true;
+}
+
+bool PostZoneDataContainer::loadEdgeIScalarData(vtkDataSetAttributes* atts, int firstAtt)
+{
+	int narrays;
+	cg_narrays(&narrays);
+	for (int i = firstAtt; i <= narrays; ++i) {
+		DataType_t datatype;
+		int dimension;
+		cgsize_t dimVector[3];
+		char arrayname[33];
+		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
+		QString name(arrayname);
+
+		// skip vector values.
+		QRegExp rx;
+		// For example, "VelocityX", "VelocityY", "VelocityZ"
+		rx = QRegExp("(.*)(X|Y|Z)$");
+		if (rx.indexIn(name) != -1) { continue; }
+		int datalen = 1;
+		for (int j = 0; j < dimension; ++j) {
+			datalen *= dimVector[j];
+		}
+		if (datatype == Integer) {
+			CgnsUtil::loadEdgeIScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen, dimVector, IBC);
+		} else if (datatype == RealSingle) {
+			CgnsUtil::loadEdgeIScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, dimVector, IBC);
+		} else if (datatype == RealDouble) {
+			CgnsUtil::loadEdgeIScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, dimVector, IBC);
+		}
+	}
+	atts->Modified();
+	return true;
+}
+
+bool PostZoneDataContainer::loadEdgeJScalarData(vtkDataSetAttributes* atts, int firstAtt)
+{
+	int narrays;
+	cg_narrays(&narrays);
+	for (int i = firstAtt; i <= narrays; ++i) {
+		DataType_t datatype;
+		int dimension;
+		cgsize_t dimVector[3];
+		char arrayname[33];
+		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
+		QString name(arrayname);
+
+		// skip vector values.
+		QRegExp rx;
+		// For example, "VelocityX", "VelocityY", "VelocityZ"
+		rx = QRegExp("(.*)(X|Y|Z)$");
+		if (rx.indexIn(name) != -1) { continue; }
+		int datalen = 1;
+		for (int j = 0; j < dimension; ++j) {
+			datalen *= dimVector[j];
+		}
+		if (datatype == Integer) {
+			CgnsUtil::loadEdgeJScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen, dimVector, IBC);
+		} else if (datatype == RealSingle) {
+			CgnsUtil::loadEdgeJScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, dimVector, IBC);
+		} else if (datatype == RealDouble) {
+			CgnsUtil::loadEdgeJScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, dimVector, IBC);
 		}
 	}
 	atts->Modified();
@@ -646,15 +889,28 @@ bool PostZoneDataContainer::loadGridScalarData(const int fn, const int solid)
 
 	CgnsLinkFollower linkFollower;
 
-	vtkDataSetAttributes* data;
+	vtkDataSetAttributes* atts;
 	if (location == Vertex) {
 		// vertex.
-		data = m_data->GetPointData();
-	} else {
+		atts = data(Vertex)->GetPointData();
+	} else if (location == CellCenter) {
 		// cell center.
-		data = m_data->GetCellData();
+		atts = data(CellCenter)->GetCellData();
+	} else if (location == IFaceCenter) {
+		// edgeI
+		atts = data(IFaceCenter)->GetPointData();  // for Post2d
+		loadEdgeIScalarData(atts);
+		atts = ifacedata()->GetPointData();        // for Charts
+	} else if (location == JFaceCenter) {
+		// edgeJ
+		atts = data(JFaceCenter)->GetPointData();  // for Post2d
+		loadEdgeJScalarData(atts);
+		atts = jfacedata()->GetPointData();        // for Charts
+	} else {
+		Q_ASSERT_X(false, "PostZoneDataContainer::loadGridScalarData", "Unhandled GridLocation");
+
 	}
-	return loadScalarData(data);
+	return loadScalarData(atts);
 }
 
 bool PostZoneDataContainer::loadGridVectorData(const int fn, const int solid)
@@ -854,6 +1110,18 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn, bool disableCalculate
 		loadGridScalarData(fn, cellSolId);
 	}
 
+	// load edgeI data
+	int edgeISolId;
+	if (getEdgeISolutionId(fn, currentStep, &edgeISolId)) {
+		loadGridScalarData(fn, edgeISolId);
+	}
+
+	// load jface data
+	int edgeJSolId;
+	if (getEdgeJSolutionId(fn, currentStep, &edgeJSolId)) {
+		loadGridScalarData(fn, edgeJSolId);
+	}
+
 	ret = loadGridVectorData(fn, solId);
 	if (ret == false) {goto ERROR;}
 	ret = loadCellFlagData(fn);
@@ -925,6 +1193,44 @@ void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) c
 	*k = index / ((dim[0] - 1) * (dim[1] - 1));
 }
 
+int PostZoneDataContainer::ifaceIndex(int i, int j, int k) const
+{
+	int dim[3];
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_ifacedata);
+	grid->GetDimensions(dim);
+	return i + dim[0] * (j + (dim[1] - 1) * k);
+}
+
+void PostZoneDataContainer::getifaceIJKIndex(int index, int* i, int* j, int* k) const
+{
+	int dim[3];
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_ifacedata);
+	grid->GetDimensions(dim);
+
+	*i = index % (dim[0]);
+	*j = ((index - *i) / dim[0]) % dim[1];
+	*k = index / (dim[0] * dim[1]);
+}
+
+int PostZoneDataContainer::jfaceIndex(int i, int j, int k) const
+{
+	int dim[3];
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_jfacedata);
+	grid->GetDimensions(dim);
+	return i + dim[0] * (j + (dim[1] - 1) * k);
+}
+
+void PostZoneDataContainer::getjfaceIJKIndex(int index, int* i, int* j, int* k) const
+{
+	int dim[3];
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_jfacedata);
+	grid->GetDimensions(dim);
+
+	*i = index % (dim[0]);
+	*j = ((index - *i) / dim[0]) % dim[1];
+	*k = index / (dim[0] * dim[1]);
+}
+
 bool PostZoneDataContainer::scalarValueExists() const
 {
 	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData());
@@ -945,6 +1251,26 @@ bool PostZoneDataContainer::cellScalarValueExists() const
 	return false;
 }
 
+bool PostZoneDataContainer::edgeIScalarValueExists() const
+{
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeidata->GetPointData());
+	for (const auto& name : names) {
+		if (hasInputDataPrefix(name)) { continue; }
+		return true;
+	}
+	return false;
+}
+
+bool PostZoneDataContainer::edgeJScalarValueExists() const
+{
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgejdata->GetPointData());
+	for (const auto& name : names) {
+		if (hasInputDataPrefix(name)) { continue; }
+		return true;
+	}
+	return false;
+}
+
 bool PostZoneDataContainer::vectorValueExists() const
 {
 	return vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(m_data->GetPointData()).size() > 0;
@@ -958,6 +1284,19 @@ std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResults()
 const std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResults() const
 {
 	return m_calculatedResults;
+}
+
+
+bool PostZoneDataContainer::IBCExists(GridLocation_t gridLocation) const
+{
+	if (gridLocation == CellCenter) {
+		return IBCCellExists();
+	} else {
+		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(gridLocation)->GetPointData())) {
+			if (IBC == name.c_str()) { return true; }
+		}
+	}
+	return false;
 }
 
 bool PostZoneDataContainer::IBCExists() const
@@ -978,6 +1317,25 @@ bool PostZoneDataContainer::IBCCellExists() const
 	return false;
 }
 
+bool PostZoneDataContainer::IBCEdgeIExists() const
+{
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeidata->GetPointData())) {
+		if (IBC == name.c_str()) { return true; }
+	}
+
+	return false;
+}
+
+bool PostZoneDataContainer::IBCEdgeJExists() const
+{
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgejdata->GetPointData())) {
+		if (IBC == name.c_str()) { return true; }
+	}
+
+	return false;
+}
+
+
 QString PostZoneDataContainer::elevationName() const
 {
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData())) {
@@ -993,14 +1351,32 @@ vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, doubl
 {
 	if (vtkStructuredGrid::SafeDownCast(m_data) != nullptr) {
 		// Structured Data
-		return filteredDataStructured(xmin, xmax, ymin, ymax, masked);
+		return filteredDataStructured(m_data, xmin, xmax, ymin, ymax, masked);
 	} else {
 		// Unstructured Data
 		return filteredDataUnstructured(xmin, xmax, ymin, ymax, masked);
 	}
 }
 
-vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkPolyData* PostZoneDataContainer::filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+{
+	if (vtkStructuredGrid::SafeDownCast(m_edgeidata) != nullptr) {
+		// Structured Data
+		return filteredDataStructured(m_edgeidata, xmin, xmax, ymin, ymax, masked);
+	}
+	return nullptr;
+}
+
+vtkPolyData* PostZoneDataContainer::filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+{
+	if (vtkStructuredGrid::SafeDownCast(m_edgejdata) != nullptr) {
+		// Structured Data
+		return filteredDataStructured(m_edgejdata, xmin, xmax, ymin, ymax, masked);
+	}
+	return nullptr;
+}
+
+vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPointSet> data, double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
 	masked = false;
 
@@ -1016,12 +1392,12 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	ymax += ywidth * 0.2;
 
 	// 1. Find the grid vertex that is the nearest to the region center.
-	vtkIdType vid = m_data->FindPoint(xcenter, ycenter, 0);
-	double* cv = m_data->GetPoint(vid);
+	vtkIdType vid = data->FindPoint(xcenter, ycenter, 0);
+	double* cv = data->GetPoint(vid);
 	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
 		// 2. If the point is out of the region, the whole grid is out of the region.
 		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
-		emptyPoly->SetPoints(m_data->GetPoints());
+		emptyPoly->SetPoints(data->GetPoints());
 		emptyPoly->Register(0);
 		return emptyPoly;
 	}
@@ -1035,28 +1411,28 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	double tmpv[3];
 
 	// test I = 0
-	m_data->GetPoint(nodeIndex(0, centerJ, 0), tmpv);
+	data->GetPoint(nodeIndex(0, centerJ, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMin = 0;
 	} else {
 		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
 	}
 	// test I = imax
-	m_data->GetPoint(nodeIndex(m_sizes[0] - 1, centerJ, 0), tmpv);
+	data->GetPoint(nodeIndex(m_sizes[0] - 1, centerJ, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMax = m_sizes[0] - 1;
 	} else {
 		lineLimitIMax = lineLimitI(centerJ, centerI, m_sizes[0] - 1, region);
 	}
 	// test J = 0
-	m_data->GetPoint(nodeIndex(centerI, 0, 0), tmpv);
+	data->GetPoint(nodeIndex(centerI, 0, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMin = 0;
 	} else {
 		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
 	}
 	// test J = jmax
-	m_data->GetPoint(nodeIndex(centerI, m_sizes[1] - 1, 0), tmpv);
+	data->GetPoint(nodeIndex(centerI, m_sizes[1] - 1, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMax = m_sizes[1] - 1;
 	} else {
@@ -1109,7 +1485,7 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 
 	vtkSmartPointer<vtkExtractGrid> exGrid = vtkSmartPointer<vtkExtractGrid>::New();
 	exGrid->SetVOI(lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2, 0, 0);
-	exGrid->SetInputData(vtkStructuredGrid::SafeDownCast(m_data));
+	exGrid->SetInputData(vtkStructuredGrid::SafeDownCast(data));
 	exGrid->Update();
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
@@ -1128,9 +1504,9 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	geo->SetInputConnection(exGrid->GetOutputPort());
 
 	geo->Update();
-	vtkPolyData* data = geo->GetOutput();
-	data->Register(0);
-	return data;
+	vtkPolyData* filtered_data = geo->GetOutput();
+	filtered_data->Register(0);
+	return filtered_data;
 }
 
 vtkPolyData* PostZoneDataContainer::filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const

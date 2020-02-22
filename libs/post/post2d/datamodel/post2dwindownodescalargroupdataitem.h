@@ -2,6 +2,7 @@
 #define POST2DWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
+#include "../scalarbari.h"
 
 #include <postbase/post2dwindowcontoursetting.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
@@ -20,7 +21,7 @@ class vtkPolyData;
 class vtkPolyDataMapper;
 class vtkScalarBarWidget;
 
-class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem, public ScalarbarI
 {
 	Q_OBJECT
 
@@ -28,7 +29,7 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag);
+	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, GridLocation_t gridLocation);
 	~Post2dWindowNodeScalarGroupDataItem();
 
 	std::string target() const;
@@ -58,6 +59,10 @@ public:
 
 	bool exportContourFigureToShape(const QString& filename, double time);
 
+	ScalarBarSetting::Quadrant quadrant() const override;
+
+	GridLocation_t gridLocation() const;
+
 protected:
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -81,6 +86,7 @@ private:
 	// Settings
 	Post2dWindowContourSetting m_setting;
 	LookupTableContainer m_lookupTableContainer;
+	GridLocation_t m_gridLocation;
 
 	vtkLODActor* m_contourActor;
 	vtkDataSetMapper* m_contourMapper;
@@ -96,6 +102,8 @@ private:
 
 	class SetSettingCommand;
 
+	friend class Post2dWindowEdgeIScalarGroupTopDataItem;
+	friend class Post2dWindowEdgeJScalarGroupTopDataItem;
 	friend class Post2dWindowNodeScalarGroupTopDataItem;
 };
 

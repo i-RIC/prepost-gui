@@ -22,7 +22,7 @@ Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget* pare
 {
 	m_activeAvailable = true;
 	m_unstructured = false;
-	m_location = GridLocationNull;
+	m_gridLocation = GridLocationNull;
 
 	ui->setupUi(this);
 	ui->contourWidget->hidePointsRadioButton();
@@ -38,18 +38,18 @@ Post2dWindowContourSettingDialog::~Post2dWindowContourSettingDialog()
 	delete ui;
 }
 
-void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData, GridLocation_t location)
+void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData, GridLocation_t gridLocation)
 {
 	SolverDefinitionGridType* gtype = m_gridTypeDataItem->gridType();
 
-	if (location == Vertex) {
-		vtkPointData* pd = zoneData->data()->GetPointData();
+	if (gridLocation == Vertex || gridLocation == IFaceCenter || gridLocation == JFaceCenter) {
+		vtkPointData* pd = zoneData->data(gridLocation)->GetPointData();
 		m_solutions.clear();
 		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 			if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 			m_solutions.push_back(name);
 		}
-	} else if (location == CellCenter) {
+	} else if (gridLocation == CellCenter) {
 		vtkCellData* cd = zoneData->data()->GetCellData();
 		m_solutions.clear();
 		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
@@ -58,7 +58,8 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 		}
 		ui->contourWidget->hideRadioButton(ContourSettingWidget::ContourFigure);
 	}
-	m_location = location;
+
+	m_gridLocation = gridLocation;
 
 	ComboBoxTool::setupItems(gtype->solutionCaptions(m_solutions), ui->physicalValueComboBox);
 
@@ -146,11 +147,19 @@ void Post2dWindowContourSettingDialog::targetChanged(int index)
 {
 	std::string sol = m_solutions.at(index);
 	LookupTableContainer* c;
-	if (this->m_location == Vertex) {
+	if (m_gridLocation == Vertex) {
 		c = m_gridTypeDataItem->nodeLookupTable(sol);
-	} else if (this->m_location == CellCenter) {
+	}
+	else if (m_gridLocation == CellCenter) {
 		c = m_gridTypeDataItem->cellLookupTable(sol);
-	} else {
+	}
+	else if (m_gridLocation == IFaceCenter) {
+		c = m_gridTypeDataItem->nodeLookupTable(sol);
+	}
+	else if (m_gridLocation == JFaceCenter) {
+		c = m_gridTypeDataItem->nodeLookupTable(sol);
+	}
+	else {
 		Q_ASSERT(false);
 	}
 

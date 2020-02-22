@@ -1,6 +1,7 @@
-#ifndef POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H
-#define POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H
+#ifndef POST2DWINDOWEDGEJSCALARGROUPTOPDATAITEM_H
+#define POST2DWINDOWEDGEJSCALARGROUPTOPDATAITEM_H
 
+//#include "../post2dwindowdataitem.h"
 #include "post2dwindowscalargrouptopdataitem.h"
 
 #include <guicore/misc/targeted/targeteditemi.h>
@@ -14,21 +15,15 @@
 #include <QMap>
 #include <QList>
 
-class NamedGraphicWindowDataItem;
 class Post2dWindowNodeScalarGroupDataItem;
-class vtkLODActor;
-class vtkActor;
-class vtkAlgorithm;
-class vtkDataSetMapper;
-class vtkPolyDataMapper;
-class vtkContourFilter;
 
-class Post2dWindowNodeScalarGroupTopDataItem : public Post2dWindowScalarGroupTopDataItem
+
+class Post2dWindowEdgeJScalarGroupTopDataItem : public Post2dWindowScalarGroupTopDataItem // Post2dWindowDataItem
 {
 	Q_OBJECT
 public:
-	Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* parent);
-	~Post2dWindowNodeScalarGroupTopDataItem();
+	Post2dWindowEdgeJScalarGroupTopDataItem(Post2dWindowDataItem* parent);
+	~Post2dWindowEdgeJScalarGroupTopDataItem();
 
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -41,16 +36,6 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
-	QList<QString> selectedScalars();
-	bool checkKmlExportCondition(const QString& target);
-	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& target);
-	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& target);
-	bool exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time, bool oneShot);
-
-	QList<QString> availableScalars();
-	bool checkShapeExportCondition(const QString& target);
-	bool exportContourFigureToShape(const QString& target, const QString& filename, double time);
-
 protected:
 	void addCustomMenuItems(QMenu* menu) override;
 	QDialog* addDialog(QWidget* parent) override;
@@ -61,9 +46,7 @@ protected:
 private:
 	std::map<std::string, Post2dWindowNodeScalarGroupDataItem*> m_scalarmap; // only used by ctor and doLoadFromProjectMainFile
 
-	friend class Post2dWindowNodeScalarGroupDataItem;
-
 	class CreateCommand;
 };
 
-#endif // POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H
+#endif // POST2DWINDOWEDGEJSCALARGROUPTOPDATAITEM_H

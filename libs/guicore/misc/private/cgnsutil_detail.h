@@ -58,6 +58,90 @@ void CgnsUtil::loadScalarDataT(const QString& name, vtkDataSetAttributes* atts, 
 }
 
 template<class T, class DA>
+void CgnsUtil::loadEdgeIScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName)
+{
+	std::vector<T> edgeIArray(datalen, 0);
+	cg_array_read(index, edgeIArray.data());
+
+	cgsize_t ni = dims[0];
+	cgsize_t nj = dims[1] + 1;
+
+	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
+	tmpArray->SetName(iRIC::toStr(name).c_str());
+	tmpArray->Allocate(ni * nj);
+
+	if (IBCName == name) {
+		// for IBC values, special handling is done: 0 is inactive the others are all active.
+		for (cgsize_t i = 0; i < datalen; ++i) {
+			int val = static_cast<int>(edgeIArray[i]);
+			if (val != 0) { edgeIArray[i] = 1; }
+		}
+	}
+
+	for (cgsize_t j = 0; j < nj; ++j) {
+		for (cgsize_t i = 0; i < ni; ++i) {
+			if (j == 0) {
+				cgsize_t vdx = i;
+				tmpArray->InsertNextValue(edgeIArray[vdx]);
+			}
+			else if (j == (nj - 1)) {
+				cgsize_t vdx = (j - 1) * ni + i;
+				tmpArray->InsertNextValue(edgeIArray[vdx]);
+			}
+			else {
+				cgsize_t i1 = (j - 1) * ni + i;
+				cgsize_t i2 = j * ni + i;
+				T v = (edgeIArray[i1] + edgeIArray[i2]) * 0.5;
+				tmpArray->InsertNextValue(v);
+			}
+		}
+	}
+	atts->AddArray(tmpArray);
+}
+
+template<class T, class DA>
+void CgnsUtil::loadEdgeJScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName)
+{
+	std::vector<T> edgeJArray(datalen, 0);
+	cg_array_read(index, edgeJArray.data());
+
+	cgsize_t ni = dims[0] + 1;
+	cgsize_t nj = dims[1];
+
+	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
+	tmpArray->SetName(iRIC::toStr(name).c_str());
+	tmpArray->Allocate(ni * nj);
+
+	if (IBCName == name) {
+		// for IBC values, special handling is done: 0 is inactive the others are all active.
+		for (cgsize_t i = 0; i < datalen; ++i) {
+			int val = static_cast<int>(edgeJArray[i]);
+			if (val != 0) { edgeJArray[i] = 1; }
+		}
+	}
+
+	for (cgsize_t j = 0; j < nj; ++j) {
+		for (cgsize_t i = 0; i < ni; ++i) {
+			if (i == 0) {
+				cgsize_t vdx = j * (ni - 1);
+				tmpArray->InsertNextValue(edgeJArray[vdx]);
+			}
+			else if (i == (ni - 1)) {
+				cgsize_t vdx = j * (ni - 1) + i - 1;
+				tmpArray->InsertNextValue(edgeJArray[vdx]);
+			}
+			else {
+				cgsize_t i1 = j * (ni - 1) + i - 1;
+				cgsize_t i2 = j * (ni - 1) + i;
+				T v = (edgeJArray[i1] + edgeJArray[i2]) * 0.5;
+				tmpArray->InsertNextValue(v);
+			}
+		}
+	}
+	atts->AddArray(tmpArray);
+}
+
+template<class T, class DA>
 void CgnsUtil::loadVectorDataT(const QString& name, vtkDataSetAttributes* atts, int iX, int iY, int iZ, int datalen)
 {
 	std::vector<T> dataX(datalen, 0);

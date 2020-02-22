@@ -200,6 +200,12 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
 				ti.dataNamesMap[CellCenter].append(name.c_str());
 			}
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgeidata()->GetPointData())) {
+				ti.dataNamesMap[IFaceCenter].append(name.c_str());
+			}
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
+				ti.dataNamesMap[JFaceCenter].append(name.c_str());
+			}
 			m_dataTypeInfos.append(ti);
 		}
 	}
@@ -649,7 +655,9 @@ GridLocation_t Graph2dHybridWindowResultSetting::getGridLocation(QString string)
 	static QMap<QString, GridLocation_t> map{
 		{ "GridLocationNull", GridLocationNull },
 		{ "Vertex",           Vertex },
-		{ "CellCenter",       CellCenter }
+		{ "CellCenter",       CellCenter },
+		{ "EdgeI",            IFaceCenter },
+		{ "EdgeJ",            JFaceCenter }
 	};
 	Q_ASSERT(map.find(string) != map.end());
 	return map[string];
@@ -660,7 +668,9 @@ QString Graph2dHybridWindowResultSetting::getGridLocationString(GridLocation_t l
 	static QMap<GridLocation_t, QString> map{
 		{ GridLocationNull, "GridLocationNull" },
 		{ Vertex,           "Vertex" },
-		{ CellCenter,       "CellCenter" }
+		{ CellCenter,       "CellCenter" },
+		{ IFaceCenter,      "EdgeI" },
+		{ JFaceCenter,      "EdgeJ" }
 	};
 	Q_ASSERT(map.find(location) != map.end());
 	return map[location];
@@ -671,7 +681,10 @@ GridLocation_t Graph2dHybridWindowResultSetting::getGridLocationTranslated(QStri
 	static QMap<QString, GridLocation_t> map{
 		{ QObject::tr("GridLocationNull"), GridLocationNull },
 		{ QObject::tr("Vertex"),           Vertex },
-		{ QObject::tr("CellCenter"),       CellCenter }
+		{ QObject::tr("CellCenter"),       CellCenter },
+		{ QObject::tr("EdgeI"),            IFaceCenter },
+		{ QObject::tr("EdgeJ"),            JFaceCenter }
+
 	};
 	Q_ASSERT(map.find(string) != map.end());
 	return map[string];
@@ -682,7 +695,9 @@ QString Graph2dHybridWindowResultSetting::getGridLocationStringTranslated(GridLo
 	static QMap<GridLocation_t, QString> map{
 		{ GridLocationNull, QObject::tr("GridLocationNull") },
 		{ Vertex,           QObject::tr("Vertex") },
-		{ CellCenter,       QObject::tr("CellCenter") }
+		{ CellCenter,       QObject::tr("CellCenter") },
+		{ IFaceCenter,      QObject::tr("EdgeI") },
+		{ JFaceCenter,      QObject::tr("EdgeJ") }
 	};
 	Q_ASSERT(map.find(location) != map.end());
 	return map[location];

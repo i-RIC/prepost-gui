@@ -30,26 +30,17 @@ void Graph2dHybridWindowDataItem::buildData(
 	QVector<double> indexvals;
 	QVector<double> srcxvals;
 	bool xIsIndex = false;
-	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s1.targetDataTypeInfo();
-	indexvals.reserve(xvals.size());
-	if (info->gridLocation == Vertex || s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
-		for (int i = 0; i < xvals.count(); ++i) {
-			indexvals.append(i + 1);
-		}
-	} else if (info->gridLocation == CellCenter) {
-		for (int i = 0; i < xvals.count(); ++i) {
-			indexvals.append(i + 1);
-		}
-	} else {
-		Q_ASSERT(false);   //   Unhandled GridLocation_t
-	}
-	Q_ASSERT(indexvals.size() == xvals.size());
+
 	if (s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 		xIsIndex = s1.timeValueType() == Graph2dHybridWindowResultSetting::tvtTimeStep;
 	} else {
 		xIsIndex = s1.positionValueType() == Graph2dHybridWindowResultSetting::pvtIndex;
 	}
 	if (xIsIndex) {
+		indexvals.reserve(xvals.size());
+		for (int i = 0; i < xvals.count(); ++i) {
+			indexvals.append(i + 1);
+		}
 		srcxvals = indexvals;
 	} else {
 		srcxvals = xvals;
