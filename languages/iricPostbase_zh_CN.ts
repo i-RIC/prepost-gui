@@ -269,6 +269,122 @@
     </message>
 </context>
 <context>
+    <name>PostStringResultDataItem</name>
+    <message>
+        <location filename="../string/poststringresultdataitem.cpp" line="71"/>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/private/poststringresultdataitem_movecommand.cpp" line="6"/>
+        <source>Move label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/private/poststringresultdataitem_resizecommand.cpp" line="6"/>
+        <source>Resize label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/private/poststringresultdataitem_setsettingcommand.cpp" line="6"/>
+        <source>Edit Label Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PostStringResultSettingDialog</name>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="14"/>
+        <source>Label Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="20"/>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="32"/>
+        <source>Position and Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="43"/>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="51"/>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="65"/>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="117"/>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="125"/>
+        <source>Left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="139"/>
+        <source>Top:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="189"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="195"/>
+        <source>Auto</source>
+        <translation type="unfinished">自动</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="209"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="226"/>
+        <source>Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="266"/>
+        <source>Font and Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="272"/>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="288"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="310"/>
+        <source>Font color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="341"/>
+        <source>Background color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PostTimeDataItem</name>
     <message>
         <location filename="../time/posttimedataitem.cpp" line="70"/>

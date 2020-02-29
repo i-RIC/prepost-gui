@@ -1544,9 +1544,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="148"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="151"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="154"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="152"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="155"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="158"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
