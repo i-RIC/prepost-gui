@@ -27,6 +27,12 @@ public:
 	static void loadScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, const QString& IBCName = "");
 
 	template<class T, class DA>
+	static void loadEdgeIScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName = "");
+
+	template<class T, class DA>
+	static void loadEdgeJScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName = "");
+
+	template<class T, class DA>
 	static void loadVectorDataT(const QString& name, vtkDataSetAttributes* atts, int iX, int iY, int iZ, int datalen);
 
 private:

@@ -63,8 +63,9 @@
 
 #include <vtkPolyDataWriter.h>
 
-Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag) :
-	Post2dWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, GridLocation_t gridLocation) :
+	Post2dWindowDataItem {tr(""), QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	m_gridLocation {gridLocation}
 {
 	setupStandardItem(cflag, rflag, dflag);
 
@@ -117,7 +118,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	vtkPointSet* ps = cont->data();
+	vtkPointSet* ps = cont->data(m_gridLocation);
 	if (m_setting.target == "") {return;}
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
@@ -127,11 +128,11 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	std::string targetStr = iRIC::toStr(m_setting.target);
 	ScalarsToColorsContainerUtil::setValueRange(&m_lookupTableContainer, pd->GetArray(targetStr.c_str()));
 
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
-	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
-	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
+	Post2dWindowScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowScalarGroupTopDataItem*>(parent());
+	m_standardItem->setText(topitem->colorbarTitleMap().value(targetStr));
+	m_standardItemCopy->setText(topitem->colorbarTitleMap().value(targetStr));
 
-	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
+	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData(m_gridLocation);
 	if (polyData == nullptr) return;
 	vtkPolyData* rcp = createRangeClippedPolyData(polyData);
 	vtkPolyData* vcp = createValueClippedPolyData(rcp);
@@ -268,7 +269,7 @@ void Post2dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& 
 void Post2dWindowNodeScalarGroupDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) { return; }
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	Post2dWindowScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowScalarGroupTopDataItem*>(parent());
 	if (m_standardItem->checkState() == Qt::Checked) {
 		Q_ASSERT(m_standardItemCopy->checkState() == Qt::Unchecked);
 		if (! topitem->nextScalarBarSetting(m_setting.scalarBarSetting)) {
@@ -371,9 +372,9 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* p
 
 void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
+	Post2dWindowScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowScalarGroupTopDataItem*>(parent());
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(topitem->m_colorbarTitleMap.value(iRIC::toStr(m_setting.target))).c_str());
+	a->SetTitle(iRIC::toStr(topitem->colorbarTitleMap().value(iRIC::toStr(m_setting.target))).c_str());
 	a->SetLookupTable(m_lookupTableContainer.vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
 	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
@@ -413,15 +414,15 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), Vertex);
+	dialog->setZoneData(zItem->dataContainer(), gridLocation());
 	dialog->disablePhysicalValueComboBox();
-	if (! zItem->dataContainer()->IBCExists()) {
+	if (! zItem->dataContainer()->IBCExists(gridLocation())) {
 		dialog->disableActive();
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setSetting(m_setting);
-	Post2dWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(parent());
-	dialog->setColorBarTitleMap(topitem->m_colorbarTitleMap);
+	Post2dWindowScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowScalarGroupTopDataItem*>(parent());
+	dialog->setColorBarTitleMap(topitem->colorbarTitleMap());
 
 	return dialog;
 }
@@ -437,19 +438,19 @@ public:
 		m_oldSetting {item->m_setting},
 		m_oldLookupTable {item->m_lookupTableContainer},
 		m_item {item},
-		m_topItem {dynamic_cast<Post2dWindowNodeScalarGroupTopDataItem*>(item->parent())}
+		m_topItem {dynamic_cast<Post2dWindowScalarGroupTopDataItem*>(item->parent())}
 	{
-		m_oldScalarBarTitle = m_topItem->m_colorbarTitleMap[item->target()];
+		m_oldScalarBarTitle = m_topItem->colorbarTitleMap()[item->target()];
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
-		m_topItem->m_colorbarTitleMap[m_newSetting.target] = m_oldScalarBarTitle;
+		m_topItem->colorbarTitleMap()[m_newSetting.target] = m_oldScalarBarTitle;
 		applySettings(m_oldSetting.target, m_oldLookupTable);
 		m_item->updateActorSettings();
 	}
 	void redo() {
 		m_item->m_setting = m_newSetting;
-		m_topItem->m_colorbarTitleMap[m_newSetting.target] = m_newScalarBarTitle;
+		m_topItem->colorbarTitleMap()[m_newSetting.target] = m_newScalarBarTitle;
 		applySettings(m_newSetting.target, m_newLookupTable);
 		m_item->updateActorSettings();
 	}
@@ -471,7 +472,7 @@ private:
 	QString m_oldScalarBarTitle;
 
 	Post2dWindowNodeScalarGroupDataItem* m_item;
-	Post2dWindowNodeScalarGroupTopDataItem* m_topItem;
+	Post2dWindowScalarGroupTopDataItem* m_topItem;
 };
 
 void Post2dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
@@ -498,7 +499,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtk
 		return clippedData;
 	} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		geoFilter->SetInputData(cont->data());
+		geoFilter->SetInputData(cont->data(gridLocation()));
 		StructuredGridRegion::Range2d r = m_setting.range;
 		geoFilter->SetExtent(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
 		geoFilter->Update();
@@ -627,7 +628,17 @@ void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(event->pos(), v);
+	switch (m_gridLocation) {
+	case Vertex:
+		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(event->pos(), v);
+		break;
+	case IFaceCenter:
+		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateEdgeIResultAttributeBrowser(event->pos(), v);
+		break;
+	case JFaceCenter:
+		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateEdgeJResultAttributeBrowser(event->pos(), v);
+		break;
+	}
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -835,4 +846,18 @@ void Post2dWindowNodeScalarGroupDataItem::undoCommands(QDialog* propDialog, QUnd
 	new GraphicsWindowDrawOnUndo(this, parent);
 	new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this, parent);
 	new GraphicsWindowDrawOnRedo(this, parent);
+}
+
+ScalarBarSetting::Quadrant Post2dWindowNodeScalarGroupDataItem::quadrant() const
+{
+	// Note: m_standardItemCopy hasn't been changed yet
+	if (m_standardItemCopy->checkState() == Qt::Checked) {
+		return m_setting.scalarBarSetting.quadrant;
+	}
+	return ScalarBarSetting::Quadrant::None;
+}
+
+GridLocation_t Post2dWindowNodeScalarGroupDataItem::gridLocation() const
+{
+	return m_gridLocation;
 }

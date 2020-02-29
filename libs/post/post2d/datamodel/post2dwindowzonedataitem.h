@@ -8,12 +8,15 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkPolyData.h>
 #include <vtkDataSetMapper.h>
+#include <cgnslib.h>
 
 class QAction;
 class QSignalMapper;
 
 class Post2dWindowCellFlagGroupDataItem;
 class Post2dWindowCellScalarGroupTopDataItem;
+class Post2dWindowEdgeIScalarGroupTopDataItem;
+class Post2dWindowEdgeJScalarGroupTopDataItem;
 class Post2dWindowGraphGroupDataItem;
 class Post2dWindowGridShapeDataItem;
 class Post2dWindowNodeScalarGroupTopDataItem;
@@ -43,6 +46,7 @@ public:
 
 	PostZoneDataContainer* dataContainer();
 	vtkPolyData* filteredData() const;
+	vtkPolyData* filteredData(GridLocation_t location) const;
 	bool isMasked() const;
 	int zoneNumber() const;
 	std::string zoneName() const;
@@ -54,6 +58,8 @@ public:
 	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const;
 	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const;
 	Post2dWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const;
+	Post2dWindowEdgeIScalarGroupTopDataItem* edgeIScalarGroupTopDataItem() const;
+	Post2dWindowEdgeJScalarGroupTopDataItem* edgeJScalarGroupTopDataItem() const;
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
 	Post2dWindowPolyDataTopDataItem* polyDataDataItem() const;
 	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const;
@@ -66,7 +72,11 @@ public:
 	void initNodeResultAttributeBrowser();
 	void clearNodeResultAttributeBrowser();
 	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void fixEdgeIResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void fixEdgeJResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateEdgeIResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateEdgeJResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 
 	void initCellResultAttributeBrowser();
 	void clearCellResultAttributeBrowser();
@@ -112,10 +122,15 @@ private:
 	void updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	void updateParticleResultAttributeBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 	void updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* v);
+	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation);
+	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/, GridLocation_t gridLocation);
+	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation);
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
 	Post2dWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
+	Post2dWindowEdgeIScalarGroupTopDataItem* m_edgeIScalarGroupTopDataItem;
+	Post2dWindowEdgeJScalarGroupTopDataItem* m_edgeJScalarGroupTopDataItem;
 	Post2dWindowNodeVectorArrowGroupDataItem* m_arrowGroupDataItem;
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
@@ -130,6 +145,8 @@ private:
 	vtkSmartPointer<vtkActor> m_regionActor;
 
 	vtkSmartPointer<vtkPolyData> m_filteredData;
+	vtkSmartPointer<vtkPolyData> m_filteredEdgeIData;
+	vtkSmartPointer<vtkPolyData> m_filteredEdgeJData;
 
 	QAction* m_showAttributeBrowserActionForCellInput;
 	QAction* m_showAttributeBrowserActionForNodeResult;

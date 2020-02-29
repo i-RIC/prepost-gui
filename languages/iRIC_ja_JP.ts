@@ -9008,41 +9008,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>コントローラー</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="540"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="572"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="546"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="578"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="543"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="585"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="549"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="591"/>
         <source>I</source>
         <translation>I</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="546"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="588"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="552"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="594"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="549"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="591"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="555"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="597"/>
         <source>K</source>
         <translation>K</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="552"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="558"/>
         <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="574"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="580"/>
         <source>Count</source>
         <translation>カウント</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="581"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="587"/>
         <source>Distance</source>
         <translation>距離</translation>
     </message>
@@ -9276,132 +9276,132 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>Graph2dHybridWindowDataModel</name>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="228"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="202"/>
         <source>Snapshot</source>
         <translation>スナップショット</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="229"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="203"/>
         <source>Saving snapshots...</source>
         <translation>スナップショットを保存しています...</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="506"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="453"/>
         <source>CSV Export Setting</source>
         <translation>CSVエクスポート設定</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="571"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="519"/>
         <source>CSV Export</source>
         <translation>CSV エクスポート</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="572"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="520"/>
         <source>Saving csv files...</source>
         <translation>CSVファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="812"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="941"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1160"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="760"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="889"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1108"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="812"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="760"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation>スナップショット画像 %1 の保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="936"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="884"/>
         <source>Export CSV file</source>
         <translation>CSV ファイルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="936"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="884"/>
         <source>CSV file (*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="941"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="889"/>
         <source>Saving %1 failed.</source>
         <translation>%1 の保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="944"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="892"/>
         <source>CSV file successfully exported.</source>
         <translation>CSV ファイルがエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1093"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1041"/>
         <source>I = %1</source>
         <translation>I = %1</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1096"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1044"/>
         <source>I = %1, J = %2</source>
         <translation>I = %1, J = %2</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1099"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1047"/>
         <source>I = %1, J = %2, K = %3</source>
         <translation>I = %1, J = %2, K = %3</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1104"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1052"/>
         <source>Index = %1</source>
         <translation>格子インデックス = %1</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1111"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1059"/>
         <source>Time = %1 sec</source>
         <translation>時刻 = %1 sec</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1062"/>
         <source>Time = %1 sec, J = %2</source>
         <translation>時刻 = %1 sec, J = %2</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1117"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1065"/>
         <source>Time = %1 sec, J = %2, K = %3</source>
         <translation>時刻 = %1 sec, J = %2, K = %3</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1126"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1074"/>
         <source>Time = %1 sec, I = %2</source>
         <translation>時刻 = %1 sec, I = %2</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1129"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1077"/>
         <source>Time = %1 sec, I = %2, K = %3</source>
         <translation>時刻 = %1 sec, I = %2, K = %3</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1138"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1086"/>
         <source>Time = %1 sec, I = %2, J = %3</source>
         <translation>時刻 = %1 sec, I = %2, J = %3</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1154"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1166"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1594"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1102"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1557"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1154"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1166"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1102"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1160"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1108"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation>グラフウィンドウの初期化に失敗しました。計算結果が正しく読み込まれていません。</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1595"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1558"/>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「河川測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
@@ -9852,22 +9852,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="672"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="683"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="682"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="696"/>
         <source>GridLocationNull</source>
-        <translation type="unfinished"></translation>
+        <translation>Null</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="673"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="684"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="683"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="697"/>
         <source>Vertex</source>
         <translation>格子点</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="674"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="685"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="684"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="698"/>
         <source>CellCenter</source>
         <translation>セル中心</translation>
+    </message>
+    <message>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="685"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="699"/>
+        <source>EdgeI</source>
+        <translation>I方向エッジ</translation>
+    </message>
+    <message>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="686"/>
+        <location filename="../graph2dhybridwindowresultsetting.cpp" line="700"/>
+        <source>EdgeJ</source>
+        <translation>J方向エッジ</translation>
     </message>
 </context>
 <!-- iricGraph2dscattered_ja_JP.ts -->
@@ -32993,12 +33005,12 @@ Option -&gt; Preferences</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="174"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="174"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -33048,6 +33060,22 @@ Option -&gt; Preferences</source>
         <location filename="../post2dwindowdatamodel.cpp" line="214"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
         <translation>計算結果にセル中心での値が含まれていないため、コンター設定は行なえません。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowEdgeIScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp" line="30"/>
+        <source>Scalar (edgeI)</source>
+        <translation>スカラー (I方向エッジ)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowedgejscalargrouptopdataitem.cpp" line="30"/>
+        <source>Scalar (edgeJ)</source>
+        <translation>スカラー (J方向エッジ)</translation>
     </message>
 </context>
 <context>
@@ -33248,17 +33276,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">スカラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="67"/>
         <source>Scalar (node)</source>
-        <translation>スカラー (格子点)</translation>
+        <translation type="vanished">スカラー (格子点)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="433"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="434"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
         <source>To export KML for street view, display with Contour Figure.</source>
         <translation>ストリートビュー用のKML をエクスポートするには、コンターを描画して下さい。</translation>
     </message>
@@ -33267,9 +33294,9 @@ Option -&gt; Preferences</source>
         <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="671"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="676"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -33278,12 +33305,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="671"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="676"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
     </message>
@@ -33304,22 +33331,20 @@ Option -&gt; Preferences</source>
         <translation>スカラー (格子点)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
         <source>A maximum of four contours may be defined.</source>
-        <translation>コンターは最大で4つまでしか描画できません。</translation>
+        <translation type="vanished">コンターは最大で4つまでしか描画できません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>シェープファイルをエクスポートするには、表示設定を &quot;面塗りコンター&quot; に切り替えてください。</translation>
     </message>
@@ -33891,6 +33916,19 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowscalargrouptopdataitem.cpp" line="45"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowscalargrouptopdataitem.cpp" line="45"/>
+        <source>A maximum of four contours may be defined.</source>
+        <translation>コンターは最大で4つまでしか描画できません。</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="14"/>
@@ -34125,9 +34163,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="134"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="137"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="140"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="148"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="151"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="154"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
@@ -34182,7 +34220,9 @@ p, li { white-space: pre-wrap; }
         <translation>パーティクルのスカラー設定の変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="251"/>
+        <location filename="../datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp" line="215"/>
+        <location filename="../datamodel/post2dwindowedgejscalargrouptopdataitem.cpp" line="215"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="229"/>
         <source>Create Contour</source>
         <translation>コンターの作成</translation>
     </message>

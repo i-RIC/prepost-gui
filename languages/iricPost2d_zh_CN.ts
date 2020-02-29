@@ -527,12 +527,12 @@
         <translation>&amp;颜色条设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="174"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="174"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>对于值范围，最大值小于最小值。</translation>
     </message>
@@ -582,6 +582,22 @@
         <location filename="../post2dwindowdatamodel.cpp" line="214"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
         <translation>轮廓设置不可用，因为此结果不包含单元格标量值</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowEdgeIScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp" line="30"/>
+        <source>Scalar (edgeI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowedgejscalargrouptopdataitem.cpp" line="30"/>
+        <source>Scalar (edgeJ)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -770,34 +786,33 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="67"/>
         <source>Scalar (node)</source>
-        <translation>标量（节点）</translation>
+        <translation type="vanished">标量（节点）</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="433"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="434"/>
         <source>Update Contour Setting</source>
         <translation>更新轮廓设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
         <source>To export KML for street view, display with Contour Figure.</source>
         <translation>要将KML导出为街景，请显示轮廓图。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="671"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="676"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="671"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation>要将KML导出为街景视图，则应手动设置值范围。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="676"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>要将KML导出为街景，应指定坐标系。</translation>
     </message>
@@ -810,22 +825,20 @@
         <translation>标量（节点）</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
         <source>A maximum of four contours may be defined.</source>
-        <translation>最多定义四个轮廓</translation>
+        <translation type="vanished">最多定义四个轮廓</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>如果导出形状文件, 切换 &quot;显示设置&quot; 到 &quot;轮廓图形&quot;, 不是 &quot;颜色条纹&quot; 或者 &quot;等值线&quot;.</translation>
     </message>
@@ -1352,6 +1365,19 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowscalargrouptopdataitem.cpp" line="45"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowscalargrouptopdataitem.cpp" line="45"/>
+        <source>A maximum of four contours may be defined.</source>
+        <translation type="unfinished">最多定义四个轮廓</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="14"/>
@@ -1584,9 +1610,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="134"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="137"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="140"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="148"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="151"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="154"/>
         <source>Show Attribute Browser</source>
         <translation>显示属性浏览器</translation>
     </message>
@@ -1609,7 +1635,9 @@ p, li { white-space: pre-wrap; }
         <translation>更新粒子标量设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="251"/>
+        <location filename="../datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp" line="215"/>
+        <location filename="../datamodel/post2dwindowedgejscalargrouptopdataitem.cpp" line="215"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="229"/>
         <source>Create Contour</source>
         <translation>创建轮廓</translation>
     </message>

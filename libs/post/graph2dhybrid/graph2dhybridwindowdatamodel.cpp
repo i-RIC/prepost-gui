@@ -114,35 +114,8 @@ void Graph2dHybridWindowDataModel::axisSetting()
 void Graph2dHybridWindowDataModel::specialSnapshot()
 {
 	int dims[4];
+	getDims(dims);
 
-	PostSolutionInfo* sol = postSolutionInfo();
-	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr) {
-		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr) {
-			// structured
-			sGrid->GetDimensions(dims);
-			if (tinfo->gridLocation == CellCenter) {
-				sGrid->GetCellDims(dims);
-			}
-			dims[3] = 1;
-		} else {
-			// unstructured
-			dims[0] = 1;
-			dims[1] = 1;
-			dims[2] = 1;
-			dims[3] = cont->data()->GetNumberOfPoints();
-			if (tinfo->gridLocation == CellCenter) {
-				dims[3] = cont->data()->GetNumberOfCells();
-			}
-		}
-	} else {
-		dims[0] = 1;
-		dims[1] = 1;
-		dims[2] = 1;
-		dims[3] = 1;
-	}
 	Graph2dHybridWindowContinuousExportDialog dialog(mainWindow());
 	dialog.setSetting(m_setting, dims);
 	dialog.setTimesteps(projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps());
@@ -188,6 +161,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	int timeStepCount = (m_timeEnd - m_timeStart) / m_timeSkip + 1;
 	int dataCount = 1;
 
+	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	switch (tinfo->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		dataCount = 1;
@@ -454,35 +428,8 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 void Graph2dHybridWindowDataModel::specialCsvExport()
 {
 	int dims[4];
+	getDims(dims);
 
-	PostSolutionInfo* sol = postSolutionInfo();
-	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr) {
-		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr) {
-			// structured
-			sGrid->GetDimensions(dims);
-			if (tinfo->gridLocation == CellCenter) {
-				sGrid->GetCellDims(dims);
-			}
-			dims[3] = 1;
-		} else {
-			// unstructured
-			dims[0] = 1;
-			dims[1] = 1;
-			dims[2] = 1;
-			dims[3] = cont->data()->GetNumberOfPoints();
-			if (tinfo->gridLocation == CellCenter) {
-				dims[3] = cont->data()->GetNumberOfCells();
-			}
-		}
-	} else {
-		dims[0] = 1;
-		dims[1] = 1;
-		dims[2] = 1;
-		dims[3] = 1;
-	}
 	Graph2dHybridWindowContinuousExportDialog dialog(mainWindow());
 	dialog.setSetting(m_setting, dims);
 	dialog.setTimesteps(projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps());
@@ -529,6 +476,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	int timeStepCount = (m_timeEnd - m_timeStart) / m_timeSkip + 1;
 	int dataCount = 1;
 
+	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	switch (tinfo->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		dataCount = 1;
@@ -1348,20 +1296,6 @@ void Graph2dHybridWindowDataModel::showSettingDialog()
 		m_setting.setYAxisRightMin(min);
 		m_setting.setYAxisRightMax(max);
 	}
-	int dims[4];
-	PostSolutionInfo* sol = postSolutionInfo();
-	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr) {
-		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr) {
-			// structured
-			sGrid->GetDimensions(dims);
-			if (tinfo->gridLocation == CellCenter) {
-				sGrid->GetCellDims(dims);
-			}
-		}
-	}
 	if (m_setting.xAxisAutoRange()) {
 		double min, max;
 		getXAxisValueRange(&min, &max);
@@ -1389,7 +1323,23 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-		index = cont->nodeIndex(c->iValue(), c->jValue(), c->kValue());
+		switch (tinfo->gridLocation) {
+		case Vertex:
+			index = cont->nodeIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case CellCenter:
+			index = cont->cellIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case IFaceCenter:
+			index = cont->ifaceIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case JFaceCenter:
+			index = cont->jfaceIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		default:
+			Q_ASSERT_X(false, "Graph2dHybridWindowDataModel::sliderChanged", "Unhandled GridLocation");
+			break;
+		}
 		break;
 	default:
 		break;
@@ -1430,16 +1380,8 @@ void Graph2dHybridWindowDataModel::applySettingsSlot()
 	applySettings();
 }
 
-void Graph2dHybridWindowDataModel::applySettings()
+void Graph2dHybridWindowDataModel::getDims(int dims[4])
 {
-	// update axis setting.
-	applyAxisSetting();
-
-	updateData();
-	updateTime();
-
-	int dims[4];
-
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
@@ -1450,6 +1392,14 @@ void Graph2dHybridWindowDataModel::applySettings()
 			sGrid->GetDimensions(dims);
 			if (tinfo->gridLocation == CellCenter) {
 				sGrid->GetCellDims(dims);
+			}
+			else if (tinfo->gridLocation == IFaceCenter) {
+				vtkStructuredGrid* ifacegrid = dynamic_cast<vtkStructuredGrid*>(cont->ifacedata());
+				ifacegrid->GetDimensions(dims);
+			}
+			else if (tinfo->gridLocation == JFaceCenter) {
+				vtkStructuredGrid* jfacegrid = dynamic_cast<vtkStructuredGrid*>(cont->jfacedata());
+				jfacegrid->GetDimensions(dims);
 			}
 			dims[3] = 1;
 		} else {
@@ -1468,6 +1418,19 @@ void Graph2dHybridWindowDataModel::applySettings()
 		dims[2] = 1;
 		dims[3] = 1;
 	}
+}
+
+void Graph2dHybridWindowDataModel::applySettings()
+{
+	// update axis setting.
+	applyAxisSetting();
+
+	updateData();
+	updateTime();
+
+	int dims[4];
+	getDims(dims);
+
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(mainWindow());
 	Graph2dWindowView* v = view();
 

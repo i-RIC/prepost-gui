@@ -110,6 +110,7 @@ bool PostZonePointSeriesDataContainer::loadCalculatedData(int fn, int solId, Pos
 		args.push_back(argVal);
 	}
 	*value = result->calculateValue(args);
+	return true;
 }
 
 bool PostZonePointSeriesDataContainer::loadResultData(int fn, int solId, const QString& name, double* value)

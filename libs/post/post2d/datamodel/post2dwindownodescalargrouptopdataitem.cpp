@@ -27,15 +27,15 @@
 
 
 Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowScalarGroupTopDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-		m_colorbarTitleMap.insert(val, val.c_str());
-		auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
+		colorbarTitleMap().insert(val, val.c_str());
+		auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, Vertex);
 		m_scalarmap[val] = item;
 		m_childItems.push_back(item);
 		item->setTarget(val);
@@ -111,7 +111,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamW
 {
 	// scalar bar titles
 	writer.writeStartElement("ScalarBarTitles");
-	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
+	QMapIterator<std::string, QString> i(colorbarTitleMap());
 	while (i.hasNext()) {
 		i.next();
 		if (i.key().size() > 0) {
@@ -176,31 +176,9 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 	}
 
 	dialog->setSetting(setting);
-	dialog->setColorBarTitleMap(m_colorbarTitleMap);
+	dialog->setColorBarTitleMap(colorbarTitleMap());
 
 	return dialog;
-}
-
-bool Post2dWindowNodeScalarGroupTopDataItem::nextScalarBarSetting(ScalarBarSetting& scalarBarSetting)
-{
-	std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
-
-	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		// note use m_standardItemCopy which hasn't been changed yet
-		if (typedi->m_standardItemCopy->checkState() == Qt::Checked) {
-			auto it = quads.find(typedi->m_setting.scalarBarSetting.quadrant);
-			if (it != quads.end()) {
-				quads.erase(it);
-			}
-		}
-	}
-	if (quads.empty()) {
-		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
-		return false;
-	}
-	scalarBarSetting.setDefaultPosition(*quads.begin());
-	return true;
 }
 
 bool Post2dWindowNodeScalarGroupTopDataItem::hasTransparentPart()
@@ -261,7 +239,7 @@ public:
 		}
 	}
 	void redo() {
-		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable);
+		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable, Vertex);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
 		m_undoCommand = new QUndoCommand();

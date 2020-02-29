@@ -58,7 +58,21 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 	PostZoneDataContainer* cont = postInfo->zoneContainer(info->dimension, info->zoneName);
 	if (cont == 0) {return;}
 
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(cont->data());
+	vtkStructuredGrid* grid;
+	switch (info->gridLocation) {
+	case Vertex: case CellCenter:
+		grid = vtkStructuredGrid::SafeDownCast(cont->data());
+		break;
+	case IFaceCenter:
+		grid = vtkStructuredGrid::SafeDownCast(cont->ifacedata());	// use IFaceCenter grid
+		break;
+	case JFaceCenter:
+		grid = vtkStructuredGrid::SafeDownCast(cont->jfacedata());	// use JFaceCenter grid
+		break;
+	default:
+		Q_ASSERT_X(false, "Graph2dHybridWindowGridIJKResultDataItem::updateValues", "Invalid GridLocation");
+		break;
+	}
 	int dimension[3];
 	grid->GetDimensions(dimension);
 
@@ -84,8 +98,10 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 		updateValuesVertex(extractedGrid);
 	} else if (info->gridLocation == CellCenter) {
 		updateValuesCellCenter(extractedGrid);
-	} else {
-		Q_ASSERT(false);   //   Unhandled GridLocation_t
+	} else if (info->gridLocation == IFaceCenter) {
+		updateValuesVertex(extractedGrid);
+	} else if (info->gridLocation == JFaceCenter) {
+		updateValuesVertex(extractedGrid);
 	}
 }
 

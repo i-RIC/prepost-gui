@@ -195,6 +195,7 @@ HEADERS += post2d_global.h \
            post2dwindowdatamodel.h \
            post2dwindowgraphicsview.h \
            post2dwindowprojectdataitem.h \
+           scalarbari.h \
            datamodel/post2dwindowarrowstructuredsettingdialog.h \
            datamodel/post2dwindowarrowunstructuredsettingdialog.h \
            datamodel/post2dwindowbackgroundimagedataitem.h \
@@ -204,6 +205,8 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowcellflagsettingdialog.h \
            datamodel/post2dwindowcellscalargroupdataitem.h \
            datamodel/post2dwindowcellscalargrouptopdataitem.h \
+           datamodel/post2dwindowedgeiscalargrouptopdataitem.h \
+           datamodel/post2dwindowedgejscalargrouptopdataitem.h \
            datamodel/post2dwindowcontoursettingdialog.h \
            datamodel/post2dwindowgeodatadataitem.h \
            datamodel/post2dwindowgeodatagroupdataitem.h \
@@ -247,6 +250,7 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowpolydatatopdataitem.h \
            datamodel/post2dwindowpolydatavaluedataitem.h \
            datamodel/post2dwindowrootdataitem.h \
+           datamodel/post2dwindowscalargrouptopdataitem.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
            datamodel/post2dwindowzonedataitem.h \
@@ -295,6 +299,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowcellflagsettingdialog.cpp \
            datamodel/post2dwindowcellscalargroupdataitem.cpp \
            datamodel/post2dwindowcellscalargrouptopdataitem.cpp \
+           datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp \
+           datamodel/post2dwindowedgejscalargrouptopdataitem.cpp \
            datamodel/post2dwindowcontoursettingdialog.cpp \
            datamodel/post2dwindowgeodatadataitem.cpp \
            datamodel/post2dwindowgeodatagroupdataitem.cpp \
@@ -338,6 +344,7 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowpolydatatopdataitem.cpp \
            datamodel/post2dwindowpolydatavaluedataitem.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
+           datamodel/post2dwindowscalargrouptopdataitem.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
            datamodel/post2dwindowzonedataitem.cpp \

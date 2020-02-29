@@ -36,7 +36,7 @@ public:
 	~Post2dWindowContourSettingDialog();
 
 	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
-	void setZoneData(PostZoneDataContainer* zoneData, GridLocation_t location);
+	void setZoneData(PostZoneDataContainer* zoneData, GridLocation_t gridLocation);
 	void disableActive();
 	void disablePhysicalValueComboBox();
 	void hideOpacity();
@@ -65,7 +65,7 @@ private:
 	LookupTableContainer m_lookupTable;
 	bool m_activeAvailable;
 	bool m_unstructured;
-	GridLocation_t m_location;
+	GridLocation_t m_gridLocation;
 
 	Post2dWindowContourSetting m_setting;
 	QMap<std::string, QString> m_colorBarTitleMap;
