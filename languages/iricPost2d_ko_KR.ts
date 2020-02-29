@@ -527,12 +527,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="174"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="165"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="174"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -581,6 +581,22 @@
     <message>
         <location filename="../post2dwindowdatamodel.cpp" line="214"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowEdgeIScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp" line="30"/>
+        <source>Scalar (edgeI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowedgejscalargrouptopdataitem.cpp" line="30"/>
+        <source>Scalar (edgeJ)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -770,34 +786,29 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="67"/>
-        <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="433"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="434"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
         <source>To export KML for street view, display with Contour Figure.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="656"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="671"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="676"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="660"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="671"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="665"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="676"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -810,22 +821,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="199"/>
-        <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="393"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1312,6 +1313,19 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowScalarGroupTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowscalargrouptopdataitem.cpp" line="45"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowscalargrouptopdataitem.cpp" line="45"/>
+        <source>A maximum of four contours may be defined.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="14"/>
@@ -1530,9 +1544,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="134"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="137"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="140"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="148"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="151"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="154"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1555,7 +1569,9 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="251"/>
+        <location filename="../datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp" line="215"/>
+        <location filename="../datamodel/post2dwindowedgejscalargrouptopdataitem.cpp" line="215"/>
+        <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="229"/>
         <source>Create Contour</source>
         <translation type="unfinished"></translation>
     </message>
