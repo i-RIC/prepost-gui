@@ -176,14 +176,21 @@ QJSValue PostStringResultArgument::cellJsValue() const
 
 QJSValue PostStringResultArgument::edgeIJsValue() const
 {
-	// @todo implement this
-	return 0;
+	auto z = zoneDataContainer();
+	auto pd = z->ifacedata()->GetPointData();
+	int index = arrayIndex();
+	vtkDataArray* da = pd->GetArray(name().c_str());
+	return *(da->GetTuple(index));
 }
 
 QJSValue PostStringResultArgument::edgeJJsValue() const
 {
-	// @todo implement this
-	return 0;
+	auto z = zoneDataContainer();
+	auto pd = z->jfacedata()->GetPointData();
+	int index = arrayIndex();
+	vtkDataArray* da = pd->GetArray(name().c_str());
+	return *(da->GetTuple(index));
+
 }
 
 QJSValue PostStringResultArgument::edgeKJsValue() const
@@ -206,14 +213,12 @@ int PostStringResultArgument::arrayIndex() const
 		auto t = m_setting.type.value();
 		if (t == Type::GridNode) {
 			return z->nodeIndex(m_setting.i, m_setting.j, m_setting.k);
-		} else if (t == Type::GridNode) {
+		} else if (t == Type::GridCell) {
 			return z->cellIndex(m_setting.i, m_setting.j, m_setting.k);
 		} else if (t == Type::GridEdgeI) {
-			// @todo implement this
-			return 0;
+			return z->ifaceIndex(m_setting.i, m_setting.j, m_setting.k);
 		} else if (t == Type::GridEdgeJ) {
-			// @todo implement this
-			return 0;
+			return z->jfaceIndex(m_setting.i, m_setting.j, m_setting.k);
 		} else if (t == Type::GridEdgeK) {
 			// @todo implement this
 			return 0;
