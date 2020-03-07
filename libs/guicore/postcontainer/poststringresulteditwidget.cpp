@@ -21,6 +21,7 @@ PostStringResultEditWidget::PostStringResultEditWidget(QWidget *parent) :
 	connect(ui->editButton, SIGNAL(clicked()), this, SLOT(editSelectedArgument()));
 	connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteSelectedArgument()));
 	connect(ui->testButton, SIGNAL(clicked()), this, SLOT(test()));
+	connect(ui->inputTableWidget, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(editSelectedArgument()));
 }
 
 PostStringResultEditWidget::~PostStringResultEditWidget()
@@ -211,9 +212,33 @@ QString PostStringResultEditWidget::setupIndex(int row)
 			vals.push_back(QString::number(a->index() + 1));
 		}
 	} else if (a->type() == PostStringResultArgument::Type::GridEdgeI) {
-		// @todo implement this
+		auto st = vtkStructuredGrid::SafeDownCast(m_zoneDataContainer->ifacedata());
+		if (st != nullptr) {
+			st->GetDimensions(dim);
+			vals.push_back(QString::number(a->i() + 1));
+			if (dim[1] > 1) {
+				vals.push_back(QString::number(a->j() + 1));
+				if (dim[2] > 1) {
+					vals.push_back(QString::number(a->k() + 1));
+				}
+			}
+		} else if (ust != nullptr) {
+			Q_ASSERT_X(false, "PostStringResultEditWidget::setupIndex", "Invalid type for unstructured grid");
+		}
 	} else if (a->type() == PostStringResultArgument::Type::GridEdgeJ) {
-		// @todo implement this
+		auto st = vtkStructuredGrid::SafeDownCast(m_zoneDataContainer->jfacedata());
+		if (st != nullptr) {
+			st->GetDimensions(dim);
+			vals.push_back(QString::number(a->i() + 1));
+			if (dim[1] > 1) {
+				vals.push_back(QString::number(a->j() + 1));
+				if (dim[2] > 1) {
+					vals.push_back(QString::number(a->k() + 1));
+				}
+			}
+		} else if (ust != nullptr) {
+			Q_ASSERT_X(false, "PostStringResultEditWidget::setupIndex", "Invalid type for unstructured grid");
+		}
 	} else if (a->type() == PostStringResultArgument::Type::GridEdgeK) {
 		// @todo implement this
 	}
