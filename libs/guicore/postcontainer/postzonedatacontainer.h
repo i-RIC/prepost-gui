@@ -98,6 +98,9 @@ public:
 	static std::string removeInputDataPrefix(const std::string& name);
 	static bool hasInputDataPrefix(const std::string& name);
 
+	static int index(int dim[3], int i, int j, int k);
+	static void getIJKIndex(int dim[3], int idx, int* i, int* j, int* k);
+
 private:
 	bool setBaseId(const int fn);
 	bool setZoneId(const int fn);
