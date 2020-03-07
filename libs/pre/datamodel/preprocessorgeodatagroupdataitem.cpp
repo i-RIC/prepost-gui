@@ -167,7 +167,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	QStringList availableExtensions;
-	QMap<QString, GeoDataImporter*> extMap;
+	QMap<QString, std::vector<GeoDataImporter*> > extMap;
 
 	for (auto creator : factory.compatibleCreators(m_condition)) {
 		for (auto importer : creator->importers()) {
@@ -179,7 +179,13 @@ void PreProcessorGeoDataGroupDataItem::import()
 			}
 			for (auto ext : exts) {
 				availableExtensions << QString("*.").append(ext);
-				extMap.insert(ext, importer);
+				if (extMap.contains(ext)) {
+					extMap[ext].push_back(importer);
+				} else {
+					std::vector<GeoDataImporter*> importers;
+					importers.push_back(importer);
+					extMap.insert(ext, importers);
+				}
 			}
 		}
 	}
@@ -198,7 +204,20 @@ void PreProcessorGeoDataGroupDataItem::import()
 				QFileInfo finfo(filename);
 				QString extension = finfo.suffix();
 				if (extMap.contains(extension)) {
-					importer = extMap.value(extension);
+					auto importers = extMap.value(extension);
+					if (importers.size() == 1) {
+						importer = importers.at(0);
+					} else {
+						QStringList names;
+						for (GeoDataImporter* imp : importers) {
+							names.push_back(imp->caption());
+						}
+						bool ok;
+						QString selected = QInputDialog::getItem(preProcessorWindow(), tr("Select algorithm"), tr("Please select algorithm to import data"), names, 0, false, &ok);
+						if (! ok) {return;}
+						int idx = names.indexOf(selected);
+						importer = importers.at(idx);
+					}
 				} else {
 					QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("File type cannot be recognized from the file extension. : %1").arg(finfo.fileName()));
 					return;
