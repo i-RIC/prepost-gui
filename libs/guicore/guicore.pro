@@ -251,7 +251,6 @@ HEADERS += guicore_global.h \
            postcontainer/poststringresult.h \
            postcontainer/poststringresultargument.h \
            postcontainer/poststringresultargumenteditdialog.h \
-           postcontainer/poststringresulteditdialog.h \
            postcontainer/poststringresulteditwidget.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
@@ -574,7 +573,6 @@ FORMS += datamodel/propertybrowserview.ui \
          postcontainer/postcalculatedresultlistdialog.ui \
          postcontainer/postdataexportdialog.ui \
          postcontainer/poststringresultargumenteditdialog.ui \
-         postcontainer/poststringresulteditdialog.ui \
          postcontainer/poststringresulteditwidget.ui \
          project/backgroundimageinfodialog.ui \
          project/backgroundimageinfogeoreferencedialog.ui \
@@ -652,7 +650,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/poststringresult.cpp \
            postcontainer/poststringresultargument.cpp \
            postcontainer/poststringresultargumenteditdialog.cpp \
-           postcontainer/poststringresulteditdialog.cpp \
            postcontainer/poststringresulteditwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \

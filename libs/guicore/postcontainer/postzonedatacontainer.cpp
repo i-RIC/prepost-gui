@@ -1156,12 +1156,28 @@ void PostZoneDataContainer::loadIfEmpty(const int fn)
 	loadFromCgnsFile(fn);
 }
 
+int PostZoneDataContainer::index(int dim[3], int i, int j, int k)
+{
+	Q_ASSERT(0 <= i && i < dim[0]);
+	Q_ASSERT(0 <= j && j < dim[1]);
+	Q_ASSERT(0 <= k && k < dim[2]);
+	return i + dim[0] * (j + dim[1] * k);
+}
+
+void PostZoneDataContainer::getIJKIndex(int dim[3], int idx, int* i, int* j, int* k)
+{
+	Q_ASSERT(0 <= idx && idx <= index(dim, dim[0] - 1, dim[1] - 1, dim[2] - 1));
+	*i = idx % (dim[0]);
+	*j = ((idx - *i) / dim[0]) % dim[1];
+	*k = idx / (dim[0] * dim[1]);
+}
+
 int PostZoneDataContainer::nodeIndex(int i, int j, int k) const
 {
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
 	grid->GetDimensions(dim);
-	return i + dim[0] * (j + dim[1] * k);
+	return index(dim, i, j, k);
 }
 
 void PostZoneDataContainer::getNodeIJKIndex(int index, int* i, int* j, int* k) const
@@ -1169,29 +1185,23 @@ void PostZoneDataContainer::getNodeIJKIndex(int index, int* i, int* j, int* k) c
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
 	grid->GetDimensions(dim);
-
-	*i = index % (dim[0]);
-	*j = ((index - *i) / dim[0]) % dim[1];
-	*k = index / (dim[0] * dim[1]);
+	getIJKIndex(dim, index, i, j, k);
 }
 
 int PostZoneDataContainer::cellIndex(int i, int j, int k) const
 {
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
-	grid->GetDimensions(dim);
-	return i + (dim[0] - 1) * (j + (dim[1] - 1) * k);
+	grid->GetCellDims(dim);
+	return index(dim, i, j, k);
 }
 
 void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
-	grid->GetDimensions(dim);
-
-	*i = index % (dim[0] - 1);
-	*j = ((index - *i) / dim[0] - 1) % (dim[1] - 1);
-	*k = index / ((dim[0] - 1) * (dim[1] - 1));
+	grid->GetCellDims(dim);
+	getIJKIndex(dim, index, i, j, k);
 }
 
 int PostZoneDataContainer::ifaceIndex(int i, int j, int k) const
@@ -1199,7 +1209,7 @@ int PostZoneDataContainer::ifaceIndex(int i, int j, int k) const
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_ifacedata);
 	grid->GetDimensions(dim);
-	return i + dim[0] * (j + (dim[1] - 1) * k);
+	return index(dim, i, j, k);
 }
 
 void PostZoneDataContainer::getifaceIJKIndex(int index, int* i, int* j, int* k) const
@@ -1207,10 +1217,7 @@ void PostZoneDataContainer::getifaceIJKIndex(int index, int* i, int* j, int* k) 
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_ifacedata);
 	grid->GetDimensions(dim);
-
-	*i = index % (dim[0]);
-	*j = ((index - *i) / dim[0]) % dim[1];
-	*k = index / (dim[0] * dim[1]);
+	getIJKIndex(dim, index, i, j, k);
 }
 
 int PostZoneDataContainer::jfaceIndex(int i, int j, int k) const
@@ -1218,7 +1225,7 @@ int PostZoneDataContainer::jfaceIndex(int i, int j, int k) const
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_jfacedata);
 	grid->GetDimensions(dim);
-	return i + dim[0] * (j + (dim[1] - 1) * k);
+	return index(dim, i, j, k);
 }
 
 void PostZoneDataContainer::getjfaceIJKIndex(int index, int* i, int* j, int* k) const
@@ -1226,10 +1233,7 @@ void PostZoneDataContainer::getjfaceIJKIndex(int index, int* i, int* j, int* k) 
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_jfacedata);
 	grid->GetDimensions(dim);
-
-	*i = index % (dim[0]);
-	*j = ((index - *i) / dim[0]) % dim[1];
-	*k = index / (dim[0] * dim[1]);
+	getIJKIndex(dim, index, i, j, k);
 }
 
 bool PostZoneDataContainer::scalarValueExists() const
