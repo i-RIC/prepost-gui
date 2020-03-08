@@ -24,12 +24,24 @@ int CgnsUtil::arrayIdWithName(const std::string& name)
 int CgnsUtil::findArray(const QString& name, DataType_t dt, int dim, int narrays)
 {
 	for (int i = 1; i <= narrays; ++i) {
-		char arrayname[30];
+		char arrayname[32];
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
 		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
 		if (name == arrayname && dt == datatype && dim == dimension) {
+			return i;
+		}
+	}
+	return 0;
+}
+
+int CgnsUtil::findArray(const QString& name, DataType_t* dt, int* dim, cgsize_t *dimVec, int narrays)
+{
+	for (int i = 1; i <= narrays; ++i) {
+		char arrayname[32];
+		cg_array_info(i, arrayname, dt, dim, dimVec);
+		if (name == arrayname) {
 			return i;
 		}
 	}

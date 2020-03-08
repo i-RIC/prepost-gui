@@ -11,7 +11,7 @@
 #define cgsize_t int
 #endif
 
-PostBaseIterativeSeriesDataContainer::PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, ProjectDataItem* parent) :
+PostBaseIterativeSeriesDataContainer::PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, PostSolutionInfo* parent) :
 	PostSeriesDataContainer {dim, parent},
 	m_baseIterativeName {biName}
 {}

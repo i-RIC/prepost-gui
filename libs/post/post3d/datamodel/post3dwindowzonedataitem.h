@@ -2,6 +2,9 @@
 #define POST3DWINDOWZONEDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
+
+#include <guicore/post/postzonedataitem.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkMapper.h>
@@ -21,20 +24,22 @@ class Post3dWindowNodeVectorStreamlineGroupDataItem;
 class Post3dWindowNodeVectorParticleGroupDataItem;
 class Post3dWindowParticleGroupRootDataItem;
 class Post3dWindowParticlesTopDataItem;
+class PostStringResultDataItem;
 class PostZoneDataContainer;
 
-class Post3dWindowZoneDataItem : public Post3dWindowDataItem
+class Post3dWindowZoneDataItem : public Post3dWindowDataItem, public PostZoneDataItem
 {
 	Q_OBJECT
 
 public:
 	Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent);
+	~Post3dWindowZoneDataItem() override;
 
 	// Standard mouse event handlers
 	void informSelection(VTKGraphicsView*) override;
 	void informDeselection(VTKGraphicsView*) override;
 
-	PostZoneDataContainer* dataContainer();
+	PostZoneDataContainer* dataContainer() override;
 	int zoneNumber() const {return m_zoneNumber;}
 	const std::string& zoneName() const {return m_zoneName;}
 	void update();
@@ -45,6 +50,7 @@ public:
 	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const {return m_streamlineGroupDataItem;}
 	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const {return m_particleGroupDataItem;}
 	Post3dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
+	PostStringResultDataItem* stringDataItem() const;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -59,6 +65,7 @@ private:
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post3dWindowParticlesTopDataItem* m_particlesDataItem;
 	Post3dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
+	PostStringResultDataItem* m_stringDataItem;
 
 	std::string m_zoneName;
 	int m_zoneNumber;

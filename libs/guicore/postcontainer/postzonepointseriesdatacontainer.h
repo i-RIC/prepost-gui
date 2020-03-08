@@ -24,7 +24,6 @@ public:
 	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, PostSolutionInfo* sinfo);
 	const QList<double>& data() const;
 
-	bool handleCurrentStepUpdate(const int fn) override;
 	void update(const int fn);
 	const std::string& zoneName() const;
 	/// Caption is the region name in pre-processor.

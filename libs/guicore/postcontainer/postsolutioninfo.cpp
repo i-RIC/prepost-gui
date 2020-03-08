@@ -9,9 +9,11 @@
 #include "exporter/postzonedatatpoexporter.h"
 #include "exporter/postzonedatavtkexporter.h"
 #include "postbaseselectingdialog.h"
+#include "postcontainer/postbaseiterativeintegerdatacontainer.h"
+#include "postcontainer/postbaseiterativerealdatacontainer.h"
+#include "postcontainer/postbaseiterativestringdatacontainer.h"
 #include "postcontainer/postcalculatedresult.h"
 #include "postdataexportdialog.h"
-//#include "postdummy3dzonedatacontainer.h"
 #include "postiterationsteps.h"
 #include "postsolutioninfo.h"
 #include "posttimesteps.h"
@@ -81,6 +83,7 @@ PostSolutionInfo::~PostSolutionInfo()
 	clearCalculatedResults(&m_calculatedResults1D);
 	clearCalculatedResults(&m_calculatedResults2D);
 	clearCalculatedResults(&m_calculatedResults3D);
+	clearBaseIterativeResults();
 	delete m_loadedElement;
 }
 
@@ -155,29 +158,27 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 	}
 	time.start();
 	setupZoneDataContainers(tmpfn);
-	checkBaseIterativeDataExist(tmpfn);
+	setupBaseIterativeResults(tmpfn, 1);
 	qDebug("setupZoneDataContainer(): %d", time.elapsed());
 
 	loadCalculatedResult();
 
 	bool errorOccured = false;
+
 	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it) {
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
+		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
 	}
 	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it) {
 		time.start();
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
+		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 2D: %d", time.elapsed());
 	}
 	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it) {
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, m_disableCalculatedResult));
+		time.start();
+		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
-	for (auto it2 = m_otherContainers.begin(); it2 != m_otherContainers.end(); ++it2) {
-		time.start();
-		errorOccured = errorOccured || (!(*it2)->handleCurrentStepUpdate(tmpfn));
-		qDebug("handleCurrentStepUpdate() for others: %d", time.elapsed());
-	}
+
 	qDebug("Loading result from CGNS file: %d", wholetime.elapsed());
 	// inform that the current step is updated.
 	emit currentStepUpdated();
@@ -197,13 +198,19 @@ void PostSolutionInfo::informStepsUpdated()
 	bool ok = open();
 	if (!ok) {return;}
 	setupZoneDataContainers(m_opener->fileId());
-	checkBaseIterativeDataExist(m_opener->fileId());
+	setupBaseIterativeResults(m_opener->fileId(), 1);
+
 	emit updated();
 	emit allPostProcessorsUpdated();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
+	std::vector<std::string> zoneNames;
+	for (PostZoneDataContainer* c : *containers) {
+		zoneNames.push_back(c->zoneName());
+	}
+
 	int ier, nbases;
 	ier = cg_nbases(fn, &nbases);
 	if (ier != 0) {return false;}
@@ -222,9 +229,6 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		}
 	}
 	if (baseid == 0) {
-		// no base for dimension dim.
-		if (zoneNames->size() == 0) {return false;}
-		zoneNames->clear();
 		clearContainers(containers);
 		containerNameMap->clear();
 		return true;
@@ -246,14 +250,14 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		if (narrays == 0) {continue;}
 		tmpZoneNames.push_back(std::string(zoneName));
 	}
-	if (*zoneNames == tmpZoneNames) {
+	if (zoneNames == tmpZoneNames) {
 		// zone names are equal to those already read.
 		for (int i = 0; i < containers->count(); ++i) {
 			(*containers)[i]->loadIfEmpty(fn);
 		}
 		return false;
 	}
-	*zoneNames = tmpZoneNames;
+	zoneNames = tmpZoneNames;
 
 	// clear the current zone containers first.
 	for (auto c : *containers) {
@@ -262,13 +266,16 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 	clearContainers(containers);
 	containerNameMap->clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	for (std::string zoneName : *zoneNames) {
+
+	int step = currentStep();
+
+	for (const auto& zoneName : zoneNames) {
 		bool found = false;
 		if (zoneName == "iRICZone") {
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
 				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
 					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
-					cont->loadFromCgnsFile(fn);
+					cont->loadFromCgnsFile(fn, step);
 					containers->push_back(cont);
 					containerNameMap->insert(zoneName, cont);
 					found = true;
@@ -279,7 +286,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
 				if (zoneName.find((*gtit)->name()) != std::string::npos) {
 					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
-					cont->loadFromCgnsFile(fn);
+					cont->loadFromCgnsFile(fn, step);
 					containers->append(cont);
 					containerNameMap->insert(zoneName, cont);
 					found = true;
@@ -290,7 +297,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 		if (! found) {
 			// no appropriate gridtype found. use the dummy grid type.
 			PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, projectData()->solverDefinition()->dummyGridType(), this);
-			cont->loadFromCgnsFile(fn);
+			cont->loadFromCgnsFile(fn, step);
 			containers->append(cont);
 			containerNameMap->insert(zoneName, cont);
 		}
@@ -309,128 +316,77 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 	return true;
 }
 
-/*
-bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
+bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
 {
-	int ier;
-	int nbases;
-	ier = cg_nbases(fn, &nbases);
+	clearBaseIterativeResults();
+
+	int ier, nSteps;
+	char iterName[32];
+
+	ier = cg_biter_read(fn, baseId, iterName, &nSteps);
 	if (ier != 0) {return false;}
-	int baseid = 0;
-	std::string baseName;
-	for (int B = 1; B <= nbases; ++B) {
-		char bname[32];
-		int cell_dim;
-		int phys_dim;
-		ier = cg_base_read(fn, B, bname, &cell_dim, &phys_dim);
+	ier = cg_goto(fn, baseId, iterName, 0, nullptr);
+	if (ier != 0) {return false;}
+
+	int nArrays;
+	ier = cg_narrays(&nArrays);
+	if (ier != 0) {return false;}
+
+
+	int step = currentStep();
+
+	for (int i = 1; i <= nArrays; ++i) {
+		char arrayname[32];
+		DataType_t datatype;
+		int datadim;
+		cgsize_t dimVec[3];
+		ier = cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
 		if (ier != 0) {return false;}
-		if (cell_dim == 2) {
-			// target base found!
-			baseid = B;
-			baseName = bname;
-		}
-	}
-	if (baseid == 0) {
-		// no base for dimension dim.
-		if (zoneNames->size() == 0) {return false;}
-		zoneNames->clear();
-		clearContainers(containers);
-		return true;
-	}
-	int nzones;
-	ier = cg_nzones(fn, baseid, &nzones);
-	if (ier != 0) {return false;}
-	std::vector<std::string> tmpZoneNames;
-	for (int Z = 1; Z <= nzones; ++Z) {
-		cgsize_t sizes[9];
-		char zoneName[32];
-		cg_zone_read(fn, baseid, Z, zoneName, sizes);
-		tmpZoneNames.push_back(std::string(zoneName));
-	}
-	if (*zoneNames == tmpZoneNames) {
-		// zone names are equal to those already read.
-		return false;
-	}
-	*zoneNames = tmpZoneNames;
-	// clear the current zone containers first.
-	clearContainers(containers);
-	containerNameMap->clear();
-	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	for (std::string zoneName : *zoneNames) {
-		if (zoneName == "iRICZone") {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
-					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
-					containers->append(cont);
-					containerNameMap->insert(zoneName, cont);
-				}
-			}
-		} else {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if (zoneName.find((*gtit)->name()) != std::string::npos) {
-					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
-					containers->append(cont);
-					containerNameMap->insert(zoneName, cont);
-				}
-			}
+		QString name(arrayname);
+		if (name == "TimeValues" || name == "IterationValues") {continue;}
+
+		if (datatype == Character) {
+			auto c = new PostBaseIterativeStringDataContainer(baseId, arrayname, this);
+			c->handleCurrentStepUpdate(fn, step);
+			m_baseIterativeStringResults.insert({c->name(), c});
+		} else if (datatype == Integer) {
+			auto c = new PostBaseIterativeIntegerDataContainer(baseId, arrayname, this);
+			c->handleCurrentStepUpdate(fn, step);
+			m_baseIterativeNumericalResults.insert({c->name(), c});
+		} else if (datatype == RealDouble) {
+			auto c = new PostBaseIterativeRealDataContainer(baseId, arrayname, this);
+			c->handleCurrentStepUpdate(fn, step);
+			m_baseIterativeNumericalResults.insert({c->name(), c});
 		}
 	}
 	return true;
 }
-*/
+
+void PostSolutionInfo::clearBaseIterativeResults()
+{
+	for (auto& pair : m_baseIterativeNumericalResults) {
+		delete pair.second;
+	}
+	m_baseIterativeNumericalResults.clear();
+
+	for (auto& pair : m_baseIterativeStringResults) {
+		delete pair.second;
+	}
+	m_baseIterativeStringResults.clear();
+}
 
 void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
+	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
+	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
-	// only for 3D demonstration.
-//	ret = innerSetupDummy3DZoneDataContainers(fn, m_zoneNames3D, m_zoneContainers3D, m_zoneContainerNameMap3D);
+	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	if (ret) {emit zoneList3DUpdated();}
-}
-
-void PostSolutionInfo::checkBaseIterativeDataExist(int fn)
-{
-	m_baseIterativeDataExists = false;
-	int nbases, ier;
-	ier = cg_nbases(fn, &nbases);
-	if (ier != 0) {
-		return;
-	}
-
-	for (int baseid = 1; baseid <= nbases; ++baseid) {
-		int celldim, physdim;
-		char basename[32];
-		char bitername[32];
-		int nsteps;
-		cg_base_read(fn, baseid, basename, &celldim, &physdim);
-
-		// setup baseIterative.
-		ier = cg_biter_read(fn, baseid, bitername, &nsteps);
-		if (ier != 0) {return;}
-
-		cg_goto(fn, baseid, bitername, 0, "end");
-		int narrays;
-		cg_narrays(&narrays);
-		for (int i = 1; i <= narrays; ++i) {
-			char arrayname[32];
-			DataType_t datatype;
-			int datadim;
-			cgsize_t dimVec[3];
-			cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
-			QString aName(arrayname);
-			if (aName != "TimeValues" && aName != "IterationValues") {
-				m_baseIterativeDataExists = true;
-				return;
-			}
-		}
-	}
 }
 
 void PostSolutionInfo::loadCalculatedResult()
@@ -551,9 +507,6 @@ void PostSolutionInfo::closeCgnsFile()
 	m_zoneContainerNameMap2D.clear();
 	clearContainers(&m_zoneContainers3D);
 	m_zoneContainerNameMap3D.clear();
-	m_zoneNames1D.clear();
-	m_zoneNames2D.clear();
-	m_zoneNames3D.clear();
 	emit zoneList1DUpdated();
 	emit zoneList2DUpdated();
 	emit zoneList3DUpdated();
@@ -616,7 +569,7 @@ bool PostSolutionInfo::isDataAvailable() const
 
 bool PostSolutionInfo::isDataAvailableBase() const
 {
-	return stepsExist() && m_baseIterativeDataExists;
+	return stepsExist() && m_baseIterativeNumericalResults.size() > 0;
 }
 
 bool PostSolutionInfo::isDataAvailable1D() const
@@ -676,6 +629,30 @@ PostZoneDataContainer* PostSolutionInfo::firstZoneContainer() const
 	auto conts3d = zoneContainers3D();
 	if (conts3d.length() > 0) {return conts3d.first();}
 	return nullptr;
+}
+
+const std::map<std::string, PostBaseIterativeStringDataContainer*>& PostSolutionInfo::baseIterativeStringResults() const
+{
+	return m_baseIterativeStringResults;
+}
+
+const std::map<std::string, PostBaseIterativeNumericalDataContainer*>& PostSolutionInfo::baseIterativeNumericalResults() const
+{
+	return m_baseIterativeNumericalResults;
+}
+
+PostBaseIterativeStringDataContainer* PostSolutionInfo::baseIterativeStringResult(const std::string& name) const
+{
+	auto it = m_baseIterativeStringResults.find(name);
+	if (it == m_baseIterativeStringResults.end()) {return nullptr;}
+	return it->second;
+}
+
+PostBaseIterativeNumericalDataContainer* PostSolutionInfo::baseIterativeNumericalResult(const std::string& name) const
+{
+	auto it = m_baseIterativeNumericalResults.find(name);
+	if (it == m_baseIterativeNumericalResults.end()) {return nullptr;}
+	return it->second;
 }
 
 int PostSolutionInfo::toIntDimension(Dimension dim)

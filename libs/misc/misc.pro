@@ -44,6 +44,7 @@ HEADERS += anms.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            primitiveview.h \
+           qfontcontainer.h \
            qpointfcontainer.h \
            qttool.h \
            qundocommandhelper.h \
@@ -105,6 +106,7 @@ SOURCES += anms.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \
            primitiveview.cpp \
+           qfontcontainer.cpp \
            qpointfcontainer.cpp \
            qttool.cpp \
            qundocommandhelper.cpp \

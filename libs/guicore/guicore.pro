@@ -227,9 +227,15 @@ HEADERS += guicore_global.h \
            post/postprocessorwindow.h \
            post/postprocessorwindowfactoryinterface.h \
            post/postprocessorwindowprojectdataitem.h \
+           post/postzonedataitem.h \
            post/postzoneselectingdialog.h \
            postcontainer/postabstractsteps.h \
+           postcontainer/postbaseiterativedatacontainer.h \
+           postcontainer/postbaseiterativeintegerdatacontainer.h \
+           postcontainer/postbaseiterativenumericaldatacontainer.h \
+           postcontainer/postbaseiterativerealdatacontainer.h \
            postcontainer/postbaseiterativeseriesdatacontainer.h \
+           postcontainer/postbaseiterativestringdatacontainer.h \
            postcontainer/postbaseselectingdialog.h \
            postcontainer/postcalculatedresult.h \
            postcontainer/postcalculatedresultargument.h \
@@ -242,6 +248,10 @@ HEADERS += guicore_global.h \
            postcontainer/postiterationsteps.h \
            postcontainer/postseriesdatacontainer.h \
            postcontainer/postsolutioninfo.h \
+           postcontainer/poststringresult.h \
+           postcontainer/poststringresultargument.h \
+           postcontainer/poststringresultargumenteditdialog.h \
+           postcontainer/poststringresulteditwidget.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
@@ -326,6 +336,7 @@ HEADERS += guicore_global.h \
            postcontainer/exporter/postzonedatatpoexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.h \
+           postcontainer/private/poststringresult_impl.h \
            postcontainer/private/postzonedatacontainer_particlegrouploader.h \
            postcontainer/private/postzonedatacontainer_particleloader.h \
            postcontainer/private/postzonedatacontainer_polydataloader.h \
@@ -561,6 +572,8 @@ FORMS += datamodel/propertybrowserview.ui \
          postcontainer/postcalculatedresulteditdialog.ui \
          postcontainer/postcalculatedresultlistdialog.ui \
          postcontainer/postdataexportdialog.ui \
+         postcontainer/poststringresultargumenteditdialog.ui \
+         postcontainer/poststringresulteditwidget.ui \
          project/backgroundimageinfodialog.ui \
          project/backgroundimageinfogeoreferencedialog.ui \
          project/offsetsettingdialog.ui \
@@ -613,9 +626,15 @@ SOURCES += base/iricmainwindowinterface.cpp \
            post/postprocessorwindow.cpp \
            post/postprocessorwindowfactoryinterface.cpp \
            post/postprocessorwindowprojectdataitem.cpp \
+           post/postzonedataitem.cpp \
            post/postzoneselectingdialog.cpp \
            postcontainer/postabstractsteps.cpp \
+           postcontainer/postbaseiterativedatacontainer.cpp \
+           postcontainer/postbaseiterativeintegerdatacontainer.cpp \
+           postcontainer/postbaseiterativenumericaldatacontainer.cpp \
+           postcontainer/postbaseiterativerealdatacontainer.cpp \
            postcontainer/postbaseiterativeseriesdatacontainer.cpp \
+           postcontainer/postbaseiterativestringdatacontainer.cpp \
            postcontainer/postbaseselectingdialog.cpp \
            postcontainer/postcalculatedresult.cpp \
            postcontainer/postcalculatedresultargument.cpp \
@@ -628,6 +647,10 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/postiterationsteps.cpp \
            postcontainer/postseriesdatacontainer.cpp \
            postcontainer/postsolutioninfo.cpp \
+           postcontainer/poststringresult.cpp \
+           postcontainer/poststringresultargument.cpp \
+           postcontainer/poststringresultargumenteditdialog.cpp \
+           postcontainer/poststringresulteditwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \

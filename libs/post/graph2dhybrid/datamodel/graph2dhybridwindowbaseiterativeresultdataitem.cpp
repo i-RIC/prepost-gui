@@ -6,6 +6,8 @@
 
 #include <guicore/postcontainer/postbaseiterativeseriesdatacontainer.h>
 #include <guicore/postcontainer/posttimesteps.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/stringtool.h>
 
 #include <QColor>
@@ -24,11 +26,13 @@ Graph2dHybridWindowBaseIterativeResultDataItem::Graph2dHybridWindowBaseIterative
 {
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostBaseIterativeSeriesDataContainer(info->dimension, setting.name(), this);
+	m_dataContainer = new PostBaseIterativeSeriesDataContainer(info->dimension, setting.name(), projectData()->mainfile()->postSolutionInfo());
 }
 
 Graph2dHybridWindowBaseIterativeResultDataItem::~Graph2dHybridWindowBaseIterativeResultDataItem()
-{}
+{
+	delete m_dataContainer;
+}
 
 void Graph2dHybridWindowBaseIterativeResultDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}

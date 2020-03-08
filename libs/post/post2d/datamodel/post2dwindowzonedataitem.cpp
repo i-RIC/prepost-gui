@@ -32,6 +32,7 @@
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
+#include <postbase/string/poststringresultdataitem.h>
 
 #include <QAction>
 #include <QDomNode>
@@ -75,6 +76,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	m_particleGroupRootDataItem {nullptr},
 	m_polyDataDataItem {nullptr},
 	m_graphGroupDataItem {nullptr},
+	m_stringDataItem {nullptr},
 	m_currentParticlesData {nullptr},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber},
@@ -130,6 +132,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	}
 
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
+	m_stringDataItem = new PostStringResultDataItem(this);
 
 	addChildItem(m_shapeDataItem);
 	addChildItem(m_arrowGroupDataItem);
@@ -144,6 +147,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	addChildItem(m_cellScalarGroupTopDataItem);
 	addChildItem(m_edgeIScalarGroupTopDataItem);
 	addChildItem(m_edgeJScalarGroupTopDataItem);
+	addChildItem(m_stringDataItem);
 
 	m_showAttributeBrowserActionForNodeResult = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserActionForNodeResult, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
@@ -165,6 +169,7 @@ Post2dWindowZoneDataItem::~Post2dWindowZoneDataItem()
 {
 	renderer()->RemoveActor(m_regionActor);
 	delete m_polyDataDataItem;
+	delete m_stringDataItem;
 }
 
 void Post2dWindowZoneDataItem::setupActors()
@@ -243,6 +248,10 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (!edgeJNode.isNull() && m_edgeJScalarGroupTopDataItem != nullptr) {
 		m_edgeJScalarGroupTopDataItem->loadFromProjectMainFile(edgeJNode);
 	}
+	QDomNode srNode = iRIC::getChildNode(node, "StringResult");
+	if (!srNode.isNull()) {
+		m_stringDataItem->loadFromProjectMainFile(srNode);
+	}
 }
 
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -307,6 +316,9 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		m_edgeJScalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+	writer.writeStartElement("StringResult");
+	m_stringDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
 }
 
 void Post2dWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
@@ -442,6 +454,7 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		qDebug("Graphs: %d", time.elapsed());
 	}
 	updateRegionPolyData();
+	m_stringDataItem->update();
 }
 
 Post2dWindowGridShapeDataItem* Post2dWindowZoneDataItem::gridShapeDataItem() const
@@ -502,6 +515,11 @@ Post2dWindowPolyDataTopDataItem* Post2dWindowZoneDataItem::polyDataDataItem() co
 Post2dWindowGraphGroupDataItem* Post2dWindowZoneDataItem::graphGroupDataItem() const
 {
 	return m_graphGroupDataItem;
+}
+
+PostStringResultDataItem* Post2dWindowZoneDataItem::stringDataItem() const
+{
+	return m_stringDataItem;
 }
 
 void Post2dWindowZoneDataItem::updateZDepthRangeItemCount()

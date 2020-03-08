@@ -27,7 +27,7 @@ public:
 	const static QString IBC;
 	const static double IBCLimit;
 
-	PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent);
+	PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent);
 	~PostZoneDataContainer();
 
 	SolverDefinitionGridType* gridType() const;
@@ -56,10 +56,10 @@ public:
 	/// Currently, zone name is used instead, temporally.
 	QString caption() const;
 
-	bool handleCurrentStepUpdate(const int fn) override;
-	bool handleCurrentStepUpdate(const int fn, bool disableCalculatedResult);
+	bool handleCurrentStepUpdate(const int fn, const int timeStep) override;
+	bool handleCurrentStepUpdate(const int fn, const int timeStep, bool disableCalculatedResult);
 	void loadFromCgnsFile(const int fn) override;
-	void loadFromCgnsFile(const int fn, bool disableCalculatedResult);
+	void loadFromCgnsFile(const int fn, const int timeStep, bool disableCalculatedResult = false);
 
 	bool cellScalarValueExists() const;
 	bool edgeIScalarValueExists() const;
@@ -98,6 +98,9 @@ public:
 	static std::string removeInputDataPrefix(const std::string& name);
 	static bool hasInputDataPrefix(const std::string& name);
 
+	static int index(int dim[3], int i, int j, int k);
+	static void getIJKIndex(int dim[3], int idx, int* i, int* j, int* k);
+
 private:
 	bool setBaseId(const int fn);
 	bool setZoneId(const int fn);
@@ -118,6 +121,7 @@ private:
 	static bool loadVectorData(vtkDataSetAttributes* atts, int firstAtt = 1);
 
 	bool loadCellFlagData(const int fn);
+	void loadStringResultData();
 	bool setupIndexData();
 
 	void addCalculatedResultArrays();

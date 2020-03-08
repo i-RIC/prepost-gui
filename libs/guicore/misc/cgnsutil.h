@@ -16,6 +16,7 @@ public:
 	static int arrayIdWithName(const std::string& name);
 
 	static int findArray(const QString& name, DataType_t dt, int dim, int narrays);
+	static int findArray(const QString& name, DataType_t* dt, int* dim, cgsize_t* dimVec, int narrays);
 
 	template<typename V>
 	static int loadArrayWithName(const std::string& name, std::vector<V>* vals);

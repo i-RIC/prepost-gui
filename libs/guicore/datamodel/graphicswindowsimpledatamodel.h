@@ -19,6 +19,7 @@ public:
 	VTKGraphicsView* graphicsView() const;
 	QMainWindow* mainWindow() const;
 	virtual void viewOperationEndedGlobal();
+	virtual void handleResize();
 
 protected:
 	VTKGraphicsView* m_graphicsView;

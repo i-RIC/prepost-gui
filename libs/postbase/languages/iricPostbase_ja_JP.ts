@@ -284,6 +284,122 @@
     </message>
 </context>
 <context>
+    <name>PostStringResultDataItem</name>
+    <message>
+        <location filename="../string/poststringresultdataitem.cpp" line="71"/>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <location filename="../string/private/poststringresultdataitem_movecommand.cpp" line="6"/>
+        <source>Move label</source>
+        <translation>ラベルの移動</translation>
+    </message>
+    <message>
+        <location filename="../string/private/poststringresultdataitem_resizecommand.cpp" line="6"/>
+        <source>Resize label</source>
+        <translation>ラベルのリサイズ</translation>
+    </message>
+    <message>
+        <location filename="../string/private/poststringresultdataitem_setsettingcommand.cpp" line="6"/>
+        <source>Edit Label Setting</source>
+        <translation>ラベル設定の編集</translation>
+    </message>
+</context>
+<context>
+    <name>PostStringResultSettingDialog</name>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="14"/>
+        <source>Label Setting</source>
+        <translation>ラベル設定</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="20"/>
+        <source>Setting</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="32"/>
+        <source>Position and Size</source>
+        <translation>位置とサイズ</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="43"/>
+        <source>Margin</source>
+        <translation>マージン</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="51"/>
+        <source>Horizontal</source>
+        <translation>水平方向</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="65"/>
+        <source>Vertical</source>
+        <translation>垂直方向</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="117"/>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="125"/>
+        <source>Left:</source>
+        <translation>左:</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="139"/>
+        <source>Top:</source>
+        <translation>上:</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="189"/>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="195"/>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="209"/>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="226"/>
+        <source>Height:</source>
+        <translation>高さ:</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="266"/>
+        <source>Font and Color</source>
+        <translation>フォントと色</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="272"/>
+        <source>Font:</source>
+        <translation>フォント:</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="288"/>
+        <source>Edit...</source>
+        <translation>編集...</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="310"/>
+        <source>Font color:</source>
+        <translation>フォントの色:</translation>
+    </message>
+    <message>
+        <location filename="../string/poststringresultsettingdialog.ui" line="341"/>
+        <source>Background color:</source>
+        <translation>背景色:</translation>
+    </message>
+</context>
+<context>
     <name>PostTimeDataItem</name>
     <message>
         <location filename="../time/posttimedataitem.cpp" line="70"/>

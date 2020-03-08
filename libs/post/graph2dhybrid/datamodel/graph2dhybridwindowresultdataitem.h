@@ -13,7 +13,6 @@ class Graph2dHybridWindowResultCopyGroupDataItem;
 
 class Graph2dHybridWindowResultDataItem : public Graph2dHybridWindowDataItem
 {
-
 public:
 	Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dHybridWindowResultDataItem();

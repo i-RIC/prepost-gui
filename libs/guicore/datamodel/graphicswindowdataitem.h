@@ -84,7 +84,8 @@ public:
 	/// This function is called when the corresponding node in object browser is deselected.
 	virtual void informDeselection(VTKGraphicsView* /*v*/) {}
 	virtual void viewOperationEnded(VTKGraphicsView* /*v*/) {}
-	virtual void viewOperationEndedGlobal(VTKGraphicsView* /*v*/);
+	virtual void viewOperationEndedGlobal(VTKGraphicsView* v);
+	virtual void handleResize(VTKGraphicsView* v);
 	virtual void keyPressEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/) {}
 	virtual void keyReleaseEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/) {}
 	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) {}
@@ -160,6 +161,7 @@ protected:
 	virtual void innerUpdateZScale(double scale);
 	virtual bool myHasTransparentPart() const;
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
+	virtual void doHandleResize(VTKGraphicsView* v);
 	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);

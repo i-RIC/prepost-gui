@@ -12,6 +12,8 @@
 #include <QStringList>
 
 class CgnsFileOpener;
+class PostBaseIterativeNumericalDataContainer;
+class PostBaseIterativeStringDataContainer;
 class PostCalculatedResult;
 class PostDataContainer;
 class PostIterationSteps;
@@ -41,6 +43,7 @@ public:
 	void informCgnsSteps();
 	void loadFromCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
+
 	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers2D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers3D() const;
@@ -51,11 +54,17 @@ public:
 	PostZoneDataContainer* zoneContainer(Dimension dim, const std::string& zoneName) const;
 	PostZoneDataContainer* firstZoneContainer() const;
 
+	const std::map<std::string, PostBaseIterativeStringDataContainer*>& baseIterativeStringResults() const;
+	const std::map<std::string, PostBaseIterativeNumericalDataContainer*>& baseIterativeNumericalResults() const;
+	PostBaseIterativeStringDataContainer* baseIterativeStringResult(const std::string& name) const;
+	PostBaseIterativeNumericalDataContainer* baseIterativeNumericalResult(const std::string& name) const;
+
 	bool isDataAvailable() const;
 	bool isDataAvailable1D() const;
 	bool isDataAvailable2D() const;
 	bool isDataAvailable3D() const;
 	bool isDataAvailableBase() const;
+
 	static int toIntDimension(Dimension dim);
 	static Dimension fromIntDimension(int dim);
 	bool open();
@@ -73,14 +82,6 @@ public:
 	void exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format);
 
 	void applyOffset(double x_diff, double y_diff);
-
-protected:
-	void timerEvent(QTimerEvent*) override;
-	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
-//	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
-	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	static void clearContainers(QList<PostZoneDataContainer*>* conts);
 
 public slots:
 	void informSolverStart();
@@ -106,33 +107,42 @@ signals:
 private:
 	bool stepsExist() const;
 	void setupZoneDataContainers(int fn);
-	void checkBaseIterativeDataExist(int fn);
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
+	bool innerSetupZoneDataContainers(int fn, int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+
+	bool setupBaseIterativeResults(int fn, int baseId);
+	void clearBaseIterativeResults();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void timerEvent(QTimerEvent*) override;
+
+	static void clearContainers(QList<PostZoneDataContainer*>* conts);
+
 	static const int TIMERINTERVAL = 500;
 	SolverDefinition::IterationType m_iterationType;
+
 	PostIterationSteps* m_iterationSteps;
 	PostTimeSteps* m_timeSteps;
 	int m_currentStep;
+
 	QList<PostZoneDataContainer*> m_zoneContainers1D;
 	QList<PostZoneDataContainer*> m_zoneContainers2D;
 	QList<PostZoneDataContainer*> m_zoneContainers3D;
-	bool m_baseIterativeDataExists;
-	QList<PostDataContainer*> m_otherContainers;
-	int m_timerId;
-	CgnsFileOpener* m_opener;
-
-	std::vector<std::string> m_zoneNames1D;
-	std::vector<std::string> m_zoneNames2D;
-	std::vector<std::string> m_zoneNames3D;
-
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap1D;
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap2D;
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
+	int m_timerId;
+	CgnsFileOpener* m_opener;
+
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults3D;
+
+	std::map<std::string, PostBaseIterativeStringDataContainer*> m_baseIterativeStringResults;
+	std::map<std::string, PostBaseIterativeNumericalDataContainer*> m_baseIterativeNumericalResults;
 
 	PostDataExportDialog::Format m_exportFormat;
 	bool m_disableCalculatedResult;

@@ -515,6 +515,14 @@ void GraphicsWindowDataItem::viewOperationEndedGlobal(VTKGraphicsView* v)
 	}
 }
 
+void GraphicsWindowDataItem::handleResize(VTKGraphicsView* v)
+{
+	doHandleResize(v);
+	for (auto child : m_childItems) {
+		child->handleResize(v);
+	}
+}
+
 void GraphicsWindowDataItem::applyOffset(double x, double y)
 {
 	doApplyOffset(x, y);
@@ -555,6 +563,9 @@ bool GraphicsWindowDataItem::myHasTransparentPart() const
 }
 
 void GraphicsWindowDataItem::doViewOperationEndedGlobal(VTKGraphicsView* )
+{}
+
+void GraphicsWindowDataItem::doHandleResize(VTKGraphicsView*)
 {}
 
 void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataItem* item)

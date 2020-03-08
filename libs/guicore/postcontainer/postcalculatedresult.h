@@ -33,7 +33,7 @@ public:
 	};
 
 	PostCalculatedResult(PostZoneDataContainer* container);
-	~PostCalculatedResult();
+	~PostCalculatedResult() override;
 
 	std::string name() const;
 	void setName(const std::string& name);
