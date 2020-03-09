@@ -74,7 +74,7 @@ std::vector<QPointF> readPolyLine(SHPObject* shpo)
 } // namespace
 
 GeoDataPolyLineImporter::GeoDataPolyLineImporter(GeoDataCreator* creator) :
-	GeoDataImporter {"esrishape", tr("ESRI Shape"), creator}
+	GeoDataImporter {"esrishape", tr("ESRI Shapefile (Polyline)"), creator}
 {}
 
 GeoDataPolyLineImporter::~GeoDataPolyLineImporter()
@@ -83,7 +83,7 @@ GeoDataPolyLineImporter::~GeoDataPolyLineImporter()
 const QStringList GeoDataPolyLineImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret.append(tr("ESRI Shape file (*.shp)"));
+	ret.append(tr("ESRI Shapefile (*.shp) (Polyline)"));
 	return ret;
 }
 

@@ -131,12 +131,12 @@
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
-        <source>ESRI Shape</source>
+        <source>ESRI Shapefile (Polygon Group)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shape file (Polygon Group) (*.shp)</source>
+        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

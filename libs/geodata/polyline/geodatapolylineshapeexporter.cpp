@@ -13,7 +13,7 @@
 #include <vector>
 
 GeoDataPolyLineShapeExporter::GeoDataPolyLineShapeExporter(GeoDataCreator* creator) :
-	GeoDataExporter {tr("ESRI Shape file"), creator}
+	GeoDataExporter {tr("ESRI Shapefile"), creator}
 {}
 
 SHPObject* GeoDataPolyLineShapeExporter::getSHPObject(GeoDataPolyLine* polyline, SHPHandle shp, int index, double xoffset, double yoffset)

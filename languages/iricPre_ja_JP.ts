@@ -853,6 +853,11 @@ Do you really want to import grid from this file?</source>
         <translation>警告</translation>
     </message>
     <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation>ESRI シェープファイル (*.shp)</translation>
+    </message>
+    <message>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation type="vanished">データの種類が拡張子から認識できません。 : %1</translation>
     </message>
@@ -950,9 +955,8 @@ Do you really want to import grid from this file?</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI シェープファイル (*.shp)</translation>
+        <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>

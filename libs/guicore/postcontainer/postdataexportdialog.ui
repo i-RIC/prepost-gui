@@ -47,7 +47,7 @@
        </item>
        <item>
         <property name="text">
-         <string>ESRI Shape files</string>
+         <string>ESRI Shapefiles</string>
         </property>
        </item>
       </widget>

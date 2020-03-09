@@ -1100,7 +1100,7 @@ void PreProcessorGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTK
 
 void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 {
-	QString filename = QFileDialog::getSaveFileName(mainWindow(), tr("Export Polygons"), LastIODirectory::get(), tr("ESRI Shape file (*.shp)"));
+	QString filename = QFileDialog::getSaveFileName(mainWindow(), tr("Export Polygons"), LastIODirectory::get(), tr("ESRI Shapefile (*.shp)"));
 	if (filename.isEmpty()) {return;}
 	QString dbfFilename;
 	GeoDataPolygonRealCreator* c = new GeoDataPolygonRealCreator();

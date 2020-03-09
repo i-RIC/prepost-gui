@@ -1895,6 +1895,16 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>项目已成功保存到%1</translation>
     </message>
     <message>
+        <location filename="../main/iricmainwindow.cpp" line="1990"/>
+        <source>Export contour figure to ESRI Shapefiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <source>Saving contour figure as ESRI Shapefiles...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>No Contour Figure is drawn now.</source>
         <translation>现在没有绘制轮廓图。</translation>
@@ -2034,9 +2044,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>要导出形状文件，请切换 &quot;显示设置&quot; 到 &quot;轮廓图像&quot;, 不是 &quot;彩色条纹&quot; 或 &quot;等值线&quot;</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1990"/>
         <source>Export contour figure to ESRI Shape files</source>
-        <translation>将轮廓图导出到ESRI Shape文件</translation>
+        <translation type="vanished">将轮廓图导出到ESRI Shape文件</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2000"/>
@@ -2044,9 +2053,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>导出轮廓图</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
         <source>Saving contour figure as ESRI Shape files...</source>
-        <translation>将轮廓图另存为ESRI Shape文件...</translation>
+        <translation type="vanished">将轮廓图另存为ESRI Shape文件...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2067"/>
@@ -2375,9 +2383,13 @@ Option -&gt; Preferences</source>
         <translation>&amp;颗粒...</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
         <source>&amp;Contour Figure as ESRI Shape files...</source>
-        <translation>&amp;轮廓图作为ESRI形状文件...</translation>
+        <translation type="vanished">&amp;轮廓图作为ESRI形状文件...</translation>
+    </message>
+    <message>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
+        <source>&amp;Contour Figure as ESRI Shapefiles...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="197"/>

@@ -5007,13 +5007,21 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
         <source>ESRI Shape</source>
-        <translation>ESRIシェープ</translation>
+        <translation type="vanished">ESRIシェープ</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (Polygon Group) (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
+        <source>ESRI Shapefile (Polygon Group)</source>
+        <translation>ESRI シェープファイル (ポリゴングループ)</translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shape file (Polygon Group) (*.shp)</source>
+        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
         <translation>ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
     </message>
     <message>
@@ -5332,14 +5340,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="113"/>
         <source>ESRI Shape</source>
-        <translation>ESRI シェープ</translation>
+        <translation type="vanished">ESRI シェープ</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygonimporter.cpp" line="113"/>
+        <source>ESRI Shapefile (Polygon)</source>
+        <translation>ESRI シェープファイル (ポリゴン)</translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="122"/>
-        <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI シェープファイル (*.shp)</translation>
+        <source>ESRI Shapefile (*.shp) (Polygon)</source>
+        <translation>ESRI シェープファイル (*.shp) (ポリゴン)</translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="145"/>
@@ -5460,13 +5476,21 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
-        <location filename="../geodatapolygonshapeexporter.cpp" line="17"/>
         <source>ESRI Shape file</source>
+        <translation type="vanished">ESRI シェープファイル</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygonshapeexporter.cpp" line="17"/>
+        <source>ESRI Shapefile</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
         <location filename="../geodatapolygonshapeexporter.cpp" line="134"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
 </context>
@@ -5978,14 +6002,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="77"/>
         <source>ESRI Shape</source>
-        <translation>ESRI シェープ</translation>
+        <translation type="vanished">ESRI シェープ</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylineimporter.cpp" line="77"/>
+        <source>ESRI Shapefile (Polyline)</source>
+        <translation>ESRI シェープファイル (折れ線)</translation>
     </message>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="86"/>
-        <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI シェープファイル (*.shp)</translation>
+        <source>ESRI Shapefile (*.shp) (Polyline)</source>
+        <translation>ESRI シェープファイル (*.shp) (折れ線)</translation>
     </message>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="109"/>
@@ -6107,8 +6139,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
         <source>ESRI Shape file</source>
+        <translation type="vanished">ESRI シェープファイル</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
+        <source>ESRI Shapefile</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
@@ -13520,6 +13556,11 @@ Do you really want to import this file?</source>
         <translation>地勢データファイル (*.tpo)</translation>
     </message>
     <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
+        <source>ESRI Shapefiles</source>
+        <translation>ESRI シェープファイル</translation>
+    </message>
+    <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="73"/>
         <source>Output folder:</source>
         <translation>出力フォルダ:</translation>
@@ -13579,9 +13620,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">地勢データファイル (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
         <source>ESRI Shape files</source>
-        <translation>ESRI シェープファイル</translation>
+        <translation type="vanished">ESRI シェープファイル</translation>
     </message>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="226"/>
@@ -13719,8 +13759,12 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
-        <source>Saving calculation result as ESRI Shape files...</source>
+        <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as ESRI Shape files...</source>
+        <translation type="vanished">計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="877"/>
@@ -13829,109 +13873,88 @@ Do you really want to import this file?</source>
 <context>
     <name>PostStringResultEditDialog</name>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="14"/>
         <source>Edit String Result</source>
-        <translation>ラベルの編集</translation>
+        <translation type="vanished">ラベルの編集</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="20"/>
         <source>Calculation results for input</source>
-        <translation>入力として使う計算結果</translation>
+        <translation type="vanished">入力として使う計算結果</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="42"/>
         <source>Type</source>
-        <translation>種類</translation>
+        <translation type="vanished">種類</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="47"/>
         <source>Result name</source>
-        <translation>計算結果名</translation>
+        <translation type="vanished">計算結果名</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="52"/>
         <source>Variable name</source>
-        <translation>変数名</translation>
+        <translation type="vanished">変数名</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="57"/>
         <source>Index</source>
-        <translation>インデックス</translation>
+        <translation type="vanished">インデックス</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="62"/>
         <source>Value for Testing</source>
-        <translation>テスト用の値</translation>
+        <translation type="vanished">テスト用の値</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="85"/>
         <source>&amp;Add...</source>
-        <translation>追加 (&amp;A)</translation>
+        <translation type="vanished">追加 (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="92"/>
         <source>&amp;Edit...</source>
-        <translation>編集 (&amp;E)...</translation>
+        <translation type="vanished">編集 (&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="99"/>
         <source>&amp;Delete...</source>
-        <translation>削除(&amp;D)...</translation>
+        <translation type="vanished">削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="111"/>
         <source>Definition of output</source>
-        <translation>出力の定義</translation>
+        <translation type="vanished">出力の定義</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="130"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="148"/>
         <source>Test</source>
-        <translation>テスト</translation>
+        <translation type="vanished">テスト</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="101"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="101"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>本当に %1 を削除していいですか?</translation>
+        <translation type="vanished">本当に %1 を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="165"/>
         <source>Global</source>
-        <translation>グローバル</translation>
+        <translation type="vanished">グローバル</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="167"/>
         <source>Node</source>
-        <translation>格子点</translation>
+        <translation type="vanished">格子点</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="169"/>
         <source>Cell</source>
-        <translation>格子セル</translation>
+        <translation type="vanished">格子セル</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="171"/>
         <source>EdgeI</source>
-        <translation>エッジ(I方向)</translation>
+        <translation type="vanished">エッジ(I方向)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="173"/>
         <source>EdgeJ</source>
-        <translation>エッジ(J方向)</translation>
+        <translation type="vanished">エッジ(J方向)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="175"/>
         <source>EdgeK</source>
-        <translation>エッジ(K方向)</translation>
+        <translation type="vanished">エッジ(K方向)</translation>
     </message>
 </context>
 <context>
@@ -14002,42 +14025,42 @@ Do you really want to import this file?</source>
         <translation>テスト</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="99"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="100"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="99"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="100"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>本当に %1 を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="157"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="158"/>
         <source>Global</source>
         <translation>グローバル</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="159"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="160"/>
         <source>Node</source>
         <translation>格子点</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="161"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="162"/>
         <source>Cell</source>
         <translation>格子セル</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="163"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="164"/>
         <source>EdgeI</source>
         <translation>エッジ(I方向)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="165"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="166"/>
         <source>EdgeJ</source>
         <translation>エッジ(J方向)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="167"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="168"/>
         <source>EdgeK</source>
         <translation>エッジ(K方向)</translation>
     </message>
@@ -15468,7 +15491,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished">ウィザードページ</translation>
+        <translation>ウィザードページ</translation>
     </message>
     <message>
         <source>File Propertys</source>
@@ -31264,9 +31287,8 @@ Do you really want to import grid from this file?</source>
         <translation>シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1990"/>
         <source>Export contour figure to ESRI Shape files</source>
-        <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
+        <translation type="vanished">面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2000"/>
@@ -31274,9 +31296,8 @@ Do you really want to import grid from this file?</source>
         <translation>面塗りコンターのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
         <source>Saving contour figure as ESRI Shape files...</source>
-        <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
+        <translation type="vanished">面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
         <source>No contour is drawn now.</source>
@@ -31353,6 +31374,16 @@ Option -&gt; Preferences</source>
         <location filename="../main/iricmainwindow.cpp" line="2119"/>
         <source>Export Google Earth KMZ for street view</source>
         <translation>ストリートビュー用 Google Earth KMZ の出力</translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="1990"/>
+        <source>Export contour figure to ESRI Shapefiles</source>
+        <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <source>Saving contour figure as ESRI Shapefiles...</source>
+        <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2120"/>
@@ -31585,9 +31616,8 @@ Option -&gt; Preferences</source>
         <translation>エクスポート(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
         <source>&amp;Contour Figure as ESRI Shape files...</source>
-        <translation>面塗りコンターを ESRI シェープファイルへ(&amp;C)...</translation>
+        <translation type="vanished">面塗りコンターを ESRI シェープファイルへ(&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KML for street view</source>
@@ -31752,6 +31782,11 @@ Option -&gt; Preferences</source>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="140"/>
         <source>Copy Snapshot to Clipboard</source>
         <translation>スナップショットをクリップボードにコピー</translation>
+    </message>
+    <message>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
+        <source>&amp;Contour Figure as ESRI Shapefiles...</source>
+        <translation>面塗りコンターを ESRI シェープファイルへ(&amp;C)...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="197"/>
@@ -36983,6 +37018,11 @@ Do you really want to import grid from this file?</source>
         <translation>警告</translation>
     </message>
     <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation>ESRI シェープファイル (*.shp)</translation>
+    </message>
+    <message>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation type="vanished">データの種類が拡張子から認識できません。 : %1</translation>
     </message>
@@ -37080,9 +37120,8 @@ Do you really want to import grid from this file?</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI シェープファイル (*.shp)</translation>
+        <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>

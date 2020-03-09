@@ -192,7 +192,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(calcResultExportActionInFileMenu, SIGNAL(triggered()), m_parent, SLOT(exportCalculationResult()));
 	particleExportAction = new QAction(tr("&Particles..."), this);
 	connect(particleExportAction, SIGNAL(triggered()), m_parent, SLOT(exportParticles()));
-	cfShapeExportAction = new QAction(tr("&Contour Figure as ESRI Shape files..."), this);
+	cfShapeExportAction = new QAction(tr("&Contour Figure as ESRI Shapefiles..."), this);
 	connect(cfShapeExportAction, SIGNAL(triggered()), m_parent, SLOT(exportCfShape()));
 	svKmzExportAction = new QAction(tr("&Google Earth KMZ for street view"), this);
 	connect(svKmzExportAction, SIGNAL(triggered()), m_parent, SLOT(exportStKMZ()));

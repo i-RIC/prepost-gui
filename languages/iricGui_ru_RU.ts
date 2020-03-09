@@ -1900,6 +1900,16 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main/iricmainwindow.cpp" line="1990"/>
+        <source>Export contour figure to ESRI Shapefiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <source>Saving contour figure as ESRI Shapefiles...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>No Contour Figure is drawn now.</source>
         <translation type="unfinished"></translation>
@@ -2123,18 +2133,8 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1990"/>
-        <source>Export contour figure to ESRI Shape files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../main/iricmainwindow.cpp" line="2000"/>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
-        <source>Saving contour figure as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2370,7 +2370,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
-        <source>&amp;Contour Figure as ESRI Shape files...</source>
+        <source>&amp;Contour Figure as ESRI Shapefiles...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

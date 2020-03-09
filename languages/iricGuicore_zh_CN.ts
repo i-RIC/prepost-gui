@@ -1200,6 +1200,11 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
+        <source>ESRI Shapefiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="73"/>
         <source>Output folder:</source>
         <translation>输出文件夹:</translation>
@@ -1252,11 +1257,6 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="35"/>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
-        <source>ESRI Shape files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1391,8 +1391,12 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
+        <source>Saving calculation result as ESRI Shapefiles...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Saving calculation result as ESRI Shape files...</source>
-        <translation>以ESRI Shape文件保存计算结果</translation>
+        <translation type="vanished">以ESRI Shape文件保存计算结果</translation>
     </message>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="877"/>
@@ -1501,109 +1505,36 @@ Do you really want to import this file?</source>
 <context>
     <name>PostStringResultEditDialog</name>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="14"/>
-        <source>Edit String Result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="20"/>
         <source>Calculation results for input</source>
-        <translation type="unfinished">输入的计算结果</translation>
+        <translation type="obsolete">输入的计算结果</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="42"/>
-        <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="47"/>
         <source>Result name</source>
-        <translation type="unfinished">结果名称</translation>
+        <translation type="obsolete">结果名称</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="52"/>
         <source>Variable name</source>
-        <translation type="unfinished">变量名</translation>
+        <translation type="obsolete">变量名</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="57"/>
-        <source>Index</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="62"/>
-        <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="85"/>
-        <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="92"/>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">&amp;编辑...</translation>
+        <translation type="obsolete">&amp;编辑...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="99"/>
-        <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="111"/>
-        <source>Definition of output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="130"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="148"/>
         <source>Test</source>
-        <translation type="unfinished">测试</translation>
+        <translation type="obsolete">测试</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="101"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation type="obsolete">警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="101"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">确认删除%1?</translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="165"/>
-        <source>Global</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="167"/>
-        <source>Node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="169"/>
-        <source>Cell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="171"/>
-        <source>EdgeI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="173"/>
-        <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="175"/>
-        <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">确认删除%1?</translation>
     </message>
 </context>
 <context>
@@ -1674,42 +1605,42 @@ Do you really want to import this file?</source>
         <translation type="unfinished">测试</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="99"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="100"/>
         <source>Warning</source>
         <translation type="unfinished">警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="99"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="100"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">确认删除%1?</translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="157"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="158"/>
         <source>Global</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="159"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="160"/>
         <source>Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="161"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="162"/>
         <source>Cell</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="163"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="164"/>
         <source>EdgeI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="165"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="166"/>
         <source>EdgeJ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="167"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="168"/>
         <source>EdgeK</source>
         <translation type="unfinished"></translation>
     </message>

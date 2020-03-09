@@ -688,7 +688,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../continuoussnapshot/continuoussnapshotfilepropertypage.ui" line="14"/>
         <source>WizardPage</source>
-        <translation type="unfinished">ウィザードページ</translation>
+        <translation>ウィザードページ</translation>
     </message>
     <message>
         <source>File Propertys</source>
@@ -16484,9 +16484,8 @@ Do you really want to import grid from this file?</source>
         <translation>シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1990"/>
         <source>Export contour figure to ESRI Shape files</source>
-        <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
+        <translation type="vanished">面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2000"/>
@@ -16494,9 +16493,8 @@ Do you really want to import grid from this file?</source>
         <translation>面塗りコンターのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
         <source>Saving contour figure as ESRI Shape files...</source>
-        <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
+        <translation type="vanished">面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
         <source>No contour is drawn now.</source>
@@ -16573,6 +16571,16 @@ Option -&gt; Preferences</source>
         <location filename="../main/iricmainwindow.cpp" line="2119"/>
         <source>Export Google Earth KMZ for street view</source>
         <translation>ストリートビュー用 Google Earth KMZ の出力</translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="1990"/>
+        <source>Export contour figure to ESRI Shapefiles</source>
+        <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <source>Saving contour figure as ESRI Shapefiles...</source>
+        <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2120"/>
@@ -16805,9 +16813,8 @@ Option -&gt; Preferences</source>
         <translation>エクスポート(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
         <source>&amp;Contour Figure as ESRI Shape files...</source>
-        <translation>面塗りコンターを ESRI シェープファイルへ(&amp;C)...</translation>
+        <translation type="vanished">面塗りコンターを ESRI シェープファイルへ(&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KML for street view</source>
@@ -16972,6 +16979,11 @@ Option -&gt; Preferences</source>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="140"/>
         <source>Copy Snapshot to Clipboard</source>
         <translation>スナップショットをクリップボードにコピー</translation>
+    </message>
+    <message>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
+        <source>&amp;Contour Figure as ESRI Shapefiles...</source>
+        <translation>面塗りコンターを ESRI シェープファイルへ(&amp;C)...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="197"/>

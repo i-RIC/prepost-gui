@@ -883,7 +883,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <source>ESRI Shapefile (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

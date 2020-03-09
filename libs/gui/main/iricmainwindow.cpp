@@ -1987,7 +1987,7 @@ void iRICMainWindow::exportCfShape()
 	expDialog.setExportSetting(s);
 	expDialog.hideDataRange();
 
-	expDialog.setWindowTitle(tr("Export contour figure to ESRI Shape files"));
+	expDialog.setWindowTitle(tr("Export contour figure to ESRI Shapefiles"));
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
 
@@ -1998,7 +1998,7 @@ void iRICMainWindow::exportCfShape()
 	QProgressDialog dialog(this);
 	dialog.setRange(s.startStep, s.endStep);
 	dialog.setWindowTitle(tr("Export contour figure"));
-	dialog.setLabelText(tr("Saving contour figure as ESRI Shape files..."));
+	dialog.setLabelText(tr("Saving contour figure as ESRI Shapefiles..."));
 	dialog.setFixedSize(300, 100);
 	dialog.setModal(true);
 	dialog.show();
