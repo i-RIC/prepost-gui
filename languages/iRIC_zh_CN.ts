@@ -2845,12 +2845,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error occured while opening %1.</source>
         <translation>打开 %1时发生错误</translation>
     </message>
@@ -2869,26 +2869,99 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfFileListDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="14"/>
+        <source>Confirm File List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="20"/>
+        <source>The following files will be imported. Is it OK?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="14"/>
+        <source>File name pattern setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="20"/>
+        <source>Please specify the filename pattern to recognize date and time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="29"/>
+        <source>File name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="43"/>
+        <source>Pattern:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="50"/>
+        <source>YYYYMMDD_hhmmss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="57"/>
+        <source>Recognize result:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="89"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.cpp" line="44"/>
+        <source>File name does not match the pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff 文件 (*.tif)</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
-        <translation>可以导入GDAL数据文件以用于没有尺寸的网格条件。</translation>
+        <translation type="vanished">可以导入GDAL数据文件以用于没有尺寸的网格条件。</translation>
     </message>
 </context>
 <context>
@@ -2907,7 +2980,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <location filename="../geodatanetcdfimporter.cpp" line="327"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -2927,7 +3000,7 @@ p, li { white-space: pre-wrap; }
         <translation>%1 的维度值不匹配</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error occured while parsing time definition: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18561,119 +18634,129 @@ Do you really want to import grid from this file?</source>
         <translation>&amp;添加</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="192"/>
         <source>All importable files (%1)</source>
         <translation>所有可载入文件(%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="197"/>
         <source>Select file to import</source>
         <translation>选择导入文件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <source>Select algorithm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <source>Please select algorithm to import data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <source>File type cannot be recognized from the file extension. : %1</source>
         <translation>无法通过文件扩展名识别文件类型。 :%1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
         <source>Import failed</source>
         <translation>导入失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
         <source>Importing data from %1 failed.</source>
         <translation>从%1导入数据失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
         <source>%1 contains no data to import.</source>
         <translation>%1不包含导入数据</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="235"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="382"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="401"/>
         <source>Importing data...</source>
         <translation>正在载入数据...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
         <source>Canceled</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
         <source>Importing canceled.</source>
         <translation>取消载入</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
         <source>To import the geographic data, specify coordinate system first.</source>
         <translation>要导入地理数据，请首先指定坐标系。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
         <translation>指定的文件包含无效数据，这些数据被忽略。 忽略的数据如下:
         %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
         <source>Importing data failed.</source>
         <translation>载入数据失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
         <source>No data to import.</source>
         <translation>无载入数据</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
         <source>Select data to export</source>
         <translation>选择导出数据</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
         <source>Please select which data to export.</source>
         <translation>请选择要导出的数据。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="853"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="872"/>
         <source>%1 Color Setting</source>
         <translation>%1色彩设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>Export Polygons</source>
         <translation>导出多边形</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>确定删除%1组内的全部项目？</translation>
     </message>

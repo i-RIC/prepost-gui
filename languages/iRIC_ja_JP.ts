@@ -3111,12 +3111,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error occured while opening %1.</source>
         <translation>%1 を開くときにエラーが発生しました。</translation>
     </message>
@@ -3135,26 +3135,103 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfFileListDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="14"/>
+        <source>Confirm File List</source>
+        <translation>ファイルリストの確認</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="20"/>
+        <source>The following files will be imported. Is it OK?</source>
+        <translation>以下のファイルがインポートされます。問題ないですか?</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="14"/>
+        <source>File name pattern setting</source>
+        <translation>ファイル名パターン設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="20"/>
+        <source>Please specify the filename pattern to recognize date and time.</source>
+        <translation>日付と時間を認識するため、ファイル名のパターンを指定してください。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="29"/>
+        <source>File name:</source>
+        <translation>ファイル名:</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="43"/>
+        <source>Pattern:</source>
+        <translation>パターン:</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="50"/>
+        <source>YYYYMMDD_hhmmss</source>
+        <translation>YYYYMMDD_hhmmss</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="57"/>
+        <source>Recognize result:</source>
+        <translation>認識結果:</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="89"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下の文字を指定してパターンを定義してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;年: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;月: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;日: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;時間: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;分: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;秒: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY or YY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下の文字を使用してパターンを定義してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;年: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.cpp" line="44"/>
+        <source>File name does not match the pattern</source>
+        <translation>ファイル名がパターンに一致しません</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation>ArcInfo ASCII ファイル (*.asc)</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
+        <translation>GDAL のデータファイルは、次元のない格子属性と、時間次元を持つ格子属性にのみインポートできます。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
+        <translation>%1 には座標系が指定されていません。座標系を手動で選択してください。</translation>
+    </message>
+    <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
-        <translation>GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
+        <translation type="vanished">GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
     </message>
 </context>
 <context>
@@ -3173,7 +3250,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <location filename="../geodatanetcdfimporter.cpp" line="327"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -3193,7 +3270,7 @@ p, li { white-space: pre-wrap; }
         <translation>次元 %1 の値が一致しません。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error occured while parsing time definition: %1</source>
         <translation>日付定義の読み込みでエラーが発生しました: %1</translation>
     </message>
@@ -36878,20 +36955,30 @@ Do you really want to import grid from this file?</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="192"/>
         <source>All importable files (%1)</source>
         <translation>全てのインポート可能なファイル (%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="197"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <source>Select algorithm</source>
+        <translation>アルゴリズムの選択</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <source>Please select algorithm to import data</source>
+        <translation>データをインポートするアルゴリズムを選択してください</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -36900,71 +36987,71 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">データの種類が拡張子から認識できません。 : %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <source>File type cannot be recognized from the file extension. : %1</source>
         <translation>データの種類が拡張子から認識できません。 : %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
         <source>Import failed</source>
         <translation>インポート失敗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
         <source>Importing data from %1 failed.</source>
         <translation>%1 からデータをインポートするのに失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
         <source>%1 contains no data to import.</source>
         <translation>%1 にはインポートできるデータが含まれていません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="235"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="382"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="401"/>
         <source>Importing data...</source>
         <translation>データをインポートしています...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
         <source>Canceled</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
         <source>Importing canceled.</source>
         <translation>インポートがキャンセルされました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
         <source>To import the geographic data, specify coordinate system first.</source>
         <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
         <translation>指定されたファイルには不正なデータがあり、無視されました。無視されたデータは以下の通りです。:
 %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
         <source>Importing data failed.</source>
         <translation>データのインポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
         <source>No data to import.</source>
         <translation>インポートするデータがありません。</translation>
     </message>
@@ -36973,32 +37060,32 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">%1からのデータのインポートが失敗しました。「無視」ボタンを押すと、このデータを無視し、残りのデータのインポートを試みます。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
         <source>Select data to export</source>
         <translation>エクスポートするデータの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
         <source>Please select which data to export.</source>
         <translation>エクスポートするデータを選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="853"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="872"/>
         <source>%1 Color Setting</source>
         <translation>%1 表示色設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>Export Polygons</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
     </message>

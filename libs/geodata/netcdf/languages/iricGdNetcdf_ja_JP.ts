@@ -4,12 +4,12 @@
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error occured while opening %1.</source>
         <translation>%1 を開くときにエラーが発生しました。</translation>
     </message>
@@ -28,26 +28,103 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfFileListDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="14"/>
+        <source>Confirm File List</source>
+        <translation>ファイルリストの確認</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="20"/>
+        <source>The following files will be imported. Is it OK?</source>
+        <translation>以下のファイルがインポートされます。問題ないですか?</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="14"/>
+        <source>File name pattern setting</source>
+        <translation>ファイル名パターン設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="20"/>
+        <source>Please specify the filename pattern to recognize date and time.</source>
+        <translation>日付と時間を認識するため、ファイル名のパターンを指定してください。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="29"/>
+        <source>File name:</source>
+        <translation>ファイル名:</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="43"/>
+        <source>Pattern:</source>
+        <translation>パターン:</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="50"/>
+        <source>YYYYMMDD_hhmmss</source>
+        <translation>YYYYMMDD_hhmmss</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="57"/>
+        <source>Recognize result:</source>
+        <translation>認識結果:</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="89"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下の文字を指定してパターンを定義してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;年: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;月: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;日: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;時間: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;分: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;秒: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY or YY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下の文字を使用してパターンを定義してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;年: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.cpp" line="44"/>
+        <source>File name does not match the pattern</source>
+        <translation>ファイル名がパターンに一致しません</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation>ArcInfo ASCII ファイル (*.asc)</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
+        <translation>GDAL のデータファイルは、次元のない格子属性と、時間次元を持つ格子属性にのみインポートできます。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
+        <translation>%1 には座標系が指定されていません。座標系を手動で選択してください。</translation>
+    </message>
+    <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
-        <translation>GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
+        <translation type="vanished">GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
     </message>
 </context>
 <context>
@@ -66,7 +143,7 @@
         <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <location filename="../geodatanetcdfimporter.cpp" line="327"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -86,7 +163,7 @@
         <translation>次元 %1 の値が一致しません。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error occured while parsing time definition: %1</source>
         <translation>日付定義の読み込みでエラーが発生しました: %1</translation>
     </message>
