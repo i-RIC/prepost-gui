@@ -501,7 +501,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 
 		vtkSmartPointer<vtkPoints> iface_points = vtkSmartPointer<vtkPoints>::New();
 		iface_points->SetDataTypeToDouble();
-		for (int k = 0; k < NVertexK; ++k) {
+		for (int k = 0; k < NVertexK - 1; ++k) {
 			for (int j = 0; j < (NVertexJ - 1); ++j) {
 				for (int i = 0; i < NVertexI; ++i) {
 					int idx1 = i + NVertexI * (j + NVertexJ * k);
@@ -519,7 +519,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 
 		vtkSmartPointer<vtkPoints> jface_points = vtkSmartPointer<vtkPoints>::New();
 		jface_points->SetDataTypeToDouble();
-		for (int k = 0; k < NVertexK; ++k) {
+		for (int k = 0; k < NVertexK - 1; ++k) {
 			for (int j = 0; j < NVertexJ; ++j) {
 				for (int i = 0; i < (NVertexI - 1); ++i) {
 					int idx1 = i + NVertexI * (j + NVertexJ * k);
