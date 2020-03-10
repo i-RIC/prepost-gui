@@ -1258,6 +1258,7 @@ bool PostZoneDataContainer::cellScalarValueExists() const
 
 bool PostZoneDataContainer::edgeIScalarValueExists() const
 {
+	if (m_edgeidata == nullptr) { return false; }
 	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeidata->GetPointData());
 	for (const auto& name : names) {
 		if (hasInputDataPrefix(name)) { continue; }
@@ -1268,6 +1269,7 @@ bool PostZoneDataContainer::edgeIScalarValueExists() const
 
 bool PostZoneDataContainer::edgeJScalarValueExists() const
 {
+	if (m_edgejdata == nullptr) { return false; }
 	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgejdata->GetPointData());
 	for (const auto& name : names) {
 		if (hasInputDataPrefix(name)) { continue; }
