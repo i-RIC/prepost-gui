@@ -61,6 +61,7 @@ const QStringList GeoDataNetcdfGdalImporter::acceptableExtensions()
 
 bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
 {
+	clear();
 	GDALAllRegister();
 
 	bool ok = setMode(condition, w);
@@ -405,4 +406,10 @@ bool GeoDataNetcdfGdalImporter::setupFilenames(const QString& filename, QWidget 
 	if (ret == QDialog::Rejected) {return false;}
 
 	return true;
+}
+
+void GeoDataNetcdfGdalImporter::clear()
+{
+	m_coordinateSystem = nullptr;
+	m_filenames.clear();
 }

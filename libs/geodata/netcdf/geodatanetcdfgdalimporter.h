@@ -48,6 +48,7 @@ private:
 	void setupCoordinates(GeoDataNetcdf* data, GDALRasterBand* band);
 	bool setupFileNamePattern(const QString &filename, QWidget *w);
 	bool setupFilenames(const QString &filename, QWidget* w);
+	void clear();
 
 	virtual int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data) = 0;
 	virtual int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataNetcdf* data) = 0;
