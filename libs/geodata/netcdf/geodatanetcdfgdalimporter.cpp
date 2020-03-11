@@ -8,6 +8,7 @@
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemselectdialog.h>
 #include <cs/gdalutil.h>
+#include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
@@ -33,6 +34,22 @@
 #include <memory>
 #include <string>
 
+namespace {
+
+void setupWaitDialog(WaitDialog* dialog, const std::vector<QString>& filenames)
+{
+	if (filenames.size() < 5) {return;}
+
+	dialog->setRange(0, filenames.size() - 1);
+	dialog->setProgress(0);
+	dialog->setMessage(GeoDataNetcdfGdalImporter::tr("Importing data..."));
+	dialog->showProgressBar();
+	dialog->show();
+	qApp->processEvents();
+}
+
+} // namespace
+
 GeoDataNetcdfGdalImporter::GeoDataNetcdfGdalImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"gdal", tr("GDAL"), creator},
 	m_matcher	{nullptr}
@@ -57,6 +74,11 @@ const QStringList GeoDataNetcdfGdalImporter::acceptableExtensions()
 	ret.append("tif");
 	ret.append("asc");
 	return ret;
+}
+
+void GeoDataNetcdfGdalImporter::cancel()
+{
+	m_canceled = true;
 }
 
 bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
@@ -215,7 +237,7 @@ bool GeoDataNetcdfGdalImporter::importDataForSingleMode(GeoData* data, QWidget* 
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoData* data, QWidget* /*w*/)
+bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoData* data, QWidget* w)
 {
 	GeoDataNetcdf* netcdf = dynamic_cast<GeoDataNetcdf*>(data);
 	// Get Time dimension container here
@@ -232,6 +254,10 @@ bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoData* data, QWidget* /*
 
 	ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
 	int varOutId;
+
+	WaitDialog wDialog(w);
+	setupWaitDialog(&wDialog, m_filenames);
+	connect(&wDialog, SIGNAL(canceled()), this, SLOT(cancel()));
 
 	for (int timeId = 0; timeId < m_filenames.size(); ++timeId) {
 		auto filename = m_filenames.at(timeId);
@@ -260,6 +286,15 @@ bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoData* data, QWidget* /*
 		outputValuesWithTime(ncid_out, varOutId, timeId, band, netcdf);
 
 		GDALClose(dataset);
+
+		wDialog.setProgress(timeId + 1);
+		qApp->processEvents();
+
+		if (m_canceled) {
+			nc_close(ncid_out);
+			f.remove();
+			return false;
+		}
 	}
 	nc_close(ncid_out);
 
@@ -412,4 +447,5 @@ void GeoDataNetcdfGdalImporter::clear()
 {
 	m_coordinateSystem = nullptr;
 	m_filenames.clear();
+	m_canceled = false;
 }

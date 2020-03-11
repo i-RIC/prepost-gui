@@ -33,6 +33,9 @@ public:
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
+private slots:
+	void cancel();
+
 private:
 	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 
@@ -58,6 +61,7 @@ private:
 	CoordinateSystem* m_coordinateSystem;
 	Mode m_mode;
 	GeoDataNetcdfFileNameMatcher* m_matcher;
+	bool m_canceled;
 };
 
 #endif // GEODATANETCDFGDALIMPORTER_H
