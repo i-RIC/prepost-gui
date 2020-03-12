@@ -172,12 +172,12 @@
     <name>GeoDataPolyLineImporter</name>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="77"/>
-        <source>ESRI Shape</source>
+        <source>ESRI Shapefile (Polyline)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="86"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <source>ESRI Shapefile (*.shp) (Polyline)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -256,7 +256,7 @@
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
-        <source>ESRI Shape file</source>
+        <source>ESRI Shapefile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -41,6 +41,15 @@
 
 const int GeoDataNetcdf::MAX_DRAWCELLCOUNT = 200000;
 
+namespace {
+
+	int calcIndex(int i, int j, int isize)
+	{
+		return i + j * isize;
+	}
+
+} // namespace
+
 bool GeoDataNetcdf::RectRegion::pointIsInside(double x, double y) const
 {
 	if (x < xMin) {return false;}
@@ -344,120 +353,113 @@ void GeoDataNetcdf::updateShapeData()
 		m_grid->SetDimensions(static_cast<int> (m_xValues.size()) + 1, static_cast<int> (m_yValues.size()) + 1, 1);
 		points->Initialize();
 		points->Allocate((m_xValues.size() + 1) * (m_yValues.size() + 1));
-		double* longitudes = new double[(m_xValues.size() + 1) * (m_yValues.size() + 1)];
-		double* latitudes = new double[(m_xValues.size() + 1) * (m_yValues.size() + 1)];
-		for (int j = 0; j < m_yValues.size() + 1; ++j) {
-			for (int i = 0; i < m_xValues.size() + 1; ++i) {
-				*(longitudes + i + (m_xValues.size() + 1) * j) = 0;
-				*(latitudes  + i + (m_xValues.size() + 1) * j) = 0;
-			}
-		}
+		std::vector<double> longitudes, latitudes;
+		longitudes.assign((m_xValues.size() + 1) * (m_yValues.size() + 1), 0);
+		latitudes.assign((m_xValues.size() + 1) * (m_yValues.size() + 1), 0);
+
+		int xsize = m_xValues.size();
+		int ysize = m_yValues.size();
 
 		// middle points
-		for (int j = 1; j < m_yValues.size(); ++j) {
-			for (int i = 1; i < m_xValues.size(); ++i) {
+		for (int j = 1; j < ysize; ++j) {
+			for (int i = 1; i < xsize; ++i) {
 				double longitude = 0;
 				double latitude = 0;
 
-				longitude += m_lonValues[i - 1 + (m_xValues.size() * (j - 1))];
-				latitude  += m_latValues[i - 1 + (m_xValues.size() * (j - 1))];
-
-				longitude += m_lonValues[i     + (m_xValues.size() * (j - 1))];
-				latitude  += m_latValues[i     + (m_xValues.size() * (j - 1))];
-
-				longitude += m_lonValues[i - 1 + (m_xValues.size() * (j))];
-				latitude  += m_latValues[i - 1 + (m_xValues.size() * (j))];
-
-				longitude += m_lonValues[i     + (m_xValues.size() * (j))];
-				latitude  += m_latValues[i     + (m_xValues.size() * (j))];
+				for (int jj = 0; jj <= 1; ++jj) {
+					for (int ii = 0; ii <= 1; ++ii) {
+						longitude += m_lonValues[calcIndex(i + ii - 1, j + jj - 1, xsize)];
+						latitude  += m_latValues[calcIndex(i + ii - 1, j + jj - 1, xsize)];
+					}
+				}
 
 				longitude /= 4;
 				latitude  /= 4;
 
-				*(longitudes + i + (m_xValues.size() + 1) * j) = longitude;
-				*(latitudes  + i + (m_xValues.size() + 1) * j) = latitude;
+				longitudes[calcIndex(i, j, xsize + 1)] = longitude;
+				latitudes[calcIndex(i, j, xsize + 1)] = latitude;
 			}
 		}
 		// i = 0
 		for (int j = 1; j < m_yValues.size(); ++j) {
-			double longitude = *(longitudes + 1 + (m_xValues.size() + 1) * j) * 2;
-			double latitude  = *(latitudes  + 1 + (m_xValues.size() + 1) * j) * 2;
-			longitude -= *(longitudes + 2 + (m_xValues.size() + 1) * j);
-			latitude  -= *(latitudes  + 2 + (m_xValues.size() + 1) * j);
-			*(longitudes + 0 + (m_xValues.size() + 1) * j) = longitude;
-			*(latitudes  + 0 + (m_xValues.size() + 1) * j) = latitude;
+			double longitude = longitudes[calcIndex(1, j, xsize + 1)] * 2;
+			double latitude = latitudes[calcIndex(1, j, xsize + 1)] * 2;
+			longitude -= longitudes[calcIndex(2, j, xsize + 1)];
+			latitude -= latitudes[calcIndex(2, j, xsize + 1)];
+			longitudes[calcIndex(0, j, xsize + 1)] = longitude;
+			latitudes[calcIndex(0, j, xsize + 1)] = latitude;
 		}
+
 		// i = m_xValues.size()
 		for (int j = 1; j < m_yValues.size(); ++j) {
-			double longitude = *(longitudes + (m_xValues.size() - 1) + (m_xValues.size() + 1) * j) * 2;
-			double latitude  = *(latitudes  + (m_xValues.size() - 1) + (m_xValues.size() + 1) * j) * 2;
-			longitude -= *(longitudes + (m_xValues.size() - 2) + (m_xValues.size() + 1) * j);
-			latitude  -= *(latitudes  + (m_xValues.size() - 2) + (m_xValues.size() + 1) * j);
-			*(longitudes + m_xValues.size() + (m_xValues.size() + 1) * j) = longitude;
-			*(latitudes  + m_xValues.size() + (m_xValues.size() + 1) * j) = latitude;
+			double longitude = longitudes[calcIndex(xsize - 1, j, xsize + 1)] * 2;
+			double latitude = latitudes[calcIndex(xsize - 1, j, xsize + 1)] * 2;
+			longitude -= longitudes[calcIndex(xsize - 2, j, xsize + 1)];
+			latitude -= latitudes[calcIndex(xsize - 2, j, xsize + 1)];
+			longitudes[calcIndex(xsize, j, xsize + 1)] = longitude;
+			latitudes[calcIndex(xsize, j, xsize + 1)] = latitude;
 		}
+
 		// j = 0
 		for (int i = 1; i < m_xValues.size(); ++i) {
-			double longitude = *(longitudes + i + (m_xValues.size() + 1) * 1) * 2;
-			double latitude  = *(latitudes  + i + (m_xValues.size() + 1) * 1) * 2;
-			longitude -= *(longitudes + i + (m_xValues.size() + 1) * 2);
-			latitude  -= *(latitudes  + i + (m_xValues.size() + 1) * 2);
-			*(longitudes + i + (m_xValues.size() + 1) * 0) = longitude;
-			*(latitudes  + i + (m_xValues.size() + 1) * 0) = latitude;
+			double longitude = longitudes[calcIndex(i, 1, xsize + 1)] * 2;
+			double latitude = latitudes[calcIndex(i, 1, xsize + 1)] * 2;
+			longitude -= longitudes[calcIndex(i, 2, xsize + 1)];
+			latitude -= latitudes[calcIndex(i, 2, xsize + 1)];
+			longitudes[calcIndex(i, 0, xsize + 1)] = longitude;
+			latitudes[calcIndex(i, 0, xsize + 1)] = latitude;
 		}
+
 		// j = m_yValues.size()
 		for (int i = 1; i < m_xValues.size(); ++i) {
-			double longitude = *(longitudes + i + (m_xValues.size() + 1) * (m_yValues.size() - 1)) * 2;
-			double latitude  = *(latitudes  + i + (m_xValues.size() + 1) * (m_yValues.size() - 1)) * 2;
-			longitude -= *(longitudes + i + (m_xValues.size() + 1) * (m_yValues.size() - 2));
-			latitude  -= *(latitudes  + i + (m_xValues.size() + 1) * (m_yValues.size() - 2));
-			*(longitudes + i + (m_xValues.size() + 1) * m_yValues.size()) = longitude;
-			*(latitudes  + i + (m_xValues.size() + 1) * m_yValues.size()) = latitude;
+			double longitude = longitudes[calcIndex(i, ysize - 1, xsize + 1)] * 2;
+			double latitude = latitudes[calcIndex(i, ysize - 1, xsize + 1)] * 2;
+			longitude -= longitudes[calcIndex(i, ysize - 2, xsize + 1)];
+			latitude  -= latitudes[calcIndex(i, ysize - 2, xsize + 1)];
+			longitudes[calcIndex(i, ysize, xsize + 1)] = longitude;
+			latitudes[calcIndex(i, ysize, xsize + 1)] = latitude;
 		}
+
 		// bottom-left
-		double longitude = *(longitudes + 1 + (m_xValues.size() + 1) * 1) * 2;
-		double latitude  = *(latitudes  + 1 + (m_xValues.size() + 1) * 1) * 2;
-		longitude -= *(longitudes + 2 + (m_xValues.size() + 1) * 2);
-		latitude  -= *(latitudes  + 2 + (m_xValues.size() + 1) * 2);
-		*(longitudes + 0) = longitude;
-		*(latitudes  + 0) = latitude;
+		double longitude = longitudes[calcIndex(1, 1, xsize + 1)] * 2;
+		double latitude  = latitudes[calcIndex(1, 1, xsize + 1)] * 2;
+		longitude -= longitudes[calcIndex(2, 2, xsize + 1)];
+		latitude  -= latitudes[calcIndex(2, 2, xsize + 1)];
+		longitudes[calcIndex(0, 0, xsize + 1)] = longitude;
+		latitudes[calcIndex(0, 0, xsize + 1)] = latitude;
 
 		// bottom-right
-		longitude = *(longitudes + (m_xValues.size() - 1) + (m_xValues.size() + 1) * 1) * 2;
-		latitude  = *(latitudes  + (m_xValues.size() - 1) + (m_xValues.size() + 1) * 1) * 2;
-		longitude -= *(longitudes + (m_xValues.size() - 2) + (m_xValues.size() + 1) * 2);
-		latitude  -= *(latitudes  + (m_xValues.size() - 2) + (m_xValues.size() + 1) * 2);
-		*(longitudes + m_xValues.size()) = longitude;
-		*(latitudes  + m_xValues.size()) = latitude;
+		longitude = longitudes[calcIndex(xsize - 1, 1, xsize + 1)] * 2;
+		latitude  = latitudes[calcIndex(xsize - 1, 1, xsize + 1)] * 2;
+		longitude -= longitudes[calcIndex(xsize - 2, 2, xsize + 1)];
+		latitude  -= latitudes[calcIndex(xsize - 2, 2, xsize + 1)];
+		longitudes[calcIndex(xsize, 0, xsize + 1)] = longitude;
+		latitudes[calcIndex(xsize, 0, xsize + 1)] = latitude;
 
 		// top-left
-		longitude = *(longitudes + 1 + (m_xValues.size() + 1) * (m_yValues.size() - 1)) * 2;
-		latitude  = *(latitudes  + 1 + (m_xValues.size() + 1) * (m_yValues.size() - 1)) * 2;
-		longitude -= *(longitudes + 2 + (m_xValues.size() + 1) * (m_yValues.size() - 2));
-		latitude  -= *(latitudes  + 2 + (m_xValues.size() + 1) * (m_yValues.size() - 2));
-		*(longitudes + (m_xValues.size() + 1) * m_yValues.size()) = longitude;
-		*(latitudes  + (m_xValues.size() + 1) * m_yValues.size()) = latitude;
+		longitude = longitudes[calcIndex(1, ysize - 1, xsize + 1)] * 2;
+		latitude  = latitudes[calcIndex(1, ysize - 1, xsize + 1)] * 2;
+		longitude -= longitudes[calcIndex(2, ysize - 2, xsize + 1)];
+		latitude  -= latitudes[calcIndex(2, ysize - 2, xsize + 1)];
+		longitudes[calcIndex(0, ysize, xsize + 1)] = longitude;
+		latitudes[calcIndex(0, ysize, xsize + 1)] = latitude;
 
 		// top-right
-		longitude = *(longitudes + (m_xValues.size() - 1) + (m_xValues.size() + 1) * (m_yValues.size() - 1)) * 2;
-		latitude  = *(latitudes  + (m_xValues.size() - 1) + (m_xValues.size() + 1) * (m_yValues.size() - 1)) * 2;
-		longitude -= *(longitudes + (m_xValues.size() - 2) + (m_xValues.size() + 1) * (m_yValues.size() - 2));
-		latitude  -= *(latitudes  + (m_xValues.size() - 2) + (m_xValues.size() + 1) * (m_yValues.size() - 2));
-		*(longitudes + m_xValues.size() + (m_xValues.size() + 1) * m_yValues.size()) = longitude;
-		*(latitudes  + m_xValues.size() + (m_xValues.size() + 1) * m_yValues.size()) = latitude;
+		longitude = longitudes[calcIndex(xsize - 1, ysize - 1, xsize + 1)] * 2;
+		latitude  = latitudes[calcIndex(xsize - 1, ysize - 1, xsize + 1)] * 2;
+		longitude -= longitudes[calcIndex(xsize - 2, ysize - 2, xsize + 1)];
+		latitude  -= latitudes[calcIndex(xsize - 2, ysize - 2, xsize + 1)];
+		longitudes[calcIndex(xsize, ysize, xsize + 1)] = longitude;
+		latitudes[calcIndex(xsize, ysize, xsize + 1)] = latitude;
 		for (int j = 0; j < m_yValues.size() + 1; ++j) {
 			for (int i = 0; i < m_xValues.size() + 1; ++i) {
-				double longitude = *(longitudes + i + (m_xValues.size() + 1) * j);
-				double latitude  = *(latitudes  + i + (m_xValues.size() + 1) * j);
-
+				double longitude = longitudes[calcIndex(i, j, xsize + 1)];
+				double latitude  = latitudes[calcIndex(i, j, xsize + 1)];
 				double x, y;
 				cs->mapGeoToGrid(longitude, latitude, &x, &y);
 				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
 			}
 		}
-
-		delete latitudes;
-		delete longitudes;
 	} else if (m_coordinateSystemType == LonLat) {
 		m_grid->SetDimensions(static_cast<int> (m_lonValues.size()) + 1, static_cast<int> (m_latValues.size()) + 1, 1);
 		points->Initialize();
@@ -632,7 +634,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vec
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		size_t len = c->count();
 		// time is the special dimension: it is defined as unlimited.
-		if (c->definition()->name() == "time") {len = NC_UNLIMITED;}
+		if (c->definition()->name() == "Time") {len = NC_UNLIMITED;}
 		ret = nc_def_dim(ncid, c->definition()->name().c_str(), len, &dimId);
 		if (ret != NC_NOERR) {return ret;}
 		dimIds->push_back(dimId);
@@ -648,7 +650,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vec
 
 		// for special dimensions
 		QString tmp;
-		if (c->definition()->name() == "time") {
+		if (c->definition()->name() == "Time") {
 			// time is normalized to seconds since 1970-01-01 00:00:00
 			tmp = "time of measurement";
 			ret = nc_put_att_text(ncid, varId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
@@ -849,11 +851,11 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 		lineLimitIMin = lineLimitI(centerJ, centerI, 0, dimI, dimJ, region);
 	}
 	// test I = imax
-	m_grid->GetPoint(vertexIndex(dimI - 1, centerJ), tmpv);
+	m_grid->GetPoint(vertexIndex(dimI, centerJ), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMax = dimI - 1;
+		lineLimitIMax = dimI;
 	} else {
-		lineLimitIMax = lineLimitI(centerJ, centerI, dimI - 1, dimI, dimJ, region);
+		lineLimitIMax = lineLimitI(centerJ, centerI, dimI, dimI, dimJ, region);
 	}
 	// test J = 0
 	m_grid->GetPoint(vertexIndex(centerI, 0), tmpv);
@@ -863,11 +865,11 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, dimI, dimJ, region);
 	}
 	// test J = jmax
-	m_grid->GetPoint(vertexIndex(centerI, dimJ - 1), tmpv);
+	m_grid->GetPoint(vertexIndex(centerI, dimJ), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMax = dimJ - 1;
+		lineLimitJMax = dimJ;
 	} else {
-		lineLimitJMax = lineLimitJ(centerI, centerJ, dimJ - 1, dimI, dimJ, region);
+		lineLimitJMax = lineLimitJ(centerI, centerJ, dimJ, dimI, dimJ, region);
 	}
 
 	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
@@ -883,13 +885,13 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 		}
 	}
 	// test I max direction
-	if (lineLimitIMax == dimI - 1) {
-		lineLimitIMax2 = dimI - 1;
+	if (lineLimitIMax == dimI) {
+		lineLimitIMax2 = dimI;
 	} else {
-		if (lineAtIIntersect(dimI - 1, dimI, dimJ, region)) {
-			lineLimitIMax2 = dimI - 1;
+		if (lineAtIIntersect(dimI, dimI, dimJ, region)) {
+			lineLimitIMax2 = dimI;
 		} else {
-			lineLimitIMax2 = lineLimitI2(lineLimitIMax, dimI - 1, dimI, dimJ, region);
+			lineLimitIMax2 = lineLimitI2(lineLimitIMax, dimI, dimI, dimJ, region);
 		}
 	}
 
@@ -904,13 +906,13 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 		}
 	}
 	// test J max direction
-	if (lineLimitJMax == dimJ - 1) {
-		lineLimitJMax2 = dimJ - 1;
+	if (lineLimitJMax == dimJ) {
+		lineLimitJMax2 = dimJ;
 	} else {
-		if (lineAtJIntersect(dimJ - 1, dimI, dimJ, region)) {
-			lineLimitJMax2 = dimJ - 1;
+		if (lineAtJIntersect(dimJ, dimI, dimJ, region)) {
+			lineLimitJMax2 = dimJ;
 		} else {
-			lineLimitJMax2 = lineLimitI2(lineLimitJMax, dimJ - 1, dimI, dimJ, region);
+			lineLimitJMax2 = lineLimitI2(lineLimitJMax, dimJ, dimI, dimJ, region);
 		}
 	}
 

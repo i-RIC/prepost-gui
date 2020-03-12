@@ -20,6 +20,7 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #include <QSettings>
 #include <QSplashScreen>
 #include <QTextCodec>
+#include <QtGlobal>
 #include <QTranslator>
 
 int main(int argc, char* argv[])
@@ -56,6 +57,9 @@ int main(int argc, char* argv[])
 
 	bool check = PeriodicalUpdateChecker::checkUpdate();
 	if (check) {return 0;}
+
+	auto udunitsPath = QDir::toNativeSeparators(QDir(qApp->applicationDirPath()).absoluteFilePath("udunits/udunits2.xml"));
+	qputenv("UDUNITS2_XML_PATH", udunitsPath.toUtf8());
 
 	try {
 		iRICMainWindow w;

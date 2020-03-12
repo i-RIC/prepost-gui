@@ -196,14 +196,22 @@
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="113"/>
         <source>ESRI Shape</source>
-        <translation>ESRI Shape</translation>
+        <translation type="vanished">ESRI Shape</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (*.shp)</source>
+        <translation type="vanished">ESRI Shape file (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygonimporter.cpp" line="113"/>
+        <source>ESRI Shapefile (Polygon)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="122"/>
-        <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI Shape file (*.shp)</translation>
+        <source>ESRI Shapefile (*.shp) (Polygon)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="145"/>
@@ -306,14 +314,22 @@
 <context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
-        <location filename="../geodatapolygonshapeexporter.cpp" line="17"/>
         <source>ESRI Shape file</source>
-        <translation>ESRI Shape file</translation>
+        <translation type="vanished">ESRI Shape file</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (*.shp)</source>
+        <translation type="vanished">ESRI Shape file (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygonshapeexporter.cpp" line="17"/>
+        <source>ESRI Shapefile</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonshapeexporter.cpp" line="134"/>
-        <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI Shape file (*.shp)</translation>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

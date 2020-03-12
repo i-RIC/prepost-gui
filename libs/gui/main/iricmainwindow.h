@@ -158,7 +158,7 @@ public slots:
 	void exportCalculationResult();
 	/// Export Particles into VTK files.
 	void exportParticles();
-	/// Export Coutour figure as ESRI Shape files.
+	/// Export Coutour figure as ESRI Shapefiles.
 	void exportCfShape();
 	/// Export Google Earth KMZ for street view
 	void exportStKMZ();

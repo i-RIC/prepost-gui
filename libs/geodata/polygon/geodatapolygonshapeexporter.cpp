@@ -14,7 +14,7 @@
 #include <vector>
 
 GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator) :
-	GeoDataExporter {tr("ESRI Shape file"), creator}
+	GeoDataExporter {tr("ESRI Shapefile"), creator}
 {}
 
 SHPObject* GeoDataPolygonShapeExporter::getSHPObject(GeoDataPolygon* polygon, SHPHandle shp, int index, double xoffset, double yoffset)
@@ -131,6 +131,6 @@ DBFHandle GeoDataPolygonShapeExporter::getDBFHandle(QString filename, SolverDefi
 const QStringList GeoDataPolygonShapeExporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret << tr("ESRI Shape file (*.shp)");
+	ret << tr("ESRI Shapefile (*.shp)");
 	return ret;
 }

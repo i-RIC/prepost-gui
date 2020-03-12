@@ -434,21 +434,22 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 	ut_unit* second = ut_get_unit_by_name(unitSystem, "second");
 	ut_unit* unixTime = ut_offset_by_time(second, ut_encode_time(1970, 1, 1, 0, 0, 0.0));
 
+	std::vector<QVariant> ret;
 	auto unitsStr = iRIC::toStr(units);
 	ut_unit* unit = ut_parse(unitSystem, unitsStr.c_str(), UT_ASCII);
 	if (unit == nullptr) {
 		// error occured while parsing time units
 		QMessageBox::critical(parent, tr("Error"), tr("Error occured while parsing time definition: %1").arg(units));
 		*canceled = true;
+		return ret;
 	}
 
 	cv_converter* converter = ut_get_converter(unit, unixTime);
 
-	std::vector<QVariant> ret;
 	for (int i = 0; i < values.size(); ++i) {
 		double val = values.at(i).toDouble();
-		double unitTimeVal = cv_convert_double(converter, val);
-		ret.push_back(unitTimeVal);
+		double unixTimeVal = cv_convert_double(converter, val);
+		ret.push_back(unixTimeVal);
 	}
 	return ret;
 }

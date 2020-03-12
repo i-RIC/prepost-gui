@@ -4,9 +4,12 @@
 #include "coordinatesystembuilder.h"
 #include "coordinatesystemselectdialog.h"
 
+#include <QPushButton>
+
 CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget* parent) :
 	QDialog(parent),
 	m_currentSystem {nullptr},
+	m_forceSelect {false},
 	ui(new Ui::CoordinateSystemSelectDialog)
 {
 	ui->setupUi(this);
@@ -25,6 +28,11 @@ void CoordinateSystemSelectDialog::setBuilder(CoordinateSystemBuilder* builder)
 	m_builder = builder;
 }
 
+void CoordinateSystemSelectDialog::setForceSelect(bool force)
+{
+	m_forceSelect = force;
+}
+
 CoordinateSystem* CoordinateSystemSelectDialog::coordinateSystem() const
 {
 	return m_currentSystem;
@@ -34,6 +42,7 @@ void CoordinateSystemSelectDialog::setCoordinateSystem(CoordinateSystem* cs)
 {
 	m_currentSystem = cs;
 	updateList();
+	updateOkButtonStatus();
 }
 
 void CoordinateSystemSelectDialog::updateList()
@@ -45,7 +54,7 @@ void CoordinateSystemSelectDialog::updateList()
 	m_listSystems.clear();
 
 	ui->listWidget->addItem(tr("(Not Specified)"));
-	m_listSystems.append(0);
+	m_listSystems.append(nullptr);
 
 	for (int i = 0; i < list.count(); ++i) {
 		CoordinateSystem* cs = list.at(i);
@@ -63,4 +72,12 @@ void CoordinateSystemSelectDialog::updateCurrent(int index)
 {
 	if (index == -1) {return;}
 	m_currentSystem = m_listSystems.at(index);
+	updateOkButtonStatus();
+}
+
+void CoordinateSystemSelectDialog::updateOkButtonStatus()
+{
+	if (! m_forceSelect) {return;}
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(m_currentSystem != nullptr);
 }

@@ -4,12 +4,12 @@
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error occured while opening %1.</source>
         <translation>打开 %1时发生错误</translation>
     </message>
@@ -28,26 +28,99 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfFileListDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="14"/>
+        <source>Confirm File List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="20"/>
+        <source>The following files will be imported. Is it OK?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="14"/>
+        <source>File name pattern setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="20"/>
+        <source>Please specify the filename pattern to recognize date and time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="29"/>
+        <source>File name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="43"/>
+        <source>Pattern:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="50"/>
+        <source>YYYYMMDD_hhmmss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="57"/>
+        <source>Recognize result:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="89"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.cpp" line="44"/>
+        <source>File name does not match the pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff 文件 (*.tif)</translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
-        <translation>可以导入GDAL数据文件以用于没有尺寸的网格条件。</translation>
+        <translation type="vanished">可以导入GDAL数据文件以用于没有尺寸的网格条件。</translation>
     </message>
 </context>
 <context>
@@ -66,7 +139,7 @@
         <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <location filename="../geodatanetcdfimporter.cpp" line="327"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -86,7 +159,7 @@
         <translation>%1 的维度值不匹配</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error occured while parsing time definition: %1</source>
         <translation type="unfinished"></translation>
     </message>

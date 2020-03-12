@@ -130,13 +130,21 @@
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
         <source>ESRI Shape</source>
-        <translation>ESRIシェープ</translation>
+        <translation type="vanished">ESRIシェープ</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (Polygon Group) (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
+        <source>ESRI Shapefile (Polygon Group)</source>
+        <translation>ESRI シェープファイル (ポリゴングループ)</translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shape file (Polygon Group) (*.shp)</source>
+        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
         <translation>ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
     </message>
     <message>

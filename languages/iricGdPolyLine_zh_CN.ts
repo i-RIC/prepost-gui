@@ -171,14 +171,22 @@
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="77"/>
         <source>ESRI Shape</source>
-        <translation>ESRI形状</translation>
+        <translation type="vanished">ESRI形状</translation>
+    </message>
+    <message>
+        <source>ESRI Shape file (*.shp)</source>
+        <translation type="vanished">ESRI形状文件(*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylineimporter.cpp" line="77"/>
+        <source>ESRI Shapefile (Polyline)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="86"/>
-        <source>ESRI Shape file (*.shp)</source>
-        <translation>ESRI形状文件(*.shp)</translation>
+        <source>ESRI Shapefile (*.shp) (Polyline)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="109"/>
@@ -255,9 +263,13 @@
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
         <source>ESRI Shape file</source>
-        <translation>ESRI Shape file</translation>
+        <translation type="vanished">ESRI Shape file</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
+        <source>ESRI Shapefile</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolylineshapeexporter.cpp" line="123"/>

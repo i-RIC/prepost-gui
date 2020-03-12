@@ -2767,12 +2767,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <location filename="../geodatanetcdf.cpp" line="140"/>
         <source>Error occured while opening %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2791,25 +2791,94 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfFileListDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="14"/>
+        <source>Confirm File List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilelistdialog.ui" line="20"/>
+        <source>The following files will be imported. Is it OK?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="14"/>
+        <source>File name pattern setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="20"/>
+        <source>Please specify the filename pattern to recognize date and time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="29"/>
+        <source>File name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="43"/>
+        <source>Pattern:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="50"/>
+        <source>YYYYMMDD_hhmmss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="57"/>
+        <source>Recognize result:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.ui" line="89"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdffilenamepatterndialog.cpp" line="44"/>
+        <source>File name does not match the pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="25"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
         <source>GDAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="34"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
         <source>GeoTiff files(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
-        <source>GDAL data files can be imported for grid conditions without dimensions.</source>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2829,7 +2898,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../geodatanetcdfimporter.cpp" line="114"/>
         <location filename="../geodatanetcdfimporter.cpp" line="164"/>
         <location filename="../geodatanetcdfimporter.cpp" line="327"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2849,7 +2918,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="441"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="442"/>
         <source>Error occured while parsing time definition: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3951,12 +4020,12 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
-        <source>ESRI Shape</source>
+        <source>ESRI Shapefile (Polygon Group)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shape file (Polygon Group) (*.shp)</source>
+        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4249,12 +4318,12 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonImporter</name>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="113"/>
-        <source>ESRI Shape</source>
+        <source>ESRI Shapefile (Polygon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="122"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <source>ESRI Shapefile (*.shp) (Polygon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4349,12 +4418,12 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <location filename="../geodatapolygonshapeexporter.cpp" line="17"/>
-        <source>ESRI Shape file</source>
+        <source>ESRI Shapefile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonshapeexporter.cpp" line="134"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <source>ESRI Shapefile (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4530,12 +4599,12 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineImporter</name>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="77"/>
-        <source>ESRI Shape</source>
+        <source>ESRI Shapefile (Polyline)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolylineimporter.cpp" line="86"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <source>ESRI Shapefile (*.shp) (Polyline)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4614,7 +4683,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
-        <source>ESRI Shape file</source>
+        <source>ESRI Shapefile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10271,6 +10340,11 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
+        <source>ESRI Shapefiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="73"/>
         <source>Output folder:</source>
         <translation type="unfinished"></translation>
@@ -10323,11 +10397,6 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="35"/>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="50"/>
-        <source>ESRI Shape files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10462,7 +10531,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
-        <source>Saving calculation result as ESRI Shape files...</source>
+        <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10570,114 +10639,6 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
-    <name>PostStringResultEditDialog</name>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="14"/>
-        <source>Edit String Result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="20"/>
-        <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="42"/>
-        <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="47"/>
-        <source>Result name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="52"/>
-        <source>Variable name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="57"/>
-        <source>Index</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="62"/>
-        <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="85"/>
-        <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="92"/>
-        <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="99"/>
-        <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="111"/>
-        <source>Definition of output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="130"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.ui" line="148"/>
-        <source>Test</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="101"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="101"/>
-        <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="165"/>
-        <source>Global</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="167"/>
-        <source>Node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="169"/>
-        <source>Cell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="171"/>
-        <source>EdgeI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="173"/>
-        <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../postcontainer/poststringresulteditdialog.cpp" line="175"/>
-        <source>EdgeK</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>PostStringResultEditWidget</name>
     <message>
         <location filename="../postcontainer/poststringresulteditwidget.ui" line="14"/>
@@ -10745,42 +10706,42 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="99"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="100"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="99"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="100"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="157"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="158"/>
         <source>Global</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="159"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="160"/>
         <source>Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="161"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="162"/>
         <source>Cell</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="163"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="164"/>
         <source>EdgeI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="165"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="166"/>
         <source>EdgeJ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="167"/>
+        <location filename="../postcontainer/poststringresulteditwidget.cpp" line="168"/>
         <source>EdgeK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13256,6 +13217,16 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main/iricmainwindow.cpp" line="1990"/>
+        <source>Export contour figure to ESRI Shapefiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <source>Saving contour figure as ESRI Shapefiles...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>No Contour Figure is drawn now.</source>
         <translation type="unfinished"></translation>
@@ -13395,18 +13366,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1990"/>
-        <source>Export contour figure to ESRI Shape files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../main/iricmainwindow.cpp" line="2000"/>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
-        <source>Saving contour figure as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13736,7 +13697,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="195"/>
-        <source>&amp;Contour Figure as ESRI Shape files...</source>
+        <source>&amp;Contour Figure as ESRI Shapefiles...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -18326,118 +18287,128 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="186"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="192"/>
         <source>All importable files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="197"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <source>Select algorithm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <source>Please select algorithm to import data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="203"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <source>File type cannot be recognized from the file extension. : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
         <source>Import failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="218"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
         <source>Importing data from %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
         <source>%1 contains no data to import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="235"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="382"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="401"/>
         <source>Importing data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
         <source>Canceled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="244"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
         <source>Importing canceled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
         <source>To import the geographic data, specify coordinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="310"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="442"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="365"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
         <source>Importing data failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="369"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
         <source>No data to import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
         <source>Select data to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="498"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
         <source>Please select which data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="853"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="872"/>
         <source>%1 Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
         <source>Export Polygons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1084"/>
-        <source>ESRI Shape file (*.shp)</source>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <source>ESRI Shapefile (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1139"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation type="unfinished"></translation>
     </message>

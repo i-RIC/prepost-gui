@@ -834,7 +834,7 @@ void PostSolutionInfo::exportCalculationResult()
 		dialog.setLabelText(tr("Saving calculation result as CSV files..."));
 		break;
 	case PostDataExportDialog::Format::ESRIShape:
-		dialog.setLabelText(tr("Saving calculation result as ESRI Shape files..."));
+		dialog.setLabelText(tr("Saving calculation result as ESRI Shapefiles..."));
 		break;
 	}
 	dialog.setFixedSize(300, 100);
