@@ -1,5 +1,6 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../misc/cgnsfileopener.h"
+#include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "../solverdef/solverdefinition.h"
 #include "../solverdef/solverdefinitiongridtype.h"
@@ -217,7 +218,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 	int baseid = 0;
 	std::string baseName;
 	for (int B = 1; B <= nbases; ++B) {
-		char bname[32];
+		char bname[ProjectCgnsFile::BUFFERLEN];
 		int cell_dim;
 		int phys_dim;
 		ier = cg_base_read(fn, B, bname, &cell_dim, &phys_dim);
@@ -239,7 +240,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 	std::vector<std::string> tmpZoneNames;
 	for (int Z = 1; Z <= nzones; ++Z) {
 		cgsize_t sizes[9];
-		char zoneName[32];
+		char zoneName[ProjectCgnsFile::BUFFERLEN];
 		ier = cg_zone_read(fn, baseid, Z, zoneName, sizes);
 		// check whether this zone has ZoneIterativeData that has some arrays.
 		ier = cg_goto(fn, baseid, zoneName, 0, "ZoneIterativeData", 0, "end");
@@ -321,7 +322,7 @@ bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
 	clearBaseIterativeResults();
 
 	int ier, nSteps;
-	char iterName[32];
+	char iterName[ProjectCgnsFile::BUFFERLEN];
 
 	ier = cg_biter_read(fn, baseId, iterName, &nSteps);
 	if (ier != 0) {return false;}
@@ -336,7 +337,7 @@ bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
 	int step = currentStep();
 
 	for (int i = 1; i <= nArrays; ++i) {
-		char arrayname[32];
+		char arrayname[ProjectCgnsFile::BUFFERLEN];
 		DataType_t datatype;
 		int datadim;
 		cgsize_t dimVec[3];

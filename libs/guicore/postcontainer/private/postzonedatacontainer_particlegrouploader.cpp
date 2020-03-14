@@ -75,7 +75,7 @@ bool PostZoneDataContainer::ParticleGroupLoader::loadScalarData(vtkDataSetAttrib
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
-		char arrayname[33];
+		char arrayname[ProjectCgnsFile::BUFFERLEN];
 		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
 		QString name(arrayname);
 
@@ -115,7 +115,7 @@ bool PostZoneDataContainer::ParticleGroupLoader::loadVectorData(vtkDataSetAttrib
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
-		char arrayname[33];
+		char arrayname[ProjectCgnsFile::BUFFERLEN];
 		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
 		QString name(arrayname);
 

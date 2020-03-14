@@ -24,7 +24,7 @@ int CgnsUtil::arrayIdWithName(const std::string& name)
 int CgnsUtil::findArray(const QString& name, DataType_t dt, int dim, int narrays)
 {
 	for (int i = 1; i <= narrays; ++i) {
-		char arrayname[32];
+		char arrayname[ProjectCgnsFile::BUFFERLEN];
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
@@ -39,7 +39,7 @@ int CgnsUtil::findArray(const QString& name, DataType_t dt, int dim, int narrays
 int CgnsUtil::findArray(const QString& name, DataType_t* dt, int* dim, cgsize_t *dimVec, int narrays)
 {
 	for (int i = 1; i <= narrays; ++i) {
-		char arrayname[32];
+		char arrayname[ProjectCgnsFile::BUFFERLEN];
 		cg_array_info(i, arrayname, dt, dim, dimVec);
 		if (name == arrayname) {
 			return i;

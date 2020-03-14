@@ -71,7 +71,7 @@ bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
 	ier = cg_nzones(fn, m_baseId, &numZones);
 	if (ier != 0) {return false;}
 	for (int Z = 1; Z <= numZones; ++Z) {
-		char zonename[32];
+		char zonename[ProjectCgnsFile::BUFFERLEN];
 		ier = cg_zone_read(fn, m_baseId, Z, zonename, m_sizes);
 		if (ier != 0) {return false;}
 		if (m_zoneName == zonename) {
@@ -131,7 +131,7 @@ bool PostZonePointSeriesDataContainer::loadResultData(int fn, int solId, const Q
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
-		char arrayname[30];
+		char arrayname[ProjectCgnsFile::BUFFERLEN];
 		ier = cg_array_info(j, arrayname, &datatype, &dimension, dimVector);
 		if (ier != 0) {return false;}
 		QString name(arrayname);
