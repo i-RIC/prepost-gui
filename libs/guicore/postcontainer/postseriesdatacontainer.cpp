@@ -43,7 +43,7 @@ bool PostSeriesDataContainer::setBaseId(const int fn)
 	ier = cg_nbases(fn, &numBases);
 	if (ier != 0) {return false;}
 	for (int B = 1; B <= numBases; ++B) {
-		char basename[32];
+		char basename[ProjectCgnsFile::BUFFERLEN];
 		int phys_dim;
 		ier = cg_base_read(fn, B, basename, &m_cellDim, &phys_dim);
 		if (ier != 0) {return false;}

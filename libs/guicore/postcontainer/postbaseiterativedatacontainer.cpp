@@ -1,5 +1,5 @@
 #include "postbaseiterativedatacontainer.h"
-
+#include "../project/projectcgnsfile.h"
 #include <cgnslib.h>
 
 PostBaseIterativeDataContainer::PostBaseIterativeDataContainer(int baseId, const std::string& name, PostSolutionInfo* parent) :
@@ -21,7 +21,7 @@ const std::string& PostBaseIterativeDataContainer::name() const
 bool PostBaseIterativeDataContainer::getNumArrays(const int fn, int* nArrays)
 {
 	int ier, nSteps;
-	char iterName[32];
+	char iterName[ProjectCgnsFile::BUFFERLEN];
 
 	ier = cg_biter_read(fn, baseId(), iterName, &nSteps);
 	if (ier != 0) {return false;}

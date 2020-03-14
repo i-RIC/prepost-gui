@@ -116,8 +116,8 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 
 	for (int baseid = 1; baseid <= nbases; ++baseid) {
 		int celldim, physdim;
-		char basename[32];
-		char bitername[32];
+		char basename[ProjectCgnsFile::BUFFERLEN];
+		char bitername[ProjectCgnsFile::BUFFERLEN];
 		int nsteps;
 		cg_base_read(fn, baseid, basename, &celldim, &physdim);
 
@@ -134,7 +134,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			ti.zoneId = 0;
 			ti.gridLocation = GridLocationNull;
 			for (int i = 1; i <= narrays; ++i) {
-				char arrayname[32];
+				char arrayname[ProjectCgnsFile::BUFFERLEN];
 				DataType_t datatype;
 				int datadim;
 				cgsize_t dimVec[3];
