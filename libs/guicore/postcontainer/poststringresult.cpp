@@ -8,8 +8,8 @@
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
-PostStringResult::PostStringResult(PostZoneDataContainer* container) :
-	ProjectDataItem {container},
+PostStringResult::PostStringResult(ProjectDataItem* parent) :
+	ProjectDataItem {parent},
 	m_script{ "return \"\";" }
 {
 	updateFunction();
@@ -114,7 +114,12 @@ void PostStringResult::copyValue(const PostStringResult& result)
 
 PostZoneDataContainer* PostStringResult::zoneDataContainer() const
 {
-	return dynamic_cast<PostZoneDataContainer*> (parent());
+	return m_container;
+}
+
+void PostStringResult::setZoneDataContainer(PostZoneDataContainer* container)
+{
+	m_container = container;
 }
 
 QJSValue PostStringResult::buildFunction()

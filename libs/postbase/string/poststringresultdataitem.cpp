@@ -73,8 +73,10 @@ PostStringResultDataItem::PostStringResultDataItem(GraphicsWindowDataItem* paren
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setupActors();
 
+	m_stringResult = new PostStringResult(this);
+
 	auto zItem = dynamic_cast<PostZoneDataItem*> (parent);
-	m_stringResult = new PostStringResult(zItem->dataContainer());
+	m_stringResult->setZoneDataContainer(zItem->dataContainer());
 	m_stringResult->updateValue();
 }
 
@@ -177,6 +179,14 @@ void PostStringResultDataItem::updateMouseCursor(VTKGraphicsView* v)
 
 void PostStringResultDataItem::update()
 {
+	auto zItem = dynamic_cast<PostZoneDataItem*> (parent());
+	auto c = zItem->dataContainer();
+	if (c == nullptr) {
+		m_actor->VisibilityOff();
+		return;
+	}
+
+	m_stringResult->setZoneDataContainer(c);
 	m_stringResult->updateValue();
 	auto v = m_stringResult->value();
 
@@ -304,9 +314,12 @@ void PostStringResultDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphics
 
 QDialog* PostStringResultDataItem::propertyDialog(QWidget* w)
 {
-	auto dialog = new PostStringResultSettingDialog(w);
 	auto zItem = dynamic_cast<PostZoneDataItem*> (parent());
-	dialog->setZoneDataContainer(zItem->dataContainer());
+	auto c = zItem->dataContainer();
+	if (c == nullptr) {return nullptr;}
+
+	auto dialog = new PostStringResultSettingDialog(w);
+	dialog->setZoneDataContainer(c);
 	dialog->setStringResult(m_stringResult);
 	dialog->setDisplaySetting(m_setting);
 	return dialog;
