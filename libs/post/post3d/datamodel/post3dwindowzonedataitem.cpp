@@ -241,4 +241,5 @@ void Post3dWindowZoneDataItem::update()
 	if (m_particlesDataItem != nullptr) {
 		m_particlesDataItem->update();
 	}
+	m_stringDataItem->update();
 }
