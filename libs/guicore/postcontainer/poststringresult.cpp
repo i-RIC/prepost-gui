@@ -117,9 +117,18 @@ PostZoneDataContainer* PostStringResult::zoneDataContainer() const
 	return m_container;
 }
 
-void PostStringResult::setZoneDataContainer(PostZoneDataContainer* container)
+void PostStringResult::setZoneDataContainer(PostZoneDataContainer* container, QWidget* parent)
 {
 	m_container = container;
+	bool fixed = false;
+	for (auto a : m_arguments) {
+		bool tmpFixed;
+		a->fixIndexIfNeeded(&tmpFixed);
+		fixed = fixed || tmpFixed;
+	}
+	if (fixed) {
+		QMessageBox::warning(parent, tr("Warning"), tr("I, J, K, index for label is reset because the grid size is changed."));
+	}
 }
 
 QJSValue PostStringResult::buildFunction()

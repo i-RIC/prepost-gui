@@ -19,6 +19,7 @@
 #include <QDomNode>
 #include <QFont>
 #include <QFontMetrics>
+#include <QMainWindow>
 #include <QMouseEvent>
 #include <QIcon>
 #include <QPainter>
@@ -76,7 +77,7 @@ PostStringResultDataItem::PostStringResultDataItem(GraphicsWindowDataItem* paren
 	m_stringResult = new PostStringResult(this);
 
 	auto zItem = dynamic_cast<PostZoneDataItem*> (parent);
-	m_stringResult->setZoneDataContainer(zItem->dataContainer());
+	m_stringResult->setZoneDataContainer(zItem->dataContainer(), mainWindow());
 	m_stringResult->updateValue();
 }
 
@@ -186,7 +187,7 @@ void PostStringResultDataItem::update()
 		return;
 	}
 
-	m_stringResult->setZoneDataContainer(c);
+	m_stringResult->setZoneDataContainer(c, mainWindow());
 	m_stringResult->updateValue();
 	auto v = m_stringResult->value();
 

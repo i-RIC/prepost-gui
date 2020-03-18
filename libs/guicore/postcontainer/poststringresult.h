@@ -39,7 +39,7 @@ public:
 	void copyValue(const PostStringResult &result);
 
 	PostZoneDataContainer* zoneDataContainer() const;
-	void setZoneDataContainer(PostZoneDataContainer* container);
+	void setZoneDataContainer(PostZoneDataContainer* container, QWidget* parent);
 
 private:
 	QJSValue buildFunction();
