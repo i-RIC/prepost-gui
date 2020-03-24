@@ -122,7 +122,7 @@ void PostStringResult::setZoneDataContainer(PostZoneDataContainer* container, QW
 	m_container = container;
 	bool fixed = false;
 	for (auto a : m_arguments) {
-		bool tmpFixed;
+		bool tmpFixed = false;
 		a->fixIndexIfNeeded(&tmpFixed);
 		fixed = fixed || tmpFixed;
 	}
