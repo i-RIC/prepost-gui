@@ -19,8 +19,9 @@ class GUICOREDLL_EXPORT PostStringResult : public ProjectDataItem
 	Q_OBJECT
 
 public:
-	PostStringResult(PostZoneDataContainer* container);
+	PostStringResult(ProjectDataItem* parent);
 	~PostStringResult() override;
+
 
 	std::vector<PostStringResultArgument*>& arguments();
 	const std::vector<PostStringResultArgument*>& arguments() const;
@@ -38,6 +39,7 @@ public:
 	void copyValue(const PostStringResult &result);
 
 	PostZoneDataContainer* zoneDataContainer() const;
+	void setZoneDataContainer(PostZoneDataContainer* container, QWidget* parent);
 
 private:
 	QJSValue buildFunction();
@@ -45,6 +47,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
+	PostZoneDataContainer* m_container;
 	std::vector<PostStringResultArgument*> m_arguments;
 	QString m_script;
 

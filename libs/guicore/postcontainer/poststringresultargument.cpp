@@ -131,6 +131,22 @@ void PostStringResultArgument::setSetting(const Setting& s)
 	m_setting = s;
 }
 
+void PostStringResultArgument::fixIndexIfNeeded(bool* fixed)
+{
+	auto t = m_setting.type.value();
+	if (t == Type::GridNode) {
+		fixNodeIndexIfNeeded(fixed);
+	} else if (t == Type::GridCell) {
+		fixCellIndexIfNeeded(fixed);
+	} else if (t == Type::GridEdgeI) {
+		fixEdgeIIndexIfNeeded(fixed);
+	} else if (t == Type::GridEdgeJ) {
+		fixEdgeJIndexIfNeeded(fixed);
+	} else if (t == Type::GridEdgeK) {
+		fixEdgeKIndexIfNeeded(fixed);
+	}
+}
+
 void PostStringResultArgument::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
@@ -226,6 +242,133 @@ int PostStringResultArgument::arrayIndex() const
 	}
 	// just for avoiding compiler warning
 	return 0;
+}
+
+void PostStringResultArgument::fixNodeIndexIfNeeded(bool* fixed)
+{
+	auto z = zoneDataContainer();
+	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	auto ust = vtkUnstructuredGrid::SafeDownCast(z->data());
+	*fixed = false;
+	if (st != nullptr) {
+		int dim[3];
+		st->GetDimensions(dim);
+		if (m_setting.i >= dim[0]) {
+			*fixed = true;
+		} else if (m_setting.j >= dim[1]) {
+			*fixed = true;
+		} else if (m_setting.k >= dim[2]) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	} else if (ust != nullptr) {
+		if (m_setting.index >= ust->GetNumberOfPoints()) {
+			*fixed = true;
+			m_setting.index = 0;
+		}
+	}
+}
+
+void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
+{
+	auto z = zoneDataContainer();
+	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	auto ust = vtkUnstructuredGrid::SafeDownCast(z->data());
+	*fixed = false;
+	if (st != nullptr) {
+		int dim[3];
+		st->GetDimensions(dim);
+		if (m_setting.i >= dim[0] - 1) {
+			*fixed = true;
+		} else if (m_setting.j >= dim[1] - 1) {
+			*fixed = true;
+		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	} else if (ust != nullptr) {
+		if (m_setting.index >= ust->GetNumberOfCells()) {
+			*fixed = true;
+			m_setting.index = 0;
+		}
+	}
+}
+
+void PostStringResultArgument::fixEdgeIIndexIfNeeded(bool* fixed)
+{
+	auto z = zoneDataContainer();
+	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	*fixed = false;
+	if (st != nullptr) {
+		int dim[3];
+		st->GetDimensions(dim);
+		if (m_setting.i >= dim[0]) {
+			*fixed = true;
+		} else if (m_setting.j >= dim[1] - 1) {
+			*fixed = true;
+		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	}
+}
+
+void PostStringResultArgument::fixEdgeJIndexIfNeeded(bool* fixed)
+{
+	auto z = zoneDataContainer();
+	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	if (st != nullptr) {
+		int dim[3];
+		st->GetDimensions(dim);
+		*fixed = false;
+		if (m_setting.i >= dim[0] - 1) {
+			*fixed = true;
+		} else if (m_setting.j >= dim[1]) {
+			*fixed = true;
+		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	}
+}
+
+void PostStringResultArgument::fixEdgeKIndexIfNeeded(bool* fixed)
+{
+	auto z = zoneDataContainer();
+	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	if (st != nullptr) {
+		int dim[3];
+		st->GetDimensions(dim);
+		*fixed = false;
+		if (m_setting.i >= dim[0] - 1) {
+			*fixed = true;
+		} else if (m_setting.j >= dim[1] - 1) {
+			*fixed = true;
+		} else if (m_setting.k >= dim[2]) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	}
 }
 
 PostStringResult* PostStringResultArgument::result() const

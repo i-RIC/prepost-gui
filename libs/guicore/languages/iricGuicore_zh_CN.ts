@@ -1342,55 +1342,55 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="190"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="877"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="190"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
         <source>Error occured while loading calculation result.</source>
         <translation>加载计算结果时错误</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="443"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="752"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="443"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>加载可视化计算结果失败。 请稍后重试，或等到计算结束。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="752"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
         <source>No calculation result exists.</source>
         <translation>无计算结果存在</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>计算结果不包括网格数据</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="827"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="828"/>
         <source>Export Calculation Result</source>
         <translation>导出计算结果</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="831"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="832"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>以VTK文件保存计算结果</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="834"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="835"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>以CSV文件保存计算结果</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="838"/>
         <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1399,7 +1399,7 @@ Do you really want to import this file?</source>
         <translation type="vanished">以ESRI Shape文件保存计算结果</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="877"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
         <source>Error occured while saving %1</source>
         <translation>保存%1时发生错误</translation>
     </message>
@@ -1417,6 +1417,16 @@ Do you really want to import this file?</source>
         <location filename="../postcontainer/poststringresult.cpp" line="88"/>
         <source>Error occured: %1</source>
         <translation type="unfinished">错误:%1</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/poststringresult.cpp" line="130"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/poststringresult.cpp" line="130"/>
+        <source>I, J, K, index for label is reset because the grid size is changed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -8,8 +8,8 @@
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
-PostStringResult::PostStringResult(PostZoneDataContainer* container) :
-	ProjectDataItem {container},
+PostStringResult::PostStringResult(ProjectDataItem* parent) :
+	ProjectDataItem {parent},
 	m_script{ "return \"\";" }
 {
 	updateFunction();
@@ -114,7 +114,21 @@ void PostStringResult::copyValue(const PostStringResult& result)
 
 PostZoneDataContainer* PostStringResult::zoneDataContainer() const
 {
-	return dynamic_cast<PostZoneDataContainer*> (parent());
+	return m_container;
+}
+
+void PostStringResult::setZoneDataContainer(PostZoneDataContainer* container, QWidget* parent)
+{
+	m_container = container;
+	bool fixed = false;
+	for (auto a : m_arguments) {
+		bool tmpFixed = false;
+		a->fixIndexIfNeeded(&tmpFixed);
+		fixed = fixed || tmpFixed;
+	}
+	if (fixed) {
+		QMessageBox::warning(parent, tr("Warning"), tr("I, J, K, index for label is reset because the grid size is changed."));
+	}
 }
 
 QJSValue PostStringResult::buildFunction()

@@ -82,6 +82,8 @@ public:
 	Setting setting() const;
 	void setSetting(const Setting& s);
 
+	void fixIndexIfNeeded(bool* fixed);
+
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -93,6 +95,12 @@ private:
 	QJSValue edgeJJsValue() const;
 	QJSValue edgeKJsValue() const;
 	int arrayIndex() const;
+
+	void fixNodeIndexIfNeeded(bool* fixed);
+	void fixCellIndexIfNeeded(bool* fixed);
+	void fixEdgeIIndexIfNeeded(bool* fixed);
+	void fixEdgeJIndexIfNeeded(bool* fixed);
+	void fixEdgeKIndexIfNeeded(bool* fixed);
 
 	PostStringResult* result() const;
 	PostZoneDataContainer* zoneDataContainer() const;

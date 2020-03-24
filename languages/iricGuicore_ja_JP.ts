@@ -130,7 +130,7 @@
     <message>
         <location filename="../project/backgroundimageinfogeoreferencedialog.ui" line="54"/>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>PushButton</translation>
     </message>
     <message>
         <location filename="../project/backgroundimageinfogeoreferencedialog.cpp" line="242"/>
@@ -1988,20 +1988,20 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="190"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="877"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="190"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="443"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="752"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2010,37 +2010,37 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="443"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="752"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="778"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="827"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="828"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="831"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="832"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="834"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="835"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="838"/>
         <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
@@ -2049,7 +2049,7 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="877"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -2067,6 +2067,16 @@ Do you really want to import this file?</source>
         <location filename="../postcontainer/poststringresult.cpp" line="88"/>
         <source>Error occured: %1</source>
         <translation>エラーが発生しました: %1</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/poststringresult.cpp" line="130"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/poststringresult.cpp" line="130"/>
+        <source>I, J, K, index for label is reset because the grid size is changed.</source>
+        <translation>格子のサイズが変更されたため、ラベルの I, J, K はリセットされました。</translation>
     </message>
 </context>
 <context>
