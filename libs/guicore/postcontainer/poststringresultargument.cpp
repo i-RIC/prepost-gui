@@ -286,7 +286,7 @@ void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
 			*fixed = true;
 		} else if (m_setting.j >= dim[1] - 1) {
 			*fixed = true;
-		} else if (m_setting.k >= dim[2] - 1) {
+		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -314,7 +314,7 @@ void PostStringResultArgument::fixEdgeIIndexIfNeeded(bool* fixed)
 			*fixed = true;
 		} else if (m_setting.j >= dim[1] - 1) {
 			*fixed = true;
-		} else if (m_setting.k >= dim[2] - 1) {
+		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -337,7 +337,7 @@ void PostStringResultArgument::fixEdgeJIndexIfNeeded(bool* fixed)
 			*fixed = true;
 		} else if (m_setting.j >= dim[1]) {
 			*fixed = true;
-		} else if (m_setting.k >= dim[2] - 1) {
+		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
 			*fixed = true;
 		}
 		if (*fixed) {
