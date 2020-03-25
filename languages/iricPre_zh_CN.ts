@@ -1069,36 +1069,43 @@ Do you really want to import grid from this file?</source>
         <translation>&amp;执行...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="134"/>
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="243"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="298"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="298"/>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="243"/>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="140"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="287"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="287"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="311"/>
         <source>Mapping geographic data finished successfully.</source>
         <translation>地理数据映射成功完成。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="311"/>
         <source>Mapping geographic data finished</source>
         <translation>地理数据映射完成。</translation>
     </message>

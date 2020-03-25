@@ -1145,9 +1145,16 @@ Do you really want to import grid from this file?</source>
         <translation>実行(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="134"/>
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+</source>
+        <translation>以下の属性は、格子生成アルゴリズムが出力した値の上書きを避けるため、マッピングされませんでした。もし強制的に地理情報をマッピングしたい場合、&quot;格子&quot; -&gt; &quot;属性のマッピング&quot; -&gt; &quot;実行&quot; メニューを使ってマッピングして下さい。
+</translation>
+    </message>
+    <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="243"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="298"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1156,29 +1163,30 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">地理情報データ %2 の次元 %1 には値がありません。マッピングを開始できません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="298"/>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="243"/>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="140"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="287"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="287"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="311"/>
         <source>Mapping geographic data finished successfully.</source>
         <translation>地形データのマッピングが完了しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="311"/>
         <source>Mapping geographic data finished</source>
         <translation>地形データマッピングの完了</translation>
     </message>
