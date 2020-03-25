@@ -107,6 +107,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	dialog.show();
 	qApp->processEvents();
 
+	QStringList skippedAtts;
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
 		SolverDefinitionGridAttribute* cond = item->condition();
@@ -114,6 +116,11 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 		if (! container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			item->executeMapping(grid, &dialog);
+		} else {
+			if (item->geodataGroupDataItem()->childItems().size() > 1) {
+				// the group has child items other than default value.
+				skippedAtts.push_back(item->geodataGroupDataItem()->condition()->caption());
+			}
 		}
 	}
 	dialog.hide();
@@ -122,6 +129,17 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSettings();
+
+	if (skippedAtts.size() > 0) {
+		QString msg = tr("The following attributes were not mapped, because grid generator output values for them. "
+										 "If you want to map geographic data for them forcibly, please map manually with menu "
+										 "\"Grid\" -> \"Attributes Mapping\" -> \"Execute\".\n");
+		for (auto a : skippedAtts) {
+			msg += "* " + a + "\n";
+		}
+		QMessageBox::information(mainWindow(), tr("Information"), msg);
+	}
+
 	renderGraphicsView();
 }
 
