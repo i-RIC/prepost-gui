@@ -13,6 +13,7 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
+#include <QSettings>
 #include <QStatusBar>
 #include <QTextStream>
 
@@ -80,32 +81,26 @@ void SolverConsoleWindowProjectDataItem::append(const QString& line)
 {
 	QTextStream ts(&m_file);
 	ts << line << endl;
-
-	appendToLines(line);
 	m_solverConsoleWindow->impl->m_console->appendPlainText(line);
-}
-
-void SolverConsoleWindowProjectDataItem::appendToLines(const QString& line)
-{
-	m_lines.append(line);
-	while (m_lines.count() > MAXLINES) {
-		m_lines.pop_front();
-	}
 }
 
 void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filename)
 {
+	QSettings settings;
+	int maxLines = settings.value("general/scMaxLines", MAXLINES).toInt();
+
 	QFile f(filename);
 	// open, and write nothing.
 	f.open(QFile::ReadOnly | QFile::Text);
 	QTextStream ts(&f);
+	QStringList lines;
 	while (! ts.atEnd()) {
-		QString line = ts.readLine();
-		appendToLines(line);
+		lines.append(ts.readLine());
+		if (lines.size() > maxLines) {lines.pop_front();}
 	}
 	f.close();
-	QString log = m_lines.join("\n");
-	m_solverConsoleWindow->impl->m_console->setPlainText(log);
+	m_solverConsoleWindow->impl->m_console->setMaximumBlockCount(maxLines);
+	m_solverConsoleWindow->impl->m_console->setPlainText(lines.join("\n"));
 	m_solverConsoleWindow->impl->m_console->moveCursor(QTextCursor::End);
 
 	QFileInfo finfo(f);
@@ -113,6 +108,11 @@ void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filenam
 		// enable export action.
 		m_solverConsoleWindow->exportLogAction->setEnabled(true);
 	}
+}
+
+void SolverConsoleWindowProjectDataItem::loadExternalData()
+{
+	ProjectDataItem::loadExternalData();
 }
 
 void SolverConsoleWindowProjectDataItem::open()

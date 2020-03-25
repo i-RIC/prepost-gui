@@ -22,6 +22,7 @@ public:
 
 	void initForSolverDefinition();
 	void loadExternalData(const QString& filename) override;
+	void loadExternalData();
 
 	void open();
 	void close();
@@ -32,14 +33,11 @@ public slots:
 	void exportConsoleLog();
 
 private:
-	void appendToLines(const QString& line);
-
 	void doLoadFromProjectMainFile(const QDomNode& element) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	SolverConsoleWindow* m_solverConsoleWindow;
 	WindowGeometryContainer m_geometry;
-	QStringList m_lines;
 	QFile m_file;
 };
 
