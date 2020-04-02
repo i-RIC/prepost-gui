@@ -19,7 +19,6 @@ class GUICOREDLL_EXPORT InputConditionPageList : public QTreeWidget
 
 private:
 	const static int WIDTH_MIN = 150;
-	const static int WIDTH_MAX = 300;
 
 public:
 	/// Constructor

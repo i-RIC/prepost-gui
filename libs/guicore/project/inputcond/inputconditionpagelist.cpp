@@ -14,7 +14,6 @@ InputConditionPageList::InputConditionPageList(QWidget* w)
 	connect(this, SIGNAL(itemSelectionChanged()), this, SLOT(handleSelectionChange()));
 	// set size limitation
 	setMinimumWidth(WIDTH_MIN);
-	setMaximumWidth(WIDTH_MAX);
 }
 
 void InputConditionPageList::selectFirstItem()
