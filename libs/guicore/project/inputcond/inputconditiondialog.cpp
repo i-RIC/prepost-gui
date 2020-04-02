@@ -44,6 +44,7 @@ InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QL
 
 	setup(*solverDef, locale);
 
+	ui->splitter->setStretchFactor(0, 0.3);
 	ui->buttonBox->button(QDialogButtonBox::Save)->setText(InputConditionDialog::tr("&Save and Close"));
 }
 
