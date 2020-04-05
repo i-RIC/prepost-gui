@@ -40,6 +40,7 @@ void SolverConsoleWindow::Impl::init()
 {
 	m_window->setMinimumSize(480, 360);
 	m_projectData = nullptr;
+	m_projectDataItem = nullptr;
 	m_destructing = false;
 
 	m_window->exportLogAction = new QAction(SolverConsoleWindow::tr("&Export solver console log..."), m_window);
@@ -300,7 +301,9 @@ void SolverConsoleWindow::clear()
 
 void SolverConsoleWindow::applyPreferenceSetting()
 {
-	impl->m_projectDataItem->loadExternalData();
+	if (impl->m_projectDataItem) {
+		impl->m_projectDataItem->loadExternalData();
+	}
 }
 
 void SolverConsoleWindow::startSolverSilently()
