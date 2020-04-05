@@ -51,6 +51,7 @@ void SolverConsoleWindow::Impl::init()
 	m_console->setReadOnly(true);
 	m_console->setAutoFillBackground(true);
 	m_console->setWordWrapMode(QTextOption::WrapAnywhere);
+	m_console->setUndoRedoEnabled(false);
 	QFont font("Courier");
 	font.setStyleHint(QFont::Courier);
 	font.setPointSize(9);
