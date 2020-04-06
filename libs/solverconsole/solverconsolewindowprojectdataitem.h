@@ -16,7 +16,7 @@ class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindowProjectDataItem : public Projec
 	Q_OBJECT
 
 public:
-	const static int MAXLINES = 200;
+	const static int MAXLINES = 2000;
 	SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent);
 	~SolverConsoleWindowProjectDataItem();
 

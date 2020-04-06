@@ -16,6 +16,7 @@
 #include <QSettings>
 #include <QStatusBar>
 #include <QTextStream>
+#include <QTime>
 
 SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
 	ProjectDataItem(parent),
@@ -92,22 +93,33 @@ void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filenam
 	QFile f(filename);
 	// open, and write nothing.
 	f.open(QFile::ReadOnly | QFile::Text);
-	QTextStream ts(&f);
-	QStringList lines;
-	while (! ts.atEnd()) {
-		lines.append(ts.readLine());
-		if (lines.size() > maxLines) {lines.pop_front();}
+	QTime t;
+	if (maxLines > 0) {
+		t.start();
+		QTextStream ts(&f);
+		QStringList lines;
+		while (! ts.atEnd()) {
+			lines.append(ts.readLine());
+			if (lines.size() > maxLines) { lines.pop_front(); }
+		}
+		m_solverConsoleWindow->impl->m_console->setMaximumBlockCount(maxLines);
+		m_solverConsoleWindow->impl->m_console->setPlainText(lines.join("\n"));
+		qDebug("Time loading QStringList(%d):%d", maxLines, t.elapsed());
+	} else {
+		t.start();
+		m_solverConsoleWindow->impl->m_console->setMaximumBlockCount(0);
+		m_solverConsoleWindow->impl->m_console->setPlainText(f.readAll());
+		qDebug("Time loading readAll(%d):%d", maxLines, t.elapsed());
 	}
-	f.close();
-	m_solverConsoleWindow->impl->m_console->setMaximumBlockCount(maxLines);
-	m_solverConsoleWindow->impl->m_console->setPlainText(lines.join("\n"));
 	m_solverConsoleWindow->impl->m_console->moveCursor(QTextCursor::End);
+	f.close();
 
 	QFileInfo finfo(f);
 	if (finfo.size() != 0) {
 		// enable export action.
 		m_solverConsoleWindow->exportLogAction->setEnabled(true);
 	}
+	qDebug("File size:%d", finfo.size());
 }
 
 void SolverConsoleWindowProjectDataItem::loadExternalData()
