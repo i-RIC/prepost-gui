@@ -456,7 +456,12 @@ void GeoDataNetcdf::updateShapeData()
 				double longitude = longitudes[calcIndex(i, j, xsize + 1)];
 				double latitude  = latitudes[calcIndex(i, j, xsize + 1)];
 				double x, y;
-				cs->mapGeoToGrid(longitude, latitude, &x, &y);
+				if (cs->isLongLat()) {
+					x = longitude;
+					y = latitude;
+				} else {
+					cs->mapGeoToGrid(longitude, latitude, &x, &y);
+				}
 				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
 			}
 		}
