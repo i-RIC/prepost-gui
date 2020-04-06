@@ -51,6 +51,8 @@ public:
 	/// Clear the console log.
 	void clear();
 
+	void applyPreferenceSetting();
+
 	void startSolverSilently();
 	void terminateSolverSilently();
 	void waitForSolverFinish();

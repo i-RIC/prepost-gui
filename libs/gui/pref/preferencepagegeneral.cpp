@@ -5,6 +5,7 @@
 
 #include <guicore/project/projectworkspace.h>
 #include <guicore/pre/grid/grid.h>
+#include <solverconsole/solverconsolewindowprojectdataitem.h>
 #include <misc/stringtool.h>
 #include <misc/iricundostack.h>
 
@@ -47,6 +48,9 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 
 	int undoLimit = settings.value("general/undolimit", iRICUndoStack::DEFAULT_UNDOLIMIT).toInt();
 	ui->undoLimitSpinBox->setValue(undoLimit);
+
+	int maxLines = settings.value("general/scMaxLines", SolverConsoleWindowProjectDataItem::MAXLINES).toInt();
+	ui->maxLinesSpinBox->setValue(maxLines);
 }
 
 PreferencePageGeneral::~PreferencePageGeneral()
@@ -86,6 +90,7 @@ void PreferencePageGeneral::update()
 	int undoLimit = ui->undoLimitSpinBox->value();
 	settings.setValue("general/undolimit", undoLimit);
 	iRICUndoStack::instance().setUndoLimit(undoLimit);
+	settings.setValue("general/scMaxLines", ui->maxLinesSpinBox->value());
 }
 
 void PreferencePageGeneral::setupLanguageComboBox()

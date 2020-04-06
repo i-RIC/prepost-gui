@@ -13,8 +13,10 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
+#include <QSettings>
 #include <QStatusBar>
 #include <QTextStream>
+#include <QTime>
 
 SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
 	ProjectDataItem(parent),
@@ -80,39 +82,49 @@ void SolverConsoleWindowProjectDataItem::append(const QString& line)
 {
 	QTextStream ts(&m_file);
 	ts << line << endl;
-
-	appendToLines(line);
 	m_solverConsoleWindow->impl->m_console->appendPlainText(line);
-}
-
-void SolverConsoleWindowProjectDataItem::appendToLines(const QString& line)
-{
-	m_lines.append(line);
-	while (m_lines.count() > MAXLINES) {
-		m_lines.pop_front();
-	}
 }
 
 void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filename)
 {
+	QSettings settings;
+	int maxLines = settings.value("general/scMaxLines", MAXLINES).toInt();
+
 	QFile f(filename);
 	// open, and write nothing.
 	f.open(QFile::ReadOnly | QFile::Text);
-	QTextStream ts(&f);
-	while (! ts.atEnd()) {
-		QString line = ts.readLine();
-		appendToLines(line);
+	QTime t;
+	if (maxLines > 0) {
+		t.start();
+		QTextStream ts(&f);
+		QStringList lines;
+		while (! ts.atEnd()) {
+			lines.append(ts.readLine());
+			if (lines.size() > maxLines) { lines.pop_front(); }
+		}
+		m_solverConsoleWindow->impl->m_console->setMaximumBlockCount(maxLines);
+		m_solverConsoleWindow->impl->m_console->setPlainText(lines.join("\n"));
+		qDebug("Time loading QStringList(%d):%d", maxLines, t.elapsed());
+	} else {
+		t.start();
+		m_solverConsoleWindow->impl->m_console->setMaximumBlockCount(0);
+		m_solverConsoleWindow->impl->m_console->setPlainText(f.readAll());
+		qDebug("Time loading readAll(%d):%d", maxLines, t.elapsed());
 	}
-	f.close();
-	QString log = m_lines.join("\n");
-	m_solverConsoleWindow->impl->m_console->setPlainText(log);
 	m_solverConsoleWindow->impl->m_console->moveCursor(QTextCursor::End);
+	f.close();
 
 	QFileInfo finfo(f);
 	if (finfo.size() != 0) {
 		// enable export action.
 		m_solverConsoleWindow->exportLogAction->setEnabled(true);
 	}
+	qDebug("File size:%d", finfo.size());
+}
+
+void SolverConsoleWindowProjectDataItem::loadExternalData()
+{
+	ProjectDataItem::loadExternalData();
 }
 
 void SolverConsoleWindowProjectDataItem::open()
