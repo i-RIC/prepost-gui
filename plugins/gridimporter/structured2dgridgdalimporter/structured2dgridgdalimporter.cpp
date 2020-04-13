@@ -50,6 +50,7 @@ bool Structured2DGridGdalImporter::import(Grid* grid, const QString& filename, c
 
 	int xsize = dataset->GetRasterXSize();
 	int ysize = dataset->GetRasterYSize();
+	GDALClose(dataset);
 
 	grid2d->setDimensions(xsize + 1, ysize + 1);
 
