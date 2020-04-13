@@ -47,7 +47,9 @@ public:
 
 	QAction* m_holeModeAction;
 	QAction* m_deleteAction;
+	QAction* m_editNameAction;
 	QAction* m_editValueAction;
+	QAction* m_editNameAndValueAction;
 	QAction* m_copyAction;
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;

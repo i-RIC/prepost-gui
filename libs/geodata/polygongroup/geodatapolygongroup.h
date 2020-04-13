@@ -8,6 +8,7 @@
 
 #include <vector>
 
+class GeoDataPolygon;
 class GeoDataPolygonGroupPolygon;
 
 class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroup : public GeoData
@@ -21,6 +22,11 @@ public:
 	void addPolygon(GeoDataPolygonGroupPolygon* polygon);
 	std::vector<GeoDataPolygonGroupPolygon*> polygonsInBoundingBox(double xmin, double xmax, double ymin, double ymax) const;
 	std::vector<GeoDataPolygonGroupPolygon*> allPolygons() const;
+	GeoDataPolygon* editTargetPolygon() const;
+	int editTargetPolygonIndex() const;
+	bool isSelected(GeoDataPolygonGroupPolygon* polygon);
+
+	void panTo(int row);
 
 	void updateVtkObjects();
 	void updateIndex();
@@ -28,6 +34,7 @@ public:
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
+	void showInitialDialog() override;
 
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
@@ -52,10 +59,18 @@ public:
 
 private slots:
 	void addPolygon();
-	void selectPolygons();
+	void editName();
+	void editNameAndValue();
 	void mergePolygonsAndPolygonGroups();
+	void moveSelectedPolygonsToTop();
+	void moveSelectedPolygonsToBottom();
+	void moveSelectedPolygonsUp();
+	void moveSelectedPolygonsDown();
 	void deleteSelectedPolygons();
 	void editColorSetting();
+	void showAttributeBrowser();
+	void updateAttributeBrowser();
+	void handleAttributeBrowserVisibilityChange(bool visible);
 
 private:
 	GeoDataPolygonGroupColorSettingDialog::Setting colorSetting() const;
@@ -71,9 +86,13 @@ private:
 	void doApplyOffset(double x, double y) override;
 
 	class EditPropertyCommand;
+	class SortCommand;
 
 	class Impl;
 	Impl* impl;
+
+public:
+	friend class GeoDataPolygonGroupAttributeBrowser;
 };
 
 #endif // GEODATAPOLYGONGROUP_H

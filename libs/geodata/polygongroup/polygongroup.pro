@@ -127,6 +127,7 @@ win32 {
 # Input
 HEADERS += gd_polygongroup_global.h \
            geodatapolygongroup.h \
+           geodatapolygongroupattributebrowser.h \
            geodatapolygongroupcellmappert.h \
            geodatapolygongroupcolorsettingdialog.h \
            geodatapolygongroupcreator.h \
@@ -142,6 +143,8 @@ HEADERS += gd_polygongroup_global.h \
            geodatapolygongroupshpimportersettingdialog.h \
            private/geodatapolygongroup_editpropertycommand.h \
            private/geodatapolygongroup_impl.h \
+           private/geodatapolygongroup_sortcommand.h \
+           private/geodatapolygongroupattributebrowser_tableitemdelegate.h \
            private/geodatapolygongroupcellmappert_detail.h \
            private/geodatapolygongroupcreatort_detail.h \
            private/geodatapolygongroupnodemappert_detail.h \
@@ -153,6 +156,7 @@ FORMS += geodatapolygongroupcolorsettingdialog.ui \
          geodatapolygongroupmergesettingdialog.ui \
          geodatapolygongroupshpimportersettingdialog.ui
 SOURCES += geodatapolygongroup.cpp \
+           geodatapolygongroupattributebrowser.cpp \
            geodatapolygongroupcolorsettingdialog.cpp \
            geodatapolygongroupcreator.cpp \
            geodatapolygongroupintegercreator.cpp \
@@ -165,6 +169,8 @@ SOURCES += geodatapolygongroup.cpp \
            geodatapolygongroupshpimportersettingdialog.cpp \
            private/geodatapolygongroup_editpropertycommand.cpp \
            private/geodatapolygongroup_impl.cpp \
+           private/geodatapolygongroup_sortcommand.cpp \
+           private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp \
            private/geodatapolygongrouppolygon_triangulatortriangle.cpp \
            private/geodatapolygongrouppolygon_triangulatorvtk.cpp
 TRANSLATIONS += languages/iricGdPolygonGroup_es_ES.ts \

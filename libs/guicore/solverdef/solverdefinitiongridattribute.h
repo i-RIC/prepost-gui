@@ -14,8 +14,9 @@ class QWidget;
 class ColorTransferFunctionContainer;
 class Grid;
 class GridAttributeContainer;
-class GridAttributeEditWidget;
 class GridAttributeEditDialog;
+class GridAttributeEditNameAndValueDialog;
+class GridAttributeEditWidget;
 class GridAttributeVariationEditWidget;
 class GridAttributeVariationEditDialog;
 class GeoData;
@@ -63,6 +64,7 @@ public:
 	GridAttributeContainer* container(Grid* grid);
 
 	GridAttributeEditDialog* editDialog(QWidget* parent);
+	GridAttributeEditNameAndValueDialog* editNameAndValueDialog(QWidget* parent);
 	virtual GridAttributeEditWidget* editWidget(QWidget* parent) = 0;
 
 	GridAttributeVariationEditDialog* variationEditDialog(QWidget* parent);

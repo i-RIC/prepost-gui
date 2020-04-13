@@ -20,6 +20,7 @@ class Quadtree;
 } // geos
 
 class GeoDataPolygon;
+class GeoDataPolygonGroupAttributeBrowser;
 
 class QAction;
 
@@ -38,15 +39,18 @@ public:
 	Impl(GeoDataPolygonGroup* group);
 	~Impl();
 
+	void clear();
+
 	void updateActorSetting();
 	void updateActorSettingForEditTargetPolygon();
 	void updateSelectedPolygonsVtkObjects();
+	void updateAttributeBrowser();
 	void setupDummyPolygonForMenu();
 
 	void selectPolygonsIncludePoint(const QPointF& point);
 	void selectPolygonsIncludedInPolygon(const QPolygonF& polygon);
 
-	GeoDataPolygonGroupPolygon* mergeToThis(GeoDataPolygon* polygon);
+	GeoDataPolygonGroupPolygon* mergeToThis(GeoDataPolygon* polygon, int index = -1);
 	void mergeToThis(GeoDataPolygonGroup* group);
 
 	void setupNewEditTargetPolygon();
@@ -75,6 +79,7 @@ public:
 	GeoDataPolygonGroupColorSettingDialog::Setting m_colorSetting;
 
 	GeoDataPolygon* m_editTargetPolygon;
+	int m_editTargetPolygonIndex;
 	GeoDataPolygon* m_dummyPolygonForMenu;
 	ZDepthRange m_depthRange;
 
@@ -84,12 +89,22 @@ public:
 	QAction* m_selectAction;
 	QAction* m_mergeAction;
 	QAction* m_deleteAction;
+	QAction* m_editNameAction;
+	QAction* m_editNameAndValueAction;
 	QAction* m_editColorSettingAction;
+	QAction* m_attributeBrowserAction;
+
+	QAction* m_moveToTopAction;
+	QAction* m_moveToBottomAction;
+	QAction* m_moveUpAction;
+	QAction* m_moveDownAction;
 
 	QPoint m_dragStartPoint;
 
 	Mode m_mode;
 
+	GeoDataPolygonGroupAttributeBrowser* m_attributeBrowser;
+	bool m_attributeBrowserIsShown;
 	GeoDataPolygonGroup* m_group;
 };
 
