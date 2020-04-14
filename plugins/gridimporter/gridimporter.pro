@@ -7,6 +7,7 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS = \
+	structured2dgridgdalimporter \
 	structured2dgridnayscsvimporter \
 	structured2dgridnaysgridimporter \
 	unstructured2dgridtriangleimporter
