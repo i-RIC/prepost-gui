@@ -7,5 +7,4 @@ Graph2dVerificationWindowView::Graph2dVerificationWindowView(QWidget* parent)
 
 Graph2dVerificationWindowView::~Graph2dVerificationWindowView()
 {
-
 }

@@ -327,9 +327,9 @@ private:
 #endif
 
 #if 0 || 1
-#if SKIP
+//#if SKIP
 	QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > > m_dataTypeInfoMap;
-#endif
+//#endif
 	QList<DataTypeInfo> m_dataTypeInfos;
 #endif
 

@@ -44,11 +44,13 @@ Graph2dVerificationWindowResultSetting::Graph2dVerificationWindowResultSetting()
 	m_positionValueType = pvtDistance;
 	m_xAxisReverse = false;
 	m_xAxisLog = false;
+#endif
 
 	m_targetDataTypeInfo = nullptr;
-	m_targetPolyLine = nullptr;
+	////m_targetPolyLine = nullptr;
 	m_postSolutionInfo = nullptr;
 
+#if SKIP
 	m_colorSource = new ColorSource(nullptr);
 
 	m_addIndicesToTitle = false;
@@ -218,7 +220,7 @@ bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const Q
 
 void Graph2dVerificationWindowResultSetting::setupMap()
 {
-#if SKIP
+///#if SKIP
 	m_dataTypeInfoMap.clear();
 
 	// setup properly. setup map next.
@@ -303,37 +305,37 @@ void Graph2dVerificationWindowResultSetting::setupMap()
 	}
 	m_dataTypeInfoMap.insert(xaK, tmpmap);
 
-	// for Polyline
-	if (m_polyLines.size() == 0) return;
-	tmpmap.clear();
-	tmpmap.insert(dimBase, emptylist);
-	tmpmap.insert(dim1D, emptylist);
-	tmpmap.insert(dim2D, emptylist);
-	tmpmap.insert(dim3D, emptylist);
+	//// for Polyline
+	//if (m_polyLines.size() == 0) return;
+	//tmpmap.clear();
+	//tmpmap.insert(dimBase, emptylist);
+	//tmpmap.insert(dim1D, emptylist);
+	//tmpmap.insert(dim2D, emptylist);
+	//tmpmap.insert(dim3D, emptylist);
 
-	for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
-		DataTypeInfo& di = m_dataTypeInfos[i];
-		DimType dt;
-		switch (di.dataType) {
-		case dtDim1DStructured:
-		case dtDim1DUnstructured:
-			// @todo implement this!
-			break;
-		case dtDim2DStructured:
-		case dtDim2DUnstructured:
-			dt = dimTypeFromDataType(di.dataType);
-			tmpmap[dt].append(&di);
-			break;
-		case dtDim3DStructured:
-		case dtDim3DUnstructured:
-			// @todo implement this!
-			break;
-		default:
-			;
-		}
-	}
-	m_dataTypeInfoMap.insert(xaPolyline, tmpmap);
-#endif
+	//for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
+	//	DataTypeInfo& di = m_dataTypeInfos[i];
+	//	DimType dt;
+	//	switch (di.dataType) {
+	//	case dtDim1DStructured:
+	//	case dtDim1DUnstructured:
+	//		// @todo implement this!
+	//		break;
+	//	case dtDim2DStructured:
+	//	case dtDim2DUnstructured:
+	//		dt = dimTypeFromDataType(di.dataType);
+	//		tmpmap[dt].append(&di);
+	//		break;
+	//	case dtDim3DStructured:
+	//	case dtDim3DUnstructured:
+	//		// @todo implement this!
+	//		break;
+	//	default:
+	//		;
+	//	}
+	//}
+	//m_dataTypeInfoMap.insert(xaPolyline, tmpmap);
+///#endif
 }
 
 #if SKIP
@@ -544,13 +546,13 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 bool Graph2dVerificationWindowResultSetting::dataAvailable()
 {
 #if 0 || 1
-#if SKIP
+//#if SKIP
 	for (auto it = m_dataTypeInfoMap.begin(); it != m_dataTypeInfoMap.end(); ++it) {
 		for (auto it2 = it.value().begin(); it2 != it.value().end(); ++it2) {
 			if (it2.value().count() > 0) {return true;}
 		}
 	}
-#endif
+//#endif
 #endif
 	return false;
 }

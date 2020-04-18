@@ -41,7 +41,10 @@ public:
 	}
 #endif
 	void updateData(int fn);
+#if 0
 	bool axisNeeded(Graph2dVerificationWindowResultSetting::AxisSide as) const;
+#endif // 0
+
 
 signals:
 	void standardModelSetuped();

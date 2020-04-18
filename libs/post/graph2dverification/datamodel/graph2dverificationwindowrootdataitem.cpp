@@ -111,6 +111,7 @@ void Graph2dVerificationWindowRootDataItem::updateTime()
 }
 */
 
+#if 0
 bool Graph2dVerificationWindowRootDataItem::axisNeeded(Graph2dVerificationWindowResultSetting::AxisSide as) const
 {
 	bool ret = false;
@@ -119,3 +120,5 @@ bool Graph2dVerificationWindowRootDataItem::axisNeeded(Graph2dVerificationWindow
 	//ret = ret || m_importDataGroupItem->axisNeeded(as);
 	return ret;
 }
+#endif // 0
+

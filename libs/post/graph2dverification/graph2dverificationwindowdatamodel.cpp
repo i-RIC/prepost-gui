@@ -100,9 +100,9 @@ void Graph2dVerificationWindowDataModel::init()
 #if SKIP
 	m_regionMode = Graph2dVerificationWindowContinuousExportDialog::rmCurrentOnly;
 	m_timeMode = Graph2dVerificationWindowContinuousExportDialog::tmCurrentOnly;
-#endif
 	m_prefix = "Snapshot";
 	m_csvPrefix = "ExportData";
+#endif
 
 	m_pointsCurve  = nullptr;
 	m_lineCurve    = nullptr;

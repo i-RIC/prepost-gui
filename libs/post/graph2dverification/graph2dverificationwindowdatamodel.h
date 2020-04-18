@@ -98,8 +98,10 @@ private:
 	QwtPlotMarker* m_timeMarker;
 	Graph2dVerificationWindowResultSetting m_setting;
 
+#if SKIP
 	// parameters related to special snapshot.
 	QString m_prefix;
+#endif
 
 #if SKIP
 	Graph2dVerificationWindowContinuousExportDialog::RegionMode m_regionMode;
@@ -120,7 +122,9 @@ private:
 	int m_timeEnd;
 	int m_timeSkip;
 
+#if SKIP
 	QString m_csvPrefix;
+#endif
 
 	//{{
 	///Graph2dVerificationWindowResultSetting::GraphType m_graphType;
