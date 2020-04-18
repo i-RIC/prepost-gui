@@ -16,6 +16,7 @@
 #include <guicore/tmsimage/tmsimagesettingmanager.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
+#include <misc/valuechangert.h>
 #include <tmsloader/tmsrequest.h>
 #include <tmsloader/tmsutil.h>
 
@@ -294,6 +295,11 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 
 void TmsImageGroupDataItem::requestImage()
 {
+	static bool requesting = false;
+
+	if (requesting) {return;}
+	ValueChangerT<bool> changer(&requesting, true);
+
 	if (impl->m_tmsRequestId != -1) {
 		impl->m_tmsLoader.cancelRequest(impl->m_tmsRequestId);
 	}
