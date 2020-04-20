@@ -36,6 +36,9 @@ public:
 	std::vector<unsigned int> lineEdges() const;
 	std::vector<unsigned int> triangleCells() const;
 
+	unsigned int order() const;
+	void setOrder(unsigned int order);
+
 	unsigned int indexOffset() const;
 	void setIndexOffset(unsigned int offset);
 

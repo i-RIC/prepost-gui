@@ -25,6 +25,7 @@ public:
 	GeoDataPolygon* editTargetPolygon() const;
 	int editTargetPolygonIndex() const;
 	bool isSelected(GeoDataPolygonGroupPolygon* polygon);
+	void updateOrder();
 
 	void panTo(int row);
 

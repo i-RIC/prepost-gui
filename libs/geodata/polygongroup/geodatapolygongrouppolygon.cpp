@@ -183,6 +183,16 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::triangleCells() const
 	return impl->m_triangleCells;
 }
 
+unsigned int GeoDataPolygonGroupPolygon::order() const
+{
+	return impl->m_order;
+}
+
+void GeoDataPolygonGroupPolygon::setOrder(unsigned int order)
+{
+	impl->m_order = order;
+}
+
 unsigned int GeoDataPolygonGroupPolygon::indexOffset() const
 {
 	return impl->m_indexOffset;

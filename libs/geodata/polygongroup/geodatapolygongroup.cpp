@@ -187,6 +187,14 @@ bool GeoDataPolygonGroup::isSelected(GeoDataPolygonGroupPolygon* polygon)
 	return (pols.find(polygon) != pols.end());
 }
 
+void GeoDataPolygonGroup::updateOrder()
+{
+	for (int i = 0; i < impl->m_polygons.size(); ++i) {
+		auto p = impl->m_polygons.at(i);
+		p->setOrder(i);
+	}
+}
+
 void GeoDataPolygonGroup::panTo(int row)
 {
 	double xmin, xmax, ymin, ymax;
@@ -226,7 +234,8 @@ void GeoDataPolygonGroup::updateVtkObjects()
 	triValues->SetName(VALUE.c_str());
 
 	vtkIdType offset = 0;
-	for (auto pol : impl->m_polygons) {
+	for (auto it = impl->m_polygons.rbegin(); it != impl->m_polygons.rend(); ++it) {
+		auto pol = *it;
 		double v = pol->value().toDouble();
 		for (const QPointF& p : pol->points()) {
 			impl->m_points->InsertNextPoint(p.x(), p.y(), 0);
