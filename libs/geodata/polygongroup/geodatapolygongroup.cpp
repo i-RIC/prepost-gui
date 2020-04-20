@@ -490,6 +490,9 @@ void GeoDataPolygonGroup::updateFilename()
 void GeoDataPolygonGroup::addPolygon()
 {
 	if (impl->m_editTargetPolygon != nullptr) {
+		if (impl->m_editTargetPolygon->mouseEventMode() == GeoDataPolygon::meBeforeDefining) {
+			return;
+		}
 		mergeEditTargetPolygon();
 	}
 	auto p = new GeoDataPolygon(parent(), creator(), gridAttribute());;
