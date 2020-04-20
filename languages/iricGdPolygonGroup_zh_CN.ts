@@ -4,25 +4,51 @@
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="197"/>
+        <location filename="../geodatapolygongroup.cpp" line="286"/>
         <source>P&amp;olygon Group</source>
         <translation>多边形组</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="505"/>
+        <source>Polygon%1</source>
+        <translation type="unfinished">多边形%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="538"/>
+        <source>Edit %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="587"/>
+        <location filename="../geodatapolygongroup.cpp" line="663"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
+        <location filename="../geodatapolygongroup.cpp" line="587"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation> %1组中没有其他面或面组。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="663"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>您确定要删除选定的多边形吗？</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="787"/>
+        <location filename="../geodatapolygongroup.cpp" line="830"/>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatapolygongroup_editpropertycommand.cpp" line="4"/>
@@ -30,29 +56,107 @@
         <translation>多边形属性</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="44"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
         <source>&amp;Add...</source>
         <translation>添加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="45"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
         <source>&amp;Select...</source>
         <translation>选择 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="46"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Merge...</source>
         <translation>合并 (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Delete</source>
         <translation>删除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <source>Edit &amp;Name...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Color &amp;Setting...</source>
         <translation>色彩设置 (&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <source>Move to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <source>Move to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
+        <source>Sort polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser</name>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="55"/>
+        <source>Polygons Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="81"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="85"/>
+        <source>Name</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="82"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="86"/>
+        <source>Value</source>
+        <translation type="unfinished">数值</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="90"/>
+        <source>Sort toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -81,14 +185,22 @@
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
         <source>PolygonGroup</source>
-        <translation>多边形组</translation>
+        <translation type="vanished">多边形组</translation>
+    </message>
+    <message>
+        <source>PolygonGroup%1</source>
+        <translation type="vanished">多边形组%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <source>Polygon</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
-        <source>PolygonGroup%1</source>
-        <translation>多边形组%1</translation>
+        <source>Polygon%1</source>
+        <translation type="unfinished">多边形%1</translation>
     </message>
 </context>
 <context>
@@ -139,12 +251,12 @@
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
-        <source>ESRI Shapefile (Polygon Group)</source>
+        <source>ESRI Shapefile (Polygon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
+        <source>ESRI Shapefile (Polygon) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

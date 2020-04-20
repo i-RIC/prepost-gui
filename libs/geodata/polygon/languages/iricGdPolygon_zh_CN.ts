@@ -4,55 +4,75 @@
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
+        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>Edit &amp;Value...</source>
         <translation>编辑数值 (&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>&amp;Copy...</source>
         <translation>复制 (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
+        <location filename="../geodatapolygon.cpp" line="102"/>
         <source>&amp;Add Vertex</source>
         <translation>添加顶点 (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
+        <location filename="../geodatapolygon.cpp" line="103"/>
         <source>&amp;Remove Vertex</source>
         <translation>删除顶点 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="104"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>编辑座标 (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="94"/>
+        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Add &amp;Hole Region</source>
         <translation>添加孔区域 (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="97"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>删除孔区域 (&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
+        <location filename="../geodatapolygon.cpp" line="98"/>
+        <source>Edit &amp;Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="100"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="105"/>
         <source>Color &amp;Setting...</source>
         <translation>色彩设置 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="189"/>
+        <location filename="../geodatapolygon.cpp" line="195"/>
         <source>&amp;Polygon</source>
         <translation>多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="575"/>
+        <location filename="../geodatapolygon.cpp" line="581"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>完成定义多边形</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatapolygon_pushnewpointcommand.cpp" line="8"/>
@@ -80,13 +100,13 @@
         <translation>删除多边形顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>多边形至少必须具有三个顶点</translation>
     </message>
@@ -96,23 +116,23 @@
         <translation>添加新空心多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义孔区域。 可以通过单击鼠标将孔区域定义为多边形。 通过双击或按回车键完成定义。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>您确定要删除此多边形吗？</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请通过单击鼠标定义多边形。 通过双击或按回车键完成定义。</translation>
     </message>
@@ -122,12 +142,13 @@
         <translation>多边形值变更</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1234"/>
+        <location filename="../geodatapolygon.cpp" line="1293"/>
+        <location filename="../geodatapolygon.cpp" line="1314"/>
         <source>Edit %1 value</source>
         <translation>编辑 %1数值</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1235"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please input new value in this polygon.</source>
         <translation>请在此多边形中输入新值。</translation>
     </message>
@@ -137,12 +158,12 @@
         <translation>多边形属性编辑</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Select Geographic Data</source>
         <translation>选择地理数据</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>请选择要复制该多边形的地理数据。</translation>
     </message>
@@ -155,6 +176,11 @@
         <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
         <source>Polygon Coordinates</source>
         <translation>多边形坐标</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygon_editnameandvaluecommand.cpp" line="4"/>
+        <source>Polygon name and value change</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

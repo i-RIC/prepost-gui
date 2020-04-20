@@ -3893,24 +3893,50 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="197"/>
+        <location filename="../geodatapolygongroup.cpp" line="286"/>
         <source>P&amp;olygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="505"/>
+        <source>Polygon%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="538"/>
+        <source>Edit %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="587"/>
+        <location filename="../geodatapolygongroup.cpp" line="663"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
+        <location filename="../geodatapolygongroup.cpp" line="587"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="663"/>
         <source>Are you sure you want to delete selected polygons?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="787"/>
+        <location filename="../geodatapolygongroup.cpp" line="830"/>
+        <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3919,28 +3945,106 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="44"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
         <source>&amp;Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="45"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
         <source>&amp;Select...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="46"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Merge...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <source>Edit &amp;Name...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Color &amp;Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <source>Move to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <source>Move to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
+        <source>Sort polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser</name>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="55"/>
+        <source>Polygons Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="81"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="85"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="82"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="86"/>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="90"/>
+        <source>Sort toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3971,12 +4075,12 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonGroupCreator</name>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
-        <source>PolygonGroup</source>
+        <source>Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
-        <source>PolygonGroup%1</source>
+        <source>Polygon%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4020,12 +4124,12 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
-        <source>ESRI Shapefile (Polygon Group)</source>
+        <source>ESRI Shapefile (Polygon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
+        <source>ESRI Shapefile (Polygon) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4125,54 +4229,74 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
+        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>Edit &amp;Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>&amp;Copy...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
+        <location filename="../geodatapolygon.cpp" line="102"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
+        <location filename="../geodatapolygon.cpp" line="103"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="104"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="94"/>
+        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Add &amp;Hole Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="97"/>
         <source>&amp;Delete Hole Region...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
+        <location filename="../geodatapolygon.cpp" line="98"/>
+        <source>Edit &amp;Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="100"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="105"/>
         <source>Color &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="189"/>
+        <location filename="../geodatapolygon.cpp" line="195"/>
         <source>&amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="575"/>
+        <location filename="../geodatapolygon.cpp" line="581"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4201,13 +4325,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4217,23 +4341,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4243,12 +4367,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1234"/>
+        <location filename="../geodatapolygon.cpp" line="1293"/>
+        <location filename="../geodatapolygon.cpp" line="1314"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1235"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please input new value in this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4258,12 +4383,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Select Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4275,6 +4400,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
         <source>Polygon Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygon_editnameandvaluecommand.cpp" line="4"/>
+        <source>Polygon name and value change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
