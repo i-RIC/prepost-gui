@@ -34,11 +34,13 @@ void Graph2dVerificationWindowLineSettingDialog::setCustomColor(QColor col)
 	ui->colorWidget->setColor(col);
 }
 
+#if 0
 Graph2dVerificationWindowResultSetting::AxisSide Graph2dVerificationWindowLineSettingDialog::axisSide() const
 {
 	if (ui->yAxisLeftRadioButton->isChecked()) {
 		return Graph2dVerificationWindowResultSetting::asLeft;
-	} else {
+	}
+	else {
 		return Graph2dVerificationWindowResultSetting::asRight;
 	}
 }
@@ -51,3 +53,4 @@ void Graph2dVerificationWindowLineSettingDialog::setAxisSide(Graph2dVerification
 		ui->yAxisRightRadioButton->setChecked(true);
 	}
 }
+#endif // 0

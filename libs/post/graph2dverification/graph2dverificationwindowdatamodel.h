@@ -14,17 +14,15 @@
 class QwtPlotMarker;
 class QwtPlotCustomCurve;
 
-class PostSolutionInfo;
 class Graph2dVerificationWindow;
-class Graph2dVerificationWindowRootDataItem;
+///class Graph2dVerificationWindowRootDataItem;
 class Graph2dVerificationWindowView;
-class Graph2dVerificationWindowObjectBrowser;
-class Graph2dVerificationWindowObjectBrowserView;
+//class Graph2dVerificationWindowObjectBrowser;
+//class Graph2dVerificationWindowObjectBrowserView;
 class iRICMainWindow;
+class PostSolutionInfo;
 ///class Graph2dHybridWindowZoneDataItem;
 
-/// This class handles ALL informations that are handled
-/// inside 2d post-processing window.
 class Graph2dVerificationWindowDataModel : public Graph2dWindowDataModel
 {
 	Q_OBJECT
@@ -42,23 +40,23 @@ public:
 	const std::vector<MeasuredData*>& measuredData() const;
 	//}}
 	bool setupInitialSetting();
-	void showSettingDialog();
-	void getXAxisValueRange(double* min, double* max);
+	//void showSettingDialog();
+	//void getXAxisValueRange(double* min, double* max);
 	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;
 	const Graph2dVerificationWindowResultSetting& setting() const {return m_setting;}
 
 public slots:
-	void sliderChanged();
+	///void sliderChanged();
 	void dataSourceSetting();
-	void axisSetting();
-	void drawSetting();
-	void markerSettiing();
+	//void axisSetting();
+	//void drawSetting();
+	//void markerSettiing();
 	//void addKPMarkers();
-#if SKIP
-	void specialSnapshot();
-#endif
-	void specialCsvExport();
-	void copyCalculationResult();
+//#if SKIP
+//	void specialSnapshot();
+//#endif
+	//void specialCsvExport();
+	//void copyCalculationResult();
 	//void exportCsv();
 	//void targetPolyLineDestroyed();
 	void applySettingsSlot();
@@ -73,7 +71,7 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void applyAxisSetting() override;
+	void applyAxisSetting() override {};
 
 private:
 	void updateGraph();
@@ -83,48 +81,48 @@ private:
 	void init();
 	//void setupTimeMarker();
 	void applySettings();
-	bool savePixmap(const QPixmap& pixmap, const QString& filename);
-	void showErrorMessage(const QString& filename);
-#if SKIP
-	void updateTitle();
-#endif
+	//bool savePixmap(const QPixmap& pixmap, const QString& filename);
+	//void showErrorMessage(const QString& filename);
+//#/*if SKIP
+//	void updateTitle();
+//#endif*/
 	const QList<PostZoneDataContainer*>& zoneContainers();
-	QString formattedNumber(int number, int max);
-#if 0
-	bool exportCsv(const QString& filename) const;
-#endif
-	template <typename DataItem> void getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const;
+	//QString formattedNumber(int number, int max);
+//#if 0
+//	bool exportCsv(const QString& filename) const;
+//#endif
+	//template <typename DataItem> void getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const;
 
 	QwtPlotMarker* m_timeMarker;
 	Graph2dVerificationWindowResultSetting m_setting;
 
-#if SKIP
-	// parameters related to special snapshot.
-	QString m_prefix;
-#endif
+//#if SKIP
+//	// parameters related to special snapshot.
+//	QString m_prefix;
+//#endif
 
-#if SKIP
-	Graph2dVerificationWindowContinuousExportDialog::RegionMode m_regionMode;
-#endif
-	int m_iMin;
-	int m_iMax;
-	int m_jMin;
-	int m_jMax;
-	int m_kMin;
-	int m_kMax;
-	int m_indexMin;
-	int m_indexMax;
-
-#if SKIP
-	Graph2dVerificationWindowContinuousExportDialog::TimeMode m_timeMode;
-#endif
+//#if SKIP
+//	Graph2dVerificationWindowContinuousExportDialog::RegionMode m_regionMode;
+//#endif
+//	int m_iMin;
+//	int m_iMax;
+//	int m_jMin;
+//	int m_jMax;
+//	int m_kMin;
+//	int m_kMax;
+//	int m_indexMin;
+//	int m_indexMax;
+//
+//#if SKIP
+//	Graph2dVerificationWindowContinuousExportDialog::TimeMode m_timeMode;
+//#endif
 	int m_timeStart;
 	int m_timeEnd;
 	int m_timeSkip;
 
-#if SKIP
-	QString m_csvPrefix;
-#endif
+//#if SKIP
+//	QString m_csvPrefix;
+//#endif
 
 	//{{
 	///Graph2dVerificationWindowResultSetting::GraphType m_graphType;

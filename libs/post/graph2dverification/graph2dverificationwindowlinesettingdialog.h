@@ -24,8 +24,11 @@ public:
 	QColor customColor() const;
 	void setCustomColor(QColor col);
 
+#if 0
 	Graph2dVerificationWindowResultSetting::AxisSide axisSide() const;
 	void setAxisSide(Graph2dVerificationWindowResultSetting::AxisSide side);
+#endif // 0
+
 
 private:
 	Ui::Graph2dVerificationWindowLineSettingDialog* ui;

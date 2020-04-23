@@ -42,7 +42,7 @@ Graph2dVerificationWindowControlWidget::~Graph2dVerificationWindowControlWidget(
 
 void Graph2dVerificationWindowControlWidget::setSetting(const Graph2dVerificationWindowResultSetting& setting)
 {
-#if 0 || 1
+#if 0 //  || 1
 	Graph2dVerificationWindowResultSetting::DataTypeInfo* info = setting.targetDataTypeInfo();
 	
 	//{{
