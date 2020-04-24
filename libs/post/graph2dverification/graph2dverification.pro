@@ -180,7 +180,6 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationwindowcontrolwidget.h \
 					 graph2dverificationwindowdataitem.h \
 					 graph2dverificationwindowdatamodel.h \
-					 graph2dverificationwindowdatasourcedialog.h \
 					 graph2dverificationwindowlinesettingdialog.h \
 					 graph2dverificationwindowobjectbrowser.h \
 					 graph2dverificationwindowobjectbrowserview.h \
@@ -189,20 +188,18 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationwindowview.h \
 					 graph2dverificationwindowprojectdataitem.h \
 					 datamodel/graph2dverificationwindowrootdataitem.h \
-    graph2dverificationwindowtopwidget.h
+					 graph2dverificationwindowtopwidget.h
 FORMS += graph2dverificationsettingdialog.ui \
 				 graph2dverificationwindow.ui \
 				 graph2dverificationwindowcontrolwidget.ui \
-				 graph2dverificationwindowdatasourcedialog.ui \
 				 graph2dverificationwindowlinesettingdialog.ui \
-    graph2dverificationwindowtopwidget.ui
+				 graph2dverificationwindowtopwidget.ui
 SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindow.cpp \
 					 graph2dverificationwindowactionmanager.cpp \
 					 graph2dverificationwindowcontrolwidget.cpp \
 					 graph2dverificationwindowdataitem.cpp \
 					 graph2dverificationwindowdatamodel.cpp \
-					 graph2dverificationwindowdatasourcedialog.cpp \
 					 graph2dverificationwindowlinesettingdialog.cpp \
 					 graph2dverificationwindowobjectbrowser.cpp \
 					 graph2dverificationwindowobjectbrowserview.cpp \
@@ -211,7 +208,7 @@ SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindowview.cpp \
 					 graph2dverificationwindowprojectdataitem.cpp \
 					 datamodel/graph2dverificationwindowrootdataitem.cpp \
-    graph2dverificationwindowtopwidget.cpp
+					 graph2dverificationwindowtopwidget.cpp
 TRANSLATIONS += languages/iricGraph2dhybrid_es_ES.ts \
 								languages/iricGraph2dhybrid_fr_FR.ts \
 								languages/iricGraph2dhybrid_id_ID.ts \
