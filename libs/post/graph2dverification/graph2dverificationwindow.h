@@ -9,9 +9,7 @@ class Graph2dVerificationWindowObjectBrowser;
 class Graph2dVerificationWindowDataModel;
 class Graph2dVerificationWindowActionManager;
 class Graph2dVerificationWindowProjectDataItem;
-//{{
 class Graph2dVerificationWindowTopWidget;
-//}}
 class Graph2dVerificationWindowControlWidget;
 
 class Graph2dVerificationWindow :
@@ -41,9 +39,7 @@ private:
 
 	Graph2dVerificationWindowObjectBrowser* m_objectBrowser;
 	Graph2dVerificationWindowControlWidget* m_controlWidget;
-	//{{
 	Graph2dVerificationWindowTopWidget* m_topWidget;
-	//}}
 	Graph2dVerificationWindowDataModel* m_dataModel;
 	Graph2dVerificationWindowActionManager* m_actionManager;
 	QByteArray m_initialState;

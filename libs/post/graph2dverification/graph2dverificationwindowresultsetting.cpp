@@ -1,40 +1,40 @@
 #define _USE_MATH_DEFINES  1  // set to 1 to match qwt_math.h
 #include <cmath>
 
-#include "graph2dverificationwindow.h"
+//#include "graph2dverificationwindow.h"
 #include "graph2dverificationwindowresultsetting.h"
 
-#include <geodata/polyline/geodatapolyline.h>
-#include <guibase/vtkdatasetattributestool.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+//#include <geodata/polyline/geodatapolyline.h>
+//#include <guibase/vtkdatasetattributestool.h>
+//#include <guicore/base/iricmainwindowinterface.h>
+//#include <guicore/pre/base/preprocessordatamodelinterface.h>
+//#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+//#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+//#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+//#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/measured/measureddata.h>
-#include <guibase/qwtplotcustomcurve.h>
+//#include <guibase/qwtplotcustomcurve.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/misc/cgnsfileopener.h>
-#include <guicore/project/colorsource.h>
-#include <guicore/project/projectcgnsfile.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/stringtool.h>
+//#include <guicore/misc/cgnsfileopener.h>
+//#include <guicore/project/colorsource.h>
+//#include <guicore/project/projectcgnsfile.h>
+//#include <guicore/solverdef/solverdefinitiongridtype.h>
+//#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
-#include <QList>
+//#include <QList>
 #include <QXmlStreamWriter>
 
-#include <vtkCellData.h>
-#include <vtkPointData.h>
-#include <vtkStructuredGrid.h>
-#include <vtkUnstructuredGrid.h>
+//#include <vtkCellData.h>
+//#include <vtkPointData.h>
+//#include <vtkStructuredGrid.h>
+//#include <vtkUnstructuredGrid.h>
 
-#include <cgnslib.h>
-#include <qwt_plot.h>
+//#include <cgnslib.h>
+//#include <qwt_plot.h>
 
-#include <stdexcept>
+//#include <stdexcept>
 
 Graph2dVerificationWindowResultSetting::Graph2dVerificationWindowResultSetting()
 {
@@ -89,7 +89,7 @@ Graph2dVerificationWindowResultSetting::~Graph2dVerificationWindowResultSetting(
 //#endif
 }
 
-bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData, const QString& cgnsFilename)
+bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData, const QString& /* cgnsFilename */)
 {
 	m_measuredData = measuredData;
 	////return init(sol, cgnsFilename);
@@ -415,7 +415,7 @@ bool Graph2dVerificationWindowResultSetting::settingExists()
 	return true;
 }
 
-QList<Graph2dWindowDataItem*> Graph2dVerificationWindowResultSetting::setupItems(Graph2dVerificationWindowResultGroupDataItem* gItem) const
+QList<Graph2dWindowDataItem*> Graph2dVerificationWindowResultSetting::setupItems(Graph2dVerificationWindowResultGroupDataItem* /* gItem */) const
 {
 	QList<Graph2dWindowDataItem*> ret;
 //#if 0
@@ -533,9 +533,9 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 //#endif
 	m_postSolutionInfo = s.m_postSolutionInfo;
 	////setupMap();
-#if SKIP
-	setupPolyLines();
-#endif
+//#if SKIP
+//	setupPolyLines();
+//#endif
 //#if 0 || 1
 //	if (s.m_targetDataTypeInfo == nullptr) {
 //		m_targetDataTypeInfo = nullptr;
@@ -549,15 +549,15 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 //		//}
 //	}
 //#endif
-#if SKIP
-	m_title = s.m_title;
-	m_addIndicesToTitle = s.m_addIndicesToTitle;
-
-	m_I = s.m_I;
-	m_J     = s.m_J;
-	m_K     = s.m_K;
-	m_index = s.m_index;
-#endif
+//#if SKIP
+//	m_title = s.m_title;
+//	m_addIndicesToTitle = s.m_addIndicesToTitle;
+//
+//	m_I = s.m_I;
+//	m_J     = s.m_J;
+//	m_K     = s.m_K;
+//	m_index = s.m_index;
+//#endif
 	return *this;
 }
 
@@ -819,14 +819,11 @@ void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomN
 //	m_index = iRIC::getIntAttribute(node, "index");
 //#endif
 
-
-	//{{
 	m_graphType = static_cast<GraphType>(iRIC::getIntAttribute(node, "graphType"));
 	m_activeResult = elem.attribute("activeResult");
 	m_activeValue = elem.attribute("activeValue");
 	m_activeFile = elem.attribute("activeFile");
 	m_activeZone = elem.attribute("activeZone");
-
 
 	for (MeasuredData* md : m_measuredData) {
 		if (m_activeFile == md->name()) {
@@ -841,7 +838,6 @@ void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomN
 			break;
 		}
 	}
-	//}}
 
 	QDomNode typeNode = iRIC::getChildNode(node, "targetDataType");
 	if (! typeNode.isNull()) {
@@ -928,13 +924,11 @@ void Graph2dVerificationWindowResultSetting::saveToProjectMainFile(QXmlStreamWri
 //	iRIC::setIntAttribute(writer, "index", m_index);
 //#endif
 
-	//{{
 	iRIC::setIntAttribute(writer, "graphType", static_cast<int>(m_graphType));
 	writer.writeAttribute("activeResult", m_activeResult);
 	writer.writeAttribute("activeValue", m_activeValue);
 	writer.writeAttribute("activeFile", m_activeFile);
 	writer.writeAttribute("activeZone", m_activeZone);
-	//}}
 
 
 //#if 0
@@ -971,53 +965,53 @@ void Graph2dVerificationWindowResultSetting::setActivePostData(PostZoneDataConta
 	m_activePostData = postZoneDataContainer;
 }
 
-#if 0 // || 1
-void Graph2dVerificationWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(const QDomNode& node)
-{
-	QDomElement elem = node.toElement();	// targetDataType
-	//dataType = static_cast<DataType>(iRIC::getIntAttribute(node, "dataType"));
-	dimension = static_cast<PostSolutionInfo::Dimension>(iRIC::getIntAttribute(node, "dimension"));
-	zoneId = iRIC::getIntAttribute(node, "zoneId");
-	zoneName = iRIC::toStr(elem.attribute("zoneName"));
-	//QString loc = elem.attribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(Vertex));
-	//gridLocation = Graph2dVerificationWindowResultSetting::getGridLocation(loc);
-
-	QDomNode namesNode = node.firstChild();
-	while (! namesNode.isNull()) {
-		if (namesNode.nodeName() == "DataNames") {
-			//QString att = namesNode.toElement().attribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(Vertex));
-			//GridLocation_t loc = Graph2dVerificationWindowResultSetting::getGridLocation(att);
-			QDomNodeList names = namesNode.childNodes();
-			for (int i = 0; i < names.count(); ++i) {
-				QDomElement elem = names.at(i).toElement();
-				QString name = elem.attribute("name");
-				//dataNamesMap[loc].append(name);
-			}
-		}
-		namesNode = namesNode.nextSibling();
-	}
-}
-
-void Graph2dVerificationWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlStreamWriter& writer) const
-{
-	//iRIC::setIntAttribute(writer, "dataType", static_cast<int>(dataType));
-	iRIC::setIntAttribute(writer, "dimension", static_cast<int>(dimension));
-	iRIC::setIntAttribute(writer, "zoneId", zoneId);
-	writer.writeAttribute("zoneName", zoneName.c_str());
-	//writer.writeAttribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(gridLocation));
-
-	for (auto loc : dataNamesMap.keys()) {
-		writer.writeStartElement("DataNames");
-		//writer.writeAttribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(loc));
-		for (auto name : dataNamesMap[loc]) {
-			writer.writeStartElement("DataName");
-			writer.writeAttribute("name", name);
-			writer.writeEndElement();
-		}
-		writer.writeEndElement();
-	}
-}
-#endif
+//#if 0 // || 1
+//void Graph2dVerificationWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(const QDomNode& node)
+//{
+//	//QDomElement elem = node.toElement();	// targetDataType
+//	////dataType = static_cast<DataType>(iRIC::getIntAttribute(node, "dataType"));
+//	//dimension = static_cast<PostSolutionInfo::Dimension>(iRIC::getIntAttribute(node, "dimension"));
+//	//zoneId = iRIC::getIntAttribute(node, "zoneId");
+//	//zoneName = iRIC::toStr(elem.attribute("zoneName"));
+//	////QString loc = elem.attribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(Vertex));
+//	////gridLocation = Graph2dVerificationWindowResultSetting::getGridLocation(loc);
+//
+//	//QDomNode namesNode = node.firstChild();
+//	//while (! namesNode.isNull()) {
+//	//	if (namesNode.nodeName() == "DataNames") {
+//	//		//QString att = namesNode.toElement().attribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(Vertex));
+//	//		//GridLocation_t loc = Graph2dVerificationWindowResultSetting::getGridLocation(att);
+//	//		QDomNodeList names = namesNode.childNodes();
+//	//		for (int i = 0; i < names.count(); ++i) {
+//	//			QDomElement elem = names.at(i).toElement();
+//	//			QString name = elem.attribute("name");
+//	//			//dataNamesMap[loc].append(name);
+//	//		}
+//	//	}
+//	//	namesNode = namesNode.nextSibling();
+//	//}
+//}
+//
+//void Graph2dVerificationWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlStreamWriter& writer) const
+//{
+//	////iRIC::setIntAttribute(writer, "dataType", static_cast<int>(dataType));
+//	//iRIC::setIntAttribute(writer, "dimension", static_cast<int>(dimension));
+//	//iRIC::setIntAttribute(writer, "zoneId", zoneId);
+//	//writer.writeAttribute("zoneName", zoneName.c_str());
+//	////writer.writeAttribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(gridLocation));
+//
+//	//for (auto loc : dataNamesMap.keys()) {
+//	//	writer.writeStartElement("DataNames");
+//	//	//writer.writeAttribute("gridLocation", Graph2dVerificationWindowResultSetting::getGridLocationString(loc));
+//	//	for (auto name : dataNamesMap[loc]) {
+//	//		writer.writeStartElement("DataName");
+//	//		writer.writeAttribute("name", name);
+//	//		writer.writeEndElement();
+//	//	}
+//	//	writer.writeEndElement();
+//	//}
+//}
+//#endif
 
 //#if SKIP
 //void Graph2dVerificationWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)

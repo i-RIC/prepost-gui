@@ -1,25 +1,25 @@
 #include "../graph2dverificationwindow.h"
-#include "../graph2dverificationwindowdatamodel.h"
-#include "../graph2dverificationwindowdatamodel.h"
-#include "../graph2dverificationwindowobjectbrowser.h"
-#include "../graph2dverificationwindowview.h"
+//#include "../graph2dverificationwindowdatamodel.h"
+//#include "../graph2dverificationwindowdatamodel.h"
+//#include "../graph2dverificationwindowobjectbrowser.h"
+//#include "../graph2dverificationwindowview.h"
 //#include "graph2dverificationwindowimportdatagroupdataitem.h"
 //#include "graph2dverificationwindowresultcopygroupdataitem.h"
 //#include "graph2dverificationwindowresultgroupdataitem.h"
 #include "graph2dverificationwindowrootdataitem.h"
 
-#include <guibase/objectbrowserview.h>
-#include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/solverdef/solverdefinition.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/xmlsupport.h>
-#include <post/graph2d/datamodel/graph2dwindowmarkergroupdataitem.h>
-
-#include <QDomNode>
-#include <QStandardItemModel>
-#include <QXmlStreamWriter>
-
-#include <vtkRenderWindow.h>
+//#include <guibase/objectbrowserview.h>
+//#include <guicore/postcontainer/postsolutioninfo.h>
+//#include <guicore/solverdef/solverdefinition.h>
+//#include <guicore/solverdef/solverdefinitiongridtype.h>
+//#include <misc/xmlsupport.h>
+//#include <post/graph2d/datamodel/graph2dwindowmarkergroupdataitem.h>
+//
+//#include <QDomNode>
+//#include <QStandardItemModel>
+//#include <QXmlStreamWriter>
+//
+//#include <vtkRenderWindow.h>
 
 Graph2dVerificationWindowRootDataItem::Graph2dVerificationWindowRootDataItem(Graph2dVerificationWindow* window, ProjectDataItem* parent)
 	: Graph2dWindowRootDataItem(window, parent)
@@ -47,7 +47,7 @@ Graph2dVerificationWindowRootDataItem::~Graph2dVerificationWindowRootDataItem()
 	//delete m_markerGroupItem;
 }
 
-void Graph2dVerificationWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
+void Graph2dVerificationWindowRootDataItem::setupStandardModel(QStandardItemModel* /* model */)
 {
 	//model->clear();
 	//model->appendRow(m_resultGroupItem->standardItem());
@@ -95,7 +95,8 @@ void Graph2dVerificationWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	writer.writeEndElement();
 }
 #endif
-void Graph2dVerificationWindowRootDataItem::updateData(int fn)
+
+void Graph2dVerificationWindowRootDataItem::updateData(int /* fn */)
 {
 	//m_resultGroupItem->updateData(fn);
 	//m_resultCopyGroupItem->updateData();

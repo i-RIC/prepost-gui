@@ -2,18 +2,18 @@
 #define GRAPH2DVERIFICATIONWINDOWROOTDATAITEM_H
 
 #include <post/graph2d/graph2dwindowrootdataitem.h>
-#include <post/graph2d/graph2dwindowdatamodel.h>
-#include "../graph2dverificationwindowresultsetting.h"
-#include <QList>
-#include <QMap>
+//#include <post/graph2d/graph2dwindowdatamodel.h>
+//#include "../graph2dverificationwindowresultsetting.h"
+//#include <QList>
+//#include <QMap>
 
-class Graph2dVerificationWindowDataModel;
-class QStandardItemModel;
+//class Graph2dVerificationWindowDataModel;
+//class QStandardItemModel;
 class Graph2dVerificationWindow;
-class Graph2dVerificationWindowResultGroupDataItem;
-class Graph2dVerificationWindowResultCopyGroupDataItem;
-class Graph2dVerificationWindowImportDataGroupDataItem;
-class Graph2dWindowMarkerGroupDataItem;
+//class Graph2dVerificationWindowResultGroupDataItem;
+//class Graph2dVerificationWindowResultCopyGroupDataItem;
+//class Graph2dVerificationWindowImportDataGroupDataItem;
+//class Graph2dWindowMarkerGroupDataItem;
 
 class Graph2dVerificationWindowRootDataItem : public Graph2dWindowRootDataItem
 {

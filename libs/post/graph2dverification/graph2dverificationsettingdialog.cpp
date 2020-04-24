@@ -48,7 +48,7 @@ const Graph2dVerificationWindowResultSetting& Graph2dVerificationSettingDialog::
 	m_setting.setActiveResult(activeResult());					// QString activeResult
 	m_setting.setActiveFile(activeFile());						// QString activeFile
 	m_setting.setActiveValue(activeValue());					// QString activeValue
-	m_setting.setActiveMeasuredData(measuredData());			//
+	m_setting.setActiveMeasuredData(measuredData());			// MeasuredData* activeMeasuredData
 	return m_setting;
 }
 

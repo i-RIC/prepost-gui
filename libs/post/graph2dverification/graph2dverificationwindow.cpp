@@ -5,11 +5,11 @@
 #include "graph2dverificationwindowdatamodel.h"
 #include "graph2dverificationwindowobjectbrowser.h"
 #include "graph2dverificationwindowprojectdataitem.h"
-#include "graph2dverificationwindowview.h"
+//#include "graph2dverificationwindowview.h"
 
-#include <guicore/postcontainer/postsolutioninfo.h>
+//#include <guicore/postcontainer/postsolutioninfo.h>
 
-#include <QDockWidget>
+//#include <QDockWidget>
 #include <QPainter>
 
 Graph2dVerificationWindow::Graph2dVerificationWindow(QWidget* parent, int index, Graph2dVerificationWindowProjectDataItem* pdi)

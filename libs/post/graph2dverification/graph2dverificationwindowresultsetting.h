@@ -96,84 +96,82 @@ public:
 	//	symXCross
 	//};
 
-	//{{
 	enum GraphType {
 		gtSWDvsValues,
 		gtSWDvsError,
 		gtMVvsCR,
 		gtMVvsError
 	};
-	//}}
 
-#if 0
-	static Qt::PenStyle getPenStyle(LineType lt);
-	static QwtSymbol::Style getSymbolStyle(SymbolType st);
-
-	static GridLocation_t getGridLocation(QString string);
-	static QString getGridLocationString(GridLocation_t location);
-
-	static GridLocation_t getGridLocationTranslated(QString string);
-	static QString getGridLocationStringTranslated(GridLocation_t location);
-#endif // 0
+//#if 0
+//	static Qt::PenStyle getPenStyle(LineType lt);
+//	static QwtSymbol::Style getSymbolStyle(SymbolType st);
+//
+//	static GridLocation_t getGridLocation(QString string);
+//	static QString getGridLocationString(GridLocation_t location);
+//
+//	static GridLocation_t getGridLocationTranslated(QString string);
+//	static QString getGridLocationStringTranslated(GridLocation_t location);
+//#endif // 0
 
 
 	//struct DataTypeInfo;
-#ifdef SAVE
-	class Setting
-	{
-
-	public:
-		Setting() {
-			m_name = "";
-			m_axisSide = asLeft;
-			m_customColor = Qt::black;
-			m_styleType = stLine;
-			m_lineType = ltSolidLine;
-			m_symbolType = symCircle;
-			m_lineWidth = 1;
-			m_barChart = false;
-		}
-		Setting(const QString& name) {
-			m_name = name;
-			m_axisSide = asLeft;
-			m_customColor = Qt::black;
-			m_styleType = stLine;
-			m_lineType = ltSolidLine;
-			m_symbolType = symCircle;
-			m_lineWidth = 1;
-			m_barChart = false;
-		}
-		void setupCurve(QwtPlotCustomCurve* curve) const;
-		const QString& name() const {return m_name;}
-		void setName(const QString& name) {m_name = name;}
-		AxisSide axisSide() const {return m_axisSide;}
-		void setAxisSide(AxisSide as) {m_axisSide = as;}
-		int lineWidth() const {return m_lineWidth;}
-		void setLineWidth(int width) {m_lineWidth = width;}
-		const QColor& customColor() const {return m_customColor;}
-		void setCustomColor(const QColor& c) {m_customColor = c;}
-		StyleType styleType() const {return m_styleType;}
-		void setStyleType(StyleType st) {m_styleType = st;}
-		LineType lineType() const {return m_lineType;}
-		void setLineType(LineType lt) {m_lineType = lt;}
-		SymbolType symbolType() const {return m_symbolType;}
-		void setSymbolType(SymbolType st) {m_symbolType = st;}
-		void setBarChart(bool bar) {m_barChart = bar;}
-		bool isBarChart() const {return m_barChart;}
-		void loadFromProjectMainFile(const QDomNode& node);
-		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
-
-	private:
-		QString m_name;
-		AxisSide m_axisSide;
-		int m_lineWidth;
-		QColor m_customColor;
-		StyleType m_styleType;
-		LineType m_lineType;
-		SymbolType m_symbolType;
-		bool m_barChart;
-	};
-#endif
+//#ifdef SAVE
+//	class Setting
+//	{
+//
+//	public:
+//		Setting() {
+//			m_name = "";
+//			m_axisSide = asLeft;
+//			m_customColor = Qt::black;
+//			m_styleType = stLine;
+//			m_lineType = ltSolidLine;
+//			m_symbolType = symCircle;
+//			m_lineWidth = 1;
+//			m_barChart = false;
+//		}
+//		Setting(const QString& name) {
+//			m_name = name;
+//			m_axisSide = asLeft;
+//			m_customColor = Qt::black;
+//			m_styleType = stLine;
+//			m_lineType = ltSolidLine;
+//			m_symbolType = symCircle;
+//			m_lineWidth = 1;
+//			m_barChart = false;
+//		}
+//		void setupCurve(QwtPlotCustomCurve* curve) const;
+//		const QString& name() const {return m_name;}
+//		void setName(const QString& name) {m_name = name;}
+//		AxisSide axisSide() const {return m_axisSide;}
+//		void setAxisSide(AxisSide as) {m_axisSide = as;}
+//		int lineWidth() const {return m_lineWidth;}
+//		void setLineWidth(int width) {m_lineWidth = width;}
+//		const QColor& customColor() const {return m_customColor;}
+//		void setCustomColor(const QColor& c) {m_customColor = c;}
+//		StyleType styleType() const {return m_styleType;}
+//		void setStyleType(StyleType st) {m_styleType = st;}
+//		LineType lineType() const {return m_lineType;}
+//		void setLineType(LineType lt) {m_lineType = lt;}
+//		SymbolType symbolType() const {return m_symbolType;}
+//		void setSymbolType(SymbolType st) {m_symbolType = st;}
+//		void setBarChart(bool bar) {m_barChart = bar;}
+//		bool isBarChart() const {return m_barChart;}
+//		void loadFromProjectMainFile(const QDomNode& node);
+//		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
+//
+//	private:
+//		QString m_name;
+//		AxisSide m_axisSide;
+//		int m_lineWidth;
+//		QColor m_customColor;
+//		StyleType m_styleType;
+//		LineType m_lineType;
+//		SymbolType m_symbolType;
+//		bool m_barChart;
+//	};
+//#endif
 
 #if 0 || 1
 	struct DataTypeInfo {
