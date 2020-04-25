@@ -4,7 +4,7 @@
 #include "geodatapolygongroupshpexporter.h"
 
 GeoDataPolygonGroupCreator::GeoDataPolygonGroupCreator(const QString& typeName) :
-	GeoDataCreator {typeName, tr("Polygon")}
+	GeoDataCreator {typeName, tr("Polygon Group")}
 {
 	importers().push_back(new GeoDataPolygonGroupShpImporter(this));
 	exporters().push_back(new GeoDataPolygonGroupShpExporter(this));
@@ -17,7 +17,7 @@ QString GeoDataPolygonGroupCreator::name(unsigned int index) const
 
 QString GeoDataPolygonGroupCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("Polygon%1")).arg(index);
+	return QString(tr("Polygon Group%1")).arg(index);
 }
 
 bool GeoDataPolygonGroupCreator::isCreatable() const

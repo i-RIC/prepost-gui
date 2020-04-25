@@ -52,7 +52,7 @@ GeoDataPolygonGroupAttributeBrowser::GeoDataPolygonGroupAttributeBrowser(QWidget
 	m_tableItemDelegate {new TableItemDelegate(this)},
 	m_updating {false}
 {
-	setWindowTitle(GeoDataPolygonGroupAttributeBrowser::tr("Polygons Attribute Browser"));
+	setWindowTitle(GeoDataPolygonGroupAttributeBrowser::tr("Polygon Group Attribute Browser"));
 
 	setWidget(m_mainWidget);
 	m_mainWidgetLayout->setMargin(0);

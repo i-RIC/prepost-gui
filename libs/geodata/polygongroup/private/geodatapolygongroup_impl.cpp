@@ -70,7 +70,7 @@ GeoDataPolygonGroup::Impl::Impl(GeoDataPolygonGroup* group) :
 	m_editTargetPolygonIndex {0},
 	m_dummyPolygonForMenu {new GeoDataPolygon(group->parent(), group->creator(), group->gridAttribute())},
 	m_rightClickingMenu {new QMenu()},
-	m_addAction {new QAction(GeoDataPolygonGroup::tr("&Add..."), group)},
+	m_addAction {new QAction(GeoDataPolygonGroup::tr("&Add New Polygon..."), group)},
 	m_selectAction {new QAction(GeoDataPolygonGroup::tr("&Select..."), group)},
 	m_mergeAction {new QAction(GeoDataPolygonGroup::tr("&Merge..."), group)},
 	m_deleteAction {new QAction(GeoDataPolygonGroup::tr("&Delete"), group)},
