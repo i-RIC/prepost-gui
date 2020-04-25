@@ -4,49 +4,49 @@
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="286"/>
+        <location filename="../geodatapolygongroup.cpp" line="287"/>
         <source>P&amp;olygon Group</source>
         <translation>ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="505"/>
+        <location filename="../geodatapolygongroup.cpp" line="508"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="528"/>
         <source>Edit name</source>
         <translation>名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="528"/>
         <source>Name:</source>
         <translation>名前:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="538"/>
+        <location filename="../geodatapolygongroup.cpp" line="542"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="587"/>
-        <location filename="../geodatapolygongroup.cpp" line="663"/>
+        <location filename="../geodatapolygongroup.cpp" line="591"/>
+        <location filename="../geodatapolygongroup.cpp" line="667"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="587"/>
+        <location filename="../geodatapolygongroup.cpp" line="591"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation>&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="663"/>
+        <location filename="../geodatapolygongroup.cpp" line="667"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>本当に選択されたポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="787"/>
-        <location filename="../geodatapolygongroup.cpp" line="830"/>
+        <location filename="../geodatapolygongroup.cpp" line="791"/>
+        <location filename="../geodatapolygongroup.cpp" line="834"/>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
     </message>
@@ -56,9 +56,13 @@
         <translation>ポリゴンのプロパティの編集</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
         <source>&amp;Add...</source>
-        <translation>追加 (&amp;A)...</translation>
+        <translation type="vanished">追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <source>&amp;Add New Polygon...</source>
+        <translation>新しいポリゴンの追加 (&amp;A)...</translation>
     </message>
     <message>
         <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
@@ -124,9 +128,13 @@
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser</name>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="55"/>
         <source>Polygons Attribute Browser</source>
-        <translation>ポリゴン属性ブラウザ</translation>
+        <translation type="vanished">ポリゴングループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="55"/>
+        <source>Polygon Group Attribute Browser</source>
+        <translation>ポリゴングループ属性ブラウザ</translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupattributebrowser.cpp" line="81"/>
@@ -193,14 +201,30 @@
         <translation type="vanished">ポリゴングループ%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
         <source>Polygon</source>
-        <translation>ポリゴン</translation>
+        <translation type="vanished">ポリゴン</translation>
+    </message>
+    <message>
+        <source>Polygons</source>
+        <translation type="vanished">ポリゴングループ</translation>
+    </message>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="vanished">ポリゴングループ%1</translation>
+    </message>
+    <message>
+        <source>Polygon%1</source>
+        <translation type="vanished">ポリゴン%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <source>Polygon Group</source>
+        <translation>ポリゴングループ</translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
-        <source>Polygon%1</source>
-        <translation>ポリゴン%1</translation>
+        <source>Polygon Group%1</source>
+        <translation>ポリゴングループ%1</translation>
     </message>
 </context>
 <context>
@@ -258,17 +282,25 @@
         <translation type="vanished">ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
         <source>ESRI Shapefile (Polygon)</source>
+        <translation type="vanished">ESRI シェープファイル (ポリゴン)</translation>
+    </message>
+    <message>
+        <source>ESRI Shapefile (Polygon) (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (ポリゴン) (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="112"/>
+        <source>ESRI Shapefile (Polygons)</source>
         <translation>ESRI シェープファイル (ポリゴン)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shapefile (Polygon) (*.shp)</source>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="121"/>
+        <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation>ESRI シェープファイル (ポリゴン) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="145"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -283,35 +315,35 @@
 - ポリゴンの線分が、同じ点を何度も通過している</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="151"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="153"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="177"/>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="181"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation>このファイルに含まれる形状はポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
     </message>
