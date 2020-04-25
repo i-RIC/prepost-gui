@@ -94,6 +94,7 @@ private:
 
 public:
 	friend class GeoDataPolygonGroupAttributeBrowser;
+	friend class GeoDataPolygonGroupShpImporter;
 };
 
 #endif // GEODATAPOLYGONGROUP_H

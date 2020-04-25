@@ -1,6 +1,8 @@
 #include "geodatapolygongroup.h"
+#include "geodatapolygongroupattributebrowser.h"
 #include "geodatapolygongrouppolygon.h"
 #include "geodatapolygongroupshpimporter.h"
+#include "private/geodatapolygongroup_impl.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
@@ -184,6 +186,8 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 	DBFClose(dbfh);
 
 	group->setupDataItem();
+	group->impl->m_attributeBrowser->update();
+	group->updateAttributeBrowser();
 	group->updateVtkObjects();
 	group->updateIndex();
 
