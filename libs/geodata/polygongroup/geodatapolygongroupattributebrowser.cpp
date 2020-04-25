@@ -168,5 +168,15 @@ void GeoDataPolygonGroupAttributeBrowser::handleItemClick(const QModelIndex& ind
 	bool isRef = m_group->gridAttribute()->isReferenceInformation();
 	if ((isRef && index.column() == 1) || (! isRef && index.column() == 2)) {
 		m_group->panTo(index.row());
+
+		QModelIndex left, right;
+		left = m_model->index(index.row(), 0);
+		if (isRef) {
+			right = m_model->index(index.row(), 1);
+		} else {
+			right = m_model->index(index.row(), 2);
+		}
+		QItemSelection sel(left, right);
+		m_selectionModel->select(sel, QItemSelectionModel::ClearAndSelect);
 	}
 }
