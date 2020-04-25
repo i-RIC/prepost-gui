@@ -298,7 +298,6 @@ void GeoDataPolygonGroup::showInitialDialog()
 {
 	// when added, add a new polygon, and show initial dialog
 	addPolygon();
-	impl->m_editTargetPolygon->showInitialDialog();
 }
 
 void GeoDataPolygonGroup::informSelection(PreProcessorGraphicsViewInterface* v)
@@ -511,6 +510,7 @@ void GeoDataPolygonGroup::addPolygon()
 	p->assignActorZValues(impl->m_depthRange);
 	p->informSelection(graphicsView());
 	p->updateActionStatus();
+	p->showInitialDialog();
 	connect(p, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
 
 	impl->m_selectedPolygons.clear();
