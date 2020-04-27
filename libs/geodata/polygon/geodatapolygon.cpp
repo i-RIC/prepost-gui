@@ -453,6 +453,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 					deletePolygon(true);
 				} else {
 					impl->m_mouseEventMode = meNormal;
+					updateActionStatus();
 					pushRenderCommand(new RemoveVertexCommand(impl->m_selectedPolygon->selectedVertexId(), this));
 				}
 			}
