@@ -107,6 +107,8 @@ void GeoDataPolygonGroupAttributeBrowser::update()
 	int count = pols.size();
 	if (selPol != nullptr) {++count;}
 	QItemSelection selection;
+	int maxcol = 2;
+	if (isRef) {maxcol = 1;}
 
 	m_model->setRowCount(count);
 
@@ -115,12 +117,12 @@ void GeoDataPolygonGroupAttributeBrowser::update()
 		auto p = pols.at(i);
 		setDataToModel(m_model, p, i, isRef);
 		if (m_group->isSelected(p)) {
-			selection.merge(QItemSelection(m_model->index(i, 0), m_model->index(i, 2)), QItemSelectionModel::Select);
+			selection.merge(QItemSelection(m_model->index(i, 0), m_model->index(i, maxcol)), QItemSelectionModel::Select);
 		}
 	}
 	if (selPol != nullptr) {
 		setDataToModel(m_model, selPol, selIdx, isRef);
-		selection.merge(QItemSelection(m_model->index(selIdx, 0), m_model->index(selIdx, 2)), QItemSelectionModel::Select);
+		selection.merge(QItemSelection(m_model->index(selIdx, 0), m_model->index(selIdx, maxcol)), QItemSelectionModel::Select);
 		offset = 1;
 	}
 
@@ -128,7 +130,7 @@ void GeoDataPolygonGroupAttributeBrowser::update()
 		auto p = pols.at(i);
 		setDataToModel(m_model, p, i + offset, isRef);
 		if (m_group->isSelected(p)) {
-			selection.merge(QItemSelection(m_model->index(i + offset, 0), m_model->index(i + offset, 2)), QItemSelectionModel::Select);
+			selection.merge(QItemSelection(m_model->index(i + offset, 0), m_model->index(i + offset, maxcol)), QItemSelectionModel::Select);
 		}
 	}
 	m_selectionModel->select(selection, QItemSelectionModel::ClearAndSelect);
