@@ -611,6 +611,7 @@ void GeoDataPolygonGroup::mergePolygonsAndPolygonGroups()
 		}
 		delete item;
 	}
+	updateIndex();
 	updateVtkObjects();
 	impl->updateSelectedPolygonsVtkObjects();
 	impl->updateAttributeBrowser();
