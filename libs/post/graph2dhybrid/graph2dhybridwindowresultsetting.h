@@ -13,6 +13,8 @@
 #include <cgnslib.h>
 
 class GeoDataPolyLine;
+class GeoDataPolyLineGroup;
+class GeoDataPolyLineGroupPolyLine;
 class Graph2dHybridWindowResultGroupDataItem;
 class Graph2dHybridWindowResultDataItem;
 class Graph2dWindowDataItem;
@@ -52,7 +54,8 @@ public:
 		xaI,
 		xaJ,
 		xaK,
-		xaPolyline
+		xaPolyLine,
+		xaPolyLineGroup
 	};
 
 	enum DimType {
@@ -106,43 +109,26 @@ public:
 	{
 
 	public:
-		Setting() {
-			m_name = "";
-			m_axisSide = asLeft;
-			m_customColor = Qt::black;
-			m_styleType = stLine;
-			m_lineType = ltSolidLine;
-			m_symbolType = symCircle;
-			m_lineWidth = 1;
-			m_barChart = false;
-		}
-		Setting(const QString& name) {
-			m_name = name;
-			m_axisSide = asLeft;
-			m_customColor = Qt::black;
-			m_styleType = stLine;
-			m_lineType = ltSolidLine;
-			m_symbolType = symCircle;
-			m_lineWidth = 1;
-			m_barChart = false;
-		}
+		Setting();
+		Setting(const QString& name);
+
 		void setupCurve(QwtPlotCustomCurve* curve) const;
-		const QString& name() const {return m_name;}
-		void setName(const QString& name) {m_name = name;}
-		AxisSide axisSide() const {return m_axisSide;}
-		void setAxisSide(AxisSide as) {m_axisSide = as;}
-		int lineWidth() const {return m_lineWidth;}
-		void setLineWidth(int width) {m_lineWidth = width;}
-		const QColor& customColor() const {return m_customColor;}
-		void setCustomColor(const QColor& c) {m_customColor = c;}
-		StyleType styleType() const {return m_styleType;}
-		void setStyleType(StyleType st) {m_styleType = st;}
-		LineType lineType() const {return m_lineType;}
-		void setLineType(LineType lt) {m_lineType = lt;}
-		SymbolType symbolType() const {return m_symbolType;}
-		void setSymbolType(SymbolType st) {m_symbolType = st;}
-		void setBarChart(bool bar) {m_barChart = bar;}
-		bool isBarChart() const {return m_barChart;}
+		const QString& name() const;
+		void setName(const QString& name);
+		AxisSide axisSide() const;
+		void setAxisSide(AxisSide as);
+		int lineWidth() const;
+		void setLineWidth(int width);
+		const QColor& customColor() const;
+		void setCustomColor(const QColor& c);
+		StyleType styleType() const;
+		void setStyleType(StyleType st);
+		LineType lineType() const;
+		void setLineType(LineType lt);
+		SymbolType symbolType() const;
+		void setSymbolType(SymbolType st);
+		void setBarChart(bool bar);
+		bool isBarChart() const;
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 
@@ -167,13 +153,7 @@ public:
 		GridLocation_t gridLocation;
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
-		bool operator==(const DataTypeInfo& info) {
-			if (dataType != info.dataType) {return false;}
-			if (dimension != info.dimension) {return false;}
-			if (zoneId != info.zoneId) {return false;}
-			if (zoneName != info.zoneName) {return false;}
-			return true;
-		}
+		bool operator==(const DataTypeInfo& info);
 	};
 
 	// constructor
@@ -187,91 +167,99 @@ public:
 	QString autoYAxisLabel(AxisSide as) const;
 	bool axisNeeded(AxisSide as);
 
-	TimeValueType timeValueType() const {return m_timeValueType;}
-	void setTimeValueType(TimeValueType t) {m_timeValueType = t;}
-	PositionValueType positionValueType() const {return m_positionValueType;}
-	void setPositionValueType(PositionValueType t) {m_positionValueType = t;}
-	bool xAxisReverse() const {return m_xAxisReverse;}
-	void setXAxisReverse(bool rev) {m_xAxisReverse = rev;}
-	const QString& xAxisLabel() const {return m_xAxisLabel;}
+	TimeValueType timeValueType() const;
+	void setTimeValueType(TimeValueType t);
+	PositionValueType positionValueType() const;
+	void setPositionValueType(PositionValueType t);
+	bool xAxisReverse() const;
+	void setXAxisReverse(bool rev);
+
+	const QString& xAxisLabel() const;
 	static QString autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm);
 	void setAutoXAxisLabel();
-	void setXAxisLabel(const QString& l) {m_xAxisLabel = l;}
+	void setXAxisLabel(const QString& l);
 	static QString autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::TimeValueType t);
 	static QString autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t);
 
-	bool yAxisLeftAutoRange() const {return m_yAxisLeftAutoRange;}
-	void setYAxisLeftAutoRange(bool a) {m_yAxisLeftAutoRange = a;}
-	double yAxisLeftMin() const {return m_yAxisLeftMin;}
-	void setYAxisLeftMin(double min) {m_yAxisLeftMin = min;}
-	double yAxisLeftMax() const {return m_yAxisLeftMax;}
-	void setYAxisLeftMax(double max) {m_yAxisLeftMax = max;}
-	QString yAxisLeftTitle() const {return m_yAxisLeftTitle;}
-	void setYAxisLeftTitle(const QString title) {m_yAxisLeftTitle = title;}
-	bool yAxisLeftReverse() const {return m_yAxisLeftReverse;}
-	void setYAxisLeftReverse(bool reverse) {m_yAxisLeftReverse = reverse;}
-	bool yAxisLeftLog() const {return m_yAxisLeftLog;}
-	void setYAxisLeftLog(bool log) {m_yAxisLeftLog = log;}
+	bool yAxisLeftAutoRange() const;
+	void setYAxisLeftAutoRange(bool a);
+	double yAxisLeftMin() const;
+	void setYAxisLeftMin(double min);
+	double yAxisLeftMax() const;
+	void setYAxisLeftMax(double max);
+	QString yAxisLeftTitle() const;
+	void setYAxisLeftTitle(const QString title);
+	bool yAxisLeftReverse() const;
+	void setYAxisLeftReverse(bool reverse);
+	bool yAxisLeftLog() const;
+	void setYAxisLeftLog(bool log);
 
-	bool yAxisRightAutoRange() const {return m_yAxisRightAutoRange;}
-	void setYAxisRightAutoRange(bool a) {m_yAxisRightAutoRange = a;}
-	double yAxisRightMin() const {return m_yAxisRightMin;}
-	void setYAxisRightMin(double min) {m_yAxisRightMin = min;}
-	double yAxisRightMax() const {return m_yAxisRightMax;}
-	void setYAxisRightMax(double max) {m_yAxisRightMax = max;}
-	QString yAxisRightTitle() const {return m_yAxisRightTitle;}
-	void setYAxisRightTitle(const QString title) {m_yAxisRightTitle = title;}
-	bool yAxisRightReverse() const {return m_yAxisRightReverse;}
-	void setYAxisRightReverse(bool reverse) {m_yAxisRightReverse = reverse;}
-	bool yAxisRightLog() const {return m_yAxisRightLog;}
-	void setYAxisRightLog(bool log) {m_yAxisRightLog = log;}
+	bool yAxisRightAutoRange() const;
+	void setYAxisRightAutoRange(bool a);
+	double yAxisRightMin() const;
+	void setYAxisRightMin(double min);
+	double yAxisRightMax() const;
+	void setYAxisRightMax(double max);
+	QString yAxisRightTitle() const;
+	void setYAxisRightTitle(const QString title);
+	bool yAxisRightReverse() const;
+	void setYAxisRightReverse(bool reverse);
+	bool yAxisRightLog() const;
+	void setYAxisRightLog(bool log);
 
-	bool xAxisAutoRange() const {return m_xAxisAutoRange;}
-	void setXAxisAutoRange(bool a) {m_xAxisAutoRange = a;}
-	double xAxisValueMin() const {return m_xAxisValueMin;}
-	void setXAxisValueMin(double min) {m_xAxisValueMin = min;}
-	double xAxisValueMax() const {return m_xAxisValueMax;}
-	void setXAxisValueMax(double max) {m_xAxisValueMax = max;}
-	bool xAxisLog() const {return m_xAxisLog;}
-	void setXAxisLog(bool log) {m_xAxisLog = log;}
+	bool xAxisAutoRange() const;
+	void setXAxisAutoRange(bool a);
+	double xAxisValueMin() const;
+	void setXAxisValueMin(double min);
+	double xAxisValueMax() const;
+	void setXAxisValueMax(double max);
+	bool xAxisLog() const;
+	void setXAxisLog(bool log);
 
-	const QString& title() {return m_title;}
-	void setTitle(const QString& t) {m_title = t;}
-	bool addIndicesToTitle() const {return m_addIndicesToTitle;}
-	void setAddIndicesToTitle(bool add) {m_addIndicesToTitle = add;}
+	const QString& title() const;
+	void setTitle(const QString& t);
+	bool addIndicesToTitle() const;
+	void setAddIndicesToTitle(bool add);
 	Graph2dHybridWindowResultSetting& operator=(const Graph2dHybridWindowResultSetting& s);
 	bool dataAvailable();
-	void setXAxisMode(XAxisMode m) {m_xAxisMode = m;}
-	XAxisMode xAxisMode() const {return m_xAxisMode;}
-	const QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > >& dataTypeInfoMap() {return m_dataTypeInfoMap;}
-	DataTypeInfo* targetDataTypeInfo() const {return m_targetDataTypeInfo;}
-	void setTargetDataTypeInfo(DataTypeInfo* type) {m_targetDataTypeInfo = type;}
-	QList<Setting>& targetDatas() {return m_targetDatas;}
-	const QList<Setting>& targetDatas() const {return m_targetDatas;}
+	void setXAxisMode(XAxisMode m);
+	XAxisMode xAxisMode() const;
+	const QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > >& dataTypeInfoMap();
+	DataTypeInfo* targetDataTypeInfo() const;
+	void setTargetDataTypeInfo(DataTypeInfo* type);
+	QList<Setting>& targetDatas();
+	const QList<Setting>& targetDatas() const;
 
-	const QList<GeoDataPolyLine*>& polyLines() const {return m_polyLines;}
+	const QList<GeoDataPolyLine*>& polyLines() const;
+	const QList<GeoDataPolyLineGroup*>& polyLineGroups() const;
 
-	const GeoDataPolyLine* targetPolyLine() const {return m_targetPolyLine;}
-	void setTargetPolyLine(const GeoDataPolyLine* polyline) {m_targetPolyLine = polyline;}
+	const GeoDataPolyLine* targetPolyLine() const;
+	void setTargetPolyLine(const GeoDataPolyLine* polyline);
+
+	const GeoDataPolyLineGroupPolyLine* targetPolyLineGroupPolyLine() const;
+	void setTargetPolyLineGroupPolyLine(const GeoDataPolyLineGroupPolyLine* line);
 
 	QColor autoColor(int index) const ;
-	int gridI() const {return m_I;}
-	void setGridI(int i) {m_I = i;}
-	int gridJ() const {return m_J;}
-	void setGridJ(int j) {m_J = j;}
-	int gridK() const {return m_K;}
-	void setGridK(int k) {m_K = k;}
-	int gridIndex() const {return m_index;}
-	void setGridIndex(int i) {m_index = i;}
+	int gridI() const;
+	void setGridI(int i);
+	int gridJ() const;
+	void setGridJ(int j);
+	int gridK() const;
+	void setGridK(int k);
+	int gridIndex() const;
+	void setGridIndex(int i);
 
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
+
+	void setupPolyLineGroups();
+	void setupPolyLines();
 
 private:
 	static DimType dimTypeFromDataType(DataType dt);
 	void setupMap();
 	static QList<GeoDataPolyLine*> polyLines(const PostSolutionInfo* info);
-	void setupPolyLines();
+	static QList<GeoDataPolyLineGroup*> polyLineGroups(const PostSolutionInfo* info);
 
 	QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > > m_dataTypeInfoMap;
 	QList<DataTypeInfo> m_dataTypeInfos;
@@ -280,7 +268,9 @@ private:
 	DataTypeInfo* m_targetDataTypeInfo;
 	QList<Setting> m_targetDatas;
 	QList<GeoDataPolyLine*> m_polyLines;
+	QList<GeoDataPolyLineGroup*> m_polyLineGroups;
 	const GeoDataPolyLine* m_targetPolyLine;
+	const GeoDataPolyLineGroupPolyLine* m_targetPolyLineGroupPolyLine;
 	const PostSolutionInfo* m_postSolutionInfo;
 
 	QString m_title;

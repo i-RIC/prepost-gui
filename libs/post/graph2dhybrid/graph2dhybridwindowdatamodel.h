@@ -49,6 +49,7 @@ public slots:
 	void copyCalculationResult();
 	void exportCsv();
 	void targetPolyLineDestroyed();
+	void targetPolyLineGroupDestroyed();
 	void applySettingsSlot();
 	
 private slots:

@@ -20,7 +20,6 @@ Graph2dHybridWindowDataModel* Graph2dHybridWindowDataItem::dataModel()
 	return dynamic_cast<Graph2dHybridWindowDataModel*>(Graph2dWindowDataItem::dataModel());
 }
 
-
 void Graph2dHybridWindowDataItem::buildData(
 	const QVector<double>& xvals, const QVector<double>& yvals,
 	const Graph2dHybridWindowResultSetting& s1,

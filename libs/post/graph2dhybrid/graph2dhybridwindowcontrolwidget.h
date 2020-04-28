@@ -46,6 +46,7 @@ signals:
 	void indexValueChanged(int index);
 
 private:
+	bool m_setupFinished;
 	Ui::Graph2dHybridWindowControlWidget* ui;
 };
 

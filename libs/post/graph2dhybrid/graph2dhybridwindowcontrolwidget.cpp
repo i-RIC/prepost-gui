@@ -9,6 +9,7 @@
 
 Graph2dHybridWindowControlWidget::Graph2dHybridWindowControlWidget(QWidget* parent) :
 	QWidget(parent),
+	m_setupFinished {false},
 	ui(new Ui::Graph2dHybridWindowControlWidget)
 {
 	ui->setupUi(this);
@@ -39,11 +40,21 @@ Graph2dHybridWindowControlWidget::~Graph2dHybridWindowControlWidget()
 
 void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResultSetting& setting, int dim[4])
 {
+	static Graph2dHybridWindowResultSetting previousSetting;
+
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = setting.targetDataTypeInfo();
 	ui->iSlider->setRange(1, dim[0]);
 	ui->jSlider->setRange(1, dim[1]);
 	ui->kSlider->setRange(1, dim[2]);
 	ui->indexSlider->setRange(1, dim[3]);
+
+	bool sametoPrev = true;
+	if (m_setupFinished) {
+		auto prevTI = previousSetting.targetDataTypeInfo();
+		auto ti = setting.targetDataTypeInfo();
+		sametoPrev = (prevTI->dataType == ti->dataType && previousSetting.xAxisMode() == setting.xAxisMode());
+	}
+	if (m_setupFinished && sametoPrev) {return;}
 
 	ui->iLabel->hide();
 	ui->iSlider->hide();
@@ -105,7 +116,7 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 	case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-		if (setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaPolyline) {
+		if (setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaPolyLine && setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
 			ui->indexLabel->show();
 			ui->indexSlider->show();
 		}
@@ -114,6 +125,9 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 	adjustSize();
 	updateGeometry();
 	fitSize();
+
+	previousSetting = setting;
+	m_setupFinished = true;
 }
 
 

@@ -3,11 +3,8 @@
 #include "geodatapolylineimporter.h"
 #include "geodatapolylineshapeexporter.h"
 
-#include <guibase/irictoolbar.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 
-#include <QAction>
-#include <QIcon>
 #include <QStandardItem>
 
 GeoDataPolyLineCreator::GeoDataPolyLineCreator(const QString& typeName) :

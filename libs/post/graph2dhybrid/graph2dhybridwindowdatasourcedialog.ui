@@ -33,6 +33,16 @@
       <widget class="QComboBox" name="xAxisComboBox"/>
      </item>
      <item>
+      <widget class="QLabel" name="polyLineGroupLabel">
+       <property name="text">
+        <string>Polyline Group:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="polyLineGroupComboBox"/>
+     </item>
+     <item>
       <widget class="QLabel" name="polyLineLabel">
        <property name="text">
         <string>Polyline:</string>
@@ -40,7 +50,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="polyLineComboBox"/>
+      <widget class="QComboBox" name="polyLineComboBox">
+       <property name="sizeAdjustPolicy">
+        <enum>QComboBox::AdjustToContents</enum>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer name="horizontalSpacer">

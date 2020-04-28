@@ -1,12 +1,15 @@
 #include "datamodel/graph2dhybridwindowbaseiterativeresultdataitem.h"
 #include "datamodel/graph2dhybridwindowgridijkresultdataitem.h"
 #include "datamodel/graph2dhybridwindowgridpointresultdataitem.h"
+#include "datamodel/graph2dhybridwindowgridpolylinegrouppolylineresultdataitem.h"
 #include "datamodel/graph2dhybridwindowgridpolylineresultdataitem.h"
 #include "datamodel/graph2dhybridwindowresultgroupdataitem.h"
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowresultsetting.h"
 
 #include <geodata/polyline/geodatapolyline.h>
+#include <geodata/polylinegroup/geodatapolylinegroup.h>
+#include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
@@ -49,6 +52,112 @@
 
 #include <stdexcept>
 
+Graph2dHybridWindowResultSetting::Setting::Setting() :
+	m_name {""},
+	m_axisSide {asLeft},
+	m_customColor {Qt::black},
+	m_styleType {stLine},
+	m_lineType {ltSolidLine},
+	m_lineWidth {1},
+	m_symbolType {symCircle},
+	m_barChart {false}
+{}
+
+Graph2dHybridWindowResultSetting::Setting::Setting(const QString& name) :
+	Setting()
+{
+	m_name = name;
+}
+
+const QString& Graph2dHybridWindowResultSetting::Setting::name() const
+{
+	return m_name;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setName(const QString& name)
+{
+	m_name = name;
+}
+
+Graph2dHybridWindowResultSetting::AxisSide Graph2dHybridWindowResultSetting::Setting::axisSide() const
+{
+	return m_axisSide;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setAxisSide(AxisSide as)
+{
+	m_axisSide = as;
+}
+
+int Graph2dHybridWindowResultSetting::Setting::lineWidth() const
+{
+	return m_lineWidth;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setLineWidth(int width)
+{
+	m_lineWidth = width;
+}
+
+const QColor& Graph2dHybridWindowResultSetting::Setting::customColor() const
+{
+	return m_customColor;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setCustomColor(const QColor& c)
+{
+	m_customColor = c;
+}
+
+Graph2dHybridWindowResultSetting::StyleType Graph2dHybridWindowResultSetting::Setting::styleType() const
+{
+	return m_styleType;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setStyleType(StyleType st)
+{
+	m_styleType = st;
+}
+
+Graph2dHybridWindowResultSetting::LineType Graph2dHybridWindowResultSetting::Setting::lineType() const
+{
+	return m_lineType;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setLineType(LineType lt)
+{
+	m_lineType = lt;
+}
+
+Graph2dHybridWindowResultSetting::SymbolType Graph2dHybridWindowResultSetting::Setting::symbolType() const
+{
+	return m_symbolType;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setSymbolType(SymbolType st)
+{
+	m_symbolType = st;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setBarChart(bool bar)
+{
+	m_barChart = bar;
+}
+
+bool Graph2dHybridWindowResultSetting::Setting::isBarChart() const
+{
+	return m_barChart;
+}
+
+bool Graph2dHybridWindowResultSetting::DataTypeInfo::operator==(const DataTypeInfo& info)
+{
+	if (dataType != info.dataType) {return false;}
+	if (dimension != info.dimension) {return false;}
+	if (zoneId != info.zoneId) {return false;}
+	if (zoneName != info.zoneName) {return false;}
+	return true;
+}
+
 Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
 {
 	m_xAxisMode = xaTime;
@@ -59,6 +168,7 @@ Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
 
 	m_targetDataTypeInfo = nullptr;
 	m_targetPolyLine = nullptr;
+	m_targetPolyLineGroupPolyLine = nullptr;
 	m_postSolutionInfo = nullptr;
 
 	m_colorSource = new ColorSource(nullptr);
@@ -220,6 +330,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 
 	setupMap();
 	setupPolyLines();
+	setupPolyLineGroups();
 	return (m_dataTypeInfos.size() > 0);
 }
 
@@ -309,8 +420,7 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	}
 	m_dataTypeInfoMap.insert(xaK, tmpmap);
 
-	// for Polyline
-	if (m_polyLines.size() == 0) return;
+	// for Polyline and Polyline group
 	tmpmap.clear();
 	tmpmap.insert(dimBase, emptylist);
 	tmpmap.insert(dim1D, emptylist);
@@ -338,40 +448,20 @@ void Graph2dHybridWindowResultSetting::setupMap()
 			;
 		}
 	}
-	m_dataTypeInfoMap.insert(xaPolyline, tmpmap);
-
-	/*
-		// for index
-		tmpmap.clear();
-		tmpmap.insert(dimBase, emptylist);
-		tmpmap.insert(dim1D, emptylist);
-		tmpmap.insert(dim2D, emptylist);
-		tmpmap.insert(dim3D, emptylist);
-
-		for (int i = 0; i < m_dataTypeInfos.count(); ++i){
-			DataTypeInfo& di = m_dataTypeInfos[i];
-			DimType dt;
-			switch (di.dataType){
-			case dtDim1DUnstructured:
-			case dtDim2DUnstructured:
-			case dtDim3DUnstructured:
-				dt = dimTypeFromDataType(di.dataType);
-				tmpmap[dt].append(&di);
-				break;
-			default:
-				;
-			}
-		}
-		m_dataTypeInfoMap.insert(xaIndex, tmpmap);
-	*/
+	if (m_polyLines.size() > 0) {
+		m_dataTypeInfoMap.insert(xaPolyLine, tmpmap);
+	}
+	if (m_polyLineGroups.size() > 0) {
+		m_dataTypeInfoMap.insert(xaPolyLineGroup, tmpmap);
+	}
 }
 
 void Graph2dHybridWindowResultSetting::setupPolyLines()
 {
 	m_polyLines.clear();
-	if (m_postSolutionInfo) {
-		m_polyLines = polyLines(m_postSolutionInfo);
-	}
+	if (! m_postSolutionInfo) {return;}
+
+	m_polyLines = polyLines(m_postSolutionInfo);
 }
 
 QList<GeoDataPolyLine*> Graph2dHybridWindowResultSetting::polyLines(const PostSolutionInfo* info)
@@ -391,6 +481,36 @@ QList<GeoDataPolyLine*> Graph2dHybridWindowResultSetting::polyLines(const PostSo
 		if (polyLine == nullptr) {continue;}
 
 		ret.push_back(polyLine);
+	}
+	return ret;
+}
+
+void Graph2dHybridWindowResultSetting::setupPolyLineGroups()
+{
+	m_polyLineGroups.clear();
+	if (! m_postSolutionInfo) {return;}
+
+	m_polyLineGroups = polyLineGroups(m_postSolutionInfo);
+}
+
+QList<GeoDataPolyLineGroup*> Graph2dHybridWindowResultSetting::polyLineGroups(const PostSolutionInfo* info)
+{
+	auto preModel = info->iricMainWindow()->preProcessorWindow()->dataModel();
+	if (preModel->geoDataTopDataItem() == nullptr) {
+		// Post Only mode
+		return QList<GeoDataPolyLineGroup*>();
+	}
+	auto refGroup = preModel->geoDataTopDataItem()->groupDataItem(std::string("_referenceinformation"));
+
+	QList<GeoDataPolyLineGroup*> ret;
+
+	for (auto item : refGroup->geoDatas()) {
+		auto data = item->geoData();
+		auto g = dynamic_cast<GeoDataPolyLineGroup*>(data);
+		if (g == nullptr) {continue;}
+		if (g->allData().size() == 0) {continue;}
+
+		ret.push_back(g);
 	}
 	return ret;
 }
@@ -431,26 +551,27 @@ QList<Graph2dWindowDataItem*> Graph2dHybridWindowResultSetting::setupItems(Graph
 	if (m_xAxisMode == xaTime) {
 		if (m_targetDataTypeInfo->dataType == Graph2dHybridWindowResultSetting::dtBaseIterative) {
 			for (int i = 0; i < m_targetDatas.count(); ++i) {
-				Graph2dHybridWindowBaseIterativeResultDataItem* item = new Graph2dHybridWindowBaseIterativeResultDataItem(m_targetDatas[i], i, gItem);
-				ret.append(item);
+				ret.append(new Graph2dHybridWindowBaseIterativeResultDataItem(m_targetDatas[i], i, gItem));
 			}
 		} else {
 			for (int i = 0; i < m_targetDatas.count(); ++i) {
-				Graph2dHybridWindowGridPointResultDataItem* item = new Graph2dHybridWindowGridPointResultDataItem(m_targetDatas[i], i, gItem);
-				ret.append(item);
+				ret.append(new Graph2dHybridWindowGridPointResultDataItem(m_targetDatas[i], i, gItem));
 			}
 		}
-	} else if (m_xAxisMode == xaPolyline) {
+	} else if (m_xAxisMode == xaPolyLine) {
 		// xaxis is distance (using a polyline)
 		for (int i = 0; i < m_targetDatas.count(); ++i) {
-			Graph2dHybridWindowGridPolylineResultDataItem* item = new Graph2dHybridWindowGridPolylineResultDataItem(m_targetDatas[i], i, gItem);
-			ret.append(item);
+			ret.append(new Graph2dHybridWindowGridPolylineResultDataItem(m_targetDatas[i], i, gItem));
+		}
+	} else if (m_xAxisMode == xaPolyLineGroup) {
+		// xaxis is distance (using a polyline)
+		for (int i = 0; i < m_targetDatas.count(); ++i) {
+			ret.append(new Graph2dHybridWindowGridPolyLineGroupPolyLineResultDataItem(m_targetDatas[i], i, gItem));
 		}
 	} else {
 		// xaxis is I or J or K
 		for (int i = 0; i < m_targetDatas.count(); ++i) {
-			Graph2dHybridWindowGridIJKResultDataItem* item = new Graph2dHybridWindowGridIJKResultDataItem(m_targetDatas[i], i, gItem);
-			ret.append(item);
+			ret.append(new Graph2dHybridWindowGridIJKResultDataItem(m_targetDatas[i], i, gItem));
 		}
 	}
 	return ret;
@@ -475,6 +596,40 @@ bool Graph2dHybridWindowResultSetting::axisNeeded(AxisSide as)
 		if (s.axisSide() == as) {return true;}
 	}
 	return false;
+}
+
+Graph2dHybridWindowResultSetting::TimeValueType Graph2dHybridWindowResultSetting::timeValueType() const
+{
+	return m_timeValueType;
+}
+
+void Graph2dHybridWindowResultSetting::setTimeValueType(TimeValueType t)
+{
+	m_timeValueType = t;
+}
+
+Graph2dHybridWindowResultSetting::PositionValueType Graph2dHybridWindowResultSetting::positionValueType() const
+{
+	return m_positionValueType;
+}
+
+void Graph2dHybridWindowResultSetting::setPositionValueType(PositionValueType t)
+{
+	m_positionValueType = t;
+}
+
+bool Graph2dHybridWindowResultSetting::xAxisReverse() const
+{
+	return m_xAxisReverse;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisReverse(bool rev)
+{
+	m_xAxisReverse = rev;
+}
+
+const QString& Graph2dHybridWindowResultSetting::xAxisLabel() const{
+	return m_xAxisLabel;
 }
 
 Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(const Graph2dHybridWindowResultSetting& s)
@@ -505,7 +660,9 @@ Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(co
 	m_dataTypeInfos = s.m_dataTypeInfos;
 	m_targetDatas = s.m_targetDatas;
 	m_polyLines = s.m_polyLines;
+	m_polyLineGroups = s.m_polyLineGroups;
 	m_targetPolyLine = s.m_targetPolyLine;
+	m_targetPolyLineGroupPolyLine = s.m_targetPolyLineGroupPolyLine;
 	m_postSolutionInfo = s.m_postSolutionInfo;
 	setupMap();
 	setupPolyLines();
@@ -540,9 +697,114 @@ bool Graph2dHybridWindowResultSetting::dataAvailable()
 	return false;
 }
 
+void Graph2dHybridWindowResultSetting::setXAxisMode(XAxisMode m)
+{
+	m_xAxisMode = m;
+}
+
+Graph2dHybridWindowResultSetting::XAxisMode Graph2dHybridWindowResultSetting::xAxisMode() const
+{
+	return m_xAxisMode;
+}
+
+const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& Graph2dHybridWindowResultSetting::dataTypeInfoMap()
+{
+	return m_dataTypeInfoMap;
+}
+
+Graph2dHybridWindowResultSetting::DataTypeInfo* Graph2dHybridWindowResultSetting::targetDataTypeInfo() const
+{
+	return m_targetDataTypeInfo;
+}
+
+void Graph2dHybridWindowResultSetting::setTargetDataTypeInfo(Graph2dHybridWindowResultSetting::DataTypeInfo* type)
+{
+	m_targetDataTypeInfo = type;
+}
+
+QList<Graph2dHybridWindowResultSetting::Setting>& Graph2dHybridWindowResultSetting::targetDatas()
+{
+	return m_targetDatas;
+}
+
+const QList<Graph2dHybridWindowResultSetting::Setting>& Graph2dHybridWindowResultSetting::targetDatas() const
+{
+	return m_targetDatas;
+}
+
+const QList<GeoDataPolyLine*>& Graph2dHybridWindowResultSetting::polyLines() const
+{
+	return m_polyLines;
+}
+
+const QList<GeoDataPolyLineGroup*>& Graph2dHybridWindowResultSetting::polyLineGroups() const
+{
+	return m_polyLineGroups;
+}
+
+const GeoDataPolyLine* Graph2dHybridWindowResultSetting::targetPolyLine() const
+{
+	return m_targetPolyLine;
+}
+
+void Graph2dHybridWindowResultSetting::setTargetPolyLine(const GeoDataPolyLine* polyline)
+{
+	m_targetPolyLine = polyline;
+}
+
+const GeoDataPolyLineGroupPolyLine* Graph2dHybridWindowResultSetting::targetPolyLineGroupPolyLine() const
+{
+	return m_targetPolyLineGroupPolyLine;
+}
+
+void Graph2dHybridWindowResultSetting::setTargetPolyLineGroupPolyLine(const GeoDataPolyLineGroupPolyLine* line)
+{
+	m_targetPolyLineGroupPolyLine = line;
+}
+
 QColor Graph2dHybridWindowResultSetting::autoColor(int index) const
 {
 	return m_colorSource->getColor(index);
+}
+
+int Graph2dHybridWindowResultSetting::gridI() const
+{
+	return m_I;
+}
+
+void Graph2dHybridWindowResultSetting::setGridI(int i)
+{
+	m_I = i;
+}
+
+int Graph2dHybridWindowResultSetting::gridJ() const
+{
+	return m_J;
+}
+
+void Graph2dHybridWindowResultSetting::setGridJ(int j)
+{
+	m_J = j;
+}
+
+int Graph2dHybridWindowResultSetting::gridK() const
+{
+	return m_K;
+}
+
+void Graph2dHybridWindowResultSetting::setGridK(int k)
+{
+	m_K = k;
+}
+
+int Graph2dHybridWindowResultSetting::gridIndex() const
+{
+	return m_index;
+}
+
+void Graph2dHybridWindowResultSetting::setGridIndex(int i)
+{
+	m_index = i;
 }
 
 QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm)
@@ -560,8 +822,11 @@ QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResu
 	case Graph2dHybridWindowResultSetting::xaK:
 		return Graph2dHybridWindow::tr("K");
 		break;
-	case Graph2dHybridWindowResultSetting::xaPolyline:
+	case Graph2dHybridWindowResultSetting::xaPolyLine:
 		return Graph2dHybridWindow::tr("Polyline");
+		break;
+	case Graph2dHybridWindowResultSetting::xaPolyLineGroup:
+		return Graph2dHybridWindow::tr("Polyline Group");
 		break;
 	}
 	return "";
@@ -576,6 +841,11 @@ void Graph2dHybridWindowResultSetting::setAutoXAxisLabel()
 		xAxisLabel = autoXAxisPositionLabel(m_xAxisMode, m_positionValueType);
 	}
 	m_xAxisLabel = xAxisLabel;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisLabel(const QString& l)
+{
+	m_xAxisLabel = l;
 }
 
 QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode /*mode*/, Graph2dHybridWindowResultSetting::TimeValueType t)
@@ -607,6 +877,185 @@ QString Graph2dHybridWindowResultSetting::autoXAxisPositionLabel(Graph2dHybridWi
 		}
 	}
 	return "";
+}
+
+bool Graph2dHybridWindowResultSetting::yAxisLeftAutoRange() const
+{
+	return m_yAxisLeftAutoRange;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisLeftAutoRange(bool a)
+{
+	m_yAxisLeftAutoRange = a;
+}
+
+double Graph2dHybridWindowResultSetting::yAxisLeftMin() const
+{
+	return m_yAxisLeftMin;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisLeftMin(double min)
+{
+	m_yAxisLeftMin = min;
+}
+
+double Graph2dHybridWindowResultSetting::yAxisLeftMax() const
+{
+	return m_yAxisLeftMax;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisLeftMax(double max)
+{
+	m_yAxisLeftMax = max;
+}
+
+QString Graph2dHybridWindowResultSetting::yAxisLeftTitle() const
+{
+	return m_yAxisLeftTitle;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisLeftTitle(const QString title)
+{
+	m_yAxisLeftTitle = title;
+}
+
+bool Graph2dHybridWindowResultSetting::yAxisLeftReverse() const
+{
+	return m_yAxisLeftReverse;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisLeftReverse(bool reverse)
+{
+	m_yAxisLeftReverse = reverse;
+}
+
+bool Graph2dHybridWindowResultSetting::yAxisLeftLog() const{
+	return m_yAxisLeftLog;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisLeftLog(bool log)
+{
+	m_yAxisLeftLog = log;
+}
+
+bool Graph2dHybridWindowResultSetting::yAxisRightAutoRange() const
+{
+	return m_yAxisRightAutoRange;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisRightAutoRange(bool a)
+{
+	m_yAxisRightAutoRange = a;
+}
+
+double Graph2dHybridWindowResultSetting::yAxisRightMin() const
+{
+	return m_yAxisRightMin;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisRightMin(double min)
+{
+	m_yAxisRightMin = min;
+}
+
+double Graph2dHybridWindowResultSetting::yAxisRightMax() const
+{
+	return m_yAxisRightMax;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisRightMax(double max)
+{
+	m_yAxisRightMax = max;
+}
+
+QString Graph2dHybridWindowResultSetting::yAxisRightTitle() const
+{
+	return m_yAxisRightTitle;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisRightTitle(const QString title)
+{
+	m_yAxisRightTitle = title;
+}
+
+bool Graph2dHybridWindowResultSetting::yAxisRightReverse() const
+{
+	return m_yAxisRightReverse;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisRightReverse(bool reverse)
+{
+	m_yAxisRightReverse = reverse;
+}
+
+bool Graph2dHybridWindowResultSetting::yAxisRightLog() const
+{
+	return m_yAxisRightLog;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisRightLog(bool log)
+{
+	m_yAxisRightLog = log;
+}
+
+bool Graph2dHybridWindowResultSetting::xAxisAutoRange() const
+{
+	return m_xAxisAutoRange;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisAutoRange(bool a)
+{
+	m_xAxisAutoRange = a;
+}
+
+double Graph2dHybridWindowResultSetting::xAxisValueMin() const
+{
+	return m_xAxisValueMin;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisValueMin(double min)
+{
+	m_xAxisValueMin = min;
+}
+
+double Graph2dHybridWindowResultSetting::xAxisValueMax() const
+{
+	return m_xAxisValueMax;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisValueMax(double max)
+{
+	m_xAxisValueMax = max;
+}
+
+bool Graph2dHybridWindowResultSetting::xAxisLog() const
+{
+	return m_xAxisLog;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisLog(bool log)
+{
+	m_xAxisLog = log;
+}
+
+const QString& Graph2dHybridWindowResultSetting::title() const
+{
+	return m_title;
+}
+
+void Graph2dHybridWindowResultSetting::setTitle(const QString& t)
+{
+	m_title = t;
+}
+
+bool Graph2dHybridWindowResultSetting::addIndicesToTitle() const
+{
+	return m_addIndicesToTitle;
+}
+
+void Graph2dHybridWindowResultSetting::setAddIndicesToTitle(bool add)
+{
+	m_addIndicesToTitle = add;
 }
 
 Qt::PenStyle Graph2dHybridWindowResultSetting::getPenStyle(LineType lt)
@@ -822,6 +1271,24 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 		if (name == "nullptr") Q_ASSERT(m_targetPolyLine == nullptr);
 		Q_ASSERT(m_targetPolyLine == nullptr || name != "nullptr");
 	}
+
+	m_targetPolyLineGroupPolyLine = nullptr;
+	QDomNode targetPolyLineGroupPolyLineNode = iRIC::getChildNode(node, "TargetPolyLineGroupPolyLine");
+	if (! targetPolyLineGroupPolyLineNode.isNull()) {
+		auto e = targetPolyLineGroupPolyLineNode.toElement();
+		QString groupName = e.attribute("groupName", "nullptr");
+		QString id = e.attribute("id", "nullptr");
+		for (auto &g : m_polyLineGroups) {
+			if (g->name() == groupName) {
+				for (auto l : g->allData()) {
+					if (l->id() == id) {
+						m_targetPolyLineGroupPolyLine = dynamic_cast<GeoDataPolyLineGroupPolyLine*> (l);
+						break;
+					}
+				}
+			}
+		}
+	}
 }
 
 void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
@@ -877,6 +1344,16 @@ void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& w
 		writer.writeAttribute("name", "nullptr");
 	} else {
 		writer.writeAttribute("name", m_targetPolyLine->name());
+	}
+	writer.writeEndElement();
+
+	writer.writeStartElement("TargetPolyLineGroupPolyLine");
+	if (m_targetPolyLineGroupPolyLine == nullptr) {
+		writer.writeAttribute("groupName", "nullptr");
+		writer.writeAttribute("id", "nullptr");
+	} else {
+		writer.writeAttribute("groupName", m_targetPolyLineGroupPolyLine->group()->name());
+		writer.writeAttribute("id", m_targetPolyLineGroupPolyLine->id());
 	}
 	writer.writeEndElement();
 }

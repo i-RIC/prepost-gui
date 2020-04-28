@@ -6,7 +6,6 @@
 #include "datamodel/graph2dhybridwindowresultdataitem.h"
 #include "datamodel/graph2dhybridwindowresultgroupdataitem.h"
 #include "datamodel/graph2dhybridwindowrootdataitem.h"
-#include "geodata/polyline/geodatapolyline.h"
 #include "graph2dhybridsettingdialog.h"
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowcontinuousexportdialog.h"
@@ -22,6 +21,8 @@
 #include <qwt_plot_marker.h>
 #include <qwt_scale_engine.h>
 
+#include <geodata/polyline/geodatapolyline.h>
+#include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
 #include <gridcreatingcondition/riversurvey/gridcreatingconditionriversurvey.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
@@ -493,7 +494,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 			dataCount = (m_jMax - m_jMin + 1);
 		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyline) {
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLine) {
 			dataCount = 1;
 		}
 		break;
@@ -617,7 +618,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 					}
 					++ imageIndex;
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyline) {
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLine) {
 				filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 				auto lineName = m_setting.targetPolyLine()->caption();
 				filename.append(QString("_Time=%1_%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(lineName));
@@ -627,7 +628,16 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 					return;
 				}
 				++ imageIndex;
-				break;
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+				filename = QDir(folder).absoluteFilePath(m_csvPrefix);
+				auto lineName = m_setting.targetPolyLineGroupPolyLine()->name();
+				filename.append(QString("_Time=%1_%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(lineName));
+				ok = exportCsv(filename);
+				if (! ok) {
+					showErrorMessage(filename);
+					return;
+				}
+				++ imageIndex;
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -1259,6 +1269,9 @@ void Graph2dHybridWindowDataModel::dataSourceSetting()
 	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowImportDataGroupDataItem* gItem = rItem->importDataGroupItem();
 
+	m_setting.setupPolyLineGroups();
+	m_setting.setupPolyLines();
+
 	dialog->setMainWindow(projectData()->mainWindow());
 	dialog->setSetting(m_setting);
 	dialog->setImportData(gItem);
@@ -1593,6 +1606,13 @@ void Graph2dHybridWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& wri
 }
 
 void Graph2dHybridWindowDataModel::targetPolyLineDestroyed()
+{
+	Graph2dHybridWindowProjectDataItem* item = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(parent());
+	QWidget* widget = dynamic_cast<QWidget*>(item->window()->parent());
+	widget->close();
+}
+
+void Graph2dHybridWindowDataModel::targetPolyLineGroupDestroyed()
 {
 	Graph2dHybridWindowProjectDataItem* item = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(parent());
 	QWidget* widget = dynamic_cast<QWidget*>(item->window()->parent());

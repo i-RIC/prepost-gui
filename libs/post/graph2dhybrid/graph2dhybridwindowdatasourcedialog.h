@@ -17,6 +17,9 @@ class QListWidget;
 class Graph2dHybridWindowImportDataGroupDataItem;
 class Graph2dHybridWindowImportDataDataItem;
 
+class QComboBox;
+class QLabel;
+
 class Graph2dHybridWindowDataSourceDialog : public QDialog
 {
 	Q_OBJECT
@@ -34,21 +37,23 @@ public slots:
 	void reject() override;
 
 private slots:
-	void changeAxis(int index);
-	void changePointComboBox(int index);
-	void changeOneDimComboBox(int index);
-	void changeTwoDimComboBox(int index);
-	void changeThreeDimComboBox(int index);
+	void handleXAxisComboBoxChange(int index);
+	void handlePolyLineGroupComboBoxChange(int index);
 
-	void changeOneDimGridLocationComboBox(int index);
-	void changeTwoDimGridLocationComboBox(int index);
-	void changeThreeDimGridLocationComboBox(int index);
+	void handlePointComboBoxChange(int index);
+	void handleOneDimComboBoxChange(int index);
+	void handleTwoDimComboBoxChange(int index);
+	void handleThreeDimComboBoxChange(int index);
 
-	void pointDataFocus();
-	void oneDimDataFocus();
-	void twoDimDataFocus();
-	void threeDimDataFocus();
-	void selectedFocus();
+	void handleOneDimGridLocationComboBoxChange(int index);
+	void handleTwoDimGridLocationComboBoxChange(int index);
+	void handleThreeDimGridLocationComboBoxChange(int index);
+
+	void handlePointDataListClick();
+	void handleOneDimDataListClick();
+	void handleTwoDimDataListClick();
+	void handleThreeDimDataListClick();
+	void handleSelectedDataListClick();
 
 	void addSetting();
 	void removeSetting();
@@ -57,7 +62,24 @@ private slots:
 	void deleteImportItem();
 
 private:
-	void setTargetDataTypeInfo();
+	void setupXAxisComboBox();
+	void setupPolyLineGroupComboBox();
+	void updatePolyLineGroupComboBoxSelection();
+	void updatePolyLineComboBox();
+	void updatePolyLineComboBoxSelection();
+	void updateSettingWidgets();
+	void updatePolyLineComboBoxVisibility();
+
+	void setupMainWidgets();
+	void enableMainWidgets(bool enable);
+
+	void setupWidgetForDim(QLabel* dataLabel, QComboBox* dataComboBox, QLabel* locationLabel, QComboBox* locationComboBox, QListWidget* dataListWidget, const QList<Graph2dHybridWindowResultSetting::DataTypeInfo*>& dataList);
+	void handleDataComboBoxChange(int index, QComboBox* comboBox, QListWidget* dataListWidget, Graph2dHybridWindowResultSetting::DimType dimType);
+	void handleLocationComboBoxChange(int index, QComboBox* locationComboBox, QComboBox* dataComboBox, QListWidget* dataListWidget, Graph2dHybridWindowResultSetting::DimType dimType);
+
+	void clearListSelectionExcept(QListWidget* listWidget);
+
+	void setupTargetDataTypeInfo();
 	void clearTargetDataTypeInfo();
 	void updateImportDataList();
 	void updateButtonStatus();
@@ -71,6 +93,8 @@ private:
 	QList<Graph2dHybridWindowImportDataDataItem*> m_deletedData;
 
 	Graph2dHybridWindowImportDataGroupDataItem* m_importDataGroup;
+
+	std::vector<QWidget*> m_mainWidgets;
 
 	iRICMainWindowInterface* m_mainWindow;
 
