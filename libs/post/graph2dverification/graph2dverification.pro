@@ -164,7 +164,6 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationwindow.h \
 					 graph2dverificationwindowactionmanager.h \
 					 graph2dverificationwindowcontrolwidget.h \
-					 graph2dverificationwindowdataitem.h \
 					 graph2dverificationwindowdatamodel.h \
 					 graph2dverificationwindowobjectbrowser.h \
 					 graph2dverificationwindowobjectbrowserview.h \
@@ -182,7 +181,6 @@ SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindow.cpp \
 					 graph2dverificationwindowactionmanager.cpp \
 					 graph2dverificationwindowcontrolwidget.cpp \
-					 graph2dverificationwindowdataitem.cpp \
 					 graph2dverificationwindowdatamodel.cpp \
 					 graph2dverificationwindowobjectbrowser.cpp \
 					 graph2dverificationwindowobjectbrowserview.cpp \
