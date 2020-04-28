@@ -2,73 +2,37 @@
 #include <cmath>
 
 #include "datamodel/graph2dverificationwindowrootdataitem.h"
-//#include "geodata/polyline/geodatapolyline.h"
 #include "graph2dverificationsettingdialog.h"
 #include "graph2dverificationwindow.h"
 #include "graph2dverificationwindowcontrolwidget.h"
 #include "graph2dverificationwindowtopwidget.h"
 #include <guibase/qwtplotcustomcurve.h>
-//#include <guicore/postcontainer/postzonedatacontainer.h>
-//#include <guicore/project/measured/measureddata.h>
 #include "graph2dverificationwindowdatamodel.h"
-//#include "graph2dverificationwindowdatasourcedialog.h"
-//#include "graph2dverificationwindowprojectdataitem.h"
 #include "graph2dverificationwindowview.h"
 
-//#include <qwt_plot_curve.h>
-//#include <qwt_symbol.h>
-
 #include <qwt_plot_marker.h>
-//#include <qwt_scale_engine.h>
 
-
-//#include <gridcreatingcondition/riversurvey/gridcreatingconditionriversurvey.h>
-//#include <gui/main/iRICMainWindow.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/cgnsfileopener.h>
-//#include <guicore/post/postzoneselectingdialog.h>
-//#include <guicore/postcontainer/postsolutioninfo.h>
-//#include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/measured/measureddata.h>
-//#include <guicore/pre/base/preprocessordatamodelinterface.h>
-//#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
-//#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-//#include <guicore/pre/base/preprocessorwindowinterface.h>
-//#include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-//#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-//#include <post/graph2d/datamodel/graph2dwindowmarkergroupdataitem.h>
-//#include <post/graph2d/graph2dwindowmarkersetting.h>
 
-//#include <QApplication>
 #include <QDomNode>
 #include <QFileDialog>
 #include <QMessageBox>
-//#include <QProgressDialog>
-//#include <QStandardItem>
 #include <QStandardItemModel>
-//#include <QStatusBar>
-//#include <QTextStream>
-//#include <QMessageBox>
-//#include <QPen>
-//#include <QSize>
 #include <QVector2D>
-//#include <QVector>
 #include <vtkCell.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
-
-//#include <cgnslib.h>
-
-//#include <stdexcept>
 
 Graph2dVerificationWindowDataModel::Graph2dVerificationWindowDataModel(Graph2dVerificationWindow* w, ProjectDataItem* parent)
 	: Graph2dWindowDataModel(w, parent)
@@ -96,13 +60,6 @@ void Graph2dVerificationWindowDataModel::init()
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
 	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
-
-//#if SKIP
-//	m_regionMode = Graph2dVerificationWindowContinuousExportDialog::rmCurrentOnly;
-//	m_timeMode = Graph2dVerificationWindowContinuousExportDialog::tmCurrentOnly;
-//	m_prefix = "Snapshot";
-//	m_csvPrefix = "ExportData";
-//#endif
 
 	m_pointsCurve  = nullptr;
 	m_lineCurve    = nullptr;
@@ -134,516 +91,6 @@ const std::vector<MeasuredData*>& Graph2dVerificationWindowDataModel::measuredDa
 	return projectData()->mainfile()->measuredDatas();
 }
 
-//void Graph2dVerificationWindowDataModel::axisSetting()
-//{
-//	showSettingDialog();
-//}
-
-//#if SKIP
-//void Graph2dVerificationWindowDataModel::specialSnapshot()
-//{
-//	int dims[4];
-//
-//	PostSolutionInfo* sol = postSolutionInfo();
-//
-//	Graph2dVerificationWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-//	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-//	if (cont != nullptr) {
-//		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-//		if (sGrid != nullptr) {
-//			// structured
-//			sGrid->GetDimensions(dims);
-//			if (tinfo->gridLocation == CellCenter) {
-//				sGrid->GetCellDims(dims);
-//			}
-//			dims[3] = 1;
-//		} else {
-//			// unstructured
-//			dims[0] = 1;
-//			dims[1] = 1;
-//			dims[2] = 1;
-//			dims[3] = cont->data()->GetNumberOfPoints();
-//			if (tinfo->gridLocation == CellCenter) {
-//				dims[3] = cont->data()->GetNumberOfCells();
-//			}
-//		}
-//	} else {
-//		dims[0] = 1;
-//		dims[1] = 1;
-//		dims[2] = 1;
-//		dims[3] = 1;
-//	}
-//	Graph2dVerificationWindowContinuousExportDialog dialog(mainWindow());
-//	dialog.setSetting(m_setting, dims);
-//	dialog.setTimesteps(projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps());
-//	dialog.setCurrentStep(projectData()->mainfile()->postSolutionInfo()->currentStep());
-//
-//	dialog.setFolder(LastIODirectory::get());
-//	dialog.setPrefix(m_prefix);
-//	dialog.setRegionMode(m_regionMode);
-//	dialog.setIMin(m_iMin);
-//	dialog.setIMax(m_iMax);
-//	dialog.setJMin(m_jMin);
-//	dialog.setJMax(m_jMax);
-//	dialog.setKMin(m_kMin);
-//	dialog.setKMax(m_kMax);
-//	dialog.setIndexMin(m_indexMin);
-//	dialog.setIndexMax(m_indexMax);
-//	dialog.setTimeMode(m_timeMode);
-//	dialog.setStartTimeStep(m_timeStart);
-//	dialog.setEndTimeStep(m_timeEnd);
-//	dialog.setTimeSkip(m_timeSkip);
-//
-//	int ret = dialog.exec();
-//	if (ret == QDialog::Rejected) {return;}
-//
-//	QString folder = dialog.folder();
-//	LastIODirectory::set(folder);
-//	m_prefix = dialog.prefix();
-//	m_regionMode = dialog.regionMode();
-//	m_iMin = dialog.iMin();
-//	m_iMax = dialog.iMax();
-//	m_jMin = dialog.jMin();
-//	m_jMax = dialog.jMax();
-//	m_kMin = dialog.kMin();
-//	m_kMax = dialog.kMax();
-//	m_indexMin = dialog.indexMin();
-//	m_indexMax = dialog.indexMax();
-//	m_timeMode = dialog.timeMode();
-//	m_timeStart = dialog.startTimeStep();
-//	m_timeEnd = dialog.endTimeStep();
-//	m_timeSkip = dialog.timeSkip();
-//
-//	// execute export.
-//	int timeStepCount = (m_timeEnd - m_timeStart) / m_timeSkip + 1;
-//	int dataCount = 1;
-//
-//	switch (tinfo->dataType) {
-//	case Graph2dVerificationWindowResultSetting::dtBaseIterative:
-//		dataCount = 1;
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim1DStructured:
-//		if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaTime) {
-//			dataCount = (m_iMax - m_iMin + 1);
-//		}
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//		if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaTime) {
-//			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1);
-//		} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaI) {
-//			dataCount = (m_jMax - m_jMin + 1);
-//		} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaJ) {
-//			dataCount = (m_iMax - m_iMin + 1);
-//		}
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//		if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaTime) {
-//			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1) * (m_kMax - m_kMin + 1);
-//		} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaI) {
-//			dataCount = (m_jMax - m_jMin + 1) * (m_kMax - m_kMin + 1);
-//		} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaJ) {
-//			dataCount = (m_iMax - m_iMin + 1) * (m_kMax - m_kMin + 1);
-//		} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaK) {
-//			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1);
-//		}
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim1DUnstructured:
-//	case Graph2dVerificationWindowResultSetting::dtDim2DUnstructured:
-//	case Graph2dVerificationWindowResultSetting::dtDim3DUnstructured:
-//		dataCount = (m_indexMax - m_indexMin + 1);
-//		break;
-//	}
-//	QProgressDialog pdialog(mainWindow());
-//	pdialog.setRange(0, timeStepCount * dataCount);
-//	pdialog.setWindowTitle(tr("Snapshot"));
-//	pdialog.setLabelText(tr("Saving snapshots..."));
-//	pdialog.setModal(true);
-//	pdialog.show();
-//
-//	int timeStep = m_timeStart;
-//	int imageIndex = 0;
-//	while (timeStep <= m_timeEnd) {
-//		iricMainWindow()->animationController()->setCurrentStepIndex(timeStep);
-//
-//		pdialog.setValue(imageIndex);
-//		qApp->processEvents();
-//		if (pdialog.wasCanceled()) {
-//			return;
-//		}
-//		Graph2dVerificationWindow* window = dynamic_cast<Graph2dVerificationWindow*>(mainWindow());
-//		QPixmap pixmap;
-//		QString filename;
-//		bool ok;
-//		switch (tinfo->dataType) {
-//		case Graph2dVerificationWindowResultSetting::dtBaseIterative:
-//			pixmap = window->snapshot();
-//			filename = QDir(folder).absoluteFilePath(m_prefix);
-//			filename.append(QString("_Time=%1.png").arg(timeStep + 1));
-//			ok = savePixmap(pixmap, filename);
-//			if (! ok) {
-//				showErrorMessage(filename);
-//				return;
-//			}
-//			++ imageIndex;
-//			break;
-//		case Graph2dVerificationWindowResultSetting::dtDim1DStructured:
-//			if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaTime) {
-//				for (int i = m_iMin; i <= m_iMax; ++i) {
-//					window->controlWidget()->setIValue(i);
-//					pixmap = window->snapshot();
-//					filename = QDir(folder).absoluteFilePath(m_prefix);
-//					filename.append(QString("_Time=%1_I=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)));
-//					ok = savePixmap(pixmap, filename);
-//					if (! ok) {
-//						showErrorMessage(filename);
-//						return;
-//					}
-//					qApp->processEvents();
-//					if (pdialog.wasCanceled()) {
-//						return;
-//					}
-//					++ imageIndex;
-//				}
-//			}
-//			break;
-//		case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//			if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaTime) {
-//				for (int i = m_iMin; i <= m_iMax; ++i) {
-//					window->controlWidget()->setIValue(i);
-//					for (int j = m_jMin; j <= m_jMax; ++j) {
-//						window->controlWidget()->setJValue(j);
-//						pixmap = window->snapshot();
-//						filename = QDir(folder).absoluteFilePath(m_prefix);
-//						filename.append(QString("_Time=%1_I=%2_J=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)));
-//						ok = savePixmap(pixmap, filename);
-//						if (! ok) {
-//							showErrorMessage(filename);
-//							return;
-//						}
-//						qApp->processEvents();
-//						if (pdialog.wasCanceled()) {
-//							return;
-//						}
-//						++ imageIndex;
-//					}
-//					pdialog.setValue(imageIndex);
-//				}
-//			} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaI) {
-//				for (int j = m_jMin; j <= m_jMax; ++j) {
-//					window->controlWidget()->setJValue(j);
-//					pixmap = window->snapshot();
-//					filename = QDir(folder).absoluteFilePath(m_prefix);
-//					filename.append(QString("_Time=%1_J=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(j + 1, m_jMax)));
-//					ok = savePixmap(pixmap, filename);
-//					if (! ok) {
-//						showErrorMessage(filename);
-//						return;
-//					}
-//					qApp->processEvents();
-//					if (pdialog.wasCanceled()) {
-//						return;
-//					}
-//					++ imageIndex;
-//				}
-//			} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaJ) {
-//				for (int i = m_iMin; i <= m_iMax; ++i) {
-//					window->controlWidget()->setIValue(i);
-//					pixmap = window->snapshot();
-//					filename = QDir(folder).absoluteFilePath(m_prefix);
-//					filename.append(QString("_Time=%1_I=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)));
-//					ok = savePixmap(pixmap, filename);
-//					if (! ok) {
-//						showErrorMessage(filename);
-//						return;
-//					}
-//					qApp->processEvents();
-//					if (pdialog.wasCanceled()) {
-//						return;
-//					}
-//					++ imageIndex;
-//				}
-//			}
-//			break;
-//		case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//			if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaTime) {
-//				for (int i = m_iMin; i <= m_iMax; ++i) {
-//					window->controlWidget()->setIValue(i);
-//					for (int j = m_jMin; j <= m_jMax; ++j) {
-//						window->controlWidget()->setJValue(j);
-//						for (int k = m_kMin; k <= m_kMax; ++k) {
-//							window->controlWidget()->setKValue(k);
-//							pixmap = window->snapshot();
-//							filename = QDir(folder).absoluteFilePath(m_prefix);
-//							filename.append(QString("_Time=%1_I=%2_J=%3_K=%4.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)).arg(formattedNumber(k + 1, m_kMax)));
-//							ok = savePixmap(pixmap, filename);
-//							if (! ok) {
-//								showErrorMessage(filename);
-//								return;
-//							}
-//							qApp->processEvents();
-//							if (pdialog.wasCanceled()) {
-//								return;
-//							}
-//							++ imageIndex;
-//						}
-//					}
-//					pdialog.setValue(imageIndex);
-//				}
-//			} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaI) {
-//				for (int j = m_jMin; j <= m_jMax; ++j) {
-//					window->controlWidget()->setJValue(j);
-//					for (int k = m_kMin; k <= m_kMax; ++k) {
-//						window->controlWidget()->setKValue(k);
-//						pixmap = window->snapshot();
-//						filename = QDir(folder).absoluteFilePath(m_prefix);
-//						filename.append(QString("_Time=%1_J=%2_K=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(j + 1, m_jMax)).arg(formattedNumber(k + 1, m_kMax)));
-//						ok = savePixmap(pixmap, filename);
-//						if (! ok) {
-//							showErrorMessage(filename);
-//							return;
-//						}
-//						qApp->processEvents();
-//						if (pdialog.wasCanceled()) {
-//							return;
-//						}
-//						++ imageIndex;
-//					}
-//					pdialog.setValue(imageIndex);
-//				}
-//			} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaJ) {
-//				for (int i = m_iMin; i <= m_iMax; ++i) {
-//					window->controlWidget()->setIValue(i);
-//					for (int k = m_kMin; k <= m_kMax; ++k) {
-//						window->controlWidget()->setKValue(k);
-//						pixmap = window->snapshot();
-//						filename = QDir(folder).absoluteFilePath(m_prefix);
-//						filename.append(QString("_Time=%1_I=%2_K=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(k + 1, m_kMax)));
-//						ok = savePixmap(pixmap, filename);
-//						if (! ok) {
-//							showErrorMessage(filename);
-//							return;
-//						}
-//						qApp->processEvents();
-//						if (pdialog.wasCanceled()) {
-//							return;
-//						}
-//						++ imageIndex;
-//					}
-//					pdialog.setValue(imageIndex);
-//				}
-//			} else if (m_setting.xAxisMode() == Graph2dVerificationWindowResultSetting::xaK) {
-//				for (int i = m_iMin; i <= m_iMax; ++i) {
-//					window->controlWidget()->setIValue(i);
-//					for (int j = m_jMin; j <= m_jMax; ++j) {
-//						window->controlWidget()->setJValue(j);
-//						pixmap = window->snapshot();
-//						filename = QDir(folder).absoluteFilePath(m_prefix);
-//						filename.append(QString("_Time=%1_I=%2_J=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)));
-//						ok = savePixmap(pixmap, filename);
-//						if (! ok) {
-//							showErrorMessage(filename);
-//							return;
-//						}
-//						qApp->processEvents();
-//						if (pdialog.wasCanceled()) {
-//							return;
-//						}
-//						++ imageIndex;
-//					}
-//					pdialog.setValue(imageIndex);
-//				}
-//			}
-//			break;
-//		case Graph2dVerificationWindowResultSetting::dtDim1DUnstructured:
-//		case Graph2dVerificationWindowResultSetting::dtDim2DUnstructured:
-//		case Graph2dVerificationWindowResultSetting::dtDim3DUnstructured:
-//			for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
-//				window->controlWidget()->setIndexValue(idx);
-//				pixmap = window->snapshot();
-//				filename = QDir(folder).absoluteFilePath(m_prefix);
-//				filename.append(QString("_Time=%1_Index=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
-//				ok = savePixmap(pixmap, filename);
-//				if (! ok) {
-//					showErrorMessage(filename);
-//					return;
-//				}
-//				qApp->processEvents();
-//				if (pdialog.wasCanceled()) {
-//					return;
-//				}
-//				++ imageIndex;
-//				pdialog.setValue(imageIndex);
-//			}
-//			break;
-//		}
-//		pdialog.setValue(imageIndex);
-//		timeStep += m_timeSkip;
-//	}
-//}
-//#endif
-
-//void Graph2dVerificationWindowDataModel::specialCsvExport()
-//{
-//	QMessageBox::information(this->mainWindow(), "XXX::XXX", "Testing");
-//	return;
-//}
-
-//bool Graph2dVerificationWindowDataModel::savePixmap(const QPixmap& pixmap, const QString& filename)
-//{
-//	// rename the temporary file to the target file.
-//	if (QFile::exists(filename)) {
-//		// remove first.
-//		if (! QFile::remove(filename)) {
-//			// unable to remove. fail.
-//			return false;
-//		}
-//	}
-//	return pixmap.save(filename);
-//}
-
-//void Graph2dVerificationWindowDataModel::showErrorMessage(const QString& filename)
-//{
-//	QMessageBox::critical(mainWindow(), tr("Error"), tr("Saving snapshot image to %1 failed.").arg(filename));
-//}
-
-//QString Graph2dVerificationWindowDataModel::formattedNumber(int number, int max)
-//{
-//	int limit = 10;
-//	int len = 1;
-//	while (max >= limit) {
-//		limit *= 10;
-//		++ len;
-//	}
-//	QString ret;
-//	QTextStream out(&ret);
-//	out.setFieldWidth(len);
-//	out.setPadChar('0');
-//	out.setFieldAlignment(QTextStream::AlignRight);
-//	out << number;
-//
-//	return ret;
-//}
-
-//void Graph2dVerificationWindowDataModel::copyCalculationResult()
-//{
-//	Q_ASSERT(false);
-//}
-
-//void Graph2dVerificationWindowDataModel::drawSetting()
-//{
-//	Q_ASSERT(false);
-//}
-
-//void Graph2dVerificationWindowDataModel::markerSettiing()
-//{
-//	Q_ASSERT(false);
-//}
-
-//template <typename DataItem>
-//void Graph2dVerificationWindowDataModel::getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const
-//{
-//	*x = dataItem->xValues();
-//	*y = dataItem->yValues();
-//	if (m_setting.xAxisMode() != Graph2dVerificationWindowResultSetting::xaTime) {return;}
-//	int timeStepCount = projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps().count();
-//
-//	if (m_timeStart == 0 && m_timeEnd == timeStepCount - 1 && m_timeSkip == 1) {return;}
-//	QVector<double> clippedX, clippedY;
-//
-//	for (int i = m_timeStart; i <= m_timeEnd; i += m_timeSkip) {
-//		clippedX.push_back(x->at(i));
-//		clippedY.push_back(y->at(i));
-//	}
-//	*x = clippedX;
-//	*y = clippedY;
-//}
-
-//#if SKIP
-//void Graph2dVerificationWindowDataModel::updateTitle()
-//{
-//	QString title = m_setting.title().trimmed();
-//	int currentStep = postSolutionInfo()->currentStep();
-//	const QList<double>& timesteps = postSolutionInfo()->timeSteps()->timesteps();
-//	double time;
-//	if (timesteps.count() == 0) {
-//		time = 0;
-//	} else {
-//		if (currentStep < timesteps.count()) {
-//			time = timesteps.at(currentStep);
-//		} else {
-//			time = 0;
-//		}
-//	}
-//	if (m_setting.addIndicesToTitle()) {
-//		QString suffix;
-//		Graph2dVerificationWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-//		Graph2dVerificationWindow* w = dynamic_cast<Graph2dVerificationWindow*>(mainWindow());
-//		Graph2dVerificationWindowControlWidget* c = w->controlWidget();
-//		switch (m_setting.xAxisMode()) {
-//		case Graph2dVerificationWindowResultSetting::xaTime:
-//			switch (tinfo->dataType) {
-//			case Graph2dVerificationWindowResultSetting::dtBaseIterative:
-//				suffix = "";
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim1DStructured:
-//				suffix = tr("I = %1").arg(c->iValue() + 1);
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//				suffix = tr("I = %1, J = %2").arg(c->iValue() + 1).arg(c->jValue() + 1);
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//				suffix = tr("I = %1, J = %2, K = %3").arg(c->iValue() + 1).arg(c->jValue() + 1).arg(c->kValue() + 1);
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim1DUnstructured:
-//			case Graph2dVerificationWindowResultSetting::dtDim2DUnstructured:
-//			case Graph2dVerificationWindowResultSetting::dtDim3DUnstructured:
-//				suffix = tr("Index = %1").arg(c->indexValue());
-//				break;
-//			}
-//			break;
-//		case Graph2dVerificationWindowResultSetting::xaI:
-//			switch (tinfo->dataType) {
-//			case Graph2dVerificationWindowResultSetting::dtDim1DStructured:
-//				suffix = tr("Time = %1 sec").arg(time);
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//				suffix = tr("Time = %1 sec, J = %2").arg(time).arg(c->jValue() + 1);
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//				suffix = tr("Time = %1 sec, J = %2, K = %3").arg(time).arg(c->jValue() + 1).arg(c->kValue() + 1);
-//				break;
-//			default:
-//				break;
-//			}
-//			break;
-//		case Graph2dVerificationWindowResultSetting::xaJ:
-//			switch (tinfo->dataType) {
-//			case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//				suffix = tr("Time = %1 sec, I = %2").arg(time).arg(c->iValue() + 1);
-//				break;
-//			case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//				suffix = tr("Time = %1 sec, I = %2, K = %3").arg(time).arg(c->iValue() + 1).arg(c->kValue() + 1);
-//				break;
-//			default:
-//				break;
-//			}
-//			break;
-//		case Graph2dVerificationWindowResultSetting::xaK:
-//			switch (tinfo->dataType) {
-//			case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//				suffix = tr("Time = %1 sec, I = %2, J = %3").arg(time).arg(c->iValue() + 1).arg(c->jValue() + 1);
-//				break;
-//			default:
-//				break;
-//			}
-//			break;
-//		}
-//		title.append(" : ").append(suffix);
-//	}
-//	view()->setTitle(title);
-//}
-//#endif
-
 bool Graph2dVerificationWindowDataModel::setupInitialSetting()
 {
 	PostSolutionInfo* sInfo = postSolutionInfo();
@@ -657,15 +104,6 @@ bool Graph2dVerificationWindowDataModel::setupInitialSetting()
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
 	}
-
-	//{{
-	//// check whether data to displayed on time window available.
-	//if (! m_setting.dataAvailable()) {
-	//	QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
-	//	return false;
-	//}
-	///////m_setting.dataAvailable();
-	//}}
 
 	Graph2dVerificationSettingDialog dialog(dynamic_cast<QWidget*>(mainWindow()->parent()));
 
@@ -687,19 +125,6 @@ bool Graph2dVerificationWindowDataModel::setupInitialSetting()
 	return true;
 }
 
-//void Graph2dVerificationWindowDataModel::applyAxisSetting()
-//{
-//	return;
-//}
-
-//void Graph2dVerificationWindowDataModel::getXAxisValueRange(double* min, double* max)
-//{
-//	Graph2dWindowView* v = view();
-//	QwtScaleDiv sDiv = v->axisScaleDiv(QwtPlot::xBottom);
-//	*min = qMin(sDiv.lowerBound(), sDiv.upperBound());
-//	*max = qMax(sDiv.lowerBound(), sDiv.upperBound());
-//}
-
 void Graph2dVerificationWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max)
 {
 	Graph2dWindowView* v = view();
@@ -717,9 +142,6 @@ void Graph2dVerificationWindowDataModel::updateTime()
 {
 	updateGraph();
 	updateData();
-//#if SKIP
-//	updateTitle();
-//#endif
 	view()->replot();
 }
 
@@ -744,74 +166,6 @@ void Graph2dVerificationWindowDataModel::dataSourceSetting()
 	delete dialog;
 }
 
-//void Graph2dVerificationWindowDataModel::showSettingDialog()
-//{
-//	Graph2dVerificationSettingDialog dialog(dynamic_cast<QWidget*>(mainWindow()->parent()));
-//
-//	dialog.setSetting(m_setting);
-//
-//	if (QDialog::Rejected == dialog.exec()) {return;}
-//	m_setting = dialog.setting();
-//	applySettings();
-//	view()->replot();
-//}
-
-//void Graph2dVerificationWindowDataModel::sliderChanged()
-//{
-//#if SKIP
-//	Graph2dVerificationWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-//	Graph2dVerificationWindow* w = dynamic_cast<Graph2dVerificationWindow*>(mainWindow());
-//	Graph2dVerificationWindowControlWidget* c = w->controlWidget();
-//	int index = 0;
-//	PostSolutionInfo* sol = postSolutionInfo();
-//	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-//	if (cont == nullptr) {return;}
-//	switch (tinfo->dataType) {
-//	case Graph2dVerificationWindowResultSetting::dtDim1DStructured:
-//	case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//	case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//		index = cont->nodeIndex(c->iValue(), c->jValue(), c->kValue());
-//		break;
-//	default:
-//		break;
-//	}
-//
-//	switch (tinfo->dataType) {
-//	case Graph2dVerificationWindowResultSetting::dtBaseIterative:
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim1DStructured:
-//		m_setting.setGridI(c->iValue());
-//		m_setting.setGridIndex(index);
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim2DStructured:
-//		m_setting.setGridI(c->iValue());
-//		m_setting.setGridJ(c->jValue());
-//		m_setting.setGridIndex(index);
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim3DStructured:
-//		m_setting.setGridI(c->iValue());
-//		m_setting.setGridJ(c->jValue());
-//		m_setting.setGridK(c->kValue());
-//		m_setting.setGridIndex(index);
-//		break;
-//	case Graph2dVerificationWindowResultSetting::dtDim1DUnstructured:
-//	case Graph2dVerificationWindowResultSetting::dtDim2DUnstructured:
-//	case Graph2dVerificationWindowResultSetting::dtDim3DUnstructured:
-//		m_setting.setGridIndex(c->indexValue());
-//		break;
-//	}
-//	updateData();
-//	updateTime();
-//
-//	view()->replot();
-//#endif
-//}
-
-void Graph2dVerificationWindowDataModel::applySettingsSlot()
-{
-	applySettings();
-}
-
 void Graph2dVerificationWindowDataModel::applySettings()
 {
 	// update axis setting.
@@ -821,11 +175,6 @@ void Graph2dVerificationWindowDataModel::applySettings()
 	updateTime();
 
 	Graph2dVerificationWindow* w = dynamic_cast<Graph2dVerificationWindow*>(mainWindow());
-
-//#if SKIP
-//	// update title setting.
-//	updateTitle();
-//#endif
 
 	w->controlWidget()->setSetting(m_setting);
 	w->topWidget()->setSetting(m_setting);
@@ -850,10 +199,6 @@ void Graph2dVerificationWindowDataModel::updateData()
 	updateData(fn);
 
 	delete opener;
-
-//#if SKIP
-//	updateTitle();
-//#endif
 }
 
 
@@ -868,11 +213,6 @@ void Graph2dVerificationWindowDataModel::updateData(int fn)
 	root->updateData(fn);
 	updating = false;
 }
-
-//void Graph2dVerificationWindowDataModel::addKPMarkers()
-//{
-//	Q_ASSERT(false);
-//}
 
 void Graph2dVerificationWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
@@ -898,13 +238,6 @@ void Graph2dVerificationWindowDataModel::doSaveToProjectMainFile(QXmlStreamWrite
 	m_setting.saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
-
-//void Graph2dVerificationWindowDataModel::targetPolyLineDestroyed()
-//{
-//	Graph2dVerificationWindowProjectDataItem* item = dynamic_cast<Graph2dVerificationWindowProjectDataItem*>(parent());
-//	QWidget* widget = dynamic_cast<QWidget*>(item->window()->parent());
-//	widget->close();
-//}
 
 void Graph2dVerificationWindowDataModel::exportData()
 {
@@ -964,10 +297,10 @@ void Graph2dVerificationWindowDataModel::setType(int type)
 		// unstructured grid.
 		switch (type) {
 		case 0:
-			m_setting.m_graphType = Graph2dVerificationWindowResultSetting::gtMVvsCR;
+			m_setting.setGraphType(Graph2dVerificationWindowResultSetting::gtMVvsCR);
 			break;
 		case 1:
-			m_setting.m_graphType = Graph2dVerificationWindowResultSetting::gtMVvsError;
+			m_setting.setGraphType(Graph2dVerificationWindowResultSetting::gtMVvsError);
 			break;
 		}
 	}
@@ -975,16 +308,16 @@ void Graph2dVerificationWindowDataModel::setType(int type)
 		// structured grid.
 		switch (type) {
 		case 0:
-			m_setting.m_graphType = Graph2dVerificationWindowResultSetting::gtSWDvsValues;
+			m_setting.setGraphType(Graph2dVerificationWindowResultSetting::gtSWDvsValues);
 			break;
 		case 1:
-			m_setting.m_graphType = Graph2dVerificationWindowResultSetting::gtSWDvsError;
+			m_setting.setGraphType(Graph2dVerificationWindowResultSetting::gtSWDvsError);
 			break;
 		case 2:
-			m_setting.m_graphType = Graph2dVerificationWindowResultSetting::gtMVvsCR;
+			m_setting.setGraphType(Graph2dVerificationWindowResultSetting::gtMVvsCR);
 			break;
 		case 3:
-			m_setting.m_graphType = Graph2dVerificationWindowResultSetting::gtMVvsError;
+			m_setting.setGraphType(Graph2dVerificationWindowResultSetting::gtMVvsError);
 			break;
 		}
 	}
@@ -1148,7 +481,7 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 
 	view()->setAxisAutoScale(QwtPlot::yLeft);
 	view()->setAxisAutoScale(QwtPlot::xBottom);
-	switch (m_setting.m_graphType) {
+	switch (m_setting.graphType()) {
 	case Graph2dVerificationWindowResultSetting::gtSWDvsValues:
 		m_pointsCurve->setSamples(distanceVals, measuredVals);
 		m_pointsCurve->setTitle(tr("Measured Values (%1)").arg(m_setting.activeValue()));

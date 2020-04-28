@@ -12,7 +12,6 @@
 #include "../projectproperty/projectpropertydialog.h"
 #include "../solverdef/solverdefinitionlist.h"
 #include "../startpage/startpagedialog.h"
-#include "../verification/verificationgraphdialog.h"
 #include "iricmainwindow.h"
 #include "private/iricmainwindow_calculatedresultmanager.h"
 #include "private/iricmainwindow_snapshotsaver.h"

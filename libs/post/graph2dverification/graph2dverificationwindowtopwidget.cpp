@@ -1,6 +1,11 @@
 #include "graph2dverificationwindowtopwidget.h"
 #include "ui_graph2dverificationwindowtopwidget.h"
 
+#include <guicore/postcontainer/postzonedatacontainer.h>
+
+#include <vtkPointSet.h>
+#include <vtkStructuredGrid.h>
+
 Graph2dVerificationWindowTopWidget::Graph2dVerificationWindowTopWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Graph2dVerificationWindowTopWidget)
@@ -14,11 +19,6 @@ Graph2dVerificationWindowTopWidget::~Graph2dVerificationWindowTopWidget()
 {
     delete ui;
 }
-
-#include <guicore/postcontainer/postzonedatacontainer.h>
-
-#include <vtkPointSet.h>
-#include <vtkStructuredGrid.h>
 
 void Graph2dVerificationWindowTopWidget::setSetting(const Graph2dVerificationWindowResultSetting& setting)
 {

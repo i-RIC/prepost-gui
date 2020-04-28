@@ -22,7 +22,7 @@ public:
 	~Graph2dVerificationSettingDialog();
 
 	void setSetting(const Graph2dVerificationWindowResultSetting& setting);
-	const Graph2dVerificationWindowResultSetting& setting() const; //  { return m_setting; }
+	const Graph2dVerificationWindowResultSetting& setting() const;
 
 	void setPostSolutionInfo(PostSolutionInfo* info);
 	void setMeasuredDatas(const std::vector<MeasuredData*>& data);
@@ -30,8 +30,6 @@ public:
 	void setTimeStep(int step);
 	void setPostZoneDataContainer(PostZoneDataContainer* cont);
 	void setActiveResult(const QString& result);
-
-	void setMeasuredData(MeasuredData* md);
 	void setActiveValue(const QString& value);
 
 	int timeStep() const;
@@ -42,7 +40,6 @@ public:
 	QString activeFile() const;
 	
 	QString activeValue() const;
-	///void setActiveValue(QString activeValue);
 	void setActiveFile(const QString& file);
 
 	QString activeZone() const;

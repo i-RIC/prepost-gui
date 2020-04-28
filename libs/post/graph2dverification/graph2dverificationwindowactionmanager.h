@@ -15,11 +15,6 @@ public:
 	/// Constructor
 	Graph2dVerificationWindowActionManager(Graph2dVerificationWindow* parent);
 	QAction* drawDatasourceSettingAction;
-	QAction* drawDrawSettingAction;
-	QAction* drawMarkerSettingAction;
-	QAction* drawKPMarkerSettingAction;
-	QAction* drawAxisSettingAction;
-	QAction* drawCopyAction;
 	QAction* drawLegendAction;
 
 	QMenu* drawMenu() const {return m_drawMenu;}

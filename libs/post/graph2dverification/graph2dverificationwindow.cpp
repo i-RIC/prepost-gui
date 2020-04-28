@@ -5,11 +5,7 @@
 #include "graph2dverificationwindowdatamodel.h"
 #include "graph2dverificationwindowobjectbrowser.h"
 #include "graph2dverificationwindowprojectdataitem.h"
-//#include "graph2dverificationwindowview.h"
 
-//#include <guicore/postcontainer/postsolutioninfo.h>
-
-//#include <QDockWidget>
 #include <QPainter>
 
 Graph2dVerificationWindow::Graph2dVerificationWindow(QWidget* parent, int index, Graph2dVerificationWindowProjectDataItem* pdi)
@@ -38,8 +34,6 @@ void Graph2dVerificationWindow::init()
 	// addDockWidget(Qt::LeftDockWidgetArea, m_objectBrowser);
 	m_objectBrowser->hide();
 
-
-	////{{
 	QDockWidget* dockWidgetTop = new QDockWidget(tr("Top"), this);
 	dockWidgetTop->setTitleBarWidget(new QWidget());  // hide title bar
 	dockWidgetTop->setFeatures(QDockWidget::DockWidgetMovable);
@@ -50,7 +44,6 @@ void Graph2dVerificationWindow::init()
 	dockWidgetTop->setWidget(m_topWidget);
 
 	addDockWidget(Qt::TopDockWidgetArea, dockWidgetTop);
-	////}}
 
 	QDockWidget* dockWidget = new QDockWidget(tr("Controller"), this);
 	dockWidget->setTitleBarWidget(new QWidget());  // hide title bar
@@ -64,9 +57,6 @@ void Graph2dVerificationWindow::init()
 	addDockWidget(Qt::BottomDockWidgetArea, dockWidget);
 
 	connect(postSolutionInfo(), SIGNAL(updated()), this, SLOT(update()));
-	//{{
-	//connect(m_topWidget, SIGNAL(graphTypeChanged(int)), m_dataModel, SLOT(setType(int)));
-	//}}
 }
 
 void Graph2dVerificationWindow::setupDefaultGeometry(int index)
@@ -88,6 +78,7 @@ QPixmap Graph2dVerificationWindow::snapshot()
 	painter.fillRect(rect, brush);
 	w->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
 	painter.end();
+	// TODO add comment
 	return pixmap;
 }
 

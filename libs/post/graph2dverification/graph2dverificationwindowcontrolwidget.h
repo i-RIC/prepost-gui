@@ -21,33 +21,9 @@ public:
 	~Graph2dVerificationWindowControlWidget();
 	void setSetting(const Graph2dVerificationWindowResultSetting& setting);
 	void setComment(const QString& comment);
-#if SKIP
-	void setIValue(int i);
-	void setJValue(int j);
-	void setKValue(int k);
-	void setIndexValue(int index);
-	int iValue() const;
-	int jValue() const;
-	int kValue() const;
-	int indexValue() const;
-#endif
 	void fitSize();
-	void loadFromProjectMainFile(const QDomNode& node);
-	void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 
 signals:
-	void dataSourceButtonClicked();
-	void axisButtonClicked();
-	void drawButtonClicked();
-	void markerButtonClicked();
-	void copyButtonClicked();
-	void snapshotButtonClicked();
-	void csvExportButtonClicked();
-	void iValueChanged(int i);
-	void jValueChanged(int j);
-	void kValueChanged(int k);
-	void indexValueChanged(int index);
-
 	void settingButtonClicked();
 	void exportButtonClicked();
 

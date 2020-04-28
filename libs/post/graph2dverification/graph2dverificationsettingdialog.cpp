@@ -112,18 +112,6 @@ void Graph2dVerificationSettingDialog::setActiveResult(const QString& result)
 	}
 }
 
-void Graph2dVerificationSettingDialog::setMeasuredData(MeasuredData* md)
-{
-	for (int i = 0; i < m_measuredData.size(); ++i) {
-		MeasuredData* d = m_measuredData.at(i);
-		if (d == md) {
-			selectFile(i);
-			return;
-		}
-	}
-	selectFile(0);
-}
-
 void Graph2dVerificationSettingDialog::setActiveFile(const QString& file)
 {
 	for (int i = 0; i < ui->fileComboBox->count(); ++i) {
@@ -134,7 +122,6 @@ void Graph2dVerificationSettingDialog::setActiveFile(const QString& file)
 		}
 	}
 }
-
 
 void Graph2dVerificationSettingDialog::setActiveValue(const QString& value)
 {
