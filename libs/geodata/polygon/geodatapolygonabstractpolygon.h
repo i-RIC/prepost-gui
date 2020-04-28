@@ -1,6 +1,7 @@
 #ifndef GEODATAPOLYGONABSTRACTPOLYGON_H
 #define GEODATAPOLYGONABSTRACTPOLYGON_H
 
+#include "gd_polygon_global.h"
 #include "geodatapolygoncolorsettingdialog.h"
 
 #include <QObject>
@@ -14,7 +15,7 @@ class vtkScalarsToColors;
 class QPolygonF;
 class QPointF;
 
-class GeoDataPolygonAbstractPolygon : public QObject
+class GD_POLYGON_EXPORT GeoDataPolygonAbstractPolygon : public QObject
 {
 	Q_OBJECT
 

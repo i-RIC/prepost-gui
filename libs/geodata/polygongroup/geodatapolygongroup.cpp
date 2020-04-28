@@ -8,6 +8,7 @@
 #include "private/geodatapolygongroup_sortcommand.h"
 
 #include <geodata/polygon/geodatapolygon.h>
+#include <geodata/polygon/geodatapolygonregionpolygon.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/pre/base/preprocessordataitem.h>
@@ -327,6 +328,8 @@ void GeoDataPolygonGroup::informDeselection(PreProcessorGraphicsViewInterface* v
 	impl->m_attributeBrowser->blockSignals(true);
 	impl->m_attributeBrowser->hide();
 	impl->m_attributeBrowser->blockSignals(false);
+
+	v->unsetCursor();
 }
 
 void GeoDataPolygonGroup::addCustomMenuItems(QMenu* menu)
@@ -732,17 +735,21 @@ void GeoDataPolygonGroup::mergeEditTargetPolygon()
 {
 	if (impl->m_editTargetPolygon == nullptr) {return;}
 
-	auto p = impl->mergeToThis(impl->m_editTargetPolygon, impl->m_editTargetPolygonIndex);
+	auto pol = impl->m_editTargetPolygon->regionPolygon()->polygon();
+	if (impl->m_editTargetPolygon->regionPolygon()->polygon().size() > 3) {
+		auto p = impl->mergeToThis(impl->m_editTargetPolygon, impl->m_editTargetPolygonIndex);
+		impl->m_selectedPolygons.insert(p);
+	}
 
 	delete impl->m_editTargetPolygon;
 	impl->m_editTargetPolygon = nullptr;
 	impl->m_editTargetPolygonIndex = 0;
 	impl->m_mode = Impl::Normal;
-	impl->m_selectedPolygons.insert(p);
 
 	updateVtkObjects();
 	updateIndex();
 	updateMenu();
+	impl->updateAttributeBrowser();
 	impl->updateSelectedPolygonsVtkObjects();
 
 	iRICUndoStack::instance().clear();
