@@ -16,20 +16,6 @@ QT += widgets xml
 # Internal libraries #
 ######################
 
-### # iricGui
-### 
-### win32 {
-###         CONFIG(debug, debug|release) {
-###                 LIBS += -L"../../gui/debug"
-###         } else {
-###                 LIBS += -L"../../gui/release"
-###         }
-### }
-### unix {
-###         LIBS += -L"../../gui"
-### }
-### LIBS += -liricGui
-
 # iricMisc
 
 win32 {
@@ -180,7 +166,6 @@ HEADERS += graph2dverification_global.h \
 					 graph2dverificationwindowcontrolwidget.h \
 					 graph2dverificationwindowdataitem.h \
 					 graph2dverificationwindowdatamodel.h \
-					 graph2dverificationwindowlinesettingdialog.h \
 					 graph2dverificationwindowobjectbrowser.h \
 					 graph2dverificationwindowobjectbrowserview.h \
 					 graph2dverificationwindowprojectdataitem.h \
@@ -192,7 +177,6 @@ HEADERS += graph2dverification_global.h \
 FORMS += graph2dverificationsettingdialog.ui \
 				 graph2dverificationwindow.ui \
 				 graph2dverificationwindowcontrolwidget.ui \
-				 graph2dverificationwindowlinesettingdialog.ui \
 				 graph2dverificationwindowtopwidget.ui
 SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindow.cpp \
@@ -200,7 +184,6 @@ SOURCES += graph2dverificationsettingdialog.cpp \
 					 graph2dverificationwindowcontrolwidget.cpp \
 					 graph2dverificationwindowdataitem.cpp \
 					 graph2dverificationwindowdatamodel.cpp \
-					 graph2dverificationwindowlinesettingdialog.cpp \
 					 graph2dverificationwindowobjectbrowser.cpp \
 					 graph2dverificationwindowobjectbrowserview.cpp \
 					 graph2dverificationwindowprojectdataitem.cpp \
