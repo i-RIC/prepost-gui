@@ -43,6 +43,7 @@ public:
 	bool isSelected(GeoDataPolyDataGroupPolyData* data);
 	std::vector<GeoDataPolyDataGroupPolyData*> allData() const;
 	void panTo(int row);
+	QColor color() const;
 
 	void updateIndex();
 	void updateOrder();

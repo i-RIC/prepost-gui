@@ -971,3 +971,8 @@ void GeoDataPolyDataGroup::panTo(int row)
 	auto v = graphicsView();
 	v->panTo((xmin + xmax) * 0.5, (ymin + ymax) * 0.5);
 }
+
+QColor GeoDataPolyDataGroup::color() const
+{
+	return colorSetting().color;
+}
