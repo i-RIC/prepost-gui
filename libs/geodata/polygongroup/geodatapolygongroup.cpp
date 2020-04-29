@@ -539,10 +539,16 @@ void GeoDataPolygonGroup::editName()
 	if (! ok) {return;}
 	if (newName.isEmpty()) {return;}
 
+	std::vector<QString> newNames;
+	std::vector<QVariant> newValues;
+	std::vector<GeoDataPolygonGroupPolygon*> pols;
+
 	for (auto p : impl->m_selectedPolygons) {
-		p->setName(newName);
+		newNames.push_back(newName);
+		newValues.push_back(p->value());
+		pols.push_back(p);
 	}
-	impl->updateAttributeBrowser();
+	pushCommand(new EditNameAndValueCommand(newNames, newValues, pols, this));
 }
 
 void GeoDataPolygonGroup::editNameAndValue()
