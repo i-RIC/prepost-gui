@@ -311,6 +311,10 @@ void GeoDataPolygonGroup::informSelection(PreProcessorGraphicsViewInterface* v)
 		impl->m_attributeBrowser->show();
 	}
 
+	if (impl->m_selectedPolygons.size() == 1) {
+		impl->setupEditTargetPolygonFromSelectedPolygon();
+	}
+
 	updateVisibilityWithoutRendering();
 }
 
