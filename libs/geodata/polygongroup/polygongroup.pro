@@ -144,6 +144,7 @@ HEADERS += gd_polygongroup_global.h \
            private/geodatapolygongroup_editpropertycommand.h \
            private/geodatapolygongroup_impl.h \
            private/geodatapolygongroup_sortcommand.h \
+           private/geodatapolygongroup_sortedittargetpolygoncommand.h \
            private/geodatapolygongroupattributebrowser_tableitemdelegate.h \
            private/geodatapolygongroupcellmappert_detail.h \
            private/geodatapolygongroupcreatort_detail.h \
@@ -170,6 +171,7 @@ SOURCES += geodatapolygongroup.cpp \
            private/geodatapolygongroup_editpropertycommand.cpp \
            private/geodatapolygongroup_impl.cpp \
            private/geodatapolygongroup_sortcommand.cpp \
+           private/geodatapolygongroup_sortedittargetpolygoncommand.cpp \
            private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp \
            private/geodatapolygongrouppolygon_triangulatortriangle.cpp \
            private/geodatapolygongrouppolygon_triangulatorvtk.cpp

@@ -88,6 +88,7 @@ private:
 
 	class EditPropertyCommand;
 	class SortCommand;
+	class SortEditTargetPolygonCommand;
 
 	class Impl;
 	Impl* impl;

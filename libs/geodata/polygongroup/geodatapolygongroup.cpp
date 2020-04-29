@@ -6,6 +6,7 @@
 #include "private/geodatapolygongroup_editpropertycommand.h"
 #include "private/geodatapolygongroup_impl.h"
 #include "private/geodatapolygongroup_sortcommand.h"
+#include "private/geodatapolygongroup_sortedittargetpolygoncommand.h"
 
 #include <geodata/polygon/geodatapolygon.h>
 #include <geodata/polygon/geodatapolygonregionpolygon.h>
@@ -626,48 +627,64 @@ void GeoDataPolygonGroup::mergePolygonsAndPolygonGroups()
 
 void GeoDataPolygonGroup::moveSelectedPolygonsToTop()
 {
-	mergeEditTargetPolygon();
-	auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	notSelected.insert(notSelected.begin(), selected.begin(), selected.end());
+	if (impl->m_editTargetPolygon != nullptr) {
+		if (impl->m_editTargetPolygonIndex == 0) {return;}
+		pushCommand(new SortEditTargetPolygonCommand(0, this));
+	} else {
+		auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		notSelected.insert(notSelected.begin(), selected.begin(), selected.end());
 
-	pushCommand(new SortCommand(notSelected, this));
+		pushCommand(new SortCommand(notSelected, this));
+	}
 }
 
 void GeoDataPolygonGroup::moveSelectedPolygonsToBottom()
 {
-	mergeEditTargetPolygon();
-	auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	notSelected.insert(notSelected.end(), selected.begin(), selected.end());
+	if (impl->m_editTargetPolygon != nullptr) {
+		if (impl->m_editTargetPolygonIndex == impl->m_polygons.size()) {return;}
+		pushCommand(new SortEditTargetPolygonCommand(impl->m_polygons.size(), this));
+	} else {
+		auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		notSelected.insert(notSelected.end(), selected.begin(), selected.end());
 
-	pushCommand(new SortCommand(notSelected, this));
+		pushCommand(new SortCommand(notSelected, this));
+	}
 }
 
 void GeoDataPolygonGroup::moveSelectedPolygonsUp()
 {
-	mergeEditTargetPolygon();
-	auto index = indexOfFirstSelected(impl->m_polygons, impl->m_selectedPolygons);
-	if (index == 0) {return;}
+	if (impl->m_editTargetPolygon != nullptr) {
+		if (impl->m_editTargetPolygonIndex == 0) {return;}
+		pushCommand(new SortEditTargetPolygonCommand(impl->m_editTargetPolygonIndex - 1, this));
+	} else {
+		auto index = indexOfFirstSelected(impl->m_polygons, impl->m_selectedPolygons);
+		if (index == 0) {return;}
 
-	auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	notSelected.insert(notSelected.begin() + index - 1, selected.begin(), selected.end());
+		auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		notSelected.insert(notSelected.begin() + index - 1, selected.begin(), selected.end());
 
-	pushCommand(new SortCommand(notSelected, this));
+		pushCommand(new SortCommand(notSelected, this));
+	}
 }
 
 void GeoDataPolygonGroup::moveSelectedPolygonsDown()
 {
-	mergeEditTargetPolygon();
-	auto index = indexOfFirstSelected(impl->m_polygons, impl->m_selectedPolygons);
-	if (index == impl->m_polygons.size() - impl->m_selectedPolygons.size()) {return;}
+	if (impl->m_editTargetPolygon != nullptr) {
+		if (impl->m_editTargetPolygonIndex == impl->m_polygons.size()) {return;}
+		pushCommand(new SortEditTargetPolygonCommand(impl->m_editTargetPolygonIndex + 1, this));
+	} else {
+		auto index = indexOfFirstSelected(impl->m_polygons, impl->m_selectedPolygons);
+		if (index == impl->m_polygons.size() - impl->m_selectedPolygons.size()) {return;}
 
-	auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
-	notSelected.insert(notSelected.begin() + index + 1, selected.begin(), selected.end());
+		auto selected = getSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		auto notSelected = getNotSelectedPolysVector(impl->m_polygons, impl->m_selectedPolygons);
+		notSelected.insert(notSelected.begin() + index + 1, selected.begin(), selected.end());
 
-	pushCommand(new SortCommand(notSelected, this));
+		pushCommand(new SortCommand(notSelected, this));
+	}
 }
 
 void GeoDataPolygonGroup::deleteSelectedPolygons()
