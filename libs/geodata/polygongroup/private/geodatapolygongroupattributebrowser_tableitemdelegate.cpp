@@ -107,21 +107,22 @@ void GeoDataPolygonGroupAttributeBrowser::TableItemDelegate::setModelData(QWidge
 		if (index.row() < targetIndex) {
 			m_polygonGroup->allPolygons().at(index.row())->setName(newName);
 		} else if (index.row() == targetIndex && targetPol != nullptr) {
-			targetPol->setCaption(newName);
+			targetPol->setCaptionAndEmitEdited(newName);
 		} else {
 			int offset = 0;
 			if (targetPol != nullptr) {offset = -1;}
 			m_polygonGroup->allPolygons().at(index.row() + offset)->setName(newName);
 		}
 	} else if (col == 1 && (! isRef)) {
+		// value
 		auto newValue = dynamic_cast<GridAttributeEditWidget*> (editor)->variantValue();
+		model->setData(index, newValue);
 		auto targetPol = m_polygonGroup->editTargetPolygon();
 		int targetIndex = m_polygonGroup->editTargetPolygonIndex();
-		model->setData(index, newValue);
 		if (index.row() < targetIndex) {
 			m_polygonGroup->allPolygons().at(index.row())->setValue(newValue);
 		} else if (index.row() == targetIndex && targetPol != nullptr) {
-			targetPol->setVariantValue(newValue);
+			targetPol->setVariantValueAndEmitEdited(newValue);
 		} else {
 			int offset = 0;
 			if (targetPol != nullptr) {offset = -1;}

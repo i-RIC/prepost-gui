@@ -185,6 +185,16 @@ GeoDataPolygon::~GeoDataPolygon()
 	delete impl;
 }
 
+void GeoDataPolygon::setCaptionAndEmitEdited(const QString& caption)
+{
+	pushCommand(new EditNameAndValueCommand(caption, variantValue(), this));
+}
+
+void GeoDataPolygon::setVariantValueAndEmitEdited(const QVariant& value)
+{
+	pushCommand(new EditNameAndValueCommand(caption(), value, this));
+}
+
 void GeoDataPolygon::setupMenu()
 {
 	bool isRef = false;

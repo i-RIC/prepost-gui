@@ -68,6 +68,9 @@ public:
 	GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoDataPolygon();
 
+	void setCaptionAndEmitEdited(const QString& caption);
+	void setVariantValueAndEmitEdited(const QVariant& value);
+
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
