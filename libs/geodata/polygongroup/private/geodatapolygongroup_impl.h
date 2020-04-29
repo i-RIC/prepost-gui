@@ -45,6 +45,7 @@ public:
 	void updateActorSettingForEditTargetPolygon();
 	void updateSelectedPolygonsVtkObjects();
 	void updateAttributeBrowser();
+	void updateAttributeBrowserSelection();
 	void setupDummyPolygonForMenu();
 
 	void selectPolygonsIncludePoint(const QPointF& point);

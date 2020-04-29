@@ -239,6 +239,12 @@ void GeoDataPolygonGroup::Impl::updateAttributeBrowser()
 	m_attributeBrowser->update();
 }
 
+void GeoDataPolygonGroup::Impl::updateAttributeBrowserSelection()
+{
+	if (! m_attributeBrowser->isVisible()) {return;}
+	m_attributeBrowser->updateSelection();
+}
+
 void GeoDataPolygonGroup::Impl::setupDummyPolygonForMenu()
 {
 	m_dummyPolygonForMenu->editNameAndValueAction()->setEnabled(false);
@@ -356,7 +362,7 @@ void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 	m_group->updateIndex();
 	m_group->updateMenu();
 	updateSelectedPolygonsVtkObjects();
-	updateAttributeBrowser();
+	updateAttributeBrowserSelection();
 	updateActorSettingForEditTargetPolygon();
 }
 

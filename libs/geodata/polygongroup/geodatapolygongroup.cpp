@@ -753,7 +753,7 @@ void GeoDataPolygonGroup::setColorSetting(const GeoDataPolygonGroupColorSettingD
 	impl->updateActorSetting();
 }
 
-void GeoDataPolygonGroup::mergeEditTargetPolygon()
+void GeoDataPolygonGroup::mergeEditTargetPolygon(bool noUpdate)
 {
 	if (impl->m_editTargetPolygon == nullptr) {return;}
 
@@ -767,14 +767,30 @@ void GeoDataPolygonGroup::mergeEditTargetPolygon()
 	impl->m_editTargetPolygon = nullptr;
 	impl->m_editTargetPolygonIndex = 0;
 	impl->m_mode = Impl::Normal;
+	iRICUndoStack::instance().clear();
+
+	if (noUpdate) {return;}
 
 	updateVtkObjects();
 	updateIndex();
 	updateMenu();
 	impl->updateAttributeBrowser();
 	impl->updateSelectedPolygonsVtkObjects();
+}
 
-	iRICUndoStack::instance().clear();
+void GeoDataPolygonGroup::setSelectedPolygon(int index)
+{
+	int count = impl->m_polygons.size();
+	if (impl->m_editTargetPolygon != nullptr) {++count;}
+	Q_ASSERT(index < count);
+
+	mergeEditTargetPolygon(true);
+
+	auto p = impl->m_polygons.at(index);
+
+	impl->m_selectedPolygons.clear();
+	impl->m_selectedPolygons.insert(p);
+	impl->setupEditTargetPolygonFromSelectedPolygon();
 }
 
 void GeoDataPolygonGroup::updateMenu()

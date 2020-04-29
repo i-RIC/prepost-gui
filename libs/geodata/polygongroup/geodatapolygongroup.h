@@ -31,7 +31,7 @@ public:
 
 	void updateVtkObjects();
 	void updateIndex();
-	void mergeEditTargetPolygon();
+	void mergeEditTargetPolygon(bool noUpdate = false);
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
@@ -76,6 +76,7 @@ private slots:
 private:
 	GeoDataPolygonGroupColorSettingDialog::Setting colorSetting() const;
 	void setColorSetting(const GeoDataPolygonGroupColorSettingDialog::Setting& setting);
+	void setSelectedPolygon(int index);
 	void updateMenu();
 
 	void makeConnections();

@@ -16,6 +16,8 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
+#include <set>
+
 namespace {
 
 void setDataToModel(QStandardItemModel* model, GeoDataPolygonGroupPolygon* pol, int row, bool isRef)
@@ -106,9 +108,6 @@ void GeoDataPolygonGroupAttributeBrowser::update()
 	auto selIdx = m_group->editTargetPolygonIndex();
 	int count = pols.size();
 	if (selPol != nullptr) {++count;}
-	QItemSelection selection;
-	int maxcol = 2;
-	if (isRef) {maxcol = 1;}
 
 	m_model->setRowCount(count);
 
@@ -116,49 +115,81 @@ void GeoDataPolygonGroupAttributeBrowser::update()
 	for (int i = 0; i < selIdx; ++i) {
 		auto p = pols.at(i);
 		setDataToModel(m_model, p, i, isRef);
-		if (m_group->isSelected(p)) {
-			selection.merge(QItemSelection(m_model->index(i, 0), m_model->index(i, maxcol)), QItemSelectionModel::Select);
-		}
 	}
 	if (selPol != nullptr) {
 		setDataToModel(m_model, selPol, selIdx, isRef);
-		selection.merge(QItemSelection(m_model->index(selIdx, 0), m_model->index(selIdx, maxcol)), QItemSelectionModel::Select);
 		offset = 1;
 	}
 
 	for (int i = selIdx; i < pols.size(); ++i) {
 		auto p = pols.at(i);
 		setDataToModel(m_model, p, i + offset, isRef);
+	}
+
+	updateSelection();
+
+	m_updating = false;
+}
+
+void GeoDataPolygonGroupAttributeBrowser::updateSelection()
+{
+	bool isRef = m_group->gridAttribute()->isReferenceInformation();
+	const auto& pols = m_group->allPolygons();
+	auto selPol = m_group->editTargetPolygon();
+	auto selIdx = m_group->editTargetPolygonIndex();
+	int count = pols.size();
+	if (selPol != nullptr) {++count;}
+	QItemSelection selection;
+	int maxcol = 2;
+	if (isRef) {maxcol = 1;}
+
+	int offset = 0;
+	for (int i = 0; i < selIdx; ++i) {
+		auto p = pols.at(i);
+		if (m_group->isSelected(p)) {
+			selection.merge(QItemSelection(m_model->index(i, 0), m_model->index(i, maxcol)), QItemSelectionModel::Select);
+		}
+	}
+	if (selPol != nullptr) {
+		selection.merge(QItemSelection(m_model->index(selIdx, 0), m_model->index(selIdx, maxcol)), QItemSelectionModel::Select);
+		offset = 1;
+	}
+
+	for (int i = selIdx; i < pols.size(); ++i) {
+		auto p = pols.at(i);
 		if (m_group->isSelected(p)) {
 			selection.merge(QItemSelection(m_model->index(i + offset, 0), m_model->index(i + offset, maxcol)), QItemSelectionModel::Select);
 		}
 	}
 	m_selectionModel->select(selection, QItemSelectionModel::ClearAndSelect);
-
-	m_updating = false;
 }
 
 void GeoDataPolygonGroupAttributeBrowser::applySelectionToPolygons()
 {
 	if (m_updating) {return;}
 
+	if (selectionCoincides()) {return;}
+
 	static QMutex mutex;
 	QMutexLocker locker(&mutex);
 
-	m_group->mergeEditTargetPolygon();
+	m_group->mergeEditTargetPolygon(true);
 	auto& selPols = m_group->impl->m_selectedPolygons;
 	selPols.clear();
-	auto selRows = m_selectionModel->selectedRows();
+
+	auto indices = m_selectionModel->selectedIndexes();
 	const auto& pols = m_group->allPolygons();
 
-	for (int i = 0; i < selRows.size(); ++i) {
-		auto idx = selRows.at(i);
+	for (int i = 0; i < indices.size(); ++i) {
+		auto idx = indices.at(i);
 		auto p = pols.at(idx.row());
 		selPols.insert(p);
 	}
 	if (selPols.size() == 1) {
 		m_group->impl->setupEditTargetPolygonFromSelectedPolygon();
 	}
+	m_group->updateVtkObjects();
+	m_group->updateIndex();
 	m_group->impl->updateSelectedPolygonsVtkObjects();
 	m_group->impl->updateActionStatus();
 	m_group->updateMenu();
@@ -170,15 +201,38 @@ void GeoDataPolygonGroupAttributeBrowser::handleItemClick(const QModelIndex& ind
 	bool isRef = m_group->gridAttribute()->isReferenceInformation();
 	if ((isRef && index.column() == 1) || (! isRef && index.column() == 2)) {
 		m_group->panTo(index.row());
+	}
+}
 
-		QModelIndex left, right;
-		left = m_model->index(index.row(), 0);
-		if (isRef) {
-			right = m_model->index(index.row(), 1);
+bool GeoDataPolygonGroupAttributeBrowser::selectionCoincides()
+{
+	std::set<int> indices;
+	for (auto index : m_selectionModel->selectedIndexes()) {
+		indices.insert(index.row());
+	}
+	if (indices.size() == 1) {
+		auto idx = *(indices.begin());
+		return (m_group->impl->m_selectedPolygons.size() == 0 && (m_group->impl->m_editTargetPolygon != nullptr && m_group->impl->m_editTargetPolygonIndex == idx));
+	} else {
+		auto pols = m_group->impl->m_polygons;
+		std::unordered_set<GeoDataPolygonGroupPolygon*> selPolygons;
+		if (m_group->impl->m_editTargetPolygon != nullptr) {
+			bool editTargetSelected = false;
+			for (auto idx : indices) {
+				if (idx == m_group->impl->m_editTargetPolygonIndex) {
+					editTargetSelected = true;
+				} else if (idx < m_group->impl->m_editTargetPolygonIndex) {
+					selPolygons.insert(pols[idx]);
+				} else {
+					selPolygons.insert(pols[idx - 1]);
+				}
+			}
+			return (m_group->impl->m_selectedPolygons == selPolygons && editTargetSelected);
 		} else {
-			right = m_model->index(index.row(), 2);
+			for (auto idx : indices) {
+				selPolygons.insert(pols[idx]);
+			}
+			return (m_group->impl->m_selectedPolygons == selPolygons);
 		}
-		QItemSelection sel(left, right);
-		m_selectionModel->select(sel, QItemSelectionModel::ClearAndSelect);
 	}
 }

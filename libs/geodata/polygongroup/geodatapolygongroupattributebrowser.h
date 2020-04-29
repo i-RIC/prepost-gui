@@ -22,12 +22,15 @@ public:
 
 	void setPolygonGroup(GeoDataPolygonGroup* g);
 	void update();
+	void updateSelection();
 
 private slots:
 	void applySelectionToPolygons();
 	void handleItemClick(const QModelIndex& index);
 
 private:
+	bool selectionCoincides();
+
 	GeoDataPolygonGroup* m_group;
 	QWidget* m_mainWidget;
 	QBoxLayout* m_mainWidgetLayout;
