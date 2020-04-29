@@ -1279,9 +1279,7 @@ void GeoDataPolygon::editName()
 	QString newCaption = QInputDialog::getText(preProcessorWindow(), tr("Edit name"), tr("Name:"), QLineEdit::Normal, caption(), &ok);
 	if (! ok) {return;}
 
-	setCaption(newCaption);
-
-	emit nameAndValueEdited();
+	pushCommand(new EditNameAndValueCommand(newCaption, variantValue(), this));
 }
 
 void GeoDataPolygon::editValue()
