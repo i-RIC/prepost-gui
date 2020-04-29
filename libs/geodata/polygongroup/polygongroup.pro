@@ -141,6 +141,7 @@ HEADERS += gd_polygongroup_global.h \
            geodatapolygongroupshpexporter.h \
            geodatapolygongroupshpimporter.h \
            geodatapolygongroupshpimportersettingdialog.h \
+           private/geodatapolygongroup_editnameandvaluecommand.h \
            private/geodatapolygongroup_editpropertycommand.h \
            private/geodatapolygongroup_impl.h \
            private/geodatapolygongroup_sortcommand.h \
@@ -168,6 +169,7 @@ SOURCES += geodatapolygongroup.cpp \
            geodatapolygongroupshpexporter.cpp \
            geodatapolygongroupshpimporter.cpp \
            geodatapolygongroupshpimportersettingdialog.cpp \
+           private/geodatapolygongroup_editnameandvaluecommand.cpp \
            private/geodatapolygongroup_editpropertycommand.cpp \
            private/geodatapolygongroup_impl.cpp \
            private/geodatapolygongroup_sortcommand.cpp \

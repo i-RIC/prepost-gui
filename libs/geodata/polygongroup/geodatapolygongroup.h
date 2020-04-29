@@ -87,6 +87,7 @@ private:
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
 
+	class EditNameAndValueCommand;
 	class EditPropertyCommand;
 	class SortCommand;
 	class SortEditTargetPolygonCommand;

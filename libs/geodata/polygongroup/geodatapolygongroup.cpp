@@ -3,6 +3,7 @@
 #include "geodatapolygongroupcolorsettingdialog.h"
 #include "geodatapolygongroupmergesettingdialog.h"
 #include "geodatapolygongrouppolygon.h"
+#include "private/geodatapolygongroup_editnameandvaluecommand.h"
 #include "private/geodatapolygongroup_editpropertycommand.h"
 #include "private/geodatapolygongroup_impl.h"
 #include "private/geodatapolygongroup_sortcommand.h"
@@ -549,7 +550,6 @@ void GeoDataPolygonGroup::editNameAndValue()
 	auto dialog = m_gridAttribute->editNameAndValueDialog(preProcessorWindow());
 	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
-	dialog->setName(caption());
 	i->setupEditWidget(dialog->widget());
 	dialog->setName("");
 	dialog->clearValue();
@@ -562,22 +562,31 @@ void GeoDataPolygonGroup::editNameAndValue()
 	bool valSelected = dialog->isValueSelected();
 	QVariant newValue = dialog->variantValue();
 
+	if (newName.isEmpty() && ! valSelected) {return;}
+
+	std::vector<QString> newNames;
+	std::vector<QVariant> newValues;
+	std::vector<GeoDataPolygonGroupPolygon*> pols;
+
 	for (auto p : impl->m_selectedPolygons) {
 		if (! newName.isEmpty()) {
-			p->setName(newName);
+			newNames.push_back(newName);
+		} else {
+			newNames.push_back(p->name());
 		}
+
 		if (valSelected) {
-			p->setValue(newValue);
+			newValues.push_back(newValue);
+		} else {
+			newValues.push_back(p->value());
 		}
+
+		pols.push_back(p);
 	}
+
 	delete dialog;
 
-	updateVtkObjects();
-	impl->updateSelectedPolygonsVtkObjects();
-	impl->updateAttributeBrowser();
-	auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (parent());
-	p->informValueRangeChange();
-	p->informDataChange();
+	pushCommand(new EditNameAndValueCommand(newNames, newValues, pols, this));
 }
 
 void GeoDataPolygonGroup::mergePolygonsAndPolygonGroups()
