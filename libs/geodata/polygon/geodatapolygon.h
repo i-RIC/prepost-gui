@@ -168,6 +168,7 @@ private:
 	GeoDataPolygonHolePolygon* setupHolePolygon();
 	void applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y);
 	void clearHolePolygons();
+	void emitNameAndValueEdited();
 
 	void lockMutex();
 	void unlockMutex();

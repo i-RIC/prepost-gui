@@ -1322,7 +1322,6 @@ void GeoDataPolygon::editNameAndValue()
 	}
 	pushCommand(new EditNameAndValueCommand(dialog->name(), dialog->variantValue(), this));
 
-	emit nameAndValueEdited();
 	delete dialog;
 }
 
@@ -1550,6 +1549,11 @@ void GeoDataPolygon::clearHolePolygons()
 		delete p;
 	}
 	impl->m_holePolygons.clear();
+}
+
+void GeoDataPolygon::emitNameAndValueEdited()
+{
+	emit nameAndValueEdited();
 }
 
 void GeoDataPolygon::lockMutex()

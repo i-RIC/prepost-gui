@@ -15,6 +15,7 @@ void GeoDataPolygon::EditNameAndValueCommand::redo()
 	m_polygon->setCaption(m_newName);
 	m_polygon->setVariantValue(m_newValue);
 	m_polygon->setMapped(false);
+	m_polygon->emitNameAndValueEdited();
 }
 
 void GeoDataPolygon::EditNameAndValueCommand::undo()
@@ -22,4 +23,5 @@ void GeoDataPolygon::EditNameAndValueCommand::undo()
 	m_polygon->setCaption(m_oldName);
 	m_polygon->setVariantValue(m_oldValue);
 	m_polygon->setMapped(m_oldMapped);
+	m_polygon->emitNameAndValueEdited();
 }
