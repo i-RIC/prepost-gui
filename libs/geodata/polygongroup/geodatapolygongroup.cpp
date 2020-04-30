@@ -522,6 +522,7 @@ void GeoDataPolygonGroup::addPolygon()
 	connect(p, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
 
 	impl->m_selectedPolygons.clear();
+	impl->updateActionStatus();
 	impl->updateSelectedPolygonsVtkObjects();
 	impl->updateAttributeBrowser();
 	renderGraphicsView();
