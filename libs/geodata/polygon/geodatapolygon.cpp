@@ -1298,9 +1298,9 @@ void GeoDataPolygon::editValue()
 	}
 	int ret = dialog->exec();
 	if (ret == QDialog::Rejected) {return;}
-	pushCommand(new EditValueCommand(dialog->variantValue(), this));
 
-	emit nameAndValueEdited();
+	pushCommand(new EditNameAndValueCommand(caption(), dialog->variantValue(), this));
+
 	delete dialog;
 }
 
