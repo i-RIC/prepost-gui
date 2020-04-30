@@ -327,12 +327,24 @@ void GeoDataPolygonGroup::Impl::mergeToThis(GeoDataPolygonGroup* group)
 
 void GeoDataPolygonGroup::Impl::setupNewEditTargetPolygon()
 {
-	m_editTargetPolygon = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
-	m_editTargetPolygon->assignActorZValues(m_depthRange);
-	m_editTargetPolygon->informSelection(m_group->graphicsView());
+	auto p = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
+	m_editTargetPolygon = p;
+	p->setCaption(GeoDataPolygon::tr("Polygon%1").arg(m_polygons.size() + 1));
+	p->assignActorZValues(m_depthRange);
+	p->informSelection(m_group->graphicsView());
+	p->updateActionStatus();
+	p->showInitialDialog();
+	connect(p, SIGNAL(nameAndValueEdited()), m_group, SLOT(updateAttributeBrowser()));
+
+	m_editTargetPolygonIndex = 0;
+
 	m_mode = EditPolygon;
 
+	m_selectedPolygons.clear();
+	updateActionStatus();
+	updateSelectedPolygonsVtkObjects();
 	updateActorSettingForEditTargetPolygon();
+	updateAttributeBrowser();
 }
 
 void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()

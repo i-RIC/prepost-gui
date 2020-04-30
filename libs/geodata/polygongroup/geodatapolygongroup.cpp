@@ -512,23 +512,9 @@ void GeoDataPolygonGroup::addPolygon()
 		}
 		mergeEditTargetPolygon();
 	}
-	auto p = new GeoDataPolygon(parent(), creator(), gridAttribute());;
-	impl->m_editTargetPolygon = p;
-	auto caption = tr("Polygon%1").arg(impl->m_polygons.size() + 1);
-	p->setCaption(caption);
-	p->assignActorZValues(impl->m_depthRange);
-	p->informSelection(graphicsView());
-	p->updateActionStatus();
-	p->showInitialDialog();
-	connect(p, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
+	impl->setupNewEditTargetPolygon();
 
-	impl->m_selectedPolygons.clear();
-	impl->updateActionStatus();
-	impl->updateSelectedPolygonsVtkObjects();
-	impl->updateAttributeBrowser();
 	renderGraphicsView();
-
-	impl->m_mode = Impl::EditPolygon;
 	updateMenu();
 }
 
