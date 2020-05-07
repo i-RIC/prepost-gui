@@ -3893,49 +3893,49 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="287"/>
+        <location filename="../geodatapolygongroup.cpp" line="290"/>
         <source>P&amp;olygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="508"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
         <source>Polygon%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="528"/>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
         <source>Edit name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="528"/>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="542"/>
+        <location filename="../geodatapolygongroup.cpp" line="544"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="591"/>
-        <location filename="../geodatapolygongroup.cpp" line="667"/>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="591"/>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="667"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="791"/>
-        <location filename="../geodatapolygongroup.cpp" line="834"/>
+        <location filename="../geodatapolygongroup.cpp" line="838"/>
+        <location filename="../geodatapolygongroup.cpp" line="881"/>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4006,36 +4006,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
+        <location filename="../private/geodatapolygongroup_sortedittargetpolygoncommand.cpp" line="5"/>
         <source>Sort polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_editnameandvaluecommand.cpp" line="8"/>
+        <source>Edit name and value of polygons</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser</name>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="55"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="57"/>
         <source>Polygon Group Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="81"/>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="85"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="83"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="82"/>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="84"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="89"/>
         <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="86"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="88"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="90"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="92"/>
         <source>Sort toolbar</source>
         <translation type="unfinished"></translation>
     </message>
