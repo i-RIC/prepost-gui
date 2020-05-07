@@ -329,7 +329,7 @@ void GeoDataPolygonGroup::Impl::setupNewEditTargetPolygon()
 {
 	auto p = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
 	m_editTargetPolygon = p;
-	p->setCaption(GeoDataPolygon::tr("Polygon%1").arg(m_polygons.size() + 1));
+	p->setCaption(GeoDataPolygonGroup::tr("Polygon%1").arg(m_polygons.size() + 1));
 	p->assignActorZValues(m_depthRange);
 	p->informSelection(m_group->graphicsView());
 	p->updateActionStatus();
