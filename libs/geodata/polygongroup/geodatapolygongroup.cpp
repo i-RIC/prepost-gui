@@ -339,7 +339,12 @@ void GeoDataPolygonGroup::informDeselection(PreProcessorGraphicsViewInterface* v
 }
 
 void GeoDataPolygonGroup::addCustomMenuItems(QMenu* menu)
-{}
+{
+	menu->addAction(impl->m_addAction);
+	menu->addSeparator();
+	menu->addAction(m_editNameAction);
+	menu->addSeparator();
+}
 
 void GeoDataPolygonGroup::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 {}
@@ -896,7 +901,7 @@ void GeoDataPolygonGroup::updateMenu()
 void GeoDataPolygonGroup::makeConnections()
 {
 	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addPolygon()));
-	connect(impl->m_selectAction, SIGNAL(triggered()), this, SLOT(selectPolygons()));
+	//connect(impl->m_selectAction, SIGNAL(triggered()), this, SLOT(selectPolygons()));
 	connect(impl->m_mergeAction, SIGNAL(triggered()), this, SLOT(mergePolygonsAndPolygonGroups()));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedPolygons()));
 	connect(impl->m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
