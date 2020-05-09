@@ -80,6 +80,7 @@ public:
 	GeoDataPolygonGroupColorSettingDialog::Setting m_colorSetting;
 
 	GeoDataPolygon* m_editTargetPolygon;
+	GeoDataPolygonGroupPolygon* m_editTargetPolygonBackup;
 	int m_editTargetPolygonIndex;
 	GeoDataPolygon* m_dummyPolygonForMenu;
 	ZDepthRange m_depthRange;

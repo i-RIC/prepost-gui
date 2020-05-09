@@ -132,6 +132,13 @@ geos::geom::Polygon* GeoDataPolygonGroupPolygon::geosPolygon() const
 	return impl->m_polygon.get();
 }
 
+void GeoDataPolygonGroupPolygon::setGeosPolygon(geos::geom::Polygon* polygon)
+{
+	impl->m_polygon.reset(polygon);
+	setupBoundingRect();
+	setupTriangleCells();
+}
+
 std::vector<QPointF> GeoDataPolygonGroupPolygon::points() const
 {
 	std::vector<QPointF> ret;

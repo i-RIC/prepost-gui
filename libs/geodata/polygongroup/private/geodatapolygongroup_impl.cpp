@@ -67,6 +67,7 @@ GeoDataPolygonGroup::Impl::Impl(GeoDataPolygonGroup* group) :
 	m_selectedPolygonsPointsActor {vtkActor::New()},
 	m_qTree {new geos::index::quadtree::Quadtree()},
 	m_editTargetPolygon {nullptr},
+	m_editTargetPolygonBackup {nullptr},
 	m_editTargetPolygonIndex {0},
 	m_dummyPolygonForMenu {new GeoDataPolygon(group->parent(), group->creator(), group->gridAttribute())},
 	m_rightClickingMenu {new QMenu()},
@@ -133,6 +134,7 @@ GeoDataPolygonGroup::Impl::~Impl()
 
 	delete m_dummyPolygonForMenu;
 	delete m_editTargetPolygon;
+	delete m_editTargetPolygonBackup;
 	delete m_qTree;
 	delete m_rightClickingMenu;
 	delete m_attributeBrowser;
@@ -337,7 +339,7 @@ void GeoDataPolygonGroup::Impl::setupNewEditTargetPolygon()
 	connect(p, SIGNAL(nameAndValueEdited()), m_group, SLOT(updateAttributeBrowser()));
 
 	m_editTargetPolygonIndex = 0;
-
+	m_editTargetPolygonBackup = new GeoDataPolygonGroupPolygon();
 	m_mode = EditPolygon;
 
 	m_selectedPolygons.clear();
@@ -355,6 +357,8 @@ void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 
 	m_editTargetPolygonIndex = static_cast<int>(it - m_polygons.begin());
 	m_polygons.erase(it);
+
+	m_editTargetPolygonBackup = selectedPol;
 	auto p = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
 	m_editTargetPolygon = p;
 	p->assignActorZValues(m_depthRange);
@@ -365,7 +369,6 @@ void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 	p->updateActionStatus();
 	p->informSelection(m_group->graphicsView());
 	connect(p, SIGNAL(nameAndValueEdited()), m_group, SLOT(updateAttributeBrowser()));
-	delete selectedPol;
 
 	m_selectedPolygons.clear();
 	m_mode = EditPolygon;

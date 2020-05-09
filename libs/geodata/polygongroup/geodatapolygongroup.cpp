@@ -713,7 +713,10 @@ void GeoDataPolygonGroup::deleteSelectedPolygons()
 
 	if (impl->m_editTargetPolygon != nullptr) {
 		delete impl->m_editTargetPolygon;
+		delete impl->m_editTargetPolygonBackup;
 		impl->m_editTargetPolygon = nullptr;
+		impl->m_editTargetPolygonIndex = 0;
+		impl->m_editTargetPolygonBackup = nullptr;
 		impl->m_mode = Impl::Normal;
 	}
 
@@ -763,15 +766,22 @@ void GeoDataPolygonGroup::mergeEditTargetPolygon(bool noUpdate)
 {
 	if (impl->m_editTargetPolygon == nullptr) {return;}
 
-	auto pol = impl->m_editTargetPolygon->regionPolygon()->polygon();
-	if (impl->m_editTargetPolygon->regionPolygon()->polygon().size() > 3) {
-		auto p = impl->mergeToThis(impl->m_editTargetPolygon, impl->m_editTargetPolygonIndex);
-		impl->m_selectedPolygons.insert(p);
+	auto p = impl->m_editTargetPolygon;
+	auto pb = impl->m_editTargetPolygonBackup;
+
+	if (p->regionPolygon()->polygon().size() > 3) {
+		pb->setName(p->caption());
+		pb->setValue(p->variantValue());
+		pb->setGeosPolygon(p->getGeosPolygon(QPointF(0, 0)));
+
+		impl->m_polygons.insert(impl->m_polygons.begin() + impl->m_editTargetPolygonIndex, pb);
+		impl->m_selectedPolygons.insert(pb);
 	}
 
 	delete impl->m_editTargetPolygon;
 	impl->m_editTargetPolygon = nullptr;
 	impl->m_editTargetPolygonIndex = 0;
+	impl->m_editTargetPolygonBackup = nullptr;
 	impl->m_mode = Impl::Normal;
 	iRICUndoStack::instance().clear();
 
