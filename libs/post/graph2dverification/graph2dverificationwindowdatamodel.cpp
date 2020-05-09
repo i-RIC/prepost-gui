@@ -342,6 +342,7 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 	double errorSquareSum = 0;
 
 	// setup measuredVals.
+	m_setting.updateActivePostData();
 	PostZoneDataContainer *cont = m_setting.activePostData();
 	if (cont == nullptr) {
 		return;
@@ -563,6 +564,9 @@ void Graph2dVerificationWindowDataModel::clearData()
 	}
 	xVals.clear();
 	yVals.clear();
+
+	Graph2dVerificationWindow* w = dynamic_cast<Graph2dVerificationWindow*>(mainWindow());
+	w->setComment("");
 }
 
 void Graph2dVerificationWindowDataModel::updateZoneList()

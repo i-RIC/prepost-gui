@@ -72,12 +72,7 @@ void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomN
 		}
 	}
 
-	for (PostZoneDataContainer* cont : m_postSolutionInfo->zoneContainers2D()) {
-		if (m_activeZone == cont->zoneName().c_str()) {
-			m_activePostData = cont;
-			break;
-		}
-	}
+	updateActivePostData();
 }
 
 void Graph2dVerificationWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
@@ -87,6 +82,17 @@ void Graph2dVerificationWindowResultSetting::saveToProjectMainFile(QXmlStreamWri
 	writer.writeAttribute("activeValue", m_activeValue);
 	writer.writeAttribute("activeFile", m_activeFile);
 	writer.writeAttribute("activeZone", m_activeZone);
+}
+
+void Graph2dVerificationWindowResultSetting::updateActivePostData()
+{
+	m_activePostData = nullptr;
+	for (PostZoneDataContainer* cont : m_postSolutionInfo->zoneContainers2D()) {
+		if (m_activeZone == cont->zoneName().c_str()) {
+			m_activePostData = cont;
+			break;
+		}
+	}
 }
 
 void Graph2dVerificationWindowResultSetting::setActivePostData(PostZoneDataContainer* postZoneDataContainer)
