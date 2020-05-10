@@ -60,6 +60,7 @@ void Graph2dVerificationWindowDataModel::init()
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
 	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(zoneList2DUpdated()), this, SLOT(updateZoneList()));
 
 	m_pointsCurve  = nullptr;
 	m_lineCurve    = nullptr;
@@ -341,7 +342,14 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 	double errorSquareSum = 0;
 
 	// setup measuredVals.
+	PostZoneDataContainer *cont = m_setting.activePostData();
+	if (cont == nullptr) {
+		return;
+	}
 	vtkPointSet* ps = m_setting.activePostData()->data();
+	if (ps == nullptr) {
+		return;
+	}
 
 	vtkPolyData* pd = m_setting.activeMeasuredData()->pointData();
 	distanceVals.reserve(pd->GetNumberOfPoints());
@@ -470,12 +478,14 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 	QPen pen(Qt::black);
 	QwtSymbol* symbol = new QwtSymbol(QwtSymbol::Ellipse, brush, pen, QSize(6, 6));
 
+	Q_ASSERT(m_pointsCurve == nullptr);
 	m_pointsCurve = new QwtPlotCustomCurve();
 	m_pointsCurve->setSymbol(symbol);
 	m_pointsCurve->setStyle(QwtPlotCurve::NoCurve);
 	m_pointsCurve->setLegendAttribute(QwtPlotCurve::LegendShowSymbol);
 	m_pointsCurve->setLegendIconSize(QSize(7, 7));
 
+	Q_ASSERT(m_lineCurve == nullptr);
 	m_lineCurve = new QwtPlotCustomCurve();
 	m_lineCurve->setLegendAttribute(QwtPlotCurve::LegendShowLine);
 
@@ -553,4 +563,9 @@ void Graph2dVerificationWindowDataModel::clearData()
 	}
 	xVals.clear();
 	yVals.clear();
+}
+
+void Graph2dVerificationWindowDataModel::updateZoneList()
+{
+	m_setting.setActivePostData(nullptr);
 }

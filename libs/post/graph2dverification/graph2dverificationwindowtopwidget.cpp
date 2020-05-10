@@ -22,7 +22,8 @@ Graph2dVerificationWindowTopWidget::~Graph2dVerificationWindowTopWidget()
 
 void Graph2dVerificationWindowTopWidget::setSetting(const Graph2dVerificationWindowResultSetting& setting)
 {
-	Q_ASSERT(setting.activePostData() != nullptr);
+	if (setting.activePostData() == nullptr) return;
+
 	vtkPointSet* ps = setting.activePostData()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 

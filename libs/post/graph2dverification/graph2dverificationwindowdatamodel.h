@@ -44,6 +44,7 @@ public slots:
 private slots:
 	void updateTime();
 	void updateData(int fn);
+	void updateZoneList();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -66,7 +67,7 @@ private:
 	int m_timeEnd;
 	int m_timeSkip;
 
-	PostSolutionInfo* m_postSolutionInfo;
+	///PostSolutionInfo* m_postSolutionInfo;
 	std::vector<MeasuredData*> m_measuredData;
 
 	QString m_xLabel;

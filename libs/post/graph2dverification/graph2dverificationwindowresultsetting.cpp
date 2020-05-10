@@ -28,6 +28,10 @@ bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const s
 	m_measuredData = measuredData;
 	m_postSolutionInfo = sol;
 	m_timeStep = m_postSolutionInfo->currentStep();
+
+	if (m_postSolutionInfo == nullptr) {
+		return false;
+	}
 	return true;
 }
 
