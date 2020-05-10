@@ -24,7 +24,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="fileMenu">
@@ -62,6 +62,7 @@
      <addaction name="fileExportBaseLineAction"/>
      <addaction name="fileExportCrosssectionLineAction"/>
      <addaction name="fileExportRiverSurveyDataAction"/>
+     <addaction name="fileExportRiverSurveyDataAsCSVsAction"/>
     </widget>
     <widget class="QMenu" name="recentProjectsMenu">
      <property name="title">
@@ -131,6 +132,7 @@
      <string>&amp;River Survey Data</string>
     </property>
     <addaction name="riverSurveyDataExportAction"/>
+    <addaction name="riverSurveyDataExportAsCSVsAction"/>
    </widget>
    <widget class="QMenu" name="viewMenu">
     <property name="title">
@@ -621,6 +623,20 @@
   <action name="dummyAction">
    <property name="text">
     <string>dummy</string>
+   </property>
+  </action>
+  <action name="fileExportRiverSurveyDataAsCSVsAction">
+   <property name="text">
+    <string>River Survey Data as CSV files...</string>
+   </property>
+  </action>
+  <action name="riverSurveyDataExportAsCSVsAction">
+   <property name="icon">
+    <iconset resource="../rivmaker.qrc">
+     <normaloff>:/images/iconExport.png</normaloff>:/images/iconExport.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export as CSV files...</string>
    </property>
   </action>
  </widget>

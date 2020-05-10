@@ -57,6 +57,9 @@ public:
 	const QString& csvFileName() const;
 	void setCsvFileName(const QString& csvFileName);
 
+	const QString& rivCsvFolderName() const;
+	void setRivCsvFolderName(const QString& folderName);
+
 	void updatePointsAutoSize();
 
 	MappingMethod mappingMethod() const;

@@ -75,6 +75,7 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            geom/quadtreecontainer.h \
            geom/rect.h \
            geom/rect_detail.h \
+           io/rivcsvexporter.h \
            io/rivexporter.h \
            io/sacguiimporter.h \
            main/rivmakermainwindow.h \
@@ -205,6 +206,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            geom/geometrytriangle.cpp \
            geom/quadtreecontainer.cpp \
            geom/rect.cpp \
+           io/rivcsvexporter.cpp \
            io/rivexporter.cpp \
            io/sacguiimporter.cpp \
            main/main.cpp \

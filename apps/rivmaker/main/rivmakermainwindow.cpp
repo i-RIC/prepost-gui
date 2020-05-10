@@ -210,6 +210,15 @@ void RivmakerMainWindow::exportRiverSurveyData()
 	impl->m_rivExporter.exportData(impl->m_project, this);
 }
 
+void RivmakerMainWindow::exportRiverSurveyCsvData()
+{
+	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {
+		QMessageBox::warning(this, tr("Error"), tr("No data to export exists"));
+		return;
+	}
+	impl->m_rivCsvExporter.exportData(impl->m_project, this);
+}
+
 void RivmakerMainWindow::exportWaterSurfaceElevationData()
 {
 	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {

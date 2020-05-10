@@ -39,6 +39,7 @@ private slots:
 	void exportBaseLine();
 	void exportCrossSectionLines();
 	void exportRiverSurveyData();
+	void exportRiverSurveyCsvData();
 
 	void fit();
 	void resetRotation();

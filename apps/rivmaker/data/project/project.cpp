@@ -305,6 +305,16 @@ void Project::setCsvFileName(const QString& csvFileName)
 	emit csvFileNameSet(isCsvFileNameSet());
 }
 
+const QString& Project::rivCsvFolderName() const
+{
+	return impl->m_rivCsvFolderName;
+}
+
+void Project::setRivCsvFolderName(const QString& folderName)
+{
+	impl->m_rivCsvFolderName = folderName;
+}
+
 void Project::updatePointsAutoSize()
 {
 	int numElevationPoints = static_cast<int>(impl->m_elevationPoints.points().size());

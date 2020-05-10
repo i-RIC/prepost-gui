@@ -37,6 +37,7 @@ public:
 	QPointF m_offset;
 	QString m_rivFileName;
 	QString m_csvFileName;
+	QString m_rivCsvFolderName;
 
 	QString m_filename;
 	QString m_tempDir;
