@@ -45,7 +45,11 @@ private slots:
 	void resetRotation();
 	void rotate90();
 	void zoomIn();
+	void zoomInX();
+	void zoomInY();
 	void zoomOut();
+	void zoomOutX();
+	void zoomOutY();
 
 	void focusPreProcessorWindow();
 	void focusVerticalCrossSectionWindow();

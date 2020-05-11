@@ -80,10 +80,22 @@ void PreProcessorWindow::zoomIn()
 	impl->m_view.zoomIn();
 }
 
+void PreProcessorWindow::zoomInX()
+{}
+
+void PreProcessorWindow::zoomInY()
+{}
+
 void PreProcessorWindow::zoomOut()
 {
 	impl->m_view.zoomOut();
 }
+
+void PreProcessorWindow::zoomOutX()
+{}
+
+void PreProcessorWindow::zoomOutY()
+{}
 
 void PreProcessorWindow::importElevation()
 {

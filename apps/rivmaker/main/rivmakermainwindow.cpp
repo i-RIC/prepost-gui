@@ -260,12 +260,44 @@ void RivmakerMainWindow::zoomIn()
 	w->zoomIn();
 }
 
+void RivmakerMainWindow::zoomInX()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomInX();
+}
+
+void RivmakerMainWindow::zoomInY()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomInY();
+}
+
 void RivmakerMainWindow::zoomOut()
 {
 	auto w = currentViewWindow();
 	if (w == nullptr) {return;}
 
 	w->zoomOut();
+}
+
+void RivmakerMainWindow::zoomOutX()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomOutX();
+}
+
+void RivmakerMainWindow::zoomOutY()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomOutY();
 }
 
 void RivmakerMainWindow::focusPreProcessorWindow()
@@ -300,6 +332,7 @@ void RivmakerMainWindow::openCrossSectionWindow()
 	subW->setWindowIcon(w->windowIcon());
 	subW->show();
 	subW->setFocus();
+	w->fit();
 
 	updateWindowsToolBar();
 	connect(w, SIGNAL(destroyed(QObject*)), this, SLOT(updateWindowsToolBar()));

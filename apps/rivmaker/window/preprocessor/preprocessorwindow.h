@@ -26,7 +26,11 @@ public:
 	void rotate90() override;
 
 	void zoomIn() override;
+	void zoomInX() override;
+	void zoomInY() override;
 	void zoomOut() override;
+	void zoomOutX() override;
+	void zoomOutY() override;
 
 	void importElevation();
 	void importWaterSurfaceElevation();

@@ -41,7 +41,11 @@
         <file>images/iconViewRotate90.png</file>
         <file>images/iconViewRotateReset.png</file>
         <file>images/iconViewZoomIn.png</file>
+        <file>images/iconViewZoomInX.png</file>
+        <file>images/iconViewZoomInY.png</file>
         <file>images/iconViewZoomOut.png</file>
+        <file>images/iconViewZoomOutX.png</file>
+        <file>images/iconViewZoomOutY.png</file>
         <file>images/imageAllToLines.png</file>
         <file>images/imageTemplate.png</file>
         <file>images/imageTin.png</file>

@@ -8,8 +8,22 @@ DEFINES += QWT_DLL
 
 include( ../../paths.pri )
 
-QT += widgets network xml
+QT += widgets network svg xml
 RC_FILE = rivmaker.rc
+
+# iricGuiBase
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../../libs/guibase/debug"
+        } else {
+                LIBS += -L"../../libs/guibase/release"
+        }
+}
+unix {
+        LIBS += -L"../../libs/guibase"
+}
+LIBS += -liricGuibase
 
 # iricMisc
 
@@ -82,6 +96,9 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            misc/geometryutil.h \
            misc/mathutil.h \
            misc/qwtcanvaswithpositionsignal.h \
+           widgets/chartgraphicsview.h \
+           widgets/chartgraphicsviewdisplaysetting.h \
+           widgets/chartwindow.h \
            widgets/mousepositionwidget.h \
            widgets/valuewidget.h \
            window/viewwindowi.h \
@@ -161,6 +178,9 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            io/polyline/polylineimporteri.h \
            main/private/rivmakermainwindow_impl.h \
            window/crosssection/crosssectionwindow.h \
+           window/crosssection/crosssectionwindowdisplaysetting.h \
+           window/crosssection/crosssectionwindowdisplaysettingdialog.h \
+           window/crosssection/crosssectionwindowgraphicsview.h \
            window/preprocessor/preprocessordataitemi.h \
            window/preprocessor/preprocessormodel.h \
            window/preprocessor/preprocessorview.h \
@@ -192,7 +212,7 @@ FORMS += dialogs/aboutdialog.ui \
          main/rivmakermainwindow.ui \
          widgets/mousepositionwidget.ui \
          widgets/valuewidget.ui \
-         window/crosssection/crosssectionwindow.ui \
+         window/crosssection/crosssectionwindowdisplaysettingdialog.ui \
          window/verticalcrosssection/verticalcrosssectionwindow.ui
 SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            csbuilder/crosssectionbuildertemplatemapping.cpp \
@@ -215,6 +235,9 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            misc/geometryutil.cpp \
            misc/mathutil.cpp \
            misc/qwtcanvaswithpositionsignal.cpp \
+           widgets/chartgraphicsview.cpp \
+           widgets/chartgraphicsviewdisplaysetting.cpp \
+           widgets/chartwindow.cpp \
            widgets/mousepositionwidget.cpp \
            widgets/valuewidget.cpp \
            data/arbitraryhwm/arbitraryhwm.cpp \
@@ -281,6 +304,9 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            io/polyline/polylineexporter.cpp \
            io/polyline/polylineimporter.cpp \
            window/crosssection/crosssectionwindow.cpp \
+           window/crosssection/crosssectionwindowdisplaysetting.cpp \
+           window/crosssection/crosssectionwindowdisplaysettingdialog.cpp \
+           window/crosssection/crosssectionwindowgraphicsview.cpp \
            window/preprocessor/preprocessormodel.cpp \
            window/preprocessor/preprocessorview.cpp \
            window/preprocessor/preprocessorwindow.cpp \
