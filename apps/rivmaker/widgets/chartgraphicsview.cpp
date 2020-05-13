@@ -522,3 +522,7 @@ QMatrix ChartGraphicsView::getMatrix(QRect& viewport)
 	return translate1 * scale * translate2;
 }
 
+ChartGraphicsView::ViewMouseEventMode ChartGraphicsView::viewMouseEventMode() const
+{
+	return m_viewMouseEventMode;
+}

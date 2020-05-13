@@ -88,7 +88,7 @@ void CrossSectionWindow::exportSVG()
 	generator.setFileName(fname);
 	generator.setSize(gv->size());
 	generator.setViewBox(gv->rect());
-	generator.setTitle("Cross section window image");
+	generator.setTitle("Cross Section Window Image");
 
 	QPainter painter(&generator);
 	gv->draw(&painter);

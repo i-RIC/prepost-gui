@@ -15,7 +15,7 @@ class CrossSectionWindowDisplaySettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit CrossSectionWindowDisplaySettingDialog(QWidget *parent = 0);
+	explicit CrossSectionWindowDisplaySettingDialog(QWidget *parent = nullptr);
 	~CrossSectionWindowDisplaySettingDialog();
 
 	CrossSectionWindowDisplaySetting crossSectionWindowDisplaySetting() const;

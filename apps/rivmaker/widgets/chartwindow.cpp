@@ -102,6 +102,7 @@ void ChartWindow::updateAspectRatioStatus()
 void ChartWindow::addToolBars()
 {
 	addViewToolBar();
+	addToolBarBreak(Qt::TopToolBarArea);
 	addDisplayToolBar();
 }
 

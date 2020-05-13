@@ -57,6 +57,7 @@ protected:
 
 	ChartWindow* chartWindow() const;
 	QMatrix getMatrix(QRect& viewport);
+	ViewMouseEventMode viewMouseEventMode() const;
 
 private:
 	void mouseMoveEvent(QMouseEvent* event) override;

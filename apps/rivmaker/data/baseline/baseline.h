@@ -23,6 +23,7 @@ public:
 
 	const std::vector<QPointF>& polyLine() const;
 	void setPolyLine(const std::vector<QPointF>& line);
+	bool isDefined() const;
 
 	std::vector<QPointF> coordinates() const override;
 	void setCoordinates(const std::vector<QPointF>& coords) override;

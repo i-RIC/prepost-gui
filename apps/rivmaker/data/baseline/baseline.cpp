@@ -40,6 +40,11 @@ void BaseLine::setPolyLine(const std::vector<QPointF>& line)
 	project()->setModified();
 }
 
+bool BaseLine::isDefined() const
+{
+	return polyLine().size() >= 2;
+}
+
 std::vector<QPointF> BaseLine::coordinates() const
 {
 	return polyLine();

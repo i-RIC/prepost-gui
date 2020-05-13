@@ -1,7 +1,8 @@
 #ifndef VERTICALCROSSSECTIONWINDOW_H
 #define VERTICALCROSSSECTIONWINDOW_H
 
-#include <QStandardItemModel>
+#include "../../widgets/chartwindow.h"
+
 #include <QWidget>
 
 #include <vector>
@@ -9,75 +10,67 @@
 class Project;
 class RivmakerMainWindow;
 
-class QwtPlotCurve;
-class QwtPlotMarker;
-class QwtPlotZoomer;
+class VerticalCrossSectionWindowDisplaySettingDockWidget;
+class VerticalCrossSectionWindowElevationsDockWidget;
+class VerticalCrossSectionWindowGraphicsView;
 
-namespace Ui {
-class VerticalCrossSectionWindow;
-}
+class QPushButton;
 
-class VerticalCrossSectionWindow : public QWidget
+class VerticalCrossSectionWindow : public ChartWindow
 {
 	Q_OBJECT
 
 public:
-	explicit VerticalCrossSectionWindow(RivmakerMainWindow *parent);
+	explicit VerticalCrossSectionWindow(RivmakerMainWindow *parent = nullptr);
 	~VerticalCrossSectionWindow();
 
+	Project* project() const;
 	void setProject(Project* project);
+
+	bool showArbitrary() const;
+	bool showBenchmark() const;
+	bool showReferenceMark() const;
+	bool showHub() const;
+	bool showLeftHWMs() const;
+	bool showRightHWMs() const;
+	bool showStreamGage() const;
+
+	bool showXSLine() const;
+	bool showWSELine() const;
+	bool showLeftHWMLine() const;
+	bool showRightHWMLine() const;
+
+	void updateGraphicsView();
+	void exportWaterSurfaceElevation();
 
 signals:
 	void positionChangedForStatusBar(const QPointF& position);
 
 private slots:
+	void exportSVG();
+	void exportCSV();
+	void editDisplaySetting();
 	void updateView();
-	void handleTableEdit(QStandardItem* editedItem);
-	void exportWaterSurfaceElevation();
-	void resetZoom();
 	void setCsvExportEnabled(bool enabled);
 
 private:
-	void initPlot();
-	void initTable();
-
-	void updatePlot();
-	void updateTable();
-
-	void setupCrossSectionLine();
-	void setupCrossSectionMarkers(double *xmin, double *xmax, bool *first);
-
-	void updateScale(double xmin, double xmax, double ymin, double ymax);
+	void setupToolBars();
+	void setupDockWidgets();
 
 	void closeEvent(QCloseEvent *e);
-
-	QwtPlotCurve* m_csCurve;
-
-	QwtPlotCurve* m_arbitraryCurve;
-	QwtPlotCurve* m_benchmarkCurve;
-	QwtPlotCurve* m_referenceMarkCurve;
-	QwtPlotCurve* m_hubCurve;
-	QwtPlotCurve* m_leftBankCurve;
-	QwtPlotCurve* m_rightBankCurve;
-	QwtPlotCurve* m_streamGageCurve;
-
-	std::vector<QwtPlotMarker*> m_arbitraryMarkers;
-	std::vector<QwtPlotMarker*> m_benchmarkMarkers;
-	std::vector<QwtPlotMarker*> m_referenceMarkMarkers;
-	std::vector<QwtPlotMarker*> m_hubMarkers;
-	std::vector<QwtPlotMarker*> m_leftBankMarkers;
-	std::vector<QwtPlotMarker*> m_rightBankMarkers;
-	std::vector<QwtPlotMarker*> m_streamGageMarkers;
-
-	std::vector<QwtPlotMarker*> m_crossSectionMarkers;
-
-	QwtPlotZoomer* m_zoomer;
-
-	QStandardItemModel m_tableModel;
+	VerticalCrossSectionWindowGraphicsView* graphicsView() const;
 
 	Project* m_project;
+
+	QPushButton* m_exportSVGButton;
+	QPushButton* m_exportCSVButton;
+
+	QPushButton* m_displaySettingButton;
+
+	VerticalCrossSectionWindowDisplaySettingDockWidget* m_displaySettingDockWidget;
+	VerticalCrossSectionWindowElevationsDockWidget* m_elevationsDockWidget;
+
 	RivmakerMainWindow* m_mainWindow;
-	Ui::VerticalCrossSectionWindow *ui;
 };
 
 #endif // VERTICALCROSSSECTIONWINDOW_H

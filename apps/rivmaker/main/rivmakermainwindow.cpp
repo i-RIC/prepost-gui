@@ -66,10 +66,12 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 
 	auto pw = ui->centralwidget->addSubWindow(&(impl->m_preProcessorWindow));
 	pw->setWindowIcon(impl->m_preProcessorWindow.windowIcon());
-	pw->showMaximized();
+
 	auto vw = ui->centralwidget->addSubWindow(&(impl->m_verticalCrossSectionWindow));
 	vw->setWindowIcon(impl->m_verticalCrossSectionWindow.windowIcon());
-	vw->hide();
+
+	vw->showMaximized();
+	pw->showMaximized();
 
 	updateWindowsToolBar();
 	newProject();

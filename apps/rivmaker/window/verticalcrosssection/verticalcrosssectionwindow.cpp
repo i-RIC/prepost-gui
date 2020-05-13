@@ -1,5 +1,10 @@
 #include "verticalcrosssectionwindow.h"
-#include "ui_verticalcrosssectionwindow.h"
+#include "verticalcrosssectionwindowdisplaysettingdockwidget.h"
+#include "verticalcrosssectionwindowdisplaysettingdockwidgetview.h"
+#include "verticalcrosssectionwindowdisplaysettingdialog.h"
+#include "verticalcrosssectionwindowelevationsdockwidget.h"
+#include "verticalcrosssectionwindowelevationsdockwidgetview.h"
+#include "verticalcrosssectionwindowgraphicsview.h"
 #include "../../data/arbitraryhwm/arbitraryhwm.h"
 #include "../../data/benchmark/benchmark.h"
 #include "../../data/baseline/baseline.h"
@@ -17,21 +22,31 @@
 #include "../../main/rivmakermainwindow.h"
 #include "../../misc/qwtcanvaswithpositionsignal.h"
 
-#include <qwt_plot_curve.h>
-#include <qwt_plot_grid.h>
-#include <qwt_plot_marker.h>
-#include <qwt_plot_zoomer.h>
-#include <qwt_symbol.h>
+#include <misc/informationdialog.h>
 
 #include <QCloseEvent>
-#include <QLabel>
-#include <QDoubleSpinBox>
-#include <QPointF>
-#include <QStyledItemDelegate>
-#include <QVector>
+#include <QFile>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QPainter>
+#include <QPushButton>
+#include <QSvgGenerator>
+#include <QTextStream>
 
 namespace {
 
+void exportCsv(bool show, const BaseLine& baseLine, const Points& points, const QString& label, QTextStream* ts)
+{
+	if (! show) {return;}
+
+	bool l_internal;
+	for (auto p : points.points()) {
+		double pos = baseLine.calcPosition(p->x(), p->y(), &l_internal);
+		*ts << pos << "," << p->z() << "," << p->name() << "," << label << endl;
+	}
+}
+
+/*
 	const int defaultRowHeight = 20;
 
 	void clearMarkers(std::vector<QwtPlotMarker*>* markers)
@@ -120,63 +135,182 @@ namespace {
 			editor->setGeometry(option.rect);
 		}
 	};
+*/
 }
 
 VerticalCrossSectionWindow::VerticalCrossSectionWindow(RivmakerMainWindow *parent) :
-	QWidget {parent},
-	m_mainWindow {parent},
-	ui(new Ui::VerticalCrossSectionWindow)
+	ChartWindow {parent},
+	m_mainWindow {parent}
 {
-	ui->setupUi(this);
-	connect(ui->resetZoomButton, SIGNAL(clicked()), this, SLOT(resetZoom()));
-	connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportWaterSurfaceElevation()));
-	connect(&m_tableModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleTableEdit(QStandardItem*)));
-	connect(ui->arbitraryCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->benchmarkCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->referenceMarkCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->hubCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->leftCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->rightCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
-	connect(ui->streamGageCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateView()));
+	setWindowIcon(QIcon(":/images/iconVerticalCrosssection.png"));
+	setWindowTitle(tr("Elevation View Window"));
 
-	QwtCanvasWithPositionSignal* w = new QwtCanvasWithPositionSignal(ui->qwtWidget);
-	connect(w, SIGNAL(positionChangedForStatusBar(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
-	ui->qwtWidget->setCanvas(w);
+	auto graphicsView = new VerticalCrossSectionWindowGraphicsView(this);
+	setCentralWidget(graphicsView);
 
-	QList<int> sizes;
-	sizes << 300 << 100;
-	ui->splitter->setSizes(sizes);
+	setupToolBars();
+	setupDockWidgets();
 
-	initPlot();
-	initTable();
+	connect(graphicsView, SIGNAL(positionChangedForStatusBar(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
+	connect(m_exportSVGButton, SIGNAL(clicked()), this, SLOT(exportSVG()));
+	connect(m_exportCSVButton, SIGNAL(clicked()), this, SLOT(exportCSV()));
+	connect(m_displaySettingButton, SIGNAL(clicked()), this, SLOT(editDisplaySetting()));
 }
 
 VerticalCrossSectionWindow::~VerticalCrossSectionWindow()
-{
-	delete m_zoomer;
-	delete m_arbitraryCurve;
-	delete m_leftBankCurve;
-	delete m_rightBankCurve;
+{}
 
-	delete ui;
+Project* VerticalCrossSectionWindow::project() const
+{
+	return m_project;
 }
 
 void VerticalCrossSectionWindow::setProject(Project* project)
 {
 	m_project = project;
 	setCsvExportEnabled(project->isCsvFileNameSet());
+
 	connect(m_project, SIGNAL(updated()), this, SLOT(updateView()));
 	connect(m_project, SIGNAL(csvFileNameSet(bool)), this, SLOT(setCsvExportEnabled(bool)));
 	updateView();
 }
 
-void VerticalCrossSectionWindow::updateView()
+bool VerticalCrossSectionWindow::showArbitrary() const
 {
-	updatePlot();
-
-	updateTable();
+	return m_displaySettingDockWidget->view()->showArbitrary();
 }
 
+bool VerticalCrossSectionWindow::showBenchmark() const
+{
+	return m_displaySettingDockWidget->view()->showBenchmark();
+}
+
+bool VerticalCrossSectionWindow::showReferenceMark() const
+{
+	return m_displaySettingDockWidget->view()->showReferenceMark();
+}
+
+bool VerticalCrossSectionWindow::showHub() const
+{
+	return m_displaySettingDockWidget->view()->showHub();
+}
+
+bool VerticalCrossSectionWindow::showLeftHWMs() const
+{
+	return m_displaySettingDockWidget->view()->showLeftHWMs();
+}
+
+bool VerticalCrossSectionWindow::showRightHWMs() const
+{
+	return m_displaySettingDockWidget->view()->showRightHWMs();
+}
+
+bool VerticalCrossSectionWindow::showStreamGage() const
+{
+	return m_displaySettingDockWidget->view()->showStreamGage();
+}
+
+bool VerticalCrossSectionWindow::showXSLine() const
+{
+	return m_displaySettingDockWidget->view()->showXSLine();
+}
+
+bool VerticalCrossSectionWindow::showWSELine() const
+{
+	return m_displaySettingDockWidget->view()->showWSELine();
+}
+
+bool VerticalCrossSectionWindow::showLeftHWMLine() const
+{
+	return m_displaySettingDockWidget->view()->showLeftHWMLine();
+}
+
+bool VerticalCrossSectionWindow::showRightHWMLine() const
+{
+	return m_displaySettingDockWidget->view()->showRightHWMLine();
+}
+
+void VerticalCrossSectionWindow::exportSVG()
+{
+	QString fname = QFileDialog::getSaveFileName(this, tr("Save SVG file"), QString(), tr("SVG files (*.svg)"));
+	if (fname.isEmpty()) {return;}
+
+	auto gv = graphicsView();
+	QSvgGenerator generator;
+	generator.setFileName(fname);
+	generator.setSize(gv->size());
+	generator.setViewBox(gv->rect());
+	generator.setTitle("Elevation View Window Image");
+
+	QPainter painter(&generator);
+	gv->draw(&painter);
+}
+
+void VerticalCrossSectionWindow::exportCSV()
+{
+	InformationDialog::information(this, tr("Information"), tr("Data for checked Check Boxes are exported."), "rivmaker_vxs_csvexport");
+
+	QString fname = QFileDialog::getSaveFileName(this, tr("Save CSV file"), QString(), tr("CSV files (*.csv)"));
+	if (fname.isEmpty()) {return;}
+	QFile f(fname);
+	if (! f.open(QFile::WriteOnly)) {
+		QMessageBox::critical(this, tr("Error"), tr("%1 could note be opened.").arg(QDir::toNativeSeparators(fname)));
+		return;
+	}
+	QTextStream ts(&f);
+	ts << "position" << "," << "elevation" << "," << "name" << "," << "type" << endl;
+	ts.setRealNumberPrecision(6);
+
+	auto p = project();
+	const auto& points = p->waterSurfaceElevationPoints();
+
+	exportCsv(showArbitrary(), p->baseLine(), points.arbitraryHWM(), "Arbitrary HWM", &ts);
+	exportCsv(showBenchmark(), p->baseLine(), points.benchmark(), "Benchmark", &ts);
+	exportCsv(showReferenceMark(), p->baseLine(), points.referenceMark(), "Reference mark", &ts);
+	exportCsv(showHub(), p->baseLine(), points.hub(), "Surveying or turning point", &ts);
+	exportCsv(showLeftHWMs(), p->baseLine(), points.leftBankHWM(), "Left Bank HWM", &ts);
+	exportCsv(showRightHWMs(), p->baseLine(), points.rightBankHWM(), "Right Bank HWM", &ts);
+	exportCsv(showStreamGage(), p->baseLine(), points.streamGage(), "Stream gage", &ts);
+
+	f.close();
+}
+
+void VerticalCrossSectionWindow::editDisplaySetting()
+{
+	auto gv = graphicsView();
+	VerticalCrossSectionWindowDisplaySettingDialog dialog(this);
+	dialog.setSettings(gv->chartDisplaySetting());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	gv->setChartDisplaySetting(dialog.chartGraphicsViewDisplaySetting());
+
+	gv->update();
+}
+
+void VerticalCrossSectionWindow::updateView()
+{
+	updateGraphicsView();
+	m_elevationsDockWidget->view()->updateTable();
+}
+
+void VerticalCrossSectionWindow::setCsvExportEnabled(bool enabled)
+{
+	m_elevationsDockWidget->view()->setCsvExportEnabled(enabled);
+}
+
+void VerticalCrossSectionWindow::exportWaterSurfaceElevation()
+{
+	m_mainWindow->exportWaterSurfaceElevationData();
+}
+
+void VerticalCrossSectionWindow::updateGraphicsView()
+{
+	graphicsView()->updateView();
+}
+
+/*
 void VerticalCrossSectionWindow::handleTableEdit(QStandardItem* editedItem)
 {
 	if (editedItem->column() == 0) {return;}
@@ -188,22 +322,14 @@ void VerticalCrossSectionWindow::handleTableEdit(QStandardItem* editedItem)
 
 	m_project->emitUpdated();
 }
-
+*/
+/*
 void VerticalCrossSectionWindow::exportWaterSurfaceElevation()
 {
 	m_mainWindow->exportWaterSurfaceElevationData();
 }
-
-void VerticalCrossSectionWindow::resetZoom()
-{
-	m_zoomer->zoom(0);
-}
-
-void VerticalCrossSectionWindow::setCsvExportEnabled(bool enabled)
-{
-	ui->exportButton->setEnabled(enabled);
-}
-
+*/
+/*
 void VerticalCrossSectionWindow::initPlot()
 {
 	auto qwtW = ui->qwtWidget;
@@ -275,7 +401,8 @@ void VerticalCrossSectionWindow::initPlot()
 	m_zoomer->setTrackerPen(QPen(Qt::darkBlue));
 	m_zoomer->setMousePattern(QwtEventPattern::MouseSelect1, Qt::LeftButton);
 }
-
+*/
+/*
 void VerticalCrossSectionWindow::initTable()
 {
 	ui->tableView->setModel(&m_tableModel);
@@ -341,7 +468,9 @@ void VerticalCrossSectionWindow::updatePlot()
 
 	updateScale(xmin, xmax, ymin, ymax);
 }
+*/
 
+/*
 void VerticalCrossSectionWindow::updateTable()
 {
 	const auto& crossSections = m_project->crossSections();
@@ -380,7 +509,9 @@ void VerticalCrossSectionWindow::updateTable()
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 }
+*/
 
+/*
 void VerticalCrossSectionWindow::setupCrossSectionLine()
 {
 	const auto& baseLine = m_project->baseLine();
@@ -399,7 +530,8 @@ void VerticalCrossSectionWindow::setupCrossSectionLine()
 	}
 	m_csCurve->setSamples(samples);
 }
-
+*/
+/*
 void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* xmax, bool* first)
 {
 	for (QwtPlotMarker* m : m_crossSectionMarkers) {
@@ -440,7 +572,8 @@ void VerticalCrossSectionWindow::setupCrossSectionMarkers(double* xmin, double* 
 		*first = false;
 	}
 }
-
+*/
+/*
 void VerticalCrossSectionWindow::updateScale(double xmin, double xmax, double ymin, double ymax)
 {
 	double xwidth = xmax - xmin;
@@ -458,9 +591,45 @@ void VerticalCrossSectionWindow::updateScale(double xmin, double xmax, double ym
 	ui->qwtWidget->replot();
 	m_zoomer->setZoomBase(QRectF(QPointF(xmin, ymin), QPointF(xmax, ymax)));
 }
+*/
 
 void VerticalCrossSectionWindow::closeEvent(QCloseEvent *e)
 {
 	parentWidget()->hide();
 	e->ignore();
+}
+
+VerticalCrossSectionWindowGraphicsView* VerticalCrossSectionWindow::graphicsView() const
+{
+	return dynamic_cast<VerticalCrossSectionWindowGraphicsView*> (centralWidget());
+}
+
+void VerticalCrossSectionWindow::setupToolBars()
+{
+	QToolBar* exportToolBar = new QToolBar(this);
+
+	m_exportSVGButton = new QPushButton(tr("Export &SVG..."), this);
+	exportToolBar->addWidget(m_exportSVGButton);
+
+	m_exportCSVButton = new QPushButton(tr("Export &CSV..."), this);
+	exportToolBar->addWidget(m_exportCSVButton);
+
+	addToolBar(Qt::TopToolBarArea, exportToolBar);
+	addToolBarBreak(Qt::TopToolBarArea);
+
+	addToolBars();
+
+	auto tb = displayToolBar();
+
+	m_displaySettingButton = new QPushButton("&Display Setting", this);
+	tb->addWidget(m_displaySettingButton);
+}
+
+void VerticalCrossSectionWindow::setupDockWidgets()
+{
+	m_displaySettingDockWidget = new VerticalCrossSectionWindowDisplaySettingDockWidget(this);
+	addDockWidget(Qt::RightDockWidgetArea, m_displaySettingDockWidget);
+
+	m_elevationsDockWidget = new VerticalCrossSectionWindowElevationsDockWidget(this);
+	addDockWidget(Qt::RightDockWidgetArea, m_elevationsDockWidget);
 }
