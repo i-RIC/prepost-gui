@@ -4,6 +4,7 @@
 #include <geoio/polygonutil.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <misc/iricundostack.h>
 
 #include <QAction>
 #include <QIcon>
@@ -379,6 +380,8 @@ void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 	updateSelectedPolygonsVtkObjects();
 	updateAttributeBrowserSelection();
 	updateActorSettingForEditTargetPolygon();
+
+	iRICUndoStack::instance().clear();
 }
 
 void GeoDataPolygonGroup::Impl::updateActionStatus()
