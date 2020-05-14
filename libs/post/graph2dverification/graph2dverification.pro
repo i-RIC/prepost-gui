@@ -191,11 +191,11 @@ SOURCES += graph2dverificationsettingdialog.cpp \
 					 datamodel/graph2dverificationwindowrootdataitem.cpp \
 					 graph2dverificationwindowtopwidget.cpp
 TRANSLATIONS += languages/iricGraph2dhybrid_es_ES.ts \
-								languages/iricGraph2dhybrid_fr_FR.ts \
-								languages/iricGraph2dhybrid_id_ID.ts \
-								languages/iricGraph2dhybrid_ja_JP.ts \
-								languages/iricGraph2dhybrid_ko_KR.ts \
-								languages/iricGraph2dhybrid_ru_RU.ts \
-								languages/iricGraph2dhybrid_th_TH.ts \
-								languages/iricGraph2dhybrid_vi_VN.ts \
-								languages/iricGraph2dhybrid_zh_CN.ts
+								languages/iricGraph2dverification_fr_FR.ts \
+								languages/iricGraph2dverification_id_ID.ts \
+								languages/iricGraph2dverification_ja_JP.ts \
+								languages/iricGraph2dverification_ko_KR.ts \
+								languages/iricGraph2dverification_ru_RU.ts \
+								languages/iricGraph2dverification_th_TH.ts \
+								languages/iricGraph2dverification_vi_VN.ts \
+								languages/iricGraph2dverification_zh_CN.ts

@@ -89,6 +89,8 @@ public:
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
 
+	void updateActivePostData();
+
 private:
 
 	//friend class Graph2dVerificationWindowDataModel;
