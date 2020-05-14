@@ -68,6 +68,9 @@ public:
 	GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoDataPolygon();
 
+	void setCaptionAndEmitEdited(const QString& caption);
+	void setVariantValueAndEmitEdited(const QVariant& value);
+
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
@@ -87,6 +90,7 @@ public:
 	QColor color() const;
 
 	void setShape(geos::geom::Polygon* polygon);
+	void setShape(geos::geom::Polygon* polygon, const std::vector<unsigned int>& triangleCells);
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
@@ -113,8 +117,13 @@ public:
 
 	void setBCSettingMode(bool mode);
 
+signals:
+	void nameAndValueEdited();
+
 public slots:
+	void editName();
 	void editValue();
+	void editNameAndValue();
 	void restoreMouseEventMode();
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
 	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
@@ -162,6 +171,7 @@ private:
 	GeoDataPolygonHolePolygon* setupHolePolygon();
 	void applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y);
 	void clearHolePolygons();
+	void emitNameAndValueEdited();
 
 	void lockMutex();
 	void unlockMutex();
@@ -177,7 +187,9 @@ private:
 	vtkActor* paintActor() const;
 	vtkMapper* paintMapper() const;
 
+	QAction* editNameAction() const;
 	QAction* editValueAction() const;
+	QAction* editNameAndValueAction() const;
 	QAction* addVertexAction() const;
 	QAction* removeVertexAction() const;
 	QAction* coordEditAction() const;
@@ -190,6 +202,7 @@ private:
 	class AddVertexCommand;
 	class PushNewPointCommand;
 	class EditCoordinatesCommand;
+	class EditNameAndValueCommand;
 	class EditPropertyCommand;
 	class EditValueCommand;
 	class FinishPolygonDefiningCommand;

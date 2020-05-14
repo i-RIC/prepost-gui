@@ -137,6 +137,7 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_addvertexcommand.h \
            private/geodatapolygon_coordinateseditor.h \
            private/geodatapolygon_editcoordinatescommand.h \
+           private/geodatapolygon_editnameandvaluecommand.h \
            private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
@@ -170,6 +171,7 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_addvertexcommand.cpp \
            private/geodatapolygon_coordinateseditor.cpp \
            private/geodatapolygon_editcoordinatescommand.cpp \
+           private/geodatapolygon_editnameandvaluecommand.cpp \
            private/geodatapolygon_editpropertycommand.cpp \
            private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp \

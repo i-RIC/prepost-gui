@@ -48,8 +48,6 @@
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <geodata/pointmap/geodatapointmap.h>
-#include <geodata/polygon/geodatapolygon.h>
-#include <geodata/polygon/geodatapolygoncreator.h>
 #include <geodata/polygongroup/geodatapolygongroup.h>
 #include <geodata/polygongroup/geodatapolygongroupcreator.h>
 #include <geodata/polyline/geodatapolyline.h>
@@ -297,7 +295,6 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_geographicDataMenu->addAction(editGroupAction);
 	m_geographicDataMenu->addSeparator();
 
-	GeoDataCreator* polygonCreator = nullptr;
 	GeoDataCreator* polygonGroupCreator = nullptr;
 	GeoDataCreator* polylineCreator = nullptr;
 
@@ -305,9 +302,6 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		// GeoData dataitem is selected.
 		auto creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition());
 		for (auto creator : creators) {
-			if (dynamic_cast<GeoDataPolygonCreator*>(creator) != nullptr) {
-				polygonCreator = creator;
-			}
 			if (dynamic_cast<GeoDataPolygonGroupCreator*>(creator) != nullptr) {
 				polygonGroupCreator = creator;
 			}
@@ -337,17 +331,8 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		}
 		m_geographicDataMenu->addMenu(dummy);
 
-		GeoDataPolygon* pol = dynamic_cast<GeoDataPolygon*>(raw);
-		dummy = new QMenu(tr("&Polygon"), m_geographicDataMenu);
-		dummy->addAction(m_geoDataAddActions.value(polygonCreator));
-		if (pol != nullptr) {
-			dummy->addSeparator();
-			dummy->addActions(pol->menu()->actions());
-		}
-		m_geographicDataMenu->addMenu(dummy);
-
 		GeoDataPolygonGroup* polGroup = dynamic_cast<GeoDataPolygonGroup*>(raw);
-		dummy = new QMenu(tr("Polygon&Group"), m_geographicDataMenu);
+		dummy = new QMenu(tr("&Polygon Group"), m_geographicDataMenu);
 		if (polGroup != nullptr) {
 			connect(dummy, SIGNAL(aboutToShow()), this, SLOT(setupGeoDataSubMenu()));
 		} else {
@@ -372,9 +357,6 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			// GeoDatagroup dataitem is selected.
 			auto creators = GeoDataFactory::instance().compatibleCreators(gitem->condition());
 			for (auto creator : creators) {
-				if (dynamic_cast<GeoDataPolygonCreator*>(creator) != nullptr) {
-					polygonCreator = creator;
-				}
 				if (dynamic_cast<GeoDataPolygonGroupCreator*>(creator) != nullptr) {
 					polygonGroupCreator = creator;
 				}
@@ -390,10 +372,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("&Polygon"), m_geographicDataMenu);
-			dummy->addAction(m_geoDataAddActions.value(polygonCreator));
-			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("Polygon&Group"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Polygon Group"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polygonGroupCreator));
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("Poly&line"), m_geographicDataMenu);
@@ -417,10 +396,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("P&ointset Data"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("&Polygon"), mainWindow());
-			dummy->setDisabled(true);
-			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("Polygon&Group"), mainWindow());
+			dummy = new QMenu(tr("&Polygon Group"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("Poly&line"), mainWindow());

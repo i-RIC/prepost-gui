@@ -3975,25 +3975,51 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="197"/>
+        <location filename="../geodatapolygongroup.cpp" line="290"/>
         <source>P&amp;olygon Group</source>
         <translation>多边形组</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
+        <source>Polygon%1</source>
+        <translation type="unfinished">多边形%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="544"/>
+        <source>Edit %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation> %1组中没有其他面或面组。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>您确定要删除选定的多边形吗？</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="838"/>
+        <location filename="../geodatapolygongroup.cpp" line="881"/>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatapolygongroup_editpropertycommand.cpp" line="4"/>
@@ -4001,29 +4027,117 @@ p, li { white-space: pre-wrap; }
         <translation>多边形属性</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="44"/>
         <source>&amp;Add...</source>
-        <translation>添加 (&amp;A)...</translation>
+        <translation type="vanished">添加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="45"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
         <source>&amp;Select...</source>
         <translation>选择 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="46"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Merge...</source>
         <translation>合并 (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Delete</source>
         <translation>删除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <source>Edit &amp;Name...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Color &amp;Setting...</source>
         <translation>色彩设置 (&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <source>Move to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <source>Move to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
+        <location filename="../private/geodatapolygongroup_sortedittargetpolygoncommand.cpp" line="5"/>
+        <source>Sort polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_editnameandvaluecommand.cpp" line="8"/>
+        <source>Edit name and value of polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser</name>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="57"/>
+        <source>Polygon Group Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="83"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
+        <source>Name</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="84"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="89"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="88"/>
+        <source>Value</source>
+        <translation type="unfinished">数值</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="92"/>
+        <source>Sort toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4052,14 +4166,26 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
         <source>PolygonGroup</source>
-        <translation>多边形组</translation>
+        <translation type="vanished">多边形组</translation>
+    </message>
+    <message>
+        <source>PolygonGroup%1</source>
+        <translation type="vanished">多边形组%1</translation>
+    </message>
+    <message>
+        <source>Polygon%1</source>
+        <translation type="obsolete">多边形%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <source>Polygon Group</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
-        <source>PolygonGroup%1</source>
-        <translation>多边形组%1</translation>
+        <source>Polygon Group%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4109,17 +4235,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ESRI Shape file (Polygon Group) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
-        <source>ESRI Shapefile (Polygon Group)</source>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="112"/>
+        <source>ESRI Shapefile (Polygons)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="121"/>
+        <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="145"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -4134,35 +4260,35 @@ p, li { white-space: pre-wrap; }
 -多边形多次通过同一点</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="151"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="153"/>
         <source>Polygon%1</source>
         <translation>多边形%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="177"/>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="181"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation>此形状文件中包含的形状类型不是多边形。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
         <source>Opening %1 failed.</source>
         <translation>打开%1失败</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>shp文件和dbf文件之间的多边形数量不匹配。</translation>
     </message>
@@ -4220,55 +4346,75 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
+        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>Edit &amp;Value...</source>
         <translation>编辑数值 (&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>&amp;Copy...</source>
         <translation>复制 (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
+        <location filename="../geodatapolygon.cpp" line="102"/>
         <source>&amp;Add Vertex</source>
         <translation>添加顶点 (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
+        <location filename="../geodatapolygon.cpp" line="103"/>
         <source>&amp;Remove Vertex</source>
         <translation>删除顶点 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="104"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>编辑座标 (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="94"/>
+        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Add &amp;Hole Region</source>
         <translation>添加孔区域 (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="97"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>删除孔区域 (&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
+        <location filename="../geodatapolygon.cpp" line="98"/>
+        <source>Edit &amp;Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="100"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="105"/>
         <source>Color &amp;Setting...</source>
         <translation>色彩设置 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="189"/>
+        <location filename="../geodatapolygon.cpp" line="195"/>
         <source>&amp;Polygon</source>
         <translation>多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="575"/>
+        <location filename="../geodatapolygon.cpp" line="581"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>完成定义多边形</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatapolygon_pushnewpointcommand.cpp" line="8"/>
@@ -4296,13 +4442,13 @@ p, li { white-space: pre-wrap; }
         <translation>删除多边形顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>多边形至少必须具有三个顶点</translation>
     </message>
@@ -4312,23 +4458,23 @@ p, li { white-space: pre-wrap; }
         <translation>添加新空心多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义孔区域。 可以通过单击鼠标将孔区域定义为多边形。 通过双击或按回车键完成定义。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>您确定要删除此多边形吗？</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请通过单击鼠标定义多边形。 通过双击或按回车键完成定义。</translation>
     </message>
@@ -4338,12 +4484,13 @@ p, li { white-space: pre-wrap; }
         <translation>多边形值变更</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1234"/>
+        <location filename="../geodatapolygon.cpp" line="1293"/>
+        <location filename="../geodatapolygon.cpp" line="1314"/>
         <source>Edit %1 value</source>
         <translation>编辑 %1数值</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1235"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please input new value in this polygon.</source>
         <translation>请在此多边形中输入新值。</translation>
     </message>
@@ -4353,12 +4500,12 @@ p, li { white-space: pre-wrap; }
         <translation>多边形属性编辑</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Select Geographic Data</source>
         <translation>选择地理数据</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>请选择要复制该多边形的地理数据。</translation>
     </message>
@@ -4371,6 +4518,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
         <source>Polygon Coordinates</source>
         <translation>多边形坐标</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygon_editnameandvaluecommand.cpp" line="4"/>
+        <source>Polygon name and value change</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18261,295 +18413,296 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>Select file to import</source>
         <translation>选择导入文件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="151"/>
+        <location filename="../preprocessordatamodel.cpp" line="149"/>
         <source>iRIC project file (*.ipro)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="155"/>
+        <location filename="../preprocessordatamodel.cpp" line="153"/>
         <source>YAML file (*.yml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="194"/>
+        <location filename="../preprocessordatamodel.cpp" line="192"/>
         <source>Select case</source>
         <translation>选择案例</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="194"/>
+        <location filename="../preprocessordatamodel.cpp" line="192"/>
         <source>Please select from which case in %1 to import calculation conditions.</source>
         <translation>请从%1的哪种情况中选择导入计算条件。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="204"/>
-        <location filename="../preprocessordatamodel.cpp" line="217"/>
-        <location filename="../preprocessordatamodel.cpp" line="230"/>
+        <location filename="../preprocessordatamodel.cpp" line="202"/>
+        <location filename="../preprocessordatamodel.cpp" line="215"/>
+        <location filename="../preprocessordatamodel.cpp" line="228"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="204"/>
-        <location filename="../preprocessordatamodel.cpp" line="230"/>
+        <location filename="../preprocessordatamodel.cpp" line="202"/>
+        <location filename="../preprocessordatamodel.cpp" line="228"/>
         <source>Calculation Condition is successfully imported from the specified file.</source>
         <translation>成功导入选定文件的计算条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="217"/>
+        <location filename="../preprocessordatamodel.cpp" line="215"/>
         <source>Calculation Condition is successfully imported from %1.</source>
         <translation>计算条件已成功从%1导入</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="222"/>
-        <location filename="../preprocessordatamodel.cpp" line="235"/>
-        <location filename="../preprocessordatamodel.cpp" line="253"/>
+        <location filename="../preprocessordatamodel.cpp" line="220"/>
+        <location filename="../preprocessordatamodel.cpp" line="233"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Fail</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="222"/>
-        <location filename="../preprocessordatamodel.cpp" line="235"/>
+        <location filename="../preprocessordatamodel.cpp" line="220"/>
+        <location filename="../preprocessordatamodel.cpp" line="233"/>
         <source>Importing calculation condition failed.</source>
         <translation>加载计算条件时失败</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>Select File to Export</source>
         <translation>选择导出文件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="153"/>
+        <location filename="../preprocessordatamodel.cpp" line="151"/>
         <source>CGNS file (*.cgn *.cgns)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="246"/>
+        <location filename="../preprocessordatamodel.cpp" line="244"/>
         <source>Exporting calculation condition...</source>
         <translation>导出计算条件...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="248"/>
+        <location filename="../preprocessordatamodel.cpp" line="246"/>
         <source>Calculation Condition is successfully exported to %1.</source>
         <translation>计算条件已成功导出到%1</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="253"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Exporting calculation condition failed.</source>
         <translation>计算条件导出失败</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="286"/>
+        <location filename="../preprocessordatamodel.cpp" line="284"/>
         <source>G&amp;eographic Data</source>
         <translation>地理数据</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="292"/>
+        <location filename="../preprocessordatamodel.cpp" line="290"/>
         <source>Edit &amp;Groups...</source>
         <translation>编辑组...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="294"/>
+        <location filename="../preprocessordatamodel.cpp" line="292"/>
         <source>Delete &amp;All...</source>
         <translation>全部删除...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="295"/>
+        <location filename="../preprocessordatamodel.cpp" line="293"/>
         <source>Export All Polygons...</source>
         <translation>导出所有多边形...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="323"/>
-        <location filename="../preprocessordatamodel.cpp" line="387"/>
-        <location filename="../preprocessordatamodel.cpp" line="414"/>
+        <location filename="../preprocessordatamodel.cpp" line="317"/>
+        <location filename="../preprocessordatamodel.cpp" line="369"/>
+        <location filename="../preprocessordatamodel.cpp" line="393"/>
         <source>&amp;River Survey</source>
         <translation>&amp;河流勘测</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="332"/>
-        <location filename="../preprocessordatamodel.cpp" line="390"/>
-        <location filename="../preprocessordatamodel.cpp" line="417"/>
+        <location filename="../preprocessordatamodel.cpp" line="326"/>
+        <location filename="../preprocessordatamodel.cpp" line="372"/>
+        <location filename="../preprocessordatamodel.cpp" line="396"/>
         <source>P&amp;ointset Data</source>
         <translation>&amp;点集数据</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="341"/>
-        <location filename="../preprocessordatamodel.cpp" line="393"/>
-        <location filename="../preprocessordatamodel.cpp" line="420"/>
         <source>&amp;Polygon</source>
-        <translation>&amp;多边形</translation>
+        <translation type="vanished">&amp;多边形</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="350"/>
-        <location filename="../preprocessordatamodel.cpp" line="396"/>
-        <location filename="../preprocessordatamodel.cpp" line="423"/>
         <source>Polygon&amp;Group</source>
-        <translation>&amp;多边形组</translation>
+        <translation type="vanished">&amp;多边形组</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="438"/>
+        <location filename="../preprocessordatamodel.cpp" line="335"/>
+        <location filename="../preprocessordatamodel.cpp" line="375"/>
+        <location filename="../preprocessordatamodel.cpp" line="399"/>
+        <source>&amp;Polygon Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="414"/>
         <source>&amp;Color Setting...</source>
         <translation>&amp;颜色设置...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="441"/>
+        <location filename="../preprocessordatamodel.cpp" line="417"/>
         <source>Set Up Scalarbar...</source>
         <translation>设置设置标量栏...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="464"/>
+        <location filename="../preprocessordatamodel.cpp" line="440"/>
         <source>Import</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="468"/>
+        <location filename="../preprocessordatamodel.cpp" line="444"/>
         <source>Export</source>
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="478"/>
+        <location filename="../preprocessordatamodel.cpp" line="454"/>
         <source>&amp;Grid Creating Condition</source>
         <translation>&amp;网格创建条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="485"/>
+        <location filename="../preprocessordatamodel.cpp" line="461"/>
         <source>B&amp;oundary Condition Setting</source>
         <translation>&amp;边界条件设置</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="495"/>
-        <location filename="../preprocessordatamodel.cpp" line="909"/>
-        <location filename="../preprocessordatamodel.cpp" line="921"/>
-        <location filename="../preprocessordatamodel.cpp" line="988"/>
-        <location filename="../preprocessordatamodel.cpp" line="1000"/>
+        <location filename="../preprocessordatamodel.cpp" line="471"/>
+        <location filename="../preprocessordatamodel.cpp" line="885"/>
+        <location filename="../preprocessordatamodel.cpp" line="897"/>
+        <location filename="../preprocessordatamodel.cpp" line="964"/>
+        <location filename="../preprocessordatamodel.cpp" line="976"/>
         <source>&amp;Grid</source>
         <translation>&amp;网格</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="519"/>
+        <location filename="../preprocessordatamodel.cpp" line="495"/>
         <source>&amp;Attributes Mapping</source>
         <translation>&amp;属性制图</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="599"/>
+        <location filename="../preprocessordatamodel.cpp" line="575"/>
         <source>&amp;Measured Values</source>
         <translation>&amp;测量数值</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="600"/>
+        <location filename="../preprocessordatamodel.cpp" line="576"/>
         <source>&amp;Scalar...</source>
         <translation>&amp;标量...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="601"/>
+        <location filename="../preprocessordatamodel.cpp" line="577"/>
         <source>&amp;Arrows...</source>
         <translation>&amp;箭头...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="603"/>
+        <location filename="../preprocessordatamodel.cpp" line="579"/>
         <source>&amp;Import...</source>
         <translation>&amp;导入...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="737"/>
-        <location filename="../preprocessordatamodel.cpp" line="765"/>
+        <location filename="../preprocessordatamodel.cpp" line="713"/>
+        <location filename="../preprocessordatamodel.cpp" line="741"/>
         <source>Gr&amp;id Creating Condition...</source>
         <translation>&amp;网格创建条件...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="793"/>
-        <location filename="../preprocessordatamodel.cpp" line="973"/>
+        <location filename="../preprocessordatamodel.cpp" line="769"/>
+        <location filename="../preprocessordatamodel.cpp" line="949"/>
         <source>&amp;Grid...</source>
         <translation>&amp;网格...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="808"/>
-        <location filename="../preprocessordatamodel.cpp" line="858"/>
-        <location filename="../preprocessordatamodel.cpp" line="870"/>
+        <location filename="../preprocessordatamodel.cpp" line="784"/>
+        <location filename="../preprocessordatamodel.cpp" line="834"/>
+        <location filename="../preprocessordatamodel.cpp" line="846"/>
         <source>Gr&amp;id Creating Condition</source>
         <translation>&amp;网格创建条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="820"/>
+        <location filename="../preprocessordatamodel.cpp" line="796"/>
         <source>Grid Creating Condition</source>
         <translation>网格创建条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1053"/>
-        <location filename="../preprocessordatamodel.cpp" line="1083"/>
-        <location filename="../preprocessordatamodel.cpp" line="1097"/>
+        <location filename="../preprocessordatamodel.cpp" line="1029"/>
+        <location filename="../preprocessordatamodel.cpp" line="1059"/>
+        <location filename="../preprocessordatamodel.cpp" line="1073"/>
         <source>(No data to import)</source>
         <translation>（无导入数据）</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1184"/>
+        <location filename="../preprocessordatamodel.cpp" line="1160"/>
         <source>(No data to export)</source>
         <translation>（无导出数据）</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1253"/>
+        <location filename="../preprocessordatamodel.cpp" line="1229"/>
         <source>(No algorithm is selected yet)</source>
         <translation>（无选定算法）</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1257"/>
+        <location filename="../preprocessordatamodel.cpp" line="1233"/>
         <source>&amp;Export...</source>
         <translation>&amp;导出...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1333"/>
+        <location filename="../preprocessordatamodel.cpp" line="1309"/>
         <source>Add New %1</source>
         <translation>添加新%1</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="138"/>
-        <location filename="../preprocessordatamodel.cpp" line="1397"/>
-        <location filename="../preprocessordatamodel.cpp" line="1423"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
+        <location filename="../preprocessordatamodel.cpp" line="1373"/>
+        <location filename="../preprocessordatamodel.cpp" line="1399"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="138"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
         <translation>解算器正在运行中。您可以看到计算条件设置，但不能覆写。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="359"/>
-        <location filename="../preprocessordatamodel.cpp" line="399"/>
-        <location filename="../preprocessordatamodel.cpp" line="426"/>
+        <location filename="../preprocessordatamodel.cpp" line="344"/>
+        <location filename="../preprocessordatamodel.cpp" line="378"/>
+        <location filename="../preprocessordatamodel.cpp" line="402"/>
         <source>Poly&amp;line</source>
         <translation>折线</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1397"/>
+        <location filename="../preprocessordatamodel.cpp" line="1373"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation>%1上次编辑后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1423"/>
+        <location filename="../preprocessordatamodel.cpp" line="1399"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
         <translation>上次编辑边界条件设置&quot;%1&quot;后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1437"/>
+        <location filename="../preprocessordatamodel.cpp" line="1413"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1437"/>
+        <location filename="../preprocessordatamodel.cpp" line="1413"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation>地理数据制图，边界条件成功完成</translation>
     </message>
@@ -21582,6 +21735,25 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp" line="104"/>
         <source>Water Elevation Points</source>
         <translation>水高程点</translation>
+    </message>
+</context>
+<!-- structured2dgridgdalimporter_zh_CN.ts -->
+<context>
+    <name>Structured2DGridGdalImporter</name>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="21"/>
+        <source>GDAL supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="27"/>
+        <source>GeoTiff files(*.tif)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- structured2dgridnayscsvexporter_zh_CN.ts -->

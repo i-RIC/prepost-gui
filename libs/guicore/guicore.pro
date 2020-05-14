@@ -495,6 +495,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridattributedimensionselectwidget.h \
            pre/gridcond/base/gridattributeeditcommand.h \
            pre/gridcond/base/gridattributeeditdialog.h \
+           pre/gridcond/base/gridattributeeditnameandvaluedialog.h \
            pre/gridcond/base/gridattributeeditvariationcommand.h \
            pre/gridcond/base/gridattributeeditwidget.h \
            pre/gridcond/base/gridattributeeditwidgetcontainer.h \
@@ -589,6 +590,7 @@ FORMS += datamodel/propertybrowserview.ui \
          pre/gridcond/gridnodeattributepropertydialog.ui \
          project/inputcond/inputconditiondialog.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
+         pre/gridcond/base/gridattributeeditnameandvaluedialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
          pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldialog.ui \
@@ -823,6 +825,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/base/gridattributedimensionselectwidget.cpp \
            pre/gridcond/base/gridattributeeditcommand.cpp \
            pre/gridcond/base/gridattributeeditdialog.cpp \
+           pre/gridcond/base/gridattributeeditnameandvaluedialog.cpp \
            pre/gridcond/base/gridattributeeditvariationcommand.cpp \
            pre/gridcond/base/gridattributeeditwidget.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \

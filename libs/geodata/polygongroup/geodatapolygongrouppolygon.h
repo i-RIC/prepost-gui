@@ -31,10 +31,14 @@ public:
 
 	bool isInside(const QPointF& point) const;
 	geos::geom::Polygon* geosPolygon() const;
+	void setGeosPolygon(geos::geom::Polygon* polygon);
 
 	std::vector<QPointF> points() const;
 	std::vector<unsigned int> lineEdges() const;
 	std::vector<unsigned int> triangleCells() const;
+
+	unsigned int order() const;
+	void setOrder(unsigned int order);
 
 	unsigned int indexOffset() const;
 	void setIndexOffset(unsigned int offset);

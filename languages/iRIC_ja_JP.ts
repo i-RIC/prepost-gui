@@ -4881,25 +4881,51 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="197"/>
+        <location filename="../geodatapolygongroup.cpp" line="290"/>
         <source>P&amp;olygon Group</source>
         <translation>ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
+        <source>Polygon%1</source>
+        <translation>ポリゴン%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Edit name</source>
+        <translation>名前の編集</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Name:</source>
+        <translation>名前:</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="544"/>
+        <source>Edit %1 value</source>
+        <translation>%1 の値の編集</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation>&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>本当に選択されたポリゴンを削除していいですか?</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="838"/>
+        <location filename="../geodatapolygongroup.cpp" line="881"/>
+        <source>&amp;Sort</source>
+        <translation>並べ替え (&amp;S)</translation>
     </message>
     <message>
         <location filename="../private/geodatapolygongroup_editpropertycommand.cpp" line="4"/>
@@ -4907,29 +4933,121 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴンのプロパティの編集</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="44"/>
         <source>&amp;Add...</source>
-        <translation>追加 (&amp;A)...</translation>
+        <translation type="vanished">追加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="45"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <source>&amp;Add New Polygon...</source>
+        <translation>新しいポリゴンの追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
         <source>&amp;Select...</source>
         <translation>選択 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="46"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Merge...</source>
         <translation>マージ (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Delete</source>
         <translation>削除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <source>Edit &amp;Name...</source>
+        <translation>名前の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation>名前と値の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Color &amp;Setting...</source>
         <translation>表示色設定 (&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation>属性ブラウザの表示 (&amp;B)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <source>Move to top</source>
+        <translation>先頭に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <source>Move to bottom</source>
+        <translation>最後に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <source>Move up</source>
+        <translation>上に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <source>Move down</source>
+        <translation>下に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
+        <location filename="../private/geodatapolygongroup_sortedittargetpolygoncommand.cpp" line="5"/>
+        <source>Sort polygons</source>
+        <translation>ポリゴンの並べ替え</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_editnameandvaluecommand.cpp" line="8"/>
+        <source>Edit name and value of polygons</source>
+        <translation>ポリゴンの名前と値の編集</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser</name>
+    <message>
+        <source>Polygons Attribute Browser</source>
+        <translation type="vanished">ポリゴングループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="57"/>
+        <source>Polygon Group Attribute Browser</source>
+        <translation>ポリゴングループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="83"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="84"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="89"/>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="88"/>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="92"/>
+        <source>Sort toolbar</source>
+        <translation>並べ替えツールバー</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
+        <translation>表示</translation>
     </message>
 </context>
 <context>
@@ -4958,13 +5076,37 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
         <source>PolygonGroup</source>
+        <translation type="vanished">ポリゴングループ</translation>
+    </message>
+    <message>
+        <source>PolygonGroup%1</source>
+        <translation type="vanished">ポリゴングループ%1</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="vanished">ポリゴン</translation>
+    </message>
+    <message>
+        <source>Polygons</source>
+        <translation type="vanished">ポリゴングループ</translation>
+    </message>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="vanished">ポリゴングループ%1</translation>
+    </message>
+    <message>
+        <source>Polygon%1</source>
+        <translation type="vanished">ポリゴン%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <source>Polygon Group</source>
         <translation>ポリゴングループ</translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
-        <source>PolygonGroup%1</source>
+        <source>Polygon Group%1</source>
         <translation>ポリゴングループ%1</translation>
     </message>
 </context>
@@ -5015,17 +5157,33 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
         <source>ESRI Shapefile (Polygon Group)</source>
-        <translation>ESRI シェープファイル (ポリゴングループ)</translation>
+        <translation type="vanished">ESRI シェープファイル (ポリゴングループ)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
         <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
-        <translation>ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
+        <translation type="vanished">ESRI シェープファイル (ポリゴングループ) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
+        <source>ESRI Shapefile (Polygon)</source>
+        <translation type="vanished">ESRI シェープファイル (ポリゴン)</translation>
+    </message>
+    <message>
+        <source>ESRI Shapefile (Polygon) (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (ポリゴン) (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="112"/>
+        <source>ESRI Shapefile (Polygons)</source>
+        <translation>ESRI シェープファイル (ポリゴン)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="121"/>
+        <source>ESRI Shapefile (Polygons) (*.shp)</source>
+        <translation>ESRI シェープファイル (ポリゴン) (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="145"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -5040,35 +5198,35 @@ p, li { white-space: pre-wrap; }
 - ポリゴンの線分が、同じ点を何度も通過している</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="151"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="153"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="177"/>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="181"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation>このファイルに含まれる形状はポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
     </message>
@@ -5126,55 +5284,75 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
+        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>Edit &amp;Value...</source>
         <translation>値の編集(&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>&amp;Copy...</source>
         <translation>コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
+        <location filename="../geodatapolygon.cpp" line="102"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
+        <location filename="../geodatapolygon.cpp" line="103"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="104"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="94"/>
+        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Add &amp;Hole Region</source>
         <translation>穴領域の追加(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="97"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>穴領域の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
+        <location filename="../geodatapolygon.cpp" line="98"/>
+        <source>Edit &amp;Name</source>
+        <translation>名前の編集 (&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="100"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation>名前と値の編集 (N)...</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="105"/>
         <source>Color &amp;Setting...</source>
         <translation>表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="189"/>
+        <location filename="../geodatapolygon.cpp" line="195"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="575"/>
+        <location filename="../geodatapolygon.cpp" line="581"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Edit name</source>
+        <translation>名前の編集</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <source>Name:</source>
+        <translation>名前:</translation>
     </message>
     <message>
         <location filename="../private/geodatapolygon_pushnewpointcommand.cpp" line="8"/>
@@ -5202,13 +5380,13 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴンの頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="576"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
@@ -5218,23 +5396,23 @@ p, li { white-space: pre-wrap; }
         <translation>穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="1057"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="1085"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>本当にこのポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1245"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -5244,12 +5422,13 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴン値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1234"/>
+        <location filename="../geodatapolygon.cpp" line="1293"/>
+        <location filename="../geodatapolygon.cpp" line="1314"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1235"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please input new value in this polygon.</source>
         <translation>このポリゴン内での値を入力してください。</translation>
     </message>
@@ -5259,12 +5438,12 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1489"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
@@ -5277,6 +5456,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
         <source>Polygon Coordinates</source>
         <translation>ポリゴンの頂点座標</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygon_editnameandvaluecommand.cpp" line="4"/>
+        <source>Polygon name and value change</source>
+        <translation>ポリゴンの名前と値の変更</translation>
     </message>
 </context>
 <context>
@@ -36590,7 +36774,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
@@ -36599,7 +36783,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="151"/>
+        <location filename="../preprocessordatamodel.cpp" line="149"/>
         <source>iRIC project file (*.ipro)</source>
         <translation>iRIC プロジェクトファイル (*.ipro)</translation>
     </message>
@@ -36608,53 +36792,53 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="155"/>
+        <location filename="../preprocessordatamodel.cpp" line="153"/>
         <source>YAML file (*.yml)</source>
         <translation>YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="194"/>
+        <location filename="../preprocessordatamodel.cpp" line="192"/>
         <source>Select case</source>
         <translation>計算ケースの選択</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="194"/>
+        <location filename="../preprocessordatamodel.cpp" line="192"/>
         <source>Please select from which case in %1 to import calculation conditions.</source>
         <translation>%1 内のどの計算ケースから計算条件をインポートするか選択してください。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="204"/>
-        <location filename="../preprocessordatamodel.cpp" line="217"/>
-        <location filename="../preprocessordatamodel.cpp" line="230"/>
+        <location filename="../preprocessordatamodel.cpp" line="202"/>
+        <location filename="../preprocessordatamodel.cpp" line="215"/>
+        <location filename="../preprocessordatamodel.cpp" line="228"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="204"/>
-        <location filename="../preprocessordatamodel.cpp" line="230"/>
+        <location filename="../preprocessordatamodel.cpp" line="202"/>
+        <location filename="../preprocessordatamodel.cpp" line="228"/>
         <source>Calculation Condition is successfully imported from the specified file.</source>
         <translation>計算条件のインポートが成功しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="217"/>
+        <location filename="../preprocessordatamodel.cpp" line="215"/>
         <source>Calculation Condition is successfully imported from %1.</source>
         <translation>計算条件が %1 からインポートされました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="222"/>
-        <location filename="../preprocessordatamodel.cpp" line="235"/>
-        <location filename="../preprocessordatamodel.cpp" line="253"/>
+        <location filename="../preprocessordatamodel.cpp" line="220"/>
+        <location filename="../preprocessordatamodel.cpp" line="233"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Fail</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="222"/>
-        <location filename="../preprocessordatamodel.cpp" line="235"/>
+        <location filename="../preprocessordatamodel.cpp" line="220"/>
+        <location filename="../preprocessordatamodel.cpp" line="233"/>
         <source>Importing calculation condition failed.</source>
         <translation>計算条件のインポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイルの選択</translation>
     </message>
@@ -36663,87 +36847,92 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
         <translation>iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn *.cgns);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="153"/>
+        <location filename="../preprocessordatamodel.cpp" line="151"/>
         <source>CGNS file (*.cgn *.cgns)</source>
         <translation>CGNS ファイル (*.cgn *.cgns)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
         <translation>CGNS ファイル (*.cgns);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="246"/>
+        <location filename="../preprocessordatamodel.cpp" line="244"/>
         <source>Exporting calculation condition...</source>
         <translation>計算条件をエクスポートしています...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="248"/>
+        <location filename="../preprocessordatamodel.cpp" line="246"/>
         <source>Calculation Condition is successfully exported to %1.</source>
         <translation>計算条件は %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="253"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Exporting calculation condition failed.</source>
         <translation>計算条件のエクスポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="286"/>
+        <location filename="../preprocessordatamodel.cpp" line="284"/>
         <source>G&amp;eographic Data</source>
         <translation>地理情報(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="292"/>
+        <location filename="../preprocessordatamodel.cpp" line="290"/>
         <source>Edit &amp;Groups...</source>
         <translation>グループの編集(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="294"/>
+        <location filename="../preprocessordatamodel.cpp" line="292"/>
         <source>Delete &amp;All...</source>
         <translation>すべて削除(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="295"/>
+        <location filename="../preprocessordatamodel.cpp" line="293"/>
         <source>Export All Polygons...</source>
         <translation>すべてのポリゴンをエクスポート...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="323"/>
-        <location filename="../preprocessordatamodel.cpp" line="387"/>
-        <location filename="../preprocessordatamodel.cpp" line="414"/>
+        <location filename="../preprocessordatamodel.cpp" line="317"/>
+        <location filename="../preprocessordatamodel.cpp" line="369"/>
+        <location filename="../preprocessordatamodel.cpp" line="393"/>
         <source>&amp;River Survey</source>
         <translation>河川測量データ (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="332"/>
-        <location filename="../preprocessordatamodel.cpp" line="390"/>
-        <location filename="../preprocessordatamodel.cpp" line="417"/>
+        <location filename="../preprocessordatamodel.cpp" line="326"/>
+        <location filename="../preprocessordatamodel.cpp" line="372"/>
+        <location filename="../preprocessordatamodel.cpp" line="396"/>
         <source>P&amp;ointset Data</source>
         <translation>DEMデータ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="341"/>
-        <location filename="../preprocessordatamodel.cpp" line="393"/>
-        <location filename="../preprocessordatamodel.cpp" line="420"/>
-        <source>&amp;Polygon</source>
-        <translation>ポリゴン (&amp;P)</translation>
-    </message>
-    <message>
-        <location filename="../preprocessordatamodel.cpp" line="350"/>
-        <location filename="../preprocessordatamodel.cpp" line="396"/>
-        <location filename="../preprocessordatamodel.cpp" line="423"/>
-        <source>Polygon&amp;Group</source>
-        <translation>ポリゴングループ (&amp;G)</translation>
-    </message>
-    <message>
-        <location filename="../preprocessordatamodel.cpp" line="359"/>
+        <location filename="../preprocessordatamodel.cpp" line="335"/>
+        <location filename="../preprocessordatamodel.cpp" line="375"/>
         <location filename="../preprocessordatamodel.cpp" line="399"/>
-        <location filename="../preprocessordatamodel.cpp" line="426"/>
+        <source>&amp;Polygon Group</source>
+        <translation>ポリゴングループ (&amp;P)</translation>
+    </message>
+    <message>
+        <source>&amp;Polygons</source>
+        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
+    </message>
+    <message>
+        <source>&amp;Polygon</source>
+        <translation type="vanished">ポリゴン (&amp;P)</translation>
+    </message>
+    <message>
+        <source>Polygon&amp;Group</source>
+        <translation type="vanished">ポリゴングループ (&amp;G)</translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="344"/>
+        <location filename="../preprocessordatamodel.cpp" line="378"/>
+        <location filename="../preprocessordatamodel.cpp" line="402"/>
         <source>Poly&amp;line</source>
         <translation>折れ線 (&amp;L)</translation>
     </message>
@@ -36752,66 +36941,66 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">折れ線 (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="438"/>
+        <location filename="../preprocessordatamodel.cpp" line="414"/>
         <source>&amp;Color Setting...</source>
         <translation>表示色設定(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="441"/>
+        <location filename="../preprocessordatamodel.cpp" line="417"/>
         <source>Set Up Scalarbar...</source>
         <translation>凡例の設定...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="464"/>
+        <location filename="../preprocessordatamodel.cpp" line="440"/>
         <source>Import</source>
         <translation>インポート</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="468"/>
+        <location filename="../preprocessordatamodel.cpp" line="444"/>
         <source>Export</source>
         <translation>エクスポート</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="478"/>
+        <location filename="../preprocessordatamodel.cpp" line="454"/>
         <source>&amp;Grid Creating Condition</source>
         <translation>格子生成条件(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="485"/>
+        <location filename="../preprocessordatamodel.cpp" line="461"/>
         <source>B&amp;oundary Condition Setting</source>
         <translation>境界条件設定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="495"/>
-        <location filename="../preprocessordatamodel.cpp" line="909"/>
-        <location filename="../preprocessordatamodel.cpp" line="921"/>
-        <location filename="../preprocessordatamodel.cpp" line="988"/>
-        <location filename="../preprocessordatamodel.cpp" line="1000"/>
+        <location filename="../preprocessordatamodel.cpp" line="471"/>
+        <location filename="../preprocessordatamodel.cpp" line="885"/>
+        <location filename="../preprocessordatamodel.cpp" line="897"/>
+        <location filename="../preprocessordatamodel.cpp" line="964"/>
+        <location filename="../preprocessordatamodel.cpp" line="976"/>
         <source>&amp;Grid</source>
         <translation>格子(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="519"/>
+        <location filename="../preprocessordatamodel.cpp" line="495"/>
         <source>&amp;Attributes Mapping</source>
         <translation>属性のマッピング(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="599"/>
+        <location filename="../preprocessordatamodel.cpp" line="575"/>
         <source>&amp;Measured Values</source>
         <translation>実測値(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="600"/>
+        <location filename="../preprocessordatamodel.cpp" line="576"/>
         <source>&amp;Scalar...</source>
         <translation>スカラー(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="601"/>
+        <location filename="../preprocessordatamodel.cpp" line="577"/>
         <source>&amp;Arrows...</source>
         <translation>ベクトル(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="603"/>
+        <location filename="../preprocessordatamodel.cpp" line="579"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
@@ -36820,47 +37009,47 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">格子生成条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="793"/>
-        <location filename="../preprocessordatamodel.cpp" line="973"/>
+        <location filename="../preprocessordatamodel.cpp" line="769"/>
+        <location filename="../preprocessordatamodel.cpp" line="949"/>
         <source>&amp;Grid...</source>
         <translation>格子(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="820"/>
+        <location filename="../preprocessordatamodel.cpp" line="796"/>
         <source>Grid Creating Condition</source>
         <translation>格子生成条件</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1053"/>
-        <location filename="../preprocessordatamodel.cpp" line="1083"/>
-        <location filename="../preprocessordatamodel.cpp" line="1097"/>
+        <location filename="../preprocessordatamodel.cpp" line="1029"/>
+        <location filename="../preprocessordatamodel.cpp" line="1059"/>
+        <location filename="../preprocessordatamodel.cpp" line="1073"/>
         <source>(No data to import)</source>
         <translation>(インポートできる地理情報がありません)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1184"/>
+        <location filename="../preprocessordatamodel.cpp" line="1160"/>
         <source>(No data to export)</source>
         <translation>(エクスポートできる地理情報がありません)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1253"/>
+        <location filename="../preprocessordatamodel.cpp" line="1229"/>
         <source>(No algorithm is selected yet)</source>
         <translation>(アルゴリズムが選択されていません)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1333"/>
+        <location filename="../preprocessordatamodel.cpp" line="1309"/>
         <source>Add New %1</source>
         <translation>新しい%1を追加</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="138"/>
-        <location filename="../preprocessordatamodel.cpp" line="1397"/>
-        <location filename="../preprocessordatamodel.cpp" line="1423"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
+        <location filename="../preprocessordatamodel.cpp" line="1373"/>
+        <location filename="../preprocessordatamodel.cpp" line="1399"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="138"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
         <translation>ソルバーが実行中です。計算条件を表示することはできますが、更新できません。</translation>
     </message>
@@ -36869,40 +37058,40 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn);;YAML ファイル (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="737"/>
-        <location filename="../preprocessordatamodel.cpp" line="765"/>
+        <location filename="../preprocessordatamodel.cpp" line="713"/>
+        <location filename="../preprocessordatamodel.cpp" line="741"/>
         <source>Gr&amp;id Creating Condition...</source>
         <translation>格子生成条件 (&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="808"/>
-        <location filename="../preprocessordatamodel.cpp" line="858"/>
-        <location filename="../preprocessordatamodel.cpp" line="870"/>
+        <location filename="../preprocessordatamodel.cpp" line="784"/>
+        <location filename="../preprocessordatamodel.cpp" line="834"/>
+        <location filename="../preprocessordatamodel.cpp" line="846"/>
         <source>Gr&amp;id Creating Condition</source>
         <translation>格子生成条件 (&amp;I)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1257"/>
+        <location filename="../preprocessordatamodel.cpp" line="1233"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1397"/>
+        <location filename="../preprocessordatamodel.cpp" line="1373"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation>%1 を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1423"/>
+        <location filename="../preprocessordatamodel.cpp" line="1399"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
         <translation>境界条件設定 &quot;%1&quot; を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1437"/>
+        <location filename="../preprocessordatamodel.cpp" line="1413"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1437"/>
+        <location filename="../preprocessordatamodel.cpp" line="1413"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation>地形データと境界条件のマッピングが完了しました。</translation>
     </message>
@@ -40421,6 +40610,25 @@ This algorithm can be used only for structured grids.</source>
         <location filename="../data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp" line="104"/>
         <source>Water Elevation Points</source>
         <translation>水面標高点</translation>
+    </message>
+</context>
+<!-- structured2dgridgdalimporter_ja_JP.ts -->
+<context>
+    <name>Structured2DGridGdalImporter</name>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="21"/>
+        <source>GDAL supported files</source>
+        <translation>GDAL で開けるファイル</translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="27"/>
+        <source>GeoTiff files(*.tif)</source>
+        <translation>GeoTIFF ファイル (*.tif)</translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation>ArcInfo ASCII ファイル (*.asc)</translation>
     </message>
 </context>
 <!-- structured2dgridnayscsvexporter_ja_JP.ts -->

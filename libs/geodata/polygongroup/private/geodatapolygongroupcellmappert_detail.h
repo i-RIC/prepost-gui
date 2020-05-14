@@ -17,6 +17,8 @@ GeoDataMapperSettingI* GeoDataPolygonGroupCellMapperT<V, DA>::initialize(bool* b
 	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
 	auto polygonGroup = dynamic_cast<GeoDataPolygonGroup*> (GeoDataMapper::geoData());
 	polygonGroup->mergeEditTargetPolygon();
+	polygonGroup->updateOrder();
+
 	for (unsigned int i = 0; i < count; ++i) {
 		if (*(boolMap + i)) {
 			s->ranges.add(nullptr);
@@ -27,14 +29,17 @@ GeoDataMapperSettingI* GeoDataPolygonGroupCellMapperT<V, DA>::initialize(bool* b
 		QPointF point = vtkPointsUtil::getCenter(cell);
 		auto pols = polygonGroup->polygonsInBoundingBox(point.x() - TINY_DOUBLE, point.x() + TINY_DOUBLE, point.y() - TINY_DOUBLE, point.y() + TINY_DOUBLE);
 
-		GeoDataPolygonGroupPolygon* mappedPolygon = nullptr;
+		std::map<unsigned int, GeoDataPolygonGroupPolygon*> polsMap;
 		for (GeoDataPolygonGroupPolygon* p : pols) {
 			if (p->isInside(QPointF(point.x(), point.y()))) {
-				mappedPolygon = p;
-				break;
+				polsMap.insert({p->order(), p});
 			}
 		}
-		s->ranges.add(mappedPolygon);
+		if (polsMap.size() > 0) {
+			s->ranges.add(polsMap.begin()->second);
+		} else {
+			s->ranges.add(nullptr);
+		}
 	}
 	return s;
 }

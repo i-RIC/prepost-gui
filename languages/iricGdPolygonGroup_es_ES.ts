@@ -4,24 +4,50 @@
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="197"/>
+        <location filename="../geodatapolygongroup.cpp" line="290"/>
         <source>P&amp;olygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
+        <source>Polygon%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="544"/>
+        <source>Edit %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
+        <location filename="../geodatapolygongroup.cpp" line="601"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="694"/>
         <source>Are you sure you want to delete selected polygons?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="838"/>
+        <location filename="../geodatapolygongroup.cpp" line="881"/>
+        <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -30,28 +56,112 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="44"/>
-        <source>&amp;Add...</source>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <source>&amp;Add New Polygon...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="45"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
         <source>&amp;Select...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="46"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Merge...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <source>Edit &amp;Name...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Color &amp;Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <source>Move to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <source>Move to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
+        <location filename="../private/geodatapolygongroup_sortedittargetpolygoncommand.cpp" line="5"/>
+        <source>Sort polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolygongroup_editnameandvaluecommand.cpp" line="8"/>
+        <source>Edit name and value of polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser</name>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="57"/>
+        <source>Polygon Group Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="83"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="84"/>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="89"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="88"/>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupattributebrowser.cpp" line="92"/>
+        <source>Sort toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -82,12 +192,12 @@
     <name>GeoDataPolygonGroupCreator</name>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
-        <source>PolygonGroup</source>
+        <source>Polygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
-        <source>PolygonGroup%1</source>
+        <source>Polygon Group%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -130,17 +240,17 @@
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
-        <source>ESRI Shapefile (Polygon Group)</source>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="112"/>
+        <source>ESRI Shapefile (Polygons)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
-        <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="121"/>
+        <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="145"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -150,35 +260,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="151"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="153"/>
         <source>Polygon%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="177"/>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="181"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
         <source>Opening %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation type="unfinished"></translation>
     </message>

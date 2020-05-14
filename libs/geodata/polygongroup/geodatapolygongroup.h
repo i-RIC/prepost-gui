@@ -8,6 +8,7 @@
 
 #include <vector>
 
+class GeoDataPolygon;
 class GeoDataPolygonGroupPolygon;
 
 class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroup : public GeoData
@@ -21,13 +22,20 @@ public:
 	void addPolygon(GeoDataPolygonGroupPolygon* polygon);
 	std::vector<GeoDataPolygonGroupPolygon*> polygonsInBoundingBox(double xmin, double xmax, double ymin, double ymax) const;
 	std::vector<GeoDataPolygonGroupPolygon*> allPolygons() const;
+	GeoDataPolygon* editTargetPolygon() const;
+	int editTargetPolygonIndex() const;
+	bool isSelected(GeoDataPolygonGroupPolygon* polygon);
+	void updateOrder();
+
+	void panTo(int row);
 
 	void updateVtkObjects();
 	void updateIndex();
-	void mergeEditTargetPolygon();
+	void mergeEditTargetPolygon(bool noUpdate = false);
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
+	void showInitialDialog() override;
 
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
@@ -52,14 +60,23 @@ public:
 
 private slots:
 	void addPolygon();
-	void selectPolygons();
+	void editName();
+	void editNameAndValue();
 	void mergePolygonsAndPolygonGroups();
+	void moveSelectedPolygonsToTop();
+	void moveSelectedPolygonsToBottom();
+	void moveSelectedPolygonsUp();
+	void moveSelectedPolygonsDown();
 	void deleteSelectedPolygons();
 	void editColorSetting();
+	void showAttributeBrowser();
+	void updateAttributeBrowser();
+	void handleAttributeBrowserVisibilityChange(bool visible);
 
 private:
 	GeoDataPolygonGroupColorSettingDialog::Setting colorSetting() const;
 	void setColorSetting(const GeoDataPolygonGroupColorSettingDialog::Setting& setting);
+	void setSelectedPolygon(int index);
 	void updateMenu();
 
 	void makeConnections();
@@ -70,10 +87,17 @@ private:
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
 
+	class EditNameAndValueCommand;
 	class EditPropertyCommand;
+	class SortCommand;
+	class SortEditTargetPolygonCommand;
 
 	class Impl;
 	Impl* impl;
+
+public:
+	friend class GeoDataPolygonGroupAttributeBrowser;
+	friend class GeoDataPolygonGroupShpImporter;
 };
 
 #endif // GEODATAPOLYGONGROUP_H

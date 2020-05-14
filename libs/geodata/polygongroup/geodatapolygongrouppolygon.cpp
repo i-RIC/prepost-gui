@@ -132,6 +132,13 @@ geos::geom::Polygon* GeoDataPolygonGroupPolygon::geosPolygon() const
 	return impl->m_polygon.get();
 }
 
+void GeoDataPolygonGroupPolygon::setGeosPolygon(geos::geom::Polygon* polygon)
+{
+	impl->m_polygon.reset(polygon);
+	setupBoundingRect();
+	setupTriangleCells();
+}
+
 std::vector<QPointF> GeoDataPolygonGroupPolygon::points() const
 {
 	std::vector<QPointF> ret;
@@ -181,6 +188,16 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::lineEdges() const
 std::vector<unsigned int> GeoDataPolygonGroupPolygon::triangleCells() const
 {
 	return impl->m_triangleCells;
+}
+
+unsigned int GeoDataPolygonGroupPolygon::order() const
+{
+	return impl->m_order;
+}
+
+void GeoDataPolygonGroupPolygon::setOrder(unsigned int order)
+{
+	impl->m_order = order;
 }
 
 unsigned int GeoDataPolygonGroupPolygon::indexOffset() const

@@ -11,7 +11,7 @@
 GeoDataPolygonCreator::GeoDataPolygonCreator(const QString& typeName) :
 	GeoDataCreator {typeName, tr("Polygon")}
 {
-	importers().push_back(new GeoDataPolygonImporter(this));
+	// importers().push_back(new GeoDataPolygonImporter(this));
 	exporters().push_back(new GeoDataPolygonShapeExporter(this));
 }
 
@@ -27,7 +27,7 @@ QString GeoDataPolygonCreator::defaultCaption(unsigned int index) const
 
 bool GeoDataPolygonCreator::isCreatable() const
 {
-	return true;
+	return false;
 }
 
 GeoData* GeoDataPolygonCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

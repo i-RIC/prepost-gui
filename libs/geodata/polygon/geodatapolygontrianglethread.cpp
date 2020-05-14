@@ -160,7 +160,7 @@ void GeoDataPolygonTriangleThread::setLastJobDraw()
 
 GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::instance()
 {
-	if (m_thread != 0) {return m_thread;}
+	if (m_thread != nullptr) {return m_thread;}
 
 	m_thread = new GeoDataPolygonTriangleThread();
 	return m_thread;

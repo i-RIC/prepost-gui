@@ -1,9 +1,13 @@
+#include "../geodatapolygongroupattributebrowser.h"
 #include "geodatapolygongroup_impl.h"
 
 #include <geoio/polygonutil.h>
 #include <geodata/polygon/geodatapolygon.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <misc/iricundostack.h>
 
 #include <QAction>
+#include <QIcon>
 #include <QMenu>
 
 #include <vtkActor.h>
@@ -20,10 +24,35 @@
 #include <geos/geom/Polygon.h>
 #include <geos/index/quadtree/Quadtree.h>
 
+#include <algorithm>
+
 namespace {
 
 std::string VALUE = "value";
 
+bool checkSelectionContinuous(const std::vector<GeoDataPolygonGroupPolygon*>& polys, const std::unordered_set<GeoDataPolygonGroupPolygon*>& selectedPolys, GeoDataPolygon* editTarget)
+{
+	auto selectedPolysCopy = selectedPolys;
+
+	if (selectedPolys.size() == 0) {
+		return (editTarget != nullptr);
+	}
+
+	bool sel = false;
+	for (int i = 0; i < polys.size(); ++i) {
+		auto p = polys.at(i);
+		auto it = selectedPolysCopy.find(p);
+		if (it != selectedPolysCopy.end()) {
+			sel = true;
+			selectedPolysCopy.erase(it);
+		} else {
+			if (! sel) {continue;}
+
+			return (selectedPolysCopy.size() == 0);
+		}
+	}
+	return true;
+}
 
 } // namespace
 
@@ -39,14 +68,25 @@ GeoDataPolygonGroup::Impl::Impl(GeoDataPolygonGroup* group) :
 	m_selectedPolygonsPointsActor {vtkActor::New()},
 	m_qTree {new geos::index::quadtree::Quadtree()},
 	m_editTargetPolygon {nullptr},
+	m_editTargetPolygonBackup {nullptr},
+	m_editTargetPolygonIndex {0},
 	m_dummyPolygonForMenu {new GeoDataPolygon(group->parent(), group->creator(), group->gridAttribute())},
 	m_rightClickingMenu {new QMenu()},
-	m_addAction {new QAction(GeoDataPolygonGroup::tr("&Add..."), group)},
+	m_addAction {new QAction(GeoDataPolygonGroup::tr("&Add New Polygon..."), group)},
 	m_selectAction {new QAction(GeoDataPolygonGroup::tr("&Select..."), group)},
 	m_mergeAction {new QAction(GeoDataPolygonGroup::tr("&Merge..."), group)},
 	m_deleteAction {new QAction(GeoDataPolygonGroup::tr("&Delete"), group)},
+	m_editNameAction {new QAction(GeoDataPolygonGroup::tr("Edit &Name..."), group)},
+	m_editNameAndValueAction {new QAction(GeoDataPolygonGroup::tr("Edit &Name and Value..."), group)},
 	m_editColorSettingAction {new QAction(GeoDataPolygonGroup::tr("Color &Setting..."), group)},
+	m_attributeBrowserAction {new QAction(GeoDataPolygonGroup::tr("Show Attribute &Browser"), group)},
+	m_moveToTopAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveTop.png"), GeoDataPolygonGroup::tr("Move to top"), group)},
+	m_moveToBottomAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveBottom.png"), GeoDataPolygonGroup::tr("Move to bottom"), group)},
+	m_moveUpAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.png"), GeoDataPolygonGroup::tr("Move up"), group)},
+	m_moveDownAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveDown.png"), GeoDataPolygonGroup::tr("Move down"), group)},
 	m_mode {Normal},
+	m_attributeBrowser {new GeoDataPolygonGroupAttributeBrowser(group->preProcessorWindow())},
+	m_attributeBrowserIsShown {true},
 	m_group {group}
 {
 	m_points->SetDataTypeToDouble();
@@ -91,14 +131,22 @@ GeoDataPolygonGroup::Impl::~Impl()
 	m_selectedPolygonsEdgesActor->Delete();
 	m_selectedPolygonsPointsActor->Delete();
 
-	for (auto p : m_polygons) {
-		delete p;
-	}
+	clear();
 
 	delete m_dummyPolygonForMenu;
 	delete m_editTargetPolygon;
+	delete m_editTargetPolygonBackup;
 	delete m_qTree;
 	delete m_rightClickingMenu;
+	delete m_attributeBrowser;
+}
+
+void GeoDataPolygonGroup::Impl::clear()
+{
+	for (auto p : m_polygons) {
+		delete p;
+	}
+	m_polygons.clear();
 }
 
 void GeoDataPolygonGroup::Impl::updateActorSetting()
@@ -188,8 +236,22 @@ void GeoDataPolygonGroup::Impl::updateSelectedPolygonsVtkObjects()
 	m_selectedPolygonsEdgesPolyData->GetCellData()->SetActiveScalars(VALUE.c_str());
 }
 
+void GeoDataPolygonGroup::Impl::updateAttributeBrowser()
+{
+	if (! m_attributeBrowser->isVisible()) {return;}
+	m_attributeBrowser->update();
+}
+
+void GeoDataPolygonGroup::Impl::updateAttributeBrowserSelection()
+{
+	if (! m_attributeBrowser->isVisible()) {return;}
+	m_attributeBrowser->updateSelection();
+}
+
 void GeoDataPolygonGroup::Impl::setupDummyPolygonForMenu()
 {
+	m_dummyPolygonForMenu->editNameAndValueAction()->setEnabled(false);
+	m_dummyPolygonForMenu->editNameAction()->setEnabled(false);
 	m_dummyPolygonForMenu->editValueAction()->setEnabled(false);
 	m_dummyPolygonForMenu->addVertexAction()->setEnabled(false);
 	m_dummyPolygonForMenu->removeVertexAction()->setEnabled(false);
@@ -214,7 +276,9 @@ void GeoDataPolygonGroup::Impl::selectPolygonsIncludePoint(const QPointF& point)
 		}
 	}
 	updateSelectedPolygonsVtkObjects();
+	updateAttributeBrowser();
 	updateActionStatus();
+	m_group->updateMenu();
 }
 
 void GeoDataPolygonGroup::Impl::selectPolygonsIncludedInPolygon(const QPolygonF& polygon)
@@ -236,16 +300,23 @@ void GeoDataPolygonGroup::Impl::selectPolygonsIncludedInPolygon(const QPolygonF&
 	delete geosPol;
 
 	updateSelectedPolygonsVtkObjects();
+	updateAttributeBrowser();
 	updateActionStatus();
+	m_group->updateMenu();
 }
 
-GeoDataPolygonGroupPolygon* GeoDataPolygonGroup::Impl::mergeToThis(GeoDataPolygon* polygon)
+GeoDataPolygonGroupPolygon* GeoDataPolygonGroup::Impl::mergeToThis(GeoDataPolygon* polygon, int index)
 {
 	auto geosPolygon = polygon->getGeosPolygon(QPointF(0, 0));
 	auto p = new GeoDataPolygonGroupPolygon(geosPolygon);
+	p->setName(polygon->caption());
 	p->setValue(polygon->variantValue());
 
-	m_polygons.push_back(p);
+	if (index == -1) {
+		m_polygons.push_back(p);
+	} else {
+		m_polygons.insert(m_polygons.begin() + index, p);
+	}
 	return p;
 }
 
@@ -259,33 +330,47 @@ void GeoDataPolygonGroup::Impl::mergeToThis(GeoDataPolygonGroup* group)
 
 void GeoDataPolygonGroup::Impl::setupNewEditTargetPolygon()
 {
-	m_editTargetPolygon = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
-	m_editTargetPolygon->assignActorZValues(m_depthRange);
-	m_editTargetPolygon->informSelection(m_group->graphicsView());
+	auto p = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
+	m_editTargetPolygon = p;
+	p->setCaption(GeoDataPolygonGroup::tr("Polygon%1").arg(m_polygons.size() + 1));
+	p->assignActorZValues(m_depthRange);
+	p->informSelection(m_group->graphicsView());
+	p->updateActionStatus();
+	p->showInitialDialog();
+	connect(p, SIGNAL(nameAndValueEdited()), m_group, SLOT(updateAttributeBrowser()));
+
+	m_editTargetPolygonIndex = 0;
+	m_editTargetPolygonBackup = new GeoDataPolygonGroupPolygon();
 	m_mode = EditPolygon;
 
+	m_selectedPolygons.clear();
+	updateActionStatus();
+	updateSelectedPolygonsVtkObjects();
 	updateActorSettingForEditTargetPolygon();
+	updateAttributeBrowser();
 }
 
 void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 {
-	std::vector<GeoDataPolygonGroupPolygon*> newPolygons;
+	auto selectedPol = *(m_selectedPolygons.begin());
+	auto it = std::find(m_polygons.begin(), m_polygons.end(), selectedPol);
+	if (it == m_polygons.end()) {return;}
 
-	for (GeoDataPolygonGroupPolygon* p : m_polygons) {
-		if (m_selectedPolygons.find(p) != m_selectedPolygons.end()) {
-			m_editTargetPolygon = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
-			m_editTargetPolygon->assignActorZValues(m_depthRange);
-			m_editTargetPolygon->setVariantValue(p->value());
-			m_editTargetPolygon->setShape(p->geosPolygon());
-			m_editTargetPolygon->setMouseEventMode(GeoDataPolygon::meNormal);
-			m_editTargetPolygon->updateActionStatus();
-			m_editTargetPolygon->informSelection(m_group->graphicsView());
-			delete p;
-		} else {
-			newPolygons.push_back(p);
-		}
-	}
-	m_polygons = newPolygons;
+	m_editTargetPolygonIndex = static_cast<int>(it - m_polygons.begin());
+	m_polygons.erase(it);
+
+	m_editTargetPolygonBackup = selectedPol;
+	auto p = new GeoDataPolygon(m_group->parent(), m_group->creator(), m_group->gridAttribute());
+	m_editTargetPolygon = p;
+	p->assignActorZValues(m_depthRange);
+	p->setCaption(selectedPol->name());
+	p->setVariantValue(selectedPol->value());
+	p->setShape(selectedPol->geosPolygon(), selectedPol->triangleCells());
+	p->setMouseEventMode(GeoDataPolygon::meNormal);
+	p->updateActionStatus();
+	p->informSelection(m_group->graphicsView());
+	connect(p, SIGNAL(nameAndValueEdited()), m_group, SLOT(updateAttributeBrowser()));
+
 	m_selectedPolygons.clear();
 	m_mode = EditPolygon;
 
@@ -293,12 +378,20 @@ void GeoDataPolygonGroup::Impl::setupEditTargetPolygonFromSelectedPolygon()
 	m_group->updateIndex();
 	m_group->updateMenu();
 	updateSelectedPolygonsVtkObjects();
+	updateAttributeBrowserSelection();
 	updateActorSettingForEditTargetPolygon();
+
+	iRICUndoStack::instance().clear();
 }
 
 void GeoDataPolygonGroup::Impl::updateActionStatus()
 {
-	bool selected = m_selectedPolygons.size() > 0;
+	bool selected = m_selectedPolygons.size() > 0 || (m_editTargetPolygon != nullptr);
+	bool continuous = checkSelectionContinuous(m_polygons, m_selectedPolygons, m_editTargetPolygon);
 
 	m_deleteAction->setEnabled(selected);
+	m_moveToTopAction->setEnabled(selected);
+	m_moveToBottomAction->setEnabled(selected);
+	m_moveUpAction->setEnabled(selected && continuous);
+	m_moveDownAction->setEnabled(selected && continuous);
 }

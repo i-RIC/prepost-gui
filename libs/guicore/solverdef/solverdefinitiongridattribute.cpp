@@ -1,4 +1,5 @@
 #include "../pre/gridcond/base/gridattributeeditdialog.h"
+#include "../pre/gridcond/base/gridattributeeditnameandvaluedialog.h"
 #include "../pre/gridcond/base/gridattributevariationeditdialog.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "../scalarstocolors/colortransferfunctioneditwidget.h"
@@ -158,23 +159,31 @@ GridAttributeContainer* SolverDefinitionGridAttribute::container(Grid* grid)
 
 GridAttributeEditDialog* SolverDefinitionGridAttribute::editDialog(QWidget* parent)
 {
-	GridAttributeEditDialog* dialog = new GridAttributeEditDialog(parent);
-	GridAttributeEditWidget* widget = editWidget(dialog);
+	auto dialog = new GridAttributeEditDialog(parent);
+	auto widget = editWidget(dialog);
 	dialog->setWidget(widget);
+	return dialog;
+}
+
+GridAttributeEditNameAndValueDialog* SolverDefinitionGridAttribute::editNameAndValueDialog(QWidget* parent)
+{
+	auto dialog	= new GridAttributeEditNameAndValueDialog(parent);
+	auto w = editWidget(dialog);
+	dialog->setWidget(w);
 	return dialog;
 }
 
 GridAttributeVariationEditDialog* SolverDefinitionGridAttribute::variationEditDialog(QWidget* parent)
 {
-	GridAttributeVariationEditDialog* dialog = new GridAttributeVariationEditDialog(parent);
-	GridAttributeVariationEditWidget* widget = variationEditWidget(dialog);
+	auto dialog = new GridAttributeVariationEditDialog(parent);
+	auto widget = variationEditWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
 }
 
 ScalarsToColorsContainer* SolverDefinitionGridAttribute::createScalarsToColorsContainer(ProjectDataItem* d)
 {
-	LookupTableContainer* container = new LookupTableContainer(d);
+	auto container = new LookupTableContainer(d);
 	QSettings setting;
 	int cm = setting.value("graphics/colormap", static_cast<int>(ColorMapSettingWidget::Rainbow)).value<int>();
 	ColorMapSettingWidget::ColorMap cmVal = static_cast<ColorMapSettingWidget::ColorMap>(cm);
@@ -189,8 +198,8 @@ ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createScalarsToColorsE
 
 ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsEditDialog(QWidget* parent) const
 {
-	ScalarsToColorsEditDialog* dialog = new ScalarsToColorsEditDialog(parent);
-	ScalarsToColorsEditWidget* widget = createScalarsToColorsEditWidget(dialog);
+	auto dialog = new ScalarsToColorsEditDialog(parent);
+	auto widget = createScalarsToColorsEditWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
 }

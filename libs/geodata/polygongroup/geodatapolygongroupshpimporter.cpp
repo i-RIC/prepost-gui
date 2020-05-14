@@ -1,6 +1,8 @@
 #include "geodatapolygongroup.h"
+#include "geodatapolygongroupattributebrowser.h"
 #include "geodatapolygongrouppolygon.h"
 #include "geodatapolygongroupshpimporter.h"
+#include "private/geodatapolygongroup_impl.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
@@ -107,7 +109,7 @@ QPolygonF readPolygon(SHPObject* shpo, int partIndex)
 } // namespace
 
 GeoDataPolygonGroupShpImporter::GeoDataPolygonGroupShpImporter(GeoDataCreator* creator) :
-	GeoDataImporter {"esrishape_group", tr("ESRI Shapefile (Polygon Group)"), creator}
+	GeoDataImporter {"esrishape_polygongroup", tr("ESRI Shapefile (Polygons)"), creator}
 {}
 
 GeoDataPolygonGroupShpImporter::~GeoDataPolygonGroupShpImporter()
@@ -116,7 +118,7 @@ GeoDataPolygonGroupShpImporter::~GeoDataPolygonGroupShpImporter()
 const QStringList GeoDataPolygonGroupShpImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret.append(tr("ESRI Shapefile (Polygon Group) (*.shp)"));
+	ret.append(tr("ESRI Shapefile (Polygons) (*.shp)"));
 	return ret;
 }
 
@@ -184,6 +186,8 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 	DBFClose(dbfh);
 
 	group->setupDataItem();
+	group->impl->m_attributeBrowser->update();
+	group->updateAttributeBrowser();
 	group->updateVtkObjects();
 	group->updateIndex();
 

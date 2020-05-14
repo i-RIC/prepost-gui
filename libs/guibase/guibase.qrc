@@ -2,7 +2,9 @@
     <qresource prefix="/libs/guibase">
         <file>images/iconProperty.png</file>
         <file>images/iconDeleteItem.png</file>
+        <file>images/iconItemMoveBottom.png</file>
         <file>images/iconItemMoveDown.png</file>
+        <file>images/iconItemMoveTop.png</file>
         <file>images/iconItemMoveUp.png</file>
         <file>images/cursorMove.png</file>
         <file>images/cursorRotate.png</file>

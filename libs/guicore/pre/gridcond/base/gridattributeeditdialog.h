@@ -5,10 +5,12 @@
 #include "gridattributeeditwidget.h"
 
 #include <QDialog>
-#include <QVariant>
 #include <vtkIdTypeArray.h>
+
 class SolverDefinitionGridAttribute;
 class GridAttributeContainer;
+
+class QVariant;
 
 namespace Ui
 {

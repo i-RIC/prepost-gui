@@ -28,6 +28,7 @@ public:
 	double m_ymin;
 	double m_ymax;
 
+	unsigned int m_order;
 	unsigned int m_indexOffset;
 };
 
