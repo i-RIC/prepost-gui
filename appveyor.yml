@@ -91,10 +91,10 @@ after_build:
       }
 
 artifacts:
-  - path: libdlls\$(Configuration)
-    name: libdlls-$(Configuration)
-  - path: apps\iricgui\$(config)
-    name: iricgui-$(Configuration)
+#  - path: libdlls\$(Configuration)
+#    name: libdlls-$(Configuration)
+#  - path: apps\iricgui\$(config)
+#    name: iricgui-$(Configuration)
 
 on_success:
   - ps: |
