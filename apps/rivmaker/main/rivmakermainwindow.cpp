@@ -565,9 +565,9 @@ bool RivmakerMainWindow::closeProject()
 void RivmakerMainWindow::updateWindowTitle()
 {
 	if (impl->m_project == nullptr || impl->m_project->filename().isNull()) {
-		setWindowTitle("RivMaker 1.0");
+		setWindowTitle("RivMaker 2.0");
 	} else {
-		QString title("%1 - RivMaker 1.0");
+		QString title("%1 - RivMaker 2.0");
 		QFileInfo finfo(impl->m_project->filename());
 		setWindowTitle(title.arg(finfo.fileName()));
 	}
