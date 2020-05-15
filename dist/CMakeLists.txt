@@ -111,7 +111,7 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libs/geodata/netcdf/release/iricGdNetcdf.dll
   ${PREPOST_GUI}/libs/geodata/pointmap/release/iricGdPointmap.dll
   ${PREPOST_GUI}/libs/geodata/polygon/release/iricGdPolygon.dll
-  ${PREPOST_GUI}/libs/geodata/polygon/release/iricGdPolygonGroup.dll
+  ${PREPOST_GUI}/libs/geodata/polygongroup/release/iricGdPolygonGroup.dll
   ${PREPOST_GUI}/libs/geodata/polyline/release/iricGdPolyLine.dll
   ${PREPOST_GUI}/libs/geodata/riversurvey/release/iricGdRiversurvey.dll
   ${PREPOST_GUI}/libs/geoio/release/iricGeoio.dll
