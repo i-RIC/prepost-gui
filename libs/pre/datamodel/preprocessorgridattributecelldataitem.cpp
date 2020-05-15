@@ -208,10 +208,10 @@ void PreProcessorGridAttributeCellDataItem::editValue()
 			return;
 		}
 		auto selectedV = gridDataItem->selectedVertices().at(0);
-		auto group = gItem->groups().at(selectedV);
 		GridComplexConditionGroupEditDialog dialog(mainWindow());
 		dialog.setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
-		dialog.setGroup(group);
+		dialog.setGroups(gItem->groups());
+		dialog.setCurrentIndex(selectedV);
 		dialog.exec();
 	} else {
 		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
