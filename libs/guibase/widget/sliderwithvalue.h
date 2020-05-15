@@ -19,7 +19,7 @@ public:
 	~SliderWithValue();
 	/// The value
 
-	int value();
+	int value() const;
 	Qt::Orientation orientation() const;
 
 	int	tickInterval() const;

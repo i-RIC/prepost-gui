@@ -68,12 +68,15 @@ int AnimationController::stepCount() const
 
 void AnimationController::setStepCount(int count)
 {
+	bool wasDisabled = ! (m_slider->isEnabled());
 	// update the slider.
 	m_slider->setMinimum(0);
 	if (count == 0) {
+		m_slider->blockSignals(true);
 		m_slider->setMaximum(0);
 		setCurrentStepIndex(0);
 		m_slider->setDisabled(true);
+		m_slider->blockSignals(false);
 		return;
 	}
 	m_slider->setEnabled(true);
@@ -93,7 +96,7 @@ void AnimationController::setStepCount(int count)
 		}
 		return;
 	}
-	if (m_followLastStep && (m_currentStepIndex != lastIndex)) {
+	if (wasDisabled || (m_followLastStep && (m_currentStepIndex != lastIndex))) {
 		setCurrentStepIndex(lastIndex);
 	}
 }
@@ -287,12 +290,15 @@ void AnimationController::updateIterationSteps(const QList<int>& steps)
 void AnimationController::setCurrentStepIndex(unsigned int i)
 {
 	m_currentStepIndex = i;
+	m_slider->blockSignals(true);
 	m_slider->setValue(i);
+	m_slider->blockSignals(false);
 	if (stepCount() == 0) {
 		m_currentLabel->setText("");
 	} else {
 		updateStepLabel(m_currentStepIndex);
 	}
+	emit indexChanged(i);
 }
 
 void AnimationController::updateStepLabel(int step)

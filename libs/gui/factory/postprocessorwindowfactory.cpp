@@ -3,6 +3,7 @@
 #include <misc/xmlsupport.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
+#include <post/graph2dverification/graph2dverificationwindowprojectdataitem.h>
 #include <post/post2d/post2dwindowprojectdataitem.h>
 #include <post/post2dbirdeye/post2dbirdeyewindowprojectdataitem.h>
 #include <post/post3d/post3dwindowprojectdataitem.h>
@@ -32,6 +33,8 @@ PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QS
 		return new Graph2dHybridWindowProjectDataItem(parent, c, parentwindow);
 	} else if (name == "graph2dscatteredwindow") {
 		return new Graph2dScatteredWindowProjectDataItem(parent, c, parentwindow);
+	} else if (name == "graph2dverificationwindow") {
+		return new Graph2dVerificationWindowProjectDataItem(parent, c, parentwindow);
 	}
 	return 0;
 }
@@ -49,6 +52,8 @@ PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::restore(const QD
 		return new Graph2dHybridWindowProjectDataItem(parent, c, parentwindow);
 	} else if (node.toElement().attribute("type") == "graph2dscatteredwindow") {
 		return new Graph2dScatteredWindowProjectDataItem(parent, c, parentwindow);
+	} else if (node.toElement().attribute("type") == "graph2dverificationwindow") {
+		return new Graph2dVerificationWindowProjectDataItem(parent, c, parentwindow);
 	}
 	return 0;
 }

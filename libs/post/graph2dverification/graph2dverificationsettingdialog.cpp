@@ -1,6 +1,6 @@
-#include "ui_verificationsettingdialog.h"
+#include "ui_graph2dverificationsettingdialog.h"
 
-#include "verificationsettingdialog.h"
+#include "graph2dverificationsettingdialog.h"
 
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
@@ -14,20 +14,45 @@
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 
-VerificationSettingDialog::VerificationSettingDialog(QWidget* parent) :
+Graph2dVerificationSettingDialog::Graph2dVerificationSettingDialog(QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::VerificationSettingDialog)
+	ui(new Ui::Graph2dVerificationSettingDialog)
 {
 	ui->setupUi(this);
 	connect(ui->fileComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectFile(int)));
 }
 
-VerificationSettingDialog::~VerificationSettingDialog()
+Graph2dVerificationSettingDialog::~Graph2dVerificationSettingDialog()
 {
 	delete ui;
 }
 
-void VerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
+void Graph2dVerificationSettingDialog::setSetting(const Graph2dVerificationWindowResultSetting& setting)
+{
+	m_setting = setting;
+
+	setPostSolutionInfo(m_setting.postSolutionInfo());
+	setMeasuredDatas(m_setting.measuredData());
+	setTimeStep(m_setting.timeStep());
+	setPostZoneDataContainer(m_setting.activePostData());
+	setActiveResult(m_setting.activeResult());
+	setActiveFile(m_setting.activeFile());
+	setActiveValue(m_setting.activeValue());
+}
+
+const Graph2dVerificationWindowResultSetting& Graph2dVerificationSettingDialog::setting() const
+{
+	m_setting.setActivePostData(postZoneDataContainer());
+	m_setting.setTimeStep(timeStep());							// int timestep
+	m_setting.setActiveZone(activeZone());						// QString activeZone
+	m_setting.setActiveResult(activeResult());					// QString activeResult
+	m_setting.setActiveFile(activeFile());						// QString activeFile
+	m_setting.setActiveValue(activeValue());					// QString activeValue
+	m_setting.setActiveMeasuredData(measuredData());			// MeasuredData* activeMeasuredData
+	return m_setting;
+}
+
+void Graph2dVerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 {
 	m_postSolutionInfo = info;
 	ui->gridComboBox->clear();
@@ -45,7 +70,7 @@ void VerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	ui->timestepSlider->setValue(0);
 }
 
-void VerificationSettingDialog::setMeasuredDatas(const std::vector<MeasuredData*>& data)
+void Graph2dVerificationSettingDialog::setMeasuredDatas(const std::vector<MeasuredData*>& data)
 {
 	m_measuredData = data;
 	ui->fileComboBox->clear();
@@ -59,12 +84,12 @@ void VerificationSettingDialog::setMeasuredDatas(const std::vector<MeasuredData*
 	}
 }
 
-void VerificationSettingDialog::setTimeStep(int step)
+void Graph2dVerificationSettingDialog::setTimeStep(int step)
 {
 	ui->timestepSlider->setValue(step);
 }
 
-void VerificationSettingDialog::setPostZoneDataContainer(PostZoneDataContainer* cont)
+void Graph2dVerificationSettingDialog::setPostZoneDataContainer(PostZoneDataContainer* cont)
 {
 	for (int i = 0; i < m_postSolutionInfo->zoneContainers2D().count(); ++i) {
 		PostZoneDataContainer* c = m_postSolutionInfo->zoneContainers2D().at(i);
@@ -76,7 +101,7 @@ void VerificationSettingDialog::setPostZoneDataContainer(PostZoneDataContainer* 
 	selectZone(0);
 }
 
-void VerificationSettingDialog::setActiveResult(const QString& result)
+void Graph2dVerificationSettingDialog::setActiveResult(const QString& result)
 {
 	for (int i = 0; i < ui->physicalValueComboBox->count(); ++i) {
 		QString item = ui->physicalValueComboBox->itemText(i);
@@ -87,19 +112,18 @@ void VerificationSettingDialog::setActiveResult(const QString& result)
 	}
 }
 
-void VerificationSettingDialog::setMeasuredData(MeasuredData* md)
+void Graph2dVerificationSettingDialog::setActiveFile(const QString& file)
 {
-	for (int i = 0; i < m_measuredData.size(); ++i) {
-		MeasuredData* d = m_measuredData.at(i);
-		if (d == md) {
-			selectFile(i);
+	for (int i = 0; i < ui->fileComboBox->count(); ++i) {
+		QString item = ui->fileComboBox->itemText(i);
+		if (item == file) {
+			ui->fileComboBox->setCurrentIndex(i);
 			return;
 		}
 	}
-	selectFile(0);
 }
 
-void VerificationSettingDialog::setActiveValue(const QString& value)
+void Graph2dVerificationSettingDialog::setActiveValue(const QString& value)
 {
 	for (int i = 0; i < ui->measuredValueComboBox->count(); ++i) {
 		QString item = ui->measuredValueComboBox->itemText(i);
@@ -110,34 +134,45 @@ void VerificationSettingDialog::setActiveValue(const QString& value)
 	}
 }
 
-int VerificationSettingDialog::timeStep()
+int Graph2dVerificationSettingDialog::timeStep() const
 {
 	return ui->timestepSlider->value();
 }
 
-PostZoneDataContainer* VerificationSettingDialog::postZoneDataContainer()
+PostZoneDataContainer* Graph2dVerificationSettingDialog::postZoneDataContainer() const
 {
 	int index = ui->gridComboBox->currentIndex();
 	return m_postSolutionInfo->zoneContainers2D().at(index);
 }
 
-QString VerificationSettingDialog::activeResult()
+
+QString Graph2dVerificationSettingDialog::activeResult() const
 {
 	return ui->physicalValueComboBox->itemText(ui->physicalValueComboBox->currentIndex());
 }
 
-MeasuredData* VerificationSettingDialog::measuredData()
+QString Graph2dVerificationSettingDialog::activeFile() const
+{
+	return ui->fileComboBox->itemText(ui->fileComboBox->currentIndex());
+}
+
+MeasuredData* Graph2dVerificationSettingDialog::measuredData() const
 {
 	int index = ui->fileComboBox->currentIndex();
 	return m_measuredData.at(index);
 }
 
-QString VerificationSettingDialog::activeValue()
+QString Graph2dVerificationSettingDialog::activeValue() const
 {
 	return ui->measuredValueComboBox->itemText(ui->measuredValueComboBox->currentIndex());
 }
 
-void VerificationSettingDialog::selectZone(int zoneid)
+QString Graph2dVerificationSettingDialog::activeZone() const
+{
+	return ui->gridComboBox->itemText(ui->gridComboBox->currentIndex());
+}
+
+void Graph2dVerificationSettingDialog::selectZone(int zoneid)
 {
 	ui->physicalValueComboBox->clear();
 	PostZoneDataContainer* cont = m_postSolutionInfo->zoneContainers2D().at(zoneid);
@@ -152,14 +187,14 @@ void VerificationSettingDialog::selectZone(int zoneid)
 	ui->physicalValueComboBox->setCurrentIndex(0);
 }
 
-void VerificationSettingDialog::selectFile(int fileid)
+void Graph2dVerificationSettingDialog::selectFile(int fileid)
 {
 	MeasuredData* md = m_measuredData.at(fileid);
 	ComboBoxTool::setupItems(md->scalarNames(), ui->measuredValueComboBox);
 	ui->measuredValueComboBox->setCurrentIndex(0);
 }
 
-void VerificationSettingDialog::accept()
+void Graph2dVerificationSettingDialog::accept()
 {
 	if (activeResult() == "") {
 		QMessageBox::warning(this, tr("Warning"), tr("No Physical Value is selected."));
