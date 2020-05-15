@@ -12,6 +12,8 @@ namespace Ui {
 class GridComplexConditionGroupEditDialog;
 }
 
+class QAbstractButton;
+
 class GUICOREDLL_EXPORT GridComplexConditionGroupEditDialog : public QDialog
 {
 	Q_OBJECT
@@ -20,14 +22,24 @@ public:
 	explicit GridComplexConditionGroupEditDialog(QWidget *parent = 0);
 	~GridComplexConditionGroupEditDialog();
 
-	void setGroup(GridComplexConditionGroup* group);
+	void setGroups(const std::vector<GridComplexConditionGroup*>& groups);
+	void setCurrentIndex(int index);
 
 public slots:
+	void handleIndexChange(int index);
+	void handleModified();
+
 	void reject() override;
 
 private:
-	GridComplexConditionGroup* m_group;
-	InputConditionContainerSet* m_backup;
+	void setTargetGroup(GridComplexConditionGroup* group);
+	void updateTargetComboBox();
+
+	std::vector<GridComplexConditionGroup*> m_groups;
+	std::vector<InputConditionContainerSet*> m_backups;
+
+	int m_currentIndex;
+	bool m_modified;
 	Ui::GridComplexConditionGroupEditDialog *ui;
 };
 
