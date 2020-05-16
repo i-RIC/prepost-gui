@@ -6550,1063 +6550,302 @@ You can precisely edit the cross section by inputting values from dialog. Please
 </context>
 <!-- iricGraph2dhybrid_es_ES.ts -->
 <context>
-    <name>Graph2dHybridSettingDialog</name>
+    <name>Graph2dVerificationSettingDialog</name>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="14"/>
-        <source>Axis Setting</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="14"/>
+        <source>Verification Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="24"/>
-        <source>X Axis</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="20"/>
+        <source>Timestep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="30"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="53"/>
-        <source>Unit</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="26"/>
+        <source>Select the timestep of calculation result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="36"/>
-        <source>Time</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="46"/>
+        <source>Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="43"/>
-        <source>Count</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="52"/>
+        <source>Select which physical value to use for comparison.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="59"/>
-        <source>Distance</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="61"/>
+        <source>Grid:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="66"/>
-        <source>Grid index</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="71"/>
+        <source>Physical Value:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="76"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="245"/>
-        <source>Value Range</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="86"/>
+        <source>Measured Values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="82"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="251"/>
-        <source>Auto</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="92"/>
+        <source>Select which measured value to use for comparison.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
-        <source>Min:</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="101"/>
+        <source>File:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
-        <source>Max:</source>
+        <location filename="../graph2dverificationsettingdialog.ui" line="111"/>
+        <source>Value:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="130"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="299"/>
-        <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="139"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="308"/>
-        <source>Label: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="151"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="320"/>
-        <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="161"/>
-        <source>General</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="169"/>
-        <source>Title: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="181"/>
-        <source>Add Grid Indices etc. to Title</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="208"/>
-        <source>Y Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="217"/>
-        <source>Left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="222"/>
-        <source>Right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="166"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="169"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="175"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="178"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="184"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="187"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="200"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="204"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="166"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="169"/>
-        <source>X-axes range is invalid.</source>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="200"/>
+        <source>No Physical Value is selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="175"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="178"/>
-        <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="184"/>
-        <location filename="../graph2dhybridsettingdialog.cpp" line="187"/>
-        <source>Right Y-axes range is invalid.</source>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="204"/>
+        <source>No Value is selected.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Graph2dHybridWindow</name>
+    <name>Graph2dVerificationWindow</name>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="14"/>
+        <location filename="../graph2dverificationwindow.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="28"/>
+        <location filename="../graph2dverificationwindow.ui" line="28"/>
         <source>I:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="45"/>
+        <location filename="../graph2dverificationwindow.ui" line="45"/>
         <source>J:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="62"/>
+        <location filename="../graph2dverificationwindow.ui" line="62"/>
         <source>K:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="96"/>
+        <location filename="../graph2dverificationwindow.ui" line="96"/>
         <source>Select &amp;Data Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="103"/>
+        <location filename="../graph2dverificationwindow.ui" line="103"/>
         <source>&amp;Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.ui" line="110"/>
+        <location filename="../graph2dverificationwindow.ui" line="110"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.cpp" line="27"/>
-        <source>Graph Window: %1</source>
+        <location filename="../graph2dverificationwindow.cpp" line="25"/>
+        <source>Verification Window: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindow.cpp" line="39"/>
+        <location filename="../graph2dverificationwindow.cpp" line="37"/>
+        <source>Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.cpp" line="48"/>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="546"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="578"/>
-        <source>Time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="549"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="591"/>
-        <source>I</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="552"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="594"/>
-        <source>J</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="555"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="597"/>
-        <source>K</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="558"/>
-        <source>Polyline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="580"/>
-        <source>Count</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="587"/>
-        <source>Distance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Graph2dHybridWindowActionManager</name>
+    <name>Graph2dVerificationWindowActionManager</name>
     <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="25"/>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="25"/>
         <source>&amp;Draw</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="27"/>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="27"/>
         <source>&amp;Data Source Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="32"/>
-        <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="35"/>
-        <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="40"/>
-        <source>&amp;Marker Setting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="43"/>
-        <source>Add &amp;KP Markers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="48"/>
-        <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowactionmanager.cpp" line="53"/>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="31"/>
         <source>&amp;Legend</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Graph2dHybridWindowContinuousExportDialog</name>
+    <name>Graph2dVerificationWindowControlWidget</name>
     <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="14"/>
-        <source>Snapshot Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="20"/>
-        <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="26"/>
-        <source>Folder:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="36"/>
-        <source>Prefix:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="49"/>
-        <source>Region</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="57"/>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="233"/>
-        <source>Current Only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="64"/>
-        <source>Full Region</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="86"/>
-        <source>I Min:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="103"/>
-        <source>I Max:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="120"/>
-        <source>J Min:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="137"/>
-        <source>J Max:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="154"/>
-        <source>K Min:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="171"/>
-        <source>K Max:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="188"/>
-        <source>Index Min:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="205"/>
-        <source>Index Max:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="225"/>
-        <source>Time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="240"/>
-        <source>All Timesteps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="264"/>
-        <source>Start:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="281"/>
-        <source>End:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.ui" line="298"/>
-        <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="369"/>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="373"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="369"/>
-        <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="373"/>
-        <source>Please input prefix.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowControlWidget</name>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="20"/>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="20"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="28"/>
-        <source>I:</source>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="26"/>
+        <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="45"/>
-        <source>J:</source>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="53"/>
+        <source>Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="62"/>
-        <source>K:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="79"/>
-        <source>Index:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="115"/>
-        <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="122"/>
-        <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="129"/>
-        <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="136"/>
-        <source>&amp;Marker Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="143"/>
-        <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="150"/>
-        <source>S&amp;napshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowcontrolwidget.ui" line="157"/>
-        <source>CSV &amp;Export</source>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="60"/>
+        <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Graph2dHybridWindowDataModel</name>
+    <name>Graph2dVerificationWindowDataModel</name>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="202"/>
-        <source>Snapshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="203"/>
-        <source>Saving snapshots...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="453"/>
-        <source>CSV Export Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="519"/>
-        <source>CSV Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="520"/>
-        <source>Saving csv files...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="760"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="889"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1108"/>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="760"/>
-        <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="884"/>
-        <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="884"/>
-        <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="889"/>
-        <source>Saving %1 failed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="892"/>
-        <source>CSV file successfully exported.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1041"/>
-        <source>I = %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1044"/>
-        <source>I = %1, J = %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1047"/>
-        <source>I = %1, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1052"/>
-        <source>Index = %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1059"/>
-        <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1062"/>
-        <source>Time = %1 sec, J = %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1065"/>
-        <source>Time = %1 sec, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1074"/>
-        <source>Time = %1 sec, I = %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1077"/>
-        <source>Time = %1 sec, I = %2, K = %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1086"/>
-        <source>Time = %1 sec, I = %2, J = %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1102"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1557"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="99"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1102"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1114"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="99"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1108"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="105"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="252"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="105"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1558"/>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowDataSourceDialog</name>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="20"/>
-        <source>Data Source Setting</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="247"/>
+        <source>Export CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="28"/>
-        <source>X Axis:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="38"/>
-        <source>Polyline:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="67"/>
-        <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="75"/>
-        <source>Point Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="88"/>
-        <source>One dimensional Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="100"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="127"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="161"/>
-        <source>Grid Location:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="115"/>
-        <source>Two dimensional Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="149"/>
-        <source>Three dimensional Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="203"/>
-        <source>Add &gt;&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="213"/>
-        <source>&lt;&lt; Remove</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="237"/>
-        <source>Selected Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="249"/>
-        <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="274"/>
-        <source>External</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="285"/>
-        <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.ui" line="292"/>
-        <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="233"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="504"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="536"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="568"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="811"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="900"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="233"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="504"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="536"/>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="568"/>
-        <source>Current setting will be discarded, are you sure?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="811"/>
-        <source>No data is selected.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="855"/>
-        <source>Import CSV file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="855"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="247"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="882"/>
-        <source>Error</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="252"/>
+        <source>%1 cound not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="882"/>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="289"/>
+        <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatasourcedialog.cpp" line="900"/>
-        <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowDrawSettingDialog</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowdrawsettingdialog.ui" line="14"/>
-        <source>Draw Setting</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="289"/>
+        <source>Data successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowdrawsettingdialog.ui" line="24"/>
-        <source>Calculation Result</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="471"/>
+        <source>Root Mean Squared Error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowdrawsettingdialog.ui" line="43"/>
-        <source>Copy</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="498"/>
+        <source>Measured Values (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowdrawsettingdialog.ui" line="62"/>
-        <source>External</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowImportDataDataItem</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatadataitem.cpp" line="163"/>
-        <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowImportDataGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="15"/>
-        <source>External Data</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="502"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="520"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="528"/>
+        <source>Calculation Result (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="107"/>
-        <source>Error</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="505"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="514"/>
+        <source>Stream-wise Distance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="107"/>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="506"/>
+        <source>Values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="125"/>
-        <source>Warning</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="510"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="515"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="533"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="538"/>
+        <source>Residual Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="125"/>
-        <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="527"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="537"/>
+        <source>Measured Value (%1)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Graph2dHybridWindowLineSettingDialog</name>
+    <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
-        <location filename="../graph2dhybridwindowlinesettingdialog.ui" line="14"/>
-        <source>Data Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowlinesettingdialog.ui" line="22"/>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowlinesettingdialog.ui" line="52"/>
-        <source>Width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowlinesettingdialog.ui" line="84"/>
-        <source>Y Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowlinesettingdialog.ui" line="90"/>
-        <source>Left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowlinesettingdialog.ui" line="97"/>
-        <source>Right</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowObjectBrowser</name>
-    <message>
-        <location filename="../graph2dhybridwindowobjectbrowser.cpp" line="14"/>
+        <location filename="../graph2dverificationwindowobjectbrowser.cpp" line="14"/>
         <source>Object Browser</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Graph2dHybridWindowResultCopyDataItem</name>
+    <name>Graph2dVerificationWindowTopWidget</name>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="186"/>
-        <source>%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="189"/>
-        <source>%1 (I = %2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="192"/>
-        <source>%1 (I = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="195"/>
-        <source>%1 (I = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="198"/>
-        <source>%1 (Index = %2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="201"/>
-        <source>%1 (t = %2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="204"/>
-        <source>%1 (t = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="207"/>
-        <source>%1 (t = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="210"/>
-        <source>%1 (t = %2, I = %3)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="213"/>
-        <source>%1 (t = %2, I = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="216"/>
-        <source>%1 (t = %2, I = %3, J = %4)</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowResultCopyGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopygroupdataitem.cpp" line="9"/>
-        <source>Calcuation Results Copys</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowResultGroupDataItem</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowresultgroupdataitem.cpp" line="42"/>
-        <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowRootDataItem</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowrootdataitem.cpp" line="37"/>
-        <source>x</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Graph2dHybridWindowSettingWidget</name>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="14"/>
+        <location filename="../graph2dverificationwindowtopwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="26"/>
-        <source>Label:</source>
+        <location filename="../graph2dverificationwindowtopwidget.ui" line="22"/>
+        <source>Chart Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="58"/>
-        <source>Y Axis</source>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="38"/>
+        <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="64"/>
-        <source>Left</source>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="39"/>
+        <source>Stream-wise Distance vs. Residual Errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="74"/>
-        <source>Right</source>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="41"/>
+        <source>Measured Values vs. Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="90"/>
-        <source>Display Style</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="96"/>
-        <source>Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="106"/>
-        <source>Symbol</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="133"/>
-        <source>Line Style:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="141"/>
-        <source>Solid Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="146"/>
-        <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="151"/>
-        <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="156"/>
-        <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="164"/>
-        <source>Line Width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="198"/>
-        <source>Bar Chart:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="205"/>
-        <source>Show as Bar Chart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="212"/>
-        <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="225"/>
-        <source>Circle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="230"/>
-        <source>Rectangle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="235"/>
-        <source>Diamond</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="240"/>
-        <source>Cross</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="245"/>
-        <source>XCross</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="268"/>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="299"/>
-        <source>ID:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/graph2dhybridwindowsettingwidget.ui" line="323"/>
-        <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="682"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="696"/>
-        <source>GridLocationNull</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="683"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="697"/>
-        <source>Vertex</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="684"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="698"/>
-        <source>CellCenter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="685"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="699"/>
-        <source>EdgeI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="686"/>
-        <location filename="../graph2dhybridwindowresultsetting.cpp" line="700"/>
-        <source>EdgeJ</source>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="42"/>
+        <source>Measured Values vs. Residual Errors</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8007,6 +7246,1056 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../graph2dscatteredwindowsettingwidget.ui" line="172"/>
         <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGraph2dverification_es_ES.ts -->
+<context>
+    <name>Graph2dVerificationSettingDialog</name>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="14"/>
+        <source>Axis Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="24"/>
+        <source>X Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="30"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="53"/>
+        <source>Unit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="36"/>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="43"/>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="59"/>
+        <source>Distance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="66"/>
+        <source>Grid index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="76"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="245"/>
+        <source>Value Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="82"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="251"/>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="94"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="263"/>
+        <source>Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="108"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="277"/>
+        <source>Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="130"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="299"/>
+        <source>Logarithmic axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="139"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="308"/>
+        <source>Label: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="151"/>
+        <location filename="../graph2dverificationsettingdialog.ui" line="320"/>
+        <source>Reverse Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="161"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="169"/>
+        <source>Title: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="181"/>
+        <source>Add Grid Indices etc. to Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="208"/>
+        <source>Y Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="217"/>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="222"/>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="166"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="169"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="175"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="178"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="184"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="187"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="166"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="169"/>
+        <source>X-axes range is invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="175"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="178"/>
+        <source>Left Y-axes range is invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="184"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="187"/>
+        <source>Right Y-axes range is invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindow</name>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="28"/>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="45"/>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="62"/>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="96"/>
+        <source>Select &amp;Data Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="103"/>
+        <source>&amp;Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="110"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.cpp" line="27"/>
+        <source>Graph Window: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.cpp" line="39"/>
+        <source>Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="536"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="568"/>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="539"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="581"/>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="542"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="584"/>
+        <source>J</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="545"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="587"/>
+        <source>K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="548"/>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="570"/>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="577"/>
+        <source>Distance</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowActionManager</name>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="25"/>
+        <source>&amp;Draw</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="27"/>
+        <source>&amp;Data Source Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="32"/>
+        <source>&amp;Axis Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="35"/>
+        <source>D&amp;raw Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="40"/>
+        <source>&amp;Marker Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="43"/>
+        <source>Add &amp;KP Markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="48"/>
+        <source>&amp;Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="53"/>
+        <source>&amp;Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowContinuousExportDialog</name>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="14"/>
+        <source>Snapshot Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="20"/>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="26"/>
+        <source>Folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="36"/>
+        <source>Prefix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="49"/>
+        <source>Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="57"/>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="233"/>
+        <source>Current Only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="64"/>
+        <source>Full Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="86"/>
+        <source>I Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="103"/>
+        <source>I Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="120"/>
+        <source>J Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="137"/>
+        <source>J Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="154"/>
+        <source>K Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="171"/>
+        <source>K Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="188"/>
+        <source>Index Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="205"/>
+        <source>Index Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="225"/>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="240"/>
+        <source>All Timesteps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="264"/>
+        <source>Start:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="281"/>
+        <source>End:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.ui" line="298"/>
+        <source>Skip rate :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.cpp" line="369"/>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.cpp" line="373"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.cpp" line="369"/>
+        <source>Folder %1 does not exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontinuousexportdialog.cpp" line="373"/>
+        <source>Please input prefix.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowControlWidget</name>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="20"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="28"/>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="45"/>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="62"/>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="79"/>
+        <source>Index:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="115"/>
+        <source>&amp;Data Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="122"/>
+        <source>Axis &amp;Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="129"/>
+        <source>Draw &amp;Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="136"/>
+        <source>&amp;Marker Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="143"/>
+        <source>&amp;Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="150"/>
+        <source>S&amp;napshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="157"/>
+        <source>CSV &amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowDataModel</name>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="228"/>
+        <source>Snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="229"/>
+        <source>Saving snapshots...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="506"/>
+        <source>CSV Export Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="569"/>
+        <source>CSV Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="570"/>
+        <source>Saving csv files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="799"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="928"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1147"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="799"/>
+        <source>Saving snapshot image to %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="923"/>
+        <source>Export CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="923"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="928"/>
+        <source>Saving %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="931"/>
+        <source>CSV file successfully exported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1080"/>
+        <source>I = %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1083"/>
+        <source>I = %1, J = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1086"/>
+        <source>I = %1, J = %2, K = %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1091"/>
+        <source>Index = %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1098"/>
+        <source>Time = %1 sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1101"/>
+        <source>Time = %1 sec, J = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1104"/>
+        <source>Time = %1 sec, J = %2, K = %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1113"/>
+        <source>Time = %1 sec, I = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1116"/>
+        <source>Time = %1 sec, I = %2, K = %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1125"/>
+        <source>Time = %1 sec, I = %2, J = %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1141"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1153"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1581"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1141"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1153"/>
+        <source>No calculation result exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1147"/>
+        <source>Graph window setup fail. Calculation result is not loaded properly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="1582"/>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowDataSourceDialog</name>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="20"/>
+        <source>Data Source Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="28"/>
+        <source>X Axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="38"/>
+        <source>Polyline:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="67"/>
+        <source>Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="75"/>
+        <source>Point Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="88"/>
+        <source>One dimensional Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="100"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="127"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="161"/>
+        <source>Grid Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="115"/>
+        <source>Two dimensional Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="149"/>
+        <source>Three dimensional Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="203"/>
+        <source>Add &gt;&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="213"/>
+        <source>&lt;&lt; Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="237"/>
+        <source>Selected Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="249"/>
+        <source>&amp;Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="274"/>
+        <source>External</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="285"/>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.ui" line="292"/>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="233"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="504"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="536"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="568"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="811"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="900"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="233"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="504"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="536"/>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="568"/>
+        <source>Current setting will be discarded, are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="811"/>
+        <source>No data is selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="855"/>
+        <source>Import CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="855"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="882"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="882"/>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatasourcedialog.cpp" line="900"/>
+        <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowDrawSettingDialog</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowdrawsettingdialog.ui" line="14"/>
+        <source>Draw Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowdrawsettingdialog.ui" line="24"/>
+        <source>Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowdrawsettingdialog.ui" line="43"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowdrawsettingdialog.ui" line="62"/>
+        <source>External</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowImportDataDataItem</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowimportdatadataitem.cpp" line="163"/>
+        <source>%1 - %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowImportDataGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowimportdatagroupdataitem.cpp" line="15"/>
+        <source>External Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowimportdatagroupdataitem.cpp" line="107"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowimportdatagroupdataitem.cpp" line="107"/>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowimportdatagroupdataitem.cpp" line="125"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowimportdatagroupdataitem.cpp" line="125"/>
+        <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowLineSettingDialog</name>
+    <message>
+        <location filename="../graph2dverificationwindowlinesettingdialog.ui" line="14"/>
+        <source>Data Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowlinesettingdialog.ui" line="22"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowlinesettingdialog.ui" line="52"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowlinesettingdialog.ui" line="84"/>
+        <source>Y Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowlinesettingdialog.ui" line="90"/>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowlinesettingdialog.ui" line="97"/>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowObjectBrowser</name>
+    <message>
+        <location filename="../graph2dverificationwindowobjectbrowser.cpp" line="14"/>
+        <source>Object Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowResultCopyDataItem</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="186"/>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="189"/>
+        <source>%1 (I = %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="192"/>
+        <source>%1 (I = %2, J = %3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="195"/>
+        <source>%1 (I = %2, J = %3, K = %4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="198"/>
+        <source>%1 (Index = %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="201"/>
+        <source>%1 (t = %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="204"/>
+        <source>%1 (t = %2, J = %3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="207"/>
+        <source>%1 (t = %2, J = %3, K = %4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="210"/>
+        <source>%1 (t = %2, I = %3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="213"/>
+        <source>%1 (t = %2, I = %3, K = %4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopydataitem.cpp" line="216"/>
+        <source>%1 (t = %2, I = %3, J = %4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowResultCopyGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultcopygroupdataitem.cpp" line="9"/>
+        <source>Calcuation Results Copys</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowResultGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowresultgroupdataitem.cpp" line="42"/>
+        <source>Calcuation Results</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowRootDataItem</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowrootdataitem.cpp" line="37"/>
+        <source>x</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowSettingWidget</name>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="26"/>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="58"/>
+        <source>Y Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="64"/>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="74"/>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="90"/>
+        <source>Display Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="96"/>
+        <source>Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="106"/>
+        <source>Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="133"/>
+        <source>Line Style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="141"/>
+        <source>Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="146"/>
+        <source>Dashed Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="151"/>
+        <source>Dotted Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="156"/>
+        <source>Dots and Dashes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="164"/>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="198"/>
+        <source>Bar Chart:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="205"/>
+        <source>Show as Bar Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="212"/>
+        <source>Symbol Style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="225"/>
+        <source>Circle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="230"/>
+        <source>Rectangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="235"/>
+        <source>Diamond</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="240"/>
+        <source>Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="245"/>
+        <source>XCross</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="268"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="299"/>
+        <source>ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/graph2dverificationwindowsettingwidget.ui" line="323"/>
+        <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="668"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="679"/>
+        <source>GridLocationNull</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="669"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="680"/>
+        <source>Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="670"/>
+        <location filename="../graph2dverificationwindowresultsetting.cpp" line="681"/>
+        <source>CellCenter</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

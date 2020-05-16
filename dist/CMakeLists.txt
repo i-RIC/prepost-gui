@@ -111,13 +111,14 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libs/geodata/netcdf/release/iricGdNetcdf.dll
   ${PREPOST_GUI}/libs/geodata/pointmap/release/iricGdPointmap.dll
   ${PREPOST_GUI}/libs/geodata/polygon/release/iricGdPolygon.dll
-  ${PREPOST_GUI}/libs/geodata/polygon/release/iricGdPolygonGroup.dll
+  ${PREPOST_GUI}/libs/geodata/polygongroup/release/iricGdPolygonGroup.dll
   ${PREPOST_GUI}/libs/geodata/polyline/release/iricGdPolyLine.dll
   ${PREPOST_GUI}/libs/geodata/riversurvey/release/iricGdRiversurvey.dll
   ${PREPOST_GUI}/libs/geoio/release/iricGeoio.dll
   ${PREPOST_GUI}/libs/post/graph2d/release/iricGraph2d.dll
   ${PREPOST_GUI}/libs/post/graph2dhybrid/release/iricGraph2dhybrid.dll
   ${PREPOST_GUI}/libs/post/graph2dscattered/release/iricGraph2dscattered.dll
+  ${PREPOST_GUI}/libs/post/graph2dverification/release/iricGraph2dVerification.dll
   ${PREPOST_GUI}/libs/gui/release/iricGui.dll
   ${PREPOST_GUI}/libs/guibase/release/iricGuibase.dll
   ${PREPOST_GUI}/libs/guicore/release/iricGuicore.dll
@@ -169,6 +170,7 @@ set(IRIC_JP
   ${PREPOST_GUI}/libs/post/graph2d/languages/iricGraph2d_ja_JP.qm
   ${PREPOST_GUI}/libs/post/graph2dhybrid/languages/iricGraph2dhybrid_ja_JP.qm
   ${PREPOST_GUI}/libs/post/graph2dscattered/languages/iricGraph2dscattered_ja_JP.qm
+  ${PREPOST_GUI}/libs/post/graph2dverification/languages/iricGraph2dverification_ja_JP.qm
   ${PREPOST_GUI}/libs/gui/languages/iricGui_ja_JP.qm
   ${PREPOST_GUI}/libs/guibase/languages/iricGuibase_ja_JP.qm
   ${PREPOST_GUI}/libs/guicore/languages/iricGuicore_ja_JP.qm
@@ -211,6 +213,7 @@ set(IRIC_CN
   ${PREPOST_GUI}/libs/post/graph2d/languages/iricGraph2d_zh_CN.qm
   ${PREPOST_GUI}/libs/post/graph2dhybrid/languages/iricGraph2dhybrid_zh_CN.qm
   ${PREPOST_GUI}/libs/post/graph2dscattered/languages/iricGraph2dscattered_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/graph2dverification/languages/iricGraph2dverification_zh_CN.qm
   ${PREPOST_GUI}/libs/gui/languages/iricGui_zh_CN.qm
   ${PREPOST_GUI}/libs/guibase/languages/iricGuibase_zh_CN.qm
   ${PREPOST_GUI}/libs/guicore/languages/iricGuicore_zh_CN.qm

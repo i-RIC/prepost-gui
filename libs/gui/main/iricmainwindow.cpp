@@ -12,7 +12,6 @@
 #include "../projectproperty/projectpropertydialog.h"
 #include "../solverdef/solverdefinitionlist.h"
 #include "../startpage/startpagedialog.h"
-#include "../verification/verificationgraphdialog.h"
 #include "iricmainwindow.h"
 #include "private/iricmainwindow_calculatedresultmanager.h"
 #include "private/iricmainwindow_snapshotsaver.h"
@@ -57,6 +56,7 @@
 #include <postbase/cfshapeexportwindowi.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
+#include <post/graph2dverification/graph2dverificationwindowprojectdataitem.h>
 #include <post/post2d/post2dwindow.h>
 #include <pre/factory/gridcreatingconditionfactory.h>
 #include <pre/factory/gridexporterfactory.h>
@@ -1413,15 +1413,26 @@ void iRICMainWindow::createGraph2dScatteredWindow()
 
 void iRICMainWindow::openVerificationDialog()
 {
-	VerificationGraphDialog* dialog = new VerificationGraphDialog(this);
-	dialog->setPostSolutionInfo(m_projectData->mainfile()->postSolutionInfo());
-	dialog->setMeasuredValues(m_projectData->mainfile()->measuredDatas());
-	dialog->setModal(true);
-	dialog->show();
-	bool ok = dialog->setting();
-	if (! ok) {
-		dialog->close();
+	static int index = 1;
+	if (index == 10) {
+		index = 1;
 	}
+	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
+	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("graph2dverificationwindow", posts, this);
+	Graph2dVerificationWindowProjectDataItem* item2 = dynamic_cast<Graph2dVerificationWindowProjectDataItem*>(item);
+	bool ok = item2->setupInitialSetting();
+	if (!ok) {
+		delete item;
+		return;
+	}
+	QMdiSubWindow* container = posts->add(item);
+	container->show();
+	container->setFocus();
+	connect(item->window(), SIGNAL(closeButtonClicked()), container, SLOT(close()));
+
+	item->window()->setupDefaultGeometry(index);
+	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
 void iRICMainWindow::enterModelessDialogMode()

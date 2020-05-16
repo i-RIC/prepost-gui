@@ -528,7 +528,7 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	m_resultMenu->addAction(windowCreateNewGraph2dScatteredWindowAction);
 	connect(windowCreateNewGraph2dScatteredWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dScatteredWindow()));
 
-	windowCreateVerificationDialogAction = new QAction(tr("Compare with measured values..."), m_resultMenu);
+	windowCreateVerificationDialogAction = new QAction(tr("Open new Verification Window"), m_resultMenu);
 	windowCreateVerificationDialogAction->setIcon(QIcon(":/images/iconGraphVerification.png"));
 	m_resultMenu->addAction(windowCreateVerificationDialogAction);
 	connect(windowCreateVerificationDialogAction, SIGNAL(triggered()), m_parent, SLOT(openVerificationDialog()));
@@ -829,6 +829,9 @@ void iRICMainWindowActionManager::setupMainToolBar()
 void iRICMainWindowActionManager::setupWindowsToolBar()
 {
 	m_windowsToolBar = new iRICToolBar(tr("Window list Toolbar"), m_parent);
+#if defined(_MSC_VER)
+	m_windowsToolBar->setMinimumSize(QSize(27, 27));
+#endif
 
 	connect(viewWindowsToolBarAction, SIGNAL(triggered(bool)), m_windowsToolBar , SLOT(setVisible(bool)));
 	connect(m_windowsToolBar, SIGNAL(visibilityChanged(bool)), viewWindowsToolBarAction, SLOT(setChecked(bool)));

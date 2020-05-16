@@ -12,4 +12,5 @@ SUBDIRS = \
 	post3d \
 	graph2d \
 	graph2dhybrid \
-	graph2dscattered
+	graph2dscattered \
+	graph2dverification
