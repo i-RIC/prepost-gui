@@ -5,6 +5,8 @@ environment:
     secure: Kt5VLMSJeqiQyx3Ox3sphU62h9OlWJeiOi7da6DSCuSjv3sp7Ab2LB4m717mCtN2
   iric_access_token:
     secure: ee8J3ZdtlbFttFmkcumsXr1/FKYOkf/vkN2ZC6lkymz3uOVTs23CXfQS4uMi/zVt
+  kskinoue0612_access_token:
+    secure: TODO
 
 # Skipping commits affecting specific files (GitHub only).
 skip_commits:
@@ -32,7 +34,7 @@ init:
   - ps: Write-Output $env:psgenerator
   # Currently only commit and push to test-auto-dev branch (for testing)
   - ps: $(Get-ChildItem env:)
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   # - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "test-auto-dev") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
 
@@ -85,9 +87,10 @@ after_build:
   - ps: |
       if ($CommitAndPush) {
         md $env:APPVEYOR_BUILD_FOLDER\dist\_build
-        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
         cmake --version
         cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -G $env:psgenerator ..
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
 
 artifacts:
@@ -99,17 +102,40 @@ artifacts:
 on_success:
   - ps: |
       if ($CommitAndPush) {
-        Write-Output "This is the Release of the $env:CommitBranch branch"
-        $SaveErrorActionPreference = $ErrorActionPreference
-        $ErrorActionPreference = "Stop"
-        Set-Location \
-        git clone -q --branch=master https://github.com/i-RIC/online_update.git
+        # online_update urls
+        $remote_url_iric = "https://github.com/i-RIC/online_update.git"
+        $remote_url_scharlton2 = "https://github.com/scharlton2/online_update.git"
+        $remote_url_kskinoue0612 = "TODO"
+
+        $branch = $True
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $remote_url = $remote_url_iric
+          $access_token = $env:iric_access_token
+          $branch = $False
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          $remote_url = $remote_url_scharlton2
+          $access_token = $env:scharlton2_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $remote_url = $remote_url_kskinoue0612
+          $access_token = $env:kskinoue0612_access_token
+        }
+
+        Set-Location \ -ErrorAction Stop
+        git clone -q --branch=master $remote_url
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        Set-Location .\online_update
+
+        Set-Location .\online_update -ErrorAction Stop
         git checkout -qf master
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        # the next line is temporary (used for testing)
-        # git checkout -qb __$env:APPVEYOR_JOB_ID
+
+        if ($branch) {
+          # create branch when remote is not "i-RIC/prepost-gui"
+          git checkout -qb __$env:APPVEYOR_JOB_ID
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        }
+
         # update data\definition.xml and meta\package.xml from dev_src\packages\gui.prepost
         $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
         $v[3] = 1 + $v[3]
@@ -131,42 +157,53 @@ on_success:
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
+
         # distribute files built by prepost-gui
-        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
         msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         # run repogen to build packages and Updates.xml
-        Set-Location \online_update\dev_src
+        Set-Location \online_update\dev_src -ErrorAction Stop
         # create qt_ifw_path.py
         Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\2.0'" | Out-File -FilePath \online_update\dev_src\qt_ifw_path.py -Encoding ascii
+        # run repogen
         py build_update_repository.py
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        Set-Location \online_update
+
         # run normalize_updatexml.py to normalize Updates.xml.
+        Set-Location \online_update -ErrorAction Stop
         py normalize_updatexml.py
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         # commit and push to https://github.com/i-RIC/online_update.git
         git config --global credential.helper store
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        # the access token will need to change when called from i-RIC appveyor
-        Add-Content "$HOME\.git-credentials" "https://$($env:iric_access_token):x-oauth-basic@github.com`n"
+
+        # configure git for commit and push
+        Add-Content "$HOME\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
         git config --global user.email "iric.appveyor@gmail.com"
-        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         git config --global user.name "iric.appveyor"
+        git config --global core.safecrlf false
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         # Qt dictionaries are now included in gui.runtime package.
         git reset **/qt_*.qm
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         git commit -m "built by iric.appveyor"
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         # change this to master after testing
         git push --set-upstream origin master 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         git status
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         # display environment variables
         Get-ChildItem env:
-        $ErrorActionPreference = $SaveErrorActionPreference
       }
