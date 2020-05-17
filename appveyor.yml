@@ -79,9 +79,7 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  ##{{
-  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
-  ##}}
+  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -128,9 +126,9 @@ on_success:
           $access_token = $env:kskinoue0612_access_token
         }
 
-        ##{{
+        # this seems to fix clone failure
+        # see https://stackoverflow.com/questions/21277806/fatal-early-eof-fatal-index-pack-failed
         git config --global core.compression 0
-        ##}}
 
         Set-Location \ -ErrorAction Stop
         git clone -q --branch=master --depth 1 $remote_url
@@ -169,10 +167,6 @@ on_success:
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
-
-        ##{{
-        return
-        ##}}
 
         # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
