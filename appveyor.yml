@@ -129,10 +129,12 @@ on_success:
         }
 
         Set-Location \ -ErrorAction Stop
-        git clone -q --branch=master $remote_url
+        git clone -q --branch=master --depth 1 $remote_url
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         Set-Location .\online_update -ErrorAction Stop
+        git fetch --unshallow 
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         git checkout -qf master
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
