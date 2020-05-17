@@ -2,7 +2,7 @@ version: '{branch}-{build}'
 
 environment:
   scharlton2_access_token:
-    secure: Kt5VLMSJeqiQyx3Ox3sphU62h9OlWJeiOi7da6DSCuSjv3sp7Ab2LB4m717mCtN2
+    secure: XFfVvroKdHjCHRpjPN1VWDMJ0U0gt6ciKzEPK2OYVNjoYMrc9yE97UwtNzi+8vJJ
   iric_access_token:
     secure: ee8J3ZdtlbFttFmkcumsXr1/FKYOkf/vkN2ZC6lkymz3uOVTs23CXfQS4uMi/zVt
   kskinoue0612_access_token:
@@ -119,6 +119,7 @@ on_success:
         }
         if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
           $remote_url = $remote_url_scharlton2
+          # online_update_2020_05_17 expires after a year if not used
           $access_token = $env:scharlton2_access_token
         }
         if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
