@@ -32,14 +32,18 @@ init:
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
   - ps: Write-Output $env:psgenerator
-  # Currently only commit and push to test-auto-dev branch (for testing)
+  # Currently only commit and push to debug-appveyor branch (for testing)
   - ps: $(Get-ChildItem env:)
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
-  # - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "test-auto-dev") -AND ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  ##{{
+  # - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "debug-appveyor") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  ##}}
   - ps: Write-Output $CommitAndPush
 
 configuration:
-  - Debug
+  ##{{
+  ##  - Debug
+  ##}}
   - Release
 
 matrix:
@@ -75,7 +79,9 @@ before_build:
   - qmake -recursive -tp vc
 
 build_script:
-  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  ##{{
+  - echo msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  ##}}
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -157,6 +163,10 @@ on_success:
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
+
+        ##{{
+        return
+        ##}}
 
         # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
