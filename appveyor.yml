@@ -128,6 +128,10 @@ on_success:
           $access_token = $env:kskinoue0612_access_token
         }
 
+        ##{{
+        git config --global core.compression 0
+        ##}}
+
         Set-Location \ -ErrorAction Stop
         git clone -q --branch=master --depth 1 $remote_url
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
