@@ -192,7 +192,7 @@ on_success:
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # configure git for commit and push
-        Add-Content "$HOME\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
+        Add-Content "$HOME\.git-credentials" "https://$(access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
         git config --global user.email "iric.appveyor@gmail.com"
         git config --global user.name "iric.appveyor"
         git config --global core.safecrlf false
