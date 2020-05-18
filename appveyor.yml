@@ -2,7 +2,7 @@ version: '{branch}-{build}'
 
 environment:
   scharlton2_access_token:
-    secure: XFfVvroKdHjCHRpjPN1VWDMJ0U0gt6ciKzEPK2OYVNjoYMrc9yE97UwtNzi+8vJJ
+    secure: Kt5VLMSJeqiQyx3Ox3sphU62h9OlWJeiOi7da6DSCuSjv3sp7Ab2LB4m717mCtN2
   iric_access_token:
     secure: ee8J3ZdtlbFttFmkcumsXr1/FKYOkf/vkN2ZC6lkymz3uOVTs23CXfQS4uMi/zVt
   kskinoue0612_access_token:
@@ -143,7 +143,7 @@ on_success:
 
         if ($branch) {
           # create branch when remote is not "i-RIC/prepost-gui"
-          git checkout -qb __$env:APPVEYOR_JOB_ID
+          git checkout -qb $env:APPVEYOR_JOB_ID
           if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
 
@@ -208,13 +208,13 @@ on_success:
         git commit -m "built by iric.appveyor"
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        # change this to master after testing
-        git push --set-upstream origin master 2>&1 | Out-Null
+        if ($branch) {
+          git push --set-upstream origin $env:APPVEYOR_JOB_ID 2>&1 | Out-Null
+        } else {
+          git push --set-upstream origin master 2>&1 | Out-Null
+        }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         git status
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-
-        # display environment variables
-        Get-ChildItem env:
       }
