@@ -50,7 +50,11 @@
 #include <vtkTextProperty.h>
 
 Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	m_fullRange {true},
+	m_isoValue {0.0},
+	m_color {Qt::white},
+	m_opacity {100}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -69,9 +73,6 @@ Post3dWindowNodeScalarGroupDataItem::~Post3dWindowNodeScalarGroupDataItem()
 
 void Post3dWindowNodeScalarGroupDataItem::setDefaultValues()
 {
-	m_isoValue = 0.0;
-	m_fullRange = true;
-	m_color = Qt::white;
 	validateRange();
 }
 
@@ -112,6 +113,7 @@ void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_range.kMax = iRIC::getIntAttribute(node, "kMax");
 	m_isoValue = iRIC::getDoubleAttribute(node, "value");
 	m_color = iRIC::getColorAttribute(node, "color", Qt::white);
+	m_opacity = iRIC::getIntAttribute(node, "opacityPercent", 100);
 	validateRange();
 	updateActorSettings();
 }
@@ -128,6 +130,7 @@ void Post3dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	iRIC::setIntAttribute(writer, "kMax", m_range.kMax);
 	iRIC::setDoubleAttribute(writer, "value", m_isoValue);
 	iRIC::setColorAttribute(writer, "color", m_color);
+	iRIC::setIntAttribute(writer, "opacityPercent", m_opacity);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::setupActors()
@@ -221,9 +224,8 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setRange(m_range);
 
 	dialog->setIsoValue(m_isoValue);
-	dialog->setColor(this->m_color);
-
 	dialog->setColor(m_color);
+	dialog->setOpacity(m_opacity);
 
 	return dialog;
 }
@@ -234,7 +236,7 @@ public:
 	Post3dWindowIsosurfaceSetProperty(
 		bool enabled, const std::string& sol,
 		bool fullrange, StructuredGridRegion::Range3d range,
-		double isovalue, const QColor& color, Post3dWindowNodeScalarGroupDataItem* item)
+		double isovalue, const QColor& color, int opacity, Post3dWindowNodeScalarGroupDataItem* item)
 		: QUndoCommand(QObject::tr("Update Contour Setting")) {
 		m_newEnabled = enabled;
 		m_newCurrentSolution = sol;
@@ -242,6 +244,7 @@ public:
 		m_newRange = range;
 		m_newIsoValue = isovalue;
 		m_newColor = color;
+		m_newOpacity = opacity;
 
 		m_oldEnabled = item->isEnabled();
 		m_oldCurrentSolution = item->m_target;
@@ -249,6 +252,7 @@ public:
 		m_oldRange = item->m_range;
 		m_oldIsoValue = item->m_isoValue;
 		m_oldColor = item->m_color;
+		m_oldOpacity = item->m_opacity;
 
 		m_item = item;
 	}
@@ -260,6 +264,7 @@ public:
 		m_item->m_range = m_oldRange;
 		m_item->m_isoValue = m_oldIsoValue;
 		m_item->m_color = m_oldColor;
+		m_item->m_opacity = m_oldOpacity;
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
@@ -273,6 +278,7 @@ public:
 		m_item->m_range = m_newRange;
 		m_item->m_isoValue = m_newIsoValue;
 		m_item->m_color = m_newColor;
+		m_item->m_opacity = m_newOpacity;
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
@@ -285,6 +291,7 @@ private:
 	StructuredGridRegion::Range3d m_oldRange;
 	double m_oldIsoValue;
 	QColor m_oldColor;
+	int m_oldOpacity;
 
 	bool m_newEnabled;
 	std::string m_newCurrentSolution;
@@ -292,6 +299,7 @@ private:
 	StructuredGridRegion::Range3d m_newRange;
 	double m_newIsoValue;
 	QColor m_newColor;
+	int m_newOpacity;
 
 	Post3dWindowNodeScalarGroupDataItem* m_item;
 };
@@ -303,7 +311,7 @@ void Post3dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* 
 		new Post3dWindowIsosurfaceSetProperty(
 			dialog->enabled(), dialog->target(),
 			dialog->fullRange(), dialog->range(),
-			dialog->isoValue(), dialog->color(), this));
+			dialog->isoValue(), dialog->color(), dialog->opacity(), this));
 }
 
 void Post3dWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -333,6 +341,7 @@ void Post3dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 void Post3dWindowNodeScalarGroupDataItem::updateColorSetting()
 {
 	m_isoSurfaceActor->GetProperty()->SetColor(m_color.red()/255., m_color.green()/255., m_color.blue()/255.);
+	m_isoSurfaceActor->GetProperty()->SetOpacity(m_opacity / 100.0);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::validateRange()

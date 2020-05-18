@@ -127,8 +127,8 @@ public:
 	CreateCommand(
 		bool enabled, const std::string& sol,
 		bool fullrange, StructuredGridRegion::Range3d range,
-		double isovalue, const QColor& color, Post3dWindowNodeScalarGroupTopDataItem* topitem)
-		: QUndoCommand(QObject::tr("Create Isosurface"))
+		double isovalue, const QColor& color, int opacity, Post3dWindowNodeScalarGroupTopDataItem* topitem) :
+		QUndoCommand(QObject::tr("Create Isosurface"))
 	{
 		m_topItem = topitem;
 		m_item = new Post3dWindowNodeScalarGroupDataItem(m_topItem);
@@ -142,6 +142,7 @@ public:
 		m_item->m_range = range;
 		m_item->m_isoValue = isovalue;
 		m_item->m_color = color;
+		m_item->m_opacity = opacity;
 	}
 
 	void undo()
@@ -285,7 +286,7 @@ void Post3dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 		new CreateCommand(
 			dialog->enabled(), dialog->target(),
 			dialog->fullRange(), dialog->range(),
-			dialog->isoValue(), dialog->color(), this)
+			dialog->isoValue(), dialog->color(), dialog->opacity(), this)
 			);
 }
 
