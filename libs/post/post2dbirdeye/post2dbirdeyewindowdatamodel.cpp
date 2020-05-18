@@ -24,7 +24,6 @@
 #include <QStandardItem>
 #include <QStandardItemModel>
 
-#include <vtkLight.h>
 #include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
 
@@ -63,19 +62,6 @@ void Post2dBirdEyeWindowDataModel::init()
 
 	m_graphicsView->setActiveDataItem(root);
 	m_graphicsView->setModel(this);
-
-	vtkSmartPointer<vtkLight> light = vtkSmartPointer<vtkLight>::New();
-	light->SetLightTypeToCameraLight();
-	light->SetPosition(0, 1, 0);
-	light->SetAmbientColor(0.2, 0.2, 0.2);
-	light->SetColor(0.2, 0.2, 0.2);
-
-	light->SetFocalPoint(0, 0, 0);
-	m_graphicsView->mainRenderer()->AddLight(light);
-
-	light = vtkSmartPointer<vtkLight>::New();
-	light->SetLightTypeToHeadlight();
-	m_graphicsView->mainRenderer()->AddLight(light);
 
 	m_zScale = 1;
 	m_graphicsView->cameraFit();

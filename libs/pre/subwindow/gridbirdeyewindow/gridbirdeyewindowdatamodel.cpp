@@ -59,19 +59,6 @@ void GridBirdEyeWindowDataModel::init()
 	m_warp->SetScaleFactor(DEFAULT_SCALE);
 	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, ELEVATION);
 
-	vtkSmartPointer<vtkLight> light = vtkSmartPointer<vtkLight>::New();
-	light->SetLightTypeToCameraLight();
-	light->SetPosition(0, 1, 0);
-	light->SetAmbientColor(0.2, 0.2, 0.2);
-	light->SetColor(0.2, 0.2, 0.2);
-
-	light->SetFocalPoint(0, 0, 0);
-	m_graphicsView->mainRenderer()->AddLight(light);
-
-	light = vtkSmartPointer<vtkLight>::New();
-	light->SetLightTypeToHeadlight();
-	m_graphicsView->mainRenderer()->AddLight(light);
-
 	m_mapper->SetInputConnection(m_warp->GetOutputPort());
 	m_actor->SetMapper(m_mapper);
 

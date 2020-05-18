@@ -10,7 +10,6 @@
 #include <vtkActor.h>
 #include <vtkDataSetMapper.h>
 #include <vtkWarpScalar.h>
-#include <vtkLight.h>
 #include <vtkCubeAxesActor2D.h>
 #include <vtkScalarBarWidget.h>
 #include <vtkAxesActor.h>
@@ -63,7 +62,6 @@ private:
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkDataSetMapper> m_mapper;
 	vtkSmartPointer<vtkWarpScalar> m_warp;
-	vtkSmartPointer<vtkLight> m_light;
 	vtkSmartPointer<vtkCubeAxesActor2D> m_cubeAxesActor;
 
 	vtkSmartPointer<vtkAxesActor> m_axesActor;
