@@ -132,13 +132,13 @@ on_success:
         git config --global core.compression 0
 
         Set-Location \ -ErrorAction Stop
-        git clone -q --branch=master --depth 1 $remote_url online_update
+        git clone -q --branch=master --depth 1 $remote_url online_update 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         Set-Location .\online_update -ErrorAction Stop
-        git fetch -q --unshallow
+        git fetch -q --unshallow > 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        git checkout -qf master
+        git checkout -qf master 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($branch) {
