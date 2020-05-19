@@ -32,18 +32,17 @@ init:
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
   - ps: Write-Output $env:psgenerator
-  # Currently only commit and push to debug-appveyor branch (for testing)
-  - ps: $(Get-ChildItem env:)
-  ##{{
-  # - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "master") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "debug-appveyor") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
-  ##}}
+  - ps: |
+      {
+        # Sometimes the plaintext of secure variables is displayed so filter out access_tokens
+        Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" }
+      }
+  # Only commit and push to master branch or debug-appveyor branch (for testing)
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "debug-appveyor")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
 
 configuration:
-  ##{{
-  ##  - Debug
-  ##}}
+  - Debug
   - Release
 
 matrix:
@@ -127,19 +126,11 @@ on_success:
           $access_token = $env:kskinoue0612_access_token
         }
 
-        # this seems to fix clone failure
-        # see https://stackoverflow.com/questions/21277806/fatal-early-eof-fatal-index-pack-failed
-        #####git config --global core.compression 0
-
         Set-Location \ -ErrorAction Stop
         git clone -q --branch=master --depth 1 $remote_url online_update 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         Set-Location .\online_update -ErrorAction Stop
-        #####git fetch -q --unshallow 2>&1 | Out-Null
-        #####if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        #####git checkout -qf master 2>&1 | Out-Null
-        #####if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($branch) {
           # create branch when remote is not "i-RIC/prepost-gui"
