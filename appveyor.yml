@@ -108,7 +108,7 @@ on_success:
       if ($CommitAndPush) {
         # online_update urls
         $remote_url_iric = "https://github.com/i-RIC/online_update.git"
-        $remote_url_scharlton2 = "https://github.com/scharlton2/online_update2.git"
+        $remote_url_scharlton2 = "https://github.com/scharlton2/online_update.git"
         $remote_url_kskinoue0612 = "TODO"
 
         $branch = $True
@@ -129,17 +129,17 @@ on_success:
 
         # this seems to fix clone failure
         # see https://stackoverflow.com/questions/21277806/fatal-early-eof-fatal-index-pack-failed
-        git config --global core.compression 0
+        #####git config --global core.compression 0
 
         Set-Location \ -ErrorAction Stop
         git clone -q --branch=master --depth 1 $remote_url online_update 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         Set-Location .\online_update -ErrorAction Stop
-        git fetch -q --unshallow 2>&1 | Out-Null
-        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-        git checkout -qf master 2>&1 | Out-Null
-        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        #####git fetch -q --unshallow 2>&1 | Out-Null
+        #####if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        #####git checkout -qf master 2>&1 | Out-Null
+        #####if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($branch) {
           # create branch when remote is not "i-RIC/prepost-gui"
