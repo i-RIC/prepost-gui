@@ -2,9 +2,9 @@ version: '{branch}-{build}'
 
 environment:
   scharlton2_access_token:
-    secure: Kt5VLMSJeqiQyx3Ox3sphU62h9OlWJeiOi7da6DSCuSjv3sp7Ab2LB4m717mCtN2
+    secure: CS9f7K3/ePypXUjKJ5S5iX2WFLNpC0IH4LEC9jYXdvcNbaM7CFl0fU5Ws/qUDgvo
   iric_access_token:
-    secure: ee8J3ZdtlbFttFmkcumsXr1/FKYOkf/vkN2ZC6lkymz3uOVTs23CXfQS4uMi/zVt
+    secure: WDcJrM7sx9jagk006F3OtXqomb90MlJcRIs8LoAyvT0wVzvG+UxeaW+oG9GWb1t8
   kskinoue0612_access_token:
     secure: TODO
 
