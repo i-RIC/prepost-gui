@@ -6,7 +6,7 @@ environment:
   iric_access_token:
     secure: WDcJrM7sx9jagk006F3OtXqomb90MlJcRIs8LoAyvT0wVzvG+UxeaW+oG9GWb1t8
   kskinoue0612_access_token:
-    secure: TODO
+    secure: GzdhhFKWjeLDM22U4ZcrMkAGEEnZLMVbfBR9W8uRQ/LqOtvX2qjPXvC3nvxxWeUc
 
 # Skipping commits affecting specific files (GitHub only).
 skip_commits:
@@ -105,7 +105,7 @@ on_success:
         # online_update urls
         $remote_url_iric = "https://github.com/i-RIC/online_update.git"
         $remote_url_scharlton2 = "https://github.com/scharlton2/online_update.git"
-        $remote_url_kskinoue0612 = "TODO"
+        $remote_url_kskinoue0612 = "https://github.com/kskinoue0612/online_update.git"
 
         $branch = $True
         if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
