@@ -64,6 +64,8 @@ bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* 
 	if (condition->position() == SolverDefinitionGridAttribute::CellCenter) {return false;}
 	if (condition->isOption()) {return false;}
 	if (condition->dimensions().size() != 0) {return false;}
+	if (condition->isReferenceInformation()) {return false;}
+
 	return true;
 }
 
