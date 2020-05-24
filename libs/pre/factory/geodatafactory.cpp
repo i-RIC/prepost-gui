@@ -3,6 +3,7 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <geodata/netcdf/geodatanetcdfintegercreator.h>
 #include <geodata/netcdf/geodatanetcdfrealcreator.h>
+#include <geodata/point/geodatapointrealcreator.h>
 #include <geodata/pointmap/geodatapointmaprealcreator.h>
 #include <geodata/polygon/geodatapolygonintegercreator.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
@@ -21,6 +22,7 @@ GeoDataFactory::GeoDataFactory() :
 	// m_creators here when you added new
 	// classes those inherits GeoDataCreator.
 	m_creators.push_back(new GeoDataRiverSurveyCreator());
+	m_creators.push_back(new GeoDataPointRealCreator());
 	m_creators.push_back(new GeoDataPointmapRealCreator());
 	m_creators.push_back(new GeoDataPolygonIntegerCreator());
 	m_creators.push_back(new GeoDataPolygonRealCreator());

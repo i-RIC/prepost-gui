@@ -115,6 +115,20 @@ unix {
 }
 LIBS += -liricGdRiversurvey
 
+# iricGdPoint
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/point/debug"
+        } else {
+                LIBS += -L"../geodata/point/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/point"
+}
+LIBS += -liricGdPoint
+
 # iricGdPointmap
 
 win32 {

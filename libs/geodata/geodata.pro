@@ -6,6 +6,7 @@ TEMPLATE = subdirs
 
 SUBDIRS = \
 	netcdf \
+	point \
 	pointmap \
 	polygon \
 	polygongroup \
