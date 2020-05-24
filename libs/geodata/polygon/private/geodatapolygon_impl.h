@@ -29,7 +29,6 @@ public:
 
 	GeoDataPolygonTriangleThread* m_triangleThread;
 
-	bool m_inhibitSelect;
 	bool m_shapeUpdating;
 	bool m_bcSettingMode;
 

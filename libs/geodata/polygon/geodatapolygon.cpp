@@ -86,7 +86,6 @@ GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 	m_regionPolygon {new GeoDataPolygonRegionPolygon(m_parent)},
 	m_selectedPolygon {m_regionPolygon},
 	m_triangleThread {nullptr},
-	m_inhibitSelect {false},
 	m_shapeUpdating {false},
 	m_bcSettingMode {false},
 	m_selectMode {smPolygon},
@@ -467,7 +466,6 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 					pushRenderCommand(new RemoveVertexCommand(impl->m_selectedPolygon->selectedVertexId(), this));
 				}
 			}
-			impl->m_inhibitSelect = true;
 			break;
 		case meRemoveVertexNotPossible:
 			// do nothing.
@@ -520,7 +518,6 @@ void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsV
 		default:
 			break;
 		}
-		impl->m_inhibitSelect = false;
 	} else if (event->button() == Qt::RightButton) {
 		if (impl->m_mouseEventMode == meEditVerticesDialog) {return;}
 		if (iRIC::isNear(impl->m_dragStartPoint, event->pos())) {
