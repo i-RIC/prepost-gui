@@ -1,7 +1,7 @@
 #include "geodatapoint_editnameandvaluecommand.h"
 
 GeoDataPoint::EditNameAndValueCommand::EditNameAndValueCommand(const QString& newName, const QVariant newValue, GeoDataPoint* point) :
-	QUndoCommand {GeoDataPoint::tr("Poly line name and value change")},
+	QUndoCommand {GeoDataPoint::tr("Point name and value change")},
 	m_newName {newName},
 	m_newValue {newValue},
 	m_oldName {point->caption()},
