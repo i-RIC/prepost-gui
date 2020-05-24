@@ -138,6 +138,10 @@ HEADERS += arrowsettingcontainer.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           point/pointclearcommand.h \
+           point/pointcontroller.h \
+           point/pointmovecommand.h \
+           point/pointsetcommand.h \
            polygon/polygonaddvertexcommand.h \
            polygon/polygoncontroller.h \
            polygon/polygoneditcoordinatescommand.h \
@@ -189,6 +193,7 @@ HEADERS += arrowsettingcontainer.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
            coordinates/private/coordinateseditdialogdelegate.h \
+           point/private/pointcontroller_impl.h \
            polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
@@ -273,6 +278,10 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           point/pointclearcommand.cpp \
+           point/pointcontroller.cpp \
+           point/pointmovecommand.cpp \
+           point/pointsetcommand.cpp \
            polygon/polygonaddvertexcommand.cpp \
            polygon/polygoncontroller.cpp \
            polygon/polygoneditcoordinatescommand.cpp \

@@ -5,8 +5,6 @@
 
 #include "../../vtktool/vtklineactor.h"
 
-class vtkPolyData;
-
 class PolyLineController::Impl
 {
 public:
