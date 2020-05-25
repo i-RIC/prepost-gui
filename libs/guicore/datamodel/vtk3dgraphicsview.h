@@ -5,13 +5,15 @@
 
 #include "vtkgraphicsview.h"
 
+class vtkLightKit;
+
 class GUICOREDLL_EXPORT VTK3DGraphicsView : public VTKGraphicsView
 {
 	Q_OBJECT
 
 public:
 	VTK3DGraphicsView(QWidget* parent);
-	virtual ~VTK3DGraphicsView() {}
+	~VTK3DGraphicsView() override;
 	/// Get distance in world corrdinate
 	double stdDistance(int pixels);
 	/// Translate the camera
@@ -54,6 +56,8 @@ private:
 	void perspectiveProjection();
 
 	void getFocalPointAndDistance(double focal[3], double* distance);
+
+	vtkLightKit* m_lightKit;
 };
 
 #endif // VTK3DGRAPHICSVIEW_H

@@ -10,8 +10,6 @@ class QCursor;
 
 class Post2dBirdEyeWindowGraphicsView : public VTK3DGraphicsView
 {
-	Q_OBJECT
-
 public:
 	Post2dBirdEyeWindowGraphicsView(QWidget* parent);
 };

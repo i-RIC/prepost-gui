@@ -25,8 +25,8 @@
 
 #include <vtkRenderer.h>
 
-Post3dWindow::Post3dWindow(QWidget* parent, int index, Post3dWindowProjectDataItem* pdi)
-	: PostProcessorWindow(parent, index, pdi)
+Post3dWindow::Post3dWindow(QWidget* parent, int index, Post3dWindowProjectDataItem* pdi) :
+	PostProcessorWindow(parent, index, pdi)
 {
 	init();
 }

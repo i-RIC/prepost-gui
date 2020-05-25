@@ -6,14 +6,26 @@
 #include "graphicswindowsimpledatamodel.h"
 
 #include <vtkCamera.h>
+#include <vtkLightKit.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <QAction>
 #include <QVector3D>
 
-VTK3DGraphicsView::VTK3DGraphicsView(QWidget* parent)
-	: VTKGraphicsView(parent)
-{}
+VTK3DGraphicsView::VTK3DGraphicsView(QWidget* parent) :
+	VTKGraphicsView(parent)
+{
+	mainRenderer()->RemoveAllLights();
+
+	m_lightKit = vtkLightKit::New();
+	m_lightKit->AddLightsToRenderer(mainRenderer());
+}
+
+VTK3DGraphicsView::~VTK3DGraphicsView()
+{
+	m_lightKit->RemoveLightsFromRenderer(mainRenderer());
+	m_lightKit->Delete();
+}
 
 void VTK3DGraphicsView::fitInView()
 {
