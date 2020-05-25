@@ -41,6 +41,9 @@ public:
 	void setColor(const QColor& color);
 	const QColor color() const;
 
+	void setOpacity(int opacity);
+	int opacity() const;
+
 	std::string target() const;
 	bool fullRange() const;
 	StructuredGridRegion::Range3d range() const;

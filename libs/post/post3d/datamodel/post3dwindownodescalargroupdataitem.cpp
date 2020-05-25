@@ -5,6 +5,7 @@
 #include "post3dwindownodescalardataitem.h"
 #include "post3dwindownodescalargroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindownodescalargroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -50,7 +51,11 @@
 #include <vtkTextProperty.h>
 
 Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	m_fullRange {true},
+	m_isoValue {0.0},
+	m_color {Qt::white},
+	m_opacity {100}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -69,9 +74,6 @@ Post3dWindowNodeScalarGroupDataItem::~Post3dWindowNodeScalarGroupDataItem()
 
 void Post3dWindowNodeScalarGroupDataItem::setDefaultValues()
 {
-	m_isoValue = 0.0;
-	m_fullRange = true;
-	m_color = Qt::white;
 	validateRange();
 }
 
@@ -112,6 +114,7 @@ void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_range.kMax = iRIC::getIntAttribute(node, "kMax");
 	m_isoValue = iRIC::getDoubleAttribute(node, "value");
 	m_color = iRIC::getColorAttribute(node, "color", Qt::white);
+	m_opacity = iRIC::getIntAttribute(node, "opacityPercent", 100);
 	validateRange();
 	updateActorSettings();
 }
@@ -128,6 +131,7 @@ void Post3dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	iRIC::setIntAttribute(writer, "kMax", m_range.kMax);
 	iRIC::setDoubleAttribute(writer, "value", m_isoValue);
 	iRIC::setColorAttribute(writer, "color", m_color);
+	iRIC::setIntAttribute(writer, "opacityPercent", m_opacity);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::setupActors()
@@ -221,89 +225,20 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setRange(m_range);
 
 	dialog->setIsoValue(m_isoValue);
-	dialog->setColor(this->m_color);
-
 	dialog->setColor(m_color);
+	dialog->setOpacity(m_opacity);
 
 	return dialog;
 }
-
-class Post3dWindowIsosurfaceSetProperty : public QUndoCommand
-{
-public:
-	Post3dWindowIsosurfaceSetProperty(
-		bool enabled, const std::string& sol,
-		bool fullrange, StructuredGridRegion::Range3d range,
-		double isovalue, const QColor& color, Post3dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Contour Setting")) {
-		m_newEnabled = enabled;
-		m_newCurrentSolution = sol;
-		m_newFullRange = fullrange;
-		m_newRange = range;
-		m_newIsoValue = isovalue;
-		m_newColor = color;
-
-		m_oldEnabled = item->isEnabled();
-		m_oldCurrentSolution = item->m_target;
-		m_oldFullRange = item->m_fullRange;
-		m_oldRange = item->m_range;
-		m_oldIsoValue = item->m_isoValue;
-		m_oldColor = item->m_color;
-
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setEnabled(m_oldEnabled);
-		m_item->setTarget(m_oldCurrentSolution);
-		m_item->m_fullRange = m_oldFullRange;
-		m_item->m_range = m_oldRange;
-		m_item->m_isoValue = m_oldIsoValue;
-		m_item->m_color = m_oldColor;
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setEnabled(m_newEnabled);
-		m_item->setTarget(m_newCurrentSolution);
-		m_item->m_fullRange = m_newFullRange;
-		m_item->m_range = m_newRange;
-		m_item->m_isoValue = m_newIsoValue;
-		m_item->m_color = m_newColor;
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	bool m_oldEnabled;
-	std::string m_oldCurrentSolution;
-	bool m_oldFullRange;
-	StructuredGridRegion::Range3d m_oldRange;
-	double m_oldIsoValue;
-	QColor m_oldColor;
-
-	bool m_newEnabled;
-	std::string m_newCurrentSolution;
-	bool m_newFullRange;
-	StructuredGridRegion::Range3d m_newRange;
-	double m_newIsoValue;
-	QColor m_newColor;
-
-	Post3dWindowNodeScalarGroupDataItem* m_item;
-};
 
 void Post3dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post3dWindowIsosurfaceSettingDialog* dialog = dynamic_cast<Post3dWindowIsosurfaceSettingDialog*>(propDialog);
 	iRICUndoStack::instance().push(
-		new Post3dWindowIsosurfaceSetProperty(
+		new SetSettingCommand(
 			dialog->enabled(), dialog->target(),
 			dialog->fullRange(), dialog->range(),
-			dialog->isoValue(), dialog->color(), this));
+			dialog->isoValue(), dialog->color(), dialog->opacity(), this));
 }
 
 void Post3dWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -333,6 +268,7 @@ void Post3dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 void Post3dWindowNodeScalarGroupDataItem::updateColorSetting()
 {
 	m_isoSurfaceActor->GetProperty()->SetColor(m_color.red()/255., m_color.green()/255., m_color.blue()/255.);
+	m_isoSurfaceActor->GetProperty()->SetOpacity(m_opacity / 100.0);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::validateRange()

@@ -217,3 +217,13 @@ const QColor Post3dWindowIsosurfaceSettingDialog::color() const
 {
 	return ui->colorEditWidget->color();
 }
+
+void Post3dWindowIsosurfaceSettingDialog::setOpacity(int opacity)
+{
+	ui->transparencyWidget->setOpacityPercent(opacity);
+}
+
+int Post3dWindowIsosurfaceSettingDialog::opacity() const
+{
+	return ui->transparencyWidget->opacityPercent();
+}

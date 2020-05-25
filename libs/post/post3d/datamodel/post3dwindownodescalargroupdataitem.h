@@ -70,9 +70,12 @@ private:
 	StructuredGridRegion::Range3d m_range;
 	double m_isoValue;
 	QColor m_color;
+	int m_opacity;
 
 	vtkSmartPointer<vtkActor> m_isoSurfaceActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_isoSurfaceMapper;
+
+	class SetSettingCommand;
 
 public:
 	friend class Post3dWindowIsosurfaceSetProperty;

@@ -445,14 +445,19 @@
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="53"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="54"/>
         <source>Isosurface</source>
         <translation>等值面</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="313"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
         <source>Isosurface physical value change</source>
         <translation>等值面物理值变更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
+        <source>Update Contour Setting</source>
+        <translation type="unfinished">更新轮廓设置</translation>
     </message>
 </context>
 <context>
@@ -902,9 +907,8 @@ p, li { white-space: pre-wrap; }
         <translation>更新网格形状设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="238"/>
         <source>Update Contour Setting</source>
-        <translation>更新轮廓设置</translation>
+        <translation type="vanished">更新轮廓设置</translation>
     </message>
     <message>
         <source>Update Particle Setting</source>
@@ -937,7 +941,7 @@ p, li { white-space: pre-wrap; }
         <translation>创建等值面</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="213"/>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="214"/>
         <source>Delete Isosurface</source>
         <translation>删除等值面</translation>
     </message>

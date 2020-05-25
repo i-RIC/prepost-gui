@@ -445,13 +445,18 @@
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="53"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="54"/>
         <source>Isosurface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="313"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
         <source>Isosurface physical value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
+        <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -872,11 +877,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="238"/>
-        <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
         <source>Update Streamline Setting</source>
         <translation type="unfinished"></translation>
@@ -903,7 +903,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="213"/>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="214"/>
         <source>Delete Isosurface</source>
         <translation type="unfinished"></translation>
     </message>

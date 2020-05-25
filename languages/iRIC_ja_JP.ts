@@ -36341,14 +36341,19 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="53"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="54"/>
         <source>Isosurface</source>
         <translation>等値面</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="313"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
         <source>Isosurface physical value change</source>
         <translation>等値面物理量の変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
+        <source>Update Contour Setting</source>
+        <translation>コンターの設定変更</translation>
     </message>
 </context>
 <context>
@@ -36838,9 +36843,8 @@ p, li { white-space: pre-wrap; }
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="238"/>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
@@ -36889,7 +36893,7 @@ p, li { white-space: pre-wrap; }
         <translation>等値面の作成</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="213"/>
+        <location filename="../datamodel/post3dwindownodescalargrouptopdataitem.cpp" line="214"/>
         <source>Delete Isosurface</source>
         <translation>等値面の削除</translation>
     </message>
