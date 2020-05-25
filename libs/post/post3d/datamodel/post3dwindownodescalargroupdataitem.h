@@ -75,6 +75,8 @@ private:
 	vtkSmartPointer<vtkActor> m_isoSurfaceActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_isoSurfaceMapper;
 
+	class SetSettingCommand;
+
 public:
 	friend class Post3dWindowIsosurfaceSetProperty;
 	friend class Post3dWindowIsosurfaceSelectSolution;
