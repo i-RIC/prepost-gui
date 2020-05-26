@@ -13,6 +13,8 @@ NewProjectSolverSelectingDialog::NewProjectSolverSelectingDialog(SolverDefinitio
 	ui->setupUi(this);
 	m_solverList = list;
 
+	ui->splitter->setStretchFactor(0, 0.2);
+
 	// setup widgets;
 	for (SolverDefinitionAbstract* abst : list->solverList()) {
 		QString caption = abst->caption();
