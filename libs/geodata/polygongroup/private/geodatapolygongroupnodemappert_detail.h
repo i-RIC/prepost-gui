@@ -42,6 +42,7 @@ GeoDataMapperSettingI* GeoDataPolygonGroupNodeMapperT<V, DA>::initialize(bool* b
 		}
 		if (polsMap.size() > 0) {
 			s->ranges.add(polsMap.begin()->second);
+			*(boolMap + i) = true;
 		} else {
 			s->ranges.add(nullptr);
 		}
