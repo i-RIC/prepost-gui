@@ -558,6 +558,16 @@ void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 			m_particlesDataItem->setZDepthRange(r);
 		}
 	}
+	if (cont->particleGroupMap().size() > 0) {
+		// Particle Group
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		if (m_particleGroupRootDataItem != nullptr) {
+			r = m_particleGroupRootDataItem->zDepthRange();
+			r.setRange(min, max);
+			m_particleGroupRootDataItem->setZDepthRange(r);
+		}
+	}
 	if (cont->polyDataMap().size() > 0) {
 		// PolyData
 		max = min - divWidth * gapRate;
