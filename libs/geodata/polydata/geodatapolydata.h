@@ -61,6 +61,8 @@ private slots:
 
 protected:
 	GeoDataPolyDataColorSettingDialog::Setting colorSetting() const;
+	void setColorSetting(GeoDataPolyDataColorSettingDialog::Setting setting);
+
 	void setupValues();
 
 	const std::vector<QVariant>& variantValues() const;
@@ -69,8 +71,6 @@ protected:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
-	void setColorSetting(GeoDataPolyDataColorSettingDialog::Setting setting);
 
 	void emitNameAndValueEdited();
 

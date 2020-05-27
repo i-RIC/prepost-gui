@@ -1,12 +1,9 @@
 #include "geodatapolyline.h"
-#include "geodatapolylinecolorsettingdialog.h"
 #include "geodatapolylineproxy.h"
 #include "geodatapolylineimplpolyline.h"
 
 #include "private/geodatapolyline_addvertexcommand.h"
 #include "private/geodatapolyline_coordinateseditor.h"
-#include "private/geodatapolyline_editpropertycommand.h"
-#include "private/geodatapolyline_editvaluecommand.h"
 #include "private/geodatapolyline_finishpolylinedefinitioncommand.h"
 #include "private/geodatapolyline_impl.h"
 #include "private/geodatapolyline_movepolylinecommand.h"
@@ -16,13 +13,11 @@
 
 #include <iriclib_polyline.h>
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/informationdialog.h>
@@ -30,18 +25,18 @@
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
-#include <misc/zdepthrange.h>
-#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 
 #include <QAction>
-#include <QFile>
 #include <QInputDialog>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
-#include <QPointF>
 #include <QStandardItem>
 #include <QToolBar>
+
+#include <geos/geom/CoordinateArraySequence.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/LineString.h>
 
 #include <vector>
 
@@ -50,11 +45,9 @@ GeoDataPolyLine::Impl::Impl(GeoDataPolyLine* parent) :
 	m_polyLine {new GeoDataPolyLineImplPolyLine(m_parent)},
 	m_inhibitSelect {false},
 	m_rightClickingMenu {new QMenu()},
-	m_editValueAction {new QAction(GeoDataPolyLine::tr("Edit &Value..."), m_parent)},
 	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolyLineVertex.png"), GeoDataPolyLine::tr("&Add Vertex"), m_parent)},
 	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolyLineVertex.png"), GeoDataPolyLine::tr("&Remove Vertex"), m_parent)},
 	m_coordEditAction {new QAction(GeoDataPolyLine::tr("Edit &Coordinates..."), m_parent)},
-	m_editColorSettingAction {new QAction(GeoDataPolyLine::tr("Color &Setting..."), m_parent)},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
 	m_movePointPixmap {":/libs/guibase/images/cursorOpenHandPoint.png"},
@@ -65,11 +58,9 @@ GeoDataPolyLine::Impl::Impl(GeoDataPolyLine* parent) :
 	m_addVertexAction->setCheckable(true);
 	m_removeVertexAction->setCheckable(true);
 
-	QObject::connect(m_editValueAction, SIGNAL(triggered()), m_parent, SLOT(editValue()));
-	QObject::connect(m_addVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(addVertexMode(bool)));
-	QObject::connect(m_removeVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(removeVertexMode(bool)));
-	QObject::connect(m_coordEditAction, SIGNAL(triggered()), m_parent, SLOT(editCoordinates()));
-	QObject::connect(m_editColorSettingAction, SIGNAL(triggered()), m_parent, SLOT(editColorSetting()));
+	connect(m_addVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(addVertexMode(bool)));
+	connect(m_removeVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(removeVertexMode(bool)));
+	connect(m_coordEditAction, SIGNAL(triggered()), m_parent, SLOT(editCoordinates()));
 }
 
 GeoDataPolyLine::Impl::~Impl()
@@ -79,10 +70,12 @@ GeoDataPolyLine::Impl::~Impl()
 }
 
 GeoDataPolyLine::GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoData(d, creator, condition),
+	GeoDataPolyData(d, creator, condition),
 	impl {new Impl {this}}
 {
-	initParams();
+	setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+	setColor(Qt::black);
+	setOpacity(100);
 
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
@@ -110,7 +103,7 @@ void GeoDataPolyLine::setupMenu()
 	m_menu->addAction(impl->m_removeVertexAction);
 	m_menu->addAction(impl->m_coordEditAction);
 	m_menu->addSeparator();
-	m_menu->addAction(impl->m_editColorSettingAction);
+	m_menu->addAction(editColorSettingAction());
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
@@ -120,7 +113,7 @@ void GeoDataPolyLine::setupMenu()
 	impl->m_rightClickingMenu->addAction(impl->m_removeVertexAction);
 	impl->m_rightClickingMenu->addAction(impl->m_coordEditAction);
 	impl->m_rightClickingMenu->addSeparator();
-	impl->m_rightClickingMenu->addAction(impl->m_editColorSettingAction);
+	impl->m_rightClickingMenu->addAction(editColorSettingAction());
 }
 
 bool GeoDataPolyLine::addToolBarButtons(QToolBar* tb)
@@ -130,24 +123,9 @@ bool GeoDataPolyLine::addToolBarButtons(QToolBar* tb)
 	return true;
 }
 
-QColor GeoDataPolyLine::doubleToColor(double /*d*/)
-{
-	return Qt::red;
-}
-
 void GeoDataPolyLine::setMouseEventMode(MouseEventMode mode)
 {
 	impl->m_mouseEventMode = mode;
-}
-
-GeoDataPolyLineColorSimpleSettingDialog::Setting GeoDataPolyLine::colorSetting() const
-{
-	return impl->m_setting;
-}
-
-void GeoDataPolyLine::setColorSetting(GeoDataPolyLineColorSimpleSettingDialog::Setting setting)
-{
-	impl->m_setting = setting;
 }
 
 void GeoDataPolyLine::informSelection(PreProcessorGraphicsViewInterface* v)
@@ -398,11 +376,6 @@ void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
 	}
 }
 
-QColor GeoDataPolyLine::color() const
-{
-	return impl->m_setting.color;
-}
-
 void GeoDataPolyLine::addVertexMode(bool on)
 {
 	if (on) {
@@ -423,18 +396,6 @@ void GeoDataPolyLine::removeVertexMode(bool on)
 	updateActionStatus();
 }
 
-void GeoDataPolyLine::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_setting.load(node);
-}
-
-void GeoDataPolyLine::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_setting.save(writer);
-}
-
 void GeoDataPolyLine::loadExternalData(const QString& filename)
 {
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
@@ -449,9 +410,10 @@ void GeoDataPolyLine::loadExternalData(const QString& filename)
 	}
 
 	line->load(iRIC::toStr(filename).c_str(), noDim);
-	impl->m_variantValues.clear();
+	auto& vals = variantValues();
+	vals.clear();
 	for (unsigned int i = 0; i < line->values.size(); ++i) {
-		impl->m_variantValues.push_back(line->values[i]);
+		vals.push_back(line->values[i]);
 	}
 	std::vector<QPointF> qline;
 	iRICLib::InternalPolyline* polyLine = line->polyline;
@@ -476,8 +438,9 @@ void GeoDataPolyLine::saveExternalData(const QString& filename)
 {
 	iRICLib::Polyline line;
 	line.values.clear();
-	for (int i = 0; i < impl->m_variantValues.size(); ++i) {
-		line.values.push_back(impl->m_variantValues.at(i).toDouble());
+	const auto& vals = variantValues();
+	for (int i = 0; i < vals.size(); ++i) {
+		line.values.push_back(vals.at(i).toDouble());
 	}
 	iRICLib::InternalPolyline* polyLine = new iRICLib::InternalPolyline();
 	auto qline = impl->m_polyLine->polyLine();
@@ -506,6 +469,17 @@ void GeoDataPolyLine::assignActorZValues(const ZDepthRange& range)
 {
 	impl->m_depthRange = range;
 	impl->m_polyLine->setZDepthRange(range.min(), range.max());
+}
+
+void GeoDataPolyLine::getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax)
+{
+	auto line = getGeosLineString();
+	auto env = line->getEnvelopeInternal();
+	*xmin = env->getMinX();
+	*xmax = env->getMaxX();
+	*ymin = env->getMinY();
+	*ymax = env->getMaxY();
+	delete line;
 }
 
 void GeoDataPolyLine::updateMouseEventMode()
@@ -568,7 +542,6 @@ void GeoDataPolyLine::updateActionStatus()
 		impl->m_removeVertexAction->setDisabled(true);
 		impl->m_removeVertexAction->setChecked(false);
 		impl->m_coordEditAction->setEnabled(false);
-
 		break;
 	case meTranslate:
 	case meMoveVertex:
@@ -577,9 +550,6 @@ void GeoDataPolyLine::updateActionStatus()
 		impl->m_removeVertexAction->setDisabled(true);
 		impl->m_removeVertexAction->setChecked(false);
 		impl->m_coordEditAction->setDisabled(true);
-
-		break;
-
 		break;
 	case meNormal:
 	case meTranslatePrepare:
@@ -631,7 +601,7 @@ void GeoDataPolyLine::restoreMouseEventMode()
 
 void GeoDataPolyLine::clear()
 {
-	initParams();
+	setupValues();
 	delete impl->m_polyLine;
 
 	impl->m_polyLine = new GeoDataPolyLineImplPolyLine(this);
@@ -640,34 +610,6 @@ void GeoDataPolyLine::clear()
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
-}
-
-bool GeoDataPolyLine::ready() const
-{
-	return true;
-}
-
-void GeoDataPolyLine::initParams()
-{
-	impl->m_variantValues.clear();
-
-	int maxIndex = 1;
-	GridAttributeDimensionsContainer* dims = dimensions();
-	if (dims != nullptr) {
-		maxIndex = dimensions()->maxIndex();
-	}
-	bool ok;
-	double defaultValue = 0;
-
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		defaultValue = gridAtt->variantDefaultValue().toDouble(&ok);
-		if (! ok) {defaultValue = 0;}
-	}
-
-	for (int i = 0; i <= maxIndex; ++i) {
-		impl->m_variantValues.push_back(defaultValue);
-	}
 }
 
 bool GeoDataPolyLine::polylineHasThreeVertices()
@@ -682,46 +624,14 @@ void GeoDataPolyLine::showInitialDialog()
 	InformationDialog::information(preProcessorWindow(), GeoDataPolyLine::tr("Information"), GeoDataPolyLine::tr("Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key."), "geodatapolylineinit");
 }
 
-const QVariant& GeoDataPolyLine::variantValue() const
+bool GeoDataPolyLine::inNormalMode() const
 {
-	int index = 0;
-	GridAttributeDimensionsContainer* dims = dimensions();
-	if (dims != nullptr) {
-		index = dims->currentIndex();
-	}
-	return impl->m_variantValues.at(index);
+	return impl->m_mouseEventMode == meNormal;
 }
 
-void GeoDataPolyLine::setVariantValue(const QVariant &v, bool disableInform)
+bool GeoDataPolyLine::isDefined() const
 {
-	int index = 0;
-	GridAttributeDimensionsContainer* dims = dimensions();
-	if (dims != nullptr) {
-		index = dims->currentIndex();
-	}
-	impl->m_variantValues[index] = v;
-	updateScalarValues();
-	if (! disableInform) {
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-		p->informValueRangeChange();
-		p->informDataChange();
-	}
-}
-
-void GeoDataPolyLine::editValue()
-{
-	GridAttributeEditDialog* dialog = m_gridAttribute->editDialog(preProcessorWindow());
-	PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
-	dialog->setLabel(tr("Please input new value in this polyline.").arg(i->condition()->caption()));
-	i->setupEditWidget(dialog->widget());
-	dialog->setVariantValue(variantValue());
-	if (impl->m_mouseEventMode == meDefining || impl->m_mouseEventMode == meBeforeDefining) {
-		dialog->disableCancel();
-	}
-	int ret = dialog->exec();
-	if (ret == QDialog::Rejected) {return;}
-	pushCommand(new EditValueCommand(dialog->variantValue(), this));
+	return impl->m_mouseEventMode != meBeforeDefining;
 }
 
 void GeoDataPolyLine::updateScalarValues()
@@ -729,49 +639,12 @@ void GeoDataPolyLine::updateScalarValues()
 	impl->m_polyLine->updateScalarValues();
 }
 
-void GeoDataPolyLine::editColorSetting()
-{
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
-}
-
 void GeoDataPolyLine::updateActorSettings()
 {
-	impl->m_polyLine->setColor(impl->m_setting.color);
-//	impl->m_polyLine->setMapping(impl->m_setting.mapping);
-	impl->m_polyLine->setMapping(GeoDataPolyLineColorSettingDialog::Arbitrary);
-}
-
-QDialog* GeoDataPolyLine::propertyDialog(QWidget* parent)
-{
-	auto dialog = new GeoDataPolyLineColorSimpleSettingDialog(parent);
-	dialog->setSetting(impl->m_setting);
-
-	return dialog;
-}
-
-void GeoDataPolyLine::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<GeoDataPolyLineColorSimpleSettingDialog*>(propDialog);
-	pushRenderCommand(new EditPropertyCommand(dialog->setting(), this));
-}
-
-bool GeoDataPolyLine::getValueRange(double* min, double* max)
-{
-	*min = variantValue().toDouble();
-	*max = variantValue().toDouble();
-	switch (impl->m_mouseEventMode) {
-	case meBeforeDefining:
-	case meDefining:
-		return false;
-		break;
-	default:
-		return true;
-	}
-}
-
-void GeoDataPolyLine::updateFilename()
-{
-	setFilename(name().append(".dat"));
+	auto cs = colorSetting();
+	impl->m_polyLine->setColor(cs.color);
+	impl->m_polyLine->setMapping(cs.mapping);
+	impl->m_polyLine->setOpacity(cs.opacity);
 }
 
 GeoDataProxy* GeoDataPolyLine::getProxy()
@@ -799,27 +672,52 @@ int GeoDataPolyLine::iRICLibType() const
 	return IRIC_GEO_POLYLINE;
 }
 
-void GeoDataPolyLine::handleDimensionCurrentIndexChange(int /*oldIndex*/, int /*newIndex*/)
-{
-	// @todo implement this!
-}
-
-void GeoDataPolyLine::handleDimensionValuesChange(const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
-{
-	// @todo implement this!
-}
-
 geos::geom::LineString* GeoDataPolyLine::getGeosLineString(const QPointF& offset)
 {
-	// @TODO Implement this
-	return nullptr;
-/*
-	setupTriangleThread();
-	return impl->m_triangleThread->getGeosPolyLine(this, offset);
-*/
+	auto line = impl->m_polyLine->polyLine(offset);
+	auto seq = new geos::geom::CoordinateArraySequence(line.size());
+	int idx = 0;
+	for (const auto& p : line) {
+		seq->setAt(geos::geom::Coordinate(p.x(), p.y()), idx ++);
+	}
+	auto f = geos::geom::GeometryFactory::getDefaultInstance();
+	return f->createLineString(seq);
 }
 
 GeoDataPolyLineImplPolyLine* GeoDataPolyLine::polyLine() const
 {
 	return impl->m_polyLine;
+}
+
+bool GeoDataPolyLine::isReady() const
+{
+	if (impl->m_mouseEventMode == meDefining || impl->m_mouseEventMode == meBeforeDefining) {
+		return false;
+	}
+	return true;
+}
+
+QString GeoDataPolyLine::shapeName() const
+{
+	return tr("polyline");
+}
+
+QString GeoDataPolyLine::shapeNameCamelCase() const
+{
+	return tr("Polyline");
+}
+
+QAction* GeoDataPolyLine::addVertexAction() const
+{
+	return impl->m_addVertexAction;
+}
+
+QAction* GeoDataPolyLine::removeVertexAction() const
+{
+	return impl->m_removeVertexAction;
+}
+
+QAction* GeoDataPolyLine::coordEditAction() const
+{
+	return impl->m_coordEditAction;
 }

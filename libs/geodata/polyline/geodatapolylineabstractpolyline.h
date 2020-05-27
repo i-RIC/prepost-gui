@@ -2,7 +2,8 @@
 #define GEODATAPOLYLINEABSTRACTPOLYLINE_H
 
 #include "gd_polyline_global.h"
-#include "geodatapolylinecolorsettingdialog.h"
+
+#include <geodata/polydata/geodatapolydatacolorsettingdialog.h>
 
 #include <QObject>
 
@@ -43,7 +44,8 @@ public:
 
 	void setLookupTable(vtkScalarsToColors* t);
 	void setColor(const QColor& color);
-	void setMapping(GeoDataPolyLineColorSettingDialog::Mapping m);
+	void setOpacity(double opacity);
+	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
 
 protected:
 	const PolyLineController& polylineController() const;

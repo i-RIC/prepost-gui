@@ -4,32 +4,22 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="53"/>
-        <source>Edit &amp;Value...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="54"/>
+        <location filename="../geodatapolyline.cpp" line="69"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="55"/>
+        <location filename="../geodatapolyline.cpp" line="70"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="56"/>
+        <location filename="../geodatapolyline.cpp" line="71"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="57"/>
-        <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
+        <location filename="../geodatapolyline.cpp" line="119"/>
         <source>Poly&amp;line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -64,28 +54,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="386"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="386"/>
         <source>Polyline must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="392"/>
+        <location filename="../geodatapolyline.cpp" line="391"/>
         <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="651"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="651"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="743"/>
+        <source>Polyline Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="757"/>
+        <source>polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="762"/>
+        <source>Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -94,18 +99,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="715"/>
+        <location filename="../geodatapolyline.cpp" line="668"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="716"/>
+        <location filename="../geodatapolyline.cpp" line="669"/>
         <source>Please input new value in this polyline.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
-        <source>PolyLine property edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -116,42 +116,6 @@
     <message>
         <location filename="../private/geodatapolyline_coordinateseditor.cpp" line="30"/>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPolyLineColorSettingDialog</name>
-    <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
-        <source>Polyline Color Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
-        <source>Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="29"/>
-        <source>Color by value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="38"/>
-        <source>Custom Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPolyLineColorSimpleSettingDialog</name>
-    <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
-        <source>Polyline Color Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
-        <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

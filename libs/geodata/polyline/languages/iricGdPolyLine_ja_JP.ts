@@ -4,45 +4,59 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
-        <translation>値の編集(&amp;V)...</translation>
+        <translation type="vanished">値の編集(&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;Copy...</source>
         <translation type="vanished">コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="54"/>
+        <location filename="../geodatapolyline.cpp" line="69"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="55"/>
+        <location filename="../geodatapolyline.cpp" line="70"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="56"/>
+        <location filename="../geodatapolyline.cpp" line="71"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
+        <location filename="../geodatapolyline.cpp" line="119"/>
         <source>Poly&amp;line</source>
         <translation>折れ線 (&amp;L)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="743"/>
+        <source>Polyline Color Setting</source>
+        <translation>折れ線の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="757"/>
+        <source>polyline</source>
+        <translation>折れ線</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="762"/>
+        <source>Polyline</source>
+        <translation>折れ線</translation>
     </message>
     <message>
         <source>&amp;Polyline</source>
         <translation type="vanished">折れ線 (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="386"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="392"/>
+        <location filename="../geodatapolyline.cpp" line="391"/>
         <source>Finish Defining Polyline</source>
         <translation>折れ線の定義の完了</translation>
     </message>
@@ -55,9 +69,8 @@
         <translation type="vanished">穴領域の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
-        <translation>表示色設定(&amp;S)...</translation>
+        <translation type="vanished">表示色設定(&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;PolyLine</source>
@@ -98,7 +111,7 @@
         <translation>折れ線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="386"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -111,7 +124,7 @@
         <translation type="vanished">穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="651"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
@@ -124,7 +137,7 @@
         <translation type="vanished">本当にこの折れ線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="651"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>折れ線を、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -134,19 +147,18 @@
         <translation>折れ線値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="715"/>
+        <location filename="../geodatapolyline.cpp" line="668"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="716"/>
+        <location filename="../geodatapolyline.cpp" line="669"/>
         <source>Please input new value in this polyline.</source>
         <translation>この折れ線上での値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
         <source>PolyLine property edit</source>
-        <translation>折れ線属性編集</translation>
+        <translation type="vanished">折れ線属性編集</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
@@ -181,24 +193,20 @@
         <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>折れ線の表示色設定</translation>
+        <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
 </context>
 <context>
@@ -208,14 +216,12 @@
         <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>折れ線の表示色設定</translation>
+        <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
 </context>
 <context>

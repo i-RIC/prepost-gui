@@ -101,7 +101,8 @@ bool GeoDataPolyData::getValueRange(double* min, double* max)
 {
 	*min = variantValue().toDouble();
 	*max = variantValue().toDouble();
-	return true;
+
+	return isReady();
 }
 
 void GeoDataPolyData::updateFilename()
