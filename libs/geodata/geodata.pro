@@ -8,6 +8,7 @@ SUBDIRS = \
 	netcdf \
 	point \
 	pointmap \
+	polydata \
 	polygon \
 	polygongroup \
 	polyline \
