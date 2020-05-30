@@ -13,6 +13,8 @@
 #include <geodata/polygongroup/geodatapolygongrouprealcreator.h>
 #include <geodata/polyline/geodatapolylineintegercreator.h>
 #include <geodata/polyline/geodatapolylinerealcreator.h>
+#include <geodata/polylinegroup/geodatapolylinegroupintegercreator.h>
+#include <geodata/polylinegroup/geodatapolylinegrouprealcreator.h>
 #include <geodata/riversurvey/geodatariversurveycreator.h>
 
 GeoDataFactory* GeoDataFactory::m_instance = nullptr;
@@ -34,6 +36,8 @@ GeoDataFactory::GeoDataFactory() :
 	m_creators.push_back(new GeoDataPolygonGroupRealCreator());
 	m_creators.push_back(new GeoDataPolyLineIntegerCreator());
 	m_creators.push_back(new GeoDataPolyLineRealCreator());
+	m_creators.push_back(new GeoDataPolyLineGroupIntegerCreator);
+	m_creators.push_back(new GeoDataPolyLineGroupRealCreator);
 	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
 	m_creators.push_back(new GeoDataNetcdfRealCreator());
 }

@@ -10,4 +10,5 @@ SUBDIRS = \
 	polygon \
 	polygongroup \
 	polyline \
+	polylinegroup \
 	riversurvey

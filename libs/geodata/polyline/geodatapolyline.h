@@ -78,6 +78,8 @@ public:
 
 	void clear();
 
+	void setShape(geos::geom::LineString* lineString);
+
 	void showInitialDialog() override;
 
 	bool inNormalMode() const override;
@@ -120,6 +122,10 @@ private:
 	QString shapeName() const override;
 	QString shapeNameCamelCase() const override;
 
+	QAction* addVertexAction() const;
+	QAction* removeVertexAction() const;
+	QAction* coordEditAction() const;
+
 	class AddVertexCommand;
 	class PushNewPointCommand;
 	class EditCoordinatesCommand;
@@ -136,6 +142,8 @@ private:
 
 public:
 	friend class GeoDataPolyLineAbstractPolyLine;
+	friend class GeoDataPolyLineGroup;
+	friend class GeoDataPolyLineGroupPolyLine;
 	friend class GeoDataPolyLineImporter;
 	friend class GeoDataPolyLineShapeExporter;
 	friend class GeoDataPolyLineProxy;

@@ -40,6 +40,20 @@
 
 #include <vector>
 
+namespace {
+
+std::vector<QPointF> buildPolyLine(const geos::geom::LineString* ls)
+{
+	std::vector<QPointF> pol;
+	for (int i = 0; i < ls->getNumPoints(); ++i) {
+		const auto& coord = ls->getCoordinateN(i);
+		pol.push_back(QPointF(coord.x, coord.y));
+	}
+	return pol;
+}
+
+} // namespace
+
 GeoDataPolyLine::Impl::Impl(GeoDataPolyLine* parent) :
 	m_parent {parent},
 	m_polyLine {new GeoDataPolyLineImplPolyLine(m_parent)},
@@ -617,6 +631,12 @@ bool GeoDataPolyLine::polylineHasThreeVertices()
 	if (impl->m_polyLine == nullptr) {return false;}
 	auto pol = impl->m_polyLine->polyLine();
 	return pol.size() >= 3;
+}
+
+void GeoDataPolyLine::setShape(geos::geom::LineString* lineString)
+{
+	impl->m_polyLine->setPolyLine(buildPolyLine(lineString));
+	updateActionStatus();
 }
 
 void GeoDataPolyLine::showInitialDialog()

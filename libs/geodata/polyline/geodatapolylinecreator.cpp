@@ -29,7 +29,7 @@ QString GeoDataPolyLineCreator::defaultCaption(unsigned int index) const
 
 bool GeoDataPolyLineCreator::isCreatable() const
 {
-	return true;
+	return false;
 }
 
 GeoData* GeoDataPolyLineCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
