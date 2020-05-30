@@ -80,6 +80,7 @@ private:
 
 public:
 	friend class GeoDataPointGroup;
+	friend class GeoDataPointGroupPoint;
 };
 
 #ifdef _DEBUG

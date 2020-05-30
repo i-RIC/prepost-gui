@@ -8,7 +8,7 @@
 #include <QStandardItem>
 
 GeoDataPointGroupCreator::GeoDataPointGroupCreator(const QString& typeName) :
-	GeoDataCreator {typeName, tr("Point Group")}
+	GeoDataPolyDataGroupCreator {typeName, tr("Point Group")}
 {
 	importers().push_back(new GeoDataPointGroupShpImporter(this));
 	exporters().push_back(new GeoDataPointGroupShpExporter(this));
@@ -36,4 +36,19 @@ GeoData* GeoDataPointGroupCreator::create(ProjectDataItem* parent, SolverDefinit
 	g->setPosition(condition->position());
 	g->setDefaultMapper();
 	return g;
+}
+
+int GeoDataPointGroupCreator::shapeType() const
+{
+	return SHPT_POINT;
+}
+
+QString GeoDataPointGroupCreator::shapeName() const
+{
+	return tr("point");
+}
+
+QString GeoDataPointGroupCreator::shapeNameCamelCase() const
+{
+	return tr("Point");
 }

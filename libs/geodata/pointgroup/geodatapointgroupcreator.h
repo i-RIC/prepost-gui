@@ -2,9 +2,10 @@
 #define GEODATAPOINTGROUPCREATOR_H
 
 #include "gd_pointgroup_global.h"
-#include <guicore/pre/geodata/geodatacreator.h>
 
-class GD_POINTGROUP_EXPORT GeoDataPointGroupCreator : public GeoDataCreator
+#include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
+
+class GD_POINTGROUP_EXPORT GeoDataPointGroupCreator : public GeoDataPolyDataGroupCreator
 {
 	Q_OBJECT
 
@@ -17,6 +18,10 @@ public:
 	bool isCreatable() const override;
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+	int shapeType() const override;
+	QString shapeName() const override;
+	QString shapeNameCamelCase() const override;
 };
 
 #endif // GEODATAPOINTGROUPCREATOR_H

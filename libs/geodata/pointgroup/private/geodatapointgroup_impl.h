@@ -24,8 +24,6 @@ public:
 	vtkActor* m_selectedPointsPointsActor;
 
 	GeoDataPoint* m_dummyPointForMenu;
-
-	GeoDataPolygonGroup* m_group;
 };
 
 #endif // GEODATAPOINTGROUP_IMPL_H

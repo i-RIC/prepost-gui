@@ -2,15 +2,14 @@
 #include "geodatapointgrouppoint.h"
 #include "private/geodatapointgrouppoint_impl.h"
 
+#include <geodata/point/geodatapoint.h>
+
 #include <QDataStream>
 #include <QList>
 #include <QPointF>
 #include <QVector>
 
 using namespace geos::geom;
-
-GeoDataPointGroupPoint::Impl::Impl()
-{}
 
 GeoDataPointGroupPoint::GeoDataPointGroupPoint(GeoDataPointGroup* group) :
 	GeoDataPolyDataGroupPolyData(group),
@@ -36,6 +35,28 @@ QPointF GeoDataPointGroupPoint::point() const
 void GeoDataPointGroupPoint::setPoint(const QPointF& point)
 {
 	impl->m_point = point;
+}
+
+void GeoDataPointGroupPoint::getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax)
+{
+	auto p = point();
+	*xmin = p.x();
+	*xmax = p.x();
+	*ymin = p.y();
+	*ymax = p.y();
+}
+
+void GeoDataPointGroupPoint::copyShapeFrom(GeoDataPolyData* data)
+{
+	auto p = dynamic_cast<GeoDataPoint*> (data);
+	setPoint(p->point());
+}
+
+void GeoDataPointGroupPoint::copyShapeTo(GeoDataPolyData* data)
+{
+	auto p = dynamic_cast<GeoDataPoint*> (data);
+	p->setPoint(point());
+	p->setMouseEventMode(GeoDataPoint::meNormal);
 }
 
 void GeoDataPointGroupPoint::loadExternalData(QDataStream* stream)

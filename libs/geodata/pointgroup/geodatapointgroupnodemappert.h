@@ -2,7 +2,6 @@
 #define GEODATAPOINTGROUPNODEMAPPERT_H
 
 #include "geodatapointgroup.h"
-#include "geodatapointgrouprangecontainer.h"
 
 #include <guicore/pre/geodata/geodatamappersettingi.h>
 #include <guicore/pre/geodata/geodatanodemappert.h>
@@ -13,8 +12,6 @@ class GeoDataPointGroupNodeMapperSetting : public GeoDataMapperSettingI
 public:
 	GeoDataPointGroupNodeMapperSetting() : GeoDataMapperSettingI() {}
 	~GeoDataPointGroupNodeMapperSetting() override {}
-
-	GeoDataPointGroupRangeContainer ranges;
 };
 
 template <typename V, typename DA>

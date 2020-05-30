@@ -1,11 +1,12 @@
-#include "geodatapolygongroup.h"
+#include "geodatapointgroup.h"
 #include "geodatapointgrouppoint.h"
 #include "private/geodatapointgroup_impl.h"
 
 #include <geodata/point/geodatapoint.h>
+#include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geoio/polygonutil.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>]
+#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -24,7 +25,7 @@
 #include <vtkSmartPointer.h>
 
 #include <geos/geom/Envelope.h>
-#include <geos/geom/Point.h>
+#include <geos/geom/Polygon.h>
 #include <geos/index/quadtree/Quadtree.h>
 
 #include <string>
@@ -100,8 +101,8 @@ void GeoDataPointGroup::updateVtkObjects()
 	pointValues->SetName(VALUE.c_str());
 
 	vtkIdType id = 0;
-	for (auto it = impl->m_points.rbegin(); it != impl->m_points.rend(); ++it) {
-		auto point = *it;
+	for (auto it = data().rbegin(); it != data().rend(); ++it) {
+		auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
 		double v = point->value().toDouble();
 		auto p = point->point();
 		impl->m_vtkPoints->InsertNextPoint(p.x(), p.y(), 0);

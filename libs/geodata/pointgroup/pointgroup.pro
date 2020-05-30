@@ -28,6 +28,20 @@ unix {
 }
 LIBS += -liricGdPoint
 
+# iricGdPolydata
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../polydata/debug"
+        } else {
+                LIBS += -L"../polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../polydata"
+}
+LIBS += -liricGdPolydata
+
 # iricGeoio
 
 win32 {
@@ -127,51 +141,29 @@ win32 {
 # Input
 HEADERS += gd_pointgroup_global.h \
            geodatapointgroup.h \
-           geodatapointgroupattributebrowser.h \
            geodatapointgroupcellmappert.h \
-           geodatapointgroupcolorsettingdialog.h \
            geodatapointgroupcreator.h \
            geodatapointgroupcreatort.h \
            geodatapointgroupintegercreator.h \
-           geodatapointgroupmergesettingdialog.h \
            geodatapointgroupnodemappert.h \
            geodatapointgrouppoint.h \
-           geodatapointgrouprangecontainer.h \
            geodatapointgrouprealcreator.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
-           geodatapointgroupshpimportersettingdialog.h \
-           private/geodatapointgroup_editnameandvaluecommand.h \
-           private/geodatapointgroup_editpropertycommand.h \
            private/geodatapointgroup_impl.h \
-           private/geodatapointgroup_sortcommand.h \
-           private/geodatapointgroup_sortedittargetpointcommand.h \
-           private/geodatapointgroupattributebrowser_tableitemdelegate.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
            private/geodatapointgroupnodemappert_detail.h \
            private/geodatapointgrouppoint_impl.h
-FORMS += geodatapointgroupcolorsettingdialog.ui \
-         geodatapointgroupmergesettingdialog.ui \
-         geodatapointgroupshpimportersettingdialog.ui
+FORMS +=
 SOURCES += geodatapointgroup.cpp \
-           geodatapointgroupattributebrowser.cpp \
-           geodatapointgroupcolorsettingdialog.cpp \
            geodatapointgroupcreator.cpp \
            geodatapointgroupintegercreator.cpp \
-           geodatapointgroupmergesettingdialog.cpp \
            geodatapointgrouppoint.cpp \
-           geodatapointgrouprangecontainer.cpp \
            geodatapointgrouprealcreator.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
-           geodatapointgroupshpimportersettingdialog.cpp \
-           private/geodatapointgroup_editnameandvaluecommand.cpp \
-           private/geodatapointgroup_editpropertycommand.cpp \
-           private/geodatapointgroup_impl.cpp \
-           private/geodatapointgroup_sortcommand.cpp \
-           private/geodatapointgroup_sortedittargetpointcommand.cpp \
-           private/geodatapointgroupattributebrowser_tableitemdelegate.cpp
+           private/geodatapointgroup_impl.cpp
 TRANSLATIONS += languages/iricGdPointGroup_es_ES.ts \
                 languages/iricGdPointGroup_fr_FR.ts \
                 languages/iricGdPointGroup_id_ID.ts \

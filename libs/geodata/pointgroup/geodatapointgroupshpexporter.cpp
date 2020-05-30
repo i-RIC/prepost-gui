@@ -21,7 +21,7 @@ GeoDataPointGroupShpExporter::GeoDataPointGroupShpExporter(GeoDataCreator* creat
 bool GeoDataPointGroupShpExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
 	auto group = dynamic_cast<GeoDataPointGroup*>(data);
-	group->mergeEditTargetPoint();
+	group->mergeEditTargetData();
 
 	SHPHandle shph = getSHPHandle(filename);
 
@@ -34,7 +34,8 @@ bool GeoDataPointGroupShpExporter::doExport(GeoData* data, const QString& filena
 	QTextCodec* codec = QTextCodec::codecForLocale();
 
 	int idx = 0;
-	for (auto p : group->allPoints()) {
+	for (auto d : group->allData()) {
+		auto p = dynamic_cast<GeoDataPointGroupPoint*> (d);
 		SHPObject* obj = getSHPObject(p, shph, idx, offset.x(), offset.y());
 		SHPWriteObject(shph, -1, obj);
 		SHPDestroyObject(obj);
@@ -59,7 +60,7 @@ const QStringList GeoDataPointGroupShpExporter::fileDialogFilters()
 SHPHandle GeoDataPointGroupShpExporter::getSHPHandle(QString filename)
 {
 	std::string fname = iRIC::toStr(filename);
-	SHPHandle shph = SHPCreate(fname.c_str(), SHPT_POLYGON);
+	SHPHandle shph = SHPCreate(fname.c_str(), SHPT_POINT);
 	return shph;
 }
 
@@ -93,7 +94,7 @@ SHPObject* GeoDataPointGroupShpExporter::getSHPObject(GeoDataPointGroupPoint* po
 	xlist.push_back(p.x());
 	ylist.push_back(p.y());
 
-	SHPObject* ret = SHPCreateObject(SHPT_ARC, index, nParts, partStart.data(), NULL, nVertices, xlist.data(), ylist.data(), NULL, NULL);
+	SHPObject* ret = SHPCreateObject(SHPT_POINT, index, nParts, partStart.data(), NULL, nVertices, xlist.data(), ylist.data(), NULL, NULL);
 	SHPComputeExtents(ret);
 	SHPRewindObject(shp, ret);
 

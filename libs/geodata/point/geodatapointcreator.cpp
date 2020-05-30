@@ -21,7 +21,7 @@ QString GeoDataPointCreator::defaultCaption(unsigned int index) const
 
 bool GeoDataPointCreator::isCreatable() const
 {
-	return true;
+	return false;
 }
 
 GeoData* GeoDataPointCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

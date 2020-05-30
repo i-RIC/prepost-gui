@@ -18,8 +18,6 @@ namespace geos {
 class GeoDataPointGroupPoint::Impl
 {
 public:
-	Impl();
-
 	QPointF m_point;
 };
 

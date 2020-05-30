@@ -18,6 +18,8 @@ public:
 	GeoDataPointGroup(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	~GeoDataPointGroup();
 
+	std::vector<GeoDataPointGroupPoint*> pointsInBoundingBox(double xmin, double xmax, double ymin, double ymax) const;
+
 	void setupMenu() override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;

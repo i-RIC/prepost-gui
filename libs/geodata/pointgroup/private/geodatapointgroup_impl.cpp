@@ -1,6 +1,7 @@
 #include "geodatapointgroup_impl.h"
 
 #include <geodata/point/geodatapoint.h>
+#include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <misc/iricundostack.h>
 
@@ -27,8 +28,7 @@ GeoDataPointGroup::Impl::Impl(GeoDataPointGroup* group) :
 	m_pointsActor {vtkActor::New()},
 	m_selectedPointsPointsPolyData {vtkPolyData::New()},
 	m_selectedPointsPointsActor {vtkActor::New()},
-	m_dummyPointForMenu {new GeoDataPoint(group->parent(), group->creator(), group->gridAttribute())},
-	m_group {group}
+	m_dummyPointForMenu {new GeoDataPoint(group->parent(), group->creator(), group->gridAttribute())}
 {
 	m_vtkPoints->SetDataTypeToDouble();
 
@@ -56,8 +56,6 @@ GeoDataPointGroup::Impl::~Impl()
 	m_pointsActor->Delete();
 	m_selectedPointsPointsPolyData->Delete();
 	m_selectedPointsPointsActor->Delete();
-
-	clear();
 
 	delete m_dummyPointForMenu;
 }
