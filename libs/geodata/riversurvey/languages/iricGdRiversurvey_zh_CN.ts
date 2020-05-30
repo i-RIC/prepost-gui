@@ -1002,52 +1002,52 @@ If you want to adjust cross section position and map Points data again, you can 
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="164"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="168"/>
         <source>&amp;Activate</source>
         <translation>&amp;激活</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="166"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="170"/>
         <source>&amp;Inactivate</source>
         <translation>&amp;禁用</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="168"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="172"/>
         <source>&amp;Move</source>
         <translation>&amp;移动</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="183"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="187"/>
         <source>Inactivate using &amp;water elevation</source>
         <translation>通过使用水位高位停用</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="684"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="688"/>
         <source>Left Bank Side</source>
         <translation>左河岸</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="690"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="694"/>
         <source>Right Bank Side</source>
         <translation>右河岸</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="820"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="824"/>
         <source>Aspect ratio: 1 / %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1770"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1795"/>
         <source>Edit Cross Section</source>
         <translation>编辑横截面</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1826"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1826"/>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
 You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>通过单击鼠标来编辑横截面。 通过双击或按回车键完成编辑。
@@ -1059,8 +1059,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>海拔点移动</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1489"/>
-        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1510"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1514"/>
+        <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1535"/>
         <source>Inactivate Elevation Points</source>
         <translation>禁用高程点</translation>
     </message>
