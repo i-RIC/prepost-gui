@@ -14,9 +14,6 @@ public:
 	GeoDataPoint* m_parent;
 	PointController m_pointController;
 
-	GeoDataPointColorSimpleSettingDialog::Setting m_setting;
-	std::vector<QVariant> m_variantValues;
-
 	MouseEventMode m_mouseEventMode;
 
 	QPoint m_dragStartPoint;
@@ -24,11 +21,7 @@ public:
 
 	QMenu* m_rightClickingMenu;
 
-	QAction* m_editNameAction;
-	QAction* m_editValueAction;
-	QAction* m_editNameAndValueAction;
 	QAction* m_coordEditAction;
-	QAction* m_editColorSettingAction;
 };
 
 #endif // GEODATAPOINT_IMPL_H

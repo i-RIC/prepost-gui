@@ -42,6 +42,20 @@ unix {
 }
 LIBS += -liricMisc
 
+# iricGdPolydata
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../polydata/debug"
+        } else {
+                LIBS += -L"../polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../polydata"
+}
+LIBS += -liricGdPolydata
+
 # iricGuibase
 
 win32 {
@@ -104,14 +118,11 @@ win32 {
 HEADERS += gd_point_global.h \
            geodatapoint.h \
            geodatapointcellmappert.h \
-           geodatapointcolorsimplesettingdialog.h \
            geodatapointcreator.h \
            geodatapointcreatort.h \
            geodatapointnodemappert.h \
            geodatapointrealcreator.h \
            ui_geodatapointcolorsimplesettingdialog.h \
-           private/geodatapoint_editnameandvaluecommand.h \
-           private/geodatapoint_editpropertycommand.h \
            private/geodatapoint_finishpointdefinitioncommand.h \
            private/geodatapoint_impl.h \
            private/geodatapointcellmappert_detail.h \
@@ -119,11 +130,8 @@ HEADERS += gd_point_global.h \
            private/geodatapointnodemappert_detail.h
 FORMS += geodatapointcolorsimplesettingdialog.ui
 SOURCES += geodatapoint.cpp \
-           geodatapointcolorsimplesettingdialog.cpp \
            geodatapointcreator.cpp \
            geodatapointrealcreator.cpp \
-           private/geodatapoint_editnameandvaluecommand.cpp \
-           private/geodatapoint_editpropertycommand.cpp \
            private/geodatapoint_finishpointdefinitioncommand.cpp
            private/geodatapolyline_removevertexcommand.cpp
 TRANSLATIONS += languages/iricGdPoint_es_ES.ts \

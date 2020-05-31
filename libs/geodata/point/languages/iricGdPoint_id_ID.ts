@@ -4,79 +4,43 @@
 <context>
     <name>GeoDataPoint</name>
     <message>
-        <location filename="../geodatapoint.cpp" line="54"/>
-        <source>Edit &amp;Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapoint.cpp" line="55"/>
-        <source>Edit &amp;Value...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapoint.cpp" line="56"/>
-        <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapoint.cpp" line="57"/>
+        <location filename="../geodatapoint.cpp" line="49"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="58"/>
-        <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapoint.cpp" line="110"/>
+        <location filename="../geodatapoint.cpp" line="89"/>
         <source>Po&amp;int</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="261"/>
+        <location filename="../geodatapoint.cpp" line="235"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="261"/>
+        <location filename="../geodatapoint.cpp" line="235"/>
         <source>Please define point by mouse-clicking.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="323"/>
-        <source>Edit name</source>
+        <location filename="../geodatapoint.cpp" line="332"/>
+        <source>Point Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="323"/>
-        <source>Name:</source>
+        <location filename="../geodatapoint.cpp" line="343"/>
+        <source>point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="333"/>
-        <location filename="../geodatapoint.cpp" line="352"/>
-        <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapoint.cpp" line="334"/>
-        <source>Please input new value at this point.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapoint_editpropertycommand.cpp" line="4"/>
-        <source>Point property edit</source>
+        <location filename="../geodatapoint.cpp" line="348"/>
+        <source>Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../private/geodatapoint_finishpointdefinitioncommand.cpp" line="4"/>
         <source>Finish Defining Point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapoint_editnameandvaluecommand.cpp" line="4"/>
-        <source>Point name and value change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
