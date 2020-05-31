@@ -1,22 +1,16 @@
 #include "geodatapolygongroup.h"
-#include "geodatapolygongroupattributebrowser.h"
 #include "geodatapolygongrouppolygon.h"
 #include "geodatapolygongroupshpimporter.h"
 #include "private/geodatapolygongroup_impl.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
-#include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <misc/informationdialog.h>
 #include <misc/errormessage.h>
+#include <misc/informationdialog.h>
 #include <misc/stringtool.h>
 
 #include <QDir>
-#include <QMessageBox>
 #include <QPolygonF>
 #include <QRectF>
 #include <QTextCodec>
-#include <QVariant>
 
 #include <shapefil.h>
 
@@ -26,25 +20,11 @@ namespace {
 
 const double LOCATION_DELTA = 1.0E-6;
 
-QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec)
-{
-	DBFFieldType type = DBFGetFieldInfo(handle, fieldid, NULL, NULL, NULL);
-	QVariant val;
-	if (type == FTString) {
-		QString strval = codec->toUnicode(DBFReadStringAttribute(handle, dataid, fieldid));
-		val = strval;
-	} else if (type == FTInteger) {
-		int intval = DBFReadIntegerAttribute(handle, dataid, fieldid);
-		val = intval;
-	} else if (type == FTDouble) {
-		double doubleval = DBFReadDoubleAttribute(handle, dataid, fieldid);
-		val = doubleval;
-	} else if (type == FTLogical) {
-		QString logval = DBFReadLogicalAttribute(handle, dataid, fieldid);
-		val = logval;
-	}
-	return val;
-}
+struct PolygonShapeInfo {
+	int item;
+	int region;
+	std::vector<int> holes;
+};
 
 bool isRectContained(const QRectF& rbig, const QRectF& rsmall)
 {
@@ -106,147 +86,7 @@ QPolygonF readPolygon(SHPObject* shpo, int partIndex)
 	return ret;
 }
 
-} // namespace
-
-GeoDataPolygonGroupShpImporter::GeoDataPolygonGroupShpImporter(GeoDataCreator* creator) :
-	GeoDataImporter {"esrishape_polygongroup", tr("ESRI Shapefile (Polygons)"), creator}
-{}
-
-GeoDataPolygonGroupShpImporter::~GeoDataPolygonGroupShpImporter()
-{}
-
-const QStringList GeoDataPolygonGroupShpImporter::fileDialogFilters()
-{
-	QStringList ret;
-	ret.append(tr("ESRI Shapefile (Polygons) (*.shp)"));
-	return ret;
-}
-
-const QStringList GeoDataPolygonGroupShpImporter::acceptableExtensions()
-{
-	QStringList ret;
-	ret.append("shp");
-	return ret;
-}
-
-bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QWidget* w)
-{
-	QTextCodec* codec = QTextCodec::codecForLocale();
-	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
-
-	std::string fname = iRIC::toStr(filename());
-	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
-
-	QString dbfFilename = filename();
-	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
-	std::string dbfname = iRIC::toStr(dbfFilename);
-	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
-
-	QString wMsg = tr(
-				"%1 th polygon can not be imported. Polygon like below can not be imported:\n"
-				"- It has less than three points\n"
-				"- It is not closed\n"
-				"- Lines of polygon intersect each other\n"
-				"- Hole polygon is outside of region polygon\n"
-				"- Polygon passes the same point several times");
-
-	QString nameTpl = tr("Polygon%1");
-	for (int i = 0; i < m_shapeInfos.size(); ++i) {
-		PolygonShapeInfo info = m_shapeInfos.at(i);
-		SHPObject* shpo = SHPReadObject(shph, info.item);
-		QPolygonF region = readPolygon(shpo, info.region);
-		std::vector<QPolygonF> holes;
-		for (int i = 0; i < info.holes.size(); ++i) {
-			int holeIndex = info.holes.at(i);
-			holes.push_back(readPolygon(shpo, holeIndex));
-		}
-		try {
-			auto poly = new GeoDataPolygonGroupPolygon(region, holes);
-			// name
-			QString name = nameTpl.arg(i + 1);
-			if (m_nameSetting == GeoDataPolygonGroupShpImporterSettingDialog::nsLoadFromDBF) {
-				name = readData(dbfh, info.item, m_nameAttribute, codec).toString();
-			}
-			poly->setName(name);
-			// value
-			QVariant value = m_specifiedValue;
-			if (m_valueSetting == GeoDataPolygonGroupShpImporterSettingDialog::vsLoadFromDBF) {
-				value = readData(dbfh, info.item, m_valueAttribute, codec);
-			}
-			poly->setValue(value);
-			group->addPolygon(poly);
-		} catch (geos::util::GEOSException&){
-			InformationDialog::warning(w, tr("Warning"), wMsg.arg(i + 1), "polygongroup_import_warn");
-		} catch (ErrorMessage&) {
-			InformationDialog::warning(w, tr("Warning"), wMsg.arg(i + 1), "polygongroup_import_warn");
-		}
-		SHPDestroyObject(shpo);
-	}
-	SHPClose(shph);
-	DBFClose(dbfh);
-
-	group->setupDataItem();
-	group->impl->m_attributeBrowser->update();
-	group->updateAttributeBrowser();
-	group->updateVtkObjects();
-	group->updateIndex();
-
-	return true;
-}
-
-bool GeoDataPolygonGroupShpImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
-{
-	auto fname = iRIC::toStr(filename);
-	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
-
-	int numEntities;
-	int shapeType;
-	double minBound[4];
-	double maxBound[4];
-
-	SHPGetInfo(shph, &numEntities, &shapeType, minBound, maxBound);
-	if (shapeType != SHPT_POLYGON) {
-		QMessageBox::critical(w, tr("Error"), tr("The shape type contained in this shape file is not polygon."));
-		return false;
-	}
-	auto dbfFilename = filename;
-	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
-	auto dbfname = iRIC::toStr(dbfFilename);
-	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
-	if (dbfh == nullptr) {
-		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(dbfFilename)));
-		return false;
-	}
-	int recordCount = DBFGetRecordCount(dbfh);
-
-	if (numEntities != recordCount) {
-		// wrong shape file.
-		QMessageBox::critical(w, tr("Error"), tr("The number of polygons mismatches between shp file and dbf file."));
-		return false;
-	}
-	DBFClose(dbfh);
-
-	m_shapeInfos = buildPolygonShapeInfos(fname);
-	*count = 1;
-
-	GridAttributeEditWidget* widget = condition->editWidget(0);
-	item->setupEditWidget(widget);
-	widget->setVariantValue(condition->variantDefaultValue());
-	GeoDataPolygonGroupShpImporterSettingDialog dialog(filename, widget, w);
-
-	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {
-		return false;
-	}
-	m_nameSetting = dialog.nameSetting();
-	m_nameAttribute = dialog.nameIndex();
-	m_valueSetting = dialog.valueSetting();
-	m_valueAttribute = dialog.valueIndex();
-	m_specifiedValue = dialog.specifiedValue();
-	return true;
-}
-
-std::vector<GeoDataPolygonGroupShpImporter::PolygonShapeInfo> GeoDataPolygonGroupShpImporter::buildPolygonShapeInfos(const std::string& shpFileName)
+std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileName)
 {
 	SHPHandle shph = SHPOpen(shpFileName.c_str(), "rb");
 	int numEntities;
@@ -300,4 +140,84 @@ std::vector<GeoDataPolygonGroupShpImporter::PolygonShapeInfo> GeoDataPolygonGrou
 	}
 	SHPClose(shph);
 	return ret;
+}
+
+} // namespace
+
+GeoDataPolygonGroupShpImporter::GeoDataPolygonGroupShpImporter(GeoDataCreator* creator) :
+	GeoDataPolyDataGroupShpImporter {"esrishape_polygongroup", tr("ESRI Shapefile (Polygons)"), creator}
+{}
+
+const QStringList GeoDataPolygonGroupShpImporter::fileDialogFilters()
+{
+	QStringList ret;
+	ret.append(tr("ESRI Shapefile (Polygons) (*.shp)"));
+	return ret;
+}
+
+bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QWidget* w)
+{
+	QTextCodec* codec = QTextCodec::codecForLocale();
+	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
+
+	std::string fname = iRIC::toStr(filename());
+
+	auto shapeInfos = buildPolygonShapeInfos(fname);
+
+	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
+
+	QString dbfFilename = filename();
+	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
+	std::string dbfname = iRIC::toStr(dbfFilename);
+	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
+
+	QString wMsg = tr(
+				"%1 th polygon can not be imported. Polygon like below can not be imported:\n"
+				"- It has less than three points\n"
+				"- It is not closed\n"
+				"- Lines of polygon intersect each other\n"
+				"- Hole polygon is outside of region polygon\n"
+				"- Polygon passes the same point several times");
+
+	QString nameTpl = tr("Polygon%1");
+	for (int i = 0; i < shapeInfos.size(); ++i) {
+		PolygonShapeInfo info = shapeInfos.at(i);
+		SHPObject* shpo = SHPReadObject(shph, info.item);
+		QPolygonF region = readPolygon(shpo, info.region);
+		std::vector<QPolygonF> holes;
+		for (int j = 0; j < info.holes.size(); ++j) {
+			int holeIndex = info.holes.at(j);
+			holes.push_back(readPolygon(shpo, holeIndex));
+		}
+		try {
+			auto poly = new GeoDataPolygonGroupPolygon(region, holes, group);
+			// name
+			QString name = nameTpl.arg(i + 1);
+			if (m_nameSetting == GeoDataPolyDataGroupShpImporterSettingDialog::nsLoadFromDBF) {
+				name = readData(dbfh, info.item, m_nameAttribute, codec).toString();
+			}
+			poly->setName(name);
+			// value
+			QVariant value = m_specifiedValue;
+			if (m_valueSetting == GeoDataPolyDataGroupShpImporterSettingDialog::vsLoadFromDBF) {
+				value = readData(dbfh, info.item, m_valueAttribute, codec);
+			}
+			poly->setValue(value);
+			group->addData(poly);
+		} catch (geos::util::GEOSException&){
+			InformationDialog::warning(w, tr("Warning"), wMsg.arg(i + 1), "polygongroup_import_warn");
+		} catch (ErrorMessage&) {
+			InformationDialog::warning(w, tr("Warning"), wMsg.arg(i + 1), "polygongroup_import_warn");
+		}
+		SHPDestroyObject(shpo);
+	}
+	SHPClose(shph);
+	DBFClose(dbfh);
+
+	group->setupDataItem();
+	group->updateAttributeBrowser(true);
+	group->updateVtkObjects();
+	group->updateIndex();
+
+	return true;
 }

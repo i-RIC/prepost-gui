@@ -129,6 +129,20 @@ unix {
 }
 LIBS += -liricGdPoint
 
+# iricGdPointGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/pointgroup/debug"
+        } else {
+                LIBS += -L"../geodata/pointgroup/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/pointgroup"
+}
+LIBS += -liricGdPointGroup
+
 # iricGdPointmap
 
 win32 {

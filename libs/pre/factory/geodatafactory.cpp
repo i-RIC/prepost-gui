@@ -4,6 +4,8 @@
 #include <geodata/netcdf/geodatanetcdfintegercreator.h>
 #include <geodata/netcdf/geodatanetcdfrealcreator.h>
 #include <geodata/point/geodatapointrealcreator.h>
+#include <geodata/pointgroup/geodatapointgroupintegercreator.h>
+#include <geodata/pointgroup/geodatapointgrouprealcreator.h>
 #include <geodata/pointmap/geodatapointmaprealcreator.h>
 #include <geodata/polygon/geodatapolygonintegercreator.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
@@ -23,6 +25,8 @@ GeoDataFactory::GeoDataFactory() :
 	// classes those inherits GeoDataCreator.
 	m_creators.push_back(new GeoDataRiverSurveyCreator());
 	m_creators.push_back(new GeoDataPointRealCreator());
+	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
+	m_creators.push_back(new GeoDataPointGroupRealCreator());
 	m_creators.push_back(new GeoDataPointmapRealCreator());
 	m_creators.push_back(new GeoDataPolygonIntegerCreator());
 	m_creators.push_back(new GeoDataPolygonRealCreator());

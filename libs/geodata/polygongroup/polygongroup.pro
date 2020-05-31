@@ -112,6 +112,20 @@ unix {
 }
 LIBS += -liricGuicore
 
+# iricPolydataGroup
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../polydatagroup/debug"
+	} else {
+		LIBS += -L"../polydatagroup/release"
+	}
+}
+unix {
+	LIBS += -L"../polydatagroup"
+}
+LIBS += -liricGdPolydataGroup
+
 ######################
 # External libraries #
 ######################
@@ -141,26 +155,17 @@ win32 {
 # Input
 HEADERS += gd_polygongroup_global.h \
            geodatapolygongroup.h \
-           geodatapolygongroupattributebrowser.h \
            geodatapolygongroupcellmappert.h \
-           geodatapolygongroupcolorsettingdialog.h \
            geodatapolygongroupcreator.h \
            geodatapolygongroupcreatort.h \
            geodatapolygongroupintegercreator.h \
-           geodatapolygongroupmergesettingdialog.h \
            geodatapolygongroupnodemappert.h \
            geodatapolygongrouppolygon.h \
            geodatapolygongrouprangecontainer.h \
            geodatapolygongrouprealcreator.h \
            geodatapolygongroupshpexporter.h \
            geodatapolygongroupshpimporter.h \
-           geodatapolygongroupshpimportersettingdialog.h \
-           private/geodatapolygongroup_editnameandvaluecommand.h \
-           private/geodatapolygongroup_editpropertycommand.h \
            private/geodatapolygongroup_impl.h \
-           private/geodatapolygongroup_sortcommand.h \
-           private/geodatapolygongroup_sortedittargetpolygoncommand.h \
-           private/geodatapolygongroupattributebrowser_tableitemdelegate.h \
            private/geodatapolygongroupcellmappert_detail.h \
            private/geodatapolygongroupcreatort_detail.h \
            private/geodatapolygongroupnodemappert_detail.h \
@@ -168,27 +173,16 @@ HEADERS += gd_polygongroup_global.h \
            private/geodatapolygongrouppolygon_triangulatori.h \
            private/geodatapolygongrouppolygon_triangulatortriangle.h \
            private/geodatapolygongrouppolygon_triangulatorvtk.h
-FORMS += geodatapolygongroupcolorsettingdialog.ui \
-         geodatapolygongroupmergesettingdialog.ui \
-         geodatapolygongroupshpimportersettingdialog.ui
+FORMS +=
 SOURCES += geodatapolygongroup.cpp \
-           geodatapolygongroupattributebrowser.cpp \
-           geodatapolygongroupcolorsettingdialog.cpp \
            geodatapolygongroupcreator.cpp \
            geodatapolygongroupintegercreator.cpp \
-           geodatapolygongroupmergesettingdialog.cpp \
            geodatapolygongrouppolygon.cpp \
            geodatapolygongrouprangecontainer.cpp \
            geodatapolygongrouprealcreator.cpp \
            geodatapolygongroupshpexporter.cpp \
            geodatapolygongroupshpimporter.cpp \
-           geodatapolygongroupshpimportersettingdialog.cpp \
-           private/geodatapolygongroup_editnameandvaluecommand.cpp \
-           private/geodatapolygongroup_editpropertycommand.cpp \
            private/geodatapolygongroup_impl.cpp \
-           private/geodatapolygongroup_sortcommand.cpp \
-           private/geodatapolygongroup_sortedittargetpolygoncommand.cpp \
-           private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp \
            private/geodatapolygongrouppolygon_triangulatortriangle.cpp \
            private/geodatapolygongrouppolygon_triangulatorvtk.cpp
 TRANSLATIONS += languages/iricGdPolygonGroup_ar_EG.ts \

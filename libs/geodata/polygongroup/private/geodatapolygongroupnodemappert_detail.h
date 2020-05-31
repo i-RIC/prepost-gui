@@ -21,7 +21,7 @@ GeoDataMapperSettingI* GeoDataPolygonGroupNodeMapperT<V, DA>::initialize(bool* b
 	auto s = new GeoDataPolygonGroupNodeMapperSetting();
 	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
 	auto polygonGroup = dynamic_cast<GeoDataPolygonGroup*> (GeoDataMapper::geoData());
-	polygonGroup->mergeEditTargetPolygon();
+	polygonGroup->mergeEditTargetData();
 	polygonGroup->updateOrder();
 
 	for (unsigned int i = 0; i < count; ++i) {

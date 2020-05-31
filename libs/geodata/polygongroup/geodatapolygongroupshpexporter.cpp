@@ -21,7 +21,7 @@ GeoDataPolygonGroupShpExporter::GeoDataPolygonGroupShpExporter(GeoDataCreator* c
 bool GeoDataPolygonGroupShpExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
-	group->mergeEditTargetPolygon();
+	group->mergeEditTargetData();
 
 	SHPHandle shph = getSHPHandle(filename);
 
@@ -34,7 +34,8 @@ bool GeoDataPolygonGroupShpExporter::doExport(GeoData* data, const QString& file
 	QTextCodec* codec = QTextCodec::codecForLocale();
 
 	int idx = 0;
-	for (auto p : group->allPolygons()) {
+	for (auto d : group->allData()) {
+		auto p = dynamic_cast<GeoDataPolygonGroupPolygon*> (d);
 		SHPObject* obj = getSHPObject(p, shph, idx, offset.x(), offset.y());
 		SHPWriteObject(shph, -1, obj);
 		SHPDestroyObject(obj);

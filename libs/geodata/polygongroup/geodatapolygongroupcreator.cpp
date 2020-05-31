@@ -3,8 +3,10 @@
 #include "geodatapolygongroupshpimporter.h"
 #include "geodatapolygongroupshpexporter.h"
 
+#include <shapefil.h>
+
 GeoDataPolygonGroupCreator::GeoDataPolygonGroupCreator(const QString& typeName) :
-	GeoDataCreator {typeName, tr("Polygon Group")}
+	GeoDataPolyDataGroupCreator {typeName, tr("Polygon Group")}
 {
 	importers().push_back(new GeoDataPolygonGroupShpImporter(this));
 	exporters().push_back(new GeoDataPolygonGroupShpExporter(this));
@@ -31,4 +33,19 @@ GeoData* GeoDataPolygonGroupCreator::create(ProjectDataItem* parent, SolverDefin
 	g->setPosition(condition->position());
 	g->setDefaultMapper();
 	return g;
+}
+
+int GeoDataPolygonGroupCreator::shapeType() const
+{
+	return SHPT_POLYGON;
+}
+
+QString GeoDataPolygonGroupCreator::shapeName() const
+{
+	return tr("polygon");
+}
+
+QString GeoDataPolygonGroupCreator::shapeNameCamelCase() const
+{
+	return tr("Polygon");
 }
