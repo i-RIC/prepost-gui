@@ -143,6 +143,20 @@ unix {
 }
 LIBS += -liricGdPointmap
 
+# iricGdPolyData
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/polydata/debug"
+        } else {
+                LIBS += -L"../geodata/polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/polydata"
+}
+LIBS += -liricGdPolyData
+
 # iricGdPolygon
 
 win32 {

@@ -187,9 +187,9 @@ void GeoDataPolygonGroup::Impl::updateActorSettingForEditTargetPolygon()
 	m_editTargetPolygon->setColor(m_colorSetting.color);
 	m_editTargetPolygon->setOpacity(m_colorSetting.opacity);
 	if (m_colorSetting.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
-		m_editTargetPolygon->setMapping(GeoDataPolygonColorSettingDialog::Arbitrary);
+		m_editTargetPolygon->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
 	} else {
-		m_editTargetPolygon->setMapping(GeoDataPolygonColorSettingDialog::Value);
+		m_editTargetPolygon->setMapping(GeoDataPolyDataColorSettingDialog::Value);
 	}
 }
 

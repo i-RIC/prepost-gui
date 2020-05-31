@@ -14,6 +14,20 @@ QT += widgets xml
 # Internal libraries #
 ######################
 
+# iricGdPolydata
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../polydata/debug"
+        } else {
+                LIBS += -L"../polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../polydata"
+}
+LIBS += -liricGdPolydata
+
 # iricGdPolygon
 
 win32 {

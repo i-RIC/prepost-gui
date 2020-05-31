@@ -2,18 +2,13 @@
 #define VOID void
 
 #include "geodatapolygon.h"
-#include "geodatapolygonabstractpolygon.h"
 #include "geodatapolygonholepolygon.h"
 #include "geodatapolygonproxy.h"
 #include "geodatapolygonregionpolygon.h"
 #include "geodatapolygontrianglethread.h"
-
 #include "private/geodatapolygon_addholepolygoncommand.h"
 #include "private/geodatapolygon_addvertexcommand.h"
 #include "private/geodatapolygon_coordinateseditor.h"
-#include "private/geodatapolygon_editnameandvaluecommand.h"
-#include "private/geodatapolygon_editpropertycommand.h"
-#include "private/geodatapolygon_editvaluecommand.h"
 #include "private/geodatapolygon_finishpolygondefinitioncommand.h"
 #include "private/geodatapolygon_impl.h"
 #include "private/geodatapolygon_movepolygoncommand.h"
@@ -21,17 +16,11 @@
 #include "private/geodatapolygon_pushnewpointcommand.h"
 #include "private/geodatapolygon_removevertexcommand.h"
 
-#include <iriclib_polygon.h>
-
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
-#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
-#include <guicore/pre/gridcond/base/gridattributeeditnameandvaluedialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/informationdialog.h>
@@ -40,31 +29,26 @@
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
-#include <misc/zdepthrange.h>
+
+#include <iriclib_polygon.h>
+
+#include <geos/geom/LineString.h>
+#include <geos/geom/Polygon.h>
 
 #include <QAction>
-#include <QFile>
 #include <QInputDialog>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
-#include <QPolygonF>
 #include <QStandardItem>
 #include <QToolBar>
 
-#include <geos/geom/Polygon.h>
-#include <geos/geom/LineString.h>
-
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
-#include <vtkIdList.h>
 #include <vtkPointData.h>
-#include <vtkPoints.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
-#include <vtkPolygon.h>
 #include <vtkProperty.h>
-#include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
 namespace {
@@ -94,14 +78,10 @@ GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 	m_rightClickingMenu {new QMenu()},
 	m_holeModeAction {new QAction(QIcon(":/libs/guibase/images/iconPolygonHole.png"), GeoDataPolygon::tr("Add &Hole Region"), m_parent)},
 	m_deleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), GeoDataPolygon::tr("&Delete Hole Region..."), m_parent)},
-	m_editNameAction {new QAction(GeoDataPolygon::tr("Edit &Name"), m_parent)},
-	m_editValueAction {new QAction(GeoDataPolygon::tr("Edit &Value..."), m_parent)},
-	m_editNameAndValueAction {new QAction(GeoDataPolygon::tr("Edit &Name and Value..."), m_parent)},
 	m_copyAction {new QAction(GeoDataPolygon::tr("&Copy..."), m_parent)},
 	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GeoDataPolygon::tr("&Add Vertex"), m_parent)},
 	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GeoDataPolygon::tr("&Remove Vertex"), m_parent)},
 	m_coordEditAction {new QAction(GeoDataPolygon::tr("Edit &Coordinates..."), m_parent)},
-	m_editColorSettingAction {new QAction(GeoDataPolygon::tr("Color &Setting..."), m_parent)},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
 	m_movePointPixmap {":/libs/guibase/images/cursorOpenHandPoint.png"},
@@ -119,14 +99,10 @@ GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 
 	QObject::connect(m_holeModeAction, SIGNAL(triggered()), m_parent, SLOT(addHolePolygon()));
 	QObject::connect(m_deleteAction, SIGNAL(triggered()), m_parent, SLOT(deletePolygon()));
-	QObject::connect(m_editNameAction, SIGNAL(triggered()), m_parent, SLOT(editName()));
-	QObject::connect(m_editValueAction, SIGNAL(triggered()), m_parent, SLOT(editValue()));
-	QObject::connect(m_editNameAndValueAction, SIGNAL(triggered()), m_parent, SLOT(editNameAndValue()));
 	QObject::connect(m_copyAction, SIGNAL(triggered()), m_parent, SLOT(copy()));
 	QObject::connect(m_addVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(addVertexMode(bool)));
 	QObject::connect(m_removeVertexAction, SIGNAL(triggered(bool)), m_parent, SLOT(removeVertexMode(bool)));
 	QObject::connect(m_coordEditAction, SIGNAL(triggered()), m_parent, SLOT(editCoordinates()));
-	QObject::connect(m_editColorSettingAction, SIGNAL(triggered()), m_parent, SLOT(editColorSetting()));
 }
 
 GeoDataPolygon::Impl::~Impl()
@@ -138,11 +114,9 @@ GeoDataPolygon::Impl::~Impl()
 }
 
 GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoData(d, creator, condition),
+	GeoDataPolyData(d, creator, condition),
 	impl {new Impl {this}}
 {
-	initParams();
-
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		impl->m_regionPolygon->setLookupTable(stcc->vtkDarkObj());
@@ -150,7 +124,7 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 
 	impl->m_mouseEventMode = meBeforeDefining;
 	if (gridAttribute() && gridAttribute()->isReferenceInformation()) {
-		impl->m_setting.mapping = GeoDataPolygonColorSettingDialog::Arbitrary;
+		setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
 	}
 
 	impl->m_scalarValues->SetName("polygonvalue");
@@ -184,16 +158,6 @@ GeoDataPolygon::~GeoDataPolygon()
 	delete impl;
 }
 
-void GeoDataPolygon::setCaptionAndEmitEdited(const QString& caption)
-{
-	pushCommand(new EditNameAndValueCommand(caption, variantValue(), this));
-}
-
-void GeoDataPolygon::setVariantValueAndEmitEdited(const QVariant& value)
-{
-	pushCommand(new EditNameAndValueCommand(caption(), value, this));
-}
-
 void GeoDataPolygon::setupMenu()
 {
 	bool isRef = false;
@@ -204,7 +168,7 @@ void GeoDataPolygon::setupMenu()
 	m_menu->setTitle(tr("&Polygon"));
 	m_menu->addAction(m_editNameAction);
 	if (! isRef) {
-		m_menu->addAction(impl->m_editValueAction);
+		m_menu->addAction(editValueAction());
 	}
 	m_menu->addSeparator();
 	m_menu->addAction(impl->m_copyAction);
@@ -216,12 +180,12 @@ void GeoDataPolygon::setupMenu()
 	m_menu->addAction(impl->m_holeModeAction);
 	m_menu->addAction(impl->m_deleteAction);
 	m_menu->addSeparator();
-	m_menu->addAction(impl->m_editColorSettingAction);
+	m_menu->addAction(editColorSettingAction());
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
 	if (! isRef) {
-		impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
+		impl->m_rightClickingMenu->addAction(editValueAction());
 		impl->m_rightClickingMenu->addSeparator();
 	}
 	impl->m_rightClickingMenu->addAction(impl->m_copyAction);
@@ -233,7 +197,7 @@ void GeoDataPolygon::setupMenu()
 	impl->m_rightClickingMenu->addAction(impl->m_holeModeAction);
 	impl->m_rightClickingMenu->addAction(impl->m_deleteAction);
 	impl->m_rightClickingMenu->addSeparator();
-	impl->m_rightClickingMenu->addAction(impl->m_editColorSettingAction);
+	impl->m_rightClickingMenu->addAction(editColorSettingAction());
 }
 
 bool GeoDataPolygon::addToolBarButtons(QToolBar* tb)
@@ -249,24 +213,6 @@ bool GeoDataPolygon::addToolBarButtons(QToolBar* tb)
 	return true;
 }
 
-void GeoDataPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)
-{
-	impl->m_setting.mapping = m;
-	updateActorSettings();
-}
-
-void GeoDataPolygon::setOpacity(int opacity)
-{
-	impl->m_setting.opacity = opacity;
-	updateActorSettings();
-}
-
-void GeoDataPolygon::setColor(const QColor& color)
-{
-	impl->m_setting.color = color;
-	updateActorSettings();
-}
-
 void GeoDataPolygon::setMouseEventMode(MouseEventMode mode)
 {
 	impl->m_mouseEventMode = mode;
@@ -275,16 +221,6 @@ void GeoDataPolygon::setMouseEventMode(MouseEventMode mode)
 void GeoDataPolygon::setSelectMode(SelectMode mode)
 {
 	impl->m_selectMode = mode;
-}
-
-GeoDataPolygonColorSettingDialog::Setting GeoDataPolygon::colorSetting() const
-{
-	return impl->m_setting;
-}
-
-void GeoDataPolygon::setColorSetting(GeoDataPolygonColorSettingDialog::Setting setting)
-{
-	impl->m_setting = setting;
 }
 
 void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
@@ -566,7 +502,7 @@ void GeoDataPolygon::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_editNameAction);
 	if (gridAttribute() && ! gridAttribute()->isReferenceInformation()) {
-		menu->addAction(impl->m_editValueAction);
+		menu->addAction(editValueAction());
 	}
 
 	menu->addSeparator();
@@ -593,11 +529,6 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 	if (impl->m_selectedPolygon == impl->m_regionPolygon && (! noEditVal)) {
 		editValue();
 	}
-}
-
-QColor GeoDataPolygon::color() const
-{
-	return impl->m_setting.color;
 }
 
 void GeoDataPolygon::setShape(geos::geom::Polygon* polygon)
@@ -678,18 +609,6 @@ void GeoDataPolygon::removeVertexMode(bool on)
 	updateActionStatus();
 }
 
-void GeoDataPolygon::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_setting.load(node);
-}
-
-void GeoDataPolygon::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_setting.save(writer);
-}
-
 void GeoDataPolygon::loadExternalData(const QString& filename)
 {
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
@@ -705,9 +624,10 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 		}
 
 		pol->load(iRIC::toStr(filename).c_str(), noDim);
-		impl->m_variantValues.clear();
+		auto& vals = variantValues();
+		vals.clear();
 		for (unsigned int i = 0; i < pol->values.size(); ++i) {
-			impl->m_variantValues.push_back(pol->values[i]);
+			vals.push_back(pol->values[i]);
 		}
 		QPolygonF qpol;
 		iRICLib::InternalPolygon* regionPolygon = pol->polygon;
@@ -781,8 +701,9 @@ void GeoDataPolygon::saveExternalData(const QString& filename)
 {
 	iRICLib::Polygon pol;
 	pol.values.clear();
-	for (int i = 0; i < impl->m_variantValues.size(); ++i) {
-		pol.values.push_back(impl->m_variantValues.at(i).toDouble());
+	const auto& vals = variantValues();
+	for (int i = 0; i < vals.size(); ++i) {
+		pol.values.push_back(vals.at(i).toDouble());
 	}
 	iRICLib::InternalPolygon* regionPolygon = new iRICLib::InternalPolygon();
 	QPolygonF qpol = impl->m_regionPolygon->polygon();
@@ -830,6 +751,30 @@ void GeoDataPolygon::assignActorZValues(const ZDepthRange& range)
 	impl->m_actor.actor()->SetPosition(0, 0, range.min());
 }
 
+void GeoDataPolygon::getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax)
+{
+	auto pol = getGeosPolygon();
+	auto env = pol->getEnvelopeInternal();
+	*xmin = env->getMinX();
+	*xmax = env->getMaxX();
+	*ymin = env->getMinY();
+	*ymax = env->getMaxY();
+	delete pol;
+}
+
+bool GeoDataPolygon::inNormalMode() const
+{
+	if (impl->m_mouseEventMode != meNormal) {return false;}
+	if (impl->m_selectMode != smNone) {return false;}
+
+	return true;
+}
+
+bool GeoDataPolygon::isDefined() const
+{
+	return regionPolygon()->polygon().size() > 3;
+}
+
 void GeoDataPolygon::updateMouseEventMode()
 {
 	double dx, dy;
@@ -872,7 +817,10 @@ void GeoDataPolygon::updateMouseEventMode()
 	case meTranslate:
 	case meMoveVertex:
 	case meAddVertex:
-		if (impl->m_selectMode == smNone) {return;}
+		if (impl->m_selectMode == smNone) {
+			impl->m_mouseEventMode = meNormal;
+			return;
+		}
 		if (impl->m_selectMode == smPolygon) {
 			if (shapeUpdating) {
 				impl->m_mouseEventMode = meNormal;
@@ -1013,7 +961,7 @@ void GeoDataPolygon::restoreMouseEventMode()
 
 void GeoDataPolygon::clear()
 {
-	initParams();
+	setupValues();
 	clearHolePolygons();
 	delete impl->m_regionPolygon;
 
@@ -1025,34 +973,6 @@ void GeoDataPolygon::clear()
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
-}
-
-bool GeoDataPolygon::ready() const
-{
-	return true;
-}
-
-void GeoDataPolygon::initParams()
-{
-	impl->m_variantValues.clear();
-
-	int maxIndex = 1;
-	GridAttributeDimensionsContainer* dims = dimensions();
-	if (dims != nullptr) {
-		maxIndex = dimensions()->maxIndex();
-	}
-	bool ok;
-	double defaultValue = 0;
-
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		defaultValue = gridAtt->variantDefaultValue().toDouble(&ok);
-		if (! ok) {defaultValue = 0;}
-	}
-
-	for (int i = 0; i <= maxIndex; ++i) {
-		impl->m_variantValues.push_back(defaultValue);
-	}
 }
 
 void GeoDataPolygon::addHolePolygon()
@@ -1080,8 +1000,8 @@ GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 		pol->setLookupTable(scalarsToColorsContainer()->vtkDarkObj());
 	}
 	pol->setActive(true);
-	pol->setMapping(impl->m_setting.mapping);
-	pol->setColor(impl->m_setting.color);
+	pol->setMapping(colorSetting().mapping);
+	pol->setColor(color());
 
 	return pol;
 }
@@ -1253,84 +1173,6 @@ void GeoDataPolygon::showInitialDialog()
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "geodatapolygoninit");
 }
 
-const QVariant& GeoDataPolygon::variantValue() const
-{
-	int index = 0;
-	GridAttributeDimensionsContainer* dims = dimensions();
-	if (dims != nullptr) {
-		index = dims->currentIndex();
-	}
-	return impl->m_variantValues.at(index);
-}
-
-void GeoDataPolygon::setVariantValue(const QVariant &v, bool disableInform)
-{
-	int index = 0;
-	GridAttributeDimensionsContainer* dims = dimensions();
-	if (dims != nullptr) {
-		index = dims->currentIndex();
-	}
-	impl->m_variantValues[index] = v;
-	updateScalarValues();
-	if (! disableInform) {
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-		p->informValueRangeChange();
-		p->informDataChange();
-	}
-}
-
-void GeoDataPolygon::editName()
-{
-	if (! m_gridAttribute || ! m_gridAttribute->isReferenceInformation()) {return;}
-
-	bool ok;
-	QString newCaption = QInputDialog::getText(preProcessorWindow(), tr("Edit name"), tr("Name:"), QLineEdit::Normal, caption(), &ok);
-	if (! ok) {return;}
-
-	pushCommand(new EditNameAndValueCommand(newCaption, variantValue(), this));
-}
-
-void GeoDataPolygon::editValue()
-{
-	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
-
-	auto dialog = m_gridAttribute->editDialog(preProcessorWindow());
-	PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
-	dialog->setLabel(tr("Please input new value in this polygon.").arg(i->condition()->caption()));
-	i->setupEditWidget(dialog->widget());
-	dialog->setVariantValue(variantValue());
-	if (impl->m_mouseEventMode == meDefining || impl->m_mouseEventMode == meBeforeDefining) {
-		dialog->disableCancel();
-	}
-	int ret = dialog->exec();
-	if (ret == QDialog::Rejected) {return;}
-
-	pushCommand(new EditNameAndValueCommand(caption(), dialog->variantValue(), this));
-
-	delete dialog;
-}
-
-void GeoDataPolygon::editNameAndValue()
-{
-	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
-
-	auto dialog = m_gridAttribute->editNameAndValueDialog(preProcessorWindow());
-	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
-	dialog->setName(caption());
-	i->setupEditWidget(dialog->widget());
-	dialog->setVariantValue(variantValue());
-	int ret = dialog->exec();
-	if (ret == QDialog::Rejected) {
-		delete dialog;
-		return;
-	}
-	pushCommand(new EditNameAndValueCommand(dialog->name(), dialog->variantValue(), this));
-
-	delete dialog;
-}
-
 void GeoDataPolygon::addHolePolygon(const QPolygonF& p)
 {
 	auto newPol = setupHolePolygon();
@@ -1371,71 +1213,29 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 	}
 }
 
-void GeoDataPolygon::editColorSetting()
-{
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
-}
-
 void GeoDataPolygon::updateActorSettings()
 {
+	auto cs = colorSetting();
 	// color
-	impl->m_regionPolygon->setColor(impl->m_setting.color);
+	impl->m_regionPolygon->setColor(cs.color);
 	for (auto hole : impl->m_holePolygons) {
-		hole->setColor(impl->m_setting.color);
+		hole->setColor(cs.color);
 	}
-	impl->m_actor.actor()->GetProperty()->SetColor(impl->m_setting.color);
+	impl->m_actor.actor()->GetProperty()->SetColor(cs.color);
 
 	// opacity
-	impl->m_actor.actor()->GetProperty()->SetOpacity(impl->m_setting.opacity);
+	impl->m_actor.actor()->GetProperty()->SetOpacity(cs.opacity);
 
 	// mapping
-	if (impl->m_setting.mapping == GeoDataPolygonColorSettingDialog::Arbitrary) {
+	if (cs.mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
 		impl->m_actor.mapper()->SetScalarVisibility(false);
 	} else {
 		impl->m_actor.mapper()->SetScalarVisibility(true);
 	}
-	impl->m_regionPolygon->setMapping(impl->m_setting.mapping);
+	impl->m_regionPolygon->setMapping(cs.mapping);
 	for (auto hole : impl->m_holePolygons) {
-		hole->setMapping(impl->m_setting.mapping);
+		hole->setMapping(cs.mapping);
 	}
-}
-
-QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
-{
-	GeoDataPolygonColorSettingDialog* dialog = new GeoDataPolygonColorSettingDialog(parent);
-	dialog->setSetting(impl->m_setting);
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
-	}
-
-	return dialog;
-}
-
-void GeoDataPolygon::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<GeoDataPolygonColorSettingDialog*>(propDialog);
-	pushRenderCommand(new EditPropertyCommand(dialog->setting(), this));
-}
-
-bool GeoDataPolygon::getValueRange(double* min, double* max)
-{
-	*min = variantValue().toDouble();
-	*max = variantValue().toDouble();
-	if (impl->m_selectedPolygon != impl->m_regionPolygon) {return true;}
-	switch (impl->m_mouseEventMode) {
-	case meBeforeDefining:
-	case meDefining:
-		return false;
-		break;
-	default:
-		return true;
-	}
-}
-
-void GeoDataPolygon::updateFilename()
-{
-	setFilename(name().append(".dat"));
 }
 
 void GeoDataPolygon::renderGraphics()
@@ -1465,7 +1265,7 @@ void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, v
 
 	unlockMutex();
 
-	impl->m_actor.actor()->GetProperty()->SetOpacity(impl->m_setting.opacity);
+	impl->m_actor.actor()->GetProperty()->SetOpacity(colorSetting().opacity);
 
 	if (noDraw) {return;}
 
@@ -1539,16 +1339,6 @@ void GeoDataPolygon::applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon*
 	polygon->setPolygon(pol);
 }
 
-void GeoDataPolygon::handleDimensionCurrentIndexChange(int /*oldIndex*/, int /*newIndex*/)
-{
-	// @todo implement this!
-}
-
-void GeoDataPolygon::handleDimensionValuesChange(const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
-{
-	// @todo implement this!
-}
-
 void GeoDataPolygon::clearHolePolygons()
 {
 	for (auto p : impl->m_holePolygons) {
@@ -1557,9 +1347,22 @@ void GeoDataPolygon::clearHolePolygons()
 	impl->m_holePolygons.clear();
 }
 
-void GeoDataPolygon::emitNameAndValueEdited()
+bool GeoDataPolygon::isReady() const
 {
-	emit nameAndValueEdited();
+	if (impl->m_mouseEventMode == meDefining || impl->m_mouseEventMode == meBeforeDefining) {
+		return false;
+	}
+	return true;
+}
+
+QString GeoDataPolygon::shapeName() const
+{
+	return tr("polygon");
+}
+
+QString GeoDataPolygon::shapeNameCamelCase() const
+{
+	return tr("Polygon");
 }
 
 void GeoDataPolygon::lockMutex()
@@ -1638,21 +1441,6 @@ vtkActor* GeoDataPolygon::paintActor() const
 vtkMapper* GeoDataPolygon::paintMapper() const
 {
 	return impl->m_actor.mapper();
-}
-
-QAction* GeoDataPolygon::editNameAction() const
-{
-	return impl->m_editNameAction;
-}
-
-QAction* GeoDataPolygon::editValueAction() const
-{
-	return impl->m_editValueAction;
-}
-
-QAction* GeoDataPolygon::editNameAndValueAction() const
-{
-	return impl->m_editNameAndValueAction;
 }
 
 QAction* GeoDataPolygon::addVertexAction() const

@@ -2,9 +2,8 @@
 #define GEODATAPOLYGON_H
 
 #include "gd_polygon_global.h"
-#include "geodatapolygoncolorsettingdialog.h"
 
-#include <guicore/pre/geodata/geodata.h>
+#include <geodata/polydata/geodatapolydata.h>
 
 class GeoDataPolygonAbstractPolygon;
 class GeoDataPolygonRegionPolygon;
@@ -34,7 +33,7 @@ class Polygon;
 } // geos
 
 
-class GD_POLYGON_EXPORT GeoDataPolygon : public GeoData
+class GD_POLYGON_EXPORT GeoDataPolygon : public GeoDataPolyData
 {
 	Q_OBJECT
 
@@ -66,10 +65,7 @@ public:
 	};
 
 	GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
-	virtual ~GeoDataPolygon();
-
-	void setCaptionAndEmitEdited(const QString& caption);
-	void setVariantValueAndEmitEdited(const QVariant& value);
+	~GeoDataPolygon() override;
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
@@ -86,29 +82,23 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax) override;
+	bool inNormalMode() const override;
+	bool isDefined() const override;
+
 	void definePolygon(bool doubleClick, bool noEditVal = false);
-	QColor color() const;
 
 	void setShape(geos::geom::Polygon* polygon);
 	void setShape(geos::geom::Polygon* polygon, const std::vector<unsigned int>& triangleCells);
 
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
-
 	void clear();
-	bool ready() const;
 
 	void showInitialDialog() override;
 
-	const QVariant& variantValue() const;
-	void setVariantValue(const QVariant& v, bool disableInform = false);
-
 	void addHolePolygon(const QPolygonF& p);
 	vtkPolyData* polyData() const;
-	geos::geom::Polygon* getGeosPolygon(const QPointF& offset);
+	geos::geom::Polygon* getGeosPolygon(const QPointF& offset = QPointF(0, 0));
 
-	bool getValueRange(double* min, double* max) override;
-	void updateFilename() override;
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
 
@@ -117,16 +107,8 @@ public:
 
 	void setBCSettingMode(bool mode);
 
-signals:
-	void nameAndValueEdited();
-
 public slots:
-	void editName();
-	void editValue();
-	void editNameAndValue();
 	void restoreMouseEventMode();
-	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
-	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
 
 private slots:
 	void updatePolyData(bool noDraw = false);
@@ -135,43 +117,34 @@ private slots:
 	void editCoordinates();
 	void addHolePolygon();
 	void deletePolygon(bool force = false);
-	void editColorSetting();
 	void renderGraphics();
 	void updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca, bool noDraw);
 	void copy();
 
 private:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
 	int iRICLibType() const override;
 
-	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
-	void setOpacity(int opacity);
-	void setColor(const QColor& color);
-
 	void setMouseEventMode(MouseEventMode mode);
 	void setSelectMode(SelectMode mode);
 
-	GeoDataPolygonColorSettingDialog::Setting colorSetting() const;
-	void setColorSetting(GeoDataPolygonColorSettingDialog::Setting);
-
 	bool checkCondition();
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void updateScalarValues();
-	void updateActorSettings();
+	void updateScalarValues() override;
+	void updateActorSettings() override;
 	bool selectObject(QPoint point);
 	void deselectAll();
 	bool activePolygonHasFourVertices();
-	void initParams();
 	void updateMouseEventMode();
 	void updateActionStatus();
 	GeoDataPolygonHolePolygon* setupHolePolygon();
 	void applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y);
 	void clearHolePolygons();
-	void emitNameAndValueEdited();
+	bool isReady() const override;
+	QString shapeName() const override;
+	QString shapeNameCamelCase() const override;
 
 	void lockMutex();
 	void unlockMutex();
@@ -187,9 +160,6 @@ private:
 	vtkActor* paintActor() const;
 	vtkMapper* paintMapper() const;
 
-	QAction* editNameAction() const;
-	QAction* editValueAction() const;
-	QAction* editNameAndValueAction() const;
 	QAction* addVertexAction() const;
 	QAction* removeVertexAction() const;
 	QAction* coordEditAction() const;
@@ -202,8 +172,6 @@ private:
 	class AddVertexCommand;
 	class PushNewPointCommand;
 	class EditCoordinatesCommand;
-	class EditNameAndValueCommand;
-	class EditPropertyCommand;
 	class EditValueCommand;
 	class FinishPolygonDefiningCommand;
 	class ModifyAbstractPolygonCommand;
@@ -220,6 +188,7 @@ public:
 	friend class GeoDataPolygonAbstractPolygon;
 	friend class GeoDataPolygonTriangleThread;
 	friend class GeoDataPolygonGroup;
+	friend class GeoDataPolygonGroupPolygon;
 	friend class GeoDataPolygonImporter;
 	friend class GeoDataPolygonShapeExporter;
 	friend class GeoDataPolygonProxy;

@@ -22,9 +22,6 @@ public:
 	QList<GeoDataPolygonHolePolygon*> m_holePolygons;
 	GeoDataPolygonAbstractPolygon* m_selectedPolygon;
 
-	GeoDataPolygonColorSettingDialog::Setting m_setting;
-	std::vector<QVariant> m_variantValues;
-
 	ZDepthRange m_depthRange;
 
 	GeoDataPolygonTriangleThread* m_triangleThread;
@@ -46,14 +43,10 @@ public:
 
 	QAction* m_holeModeAction;
 	QAction* m_deleteAction;
-	QAction* m_editNameAction;
-	QAction* m_editValueAction;
-	QAction* m_editNameAndValueAction;
 	QAction* m_copyAction;
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;
 	QAction* m_coordEditAction;
-	QAction* m_editColorSettingAction;
 
 	QPixmap m_addPixmap;
 	QPixmap m_removePixmap;
