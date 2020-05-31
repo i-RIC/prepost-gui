@@ -17,6 +17,7 @@ public:
 
 	virtual void informValueRangeChange() = 0;
 	virtual void informDataChange() = 0;
+	virtual void setDeleteSilently(bool silent) = 0;
 
 	friend class GeoData;
 };

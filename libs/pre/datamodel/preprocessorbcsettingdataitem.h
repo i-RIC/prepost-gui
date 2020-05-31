@@ -60,6 +60,7 @@ public:
 
 	void informValueRangeChange() override {}
 	void informDataChange() override {}
+	void setDeleteSilently(bool) override {}
 
 	QAction* editAction() const {return m_editAction;}
 	QAction* deleteAction() {return PreProcessorDataItem::deleteAction();}

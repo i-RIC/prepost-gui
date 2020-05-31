@@ -49,7 +49,7 @@ public:
 	bool setupExportMenu(QMenu* menu);
 	bool isExportAvailable();
 	void saveToCgnsFile(const int fn) override;
-	void setDeleteSilently(bool silent);
+	void setDeleteSilently(bool silent) override;
 	void removeFile();
 
 signals:
