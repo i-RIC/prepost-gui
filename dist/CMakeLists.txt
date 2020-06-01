@@ -236,16 +236,16 @@ set(IRIC_PY
 
 # Install IRIC  
 install(FILES ${IRIC_ICO} ${IRIC_EXE} ${IRIC_DLLS}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data
   )
 install(FILES ${IRIC_JP}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data/languages
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/languages
   )
 install(FILES ${IRIC_CN}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data/languages
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/languages
   )
 install(FILES ${IRIC_PY}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/dev_src/packages/gui.prepost/data/pythonmodule
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/pythonmodule
   )
 
 
