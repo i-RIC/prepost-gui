@@ -47,6 +47,8 @@
 #include <iriclib.h>
 #include <ogr_spatialref.h>
 #include <shapefil.h>
+
+#include <sstream>
 #include <vector>
 
 #define ELEMNODENAME "Element"
@@ -99,6 +101,29 @@ vtkDoubleArray* buildDoubleArray(const std::string& name, vtkIdType size)
 		ret->InsertNextValue(0);
 	}
 	return ret;
+}
+
+bool findArrayWithName(const std::string& name, bool *found, int *arrayId, int* numDims, cgsize_t* dims)
+{
+	int ier, numArrays;
+	char tmpName[ProjectCgnsFile::BUFFERLEN];
+
+	ier = cg_narrays(&numArrays);
+	if (ier != 0) {return false;}
+
+	*found = false;
+	for (int A = 1; A <= numArrays; ++A) {
+		DataType_t dtype;
+		ier = cg_array_info(A, tmpName, &dtype, numDims, dims);
+		if (ier != 0) {return false;}
+
+		if (name == std::string(tmpName)) {
+			*arrayId = A;
+			*found = true;
+			return true;
+		}
+	}
+	return true;
 }
 
 } // namespace
@@ -659,71 +684,81 @@ bool PostZoneDataContainer::findSolutionId(const int fn, const int currentStep, 
 	int ier;
 	char zoneItername[ProjectCgnsFile::BUFFERLEN];
 	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
-	if (ier == 0) {
+	bool ziterExist = (ier == 0);
+	bool pointerArrayFound = false;
+	int pointerArrayId = 0;
+	int numDims;
+	cgsize_t dims[9];
+
+	if (ziterExist) {
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
 		if (ier != 0) {return false;}
-		int narrays;
-		ier = cg_narrays(&narrays);
-		if (ier != 0) {return false;}
-		for (int i = 1; i <= narrays; ++i) {
-			char arrayname[ProjectCgnsFile::BUFFERLEN];
-			DataType_t dataType;
-			int dimension;
-			cgsize_t dimVector[3];
-			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == arrName) {
-				// arrName found.
-				char* pointers;
-				// dimension = 2, dimVector = [32, NumberOfSteps].
-				pointers = new char[dimVector[0] * dimVector[1]];
-				cg_array_read(i, pointers);
-				char curSol[32];
-				memcpy(curSol, &(pointers[32 * currentStep]), 32);
-				// the currentSolution is not null terminated.
-				curSol[31] = '\0';
-				QString currentSolution = QString(curSol).trimmed();
-				delete pointers;
-				// now, find the solution data and set solId.
-				int nsols;
-				cg_nsols(fn, m_baseId, m_zoneId, &nsols);
-				for (int j = 1; j <= nsols; ++j) {
-					char solname[ProjectCgnsFile::BUFFERLEN];
-					GridLocation_t location;
-					ier = cg_sol_info(fn, m_baseId, m_zoneId, j, solname, &location);
-					if (ier != 0) {return false;}
-					if (currentSolution == solname) {
-						*solId = j;
-						return true;
-					}
-				}
-				break;
-			}
-		}
+
+		// try to find array like "FlowSolutionPointers".
+		// arrName is like "FlowSolution", so we add "Pointers" to arrName;
+		std::string pointersName = arrName;
+		pointersName.append("Pointers");
+
+		bool ok;
+		ok = findArrayWithName(pointersName.c_str(), &pointerArrayFound, &pointerArrayId, &numDims, dims);
+		if (! ok) {return false;}
+	}
+
+	std::string solutionName;
+	if (! ziterExist || ! pointerArrayFound) {
+		// When pointer array is not found, try to find solution with standard name, like "FlowSolution1", "FlowSolution2", ...
+		std::ostringstream ss;
+		ss << arrName << (currentStep + 1);
+		solutionName = ss.str();
 	} else {
-		*solId = currentStep + 1;
-		return true;
+		// when pointer array is found, read name from it.
+		// arrName found.
+		char* pointers;
+		// dimension = 2, dimVector = [32, NumberOfSteps].
+		pointers = new char[dims[0] * dims[1]];
+		cg_array_read(pointerArrayId, pointers);
+		char curSol[32];
+		memcpy(curSol, &(pointers[32 * currentStep]), 32);
+		// the currentSolution is not null terminated.
+		curSol[31] = '\0';
+		solutionName = iRIC::toStr(QString(curSol).trimmed());
+		delete pointers;
+	}
+
+	// now, find the solution data and set solId.
+	int nsols;
+	cg_nsols(fn, m_baseId, m_zoneId, &nsols);
+	for (int j = 1; j <= nsols; ++j) {
+		char solname[ProjectCgnsFile::BUFFERLEN];
+		GridLocation_t location;
+		ier = cg_sol_info(fn, m_baseId, m_zoneId, j, solname, &location);
+		if (ier != 0) {return false;}
+		if (solutionName == solname) {
+			*solId = j;
+			return true;
+		}
 	}
 	return false;
 }
 
 bool PostZoneDataContainer::getSolutionId(const int fn, const int currentStep, int* solId)
 {
-	return findSolutionId(fn, currentStep, solId, "FlowSolutionPointers");
+	return findSolutionId(fn, currentStep, solId, "FlowSolution");
 }
 
 bool PostZoneDataContainer::getCellSolutionId(const int fn, const int currentStep, int* solId)
 {
-	return findSolutionId(fn, currentStep, solId, "FlowCellSolutionPointers");
+	return findSolutionId(fn, currentStep, solId, "FlowCellSolution");
 }
 
 bool PostZoneDataContainer::getEdgeISolutionId(const int fn, const int currentStep, int* solId)
 {
-	return findSolutionId(fn, currentStep, solId, "FlowIFaceSolutionPointers");
+	return findSolutionId(fn, currentStep, solId, "FlowIFaceSolution");
 }
 
 bool PostZoneDataContainer::getEdgeJSolutionId(const int fn, const int currentStep, int* solId)
 {
-	return findSolutionId(fn, currentStep, solId, "FlowJFaceSolutionPointers");
+	return findSolutionId(fn, currentStep, solId, "FlowJFaceSolution");
 }
 
 bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int firstAtt)

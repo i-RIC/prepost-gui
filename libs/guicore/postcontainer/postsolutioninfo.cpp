@@ -62,6 +62,16 @@ void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& z
 	writer.writeEndElement();
 }
 
+bool zoneHasSolution(int fid, int bid, int zid, bool* haveSolution)
+{
+	int nsols, ier;
+	ier = cg_nsols(fid, bid, zid, &nsols);
+	if (ier != 0) {return false;}
+
+	*haveSolution = (nsols > 0);
+	return true;
+}
+
 } // namespace
 
 PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
@@ -242,13 +252,12 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 		cgsize_t sizes[9];
 		char zoneName[ProjectCgnsFile::BUFFERLEN];
 		ier = cg_zone_read(fn, baseid, Z, zoneName, sizes);
-		// check whether this zone has ZoneIterativeData that has some arrays.
-		ier = cg_goto(fn, baseid, zoneName, 0, "ZoneIterativeData", 0, "end");
-		if (ier != 0) {return false;}
-		int narrays;
-		ier = cg_narrays(&narrays);
-		if (ier != 0) {return false;}
-		if (narrays == 0) {continue;}
+
+		bool hasSolution;
+		bool ok = zoneHasSolution(fn, baseid, Z, &hasSolution);
+		if (! ok) {return false;}
+		if (! hasSolution) {continue;}
+
 		tmpZoneNames.push_back(std::string(zoneName));
 	}
 	if (zoneNames == tmpZoneNames) {
