@@ -116,9 +116,12 @@ void SolverDefinitionGridType::Impl::setGridGenerators(const QDomElement& elem)
 void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem, SolverDefinition *solverDef)
 {
 	m_isKeepOrder = (elem.attribute("keepOrder") == "true");
-	QDomNode itemNode = elem.firstChild();
+	auto childNodes = elem.childNodes();
 	int order = 1;
-	while (! itemNode.isNull()) {
+	for (int i = 0; i < childNodes.size(); ++i) {
+		auto itemNode = childNodes.at(i);
+		if (itemNode.nodeName() != "Item") {continue;}
+
 		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 		QDomElement itemElem = itemNode.toElement();
 		QDomElement defElem = defNode.toElement();
