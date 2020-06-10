@@ -5,6 +5,7 @@
 
 #include <QFont>
 #include <QPainter>
+#include <QVector2D>
 
 namespace {
 

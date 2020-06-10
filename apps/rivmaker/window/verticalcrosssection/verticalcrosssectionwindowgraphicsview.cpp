@@ -3,10 +3,18 @@
 #include "../../data/baseline/baseline.h"
 #include "../../data/base/view.h"
 #include "../../geom/geometrypoint.h"
+#include "../../data/arbitraryhwm/arbitraryhwm.h"
+#include "../../data/benchmark/benchmark.h"
 #include "../../data/crosssection/crosssection.h"
+#include "../../data/crosssections/crosssections.h"
+#include "../../data/hub/hub.h"
+#include "../../data/leftbankhwm/leftbankhwm.h"
 #include "../../data/points/points.h"
 #include "../../data/points/pointspreprocessorviewhelper.h"
 #include "../../data/project/project.h"
+#include "../../data/referencemark/referencemark.h"
+#include "../../data/rightbankhwm/rightbankhwm.h"
+#include "../../data/streamgage/streamgage.h"
 #include "../../data/watersurfaceelevationpoints/watersurfaceelevationpoints.h"
 
 #include <QFontMetrics>

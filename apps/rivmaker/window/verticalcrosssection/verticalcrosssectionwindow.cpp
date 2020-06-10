@@ -32,6 +32,7 @@
 #include <QPushButton>
 #include <QSvgGenerator>
 #include <QTextStream>
+#include <QToolBar>
 
 namespace {
 

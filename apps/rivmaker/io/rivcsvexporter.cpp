@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QPointF>
 #include <QTextStream>
+#include <QVector2D>
 
 RivCsvExporter::RivCsvExporter()
 {}
