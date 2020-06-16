@@ -778,6 +778,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 			}
 		}
 	} else {
+#ifdef USE_32BIT_ZIP_UNZIP
 		if (m_projectData->hasHugeCgns()) {
 			QMessageBox::critical(this, tr("Error"), tr("This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project."));
 			return false;
@@ -786,6 +787,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 			QMessageBox::critical(this, tr("Error"), tr("This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project."));
 			return false;
 		}
+#endif
 		if (! m_projectData->isInWorkspace()) {
 			// working on the project folder.
 			QString newWorkFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
