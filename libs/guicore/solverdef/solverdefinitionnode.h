@@ -14,6 +14,11 @@ public:
 	SolverDefinitionNode();
 	SolverDefinitionNode(const QDomElement& elem, SolverDefinition* solverDef);
 	virtual ~SolverDefinitionNode();
+
+	SolverDefinition* solverDefinition() const;
+
+private:
+	SolverDefinition* m_solverDefinition;
 };
 
 #endif // SOLVERDEFINITIONNODE_H

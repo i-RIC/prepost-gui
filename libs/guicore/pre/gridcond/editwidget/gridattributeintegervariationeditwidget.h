@@ -14,7 +14,6 @@ public:
 	QSize minimumSizeHint() const override;
 
 private:
-	void setupWidget() override;
 	void getValueFromInnerWidget() override;
 
 	IntegerNumberEditWidget* m_widget;

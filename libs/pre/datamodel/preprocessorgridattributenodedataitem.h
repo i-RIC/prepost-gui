@@ -3,6 +3,7 @@
 
 #include <guibase/widget/contoursettingwidget.h>
 #include <guicore/named/namedgraphicwindowdataitem.h>
+#include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
 
 #include <vtkIdList.h>
 
@@ -53,7 +54,8 @@ public slots:
 
 private slots:
 	void editValue();
-	void editVariation();
+	void editDifference();
+	void editRatio();
 	void showDisplaySettingDialog() {showPropertyDialog();}
 	void exportToFile();
 
@@ -64,6 +66,8 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
+	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
+
 	SolverDefinitionGridAttribute* m_condition;
 
 	bool m_definingBoundingBox;
@@ -71,7 +75,8 @@ private:
 	bool m_isCustomModified;
 	QAction* m_editValueAction;
 	QAction* m_exportAction;
-	QAction* m_editVariationAction;
+	QAction* m_editDifferenceAction;
+	QAction* m_editRatioAction;
 	QAction* m_openXsectionWindowAction;
 	QAction* m_openVXsectionWindowAction;
 

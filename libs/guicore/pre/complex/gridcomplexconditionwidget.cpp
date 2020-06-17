@@ -1,7 +1,6 @@
 #include "ui_gridcomplexconditionwidget.h"
 
 #include "../../solverdef/solverdefinition.h"
-#include "../../solverdef/solverdefinitiontranslator.h"
 #include "gridcomplexconditionwidget.h"
 #include "private/gridcomplexconditionwidget_impl.h"
 
