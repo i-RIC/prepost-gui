@@ -3,6 +3,7 @@
 
 #include <guicore/named/namedgraphicwindowdataitem.h>
 #include <misc/boolcontainer.h>
+#include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
 
 class SolverDefinitionGridAttribute;
 class QAction;
@@ -33,13 +34,16 @@ public:
 
 private slots:
 	void editValue();
-	void editVariation();
+	void editDifference();
+	void editRatio();
 	void showDisplaySettingDialog() {showPropertyDialog();}
 
 protected:
 	void loadFromCgnsFile(const int fn) override;
 
 private:
+	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
@@ -49,7 +53,8 @@ private:
 
 	bool m_definingBoundingBox;
 	QAction* m_editValueAction;
-	QAction* m_editVariationAction;
+	QAction* m_editDifferenceAction;
+	QAction* m_editRatioAction;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTECELLDATAITEM_H

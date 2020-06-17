@@ -14,7 +14,7 @@ public:
 	const QDomElement& element() const;
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
-	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override;
+	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;

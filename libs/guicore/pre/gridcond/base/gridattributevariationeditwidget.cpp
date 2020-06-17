@@ -2,18 +2,19 @@
 
 GridAttributeVariationEditWidget::GridAttributeVariationEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition) :
 	QWidget {parent},
-	m_gridAttribute {condition}
+	m_gridAttribute {condition},
+	m_mode {Difference}
 {}
 
 GridAttributeVariationEditWidget::~GridAttributeVariationEditWidget()
 {}
 
-void GridAttributeVariationEditWidget::clearValue()
-{
-	setupWidget();
-}
-
 SolverDefinitionGridAttribute* GridAttributeVariationEditWidget::gridAttribute() const
 {
 	return m_gridAttribute;
+}
+
+void GridAttributeVariationEditWidget::setMode(Mode mode)
+{
+	m_mode = mode;
 }

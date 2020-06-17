@@ -21,7 +21,6 @@
 
 SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
 	m_isReferenceInformation {false},
-	m_solverDefinition {solverDef},
 	m_parent {parent}
 {
 	load(elem, solverDef);
@@ -202,11 +201,6 @@ ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsE
 	auto widget = createScalarsToColorsEditWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
-}
-
-SolverDefinition* SolverDefinitionGridAttribute::solverDefinition() const
-{
-	return impl->m_solverDefinition;
 }
 
 void SolverDefinitionGridAttribute::setPosition(Position pos)

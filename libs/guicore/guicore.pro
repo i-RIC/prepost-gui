@@ -359,6 +359,7 @@ HEADERS += guicore_global.h \
            pre/complex/gridcomplexconditiongroup.h \
            pre/complex/gridcomplexconditiongroupeditdialog.h \
            pre/complex/gridcomplexconditiongroupeditwidgetcontainer.h \
+           pre/complex/gridcomplexconditiongrouprealeditwidget.h \
            pre/complex/gridcomplexconditionwidget.h \
            pre/complex/gridcomplexconditionwidgetcontainer.h \
            pre/geodata/geodata.h \
@@ -584,6 +585,7 @@ FORMS += datamodel/propertybrowserview.ui \
          scalarstocolors/scalarstocolorseditdialog.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditiongroupeditdialog.ui \
+         pre/complex/gridcomplexconditiongrouprealeditwidget.ui \
          pre/complex/gridcomplexconditionwidget.ui \
          pre/geodatabackground/geodatabackgroundeditdialog.ui \
          pre/gridcond/gridcellattributepropertydialog.ui \
@@ -744,6 +746,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/complex/gridcomplexconditiongroup.cpp \
            pre/complex/gridcomplexconditiongroupeditdialog.cpp \
            pre/complex/gridcomplexconditiongroupeditwidgetcontainer.cpp \
+           pre/complex/gridcomplexconditiongrouprealeditwidget.cpp \
            pre/complex/gridcomplexconditionwidget.cpp \
            pre/complex/gridcomplexconditionwidgetcontainer.cpp \
            pre/geodata/geodata.cpp \

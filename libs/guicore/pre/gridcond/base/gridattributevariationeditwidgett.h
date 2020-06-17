@@ -11,12 +11,6 @@ class GridAttributeVariationEditWidgetT : public GridAttributeVariationEditWidge
 public:
 	GridAttributeVariationEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond);
 
-	V value();
-	void setValue(V value);
-
-	QVariant variantValue() override;
-	void setVariantValue(const QVariant& v);
-
 	void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override;
 
 protected:

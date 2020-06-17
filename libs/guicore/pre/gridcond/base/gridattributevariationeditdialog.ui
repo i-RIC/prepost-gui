@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>213</width>
+    <width>204</width>
     <height>87</height>
    </rect>
   </property>
@@ -24,6 +24,9 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
+      <widget class="GridAttributeVariationEditWidgetContainer" name="widget" native="true"/>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -35,16 +38,6 @@
         </size>
        </property>
       </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="conditionLabel">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="GridAttributeVariationEditWidgetContainer" name="widget" native="true"/>
      </item>
     </layout>
    </item>
