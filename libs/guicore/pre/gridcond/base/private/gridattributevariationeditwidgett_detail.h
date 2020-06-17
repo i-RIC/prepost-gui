@@ -14,41 +14,19 @@ GridAttributeVariationEditWidgetT<V>::GridAttributeVariationEditWidgetT(QWidget*
 {}
 
 template <class V>
-void GridAttributeVariationEditWidgetT<V>::setValue(V value)
-{
-	m_value = value;
-	setupWidget();
-}
-
-template <class V>
-V GridAttributeVariationEditWidgetT<V>::value()
-{
-	getValueFromInnerWidget();
-	return m_value;
-}
-
-template <class V>
-void GridAttributeVariationEditWidgetT<V>::setVariantValue(const QVariant& v)
-{
-	SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(m_gridAttribute);
-	V tmpval = cond->fromVariant(v);
-	setValue(tmpval);
-}
-
-template <class V>
-QVariant GridAttributeVariationEditWidgetT<V>::variantValue()
-{
-	return QVariant(value());
-}
-
-template <class V>
 void GridAttributeVariationEditWidgetT<V>::applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
 {
+	getValueFromInnerWidget();
+
 	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
 	vtkDataArray* oldValues = c->dataArrayCopy();
-	V val = value();
+	V val = m_value;
 	for (vtkIdType id : indices) {
-		c->setValue(id, c->value(id) + val);
+		if (m_mode == Difference) {
+			c->setValue(id, c->value(id) + val);
+		} else if (m_mode == Ratio) {
+			c->setValue(id, c->value(id) * val);
+		}
 	}
 	vtkDataArray* newValues = c->dataArrayCopy();
 	iRICUndoStack::instance().push(new GridAttributeEditVariationCommand(c->dataArray()->GetName(), newValues, oldValues, atts, dItem));

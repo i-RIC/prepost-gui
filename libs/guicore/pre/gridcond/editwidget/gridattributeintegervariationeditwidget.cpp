@@ -42,12 +42,6 @@ QSize GridAttributeIntegerVariationEditWidget::minimumSizeHint() const
 	return m_widget->sizeHint();
 }
 
-void GridAttributeIntegerVariationEditWidget::setupWidget()
-{
-	// this widget does not allowed "cleared" status.
-	m_widget->setValue(m_value);
-}
-
 void GridAttributeIntegerVariationEditWidget::getValueFromInnerWidget()
 {
 	m_value = m_widget->value();

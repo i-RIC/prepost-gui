@@ -18,6 +18,14 @@ GridAttributeRealVariationEditWidget::GridAttributeRealVariationEditWidget(QWidg
 GridAttributeRealVariationEditWidget::~GridAttributeRealVariationEditWidget()
 {}
 
+void GridAttributeRealVariationEditWidget::setMode(Mode mode)
+{
+	if (mode == Ratio) {
+		m_widget->setValue(1.0);
+	}
+	GridAttributeVariationEditWidget::setMode(mode);
+}
+
 QSize GridAttributeRealVariationEditWidget::sizeHint() const
 {
 	return m_widget->sizeHint();
@@ -26,11 +34,6 @@ QSize GridAttributeRealVariationEditWidget::sizeHint() const
 QSize GridAttributeRealVariationEditWidget::minimumSizeHint() const
 {
 	return m_widget->sizeHint();
-}
-
-void GridAttributeRealVariationEditWidget::setupWidget()
-{
-	m_widget->setText("");
 }
 
 void GridAttributeRealVariationEditWidget::getValueFromInnerWidget()
