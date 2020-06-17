@@ -698,7 +698,6 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="20"/>
-        <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="42"/>
         <source>TextLabel</source>
         <translation>テキストラベル</translation>
     </message>
@@ -774,6 +773,19 @@ Do you really want to import this file?</source>
         <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
+    </message>
+</context>
+<context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongrouprealeditwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongrouprealeditwidget.ui" line="20"/>
+        <source>Targets</source>
+        <translation>対象</translation>
     </message>
 </context>
 <context>
@@ -2857,7 +2869,7 @@ Do you really want to import this file?</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="67"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="70"/>
         <source>(Undefined)</source>
         <translation>(未定義)</translation>
     </message>

@@ -379,7 +379,6 @@
     </message>
     <message>
         <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="20"/>
-        <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="42"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -454,6 +453,19 @@
     <message>
         <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
         <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongrouprealeditwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongrouprealeditwidget.ui" line="20"/>
+        <source>Targets</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2031,7 +2043,7 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="67"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="70"/>
         <source>(Undefined)</source>
         <translation type="unfinished"></translation>
     </message>
