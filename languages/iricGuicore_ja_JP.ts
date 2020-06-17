@@ -657,6 +657,24 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeEditNameAndValueDialog</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished">ダイアログ</translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="22"/>
+        <source>Name:</source>
+        <translation type="unfinished">名前:</translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="32"/>
+        <source>TextLabel</source>
+        <translation type="unfinished">テキストラベル</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
@@ -741,6 +759,21 @@ Do you really want to import this file?</source>
         <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="14"/>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="22"/>
+        <source>Target:</source>
+        <translation>対象:</translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Modifications you made will be discarded.</source>
+        <translation>行った変更は破棄されます。</translation>
     </message>
 </context>
 <context>
@@ -926,59 +959,59 @@ Do you really want to import this file?</source>
         <translation>計算条件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="48"/>
         <source>&amp;Save and Close</source>
         <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="127"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="133"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="151"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
     </message>
@@ -1988,20 +2021,20 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2010,37 +2043,37 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="828"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="832"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="841"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="835"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="844"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="838"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="847"/>
         <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
@@ -2049,7 +2082,7 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -3000,24 +3033,24 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="173"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="174"/>
         <source>Background Images (Internet)</source>
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation>インターネットから背景画像を取得するには、以下のメニューから座標系を指定して下さい。
 ファイル -&gt; プロパティ</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="260"/>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>

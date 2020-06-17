@@ -9926,6 +9926,24 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GridAttributeEditNameAndValueDialog</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="22"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="32"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeEditWidget</name>
     <message>
         <location filename="../pre/gridcond/base/gridattributeeditcommand.cpp" line="8"/>
@@ -10002,6 +10020,21 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="14"/>
         <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="22"/>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Modifications you made will be discarded.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10091,58 +10124,58 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="48"/>
         <source>&amp;Save and Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="127"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="133"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="151"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Modifications you made will be discarded.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10919,60 +10952,60 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
         <source>Error occured while loading calculation result.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
         <source>Calculation result does not contain grid data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="828"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
         <source>Export Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="832"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="841"/>
         <source>Saving calculation result as VTK files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="835"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="844"/>
         <source>Saving calculation result as CSV files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="838"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="847"/>
         <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error occured while saving %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11692,23 +11725,23 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="173"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="174"/>
         <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="260"/>
         <source>Background Image change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18198,22 +18231,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="113"/>
         <source>Edit Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="148"/>
         <source>Edit Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18947,7 +18980,7 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="200"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="199"/>
         <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="205"/>
         <source>Edit %1</source>
         <translation type="unfinished"></translation>
@@ -19167,23 +19200,23 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="113"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="108"/>
         <source>Grid Node Attribute Display Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="273"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="273"/>
         <source>Please select only one node.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="84"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="284"/>
         <source>Edit %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19198,58 +19231,58 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="291"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="285"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="314"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="308"/>
         <source>Apply variation to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="315"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="309"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="352"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="378"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="352"/>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="378"/>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="451"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="445"/>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="453"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="447"/>
         <source>Export as Topography Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="459"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="453"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="479"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="473"/>
         <source>Grid condition successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="483"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="477"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
