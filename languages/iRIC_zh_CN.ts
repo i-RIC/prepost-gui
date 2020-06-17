@@ -10200,6 +10200,21 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Dialog</source>
         <translation>对话框</translation>
     </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="22"/>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished">您所做的修改将被丢弃。</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>

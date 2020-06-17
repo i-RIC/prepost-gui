@@ -441,6 +441,21 @@
         <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.ui" line="22"/>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/complex/gridcomplexconditiongroupeditdialog.cpp" line="64"/>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
