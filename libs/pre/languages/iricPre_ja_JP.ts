@@ -231,22 +231,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="113"/>
         <source>Edit Z-direction Scale</source>
         <translation>Z方向の倍率の編集</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="148"/>
         <source>Edit Color Setting</source>
         <translation>表示色設定</translation>
     </message>
@@ -1028,50 +1028,77 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="48"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="50"/>
         <source>Edit value...</source>
         <translation>値の編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="52"/>
         <source>Edit value by specifying variation...</source>
-        <translation>変化量を指定して値を編集...</translation>
+        <translation type="vanished">変化量を指定して値を編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="75"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="54"/>
+        <source>Edit value by specifying difference...</source>
+        <translation>差を指定して値を編集...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="58"/>
+        <source>Edit value by specifying ratio...</source>
+        <translation>比を指定して値を編集...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="81"/>
         <source>Grid Cell Attribute Display Setting</source>
         <translation>格子セル属性の表示設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="194"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="207"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="194"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="207"/>
         <source>Please select only one node.</source>
         <translation>格子点をひとつだけ選択して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="200"/>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="205"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="213"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="218"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="206"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="219"/>
         <source>Input the new value of %1 at the selected grid cells.</source>
         <translation>選択された格子セルでの、新しい %1 の値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="228"/>
-        <source>Apply variation to %1</source>
-        <translation>%1 に変化量を適用</translation>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="235"/>
+        <source>difference</source>
+        <translation>差</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="229"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="240"/>
+        <source>ratio</source>
+        <translation>比</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="270"/>
+        <source>Apply %1 to %2</source>
+        <translation>%1 を %2 に適用</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="271"/>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation>選択されたセルにおける %2 の %1 を入力して下さい。</translation>
+    </message>
+    <message>
+        <source>Apply variation to %1</source>
+        <translation type="vanished">%1 に変化量を適用</translation>
+    </message>
+    <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
+        <translation type="vanished">選択された格子点での、%1 の変化量を入力してください。</translation>
     </message>
 </context>
 <context>
@@ -1272,19 +1299,18 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="64"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="66"/>
         <source>Edit value...</source>
         <translation>値の編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="68"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="70"/>
         <source>Export...</source>
         <translation>エクスポート...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="71"/>
         <source>Edit value by specifying variation...</source>
-        <translation>変化量を指定して値を編集...</translation>
+        <translation type="vanished">変化量を指定して値を編集...</translation>
     </message>
     <message>
         <source>Open &amp;Crosssection Window</source>
@@ -1295,64 +1321,92 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">縦断面ウィンドウを開く(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="113"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="119"/>
         <source>Grid Node Attribute Display Setting</source>
         <translation>格子点属性の表示設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="278"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
         <source>Please select only one node.</source>
         <translation>格子点をひとつだけ選択して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="84"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="290"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="90"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="302"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="73"/>
+        <source>Edit value by specifying difference...</source>
+        <translation>差を指定して値を編集...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="77"/>
+        <source>Edit value by specifying ratio...</source>
+        <translation>比を指定して値を編集...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="81"/>
         <source>Open &amp;Cross Section Window</source>
         <translation>横断面ウィンドウを開く(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="85"/>
         <source>Open &amp;Longitudinal Cross Section Window</source>
         <translation>縦断面ウィンドウを開く(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="291"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="303"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、新しい %1 の値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="314"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="319"/>
+        <source>difference</source>
+        <translation>差</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="324"/>
+        <source>ratio</source>
+        <translation>比</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="504"/>
+        <source>Apply %1 to %2</source>
+        <translation>%1 を %2 に適用</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="505"/>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation>選択された格子点における %2 の %1 を入力して下さい。</translation>
+    </message>
+    <message>
         <source>Apply variation to %1</source>
-        <translation>%1 に変化量を適用</translation>
+        <translation type="vanished">%1 に変化量を適用</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="315"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
+        <translation type="vanished">選択された格子点での、%1 の変化量を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="359"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="385"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="358"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="359"/>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
         <translation>横断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="385"/>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
         <translation>縦断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
@@ -1361,27 +1415,27 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="451"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="452"/>
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="453"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="454"/>
         <source>Export as Topography Data</source>
         <translation>地勢データとしてエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="459"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="460"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="479"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="480"/>
         <source>Grid condition successfully exported to %1.</source>
         <translation>格子属性は %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="483"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="484"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
