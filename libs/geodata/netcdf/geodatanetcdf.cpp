@@ -1,4 +1,6 @@
 #include "geodatanetcdf.h"
+#include "geodatanetcdfcolorsettingdialog.h"
+#include "private/geodatanetcdf_editpropertycommand.h"
 
 #include <cs/coordinatesystem.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -70,8 +72,6 @@ GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, Solver
 	GeoData {d, creator, att},
 	m_isMasked {false}
 {
-	m_opacityPercent = 50;
-
 	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
@@ -128,6 +128,8 @@ void GeoDataNetcdf::setupActors()
 	m_regionActor->VisibilityOff();
 
 	renderer()->AddActor(m_regionActor);
+
+	updateActorSetting();
 }
 
 void GeoDataNetcdf::loadExternalData(const QString& filename)
@@ -307,13 +309,13 @@ void GeoDataNetcdf::updateFilename()
 void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
-	m_opacityPercent = loadOpacityPercent(node);
+	m_colorSetting.load(node);
 }
 
 void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	writeOpacityPercent(m_opacityPercent, writer);
+	m_colorSetting.save(writer);
 }
 
 void GeoDataNetcdf::doApplyOffset(double x, double y)
@@ -510,11 +512,6 @@ void GeoDataNetcdf::updateShapeData()
 	da->Modified();
 
 	updateRegionPolyData();
-}
-
-void GeoDataNetcdf::updateActorSettings()
-{
-	m_actor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
 }
 
 nc_type GeoDataNetcdf::getNcType(SolverDefinitionGridAttribute* cond)
@@ -788,6 +785,22 @@ int GeoDataNetcdf::getValueVarId(int ncid, int* varId)
 	return nc_inq_varid(ncid, VALUE, varId);
 }
 
+void GeoDataNetcdf::updateActorSetting()
+{
+	// color
+	m_actor->GetProperty()->SetColor(m_colorSetting.color);
+
+	// opacity
+	m_actor->GetProperty()->SetOpacity(m_colorSetting.opacity);
+
+	// mapping
+	bool scalarVisibility = true;
+	if (m_colorSetting.mapping == GeoDataNetcdfColorSettingDialog::Arbitrary) {
+		scalarVisibility = false;
+	}
+	m_actor->GetMapper()->SetScalarVisibility(scalarVisibility);
+}
+
 void GeoDataNetcdf::viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v)
 {
 	double xmin, xmax, ymin, ymax;
@@ -804,6 +817,20 @@ void GeoDataNetcdf::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
 	m_regionActor->SetPosition(0, 0, range.min());
+}
+
+QDialog* GeoDataNetcdf::propertyDialog(QWidget* parent)
+{
+	auto dialog = new GeoDataNetcdfColorSettingDialog(parent);
+	dialog->setSetting(m_colorSetting);
+
+	return dialog;
+}
+
+void GeoDataNetcdf::handlePropertyDialogAccepted(QDialog* d)
+{
+	auto dialog = dynamic_cast<GeoDataNetcdfColorSettingDialog*> (d);
+	pushRenderCommand(new EditPropertyCommand(dialog->setting(), this));
 }
 
 void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)

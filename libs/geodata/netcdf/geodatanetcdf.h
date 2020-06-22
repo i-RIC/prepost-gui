@@ -1,7 +1,10 @@
 #ifndef GEODATANETCDF_H
 #define GEODATANETCDF_H
 
+#include "geodatanetcdfcolorsettingdialog.h"
+
 #include <guicore/pre/geodata/geodata.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
 #include <vtkDataSetMapper.h>
@@ -78,11 +81,15 @@ public:
 	int outputDimensions(int ncid, const std::vector<int>& varIds);
 	bool requestCoordinateSystem() const override {return true;}
 	vtkStructuredGrid* grid() const {return m_grid;}
+	void updateActorSetting();
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
 	virtual double thresholdValue() const = 0;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* d) override;
 
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
@@ -122,7 +129,6 @@ protected:
 
 	vtkSmartPointer<vtkStructuredGrid> m_grid;
 	vtkSmartPointer<vtkStructuredGrid> m_simplifiedGrid;
-	int m_opacityPercent;
 
 	vtkSmartPointer<vtkThreshold> m_threshold;
 	vtkSmartPointer<vtkDataSetMapper> m_mapper;
@@ -139,9 +145,12 @@ protected:
 	std::vector<double> m_yValues;
 
 	CoordinateSystemType m_coordinateSystemType;
+	GeoDataNetcdfColorSettingDialog::Setting m_colorSetting;
 	QString m_coordinateSystemName;
 
 	bool m_isMasked;
+
+	class EditPropertyCommand;
 
 public:
 	friend class GeoDataNetcdfImporter;
