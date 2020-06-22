@@ -172,6 +172,12 @@ void InputConditionWidgetFunctionalDialog::setupShortcuts()
 
 	auto pasteShortcut = new QShortcut(QKeySequence(tr("Ctrl+V")), this);
 	connect(pasteShortcut, SIGNAL(activated()), this, SLOT(pasteFromClipboard()));
+
+	// Ctrl+Insert
+	new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Insert), this, SLOT(copyToClipboard()));
+
+	// Shift+Insert
+	new QShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Insert), this, SLOT(pasteFromClipboard()));
 }
 
 void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t)
