@@ -134,6 +134,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdffilenamematcher.h \
            geodatanetcdffilenamepatterndialog.h \
            geodatanetcdfgdalimporter.h \
+           geodatanetcdfgdalintegerimporter.h \
            geodatanetcdfgdalrealimporter.h \
            geodatanetcdfimporter.h \
            geodatanetcdfimporterdateselectdialog.h \
@@ -163,6 +164,7 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdffilenamematcher.cpp \
            geodatanetcdffilenamepatterndialog.cpp \
            geodatanetcdfgdalimporter.cpp \
+           geodatanetcdfgdalintegerimporter.cpp \
            geodatanetcdfgdalrealimporter.cpp \
            geodatanetcdfimporter.cpp \
            geodatanetcdfimporterdateselectdialog.cpp \
