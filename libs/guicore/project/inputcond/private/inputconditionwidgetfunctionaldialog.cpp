@@ -8,16 +8,20 @@
 #include <guibase/overridecursorchanger.h>
 #include <guibase/qwtplotcustomcurve.h>
 #include <misc/errormessage.h>
+#include <misc/informationdialog.h>
 #include <misc/lastiodirectory.h>
 #include <misc/xmlsupport.h>
 
+#include <QClipboard>
 #include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QItemSelection>
 #include <QItemSelectionRange>
 #include <QMessageBox>
+#include <QMimeData>
 #include <QModelIndex>
+#include <QShortcut>
 #include <QStandardItemModel>
 #include <QTextStream>
 #include <QTableView>
@@ -59,6 +63,7 @@ InputConditionWidgetFunctionalDialog::InputConditionWidgetFunctionalDialog(QDomN
 	setupModel(node, t);
 	setupViews();
 	setupConnections();
+	setupShortcuts();
 }
 
 InputConditionWidgetFunctionalDialog::~InputConditionWidgetFunctionalDialog()
@@ -84,6 +89,18 @@ bool InputConditionWidgetFunctionalDialog::importFromCsv(const QString& fileName
 		return false;
 	}
 	QTextStream stream(&file);
+	importFromCsv(&stream);
+	file.close();
+
+	QFileInfo finfo(fileName);
+	m_importedCsvFileName = fileName;
+	m_importedCsvLastModified = finfo.lastModified();
+
+	return true;
+}
+
+void InputConditionWidgetFunctionalDialog::importFromCsv(QTextStream* stream)
+{
 	QString line;
 	clear();
 	int row = 0;
@@ -92,7 +109,7 @@ bool InputConditionWidgetFunctionalDialog::importFromCsv(const QString& fileName
 		m_model->blockSignals(true);
 	}
 	do {
-		line = stream.readLine();
+		line = stream->readLine();
 		if (! line.isEmpty()) {
 			QVariant tmp;
 			QVariant tmp2;
@@ -109,7 +126,6 @@ bool InputConditionWidgetFunctionalDialog::importFromCsv(const QString& fileName
 			row++;
 		}
 	} while (! line.isEmpty());
-	file.close();
 	m_model->blockSignals(false);
 	m_preventGraph = false;
 
@@ -118,12 +134,6 @@ bool InputConditionWidgetFunctionalDialog::importFromCsv(const QString& fileName
 		ui->tableView->setRowHeight(i, InputConditionWidgetFunctionalDialog::defaultRowHeight);
 	}
 	sort();
-
-	QFileInfo finfo(fileName);
-	m_importedCsvFileName = fileName;
-	m_importedCsvLastModified = finfo.lastModified();
-
-	return true;
 }
 
 void InputConditionWidgetFunctionalDialog::setInt(const QVariant& v, QVariant& target)
@@ -153,6 +163,21 @@ void InputConditionWidgetFunctionalDialog::setupConnections()
 	connect(m_model, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(updateGraph()));
 
 	connect(ui->importWebButton, SIGNAL(clicked()), this, SLOT(importFromWeb()));
+}
+
+void InputConditionWidgetFunctionalDialog::setupShortcuts()
+{
+	auto copyShortcut = new QShortcut(QKeySequence(tr("Ctrl+C")), this);
+	connect(copyShortcut, SIGNAL(activated()), this, SLOT(copyToClipboard()));
+
+	auto pasteShortcut = new QShortcut(QKeySequence(tr("Ctrl+V")), this);
+	connect(pasteShortcut, SIGNAL(activated()), this, SLOT(pasteFromClipboard()));
+
+	// Ctrl+Insert
+	new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Insert), this, SLOT(copyToClipboard()));
+
+	// Shift+Insert
+	new QShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Insert), this, SLOT(pasteFromClipboard()));
 }
 
 void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t)
@@ -480,6 +505,33 @@ void InputConditionWidgetFunctionalDialog::exportToCsv()
 	file.close();
 }
 
+void InputConditionWidgetFunctionalDialog::copyToClipboard()
+{
+	QString buffer;
+	QTextStream stream(&buffer);
+	for (int i = 0; i < m_model->rowCount(); ++i){
+		for (int j = 0; j < m_model->columnCount(); ++j) {
+			if (j != 0) {stream << "\t";}
+			stream << m_model->data(m_model->index(i, j)).toDouble();
+		}
+		stream << "\n";
+	}
+	QClipboard* clipboard = QApplication::clipboard();
+	clipboard->setText(buffer);
+
+	QMessageBox::information(this, tr("Information"), tr("Values are copied to clipboard."));
+}
+
+void InputConditionWidgetFunctionalDialog::pasteFromClipboard()
+{
+	QClipboard* clipboard = QApplication::clipboard();
+	auto mimeData = clipboard->mimeData();
+	if (! mimeData->hasText()) {return;}
+	auto text = mimeData->text();
+	QTextStream stream(&text);
+
+	importFromCsv(&stream);
+}
 
 void InputConditionWidgetFunctionalDialog::importFromWeb()
 {
@@ -566,6 +618,12 @@ void InputConditionWidgetFunctionalDialog::toggleReadOnly(bool readonly)
 	} else {
 		ui->tableView->setEditTriggers(QTableView::DoubleClicked | QTableView::AnyKeyPressed | QTableView::EditKeyPressed);
 	}
+}
+
+int InputConditionWidgetFunctionalDialog::exec()
+{
+	InformationDialog::information(this, tr("Information"), tr("You can copy and paste the values, with shortcut \"Ctrl + C\" and \"Ctrl + V\""), "fdialog_c&p");
+	return QDialog::exec();
 }
 
 void InputConditionWidgetFunctionalDialog::accept()

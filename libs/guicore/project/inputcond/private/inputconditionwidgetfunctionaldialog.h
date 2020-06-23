@@ -44,6 +44,7 @@ public:
 	void toggleReadOnly(bool readonly);
 
 public slots:
+	int exec() override;
 	void accept() override;
 
 private slots:
@@ -51,6 +52,8 @@ private slots:
 	void importFromCsv();
 	void importFromWeb();
 	void exportToCsv();
+	void copyToClipboard();
+	void pasteFromClipboard();
 	void selectionChange(const QItemSelection& selected, const QItemSelection& deselected);
 	void removeSelected();
 	void add();
@@ -62,10 +65,12 @@ private:
 	void setupModel(QDomNode node, const SolverDefinitionTranslator& t);
 	void setupViews();
 	void setupConnections();
+	void setupShortcuts();
 	void saveModel();
 	void clearGraphData();
 
 	bool importFromCsv(const QString& fileName);
+	void importFromCsv(QTextStream* stream);
 
 	void setupXYStandard(int row, std::vector<double>* x, std::vector<double>* y);
 	void setupXYStep(int row, std::vector<double>* x, std::vector<double>* y);
