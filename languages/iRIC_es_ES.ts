@@ -2842,13 +2842,41 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="140"/>
+        <location filename="../geodatanetcdf.cpp" line="142"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="140"/>
+        <location filename="../geodatanetcdf.cpp" line="142"/>
         <source>Error occured while opening %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatanetcdf_editpropertycommand.cpp" line="4"/>
+        <source>Color setting edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfColorSettingDialog</name>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="14"/>
+        <source>Raster Data Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="20"/>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="29"/>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="38"/>
+        <source>Custom Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2924,35 +2952,40 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="45"/>
+        <source>Importing data...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="54"/>
         <source>GDAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="66"/>
         <source>GeoTiff files(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="67"/>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -4,14 +4,42 @@
 <context>
     <name>GeoDataNetcdf</name>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="140"/>
+        <location filename="../geodatanetcdf.cpp" line="142"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdf.cpp" line="140"/>
+        <location filename="../geodatanetcdf.cpp" line="142"/>
         <source>Error occured while opening %1.</source>
         <translation>%1 を開くときにエラーが発生しました。</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatanetcdf_editpropertycommand.cpp" line="4"/>
+        <source>Color setting edit</source>
+        <translation>色の設定の変更</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfColorSettingDialog</name>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="14"/>
+        <source>Raster Data Color Setting</source>
+        <translation>ラスターデータの表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="20"/>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="29"/>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfcolorsettingdialog.ui" line="38"/>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
     </message>
 </context>
 <context>
@@ -90,35 +118,40 @@
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="45"/>
+        <source>Importing data...</source>
+        <translation>データをインポートしています...</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="54"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="66"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="67"/>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation>ArcInfo ASCII ファイル (*.asc)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
         <translation>GDAL のデータファイルは、次元のない格子属性と、時間次元を持つ格子属性にのみインポートできます。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>%1 には座標系が指定されていません。座標系を手動で選択してください。</translation>
     </message>
