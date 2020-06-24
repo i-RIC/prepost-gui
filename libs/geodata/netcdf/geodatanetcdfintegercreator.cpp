@@ -1,3 +1,4 @@
+#include "geodatanetcdfgdalintegerimporter.h"
 #include "geodatanetcdfinteger.h"
 #include "geodatanetcdfintegercreator.h"
 #include "geodatanetcdfintegerimporter.h"
@@ -6,6 +7,7 @@ GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
 	GeoDataNetcdfCreatorT<int, vtkIntArray> {"integerNetcdf"}
 {
 	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
+	importers().push_back(new GeoDataNetcdfGdalIntegerImporter(this));
 }
 
 GeoData* GeoDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
