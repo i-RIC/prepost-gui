@@ -41,6 +41,13 @@ std::vector<GridComplexConditionGroupRealEditWidget::SubItem> buildFunctionalSub
 		auto subName = e.attribute("name");
 		auto subCap = t.translate(e.attribute("caption"));
 
+		if (subName == "") {
+			if (e.nodeName() == "Parameter") {
+				subName = "Param";
+			} else if (e.nodeName() == "Value") {
+				subName = "Value";
+			}
+		}
 		auto ccap = QString("%1 / %2").arg(cap).arg(subCap);
 		ret.push_back(GridComplexConditionGroupRealEditWidget::SubItem {GridComplexConditionGroupRealEditWidget::SubItem::Functional, name, subName, ccap});
 	}
@@ -123,13 +130,20 @@ void GridComplexConditionGroupRealEditWidget::applyVariation(const QVector<vtkId
 				}
 			} else if (item.type == SubItem::Functional) {
 				auto& func = cs->functional(iRIC::toStr(item.name));
-				auto& vals = func.value(iRIC::toStr(item.subName));
+				std::vector<double>* vals = nullptr;
+				if (item.subName == "Param") {
+					vals = &(func.x());
+				} else if (item.subName == "Value") {
+					vals = &(func.y());
+				} else {
+					vals = &(func.value(iRIC::toStr(item.subName)));
+				}
 				if (m_mode == Difference) {
-					for (auto& val : vals) {
+					for (auto& val : *vals) {
 						val += v;
 					}
 				} else if (m_mode == Ratio) {
-					for (auto& val : vals) {
+					for (auto& val : *vals) {
 						val *= v;
 					}
 				}
