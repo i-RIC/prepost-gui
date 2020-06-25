@@ -128,6 +128,7 @@ win32 {
 HEADERS += gd_netcdf_global.h \
            geodatanetcdf.h \
            geodatanetcdfcellmappert.h \
+           geodatanetcdfcolorsettingdialog.h \
            geodatanetcdfcreator.h \
            geodatanetcdfcreatort.h \
            geodatanetcdffilelistdialog.h \
@@ -149,16 +150,19 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfrealimporter.h \
            geodatanetcdft.h \
            geodatanetcdfxbandimporter.h \
+           private/geodatanetcdf_editpropertycommand.h \
            private/geodatanetcdfcellmappert_detail.h \
            private/geodatanetcdfcreatort_detail.h \
            private/geodatanetcdfimportert_detail.h \
            private/geodatanetcdfnodemappert_detail.h \
            private/geodatanetcdft_detail.h
-FORMS += geodatanetcdffilelistdialog.ui \
+FORMS += geodatanetcdfcolorsettingdialog.ui \
+         geodatanetcdffilelistdialog.ui \
          geodatanetcdffilenamepatterndialog.ui \
          geodatanetcdfimporterdateselectdialog.ui \
          geodatanetcdfimportersettingdialog.ui
 SOURCES += geodatanetcdf.cpp \
+           geodatanetcdfcolorsettingdialog.cpp \
            geodatanetcdfcreator.cpp \
            geodatanetcdffilelistdialog.cpp \
            geodatanetcdffilenamematcher.cpp \
@@ -175,7 +179,8 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdfreal.cpp \
            geodatanetcdfrealcreator.cpp \
            geodatanetcdfrealimporter.cpp \
-           geodatanetcdfxbandimporter.cpp
+           geodatanetcdfxbandimporter.cpp \
+           private/geodatanetcdf_editpropertycommand.cpp
 TRANSLATIONS += languages/iricGdNetcdf_es_ES.ts \
                 languages/iricGdNetcdf_fr_FR.ts \
                 languages/iricGdNetcdf_id_ID.ts \
