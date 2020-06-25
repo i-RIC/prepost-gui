@@ -30,6 +30,7 @@ public:
 private:
 	void doHandleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
 	void doHandleDimensionValuesChange(GridAttributeDimensionContainer* cont, const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
+	void loadRasterData(int index) override;
 };
 
 #include "private/geodatanetcdft_detail.h"

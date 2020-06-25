@@ -97,6 +97,19 @@ int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, const std::vector<i
 template <class V, class DA>
 void GeoDataNetcdfT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/, int newIndex)
 {
+	loadRasterData(newIndex);
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
+}
+
+template <class V, class DA>
+void GeoDataNetcdfT<V, DA>::doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
+{
+	// @todo implement this
+}
+
+template <class V, class DA>
+void GeoDataNetcdfT<V, DA>::loadRasterData(int index)
+{
 	std::string fname = iRIC::toStr(filename());
 	int ncid, ret, varId;
 
@@ -109,7 +122,7 @@ void GeoDataNetcdfT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/
 
 	// @todo currently, netcdf does not support edit, so no save done.
 
-	std::vector<int> indices = dims->calculateIndices(newIndex);
+	std::vector<int> indices = dims->calculateIndices(index);
 	int ndims = static_cast<int>(dims->containers().size()) + 2;
 	std::vector<size_t> start(ndims);
 	std::vector<size_t> len(ndims);
@@ -145,13 +158,6 @@ void GeoDataNetcdfT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/
 	viewOperationEndedGlobal(graphicsView());
 
 	nc_close(ncid);
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
-}
-
-template <class V, class DA>
-void GeoDataNetcdfT<V, DA>::doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
-{
-	// @todo implement this
 }
 
 #endif // GEODATANETCDFT_DETAIL_H
