@@ -26,14 +26,14 @@
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="48"/>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="217"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="62"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="231"/>
         <source>Min:</source>
         <translation>最小値:</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="62"/>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="231"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="48"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="217"/>
         <source>Max:</source>
         <translation>最大値:</translation>
     </message>

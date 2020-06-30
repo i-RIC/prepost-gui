@@ -24,7 +24,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="56"/>
         <source>(Not Specified)</source>
         <translation type="unfinished"></translation>
     </message>
