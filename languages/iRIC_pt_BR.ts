@@ -4031,7 +4031,7 @@
     <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation type="unfinished">Nao foi possÅLÅLivel importar % 1Åã poligono. O poligono conforme abaixo nao podera ser importado:</translation>
+        <translation type="unfinished">Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
         <translation type="unfinished">Menos de 2 o numero de vertice</translation>
         <translation type="unfinished">Nao esta encerrado.</translation>
         <translation type="unfinished">Linhas de poligono se cruzam</translation>
@@ -4351,7 +4351,7 @@
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="204"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation type="unfinished">Nao foi possÅLÅLivel importar % 1Åã poligono. O poligono conforme abaixo nao podera ser importado:</translation>
+        <translation type="unfinished">Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
         <translation type="unfinished">Menos de 2 o numero de vertice</translation>
         <translation type="unfinished">Nao esta encerrado.</translation>
         <translation type="unfinished">Linhas de poligono se cruzam</translation>
@@ -13649,7 +13649,7 @@
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="146"/>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished">Instantaneo continuo / Video / Google Earth SaidaÅc</translation>
+        <translation type="unfinished">Instantaneo continuo / Video / Google Earth Saida...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="154"/>
@@ -13683,7 +13683,7 @@
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="177"/>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="180"/>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished">Configuracoes para Visualizacao e Grafico (&amp;V)Åc</translation>
+        <translation type="unfinished">Configuracoes para Visualizacao e Grafico (&amp;V)...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="183"/>
@@ -14445,7 +14445,7 @@
     <message>
         <location filename="../post2dbirdeyewindowactionmanager.cpp" line="38"/>
         <source>&amp;Title...</source>
-        <translation type="unfinished">Titulo (&amp;T)Åc</translation>
+        <translation type="unfinished">Titulo (&amp;T)...</translation>
     </message>
     <message>
         <location filename="../post2dbirdeyewindowactionmanager.cpp" line="41"/>
@@ -14702,7 +14702,7 @@
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="55"/>
         <source>&amp;Title...</source>
-        <translation type="unfinished">Titulo (&amp;T)Åc</translation>
+        <translation type="unfinished">Titulo (&amp;T)...</translation>
     </message>
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="58"/>
@@ -16232,7 +16232,7 @@
     <message>
         <location filename="../post3dwindowactionmanager.cpp" line="47"/>
         <source>&amp;Title...</source>
-        <translation type="unfinished">Titulo (&amp;T)Åc</translation>
+        <translation type="unfinished">Titulo (&amp;T)...</translation>
     </message>
     <message>
         <location filename="../post3dwindowactionmanager.cpp" line="50"/>
@@ -20825,7 +20825,7 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="248"/>
         <source>&amp;Water Surface Elevation...</source>
-        <translation type="unfinished">Elevacao da superficie de agua (&amp;W)Åc</translation>
+        <translation type="unfinished">Elevacao da superficie de agua (&amp;W)...</translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="257"/>
