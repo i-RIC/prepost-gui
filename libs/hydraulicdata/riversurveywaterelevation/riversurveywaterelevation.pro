@@ -67,12 +67,42 @@ SOURCES += hydraulicdatariversurveywaterelevation.cpp \
            private/hydraulicdatariversurveywaterelevation_editcolorcommand.cpp \
            private/hydraulicdatariversurveywaterelevation_edititemcommand.cpp
 RESOURCES += riversurveywaterelevation.qrc
-TRANSLATIONS += languages/iricHdRiversurveywaterelevation_es_ES.ts \
+TRANSLATIONS += languages/iricHdRiversurveywaterelevation_ar_EG.ts \
+                languages/iricHdRiversurveywaterelevation_bg_BG.ts \
+                languages/iricHdRiversurveywaterelevation_bs_BA.ts \
+                languages/iricHdRiversurveywaterelevation_ca_ES.ts \
+                languages/iricHdRiversurveywaterelevation_cs_CZ.ts \
+                languages/iricHdRiversurveywaterelevation_da_DK.ts \
+                languages/iricHdRiversurveywaterelevation_de_DE.ts \
+                languages/iricHdRiversurveywaterelevation_el_GR.ts \
+                languages/iricHdRiversurveywaterelevation_es_ES.ts \
+                languages/iricHdRiversurveywaterelevation_et_EE.ts \
+                languages/iricHdRiversurveywaterelevation_eu_ES.ts \
+                languages/iricHdRiversurveywaterelevation_fi_FI.ts \
                 languages/iricHdRiversurveywaterelevation_fr_FR.ts \
+                languages/iricHdRiversurveywaterelevation_gl_ES.ts \
+                languages/iricHdRiversurveywaterelevation_hi_IN.ts \
+                languages/iricHdRiversurveywaterelevation_hu_HU.ts \
                 languages/iricHdRiversurveywaterelevation_id_ID.ts \
+                languages/iricHdRiversurveywaterelevation_is_IS.ts \
+                languages/iricHdRiversurveywaterelevation_it_IT.ts \
                 languages/iricHdRiversurveywaterelevation_ja_JP.ts \
                 languages/iricHdRiversurveywaterelevation_ko_KR.ts \
+                languages/iricHdRiversurveywaterelevation_ky_KG.ts \
+                languages/iricHdRiversurveywaterelevation_lt_LT.ts \
+                languages/iricHdRiversurveywaterelevation_lv_LV.ts \
+                languages/iricHdRiversurveywaterelevation_nb_NO.ts \
+                languages/iricHdRiversurveywaterelevation_nl_NL.ts \
+                languages/iricHdRiversurveywaterelevation_pl_PL.ts \
+                languages/iricHdRiversurveywaterelevation_pt_BR.ts \
+                languages/iricHdRiversurveywaterelevation_pt_PT.ts \
+                languages/iricHdRiversurveywaterelevation_ro_RO.ts \
                 languages/iricHdRiversurveywaterelevation_ru_RU.ts \
+                languages/iricHdRiversurveywaterelevation_sl_SI.ts \
+                languages/iricHdRiversurveywaterelevation_sv_SE.ts \
                 languages/iricHdRiversurveywaterelevation_th_TH.ts \
+                languages/iricHdRiversurveywaterelevation_tr_TR.ts \
+                languages/iricHdRiversurveywaterelevation_uk_UA.ts \
                 languages/iricHdRiversurveywaterelevation_vi_VN.ts \
-                languages/iricHdRiversurveywaterelevation_zh_CN.ts
+                languages/iricHdRiversurveywaterelevation_zh_CN.ts \
+                languages/iricHdRiversurveywaterelevation_zh_TW.ts

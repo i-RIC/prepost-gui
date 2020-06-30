@@ -222,12 +222,42 @@ SOURCES += graph2dhybridsettingdialog.cpp \
 					 datamodel/graph2dhybridwindowresultgroupdataitem.cpp \
 					 datamodel/graph2dhybridwindowrootdataitem.cpp \
 					 datamodel/graph2dhybridwindowsettingwidget.cpp
-TRANSLATIONS += languages/iricGraph2dhybrid_es_ES.ts \
-								languages/iricGraph2dhybrid_fr_FR.ts \
-								languages/iricGraph2dhybrid_id_ID.ts \
-								languages/iricGraph2dhybrid_ja_JP.ts \
-								languages/iricGraph2dhybrid_ko_KR.ts \
-								languages/iricGraph2dhybrid_ru_RU.ts \
-								languages/iricGraph2dhybrid_th_TH.ts \
-								languages/iricGraph2dhybrid_vi_VN.ts \
-								languages/iricGraph2dhybrid_zh_CN.ts
+TRANSLATIONS += languages/iricGraph2dhybrid_ar_EG.ts \
+                languages/iricGraph2dhybrid_bg_BG.ts \
+                languages/iricGraph2dhybrid_bs_BA.ts \
+                languages/iricGraph2dhybrid_ca_ES.ts \
+                languages/iricGraph2dhybrid_cs_CZ.ts \
+                languages/iricGraph2dhybrid_da_DK.ts \
+                languages/iricGraph2dhybrid_de_DE.ts \
+                languages/iricGraph2dhybrid_el_GR.ts \
+                languages/iricGraph2dhybrid_es_ES.ts \
+                languages/iricGraph2dhybrid_et_EE.ts \
+                languages/iricGraph2dhybrid_eu_ES.ts \
+                languages/iricGraph2dhybrid_fi_FI.ts \
+                languages/iricGraph2dhybrid_fr_FR.ts \
+                languages/iricGraph2dhybrid_gl_ES.ts \
+                languages/iricGraph2dhybrid_hi_IN.ts \
+                languages/iricGraph2dhybrid_hu_HU.ts \
+                languages/iricGraph2dhybrid_id_ID.ts \
+                languages/iricGraph2dhybrid_is_IS.ts \
+                languages/iricGraph2dhybrid_it_IT.ts \
+                languages/iricGraph2dhybrid_ja_JP.ts \
+                languages/iricGraph2dhybrid_ko_KR.ts \
+                languages/iricGraph2dhybrid_ky_KG.ts \
+                languages/iricGraph2dhybrid_lt_LT.ts \
+                languages/iricGraph2dhybrid_lv_LV.ts \
+                languages/iricGraph2dhybrid_nb_NO.ts \
+                languages/iricGraph2dhybrid_nl_NL.ts \
+                languages/iricGraph2dhybrid_pl_PL.ts \
+                languages/iricGraph2dhybrid_pt_BR.ts \
+                languages/iricGraph2dhybrid_pt_PT.ts \
+                languages/iricGraph2dhybrid_ro_RO.ts \
+                languages/iricGraph2dhybrid_ru_RU.ts \
+                languages/iricGraph2dhybrid_sl_SI.ts \
+                languages/iricGraph2dhybrid_sv_SE.ts \
+                languages/iricGraph2dhybrid_th_TH.ts \
+                languages/iricGraph2dhybrid_tr_TR.ts \
+                languages/iricGraph2dhybrid_uk_UA.ts \
+                languages/iricGraph2dhybrid_vi_VN.ts \
+                languages/iricGraph2dhybrid_zh_CN.ts \
+                languages/iricGraph2dhybrid_zh_TW.ts

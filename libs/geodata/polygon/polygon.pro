@@ -180,12 +180,42 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_movevertexcommand.cpp \
            private/geodatapolygon_pushnewpointcommand.cpp \
            private/geodatapolygon_removevertexcommand.cpp
-TRANSLATIONS += languages/iricGdPolygon_es_ES.ts \
+TRANSLATIONS += languages/iricGdPolygon_ar_EG.ts \
+                languages/iricGdPolygon_bg_BG.ts \
+                languages/iricGdPolygon_bs_BA.ts \
+                languages/iricGdPolygon_ca_ES.ts \
+                languages/iricGdPolygon_cs_CZ.ts \
+                languages/iricGdPolygon_da_DK.ts \
+                languages/iricGdPolygon_de_DE.ts \
+                languages/iricGdPolygon_el_GR.ts \
+                languages/iricGdPolygon_es_ES.ts \
+                languages/iricGdPolygon_et_EE.ts \
+                languages/iricGdPolygon_eu_ES.ts \
+                languages/iricGdPolygon_fi_FI.ts \
                 languages/iricGdPolygon_fr_FR.ts \
+                languages/iricGdPolygon_gl_ES.ts \
+                languages/iricGdPolygon_hi_IN.ts \
+                languages/iricGdPolygon_hu_HU.ts \
                 languages/iricGdPolygon_id_ID.ts \
+                languages/iricGdPolygon_is_IS.ts \
+                languages/iricGdPolygon_it_IT.ts \
                 languages/iricGdPolygon_ja_JP.ts \
                 languages/iricGdPolygon_ko_KR.ts \
+                languages/iricGdPolygon_ky_KG.ts \
+                languages/iricGdPolygon_lt_LT.ts \
+                languages/iricGdPolygon_lv_LV.ts \
+                languages/iricGdPolygon_nb_NO.ts \
+                languages/iricGdPolygon_nl_NL.ts \
+                languages/iricGdPolygon_pl_PL.ts \
+                languages/iricGdPolygon_pt_BR.ts \
+                languages/iricGdPolygon_pt_PT.ts \
+                languages/iricGdPolygon_ro_RO.ts \
                 languages/iricGdPolygon_ru_RU.ts \
+                languages/iricGdPolygon_sl_SI.ts \
+                languages/iricGdPolygon_sv_SE.ts \
                 languages/iricGdPolygon_th_TH.ts \
+                languages/iricGdPolygon_tr_TR.ts \
+                languages/iricGdPolygon_uk_UA.ts \
                 languages/iricGdPolygon_vi_VN.ts \
-                languages/iricGdPolygon_zh_CN.ts
+                languages/iricGdPolygon_zh_CN.ts \
+                languages/iricGdPolygon_zh_TW.ts

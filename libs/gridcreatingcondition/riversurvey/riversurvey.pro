@@ -118,12 +118,42 @@ SOURCES += gridcreatingconditioncreatorriversurvey.cpp \
            gridcreatingconditionriversurveypointrepositiondialog.cpp \
            gridcreatingconditionriversurveyregiondialog.cpp
 RESOURCES += riversurvey.qrc
-TRANSLATIONS += languages/iricGccRiversurvey_es_ES.ts \
+TRANSLATIONS += languages/iricGccRiversurvey_ar_EG.ts \
+                languages/iricGccRiversurvey_bg_BG.ts \
+                languages/iricGccRiversurvey_bs_BA.ts \
+                languages/iricGccRiversurvey_ca_ES.ts \
+                languages/iricGccRiversurvey_cs_CZ.ts \
+                languages/iricGccRiversurvey_da_DK.ts \
+                languages/iricGccRiversurvey_de_DE.ts \
+                languages/iricGccRiversurvey_el_GR.ts \
+                languages/iricGccRiversurvey_es_ES.ts \
+                languages/iricGccRiversurvey_et_EE.ts \
+                languages/iricGccRiversurvey_eu_ES.ts \
+                languages/iricGccRiversurvey_fi_FI.ts \
                 languages/iricGccRiversurvey_fr_FR.ts \
+                languages/iricGccRiversurvey_gl_ES.ts \
+                languages/iricGccRiversurvey_hi_IN.ts \
+                languages/iricGccRiversurvey_hu_HU.ts \
                 languages/iricGccRiversurvey_id_ID.ts \
+                languages/iricGccRiversurvey_is_IS.ts \
+                languages/iricGccRiversurvey_it_IT.ts \
                 languages/iricGccRiversurvey_ja_JP.ts \
                 languages/iricGccRiversurvey_ko_KR.ts \
+                languages/iricGccRiversurvey_ky_KG.ts \
+                languages/iricGccRiversurvey_lt_LT.ts \
+                languages/iricGccRiversurvey_lv_LV.ts \
+                languages/iricGccRiversurvey_nb_NO.ts \
+                languages/iricGccRiversurvey_nl_NL.ts \
+                languages/iricGccRiversurvey_pl_PL.ts \
+                languages/iricGccRiversurvey_pt_BR.ts \
+                languages/iricGccRiversurvey_pt_PT.ts \
+                languages/iricGccRiversurvey_ro_RO.ts \
                 languages/iricGccRiversurvey_ru_RU.ts \
+                languages/iricGccRiversurvey_sl_SI.ts \
+                languages/iricGccRiversurvey_sv_SE.ts \
                 languages/iricGccRiversurvey_th_TH.ts \
+                languages/iricGccRiversurvey_tr_TR.ts \
+                languages/iricGccRiversurvey_uk_UA.ts \
                 languages/iricGccRiversurvey_vi_VN.ts \
-                languages/iricGccRiversurvey_zh_CN.ts
+                languages/iricGccRiversurvey_zh_CN.ts \
+                languages/iricGccRiversurvey_zh_TW.ts

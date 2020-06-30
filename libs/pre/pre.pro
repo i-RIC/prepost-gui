@@ -619,12 +619,42 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.cpp
 RESOURCES += pre.qrc
-TRANSLATIONS += languages/iricPre_es_ES.ts \
+TRANSLATIONS += languages/iricPre_ar_EG.ts \
+                languages/iricPre_bg_BG.ts \
+                languages/iricPre_bs_BA.ts \
+                languages/iricPre_ca_ES.ts \
+                languages/iricPre_cs_CZ.ts \
+                languages/iricPre_da_DK.ts \
+                languages/iricPre_de_DE.ts \
+                languages/iricPre_el_GR.ts \
+                languages/iricPre_es_ES.ts \
+                languages/iricPre_et_EE.ts \
+                languages/iricPre_eu_ES.ts \
+                languages/iricPre_fi_FI.ts \
                 languages/iricPre_fr_FR.ts \
+                languages/iricPre_gl_ES.ts \
+                languages/iricPre_hi_IN.ts \
+                languages/iricPre_hu_HU.ts \
                 languages/iricPre_id_ID.ts \
+                languages/iricPre_is_IS.ts \
+                languages/iricPre_it_IT.ts \
                 languages/iricPre_ja_JP.ts \
                 languages/iricPre_ko_KR.ts \
+                languages/iricPre_ky_KG.ts \
+                languages/iricPre_lt_LT.ts \
+                languages/iricPre_lv_LV.ts \
+                languages/iricPre_nb_NO.ts \
+                languages/iricPre_nl_NL.ts \
+                languages/iricPre_pl_PL.ts \
+                languages/iricPre_pt_BR.ts \
+                languages/iricPre_pt_PT.ts \
+                languages/iricPre_ro_RO.ts \
                 languages/iricPre_ru_RU.ts \
+                languages/iricPre_sl_SI.ts \
+                languages/iricPre_sv_SE.ts \
                 languages/iricPre_th_TH.ts \
+                languages/iricPre_tr_TR.ts \
+                languages/iricPre_uk_UA.ts \
                 languages/iricPre_vi_VN.ts \
-                languages/iricPre_zh_CN.ts
+                languages/iricPre_zh_CN.ts \
+                languages/iricPre_zh_TW.ts

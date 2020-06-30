@@ -175,12 +175,42 @@ SOURCES += geodatapolyline.cpp \
            private/geodatapolyline_movevertexcommand.cpp \
            private/geodatapolyline_pushnewpointcommand.cpp \
            private/geodatapolyline_removevertexcommand.cpp
-TRANSLATIONS += languages/iricGdPolyLine_es_ES.ts \
+TRANSLATIONS += languages/iricGdPolyLine_ar_EG.ts \
+                languages/iricGdPolyLine_bg_BG.ts \
+                languages/iricGdPolyLine_bs_BA.ts \
+                languages/iricGdPolyLine_ca_ES.ts \
+                languages/iricGdPolyLine_cs_CZ.ts \
+                languages/iricGdPolyLine_da_DK.ts \
+                languages/iricGdPolyLine_de_DE.ts \
+                languages/iricGdPolyLine_el_GR.ts \
+                languages/iricGdPolyLine_es_ES.ts \
+                languages/iricGdPolyLine_et_EE.ts \
+                languages/iricGdPolyLine_eu_ES.ts \
+                languages/iricGdPolyLine_fi_FI.ts \
                 languages/iricGdPolyLine_fr_FR.ts \
+                languages/iricGdPolyLine_gl_ES.ts \
+                languages/iricGdPolyLine_hi_IN.ts \
+                languages/iricGdPolyLine_hu_HU.ts \
                 languages/iricGdPolyLine_id_ID.ts \
+                languages/iricGdPolyLine_is_IS.ts \
+                languages/iricGdPolyLine_it_IT.ts \
                 languages/iricGdPolyLine_ja_JP.ts \
                 languages/iricGdPolyLine_ko_KR.ts \
+                languages/iricGdPolyLine_ky_KG.ts \
+                languages/iricGdPolyLine_lt_LT.ts \
+                languages/iricGdPolyLine_lv_LV.ts \
+                languages/iricGdPolyLine_nb_NO.ts \
+                languages/iricGdPolyLine_nl_NL.ts \
+                languages/iricGdPolyLine_pl_PL.ts \
+                languages/iricGdPolyLine_pt_BR.ts \
+                languages/iricGdPolyLine_pt_PT.ts \
+                languages/iricGdPolyLine_ro_RO.ts \
                 languages/iricGdPolyLine_ru_RU.ts \
+                languages/iricGdPolyLine_sl_SI.ts \
+                languages/iricGdPolyLine_sv_SE.ts \
                 languages/iricGdPolyLine_th_TH.ts \
+                languages/iricGdPolyLine_tr_TR.ts \
+                languages/iricGdPolyLine_uk_UA.ts \
                 languages/iricGdPolyLine_vi_VN.ts \
-                languages/iricGdPolyLine_zh_CN.ts
+                languages/iricGdPolyLine_zh_CN.ts \
+                languages/iricGdPolyLine_zh_TW.ts

@@ -59,12 +59,42 @@ SOURCES += solverconsolewindow.cpp \
            solverconsolewindowprojectdataitem.cpp \
            private/solverconsolewindow_setbackgroundcolorcommand.cpp
 RESOURCES += solverconsole.qrc
-TRANSLATIONS += languages/iricSolverconsole_es_ES.ts \
+TRANSLATIONS += languages/iricSolverconsole_ar_EG.ts \
+                languages/iricSolverconsole_bg_BG.ts \
+                languages/iricSolverconsole_bs_BA.ts \
+                languages/iricSolverconsole_ca_ES.ts \
+                languages/iricSolverconsole_cs_CZ.ts \
+                languages/iricSolverconsole_da_DK.ts \
+                languages/iricSolverconsole_de_DE.ts \
+                languages/iricSolverconsole_el_GR.ts \
+                languages/iricSolverconsole_es_ES.ts \
+                languages/iricSolverconsole_et_EE.ts \
+                languages/iricSolverconsole_eu_ES.ts \
+                languages/iricSolverconsole_fi_FI.ts \
                 languages/iricSolverconsole_fr_FR.ts \
+                languages/iricSolverconsole_gl_ES.ts \
+                languages/iricSolverconsole_hi_IN.ts \
+                languages/iricSolverconsole_hu_HU.ts \
                 languages/iricSolverconsole_id_ID.ts \
+                languages/iricSolverconsole_is_IS.ts \
+                languages/iricSolverconsole_it_IT.ts \
                 languages/iricSolverconsole_ja_JP.ts \
                 languages/iricSolverconsole_ko_KR.ts \
+                languages/iricSolverconsole_ky_KG.ts \
+                languages/iricSolverconsole_lt_LT.ts \
+                languages/iricSolverconsole_lv_LV.ts \
+                languages/iricSolverconsole_nb_NO.ts \
+                languages/iricSolverconsole_nl_NL.ts \
+                languages/iricSolverconsole_pl_PL.ts \
+                languages/iricSolverconsole_pt_BR.ts \
+                languages/iricSolverconsole_pt_PT.ts \
+                languages/iricSolverconsole_ro_RO.ts \
                 languages/iricSolverconsole_ru_RU.ts \
+                languages/iricSolverconsole_sl_SI.ts \
+                languages/iricSolverconsole_sv_SE.ts \
                 languages/iricSolverconsole_th_TH.ts \
+                languages/iricSolverconsole_tr_TR.ts \
+                languages/iricSolverconsole_uk_UA.ts \
                 languages/iricSolverconsole_vi_VN.ts \
-                languages/iricSolverconsole_zh_CN.ts
+                languages/iricSolverconsole_zh_CN.ts \
+                languages/iricSolverconsole_zh_TW.ts

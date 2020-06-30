@@ -227,12 +227,42 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp
 RESOURCES += post3d.qrc
-TRANSLATIONS += languages/iricPost3d_es_ES.ts \
+TRANSLATIONS += languages/iricPost3d_ar_EG.ts \
+                languages/iricPost3d_bg_BG.ts \
+                languages/iricPost3d_bs_BA.ts \
+                languages/iricPost3d_ca_ES.ts \
+                languages/iricPost3d_cs_CZ.ts \
+                languages/iricPost3d_da_DK.ts \
+                languages/iricPost3d_de_DE.ts \
+                languages/iricPost3d_el_GR.ts \
+                languages/iricPost3d_es_ES.ts \
+                languages/iricPost3d_et_EE.ts \
+                languages/iricPost3d_eu_ES.ts \
+                languages/iricPost3d_fi_FI.ts \
                 languages/iricPost3d_fr_FR.ts \
+                languages/iricPost3d_gl_ES.ts \
+                languages/iricPost3d_hi_IN.ts \
+                languages/iricPost3d_hu_HU.ts \
                 languages/iricPost3d_id_ID.ts \
+                languages/iricPost3d_is_IS.ts \
+                languages/iricPost3d_it_IT.ts \
                 languages/iricPost3d_ja_JP.ts \
                 languages/iricPost3d_ko_KR.ts \
+                languages/iricPost3d_ky_KG.ts \
+                languages/iricPost3d_lt_LT.ts \
+                languages/iricPost3d_lv_LV.ts \
+                languages/iricPost3d_nb_NO.ts \
+                languages/iricPost3d_nl_NL.ts \
+                languages/iricPost3d_pl_PL.ts \
+                languages/iricPost3d_pt_BR.ts \
+                languages/iricPost3d_pt_PT.ts \
+                languages/iricPost3d_ro_RO.ts \
                 languages/iricPost3d_ru_RU.ts \
+                languages/iricPost3d_sl_SI.ts \
+                languages/iricPost3d_sv_SE.ts \
                 languages/iricPost3d_th_TH.ts \
+                languages/iricPost3d_tr_TR.ts \
+                languages/iricPost3d_uk_UA.ts \
                 languages/iricPost3d_vi_VN.ts \
-                languages/iricPost3d_zh_CN.ts
+                languages/iricPost3d_zh_CN.ts \
+                languages/iricPost3d_zh_TW.ts

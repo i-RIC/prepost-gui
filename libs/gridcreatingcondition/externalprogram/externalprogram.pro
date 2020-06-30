@@ -97,12 +97,42 @@ FORMS += gridcreatingconditionexternalprogramsettingdialog.ui
 SOURCES += gridcreatingconditioncreatorexternalprogram.cpp \
            gridcreatingconditionexternalprogram.cpp \
            gridcreatingconditionexternalprogramsettingdialog.cpp
-TRANSLATIONS += languages/iricGccExternalprogram_es_ES.ts \
+TRANSLATIONS += languages/iricGccExternalprogram_ar_EG.ts \
+                languages/iricGccExternalprogram_bg_BG.ts \
+                languages/iricGccExternalprogram_bs_BA.ts \
+                languages/iricGccExternalprogram_ca_ES.ts \
+                languages/iricGccExternalprogram_cs_CZ.ts \
+                languages/iricGccExternalprogram_da_DK.ts \
+                languages/iricGccExternalprogram_de_DE.ts \
+                languages/iricGccExternalprogram_el_GR.ts \
+                languages/iricGccExternalprogram_es_ES.ts \
+                languages/iricGccExternalprogram_et_EE.ts \
+                languages/iricGccExternalprogram_eu_ES.ts \
+                languages/iricGccExternalprogram_fi_FI.ts \
                 languages/iricGccExternalprogram_fr_FR.ts \
+                languages/iricGccExternalprogram_gl_ES.ts \
+                languages/iricGccExternalprogram_hi_IN.ts \
+                languages/iricGccExternalprogram_hu_HU.ts \
                 languages/iricGccExternalprogram_id_ID.ts \
+                languages/iricGccExternalprogram_is_IS.ts \
+                languages/iricGccExternalprogram_it_IT.ts \
                 languages/iricGccExternalprogram_ja_JP.ts \
                 languages/iricGccExternalprogram_ko_KR.ts \
+                languages/iricGccExternalprogram_ky_KG.ts \
+                languages/iricGccExternalprogram_lt_LT.ts \
+                languages/iricGccExternalprogram_lv_LV.ts \
+                languages/iricGccExternalprogram_nb_NO.ts \
+                languages/iricGccExternalprogram_nl_NL.ts \
+                languages/iricGccExternalprogram_pl_PL.ts \
+                languages/iricGccExternalprogram_pt_BR.ts \
+                languages/iricGccExternalprogram_pt_PT.ts \
+                languages/iricGccExternalprogram_ro_RO.ts \
                 languages/iricGccExternalprogram_ru_RU.ts \
+                languages/iricGccExternalprogram_sl_SI.ts \
+                languages/iricGccExternalprogram_sv_SE.ts \
                 languages/iricGccExternalprogram_th_TH.ts \
+                languages/iricGccExternalprogram_tr_TR.ts \
+                languages/iricGccExternalprogram_uk_UA.ts \
                 languages/iricGccExternalprogram_vi_VN.ts \
-                languages/iricGccExternalprogram_zh_CN.ts
+                languages/iricGccExternalprogram_zh_CN.ts \
+                languages/iricGccExternalprogram_zh_TW.ts

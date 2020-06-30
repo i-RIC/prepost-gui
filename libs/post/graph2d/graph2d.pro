@@ -125,12 +125,42 @@ SOURCES += graph2dwindowdataitem.cpp \
            datamodel/graph2dwindowmarkerdataitem.cpp \
            datamodel/graph2dwindowmarkergroupdataitem.cpp \
            private/graph2dwindowdataitem_standarditemchangecommand.cpp
-TRANSLATIONS += languages/iricGraph2d_es_ES.ts \
+TRANSLATIONS += languages/iricGraph2d_ar_EG.ts \
+                languages/iricGraph2d_bg_BG.ts \
+                languages/iricGraph2d_bs_BA.ts \
+                languages/iricGraph2d_ca_ES.ts \
+                languages/iricGraph2d_cs_CZ.ts \
+                languages/iricGraph2d_da_DK.ts \
+                languages/iricGraph2d_de_DE.ts \
+                languages/iricGraph2d_el_GR.ts \
+                languages/iricGraph2d_es_ES.ts \
+                languages/iricGraph2d_et_EE.ts \
+                languages/iricGraph2d_eu_ES.ts \
+                languages/iricGraph2d_fi_FI.ts \
                 languages/iricGraph2d_fr_FR.ts \
+                languages/iricGraph2d_gl_ES.ts \
+                languages/iricGraph2d_hi_IN.ts \
+                languages/iricGraph2d_hu_HU.ts \
                 languages/iricGraph2d_id_ID.ts \
+                languages/iricGraph2d_is_IS.ts \
+                languages/iricGraph2d_it_IT.ts \
                 languages/iricGraph2d_ja_JP.ts \
                 languages/iricGraph2d_ko_KR.ts \
+                languages/iricGraph2d_ky_KG.ts \
+                languages/iricGraph2d_lt_LT.ts \
+                languages/iricGraph2d_lv_LV.ts \
+                languages/iricGraph2d_nb_NO.ts \
+                languages/iricGraph2d_nl_NL.ts \
+                languages/iricGraph2d_pl_PL.ts \
+                languages/iricGraph2d_pt_BR.ts \
+                languages/iricGraph2d_pt_PT.ts \
+                languages/iricGraph2d_ro_RO.ts \
                 languages/iricGraph2d_ru_RU.ts \
+                languages/iricGraph2d_sl_SI.ts \
+                languages/iricGraph2d_sv_SE.ts \
                 languages/iricGraph2d_th_TH.ts \
+                languages/iricGraph2d_tr_TR.ts \
+                languages/iricGraph2d_uk_UA.ts \
                 languages/iricGraph2d_vi_VN.ts \
-                languages/iricGraph2d_zh_CN.ts
+                languages/iricGraph2d_zh_CN.ts \
+                languages/iricGraph2d_zh_TW.ts

@@ -85,12 +85,42 @@ FORMS += gridcreatingconditiongridcombinesettingdialog.ui
 SOURCES += gridcreatingconditioncreatorgridcombine.cpp \
            gridcreatingconditiongridcombine.cpp \
            gridcreatingconditiongridcombinesettingdialog.cpp
-TRANSLATIONS += languages/iricGccGridcombine_es_ES.ts \
+TRANSLATIONS += languages/iricGccGridcombine_ar_EG.ts \
+                languages/iricGccGridcombine_bg_BG.ts \
+                languages/iricGccGridcombine_bs_BA.ts \
+                languages/iricGccGridcombine_ca_ES.ts \
+                languages/iricGccGridcombine_cs_CZ.ts \
+                languages/iricGccGridcombine_da_DK.ts \
+                languages/iricGccGridcombine_de_DE.ts \
+                languages/iricGccGridcombine_el_GR.ts \
+                languages/iricGccGridcombine_es_ES.ts \
+                languages/iricGccGridcombine_et_EE.ts \
+                languages/iricGccGridcombine_eu_ES.ts \
+                languages/iricGccGridcombine_fi_FI.ts \
                 languages/iricGccGridcombine_fr_FR.ts \
+                languages/iricGccGridcombine_gl_ES.ts \
+                languages/iricGccGridcombine_hi_IN.ts \
+                languages/iricGccGridcombine_hu_HU.ts \
                 languages/iricGccGridcombine_id_ID.ts \
+                languages/iricGccGridcombine_is_IS.ts \
+                languages/iricGccGridcombine_it_IT.ts \
                 languages/iricGccGridcombine_ja_JP.ts \
                 languages/iricGccGridcombine_ko_KR.ts \
+                languages/iricGccGridcombine_ky_KG.ts \
+                languages/iricGccGridcombine_lt_LT.ts \
+                languages/iricGccGridcombine_lv_LV.ts \
+                languages/iricGccGridcombine_nb_NO.ts \
+                languages/iricGccGridcombine_nl_NL.ts \
+                languages/iricGccGridcombine_pl_PL.ts \
+                languages/iricGccGridcombine_pt_BR.ts \
+                languages/iricGccGridcombine_pt_PT.ts \
+                languages/iricGccGridcombine_ro_RO.ts \
                 languages/iricGccGridcombine_ru_RU.ts \
+                languages/iricGccGridcombine_sl_SI.ts \
+                languages/iricGccGridcombine_sv_SE.ts \
                 languages/iricGccGridcombine_th_TH.ts \
+                languages/iricGccGridcombine_tr_TR.ts \
+                languages/iricGccGridcombine_uk_UA.ts \
                 languages/iricGccGridcombine_vi_VN.ts \
-                languages/iricGccGridcombine_zh_CN.ts
+                languages/iricGccGridcombine_zh_CN.ts \
+                languages/iricGccGridcombine_zh_TW.ts

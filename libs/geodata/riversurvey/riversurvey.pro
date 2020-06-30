@@ -293,12 +293,42 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurveymlitimporter_problemsdialog.cpp \
            private/geodatariversurveyproxy_setsettingcommand.cpp
 RESOURCES += riversurvey.qrc
-TRANSLATIONS += languages/iricGdRiversurvey_es_ES.ts \
+TRANSLATIONS += languages/iricGdRiversurvey_ar_EG.ts \
+                languages/iricGdRiversurvey_bg_BG.ts \
+                languages/iricGdRiversurvey_bs_BA.ts \
+                languages/iricGdRiversurvey_ca_ES.ts \
+                languages/iricGdRiversurvey_cs_CZ.ts \
+                languages/iricGdRiversurvey_da_DK.ts \
+                languages/iricGdRiversurvey_de_DE.ts \
+                languages/iricGdRiversurvey_el_GR.ts \
+                languages/iricGdRiversurvey_es_ES.ts \
+                languages/iricGdRiversurvey_et_EE.ts \
+                languages/iricGdRiversurvey_eu_ES.ts \
+                languages/iricGdRiversurvey_fi_FI.ts \
                 languages/iricGdRiversurvey_fr_FR.ts \
+                languages/iricGdRiversurvey_gl_ES.ts \
+                languages/iricGdRiversurvey_hi_IN.ts \
+                languages/iricGdRiversurvey_hu_HU.ts \
                 languages/iricGdRiversurvey_id_ID.ts \
+                languages/iricGdRiversurvey_is_IS.ts \
+                languages/iricGdRiversurvey_it_IT.ts \
                 languages/iricGdRiversurvey_ja_JP.ts \
                 languages/iricGdRiversurvey_ko_KR.ts \
+                languages/iricGdRiversurvey_ky_KG.ts \
+                languages/iricGdRiversurvey_lt_LT.ts \
+                languages/iricGdRiversurvey_lv_LV.ts \
+                languages/iricGdRiversurvey_nb_NO.ts \
+                languages/iricGdRiversurvey_nl_NL.ts \
+                languages/iricGdRiversurvey_pl_PL.ts \
+                languages/iricGdRiversurvey_pt_BR.ts \
+                languages/iricGdRiversurvey_pt_PT.ts \
+                languages/iricGdRiversurvey_ro_RO.ts \
                 languages/iricGdRiversurvey_ru_RU.ts \
+                languages/iricGdRiversurvey_sl_SI.ts \
+                languages/iricGdRiversurvey_sv_SE.ts \
                 languages/iricGdRiversurvey_th_TH.ts \
+                languages/iricGdRiversurvey_tr_TR.ts \
+                languages/iricGdRiversurvey_uk_UA.ts \
                 languages/iricGdRiversurvey_vi_VN.ts \
-                languages/iricGdRiversurvey_zh_CN.ts
+                languages/iricGdRiversurvey_zh_CN.ts \
+                languages/iricGdRiversurvey_zh_TW.ts

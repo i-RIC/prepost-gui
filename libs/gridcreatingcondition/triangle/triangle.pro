@@ -170,12 +170,42 @@ SOURCES += gridcreatingconditioncreatortriangle.cpp \
            private/gridcreatingconditiontriangle_polylinecoordinateseditor.cpp \
            private/gridcreatingconditiontriangle_removepolygonvertexcommand.cpp \
            private/gridcreatingconditiontriangle_removepolylinevertexcommand.cpp
-TRANSLATIONS += languages/iricGccTriangle_es_ES.ts \
+TRANSLATIONS += languages/iricGccTriangle_ar_EG.ts \
+                languages/iricGccTriangle_bg_BG.ts \
+                languages/iricGccTriangle_bs_BA.ts \
+                languages/iricGccTriangle_ca_ES.ts \
+                languages/iricGccTriangle_cs_CZ.ts \
+                languages/iricGccTriangle_da_DK.ts \
+                languages/iricGccTriangle_de_DE.ts \
+                languages/iricGccTriangle_el_GR.ts \
+                languages/iricGccTriangle_es_ES.ts \
+                languages/iricGccTriangle_et_EE.ts \
+                languages/iricGccTriangle_eu_ES.ts \
+                languages/iricGccTriangle_fi_FI.ts \
                 languages/iricGccTriangle_fr_FR.ts \
+                languages/iricGccTriangle_gl_ES.ts \
+                languages/iricGccTriangle_hi_IN.ts \
+                languages/iricGccTriangle_hu_HU.ts \
                 languages/iricGccTriangle_id_ID.ts \
+                languages/iricGccTriangle_is_IS.ts \
+                languages/iricGccTriangle_it_IT.ts \
                 languages/iricGccTriangle_ja_JP.ts \
                 languages/iricGccTriangle_ko_KR.ts \
+                languages/iricGccTriangle_ky_KG.ts \
+                languages/iricGccTriangle_lt_LT.ts \
+                languages/iricGccTriangle_lv_LV.ts \
+                languages/iricGccTriangle_nb_NO.ts \
+                languages/iricGccTriangle_nl_NL.ts \
+                languages/iricGccTriangle_pl_PL.ts \
+                languages/iricGccTriangle_pt_BR.ts \
+                languages/iricGccTriangle_pt_PT.ts \
+                languages/iricGccTriangle_ro_RO.ts \
                 languages/iricGccTriangle_ru_RU.ts \
+                languages/iricGccTriangle_sl_SI.ts \
+                languages/iricGccTriangle_sv_SE.ts \
                 languages/iricGccTriangle_th_TH.ts \
+                languages/iricGccTriangle_tr_TR.ts \
+                languages/iricGccTriangle_uk_UA.ts \
                 languages/iricGccTriangle_vi_VN.ts \
-                languages/iricGccTriangle_zh_CN.ts
+                languages/iricGccTriangle_zh_CN.ts \
+                languages/iricGccTriangle_zh_TW.ts

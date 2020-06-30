@@ -86,12 +86,42 @@ SOURCES += gridcreatingconditioncreatorrectangularregion.cpp \
            gridcreatingconditionrectangularregion.cpp \
            gridcreatingconditionrectangularregionsettingdialog.cpp
 RESOURCES += rectangularregion.qrc
-TRANSLATIONS += languages/iricGccRectangularregion_es_ES.ts \
+TRANSLATIONS += languages/iricGccRectangularregion_ar_EG.ts \
+                languages/iricGccRectangularregion_bg_BG.ts \
+                languages/iricGccRectangularregion_bs_BA.ts \
+                languages/iricGccRectangularregion_ca_ES.ts \
+                languages/iricGccRectangularregion_cs_CZ.ts \
+                languages/iricGccRectangularregion_da_DK.ts \
+                languages/iricGccRectangularregion_de_DE.ts \
+                languages/iricGccRectangularregion_el_GR.ts \
+                languages/iricGccRectangularregion_es_ES.ts \
+                languages/iricGccRectangularregion_et_EE.ts \
+                languages/iricGccRectangularregion_eu_ES.ts \
+                languages/iricGccRectangularregion_fi_FI.ts \
                 languages/iricGccRectangularregion_fr_FR.ts \
+                languages/iricGccRectangularregion_gl_ES.ts \
+                languages/iricGccRectangularregion_hi_IN.ts \
+                languages/iricGccRectangularregion_hu_HU.ts \
                 languages/iricGccRectangularregion_id_ID.ts \
+                languages/iricGccRectangularregion_is_IS.ts \
+                languages/iricGccRectangularregion_it_IT.ts \
                 languages/iricGccRectangularregion_ja_JP.ts \
                 languages/iricGccRectangularregion_ko_KR.ts \
+                languages/iricGccRectangularregion_ky_KG.ts \
+                languages/iricGccRectangularregion_lt_LT.ts \
+                languages/iricGccRectangularregion_lv_LV.ts \
+                languages/iricGccRectangularregion_nb_NO.ts \
+                languages/iricGccRectangularregion_nl_NL.ts \
+                languages/iricGccRectangularregion_pl_PL.ts \
+                languages/iricGccRectangularregion_pt_BR.ts \
+                languages/iricGccRectangularregion_pt_PT.ts \
+                languages/iricGccRectangularregion_ro_RO.ts \
                 languages/iricGccRectangularregion_ru_RU.ts \
+                languages/iricGccRectangularregion_sl_SI.ts \
+                languages/iricGccRectangularregion_sv_SE.ts \
                 languages/iricGccRectangularregion_th_TH.ts \
+                languages/iricGccRectangularregion_tr_TR.ts \
+                languages/iricGccRectangularregion_uk_UA.ts \
                 languages/iricGccRectangularregion_vi_VN.ts \
-                languages/iricGccRectangularregion_zh_CN.ts
+                languages/iricGccRectangularregion_zh_CN.ts \
+                languages/iricGccRectangularregion_zh_TW.ts

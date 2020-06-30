@@ -105,12 +105,42 @@ SOURCES += polygoncsvexporter.cpp \
            polylineshapeimporter.cpp \
            private/csvhelper.cpp \
            private/dbfitemselectdialog.cpp
-TRANSLATIONS += languages/iricGeoIO_ES.ts \
+TRANSLATIONS += languages/iricGeoIO_ar_EG.ts \
+                languages/iricGeoIO_bg_BG.ts \
+                languages/iricGeoIO_bs_BA.ts \
+                languages/iricGeoIO_ca_ES.ts \
+                languages/iricGeoIO_cs_CZ.ts \
+                languages/iricGeoIO_da_DK.ts \
+                languages/iricGeoIO_de_DE.ts \
+                languages/iricGeoIO_el_GR.ts \
+                languages/iricGeoIO_es_ES.ts \
+                languages/iricGeoIO_et_EE.ts \
+                languages/iricGeoIO_eu_ES.ts \
+                languages/iricGeoIO_fi_FI.ts \
                 languages/iricGeoIO_fr_FR.ts \
+                languages/iricGeoIO_gl_ES.ts \
+                languages/iricGeoIO_hi_IN.ts \
+                languages/iricGeoIO_hu_HU.ts \
                 languages/iricGeoIO_id_ID.ts \
+                languages/iricGeoIO_is_IS.ts \
+                languages/iricGeoIO_it_IT.ts \
                 languages/iricGeoIO_ja_JP.ts \
                 languages/iricGeoIO_ko_KR.ts \
+                languages/iricGeoIO_ky_KG.ts \
+                languages/iricGeoIO_lt_LT.ts \
+                languages/iricGeoIO_lv_LV.ts \
+                languages/iricGeoIO_nb_NO.ts \
+                languages/iricGeoIO_nl_NL.ts \
+                languages/iricGeoIO_pl_PL.ts \
+                languages/iricGeoIO_pt_BR.ts \
+                languages/iricGeoIO_pt_PT.ts \
+                languages/iricGeoIO_ro_RO.ts \
                 languages/iricGeoIO_ru_RU.ts \
+                languages/iricGeoIO_sl_SI.ts \
+                languages/iricGeoIO_sv_SE.ts \
                 languages/iricGeoIO_th_TH.ts \
+                languages/iricGeoIO_tr_TR.ts \
+                languages/iricGeoIO_uk_UA.ts \
                 languages/iricGeoIO_vi_VN.ts \
-                languages/iricGeoIO_zh_CN.ts
+                languages/iricGeoIO_zh_CN.ts \
+                languages/iricGeoIO_zh_TW.ts
