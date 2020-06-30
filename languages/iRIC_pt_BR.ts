@@ -28,7 +28,7 @@
         <translation type="unfinished">Arquivo LandXml (*.xml)</translation>
     </message>
 </context>
-<!-- iricAxis2d_fr_FR.ts -->
+<!-- iricAxis2d_pt_BR.ts -->
 <context>
     <name>Axis2dDataItem</name>
     <message>
@@ -37,7 +37,7 @@
         <translation type="unfinished">Eixo de coordenadas</translation>
     </message>
 </context>
-<!-- iricAxis3d_fr_FR.ts -->
+<!-- iricAxis3d_pt_BR.ts -->
 <context>
     <name>Axis3dDataItem</name>
     <message>
@@ -46,7 +46,7 @@
         <translation type="unfinished">Eixo de coordenadas</translation>
     </message>
 </context>
-<!-- iricCs_fr_FR.ts -->
+<!-- iricCs_pt_BR.ts -->
 <context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
@@ -75,7 +75,7 @@
         <translation type="unfinished">(Nao foi especificado)</translation>
     </message>
 </context>
-<!-- iricDistancemeasure_fr_FR.ts -->
+<!-- iricDistancemeasure_pt_BR.ts -->
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
@@ -231,7 +231,7 @@
         <translation type="unfinished">Cor de exibicao:</translation>
     </message>
 </context>
-<!-- iricGccCenterandwidth_fr_FR.ts -->
+<!-- iricGccCenterandwidth_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
@@ -381,7 +381,7 @@
         <translation type="unfinished">Primeiro, defina uma polilinha clicando na area de delineamento. A polilinha definida sera usada como a linha central da grade. Em seguida, especifique a largura da grade e o numero de divisoes em cada uma das direcoes I e J para criar a grade.</translation>
     </message>
 </context>
-<!-- iricGccCompoundchannel_fr_FR.ts -->
+<!-- iricGccCompoundchannel_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
@@ -603,7 +603,7 @@
         <translation type="unfinished">A regiao do canal de agua devera ser incluida na area de criacao da grade e a linha central do rio devera ser incluida na regiao do canal de agua.</translation>
     </message>
 </context>
-<!-- iricGccExternalprogram_fr_FR.ts -->
+<!-- iricGccExternalprogram_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
@@ -681,7 +681,7 @@
         <translation type="unfinished">Erro desconhecido (codigo de erro %1)</translation>
     </message>
 </context>
-<!-- iricGccGridcombine_fr_FR.ts -->
+<!-- iricGccGridcombine_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
@@ -833,7 +833,7 @@
         <translation type="unfinished">Altura do leito fluvial pela celula de obstaculos:</translation>
     </message>
 </context>
-<!-- iricGccGridgenerator_fr_FR.ts -->
+<!-- iricGccGridgenerator_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
@@ -1110,7 +1110,7 @@
         <translation type="unfinished">Valor de variacao sobre a largura do rio </translation>
     </message>
 </context>
-<!-- iricGccLaplace_fr_FR.ts -->
+<!-- iricGccLaplace_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
@@ -1493,7 +1493,7 @@
         <translation type="unfinished">Criar grade (&amp;G)</translation>
     </message>
 </context>
-<!-- iricGccPoisson_fr_FR.ts -->
+<!-- iricGccPoisson_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
@@ -1734,7 +1734,7 @@
         <translation type="unfinished">Numero maximo de calculos iterativos:</translation>
     </message>
 </context>
-<!-- iricGccRectangularregionlonlat_fr_FR.ts -->
+<!-- iricGccRectangularregionlonlat_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
     <message>
@@ -1799,7 +1799,7 @@
         <translation type="unfinished">--</translation>
     </message>
 </context>
-<!-- iricGccRectangularregion_fr_FR.ts -->
+<!-- iricGccRectangularregion_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
@@ -1864,7 +1864,7 @@
         <translation type="unfinished">--</translation>
     </message>
 </context>
-<!-- iricGccRiversurvey15d_fr_FR.ts -->
+<!-- iricGccRiversurvey15d_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
@@ -2118,7 +2118,7 @@
         <translation type="unfinished">O numero de pontos de levantamento encontrados na linha transversal do rio, os quais serao procriados por interpolacao, deveria ser o numero impar. Incrementar em 1.</translation>
     </message>
 </context>
-<!-- iricGccRiversurvey_fr_FR.ts -->
+<!-- iricGccRiversurvey_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
@@ -2362,7 +2362,7 @@
         <translation type="unfinished">Linha transversal final :</translation>
     </message>
 </context>
-<!-- iricGccTriangle_fr_FR.ts -->
+<!-- iricGccTriangle_pt_BR.ts -->
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
@@ -2763,7 +2763,7 @@
         <translation type="unfinished">&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
-<!-- iricGdNetcdf_fr_FR.ts -->
+<!-- iricGdNetcdf_pt_BR.ts -->
 <context>
     <name>GeoDataNetcdf</name>
     <message>
@@ -3042,7 +3042,7 @@
         <translation type="unfinished">Valores de dimensao para " tempo" sao incompativeis.</translation>
     </message>
 </context>
-<!-- iricGdPointmap_fr_FR.ts -->
+<!-- iricGdPointmap_pt_BR.ts -->
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
@@ -3889,7 +3889,7 @@
         <translation type="unfinished">Adicionar pontos de interpolacao</translation>
     </message>
 </context>
-<!-- iricGdPolygonGroup_fr_FR.ts -->
+<!-- iricGdPolygonGroup_pt_BR.ts -->
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
@@ -4121,7 +4121,7 @@
         <translation type="unfinished">Voce nao podera especificar a mesma coluna para Nome e Valor.</translation>
     </message>
 </context>
-<!-- iricGdPolygon_fr_FR.ts -->
+<!-- iricGdPolygon_pt_BR.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
@@ -4427,7 +4427,7 @@
         <translation type="unfinished">ESRI Shapefile (*.shp)</translation>
     </message>
 </context>
-<!-- iricGdPolyLine_fr_FR.ts -->
+<!-- iricGdPolyLine_pt_BR.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
@@ -4692,7 +4692,7 @@
         <translation type="unfinished">ESRI Shapefile (Grupo de poligono)  (*.shp)</translation>
     </message>
 </context>
-<!-- iricGdRiversurvey_fr_FR.ts -->
+<!-- iricGdRiversurvey_pt_BR.ts -->
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
@@ -6337,7 +6337,7 @@
         <translation type="unfinished">Remover os pontos de controle da criacao de grade</translation>
     </message>
 </context>
-<!-- iricGeoIO_fr_FR.ts -->
+<!-- iricGeoIO_pt_BR.ts -->
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -6508,7 +6508,7 @@
         <translation type="unfinished">Selecionar o arquivo para exportar</translation>
     </message>
 </context>
-<!-- iricGraph2dhybrid_fr_FR.ts -->
+<!-- iricGraph2dhybrid_pt_BR.ts -->
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
@@ -7570,7 +7570,7 @@
         <translation type="unfinished">Margem da direcao J</translation>
     </message>
 </context>
-<!-- iricGraph2dscattered_fr_FR.ts -->
+<!-- iricGraph2dscattered_pt_BR.ts -->
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
@@ -7970,7 +7970,7 @@
         <translation type="unfinished">Cor de exibicao:</translation>
     </message>
 </context>
-<!-- iricGraph2d_fr_FR.ts -->
+<!-- iricGraph2d_pt_BR.ts -->
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
@@ -8177,7 +8177,7 @@
         <translation type="unfinished">Remover para baixo</translation>
     </message>
 </context>
-<!-- iricGuibase_fr_FR.ts -->
+<!-- iricGuibase_pt_BR.ts -->
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -9144,7 +9144,7 @@
         <translation type="unfinished">Dimensao :</translation>
     </message>
 </context>
-<!-- iricGuicore_fr_FR.ts -->
+<!-- iricGuicore_pt_BR.ts -->
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -11327,7 +11327,7 @@
         <translation type="unfinished">O numero da compilacao sobre o numero da versao nao foi especificado.</translation>
     </message>
 </context>
-<!-- iricGui_fr_FR.ts -->
+<!-- iricGui_pt_BR.ts -->
 <context>
     <name>AnimationController</name>
     <message>
@@ -14123,7 +14123,7 @@
         <translation type="unfinished">Ctrl+C</translation>
     </message>
 </context>
-<!-- iricHdRiversurveywaterelevation_fr_FR.ts -->
+<!-- iricHdRiversurveywaterelevation_pt_BR.ts -->
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
@@ -14183,7 +14183,7 @@
         <translation type="unfinished">Arquivo do texto  (*.txt)</translation>
     </message>
 </context>
-<!-- iricMeasureddata_fr_FR.ts -->
+<!-- iricMeasureddata_pt_BR.ts -->
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
@@ -14355,7 +14355,7 @@
         <translation type="unfinished">Configuracao de barra das cores (&amp;C)</translation>
     </message>
 </context>
-<!-- iricMisc_fr_FR.ts -->
+<!-- iricMisc_pt_BR.ts -->
 <context>
     <name>InformationDialog</name>
     <message>
@@ -14398,7 +14398,7 @@
         <translation type="unfinished">Houve falha ao abrir o arquivo de %1.</translation>
     </message>
 </context>
-<!-- iricPost2dbirdeye_fr_FR.ts -->
+<!-- iricPost2dbirdeye_pt_BR.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -14589,7 +14589,7 @@
         <translation type="unfinished">Criar contorno</translation>
     </message>
 </context>
-<!-- iricPost2d_fr_FR.ts -->
+<!-- iricPost2d_pt_BR.ts -->
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -16175,7 +16175,7 @@
         <translation type="unfinished">Atualizar a configuracao de valor do poligono</translation>
     </message>
 </context>
-<!-- iricPost3d_fr_FR.ts -->
+<!-- iricPost3d_pt_BR.ts -->
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -17083,7 +17083,7 @@
         <translation type="unfinished">Excluir isosuperficie</translation>
     </message>
 </context>
-<!-- iricPostbase_fr_FR.ts -->
+<!-- iricPostbase_pt_BR.ts -->
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
@@ -17524,7 +17524,7 @@
         <translation type="unfinished">Atencao: Somente os caracteres alfanumericos e simbolos poderao ser usados para o titulo.</translation>
     </message>
 </context>
-<!-- iricPre_fr_FR.ts -->
+<!-- iricPre_pt_BR.ts -->
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
@@ -19817,7 +19817,7 @@
         <translation type="unfinished">Deslocar (&amp;M)</translation>
     </message>
 </context>
-<!-- iricSolverconsole_fr_FR.ts -->
+<!-- iricSolverconsole_pt_BR.ts -->
 <context>
     <name>SolverConsoleWindow</name>
     <message>
@@ -19978,7 +19978,7 @@
         <translation type="unfinished">Falhou a exportacao de log do solucionador.</translation>
     </message>
 </context>
-<!-- rivmaker_fr_FR.ts -->
+<!-- rivmaker_pt_BR.ts -->
 <context>
     <name>AboutDialog</name>
     <message>
@@ -21228,7 +21228,7 @@
         <translation type="unfinished">Pontos de elevacao da superficie de agua</translation>
     </message>
 </context>
-<!-- structured2dgridnayscsvexporter_fr_FR.ts -->
+<!-- structured2dgridnayscsvexporter_pt_BR.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -21245,7 +21245,7 @@
         <translation type="unfinished">RIC-Nays CSV</translation>
     </message>
 </context>
-<!-- structured2dgridnayscsvimporter_fr_FR.ts -->
+<!-- structured2dgridnayscsvimporter_pt_BR.ts -->
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
@@ -21270,7 +21270,7 @@
         <translation type="unfinished">%1</translation>
     </message>
 </context>
-<!-- structured2dgridnaysgridexporter_fr_FR.ts -->
+<!-- structured2dgridnaysgridexporter_pt_BR.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -21287,7 +21287,7 @@
         <translation type="unfinished">Arquivo da grade de RIC-Nays</translation>
     </message>
 </context>
-<!-- structured2dgridnaysgridimporter_fr_FR.ts -->
+<!-- structured2dgridnaysgridimporter_pt_BR.ts -->
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
@@ -21311,7 +21311,7 @@
         <translation type="unfinished">Os valores do sinalizador de celula nao serao carregados.</translation>
     </message>
 </context>
-<!-- structured2dgridvtkexporter_fr_FR.ts -->
+<!-- structured2dgridvtkexporter_pt_BR.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -21328,7 +21328,7 @@
         <translation type="unfinished">Arquivo VTK</translation>
     </message>
 </context>
-<!-- unstructured2dgridtriangleimporter_fr_FR.ts -->
+<!-- unstructured2dgridtriangleimporter_pt_BR.ts -->
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
@@ -21354,7 +21354,7 @@
         <translation type="unfinished">%1 nao existe.</translation>
     </message>
 </context>
-<!-- unstructured2dgridvtkexporter_fr_FR.ts -->
+<!-- unstructured2dgridvtkexporter_pt_BR.ts -->
 <context>
     <name>QObject</name>
     <message>
