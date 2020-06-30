@@ -12,8 +12,6 @@
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="22"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.</source>
         <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera controlar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha transversal do rio, a linha central do rio, a linha da margem esquerda e a linha da margem direita.</translation>
-        <translation>Nota: Este algoritmo sera disponivel somente quando baixar os dados de levantamento do curso fluvial .  Selecione este algoritmo depois de baixar os dados de levantamento do curso fluvial.</translation>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>

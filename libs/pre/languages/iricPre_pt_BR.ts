@@ -93,9 +93,8 @@
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
-        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.</source>
         <translation>Este arquivo e para % 1 % 2, portanto nao e compativel com o atual solucionador. Se voce continuar, somente uma parte dos atributos da grade podera ser importada.</translation>
-        <translation>Deseja importar a grade deste arquivo?</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="124"/>
@@ -104,9 +103,8 @@
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
-        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.</source>
         <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce importar a grade de um arquivo CGNS incompativel, somente uma parte dos atributos da grade podera ser importada.</translation>
-        <translation>Deseja importar a grade deste arquivo?</translation>
     </message>
 </context>
 <context>
@@ -844,9 +842,8 @@
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
-        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
         <translation>O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
-        <translation>%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
@@ -1118,15 +1115,6 @@
         <translation>Automatico</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="44"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Quando a grade for criada, voce sera sempre perguntado se deseja executar o Mapeamento de Atributos. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="75"/>
         <source>Manual</source>
         <translation>Especificar  </translation>
@@ -1158,9 +1146,8 @@
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="175"/>
-        <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
+        <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.</source>
         <translation>Localize um ponto considerando a forma da celula da grade e use o valor no ponto encontrado para interpolacao.</translation>
-        <translation>Este algoritmo sera disponivel somente para grades estruturadas.</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="191"/>
@@ -1807,9 +1794,8 @@
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
-        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
         <translation>O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
-        <translation>%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>

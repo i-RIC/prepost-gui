@@ -438,9 +438,8 @@
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="700"/>
-        <source>River survey data is generated using Points data.
+        <source>River survey data is generated using Points data.</source>
         <translation>Os dados de levantamento do rio foram criados atraves dos dados do terreno</translation>
-        <translation>Se voce deseja ajustar a posicao e/ou a direcao da linha transversal e executar o remapeamento, use o menu "Map points data".</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="708"/>
@@ -1044,9 +1043,8 @@
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
-        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
+        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.</source>
         <translation>Edite a secao transversal usando o mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
-        <translation>Voce podera tambem efetuar a edicao minuciosa, atraves de inserir  os valores numericos da caixa de dialogo. Para editar da caixa de dialogo, selecione &quot; Editar da caixa de Dialogo &quot; dentro de menu pelo botao direito.</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_mouseeditcrosssectioncommand.cpp" line="8"/>
