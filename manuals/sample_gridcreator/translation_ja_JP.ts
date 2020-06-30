@@ -4,44 +4,64 @@
 <context>
     <name></name>
     <message>
-        <source>Sample Grid Creator</source>
-        <translation>サンプル格子生成プログラム</translation>
+        <source>Sample Solver</source>
+        <translation>サンプルソルバー</translation>
     </message>
     <message>
-        <source>Grid Size</source>
-        <translation>格子サイズ</translation>
+        <source>Basic Settings</source>
+        <translation>基本設定</translation>
     </message>
     <message>
-        <source>IMax</source>
-        <translation>I 最大値</translation>
+        <source>Maximum number of Iterations</source>
+        <translation>繰り返し数</translation>
     </message>
     <message>
-        <source>JMax</source>
-        <translation>J 最大値</translation>
+        <source>Time Step</source>
+        <translation>時間刻み幅</translation>
     </message>
     <message>
-        <source>Elevation Output</source>
-        <translation>標高の出力</translation>
+        <source>Water Surface Elevation</source>
+        <translation>水面標高</translation>
     </message>
     <message>
-        <source>Output</source>
-        <translation>出力</translation>
+        <source>Type</source>
+        <translation>種類</translation>
     </message>
     <message>
-        <source>Enabled</source>
-        <translation>行う</translation>
+        <source>Constant</source>
+        <translation>一定</translation>
     </message>
     <message>
-        <source>Disabled</source>
-        <translation>行わない</translation>
+        <source>Time Dependent</source>
+        <translation>時間依存</translation>
     </message>
     <message>
-        <source>Value</source>
-        <translation>値</translation>
+        <source>Constant Value</source>
+        <translation>一定値</translation>
     </message>
     <message>
-        <source>IMax * JMax must be smaller than 100,000.</source>
-        <translation>I 最大値 × J最大値 は、100,000 以下でなくてはいけません。</translation>
+        <source>Time Dependent Value</source>
+        <translation>時間依存値</translation>
+    </message>
+    <message>
+        <source>Time(s)</source>
+        <translation>時刻(s)</translation>
+    </message>
+    <message>
+        <source>Elevation(m) </source>
+        <translation>標高(m)</translation>
+    </message>
+    <message>
+        <source>Elevation</source>
+        <translation>地形</translation>
+    </message>
+    <message>
+        <source>Obstacle</source>
+        <translation>障害物</translation>
+    </message>
+    <message>
+        <source>Normal cell</source>
+        <translation>通常セル</translation>
     </message>
 </context>
 </TS>

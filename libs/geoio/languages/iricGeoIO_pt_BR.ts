@@ -6,17 +6,17 @@
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="20"/>
         <source>Please select item to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione o item para importar.</translation>
     </message>
     <message>
         <location filename="../private/dbfitemselectdialog.ui" line="29"/>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificacao:</translation>
     </message>
 </context>
 <context>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../polygoncsvexporter.cpp" line="18"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo CSV  (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../polygoncsvimporter.cpp" line="31"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo CSV  (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../polygonshapeexporter.cpp" line="62"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de shapefile (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -49,22 +49,22 @@
         <location filename="../polygonshapeimporter.cpp" line="37"/>
         <location filename="../polygonshapeimporter.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../polygonshapeimporter.cpp" line="37"/>
         <source>This polygon contains holes. This polygon can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este poligono contem furos. Este poligono nao podera ser importado.</translation>
     </message>
     <message>
         <location filename="../polygonshapeimporter.cpp" line="73"/>
         <source>The shape type contained in this file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>O tipo de formato contido neste arquivo nao e de poligono.</translation>
     </message>
     <message>
         <location filename="../polygonshapeimporter.cpp" line="95"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de shapefile (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../polylinecsvexporter.cpp" line="16"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../polylinecsvexporter.cpp" line="34"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo CSV  (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -85,30 +85,30 @@
     <message>
         <location filename="../polylinecsvimporter.cpp" line="17"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Atencao</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="30"/>
         <location filename="../polylinecsvimporter.cpp" line="52"/>
         <location filename="../polylinecsvimporter.cpp" line="57"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="30"/>
         <location filename="../polylinecsvimporter.cpp" line="52"/>
         <source>Data need two columns.</source>
-        <translation type="unfinished"></translation>
+        <translation>Os dados deveriam ter duas colunas.</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="57"/>
         <source>Data must be real numbers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Os dados deveriam ser de valores reais.</translation>
     </message>
     <message>
         <location filename="../polylinecsvimporter.cpp" line="74"/>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo CSV  (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../polylineshapeexporter.cpp" line="62"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de shapefile (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -125,22 +125,22 @@
         <location filename="../polylineshapeimporter.cpp" line="36"/>
         <location filename="../polylineshapeimporter.cpp" line="69"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="36"/>
         <source>This polyline is composed of multiple line strings. This polyline can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta polilinha consiste em varias linhas. Esta polilinha nao podera ser importada.</translation>
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="69"/>
         <source>The shape type contained in this file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>O tipo de formato contido neste arquivo nao e de polilinha.</translation>
     </message>
     <message>
         <location filename="../polylineshapeimporter.cpp" line="91"/>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de shapefile (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -148,27 +148,27 @@
     <message>
         <location filename="../io.h" line="29"/>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os arquivos importaveis (%1)</translation>
     </message>
     <message>
         <location filename="../io.h" line="35"/>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar o arquivo para importar</translation>
     </message>
     <message>
         <location filename="../io.h" line="48"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Atencao</translation>
     </message>
     <message>
         <location filename="../io.h" line="48"/>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>O tipo de arquivo nao podera ser reconhecido atraves de extensao do arquivo: %1</translation>
     </message>
     <message>
         <location filename="../io.h" line="82"/>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar o arquivo para exportar</translation>
     </message>
 </context>
 </TS>

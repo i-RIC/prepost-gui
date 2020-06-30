@@ -6,7 +6,7 @@
     <message>
         <location filename="../axis3ddataitem.cpp" line="41"/>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo de coordenadas</translation>
     </message>
 </context>
 </TS>
