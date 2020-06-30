@@ -74,7 +74,7 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;UTM 座標系 (EPSG:32601 - 32760 など) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="56"/>
         <source>(Not Specified)</source>
         <translation>(指定されていない)</translation>
     </message>
@@ -4919,44 +4919,44 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="335"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="529"/>
         <source>Edit name</source>
         <translation>名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="529"/>
         <source>Name:</source>
         <translation>名前:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="544"/>
+        <location filename="../geodatapolygongroup.cpp" line="549"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="601"/>
-        <location filename="../geodatapolygongroup.cpp" line="694"/>
+        <location filename="../geodatapolygongroup.cpp" line="606"/>
+        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="606"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation>&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="694"/>
+        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>本当に選択されたポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="838"/>
-        <location filename="../geodatapolygongroup.cpp" line="881"/>
+        <location filename="../geodatapolygongroup.cpp" line="853"/>
+        <location filename="../geodatapolygongroup.cpp" line="896"/>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
     </message>
@@ -4970,62 +4970,62 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">追加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Add New Polygon...</source>
         <translation>新しいポリゴンの追加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Select...</source>
         <translation>選択 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
         <source>&amp;Merge...</source>
         <translation>マージ (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
         <source>&amp;Delete</source>
         <translation>削除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Edit &amp;Name...</source>
         <translation>名前の編集 (&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
         <source>Edit &amp;Name and Value...</source>
         <translation>名前と値の編集 (&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
         <source>Color &amp;Setting...</source>
         <translation>表示色設定 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
         <source>Show Attribute &amp;Browser</source>
         <translation>属性ブラウザの表示 (&amp;B)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
         <source>Move to top</source>
         <translation>先頭に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
         <source>Move to bottom</source>
         <translation>最後に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="85"/>
         <source>Move up</source>
         <translation>上に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="86"/>
         <source>Move down</source>
         <translation>下に移動</translation>
     </message>
@@ -5367,23 +5367,23 @@ p, li { white-space: pre-wrap; }
         <translation>表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="195"/>
+        <location filename="../geodatapolygon.cpp" line="205"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="581"/>
+        <location filename="../geodatapolygon.cpp" line="592"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Edit name</source>
         <translation>名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Name:</source>
         <translation>名前:</translation>
     </message>
@@ -5413,13 +5413,13 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴンの頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="576"/>
-        <location filename="../geodatapolygon.cpp" line="1085"/>
+        <location filename="../geodatapolygon.cpp" line="587"/>
+        <location filename="../geodatapolygon.cpp" line="1096"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="576"/>
+        <location filename="../geodatapolygon.cpp" line="587"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
@@ -5429,23 +5429,23 @@ p, li { white-space: pre-wrap; }
         <translation>穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1057"/>
-        <location filename="../geodatapolygon.cpp" line="1245"/>
+        <location filename="../geodatapolygon.cpp" line="1068"/>
+        <location filename="../geodatapolygon.cpp" line="1256"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1057"/>
+        <location filename="../geodatapolygon.cpp" line="1068"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1085"/>
+        <location filename="../geodatapolygon.cpp" line="1096"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>本当にこのポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1245"/>
+        <location filename="../geodatapolygon.cpp" line="1256"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -5455,13 +5455,13 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴン値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1293"/>
-        <location filename="../geodatapolygon.cpp" line="1314"/>
+        <location filename="../geodatapolygon.cpp" line="1302"/>
+        <location filename="../geodatapolygon.cpp" line="1323"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1294"/>
+        <location filename="../geodatapolygon.cpp" line="1303"/>
         <source>Please input new value in this polygon.</source>
         <translation>このポリゴン内での値を入力してください。</translation>
     </message>
@@ -5471,12 +5471,12 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1489"/>
+        <location filename="../geodatapolygon.cpp" line="1497"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1489"/>
+        <location filename="../geodatapolygon.cpp" line="1497"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
@@ -9202,14 +9202,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
         <source>Min:</source>
         <translation>最小値:</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
         <source>Max:</source>
         <translation>最大値:</translation>
     </message>
@@ -10238,14 +10238,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="48"/>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="217"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="62"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="231"/>
         <source>Min:</source>
         <translation>最小値:</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="62"/>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="231"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="48"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="217"/>
         <source>Max:</source>
         <translation>最大値:</translation>
     </message>
@@ -14075,24 +14075,24 @@ Do you really want to import this file?</source>
         <translation>%1 %2行目: 最大値 %4 より大きい値 %3 が入力されています</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="465"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Choose a text file</source>
         <translation>テキストファイルの選択</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="465"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="488"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="488"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
@@ -14107,27 +14107,27 @@ Do you really want to import this file?</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="348"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="354"/>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
         <translation>%1 は、区間で定義される値です。例えば、2行目に指定された値は1行目と2行目の間の区間の値です。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="479"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>Specify file name to save</source>
         <translation>保存するファイルの名前を指定</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="479"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>CSV files (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
         <source>Values are copied to clipboard.</source>
         <translation>クリップボードに値がコピーされました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="587"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="593"/>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
         <translation>ファイル %1 は、計算条件 %2 にインポートされた後更新されています。更新された値をインポートしますか?</translation>
     </message>
@@ -14136,33 +14136,33 @@ Do you really want to import this file?</source>
         <translation type="vanished">ファイル %1 は、計算条件 %2 にインポートされた後更新されています。更新された値をインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="588"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="619"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="594"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="619"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>ショートカットキー &quot;Ctrl + C&quot;, &quot;Ctrl + V&quot; によって、値をコピー＆ペーストできます。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="675"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="681"/>
         <source>The following problems found: 
 </source>
         <translation>以下の問題が見つかりました:
 </translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="678"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="684"/>
         <source>
  ... and other %1 errors</source>
         <translation>
  ... その他 %1 件のエラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="680"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="686"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -16091,42 +16091,42 @@ Do you really want to import this file?</source>
 <context>
     <name>AnimationController</name>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="115"/>
+        <location filename="../misc/animationcontroller.cpp" line="118"/>
         <source>Animation ToolBar</source>
         <translation>アニメーションツールバー</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="232"/>
+        <location filename="../misc/animationcontroller.cpp" line="235"/>
         <source>&amp;Animation</source>
         <translation>アニメーション(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="247"/>
+        <location filename="../misc/animationcontroller.cpp" line="250"/>
         <source>Step &amp;Backward</source>
         <translation>一つ前へ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="250"/>
+        <location filename="../misc/animationcontroller.cpp" line="253"/>
         <source>Step &amp;Forward</source>
         <translation>一つ次へ(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="256"/>
+        <location filename="../misc/animationcontroller.cpp" line="259"/>
         <source>Go to &amp;Last Step</source>
         <translation>最後のステップへ(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="259"/>
+        <location filename="../misc/animationcontroller.cpp" line="262"/>
         <source>&amp;Start/Stop Animation</source>
         <translation>開始/停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="262"/>
+        <location filename="../misc/animationcontroller.cpp" line="265"/>
         <source>S&amp;top Animation</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="269"/>
+        <location filename="../misc/animationcontroller.cpp" line="272"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation>再生速度を設定(&amp;E)...</translation>
     </message>
@@ -16139,7 +16139,7 @@ Do you really want to import this file?</source>
         <translation type="obsolete">一つ次へ(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="253"/>
+        <location filename="../misc/animationcontroller.cpp" line="256"/>
         <source>&amp;Reset</source>
         <translation>先頭へ(&amp;R)</translation>
     </message>
@@ -16156,7 +16156,7 @@ Do you really want to import this file?</source>
         <translation type="obsolete">停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="265"/>
+        <location filename="../misc/animationcontroller.cpp" line="268"/>
         <source>Toggle &amp;following last step</source>
         <translation>常に最後のステップを表示(&amp;F)</translation>
     </message>
@@ -31896,200 +31896,155 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>VerificationGraphDialog</name>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="14"/>
         <source>Verification</source>
-        <translation>計算結果と実測値の比較</translation>
+        <translation type="vanished">計算結果と実測値の比較</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="26"/>
         <source>Chart Type:</source>
-        <translation>グラフの種類:</translation>
+        <translation type="vanished">グラフの種類:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="41"/>
         <source>TextLabel</source>
-        <translation>テキストラベル</translation>
+        <translation type="vanished">テキストラベル</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="66"/>
         <source>&amp;Setting...</source>
-        <translation>設定(&amp;S)...</translation>
+        <translation type="vanished">設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="73"/>
         <source>&amp;Export...</source>
-        <translation>エクスポート(&amp;E)...</translation>
+        <translation type="vanished">エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="80"/>
         <source>&amp;Close</source>
-        <translation>閉じる(&amp;C)</translation>
+        <translation type="vanished">閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="120"/>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation>流れ方向の距離 vs 実測値と計算結果</translation>
+        <translation type="vanished">流れ方向の距離 vs 実測値と計算結果</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="121"/>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation>流れ方向の距離 vs 残余誤差</translation>
+        <translation type="vanished">流れ方向の距離 vs 残余誤差</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="123"/>
         <source>Measured Values vs. Calculation Result</source>
-        <translation>実測値 vs 計算結果</translation>
+        <translation type="vanished">実測値 vs 計算結果</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="124"/>
         <source>Measured Values vs. Residual Errors</source>
-        <translation>実測値 vs 残余誤差</translation>
+        <translation type="vanished">実測値 vs 残余誤差</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>Export CSV file</source>
-        <translation>CSV ファイルのエクスポート</translation>
+        <translation type="vanished">CSV ファイルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>CSV file (*.csv)</source>
-        <translation>CSVファイル (*.csv)</translation>
+        <translation type="vanished">CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>%1 cound not be opened.</source>
-        <translation>%1 を開けませんでした。</translation>
+        <translation type="vanished">%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Information</source>
-        <translation>情報</translation>
+        <translation type="vanished">情報</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Data successfully exported to %1.</source>
-        <translation>データは、%1 にエクスポートされました。</translation>
+        <translation type="vanished">データは、%1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="375"/>
         <source>Root Mean Squared Error: %1</source>
-        <translation>Root Mean Squared Error: %1</translation>
+        <translation type="vanished">Root Mean Squared Error: %1</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="398"/>
         <source>Measured Values (%1)</source>
-        <translation>実測値 (%1)</translation>
+        <translation type="vanished">実測値 (%1)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="402"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="420"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="428"/>
         <source>Calculation Result (%1)</source>
-        <translation>計算結果 (%1)</translation>
+        <translation type="vanished">計算結果 (%1)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="405"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="414"/>
         <source>Stream-wise Distance</source>
-        <translation>流れ方向の距離</translation>
+        <translation type="vanished">流れ方向の距離</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="406"/>
         <source>Values</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="410"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="415"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="433"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="438"/>
         <source>Residual Error</source>
-        <translation>残余誤差</translation>
+        <translation type="vanished">残余誤差</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="427"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="437"/>
         <source>Measured Value (%1)</source>
-        <translation>実測値 (%1)</translation>
+        <translation type="vanished">実測値 (%1)</translation>
     </message>
 </context>
 <context>
     <name>VerificationSettingDialog</name>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="14"/>
         <source>Verification Setting</source>
-        <translation>実測値と計算結果の比較設定</translation>
+        <translation type="vanished">実測値と計算結果の比較設定</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="20"/>
         <source>Timestep</source>
-        <translation>タイムステップ</translation>
+        <translation type="vanished">タイムステップ</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="26"/>
         <source>Select the timestep of calculation result</source>
-        <translation>計算結果のタイムステップを選択してください</translation>
+        <translation type="vanished">計算結果のタイムステップを選択してください</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="46"/>
         <source>Calculation Result</source>
-        <translation>計算結果</translation>
+        <translation type="vanished">計算結果</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="52"/>
         <source>Select which physical value to use for comparison.</source>
-        <translation>どの物理量を比較に用いるか選択してください。</translation>
+        <translation type="vanished">どの物理量を比較に用いるか選択してください。</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="61"/>
         <source>Grid:</source>
-        <translation>格子:</translation>
+        <translation type="vanished">格子:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="71"/>
         <source>Physical Value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="86"/>
         <source>Measured Values</source>
-        <translation>実測値</translation>
+        <translation type="vanished">実測値</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="92"/>
         <source>Select which measured value to use for comparison.</source>
-        <translation>どの実測値を比較に用いるか選択してください。</translation>
+        <translation type="vanished">どの実測値を比較に用いるか選択してください。</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="101"/>
         <source>File:</source>
-        <translation>ファイル:</translation>
+        <translation type="vanished">ファイル:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="111"/>
         <source>Value:</source>
-        <translation>値:</translation>
+        <translation type="vanished">値:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
-        <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
         <source>No Physical Value is selected.</source>
-        <translation>物理量が選択されていません。</translation>
+        <translation type="vanished">物理量が選択されていません。</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>No Value is selected.</source>
-        <translation>値が選択されていません。</translation>
+        <translation type="vanished">値が選択されていません。</translation>
     </message>
 </context>
 <context>
@@ -32198,19 +32153,19 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="351"/>
         <location filename="../main/iricmainwindow.cpp" line="471"/>
         <location filename="../main/iricmainwindow.cpp" line="580"/>
-        <location filename="../main/iricmainwindow.cpp" line="821"/>
-        <location filename="../main/iricmainwindow.cpp" line="874"/>
-        <location filename="../main/iricmainwindow.cpp" line="888"/>
-        <location filename="../main/iricmainwindow.cpp" line="906"/>
-        <location filename="../main/iricmainwindow.cpp" line="964"/>
-        <location filename="../main/iricmainwindow.cpp" line="1120"/>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
-        <location filename="../main/iricmainwindow.cpp" line="1739"/>
-        <location filename="../main/iricmainwindow.cpp" line="1743"/>
-        <location filename="../main/iricmainwindow.cpp" line="1766"/>
-        <location filename="../main/iricmainwindow.cpp" line="2241"/>
-        <location filename="../main/iricmainwindow.cpp" line="2367"/>
-        <location filename="../main/iricmainwindow.cpp" line="2392"/>
+        <location filename="../main/iricmainwindow.cpp" line="823"/>
+        <location filename="../main/iricmainwindow.cpp" line="876"/>
+        <location filename="../main/iricmainwindow.cpp" line="890"/>
+        <location filename="../main/iricmainwindow.cpp" line="908"/>
+        <location filename="../main/iricmainwindow.cpp" line="966"/>
+        <location filename="../main/iricmainwindow.cpp" line="1122"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
+        <location filename="../main/iricmainwindow.cpp" line="1752"/>
+        <location filename="../main/iricmainwindow.cpp" line="1756"/>
+        <location filename="../main/iricmainwindow.cpp" line="1779"/>
+        <location filename="../main/iricmainwindow.cpp" line="2254"/>
+        <location filename="../main/iricmainwindow.cpp" line="2380"/>
+        <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
@@ -32273,17 +32228,17 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
-        <location filename="../main/iricmainwindow.cpp" line="807"/>
+        <location filename="../main/iricmainwindow.cpp" line="809"/>
         <source>Saving project failed.</source>
         <translation>プロジェクトの保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="813"/>
+        <location filename="../main/iricmainwindow.cpp" line="815"/>
         <source>Project successfully saved to %1.</source>
         <translation>プロジェクトは %1 に保存されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="822"/>
+        <location filename="../main/iricmainwindow.cpp" line="824"/>
         <source>The solver is still running. Really quit?</source>
         <translation>ソルバーは現在実行中です。本当に終了しますか?</translation>
     </message>
@@ -32308,13 +32263,13 @@ Do you really want to import grid from this file?</source>
         <translation>スナップショットは %1 に保存されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="874"/>
-        <location filename="../main/iricmainwindow.cpp" line="888"/>
+        <location filename="../main/iricmainwindow.cpp" line="876"/>
+        <location filename="../main/iricmainwindow.cpp" line="890"/>
         <source>This windows does not support snapshot function.</source>
         <translation>このウィンドウでは、スナップショットを保存することはできません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1766"/>
+        <location filename="../main/iricmainwindow.cpp" line="1779"/>
         <source>Are you sure you want to delete the calculation result?</source>
         <translation>本当に計算結果を消去していいですか?</translation>
     </message>
@@ -32323,32 +32278,32 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">本当に、計算結果を消去していいですか?</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1770"/>
+        <location filename="../main/iricmainwindow.cpp" line="1783"/>
         <source>Calculation result cleared.</source>
         <translation>計算結果が消去されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1836"/>
-        <location filename="../main/iricmainwindow.cpp" line="1850"/>
-        <location filename="../main/iricmainwindow.cpp" line="1856"/>
-        <location filename="../main/iricmainwindow.cpp" line="1946"/>
-        <location filename="../main/iricmainwindow.cpp" line="1952"/>
-        <location filename="../main/iricmainwindow.cpp" line="2048"/>
-        <location filename="../main/iricmainwindow.cpp" line="2054"/>
+        <location filename="../main/iricmainwindow.cpp" line="1849"/>
+        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1959"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="2061"/>
+        <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1850"/>
-        <location filename="../main/iricmainwindow.cpp" line="2048"/>
+        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation>可視化ウィンドウがアクティブな時に、このメニューを選択してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1836"/>
-        <location filename="../main/iricmainwindow.cpp" line="1856"/>
-        <location filename="../main/iricmainwindow.cpp" line="1952"/>
-        <location filename="../main/iricmainwindow.cpp" line="2054"/>
+        <location filename="../main/iricmainwindow.cpp" line="1849"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Calculation result does not exists.</source>
         <translation>計算結果が存在しません。</translation>
     </message>
@@ -32363,43 +32318,43 @@ Do you really want to import grid from this file?</source>
         <translation>CGNS ファイル (*.cgn *.cgns)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="782"/>
+        <location filename="../main/iricmainwindow.cpp" line="783"/>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation>巨大な計算結果を持つため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="786"/>
+        <location filename="../main/iricmainwindow.cpp" line="787"/>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation>プロジェクト内のファイル数が多すぎるため、ファイル (*.ipro) に保存できません。プロジェクトに保存してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="897"/>
+        <location filename="../main/iricmainwindow.cpp" line="899"/>
         <source>Copied snapshot to clipboard.</source>
         <translation>スナップショットをクリップボードにコピーしました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1215"/>
+        <location filename="../main/iricmainwindow.cpp" line="1217"/>
         <source>iRIC %1</source>
         <translation>iRIC %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1230"/>
+        <location filename="../main/iricmainwindow.cpp" line="1232"/>
         <source>%1 - iRIC %2 [%3]</source>
         <translation>%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1864"/>
+        <location filename="../main/iricmainwindow.cpp" line="1877"/>
         <source>No particle is drawn now.</source>
         <translation>パーティクルが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1893"/>
-        <location filename="../main/iricmainwindow.cpp" line="1905"/>
+        <location filename="../main/iricmainwindow.cpp" line="1906"/>
+        <location filename="../main/iricmainwindow.cpp" line="1918"/>
         <source>Export Particles</source>
         <translation>パーティクルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1906"/>
+        <location filename="../main/iricmainwindow.cpp" line="1919"/>
         <source>Saving particles as VTK files...</source>
         <translation>パーティクルを VTKファイルに保存しています...</translation>
     </message>
@@ -32412,17 +32367,17 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">このメニューは、ソルバー実行中は利用できません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="964"/>
+        <location filename="../main/iricmainwindow.cpp" line="966"/>
         <source>This windows does not support continuous snapshot function.</source>
         <translation>このウィンドウは、連続スナップショット機能をサポートしていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1002"/>
+        <location filename="../main/iricmainwindow.cpp" line="1004"/>
         <source>Continuous Snapshot</source>
         <translation>連続スナップショット</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1003"/>
+        <location filename="../main/iricmainwindow.cpp" line="1005"/>
         <source>saving continuous snapshot...</source>
         <translation>連続スナップショットを保存中です...</translation>
     </message>
@@ -32431,17 +32386,17 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">iRIC</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1220"/>
+        <location filename="../main/iricmainwindow.cpp" line="1222"/>
         <source>Untitled</source>
         <translation>無題</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1739"/>
+        <location filename="../main/iricmainwindow.cpp" line="1752"/>
         <source>Unknown options specified. They are neglected. %1</source>
         <translation>不明なオプションが指定されました。これらは無視されます。: %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1743"/>
+        <location filename="../main/iricmainwindow.cpp" line="1756"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
         <translation>2つ以上のプロジェクトファイルが引数に指定されました。2つ目以降は無視されます。: %1</translation>
     </message>
@@ -32454,7 +32409,7 @@ Do you really want to import grid from this file?</source>
         <translation type="obsolete">現在の計算ケースを削除</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1526"/>
+        <location filename="../main/iricmainwindow.cpp" line="1539"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -32474,16 +32429,16 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="711"/>
         <location filename="../main/iricmainwindow.cpp" line="715"/>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
-        <location filename="../main/iricmainwindow.cpp" line="782"/>
-        <location filename="../main/iricmainwindow.cpp" line="786"/>
-        <location filename="../main/iricmainwindow.cpp" line="807"/>
-        <location filename="../main/iricmainwindow.cpp" line="1864"/>
-        <location filename="../main/iricmainwindow.cpp" line="1928"/>
-        <location filename="../main/iricmainwindow.cpp" line="1960"/>
-        <location filename="../main/iricmainwindow.cpp" line="2024"/>
-        <location filename="../main/iricmainwindow.cpp" line="2062"/>
-        <location filename="../main/iricmainwindow.cpp" line="2100"/>
-        <location filename="../main/iricmainwindow.cpp" line="2142"/>
+        <location filename="../main/iricmainwindow.cpp" line="783"/>
+        <location filename="../main/iricmainwindow.cpp" line="787"/>
+        <location filename="../main/iricmainwindow.cpp" line="809"/>
+        <location filename="../main/iricmainwindow.cpp" line="1877"/>
+        <location filename="../main/iricmainwindow.cpp" line="1941"/>
+        <location filename="../main/iricmainwindow.cpp" line="1973"/>
+        <location filename="../main/iricmainwindow.cpp" line="2037"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
+        <location filename="../main/iricmainwindow.cpp" line="2113"/>
+        <location filename="../main/iricmainwindow.cpp" line="2155"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
@@ -32556,27 +32511,27 @@ Do you really want to import grid from this file?</source>
         <translation>不正なファイル名が指定されました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="906"/>
+        <location filename="../main/iricmainwindow.cpp" line="908"/>
         <source>This menu is not available while the solver is running.</source>
         <translation>このメニューは、ソルバー実行中は利用できません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1120"/>
+        <location filename="../main/iricmainwindow.cpp" line="1122"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
         <translation>%1 は既に存在し、削除できませんでした。この動画ファイルは出力されません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1651"/>
+        <location filename="../main/iricmainwindow.cpp" line="1664"/>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation>http://iric-gui-user-manual.readthedocs.io/ja/latest/</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1946"/>
+        <location filename="../main/iricmainwindow.cpp" line="1959"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
         <translation>現在アクティブなサブウィンドウは、面塗りコンターのエクスポートをサポートしていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1960"/>
+        <location filename="../main/iricmainwindow.cpp" line="1973"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
     </message>
@@ -32585,7 +32540,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <location filename="../main/iricmainwindow.cpp" line="2014"/>
         <source>Export contour figure</source>
         <translation>面塗りコンターのエクスポート</translation>
     </message>
@@ -32598,7 +32553,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">コンターが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2068"/>
+        <location filename="../main/iricmainwindow.cpp" line="2081"/>
         <source>Please select which zone to use:</source>
         <translation>使用するゾーンを選択して下さい:</translation>
     </message>
@@ -32611,7 +32566,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">KML ファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2367"/>
+        <location filename="../main/iricmainwindow.cpp" line="2380"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation>格子が編集されているか、削除されています。保存すると、計算結果は破棄されます。</translation>
     </message>
@@ -32620,7 +32575,7 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">格子が編集されています。保存すると、計算結果は破棄されます。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2392"/>
+        <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
         <translation>現在の作業ディレクトリ (%1) に、ASCII文字列以外の文字が含まれています。プロジェクトを開始する前に、以下のメニューから作業ディレクトリを変更して下さい。
@@ -32647,66 +32602,66 @@ Option -&gt; Preferences</source>
         <translation type="obsolete">英数字のみで構成された名前を入力してください。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1928"/>
-        <location filename="../main/iricmainwindow.cpp" line="2024"/>
-        <location filename="../main/iricmainwindow.cpp" line="2142"/>
+        <location filename="../main/iricmainwindow.cpp" line="1941"/>
+        <location filename="../main/iricmainwindow.cpp" line="2037"/>
+        <location filename="../main/iricmainwindow.cpp" line="2155"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2062"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
         <source>No Contour Figure is drawn now.</source>
         <translation>面塗りコンターが描画されていません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2100"/>
+        <location filename="../main/iricmainwindow.cpp" line="2113"/>
         <source>%1 can not be overwritten.</source>
         <translation>%1 を上書き保存できません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2089"/>
-        <location filename="../main/iricmainwindow.cpp" line="2120"/>
+        <location filename="../main/iricmainwindow.cpp" line="2102"/>
+        <location filename="../main/iricmainwindow.cpp" line="2133"/>
         <source>Export Google Earth KMZ for street view</source>
         <translation>ストリートビュー用 Google Earth KMZ の出力</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1991"/>
+        <location filename="../main/iricmainwindow.cpp" line="2004"/>
         <source>Export contour figure to ESRI Shapefiles</source>
         <translation>面塗りコンターの ESRI シェープファイルへのエクスポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2002"/>
+        <location filename="../main/iricmainwindow.cpp" line="2015"/>
         <source>Saving contour figure as ESRI Shapefiles...</source>
         <translation>面塗りコンターを ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2121"/>
+        <location filename="../main/iricmainwindow.cpp" line="2134"/>
         <source>Saving KMZ file...</source>
         <translation>KMZ ファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2164"/>
+        <location filename="../main/iricmainwindow.cpp" line="2177"/>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
         <translation>Google Earth KMZ は %1. にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2234"/>
+        <location filename="../main/iricmainwindow.cpp" line="2247"/>
         <source>Import Visualization/Graph Settings</source>
         <translation>可視化・グラフ設定のインポート</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2234"/>
-        <location filename="../main/iricmainwindow.cpp" line="2256"/>
+        <location filename="../main/iricmainwindow.cpp" line="2247"/>
+        <location filename="../main/iricmainwindow.cpp" line="2269"/>
         <source>Setting file (*.vgsetting)</source>
         <translation>設定ファイル (*.vgsetting)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2241"/>
+        <location filename="../main/iricmainwindow.cpp" line="2254"/>
         <source>File %1 does not exists.</source>
         <translation>%1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2256"/>
+        <location filename="../main/iricmainwindow.cpp" line="2269"/>
         <source>Export Visualization/Graph Settings</source>
         <translation>可視化・グラフ設定のエクスポート</translation>
     </message>
@@ -32723,7 +32678,7 @@ Option -&gt; Preferences</source>
         <translation type="obsolete">本当に現在のシミュレーションを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
         <translation>ソルバーが実行中です。この操作を行いたい場合は、ソルバーを停止して下さい。</translation>
     </message>
@@ -33342,6 +33297,11 @@ Option -&gt; Preferences</source>
         <translation>Ctrl+Shift+L</translation>
     </message>
     <message>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
+        <source>Open new Verification Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="573"/>
         <source>Import Visualization/Graph Settings...</source>
         <translation>可視化・グラフ設定のインポート...</translation>
@@ -33352,7 +33312,7 @@ Option -&gt; Preferences</source>
         <translation>可視化・グラフ設定のエクスポート...</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1182"/>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1185"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
@@ -33548,9 +33508,8 @@ Option -&gt; Preferences</source>
         <translation>新しい 散布図ウィンドウ を開く</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
         <source>Compare with measured values...</source>
-        <translation>実測値と比較...</translation>
+        <translation type="vanished">実測値と比較...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="553"/>
@@ -34074,28 +34033,28 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="109"/>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="95"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="112"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="109"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="95"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation>スカラー量の計算結果がないため、コンター設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="112"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
         <translation>セル中心のスカラー量の計算結果がないため、コンター設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="200"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="186"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="200"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="186"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
@@ -37257,7 +37216,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PostStringResultDataItem</name>
     <message>
-        <location filename="../string/poststringresultdataitem.cpp" line="71"/>
+        <location filename="../string/poststringresultdataitem.cpp" line="72"/>
         <source>Label</source>
         <translation>ラベル</translation>
     </message>
@@ -37694,22 +37653,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="113"/>
         <source>Edit Z-direction Scale</source>
         <translation>Z方向の倍率の編集</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="148"/>
         <source>Edit Color Setting</source>
         <translation>表示色設定</translation>
     </message>
@@ -40224,116 +40183,116 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>SolverConsoleWindow</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="45"/>
+        <location filename="../solverconsolewindow.cpp" line="46"/>
         <source>&amp;Export solver console log...</source>
         <translation>ソルバーログのエクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="139"/>
+        <location filename="../solverconsolewindow.cpp" line="140"/>
         <source>Show Detail</source>
         <translation>詳細を表示</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="140"/>
-        <location filename="../solverconsolewindow.cpp" line="151"/>
+        <location filename="../solverconsolewindow.cpp" line="141"/>
+        <location filename="../solverconsolewindow.cpp" line="152"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="140"/>
+        <location filename="../solverconsolewindow.cpp" line="141"/>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
         <translation>以下の問題が格子に見つかりました。本当にこの格子を使ってソルバーを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="144"/>
+        <location filename="../solverconsolewindow.cpp" line="145"/>
         <source>The simulation has result</source>
         <translation>シミュレーションに結果があります</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="144"/>
+        <location filename="../solverconsolewindow.cpp" line="145"/>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
         <translation>このシミュレーションには既に結果データがあります。ソルバーを実行すると、現在の結果データは破棄されます。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="151"/>
+        <location filename="../solverconsolewindow.cpp" line="152"/>
         <source>Error occured. %1</source>
         <translation>エラーが発生しました。 %1</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="124"/>
-        <location filename="../solverconsolewindow.cpp" line="155"/>
+        <location filename="../solverconsolewindow.cpp" line="125"/>
+        <location filename="../solverconsolewindow.cpp" line="156"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="124"/>
+        <location filename="../solverconsolewindow.cpp" line="125"/>
         <source>This project is opened in post only mode. You can not run the solver.</source>
         <translation>プロジェクトは、可視化専用モードで開かれています。ソルバーを実行できません。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="155"/>
+        <location filename="../solverconsolewindow.cpp" line="156"/>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
         <translation>計算実行を開始する前に、プロジェクトを保存することをお勧めします。保存しますか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="169"/>
+        <location filename="../solverconsolewindow.cpp" line="170"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="169"/>
+        <location filename="../solverconsolewindow.cpp" line="170"/>
         <source>Solver executable file %1 does not exists.</source>
         <translation>ソルバーの実行ファイル %1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="191"/>
-        <location filename="../solverconsolewindow.cpp" line="360"/>
+        <location filename="../solverconsolewindow.cpp" line="192"/>
+        <location filename="../solverconsolewindow.cpp" line="368"/>
         <source>Confirm Solver Termination</source>
         <translation>ソルバーの中止の確認</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="192"/>
+        <location filename="../solverconsolewindow.cpp" line="193"/>
         <source>Do you really want to kill the solver?</source>
         <translation>本当にソルバーの実行を中止していいですか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="252"/>
-        <location filename="../solverconsolewindow.cpp" line="255"/>
+        <location filename="../solverconsolewindow.cpp" line="253"/>
+        <location filename="../solverconsolewindow.cpp" line="256"/>
         <source>Solver Finished</source>
         <translation>ソルバー終了</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="252"/>
+        <location filename="../solverconsolewindow.cpp" line="253"/>
         <source>The solver finished calculation.</source>
         <translation>ソルバーの計算が終了しました.</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="255"/>
+        <location filename="../solverconsolewindow.cpp" line="256"/>
         <source>The solver finished abnormally.</source>
         <translation>ソルバーが異常終了しました。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="264"/>
+        <location filename="../solverconsolewindow.cpp" line="265"/>
         <source>Solver Console</source>
         <translation>ソルバーコンソール</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="270"/>
+        <location filename="../solverconsolewindow.cpp" line="271"/>
         <source>running</source>
         <translation>実行中</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="272"/>
+        <location filename="../solverconsolewindow.cpp" line="273"/>
         <source>stopped</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="274"/>
+        <location filename="../solverconsolewindow.cpp" line="275"/>
         <source>Solver Console [%1] (%2)</source>
         <translation>ソルバーコンソール [%1] (%2)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="361"/>
+        <location filename="../solverconsolewindow.cpp" line="369"/>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
         <translation>%1秒経過しましたが、ソルバが終了しません。ソルバを強制終了しますか?</translation>
     </message>
@@ -40346,7 +40305,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">30秒経過しましたが、ソルバが終了しません。ソルバを強制終了しますか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="387"/>
+        <location filename="../solverconsolewindow.cpp" line="395"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -40359,32 +40318,32 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="134"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="146"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイル名の選択</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="134"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="146"/>
         <source>Text file (*.txt)</source>
         <translation>テキストファイル (*.txt)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="149"/>
         <source>Exporting solver console log...</source>
         <translation>ソルバーログをエクスポートしています...</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="145"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="157"/>
         <source>Solver console log is successfully exported to %1.</source>
         <translation>ソルバーログは %1. にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="150"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="162"/>
         <source>Fail</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="150"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="162"/>
         <source>Exporting solver console log failed.</source>
         <translation>ソルバーログのエクスポートが失敗しました。</translation>
     </message>
@@ -41710,17 +41669,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
-        <location filename="../structured2dgridgdalimporter.cpp" line="21"/>
+        <location filename="../structured2dgridgdalimporter.cpp" line="22"/>
         <source>GDAL supported files</source>
         <translation>GDAL で開けるファイル</translation>
     </message>
     <message>
-        <location filename="../structured2dgridgdalimporter.cpp" line="27"/>
+        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTIFF ファイル (*.tif)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
+        <location filename="../structured2dgridgdalimporter.cpp" line="29"/>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation>ArcInfo ASCII ファイル (*.asc)</translation>
     </message>

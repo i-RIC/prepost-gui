@@ -9,44 +9,44 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="335"/>
         <source>Polygon%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="529"/>
         <source>Edit name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="529"/>
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="544"/>
+        <location filename="../geodatapolygongroup.cpp" line="549"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="601"/>
-        <location filename="../geodatapolygongroup.cpp" line="694"/>
+        <location filename="../geodatapolygongroup.cpp" line="606"/>
+        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="606"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="694"/>
+        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="838"/>
-        <location filename="../geodatapolygongroup.cpp" line="881"/>
+        <location filename="../geodatapolygongroup.cpp" line="853"/>
+        <location filename="../geodatapolygongroup.cpp" line="896"/>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -56,62 +56,62 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Add New Polygon...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Select...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
         <source>&amp;Merge...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
         <source>&amp;Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Edit &amp;Name...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
         <source>Edit &amp;Name and Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
         <source>Color &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
         <source>Show Attribute &amp;Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
         <source>Move to top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
         <source>Move to bottom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="85"/>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="86"/>
         <source>Move down</source>
         <translation type="unfinished"></translation>
     </message>

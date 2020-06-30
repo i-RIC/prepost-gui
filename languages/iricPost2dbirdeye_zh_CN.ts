@@ -107,28 +107,28 @@
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="109"/>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="95"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="112"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="109"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="95"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation>轮廓设置不可用，因为此结果不包含标量值。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="112"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
         <translation>轮廓设置不可用，因为此结果不包含像元标量值。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="200"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="186"/>
         <source>Z-direction Scale</source>
         <translation>Z方向比例</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="200"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="186"/>
         <source>Input new Z-direction scale.</source>
         <translation>输入新Z方向比例</translation>
     </message>

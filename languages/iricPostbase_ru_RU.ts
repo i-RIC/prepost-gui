@@ -271,7 +271,7 @@
 <context>
     <name>PostStringResultDataItem</name>
     <message>
-        <location filename="../string/poststringresultdataitem.cpp" line="71"/>
+        <location filename="../string/poststringresultdataitem.cpp" line="72"/>
         <source>Label</source>
         <translation type="unfinished"></translation>
     </message>
