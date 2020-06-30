@@ -16,7 +16,7 @@
     <message>
         <location filename="../geodatapolygon.cpp" line="98"/>
         <source>&amp;Add Vertex</source>
-        <translation> Adicionar vertice (&amp;A)</translation>
+        <translation>Adicionar vertice (&amp;A)</translation>
     </message>
     <message>
         <location filename="../geodatapolygon.cpp" line="99"/>
@@ -226,16 +226,6 @@
         <location filename="../geodatapolygonimporter.cpp" line="160"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>Entre o arquivo * .shp e o arquivo * .dbf, o numero de dados contidos e incompativel. </translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygonimporter.cpp" line="204"/>
-        <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation>Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
-        <translation>Menos de 2 o numero de vertice</translation>
-        <translation>Nao esta encerrado.</translation>
-        <translation>Linhas de poligono se cruzam</translation>
-        <translation> O poligono do orificio esta fora do poligono da regiao</translation>
-        <translation>Linha de poligono passa o mesmo ponto varias vezes</translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="221"/>

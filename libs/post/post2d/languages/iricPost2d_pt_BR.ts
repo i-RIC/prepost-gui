@@ -1045,19 +1045,6 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="429"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas nos pontos da grade.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as particulas serao procriadas a partir do meio entre dois pontos (ponto de divisao interno), que sao ponto da grade e ponto central da grade. .&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 1/2,as particulas serao procriadas em pontos de grade alternativamente.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="603"/>
         <source>Color:</source>
         <translation>Cor de exibicao:</translation>
@@ -1066,15 +1053,6 @@
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="630"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="637"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="688"/>
@@ -1118,20 +1096,6 @@
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="54"/>
         <source>Generation interval</source>
         <translation>Intervalo de ocorrencia</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="65"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap;}</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas em cada etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as duas particulas serao procriadas a partir do mesmo ponto, com intervalos regulares, para cada etapa do processo,&lt;/p&gt;</translation>
-        <translation>&lt;p&gt;Por exemplo, se voce especificar 1/2, as particulas serao procriadas somente uma vez para cada duas vezes da etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="103"/>
@@ -1218,15 +1182,6 @@
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="481"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="488"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="539"/>
@@ -1383,17 +1338,6 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="209"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>Se especificar &lt;p&gt;1, a linha de fluxo sera iniciada a partir do ponto da grade.  &lt;/p&gt; </translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as linhas de fluxo serao iniciadas a partir do meio entre dois pontos (ponto de divisao interno), que sao ponto da grade e ponto central da grade.  &lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="245"/>
         <source>-</source>
         <translation>reduzir</translation>
@@ -1427,15 +1371,6 @@
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="408"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="415"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="466"/>
@@ -1515,15 +1450,6 @@
         <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="260"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="267"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="318"/>

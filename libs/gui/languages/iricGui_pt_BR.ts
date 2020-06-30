@@ -496,9 +496,8 @@
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="20"/>
-        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
+        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.</source>
         <translation>Ao atualizar o iRIC, voce devera fechar o iRIC antes de iniciar iRIC Maintainance.</translation>
-        <translation>Se voce tiver outras janelas abertas de iRIC, feche-as manualmente.</translation>
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="23"/>
@@ -515,9 +514,8 @@
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="64"/>
-        <source>This function is intended to be used by solver developers or grid creating program developers, not users.
+        <source>This function is intended to be used by solver developers or grid creating program developers, not users.</source>
         <translation>Esta funcao deveria ser usada pelos desenvolvedores do solucionador ou pelos desenvolvedores do programa de criacao da grade, e nao pelos usuarios.</translation>
-        <translation>Este wizard criara ou atualizara o solucionador registrado no sistema  de iRIC e o dicionario tradutor do arquivo de definicao sobre o programa de procriacao da grade. Voce devera especificar o nome do solucionador (ou programa de procriacao da grade) e o idioma do dicionario que deseja criar ou atualizar.</translation>
     </message>
 </context>
 <context>
@@ -550,9 +548,8 @@
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="36"/>
-        <source>%1 days have passed after launching iRIC Maintainance for the last time.
+        <source>%1 days have passed after launching iRIC Maintainance for the last time.</source>
         <translation>% 1 dias se passaram apos o ato de iniciar o iRIC Maintainance pela ultima vez.</translation>
-        <translation>Deseja iniciar iRIC Maintainance ?</translation>
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="38"/>
@@ -1450,9 +1447,8 @@
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlist.cpp" line="55"/>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
         <translation>Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
-        <translation>%2</translation>
     </message>
 </context>
 <context>
@@ -1505,7 +1501,7 @@
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="66"/>
-        <source>Welcome to iRIC!
+        <source>Welcome to iRIC!</source>
         <translation>Bem-vindo ao iRIC !</translation>
         <translation>Software que possui condicoes de simular do rio Ishikari ao rio Nilo</translation>
     </message>
@@ -2050,9 +2046,8 @@
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2391"/>
-        <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
+        <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu:</source>
         <translation>O atual diretorio de trabalho (% 1) contem caracteres diferentes do codigo ASCII. Antes de iniciar o projeto, altere o diretorio de trabalho conforme o menu abaixo.</translation>
-        <translation>Configuracao de opcoes -&gt;</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1220"/>

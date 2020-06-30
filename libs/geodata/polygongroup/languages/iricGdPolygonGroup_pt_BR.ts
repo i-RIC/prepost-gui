@@ -140,16 +140,6 @@
         <translation>ESRI Shapefile (Grupo de poligono)  (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
-        <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation>Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
-        <translation>Menos de 2 o numero de vertice</translation>
-        <translation>Nao esta encerrado.</translation>
-        <translation>Linhas de poligono se cruzam</translation>
-        <translation> O poligono do orificio esta fora do poligono da regiao</translation>
-        <translation>Linha de poligono passa o mesmo ponto varias vezes</translation>
-    </message>
-    <message>
         <location filename="../geodatapolygongroupshpimporter.cpp" line="151"/>
         <source>Polygon%1</source>
         <translation>Poligono %1</translation>
