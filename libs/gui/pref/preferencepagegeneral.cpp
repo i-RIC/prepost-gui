@@ -97,18 +97,52 @@ void PreferencePageGeneral::setupLanguageComboBox()
 {
 	QComboBox* combo = ui->languageComboBox;
 
-	m_locales.append(QLocale(QLocale::English));
+	m_locales.append(QLocale(QLocale::Arabic));
+	m_locales.append(QLocale(QLocale::Basque));
+	m_locales.append(QLocale(QLocale::Bosnian));
+	m_locales.append(QLocale(QLocale::Bulgarian));
+	m_locales.append(QLocale(QLocale::Catalan));
+	m_locales.append(QLocale(QLocale::Chinese, QLocale::China));
+	m_locales.append(QLocale(QLocale::Chinese, QLocale::Taiwan));
+	m_locales.append(QLocale(QLocale::Czech));
+	m_locales.append(QLocale(QLocale::Danish));
+	m_locales.append(QLocale(QLocale::Dutch));
+	m_locales.append(QLocale(QLocale::Estonian));
+	m_locales.append(QLocale(QLocale::Finnish));
+	m_locales.append(QLocale(QLocale::French));
+	m_locales.append(QLocale(QLocale::German));
+	m_locales.append(QLocale(QLocale::Galician));
+	m_locales.append(QLocale(QLocale::Greek));
+	m_locales.append(QLocale(QLocale::Hindi));
+	m_locales.append(QLocale(QLocale::Hungarian));
+	m_locales.append(QLocale(QLocale::Icelandic));
+	m_locales.append(QLocale(QLocale::Indonesian));
+	m_locales.append(QLocale(QLocale::Italian));
 	m_locales.append(QLocale(QLocale::Japanese));
 	m_locales.append(QLocale(QLocale::Korean));
-	m_locales.append(QLocale(QLocale::Thai));
-	m_locales.append(QLocale(QLocale::Indonesian));
-	m_locales.append(QLocale(QLocale::Chinese));
-	m_locales.append(QLocale(QLocale::French));
-	m_locales.append(QLocale(QLocale::Spanish));
+	m_locales.append(QLocale(QLocale::Latvian));
+	m_locales.append(QLocale(QLocale::Lithuanian));
+	m_locales.append(QLocale(QLocale::Norwegian));
+	m_locales.append(QLocale(QLocale::Polish));
+	m_locales.append(QLocale(QLocale::Portuguese, QLocale::Brazil));
+	m_locales.append(QLocale(QLocale::Portuguese, QLocale::Portugal));
+	m_locales.append(QLocale(QLocale::Romanian));
 	m_locales.append(QLocale(QLocale::Russian));
+	m_locales.append(QLocale(QLocale::Slovenian));
+	m_locales.append(QLocale(QLocale::Spanish));
+	m_locales.append(QLocale(QLocale::Swedish));
+	m_locales.append(QLocale(QLocale::Thai));
+	m_locales.append(QLocale(QLocale::Turkish));
+	m_locales.append(QLocale(QLocale::Ukrainian));
 
 	for (QLocale loc : m_locales) {
-		combo->addItem(QLocale::languageToString(loc.language()), QVariant(loc.name()));
+		QString str;
+		if (loc.language() == QLocale::Portuguese || loc.language() == QLocale::Chinese) {
+			str = QString("%1 (%2)").arg(QLocale::languageToString(loc.language())).arg(QLocale::countryToString(loc.country()));
+		} else {
+			str = QLocale::languageToString(loc.language());
+		}
+		combo->addItem(str, QVariant(loc.name()));
 	}
 }
 
