@@ -494,7 +494,13 @@ void GeoDataNetcdf::updateShapeData()
 					longitude = (m_lonValues.at(i - 1) + m_lonValues.at(i)) * 0.5;
 				}
 				double x, y;
-				cs->mapGeoToGrid(longitude, latitude, &x, &y);
+				if (cs->isLongLat()) {
+					x = longitude;
+					y = latitude;
+				} else {
+					cs->mapGeoToGrid(longitude, latitude, &x, &y);
+				}
+
 				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
 			}
 		}
