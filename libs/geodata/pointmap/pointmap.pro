@@ -228,12 +228,42 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_triangleswithlongedgeremover.cpp \
            private/geodatapointmap_triangleswithlongedgeremover_dialog.cpp
 RESOURCES += pointmap.qrc
-TRANSLATIONS += languages/iricGdPointmap_es_ES.ts \
+TRANSLATIONS += languages/iricGdPointmap_ar_EG.ts \
+                languages/iricGdPointmap_bg_BG.ts \
+                languages/iricGdPointmap_bs_BA.ts \
+                languages/iricGdPointmap_ca_ES.ts \
+                languages/iricGdPointmap_cs_CZ.ts \
+                languages/iricGdPointmap_da_DK.ts \
+                languages/iricGdPointmap_de_DE.ts \
+                languages/iricGdPointmap_el_GR.ts \
+                languages/iricGdPointmap_es_ES.ts \
+                languages/iricGdPointmap_et_EE.ts \
+                languages/iricGdPointmap_eu_ES.ts \
+                languages/iricGdPointmap_fi_FI.ts \
                 languages/iricGdPointmap_fr_FR.ts \
+                languages/iricGdPointmap_gl_ES.ts \
+                languages/iricGdPointmap_hi_IN.ts \
+                languages/iricGdPointmap_hu_HU.ts \
                 languages/iricGdPointmap_id_ID.ts \
+                languages/iricGdPointmap_is_IS.ts \
+                languages/iricGdPointmap_it_IT.ts \
                 languages/iricGdPointmap_ja_JP.ts \
                 languages/iricGdPointmap_ko_KR.ts \
+                languages/iricGdPointmap_ky_KG.ts \
+                languages/iricGdPointmap_lt_LT.ts \
+                languages/iricGdPointmap_lv_LV.ts \
+                languages/iricGdPointmap_nb_NO.ts \
+                languages/iricGdPointmap_nl_NL.ts \
+                languages/iricGdPointmap_pl_PL.ts \
+                languages/iricGdPointmap_pt_BR.ts \
+                languages/iricGdPointmap_pt_PT.ts \
+                languages/iricGdPointmap_ro_RO.ts \
                 languages/iricGdPointmap_ru_RU.ts \
+                languages/iricGdPointmap_sl_SI.ts \
+                languages/iricGdPointmap_sv_SE.ts \
                 languages/iricGdPointmap_th_TH.ts \
+                languages/iricGdPointmap_tr_TR.ts \
+                languages/iricGdPointmap_uk_UA.ts \
                 languages/iricGdPointmap_vi_VN.ts \
-                languages/iricGdPointmap_zh_CN.ts
+                languages/iricGdPointmap_zh_CN.ts \
+                languages/iricGdPointmap_zh_TW.ts

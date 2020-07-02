@@ -217,22 +217,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="113"/>
         <source>Edit Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="148"/>
         <source>Edit Color Setting</source>
         <translation type="unfinished"></translation>
     </message>

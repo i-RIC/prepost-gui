@@ -659,24 +659,24 @@ Do you really want to import this file?</source>
         <translation>第%2行的%1:值%3大于最大值%4</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="465"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Choose a text file</source>
         <translation>选择一个文本文件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="465"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="488"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="488"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error occured while opening the file.</source>
         <translation>打开文件时错误</translation>
     </message>
@@ -691,58 +691,58 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="348"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="354"/>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
         <translation>%1是跨度的值。 例如，在第二行输入的值用于第一行和第二行之间的跨度。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="479"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>Specify file name to save</source>
         <translation>指定要保存的文件名</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="479"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
         <source>Values are copied to clipboard.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="587"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="593"/>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
         <translation>导入计算条件%2后，文件%1将更新。 您要导入更新的文件吗？</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="588"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="619"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="594"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="619"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="675"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="681"/>
         <source>The following problems found: 
 </source>
         <translation>找到以下问题:
         </translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="678"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="684"/>
         <source>
  ... and other %1 errors</source>
         <translation>
         ...和其他 %1 问题</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="680"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="686"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

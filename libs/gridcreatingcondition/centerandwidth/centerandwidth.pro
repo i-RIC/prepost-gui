@@ -114,12 +114,42 @@ SOURCES += gridcreatingconditioncenterandwidth.cpp \
            private/gridcreatingconditioncenterandwidth_removevertexcommand.cpp \
            private/gridcreatingconditioncenterandwidth_updateshapecommand.cpp
 RESOURCES += centerandwidth.qrc
-TRANSLATIONS += languages/iricGccCenterandwidth_es_ES.ts \
+TRANSLATIONS += languages/iricGccCenterandwidth_ar_EG.ts \
+                languages/iricGccCenterandwidth_bg_BG.ts \
+                languages/iricGccCenterandwidth_bs_BA.ts \
+                languages/iricGccCenterandwidth_ca_ES.ts \
+                languages/iricGccCenterandwidth_cs_CZ.ts \
+                languages/iricGccCenterandwidth_da_DK.ts \
+                languages/iricGccCenterandwidth_de_DE.ts \
+                languages/iricGccCenterandwidth_el_GR.ts \
+                languages/iricGccCenterandwidth_es_ES.ts \
+                languages/iricGccCenterandwidth_et_EE.ts \
+                languages/iricGccCenterandwidth_eu_ES.ts \
+                languages/iricGccCenterandwidth_fi_FI.ts \
                 languages/iricGccCenterandwidth_fr_FR.ts \
+                languages/iricGccCenterandwidth_gl_ES.ts \
+                languages/iricGccCenterandwidth_hi_IN.ts \
+                languages/iricGccCenterandwidth_hu_HU.ts \
                 languages/iricGccCenterandwidth_id_ID.ts \
+                languages/iricGccCenterandwidth_is_IS.ts \
+                languages/iricGccCenterandwidth_it_IT.ts \
                 languages/iricGccCenterandwidth_ja_JP.ts \
                 languages/iricGccCenterandwidth_ko_KR.ts \
+                languages/iricGccCenterandwidth_ky_KG.ts \
+                languages/iricGccCenterandwidth_lt_LT.ts \
+                languages/iricGccCenterandwidth_lv_LV.ts \
+                languages/iricGccCenterandwidth_nb_NO.ts \
+                languages/iricGccCenterandwidth_nl_NL.ts \
+                languages/iricGccCenterandwidth_pl_PL.ts \
+                languages/iricGccCenterandwidth_pt_BR.ts \
+                languages/iricGccCenterandwidth_pt_PT.ts \
+                languages/iricGccCenterandwidth_ro_RO.ts \
                 languages/iricGccCenterandwidth_ru_RU.ts \
+                languages/iricGccCenterandwidth_sl_SI.ts \
+                languages/iricGccCenterandwidth_sv_SE.ts \
                 languages/iricGccCenterandwidth_th_TH.ts \
+                languages/iricGccCenterandwidth_tr_TR.ts \
+                languages/iricGccCenterandwidth_uk_UA.ts \
                 languages/iricGccCenterandwidth_vi_VN.ts \
-                languages/iricGccCenterandwidth_zh_CN.ts
+                languages/iricGccCenterandwidth_zh_CN.ts \
+                languages/iricGccCenterandwidth_zh_TW.ts

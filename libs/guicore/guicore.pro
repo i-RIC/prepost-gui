@@ -868,12 +868,42 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditionwidgetstring.cpp \
            project/inputcond/private/inputconditionwidgettooltip.cpp
 RESOURCES += guicore.qrc
-TRANSLATIONS += languages/iricGuicore_es_ES.ts \
+TRANSLATIONS += languages/iricGuicore_ar_EG.ts \
+                languages/iricGuicore_bg_BG.ts \
+                languages/iricGuicore_bs_BA.ts \
+                languages/iricGuicore_ca_ES.ts \
+                languages/iricGuicore_cs_CZ.ts \
+                languages/iricGuicore_da_DK.ts \
+                languages/iricGuicore_de_DE.ts \
+                languages/iricGuicore_el_GR.ts \
+                languages/iricGuicore_es_ES.ts \
+                languages/iricGuicore_et_EE.ts \
+                languages/iricGuicore_eu_ES.ts \
+                languages/iricGuicore_fi_FI.ts \
                 languages/iricGuicore_fr_FR.ts \
+                languages/iricGuicore_gl_ES.ts \
+                languages/iricGuicore_hi_IN.ts \
+                languages/iricGuicore_hu_HU.ts \
                 languages/iricGuicore_id_ID.ts \
+                languages/iricGuicore_is_IS.ts \
+                languages/iricGuicore_it_IT.ts \
                 languages/iricGuicore_ja_JP.ts \
                 languages/iricGuicore_ko_KR.ts \
+                languages/iricGuicore_ky_KG.ts \
+                languages/iricGuicore_lt_LT.ts \
+                languages/iricGuicore_lv_LV.ts \
+                languages/iricGuicore_nb_NO.ts \
+                languages/iricGuicore_nl_NL.ts \
+                languages/iricGuicore_pl_PL.ts \
+                languages/iricGuicore_pt_BR.ts \
+                languages/iricGuicore_pt_PT.ts \
+                languages/iricGuicore_ro_RO.ts \
                 languages/iricGuicore_ru_RU.ts \
+                languages/iricGuicore_sl_SI.ts \
+                languages/iricGuicore_sv_SE.ts \
                 languages/iricGuicore_th_TH.ts \
+                languages/iricGuicore_tr_TR.ts \
+                languages/iricGuicore_uk_UA.ts \
                 languages/iricGuicore_vi_VN.ts \
-                languages/iricGuicore_zh_CN.ts
+                languages/iricGuicore_zh_CN.ts \
+                languages/iricGuicore_zh_TW.ts

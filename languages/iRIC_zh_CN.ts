@@ -70,7 +70,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="56"/>
         <source>(Not Specified)</source>
         <translation>未指定</translation>
     </message>
@@ -4013,44 +4013,44 @@ p, li { white-space: pre-wrap; }
         <translation>多边形组</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="332"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="335"/>
         <source>Polygon%1</source>
         <translation type="unfinished">多边形%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="529"/>
         <source>Edit name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="524"/>
+        <location filename="../geodatapolygongroup.cpp" line="529"/>
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="544"/>
+        <location filename="../geodatapolygongroup.cpp" line="549"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="601"/>
-        <location filename="../geodatapolygongroup.cpp" line="694"/>
+        <location filename="../geodatapolygongroup.cpp" line="606"/>
+        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="601"/>
+        <location filename="../geodatapolygongroup.cpp" line="606"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation> %1组中没有其他面或面组。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="694"/>
+        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Are you sure you want to delete selected polygons?</source>
         <translation>您确定要删除选定的多边形吗？</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="838"/>
-        <location filename="../geodatapolygongroup.cpp" line="881"/>
+        <location filename="../geodatapolygongroup.cpp" line="853"/>
+        <location filename="../geodatapolygongroup.cpp" line="896"/>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4064,62 +4064,62 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">添加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="73"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Add New Polygon...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="74"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Select...</source>
         <translation>选择 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
         <source>&amp;Merge...</source>
         <translation>合并 (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
         <source>&amp;Delete</source>
         <translation>删除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Edit &amp;Name...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
         <source>Edit &amp;Name and Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
         <source>Color &amp;Setting...</source>
         <translation>色彩设置 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
         <source>Show Attribute &amp;Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
         <source>Move to top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
         <source>Move to bottom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="85"/>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
+        <location filename="../private/geodatapolygongroup_impl.cpp" line="86"/>
         <source>Move down</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4429,23 +4429,23 @@ p, li { white-space: pre-wrap; }
         <translation>色彩设置 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="195"/>
+        <location filename="../geodatapolygon.cpp" line="205"/>
         <source>&amp;Polygon</source>
         <translation>多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="581"/>
+        <location filename="../geodatapolygon.cpp" line="592"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>完成定义多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Edit name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1279"/>
+        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4475,13 +4475,13 @@ p, li { white-space: pre-wrap; }
         <translation>删除多边形顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="576"/>
-        <location filename="../geodatapolygon.cpp" line="1085"/>
+        <location filename="../geodatapolygon.cpp" line="587"/>
+        <location filename="../geodatapolygon.cpp" line="1096"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="576"/>
+        <location filename="../geodatapolygon.cpp" line="587"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>多边形至少必须具有三个顶点</translation>
     </message>
@@ -4491,23 +4491,23 @@ p, li { white-space: pre-wrap; }
         <translation>添加新空心多边形</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1057"/>
-        <location filename="../geodatapolygon.cpp" line="1245"/>
+        <location filename="../geodatapolygon.cpp" line="1068"/>
+        <location filename="../geodatapolygon.cpp" line="1256"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1057"/>
+        <location filename="../geodatapolygon.cpp" line="1068"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请定义孔区域。 可以通过单击鼠标将孔区域定义为多边形。 通过双击或按回车键完成定义。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1085"/>
+        <location filename="../geodatapolygon.cpp" line="1096"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>您确定要删除此多边形吗？</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1245"/>
+        <location filename="../geodatapolygon.cpp" line="1256"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请通过单击鼠标定义多边形。 通过双击或按回车键完成定义。</translation>
     </message>
@@ -4517,13 +4517,13 @@ p, li { white-space: pre-wrap; }
         <translation>多边形值变更</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1293"/>
-        <location filename="../geodatapolygon.cpp" line="1314"/>
+        <location filename="../geodatapolygon.cpp" line="1302"/>
+        <location filename="../geodatapolygon.cpp" line="1323"/>
         <source>Edit %1 value</source>
         <translation>编辑 %1数值</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1294"/>
+        <location filename="../geodatapolygon.cpp" line="1303"/>
         <source>Please input new value in this polygon.</source>
         <translation>请在此多边形中输入新值。</translation>
     </message>
@@ -4533,12 +4533,12 @@ p, li { white-space: pre-wrap; }
         <translation>多边形属性编辑</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1489"/>
+        <location filename="../geodatapolygon.cpp" line="1497"/>
         <source>Select Geographic Data</source>
         <translation>选择地理数据</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1489"/>
+        <location filename="../geodatapolygon.cpp" line="1497"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>请选择要复制该多边形的地理数据。</translation>
     </message>
@@ -6898,14 +6898,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
         <source>Min:</source>
         <translation>最小:</translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
         <source>Max:</source>
         <translation>最大:</translation>
     </message>
@@ -7934,14 +7934,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="48"/>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="217"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="62"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="231"/>
         <source>Min:</source>
         <translation>最小:</translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="62"/>
-        <location filename="../graph2dscatteredaxissettingdialog.ui" line="231"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="48"/>
+        <location filename="../graph2dscatteredaxissettingdialog.ui" line="217"/>
         <source>Max:</source>
         <translation>最大:</translation>
     </message>
@@ -10451,24 +10451,24 @@ Do you really want to import this file?</source>
         <translation>第%2行的%1:值%3大于最大值%4</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="465"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Choose a text file</source>
         <translation>选择一个文本文件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="465"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="488"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="488"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error occured while opening the file.</source>
         <translation>打开文件时错误</translation>
     </message>
@@ -10483,58 +10483,58 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="348"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="354"/>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
         <translation>%1是跨度的值。 例如，在第二行输入的值用于第一行和第二行之间的跨度。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="479"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>Specify file name to save</source>
         <translation>指定要保存的文件名</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="479"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
         <source>Values are copied to clipboard.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="587"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="593"/>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
         <translation>导入计算条件%2后，文件%1将更新。 您要导入更新的文件吗？</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="516"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="588"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="619"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="594"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="619"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="675"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="681"/>
         <source>The following problems found: 
 </source>
         <translation>找到以下问题:
         </translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="678"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="684"/>
         <source>
  ... and other %1 errors</source>
         <translation>
         ...和其他 %1 问题</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="680"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="686"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -12073,52 +12073,52 @@ Do you really want to import this file?</source>
 <context>
     <name>AnimationController</name>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="115"/>
+        <location filename="../misc/animationcontroller.cpp" line="118"/>
         <source>Animation ToolBar</source>
         <translation>动画工具栏</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="232"/>
+        <location filename="../misc/animationcontroller.cpp" line="235"/>
         <source>&amp;Animation</source>
         <translation>&amp;动画</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="247"/>
+        <location filename="../misc/animationcontroller.cpp" line="250"/>
         <source>Step &amp;Backward</source>
         <translation>向后退</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="250"/>
+        <location filename="../misc/animationcontroller.cpp" line="253"/>
         <source>Step &amp;Forward</source>
         <translation>向前进</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="253"/>
+        <location filename="../misc/animationcontroller.cpp" line="256"/>
         <source>&amp;Reset</source>
         <translation>重置</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="256"/>
+        <location filename="../misc/animationcontroller.cpp" line="259"/>
         <source>Go to &amp;Last Step</source>
         <translation>跳到最后一步</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="259"/>
+        <location filename="../misc/animationcontroller.cpp" line="262"/>
         <source>&amp;Start/Stop Animation</source>
         <translation>&amp;开始/结束动画</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="262"/>
+        <location filename="../misc/animationcontroller.cpp" line="265"/>
         <source>S&amp;top Animation</source>
         <translation>结束动画</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="265"/>
+        <location filename="../misc/animationcontroller.cpp" line="268"/>
         <source>Toggle &amp;following last step</source>
         <translation>切换到最后一步&amp;</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="269"/>
+        <location filename="../misc/animationcontroller.cpp" line="272"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation>动画速度设置...</translation>
     </message>
@@ -13635,200 +13635,155 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
 <context>
     <name>VerificationGraphDialog</name>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="14"/>
         <source>Verification</source>
-        <translation>认证</translation>
+        <translation type="vanished">认证</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="26"/>
         <source>Chart Type:</source>
-        <translation>图表类型:</translation>
+        <translation type="vanished">图表类型:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="41"/>
         <source>TextLabel</source>
-        <translation>文字标签</translation>
+        <translation type="vanished">文字标签</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="66"/>
         <source>&amp;Setting...</source>
-        <translation>&amp;设置...</translation>
+        <translation type="vanished">&amp;设置...</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="73"/>
         <source>&amp;Export...</source>
-        <translation>&amp;导出...</translation>
+        <translation type="vanished">&amp;导出...</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="80"/>
         <source>&amp;Close</source>
-        <translation>&amp;关闭</translation>
+        <translation type="vanished">&amp;关闭</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="120"/>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation>流向距离与测量值和计算结果</translation>
+        <translation type="vanished">流向距离与测量值和计算结果</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="121"/>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation>流向距离与残余误差</translation>
+        <translation type="vanished">流向距离与残余误差</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="123"/>
         <source>Measured Values vs. Calculation Result</source>
-        <translation>测量值与计算结果</translation>
+        <translation type="vanished">测量值与计算结果</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="124"/>
         <source>Measured Values vs. Residual Errors</source>
-        <translation>测量值与残留误差</translation>
+        <translation type="vanished">测量值与残留误差</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>Export CSV file</source>
-        <translation>导出CSV文件</translation>
+        <translation type="vanished">导出CSV文件</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>CSV file (*.csv)</source>
-        <translation>CSV file (*.csv)</translation>
+        <translation type="vanished">CSV file (*.csv)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>%1 cound not be opened.</source>
-        <translation>无法打开%1</translation>
+        <translation type="vanished">无法打开%1</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Information</source>
-        <translation>信息</translation>
+        <translation type="vanished">信息</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Data successfully exported to %1.</source>
-        <translation>数据成功导出到%1</translation>
+        <translation type="vanished">数据成功导出到%1</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="375"/>
         <source>Root Mean Squared Error: %1</source>
-        <translation>均方根误差:%1</translation>
+        <translation type="vanished">均方根误差:%1</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="398"/>
         <source>Measured Values (%1)</source>
-        <translation>测量值(%1)</translation>
+        <translation type="vanished">测量值(%1)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="402"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="420"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="428"/>
         <source>Calculation Result (%1)</source>
-        <translation>计算结果(%1)</translation>
+        <translation type="vanished">计算结果(%1)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="405"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="414"/>
         <source>Stream-wise Distance</source>
-        <translation>流向距离</translation>
+        <translation type="vanished">流向距离</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="406"/>
         <source>Values</source>
-        <translation>数值</translation>
+        <translation type="vanished">数值</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="410"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="415"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="433"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="438"/>
         <source>Residual Error</source>
-        <translation>残留误差</translation>
+        <translation type="vanished">残留误差</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="427"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="437"/>
         <source>Measured Value (%1)</source>
-        <translation>测量值(%1)</translation>
+        <translation type="vanished">测量值(%1)</translation>
     </message>
 </context>
 <context>
     <name>VerificationSettingDialog</name>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="14"/>
         <source>Verification Setting</source>
-        <translation>认证设置</translation>
+        <translation type="vanished">认证设置</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="20"/>
         <source>Timestep</source>
-        <translation>时间步</translation>
+        <translation type="vanished">时间步</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="26"/>
         <source>Select the timestep of calculation result</source>
-        <translation>选择计算结果时间步</translation>
+        <translation type="vanished">选择计算结果时间步</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="46"/>
         <source>Calculation Result</source>
-        <translation>计算结果</translation>
+        <translation type="vanished">计算结果</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="52"/>
         <source>Select which physical value to use for comparison.</source>
-        <translation>选择用于比较的物理值</translation>
+        <translation type="vanished">选择用于比较的物理值</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="61"/>
         <source>Grid:</source>
-        <translation>网格</translation>
+        <translation type="vanished">网格</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="71"/>
         <source>Physical Value:</source>
-        <translation>物理值:</translation>
+        <translation type="vanished">物理值:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="86"/>
         <source>Measured Values</source>
-        <translation>测量值</translation>
+        <translation type="vanished">测量值</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="92"/>
         <source>Select which measured value to use for comparison.</source>
-        <translation>选择用于比较的测量值。</translation>
+        <translation type="vanished">选择用于比较的测量值。</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="101"/>
         <source>File:</source>
-        <translation>文件:</translation>
+        <translation type="vanished">文件:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="111"/>
         <source>Value:</source>
-        <translation>数值:</translation>
+        <translation type="vanished">数值:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
-        <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
         <source>No Physical Value is selected.</source>
-        <translation>无选定物理值</translation>
+        <translation type="vanished">无选定物理值</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>No Value is selected.</source>
-        <translation>无选定值</translation>
+        <translation type="vanished">无选定值</translation>
     </message>
 </context>
 <context>
@@ -13841,16 +13796,16 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/iricmainwindow.cpp" line="711"/>
         <location filename="../main/iricmainwindow.cpp" line="715"/>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
-        <location filename="../main/iricmainwindow.cpp" line="782"/>
-        <location filename="../main/iricmainwindow.cpp" line="786"/>
-        <location filename="../main/iricmainwindow.cpp" line="807"/>
-        <location filename="../main/iricmainwindow.cpp" line="1864"/>
-        <location filename="../main/iricmainwindow.cpp" line="1928"/>
-        <location filename="../main/iricmainwindow.cpp" line="1960"/>
-        <location filename="../main/iricmainwindow.cpp" line="2024"/>
-        <location filename="../main/iricmainwindow.cpp" line="2062"/>
-        <location filename="../main/iricmainwindow.cpp" line="2100"/>
-        <location filename="../main/iricmainwindow.cpp" line="2142"/>
+        <location filename="../main/iricmainwindow.cpp" line="783"/>
+        <location filename="../main/iricmainwindow.cpp" line="787"/>
+        <location filename="../main/iricmainwindow.cpp" line="809"/>
+        <location filename="../main/iricmainwindow.cpp" line="1877"/>
+        <location filename="../main/iricmainwindow.cpp" line="1941"/>
+        <location filename="../main/iricmainwindow.cpp" line="1973"/>
+        <location filename="../main/iricmainwindow.cpp" line="2037"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
+        <location filename="../main/iricmainwindow.cpp" line="2113"/>
+        <location filename="../main/iricmainwindow.cpp" line="2155"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
         <source>Error</source>
@@ -13879,19 +13834,19 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/iricmainwindow.cpp" line="351"/>
         <location filename="../main/iricmainwindow.cpp" line="471"/>
         <location filename="../main/iricmainwindow.cpp" line="580"/>
-        <location filename="../main/iricmainwindow.cpp" line="821"/>
-        <location filename="../main/iricmainwindow.cpp" line="874"/>
-        <location filename="../main/iricmainwindow.cpp" line="888"/>
-        <location filename="../main/iricmainwindow.cpp" line="906"/>
-        <location filename="../main/iricmainwindow.cpp" line="964"/>
-        <location filename="../main/iricmainwindow.cpp" line="1120"/>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
-        <location filename="../main/iricmainwindow.cpp" line="1739"/>
-        <location filename="../main/iricmainwindow.cpp" line="1743"/>
-        <location filename="../main/iricmainwindow.cpp" line="1766"/>
-        <location filename="../main/iricmainwindow.cpp" line="2241"/>
-        <location filename="../main/iricmainwindow.cpp" line="2367"/>
-        <location filename="../main/iricmainwindow.cpp" line="2392"/>
+        <location filename="../main/iricmainwindow.cpp" line="823"/>
+        <location filename="../main/iricmainwindow.cpp" line="876"/>
+        <location filename="../main/iricmainwindow.cpp" line="890"/>
+        <location filename="../main/iricmainwindow.cpp" line="908"/>
+        <location filename="../main/iricmainwindow.cpp" line="966"/>
+        <location filename="../main/iricmainwindow.cpp" line="1122"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
+        <location filename="../main/iricmainwindow.cpp" line="1752"/>
+        <location filename="../main/iricmainwindow.cpp" line="1756"/>
+        <location filename="../main/iricmainwindow.cpp" line="1779"/>
+        <location filename="../main/iricmainwindow.cpp" line="2254"/>
+        <location filename="../main/iricmainwindow.cpp" line="2380"/>
+        <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
         <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
@@ -13959,53 +13914,53 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>项目文件夹必须为空。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="782"/>
+        <location filename="../main/iricmainwindow.cpp" line="783"/>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation>该项目有巨大的计算结果，因此无法另存为文件（* .ipro）。 请另存为项目。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="786"/>
+        <location filename="../main/iricmainwindow.cpp" line="787"/>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation>该项目文件过多，因此无法另存为文件（* .ipro）。 请另存为项目。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="813"/>
+        <location filename="../main/iricmainwindow.cpp" line="815"/>
         <source>Project successfully saved to %1.</source>
         <translation>项目已成功保存到%1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1991"/>
+        <location filename="../main/iricmainwindow.cpp" line="2004"/>
         <source>Export contour figure to ESRI Shapefiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2002"/>
+        <location filename="../main/iricmainwindow.cpp" line="2015"/>
         <source>Saving contour figure as ESRI Shapefiles...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2062"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
         <source>No Contour Figure is drawn now.</source>
         <translation>现在没有绘制轮廓图。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2100"/>
+        <location filename="../main/iricmainwindow.cpp" line="2113"/>
         <source>%1 can not be overwritten.</source>
         <translation>％1不能被覆盖。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2089"/>
-        <location filename="../main/iricmainwindow.cpp" line="2120"/>
+        <location filename="../main/iricmainwindow.cpp" line="2102"/>
+        <location filename="../main/iricmainwindow.cpp" line="2133"/>
         <source>Export Google Earth KMZ for street view</source>
         <translation>导出Google Earth KMZ以查看街景</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2121"/>
+        <location filename="../main/iricmainwindow.cpp" line="2134"/>
         <source>Saving KMZ file...</source>
         <translation>保存KMZ文件中...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2367"/>
+        <location filename="../main/iricmainwindow.cpp" line="2380"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation>网格被编辑或删除。 保存后，计算结果将被丢弃</translation>
     </message>
@@ -14016,12 +13971,12 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
-        <location filename="../main/iricmainwindow.cpp" line="807"/>
+        <location filename="../main/iricmainwindow.cpp" line="809"/>
         <source>Saving project failed.</source>
         <translation>保存项目失败</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="822"/>
+        <location filename="../main/iricmainwindow.cpp" line="824"/>
         <source>The solver is still running. Really quit?</source>
         <translation>解算器运行中，是否确认取消？</translation>
     </message>
@@ -14062,63 +14017,63 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>截图成功保存到 %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="874"/>
-        <location filename="../main/iricmainwindow.cpp" line="888"/>
+        <location filename="../main/iricmainwindow.cpp" line="876"/>
+        <location filename="../main/iricmainwindow.cpp" line="890"/>
         <source>This windows does not support snapshot function.</source>
         <translation>该窗口不支持截图功能。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="897"/>
+        <location filename="../main/iricmainwindow.cpp" line="899"/>
         <source>Copied snapshot to clipboard.</source>
         <translation>已将截图复制到剪贴板。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="906"/>
+        <location filename="../main/iricmainwindow.cpp" line="908"/>
         <source>This menu is not available while the solver is running.</source>
         <translation>解算器运行时此菜单不可用</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="964"/>
+        <location filename="../main/iricmainwindow.cpp" line="966"/>
         <source>This windows does not support continuous snapshot function.</source>
         <translation>该窗口不支持连续截图功能。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1002"/>
+        <location filename="../main/iricmainwindow.cpp" line="1004"/>
         <source>Continuous Snapshot</source>
         <translation>连续截图</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1003"/>
+        <location filename="../main/iricmainwindow.cpp" line="1005"/>
         <source>saving continuous snapshot...</source>
         <translation>保存连续截图中...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1120"/>
+        <location filename="../main/iricmainwindow.cpp" line="1122"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
         <translation>%1已经存在，无法删除。电影文件不输出。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1215"/>
+        <location filename="../main/iricmainwindow.cpp" line="1217"/>
         <source>iRIC %1</source>
         <translation>iRIC %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1230"/>
+        <location filename="../main/iricmainwindow.cpp" line="1232"/>
         <source>%1 - iRIC %2 [%3]</source>
         <translation>%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1651"/>
+        <location filename="../main/iricmainwindow.cpp" line="1664"/>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1946"/>
+        <location filename="../main/iricmainwindow.cpp" line="1959"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
         <translation>当前活动的子窗口不支持导出轮廓图。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1960"/>
+        <location filename="../main/iricmainwindow.cpp" line="1973"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>要导出形状文件，请切换 &quot;显示设置&quot; 到 &quot;轮廓图像&quot;, 不是 &quot;彩色条纹&quot; 或 &quot;等值线&quot;</translation>
     </message>
@@ -14127,7 +14082,7 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation type="vanished">将轮廓图导出到ESRI Shape文件</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <location filename="../main/iricmainwindow.cpp" line="2014"/>
         <source>Export contour figure</source>
         <translation>导出轮廓图</translation>
     </message>
@@ -14136,19 +14091,19 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation type="vanished">将轮廓图另存为ESRI Shape文件...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2068"/>
+        <location filename="../main/iricmainwindow.cpp" line="2081"/>
         <source>Please select which zone to use:</source>
         <translation>请选择要使用的区域:</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2392"/>
+        <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
         <translation>当前工作目录（%1）包含非ASCII字符。 在开始新项目之前，请从以下菜单更改工作目录:
         选项 -&gt; 优先</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1220"/>
+        <location filename="../main/iricmainwindow.cpp" line="1222"/>
         <source>Untitled</source>
         <translation>未命名</translation>
     </message>
@@ -14158,106 +14113,106 @@ Option -&gt; Preferences</source>
         <translation>CGNS file (*.cgn *.cgns)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
         <translation>求解器正在运行。 请停止求解器，以执行此操作。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1526"/>
+        <location filename="../main/iricmainwindow.cpp" line="1539"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1739"/>
+        <location filename="../main/iricmainwindow.cpp" line="1752"/>
         <source>Unknown options specified. They are neglected. %1</source>
         <translation>指定了未知选项。 他们已被忽略。 %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1743"/>
+        <location filename="../main/iricmainwindow.cpp" line="1756"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
         <translation>传递了两个以上的项目文件作为参数。 他们已被忽略。 %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1766"/>
+        <location filename="../main/iricmainwindow.cpp" line="1779"/>
         <source>Are you sure you want to delete the calculation result?</source>
         <translation>您确定要删除计算结果吗？</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1770"/>
+        <location filename="../main/iricmainwindow.cpp" line="1783"/>
         <source>Calculation result cleared.</source>
         <translation>计算结果已清除</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1836"/>
-        <location filename="../main/iricmainwindow.cpp" line="1850"/>
-        <location filename="../main/iricmainwindow.cpp" line="1856"/>
-        <location filename="../main/iricmainwindow.cpp" line="1946"/>
-        <location filename="../main/iricmainwindow.cpp" line="1952"/>
-        <location filename="../main/iricmainwindow.cpp" line="2048"/>
-        <location filename="../main/iricmainwindow.cpp" line="2054"/>
+        <location filename="../main/iricmainwindow.cpp" line="1849"/>
+        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1959"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="2061"/>
+        <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1836"/>
-        <location filename="../main/iricmainwindow.cpp" line="1856"/>
-        <location filename="../main/iricmainwindow.cpp" line="1952"/>
-        <location filename="../main/iricmainwindow.cpp" line="2054"/>
+        <location filename="../main/iricmainwindow.cpp" line="1849"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Calculation result does not exists.</source>
         <translation>计算结果不存在</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1850"/>
-        <location filename="../main/iricmainwindow.cpp" line="2048"/>
+        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation>可视化窗口处于活动状态时，请选择此菜单。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1864"/>
+        <location filename="../main/iricmainwindow.cpp" line="1877"/>
         <source>No particle is drawn now.</source>
         <translation>现在没有绘制任何粒子。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1893"/>
-        <location filename="../main/iricmainwindow.cpp" line="1905"/>
+        <location filename="../main/iricmainwindow.cpp" line="1906"/>
+        <location filename="../main/iricmainwindow.cpp" line="1918"/>
         <source>Export Particles</source>
         <translation>导出粒子</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1906"/>
+        <location filename="../main/iricmainwindow.cpp" line="1919"/>
         <source>Saving particles as VTK files...</source>
         <translation>将粒子另存为VTK文件...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1928"/>
-        <location filename="../main/iricmainwindow.cpp" line="2024"/>
-        <location filename="../main/iricmainwindow.cpp" line="2142"/>
+        <location filename="../main/iricmainwindow.cpp" line="1941"/>
+        <location filename="../main/iricmainwindow.cpp" line="2037"/>
+        <location filename="../main/iricmainwindow.cpp" line="2155"/>
         <source>Error occured while saving.</source>
         <translation>保存时发生错误。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2164"/>
+        <location filename="../main/iricmainwindow.cpp" line="2177"/>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
         <translation>Google Earth KMZ已成功导出到%1。</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2234"/>
+        <location filename="../main/iricmainwindow.cpp" line="2247"/>
         <source>Import Visualization/Graph Settings</source>
         <translation>导入可视化/图形设置</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2234"/>
-        <location filename="../main/iricmainwindow.cpp" line="2256"/>
+        <location filename="../main/iricmainwindow.cpp" line="2247"/>
+        <location filename="../main/iricmainwindow.cpp" line="2269"/>
         <source>Setting file (*.vgsetting)</source>
         <translation>Setting file (*.vgsetting)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2241"/>
+        <location filename="../main/iricmainwindow.cpp" line="2254"/>
         <source>File %1 does not exists.</source>
         <translation>文件%1不存在</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2256"/>
+        <location filename="../main/iricmainwindow.cpp" line="2269"/>
         <source>Export Visualization/Graph Settings</source>
         <translation>导出可视化/图形设置</translation>
     </message>
@@ -14784,8 +14739,12 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
+        <source>Open new Verification Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Compare with measured values...</source>
-        <translation>与测量值做对比...</translation>
+        <translation type="vanished">与测量值做对比...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="538"/>
@@ -14888,7 +14847,7 @@ Option -&gt; Preferences</source>
         <translation>窗口清单工具栏</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1182"/>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1185"/>
         <source>Ctrl+C</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15275,28 +15234,28 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="109"/>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="95"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="112"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="109"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="95"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation>轮廓设置不可用，因为此结果不包含标量值。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="112"/>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
         <translation>轮廓设置不可用，因为此结果不包含像元标量值。</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="200"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="186"/>
         <source>Z-direction Scale</source>
         <translation>Z方向比例</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="200"/>
+        <location filename="../post2dbirdeyewindowdatamodel.cpp" line="186"/>
         <source>Input new Z-direction scale.</source>
         <translation>输入新Z方向比例</translation>
     </message>
@@ -18228,7 +18187,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PostStringResultDataItem</name>
     <message>
-        <location filename="../string/poststringresultdataitem.cpp" line="71"/>
+        <location filename="../string/poststringresultdataitem.cpp" line="72"/>
         <source>Label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18617,22 +18576,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="113"/>
         <source>Edit Z-direction Scale</source>
         <translation>编辑Z方向比率</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Z-direction Scale</source>
         <translation>Z方向比率</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Input new Z-direction scale.</source>
         <translation>输入新Z方向比率</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="148"/>
         <source>Edit Color Setting</source>
         <translation>编辑颜色设置</translation>
     </message>
@@ -20708,121 +20667,121 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>SolverConsoleWindow</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="45"/>
+        <location filename="../solverconsolewindow.cpp" line="46"/>
         <source>&amp;Export solver console log...</source>
         <translation>&amp;导出求解器控制台日志...</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="139"/>
+        <location filename="../solverconsolewindow.cpp" line="140"/>
         <source>Show Detail</source>
         <translation>显示细节</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="140"/>
-        <location filename="../solverconsolewindow.cpp" line="151"/>
+        <location filename="../solverconsolewindow.cpp" line="141"/>
+        <location filename="../solverconsolewindow.cpp" line="152"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="140"/>
+        <location filename="../solverconsolewindow.cpp" line="141"/>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
         <translation>在网格中发现以下问题。 您是否真的要使用此网格运行求解器？</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="144"/>
+        <location filename="../solverconsolewindow.cpp" line="145"/>
         <source>The simulation has result</source>
         <translation>模拟有结果</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="144"/>
+        <location filename="../solverconsolewindow.cpp" line="145"/>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
         <translation>目前的模拟已经有结果数据。 运行求解器时，当前结果数据将被丢弃。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="151"/>
+        <location filename="../solverconsolewindow.cpp" line="152"/>
         <source>Error occured. %1</source>
         <translation>出现错误 %1</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="124"/>
-        <location filename="../solverconsolewindow.cpp" line="155"/>
+        <location filename="../solverconsolewindow.cpp" line="125"/>
+        <location filename="../solverconsolewindow.cpp" line="156"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="124"/>
+        <location filename="../solverconsolewindow.cpp" line="125"/>
         <source>This project is opened in post only mode. You can not run the solver.</source>
         <translation>该项目以仅发布模式打开。 您无法运行求解器。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="155"/>
+        <location filename="../solverconsolewindow.cpp" line="156"/>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
         <translation>我们建议您在启动求解器之前保存项目。 您要保存吗？</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="169"/>
+        <location filename="../solverconsolewindow.cpp" line="170"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="169"/>
+        <location filename="../solverconsolewindow.cpp" line="170"/>
         <source>Solver executable file %1 does not exists.</source>
         <translation>解算器可执行文件%1不存在。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="191"/>
-        <location filename="../solverconsolewindow.cpp" line="360"/>
+        <location filename="../solverconsolewindow.cpp" line="192"/>
+        <location filename="../solverconsolewindow.cpp" line="368"/>
         <source>Confirm Solver Termination</source>
         <translation>确认解算器终止</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="192"/>
+        <location filename="../solverconsolewindow.cpp" line="193"/>
         <source>Do you really want to kill the solver?</source>
         <translation>是否确认停止解算器？</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="252"/>
-        <location filename="../solverconsolewindow.cpp" line="255"/>
+        <location filename="../solverconsolewindow.cpp" line="253"/>
+        <location filename="../solverconsolewindow.cpp" line="256"/>
         <source>Solver Finished</source>
         <translation>解算器停止</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="252"/>
+        <location filename="../solverconsolewindow.cpp" line="253"/>
         <source>The solver finished calculation.</source>
         <translation>求解器完成计算。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="255"/>
+        <location filename="../solverconsolewindow.cpp" line="256"/>
         <source>The solver finished abnormally.</source>
         <translation>求解器异常完成。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="264"/>
+        <location filename="../solverconsolewindow.cpp" line="265"/>
         <source>Solver Console</source>
         <translation>求解器控制台</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="270"/>
+        <location filename="../solverconsolewindow.cpp" line="271"/>
         <source>running</source>
         <translation>运行中</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="272"/>
+        <location filename="../solverconsolewindow.cpp" line="273"/>
         <source>stopped</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="274"/>
+        <location filename="../solverconsolewindow.cpp" line="275"/>
         <source>Solver Console [%1] (%2)</source>
         <translation>求解器控制台 [%1] (%2)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="361"/>
+        <location filename="../solverconsolewindow.cpp" line="369"/>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
         <translation>已过%1秒，但求解器没有结束。 您想停止求解器吗？</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="387"/>
+        <location filename="../solverconsolewindow.cpp" line="395"/>
         <source>Background Color</source>
         <translation>背景颜色</translation>
     </message>
@@ -20835,32 +20794,32 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="134"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="146"/>
         <source>Select File to Export</source>
         <translation>选择导出文件</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="134"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="146"/>
         <source>Text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="149"/>
         <source>Exporting solver console log...</source>
         <translation>导出求解器控制台日志...</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="145"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="157"/>
         <source>Solver console log is successfully exported to %1.</source>
         <translation>规划求解控制台日志已成功导出到%1。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="150"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="162"/>
         <source>Fail</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="150"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="162"/>
         <source>Exporting solver console log failed.</source>
         <translation>导出求解器控制台日志失败。</translation>
     </message>
@@ -22119,17 +22078,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
-        <location filename="../structured2dgridgdalimporter.cpp" line="21"/>
+        <location filename="../structured2dgridgdalimporter.cpp" line="22"/>
         <source>GDAL supported files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridgdalimporter.cpp" line="27"/>
+        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
         <source>GeoTiff files(*.tif)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
+        <location filename="../structured2dgridgdalimporter.cpp" line="29"/>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation type="unfinished"></translation>
     </message>

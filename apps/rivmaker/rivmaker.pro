@@ -286,12 +286,42 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
            window/preprocessor/objectbrowser/objectbrowserview.cpp
 RESOURCES += rivmaker.qrc
-TRANSLATIONS += languages/rivmaker_es_ES.ts \
+TRANSLATIONS += languages/rivmaker_ar_EG.ts \
+                languages/rivmaker_bg_BG.ts \
+                languages/rivmaker_bs_BA.ts \
+                languages/rivmaker_ca_ES.ts \
+                languages/rivmaker_cs_CZ.ts \
+                languages/rivmaker_da_DK.ts \
+                languages/rivmaker_de_DE.ts \
+                languages/rivmaker_el_GR.ts \
+                languages/rivmaker_es_ES.ts \
+                languages/rivmaker_et_EE.ts \
+                languages/rivmaker_eu_ES.ts \
+                languages/rivmaker_fi_FI.ts \
                 languages/rivmaker_fr_FR.ts \
+                languages/rivmaker_gl_ES.ts \
+                languages/rivmaker_hi_IN.ts \
+                languages/rivmaker_hu_HU.ts \
                 languages/rivmaker_id_ID.ts \
+                languages/rivmaker_is_IS.ts \
+                languages/rivmaker_it_IT.ts \
                 languages/rivmaker_ja_JP.ts \
                 languages/rivmaker_ko_KR.ts \
+                languages/rivmaker_ky_KG.ts \
+                languages/rivmaker_lt_LT.ts \
+                languages/rivmaker_lv_LV.ts \
+                languages/rivmaker_nb_NO.ts \
+                languages/rivmaker_nl_NL.ts \
+                languages/rivmaker_pl_PL.ts \
+                languages/rivmaker_pt_BR.ts \
+                languages/rivmaker_pt_PT.ts \
+                languages/rivmaker_ro_RO.ts \
                 languages/rivmaker_ru_RU.ts \
+                languages/rivmaker_sl_SI.ts \
+                languages/rivmaker_sv_SE.ts \
                 languages/rivmaker_th_TH.ts \
+                languages/rivmaker_tr_TR.ts \
+                languages/rivmaker_uk_UA.ts \
                 languages/rivmaker_vi_VN.ts \
-                languages/rivmaker_zh_CN.ts
+                languages/rivmaker_zh_CN.ts \
+                languages/rivmaker_zh_TW.ts

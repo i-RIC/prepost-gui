@@ -140,12 +140,42 @@ SOURCES += gridcreatingconditioncompoundchannel.cpp \
            private/gridcreatingconditioncompoundchannel_removepolylinevertexcommand.cpp \
            private/gridcreatingconditioncompoundchannel_switchstatuscommand.cpp
 RESOURCES += compoundchannel.qrc
-TRANSLATIONS += languages/iricGccCompoundchannel_es_ES.ts \
+TRANSLATIONS += languages/iricGccCompoundchannel_ar_EG.ts \
+                languages/iricGccCompoundchannel_bg_BG.ts \
+                languages/iricGccCompoundchannel_bs_BA.ts \
+                languages/iricGccCompoundchannel_ca_ES.ts \
+                languages/iricGccCompoundchannel_cs_CZ.ts \
+                languages/iricGccCompoundchannel_da_DK.ts \
+                languages/iricGccCompoundchannel_de_DE.ts \
+                languages/iricGccCompoundchannel_el_GR.ts \
+                languages/iricGccCompoundchannel_es_ES.ts \
+                languages/iricGccCompoundchannel_et_EE.ts \
+                languages/iricGccCompoundchannel_eu_ES.ts \
+                languages/iricGccCompoundchannel_fi_FI.ts \
                 languages/iricGccCompoundchannel_fr_FR.ts \
+                languages/iricGccCompoundchannel_gl_ES.ts \
+                languages/iricGccCompoundchannel_hi_IN.ts \
+                languages/iricGccCompoundchannel_hu_HU.ts \
                 languages/iricGccCompoundchannel_id_ID.ts \
+                languages/iricGccCompoundchannel_is_IS.ts \
+                languages/iricGccCompoundchannel_it_IT.ts \
                 languages/iricGccCompoundchannel_ja_JP.ts \
                 languages/iricGccCompoundchannel_ko_KR.ts \
+                languages/iricGccCompoundchannel_ky_KG.ts \
+                languages/iricGccCompoundchannel_lt_LT.ts \
+                languages/iricGccCompoundchannel_lv_LV.ts \
+                languages/iricGccCompoundchannel_nb_NO.ts \
+                languages/iricGccCompoundchannel_nl_NL.ts \
+                languages/iricGccCompoundchannel_pl_PL.ts \
+                languages/iricGccCompoundchannel_pt_BR.ts \
+                languages/iricGccCompoundchannel_pt_PT.ts \
+                languages/iricGccCompoundchannel_ro_RO.ts \
                 languages/iricGccCompoundchannel_ru_RU.ts \
+                languages/iricGccCompoundchannel_sl_SI.ts \
+                languages/iricGccCompoundchannel_sv_SE.ts \
                 languages/iricGccCompoundchannel_th_TH.ts \
+                languages/iricGccCompoundchannel_tr_TR.ts \
+                languages/iricGccCompoundchannel_uk_UA.ts \
                 languages/iricGccCompoundchannel_vi_VN.ts \
-                languages/iricGccCompoundchannel_zh_CN.ts
+                languages/iricGccCompoundchannel_zh_CN.ts \
+                languages/iricGccCompoundchannel_zh_TW.ts

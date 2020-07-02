@@ -171,12 +171,42 @@ SOURCES += gridcreatingconditioncreatorlaplace.cpp \
            private/gridcreatingconditionlaplace_updateedgelinesforedgeselectioncommand.cpp \
            private/gridcreatingconditionlaplace_wholeregiondivisionsettingcommand.cpp
 RESOURCES += laplace.qrc
-TRANSLATIONS += languages/iricGccLaplace_es_ES.ts \
+TRANSLATIONS += languages/iricGccLaplace_ar_EG.ts \
+                languages/iricGccLaplace_bg_BG.ts \
+                languages/iricGccLaplace_bs_BA.ts \
+                languages/iricGccLaplace_ca_ES.ts \
+                languages/iricGccLaplace_cs_CZ.ts \
+                languages/iricGccLaplace_da_DK.ts \
+                languages/iricGccLaplace_de_DE.ts \
+                languages/iricGccLaplace_el_GR.ts \
+                languages/iricGccLaplace_es_ES.ts \
+                languages/iricGccLaplace_et_EE.ts \
+                languages/iricGccLaplace_eu_ES.ts \
+                languages/iricGccLaplace_fi_FI.ts \
                 languages/iricGccLaplace_fr_FR.ts \
+                languages/iricGccLaplace_gl_ES.ts \
+                languages/iricGccLaplace_hi_IN.ts \
+                languages/iricGccLaplace_hu_HU.ts \
                 languages/iricGccLaplace_id_ID.ts \
+                languages/iricGccLaplace_is_IS.ts \
+                languages/iricGccLaplace_it_IT.ts \
                 languages/iricGccLaplace_ja_JP.ts \
                 languages/iricGccLaplace_ko_KR.ts \
+                languages/iricGccLaplace_ky_KG.ts \
+                languages/iricGccLaplace_lt_LT.ts \
+                languages/iricGccLaplace_lv_LV.ts \
+                languages/iricGccLaplace_nb_NO.ts \
+                languages/iricGccLaplace_nl_NL.ts \
+                languages/iricGccLaplace_pl_PL.ts \
+                languages/iricGccLaplace_pt_BR.ts \
+                languages/iricGccLaplace_pt_PT.ts \
+                languages/iricGccLaplace_ro_RO.ts \
                 languages/iricGccLaplace_ru_RU.ts \
+                languages/iricGccLaplace_sl_SI.ts \
+                languages/iricGccLaplace_sv_SE.ts \
                 languages/iricGccLaplace_th_TH.ts \
+                languages/iricGccLaplace_tr_TR.ts \
+                languages/iricGccLaplace_uk_UA.ts \
                 languages/iricGccLaplace_vi_VN.ts \
-                languages/iricGccLaplace_zh_CN.ts
+                languages/iricGccLaplace_zh_CN.ts \
+                languages/iricGccLaplace_zh_TW.ts

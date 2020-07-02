@@ -438,12 +438,42 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            pref/private/preferencepagetmsadddialog.cpp \
            pref/private/preferencepagewebcsvtileadddialog.cpp
 RESOURCES += gui.qrc
-TRANSLATIONS += languages/iricGui_es_ES.ts \
+TRANSLATIONS += languages/iricGui_ar_EG.ts \
+                languages/iricGui_bg_BG.ts \
+                languages/iricGui_bs_BA.ts \
+                languages/iricGui_ca_ES.ts \
+                languages/iricGui_cs_CZ.ts \
+                languages/iricGui_da_DK.ts \
+                languages/iricGui_de_DE.ts \
+                languages/iricGui_el_GR.ts \
+                languages/iricGui_es_ES.ts \
+                languages/iricGui_et_EE.ts \
+                languages/iricGui_eu_ES.ts \
+                languages/iricGui_fi_FI.ts \
                 languages/iricGui_fr_FR.ts \
+                languages/iricGui_gl_ES.ts \
+                languages/iricGui_hi_IN.ts \
+                languages/iricGui_hu_HU.ts \
                 languages/iricGui_id_ID.ts \
+                languages/iricGui_is_IS.ts \
+                languages/iricGui_it_IT.ts \
                 languages/iricGui_ja_JP.ts \
                 languages/iricGui_ko_KR.ts \
+                languages/iricGui_ky_KG.ts \
+                languages/iricGui_lt_LT.ts \
+                languages/iricGui_lv_LV.ts \
+                languages/iricGui_nb_NO.ts \
+                languages/iricGui_nl_NL.ts \
+                languages/iricGui_pl_PL.ts \
+                languages/iricGui_pt_BR.ts \
+                languages/iricGui_pt_PT.ts \
+                languages/iricGui_ro_RO.ts \
                 languages/iricGui_ru_RU.ts \
+                languages/iricGui_sl_SI.ts \
+                languages/iricGui_sv_SE.ts \
                 languages/iricGui_th_TH.ts \
+                languages/iricGui_tr_TR.ts \
+                languages/iricGui_uk_UA.ts \
                 languages/iricGui_vi_VN.ts \
-                languages/iricGui_zh_CN.ts
+                languages/iricGui_zh_CN.ts \
+                languages/iricGui_zh_TW.ts

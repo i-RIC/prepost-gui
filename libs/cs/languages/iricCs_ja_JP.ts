@@ -28,7 +28,7 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;UTM 座標系 (EPSG:32601 - 32760 など) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="56"/>
         <source>(Not Specified)</source>
         <translation>(指定されていない)</translation>
     </message>

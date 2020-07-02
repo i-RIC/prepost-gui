@@ -362,12 +362,42 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.cpp \
            datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.cpp
 RESOURCES += post2d.qrc
-TRANSLATIONS += languages/iricPost2d_es_ES.ts \
+TRANSLATIONS += languages/iricPost2d_ar_EG.ts \
+                languages/iricPost2d_bg_BG.ts \
+                languages/iricPost2d_bs_BA.ts \
+                languages/iricPost2d_ca_ES.ts \
+                languages/iricPost2d_cs_CZ.ts \
+                languages/iricPost2d_da_DK.ts \
+                languages/iricPost2d_de_DE.ts \
+                languages/iricPost2d_el_GR.ts \
+                languages/iricPost2d_es_ES.ts \
+                languages/iricPost2d_et_EE.ts \
+                languages/iricPost2d_eu_ES.ts \
+                languages/iricPost2d_fi_FI.ts \
                 languages/iricPost2d_fr_FR.ts \
+                languages/iricPost2d_gl_ES.ts \
+                languages/iricPost2d_hi_IN.ts \
+                languages/iricPost2d_hu_HU.ts \
                 languages/iricPost2d_id_ID.ts \
+                languages/iricPost2d_is_IS.ts \
+                languages/iricPost2d_it_IT.ts \
                 languages/iricPost2d_ja_JP.ts \
                 languages/iricPost2d_ko_KR.ts \
+                languages/iricPost2d_ky_KG.ts \
+                languages/iricPost2d_lt_LT.ts \
+                languages/iricPost2d_lv_LV.ts \
+                languages/iricPost2d_nb_NO.ts \
+                languages/iricPost2d_nl_NL.ts \
+                languages/iricPost2d_pl_PL.ts \
+                languages/iricPost2d_pt_BR.ts \
+                languages/iricPost2d_pt_PT.ts \
+                languages/iricPost2d_ro_RO.ts \
                 languages/iricPost2d_ru_RU.ts \
+                languages/iricPost2d_sl_SI.ts \
+                languages/iricPost2d_sv_SE.ts \
                 languages/iricPost2d_th_TH.ts \
+                languages/iricPost2d_tr_TR.ts \
+                languages/iricPost2d_uk_UA.ts \
                 languages/iricPost2d_vi_VN.ts \
-                languages/iricPost2d_zh_CN.ts
+                languages/iricPost2d_zh_CN.ts \
+                languages/iricPost2d_zh_TW.ts

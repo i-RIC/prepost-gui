@@ -52,14 +52,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
         <source>Min:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridsettingdialog.ui" line="108"/>
-        <location filename="../graph2dhybridsettingdialog.ui" line="277"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="94"/>
+        <location filename="../graph2dhybridsettingdialog.ui" line="263"/>
         <source>Max:</source>
         <translation type="unfinished"></translation>
     </message>

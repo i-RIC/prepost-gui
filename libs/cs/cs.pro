@@ -73,12 +73,42 @@ SOURCES += coordinatesystem.cpp \
            gdalutil.cpp \
            webmercatorutil.cpp
 RESOURCES += cs.qrc
-TRANSLATIONS += languages/iricCs_es_ES.ts \
+TRANSLATIONS += languages/iricCs_ar_EG.ts \
+                languages/iricCs_bg_BG.ts \
+                languages/iricCs_bs_BA.ts \
+                languages/iricCs_ca_ES.ts \
+                languages/iricCs_cs_CZ.ts \
+                languages/iricCs_da_DK.ts \
+                languages/iricCs_de_DE.ts \
+                languages/iricCs_el_GR.ts \
+                languages/iricCs_es_ES.ts \
+                languages/iricCs_et_EE.ts \
+                languages/iricCs_eu_ES.ts \
+                languages/iricCs_fi_FI.ts \
                 languages/iricCs_fr_FR.ts \
+                languages/iricCs_gl_ES.ts \
+                languages/iricCs_hi_IN.ts \
+                languages/iricCs_hu_HU.ts \
                 languages/iricCs_id_ID.ts \
+                languages/iricCs_is_IS.ts \
+                languages/iricCs_it_IT.ts \
                 languages/iricCs_ja_JP.ts \
                 languages/iricCs_ko_KR.ts \
+                languages/iricCs_ky_KG.ts \
+                languages/iricCs_lt_LT.ts \
+                languages/iricCs_lv_LV.ts \
+                languages/iricCs_nb_NO.ts \
+                languages/iricCs_nl_NL.ts \
+                languages/iricCs_pl_PL.ts \
+                languages/iricCs_pt_BR.ts \
+                languages/iricCs_pt_PT.ts \
+                languages/iricCs_ro_RO.ts \
                 languages/iricCs_ru_RU.ts \
+                languages/iricCs_sl_SI.ts \
+                languages/iricCs_sv_SE.ts \
                 languages/iricCs_th_TH.ts \
+                languages/iricCs_tr_TR.ts \
+                languages/iricCs_uk_UA.ts \
                 languages/iricCs_vi_VN.ts \
-                languages/iricCs_zh_CN.ts
+                languages/iricCs_zh_CN.ts \
+                languages/iricCs_zh_TW.ts

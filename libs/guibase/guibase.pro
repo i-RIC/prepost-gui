@@ -323,12 +323,42 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/waitdialog.cpp \
            coordinates/private/coordinateseditdialogdelegate.cpp
 RESOURCES += guibase.qrc
-TRANSLATIONS += languages/iricGuibase_es_ES.ts \
+TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
+                languages/iricGuibase_bg_BG.ts \
+                languages/iricGuibase_bs_BA.ts \
+                languages/iricGuibase_ca_ES.ts \
+                languages/iricGuibase_cs_CZ.ts \
+                languages/iricGuibase_da_DK.ts \
+                languages/iricGuibase_de_DE.ts \
+                languages/iricGuibase_el_GR.ts \
+                languages/iricGuibase_es_ES.ts \
+                languages/iricGuibase_et_EE.ts \
+                languages/iricGuibase_eu_ES.ts \
+                languages/iricGuibase_fi_FI.ts \
                 languages/iricGuibase_fr_FR.ts \
+                languages/iricGuibase_gl_ES.ts \
+                languages/iricGuibase_hi_IN.ts \
+                languages/iricGuibase_hu_HU.ts \
                 languages/iricGuibase_id_ID.ts \
+                languages/iricGuibase_is_IS.ts \
+                languages/iricGuibase_it_IT.ts \
                 languages/iricGuibase_ja_JP.ts \
                 languages/iricGuibase_ko_KR.ts \
+                languages/iricGuibase_ky_KG.ts \
+                languages/iricGuibase_lt_LT.ts \
+                languages/iricGuibase_lv_LV.ts \
+                languages/iricGuibase_nb_NO.ts \
+                languages/iricGuibase_nl_NL.ts \
+                languages/iricGuibase_pl_PL.ts \
+                languages/iricGuibase_pt_BR.ts \
+                languages/iricGuibase_pt_PT.ts \
+                languages/iricGuibase_ro_RO.ts \
                 languages/iricGuibase_ru_RU.ts \
+                languages/iricGuibase_sl_SI.ts \
+                languages/iricGuibase_sv_SE.ts \
                 languages/iricGuibase_th_TH.ts \
+                languages/iricGuibase_tr_TR.ts \
+                languages/iricGuibase_uk_UA.ts \
                 languages/iricGuibase_vi_VN.ts \
-                languages/iricGuibase_zh_CN.ts
+                languages/iricGuibase_zh_CN.ts \
+                languages/iricGuibase_zh_TW.ts

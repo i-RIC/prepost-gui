@@ -657,6 +657,24 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeEditNameAndValueDialog</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="22"/>
+        <source>Name:</source>
+        <translation>名前:</translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="32"/>
+        <source>TextLabel</source>
+        <translation>テキストラベル</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
@@ -926,59 +944,59 @@ Do you really want to import this file?</source>
         <translation>計算条件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="48"/>
         <source>&amp;Save and Close</source>
         <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="127"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="133"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="151"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
     </message>
@@ -1095,54 +1113,69 @@ Do you really want to import this file?</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="34"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="38"/>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
         <translation>%1 %2行目: 最小値 %4 より小さい値 %3 が入力されています</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="41"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="45"/>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
         <translation>%1 %2行目: 最大値 %4 より大きい値 %3 が入力されています</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="446"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Choose a text file</source>
         <translation>テキストファイルの選択</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="446"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="471"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="83"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="469"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="83"/>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="469"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="88"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="494"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="329"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="170"/>
+        <source>Ctrl+C</source>
+        <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="173"/>
+        <source>Ctrl+V</source>
+        <translation>Ctrl+V</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="354"/>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
         <translation>%1 は、区間で定義される値です。例えば、2行目に指定された値は1行目と2行目の間の区間の値です。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="460"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>Specify file name to save</source>
         <translation>保存するファイルの名前を指定</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="460"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="485"/>
         <source>CSV files (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="541"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
+        <source>Values are copied to clipboard.</source>
+        <translation>クリップボードに値がコピーされました。</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="593"/>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
         <translation>ファイル %1 は、計算条件 %2 にインポートされた後更新されています。更新された値をインポートしますか?</translation>
     </message>
@@ -1151,26 +1184,33 @@ Do you really want to import this file?</source>
         <translation type="vanished">ファイル %1 は、計算条件 %2 にインポートされた後更新されています。更新された値をインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="542"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="522"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="594"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="623"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="625"/>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>ショートカットキー &quot;Ctrl + C&quot;, &quot;Ctrl + V&quot; によって、値をコピー＆ペーストできます。</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="681"/>
         <source>The following problems found: 
 </source>
         <translation>以下の問題が見つかりました:
 </translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="626"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="684"/>
         <source>
  ... and other %1 errors</source>
         <translation>
  ... その他 %1 件のエラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="628"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="686"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1988,20 +2028,20 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2010,37 +2050,37 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="828"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="832"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="841"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="835"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="844"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="838"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="847"/>
         <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
@@ -2049,7 +2089,7 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -3000,24 +3040,24 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="173"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="174"/>
         <source>Background Images (Internet)</source>
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation>インターネットから背景画像を取得するには、以下のメニューから座標系を指定して下さい。
 ファイル -&gt; プロパティ</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="260"/>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>

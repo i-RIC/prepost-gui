@@ -164,12 +164,42 @@ SOURCES += post2dbirdeyeobjectbrowser.cpp \
            datamodel/private/post2dbirdeyewindowcellscalargroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp
 RESOURCES += post2dbirdeye.qrc
-TRANSLATIONS += languages/iricPost2dbirdeye_es_ES.ts \
+TRANSLATIONS += languages/iricPost2dbirdeye_ar_EG.ts \
+                languages/iricPost2dbirdeye_bg_BG.ts \
+                languages/iricPost2dbirdeye_bs_BA.ts \
+                languages/iricPost2dbirdeye_ca_ES.ts \
+                languages/iricPost2dbirdeye_cs_CZ.ts \
+                languages/iricPost2dbirdeye_da_DK.ts \
+                languages/iricPost2dbirdeye_de_DE.ts \
+                languages/iricPost2dbirdeye_el_GR.ts \
+                languages/iricPost2dbirdeye_es_ES.ts \
+                languages/iricPost2dbirdeye_et_EE.ts \
+                languages/iricPost2dbirdeye_eu_ES.ts \
+                languages/iricPost2dbirdeye_fi_FI.ts \
                 languages/iricPost2dbirdeye_fr_FR.ts \
+                languages/iricPost2dbirdeye_gl_ES.ts \
+                languages/iricPost2dbirdeye_hi_IN.ts \
+                languages/iricPost2dbirdeye_hu_HU.ts \
                 languages/iricPost2dbirdeye_id_ID.ts \
+                languages/iricPost2dbirdeye_is_IS.ts \
+                languages/iricPost2dbirdeye_it_IT.ts \
                 languages/iricPost2dbirdeye_ja_JP.ts \
                 languages/iricPost2dbirdeye_ko_KR.ts \
+                languages/iricPost2dbirdeye_ky_KG.ts \
+                languages/iricPost2dbirdeye_lt_LT.ts \
+                languages/iricPost2dbirdeye_lv_LV.ts \
+                languages/iricPost2dbirdeye_nb_NO.ts \
+                languages/iricPost2dbirdeye_nl_NL.ts \
+                languages/iricPost2dbirdeye_pl_PL.ts \
+                languages/iricPost2dbirdeye_pt_BR.ts \
+                languages/iricPost2dbirdeye_pt_PT.ts \
+                languages/iricPost2dbirdeye_ro_RO.ts \
                 languages/iricPost2dbirdeye_ru_RU.ts \
+                languages/iricPost2dbirdeye_sl_SI.ts \
+                languages/iricPost2dbirdeye_sv_SE.ts \
                 languages/iricPost2dbirdeye_th_TH.ts \
+                languages/iricPost2dbirdeye_tr_TR.ts \
+                languages/iricPost2dbirdeye_uk_UA.ts \
                 languages/iricPost2dbirdeye_vi_VN.ts \
-                languages/iricPost2dbirdeye_zh_CN.ts
+                languages/iricPost2dbirdeye_zh_CN.ts \
+                languages/iricPost2dbirdeye_zh_TW.ts

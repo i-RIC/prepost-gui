@@ -86,12 +86,42 @@ SOURCES += gridcreatingconditioncreatorrectangularregionlonlat.cpp \
            gridcreatingconditionrectangularregionlonlat.cpp \
            gridcreatingconditionrectangularregionlonlatsettingdialog.cpp
 RESOURCES += rectangularregionlonlat.qrc
-TRANSLATIONS += languages/iricGccRectangularregionlonlat_es_ES.ts \
+TRANSLATIONS += languages/iricGccRectangularregionlonlat_ar_EG.ts \
+                languages/iricGccRectangularregionlonlat_bg_BG.ts \
+                languages/iricGccRectangularregionlonlat_bs_BA.ts \
+                languages/iricGccRectangularregionlonlat_ca_ES.ts \
+                languages/iricGccRectangularregionlonlat_cs_CZ.ts \
+                languages/iricGccRectangularregionlonlat_da_DK.ts \
+                languages/iricGccRectangularregionlonlat_de_DE.ts \
+                languages/iricGccRectangularregionlonlat_el_GR.ts \
+                languages/iricGccRectangularregionlonlat_es_ES.ts \
+                languages/iricGccRectangularregionlonlat_et_EE.ts \
+                languages/iricGccRectangularregionlonlat_eu_ES.ts \
+                languages/iricGccRectangularregionlonlat_fi_FI.ts \
                 languages/iricGccRectangularregionlonlat_fr_FR.ts \
+                languages/iricGccRectangularregionlonlat_gl_ES.ts \
+                languages/iricGccRectangularregionlonlat_hi_IN.ts \
+                languages/iricGccRectangularregionlonlat_hu_HU.ts \
                 languages/iricGccRectangularregionlonlat_id_ID.ts \
+                languages/iricGccRectangularregionlonlat_is_IS.ts \
+                languages/iricGccRectangularregionlonlat_it_IT.ts \
                 languages/iricGccRectangularregionlonlat_ja_JP.ts \
                 languages/iricGccRectangularregionlonlat_ko_KR.ts \
+                languages/iricGccRectangularregionlonlat_ky_KG.ts \
+                languages/iricGccRectangularregionlonlat_lt_LT.ts \
+                languages/iricGccRectangularregionlonlat_lv_LV.ts \
+                languages/iricGccRectangularregionlonlat_nb_NO.ts \
+                languages/iricGccRectangularregionlonlat_nl_NL.ts \
+                languages/iricGccRectangularregionlonlat_pl_PL.ts \
+                languages/iricGccRectangularregionlonlat_pt_BR.ts \
+                languages/iricGccRectangularregionlonlat_pt_PT.ts \
+                languages/iricGccRectangularregionlonlat_ro_RO.ts \
                 languages/iricGccRectangularregionlonlat_ru_RU.ts \
+                languages/iricGccRectangularregionlonlat_sl_SI.ts \
+                languages/iricGccRectangularregionlonlat_sv_SE.ts \
                 languages/iricGccRectangularregionlonlat_th_TH.ts \
+                languages/iricGccRectangularregionlonlat_tr_TR.ts \
+                languages/iricGccRectangularregionlonlat_uk_UA.ts \
                 languages/iricGccRectangularregionlonlat_vi_VN.ts \
-                languages/iricGccRectangularregionlonlat_zh_CN.ts
+                languages/iricGccRectangularregionlonlat_zh_CN.ts \
+                languages/iricGccRectangularregionlonlat_zh_TW.ts

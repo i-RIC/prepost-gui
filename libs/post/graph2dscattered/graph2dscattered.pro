@@ -169,12 +169,42 @@ SOURCES += graph2dscatteredaxissettingdialog.cpp \
            datamodel/graph2dscatteredwindowresultdataitem.cpp \
            datamodel/graph2dscatteredwindowresultgroupdataitem.cpp \
            datamodel/graph2dscatteredwindowrootdataitem.cpp
-TRANSLATIONS += languages/iricGraph2dscattered_es_ES.ts \
+TRANSLATIONS += languages/iricGraph2dscattered_ar_EG.ts \
+                languages/iricGraph2dscattered_bg_BG.ts \
+                languages/iricGraph2dscattered_bs_BA.ts \
+                languages/iricGraph2dscattered_ca_ES.ts \
+                languages/iricGraph2dscattered_cs_CZ.ts \
+                languages/iricGraph2dscattered_da_DK.ts \
+                languages/iricGraph2dscattered_de_DE.ts \
+                languages/iricGraph2dscattered_el_GR.ts \
+                languages/iricGraph2dscattered_es_ES.ts \
+                languages/iricGraph2dscattered_et_EE.ts \
+                languages/iricGraph2dscattered_eu_ES.ts \
+                languages/iricGraph2dscattered_fi_FI.ts \
                 languages/iricGraph2dscattered_fr_FR.ts \
+                languages/iricGraph2dscattered_gl_ES.ts \
+                languages/iricGraph2dscattered_hi_IN.ts \
+                languages/iricGraph2dscattered_hu_HU.ts \
                 languages/iricGraph2dscattered_id_ID.ts \
+                languages/iricGraph2dscattered_is_IS.ts \
+                languages/iricGraph2dscattered_it_IT.ts \
                 languages/iricGraph2dscattered_ja_JP.ts \
                 languages/iricGraph2dscattered_ko_KR.ts \
+                languages/iricGraph2dscattered_ky_KG.ts \
+                languages/iricGraph2dscattered_lt_LT.ts \
+                languages/iricGraph2dscattered_lv_LV.ts \
+                languages/iricGraph2dscattered_nb_NO.ts \
+                languages/iricGraph2dscattered_nl_NL.ts \
+                languages/iricGraph2dscattered_pl_PL.ts \
+                languages/iricGraph2dscattered_pt_BR.ts \
+                languages/iricGraph2dscattered_pt_PT.ts \
+                languages/iricGraph2dscattered_ro_RO.ts \
                 languages/iricGraph2dscattered_ru_RU.ts \
+                languages/iricGraph2dscattered_sl_SI.ts \
+                languages/iricGraph2dscattered_sv_SE.ts \
                 languages/iricGraph2dscattered_th_TH.ts \
+                languages/iricGraph2dscattered_tr_TR.ts \
+                languages/iricGraph2dscattered_uk_UA.ts \
                 languages/iricGraph2dscattered_vi_VN.ts \
-                languages/iricGraph2dscattered_zh_CN.ts
+                languages/iricGraph2dscattered_zh_CN.ts \
+                languages/iricGraph2dscattered_zh_TW.ts
