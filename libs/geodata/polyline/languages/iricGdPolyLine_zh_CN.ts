@@ -8,17 +8,17 @@
         <translation type="vanished">编辑值...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="69"/>
+        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation>添加顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="70"/>
+        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation>删除顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="71"/>
+        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>编辑坐标...</translation>
     </message>
@@ -27,7 +27,7 @@
         <translation type="vanished">色彩设置...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="119"/>
+        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation>折线 (&amp;L)</translation>
     </message>
@@ -62,59 +62,55 @@
         <translation>删除折线顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="386"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="386"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>折线须有两个以上顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="391"/>
+        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation>完成定义折线</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="651"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="651"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请通过单击鼠标来定义折线。 通过双击或按回车键完成定义。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="743"/>
         <source>Polyline Color Setting</source>
-        <translation type="unfinished">折线颜色设置</translation>
+        <translation type="obsolete">折线颜色设置</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="757"/>
+        <location filename="../geodatapolyline.cpp" line="722"/>
         <source>polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="762"/>
+        <location filename="../geodatapolyline.cpp" line="727"/>
         <source>Polyline</source>
         <translation type="unfinished">折线</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
         <source>PolyLine value change</source>
-        <translation>改变折线值</translation>
+        <translation type="vanished">改变折线值</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="668"/>
         <source>Edit %1 value</source>
-        <translation>编辑 %1 值</translation>
+        <translation type="vanished">编辑 %1 值</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="669"/>
         <source>Please input new value in this polyline.</source>
-        <translation>请在此折线中输入新值</translation>
+        <translation type="vanished">请在此折线中输入新值</translation>
     </message>
     <message>
         <source>PolyLine property edit</source>

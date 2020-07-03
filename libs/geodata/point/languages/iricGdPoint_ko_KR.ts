@@ -4,37 +4,32 @@
 <context>
     <name>GeoDataPoint</name>
     <message>
-        <location filename="../geodatapoint.cpp" line="49"/>
+        <location filename="../geodatapoint.cpp" line="41"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="89"/>
+        <location filename="../geodatapoint.cpp" line="81"/>
         <source>Po&amp;int</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="235"/>
+        <location filename="../geodatapoint.cpp" line="227"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="235"/>
+        <location filename="../geodatapoint.cpp" line="227"/>
         <source>Please define point by mouse-clicking.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="332"/>
-        <source>Point Color Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapoint.cpp" line="343"/>
+        <location filename="../geodatapoint.cpp" line="328"/>
         <source>point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapoint.cpp" line="348"/>
+        <location filename="../geodatapoint.cpp" line="333"/>
         <source>Point</source>
         <translation type="unfinished"></translation>
     </message>

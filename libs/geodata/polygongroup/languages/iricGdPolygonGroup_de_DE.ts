@@ -10,12 +10,17 @@
     </message>
     <message>
         <location filename="../geodatapolygongroup.cpp" line="266"/>
+        <source>Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="271"/>
         <source>P&amp;olygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="377"/>
-        <location filename="../geodatapolygongroup.cpp" line="423"/>
+        <location filename="../geodatapolygongroup.cpp" line="382"/>
+        <location filename="../geodatapolygongroup.cpp" line="428"/>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>

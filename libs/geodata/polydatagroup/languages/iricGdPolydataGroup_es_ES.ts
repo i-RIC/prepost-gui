@@ -4,33 +4,43 @@
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="340"/>
+        <location filename="../geodatapolydatagroup.cpp" line="232"/>
+        <source>Add New %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="298"/>
+        <source>%1 Group Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="343"/>
         <source>Edit name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="340"/>
+        <location filename="../geodatapolydatagroup.cpp" line="343"/>
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="360"/>
+        <location filename="../geodatapolydatagroup.cpp" line="363"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="402"/>
-        <location filename="../geodatapolydatagroup.cpp" line="479"/>
+        <location filename="../geodatapolydatagroup.cpp" line="405"/>
+        <location filename="../geodatapolydatagroup.cpp" line="482"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="402"/>
+        <location filename="../geodatapolydatagroup.cpp" line="405"/>
         <source>Are you sure you want to delete selected %1s?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="479"/>
+        <location filename="../geodatapolydatagroup.cpp" line="482"/>
         <source>There is no other data to merge in &quot;%1&quot; group.</source>
         <translation type="unfinished"></translation>
     </message>

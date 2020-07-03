@@ -4,22 +4,22 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="69"/>
+        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="70"/>
+        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="71"/>
+        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="119"/>
+        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54,58 +54,38 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="386"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="386"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="391"/>
+        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="651"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="651"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="743"/>
-        <source>Polyline Color Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="757"/>
+        <location filename="../geodatapolyline.cpp" line="722"/>
         <source>polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="762"/>
+        <location filename="../geodatapolyline.cpp" line="727"/>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
-        <source>PolyLine value change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="668"/>
-        <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolyline.cpp" line="669"/>
-        <source>Please input new value in this polyline.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -4,33 +4,43 @@
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="340"/>
+        <location filename="../geodatapolydatagroup.cpp" line="232"/>
+        <source>Add New %1</source>
+        <translation>新しい%1の追加</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="298"/>
+        <source>%1 Group Attribute Browser</source>
+        <translation>%1グループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="343"/>
         <source>Edit name</source>
         <translation>名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="340"/>
+        <location filename="../geodatapolydatagroup.cpp" line="343"/>
         <source>Name:</source>
         <translation>名前:</translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="360"/>
+        <location filename="../geodatapolydatagroup.cpp" line="363"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="402"/>
-        <location filename="../geodatapolydatagroup.cpp" line="479"/>
+        <location filename="../geodatapolydatagroup.cpp" line="405"/>
+        <location filename="../geodatapolydatagroup.cpp" line="482"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="402"/>
+        <location filename="../geodatapolydatagroup.cpp" line="405"/>
         <source>Are you sure you want to delete selected %1s?</source>
         <translation>本当に選択した%1を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolydatagroup.cpp" line="479"/>
+        <location filename="../geodatapolydatagroup.cpp" line="482"/>
         <source>There is no other data to merge in &quot;%1&quot; group.</source>
         <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
     </message>
