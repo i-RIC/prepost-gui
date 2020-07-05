@@ -4,28 +4,18 @@
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="256"/>
+        <location filename="../geodatapolygongroup.cpp" line="257"/>
         <source>Polygon%1</source>
         <translation type="unfinished">Poligono %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="261"/>
-        <source>polygon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygongroup.cpp" line="266"/>
-        <source>Polygon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygongroup.cpp" line="271"/>
+        <location filename="../geodatapolygongroup.cpp" line="262"/>
         <source>P&amp;olygon Group</source>
         <translation>Grupo de poligono (&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="382"/>
-        <location filename="../geodatapolygongroup.cpp" line="428"/>
+        <location filename="../geodatapolygongroup.cpp" line="373"/>
+        <location filename="../geodatapolygongroup.cpp" line="419"/>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -96,13 +86,23 @@
         <translation type="vanished">Grupo de poligono %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <location filename="../geodatapolygongroupcreator.cpp" line="9"/>
         <source>Polygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
+        <location filename="../geodatapolygongroupcreator.cpp" line="22"/>
         <source>Polygon Group%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="45"/>
+        <source>polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="50"/>
+        <source>Polygon</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -149,17 +149,17 @@
         <translation type="vanished">ESRI Shapefile (Grupo de poligono)  (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="111"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="148"/>
         <source>ESRI Shapefile (Polygons)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="120"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="154"/>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="144"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="174"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -169,86 +169,70 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="152"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="182"/>
         <source>Polygon%1</source>
         <translation>Poligono %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="178"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="180"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="208"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="210"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="207"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="215"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="222"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="207"/>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation>O formato contido neste arquivo nao e poligono. </translation>
+        <translation type="vanished">O formato contido neste arquivo nao e poligono. </translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="215"/>
         <source>Opening %1 failed.</source>
-        <translation>Nao foi possivel abrir %1.</translation>
+        <translation type="vanished">Nao foi possivel abrir %1.</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="222"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation>Entre o arquivo * .shp e o arquivo * .dbf, o numero de dados contidos e incompativel. </translation>
+        <translation type="vanished">Entre o arquivo * .shp e o arquivo * .dbf, o numero de dados contidos e incompativel. </translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporterSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="14"/>
         <source>Polygon Import Setting</source>
-        <translation>Configuracao para importacao do poligono</translation>
+        <translation type="vanished">Configuracao para importacao do poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="26"/>
         <source>Encoding:</source>
-        <translation>Codificacao:</translation>
+        <translation type="vanished">Codificacao:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="64"/>
         <source>Name</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="70"/>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
-        <translation>Baixar a partir do atributo de arquivo Shape</translation>
+        <translation type="vanished">Baixar a partir do atributo de arquivo Shape</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>O nome sera configurado automaticamente (exemplo: poligono 1 )</translation>
+        <translation type="vanished">O nome sera configurado automaticamente (exemplo: poligono 1 )</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="126"/>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
-        <translation>Especificar o valor</translation>
+        <translation type="vanished">Especificar o valor</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation>Voce nao podera especificar a mesma coluna para Nome e Valor.</translation>
+        <translation type="vanished">Voce nao podera especificar a mesma coluna para Nome e Valor.</translation>
     </message>
 </context>
 </TS>

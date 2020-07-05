@@ -3549,6 +3549,143 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">「時間」次元の値が一致しません。</translation>
     </message>
 </context>
+<!-- iricGdPointGroup_ja_JP.ts -->
+<context>
+    <name>GeoDataPointGroup</name>
+    <message>
+        <location filename="../geodatapointgroup.cpp" line="194"/>
+        <source>Point%1</source>
+        <translation>点%1</translation>
+    </message>
+    <message>
+        <source>point</source>
+        <translation type="vanished">点</translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation type="vanished">点</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroup.cpp" line="199"/>
+        <source>P&amp;oint Group</source>
+        <translation>点グループ (&amp;O)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroup.cpp" line="293"/>
+        <location filename="../geodatapointgroup.cpp" line="333"/>
+        <source>&amp;Sort</source>
+        <translation>並べ替え (&amp;S)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupCreator</name>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="11"/>
+        <source>Point Group</source>
+        <translation>点グループ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="24"/>
+        <source>Point Group%1</source>
+        <translation>点グループ%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="48"/>
+        <source>point</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="53"/>
+        <source>Point</source>
+        <translation>点</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupShpExporter</name>
+    <message>
+        <location filename="../geodatapointgroupshpexporter.cpp" line="18"/>
+        <source>ESRI Shapefile</source>
+        <translation>ESRI シェープファイル</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupshpexporter.cpp" line="56"/>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation>ESRI シェープファイル (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupShpImporter</name>
+    <message>
+        <location filename="../geodatapointgroupshpimporter.cpp" line="32"/>
+        <source>ESRI Shapefile (Points)</source>
+        <translation>ESRI シェープファイル (点)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupshpimporter.cpp" line="38"/>
+        <source>ESRI Shapefile (Points) (*.shp)</source>
+        <translation>ESRI シェープファイル (点) (*.shp)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">エラー</translation>
+    </message>
+    <message>
+        <source>The shape type contained in this shape file is not point.</source>
+        <translation type="vanished">このファイルに含まれる形状は点ではありません。</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="vanished">%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>The number of poly lines mismatches between shp file and dbf file.</source>
+        <translation type="vanished">*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupshpimporter.cpp" line="61"/>
+        <source>Point%1</source>
+        <translation>点%1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupShpImporterSettingDialog</name>
+    <message>
+        <source>Point Import Setting</source>
+        <translation type="vanished">点インポート設定</translation>
+    </message>
+    <message>
+        <source>Encoding:</source>
+        <translation type="vanished">エンコーディング:</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="vanished">名前</translation>
+    </message>
+    <message>
+        <source>Load from Shape file attribute</source>
+        <translation type="vanished">シェープファイルの属性から読み込む</translation>
+    </message>
+    <message>
+        <source>Name is set automatically (ex. Point1)</source>
+        <translation type="vanished">自動的に設定する (例: 点1)</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">値</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation type="vanished">値を指定する</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">警告</translation>
+    </message>
+    <message>
+        <source>You cannot specify the same column for both Name and Value.</source>
+        <translation type="vanished">同じ列を名前と値両方に指定することはできません。</translation>
+    </message>
+</context>
 <!-- iricGdPointmap_ja_JP.ts -->
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -4910,135 +5047,606 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">VTKファイル (*.vtk)</translation>
     </message>
 </context>
-<!-- iricGdPolygonGroup_ja_JP.ts -->
+<!-- iricGdPoint_ja_JP.ts -->
 <context>
-    <name>GeoDataPolygonGroup</name>
+    <name>GeoDataPoint</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="290"/>
-        <source>P&amp;olygon Group</source>
-        <translation>ポリゴングループ(&amp;O)</translation>
+        <source>Edit &amp;Name</source>
+        <translation type="vanished">名前の編集 (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="335"/>
-        <source>Polygon%1</source>
-        <translation>ポリゴン%1</translation>
+        <source>Edit &amp;Value...</source>
+        <translation type="vanished">値の編集(&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="529"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="vanished">名前と値の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="41"/>
+        <source>Edit &amp;Coordinates...</source>
+        <translation>座標の編集(&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Color &amp;Setting...</source>
+        <translation type="vanished">表示色設定(&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="81"/>
+        <source>Po&amp;int</source>
+        <translation>点 (&amp;I)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="227"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="227"/>
+        <source>Please define point by mouse-clicking.</source>
+        <translation>点を、マウスクリックにより定義してください。</translation>
+    </message>
+    <message>
+        <source>Point Color Setting</source>
+        <translation type="vanished">点の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="328"/>
+        <source>point</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="333"/>
+        <source>Point</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Edit name</source>
+        <translation type="vanished">名前の編集</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="vanished">名前:</translation>
+    </message>
+    <message>
+        <source>Edit %1 value</source>
+        <translation type="vanished">%1 の値の編集</translation>
+    </message>
+    <message>
+        <source>Please input new value at this point.</source>
+        <translation type="vanished">この点での値を入力してください。</translation>
+    </message>
+    <message>
+        <source>Point property edit</source>
+        <translation type="vanished">点の属性編集</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapoint_finishpointdefinitioncommand.cpp" line="4"/>
+        <source>Finish Defining Point</source>
+        <translation>点の定義の完了</translation>
+    </message>
+    <message>
+        <source>Point name and value change</source>
+        <translation type="vanished">点の名前と値の変更</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointColorSimpleSettingDialog</name>
+    <message>
+        <location filename="../geodatapointcolorsimplesettingdialog.ui" line="14"/>
+        <location filename="../ui_geodatapointcolorsimplesettingdialog.h" line="86"/>
+        <source>Point Color Setting</source>
+        <translation>点の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointcolorsimplesettingdialog.ui" line="22"/>
+        <location filename="../ui_geodatapointcolorsimplesettingdialog.h" line="87"/>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointCreator</name>
+    <message>
+        <location filename="../geodatapointcreator.cpp" line="9"/>
+        <source>Point</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <location filename="../geodatapointcreator.cpp" line="19"/>
+        <source>Point%1</source>
+        <translation>点%1</translation>
+    </message>
+</context>
+<!-- iricGdPolydataGroup_ja_JP.ts -->
+<context>
+    <name>GeoDataPolyDataGroup</name>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="233"/>
+        <source>Add New %1</source>
+        <translation>新しい%1の追加</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="299"/>
+        <source>%1 Group Attribute Browser</source>
+        <translation>%1グループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="344"/>
         <source>Edit name</source>
         <translation>名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="529"/>
+        <location filename="../geodatapolydatagroup.cpp" line="344"/>
         <source>Name:</source>
         <translation>名前:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="549"/>
+        <location filename="../geodatapolydatagroup.cpp" line="364"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="606"/>
-        <location filename="../geodatapolygongroup.cpp" line="699"/>
+        <location filename="../geodatapolydatagroup.cpp" line="406"/>
+        <location filename="../geodatapolydatagroup.cpp" line="483"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="606"/>
+        <location filename="../geodatapolydatagroup.cpp" line="406"/>
+        <source>Are you sure you want to delete selected %1s?</source>
+        <translation>本当に選択した%1を削除していいですか?</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="483"/>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_editnameandvaluecommand.cpp" line="8"/>
+        <source>Edit name and value of polydatas</source>
+        <translation>名前と値の編集</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="46"/>
+        <source>&amp;Add New Polygon...</source>
+        <translation>新しいポリゴンの追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="47"/>
+        <source>Edit &amp;Name...</source>
+        <translation>名前の編集 (N)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="48"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation>名前と値の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="49"/>
+        <source>&amp;Delete</source>
+        <translation>削除 (&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="50"/>
+        <source>&amp;Merge...</source>
+        <translation>マージ (&amp;M)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="51"/>
+        <source>Color &amp;Setting...</source>
+        <translation>色の設定 (&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="52"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation>属性ブラウザの表示 (&amp;B)</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="53"/>
+        <source>Move to top</source>
+        <translation>先頭に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="54"/>
+        <source>Move to bottom</source>
+        <translation>最後に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="55"/>
+        <source>Move up</source>
+        <translation>上に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="56"/>
+        <source>Move down</source>
+        <translation>下に移動</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_setcolorsettingcommand.cpp" line="4"/>
+        <source>Color Setting Edit</source>
+        <translation>色の設定の変更</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_sortcommand.cpp" line="5"/>
+        <location filename="../private/geodatapolydatagroup_sortedittargetdatacommand.cpp" line="5"/>
+        <source>Sort data</source>
+        <translation>データの並べ替え</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupAttributeBrowser</name>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="58"/>
+        <source>PolyData Group Attribute Browser</source>
+        <translation>ポリデータグループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="84"/>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="88"/>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="85"/>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="90"/>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="89"/>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="93"/>
+        <source>Sort toolbar</source>
+        <translation>並べ替えツールバー</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="104"/>
+        <source>%1 Group Attribute Browser</source>
+        <translation>%1グループ属性ブラウザ</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolydatagroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupColorSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="14"/>
+        <source>PolyData Color Setting</source>
+        <translation>ポリデータの表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="20"/>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="29"/>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="38"/>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupMergeSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="14"/>
+        <source>Select data to merge</source>
+        <translation>マージするデータの選択</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="20"/>
+        <source>Please select data to merge this group.</source>
+        <translation>このグループにマージするデータを選択してください。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="36"/>
+        <source>&amp;Select all</source>
+        <translation>すべて選択 (&amp;S)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="43"/>
+        <source>&amp;Unselect all</source>
+        <translation>すべて選択解除 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupShpImporter</name>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="63"/>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="72"/>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="79"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="63"/>
+        <source>The shape type contained in this shape file is not %1.</source>
+        <translation>このファイルに含まれているデータは %1 ではありません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="72"/>
+        <source>Opening %1 failed.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="79"/>
+        <source>The number of data mismatches between shp file and dbf file.</source>
+        <translation>*.shp ファイルと *.dbf ファイルで、データの数が一致しません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="91"/>
+        <source>%1 Group Import Setting</source>
+        <translation>%1グループ インポート設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="14"/>
+        <source>PolyData Import Setting</source>
+        <translation>データインポート設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="26"/>
+        <source>Encoding:</source>
+        <translation>エンコーディング:</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="64"/>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="70"/>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="132"/>
+        <source>Load from Shape file attribute</source>
+        <translation>シェープファイルの属性から読み込む</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="116"/>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>自動的に設定する (例: ポリゴン1)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="126"/>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="180"/>
+        <source>Specify value</source>
+        <translation>値を指定する</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.cpp" line="80"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.cpp" line="80"/>
+        <source>You cannot specify the same column for both Name and Value.</source>
+        <translation>同じ列を名前と値両方に指定することはできません。</translation>
+    </message>
+</context>
+<!-- iricGdPolydata_ja_JP.ts -->
+<context>
+    <name>GeoDataPolyData</name>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="17"/>
+        <source>Edit &amp;Name</source>
+        <translation>名前の編集 (&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="18"/>
+        <source>Edit &amp;Value...</source>
+        <translation>値の編集 (&amp;V)...</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="19"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation>名前と値の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="20"/>
+        <source>Color &amp;Setting...</source>
+        <translation>表示色の設定 (&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="58"/>
+        <source>%1 Color Setting</source>
+        <translation>%1の表示色の設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="118"/>
+        <source>Edit name</source>
+        <translation>名前の編集</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="118"/>
+        <source>Name:</source>
+        <translation>名前:</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="130"/>
+        <location filename="../geodatapolydata.cpp" line="153"/>
+        <source>Edit %1 value</source>
+        <translation>%1 の値の編集</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="131"/>
+        <source>Please input new value in this %1.</source>
+        <translation>この%1での値を入力してください。</translation>
+    </message>
+    <message>
+        <source>Please input new value in this polygon.</source>
+        <translation type="vanished">このデータでの値を編集してください。</translation>
+    </message>
+    <message>
+        <source>PolyData name and value change</source>
+        <translation type="vanished">名前と値の変更</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydata_setcolorsettingcommand.cpp" line="4"/>
+        <source>Edit color setting</source>
+        <translation>表示色設定の編集</translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydata_editnameandvaluecommand.cpp" line="4"/>
+        <source>%1 name and value change</source>
+        <translation>%1の名前と値の変更</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataColorSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="14"/>
+        <source>PolyData Color Setting</source>
+        <translation>表示色の設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="20"/>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="29"/>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="38"/>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+</context>
+<!-- iricGdPolygonGroup_ja_JP.ts -->
+<context>
+    <name>GeoDataPolygonGroup</name>
+    <message>
+        <source>polygon</source>
+        <translation type="vanished">ポリゴン</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="vanished">ポリゴン</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="262"/>
+        <source>P&amp;olygon Group</source>
+        <translation>ポリゴングループ(&amp;O)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="257"/>
+        <source>Polygon%1</source>
+        <translation>ポリゴン%1</translation>
+    </message>
+    <message>
+        <source>Edit name</source>
+        <translation type="vanished">名前の編集</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="vanished">名前:</translation>
+    </message>
+    <message>
+        <source>Edit %1 value</source>
+        <translation type="vanished">%1 の値の編集</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">警告</translation>
+    </message>
+    <message>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
-        <translation>&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
+        <translation type="vanished">&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="699"/>
         <source>Are you sure you want to delete selected polygons?</source>
-        <translation>本当に選択されたポリゴンを削除していいですか?</translation>
+        <translation type="vanished">本当に選択されたポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="853"/>
-        <location filename="../geodatapolygongroup.cpp" line="896"/>
+        <location filename="../geodatapolygongroup.cpp" line="373"/>
+        <location filename="../geodatapolygongroup.cpp" line="419"/>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_editpropertycommand.cpp" line="4"/>
         <source>Polygon property edit</source>
-        <translation>ポリゴンのプロパティの編集</translation>
+        <translation type="vanished">ポリゴンのプロパティの編集</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
         <translation type="vanished">追加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="75"/>
         <source>&amp;Add New Polygon...</source>
-        <translation>新しいポリゴンの追加 (&amp;A)...</translation>
+        <translation type="vanished">新しいポリゴンの追加 (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="76"/>
         <source>&amp;Select...</source>
-        <translation>選択 (&amp;S)...</translation>
+        <translation type="vanished">選択 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="77"/>
         <source>&amp;Merge...</source>
-        <translation>マージ (&amp;M)...</translation>
+        <translation type="vanished">マージ (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="78"/>
         <source>&amp;Delete</source>
-        <translation>削除 (&amp;D)</translation>
+        <translation type="vanished">削除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="79"/>
         <source>Edit &amp;Name...</source>
-        <translation>名前の編集 (&amp;N)...</translation>
+        <translation type="vanished">名前の編集 (&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="80"/>
         <source>Edit &amp;Name and Value...</source>
-        <translation>名前と値の編集 (&amp;N)...</translation>
+        <translation type="vanished">名前と値の編集 (&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="81"/>
         <source>Color &amp;Setting...</source>
-        <translation>表示色設定 (&amp;S)...</translation>
+        <translation type="vanished">表示色設定 (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="82"/>
         <source>Show Attribute &amp;Browser</source>
-        <translation>属性ブラウザの表示 (&amp;B)</translation>
+        <translation type="vanished">属性ブラウザの表示 (&amp;B)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="83"/>
         <source>Move to top</source>
-        <translation>先頭に移動</translation>
+        <translation type="vanished">先頭に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="84"/>
         <source>Move to bottom</source>
-        <translation>最後に移動</translation>
+        <translation type="vanished">最後に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="85"/>
         <source>Move up</source>
-        <translation>上に移動</translation>
+        <translation type="vanished">上に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="86"/>
         <source>Move down</source>
-        <translation>下に移動</translation>
+        <translation type="vanished">下に移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_sortcommand.cpp" line="5"/>
-        <location filename="../private/geodatapolygongroup_sortedittargetpolygoncommand.cpp" line="5"/>
         <source>Sort polygons</source>
-        <translation>ポリゴンの並べ替え</translation>
+        <translation type="vanished">ポリゴンの並べ替え</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_editnameandvaluecommand.cpp" line="8"/>
         <source>Edit name and value of polygons</source>
-        <translation>ポリゴンの名前と値の編集</translation>
+        <translation type="vanished">ポリゴンの名前と値の編集</translation>
     </message>
 </context>
 <context>
@@ -5048,62 +5656,50 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ポリゴングループ属性ブラウザ</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="57"/>
         <source>Polygon Group Attribute Browser</source>
-        <translation>ポリゴングループ属性ブラウザ</translation>
+        <translation type="vanished">ポリゴングループ属性ブラウザ</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="83"/>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="87"/>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation type="vanished">名前</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="84"/>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="89"/>
         <source>Show</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="88"/>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupattributebrowser.cpp" line="92"/>
         <source>Sort toolbar</source>
-        <translation>並べ替えツールバー</translation>
+        <translation type="vanished">並べ替えツールバー</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
     <message>
-        <location filename="../private/geodatapolygongroupattributebrowser_tableitemdelegate.cpp" line="50"/>
         <source>Show</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="14"/>
         <source>Polygon Color Setting</source>
-        <translation>ポリゴンの色設定</translation>
+        <translation type="vanished">ポリゴンの色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
 </context>
 <context>
@@ -5117,8 +5713,9 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ポリゴングループ%1</translation>
     </message>
     <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="50"/>
         <source>Polygon</source>
-        <translation type="vanished">ポリゴン</translation>
+        <translation>ポリゴン</translation>
     </message>
     <message>
         <source>Polygons</source>
@@ -5133,37 +5730,38 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <location filename="../geodatapolygongroupcreator.cpp" line="9"/>
         <source>Polygon Group</source>
         <translation>ポリゴングループ</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
+        <location filename="../geodatapolygongroupcreator.cpp" line="22"/>
         <source>Polygon Group%1</source>
         <translation>ポリゴングループ%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="45"/>
+        <source>polygon</source>
+        <translation>ポリゴン</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupMergeSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="14"/>
         <source>Select data to merge</source>
-        <translation>マージするデータの選択</translation>
+        <translation type="vanished">マージするデータの選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="20"/>
         <source>Please select data to merge this group.</source>
-        <translation>このグループにマージするデータを選択してください。</translation>
+        <translation type="vanished">このグループにマージするデータを選択してください。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="36"/>
         <source>&amp;Select all</source>
-        <translation>すべて選択 (&amp;S)</translation>
+        <translation type="vanished">すべて選択 (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="43"/>
         <source>&amp;Unselect all</source>
-        <translation>すべて解除 (&amp;U)</translation>
+        <translation type="vanished">すべて解除 (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -5174,7 +5772,7 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpexporter.cpp" line="55"/>
+        <location filename="../geodatapolygongroupshpexporter.cpp" line="56"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRIシェープファイル (*.shp)</translation>
     </message>
@@ -5206,17 +5804,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ESRI シェープファイル (ポリゴン) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="112"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="148"/>
         <source>ESRI Shapefile (Polygons)</source>
         <translation>ESRI シェープファイル (ポリゴン)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="121"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="154"/>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation>ESRI シェープファイル (ポリゴン) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="145"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="174"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -5231,161 +5829,153 @@ p, li { white-space: pre-wrap; }
 - ポリゴンの線分が、同じ点を何度も通過している</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="153"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="182"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="181"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="208"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="210"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation>このファイルに含まれる形状はポリゴンではありません。</translation>
+        <translation type="vanished">このファイルに含まれる形状はポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
         <source>Opening %1 failed.</source>
-        <translation>%1 を開けませんでした。</translation>
+        <translation type="vanished">%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation>*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
+        <translation type="vanished">*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporterSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="14"/>
         <source>Polygon Import Setting</source>
-        <translation>ポリゴンインポート設定</translation>
+        <translation type="vanished">ポリゴンインポート設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="26"/>
         <source>Encoding:</source>
-        <translation>エンコーディング:</translation>
+        <translation type="vanished">エンコーディング:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="64"/>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation type="vanished">名前</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="70"/>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
-        <translation>シェープファイルの属性から読み込む</translation>
+        <translation type="vanished">シェープファイルの属性から読み込む</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>自動的に設定する (例: ポリゴン1)</translation>
+        <translation type="vanished">自動的に設定する (例: ポリゴン1)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="126"/>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
-        <translation>値を指定する</translation>
+        <translation type="vanished">値を指定する</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation>同じ列を名前と値両方に指定することはできません。</translation>
+        <translation type="vanished">同じ列を名前と値両方に指定することはできません。</translation>
     </message>
 </context>
 <!-- iricGdPolygon_ja_JP.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>Edit &amp;Value...</source>
-        <translation>値の編集(&amp;V)...</translation>
+        <translation type="vanished">値の編集(&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
+        <location filename="../geodatapolygon.cpp" line="81"/>
         <source>&amp;Copy...</source>
         <translation>コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="102"/>
+        <location filename="../geodatapolygon.cpp" line="82"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="103"/>
+        <location filename="../geodatapolygon.cpp" line="83"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="104"/>
+        <location filename="../geodatapolygon.cpp" line="84"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
+        <source>Polygon Color Setting</source>
+        <translation type="vanished">ポリゴンの表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1360"/>
+        <source>polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1365"/>
+        <source>Polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="79"/>
         <source>Add &amp;Hole Region</source>
         <translation>穴領域の追加(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="80"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>穴領域の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
         <source>Edit &amp;Name</source>
-        <translation>名前の編集 (&amp;N)</translation>
+        <translation type="vanished">名前の編集 (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
         <source>Edit &amp;Name and Value...</source>
-        <translation>名前と値の編集 (N)...</translation>
+        <translation type="vanished">名前と値の編集 (N)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="105"/>
         <source>Color &amp;Setting...</source>
-        <translation>表示色設定(&amp;S)...</translation>
+        <translation type="vanished">表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="205"/>
+        <location filename="../geodatapolygon.cpp" line="168"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="592"/>
+        <location filename="../geodatapolygon.cpp" line="525"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Edit name</source>
-        <translation>名前の編集</translation>
+        <translation type="vanished">名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation type="vanished">名前:</translation>
     </message>
     <message>
         <location filename="../private/geodatapolygon_pushnewpointcommand.cpp" line="8"/>
@@ -5413,13 +6003,13 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴンの頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="587"/>
-        <location filename="../geodatapolygon.cpp" line="1096"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="587"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
@@ -5429,23 +6019,23 @@ p, li { white-space: pre-wrap; }
         <translation>穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1068"/>
-        <location filename="../geodatapolygon.cpp" line="1256"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1068"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1096"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>本当にこのポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1256"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -5455,28 +6045,24 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴン値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1302"/>
-        <location filename="../geodatapolygon.cpp" line="1323"/>
         <source>Edit %1 value</source>
-        <translation>%1 の値の編集</translation>
+        <translation type="vanished">%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1303"/>
         <source>Please input new value in this polygon.</source>
-        <translation>このポリゴン内での値を入力してください。</translation>
+        <translation type="vanished">このポリゴン内での値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editpropertycommand.cpp" line="4"/>
         <source>Polygon property edit</source>
-        <translation>ポリゴン属性編集</translation>
+        <translation type="vanished">ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1497"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1497"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
@@ -5491,9 +6077,8 @@ p, li { white-space: pre-wrap; }
         <translation>ポリゴンの頂点座標</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editnameandvaluecommand.cpp" line="4"/>
         <source>Polygon name and value change</source>
-        <translation>ポリゴンの名前と値の変更</translation>
+        <translation type="vanished">ポリゴンの名前と値の変更</translation>
     </message>
 </context>
 <context>
@@ -5962,49 +6547,412 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
     </message>
 </context>
+<!-- iricGdPolyLineGroup_ja_JP.ts -->
+<context>
+    <name>GeoDataPolyLineGroup</name>
+    <message>
+        <source>Po&amp;ly Line Group</source>
+        <translation type="vanished">折れ線グループ (&amp;L)</translation>
+    </message>
+    <message>
+        <source>Poly Line%1</source>
+        <translation type="vanished">折れ線%1</translation>
+    </message>
+    <message>
+        <source>Edit name</source>
+        <translation type="vanished">名前の編集</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="vanished">名前:</translation>
+    </message>
+    <message>
+        <source>Edit %1 value</source>
+        <translation type="vanished">%1 の値の編集</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">警告</translation>
+    </message>
+    <message>
+        <source>There is no other polyLine or polyLine group in &quot;%1&quot; group.</source>
+        <translation type="vanished">&quot;%1&quot; グループには、他に折れ線や折れ線グループがありません。</translation>
+    </message>
+    <message>
+        <source>Deleting polylines will also remove any graph windows associated with them.  Are you sure you want to delete selected polylines?</source>
+        <translation type="vanished">この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete selected poly lines?</source>
+        <translation type="vanished">本当に選択された折れ線を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>polyline</source>
+        <translation type="vanished">折れ線</translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="vanished">折れ線</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroup.cpp" line="254"/>
+        <source>Poly&amp;line Group</source>
+        <translation>折れ線グループ (&amp;L)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroup.cpp" line="350"/>
+        <location filename="../geodatapolylinegroup.cpp" line="392"/>
+        <source>&amp;Sort</source>
+        <translation>並べ替え (&amp;S)</translation>
+    </message>
+    <message>
+        <source>Poly line property edit</source>
+        <translation type="vanished">折れ線のプロパティの編集</translation>
+    </message>
+    <message>
+        <source>&amp;Add Poly Line...</source>
+        <translation type="vanished">新しい折れ線の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Add Polyline...</source>
+        <translation type="vanished">新しい折れ線の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Select...</source>
+        <translation type="vanished">選択 (&amp;S)...</translation>
+    </message>
+    <message>
+        <source>&amp;Merge...</source>
+        <translation type="vanished">マージ (&amp;M)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="vanished">削除 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Name...</source>
+        <translation type="vanished">名前の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="vanished">名前と値の編集 (&amp;N)...</translation>
+    </message>
+    <message>
+        <source>Color &amp;Setting...</source>
+        <translation type="vanished">表示色設定 (&amp;S)...</translation>
+    </message>
+    <message>
+        <source>Show Attribute &amp;Browser</source>
+        <translation type="vanished">属性ブラウザの表示 (&amp;B)</translation>
+    </message>
+    <message>
+        <source>Move to top</source>
+        <translation type="vanished">先頭に移動</translation>
+    </message>
+    <message>
+        <source>Move to bottom</source>
+        <translation type="vanished">最後に移動</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="vanished">上に移動</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="vanished">下に移動</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroup.cpp" line="249"/>
+        <source>Polyline%1</source>
+        <translation>折れ線%1</translation>
+    </message>
+    <message>
+        <source>Sort polygons</source>
+        <translation type="vanished">折れ線の並べ替え</translation>
+    </message>
+    <message>
+        <source>Edit name and value of polylines</source>
+        <translation type="vanished">折れ線の名前と値の編集</translation>
+    </message>
+    <message>
+        <source>Sort polylines</source>
+        <translation type="vanished">折れ線の並べ替え</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupAttributeBrowser</name>
+    <message>
+        <source>Poly Line Group Attribute Browser</source>
+        <translation type="vanished">折れ線グループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <source>Polyline Group Attribute Browser</source>
+        <translation type="vanished">折れ線グループ属性ブラウザ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="vanished">名前</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">表示</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">値</translation>
+    </message>
+    <message>
+        <source>Sort toolbar</source>
+        <translation type="vanished">並べ替えツールバー</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">表示</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Poly Line Color Setting</source>
+        <translation type="vanished">折れ線の色設定</translation>
+    </message>
+    <message>
+        <source>Polyline Color Setting</source>
+        <translation type="vanished">折れ線の色設定</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupCreator</name>
+    <message>
+        <source>Poly Line Group</source>
+        <translation type="vanished">折れ線グループ</translation>
+    </message>
+    <message>
+        <source>Poly Line Group%1</source>
+        <translation type="vanished">折れ線グループ%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="11"/>
+        <source>Polyline Group</source>
+        <translation>折れ線グループ</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="24"/>
+        <source>Polyline Group%1</source>
+        <translation>折れ線グループ%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="36"/>
+        <source>Deleting this item will also remove any graph windows associated with this polyline group.  Are you sure you want to delete this item?</source>
+        <translation>この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="49"/>
+        <source>polyline</source>
+        <translation>折れ線</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="54"/>
+        <source>Polyline</source>
+        <translation>折れ線</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation type="vanished">マージするデータの選択</translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation type="vanished">このグループにマージするデータを選択してください。</translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation type="vanished">すべて選択 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
+        <translation type="vanished">すべて解除 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupShpExporter</name>
+    <message>
+        <location filename="../geodatapolylinegroupshpexporter.cpp" line="18"/>
+        <source>ESRI Shapefile</source>
+        <translation>ESRI シェープファイル</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpexporter.cpp" line="56"/>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation>ESRIシェープファイル (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupShpImporter</name>
+    <message>
+        <source>ESRI Shapefile (Poly Lines)</source>
+        <translation type="vanished">ESRI シェープファイル (折れ線)</translation>
+    </message>
+    <message>
+        <source>ESRI Shapefile (Poly Lines) (*.shp)</source>
+        <translation type="vanished">ESRI シェープファイル (折れ線) (*.shp)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpimporter.cpp" line="46"/>
+        <source>ESRI Shapefile (Polylines)</source>
+        <translation>ESRI シェープファイル (折れ線)</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpimporter.cpp" line="52"/>
+        <source>ESRI Shapefile (Polylines) (*.shp)</source>
+        <translation>ESRI シェープファイル (折れ線) (*.shp)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">エラー</translation>
+    </message>
+    <message>
+        <source>The shape type contained in this shape file is not polyline.</source>
+        <translation type="vanished">このファイルに含まれる形状は折れ線ではありません。</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="vanished">%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>The number of poly lines mismatches between shp file and dbf file.</source>
+        <translation type="vanished">*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpimporter.cpp" line="75"/>
+        <source>Polyline%1</source>
+        <translation>折れ線%1</translation>
+    </message>
+    <message>
+        <source>Poly Line%1</source>
+        <translation type="vanished">折れ線%1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupShpImporterSettingDialog</name>
+    <message>
+        <source>Poly Line Import Setting</source>
+        <translation type="vanished">折れ線インポート設定</translation>
+    </message>
+    <message>
+        <source>Polyline Import Setting</source>
+        <translation type="vanished">折れ線インポート設定</translation>
+    </message>
+    <message>
+        <source>Encoding:</source>
+        <translation type="vanished">エンコーディング:</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="vanished">名前</translation>
+    </message>
+    <message>
+        <source>Load from Shape file attribute</source>
+        <translation type="vanished">シェープファイルの属性から読み込む</translation>
+    </message>
+    <message>
+        <source>Name is set automatically (ex. Polyline1)</source>
+        <translation type="vanished">自動的に設定する (例: 折れ線1)</translation>
+    </message>
+    <message>
+        <source>Name is set automatically (ex. Poly Line1)</source>
+        <translation type="vanished">自動的に設定する (例: 折れ線1)</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">値</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation type="vanished">値を指定する</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">警告</translation>
+    </message>
+    <message>
+        <source>You cannot specify the same column for both Name and Value.</source>
+        <translation type="vanished">同じ列を名前と値両方に指定することはできません。</translation>
+    </message>
+</context>
 <!-- iricGdPolyLine_ja_JP.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
-        <translation>値の編集(&amp;V)...</translation>
+        <translation type="vanished">値の編集(&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;Copy...</source>
         <translation type="vanished">コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="54"/>
+        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="55"/>
+        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="56"/>
+        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
+        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation>折れ線 (&amp;L)</translation>
+    </message>
+    <message>
+        <source>Polyline Color Setting</source>
+        <translation type="vanished">折れ線の表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="722"/>
+        <source>polyline</source>
+        <translation>折れ線</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="727"/>
+        <source>Polyline</source>
+        <translation>折れ線</translation>
     </message>
     <message>
         <source>&amp;Polyline</source>
         <translation type="vanished">折れ線 (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="392"/>
+        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation>折れ線の定義の完了</translation>
     </message>
@@ -6017,9 +6965,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">穴領域の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
-        <translation>表示色設定(&amp;S)...</translation>
+        <translation type="vanished">表示色設定(&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;PolyLine</source>
@@ -6060,7 +7007,7 @@ p, li { white-space: pre-wrap; }
         <translation>折れ線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -6073,7 +7020,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
@@ -6086,29 +7033,25 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">本当にこの折れ線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>折れ線を、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
         <source>PolyLine value change</source>
-        <translation>折れ線値編集</translation>
+        <translation type="vanished">折れ線値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="715"/>
         <source>Edit %1 value</source>
-        <translation>%1 の値の編集</translation>
+        <translation type="vanished">%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="716"/>
         <source>Please input new value in this polyline.</source>
-        <translation>この折れ線上での値を入力してください。</translation>
+        <translation type="vanished">この折れ線上での値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
         <source>PolyLine property edit</source>
-        <translation>折れ線属性編集</translation>
+        <translation type="vanished">折れ線属性編集</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
@@ -6143,24 +7086,20 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>折れ線の表示色設定</translation>
+        <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
 </context>
 <context>
@@ -6170,14 +7109,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>折れ線の表示色設定</translation>
+        <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
 </context>
 <context>

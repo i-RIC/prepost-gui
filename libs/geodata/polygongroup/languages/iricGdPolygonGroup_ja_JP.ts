@@ -4,22 +4,20 @@
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="261"/>
         <source>polygon</source>
-        <translation>ポリゴン</translation>
+        <translation type="vanished">ポリゴン</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="266"/>
         <source>Polygon</source>
-        <translation>ポリゴン</translation>
+        <translation type="vanished">ポリゴン</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="271"/>
+        <location filename="../geodatapolygongroup.cpp" line="262"/>
         <source>P&amp;olygon Group</source>
         <translation>ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="256"/>
+        <location filename="../geodatapolygongroup.cpp" line="257"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
@@ -48,8 +46,8 @@
         <translation type="vanished">本当に選択されたポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="382"/>
-        <location filename="../geodatapolygongroup.cpp" line="428"/>
+        <location filename="../geodatapolygongroup.cpp" line="373"/>
+        <location filename="../geodatapolygongroup.cpp" line="419"/>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
     </message>
@@ -182,8 +180,9 @@
         <translation type="vanished">ポリゴングループ%1</translation>
     </message>
     <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="50"/>
         <source>Polygon</source>
-        <translation type="vanished">ポリゴン</translation>
+        <translation>ポリゴン</translation>
     </message>
     <message>
         <source>Polygons</source>
@@ -198,14 +197,19 @@
         <translation type="vanished">ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
+        <location filename="../geodatapolygongroupcreator.cpp" line="9"/>
         <source>Polygon Group</source>
         <translation>ポリゴングループ</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
+        <location filename="../geodatapolygongroupcreator.cpp" line="22"/>
         <source>Polygon Group%1</source>
         <translation>ポリゴングループ%1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="45"/>
+        <source>polygon</source>
+        <translation>ポリゴン</translation>
     </message>
 </context>
 <context>
@@ -267,17 +271,17 @@
         <translation type="vanished">ESRI シェープファイル (ポリゴン) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="111"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="148"/>
         <source>ESRI Shapefile (Polygons)</source>
         <translation>ESRI シェープファイル (ポリゴン)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="120"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="154"/>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation>ESRI シェープファイル (ポリゴン) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="144"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="174"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -292,86 +296,70 @@
 - ポリゴンの線分が、同じ点を何度も通過している</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="152"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="182"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="178"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="180"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="208"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="210"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="207"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="215"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="222"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="207"/>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation>このファイルに含まれる形状はポリゴンではありません。</translation>
+        <translation type="vanished">このファイルに含まれる形状はポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="215"/>
         <source>Opening %1 failed.</source>
-        <translation>%1 を開けませんでした。</translation>
+        <translation type="vanished">%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="222"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation>*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
+        <translation type="vanished">*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporterSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="14"/>
         <source>Polygon Import Setting</source>
-        <translation>ポリゴンインポート設定</translation>
+        <translation type="vanished">ポリゴンインポート設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="26"/>
         <source>Encoding:</source>
-        <translation>エンコーディング:</translation>
+        <translation type="vanished">エンコーディング:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="64"/>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation type="vanished">名前</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="70"/>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
-        <translation>シェープファイルの属性から読み込む</translation>
+        <translation type="vanished">シェープファイルの属性から読み込む</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>自動的に設定する (例: ポリゴン1)</translation>
+        <translation type="vanished">自動的に設定する (例: ポリゴン1)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="126"/>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
-        <translation>値を指定する</translation>
+        <translation type="vanished">値を指定する</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation>同じ列を名前と値両方に指定することはできません。</translation>
+        <translation type="vanished">同じ列を名前と値両方に指定することはできません。</translation>
     </message>
 </context>
 </TS>

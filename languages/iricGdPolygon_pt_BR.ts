@@ -4,52 +4,64 @@
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Edit &amp;Value...</source>
-        <translation>Edicao do valor (&amp;V)</translation>
+        <translation type="vanished">Edicao do valor (&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="81"/>
         <source>&amp;Copy...</source>
         <translation>Copia (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
+        <location filename="../geodatapolygon.cpp" line="82"/>
         <source>&amp;Add Vertex</source>
-        <translation> Adicionar vertice (&amp;A)</translation>
+        <translation>Adicionar vertice (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
+        <location filename="../geodatapolygon.cpp" line="83"/>
         <source>&amp;Remove Vertex</source>
         <translation>Remover vertice (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="84"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>Edicao de coordenadas (&amp;C)... </translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="94"/>
+        <location filename="../geodatapolygon.cpp" line="1360"/>
+        <source>polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1365"/>
+        <source>Polygon</source>
+        <translation type="unfinished">Poligono </translation>
+    </message>
+    <message>
+        <source>Polygon Color Setting</source>
+        <translation type="obsolete">Configuracao de cor do poligono</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="79"/>
         <source>Add &amp;Hole Region</source>
         <translation>Adicionar regiao de obstaculo (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="80"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>Excluir regiao do orificio (&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracao para cor de exibicao (&amp;S)</translation>
+        <translation type="vanished">Configuracao para cor de exibicao (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="189"/>
+        <location filename="../geodatapolygon.cpp" line="168"/>
         <source>&amp;Polygon</source>
         <translation>Poligono (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="575"/>
+        <location filename="../geodatapolygon.cpp" line="525"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>Concluir a definicao para poligono</translation>
@@ -80,13 +92,13 @@
         <translation>Remover o vertice da regiao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>O poligono deveria ter pelo menos tres vertices.</translation>
     </message>
@@ -96,23 +108,23 @@
         <translation>Adicionar regiao de obstaculo</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Defina a regiao de obstaculos. A regiao de obstaculo sera definida como o poligono atraves do clique de mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>Tem certeza de que deseja remover este poligono ?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Defina o poligono atraves do clique de mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
     </message>
@@ -122,27 +134,24 @@
         <translation>Edicao do valor de poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1234"/>
         <source>Edit %1 value</source>
-        <translation>Edicao do valor de %1</translation>
+        <translation type="vanished">Edicao do valor de %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1235"/>
         <source>Please input new value in this polygon.</source>
-        <translation>Insira um valor neste poligono.</translation>
+        <translation type="vanished">Insira um valor neste poligono.</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editpropertycommand.cpp" line="4"/>
         <source>Polygon property edit</source>
-        <translation>Edicao de propriedade do poligono</translation>
+        <translation type="vanished">Edicao de propriedade do poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Select Geographic Data</source>
         <translation>Selecionar as informacoes geograficas</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>Selecione qual dos dados geograficos para copiar este poligono.</translation>
     </message>
@@ -230,12 +239,12 @@
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="204"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation>Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
-        <translation>Menos de 2 o numero de vertice</translation>
-        <translation>Nao esta encerrado.</translation>
-        <translation>Linhas de poligono se cruzam</translation>
-        <translation> O poligono do orificio esta fora do poligono da regiao</translation>
-        <translation>Linha de poligono passa o mesmo ponto varias vezes</translation>
+- It has less than three points
+- It is not closed
+- Lines of polygon intersect each other
+- Hole polygon is outside of region polygon
+- Polygon passes the same point several times</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="221"/>
