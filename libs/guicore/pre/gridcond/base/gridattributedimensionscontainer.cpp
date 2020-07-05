@@ -51,6 +51,14 @@ std::vector<GridAttributeDimensionSelectWidget *>& GridAttributeDimensionsContai
 	return impl->m_selectWidgets;
 }
 
+void GridAttributeDimensionsContainer::clear()
+{
+	for (auto c: impl->m_containers) {
+		c->clear();
+	}
+	emit valuesChanged();
+}
+
 int GridAttributeDimensionsContainer::currentIndex() const
 {
 	return calculateIndex();

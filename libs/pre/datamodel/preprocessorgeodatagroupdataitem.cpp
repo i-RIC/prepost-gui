@@ -823,6 +823,8 @@ void PreProcessorGeoDataGroupDataItem::informDataChange()
 {
 	dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent())->informDataChange();
 	updateCrossectionWindows();
+
+	clearDimensionsIfNoDataExists();
 }
 
 bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
@@ -987,6 +989,21 @@ bool PreProcessorGeoDataGroupDataItem::webImportAvailable()
 		}
 	}
 	return false;
+}
+
+void PreProcessorGeoDataGroupDataItem::clearDimensionsIfNoDataExists()
+{
+	// at least background data exists.
+	if (m_childItems.size() > 1) {return;}
+
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	for (auto c : gtItem->conditions()) {
+		// check if grid exists
+		if (c->gridDataItem()->grid() != nullptr) {return;}
+	}
+
+	// no data exists;
+	m_dimensions->clear();
 }
 
 QStringList PreProcessorGeoDataGroupDataItem::getGeoDatasNotMapped()

@@ -23,6 +23,8 @@ public:
 	const std::vector<GridAttributeDimensionSelectWidget*>& selectWidgets() const;
 	std::vector<GridAttributeDimensionSelectWidget*>& selectWidgets();
 
+	void clear();
+
 	int currentIndex() const;
 	void setCurrentIndex(int newIndex, bool noDraw = false);
 

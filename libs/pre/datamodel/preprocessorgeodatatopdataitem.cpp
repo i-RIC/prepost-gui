@@ -462,3 +462,11 @@ void PreProcessorGeoDataTopDataItem::setDimensionsToFirst()
 		gItem->setDimensionsToFirst();
 	}
 }
+
+void PreProcessorGeoDataTopDataItem::clearDimensionsIfNoDataExists()
+{
+	for (auto child : m_childItems) {
+		auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(child);
+		gItem->clearDimensionsIfNoDataExists();
+	}
+}
