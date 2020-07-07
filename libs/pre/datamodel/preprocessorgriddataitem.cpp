@@ -1230,6 +1230,9 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	finishGridLoading();
 	clearSelection();
 	closeBirdEyeWindow();
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+	gtItem->geoDataTop()->clearDimensionsIfNoDataExists();
+
 	iRICUndoStack::instance().clear();
 }
 

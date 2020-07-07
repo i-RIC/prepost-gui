@@ -46,6 +46,8 @@ public:
 	bool importAvailable();
 	bool webImportAvailable();
 
+	void clearDimensionsIfNoDataExists();
+
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting();
