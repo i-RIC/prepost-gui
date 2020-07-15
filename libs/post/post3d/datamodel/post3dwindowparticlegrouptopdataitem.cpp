@@ -15,7 +15,10 @@ const std::string& Post3dWindowParticleGroupTopDataItem::name() const
 
 vtkPolyData* Post3dWindowParticleGroupTopDataItem::particleData() const
 {
-	return zoneDataItem()->dataContainer()->particleGroup(m_name);
+	auto zone = zoneDataItem()->dataContainer();
+	if (zone == nullptr) {return nullptr;}
+
+	return zone->particleGroup(m_name);
 }
 
 Post3dWindowZoneDataItem* Post3dWindowParticleGroupTopDataItem::zoneDataItem() const
