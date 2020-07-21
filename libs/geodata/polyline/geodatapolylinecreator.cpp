@@ -13,7 +13,7 @@
 GeoDataPolyLineCreator::GeoDataPolyLineCreator(const QString& typeName) :
 	GeoDataCreator {typeName, tr("Polyline")}
 {
-	importers().push_back(new GeoDataPolyLineImporter(this));
+	// importers().push_back(new GeoDataPolyLineImporter(this));
 	exporters().push_back(new GeoDataPolyLineShapeExporter(this));
 }
 
