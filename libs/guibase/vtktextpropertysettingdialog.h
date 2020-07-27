@@ -28,6 +28,8 @@ public:
 
 	/// Disable the widget to edit font size
 	void disableSize();
+	/// Hide the widget to edit font size
+	void hideSize();
 	/// Disable the widget to edit font color
 	void disableColor();
 
