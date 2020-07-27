@@ -77,6 +77,32 @@ void drawMarkers(const BaseLine& bline, const Points& points, const QColor& colo
 	}
 }
 
+void drawLinesFromMarkers(const BaseLine& bline, const Points& points, const QColor& color, QPainter* painter, const QMatrix& matrix)
+{
+	std::multimap<double, double> vals;
+
+	bool l_internal;
+	for (auto p : points.points()) {
+		double pos = bline.calcPosition(p->x(), p->y(), &l_internal);
+		auto p2 = matrix.map(QPointF(pos, p->z()));
+		vals.insert({p2.x(), p2.y()});
+	}
+	bool first = true;
+	double prevPos, prevVal;
+	painter->save();
+	painter->setPen(QPen(color, 1));
+
+	for (const auto& pair : vals) {
+		if (! first) {
+			painter->drawLine(QPointF(prevPos, prevVal), QPointF(pair.first, pair.second));
+		}
+		prevPos = pair.first;
+		prevVal = pair.second;
+		first = false;
+	}
+	painter->restore();;
+}
+
 } // namespace
 
 VerticalCrossSectionWindowGraphicsView::VerticalCrossSectionWindowGraphicsView(QWidget* parent) :
@@ -226,12 +252,16 @@ void VerticalCrossSectionWindowGraphicsView::drawLeftHWMLine(QPainter* painter, 
 {
 	if (! chartWindow()->showLeftHWMLine()) {return;}
 
+	auto p = chartWindow()->project();
+	drawLinesFromMarkers(p->baseLine(), p->waterSurfaceElevationPoints().leftBankHWM(), Qt::blue, painter, matrix);
 }
 
 void VerticalCrossSectionWindowGraphicsView::drawRightHWMLine(QPainter* painter, const QMatrix& matrix)
 {
 	if (! chartWindow()->showRightHWMLine()) {return;}
 
+	auto p = chartWindow()->project();
+	drawLinesFromMarkers(p->baseLine(), p->waterSurfaceElevationPoints().rightBankHWM(), Qt::red, painter, matrix);
 }
 
 void VerticalCrossSectionWindowGraphicsView::drawCrossSectionLines(QPainter* painter, const QMatrix& matrix)
