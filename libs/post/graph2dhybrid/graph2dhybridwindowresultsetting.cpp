@@ -200,11 +200,17 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
 				ti.dataNamesMap[CellCenter].append(name.c_str());
 			}
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgeidata()->GetPointData())) {
-				ti.dataNamesMap[IFaceCenter].append(name.c_str());
+			auto edgeIData = cont->edgeidata();
+			if (edgeIData != nullptr) {
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->GetPointData())) {
+					ti.dataNamesMap[IFaceCenter].append(name.c_str());
+				}
 			}
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
-				ti.dataNamesMap[JFaceCenter].append(name.c_str());
+			auto edgeJData = cont->edgejdata();
+			if (edgeJData != nullptr) {
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
+					ti.dataNamesMap[JFaceCenter].append(name.c_str());
+				}
 			}
 			m_dataTypeInfos.append(ti);
 		}
