@@ -40,6 +40,9 @@ DataItemView* RootDataItem::buildPreProcessorDataItemView(Model *model)
 
 void RootDataItem::doLoadFromMainFile(const QDomElement& node)
 {
+	int version = iRIC::getIntAttribute(node, "version");
+	project()->setVersion(version);
+
 	double offsetx, offsety;
 	offsetx = iRIC::getDoubleAttribute(node, "offsetX");
 	offsety = iRIC::getDoubleAttribute(node, "offsetY");
@@ -71,6 +74,8 @@ void RootDataItem::doLoadFromMainFile(const QDomElement& node)
 
 void RootDataItem::doSaveToMainFile(QXmlStreamWriter* writer) const
 {
+	iRIC::setIntAttribute(*writer, "version", 2);
+
 	auto offset = m_project->offset();
 	iRIC::setDoubleAttribute(*writer, "offsetX", offset.x());
 	iRIC::setDoubleAttribute(*writer, "offsetY", offset.y());

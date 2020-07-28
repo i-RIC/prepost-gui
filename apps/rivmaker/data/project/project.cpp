@@ -139,6 +139,7 @@ Project::Impl::Impl(Project *project) :
 	m_crossSections {&m_rootDataItem},
 	m_baseLine {&m_rootDataItem},
 	m_currentBuilder {& m_builderNearest},
+	m_version {0},
 	m_isModified {false}
 {}
 
@@ -226,6 +227,16 @@ bool Project::save(const QString& filename)
 RootDataItem* Project::rootDataItem() const
 {
 	return &(impl->m_rootDataItem);
+}
+
+int Project::version() const
+{
+	return impl->m_version;
+}
+
+void Project::setVersion(int v)
+{
+	impl->m_version = v;
 }
 
 const ElevationPoints& Project::elevationPoints() const

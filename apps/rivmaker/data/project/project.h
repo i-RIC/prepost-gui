@@ -35,6 +35,9 @@ public:
 
 	RootDataItem* rootDataItem() const;
 
+	int version() const;
+	void setVersion(int v);
+
 	const ElevationPoints& elevationPoints() const;
 	ElevationPoints& elevationPoints();
 

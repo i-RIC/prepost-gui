@@ -42,6 +42,8 @@ public:
 	QString m_filename;
 	QString m_tempDir;
 
+	int m_version;
+
 	bool m_isModified;
 };
 

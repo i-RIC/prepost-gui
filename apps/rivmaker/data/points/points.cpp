@@ -63,11 +63,18 @@ void Points::loadExternalData(const QString& filename)
 	in >> count;
 
 	for (qint32 i = 0; i < count; ++i) {
-		float x, y, z;
+		float x, y, z, error;
 		QString name;
-		in >> x >> y >> z >> name;
-		GeometryPoint* p = new GeometryPoint(x, y, z, name);
-		impl->m_points.push_back(p);
+		if (project()->version() >= 2) {
+			in >> x >> y >> z >> error >> name;
+			GeometryPoint* p = new GeometryPoint(x, y, z, name);
+			p->setError(error);
+			impl->m_points.push_back(p);
+		} else {
+			in >> x >> y >> z >> name;
+			GeometryPoint* p = new GeometryPoint(x, y, z, name);
+			impl->m_points.push_back(p);
+		}
 	}
 	file.close();
 }
@@ -84,7 +91,7 @@ void Points::saveExternalData(const QString& filename) const
 	out << count;
 
 	for (GeometryPoint* p : impl->m_points) {
-		out << p->x() << p->y() << p->z() << p->name();
+		out << p->x() << p->y() << p->z() << p->error() << p->name();
 	}
 
 	file.close();
