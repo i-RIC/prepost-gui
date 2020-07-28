@@ -611,6 +611,8 @@ void RivmakerMainWindow::deleteProject()
 {
 	delete impl->m_project;
 	impl->m_project = nullptr;
+	impl->m_verticalCrossSectionWindow.setProject(nullptr);
+	impl->m_mousePositionWidget.setProject(nullptr);
 }
 
 ViewWindowI* RivmakerMainWindow::currentViewWindow() const

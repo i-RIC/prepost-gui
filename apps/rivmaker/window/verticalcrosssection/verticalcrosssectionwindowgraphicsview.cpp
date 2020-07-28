@@ -133,7 +133,9 @@ void VerticalCrossSectionWindowGraphicsView::draw(QPainter* painter)
 	drawScales(painter, matrix);
 	drawAspectRatio(painter);
 
-	if (! chartWindow()->project()->baseLine().isDefined()) {return;}
+	auto p = chartWindow()->project();
+	if (p == nullptr) {return;}
+	if (! p->baseLine().isDefined()) {return;}
 
 	drawLeftHWMLine(painter, matrix);
 	drawRightHWMLine(painter, matrix);

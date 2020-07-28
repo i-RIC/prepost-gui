@@ -169,6 +169,8 @@ Project* VerticalCrossSectionWindow::project() const
 void VerticalCrossSectionWindow::setProject(Project* project)
 {
 	m_project = project;
+	if (m_project == nullptr) {return;}
+
 	setCsvExportEnabled(project->isCsvFileNameSet());
 
 	connect(m_project, SIGNAL(updated()), this, SLOT(updateView()));
