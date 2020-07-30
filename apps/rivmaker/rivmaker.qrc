@@ -19,6 +19,7 @@
         <file>images/iconImage.png</file>
         <file>images/iconImport.png</file>
         <file>images/iconLBHWM.png</file>
+        <file>images/iconLBHWMLine.png</file>
         <file>images/iconMain.png</file>
         <file>images/iconMouseHelp.png</file>
         <file>images/iconNew.png</file>
@@ -26,6 +27,7 @@
         <file>images/iconProperty.png</file>
         <file>images/iconQuestion.png</file>
         <file>images/iconRBHWM.png</file>
+        <file>images/iconRBHWMLine.png</file>
         <file>images/iconReferenceMark.png</file>
         <file>images/iconRemovePolygonVertex.png</file>
         <file>images/iconRiverCrosssection.png</file>
@@ -41,7 +43,13 @@
         <file>images/iconViewRotate90.png</file>
         <file>images/iconViewRotateReset.png</file>
         <file>images/iconViewZoomIn.png</file>
+        <file>images/iconViewZoomInX.png</file>
+        <file>images/iconViewZoomInY.png</file>
         <file>images/iconViewZoomOut.png</file>
+        <file>images/iconViewZoomOutX.png</file>
+        <file>images/iconViewZoomOutY.png</file>
+        <file>images/iconWSELine.png</file>
+        <file>images/iconXSLine.png</file>
         <file>images/imageAllToLines.png</file>
         <file>images/imageTemplate.png</file>
         <file>images/imageTin.png</file>

@@ -39,11 +39,18 @@ void RivmakerMainWindow::setupConnections()
 	connect(ui->fileExportRiverSurveyDataAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
 	connect(ui->riverSurveyDataExportAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyData()));
 
+	connect(ui->fileExportRiverSurveyDataAsCSVsAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyCsvData()));
+	connect(ui->riverSurveyDataExportAsCSVsAction, SIGNAL(triggered()), this, SLOT(exportRiverSurveyCsvData()));
+
 	connect(ui->fitAction, SIGNAL(triggered()), this, SLOT(fit()));
 	connect(ui->resetRotationAction, SIGNAL(triggered()), this, SLOT(resetRotation()));
 	connect(ui->rotate90Action, SIGNAL(triggered()), this, SLOT(rotate90()));
 	connect(ui->zoomInAction, SIGNAL(triggered()), this, SLOT(zoomIn()));
+	connect(ui->zoomInXAction, SIGNAL(triggered()), this, SLOT(zoomInX()));
+	connect(ui->zoomInYAction, SIGNAL(triggered()), this, SLOT(zoomInY()));
 	connect(ui->zoomOutAction, SIGNAL(triggered()), this, SLOT(zoomOut()));
+	connect(ui->zoomOutXAction, SIGNAL(triggered()), this, SLOT(zoomOutX()));
+	connect(ui->zoomOutYAction, SIGNAL(triggered()), this, SLOT(zoomOutY()));
 
 	connect(ui->focusPreWindowAction, SIGNAL(triggered()), this, SLOT(focusPreProcessorWindow()));
 	connect(ui->focusVerticalCrosssectionWindowAction, SIGNAL(triggered()), this, SLOT(focusVerticalCrossSectionWindow()));

@@ -66,10 +66,12 @@ RivmakerMainWindow::RivmakerMainWindow(QWidget *parent) :
 
 	auto pw = ui->centralwidget->addSubWindow(&(impl->m_preProcessorWindow));
 	pw->setWindowIcon(impl->m_preProcessorWindow.windowIcon());
-	pw->showMaximized();
+
 	auto vw = ui->centralwidget->addSubWindow(&(impl->m_verticalCrossSectionWindow));
 	vw->setWindowIcon(impl->m_verticalCrossSectionWindow.windowIcon());
-	vw->hide();
+
+	vw->showMaximized();
+	pw->showMaximized();
 
 	updateWindowsToolBar();
 	newProject();
@@ -210,6 +212,15 @@ void RivmakerMainWindow::exportRiverSurveyData()
 	impl->m_rivExporter.exportData(impl->m_project, this);
 }
 
+void RivmakerMainWindow::exportRiverSurveyCsvData()
+{
+	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {
+		QMessageBox::warning(this, tr("Error"), tr("No data to export exists"));
+		return;
+	}
+	impl->m_rivCsvExporter.exportData(impl->m_project, this);
+}
+
 void RivmakerMainWindow::exportWaterSurfaceElevationData()
 {
 	if (impl->m_project->crossSections().crossSectionVector().size() == 0) {
@@ -251,12 +262,44 @@ void RivmakerMainWindow::zoomIn()
 	w->zoomIn();
 }
 
+void RivmakerMainWindow::zoomInX()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomInX();
+}
+
+void RivmakerMainWindow::zoomInY()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomInY();
+}
+
 void RivmakerMainWindow::zoomOut()
 {
 	auto w = currentViewWindow();
 	if (w == nullptr) {return;}
 
 	w->zoomOut();
+}
+
+void RivmakerMainWindow::zoomOutX()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomOutX();
+}
+
+void RivmakerMainWindow::zoomOutY()
+{
+	auto w = currentViewWindow();
+	if (w == nullptr) {return;}
+
+	w->zoomOutY();
 }
 
 void RivmakerMainWindow::focusPreProcessorWindow()
@@ -291,6 +334,7 @@ void RivmakerMainWindow::openCrossSectionWindow()
 	subW->setWindowIcon(w->windowIcon());
 	subW->show();
 	subW->setFocus();
+	w->fit();
 
 	updateWindowsToolBar();
 	connect(w, SIGNAL(destroyed(QObject*)), this, SLOT(updateWindowsToolBar()));
@@ -521,9 +565,9 @@ bool RivmakerMainWindow::closeProject()
 void RivmakerMainWindow::updateWindowTitle()
 {
 	if (impl->m_project == nullptr || impl->m_project->filename().isNull()) {
-		setWindowTitle("RivMaker 1.0");
+		setWindowTitle("RivMaker 2.0");
 	} else {
-		QString title("%1 - RivMaker 1.0");
+		QString title("%1 - RivMaker 2.0");
 		QFileInfo finfo(impl->m_project->filename());
 		setWindowTitle(title.arg(finfo.fileName()));
 	}
@@ -567,6 +611,8 @@ void RivmakerMainWindow::deleteProject()
 {
 	delete impl->m_project;
 	impl->m_project = nullptr;
+	impl->m_verticalCrossSectionWindow.setProject(nullptr);
+	impl->m_mousePositionWidget.setProject(nullptr);
 }
 
 ViewWindowI* RivmakerMainWindow::currentViewWindow() const

@@ -8,8 +8,22 @@ DEFINES += QWT_DLL
 
 include( ../../paths.pri )
 
-QT += widgets network xml
+QT += widgets network svg xml
 RC_FILE = rivmaker.rc
+
+# iricGuiBase
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../../libs/guibase/debug"
+        } else {
+                LIBS += -L"../../libs/guibase/release"
+        }
+}
+unix {
+        LIBS += -L"../../libs/guibase"
+}
+LIBS += -liricGuibase
 
 # iricMisc
 
@@ -75,12 +89,16 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            geom/quadtreecontainer.h \
            geom/rect.h \
            geom/rect_detail.h \
+           io/rivcsvexporter.h \
            io/rivexporter.h \
            io/sacguiimporter.h \
            main/rivmakermainwindow.h \
            misc/geometryutil.h \
            misc/mathutil.h \
            misc/qwtcanvaswithpositionsignal.h \
+           widgets/chartgraphicsview.h \
+           widgets/chartgraphicsviewdisplaysetting.h \
+           widgets/chartwindow.h \
            widgets/mousepositionwidget.h \
            widgets/valuewidget.h \
            window/viewwindowi.h \
@@ -160,11 +178,20 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            io/polyline/polylineimporteri.h \
            main/private/rivmakermainwindow_impl.h \
            window/crosssection/crosssectionwindow.h \
+           window/crosssection/crosssectionwindowdisplaysetting.h \
+           window/crosssection/crosssectionwindowdisplaysettingdialog.h \
+           window/crosssection/crosssectionwindowgraphicsview.h \
            window/preprocessor/preprocessordataitemi.h \
            window/preprocessor/preprocessormodel.h \
            window/preprocessor/preprocessorview.h \
            window/preprocessor/preprocessorwindow.h \
            window/verticalcrosssection/verticalcrosssectionwindow.h \
+           window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdialog.h \
+           window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdockwidget.h \
+           window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdockwidgetview.h \
+           window/verticalcrosssection/verticalcrosssectionwindowelevationsdockwidget.h \
+           window/verticalcrosssection/verticalcrosssectionwindowelevationsdockwidgetview.h \
+           window/verticalcrosssection/verticalcrosssectionwindowgraphicsview.h \
            data/base/private/dataitemcontroller_impl.h \
            data/base/private/dataitemview_impl.h \
            data/base/private/model_impl.h \
@@ -182,7 +209,8 @@ HEADERS += csbuilder/crosssectionbuilderi.h \
            window/preprocessor/objectbrowser/objectbrowser.h \
            window/preprocessor/objectbrowser/objectbrowserview.h \
            window/preprocessor/private/preprocessormodel_impl.h \
-           window/preprocessor/private/preprocessorwindow_impl.h
+           window/preprocessor/private/preprocessorwindow_impl.h \
+           window/verticalcrosssection/private/verticalcrosssectionwindowelevationsdockwidgetview_itemdelegete.h
 FORMS += dialogs/aboutdialog.ui \
          dialogs/coordinateseditdialog.ui \
          dialogs/graphicssettingdialog.ui \
@@ -191,8 +219,11 @@ FORMS += dialogs/aboutdialog.ui \
          main/rivmakermainwindow.ui \
          widgets/mousepositionwidget.ui \
          widgets/valuewidget.ui \
-         window/crosssection/crosssectionwindow.ui \
-         window/verticalcrosssection/verticalcrosssectionwindow.ui
+         window/crosssection/crosssectionwindowdisplaysettingdialog.ui \
+         window/verticalcrosssection/verticalcrosssectionwindow.ui \
+         window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdialog.ui \
+         window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdockwidgetview.ui \
+         window/verticalcrosssection/verticalcrosssectionwindowelevationsdockwidgetview.ui
 SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            csbuilder/crosssectionbuildertemplatemapping.cpp \
            csbuilder/crosssectionbuildertin.cpp \
@@ -205,6 +236,7 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            geom/geometrytriangle.cpp \
            geom/quadtreecontainer.cpp \
            geom/rect.cpp \
+           io/rivcsvexporter.cpp \
            io/rivexporter.cpp \
            io/sacguiimporter.cpp \
            main/main.cpp \
@@ -213,6 +245,9 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            misc/geometryutil.cpp \
            misc/mathutil.cpp \
            misc/qwtcanvaswithpositionsignal.cpp \
+           widgets/chartgraphicsview.cpp \
+           widgets/chartgraphicsviewdisplaysetting.cpp \
+           widgets/chartwindow.cpp \
            widgets/mousepositionwidget.cpp \
            widgets/valuewidget.cpp \
            data/arbitraryhwm/arbitraryhwm.cpp \
@@ -279,12 +314,22 @@ SOURCES += csbuilder/crosssectionbuildermapalltonearest.cpp \
            io/polyline/polylineexporter.cpp \
            io/polyline/polylineimporter.cpp \
            window/crosssection/crosssectionwindow.cpp \
+           window/crosssection/crosssectionwindowdisplaysetting.cpp \
+           window/crosssection/crosssectionwindowdisplaysettingdialog.cpp \
+           window/crosssection/crosssectionwindowgraphicsview.cpp \
            window/preprocessor/preprocessormodel.cpp \
            window/preprocessor/preprocessorview.cpp \
            window/preprocessor/preprocessorwindow.cpp \
            window/verticalcrosssection/verticalcrosssectionwindow.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdialog.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdockwidget.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindowdisplaysettingdockwidgetview.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindowelevationsdockwidget.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindowelevationsdockwidgetview.cpp \
+           window/verticalcrosssection/verticalcrosssectionwindowgraphicsview.cpp \
            window/preprocessor/objectbrowser/objectbrowser.cpp \
-           window/preprocessor/objectbrowser/objectbrowserview.cpp
+           window/preprocessor/objectbrowser/objectbrowserview.cpp \
+           window/verticalcrosssection/private/verticalcrosssectionwindowelevationsdockwidgetview_itemdelegete.cpp
 RESOURCES += rivmaker.qrc
 TRANSLATIONS += languages/rivmaker_ar_EG.ts \
                 languages/rivmaker_bg_BG.ts \

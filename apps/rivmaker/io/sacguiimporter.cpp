@@ -61,6 +61,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 	QRegExp lbExp("LH.*");
 	QRegExp rbExp("RH.*");
 	QRegExp elevExp("(X[0-9]+).*");
+	QRegExp elevExp2("(XS[0-9]+).*");
 	QRegExp bmExp("BM.*");
 	QRegExp rmExp("RM.*");
 	QRegExp hubExp("HUB.*");
@@ -75,10 +76,14 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 		QStringList frags = line.split("\t");
 		if (frags.size() < 5) {continue;}
 		double x, y, z;
+		double error = 0;
 		x = frags.at(1).toDouble();
 		y = frags.at(2).toDouble();
 		z = frags.at(3).toDouble();
 		QString name = frags.at(4);
+		if (frags.size() >= 6) {
+			error = frags.at(5).toDouble();
+		}
 
 		if (first && offset.x() == 0 && offset.y() == 0) {
 			offset.setX(x);
@@ -86,6 +91,7 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 		}
 
 		GeometryPoint* point = new GeometryPoint(x - offset.x(), y - offset.y(), z, name);
+		point->setError(error);
 		if (lbExp.exactMatch(name)) {
 			leftVec.push_back(point);
 		} else if (rbExp.exactMatch(name)) {
@@ -101,6 +107,9 @@ bool SACGUIImporter::importData(Project* project, std::vector<CrossSection*>* ne
 		} else if (elevExp.exactMatch(name)) {
 			elevVec.push_back(point);
 			registerToMap(elevExp.cap(1), point, &xsecPoints);
+		} else if (elevExp2.exactMatch(name)) {
+			elevVec.push_back(point);
+			registerToMap(elevExp2.cap(1), point, &xsecPoints);
 		} else {
 			arbVec.push_back(point);
 		}

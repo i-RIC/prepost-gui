@@ -2,6 +2,7 @@
 #define RIVMAKERMAINWINDOW_IMPL_H
 
 #include "../rivmakermainwindow.h"
+#include "../../io/rivcsvexporter.h"
 #include "../../io/rivexporter.h"
 #include "../../widgets/mousepositionwidget.h"
 #include "../../widgets/valuewidget.h"
@@ -27,6 +28,7 @@ public:
 	QSignalMapper m_windowActivationMapper;
 
 	RivExporter m_rivExporter;
+	RivCsvExporter m_rivCsvExporter;
 
 	ValueWidget m_valueWidget;
 	MousePositionWidget m_mousePositionWidget;

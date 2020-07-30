@@ -39,12 +39,17 @@ private slots:
 	void exportBaseLine();
 	void exportCrossSectionLines();
 	void exportRiverSurveyData();
+	void exportRiverSurveyCsvData();
 
 	void fit();
 	void resetRotation();
 	void rotate90();
 	void zoomIn();
+	void zoomInX();
+	void zoomInY();
 	void zoomOut();
+	void zoomOutX();
+	void zoomOutY();
 
 	void focusPreProcessorWindow();
 	void focusVerticalCrossSectionWindow();

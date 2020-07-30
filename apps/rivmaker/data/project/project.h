@@ -35,6 +35,9 @@ public:
 
 	RootDataItem* rootDataItem() const;
 
+	int version() const;
+	void setVersion(int v);
+
 	const ElevationPoints& elevationPoints() const;
 	ElevationPoints& elevationPoints();
 
@@ -56,6 +59,9 @@ public:
 	bool isCsvFileNameSet() const;
 	const QString& csvFileName() const;
 	void setCsvFileName(const QString& csvFileName);
+
+	const QString& rivCsvFolderName() const;
+	void setRivCsvFolderName(const QString& folderName);
 
 	void updatePointsAutoSize();
 

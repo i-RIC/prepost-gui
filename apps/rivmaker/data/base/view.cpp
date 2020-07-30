@@ -8,7 +8,7 @@
 #include <QPainter>
 
 const int View::CLICK_LIMIT = 3;
-const int View::NEAR_LIMIT = 3;
+const int View::NEAR_LIMIT = 5;
 
 View::View(QWidget* parent) :
 	QWidget {parent}

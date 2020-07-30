@@ -8,3 +8,8 @@ PreProcessorView::PreProcessorView(QWidget* parent) :
 PreProcessorView::~PreProcessorView()
 {}
 
+
+QSize PreProcessorView::sizeHint() const
+{
+	return QSize(640, 480);
+}

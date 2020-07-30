@@ -1,45 +1,55 @@
 #include "crosssectionwindow.h"
-#include "ui_crosssectionwindow.h"
+#include "crosssectionwindowdisplaysettingdialog.h"
+#include "crosssectionwindowgraphicsview.h"
 
 #include "../../data/crosssection/crosssection.h"
 #include "../../data/crosssections/crosssections.h"
 #include "../../data/project/project.h"
-#include "../../misc/qwtcanvaswithpositionsignal.h"
-
-#include <qwt_plot_curve.h>
-#include <qwt_plot_grid.h>
-#include <qwt_plot_marker.h>
-#include <qwt_plot_zoomer.h>
-#include <qwt_symbol.h>
 
 #include <QColor>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QFile>
+#include <QFileDialog>
+#include <QLabel>
+#include <QMessageBox>
+#include <QPainter>
 #include <QPen>
+#include <QPushButton>
+#include <QSvgGenerator>
+#include <QTextStream>
+#include <QToolBar>
 #include <QVector2D>
 
 #include <map>
 
 CrossSectionWindow::CrossSectionWindow(QWidget *parent) :
-	QMainWindow(parent),
-	ui(new Ui::CrossSectionWindow),
+	ChartWindow(parent),
 	m_currentCrossSection {nullptr}
 {
-	ui->setupUi(this);
-	connect(ui->crossSectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSelectionChange(int)));
-	connect(ui->resetZoomButton, SIGNAL(clicked()), this, SLOT(resetZoom()));
+	setWindowIcon(QIcon(":/images/iconRiverCrosssection.png"));
 
-	QwtCanvasWithPositionSignal* w = new QwtCanvasWithPositionSignal(ui->qwtWidget);
-	connect(w, SIGNAL(positionChangedForStatusBar(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
-	ui->qwtWidget->setCanvas(w);
+	auto graphicsView = new CrossSectionWindowGraphicsView(this);
+	setCentralWidget(graphicsView);
 
-	initCurve();
+	setupToolBars();
+
+	connect(graphicsView, SIGNAL(positionChangedForStatusBar(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
+	connect(m_crossSectionComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSelectionChange(int)));
+	connect(m_exportSVGButton, SIGNAL(clicked()), this, SLOT(exportSVG()));
+	connect(m_exportCSVButton, SIGNAL(clicked()), this, SLOT(exportCSV()));
+	connect(m_displaySettingButton, SIGNAL(clicked()), this, SLOT(editDisplaySetting()));
+	connect(m_WSECheckBox, SIGNAL(toggled(bool)), graphicsView, SLOT(update()));
+	connect(m_LBHWMCheckBox, SIGNAL(toggled(bool)), graphicsView, SLOT(update()));
+	connect(m_RBHWMCheckBox, SIGNAL(toggled(bool)), graphicsView, SLOT(update()));
 }
 
 CrossSectionWindow::~CrossSectionWindow()
+{}
+
+Project* CrossSectionWindow::project() const
 {
-	delete m_waterElevationMarker;
-	delete m_lbHWM;
-	delete m_rbHWM;
-	delete ui;
+	return m_project;
 }
 
 void CrossSectionWindow::setProject(Project* project)
@@ -48,9 +58,73 @@ void CrossSectionWindow::setProject(Project* project)
 	updateView();
 }
 
-void CrossSectionWindow::resetZoom()
+CrossSection* CrossSectionWindow::currentCrossSection() const
 {
-	m_zoomer->zoom(0);
+	return m_currentCrossSection;
+}
+
+bool CrossSectionWindow::showWSE() const
+{
+	return m_WSECheckBox->isChecked();
+}
+
+bool CrossSectionWindow::showLBHWM() const
+{
+	return m_LBHWMCheckBox->isChecked();
+}
+
+bool CrossSectionWindow::showRBHWM() const
+{
+	return m_RBHWMCheckBox->isChecked();
+}
+
+void CrossSectionWindow::exportSVG()
+{
+	QString fname = QFileDialog::getSaveFileName(this, tr("Save SVG file"), QString(), tr("SVG files (*.svg)"));
+	if (fname.isEmpty()) {return;}
+
+	auto gv = graphicsView();
+	QSvgGenerator generator;
+	generator.setFileName(fname);
+	generator.setSize(gv->size());
+	generator.setViewBox(gv->rect());
+	generator.setTitle("Cross Section Window Image");
+
+	QPainter painter(&generator);
+	gv->draw(&painter);
+}
+
+void CrossSectionWindow::exportCSV()
+{
+	QString fname = QFileDialog::getSaveFileName(this, tr("Save CSV file"), QString(), tr("CSV files (*.csv)"));
+	if (fname.isEmpty()) {return;}
+	QFile f(fname);
+	if (! f.open(QFile::WriteOnly)) {
+		QMessageBox::critical(this, tr("Error"), tr("%1 could note be opened.").arg(QDir::toNativeSeparators(fname)));
+		return;
+	}
+	QTextStream ts(&f);
+	ts.setRealNumberPrecision(6);
+	auto points = m_currentCrossSection->mappedPoints();
+	for (const auto& p : points) {
+		ts << p.x() << "," << p.y() << endl;
+	}
+	f.close();
+}
+
+void CrossSectionWindow::editDisplaySetting()
+{
+	auto gv = graphicsView();
+	CrossSectionWindowDisplaySettingDialog dialog(this);
+	dialog.setSettings(gv->crossSectionWindowDisplaySetting(), gv->chartDisplaySetting());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	gv->setCrossSectionWindowDisplaySetting(dialog.crossSectionWindowDisplaySetting());
+	gv->setChartDisplaySetting(dialog.chartGraphicsViewDisplaySetting());
+
+	gv->update();
 }
 
 void CrossSectionWindow::updateView()
@@ -62,13 +136,12 @@ void CrossSectionWindow::updateView()
 		return;
 	}
 
-	ui->crossSectionComboBox->blockSignals(true);
-
+	m_crossSectionComboBox->blockSignals(true);
 	int idx = -1;
-	ui->crossSectionComboBox->clear();
+	m_crossSectionComboBox->clear();
 	for (int i = 0; i < csVec.size(); ++i) {
 		CrossSection* cs = csVec.at(i);
-		ui->crossSectionComboBox->addItem(cs->name());
+		m_crossSectionComboBox->addItem(cs->name());
 		if (m_currentCrossSection == cs) {
 			idx = i;
 		}
@@ -77,10 +150,10 @@ void CrossSectionWindow::updateView()
 		idx = 0;
 		m_currentCrossSection = csVec.at(0);
 	}
-	ui->crossSectionComboBox->setCurrentIndex(idx);
-	ui->crossSectionComboBox->blockSignals(false);
+	m_crossSectionComboBox->setCurrentIndex(idx);
+	m_crossSectionComboBox->blockSignals(false);
 
-	updateCurve();
+	graphicsView()->update();
 	updateWindowTitle();
 }
 
@@ -88,123 +161,50 @@ void CrossSectionWindow::handleSelectionChange(int selected)
 {
 	auto csVec = m_project->crossSections().crossSectionVector();
 	m_currentCrossSection = csVec.at(selected);
+	updateWindowTitle();
 
-	updateView();
+	fit();
 }
 
-void CrossSectionWindow::initCurve()
+void CrossSectionWindow::setupToolBars()
 {
-	auto qwtW = ui->qwtWidget;
-	qwtW->setAxisTitle(QwtPlot::xBottom, tr("Distance from Left bank"));
-	qwtW->enableAxis(QwtPlot::xBottom);
+	QToolBar* crossSectionToolBar = new QToolBar(this);
+	auto l = new QLabel(tr("Cross Section: "), crossSectionToolBar);
+	crossSectionToolBar->addWidget(l);
 
-	qwtW->setAxisTitle(QwtPlot::yLeft, tr("Elevation"));
-	qwtW->enableAxis(QwtPlot::yLeft);
+	m_crossSectionComboBox = new QComboBox(this);
+	m_crossSectionComboBox->setMinimumWidth(100);
+	crossSectionToolBar->addWidget(m_crossSectionComboBox);
 
-	QwtPlotGrid* grid = new QwtPlotGrid();
-	grid->enableXMin(true);
-	grid->enableYMin(true);
-	grid->setMajorPen(Qt::lightGray, 1.0, Qt::SolidLine);
-	grid->setMinorPen(Qt::lightGray, 1.0, Qt::DashLine);
-	grid->attach(ui->qwtWidget);
+	crossSectionToolBar->addSeparator();
 
-	m_curve = new QwtPlotCurve();
-	m_curve->setPen(Qt::black);
+	m_exportSVGButton = new QPushButton(tr("Export &SVG..."), this);
+	crossSectionToolBar->addWidget(m_exportSVGButton);
 
-	QwtSymbol* s = new QwtSymbol(QwtSymbol::Ellipse, QBrush(Qt::black), QPen(Qt::black), QSize(7, 7));
-	m_curve->setSymbol(s);
-	m_curve->attach(ui->qwtWidget);
+	m_exportCSVButton = new QPushButton(tr("Export &CSV..."), this);
+	crossSectionToolBar->addWidget(m_exportCSVButton);
 
-	m_waterElevationMarker = new QwtPlotMarker();
-	m_waterElevationMarker->setYValue(0);
-	m_waterElevationMarker->setLineStyle(QwtPlotMarker::HLine);
-	m_waterElevationMarker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
-	m_waterElevationMarker->setLinePen(QPen(Qt::blue));
-	m_waterElevationMarker->attach(ui->qwtWidget);
+	addToolBar(Qt::TopToolBarArea, crossSectionToolBar);
+	addToolBarBreak(Qt::TopToolBarArea);
 
-	m_lbHWM = new QwtPlotMarker();
-	m_lbHWM->setYValue(0);
-	m_lbHWM->setLineStyle(QwtPlotMarker::HLine);
-	m_lbHWM->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
-	m_lbHWM->setLinePen(QPen(Qt::darkBlue, 1, Qt::DashLine));
-	m_lbHWM->setLabelOrientation(Qt::Horizontal);
-	m_lbHWM->setLabelAlignment(Qt::AlignRight | Qt::AlignBaseline);
-	m_lbHWM->setLabel(tr("Left bank HWM"));
-	m_lbHWM->attach(ui->qwtWidget);
+	addToolBars();
 
-	m_rbHWM = new QwtPlotMarker();
-	m_rbHWM->setYValue(0);
-	m_rbHWM->setLineStyle(QwtPlotMarker::HLine);
-	m_rbHWM->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
-	m_rbHWM->setLinePen(QPen(Qt::darkBlue, 1, Qt::DashLine));
-	m_rbHWM->setLabelOrientation(Qt::Horizontal);
-	m_rbHWM->setLabelAlignment(Qt::AlignRight | Qt::AlignBaseline);
-	m_rbHWM->setLabel(tr("Right bank HWM"));
-	m_rbHWM->attach(ui->qwtWidget);
+	auto tb = displayToolBar();
 
-	m_zoomer = new QwtPlotZoomer(ui->qwtWidget->canvas());
-	m_zoomer->setRubberBandPen(QPen(Qt::black));
-	m_zoomer->setTrackerPen(QPen(Qt::darkBlue));
-	m_zoomer->setMousePattern(QwtEventPattern::MouseSelect1, Qt::LeftButton);
-}
+	m_WSECheckBox = new QCheckBox(tr("WSE"), this);
+	m_WSECheckBox->setChecked(true);
+	tb->addWidget(m_WSECheckBox);
 
-void CrossSectionWindow::updateCurve()
-{
-	if (m_currentCrossSection == nullptr) {return;}
+	m_LBHWMCheckBox = new QCheckBox(tr("Left Bank HWM"), this);
+	m_LBHWMCheckBox->setChecked(true);
+	tb->addWidget(m_LBHWMCheckBox);
 
-	double xmin, xmax, ymin, ymax;
+	m_RBHWMCheckBox = new QCheckBox(tr("Right Bank HWM"), this);
+	m_RBHWMCheckBox->setChecked(true);
+	tb->addWidget(m_RBHWMCheckBox);
 
-
-	QVector<QPointF> samples;
-
-	bool first = true;
-	for (auto p : m_currentCrossSection->mappedPoints()){
-		samples.push_back(QPointF(p.x(), p.y()));
-
-		if (first || p.x() < xmin) {xmin = p.x();}
-		if (first || p.x() > xmax) {xmax = p.x();}
-		if (first || p.y() < ymin) {ymin = p.y();}
-		if (first || p.y() > ymax) {ymax = p.y();}
-
-		first = false;
-	}
-	double xWidth = (xmax - xmin);
-	double yWidth = (ymax - ymin);
-	double marginRate = 0.08;
-
-	xmin -= xWidth * marginRate;
-	xmax += xWidth * marginRate;
-	ymin -= yWidth * marginRate;
-	ymax += yWidth * marginRate;
-
-	m_curve->setSamples(samples);
-
-	m_waterElevationMarker->setYValue(m_currentCrossSection->waterElevation());
-
-	updateHWMs();
-
-	ui->qwtWidget->setAxisScale(QwtPlot::xBottom, xmin, xmax);
-	ui->qwtWidget->setAxisScale(QwtPlot::yLeft, ymin, ymax);
-
-	ui->qwtWidget->replot();
-	m_zoomer->setZoomBase(QRectF(QPointF(xmin, ymin), QPointF(xmax, ymax)));
-}
-
-void CrossSectionWindow::updateHWMs()
-{
-	m_lbHWM->detach();
-	m_rbHWM->detach();
-
-	double lbhwm = m_project->calcLeftBankHWMAtCrossSection(m_currentCrossSection);
-	if (lbhwm != Project::INVALID_HWM) {
-		m_lbHWM->setYValue(lbhwm);
-		m_lbHWM->attach(ui->qwtWidget);
-	}
-	double rbhwm = m_project->calcRightBankHWMAtCrossSection(m_currentCrossSection);
-	if (rbhwm != Project::INVALID_HWM) {
-		m_rbHWM->setYValue(rbhwm);
-		m_rbHWM->attach(ui->qwtWidget);
-	}
+	m_displaySettingButton = new QPushButton("&Display Setting", this);
+	tb->addWidget(m_displaySettingButton);
 }
 
 void CrossSectionWindow::updateWindowTitle()
@@ -215,4 +215,9 @@ void CrossSectionWindow::updateWindowTitle()
 	}
 	auto title = tr("Cross Section Window : %1").arg(m_currentCrossSection->name());
 	setWindowTitle(title);
+}
+
+CrossSectionWindowGraphicsView* CrossSectionWindow::graphicsView() const
+{
+	return dynamic_cast<CrossSectionWindowGraphicsView*>(centralWidget());
 }

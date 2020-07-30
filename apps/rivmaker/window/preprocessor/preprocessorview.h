@@ -10,6 +10,8 @@ class PreProcessorView : public TopView
 public:
 	PreProcessorView(QWidget* parent = nullptr);
 	~PreProcessorView();
+
+	QSize sizeHint() const override;
 };
 
 #endif // PREPROCESSORVIEW_H

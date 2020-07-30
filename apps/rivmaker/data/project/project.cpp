@@ -139,6 +139,7 @@ Project::Impl::Impl(Project *project) :
 	m_crossSections {&m_rootDataItem},
 	m_baseLine {&m_rootDataItem},
 	m_currentBuilder {& m_builderNearest},
+	m_version {0},
 	m_isModified {false}
 {}
 
@@ -228,6 +229,16 @@ RootDataItem* Project::rootDataItem() const
 	return &(impl->m_rootDataItem);
 }
 
+int Project::version() const
+{
+	return impl->m_version;
+}
+
+void Project::setVersion(int v)
+{
+	impl->m_version = v;
+}
+
 const ElevationPoints& Project::elevationPoints() const
 {
 	return impl->m_elevationPoints;
@@ -303,6 +314,16 @@ void Project::setCsvFileName(const QString& csvFileName)
 	impl->m_csvFileName = csvFileName;
 
 	emit csvFileNameSet(isCsvFileNameSet());
+}
+
+const QString& Project::rivCsvFolderName() const
+{
+	return impl->m_rivCsvFolderName;
+}
+
+void Project::setRivCsvFolderName(const QString& folderName)
+{
+	impl->m_rivCsvFolderName = folderName;
 }
 
 void Project::updatePointsAutoSize()
