@@ -161,6 +161,7 @@ void CrossSectionWindow::handleSelectionChange(int selected)
 {
 	auto csVec = m_project->crossSections().crossSectionVector();
 	m_currentCrossSection = csVec.at(selected);
+	updateWindowTitle();
 
 	fit();
 }
