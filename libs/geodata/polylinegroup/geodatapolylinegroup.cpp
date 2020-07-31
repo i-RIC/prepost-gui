@@ -142,6 +142,7 @@ void GeoDataPolyLineGroup::updateVtkObjects()
 		line->setIndexOffset(offset);
 		offset = impl->m_points->GetNumberOfPoints();
 	}
+	impl->m_points->Modified();
 	impl->m_edgesPolyData->SetPoints(impl->m_points);
 	impl->m_edgesPolyData->SetLines(edges);
 	impl->m_edgesPolyData->GetCellData()->AddArray(edgeValues);

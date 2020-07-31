@@ -112,6 +112,7 @@ void GeoDataPointGroup::updateVtkObjects()
 		point->setIndexOffset(id);
 		++ id;
 	}
+	impl->m_vtkPoints->Modified();
 	impl->m_pointsPolyData->SetPoints(impl->m_vtkPoints);
 	impl->m_pointsPolyData->SetVerts(points);
 	impl->m_pointsPolyData->GetCellData()->AddArray(pointValues);
