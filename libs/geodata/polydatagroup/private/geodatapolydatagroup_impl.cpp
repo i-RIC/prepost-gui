@@ -43,7 +43,7 @@ GeoDataPolyDataGroup::Impl::Impl(GeoDataPolyDataGroup* group) :
 	m_editTargetDataBackup {nullptr},
 	m_editTargetDataIndex {0},
 
-	m_addAction {new QAction(GeoDataPolyDataGroup::tr("&Add New Polygon..."), group)}, // @todo Polygon -> Point, Polyline
+	m_addAction {new QAction(GeoDataPolyDataGroup::tr("&Add New Polygon..."), group)},
 	m_editNameAction {new QAction(GeoDataPolyDataGroup::tr("Edit &Name..."), group)},
 	m_editNameAndValueAction {new QAction(GeoDataPolyDataGroup::tr("Edit &Name and Value..."), group)},
 	m_deleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), GeoDataPolyDataGroup::tr("&Delete"), group)},

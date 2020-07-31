@@ -42,6 +42,8 @@ GeoDataPolyLineGroup::GeoDataPolyLineGroup(ProjectDataItem* d, GeoDataCreator* c
 	GeoDataPolyDataGroup(d, creator, condition),
 	impl {new Impl {this}}
 {
+	addAction()->setText(tr("&Add New Polyline..."));
+
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		auto mapper = impl->m_edgesActor->GetMapper();

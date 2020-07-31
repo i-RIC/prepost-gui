@@ -40,6 +40,7 @@ GeoDataPointGroup::GeoDataPointGroup(ProjectDataItem* d, GeoDataCreator* creator
 	GeoDataPolyDataGroup(d, creator, condition),
 	impl {new Impl {this}}
 {
+	addAction()->setText(tr("&Add New Point..."));
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		auto mapper = impl->m_pointsActor->GetMapper();
