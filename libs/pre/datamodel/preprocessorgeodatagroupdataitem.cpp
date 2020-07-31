@@ -1185,6 +1185,8 @@ void PreProcessorGeoDataGroupDataItem::deleteAll()
 		dataModel()->deleteItem(index, true);
 	}
 	informValueRangeChange();
+
+	clearDimensionsIfNoDataExists();
 }
 
 bool PreProcessorGeoDataGroupDataItem::polygonExists() const
