@@ -173,12 +173,18 @@ void GeoDataPolyLineAbstractPolyLine::setColor(const QColor& color)
 	impl->m_polylineController.linesActor()->GetProperty()->SetColor(dr, dg, db);
 }
 
-void GeoDataPolyLineAbstractPolyLine::setMapping(GeoDataPolyLineColorSettingDialog::Mapping m)
+void GeoDataPolyLineAbstractPolyLine::setOpacity(double opacity)
+{
+	impl->m_polylineController.pointsActor()->GetProperty()->SetOpacity(opacity);
+	impl->m_polylineController.linesActor()->GetProperty()->SetOpacity(opacity);
+}
+
+void GeoDataPolyLineAbstractPolyLine::setMapping(GeoDataPolyDataColorSettingDialog::Mapping m)
 {
 	auto pointsMapper = impl->m_polylineController.pointsActor()->GetMapper();
 	auto linesMapper = impl->m_polylineController.linesActor()->GetMapper();
 
-	if (m == GeoDataPolyLineColorSettingDialog::Arbitrary) {
+	if (m == GeoDataPolyDataColorSettingDialog::Arbitrary) {
 		pointsMapper->SetScalarVisibility(0);
 		linesMapper->SetScalarVisibility(0);
 	} else {

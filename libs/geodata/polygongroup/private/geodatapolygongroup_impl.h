@@ -2,27 +2,8 @@
 #define GEODATAPOLYGONGROUP_IMPL_H
 
 #include"../geodatapolygongroup.h"
-#include"../geodatapolygongrouppolygon.h"
-
-#include <geodata/polygon/geodatapolygon.h>
-#include <guibase/vtktool/vtkpolydatalinesactor.h>
-#include <misc/zdepthrange.h>
-
-#include <unordered_set>
-#include <vector>
-
-namespace geos {
-namespace index{
-namespace quadtree {
-class Quadtree;
-} // quadtree
-} // index
-} // geos
 
 class GeoDataPolygon;
-class GeoDataPolygonGroupAttributeBrowser;
-
-class QAction;
 
 class vtkActor;
 class vtkPoints;
@@ -31,35 +12,10 @@ class vtkPolyData;
 class GeoDataPolygonGroup::Impl
 {
 public:
-	enum Mode {
-		Normal,
-		EditPolygon,
-	};
-
 	Impl(GeoDataPolygonGroup* group);
 	~Impl();
 
-	void clear();
-
-	void updateActorSetting();
-	void updateActorSettingForEditTargetPolygon();
-	void updateSelectedPolygonsVtkObjects();
-	void updateAttributeBrowser();
-	void updateAttributeBrowserSelection();
 	void setupDummyPolygonForMenu();
-
-	void selectPolygonsIncludePoint(const QPointF& point);
-	void selectPolygonsIncludedInPolygon(const QPolygonF& polygon);
-
-	GeoDataPolygonGroupPolygon* mergeToThis(GeoDataPolygon* polygon, int index = -1);
-	void mergeToThis(GeoDataPolygonGroup* group);
-
-	void setupNewEditTargetPolygon();
-	void setupEditTargetPolygonFromSelectedPolygon();
-	void updateActionStatus();
-
-	std::vector<GeoDataPolygonGroupPolygon*> m_polygons;
-	std::unordered_set<GeoDataPolygonGroupPolygon*> m_selectedPolygons;
 
 	vtkPoints* m_points;
 
@@ -75,38 +31,8 @@ public:
 	vtkActor* m_selectedPolygonsEdgesActor;
 	vtkActor* m_selectedPolygonsPointsActor;
 
-	geos::index::quadtree::Quadtree* m_qTree;
-
-	GeoDataPolygonGroupColorSettingDialog::Setting m_colorSetting;
-
-	GeoDataPolygon* m_editTargetPolygon;
-	GeoDataPolygonGroupPolygon* m_editTargetPolygonBackup;
-	int m_editTargetPolygonIndex;
 	GeoDataPolygon* m_dummyPolygonForMenu;
-	ZDepthRange m_depthRange;
 
-	QMenu* m_rightClickingMenu;
-
-	QAction* m_addAction;
-	QAction* m_selectAction;
-	QAction* m_mergeAction;
-	QAction* m_deleteAction;
-	QAction* m_editNameAction;
-	QAction* m_editNameAndValueAction;
-	QAction* m_editColorSettingAction;
-	QAction* m_attributeBrowserAction;
-
-	QAction* m_moveToTopAction;
-	QAction* m_moveToBottomAction;
-	QAction* m_moveUpAction;
-	QAction* m_moveDownAction;
-
-	QPoint m_dragStartPoint;
-
-	Mode m_mode;
-
-	GeoDataPolygonGroupAttributeBrowser* m_attributeBrowser;
-	bool m_attributeBrowserIsShown;
 	GeoDataPolygonGroup* m_group;
 };
 

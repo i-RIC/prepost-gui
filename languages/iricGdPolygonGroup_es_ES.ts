@@ -187,6 +187,31 @@
         <source>Custom Color</source>
         <translation type="unfinished"></translation>
     </message>
+        <location filename="../geodatapolygongroup.cpp" line="261"/>
+        <source>polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="266"/>
+        <source>Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="271"/>
+        <source>P&amp;olygon Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="256"/>
+        <source>Polygon%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="382"/>
+        <location filename="../geodatapolygongroup.cpp" line="428"/>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -202,29 +227,6 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPolygonGroupMergeSettingDialog</name>
-    <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="14"/>
-        <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="20"/>
-        <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="36"/>
-        <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="43"/>
-        <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>GeoDataPolygonGroupShpExporter</name>
     <message>
         <location filename="../geodatapolygongroupshpexporter.cpp" line="18"/>
@@ -232,7 +234,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpexporter.cpp" line="55"/>
+        <location filename="../geodatapolygongroupshpexporter.cpp" line="56"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -240,17 +242,17 @@
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="112"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="111"/>
         <source>ESRI Shapefile (Polygons)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="121"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="120"/>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="145"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="144"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -260,35 +262,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="153"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="152"/>
         <source>Polygon%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="181"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="178"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="180"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="207"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="215"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="222"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="209"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="207"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="217"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="215"/>
         <source>Opening %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="224"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="222"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation type="unfinished"></translation>
     </message>

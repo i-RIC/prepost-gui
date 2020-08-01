@@ -56,6 +56,20 @@ unix {
 }
 LIBS += -liricTriangle
 
+# iricGdPolydata
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../polydata/debug"
+        } else {
+                LIBS += -L"../polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../polydata"
+}
+LIBS += -liricGdPolydata
+
 # iricGuibase
 
 win32 {
@@ -120,7 +134,6 @@ HEADERS += gd_polygon_global.h \
            geodatapolygonabstractpolygon.h \
            geodatapolygoncellmappersetting.h \
            geodatapolygoncellmappert.h \
-           geodatapolygoncolorsettingdialog.h \
            geodatapolygoncreator.h \
            geodatapolygoncreatort.h \
            geodatapolygonholepolygon.h \
@@ -137,8 +150,6 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_addvertexcommand.h \
            private/geodatapolygon_coordinateseditor.h \
            private/geodatapolygon_editcoordinatescommand.h \
-           private/geodatapolygon_editnameandvaluecommand.h \
-           private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
            private/geodatapolygon_impl.h \
@@ -156,7 +167,6 @@ FORMS += geodatapolygoncolorsettingdialog.ui \
 SOURCES += geodatapolygon.cpp \
            geodatapolygonabstractpolygon.cpp \
            geodatapolygoncellmappersetting.cpp \
-           geodatapolygoncolorsettingdialog.cpp \
            geodatapolygoncreator.cpp \
            geodatapolygonholepolygon.cpp \
            geodatapolygonimporter.cpp \
@@ -171,8 +181,6 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_addvertexcommand.cpp \
            private/geodatapolygon_coordinateseditor.cpp \
            private/geodatapolygon_editcoordinatescommand.cpp \
-           private/geodatapolygon_editnameandvaluecommand.cpp \
-           private/geodatapolygon_editpropertycommand.cpp \
            private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp \
            private/geodatapolygon_modifyabstractpolygoncommand.cpp \

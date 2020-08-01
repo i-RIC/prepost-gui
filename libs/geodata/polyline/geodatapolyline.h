@@ -2,9 +2,8 @@
 #define GEODATAPOLYLINE_H
 
 #include "gd_polyline_global.h"
-#include "geodatapolylinecolorsimplesettingdialog.h"
 
-#include <guicore/pre/geodata/geodata.h>
+#include <geodata/polydata/geodatapolydata.h>
 
 class GeoDataPolyLineAbstractPolyLine;
 class GeoDataPolyLineImplPolyLine;
@@ -28,7 +27,7 @@ class LineString;
 } // geos
 
 
-class GD_POLYLINE_EXPORT GeoDataPolyLine : public GeoData
+class GD_POLYLINE_EXPORT GeoDataPolyLine : public GeoDataPolyData
 {
 	Q_OBJECT
 
@@ -56,7 +55,7 @@ public:
 	};
 
 	GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
-	virtual ~GeoDataPolyLine();
+	~GeoDataPolyLine() override;
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
@@ -73,48 +72,38 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax) override;
+
 	void definePolyLine(bool doubleClick, bool noEditVal = false);
-	QColor color() const;
 
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
-
-	QColor doubleToColor(double d);
 	void clear();
-	bool ready() const;
+
+	void setShape(geos::geom::LineString* lineString);
 
 	void showInitialDialog() override;
 
-	const QVariant& variantValue() const;
-	void setVariantValue(const QVariant& v, bool disableInform = false);
+	bool inNormalMode() const override;
+	bool isDefined() const override;
 
-	geos::geom::LineString* getGeosLineString(const QPointF& offset);
+	geos::geom::LineString* getGeosLineString(const QPointF& offset = QPointF(0, 0));
 
-	bool getValueRange(double* min, double* max) override;
-	void updateFilename() override;
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolyLine* polyline);
 
 	GeoDataPolyLineImplPolyLine* polyLine() const;
 
 public slots:
-	void editValue();
 	void restoreMouseEventMode();
-	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
-	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
 
 private slots:
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
 	void editCoordinates();
-	void editColorSetting();
 
 signals:
 	void modified();
 
 private:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
@@ -122,22 +111,24 @@ private:
 
 	void setMouseEventMode(MouseEventMode mode);
 
-	GeoDataPolyLineColorSimpleSettingDialog::Setting colorSetting() const;
-	void setColorSetting(GeoDataPolyLineColorSimpleSettingDialog::Setting);
-
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void updateScalarValues();
-	void updateActorSettings();
+	void updateScalarValues() override;
+	void updateActorSettings() override;
 	bool polylineHasThreeVertices();
-	void initParams();
 	void updateMouseEventMode();
 	void updateActionStatus();
+
+	bool isReady() const override;
+	QString shapeName() const override;
+	QString shapeNameCamelCase() const override;
+
+	QAction* addVertexAction() const;
+	QAction* removeVertexAction() const;
+	QAction* coordEditAction() const;
 
 	class AddVertexCommand;
 	class PushNewPointCommand;
 	class EditCoordinatesCommand;
-	class EditPropertyCommand;
-	class EditValueCommand;
 	class FinishPolyLineDefiningCommand;
 	class ModifyAbstractPolyLineCommand;
 	class MovePolyLineCommand;
@@ -151,6 +142,8 @@ private:
 
 public:
 	friend class GeoDataPolyLineAbstractPolyLine;
+	friend class GeoDataPolyLineGroup;
+	friend class GeoDataPolyLineGroupPolyLine;
 	friend class GeoDataPolyLineImporter;
 	friend class GeoDataPolyLineShapeExporter;
 	friend class GeoDataPolyLineProxy;

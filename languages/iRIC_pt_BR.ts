@@ -7,17 +7,17 @@
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="29"/>
         <source>LandXml file</source>
-        <translation>Arquivo LandXml</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="48"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="48"/>
         <source>Error occured while exporting to %1</source>
-        <translation>Ocorreu um erro ao exportar para %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -25,7 +25,7 @@
     <message>
         <location filename="../gridlandxmlexporter.cpp" line="40"/>
         <source>LandXml files (*.xml)</source>
-        <translation>Arquivo LandXml (*.xml)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricAxis2d_pt_BR.ts -->
@@ -598,9 +598,8 @@
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorcompoundchannel.cpp" line="12"/>
-        <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
+        <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.</source>
         <translation>Especifique o poligono da area de criacao da grade e o poligono da area do canal de agua, e no final especifique a linha central.</translation>
-        <translation>A regiao do canal de agua devera ser incluida na area de criacao da grade e a linha central do rio devera ser incluida na regiao do canal de agua.</translation>
     </message>
 </context>
 <!-- iricGccExternalprogram_pt_BR.ts -->
@@ -613,9 +612,8 @@
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="129"/>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.</source>
         <translation>Ocorreu um erro ao baixar o arquivo de definicao sobre o programa de criacao da grade, o qual se encontra na pasta &quot;%1&quot; . Este programa de criacao sera ignorado.</translation>
-        <translation>%2</translation>
     </message>
 </context>
 <context>
@@ -1874,7 +1872,7 @@
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="19"/>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
+        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.</source>
         <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera especificar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha central do rio.</translation>
         <translation>Nota: Este algoritmo sera disponivel somente quando baixar os dados de levantamento do curso fluvial .  Selecione este algoritmo depois de baixar os dados de levantamento do curso fluvial.</translation>
         <translation type="unfinished"></translation>
@@ -2128,10 +2126,8 @@
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="22"/>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.</source>
         <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera controlar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha transversal do rio, a linha central do rio, a linha da margem esquerda e a linha da margem direita.</translation>
-        <translation>Nota: Este algoritmo sera disponivel somente quando baixar os dados de levantamento do curso fluvial .  Selecione este algoritmo depois de baixar os dados de levantamento do curso fluvial.</translation>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="57"/>
@@ -2689,15 +2685,6 @@
         <translation>Especifique a area maxima da celula dentro da area de subdivisao.</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangleremeshdialog.ui" line="45"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="43"/>
         <source>Warning</source>
         <translation>Atencao</translation>
@@ -2752,15 +2739,6 @@
         <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="104"/>
         <source>By specifying small values, you can generate fine grids.</source>
         <translation>Ao especificar valores pequenos, voce podera criar grades finas.</translation>
-    </message>
-    <message>
-        <location filename="../gridcreatingconditiontrianglesettingdialog.ui" line="124"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_pt_BR.ts -->
@@ -3040,6 +3018,80 @@
         <location filename="../geodatanetcdfxbandimporter.cpp" line="187"/>
         <source>Dimension values for time mismatch.</source>
         <translation>Valores de dimensao para " tempo" sao incompativeis.</translation>
+    </message>
+</context>
+<!-- iricGdPointGroup_pt_BR.ts -->
+<context>
+    <name>GeoDataPointGroup</name>
+    <message>
+        <location filename="../geodatapointgroup.cpp" line="194"/>
+        <source>Point%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroup.cpp" line="199"/>
+        <source>P&amp;oint Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroup.cpp" line="293"/>
+        <location filename="../geodatapointgroup.cpp" line="333"/>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupCreator</name>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="11"/>
+        <source>Point Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="24"/>
+        <source>Point Group%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="48"/>
+        <source>point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupcreator.cpp" line="53"/>
+        <source>Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupShpExporter</name>
+    <message>
+        <location filename="../geodatapointgroupshpexporter.cpp" line="18"/>
+        <source>ESRI Shapefile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupshpexporter.cpp" line="56"/>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupShpImporter</name>
+    <message>
+        <location filename="../geodatapointgroupshpimporter.cpp" line="32"/>
+        <source>ESRI Shapefile (Points)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupshpimporter.cpp" line="38"/>
+        <source>ESRI Shapefile (Points) (*.shp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointgroupshpimporter.cpp" line="61"/>
+        <source>Point%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPointmap_pt_BR.ts -->
@@ -3889,118 +3941,563 @@
         <translation>Adicionar pontos de interpolacao</translation>
     </message>
 </context>
+<!-- iricGdPoint_pt_BR.ts -->
+<context>
+    <name>GeoDataPoint</name>
+    <message>
+        <location filename="../geodatapoint.cpp" line="41"/>
+        <source>Edit &amp;Coordinates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="81"/>
+        <source>Po&amp;int</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="227"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="227"/>
+        <source>Please define point by mouse-clicking.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="328"/>
+        <source>point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapoint.cpp" line="333"/>
+        <source>Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapoint_finishpointdefinitioncommand.cpp" line="4"/>
+        <source>Finish Defining Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointColorSimpleSettingDialog</name>
+    <message>
+        <location filename="../geodatapointcolorsimplesettingdialog.ui" line="14"/>
+        <location filename="../ui_geodatapointcolorsimplesettingdialog.h" line="86"/>
+        <source>Point Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointcolorsimplesettingdialog.ui" line="22"/>
+        <location filename="../ui_geodatapointcolorsimplesettingdialog.h" line="87"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointCreator</name>
+    <message>
+        <location filename="../geodatapointcreator.cpp" line="9"/>
+        <source>Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapointcreator.cpp" line="19"/>
+        <source>Point%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolydataGroup_pt_BR.ts -->
+<context>
+    <name>GeoDataPolyDataGroup</name>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="233"/>
+        <source>Add New %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="299"/>
+        <source>%1 Group Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="344"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="344"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="364"/>
+        <source>Edit %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="406"/>
+        <location filename="../geodatapolydatagroup.cpp" line="483"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="406"/>
+        <source>Are you sure you want to delete selected %1s?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroup.cpp" line="483"/>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_editnameandvaluecommand.cpp" line="8"/>
+        <source>Edit name and value of polydatas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="46"/>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="47"/>
+        <source>Edit &amp;Name...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="48"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="49"/>
+        <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="50"/>
+        <source>&amp;Merge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="51"/>
+        <source>Color &amp;Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="52"/>
+        <source>Show Attribute &amp;Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="53"/>
+        <source>Move to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="54"/>
+        <source>Move to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="55"/>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_impl.cpp" line="56"/>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_setcolorsettingcommand.cpp" line="4"/>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydatagroup_sortcommand.cpp" line="5"/>
+        <location filename="../private/geodatapolydatagroup_sortedittargetdatacommand.cpp" line="5"/>
+        <source>Sort data</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupAttributeBrowser</name>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="58"/>
+        <source>PolyData Group Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="84"/>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="88"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="85"/>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="90"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="89"/>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="93"/>
+        <source>Sort toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupattributebrowser.cpp" line="104"/>
+        <source>%1 Group Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate</name>
+    <message>
+        <location filename="../private/geodatapolydatagroupattributebrowser_tableitemdelegate.cpp" line="50"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupColorSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="14"/>
+        <source>PolyData Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="20"/>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="29"/>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupcolorsettingdialog.ui" line="38"/>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupMergeSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="14"/>
+        <source>Select data to merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="20"/>
+        <source>Please select data to merge this group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="36"/>
+        <source>&amp;Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupmergesettingdialog.ui" line="43"/>
+        <source>&amp;Unselect all</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupShpImporter</name>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="63"/>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="72"/>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="79"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="63"/>
+        <source>The shape type contained in this shape file is not %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="72"/>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="79"/>
+        <source>The number of data mismatches between shp file and dbf file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimporter.cpp" line="91"/>
+        <source>%1 Group Import Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="14"/>
+        <source>PolyData Import Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="26"/>
+        <source>Encoding:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="64"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="70"/>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="132"/>
+        <source>Load from Shape file attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="116"/>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="126"/>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.ui" line="180"/>
+        <source>Specify value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.cpp" line="80"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatagroupshpimportersettingdialog.cpp" line="80"/>
+        <source>You cannot specify the same column for both Name and Value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolydata_pt_BR.ts -->
+<context>
+    <name>GeoDataPolyData</name>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="17"/>
+        <source>Edit &amp;Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="18"/>
+        <source>Edit &amp;Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="19"/>
+        <source>Edit &amp;Name and Value...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="20"/>
+        <source>Color &amp;Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="58"/>
+        <source>%1 Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="118"/>
+        <source>Edit name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="118"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="130"/>
+        <location filename="../geodatapolydata.cpp" line="153"/>
+        <source>Edit %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydata.cpp" line="131"/>
+        <source>Please input new value in this %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydata_editnameandvaluecommand.cpp" line="4"/>
+        <source>%1 name and value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/geodatapolydata_setcolorsettingcommand.cpp" line="4"/>
+        <source>Edit color setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataColorSettingDialog</name>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="14"/>
+        <source>PolyData Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="20"/>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="29"/>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolydatacolorsettingdialog.ui" line="38"/>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricGdPolygonGroup_pt_BR.ts -->
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="197"/>
+        <location filename="../geodatapolygongroup.cpp" line="257"/>
+        <source>Polygon%1</source>
+        <translation type="unfinished">Poligono %1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroup.cpp" line="262"/>
         <source>P&amp;olygon Group</source>
         <translation>Grupo de poligono (&amp;O)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
+        <location filename="../geodatapolygongroup.cpp" line="373"/>
+        <location filename="../geodatapolygongroup.cpp" line="419"/>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="437"/>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
-        <translation>Dentro do grupo de &quot;%1&quot;, nao ha outro poligono ou grupo de poligono. </translation>
+        <translation type="vanished">Dentro do grupo de &quot;%1&quot;, nao ha outro poligono ou grupo de poligono. </translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroup.cpp" line="466"/>
         <source>Are you sure you want to delete selected polygons?</source>
-        <translation>Tem certeza de que deseja excluir poligonos selecionados ?</translation>
+        <translation type="vanished">Tem certeza de que deseja excluir poligonos selecionados ?</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_editpropertycommand.cpp" line="4"/>
         <source>Polygon property edit</source>
-        <translation>Edicao de propriedade do poligono</translation>
+        <translation type="vanished">Edicao de propriedade do poligono</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="44"/>
         <source>&amp;Add...</source>
-        <translation>Adicionar (&amp;A)...</translation>
+        <translation type="vanished">Adicionar (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="45"/>
         <source>&amp;Select...</source>
-        <translation>Selecionar (&amp;S)...</translation>
+        <translation type="vanished">Selecionar (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="46"/>
         <source>&amp;Merge...</source>
-        <translation>Mesclar (&amp;M)...</translation>
+        <translation type="vanished">Mesclar (&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="47"/>
         <source>&amp;Delete</source>
-        <translation>Excluir (&amp;D)</translation>
+        <translation type="vanished">Excluir (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygongroup_impl.cpp" line="48"/>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracao para cor de exibicao (&amp;S)</translation>
+        <translation type="vanished">Configuracao para cor de exibicao (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="14"/>
         <source>Polygon Color Setting</source>
-        <translation>Configuracao de cor do poligono</translation>
+        <translation type="vanished">Configuracao de cor do poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>Configuracao automatica pelo valor </translation>
+        <translation type="vanished">Configuracao automatica pelo valor </translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>Especificacao de cor</translation>
+        <translation type="vanished">Especificacao de cor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="7"/>
         <source>PolygonGroup</source>
-        <translation>Grupo de poligono</translation>
+        <translation type="vanished">Grupo de poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupcreator.cpp" line="20"/>
         <source>PolygonGroup%1</source>
-        <translation>Grupo de poligono %1</translation>
+        <translation type="vanished">Grupo de poligono %1</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="9"/>
+        <source>Polygon Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="22"/>
+        <source>Polygon Group%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="45"/>
+        <source>polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupcreator.cpp" line="50"/>
+        <source>Polygon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupMergeSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="14"/>
         <source>Select data to merge</source>
-        <translation>Selecionar os dados para mesclar</translation>
+        <translation type="vanished">Selecionar os dados para mesclar</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="20"/>
         <source>Please select data to merge this group.</source>
-        <translation>Selecione os dados para integrar-se neste grupo.</translation>
+        <translation type="vanished">Selecione os dados para integrar-se neste grupo.</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="36"/>
         <source>&amp;Select all</source>
-        <translation>Selecionar todos (&amp;S)</translation>
+        <translation type="vanished">Selecionar todos (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupmergesettingdialog.ui" line="43"/>
         <source>&amp;Unselect all</source>
-        <translation>Limpar tudo (&amp;U)</translation>
+        <translation type="vanished">Limpar tudo (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -4011,7 +4508,7 @@
         <translation>ESRI Shapefile </translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpexporter.cpp" line="55"/>
+        <location filename="../geodatapolygongroupshpexporter.cpp" line="56"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
     </message>
@@ -4019,158 +4516,162 @@
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="110"/>
         <source>ESRI Shapefile (Polygon Group)</source>
-        <translation>ESRI Shapefile (Grupo de poligono) </translation>
+        <translation type="vanished">ESRI Shapefile (Grupo de poligono) </translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="119"/>
         <source>ESRI Shapefile (Polygon Group) (*.shp)</source>
-        <translation>ESRI Shapefile (Grupo de poligono)  (*.shp)</translation>
+        <translation type="vanished">ESRI Shapefile (Grupo de poligono)  (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="143"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="148"/>
+        <source>ESRI Shapefile (Polygons)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="154"/>
+        <source>ESRI Shapefile (Polygons) (*.shp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="174"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation>Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
-        <translation>Menos de 2 o numero de vertice</translation>
-        <translation>Nao esta encerrado.</translation>
-        <translation>Linhas de poligono se cruzam</translation>
-        <translation> O poligono do orificio esta fora do poligono da regiao</translation>
-        <translation>Linha de poligono passa o mesmo ponto varias vezes</translation>
+- It has less than three points
+- It is not closed
+- Lines of polygon intersect each other
+- Hole polygon is outside of region polygon
+- Polygon passes the same point several times</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="151"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="182"/>
         <source>Polygon%1</source>
         <translation>Poligono %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="177"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="179"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="208"/>
+        <location filename="../geodatapolygongroupshpimporter.cpp" line="210"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="205"/>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation>O formato contido neste arquivo nao e poligono. </translation>
+        <translation type="vanished">O formato contido neste arquivo nao e poligono. </translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="213"/>
         <source>Opening %1 failed.</source>
-        <translation>Nao foi possivel abrir %1.</translation>
+        <translation type="vanished">Nao foi possivel abrir %1.</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimporter.cpp" line="220"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation>Entre o arquivo * .shp e o arquivo * .dbf, o numero de dados contidos e incompativel. </translation>
+        <translation type="vanished">Entre o arquivo * .shp e o arquivo * .dbf, o numero de dados contidos e incompativel. </translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporterSettingDialog</name>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="14"/>
         <source>Polygon Import Setting</source>
-        <translation>Configuracao para importacao do poligono</translation>
+        <translation type="vanished">Configuracao para importacao do poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="26"/>
         <source>Encoding:</source>
-        <translation>Codificacao:</translation>
+        <translation type="vanished">Codificacao:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="64"/>
         <source>Name</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="70"/>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
-        <translation>Baixar a partir do atributo de arquivo Shape</translation>
+        <translation type="vanished">Baixar a partir do atributo de arquivo Shape</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>O nome sera configurado automaticamente (exemplo: poligono 1 )</translation>
+        <translation type="vanished">O nome sera configurado automaticamente (exemplo: poligono 1 )</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="126"/>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
-        <translation>Especificar o valor</translation>
+        <translation type="vanished">Especificar o valor</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygongroupshpimportersettingdialog.cpp" line="80"/>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation>Voce nao podera especificar a mesma coluna para Nome e Valor.</translation>
+        <translation type="vanished">Voce nao podera especificar a mesma coluna para Nome e Valor.</translation>
     </message>
 </context>
 <!-- iricGdPolygon_pt_BR.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
         <source>Edit &amp;Value...</source>
-        <translation>Edicao do valor (&amp;V)</translation>
+        <translation type="vanished">Edicao do valor (&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="81"/>
         <source>&amp;Copy...</source>
         <translation>Copia (&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
+        <location filename="../geodatapolygon.cpp" line="82"/>
         <source>&amp;Add Vertex</source>
-        <translation> Adicionar vertice (&amp;A)</translation>
+        <translation>Adicionar vertice (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
+        <location filename="../geodatapolygon.cpp" line="83"/>
         <source>&amp;Remove Vertex</source>
         <translation>Remover vertice (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
+        <location filename="../geodatapolygon.cpp" line="84"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>Edicao de coordenadas (&amp;C)... </translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="94"/>
+        <location filename="../geodatapolygon.cpp" line="1360"/>
+        <source>polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1365"/>
+        <source>Polygon</source>
+        <translation type="unfinished">Poligono </translation>
+    </message>
+    <message>
+        <source>Polygon Color Setting</source>
+        <translation type="obsolete">Configuracao de cor do poligono</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="79"/>
         <source>Add &amp;Hole Region</source>
         <translation>Adicionar regiao de obstaculo (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="95"/>
+        <location filename="../geodatapolygon.cpp" line="80"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>Excluir regiao do orificio (&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracao para cor de exibicao (&amp;S)</translation>
+        <translation type="vanished">Configuracao para cor de exibicao (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="189"/>
+        <location filename="../geodatapolygon.cpp" line="168"/>
         <source>&amp;Polygon</source>
         <translation>Poligono (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="575"/>
+        <location filename="../geodatapolygon.cpp" line="525"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>Concluir a definicao para poligono</translation>
@@ -4201,13 +4702,13 @@
         <translation>Remover o vertice da regiao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="570"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>O poligono deveria ter pelo menos tres vertices.</translation>
     </message>
@@ -4217,23 +4718,23 @@
         <translation>Adicionar regiao de obstaculo</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1011"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Defina a regiao de obstaculos. A regiao de obstaculo sera definida como o poligono atraves do clique de mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1039"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>Tem certeza de que deseja remover este poligono ?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1199"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Defina o poligono atraves do clique de mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
     </message>
@@ -4243,27 +4744,24 @@
         <translation>Edicao do valor de poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1234"/>
         <source>Edit %1 value</source>
-        <translation>Edicao do valor de %1</translation>
+        <translation type="vanished">Edicao do valor de %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1235"/>
         <source>Please input new value in this polygon.</source>
-        <translation>Insira um valor neste poligono.</translation>
+        <translation type="vanished">Insira um valor neste poligono.</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editpropertycommand.cpp" line="4"/>
         <source>Polygon property edit</source>
-        <translation>Edicao de propriedade do poligono</translation>
+        <translation type="vanished">Edicao de propriedade do poligono</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Select Geographic Data</source>
         <translation>Selecionar as informacoes geograficas</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1406"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>Selecione qual dos dados geograficos para copiar este poligono.</translation>
     </message>
@@ -4351,12 +4849,12 @@
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="204"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
-        <translation>Nao foi possivel importar % 1 poligono. O poligono conforme abaixo nao podera ser importado:</translation>
-        <translation>Menos de 2 o numero de vertice</translation>
-        <translation>Nao esta encerrado.</translation>
-        <translation>Linhas de poligono se cruzam</translation>
-        <translation> O poligono do orificio esta fora do poligono da regiao</translation>
-        <translation>Linha de poligono passa o mesmo ponto varias vezes</translation>
+- It has less than three points
+- It is not closed
+- Lines of polygon intersect each other
+- Hole polygon is outside of region polygon
+- Polygon passes the same point several times</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../geodatapolygonimporter.cpp" line="221"/>
@@ -4427,36 +4925,113 @@
         <translation>ESRI Shapefile (*.shp)</translation>
     </message>
 </context>
+<!-- iricGdPolyLineGroup_pt_BR.ts -->
+<context>
+    <name>GeoDataPolyLineGroup</name>
+    <message>
+        <location filename="../geodatapolylinegroup.cpp" line="249"/>
+        <source>Polyline%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroup.cpp" line="254"/>
+        <source>Poly&amp;line Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroup.cpp" line="350"/>
+        <location filename="../geodatapolylinegroup.cpp" line="392"/>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupCreator</name>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="11"/>
+        <source>Polyline Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="24"/>
+        <source>Polyline Group%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="36"/>
+        <source>Deleting this item will also remove any graph windows associated with this polyline group.  Are you sure you want to delete this item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="49"/>
+        <source>polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupcreator.cpp" line="54"/>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupShpExporter</name>
+    <message>
+        <location filename="../geodatapolylinegroupshpexporter.cpp" line="18"/>
+        <source>ESRI Shapefile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpexporter.cpp" line="56"/>
+        <source>ESRI Shapefile (*.shp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupShpImporter</name>
+    <message>
+        <location filename="../geodatapolylinegroupshpimporter.cpp" line="46"/>
+        <source>ESRI Shapefile (Polylines)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpimporter.cpp" line="52"/>
+        <source>ESRI Shapefile (Polylines) (*.shp)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolylinegroupshpimporter.cpp" line="75"/>
+        <source>Polyline%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricGdPolyLine_pt_BR.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
-        <translation>Edicao do valor (&amp;V)</translation>
+        <translation type="vanished">Edicao do valor (&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="54"/>
+        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation> Adicionar vertice (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="55"/>
+        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation>Remover vertice (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="56"/>
+        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>Edicao de coordenadas (&amp;C)... </translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracao para cor de exibicao (&amp;S)</translation>
+        <translation type="vanished">Configuracao para cor de exibicao (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
+        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation>Polilinha (&amp;L)</translation>
     </message>
@@ -4491,49 +5066,55 @@
         <translation>Remover o vertice da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>A polilinha deveria ter pelo menos dois pontos.</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="392"/>
+        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation>Finalizar a definicao para linha central</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Defina a polilinha atraves do clique de mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
+        <location filename="../geodatapolyline.cpp" line="722"/>
+        <source>polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="727"/>
+        <source>Polyline</source>
+        <translation type="unfinished">Polilinha  </translation>
+    </message>
+    <message>
         <source>PolyLine value change</source>
-        <translation>Edicao de valor da polilinha</translation>
+        <translation type="vanished">Edicao de valor da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="715"/>
         <source>Edit %1 value</source>
-        <translation>Edicao do valor de %1</translation>
+        <translation type="vanished">Edicao do valor de %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="716"/>
         <source>Please input new value in this polyline.</source>
-        <translation>Insira um valor desta polilinha.</translation>
+        <translation type="vanished">Insira um valor desta polilinha.</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
         <source>PolyLine property edit</source>
-        <translation>Edicao de atributos da polilinha</translation>
+        <translation type="vanished">Edicao de atributos da polilinha</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="9"/>
@@ -4549,37 +5130,31 @@
 <context>
     <name>GeoDataPolyLineColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>Configuracao de cor para exibicao da polilinha</translation>
+        <translation type="vanished">Configuracao de cor para exibicao da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>Configuracao automatica pelo valor </translation>
+        <translation type="vanished">Configuracao automatica pelo valor </translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>Especificacao de cor</translation>
+        <translation type="vanished">Especificacao de cor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineColorSimpleSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>Configuracao de cor para exibicao da polilinha</translation>
+        <translation type="vanished">Configuracao de cor para exibicao da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
 </context>
 <context>
@@ -5130,9 +5705,8 @@
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="700"/>
-        <source>River survey data is generated using Points data.
+        <source>River survey data is generated using Points data.</source>
         <translation>Os dados de levantamento do rio foram criados atraves dos dados do terreno</translation>
-        <translation>Se voce deseja ajustar a posicao e/ou a direcao da linha transversal e executar o remapeamento, use o menu "Map points data".</translation>
     </message>
     <message>
         <location filename="../geodatariversurvey.cpp" line="708"/>
@@ -5736,9 +6310,8 @@
     </message>
     <message>
         <location filename="../geodatariversurveycrosssectionwindowgraphicsview.cpp" line="1801"/>
-        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
+        <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.</source>
         <translation>Edite a secao transversal usando o mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
-        <translation>Voce podera tambem efetuar a edicao minuciosa, atraves de inserir  os valores numericos da caixa de dialogo. Para editar da caixa de dialogo, selecione &quot; Editar da caixa de Dialogo &quot; dentro de menu pelo botao direito.</translation>
     </message>
     <message>
         <location filename="../private/geodatariversurvey_mouseeditcrosssectioncommand.cpp" line="8"/>
@@ -7091,7 +7664,7 @@
     <message>
         <location filename="../graph2dhybridwindowdatamodel.cpp" line="1558"/>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt  O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo "Criacao da grade atraves de dados do levantamento do rio"  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo "Criacao da grade atraves de dados do levantamento do rio"  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7970,6 +8543,307 @@
         <translation>Cor de exibicao:</translation>
     </message>
 </context>
+<!-- iricGraph2dverification_pt_BR.ts -->
+<context>
+    <name>Graph2dVerificationSettingDialog</name>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="14"/>
+        <source>Verification Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="20"/>
+        <source>Timestep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="26"/>
+        <source>Select the timestep of calculation result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="46"/>
+        <source>Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="52"/>
+        <source>Select which physical value to use for comparison.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="61"/>
+        <source>Grid:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="71"/>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="86"/>
+        <source>Measured Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="92"/>
+        <source>Select which measured value to use for comparison.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="101"/>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.ui" line="111"/>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="200"/>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="204"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="200"/>
+        <source>No Physical Value is selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationsettingdialog.cpp" line="204"/>
+        <source>No Value is selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindow</name>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="28"/>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="45"/>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="62"/>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="96"/>
+        <source>Select &amp;Data Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="103"/>
+        <source>&amp;Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.ui" line="110"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.cpp" line="25"/>
+        <source>Verification Window: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.cpp" line="37"/>
+        <source>Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindow.cpp" line="48"/>
+        <source>Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowActionManager</name>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="25"/>
+        <source>&amp;Draw</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="27"/>
+        <source>&amp;Data Source Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowactionmanager.cpp" line="31"/>
+        <source>&amp;Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowControlWidget</name>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="20"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="26"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="53"/>
+        <source>Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="60"/>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowDataModel</name>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="99"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="99"/>
+        <source>No calculation result exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="105"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="252"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="105"/>
+        <source>Graph window setup fail. Calculation result is not loaded properly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="247"/>
+        <source>Export CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="247"/>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="252"/>
+        <source>%1 cound not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="289"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="289"/>
+        <source>Data successfully exported to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="471"/>
+        <source>Root Mean Squared Error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="498"/>
+        <source>Measured Values (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="502"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="520"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="528"/>
+        <source>Calculation Result (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="505"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="514"/>
+        <source>Stream-wise Distance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="506"/>
+        <source>Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="510"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="515"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="533"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="538"/>
+        <source>Residual Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="527"/>
+        <location filename="../graph2dverificationwindowdatamodel.cpp" line="537"/>
+        <source>Measured Value (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowObjectBrowser</name>
+    <message>
+        <location filename="../graph2dverificationwindowobjectbrowser.cpp" line="14"/>
+        <source>Object Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dVerificationWindowTopWidget</name>
+    <message>
+        <location filename="../graph2dverificationwindowtopwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowtopwidget.ui" line="22"/>
+        <source>Chart Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="38"/>
+        <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="39"/>
+        <source>Stream-wise Distance vs. Residual Errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="41"/>
+        <source>Measured Values vs. Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../graph2dverificationwindowtopwidget.cpp" line="42"/>
+        <source>Measured Values vs. Residual Errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricGraph2d_pt_BR.ts -->
 <context>
     <name>Graph2dWindowDataModel</name>
@@ -8731,13 +9605,6 @@
         <location filename="../scalarbarwidget.ui" line="138"/>
         <source>Format:</source>
         <translation>Formato de exibicao :</translation>
-    </message>
-    <message>
-        <location filename="../scalarbarwidget.ui" line="145"/>
-        <source>Specify the number format in printf format. For example:
-        <translation>Especifique com o formato de intf. Por exemplo:</translation>
-        <translation>Especificar &quot;%5.2f&quot; quando o valor for de 3.141592--&gt; &quot;3.14&quot;</translation>
-        <translation>Especificar &quot;%4.2e&quot;  quando o valor for de 12300--&gt;1.23e+004</translation>
     </message>
     <message>
         <location filename="../scalarbarwidget.ui" line="169"/>
@@ -9636,9 +10503,8 @@
     </message>
     <message>
         <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="145"/>
-        <source>Error occured while loading solver definition file.
+        <source>Error occured while loading solver definition file.</source>
         <translation>Ocorreu um erro ao baixar o arquivo.</translation>
-        <translation>%1: %2</translation>
     </message>
     <message>
         <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="146"/>
@@ -9680,9 +10546,8 @@
     </message>
     <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
-        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.</source>
         <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce baixar o arquivo CGNS incompativel, somente uma parte das condicoes de calculo podera ser importada.</translation>
-        <translation>Deseja importar este arquivo CGNS ?</translation>
     </message>
     <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
@@ -9831,9 +10696,8 @@
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="623"/>
-        <source>The following problems found: 
+        <source>The following problems found:</source>
         <translation>Os seguintes problemas encontrados :</translation>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="626"/>
@@ -10174,7 +11038,7 @@
     <message>
         <location filename="../postcontainer/postcalculatedresulteditdialog.ui" line="147"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gtVoce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../postcontainer/postcalculatedresulteditdialog.ui" line="178"/>
@@ -11256,9 +12120,8 @@
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
-        <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
+        <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.</source>
         <translation>Para obter a imagem do fundo atraves de Internet, especifique o sistema de coordenadas conforme o menu abaixo.</translation>
-        <translation>arquivo -&gt; propriedade</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
@@ -11823,9 +12686,8 @@
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="20"/>
-        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
+        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.</source>
         <translation>Ao atualizar o iRIC, voce devera fechar o iRIC antes de iniciar iRIC Maintainance.</translation>
-        <translation>Se voce tiver outras janelas abertas de iRIC, feche-as manualmente.</translation>
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="23"/>
@@ -11842,9 +12704,8 @@
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="64"/>
-        <source>This function is intended to be used by solver developers or grid creating program developers, not users.
+        <source>This function is intended to be used by solver developers or grid creating program developers, not users.</source>
         <translation>Esta funcao deveria ser usada pelos desenvolvedores do solucionador ou pelos desenvolvedores do programa de criacao da grade, e nao pelos usuarios.</translation>
-        <translation>Este wizard criara ou atualizara o solucionador registrado no sistema  de iRIC e o dicionario tradutor do arquivo de definicao sobre o programa de procriacao da grade. Voce devera especificar o nome do solucionador (ou programa de procriacao da grade) e o idioma do dicionario que deseja criar ou atualizar.</translation>
     </message>
 </context>
 <context>
@@ -11877,9 +12738,8 @@
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="36"/>
-        <source>%1 days have passed after launching iRIC Maintainance for the last time.
+        <source>%1 days have passed after launching iRIC Maintainance for the last time.</source>
         <translation>% 1 dias se passaram apos o ato de iniciar o iRIC Maintainance pela ultima vez.</translation>
-        <translation>Deseja iniciar iRIC Maintainance ?</translation>
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="38"/>
@@ -12777,9 +13637,8 @@
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlist.cpp" line="55"/>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
         <translation>Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
-        <translation>%2</translation>
     </message>
 </context>
 <context>
@@ -12832,7 +13691,7 @@
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="66"/>
-        <source>Welcome to iRIC!
+        <source>Welcome to iRIC!</source>
         <translation>Bem-vindo ao iRIC !</translation>
         <translation>Software que possui condicoes de simular do rio Ishikari ao rio Nilo</translation>
     </message>
@@ -13377,9 +14236,8 @@
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="2391"/>
-        <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
+        <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu:</source>
         <translation>O atual diretorio de trabalho (% 1) contem caracteres diferentes do codigo ASCII. Antes de iniciar o projeto, altere o diretorio de trabalho conforme o menu abaixo.</translation>
-        <translation>Configuracao de opcoes -&gt;</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="1220"/>
@@ -15535,20 +16393,6 @@
         <translation>Intervalo do tempo de ocorrencia</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="62"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap;}</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas em cada etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as duas particulas serao procriadas a partir do mesmo ponto, com intervalos regulares, para cada etapa do processo,&lt;/p&gt;</translation>
-        <translation>&lt;p&gt;Por exemplo, se voce especificar 1/2, as particulas serao procriadas somente uma vez para cada duas vezes da etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="100"/>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="467"/>
         <source>-</source>
@@ -15634,19 +16478,6 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="429"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas nos pontos da grade.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as particulas serao procriadas a partir do meio entre dois pontos (ponto de divisao interno), que sao ponto da grade e ponto central da grade. .&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 1/2,as particulas serao procriadas em pontos de grade alternativamente.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="603"/>
         <source>Color:</source>
         <translation>Cor de exibicao:</translation>
@@ -15655,15 +16486,6 @@
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="630"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="637"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="688"/>
@@ -15707,20 +16529,6 @@
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="54"/>
         <source>Generation interval</source>
         <translation>Intervalo de ocorrencia</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="65"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap;}</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas em cada etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as duas particulas serao procriadas a partir do mesmo ponto, com intervalos regulares, para cada etapa do processo,&lt;/p&gt;</translation>
-        <translation>&lt;p&gt;Por exemplo, se voce especificar 1/2, as particulas serao procriadas somente uma vez para cada duas vezes da etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="103"/>
@@ -15807,15 +16615,6 @@
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="481"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="488"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="539"/>
@@ -15972,17 +16771,6 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="209"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>Se especificar &lt;p&gt;1, a linha de fluxo sera iniciada a partir do ponto da grade.  &lt;/p&gt; </translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as linhas de fluxo serao iniciadas a partir do meio entre dois pontos (ponto de divisao interno), que sao ponto da grade e ponto central da grade.  &lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="245"/>
         <source>-</source>
         <translation>reduzir</translation>
@@ -16016,15 +16804,6 @@
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="408"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="415"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="466"/>
@@ -16104,15 +16883,6 @@
         <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="260"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="267"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="318"/>
@@ -16708,20 +17478,6 @@
         <translation>Intervalo do tempo de ocorrencia</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="58"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap;}</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas em cada etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as duas particulas serao procriadas a partir do mesmo ponto, com intervalos regulares, para cada etapa do processo,&lt;/p&gt;</translation>
-        <translation>&lt;p&gt;Por exemplo, se voce especificar 1/2, as particulas serao procriadas somente uma vez para cada duas vezes da etapa do processo.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="96"/>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="503"/>
         <source>-</source>
@@ -16817,19 +17573,6 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="465"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>p {margin-top: 3px; margin-bottom: 3px;}</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p&gt; Se voce especificar 1, as particulas serao procriadas nos pontos da grade.&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as particulas serao procriadas a partir do meio entre dois pontos (ponto de divisao interno), que sao ponto da grade e ponto central da grade. .&lt;/p&gt;</translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 1/2,as particulas serao procriadas em pontos de grade alternativamente.&lt;/p&gt;</translation>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="639"/>
         <source>Color:</source>
         <translation>Cor de exibicao:</translation>
@@ -16838,15 +17581,6 @@
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="666"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="673"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindowparticlestructuredsettingdialog.ui" line="724"/>
@@ -16974,17 +17708,6 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="245"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>Se especificar &lt;p&gt;1, a linha de fluxo sera iniciada a partir do ponto da grade.  &lt;/p&gt; </translation>
-        <translation>&lt;p&gt; Por exemplo, se voce especificar 2, as linhas de fluxo serao iniciadas a partir do meio entre dois pontos (ponto de divisao interno), que sao ponto da grade e ponto central da grade.  &lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="281"/>
         <source>-</source>
         <translation>reduzir</translation>
@@ -17018,15 +17741,6 @@
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="444"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="451"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Especifique o numero de pixels na tela de exibicao.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindowstreamlinestructuredsettingdialog.ui" line="502"/>
@@ -17617,9 +18331,8 @@
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
-        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.</source>
         <translation>Este arquivo e para % 1 % 2, portanto nao e compativel com o atual solucionador. Se voce continuar, somente uma parte dos atributos da grade podera ser importada.</translation>
-        <translation>Deseja importar a grade deste arquivo?</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="124"/>
@@ -17628,9 +18341,8 @@
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
-        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.</source>
         <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce importar a grade de um arquivo CGNS incompativel, somente uma parte dos atributos da grade podera ser importada.</translation>
-        <translation>Deseja importar a grade deste arquivo?</translation>
     </message>
 </context>
 <context>
@@ -18368,9 +19080,8 @@
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
-        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
         <translation>O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
-        <translation>%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
@@ -18642,15 +19353,6 @@
         <translation>Automatico</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="44"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;</translation>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;</translation>
-        <translation>p, li { white-space: pre-wrap; }</translation>
-        <translation>&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;</translation>
-        <translation>&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Quando a grade for criada, voce sera sempre perguntado se deseja executar o Mapeamento de Atributos. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="75"/>
         <source>Manual</source>
         <translation>Especificar  </translation>
@@ -18682,9 +19384,8 @@
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="175"/>
-        <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
+        <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.</source>
         <translation>Localize um ponto considerando a forma da celula da grade e use o valor no ponto encontrado para interpolacao.</translation>
-        <translation>Este algoritmo sera disponivel somente para grades estruturadas.</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="191"/>
@@ -19331,9 +20032,8 @@
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
-        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
         <translation>O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
-        <translation>%1</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>
@@ -19984,22 +20684,22 @@
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="14"/>
         <source>About rivmaker</source>
-        <translation>Do rivmaker</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="41"/>
         <source>rivmaker 1.0</source>
-        <translation>rivmaker 1.0</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="48"/>
         <source>Release Date: 2017/3/31</source>
-        <translation>Data de lancamento : 31/03/2017</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/aboutdialog.ui" line="55"/>
         <source>Copyright: USGS</source>
-        <translation>Direito autoral : USGS</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20008,7 +20708,7 @@
         <location filename="../data/arbitraryhwm/arbitraryhwm.cpp" line="16"/>
         <location filename="../data/arbitraryhwm/arbitraryhwm.cpp" line="21"/>
         <source>Arbitrary HWM</source>
-        <translation>Elevacao arbitraria da superficie de agua</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20016,7 +20716,7 @@
     <message>
         <location filename="../data/baseline/baseline.cpp" line="140"/>
         <source>Base Line</source>
-        <translation>Linha da base</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20024,55 +20724,55 @@
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="27"/>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="28"/>
         <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="29"/>
         <source>&amp;Add Vertex</source>
-        <translation> Adicionar vertice (&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="30"/>
         <source>&amp;Remove Vertex</source>
-        <translation>Remover vertice (&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="31"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation> Editar coordenadas (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="32"/>
         <source>Reverse &amp;Direction</source>
-        <translation>Inverter a direcao (&amp;D)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="33"/>
         <source>Delete</source>
-        <translation>Excluir  </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="253"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="273"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="286"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="253"/>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="286"/>
         <source>Base line is not defined yet.</source>
-        <translation>Linha da base nao foi definida ainda.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorcontroller.cpp" line="273"/>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation>O ponto nao podera ser excluido quando ha somente dois pontos.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20080,12 +20780,12 @@
     <message>
         <location filename="../data/baseline/baselinepreprocessorviewlabelhelper.cpp" line="39"/>
         <source>Downstream</source>
-        <translation>Lado a jusante</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/baseline/baselinepreprocessorviewlabelhelper.cpp" line="44"/>
         <source>Upstream</source>
-        <translation>Lado a montante</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20094,7 +20794,7 @@
         <location filename="../data/benchmark/benchmark.cpp" line="16"/>
         <location filename="../data/benchmark/benchmark.cpp" line="21"/>
         <source>Benchmark</source>
-        <translation>Marca de referencia</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20102,12 +20802,12 @@
     <message>
         <location filename="../dialogs/private/coordinateeditwidget.cpp" line="48"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/private/coordinateeditwidget.cpp" line="48"/>
         <source>It is not a real value</source>
-        <translation>Esse nao e o valor real</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20115,17 +20815,17 @@
     <message>
         <location filename="../dialogs/coordinateseditdialog.ui" line="14"/>
         <source>Edit Coordinates</source>
-        <translation>Edicao de coordenadas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/coordinateseditdialog.cpp" line="104"/>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/coordinateseditdialog.cpp" line="105"/>
         <source>Y</source>
-        <translation>Y</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20133,23 +20833,23 @@
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="20"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation> Editar coordenadas (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="117"/>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="126"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="117"/>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation>E o nome invalido.  O nome deveria ser como &quot;X1&quot;,  &quot;X2&quot;, ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorcontroller.cpp" line="126"/>
         <source>Cross Section is not defined yet.</source>
-        <translation>Secao nao foi definida ainda.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20157,12 +20857,12 @@
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp" line="36"/>
         <source>%1 LB</source>
-        <translation>%1 margem esquerda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssection/crosssectionpreprocessorviewlabelhelper.cpp" line="40"/>
         <source>%1 RB</source>
-        <translation>%1 margem direita</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20171,42 +20871,42 @@
         <location filename="../window/crosssection/crosssectionwindow.ui" line="14"/>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="213"/>
         <source>Cross Section Window</source>
-        <translation>Janela para secao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="42"/>
         <source>Cross Section:</source>
-        <translation>Secao transversal :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.ui" line="52"/>
         <source>&amp;Reset Zoom</source>
-        <translation>Redefinir Zoom(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="98"/>
         <source>Distance from Left bank</source>
-        <translation>Distancia a partir da margem esquerda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="101"/>
         <source>Elevation</source>
-        <translation>Elevacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="132"/>
         <source>Left bank HWM</source>
-        <translation>Elevacao da superficie de agua na margem esquerda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="142"/>
         <source>Right bank HWM</source>
-        <translation>Elevacao da superficie de agua na margem direita</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/crosssection/crosssectionwindow.cpp" line="216"/>
         <source>Cross Section Window : %1</source>
-        <translation>Janela para secao : %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20214,7 +20914,7 @@
     <message>
         <location filename="../data/crosssections/crosssections.cpp" line="41"/>
         <source>Cross Sections</source>
-        <translation>Secao transversal  </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20222,17 +20922,17 @@
     <message>
         <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="15"/>
         <source>CSV file (*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="31"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/crosssections/crosssectionscsvexporter.cpp" line="31"/>
         <source>%1 could not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20240,17 +20940,17 @@
     <message>
         <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="15"/>
         <source>CSV file (*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="31"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/crosssections/crosssectionscsvimporter.cpp" line="31"/>
         <source>%1 could not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20258,7 +20958,7 @@
     <message>
         <location filename="../io/crosssections/crosssectionsexporter.cpp" line="17"/>
         <source>Input file name to export</source>
-        <translation>Acesso pelo nome do arquivo para exportacao</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20266,7 +20966,7 @@
     <message>
         <location filename="../io/crosssections/crosssectionsimporter.cpp" line="16"/>
         <source>Select file to import</source>
-        <translation>Selecionar o arquivo para importar</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20274,27 +20974,27 @@
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="18"/>
         <source>Add</source>
-        <translation>Adicionar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="19"/>
         <source>&amp;Import..</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="20"/>
         <source>&amp;Export..</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/crosssections/crosssectionspreprocessorcontroller.cpp" line="61"/>
         <source>Cross Section lines not defined yet.</source>
-        <translation>Secao nao esta definida.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20303,7 +21003,7 @@
         <location filename="../data/elevationpoints/elevationpoints.cpp" line="128"/>
         <location filename="../data/elevationpoints/elevationpoints.cpp" line="133"/>
         <source>Elevation Points</source>
-        <translation>Pontos de elevacao</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20311,47 +21011,47 @@
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="14"/>
         <source>Graphics Setting</source>
-        <translation>Configuracao de graficos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="20"/>
         <source>Elevation Points</source>
-        <translation>Pontos de elevacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="26"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="128"/>
         <source>Size</source>
-        <translation>Dimensao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="32"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="134"/>
         <source>Auto</source>
-        <translation>Automatico</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="42"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="144"/>
         <source>Manual</source>
-        <translation>Especificar  </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="100"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="202"/>
         <source>Transparency:</source>
-        <translation>Transparencia :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="110"/>
         <location filename="../dialogs/graphicssettingdialog.ui" line="212"/>
         <source>%</source>
-        <translation>%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/graphicssettingdialog.ui" line="122"/>
         <source>Water Elevation Points</source>
-        <translation>Pontos de elevacao da superficie de agua</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20360,7 +21060,7 @@
         <location filename="../data/hub/hub.cpp" line="16"/>
         <location filename="../data/hub/hub.cpp" line="21"/>
         <source>Surveying or turning point</source>
-        <translation>Ponto de levantamento ou ponto de inflexao</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20369,7 +21069,7 @@
         <location filename="../data/leftbankhwm/leftbankhwm.cpp" line="16"/>
         <location filename="../data/leftbankhwm/leftbankhwm.cpp" line="21"/>
         <source>Left Bank HWM</source>
-        <translation>Elevacao da superficie de agua na margem esquerda</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20377,62 +21077,62 @@
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="14"/>
         <source>Mapping Setting</source>
-        <translation>Configuracao de mapeamento  </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="24"/>
         <source>All points are mapped to the nearest CrossSection</source>
-        <translation>Todos os pontos serao mapeados a secao transversal mais proxima</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="52"/>
         <source>Appropriate for data in which points are all near CrossSections</source>
-        <translation>Todos os pontos serao apropriados para os dados que se encontram perto da secao transversal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="111"/>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation>Sera usado o TIN para interpolar valores da secao transversal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="136"/>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation>Apropriado para os dados com pontos de elevacao uniformes em toda a area</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="195"/>
         <source>Template mapping</source>
-        <translation>Mapeamento de modelo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="220"/>
         <source>Appropriate for data for which we can not generate good TIN</source>
-        <translation>Apropriado para os dados dos quais nao podemos criar um bom TIN , devido as variacoes nos pontos de elevacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="282"/>
         <source>Cross section resolution[m]</source>
-        <translation>Resolucao de secao [m]</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="305"/>
         <source>Stream-wise length[m]</source>
-        <translation>Comprimento pela direcao do fluxo (m)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="328"/>
         <source>Cross-stream width[m]</source>
-        <translation>Dimensao pela direcao transversal (m)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="351"/>
         <source>Number of Template Expansions:</source>
-        <translation>Numero de ocorrencias de ampliacoes na area de pesquisa:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/mappingsettingdialog.ui" line="374"/>
         <source>Weighting Exponent:</source>
-        <translation>Indice de ponderacao :</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20440,7 +21140,7 @@
     <message>
         <location filename="../data/base/model.cpp" line="18"/>
         <source>Delete</source>
-        <translation>Excluir  </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20448,7 +21148,7 @@
     <message>
         <location filename="../dialogs/mousehelpdialog.ui" line="14"/>
         <source>Mouse Hint</source>
-        <translation>Dicas do mouse</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20456,27 +21156,27 @@
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="47"/>
         <source>X: </source>
-        <translation>X :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.ui" line="66"/>
         <source>Y: </source>
-        <translation>Y :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.cpp" line="48"/>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/mousepositionwidget.cpp" line="49"/>
         <source>Y: ------</source>
-        <translation>Y: ------</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20484,7 +21184,7 @@
     <message>
         <location filename="../window/preprocessor/objectbrowser/objectbrowser.cpp" line="8"/>
         <source>Object Browser</source>
-        <translation>Navegador de objetos</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20492,32 +21192,32 @@
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="16"/>
         <source>Topography File (*.tpo)</source>
-        <translation>Dados de terreno  (*.tpo)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="17"/>
         <source>CSV file (*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="32"/>
         <source>Filtering Setting</source>
-        <translation>Configuracao de filtracao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="32"/>
         <source>Filter</source>
-        <translation>Filtrar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="37"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/points/pointscsvimporter.cpp" line="37"/>
         <source>%1 could not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20525,12 +21225,12 @@
     <message>
         <location filename="../io/points/pointsimporter.cpp" line="22"/>
         <source>All importable files (%1)</source>
-        <translation>Todos os arquivos importaveis (%1)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/points/pointsimporter.cpp" line="23"/>
         <source>Select file to import</source>
-        <translation>Selecionar o arquivo para importar</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20538,12 +21238,12 @@
     <message>
         <location filename="../data/points/pointspreprocessorcontroller.cpp" line="15"/>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/points/pointspreprocessorcontroller.cpp" line="16"/>
         <source>&amp;Delete</source>
-        <translation>Excluir (&amp;D)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20551,17 +21251,17 @@
     <message>
         <location filename="../io/polyline/polylinecsvexporter.cpp" line="14"/>
         <source>CSV file (*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/polyline/polylinecsvexporter.cpp" line="30"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/polyline/polylinecsvexporter.cpp" line="30"/>
         <source>%1 could not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20569,17 +21269,17 @@
     <message>
         <location filename="../io/polyline/polylinecsvimporter.cpp" line="14"/>
         <source>CSV file (*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/polyline/polylinecsvimporter.cpp" line="30"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/polyline/polylinecsvimporter.cpp" line="30"/>
         <source>%1 could not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20587,7 +21287,7 @@
     <message>
         <location filename="../io/polyline/polylineexporter.cpp" line="17"/>
         <source>Input file name to export</source>
-        <translation>Acesso pelo nome do arquivo para exportacao</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20595,7 +21295,7 @@
     <message>
         <location filename="../io/polyline/polylineimporter.cpp" line="17"/>
         <source>Select file to import</source>
-        <translation>Selecionar o arquivo para importar</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20606,27 +21306,27 @@
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="213"/>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="122"/>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation>Para excluir uma secao, primeiramente selecione-a no Navegador de Objetos.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="135"/>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation>Para editar as coordenadas da secao, primeiramente selecione-as no Navegador de Objetos.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="214"/>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation>A linha da base deveria ser mais comprida do que o alcance de elevacao da superficie de agua.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/preprocessor/preprocessormodel.cpp" line="220"/>
         <source>Not all Cross Sections cross Base line</source>
-        <translation>Existem algumas secoes transversais que nao cruzam a linha da base</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20634,7 +21334,7 @@
     <message>
         <location filename="../window/preprocessor/preprocessorwindow.cpp" line="37"/>
         <source>Main Window</source>
-        <translation>Janela principal</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20642,12 +21342,12 @@
     <message>
         <location filename="../data/project/project.cpp" line="466"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../data/project/project.cpp" line="466"/>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation>Falhou o calculo do valor inicial sobre a elevacao da superficie de agua para a secao% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20656,7 +21356,7 @@
         <location filename="../data/referencemark/referencemark.cpp" line="16"/>
         <location filename="../data/referencemark/referencemark.cpp" line="21"/>
         <source>Reference mark</source>
-        <translation>Marca de referencia</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20665,7 +21365,7 @@
         <location filename="../data/rightbankhwm/rightbankhwm.cpp" line="16"/>
         <location filename="../data/rightbankhwm/rightbankhwm.cpp" line="21"/>
         <source>Right Bank HWM</source>
-        <translation>Elevacao da superficie de agua na margem direita</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20673,44 +21373,44 @@
     <message>
         <location filename="../io/rivexporter.cpp" line="22"/>
         <source>Input File name to export</source>
-        <translation>Acesso pelo nome do arquivo para exportacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="22"/>
         <source>River Survey Data(*.riv)</source>
-        <translation>Dados de levantamento do rio (*.riv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="31"/>
         <location filename="../io/rivexporter.cpp" line="85"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="31"/>
         <location filename="../io/rivexporter.cpp" line="85"/>
         <source>%1 could not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV File name to export</source>
-        <translation>Nome do arquivo CSV para exportacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="77"/>
         <source>CSV file(*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="102"/>
         <source>Information</source>
-        <translation>Informacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/rivexporter.cpp" line="102"/>
         <source>%1 is updated.</source>
-        <translation>% 1 foi atualizado.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20718,340 +21418,345 @@
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="14"/>
         <source>Rivmaker 1.0</source>
-        <translation>rivmaker 1.0</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="32"/>
         <source>&amp;File</source>
-        <translation>Arquivo (&amp;F)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="36"/>
         <location filename="../main/rivmakermainwindow.ui" line="86"/>
         <source>&amp;Import</source>
-        <translation>Importar (&amp;I)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="44"/>
         <location filename="../main/rivmakermainwindow.ui" line="90"/>
         <source>&amp;Geographic Data</source>
-        <translation>Dados sobre informacoes geograficas (&amp;G)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="56"/>
         <source>&amp;Export</source>
-        <translation>Exportar (&amp;E)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="68"/>
         <source>&amp;Recent Projects</source>
-        <translation>Projetos usados recentemente(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="102"/>
         <source>&amp;Base Line</source>
-        <translation>Linha da base(&amp;B)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="116"/>
         <source>&amp;Cross Section</source>
-        <translation>Secao transversal (&amp;C)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="131"/>
         <source>&amp;River Survey Data</source>
-        <translation>Dados de levantamento do rio (&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="137"/>
         <source>&amp;View</source>
-        <translation>Exibicao (&amp;V)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="146"/>
         <source>&amp;Help</source>
-        <translation>Ajuda (&amp;H)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="154"/>
         <source>&amp;Option</source>
-        <translation>Opcao (&amp;O)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="171"/>
         <source>toolBar</source>
-        <translation>Barra de ferramentas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="208"/>
         <source>&amp;New Project...</source>
-        <translation>Projeto novo (&amp;N)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="211"/>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="216"/>
         <source>Save &amp;As...</source>
-        <translation>Salvar com denominacao (&amp;A)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="225"/>
         <source>Property...</source>
-        <translation>Propriedade ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="230"/>
         <source>E&amp;xit</source>
-        <translation>Saida (&amp;X)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="233"/>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="238"/>
         <source>Dummy</source>
-        <translation>Falso</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="243"/>
         <source>&amp;Elevation...</source>
-        <translation>Elevacao (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="248"/>
         <source>&amp;Water Surface Elevation...</source>
-        <translation>Elevacao da superficie de agua (&amp;W)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="257"/>
         <location filename="../main/rivmakermainwindow.ui" line="266"/>
         <source>&amp;Background Image...</source>
-        <translation>Imagem do fundo(&amp;B)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="271"/>
         <source>&amp;SAC GUI Input File...</source>
-        <translation>&amp; Arquivo de entrada da GUI do SAC...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="276"/>
         <source>&amp;Elevation</source>
-        <translation>Elevacao (&amp;E)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="281"/>
         <source>&amp;Water Surface Elevation</source>
-        <translation>Elevacao da superficie de agua (&amp;W)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="286"/>
         <source>&amp;SAC GUI Input File</source>
-        <translation>&amp; Arquivo de entrada da GUI do SAC...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="291"/>
         <location filename="../main/rivmakermainwindow.ui" line="383"/>
         <source>&amp;Create...</source>
-        <translation>Criar (&amp;C)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="300"/>
         <location filename="../main/rivmakermainwindow.ui" line="401"/>
         <source>&amp;Delete...</source>
-        <translation>Excluir (&amp;D)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="309"/>
         <source>&amp;Add Vertex</source>
-        <translation> Adicionar vertice (&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="318"/>
         <source>&amp;Remove Vertex</source>
-        <translation>Remover vertice (&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="323"/>
         <location filename="../main/rivmakermainwindow.ui" line="351"/>
         <source>&amp;Edit Coordinates...</source>
-        <translation> Editar coordenadas (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="332"/>
         <location filename="../main/rivmakermainwindow.ui" line="369"/>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="341"/>
         <location filename="../main/rivmakermainwindow.ui" line="378"/>
         <location filename="../main/rivmakermainwindow.ui" line="392"/>
         <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="346"/>
         <source>&amp;Add</source>
-        <translation>Adicionar(&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="360"/>
         <source>&amp;Delete</source>
-        <translation>Excluir (&amp;D)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="410"/>
         <source>&amp;Mouse Hint...</source>
-        <translation>Mouse Hint(&amp;M)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="415"/>
         <source>&amp;About...</source>
-        <translation>Do iRIC (&amp;A)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="420"/>
         <location filename="../main/rivmakermainwindow.ui" line="430"/>
         <location filename="../main/rivmakermainwindow.ui" line="445"/>
         <source>&amp;Base Line...</source>
-        <translation>Linha da base (&amp;B)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="425"/>
         <location filename="../main/rivmakermainwindow.ui" line="435"/>
         <location filename="../main/rivmakermainwindow.ui" line="450"/>
         <source>&amp;Cross Section...</source>
-        <translation>Secao transversal (&amp;C)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="440"/>
         <source>&amp;River Survey Data...</source>
-        <translation>Dados de levantamento do rio (&amp;R)...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="461"/>
         <source>&amp;Main Toolbar</source>
-        <translation>Barra de ferramentas principal(&amp;M)</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="578"/>
-        <source>&amp;Windows Toolbar</source>
-        <translation>Barra de ferramentas do Windows (&amp;W)</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="583"/>
-        <source>&amp;Mapping Setting...</source>
-        <translation>Configuracao de mapeamento(&amp;M)...</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="588"/>
-        <source>&amp;Graphics Setting...</source>
-        <translation>Configuracao de graficos (&amp;G)...</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="597"/>
-        <source>&amp;Open...</source>
-        <translation>Abrir (&amp;O)...</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="600"/>
-        <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="612"/>
-        <source>Save</source>
-        <translation>Salvar  </translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="615"/>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.ui" line="623"/>
-        <source>dummy</source>
-        <translation>Falso</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="472"/>
         <source>&amp;Status Bar</source>
-        <translation>Barra de Status (&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="481"/>
         <source>&amp;Open &amp;New Crosssection Window</source>
-        <translation>Abrir nova janela de secao transversal (&amp;O)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="490"/>
         <source>Fit</source>
-        <translation>Adaptar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="499"/>
         <location filename="../main/rivmakermainwindow.ui" line="502"/>
         <source>Reset Rotation</source>
-        <translation>Redefinir a rotacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="511"/>
         <source>Rotate 90 degrees</source>
-        <translation>Rotacao de 90 graus </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="520"/>
         <source>Zoom In</source>
-        <translation>Ampliar o zoom</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="529"/>
         <source>Zoom Out</source>
-        <translation>Finalizar o zoom</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="538"/>
         <location filename="../main/rivmakermainwindow.ui" line="541"/>
         <source>Focus Main Window</source>
-        <translation>Abrir a janela principal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="550"/>
         <location filename="../main/rivmakermainwindow.ui" line="553"/>
         <source>Focus Vertical Crosssection Window</source>
-        <translation>Abrir a janela de secao vertical</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="562"/>
         <source>Open Crosssection Window</source>
-        <translation>Abrir a janela de secao transversal </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.ui" line="567"/>
         <source>Reverse &amp;Direction</source>
-        <translation>Inverter a direcao (&amp;D)</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="578"/>
+        <source>&amp;Windows Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="583"/>
+        <source>&amp;Mapping Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="588"/>
+        <source>&amp;Graphics Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="597"/>
+        <source>&amp;Open...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="600"/>
+        <source>Ctrl+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="612"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="615"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.ui" line="623"/>
+        <source>dummy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="41"/>
+        <source>Window List Toolbar</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="108"/>
         <source>Open project file</source>
-        <translation>Abrir o arquivo de projeto  </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="108"/>
         <location filename="../main/rivmakermainwindow.cpp" line="138"/>
         <source>RivMaker project file (*.rpro)</source>
-        <translation>Arquivo de projeto RivMaker  (*.rpro)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="126"/>
         <location filename="../main/rivmakermainwindow.cpp" line="144"/>
         <source>Project saved to %1.</source>
-        <translation>Projeto salvo para %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="130"/>
@@ -21060,55 +21765,50 @@
         <location filename="../main/rivmakermainwindow.cpp" line="216"/>
         <location filename="../main/rivmakermainwindow.cpp" line="477"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="130"/>
         <location filename="../main/rivmakermainwindow.cpp" line="148"/>
         <source>Saving project file to %1 failed.</source>
-        <translation>Falhou ao salvar o projeto para %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="138"/>
         <source>Save project file</source>
-        <translation>Salvamento do arquivo de projeto </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="207"/>
         <location filename="../main/rivmakermainwindow.cpp" line="216"/>
         <source>No data to export exists</source>
-        <translation>Nao ha dados para exportar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="279"/>
         <location filename="../main/rivmakermainwindow.cpp" line="507"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="461"/>
-        <source>&amp;%1 %2</source>
-        <translation>&amp;%1 %2</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="477"/>
-        <source>Opening project file failed.</source>
-        <translation>Houve falha ao abrir o arquivo de projeto.</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="507"/>
-        <source>The project data is modified. Do you want to save?</source>
-        <translation>O projeto foi alterado. Deseja salva-lo ?</translation>
-    </message>
-    <message>
-        <location filename="../main/rivmakermainwindow.cpp" line="41"/>
-        <source>Window List Toolbar</source>
-        <translation>Barra de ferramentas pela lista de Window</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main/rivmakermainwindow.cpp" line="279"/>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation>A janela para secao transversal nao podera ser aberta enquanto a secao nao esta definida.</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="461"/>
+        <source>&amp;%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="477"/>
+        <source>Opening project file failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/rivmakermainwindow.cpp" line="507"/>
+        <source>The project data is modified. Do you want to save?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21116,12 +21816,12 @@
     <message>
         <location filename="../io/sacguiimporter.cpp" line="43"/>
         <source>Select SAC GUI input file</source>
-        <translation>Selecionar o arquivo de entrada de SAC GUI</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../io/sacguiimporter.cpp" line="43"/>
         <source>SAC GUI input file (*.txt *.csv)</source>
-        <translation>Arquivo de entrada de SAC GUI  (*.txt *.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21130,7 +21830,7 @@
         <location filename="../data/streamgage/streamgage.cpp" line="16"/>
         <location filename="../data/streamgage/streamgage.cpp" line="21"/>
         <source>Stream gage</source>
-        <translation>Medidor do fluxo</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21138,17 +21838,17 @@
     <message>
         <location filename="../widgets/valuewidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/valuewidget.ui" line="47"/>
         <source>Value: </source>
-        <translation>Valor :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/valuewidget.cpp" line="23"/>
         <source>Value: ------</source>
-        <translation>Valor :------</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21156,68 +21856,68 @@
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="14"/>
         <source>Elevation View Window</source>
-        <translation>Window para vista de elevacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="26"/>
         <source>&amp;Reset zoom</source>
-        <translation>Redefinir Zoom(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="59"/>
         <source>Arbitrary HWM</source>
-        <translation>Elevacao arbitraria da superficie de agua</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="73"/>
         <source>Benchmark</source>
-        <translation>Marca de referencia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="87"/>
         <source>Reference mark</source>
-        <translation>Marca de referencia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="101"/>
         <source>Surveying or turning point</source>
-        <translation>Ponto de levantamento ou ponto de inflexao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="115"/>
         <source>Left Bank HWM</source>
-        <translation>Elevacao da superficie de agua na margem esquerda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="129"/>
         <source>Right Bank HWM</source>
-        <translation>Elevacao da superficie de agua na margem direita</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="143"/>
         <source>Stream gage</source>
-        <translation>Medidor do fluxo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.ui" line="162"/>
         <source>&amp;Export to CSV</source>
-        <translation>Exportar para CSV(&amp;E)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="210"/>
         <source>Distance Upstream</source>
-        <translation>Distancia de direcao a montante</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="213"/>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Elevation</source>
-        <translation>Elevacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../window/verticalcrosssection/verticalcrosssectionwindow.cpp" line="358"/>
         <source>Name</source>
-        <translation>Nome</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21225,7 +21925,26 @@
     <message>
         <location filename="../data/watersurfaceelevationpoints/watersurfaceelevationpoints.cpp" line="104"/>
         <source>Water Elevation Points</source>
-        <translation>Pontos de elevacao da superficie de agua</translation>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- structured2dgridgdalimporter_pt_BR.ts -->
+<context>
+    <name>Structured2DGridGdalImporter</name>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="22"/>
+        <source>GDAL supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="28"/>
+        <source>GeoTiff files(*.tif)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../structured2dgridgdalimporter.cpp" line="29"/>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- structured2dgridnayscsvexporter_pt_BR.ts -->
@@ -21234,7 +21953,7 @@
     <message>
         <location filename="../structured2dgridnayscsvexporter.cpp" line="108"/>
         <source>iRIC Grid CSV files (*.csv)</source>
-        <translation>iRIC Arquivo CSV das grades (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21242,7 +21961,7 @@
     <message>
         <location filename="../structured2dgridnayscsvexporter.cpp" line="97"/>
         <source>RIC-Nays CSV</source>
-        <translation>RIC-Nays CSV</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- structured2dgridnayscsvimporter_pt_BR.ts -->
@@ -21251,23 +21970,23 @@
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="38"/>
         <source>iRIC Grid CSV file</source>
-        <translation>iRIC Arquivo CSV das grades</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="49"/>
         <source>iRIC Grid CSV files (*.csv)</source>
-        <translation>iRIC Arquivo CSV das grades (*.csv)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
         <source>Information</source>
-        <translation>Informacao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../structured2dgridnayscsvimporter.cpp" line="178"/>
         <source>The following columns were ignored.
-        <translation>As seguintes colunas foram ignoradas.</translation>
-        <translation>%1</translation>
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- structured2dgridnaysgridexporter_pt_BR.ts -->
@@ -21276,7 +21995,7 @@
     <message>
         <location filename="../structured2dgridnaysgridexporter.cpp" line="23"/>
         <source>RIC-Nays grid files (*.grid)</source>
-        <translation>Arquivo da grade de RIC-Nays  (*.grid)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21284,7 +22003,7 @@
     <message>
         <location filename="../structured2dgridnaysgridexporter.cpp" line="17"/>
         <source>RIC-Nays Grid file</source>
-        <translation>Arquivo da grade de RIC-Nays</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- structured2dgridnaysgridimporter_pt_BR.ts -->
@@ -21293,22 +22012,22 @@
     <message>
         <location filename="../structured2dgridnaysgridimporter.cpp" line="25"/>
         <source>RIC-Nays Grid file</source>
-        <translation>Arquivo da grade de RIC-Nays</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../structured2dgridnaysgridimporter.cpp" line="31"/>
         <source>RIC-Nays grid file (*.grid)</source>
-        <translation>Arquivo da grade de RIC-Nays  (*.grid)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../structured2dgridnaysgridimporter.cpp" line="43"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../structured2dgridnaysgridimporter.cpp" line="43"/>
         <source>Cell flag values will not be loaded.</source>
-        <translation>Os valores do sinalizador de celula nao serao carregados.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- structured2dgridvtkexporter_pt_BR.ts -->
@@ -21317,7 +22036,7 @@
     <message>
         <location filename="../structured2dgridvtkexporter.cpp" line="32"/>
         <source>VTK files (*.vtk)</source>
-        <translation>Arquivos VTK  (*.vtk)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21325,7 +22044,7 @@
     <message>
         <location filename="../structured2dgridvtkexporter.cpp" line="21"/>
         <source>VTK file</source>
-        <translation>Arquivo VTK</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- unstructured2dgridtriangleimporter_pt_BR.ts -->
@@ -21334,24 +22053,24 @@
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="25"/>
         <source>TRIANGLE node files (*.node)</source>
-        <translation>Arquivo de nodulo TRIANGLE (*.node)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="31"/>
         <source>TRIANGLE output (*.node, *.ele)</source>
-        <translation>Arquivo de saida TRIANGLE  (*.node, *.ele)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="53"/>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="57"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="53"/>
         <location filename="../unstructured2dgridtriangleimporter.cpp" line="57"/>
         <source>%1 does not exists.</source>
-        <translation>%1 nao existe.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- unstructured2dgridvtkexporter_pt_BR.ts -->
@@ -21360,7 +22079,7 @@
     <message>
         <location filename="../unstructured2dgridvtkexporter.cpp" line="30"/>
         <source>VTK files (*.vtk)</source>
-        <translation>Arquivos VTK  (*.vtk)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21368,7 +22087,7 @@
     <message>
         <location filename="../unstructured2dgridvtkexporter.cpp" line="19"/>
         <source>VTK file</source>
-        <translation>Arquivo VTK</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

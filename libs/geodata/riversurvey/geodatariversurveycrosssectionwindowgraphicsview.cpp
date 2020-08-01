@@ -13,6 +13,8 @@
 
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
+#include <geodata/polylinegroup/geodatapolylinegroup.h>
+#include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
@@ -43,6 +45,8 @@
 #include <QTextStream>
 #include <QWheelEvent>
 #include <QRect>
+
+#include <geos/geom/LineString.h>
 
 #include <cmath>
 
@@ -855,18 +859,39 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 	QPointF marginedLeft = origin + marginRate * (left - origin);
 	QPointF marginedRight = origin + marginRate * (right - origin);
 
+	double xmin = qMin(marginedLeft.x(), marginedRight.x());
+	double xmax = qMax(marginedLeft.x(), marginedRight.x());
+	double ymin = qMin(marginedLeft.y(), marginedRight.y());
+	double ymax = qMax(marginedLeft.y(), marginedRight.y());
+
 	for (auto child : refGroupDataItem->childItems()) {
 		auto geoDataItem = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (child);
 		if (geoDataItem->standardItem()->checkState() != Qt::Checked) {continue;}
+
 		auto polyLine = dynamic_cast<GeoDataPolyLine*> (geoDataItem->geoData());
-		if (polyLine == nullptr) {continue;}
+		if (polyLine != nullptr) {
+			auto line = polyLine->polyLine()->polyLine();
+			for (int i = 0; i < static_cast<int>(line.size()) - 1; ++i) {
+				QPointF p1 = line.at(i);
+				QPointF p2 = line.at(i + 1);
 
-		auto line = polyLine->polyLine()->polyLine();
-		for (int i = 0; i < static_cast<int>(line.size()) - 1; ++i) {
-			QPointF p1 = line.at(i);
-			QPointF p2 = line.at(i + 1);
+				drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, polyLine->caption(), polyLine->color(), &drawnRects, painter);
+			}
+		}
+		auto polyLineGroup = dynamic_cast<GeoDataPolyLineGroup*> (geoDataItem->geoData());
+		if (polyLineGroup != nullptr) {
+			auto lines = polyLineGroup->polyLinesInBoundingBox(xmin, xmax, ymin, ymax);
+			for (GeoDataPolyLineGroupPolyLine* l : lines) {
+				geos::geom::LineString* ls = l->getGeosLineString();
+				for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+					const auto& c1 = ls->getCoordinateN(i);
+					const auto& c2 = ls->getCoordinateN(i + 1);
+					QPointF p1(c1.x, c1.y);
+					QPointF p2(c2.x, c2.y);
 
-			drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, polyLine->caption(), polyLine->color(), &drawnRects, painter);
+					drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, l->name() , polyLineGroup->color(), &drawnRects, painter);
+				}
+			}
 		}
 	}
 }

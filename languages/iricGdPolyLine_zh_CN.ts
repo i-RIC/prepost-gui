@@ -4,32 +4,30 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
-        <translation>编辑值...</translation>
+        <translation type="vanished">编辑值...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="54"/>
+        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation>添加顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="55"/>
+        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation>删除顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="56"/>
+        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>编辑坐标...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
-        <translation>色彩设置...</translation>
+        <translation type="vanished">色彩设置...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
+        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation>折线 (&amp;L)</translation>
     </message>
@@ -64,49 +62,59 @@
         <translation>删除折线顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>折线须有两个以上顶点</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="392"/>
+        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation>完成定义折线</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>请通过单击鼠标来定义折线。 通过双击或按回车键完成定义。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
+        <source>Polyline Color Setting</source>
+        <translation type="obsolete">折线颜色设置</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="722"/>
+        <source>polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="727"/>
+        <source>Polyline</source>
+        <translation type="unfinished">折线</translation>
+    </message>
+    <message>
         <source>PolyLine value change</source>
-        <translation>改变折线值</translation>
+        <translation type="vanished">改变折线值</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="715"/>
         <source>Edit %1 value</source>
-        <translation>编辑 %1 值</translation>
+        <translation type="vanished">编辑 %1 值</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="716"/>
         <source>Please input new value in this polyline.</source>
-        <translation>请在此折线中输入新值</translation>
+        <translation type="vanished">请在此折线中输入新值</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
         <source>PolyLine property edit</source>
-        <translation>编辑多线属性</translation>
+        <translation type="vanished">编辑多线属性</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="9"/>
@@ -122,37 +130,31 @@
 <context>
     <name>GeoDataPolyLineColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>折线颜色设置</translation>
+        <translation type="vanished">折线颜色设置</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>根据数值显示颜色</translation>
+        <translation type="vanished">根据数值显示颜色</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineColorSimpleSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>折线颜色设置</translation>
+        <translation type="vanished">折线颜色设置</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
         <source>Color:</source>
-        <translation>颜色:</translation>
+        <translation type="vanished">颜色:</translation>
     </message>
 </context>
 <context>

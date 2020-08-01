@@ -15,9 +15,6 @@ public:
 
 	GeoDataPolyLineImplPolyLine* m_polyLine;
 
-	GeoDataPolyLineColorSimpleSettingDialog::Setting m_setting;
-	std::vector<QVariant> m_variantValues;
-
 	ZDepthRange m_depthRange;
 
 	bool m_inhibitSelect;
@@ -29,11 +26,9 @@ public:
 
 	QMenu* m_rightClickingMenu;
 
-	QAction* m_editValueAction;
 	QAction* m_addVertexAction;
 	QAction* m_removeVertexAction;
 	QAction* m_coordEditAction;
-	QAction* m_editColorSettingAction;
 
 	QPixmap m_addPixmap;
 	QPixmap m_removePixmap;

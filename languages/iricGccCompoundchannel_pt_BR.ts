@@ -217,9 +217,8 @@
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorcompoundchannel.cpp" line="12"/>
-        <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
+        <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.</source>
         <translation>Especifique o poligono da area de criacao da grade e o poligono da area do canal de agua, e no final especifique a linha central.</translation>
-        <translation>A regiao do canal de agua devera ser incluida na area de criacao da grade e a linha central do rio devera ser incluida na regiao do canal de agua.</translation>
     </message>
 </context>
 </TS>

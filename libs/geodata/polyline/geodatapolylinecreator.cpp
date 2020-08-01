@@ -3,17 +3,14 @@
 #include "geodatapolylineimporter.h"
 #include "geodatapolylineshapeexporter.h"
 
-#include <guibase/irictoolbar.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 
-#include <QAction>
-#include <QIcon>
 #include <QStandardItem>
 
 GeoDataPolyLineCreator::GeoDataPolyLineCreator(const QString& typeName) :
 	GeoDataCreator {typeName, tr("Polyline")}
 {
-	importers().push_back(new GeoDataPolyLineImporter(this));
+	// importers().push_back(new GeoDataPolyLineImporter(this));
 	exporters().push_back(new GeoDataPolyLineShapeExporter(this));
 }
 
@@ -29,7 +26,7 @@ QString GeoDataPolyLineCreator::defaultCaption(unsigned int index) const
 
 bool GeoDataPolyLineCreator::isCreatable() const
 {
-	return true;
+	return false;
 }
 
 GeoData* GeoDataPolyLineCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

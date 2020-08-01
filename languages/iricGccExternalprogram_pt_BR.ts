@@ -10,9 +10,8 @@
     </message>
     <message>
         <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="129"/>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.</source>
         <translation>Ocorreu um erro ao baixar o arquivo de definicao sobre o programa de criacao da grade, o qual se encontra na pasta &quot;%1&quot; . Este programa de criacao sera ignorado.</translation>
-        <translation>%2</translation>
     </message>
 </context>
 <context>

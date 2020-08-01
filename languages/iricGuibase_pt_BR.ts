@@ -556,13 +556,6 @@
         <translation>Formato de exibicao :</translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="145"/>
-        <source>Specify the number format in printf format. For example:
-        <translation>Especifique com o formato de intf. Por exemplo:</translation>
-        <translation>Especificar &quot;%5.2f&quot; quando o valor for de 3.141592--&gt; &quot;3.14&quot;</translation>
-        <translation>Especificar &quot;%4.2e&quot;  quando o valor for de 12300--&gt;1.23e+004</translation>
-    </message>
-    <message>
         <location filename="../scalarbarwidget.ui" line="169"/>
         <source>Orientation :</source>
         <translation>Direcao de exibicao :</translation>

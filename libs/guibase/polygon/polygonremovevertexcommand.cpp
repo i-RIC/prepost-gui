@@ -4,7 +4,7 @@
 #include <QPolygonF>
 
 PolygonRemoveVertexCommand::PolygonRemoveVertexCommand(int vertexId, PolygonController* polygon) :
-	PolygonRemoveVertexCommand {tr("Remove Polygon Vertex"), vertexId, m_polygon}
+	PolygonRemoveVertexCommand {tr("Remove Polygon Vertex"), vertexId, polygon}
 {}
 
 PolygonRemoveVertexCommand::PolygonRemoveVertexCommand(const QString& title, int vertexId, PolygonController* polygon) :

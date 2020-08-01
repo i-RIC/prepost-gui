@@ -4,75 +4,83 @@
 <context>
     <name>GeoDataPolygon</name>
     <message>
-        <location filename="../geodatapolygon.cpp" line="99"/>
         <source>Edit &amp;Value...</source>
-        <translation>値の編集(&amp;V)...</translation>
+        <translation type="vanished">値の編集(&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="101"/>
+        <location filename="../geodatapolygon.cpp" line="81"/>
         <source>&amp;Copy...</source>
         <translation>コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="102"/>
+        <location filename="../geodatapolygon.cpp" line="82"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="103"/>
+        <location filename="../geodatapolygon.cpp" line="83"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="104"/>
+        <location filename="../geodatapolygon.cpp" line="84"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="96"/>
+        <source>Polygon Color Setting</source>
+        <translation type="vanished">ポリゴンの表示色設定</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1360"/>
+        <source>polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="1365"/>
+        <source>Polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygon.cpp" line="79"/>
         <source>Add &amp;Hole Region</source>
         <translation>穴領域の追加(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="97"/>
+        <location filename="../geodatapolygon.cpp" line="80"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>穴領域の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="98"/>
         <source>Edit &amp;Name</source>
-        <translation>名前の編集 (&amp;N)</translation>
+        <translation type="vanished">名前の編集 (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="100"/>
         <source>Edit &amp;Name and Value...</source>
-        <translation>名前と値の編集 (N)...</translation>
+        <translation type="vanished">名前と値の編集 (N)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="105"/>
         <source>Color &amp;Setting...</source>
-        <translation>表示色設定(&amp;S)...</translation>
+        <translation type="vanished">表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="205"/>
+        <location filename="../geodatapolygon.cpp" line="168"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="592"/>
+        <location filename="../geodatapolygon.cpp" line="525"/>
         <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Edit name</source>
-        <translation>名前の編集</translation>
+        <translation type="vanished">名前の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1290"/>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation type="vanished">名前:</translation>
     </message>
     <message>
         <location filename="../private/geodatapolygon_pushnewpointcommand.cpp" line="8"/>
@@ -100,13 +108,13 @@
         <translation>ポリゴンの頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="587"/>
-        <location filename="../geodatapolygon.cpp" line="1096"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="587"/>
+        <location filename="../geodatapolygon.cpp" line="520"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
@@ -116,23 +124,23 @@
         <translation>穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1068"/>
-        <location filename="../geodatapolygon.cpp" line="1256"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1068"/>
+        <location filename="../geodatapolygon.cpp" line="985"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1096"/>
+        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>本当にこのポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1256"/>
+        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -142,28 +150,24 @@
         <translation>ポリゴン値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1302"/>
-        <location filename="../geodatapolygon.cpp" line="1323"/>
         <source>Edit %1 value</source>
-        <translation>%1 の値の編集</translation>
+        <translation type="vanished">%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1303"/>
         <source>Please input new value in this polygon.</source>
-        <translation>このポリゴン内での値を入力してください。</translation>
+        <translation type="vanished">このポリゴン内での値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editpropertycommand.cpp" line="4"/>
         <source>Polygon property edit</source>
-        <translation>ポリゴン属性編集</translation>
+        <translation type="vanished">ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1497"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1497"/>
+        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
@@ -178,9 +182,8 @@
         <translation>ポリゴンの頂点座標</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editnameandvaluecommand.cpp" line="4"/>
         <source>Polygon name and value change</source>
-        <translation>ポリゴンの名前と値の変更</translation>
+        <translation type="vanished">ポリゴンの名前と値の変更</translation>
     </message>
 </context>
 <context>

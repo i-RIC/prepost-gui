@@ -1,8 +1,11 @@
+#include "geodatapolygongroup.h"
 #include "geodatapolygongrouppolygon.h"
 #include "private/geodatapolygongrouppolygon_impl.h"
 #include "private/geodatapolygongrouppolygon_triangulatori.h"
 #include "private/geodatapolygongrouppolygon_triangulatortriangle.h"
 #include "private/geodatapolygongrouppolygon_triangulatorvtk.h"
+
+#include <geodata/polygon/geodatapolygon.h>
 
 #include <geos/geom/Coordinate.h>
 #include <geos/geom/CoordinateArraySequence.h>
@@ -56,17 +59,14 @@ geos::geom::LinearRing* applyOffset(const geos::geom::LineString* string, double
 
 } // namespace
 
-GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon() :
-	impl {new Impl{}}
-{
-	impl->m_indexOffset = 0;
-}
+GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group) :
+	GeoDataPolyDataGroupPolyDataWithBoundingRect {group},
+	impl {new Impl {}}
+{}
 
-GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes) :
-	impl {new Impl{}}
+GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes, GeoDataPolygonGroup* group) :
+	GeoDataPolygonGroupPolygon(group)
 {
-	impl->m_indexOffset = 0;
-
 	auto outerRing = buildRing(outer);
 	std::vector<Geometry*>* holeRings = new std::vector<Geometry*>();
 	for (const auto& h : holes) {
@@ -80,10 +80,9 @@ GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(const QPolygonF& outer, c
 	setupTriangleCells();
 }
 
-GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon) :
-	impl {new Impl {}}
+GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon, GeoDataPolygonGroup* group) :
+	GeoDataPolygonGroupPolygon(group)
 {
-	impl->m_indexOffset = 0;
 	impl->m_polygon.reset(polygon);
 
 	setupBoundingRect();
@@ -93,26 +92,6 @@ GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(geos::geom::Polygon* poly
 GeoDataPolygonGroupPolygon::~GeoDataPolygonGroupPolygon()
 {
 	delete impl;
-}
-
-QString GeoDataPolygonGroupPolygon::name() const
-{
-	return impl->m_name;
-}
-
-void GeoDataPolygonGroupPolygon::setName(const QString& name)
-{
-	impl->m_name = name;
-}
-
-QVariant GeoDataPolygonGroupPolygon::value() const
-{
-	return impl->m_value;
-}
-
-void GeoDataPolygonGroupPolygon::setValue(const QVariant& v)
-{
-	impl->m_value = v;
 }
 
 bool GeoDataPolygonGroupPolygon::isInside(const QPointF& point) const
@@ -190,32 +169,18 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::triangleCells() const
 	return impl->m_triangleCells;
 }
 
-unsigned int GeoDataPolygonGroupPolygon::order() const
+void GeoDataPolygonGroupPolygon::copyShapeFrom(GeoDataPolyData* data)
 {
-	return impl->m_order;
+	auto polygon = dynamic_cast<GeoDataPolygon*> (data);
+	setGeosPolygon(polygon->getGeosPolygon());
 }
 
-void GeoDataPolygonGroupPolygon::setOrder(unsigned int order)
+void GeoDataPolygonGroupPolygon::copyShapeTo(GeoDataPolyData* data)
 {
-	impl->m_order = order;
-}
-
-unsigned int GeoDataPolygonGroupPolygon::indexOffset() const
-{
-	return impl->m_indexOffset;
-}
-
-void GeoDataPolygonGroupPolygon::setIndexOffset(unsigned int offset)
-{
-	impl->m_indexOffset = offset;
-}
-
-void GeoDataPolygonGroupPolygon::getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax)
-{
-	*xmin = impl->m_xmin;
-	*xmax = impl->m_xmax;
-	*ymin = impl->m_ymin;
-	*ymax = impl->m_ymax;
+	auto polygon = dynamic_cast<GeoDataPolygon*> (data);
+	polygon->setShape(geosPolygon(), triangleCells());
+	polygon->setMouseEventMode(GeoDataPolygon::meNormal);
+	polygon->updateActionStatus();
 }
 
 void GeoDataPolygonGroupPolygon::loadExternalData(QDataStream* stream)
@@ -224,8 +189,8 @@ void GeoDataPolygonGroupPolygon::loadExternalData(QDataStream* stream)
 	QVariant value;
 
 	*stream >> name >> value;
-	impl->m_name = name;
-	impl->m_value = value;
+	setName(name);
+	setValue(value);
 
 	QVector<QPointF> points;
 	*stream >> points;
@@ -252,8 +217,8 @@ void GeoDataPolygonGroupPolygon::loadExternalData(QDataStream* stream)
 
 void GeoDataPolygonGroupPolygon::saveExternalData(QDataStream* stream)
 {
-	*stream << impl->m_name;
-	*stream << impl->m_value;
+	*stream << name();
+	*stream << value();
 	geos::geom::Polygon* pol = impl->m_polygon.get();
 
 	auto vec = buildPolygon(pol->getExteriorRing());
@@ -289,10 +254,10 @@ void GeoDataPolygonGroupPolygon::setupBoundingRect()
 {
 	const auto env = impl->m_polygon.get()->getEnvelopeInternal();
 
-	impl->m_xmin = env->getMinX();
-	impl->m_xmax = env->getMaxX();
-	impl->m_ymin = env->getMinY();
-	impl->m_ymax = env->getMaxY();
+	m_xmin = env->getMinX();
+	m_xmax = env->getMaxX();
+	m_ymin = env->getMinY();
+	m_ymax = env->getMaxY();
 }
 
 void GeoDataPolygonGroupPolygon::setupTriangleCells()

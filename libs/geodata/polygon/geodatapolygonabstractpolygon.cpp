@@ -209,12 +209,12 @@ void GeoDataPolygonAbstractPolygon::setColor(const QColor& color)
 	impl->m_polygonController.linesActor()->GetProperty()->SetColor(dr, dg, db);
 }
 
-void GeoDataPolygonAbstractPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)
+void GeoDataPolygonAbstractPolygon::setMapping(GeoDataPolyDataColorSettingDialog::Mapping m)
 {
 	auto pointsMapper = impl->m_polygonController.pointsActor()->GetMapper();
 	auto linesMapper = impl->m_polygonController.linesActor()->GetMapper();
 
-	if (m == GeoDataPolygonColorSettingDialog::Arbitrary) {
+	if (m == GeoDataPolyDataColorSettingDialog::Arbitrary) {
 		pointsMapper->SetScalarVisibility(0);
 		linesMapper->SetScalarVisibility(0);
 	} else {

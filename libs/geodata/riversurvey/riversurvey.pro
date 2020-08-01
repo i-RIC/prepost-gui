@@ -26,6 +26,34 @@ unix {
 }
 LIBS += -liricGdPointmap
 
+# iricGdPolydata
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../polydata/debug"
+        } else {
+                LIBS += -L"../polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../polydata"
+}
+LIBS += -liricGdPolydata
+
+# iricGdPolydataGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../polydatagroup/debug"
+        } else {
+                LIBS += -L"../polydatagroup/release"
+        }
+}
+unix {
+        LIBS += -L"../polydatagroup"
+}
+LIBS += -liricGdPolydataGroup
+
 # iricMisc
 
 win32 {
@@ -96,6 +124,20 @@ unix {
 }
 LIBS += -liricGdPolyLine
 
+# iricGdPolyLineGroup
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../geodata/polylinegroup/debug"
+	} else {
+		LIBS += -L"../../geodata/polylinegroup/release"
+	}
+}
+unix {
+	LIBS += -L"../../geodata/polylinegroup"
+}
+LIBS += -liricGdPolyLineGroup
+
 # iricHdRiversurveywaterelevation
 
 win32 {
@@ -127,6 +169,10 @@ LIBS += \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1
+
+# geos
+
+LIBS += -lgeos
 
 # iriclib
 

@@ -492,9 +492,8 @@
     </message>
     <message>
         <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="145"/>
-        <source>Error occured while loading solver definition file.
+        <source>Error occured while loading solver definition file.</source>
         <translation>Ocorreu um erro ao baixar o arquivo.</translation>
-        <translation>%1: %2</translation>
     </message>
     <message>
         <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="146"/>
@@ -536,9 +535,8 @@
     </message>
     <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
-        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.</source>
         <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce baixar o arquivo CGNS incompativel, somente uma parte das condicoes de calculo podera ser importada.</translation>
-        <translation>Deseja importar este arquivo CGNS ?</translation>
     </message>
     <message>
         <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
@@ -687,9 +685,8 @@
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="623"/>
-        <source>The following problems found: 
+        <source>The following problems found:</source>
         <translation>Os seguintes problemas encontrados :</translation>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="626"/>
@@ -1030,7 +1027,7 @@
     <message>
         <location filename="../postcontainer/postcalculatedresulteditdialog.ui" line="147"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gtVoce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../postcontainer/postcalculatedresulteditdialog.ui" line="178"/>
@@ -2112,9 +2109,8 @@
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
-        <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
+        <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.</source>
         <translation>Para obter a imagem do fundo atraves de Internet, especifique o sistema de coordenadas conforme o menu abaixo.</translation>
-        <translation>arquivo -&gt; propriedade</translation>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>

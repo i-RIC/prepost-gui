@@ -42,19 +42,19 @@ unix {
 }
 LIBS += -liricMisc
 
-# iricTriangle
+# iricGdPolydata
 
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../../triangle/debug"
+		LIBS += -L"../polydata/debug"
 	} else {
-		LIBS += -L"../../triangle/release"
+		LIBS += -L"../polydata/release"
 	}
 }
 unix {
-	LIBS += -L"../../triangle"
+	LIBS += -L"../polydata"
 }
-LIBS += -liricTriangle
+LIBS += -liricGdPolydata
 
 # iricGuibase
 
@@ -120,8 +120,6 @@ HEADERS += gd_polyline_global.h \
            geodatapolylineabstractpolyline.h \
            geodatapolylinecellmappersetting.h \
            geodatapolylinecellmappert.h \
-           geodatapolylinecolorsettingdialog.h \
-           geodatapolylinecolorsimplesettingdialog.h \
            geodatapolylinecreator.h \
            geodatapolylinecreatort.h \
            geodatapolylineimplpolyline.h \
@@ -135,8 +133,6 @@ HEADERS += gd_polyline_global.h \
            private/geodatapolyline_addvertexcommand.h \
            private/geodatapolyline_coordinateseditor.h \
            private/geodatapolyline_editcoordinatescommand.h \
-           private/geodatapolyline_editpropertycommand.h \
-           private/geodatapolyline_editvaluecommand.h \
            private/geodatapolyline_finishpolylinedefinitioncommand.h \
            private/geodatapolyline_impl.h \
            private/geodatapolyline_modifyabstractpolylinecommand.h \
@@ -148,14 +144,11 @@ HEADERS += gd_polyline_global.h \
            private/geodatapolylinecellmappert_detail.h \
            private/geodatapolylinecreatort_detail.h \
            private/geodatapolylinenodemappert_detail.h
-FORMS += geodatapolylinecolorsettingdialog.ui \
-         geodatapolylinecolorsimplesettingdialog.ui \
+FORMS += \
          geodatapolylineimportersettingdialog.ui
 SOURCES += geodatapolyline.cpp \
            geodatapolylineabstractpolyline.cpp \
            geodatapolylinecellmappersetting.cpp \
-           geodatapolylinecolorsettingdialog.cpp \
-           geodatapolylinecolorsimplesettingdialog.cpp \
            geodatapolylinecreator.cpp \
            geodatapolylineimplpolyline.cpp \
            geodatapolylineimporter.cpp \
@@ -167,8 +160,6 @@ SOURCES += geodatapolyline.cpp \
            private/geodatapolyline_addvertexcommand.cpp \
            private/geodatapolyline_coordinateseditor.cpp \
            private/geodatapolyline_editcoordinatescommand.cpp \
-           private/geodatapolyline_editpropertycommand.cpp \
-           private/geodatapolyline_editvaluecommand.cpp \
            private/geodatapolyline_finishpolylinedefinitioncommand.cpp \
            private/geodatapolyline_modifyabstractpolylinecommand.cpp \
            private/geodatapolyline_movepolylinecommand.cpp \

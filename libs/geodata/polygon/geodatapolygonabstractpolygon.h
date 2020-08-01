@@ -2,7 +2,8 @@
 #define GEODATAPOLYGONABSTRACTPOLYGON_H
 
 #include "gd_polygon_global.h"
-#include "geodatapolygoncolorsettingdialog.h"
+
+#include <geodata/polydata/geodatapolydatacolorsettingdialog.h>
 
 #include <QObject>
 
@@ -48,7 +49,7 @@ public:
 
 	void setLookupTable(vtkScalarsToColors* t);
 	void setColor(const QColor& color);
-	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
+	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
 
 protected:
 	const PolygonController& polygonController() const;

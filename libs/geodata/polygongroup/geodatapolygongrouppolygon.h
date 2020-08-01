@@ -1,6 +1,8 @@
 #ifndef GEODATAPOLYGONGROUPPOLYGON_H
 #define GEODATAPOLYGONGROUPPOLYGON_H
 
+#include <geodata/polydatagroup/geodatapolydatagrouppolydatawithboundingrect.h>
+
 #include <vector>
 
 namespace geos {
@@ -9,25 +11,21 @@ class Polygon;
 } // geom
 } // geos
 
+class GeoDataPolygonGroup;
+
 class QDataStream;
 class QPolygonF;
 class QPointF;
 class QString;
 class QVariant;
 
-class GeoDataPolygonGroupPolygon
+class GeoDataPolygonGroupPolygon : public GeoDataPolyDataGroupPolyDataWithBoundingRect
 {
 public:
-	GeoDataPolygonGroupPolygon();
-	GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes);
-	GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon);
+	GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group);
+	GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes, GeoDataPolygonGroup* group);
+	GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon, GeoDataPolygonGroup* group);
 	~GeoDataPolygonGroupPolygon();
-
-	QString name() const;
-	void setName(const QString& name);
-
-	QVariant value() const;
-	void setValue(const QVariant& v);
 
 	bool isInside(const QPointF& point) const;
 	geos::geom::Polygon* geosPolygon() const;
@@ -37,18 +35,13 @@ public:
 	std::vector<unsigned int> lineEdges() const;
 	std::vector<unsigned int> triangleCells() const;
 
-	unsigned int order() const;
-	void setOrder(unsigned int order);
+	void copyShapeFrom(GeoDataPolyData* data) override;
+	void copyShapeTo(GeoDataPolyData* data) override;
 
-	unsigned int indexOffset() const;
-	void setIndexOffset(unsigned int offset);
+	void loadExternalData(QDataStream* stream) override;
+	void saveExternalData(QDataStream* stream) override;
 
-	void getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax);
-
-	void loadExternalData(QDataStream* stream);
-	void saveExternalData(QDataStream* stream);
-
-	void applyOffset(double x, double y);
+	void applyOffset(double x, double y) override;
 
 private:
 	void setupBoundingRect();

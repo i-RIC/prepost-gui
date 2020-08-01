@@ -115,6 +115,34 @@ unix {
 }
 LIBS += -liricGdRiversurvey
 
+# iricGdPoint
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/point/debug"
+        } else {
+                LIBS += -L"../geodata/point/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/point"
+}
+LIBS += -liricGdPoint
+
+# iricGdPointGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/pointgroup/debug"
+        } else {
+                LIBS += -L"../geodata/pointgroup/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/pointgroup"
+}
+LIBS += -liricGdPointGroup
+
 # iricGdPointmap
 
 win32 {
@@ -128,6 +156,20 @@ unix {
 	LIBS += -L"../geodata/pointmap"
 }
 LIBS += -liricGdPointmap
+
+# iricGdPolyData
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/polydata/debug"
+        } else {
+                LIBS += -L"../geodata/polydata/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/polydata"
+}
+LIBS += -liricGdPolyData
 
 # iricGdPolygon
 
@@ -170,6 +212,20 @@ unix {
 	LIBS += -L"../geodata/polyline"
 }
 LIBS += -liricGdPolyline
+
+# iricGdPolylineGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../geodata/polylinegroup/debug"
+        } else {
+                LIBS += -L"../geodata/polylinegroup/release"
+        }
+}
+unix {
+        LIBS += -L"../geodata/polylinegroup"
+}
+LIBS += -liricGdPolylineGroup
 
 # iricGdNetcdf
 win32 {

@@ -100,6 +100,35 @@ unix {
 }
 LIBS += -liricGdPolyLine
 
+# iricGdPolyDataGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../../geodata/polydatagroup/debug"
+        } else {
+                LIBS += -L"../../geodata/polydatagroup/release"
+        }
+}
+unix {
+        LIBS += -L"../../geodata/polydatagroup"
+}
+LIBS += -liricGdPolyDataGroup
+
+# iricGdPolyLineGroup
+
+win32 {
+        CONFIG(debug, debug|release) {
+                LIBS += -L"../../geodata/polylinegroup/debug"
+        } else {
+                LIBS += -L"../../geodata/polylinegroup/release"
+        }
+}
+unix {
+        LIBS += -L"../../geodata/polylinegroup"
+}
+LIBS += -liricGdPolyLineGroup
+
+
 # iricGdRiversurvey
 
 win32 {
@@ -160,68 +189,72 @@ win32 {
 
 # Input
 HEADERS += graph2dhybrid_global.h \
-					 graph2dhybridsettingdialog.h \
-					 graph2dhybridwindow.h \
-					 graph2dhybridwindowactionmanager.h \
-					 graph2dhybridwindowcontinuousexportdialog.h \
-					 graph2dhybridwindowcontrolwidget.h \
-					 graph2dhybridwindowdataitem.h \
-					 graph2dhybridwindowdatamodel.h \
-					 graph2dhybridwindowdatasourcedialog.h \
-					 graph2dhybridwindowlinesettingdialog.h \
-					 graph2dhybridwindowobjectbrowser.h \
-					 graph2dhybridwindowobjectbrowserview.h \
-					 graph2dhybridwindowprojectdataitem.h \
-					 graph2dhybridwindowresultsetting.h \
-					 graph2dhybridwindowview.h \
-					 datamodel/graph2dhybridwindowbaseiterativeresultdataitem.h \
-					 datamodel/graph2dhybridwindowdrawsettingdialog.h \
-					 datamodel/graph2dhybridwindowgridijkresultdataitem.h \
-					 datamodel/graph2dhybridwindowgridpointresultdataitem.h \
-					 datamodel/graph2dhybridwindowgridpolylineresultdataitem.h \
-					 datamodel/graph2dhybridwindowimportdatadataitem.h \
-					 datamodel/graph2dhybridwindowimportdatagroupdataitem.h \
-					 datamodel/graph2dhybridwindowresultcopydataitem.h \
-					 datamodel/graph2dhybridwindowresultcopygroupdataitem.h \
-					 datamodel/graph2dhybridwindowresultdataitem.h \
-					 datamodel/graph2dhybridwindowresultgroupdataitem.h \
-					 datamodel/graph2dhybridwindowrootdataitem.h \
-					 datamodel/graph2dhybridwindowsettingwidget.h
+           graph2dhybridsettingdialog.h \
+           graph2dhybridwindow.h \
+           graph2dhybridwindowactionmanager.h \
+           graph2dhybridwindowcontinuousexportdialog.h \
+           graph2dhybridwindowcontrolwidget.h \
+           graph2dhybridwindowdataitem.h \
+           graph2dhybridwindowdatamodel.h \
+           graph2dhybridwindowdatasourcedialog.h \
+           graph2dhybridwindowlinesettingdialog.h \
+           graph2dhybridwindowobjectbrowser.h \
+           graph2dhybridwindowobjectbrowserview.h \
+           graph2dhybridwindowprojectdataitem.h \
+           graph2dhybridwindowresultsetting.h \
+           graph2dhybridwindowview.h \
+           datamodel/graph2dhybridwindowbaseiterativeresultdataitem.h \
+           datamodel/graph2dhybridwindowdrawsettingdialog.h \
+           datamodel/graph2dhybridwindowgridabstractpolylineresultdataitem.h \
+           datamodel/graph2dhybridwindowgridijkresultdataitem.h \
+           datamodel/graph2dhybridwindowgridpointresultdataitem.h \
+           datamodel/graph2dhybridwindowgridpolylinegrouppolylineresultdataitem.h \
+           datamodel/graph2dhybridwindowgridpolylineresultdataitem.h \
+           datamodel/graph2dhybridwindowimportdatadataitem.h \
+           datamodel/graph2dhybridwindowimportdatagroupdataitem.h \
+           datamodel/graph2dhybridwindowresultcopydataitem.h \
+           datamodel/graph2dhybridwindowresultcopygroupdataitem.h \
+           datamodel/graph2dhybridwindowresultdataitem.h \
+           datamodel/graph2dhybridwindowresultgroupdataitem.h \
+           datamodel/graph2dhybridwindowrootdataitem.h \
+           datamodel/graph2dhybridwindowsettingwidget.h
 FORMS += graph2dhybridsettingdialog.ui \
-				 graph2dhybridwindow.ui \
-				 graph2dhybridwindowcontinuousexportdialog.ui \
-				 graph2dhybridwindowcontrolwidget.ui \
-				 graph2dhybridwindowdatasourcedialog.ui \
-				 graph2dhybridwindowlinesettingdialog.ui \
-				 datamodel/graph2dhybridwindowdrawsettingdialog.ui \
-				 datamodel/graph2dhybridwindowsettingwidget.ui
+         graph2dhybridwindow.ui \
+         graph2dhybridwindowcontinuousexportdialog.ui \
+         graph2dhybridwindowcontrolwidget.ui \
+         graph2dhybridwindowdatasourcedialog.ui \
+         graph2dhybridwindowlinesettingdialog.ui \
+         datamodel/graph2dhybridwindowdrawsettingdialog.ui \
+         datamodel/graph2dhybridwindowsettingwidget.ui
 SOURCES += graph2dhybridsettingdialog.cpp \
-					 graph2dhybridwindow.cpp \
-					 graph2dhybridwindowactionmanager.cpp \
-					 graph2dhybridwindowcontinuousexportdialog.cpp \
-					 graph2dhybridwindowcontrolwidget.cpp \
-					 graph2dhybridwindowdataitem.cpp \
-					 graph2dhybridwindowdatamodel.cpp \
-					 graph2dhybridwindowdatasourcedialog.cpp \
-					 graph2dhybridwindowlinesettingdialog.cpp \
-					 graph2dhybridwindowobjectbrowser.cpp \
-					 graph2dhybridwindowobjectbrowserview.cpp \
-					 graph2dhybridwindowprojectdataitem.cpp \
-					 graph2dhybridwindowresultsetting.cpp \
-					 graph2dhybridwindowview.cpp \
-					 datamodel/graph2dhybridwindowbaseiterativeresultdataitem.cpp \
-					 datamodel/graph2dhybridwindowdrawsettingdialog.cpp \
-					 datamodel/graph2dhybridwindowgridijkresultdataitem.cpp \
-					 datamodel/graph2dhybridwindowgridpointresultdataitem.cpp \
-					 datamodel/graph2dhybridwindowgridpolylineresultdataitem.cpp \
-					 datamodel/graph2dhybridwindowimportdatadataitem.cpp \
-					 datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp \
-					 datamodel/graph2dhybridwindowresultcopydataitem.cpp \
-					 datamodel/graph2dhybridwindowresultcopygroupdataitem.cpp \
-					 datamodel/graph2dhybridwindowresultdataitem.cpp \
-					 datamodel/graph2dhybridwindowresultgroupdataitem.cpp \
-					 datamodel/graph2dhybridwindowrootdataitem.cpp \
-					 datamodel/graph2dhybridwindowsettingwidget.cpp
+           graph2dhybridwindow.cpp \
+           graph2dhybridwindowactionmanager.cpp \
+           graph2dhybridwindowcontinuousexportdialog.cpp \
+           graph2dhybridwindowcontrolwidget.cpp \
+           graph2dhybridwindowdataitem.cpp \
+           graph2dhybridwindowdatamodel.cpp \
+           graph2dhybridwindowdatasourcedialog.cpp \
+           graph2dhybridwindowlinesettingdialog.cpp \
+           graph2dhybridwindowobjectbrowser.cpp \
+           graph2dhybridwindowobjectbrowserview.cpp \
+           graph2dhybridwindowprojectdataitem.cpp \
+           graph2dhybridwindowresultsetting.cpp \
+           graph2dhybridwindowview.cpp \
+           datamodel/graph2dhybridwindowbaseiterativeresultdataitem.cpp \
+           datamodel/graph2dhybridwindowdrawsettingdialog.cpp \
+           datamodel/graph2dhybridwindowgridabstractpolylineresultdataitem.cpp \
+           datamodel/graph2dhybridwindowgridijkresultdataitem.cpp \
+           datamodel/graph2dhybridwindowgridpointresultdataitem.cpp \
+           datamodel/graph2dhybridwindowgridpolylinegrouppolylineresultdataitem.cpp \
+           datamodel/graph2dhybridwindowgridpolylineresultdataitem.cpp \
+           datamodel/graph2dhybridwindowimportdatadataitem.cpp \
+           datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp \
+           datamodel/graph2dhybridwindowresultcopydataitem.cpp \
+           datamodel/graph2dhybridwindowresultcopygroupdataitem.cpp \
+           datamodel/graph2dhybridwindowresultdataitem.cpp \
+           datamodel/graph2dhybridwindowresultgroupdataitem.cpp \
+           datamodel/graph2dhybridwindowrootdataitem.cpp \
+           datamodel/graph2dhybridwindowsettingwidget.cpp
 TRANSLATIONS += languages/iricGraph2dhybrid_ar_EG.ts \
                 languages/iricGraph2dhybrid_bg_BG.ts \
                 languages/iricGraph2dhybrid_bs_BA.ts \

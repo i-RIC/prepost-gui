@@ -4,32 +4,30 @@
 <context>
     <name>GeoDataPolyLine</name>
     <message>
-        <location filename="../geodatapolyline.cpp" line="53"/>
         <source>Edit &amp;Value...</source>
-        <translation>Edicao do valor (&amp;V)</translation>
+        <translation type="vanished">Edicao do valor (&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="54"/>
+        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation> Adicionar vertice (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="55"/>
+        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation>Remover vertice (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="56"/>
+        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>Edicao de coordenadas (&amp;C)... </translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="57"/>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracao para cor de exibicao (&amp;S)</translation>
+        <translation type="vanished">Configuracao para cor de exibicao (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="105"/>
+        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation>Polilinha (&amp;L)</translation>
     </message>
@@ -64,49 +62,55 @@
         <translation>Remover o vertice da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="387"/>
+        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>A polilinha deveria ter pelo menos dois pontos.</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="392"/>
+        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation>Finalizar a definicao para linha central</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="682"/>
+        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Defina a polilinha atraves do clique de mouse. Clique duas vezes ou pressione a tecla de avanco para concluir.</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editvaluecommand.cpp" line="4"/>
+        <location filename="../geodatapolyline.cpp" line="722"/>
+        <source>polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatapolyline.cpp" line="727"/>
+        <source>Polyline</source>
+        <translation type="unfinished">Polilinha  </translation>
+    </message>
+    <message>
         <source>PolyLine value change</source>
-        <translation>Edicao de valor da polilinha</translation>
+        <translation type="vanished">Edicao de valor da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="715"/>
         <source>Edit %1 value</source>
-        <translation>Edicao do valor de %1</translation>
+        <translation type="vanished">Edicao do valor de %1</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="716"/>
         <source>Please input new value in this polyline.</source>
-        <translation>Insira um valor desta polilinha.</translation>
+        <translation type="vanished">Insira um valor desta polilinha.</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editpropertycommand.cpp" line="4"/>
         <source>PolyLine property edit</source>
-        <translation>Edicao de atributos da polilinha</translation>
+        <translation type="vanished">Edicao de atributos da polilinha</translation>
     </message>
     <message>
         <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="9"/>
@@ -122,37 +126,31 @@
 <context>
     <name>GeoDataPolyLineColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>Configuracao de cor para exibicao da polilinha</translation>
+        <translation type="vanished">Configuracao de cor para exibicao da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="20"/>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
-        <translation>Configuracao automatica pelo valor </translation>
+        <translation type="vanished">Configuracao automatica pelo valor </translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
-        <translation>Especificacao de cor</translation>
+        <translation type="vanished">Especificacao de cor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineColorSimpleSettingDialog</name>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="14"/>
         <source>Polyline Color Setting</source>
-        <translation>Configuracao de cor para exibicao da polilinha</translation>
+        <translation type="vanished">Configuracao de cor para exibicao da polilinha</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecolorsimplesettingdialog.ui" line="22"/>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
 </context>
 <context>
