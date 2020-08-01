@@ -38,11 +38,11 @@ std::string VALUE = "value";
 
 } // namespace
 
-GeoDataPolyLineGroup::GeoDataPolyLineGroup(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataPolyDataGroup(d, creator, condition),
+GeoDataPolyLineGroup::GeoDataPolyLineGroup(ProjectDataItem* d, GeoDataCreator* gdcreater, SolverDefinitionGridAttribute* condition) :
+GeoDataPolyDataGroup(d, gdcreater, condition),
 	impl {new Impl {this}}
 {
-	addAction()->setText(tr("&Add New Polyline..."));
+	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()));
 
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {

@@ -36,11 +36,12 @@ std::string VALUE = "value";
 
 } // namespace
 
-GeoDataPointGroup::GeoDataPointGroup(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataPolyDataGroup(d, creator, condition),
+GeoDataPointGroup::GeoDataPointGroup(ProjectDataItem* d, GeoDataCreator* gdcreater, SolverDefinitionGridAttribute* condition) :
+GeoDataPolyDataGroup(d, gdcreater, condition),
 	impl {new Impl {this}}
 {
-	addAction()->setText(tr("&Add New Point..."));
+	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()) );
+
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		auto mapper = impl->m_pointsActor->GetMapper();
