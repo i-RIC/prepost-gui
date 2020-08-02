@@ -193,7 +193,6 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			ti.zoneName = cont->zoneName();
 			if (cont->data() == nullptr) {return false;}
 
-			ti.gridLocation = Vertex;
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 				ti.dataNamesMap[Vertex].append(name.c_str());
 			}
@@ -211,6 +210,15 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
 					ti.dataNamesMap[JFaceCenter].append(name.c_str());
 				}
+			}
+			if (ti.dataNamesMap.find(Vertex) != ti.dataNamesMap.end() && ti.dataNamesMap[Vertex].size() > 0) {
+				ti.gridLocation = Vertex;
+			} else if (ti.dataNamesMap.find(CellCenter) != ti.dataNamesMap.end() && ti.dataNamesMap[CellCenter].size() > 0) {
+				ti.gridLocation = CellCenter;
+			} else if (ti.dataNamesMap.find(IFaceCenter) != ti.dataNamesMap.end() && ti.dataNamesMap[IFaceCenter].size() > 0) {
+				ti.gridLocation = IFaceCenter;
+			} else if (ti.dataNamesMap.find(JFaceCenter) != ti.dataNamesMap.end() && ti.dataNamesMap[IFaceCenter].size() > 0) {
+				ti.gridLocation = JFaceCenter;
 			}
 			m_dataTypeInfos.append(ti);
 		}
