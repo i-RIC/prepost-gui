@@ -1272,7 +1272,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <location filename="../geodatariversurveyhonryuexportersettingdialog.ui" line="14"/>
         <source>Export Format Setting</source>
-        <translation>エキスポートフォーマット設定</translation>
+        <translation>エクスポートフォーマット設定</translation>
     </message>
     <message>
         <source>Separator</source>
