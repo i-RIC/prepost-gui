@@ -11,7 +11,7 @@ void editVtkTextPropertySetting(vtkTextPropertySettingContainer* c, QWidget* par
 	vtkTextPropertySettingDialog dialog(parent);
 	dialog.setSetting(*c);
 
-	dialog.disableSize();
+	dialog.hideSize();
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}

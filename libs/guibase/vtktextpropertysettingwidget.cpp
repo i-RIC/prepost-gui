@@ -45,6 +45,13 @@ void vtkTextPropertySettingWidget::disableSize()
 	ui->sizeSpinBox->setDisabled(true);
 }
 
+void vtkTextPropertySettingWidget::hideSize()
+{
+	ui->sizeLabel->hide();
+	ui->sizeSpinBox->hide();
+	updateGeometry();
+}
+
 void vtkTextPropertySettingWidget::disableColor()
 {
 	ui->colorWidget->setColor(QColor(Qt::gray));

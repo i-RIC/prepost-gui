@@ -30,6 +30,11 @@ void vtkTextPropertySettingDialog::disableSize()
 	ui->widget->disableSize();
 }
 
+void vtkTextPropertySettingDialog::hideSize()
+{
+	ui->widget->hideSize();
+}
+
 void vtkTextPropertySettingDialog::disableColor()
 {
 	ui->widget->disableColor();
