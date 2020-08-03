@@ -456,7 +456,7 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libs/dataitem/measureddata/release/iricMeasureddata.dll
   ${PREPOST_GUI}/libs/geodata/netcdf/release/iricGdNetcdf.dll
   ${PREPOST_GUI}/libs/geodata/point/release/iricGdPoint.dll
-  ${PREPOST_GUI}/libs/geodata/point/release/iricGdPolyLine.dll
+  ${PREPOST_GUI}/libs/geodata/polyline/release/iricGdPolyLine.dll
   ${PREPOST_GUI}/libs/geodata/pointgroup/release/iricGdPointGroup.dll
   ${PREPOST_GUI}/libs/geodata/pointmap/release/iricGdPointmap.dll
   ${PREPOST_GUI}/libs/geodata/polydata/release/iricGdPolydata.dll
