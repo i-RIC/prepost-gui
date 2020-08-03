@@ -3,6 +3,14 @@
 #   mkdir _build
 #   cd _build
 #   cmake -DCMAKE_INSTALL_PREFIX:PATH=C:/online_update -DPREPOST_GUI:PATH=C:/prepost-gui ..
+#
+# to test:
+#   mkdir _build
+#   cd _build
+#   cmake -DCMAKE_INSTALL_PREFIX:PATH=./online_update -DPREPOST_GUI:PATH=.. ..
+#   cmake --build . --config release --target install
+#
+
 
 cmake_minimum_required(VERSION 3.1)
 
