@@ -291,7 +291,7 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 
 	updateShapeData();
 	// load data for index 0;
-	handleDimensionCurrentIndexChange(0, 0);
+	loadRasterData(0);
 }
 
 void GeoDataNetcdf::saveExternalData(const QString& /*filename*/)

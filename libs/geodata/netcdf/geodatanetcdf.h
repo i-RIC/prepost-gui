@@ -97,6 +97,7 @@ private:
 
 	static nc_type getNcType(SolverDefinitionGridAttributeDimension* dim);
 	static nc_type getNcType(SolverDefinitionGridAttribute* cond);
+	virtual void loadRasterData(int index) = 0;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
