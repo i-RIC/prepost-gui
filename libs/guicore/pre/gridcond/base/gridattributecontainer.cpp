@@ -68,14 +68,20 @@ void GridAttributeContainer::setCustomModified(bool c)
 void GridAttributeContainer::updateConnections()
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
+	// avoid duplication
+	disconnect(dims, SIGNAL(currentIndexChanged(int, int)), this, SLOT(handleDimensionCurrentIndexChange(int, int)));
 	connect(dims, SIGNAL(currentIndexChanged(int,int)), this, SLOT(handleDimensionCurrentIndexChange(int,int)));
 	for (auto cont : dims->containers()) {
-		connect(cont, SIGNAL(valuesChanged(std::vector<QVariant>,std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>,std::vector<QVariant>)));
+		// avoid duplication
+		disconnect(cont, SIGNAL(valuesChanged(std::vector<QVariant>, std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>, std::vector<QVariant>)));
+		connect(cont, SIGNAL(valuesChanged(std::vector<QVariant>, std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>, std::vector<QVariant>)));
 	}
 }
 
 void GridAttributeContainer::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
 {
+	if (oldIndex == newIndex) {return;}
+
 	QString fname = temporaryExternalFilename(oldIndex);
 	QFileInfo finfo(fname);
 	iRIC::mkdirRecursively(finfo.absolutePath());
