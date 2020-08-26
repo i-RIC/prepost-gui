@@ -33,6 +33,7 @@ public:
 	virtual std::vector<QVariant> variantValues() const = 0;
 	virtual void setVariantValues(const std::vector<QVariant>& vals) = 0;
 	QVariant currentVariantValue() const;
+	void clear();
 
 	// I/O functions
 	virtual bool loadFromExternalFile(const QString& filename) = 0;

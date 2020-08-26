@@ -46,6 +46,7 @@ public:
 	void saveToCgnsFile(const int fn) override;
 	/// Set all dimensions to the first.
 	void setDimensionsToFirst() override;
+	void clearDimensionsIfNoDataExists() override;
 
 public slots:
 	void setupScalarBar();

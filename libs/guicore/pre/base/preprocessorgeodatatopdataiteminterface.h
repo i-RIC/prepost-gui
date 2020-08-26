@@ -20,6 +20,7 @@ public:
 	virtual PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) const = 0;
 	/// Set all dimensions to the first.
 	virtual void setDimensionsToFirst() = 0;
+	virtual void clearDimensionsIfNoDataExists() = 0;
 };
 
 #endif // PREPROCESSORGEODATATOPDATAITEMINTERFACE_H

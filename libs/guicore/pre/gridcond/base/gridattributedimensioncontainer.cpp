@@ -44,6 +44,12 @@ QVariant GridAttributeDimensionContainer::currentVariantValue() const
 	return variantValue(currentIndex());
 }
 
+void GridAttributeDimensionContainer::clear()
+{
+	std::vector<QVariant> empty;
+	setVariantValues(empty);
+}
+
 void GridAttributeDimensionContainer::setCurrentIndex(int index, bool noDraw)
 {
 	impl->m_currentIndex = index;
