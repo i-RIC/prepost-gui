@@ -140,7 +140,7 @@
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -151,7 +151,17 @@
         <translation>GDAL のデータファイルは、次元のない格子属性と、時間次元を持つ格子属性にのみインポートできます。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Dimension values for time mismatch.</source>
+        <translation>「時間」次元の値が一致しません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>%1 には座標系が指定されていません。座標系を手動で選択してください。</translation>
     </message>

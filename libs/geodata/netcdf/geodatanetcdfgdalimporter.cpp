@@ -182,7 +182,15 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 		timeVals.push_back(dt.toMSecsSinceEpoch() / 1000.0);
 	}
 	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
-	timeContainer->setValues(timeVals);
+	if (timeContainer->values().size() != 0) {
+		// the time values should coincide
+		if (timeContainer->values() != timeVals) {
+			QMessageBox::critical(w, tr("Error"), tr("Dimension values for time mismatch."));
+			return false;
+		}
+	} else {
+		timeContainer->setValues(timeVals);
+	}
 
 	return true;
 }

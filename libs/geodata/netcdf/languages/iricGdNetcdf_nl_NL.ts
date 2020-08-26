@@ -136,7 +136,7 @@
     <message>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
         <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -147,7 +147,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="336"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Dimension values for time mismatch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation type="unfinished"></translation>
     </message>
