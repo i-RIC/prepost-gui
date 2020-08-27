@@ -33,7 +33,13 @@ void iRICMainWindow::SnapshotSaver::save(SnapshotEnabledWindowInterface* enabled
 	auto suffix = QFileInfo(filename).suffix();
 
 	if (suffix == "jpg" || suffix == "png" || suffix == "bmp") {
-		enabledWindow->setTransparent(false);
+		bool transparent = false;
+		if (suffix == "png") {
+			auto w = dynamic_cast<QWidget*> (enabledWindow);
+			int ret = QMessageBox::information(w, tr("Transparency Setting"), tr("Do you want to make the background transparent?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			transparent = (ret == QMessageBox::Yes);
+		}
+		enabledWindow->setTransparent(transparent);
 		QPixmap pixmap = enabledWindow->snapshot();
 		pixmap.save(filename);
 	} else if (suffix == "pdf" || suffix == "eps" || suffix == "svg") {
