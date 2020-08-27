@@ -4,6 +4,7 @@
 #include "post2dwindowrootdataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -18,15 +19,16 @@
 #include <vtkRenderer.h>
 
 Post2dWindowBackgroundImagesDataItem::Post2dWindowBackgroundImagesDataItem(GraphicsWindowDataItem* parent) :
-	Post2dWindowDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
+	Post2dWindowDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_addAction {new QAction(Post2dWindowBackgroundImagesDataItem::tr("&Add Image"), this)},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), Post2dWindowBackgroundImagesDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), Post2dWindowBackgroundImagesDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);
 
-	m_addAction = new QAction(Post2dWindowBackgroundImagesDataItem::tr("&Add Image"), this);
-	m_deleteAllAction = new QAction(Post2dWindowBackgroundImagesDataItem::tr("&Delete All"), this);
-
 	connect(m_addAction, SIGNAL(triggered()), projectData()->mainfile(), SLOT(addBackgroundImage()));
+	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 	connect(projectData()->mainfile(), SIGNAL(backgroundImageAdded()), this, SLOT(addChildItem()));
 	connect(this, SIGNAL(selectBackgroundImage(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
@@ -143,6 +145,7 @@ void Post2dWindowBackgroundImagesDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_addAction);
 	menu->addSeparator();
+	menu->addAction(m_deleteSelectedAction);
 	menu->addAction(m_deleteAllAction);
 }
 
@@ -173,6 +176,36 @@ void Post2dWindowBackgroundImagesDataItem::handleStandardItemChange()
 {
 	GraphicsWindowDataItem::handleStandardItemChange();
 	projectData()->mainfile()->updateActorVisibility(-1, m_standardItem->checkState() == Qt::Checked);
+}
+
+void Post2dWindowBackgroundImagesDataItem::deleteSelected()
+{
+	if (m_childItems.size() == 0) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("There is no background image."), QMessageBox::Ok);
+		return;
+	}
+
+	auto items = m_childItems;
+
+	std::vector<QString> names;
+	for (auto item : items) {
+		names.push_back(item->standardItem()->text());
+	}
+
+	ItemMultiSelectingDialog dialog(mainWindow());
+	dialog.setWindowTitle(tr("Delete selected background images"));
+	dialog.setItems(names);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto settings = dialog.selectSettings();
+	auto mainfile = projectData()->mainfile();
+	for (int i = 0; i < settings.size(); ++i) {
+		if (settings.at(i)) {
+			// delete the item
+			mainfile->deleteImage(items.at(i)->standardItem()->index());
+		}
+	}
 }
 
 void Post2dWindowBackgroundImagesDataItem::deleteAll()
