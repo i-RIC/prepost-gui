@@ -184,6 +184,7 @@ HEADERS += arrowsettingcontainer.h \
            widget/gridshapeeditdialog.h \
            widget/integernumberdisplaylabel.h \
            widget/integernumbereditwidget.h \
+           widget/itemmultiselectingdialog.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
            widget/realnumberdisplaylabel.h \
@@ -221,6 +222,7 @@ FORMS += scalarbardialog.ui \
          widget/doublespinboxwithhelp.ui \
          widget/filenameeditwidget.ui \
          widget/gridshapeeditdialog.ui \
+         widget/itemmultiselectingdialog.ui \
          widget/itemselectingdialog.ui \
          widget/transparencywidget.ui \
          widget/waitdialog.ui
@@ -323,6 +325,7 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/gridshapeeditdialog.cpp \
            widget/integernumberdisplaylabel.cpp \
            widget/integernumbereditwidget.cpp \
+           widget/itemmultiselectingdialog.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
            widget/realnumberdisplaylabel.cpp \
