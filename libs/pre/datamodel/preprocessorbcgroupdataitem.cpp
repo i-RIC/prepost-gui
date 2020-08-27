@@ -20,7 +20,12 @@
 #include <iriclib.h>
 
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
-	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
+	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_dummyEditAction {new QAction(PreProcessorBCGroupDataItem::tr("&Edit Condition..."), this)},
+	m_dummyDeleteAction {new QAction(PreProcessorBCGroupDataItem::tr("&Delete..."), this)},
+	m_dummyAssignAction {new QAction(PreProcessorBCGroupDataItem::tr("&Assign Condition"), this)},
+	m_dummyReleaseAction {new QAction(PreProcessorBCGroupDataItem::tr("&Release Condition"), this)},
+	m_bcMenu {new QMenu(PreProcessorBCGroupDataItem::tr("&Boundary Condition"), mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("bc");
@@ -37,17 +42,10 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 		m_addActions.append(addAction);
 	}
 
-	m_dummyEditAction = new QAction(PreProcessorBCGroupDataItem::tr("&Edit Condition..."), this);
 	m_dummyEditAction->setDisabled(true);
-	m_dummyDeleteAction = new QAction(PreProcessorBCGroupDataItem::tr("&Delete..."), this);
 	m_dummyDeleteAction->setDisabled(true);
-
-	m_dummyAssignAction = new QAction(PreProcessorBCGroupDataItem::tr("&Assign Condition"), this);
 	m_dummyAssignAction->setDisabled(true);
-	m_dummyReleaseAction = new QAction(PreProcessorBCGroupDataItem::tr("&Release Condition"), this);
 	m_dummyReleaseAction->setDisabled(true);
-
-	m_bcMenu = new QMenu(PreProcessorBCGroupDataItem::tr("&Boundary Condition"), mainWindow());
 }
 
 PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
