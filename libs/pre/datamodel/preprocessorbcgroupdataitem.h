@@ -12,7 +12,6 @@ class PreProcessorBCGroupDataItem : public PreProcessorDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCGroupDataItem();
 	void loadFromCgnsFile(const int fn) override;
@@ -33,6 +32,10 @@ public:
 public slots:
 	void addCondition();
 
+private slots:
+	void deleteSelected();
+	void deleteAll();
+
 signals:
 	void itemsUpdated();
 	void itemsLoaded();
@@ -45,6 +48,9 @@ private:
 	void renumberItemsForCgns();
 
 	QList<QAction*> m_addActions;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
+
 	int m_projectBuildNumber;
 
 	QAction* m_dummyEditAction;

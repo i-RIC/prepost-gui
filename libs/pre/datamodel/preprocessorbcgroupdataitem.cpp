@@ -4,6 +4,7 @@
 #include "preprocessorgridtypedataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
@@ -14,6 +15,7 @@
 #include <QDomNode>
 #include <QMainWindow>
 #include <QMenu>
+#include <QMessageBox>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
@@ -21,6 +23,8 @@
 
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
 	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
 	m_dummyEditAction {new QAction(PreProcessorBCGroupDataItem::tr("&Edit Condition..."), this)},
 	m_dummyDeleteAction {new QAction(PreProcessorBCGroupDataItem::tr("&Delete..."), this)},
 	m_dummyAssignAction {new QAction(PreProcessorBCGroupDataItem::tr("&Assign Condition"), this)},
@@ -41,6 +45,8 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 		connect(addAction, SIGNAL(triggered()), this, SLOT(addCondition()));
 		m_addActions.append(addAction);
 	}
+	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
+	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 
 	m_dummyEditAction->setDisabled(true);
 	m_dummyDeleteAction->setDisabled(true);
@@ -195,6 +201,9 @@ void PreProcessorBCGroupDataItem::addCustomMenuItems(QMenu* menu)
 	for (int i = 0; i < m_addActions.count(); ++i) {
 		menu->addAction(m_addActions[i]);
 	}
+	menu->addSeparator();
+	menu->addAction(m_deleteSelectedAction);
+	menu->addAction(m_deleteAllAction);
 }
 
 void PreProcessorBCGroupDataItem::addCondition()
@@ -217,6 +226,45 @@ void PreProcessorBCGroupDataItem::addCondition()
 		delete item;
 		dataModel()->handleObjectBrowserSelection(m_standardItem->index());
 		updateItemMap();
+	}
+}
+
+void PreProcessorBCGroupDataItem::deleteSelected()
+{
+	if (m_childItems.size() == 0) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("There is no boundary condition."), QMessageBox::Ok);
+		return;
+	}
+
+	auto items = m_childItems;
+	std::vector<QString> names;
+	for (GraphicsWindowDataItem* item : items) {
+		names.push_back(item->standardItem()->text());
+	}
+
+	ItemMultiSelectingDialog dialog(mainWindow());
+	dialog.setWindowTitle(tr("Delete selected boundary conditions"));
+	dialog.setItems(names);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto settings = dialog.selectSettings();
+	for (int i = 0; i < settings.size(); ++i) {
+		if (settings.at(i)) {
+			// delete the item
+			delete items.at(i);
+		}
+	}
+}
+
+void PreProcessorBCGroupDataItem::deleteAll()
+{
+	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all boundary conditions?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
+	auto items = m_childItems;
+	for (auto item : items) {
+		delete item;
 	}
 }
 
