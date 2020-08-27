@@ -26,9 +26,9 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void updateBCMenu(PreProcessorBCSettingDataItem* item);
 	void setupAddActions();
-	const QList<QAction*>& addActions() const {return m_addActions;}
-	QAction* dummyEditAction() const {return m_dummyEditAction;}
-	QAction* dummyDeleteAction() const {return m_dummyDeleteAction;}
+	const QList<QAction*>& addActions() const;
+	QAction* dummyEditAction() const;
+	QAction* dummyDeleteAction() const;
 
 public slots:
 	void executeMapping(bool noDraw = false);

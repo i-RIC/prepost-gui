@@ -134,6 +134,21 @@ void PreProcessorBCSettingGroupDataItem::setupAddActions()
 	}
 }
 
+const QList<QAction*>& PreProcessorBCSettingGroupDataItem::addActions() const
+{
+	return m_addActions;
+}
+
+QAction* PreProcessorBCSettingGroupDataItem::dummyEditAction() const
+{
+	return m_dummyEditAction;
+}
+
+QAction* PreProcessorBCSettingGroupDataItem::dummyDeleteAction() const
+{
+	return m_dummyDeleteAction;
+}
+
 void PreProcessorBCSettingGroupDataItem::addCondition()
 {
 	QAction* a = dynamic_cast<QAction*>(sender());
