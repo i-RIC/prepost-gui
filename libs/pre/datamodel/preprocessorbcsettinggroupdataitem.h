@@ -14,7 +14,6 @@ class PreProcessorBCSettingGroupDataItem : public PreProcessorDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCSettingGroupDataItem();
 	void loadFromCgnsFile(const int fn) override;
