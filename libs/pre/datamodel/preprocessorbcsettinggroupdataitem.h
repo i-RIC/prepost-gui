@@ -15,7 +15,8 @@ class PreProcessorBCSettingGroupDataItem : public PreProcessorDataItem
 
 public:
 	PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent);
-	~PreProcessorBCSettingGroupDataItem();
+	~PreProcessorBCSettingGroupDataItem() override;
+
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
 	void informGridUpdate();
@@ -35,6 +36,10 @@ public slots:
 	void loadItems();
 	void addCondition();
 
+private slots:
+	void deleteSelected();
+	void deleteAll();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -42,6 +47,9 @@ protected:
 private:
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> m_itemMap;
 	QList<QAction*> m_addActions;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
+
 	QAction* m_dummyEditAction;
 	QAction* m_dummyDeleteAction;
 };

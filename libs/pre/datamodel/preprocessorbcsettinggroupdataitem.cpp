@@ -7,6 +7,7 @@
 #include "preprocessorgridtypedataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -22,18 +23,22 @@
 #include <iriclib.h>
 
 PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent) :
-	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
+	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
+	m_dummyEditAction {new QAction("&Edit Condition...", this)},
+	m_dummyDeleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), "&Delete...", this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setSubPath("bcsetting");
 
-	m_dummyEditAction = new QAction("&Edit Condition...", this);
 	m_dummyEditAction->setDisabled(true);
-	m_dummyDeleteAction = new QAction("&Delete...", this);
-	m_dummyDeleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 	m_dummyDeleteAction->setDisabled(true);
 	setupAddActions();
+
+	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
+	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 }
 
 PreProcessorBCSettingGroupDataItem::~PreProcessorBCSettingGroupDataItem()
@@ -44,6 +49,52 @@ void PreProcessorBCSettingGroupDataItem::loadFromCgnsFile(const int /*fn*/)
 
 void PreProcessorBCSettingGroupDataItem::saveToCgnsFile(const int /*fn*/)
 {}
+
+void PreProcessorBCSettingGroupDataItem::deleteSelected()
+{
+	if (m_childItems.size() == 0) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("There is no boundary condition setting."), QMessageBox::Ok);
+		return;
+	}
+
+	std::vector<PreProcessorBCSettingDataItem*> items;
+
+	std::vector<QString> names;
+	for (auto item : m_childItems) {
+		auto bcSettingItem = dynamic_cast<PreProcessorBCSettingDataItem*> (item);
+		if (bcSettingItem->standardItem() == nullptr) {continue;}
+
+		items.push_back(bcSettingItem);
+		names.push_back(bcSettingItem->standardItem()->text());
+	}
+
+	ItemMultiSelectingDialog dialog(mainWindow());
+	dialog.setWindowTitle(tr("Delete selected boundary condition settings"));
+	dialog.setItems(names);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto settings = dialog.selectSettings();
+	for (int i = 0; i < settings.size(); ++i) {
+		if (settings.at(i)) {
+			// delete the item
+			delete items.at(i)->bcDataItem();
+		}
+	}
+}
+
+void PreProcessorBCSettingGroupDataItem::deleteAll()
+{
+	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all boundary condition settings?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
+	auto items = m_childItems;
+	for (auto item : items) {
+		auto bcSettingItem = dynamic_cast<PreProcessorBCSettingDataItem*> (item);
+		if (bcSettingItem->standardItem() == nullptr) {continue;}
+		delete bcSettingItem->bcDataItem();
+	}
+}
 
 void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}
@@ -62,6 +113,9 @@ void PreProcessorBCSettingGroupDataItem::addCustomMenuItems(QMenu* menu)
 	for (int i = 0; i < m_addActions.count(); ++i) {
 		menu->addAction(m_addActions[i]);
 	}
+	menu->addSeparator();
+	menu->addAction(m_deleteSelectedAction);
+	menu->addAction(m_deleteAllAction);
 }
 
 void PreProcessorBCSettingGroupDataItem::updateZDepthRangeItemCount()
