@@ -61,6 +61,8 @@ QLayout* InputConditionPage::loadAuto(const QDomNode& node, InputConditionWidget
 	QDomNodeList items = node.childNodes();
 	for (int i = 0; i < items.length(); ++i) {
 		QDomNode child = items.item(i);
+		if (child.nodeName() == "Output") {continue;}
+
 		simple = simple && (child.nodeName() == "Item" || child.nodeName() == "GroupBox");
 	}
 	if (simple) {
