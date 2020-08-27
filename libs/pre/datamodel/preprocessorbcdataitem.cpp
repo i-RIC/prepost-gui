@@ -47,11 +47,7 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 	m_isCustomModified {false},
 	m_hideSetting {hideSetting}
 {
-	if (hideSetting) {
-		setupStandardItem(Checked, NotReorderable, Deletable);
-	} else {
-		setupStandardItem(Checked, NotReorderable, NotDeletable);
-	}
+	setupStandardItem(Checked, NotReorderable, Deletable);
 	setIsCommandExecuting(true);
 	m_standardItem->setEditable(true);
 	setIsCommandExecuting(false);
