@@ -255,17 +255,17 @@ Do you really want to import grid from this file?</source>
         <translation>新项目</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="69"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="65"/>
         <source>&amp;Edit Condition...</source>
         <translation>&amp;编辑条件...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="71"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="67"/>
         <source>&amp;Assign Condition</source>
         <translation>&amp;分配条件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="74"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="70"/>
         <source>&amp;Release Condition</source>
         <translation>&amp;发布条件</translation>
     </message>
@@ -273,39 +273,76 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBCGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="23"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="25"/>
         <source>Boundary Condition</source>
         <translation>边界条件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="34"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="43"/>
         <source>Add %1</source>
         <translation>添加%1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="40"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="28"/>
         <source>&amp;Edit Condition...</source>
         <translation>&amp;编辑条件...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="42"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="26"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="27"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="27"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="28"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="29"/>
         <source>&amp;Delete...</source>
         <translation>&amp;删除...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="45"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="30"/>
         <source>&amp;Assign Condition</source>
         <translation>&amp;分配条件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="47"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="31"/>
         <source>&amp;Release Condition</source>
         <translation>&amp;发布条件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="50"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="32"/>
         <source>&amp;Boundary Condition</source>
         <translation>&amp;边界条件</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="235"/>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="235"/>
+        <source>There is no boundary condition.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="246"/>
+        <source>Delete selected boundary conditions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="262"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="262"/>
+        <source>Are you sure you want to delete all boundary conditions?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -321,12 +358,12 @@ Do you really want to import grid from this file?</source>
         <translation>多边形</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="214"/>
+        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="251"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="214"/>
+        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="251"/>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation>没有网格时，无法执行条件。</translation>
     </message>
@@ -334,22 +371,43 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="25"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="26"/>
         <source>Boundary Condition Setting</source>
         <translation>边界条件设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="130"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="56"/>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="56"/>
+        <source>There is no boundary condition setting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="72"/>
+        <source>Delete selected boundary condition settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="88"/>
+        <source>Are you sure you want to delete all boundary condition settings?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="184"/>
         <source>Add %1</source>
         <translation>添加%1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="162"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="88"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="231"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="162"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="231"/>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation>无网格时无法执行条件</translation>
     </message>
@@ -365,27 +423,51 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="23"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="24"/>
         <source>Background Images</source>
         <translation>背景图片</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="28"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="25"/>
         <source>&amp;Add Image...</source>
         <translation>&amp;添加图片...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="29"/>
-        <source>&amp;Delete All</source>
-        <translation>&amp;删除全部</translation>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="26"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="148"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="27"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="152"/>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="152"/>
+        <source>There is no background image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="164"/>
+        <source>Delete selected background images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Delete All</source>
+        <translation type="vanished">&amp;删除全部</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="181"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="148"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="181"/>
         <source>Are you sure you want to delete all background images?</source>
         <translation>确定删除所有背景图片吗？</translation>
     </message>
@@ -731,164 +813,180 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="71"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="65"/>
         <source>&amp;Import...</source>
         <translation>&amp;导入...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="75"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="66"/>
         <source>&amp;Import from web...</source>
         <translation>&amp;从网络导入</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="79"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="71"/>
         <source>Delete &amp;All...</source>
         <translation>&amp;全部删除...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="82"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="69"/>
         <source>Export All Polygons...</source>
         <translation>导出所有多边形...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="85"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="67"/>
         <source>&amp;Color Setting...</source>
         <translation>&amp;颜色设置...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="87"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="68"/>
         <source>Set Up Scalarbar...</source>
         <translation>设置标量栏...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="122"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="70"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="116"/>
         <source>&amp;Add</source>
         <translation>&amp;添加</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="192"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="187"/>
         <source>All importable files (%1)</source>
         <translation>所有可载入文件(%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="197"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="192"/>
         <source>Select file to import</source>
         <translation>选择导入文件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="211"/>
         <source>Select algorithm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="216"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="211"/>
         <source>Please select algorithm to import data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="217"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="324"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="456"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1208"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="217"/>
         <source>File type cannot be recognized from the file extension. : %1</source>
         <translation>无法通过文件扩展名识别文件类型。 :%1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="232"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="236"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="379"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="383"/>
         <source>Import failed</source>
         <translation>导入失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="237"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="232"/>
         <source>Importing data from %1 failed.</source>
         <translation>从%1导入数据失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="241"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="236"/>
         <source>%1 contains no data to import.</source>
         <translation>%1不包含导入数据</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="254"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="401"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="249"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="396"/>
         <source>Importing data...</source>
         <translation>正在载入数据...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="258"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="404"/>
         <source>Canceled</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="263"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="409"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="258"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="404"/>
         <source>Importing canceled.</source>
         <translation>取消载入</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="270"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1182"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="275"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="270"/>
         <source>To import the geographic data, specify coordinate system first.</source>
         <translation>要导入地理数据，请首先指定坐标系。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="324"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="456"/>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
         <translation>指定的文件包含无效数据，这些数据被忽略。 忽略的数据如下:
         %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="379"/>
         <source>Importing data failed.</source>
         <translation>载入数据失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="383"/>
         <source>No data to import.</source>
         <translation>无载入数据</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="512"/>
         <source>Select data to export</source>
         <translation>选择导出数据</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="517"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="512"/>
         <source>Please select which data to export.</source>
         <translation>请选择要导出的数据。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="872"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="869"/>
         <source>%1 Color Setting</source>
         <translation>%1色彩设置</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1115"/>
         <source>Export Polygons</source>
         <translation>导出多边形</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1115"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1182"/>
+        <source>There is no geographic data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1187"/>
+        <source>Delete selected geograhic data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1208"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>确定删除%1组内的全部项目？</translation>
     </message>
@@ -1537,7 +1635,7 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1412"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1415"/>
         <source>Grid</source>
         <translation>网格</translation>
     </message>
@@ -1646,22 +1744,22 @@ This algorithm can be used only for structured grids.</source>
         <translation>&amp;属性生成</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1415"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1418"/>
         <source> [No Data]</source>
         <translation>[无数据]</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1425"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1428"/>
         <source> (%1 x %2 = %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1428"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1431"/>
         <source> (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1456"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1459"/>
         <source>Generate %1</source>
         <translation>生成%1</translation>
     </message>
@@ -1891,14 +1989,49 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorMeasuredDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="32"/>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="34"/>
         <source>Measured Values</source>
         <translation>测量值</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="43"/>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="35"/>
         <source>&amp;Import...</source>
         <translation>&amp;导入...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="36"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="37"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="136"/>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="136"/>
+        <source>There is no measured data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="148"/>
+        <source>Delete selected measured data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="165"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="165"/>
+        <source>Are you sure you want to delete all measured data?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

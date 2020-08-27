@@ -370,27 +370,51 @@
 <context>
     <name>Post2dWindowBackgroundImagesDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="21"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="22"/>
         <source>Background Images</source>
         <translation>Imagem do fundo</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="26"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="23"/>
         <source>&amp;Add Image</source>
         <translation>Adicionar imagem (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="27"/>
-        <source>&amp;Delete All</source>
-        <translation>Excluir todos(&amp;A)</translation>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="24"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="25"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="184"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="184"/>
+        <source>There is no background image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="196"/>
+        <source>Delete selected background images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Delete All</source>
+        <translation type="vanished">Excluir todos(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="213"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="213"/>
         <source>Are you sure you want to delete all background images?</source>
         <translation>Tem certeza de que deseja excluir todas as imagens de fundo ?</translation>
     </message>
@@ -496,7 +520,7 @@
     <message>
         <location filename="../datamodel/post2dwindowcellscalargrouptopdataitem.cpp" line="379"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Para exportar o arquivo de shapefile, altere "Configuracoes de exibicao" para "Figura de Contorno", nao para "Franja Colorida" ou "Contorno".</translation>
+        <translation>Para exportar o arquivo de shapefile, altere &quot;Configuracoes de exibicao&quot; para &quot;Figura de Contorno&quot;, nao para &quot;Franja Colorida&quot; ou &quot;Contorno&quot;.</translation>
     </message>
 </context>
 <context>
@@ -773,14 +797,49 @@
 <context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="29"/>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="31"/>
         <source>Measured Values</source>
         <translation>Valores medidos</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="37"/>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="32"/>
         <source>&amp;Import...</source>
         <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="33"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="34"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="137"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="137"/>
+        <source>There is no measured data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="149"/>
+        <source>Delete selected measured data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="166"/>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="166"/>
+        <source>Are you sure you want to delete all measured data?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -828,7 +887,7 @@
     <message>
         <location filename="../datamodel/post2dwindownodescalargrouptopdataitem.cpp" line="371"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Para exportar o arquivo de shapefile, altere "Configuracoes de exibicao" para "Figura de Contorno", nao para "Franja Colorida" ou "Contorno".</translation>
+        <translation>Para exportar o arquivo de shapefile, altere &quot;Configuracoes de exibicao&quot; para &quot;Figura de Contorno&quot;, nao para &quot;Franja Colorida&quot; ou &quot;Contorno&quot;.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +1005,20 @@
         <translation>Intervalo do tempo de ocorrencia</translation>
     </message>
     <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="62"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="100"/>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="467"/>
         <source>-</source>
@@ -1031,6 +1104,19 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="429"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="603"/>
         <source>Color:</source>
         <translation>Cor de exibicao:</translation>
@@ -1039,6 +1125,15 @@
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="630"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="637"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticlestructuredsettingdialog.ui" line="688"/>
@@ -1082,6 +1177,20 @@
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="54"/>
         <source>Generation interval</source>
         <translation>Intervalo de ocorrencia</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="65"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="103"/>
@@ -1168,6 +1277,15 @@
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="481"/>
         <source>Size:</source>
         <translation>Dimensao :</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="488"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.ui" line="539"/>
@@ -1324,6 +1442,17 @@
         <translation>Intervalo de procriacao  </translation>
     </message>
     <message>
+        <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="209"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="245"/>
         <source>-</source>
         <translation>reduzir</translation>
@@ -1357,6 +1486,15 @@
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="408"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="415"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowstreamlinestructuredsettingdialog.ui" line="466"/>
@@ -1436,6 +1574,15 @@
         <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="260"/>
         <source>Width:</source>
         <translation>Espessura da linha :</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="267"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui" line="318"/>

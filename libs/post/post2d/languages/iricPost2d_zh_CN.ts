@@ -370,27 +370,51 @@
 <context>
     <name>Post2dWindowBackgroundImagesDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="21"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="22"/>
         <source>Background Images</source>
         <translation>背景图片</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="26"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="23"/>
         <source>&amp;Add Image</source>
         <translation>&amp;添加图片</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="27"/>
-        <source>&amp;Delete All</source>
-        <translation>&amp;全删除</translation>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="24"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="25"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="184"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="184"/>
+        <source>There is no background image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="196"/>
+        <source>Delete selected background images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Delete All</source>
+        <translation type="vanished">&amp;全删除</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="213"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="213"/>
         <source>Are you sure you want to delete all background images?</source>
         <translation>确定删除所有背景图片吗？</translation>
     </message>
@@ -773,14 +797,49 @@
 <context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="29"/>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="31"/>
         <source>Measured Values</source>
         <translation>测量值</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="37"/>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="32"/>
         <source>&amp;Import...</source>
         <translation>&amp;导入...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="33"/>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="34"/>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="137"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="137"/>
+        <source>There is no measured data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="149"/>
+        <source>Delete selected measured data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="166"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="166"/>
+        <source>Are you sure you want to delete all measured data?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
