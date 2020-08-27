@@ -14,10 +14,8 @@ class PreProcessorMeasuredDataTopDataItem : public PreProcessorDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent);
-	/// Destructor
-	~PreProcessorMeasuredDataTopDataItem();
+	~PreProcessorMeasuredDataTopDataItem() override;
 	const QList<MeasuredDataFileDataItem*> fileDataItems() const;
 	void setupActors();
 	void updateActorSettings();
@@ -27,6 +25,10 @@ public slots:
 	void addChildItem();
 	void deleteChildItem(int index);
 
+private slots:
+	void deleteSelected();
+	void deleteAll();
+
 signals:
 	void selectMeasuredData(const QModelIndex& current);
 
@@ -35,6 +37,8 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QAction* m_importAction;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
 };
 
 #endif // PREPROCESSORMEASUREDDATATOPDATAITEM_H
