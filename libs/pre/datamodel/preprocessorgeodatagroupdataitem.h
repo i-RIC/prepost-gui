@@ -27,7 +27,7 @@ class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDat
 
 public:
 	PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
-	virtual ~PreProcessorGeoDataGroupDataItem();
+	~PreProcessorGeoDataGroupDataItem() override;
 
 	void addCustomMenuItems(QMenu* menu) override;
 	void closeCgnsFile() override;
@@ -92,9 +92,10 @@ public slots:
 	void importFromWeb();
 	void doExport();
 	void exportAllPolygons();
-	void deleteAll();
 
 private slots:
+	void deleteSelected();
+	void deleteAll();
 	void cancelImport();
 
 signals:
@@ -115,6 +116,7 @@ protected:
 	QAction* m_editColorMapAction;
 	QAction* m_setupScalarBarAction;
 	QAction* m_exportAllPolygonsAction;
+	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;
 	QSignalMapper* m_addSignalMapper;
 	SolverDefinitionGridAttribute* m_condition;
