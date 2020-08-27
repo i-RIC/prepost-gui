@@ -21,10 +21,8 @@ class Post2dWindowMeasuredDataTopDataItem : public Post2dWindowDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent);
-	/// Destructor
-	~Post2dWindowMeasuredDataTopDataItem();
+	~Post2dWindowMeasuredDataTopDataItem() override;
 	const QList<MeasuredDataFileDataItem*> fileDataItems() const;
 	void setupActors();
 	void updateActorSettings();
@@ -34,6 +32,10 @@ public slots:
 	void addChildItem();
 	void setupChildItem();
 	void deleteChildItem(int index);
+
+private slots:
+	void deleteSelected();
+	void deleteAll();
 
 signals:
 	void selectMeasuredData(const QModelIndex& current);
@@ -47,6 +49,8 @@ protected:
 	vtkSmartPointer<vtkTextMapper> m_titleMapper;
 
 	QAction* m_importAction;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
 };
 
 #endif // POST2DWINDOWMEASUREDDATATOPDATAITEM_H
