@@ -21,14 +21,14 @@ public:
 	const QList<PreProcessorBCDataItem*> conditions() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void updateZDepthRangeItemCount() override;
-	QMenu* bcMenu() {return m_bcMenu;}
+	QMenu* bcMenu() const;
 	void updateBCMenu(PreProcessorBCDataItem* item);
 	void clear();
 	void clearPoints();
 	void setGrid(Grid* grid);
 	PreProcessorBCDataItem* addCondition(int index, bool hideSetting = false);
 	void renumberItemsForProject();
-	const QList<QAction*> addActions() const {return m_addActions;}
+	const QList<QAction*> addActions() const;
 
 public slots:
 	void addCondition();

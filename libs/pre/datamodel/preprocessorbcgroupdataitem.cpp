@@ -113,6 +113,11 @@ void PreProcessorBCGroupDataItem::renumberItemsForProject()
 	}
 }
 
+const QList<QAction*> PreProcessorBCGroupDataItem::addActions() const
+{
+	return m_addActions;
+}
+
 void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 {
 	// set numbers again.
@@ -266,6 +271,11 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 void PreProcessorBCGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(5);
+}
+
+QMenu* PreProcessorBCGroupDataItem::bcMenu() const
+{
+	return m_bcMenu;
 }
 
 void PreProcessorBCGroupDataItem::updateBCMenu(PreProcessorBCDataItem* item)
