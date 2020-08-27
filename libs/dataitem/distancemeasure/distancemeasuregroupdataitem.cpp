@@ -3,16 +3,21 @@
 #include "private/distancemeasuregroupdataitem_impl.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <misc/iricundostack.h>
 
 #include <QDomNode>
+#include <QMainWindow>
 #include <QMenu>
+#include <QMessageBox>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
 DistanceMeasureGroupDataItem::Impl::Impl(DistanceMeasureGroupDataItem *parent) :
-	m_addAction {new QAction {DistanceMeasureGroupDataItem::tr("&Add Measure..."), parent}}
+	m_addAction {new QAction {DistanceMeasureGroupDataItem::tr("&Add Measure..."), parent}},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), DistanceMeasureGroupDataItem::tr("Delete &Selected..."), parent)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), DistanceMeasureGroupDataItem::tr("Delete &All..."), parent)}
 {}
 
 DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent) :
@@ -26,6 +31,8 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 	m_isDeletable = false;
 
 	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
+	connect(impl->m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
+	connect(impl->m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 
 	// set up the first item.
 	addMeasure();
@@ -53,6 +60,46 @@ void DistanceMeasureGroupDataItem::addMeasure()
 	iRICUndoStack::instance().clear();
 }
 
+void DistanceMeasureGroupDataItem::deleteSelected()
+{
+	if (m_childItems.size() == 0) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("There is no distance measure."), QMessageBox::Ok);
+		return;
+	}
+
+	auto items = m_childItems;
+
+	std::vector<QString> names;
+	for (auto item : items) {
+		names.push_back(item->standardItem()->text());
+	}
+
+	ItemMultiSelectingDialog dialog(mainWindow());
+	dialog.setWindowTitle(tr("Delete selected distance measures"));
+	dialog.setItems(names);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto settings = dialog.selectSettings();
+	for (int i = 0; i < settings.size(); ++i) {
+		if (settings.at(i)) {
+			// delete the item
+			delete items.at(i);
+		}
+	}
+}
+
+void DistanceMeasureGroupDataItem::deleteAll()
+{
+	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all distance measures?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
+	auto items = m_childItems;
+	for (auto item : items) {
+		delete item;
+	}
+}
+
 void DistanceMeasureGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(2);
@@ -61,6 +108,9 @@ void DistanceMeasureGroupDataItem::updateZDepthRangeItemCount()
 void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(impl->m_addAction);
+	menu->addSeparator();
+	menu->addAction(impl->m_deleteSelectedAction);
+	menu->addAction(impl->m_deleteAllAction);
 }
 
 void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
