@@ -16080,8 +16080,8 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="2380"/>
         <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="48"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="83"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -16171,7 +16171,17 @@ Do you really want to import grid from this file?</source>
         <translation>;;EPS ファイル (*.eps);;PDFファイル (*.pdf);;SVGファイル (*.svg)</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="81"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="39"/>
+        <source>Transparency Setting</source>
+        <translation>透過設定</translation>
+    </message>
+    <message>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="39"/>
+        <source>Do you want to make the background transparent?</source>
+        <translation>背景色を透明にしますか?</translation>
+    </message>
+    <message>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="87"/>
         <source>Snapshot successfully saved to %1.</source>
         <translation>スナップショットは %1 に保存されました。</translation>
     </message>
@@ -16352,8 +16362,8 @@ Do you really want to import grid from this file?</source>
         <location filename="../main/iricmainwindow.cpp" line="2075"/>
         <location filename="../main/iricmainwindow.cpp" line="2113"/>
         <location filename="../main/iricmainwindow.cpp" line="2155"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="71"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="79"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -16408,18 +16418,18 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">PNG ファイル (*.png);;JPEG ファイル (*.jpg);;BMP ファイル (*.bmp);;EPS ファイル (*.eps);;PDFファイル (*.pdf);;SVGファイル (*.svg)</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="48"/>
         <source>This window do not support snapshot with this file type.</source>
         <translation>このウィンドウは、この種類でのスナップショットの保存をサポートしていません。</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="71"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="79"/>
         <source>Saving snapshot failed.</source>
         <translation>スナップショットの保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="83"/>
         <source>Wrong file name specified.</source>
         <translation>不正なファイル名が指定されました。</translation>
     </message>
@@ -17212,7 +17222,7 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>計算結果と実測値の比較ウィンドウを開く</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="573"/>

@@ -4,52 +4,52 @@
 <context>
     <name>AnimationController</name>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="115"/>
+        <location filename="../misc/animationcontroller.cpp" line="118"/>
         <source>Animation ToolBar</source>
         <translation>Barra de ferramentas de animacao</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="232"/>
+        <location filename="../misc/animationcontroller.cpp" line="235"/>
         <source>&amp;Animation</source>
         <translation> Animacao  (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="247"/>
+        <location filename="../misc/animationcontroller.cpp" line="250"/>
         <source>Step &amp;Backward</source>
         <translation>Para anterior (&amp;B)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="250"/>
+        <location filename="../misc/animationcontroller.cpp" line="253"/>
         <source>Step &amp;Forward</source>
         <translation>Para seguinte (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="253"/>
+        <location filename="../misc/animationcontroller.cpp" line="256"/>
         <source>&amp;Reset</source>
         <translation>Para a tela inicial (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="256"/>
+        <location filename="../misc/animationcontroller.cpp" line="259"/>
         <source>Go to &amp;Last Step</source>
         <translation>A ultima etapa (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="259"/>
+        <location filename="../misc/animationcontroller.cpp" line="262"/>
         <source>&amp;Start/Stop Animation</source>
         <translation>Iniciar e Parar(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="262"/>
+        <location filename="../misc/animationcontroller.cpp" line="265"/>
         <source>S&amp;top Animation</source>
         <translation>Pausa (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="265"/>
+        <location filename="../misc/animationcontroller.cpp" line="268"/>
         <source>Toggle &amp;following last step</source>
         <translation>Exibir sempre a etapa final (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../misc/animationcontroller.cpp" line="269"/>
+        <location filename="../misc/animationcontroller.cpp" line="272"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation>Configuracao de velocidade para reproducao (&amp;A)...</translation>
     </message>
@@ -496,8 +496,13 @@
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="20"/>
+        <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
+When you have iRIC windows other than this, close them manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.</source>
-        <translation>Ao atualizar o iRIC, voce devera fechar o iRIC antes de iniciar iRIC Maintainance.</translation>
+        <translation type="vanished">Ao atualizar o iRIC, voce devera fechar o iRIC antes de iniciar iRIC Maintainance.</translation>
     </message>
     <message>
         <location filename="../misc/installertool.cpp" line="23"/>
@@ -514,8 +519,13 @@
     </message>
     <message>
         <location filename="../solverdef/solverdefinitiontranslationupdatewizard.cpp" line="64"/>
+        <source>This function is intended to be used by solver developers or grid creating program developers, not users.
+This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.</source>
-        <translation>Esta funcao deveria ser usada pelos desenvolvedores do solucionador ou pelos desenvolvedores do programa de criacao da grade, e nao pelos usuarios.</translation>
+        <translation type="vanished">Esta funcao deveria ser usada pelos desenvolvedores do solucionador ou pelos desenvolvedores do programa de criacao da grade, e nao pelos usuarios.</translation>
     </message>
 </context>
 <context>
@@ -548,8 +558,13 @@
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="36"/>
+        <source>%1 days have passed after launching iRIC Maintainance for the last time.
+Do you want to launch iRIC Maintainance?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.</source>
-        <translation>% 1 dias se passaram apos o ato de iniciar o iRIC Maintainance pela ultima vez.</translation>
+        <translation type="vanished">% 1 dias se passaram apos o ato de iniciar o iRIC Maintainance pela ultima vez.</translation>
     </message>
     <message>
         <location filename="../misc/periodicalupdatechecker.cpp" line="38"/>
@@ -701,32 +716,42 @@
         <translation>Atencao:  Se voce desativar a filtracao e criar uma grade muito grande, a GUI do iRIC podera se encerrar de forma anormal devido a falta de memoria.</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="294"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="296"/>
         <source>Undo</source>
         <translation>Desfazer</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.ui" line="300"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="302"/>
         <source>Undo Limit:</source>
         <translation>Numero maximo para desfazer :</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
+        <location filename="../pref/preferencepagegeneral.ui" line="328"/>
+        <source>Solver console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.ui" line="334"/>
+        <source>Maximum lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pref/preferencepagegeneral.cpp" line="65"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="61"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="65"/>
         <source>Working directory contains non-ASCII characters.</source>
         <translation>O diretorio de trabalho contem os caracteres diferentes do conjunto de ASCII.</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="77"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../pref/preferencepagegeneral.cpp" line="73"/>
+        <location filename="../pref/preferencepagegeneral.cpp" line="77"/>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>O diretorio de trabalho foi alterado, mas o novo diretorio de trabalho sera utilizado a partir da proxima vez quando iniciar a iRIC GUI !</translation>
     </message>
@@ -1447,8 +1472,13 @@
     </message>
     <message>
         <location filename="../solverdef/solverdefinitionlist.cpp" line="55"/>
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
-        <translation>Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
     </message>
 </context>
 <context>
@@ -1501,9 +1531,13 @@
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="66"/>
+        <source>Welcome to iRIC!
+iRIC can simulate rivers from Colorado River to the Nile.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Welcome to iRIC!</source>
-        <translation>Bem-vindo ao iRIC !</translation>
-        <translation>Software que possui condicoes de simular do rio Ishikari ao rio Nilo</translation>
+        <translation type="vanished">Software que possui condicoes de simular do rio Ishikari ao rio Nilo</translation>
     </message>
     <message>
         <location filename="../startpage/startpagedialog.ui" line="178"/>
@@ -1547,200 +1581,155 @@
 <context>
     <name>VerificationGraphDialog</name>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="14"/>
         <source>Verification</source>
-        <translation>Comparacao de resultados de calculo com os valores medidos</translation>
+        <translation type="vanished">Comparacao de resultados de calculo com os valores medidos</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="26"/>
         <source>Chart Type:</source>
-        <translation>Tipo de grafico:</translation>
+        <translation type="vanished">Tipo de grafico:</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="41"/>
         <source>TextLabel</source>
-        <translation>Rotulo do texto</translation>
+        <translation type="vanished">Rotulo do texto</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="66"/>
         <source>&amp;Setting...</source>
-        <translation>Configuracao (&amp;S)...</translation>
+        <translation type="vanished">Configuracao (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="73"/>
         <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="vanished">Exportar (&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.ui" line="80"/>
         <source>&amp;Close</source>
-        <translation>Fechar (&amp;C)</translation>
+        <translation type="vanished">Fechar (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="120"/>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation>Distancia pela direcao do fluxo  v  Valor medido e Resultado de calculo</translation>
+        <translation type="vanished">Distancia pela direcao do fluxo  v  Valor medido e Resultado de calculo</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="121"/>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation>Distancia pela direcao do fluxo  v  Erros residuais</translation>
+        <translation type="vanished">Distancia pela direcao do fluxo  v  Erros residuais</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="123"/>
         <source>Measured Values vs. Calculation Result</source>
-        <translation>Valores medidos  v  Resultado de calculo </translation>
+        <translation type="vanished">Valores medidos  v  Resultado de calculo </translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="124"/>
         <source>Measured Values vs. Residual Errors</source>
-        <translation>Valores medidos  v   Erros residuais</translation>
+        <translation type="vanished">Valores medidos  v   Erros residuais</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>Export CSV file</source>
-        <translation>Exportar a arquivo CSV</translation>
+        <translation type="vanished">Exportar a arquivo CSV</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="164"/>
         <source>CSV file (*.csv)</source>
-        <translation>Arquivo CSV  (*.csv)</translation>
+        <translation type="vanished">Arquivo CSV  (*.csv)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="169"/>
         <source>%1 cound not be opened.</source>
-        <translation>Nao foi possivel abrir% 1.</translation>
+        <translation type="vanished">Nao foi possivel abrir% 1.</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Information</source>
-        <translation>Informacao</translation>
+        <translation type="vanished">Informacao</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="203"/>
         <source>Data successfully exported to %1.</source>
-        <translation>Dados foram exportados para %1.</translation>
+        <translation type="vanished">Dados foram exportados para %1.</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="375"/>
         <source>Root Mean Squared Error: %1</source>
-        <translation>Root Mean Squared Error: %1</translation>
+        <translation type="vanished">Root Mean Squared Error: %1</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="398"/>
         <source>Measured Values (%1)</source>
-        <translation>Valores medidos (%1)</translation>
+        <translation type="vanished">Valores medidos (%1)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="402"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="420"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="428"/>
         <source>Calculation Result (%1)</source>
-        <translation>Resultado de calculo (%1)</translation>
+        <translation type="vanished">Resultado de calculo (%1)</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="405"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="414"/>
         <source>Stream-wise Distance</source>
-        <translation>Distancia pela direcao do fluxo</translation>
+        <translation type="vanished">Distancia pela direcao do fluxo</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="406"/>
         <source>Values</source>
-        <translation>Valores</translation>
+        <translation type="vanished">Valores</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="410"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="415"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="433"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="438"/>
         <source>Residual Error</source>
-        <translation>Erro residual</translation>
+        <translation type="vanished">Erro residual</translation>
     </message>
     <message>
-        <location filename="../verification/verificationgraphdialog.cpp" line="427"/>
-        <location filename="../verification/verificationgraphdialog.cpp" line="437"/>
         <source>Measured Value (%1)</source>
-        <translation>Valor medido (%1)</translation>
+        <translation type="vanished">Valor medido (%1)</translation>
     </message>
 </context>
 <context>
     <name>VerificationSettingDialog</name>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="14"/>
         <source>Verification Setting</source>
-        <translation>Configurar a comparacao de resultados de calculo com os valores medidos</translation>
+        <translation type="vanished">Configurar a comparacao de resultados de calculo com os valores medidos</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="20"/>
         <source>Timestep</source>
-        <translation>Etapa do tempo</translation>
+        <translation type="vanished">Etapa do tempo</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="26"/>
         <source>Select the timestep of calculation result</source>
-        <translation>Selecionar a etapa do tempo sobre o resultado de calculo</translation>
+        <translation type="vanished">Selecionar a etapa do tempo sobre o resultado de calculo</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="46"/>
         <source>Calculation Result</source>
-        <translation>Resultado de calculo</translation>
+        <translation type="vanished">Resultado de calculo</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="52"/>
         <source>Select which physical value to use for comparison.</source>
-        <translation>Selecionar qual valor fisico para o uso de comparacao</translation>
+        <translation type="vanished">Selecionar qual valor fisico para o uso de comparacao</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="61"/>
         <source>Grid:</source>
-        <translation>Grade :</translation>
+        <translation type="vanished">Grade :</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="71"/>
         <source>Physical Value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="86"/>
         <source>Measured Values</source>
-        <translation>Valores medidos</translation>
+        <translation type="vanished">Valores medidos</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="92"/>
         <source>Select which measured value to use for comparison.</source>
-        <translation>Selecionar qual valor medido para o uso de comparacao</translation>
+        <translation type="vanished">Selecionar qual valor medido para o uso de comparacao</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="101"/>
         <source>File:</source>
-        <translation>Arquivo :</translation>
+        <translation type="vanished">Arquivo :</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.ui" line="111"/>
         <source>Value:</source>
-        <translation>Valor :</translation>
+        <translation type="vanished">Valor :</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
-        <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="165"/>
         <source>No Physical Value is selected.</source>
-        <translation>O valor fisico nao foi selecionado.</translation>
+        <translation type="vanished">O valor fisico nao foi selecionado.</translation>
     </message>
     <message>
-        <location filename="../verification/verificationsettingdialog.cpp" line="169"/>
         <source>No Value is selected.</source>
-        <translation>O valor nao foi selecionado.</translation>
+        <translation type="vanished">O valor nao foi selecionado.</translation>
     </message>
 </context>
 <context>
@@ -1753,18 +1742,18 @@
         <location filename="../main/iricmainwindow.cpp" line="711"/>
         <location filename="../main/iricmainwindow.cpp" line="715"/>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
-        <location filename="../main/iricmainwindow.cpp" line="782"/>
-        <location filename="../main/iricmainwindow.cpp" line="786"/>
-        <location filename="../main/iricmainwindow.cpp" line="807"/>
-        <location filename="../main/iricmainwindow.cpp" line="1863"/>
-        <location filename="../main/iricmainwindow.cpp" line="1927"/>
-        <location filename="../main/iricmainwindow.cpp" line="1959"/>
-        <location filename="../main/iricmainwindow.cpp" line="2023"/>
-        <location filename="../main/iricmainwindow.cpp" line="2061"/>
-        <location filename="../main/iricmainwindow.cpp" line="2099"/>
-        <location filename="../main/iricmainwindow.cpp" line="2141"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
+        <location filename="../main/iricmainwindow.cpp" line="783"/>
+        <location filename="../main/iricmainwindow.cpp" line="787"/>
+        <location filename="../main/iricmainwindow.cpp" line="809"/>
+        <location filename="../main/iricmainwindow.cpp" line="1877"/>
+        <location filename="../main/iricmainwindow.cpp" line="1941"/>
+        <location filename="../main/iricmainwindow.cpp" line="1973"/>
+        <location filename="../main/iricmainwindow.cpp" line="2037"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
+        <location filename="../main/iricmainwindow.cpp" line="2113"/>
+        <location filename="../main/iricmainwindow.cpp" line="2155"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="71"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="79"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -1791,22 +1780,22 @@
         <location filename="../main/iricmainwindow.cpp" line="351"/>
         <location filename="../main/iricmainwindow.cpp" line="471"/>
         <location filename="../main/iricmainwindow.cpp" line="580"/>
-        <location filename="../main/iricmainwindow.cpp" line="821"/>
-        <location filename="../main/iricmainwindow.cpp" line="874"/>
-        <location filename="../main/iricmainwindow.cpp" line="888"/>
-        <location filename="../main/iricmainwindow.cpp" line="906"/>
-        <location filename="../main/iricmainwindow.cpp" line="964"/>
-        <location filename="../main/iricmainwindow.cpp" line="1120"/>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
-        <location filename="../main/iricmainwindow.cpp" line="1738"/>
-        <location filename="../main/iricmainwindow.cpp" line="1742"/>
-        <location filename="../main/iricmainwindow.cpp" line="1765"/>
-        <location filename="../main/iricmainwindow.cpp" line="2240"/>
-        <location filename="../main/iricmainwindow.cpp" line="2366"/>
-        <location filename="../main/iricmainwindow.cpp" line="2391"/>
+        <location filename="../main/iricmainwindow.cpp" line="823"/>
+        <location filename="../main/iricmainwindow.cpp" line="876"/>
+        <location filename="../main/iricmainwindow.cpp" line="890"/>
+        <location filename="../main/iricmainwindow.cpp" line="908"/>
+        <location filename="../main/iricmainwindow.cpp" line="966"/>
+        <location filename="../main/iricmainwindow.cpp" line="1122"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
+        <location filename="../main/iricmainwindow.cpp" line="1752"/>
+        <location filename="../main/iricmainwindow.cpp" line="1756"/>
+        <location filename="../main/iricmainwindow.cpp" line="1779"/>
+        <location filename="../main/iricmainwindow.cpp" line="2254"/>
+        <location filename="../main/iricmainwindow.cpp" line="2380"/>
+        <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="48"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="83"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
@@ -1871,53 +1860,59 @@
         <translation>A pasta de projeto devera ser vazia.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="782"/>
+        <location filename="../main/iricmainwindow.cpp" line="783"/>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation>Este arquivo nao podera ser conservado no arquivo (* .ipro), devido a que contem um enorme resultado de calculo.  Conserve-o  no projeto.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="786"/>
+        <location filename="../main/iricmainwindow.cpp" line="787"/>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
         <translation>Nao sera possivel salvar no arquivo (* .ipro), devido a que ha muitos arquivos neste projeto. Salve-o no projeto.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="813"/>
+        <location filename="../main/iricmainwindow.cpp" line="815"/>
         <source>Project successfully saved to %1.</source>
         <translation>Projeto salvo para %1 com sucesso.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1990"/>
+        <location filename="../main/iricmainwindow.cpp" line="2004"/>
         <source>Export contour figure to ESRI Shapefiles</source>
         <translation>Exportar a figura de contorno para shapefiles ESRI</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2001"/>
+        <location filename="../main/iricmainwindow.cpp" line="2015"/>
         <source>Saving contour figure as ESRI Shapefiles...</source>
         <translation>Salvando figura de contornos para o arquivo de shapefile ESRI ...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2061"/>
+        <location filename="../main/iricmainwindow.cpp" line="2075"/>
         <source>No Contour Figure is drawn now.</source>
         <translation>A figura de contorno nao foi delineada.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2099"/>
+        <location filename="../main/iricmainwindow.cpp" line="2113"/>
         <source>%1 can not be overwritten.</source>
         <translation>Nao e possivel substituir % 1.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2088"/>
-        <location filename="../main/iricmainwindow.cpp" line="2119"/>
+        <location filename="../main/iricmainwindow.cpp" line="2405"/>
+        <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
+Option -&gt; Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/iricmainwindow.cpp" line="2102"/>
+        <location filename="../main/iricmainwindow.cpp" line="2133"/>
         <source>Export Google Earth KMZ for street view</source>
         <translation>Saida do KMZ do Google Earth para o Street View</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2120"/>
+        <location filename="../main/iricmainwindow.cpp" line="2134"/>
         <source>Saving KMZ file...</source>
         <translation>Salvando o arquivo KMZ...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2366"/>
+        <location filename="../main/iricmainwindow.cpp" line="2380"/>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
         <translation>As grades foram editadas ou excluidas. Se voce salvar, o resultado de calculo sera descartado.</translation>
     </message>
@@ -1928,12 +1923,12 @@
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="756"/>
-        <location filename="../main/iricmainwindow.cpp" line="807"/>
+        <location filename="../main/iricmainwindow.cpp" line="809"/>
         <source>Saving project failed.</source>
         <translation>Falhou ao salvar o projeto.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="822"/>
+        <location filename="../main/iricmainwindow.cpp" line="824"/>
         <source>The solver is still running. Really quit?</source>
         <translation>O solucionador esta em movimento.  Deseja realmente encerra-lo ?</translation>
     </message>
@@ -1953,104 +1948,113 @@
         <translation>;; Arquivo EPS (* .eps);; Arquivo PDF (* .pdf) ;; Arquivo SVG (* .svg)</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="39"/>
+        <source>Transparency Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="39"/>
+        <source>Do you want to make the background transparent?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="48"/>
         <source>This window do not support snapshot with this file type.</source>
         <translation>Este window nao assegura de salvar instantaneos deste tipo.</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="71"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="79"/>
         <source>Saving snapshot failed.</source>
         <translation>Falhou ao salvar o instantaneo.</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="83"/>
         <source>Wrong file name specified.</source>
         <translation>Foi especificado o nome invalido para o arquivo. </translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="81"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="87"/>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Instantaneo foi salvo para %1.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="874"/>
-        <location filename="../main/iricmainwindow.cpp" line="888"/>
+        <location filename="../main/iricmainwindow.cpp" line="876"/>
+        <location filename="../main/iricmainwindow.cpp" line="890"/>
         <source>This windows does not support snapshot function.</source>
         <translation>Este windows nao possibilitara a conservacao dos instantaneos.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="897"/>
+        <location filename="../main/iricmainwindow.cpp" line="899"/>
         <source>Copied snapshot to clipboard.</source>
         <translation>O instantaneo foi copiado na prancheta.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="906"/>
+        <location filename="../main/iricmainwindow.cpp" line="908"/>
         <source>This menu is not available while the solver is running.</source>
         <translation>Este menu nao sera disponivel enquanto o solucionador for em movimento.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="964"/>
+        <location filename="../main/iricmainwindow.cpp" line="966"/>
         <source>This windows does not support continuous snapshot function.</source>
         <translation>Este windows nao assegura a funcao de instantaneo continuo.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1002"/>
+        <location filename="../main/iricmainwindow.cpp" line="1004"/>
         <source>Continuous Snapshot</source>
         <translation>Instantaneo continuo</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1003"/>
+        <location filename="../main/iricmainwindow.cpp" line="1005"/>
         <source>saving continuous snapshot...</source>
         <translation>Salvando os instantaneos continuos ...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1120"/>
+        <location filename="../main/iricmainwindow.cpp" line="1122"/>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
         <translation>% 1 ja existe e falhou sua remocao. O arquivo de video nao sera produzido.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1215"/>
+        <location filename="../main/iricmainwindow.cpp" line="1217"/>
         <source>iRIC %1</source>
         <translation>iRIC %1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1230"/>
+        <location filename="../main/iricmainwindow.cpp" line="1232"/>
         <source>%1 - iRIC %2 [%3]</source>
         <translation>%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1650"/>
+        <location filename="../main/iricmainwindow.cpp" line="1664"/>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1945"/>
+        <location filename="../main/iricmainwindow.cpp" line="1959"/>
         <source>Currently active sub-window does not support exporting contour figure.</source>
         <translation>A sub-janela ativa neste momento nao suporta a exportacao de figura de contornos.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1959"/>
+        <location filename="../main/iricmainwindow.cpp" line="1973"/>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Para exportar o arquivo de shapefile, altere "Configuracoes de exibicao" para "Figura de Contorno", nao para "Franja Colorida" ou "Contorno".</translation>
+        <translation>Para exportar o arquivo de shapefile, altere &quot;Configuracoes de exibicao&quot; para &quot;Figura de Contorno&quot;, nao para &quot;Franja Colorida&quot; ou &quot;Contorno&quot;.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2000"/>
+        <location filename="../main/iricmainwindow.cpp" line="2014"/>
         <source>Export contour figure</source>
         <translation>Exportar figura de contorno</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2067"/>
+        <location filename="../main/iricmainwindow.cpp" line="2081"/>
         <source>Please select which zone to use:</source>
         <translation>Selecione a zona para usar:</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2391"/>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu:</source>
-        <translation>O atual diretorio de trabalho (% 1) contem caracteres diferentes do codigo ASCII. Antes de iniciar o projeto, altere o diretorio de trabalho conforme o menu abaixo.</translation>
+        <translation type="vanished">O atual diretorio de trabalho (% 1) contem caracteres diferentes do codigo ASCII. Antes de iniciar o projeto, altere o diretorio de trabalho conforme o menu abaixo.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1220"/>
+        <location filename="../main/iricmainwindow.cpp" line="1222"/>
         <source>Untitled</source>
         <translation>Sem titulo</translation>
     </message>
@@ -2060,106 +2064,106 @@
         <translation>Arquivo CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1237"/>
+        <location filename="../main/iricmainwindow.cpp" line="1239"/>
         <source>The solver is running now. Please stop solver, to do this action.</source>
         <translation>O solucionador e ativado. Pause o solucionador se desejar efetuar esta acao.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1525"/>
+        <location filename="../main/iricmainwindow.cpp" line="1539"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1738"/>
+        <location filename="../main/iricmainwindow.cpp" line="1752"/>
         <source>Unknown options specified. They are neglected. %1</source>
         <translation>Foram especificadas as opcoes desconhecidas. Essas serao ignoradas. :%1</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1742"/>
+        <location filename="../main/iricmainwindow.cpp" line="1756"/>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
         <translation>Mais de dois arquivos de projeto foram especificados como argumentos. Os subsequentes depois do segundo serao ignorados.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1765"/>
+        <location filename="../main/iricmainwindow.cpp" line="1779"/>
         <source>Are you sure you want to delete the calculation result?</source>
         <translation>Tem certeza de que deseja excluir o resultado de calculo ?</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1769"/>
+        <location filename="../main/iricmainwindow.cpp" line="1783"/>
         <source>Calculation result cleared.</source>
         <translation>Resultado de calculo foi excluido.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1835"/>
         <location filename="../main/iricmainwindow.cpp" line="1849"/>
-        <location filename="../main/iricmainwindow.cpp" line="1855"/>
-        <location filename="../main/iricmainwindow.cpp" line="1945"/>
-        <location filename="../main/iricmainwindow.cpp" line="1951"/>
-        <location filename="../main/iricmainwindow.cpp" line="2047"/>
-        <location filename="../main/iricmainwindow.cpp" line="2053"/>
+        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1959"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="2061"/>
+        <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1835"/>
-        <location filename="../main/iricmainwindow.cpp" line="1855"/>
-        <location filename="../main/iricmainwindow.cpp" line="1951"/>
-        <location filename="../main/iricmainwindow.cpp" line="2053"/>
+        <location filename="../main/iricmainwindow.cpp" line="1849"/>
+        <location filename="../main/iricmainwindow.cpp" line="1869"/>
+        <location filename="../main/iricmainwindow.cpp" line="1965"/>
+        <location filename="../main/iricmainwindow.cpp" line="2067"/>
         <source>Calculation result does not exists.</source>
         <translation>O resultado de calculo nao existe.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1849"/>
-        <location filename="../main/iricmainwindow.cpp" line="2047"/>
+        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="2061"/>
         <source>Please select this menu when Visualization Window is active.</source>
         <translation>Selecione este menu quando a janela de visualizacao estiver ativa.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1863"/>
+        <location filename="../main/iricmainwindow.cpp" line="1877"/>
         <source>No particle is drawn now.</source>
         <translation>Nenhuma particula foi delineada.</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1892"/>
-        <location filename="../main/iricmainwindow.cpp" line="1904"/>
+        <location filename="../main/iricmainwindow.cpp" line="1906"/>
+        <location filename="../main/iricmainwindow.cpp" line="1918"/>
         <source>Export Particles</source>
         <translation>Exportar particulas</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1905"/>
+        <location filename="../main/iricmainwindow.cpp" line="1919"/>
         <source>Saving particles as VTK files...</source>
         <translation>Salvando as particulas para o arquivo VTK...</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="1927"/>
-        <location filename="../main/iricmainwindow.cpp" line="2023"/>
-        <location filename="../main/iricmainwindow.cpp" line="2141"/>
+        <location filename="../main/iricmainwindow.cpp" line="1941"/>
+        <location filename="../main/iricmainwindow.cpp" line="2037"/>
+        <location filename="../main/iricmainwindow.cpp" line="2155"/>
         <source>Error occured while saving.</source>
         <translation>Ocorreu um erro ao salvar.  </translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2163"/>
+        <location filename="../main/iricmainwindow.cpp" line="2177"/>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
         <translation>Google Earth KMZ foi exportado para %1 .</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2233"/>
+        <location filename="../main/iricmainwindow.cpp" line="2247"/>
         <source>Import Visualization/Graph Settings</source>
         <translation>Importar a configuracao de visualizacao e grafico</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2233"/>
-        <location filename="../main/iricmainwindow.cpp" line="2255"/>
+        <location filename="../main/iricmainwindow.cpp" line="2247"/>
+        <location filename="../main/iricmainwindow.cpp" line="2269"/>
         <source>Setting file (*.vgsetting)</source>
         <translation>Arquivo configurado (*.vgsetting)</translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2240"/>
+        <location filename="../main/iricmainwindow.cpp" line="2254"/>
         <source>File %1 does not exists.</source>
         <translation>Arquivo %1 nao existe. </translation>
     </message>
     <message>
-        <location filename="../main/iricmainwindow.cpp" line="2255"/>
+        <location filename="../main/iricmainwindow.cpp" line="2269"/>
         <source>Export Visualization/Graph Settings</source>
         <translation>Exportar configuracoes de visualizacao e grafica </translation>
     </message>
@@ -2627,7 +2631,12 @@
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="448"/>
         <source>&amp;Stop</source>
-        <translation>Parar (&amp;S)</translation>
+        <comment>stop solver</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
+        <source>Open new Verification Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2681,9 +2690,8 @@
         <translation>Abrir nova janela de grafico disperso</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="531"/>
         <source>Compare with measured values...</source>
-        <translation>Comparar com valores medidos...</translation>
+        <translation type="vanished">Comparar com valores medidos...</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="538"/>
@@ -2786,7 +2794,7 @@
         <translation>Barra de ferramentas pela lista de Window</translation>
     </message>
     <message>
-        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1182"/>
+        <location filename="../misc/iricmainwindowactionmanager.cpp" line="1185"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
