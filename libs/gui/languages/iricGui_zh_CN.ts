@@ -1737,8 +1737,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/iricmainwindow.cpp" line="2075"/>
         <location filename="../main/iricmainwindow.cpp" line="2113"/>
         <location filename="../main/iricmainwindow.cpp" line="2155"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="71"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="79"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -1779,8 +1779,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <location filename="../main/iricmainwindow.cpp" line="2380"/>
         <location filename="../main/iricmainwindow.cpp" line="2405"/>
         <location filename="../main/private/iricmainwindow_calculatedresultmanager.cpp" line="43"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="48"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="83"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1927,23 +1927,33 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="42"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="39"/>
+        <source>Transparency Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="39"/>
+        <source>Do you want to make the background transparent?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="48"/>
         <source>This window do not support snapshot with this file type.</source>
         <translation>该窗口不支持此文件类型的快照。</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="65"/>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="73"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="71"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="79"/>
         <source>Saving snapshot failed.</source>
         <translation>截图保存失败</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="77"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="83"/>
         <source>Wrong file name specified.</source>
         <translation>指定的文件名错误。</translation>
     </message>
     <message>
-        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="81"/>
+        <location filename="../main/private/iricmainwindow_snapshotsaver.cpp" line="87"/>
         <source>Snapshot successfully saved to %1.</source>
         <translation>截图成功保存到 %1</translation>
     </message>
