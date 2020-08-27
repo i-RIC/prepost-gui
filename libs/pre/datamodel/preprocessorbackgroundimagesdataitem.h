@@ -19,8 +19,11 @@ public slots:
 	void deleteChildItem(int i);
 	void moveUpChildItem(int i);
 	void moveDownChildItem(int i);
-	void deleteAll();
 	void updateChildCheckState(int idx, bool vis);
+
+private slots:
+	void deleteSelected();
+	void deleteAll();
 
 signals:
 	void selectBackgroundImage(const QModelIndex& current);
@@ -30,6 +33,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 
 	QAction* m_addAction;
+	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;
 };
 
