@@ -87,7 +87,7 @@ public slots:
 	bool showDialog();
 
 private slots:
-	void setModified(bool modified = true);
+	void setModified(bool modified = true) override;
 	void assignSelectedElements();
 	void releaseSelectedElements();
 
