@@ -263,7 +263,6 @@ private:
 	class BreakLineAddPointCommand;
 	class BreakLineFinishDefinitionCommand;
 	class BreakLineCancelDefinitionCommand;
-	class AddPointSetReferenceCommand;
 	class RemoveTrianglesCommand;
 
 	class TrianglesWithLongEdgeRemover;

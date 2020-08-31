@@ -11,7 +11,6 @@
 #include "geodatapointmaprepresentationdialog.h"
 #include "private/geodatapointmap_addinterpolatepointscommand.h"
 #include "private/geodatapointmap_addpointscommand.h"
-#include "private/geodatapointmap_addpointsetreferencecommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
 #include "private/geodatapointmap_breaklineaddpointcommand.h"
 #include "private/geodatapointmap_breaklinecanceldefinitioncommand.h"
