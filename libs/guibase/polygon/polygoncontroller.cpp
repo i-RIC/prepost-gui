@@ -30,6 +30,11 @@ void PolygonController::setPolygon(const QPolygonF& polygon)
 	return impl->m_actor.setPolygon(polygon);
 }
 
+void PolygonController::clear()
+{
+	impl->m_actor.clear();
+}
+
 vtkPolygon* PolygonController::getVtkPolygon() const
 {
 	return impl->m_actor.getVtkPolygon();
