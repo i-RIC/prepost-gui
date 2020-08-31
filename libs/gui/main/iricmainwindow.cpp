@@ -1793,6 +1793,8 @@ void iRICMainWindow::restoreWindowState()
 	QSettings settings;
 	unsigned int state = settings.value("general/windowstate", Qt::WindowNoState).value<unsigned int>();
 	setWindowState(static_cast<Qt::WindowStates>(state));
+	QByteArray state2 = settings.value("general/windowstate2").value<QByteArray>();
+	restoreState(state2);
 	if (! isMaximized()) {
 		QSize size = settings.value("general/windowsize", QSize(640, 480)).value<QSize>();
 		resize(size);
@@ -1832,6 +1834,8 @@ void iRICMainWindow::saveWindowState()
 	QSettings settings;
 	unsigned int state = windowState();
 	settings.setValue("general/windowstate", state);
+	QByteArray state2 = saveState();
+	settings.setValue("general/windowstate2", state2);
 	QSize s = size();
 	settings.setValue("general/windowsize", s);
 	QPoint position = pos();
