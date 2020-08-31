@@ -2122,13 +2122,6 @@ void GeoDataPointmap::clearPointsSelection()
 	renderGraphicsView();
 }
 
-void GeoDataPointmap::clearNewPoints()
-{
-	m_newPoints->Reset();
-	m_newPoints->Allocate(10, 10);
-	m_newPoints->Modified();
-}
-
 void GeoDataPointmap::unwindSelectedInterp()
 {
 	int numIntPts = this->m_vtkInterpPolygon->GetNumberOfPoints();

@@ -115,7 +115,6 @@ public:
 	void selectPointsInsideBox(MouseBoundingBox* box, bool xOr);
 	void selectPointsNearPoint(const QVector2D& pos, bool xOr);
 	void clearPointsSelection();
-	void clearNewPoints();
 	void resetSelectedInterp();
 	void unwindSelectedInterp();
 	void enablePointSelectedActions(bool val);
@@ -218,9 +217,6 @@ protected:
 	vtkSmartPointer<vtkLODActor> m_pointsActor;
 
 	double m_newPointValue;
-	vtkSmartPointer<vtkPolyData> m_newPoints;
-	vtkSmartPointer<vtkPolyDataMapper> m_newPointsMapper;
-	vtkSmartPointer<vtkActor> m_newPointsActor;
 
 	vtkSmartPointer<vtkPolyData> m_selectedVerticesGrid;
 	vtkSmartPointer<vtkPolyDataMapper> m_selectedMapper;
