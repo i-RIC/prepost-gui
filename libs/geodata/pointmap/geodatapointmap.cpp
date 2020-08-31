@@ -98,6 +98,8 @@ const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_opacityPercent {50},
+	m_representation {GeoDataPointmapRepresentationDialog::Points},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_addCursor {m_addPixmap, 0, 0},
 	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
@@ -106,6 +108,7 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_interpPointAddCursor {m_interpPointAddPixmap, 0, 0},
 	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
 	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
+	lastInterpPointKnown {false},
 	m_longEdgeRemover {nullptr}
 {
 	doubleclick = false;
@@ -135,12 +138,6 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 
 	m_vtkPointLocator = vtkSmartPointer<vtkPointLocator>::New();
 	m_vtkPointLocator->SetDataSet(m_vtkGrid);
-
-	m_representation = GeoDataPointmapRepresentationDialog::Points;
-	m_opacityPercent = 50;
-
-
-	this->lastInterpPointKnown = false;
 
 	setupActions();
 
