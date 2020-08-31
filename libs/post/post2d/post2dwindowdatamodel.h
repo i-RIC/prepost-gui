@@ -32,6 +32,7 @@ public:
 	void editZScale();
 	double zScale() const;
 	void applyOffset(double x, double y);
+	void initCollapseState();
 
 	void updateTmsList();
 
