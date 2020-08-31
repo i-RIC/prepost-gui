@@ -2,14 +2,12 @@
 #define VOID void
 
 #include "geodatapointmap.h"
-#include "geodatapointmapaddpointdialog.h"
 #include "geodatapointmapbreakline.h"
 #include "geodatapointmapdelptsgreaterthandialog.h"
 #include "geodatapointmapdelptslessthandialog.h"
 #include "geodatapointmapeditptsdialog.h"
-#include "geodatapointmapinterpolatepoints.h"
+#include "geodatapointmapinterpolatepointsdialog.h"
 #include "geodatapointmaprepresentationdialog.h"
-#include "private/geodatapointmap_addinterpolatepointscommand.h"
 #include "private/geodatapointmap_addpointscommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
 #include "private/geodatapointmap_breaklineaddpointcommand.h"
@@ -47,6 +45,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QDomNode>
+#include <QInputDialog>
 #include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
@@ -112,8 +111,6 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_longEdgeRemover {nullptr}
 {
 	doubleclick = false;
-	this->m_vtkInterpPolygon = vtkSmartPointer<vtkPolygon>::New();
-	this->m_vtkInterpValue = vtkSmartPointer<vtkDoubleArray>::New();
 
 	m_vtkGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkPoints* points = vtkPoints::New();
@@ -126,12 +123,6 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	points2->SetDataTypeToDouble();
 	m_selectedVerticesGrid->SetPoints(points2);
 	points2->Delete();
-
-	this->m_InterpLineGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	vtkPoints* points3 = vtkPoints::New();
-	points3->SetDataTypeToDouble();
-	m_InterpLineGrid->SetPoints(points3);
-	points3->Delete();
 
 	m_vtkDelaunayedPolyData = vtkSmartPointer<vtkPolyData>::New();
 	m_vtkDelaunayedPolyData->Initialize();
@@ -160,7 +151,6 @@ GeoDataPointmap::~GeoDataPointmap()
 	r->RemoveActor(m_actor);
 	r->RemoveActor(m_selectionPolygonController.linesActor());
 	r->RemoveActor(m_selectedActor);
-	r->RemoveActor(m_InterpLineActor);
 
 	vtkActorCollection* col = actorCollection();
 	col->RemoveAllItems();
@@ -174,43 +164,6 @@ vtkPolyData* GeoDataPointmap::vtkGrid() const
 vtkPolyData* GeoDataPointmap::delaunayedPolyData() const
 {
 	return m_vtkDelaunayedPolyData;
-}
-
-void GeoDataPointmap::updateInterpShapeData()
-{
-	vtkPoints* interpPoints = m_vtkInterpPolygon->GetPoints();
-	// update idlist.
-	vtkIdList* idlist = m_vtkInterpPolygon->GetPointIds();
-	idlist->Reset();
-	idlist->SetNumberOfIds(interpPoints->GetNumberOfPoints());
-	for (int i = 0; i < interpPoints->GetNumberOfPoints(); ++i) {
-		idlist->SetId(i, i);
-	}
-	idlist->Modified();
-
-	// Edge line representation.
-	//m_InterpLineGrid->Reset();
-	//int edgeCount = m_vtkInterpPolygon->GetNumberOfEdges();
-	//m_InterpLineGrid->Allocate(edgeCount);
-	//for (int i = 0; i < edgeCount; ++i){
-	//	vtkCell* nextCell = m_vtkPolygon->GetEdge(i);
-	//	m_InterpLineGrid->InsertNextCell(nextCell->GetCellType(), nextCell->GetPointIds());
-	//}
-	// Points representation.
-	m_InterpLineGrid->Reset();
-	vtkIdType vertexId = 0;
-	int vertexCount = m_vtkInterpPolygon->GetNumberOfPoints();
-	m_InterpLineGrid->Allocate(vertexCount);
-	m_InterpLineGrid->SetPoints(m_vtkInterpPolygon->GetPoints());
-	for (int i = 0; i < vertexCount; ++i) {
-		vtkVertex* nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, vertexId);
-		m_InterpLineGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		vertexId += 1;
-	}
-	//m_polyVertexGrid->GetPointData()->AddArray(m_scalarValues);
-	//m_polyVertexGrid->GetPointData()->SetActiveScalars("polygonvalue");
-	m_InterpLineGrid->Modified();
 }
 
 void GeoDataPointmap::loadExternalData(const QString& filename)
@@ -752,12 +705,6 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		clearPointsSelection();
 
 		time.restart();
-		m_InterpLineGrid->Reset();
-		m_InterpLineGrid->Allocate(10, 10);
-		m_InterpLineGrid->SetPoints(m_vtkGrid->GetPoints());
-		m_InterpLineGrid->Modified();
-		qDebug("m_InterpLineGrid Building:%d", time.elapsed());
-
 		m_needRemeshing = false;
 		qDebug("Time for constructiong VTK Objects:%d", time.elapsed());
 	}
@@ -857,11 +804,6 @@ void GeoDataPointmap::setupActors()
 	m_selectedMapper->SetInputData(this->m_selectedVerticesGrid);
 	m_selectedMapper->ImmediateModeRenderingOn();
 
-	m_InterpLineMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_InterpLineMapper->SetScalarVisibility(false);
-	m_InterpLineMapper->SetInputData(this->m_InterpLineGrid);
-	m_InterpLineMapper->ImmediateModeRenderingOn();
-
 	m_selectedActor = vtkSmartPointer<vtkActor>::New();
 	m_selectedActor->GetProperty()->SetPointSize(9.);
 	m_selectedActor->GetProperty()->SetLighting(false);
@@ -872,26 +814,18 @@ void GeoDataPointmap::setupActors()
 
 	m_selectedActor->VisibilityOn();
 
-	this->m_InterpLineActor = vtkSmartPointer<vtkActor>::New();
-	this->m_InterpLineActor->GetProperty()->SetPointSize(7.);
-	this->m_InterpLineActor->GetProperty()->SetLighting(true);
-	this->m_InterpLineActor->GetProperty()->SetColor(0,0,0);
-	this->m_InterpLineActor->SetMapper(this->m_InterpLineMapper);
-	this->m_InterpLineActor->GetProperty()->SetRepresentationToPoints();
-	this->m_InterpLineActor->SetVisibility(true);
-
-	auto actor = m_selectionPolygonController.linesActor();
-	actor->GetProperty()->SetLineWidth(2);
+	m_interpolatePointsController.pointsActor()->GetProperty()->SetPointSize(7);
+	m_selectionPolygonController.linesActor()->GetProperty()->SetLineWidth(2);
 
 	vtkRenderer* r = renderer();
 	r->AddActor(m_actor);
 	r->AddActor(m_pointsActor);
 	r->AddActor(m_selectionPolygonController.linesActor());
-	r->AddActor(m_InterpLineActor);
+	r->AddActor(m_interpolatePointsController.pointsActor());
 	r->AddActor(m_selectedActor);
 
 	actorCollection()->AddItem(m_selectionPolygonController.linesActor());
-	actorCollection()->AddItem(m_InterpLineActor);
+	actorCollection()->AddItem(m_interpolatePointsController.pointsActor());
 	actorCollection()->AddItem(m_selectedActor);
 
 	updateActorSettings();
@@ -1012,7 +946,7 @@ void GeoDataPointmap::assignActorZValues(const ZDepthRange& range)
 {
 	m_zDepthRange = range;
 	m_selectionPolygonController.linesActor()->SetPosition(0, 0, range.max());
-	m_InterpLineActor->SetPosition(0, 0, range.max());
+	m_interpolatePointsController.pointsActor()->SetPosition(0, 0, range.max());
 
 	double breakLineDepth = range.max() * 0.9 + range.min() * 0.1;
 	for (int i = 0; i < m_breakLines.count(); ++i) {
@@ -1186,7 +1120,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		double worldX = static_cast<double>(event->x());
 		double worldY = static_cast<double>(event->y());
 		v->viewportToWorld(worldX, worldY);
-		MouseBoundingBox* box = dataModel()->mouseBoundingBox();
+		auto box = dataModel()->mouseBoundingBox();
 
 		switch (m_mouseEventMode) {
 		case meNormal:
@@ -1196,68 +1130,45 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			v->GetRenderWindow()->SetDesiredUpdateRate(PreProcessorDataItem::dragUpdateRate);
 			break;
 		case meSMPolygonPrepare:
-			//adds first point.  point added in meSMPolygon below is then modified on mouse move
-			pushRenderCommand(new PolygonPushVertexCommand(true, v->viewportToWorld(event->pos()), &m_selectionPolygonController));
 		case meSMPolygon:
 			m_mouseEventMode = meSMPolygon;
 			pushRenderCommand(new PolygonPushVertexCommand(true, v->viewportToWorld(event->pos()), &m_selectionPolygonController));
 			break;
 		case meSMInterpPointPrepare: {
-				bool ptduplicate = false;
-				vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
-				v->GetPointIds()->SetId(0, this->m_selectedVertexId2);
 				double p[3];
-				this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
-				vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
-				int numcells = this->m_InterpLineGrid->GetNumberOfCells();
-				for (vtkIdType i = 0; i < numcells; i++) {
-					this->m_InterpLineGrid->GetCellPoints(i, idlist);
-					if (m_selectedVertexId2 == static_cast<int>(idlist->GetId(0))) {
-						ptduplicate = true;
-						break;
-					}
-				}
-				if (!ptduplicate) {
-					pushRenderCommand(new InterpolateLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
-					lastInterpPointKnown = true;
-
-					this->m_InterpLineGrid->Modified();
-					this->lastInterpPointKnown = true;
-				}
-				this->m_mouseEventMode = meSMInterpPoint;
-				this->m_selectedZPos = 0.;
+				m_vtkGrid->GetPoint(m_selectedVertexId, p);
+				pushRenderCommand(new InterpolateLineAddPointCommand(p[0], p[1], m_selectedZPos, false, this));
+				m_mouseEventMode = meSMInterpPoint;
 			}
 			break;
 		case meSMInterpPoint:
 			break;
 		case meSMInterpCtrlPoint:
-			pushRenderCommand(new InterpolateLineAddPointCommand(true, worldX, worldY, -9999., this));
-			lastInterpPointKnown = false;
-			this->m_InterpLineGrid->BuildLinks();
-			this->m_InterpLineGrid->Modified();
-			this->lastInterpPointKnown = false;
+			pushRenderCommand(new InterpolateLineAddPointCommand(worldX, worldY, 0, true, this));
 			break;
 		case meSMAddPoint:
 			break;
 		case meSMAddCtrlPoint:
-			if (this->m_vtkInterpPolygon->GetNumberOfPoints() > 0) {
-				pushRenderCommand(new InterpolateLineAddPointCommand(true, worldX, worldY, -9999., this));
+			if (m_interpolatePointsController.polyLine().size() > 0) {
+				pushRenderCommand(new InterpolateLineAddPointCommand(worldX, worldY, 0, true, this));
 			}
 			break;
 		case meSMAddPointPrepare:
-			if (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0) {
+			if (m_interpolatePointsController.polyLine().size() == 0) {
 				double p[3];
-				this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
-				pushRenderCommand(new InterpolateLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
-				this->m_mouseEventMode = meSMAddCtrlPoint;
+				m_vtkGrid->GetPoint(m_selectedVertexId, p);
+				m_addPointsValue = m_selectedZPos;
+				pushRenderCommand(new InterpolateLineAddPointCommand(p[0], p[1], 0, false, this));
+				m_mouseEventMode = meSMAddCtrlPoint;
 			}
 			break;
 		case meBreakLineAddNotPossible:
 			// do nothing.
 			break;
+
 		case meBreakLineAdd:
 			// add point.
-			pushRenderCommand(new BreakLineAddPointCommand(false, m_selectedVertexId2, this));
+			pushRenderCommand(new BreakLineAddPointCommand(false, m_selectedVertexId, this));
 			break;
 		case meBreakLineRemoveNotPossible:
 			// do nothing.
@@ -1391,9 +1302,6 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 			definePolygon(false, xOr);
 		}
 		break;
-	case meSMAddCtrlPoint:
-		//this->finishAddPoint();
-		break;
 	default:
 		break;
 	}
@@ -1402,9 +1310,9 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		if (m_mouseEventMode == meSMPolygon) {
 			definePolygon(false, xOr);
 		} else if (m_mouseEventMode == meSMAddCtrlPoint) {
-			this->finishAddPoint();
+			finishAddPoint();
 		} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
-			this->finishInterpPoint();
+			finishInterpPoint();
 		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 			pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
 		}
@@ -1414,11 +1322,8 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		} else if (m_mouseEventMode == meSMInterpPoint) {
 			m_mouseEventMode = meSMInterpCtrlPoint;
 		}
-		//if((m_mouseEventMode == meSMAddPoint) && (this->m_vtkInterpPolygon->GetNumberOfPoints() > 0)) {
-		//	m_mouseEventMode = meSMAddCtrlPoint;
-		//}
 	}
-	this->updateMouseCursor(v);
+	updateMouseCursor(v);
 }
 void GeoDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
@@ -1752,14 +1657,8 @@ void GeoDataPointmap::updateMouseEventMode()
 		//}
 		break;
 	case meSMAddPoint:
-		if (isVertexSelectable(worldPos) && (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0)) {
-			m_mouseEventMode = meSMAddPointPrepare;
-		} else {
-			m_mouseEventMode = meSMAddPoint;
-		}
-		break;
 	case meSMAddPointPrepare:
-		if (isVertexSelectable(worldPos) && (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0)) {
+		if (isVertexSelectable(worldPos) && (m_interpolatePointsController.polyLine().size() == 0)) {
 			m_mouseEventMode = meSMAddPointPrepare;
 		} else {
 			m_mouseEventMode = meSMAddPoint;
@@ -1768,9 +1667,9 @@ void GeoDataPointmap::updateMouseEventMode()
 	case meBreakLineAdd:
 	case meBreakLineAddNotPossible:
 		m_mouseEventMode = meBreakLineAddNotPossible;
-		m_selectedVertexId2 = this->m_vtkPointLocator->FindClosestPoint(tmppos);
+		m_selectedVertexId = this->m_vtkPointLocator->FindClosestPoint(tmppos);
 		m_mouseEventMode = meBreakLineAdd;
-		pushRenderCommand(new BreakLineAddPointCommand(true, m_selectedVertexId2, this));
+		pushRenderCommand(new BreakLineAddPointCommand(true, m_selectedVertexId, this));
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
@@ -1794,10 +1693,10 @@ void GeoDataPointmap::updateMouseEventMode()
 bool GeoDataPointmap::isVertexSelectable(const QVector2D& pos)
 {
 	double point2[3] = {pos.x(), pos.y(), 0.0};
-	m_selectedVertexId2 = this->m_vtkPointLocator->FindClosestPoint(point2);
+	m_selectedVertexId = m_vtkPointLocator->FindClosestPoint(point2);
 	double point[3];
-	this->m_vtkGrid->GetPoint(m_selectedVertexId2, point);
-	this->m_selectedZPos = this->m_vtkGrid->GetPointData()->GetArray(VALUES)->GetTuple1(this->m_selectedVertexId2);
+	m_vtkGrid->GetPoint(m_selectedVertexId, point);
+	m_selectedZPos = m_vtkGrid->GetPointData()->GetArray(VALUES)->GetTuple1(m_selectedVertexId);
 	QVector2D vertexPos(point[0], point[1]);
 	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
 	double dist = (vertexPos - pos).length();
@@ -1826,7 +1725,6 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(this->m_interpPointAddCursor);
 		break;
 	case meSMInterpCtrlPoint:
-		//v->setCursor(this->m_interpPointCtrlAddCursor);
 		v->setCursor(Qt::CrossCursor);
 		break;
 	case meSMInterpPoint:
@@ -2098,50 +1996,29 @@ void GeoDataPointmap::clearPointsSelection()
 	renderGraphicsView();
 }
 
-void GeoDataPointmap::unwindSelectedInterp()
-{
-	int numIntPts = this->m_vtkInterpPolygon->GetNumberOfPoints();
-	for (int i = 0; i < numIntPts; i++) {
-		iRICUndoStack::instance().undo();
-	}
-
-}
-void GeoDataPointmap::resetSelectedInterp()
-{
-	this->m_InterpLineGrid->Reset();
-	this->m_vtkInterpValue->Reset();
-	this->m_vtkInterpPolygon->GetPoints()->Reset();
-	this->updateInterpShapeData();
-	this->selectionModePoint(true);
-	this->updateActionStatus();
-
-}
-
 void GeoDataPointmap::interpolatePoints(bool on)
 {
-	this->clearPointsSelection();
+	clearPointsSelection();
 
 	if (on) {
 		if (m_representation != GeoDataPointmapRepresentationDialog::Points) {
-			// @todo message review is needed.
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you interpolate points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result == QMessageBox::Yes) {
-				m_representation = GeoDataPointmapRepresentationDialog::Points;
-				updateRepresentation();
-			} else {
-				return;
-			}
+			if (result == QMessageBox::No) {return;}
+
+			m_representation = GeoDataPointmapRepresentationDialog::Points;
+			updateRepresentation();
 		}
 		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key."), "geodatapointmapinterpolatepoint");
 		m_mouseEventMode = GeoDataPointmap::meSMInterpPoint;
 	} else {
-		this->unwindSelectedInterp();
-		this->resetSelectedInterp();
-		//m_mouseEventMode = GeoDataPointmap::meSMPointPrepare;
+		m_mouseEventMode = meNormal;
 	}
-	updateActionStatus();
-	this->renderGraphicsView();
+	m_interpolatePointsController.clear();
+	m_interpolateValues.clear();
+	m_interpolateNewFlags.clear();
 
+	updateActionStatus();
+	renderGraphicsView();
 }
 
 void GeoDataPointmap::addPoints(bool on)
@@ -2149,21 +2026,18 @@ void GeoDataPointmap::addPoints(bool on)
 	clearPointsSelection();
 	if (on) {
 		if (m_representation == GeoDataPointmapRepresentationDialog::Surface) {
-			// @todo message review is needed.
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result == QMessageBox::Yes) {
-				m_representation = GeoDataPointmapRepresentationDialog::Points;
-				updateRepresentation();
-			} else {
-				return;
-			}
+			if (result == QMessageBox::No) {return;}
+
+			m_representation = GeoDataPointmapRepresentationDialog::Points;
+			updateRepresentation();
 		}
 		m_mouseEventMode = GeoDataPointmap::meSMAddPoint;
 		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To add new points, select an existing point first. The value at that point will be used as the "
 																	 "default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key."), "geodatapointmapaddpoint");
 	} else {
-		this->unwindSelectedInterp();
-		this->resetSelectedInterp();
+		m_interpolatePointsController.clear();
+		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
 	renderGraphicsView();
@@ -2171,22 +2045,11 @@ void GeoDataPointmap::addPoints(bool on)
 
 void GeoDataPointmap::enablePointSelectedActions(bool val)
 {
-	this->m_editPointsAction->setEnabled(val);
-	this->m_editPointsDeleteAction->setEnabled(val);
-	this->m_editPointsExportAction->setEnabled(val);
-	this->m_editPointsGreaterThanAction->setEnabled(val);
-	this->m_editPointsLessThanAction->setEnabled(val);
-
-}
-
-vtkPolygon* GeoDataPointmap::getVtkInterpPolygon() const
-{
-	return m_vtkInterpPolygon;
-}
-
-vtkDoubleArray* GeoDataPointmap::getVtkInterpValue() const
-{
-	return m_vtkInterpValue;
+	m_editPointsAction->setEnabled(val);
+	m_editPointsDeleteAction->setEnabled(val);
+	m_editPointsExportAction->setEnabled(val);
+	m_editPointsGreaterThanAction->setEnabled(val);
+	m_editPointsLessThanAction->setEnabled(val);
 }
 
 vtkPolyData* GeoDataPointmap::selectedVerticesGrid() const
@@ -2339,57 +2202,224 @@ bool GeoDataPointmap::pointsUsedForBreakLines(const QVector<vtkIdType>& points)
 	return false;
 }
 
+void GeoDataPointmap::TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
+								std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,
+								std::vector<double>& yp, std::vector<double>& temp)
+{
+
+	// subroutine variables
+	double delx1, dx1, delx2, delx12, c1, c2, c3, slpp1, deln, delnm1;
+	double delnn, slppn, sigmap, dels, exps, sinhs, sinhin;
+	double diag1, diag2, diagin, spdiag, dx2;
+	double a, b, del1, del2, exps1, sinhd1, sinhd2;
+	double tmp;
+	int nm1, np1, i, ibak, nj;
+
+	Q_UNUSED(tmp)
+
+	nm1 = n-2; //may need to make adjustments here because of c arrays 0-n vs 1-n for fortran
+	np1 = n;
+	delx1 = x[1]-x[0];
+	dx1 = (y[1]-y[0])/delx1;
+	delx2 = x[2]-x[1];
+	delx12 = x[2]-x[0];
+	c1 = -(delx12+delx1)/delx12/delx1;
+	c2 = delx12/delx1/delx2;
+	c3 = -delx1/delx12/delx2;
+	slpp1 = c1*y[0]+c2*y[1]+c3*y[2];
+	deln = x[n-1]-x[nm1];
+	delnm1 = x[nm1]-x[n-3];
+	delnn = x[n-1]-x[n-3];
+	c1 = (delnn+deln)/delnn/deln;
+	c2 = -delnn/deln/delnm1;
+	c3 = deln/delnn/delnm1;
+	slppn = c3*y[n-3]+c2*y[nm1]+c1*y[n-1];
+	sigmap = fabs(sigma)*(double(n-2))/(x[n-1]-x[0]);
+	dels = sigmap*delx1;
+	exps = exp(dels);
+	sinhs = 0.5*(exps-1./exps);
+	sinhin = 1./(delx1*sinhs);
+	diag1 = sinhin*(dels*0.5*(exps+1./exps)-sinhs);
+	diagin = 1./diag1;
+	yp[0] = diagin*(dx1-slpp1);
+	spdiag = sinhin*(sinhs-dels);
+	temp[0] = diagin* spdiag;
+	for (i = 1; i <= nm1; i++) {
+		delx2 = x[i+1] - x[i];
+		dx2 = (y[i+1]-y[i])/delx2;
+		dels = sigmap*delx2;
+		exps = exp(dels);
+		sinhs = 0.5*(exps-1./exps);
+		sinhin = 1./(delx2*sinhs);
+		diag2 = sinhin*(dels*(0.5*(exps+1./exps))-sinhs);
+		diagin = 1./(diag1+diag2-spdiag*temp[i-1]);
+		yp[i] = diagin*(dx2-dx1-spdiag*yp[i-1]);
+		spdiag = sinhin*(sinhs-dels);
+		temp[i] = diagin*spdiag;
+		dx1 = dx2;
+		diag1 = diag2;
+	}
+	diagin = 1./(diag1-spdiag*temp[nm1]);
+	yp[n-1] = diagin*(slppn-dx2-spdiag*yp[nm1]);
+	for (i = 1; i <= n - 1; i++) {
+		ibak = np1-i-1;
+		yp[ibak] =yp[ibak]-temp[ibak]*yp[ibak+1];
+	}
+	a = x[0];
+	b = x[1];
+	nj = 1;
+	for (i = 0; i <= iout - 1; i++) {
+		while (xout[i] > b) {
+			a = b;
+			nj = nj+1;
+			if (nj < n) {
+				b = x[nj];
+			}
+		}
+		del1 = xout[i] - a;
+		del2 = b-xout[i];
+		dels = b-a;
+		exps1 = exp(sigmap*del1);
+		sinhd1 = 0.5*(exps1-1./exps1);
+		exps = exp(sigmap*del2);
+		sinhd2 = 0.5*(exps-1./exps);
+		exps = exps*exps1;
+		sinhs = 0.5*(exps-1./exps);
+		tmp = (yp[nj]*sinhd1+yp[nj-1]*sinhd2)/
+					sinhs+((y[nj]-yp[nj])*del1+(y[nj-1]-yp[nj-1])*del2)/dels;
+		yout[i] = (yp[nj]*sinhd1+yp[nj-1]*sinhd2)/
+							sinhs+((y[nj]-yp[nj])*del1+(y[nj-1]-yp[nj-1])*del2)/dels;
+	}
+}
+
 void GeoDataPointmap::finishAddPoint()
 {
-	if (this->m_vtkInterpPolygon->GetNumberOfPoints() > 1) {
-		GeoDataPointmapAddPointDialog* dialog = new GeoDataPointmapAddPointDialog(this, preProcessorWindow());
-		if (dialog->exec() == QDialog::Accepted) {
-			this->unwindSelectedInterp();
-			pushRenderCommand(new AddPointsCommand(this, dialog));
-			this->resetSelectedInterp();
-		} else {
-			this->unwindSelectedInterp();
-			this->resetSelectedInterp();
-		}
+	if (m_interpolatePointsController.polyLine().size() < 2) {
+		int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("You must select one known point, and define at least one location for added points. "
+																																		 "Do you want to retry, or cancel the operation?"), QMessageBox::Retry | QMessageBox::Cancel, QMessageBox::Cancel);
+		if (ret == QMessageBox::Retry) {
+			return;
+		};
 	} else {
-		QMessageBox msgBox;
-		msgBox.setText("Must have selected one known point and defined at least one location for added point");
-		msgBox.setInformativeText("Would you like to retry or cancel the add points operation?");
-		msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
-		msgBox.setDefaultButton(QMessageBox::Cancel);
-		if (msgBox.exec() == QMessageBox::Cancel) {
-			this->unwindSelectedInterp();
-			this->resetSelectedInterp();
-		} else {
-			// No need to do anything here.
+		bool ok;
+		double val = QInputDialog::getDouble(preProcessorWindow(), tr("Add Points"), tr("Values of new points"), m_addPointsValue, -10000, 10000, 3, &ok);
+		if (ok) {
+			auto newPoints = m_interpolatePointsController.polyLine();
+			newPoints.erase(newPoints.begin());
+			std::vector<double> vals;
+			for (int i = 0; i < newPoints.size(); ++i) {
+				vals.push_back(m_newPointValue);
+			}
+			pushRenderCommand(new AddPointsCommand(newPoints, vals, this));
 		}
 	}
+	m_interpolatePointsController.clear();
+	m_interpolateValues.clear();
+	m_interpolateNewFlags.clear();
+	m_mouseEventMode = meNormal;
 }
 
 void GeoDataPointmap::finishInterpPoint()
 {
-	if (this->lastInterpPointKnown && this->m_vtkInterpPolygon->GetNumberOfPoints() > 1) {
-		GeoDataPointmapInterpolatePoints* dialog = new GeoDataPointmapInterpolatePoints(this, preProcessorWindow());
-		if (dialog->exec() == QDialog::Accepted) {
-			this->unwindSelectedInterp();
-			pushRenderCommand(new AddInterpolatePointsCommand(this,dialog));
-			this->resetSelectedInterp();
-		} else {
-			this->unwindSelectedInterp();
-			this->resetSelectedInterp();
-		}
+	if (! (m_interpolateNewFlags.at(m_interpolateNewFlags.size() - 1) == false && m_interpolatePointsController.polyLine().size() > 1)) {
+		int ret = QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("To interpolate points, you must specify more than two points, and the last point should be existing point. "
+																																							 "Do you want to retry, or cancel the operation?"), QMessageBox::Retry | QMessageBox::Cancel, QMessageBox::Cancel);
+		if (ret == QMessageBox::Retry) {
+			return;
+		};
 	} else {
-		QMessageBox msgBox;
-		msgBox.setText("Must have either 2 known points and last point must be known");
-		msgBox.setInformativeText("Would you like to retry or cancel the interpolation?");
-		msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
-		msgBox.setDefaultButton(QMessageBox::Cancel);
-		if (msgBox.exec() == QMessageBox::Cancel) {
-			this->unwindSelectedInterp();
-			this->resetSelectedInterp();
-		} else {
-			// No need to do anything here.
+		double len = 0;
+		std::vector<double> xarr, yarr, zarr;
+		std::vector<double> lens_xy;
+		std::vector<double> lens_z;
+
+		auto line = m_interpolatePointsController.polyLine();
+
+		lens_xy.push_back(0);
+		lens_z.push_back(0);
+
+		for (int i = 0; i < line.size(); ++i) {
+			auto p = line.at(i);
+			xarr.push_back(p.x());
+			yarr.push_back(p.y());
+			if (m_interpolateNewFlags.at(i) == false) {
+				zarr.push_back(m_interpolateValues.at(i));
+			}
 		}
+
+		for (int i = 0; i < line.size() - 1; ++i) {
+			auto p1 = line.at(i);
+			auto p2 = line.at(i + 1);
+			len += iRIC::distance(p1, p2);
+			lens_xy.push_back(len);
+
+			if (m_interpolateNewFlags[i + 1] == false) {
+				lens_z.push_back(len);
+			}
+		}
+		GeoDataPointmapInterpolatePointsDialog dialog(preProcessorWindow());
+		dialog.setLineLength(len);
+		int ret = dialog.exec();
+		if (ret == QDialog::Accepted) {
+			double increment = dialog.increment();
+
+			std::vector<QPointF> points;
+			std::vector<double> xpoint, ypoint, values;
+
+			// number of points to be added by interpolation
+			int numNewPoints = static_cast<int>(len / increment) + 1;
+
+			xpoint.assign(numNewPoints, 0);
+			ypoint.assign(numNewPoints, 0);
+			values.assign(numNewPoints, 0);
+
+			std::vector<double> sout, yp, tmp;
+			sout.assign(numNewPoints, 0);
+			yp.assign(numNewPoints, 0);
+			tmp.assign(numNewPoints, 0);
+			for (int i = 0; i < numNewPoints; ++i) {
+				sout[i] = i * len / (numNewPoints - 1);
+			}
+
+			// interpolation for x and y
+			if (lens_xy.size() == 2) {
+				for (int i = 0; i < numNewPoints; ++i) {
+					double t = i / static_cast<double>(numNewPoints - 1);
+					xpoint[i] = xarr.at(0) * (1 - t) + xarr.at(1) * t;
+					ypoint[i] = yarr.at(0) * (1 - t) + yarr.at(1) * t;
+				}
+			} else {
+				// spline interpolation for x and y
+				TSplineSTL(lens_xy, xarr, xarr.size(), sout, xpoint, numNewPoints, 5.0, yp, tmp);
+				TSplineSTL(lens_xy, yarr, yarr.size(), sout, ypoint, numNewPoints, 5.0, yp, tmp);
+			}
+
+			// interpolation for z
+			if (lens_z.size() == 2) {
+				for (int i = 0; i < numNewPoints; ++i) {
+					double t = i / static_cast<double>(numNewPoints - 1);
+					values[i] = zarr.at(0) * (1 - t) + zarr.at(1) * t;
+				}
+			} else {
+				// spline interpolation for z
+				TSplineSTL(lens_z, zarr, zarr.size(), sout, values, numNewPoints, 10.0, yp, tmp);
+			}
+
+			// remove first and last points, because they are points already exists.
+			xpoint.erase(xpoint.begin());
+			xpoint.pop_back();
+			ypoint.erase(ypoint.begin());
+			ypoint.pop_back();
+			values.erase(values.begin());
+			values.pop_back();
+			for (int i = 0; i < xpoint.size(); ++i) {
+				points.push_back(QPointF(xpoint.at(i), ypoint.at(i)));
+			}
+			pushRenderCommand(new AddPointsCommand(points, values, this));
+		}
+		m_interpolatePointsController.clear();
+		m_mouseEventMode = meNormal;
+		updateActionStatus();
 	}
 }
 

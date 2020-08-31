@@ -10,7 +10,7 @@ class GeoDataPointmapAddPointDialog;
 class GeoDataPointmap::AddPointsCommand : public QUndoCommand
 {
 public:
-	AddPointsCommand(const std::vector<QPointF>& points, double value, GeoDataPointmap* pm);
+	AddPointsCommand(const std::vector<QPointF>& points, const std::vector<double>& values, GeoDataPointmap* pm);
 
 	void redo() override;
 	void undo() override;

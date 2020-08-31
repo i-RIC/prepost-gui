@@ -9,18 +9,17 @@
 class GeoDataPointmap::InterpolateLineAddPointCommand : public QUndoCommand
 {
 public:
-	InterpolateLineAddPointCommand(bool keyDown, const double x, const double y, double zpos, GeoDataPointmap* ptmap);
+	InterpolateLineAddPointCommand(double x, double y, double val, bool newFlag, GeoDataPointmap* map);
 
 	void redo() override;
 	void undo() override;
 
-	bool mergeWith(const QUndoCommand* other) override;
-
 private:
-	bool m_keyDown;
-	GeoDataPointmap* m_pointMap;
 	QPointF m_newPoint;
-	double zposition;
-	vtkSmartPointer<vtkVertex> vertex;
+	double m_newVal;
+	bool m_newFlag;
+
+	GeoDataPointmap* m_pointMap;
 };
+
 #endif // GEODATAPOINTMAP_INTERPOLATELINEADDPOINTCOMMAND_H

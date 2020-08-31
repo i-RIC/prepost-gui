@@ -1,10 +1,13 @@
 #ifndef GEODATAPOINTMAP_H
 #define GEODATAPOINTMAP_H
 
+#include "geodatapointmaprepresentationdialog.h"
+
+#include <guibase/polyline/polylinecontroller.h>
 #include <guibase/polygon/polygoncontroller.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <misc/zdepthrange.h>
-#include "geodatapointmaprepresentationdialog.h"
+
 #include <vtkUnstructuredGrid.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -14,6 +17,8 @@
 #include <vtkDataSetMapper.h>
 #include <vtkPointLocator.h>
 #include <vtkMaskPoints.h>
+
+#include <vector>
 
 class QAction;
 class QPolygonF;
@@ -115,8 +120,6 @@ public:
 	void selectPointsInsideBox(MouseBoundingBox* box, bool xOr);
 	void selectPointsNearPoint(const QVector2D& pos, bool xOr);
 	void clearPointsSelection();
-	void resetSelectedInterp();
-	void unwindSelectedInterp();
 	void enablePointSelectedActions(bool val);
 	void finishAddPoint();
 	void finishInterpPoint();
@@ -131,6 +134,10 @@ private:
 	void updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints);
 	bool pointsUsedForBreakLines(const QVector<vtkIdType>& points);
 
+	static void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
+										std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,
+										std::vector<double>& yp, std::vector<double>& temp);
+
 	MappingMode m_mappingMode;
 	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
@@ -142,10 +149,8 @@ private:
 	void updateMouseEventMode();
 	bool isVertexSelectable(const QVector2D& pos);
 	int m_selectedVertexId;
-	int m_selectedVertexId2;
 	double m_selectedZPos;
 	bool m_canceled;
-	void updateInterpShapeData();
 
 private slots:
 	void showDisplaySetting();
@@ -167,7 +172,7 @@ private slots:
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
 
-private:
+protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateFilename() override;
@@ -176,22 +181,19 @@ private:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doApplyOffset(double x, double y) override;
 
-	vtkSmartPointer<vtkPolygon> m_vtkInterpPolygon;
-	vtkSmartPointer<vtkDoubleArray> m_vtkInterpValue;
-
 	vtkSmartPointer<vtkPolyData> m_vtkGrid;
 	vtkSmartPointer<vtkPolyData> m_vtkDelaunayedPolyData;
 
 	QList<GeoDataPointmapBreakLine*> m_breakLines;
 	GeoDataPointmapBreakLine* m_activeBreakLine;
 
-	int m_opacityPercent;
 
 	vtkSmartPointer<vtkPointLocator> m_vtkPointLocator;
 
-	GeoDataPointmapRepresentationDialog::Representation m_representation;
+	int m_opacityPercent;
 	bool m_hideBreakLines;
 	int m_pointSize;
+	GeoDataPointmapRepresentationDialog::Representation m_representation;
 
 	vtkSmartPointer<vtkMaskPoints> m_maskPoints10k;
 	vtkSmartPointer<vtkMaskPoints> m_maskPoints40k;
@@ -211,9 +213,10 @@ private:
 	vtkSmartPointer<vtkPolyDataMapper> m_selectedMapper;
 	vtkSmartPointer<vtkActor> m_selectedActor;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_InterpLineGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_InterpLineMapper;
-	vtkSmartPointer<vtkActor> m_InterpLineActor;
+	PolyLineController m_interpolatePointsController;
+	double m_addPointsValue;
+	std::vector<double> m_interpolateValues;
+	std::vector<bool> m_interpolateNewFlags;
 
 	PolygonController m_selectionPolygonController;
 
@@ -252,6 +255,7 @@ private:
 	bool m_needRemeshing;
 	ZDepthRange m_zDepthRange;
 
+private:
 	class InterpolateLineAddPointCommand;
 	class AddPointsCommand;
 	class AddInterpolatePointsCommand;
