@@ -144,14 +144,6 @@ private:
 	int m_selectedVertexId;
 	int m_selectedVertexId2;
 	double m_selectedZPos;
-	QPixmap m_addPixmap;
-	QCursor m_addCursor;
-	QPixmap m_removePixmap;
-	QCursor m_removeCursor;
-	QPixmap m_interpPointAddPixmap;
-	QCursor m_interpPointAddCursor;
-	QPixmap m_interpPointCtrlAddPixmap;
-	QCursor m_interpPointCtrlAddCursor;
 	bool m_canceled;
 	void updateInterpShapeData();
 
@@ -175,7 +167,7 @@ private slots:
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateFilename() override;
@@ -184,7 +176,6 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doApplyOffset(double x, double y) override;
 
-protected:
 	vtkSmartPointer<vtkPolygon> m_vtkInterpPolygon;
 	vtkSmartPointer<vtkDoubleArray> m_vtkInterpValue;
 
@@ -226,6 +217,15 @@ protected:
 
 	PolygonController m_selectionPolygonController;
 
+	QPixmap m_addPixmap;
+	QCursor m_addCursor;
+	QPixmap m_removePixmap;
+	QCursor m_removeCursor;
+	QPixmap m_interpPointAddPixmap;
+	QCursor m_interpPointAddCursor;
+	QPixmap m_interpPointCtrlAddPixmap;
+	QCursor m_interpPointCtrlAddCursor;
+
 	QAction* m_selectionModePoint;
 	QAction* m_selectionModePolygon;
 	QAction* m_addPointAction;
@@ -252,7 +252,6 @@ protected:
 	bool m_needRemeshing;
 	ZDepthRange m_zDepthRange;
 
-private:
 	class InterpolateLineAddPointCommand;
 	class AddPointsCommand;
 	class AddInterpolatePointsCommand;

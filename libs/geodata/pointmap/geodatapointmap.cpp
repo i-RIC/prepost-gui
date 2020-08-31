@@ -98,6 +98,14 @@ const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
+	m_addCursor {m_addPixmap, 0, 0},
+	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
+	m_removeCursor {m_removePixmap, 0, 0},
+	m_interpPointAddPixmap {":/libs/guibase/images/cursorAdd.png"},
+	m_interpPointAddCursor {m_interpPointAddPixmap, 0, 0},
+	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
+	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
 	m_longEdgeRemover {nullptr}
 {
 	doubleclick = false;
@@ -131,17 +139,6 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_representation = GeoDataPointmapRepresentationDialog::Points;
 	m_opacityPercent = 50;
 
-	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
-	m_addCursor = QCursor(m_addPixmap, 0, 0);
-
-	m_removePixmap = QPixmap(":/libs/guibase/images/cursorRemove.png");
-	m_removeCursor = QCursor(m_removePixmap, 0, 0);
-
-	m_interpPointAddPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
-	m_interpPointAddCursor = QCursor(m_interpPointAddPixmap, 0, 0);
-
-	m_interpPointCtrlAddPixmap = QPixmap(":/images/cursorCtrlAdd.png");
-	m_interpPointCtrlAddCursor = QCursor(m_interpPointCtrlAddPixmap, 0, 0);
 
 	this->lastInterpPointKnown = false;
 
