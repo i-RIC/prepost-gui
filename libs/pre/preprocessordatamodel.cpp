@@ -144,7 +144,7 @@ void PreProcessorDataModel::importCalcCondition()
 {
 	QString selectedFilter;
 	QString fname = QFileDialog::getOpenFileName(
-		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)"), &selectedFilter);
+		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)"), &selectedFilter);
 	if (fname == "") {return;}
 	if (selectedFilter == tr("iRIC project file (*.ipro)")) {
 		importCalcConditionFromOtherProject(fname);
@@ -153,8 +153,15 @@ void PreProcessorDataModel::importCalcCondition()
 	} else if (selectedFilter == tr("YAML file (*.yml)")) {
 		importCalcConditionFromYaml(fname);
 	} else {
-		// invalid!
-		Q_ASSERT(0);
+		// all importable files
+		auto suffix = QFileInfo(fname).suffix();
+		if (suffix == "ipro") {
+			importCalcConditionFromOtherProject(fname);
+		} else if (suffix == "cgn" || suffix == "cgns") {
+			importCalcConditionFromCGNS(fname);
+		} else if (suffix == "yml") {
+			importCalcConditionFromYaml(fname);
+		}
 	}
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
