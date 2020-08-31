@@ -4,7 +4,6 @@
 <context>
     <name>Axis2dDataItem</name>
     <message>
-        <location filename="../axis2ddataitem.cpp" line="48"/>
         <source>Axes</source>
         <translation>座標軸</translation>
     </message>

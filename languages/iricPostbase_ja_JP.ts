@@ -4,27 +4,22 @@
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="14"/>
         <source>Particle generate time setting</source>
         <translation>パーティクル生成時刻設定</translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="32"/>
         <source>&amp;Add...</source>
         <translation>追加 (&amp;A) ...</translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.ui" line="39"/>
         <source>&amp;Delete</source>
         <translation>削除 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
         <source>Add time step</source>
         <translation>タイムステップの追加</translation>
     </message>
     <message>
-        <location filename="../particle/particlearbitrarytimeeditdialog.cpp" line="67"/>
         <source>Select Time step to add</source>
         <translation>追加するタイムステップを選択してください</translation>
     </message>
@@ -32,37 +27,30 @@
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
-        <location filename="../postallzoneselectingdialog.ui" line="14"/>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.ui" line="22"/>
         <source>Dimension:</source>
         <translation>次元:</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.ui" line="49"/>
         <source>Grid Type:</source>
         <translation>格子種類:</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.ui" line="78"/>
         <source>&amp;Region:</source>
         <translation>領域:</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.cpp" line="35"/>
         <source>One dimensional data</source>
         <translation>一次元データ</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.cpp" line="46"/>
         <source>Two dimensional data</source>
         <translation>二次元データ</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.cpp" line="57"/>
         <source>Three dimensional data</source>
         <translation>三次元データ</translation>
     </message>
@@ -85,17 +73,14 @@
 <context>
     <name>PostParticleBasicSettingDialog</name>
     <message>
-        <location filename="../particle/postparticlebasicsettingdialog.ui" line="14"/>
         <source>Particles Setting</source>
         <translation>粒子設定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlebasicsettingdialog.ui" line="22"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlebasicsettingdialog.ui" line="53"/>
         <source>Size:</source>
         <translation>サイズ:</translation>
     </message>
@@ -103,32 +88,26 @@
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
-        <location filename="../particle/postparticlescalarpropertydialog.ui" line="14"/>
         <source>Particle Scalar Setting</source>
         <translation>スカラー設定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlescalarpropertydialog.ui" line="26"/>
         <source>Custom Color</source>
         <translation>色を指定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlescalarpropertydialog.ui" line="64"/>
         <source>Color by attribute value</source>
         <translation>属性値により自動設定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlescalarpropertydialog.ui" line="89"/>
         <source>Attribute:</source>
         <translation>属性:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlescalarpropertydialog.ui" line="127"/>
         <source>Size:</source>
         <translation>サイズ:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlescalarpropertydialog.ui" line="171"/>
         <source>&amp;Color Bar Setting</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
@@ -136,98 +115,78 @@
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="17"/>
         <source>Arrow Setting</source>
         <translation>ベクトル設定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="31"/>
         <source>Attribute value:</source>
         <translation>属性値:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="56"/>
         <source>Length</source>
         <translation>長さ</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="62"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="76"/>
         <source>Standard value:</source>
         <translation>標準値:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="105"/>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="168"/>
         <source>[m/s]</source>
         <translation>[m/s]</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="112"/>
         <source>Length on screen:</source>
         <translation>画面上での長さ:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="132"/>
         <source>[pixel]</source>
         <translation>[ピクセル]</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="139"/>
         <source>Minimum value to draw:</source>
         <translation>表示する最小値:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="195"/>
         <source>Sampling</source>
         <translation>サンプリング</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="203"/>
         <source>All particles</source>
         <translation>全粒子に表示</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="213"/>
         <source>Sampling rate:</source>
         <translation>間引き間隔:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="233"/>
         <source>Specify number of particles</source>
         <translation>表示する粒子数を指定:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="271"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="283"/>
         <source>Custom color</source>
         <translation>色を指定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="313"/>
         <source>By scalar value</source>
         <translation>スカラー値により設定</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="336"/>
         <source>Arrow Shape</source>
         <translation>矢印形状</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="344"/>
         <source>Arrow size:</source>
         <translation>矢印の大きさ:</translation>
     </message>
     <message>
-        <location filename="../particle/postparticlevectorpropertydialog.ui" line="361"/>
         <source>Line width:</source>
         <translation>線の幅:</translation>
     </message>
@@ -235,17 +194,14 @@
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
-        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="14"/>
         <source>Polygon Setting</source>
         <translation>ポリゴン設定</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="22"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatabasicsettingdialog.ui" line="53"/>
         <source>Line Width:</source>
         <translation>線の幅:</translation>
     </message>
@@ -253,32 +209,26 @@
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
-        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="14"/>
         <source>Polygon Setting</source>
         <translation>ポリゴン設定</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="26"/>
         <source>Custom Color</source>
         <translation>色を指定</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="64"/>
         <source>Color by attribute value</source>
         <translation>属性値により自動設定</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="89"/>
         <source>Attribute:</source>
         <translation>属性:</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="127"/>
         <source>Line Width</source>
         <translation>線の幅:</translation>
     </message>
     <message>
-        <location filename="../polydata/postpolydatascalarpropertydialog.ui" line="171"/>
         <source>&amp;Color Bar Setting</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
@@ -286,22 +236,18 @@
 <context>
     <name>PostStringResultDataItem</name>
     <message>
-        <location filename="../string/poststringresultdataitem.cpp" line="72"/>
         <source>Label</source>
         <translation>ラベル</translation>
     </message>
     <message>
-        <location filename="../string/private/poststringresultdataitem_movecommand.cpp" line="6"/>
         <source>Move label</source>
         <translation>ラベルの移動</translation>
     </message>
     <message>
-        <location filename="../string/private/poststringresultdataitem_resizecommand.cpp" line="6"/>
         <source>Resize label</source>
         <translation>ラベルのリサイズ</translation>
     </message>
     <message>
-        <location filename="../string/private/poststringresultdataitem_setsettingcommand.cpp" line="6"/>
         <source>Edit Label Setting</source>
         <translation>ラベル設定の編集</translation>
     </message>
@@ -309,92 +255,74 @@
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="14"/>
         <source>Label Setting</source>
         <translation>ラベル設定</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="20"/>
         <source>Setting</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="32"/>
         <source>Position and Size</source>
         <translation>位置とサイズ</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="43"/>
         <source>Margin</source>
         <translation>マージン</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="51"/>
         <source>Horizontal</source>
         <translation>水平方向</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="65"/>
         <source>Vertical</source>
         <translation>垂直方向</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="117"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="125"/>
         <source>Left:</source>
         <translation>左:</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="139"/>
         <source>Top:</source>
         <translation>上:</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="189"/>
         <source>Size</source>
         <translation>サイズ</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="195"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="209"/>
         <source>Width:</source>
         <translation>幅:</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="226"/>
         <source>Height:</source>
         <translation>高さ:</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="266"/>
         <source>Font and Color</source>
         <translation>フォントと色</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="272"/>
         <source>Font:</source>
         <translation>フォント:</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="288"/>
         <source>Edit...</source>
         <translation>編集...</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="310"/>
         <source>Font color:</source>
         <translation>フォントの色:</translation>
     </message>
     <message>
-        <location filename="../string/poststringresultsettingdialog.ui" line="341"/>
         <source>Background color:</source>
         <translation>背景色:</translation>
     </message>
@@ -402,12 +330,10 @@
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="70"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../time/private/posttimedataitem_setsettingcommand.cpp" line="4"/>
         <source>Edit time setting</source>
         <translation>時刻表示の設定変更</translation>
     </message>
@@ -415,17 +341,14 @@
 <context>
     <name>PostTimeEditDialog</name>
     <message>
-        <location filename="../time/posttimeeditdialog.ui" line="14"/>
         <source>Time Setting</source>
         <translation>時刻設定</translation>
     </message>
     <message>
-        <location filename="../time/posttimeeditdialog.ui" line="20"/>
         <source>Use project setting</source>
         <translation>プロジェクトの設定を使用</translation>
     </message>
     <message>
-        <location filename="../time/posttimeeditdialog.ui" line="30"/>
         <source>Time Format</source>
         <translation>時間の書式</translation>
     </message>
@@ -457,7 +380,6 @@
 <context>
     <name>PostTitleDataItem</name>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="20"/>
         <source>Title</source>
         <translation>タイトル</translation>
     </message>
@@ -469,17 +391,14 @@
 <context>
     <name>PostTitleEditDialog</name>
     <message>
-        <location filename="../title/posttitleeditdialog.ui" line="14"/>
         <source>Title Setting</source>
         <translation>タイトル設定</translation>
     </message>
     <message>
-        <location filename="../title/posttitleeditdialog.ui" line="22"/>
         <source>Title:</source>
         <translation>タイトル:</translation>
     </message>
     <message>
-        <location filename="../title/posttitleeditdialog.ui" line="56"/>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>警告: タイトルには、英数字と記号のみ利用することができます。</translation>
     </message>
