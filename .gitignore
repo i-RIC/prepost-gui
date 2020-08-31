@@ -11,6 +11,7 @@ ui_*.h
 *.exp
 *.dll
 *.lib
+*.qm
 qrc_*.cpp
 *.sln
 *.suo
