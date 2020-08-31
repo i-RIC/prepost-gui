@@ -12,7 +12,6 @@ class PreProcessorBCGroupDataItem : public PreProcessorDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCGroupDataItem();
 	void loadFromCgnsFile(const int fn) override;
@@ -21,17 +20,21 @@ public:
 	const QList<PreProcessorBCDataItem*> conditions() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void updateZDepthRangeItemCount() override;
-	QMenu* bcMenu() {return m_bcMenu;}
+	QMenu* bcMenu() const;
 	void updateBCMenu(PreProcessorBCDataItem* item);
 	void clear();
 	void clearPoints();
 	void setGrid(Grid* grid);
 	PreProcessorBCDataItem* addCondition(int index, bool hideSetting = false);
 	void renumberItemsForProject();
-	const QList<QAction*> addActions() const {return m_addActions;}
+	const QList<QAction*> addActions() const;
 
 public slots:
 	void addCondition();
+
+private slots:
+	void deleteSelected();
+	void deleteAll();
 
 signals:
 	void itemsUpdated();
@@ -45,6 +48,9 @@ private:
 	void renumberItemsForCgns();
 
 	QList<QAction*> m_addActions;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
+
 	int m_projectBuildNumber;
 
 	QAction* m_dummyEditAction;

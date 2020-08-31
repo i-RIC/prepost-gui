@@ -14,9 +14,9 @@ class PreProcessorBCSettingGroupDataItem : public PreProcessorDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent);
-	~PreProcessorBCSettingGroupDataItem();
+	~PreProcessorBCSettingGroupDataItem() override;
+
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
 	void informGridUpdate();
@@ -26,15 +26,19 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void updateBCMenu(PreProcessorBCSettingDataItem* item);
 	void setupAddActions();
-	const QList<QAction*>& addActions() const {return m_addActions;}
-	QAction* dummyEditAction() const {return m_dummyEditAction;}
-	QAction* dummyDeleteAction() const {return m_dummyDeleteAction;}
+	const QList<QAction*>& addActions() const;
+	QAction* dummyEditAction() const;
+	QAction* dummyDeleteAction() const;
 
 public slots:
 	void executeMapping(bool noDraw = false);
 	void updateItems();
 	void loadItems();
 	void addCondition();
+
+private slots:
+	void deleteSelected();
+	void deleteAll();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -43,6 +47,9 @@ protected:
 private:
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> m_itemMap;
 	QList<QAction*> m_addActions;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
+
 	QAction* m_dummyEditAction;
 	QAction* m_dummyDeleteAction;
 };

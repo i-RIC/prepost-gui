@@ -11,6 +11,8 @@ public:
 	Impl(DistanceMeasureGroupDataItem* parent);
 
 	QAction* m_addAction;
+	QAction* m_deleteSelectedAction;
+	QAction* m_deleteAllAction;
 };
 
 #endif // DISTANCEMEASUREGROUPDATAITEM_IMPL_H

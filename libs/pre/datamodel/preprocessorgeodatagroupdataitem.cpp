@@ -12,6 +12,7 @@
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
 
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -61,6 +62,13 @@
 
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import..."), this)},
+	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import from web..."), this)},
+	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.png"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
+	m_setupScalarBarAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this)},
+	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorGeoDataGroupDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this)},
 	m_condition {cond}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -68,26 +76,12 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 
 	m_addSignalMapper = nullptr;
 
-	m_importAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("&Import..."), this);
-	m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_importAction->setEnabled(importAvailable());
-
-	m_webImportAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("&Import from web..."), this);
-	m_webImportAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_webImportAction->setEnabled(webImportAvailable());
-
-	m_deleteAllAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this);
-	m_deleteAllAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
-
-	m_exportAllPolygonsAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this);
-	m_exportAllPolygonsAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
-
-	m_editColorMapAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this);
-	m_editColorMapAction->setIcon(QIcon(":/libs/guibase/images/iconColor.png"));
-	m_setupScalarBarAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this);
 
 	connect(m_importAction, SIGNAL(triggered()), this, SLOT(import()));
 	connect(m_webImportAction, SIGNAL(triggered()), this, SLOT(importFromWeb()));
+	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 	connect(m_exportAllPolygonsAction, SIGNAL(triggered()), this, SLOT(exportAllPolygons()));
 	connect(this, SIGNAL(selectGeoData(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
@@ -142,14 +136,15 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 
 	m_exportAllPolygonsAction->setEnabled(polygonExists());
 	menu->addAction(m_exportAllPolygonsAction);
-	menu->addSeparator();
-	menu->addAction(m_deleteAllAction);
 
 	if (! m_condition->isReferenceInformation()) {
 		menu->addSeparator();
 		menu->addAction(m_editColorMapAction);
 		menu->addAction(m_setupScalarBarAction);
 	}
+	menu->addSeparator();
+	menu->addAction(m_deleteSelectedAction);
+	menu->addAction(m_deleteAllAction);
 }
 
 void PreProcessorGeoDataGroupDataItem::closeCgnsFile()
@@ -1168,6 +1163,44 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 
 ERROR:
 	delete c;
+}
+
+void PreProcessorGeoDataGroupDataItem::deleteSelected()
+{
+	std::vector<PreProcessorGeoDataDataItem*> items;
+	std::vector<QString> names;
+	for (int i = 0; i < m_childItems.size(); ++i) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
+		GeoData* rd = item->geoData();
+		if (dynamic_cast<GeoDataBackground*>(rd) != nullptr) {continue;}
+
+		items.push_back(item);
+		names.push_back(item->standardItem()->text());
+	}
+
+	if (items.size() == 0) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("There is no geographic data."), QMessageBox::Ok);
+		return;
+	}
+
+	ItemMultiSelectingDialog dialog(mainWindow());
+	dialog.setWindowTitle(tr("Delete selected geograhic data"));
+	dialog.setItems(names);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto settings = dialog.selectSettings();
+	for (int i = 0; i < settings.size(); ++i) {
+		if (settings.at(i)) {
+			// delete the item
+			auto item = items.at(i);
+			item->setDeleteSilently(true);
+			dataModel()->deleteItem(item->standardItem()->index(), true);
+		}
+	}
+	informValueRangeChange();
+
+	clearDimensionsIfNoDataExists();
 }
 
 void PreProcessorGeoDataGroupDataItem::deleteAll()

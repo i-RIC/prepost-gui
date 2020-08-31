@@ -7,6 +7,7 @@
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
 #include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/project/measured/measureddata.h>
@@ -20,6 +21,7 @@
 #include <QDomNode>
 #include <QIcon>
 #include <QMenu>
+#include <QMessageBox>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
@@ -29,7 +31,10 @@
 #include <vtkTextProperty.h>
 
 PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent) :
-	PreProcessorDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
+	PreProcessorDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorMeasuredDataTopDataItem::tr("&Import..."), this)},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorMeasuredDataTopDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorMeasuredDataTopDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("measureddata");
@@ -40,9 +45,9 @@ PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(Graphic
 
 	setupActors();
 
-	m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorMeasuredDataTopDataItem::tr("&Import..."), this);
-
 	connect(m_importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
+	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
+	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
 	connect(projectData()->mainfile(), SIGNAL(measuredDataAdded()), this, SLOT(addChildItem()));
 	connect(projectData()->mainfile(), SIGNAL(measuredDataDeleted(int)), this, SLOT(deleteChildItem(int)));
 	connect(this, SIGNAL(selectMeasuredData(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
@@ -125,7 +130,51 @@ void PreProcessorMeasuredDataTopDataItem::deleteChildItem(int index)
 	renderGraphicsView();
 }
 
+void PreProcessorMeasuredDataTopDataItem::deleteSelected()
+{
+	if (m_childItems.size() == 0) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("There is no measured data."), QMessageBox::Ok);
+		return;
+	}
+
+	auto items = m_childItems;
+
+	std::vector<QString> names;
+	for (auto item : items) {
+		names.push_back(item->standardItem()->text());
+	}
+
+	ItemMultiSelectingDialog dialog(mainWindow());
+	dialog.setWindowTitle(tr("Delete selected measured data"));
+	dialog.setItems(names);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto settings = dialog.selectSettings();
+	auto mainfile = projectData()->mainfile();
+	for (int i = 0; i < settings.size(); ++i) {
+		if (settings.at(i)) {
+			// delete the item
+			mainfile->deleteMeasuredData(items.at(i)->standardItem()->index());
+		}
+	}
+}
+
+void PreProcessorMeasuredDataTopDataItem::deleteAll()
+{
+	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all measured data?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
+	while (m_childItems.size() > 0) {
+		GraphicsWindowDataItem* item = *(m_childItems.begin());
+		projectData()->mainfile()->deleteMeasuredData(item->standardItem()->index());
+	}
+}
+
 void PreProcessorMeasuredDataTopDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_importAction);
+	menu->addSeparator();
+	menu->addAction(m_deleteSelectedAction);
+	menu->addAction(m_deleteAllAction);
 }

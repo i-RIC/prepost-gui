@@ -31,9 +31,9 @@ class PreProcessorBCSettingDataItem : public PreProcessorGeoDataDataItemInterfac
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent);
-	virtual ~PreProcessorBCSettingDataItem();
+	~PreProcessorBCSettingDataItem() override;
+
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -52,26 +52,24 @@ public:
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void loadData();
 	void addCustomMenuItems(QMenu* menu) override;
-	PreProcessorBCDataItem* bcDataItem() const {return m_bcDataItem;}
-	bool isMapped() const {return m_polygon->isMapped();}
+	PreProcessorBCDataItem* bcDataItem() const;
+	bool isMapped() const;
 
-	GeoData* geoData() const override {return m_polygon;}
-	void setGeoData(GeoData *) override {}
+	GeoData* geoData() const override;
+	void setGeoData(GeoData *) override;
 
-	void informValueRangeChange() override {}
-	void informDataChange() override {}
-	void setDeleteSilently(bool) override {}
+	void informValueRangeChange() override;
+	void informDataChange() override;
+	void setDeleteSilently(bool) override;
 
-	QAction* editAction() const {return m_editAction;}
-	QAction* deleteAction() {return PreProcessorDataItem::deleteAction();}
+	QAction* editAction() const;
+	QAction* deleteAction();
 
 public slots:
 	void executeMapping(bool noDraw, WaitDialog* dialog);
 
 private slots:
-	void setModified(bool modified = true) override {
-		PreProcessorDataItem::setModified(modified);
-	}
+	void setModified(bool modified = true) override;
 	void updateItem();
 
 protected:

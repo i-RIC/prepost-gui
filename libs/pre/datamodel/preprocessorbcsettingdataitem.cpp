@@ -174,6 +174,43 @@ void PreProcessorBCSettingDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_editAction);
 }
 
+PreProcessorBCDataItem* PreProcessorBCSettingDataItem::bcDataItem() const
+{
+	return m_bcDataItem;
+}
+
+bool PreProcessorBCSettingDataItem::isMapped() const
+{
+	return m_polygon->isMapped();
+}
+
+GeoData* PreProcessorBCSettingDataItem::geoData() const
+{
+	return m_polygon;
+}
+
+void PreProcessorBCSettingDataItem::setGeoData(GeoData *)
+{}
+
+void PreProcessorBCSettingDataItem::informValueRangeChange()
+{}
+
+void PreProcessorBCSettingDataItem::informDataChange()
+{}
+
+void PreProcessorBCSettingDataItem::setDeleteSilently(bool)
+{}
+
+QAction* PreProcessorBCSettingDataItem::editAction() const
+{
+	return m_editAction;
+}
+
+QAction* PreProcessorBCSettingDataItem::deleteAction()
+{
+	return PreProcessorDataItem::deleteAction();
+}
+
 void PreProcessorBCSettingDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_polygon->assignActorZValues(range);
@@ -264,6 +301,11 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dial
 		renderGraphicsView();
 	}
 	m_polygon->setMapped();
+}
+
+void PreProcessorBCSettingDataItem::setModified(bool modified)
+{
+	PreProcessorDataItem::setModified(modified);
 }
 
 void PreProcessorBCSettingDataItem::loadData()

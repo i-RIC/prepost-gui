@@ -386,27 +386,51 @@
 <context>
     <name>Post2dWindowBackgroundImagesDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="21"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="22"/>
         <source>Background Images</source>
         <translation>背景画像</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="26"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="23"/>
         <source>&amp;Add Image</source>
         <translation>画像の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="27"/>
-        <source>&amp;Delete All</source>
-        <translation>全て削除(&amp;A)</translation>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="24"/>
+        <source>Delete &amp;Selected...</source>
+        <translation>選択して削除(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="25"/>
+        <source>Delete &amp;All...</source>
+        <translation>全て削除(&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="184"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="184"/>
+        <source>There is no background image.</source>
+        <translation>背景画像がありません。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="196"/>
+        <source>Delete selected background images</source>
+        <translation>選択した背景画像の削除</translation>
+    </message>
+    <message>
+        <source>&amp;Delete All</source>
+        <translation type="vanished">全て削除(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="213"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="180"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="213"/>
         <source>Are you sure you want to delete all background images?</source>
         <translation>本当に全ての背景画像を削除していいですか?</translation>
     </message>
@@ -793,16 +817,51 @@
 <context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="29"/>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="31"/>
         <source>Measured Values</source>
         <translation>実測値</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="33"/>
+        <source>Delete &amp;Selected...</source>
+        <translation>選択して削除(&amp;S)...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="34"/>
+        <source>Delete &amp;All...</source>
+        <translation>全て削除(&amp;A)...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="137"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="137"/>
+        <source>There is no measured data.</source>
+        <translation>実測値がありません。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="149"/>
+        <source>Delete selected measured data</source>
+        <translation>選択した実測値の削除</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="166"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="166"/>
+        <source>Are you sure you want to delete all measured data?</source>
+        <translation>本当に全ての実測値を削除していいですか?</translation>
     </message>
     <message>
         <source>MEASUREDDATAS</source>
         <translation type="vanished">MEASUREDDATAS</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="37"/>
+        <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="32"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>

@@ -16,8 +16,10 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void addCustomMenuItems(QMenu* menu) override;
 
-public slots:
+private slots:
 	void addMeasure();
+	void deleteSelected();
+	void deleteAll();
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode&) override;

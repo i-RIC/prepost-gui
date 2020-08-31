@@ -30,22 +30,27 @@ class PreProcessorBCDataItem : public PreProcessorDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting = false);
-	virtual ~PreProcessorBCDataItem();
+	~PreProcessorBCDataItem() override;
+
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
-	void handleStandardItemDoubleClicked() override {showDialog();}
+	void handleStandardItemDoubleClicked() override;
 	void handleStandardItemChange() override;
+
 	void setName(const QString& name);
+
 	void setProjectNumber(int num);
+	int projectNumber() const;
+
 	void setCgnsNumber(int num);
-	int projectNumber() const {return m_projectNumber;}
-	int cgnsNumber() const {return m_cgnsNumber;}
+	int cgnsNumber() const;
+
 	void setColor(const QColor& color);
 	QColor color() const;
+
 	int opacityPercent() const;
-	SolverDefinitionBoundaryCondition* condition() {return m_condition;}
+	SolverDefinitionBoundaryCondition* condition() const;
 	bool isValid() const;
 	std::string uniqueName() const;
 
@@ -60,16 +65,16 @@ public:
 	void setGrid(Grid* grid);
 	void clearPoints();
 	void assignIndices(const QSet<vtkIdType>& vertices);
-	bool isCustomModified() const {return m_isCustomModified;}
+	bool isCustomModified() const;
 	QString caption() const;
-	void setMapped(bool mapped) {m_mapped = mapped;}
-	bool mapped() const {return m_mapped;}
+	void setMapped(bool mapped);
+	bool mapped() const;
 
-	QAction* editAction() {return m_editAction;}
-	QAction* deleteAction() {return PreProcessorDataItem::deleteAction();}
-	QAction* assignAction() {return m_assignAction;}
-	QAction* releaseAction() {return m_releaseAction;}
-	bool hideSetting() const {return m_hideSetting;}
+	QAction* editAction() const;
+	QAction* deleteAction();
+	QAction* assignAction() const;
+	QAction* releaseAction() const;
+	bool hideSetting() const;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -82,9 +87,7 @@ public slots:
 	bool showDialog();
 
 private slots:
-	void setModified(bool modified = true) override {
-		PreProcessorDataItem::setModified(modified);
-	}
+	void setModified(bool modified = true) override;
 	void assignSelectedElements();
 	void releaseSelectedElements();
 
