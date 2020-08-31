@@ -93,8 +93,19 @@
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.</source>
-        <translation>Este arquivo e para % 1 % 2, portanto nao e compativel com o atual solucionador. Se voce continuar, somente uma parte dos atributos da grade podera ser importada.</translation>
+        <translation type="vanished">Este arquivo e para % 1 % 2, portanto nao e compativel com o atual solucionador. Se voce continuar, somente uma parte dos atributos da grade podera ser importada.</translation>
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="124"/>
@@ -102,9 +113,8 @@
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.</source>
-        <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce importar a grade de um arquivo CGNS incompativel, somente uma parte dos atributos da grade podera ser importada.</translation>
+        <translation type="vanished">Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce importar a grade de um arquivo CGNS incompativel, somente uma parte dos atributos da grade podera ser importada.</translation>
     </message>
 </context>
 <context>
@@ -215,22 +225,22 @@
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="113"/>
         <source>Edit Z-direction Scale</source>
         <translation>Edicao da escala para direcao Z</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Z-direction Scale</source>
         <translation>Escala em direcao Z </translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="139"/>
         <source>Input new Z-direction scale.</source>
         <translation>Digite a escala de ampliacao da direcao Z.</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="148"/>
         <source>Edit Color Setting</source>
         <translation>Configuracao para cor de exibicao</translation>
     </message>
@@ -389,295 +399,300 @@
 <context>
     <name>PreProcessorDataModel</name>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
         <source>Select file to import</source>
         <translation>Selecionar o arquivo para importar</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="149"/>
         <source>iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation>iRIC Arquivo de projeto (*.ipro);; Arquivo CGNS  (*.cgn *.cgns);; Arquivo YAML  (*.yml)</translation>
+        <translation type="vanished">iRIC Arquivo de projeto (*.ipro);; Arquivo CGNS  (*.cgn *.cgns);; Arquivo YAML  (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="151"/>
+        <location filename="../preprocessordatamodel.cpp" line="149"/>
         <source>iRIC project file (*.ipro)</source>
         <translation>iRIC Arquivo de projeto  (*.ipro)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="155"/>
+        <location filename="../preprocessordatamodel.cpp" line="153"/>
         <source>YAML file (*.yml)</source>
         <translation>Arquivo YAML  (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="194"/>
+        <location filename="../preprocessordatamodel.cpp" line="199"/>
         <source>Select case</source>
         <translation>Selecionar o caso de calculo</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="194"/>
+        <location filename="../preprocessordatamodel.cpp" line="199"/>
         <source>Please select from which case in %1 to import calculation conditions.</source>
         <translation>Para importar a condicao de calculo, selecione qual caso dos calculos  dentro de %1.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="204"/>
-        <location filename="../preprocessordatamodel.cpp" line="217"/>
-        <location filename="../preprocessordatamodel.cpp" line="230"/>
+        <location filename="../preprocessordatamodel.cpp" line="209"/>
+        <location filename="../preprocessordatamodel.cpp" line="222"/>
+        <location filename="../preprocessordatamodel.cpp" line="235"/>
         <source>Success</source>
         <translation>Sucesso</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="204"/>
-        <location filename="../preprocessordatamodel.cpp" line="230"/>
+        <location filename="../preprocessordatamodel.cpp" line="209"/>
+        <location filename="../preprocessordatamodel.cpp" line="235"/>
         <source>Calculation Condition is successfully imported from the specified file.</source>
         <translation>A Importacao da condicao de calculo foi com sucesso.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="217"/>
+        <location filename="../preprocessordatamodel.cpp" line="222"/>
         <source>Calculation Condition is successfully imported from %1.</source>
         <translation>A condicao de calculo foi importada de % 1 com sucesso.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="222"/>
-        <location filename="../preprocessordatamodel.cpp" line="235"/>
-        <location filename="../preprocessordatamodel.cpp" line="253"/>
+        <location filename="../preprocessordatamodel.cpp" line="227"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
+        <location filename="../preprocessordatamodel.cpp" line="258"/>
         <source>Fail</source>
         <translation>Falhar</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="222"/>
-        <location filename="../preprocessordatamodel.cpp" line="235"/>
+        <location filename="../preprocessordatamodel.cpp" line="227"/>
+        <location filename="../preprocessordatamodel.cpp" line="240"/>
         <source>Importing calculation condition failed.</source>
         <translation>Houve falha ao importar a condicao de calculo.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="247"/>
         <source>Select File to Export</source>
         <translation>Selecionar o arquivo para exportar</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="153"/>
+        <location filename="../preprocessordatamodel.cpp" line="151"/>
         <source>CGNS file (*.cgn *.cgns)</source>
         <translation>Arquivo CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="242"/>
+        <location filename="../preprocessordatamodel.cpp" line="147"/>
+        <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="247"/>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
         <translation>Arquivo CGNS  (*.cgns);;Arquivo YAML (*.yml)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="246"/>
+        <location filename="../preprocessordatamodel.cpp" line="251"/>
         <source>Exporting calculation condition...</source>
         <translation>Exportando condicao de calculo</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="248"/>
+        <location filename="../preprocessordatamodel.cpp" line="253"/>
         <source>Calculation Condition is successfully exported to %1.</source>
         <translation>A condicao de calculo foi exportada com sucesso para % 1.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="253"/>
+        <location filename="../preprocessordatamodel.cpp" line="258"/>
         <source>Exporting calculation condition failed.</source>
         <translation>Houve falha ao exportar a condicao de calculo.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="286"/>
+        <location filename="../preprocessordatamodel.cpp" line="291"/>
         <source>G&amp;eographic Data</source>
         <translation>Informacoes geograficas (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="292"/>
+        <location filename="../preprocessordatamodel.cpp" line="297"/>
         <source>Edit &amp;Groups...</source>
         <translation>Edicao de grupos (&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="294"/>
+        <location filename="../preprocessordatamodel.cpp" line="299"/>
         <source>Delete &amp;All...</source>
         <translation>Excluir todos (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="295"/>
+        <location filename="../preprocessordatamodel.cpp" line="300"/>
         <source>Export All Polygons...</source>
         <translation>Exportar todos os poligonos ...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="323"/>
-        <location filename="../preprocessordatamodel.cpp" line="387"/>
-        <location filename="../preprocessordatamodel.cpp" line="414"/>
+        <location filename="../preprocessordatamodel.cpp" line="324"/>
+        <location filename="../preprocessordatamodel.cpp" line="376"/>
+        <location filename="../preprocessordatamodel.cpp" line="400"/>
         <source>&amp;River Survey</source>
         <translation>Dados de levantamento do rio (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="332"/>
-        <location filename="../preprocessordatamodel.cpp" line="390"/>
-        <location filename="../preprocessordatamodel.cpp" line="417"/>
+        <location filename="../preprocessordatamodel.cpp" line="333"/>
+        <location filename="../preprocessordatamodel.cpp" line="379"/>
+        <location filename="../preprocessordatamodel.cpp" line="403"/>
         <source>P&amp;ointset Data</source>
         <translation>Dados DEM (&amp;O)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="341"/>
-        <location filename="../preprocessordatamodel.cpp" line="393"/>
-        <location filename="../preprocessordatamodel.cpp" line="420"/>
         <source>&amp;Polygon</source>
-        <translation>Poligono (&amp;P)</translation>
+        <translation type="vanished">Poligono (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="350"/>
-        <location filename="../preprocessordatamodel.cpp" line="396"/>
-        <location filename="../preprocessordatamodel.cpp" line="423"/>
         <source>Polygon&amp;Group</source>
-        <translation>Grupo de poligono (&amp;G)</translation>
+        <translation type="vanished">Grupo de poligono (&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="438"/>
+        <location filename="../preprocessordatamodel.cpp" line="421"/>
         <source>&amp;Color Setting...</source>
         <translation>Configuracao de cores(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="441"/>
+        <location filename="../preprocessordatamodel.cpp" line="424"/>
         <source>Set Up Scalarbar...</source>
         <translation>Configurar a legenda ...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="464"/>
+        <location filename="../preprocessordatamodel.cpp" line="447"/>
         <source>Import</source>
         <translation>Importar</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="468"/>
+        <location filename="../preprocessordatamodel.cpp" line="451"/>
         <source>Export</source>
         <translation>Exportar </translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="478"/>
+        <location filename="../preprocessordatamodel.cpp" line="461"/>
         <source>&amp;Grid Creating Condition</source>
         <translation>Condicao para criar grade (&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="485"/>
+        <location filename="../preprocessordatamodel.cpp" line="468"/>
         <source>B&amp;oundary Condition Setting</source>
         <translation>Configuracao da condicao de limite (&amp;O)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="495"/>
-        <location filename="../preprocessordatamodel.cpp" line="909"/>
-        <location filename="../preprocessordatamodel.cpp" line="921"/>
-        <location filename="../preprocessordatamodel.cpp" line="988"/>
-        <location filename="../preprocessordatamodel.cpp" line="1000"/>
+        <location filename="../preprocessordatamodel.cpp" line="478"/>
+        <location filename="../preprocessordatamodel.cpp" line="892"/>
+        <location filename="../preprocessordatamodel.cpp" line="904"/>
+        <location filename="../preprocessordatamodel.cpp" line="971"/>
+        <location filename="../preprocessordatamodel.cpp" line="983"/>
         <source>&amp;Grid</source>
         <translation>Grade (&amp;G)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="519"/>
+        <location filename="../preprocessordatamodel.cpp" line="502"/>
         <source>&amp;Attributes Mapping</source>
         <translation>Mapeamento de atributos (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="599"/>
+        <location filename="../preprocessordatamodel.cpp" line="582"/>
         <source>&amp;Measured Values</source>
         <translation>Valores medidos (&amp;M)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="600"/>
+        <location filename="../preprocessordatamodel.cpp" line="583"/>
         <source>&amp;Scalar...</source>
         <translation>Grandeza escalar (&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="601"/>
+        <location filename="../preprocessordatamodel.cpp" line="584"/>
         <source>&amp;Arrows...</source>
         <translation>Vetores (&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="603"/>
+        <location filename="../preprocessordatamodel.cpp" line="586"/>
         <source>&amp;Import...</source>
         <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="737"/>
-        <location filename="../preprocessordatamodel.cpp" line="765"/>
+        <location filename="../preprocessordatamodel.cpp" line="720"/>
+        <location filename="../preprocessordatamodel.cpp" line="748"/>
         <source>Gr&amp;id Creating Condition...</source>
         <translation>Condicao de criacao das grades (&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="793"/>
-        <location filename="../preprocessordatamodel.cpp" line="973"/>
+        <location filename="../preprocessordatamodel.cpp" line="776"/>
+        <location filename="../preprocessordatamodel.cpp" line="956"/>
         <source>&amp;Grid...</source>
         <translation>Grade (&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="808"/>
-        <location filename="../preprocessordatamodel.cpp" line="858"/>
-        <location filename="../preprocessordatamodel.cpp" line="870"/>
+        <location filename="../preprocessordatamodel.cpp" line="791"/>
+        <location filename="../preprocessordatamodel.cpp" line="841"/>
+        <location filename="../preprocessordatamodel.cpp" line="853"/>
         <source>Gr&amp;id Creating Condition</source>
         <translation>Condicao de criacao das grades (&amp;I)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="820"/>
+        <location filename="../preprocessordatamodel.cpp" line="803"/>
         <source>Grid Creating Condition</source>
         <translation>Condicao de criacao das grades</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1053"/>
-        <location filename="../preprocessordatamodel.cpp" line="1083"/>
-        <location filename="../preprocessordatamodel.cpp" line="1097"/>
+        <location filename="../preprocessordatamodel.cpp" line="1036"/>
+        <location filename="../preprocessordatamodel.cpp" line="1066"/>
+        <location filename="../preprocessordatamodel.cpp" line="1080"/>
         <source>(No data to import)</source>
         <translation>(Nao ha dados geograficos para importar)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1184"/>
+        <location filename="../preprocessordatamodel.cpp" line="1167"/>
         <source>(No data to export)</source>
         <translation>(Nao ha dados geograficos para exportar)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1253"/>
+        <location filename="../preprocessordatamodel.cpp" line="1236"/>
         <source>(No algorithm is selected yet)</source>
         <translation>(Nenhum algoritmo foi selecionado ainda)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1257"/>
+        <location filename="../preprocessordatamodel.cpp" line="1240"/>
         <source>&amp;Export...</source>
         <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1333"/>
+        <location filename="../preprocessordatamodel.cpp" line="1316"/>
         <source>Add New %1</source>
         <translation>Adicionar novo %1</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="138"/>
-        <location filename="../preprocessordatamodel.cpp" line="1397"/>
-        <location filename="../preprocessordatamodel.cpp" line="1423"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
+        <location filename="../preprocessordatamodel.cpp" line="1380"/>
+        <location filename="../preprocessordatamodel.cpp" line="1406"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="138"/>
+        <location filename="../preprocessordatamodel.cpp" line="136"/>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
         <translation>O solucionador e ativado. Voce podera visualizar as condicoes de calculo, mas nao podera atualiza-las.</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="359"/>
-        <location filename="../preprocessordatamodel.cpp" line="399"/>
-        <location filename="../preprocessordatamodel.cpp" line="426"/>
+        <location filename="../preprocessordatamodel.cpp" line="342"/>
+        <location filename="../preprocessordatamodel.cpp" line="382"/>
+        <location filename="../preprocessordatamodel.cpp" line="406"/>
+        <source>&amp;Polygon Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="351"/>
+        <location filename="../preprocessordatamodel.cpp" line="385"/>
+        <location filename="../preprocessordatamodel.cpp" line="409"/>
         <source>Poly&amp;line</source>
         <translation>Polilinha (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1397"/>
+        <location filename="../preprocessordatamodel.cpp" line="1380"/>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation>O mapeamento nao foi realizado apos a edicao de %1 pela ultima vez. Deseja realizar o mapeamento ?</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1423"/>
+        <location filename="../preprocessordatamodel.cpp" line="1406"/>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
         <translation>Configuracao de condicao do limite  Apos editado ultima vez &quot;, nao foi executado o mapeamento. Deseja executar o mapeamento ? </translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1437"/>
+        <location filename="../preprocessordatamodel.cpp" line="1420"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../preprocessordatamodel.cpp" line="1437"/>
+        <location filename="../preprocessordatamodel.cpp" line="1420"/>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation>O mapeamento dos dados geograficos e das condicoes da divisa foi concluido com sucesso.</translation>
     </message>
@@ -784,7 +799,7 @@
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1175"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
@@ -842,8 +857,13 @@
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="461"/>
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
-        <translation>O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
+        <translation type="vanished">O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="384"/>
@@ -866,22 +886,22 @@
         <translation>Selecione os dados para exportar.</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="872"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="874"/>
         <source>%1 Color Setting</source>
         <translation>% 1 configuracao de cores</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1120"/>
         <source>Export Polygons</source>
         <translation>Exportar poligonos</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1103"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1120"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1158"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="1175"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>Tem certeza de que deseja excluir todos os itens do grupo % 1 ?</translation>
     </message>
@@ -1063,36 +1083,43 @@
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="134"/>
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="243"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="298"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="207"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="280"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="298"/>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>Os atributos da grade  &quot;%1&quot; foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="225"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="243"/>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>As condicoes do limite &quot;%1&quot; foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="140"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="287"/>
         <source>Information</source>
         <translation>Informacao</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="269"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="287"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="311"/>
         <source>Mapping geographic data finished successfully.</source>
         <translation>Foi concluido com sucesso o mapeamento dos dados geograficos.</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="311"/>
         <source>Mapping geographic data finished</source>
         <translation>Concluido o mapeamento dos dados geograficos</translation>
     </message>
@@ -1113,6 +1140,15 @@
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="29"/>
         <source>Auto</source>
         <translation>Automatico</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="44"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="75"/>
@@ -1146,8 +1182,13 @@
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="175"/>
+        <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
+This algorithm can be used only for structured grids.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.</source>
-        <translation>Localize um ponto considerando a forma da celula da grade e use o valor no ponto encontrado para interpolacao.</translation>
+        <translation type="vanished">Localize um ponto considerando a forma da celula da grade e use o valor no ponto encontrado para interpolacao.</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui" line="191"/>
@@ -1512,7 +1553,7 @@
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1412"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1415"/>
         <source>Grid</source>
         <translation>Grade do fundo</translation>
     </message>
@@ -1621,22 +1662,22 @@
         <translation>Criar atributos (&amp;G)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1415"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1418"/>
         <source> [No Data]</source>
         <translation>[sem dados]</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1425"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1428"/>
         <source> (%1 x %2 = %3)</source>
         <translation> (%1 x %2 = %3)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1428"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1431"/>
         <source> (%1)</source>
         <translation> (%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1456"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1459"/>
         <source>Generate %1</source>
         <translation>Criacao de %1</translation>
     </message>
@@ -1794,8 +1835,13 @@
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="170"/>
+        <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
-        <translation>O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
+        <translation type="vanished">O arquivo especificado possui os dados invalidos e foi ignorado. Os dados ignorados sao os seguintes:</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorhydraulicdatagroupdataitem.cpp" line="174"/>
