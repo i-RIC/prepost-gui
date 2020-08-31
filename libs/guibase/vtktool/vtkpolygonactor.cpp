@@ -91,6 +91,12 @@ void vtkPolygonActor::setPolygon(const QPolygonF& polygon)
 	applyVtkPolygonShape();
 }
 
+void vtkPolygonActor::clear()
+{
+	QPolygonF empty;
+	setPolygon(empty);
+}
+
 vtkPolygon* vtkPolygonActor::getVtkPolygon() const
 {
 	return impl->m_vtkPolygon;
