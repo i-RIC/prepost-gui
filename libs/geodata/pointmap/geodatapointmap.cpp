@@ -10,7 +10,6 @@
 #include "geodatapointmapinterpolatepoints.h"
 #include "geodatapointmaprepresentationdialog.h"
 #include "private/geodatapointmap_addinterpolatepointscommand.h"
-#include "private/geodatapointmap_addpointcommand.h"
 #include "private/geodatapointmap_addpointscommand.h"
 #include "private/geodatapointmap_addpointsetreferencecommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
@@ -23,6 +22,7 @@
 #include "private/geodatapointmap_interpolatelineaddpointcommand.h"
 #include "private/geodatapointmap_triangleswithlongedgeremover.h"
 
+#include <guibase/polygon/polygonpushvertexcommand.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
@@ -102,11 +102,8 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_longEdgeRemover {nullptr}
 {
 	doubleclick = false;
-	m_vtkPolygon = vtkSmartPointer<vtkPolygon>::New();
 	this->m_vtkInterpPolygon = vtkSmartPointer<vtkPolygon>::New();
 	this->m_vtkInterpValue = vtkSmartPointer<vtkDoubleArray>::New();
-	this->m_polyVertexGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	this->m_polyEdgeGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
 
 	m_vtkGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkPoints* points = vtkPoints::New();
@@ -168,8 +165,7 @@ GeoDataPointmap::~GeoDataPointmap()
 	vtkRenderer* r = renderer();
 	r->RemoveActor(m_pointsActor);
 	r->RemoveActor(m_actor);
-	r->RemoveActor(m_polyEdgeActor);
-	r->RemoveActor(m_polyVertexActor);
+	r->RemoveActor(m_selectionPolygonController.linesActor());
 	r->RemoveActor(m_selectedActor);
 	r->RemoveActor(m_InterpLineActor);
 
@@ -222,47 +218,6 @@ void GeoDataPointmap::updateInterpShapeData()
 	//m_polyVertexGrid->GetPointData()->AddArray(m_scalarValues);
 	//m_polyVertexGrid->GetPointData()->SetActiveScalars("polygonvalue");
 	m_InterpLineGrid->Modified();
-}
-
-void GeoDataPointmap::updateShapeData()
-{
-	vtkPoints* points = m_vtkPolygon->GetPoints();
-
-	// update idlist.
-	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
-	idlist->Reset();
-	idlist->SetNumberOfIds(points->GetNumberOfPoints());
-	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
-		idlist->SetId(i, i);
-	}
-	idlist->Modified();
-
-	// Edge line representation.
-	m_polyEdgeGrid->Reset();
-	int edgeCount = m_vtkPolygon->GetNumberOfEdges();
-	m_polyEdgeGrid->Allocate(edgeCount);
-	for (int i = 0; i < edgeCount; ++i) {
-		vtkCell* nextCell = m_vtkPolygon->GetEdge(i);
-		m_polyEdgeGrid->InsertNextCell(nextCell->GetCellType(), nextCell->GetPointIds());
-	}
-	m_polyEdgeGrid->SetPoints(m_vtkPolygon->GetPoints());
-	m_polyEdgeGrid->BuildLinks();
-	m_polyEdgeGrid->Modified();
-
-	// Points representation.
-	m_polyVertexGrid->Reset();
-	vtkIdType vertexId = 0;
-	int vertexCount = m_vtkPolygon->GetNumberOfPoints();
-	m_polyVertexGrid->Allocate(vertexCount);
-	for (int i = 0; i < vertexCount; ++i) {
-		vtkVertex* nextVertex = vtkVertex::New();
-		nextVertex->GetPointIds()->SetId(0, vertexId);
-		m_polyVertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
-		vertexId += 1;
-	}
-	m_polyVertexGrid->SetPoints(m_vtkPolygon->GetPoints());
-	m_polyVertexGrid->Modified();
-
 }
 
 void GeoDataPointmap::loadExternalData(const QString& filename)
@@ -862,7 +817,6 @@ void GeoDataPointmap::setupActors()
 	m_pointsMapper->ImmediateModeRenderingOn();
 
 	m_pointsActor = vtkSmartPointer<vtkLODActor>::New();
-//	m_pointsActor = vtkSmartPointer<vtkActor>::New();
 	p = m_pointsActor->GetProperty();
 	p->SetPointSize(m_pointSize);
 	p->SetRepresentationToPoints();
@@ -915,16 +869,6 @@ void GeoDataPointmap::setupActors()
 	m_InterpLineMapper->SetInputData(this->m_InterpLineGrid);
 	m_InterpLineMapper->ImmediateModeRenderingOn();
 
-	m_polyEdgeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_polyEdgeMapper->SetScalarVisibility(false);
-	m_polyEdgeMapper->SetInputData(this->m_polyEdgeGrid);
-	m_polyEdgeMapper->ImmediateModeRenderingOn();
-
-	m_polyVertexMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_polyVertexMapper->SetScalarVisibility(false);
-	m_polyVertexMapper->SetInputData(this->m_polyEdgeGrid);
-	m_polyVertexMapper->ImmediateModeRenderingOn();
-
 	m_selectedActor = vtkSmartPointer<vtkActor>::New();
 	m_selectedActor->GetProperty()->SetPointSize(9.);
 	m_selectedActor->GetProperty()->SetLighting(false);
@@ -943,30 +887,17 @@ void GeoDataPointmap::setupActors()
 	this->m_InterpLineActor->GetProperty()->SetRepresentationToPoints();
 	this->m_InterpLineActor->SetVisibility(true);
 
-	this->m_polyEdgeActor = vtkSmartPointer<vtkActor>::New();
-	this->m_polyEdgeActor->GetProperty()->SetLineWidth(2);
-	this->m_polyEdgeActor->GetProperty()->SetLighting(true);
-	this->m_polyEdgeActor->GetProperty()->SetColor(0,0,0);
-	this->m_polyEdgeActor->SetMapper(this->m_polyEdgeMapper);
-	this->m_polyEdgeActor->SetVisibility(true);
-
-	this->m_polyVertexActor = vtkSmartPointer<vtkActor>::New();
-	this->m_polyVertexActor->GetProperty()->SetPointSize(5.0);
-	this->m_polyVertexActor->GetProperty()->SetLighting(true);
-	this->m_polyVertexActor->GetProperty()->SetColor(0,0,0);
-	this->m_polyVertexActor->SetMapper(this->m_polyEdgeMapper);
-	this->m_polyVertexActor->SetVisibility(true);
+	auto actor = m_selectionPolygonController.linesActor();
+	actor->GetProperty()->SetLineWidth(2);
 
 	vtkRenderer* r = renderer();
 	r->AddActor(m_actor);
 	r->AddActor(m_pointsActor);
-	r->AddActor(m_polyVertexActor);
-	r->AddActor(m_polyEdgeActor);
+	r->AddActor(m_selectionPolygonController.linesActor());
 	r->AddActor(m_InterpLineActor);
 	r->AddActor(m_selectedActor);
 
-	actorCollection()->AddItem(m_polyVertexActor);
-	actorCollection()->AddItem(m_polyEdgeActor);
+	actorCollection()->AddItem(m_selectionPolygonController.linesActor());
 	actorCollection()->AddItem(m_InterpLineActor);
 	actorCollection()->AddItem(m_selectedActor);
 
@@ -1087,8 +1018,7 @@ void GeoDataPointmap::updateZDepthRangeItemCount(ZDepthRange& range)
 void GeoDataPointmap::assignActorZValues(const ZDepthRange& range)
 {
 	m_zDepthRange = range;
-	m_polyVertexActor->SetPosition(0, 0, range.max());
-	m_polyEdgeActor->SetPosition(0, 0, range.max());
+	m_selectionPolygonController.linesActor()->SetPosition(0, 0, range.max());
 	m_InterpLineActor->SetPosition(0, 0, range.max());
 
 	double breakLineDepth = range.max() * 0.9 + range.min() * 0.1;
@@ -1274,10 +1204,10 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meSMPolygonPrepare:
 			//adds first point.  point added in meSMPolygon below is then modified on mouse move
-			pushRenderCommand(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new PolygonPushVertexCommand(true, v->viewportToWorld(event->pos()), &m_selectionPolygonController));
 		case meSMPolygon:
 			m_mouseEventMode = meSMPolygon;
-			pushRenderCommand(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new PolygonPushVertexCommand(true, v->viewportToWorld(event->pos()), &m_selectionPolygonController));
 			break;
 		case meSMInterpPointPrepare: {
 				bool ptduplicate = false;
@@ -1415,7 +1345,7 @@ void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsVie
 		renderGraphicsView();
 		break;
 	case meSMPolygon:
-		pushRenderCommand(new AddPointCommand(false, QPoint(event->x(), event->y()), this));
+		pushRenderCommand(new PolygonPushVertexCommand(false, v->viewportToWorld(event->pos()), &m_selectionPolygonController));
 		break;
 	case meSMInterpPoint:
 	case meSMInterpPointPrepare:
@@ -1528,17 +1458,14 @@ void GeoDataPointmap::definePolygon(bool doubleClick, bool xOr)
 {
 	int minCount = 4;
 	if (doubleClick) {minCount = 3;}
-	if (polygon().count() <= minCount) {
+	if (m_selectionPolygonController.polygon().count() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
 	}
-	iRICUndoStack& stack = iRICUndoStack::instance();
-	stack.undo();
-	this->showPolygonSelectedPoints(xOr);
-	this->resetSelectionPolygon();
-	this->m_mouseEventMode = GeoDataPointmap::meNormal;
-	//this->updateMouseCursor(m_pointMap->graphicsView());
-	this->updateActionStatus();
+	selectPointsInsidePolygon(xOr);
+	m_selectionPolygonController.clear();
+	m_mouseEventMode = GeoDataPointmap::meNormal;
+	updateActionStatus();
 }
 
 void GeoDataPointmap::selectPointsInsideBox(MouseBoundingBox* box, bool xOr)
@@ -1682,7 +1609,7 @@ void GeoDataPointmap::selectPointsNearPoint(const QVector2D& pos, bool xOr)
 	vArr->Delete();
 }
 
-void GeoDataPointmap::showPolygonSelectedPoints(bool xOr)
+void GeoDataPointmap::selectPointsInsidePolygon(bool xOr)
 {
 
 	QSet<vtkIdType> oldSelectedVertices;
@@ -1698,22 +1625,14 @@ void GeoDataPointmap::showPolygonSelectedPoints(bool xOr)
 
 	for (int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
 		double x[3];
-		this->m_selectedVerticesGrid->GetPoint(i,x);
-		double closestPoint[3];
-		int subId;
-		double pcoords[3];
-		double weights[32];
-		double dist;
-		int inside = this->m_vtkPolygon->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights);
+		this->m_selectedVerticesGrid->GetPoint(i, x);
+		bool inside = m_selectionPolygonController.isAreaSelectable(QPointF(x[0], x[1]));
 		if (inside || oldSelectedVertices.contains(i)) {
-			//if( 1 == this->m_vtkPolygon->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
-			//if( 1 == this->m_vtkPolygon->PointInPolygon(x, ){
 			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
-			v->GetPointIds()->SetId(0,i);
+			v->GetPointIds()->SetId(0, i);
 			this->m_selectedVerticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
 		}
 	}
-//		this->m_selectedVerticesGrid->BuildLinks();
 	this->m_selectedVerticesGrid->Modified();
 	this->enablePointSelectedActions(true);
 }
@@ -2194,26 +2113,6 @@ void GeoDataPointmap::editPointsGreaterThan()
 	clearPointsSelection();
 }
 
-const QPolygonF GeoDataPointmap::polygon()
-{
-	QPolygonF ret;
-	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
-	vtkPoints* points = m_vtkPolygon->GetPoints();
-	int vCount = idlist->GetNumberOfIds();
-	for (int i = 0; i < vCount; ++i) {
-		vtkIdType id = idlist->GetId(i);
-		double* p = points->GetPoint(id);
-		ret << QPointF(*p, *(p + 1));
-	}
-	// For QPolygonF, the start vertex and end vertex should be the same point,
-	// to define a closed polygon.
-	vtkIdType id = idlist->GetId(0);
-	double* p = points->GetPoint(id);
-	ret << QPointF(*p, *(p + 1));
-
-	return ret;
-}
-
 void GeoDataPointmap::clearPointsSelection()
 {
 	m_selectedVerticesGrid->Reset();
@@ -2228,16 +2127,6 @@ void GeoDataPointmap::clearNewPoints()
 	m_newPoints->Reset();
 	m_newPoints->Allocate(10, 10);
 	m_newPoints->Modified();
-}
-
-void GeoDataPointmap::resetSelectionPolygon()
-{
-	int numpolypts = this->m_vtkPolygon->GetPoints()->GetNumberOfPoints();
-	for (int i = 0; i < numpolypts; i++) {
-		iRICUndoStack::instance().undo();
-	}
-	this->m_vtkPolygon->GetPoints()->Reset();
-	this->updateShapeData();
 }
 
 void GeoDataPointmap::unwindSelectedInterp()
@@ -2319,11 +2208,6 @@ void GeoDataPointmap::enablePointSelectedActions(bool val)
 	this->m_editPointsGreaterThanAction->setEnabled(val);
 	this->m_editPointsLessThanAction->setEnabled(val);
 
-}
-
-vtkPolygon* GeoDataPointmap::getVtkPolygon() const
-{
-	return m_vtkPolygon;
 }
 
 vtkPolygon* GeoDataPointmap::getVtkInterpPolygon() const

@@ -1,6 +1,7 @@
 #ifndef GEODATAPOINTMAP_H
 #define GEODATAPOINTMAP_H
 
+#include <guibase/polygon/polygoncontroller.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <misc/zdepthrange.h>
 #include "geodatapointmaprepresentationdialog.h"
@@ -78,7 +79,6 @@ public:
 
 	vtkPolyData* vtkGrid() const;
 	vtkPolyData* delaunayedPolyData() const;
-	const QPolygonF polygon();
 
 	bool getValueAt(double x, double y, double* value);
 	bool getValueAt(const QPointF& pos, double* value);
@@ -105,19 +105,17 @@ public:
 	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 
-	vtkPolygon* getVtkPolygon() const;
 	vtkPolygon* getVtkInterpPolygon() const;
 	vtkDoubleArray* getVtkInterpValue() const;
 	vtkPolyData* selectedVerticesGrid() const;
 
 	QVector<vtkIdType> selectedVertices();
 	void definePolygon(bool doubleClick, bool xOr);
-	void showPolygonSelectedPoints(bool xOr);
+	void selectPointsInsidePolygon(bool xOr);
 	void selectPointsInsideBox(MouseBoundingBox* box, bool xOr);
 	void selectPointsNearPoint(const QVector2D& pos, bool xOr);
 	void clearPointsSelection();
 	void clearNewPoints();
-	void resetSelectionPolygon();
 	void resetSelectedInterp();
 	void unwindSelectedInterp();
 	void enablePointSelectedActions(bool val);
@@ -156,7 +154,6 @@ private:
 	QPixmap m_interpPointCtrlAddPixmap;
 	QCursor m_interpPointCtrlAddCursor;
 	bool m_canceled;
-	void updateShapeData();
 	void updateInterpShapeData();
 
 private slots:
@@ -190,8 +187,6 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 protected:
-	/// The polygon data container.
-	vtkSmartPointer<vtkPolygon> m_vtkPolygon;
 	vtkSmartPointer<vtkPolygon> m_vtkInterpPolygon;
 	vtkSmartPointer<vtkDoubleArray> m_vtkInterpValue;
 
@@ -222,14 +217,6 @@ protected:
 	vtkSmartPointer<vtkPolyDataMapper> m_pointsMapper;
 	vtkSmartPointer<vtkLODActor> m_pointsActor;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_polyEdgeGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_polyEdgeMapper;
-	vtkSmartPointer<vtkActor> m_polyEdgeActor;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_polyVertexGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_polyVertexMapper;
-	vtkSmartPointer<vtkActor> m_polyVertexActor;
-
 	double m_newPointValue;
 	vtkSmartPointer<vtkPolyData> m_newPoints;
 	vtkSmartPointer<vtkPolyDataMapper> m_newPointsMapper;
@@ -242,6 +229,8 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_InterpLineGrid;
 	vtkSmartPointer<vtkDataSetMapper> m_InterpLineMapper;
 	vtkSmartPointer<vtkActor> m_InterpLineActor;
+
+	PolygonController m_selectionPolygonController;
 
 	QAction* m_selectionModePoint;
 	QAction* m_selectionModeBox;
@@ -271,7 +260,6 @@ protected:
 	ZDepthRange m_zDepthRange;
 
 private:
-	class AddPointCommand;
 	class InterpolateLineAddPointCommand;
 	class AddPointsCommand;
 	class AddInterpolatePointsCommand;
