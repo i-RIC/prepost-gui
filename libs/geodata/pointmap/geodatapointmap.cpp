@@ -1645,24 +1645,12 @@ void GeoDataPointmap::selectionModePoint(bool on)
 	updateActionStatus();
 }
 
-void GeoDataPointmap::selectionModeBox(bool on)
-{
-	this->clearPointsSelection();
-
-	if (on) {
-		m_mouseEventMode = meSMBoxNotPossible;
-	} else {
-		m_mouseEventMode = meNormal;
-	}
-	updateActionStatus();
-}
-
 void GeoDataPointmap::selectionModePolygon(bool on)
 {
 	this->clearPointsSelection();
 
 	if (on) {
-		m_mouseEventMode = GeoDataPointmap::meSMPolygonPrepare;
+		m_mouseEventMode = meSMPolygonPrepare;
 	} else {
 		m_mouseEventMode = meNormal;
 	}
@@ -1705,10 +1693,6 @@ void GeoDataPointmap::updateActionStatus()
 		this->m_addBreakLineAction->setEnabled(true);
 		this->m_removeBreakLineAction->setEnabled(true);
 		this->m_removeAllBreakLinesAction->setEnabled(true);
-		break;
-	case meSMBox:
-		break;
-	case meSMBoxPrepare:
 		break;
 	case meSMPolygonPrepare:
 	case meSMPolygon:

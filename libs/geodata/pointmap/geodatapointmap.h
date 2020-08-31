@@ -158,7 +158,6 @@ private:
 private slots:
 	void showDisplaySetting();
 	void selectionModePoint(bool on);
-	void selectionModeBox(bool on);
 	void selectionModePolygon(bool on);
 	void interpolatePoints(bool on);
 	void addPoints(bool on);
@@ -228,7 +227,6 @@ protected:
 	PolygonController m_selectionPolygonController;
 
 	QAction* m_selectionModePoint;
-	QAction* m_selectionModeBox;
 	QAction* m_selectionModePolygon;
 	QAction* m_addPointAction;
 	QAction* m_interpolatePointAction;
