@@ -195,7 +195,6 @@ protected:
 	QList<GeoDataPointmapBreakLine*> m_breakLines;
 	GeoDataPointmapBreakLine* m_activeBreakLine;
 
-	vtkSmartPointer<vtkPolyData> m_vtkSelectedPolyData;
 	int m_opacityPercent;
 
 	vtkSmartPointer<vtkPointLocator> m_vtkPointLocator;

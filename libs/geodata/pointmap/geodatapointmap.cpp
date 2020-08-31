@@ -1231,7 +1231,6 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 					this->m_InterpLineGrid->Modified();
 					this->lastInterpPointKnown = true;
 				}
-				//this->m_vtkSelectedPolyData = m_selectedVerticesGrid->GetData()
 				this->m_mouseEventMode = meSMInterpPoint;
 				this->m_selectedZPos = 0.;
 			}
