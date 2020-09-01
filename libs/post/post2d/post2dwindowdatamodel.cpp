@@ -1,4 +1,5 @@
 #include "datamodel/post2dwindowcellflaggroupdataitem.h"
+#include "datamodel/post2dwindowgraphgroupdataitem.h"
 #include "datamodel/post2dwindowgridshapedataitem.h"
 #include "datamodel/post2dwindowgridtypedataitem.h"
 #include "datamodel/post2dwindowmeasureddatatopdataitem.h"
@@ -332,4 +333,14 @@ void Post2dWindowDataModel::applyOffset(double x, double y)
 {
 	m_rootDataItem->applyOffset(x, y);
 	m_rootDataItem->renderGraphicsView();
+}
+
+void Post2dWindowDataModel::initCollapseState()
+{
+	auto v = objectBrowserView();
+	for (auto gtItem : rootDataItem()->gridTypeDataItems()) {
+		for (auto zitem : gtItem->zoneDatas()) {
+			v->collapse(zitem->graphGroupDataItem()->standardItem()->index());
+		}
+	}
 }

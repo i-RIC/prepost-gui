@@ -35,6 +35,7 @@ Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent
 	w->propertyBrowser()->view()->setTargetDataItem(rItem->attributeBrowserTargetDataItem());
 	// first, objectbrowser view is expanded.
 	w->m_objectBrowser->expandAll();
+	w->m_dataModel->initCollapseState();
 	w->m_actionManager->connectWithDataModel();
 
 	connect(w->m_objectBrowser->view(), SIGNAL(requestDeleteItem(QModelIndex)), w->m_dataModel, SLOT(deleteItem(QModelIndex)));
