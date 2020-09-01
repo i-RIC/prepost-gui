@@ -759,6 +759,7 @@ void iRICMainWindowActionManager::projectFileClose()
 void iRICMainWindowActionManager::setupMainToolBar()
 {
 	m_mainToolBar = new iRICToolBar(tr("Main ToolBar"), m_parent);
+	m_mainToolBar->setObjectName("iricMainToolBar");
 
 	connect(viewMainToolBarAction, SIGNAL(triggered(bool)), m_mainToolBar, SLOT(setVisible(bool)));
 	connect(m_mainToolBar, SIGNAL(visibilityChanged(bool)), viewMainToolBarAction, SLOT(setChecked(bool)));
@@ -829,6 +830,7 @@ void iRICMainWindowActionManager::setupMainToolBar()
 void iRICMainWindowActionManager::setupWindowsToolBar()
 {
 	m_windowsToolBar = new iRICToolBar(tr("Window list Toolbar"), m_parent);
+	m_windowsToolBar->setObjectName("iricWindowsToolBar");
 #if defined(_MSC_VER)
 	m_windowsToolBar->setMinimumSize(QSize(27, 27));
 #endif
@@ -989,6 +991,7 @@ void iRICMainWindowActionManager::setAnimationWidgets(QMenu* m, QToolBar* t)
 {
 	m_animationMenu = m;
 	m_animationToolbar = t;
+	m_animationToolbar->setObjectName("iricAnimationToolBar");
 	disconnect(viewAnimationToolBarAction);
 	connect(viewAnimationToolBarAction, SIGNAL(toggled(bool)), m_animationToolbar, SLOT(setVisible(bool)));
 	connect(m_animationToolbar, SIGNAL(visibilityChanged(bool)), viewAnimationToolBarAction, SLOT(setChecked(bool)));
