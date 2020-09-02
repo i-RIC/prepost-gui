@@ -1087,42 +1087,47 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="102"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="103"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
         <translation>格子生成条件と格子形状の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
         <translation>本当に格子生成条件と格子を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="404"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="409"/>
+        <source>All importable files (%1)</source>
+        <translation>全てのインポート可能なファイル (%1)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="413"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Importing grid failed.</source>
         <translation>格子のインポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation>地理情報の格子属性へのマッピングを実行しますか?</translation>
     </message>

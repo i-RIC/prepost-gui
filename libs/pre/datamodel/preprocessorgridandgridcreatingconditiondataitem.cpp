@@ -41,6 +41,7 @@
 #include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
+#include <QRegExp>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
@@ -394,17 +395,37 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 			imps.append(*it);
 		}
 	}
+	QRegExp re("\\((.+)\\)");
 	QStringList filterList;
-	QSet<QString>::iterator sit;
-	for (sit = filters.begin(); sit != filters.end(); ++sit) {
-		filterList.append(*sit);
+	QStringList prefixes;
+	for (auto& filter : filters) {
+		filterList.append(filter);
+		if (re.indexIn(filter)) {
+			prefixes.append(re.cap(1));
+		}
 	}
+	// add "All importable files" in the front"
+	prefixes.sort();
+	filterList.insert(0, tr("All importable files (%1)").arg(prefixes.join(" ")));
+
 	// Select the file to import.
 	QString selectedFilter;
 	QString filename = QFileDialog::getOpenFileName(projectData()->mainWindow(), tr("Select file to import"), dir, filterList.join(";;"), &selectedFilter);
 	if (filename.isNull()){return;}
-	QList<GridImporterInterface*> impsForFilter = importers[selectedFilter];
-
+	QList<GridImporterInterface*> impsForFilter;
+	if (importers.find(selectedFilter) != importers.end()) {
+		impsForFilter = importers[selectedFilter];
+	} else {
+		// "All importable files" selected
+		auto ext = QString("*.") + QFileInfo(filename).suffix();
+		for (auto importer : importerList) {
+			for (auto f : importer->fileDialogFilters()) {
+				if (f.indexOf(ext) != -1) {
+					impsForFilter.append(importer);
+				}
+			}
+		}
+	}
 	bool ret = false;
 	for (int i = 0; i < impsForFilter.size(); ++i) {
 		GridImporterInterface* importer = impsForFilter.at(i);

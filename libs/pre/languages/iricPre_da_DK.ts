@@ -992,42 +992,47 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="102"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="103"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="404"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="409"/>
+        <source>All importable files (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="413"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Importing grid failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation type="unfinished"></translation>
     </message>

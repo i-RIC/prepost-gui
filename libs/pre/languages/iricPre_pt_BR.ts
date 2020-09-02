@@ -1020,42 +1020,47 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="102"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="103"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
         <translation>Excluir condicao para criar grade e formato da grade  (&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
         <translation>Tem certeza de que deseja descartar a grade e as condicoes de criacao da grade ?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="404"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="409"/>
+        <source>All importable files (%1)</source>
+        <translation type="unfinished">Todos os arquivos importaveis (%1)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="413"/>
         <source>Select file to import</source>
         <translation>Selecionar o arquivo para importar</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Importing grid failed.</source>
         <translation>Houve falha ao importar a grade.</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Confirmation</source>
         <translation>Confirmacao</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation>Deseja executar o mapeamento dos dados geograficos para atributos de grade ?</translation>
     </message>

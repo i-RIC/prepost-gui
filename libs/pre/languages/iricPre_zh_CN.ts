@@ -1007,42 +1007,47 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="102"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="103"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
         <translation>&amp;删除网格创建条件和网格形状...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="308"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="309"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
         <translation>您确定要舍弃网格创建条件和网格吗？</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="404"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="409"/>
+        <source>All importable files (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="413"/>
         <source>Select file to import</source>
         <translation>选择导入文件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="418"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
         <source>Importing grid failed.</source>
         <translation>导入网格失败</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="439"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="460"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation>您是否要立即将地理数据映射到网格属性？</translation>
     </message>
