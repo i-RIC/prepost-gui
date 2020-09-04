@@ -122,7 +122,6 @@ HEADERS += gd_point_global.h \
            geodatapointcreatort.h \
            geodatapointnodemappert.h \
            geodatapointrealcreator.h \
-           ui_geodatapointcolorsimplesettingdialog.h \
            private/geodatapoint_finishpointdefinitioncommand.h \
            private/geodatapoint_impl.h \
            private/geodatapointcellmappert_detail.h \
