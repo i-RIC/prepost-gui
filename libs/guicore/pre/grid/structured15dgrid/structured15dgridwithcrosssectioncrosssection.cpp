@@ -85,12 +85,12 @@ const QString& Structured15DGridWithCrossSectionCrossSection::name() const
 	return m_name;
 }
 
-const QVector<Altitude>& Structured15DGridWithCrossSectionCrossSection::altitudeInfo() const
+const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& Structured15DGridWithCrossSectionCrossSection::altitudeInfo() const
 {
 	return m_altitudeInfo;
 }
 
-QVector<Altitude>& Structured15DGridWithCrossSectionCrossSection::altitudeInfo()
+QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& Structured15DGridWithCrossSectionCrossSection::altitudeInfo()
 {
 	return m_altitudeInfo;
 }

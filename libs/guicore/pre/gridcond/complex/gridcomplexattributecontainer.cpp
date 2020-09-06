@@ -2,6 +2,11 @@
 
 #include "../../../solverdef/solverdefinitiongridcomplexattribute.h"
 #include "../../../project/projectcgnsfile.h"
+#include "../../base/preprocessorgeodatacomplexgroupdataiteminterface.h"
+#include "../../base/preprocessorgeodatagroupdataiteminterface.h"
+#include "../../base/preprocessorgeodatatopdataiteminterface.h"
+#include "../../base/preprocessorgriddataiteminterface.h"
+#include "../../base/preprocessorgridtypedataiteminterface.h"
 #include "../../grid/grid.h"
 #include <misc/stringtool.h>
 
@@ -90,6 +95,24 @@ bool GridComplexAttributeContainer::getValueRange(double* min, double* max)
 	*min = range[0];
 	*max = range[1];
 	return true;
+}
+
+std::vector<GridComplexConditionGroup*> GridComplexAttributeContainer::groups() const
+{
+	std::vector<GridComplexConditionGroup*> empty;
+	auto gItem = grid()->dataItem();
+	if (gItem == nullptr) {return empty;}
+
+	auto gTypeItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*> (gItem->parent()->parent());
+	if (gTypeItem == nullptr) {return empty;}
+	auto geoTopItem = gTypeItem->geoDataTop();
+	if (geoTopItem == nullptr) {return empty;}
+	auto gItem2 = geoTopItem->groupDataItem(gridAttribute()->name());
+	if (gItem2 == nullptr) {return empty;}
+	auto gItem3 = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (gItem2);
+	if (gItem3 == nullptr) {return empty;}
+
+	return gItem3->groups();
 }
 
 DataType_t GridComplexAttributeContainer::dataType() const

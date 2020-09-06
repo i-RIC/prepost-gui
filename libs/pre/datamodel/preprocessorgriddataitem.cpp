@@ -173,6 +173,7 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 			SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
 			gridType->buildGridAttributes(impl->m_grid);
 			impl->m_grid->setParent(this);
+			impl->m_grid->setDataItem(this);
 			impl->m_grid->setZoneName(zoneName);
 
 			// Now, memory is allocated. load data.
@@ -375,6 +376,7 @@ bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 	impl->m_grid = newGrid;
 	// set parent.
 	impl->m_grid->setParent(this);
+	impl->m_grid->setDataItem(this);
 	PreProcessorGraphicsViewInterface* view = dataModel()->graphicsView();
 	double xmin, xmax, ymin, ymax;
 	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);

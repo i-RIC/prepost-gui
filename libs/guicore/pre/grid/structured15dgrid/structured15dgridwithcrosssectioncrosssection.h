@@ -1,12 +1,13 @@
 #ifndef STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTION_H
 #define STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTION_H
 
+#include "../../../guicore_global.h"
 #include "../grid.h"
 
 #include <QObject>
 #include <QVector>
 
-class Structured15DGridWithCrossSectionCrossSection : public QObject
+class GUICOREDLL_EXPORT Structured15DGridWithCrossSectionCrossSection : public QObject
 {
 
 public:

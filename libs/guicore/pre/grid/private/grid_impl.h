@@ -27,6 +27,8 @@ public:
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredPointsAlgorithm;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredCellsAlgorithm;
 
+	PreProcessorGridDataItemInterface* m_dataItem;
+
 	bool m_isModified;
 	bool m_isMasked;
 };
