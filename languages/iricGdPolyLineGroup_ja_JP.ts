@@ -48,13 +48,10 @@
         <translation type="vanished">折れ線</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroup.cpp" line="254"/>
         <source>Poly&amp;line Group</source>
         <translation>折れ線グループ (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroup.cpp" line="350"/>
-        <location filename="../geodatapolylinegroup.cpp" line="392"/>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
     </message>
@@ -115,7 +112,6 @@
         <translation type="vanished">下に移動</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroup.cpp" line="249"/>
         <source>Polyline%1</source>
         <translation>折れ線%1</translation>
     </message>
@@ -200,27 +196,22 @@
         <translation type="vanished">折れ線グループ%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupcreator.cpp" line="11"/>
         <source>Polyline Group</source>
         <translation>折れ線グループ</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupcreator.cpp" line="24"/>
         <source>Polyline Group%1</source>
         <translation>折れ線グループ%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupcreator.cpp" line="36"/>
         <source>Deleting this item will also remove any graph windows associated with this polyline group.  Are you sure you want to delete this item?</source>
         <translation>この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupcreator.cpp" line="49"/>
         <source>polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupcreator.cpp" line="54"/>
         <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
@@ -247,12 +238,10 @@
 <context>
     <name>GeoDataPolyLineGroupShpExporter</name>
     <message>
-        <location filename="../geodatapolylinegroupshpexporter.cpp" line="18"/>
         <source>ESRI Shapefile</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupshpexporter.cpp" line="56"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRIシェープファイル (*.shp)</translation>
     </message>
@@ -268,12 +257,10 @@
         <translation type="vanished">ESRI シェープファイル (折れ線) (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupshpimporter.cpp" line="46"/>
         <source>ESRI Shapefile (Polylines)</source>
         <translation>ESRI シェープファイル (折れ線)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupshpimporter.cpp" line="52"/>
         <source>ESRI Shapefile (Polylines) (*.shp)</source>
         <translation>ESRI シェープファイル (折れ線) (*.shp)</translation>
     </message>
@@ -294,7 +281,6 @@
         <translation type="vanished">*.shp ファイルと *.dbf ファイルで、含まれるデータの数が一致していません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinegroupshpimporter.cpp" line="75"/>
         <source>Polyline%1</source>
         <translation>折れ線%1</translation>
     </message>

@@ -84,18 +84,14 @@
         <translation type="vanished">右側</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.cpp" line="200"/>
-        <location filename="../graph2dverificationsettingdialog.cpp" line="204"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.cpp" line="200"/>
         <source>No Physical Value is selected.</source>
         <translation>物理量が選択されていません。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.cpp" line="204"/>
         <source>No Value is selected.</source>
         <translation>値が選択されていません。</translation>
     </message>
@@ -112,57 +108,46 @@
         <translation type="vanished">右側のY軸の範囲が不正です。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="14"/>
         <source>Verification Setting</source>
         <translation>実測値と計算結果の比較設定</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="20"/>
         <source>Timestep</source>
         <translation>タイムステップ</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="26"/>
         <source>Select the timestep of calculation result</source>
         <translation>計算結果のタイムステップを選択してください</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="46"/>
         <source>Calculation Result</source>
         <translation>計算結果</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="52"/>
         <source>Select which physical value to use for comparison.</source>
         <translation>どの物理量を比較に用いるか選択してください。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="61"/>
         <source>Grid:</source>
         <translation>格子:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="71"/>
         <source>Physical Value:</source>
         <translation>物理量:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="86"/>
         <source>Measured Values</source>
         <translation>実測値</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="92"/>
         <source>Select which measured value to use for comparison.</source>
         <translation>どの実測値を比較に用いるか選択してください。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="101"/>
         <source>File:</source>
         <translation>ファイル:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationsettingdialog.ui" line="111"/>
         <source>Value:</source>
         <translation>値:</translation>
     </message>
@@ -170,37 +155,30 @@
 <context>
     <name>Graph2dVerificationWindow</name>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="14"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="28"/>
         <source>I:</source>
         <translation>I:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="45"/>
         <source>J:</source>
         <translation>J:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="62"/>
         <source>K:</source>
         <translation>K:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="96"/>
         <source>Select &amp;Data Source</source>
         <translation>データソースの選択(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="103"/>
         <source>&amp;Setting</source>
         <translation>設定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.ui" line="110"/>
         <source>&amp;Close</source>
         <translation>閉じる(&amp;C)</translation>
     </message>
@@ -209,17 +187,14 @@
         <translation type="vanished">グラフウィンドウ: %1</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.cpp" line="25"/>
         <source>Verification Window: %1</source>
         <translation>計算結果と実測値の比較ウィンドウ %1</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.cpp" line="37"/>
         <source>Top</source>
         <translation>トップ</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindow.cpp" line="48"/>
         <source>Controller</source>
         <translation>コントローラー</translation>
     </message>
@@ -255,12 +230,10 @@
 <context>
     <name>Graph2dVerificationWindowActionManager</name>
     <message>
-        <location filename="../graph2dverificationwindowactionmanager.cpp" line="25"/>
         <source>&amp;Draw</source>
         <translation>描画設定(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowactionmanager.cpp" line="27"/>
         <source>&amp;Data Source Setting...</source>
         <translation>データソース設定(&amp;D)...</translation>
     </message>
@@ -285,7 +258,6 @@
         <translation type="vanished">コピー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowactionmanager.cpp" line="31"/>
         <source>&amp;Legend</source>
         <translation>凡例(&amp;L)</translation>
     </message>
@@ -388,22 +360,18 @@
 <context>
     <name>Graph2dVerificationWindowControlWidget</name>
     <message>
-        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="20"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="26"/>
         <source>TextLabel</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="53"/>
         <source>Setting...</source>
         <translation>設定...</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowcontrolwidget.ui" line="60"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
@@ -475,8 +443,6 @@
         <translation type="vanished">CSVファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="105"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="252"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -485,12 +451,10 @@
         <translation type="vanished">スナップショット画像 %1 の保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="247"/>
         <source>Export CSV file</source>
         <translation>CSV ファイルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="247"/>
         <source>CSV file (*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
@@ -543,74 +507,54 @@
         <translation type="vanished">時刻 = %1 sec, I = %2, J = %3</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="99"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="99"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="105"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation>グラフウィンドウの初期化に失敗しました。計算結果が正しく読み込まれていません。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="252"/>
         <source>%1 cound not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="289"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="289"/>
         <source>Data successfully exported to %1.</source>
         <translation>データは、%1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="471"/>
         <source>Root Mean Squared Error: %1</source>
         <translation>Root Mean Squared Error: %1</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="498"/>
         <source>Measured Values (%1)</source>
         <translation>実測値 (%1)</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="502"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="520"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="528"/>
         <source>Calculation Result (%1)</source>
         <translation>計算結果 (%1)</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="505"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="514"/>
         <source>Stream-wise Distance</source>
         <translation>流れ方向の距離</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="506"/>
         <source>Values</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="510"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="515"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="533"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="538"/>
         <source>Residual Error</source>
         <translation>残余誤差</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="527"/>
-        <location filename="../graph2dverificationwindowdatamodel.cpp" line="537"/>
         <source>Measured Value (%1)</source>
         <translation>実測値 (%1)</translation>
     </message>
@@ -797,7 +741,6 @@
 <context>
     <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
-        <location filename="../graph2dverificationwindowobjectbrowser.cpp" line="14"/>
         <source>Object Browser</source>
         <translation>オブジェクトブラウザー</translation>
     </message>
@@ -976,32 +919,26 @@
 <context>
     <name>Graph2dVerificationWindowTopWidget</name>
     <message>
-        <location filename="../graph2dverificationwindowtopwidget.ui" line="14"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowtopwidget.ui" line="22"/>
         <source>Chart Type:</source>
         <translation>グラフの種類:</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowtopwidget.cpp" line="38"/>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
         <translation>流れ方向の距離 vs 実測値と計算結果</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowtopwidget.cpp" line="39"/>
         <source>Stream-wise Distance vs. Residual Errors</source>
         <translation>流れ方向の距離 vs 残余誤差</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowtopwidget.cpp" line="41"/>
         <source>Measured Values vs. Calculation Result</source>
         <translation>実測値 vs 計算結果</translation>
     </message>
     <message>
-        <location filename="../graph2dverificationwindowtopwidget.cpp" line="42"/>
         <source>Measured Values vs. Residual Errors</source>
         <translation>実測値 vs 残余誤差</translation>
     </message>

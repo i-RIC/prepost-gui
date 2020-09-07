@@ -12,22 +12,18 @@
         <translation type="vanished">コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="62"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="63"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="64"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="112"/>
         <source>Poly&amp;line</source>
         <translation>折れ線 (&amp;L)</translation>
     </message>
@@ -36,12 +32,10 @@
         <translation type="vanished">折れ線の表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="722"/>
         <source>polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="727"/>
         <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
@@ -50,12 +44,10 @@
         <translation type="vanished">折れ線 (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Polyline must have two vertices at least.</source>
         <translation>折れ線は最低限2つの点をもつ必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="384"/>
         <source>Finish Defining Polyline</source>
         <translation>折れ線の定義の完了</translation>
     </message>
@@ -80,37 +72,30 @@
         <translation type="vanished">折れ線は最低限2つの点をもつ必要があります。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_finishpolylinedefinitioncommand.cpp" line="5"/>
         <source>Finish Defining PolyLine</source>
         <translation>折れ線の定義の完了</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_pushnewpointcommand.cpp" line="8"/>
         <source>Add New PolyLine Point</source>
         <translation>折れ線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_movepolylinecommand.cpp" line="8"/>
         <source>Move PolyLine</source>
         <translation>折れ線の移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_movevertexcommand.cpp" line="10"/>
         <source>Move PolyLine Vertex</source>
         <translation>折れ線の頂点の移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_addvertexcommand.cpp" line="10"/>
         <source>Insert PolyLine Vertex</source>
         <translation>折れ線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_removevertexcommand.cpp" line="8"/>
         <source>Remove PolyLine Vertex</source>
         <translation>折れ線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="379"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -123,7 +108,6 @@
         <translation type="vanished">穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
@@ -136,7 +120,6 @@
         <translation type="vanished">本当にこの折れ線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolyline.cpp" line="644"/>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>折れ線を、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
@@ -165,12 +148,10 @@
         <translation type="vanished">どの地理情報にコピーするか、選択してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_editcoordinatescommand.cpp" line="9"/>
         <source>Edit PolyLine Coordinates</source>
         <translation>折れ線の座標の編集</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolyline_coordinateseditor.cpp" line="30"/>
         <source>PolyLine Coordinates</source>
         <translation>折れ線の頂点座標</translation>
     </message>
@@ -246,12 +227,10 @@
         <translation type="vanished">折れ線%1</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="14"/>
         <source>Polyline</source>
         <translation>折れ線</translation>
     </message>
     <message>
-        <location filename="../geodatapolylinecreator.cpp" line="27"/>
         <source>Polyline%1</source>
         <translation>折れ線%1</translation>
     </message>
@@ -267,34 +246,26 @@
         <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="77"/>
         <source>ESRI Shapefile (Polyline)</source>
         <translation>ESRI シェープファイル (折れ線)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="86"/>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
         <translation>ESRI シェープファイル (*.shp) (折れ線)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="109"/>
-        <location filename="../geodatapolylineimporter.cpp" line="117"/>
-        <location filename="../geodatapolylineimporter.cpp" line="124"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="109"/>
         <source>The shape type contained in this shape file is not polyline.</source>
         <translation>このシェープファイルに含まれているデータは、折れ線ではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="117"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimporter.cpp" line="124"/>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
         <translation>*shp ファイルと *.dbf ファイルで、含まれている折れ線の数が一致していません。</translation>
     </message>
@@ -343,28 +314,22 @@
 <context>
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="14"/>
         <source>PolyLine Import Setting</source>
         <translation>折れ線インポート設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="26"/>
         <source>Encoding:</source>
         <translation>エンコーディング:</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="64"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="70"/>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
         <translation>シェープファイルの属性から読み込む</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polyline1)</source>
         <translation>自動的に設定する (例: 折れ線1)</translation>
     </message>
@@ -373,22 +338,18 @@
         <translation type="vanished">自動的に設定する (例: 折れ線1)</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="126"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
         <translation>値を指定する</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.cpp" line="80"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineimportersettingdialog.cpp" line="80"/>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>同じ列を名前と値両方に指定することはできません。</translation>
     </message>
@@ -400,12 +361,10 @@
         <translation type="vanished">ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="16"/>
         <source>ESRI Shapefile</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolylineshapeexporter.cpp" line="123"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>

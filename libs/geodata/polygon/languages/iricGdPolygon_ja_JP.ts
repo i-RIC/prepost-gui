@@ -8,22 +8,18 @@
         <translation type="vanished">値の編集(&amp;V)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="81"/>
         <source>&amp;Copy...</source>
         <translation>コピー(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="82"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="83"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="84"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
@@ -32,22 +28,18 @@
         <translation type="vanished">ポリゴンの表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1360"/>
         <source>polygon</source>
         <translation>ポリゴン</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1365"/>
         <source>Polygon</source>
         <translation>ポリゴン</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="79"/>
         <source>Add &amp;Hole Region</source>
         <translation>穴領域の追加(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="80"/>
         <source>&amp;Delete Hole Region...</source>
         <translation>穴領域の削除(&amp;D)...</translation>
     </message>
@@ -64,13 +56,10 @@
         <translation type="vanished">表示色設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="168"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン (&amp;P)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="525"/>
-        <location filename="../private/geodatapolygon_finishpolygondefinitioncommand.cpp" line="5"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
     </message>
@@ -83,69 +72,54 @@
         <translation type="vanished">名前:</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_pushnewpointcommand.cpp" line="8"/>
         <source>Add New Polygon Point</source>
         <translation>ポリゴンの頂点の追加</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_movepolygoncommand.cpp" line="9"/>
         <source>Move Polygon</source>
         <translation>ポリゴンの移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_movevertexcommand.cpp" line="10"/>
         <source>Move Polygon Vertex</source>
         <translation>ポリゴンの頂点の移動</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_addvertexcommand.cpp" line="10"/>
         <source>Insert Polygon Vertex</source>
         <translation>ポリゴンの頂点の追加</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_removevertexcommand.cpp" line="8"/>
         <source>Remove Polygon Vertex</source>
         <translation>ポリゴンの頂点の削除</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="520"/>
-        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="520"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_addholepolygoncommand.cpp" line="6"/>
         <source>Add New Hole Polygon</source>
         <translation>穴領域の追加</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="985"/>
-        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="985"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>穴領域を定義してください。穴領域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1013"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>本当にこのポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1173"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>ポリゴンを、マウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editvaluecommand.cpp" line="4"/>
         <source>Polygon value change</source>
         <translation>ポリゴン値編集</translation>
     </message>
@@ -162,22 +136,18 @@
         <translation type="vanished">ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1294"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_editcoordinatescommand.cpp" line="9"/>
         <source>Edit Polygon Coordinates</source>
         <translation>ポリゴンの座標の編集</translation>
     </message>
     <message>
-        <location filename="../private/geodatapolygon_coordinateseditor.cpp" line="31"/>
         <source>Polygon Coordinates</source>
         <translation>ポリゴンの頂点座標</translation>
     </message>
@@ -196,22 +166,18 @@
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
     <message>
-        <location filename="../geodatapolygoncolorsettingdialog.ui" line="14"/>
         <source>Polygon Color Setting</source>
         <translation>ポリゴンの表示色設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncolorsettingdialog.ui" line="20"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncolorsettingdialog.ui" line="29"/>
         <source>Color by value</source>
         <translation>値により自動設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncolorsettingdialog.ui" line="38"/>
         <source>Custom Color</source>
         <translation>色を指定</translation>
     </message>
@@ -234,12 +200,10 @@
 <context>
     <name>GeoDataPolygonCreator</name>
     <message>
-        <location filename="../geodatapolygoncreator.cpp" line="12"/>
         <source>Polygon</source>
         <translation>ポリゴン</translation>
     </message>
     <message>
-        <location filename="../geodatapolygoncreator.cpp" line="25"/>
         <source>Polygon%1</source>
         <translation>ポリゴン%1</translation>
     </message>
@@ -255,39 +219,30 @@
         <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="113"/>
         <source>ESRI Shapefile (Polygon)</source>
         <translation>ESRI シェープファイル (ポリゴン)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="122"/>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
         <translation>ESRI シェープファイル (*.shp) (ポリゴン)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="145"/>
-        <location filename="../geodatapolygonimporter.cpp" line="153"/>
-        <location filename="../geodatapolygonimporter.cpp" line="160"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="145"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation>このシェープファイルに含まれているデータは、ポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="153"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="160"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>*shp ファイルと *.dbf ファイルで、含まれているポリゴンの数が一致していません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="204"/>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
 - It has less than three points
 - It is not closed
@@ -317,8 +272,6 @@
 - Polygon passes the same point several times</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="221"/>
-        <location filename="../geodatapolygonimporter.cpp" line="224"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -334,48 +287,38 @@
 <context>
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="14"/>
         <source>Polygon Import Setting</source>
         <translation>ポリゴンインポート設定</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="26"/>
         <source>Encoding:</source>
         <translation>エンコーディング:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="64"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="70"/>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
         <translation>シェープファイルの属性から読み込む</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
         <translation>自動的に設定する (例: ポリゴン1)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="126"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
         <translation>値を指定する</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.cpp" line="80"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.cpp" line="80"/>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>同じ列を名前と値両方に指定することはできません。</translation>
     </message>
@@ -391,12 +334,10 @@
         <translation type="vanished">ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonshapeexporter.cpp" line="17"/>
         <source>ESRI Shapefile</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonshapeexporter.cpp" line="134"/>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>

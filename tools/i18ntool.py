@@ -119,6 +119,28 @@ def split():
     for lang in getLangList():
         splitLangFile(lang)
 
+def shrinkdics(path):
+    if "debug" in path:
+        return
+    if "..\\languages" in path:
+        return
+    if "solvers" in path:
+        return
+
+    lines = list()
+    f = open(path, 'r', encoding='utf-8')
+
+    for l in f.readlines():
+        if '<location' in l: continue
+        lines.append(l)
+    f.close()
+
+    f = open(path, 'w', encoding='utf-8')
+    f.write(''.join(lines))
+    f.close()
+
+    print('Shrinked ' + path)
+
 def copydics(path):
     if "debug" in path:
         return
@@ -129,6 +151,9 @@ def copydics(path):
     
     shutil.copy(path, LANG_FOLDER)
     print('Copied ' + path)
+
+def shrinkDictsInSrc():
+    idev.recursiveExec("..", "\.ts$", shrinkdics)
 
 def copyFromSrc():
     idev.recursiveExec("..", "\.ts$", copydics)
@@ -168,6 +193,7 @@ if len(sys.argv) < 2:
 
 comm = sys.argv[1]
 if comm == 'build':
+    shrinkDictsInSrc()
     copyFromSrc()
     merge()
 

@@ -82,6 +82,7 @@ after_build:
   - set SAVE_PATH=%PATH%
   - set PATH=C:\Python37-x64;%PATH%
   - python copydllsExt.py
+  - python lrelease.py
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
   - ps: |
