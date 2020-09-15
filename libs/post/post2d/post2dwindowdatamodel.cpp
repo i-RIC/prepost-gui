@@ -340,7 +340,10 @@ void Post2dWindowDataModel::initCollapseState()
 	auto v = objectBrowserView();
 	for (auto gtItem : rootDataItem()->gridTypeDataItems()) {
 		for (auto zitem : gtItem->zoneDatas()) {
-			v->collapse(zitem->graphGroupDataItem()->standardItem()->index());
+			auto graphDataItem = zitem->graphGroupDataItem();
+			if (graphDataItem == nullptr) {continue;}
+
+			v->collapse(graphDataItem->standardItem()->index());
 		}
 	}
 }
