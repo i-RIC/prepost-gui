@@ -5,7 +5,7 @@
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
         <source>Create 1.5D grid from river survey data</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear cuadricula de 1.5D de datos de encuesta de rio</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
@@ -15,18 +15,18 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de encuesta de rio no existen en datos geograficos ahora. Este algoritmo no esta disponible.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15D</name>
     <message>
         <source>Delete Selected Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar Puntos de Control Seleccionados</translation>
     </message>
     <message>
         <source>Error</source>
@@ -34,93 +34,93 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de encuesta de rio. Esta condicion de crear cuadricula no esta disponible.</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Puntos de Division...</translation>
     </message>
     <message>
         <source>Add Division Points &amp;Regionally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Puntos de Division &amp;Regionalmente...</translation>
     </message>
     <message>
         <source>&amp;Move Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mover Puntos de Division...</translation>
     </message>
     <message>
         <source>Re&amp;position Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Re&amp;posicionar Puntos de Division...</translation>
     </message>
     <message>
         <source>&amp;Delete Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar Puntos de Division...</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmacion</translation>
     </message>
     <message>
         <source>Are you sure you want to delete these control points?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres borrar estos puntos de control?</translation>
     </message>
     <message>
         <source>point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto%1</translation>
     </message>
     <message>
         <source>Add Division Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Puntos de Division</translation>
     </message>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Puntos de Control</translation>
     </message>
     <message>
         <source>Add Control Points regionally</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Puntos de Control Regionalmente</translation>
     </message>
     <message>
         <source>Reposition Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Reposicionar Puntos de Control</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointAddDialog</name>
     <message>
         <source>Add Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Punto de Division</translation>
     </message>
     <message>
         <source>Division Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Division</translation>
     </message>
     <message>
         <source>Division Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Metodo de Division</translation>
     </message>
     <message>
         <source>Divide Equally</source>
-        <translation type="unfinished"></translation>
+        <translation>Dividir Igualmente</translation>
     </message>
     <message>
         <source>Equal Ratio Division (Specify Common Ratio)</source>
-        <translation type="unfinished"></translation>
+        <translation>Division de Igual Proporcion (Especificar Proporcion Comun)</translation>
     </message>
     <message>
         <source>When you want to add division points near river center or upper side, please specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando quieras anadir puntos de division cerca de el centro del rio o lad superior, especifique vlor mas que 1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointMoveDialog</name>
     <message>
         <source>Move Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover punto de division</translation>
     </message>
     <message>
         <source>Transfer Quantity s</source>
-        <translation type="unfinished"></translation>
+        <translation>Cantidad de Transferencia s</translation>
     </message>
     <message>
         <source>0.0</source>
@@ -135,77 +135,77 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <name>GridCreatingConditionRiverSurvey15DPointRegionAddDialog</name>
     <message>
         <source>Add Division Points Regionally</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Puntos de Division Regionalmente</translation>
     </message>
     <message>
         <source>Start Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Empezar Linea Transversal</translation>
     </message>
     <message>
         <source>End Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar Linea Transversal</translation>
     </message>
     <message>
         <source>Division Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Division</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmacion</translation>
     </message>
     <message>
         <source>The control points which already exist in this region are overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de control que ya existen en esta region estan sobrescrito.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointRepositionDialog</name>
     <message>
         <source>Reposition Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Reposicionar Punto de Division</translation>
     </message>
     <message>
         <source>Reposition Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Metodo de Reposicion</translation>
     </message>
     <message>
         <source>Equal Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo Igual</translation>
     </message>
     <message>
         <source>Equal Ratio Interval (Specify Common Ratio)</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo de Proporcion Igual (Especificar La Proporcion Comun)</translation>
     </message>
     <message>
         <source>When you want to assign more division points near river center or upper side, please specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando quieres assignar mas puntos de division cerca a centro de rio o lado superior, especifique valor mas de 1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DRegionDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Creacion de Cuadricula</translation>
     </message>
     <message>
         <source>Start Traversal Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Empezar Linea Transversal:</translation>
     </message>
     <message>
         <source>End Traversal Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar Linea Transversal:</translation>
     </message>
     <message>
         <source>Number of points in interpolated cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de puntos en secciones tranversales interpoladas:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de puntos en secciones transverales interpoladas debe ser impar. Incrementando por uno.</translation>
     </message>
 </context>
 </TS>

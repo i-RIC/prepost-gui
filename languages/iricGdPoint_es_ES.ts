@@ -5,7 +5,7 @@
     <name>GeoDataPoint</name>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Coordenadas...</translation>
     </message>
     <message>
         <source>Po&amp;int</source>
@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Please define point by mouse-clicking.</source>

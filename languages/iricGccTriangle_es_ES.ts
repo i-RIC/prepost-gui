@@ -5,50 +5,50 @@
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
         <source>Create grid from polygon shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear cuadricula de forma de poligono</translation>
     </message>
     <message>
         <source>Please define a polygon as the region to create grid.You can additionally define holes and refinement areas as restrictions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir poligono como el region para crear cuadricula. Puedes adicionalmente definir boquetes y areas de refinamiento como restricciones.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangle</name>
     <message>
         <source>Define Grid Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir Region de Cuadricula</translation>
     </message>
     <message>
         <source>Add &amp;Refinement Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir &amp;Region de Refinamiento</translation>
     </message>
     <message>
         <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir &amp;Region de Agujero</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir &amp;Linea de Ruptura</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Vertice</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover Vertice</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Coordenadas...</translation>
     </message>
     <message>
         <source>&amp;Delete Region or Break Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar Region o Linea de Ruptura...</translation>
     </message>
     <message>
         <source>Edit &amp;Maximum Area for Cells...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Area Maxima para Celdas...</translation>
     </message>
     <message>
         <source>&amp;Redivide Break Line...</source>
@@ -56,95 +56,95 @@
     </message>
     <message>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Poligono</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar de Definir Poligono</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar de Definir Linea de Interrupcion</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Nuevo Punto de Poligono</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Poligono</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Vertice de Poligono</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar Vertice de Poligono</translation>
     </message>
     <message>
         <source>Add New Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Punto de Linea de Ruptura Nueva</translation>
     </message>
     <message>
         <source>Move Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Linea de Ruptura</translation>
     </message>
     <message>
         <source>Move Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Vertice de Linea de Ruptura</translation>
     </message>
     <message>
         <source>Insert Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar vertice de Linea de Ruptura</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover Vertice de Poligono</translation>
     </message>
     <message>
         <source>Remove Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover Vertice de Linea de Ruptura</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono tiene que tener al  menos tres vertices.</translation>
     </message>
     <message>
         <source>Break line must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linea de ruptura tiene que tener a lo menos dos vertices.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Generando cuadricula...</translation>
     </message>
     <message>
         <source>Add New Remesh Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Nuevo Poligono Remesh</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando "Enter".</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Nuevo Poligono de Agujero</translation>
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Add New Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Linea de Ruptura Nueva</translation>
     </message>
     <message>
         <source>Input divide number</source>
@@ -156,55 +156,55 @@
     </message>
     <message>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quires remover este poligono?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this line?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres remover esta linea?</translation>
     </message>
     <message>
         <source>Grid region polygon have to consists of more than three vertices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono de region de cuadricula tiene que consistir de mas de tres vertices.</translation>
     </message>
     <message>
         <source>Grid region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de poligono de region de cuadricula es invalido.</translation>
     </message>
     <message>
         <source>Remesh polygon have to consists of more than three vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh poligono tiene que consistir de mas de tres vertices</translation>
     </message>
     <message>
         <source>Remesh polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de remesh poligono es invalido.</translation>
     </message>
     <message>
         <source>Remesh polygon have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh poligono tiene que estar dentro de region de cuadricula.</translation>
     </message>
     <message>
         <source>Hole polygon have to consists of more than three vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono de boquete tiene que consistir de mas de tres vertices</translation>
     </message>
     <message>
         <source>Hole polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de boquete de poligono es invalido.</translation>
     </message>
     <message>
         <source>Hole polygon have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Boquete poligono tiene que estar dentro de region de cuadricula.</translation>
     </message>
     <message>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh poligonos y boquete poligonos no pueden tener intersecciones.</translation>
     </message>
     <message>
         <source>Break line have to consists of more more than two vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Linea de ruptura tiene que consistir de mas de dos vertices</translation>
     </message>
     <message>
         <source>Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous.</source>
@@ -212,41 +212,41 @@
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordinatos de Poligono</translation>
     </message>
     <message>
         <source>Edit Break Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordenadas de Linea de Ruptura</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas Poligonales</translation>
     </message>
     <message>
         <source>Break Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas de Linea de Ruptura</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifque un Poligono Cerrado!</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleRemeshDialog</name>
     <message>
         <source>Refinement maximum area</source>
-        <translation type="unfinished"></translation>
+        <translation>Area maxima de refinamiento</translation>
     </message>
     <message>
         <source>Enter maximum area for cells inside refinement polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entra la area maxima para las celdas dentro del poligono de refinamiento.</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -258,49 +258,49 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Please specify positive value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar valor positivo.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleRemeshPolygon</name>
     <message>
         <source>Edit refinement maximum area</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar area maxima de refinamiento</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Creacion de Cuadricula</translation>
     </message>
     <message>
         <source>Specify minimum angle for cell vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar angulo minimo para todo vertices de celda</translation>
     </message>
     <message>
         <source>By specifying minimum angle, you can avoid generating thin and long triangle cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificando el angluo minimo, puedes evitar la generacion de celulas triangulares delgadas y largas.</translation>
     </message>
     <message>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>degrados</translation>
     </message>
     <message>
         <source>When polygon has vertices that has smaller angle than the value above, the condition is not applyed to the cells that include those vertices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando poligono tiene vertices que tiene anglue menor que el valor anterior, la condicion no se aplica a las celdas que incluyen esos vertices.</translation>
     </message>
     <message>
         <source>Specify maximum area for cells</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifica area maximo para celdas</translation>
     </message>
     <message>
         <source>By specifying small values, you can generate fine grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificando valores pequenos, puedes generar cuadriculas finas.</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

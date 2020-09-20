@@ -5,19 +5,19 @@
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
         <source>Move Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Punto de Elevacion</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Variacion Horizontal (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta de Texto</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Variacion Vertical:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
@@ -33,45 +33,45 @@
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Puntos de Elevacion</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExpandDialog</name>
     <message>
         <source>Extend Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Extender Linea Transversal</translation>
     </message>
     <message>
         <source>Set Distance between River Center and Left Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer Distancia Entre el Centro del Rio y la Orilla Izquierda</translation>
     </message>
     <message>
         <source>Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Incremento</translation>
     </message>
     <message>
         <source>Extension Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relacion de Extension</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExtensionAddDialog</name>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Linea de Extension</translation>
     </message>
     <message>
         <source>End Point of Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto Final de Linea de Extension</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Mouse Clic</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <source>,</source>
@@ -82,23 +82,23 @@
     <name>GeoDataRiverPathPointInsertDialog</name>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar Linea Transversal</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>River Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenandas del Punto Central del Rio</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Mouse Clic</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de Coordenades</translation>
     </message>
     <message>
         <source>, </source>
@@ -106,30 +106,30 @@
     </message>
     <message>
         <source>Ratio between Back and Forth (0-1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Relacion Entre Idea y Vuelta (0-1)</translation>
     </message>
     <message>
         <source>Cross Section Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion de Seccion Transversal</translation>
     </message>
     <message>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserciones Tres Puntos de Altitud 0</translation>
     </message>
     <message>
         <source>Copy Next River Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar seccion transversal del rio seguiente</translation>
     </message>
     <message>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear Seccion Transversal de Ida y Vuelta: Numero del Datos de Interpolacion</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointMoveDialog</name>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Linea Transversal</translation>
     </message>
     <message>
         <source>,</source>
@@ -137,103 +137,103 @@
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Cantidad de Transferencia</translation>
     </message>
     <message>
         <source>Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas del Punto Central</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRenameDialog</name>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rebautizar Linea Traversal</translation>
     </message>
     <message>
         <source>New Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomber Nuevo:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRotateDialog</name>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotar Linea Transversal</translation>
     </message>
     <message>
         <source>Relative Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Angulo Relativo</translation>
     </message>
     <message>
         <source>Increment Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Angulo de Incremento</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointShiftDialog</name>
     <message>
         <source>Shift River Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar de posicion centro del rio</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Cantidad de Transferencia</translation>
     </message>
     <message>
         <source>Transfer Quality s (%1 &lt; s &lt; %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Calidad de Transferencia s (%1&lt;s&lt;%2)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey</name>
     <message>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Expandir lineas transervales</translation>
     </message>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Linea de Extension</translation>
     </message>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar Linea Transversal</translation>
     </message>
     <message>
         <source>Move Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Lineas Transversales</translation>
     </message>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rebautizar Linea Traversal</translation>
     </message>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotar Linea Transversal</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar posicision de puntos central del rio</translation>
     </message>
     <message>
         <source>Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de Interpolacion</translation>
     </message>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Linea Transversal</translation>
     </message>
     <message>
         <source>Shift Center Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Posicion de Punto Central</translation>
     </message>
     <message>
         <source>Move Extension Line End</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover fin de linea de extension</translation>
     </message>
     <message>
         <source>Selection Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Seleccion</translation>
     </message>
     <message>
         <source>Generate River Survey data</source>
@@ -245,11 +245,11 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Vertice</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover Vertice</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
@@ -261,67 +261,67 @@
     </message>
     <message>
         <source>Insert Upstream Side(&amp;B)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar Lado de Rio Arriba (&amp;B)...</translation>
     </message>
     <message>
         <source>Insert Downstream Side(&amp;A)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Insentar Lado de Aguas Abajo (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Move...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mover...</translation>
     </message>
     <message>
         <source>&amp;Rotate...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rotar...</translation>
     </message>
     <message>
         <source>S&amp;hift Center...</source>
-        <translation type="unfinished"></translation>
+        <translation>C&amp;ambiar posicion del centro...</translation>
     </message>
     <message>
         <source>E&amp;xtend Horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ex&amp;tender Horizontalmente...</translation>
     </message>
     <message>
         <source>Dele&amp;te Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Bor&amp;rar Seccion Transversal</translation>
     </message>
     <message>
         <source>R&amp;ename Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Re&amp;bautizar Seccion Transversal...</translation>
     </message>
     <message>
         <source>Add &amp;Left Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Linea de &amp;Extension de Orilla Izquierda...</translation>
     </message>
     <message>
         <source>Add &amp;Right Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir &amp;Linea de Extension de Orilla Derecho...</translation>
     </message>
     <message>
         <source>Remo&amp;ve Left Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimi&amp;nar Linea de Extension de  Lado de Orilla Izquierda</translation>
     </message>
     <message>
         <source>Rem&amp;ove Right Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimi&amp;nar Linea de Extension de  Lado de Orilla Derecho</translation>
     </message>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar &amp;Seccion Transversal</translation>
     </message>
     <message>
         <source>Display &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de &amp;Pantalla</translation>
     </message>
     <message>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Ranura</translation>
     </message>
     <message>
         <source>Linear Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Curva Lineal</translation>
     </message>
     <message>
         <source>Map points data</source>
@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Delete Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar Lineas Transversales</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
@@ -345,7 +345,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>River survey data is generated using Points data.
@@ -362,7 +362,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>River survey data need at least 2 center points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de encuesta sobre el rio necesitian al meons 2 punto centrales.</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
@@ -370,7 +370,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar Linea de Extentsion</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
@@ -378,14 +378,14 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar de Definir Polilinea</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Encuesta Sobre el Rio</translation>
     </message>
     <message>
         <source>  </source>
@@ -419,11 +419,11 @@ If you want to adjust cross section position and map Points data again, you can 
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>River Survey data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de Encuesta de Rio</translation>
     </message>
     <message>
         <source>RiverSurvey %1</source>
-        <translation type="unfinished"></translation>
+        <translation> Encuesta de Rio %1</translation>
     </message>
 </context>
 <context>
@@ -482,7 +482,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
@@ -577,7 +577,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
@@ -600,7 +600,7 @@ If you want to adjust cross section position and map Points data again, you can 
     <name>GeoDataRiverSurveyCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>VentanaPrincipal</translation>
     </message>
     <message>
         <source>Cross Section ToolBar</source>
@@ -616,11 +616,11 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>&amp;This cross-section only</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Este seccion transversal solamente</translation>
     </message>
     <message>
         <source>All cross-sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos Seccions Transversales</translation>
     </message>
     <message>
         <source>&amp;Edit cross section from the selected point</source>
@@ -632,19 +632,19 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>&amp;Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Punto de Elevacion</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactivar usando &amp;elevation de agua</translation>
     </message>
     <message>
         <source>Crosssection: </source>
-        <translation type="unfinished"></translation>
+        <translation>Seccion Transversal:</translation>
     </message>
     <message>
         <source>Reference</source>
@@ -668,7 +668,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadricula</translation>
     </message>
     <message>
         <source>Scale</source>
@@ -684,55 +684,55 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Pantalla</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Activo</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia de Orilla Izquierda</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevacion</translation>
     </message>
     <message>
         <source>Crosssection Window : %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de Seccion Transversal: %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Punto de Elevacion</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>At least, two points should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Al menos, dos punto deben de estar activo.</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos fijos y puntos finales no se pueden borrar.</translation>
     </message>
     <message>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deberia haber mas que un punto en la orilla del lado dercho and en la orilla del lado izquierda.</translation>
     </message>
     <message>
         <source>Delete Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar Puntos de Elevacion</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>To use this function, please select only one point.</source>
@@ -740,15 +740,15 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactivar puntos de elevacion usando elevation de agua</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos fijos y puntos finales no se pueden inactivar.</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de Encuesta de Rio</translation>
     </message>
     <message>
         <source>Color</source>
@@ -760,7 +760,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieras borrar %1?</translation>
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
@@ -779,27 +779,27 @@ If you want to adjust cross section position and map Points data again, you can 
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Activate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Activar</translation>
     </message>
     <message>
         <source>&amp;Inactivate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Inactivo</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mover</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactivar usando &amp;elevation de agua</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Orilla Izquierda</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Orilla Derecho</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
@@ -811,7 +811,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
@@ -820,11 +820,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Altitude Points Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover los puntos de Altitud</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactivar Puntos de Elevacion</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
@@ -839,7 +839,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevacion</translation>
     </message>
     <message>
         <source>Color</source>
@@ -847,11 +847,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover &amp;Arriba</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover &amp;Abajo</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -862,11 +862,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyDisplaySettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Pantalla</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de Fondo</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -874,11 +874,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Crosssection Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineas de seccion transversal</translation>
     </message>
     <message>
         <source>Z Scale: </source>
-        <translation type="unfinished"></translation>
+        <translation>Z escala:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -889,11 +889,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>River Survey data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de encuesta sobre el rio (*.riv)</translation>
     </message>
     <message>
         <source>River Survey data(*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de encuesta sobre el rio(*.riv)</translation>
     </message>
 </context>
 <context>
@@ -966,7 +966,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir</translation>
     </message>
     <message>
         <source>Longitudinal Distance:</source>
@@ -1065,11 +1065,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de encuesta sobre el rio (*.riv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Cross Section data is not ordered correctly at %1.</source>
@@ -1077,14 +1077,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de seccion transversal no estan ordenado correctamente en %1.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Importacion de Datos de Encuesta de Rio</translation>
     </message>
     <message>
         <source>Where to define River center point</source>
@@ -1092,11 +1092,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Middle point of left bank and right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto centro de orilla izquierda y orilla derecha</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation type="unfinished"></translation>
+        <translation>Donde la elevacion es la mas pequena</translation>
     </message>
     <message>
         <source>Middle point of Low water way</source>
@@ -1127,7 +1127,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Problem</source>
@@ -1247,7 +1247,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Related File</source>
@@ -1273,18 +1273,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
         <source>RiverSurvey data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de encuesta sobre el rio</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo VTK (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Puntos de Control</translation>
     </message>
 </context>
 </TS>
