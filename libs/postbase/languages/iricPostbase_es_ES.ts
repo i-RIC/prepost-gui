@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>Add time step</source>
@@ -28,7 +28,7 @@
     <name>PostAllZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>Dimension:</source>
@@ -36,11 +36,11 @@
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de Cuadricula:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Region:</translation>
     </message>
     <message>
         <source>One dimensional data</source>
@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano:</translation>
     </message>
 </context>
 <context>
@@ -78,7 +78,7 @@
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
@@ -90,18 +90,18 @@
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Attribute value:</source>
@@ -109,7 +109,7 @@
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
@@ -125,7 +125,7 @@
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -133,11 +133,11 @@
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Muestreo</translation>
     </message>
     <message>
         <source>All particles</source>
@@ -145,7 +145,7 @@
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
@@ -157,11 +157,11 @@
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
@@ -188,7 +188,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura de Linea:</translation>
     </message>
 </context>
 <context>
@@ -199,7 +199,7 @@
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
@@ -215,14 +215,14 @@
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultDataItem</name>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <source>Move label</source>
@@ -245,7 +245,7 @@
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion</translation>
     </message>
     <message>
         <source>Position and Size</source>
@@ -265,7 +265,7 @@
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <source>Left:</source>
@@ -277,7 +277,7 @@
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -285,7 +285,7 @@
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -301,7 +301,7 @@
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Font color:</source>
@@ -316,18 +316,18 @@
     <name>PostTimeDataItem</name>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo</translation>
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuracion de titulo</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste de Tiempo</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -342,22 +342,22 @@
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo</translation>
     </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Titulo</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Solamente se puede usar Caracteres de Ingles para titulo.</translation>
     </message>
 </context>
 </TS>

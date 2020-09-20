@@ -5,7 +5,7 @@
     <name>DBFItemSelectDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>Please select item to import.</source>
@@ -13,21 +13,21 @@
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificacion:</translation>
     </message>
 </context>
 <context>
     <name>PolygonCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>PolygonCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -64,14 +64,14 @@
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>PolylineCsvImporter</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Error</source>
@@ -87,7 +87,7 @@
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -120,15 +120,15 @@
     <name>QObject</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos Archivos Importables (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>

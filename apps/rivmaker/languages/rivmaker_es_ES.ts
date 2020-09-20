@@ -38,23 +38,23 @@
     <name>BaseLinePreProcessorController</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Vertice</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover Vertice</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Coordenadas...</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Base line is not defined yet.</source>
@@ -81,11 +81,11 @@
     <name>BaseLinePreProcessorViewLabelHelper</name>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Rio abajo</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Rio arriba</translation>
     </message>
 </context>
 <context>
@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>No es un valor verdadero</translation>
     </message>
 </context>
 <context>
@@ -125,11 +125,11 @@
     <name>CrossSectionPreProcessorController</name>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Coordenadas...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
@@ -171,7 +171,7 @@
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevacion</translation>
     </message>
     <message>
         <source>Left bank HWM</source>
@@ -197,7 +197,7 @@
     <name>CrossSectionsCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -212,7 +212,7 @@
     <name>CrossSectionsCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -234,14 +234,14 @@
     <name>CrossSectionsImporter</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsPreProcessorController</name>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir</translation>
     </message>
     <message>
         <source>&amp;Import..</source>
@@ -253,7 +253,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Cross Section lines not defined yet.</source>
@@ -279,7 +279,7 @@
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -340,7 +340,7 @@
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Asignacion de Mapas</translation>
     </message>
     <message>
         <source>Appropriate for data for which we can not generate good TIN</source>
@@ -360,11 +360,11 @@
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Expansiones de Plantillas:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Exponente de Pesaje:</translation>
     </message>
 </context>
 <context>
@@ -378,14 +378,14 @@
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Insinuacion de Mouse</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>X: </source>
@@ -408,22 +408,22 @@
     <name>ObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegador de Objectos</translation>
     </message>
 </context>
 <context>
     <name>PointsCsvImporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de Topografia (*.tpo)</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Filtrado</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -442,29 +442,29 @@
     <name>PointsImporter</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos Archivos Importables (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
 </context>
 <context>
     <name>PointsPreProcessorController</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
 </context>
 <context>
     <name>PolyLineCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -479,7 +479,7 @@
     <name>PolyLineCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -501,14 +501,14 @@
     <name>PolyLineImporter</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
@@ -538,7 +538,7 @@
     <name>Project</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
@@ -587,7 +587,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>%1 is updated.</source>
@@ -602,11 +602,11 @@
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Archivo</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar</translation>
     </message>
     <message>
         <source>&amp;Geographic Data</source>
@@ -614,11 +614,11 @@
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Proyectos Recientes</translation>
     </message>
     <message>
         <source>&amp;Base Line</source>
@@ -634,23 +634,23 @@
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ver</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ayuda</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Opcion</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation> BarraDeHerremintas</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Proyecto Nuevo...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -666,7 +666,7 @@
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Salir</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -686,7 +686,7 @@
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Imagen de Fondo...</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File...</source>
@@ -710,43 +710,43 @@
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Vertice</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover Vertice</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Coordenadas...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Consejo de Mouse...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sobre...</translation>
     </message>
     <message>
         <source>&amp;Base Line...</source>
@@ -762,7 +762,7 @@
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de Herramientas Principal</translation>
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
@@ -778,7 +778,7 @@
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abrir...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -798,7 +798,7 @@
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de Estado</translation>
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
@@ -870,7 +870,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
@@ -915,7 +915,7 @@
     <name>ValueWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Value: </source>
@@ -974,11 +974,11 @@
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevacion</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
 </context>
 <context>

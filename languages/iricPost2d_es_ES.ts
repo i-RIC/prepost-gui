@@ -5,33 +5,33 @@
     <name>Post2dGridRegionSelectDialog</name>
     <message>
         <source>Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Region</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region Completa</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region Activa</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region Personalizada</translation>
     </message>
 </context>
 <context>
     <name>Post2dObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegador de Objectos</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindow</name>
     <message>
         <source>Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Post-procesamiento (2D): %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -54,11 +54,11 @@
     <name>Post2dWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dibujar</translation>
     </message>
     <message>
         <source>&amp;Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Forma de Cuadricula...</translation>
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
@@ -66,15 +66,15 @@
     </message>
     <message>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Flechas...</translation>
     </message>
     <message>
         <source>&amp;Streamlines...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lineas de Corriente...</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Particulas...</translation>
     </message>
     <message>
         <source>P&amp;olygons...</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>&amp;Cell Attributes...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Atributos de Celda...</translation>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
@@ -90,38 +90,38 @@
     </message>
     <message>
         <source>&amp;Title...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Titulo...</translation>
     </message>
     <message>
         <source>Ti&amp;me...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ti&amp;empo...</translation>
     </message>
     <message>
         <source>&amp;Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Datos Medidos</translation>
     </message>
     <message>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Escalar...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -129,7 +129,7 @@
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -145,27 +145,27 @@
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Muestreo</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los vertices</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-Direccion</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-Direccion</translation>
     </message>
     <message>
         <source>Color</source>
@@ -173,11 +173,11 @@
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
@@ -193,26 +193,26 @@
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -220,7 +220,7 @@
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
@@ -228,7 +228,7 @@
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -236,23 +236,23 @@
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Muestreo</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los vertices</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar numero de vertices</translation>
     </message>
     <message>
         <source>Color</source>
@@ -260,11 +260,11 @@
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
@@ -280,11 +280,11 @@
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
@@ -298,11 +298,11 @@
     <name>Post2dWindowBackgroundImagesDataItem</name>
     <message>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagenes de Fondo</translation>
     </message>
     <message>
         <source>&amp;Add Image</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Imagen</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -310,11 +310,11 @@
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>There is no background image.</source>
@@ -326,41 +326,41 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quires borrar todos los imagenes de fondo?</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellFlagGroupDataItem</name>
     <message>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos de celda</translation>
     </message>
     <message>
         <source>Cell Flag Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de bandera de Celda</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellFlagSettingDialog</name>
     <message>
         <source>Cell Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos de Celda</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Arriba</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abajo</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributo</translation>
     </message>
     <message>
         <source>Color</source>
@@ -375,11 +375,11 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Contorno</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
@@ -402,7 +402,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
@@ -421,23 +421,23 @@
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion Escalar</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Pantalla</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Barra de Color</translation>
     </message>
     <message>
         <source>Error</source>
@@ -445,38 +445,38 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para rango de valor, valor maximo es menos de valor minimo.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowDataModel</name>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala de Z-Direccion</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar nueva escala de Z-direccion.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de cortono no esta disponible, porque este resultado no contiene valores escalar.</translation>
     </message>
     <message>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de flecha no esta disponible, porque este resultado no contiene valores vector.</translation>
     </message>
     <message>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de linea de corriente no esta disponible, porque este resultado no contiene valores vector.</translation>
     </message>
     <message>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de particula no esta disponible, porque este resultado no contiene valores vector.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
@@ -501,7 +501,7 @@
     <name>Post2dWindowGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos Geograficos</translation>
     </message>
 </context>
 <context>
@@ -542,7 +542,7 @@
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direccion</translation>
     </message>
     <message>
         <source>I direction</source>
@@ -558,7 +558,7 @@
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Todo</translation>
     </message>
     <message>
         <source>Partial region</source>
@@ -566,11 +566,11 @@
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Empiezo:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin:</translation>
     </message>
     <message>
         <source>Skip:</source>
@@ -578,11 +578,11 @@
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
@@ -602,7 +602,7 @@
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Dibujar</translation>
     </message>
     <message>
         <source>Graph Lines</source>
@@ -610,11 +610,11 @@
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala:</translation>
     </message>
     <message>
         <source>No modification</source>
@@ -633,18 +633,18 @@
     <name>Post2dWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de Cuadricula</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores Medidos</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -652,11 +652,11 @@
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
@@ -668,7 +668,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
@@ -679,7 +679,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Contorno</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
@@ -687,7 +687,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
@@ -717,25 +717,25 @@
     <name>Post2dWindowNodeVectorArrowGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Flecha</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Valor Fisico de Flecha</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Flecha</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Flecha</translation>
     </message>
 </context>
 <context>
@@ -746,61 +746,61 @@
     </message>
     <message>
         <source>Particle Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Valor Fisico de Particulas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Particulas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Particulas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
         <source>Streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineas de Corriente</translation>
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Valor Fisico de Linea de Corriente</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Acutalizar Configuracion de Linea de Corriente</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Particulas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Particulas</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuraciones de Comun</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
@@ -808,7 +808,7 @@
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo de Tiempo de Generacion</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -833,7 +833,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo</translation>
     </message>
     <message>
         <source>1</source>
@@ -841,7 +841,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximo</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
@@ -849,43 +849,43 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion de Empezar</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Rango</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar al area para generar particulas.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar la area para generar particulas, por rango de indices de cuadricula (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>I Minimo</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>I Maximo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Minimo</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maximo</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -905,7 +905,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -917,30 +917,30 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Particulas</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuraciones de Comun</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
@@ -948,7 +948,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generation interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo de Generacion</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -973,7 +973,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo</translation>
     </message>
     <message>
         <source>1</source>
@@ -981,7 +981,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximo</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
@@ -989,27 +989,27 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de Empieza</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar dos puntos. Particulos empiezan de puntos generado igualmenete separados enter estos dos puntos.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrastre del Mouse</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de Coordenades</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto 1:</translation>
     </message>
     <message>
         <source>,</source>
@@ -1017,11 +1017,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Puntos:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1029,7 +1029,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1041,22 +1041,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar</translation>
     </message>
     <message>
         <source>Particle Scalar value change</source>
@@ -1089,7 +1089,7 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Particulas</translation>
     </message>
 </context>
 <context>
@@ -1107,14 +1107,14 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowPolyDataTopDataItem</name>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowScalarGroupTopDataItem</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
@@ -1125,47 +1125,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Linea de Corriente</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion de Empezar</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Rango</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar la area para empezar lineas de corriente</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar la area para empezar lineas de corriente, por rango de indices de cuadricula (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>I Minimo</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>I Maximo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Minimo</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maximo</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1187,7 +1187,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo</translation>
     </message>
     <message>
         <source>1</source>
@@ -1195,7 +1195,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximo</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1203,7 +1203,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1215,46 +1215,46 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Linea de Corriente</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Fisica:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de Empieza</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar dos puntos. Particulos empiezan de puntos generado igualmenete separados enter estos dos puntos.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrastre del Mouse</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de Coordenades</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto 1:</translation>
     </message>
     <message>
         <source>,</source>
@@ -1262,11 +1262,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Puntos:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1274,7 +1274,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1286,33 +1286,33 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar Navegador de Atributos</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar Configuracion de Forma de Cuadricula</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Acutalizar Configuracion de Linea de Corriente</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

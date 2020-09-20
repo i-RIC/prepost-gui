@@ -5,7 +5,7 @@
     <name>QObject</name>
     <message>
         <source>iRIC Grid CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arhivos iRIC Cuadricula CSV (*.csv)</translation>
     </message>
 </context>
 <context>

@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono%1</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -17,15 +17,15 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1 valor</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Polygon property edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor de Propediad de Poligono</translation>
     </message>
     <message>
         <source>&amp;Add New Polygon...</source>
@@ -57,11 +57,11 @@
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Nombre...</translation>
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de &amp;Color...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -85,11 +85,11 @@
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover arriba</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover abajo</translation>
     </message>
     <message>
         <source>Sort polygons</source>
@@ -108,7 +108,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Show</source>
@@ -116,7 +116,7 @@
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Sort toolbar</source>
@@ -134,7 +134,7 @@
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Color Poligono</translation>
     </message>
     <message>
         <source>Color</source>
@@ -142,11 +142,11 @@
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
         <source>polygon</source>
@@ -154,7 +154,7 @@
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono</translation>
     </message>
     <message>
         <source>P&amp;olygon Group</source>
@@ -162,7 +162,7 @@
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono%1</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
@@ -212,11 +212,11 @@
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono%1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Error</source>
@@ -224,7 +224,7 @@
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenida en este archivo de forma no es un poligono.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
@@ -232,46 +232,46 @@
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>El numero de poligonos desajustes entre archivo shp y archivo dbf.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Importacion de Poligono</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificacion:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Carga desde el Atributo de Shape Archivo</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre se Establece Automaticamente (ex. Polygon1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar Valor</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedes especificar la misma columna para nombre y valor.</translation>
     </message>
 </context>
 </TS>

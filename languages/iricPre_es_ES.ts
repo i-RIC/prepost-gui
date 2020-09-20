@@ -5,19 +5,19 @@
     <name>BoundaryConditionDialog</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de Contorno</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -25,34 +25,34 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano de Punto:</translation>
     </message>
     <message>
         <source>Show name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar nombre</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura de Linea:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre tiene que consistir solamente de caracteres ingleses.</translation>
     </message>
     <message>
         <source>Boundary Condition Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedad de Condicion de Borde</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridExporter</name>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS</translation>
     </message>
     <message>
         <source>Error</source>
@@ -71,7 +71,7 @@
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error ocurrio mientras importando la cuadricula.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
@@ -80,7 +80,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
@@ -110,26 +110,26 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dibujar</translation>
     </message>
     <message>
         <source>&amp;Display Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Pantalla...</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Color de Fondo...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Escala de Z-direccion...</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Ejes</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -144,27 +144,27 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Pantalla</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de Cuadricula</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributo de Celda</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributo de Celda</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejes</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -179,60 +179,60 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Escala de Z-direccion </translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala de Z-Direccion</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar nueva escala de Z-direccion.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Configuracion de Color</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegador de Objectos</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCDataItem</name>
     <message>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo Articulo</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Condicion...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Asignar Condicion</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Emitir Condicion</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCGroupDataItem</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de Contorno</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir %1</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Condicion...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -240,27 +240,27 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Asignar Condicion</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Emitir Condicion</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Condicion de Contorno</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>There is no boundary condition.</source>
@@ -272,7 +272,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
@@ -283,30 +283,30 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBCSettingDataItem</name>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Condicion...</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligono</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo no se puede ejecutar cuando no hay cuadricula.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste de Condicion de Contro</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
@@ -322,15 +322,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo no se puede ejecutar cuando no hay cuadricula.</translation>
     </message>
 </context>
 <context>
@@ -344,11 +344,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagenes de Fondo</translation>
     </message>
     <message>
         <source>&amp;Add Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Image...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -356,11 +356,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>There is no background image.</source>
@@ -372,22 +372,22 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quires borrar todos los imagenes de fondo?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto de iRIC (*.ipro)</translation>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
@@ -395,19 +395,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar caso</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar de cual caso en %1 para importar condiciones de calculo.</translation>
     </message>
     <message>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Exito</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de calculo es importado con exito del archivo specificado.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
@@ -415,15 +415,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallo</translation>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando condicion de calculo fallo.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Archivo para Exportar</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
@@ -439,39 +439,39 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportando Condicion de Calculo...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de Calculo es exportado a %1 con exito.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportando condicion de calculo fallo.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>D&amp;atos Geograficos</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Grupos...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Todos los Poligonos...</translation>
     </message>
     <message>
         <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Encuesta Sobre el Rio</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de Conjunto de &amp;Puntos</translation>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
@@ -479,51 +479,51 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ajuste de Color...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar Barra Escalar...</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Condicion de Crear Cuadricula</translation>
     </message>
     <message>
         <source>B&amp;oundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste &amp;de Condicion de Contorno</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cuadricula</translation>
     </message>
     <message>
         <source>&amp;Attributes Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mapeo de Atributos</translation>
     </message>
     <message>
         <source>&amp;Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Valores Medidos</translation>
     </message>
     <message>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Escalar...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Flechas...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
@@ -531,7 +531,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cuadricula...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition</source>
@@ -539,31 +539,31 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de Crear Cuadricula</translation>
     </message>
     <message>
         <source>(No data to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No datos para importar)</translation>
     </message>
     <message>
         <source>(No data to export)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No datos para exportar)</translation>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No algoritmo esta seleccionado)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Nuevo %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
@@ -575,7 +575,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no estan asignado despues de edite la ultima ves. Quieres ejecutar mapeo ahora?</translation>
     </message>
     <message>
         <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
@@ -583,52 +583,52 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo de datos geograficos, condicion de limite finalizado con exito.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
     <message>
         <source>%1 Group Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Configuracion de Grupo</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Grupos...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallo</translation>
     </message>
     <message>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedes usar este nombre para estos datos. Datos geograficos con el mismo nombre ya existen.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Archivo para Exportar</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Import from web...</source>
@@ -636,19 +636,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Todos los Poligonos...</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ajuste de Color...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar Barra Escalar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -656,15 +656,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos Archivos Importables (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
     <message>
         <source>Select algorithm</source>
@@ -676,7 +676,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
@@ -684,11 +684,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Importacion fallo</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando datos de %1 fallo.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -696,7 +696,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando datos...</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -708,7 +708,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
@@ -729,19 +729,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select data to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar datos para exportar</translation>
     </message>
     <message>
         <source>Please select which data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor seleccione datos para exportar.</translation>
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Ajuste de Color</translation>
     </message>
     <message>
         <source>Export Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Poligonos</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
@@ -757,14 +757,14 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quires borrar todos los articulos en grupo %1?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos Geograficos</translation>
     </message>
     <message>
         <source>Reference Information</source>
@@ -775,23 +775,23 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar Condicion de Crear Cuadricula y Forma de Cuadricula...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres botar la condicion de crear y la cuadricula?</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos Archivos Importables (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
     <message>
         <source>Error</source>
@@ -799,34 +799,34 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando cuadricula fallo.</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmacion</translation>
     </message>
     <message>
         <source>Do you want to map geographic data to grid attributes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Deseas mapear datos geograficos a atributos cuadriculas ahora?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar valor...</translation>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar valor con especificando variacion...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de visualizacion de Atributos de Celda de Cuadricula</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
@@ -834,30 +834,30 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar el valor nuevo de %1 a las celdas de cuadricula seleccionadas.</translation>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicar variacion a %1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributo</translation>
     </message>
     <message>
         <source>Color</source>
@@ -868,15 +868,15 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGridAttributeCellGroupDataItem</name>
     <message>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos de celda</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar Navegador de Atributos</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Atributo de Celda</translation>
     </message>
 </context>
 <context>
@@ -891,22 +891,22 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos Geograficos</translation>
     </message>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste de Condicion de Contro</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar mapeo</translation>
     </message>
     <message>
         <source>&amp;Execute...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ejecutar...</translation>
     </message>
     <message>
         <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
@@ -915,7 +915,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
@@ -927,26 +927,26 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Mapping geographic data finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo de datos geograficos se termino con exito.</translation>
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo de datos geograficos se termino</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Asignacion de Mapas de Cuadricula</translation>
     </message>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar mapeo</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -970,19 +970,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartografia de Datos Geograficos</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartografia con TINs</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>TINs creado de datos geograficos estan usado para cartografia. Valores de atributo de nodos de cuadricula estan calculado como promedios ponderados en los nodos de TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Asignacion de Mapas</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
@@ -991,30 +991,30 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Detalle...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar valor...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar...</translation>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar valor con especificando variacion...</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Visualizacion de Atributos de Nodo de Cuadricula </translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
@@ -1022,7 +1022,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
@@ -1034,19 +1034,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar el valor nuevo de %1 a los nodos selecionados de cuadricula.</translation>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicar variacion a %1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
@@ -1058,19 +1058,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de Topografia (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar como Datos de Topografia</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error ocurrio mientras abriendo el archivo.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de cuadricula se exporto con exito a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1081,26 +1081,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridAttributeNodeGroupDataItem</name>
     <message>
         <source>Node attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos de Nodo</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar Navegador de Atributos</translation>
     </message>
     <message>
         <source>Node Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Atributo de Nodo</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeTemplateMappingSettingDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Asignacion de Mapas</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region de Busqueda</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -1112,89 +1112,89 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia Correindo con el Rio [m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia Transversal de Rio [m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Expansiones de Plantillas:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Exponente de Pesaje:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionAlgorithmSelectDialog</name>
     <message>
         <source>Select Grid Creating Algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Algoritmo de Crear Cuadricula</translation>
     </message>
     <message>
         <source>Algorithm:</source>
-        <translation type="unfinished"></translation>
+        <translation>Algoritmo:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Descripcion:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Crear Cuadricula...</translation>
     </message>
     <message>
         <source>&amp;Select Algorithm to Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Seleccionar Algoritmo para Crear Cuadricula...</translation>
     </message>
     <message>
         <source>Reset to &amp;Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecen a los &amp;Predeterminados...</translation>
     </message>
     <message>
         <source>&amp;Delete Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar Condicion de Crear Cuadricula...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta operacion descartare la cuadricula que ya existe. Estas seguro?</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid creating condition?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres descartar la condicion de crear la cuadricula?</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar</translation>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres restablecer la condicion de crear cuadricula al estado predeterminado?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando cambies algoritmo a crear cuadricula, la cuadricula y la condicion de crear cuadricula sera descartado.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
     <message>
         <source>iRIC grid creating condition file(*.igcc)</source>
@@ -1217,69 +1217,69 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>VentanaPrincipal</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation> BarraDeHerremintas</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>Direccion:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Linea Negra:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Linea Roja:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Linea Azul:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Sin Datos)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Seccion Transversal de la Cuadricula (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Seccion Transversal de la Cuadricula (%1): I = %2</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Orilla Izquierda</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Orilla Derecho</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar el valor nuevo de %1 a los nodos selecionados de cuadricula.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadricula</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1287,71 +1287,71 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Los problemas siguientes se encontraron en esta cuadricula. Quieres exportar la cuadricula?</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Esenar Detalle</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Archivo para Exportar</translation>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportando Cuadricula...</translation>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadricula exportado con exito a %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportando cuadricula a %1 fallo.</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres botar la cuadricula?</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>Grid &amp;Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de &amp;Cuadricula...</translation>
     </message>
     <message>
         <source>&amp;Select Polygon Region</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Seleccionar Region de Poligono</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar...</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cuadricula</translation>
     </message>
     <message>
         <source>&amp;Node Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Atributo de nodo...</translation>
     </message>
     <message>
         <source>&amp;Cell Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Atributo de celda...</translation>
     </message>
     <message>
         <source>Set &amp;Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar &amp;Barra de Escalar...</translation>
     </message>
     <message>
         <source>Open &amp;Bird&apos;s-Eye View Window</source>
@@ -1363,7 +1363,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source> [No Data]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Sin Datos]</translation>
     </message>
     <message>
         <source> (%1 x %2 = %3)</source>
@@ -1382,11 +1382,11 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de Cuadricula</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar Coordenadas...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
@@ -1398,18 +1398,18 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Punto(s) de Cuadricula</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDeltaDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordenadas de la Cuadricula</translation>
     </message>
     <message>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entra los delta coordenadas del nodo de cuadricula selecconiado.</translation>
     </message>
     <message>
         <source>x:</source>
@@ -1424,11 +1424,11 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridShapeNewPositionDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordenadas de la Cuadricula</translation>
     </message>
     <message>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entra los nuevos coordenadas del nodo de cuadricula selecconiado.</translation>
     </message>
     <message>
         <source>x: </source>
@@ -1459,7 +1459,7 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridTypeDataItem</name>
     <message>
         <source>Add New Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Cuadricula Nueva</translation>
     </message>
     <message>
         <source>Region</source>
@@ -1474,15 +1474,15 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorHydraulicDataGroupDataItem</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos Archivos Importables (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para importar</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
@@ -1490,11 +1490,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Importacion fallo</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando datos de %1 fallo.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -1507,7 +1507,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Data is successfully imported from %1.</source>
@@ -1518,11 +1518,11 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorLegendBoxEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Leyenda de Color</translation>
     </message>
     <message>
         <source>Legend box</source>
-        <translation type="unfinished"></translation>
+        <translation>Caja de Leyenda</translation>
     </message>
     <message>
         <source>Font Setting:</source>
@@ -1530,23 +1530,23 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Size (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano (tasa)</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>Hight :</source>
-        <translation type="unfinished"></translation>
+        <translation>Altura:</translation>
     </message>
     <message>
         <source>Position (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion (tasa)</translation>
     </message>
     <message>
         <source>X :</source>
@@ -1561,11 +1561,11 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores Medidos</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -1573,11 +1573,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar &amp;Todo...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
@@ -1589,7 +1589,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
@@ -1600,43 +1600,43 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorNormal15DGridWithCrossSectionDataItem</name>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Con&amp;figuracion de Pantalla...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionShapeDataItem</name>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensenar &amp;Seccion Transversal</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorRootDataItem</name>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion...</translation>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar Configuracioun de Asignacion de Atributos</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Leyenda de Color</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Barra de Escalar</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -1644,56 +1644,56 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorStructured2dGridDataItem</name>
     <message>
         <source>Select I-J &amp;Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar I-J &amp;Region...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Con&amp;figuracion de Pantalla...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Seleccionar vertices</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Con&amp;figuracion de Pantalla...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de Preprocesamiento</translation>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadricula no ha creado ni importado todavia.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificando cuadricula %1...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
@@ -1708,26 +1708,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowActionManager</name>
     <message>
         <source>&amp;Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Condicion de Calculo</translation>
     </message>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -1735,11 +1735,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
@@ -1747,7 +1747,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Label Display</source>
@@ -1759,11 +1759,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientacion:</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -1775,35 +1775,35 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifcar tamano de la barra de color como tasa contra el tamano de la ventana.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 1,anchura de barra de color es el  mismo a la anchura de ventana.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Altura:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 1,altura de barra de color es el  mismo a la altura de ventana.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar inferior izquierdo posicion de barra de color como tasa contra tamano de ventana.</translation>
     </message>
     <message>
         <source>X :</source>
@@ -1811,7 +1811,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 0, barra de color borde izquierdo se encuentra en el borde izquierdo de la ventana.</translation>
     </message>
     <message>
         <source>Y :</source>
@@ -1819,29 +1819,29 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 0, barra de color inferior se encuentra en el parte inferior de la ventana.</translation>
     </message>
 </context>
 <context>
     <name>ProjectGridImporter</name>
     <message>
         <source>Project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto</translation>
     </message>
     <message>
         <source>iRIC Project files (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de Proyecto iRIC  (*.ipro)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de Articulo del Navegador de Objetos</translation>
     </message>
     <message>
         <source>Close PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar Ventana PreProcessor</translation>
     </message>
     <message>
         <source>CGNS files (*.cgns)</source>
@@ -1852,19 +1852,19 @@ This algorithm can be used only for structured grids.</source>
     <name>Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Variacion Horizontal (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta de Texto</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Variacion Vertical:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
@@ -1880,49 +1880,49 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Puntos de Elevacion</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>VentanaPrincipal</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation> BarraDeHerremintas</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Linea Negra:</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevacion</translation>
     </message>
     <message>
         <source>%1 : CrossSection %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: SeccionTransveral %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Punto de Elevacion</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView</name>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mover</translation>
     </message>
 </context>
 </TS>

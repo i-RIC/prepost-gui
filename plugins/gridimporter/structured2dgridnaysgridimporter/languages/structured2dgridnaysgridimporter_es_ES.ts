@@ -5,19 +5,19 @@
     <name>Structured2DGridNaysGridImporter</name>
     <message>
         <source>RIC-Nays Grid file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de Cuadricula de RIC-Nays</translation>
     </message>
     <message>
         <source>RIC-Nays grid file (*.grid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo RIC-Nays Cuadricula (*.grid)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Cell flag values will not be loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de Celda Marcado no estaran cargadas.</translation>
     </message>
 </context>
 </TS>

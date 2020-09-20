@@ -5,76 +5,76 @@
     <name>AsciiOnlyLineEdit</name>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cadena debe solo consistir de caracteres ingleses.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
 </context>
 <context>
     <name>AsciiOnlyTextEdit</name>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cadena debe solo consistir de caracteres ingleses.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
 </context>
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione cuadricula para importar</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccoine cual cuadricula para importar</translation>
     </message>
 </context>
 <context>
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Color Personalizado</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Dos Colores</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Tres Colores</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbitrario</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Dos Colores/ Tres Colores</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Maximo</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Mediano</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Minimo</translation>
     </message>
     <message>
         <source>Color</source>
@@ -82,81 +82,81 @@
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar Configuracion de Mapa de Color</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo %1 no existe.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo %1 no se puede abrir.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Configuracion de Mapa de Color</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion...</translation>
     </message>
 </context>
 <context>
     <name>ContourSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Color Fringe</source>
-        <translation type="unfinished"></translation>
+        <translation>Franja de Color</translation>
     </message>
     <message>
         <source>Contour Figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Figura de Contorno</translation>
     </message>
     <message>
         <source>Isolines</source>
-        <translation type="unfinished"></translation>
+        <translation>Isolineas</translation>
     </message>
 </context>
 <context>
@@ -167,7 +167,7 @@
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>No es un valor verdadero</translation>
     </message>
 </context>
 <context>
@@ -189,7 +189,7 @@
     <name>DirnameEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>...</source>
@@ -197,25 +197,25 @@
     </message>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Directorio</translation>
     </message>
 </context>
 <context>
     <name>DoubleSpinBoxWithHelp</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Min: %1, Max: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo: %1, Maximo: %2</translation>
     </message>
 </context>
 <context>
     <name>FilenameEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>...</source>
@@ -223,30 +223,30 @@
     </message>
     <message>
         <source>All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos archivos (*.*)</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Archivo</translation>
     </message>
 </context>
 <context>
     <name>GridShapeEditDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Pantalla de Forma de Cuadricula</translation>
     </message>
     <message>
         <source>Grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineas de Cuadricula</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Todo</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo Perfil</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -254,7 +254,7 @@
     </message>
     <message>
         <source>Grid indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Indices de Cuadricula</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -272,11 +272,11 @@
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta de Texto</translation>
     </message>
 </context>
 <context>
@@ -287,27 +287,27 @@
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar...</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover arriba</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover abajo</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Propiedad...</translation>
     </message>
     <message>
         <source>Delete item</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar articulo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres borrar este articulo?</translation>
     </message>
 </context>
 <context>
@@ -349,35 +349,35 @@
     <name>PolygonAddVertexCommand</name>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar Vertice de Poligono</translation>
     </message>
 </context>
 <context>
     <name>PolygonEditCoordinatesCommand</name>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordinatos de Poligono</translation>
     </message>
 </context>
 <context>
     <name>PolygonMoveVertexCommand</name>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Vertice de Poligono</translation>
     </message>
 </context>
 <context>
     <name>PolygonPushVertexCommand</name>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Anadir Nuevo Punto de Poligono</translation>
     </message>
 </context>
 <context>
     <name>PolygonRemoveVertexCommand</name>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover Vertice de Poligono</translation>
     </message>
 </context>
 <context>
@@ -391,11 +391,11 @@
     <name>RealNumberEditWidget</name>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>No es un valor verdadero</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Minimum value is %1.</source>
@@ -410,14 +410,14 @@
     <name>ScalarBarDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Leyenda de Color</translation>
     </message>
 </context>
 <context>
     <name>ScalarBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -425,11 +425,11 @@
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
@@ -437,7 +437,7 @@
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Label Display</source>
@@ -449,7 +449,7 @@
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato:</translation>
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
@@ -459,7 +459,7 @@
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientacion:</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -471,35 +471,35 @@
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifcar tamano de la barra de color como tasa contra el tamano de la ventana.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 1,anchura de barra de color es el  mismo a la anchura de ventana.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Altura:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 1,altura de barra de color es el  mismo a la altura de ventana.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posicion</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar inferior izquierdo posicion de barra de color como tasa contra tamano de ventana.</translation>
     </message>
     <message>
         <source>X :</source>
@@ -507,7 +507,7 @@
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 0, barra de color borde izquierdo se encuentra en el borde izquierdo de la ventana.</translation>
     </message>
     <message>
         <source>Y :</source>
@@ -515,37 +515,37 @@
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especificas 0, barra de color inferior se encuentra en el parte inferior de la ventana.</translation>
     </message>
 </context>
 <context>
     <name>StructuredGridRegionSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>I Minimo:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>I Maximo:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Minimo:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maximo:</translation>
     </message>
 </context>
 <context>
     <name>TimeFormatEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Value type</source>
@@ -605,7 +605,7 @@
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -623,29 +623,29 @@
     <name>TransparencyWidget</name>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparente</translation>
     </message>
 </context>
 <context>
     <name>WaitDialog</name>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Por Favor Espera</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Por Favor Espera...</translation>
     </message>
 </context>
 <context>
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation> Configuracion de Eje de Pantalla</translation>
     </message>
     <message>
         <source>X-Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X-Eje</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -653,46 +653,46 @@
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximo:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo:</translation>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de Etiquetas:</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimo</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximo</translation>
     </message>
     <message>
         <source>Y-Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-Eje</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato:</translation>
     </message>
     <message>
         <source>Standard (ex. 13800)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estandar (ex. 13800)</translation>
     </message>
     <message>
         <source>Scientific notation (ex. 1.38E+04)</source>
-        <translation type="unfinished"></translation>
+        <translation>Notacion Cientifica (ex. 1.38E+04)</translation>
     </message>
 </context>
 <context>
     <name>vtkLineStyleWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -700,7 +700,7 @@
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura:</translation>
     </message>
     <message>
         <source>Style:</source>
@@ -730,7 +730,7 @@
     <name>vtkTextPropertySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -778,7 +778,7 @@
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano:</translation>
     </message>
 </context>
 </TS>

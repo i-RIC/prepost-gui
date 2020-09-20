@@ -16,7 +16,7 @@
     <name>GridCreatingConditionLaplace</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
@@ -24,7 +24,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
@@ -104,11 +104,11 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Vertice</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover Vertice</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
@@ -151,7 +151,7 @@
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
@@ -227,7 +227,7 @@
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de divison:</translation>
     </message>
     <message>
         <source>Deploy Setting</source>

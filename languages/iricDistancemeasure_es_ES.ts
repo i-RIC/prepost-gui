@@ -88,23 +88,23 @@
     </message>
     <message>
         <source>Define Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir Medidad de Distancia</translation>
     </message>
     <message>
         <source>Move Distance Measure Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover Distancia Medir Punto</translation>
     </message>
     <message>
         <source>Redefine Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Redefinir Medida de Distancia</translation>
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Propiedad de Medida de Distancia</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Traducir Medida de Distancia</translation>
     </message>
 </context>
 <context>
@@ -186,7 +186,7 @@
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro-Abajo</translation>
     </message>
     <message>
         <source>Show End Markers</source>

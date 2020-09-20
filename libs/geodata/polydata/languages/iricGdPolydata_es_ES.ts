@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Edit &amp;Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar &amp;Valor...</translation>
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
@@ -17,11 +17,11 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de &amp;Color...</translation>
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Ajuste de Color</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -29,11 +29,11 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1 valor</translation>
     </message>
     <message>
         <source>Please input new value in this %1.</source>
@@ -60,11 +60,11 @@
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Personalizado</translation>
     </message>
 </context>
 </TS>

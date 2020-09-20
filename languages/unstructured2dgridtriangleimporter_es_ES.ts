@@ -5,7 +5,7 @@
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
         <source>TRIANGLE node files (*.node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos TRIANGLE Nodo (*.node)</translation>
     </message>
     <message>
         <source>TRIANGLE output (*.node, *.ele)</source>
@@ -13,11 +13,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>%1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no existe.</translation>
     </message>
 </context>
 </TS>

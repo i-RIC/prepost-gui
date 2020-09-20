@@ -20,11 +20,11 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anadir Vertice</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover Vertice</translation>
     </message>
     <message>
         <source>&amp;Import Right Bank Line...</source>
@@ -64,7 +64,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>%1 not defined yet</source>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar de Definir Polilinea</translation>
     </message>
     <message>
         <source>Move Line</source>
@@ -131,11 +131,11 @@
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>El maximo numero de nodos de cuadricula es %1.</translation>
     </message>
 </context>
 <context>
@@ -180,7 +180,7 @@
     <name>GridCreatingConditionPoissonGridGenerateDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Creacion de Cuadricula</translation>
     </message>
     <message>
         <source>m</source>

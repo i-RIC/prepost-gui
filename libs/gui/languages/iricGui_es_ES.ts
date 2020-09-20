@@ -5,100 +5,100 @@
     <name>AnimationController</name>
     <message>
         <source>Animation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de Herramientas de Animacion</translation>
     </message>
     <message>
         <source>&amp;Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Animacion</translation>
     </message>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Paso &amp;Atras</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Paso &amp;Afrente</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reajustar</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ir al &amp;Ultimo Paso</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Empezar/Parar Animacion</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>P&amp;arar Animacion</translation>
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternar &amp;Despues del ultimo paso</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion de Velocidad de Animacion...</translation>
     </message>
 </context>
 <context>
     <name>ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar el resultado</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos en la lista siguente seran creados o actualizados.Abre estos archivos con Qt Linguist, y completa el diccionario de traduccion.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar el resultado</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos en la lista siguiente seran creados o actualizados.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginade Asistente</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades de Archivo</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique las propriedades de los archivos de salida.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de Archivo</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished"></translation>
+        <translation>Prejio :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud de sufijo :</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
@@ -142,11 +142,11 @@
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefijo</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de salida</translation>
     </message>
     <message>
         <source>img_</source>
@@ -154,11 +154,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Carpeta %1 no existe. Lo quieres a el ahora?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -166,22 +166,22 @@
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Creando carpeta %1 fallo.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginade Asistente</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished"></translation>
+        <translation>Salida hasta Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique las propriedades de los archivos de salida.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
@@ -189,11 +189,11 @@
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de Archivo KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre :</translation>
     </message>
     <message>
         <source>output.kml</source>
@@ -204,7 +204,7 @@
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Introducion</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
@@ -215,145 +215,145 @@
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginade Asistente</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades de Pelicula</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique las propriedades de los archivos de salida.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de salida de pelicula</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de Archivo</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocidad de Jugar</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique Longitud de Pelicula [sec]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique marcos por segundo</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfil:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de salida</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Defecto</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginade Asistente</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Intervalo de Tiempo</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el intervalo que tiempo de empezar, intervalo de tiempo de parar, y la tasa de saltar.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished"></translation>
+        <translation>Empieza :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished"></translation>
+        <translation>Para :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasa de saltar :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginade Asistente</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccion de Ventana</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione ventanas de objectivo y especifique como quieres salir archivos.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventanas de Objectivo</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de salida</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished"></translation>
+        <translation>En un archivo</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished"></translation>
+        <translation>Respectivamente</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Diseno</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished"></translation>
+        <translation>Como es</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontalmente</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticalmente</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>blanco</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>transparente</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mas de una ventana de visualizacion tiene una region transparente. No se pueden guardar en imagenes transparentes de fondo. Seleccione atras blanco, o cancele y inhabilite transparencia para contornos, etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay ventana seleccionada.</translation>
     </message>
 </context>
 <context>
@@ -367,38 +367,38 @@
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion de Importacion de Imagenes de Google Map</translation>
     </message>
     <message>
         <source>Zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfoco:</translation>
     </message>
     <message>
         <source>Map Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de Mapa:</translation>
     </message>
     <message>
         <source>Satellite Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto de Satelite</translation>
     </message>
     <message>
         <source>Roadmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Carreteras</translation>
     </message>
     <message>
         <source>Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation>Terreno</translation>
     </message>
     <message>
         <source>Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibrido</translation>
     </message>
 </context>
 <context>
     <name>InstallerTool</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
@@ -414,7 +414,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <name>IntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Introducion</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
@@ -426,14 +426,14 @@ This wizard will generate or update translation files for solver definition file
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Insinuacion de Mouse</translation>
     </message>
 </context>
 <context>
     <name>NewProjectSolverSelectingDialog</name>
     <message>
         <source>Select Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Solucionador</translation>
     </message>
     <message>
         <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
@@ -460,7 +460,7 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferenceDialog</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferencias</translation>
     </message>
     <message>
         <source>General</source>
@@ -468,15 +468,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Graphics Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Predeterminados de Graficas</translation>
     </message>
     <message>
         <source>Grid Checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificacion de Cuadricula</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de Encuesta de Rio</translation>
     </message>
     <message>
         <source>Network Proxy</source>
@@ -499,11 +499,11 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageBackgroundGrid</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de Encuesta de Rio</translation>
     </message>
     <message>
         <source>Cross Section Direction:</source>
@@ -518,23 +518,23 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageGeneral</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Configuracion de Idioma se applica cuando iRIC se abre la proxima ves.</translation>
     </message>
     <message>
         <source>Working Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de Trabajo</translation>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Directorio de Trabajo se usa para guardar archivos usado por iRIC.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
@@ -598,7 +598,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
@@ -609,11 +609,11 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageGraphicsDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de Cuadricula</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -621,15 +621,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Color</translation>
     </message>
     <message>
         <source>Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de Fondo</translation>
     </message>
     <message>
         <source>Max Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano Maximo:</translation>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
@@ -645,77 +645,77 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano de Flecha:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineas de Corriente</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Particulas</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamano:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGridCheck</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Checking Timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar el tiempo</translation>
     </message>
     <message>
         <source>Before Running Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Antes Corriendo Solucionador</translation>
     </message>
     <message>
         <source>Before Exporting Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Antes de Exportar Cuadricula</translation>
     </message>
     <message>
         <source>Attributes to Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos para Comprobar</translation>
     </message>
     <message>
         <source>Whether cell edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>Si los bordes de celda intersectan</translation>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar relacion de aspecto del borde de celda es menos de</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar variacion de longitud del borde de celda es menos de</translation>
     </message>
     <message>
         <source>I-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>I-direccion:</translation>
     </message>
     <message>
         <source>J-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>J-direccion:</translation>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar angulo de celda es mas que</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Configuraciones en esta pagina estan applicados solamente a cuadriculas estructuradas.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageProxy</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Do not use proxy</source>
@@ -754,7 +754,7 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
@@ -766,7 +766,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
@@ -774,7 +774,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>This value already exists in the list.</source>
@@ -782,7 +782,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
@@ -812,15 +812,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Arriba</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abajo</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -828,11 +828,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
@@ -867,7 +867,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>URL:</source>
@@ -886,15 +886,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWebCsvTile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Arriba</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abajo</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -902,11 +902,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
@@ -925,7 +925,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
@@ -948,39 +948,39 @@ Do you want to launch iRIC Maintainance?</source>
     <name>ProjectPropertyBasicInfoWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo Nombre:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora de Ultima Actualizacion:</translation>
     </message>
     <message>
         <source>Solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Solucionador:</translation>
     </message>
     <message>
         <source>Grid(s):</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadricula(s):</translation>
     </message>
     <message>
         <source>Calculation condition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Condicion de Calculo:</translation>
     </message>
     <message>
         <source>Calculation result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado de Calculo:</translation>
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de Coordinado:</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar...</translation>
     </message>
     <message>
         <source>Coordinate Offset:</source>
@@ -992,185 +992,185 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Sin Datos)</translation>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Aun no guardado)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion Finalizada</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion Inacabada</translation>
     </message>
     <message>
         <source>Setup partially unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion Parcialmente Inacabada</translation>
     </message>
     <message>
         <source>Already set</source>
-        <translation type="unfinished"></translation>
+        <translation>Ya establecido</translation>
     </message>
     <message>
         <source>Not set yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Todavia establecido</translation>
     </message>
     <message>
         <source>Data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos existen</translation>
     </message>
     <message>
         <source>No data</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin Datos</translation>
     </message>
     <message>
         <source>(Not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No Especificado)</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
     <message>
         <source>Project Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Propeidad de Proyecto</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion Basica</translation>
     </message>
 </context>
 <context>
     <name>ProjectTypeSelectDialog</name>
     <message>
         <source>Select How to Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione como Guardar Proyecto</translation>
     </message>
     <message>
         <source>Please select how to save project from the followings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione como Guardar Proyecto de los Siguientes:</translation>
     </message>
     <message>
         <source>Save as File (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar como Archivo (*.ipro)</translation>
     </message>
     <message>
         <source>Save as Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar como Proyecto</translation>
     </message>
 </context>
 <context>
     <name>SettingPage</name>
     <message>
         <source>Select Program and Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione de Programa y Idiomas</translation>
     </message>
     <message>
         <source>Specify for which solver (or grid creating program) you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifica para cual solucionador (o programa de creacion de cuadricula) quieres crear o actualizar archivos de traduccion.</translation>
     </message>
     <message>
         <source>Target Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Programa de Objectivo</translation>
     </message>
     <message>
         <source>&amp;Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Solucionador</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Program</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Programa de Creacion de Cuadricula</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Idiomas</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractDialog</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion de Solucionador</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion Basica</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Derechos de autor</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Estreno</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagina Principal</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descripcion</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencia</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractWidget</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion de Solucionador</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion Basica</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Derechos de autor</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Estreno</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagina Principal</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descripcion</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencia</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionList</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
@@ -1182,11 +1182,11 @@ Do you want to launch iRIC Maintainance?</source>
     <name>SolverDefinitionListDialog</name>
     <message>
         <source>Solver List</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de Solucionadores</translation>
     </message>
     <message>
         <source>&amp;Show Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ensenar Detalle...</translation>
     </message>
     <message>
         <source>Select solver to open project</source>
@@ -1194,25 +1194,25 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de definicion de traduccion de actualizacion asistente</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagina de Empezar de iRIC</translation>
     </message>
     <message>
         <source>iRIC </source>
@@ -1225,34 +1225,34 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Start Simulation Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Empezar Proyecto de Simulacion</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Soporte</translation>
     </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Create &amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear &amp;Proyecto Nuevo...</translation>
     </message>
     <message>
         <source>&amp;Open Project File...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abrir Archivo de Proyecto...</translation>
     </message>
     <message>
         <source>Recent Solvers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Solucionadores Recientes:</translation>
     </message>
     <message>
         <source>Recent Projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyectos Recientes:</translation>
     </message>
 </context>
 <context>
@@ -1263,27 +1263,27 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error ocurrio mientras cargando archivo de definicion de solucionador.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo de proyecto iRIC</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto de iRIC (*.ipro project.xml)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Project file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto %1 no existe.</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto de ruta de carpeta tiene que consistir de solamente de caracteres de Ingles. Por favor mueve o renombre la carpeta de proyecto.</translation>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
@@ -1295,35 +1295,35 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Open Calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Resultado de Calculo</translation>
     </message>
     <message>
         <source>CGNS file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS %1 no existe.</translation>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto esta modificado. Quieres guardarlo?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo de proyecto iRIC</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto de iRIC (*.ipro)</translation>
     </message>
     <message>
         <source>Save iRIC project</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar proyecto iRIC</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto de ruta de carpeta tiene que consistir de solamente de caracteres de Ingles.</translation>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de proyecto tiene que estar vacio.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
@@ -1335,7 +1335,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto guardado con exito a %1.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1367,19 +1367,19 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Listo</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando proyecto fallo.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>El solucionador todavia esta corriendo. Abandonar?</translation>
     </message>
     <message>
         <source>Save Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar foto</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
@@ -1399,23 +1399,23 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta ventana no soporte fotos con este tipo de archivo.</translation>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando foto fallo.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre incorrecto de archivo especificado.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto guardado con exito a %1.</translation>
     </message>
     <message>
         <source>This windows does not support snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta ventana no sorpote la funcion de foto.</translation>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
@@ -1423,23 +1423,23 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este menu no esta desponible mientras que el solucionador este corriendo.</translation>
     </message>
     <message>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta ventana no sorpote la funcion de foto continua.</translation>
     </message>
     <message>
         <source>Continuous Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Fotos Continuo</translation>
     </message>
     <message>
         <source>saving continuous snapshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>guardand fotos continuo...</translation>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ya existe, y fallo a eniminarlo. Archivo de pelicula no se emite.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -1476,7 +1476,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>Intitulado</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
@@ -1484,7 +1484,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
+        <translation>El solver esta corriendo ahora. Por var para el solver, para hacer esta accion.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
@@ -1492,47 +1492,47 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Opciones desconocidas especificadas. Estan descuidado. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mas de dos archivos de proyecto estan pasado como argumentos. Se descuidan. %1</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas seguro que quieres borrar el resultado de calculo?</translation>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado de calculo borrado.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>Calculation result does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado de calculo no existe.</translation>
     </message>
     <message>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor seleccione este menu cuando la Ventana de Visualizacion este activa.</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>No particula esta dibujada ahora.</translation>
     </message>
     <message>
         <source>Export Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Particulas</translation>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando particulos como archivos VTK...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error ocurrio mientras guardando.</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
@@ -1540,19 +1540,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar Configuraciones de Visualizacion/Grafico</translation>
     </message>
     <message>
         <source>Setting file (*.vgsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arhcivo de configuracion (*.vgsetting)</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo %1 no existe.</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Configuraciones de Visualizacion/Grafico</translation>
     </message>
     <message>
         <source>One dimension</source>
@@ -1583,7 +1583,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre iRIC</translation>
     </message>
     <message>
         <source>imglabel</source>
@@ -1591,15 +1591,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta de Texto</translation>
     </message>
     <message>
         <source>copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Derechos de Autor</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -1607,15 +1607,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Released on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Liberado en %1</translation>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Derechos de Autor %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation type="unfinished"></translation>
+        <translation>Terminos de Uso:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
@@ -1626,11 +1626,11 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindowActionManager</name>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Archivo</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Proyecto Nuevo...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -1638,7 +1638,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abrir...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -1646,11 +1646,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open iRIC Project files</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Archivos de iRIC Proyecto</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Guardar</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -1658,19 +1658,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar &amp;como Archivo (*.ipro)...</translation>
     </message>
     <message>
         <source>Save As &amp;Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar como &amp;Proyecto...</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Propiedad...</translation>
     </message>
     <message>
         <source>Save S&amp;napshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar &amp;Foto...</translation>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
@@ -1678,39 +1678,39 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto / Pelicula / Google Earth Export Continuo...</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar</translation>
     </message>
     <message>
         <source>&amp;Calculation Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Condicion de Calculo...</translation>
     </message>
     <message>
         <source>Calculation &amp;Result...</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado de &amp;Calculo...</translation>
     </message>
     <message>
         <source>&amp;Measured Values...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Valores Medidos...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Imagen de Fondo...</translation>
     </message>
     <message>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuraciones de Visualizacion/Grafico...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Particulas...</translation>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
@@ -1722,23 +1722,23 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir &amp;Directorio de Trabajo...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Proyectos Recientes</translation>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation type="unfinished"></translation>
+        <translation>Presentar Pagina de Comienzo de iRIC...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Salir</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>D&amp;atos Geograficos</translation>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
@@ -1746,15 +1746,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Datos Hidraulicos</translation>
     </message>
     <message>
         <source>Solver Console &amp;Log...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Registro de Consola de solucionador...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
@@ -1766,27 +1766,27 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor&amp;tar</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pegar</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ver</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de Herramientas</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de Herramientas Principal</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
@@ -1794,27 +1794,27 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de Herramientas de Aminacion</translation>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Navegador de Objectos</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Navegador de Atributos</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de Estado</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Color de Fondo...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Escala de Z-direccion...</translation>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
@@ -1838,83 +1838,83 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ventanas de Azulejos</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Co&amp;ntrol de Camera</translation>
     </message>
     <message>
         <source>&amp;Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Formar</translation>
     </message>
     <message>
         <source>&amp;Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reiniciar la Rotacion</translation>
     </message>
     <message>
         <source>R&amp;otate 90</source>
-        <translation type="unfinished"></translation>
+        <translation>R&amp;otar 90</translation>
     </message>
     <message>
         <source>XY Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>Plano XY</translation>
     </message>
     <message>
         <source>YZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>Plano YZ</translation>
     </message>
     <message>
         <source>XZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>Plano XZ</translation>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover &amp;Izquierda</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover &amp;Derecho</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover &amp;Arriba</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover &amp;Abajo</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar &amp;Dentro</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar &amp;Afuera</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar Dentro en X-Direccion</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar Afuera en X-Direccion</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar Dentro en Y-Direccion</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar Afuera en Y-Direccion</translation>
     </message>
     <message>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Simulacion</translation>
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Correr</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
@@ -1923,31 +1923,31 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Altar</translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Informacion de Solver...</translation>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar &amp;Ventana Preprocesador</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfocar &amp;Ventana de Consola solucionador</translation>
     </message>
     <message>
         <source>&amp;Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Herramienta</translation>
     </message>
     <message>
         <source>Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado de &amp;Calculo</translation>
     </message>
     <message>
         <source>Open new 2D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Ventana 2D Post-Procesamiento Nueva</translation>
     </message>
     <message>
         <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
@@ -1955,11 +1955,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Ventana 3D Post-Procesamiento Nueva</translation>
     </message>
     <message>
         <source>Open new Graph Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Ventana de Grafico Nueva</translation>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
@@ -1971,15 +1971,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Recargar</translation>
     </message>
     <message>
         <source>&amp;Reload Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Recargar Resultado de Calculo</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Borrar...</translation>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
@@ -1987,27 +1987,27 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importar...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Exportar...</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar Configuraciones de Visualizacion/Grafico...</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Configuraciones de Visualizacion/Grafico...</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Opcion</translation>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Preferencias...</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
@@ -2019,31 +2019,31 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Crear/Actualizar Archivos de Traduccion...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ayuda</translation>
     </message>
     <message>
         <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ayuda...</translation>
     </message>
     <message>
         <source>&amp;Solver List...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lista de solucionador...</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Consejo de Mouse...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sobre...</translation>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de Herramientas Principal</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>

@@ -5,15 +5,15 @@
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
         <source>iRIC Grid CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo iRIC Cuadricula CSV</translation>
     </message>
     <message>
         <source>iRIC Grid CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arhivos iRIC Cuadricula CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <source>The following columns were ignored.
