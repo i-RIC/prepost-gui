@@ -10,6 +10,7 @@
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <postbase/autoparticlewindowi.h>
 #include <postbase/cfshapeexportwindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
@@ -32,7 +33,8 @@ class Post2dWindow :
 	public CfShapeExportWindowI,
 	public ParticleExportWindowI,
 	public SVKmlExportWindowI,
-	public BackgroundColorEditVtkInterface
+	public BackgroundColorEditVtkInterface,
+	public AutoParticleWindowI
 {
 	Q_OBJECT
 
@@ -67,6 +69,7 @@ public:
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename, bool oneShot) override;
+	bool isAutoParticleOutput() const override;
 
 	void applyOffset(double x_diff, double y_diff) override;
 

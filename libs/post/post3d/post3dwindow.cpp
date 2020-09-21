@@ -204,6 +204,18 @@ QList<QString> Post3dWindow::particleDrawingZones()
 	return ret;
 }
 
+bool Post3dWindow::isAutoParticleOutput() const
+{
+	bool output = false;
+	auto rItem = dynamic_cast<Post3dWindowRootDataItem*> (m_dataModel->m_rootDataItem);
+	for (auto tItem : rItem->gridTypeDataItems()) {
+		for (auto zItem : tItem->zoneDatas()) {
+			output = output || zItem->particleGroupDataItem()->isOutput();
+		}
+	}
+	return output;
+}
+
 bool Post3dWindow::hasTransparentPart()
 {
 	Post3dWindowRootDataItem* rItem = dynamic_cast<Post3dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
