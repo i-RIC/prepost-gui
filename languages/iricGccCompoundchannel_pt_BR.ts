@@ -170,7 +170,12 @@
     </message>
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.</source>
-        <translation>Especifique o poligono da area de criacao da grade e o poligono da area do canal de agua, e no final especifique a linha central.</translation>
+        <translation type="vanished">Especifique o poligono da area de criacao da grade e o poligono da area do canal de agua, e no final especifique a linha central.</translation>
+    </message>
+    <message>
+        <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
+The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

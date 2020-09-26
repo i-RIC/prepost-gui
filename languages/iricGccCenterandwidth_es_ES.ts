@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>

@@ -176,7 +176,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o "Modo de exibicao" para "Wireframe" ou "Face interpolada". Pressione o botao OK e ai o"Modo de exibicao" sera alterado para "Wireframe".</translation>
+        <translation>Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o &quot;Modo de exibicao&quot; para &quot;Wireframe&quot; ou &quot;Face interpolada&quot;. Pressione o botao OK e ai o&quot;Modo de exibicao&quot; sera alterado para &quot;Wireframe&quot;.</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>

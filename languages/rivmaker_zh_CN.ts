@@ -8,16 +8,20 @@
         <translation>关于rivmaker</translation>
     </message>
     <message>
-        <source>rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Release Date: 2017/3/31</source>
-        <translation>发布日期: 2017/3/31</translation>
+        <translation type="vanished">发布日期: 2017/3/31</translation>
     </message>
     <message>
         <source>Copyright: USGS</source>
         <translation>版权: USGS</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/1/30</source>
+        <translation type="unfinished">发布日期: 2021/1/30</translation>
     </message>
 </context>
 <context>
@@ -96,6 +100,48 @@
     </message>
 </context>
 <context>
+    <name>ChartGraphicsView</name>
+    <message>
+        <source>Aspect ratio: 1 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChartWindow</name>
+    <message>
+        <source>Display ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio: 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
@@ -159,31 +205,173 @@
     </message>
     <message>
         <source>Cross Section:</source>
-        <translation>横截面:</translation>
+        <translation type="vanished">横截面:</translation>
     </message>
     <message>
         <source>&amp;Reset Zoom</source>
-        <translation>&amp;调整缩放</translation>
+        <translation type="vanished">&amp;调整缩放</translation>
     </message>
     <message>
         <source>Distance from Left bank</source>
-        <translation>到左河岸距离</translation>
+        <translation type="vanished">到左河岸距离</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation>高程</translation>
+        <translation type="vanished">高程</translation>
     </message>
     <message>
         <source>Left bank HWM</source>
-        <translation>左河岸HWM</translation>
+        <translation type="vanished">左河岸HWM</translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation>右河岸HWM</translation>
+        <translation type="vanished">右河岸HWM</translation>
     </message>
     <message>
         <source>Cross Section Window : %1</source>
         <translation>横截面窗口:%1</translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished">左河岸HWM</translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished">右河岸HWM</translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Cross Section Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">自动</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HWMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowGraphicsView</name>
+    <message>
+        <source>Left bank HWM</source>
+        <translation type="unfinished">左河岸HWM</translation>
+    </message>
+    <message>
+        <source>Right bank HWM</source>
+        <translation type="unfinished">右河岸HWM</translation>
     </message>
 </context>
 <context>
@@ -560,6 +748,21 @@
     </message>
 </context>
 <context>
+    <name>RivCsvExporter</name>
+    <message>
+        <source>Select directory to save CSV files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
@@ -892,6 +1095,34 @@
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation>未定义横截面时，无法打开“横截面窗口”。</translation>
     </message>
+    <message>
+        <source>River Survey Data as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
@@ -970,15 +1201,210 @@
     </message>
     <message>
         <source>Distance Upstream</source>
-        <translation>上游距离</translation>
+        <translation type="vanished">上游距离</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation>高程</translation>
+        <translation type="vanished">高程</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>名称</translation>
+        <translation type="vanished">名称</translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>Data for checked Check Boxes are exported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Elevation View Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">自动</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
+    <message>
+        <source>Visibility Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arbitrary HWM</source>
+        <translation type="unfinished">任意HWM</translation>
+    </message>
+    <message>
+        <source>Benchmark</source>
+        <translation type="unfinished">基准</translation>
+    </message>
+    <message>
+        <source>Reference mark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surveying or turning point</source>
+        <translation type="unfinished">测量或转折点</translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished">左河岸HWM</translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished">右河岸HWM</translation>
+    </message>
+    <message>
+        <source>Stream gage</source>
+        <translation type="unfinished">流规</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidget</name>
+    <message>
+        <source>WSE Edit Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>&amp;Export to CSV</source>
+        <translation type="unfinished">&amp;导入到</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <source>Elevation</source>
+        <translation type="unfinished">高程</translation>
     </message>
 </context>
 <context>

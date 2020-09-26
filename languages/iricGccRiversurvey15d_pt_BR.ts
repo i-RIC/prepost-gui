@@ -8,18 +8,18 @@
         <translation>Criar grade de 1.5 dimensoes atraves dos dados de levantamento fluvial</translation>
     </message>
     <message>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.</source>
-        <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera especificar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha central do rio.</translation>
-        <translation>Nota: Este algoritmo sera disponivel somente quando baixar os dados de levantamento do curso fluvial .  Selecione este algoritmo depois de baixar os dados de levantamento do curso fluvial.</translation>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
         <translation>Os dados de levantamento do curso fluvial nao foram importados aos dados geograficos. Esse algoritmo nao sera disponivel.</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
+Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

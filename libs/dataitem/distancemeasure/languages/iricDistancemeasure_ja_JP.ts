@@ -125,84 +125,112 @@
         <source>Measure%1</source>
         <translation>計測%1</translation>
     </message>
+    <message>
+        <source>Delete &amp;Selected...</source>
+        <translation>選択して削除 (&amp;S)...</translation>
+    </message>
+    <message>
+        <source>Delete &amp;All...</source>
+        <translation>全て削除 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>There is no distance measure.</source>
+        <translation>距離計測がありません。</translation>
+    </message>
+    <message>
+        <source>Delete selected distance measures</source>
+        <translation>選択した距離計測の削除</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete all distance measures?</source>
+        <translation>本当に全ての距離計測を削除していいですか?</translation>
+    </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished">距離計測 プロパティ</translation>
+        <translation>距離計測 プロパティ</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">名前:</translation>
+        <translation>名前:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">開始点:</translation>
+        <translation>開始点:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">, </translation>
+        <translation>, </translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">終了点:</translation>
+        <translation>終了点:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">ラベル</translation>
+        <translation>ラベル</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">ラベルを表示</translation>
+        <translation>ラベルを表示</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">表示内容</translation>
+        <translation>表示内容</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">自動</translation>
+        <translation>自動</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">手動</translation>
+        <translation>手動</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">位置</translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">中央上</translation>
+        <translation>中央上</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">中央左</translation>
+        <translation>中央左</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">中央右</translation>
+        <translation>中央右</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">中央下</translation>
+        <translation>中央下</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>フォント設定</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">両端のマーカを表示</translation>
+        <translation>両端のマーカを表示</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">マーカサイズ:</translation>
+        <translation>マーカサイズ:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">表示色:</translation>
+        <translation>表示色:</translation>
     </message>
 </context>
 </TS>

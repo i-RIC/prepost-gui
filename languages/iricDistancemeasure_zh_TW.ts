@@ -46,6 +46,34 @@
         <source>Measure%1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no distance measure.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected distance measures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete all distance measures?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>

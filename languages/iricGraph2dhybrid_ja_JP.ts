@@ -166,6 +166,10 @@
         <source>Distance</source>
         <translation>距離</translation>
     </message>
+    <message>
+        <source>Polyline Group</source>
+        <translation>折れ線グループ</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
@@ -548,6 +552,10 @@
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation>%1 と %2 のデータの数が異なります。 %1 は読み飛ばします。</translation>
+    </message>
+    <message>
+        <source>Polyline Group:</source>
+        <translation>折れ線グループ:</translation>
     </message>
 </context>
 <context>

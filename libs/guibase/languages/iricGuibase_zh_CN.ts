@@ -269,6 +269,17 @@
     </message>
 </context>
 <context>
+    <name>ItemMultiSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">对话框</translation>
+    </message>
+    <message>
+        <source>Check &amp;All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -308,6 +319,27 @@
     <message>
         <source>Are you sure you want to delete this item?</source>
         <translation>确认删除此项目吗？</translation>
+    </message>
+</context>
+<context>
+    <name>PointClearCommand</name>
+    <message>
+        <source>Clear Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointMoveCommand</name>
+    <message>
+        <source>Move Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointSetCommand</name>
+    <message>
+        <source>Set Point</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

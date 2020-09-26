@@ -166,6 +166,10 @@
         <source>Distance</source>
         <translation>距离</translation>
     </message>
+    <message>
+        <source>Polyline Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
@@ -548,6 +552,10 @@
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation>%1和%2的数据不匹配。 数据%1被跳过。</translation>
+    </message>
+    <message>
+        <source>Polyline Group:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

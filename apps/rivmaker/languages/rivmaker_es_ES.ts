@@ -8,15 +8,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Release Date: 2017/3/31</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copyright: USGS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/1/30</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -96,6 +96,48 @@
     </message>
 </context>
 <context>
+    <name>ChartGraphicsView</name>
+    <message>
+        <source>Aspect ratio: 1 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChartWindow</name>
+    <message>
+        <source>Display ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio: 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
@@ -158,31 +200,153 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cross Section:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Reset Zoom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Distance from Left bank</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Elevation</source>
-        <translation>Elevacion</translation>
+        <translation type="vanished">Elevacion</translation>
     </message>
+    <message>
+        <source>Cross Section Window : %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Cross Section Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HWMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -560,6 +724,21 @@
     </message>
 </context>
 <context>
+    <name>RivCsvExporter</name>
+    <message>
+        <source>Select directory to save CSV files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
@@ -892,6 +1071,34 @@
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>River Survey Data as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
@@ -969,16 +1176,207 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Distance Upstream</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Elevation</source>
-        <translation>Elevacion</translation>
+        <translation type="vanished">Elevacion</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nombre</translation>
+        <translation type="vanished">Nombre</translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacion</translation>
+    </message>
+    <message>
+        <source>Data for checked Check Boxes are exported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Elevation View Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
+    <message>
+        <source>Visibility Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arbitrary HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Benchmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reference mark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surveying or turning point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stream gage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidget</name>
+    <message>
+        <source>WSE Edit Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Export to CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nombre</translation>
+    </message>
+    <message>
+        <source>Elevation</source>
+        <translation type="unfinished">Elevacion</translation>
     </message>
 </context>
 <context>
