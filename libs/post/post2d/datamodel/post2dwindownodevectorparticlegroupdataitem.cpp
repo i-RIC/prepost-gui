@@ -215,6 +215,19 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setTarget(const std::string& t
 	updateActorSettings();
 }
 
+bool Post2dWindowNodeVectorParticleGroupDataItem::isOutput() const
+{
+	if (! isAncientChecked()) {return false;}
+	if (standardItem()->checkState() != Qt::Checked) {return false;}
+	if (m_setting.target == "") {return false;}
+
+	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	if (cont == nullptr) {return false;}
+	if (cont->data() == nullptr) {return false;}
+
+	return true;
+}
+
 void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
 	clearParticleGrids();

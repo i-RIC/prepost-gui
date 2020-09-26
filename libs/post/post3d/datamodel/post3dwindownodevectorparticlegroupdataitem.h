@@ -69,6 +69,7 @@ public:
 
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
+	bool isOutput() const;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);

@@ -284,6 +284,18 @@ bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, dou
 	return sItem->exportKMLForTimestep(writer, m_exportScalarName, index, time, oneShot);
 }
 
+bool Post2dWindow::isAutoParticleOutput() const
+{
+	bool output = false;
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	for (auto tItem : rItem->gridTypeDataItems()) {
+		for (auto zItem : tItem->zoneDatas()) {
+			output = output || zItem->particleDataItem()->isOutput();
+		}
+	}
+	return output;
+}
+
 void Post2dWindow::updateTmsList()
 {
 	dynamic_cast<Post2dWindowDataModel*> (m_dataModel)->updateTmsList();

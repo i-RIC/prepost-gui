@@ -438,6 +438,19 @@ void Post3dWindowNodeVectorParticleGroupDataItem::setTarget(const std::string& t
 	updateActorSettings();
 }
 
+bool Post3dWindowNodeVectorParticleGroupDataItem::isOutput() const
+{
+	if (! isAncientChecked()) {return false;}
+	if (standardItem()->checkState() != Qt::Checked) {return false;}
+	if (m_setting.target == "") {return false;}
+
+	auto cont = dynamic_cast<Post3dWindowZoneDataItem*> (parent())->dataContainer();
+	if (cont == nullptr) {return false;}
+	if (cont->data() == nullptr) {return false;}
+
+	return true;
+}
+
 vtkPointSet* Post3dWindowNodeVectorParticleGroupDataItem::getRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();

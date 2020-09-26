@@ -74,7 +74,8 @@ win32 {
 }
 
 # Input
-HEADERS += cfshapeexportwindowi.h \
+HEADERS += autoparticlewindowi.h \
+           cfshapeexportwindowi.h \
            particleexportwindowi.h \
            post2dwindowcontoursetting.h \
            postallzoneselectingdialog.h \

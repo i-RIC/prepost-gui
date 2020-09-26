@@ -26,6 +26,7 @@
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
 #include <guicore/executer/iricmainwindowexecuterwatcher.h>
+#include <postbase/autoparticlewindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
 #include <guicore/misc/iricmetadata.h>
@@ -998,6 +999,14 @@ void iRICMainWindow::handleWizardAccepted(ContinuousSnapshotWizard* wizard)
 
 void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer)
 {
+	bool isAutoParticleOutput = false;
+	for (auto sub : wizard->windowList())
+	{
+		auto w = dynamic_cast<AutoParticleWindowI*> (sub->widget());
+		if (w == nullptr) {continue;}
+		isAutoParticleOutput = isAutoParticleOutput || w->isAutoParticleOutput();
+	}
+
 	m_continuousSnapshotInProgress = true;
 	QProgressDialog dialog(wizard);
 	dialog.setRange(0, m_stop - m_start);
@@ -1014,6 +1023,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 	QList<QSize> sizes;
 	bool first = true;
 	int imgCount = 0;
+	m_animationController->setCurrentStepIndex(step);
 	while (step <= m_stop) {
 		dialog.setValue(step - m_start);
 		qApp->processEvents();
@@ -1021,7 +1031,15 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			m_continuousSnapshotInProgress = false;
 			return;
 		}
-		m_animationController->setCurrentStepIndex(step);
+		if (isAutoParticleOutput) {
+			// increment step by 1, to generate particles
+			while (m_animationController->currentStepIndex() != step) {
+				m_animationController->setCurrentStepIndex(m_animationController->currentStepIndex() + 1);
+			}
+		} else {
+			// skip directry to step
+			m_animationController->setCurrentStepIndex(step);
+		}
 		switch (m_output) {
 		case ContinuousSnapshotWizard::Onefile: {
 				if (first) {sizes.append(size);}
