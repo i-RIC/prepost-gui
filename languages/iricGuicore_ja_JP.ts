@@ -682,6 +682,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">フォーム</translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation>対象</translation>
+    </message>
+</context>
+<context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
@@ -978,7 +989,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Webインポート</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -1077,19 +1088,19 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>ダウンロード</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>サイト番号</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>開始日:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>終了日:</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1101,23 +1112,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>サイト番号を入力してください。</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>サイト番号が不正です。</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>開始日は終了日より前にしてください。</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>インポート失敗</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>インポートするデータがありません。</translation>
     </message>
 </context>
 <context>
@@ -1428,19 +1439,19 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>簡易演算結果の変数の編集</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>計算結果:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>テスト用の値:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1448,11 +1459,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>変数名が入力されていません。</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>この変数名は既に使われています。</translation>
     </message>
 </context>
 <context>

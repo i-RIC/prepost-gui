@@ -833,7 +833,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>通过指定变量来编辑值...</translation>
+        <translation type="vanished">通过指定变量来编辑值...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -857,11 +857,35 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>应用变量到%1</translation>
+        <translation type="vanished">应用变量到%1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>在选定的网格节点上输入%1的变化。</translation>
+        <translation type="vanished">在选定的网格节点上输入%1的变化。</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1022,7 +1046,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>通过指定变化来编辑值...</translation>
+        <translation type="vanished">通过指定变化来编辑值...</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
@@ -1054,11 +1078,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>在%1应用变化</translation>
+        <translation type="vanished">在%1应用变化</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>在选定的网格节点上输入%1的变化。</translation>
+        <translation type="vanished">在选定的网格节点上输入%1的变化。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1091,6 +1115,30 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Error</source>
         <translation>错误</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
