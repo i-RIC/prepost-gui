@@ -913,7 +913,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>変化量を指定して値を編集...</translation>
+        <translation type="vanished">変化量を指定して値を編集...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -937,11 +937,35 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>%1 に変化量を適用</translation>
+        <translation type="vanished">%1 に変化量を適用</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
+        <translation type="vanished">選択された格子点での、%1 の変化量を入力してください。</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation>変化量を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation>比を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation>変化量</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation>比</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation>%1 を %2 に適用</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation>選択されたセルにおける %2 の %1 を入力してください。</translation>
     </message>
 </context>
 <context>
@@ -1115,7 +1139,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>変化量を指定して値を編集...</translation>
+        <translation type="vanished">変化量を指定して値を編集...</translation>
     </message>
     <message>
         <source>Open &amp;Crosssection Window</source>
@@ -1155,11 +1179,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>%1 に変化量を適用</translation>
+        <translation type="vanished">%1 に変化量を適用</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
+        <translation type="vanished">選択された格子点での、%1 の変化量を入力してください。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1196,6 +1220,30 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Error</source>
         <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation>変化量を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation>比を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation>変化量</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation>比</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation>%1 を %2 に適用</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation>選択された格子点における %2 の %1 を入力してください。</translation>
     </message>
 </context>
 <context>

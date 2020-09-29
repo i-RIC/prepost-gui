@@ -817,10 +817,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit value by specifying variation...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Grid Cell Attribute Display Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -841,11 +837,27 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Apply variation to %1</source>
+        <source>Edit value by specifying difference...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Input the variation of %1 at the selected grid nodes.</source>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1005,10 +1017,6 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit value by specifying variation...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Grid Node Attribute Display Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1034,14 +1042,6 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Apply variation to %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1074,6 +1074,30 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

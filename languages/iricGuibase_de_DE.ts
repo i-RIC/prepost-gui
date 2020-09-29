@@ -269,6 +269,17 @@
     </message>
 </context>
 <context>
+    <name>ItemMultiSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check &amp;All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -307,6 +318,27 @@
     </message>
     <message>
         <source>Delete item</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointClearCommand</name>
+    <message>
+        <source>Clear Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointMoveCommand</name>
+    <message>
+        <source>Move Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointSetCommand</name>
+    <message>
+        <source>Set Point</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

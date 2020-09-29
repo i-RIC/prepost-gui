@@ -9,15 +9,23 @@
     </message>
     <message>
         <source>rivmaker 1.0</source>
-        <translation>rivmaker 1.0</translation>
+        <translation type="vanished">rivmaker 1.0</translation>
     </message>
     <message>
         <source>Release Date: 2017/3/31</source>
-        <translation>リリース日: 2017/3/31</translation>
+        <translation type="vanished">リリース日: 2017/3/31</translation>
     </message>
     <message>
         <source>Copyright: USGS</source>
         <translation>著作権: USGS</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0</source>
+        <translation>rivmaker 2.0</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/1/30</source>
+        <translation>リリース日: 2021/1/30</translation>
     </message>
 </context>
 <context>
@@ -96,6 +104,48 @@
     </message>
 </context>
 <context>
+    <name>ChartGraphicsView</name>
+    <message>
+        <source>Aspect ratio: 1 / %1</source>
+        <translation>縦横比 1 / %1</translation>
+    </message>
+</context>
+<context>
+    <name>ChartWindow</name>
+    <message>
+        <source>Display ToolBar</source>
+        <translation>表示ツールバー</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>背景格子</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>目盛り</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縦横比</translation>
+    </message>
+    <message>
+        <source>View ToolBar</source>
+        <translation>表示ツールバー</translation>
+    </message>
+    <message>
+        <source>Aspect ratio: 1 / </source>
+        <translation>縦横比: 1 / </translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>縦横比を固定</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>領域を固定</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
@@ -170,20 +220,166 @@
     </message>
     <message>
         <source>Cross Section:</source>
-        <translation>断面:</translation>
+        <translation type="vanished">断面:</translation>
     </message>
     <message>
         <source>&amp;Reset Zoom</source>
-        <translation>ズームのリセット(&amp;R)</translation>
+        <translation type="vanished">ズームのリセット(&amp;R)</translation>
     </message>
     <message>
         <source>Distance from Left bank</source>
-        <translation>左岸からの距離</translation>
+        <translation type="vanished">左岸からの距離</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation>標高</translation>
+        <translation type="vanished">標高</translation>
     </message>
+    <message>
+        <source>Left bank HWM</source>
+        <translation type="vanished">左岸側水面標高</translation>
+    </message>
+    <message>
+        <source>Right bank HWM</source>
+        <translation type="vanished">右岸側水面標高</translation>
+    </message>
+    <message>
+        <source>Cross Section Window : %1</source>
+        <translation>断面ウィンドウ : %1</translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation>SVG ファイルを保存</translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation>SVG ファイル (*.svg)</translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation>CSV ファイルを保存</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Cross Section: </source>
+        <translation>断面: </translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation>SVG をエクスポート (&amp;S)...</translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation>CSV をエクスポート (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation>WSE</translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation>左岸側水面標高</translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation>右岸側水面標高</translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Cross Section Window Display Setting</source>
+        <translation>断面ウィンドウ表示設定</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>背景格子</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>線</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>ドット</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平方向</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>主線</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>補助線</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直方向</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>目盛り</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>フォント:</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>編集...</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縦横比</translation>
+    </message>
+    <message>
+        <source>Cross Section Points</source>
+        <translation>断面の点</translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation>水面標高</translation>
+    </message>
+    <message>
+        <source>HWMs</source>
+        <translation>HWMs</translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation>目盛りのフォント</translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
         <translation>左岸側水面標高</translation>
@@ -191,10 +387,6 @@
     <message>
         <source>Right bank HWM</source>
         <translation>右岸側水面標高</translation>
-    </message>
-    <message>
-        <source>Cross Section Window : %1</source>
-        <translation>断面ウィンドウ : %1</translation>
     </message>
 </context>
 <context>
@@ -585,6 +777,21 @@
     </message>
 </context>
 <context>
+    <name>RivCsvExporter</name>
+    <message>
+        <source>Select directory to save CSV files</source>
+        <translation>CSVファイルを保存するフォルダの選択</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>%1 could not be opened.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+</context>
+<context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
@@ -837,7 +1044,7 @@
     </message>
     <message>
         <source>dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>dummy</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
@@ -947,6 +1154,34 @@
         <source>Are you sure you want to exit Rivmaker?</source>
         <translation type="vanished">本当に Rivmaker を終了していいですか?</translation>
     </message>
+    <message>
+        <source>River Survey Data as CSV files...</source>
+        <translation>河川測量データを CSV に保存...</translation>
+    </message>
+    <message>
+        <source>Export as CSV files...</source>
+        <translation>CSVファイルとしてエクスポート...</translation>
+    </message>
+    <message>
+        <source>Zoom In in X Direction</source>
+        <translation>X方向に拡大</translation>
+    </message>
+    <message>
+        <source>Zoom In in X direction</source>
+        <translation>X方向に拡大</translation>
+    </message>
+    <message>
+        <source>Zoom In in Y Direction</source>
+        <translation>Y方向に拡大</translation>
+    </message>
+    <message>
+        <source>Zoom Out in X Direction</source>
+        <translation>X方向に縮小</translation>
+    </message>
+    <message>
+        <source>Zoom Out in Y Direction</source>
+        <translation>Y方向に縮小</translation>
+    </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
@@ -1037,15 +1272,210 @@
     </message>
     <message>
         <source>Distance Upstream</source>
-        <translation>上流方向への距離</translation>
+        <translation type="vanished">上流方向への距離</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation>標高</translation>
+        <translation type="vanished">標高</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="vanished">名前</translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation>SVGファイルの保存</translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation>SVG ファイル (*.svg)</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Data for checked Check Boxes are exported.</source>
+        <translation>チェックボックスをチェックしたデータがエクスポートされます。</translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation>CSVファイルの保存</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation>SVG をエクスポート (&amp;S)...</translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation>CSV をエクスポート (&amp;C)...</translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Elevation View Window Display Setting</source>
+        <translation>標高ビューウィンドウ表示設定</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>背景格子</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>線</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>ドット</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平方向</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>主線</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>補助線</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直方向</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>目盛り</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>フォント:</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>編集...</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縦横比</translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation>目盛りのフォント</translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
+    <message>
+        <source>Visibility Setting</source>
+        <translation>表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Arbitrary HWM</source>
+        <translation>任意の水面標高</translation>
+    </message>
+    <message>
+        <source>Benchmark</source>
+        <translation>ベンチマーク</translation>
+    </message>
+    <message>
+        <source>Reference mark</source>
+        <translation>参照マーク</translation>
+    </message>
+    <message>
+        <source>Surveying or turning point</source>
+        <translation>測量点・移器点</translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation>左岸側水面標高</translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation>右岸側水面標高</translation>
+    </message>
+    <message>
+        <source>Stream gage</source>
+        <translation>流れゲージ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>線</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>断面</translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation>水面標高</translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidget</name>
+    <message>
+        <source>WSE Edit Tool</source>
+        <translation>水面標高編集ツール</translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>&amp;Export to CSV</source>
+        <translation>CSV にエクスポート (&amp;E)</translation>
     </message>
     <message>
         <source>Name</source>
         <translation>名前</translation>
+    </message>
+    <message>
+        <source>Elevation</source>
+        <translation>標高</translation>
     </message>
 </context>
 <context>

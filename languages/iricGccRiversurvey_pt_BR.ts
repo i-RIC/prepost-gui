@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.</source>
-        <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera controlar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha transversal do rio, a linha central do rio, a linha da margem esquerda e a linha da margem direita.</translation>
+        <translation type="vanished">O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera controlar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha transversal do rio, a linha central do rio, a linha da margem esquerda e a linha da margem direita.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -18,6 +18,12 @@
     <message>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation>Devido a que os dados de levantamento do curso fluvial nao foram importados aos dados geograficos, esse algoritmo nao sera disponivel.</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -15,6 +15,7 @@
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
 #include <guicore/pre/complex/gridcomplexconditiongroup.h>
 #include <guicore/pre/complex/gridcomplexconditiongroupeditdialog.h>
+#include <guicore/pre/complex/gridcomplexconditiongrouprealeditwidget.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
@@ -27,6 +28,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
+#include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -68,9 +70,13 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this);
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 
-	m_editVariationAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying variation..."), this);
-	m_editVariationAction->setDisabled(true);
-	connect(m_editVariationAction, SIGNAL(triggered()), this, SLOT(editVariation()));
+	m_editDifferenceAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying difference..."), this);
+	m_editDifferenceAction->setDisabled(true);
+	connect(m_editDifferenceAction, SIGNAL(triggered()), this, SLOT(editDifference()));
+
+	m_editRatioAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying ratio..."), this);
+	m_editRatioAction->setDisabled(true);
+	connect(m_editRatioAction, SIGNAL(triggered()), this, SLOT(editRatio()));
 
 	m_openXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Cross Section Window"), this);
 	m_openXsectionWindowAction->setDisabled(true);
@@ -216,9 +222,15 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 		bool vertexSelected = (tmpparent->selectedVertices().count() > 0);
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(vertexSelected);
-		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) == nullptr) {
-			menu->addAction(m_editVariationAction);
-			m_editVariationAction->setEnabled(vertexSelected);
+		bool nonGroupedComplex = false;
+		auto ccond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+		if (ccond != nullptr) {nonGroupedComplex = ccond->isGrouped();}
+
+		if (! m_condition->isOption() || nonGroupedComplex) {
+			menu->addAction(m_editDifferenceAction);
+			m_editDifferenceAction->setEnabled(vertexSelected);
+			menu->addAction(m_editRatioAction);
+			m_editRatioAction->setEnabled(vertexSelected);
 		}
 
 		Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
@@ -302,25 +314,14 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 	}
 }
 
-void PreProcessorGridAttributeNodeDataItem::editVariation()
+void PreProcessorGridAttributeNodeDataItem::editDifference()
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()) {
-		mw->warnSolverRunning();
-		return;
-	}
-	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(mainWindow());
-	if (dialog == nullptr) {return;}
-	dialog->setWindowTitle(QString(tr("Apply variation to %1").arg(m_condition->caption())));
-	dialog->setLabel(QString(tr("Input the variation of %1 at the selected grid nodes.")).arg(m_condition->caption()));
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	QVector<vtkIdType> targets = tmpparent->selectedVertices();
-	Grid* g = tmpparent->grid();
+	editVariation(GridAttributeVariationEditWidget::Difference, tr("difference"));
+}
 
-	if (QDialog::Accepted == dialog->exec()) {
-		dialog->applyVariation(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetPointData(), tmpparent);
-	}
-	delete dialog;
+void PreProcessorGridAttributeNodeDataItem::editRatio()
+{
+	editVariation(GridAttributeVariationEditWidget::Ratio, tr("ratio"));
 }
 
 void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* /*v*/)
@@ -489,6 +490,37 @@ void PreProcessorGridAttributeNodeDataItem::doApplyOffset(double /*x*/, double /
 	if (PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(this->parent())) {
 		gitem->updateActorSettings();
 	}
+}
+
+void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName)
+{
+	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	if (mw->isSolverRunning()) {
+		mw->warnSolverRunning();
+		return;
+	}
+	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(mainWindow());
+	if (dialog == nullptr) {return;}
+	dialog->setWindowTitle(QString(tr("Apply %1 to %2").arg(typeName).arg(m_condition->caption())));
+	dialog->setLabel(QString(tr("Input the %1 of %2 at the selected grid nodes.")).arg(typeName).arg(m_condition->caption()));
+	dialog->widget()->setMode(mode);
+	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	QVector<vtkIdType> targets = tmpparent->selectedVertices();
+	Grid* g = tmpparent->grid();
+
+	if (QDialog::Accepted == dialog->exec()) {
+		auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+		if (compAtt != nullptr && compAtt->isGrouped() == false) {
+			auto tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+			auto gItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
+			auto w = dynamic_cast<GridComplexConditionGroupRealEditWidget*> (dialog->widget());
+			w->applyVariation(targets, gItem->groups());
+			iRICUndoStack::instance().clear();
+		} else {
+			dialog->applyVariation(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetPointData(), tmpparent);
+		}
+	}
+	delete dialog;
 }
 
 bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolbar)

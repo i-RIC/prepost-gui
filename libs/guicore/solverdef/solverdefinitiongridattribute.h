@@ -77,8 +77,6 @@ public:
 	ScalarsToColorsEditDialog* createScalarsToColorsEditDialog(QWidget* parent) const;
 	//@}
 protected:
-	SolverDefinition* solverDefinition() const;
-
 	void setPosition(Position pos);
 
 	ColorTransferFunctionContainer* createColorTransferFunctionContainer(ProjectDataItem* d);

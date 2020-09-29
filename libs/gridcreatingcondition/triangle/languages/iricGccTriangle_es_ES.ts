@@ -132,7 +132,7 @@
     </message>
     <message>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando "Enter".</translation>
+        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
@@ -140,7 +140,7 @@
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Add New Break Line</source>
@@ -156,7 +156,7 @@
     </message>
     <message>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -212,7 +212,7 @@
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>

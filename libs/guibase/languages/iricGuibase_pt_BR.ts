@@ -269,6 +269,17 @@
     </message>
 </context>
 <context>
+    <name>ItemMultiSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialogo</translation>
+    </message>
+    <message>
+        <source>Check &amp;All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -308,6 +319,27 @@
     <message>
         <source>Are you sure you want to delete this item?</source>
         <translation>Tem certeza de que deseja excluir este item ?</translation>
+    </message>
+</context>
+<context>
+    <name>PointClearCommand</name>
+    <message>
+        <source>Clear Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointMoveCommand</name>
+    <message>
+        <source>Move Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointSetCommand</name>
+    <message>
+        <source>Set Point</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -510,6 +542,12 @@
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
         <translation>Se voce especificar 0, a parte inferior da barra de cores sera localizada na parte inferior da janela.</translation>
+    </message>
+    <message>
+        <source>Specify the number format in printf format. For example:
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

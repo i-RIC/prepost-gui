@@ -166,6 +166,10 @@
         <source>Distance</source>
         <translation>Distancia</translation>
     </message>
+    <message>
+        <source>Polyline Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
@@ -448,7 +452,7 @@
     </message>
     <message>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo "Criacao da grade atraves de dados do levantamento do rio"  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo &quot;Criacao da grade atraves de dados do levantamento do rio&quot;  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -548,6 +552,10 @@
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation>Os numeros de dados de % 1 e % 2 sao incompativeis. Os dados de %1 serao abandonados</translation>
+    </message>
+    <message>
+        <source>Polyline Group:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

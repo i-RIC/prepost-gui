@@ -363,6 +363,17 @@
     </message>
 </context>
 <context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>

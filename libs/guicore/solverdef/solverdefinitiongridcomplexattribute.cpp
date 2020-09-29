@@ -1,3 +1,4 @@
+#include "../pre/complex/gridcomplexconditiongrouprealeditwidget.h"
 #include "../pre/gridcond/complex/gridcomplexattributecontainer.h"
 #include "../pre/gridcond/complex/gridcomplexattributeeditwidget.h"
 #include "../pre/geodatabackground/geodatabackgroundcomplexcreator.h"
@@ -42,9 +43,11 @@ GridAttributeEditWidget* SolverDefinitionGridComplexAttribute::editWidget(QWidge
 	return new GridComplexAttributeEditWidget(parent, this);
 }
 
-GridAttributeVariationEditWidget* SolverDefinitionGridComplexAttribute::variationEditWidget(QWidget*)
+GridAttributeVariationEditWidget* SolverDefinitionGridComplexAttribute::variationEditWidget(QWidget* parent)
 {
-	return nullptr;
+	if (impl->m_isGrouped) {return nullptr;}
+
+	return new GridComplexConditionGroupRealEditWidget(parent, this);
 }
 
 GeoData* SolverDefinitionGridComplexAttribute::buildBackgroundGeoData(ProjectDataItem* parent)

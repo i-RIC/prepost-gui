@@ -189,15 +189,15 @@
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>座標の編集</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
@@ -284,6 +284,17 @@
     </message>
 </context>
 <context>
+    <name>ItemMultiSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>Check &amp;All</source>
+        <translation>全て選択 (&amp;A)</translation>
+    </message>
+</context>
+<context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -349,73 +360,94 @@
     </message>
 </context>
 <context>
+    <name>PointClearCommand</name>
+    <message>
+        <source>Clear Point</source>
+        <translation>点のクリア</translation>
+    </message>
+</context>
+<context>
+    <name>PointMoveCommand</name>
+    <message>
+        <source>Move Point</source>
+        <translation>点の移動</translation>
+    </message>
+</context>
+<context>
+    <name>PointSetCommand</name>
+    <message>
+        <source>Set Point</source>
+        <translation>点のセット</translation>
+    </message>
+</context>
+<context>
     <name>PolyLineAddVertexCommand</name>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>折れ線の点の追加</translation>
     </message>
 </context>
 <context>
     <name>PolyLineEditCoordinatesCommand</name>
     <message>
         <source>Edit Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>折れ線の座標の編集</translation>
     </message>
 </context>
 <context>
     <name>PolyLineMoveVertexCommand</name>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>折れ線の頂点の移動</translation>
     </message>
 </context>
 <context>
     <name>PolyLinePushVertexCommand</name>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい頂点の追加</translation>
     </message>
 </context>
 <context>
     <name>PolyLineRemoveVertexCommand</name>
     <message>
         <source>Remove Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>折れ線の頂点の削除</translation>
     </message>
 </context>
 <context>
     <name>PolygonAddVertexCommand</name>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>ポリゴンの頂点の追加</translation>
     </message>
 </context>
 <context>
     <name>PolygonEditCoordinatesCommand</name>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>ポリゴンの座標の編集</translation>
     </message>
 </context>
 <context>
     <name>PolygonMoveVertexCommand</name>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>ポリゴンの頂点の移動</translation>
     </message>
 </context>
 <context>
     <name>PolygonPushVertexCommand</name>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>ポリゴンの頂点の追加</translation>
     </message>
 </context>
 <context>
     <name>PolygonRemoveVertexCommand</name>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>ポリゴンの頂点の削除</translation>
     </message>
 </context>
 <context>

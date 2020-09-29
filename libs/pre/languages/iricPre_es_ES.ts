@@ -818,7 +818,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>Editar valor con especificando variacion...</translation>
+        <translation type="vanished">Editar valor con especificando variacion...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -842,11 +842,35 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>Aplicar variacion a %1</translation>
+        <translation type="vanished">Aplicar variacion a %1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
+        <translation type="vanished">Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1006,7 +1030,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>Editar valor con especificando variacion...</translation>
+        <translation type="vanished">Editar valor con especificando variacion...</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
@@ -1038,11 +1062,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>Aplicar variacion a %1</translation>
+        <translation type="vanished">Aplicar variacion a %1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
+        <translation type="vanished">Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1074,6 +1098,30 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -26,15 +26,9 @@ public:
 
 	GridAttributeVariationEditWidget* widget() const;
 	void setWidget(GridAttributeVariationEditWidget* w);
-
-	void clearValue();
 	void setLabel(const QString& label);
 
 	void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem);
-	QVariant variantValue() const;
-
-	void accept() override;
-	void reject() override;
 
 private:
 	GridAttributeVariationEditWidget* m_widget;

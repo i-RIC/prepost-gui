@@ -185,6 +185,34 @@
         <source>Measure%1</source>
         <translation>Medido%1</translation>
     </message>
+    <message>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no distance measure.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected distance measures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete all distance measures?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
@@ -342,7 +370,7 @@
     </message>
     <message>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
@@ -396,11 +424,11 @@
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Proximo, define region de canal de agua baja. Canal de agua puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Proximo, define region de canal de agua baja. Canal de agua puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Proximo, define linea de centro de la cuadricula. Linea de centro de la cuadricula puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Proximo, define linea de centro de la cuadricula. Linea de centro de la cuadricula puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
@@ -464,7 +492,7 @@
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
@@ -2099,7 +2127,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando "Enter".</translation>
+        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
@@ -2107,7 +2135,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Add New Break Line</source>
@@ -2123,7 +2151,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -2179,7 +2207,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
@@ -2678,7 +2706,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Cuando cambias a este modo, tienes que "remesh TINs". Quieres "remesh" ahora?</translation>
+        <translation>Cuando cambias a este modo, tienes que &quot;remesh TINs&quot;. Quieres &quot;remesh&quot; ahora?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -2750,7 +2778,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Terminado de "Remesh TINs".</translation>
+        <translation>Terminado de &quot;Remesh TINs&quot;.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -2758,7 +2786,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation>Marco de alambre puede ser definido con mouse-clickin en los puntos entre que quieres anadir linea de ruptura. Termina definando con doble clicking, or presionando "Enter".</translation>
+        <translation>Marco de alambre puede ser definido con mouse-clickin en los puntos entre que quieres anadir linea de ruptura. Termina definando con doble clicking, or presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -2822,7 +2850,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation>Para interpolar puntos, selecciona puntos existentes con mouse-clicking, usa Alt para definir camino entre puntos conocidos, y termina con doble-clicking o presionando la tecla "enter".</translation>
+        <translation>Para interpolar puntos, selecciona puntos existentes con mouse-clicking, usa Alt para definir camino entre puntos conocidos, y termina con doble-clicking o presionando la tecla &quot;enter&quot;.</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -2830,7 +2858,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation>Para anadir puntos nuevos, seleciona un punto existente primero. El valor en ese punto se utilizara como valor predeterminado para puntos nuevos. Despues, click en cualquier posicion que quieras para anadir puntos, y termina con doble-clicking o presionando la tecla "enter".</translation>
+        <translation>Para anadir puntos nuevos, seleciona un punto existente primero. El valor en ese punto se utilizara como valor predeterminado para puntos nuevos. Despues, click en cualquier posicion que quieras para anadir puntos, y termina con doble-clicking o presionando la tecla &quot;enter&quot;.</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -2941,7 +2969,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Error ocurrio mientras exportandando a %1. {1?}</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -3620,28 +3648,16 @@ p, li { white-space: pre-wrap; }
         <translation>Poligono%1</translation>
     </message>
     <message>
-        <source>Edit name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation type="vanished">Nombre:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
-        <translation>Editar %1 valor</translation>
+        <translation type="vanished">Editar %1 valor</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
-    </message>
-    <message>
-        <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete selected polygons?</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
@@ -3649,132 +3665,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon property edit</source>
-        <translation>Editor de Propediad de Poligono</translation>
-    </message>
-    <message>
-        <source>&amp;Add New Polygon...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Select...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editor de Propediad de Poligono</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Borrar</translation>
+        <translation type="vanished">&amp;Borrar</translation>
     </message>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation>Editar &amp;Nombre...</translation>
-    </message>
-    <message>
-        <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar &amp;Nombre...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracion de &amp;Color...</translation>
-    </message>
-    <message>
-        <source>Show Attribute &amp;Browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move to top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuracion de &amp;Color...</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Mover arriba</translation>
+        <translation type="vanished">Mover arriba</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Mover abajo</translation>
-    </message>
-    <message>
-        <source>Sort polygons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit name and value of polygons</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Mover abajo</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser</name>
     <message>
-        <source>Polygon Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Name</source>
-        <translation>Nombre</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Nombre</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
-    </message>
-    <message>
-        <source>Sort toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPolygonGroupAttributeBrowser::TableItemDelegate</name>
-    <message>
-        <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Valor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Color Setting</source>
-        <translation>Configuracion de Color Poligono</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuracion de Color Poligono</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color por Valor</translation>
+        <translation type="vanished">Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color Personalizado</translation>
-    </message>
-    <message>
-        <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color Personalizado</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation>Poligono</translation>
-    </message>
-    <message>
-        <source>P&amp;olygon Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Poligono</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation>Poligono%1</translation>
-    </message>
-    <message>
-        <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Poligono%1</translation>
     </message>
 </context>
 <context>
@@ -3786,6 +3731,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Polygon Group%1</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="unfinished">Poligono</translation>
     </message>
 </context>
 <context>
@@ -3827,59 +3780,51 @@ p, li { white-space: pre-wrap; }
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation>El tipo de forma contenida en este archivo de forma no es un poligono.</translation>
-    </message>
-    <message>
-        <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">El tipo de forma contenida en este archivo de forma no es un poligono.</translation>
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation>El numero de poligonos desajustes entre archivo shp y archivo dbf.</translation>
+        <translation type="vanished">El numero de poligonos desajustes entre archivo shp y archivo dbf.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation>Configuracion de Importacion de Poligono</translation>
+        <translation type="vanished">Configuracion de Importacion de Poligono</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation>Codificacion:</translation>
+        <translation type="vanished">Codificacion:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nombre</translation>
+        <translation type="vanished">Nombre</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carga desde el Atributo de Shape Archivo</translation>
+        <translation type="vanished">Carga desde el Atributo de Shape Archivo</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>Nombre se Establece Automaticamente (ex. Polygon1)</translation>
+        <translation type="vanished">Nombre se Establece Automaticamente (ex. Polygon1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation>Especificar Valor</translation>
+        <translation type="vanished">Especificar Valor</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation>No puedes especificar la misma columna para nombre y valor.</translation>
+        <translation type="vanished">No puedes especificar la misma columna para nombre y valor.</translation>
     </message>
 </context>
 <!-- iricGdPolygon_es_ES.ts -->
@@ -3963,7 +3908,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -3971,7 +3916,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando "Enter".</translation>
+        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Polygon value change</source>
@@ -5939,6 +5884,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Distance</source>
         <translation>Distancia</translation>
     </message>
+    <message>
+        <source>Polyline Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
@@ -6321,6 +6270,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation>El numero de datos de %1 y %2 no son iguales. Datos %1  se saltan.</translation>
+    </message>
+    <message>
+        <source>Polyline Group:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7589,6 +7542,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>ItemMultiSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialogo</translation>
+    </message>
+    <message>
+        <source>Check &amp;All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -7628,6 +7592,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Are you sure you want to delete this item?</source>
         <translation>Estas seguro que quieres borrar este articulo?</translation>
+    </message>
+</context>
+<context>
+    <name>PointClearCommand</name>
+    <message>
+        <source>Clear Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointMoveCommand</name>
+    <message>
+        <source>Move Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointSetCommand</name>
+    <message>
+        <source>Set Point</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8461,6 +8446,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Dialog</source>
         <translation>Dialogo</translation>
+    </message>
+</context>
+<context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15564,7 +15560,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>Editar valor con especificando variacion...</translation>
+        <translation type="vanished">Editar valor con especificando variacion...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -15588,11 +15584,35 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>Aplicar variacion a %1</translation>
+        <translation type="vanished">Aplicar variacion a %1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
+        <translation type="vanished">Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15752,7 +15772,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>Editar valor con especificando variacion...</translation>
+        <translation type="vanished">Editar valor con especificando variacion...</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
@@ -15784,11 +15804,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>Aplicar variacion a %1</translation>
+        <translation type="vanished">Aplicar variacion a %1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
+        <translation type="vanished">Entrar la varacion de %1 en los nodos de cuadricula seleccionados.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15820,6 +15840,30 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16806,15 +16850,15 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Release Date: 2017/3/31</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copyright: USGS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/1/30</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16894,6 +16938,48 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>ChartGraphicsView</name>
+    <message>
+        <source>Aspect ratio: 1 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChartWindow</name>
+    <message>
+        <source>Display ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio: 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
@@ -16956,31 +17042,153 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cross Section:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Reset Zoom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Distance from Left bank</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Elevation</source>
-        <translation>Elevacion</translation>
+        <translation type="vanished">Elevacion</translation>
     </message>
+    <message>
+        <source>Cross Section Window : %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Cross Section Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HWMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -17358,6 +17566,21 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>RivCsvExporter</name>
+    <message>
+        <source>Select directory to save CSV files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
@@ -17690,6 +17913,34 @@ This algorithm can be used only for structured grids.</source>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>River Survey Data as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
@@ -17767,16 +18018,207 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Distance Upstream</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Elevation</source>
-        <translation>Elevacion</translation>
+        <translation type="vanished">Elevacion</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nombre</translation>
+        <translation type="vanished">Nombre</translation>
+    </message>
+    <message>
+        <source>Save SVG file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacion</translation>
+    </message>
+    <message>
+        <source>Data for checked Check Boxes are exported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Elevation View Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
+    <message>
+        <source>Visibility Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arbitrary HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Benchmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reference mark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surveying or turning point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stream gage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidget</name>
+    <message>
+        <source>WSE Edit Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Export to CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nombre</translation>
+    </message>
+    <message>
+        <source>Elevation</source>
+        <translation type="unfinished">Elevacion</translation>
     </message>
 </context>
 <context>

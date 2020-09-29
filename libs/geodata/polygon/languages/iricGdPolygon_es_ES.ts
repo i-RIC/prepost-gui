@@ -81,7 +81,7 @@
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando "Enter".</translation>
+        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Polygon value change</source>

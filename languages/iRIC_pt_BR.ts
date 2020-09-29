@@ -110,6 +110,34 @@
         <source>Measure%1</source>
         <translation>Medicao %1</translation>
     </message>
+    <message>
+        <source>Delete &amp;Selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete &amp;All...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no distance measure.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected distance measures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete all distance measures?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
@@ -478,7 +506,12 @@
     </message>
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.</source>
-        <translation>Especifique o poligono da area de criacao da grade e o poligono da area do canal de agua, e no final especifique a linha central.</translation>
+        <translation type="vanished">Especifique o poligono da area de criacao da grade e o poligono da area do canal de agua, e no final especifique a linha central.</translation>
+    </message>
+    <message>
+        <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
+The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGccExternalprogram_pt_BR.ts -->
@@ -490,7 +523,12 @@
     </message>
     <message>
         <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.</source>
-        <translation>Ocorreu um erro ao baixar o arquivo de definicao sobre o programa de criacao da grade, o qual se encontra na pasta &quot;%1&quot; . Este programa de criacao sera ignorado.</translation>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o programa de criacao da grade, o qual se encontra na pasta &quot;%1&quot; . Este programa de criacao sera ignorado.</translation>
+    </message>
+    <message>
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+%2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1490,18 +1528,18 @@
         <translation>Criar grade de 1.5 dimensoes atraves dos dados de levantamento fluvial</translation>
     </message>
     <message>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.</source>
-        <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera especificar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha central do rio.</translation>
-        <translation>Nota: Este algoritmo sera disponivel somente quando baixar os dados de levantamento do curso fluvial .  Selecione este algoritmo depois de baixar os dados de levantamento do curso fluvial.</translation>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
         <translation>Os dados de levantamento do curso fluvial nao foram importados aos dados geograficos. Esse algoritmo nao sera disponivel.</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
+Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1699,7 +1737,7 @@
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.</source>
-        <translation>O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera controlar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha transversal do rio, a linha central do rio, a linha da margem esquerda e a linha da margem direita.</translation>
+        <translation type="vanished">O formato de grade sera definido automaticamente atraves dos dados de levantamento do rio. Voce podera controlar o numero de divisoes da grade de maneira que adicione os pontos de controle da grade para a linha transversal do rio, a linha central do rio, a linha da margem esquerda e a linha da margem direita.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1708,6 +1746,12 @@
     <message>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation>Devido a que os dados de levantamento do curso fluvial nao foram importados aos dados geograficos, esse algoritmo nao sera disponivel.</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2144,6 +2188,14 @@
         <source>Please specify positive value.</source>
         <translation>Especifique o valor positivo.</translation>
     </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleRemeshPolygon</name>
@@ -2181,6 +2233,14 @@
     <message>
         <source>By specifying small values, you can generate fine grids.</source>
         <translation>Ao especificar valores pequenos, voce podera criar grades finas.</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdNetcdf_pt_BR.ts -->
@@ -2679,7 +2739,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o "Modo de exibicao" para "Wireframe" ou "Face interpolada". Pressione o botao OK e ai o"Modo de exibicao" sera alterado para "Wireframe".</translation>
+        <translation>Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o &quot;Modo de exibicao&quot; para &quot;Wireframe&quot; ou &quot;Face interpolada&quot;. Pressione o botao OK e ai o&quot;Modo de exibicao&quot; sera alterado para &quot;Wireframe&quot;.</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -5875,6 +5935,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Distance</source>
         <translation>Distancia</translation>
     </message>
+    <message>
+        <source>Polyline Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
@@ -6157,7 +6221,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo "Criacao da grade atraves de dados do levantamento do rio"  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo &quot;Criacao da grade atraves de dados do levantamento do rio&quot;  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -6257,6 +6321,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation>Os numeros de dados de % 1 e % 2 sao incompativeis. Os dados de %1 serao abandonados</translation>
+    </message>
+    <message>
+        <source>Polyline Group:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7525,6 +7593,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>ItemMultiSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialogo</translation>
+    </message>
+    <message>
+        <source>Check &amp;All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -7564,6 +7643,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Are you sure you want to delete this item?</source>
         <translation>Tem certeza de que deseja excluir este item ?</translation>
+    </message>
+</context>
+<context>
+    <name>PointClearCommand</name>
+    <message>
+        <source>Clear Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointMoveCommand</name>
+    <message>
+        <source>Move Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PointSetCommand</name>
+    <message>
+        <source>Set Point</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7766,6 +7866,12 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
         <translation>Se voce especificar 0, a parte inferior da barra de cores sera localizada na parte inferior da janela.</translation>
+    </message>
+    <message>
+        <source>Specify the number format in printf format. For example:
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8313,6 +8419,21 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GridAttributeEditNameAndValueDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialogo</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nome :</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation type="unfinished">Rotulo do texto</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
@@ -8379,6 +8500,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
@@ -8435,11 +8567,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error occured while loading solver definition file.</source>
-        <translation>Ocorreu um erro ao baixar o arquivo.</translation>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo.</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8466,7 +8603,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.</source>
-        <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce baixar o arquivo CGNS incompativel, somente uma parte das condicoes de calculo podera ser importada.</translation>
+        <translation type="vanished">Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce baixar o arquivo CGNS incompativel, somente uma parte das condicoes de calculo podera ser importada.</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
@@ -8487,6 +8624,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>As modificacoes feitas serao descartadas.</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
+Do you really want to import this file?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8586,7 +8728,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>The following problems found:</source>
-        <translation>Os seguintes problemas encontrados :</translation>
+        <translation type="vanished">Os seguintes problemas encontrados :</translation>
     </message>
     <message>
         <source>
@@ -8596,6 +8738,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Warning</source>
         <translation>Atencao</translation>
+    </message>
+    <message>
+        <source>Ctrl+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values are copied to clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following problems found: 
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8866,7 +9029,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o &quot;valor de teste&quot; e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
@@ -9158,6 +9321,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Error occured: %1</source>
         <translation>Ocorreu um erro : %1</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>I, J, K, index for label is reset because the grid size is changed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9707,11 +9878,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.</source>
-        <translation>Para obter a imagem do fundo atraves de Internet, especifique o sistema de coordenadas conforme o menu abaixo.</translation>
+        <translation type="vanished">Para obter a imagem do fundo atraves de Internet, especifique o sistema de coordenadas conforme o menu abaixo.</translation>
     </message>
     <message>
         <source>Background Image change</source>
         <translation>Alterar a imagem do fundo</translation>
+    </message>
+    <message>
+        <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
+ File -&gt; Property</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14087,6 +14263,10 @@ p, li { white-space: pre-wrap; }
         <source>Isosurface physical value change</source>
         <translation>Alteracao do valor fisico de isossuperficie</translation>
     </message>
+    <message>
+        <source>Update Contour Setting</source>
+        <translation type="unfinished">Alterar a configuracao de contorno</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeScalarGroupTopDataItem</name>
@@ -14241,6 +14421,39 @@ p, li { white-space: pre-wrap; }
         <source>&amp;Remove</source>
         <translation>Remover (&amp;R)</translation>
     </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseScalarGroupDataItem</name>
@@ -14372,6 +14585,24 @@ p, li { white-space: pre-wrap; }
         <source>&amp;Remove</source>
         <translation>Remover (&amp;R)</translation>
     </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -14381,7 +14612,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Alterar a configuracao de contorno</translation>
+        <translation type="vanished">Alterar a configuracao de contorno</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -15614,7 +15845,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>Edicao do valor atraves de especificacao das variacoes... </translation>
+        <translation type="vanished">Edicao do valor atraves de especificacao das variacoes... </translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -15638,11 +15869,35 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>Aplicar variacao a% 1</translation>
+        <translation type="vanished">Aplicar variacao a% 1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>Digite a variacao de% 1 no ponto de grade selecionado.</translation>
+        <translation type="vanished">Digite a variacao de% 1 no ponto de grade selecionado.</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15806,7 +16061,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit value by specifying variation...</source>
-        <translation>Edicao do valor atraves de especificacao das variacoes... </translation>
+        <translation type="vanished">Edicao do valor atraves de especificacao das variacoes... </translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
@@ -15838,11 +16093,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Apply variation to %1</source>
-        <translation>Aplicar variacao a% 1</translation>
+        <translation type="vanished">Aplicar variacao a% 1</translation>
     </message>
     <message>
         <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation>Digite a variacao de% 1 no ponto de grade selecionado.</translation>
+        <translation type="vanished">Digite a variacao de% 1 no ponto de grade selecionado.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15875,6 +16130,30 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Error</source>
         <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16864,15 +17143,15 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Release Date: 2017/3/31</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copyright: USGS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/1/30</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16952,6 +17231,48 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>ChartGraphicsView</name>
+    <message>
+        <source>Aspect ratio: 1 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChartWindow</name>
+    <message>
+        <source>Display ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio: 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
@@ -17014,31 +17335,149 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cross Section:</source>
+        <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Reset Zoom</source>
+        <source>Save SVG file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Distance from Left bank</source>
+        <source>SVG files (*.svg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Elevation</source>
+        <source>Save CSV file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Cross Section Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HWMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cross Section Window : %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -17416,6 +17855,21 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>RivCsvExporter</name>
+    <message>
+        <source>Select directory to save CSV files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
@@ -17748,6 +18202,34 @@ This algorithm can be used only for structured grids.</source>
         <source>The project data is modified. Do you want to save?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>River Survey Data as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as CSV files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in X direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in X Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out in Y Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
@@ -17825,15 +18307,198 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Distance Upstream</source>
+        <source>Save SVG file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Elevation</source>
+        <source>SVG files (*.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data for checked Check Boxes are exported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 could note be opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;SVG...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export &amp;CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
+    <message>
+        <source>Elevation View Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales font</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
+    <message>
+        <source>Visibility Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arbitrary HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Benchmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reference mark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surveying or turning point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stream gage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidget</name>
+    <message>
+        <source>WSE Edit Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export to CSV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

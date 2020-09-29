@@ -282,6 +282,21 @@
     </message>
 </context>
 <context>
+    <name>GridAttributeEditNameAndValueDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialogo</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nome :</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation type="unfinished">Rotulo do texto</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
@@ -348,6 +363,17 @@
     </message>
 </context>
 <context>
+    <name>GridComplexConditionGroupRealEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
@@ -404,11 +430,16 @@
     </message>
     <message>
         <source>Error occured while loading solver definition file.</source>
-        <translation>Ocorreu um erro ao baixar o arquivo.</translation>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo.</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -435,7 +466,7 @@
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.</source>
-        <translation>Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce baixar o arquivo CGNS incompativel, somente uma parte das condicoes de calculo podera ser importada.</translation>
+        <translation type="vanished">Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce baixar o arquivo CGNS incompativel, somente uma parte das condicoes de calculo podera ser importada.</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
@@ -456,6 +487,11 @@
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>As modificacoes feitas serao descartadas.</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
+Do you really want to import this file?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -555,7 +591,7 @@
     </message>
     <message>
         <source>The following problems found:</source>
-        <translation>Os seguintes problemas encontrados :</translation>
+        <translation type="vanished">Os seguintes problemas encontrados :</translation>
     </message>
     <message>
         <source>
@@ -565,6 +601,27 @@
     <message>
         <source>Warning</source>
         <translation>Atencao</translation>
+    </message>
+    <message>
+        <source>Ctrl+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values are copied to clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following problems found: 
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -835,7 +892,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o &quot;valor de teste&quot; e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
@@ -1127,6 +1184,14 @@
     <message>
         <source>Error occured: %1</source>
         <translation>Ocorreu um erro : %1</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>I, J, K, index for label is reset because the grid size is changed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1676,11 +1741,16 @@
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.</source>
-        <translation>Para obter a imagem do fundo atraves de Internet, especifique o sistema de coordenadas conforme o menu abaixo.</translation>
+        <translation type="vanished">Para obter a imagem do fundo atraves de Internet, especifique o sistema de coordenadas conforme o menu abaixo.</translation>
     </message>
     <message>
         <source>Background Image change</source>
         <translation>Alterar a imagem do fundo</translation>
+    </message>
+    <message>
+        <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
+ File -&gt; Property</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
