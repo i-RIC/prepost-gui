@@ -21,7 +21,8 @@ public:
 	PreProcessorDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent);
 	PreProcessorDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
 	PreProcessorDataItem(ProjectDataItem* parent);
-	virtual ~PreProcessorDataItem();
+
+	~PreProcessorDataItem();
 
 	PreProcessorWindowInterface* preProcessorWindow() const;
 
@@ -29,7 +30,7 @@ protected slots:
 	void editCaption();
 
 protected:
-	QAction* deleteAction();
+	QAction* deleteAction() const;
 	MouseBoundingBox* mouseBoundingBox();
 	void copyStandardItem();
 	virtual PreProcessorDataModelInterface* dataModel() const;

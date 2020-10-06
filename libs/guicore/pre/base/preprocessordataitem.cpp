@@ -36,7 +36,7 @@ MouseBoundingBox* PreProcessorDataItem::mouseBoundingBox()
 	return dataModel()->mouseBoundingBox();
 }
 
-QAction* PreProcessorDataItem::deleteAction()
+QAction* PreProcessorDataItem::deleteAction() const
 {
 	ObjectBrowserView* view = dataModel()->objectBrowserView();
 	return view->deleteAction();

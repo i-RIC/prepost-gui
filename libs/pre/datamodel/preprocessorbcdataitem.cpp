@@ -683,6 +683,11 @@ void PreProcessorBCDataItem::saveToCgnsFile(const int fn)
 	m_dialog->save(fn);
 }
 
+void PreProcessorBCDataItem::handleStandardItemDoubleClicked()
+{
+	showDialog();
+}
+
 void PreProcessorBCDataItem::setName(const QString& name)
 {
 	m_standardItem->setText(name);
@@ -699,6 +704,16 @@ void PreProcessorBCDataItem::setCgnsNumber(int num)
 	m_cgnsNumber = num;
 }
 
+int PreProcessorBCDataItem::projectNumber() const
+{
+	return m_projectNumber;
+}
+
+int PreProcessorBCDataItem::cgnsNumber() const
+{
+	return m_cgnsNumber;
+}
+
 void PreProcessorBCDataItem::setColor(const QColor& color)
 {
 	m_dialog->setColor(color);
@@ -712,6 +727,11 @@ QColor PreProcessorBCDataItem::color() const
 int PreProcessorBCDataItem::opacityPercent() const
 {
 	return m_dialog->opacityPercent();
+}
+
+SolverDefinitionBoundaryCondition* PreProcessorBCDataItem::condition() const
+{
+	return m_condition;
 }
 
 bool PreProcessorBCDataItem::showDialog()
@@ -742,6 +762,11 @@ bool PreProcessorBCDataItem::showDialog()
 
 	renderGraphicsView();
 	return true;
+}
+
+void PreProcessorBCDataItem::setModified(bool modified)
+{
+	PreProcessorDataItem::setModified(modified);
 }
 
 void PreProcessorBCDataItem::clearPoints()
@@ -786,6 +811,11 @@ void PreProcessorBCDataItem::assignIndices(const QSet<vtkIdType>& vertices)
 	m_isCustomModified = false;
 }
 
+bool PreProcessorBCDataItem::isCustomModified() const
+{
+	return m_isCustomModified;
+}
+
 bool PreProcessorBCDataItem::isValid() const
 {
 	bool valid = true;
@@ -808,6 +838,41 @@ int PreProcessorBCDataItem::buildNumber() const
 QString PreProcessorBCDataItem::caption() const
 {
 	return m_dialog->caption();
+}
+
+void PreProcessorBCDataItem::setMapped(bool mapped)
+{
+	m_mapped = mapped;
+}
+
+bool PreProcessorBCDataItem::mapped() const
+{
+	return m_mapped;
+}
+
+QAction* PreProcessorBCDataItem::editAction() const
+{
+	return m_editAction;
+}
+
+QAction* PreProcessorBCDataItem::deleteAction() const
+{
+	return PreProcessorDataItem::deleteAction();
+}
+
+QAction* PreProcessorBCDataItem::assignAction() const
+{
+	return m_assignAction;
+}
+
+QAction* PreProcessorBCDataItem::releaseAction() const
+{
+	return m_releaseAction;
+}
+
+bool PreProcessorBCDataItem::hideSetting() const
+{
+	return m_hideSetting;
 }
 
 std::string PreProcessorBCDataItem::uniqueName() const
