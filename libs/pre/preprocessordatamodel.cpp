@@ -65,7 +65,6 @@
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QStatusBar>
-#include <QVector2D>
 
 #include <vtkRenderWindow.h>
 

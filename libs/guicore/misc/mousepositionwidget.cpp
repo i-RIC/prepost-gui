@@ -2,6 +2,8 @@
 
 #include "mousepositionwidget.h"
 
+#include <QPointF>
+
 MousePositionWidget::MousePositionWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::MousePositionWidget),
@@ -20,7 +22,7 @@ void MousePositionWidget::setProjectData(ProjectData* data)
 	m_projectData = data;
 }
 
-void MousePositionWidget::updatePosition(const QVector2D& position)
+void MousePositionWidget::updatePosition(const QPointF& position)
 {
 	double x = position.x();
 	double y = position.y();

@@ -33,7 +33,7 @@ public slots:
 	void cameraRotate90();
 
 signals:
-	void worldPositionChangedForStatusBar(const QVector2D& pos);
+	void worldPositionChangedForStatusBar(const QPointF& pos);
 	void positionChanged(int x, int y);
 	void worldPositionChanged(const QPointF& v);
 

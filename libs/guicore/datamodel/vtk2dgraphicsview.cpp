@@ -7,7 +7,6 @@
 
 #include <misc/iricundostack.h>
 
-#include <QVector2D>
 #include <QPointF>
 #include <QMouseEvent>
 #include <vtkCamera.h>
@@ -227,7 +226,7 @@ void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent* event)
 	dy = event->y();
 
 	viewportToWorld(dx, dy);
-	emit worldPositionChangedForStatusBar(QVector2D(dx, dy));
+	emit worldPositionChangedForStatusBar(QPointF(dx, dy));
 	VTKGraphicsView::mouseMoveEvent(event);
 }
 
