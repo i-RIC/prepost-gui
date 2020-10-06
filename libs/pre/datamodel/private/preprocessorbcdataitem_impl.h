@@ -5,7 +5,10 @@
 
 class BoundaryConditionDialog;
 
+class vtkActor;
 class vtkActor2D;
+class vtkPolyData;
+class vtkPolyDataMapper;
 class vtkTextMapper;
 
 class PreProcessorBCDataItem::Impl
@@ -29,6 +32,10 @@ public:
 
 	BoundaryConditionDialog* m_dialog;
 	SolverDefinitionBoundaryCondition* m_condition;
+
+	vtkPolyData* m_data;
+	vtkPolyDataMapper* m_mapper;
+	vtkActor* m_actor;
 
 	vtkActor2D* m_nameActor;
 	vtkTextMapper* m_nameMapper;

@@ -24,16 +24,16 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
+#include <vtkActor.h>
 #include <vtkActor2D.h>
 #include <vtkActor2DCollection.h>
 #include <vtkCellArray.h>
-#include <vtkExtractEdges.h>
+#include <vtkPolyData.h>
+#include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
-#include <vtkProperty2D.h>
 #include <vtkRenderer.h>
 #include <vtkTextMapper.h>
 #include <vtkTextProperty.h>
-#include <vtkVertex.h>
 
 #include <cgnslib.h>
 #include <iriclib.h>
@@ -48,16 +48,29 @@ PreProcessorBCDataItem::Impl::Impl(PreProcessorBCDataItem* item) :
 	m_definingBoundingBox {false},
 	m_isCustomModified {false},
 	m_dialog {nullptr},
+	m_data {vtkPolyData::New()},
+	m_mapper {vtkPolyDataMapper::New()},
+	m_actor {vtkActor::New()},
 	m_nameActor {vtkActor2D::New()},
 	m_nameMapper {vtkTextMapper::New()},
 	m_editAction {new QAction(PreProcessorBCDataItem::tr("&Edit Condition..."), item)},
 	m_assignAction {new QAction(PreProcessorBCDataItem::tr("&Assign Condition"), item)},
 	m_releaseAction {new QAction(PreProcessorBCDataItem::tr("&Release Condition"), item)}
-{}
+{
+	m_mapper->SetScalarVisibility(false);
+	auto prop = m_actor->GetProperty();
+	prop->SetLighting(false);
+
+	m_mapper->SetInputData(m_data);
+	m_actor->SetMapper(m_mapper);
+}
 
 PreProcessorBCDataItem::Impl::~Impl()
 {
 	delete m_dialog;
+	m_data->Delete();
+	m_mapper->Delete();
+	m_actor->Delete();
 	m_nameActor->Delete();
 	m_nameMapper->Delete();
 }
@@ -75,6 +88,9 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 	m_standardItem->setEditable(true);
 	setIsCommandExecuting(false);
 
+	impl->m_condition = cond;
+	impl->m_hideSetting = hideSetting;
+
 	try {
 		impl->m_dialog = new BoundaryConditionDialog(this, iricMainWindow(), mainWindow());
 		QLocale locale = iricMainWindow()->locale();
@@ -84,8 +100,6 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 		// m_dialog = nullptr;
 	}
 	impl->m_dialog->setType(cond->caption());
-	impl->m_condition = cond;
-	impl->m_hideSetting = hideSetting;
 
 	impl->m_assignAction->setEnabled(false);
 	impl->m_releaseAction->setEnabled(false);
@@ -103,13 +117,7 @@ PreProcessorBCDataItem::~PreProcessorBCDataItem()
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->grid();
 	if (g != 0) {g->setModified();}
 
-	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		renderer()->RemoveActor(m_verticesActor);
-	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		renderer()->RemoveActor(m_cellsActor);
-	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		renderer()->RemoveActor(m_edgesActor);
-	}
+	renderer()->RemoveActor(impl->m_actor);
 	renderer()->RemoveActor2D(impl->m_nameActor);
 
 	delete impl;
@@ -186,64 +194,27 @@ void PreProcessorBCDataItem::saveExternalData(const QString& filename)
 
 void PreProcessorBCDataItem::setupActors()
 {
+	// node, edge, cell related settings
 	QColor color = impl->m_dialog->color();
+	auto prop = impl->m_actor->GetProperty();
+	prop->SetColor(color.redF(), color.greenF(), color.blueF());
+
+	renderer()->AddActor(impl->m_actor);
+	actorCollection()->AddItem(impl->m_actor);
+
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		m_verticesGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
-		m_verticesMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		m_verticesMapper->SetScalarVisibility(false);
-		m_verticesMapper->SetInputData(m_verticesGrid);
-		m_verticesActor = vtkSmartPointer<vtkActor>::New();
-		vtkProperty* prop = m_verticesActor->GetProperty();
+		auto prop = impl->m_actor->GetProperty();
 		prop->SetPointSize(7);
-		prop->SetLighting(false);
-		prop->SetColor(color.redF(), color.greenF(), color.blueF());
 		prop->SetRepresentationToPoints();
-		m_verticesActor->SetMapper(m_verticesMapper);
-		m_verticesActor->VisibilityOff();
-		renderer()->AddActor(m_verticesActor);
-		actorCollection()->AddItem(m_verticesActor);
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		m_cellsGrid = vtkSmartPointer<vtkExtractCells>::New();
-		// put m_verticesGrid as dummy.
-		m_verticesGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
-		m_cellsGrid->SetInputData(m_verticesGrid);
-//		m_cellsGrid->SetInput(tmpparent->grid()->vtkGrid());
-		m_cellsMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		m_cellsMapper->SetScalarVisibility(false);
-		m_cellsMapper->SetInputData(m_cellsGrid->GetOutput());
-		m_cellsActor = vtkSmartPointer<vtkActor>::New();
-		m_cellsActor->SetMapper(m_cellsMapper);
-		vtkProperty* prop = m_cellsActor->GetProperty();
-		prop->SetLighting(false);
-		prop->SetColor(color.redF(), color.greenF(), color.blueF());
-		m_cellsActor->VisibilityOff();
-		renderer()->AddActor(m_cellsActor);
-		actorCollection()->AddItem(m_cellsActor);
-
-
-
-
-
-
-
-
-
+		// nothing to do
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		m_edgesPolyData = vtkSmartPointer<vtkPolyData>::New();
-		m_edgesMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-		m_edgesMapper->SetScalarVisibility(false);
-		m_edgesMapper->SetInputData(m_edgesPolyData);
-		m_edgesActor = vtkSmartPointer<vtkActor>::New();
-		vtkProperty* prop = m_edgesActor->GetProperty();
+		auto prop = impl->m_actor->GetProperty();
 		prop->SetLineWidth(7);
-		prop->SetLighting(false);
-		prop->SetColor(color.redF(), color.greenF(), color.blueF());
 		prop->SetRepresentationToWireframe();
-		m_edgesActor->SetMapper(m_edgesMapper);
-		m_edgesActor->VisibilityOff();
-		renderer()->AddActor(m_edgesActor);
-		actorCollection()->AddItem(m_edgesActor);
 	}
+
+	// name related settings
 	vtkTextProperty* tprop = impl->m_nameMapper->GetTextProperty();
 	tprop->SetFontFamilyToArial();
 	tprop->SetFontSize(14);
@@ -260,30 +231,26 @@ void PreProcessorBCDataItem::updateElements()
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (tmpparent->grid() == nullptr) {return;}
+
+	auto d = impl->m_data;
+	auto grid = tmpparent->grid()->vtkGrid();
+	d->Reset();
+	d->SetPoints(grid->GetPoints());
+
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		m_verticesGrid->Reset();
-		m_verticesGrid->SetPoints(tmpparent->grid()->vtkGrid()->GetPoints());
+		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		for (auto index : impl->m_indices) {
-			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
-			v->GetPointIds()->SetId(0, index);
-			m_verticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
+			ca->InsertNextCell(1, &index);
 		}
-		m_verticesGrid->BuildLinks();
-		m_verticesGrid->Modified();
-		m_verticesActor->VisibilityOn();
+		d->SetVerts(ca);
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		vtkSmartPointer<vtkIdList> cellids = vtkSmartPointer<vtkIdList>::New();
+		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		for (auto index : impl->m_indices) {
-			cellids->InsertNextId(index);
+			vtkCell* cell = grid->GetCell(index);
+			ca->InsertNextCell(cell->GetPointIds());
 		}
-		m_cellsGrid->SetInputData(tmpparent->grid()->vtkGrid());
-		m_cellsGrid->SetCellList(cellids);
-		m_cellsGrid->Modified();
-		m_cellsActor->VisibilityOn();
+		d->SetPolys(ca);
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		vtkPointSet* ps = tmpparent->grid()->vtkGrid();
-		m_edgesPolyData->Reset();
-		m_edgesPolyData->SetPoints(ps->GetPoints());
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		vtkIdType nodes[2];
 		for (const auto& e : impl->m_edges) {
@@ -291,30 +258,24 @@ void PreProcessorBCDataItem::updateElements()
 			nodes[1] = e.vertex2();
 			ca->InsertNextCell(2, &(nodes[0]));
 		}
-		m_edgesPolyData->SetLines(ca);
-		m_edgesActor->VisibilityOn();
+		d->SetLines(ca);
 	}
+	d->Modified();
 }
 
 void PreProcessorBCDataItem::updateActorSettings()
 {
-	QColor color = impl->m_dialog->color();
-	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		vtkProperty* prop = m_verticesActor->GetProperty();
+	auto prop = impl->m_actor->GetProperty();
 
-		prop->SetColor(color.redF(), color.greenF(), color.blueF());
-		prop->SetOpacity(static_cast<double>(impl->m_opacityPercent) / 100);
+	QColor color = impl->m_dialog->color();
+	prop->SetColor(color.redF(), color.greenF(), color.blueF());
+	prop->SetOpacity(static_cast<double>(impl->m_opacityPercent) / 100);
+
+	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 		prop->SetPointSize(impl->m_dialog->pointSize());
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		vtkProperty* prop = m_cellsActor->GetProperty();
-
-		prop->SetColor(color.redF(), color.greenF(), color.blueF());
-		prop->SetOpacity(static_cast<double>(impl->m_opacityPercent) / 100);
+		// nothing to do
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		vtkProperty* prop = m_edgesActor->GetProperty();
-
-		prop->SetColor(color.redF(), color.greenF(), color.blueF());
-		prop->SetOpacity(static_cast<double>(impl->m_opacityPercent) / 100);
 		prop->SetLineWidth(impl->m_dialog->pointSize());
 	}
 	updateNameActorSettings();
@@ -388,13 +349,7 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 
 void PreProcessorBCDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		m_verticesActor->SetPosition(0, 0, range.max());
-	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		m_cellsActor->SetPosition(0, 0, range.max());
-	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		m_edgesActor->SetPosition(0, 0, range.max());
-	}
+	impl->m_actor->SetPosition(0, 0, range.max());
 }
 
 void PreProcessorBCDataItem::assignSelectedElements()
@@ -463,14 +418,6 @@ void PreProcessorBCDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView*
 			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->edgeSelectingMouseMoveEvent(event, v);
 		}
 	}
-	/*
-		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		if (tmpparent->grid()->isMasked()){
-			v->setCursor(Qt::ForbiddenCursor);
-		} else {
-			v->setCursor(Qt::ArrowCursor);
-		}
-	*/
 }
 
 void PreProcessorBCDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -547,7 +494,6 @@ void PreProcessorBCDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* 
 		gitem->cellSelectingKeyReleaseEvent(event, v);
 	}
 }
-
 
 void PreProcessorBCDataItem::addCustomMenuItems(QMenu* menu)
 {
@@ -802,14 +748,6 @@ void PreProcessorBCDataItem::clearPoints()
 	impl->m_edges.clear();
 	updateElements();
 	updateNameActorSettings();
-}
-
-void PreProcessorBCDataItem::setGrid(Grid* grid)
-{
-	if (grid == nullptr) {return;}
-	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		m_cellsGrid->SetInputData(grid->vtkGrid());
-	}
 }
 
 void PreProcessorBCDataItem::assignIndices(const QSet<vtkIdType>& vertices)

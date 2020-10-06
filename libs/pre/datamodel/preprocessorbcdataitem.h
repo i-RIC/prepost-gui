@@ -8,14 +8,6 @@
 #include <QColor>
 #include <QSet>
 
-#include <vtkSmartPointer.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkPolyData.h>
-#include <vtkDataSetMapper.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkActor.h>
-#include <vtkExtractCells.h>
-
 class SolverDefinition;
 class SolverDefinitionBoundaryCondition;
 class QAction;
@@ -54,7 +46,6 @@ public:
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void setGrid(Grid* grid);
 	void clearPoints();
 	void assignIndices(const QSet<vtkIdType>& vertices);
 	bool isCustomModified() const;
@@ -95,18 +86,6 @@ private:
 	void updateNameActorSettings();
 	void updateElements();
 	int buildNumber() const;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_verticesGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_verticesMapper;
-	vtkSmartPointer<vtkActor> m_verticesActor;
-
-	vtkSmartPointer<vtkExtractCells> m_cellsGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_cellsMapper;
-	vtkSmartPointer<vtkActor> m_cellsActor;
-
-	vtkSmartPointer<vtkPolyData> m_edgesPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_edgesMapper;
-	vtkSmartPointer<vtkActor> m_edgesActor;
 
 	class Impl;
 	Impl* impl;
