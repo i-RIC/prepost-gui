@@ -89,7 +89,7 @@ public slots:
 	void editZScale();
 
 signals:
-	void worldPositionChangedForStatusBar(const QVector2D& pos);
+	void worldPositionChangedForStatusBar(const QPointF& pos);
 
 private:
 	void init();

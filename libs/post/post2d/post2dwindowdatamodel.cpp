@@ -67,7 +67,7 @@ void Post2dWindowDataModel::init()
 	// build new data.
 	m_graphicsView = new Post2dWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
 	m_graphicsView->setModel(this);
-	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QVector2D)));
+	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QPointF)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QPointF)));
 
 	// setup the basic itemModel structure.
 	Post2dWindowRootDataItem* root = new Post2dWindowRootDataItem(dynamic_cast<Post2dWindow*>(mainWindow()), this);

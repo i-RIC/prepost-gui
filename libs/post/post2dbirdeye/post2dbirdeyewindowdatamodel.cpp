@@ -52,7 +52,7 @@ void Post2dBirdEyeWindowDataModel::init()
 	// if (m_rootDataItem != nullptr){delete m_rootDataItem;}
 	// build new data.
 	m_graphicsView = new Post2dBirdEyeWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
-	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QVector2D)));
+	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QPointF)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QPointF)));
 
 	// setup the basic itemModel structure.
 	Post2dBirdEyeWindowRootDataItem* root = new Post2dBirdEyeWindowRootDataItem(dynamic_cast<Post2dBirdEyeWindow*>(mainWindow()), this);

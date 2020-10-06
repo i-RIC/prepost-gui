@@ -45,7 +45,7 @@ void PreProcessorWindow::init()
 	// setup graphics view
 	m_graphicsView = new PreProcessorGraphicsView(this);
 	setCentralWidget(m_graphicsView);
-	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), this, SIGNAL(worldPositionChangedForStatusBar(QVector2D)));
+	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QPointF)), this, SIGNAL(worldPositionChangedForStatusBar(QPointF)));
 
 	m_dataModel = 0;
 	m_actionManager = new PreProcessorWindowActionManager(this);
