@@ -285,67 +285,69 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 {
 	actor2DCollection()->RemoveItem(impl->m_nameActor);
 	impl->m_nameActor->VisibilityOff();
-	if (impl->m_dialog->showName()) {
-		double centerv[3] = {0, 0, 0};
-		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		if (tmpparent->grid() == 0) {return;}
-		vtkPointSet* pset = tmpparent->grid()->vtkGrid();
-		vtkPoints* points = pset->GetPoints();
-		int pnum = 0;
-		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			for (auto index : impl->m_indices) {
+
+	if (! impl->m_dialog->showName()) {return;}
+
+	double centerv[3] = {0, 0, 0};
+	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	if (tmpparent->grid() == 0) {return;}
+	vtkPointSet* pset = tmpparent->grid()->vtkGrid();
+	vtkPoints* points = pset->GetPoints();
+	int pnum = 0;
+	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
+		for (auto index : impl->m_indices) {
+			double tmpv[3];
+			points->GetPoint(index, tmpv);
+			for (int i = 0; i < 3; ++i) {
+				centerv[i] += tmpv[i];
+			}
+			++ pnum;
+		}
+	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+		for (auto index : impl->m_indices) {
+			vtkCell* cell = pset->GetCell(index);
+			for (int i = 0; i < cell->GetNumberOfPoints(); ++i) {
 				double tmpv[3];
-				points->GetPoint(index, tmpv);
+				points->GetPoint(cell->GetPointId(i), tmpv);
 				for (int i = 0; i < 3; ++i) {
 					centerv[i] += tmpv[i];
 				}
 				++ pnum;
 			}
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			for (auto index : impl->m_indices) {
-				vtkCell* cell = pset->GetCell(index);
-				for (int i = 0; i < cell->GetNumberOfPoints(); ++i) {
-					double tmpv[3];
-					points->GetPoint(cell->GetPointId(i), tmpv);
-					for (int i = 0; i < 3; ++i) {
-						centerv[i] += tmpv[i];
-					}
-					++ pnum;
-				}
-			}
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			for (const auto& e : impl->m_edges) {
-				double tmpv[3];
-				points->GetPoint(e.vertex1(), tmpv);
-				for (int i = 0; i < 3; ++i) {
-					centerv[i] += tmpv[i];
-				}
-				points->GetPoint(e.vertex2(), tmpv);
-				for (int i = 0; i < 3; ++i) {
-					centerv[i] += tmpv[i];
-				}
-				pnum += 2;
-			}
 		}
-		if (pnum == 0) {
-			impl->m_nameActor->VisibilityOff();
-		} else {
+	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+		for (const auto& e : impl->m_edges) {
+			double tmpv[3];
+			points->GetPoint(e.vertex1(), tmpv);
 			for (int i = 0; i < 3; ++i) {
-				centerv[i] /= pnum;
+				centerv[i] += tmpv[i];
 			}
-			actor2DCollection()->AddItem(impl->m_nameActor);
-			vtkCoordinate* coord = impl->m_nameActor->GetPositionCoordinate();
-			coord->SetValue(centerv[0], centerv[1], centerv[2]);
-			impl->m_nameMapper->SetInput(iRIC::toStr(impl->m_dialog->caption()).c_str());
-			vtkTextProperty* tprop = impl->m_nameMapper->GetTextProperty();
-			QColor color = impl->m_dialog->color();
-			tprop->SetColor(color.redF(), color.greenF(), color.blueF());
-			impl->m_nameMapper->Modified();
+			points->GetPoint(e.vertex2(), tmpv);
+			for (int i = 0; i < 3; ++i) {
+				centerv[i] += tmpv[i];
+			}
+			pnum += 2;
 		}
 	}
+
+	if (pnum == 0) {
+		return;
+	}
+
+	for (int i = 0; i < 3; ++i) {
+		centerv[i] /= pnum;
+	}
+	actor2DCollection()->AddItem(impl->m_nameActor);
+	vtkCoordinate* coord = impl->m_nameActor->GetPositionCoordinate();
+	coord->SetValue(centerv[0], centerv[1], centerv[2]);
+	impl->m_nameMapper->SetInput(iRIC::toStr(impl->m_dialog->caption()).c_str());
+	auto tprop = impl->m_nameMapper->GetTextProperty();
+	QColor color = impl->m_dialog->color();
+	tprop->SetColor(color.redF(), color.greenF(), color.blueF());
+	impl->m_nameMapper->Modified();
+
 	updateVisibilityWithoutRendering();
 }
-
 
 void PreProcessorBCDataItem::assignActorZValues(const ZDepthRange& range)
 {
