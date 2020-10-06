@@ -35,7 +35,7 @@ public slots:
 signals:
 	void worldPositionChangedForStatusBar(const QVector2D& pos);
 	void positionChanged(int x, int y);
-	void worldPositionChanged(const QVector2D& v);
+	void worldPositionChanged(const QPointF& v);
 
 private:
 	virtual void fitInView() override;
