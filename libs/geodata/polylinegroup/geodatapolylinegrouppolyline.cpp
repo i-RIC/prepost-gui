@@ -140,6 +140,7 @@ void GeoDataPolyLineGroupPolyLine::copyShapeTo(GeoDataPolyData* data)
 	auto l = dynamic_cast<GeoDataPolyLine*> (data);
 	l->setShape(getGeosLineString());
 	l->setMouseEventMode(GeoDataPolyLine::meNormal);
+	l->updateActionStatus();
 }
 
 void GeoDataPolyLineGroupPolyLine::loadExternalData(QDataStream* stream)
