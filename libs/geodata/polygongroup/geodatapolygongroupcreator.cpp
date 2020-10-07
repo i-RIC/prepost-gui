@@ -1,8 +1,9 @@
 #include "geodatapolygongroup.h"
 #include "geodatapolygongroupcreator.h"
 #include "geodatapolygongroupcsvexporter.h"
-#include "geodatapolygongroupshpimporter.h"
+#include "geodatapolygongroupcsvimporter.h"
 #include "geodatapolygongroupshpexporter.h"
+#include "geodatapolygongroupshpimporter.h"
 
 #include <shapefil.h>
 
@@ -10,6 +11,7 @@ GeoDataPolygonGroupCreator::GeoDataPolygonGroupCreator(const QString& typeName) 
 	GeoDataPolyDataGroupCreator {typeName, tr("Polygon Group")}
 {
 	importers().push_back(new GeoDataPolygonGroupShpImporter(this));
+	importers().push_back(new GeoDataPolygonGroupCsvImporter(this));
 	exporters().push_back(new GeoDataPolygonGroupShpExporter(this));
 	exporters().push_back(new GeoDataPolygonGroupCsvExporter(this));
 }
