@@ -13,7 +13,6 @@ class GeoDataPointmapRealImporter : public GeoDataImporter
 private:
 	enum filterString {
 		dotTopo,      ///< Topography
-		dotDat,       ///< RIC-Nays DEM
 		dotAdf,       ///< USGS NED(*.adf)
 		dotStl        ///< STL (*.stl)
 	};

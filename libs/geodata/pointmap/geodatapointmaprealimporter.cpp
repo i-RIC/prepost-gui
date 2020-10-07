@@ -20,7 +20,7 @@
 #include <gdal_priv.h>
 
 GeoDataPointmapRealImporter::GeoDataPointmapRealImporter(GeoDataCreator* creator) :
-	GeoDataImporter("tpo", tr("DEM etc. (*.tpo, *.anc, *.dat, *.stl)"), creator),
+	GeoDataImporter("tpo", tr("DEM etc. (*.tpo, *.anc, *.stl)"), creator),
 	poDataset(NULL),
 	poBand(NULL)
 {}
@@ -46,8 +46,8 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 
 	double xt[3];
 	auto filter = selectedFilter();
-	if (filter == tr("Topography File (*.tpo *.anc)") || filter == tr("RIC-Nays DEM (*.dat *.txt)") ||
-			finfo.suffix() == "tpo" || finfo.suffix() == "anc" || finfo.suffix() == "dat" || finfo.suffix() == "txt")
+	if (filter == tr("Topography File (*.tpo *.anc)") ||
+			finfo.suffix() == "tpo" || finfo.suffix() == "anc")
 	{
 		QFile file(filename());
 		if (! file.open(QIODevice::ReadOnly)) {
@@ -263,7 +263,6 @@ const QStringList GeoDataPointmapRealImporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret << tr("Topography File (*.tpo *.anc)");
-	ret << tr("RIC-Nays DEM (*.dat *.txt)");
 	ret << tr("USGS NED (*.adf)");
 	return ret;
 }
@@ -271,6 +270,6 @@ const QStringList GeoDataPointmapRealImporter::fileDialogFilters()
 const QStringList GeoDataPointmapRealImporter::acceptableExtensions()
 {
 	QStringList ret;
-	ret << "tpo" << "anc" << "dat" << "txt" << "adf";
+	ret << "tpo" << "anc" << "adf";
 	return ret;
 }
