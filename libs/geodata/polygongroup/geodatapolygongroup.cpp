@@ -34,10 +34,12 @@ std::string VALUE = "value";
 
 } // namespace
 
-GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataPolyDataGroup(d, creator, condition),
+GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdcreator, SolverDefinitionGridAttribute* condition) :
+	GeoDataPolyDataGroup(d, gdcreator, condition),
 	impl {new Impl {this}}
 {
+	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()));
+
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		auto mapper = impl->m_paintActor->GetMapper();
