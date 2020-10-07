@@ -91,8 +91,8 @@ SHPObject* GeoDataPointGroupShpExporter::getSHPObject(GeoDataPointGroupPoint* po
 
 	partStart[0] = 0;
 	nVertices = 1;
-	xlist.push_back(p.x());
-	ylist.push_back(p.y());
+	xlist.push_back(p.x() + xoffset);
+	ylist.push_back(p.y() + yoffset);
 
 	SHPObject* ret = SHPCreateObject(SHPT_POINT, index, nParts, partStart.data(), NULL, nVertices, xlist.data(), ylist.data(), NULL, NULL);
 	SHPComputeExtents(ret);
