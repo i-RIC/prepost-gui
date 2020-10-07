@@ -4418,6 +4418,14 @@ p, li { white-space: pre-wrap; }
         <source>Point name and value change</source>
         <translation type="vanished">点の名前と値の変更</translation>
     </message>
+    <message>
+        <source>Point Coordinates</source>
+        <translation>点の座標</translation>
+    </message>
+    <message>
+        <source>Edit Point Coordinates</source>
+        <translation>点の座標の編集</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
