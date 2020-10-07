@@ -21,8 +21,8 @@
 
 GeoDataPointmapRealImporter::GeoDataPointmapRealImporter(GeoDataCreator* creator) :
 	GeoDataImporter("tpo", tr("DEM etc. (*.tpo)"), creator),
-	poDataset(NULL),
-	poBand(NULL)
+	poDataset(nullptr),
+	poBand(nullptr)
 {}
 
 bool GeoDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
