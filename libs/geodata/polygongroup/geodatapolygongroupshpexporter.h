@@ -8,9 +8,12 @@
 #include <shapefil.h>
 
 class GeoDataPolygonGroupPolygon;
+class SolverDefinitionGridAttribute;
 
 class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroupShpExporter : public GeoDataExporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPolygonGroupShpExporter(GeoDataCreator* creator);
 

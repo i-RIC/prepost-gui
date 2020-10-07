@@ -12,6 +12,8 @@ class SolverDefinitionGridAttribute;
 
 class GD_POLYLINEGROUP_EXPORT GeoDataPolyLineGroupShpExporter : public GeoDataExporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPolyLineGroupShpExporter(GeoDataCreator* creator);
 
