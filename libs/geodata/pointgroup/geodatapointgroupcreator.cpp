@@ -1,5 +1,6 @@
 #include "geodatapointgroup.h"
 #include "geodatapointgroupcreator.h"
+#include "geodatapointgroupcsvexporter.h"
 #include "geodatapointgroupshpimporter.h"
 #include "geodatapointgroupshpexporter.h"
 
@@ -12,6 +13,7 @@ GeoDataPointGroupCreator::GeoDataPointGroupCreator(const QString& typeName) :
 {
 	importers().push_back(new GeoDataPointGroupShpImporter(this));
 	exporters().push_back(new GeoDataPointGroupShpExporter(this));
+	exporters().push_back(new GeoDataPointGroupCsvExporter(this));
 }
 
 QString GeoDataPointGroupCreator::name(unsigned int index) const
