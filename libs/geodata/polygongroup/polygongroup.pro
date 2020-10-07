@@ -158,6 +158,7 @@ HEADERS += gd_polygongroup_global.h \
            geodatapolygongroupcellmappert.h \
            geodatapolygongroupcreator.h \
            geodatapolygongroupcreatort.h \
+           geodatapolygongroupcsvexporter.h \
            geodatapolygongroupintegercreator.h \
            geodatapolygongroupnodemappert.h \
            geodatapolygongrouppolygon.h \
@@ -176,6 +177,7 @@ HEADERS += gd_polygongroup_global.h \
 FORMS +=
 SOURCES += geodatapolygongroup.cpp \
            geodatapolygongroupcreator.cpp \
+           geodatapolygongroupcsvexporter.cpp \
            geodatapolygongroupintegercreator.cpp \
            geodatapolygongrouppolygon.cpp \
            geodatapolygongrouprangecontainer.cpp \
