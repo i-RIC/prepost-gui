@@ -12,6 +12,8 @@ class SolverDefinitionGridAttribute;
 
 class GD_POINTGROUP_EXPORT GeoDataPointGroupShpExporter : public GeoDataExporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPointGroupShpExporter(GeoDataCreator* creator);
 
