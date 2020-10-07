@@ -1,5 +1,6 @@
 #include "geodatapolylinegroup.h"
 #include "geodatapolylinegroupcreator.h"
+#include "geodatapolylinegroupcsvexporter.h"
 #include "geodatapolylinegroupshpimporter.h"
 #include "geodatapolylinegroupshpexporter.h"
 
@@ -12,6 +13,7 @@ GeoDataPolyLineGroupCreator::GeoDataPolyLineGroupCreator(const QString& typeName
 {
 	importers().push_back(new GeoDataPolyLineGroupShpImporter(this));
 	exporters().push_back(new GeoDataPolyLineGroupShpExporter(this));
+	exporters().push_back(new GeoDataPolyLineGroupCsvExporter(this));
 }
 
 QString GeoDataPolyLineGroupCreator::name(unsigned int index) const

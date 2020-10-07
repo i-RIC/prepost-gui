@@ -144,6 +144,7 @@ HEADERS += gd_polylinegroup_global.h \
            geodatapolylinegroupcellmappert.h \
            geodatapolylinegroupcreator.h \
            geodatapolylinegroupcreatort.h \
+           geodatapolylinegroupcsvexporter.h \
            geodatapolylinegroupintegercreator.h \
            geodatapolylinegroupnodemappert.h \
            geodatapolylinegrouppolyline.h \
@@ -158,6 +159,7 @@ HEADERS += gd_polylinegroup_global.h \
 FORMS +=
 SOURCES += geodatapolylinegroup.cpp \
            geodatapolylinegroupcreator.cpp \
+           geodatapolylinegroupcsvexporter.cpp \
            geodatapolylinegroupintegercreator.cpp \
            geodatapolylinegrouppolyline.cpp \
            geodatapolylinegrouprealcreator.cpp \
