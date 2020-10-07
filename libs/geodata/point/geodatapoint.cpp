@@ -250,8 +250,8 @@ void GeoDataPoint::editCoordinates()
 void GeoDataPoint::doApplyOffset(double x, double y)
 {
 	auto p = point();
-	p.setX(p.x() + x);
-	p.setY(p.y() + y);
+	p.setX(p.x() - x);
+	p.setY(p.y() - y);
 	setPoint(p);
 }
 
