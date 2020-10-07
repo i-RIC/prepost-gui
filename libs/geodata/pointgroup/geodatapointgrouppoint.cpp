@@ -87,5 +87,5 @@ void GeoDataPointGroupPoint::saveExternalData(QDataStream* stream)
 
 void GeoDataPointGroupPoint::applyOffset(double x, double y)
 {
-	setPoint(point() + QPointF(x, y));
+	setPoint(point() - QPointF(x, y));
 }
