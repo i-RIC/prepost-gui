@@ -122,6 +122,8 @@ HEADERS += gd_point_global.h \
            geodatapointcreatort.h \
            geodatapointnodemappert.h \
            geodatapointrealcreator.h \
+           private/geodatapoint_coordinateseditor.h \
+           private/geodatapoint_editcoordinatescommand.h \
            private/geodatapoint_finishpointdefinitioncommand.h \
            private/geodatapoint_impl.h \
            private/geodatapointcellmappert_detail.h \
@@ -131,8 +133,9 @@ FORMS += geodatapointcolorsimplesettingdialog.ui
 SOURCES += geodatapoint.cpp \
            geodatapointcreator.cpp \
            geodatapointrealcreator.cpp \
+           private/geodatapoint_coordinateseditor.cpp \
+           private/geodatapoint_editcoordinatescommand.cpp \
            private/geodatapoint_finishpointdefinitioncommand.cpp
-           private/geodatapolyline_removevertexcommand.cpp
 TRANSLATIONS += languages/iricGdPoint_ar_EG.ts \
                 languages/iricGdPoint_bg_BG.ts \
                 languages/iricGdPoint_bs_BA.ts \

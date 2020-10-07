@@ -73,7 +73,10 @@ private:
 
 	QAction* coordEditAction() const;
 
+	class EditCoordinatesCommand;
 	class FinishPointDefiningCommand;
+
+	class CoordinatesEditor;
 
 	class Impl;
 	Impl* impl;
