@@ -42,27 +42,6 @@ bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filenam
 			outs << v[0] << " " << v[1] << " " << val << endl;
 		}
 		file.close();
-	} else if (selectedFilter == tr("RIC-Nays DEM (*.dat)")) {
-		QFile file(filename);
-		if (! file.open(QIODevice::WriteOnly)) {
-			QMessageBox::critical(w, tr("Error"), tr("Error occured while exporting to %1.").arg(filename));
-			return false;
-		}
-		QTextStream outs(&file);
-		outs.setRealNumberNotation(QTextStream::SmartNotation);
-		outs.setRealNumberPrecision(10);
-		vtkPoints* points = pmap->vtkGrid()->GetPoints();
-		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
-		auto offset = pd->mainfile()->offset();
-		double v[3], val;
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, v);
-			val = values->GetValue(i);
-			v[0] += offset.x();
-			v[1] += offset.y();
-			outs << (i + 1) << "," << v[0] << "," << v[1] << "," << val << endl;
-		}
-		file.close();
 	}
 	return true;
 }
@@ -71,6 +50,5 @@ const QStringList GeoDataPointmapRealExporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret << tr("Topography File (*.tpo)");
-	ret << tr("RIC-Nays DEM (*.dat)");
 	return ret;
 }
