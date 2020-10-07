@@ -20,7 +20,7 @@
 #include <gdal_priv.h>
 
 GeoDataPointmapRealImporter::GeoDataPointmapRealImporter(GeoDataCreator* creator) :
-	GeoDataImporter("tpo", tr("DEM etc. (*.tpo, *.stl)"), creator),
+	GeoDataImporter("tpo", tr("DEM etc. (*.tpo)"), creator),
 	poDataset(NULL),
 	poBand(NULL)
 {}
