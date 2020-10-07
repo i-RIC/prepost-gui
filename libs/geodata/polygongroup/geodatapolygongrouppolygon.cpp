@@ -52,7 +52,7 @@ geos::geom::LinearRing* applyOffset(const geos::geom::LineString* string, double
 {
 	auto pol = buildPolygon(string);
 	for (auto& p : pol) {
-		p += QPointF(x, y);
+		p -= QPointF(x, y);
 	}
 	return buildRing(pol);
 }
