@@ -59,7 +59,7 @@ geos::geom::LineString* applyOffset(const geos::geom::LineString* string, double
 {
 	auto pol = buildPolyLine(string);
 	for (auto& p : pol) {
-		p += QPointF(x, y);
+		p -= QPointF(x, y);
 	}
 	return buildString(pol);
 }
