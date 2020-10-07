@@ -43,6 +43,7 @@ private:
 	Impl* impl;
 
 public:
+	friend class GeoDataPointGroupCsvImporter;
 	friend class GeoDataPointGroupShpImporter;
 };
 

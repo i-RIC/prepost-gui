@@ -1,8 +1,9 @@
 #include "geodatapointgroup.h"
 #include "geodatapointgroupcreator.h"
 #include "geodatapointgroupcsvexporter.h"
-#include "geodatapointgroupshpimporter.h"
+#include "geodatapointgroupcsvimporter.h"
 #include "geodatapointgroupshpexporter.h"
+#include "geodatapointgroupshpimporter.h"
 
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 
@@ -12,6 +13,7 @@ GeoDataPointGroupCreator::GeoDataPointGroupCreator(const QString& typeName) :
 	GeoDataPolyDataGroupCreator {typeName, tr("Point Group")}
 {
 	importers().push_back(new GeoDataPointGroupShpImporter(this));
+	importers().push_back(new GeoDataPointGroupCsvImporter(this));
 	exporters().push_back(new GeoDataPointGroupShpExporter(this));
 	exporters().push_back(new GeoDataPointGroupCsvExporter(this));
 }
