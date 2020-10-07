@@ -22,7 +22,7 @@ public:
 	PreProcessorDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
 	PreProcessorDataItem(ProjectDataItem* parent);
 
-	~PreProcessorDataItem();
+	~PreProcessorDataItem() override;
 
 	PreProcessorWindowInterface* preProcessorWindow() const;
 
@@ -33,7 +33,7 @@ protected:
 	QAction* deleteAction() const;
 	MouseBoundingBox* mouseBoundingBox();
 	void copyStandardItem();
-	virtual PreProcessorDataModelInterface* dataModel() const;
+	PreProcessorDataModelInterface* dataModel() const override;
 
 public:
 	friend class GeoData;
