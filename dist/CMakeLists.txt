@@ -1111,7 +1111,6 @@ set(IRIC_DICS
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_da_DK.qm
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_de_DE.qm
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_el_GR.qm
-  ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_ES.qm
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_es_ES.qm
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_et_EE.qm
   ${PREPOST_GUI}/libs/geoio/languages/iricGeoIO_eu_ES.qm
