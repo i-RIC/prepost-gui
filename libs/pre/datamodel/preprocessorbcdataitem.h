@@ -8,17 +8,6 @@
 #include <QColor>
 #include <QSet>
 
-#include <vtkSmartPointer.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkPolyData.h>
-#include <vtkDataSetMapper.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkTextMapper.h>
-#include <vtkActor.h>
-#include <vtkActor2D.h>
-#include <vtkExtractCells.h>
-
-class BoundaryConditionDialog;
 class SolverDefinition;
 class SolverDefinitionBoundaryCondition;
 class QAction;
@@ -62,7 +51,6 @@ public:
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void setGrid(Grid* grid);
 	void clearPoints();
 	void assignIndices(const QSet<vtkIdType>& vertices);
 	bool isCustomModified() const;
@@ -71,7 +59,7 @@ public:
 	bool mapped() const;
 
 	QAction* editAction() const;
-	QAction* deleteAction();
+	QAction* deleteAction() const;
 	QAction* assignAction() const;
 	QAction* releaseAction() const;
 	bool hideSetting() const;
@@ -104,38 +92,12 @@ private:
 	void updateElements();
 	int buildNumber() const;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_verticesGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_verticesMapper;
-	vtkSmartPointer<vtkActor> m_verticesActor;
-	vtkSmartPointer<vtkTextMapper> m_nameMapper;
-	vtkSmartPointer<vtkActor2D> m_nameActor;
-
-	vtkSmartPointer<vtkExtractCells> m_cellsGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_cellsMapper;
-	vtkSmartPointer<vtkActor> m_cellsActor;
-
-	vtkSmartPointer<vtkPolyData> m_edgesPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_edgesMapper;
-	vtkSmartPointer<vtkActor> m_edgesActor;
-
-	QSet<vtkIdType> m_indices;
-	QSet<Edge> m_edges;
-
-	SolverDefinitionBoundaryCondition* m_condition;
-	QAction* m_editAction;
-	QAction* m_assignAction;
-	QAction* m_releaseAction;
-	int m_projectNumber;
-	int m_cgnsNumber;
-
-	int m_opacityPercent;
-	bool m_mapped;
-	bool m_definingBoundingBox;
-	bool m_showName;
-	bool m_isCustomModified;
-
-	bool m_hideSetting;
-	BoundaryConditionDialog* m_dialog;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/preprocessorbcdataitem_impl.h"
+#endif // _DEBUG
 
 #endif // PREPROCESSORBCDATAITEM_H

@@ -384,7 +384,6 @@ bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 	std::string zname = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(parent())->zoneName();
 	impl->m_grid->setZoneName(zname);
 	if (m_bcGroupDataItem != nullptr) {
-		m_bcGroupDataItem->setGrid(newGrid);
 		m_bcGroupDataItem->clearPoints();
 	}
 
