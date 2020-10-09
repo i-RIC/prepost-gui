@@ -63,7 +63,6 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 	if (m_projectBuildNumber > 3507) {
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 			PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
-			bcItem->setGrid(grid);
 			bcItem->loadFromCgnsFile(fn);
 		}
 	} else {
@@ -309,15 +308,5 @@ void PreProcessorBCGroupDataItem::clearPoints()
 		GraphicsWindowDataItem* item = itemCopys[i];
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
 		bcItem->clearPoints();
-	}
-}
-
-void PreProcessorBCGroupDataItem::setGrid(Grid* grid)
-{
-	std::vector<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.size(); ++i) {
-		GraphicsWindowDataItem* item = itemCopys[i];
-		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
-		bcItem->setGrid(grid);
 	}
 }

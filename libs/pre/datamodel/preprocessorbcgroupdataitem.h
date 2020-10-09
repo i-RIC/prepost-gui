@@ -25,7 +25,6 @@ public:
 	void updateBCMenu(PreProcessorBCDataItem* item);
 	void clear();
 	void clearPoints();
-	void setGrid(Grid* grid);
 	PreProcessorBCDataItem* addCondition(int index, bool hideSetting = false);
 	void renumberItemsForProject();
 	const QList<QAction*> addActions() const {return m_addActions;}
