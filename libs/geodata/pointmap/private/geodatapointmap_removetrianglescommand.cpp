@@ -21,4 +21,5 @@ void GeoDataPointmap::RemoveTrianglesCommand::apply(vtkCellArray* cellArray)
 {
 	m_pointmap->m_vtkDelaunayedPolyData->SetPolys(cellArray);
 	m_pointmap->m_vtkDelaunayedPolyData->Modified();
+	m_pointmap->rebuildQTree();
 }

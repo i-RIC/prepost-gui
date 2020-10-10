@@ -76,6 +76,9 @@
 #include <vtkUnstructuredGridWriter.h>
 #include <vtkVertex.h>
 
+#include <geos/geom/Envelope.h>
+#include <geos/index/quadtree/Quadtree.h>
+
 #include <iriclib_pointmap.h>
 
 namespace {
@@ -108,7 +111,8 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
 	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
 	lastInterpPointKnown {false},
-	m_longEdgeRemover {nullptr}
+	m_longEdgeRemover {nullptr},
+	m_qTree {nullptr}
 {
 	doubleclick = false;
 
@@ -154,6 +158,8 @@ GeoDataPointmap::~GeoDataPointmap()
 
 	vtkActorCollection* col = actorCollection();
 	col->RemoveAllItems();
+
+	delete m_qTree;
 }
 
 vtkPolyData* GeoDataPointmap::vtkGrid() const
@@ -332,6 +338,7 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 		breaklinesFile.close();
 	}
 
+	rebuildQTree();
 	updateActorSettings();
 }
 
@@ -713,6 +720,9 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 	trifree(out.trianglelist);
 	trifree(out.segmentlist);
 	trifree(out.segmentmarkerlist);
+
+	rebuildQTree();
+
 	return (! m_canceled);
 }
 
@@ -2426,6 +2436,36 @@ void GeoDataPointmap::finishInterpPoint()
 	}
 }
 
+vtkCell* GeoDataPointmap::findCell(double x, double y, double *weights)
+{
+	auto env = new geos::geom::Envelope(x, x, y, y);
+	std::vector<void*> ret;
+	m_qTree->query(env, ret);
+	delete env;
+
+	double point[3], closestPoint[3], pcoords[3], dist;
+	double bounds[6];
+	int subId;
+
+	point[0] = x;
+	point[1] = y;
+	point[2] = 0;
+
+	for (void* vptr : ret) {
+		vtkIdType cellId = reinterpret_cast<vtkIdType> (vptr);
+		m_vtkDelaunayedPolyData->GetCellBounds(cellId, bounds);
+		if (point[0] < bounds[0]) {continue;}
+		if (point[0] > bounds[1]) {continue;}
+		if (point[1] < bounds[2]) {continue;}
+		if (point[1] > bounds[3]) {continue;}
+		vtkCell* cell = m_vtkDelaunayedPolyData->GetCell(cellId);
+		if (1 == cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist, weights)) {
+			return cell;
+		}
+	}
+	return nullptr;
+}
+
 void GeoDataPointmap::doApplyOffset(double x, double y)
 {
 	vtkPoints* points = this->m_vtkDelaunayedPolyData->GetPoints();
@@ -2457,5 +2497,19 @@ void GeoDataPointmap::doApplyOffset(double x, double y)
 		}
 		points->Modified();
 		gridPoints->Modified();
+	}
+}
+
+void GeoDataPointmap::rebuildQTree()
+{
+	delete m_qTree;
+	m_qTree = new geos::index::quadtree::Quadtree();
+
+	double bounds[6];
+	for (vtkIdType i = 0; i < m_vtkDelaunayedPolyData->GetNumberOfCells(); ++i) {
+		m_vtkDelaunayedPolyData->GetCellBounds(i, bounds);
+
+		auto env = new geos::geom::Envelope(bounds[0], bounds[1], bounds[2], bounds[3]);
+		m_qTree->insert(env, reinterpret_cast<void*>(i));
 	}
 }
