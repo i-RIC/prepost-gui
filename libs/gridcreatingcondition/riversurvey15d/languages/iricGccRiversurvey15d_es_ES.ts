@@ -207,5 +207,17 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation>Numero de puntos en secciones transverales interpoladas debe ser impar. Incrementando por uno.</translation>
     </message>
+    <message>
+        <source>Position value of elevation points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from center point</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
