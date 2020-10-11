@@ -191,6 +191,7 @@ GridCreatingConditionRiverSurvey15D::GridCreatingConditionRiverSurvey15D(Project
 
 	m_lastRegionAddStartPoint = nullptr;
 	m_lastRegionAddEndPoint = nullptr;
+	m_positionMode = GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode::CenterPoint;
 
 	m_selectedZone.point = nullptr;
 	m_mouseEventMode = meNormal;
@@ -224,6 +225,7 @@ bool GridCreatingConditionRiverSurvey15D::create(QWidget* /*parent*/)
 	dialog->setData(m_riverSurvey);
 	dialog->setStartPoint(m_lastStartPoint);
 	dialog->setEndPoint(m_lastEndPoint);
+	dialog->setPositionMode(m_positionMode);
 	dialog->update();
 	m_mouseEventMode = meCreationDialog;
 	iricMainWindow()->enterModelessDialogMode();
@@ -965,10 +967,11 @@ void GridCreatingConditionRiverSurvey15D::hideCreateRegion()
 	m_createRegionActor->VisibilityOff();
 }
 
-void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end, int dataNum)
+void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end, int dataNum, GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode positionMode)
 {
 	m_lastStartPoint = start;
 	m_lastEndPoint = end;
+	m_positionMode = positionMode;
 
 	Structured15DGridWithCrossSection* grid = new Structured15DGridWithCrossSection(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
@@ -1073,9 +1076,12 @@ void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* gr
 
 void GridCreatingConditionRiverSurvey15D::appendCrossSectionToGrid(GeoDataRiverCrosssection& cs, Grid* grid, const QString& name)
 {
-	Structured15DGridWithCrossSectionCrossSection* crosssection = new Structured15DGridWithCrossSectionCrossSection(name, grid);
 	GeoDataRiverCrosssection::AltitudeList& alist = cs.AltitudeInfo();
-	double offset = alist.front().position();
+	double offset = 0;
+	if (m_positionMode == GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode::LeftBank) {
+		offset = alist.front().position();
+	}
+	Structured15DGridWithCrossSectionCrossSection* crosssection = new Structured15DGridWithCrossSectionCrossSection(name, grid);
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt;
 		alt.m_position = (*it).position() - offset;
@@ -1191,13 +1197,17 @@ void GridCreatingConditionRiverSurvey15D::setupCrosssections(Grid* grid)
 	for (int i = 0; i < groups.size(); ++i) {
 		auto g = groups[i];
 		auto cs = g->containerSet();
-
 		auto ai = point->crosssection().AltitudeInfo();
+
+		double offset = 0;
+		if (m_positionMode == GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode::LeftBank) {
+			offset = ai.begin()->position();
+		}
 		std::vector<double> x, y, zeros;
 		for (int j = 0; j < ai.size(); ++j) {
 			auto alt = ai.at(j);
 			if (! alt.active()) {continue;}
-			x.push_back(alt.position());
+			x.push_back(alt.position() - offset);
 			y.push_back(alt.height());
 			zeros.push_back(0);
 		}

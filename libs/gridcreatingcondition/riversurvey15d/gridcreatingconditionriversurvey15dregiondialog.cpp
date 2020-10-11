@@ -60,18 +60,39 @@ void GridCreatingConditionRiverSurvey15DRegionDialog::setEndPoint(GeoDataRiverPa
 	ui->endComboBox->setCurrentIndex(index - 1);
 }
 
-GeoDataRiverPathPoint* GridCreatingConditionRiverSurvey15DRegionDialog::startPoint()
+void GridCreatingConditionRiverSurvey15DRegionDialog::setPositionMode(PositionMode mode)
+{
+	if (mode == PositionMode::LeftBank) {
+		ui->positionComboBox->setCurrentIndex(0);
+	} else {
+		ui->positionComboBox->setCurrentIndex(1);
+	}
+}
+
+GeoDataRiverPathPoint* GridCreatingConditionRiverSurvey15DRegionDialog::startPoint() const
 {
 	int index = ui->startComboBox->currentIndex();
 	if (index < 0 || index > m_points.count() - 1) { return 0; }
 	return m_points.at(index);
 }
 
-GeoDataRiverPathPoint* GridCreatingConditionRiverSurvey15DRegionDialog::endPoint()
+GeoDataRiverPathPoint* GridCreatingConditionRiverSurvey15DRegionDialog::endPoint() const
 {
 	int index = ui->endComboBox->currentIndex();
 	if (index < 0 || index > m_points.count() - 2) { return 0; }
 	return m_points.at(index + 1);
+}
+
+GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode GridCreatingConditionRiverSurvey15DRegionDialog::positionMode() const
+{
+	switch (ui->positionComboBox->currentIndex()) {
+	case 0:
+		return PositionMode::LeftBank;
+		break;
+	case 1:
+		return PositionMode::CenterPoint;
+		break;
+	}
 }
 
 void GridCreatingConditionRiverSurvey15DRegionDialog::handleStartUpdate()
@@ -105,6 +126,6 @@ void GridCreatingConditionRiverSurvey15DRegionDialog::setNumberSpinBox()
 
 void GridCreatingConditionRiverSurvey15DRegionDialog::accept()
 {
-	m_condition->createGrid(startPoint(), endPoint(), ui->numberSpinBox->value());
+	m_condition->createGrid(startPoint(), endPoint(), ui->numberSpinBox->value(), positionMode());
 	QDialog::accept();
 }
