@@ -72,7 +72,7 @@ bool GridLandXmlExporter::doExport(Grid* grid, const QString& filename, const QS
 	auto pointData = vtkGrid->GetPointData();
 	for (int i = 0; i < pointData->GetNumberOfArrays(); ++i) {
 		QString name(pointData->GetArrayName(i));
-		if (name.contains("elevation", Qt::CaseInsensitive)) {
+		if (name.toLower() == "elevation") {
 			elevArray = vtkDoubleArray::SafeDownCast(pointData->GetArray(i));
 		}
 	}
