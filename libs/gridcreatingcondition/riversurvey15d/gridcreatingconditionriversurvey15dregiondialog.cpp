@@ -19,6 +19,8 @@ GridCreatingConditionRiverSurvey15DRegionDialog::GridCreatingConditionRiverSurve
 	connect(ui->startComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleStartUpdate()));
 	connect(ui->endComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleEndUpdate()));
 	connect(ui->numberSpinBox, SIGNAL(editingFinished()), this, SLOT(setNumberSpinBox()));
+
+	adjustSize();
 }
 
 GridCreatingConditionRiverSurvey15DRegionDialog::~GridCreatingConditionRiverSurvey15DRegionDialog()
