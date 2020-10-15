@@ -1,6 +1,8 @@
 #ifndef GRIDCREATINGCONDITIONRIVERSURVEY15D_H
 #define GRIDCREATINGCONDITIONRIVERSURVEY15D_H
 
+#include "gridcreatingconditionriversurvey15dregiondialog.h"
+
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 
@@ -71,7 +73,7 @@ public:
 	void handleDialogAccepted(QDialog* d);
 	void handleDialogRejected(QDialog* d);
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
-	void createGrid(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end, int dataNum);
+	void createGrid(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end, int dataNum, GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode positionMode);
 	void selectCreateRegion(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end);
 	bool checkCtrlPointsRegion(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end);
 
@@ -150,6 +152,7 @@ private:
 
 	GeoDataRiverPathPoint* m_lastRegionAddStartPoint;
 	GeoDataRiverPathPoint* m_lastRegionAddEndPoint;
+	GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode m_positionMode;
 
 	QAction* m_createAction;
 	QAction* m_switchAction;
