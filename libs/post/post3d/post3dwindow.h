@@ -7,6 +7,7 @@
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <postbase/autoparticlewindowi.h>
 #include <postbase/particleexportwindowi.h>
 
 class QAction;
@@ -22,7 +23,8 @@ class Post3dWindow :
 	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
 	public ParticleExportWindowI,
-	public BackgroundColorEditVtkInterface
+	public BackgroundColorEditVtkInterface,
+	public AutoParticleWindowI
 {
 	Q_OBJECT
 
@@ -45,6 +47,7 @@ public:
 	int index() {return m_index;}
 	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename) override;
 	QList<QString> particleDrawingZones() override;
+	bool isAutoParticleOutput() const override;
 	bool hasTransparentPart();
 
 public slots:
