@@ -6,9 +6,10 @@
 #include "../project/projectmainfile.h"
 
 #include <QWidget>
-#include <QVector2D>
 
 class ProjectData;
+
+class QPointF;
 
 namespace Ui
 {
@@ -26,7 +27,7 @@ public:
 	void setProjectData(ProjectData* data);
 
 public slots:
-	void updatePosition(const QVector2D& position);
+	void updatePosition(const QPointF& position);
 	void clear();
 
 private:

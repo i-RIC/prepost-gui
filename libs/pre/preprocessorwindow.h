@@ -113,7 +113,7 @@ public slots:
 
 signals:
 	void additionalMenusUpdated(const QList<QMenu*>& menus);
-	void worldPositionChangedForStatusBar(const QVector2D& pos);
+	void worldPositionChangedForStatusBar(const QPointF& pos);
 
 private:
 	void init();

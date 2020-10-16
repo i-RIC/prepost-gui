@@ -666,7 +666,7 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 		pre->informUnfocusRiverCrosssectionWindows();
 	}
 	m_mousePositionWidget->clear();
-	connect(innerWindow, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), m_mousePositionWidget, SLOT(updatePosition(QVector2D)));
+	connect(innerWindow, SIGNAL(worldPositionChangedForStatusBar(QPointF)), m_mousePositionWidget, SLOT(updatePosition(QPointF)));
 	m_actionManager->informSubWindowChange(innerWindow);
 }
 
