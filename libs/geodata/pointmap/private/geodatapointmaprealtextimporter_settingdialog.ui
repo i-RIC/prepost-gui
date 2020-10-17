@@ -60,7 +60,7 @@
       <item>
        <widget class="QRadioButton" name="customRadioButton">
         <property name="text">
-         <string>Custom delimitered text</string>
+         <string>Custom delimited text</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -217,7 +217,7 @@
         <item>
          <widget class="TooltipLabel" name="escapeHelpLabel">
           <property name="toolTip">
-           <string>The character to escape quote character in quoted text. You can specify only one character.</string>
+           <string>The character to escape quote characters in quoted text. You can specify only one character.</string>
           </property>
           <property name="text">
            <string/>
@@ -415,7 +415,7 @@
       <item>
        <widget class="TooltipLabel" name="skipRateHelpLabel">
         <property name="toolTip">
-         <string>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</string>
+         <string>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</string>
         </property>
         <property name="text">
          <string/>
