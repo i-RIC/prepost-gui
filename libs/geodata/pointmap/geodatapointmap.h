@@ -207,8 +207,6 @@ protected:
 	vtkSmartPointer<vtkPolyDataMapper> m_pointsMapper;
 	vtkSmartPointer<vtkLODActor> m_pointsActor;
 
-	double m_newPointValue;
-
 	vtkSmartPointer<vtkPolyData> m_selectedVerticesGrid;
 	vtkSmartPointer<vtkPolyDataMapper> m_selectedMapper;
 	vtkSmartPointer<vtkActor> m_selectedActor;

@@ -2308,7 +2308,7 @@ void GeoDataPointmap::finishAddPoint()
 			newPoints.erase(newPoints.begin());
 			std::vector<double> vals;
 			for (int i = 0; i < newPoints.size(); ++i) {
-				vals.push_back(m_newPointValue);
+				vals.push_back(val);
 			}
 			iRICUndoStack::instance().clear(); // to avoid crash while undoing
 			pushRenderCommand(new AddPointsCommand(newPoints, vals, this));
