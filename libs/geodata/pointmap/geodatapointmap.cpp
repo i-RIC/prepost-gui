@@ -2318,6 +2318,7 @@ void GeoDataPointmap::finishAddPoint()
 	m_interpolateValues.clear();
 	m_interpolateNewFlags.clear();
 	m_mouseEventMode = meNormal;
+	updateActionStatus();
 }
 
 void GeoDataPointmap::finishInterpPoint()
