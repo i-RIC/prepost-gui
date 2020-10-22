@@ -147,7 +147,7 @@ private:
 	void buildGridFromPolydata();
 	void updateActionStatus();
 	void updateMouseEventMode();
-	bool isVertexSelectable(const QVector2D& pos);
+	bool isVertexSelectable(const QPointF& pos);
 	int m_selectedVertexId;
 	double m_selectedZPos;
 	bool m_canceled;

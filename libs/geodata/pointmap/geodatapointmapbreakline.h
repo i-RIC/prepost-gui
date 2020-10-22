@@ -27,7 +27,7 @@ public:
 	GeoDataPointmapBreakLine(GeoDataPointmap* parent);
 	~GeoDataPointmapBreakLine();
 
-	bool isEdgeSelectable(const QVector2D& pos, double distlimit);
+	bool isEdgeSelectable(const QPointF& pos, double distlimit);
 
 	const QVector<QPointF> polyLine() const;
 	const QVector<vtkIdType>& vertexIndices() const {return m_vertexIndices;}

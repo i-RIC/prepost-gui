@@ -1640,7 +1640,7 @@ void GeoDataPointmap::updateMouseEventMode()
 	dx = m_mouseMovePoint.x();
 	dy = m_mouseMovePoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
-	QVector2D worldPos(dx, dy);
+	QPointF worldPos(dx, dy);
 	double tmppos[3] = {dx, dy, 0};
 	switch (m_mouseEventMode) {
 	case meNormal:
@@ -1702,16 +1702,16 @@ void GeoDataPointmap::updateMouseEventMode()
 	}
 }
 
-bool GeoDataPointmap::isVertexSelectable(const QVector2D& pos)
+bool GeoDataPointmap::isVertexSelectable(const QPointF& pos)
 {
 	double point2[3] = {pos.x(), pos.y(), 0.0};
 	m_selectedVertexId = m_vtkPointLocator->FindClosestPoint(point2);
 	double point[3];
 	m_vtkGrid->GetPoint(m_selectedVertexId, point);
 	m_selectedZPos = m_vtkGrid->GetPointData()->GetArray(VALUES)->GetTuple1(m_selectedVertexId);
-	QVector2D vertexPos(point[0], point[1]);
+	QPointF vertexPos(point[0], point[1]);
 	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
-	double dist = (vertexPos - pos).length();
+	double dist = iRIC::distance(pos, vertexPos);
 	return (dist < limitdist);
 }
 
