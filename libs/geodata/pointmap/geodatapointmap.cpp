@@ -138,7 +138,7 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	setupActions();
 
 	m_activeBreakLine = 0;
-	this->selectionModePoint(true);
+	selectionModePoint(true);
 
 	m_pointSize = 3;
 	m_needRemeshing = false;
@@ -806,7 +806,7 @@ void GeoDataPointmap::setupActors()
 
 	m_selectedMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_selectedMapper->SetScalarVisibility(false);
-	m_selectedMapper->SetInputData(this->m_selectedVerticesGrid);
+	m_selectedMapper->SetInputData(m_selectedVerticesGrid);
 	m_selectedMapper->ImmediateModeRenderingOn();
 
 	m_selectedActor = vtkSmartPointer<vtkActor>::New();
@@ -841,24 +841,24 @@ void GeoDataPointmap::setupMenu()
 	m_menu->setTitle(tr("P&ointset Data"));
 	m_menu->addAction(m_editNameAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_selectionModePolygon);
+	m_menu->addAction(m_selectionModePolygon);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_editPointsAction);
-	m_menu->addAction(this->m_editPointsExportAction);
+	m_menu->addAction(m_editPointsAction);
+	m_menu->addAction(m_editPointsExportAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_addPointAction);
-	m_menu->addAction(this->m_interpolatePointAction);
+	m_menu->addAction(m_addPointAction);
+	m_menu->addAction(m_interpolatePointAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_editPointsDeleteAction);
-	m_menu->addAction(this->m_editPointsLessThanAction);
-	m_menu->addAction(this->m_editPointsGreaterThanAction);
+	m_menu->addAction(m_editPointsDeleteAction);
+	m_menu->addAction(m_editPointsLessThanAction);
+	m_menu->addAction(m_editPointsGreaterThanAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_addBreakLineAction);
-	m_menu->addAction(this->m_removeBreakLineAction);
-	m_menu->addAction(this->m_removeAllBreakLinesAction);
+	m_menu->addAction(m_addBreakLineAction);
+	m_menu->addAction(m_removeBreakLineAction);
+	m_menu->addAction(m_removeAllBreakLinesAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_remeshAction);
-	m_menu->addAction(this->m_removeTrianglesWithLongEdgeAction);
+	m_menu->addAction(m_remeshAction);
+	m_menu->addAction(m_removeTrianglesWithLongEdgeAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_mergeAction);
 	m_menu->addSeparator();
@@ -867,24 +867,24 @@ void GeoDataPointmap::setupMenu()
 	m_menu->addAction(deleteAction());
 
 	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(this->m_selectionModePolygon);
+	m_rightClickingMenu->addAction(m_selectionModePolygon);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_editPointsAction);
-	m_rightClickingMenu->addAction(this->m_editPointsExportAction);
+	m_rightClickingMenu->addAction(m_editPointsAction);
+	m_rightClickingMenu->addAction(m_editPointsExportAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_addPointAction);
-	m_rightClickingMenu->addAction(this->m_interpolatePointAction);
+	m_rightClickingMenu->addAction(m_addPointAction);
+	m_rightClickingMenu->addAction(m_interpolatePointAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_editPointsDeleteAction);
-	m_rightClickingMenu->addAction(this->m_editPointsLessThanAction);
-	m_rightClickingMenu->addAction(this->m_editPointsGreaterThanAction);
+	m_rightClickingMenu->addAction(m_editPointsDeleteAction);
+	m_rightClickingMenu->addAction(m_editPointsLessThanAction);
+	m_rightClickingMenu->addAction(m_editPointsGreaterThanAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_addBreakLineAction);
-	m_rightClickingMenu->addAction(this->m_removeBreakLineAction);
-	m_rightClickingMenu->addAction(this->m_removeAllBreakLinesAction);
+	m_rightClickingMenu->addAction(m_addBreakLineAction);
+	m_rightClickingMenu->addAction(m_removeBreakLineAction);
+	m_rightClickingMenu->addAction(m_removeAllBreakLinesAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_remeshAction);
-	m_rightClickingMenu->addAction(this->m_removeTrianglesWithLongEdgeAction);
+	m_rightClickingMenu->addAction(m_remeshAction);
+	m_rightClickingMenu->addAction(m_removeTrianglesWithLongEdgeAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_mergeAction);
 	m_rightClickingMenu->addSeparator();
@@ -898,11 +898,11 @@ bool GeoDataPointmap::addToolBarButtons(QToolBar* tb)
 	tb->addAction(m_selectionModePoint);
 	tb->addAction(m_selectionModePolygon);
 	tb->addSeparator();
-	tb->addAction(this->m_addPointAction);
-	tb->addAction(this->m_interpolatePointAction);
+	tb->addAction(m_addPointAction);
+	tb->addAction(m_interpolatePointAction);
 	tb->addSeparator();
-	tb->addAction(this->m_addBreakLineAction);
-	tb->addAction(this->m_removeBreakLineAction);
+	tb->addAction(m_addBreakLineAction);
+	tb->addAction(m_removeBreakLineAction);
 	return true;
 }
 
@@ -1288,13 +1288,13 @@ void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 		definePolygon(true, xOr);
 
 	} else if (m_mouseEventMode == meSMAddCtrlPoint) {
-		this->finishAddPoint();
-	} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
-		this->finishInterpPoint();
+		finishAddPoint();
+	} else if (m_mouseEventMode == meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
+		finishInterpPoint();
 	} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 		pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
 	}
-	this->updateMouseCursor(v);
+	updateMouseCursor(v);
 }
 void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
@@ -1323,7 +1323,7 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 			definePolygon(false, xOr);
 		} else if (m_mouseEventMode == meSMAddCtrlPoint) {
 			finishAddPoint();
-		} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
+		} else if (m_mouseEventMode == meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 			finishInterpPoint();
 		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 			pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
@@ -1532,18 +1532,18 @@ void GeoDataPointmap::selectPointsInsidePolygon(bool xOr)
 	m_selectedVerticesGrid->Reset();
 	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
 
-	for (int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
+	for (int i = 0; i < m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
 		double x[3];
-		this->m_selectedVerticesGrid->GetPoint(i, x);
+		m_selectedVerticesGrid->GetPoint(i, x);
 		bool inside = m_selectionPolygonController.isAreaSelectable(QPointF(x[0], x[1]));
 		if (inside || oldSelectedVertices.contains(i)) {
 			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
 			v->GetPointIds()->SetId(0, i);
-			this->m_selectedVerticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
+			m_selectedVerticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
 		}
 	}
-	this->m_selectedVerticesGrid->Modified();
-	this->enablePointSelectedActions(true);
+	m_selectedVerticesGrid->Modified();
+	enablePointSelectedActions(true);
 }
 void GeoDataPointmap::selectionModePoint(bool on)
 {
@@ -1557,7 +1557,7 @@ void GeoDataPointmap::selectionModePoint(bool on)
 
 void GeoDataPointmap::selectionModePolygon(bool on)
 {
-	this->clearPointsSelection();
+	clearPointsSelection();
 
 	if (on) {
 		m_mouseEventMode = meSMPolygonPrepare;
@@ -1569,47 +1569,47 @@ void GeoDataPointmap::selectionModePolygon(bool on)
 
 void GeoDataPointmap::updateActionStatus()
 {
-	this->m_selectionModePoint->setDisabled(true);
-	this->m_selectionModePoint->setChecked(false);
+	m_selectionModePoint->setDisabled(true);
+	m_selectionModePoint->setChecked(false);
 
-	this->m_selectionModePolygon->setDisabled(true);
-	this->m_selectionModePolygon->setChecked(false);
+	m_selectionModePolygon->setDisabled(true);
+	m_selectionModePolygon->setChecked(false);
 
-	this->m_addPointAction->setDisabled(true);
-	this->m_addPointAction->setChecked(false);
+	m_addPointAction->setDisabled(true);
+	m_addPointAction->setChecked(false);
 
-	this->m_interpolatePointAction->setDisabled(true);
-	this->m_interpolatePointAction->setChecked(false);
+	m_interpolatePointAction->setDisabled(true);
+	m_interpolatePointAction->setChecked(false);
 
-	this->m_addBreakLineAction->setDisabled(true);
-	this->m_addBreakLineAction->setChecked(false);
+	m_addBreakLineAction->setDisabled(true);
+	m_addBreakLineAction->setChecked(false);
 
-	this->m_removeBreakLineAction->setDisabled(true);
-	this->m_removeBreakLineAction->setChecked(false);
+	m_removeBreakLineAction->setDisabled(true);
+	m_removeBreakLineAction->setChecked(false);
 
-	this->m_removeAllBreakLinesAction->setDisabled(true);
-	this->m_removeAllBreakLinesAction->setChecked(false);
+	m_removeAllBreakLinesAction->setDisabled(true);
+	m_removeAllBreakLinesAction->setChecked(false);
 
 	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
-		this->m_selectionModePoint->setEnabled(true);
-		this->m_selectionModePoint->setChecked(true);
+		m_selectionModePoint->setEnabled(true);
+		m_selectionModePoint->setChecked(true);
 
-		this->m_selectionModePolygon->setEnabled(true);
-		this->m_addPointAction->setEnabled(true);
-		this->m_interpolatePointAction->setEnabled(true);
-		this->m_addBreakLineAction->setEnabled(true);
-		this->m_addBreakLineAction->setEnabled(true);
-		this->m_removeBreakLineAction->setEnabled(true);
-		this->m_removeAllBreakLinesAction->setEnabled(true);
+		m_selectionModePolygon->setEnabled(true);
+		m_addPointAction->setEnabled(true);
+		m_interpolatePointAction->setEnabled(true);
+		m_addBreakLineAction->setEnabled(true);
+		m_addBreakLineAction->setEnabled(true);
+		m_removeBreakLineAction->setEnabled(true);
+		m_removeAllBreakLinesAction->setEnabled(true);
 		break;
 	case meSMPolygonPrepare:
 	case meSMPolygon:
-		this->m_selectionModePoint->setEnabled(false);
+		m_selectionModePoint->setEnabled(false);
 
-		this->m_selectionModePolygon->setEnabled(true);
-		this->m_selectionModePolygon->setChecked(true);
+		m_selectionModePolygon->setEnabled(true);
+		m_selectionModePolygon->setChecked(true);
 		break;
 	case meSMInterpPoint:
 		m_interpolatePointAction->setEnabled(true);
@@ -1621,13 +1621,13 @@ void GeoDataPointmap::updateActionStatus()
 		break;
 	case meBreakLineAdd:
 	case meBreakLineAddNotPossible:
-		this->m_addBreakLineAction->setEnabled(true);
-		this->m_addBreakLineAction->setChecked(true);
+		m_addBreakLineAction->setEnabled(true);
+		m_addBreakLineAction->setChecked(true);
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
-		this->m_removeBreakLineAction->setEnabled(true);
-		this->m_removeBreakLineAction->setChecked(true);
+		m_removeBreakLineAction->setEnabled(true);
+		m_removeBreakLineAction->setChecked(true);
 		break;
 	default:
 		break;
@@ -1679,7 +1679,7 @@ void GeoDataPointmap::updateMouseEventMode()
 	case meBreakLineAdd:
 	case meBreakLineAddNotPossible:
 		m_mouseEventMode = meBreakLineAddNotPossible;
-		m_selectedVertexId = this->m_vtkPointLocator->FindClosestPoint(tmppos);
+		m_selectedVertexId = m_vtkPointLocator->FindClosestPoint(tmppos);
 		m_mouseEventMode = meBreakLineAdd;
 		pushRenderCommand(new BreakLineAddPointCommand(true, m_selectedVertexId, this));
 		break;
@@ -1717,7 +1717,7 @@ bool GeoDataPointmap::isVertexSelectable(const QVector2D& pos)
 
 void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (this->m_mouseEventMode) {
+	switch (m_mouseEventMode) {
 	case meNormal:
 		v->setCursor(Qt::ArrowCursor);
 		break;
@@ -1734,7 +1734,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meSMInterpPointPrepare:
-		v->setCursor(this->m_interpPointAddCursor);
+		v->setCursor(m_interpPointAddCursor);
 		break;
 	case meSMInterpCtrlPoint:
 		v->setCursor(Qt::CrossCursor);
@@ -1746,7 +1746,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meSMAddPointPrepare:
-		v->setCursor(this->m_interpPointAddCursor);
+		v->setCursor(m_interpPointAddCursor);
 		break;
 	case meSMAddCtrlPoint:
 		v->setCursor(Qt::CrossCursor);
@@ -1755,13 +1755,13 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meBreakLineAdd:
-		v->setCursor(this->m_addCursor);
+		v->setCursor(m_addCursor);
 		break;
 	case meBreakLineRemoveNotPossible:
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meBreakLineRemove:
-		v->setCursor(this->m_removeCursor);
+		v->setCursor(m_removeCursor);
 		break;
 	default:
 		break;
@@ -1911,7 +1911,7 @@ void GeoDataPointmap::editPointsDelete()
 		return;
 	}
 	pushRenderCommand(new DeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
-	this->clearPointsSelection();
+	clearPointsSelection();
 }
 
 void GeoDataPointmap::editPointsExport()
@@ -1931,9 +1931,9 @@ void GeoDataPointmap::editPointsExport()
 	outs.setRealNumberNotation(QTextStream::SmartNotation);
 	outs.setRealNumberPrecision(10);
 
-	outs << this->m_selectedVerticesGrid->GetNumberOfCells() << endl;
-	vtkPoints* points = this->m_vtkGrid->GetPoints();
-	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(this->m_vtkGrid->GetPointData()->GetArray(VALUES));
+	outs << m_selectedVerticesGrid->GetNumberOfCells() << endl;
+	vtkPoints* points = m_vtkGrid->GetPoints();
+	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(m_vtkGrid->GetPointData()->GetArray(VALUES));
 	double v[3], val;
 	vtkIdType* pts = 0, npts2;
 	m_selectedVerticesGrid->GetVerts()->InitTraversal();
@@ -2527,8 +2527,8 @@ void GeoDataPointmap::finishInterpPoint()
 
 void GeoDataPointmap::doApplyOffset(double x, double y)
 {
-	vtkPoints* points = this->m_vtkDelaunayedPolyData->GetPoints();
-	vtkPoints* gridPoints = this->m_vtkGrid->GetPoints();
+	vtkPoints* points = m_vtkDelaunayedPolyData->GetPoints();
+	vtkPoints* gridPoints = m_vtkGrid->GetPoints();
 	if (points == gridPoints) {
 		// opened file was (projectData()->version().build() >= 3607)
 		// see GeoDataPointmap::loadExternalData
