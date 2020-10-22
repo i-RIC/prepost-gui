@@ -52,6 +52,7 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 	file_preview.close();
 
 	SettingDialog dialog(w);
+	dialog.setFileName(QDir::toNativeSeparators(filename()));
 	dialog.setIsCsv(filename().contains(".csv"));
 	dialog.setPreviewData(lines);
 

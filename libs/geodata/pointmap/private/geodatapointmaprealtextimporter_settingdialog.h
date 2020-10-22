@@ -20,6 +20,7 @@ public:
 	explicit SettingDialog(QWidget *parent = nullptr);
 	~SettingDialog();
 
+	void setFileName(const QString& fileName);
 	void setIsCsv(bool isCsv);
 	void setPreviewData(const std::vector<QByteArray>& data);
 

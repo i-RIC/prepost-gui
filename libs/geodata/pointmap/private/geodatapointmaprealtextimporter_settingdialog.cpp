@@ -47,6 +47,11 @@ GeoDataPointmapRealTextImporter::SettingDialog::~SettingDialog()
 	delete ui;
 }
 
+void GeoDataPointmapRealTextImporter::SettingDialog::setFileName(const QString& fileName)
+{
+	ui->fileNameValueLabel->setText(fileName);
+}
+
 void GeoDataPointmapRealTextImporter::SettingDialog::setIsCsv(bool isCsv)
 {
 	if (isCsv) {
