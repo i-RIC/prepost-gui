@@ -270,25 +270,27 @@ void GeoDataPointmapRealTextImporter::SettingDialog::autoDetectDelimiters()
 
 QStringList GeoDataPointmapRealTextImporter::SettingDialog::getFields(LineParser *parser) const
 {
-	QString firstLine;
-	if (m_previewData.size() > 0) {
-		firstLine = m_previewData.at(0);
-	}
+
 	bool ok;
 	QString error;
-
-	QStringList fields;
-
-	auto frags = parser->parseToStrs(firstLine, &ok, &error);
+	QString line;
 
 	if (ui->fieldNameCheckBox->isChecked()) {
-		fields = frags;
+		if (m_previewData.size() > 0) {
+			line = m_previewData.at(0);
+		}
+		return parser->parseToStrs(line, &ok, &error);
 	} else {
+		if (m_previewData.size() > ui->headerLinesSpinBox->value())
+		line = m_previewData.at(ui->headerLinesSpinBox->value());
+		auto frags = parser->parseToStrs(line, &ok, &error);
+
+		QStringList fields;
 		for (int i = 0; i < frags.size(); ++i) {
 			fields.append(QString("field%1").arg(i + 1));
 		}
+		return fields;
 	}
-	return fields;
 }
 
 std::vector<QByteArray> GeoDataPointmapRealTextImporter::SettingDialog::getDataLinesForPreview() const
