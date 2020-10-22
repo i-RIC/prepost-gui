@@ -1686,8 +1686,8 @@ void GeoDataPointmap::updateMouseEventMode()
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
 		m_mouseEventMode = meBreakLineRemoveNotPossible;
-		if (m_activeBreakLine != 0) {m_activeBreakLine->setActive(false);}
-		m_activeBreakLine = 0;
+		if (m_activeBreakLine != nullptr) {m_activeBreakLine->setActive(false);}
+		m_activeBreakLine = nullptr;
 		for (int i = 0; i < m_breakLines.count(); ++i) {
 			GeoDataPointmapBreakLine* breakLine = m_breakLines[i];
 			if (breakLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
