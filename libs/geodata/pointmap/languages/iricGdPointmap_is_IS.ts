@@ -436,10 +436,6 @@
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
-        <source>CSV, text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -503,6 +499,10 @@
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -520,10 +520,6 @@
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom delimitered text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -579,10 +575,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Record options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,7 +615,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <source>Custom delimited text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

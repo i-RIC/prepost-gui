@@ -477,7 +477,7 @@
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>CSV, text</source>
-        <translation>CSV、テキスト</translation>
+        <translation type="vanished">CSV、テキスト</translation>
     </message>
     <message>
         <source>Error</source>
@@ -551,6 +551,14 @@
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation>&quot;%1&quot; の値を読み込めませんでした。 &quot;%1&quot; の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV etc)</source>
+        <translation type="vanished">テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation>テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -572,7 +580,7 @@
     </message>
     <message>
         <source>Custom delimitered text</source>
-        <translation>カスタム区切り</translation>
+        <translation type="vanished">カスタム区切り</translation>
     </message>
     <message>
         <source>Delimiters</source>
@@ -628,7 +636,7 @@
     </message>
     <message>
         <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+        <translation type="vanished">クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
     </message>
     <message>
         <source>Record options</source>
@@ -676,7 +684,23 @@
     </message>
     <message>
         <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <translation type="vanished">ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>Custom delimited text</source>
+        <translation>カスタム区切り</translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
         <translation>ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>File name:</source>
+        <translation>ファイル名:</translation>
     </message>
 </context>
 <context>
