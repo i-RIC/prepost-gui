@@ -7,6 +7,7 @@
 #include "geodatapointmapdelptslessthandialog.h"
 #include "geodatapointmapeditptsdialog.h"
 #include "geodatapointmapinterpolatepointsdialog.h"
+#include "geodatapointmapmergesettingdialog.h"
 #include "geodatapointmaprepresentationdialog.h"
 #include "private/geodatapointmap_addpointscommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
@@ -28,6 +29,7 @@
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -35,8 +37,9 @@
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/lastiodirectory.h>
-#include <misc/stringtool.h>
 #include <misc/mathsupport.h>
+#include <misc/qpointfcompare.h>
+#include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 #include <misc/zdepthrange.h>
 #include <triangle/triangle.h>
@@ -77,6 +80,8 @@
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
+
+#include <set>
 
 namespace {
 
@@ -855,6 +860,8 @@ void GeoDataPointmap::setupMenu()
 	m_menu->addAction(this->m_remeshAction);
 	m_menu->addAction(this->m_removeTrianglesWithLongEdgeAction);
 	m_menu->addSeparator();
+	m_menu->addAction(m_mergeAction);
+	m_menu->addSeparator();
 	m_menu->addAction(m_displaySettingAction);
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
@@ -878,6 +885,8 @@ void GeoDataPointmap::setupMenu()
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(this->m_remeshAction);
 	m_rightClickingMenu->addAction(this->m_removeTrianglesWithLongEdgeAction);
+	m_rightClickingMenu->addSeparator();
+	m_rightClickingMenu->addAction(m_mergeAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_displaySettingAction);
 	m_rightClickingMenu->addSeparator();
@@ -1111,6 +1120,9 @@ void GeoDataPointmap::setupActions()
 
 	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles &with Long edge..."), this);
 	connect(m_removeTrianglesWithLongEdgeAction, SIGNAL(triggered()), this, SLOT(removeTrianglesWithLongEdgeStart()));
+
+	m_mergeAction = new QAction(tr("Merge..."), this);
+	connect(m_mergeAction, SIGNAL(triggered()), this, SLOT(mergePointmaps()));
 }
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
@@ -1985,6 +1997,93 @@ void GeoDataPointmap::editPointsGreaterThan()
 	}
 	pushRenderCommand(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
 	clearPointsSelection();
+}
+
+void GeoDataPointmap::mergePointmaps()
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent());
+	std::vector<PreProcessorGeoDataDataItemInterface*> dataToMerge;
+
+	for (auto item : gItem->childItems()) {
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (item);
+		auto geoData = p->geoData();
+		if (geoData == this) {continue;}
+
+		if (dynamic_cast<GeoDataPointmap*> (geoData) != nullptr) {
+			dataToMerge.push_back(p);
+		}
+	}
+	if (dataToMerge.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("There is no other data to merge in \"%1\" group.").arg(gItem->condition()->caption()));
+		return;
+	}
+
+	GeoDataPointmapMergeSettingDialog dialog(preProcessorWindow());
+	dialog.setItems(dataToMerge);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	dataToMerge = dialog.selectedItems();
+
+	std::set<QPointF, QPointFCompare> pointSet;
+
+	// insert points in this data to pointSet first
+	auto myPoints = m_vtkGrid->GetPoints();
+	auto myValues = vtkDoubleArray::SafeDownCast(m_vtkGrid->GetPointData()->GetArray(VALUES));
+	auto myVerts = m_vtkGrid->GetVerts();
+
+	double v[3];
+	for (vtkIdType i = 0; i < myPoints->GetNumberOfPoints(); ++i) {
+		myPoints->GetPoint(i, v);
+		pointSet.insert(QPointF(v[0], v[1]));
+	}
+
+	auto duplicatePoints = 0;
+	for (auto item : dataToMerge) {
+		auto geoData = item->geoData();
+		auto pointMap = dynamic_cast<GeoDataPointmap*> (geoData);
+
+		auto points = pointMap->m_vtkGrid->GetPoints();
+		auto vals = vtkDoubleArray::SafeDownCast(pointMap->m_vtkGrid->GetPointData()->GetArray(VALUES));
+
+		double val;
+		vtkIdType vId;
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+			points->GetPoint(i, v);
+			val = vals->GetValue(i);
+			QPointF p(v[0], v[1]);
+			auto it = pointSet.find(p);
+			if (it != pointSet.end()) {
+				++ duplicatePoints;
+				continue;
+			}
+			vId = myPoints->GetNumberOfPoints();
+
+			myPoints->InsertNextPoint(v);
+			myValues->InsertNextValue(val);
+			myVerts->InsertNextCell(1, &vId);
+			pointSet.insert(p);
+		}
+
+		item->setDeleteSilently(true);
+		delete item;
+	}
+	m_vtkGrid->Modified();
+	myPoints->Modified();
+	myValues->Modified();
+	myVerts->Modified();
+
+	doDelaunay();
+	updateActorSettings();
+	renderGraphicsView();
+
+	if (duplicatePoints > 0) {
+		QMessageBox::information(preProcessorWindow(), tr("Information"), tr("%1 duplicate points were found in merge targets, and omitted.").arg(duplicatePoints));
+	}
+
+	// merge operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void GeoDataPointmap::clearPointsSelection()

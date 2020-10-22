@@ -172,6 +172,8 @@ private slots:
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
 
+	void mergePointmaps();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -244,6 +246,7 @@ protected:
 	QAction* m_addBreakLineAction;
 	QAction* m_removeBreakLineAction;
 	QAction* m_removeAllBreakLinesAction;
+	QAction* m_mergeAction;
 
 	QMenu*   m_rightClickingMenu;
 

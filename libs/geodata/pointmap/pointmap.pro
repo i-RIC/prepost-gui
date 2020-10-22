@@ -101,6 +101,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaplandxmlexporter.h \
            geodatapointmaplandxmlimporter.h \
            geodatapointmapmappingmode.h \
+           geodatapointmapmergesettingdialog.h \
            geodatapointmapnodemappert.h \
            geodatapointmaprealcreator.h \
            geodatapointmaprealexporter.h \
@@ -143,6 +144,7 @@ FORMS += geodatapointmapdelptsgreaterthandialog.ui \
          geodatapointmapdelptslessthandialog.ui \
          geodatapointmapeditptsdialog.ui \
          geodatapointmapinterpolatepointsdialog.ui \
+         geodatapointmapmergesettingdialog.ui \
          geodatapointmaprealimporterfilterdialog.ui \
          geodatapointmaprepresentationdialog.ui \
          geodatapointmapwebimporterregionselectdialog.ui \
@@ -158,6 +160,7 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmaplandxmlexporter.cpp \
            geodatapointmaplandxmlimporter.cpp \
            geodatapointmapmappingmode.cpp \
+           geodatapointmapmergesettingdialog.cpp \
            geodatapointmaprealcreator.cpp \
            geodatapointmaprealexporter.cpp \
            geodatapointmaprealimporter.cpp \
