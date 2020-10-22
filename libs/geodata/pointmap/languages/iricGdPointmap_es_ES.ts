@@ -36,7 +36,7 @@
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation>Seleccionar Punto de Referencia</translation>
+        <translation type="vanished">Seleccionar Punto de Referencia</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation>Anadir Nueva Seleccion de Punto de Poligono</translation>
+        <translation type="vanished">Anadir Nueva Seleccion de Punto de Poligono</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -238,16 +238,44 @@
         <source>Remove triangles with long edge</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Merge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 duplicate points were found in merge targets, and omitted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Points</source>
+        <translation type="unfinished">Anadir Puntos</translation>
+    </message>
+    <message>
+        <source>Values of new points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
-        <translation>Anadir Puntos</translation>
+        <translation type="vanished">Anadir Puntos</translation>
     </message>
     <message>
         <source>Value of new points:</source>
-        <translation>Valor de Puntos Nuevos:</translation>
+        <translation type="vanished">Valor de Puntos Nuevos:</translation>
     </message>
 </context>
 <context>
@@ -316,7 +344,7 @@
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
@@ -324,11 +352,34 @@
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation>Longitud de Linea de Interpolacion:</translation>
+        <translation type="vanished">Longitud de Linea de Interpolacion:</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
-        <translation>Establecer Incremento de Interpolacion:</translation>
+        <translation type="vanished">Establecer Incremento de Interpolacion:</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -366,6 +417,25 @@
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -846,11 +916,11 @@
     <name>QObject</name>
     <message>
         <source>Add Points</source>
-        <translation>Anadir Puntos</translation>
+        <translation type="vanished">Anadir Puntos</translation>
     </message>
     <message>
         <source>Add Interpolation Pts</source>
-        <translation>Anadir Puntos de Interpolacion</translation>
+        <translation type="vanished">Anadir Puntos de Interpolacion</translation>
     </message>
 </context>
 </TS>
