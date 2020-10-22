@@ -32,7 +32,7 @@ bool operator <(const QPointF& a, const QPointF& b) {
 }
 
 GeoDataPointmapRealTextImporter::GeoDataPointmapRealTextImporter(GeoDataCreator* creator) :
-	GeoDataImporter("text", tr("CSV, text"), creator)
+	GeoDataImporter("text", tr("Text files (CSV, TSV, etc.)"), creator)
 {}
 
 bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, QWidget *w)
