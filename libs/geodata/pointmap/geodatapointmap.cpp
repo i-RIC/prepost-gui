@@ -2310,6 +2310,7 @@ void GeoDataPointmap::finishAddPoint()
 			for (int i = 0; i < newPoints.size(); ++i) {
 				vals.push_back(m_newPointValue);
 			}
+			iRICUndoStack::instance().clear(); // to avoid crash while undoing
 			pushRenderCommand(new AddPointsCommand(newPoints, vals, this));
 		}
 	}
@@ -2415,6 +2416,7 @@ void GeoDataPointmap::finishInterpPoint()
 			for (int i = 0; i < xpoint.size(); ++i) {
 				points.push_back(QPointF(xpoint.at(i), ypoint.at(i)));
 			}
+			iRICUndoStack::instance().clear(); // to avoid crash while undoing
 			pushRenderCommand(new AddPointsCommand(points, values, this));
 		}
 		m_interpolatePointsController.clear();
