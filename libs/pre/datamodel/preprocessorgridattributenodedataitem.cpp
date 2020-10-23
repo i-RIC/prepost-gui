@@ -31,6 +31,7 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/tpoexporter.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
@@ -455,28 +456,24 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 	if (fname == "") { return; }
 
 	try {
-		QFile file(fname);
-		if (! file.open(QFile::WriteOnly | QFile::Text)) {
+		TpoExporter exporter(mainWindow());
+		if (! exporter.open(fname)) {
 			throw ErrorMessage(tr("Error occured while opening the file."));
 		}
-		QTextStream stream(&file);
-		stream.setRealNumberPrecision(DBL_DIG);
+		exporter.setOffset(offset());
 
 		PreProcessorGridDataItem* gitem =  dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 		vtkPointSet* vtkGrid = gitem->grid()->vtkGrid();
 		vtkDataArray* da = vtkGrid->GetPointData()->GetArray(m_condition->name().c_str());
-		// output datacount;
-		stream << vtkGrid->GetNumberOfPoints() << endl;
 
 		// output values
-		auto offset = this->offset();
 		for (vtkIdType i = 0; i < vtkGrid->GetNumberOfPoints(); ++i) {
 			double x[3];
 			vtkGrid->GetPoint(i, x);
 			double val = da->GetVariantValue(i).ToDouble();
-			stream << x[0] + offset.x() << " " << x[1] + offset.y() << " " << val << endl;
+			exporter.addPoint(x[0], x[1], val);
 		}
-		file.close();
+		exporter.close();
 		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
