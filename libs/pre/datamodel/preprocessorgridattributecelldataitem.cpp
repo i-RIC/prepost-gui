@@ -22,15 +22,20 @@
 #include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <misc/errormessage.h>
 #include <misc/iricundostack.h>
+#include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/tpoexporter.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
+#include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QStandardItem>
+#include <QStatusBar>
 #include <QVector>
 #include <QXmlStreamWriter>
 
@@ -50,6 +55,9 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 	m_editValueAction = new QAction(PreProcessorGridAttributeCellDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
+
+	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png") ,PreProcessorGridAttributeCellDataItem::tr("Export..."), this);
+	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 
 	m_editDifferenceAction = new QAction(PreProcessorGridAttributeCellDataItem::tr("Edit value by specifying difference..."), this);
 	m_editDifferenceAction->setDisabled(true);
@@ -184,6 +192,9 @@ void PreProcessorGridAttributeCellDataItem::keyReleaseEvent(QKeyEvent* event, VT
 
 void PreProcessorGridAttributeCellDataItem::addCustomMenuItems(QMenu* menu)
 {
+	menu->addAction(m_exportAction);
+	menu->addSeparator();
+
 	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
 	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
 		PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
@@ -238,6 +249,64 @@ void PreProcessorGridAttributeCellDataItem::editDifference()
 void PreProcessorGridAttributeCellDataItem::editRatio()
 {
 	editVariation(GridAttributeVariationEditWidget::Ratio, tr("ratio"));
+}
+
+void PreProcessorGridAttributeCellDataItem::exportToFile()
+{
+	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	if (mw->isSolverRunning()) {
+		mw->warnSolverRunning();
+		return;
+	}
+
+	QString dir = LastIODirectory::get();
+	QString filter(tr("Topography File (*.tpo)"));
+
+	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Export as Topography Data"), dir, filter);
+	if (fname == "") { return; }
+
+	try {
+		TpoExporter exporter(mainWindow());
+		if (! exporter.open(fname)) {
+			throw ErrorMessage(tr("Error occured while opening the file."));
+		}
+
+		exporter.setOffset(offset());
+
+		PreProcessorGridDataItem* gitem =  dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+		vtkPointSet* vtkGrid = gitem->grid()->vtkGrid();
+		vtkDataArray* da = vtkGrid->GetCellData()->GetArray(m_condition->name().c_str());
+
+		// output values
+		for (vtkIdType i = 0; i < vtkGrid->GetNumberOfCells(); ++i) {
+			double val = da->GetVariantValue(i).ToDouble();
+			double xavg[3];
+			double x[3];
+
+			xavg[0] = 0; xavg[1] = 0; xavg[2] = 0;
+
+			auto cell = vtkGrid->GetCell(i);
+			vtkIdType numP = cell->GetNumberOfPoints();
+			for (int j = 0; j < numP; ++j) {
+				vtkIdType vId = cell->GetPointId(j);
+				vtkGrid->GetPoint(vId, x);
+				for (int k = 0; k < 2; ++k) {
+					xavg[k] += x[k];
+				}
+			}
+			for (int k = 0; k < 2; ++k) {
+				xavg[k] /= numP;
+			}
+
+			exporter.addPoint(xavg[0], xavg[1], val);
+		}
+		exporter.close();
+		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		QFileInfo finfo(fname);
+		LastIODirectory::set(finfo.absolutePath());
+	} catch (ErrorMessage& message) {
+		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
+	}
 }
 
 void PreProcessorGridAttributeCellDataItem::informSelection(VTKGraphicsView* /*v*/)

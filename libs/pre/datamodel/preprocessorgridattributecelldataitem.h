@@ -37,6 +37,7 @@ private slots:
 	void editDifference();
 	void editRatio();
 	void showDisplaySettingDialog() {showPropertyDialog();}
+	void exportToFile();
 
 protected:
 	void loadFromCgnsFile(const int fn) override;
@@ -53,6 +54,7 @@ private:
 
 	bool m_definingBoundingBox;
 	QAction* m_editValueAction;
+	QAction* m_exportAction;
 	QAction* m_editDifferenceAction;
 	QAction* m_editRatioAction;
 };
