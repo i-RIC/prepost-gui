@@ -102,6 +102,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaplandxmlimporter.h \
            geodatapointmapmappingmode.h \
            geodatapointmapnodemappert.h \
+           geodatapointmaprealbuilder.h \
            geodatapointmaprealcreator.h \
            geodatapointmaprealexporter.h \
            geodatapointmaprealimporter.h \
@@ -133,6 +134,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_triangleswithlongedgeremover_dialog.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
+           private/geodatapointmaprealbuilder_impl.h \
            private/geodatapointmaprealtextimporter_lineparser.h \
            private/geodatapointmaprealtextimporter_settingdialog.h \
            private/geodatapointmaprealtextimporter_values.h \
@@ -158,6 +160,7 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmaplandxmlexporter.cpp \
            geodatapointmaplandxmlimporter.cpp \
            geodatapointmapmappingmode.cpp \
+           geodatapointmaprealbuilder.cpp \
            geodatapointmaprealcreator.cpp \
            geodatapointmaprealexporter.cpp \
            geodatapointmaprealimporter.cpp \
