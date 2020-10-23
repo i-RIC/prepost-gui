@@ -62,7 +62,8 @@ LIBS += \
 
 # Post-Build Event
 win32 {
-	QMAKE_POST_LINK += cd $$PWD/../../tools & copydlls.py
+	##DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
+	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
 }
 
 # Input

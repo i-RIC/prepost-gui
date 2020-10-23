@@ -97,7 +97,8 @@ LIBS += \
 
 # Post-Build Event
 win32 {
-	QMAKE_POST_LINK += IF NOT EXIST $(SolutionDir)\\libdlls\\$(Configuration) mkdir $(SolutionDir)\\libdlls\\$(Configuration) && copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
+	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
 }
 
 # Input
