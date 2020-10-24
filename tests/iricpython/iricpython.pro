@@ -21,13 +21,6 @@ include( ../../paths.pri )
 
 #iricGui library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/gui/debug"
-	} else {
-		LIBS += -L"../../libs/gui/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/gui"
 }
@@ -35,16 +28,14 @@ LIBS += -liricGui
 
 #iricPython library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/iricpython/debug"
-	} else {
-		LIBS += -L"../../libs/iricpython/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/iricpython"
 }
 LIBS += -liricPython
+
+win32 {
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 SOURCES += iricpython.cpp

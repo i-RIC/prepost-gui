@@ -18,13 +18,6 @@ QT += widgets xml
 
 # iricAxis2d
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../dataitem/axis2d/debug"
-	} else {
-		LIBS += -L"../dataitem/axis2d/release"
-	}
-}
 unix {
 	LIBS += -L"../../dataitem/axis2d"
 }
@@ -32,13 +25,6 @@ LIBS += -liricAxis2d
 
 # iricDistancemeasure
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../dataitem/distancemeasure/debug"
-	} else {
-		LIBS += -L"../dataitem/distancemeasure/release"
-	}
-}
 unix {
 	LIBS += -L"../../distancemeasure/axis2d"
 }
@@ -46,13 +32,6 @@ LIBS += -liricDistancemeasure
 
 # iricMeasureddata
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../dataitem/measureddata/debug"
-	} else {
-		LIBS += -L"../dataitem/measureddata/release"
-	}
-}
 unix {
 	LIBS += -L"../measureddata/axis2d"
 }
@@ -60,13 +39,6 @@ LIBS += -liricMeasureddata
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../misc/debug"
-	} else {
-		LIBS += -L"../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../misc"
 }
@@ -74,13 +46,6 @@ LIBS += -liricMisc
 
 # iricGuibase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../guibase/debug"
-	} else {
-		LIBS += -L"../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../guibase"
 }
@@ -88,13 +53,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../guicore/debug"
-	} else {
-		LIBS += -L"../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../guicore"
 }
@@ -103,13 +61,6 @@ LIBS += -liricGuicore
 
 # iricGdRiversurvey
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/riversurvey/debug"
-	} else {
-		LIBS += -L"../geodata/riversurvey/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/riversurvey"
 }
@@ -117,13 +68,6 @@ LIBS += -liricGdRiversurvey
 
 # iricGdPoint
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../geodata/point/debug"
-        } else {
-                LIBS += -L"../geodata/point/release"
-        }
-}
 unix {
         LIBS += -L"../geodata/point"
 }
@@ -131,13 +75,6 @@ LIBS += -liricGdPoint
 
 # iricGdPointGroup
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../geodata/pointgroup/debug"
-        } else {
-                LIBS += -L"../geodata/pointgroup/release"
-        }
-}
 unix {
         LIBS += -L"../geodata/pointgroup"
 }
@@ -145,13 +82,6 @@ LIBS += -liricGdPointGroup
 
 # iricGdPointmap
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/pointmap/debug"
-	} else {
-		LIBS += -L"../geodata/pointmap/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/pointmap"
 }
@@ -159,13 +89,6 @@ LIBS += -liricGdPointmap
 
 # iricGdPolyData
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../geodata/polydata/debug"
-        } else {
-                LIBS += -L"../geodata/polydata/release"
-        }
-}
 unix {
         LIBS += -L"../geodata/polydata"
 }
@@ -173,13 +96,6 @@ LIBS += -liricGdPolyData
 
 # iricGdPolygon
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/polygon/debug"
-	} else {
-		LIBS += -L"../geodata/polygon/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/polygon"
 }
@@ -187,13 +103,6 @@ LIBS += -liricGdPolygon
 
 # iricGdPolygonGroup
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../geodata/polygongroup/debug"
-        } else {
-                LIBS += -L"../geodata/polygongroup/release"
-        }
-}
 unix {
         LIBS += -L"../geodata/polygongroup"
 }
@@ -201,13 +110,6 @@ LIBS += -liricGdPolygonGroup
 
 # iricGdPolyline
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/polyline/debug"
-	} else {
-		LIBS += -L"../geodata/polyline/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/polyline"
 }
@@ -215,26 +117,12 @@ LIBS += -liricGdPolyline
 
 # iricGdPolylineGroup
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../geodata/polylinegroup/debug"
-        } else {
-                LIBS += -L"../geodata/polylinegroup/release"
-        }
-}
 unix {
         LIBS += -L"../geodata/polylinegroup"
 }
 LIBS += -liricGdPolylineGroup
 
 # iricGdNetcdf
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/netcdf/debug"
-	} else {
-		LIBS += -L"../geodata/netcdf/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/netcdf"
 }
@@ -242,13 +130,6 @@ LIBS += -liricGdNetcdf
 
 # iricGccCenterandwidth
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/centerandwidth/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/centerandwidth/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/centerandwidth"
 }
@@ -256,13 +137,6 @@ LIBS += -liricGccCenterandwidth
 
 # iricGccCompoundchannel
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/compoundchannel/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/compoundchannel/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/compoundchannel"
 }
@@ -270,13 +144,6 @@ LIBS += -liricGccCompoundchannel
 
 # iricGccExternalprogram
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/externalprogram/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/externalprogram/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/externalprogram"
 }
@@ -284,13 +151,6 @@ LIBS += -liricGccExternalprogram
 
 # iricGccGridcombine
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/gridcombine/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/gridcombine/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/gridcombine"
 }
@@ -298,13 +158,6 @@ LIBS += -liricGccGridcombine
 
 # iricGccGridgenerator
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/gridgenerator/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/gridgenerator/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/gridgenerator"
 }
@@ -312,13 +165,6 @@ LIBS += -liricGccGridgenerator
 
 # iricGccLaplace
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/laplace/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/laplace/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/laplace"
 }
@@ -326,13 +172,6 @@ LIBS += -liricGccLaplace
 
 # iricGccRectangularregion
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/rectangularregion/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/rectangularregion/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/rectangularregion"
 }
@@ -340,13 +179,6 @@ LIBS += -liricGccRectangularregion
 
 # iricGccRectangularregionlonlat
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/rectangularregionlonlat/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/rectangularregionlonlat/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/rectangularregionlonlat"
 }
@@ -354,13 +186,6 @@ LIBS += -liricGccRectangularregionlonlat
 
 # iricGccRiversurvey
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/riversurvey/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/riversurvey/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/riversurvey"
 }
@@ -368,13 +193,6 @@ LIBS += -liricGccRiversurvey
 
 # iricGccRiversurvey15d
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/riversurvey15d/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/riversurvey15d/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/riversurvey15d"
 }
@@ -382,13 +200,6 @@ LIBS += -liricGccRiversurvey15d
 
 # iricGccTriangle
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/triangle/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/triangle/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/triangle"
 }
@@ -396,13 +207,6 @@ LIBS += -liricGccTriangle
 
 # iricGccPoisson
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/poisson/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/poisson/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/poisson"
 }
@@ -410,13 +214,6 @@ LIBS += -liricGccPoisson
 
 # iricHdRiversurveywaterelevation
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../hydraulicdata/riversurveywaterelevation/debug"
-	} else {
-		LIBS += -L"../hydraulicdata/riversurveywaterelevation/release"
-	}
-}
 unix {
 	LIBS += -L"../hydraulicdata/riversurveywaterelevation"
 }
@@ -468,10 +265,9 @@ win32 {
 	LIBS += -lshapelib_i
 }
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

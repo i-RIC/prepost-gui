@@ -18,13 +18,6 @@ QT += widgets xml
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../misc/debug"
-	} else {
-		LIBS += -L"../../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../misc"
 }
@@ -32,13 +25,6 @@ LIBS += -liricMisc
 
 # iricGuibase
 
-win32{
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guibase/debug"
-	} else {
-		LIBS += -L"../../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../guibase"
 }
@@ -46,13 +32,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -60,13 +39,6 @@ LIBS += -liricGuicore
 
 # iricGdRiversurvey
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geodata/riversurvey/debug"
-	} else {
-		LIBS += -L"../../geodata/riversurvey/release"
-	}
-}
 unix {
 	LIBS += -L"../../geodata/riversurvey"
 }
@@ -88,10 +60,9 @@ LIBS += \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingLOD-6.1
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

@@ -18,13 +18,6 @@ UI_DIR = ./ui
 
 # iricCs
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../cs/debug"
-	} else {
-		LIBS += -L"../cs/release"
-	}
-}
 unix {
 	LIBS += -L"../cs"
 }
@@ -32,13 +25,6 @@ LIBS += -liricCs
 
 #iricMisc library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../misc/debug"
-	} else {
-		LIBS += -L"../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../misc"
 }
@@ -46,13 +32,6 @@ LIBS += -liricMisc
 
 #iricGuibase library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../guibase/debug"
-	} else {
-		LIBS += -L"../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../guibase"
 }
@@ -60,13 +39,6 @@ LIBS += -liricGuibase
 
 #iricTmsloader library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../tmsloader/debug"
-	} else {
-		LIBS += -L"../tmsloader/release"
-	}
-}
 unix {
 	LIBS += -L"../tmsloader"
 }
@@ -74,13 +46,6 @@ LIBS += -liricTmsloader
 
 #iricGuicore library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../guicore/debug"
-	} else {
-		LIBS += -L"../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../guicore"
 }
@@ -88,13 +53,6 @@ LIBS += -liricGuicore
 
 #iricSolverconsole library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../solverconsole/debug"
-	} else {
-		LIBS += -L"../solverconsole/release"
-	}
-}
 unix {
 	LIBS += -L"../solverconsole"
 }
@@ -102,13 +60,6 @@ LIBS += -liricSolverconsole
 
 #iricPre library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../pre/debug"
-	} else {
-		LIBS += -L"../pre/release"
-	}
-}
 unix {
 	LIBS += -L"../pre"
 }
@@ -116,13 +67,6 @@ LIBS += -liricPre
 
 #iricPost2d library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/post2d/debug"
-	} else {
-		LIBS += -L"../post/post2d/release"
-	}
-}
 unix {
 	LIBS += -L"../post/post2d"
 }
@@ -130,13 +74,6 @@ LIBS += -liricPost2d
 
 #iricPost2dbirdeye library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/post2dbirdeye/debug"
-	} else {
-		LIBS += -L"../post/post2dbirdeye/release"
-	}
-}
 unix {
 	LIBS += -L"../post/post2dbirdeye"
 }
@@ -144,13 +81,6 @@ LIBS += -liricPost2dbirdeye
 
 #iricPost3d library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/post3d/debug"
-	} else {
-		LIBS += -L"../post/post3d/release"
-	}
-}
 unix {
 	LIBS += -L"../post/post3d"
 }
@@ -158,13 +88,6 @@ LIBS += -liricPost3d
 
 #iricGraph2d library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/graph2d/debug"
-	} else {
-		LIBS += -L"../post/graph2d/release"
-	}
-}
 unix {
 	LIBS += -L"../post/graph2d"
 }
@@ -172,13 +95,6 @@ LIBS += -liricGraph2d
 
 #iricGraph2dhybrid library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/graph2dhybrid/debug"
-	} else {
-		LIBS += -L"../post/graph2dhybrid/release"
-	}
-}
 unix {
 	LIBS += -L"../post/graph2dhybrid"
 }
@@ -186,13 +102,6 @@ LIBS += -liricGraph2dhybrid
 
 #iricGraph2dscattered library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/graph2dscattered/debug"
-	} else {
-		LIBS += -L"../post/graph2dscattered/release"
-	}
-}
 unix {
 	LIBS += -L"../post/graph2dscattered"
 }
@@ -201,13 +110,6 @@ LIBS += -liricGraph2dscattered
 
 #iricGraph2dVerification library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post/graph2dverification/debug"
-	} else {
-		LIBS += -L"../post/graph2dverification/release"
-	}
-}
 unix {
 	LIBS += -L"../post/graph2dverification"
 }
@@ -215,13 +117,6 @@ LIBS += -liricGraph2dVerification
 
 #iricGdRiversurvey library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/riversurvey/debug"
-	} else {
-		LIBS += -L"../geodata/riversurvey/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/riversurvey"
 }
@@ -229,13 +124,6 @@ LIBS += -liricGdRiversurvey
 
 #iricGdPointmap library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../geodata/pointmap/debug"
-	} else {
-		LIBS += -L"../geodata/pointmap/release"
-	}
-}
 unix {
 	LIBS += -L"../geodata/pointmap"
 }
@@ -243,13 +131,6 @@ LIBS += -liricGdPointmap
 
 #iricGccexternalprogram library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gridcreatingcondition/externalprogram/debug"
-	} else {
-		LIBS += -L"../gridcreatingcondition/externalprogram/release"
-	}
-}
 unix {
 	LIBS += -L"../gridcreatingcondition/externalprogram"
 }
@@ -289,10 +170,9 @@ LIBS += \
 
 INCLUDEPATH += ../../libs
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

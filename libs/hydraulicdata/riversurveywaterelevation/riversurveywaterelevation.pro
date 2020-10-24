@@ -18,13 +18,6 @@ QT += widgets xml
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -32,22 +25,14 @@ LIBS += -liricGuicore
 
 # iricMisc
 
-win32 {
-  CONFIG(debug, debug|release) {
-    LIBS += -L"../../misc/debug"
-  } else {
-    LIBS += -L"../../misc/release"
-  }
-}
 unix {
   LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

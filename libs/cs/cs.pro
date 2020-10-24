@@ -18,13 +18,6 @@ include( ../../paths.pri )
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../misc/debug"
-	} else {
-		LIBS += -L"../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../misc"
 }
@@ -52,10 +45,9 @@ unix {
 	LIBS += -lgdal
 }
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

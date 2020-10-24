@@ -14,13 +14,6 @@ include( ../../paths.pri )
 
 # iricCs
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../cs/debug"
-	} else {
-		LIBS += -L"../cs/release"
-	}
-}
 unix {
 	LIBS += -L"../cs"
 }
@@ -28,13 +21,6 @@ LIBS += -liricCs
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../misc/debug"
-	} else {
-		LIBS += -L"../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../misc"
 }
@@ -75,10 +61,9 @@ LIBS += \
 	-lvtkRenderingFreeType-6.1 \
 	-lvtkRenderingLabel-6.1
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

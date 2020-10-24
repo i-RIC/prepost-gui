@@ -18,13 +18,6 @@ QT += widgets xml
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../misc/debug"
-	} else {
-		LIBS += -L"../../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../misc"
 }
@@ -32,13 +25,6 @@ LIBS += -liricMisc
 
 # iricGuibase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guibase/debug"
-	} else {
-		LIBS += -L"../../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../guibase"
 }
@@ -46,13 +32,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -60,13 +39,6 @@ LIBS += -liricGuicore
 
 # iricPostbase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../postbase/debug"
-	} else {
-		LIBS += -L"../../postbase/release"
-	}
-}
 unix {
 	LIBS += -L"../../postbase"
 }
@@ -75,13 +47,6 @@ LIBS += -liricPostbase
 
 # iricPost2d
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../post2d/debug"
-	} else {
-		LIBS += -L"../post2d/release"
-	}
-}
 unix {
 	LIBS += -L"../post2d"
 }
@@ -118,10 +83,9 @@ LIBS += \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

@@ -18,61 +18,26 @@ include( ../../paths.pri )
 # Internal libraries #
 ######################
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../gui/debug"
-	} else {
-		LIBS += -L"../gui/release"
-	}
-}
 unix {
 	LIBS += -L"../gui"
 }
 LIBS += -liricGui
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../pre/debug"
-	} else {
-		LIBS += -L"../pre/release"
-	}
-}
 unix {
 	LIBS += -L"../pre"
 }
 LIBS += -liricPre
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../solverconsole/debug"
-	} else {
-		LIBS += -L"../solverconsole/release"
-	}
-}
 unix {
 	LIBS += -L"../solverconsole"
 }
 LIBS += -liricSolverconsole
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../guicore/debug"
-	} else {
-		LIBS += -L"../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../guicore"
 }
 LIBS += -liricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../misc/debug"
-	} else {
-		LIBS += -L"../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../misc"
 }
@@ -91,10 +56,9 @@ LIBS += \
 	-lvtkRenderingFreeTypeOpenGL-6.1 \
 	-lvtkRenderingOpenGL-6.1
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

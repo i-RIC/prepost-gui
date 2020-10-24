@@ -14,13 +14,6 @@ include( ../../paths.pri )
 
 # iricGuibase
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../guibase/debug"
-        } else {
-                LIBS += -L"../guibase/release"
-        }
-}
 unix {
         LIBS += -L"../guibase"
 }
@@ -28,13 +21,6 @@ LIBS += -liricGuibase
 
 # iricMisc
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../misc/debug"
-        } else {
-                LIBS += -L"../misc/release"
-        }
-}
 unix {
         LIBS += -L"../misc"
 }
@@ -54,10 +40,9 @@ win32{
 
 LIBS += -lgeos
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

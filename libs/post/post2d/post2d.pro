@@ -18,13 +18,6 @@ QT += widgets xml
 
 # iricAxis2d
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../dataitem/axis2d/debug"
-	} else {
-		LIBS += -L"../../dataitem/axis2d/release"
-	}
-}
 unix {
 	LIBS += -L"../../dataitem/axis2d"
 }
@@ -32,13 +25,6 @@ LIBS += -liricAxis2d
 
 # iricDistancemeasure
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../dataitem/distancemeasure/debug"
-	} else {
-		LIBS += -L"../../dataitem/distancemeasure/release"
-	}
-}
 unix {
 	LIBS += -L"../../distancemeasure/axis2d"
 }
@@ -46,13 +32,6 @@ LIBS += -liricDistancemeasure
 
 # iricMeasureddata
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../dataitem/measureddata/debug"
-	} else {
-		LIBS += -L"../../dataitem/measureddata/release"
-	}
-}
 unix {
 	LIBS += -L"../../measureddata/axis2d"
 }
@@ -60,13 +39,6 @@ LIBS += -liricMeasureddata
 
 # iricCs
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../cs/debug"
-	} else {
-		LIBS += -L"../../cs/release"
-	}
-}
 unix {
 	LIBS += -L"../../cs"
 }
@@ -74,13 +46,6 @@ LIBS += -liricCs
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../misc/debug"
-	} else {
-		LIBS += -L"../../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../misc"
 }
@@ -88,13 +53,6 @@ LIBS += -liricMisc
 
 # iricGuibase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guibase/debug"
-	} else {
-		LIBS += -L"../../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../guibase"
 }
@@ -102,13 +60,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -116,13 +67,6 @@ LIBS += -liricGuicore
 
 # iricPostbase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../postbase/debug"
-	} else {
-		LIBS += -L"../../postbase/release"
-	}
-}
 unix {
 	LIBS += -L"../../postbase"
 }
@@ -178,10 +122,9 @@ LIBS += \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1
 
-# Post-Build Event
 win32 {
-	DESTDIR = $(SolutionDir)\\libdlls\\$(Configuration)
-	LIBS += -L$(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input
