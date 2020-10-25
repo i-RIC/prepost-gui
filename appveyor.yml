@@ -35,11 +35,11 @@ init:
   ## Sometimes the plaintext of secure variables is displayed so filter out access_tokens
   - ps: 'Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" }'
   # Only commit and push to master branch or debug-appveyor branch (for testing)
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop") -OR ($env:APPVEYOR_REPO_BRANCH -eq "debug-appveyor")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop") -OR ($env:APPVEYOR_REPO_BRANCH -eq "issue-destdir")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
 
 configuration:
-##  - Debug
+  - Debug
   - Release
 
 matrix:
