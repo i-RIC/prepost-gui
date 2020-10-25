@@ -146,8 +146,7 @@ on_success:
           $v=(Select-String -Path prod_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
           $files=@('prod_src\packages\gui.prepost\data\definition.xml', `
                   'prod_src\packages\gui.prepost\meta\package.xml')
-        }
-        if ($env:APPVEYOR_REPO_BRANCH -eq "develop") {
+        } else {
           $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
           $files=@('dev_src\packages\gui.prepost\data\definition.xml', `
                   'dev_src\packages\gui.prepost\meta\package.xml')
