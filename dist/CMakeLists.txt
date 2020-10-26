@@ -2210,6 +2210,6 @@ install(FILES ${IRIC_DICS}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/languages
 )
 install(FILES ${IRIC_PY}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/pythonmodule
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.runtime/data/pythonmodule
 )
 
