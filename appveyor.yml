@@ -11,7 +11,10 @@ environment:
 # Skipping commits affecting specific files (GitHub only).
 skip_commits:
   files:
+    - .gitignore
     - README.md
+    - manuals/*
+    - sdks/*
     - tools/*
 
 image: Visual Studio 2013
