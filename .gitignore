@@ -26,6 +26,8 @@ paths.pri
 *.rc
 apps/solvers
 apps/gridcreators
+apps/gridexporter_plugins
+apps/gridimporter_plugins
 Makefile
 Makefile.*
 *.vcxproj.user

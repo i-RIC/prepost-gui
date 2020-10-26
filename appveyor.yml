@@ -12,6 +12,7 @@ environment:
 skip_commits:
   files:
     - README.md
+    - tools/*
 
 image: Visual Studio 2013
 
