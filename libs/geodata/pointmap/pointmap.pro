@@ -141,6 +141,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaprealexporter.h \
            geodatapointmaprealimporter.h \
            geodatapointmaprealimporterfilterdialog.h \
+           geodatapointmaprealtextimporter.h \
            geodatapointmaprepresentationdialog.h \
            geodatapointmapstlexporter.h \
            geodatapointmapstlimporter.h \
@@ -167,6 +168,9 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_triangleswithlongedgeremover_dialog.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
+           private/geodatapointmaprealtextimporter_lineparser.h \
+           private/geodatapointmaprealtextimporter_settingdialog.h \
+           private/geodatapointmaprealtextimporter_values.h \
            private/geodatapointmapt_detail.h \
            private/geodatapointmaptemplatenodemappert_detail.h \
            private/geodatapointmapwebimportersetting_impl.h
@@ -178,7 +182,8 @@ FORMS += geodatapointmapdelptsgreaterthandialog.ui \
          geodatapointmaprepresentationdialog.ui \
          geodatapointmapwebimporterregionselectdialog.ui \
          geodatapointmapwebimporterzoomleveldialog.ui \
-         private/geodatapointmap_triangleswithlongedgeremover_dialog.ui
+         private/geodatapointmap_triangleswithlongedgeremover_dialog.ui \
+         private/geodatapointmaprealtextimporter_settingdialog.ui
 SOURCES += geodatapointmap.cpp \
            geodatapointmapbreakline.cpp \
            geodatapointmapdelptsgreaterthandialog.cpp \
@@ -192,6 +197,7 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmaprealexporter.cpp \
            geodatapointmaprealimporter.cpp \
            geodatapointmaprealimporterfilterdialog.cpp \
+           geodatapointmaprealtextimporter.cpp \
            geodatapointmaprepresentationdialog.cpp \
            geodatapointmapstlexporter.cpp \
            geodatapointmapstlimporter.cpp \
@@ -213,7 +219,9 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_interpolatelineaddpointcommand.cpp \
            private/geodatapointmap_removetrianglescommand.cpp \
            private/geodatapointmap_triangleswithlongedgeremover.cpp \
-           private/geodatapointmap_triangleswithlongedgeremover_dialog.cpp
+           private/geodatapointmap_triangleswithlongedgeremover_dialog.cpp \
+           private/geodatapointmaprealtextimporter_lineparser.cpp \
+           private/geodatapointmaprealtextimporter_settingdialog.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_ar_EG.ts \
                 languages/iricGdPointmap_bg_BG.ts \

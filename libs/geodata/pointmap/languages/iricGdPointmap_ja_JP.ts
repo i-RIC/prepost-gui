@@ -393,7 +393,7 @@
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>点</translation>
     </message>
     <message>
         <source>Points%1</source>
@@ -420,18 +420,18 @@
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat)</source>
-        <translation>RIC-Nays DEM データ (*.dat)</translation>
+        <translation type="vanished">RIC-Nays DEM データ (*.dat)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>DEM etc. (*.tpo, *.anc, *.dat, *.stl)</source>
-        <translation>DEM など (*.tpo, *.anc, *.dat, *.stl)</translation>
+        <translation type="vanished">DEM など (*.tpo, *.anc, *.dat, *.stl)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo *.anc)</source>
-        <translation>地勢データ (*.tpo *.anc)</translation>
+        <translation type="vanished">地勢データ (*.tpo *.anc)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -443,11 +443,19 @@
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat *.txt)</source>
-        <translation>RIC-Nays DEM データ (*.dat *.txt)</translation>
+        <translation type="vanished">RIC-Nays DEM データ (*.dat *.txt)</translation>
     </message>
     <message>
         <source>USGS NED (*.adf)</source>
-        <translation>USGS NED (*.adf)</translation>
+        <translation type="vanished">USGS NED (*.adf)</translation>
+    </message>
+    <message>
+        <source>DEM etc. (*.tpo)</source>
+        <translation>DEM など (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation>地勢データ (*.tpo)</translation>
     </message>
 </context>
 <context>
@@ -463,6 +471,236 @@
     <message>
         <source>Filter:</source>
         <translation>間引き:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter</name>
+    <message>
+        <source>CSV, text</source>
+        <translation type="vanished">CSV、テキスト</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>File open error occured while opening %1.</source>
+        <translation>%1 を開いている時にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Not enough header lines found in the file.</source>
+        <translation>十分なヘッダ行が見つかりませんでした。</translation>
+    </message>
+    <message>
+        <source>Line %1: %2</source>
+        <translation>%1行目: %2</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
+        <translation>%1 の重複する点が見つかりました。 x, y の値が全く同じ点が複数見つかった場合、最初の点だけがインポートされます。</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <source>Text file (*.txt)</source>
+        <translation>テキストファイル (*.txt)</translation>
+    </message>
+    <message>
+        <source>Not enough values to read %1. %1 column is %2 but %3 values input.</source>
+        <translation type="vanished">%1 を読み込めませんでした。%1 は %2 列目ですが、値は %3しかありません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading %1 value. %1 value should be real number, but &quot;%2&quot; specified.</source>
+        <translation type="vanished">%1 の値を読み込めませんでした。 %1 の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>At column %1, %2 or %3 expected, but %4 specified.</source>
+        <translation>%1文字目で、 %2, %3 のいずれかを入力すべきところ、 %4 が指定されました。</translation>
+    </message>
+    <message>
+        <source>At column %1, delimiter expected, but %2 specified.</source>
+        <translation>%1文字目で、区切り文字を指定すべきところ、%2 が指定されました。</translation>
+    </message>
+    <message>
+        <source>x</source>
+        <translation>x</translation>
+    </message>
+    <message>
+        <source>y</source>
+        <translation>y</translation>
+    </message>
+    <message>
+        <source>value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <source>No delimiter specified</source>
+        <translation>区切り文字が指定されていません</translation>
+    </message>
+    <message>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>&quot;%1&quot; を読み込めませんでした。&quot;%1&quot; は %2 列目ですが、値は %3しかありません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>&quot;%1&quot; の値を読み込めませんでした。 &quot;%1&quot; の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Text files (CSV, TSV etc)</source>
+        <translation type="vanished">テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation>テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>インポート設定</translation>
+    </message>
+    <message>
+        <source>Encoding:</source>
+        <translation>エンコーディング:</translation>
+    </message>
+    <message>
+        <source>File Format</source>
+        <translation>ファイルフォーマット</translation>
+    </message>
+    <message>
+        <source>CSV (Comma separated values)</source>
+        <translation>CSV (カンマ区切り)</translation>
+    </message>
+    <message>
+        <source>Custom delimitered text</source>
+        <translation type="vanished">カスタム区切り</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>区切り文字</translation>
+    </message>
+    <message>
+        <source>Comma</source>
+        <translation>コンマ</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>タブ文字</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>半角スペース</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>コロン</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>セミコロン</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>その他</translation>
+    </message>
+    <message>
+        <source>Special characters</source>
+        <translation>特殊文字</translation>
+    </message>
+    <message>
+        <source>Quote character:</source>
+        <translation>クォート文字</translation>
+    </message>
+    <message>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
+    </message>
+    <message>
+        <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
+        <translation>複数のクォート文字を指定したい場合、クォート文字を連続して入力してください。スペースやコンマで区切る必要はありません。</translation>
+    </message>
+    <message>
+        <source>Escape character:</source>
+        <translation>エスケープ文字:</translation>
+    </message>
+    <message>
+        <source>\</source>
+        <translation>\</translation>
+    </message>
+    <message>
+        <source>The character to escape quote character in quoted text. You can specify only one character.</source>
+        <translation type="vanished">クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+    </message>
+    <message>
+        <source>Record options</source>
+        <translation>レコードオプション</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>読み飛ばすヘッダ行数</translation>
+    </message>
+    <message>
+        <source>First header line contains field names</source>
+        <translation>最初のヘッダ行がフィールド名</translation>
+    </message>
+    <message>
+        <source>Select fields</source>
+        <translation>フィールドの選択</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>値:</translation>
+    </message>
+    <message>
+        <source>Skip setting</source>
+        <translation>間引き設定</translation>
+    </message>
+    <message>
+        <source>Skip rate:</source>
+        <translation>間引き:</translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, pelase specify values larger than 0. For example, if you input 1, every other lines are imported.</source>
+        <translation type="vanished">ファイル内のデータを間引きたい場合、0より大きい値を指定してください。例えば1を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>プレビュー</translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <translation type="vanished">ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>Custom delimited text</source>
+        <translation>カスタム区切り</translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
+        <translation>ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>File name:</source>
+        <translation>ファイル名:</translation>
     </message>
 </context>
 <context>

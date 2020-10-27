@@ -2963,18 +2963,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat)</source>
-        <translation>Dados de RIC-Nays DEM (*.dat)</translation>
+        <translation type="vanished">Dados de RIC-Nays DEM (*.dat)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>DEM etc. (*.tpo, *.anc, *.dat, *.stl)</source>
-        <translation>DEM etc. (*.tpo, *.anc, *.dat, *.stl)</translation>
+        <translation type="vanished">DEM etc. (*.tpo, *.anc, *.dat, *.stl)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo *.anc)</source>
-        <translation>Dados de terreno  (*.tpo *.anc)</translation>
+        <translation type="vanished">Dados de terreno  (*.tpo *.anc)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2986,11 +2986,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat *.txt)</source>
-        <translation>Dados de RIC-Nays DEM (*.dat *.txt)</translation>
+        <translation type="vanished">Dados de RIC-Nays DEM (*.dat *.txt)</translation>
     </message>
     <message>
         <source>USGS NED (*.adf)</source>
-        <translation>USGS NED (*.adf)</translation>
+        <translation type="vanished">USGS NED (*.adf)</translation>
+    </message>
+    <message>
+        <source>DEM etc. (*.tpo)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Dados de terreno  (*.tpo)</translation>
     </message>
 </context>
 <context>
@@ -3006,6 +3014,200 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Filter:</source>
         <translation>Filtrar :</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter</name>
+    <message>
+        <source>CSV, text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>File open error occured while opening %1.</source>
+        <translation type="unfinished">Ocorreu um erro ao abrir %1.</translation>
+    </message>
+    <message>
+        <source>Not enough header lines found in the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text file (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At column %1, %2 or %3 expected, but %4 specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At column %1, delimiter expected, but %2 specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>x</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No delimiter specified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encoding:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV (Comma separated values)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom delimitered text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quote character:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Escape character:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>\</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The character to escape quote character in quoted text. You can specify only one character.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First header line contains field names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
