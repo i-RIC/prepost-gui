@@ -18,6 +18,7 @@ public:
 
 	QPolygonF polygon() const;
 	void setPolygon(const QPolygonF& polygon);
+	void clear();
 
 	vtkPolygon* getVtkPolygon() const;
 	void applyVtkPolygonShape();

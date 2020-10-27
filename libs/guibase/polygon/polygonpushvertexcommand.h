@@ -9,7 +9,7 @@
 
 class PolygonController;
 
-class PolygonPushVertexCommand : public QObject, public QUndoCommand
+class GUIBASEDLL_EXPORT PolygonPushVertexCommand : public QObject, public QUndoCommand
 {
 	Q_OBJECT
 

@@ -6,113 +6,128 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>274</width>
-    <height>147</height>
+    <width>458</width>
+    <height>163</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Grid Creation</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="startLabel">
+       <property name="text">
+        <string>Start Traversal Line:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="startComboBox">
+       <property name="minimumSize">
+        <size>
+         <width>111</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="endLabel">
+       <property name="text">
+        <string>End Traversal Line:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="endComboBox">
+       <property name="minimumSize">
+        <size>
+         <width>111</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="numberLabel">
+       <property name="text">
+        <string>Number of points in interpolated cross sections:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="startLabel">
-           <property name="text">
-            <string>Start Traversal Line:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="startComboBox">
-           <property name="minimumSize">
-            <size>
-             <width>111</width>
-             <height>0</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="endLabel">
-           <property name="text">
-            <string>End Traversal Line:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="endComboBox">
-           <property name="minimumSize">
-            <size>
-             <width>111</width>
-             <height>0</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="numberLabel">
-         <property name="text">
-          <string>Number of points in interpolated cross sections:</string>
+        <widget class="QSpinBox" name="numberSpinBox">
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="minimum">
+          <number>3</number>
+         </property>
+         <property name="maximum">
+          <number>999</number>
          </property>
         </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="numberSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-           <property name="minimum">
-            <number>3</number>
-           </property>
-           <property name="maximum">
-            <number>999</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>48</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+     <item row="3" column="0">
+      <widget class="QLabel" name="positionLabel">
+       <property name="text">
+        <string>Position value of elevation points:</string>
        </property>
-       <property name="sizeHint" stdset="0">
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="positionComboBox">
+       <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>111</width>
+         <height>0</height>
         </size>
        </property>
-      </spacer>
+       <item>
+        <property name="text">
+         <string>Distance from left bank</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Distance from center point</string>
+        </property>
+       </item>
+      </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>5</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">

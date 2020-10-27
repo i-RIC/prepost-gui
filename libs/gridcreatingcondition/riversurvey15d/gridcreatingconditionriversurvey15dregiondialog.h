@@ -18,13 +18,19 @@ class GridCreatingConditionRiverSurvey15DRegionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridCreatingConditionRiverSurvey15DRegionDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget* parent = nullptr);
+	enum class PositionMode {LeftBank, CenterPoint};
+
+	GridCreatingConditionRiverSurvey15DRegionDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurvey15DRegionDialog();
+
 	void setData(GeoDataRiverSurvey* rs);
 	void setStartPoint(GeoDataRiverPathPoint* p);
 	void setEndPoint(GeoDataRiverPathPoint* p);
-	GeoDataRiverPathPoint* startPoint();
-	GeoDataRiverPathPoint* endPoint();
+	void setPositionMode(PositionMode mode);
+
+	GeoDataRiverPathPoint* startPoint() const;
+	GeoDataRiverPathPoint* endPoint() const;
+	PositionMode positionMode() const;
 
 public slots:
 	void accept() override;

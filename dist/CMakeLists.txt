@@ -1649,12 +1649,6 @@ set(IRIC_DICS
   ${PREPOST_GUI}/libs/gui/languages/iricGui_vi_VN.qm
   ${PREPOST_GUI}/libs/gui/languages/iricGui_zh_CN.qm
   ${PREPOST_GUI}/libs/gui/languages/iricGui_zh_TW.qm
-  ${PREPOST_GUI}/libs/gui/languages/qt_es_ES.qm
-  ${PREPOST_GUI}/libs/gui/languages/qt_fr_FR.qm
-  ${PREPOST_GUI}/libs/gui/languages/qt_ja_JP.qm
-  ${PREPOST_GUI}/libs/gui/languages/qt_ko_KR.qm
-  ${PREPOST_GUI}/libs/gui/languages/qt_ru_RU.qm
-  ${PREPOST_GUI}/libs/gui/languages/qt_zh_CN.qm
   ${PREPOST_GUI}/libs/guibase/languages/iricGuibase_ar_EG.qm
   ${PREPOST_GUI}/libs/guibase/languages/iricGuibase_bg_BG.qm
   ${PREPOST_GUI}/libs/guibase/languages/iricGuibase_bs_BA.qm

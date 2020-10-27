@@ -9,9 +9,14 @@ environment:
     secure: GzdhhFKWjeLDM22U4ZcrMkAGEEnZLMVbfBR9W8uRQ/LqOtvX2qjPXvC3nvxxWeUc
 
 # Skipping commits affecting specific files (GitHub only).
+# also can use [skip appveyor] in message to skip building
 skip_commits:
   files:
+    - .gitignore
     - README.md
+    - manuals/*
+    - sdks/*
+    - tools/*
 
 image: Visual Studio 2013
 
@@ -39,7 +44,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-##  - Debug
+  - Debug
   - Release
 
 matrix:
