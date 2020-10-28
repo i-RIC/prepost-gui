@@ -85,10 +85,15 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_openVXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Longitudinal Cross Section Window"), this);
 	m_openVXsectionWindowAction ->setDisabled(true);
 	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
+
+	m_groupEditDialog = new GridComplexConditionGroupEditDialog(mainWindow());
+	m_groupEditDialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 }
 
 PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
-{}
+{
+	delete m_groupEditDialog;
+}
 
 QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 {
@@ -286,11 +291,11 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 			return;
 		}
 		auto selectedV = gridDataItem->selectedVertices().at(0);
-		GridComplexConditionGroupEditDialog dialog(mainWindow());
-		dialog.setWindowTitle(tr("Edit %1").arg(m_condition->caption()));
-		dialog.setGroups(gItem->groups());
-		dialog.setCurrentIndex(selectedV);
-		dialog.exec();
+
+		m_groupEditDialog->setWindowTitle(tr("Edit %1").arg(m_condition->caption()));
+		m_groupEditDialog->setGroups(gItem->groups());
+		m_groupEditDialog->setCurrentIndex(selectedV);
+		m_groupEditDialog->exec();
 	} else {
 		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
 		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));

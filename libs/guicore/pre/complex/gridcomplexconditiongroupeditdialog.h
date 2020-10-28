@@ -29,11 +29,13 @@ public slots:
 	void handleIndexChange(int index);
 	void handleModified();
 
+	void accept() override;
 	void reject() override;
 
 private:
 	void setTargetGroup(GridComplexConditionGroup* group);
 	void updateTargetComboBox();
+	void clearBackups();
 
 	std::vector<GridComplexConditionGroup*> m_groups;
 	std::vector<InputConditionContainerSet*> m_backups;

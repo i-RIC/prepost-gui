@@ -19,9 +19,6 @@ GridComplexConditionGroupEditDialog::GridComplexConditionGroupEditDialog(QWidget
 GridComplexConditionGroupEditDialog::~GridComplexConditionGroupEditDialog()
 {
 	delete ui;
-	for (auto backup : m_backups) {
-		delete backup;
-	}
 }
 
 void GridComplexConditionGroupEditDialog::setGroups(const std::vector<GridComplexConditionGroup*>& groups)
@@ -58,6 +55,13 @@ void GridComplexConditionGroupEditDialog::handleModified()
 	updateTargetComboBox();
 }
 
+void GridComplexConditionGroupEditDialog::accept()
+{
+	clearBackups();
+	ui->editWidget->setGroup(nullptr);
+	QDialog::accept();
+}
+
 void GridComplexConditionGroupEditDialog::reject()
 {
 	if (m_modified) {
@@ -69,6 +73,8 @@ void GridComplexConditionGroupEditDialog::reject()
 		auto g = m_groups.at(i);
 		g->containerSet()->copyValues(m_backups.at(i));
 	}
+	clearBackups();
+	ui->editWidget->setGroup(nullptr);
 	QDialog::reject();
 }
 
@@ -102,4 +108,12 @@ void GridComplexConditionGroupEditDialog::updateTargetComboBox()
 	}
 
 	cb->blockSignals(false);
+}
+
+void GridComplexConditionGroupEditDialog::clearBackups()
+{
+	for (auto backup : m_backups) {
+		delete backup;
+	}
+	m_backups.clear();
 }
