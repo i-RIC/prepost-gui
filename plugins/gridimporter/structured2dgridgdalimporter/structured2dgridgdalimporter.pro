@@ -7,20 +7,10 @@ include( ../../../paths.pri )
 
 # iricGuicore library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../../libs/guicore/debug"
-} else {
-	LIBS += -L"../../../libs/guicore/release"
-}
 LIBS += -liricGuicore
 
 # iricMisc library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../../libs/misc/debug"
-} else {
-	LIBS += -L"../../../libs/misc/release"
-}
 LIBS += -liricMisc
 
 #gdal
@@ -36,6 +26,11 @@ unix {
 
 LIBS += \
 	-lvtkCommonCore-6.1
+
+win32 {
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 # Input
 HEADERS += structured2dgridgdalimporter.h

@@ -13,13 +13,6 @@ RC_FILE = rivmaker.rc
 
 # iricGuiBase
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../../libs/guibase/debug"
-        } else {
-                LIBS += -L"../../libs/guibase/release"
-        }
-}
 unix {
         LIBS += -L"../../libs/guibase"
 }
@@ -27,13 +20,6 @@ LIBS += -liricGuibase
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/misc/debug"
-	} else {
-		LIBS += -L"../../libs/misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/misc"
 }
@@ -41,13 +27,6 @@ LIBS += -liricMisc
 
 # iricTriangle
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/triangle/debug"
-	} else {
-		LIBS += -L"../../libs/triangle/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/triangle"
 }
@@ -72,6 +51,10 @@ else {
 # geos
 
 LIBS += -lgeos
+
+win32 {
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 # Input
 HEADERS += csbuilder/crosssectionbuilderi.h \

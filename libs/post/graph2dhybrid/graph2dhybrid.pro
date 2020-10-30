@@ -18,13 +18,6 @@ QT += widgets xml
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../misc/debug"
-	} else {
-		LIBS += -L"../../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../misc"
 }
@@ -32,13 +25,6 @@ LIBS += -liricMisc
 
 # iricGuibase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guibase/debug"
-	} else {
-		LIBS += -L"../../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../guibase"
 }
@@ -46,13 +32,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -60,13 +39,6 @@ LIBS += -liricGuicore
 
 # iricPostbase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../postbase/debug"
-	} else {
-		LIBS += -L"../../postbase/release"
-	}
-}
 unix {
 	LIBS += -L"../../postbase"
 }
@@ -74,13 +46,6 @@ LIBS += -liricPostbase
 
 # iricGraph2d
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../graph2d/debug"
-	} else {
-		LIBS += -L"../graph2d/release"
-	}
-}
 unix {
 	LIBS += -L"../graph2d"
 }
@@ -88,13 +53,6 @@ LIBS += -liricGraph2d
 
 # iricGdPolyLine
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geodata/polyline/debug"
-	} else {
-		LIBS += -L"../../geodata/polyline/release"
-	}
-}
 unix {
 	LIBS += -L"../../geodata/polyline"
 }
@@ -102,13 +60,6 @@ LIBS += -liricGdPolyLine
 
 # iricGdPolyDataGroup
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../../geodata/polydatagroup/debug"
-        } else {
-                LIBS += -L"../../geodata/polydatagroup/release"
-        }
-}
 unix {
         LIBS += -L"../../geodata/polydatagroup"
 }
@@ -116,13 +67,6 @@ LIBS += -liricGdPolyDataGroup
 
 # iricGdPolyLineGroup
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../../geodata/polylinegroup/debug"
-        } else {
-                LIBS += -L"../../geodata/polylinegroup/release"
-        }
-}
 unix {
         LIBS += -L"../../geodata/polylinegroup"
 }
@@ -131,13 +75,6 @@ LIBS += -liricGdPolyLineGroup
 
 # iricGdRiversurvey
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geodata/riversurvey/debug"
-	} else {
-		LIBS += -L"../../geodata/riversurvey/release"
-	}
-}
 unix {
 	LIBS += -L"../../geodata/riversurvey"
 }
@@ -182,9 +119,9 @@ unix {
 	LIBS += -lcgns
 }
 
-# Post-Build Event
 win32 {
-	QMAKE_POST_LINK += IF NOT EXIST $(SolutionDir)\\libdlls\\$(Configuration) mkdir $(SolutionDir)\\libdlls\\$(Configuration) && copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

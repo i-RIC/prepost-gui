@@ -13,17 +13,17 @@ include( ../../../paths.pri )
 
 # iricGuicore library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../../libs/guicore/debug"
-} else {
-	LIBS += -L"../../../libs/guicore/release"
-}
 LIBS += -liricGuicore
 
 # VTK
 
 LIBS += \
 	-lvtkCommonCore-6.1
+
+win32 {
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 # Input
 HEADERS += structured2dgridnaysgridimporter.h

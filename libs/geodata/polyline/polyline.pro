@@ -16,13 +16,6 @@ QT += widgets xml
 
 # iricGeoio
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geoio/debug"
-	} else {
-		LIBS += -L"../../geoio/release"
-	}
-}
 unix {
 	LIBS += -L"../../geoio"
 }
@@ -30,13 +23,6 @@ LIBS += -liricGeoio
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../misc/debug"
-	} else {
-		LIBS += -L"../../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../misc"
 }
@@ -44,13 +30,6 @@ LIBS += -liricMisc
 
 # iricGdPolydata
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../polydata/debug"
-	} else {
-		LIBS += -L"../polydata/release"
-	}
-}
 unix {
 	LIBS += -L"../polydata"
 }
@@ -58,13 +37,6 @@ LIBS += -liricGdPolydata
 
 # iricGuibase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guibase/debug"
-	} else {
-		LIBS += -L"../../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../guibase"
 }
@@ -72,13 +44,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -109,9 +74,9 @@ LIBS += -lshapelib_i
 
 LIBS += -lgeos
 
-# Post-Build Event
 win32 {
-	QMAKE_POST_LINK += IF NOT EXIST $(SolutionDir)\\libdlls\\$(Configuration) mkdir $(SolutionDir)\\libdlls\\$(Configuration) && copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

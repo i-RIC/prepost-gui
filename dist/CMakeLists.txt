@@ -24,7 +24,7 @@ endif()
 
 # gridexporter_gridlandxmlexporter
 set(gridexporter_gridlandxmlexporter
-  ${PREPOST_GUI}/plugins/gridexporter/gridlandxmlexporter/release/gridlandxmlexporter.dll
+  ${PREPOST_GUI}/libdlls/Release/gridlandxmlexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/gridlandxmlexporter/languages/gridlandxmlexporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridexporter/gridlandxmlexporter/languages/gridlandxmlexporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridexporter/gridlandxmlexporter/languages/gridlandxmlexporter_bs_BA.qm
@@ -71,7 +71,7 @@ set(gridexporter_gridlandxmlexporter
 
 # gridexporter_structured2dgridnayscsvexporter
 set(gridexporter_structured2dgridnayscsvexporter
-  ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnayscsvexporter/release/structured2dgridnayscsvexporter.dll
+  ${PREPOST_GUI}/libdlls/Release/structured2dgridnayscsvexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnayscsvexporter/languages/structured2dgridnayscsvexporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnayscsvexporter/languages/structured2dgridnayscsvexporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnayscsvexporter/languages/structured2dgridnayscsvexporter_bs_BA.qm
@@ -118,7 +118,7 @@ set(gridexporter_structured2dgridnayscsvexporter
 
 # gridexporter_structured2dgridnaysgridexporter
 set(gridexporter_structured2dgridnaysgridexporter
-  ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnaysgridexporter/release/structured2dgridnaysgridexporter.dll
+  ${PREPOST_GUI}/libdlls/Release/structured2dgridnaysgridexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnaysgridexporter/languages/structured2dgridnaysgridexporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnaysgridexporter/languages/structured2dgridnaysgridexporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridnaysgridexporter/languages/structured2dgridnaysgridexporter_bs_BA.qm
@@ -165,7 +165,7 @@ set(gridexporter_structured2dgridnaysgridexporter
 
 # gridexporter_structured2dgridvtkexporter
 set(gridexporter_structured2dgridvtkexporter
-  ${PREPOST_GUI}/plugins/gridexporter/structured2dgridvtkexporter/release/structured2dgridvtkexporter.dll
+  ${PREPOST_GUI}/libdlls/Release/structured2dgridvtkexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridvtkexporter/languages/structured2dgridvtkexporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridvtkexporter/languages/structured2dgridvtkexporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridexporter/structured2dgridvtkexporter/languages/structured2dgridvtkexporter_bs_BA.qm
@@ -212,7 +212,7 @@ set(gridexporter_structured2dgridvtkexporter
 
 # gridexporter_unstructured2dgridvtkexporter
 set(gridexporter_unstructured2dgridvtkexporter
-  ${PREPOST_GUI}/plugins/gridexporter/unstructured2dgridvtkexporter/release/unstructured2dgridvtkexporter.dll
+  ${PREPOST_GUI}/libdlls/Release/unstructured2dgridvtkexporter.dll
   ${PREPOST_GUI}/plugins/gridexporter/unstructured2dgridvtkexporter/languages/unstructured2dgridvtkexporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridexporter/unstructured2dgridvtkexporter/languages/unstructured2dgridvtkexporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridexporter/unstructured2dgridvtkexporter/languages/unstructured2dgridvtkexporter_bs_BA.qm
@@ -259,7 +259,7 @@ set(gridexporter_unstructured2dgridvtkexporter
 
 # gridimporter_structured2dgridgdalimporter
 set(gridimporter_structured2dgridgdalimporter
-  ${PREPOST_GUI}/plugins/gridimporter/structured2dgridgdalimporter/release/structured2dgridgdalimporter.dll
+  ${PREPOST_GUI}/libdlls/Release/structured2dgridgdalimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridgdalimporter/languages/structured2dgridgdalimporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridgdalimporter/languages/structured2dgridgdalimporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridgdalimporter/languages/structured2dgridgdalimporter_bs_BA.qm
@@ -306,7 +306,7 @@ set(gridimporter_structured2dgridgdalimporter
 
 # gridimporter_structured2dgridnayscsvimporter
 set(gridimporter_structured2dgridnayscsvimporter
-  ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnayscsvimporter/release/structured2dgridnayscsvimporter.dll
+  ${PREPOST_GUI}/libdlls/Release/structured2dgridnayscsvimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnayscsvimporter/languages/structured2dgridnayscsvimporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnayscsvimporter/languages/structured2dgridnayscsvimporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnayscsvimporter/languages/structured2dgridnayscsvimporter_bs_BA.qm
@@ -353,7 +353,7 @@ set(gridimporter_structured2dgridnayscsvimporter
 
 # gridimporter_structured2dgridnaysgridimporter
 set(gridimporter_structured2dgridnaysgridimporter
-  ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnaysgridimporter/release/structured2dgridnaysgridimporter.dll
+  ${PREPOST_GUI}/libdlls/Release/structured2dgridnaysgridimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnaysgridimporter/languages/structured2dgridnaysgridimporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnaysgridimporter/languages/structured2dgridnaysgridimporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridimporter/structured2dgridnaysgridimporter/languages/structured2dgridnaysgridimporter_bs_BA.qm
@@ -400,7 +400,7 @@ set(gridimporter_structured2dgridnaysgridimporter
 
 # gridimporter_unstructured2dgridtriangleimporter
 set(gridimporter_unstructured2dgridtriangleimporter
-  ${PREPOST_GUI}/plugins/gridimporter/unstructured2dgridtriangleimporter/release/unstructured2dgridtriangleimporter.dll
+  ${PREPOST_GUI}/libdlls/Release/unstructured2dgridtriangleimporter.dll
   ${PREPOST_GUI}/plugins/gridimporter/unstructured2dgridtriangleimporter/languages/unstructured2dgridtriangleimporter_ar_EG.qm
   ${PREPOST_GUI}/plugins/gridimporter/unstructured2dgridtriangleimporter/languages/unstructured2dgridtriangleimporter_bg_BG.qm
   ${PREPOST_GUI}/plugins/gridimporter/unstructured2dgridtriangleimporter/languages/unstructured2dgridtriangleimporter_bs_BA.qm
@@ -457,54 +457,54 @@ set(IRIC_EXE
 
 # IRIC_DLLS
 set(IRIC_DLLS
-  ${PREPOST_GUI}/libs/cs/release/iricCs.dll
-  ${PREPOST_GUI}/libs/dataitem/axis2d/release/iricAxis2d.dll
-  ${PREPOST_GUI}/libs/dataitem/axis3d/release/iricAxis3d.dll
-  ${PREPOST_GUI}/libs/dataitem/distancemeasure/release/iricDistancemeasure.dll
-  ${PREPOST_GUI}/libs/dataitem/measureddata/release/iricMeasureddata.dll
-  ${PREPOST_GUI}/libs/geodata/netcdf/release/iricGdNetcdf.dll
-  ${PREPOST_GUI}/libs/geodata/point/release/iricGdPoint.dll
-  ${PREPOST_GUI}/libs/geodata/polyline/release/iricGdPolyLine.dll
-  ${PREPOST_GUI}/libs/geodata/pointgroup/release/iricGdPointGroup.dll
-  ${PREPOST_GUI}/libs/geodata/pointmap/release/iricGdPointmap.dll
-  ${PREPOST_GUI}/libs/geodata/polydata/release/iricGdPolydata.dll
-  ${PREPOST_GUI}/libs/geodata/polydatagroup/release/iricGdPolydataGroup.dll
-  ${PREPOST_GUI}/libs/geodata/polygon/release/iricGdPolygon.dll
-  ${PREPOST_GUI}/libs/geodata/polygongroup/release/iricGdPolygonGroup.dll
-  ${PREPOST_GUI}/libs/geodata/polyline/release/iricGdPolyLine.dll
-  ${PREPOST_GUI}/libs/geodata/polylinegroup/release/iricGdPolyLineGroup.dll
-  ${PREPOST_GUI}/libs/geodata/riversurvey/release/iricGdRiversurvey.dll
-  ${PREPOST_GUI}/libs/geoio/release/iricGeoio.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/centerandwidth/release/iricGccCenterandwidth.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/compoundchannel/release/iricGccCompoundchannel.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/externalprogram/release/iricGccExternalprogram.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/gridcombine/release/iricGccGridcombine.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/gridgenerator/release/iricGccGridgenerator.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/laplace/release/iricGccLaplace.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/poisson/release/iricGccPoisson.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/rectangularregion/release/iricGccRectangularregion.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/rectangularregionlonlat/release/iricGccRectangularregionlonlat.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/riversurvey/release/iricGccRiversurvey.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/riversurvey15d/release/iricGccRiversurvey15d.dll
-  ${PREPOST_GUI}/libs/gridcreatingcondition/triangle/release/iricGccTriangle.dll
-  ${PREPOST_GUI}/libs/gui/release/iricGui.dll
-  ${PREPOST_GUI}/libs/guibase/release/iricGuibase.dll
-  ${PREPOST_GUI}/libs/guicore/release/iricGuicore.dll
-  ${PREPOST_GUI}/libs/hydraulicdata/riversurveywaterelevation/release/iricHdRiversurveywaterelevation.dll
-  ${PREPOST_GUI}/libs/iricpython/release/iricPython.dll
-  ${PREPOST_GUI}/libs/misc/release/iricMisc.dll
-  ${PREPOST_GUI}/libs/post/graph2d/release/iricGraph2d.dll
-  ${PREPOST_GUI}/libs/post/graph2dhybrid/release/iricGraph2dhybrid.dll
-  ${PREPOST_GUI}/libs/post/graph2dscattered/release/iricGraph2dscattered.dll
-  ${PREPOST_GUI}/libs/post/graph2dverification/release/iricGraph2dVerification.dll
-  ${PREPOST_GUI}/libs/post/post2d/release/iricPost2d.dll
-  ${PREPOST_GUI}/libs/post/post2dbirdeye/release/iricPost2dbirdeye.dll
-  ${PREPOST_GUI}/libs/post/post3d/release/iricPost3d.dll
-  ${PREPOST_GUI}/libs/postbase/release/iricPostbase.dll
-  ${PREPOST_GUI}/libs/pre/release/iricPre.dll
-  ${PREPOST_GUI}/libs/solverconsole/release/iricSolverconsole.dll
-  ${PREPOST_GUI}/libs/tmsloader/release/iricTmsLoader.dll
-  ${PREPOST_GUI}/libs/triangle/release/iricTriangle.dll
+  ${PREPOST_GUI}/libdlls/Release/iricCs.dll
+  ${PREPOST_GUI}/libdlls/Release/iricAxis2d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricAxis3d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricDistancemeasure.dll
+  ${PREPOST_GUI}/libdlls/Release/iricMeasureddata.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdNetcdf.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPoint.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLine.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPointGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPointmap.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolydata.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolydataGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolygon.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolygonGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLine.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLineGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdRiversurvey.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGeoio.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccCenterandwidth.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccCompoundchannel.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccExternalprogram.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccGridcombine.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccGridgenerator.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccLaplace.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccPoisson.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccRectangularregion.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccRectangularregionlonlat.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccRiversurvey.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccRiversurvey15d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGccTriangle.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGui.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGuibase.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGuicore.dll
+  ${PREPOST_GUI}/libdlls/Release/iricHdRiversurveywaterelevation.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPython.dll
+  ${PREPOST_GUI}/libdlls/Release/iricMisc.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGraph2d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGraph2dhybrid.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGraph2dscattered.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGraph2dVerification.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPost2d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPost2dbirdeye.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPost3d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPostbase.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPre.dll
+  ${PREPOST_GUI}/libdlls/Release/iricSolverconsole.dll
+  ${PREPOST_GUI}/libdlls/Release/iricTmsLoader.dll
+  ${PREPOST_GUI}/libdlls/Release/iricTriangle.dll
 )
 
 # IRIC_DICS
@@ -2210,6 +2210,6 @@ install(FILES ${IRIC_DICS}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/languages
 )
 install(FILES ${IRIC_PY}
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data/pythonmodule
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.runtime/data/pythonmodule
 )
 

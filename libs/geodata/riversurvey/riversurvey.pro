@@ -14,13 +14,6 @@ QT += widgets xml
 
 # iricGdPointmap
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../pointmap/debug"
-        } else {
-                LIBS += -L"../pointmap/release"
-        }
-}
 unix {
         LIBS += -L"../pointmap"
 }
@@ -28,13 +21,6 @@ LIBS += -liricGdPointmap
 
 # iricGdPolydata
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../polydata/debug"
-        } else {
-                LIBS += -L"../polydata/release"
-        }
-}
 unix {
         LIBS += -L"../polydata"
 }
@@ -42,13 +28,6 @@ LIBS += -liricGdPolydata
 
 # iricGdPolydataGroup
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../polydatagroup/debug"
-        } else {
-                LIBS += -L"../polydatagroup/release"
-        }
-}
 unix {
         LIBS += -L"../polydatagroup"
 }
@@ -56,13 +35,6 @@ LIBS += -liricGdPolydataGroup
 
 # iricMisc
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../misc/debug"
-	} else {
-		LIBS += -L"../../misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../misc"
 }
@@ -70,13 +42,6 @@ LIBS += -liricMisc
 
 # iricGeoio
 
-win32 {
-        CONFIG(debug, debug|release) {
-                LIBS += -L"../../geoio/debug"
-        } else {
-                LIBS += -L"../../geoio/release"
-        }
-}
 unix {
         LIBS += -L"../../geoio"
 }
@@ -84,13 +49,6 @@ LIBS += -liricGeoio
 
 # iricGuibase
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guibase/debug"
-	} else {
-		LIBS += -L"../../guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../guibase"
 }
@@ -98,13 +56,6 @@ LIBS += -liricGuibase
 
 # iricGuicore
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../guicore/debug"
-	} else {
-		LIBS += -L"../../guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../guicore"
 }
@@ -112,13 +63,6 @@ LIBS += -liricGuicore
 
 # iricGdPolyLine
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geodata/polyline/debug"
-	} else {
-		LIBS += -L"../../geodata/polyline/release"
-	}
-}
 unix {
 	LIBS += -L"../../geodata/polyline"
 }
@@ -126,13 +70,6 @@ LIBS += -liricGdPolyLine
 
 # iricGdPolyLineGroup
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../geodata/polylinegroup/debug"
-	} else {
-		LIBS += -L"../../geodata/polylinegroup/release"
-	}
-}
 unix {
 	LIBS += -L"../../geodata/polylinegroup"
 }
@@ -140,13 +77,6 @@ LIBS += -liricGdPolyLineGroup
 
 # iricHdRiversurveywaterelevation
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../hydraulicdata/riversurveywaterelevation/debug"
-	} else {
-		LIBS += -L"../../hydraulicdata/riversurveywaterelevation/release"
-	}
-}
 unix {
 	LIBS += -L"../../hydraulicdata/riversurveywaterelevation"
 }
@@ -178,9 +108,9 @@ LIBS += -lgeos
 
 LIBS += -liriclib
 
-# Post-Build Event
 win32 {
-	QMAKE_POST_LINK += IF NOT EXIST $(SolutionDir)\\libdlls\\$(Configuration) mkdir $(SolutionDir)\\libdlls\\$(Configuration) && copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

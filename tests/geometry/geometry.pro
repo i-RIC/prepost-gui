@@ -15,16 +15,13 @@ include( ../../paths.pri )
 
 #iricMisc library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/guibase/debug"
-	} else {
-		LIBS += -L"../../libs/guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/guibase"
 }
 LIBS += -liricGuibase
+
+win32 {
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 SOURCES += geometry.cpp

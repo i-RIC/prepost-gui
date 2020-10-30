@@ -18,13 +18,6 @@ RC_FILE = iricgui.rc
 
 #iricGui library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/gui/debug"
-	} else {
-		LIBS += -L"../../libs/gui/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/gui"
 }
@@ -32,13 +25,6 @@ LIBS += -liricGui
 
 #iricMisc library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/misc/debug"
-	} else {
-		LIBS += -L"../../libs/misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../libs/misc"
 }
@@ -59,10 +45,8 @@ LIBS += \
 	-lvtkRenderingFreeTypeOpenGL-6.1 \
 	-lvtkRenderingOpenGL-6.1
 
-
-# Post-Build Event
 win32 {
-	QMAKE_POST_LINK += cd $$PWD/../../tools & copydlls.py
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input

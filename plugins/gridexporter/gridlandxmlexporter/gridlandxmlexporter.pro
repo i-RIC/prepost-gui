@@ -7,13 +7,6 @@ include( ../../../paths.pri )
 
 # iricGuibase library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../../libs/guibase/debug"
-	} else {
-		LIBS += -L"../../../libs/guibase/release"
-	}
-}
 unix {
 	LIBS += -L"../../../libs/guibase"
 }
@@ -21,13 +14,6 @@ LIBS += -liricGuibase
 
 # iricGuicore library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../../libs/guicore/debug"
-	} else {
-		LIBS += -L"../../../libs/guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../../libs/guicore"
 }
@@ -35,13 +21,6 @@ LIBS += -liricGuicore
 
 # iricMisc library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../../libs/misc/debug"
-	} else {
-		LIBS += -L"../../../libs/misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../../libs/misc"
 }
@@ -52,6 +31,11 @@ LIBS += -liricMisc
 LIBS += \
   -lvtkCommonCore-6.1 \
   -lvtkCommonDataModel-6.1
+
+win32 {
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 # Input
 HEADERS += gridlandxmlexporter.h

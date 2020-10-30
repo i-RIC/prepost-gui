@@ -40,7 +40,7 @@ init:
   ## Sometimes the plaintext of secure variables is displayed so filter out access_tokens
   - ps: 'Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" }'
   # Only commit and push to master branch or debug-appveyor branch (for testing)
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop") -OR ($env:APPVEYOR_REPO_BRANCH -eq "debug-appveyor")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop") -OR ($env:APPVEYOR_REPO_BRANCH -eq "issue-destdir")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
 
 configuration:
@@ -151,8 +151,7 @@ on_success:
           $v=(Select-String -Path prod_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
           $files=@('prod_src\packages\gui.prepost\data\definition.xml', `
                   'prod_src\packages\gui.prepost\meta\package.xml')
-        }
-        if ($env:APPVEYOR_REPO_BRANCH -eq "develop") {
+        } else {
           $v=(Select-String -Path dev_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
           $files=@('dev_src\packages\gui.prepost\data\definition.xml', `
                   'dev_src\packages\gui.prepost\meta\package.xml')
