@@ -221,5 +221,9 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Distance from center point</source>
         <translation>河川中心点からの距離</translation>
     </message>
+    <message>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>「左岸」は、下流方向を向いた時に左側に見える岸です。</translation>
+    </message>
 </context>
 </TS>
