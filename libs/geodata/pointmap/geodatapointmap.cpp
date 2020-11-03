@@ -100,6 +100,7 @@ const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_qTree {nullptr},
 	m_opacityPercent {50},
 	m_representation {GeoDataPointmapRepresentationDialog::Points},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
@@ -111,11 +112,9 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
 	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
 	lastInterpPointKnown {false},
-	m_longEdgeRemover {nullptr},
-	m_qTree {nullptr}
+	doubleclick {false},
+	m_longEdgeRemover {nullptr}
 {
-	doubleclick = false;
-
 	m_vtkGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
