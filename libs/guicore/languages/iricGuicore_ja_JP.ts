@@ -911,6 +911,13 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionWidgetCheckbox</name>
+    <message>
+        <source>Enabled</source>
+        <translation>有効</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>File name has to consist of only English characters.</source>
