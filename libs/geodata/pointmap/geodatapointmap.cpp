@@ -514,15 +514,15 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		}
 	}
 	in.pointlist = new double[m_vtkGrid->GetPoints()->GetNumberOfPoints() * 2];
-	in.pointattributelist = NULL;
-	in.pointmarkerlist = NULL;
+	in.pointattributelist = nullptr;
+	in.pointmarkerlist = nullptr;
 	in.numberofpoints = m_vtkGrid->GetPoints()->GetNumberOfPoints();
 	in.numberofpointattributes = 0;
 
-	in.trianglelist = NULL;
-	in.triangleattributelist = NULL;
-	in.trianglearealist = NULL;
-	in.neighborlist = NULL;
+	in.trianglelist = nullptr;
+	in.triangleattributelist = nullptr;
+	in.trianglearealist = nullptr;
+	in.neighborlist = nullptr;
 	in.numberoftriangles = 0;
 	in.numberofcorners = 0;
 	in.numberoftriangleattributes = 0;
@@ -536,15 +536,15 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		in.numberofsegments = segmentCount;
 	}
 
-	in.holelist = NULL;
+	in.holelist = nullptr;
 	in.numberofholes = 0;
 
-	in.regionlist = NULL;
+	in.regionlist = nullptr;
 	in.numberofregions = 0;
 
-	in.edgelist = NULL;
-	in.edgemarkerlist = NULL;
-	in.normlist = NULL;
+	in.edgelist = nullptr;
+	in.edgemarkerlist = nullptr;
+	in.normlist = nullptr;
 	in.numberofedges = 0;
 
 	for (vtkIdType i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
@@ -592,19 +592,19 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		f.close();
 	*/
 	out.pointlist = in.pointlist;
-	out.pointattributelist = NULL;
-	out.pointmarkerlist = NULL;
-	out.trianglelist = NULL;
-	out.triangleattributelist = NULL;
-	out.trianglearealist = NULL;
-	out.neighborlist = NULL;
-	out.segmentlist = NULL;
-	out.segmentmarkerlist = NULL;
-	out.holelist = NULL;
-	out.regionlist = NULL;
-	out.edgelist = NULL;
-	out.edgemarkerlist = NULL;
-	out.normlist = NULL;
+	out.pointattributelist = nullptr;
+	out.pointmarkerlist = nullptr;
+	out.trianglelist = nullptr;
+	out.triangleattributelist = nullptr;
+	out.trianglearealist = nullptr;
+	out.neighborlist = nullptr;
+	out.segmentlist = nullptr;
+	out.segmentmarkerlist = nullptr;
+	out.holelist = nullptr;
+	out.regionlist = nullptr;
+	out.edgelist = nullptr;
+	out.edgemarkerlist = nullptr;
+	out.normlist = nullptr;
 
 	QString args("pcj");
 
