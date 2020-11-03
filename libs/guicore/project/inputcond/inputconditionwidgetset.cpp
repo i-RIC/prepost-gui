@@ -9,6 +9,7 @@
 #include "private/inputconditiondependencysetsubimageaction.h"
 #include "private/inputconditiondependencychecksubcaptions.h"
 #include "private/inputconditiondependencychecksubimages.h"
+#include "private/inputconditionwidgetcheckbox.h"
 #include "private/inputconditionwidgetfoldername.h"
 #include "private/inputconditionwidgetfunctional.h"
 #include "private/inputconditionwidgetimage.h"
@@ -147,7 +148,9 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	} else if (type == "constant" || type == "") {
 		QString valuetype = defElem.attribute("valueType");
 		if (valuetype == "integer") {
-			if (InputConditionWidget::hasEnums(defNode)) {
+			if (defElem.attribute("checkBox", "false") == "true") {
+				widget = new InputConditionWidgetCheckbox(defNode, t, &(cset.integer(parameterName)));
+			} else if (InputConditionWidget::hasEnums(defNode)) {
 				widget = new InputConditionWidgetIntegerOption(defNode, t, &(cset.integer(parameterName)));
 			} else {
 				widget = new InputConditionWidgetInteger(defNode, t, &(cset.integer(parameterName)), cset);
