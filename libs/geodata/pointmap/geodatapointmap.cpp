@@ -473,44 +473,20 @@ bool GeoDataPointmap::getValueAt(double x, double y, double* value)
 		remeshTINS(true);
 	}
 
-	vtkPolyData* delaunayedData = delaunayedPolyData();
-	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(delaunayedData->GetPointData()->GetArray(VALUES));
-	double bounds[6];
-
-	delaunayedData->GetBounds(bounds);
-	if (x < bounds[0]) {return false;}
-	if (x > bounds[1]) {return false;}
-	if (y < bounds[2]) {return false;}
-	if (y > bounds[3]) {return false;}
-
-	vtkIdType cellid;
-	double pcoords[3];
 	double weights[3];
-	double point[3];
-	int subid;
+	vtkCell* cell = findCell(x, y, weights);
 
-	point[0] = x;
-	point[1] = y;
-	point[2] = 0;
+	if (cell == nullptr) {return false;}
 
-	// Fast search with vtkPolyData::FindCell
-	cellid = delaunayedData->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
-	if (cellid >= 0) {
-		*value = interpolatedValue(delaunayedData, cellid, weights, values);
-		return true;
+	double v = 0;
+	auto values = vtkDoubleArray::SafeDownCast(delaunayedPolyData()->GetPointData()->GetArray(VALUES));
+
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
+		vtkIdType vid = cell->GetPointId(i);
+		v += *(weights + i) * values->GetValue(vid);
 	}
-
-	// Slow search: try all cells
-	for (vtkIdType j = 0; j < delaunayedData->GetNumberOfCells(); ++j) {
-		double closestPoint[3];
-		double dist;
-		vtkCell* probeCell = delaunayedData->GetCell(j);
-		if (1 == probeCell->EvaluatePosition(point, closestPoint, subid, pcoords, dist, weights)) {
-			*value = interpolatedValue(delaunayedData, j, weights, values);
-			return true;
-		}
-	}
-	return false;
+	*value = v;
+	return true;
 }
 
 bool GeoDataPointmap::getValueAt(const QPointF& pos, double* value)
