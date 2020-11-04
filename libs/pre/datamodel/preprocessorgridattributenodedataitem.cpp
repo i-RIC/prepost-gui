@@ -291,12 +291,11 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 			return;
 		}
 		auto selectedV = gridDataItem->selectedVertices().at(0);
-		GridComplexConditionGroup* group = gItem->groups().at(selectedV);
 
-		m_groupEditDialog->setGroup(group);
+		m_groupEditDialog->setWindowTitle(tr("Edit %1").arg(m_condition->caption()));
+		m_groupEditDialog->setGroups(gItem->groups());
+		m_groupEditDialog->setCurrentIndex(selectedV);
 		m_groupEditDialog->exec();
-
-		m_groupEditDialog->setGroup(nullptr);
 	} else {
 		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
 		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
