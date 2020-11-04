@@ -7,13 +7,6 @@ include( ../../../paths.pri )
 
 # iricGuicore library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../../libs/guicore/debug"
-	} else {
-		LIBS += -L"../../../libs/guicore/release"
-	}
-}
 unix {
 	LIBS += -L"../../../libs/guicore"
 }
@@ -21,13 +14,6 @@ LIBS += -liricGuicore
 
 # iricMisc library
 
-win32 {
-	CONFIG(debug, debug|release) {
-		LIBS += -L"../../../libs/misc/debug"
-	} else {
-		LIBS += -L"../../../libs/misc/release"
-	}
-}
 unix {
 	LIBS += -L"../../../libs/misc"
 }
@@ -37,6 +23,11 @@ LIBS += -liricMisc
 
 LIBS += \
 	-lvtkCommonCore-6.1
+
+win32 {
+	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
+	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+}
 
 # Input
 HEADERS += structured15dgridwithcrosssectionhecrasexporter.h
