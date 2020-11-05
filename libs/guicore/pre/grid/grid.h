@@ -22,6 +22,8 @@ class QStringList;
 class GridInternalImporter;
 class GridInternalExporter;
 class GridAttributeContainer;
+class PreProcessorGridDataItemInterface;
+
 class vtkAlgorithm;
 class vtkPointSet;
 
@@ -42,6 +44,9 @@ public:
 	SolverDefinitionGridType::GridType gridType() const;
 	const std::string& zoneName() const;
 	void setZoneName(const std::string& name);
+
+	PreProcessorGridDataItemInterface* dataItem() const;
+	void setDataItem(PreProcessorGridDataItemInterface* item);
 
 	void setParent(QObject* parent);
 

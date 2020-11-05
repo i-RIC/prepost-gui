@@ -29,6 +29,7 @@ Grid::Impl::Impl(vtkPointSet* ps, const std::string& zoneName, SolverDefinitionG
 	m_gridType {gt},
 	m_zoneName (zoneName),
 	m_vtkGrid {ps},
+	m_dataItem {nullptr},
 	m_isModified {false},
 	m_isMasked {false}
 {}
@@ -69,6 +70,16 @@ const std::string& Grid::zoneName() const
 void Grid::setZoneName(const std::string& name)
 {
 	impl->m_zoneName = name;
+}
+
+PreProcessorGridDataItemInterface* Grid::dataItem() const
+{
+	return impl->m_dataItem;
+}
+
+void Grid::setDataItem(PreProcessorGridDataItemInterface* item)
+{
+	impl->m_dataItem = item;
 }
 
 void Grid::setParent(QObject* parent)

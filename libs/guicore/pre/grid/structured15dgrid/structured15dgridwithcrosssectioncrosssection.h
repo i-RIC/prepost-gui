@@ -1,12 +1,13 @@
 #ifndef STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTION_H
 #define STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTION_H
 
+#include "../../../guicore_global.h"
 #include "../grid.h"
 
 #include <QObject>
 #include <QVector>
 
-class Structured15DGridWithCrossSectionCrossSection : public QObject
+class GUICOREDLL_EXPORT Structured15DGridWithCrossSectionCrossSection : public QObject
 {
 
 public:
@@ -26,18 +27,16 @@ public:
 		unsigned int number; ///< Number of points to add
 		double param; ///< parameter
 	};
-	Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid)
-		: QObject(grid) {
-		m_grid = grid;
-		m_name = name;
-	}
-	Grid* grid() const {return m_grid;}
+	Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid);
+	Grid* grid() const;
+
 	void loadFromCgnsFile(int fn, int B, int Z, int index);
 	void saveToCgnsFile(int fn, int B, int Z, int index);
-	const QString& name() const {return m_name;}
-	const QVector<Altitude>& altitudeInfo() const {return m_altitudeInfo;}
-	QVector<Altitude>& altitudeInfo() {return m_altitudeInfo;}
-	void setAltitudeInfo(const QVector<Altitude>& alt) {m_altitudeInfo = alt;}
+
+	const QString& name() const;
+	const QVector<Altitude>& altitudeInfo() const;
+	QVector<Altitude>& altitudeInfo();
+	void setAltitudeInfo(const QVector<Altitude>& alt);
 
 protected:
 	Grid* m_grid;

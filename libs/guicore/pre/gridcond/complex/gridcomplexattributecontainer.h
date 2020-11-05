@@ -1,13 +1,15 @@
 #ifndef GRIDRELATEDCOMPLEXCONDITIONCONTAINER_H
 #define GRIDRELATEDCOMPLEXCONDITIONCONTAINER_H
 
+#include "../../../guicore_global.h"
 #include "../base/gridattributecontainert.h"
 
 #include <vtkIntArray.h>
 
+class GridComplexConditionGroup;
 class SolverDefinitionGridComplexAttribute;
 
-class GridComplexAttributeContainer : public GridAttributeContainerT<int>
+class GUICOREDLL_EXPORT GridComplexAttributeContainer : public GridAttributeContainerT<int>
 {
 public:
 	GridComplexAttributeContainer(Grid* grid, SolverDefinitionGridComplexAttribute* cond);
@@ -24,6 +26,8 @@ public:
 	vtkIntArray* dataArrayCopy() const override;
 	void setModified() override;
 	bool getValueRange(double* min, double* max) override;
+
+	std::vector<GridComplexConditionGroup*> groups() const;
 
 protected:
 	DataType_t dataType() const override;

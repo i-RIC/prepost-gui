@@ -5,6 +5,17 @@
 
 #include <cgnslib.h>
 
+Structured15DGridWithCrossSectionCrossSection::Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid) :
+	QObject(grid),
+	m_grid {grid},
+	m_name {name}
+{}
+
+Grid* Structured15DGridWithCrossSectionCrossSection::grid() const
+{
+	return m_grid;
+}
+
 void Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(int fn, int B, int Z, int index)
 {
 	// Goto "GridCrosssections" node.
@@ -67,4 +78,24 @@ void Structured15DGridWithCrossSectionCrossSection::saveToCgnsFile(int fn, int B
 		data[size + i] = m_altitudeInfo.at(i).m_height;
 	}
 	cg_array_write(iRIC::toStr(name).c_str(), RealDouble, 2, dimensions, data.data());
+}
+
+const QString& Structured15DGridWithCrossSectionCrossSection::name() const
+{
+	return m_name;
+}
+
+const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& Structured15DGridWithCrossSectionCrossSection::altitudeInfo() const
+{
+	return m_altitudeInfo;
+}
+
+QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& Structured15DGridWithCrossSectionCrossSection::altitudeInfo()
+{
+	return m_altitudeInfo;
+}
+
+void Structured15DGridWithCrossSectionCrossSection::setAltitudeInfo(const QVector<Altitude>& alt)
+{
+	m_altitudeInfo = alt;
 }
