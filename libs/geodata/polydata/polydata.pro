@@ -39,6 +39,11 @@ LIBS += -liricMisc
 # External libraries #
 ######################
 
+# VTK
+
+LIBS += \
+	-lvtkCommonCore-$${VTK_MAJ_MIN}
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)

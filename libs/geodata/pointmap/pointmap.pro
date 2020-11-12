@@ -56,20 +56,20 @@ LIBS += -liricGuicore
 # VTK
 
 LIBS += \
-	-lvtkCommonComputationalGeometry-6.1 \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkCommonExecutionModel-6.1 \
-	-lvtkCommonTransforms-6.1 \
-	-lvtkFiltersCore-6.1 \
-	-lvtkFiltersGeneral-6.1 \
-	-lvtkIOCore-6.1 \
-	-lvtkIOExport-6.1 \
-	-lvtkIOGeometry-6.1 \
-	-lvtkIOLegacy-6.1 \
-	-lvtkRenderingCore-6.1 \
-	-lvtkRenderingLabel-6.1 \
-	-lvtkRenderingLOD-6.1
+	-lvtkCommonComputationalGeometry-$${VTK_MAJ_MIN} \
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonTransforms-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \
+	-lvtkIOCore-$${VTK_MAJ_MIN} \
+	-lvtkIOExport-$${VTK_MAJ_MIN} \
+	-lvtkIOGeometry-$${VTK_MAJ_MIN} \
+	-lvtkIOLegacy-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingLabel-$${VTK_MAJ_MIN} \
+	-lvtkRenderingLOD-$${VTK_MAJ_MIN}
 
 # iriclib
 

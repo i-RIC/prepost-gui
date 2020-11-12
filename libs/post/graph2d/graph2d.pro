@@ -66,6 +66,11 @@ unix {
 	DEFINES += QT_NO_WARNING_OUTPUT
 }
 
+# VTK
+
+LIBS += \
+	-lvtkCommonCore-$${VTK_MAJ_MIN}
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)

@@ -40,18 +40,18 @@ LIBS += -liricMisc
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkCommonExecutionModel-6.1 \
-	-lvtkCommonMisc-6.1 \
-	-lvtkFiltersCore-6.1 \
-	-lvtkFiltersGeneral-6.1 \
-	-lvtkFiltersGeometry-6.1 \
-	-lvtkFiltersSources-6.1 \
-	-lvtkInteractionWidgets-6.1 \
-	-lvtkRenderingCore-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingLOD-6.1
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonMisc-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeometry-$${VTK_MAJ_MIN} \
+	-lvtkFiltersSources-$${VTK_MAJ_MIN} \
+	-lvtkInteractionWidgets-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
+	-lvtkRenderingLOD-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

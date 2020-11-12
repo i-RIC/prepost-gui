@@ -59,29 +59,29 @@ LIBS += -liricPost2d
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkCommonExecutionModel-6.1 \
-	-lvtkCommonMath-6.1 \
-	-lvtkCommonMisc-6.1 \
-	-lvtkCommonTransforms-6.1 \
-	-lvtkFiltersCore-6.1 \
-	-lvtkFiltersGeometry-6.1 \
-	-lvtkFiltersGeneral-6.1 \
-	-lvtkFiltersExtraction-6.1 \
-	-lvtkFiltersFlowPaths-6.1 \
-	-lvtkFiltersSources-6.1 \
-	-lvtkFiltersTexture-6.1 \
-	-lvtkGUISupportQt-6.1 \
-	-lvtkInteractionWidgets-6.1 \
-	-lvtkIOImage-6.1 \
-	-lvtkIOCore-6.1 \
-	-lvtkIOLegacy-6.1 \
-	-lvtkRenderingAnnotation-6.1 \
-	-lvtkRenderingCore-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingLabel-6.1 \
-	-lvtkRenderingLOD-6.1
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonMath-$${VTK_MAJ_MIN} \
+	-lvtkCommonMisc-$${VTK_MAJ_MIN} \
+	-lvtkCommonTransforms-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeometry-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \
+	-lvtkFiltersExtraction-$${VTK_MAJ_MIN} \
+	-lvtkFiltersFlowPaths-$${VTK_MAJ_MIN} \
+	-lvtkFiltersSources-$${VTK_MAJ_MIN} \
+	-lvtkFiltersTexture-$${VTK_MAJ_MIN} \
+	-lvtkGUISupportQt-$${VTK_MAJ_MIN} \
+	-lvtkInteractionWidgets-$${VTK_MAJ_MIN} \
+	-lvtkIOImage-$${VTK_MAJ_MIN} \
+	-lvtkIOCore-$${VTK_MAJ_MIN} \
+	-lvtkIOLegacy-$${VTK_MAJ_MIN} \
+	-lvtkRenderingAnnotation-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
+	-lvtkRenderingLabel-$${VTK_MAJ_MIN} \
+	-lvtkRenderingLOD-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

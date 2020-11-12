@@ -25,7 +25,7 @@ unix {
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1
+	-lvtkCommonCore-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

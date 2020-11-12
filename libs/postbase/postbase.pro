@@ -40,12 +40,12 @@ LIBS += -liricGuicore
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkCommonExecutionModel-6.1 \
-	-lvtkRenderingCore-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingQt-6.1
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
+	-lvtkRenderingQt-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

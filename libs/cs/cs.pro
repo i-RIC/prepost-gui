@@ -30,7 +30,7 @@ LIBS += -liricMisc
 # proj.4
 
 win32 {
-	LIBS += -lproj_i
+	LIBS += -lproj
 }
 unix {
 	LIBS += -lproj

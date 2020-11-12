@@ -160,13 +160,25 @@ unix {
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkInteractionStyle-6.1 \
-	-lvtkIOExport-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingFreeTypeOpenGL-6.1 \
-	-lvtkRenderingOpenGL-6.1
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkInteractionStyle-$${VTK_MAJ_MIN} \
+	-lvtkIOExport-$${VTK_MAJ_MIN} \
+	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
+	-lvtkRenderingFreeTypeOpenGL-$${VTK_MAJ_MIN} \
+	-lvtkRenderingOpenGL-$${VTK_MAJ_MIN}
+
+##equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
+##	LIBS += \
+##		-lvtkRenderingFreeTypeOpenGL-$${VTK_MAJ_MIN} \
+##		-lvtkRenderingOpenGL-$${VTK_MAJ_MIN}
+##}
+
+equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
+	LIBS -= \
+		-lvtkRenderingFreeTypeOpenGL-$${VTK_MAJ_MIN} \
+		-lvtkRenderingOpenGL-$${VTK_MAJ_MIN}
+}
 
 INCLUDEPATH += ../../libs
 

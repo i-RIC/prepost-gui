@@ -105,11 +105,11 @@ unix {
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkCommonExecutionModel-6.1 \
-	-lvtkFiltersCore-6.1 \
-	-lvtkFiltersExtraction-6.1
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersExtraction-$${VTK_MAJ_MIN}
 
 # cgnslib
 win32 {

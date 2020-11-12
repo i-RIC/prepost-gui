@@ -122,3 +122,7 @@ CONFIG += c++11
 target.path = /usr/local/iRIC
 INSTALLS += target
 
+VTK_MAJOR_VERSION = 8
+VTK_MINOR_VERSION = 2
+
+VTK_MAJ_MIN = $${VTK_MAJOR_VERSION}.$${VTK_MINOR_VERSION}

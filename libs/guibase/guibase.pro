@@ -48,18 +48,18 @@ unix {
 # VTK
 
 LIBS += \
-	-lvtkCommonComputationalGeometry-6.1 \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkCommonExecutionModel-6.1 \
-	-lvtkCommonMath-6.1 \
-	-lvtkFiltersFlowPaths-6.1 \
-	-lvtkInteractionStyle-6.1 \
-	-lvtkInteractionWidgets-6.1 \
-	-lvtkRenderingAnnotation-6.1 \
-	-lvtkRenderingCore-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingLabel-6.1
+	-lvtkCommonComputationalGeometry-$${VTK_MAJ_MIN} \
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonMath-$${VTK_MAJ_MIN} \
+	-lvtkFiltersFlowPaths-$${VTK_MAJ_MIN} \
+	-lvtkInteractionStyle-$${VTK_MAJ_MIN} \
+	-lvtkInteractionWidgets-$${VTK_MAJ_MIN} \
+	-lvtkRenderingAnnotation-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
+	-lvtkRenderingLabel-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
@@ -102,6 +102,7 @@ HEADERS += arrowsettingcontainer.h \
            vtklinestylecontainer.h \
            vtklinestylewidget.h \
            vtkScalarBarActorInternal.h \
+           vtkStreamer.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
@@ -245,6 +246,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtklegendboxwidget.cpp \
            vtklinestylecontainer.cpp \
            vtklinestylewidget.cpp \
+           vtkStreamer.cxx \
            vtksubdividegrid.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
