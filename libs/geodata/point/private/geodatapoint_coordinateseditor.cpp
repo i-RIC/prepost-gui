@@ -20,8 +20,9 @@ void GeoDataPoint::CoordinatesEditor::edit(GeoDataPoint* point)
 	QPointF p = point->point();
 	std::vector<QPointF> coords;
 	coords.push_back(p);
+	auto coords2 = applyOffset(coords);
 
-	CoordinatesEdit::edit(coords, point->preProcessorWindow(),
+	CoordinatesEdit::edit(coords2, point->preProcessorWindow(),
 												acceptCallback,
 												rejectCallback,
 												applyCallback,
