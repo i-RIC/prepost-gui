@@ -931,6 +931,10 @@ void GeoDataPolyDataGroup::doApplyOffset(double x, double y)
 	for (auto d : impl->m_data) {
 		d->applyOffset(x, y);
 	}
+	if (impl->m_editTargetData != nullptr) {
+		impl->m_editTargetData->applyOffset(x, y);
+	}
+
 	updateVtkObjects();
 	updateSelectedDataVtkObjects();
 	updateIndex();
