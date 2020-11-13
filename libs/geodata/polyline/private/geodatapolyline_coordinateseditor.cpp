@@ -22,8 +22,9 @@ void GeoDataPolyLine::CoordinatesEditor::edit(GeoDataPolyLine* polyline)
 	applied = false;
 
 	auto coords = polyline->polyLine()->polyLine();
+	auto coords2 = applyOffset(coords);
 
-	CoordinatesEdit::edit(coords, polyline->preProcessorWindow(),
+	CoordinatesEdit::edit(coords2, polyline->preProcessorWindow(),
 												acceptCallback,
 												rejectCallback,
 												applyCallback,
