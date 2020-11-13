@@ -177,6 +177,7 @@ void GeoDataPolyLineGroupPolyLine::applyOffset(double x, double y)
 	auto ls = impl->m_polyLine.get();
 
 	impl->m_polyLine.reset(::applyOffset(ls, x, y));
+	setupBoundingRect();
 }
 
 void GeoDataPolyLineGroupPolyLine::applyShape()

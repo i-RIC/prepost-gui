@@ -248,6 +248,8 @@ void GeoDataPolygonGroupPolygon::applyOffset(double x, double y)
 
 	auto f = geos::geom::GeometryFactory::getDefaultInstance();
 	impl->m_polygon.reset(f->createPolygon(elr, holes));
+
+	setupBoundingRect();
 }
 
 void GeoDataPolygonGroupPolygon::setupBoundingRect()
