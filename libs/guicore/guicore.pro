@@ -507,6 +507,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditiondependencyconditionor.h \
            project/inputcond/private/inputconditiondependencysetsubcaptionaction.h \
            project/inputcond/private/inputconditiondependencysetsubimageaction.h \
+           project/inputcond/private/inputconditionwidgetcheckbox.h \
            project/inputcond/private/inputconditionwidgetfoldername.h \
            project/inputcond/private/inputconditionwidgetfunctional.h \
            project/inputcond/private/inputconditionwidgetfunctionaldelegate.h \
@@ -821,6 +822,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditiondependencyconditionor.cpp \
            project/inputcond/private/inputconditiondependencysetsubcaptionaction.cpp \
            project/inputcond/private/inputconditiondependencysetsubimageaction.cpp \
+           project/inputcond/private/inputconditionwidgetcheckbox.cpp \
            project/inputcond/private/inputconditionwidgetfoldername.cpp \
            project/inputcond/private/inputconditionwidgetfunctional.cpp \
            project/inputcond/private/inputconditionwidgetfunctionaldelegate.cpp \
