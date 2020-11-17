@@ -147,7 +147,7 @@ private:
 	void buildGridFromPolydata();
 	void updateActionStatus();
 	void updateMouseEventMode();
-	bool isVertexSelectable(const QVector2D& pos);
+	bool isVertexSelectable(const QPointF& pos);
 	int m_selectedVertexId;
 	double m_selectedZPos;
 	bool m_canceled;
@@ -171,6 +171,8 @@ private slots:
 	void editPointsLessThan();
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
+
+	void mergePointmaps();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -244,6 +246,7 @@ protected:
 	QAction* m_addBreakLineAction;
 	QAction* m_removeBreakLineAction;
 	QAction* m_removeAllBreakLinesAction;
+	QAction* m_mergeAction;
 
 	QMenu*   m_rightClickingMenu;
 

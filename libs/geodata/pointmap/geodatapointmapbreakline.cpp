@@ -43,7 +43,7 @@ GeoDataPointmapBreakLine::~GeoDataPointmapBreakLine()
 	col->RemoveItem(m_verticesActor);
 }
 
-bool GeoDataPointmapBreakLine::isEdgeSelectable(const QVector2D& pos, double limitdist)
+bool GeoDataPointmapBreakLine::isEdgeSelectable(const QPointF& pos, double limitdist)
 {
 	double x[3] = {pos.x(), pos.y(), 0.0};
 	double closestPoint[3];
