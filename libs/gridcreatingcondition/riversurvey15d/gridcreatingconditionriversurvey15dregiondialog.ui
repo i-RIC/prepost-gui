@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>458</width>
-    <height>163</height>
+    <width>468</width>
+    <height>182</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -115,6 +115,16 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="directionLabel">
+     <property name="text">
+      <string>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <spacer name="verticalSpacer">
