@@ -71,6 +71,10 @@ LIBS += \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1
 
+# geos
+
+LIBS += -lgeos
+
 # iriclib
 
 LIBS += -liriclib

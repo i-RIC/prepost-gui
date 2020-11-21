@@ -20,6 +20,14 @@
 
 #include <vector>
 
+namespace geos {
+namespace index{
+namespace quadtree {
+class Quadtree;
+} // quadtree
+} // index
+} // geos
+
 class QAction;
 class QPolygonF;
 
@@ -124,6 +132,7 @@ public:
 	void finishAddPoint();
 	void finishInterpPoint();
 	bool needRemeshing() {return m_needRemeshing;}
+	vtkCell* findCell(double x, double y, double* weights);
 
 public slots:
 	void remeshTINS(bool nodialog = false);
@@ -183,8 +192,11 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doApplyOffset(double x, double y) override;
 
+	void rebuildQTree();
+
 	vtkSmartPointer<vtkPolyData> m_vtkGrid;
 	vtkSmartPointer<vtkPolyData> m_vtkDelaunayedPolyData;
+	geos::index::quadtree::Quadtree* m_qTree;
 
 	QList<GeoDataPointmapBreakLine*> m_breakLines;
 	GeoDataPointmapBreakLine* m_activeBreakLine;

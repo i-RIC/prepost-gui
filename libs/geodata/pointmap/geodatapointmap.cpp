@@ -79,6 +79,9 @@
 #include <vtkUnstructuredGridWriter.h>
 #include <vtkVertex.h>
 
+#include <geos/geom/Envelope.h>
+#include <geos/index/quadtree/Quadtree.h>
+
 #include <iriclib_pointmap.h>
 
 #include <set>
@@ -102,6 +105,7 @@ const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_qTree {nullptr},
 	m_opacityPercent {50},
 	m_representation {GeoDataPointmapRepresentationDialog::Points},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
@@ -113,10 +117,9 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
 	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
 	lastInterpPointKnown {false},
+	doubleclick {false},
 	m_longEdgeRemover {nullptr}
 {
-	doubleclick = false;
-
 	m_vtkGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
@@ -159,6 +162,8 @@ GeoDataPointmap::~GeoDataPointmap()
 
 	vtkActorCollection* col = actorCollection();
 	col->RemoveAllItems();
+
+	delete m_qTree;
 }
 
 vtkPolyData* GeoDataPointmap::vtkGrid() const
@@ -337,6 +342,7 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 		breaklinesFile.close();
 	}
 
+	rebuildQTree();
 	updateActorSettings();
 }
 
@@ -471,44 +477,20 @@ bool GeoDataPointmap::getValueAt(double x, double y, double* value)
 		remeshTINS(true);
 	}
 
-	vtkPolyData* delaunayedData = delaunayedPolyData();
-	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(delaunayedData->GetPointData()->GetArray(VALUES));
-	double bounds[6];
-
-	delaunayedData->GetBounds(bounds);
-	if (x < bounds[0]) {return false;}
-	if (x > bounds[1]) {return false;}
-	if (y < bounds[2]) {return false;}
-	if (y > bounds[3]) {return false;}
-
-	vtkIdType cellid;
-	double pcoords[3];
 	double weights[3];
-	double point[3];
-	int subid;
+	vtkCell* cell = findCell(x, y, weights);
 
-	point[0] = x;
-	point[1] = y;
-	point[2] = 0;
+	if (cell == nullptr) {return false;}
 
-	// Fast search with vtkPolyData::FindCell
-	cellid = delaunayedData->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
-	if (cellid >= 0) {
-		*value = interpolatedValue(delaunayedData, cellid, weights, values);
-		return true;
+	double v = 0;
+	auto values = vtkDoubleArray::SafeDownCast(delaunayedPolyData()->GetPointData()->GetArray(VALUES));
+
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
+		vtkIdType vid = cell->GetPointId(i);
+		v += *(weights + i) * values->GetValue(vid);
 	}
-
-	// Slow search: try all cells
-	for (vtkIdType j = 0; j < delaunayedData->GetNumberOfCells(); ++j) {
-		double closestPoint[3];
-		double dist;
-		vtkCell* probeCell = delaunayedData->GetCell(j);
-		if (1 == probeCell->EvaluatePosition(point, closestPoint, subid, pcoords, dist, weights)) {
-			*value = interpolatedValue(delaunayedData, j, weights, values);
-			return true;
-		}
-	}
-	return false;
+	*value = v;
+	return true;
 }
 
 bool GeoDataPointmap::getValueAt(const QPointF& pos, double* value)
@@ -537,15 +519,15 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		}
 	}
 	in.pointlist = new double[m_vtkGrid->GetPoints()->GetNumberOfPoints() * 2];
-	in.pointattributelist = NULL;
-	in.pointmarkerlist = NULL;
+	in.pointattributelist = nullptr;
+	in.pointmarkerlist = nullptr;
 	in.numberofpoints = m_vtkGrid->GetPoints()->GetNumberOfPoints();
 	in.numberofpointattributes = 0;
 
-	in.trianglelist = NULL;
-	in.triangleattributelist = NULL;
-	in.trianglearealist = NULL;
-	in.neighborlist = NULL;
+	in.trianglelist = nullptr;
+	in.triangleattributelist = nullptr;
+	in.trianglearealist = nullptr;
+	in.neighborlist = nullptr;
 	in.numberoftriangles = 0;
 	in.numberofcorners = 0;
 	in.numberoftriangleattributes = 0;
@@ -559,15 +541,15 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		in.numberofsegments = segmentCount;
 	}
 
-	in.holelist = NULL;
+	in.holelist = nullptr;
 	in.numberofholes = 0;
 
-	in.regionlist = NULL;
+	in.regionlist = nullptr;
 	in.numberofregions = 0;
 
-	in.edgelist = NULL;
-	in.edgemarkerlist = NULL;
-	in.normlist = NULL;
+	in.edgelist = nullptr;
+	in.edgemarkerlist = nullptr;
+	in.normlist = nullptr;
 	in.numberofedges = 0;
 
 	for (vtkIdType i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
@@ -615,19 +597,19 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		f.close();
 	*/
 	out.pointlist = in.pointlist;
-	out.pointattributelist = NULL;
-	out.pointmarkerlist = NULL;
-	out.trianglelist = NULL;
-	out.triangleattributelist = NULL;
-	out.trianglearealist = NULL;
-	out.neighborlist = NULL;
-	out.segmentlist = NULL;
-	out.segmentmarkerlist = NULL;
-	out.holelist = NULL;
-	out.regionlist = NULL;
-	out.edgelist = NULL;
-	out.edgemarkerlist = NULL;
-	out.normlist = NULL;
+	out.pointattributelist = nullptr;
+	out.pointmarkerlist = nullptr;
+	out.trianglelist = nullptr;
+	out.triangleattributelist = nullptr;
+	out.trianglearealist = nullptr;
+	out.neighborlist = nullptr;
+	out.segmentlist = nullptr;
+	out.segmentmarkerlist = nullptr;
+	out.holelist = nullptr;
+	out.regionlist = nullptr;
+	out.edgelist = nullptr;
+	out.edgemarkerlist = nullptr;
+	out.normlist = nullptr;
 
 	QString args("pcj");
 
@@ -718,6 +700,9 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 	trifree(out.trianglelist);
 	trifree(out.segmentlist);
 	trifree(out.segmentmarkerlist);
+
+	rebuildQTree();
+
 	return (! m_canceled);
 }
 
@@ -2525,6 +2510,36 @@ void GeoDataPointmap::finishInterpPoint()
 	}
 }
 
+vtkCell* GeoDataPointmap::findCell(double x, double y, double *weights)
+{
+	auto env = new geos::geom::Envelope(x, x, y, y);
+	std::vector<void*> ret;
+	m_qTree->query(env, ret);
+	delete env;
+
+	double point[3], closestPoint[3], pcoords[3], dist;
+	double bounds[6];
+	int subId;
+
+	point[0] = x;
+	point[1] = y;
+	point[2] = 0;
+
+	for (void* vptr : ret) {
+		vtkIdType cellId = reinterpret_cast<vtkIdType> (vptr);
+		m_vtkDelaunayedPolyData->GetCellBounds(cellId, bounds);
+		if (point[0] < bounds[0]) {continue;}
+		if (point[0] > bounds[1]) {continue;}
+		if (point[1] < bounds[2]) {continue;}
+		if (point[1] > bounds[3]) {continue;}
+		vtkCell* cell = m_vtkDelaunayedPolyData->GetCell(cellId);
+		if (1 == cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist, weights)) {
+			return cell;
+		}
+	}
+	return nullptr;
+}
+
 void GeoDataPointmap::doApplyOffset(double x, double y)
 {
 	vtkPoints* points = m_vtkDelaunayedPolyData->GetPoints();
@@ -2556,5 +2571,19 @@ void GeoDataPointmap::doApplyOffset(double x, double y)
 		}
 		points->Modified();
 		gridPoints->Modified();
+	}
+}
+
+void GeoDataPointmap::rebuildQTree()
+{
+	delete m_qTree;
+	m_qTree = new geos::index::quadtree::Quadtree();
+
+	double bounds[6];
+	for (vtkIdType i = 0; i < m_vtkDelaunayedPolyData->GetNumberOfCells(); ++i) {
+		m_vtkDelaunayedPolyData->GetCellBounds(i, bounds);
+
+		auto env = new geos::geom::Envelope(bounds[0], bounds[1], bounds[2], bounds[3]);
+		m_qTree->insert(env, reinterpret_cast<void*>(i));
 	}
 }
