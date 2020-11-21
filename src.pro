@@ -7,7 +7,7 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS = \
-	libs \
 	apps \
+	libs \
 	plugins \
 	tests
