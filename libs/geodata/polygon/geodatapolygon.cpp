@@ -1335,7 +1335,7 @@ int GeoDataPolygon::iRICLibType() const
 
 void GeoDataPolygon::applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y)
 {
-	QPolygonF pol = polygon->polygon(QPointF(x, y));
+	QPolygonF pol = polygon->polygon(QPointF(- x, - y));
 	polygon->setPolygon(pol);
 }
 

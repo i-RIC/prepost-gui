@@ -683,7 +683,7 @@ void GeoDataPolyLine::copyShape(GeoDataPolyLine* polyline)
 
 void GeoDataPolyLine::doApplyOffset(double x, double y)
 {
-	std::vector<QPointF> pol = impl->m_polyLine->polyLine(QPointF(x, y));
+	std::vector<QPointF> pol = impl->m_polyLine->polyLine(QPointF(-x, -y));
 	impl->m_polyLine->setPolyLine(pol);
 }
 

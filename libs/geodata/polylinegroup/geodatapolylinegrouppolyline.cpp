@@ -59,7 +59,7 @@ geos::geom::LineString* applyOffset(const geos::geom::LineString* string, double
 {
 	auto pol = buildPolyLine(string);
 	for (auto& p : pol) {
-		p += QPointF(x, y);
+		p -= QPointF(x, y);
 	}
 	return buildString(pol);
 }
@@ -140,6 +140,7 @@ void GeoDataPolyLineGroupPolyLine::copyShapeTo(GeoDataPolyData* data)
 	auto l = dynamic_cast<GeoDataPolyLine*> (data);
 	l->setShape(getGeosLineString());
 	l->setMouseEventMode(GeoDataPolyLine::meNormal);
+	l->updateActionStatus();
 }
 
 void GeoDataPolyLineGroupPolyLine::loadExternalData(QDataStream* stream)
@@ -176,6 +177,7 @@ void GeoDataPolyLineGroupPolyLine::applyOffset(double x, double y)
 	auto ls = impl->m_polyLine.get();
 
 	impl->m_polyLine.reset(::applyOffset(ls, x, y));
+	setupBoundingRect();
 }
 
 void GeoDataPolyLineGroupPolyLine::applyShape()

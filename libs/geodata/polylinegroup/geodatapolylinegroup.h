@@ -44,6 +44,7 @@ private:
 
 public:
 	friend class GeoDataPolyLineGroupAttributeBrowser;
+	friend class GeoDataPolyLineGroupCsvImporter;
 	friend class GeoDataPolyLineGroupShpImporter;
 };
 

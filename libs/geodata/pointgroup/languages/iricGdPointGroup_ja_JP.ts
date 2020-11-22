@@ -44,6 +44,84 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointGroupCsvExporter</name>
+    <message>
+        <source>CSV file</source>
+        <translation>CSV ファイル</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while exporting to %1.</source>
+        <translation>%1 へのエクスポートでエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation>CSV ファイル (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupCsvImporter</name>
+    <message>
+        <source>CSV file (Points)</source>
+        <translation>CSV ファイル (点)</translation>
+    </message>
+    <message>
+        <source>CSV file (Points) (*.csv)</source>
+        <translation>CSV ファイル (点) (*.csv)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。UTF-8 エンコーディングで保存されているか確認してください。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Header should have 3 columns at least.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには3列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Header should have 4 columns at least.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには4列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は &quot;%2&quot; のはずですが、&quot;%3&quot; が指定されています。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。UTF-8 エンコーディングで保存されているか確認してください。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Data should have 3 columns at least.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。3列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Data should have 4 columns at least.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。4列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;x&quot; の読み込み中にエラーが発生しました。 &quot;x&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;y&quot; の読み込み中にエラーが発生しました。 &quot;y&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;value&quot; の読み込み中にエラーが発生しました。 &quot;value&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
