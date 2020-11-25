@@ -102,7 +102,6 @@ HEADERS += arrowsettingcontainer.h \
            vtklinestylecontainer.h \
            vtklinestylewidget.h \
            vtkScalarBarActorInternal.h \
-           vtkStreamer.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
@@ -192,6 +191,10 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
            widget/private/realnumbereditwidget_impl.h
+equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
+    HEADERS += \
+           vtkStreamer.h
+}
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
@@ -246,7 +249,6 @@ SOURCES += arrowsettingcontainer.cpp \
            vtklegendboxwidget.cpp \
            vtklinestylecontainer.cpp \
            vtklinestylewidget.cpp \
-           vtkStreamer.cxx \
            vtksubdividegrid.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
@@ -322,6 +324,10 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/transparencywidget.cpp \
            widget/waitdialog.cpp \
            coordinates/private/coordinateseditdialogdelegate.cpp
+equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
+    SOURCES += \
+           vtkStreamer.cpp
+}
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
                 languages/iricGuibase_bg_BG.ts \
