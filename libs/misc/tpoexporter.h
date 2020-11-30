@@ -14,7 +14,6 @@ public:
 	~TpoExporter();
 
 	bool open(const QString& fileName);
-	bool setup();
 
 	void close();
 
@@ -25,8 +24,6 @@ public:
 
 private:
 	class Impl;
-	class SettingDialog;
-
 	Impl* impl;
 };
 

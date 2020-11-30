@@ -76,7 +76,6 @@ HEADERS += anms.h \
            private/qpointfcontainer_impl.h \
            private/simplevaluecontainert_detail.h \
            private/tpoexporter_impl.h \
-           private/tpoexporter_settingdialog.h \
            private/valuearraycontainert_detail.h \
            private/valuechangert_detail.h \
            private/valuerestorert_detail.h \
@@ -85,8 +84,7 @@ HEADERS += anms.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui \
          primitiveview.ui \
-         slowmotionspeededitdialog.ui \
-         private/tpoexporter_settingdialog.ui
+         slowmotionspeededitdialog.ui
 SOURCES += anms.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
@@ -128,8 +126,7 @@ SOURCES += anms.cpp \
            xmlattributecontainer.cpp \
            xmlsupport.cpp \
            zdepthrange.cpp \
-           ziparchive.cpp \
-           private/tpoexporter_settingdialog.cpp
+           ziparchive.cpp
 TRANSLATIONS += languages/iricMisc_ar_EG.ts \
                 languages/iricMisc_bg_BG.ts \
                 languages/iricMisc_bs_BA.ts \

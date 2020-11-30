@@ -1,6 +1,5 @@
 #include "tpoexporter.h"
 #include "private/tpoexporter_impl.h"
-#include "private/tpoexporter_settingdialog.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -42,21 +41,6 @@ bool TpoExporter::open(const QString& fileName)
 
 	impl->m_stream = new QTextStream(impl->m_file);
 	impl->m_stream->setRealNumberNotation(QTextStream::RealNumberNotation::FixedNotation);
-
-	return true;
-}
-
-bool TpoExporter::setup()
-{
-	SettingDialog dialog(impl->m_widget);
-	int ret = dialog.exec();
-	if (ret != QDialog::Accepted) {
-		return false;
-	}
-
-	impl->m_xPrecision = dialog.xPrecision();
-	impl->m_yPrecision = dialog.yPrecision();
-	impl->m_zPrecision = dialog.zPrecision();
 
 	return true;
 }
