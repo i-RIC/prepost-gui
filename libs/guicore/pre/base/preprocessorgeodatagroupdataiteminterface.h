@@ -8,6 +8,7 @@
 #include <QIcon>
 
 class Grid;
+class GeoDataCreator;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
 class PreProcessorGeoDataDataItemInterface;
@@ -31,6 +32,8 @@ public:
 	virtual const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const = 0;
 	virtual GridAttributeDimensionsContainer* dimensions() const = 0;
 	virtual PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() = 0;
+	virtual void addGeoData(PreProcessorGeoDataDataItemInterface *geoData) = 0;
+	virtual GeoDataCreator* getPointMapCreator() = 0;
 
 	// @todo ugly interface!
 	virtual void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) = 0;

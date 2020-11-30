@@ -37,6 +37,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <geodata/pointmap/geodatapointmap.h>
+#include <geodata/pointmap/geodatapointmaprealcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
 #include <geodata/polygon/geodatapolygonshapeexporter.h>
@@ -1066,6 +1067,19 @@ GridAttributeDimensionsContainer* PreProcessorGeoDataGroupDataItem::dimensions()
 PreProcessorGeoDataDataItemInterface* PreProcessorGeoDataGroupDataItem::buildGeoDataDataItem()
 {
 	return new PreProcessorGeoDataDataItem(this);
+}
+
+GeoDataCreator* PreProcessorGeoDataGroupDataItem::getPointMapCreator()
+{
+	for (auto creator : GeoDataFactory::instance().creators()) {
+		auto pointmapCreator = dynamic_cast<GeoDataPointmapRealCreator*> (creator);
+		if (pointmapCreator == nullptr) {continue;}
+
+		if (pointmapCreator->isCompatibleWith(m_condition)) {
+			return pointmapCreator;
+		}
+	}
+	return nullptr;
 }
 
 void PreProcessorGeoDataGroupDataItem::informSelection(VTKGraphicsView* v)

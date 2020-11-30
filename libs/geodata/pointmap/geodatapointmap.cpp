@@ -726,6 +726,11 @@ void GeoDataPointmap::buildGridFromPolydata()
 
 void GeoDataPointmap::setupActors()
 {
+	if (m_vtkMapper.Get() != nullptr) {
+		// already setup.
+		return;
+	}
+
 	m_vtkMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_vtkMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
 	m_vtkMapper->SetUseLookupTableScalarRange(true);

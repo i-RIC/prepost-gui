@@ -108,6 +108,7 @@ private slots:
 	void switchInterpolateModeToLinear();
 	void switchInterpolateModeToSpline();
 	void mapPointsData();
+	void generatePointMap();
 
 signals:
 	void dataUpdated();

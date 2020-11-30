@@ -198,6 +198,7 @@ public:
 	QAction* m_interpolateSplineAction;
 	QAction* m_interpolateLinearAction;
 	QAction* m_mapPointsAction;
+	QAction* m_generatePointMapAction;
 
 	QPixmap m_pixmapAdd;
 	QPixmap m_pixmapRemove;
