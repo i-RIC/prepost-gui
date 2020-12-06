@@ -139,6 +139,7 @@ void GeoDataRiverSurvey::setEditMode()
 	impl->m_mode = Impl::Mode::EditMode;
 	impl->m_editMouseEventMode = Impl::EditMouseEventMode::Normal;
 	impl->m_menuIsSetup = false;
+	impl->setupMenu();
 	impl->updateMouseCursor(graphicsView());
 }
 
