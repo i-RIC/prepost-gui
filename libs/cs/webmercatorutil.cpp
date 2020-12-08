@@ -11,6 +11,7 @@
 #include <QString>
 
 #include <gdal_priv.h>
+#define ACCEPT_USE_OF_DEPRECATED_PROJ_API_H
 #include <proj_api.h>
 
 #define _USE_MATH_DEFINES
