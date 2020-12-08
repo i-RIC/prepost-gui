@@ -24,15 +24,15 @@ namespace iRIC
 	/// Normalize the vector
 	QPointF MISCDLL_EXPORT normalize(const QPointF& v);
 	/// Rotate the two-dimensional vector 90 degrees against anti-clockwise direction
-	QPointF MISCDLL_EXPORT rotateVector90(QPointF& v);
+	QPointF MISCDLL_EXPORT rotateVector90(const QPointF& v);
 	/// Rotate the two-dimensional vector 180 degrees against anti-clockwise direction
-	QPointF MISCDLL_EXPORT rotateVector180(QPointF& v);
+	QPointF MISCDLL_EXPORT rotateVector180(const QPointF& v);
 	/// Rotate the two-dimensional vector 270 degrees against anti-clockwise direction
-	QPointF MISCDLL_EXPORT rotateVector270(QPointF& v);
+	QPointF MISCDLL_EXPORT rotateVector270(const QPointF& v);
 	/// Rotate the two-dimensional vector against anti-clockwise direction with specified angle (in degrees)
-	QPointF MISCDLL_EXPORT rotateVector(QPointF& v, double angle);
+	QPointF MISCDLL_EXPORT rotateVector(const QPointF& v, double angle);
 	/// Rotate the two-dimensional vector against anti-clockwise direction with specified angle (in radians)
-	QPointF MISCDLL_EXPORT rotateVectorRadian(QPointF& v, double radianAngle);
+	QPointF MISCDLL_EXPORT rotateVectorRadian(const QPointF& v, double radianAngle);
 	bool MISCDLL_EXPORT isInsideParallelogram(const QPointF& target, const QPointF& vertex, const QPointF& dir1, const QPointF& dir2);
 	/// Returns rounded value
 	double MISCDLL_EXPORT roundedValue(double val, int precision);

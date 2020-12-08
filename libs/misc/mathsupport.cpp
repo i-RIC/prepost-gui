@@ -62,48 +62,53 @@ namespace iRIC
 		return angleRadian(v1, v2) / M_PI * 180.;
 	}
 
-	QPointF rotateVector90(QPointF& v)
+	QPointF rotateVector90(const QPointF& v)
 	{
-		double tmp = v.x();
-		v.setX(- v.y());
-		v.setY(tmp);
+		QPointF ret(v);
+		double tmp = ret.x();
+		ret.setX(- ret.y());
+		ret.setY(tmp);
 
-		return v;
+		return ret;
 	}
 
-	QPointF rotateVector180(QPointF& v)
+	QPointF rotateVector180(const QPointF& v)
 	{
-		v.setX(- v.x());
-		v.setY(- v.y());
+		QPointF ret(v);
+		ret.setX(- ret.x());
+		ret.setY(- ret.y());
 
-		return v;
+		return ret;
 	}
 
-	QPointF rotateVector270(QPointF& v)
+	QPointF rotateVector270(const QPointF& v)
 	{
-		double tmp = v.x();
-		v.setX(v.y());
-		v.setY(- tmp);
+		QPointF ret(v);
+		double tmp = ret.x();
+		ret.setX(ret.y());
+		ret.setY(- tmp);
 
-		return v;
+		return ret;
 	}
 
-	QPointF rotateVector(QPointF& v, double angle)
+	QPointF rotateVector(const QPointF& v, double angle)
 	{
 		double radianAngle = angle / 180. * M_PI;
 		return rotateVectorRadian(v, radianAngle);
 	}
 
-	QPointF rotateVectorRadian(QPointF& v, double radianAngle)
+	QPointF rotateVectorRadian(const QPointF& v, double radianAngle)
 	{
 		double cosVal = std::cos(radianAngle);
 		double sinVal = std::sin(radianAngle);
 		double newX = cosVal * v.x() - sinVal * v.y();
 		double newY = sinVal * v.x() + cosVal * v.y();
-		v.setX(newX);
-		v.setY(newY);
+		QPointF ret;
 
-		return v;
+		ret.setX(newX);
+		ret.setY(newY);
+
+		return ret;
 	}
 
 	bool isInsideParallelogram(const QPointF& target, const QPointF& vertex, const QPointF& dir1, const QPointF& dir2)
