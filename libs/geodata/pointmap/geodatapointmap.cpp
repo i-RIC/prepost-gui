@@ -740,7 +740,9 @@ void GeoDataPointmap::setupActors()
 	m_vtkMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
 	m_vtkMapper->SetUseLookupTableScalarRange(true);
 	m_vtkMapper->SetScalarVisibility(true);
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_vtkMapper->ImmediateModeRenderingOn();
+#endif
 
 	m_actor = vtkSmartPointer<vtkLODActor>::New();
 	vtkProperty* p = m_actor->GetProperty();
@@ -754,7 +756,9 @@ void GeoDataPointmap::setupActors()
 	m_pointsMapper->SetUseLookupTableScalarRange(true);
 	m_pointsMapper->SetScalarVisibility(true);
 	m_pointsMapper->SetScalarModeToUsePointData();
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_pointsMapper->ImmediateModeRenderingOn();
+#endif
 
 	m_pointsActor = vtkSmartPointer<vtkLODActor>::New();
 	p = m_pointsActor->GetProperty();
@@ -779,7 +783,9 @@ void GeoDataPointmap::setupActors()
 
 	m_maskPoints10kMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_maskPoints10kMapper->SetInputConnection(m_maskPoints10k->GetOutputPort());
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_maskPoints10kMapper->ImmediateModeRenderingOn();
+#endif
 	m_maskPoints10kMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
 	m_maskPoints10kMapper->SetUseLookupTableScalarRange(true);
 	m_maskPoints10kMapper->SetScalarVisibility(true);
@@ -787,7 +793,9 @@ void GeoDataPointmap::setupActors()
 
 	m_maskPoints40kMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_maskPoints40kMapper->SetInputConnection(m_maskPoints40k->GetOutputPort());
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_maskPoints40kMapper->ImmediateModeRenderingOn();
+#endif
 	m_maskPoints40kMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
 	m_maskPoints40kMapper->SetUseLookupTableScalarRange(true);
 	m_maskPoints40kMapper->SetScalarVisibility(true);
@@ -802,7 +810,9 @@ void GeoDataPointmap::setupActors()
 	m_selectedMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_selectedMapper->SetScalarVisibility(false);
 	m_selectedMapper->SetInputData(this->m_selectedVerticesGrid);
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_selectedMapper->ImmediateModeRenderingOn();
+#endif
 
 	m_selectedActor = vtkSmartPointer<vtkActor>::New();
 	m_selectedActor->GetProperty()->SetPointSize(9.);
