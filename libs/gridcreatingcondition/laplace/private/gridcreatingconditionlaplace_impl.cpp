@@ -100,7 +100,7 @@ void clearPolygons(std::vector<PolygonController*>* polygons, vtkActorCollection
 	polygons->clear();
 }
 
-LinePair divideLine(std::vector<QPointF>& line, int edgeId)
+LinePair divideLine(const std::vector<QPointF>& line, int edgeId)
 {
 	LinePair ret;
 	for (int i = 0; i < edgeId; ++i) {
