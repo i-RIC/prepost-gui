@@ -14,7 +14,7 @@
 #include <algorithm>
 
 namespace {
-std::vector<std::vector<GcpTableRow>::size_type> findPointsInPolygon(const std::vector<GcpTableRow>& gcpTable, const QPolygonF& polygon)
+std::vector<std::vector<GcpTableRow>::size_type> findPointsInPolygonGcpTable(const std::vector<GcpTableRow>& gcpTable, const QPolygonF& polygon)
 {
 	std::vector<std::vector<GcpTableRow>::size_type> indices;
 
@@ -291,18 +291,14 @@ void GeoreferenceView::ImageInfo::SelectionHelper::updateBoundingRect(QRectF* re
 std::vector<std::vector<GcpTableRow>::size_type> GeoreferenceView::ImageInfo::SelectionHelper::findPointsInPolygon(const QPolygonF& polygon)
 {
 	auto gcpTable = info()->gcpTable();
-	return ::findPointsInPolygon(*gcpTable, polygon);
+	return ::findPointsInPolygonGcpTable(*gcpTable, polygon);
 }
 
 std::vector<GcpTableRow>::size_type GeoreferenceView::ImageInfo::SelectionHelper::nearestPoint(std::vector<GcpTableRow>* gcpTable, const QPoint& point, GeoreferenceView* view)
 {
 	std::function<QPointF(const std::vector<GcpTableRow>&, const std::vector<std::vector<GcpTableRow>::size_type>&, std::vector<GcpTableRow>::size_type)> f = ::qPointF;
-	std::function<std::vector<std::vector<GcpTableRow>::size_type>(const std::vector<GcpTableRow>&, const QPolygonF&)> f1 = ::findPointsInPolygon;
+	std::function<std::vector<std::vector<GcpTableRow>::size_type>(const std::vector<GcpTableRow>&, const QPolygonF&)> f1 = ::findPointsInPolygonGcpTable;
 	return ::nearestPoint(f1, f, "Empty GcpTable.", *gcpTable, point, view);
-
-	// std::function<QPointF(const std::vector<GcpTableRow>&, const std::vector<std::vector<GcpTableRow>::size_type>&, std::vector<GcpTableRow>::size_type)> f = ::qPointF;
-	// // return ::nearestPoint<std::vector<GcpTableRow>::size_type, std::vector<GcpTableRow>, GeoreferenceView>(::findPointsInPolygon, f, "Empty GcpTable.", *gcpTable, point, view);
-	// return ::nearestPoint(::findPointsInPolygon, f, "Empty GcpTable.", *gcpTable, point, view);
 }
 
 void GeoreferenceView::ImageInfo::SelectionHelper::setRectPolygon(QPolygonF* polygon, const QPoint& p1, const QPoint& p2, GeoreferenceView* view)
