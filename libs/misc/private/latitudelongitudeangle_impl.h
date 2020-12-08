@@ -6,7 +6,7 @@
 class LatitudeLongitudeAngle::Impl
 {
 public:
-	Impl(bool f, int a, int m, double s);
+	Impl(bool f, unsigned int a, unsigned int m, double s);
 
 	/// true for North / East, false for South / West
 	bool m_flag;
