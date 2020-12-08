@@ -11,6 +11,7 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
+#include <vtkVersionMacros.h>
 #include <vtkVertex.h>
 
 #include <fstream>
