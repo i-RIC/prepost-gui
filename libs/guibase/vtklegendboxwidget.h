@@ -2,7 +2,8 @@
 #define __vtkLegendBoxWidget_h
 
 #include "guibase_global.h"
-#include "vtkBorderWidget.h"
+#include <vtkBorderWidget.h>
+#include <vtkVersionMacros.h>
 
 class vtkLegendBoxActor;
 class vtkLegendBoxRepresentation;
@@ -13,7 +14,11 @@ class GUIBASEDLL_EXPORT vtkLegendBoxWidget : public vtkBorderWidget
 
 public:
 	static vtkLegendBoxWidget* New();
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	vtkTypeRevisionMacro(vtkLegendBoxWidget, vtkBorderWidget);
+#else
+	vtkTypeMacro(vtkLegendBoxWidget, vtkBorderWidget);
+#endif
 	void PrintSelf(ostream& os, vtkIndent indent) override;
 
 	// Description:

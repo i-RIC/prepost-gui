@@ -8,10 +8,13 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
+#include <vtkVersionMacros.h>
 #include <vtkWidgetCallbackMapper.h>
 #include <vtkWidgetEvent.h>
 
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 vtkCxxRevisionMacro(vtkLegendBoxWidget, "$Revision: 1.8 $");
+#endif
 vtkStandardNewMacro(vtkLegendBoxWidget);
 
 //-------------------------------------------------------------------------
