@@ -74,6 +74,7 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkUnstructuredGridReader.h>
 #include <vtkUnstructuredGridWriter.h>
+#include <vtkVersionMacros.h>
 #include <vtkVertex.h>
 
 #include <iriclib_pointmap.h>
