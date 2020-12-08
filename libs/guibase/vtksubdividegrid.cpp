@@ -8,6 +8,7 @@
 #include <vtkPointData.h>
 #include <vtkStreamingDemandDrivenPipeline.h>
 #include <vtkStructuredGrid.h>
+#include <vtkVersionMacros.h>
 
 #if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 vtkCxxRevisionMacro(vtkSubdivideGrid, "$Revision: 1.47 $");

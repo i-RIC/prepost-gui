@@ -4,6 +4,7 @@
 #include "guibase_global.h"
 
 #include <vtkStructuredGridAlgorithm.h>
+#include <vtkVersionMacros.h>
 
 /// Algorithm to sumdivide structured grid cells
 class GUIBASEDLL_EXPORT vtkSubdivideGrid : public vtkStructuredGridAlgorithm
