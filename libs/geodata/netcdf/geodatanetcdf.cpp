@@ -26,6 +26,7 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
+#include <vtkVersionMacros.h>
 
 #include <QDir>
 #include <QLineF>
