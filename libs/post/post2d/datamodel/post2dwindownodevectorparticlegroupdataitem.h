@@ -106,7 +106,11 @@ protected:
 
 	Setting m_setting;
 
+#if (_MSC_VER == 1800)  // vs2013
 	unsigned int m_previousStep;
+#else
+	int m_previousStep;
+#endif
 	double m_previousTime;
 	int m_nextStepToAddParticles;
 	double m_zScale;
