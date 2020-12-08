@@ -133,11 +133,15 @@ void GeoDataPointmapBreakLine::setupActors()
 
 	m_edgesMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_edgesMapper->UseLookupTableScalarRangeOff();
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_edgesMapper->ImmediateModeRenderingOn();
+#endif
 
 	m_verticesMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_verticesMapper->UseLookupTableScalarRangeOff();
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_verticesMapper->ImmediateModeRenderingOn();
+#endif
 
 	m_edgesMapper->SetInputData(m_edges);
 	m_verticesMapper->SetInputData(m_vertices);
