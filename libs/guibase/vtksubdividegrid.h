@@ -11,7 +11,11 @@ class GUIBASEDLL_EXPORT vtkSubdivideGrid : public vtkStructuredGridAlgorithm
 
 public:
 	static vtkSubdivideGrid* New();
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	vtkTypeRevisionMacro(vtkSubdivideGrid,vtkStructuredGridAlgorithm);
+#else
+	vtkTypeMacro(vtkSubdivideGrid,vtkStructuredGridAlgorithm);
+#endif
 	void PrintSelf(ostream& os, vtkIndent indent) override;
 
 	// Description:

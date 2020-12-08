@@ -9,14 +9,21 @@
 #include <vtkStreamingDemandDrivenPipeline.h>
 #include <vtkStructuredGrid.h>
 
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 vtkCxxRevisionMacro(vtkSubdivideGrid, "$Revision: 1.47 $");
+#endif
 vtkStandardNewMacro(vtkSubdivideGrid);
 
 // Construct object to extract all of the input data.
 vtkSubdivideGrid::vtkSubdivideGrid()
 {
 	this->VOI[0] = this->VOI[2] = this->VOI[4] = 0;
+
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	this->VOI[1] = this->VOI[3] = this->VOI[5] = VTK_LARGE_INTEGER;
+#else
+	this->VOI[1] = this->VOI[3] = this->VOI[5] = VTK_INT_MAX;   // vtk 8.2
+#endif
 
 	this->DivideRate[0] = this->DivideRate[1] = this->DivideRate[2] = 1;
 }
