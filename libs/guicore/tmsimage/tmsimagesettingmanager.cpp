@@ -115,7 +115,7 @@ TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& name, con
 	return buildSetting(iRIC::toStr(QString("tms=xyz&url=%1&maxNativeZoom=%2").arg(url).arg(maxZoom)), name);
 }
 
-TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& size, double scale, const std::string& setting) const
+TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, double scale, const std::string& setting) const
 {
 	QUrlQuery query(setting.c_str());
 	QString tms = query.queryItemValue("tms");

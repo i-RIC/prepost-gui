@@ -27,7 +27,7 @@ public:
 
 	TmsImageSetting setupXYZSetting(const QString& name, const QString& url, int maxZoom);
 
-	tmsloader::TmsRequest* buildRequest(QPointF& centerLonLat, QSize& size, double scale, const std::string& setting) const;
+	tmsloader::TmsRequest* buildRequest(const QPointF& centerLonLat, const QSize& size, double scale, const std::string& setting) const;
 };
 
 #endif // TMSIMAGESETTINGMANAGER_H
