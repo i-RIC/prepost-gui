@@ -15,6 +15,7 @@
 #include <QSettings>
 
 #include <vtkAutoInit.h>
+#include <vtkVersionMacros.h>
 
 using namespace iRICPython;
 
@@ -29,10 +30,14 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext& context, const QS
 
 }
 
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 VTK_MODULE_INIT(vtkRenderingOpenGL);
+#endif
 VTK_MODULE_INIT(vtkInteractionStyle);
 VTK_MODULE_INIT(vtkRenderingFreeType);
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
+#endif
 
 Application::Impl::Impl() :
 	m_mainWindow {true},
