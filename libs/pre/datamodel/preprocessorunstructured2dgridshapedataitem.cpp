@@ -16,6 +16,7 @@
 #include <vtkProperty2D.h>
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
+#include <vtkVersionMacros.h>
 
 PreProcessorUnstructured2dGridShapeDataItem::PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGridShapeDataItem {parent}
@@ -38,7 +39,9 @@ void PreProcessorUnstructured2dGridShapeDataItem::setupActors()
 
 	m_wireframeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	m_wireframeMapper->SetScalarVisibility(false);
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_wireframeMapper->ImmediateModeRenderingOn();
+#endif
 	m_wireframeActor->SetMapper(m_wireframeMapper);
 	m_wireframeActor->GetProperty()->SetRepresentationToWireframe();
 
