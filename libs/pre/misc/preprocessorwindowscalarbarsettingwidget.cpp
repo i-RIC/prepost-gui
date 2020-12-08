@@ -1,5 +1,7 @@
 #include "ui_preprocessorwindowscalarbarsettingwidget.h"
 
+#include <QButtonGroup>
+
 #include "preprocessorwindowscalarbarsettingwidget.h"
 
 #include <guibase/vtktextpropertysettingdialog.h>

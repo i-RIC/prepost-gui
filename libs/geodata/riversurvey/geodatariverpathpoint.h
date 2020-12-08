@@ -12,8 +12,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
 
-#include <set>
-
+#include <list>
 #include <set>
 #include <vector>
 

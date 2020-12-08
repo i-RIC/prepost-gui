@@ -8,6 +8,7 @@
 #include "private/crosssectionbuildertemplatemapping_impl.h"
 
 #include <algorithm>
+#include <cmath>
 
 #include <QVector2D>
 

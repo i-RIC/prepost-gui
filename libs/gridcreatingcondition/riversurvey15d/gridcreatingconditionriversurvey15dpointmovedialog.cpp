@@ -6,6 +6,7 @@
 #include <misc/iricundostack.h>
 
 #include <QUndoCommand>
+#include <QRegExpValidator>
 
 /*!
  * Command for moving selected control points.

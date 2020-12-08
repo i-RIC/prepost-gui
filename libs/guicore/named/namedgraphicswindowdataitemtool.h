@@ -4,6 +4,7 @@
 #include "../guicore_global.h"
 
 #include <vector>
+#include <string>
 
 class GraphicsWindowDataItem;
 

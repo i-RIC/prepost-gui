@@ -13,6 +13,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
+#include <vtkRenderWindowInteractor.h>
 
 VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent)
 	: VTKGraphicsView(parent)
