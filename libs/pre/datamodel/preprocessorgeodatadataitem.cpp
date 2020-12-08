@@ -121,7 +121,11 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 {
 	QMainWindow* mainW = projectData()->mainWindow();
 
+#if (_MSC_VER == 1800)  // vs2013
 	auto& exps = m_geoData->exporters();
+#else
+	auto exps = m_geoData->exporters();
+#endif
 	QStringList filters;
 	QList<GeoDataExporter*> exporters;
 	for (auto exp_it = exps.begin(); exp_it != exps.end(); ++exp_it) {
