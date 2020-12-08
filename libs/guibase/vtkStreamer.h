@@ -50,8 +50,9 @@
 #ifndef __vtkStreamer_h
 #define __vtkStreamer_h
 
-#include "vtkFiltersFlowPathsModule.h" // For export macro
-#include "vtkPolyDataAlgorithm.h"
+#include <vtkFiltersFlowPathsModule.h> // For export macro
+#include <vtkPolyDataAlgorithm.h>
+#include <vtkVersionMacros.h>
 
 class vtkInitialValueProblemSolver;
 class vtkMultiThreader;
