@@ -56,7 +56,7 @@ protected:
 	void drawAspectRatio(QPainter* painter);
 
 	ChartWindow* chartWindow() const;
-	QMatrix getMatrix(QRect& viewport);
+	QMatrix getMatrix(const QRect& viewport);
 	ViewMouseEventMode viewMouseEventMode() const;
 
 private:

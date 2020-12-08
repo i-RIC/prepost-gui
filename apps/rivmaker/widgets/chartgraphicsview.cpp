@@ -4,6 +4,9 @@
 #include <QMouseEvent>
 #include <QPainter>
 
+#include <cmath>
+
+
 namespace {
 
 const int ASPECT_RATIO_RIGHT_MARGIN = 10;
@@ -511,7 +514,7 @@ QRectF ChartGraphicsView::getRegion()
 	return QRectF(0, 0, 1, 1);
 }
 
-QMatrix ChartGraphicsView::getMatrix(QRect& viewport)
+QMatrix ChartGraphicsView::getMatrix(const QRect& viewport)
 {
 	QMatrix translate1, scale, translate2;
 
