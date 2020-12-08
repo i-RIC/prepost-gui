@@ -8,7 +8,7 @@
 class PostStringResultDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(PostStringResult* result, PostStringResultDataItem::Setting& dispSetting, PostStringResultDataItem* item);
+	SetSettingCommand(PostStringResult* result, const PostStringResultDataItem::Setting& dispSetting, PostStringResultDataItem* item);
 	~SetSettingCommand();
 
 	void redo() override;

@@ -2,7 +2,7 @@
 
 #include <guicore/postcontainer/poststringresult.h>
 
-PostStringResultDataItem::SetSettingCommand::SetSettingCommand(PostStringResult* result, PostStringResultDataItem::Setting& dispSetting, PostStringResultDataItem* item) :
+PostStringResultDataItem::SetSettingCommand::SetSettingCommand(PostStringResult* result, const PostStringResultDataItem::Setting& dispSetting, PostStringResultDataItem* item) :
 	QUndoCommand(PostStringResultDataItem::tr("Edit Label Setting")),
 	m_newResult {new PostStringResult(nullptr)},
 	m_newDispSetting {dispSetting},
