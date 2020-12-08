@@ -34,8 +34,8 @@ Makefile.*
 *.o
 *.so
 *.so.*
-apps/**/debug
-apps/**/release
+**/debug
+**/release
 doxygendoc/**/html
 doxygendoc/**/rtf
 doxygen_warnings.txt
