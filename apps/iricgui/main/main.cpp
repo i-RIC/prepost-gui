@@ -1,5 +1,6 @@
 #include <vtkAutoInit.h>
 
+#include <vtkVersionMacros.h>
 #if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 VTK_MODULE_INIT(vtkRenderingOpenGL);
 #else
