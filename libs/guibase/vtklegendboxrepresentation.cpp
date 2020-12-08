@@ -5,6 +5,7 @@
 #include <vtkPropCollection.h>
 #include <vtkSmartPointer.h>
 #include <vtkTextProperty.h>
+#include <vtkVersionMacros.h>
 
 //=============================================================================
 #if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)

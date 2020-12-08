@@ -4,6 +4,7 @@
 #include "guibase_global.h"
 
 #include <vtkBorderRepresentation.h>
+#include <vtkVersionMacros.h>
 
 class vtkLegendBoxActor;
 
