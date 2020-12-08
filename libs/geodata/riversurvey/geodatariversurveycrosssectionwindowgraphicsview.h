@@ -146,7 +146,7 @@ private:
 
 	QPointF getPointF(double x, double y, const QRect& viewport);
 	QRectF getRegion();
-	QMatrix getMatrix(QRect& viewport);
+	QMatrix getMatrix(const QRect& viewport);
 
 	QMenu* m_rightClickingMenu;
 	QMenu* m_rightClickingMenuForEditCrosssectionMode;

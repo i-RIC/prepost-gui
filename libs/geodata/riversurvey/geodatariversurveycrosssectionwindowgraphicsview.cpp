@@ -976,7 +976,7 @@ QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 	return ret;
 }
 
-QMatrix GeoDataRiverSurveyCrosssectionWindowGraphicsView::getMatrix(QRect& viewport)
+QMatrix GeoDataRiverSurveyCrosssectionWindowGraphicsView::getMatrix(const QRect& viewport)
 {
 	QMatrix translate1, scale, translate2;
 
