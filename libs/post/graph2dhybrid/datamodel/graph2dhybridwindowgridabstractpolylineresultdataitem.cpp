@@ -134,7 +134,11 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValuesVertex(v
 		return;
 	}
 
+#if (_MSC_VER == 1800)  // vs2013
 	std::vector<QPointF>& pts = getPolyLine();
+#else
+	const std::vector<QPointF>& pts = getPolyLine();
+#endif
 
 	double origin[3];
 	std::map<double, std::vector<double> > amap;
@@ -238,7 +242,11 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValuesCellCent
 		return;
 	}
 
+#if (_MSC_VER == 1800)  // vs2013
 	std::vector<QPointF>& pts = getPolyLine();
+#else
+	const std::vector<QPointF>& pts = getPolyLine();
+#endif
 
 	double origin[3];
 	std::map<double, std::vector<double> > amap;
