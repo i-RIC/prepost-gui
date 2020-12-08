@@ -326,7 +326,7 @@ SOURCES += arrowsettingcontainer.cpp \
            coordinates/private/coordinateseditdialogdelegate.cpp
 equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
     SOURCES += \
-           vtkStreamer.cpp
+           vtkStreamer.cxx
 }
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
