@@ -7,7 +7,9 @@
 #include <vtkTextProperty.h>
 
 //=============================================================================
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 vtkCxxRevisionMacro(vtkLegendBoxRepresentation, "$Revision: 1.2 $");
+#endif
 vtkStandardNewMacro(vtkLegendBoxRepresentation);
 //-----------------------------------------------------------------------------
 vtkLegendBoxRepresentation::vtkLegendBoxRepresentation()

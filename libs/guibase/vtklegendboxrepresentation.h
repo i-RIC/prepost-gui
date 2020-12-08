@@ -12,7 +12,11 @@ class GUIBASEDLL_EXPORT vtkLegendBoxRepresentation : public vtkBorderRepresentat
 {
 
 public:
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	vtkTypeRevisionMacro(vtkLegendBoxRepresentation, vtkBorderRepresentation);
+#else
+	vtkTypeMacro(vtkLegendBoxRepresentation, vtkBorderRepresentation);
+#endif
 	virtual void PrintSelf(ostream& os, vtkIndent indent) override;
 	static vtkLegendBoxRepresentation* New();
 
