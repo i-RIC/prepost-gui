@@ -60,7 +60,7 @@ class vtkMultiThreader;
 #define VTK_INTEGRATE_BACKWARD 1
 #define VTK_INTEGRATE_BOTH_DIRECTIONS 2
 
-#if 0
+#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 class VTKFILTERSFLOWPATHS_EXPORT vtkStreamer : public vtkPolyDataAlgorithm
 #else
 class vtkStreamer : public vtkPolyDataAlgorithm
