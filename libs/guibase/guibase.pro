@@ -101,7 +101,6 @@ HEADERS += arrowsettingcontainer.h \
            vtklegendboxwidget.h \
            vtklinestylecontainer.h \
            vtklinestylewidget.h \
-           vtkScalarBarActorInternal.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
@@ -191,8 +190,13 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
            widget/private/realnumbereditwidget_impl.h
+equals(VTK_MAJOR_VERSION, 6):equals(VTK_MINOR_VERSION, 1) {
+    HEADERS += \
+           vtkScalarBarActorInternal-6.1.h
+}
 equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
     HEADERS += \
+           vtkScalarBarActorInternal-8.2.h \
            vtkStreamer.h
 }
 FORMS += scalarbardialog.ui \
