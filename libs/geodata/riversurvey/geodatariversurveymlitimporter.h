@@ -23,6 +23,7 @@ private:
 	std::vector<GeoDataRiverSurveyImporter::RivPathPoint*> m_points;
 	bool m_with4Points;
 	GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting m_cpSetting;
+	QString m_csvFilename;
 
 public:
 	class ProblemsDialog;

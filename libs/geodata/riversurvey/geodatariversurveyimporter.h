@@ -53,7 +53,7 @@ public:
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 
-	static bool importData(GeoDataRiverSurvey* data, std::vector<RivPathPoint*>* inputData, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, QWidget* w);
+	static bool importData(GeoDataRiverSurvey* data, std::vector<RivPathPoint*>* inputData, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, const QString& csvFileName, QWidget* w);
 	static void removePointsWithoutBanks(std::vector<RivPathPoint*>* points);
 	static void removePointsWithoutAltitudes(std::vector<RivPathPoint*>* points);
 	static void clearPoints(std::vector<RivPathPoint*>* points);
@@ -73,6 +73,7 @@ private:
 	bool m_allNamesAreNumber;
 	bool m_reverseOrder;
 	GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting m_cpSetting;
+	QString m_csvFilename;
 
 public:
 	class ProblemsDialog;
