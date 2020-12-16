@@ -12,6 +12,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/informationdialog.h>
 #include <misc/networksetting.h>
+#include <misc/qttool.h>
 
 #include <QApplication>
 #include <QMessageBox>
@@ -24,21 +25,12 @@
 
 GeoDataPointmapWebImporter::GeoDataPointmapWebImporter(GeoDataCreator* creator) :
 	GeoDataWebImporter("csvtile", tr("Web CSV tile"), creator),
-	m_webAccessManager {new QNetworkAccessManager(this)},
+	m_webAccessManager {QtTool::networkAccessManager()},
 	m_webReply {nullptr},
 	m_isWaitingHttpResponse {false},
 	m_coordinateSystem {nullptr},
 	m_wmUtil {nullptr}
-{
-	NetworkSetting setting;
-	QList<QNetworkProxy> proxies = setting.queryProxy();
-	QNetworkProxy proxy;
-	proxy.setType(QNetworkProxy::NoProxy);
-	if (proxies.size() != 0) {
-		proxy = proxies.first();
-	}
-	m_webAccessManager->setProxy(proxy);
-}
+{}
 
 GeoDataPointmapWebImporter::~GeoDataPointmapWebImporter()
 {

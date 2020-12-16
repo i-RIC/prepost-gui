@@ -9,6 +9,7 @@
 #include <QUrl>
 
 #include <guibase/overridecursorchanger.h>
+#include <misc/qttool.h>
 
 namespace {
 
@@ -26,16 +27,13 @@ bool validSiteID(const QString& site) {
 
 } // namespace
 
-
 InputConditionWidgetFunctionalDownloadDialog::InputConditionWidgetFunctionalDownloadDialog(QWidget *parent) :
-    QDialog(parent),
-	m_manager(nullptr),
+	QDialog(parent),
+	m_manager(QtTool::networkAccessManager()),
 	m_needsUpdate(true),
-    ui(new Ui::InputConditionWidgetFunctionalDownloadDialog)
+	ui(new Ui::InputConditionWidgetFunctionalDownloadDialog)
 {
-    ui->setupUi(this);
-
-	m_manager = new QNetworkAccessManager(this);
+	ui->setupUi(this);
 
 	connect(ui->siteLineEdit, SIGNAL(textChanged(QString)), this, SLOT(textChanged(QString)));
 	connect(ui->startDateTimeEdit, SIGNAL(dateTimeChanged(QDateTime)), this, SLOT(startDateChanged(QDateTime)));
@@ -45,7 +43,7 @@ InputConditionWidgetFunctionalDownloadDialog::InputConditionWidgetFunctionalDown
 
 InputConditionWidgetFunctionalDownloadDialog::~InputConditionWidgetFunctionalDownloadDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 

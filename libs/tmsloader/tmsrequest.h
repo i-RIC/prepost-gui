@@ -3,7 +3,6 @@
 
 #include "tmsloader_api.h"
 
-class QNetworkAccessManager;
 class QPointF;
 class QSize;
 class QWebView;
