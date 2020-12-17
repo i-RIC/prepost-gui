@@ -94,7 +94,6 @@ HEADERS += arrowsettingcontainer.h \
            tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
-           vtkCustomStreamPoints.h \
            vtkCustomStreamTracer.h \
            vtkdatasetattributestool.h \
            vtklegendboxrepresentation.h \
@@ -196,8 +195,7 @@ equals(VTK_MAJOR_VERSION, 6):equals(VTK_MINOR_VERSION, 1) {
 }
 equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
     HEADERS += \
-           vtkScalarBarActorInternal-8.2.h \
-           vtkStreamer.h
+           vtkScalarBarActorInternal-8.2.h
 }
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
@@ -246,7 +244,6 @@ SOURCES += arrowsettingcontainer.cpp \
            tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomScalarBarActor.cxx \
-           vtkCustomStreamPoints.cxx \
            vtkCustomStreamTracer.cxx \
            vtkdatasetattributestool.cpp \
            vtklegendboxrepresentation.cpp \
@@ -328,10 +325,6 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/transparencywidget.cpp \
            widget/waitdialog.cpp \
            coordinates/private/coordinateseditdialogdelegate.cpp
-equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
-    SOURCES += \
-           vtkStreamer.cxx
-}
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
                 languages/iricGuibase_bg_BG.ts \
