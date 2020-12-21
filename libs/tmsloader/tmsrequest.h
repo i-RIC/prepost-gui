@@ -5,7 +5,11 @@
 
 class QPointF;
 class QSize;
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+class QWebEngineView;
+#else
 class QWebView;
+#endif
 class QWidget;
 
 namespace tmsloader {
@@ -18,7 +22,11 @@ public:
 	TmsRequest(const QPointF& centerLonLat, const QSize& size, double scale);
 	virtual ~TmsRequest();
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+	virtual TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const = 0;
+#else
 	virtual TmsRequestHandler* buildHandler(int requestId, QWebView* view) const = 0;
+#endif
 
 protected:
 	QPointF center() const;

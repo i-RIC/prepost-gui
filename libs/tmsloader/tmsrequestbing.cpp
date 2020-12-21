@@ -20,7 +20,11 @@ TmsRequestBing::~TmsRequestBing()
 	delete impl;
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebEngineView* view) const
+#else
 TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebView* view) const
+#endif
 {
 	return new TmsRequestHandlerBing(impl->m_imagerySet, center(), size(), scale(), requestId, view);
 }

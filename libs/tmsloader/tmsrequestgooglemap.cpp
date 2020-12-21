@@ -18,7 +18,11 @@ TmsRequestGoogleMap::~TmsRequestGoogleMap()
 	delete impl;
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebEngineView* view) const
+#else
 TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebView* view) const
+#endif
 {
 	return new TmsRequestHandlerGoogleMap(impl->m_mapType, center(), size(), scale(), requestId, view);
 }

@@ -21,7 +21,11 @@ TmsRequestXYZ::~TmsRequestXYZ()
 	delete impl;
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebEngineView* view) const
+#else
 TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebView* view) const
+#endif
 {
 	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, view);
 }

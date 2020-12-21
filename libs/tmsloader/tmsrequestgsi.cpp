@@ -57,7 +57,11 @@ TmsRequestGSI::~TmsRequestGSI()
 	delete impl;
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebEngineView* view) const
+#else
 TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebView* view) const
+#endif
 {
 	return impl->m_requestXYZ->buildHandler(requestId, view);
 }

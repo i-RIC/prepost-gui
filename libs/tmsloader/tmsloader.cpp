@@ -4,7 +4,11 @@
 #include "private/tmsrequesthandler.h"
 
 #include <QPixmap>
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+#include <QWebEngineView>
+#else
 #include <QWebView>
+#endif
 #include <QWidget>
 
 using namespace tmsloader;
@@ -54,10 +58,18 @@ QWidget* TmsLoader::Impl::parentWidget() const
 	return dynamic_cast<QWidget*> (m_loader->parent());
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+QWebEngineView* TmsLoader::Impl::getWebView()
+#else
 QWebView* TmsLoader::Impl::getWebView()
+#endif
 {
 	if (m_webViewPool.size() == 0) {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+		auto newView = new QWebEngineView(parentWidget());
+#else
 		auto newView = new QWebView(parentWidget());
+#endif
 		// This is for hiding the QWebView. When debugging, comment out the following line.
 		newView->move(WINDOW_BIG_WIDTH, 0);
 		newView->resize(1, 1);

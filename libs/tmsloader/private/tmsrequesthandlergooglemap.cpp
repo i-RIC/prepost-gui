@@ -5,7 +5,11 @@
 
 using namespace tmsloader;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
+TmsRequestHandlerGoogleMap::TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapType mapType, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebEngineView* view) :
+#else
 TmsRequestHandlerGoogleMap::TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapType mapType, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebView* view) :
+#endif
 	TmsRequestHandler {centerLonLat, size, scale, "googlemap.html", requestId, view}
 {
 	std::map<TmsRequestGoogleMap::MapType, QString> mapTypeMap;
