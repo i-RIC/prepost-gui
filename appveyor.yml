@@ -18,7 +18,9 @@ skip_commits:
     - sdks/*
     - tools/*
 
-image: Visual Studio 2013
+image:
+  - Visual Studio 2013
+  - Visual Studio 2019
 
 # called before clone
 # Note that environment variables don't seem to transfer correctly from cmd to ps when
@@ -29,12 +31,10 @@ init:
   - if "%Configuration%"=="Debug"   (set config=debug)
   - if "%Configuration%"=="Release" (set config=release)
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017 Win64" )
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" ( set generator="Visual Studio 14 2015 Win64" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( set generator="Visual Studio 16 2019" )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( set generator="Visual Studio 12 2013 Win64" )
   - echo %generator%
-  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2017") {$env:psgenerator = "Visual Studio 15 2017 Win64"}
-  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2015") {$env:psgenerator = "Visual Studio 14 2015 Win64"}
+  - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019") {$env:psgenerator = "Visual Studio 16 2019"}
   - ps: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {$env:psgenerator = "Visual Studio 12 2013 Win64"}
   - ps: Write-Output $env:psgenerator
   ## Sometimes the plaintext of secure variables is displayed so filter out access_tokens
@@ -53,30 +53,46 @@ matrix:
 # Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
 # It might give unexpected results (use md instead)
 before_build:
-  - call C:\Qt\5.5\msvc2013_64\bin\qtenv2.bat
-  - call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( call C:\Qt\5.5\msvc2013_64\bin\qtenv2.bat )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64 )
   - cd %APPVEYOR_BUILD_FOLDER%
-  - curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( curl -L -O https://github.com/i-RIC/iricdev-2019/archive/master.zip )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip )
   - cd \
   - 7z x %APPVEYOR_BUILD_FOLDER%\master.zip
   - del %APPVEYOR_BUILD_FOLDER%\master.zip
-  - cd \iricdev-master
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-master )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( cd \iricdev-master )
   - md lib
   - cd lib
-  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "\iricdev-master\lib\install-Debug.zip")
-  - ps: (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "\iricdev-master\lib\install-Release.zip")
+  - ps: |
+      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019") {
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "\iricdev-2019-master\lib\install-Debug.zip")
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "\iricdev-2019-master\lib\install-Release.zip")
+      }
+  - ps: |
+      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Debug", "\iricdev-master\lib\install-Debug.zip")
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev/artifacts/lib/install.zip?branch=master&job=Configuration:+Release", "\iricdev-master\lib\install-Release.zip")
+      }
   - md install
   - cd install
   - 7z x -aoa ..\install-Debug.zip
   - 7z x -aoa ..\install-Release.zip
-  - cd \iricdev-master
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-master )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( cd \iricdev-master )
   - call create-files.cmd
   - cd %APPVEYOR_BUILD_FOLDER%
   - if not exist libdlls (md libdlls)
   - if not exist libdlls\Debug (md libdlls\Debug)
   - if not exist libdlls\Release (md libdlls\Release)
-  - copy /y \iricdev-master\paths.pri .
-  - copy /y \iricdev-master\dirExt.prop .\tools\data\.
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-master\paths.pri . )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-master\dirExt.prop .\tools\data\. )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\paths.pri . )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\dirExt.prop .\tools\data\. )
+  - ps: 'Get-Command qmake'
   - qmake -recursive -tp vc
 
 build_script:
@@ -86,7 +102,8 @@ after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
   - set SAVE_PATH=%PATH%
   - set PATH=C:\Python37-x64;%PATH%
-  - python copydllsExt.py
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( python copydllsExt-2019.py )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( python copydllsExt.py )
   - python lrelease.py
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
@@ -111,7 +128,7 @@ artifacts:
 
 on_success:
   - ps: |
-      if ($CommitAndPush) {
+      if ($False -AND $CommitAndPush) {
         # online_update urls
         $remote_url_iric = "https://github.com/i-RIC/online_update.git"
         $remote_url_scharlton2 = "https://github.com/scharlton2/online_update.git"
