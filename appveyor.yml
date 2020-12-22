@@ -1,6 +1,7 @@
 version: '{branch}-{build}'
 
 environment:
+  CL: /MP
   scharlton2_access_token:
     secure: CS9f7K3/ePypXUjKJ5S5iX2WFLNpC0IH4LEC9jYXdvcNbaM7CFl0fU5Ws/qUDgvo
   iric_access_token:
@@ -19,7 +20,7 @@ skip_commits:
     - tools/*
 
 image:
-#  - Visual Studio 2013
+  - Visual Studio 2013
   - Visual Studio 2019
 
 # called before clone
@@ -84,7 +85,6 @@ before_build:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-master )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( cd \iricdev-master )
   - call create-files.cmd
-  - appveyor PushArtifact paths.pri
   - cd %APPVEYOR_BUILD_FOLDER%
   - if not exist libdlls (md libdlls)
   - if not exist libdlls\Debug (md libdlls\Debug)
@@ -97,10 +97,9 @@ before_build:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( dir /s \iricdev-master )
   - ps: 'Get-Command qmake'
   - qmake -recursive -tp vc
-  - appveyor PushArtifact libs\cs\iricCs.vcxproj
 
 build_script:
-  - msbuild /nologo /verbosity:minimal /p:Configuration=%Configuration% src.sln
+  - msbuild /nologo /verbosity:minimal /maxCpuCount /p:Configuration=%Configuration% src.sln
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
@@ -132,7 +131,7 @@ artifacts:
 
 on_success:
   - ps: |
-      if ($False -AND $CommitAndPush) {
+      if ($CommitAndPush) {
         # online_update urls
         $remote_url_iric = "https://github.com/i-RIC/online_update.git"
         $remote_url_scharlton2 = "https://github.com/scharlton2/online_update.git"
