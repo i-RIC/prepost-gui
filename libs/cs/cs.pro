@@ -30,12 +30,16 @@ LIBS += -liricMisc
 # proj.4
 
 win32 {
-equals(VTK_MAJOR_VERSION, 6):equals(VTK_MINOR_VERSION, 1) {
-	LIBS += -lproj_i
-}
-equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
-	LIBS += -lproj
-}
+	equals(VTK_MAJOR_VERSION, 6):equals(VTK_MINOR_VERSION, 1) {
+		LIBS += -lproj_i
+	}
+	equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
+		CONFIG(debug, debug|release) {
+			LIBS += -lproj_d
+		} else {
+			LIBS += -lproj
+		}
+	}
 }
 unix {
 	LIBS += -lproj
