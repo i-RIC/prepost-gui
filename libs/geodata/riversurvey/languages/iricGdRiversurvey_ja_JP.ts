@@ -401,6 +401,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Finish Defining Polyline</source>
         <translation>中心線の定義の終了</translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから地勢データを生成</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>

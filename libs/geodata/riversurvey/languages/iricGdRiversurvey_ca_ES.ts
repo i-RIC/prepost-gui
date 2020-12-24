@@ -380,6 +380,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Move Traversal Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
