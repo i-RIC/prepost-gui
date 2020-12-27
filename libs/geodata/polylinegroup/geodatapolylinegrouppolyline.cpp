@@ -14,6 +14,7 @@
 #include <geos/geom/LineString.h>
 #include <geos/geom/LinearRing.h>
 #include <geos/geom/Point.h>
+#include <geos/geom/Polygon.h>
 
 #include <QDataStream>
 #include <QList>
@@ -44,6 +45,25 @@ geos::geom::LineString* buildString(const std::vector<QPointF>& line)
 	}
 	auto f = geos::geom::GeometryFactory::getDefaultInstance();
 	return f->createLineString(seq);
+}
+
+geos::geom::LinearRing* buildRing(const QPolygonF& polygon)
+{
+	CoordinateSequence *seq = new CoordinateArraySequence(polygon.size());
+	int idx = 0;
+	for (const auto& p : polygon) {
+		seq->setAt(Coordinate(p.x(), p.y()), idx ++);
+	}
+	auto f = geos::geom::GeometryFactory::getDefaultInstance();
+	return f->createLinearRing(seq);
+}
+
+geos::geom::Polygon* buildPolygon(const QPolygonF& polygon)
+{
+	auto outerRing = buildRing(polygon);
+	std::vector<Geometry*>* holeRings = new std::vector<Geometry*>();
+	auto f = geos::geom::GeometryFactory::getDefaultInstance();
+	return f->createPolygon(outerRing, holeRings);
 }
 
 QVector<QPointF> buildPolyLine(const geos::geom::LineString* string)
@@ -110,6 +130,15 @@ bool GeoDataPolyLineGroupPolyLine::intersectWithLine(const QPointF& p1, const QP
 		return true;
 	}
 	return false;
+}
+
+bool GeoDataPolyLineGroupPolyLine::intersectWithPolygon(const QPolygonF& polygon) const
+{
+	auto pol = buildPolygon(polygon);
+	bool hasIntersection = pol->intersects(impl->m_polyLine.get());
+
+	delete pol;
+	return hasIntersection;
 }
 
 geos::geom::LineString* GeoDataPolyLineGroupPolyLine::getGeosLineString() const
