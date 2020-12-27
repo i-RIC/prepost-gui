@@ -179,7 +179,6 @@ void GeoDataPolyLine::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessor
 	}
 }
 
-
 void GeoDataPolyLine::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	switch (impl->m_mouseEventMode) {
@@ -386,7 +385,7 @@ void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
 	stack.push(new FinishPolyLineDefiningCommand(this));
 	stack.endMacro();
 	if (! noEditVal) {
-//		editValue();
+		editValue();
 	}
 }
 
