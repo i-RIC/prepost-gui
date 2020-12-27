@@ -12,6 +12,8 @@ class GeoDataPolyLineGroupNodeMapperSetting : public GeoDataMapperSettingI
 public:
 	GeoDataPolyLineGroupNodeMapperSetting() : GeoDataMapperSettingI() {}
 	~GeoDataPolyLineGroupNodeMapperSetting() override {}
+
+	RangeContainerT<GeoDataPolyLineGroupPolyLine*> ranges;
 };
 
 template <typename V, typename DA>
