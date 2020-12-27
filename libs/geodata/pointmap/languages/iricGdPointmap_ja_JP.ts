@@ -575,11 +575,11 @@
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV ファイル (*.csv)</translation>
+        <translation type="vanished">CSV ファイル (*.csv)</translation>
     </message>
     <message>
         <source>Text file (*.txt)</source>
-        <translation>テキストファイル (*.txt)</translation>
+        <translation type="vanished">テキストファイル (*.txt)</translation>
     </message>
     <message>
         <source>Not enough values to read %1. %1 column is %2 but %3 values input.</source>
@@ -628,6 +628,10 @@
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
         <translation>テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
+        <translation>テキストファイル (*.csv *.txt)</translation>
     </message>
 </context>
 <context>

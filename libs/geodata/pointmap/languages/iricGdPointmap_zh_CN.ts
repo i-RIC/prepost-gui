@@ -530,14 +530,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text file (*.txt)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -571,6 +563,10 @@
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
