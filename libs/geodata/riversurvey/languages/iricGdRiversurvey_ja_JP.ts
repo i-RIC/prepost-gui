@@ -1400,6 +1400,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>

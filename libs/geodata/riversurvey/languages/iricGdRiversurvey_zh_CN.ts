@@ -1251,6 +1251,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>
