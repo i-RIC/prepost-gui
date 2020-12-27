@@ -1,18 +1,19 @@
 #ifndef GEODATAPOLYLINEGROUPCELLMAPPERT_H
 #define GEODATAPOLYLINEGROUPCELLMAPPERT_H
 
-#include "geodatapolylinegroup.h"
-
 #include <guicore/pre/geodata/geodatacellmappert.h>
 #include <guicore/pre/geodata/geodatamappersettingi.h>
-#include <misc/integerrangecontainer.h>
+#include <misc/rangecontainert.h>
+
+class GeoDataPolyLineGroupPolyLine;
 
 class GeoDataPolyLineGroupCellMapperSetting : public GeoDataMapperSettingI
 {
 public:
 	GeoDataPolyLineGroupCellMapperSetting() : GeoDataMapperSettingI() {}
 	~GeoDataPolyLineGroupCellMapperSetting() override {}
-	IntegerRangeContainer ranges;
+
+	RangeContainerT<GeoDataPolyLineGroupPolyLine*> ranges;
 };
 
 template <class V, class DA>
