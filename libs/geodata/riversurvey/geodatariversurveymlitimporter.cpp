@@ -34,6 +34,10 @@ bool loadDistanceMarkerData(const QString& filename, std::vector<GeoDataRiverSur
 		QString line = f.readLine();
 
 		auto tokens = line.split(",", QString::KeepEmptyParts);
+		if (tokens.length() < 5) {
+			QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("%1 Line %2: The number of values should be 5, but %3 values found.").arg(fName).arg(linenum).arg(tokens.length()));
+			return false;
+		}
 		QString name = tokens.at(0);
 		QString lx = tokens.at(1);
 		QString ly = tokens.at(2);
