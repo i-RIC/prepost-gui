@@ -5,6 +5,8 @@
 
 class GeoDataPolyLineGroupCsvExporter : public GeoDataExporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPolyLineGroupCsvExporter(GeoDataCreator* creator);
 
