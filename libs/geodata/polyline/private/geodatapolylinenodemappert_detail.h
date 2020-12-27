@@ -18,7 +18,7 @@ GeoDataMapperSettingI* GeoDataPolyLineNodeMapperT<V, DA>::initialize(bool* boolM
 }
 
 template <class V, class DA>
-void GeoDataPolyLineNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataPolyLineNodeMapperT<V, DA>::map(bool* /*boolMap*/, GeoDataMapperSettingI* /*s*/)
 {
 }
 

@@ -19,7 +19,7 @@ GeoDataMapperSettingI* GeoDataPolyLineCellMapperT<V, DA>::initialize(bool* boolM
 }
 
 template <class V, class DA>
-void GeoDataPolyLineCellMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataPolyLineCellMapperT<V, DA>::map(bool* /*boolMap*/,GeoDataMapperSettingI* /*s*/)
 {
 }
 
