@@ -3,6 +3,7 @@
 #include "private/geodatapolylinegrouppolyline_impl.h"
 
 #include <geodata/polyline/geodatapolyline.h>
+#include <misc/mathsupport.h>
 
 #include <geos/geom/Coordinate.h>
 #include <geos/geom/CoordinateArraySequence.h>
@@ -90,6 +91,25 @@ GeoDataPolyLineGroupPolyLine::GeoDataPolyLineGroupPolyLine(geos::geom::LineStrin
 GeoDataPolyLineGroupPolyLine::~GeoDataPolyLineGroupPolyLine()
 {
 	delete impl;
+}
+
+bool GeoDataPolyLineGroupPolyLine::intersectWithLine(const QPointF& p1, const QPointF& p2, QPointF* intersection, double* r) const
+{
+	auto tmpPoints = points();
+
+	double s;
+	for (int i = 0; i < tmpPoints.size() - 1; ++i) {
+		QPointF q1 = tmpPoints.at(i);
+		QPointF q2 = tmpPoints.at(i + 1);
+
+		bool ok = iRIC::intersectionPoint(p1, p2, q1, q2, intersection, r, &s);
+		if (! ok) {continue;}
+		if (*r < 0 || *r > 1) {continue;}
+		if (s < 0 || s > 1) {continue;}
+
+		return true;
+	}
+	return false;
 }
 
 geos::geom::LineString* GeoDataPolyLineGroupPolyLine::getGeosLineString() const

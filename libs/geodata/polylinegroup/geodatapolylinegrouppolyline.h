@@ -30,6 +30,8 @@ public:
 	GeoDataPolyLineGroupPolyLine(geos::geom::LineString* lineString, GeoDataPolyLineGroup* group);
 	~GeoDataPolyLineGroupPolyLine();
 
+	bool intersectWithLine(const QPointF& p1, const QPointF& p2, QPointF* intersection, double* r) const;
+
 	geos::geom::LineString* getGeosLineString() const;
 	void setGeosLineString(geos::geom::LineString* ls);
 
