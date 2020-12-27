@@ -5,6 +5,8 @@
 
 class GeoDataPolyLineGroupCsvImporter : public GeoDataImporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPolyLineGroupCsvImporter(GeoDataCreator* creator);
 
