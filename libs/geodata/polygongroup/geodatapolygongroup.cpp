@@ -5,6 +5,7 @@
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/zdepthrange.h>
 
@@ -261,6 +262,14 @@ bool GeoDataPolygonGroup::isMergablePolyDataGroup(GeoData* geoData)
 QString GeoDataPolygonGroup::captionForData(int number)
 {
 	return tr("Polygon%1").arg(number);
+}
+
+GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(ProjectDataItem* d)
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto newGroup = new GeoDataPolygonGroup(d, creator(), gItem->condition());
+
+	return newGroup;
 }
 
 void GeoDataPolygonGroup::setupMenu()

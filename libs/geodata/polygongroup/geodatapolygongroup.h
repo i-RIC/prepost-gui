@@ -39,6 +39,8 @@ private:
 	bool isMergablePolyDataGroup(GeoData* geoData) override;
 	QString captionForData(int number) override;
 
+	GeoDataPolyDataGroup* createInstanceForCopy(ProjectDataItem* d) override;
+
 	class Impl;
 	Impl* impl;
 
