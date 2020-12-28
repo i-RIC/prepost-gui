@@ -89,3 +89,13 @@ void GeoDataPointGroupPoint::applyOffset(double x, double y)
 {
 	setPoint(point() - QPointF(x, y));
 }
+
+GeoDataPolyDataGroupPolyData* GeoDataPointGroupPoint::copy(GeoDataPolyDataGroup* group) const
+{
+	auto ret = new GeoDataPointGroupPoint(dynamic_cast<GeoDataPointGroup*>(group));
+	ret->setName(name());
+	ret->setPoint(point());
+	ret->setValue(value());
+
+	return ret;
+}
