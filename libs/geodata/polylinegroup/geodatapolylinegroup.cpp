@@ -6,6 +6,7 @@
 #include <geodata/polyline/geodatapolyline.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
@@ -263,6 +264,14 @@ bool GeoDataPolyLineGroup::isMergablePolyDataGroup(GeoData* geoData)
 QString GeoDataPolyLineGroup::captionForData(int number)
 {
 	return tr("Polyline%1").arg(number);
+}
+
+GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(ProjectDataItem* d)
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto newGroup = new GeoDataPolyLineGroup(d, creator(), gItem->condition());
+
+	return newGroup;
 }
 
 void GeoDataPolyLineGroup::setupMenu()
