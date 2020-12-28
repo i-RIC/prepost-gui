@@ -44,6 +44,8 @@ public:
 
 	void applyOffset(double x, double y) override;
 
+	GeoDataPolyDataGroupPolyData* copy(GeoDataPolyDataGroup* group) const override;
+
 private slots:
 	void applyShape();
 
