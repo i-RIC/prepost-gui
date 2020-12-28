@@ -5,6 +5,7 @@
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
@@ -195,6 +196,14 @@ bool GeoDataPointGroup::isMergablePolyDataGroup(GeoData* geoData)
 QString GeoDataPointGroup::captionForData(int number)
 {
 	return tr("Point%1").arg(number);
+}
+
+GeoDataPolyDataGroup* GeoDataPointGroup::createInstanceForCopy(ProjectDataItem* d)
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto newGroup = new GeoDataPointGroup(d, creator(), gItem->condition());
+
+	return newGroup;
 }
 
 void GeoDataPointGroup::setupMenu()
