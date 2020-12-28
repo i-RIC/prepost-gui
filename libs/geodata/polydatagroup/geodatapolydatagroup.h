@@ -148,6 +148,8 @@ private:
 	virtual bool isMergablePolyDataGroup(GeoData* geoData) = 0;
 	virtual QString captionForData(int number) = 0;
 
+	virtual GeoDataPolyDataGroup* createInstanceForCopy(ProjectDataItem* d) = 0;
+
 	class EditNameAndValueCommand;
 	class SetColorSettingCommand;
 	class SortCommand;
