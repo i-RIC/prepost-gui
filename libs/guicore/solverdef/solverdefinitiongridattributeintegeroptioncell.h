@@ -9,6 +9,7 @@ class SolverDefinitionGridAttributeIntegerOptionCell : public SolverDefinitionGr
 public:
 	SolverDefinitionGridAttributeIntegerOptionCell(const QDomElement& elem, SolverDefinition* solverDef, int order);
 
+	GridAttributeStringConverter* stringConverter() const override;
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 

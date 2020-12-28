@@ -73,6 +73,7 @@ HEADERS += gd_polydatagroup_global.h \
            geodatapolydatagroup.h \
            geodatapolydatagroupattributebrowser.h \
            geodatapolydatagroupcolorsettingdialog.h \
+           geodatapolydatagroupcopysettingdialog.h \
            geodatapolydatagroupcreator.h \
            geodatapolydatagroupmergesettingdialog.h \
            geodatapolydatagrouppolydata.h \
@@ -87,11 +88,13 @@ HEADERS += gd_polydatagroup_global.h \
            private/geodatapolydatagroupattributebrowser_tableitemdelegate.h \
            private/geodatapolydatagrouppolydata_impl.h
 FORMS += geodatapolydatagroupcolorsettingdialog.ui \
+         geodatapolydatagroupcopysettingdialog.ui \
          geodatapolydatagroupmergesettingdialog.ui \
          geodatapolydatagroupshpimportersettingdialog.ui
 SOURCES += geodatapolydatagroup.cpp \
            geodatapolydatagroupattributebrowser.cpp \
            geodatapolydatagroupcolorsettingdialog.cpp \
+           geodatapolydatagroupcopysettingdialog.cpp \
            geodatapolydatagroupcreator.cpp \
            geodatapolydatagroupmergesettingdialog.cpp \
            geodatapolydatagrouppolydata.cpp \

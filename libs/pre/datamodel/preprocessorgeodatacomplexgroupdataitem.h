@@ -27,6 +27,7 @@ public:
 	SolverDefinitionGridAttribute* condition() override;
 	ProjectData* projectData() const override;
 
+	void setupStringConverter(GridAttributeStringConverter* converter) override;
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 
 	void applyScalarsToColorsSetting();

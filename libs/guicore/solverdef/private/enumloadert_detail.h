@@ -26,6 +26,16 @@ const QMap<V, std::string>& EnumLoaderT<V>::englishEnumerations() const
 }
 
 template <class V>
+QMap<QVariant, QString> EnumLoaderT<V>::variantEnumerations() const
+{
+	QMap<QVariant, QString> ret;
+	for (auto it = m_enumerations.begin(); it != m_enumerations.end(); ++it) {
+		ret.insert(QVariant(it.key()), it.value());
+	}
+	return ret;
+}
+
+template <class V>
 void EnumLoaderT<V>::loadEnumeration(const QDomElement& elem, const SolverDefinitionTranslator& translator)
 {
 	QDomNode def = iRIC::getChildNode(elem, "Definition");

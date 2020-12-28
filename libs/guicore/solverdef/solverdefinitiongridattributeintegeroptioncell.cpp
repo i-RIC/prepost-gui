@@ -1,4 +1,5 @@
 #include "../pre/gridcond/editwidget/gridattributeintegeroptioneditwidget.h"
+#include "../pre/gridcond/stringconverter/gridattributestringconverterenumerate.h"
 #include "../project/colorsource.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinition.h"
@@ -10,6 +11,14 @@ SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeInt
 	SolverDefinitionGridAttributeIntegerCell(elem, solverDef, true, order)
 {
 	loadEnumeration(elem, solverDef->buildTranslator());
+}
+
+GridAttributeStringConverter* SolverDefinitionGridAttributeIntegerOptionCell::stringConverter() const
+{
+	auto ret = new GridAttributeStringConverterEnumerate();
+	ret->setEnumerations(variantEnumerations());
+
+	return ret;
 }
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::editWidget(QWidget* parent)

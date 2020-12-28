@@ -5,6 +5,7 @@
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/zdepthrange.h>
@@ -264,9 +265,9 @@ QString GeoDataPolygonGroup::captionForData(int number)
 	return tr("Polygon%1").arg(number);
 }
 
-GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(ProjectDataItem* d)
+GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface *d)
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
 	auto newGroup = new GeoDataPolygonGroup(d, creator(), gItem->condition());
 
 	return newGroup;
@@ -393,6 +394,7 @@ void GeoDataPolygonGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 
@@ -439,6 +441,7 @@ void GeoDataPolygonGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 

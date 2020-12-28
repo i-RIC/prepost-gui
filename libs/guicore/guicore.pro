@@ -466,6 +466,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridattributeeditwidgetcontainer.h \
            pre/gridcond/base/gridattributeeditwidgett.h \
            pre/gridcond/base/gridattributenodecontainert.h \
+           pre/gridcond/base/gridattributestringconverter.h \
            pre/gridcond/base/gridattributevariationeditdialog.h \
            pre/gridcond/base/gridattributevariationeditwidget.h \
            pre/gridcond/base/gridattributevariationeditwidgetcontainer.h \
@@ -484,6 +485,9 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealeditwidget.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
+           pre/gridcond/stringconverter/gridattributestringconverterenumerate.h \
+           pre/gridcond/stringconverter/gridattributestringconverterinteger.h \
+           pre/gridcond/stringconverter/gridattributestringconverterreal.h \
            pre/hydraulicdata/private/hydraulicdata_impl.h \
            pre/hydraulicdata/private/hydraulicdatacreator_impl.h \
            pre/hydraulicdata/private/hydraulicdataexporter_impl.h \
@@ -796,6 +800,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/base/gridattributeeditnameandvaluedialog.cpp \
            pre/gridcond/base/gridattributeeditvariationcommand.cpp \
            pre/gridcond/base/gridattributeeditwidget.cpp \
+           pre/gridcond/base/gridattributestringconverter.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \
            pre/gridcond/base/gridattributevariationeditwidget.cpp \
            pre/gridcond/base/gridattributevariationeditwidgetcontainer.cpp \
@@ -809,6 +814,9 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/editwidget/gridattributerealeditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
+           pre/gridcond/stringconverter/gridattributestringconverterenumerate.cpp \
+           pre/gridcond/stringconverter/gridattributestringconverterinteger.cpp \
+           pre/gridcond/stringconverter/gridattributestringconverterreal.cpp \
            project/inputcond/private/inputconditiondependencychecksubcaptions.cpp \
            project/inputcond/private/inputconditiondependencychecksubimages.cpp \
            project/inputcond/private/inputconditiondependencyconditionalways.cpp \

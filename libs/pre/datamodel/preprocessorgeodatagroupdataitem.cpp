@@ -1264,6 +1264,9 @@ void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
 void PreProcessorGeoDataGroupDataItem::saveComplexGroupsToCgnsFile(const int /*fn*/)
 {}
 
+void PreProcessorGeoDataGroupDataItem::setupStringConverter(GridAttributeStringConverter* /*converter*/)
+{}
+
 void PreProcessorGeoDataGroupDataItem::setupEditWidget(GridAttributeEditWidget* /*widget*/)
 {}
 

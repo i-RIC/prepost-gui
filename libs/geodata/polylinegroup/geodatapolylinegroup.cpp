@@ -6,6 +6,7 @@
 #include <geodata/polyline/geodatapolyline.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -266,9 +267,9 @@ QString GeoDataPolyLineGroup::captionForData(int number)
 	return tr("Polyline%1").arg(number);
 }
 
-GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(ProjectDataItem* d)
+GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d)
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
 	auto newGroup = new GeoDataPolyLineGroup(d, creator(), gItem->condition());
 
 	return newGroup;
@@ -380,6 +381,7 @@ void GeoDataPolyLineGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 
@@ -422,6 +424,7 @@ void GeoDataPolyLineGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 

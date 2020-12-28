@@ -1,4 +1,5 @@
 #include "../pre/gridcond/editwidget/gridattributerealoptioneditwidget.h"
+#include "../pre/gridcond/stringconverter/gridattributestringconverterenumerate.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinition.h"
 #include "solverdefinitiongridattributerealoptionnode.h"
@@ -7,6 +8,14 @@ SolverDefinitionGridAttributeRealOptionNode::SolverDefinitionGridAttributeRealOp
 	SolverDefinitionGridAttributeRealNode {node, solverDef, true, order}
 {
 	loadEnumeration(node, solverDef->buildTranslator());
+}
+
+GridAttributeStringConverter* SolverDefinitionGridAttributeRealOptionNode::stringConverter() const
+{
+	auto ret = new GridAttributeStringConverterEnumerate();
+	ret->setEnumerations(variantEnumerations());
+
+	return ret;
 }
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeRealOptionNode::editWidget(QWidget* parent)
