@@ -39,10 +39,10 @@ public:
 	void copyShapeFrom(GeoDataPolyData* data) override;
 	void copyShapeTo(GeoDataPolyData* data) override;
 
-	void loadExternalData(QDataStream* stream);
-	void saveExternalData(QDataStream* stream);
+	void loadExternalData(QDataStream* stream) override;
+	void saveExternalData(QDataStream* stream) override;
 
-	void applyOffset(double x, double y);
+	void applyOffset(double x, double y) override;
 
 private slots:
 	void applyShape();
