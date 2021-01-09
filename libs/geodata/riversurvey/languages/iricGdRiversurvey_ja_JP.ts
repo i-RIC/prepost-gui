@@ -1187,7 +1187,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。:%1</translation>
+        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。</translation>
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
