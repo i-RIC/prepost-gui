@@ -94,7 +94,7 @@ SolverDefinitionGridType::GridType GridCreatingConditionCreatorExternalProgram::
 
 GridCreatingCondition* GridCreatingConditionCreatorExternalProgram::create(ProjectDataItem* parent)
 {
-	return new GridCreatingConditionExternalProgram(m_folderName,parent->iricMainWindow()->locale(), parent, this);
+	return new GridCreatingConditionExternalProgram(m_folderName, parent->iricMainWindow()->locale(), parent, this);
 }
 
 const QString& GridCreatingConditionCreatorExternalProgram::folderName() const
@@ -106,15 +106,30 @@ QList<GridCreatingConditionCreator*> GridCreatingConditionCreatorExternalProgram
 {
 	QList<GridCreatingConditionCreator*> ret;
 	QString gcFolder("gridcreators");
+	QString private_gcFolder("private_gridcreators");
 
 	QDir inst(iRICRootPath::get());
 	inst.cdUp();
 	inst.cdUp();
+
 	QString targetDirectory = inst.absoluteFilePath(gcFolder);
 	if (! QDir(targetDirectory).exists()) {
 		inst.mkdir(gcFolder);
 	}
-	QDir gcsdir(targetDirectory);
+	addToList(targetDirectory, locale, mainWindow, &ret);
+
+	QString private_targetDirectory = inst.absoluteFilePath(private_gcFolder);
+	if (! QDir(private_targetDirectory).exists()) {
+		inst.mkdir(private_gcFolder);
+	}
+	addToList(private_targetDirectory, locale, mainWindow, &ret);
+
+	return ret;
+}
+
+void GridCreatingConditionCreatorExternalProgram::addToList(const QString& dirName, const QLocale& locale, QWidget* w, QList<GridCreatingConditionCreator*>* list)
+{
+	QDir gcsdir(dirName);
 	QStringList subdirs = gcsdir.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
 
 	for (const QString& subdir : subdirs) {
@@ -124,10 +139,9 @@ QList<GridCreatingConditionCreator*> GridCreatingConditionCreatorExternalProgram
 		// definition.xml exists.
 		try {
 			GridCreatingConditionCreatorExternalProgram* creator = new GridCreatingConditionCreatorExternalProgram(gcsdir.absoluteFilePath(subdir), locale);
-			ret.append(creator);
+			list->append(creator);
 		} catch (ErrorMessage& e) {
-			QMessageBox::warning(mainWindow, tr("Warning"), tr("Error occured while loading grid creator definition file in folder \"%1\". This grid creator is ignored.\n%2").arg(subdir).arg(e));
+			QMessageBox::warning(w, tr("Warning"), tr("Error occured while loading grid creator definition file in folder \"%1\". This grid creator is ignored.\n%2").arg(subdir).arg(e));
 		}
 	}
-	return ret;
 }
