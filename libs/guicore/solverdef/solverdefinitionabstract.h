@@ -33,6 +33,7 @@ public:
 	/// The name of the folder which contains files related to the solver
 	/// (ex. definition.xml, translation_ja_JP.xml, solver.exe)
 	const QString& folderName() const;
+	const QString& absoluteFolderName() const;
 	/// Solver name
 	const std::string& name() const;
 	/// Solver caption in adequate locale
