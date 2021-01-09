@@ -17,10 +17,11 @@ public:
 	class Alt {
 	public:
 		Alt();
-		Alt(double dis, double e);
+		Alt(int originalOrder, double dis, double e);
 
 		bool operator==(const Alt& other) const;
 
+		int originalOrder;
 		double distance;
 		double elevation;
 	};
@@ -62,8 +63,6 @@ public:
 
 	static void shiftUniqueAlts(std::vector<Alt>* altitudes, bool* shifted);
 	static void sortAlts(std::vector<Alt>* altitudes, bool* sorted);
-	// remove altitudes with the same distance
-	static void uniqueAlts(std::vector<Alt>* altitudes, std::vector<double>* distlist);
 	static QString distListString(const std::vector<double>& distlist);
 
 private:
