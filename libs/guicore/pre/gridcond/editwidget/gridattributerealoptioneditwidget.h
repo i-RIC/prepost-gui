@@ -2,6 +2,7 @@
 #define GRIDATTRIBUTEREALOPTIONEDITWIDGET_H
 
 #include "../base/gridattributeeditwidgett.h"
+
 #include <QMap>
 #include <QList>
 

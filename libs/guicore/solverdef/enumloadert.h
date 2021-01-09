@@ -5,6 +5,7 @@
 
 #include <QMap>
 #include <QDomNodeList>
+#include <QVariant>
 
 #include <string>
 
@@ -19,6 +20,7 @@ public:
 
 	const QMap<V, QString>& enumerations() const;
 	const QMap<V, std::string>& englishEnumerations() const;
+	QMap<QVariant, QString> variantEnumerations() const;
 
 protected:
 	void loadEnumeration(const QDomElement& elem, const SolverDefinitionTranslator& translator);

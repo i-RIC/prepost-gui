@@ -252,6 +252,16 @@ void GeoDataPolygonGroupPolygon::applyOffset(double x, double y)
 	setupBoundingRect();
 }
 
+GeoDataPolyDataGroupPolyData* GeoDataPolygonGroupPolygon::copy(GeoDataPolyDataGroup* group) const
+{
+	auto ret = new GeoDataPolygonGroupPolygon(dynamic_cast<GeoDataPolygonGroup*> (group));
+	ret->setName(name());
+	ret->setGeosPolygon(dynamic_cast<geos::geom::Polygon*> (geosPolygon()->clone()));
+	ret->setValue(value());
+
+	return ret;
+}
+
 void GeoDataPolygonGroupPolygon::setupBoundingRect()
 {
 	const auto env = impl->m_polygon.get()->getEnvelopeInternal();

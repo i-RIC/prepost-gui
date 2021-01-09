@@ -180,6 +180,16 @@ void GeoDataPolyLineGroupPolyLine::applyOffset(double x, double y)
 	setupBoundingRect();
 }
 
+GeoDataPolyDataGroupPolyData* GeoDataPolyLineGroupPolyLine::copy(GeoDataPolyDataGroup* group) const
+{
+	auto ret = new GeoDataPolyLineGroupPolyLine(dynamic_cast<GeoDataPolyLineGroup*> (group));
+	ret->setName(name());
+	ret->setGeosLineString(dynamic_cast<geos::geom::LineString*> (getGeosLineString()->clone()));
+	ret->setValue(value());
+
+	return ret;
+}
+
 void GeoDataPolyLineGroupPolyLine::applyShape()
 {
 	auto l = dynamic_cast<GeoDataPolyLine*> (sender());

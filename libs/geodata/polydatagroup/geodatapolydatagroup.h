@@ -85,6 +85,8 @@ private slots:
 	void moveSelectedDataUp();
 	void moveSelectedDataDown();
 
+	void copy();
+
 protected slots:
 	void updateAttributeBrowser(bool force = false);
 
@@ -119,6 +121,7 @@ protected:
 	QAction* moveToBottomAction() const;
 	QAction* moveUpAction() const;
 	QAction* moveDownAction() const;
+	QAction* copyAction() const;
 
 private:
 	void setColorSetting(const GeoDataPolyDataGroupColorSettingDialog::Setting& setting);
@@ -147,6 +150,8 @@ private:
 	virtual bool isMergablePolyData(GeoData* geoData) = 0;
 	virtual bool isMergablePolyDataGroup(GeoData* geoData) = 0;
 	virtual QString captionForData(int number) = 0;
+
+	virtual GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d) = 0;
 
 	class EditNameAndValueCommand;
 	class SetColorSettingCommand;

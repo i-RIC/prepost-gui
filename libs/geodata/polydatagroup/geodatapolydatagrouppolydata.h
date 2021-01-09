@@ -42,6 +42,8 @@ public:
 
 	virtual void applyOffset(double x, double y) = 0;
 
+	virtual GeoDataPolyDataGroupPolyData* copy(GeoDataPolyDataGroup* group) const = 0;
+
 	class Impl;
 	Impl* impl;
 };

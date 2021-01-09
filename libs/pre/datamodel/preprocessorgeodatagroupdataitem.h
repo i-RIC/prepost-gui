@@ -73,6 +73,7 @@ public:
 	bool polygonExists() const;
 	void saveToCgnsFile(const int fn) override;
 	virtual void saveComplexGroupsToCgnsFile(const int fn);
+	void setupStringConverter(GridAttributeStringConverter* converter) override;
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void updateCrossectionWindows() override;
 	void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) override;
