@@ -21,14 +21,9 @@ class SolverDefinitionList : public QObject
 	Q_OBJECT
 
 public:
-	/**
-	 * @param installDir install directory of iRIC
-	 */
 	SolverDefinitionList(const QString& targetDir, const QLocale& locale, QObject* parent);
+	SolverDefinitionList(const QString& targetDir, const QString& privateTargetDir, const QLocale& locale, QObject* parent);
 	~SolverDefinitionList();
-
-	QString absoluteSolverPath(const QString& solverFolder);
-
 
 	const std::vector<SolverDefinitionAbstract*>& solverList() const;
 	std::vector<QAction*> actionList();
@@ -53,13 +48,16 @@ signals:
 	void updated(SolverDefinitionList*);
 
 private:
+	void setupSolverList(const QString& dir, QWidget* w);
+
 	std::vector<SolverDefinitionAbstract*> m_solverList;
 	/// Full path of the directory that contains solvers.
 	/**
 	 * please refer to @ref dirstructure for the directory structure
 	 * under install directory of iRIC.
 	 */
-	QString m_targetDirectory;
+	QString m_targetDirectory; // "solvers"
+	QString m_privateTargetDirectory; // "private_solvers"
 	QLocale m_locale;
 	SolverDefinitionListDialog* m_dialog;
 };

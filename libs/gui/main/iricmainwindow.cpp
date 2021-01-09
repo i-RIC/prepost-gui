@@ -129,7 +129,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	iricDir.cdUp();
 
 	// Setup solver definition list.
-	m_solverDefinitionList = new SolverDefinitionList(iricDir.absoluteFilePath("solvers"), m_locale, this);
+	m_solverDefinitionList = new SolverDefinitionList(iricDir.absoluteFilePath("solvers"), iricDir.absoluteFilePath("private_solvers"), m_locale, this);
 	// Setup tool definition list.
 	m_guiToolList = new SolverDefinitionList(iricDir.absoluteFilePath("guis"), m_locale, this);
 
@@ -246,7 +246,7 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	updateRecentSolvers(solver->folderName());
 
 	// create solver definition data
-	QString solFolder = m_solverDefinitionList->absoluteSolverPath(solver->folderName());
+	QString solFolder = solver->absoluteFolderName();
 	try {
 		SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
 		m_projectData->setSolverDefinition(def);
@@ -377,14 +377,11 @@ void iRICMainWindow::openProject(const QString& filename)
 	}
 	// make sure whether supporting solver exists.
 	QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData, this);
-	QString solFolder;
 	if (folder.isNull()){
 		m_projectData->setPostOnlyMode();
-		solFolder = ":/data/unknownsolver";
-	} else {
-		solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
+		folder = ":/data/unknownsolver";
 	}
-	SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
+	SolverDefinition* def = new SolverDefinition(folder, m_locale);
 	m_projectData->setSolverDefinition(def);
 
 	try {
@@ -501,7 +498,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 			solFolder = ":/data/unknownsolver";
 		} else {
 			// create solver definition data
-			solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
+			solFolder = folder;
 		}
 	}
 	SolverDefinition* def = new SolverDefinition(solFolder, m_locale);

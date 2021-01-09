@@ -55,6 +55,7 @@ void SolverDefinitionAbstract::Impl::load(const QString& solverfolder, const QLo
 
 	m_folder = QDir(solverfolder);
 	m_folderName = m_folder.dirName();
+	m_absoluteFolderName = solverfolder;
 
 	// Set up translator first.
 	SolverDefinitionTranslator translator(solverfolder, locale);
@@ -85,6 +86,11 @@ SolverDefinitionAbstract::SolverDefinitionAbstract(const QString& solverfolder, 
 const QString& SolverDefinitionAbstract::folderName() const
 {
 	return impl->m_folderName;
+}
+
+const QString& SolverDefinitionAbstract::absoluteFolderName() const
+{
+	return impl->m_absoluteFolderName;
 }
 
 const std::string& SolverDefinitionAbstract::name() const
