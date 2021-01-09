@@ -441,6 +441,9 @@ bool GeoDataNetcdfGdalImporter::setupFilenames(const QString& filename, QWidget 
 		auto dt = m_matcher->getDateTime(fname, &ok);
 		if (! ok) {continue;}
 
+		QFileInfo finfo2(fname);
+		if (finfo.suffix() != finfo2.suffix()) {continue;}
+
 		m_filenames.push_back(dir.absoluteFilePath(fname));
 	}
 	GeoDataNetcdfFileListDialog dialog(w);
