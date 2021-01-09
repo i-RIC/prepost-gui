@@ -6,7 +6,8 @@
 #include <vtkPolyData.h>
 
 GridCreatingConditionCenterAndWidth::AddVertexCommand::AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCenterAndWidth* cond) :
-	PolyLineAddVertexCommand {GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex"), keyDown, edgeId, cond->graphicsView()->viewportToWorld(point), &(cond->m_polyLineController)}
+	PolyLineAddVertexCommand {GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex"), keyDown, edgeId, cond->graphicsView()->viewportToWorld(point), &(cond->m_polyLineController)},
+	m_condition {cond}
 {}
 
 void GridCreatingConditionCenterAndWidth::AddVertexCommand::redo()
@@ -35,6 +36,7 @@ int GridCreatingConditionCenterAndWidth::AddVertexCommand::id() const
 bool GridCreatingConditionCenterAndWidth::AddVertexCommand::mergeWith(const QUndoCommand* other)
 {
 	const AddVertexCommand* comm = dynamic_cast<const AddVertexCommand*>(other);
+	if (comm == nullptr) {return false;}
 	if (m_condition != comm->m_condition) {return false;}
 	return PolyLineAddVertexCommand::mergeWith(other);
 }
