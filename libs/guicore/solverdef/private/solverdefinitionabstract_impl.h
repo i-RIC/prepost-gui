@@ -22,6 +22,7 @@ public:
 	void load(const QString& solverfolder, const QLocale& locale);
 
 	QString m_folderName;
+	QString m_absoluteFolderName;
 	std::string m_name;
 	QString m_caption;
 	VersionNumber m_version;

@@ -16,15 +16,20 @@
 #include <vector>
 
 SolverDefinitionList::SolverDefinitionList(const QString& targetDir, const QLocale& locale, QObject* parent) :
+	SolverDefinitionList(targetDir, "", locale, parent)
+{}
+
+SolverDefinitionList::SolverDefinitionList(const QString& targetDir, const QString& privateTargetDir, const QLocale& locale, QObject* parent) :
 	QObject(parent),
+	m_targetDirectory {targetDir},
+	m_privateTargetDirectory {privateTargetDir},
 	m_locale {locale},
 	m_dialog {nullptr}
 {
-	m_targetDirectory = targetDir;
-
 	// setup filesystem watcher
 	QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
 	watcher->addPath(m_targetDirectory);
+	watcher->addPath(m_privateTargetDirectory);
 	connect(watcher, SIGNAL(directoryChanged(QString)), this, SLOT(updateSolverList()));
 	// update solver list.
 	updateSolverList();
@@ -41,21 +46,9 @@ void SolverDefinitionList::updateSolverList()
 	clean();
 	QWidget* parentWidget = dynamic_cast<QWidget*>(parent());
 
-	QDir solversdir(m_targetDirectory);
-	QStringList subdirs = solversdir.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
+	setupSolverList(m_targetDirectory, parentWidget);
+	setupSolverList(m_privateTargetDirectory, parentWidget);
 
-	for (const QString& subdir : subdirs) {
-		QString defFileName = QDir(solversdir.absoluteFilePath(subdir)).absoluteFilePath(SolverDefinition::FILENAME);
-		if (QFile::exists(defFileName)) {
-			// definition.xml exists.
-			try {
-				SolverDefinitionAbstract* abst = new SolverDefinitionAbstract(solversdir.absoluteFilePath(subdir), m_locale, this);
-				m_solverList.push_back(abst);
-			} catch (ErrorMessage& e) {
-				QMessageBox::warning(parentWidget, tr("Warning"), tr("Error occured while loading solver definition file in folder \"%1\". This solver is ignored.\n%2").arg(subdir).arg(e));
-			}
-		}
-	}
 	// inform the change of solverList
 	emit updated();
 	emit updated(this);
@@ -67,11 +60,6 @@ void SolverDefinitionList::clean()
 		delete def;
 	}
 	m_solverList.clear();
-}
-
-QString SolverDefinitionList::absoluteSolverPath(const QString& solverFolder)
-{
-	return QDir(m_targetDirectory).absoluteFilePath(solverFolder);
 }
 
 const std::vector<SolverDefinitionAbstract*>& SolverDefinitionList::solverList() const
@@ -114,5 +102,26 @@ QString SolverDefinitionList::supportingSolverFolder(ProjectData* p, QWidget* pa
 	dialog.execToSelectSolver();
 
 	auto selectedSolver = compatibleSolvers.at(dialog.selectedSolver());
-	return selectedSolver->folderName();
+	return selectedSolver->absoluteFolderName();
+}
+
+void SolverDefinitionList::setupSolverList(const QString& dir, QWidget* w)
+{
+	if (dir.isEmpty()) {return;}
+
+	QDir solversdir(dir);
+	QStringList subdirs = solversdir.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
+
+	for (const QString& subdir : subdirs) {
+		QString defFileName = QDir(solversdir.absoluteFilePath(subdir)).absoluteFilePath(SolverDefinition::FILENAME);
+		if (QFile::exists(defFileName)) {
+			// definition.xml exists.
+			try {
+				SolverDefinitionAbstract* abst = new SolverDefinitionAbstract(solversdir.absoluteFilePath(subdir), m_locale, this);
+				m_solverList.push_back(abst);
+			} catch (ErrorMessage& e) {
+				QMessageBox::warning(w, tr("Warning"), tr("Error occured while loading solver definition file in folder \"%1\". This solver is ignored.\n%2").arg(subdir).arg(e));
+			}
+		}
+	}
 }
