@@ -62,7 +62,10 @@ bool lessKP(GeoDataRiverSurveyImporter::RivPathPoint* a1, GeoDataRiverSurveyImpo
 
 bool largerAlt(const GeoDataRiverSurveyImporter::Alt& a1, const GeoDataRiverSurveyImporter::Alt& a2)
 {
-	return a1.distance < a2.distance;
+	if (a1.distance != a2.distance) {
+		return a1.distance < a2.distance;
+	}
+	return a1.originalOrder < a2.originalOrder;
 }
 
 void parseKP(const QString& tok, double* realKP, std::string* strKP, bool* allNumber)
@@ -180,6 +183,7 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 					int k = 0;
 					while (k < tokens.length() - 1) {
 						GeoDataRiverSurveyImporter::Alt alt;
+						alt.originalOrder = i;
 						alt.distance = tokens.at(k++).toDouble(&ok);
 						if (! ok) {
 							QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": Distance value is invalid")
@@ -196,9 +200,9 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 						++ i;
 					}
 				}
-				GeoDataRiverSurveyImporter::shiftUniqueAlts(&alts, &(p->shifted));
 				GeoDataRiverSurveyImporter::sortAlts(&alts, &(p->sorted));
-				GeoDataRiverSurveyImporter::uniqueAlts(&alts, &(p->uniquedDistances));
+				GeoDataRiverSurveyImporter::shiftUniqueAlts(&alts, &(p->shifted));
+				// GeoDataRiverSurveyImporter::uniqueAlts(&alts, &(p->uniquedDistances));
 				if (*with4points) {
 					for (int i = 0; i < 4; ++i) {
 						p->divIndices[i] = divIndices[i];
@@ -222,14 +226,11 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 			problem.problem = GeoDataRiverSurveyImporter::tr("#x-section data is not found. Will be ignored.");
 			problems.push_back(problem);
 		} else {
-			if (p->uniquedDistances.size() > 0) {
-				auto distances = GeoDataRiverSurveyImporter::distListString(p->uniquedDistances);
-				problem.problem = GeoDataRiverSurveyImporter::tr("#x-section data contained data with same distances. Data with lowest elevation is used.: %1").arg(distances);
-				problems.push_back(problem);
-			} else if (p->sorted) {
+			if (p->sorted) {
 				problem.problem = GeoDataRiverSurveyImporter::tr("#x-section data is not correctly ordered. Will be sorted automatically.");
 				problems.push_back(problem);
-			} else if (p->shifted) {
+			}
+			if (p->shifted) {
 				problem.problem = GeoDataRiverSurveyImporter::tr("#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.");
 				problems.push_back(problem);
 			}
@@ -262,10 +263,11 @@ GeoDataRiverSurveyImporter::Alt lowestAlt(const std::vector<GeoDataRiverSurveyIm
 } // namespace
 
 GeoDataRiverSurveyImporter::Alt::Alt() :
-	Alt(0, 0)
+	Alt(0, 0, 0)
 {}
 
-GeoDataRiverSurveyImporter::Alt::Alt(double dis, double e) :
+GeoDataRiverSurveyImporter::Alt::Alt(int order, double dis, double e) :
+	originalOrder {order},
 	distance {dis},
 	elevation {e}
 {}
@@ -509,6 +511,7 @@ void GeoDataRiverSurveyImporter::sortAlts(std::vector<GeoDataRiverSurveyImporter
 	*sorted = (*altitudes != origAltitudes);
 }
 
+/*
 void GeoDataRiverSurveyImporter::uniqueAlts(std::vector<Alt>* altitudes, std::vector<double>* distlist)
 {
 	std::vector<Alt> ret;
@@ -535,6 +538,7 @@ void GeoDataRiverSurveyImporter::uniqueAlts(std::vector<Alt>* altitudes, std::ve
 	}
 	*altitudes = ret;
 }
+*/
 
 QString GeoDataRiverSurveyImporter::distListString(const std::vector<double>& distlist)
 {

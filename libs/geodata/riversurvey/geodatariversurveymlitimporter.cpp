@@ -139,7 +139,7 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 			QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("%1 line %2: \"%3\": Elevation data is invalid.").arg(fName).arg(linenum).arg(tokens.at(2)));
 			return false;
 		}
-		GeoDataRiverSurveyImporter::Alt alt(dist, elev);
+		GeoDataRiverSurveyImporter::Alt alt(point->altitudes.size(), dist, elev);
 		point->altitudes.push_back(alt);
 		if (flag == 13) {
 			indices.push_back(point->altitudes.size());
@@ -154,9 +154,8 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 		*with4Points = true;
 	}
 	f.close();
-	GeoDataRiverSurveyImporter::shiftUniqueAlts(&(point->altitudes), &(point->shifted));
 	GeoDataRiverSurveyImporter::sortAlts(&(point->altitudes), &(point->sorted));
-	GeoDataRiverSurveyImporter::uniqueAlts(&(point->altitudes), &(point->uniquedDistances));
+	GeoDataRiverSurveyImporter::shiftUniqueAlts(&(point->altitudes), &(point->shifted));
 
 	return true;
 }
