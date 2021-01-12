@@ -1,14 +1,17 @@
 #include "coordinateeditwidget.h"
 #include "misc/stringtool.h"
 #include <cmath>
+#include <limits>
 #include <QDoubleValidator>
 #include <QMessageBox>
 
 CoordinateEditWidget::CoordinateEditWidget(QWidget* parent) :
 	QLineEdit(parent),
-	m_doubleValue {0},
+	m_doubleValue {std::numeric_limits<double>::signaling_NaN()},
 	m_eventCheck {true}
 {
+	Q_ASSERT(std::numeric_limits<double>::has_signaling_NaN);
+	Q_ASSERT(m_doubleValue != m_doubleValue);
 	setValidator(new QDoubleValidator(this));
 	connect(this, SIGNAL(textChanged(QString)), this, SLOT(handleTextChange()));
 }

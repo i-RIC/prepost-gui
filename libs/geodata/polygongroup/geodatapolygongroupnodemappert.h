@@ -2,11 +2,10 @@
 #define GEODATAPOLYGONGROUPNODEMAPPERT_H
 
 #include "geodatapolygongroup.h"
-#include "geodatapolygongrouprangecontainer.h"
 
 #include <guicore/pre/geodata/geodatamappersettingi.h>
 #include <guicore/pre/geodata/geodatanodemappert.h>
-#include <misc/integerrangecontainer.h>
+#include <misc/rangecontainert.h>
 
 class GeoDataPolygonGroupNodeMapperSetting : public GeoDataMapperSettingI
 {
@@ -14,7 +13,7 @@ public:
 	GeoDataPolygonGroupNodeMapperSetting() : GeoDataMapperSettingI() {}
 	~GeoDataPolygonGroupNodeMapperSetting() override {}
 
-	GeoDataPolygonGroupRangeContainer ranges;
+	RangeContainerT<GeoDataPolygonGroupPolygon*> ranges;
 };
 
 template <typename V, typename DA>

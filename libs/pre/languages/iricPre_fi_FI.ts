@@ -970,19 +970,19 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mapping geographic data finished successfully.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mapping geographic data finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

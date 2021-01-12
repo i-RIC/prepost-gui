@@ -1007,11 +1007,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>Os atributos da grade  &quot;%1&quot; foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
+        <translation type="vanished">Os atributos da grade  &quot;%1&quot; foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>As condicoes do limite &quot;%1&quot; foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
+        <translation type="vanished">As condicoes do limite &quot;%1&quot; foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1024,6 +1024,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Mapping geographic data finished</source>
         <translation>Concluido o mapeamento dos dados geograficos</translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

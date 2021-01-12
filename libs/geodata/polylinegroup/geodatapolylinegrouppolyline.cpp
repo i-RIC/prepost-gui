@@ -3,6 +3,7 @@
 #include "private/geodatapolylinegrouppolyline_impl.h"
 
 #include <geodata/polyline/geodatapolyline.h>
+#include <misc/mathsupport.h>
 
 #include <geos/geom/Coordinate.h>
 #include <geos/geom/CoordinateArraySequence.h>
@@ -13,6 +14,7 @@
 #include <geos/geom/LineString.h>
 #include <geos/geom/LinearRing.h>
 #include <geos/geom/Point.h>
+#include <geos/geom/Polygon.h>
 
 #include <QDataStream>
 #include <QList>
@@ -43,6 +45,25 @@ geos::geom::LineString* buildString(const std::vector<QPointF>& line)
 	}
 	auto f = geos::geom::GeometryFactory::getDefaultInstance();
 	return f->createLineString(seq);
+}
+
+geos::geom::LinearRing* buildRing(const QPolygonF& polygon)
+{
+	CoordinateSequence *seq = new CoordinateArraySequence(polygon.size());
+	int idx = 0;
+	for (const auto& p : polygon) {
+		seq->setAt(Coordinate(p.x(), p.y()), idx ++);
+	}
+	auto f = geos::geom::GeometryFactory::getDefaultInstance();
+	return f->createLinearRing(seq);
+}
+
+geos::geom::Polygon* buildPolygon(const QPolygonF& polygon)
+{
+	auto outerRing = buildRing(polygon);
+	std::vector<Geometry*>* holeRings = new std::vector<Geometry*>();
+	auto f = geos::geom::GeometryFactory::getDefaultInstance();
+	return f->createPolygon(outerRing, holeRings);
 }
 
 QVector<QPointF> buildPolyLine(const geos::geom::LineString* string)
@@ -90,6 +111,34 @@ GeoDataPolyLineGroupPolyLine::GeoDataPolyLineGroupPolyLine(geos::geom::LineStrin
 GeoDataPolyLineGroupPolyLine::~GeoDataPolyLineGroupPolyLine()
 {
 	delete impl;
+}
+
+bool GeoDataPolyLineGroupPolyLine::intersectWithLine(const QPointF& p1, const QPointF& p2, QPointF* intersection, double* r) const
+{
+	auto tmpPoints = points();
+
+	double s;
+	for (int i = 0; i < tmpPoints.size() - 1; ++i) {
+		QPointF q1 = tmpPoints.at(i);
+		QPointF q2 = tmpPoints.at(i + 1);
+
+		bool ok = iRIC::intersectionPoint(p1, p2, q1, q2, intersection, r, &s);
+		if (! ok) {continue;}
+		if (*r < 0 || *r > 1) {continue;}
+		if (s < 0 || s > 1) {continue;}
+
+		return true;
+	}
+	return false;
+}
+
+bool GeoDataPolyLineGroupPolyLine::intersectWithPolygon(const QPolygonF& polygon) const
+{
+	auto pol = buildPolygon(polygon);
+	bool hasIntersection = pol->intersects(impl->m_polyLine.get());
+
+	delete pol;
+	return hasIntersection;
 }
 
 geos::geom::LineString* GeoDataPolyLineGroupPolyLine::getGeosLineString() const

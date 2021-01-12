@@ -11,7 +11,7 @@ CoordinatesEditDialogDelegate::CoordinatesEditDialogDelegate(QObject* parent) :
 void CoordinatesEditDialogDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
 	double val = index.model()->data(index, Qt::DisplayRole).toDouble();
-	CoordinateEditWidget widget;
+	static CoordinateEditWidget widget;
 	widget.setValue(val);
 
 	QPixmap pixmap(option.rect.size());

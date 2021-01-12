@@ -49,6 +49,7 @@ HEADERS += anms.h \
            qpointfcontainer.h \
            qttool.h \
            qundocommandhelper.h \
+           rangecontainert.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
            splineinterpolator.h \
@@ -75,6 +76,7 @@ HEADERS += anms.h \
            private/networksetting_impl.h \
            private/numericvaluecontainert_detail.h \
            private/qpointfcontainer_impl.h \
+           private/rangecontainert_detail.h \
            private/simplevaluecontainert_detail.h \
            private/tpoexporter_impl.h \
            private/valuearraycontainert_detail.h \

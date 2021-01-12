@@ -222,7 +222,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 		}
 		GridAttributeContainer* cont = grid->gridAttribute(item->condition()->name());
 		if (cont->isCustomModified()) {
-			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(item->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?").arg(item->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
 				count = count + item->mappingCount();
 			} else {
@@ -240,7 +240,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 			continue;
 		}
 		if (item->bcDataItem()->isCustomModified()) {
-			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The boundary condition \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(item->bcDataItem()->standardItem()->text()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The boundary condition \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?").arg(item->bcDataItem()->standardItem()->text()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
 				count = count + 1;
 			} else {
@@ -295,7 +295,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std
 	Grid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
 	if (grid->gridAttribute(attName)->isCustomModified() && ! iricMainWindow()->cuiMode()) {
-		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->gridAttribute()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->gridAttribute()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {

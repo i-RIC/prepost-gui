@@ -55,7 +55,7 @@ void GeoDataPolygonGroupNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSett
 {
 	auto setting = dynamic_cast<GeoDataPolygonGroupNodeMapperSetting*> (s);
 	DA* da = dynamic_cast<DA*> (GeoDataMapperT<V>::container()->dataArray());
-	const auto& polys = setting->ranges.polygons();
+	const auto& polys = setting->ranges.data();
 	const auto& maxIndices = setting->ranges.maxIndices();
 	int rangeId = 0;
 	vtkIdType idx = 0;
