@@ -994,11 +994,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <translation type="vanished">手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <translation type="vanished">边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1011,6 +1011,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Mapping geographic data finished</source>
         <translation>地理数据映射完成。</translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
