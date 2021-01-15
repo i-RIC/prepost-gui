@@ -96,7 +96,7 @@ QString SolverDefinitionList::supportingSolverFolder(ProjectData* p, QWidget* pa
 		}
 	}
 	if (compatibleSolvers.size() == 0) {return QString::null;}
-	if (compatibleSolvers.size() == 1) {return compatibleSolvers.at(0)->folderName();}
+	if (compatibleSolvers.size() == 1) {return compatibleSolvers.at(0)->absoluteFolderName();}
 
 	SolverDefinitionListDialog dialog(compatibleSolvers, parent);
 	dialog.execToSelectSolver();
