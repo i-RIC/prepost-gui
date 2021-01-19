@@ -340,7 +340,7 @@ void SolverConsoleWindow::startSolverSilently()
 
 	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
 	QFileInfo solverInfo(solver);
-	if (solverInfo.suffix() == "py") {
+	if (solverInfo.suffix() == "py" || solverInfo.suffix() == "pyc") {
 		// run python solver
 		QString pythonPath = settings.value("general/pythonpath", PythonUtil::defaultPath()).value<QString>();
 		auto pythonPathStr = iRIC::toStr(pythonPath);
