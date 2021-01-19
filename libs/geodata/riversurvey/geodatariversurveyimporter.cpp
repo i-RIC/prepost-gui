@@ -487,18 +487,9 @@ void GeoDataRiverSurveyImporter::shiftUniqueAlts(std::vector<GeoDataRiverSurveyI
 	for (int i = 1; i < altitudes->size(); ++i) {
 		Alt& a = altitudes->at(i);
 		const Alt& a_prev = altitudes->at(i - 1);
-		if (a.distance != a_prev.distance) {continue;}
+		if (a.distance > a_prev.distance) {continue;}
 
-		if (i < altitudes->size() - 1) {
-			const Alt& a_next = altitudes->at(i + 1);
-			if (a_next.distance > a.distance && a_next.distance < a.distance + SHIFT_LEN) {
-				a.distance = (a.distance + a_next.distance) * 0.5;
-			} else {
-				a.distance += SHIFT_LEN;
-			}
-		} else {
-			a.distance += SHIFT_LEN;
-		}
+		a.distance = a_prev.distance + SHIFT_LEN;
 		*shifted = true;
 	}
 }
