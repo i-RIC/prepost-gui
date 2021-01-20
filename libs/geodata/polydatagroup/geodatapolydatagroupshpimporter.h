@@ -14,6 +14,8 @@ class QTextCodec;
 
 class GD_POLYDATAGROUP_EXPORT GeoDataPolyDataGroupShpImporter : public GeoDataImporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPolyDataGroupShpImporter(const std::string& name, const QString& caption, GeoDataCreator* creator);
 	~GeoDataPolyDataGroupShpImporter() override;
