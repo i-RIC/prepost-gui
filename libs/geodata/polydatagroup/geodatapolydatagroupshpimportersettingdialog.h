@@ -33,6 +33,8 @@ public:
 	int valueIndex() const;
 	QVariant specifiedValue() const;
 
+	QString codecName() const;
+
 public slots:
 	void accept() override;
 

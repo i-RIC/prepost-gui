@@ -35,6 +35,7 @@ protected:
 	// std::vector<PolygonShapeInfo> m_shapeInfos;
 	int m_valueAttribute;
 	QVariant m_specifiedValue;
+	QTextCodec* m_codec;
 };
 
 #endif // GEODATAPOLYDATAGROUPSHPIMPORTER_H
