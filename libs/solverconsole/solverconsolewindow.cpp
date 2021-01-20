@@ -13,6 +13,8 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
+#include <misc/pythonutil.h>
+#include <misc/stringtool.h>
 
 #include <QAction>
 #include <QCoreApplication>
@@ -325,15 +327,11 @@ void SolverConsoleWindow::startSolverSilently()
 	QProcessEnvironment env = impl->m_projectData->mainWindow()->processEnvironment();
 	env.insert("iRIC_LANG", locale);
 
-	impl->m_process->setProcessEnvironment(env);
 
 	// create connections.
 	connect(impl->m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
 	connect(impl->m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
 	connect(impl->m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
-
-	QStringList args;
-	args << cgnsname;
 
 	impl->removeCancelFile();
 	impl->removeCancelOkFile();
@@ -341,7 +339,39 @@ void SolverConsoleWindow::startSolverSilently()
 	impl->m_solverKilled = false;
 
 	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
-	impl->m_process->start(solver, args);
+	QFileInfo solverInfo(solver);
+	if (solverInfo.suffix() == "py" || solverInfo.suffix() == "pyc") {
+		// run python solver
+		QString pythonPath = settings.value("general/pythonpath", PythonUtil::defaultPath()).value<QString>();
+		auto pythonPathStr = iRIC::toStr(pythonPath);
+
+		QStringList args;
+		args << solver << cgnsname;
+
+		// add path for python libraries
+		QFileInfo finfo(pythonPath);
+		auto pythonDir = finfo.dir();
+		QStringList paths;
+		paths.append(QDir::toNativeSeparators(pythonDir.absolutePath()));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Library\\mingw-w64\\bin")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Library\\usr\\bin")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Library\\bin")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Scripts")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("bin")));
+		QString path = env.value("PATH");
+		path = paths.join(";") + ";" + path;
+		env.insert("PATH", path);
+
+		impl->m_process->setProcessEnvironment(env);
+		impl->m_process->start(pythonPath, args);
+	} else {
+		// run executable (like FORTRAN or C/C++ solvers)
+		QStringList args;
+		args << cgnsname;
+
+		impl->m_process->setProcessEnvironment(env);
+		impl->m_process->start(solver, args);
+	}
 }
 
 void SolverConsoleWindow::terminateSolverSilently()

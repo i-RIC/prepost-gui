@@ -78,5 +78,5 @@ void FilenameEditWidget::openDialog()
 
 	if (fname.isNull()) {return;}
 
-	ui->lineEdit->setText(getRelativePath(fname, m_baseFolder));
+	ui->lineEdit->setText(QDir::toNativeSeparators(getRelativePath(fname, m_baseFolder)));
 }

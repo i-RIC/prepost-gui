@@ -44,6 +44,7 @@ HEADERS += anms.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            primitiveview.h \
+           pythonutil.h \
            qfontcontainer.h \
            qpointfcompare.h \
            qpointfcontainer.h \
@@ -85,9 +86,7 @@ HEADERS += anms.h \
            private/versionnumber_impl.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
-FORMS += informationdialog.ui \
-         primitiveview.ui \
-         slowmotionspeededitdialog.ui
+FORMS += informationdialog.ui primitiveview.ui slowmotionspeededitdialog.ui
 SOURCES += anms.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
@@ -113,6 +112,7 @@ SOURCES += anms.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \
            primitiveview.cpp \
+           pythonutil.cpp \
            qfontcontainer.cpp \
            qpointfcompare.cpp \
            qpointfcontainer.cpp \
