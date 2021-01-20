@@ -157,7 +157,6 @@ const QStringList GeoDataPolygonGroupShpImporter::fileDialogFilters()
 
 bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	QTextCodec* codec = QTextCodec::codecForLocale();
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
 
 	std::string fname = iRIC::toStr(filename());
@@ -194,13 +193,13 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 			// name
 			QString name = nameTpl.arg(i + 1);
 			if (m_nameSetting == GeoDataPolyDataGroupShpImporterSettingDialog::nsLoadFromDBF) {
-				name = readData(dbfh, info.item, m_nameAttribute, codec).toString();
+				name = readData(dbfh, info.item, m_nameAttribute, m_codec).toString();
 			}
 			poly->setName(name);
 			// value
 			QVariant value = m_specifiedValue;
 			if (m_valueSetting == GeoDataPolyDataGroupShpImporterSettingDialog::vsLoadFromDBF) {
-				value = readData(dbfh, info.item, m_valueAttribute, codec);
+				value = readData(dbfh, info.item, m_valueAttribute, m_codec);
 			}
 			poly->setValue(value);
 			group->addData(poly);
