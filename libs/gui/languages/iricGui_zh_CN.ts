@@ -607,6 +607,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>工作目录已更改，但是在退出iRIC GUI之后将使用新的工作目录！</translation>
     </message>
+    <message>
+        <source>Python path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note: Used to run solvers written in Python.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
@@ -661,6 +669,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Size:</source>
         <translation>大小:</translation>
+    </message>
+    <message>
+        <source>pixels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
