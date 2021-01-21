@@ -21,6 +21,7 @@ class PreProcessorHydraulicDataGroupDataItemInterface;
 class QAction;
 class QIcon;
 class QItemSelectionModel;
+class QStandardItemModel;
 class QTableView;
 class QTableWidgetItem;
 
@@ -143,6 +144,7 @@ private:
 	const QList<GeoDataRiverPathPoint*>& riverPathPoints() const;
 	const QList<QColor>& riverSurveyColors() const;
 
+	QStandardItemModel* model() const;
 	QItemSelectionModel* selectionModel() const;
 	PreProcessorHydraulicDataGroupDataItemInterface* waterElevationGroup();
 	HydraulicDataRiverSurveyWaterElevation* waterElevation(int index);
@@ -157,6 +159,8 @@ private:
 	class WseTableDelegate;
 
 public:
+	friend class GeoDataRiverSurvey;
+	friend class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 };
 

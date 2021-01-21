@@ -39,14 +39,14 @@ GeoDataRiverSurveyCrossSectionEditFromPointDialog::~GeoDataRiverSurveyCrossSecti
 
 void GeoDataRiverSurveyCrossSectionEditFromPointDialog::accept()
 {
+	int oldIndex = m_window->selectionModel()->selectedIndexes().at(0).row();
 	reset();
 	auto before = m_point->crosssection().AltitudeInfo();
 	int newIndex;
 	update(&newIndex);
 	auto after = m_point->crosssection().AltitudeInfo();
-	m_window->setSelectedRow(newIndex);
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, before, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, m_window, m_rs));
 	QDialog::accept();
 }
 
@@ -61,6 +61,7 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::reject()
 
 void GeoDataRiverSurveyCrossSectionEditFromPointDialog::continueEdit()
 {
+	int oldIndex = m_window->selectionModel()->selectedIndexes().at(0).row();
 	reset();
 	auto before = m_point->crosssection().AltitudeInfo();
 	int newIndex;
@@ -72,9 +73,8 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::continueEdit()
 		++ newIndex;
 	}
 	m_startIndex = newIndex;
-	m_window->setSelectedRow(newIndex);
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, before, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, m_window, m_rs));
 	m_applied = false;
 }
 
@@ -87,14 +87,14 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::handleButtonClick(QAbstr
 
 void GeoDataRiverSurveyCrossSectionEditFromPointDialog::apply()
 {
+	int oldIndex = m_window->selectionModel()->selectedIndexes().at(0).row();
 	reset();
 	auto before = m_point->crosssection().AltitudeInfo();
 	int newIndex;
 	update(&newIndex);
 	auto after = m_point->crosssection().AltitudeInfo();
-	m_window->setSelectedRow(newIndex);
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Edit Crosssection"), m_point, after, before, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, m_window, m_rs));
 	m_applied = true;
 }
 

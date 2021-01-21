@@ -1511,7 +1511,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 		alist[index.row()].setActive(true);
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, before, m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
@@ -1532,7 +1532,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, before, m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
@@ -1792,7 +1792,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editCrossSection(GeoDataR
 	after.push_back(alt);
 	std::sort(after.begin(), after.end());
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Cross Section"), m_parentWindow->target(), after, before, m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Cross Section"), m_parentWindow->target(), after, newIndex, before, index.row(), m_parentWindow, m_parentWindow->targetRiverSurvey()));
 	QItemSelection sel(model()->index(newIndex, 0), model()->index(newIndex, 2));
 	auto selModel = selectionModel();
 	selModel->clearSelection();
