@@ -1727,6 +1727,22 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation>O numero de pontos de levantamento encontrados na linha transversal do rio, os quais serao procriados por interpolacao, deveria ser o numero impar. Incrementar em 1.</translation>
     </message>
+    <message>
+        <source>Position value of elevation points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from center point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <!-- iricGccRiversurvey_pt_BR.ts -->
 <context>
@@ -2677,7 +2693,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation>Selecionar o ponto de referencia</translation>
+        <translation type="vanished">Selecionar o ponto de referencia</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -2697,7 +2713,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation>Adicionar ponto de poligono a ser selecionado</translation>
+        <translation type="vanished">Adicionar ponto de poligono a ser selecionado</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2879,16 +2895,44 @@ p, li { white-space: pre-wrap; }
         <source>Remove triangles with long edge</source>
         <translation>Remocao do triangulo com lado comprido</translation>
     </message>
+    <message>
+        <source>Merge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 duplicate points were found in merge targets, and omitted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Points</source>
+        <translation type="unfinished">Adicionar pontos</translation>
+    </message>
+    <message>
+        <source>Values of new points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
-        <translation>Adicionar pontos</translation>
+        <translation type="vanished">Adicionar pontos</translation>
     </message>
     <message>
         <source>Value of new points:</source>
-        <translation>Valor de novos pontos :</translation>
+        <translation type="vanished">Valor de novos pontos :</translation>
     </message>
 </context>
 <context>
@@ -2957,7 +3001,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
@@ -2965,11 +3009,34 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation>Comprimento da linha de interpolacao :</translation>
+        <translation type="vanished">Comprimento da linha de interpolacao :</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
-        <translation>Configurar o incremento de interpolacao :</translation>
+        <translation type="vanished">Configurar o incremento de interpolacao :</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3008,6 +3075,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>LandXML File (*.xml)</source>
         <translation>Arquivo LandXml (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3097,10 +3183,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
-        <source>CSV, text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished">Erro</translation>
     </message>
@@ -3122,14 +3204,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3164,6 +3238,14 @@ p, li { white-space: pre-wrap; }
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -3181,10 +3263,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom delimitered text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3240,10 +3318,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Record options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3284,7 +3358,19 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <source>Custom delimited text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3499,11 +3585,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Add Points</source>
-        <translation>Adicionar pontos</translation>
+        <translation type="vanished">Adicionar pontos</translation>
     </message>
     <message>
         <source>Add Interpolation Pts</source>
-        <translation>Adicionar pontos de interpolacao</translation>
+        <translation type="vanished">Adicionar pontos de interpolacao</translation>
     </message>
 </context>
 <!-- iricGdPoint_pt_BR.ts -->
@@ -3659,6 +3745,18 @@ p, li { white-space: pre-wrap; }
         <source>Sort data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select Geographic Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which geographic data to copy this %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
@@ -3710,6 +3808,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupCopySettingDialog</name>
+    <message>
+        <source>Copy Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please specify values for copied data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For each</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5219,6 +5336,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Finish Defining Polyline</source>
         <translation>Finalizar a definicao para linha central</translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -6080,6 +6205,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>Dados do levantamento fluvial pelo Ministerio da Terra, Infraestrutura, Transporte e Turismo do Japao  (*.csv)</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8998,6 +9127,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Dialog</source>
         <translation>Dialogo</translation>
     </message>
+    <message>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished">As modificacoes feitas serao descartadas.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
@@ -9136,6 +9277,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>Grupos</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCheckbox</name>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10048,7 +10196,7 @@ Do you really want to import this file?</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation>O atributo da grade de elevacao nao foi definido conforme o tipo de grade % 1. As funcoes de entrada / saida das grades e algumas funcoes de criacao das grades nao funcionarao corretamente para esses tipos de grade.</translation>
     </message>
     <message>
@@ -11056,6 +11204,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>O diretorio de trabalho foi alterado, mas o novo diretorio de trabalho sera utilizado a partir da proxima vez quando iniciar a iRIC GUI !</translation>
     </message>
+    <message>
+        <source>Python path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note: Used to run solvers written in Python.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
@@ -11110,6 +11266,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Size:</source>
         <translation>Dimensao :</translation>
+    </message>
+    <message>
+        <source>pixels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16399,6 +16559,42 @@ Do you really want to import grid from this file?</source>
         <source>Input the %1 of %2 at the selected grid cells.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Exportar...</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Dados de terreno  (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Exportar como os dados topograficos</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Ocorreu um erro ao abrir o arquivo. </translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Atributo da grade foi exportado para %1 .</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacao</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
@@ -16470,11 +16666,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>Os atributos da grade  &quot;%1&quot; foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
+        <translation type="vanished">Os atributos da grade  &quot;%1&quot; foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>As condicoes do limite &quot;%1&quot; foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
+        <translation type="vanished">As condicoes do limite &quot;%1&quot; foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -16487,6 +16683,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Mapping geographic data finished</source>
         <translation>Concluido o mapeamento dos dados geograficos</translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16653,6 +16857,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

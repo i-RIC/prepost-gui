@@ -11808,6 +11808,14 @@ p, li { white-space: pre-wrap; }
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>作業ディレクトリが変更されましたが、新しい作業ディレクトリは、次回 iRIC GUI を起動した時から使われます!</translation>
     </message>
+    <message>
+        <source>Python path</source>
+        <translation>Python のパス</translation>
+    </message>
+    <message>
+        <source>Note: Used to run solvers written in Python.</source>
+        <translation>備考: Python で書かれたソルバを実行する際に使用されます。</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
@@ -11866,6 +11874,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Size:</source>
         <translation>大きさ:</translation>
+    </message>
+    <message>
+        <source>pixels</source>
+        <translation>ピクセル</translation>
     </message>
 </context>
 <context>
@@ -12342,7 +12354,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">警告</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation type="obsolete">格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>

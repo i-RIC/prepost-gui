@@ -207,5 +207,21 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation>O numero de pontos de levantamento encontrados na linha transversal do rio, os quais serao procriados por interpolacao, deveria ser o numero impar. Incrementar em 1.</translation>
     </message>
+    <message>
+        <source>Position value of elevation points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from center point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

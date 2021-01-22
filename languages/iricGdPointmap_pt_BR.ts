@@ -36,7 +36,7 @@
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation>Selecionar o ponto de referencia</translation>
+        <translation type="vanished">Selecionar o ponto de referencia</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation>Adicionar ponto de poligono a ser selecionado</translation>
+        <translation type="vanished">Adicionar ponto de poligono a ser selecionado</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -238,16 +238,44 @@
         <source>Remove triangles with long edge</source>
         <translation>Remocao do triangulo com lado comprido</translation>
     </message>
+    <message>
+        <source>Merge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 duplicate points were found in merge targets, and omitted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Points</source>
+        <translation type="unfinished">Adicionar pontos</translation>
+    </message>
+    <message>
+        <source>Values of new points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
-        <translation>Adicionar pontos</translation>
+        <translation type="vanished">Adicionar pontos</translation>
     </message>
     <message>
         <source>Value of new points:</source>
-        <translation>Valor de novos pontos :</translation>
+        <translation type="vanished">Valor de novos pontos :</translation>
     </message>
 </context>
 <context>
@@ -316,7 +344,7 @@
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
@@ -324,11 +352,34 @@
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation>Comprimento da linha de interpolacao :</translation>
+        <translation type="vanished">Comprimento da linha de interpolacao :</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
-        <translation>Configurar o incremento de interpolacao :</translation>
+        <translation type="vanished">Configurar o incremento de interpolacao :</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -367,6 +418,25 @@
     <message>
         <source>LandXML File (*.xml)</source>
         <translation>Arquivo LandXml (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -456,10 +526,6 @@
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
-        <source>CSV, text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished">Erro</translation>
     </message>
@@ -481,14 +547,6 @@
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -523,6 +581,14 @@
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -540,10 +606,6 @@
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom delimitered text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -599,10 +661,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Record options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -643,7 +701,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <source>Custom delimited text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -858,11 +928,11 @@
     <name>QObject</name>
     <message>
         <source>Add Points</source>
-        <translation>Adicionar pontos</translation>
+        <translation type="vanished">Adicionar pontos</translation>
     </message>
     <message>
         <source>Add Interpolation Pts</source>
-        <translation>Adicionar pontos de interpolacao</translation>
+        <translation type="vanished">Adicionar pontos de interpolacao</translation>
     </message>
 </context>
 </TS>
