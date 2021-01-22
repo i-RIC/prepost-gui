@@ -86,6 +86,66 @@ GeoDataNetcdf::~GeoDataNetcdf()
 	renderer()->RemoveActor(m_actor);
 }
 
+const std::vector<double> GeoDataNetcdf::lonValues() const
+{
+	return m_lonValues;
+}
+
+const std::vector<double> GeoDataNetcdf::latValues() const
+{
+	return m_latValues;
+}
+
+std::vector<double> GeoDataNetcdf::lonValues()
+{
+	return m_lonValues;
+}
+
+std::vector<double> GeoDataNetcdf::latValues()
+{
+	return m_latValues;
+}
+
+const std::vector<double> GeoDataNetcdf::xValues() const
+{
+	return m_xValues;
+}
+
+const std::vector<double> GeoDataNetcdf::yValues() const
+{
+	return m_yValues;
+}
+
+std::vector<double> GeoDataNetcdf::xValues()
+{
+	return m_xValues;
+}
+
+std::vector<double> GeoDataNetcdf::yValues()
+{
+	return m_yValues;
+}
+
+GeoDataNetcdf::CoordinateSystemType GeoDataNetcdf::coordinateSystemType() const
+{
+	return m_coordinateSystemType;
+}
+
+QString GeoDataNetcdf::coordinateSystemName() const
+{
+	return m_coordinateSystemName;
+}
+
+bool GeoDataNetcdf::requestCoordinateSystem() const
+{
+	return true;
+}
+
+vtkStructuredGrid* GeoDataNetcdf::grid() const
+{
+	return m_grid;
+}
+
 void GeoDataNetcdf::setupActors()
 {
 	m_threshold = vtkSmartPointer<vtkThreshold>::New();

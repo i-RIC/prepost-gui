@@ -58,29 +58,29 @@ public:
 	GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~GeoDataNetcdf();
 
-	const std::vector<double> lonValues() const {return m_lonValues;}
-	const std::vector<double> latValues() const {return m_latValues;}
-	std::vector<double> lonValues() {return m_lonValues;}
-	std::vector<double> latValues() {return m_latValues;}
+	const std::vector<double> lonValues() const;
+	const std::vector<double> latValues() const;
+	std::vector<double> lonValues();
+	std::vector<double> latValues();
 
-	const std::vector<double> xValues() const {return m_xValues;}
-	const std::vector<double> yValues() const {return m_yValues;}
-	std::vector<double> xValues() {return m_xValues;}
-	std::vector<double> yValues() {return m_yValues;}
+	const std::vector<double> xValues() const;
+	const std::vector<double> yValues() const;
+	std::vector<double> xValues();
+	std::vector<double> yValues();
 
 	int xSize() const;
 	int ySize() const;
 
-	CoordinateSystemType coordinateSystemType() const {return m_coordinateSystemType;}
-	QString coordinateSystemName() const {return m_coordinateSystemName;}
+	CoordinateSystemType coordinateSystemType() const;
+	QString coordinateSystemName() const;
 
 	int defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId);
 	int defineDimensions(int ncid, std::vector<int>* dimIds, std::vector<int>* varIds);
 	int defineValue(int ncid, int xId, int yId, const std::vector<int>& dimIds, int* varId);
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
 	int outputDimensions(int ncid, const std::vector<int>& varIds);
-	bool requestCoordinateSystem() const override {return true;}
-	vtkStructuredGrid* grid() const {return m_grid;}
+	bool requestCoordinateSystem() const override;
+	vtkStructuredGrid* grid() const;
 	void updateActorSetting();
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
 	virtual double thresholdValue() const = 0;
