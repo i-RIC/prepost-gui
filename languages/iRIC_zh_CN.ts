@@ -6129,10 +6129,6 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>#x-section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6155,6 +6151,30 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
         <translation>横截面数据在 %1处的顺序不正确。</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Needs two value at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6194,6 +6214,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Upstream to downstream</source>
         <translation>上游到下游</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
