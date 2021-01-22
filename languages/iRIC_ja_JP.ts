@@ -2008,6 +2008,22 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation>補間して生成される河川横断線上の測量点の数は奇数でなくてはなりません。1増やします。</translation>
     </message>
+    <message>
+        <source>Position value of elevation points:</source>
+        <translation>標高点の座標値</translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation>左岸からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from center point</source>
+        <translation>河川中心点からの距離</translation>
+    </message>
+    <message>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>「左岸」は、下流方向を向いた時に左側に見える岸です。</translation>
+    </message>
 </context>
 <!-- iricGccRiversurvey_ja_JP.ts -->
 <context>
@@ -3202,7 +3218,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation>参照点の選択</translation>
+        <translation type="vanished">参照点の選択</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -3222,7 +3238,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation>選択用ポリゴンの点の追加</translation>
+        <translation type="vanished">選択用ポリゴンの点の追加</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -3424,16 +3440,44 @@ p, li { white-space: pre-wrap; }
         <source>Remove triangles with long edge</source>
         <translation>長い辺を持つ三角形の削除</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapAddPointDialog</name>
+    <message>
+        <source>Merge...</source>
+        <translation>マージ...</translation>
+    </message>
+    <message>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
+    </message>
+    <message>
+        <source>%1 duplicate points were found in merge targets, and omitted.</source>
+        <translation>マージ対象のデータに、重複した点が %1 個見つかり、破棄されました。</translation>
+    </message>
+    <message>
+        <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
+        <translation>点を追加するには、既存の点を一つ選び、点を追加する対象の位置を1つ以上指定する必要があります。再試行しますか? それとも、追加操作をキャンセルしますか?</translation>
+    </message>
     <message>
         <source>Add Points</source>
         <translation>点の追加</translation>
     </message>
     <message>
+        <source>Values of new points</source>
+        <translation>新しい点の値</translation>
+    </message>
+    <message>
+        <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
+        <translation>点の補間を実行するには、2つ以上の点を指定する必要があり、また最初と最後の点は既存の点である必要があります。再試行しますか?それとも操作をキャンセルしますか?</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapAddPointDialog</name>
+    <message>
+        <source>Add Points</source>
+        <translation type="vanished">点の追加</translation>
+    </message>
+    <message>
         <source>Value of new points:</source>
-        <translation>新しい点の値:</translation>
+        <translation type="vanished">新しい点の値:</translation>
     </message>
 </context>
 <context>
@@ -3502,7 +3546,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
@@ -3510,11 +3554,34 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation>補間線の長さ:</translation>
+        <translation type="vanished">補間線の長さ:</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
+        <translation type="vanished">補間の増分:</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>補間設定</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
         <translation>補間の増分:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>先の長さ:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation>補間の増分は 0 より大きく、線の長さより短い必要があります。</translation>
     </message>
 </context>
 <context>
@@ -3553,6 +3620,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>LandXML File (*.xml)</source>
         <translation>LandXML ファイル (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation>マージするデータの選択</translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation>このグループにマージするデータを選択してください。</translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation>すべて選択 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
+        <translation>すべて選択解除 (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -3643,7 +3729,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>CSV, text</source>
-        <translation>CSV、テキスト</translation>
+        <translation type="vanished">CSV、テキスト</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3671,11 +3757,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV ファイル (*.csv)</translation>
+        <translation type="vanished">CSV ファイル (*.csv)</translation>
     </message>
     <message>
         <source>Text file (*.txt)</source>
-        <translation>テキストファイル (*.txt)</translation>
+        <translation type="vanished">テキストファイル (*.txt)</translation>
     </message>
     <message>
         <source>Not enough values to read %1. %1 column is %2 but %3 values input.</source>
@@ -3717,6 +3803,18 @@ p, li { white-space: pre-wrap; }
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation>&quot;%1&quot; の値を読み込めませんでした。 &quot;%1&quot; の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV etc)</source>
+        <translation type="vanished">テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation>テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
+        <translation>テキストファイル (*.csv *.txt)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -3738,7 +3836,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Custom delimitered text</source>
-        <translation>カスタム区切り</translation>
+        <translation type="vanished">カスタム区切り</translation>
     </message>
     <message>
         <source>Delimiters</source>
@@ -3794,7 +3892,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+        <translation type="vanished">クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
     </message>
     <message>
         <source>Record options</source>
@@ -3842,7 +3940,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <translation type="vanished">ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>Custom delimited text</source>
+        <translation>カスタム区切り</translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
         <translation>ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>File name:</source>
+        <translation>ファイル名:</translation>
     </message>
 </context>
 <context>
@@ -4076,11 +4190,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Add Points</source>
-        <translation>点の追加</translation>
+        <translation type="vanished">点の追加</translation>
     </message>
     <message>
         <source>Add Interpolation Pts</source>
-        <translation>補間点の追加</translation>
+        <translation type="vanished">補間点の追加</translation>
     </message>
 </context>
 <context>
@@ -4754,6 +4868,18 @@ p, li { white-space: pre-wrap; }
         <source>Sort data</source>
         <translation>データの並べ替え</translation>
     </message>
+    <message>
+        <source>Select Geographic Data</source>
+        <translation>地理情報の選択</translation>
+    </message>
+    <message>
+        <source>Please select which geographic data to copy this %1.</source>
+        <translation>この%1をコピーする先の地理情報を選択してください。</translation>
+    </message>
+    <message>
+        <source>Copy...</source>
+        <translation>コピー...</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
@@ -4806,6 +4932,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupCopySettingDialog</name>
+    <message>
+        <source>Copy Setting</source>
+        <translation>コピー設定</translation>
+    </message>
+    <message>
+        <source>Please specify values for copied data.</source>
+        <translation>コピーされたデータの値を指定してください。</translation>
+    </message>
+    <message>
+        <source>For all</source>
+        <translation>共通の値を指定</translation>
+    </message>
+    <message>
+        <source>For each</source>
+        <translation>個別の値を指定</translation>
     </message>
 </context>
 <context>
@@ -7472,6 +7617,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Finish Defining Polyline</source>
         <translation>中心線の定義の終了</translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから地勢データを生成</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -8250,7 +8403,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。:%1</translation>
+        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。</translation>
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
@@ -8462,6 +8615,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
     </message>
 </context>
 <context>
@@ -13123,6 +13280,18 @@ Do you really want to import this file?</source>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
     </message>
+    <message>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished">行った変更は破棄されます。</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
@@ -13351,6 +13520,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>グループ</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCheckbox</name>
+    <message>
+        <source>Enabled</source>
+        <translation>有効</translation>
     </message>
 </context>
 <context>
@@ -14594,7 +14770,7 @@ Do you really want to import this file?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
@@ -26940,6 +27116,14 @@ p, li { white-space: pre-wrap; }
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>作業ディレクトリが変更されましたが、新しい作業ディレクトリは、次回 iRIC GUI を起動した時から使われます!</translation>
     </message>
+    <message>
+        <source>Python path</source>
+        <translation>Python のパス</translation>
+    </message>
+    <message>
+        <source>Note: Used to run solvers written in Python.</source>
+        <translation>備考: Python で書かれたソルバを実行する際に使用されます。</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
@@ -26998,6 +27182,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Size:</source>
         <translation>大きさ:</translation>
+    </message>
+    <message>
+        <source>pixels</source>
+        <translation>ピクセル</translation>
     </message>
 </context>
 <context>
@@ -27474,7 +27662,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">警告</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation type="obsolete">格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
@@ -36299,6 +36487,42 @@ Do you really want to import grid from this file?</source>
         <source>Input the %1 of %2 at the selected grid cells.</source>
         <translation>選択されたセルにおける %2 の %1 を入力してください。</translation>
     </message>
+    <message>
+        <source>Export...</source>
+        <translation>エクスポート...</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから点群データを生成</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation>地勢データ (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation>地勢データとしてエクスポート</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation>ファイルを開く時にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation>格子属性は %1 にエクスポートされました。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
@@ -36379,11 +36603,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <translation type="vanished">格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <translation type="vanished">境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -36396,6 +36620,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Mapping geographic data finished</source>
         <translation>地形データマッピングの完了</translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
 </context>
 <context>
@@ -36576,6 +36808,14 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
         <translation>選択された格子点における %2 の %1 を入力してください。</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから地勢データを生成</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
     </message>
 </context>
 <context>

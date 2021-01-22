@@ -1796,6 +1796,22 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation>内插横截面中的点数应为奇数。 递增一。</translation>
     </message>
+    <message>
+        <source>Position value of elevation points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from center point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <!-- iricGccRiversurvey_zh_CN.ts -->
 <context>
@@ -2747,7 +2763,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation>选择参考点</translation>
+        <translation type="vanished">选择参考点</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -2767,7 +2783,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation>添加新选择多边形点</translation>
+        <translation type="vanished">添加新选择多边形点</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2949,16 +2965,44 @@ p, li { white-space: pre-wrap; }
         <source>Remove triangles with long edge</source>
         <translation>删除长边三角形</translation>
     </message>
+    <message>
+        <source>Merge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 duplicate points were found in merge targets, and omitted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Points</source>
+        <translation type="unfinished">添加点</translation>
+    </message>
+    <message>
+        <source>Values of new points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
-        <translation>添加点</translation>
+        <translation type="vanished">添加点</translation>
     </message>
     <message>
         <source>Value of new points:</source>
-        <translation>新点的价值:</translation>
+        <translation type="vanished">新点的价值:</translation>
     </message>
 </context>
 <context>
@@ -3027,7 +3071,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation>对话</translation>
+        <translation type="vanished">对话</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
@@ -3035,11 +3079,34 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation>插补线长:</translation>
+        <translation type="vanished">插补线长:</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
-        <translation>设置插值增量:</translation>
+        <translation type="vanished">设置插值增量:</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3078,6 +3145,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>LandXML File (*.xml)</source>
         <translation>LandXML File (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3147,10 +3233,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
-        <source>CSV, text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished">错误</translation>
     </message>
@@ -3172,14 +3254,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3214,6 +3288,14 @@ p, li { white-space: pre-wrap; }
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -3231,10 +3313,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom delimitered text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3290,10 +3368,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Record options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3334,7 +3408,19 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <source>Custom delimited text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3549,11 +3635,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Add Points</source>
-        <translation>添加点</translation>
+        <translation type="vanished">添加点</translation>
     </message>
     <message>
         <source>Add Interpolation Pts</source>
-        <translation>添加插值点</translation>
+        <translation type="vanished">添加插值点</translation>
     </message>
 </context>
 <!-- iricGdPoint_zh_CN.ts -->
@@ -3709,6 +3795,18 @@ p, li { white-space: pre-wrap; }
         <source>Sort data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select Geographic Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which geographic data to copy this %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
@@ -3760,6 +3858,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupCopySettingDialog</name>
+    <message>
+        <source>Copy Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please specify values for copied data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For each</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5331,6 +5448,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -6188,6 +6313,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9131,6 +9260,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Dialog</source>
         <translation>对话框</translation>
     </message>
+    <message>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished">您所做的修改将被丢弃。</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
@@ -9263,6 +9404,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>组</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCheckbox</name>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10212,7 +10360,7 @@ Do you really want to import this file?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation>未为网格类型%1定义高程网格属性。 对于这些网格类型，网格I / O功能，网格创建功能可能无法正确工作</translation>
     </message>
     <message>
@@ -11208,6 +11356,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
         <translation>工作目录已更改，但是在退出iRIC GUI之后将使用新的工作目录！</translation>
     </message>
+    <message>
+        <source>Python path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note: Used to run solvers written in Python.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
@@ -11262,6 +11418,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Size:</source>
         <translation>大小:</translation>
+    </message>
+    <message>
+        <source>pixels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16641,6 +16801,42 @@ Do you really want to import grid from this file?</source>
         <source>Input the %1 of %2 at the selected grid cells.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">导出...</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">导出为地形数据</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">打开文件时出现错误</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">网格条件已成功导出到%1。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
@@ -16712,11 +16908,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <translation type="vanished">手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <translation type="vanished">边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <source>Information</source>
@@ -16729,6 +16925,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Mapping geographic data finished</source>
         <translation>地理数据映射完成。</translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16892,6 +17096,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -209,5 +209,21 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation>補間して生成される河川横断線上の測量点の数は奇数でなくてはなりません。1増やします。</translation>
     </message>
+    <message>
+        <source>Position value of elevation points:</source>
+        <translation>標高点の座標値</translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation>左岸からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from center point</source>
+        <translation>河川中心点からの距離</translation>
+    </message>
+    <message>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>「左岸」は、下流方向を向いた時に左側に見える岸です。</translation>
+    </message>
 </context>
 </TS>

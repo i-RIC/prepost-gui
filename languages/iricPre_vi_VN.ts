@@ -860,6 +860,42 @@ Do you really want to import grid from this file?</source>
         <source>Input the %1 of %2 at the selected grid cells.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
@@ -930,14 +966,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -947,6 +975,14 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1098,6 +1134,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

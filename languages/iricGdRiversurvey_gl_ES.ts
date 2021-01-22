@@ -380,6 +380,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Move Traversal Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -1236,6 +1244,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

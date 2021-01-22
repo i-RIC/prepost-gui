@@ -36,7 +36,7 @@
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation>参照点の選択</translation>
+        <translation type="vanished">参照点の選択</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation>選択用ポリゴンの点の追加</translation>
+        <translation type="vanished">選択用ポリゴンの点の追加</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -258,16 +258,44 @@
         <source>Remove triangles with long edge</source>
         <translation>長い辺を持つ三角形の削除</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapAddPointDialog</name>
+    <message>
+        <source>Merge...</source>
+        <translation>マージ...</translation>
+    </message>
+    <message>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
+    </message>
+    <message>
+        <source>%1 duplicate points were found in merge targets, and omitted.</source>
+        <translation>マージ対象のデータに、重複した点が %1 個見つかり、破棄されました。</translation>
+    </message>
+    <message>
+        <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
+        <translation>点を追加するには、既存の点を一つ選び、点を追加する対象の位置を1つ以上指定する必要があります。再試行しますか? それとも、追加操作をキャンセルしますか?</translation>
+    </message>
     <message>
         <source>Add Points</source>
         <translation>点の追加</translation>
     </message>
     <message>
+        <source>Values of new points</source>
+        <translation>新しい点の値</translation>
+    </message>
+    <message>
+        <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
+        <translation>点の補間を実行するには、2つ以上の点を指定する必要があり、また最初と最後の点は既存の点である必要があります。再試行しますか?それとも操作をキャンセルしますか?</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapAddPointDialog</name>
+    <message>
+        <source>Add Points</source>
+        <translation type="vanished">点の追加</translation>
+    </message>
+    <message>
         <source>Value of new points:</source>
-        <translation>新しい点の値:</translation>
+        <translation type="vanished">新しい点の値:</translation>
     </message>
 </context>
 <context>
@@ -336,7 +364,7 @@
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
@@ -344,11 +372,34 @@
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation>補間線の長さ:</translation>
+        <translation type="vanished">補間線の長さ:</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
+        <translation type="vanished">補間の増分:</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>補間設定</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
         <translation>補間の増分:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>先の長さ:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation>補間の増分は 0 より大きく、線の長さより短い必要があります。</translation>
     </message>
 </context>
 <context>
@@ -387,6 +438,25 @@
     <message>
         <source>LandXML File (*.xml)</source>
         <translation>LandXML ファイル (*.xml)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapMergeSettingDialog</name>
+    <message>
+        <source>Select data to merge</source>
+        <translation>マージするデータの選択</translation>
+    </message>
+    <message>
+        <source>Please select data to merge this group.</source>
+        <translation>このグループにマージするデータを選択してください。</translation>
+    </message>
+    <message>
+        <source>&amp;Select all</source>
+        <translation>すべて選択 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect all</source>
+        <translation>すべて選択解除 (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -477,7 +547,7 @@
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>CSV, text</source>
-        <translation>CSV、テキスト</translation>
+        <translation type="vanished">CSV、テキスト</translation>
     </message>
     <message>
         <source>Error</source>
@@ -505,11 +575,11 @@
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV ファイル (*.csv)</translation>
+        <translation type="vanished">CSV ファイル (*.csv)</translation>
     </message>
     <message>
         <source>Text file (*.txt)</source>
-        <translation>テキストファイル (*.txt)</translation>
+        <translation type="vanished">テキストファイル (*.txt)</translation>
     </message>
     <message>
         <source>Not enough values to read %1. %1 column is %2 but %3 values input.</source>
@@ -551,6 +621,18 @@
         <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
         <translation>&quot;%1&quot; の値を読み込めませんでした。 &quot;%1&quot; の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
+    <message>
+        <source>Text files (CSV, TSV etc)</source>
+        <translation type="vanished">テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text files (CSV, TSV, etc.)</source>
+        <translation>テキストファイル (CSV, タブ区切りなど)</translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt)</source>
+        <translation>テキストファイル (*.csv *.txt)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
@@ -572,7 +654,7 @@
     </message>
     <message>
         <source>Custom delimitered text</source>
-        <translation>カスタム区切り</translation>
+        <translation type="vanished">カスタム区切り</translation>
     </message>
     <message>
         <source>Delimiters</source>
@@ -628,7 +710,7 @@
     </message>
     <message>
         <source>The character to escape quote character in quoted text. You can specify only one character.</source>
-        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+        <translation type="vanished">クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
     </message>
     <message>
         <source>Record options</source>
@@ -676,7 +758,23 @@
     </message>
     <message>
         <source>When you want to skip lines in the file, pelase specify values larger than 1. For example, if you input 2, every other lines are imported.</source>
+        <translation type="vanished">ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>Custom delimited text</source>
+        <translation>カスタム区切り</translation>
+    </message>
+    <message>
+        <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
+        <translation>クォートされた文字列中でクォート文字を入力したい際に直前に指定します。1文字だけ指定できます。</translation>
+    </message>
+    <message>
+        <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
         <translation>ファイル内のデータを間引きたい場合、1より大きい値を指定してください。例えば2を指定した場合、1行おきにインポートされます。</translation>
+    </message>
+    <message>
+        <source>File name:</source>
+        <translation>ファイル名:</translation>
     </message>
 </context>
 <context>
@@ -910,11 +1008,11 @@
     <name>QObject</name>
     <message>
         <source>Add Points</source>
-        <translation>点の追加</translation>
+        <translation type="vanished">点の追加</translation>
     </message>
     <message>
         <source>Add Interpolation Pts</source>
-        <translation>補間点の追加</translation>
+        <translation type="vanished">補間点の追加</translation>
     </message>
 </context>
 <context>
