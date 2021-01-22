@@ -361,6 +361,18 @@
         <source>Dialog</source>
         <translation>Dialogo</translation>
     </message>
+    <message>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished">Modificaciones que haces seran descartado.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
@@ -1406,7 +1418,7 @@ Do you really want to import this file?</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation>Atributo de cuadricula no esta definido para tipo de cuadricula %1. Cuadricula I/O funciones, funciones de creacion de cuadricula quizas no funcionan correctanmente para estos tipos de cuadriculas.</translation>
     </message>
     <message>
