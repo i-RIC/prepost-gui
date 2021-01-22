@@ -3197,35 +3197,50 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="45"/>
+        <source>Importing data...</source>
+        <translation>データをインポートしています...</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="54"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="66"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff ファイル (*.tif)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="67"/>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation>ArcInfo ASCII ファイル (*.asc)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
         <translation>GDAL のデータファイルは、次元のない格子属性と、時間次元を持つ格子属性にのみインポートできます。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Dimension values for time mismatch.</source>
+        <translation>「時間」次元の値が一致しません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>%1 には座標系が指定されていません。座標系を手動で選択してください。</translation>
     </message>
@@ -8207,26 +8222,32 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <location filename="../geodatariversurveymlitimporter.cpp" line="26"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="43"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="48"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="53"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="58"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="63"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="91"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="125"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="130"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="135"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="38"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="47"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="52"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="57"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="62"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="67"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="95"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="129"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="134"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="139"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
         <location filename="../geodatariversurveymlitimporter.cpp" line="26"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="91"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="95"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="43"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="38"/>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="47"/>
         <source>%1 Line %2: KP is not input</source>
         <translation>%1 %2行目: KPの値がありません</translation>
     </message>
@@ -8247,37 +8268,37 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 %2行目: RY の値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="48"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="52"/>
         <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: LX の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="53"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="57"/>
         <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: LY の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="58"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="62"/>
         <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: RX の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="63"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="67"/>
         <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: RY の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="109"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="113"/>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>距離標データが見つかりません。無視されます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="193"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="197"/>
         <source>Cross Section data is not found. Will be ignored.</source>
         <translation>横断データがありません。無視されます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="201"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="205"/>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation>横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
     </message>
@@ -8286,22 +8307,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 にありません</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="125"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="129"/>
         <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
         <translation>%1 %2行目 &quot;%3&quot;: フラグの値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="130"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="134"/>
         <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
         <translation>%1 %2行目 &quot;%3&quot;: 距離の値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="135"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="139"/>
         <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
         <translation>%1 %2行目 &quot;%3&quot;: 標高の値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="168"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="172"/>
         <source>Select folder where cross section data exists</source>
         <translation>横断データのあるフォルダを選択</translation>
     </message>
@@ -8310,22 +8331,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">横断データが見つかりません</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="207"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="211"/>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
         <translation>横断データの距離が正しい順番に並んでいません。自動的にソートされます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="213"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="217"/>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
         <translation>横断データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="232"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="236"/>
         <source>MLIT River Survey Data(*.csv)</source>
         <translation>国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="246"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="250"/>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>
@@ -13576,6 +13597,24 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeEditNameAndValueDialog</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished">ダイアログ</translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="22"/>
+        <source>Name:</source>
+        <translation type="unfinished">名前:</translation>
+    </message>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditnameandvaluedialog.ui" line="32"/>
+        <source>TextLabel</source>
+        <translation type="unfinished">テキストラベル</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
@@ -13845,59 +13884,59 @@ Do you really want to import this file?</source>
         <translation>計算条件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="47"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="48"/>
         <source>&amp;Save and Close</source>
         <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="127"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="133"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="151"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="225"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="226"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="233"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="234"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="276"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="277"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="241"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
     </message>
@@ -14403,12 +14442,12 @@ Do you really want to import this file?</source>
         <translation>Y: </translation>
     </message>
     <message>
-        <location filename="../misc/mousepositionwidget.cpp" line="39"/>
+        <location filename="../misc/mousepositionwidget.cpp" line="41"/>
         <source>X: ------</source>
         <translation>X: ------</translation>
     </message>
     <message>
-        <location filename="../misc/mousepositionwidget.cpp" line="40"/>
+        <location filename="../misc/mousepositionwidget.cpp" line="42"/>
         <source>Y: ------</source>
         <translation>Y: ------</translation>
     </message>
@@ -14907,20 +14946,20 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="191"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="201"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -14929,37 +14968,37 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果が、コピーしたCGNSファイルから読み込めません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="444"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="453"/>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
         <translation>可視化用の計算結果の読み込みに失敗しました。少し待ってから再度試すか、計算が終了するまでお待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="753"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="762"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="779"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="788"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="828"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="837"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="832"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="841"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="835"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="844"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="838"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="847"/>
         <source>Saving calculation result as ESRI Shapefiles...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
@@ -14968,7 +15007,7 @@ Do you really want to import this file?</source>
         <translation type="vanished">計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="878"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="887"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -15359,7 +15398,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/projectdata.cpp" line="318"/>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
@@ -15919,24 +15958,24 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="173"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="174"/>
         <source>Background Images (Internet)</source>
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="201"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="202"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation>インターネットから背景画像を取得するには、以下のメニューから座標系を指定して下さい。
 ファイル -&gt; プロパティ</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="259"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="260"/>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>
@@ -28577,7 +28616,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">警告</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation type="obsolete">格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>

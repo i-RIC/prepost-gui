@@ -1619,26 +1619,32 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <location filename="../geodatariversurveymlitimporter.cpp" line="26"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="43"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="48"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="53"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="58"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="63"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="91"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="125"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="130"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="135"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="38"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="47"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="52"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="57"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="62"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="67"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="95"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="129"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="134"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="139"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
         <location filename="../geodatariversurveymlitimporter.cpp" line="26"/>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="91"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="95"/>
         <source>Opening %1 failed.</source>
         <translation>%1 を開けません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="43"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="38"/>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="47"/>
         <source>%1 Line %2: KP is not input</source>
         <translation>%1 %2行目: KPの値がありません</translation>
     </message>
@@ -1659,37 +1665,37 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 %2行目: RY の値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="48"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="52"/>
         <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: LX の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="53"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="57"/>
         <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: LY の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="58"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="62"/>
         <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: RX の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="63"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="67"/>
         <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
         <translation>%1 %2行目 &quot;%3&quot;: RY の値が不正です</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="109"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="113"/>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>距離標データが見つかりません。無視されます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="193"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="197"/>
         <source>Cross Section data is not found. Will be ignored.</source>
         <translation>横断データがありません。無視されます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="201"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="205"/>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation>横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
     </message>
@@ -1698,22 +1704,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 にありません</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="125"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="129"/>
         <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
         <translation>%1 %2行目 &quot;%3&quot;: フラグの値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="130"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="134"/>
         <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
         <translation>%1 %2行目 &quot;%3&quot;: 距離の値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="135"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="139"/>
         <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
         <translation>%1 %2行目 &quot;%3&quot;: 標高の値が不正です。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="168"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="172"/>
         <source>Select folder where cross section data exists</source>
         <translation>横断データのあるフォルダを選択</translation>
     </message>
@@ -1722,22 +1728,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">横断データが見つかりません</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="207"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="211"/>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
         <translation>横断データの距離が正しい順番に並んでいません。自動的にソートされます。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="213"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="217"/>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
         <translation>横断データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="232"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="236"/>
         <source>MLIT River Survey Data(*.csv)</source>
         <translation>国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveymlitimporter.cpp" line="246"/>
+        <location filename="../geodatariversurveymlitimporter.cpp" line="250"/>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>
