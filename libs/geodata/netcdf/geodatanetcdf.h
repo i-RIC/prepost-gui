@@ -176,10 +176,12 @@ private:
     void saveBaseAndResolution(QXmlStreamWriter& writer);
 
 public:
-	friend class GeoDataNetcdfImporter;
-	friend class GeoDataNetcdfXbandImporter;
 	friend class GeoDataNetcdfGdalExporter;
 	friend class GeoDataNetcdfGdalImporter;
+	friend class GeoDataNetcdfGrayscalePngRealImporter;
+	friend class GeoDataNetcdfGrayscalePngRealExporter;
+	friend class GeoDataNetcdfImporter;
+	friend class GeoDataNetcdfXbandImporter;
 };
 
 #endif // GEODATANETCDF_H
