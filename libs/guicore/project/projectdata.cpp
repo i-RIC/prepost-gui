@@ -315,7 +315,7 @@ void ProjectData::checkGridConditions()
 		// NG grid types were found.
 		QMessageBox::warning(
 			m_mainWindow, tr("Warning"),
-			tr("Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.").arg(ngtypes.join(", ")));
+			tr("Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.").arg(ngtypes.join(", ")));
 	}
 }
 
