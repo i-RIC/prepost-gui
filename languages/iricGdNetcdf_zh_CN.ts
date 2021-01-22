@@ -86,35 +86,50 @@
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="37"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="45"/>
+        <source>Importing data...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="54"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="49"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="66"/>
         <source>GeoTiff files(*.tif)</source>
         <translation>GeoTiff 文件 (*.tif)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="50"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="67"/>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="94"/>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="99"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="117"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="122"/>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfgdalimporter.cpp" line="300"/>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="188"/>
+        <source>Dimension values for time mismatch.</source>
+        <translation type="unfinished">时间的维度值不匹配</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdfgdalimporter.cpp" line="344"/>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation type="unfinished"></translation>
     </message>
