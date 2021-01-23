@@ -74,9 +74,9 @@ public:
 	CoordinateSystemType coordinateSystemType() const;
 	QString coordinateSystemName() const;
 
-	bool geoTransformExists();
-	const double* geoTransform() const;
-        void setGeoTransform(double* t);
+    bool geoTransformExists() const;
+    double* geoTransform();
+    void setGeoTransform(double* t);
 
 	bool baseAndResolutionExists() const;
         void setBaseAndResolution(double base, double resolution);
@@ -178,6 +178,7 @@ private:
 public:
 	friend class GeoDataNetcdfImporter;
 	friend class GeoDataNetcdfXbandImporter;
+	friend class GeoDataNetcdfGdalExporter;
 	friend class GeoDataNetcdfGdalImporter;
 };
 

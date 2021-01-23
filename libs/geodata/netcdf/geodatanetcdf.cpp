@@ -29,8 +29,11 @@
 #include <vtkStructuredGrid.h>
 
 #include <QDir>
+#include <QDomElement>
+#include <QDomNode>
 #include <QLineF>
 #include <QMessageBox>
+#include <QXmlStreamWriter>
 
 #include <netcdf.h>
 #include <vector>
@@ -141,12 +144,12 @@ QString GeoDataNetcdf::coordinateSystemName() const
 	return m_coordinateSystemName;
 }
 
-bool GeoDataNetcdf::geoTransformExists()
+bool GeoDataNetcdf::geoTransformExists() const
 {
 	return m_geoTransformExists;
 }
 
-const double* GeoDataNetcdf::geoTransform() const
+double* GeoDataNetcdf::geoTransform()
 {
 	return &(m_geoTransform[0]);
 }
@@ -417,6 +420,7 @@ void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
 	m_colorSetting.load(node);
+	m_coordinateSystemName = node.toElement().attribute("cs");
 	loadGeoTransform(node);
 	loadBaseAndResolution(node);
 }
@@ -425,6 +429,7 @@ void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
 	m_colorSetting.save(writer);
+	writer.writeAttribute("cs", m_coordinateSystemName);
 	saveGeoTransform(writer);
 	saveBaseAndResolution(writer);
 }

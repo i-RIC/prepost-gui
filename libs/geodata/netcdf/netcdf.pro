@@ -99,8 +99,11 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdffilelistdialog.h \
            geodatanetcdffilenamematcher.h \
            geodatanetcdffilenamepatterndialog.h \
+           geodatanetcdfgdalexporter.h \
            geodatanetcdfgdalimporter.h \
+           geodatanetcdfgdalintegerexporter.h \
            geodatanetcdfgdalintegerimporter.h \
+           geodatanetcdfgdalrealexporter.h \
            geodatanetcdfgdalrealimporter.h \
            geodatanetcdfimporter.h \
            geodatanetcdfimporterdateselectdialog.h \
@@ -132,8 +135,11 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdffilelistdialog.cpp \
            geodatanetcdffilenamematcher.cpp \
            geodatanetcdffilenamepatterndialog.cpp \
+           geodatanetcdfgdalexporter.cpp \
            geodatanetcdfgdalimporter.cpp \
+           geodatanetcdfgdalintegerexporter.cpp \
            geodatanetcdfgdalintegerimporter.cpp \
+           geodatanetcdfgdalrealexporter.cpp \
            geodatanetcdfgdalrealimporter.cpp \
            geodatanetcdfimporter.cpp \
            geodatanetcdfimporterdateselectdialog.cpp \

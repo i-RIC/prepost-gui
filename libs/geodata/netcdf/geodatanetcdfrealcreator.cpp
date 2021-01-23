@@ -1,3 +1,4 @@
+#include "geodatanetcdfgdalrealexporter.h"
 #include "geodatanetcdfgdalrealimporter.h"
 #include "geodatanetcdfreal.h"
 #include "geodatanetcdfrealcreator.h"
@@ -12,6 +13,8 @@ GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
 	importers().push_back(new GeoDataNetcdfRealImporter(this));
 	importers().push_back(new GeoDataNetcdfXbandImporter(this));
 	importers().push_back(new GeoDataNetcdfGdalRealImporter(this));
+
+	exporters().push_back(new GeoDataNetcdfGdalRealExporter(this));
 }
 
 GeoData* GeoDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

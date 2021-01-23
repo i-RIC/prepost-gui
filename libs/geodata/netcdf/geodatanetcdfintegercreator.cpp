@@ -1,3 +1,4 @@
+#include "geodatanetcdfgdalintegerexporter.h"
 #include "geodatanetcdfgdalintegerimporter.h"
 #include "geodatanetcdfinteger.h"
 #include "geodatanetcdfintegercreator.h"
@@ -8,6 +9,8 @@ GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
 {
 	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
 	importers().push_back(new GeoDataNetcdfGdalIntegerImporter(this));
+
+	exporters().push_back(new GeoDataNetcdfGdalIntegerExporter(this));
 }
 
 GeoData* GeoDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
