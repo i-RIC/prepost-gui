@@ -112,6 +112,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfinteger.h \
            geodatanetcdfintegercreator.h \
            geodatanetcdfintegerimporter.h \
+           geodatanetcdfncexporter.h \
            geodatanetcdfnodemappert.h \
            geodatanetcdfreal.h \
            geodatanetcdfrealcreator.h \
@@ -147,6 +148,7 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdfinteger.cpp \
            geodatanetcdfintegercreator.cpp \
            geodatanetcdfintegerimporter.cpp \
+           geodatanetcdfncexporter.cpp \
            geodatanetcdfreal.cpp \
            geodatanetcdfrealcreator.cpp \
            geodatanetcdfrealimporter.cpp \
