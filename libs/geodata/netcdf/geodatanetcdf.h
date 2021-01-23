@@ -74,6 +74,15 @@ public:
 	CoordinateSystemType coordinateSystemType() const;
 	QString coordinateSystemName() const;
 
+	bool geoTransformExists();
+	const double* geoTransform() const;
+        void setGeoTransform(double* t);
+
+	bool baseAndResolutionExists() const;
+        void setBaseAndResolution(double base, double resolution);
+	double base() const;
+	double resolution() const;
+
 	int defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId);
 	int defineDimensions(int ncid, std::vector<int>* dimIds, std::vector<int>* varIds);
 	int defineValue(int ncid, int xId, int yId, const std::vector<int>& dimIds, int* varId);
@@ -148,6 +157,13 @@ protected:
 	CoordinateSystemType m_coordinateSystemType;
 	GeoDataNetcdfColorSettingDialog::Setting m_colorSetting;
 	QString m_coordinateSystemName;
+
+	bool m_geoTransformExists;
+	double m_geoTransform[6];
+
+	bool m_baseAndResolutionExists;
+	double m_base;
+	double m_resolution;
 
 	bool m_isMasked;
 

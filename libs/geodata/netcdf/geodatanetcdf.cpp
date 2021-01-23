@@ -70,6 +70,10 @@ bool GeoDataNetcdf::RectRegion::intersect(const QLineF& line) const
 
 GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_geoTransformExists {false},
+	m_baseAndResolutionExists {false},
+	m_base {0},
+	m_resolution {0},
 	m_isMasked {false}
 {
 	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
@@ -135,6 +139,48 @@ QString GeoDataNetcdf::coordinateSystemName() const
 {
 	return m_coordinateSystemName;
 }
+
+bool GeoDataNetcdf::geoTransformExists()
+{
+	return m_geoTransformExists;
+}
+
+const double* GeoDataNetcdf::geoTransform() const
+{
+	return &(m_geoTransform[0]);
+}
+
+void GeoDataNetcdf::setGeoTransform(double* t)
+{
+	m_geoTransformExists = true;
+
+	for (int i = 0; i < 6; ++i) {
+		m_geoTransform[i] = *(t + i);
+	}
+}
+
+bool GeoDataNetcdf::baseAndResolutionExists() const
+{
+	return m_baseAndResolutionExists;
+}
+
+void GeoDataNetcdf::setBaseAndResolution(double base, double resolution)
+{
+	m_baseAndResolutionExists = true;
+	m_base = base;
+	m_resolution = resolution;
+}
+
+double GeoDataNetcdf::base() const
+{
+	return m_base;
+}
+
+double GeoDataNetcdf::resolution() const
+{
+	return m_resolution;
+}
+
 
 bool GeoDataNetcdf::requestCoordinateSystem() const
 {
