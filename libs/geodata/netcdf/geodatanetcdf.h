@@ -169,6 +169,12 @@ protected:
 
 	class EditPropertyCommand;
 
+private:
+    void loadGeoTransform(const QDomNode& node);
+    void saveGeoTransform(QXmlStreamWriter& writer);
+    void loadBaseAndResolution(const QDomNode& node);
+    void saveBaseAndResolution(QXmlStreamWriter& writer);
+
 public:
 	friend class GeoDataNetcdfImporter;
 	friend class GeoDataNetcdfXbandImporter;

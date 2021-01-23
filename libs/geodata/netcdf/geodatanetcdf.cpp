@@ -16,6 +16,7 @@
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <guicore/solverdef/solverdefinitiongridattributerealdimension.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
 #include <vtkCellArray.h>
@@ -416,12 +417,16 @@ void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
 	m_colorSetting.load(node);
+	loadGeoTransform(node);
+	loadBaseAndResolution(node);
 }
 
 void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
 	m_colorSetting.save(writer);
+	saveGeoTransform(writer);
+	saveBaseAndResolution(writer);
 }
 
 void GeoDataNetcdf::doApplyOffset(double x, double y)
@@ -1226,4 +1231,39 @@ int GeoDataNetcdf::ySize() const
 		return static_cast<int> (m_lonValues.size());
 	}
 	return 0;
+}
+
+void GeoDataNetcdf::loadGeoTransform(const QDomNode& node)
+{
+	m_geoTransformExists = false;
+
+	for (int i = 0; i < 6; ++i) {
+		m_geoTransform[i] = iRIC::getDoubleAttribute(node, QString("geotransform%1").arg(i + 1));
+		m_geoTransformExists = m_geoTransformExists || (m_geoTransform[i] != 0);
+	}
+}
+
+void GeoDataNetcdf::saveGeoTransform(QXmlStreamWriter& writer)
+{
+	if (! m_geoTransformExists) {return;}
+
+	for (int i = 0; i < 6; ++i) {
+		iRIC::setDoubleAttribute(writer, QString("geotransform%1").arg(i + 1), m_geoTransform[i]);
+	}
+}
+
+void GeoDataNetcdf::loadBaseAndResolution(const QDomNode& node)
+{
+	m_base = iRIC::getDoubleAttribute(node, "base");
+	m_resolution = iRIC::getDoubleAttribute(node, "resolution");
+
+	m_baseAndResolutionExists = (m_base != 0 || m_resolution != 0);
+}
+
+void GeoDataNetcdf::saveBaseAndResolution(QXmlStreamWriter& writer)
+{
+	if (! m_baseAndResolutionExists) {return;}
+
+	iRIC::setDoubleAttribute(writer, "base", m_base);
+	iRIC::setDoubleAttribute(writer, "resolution", m_resolution);
 }
