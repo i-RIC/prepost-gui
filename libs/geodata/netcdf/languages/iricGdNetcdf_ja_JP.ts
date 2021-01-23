@@ -97,6 +97,33 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfGdalExporter</name>
+    <message>
+        <source>GDAL</source>
+        <translation>GDAL</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>This data can not be exported. It seems that is it not imported from *.tif or *.asc.</source>
+        <translation>このデータはエクスポートできません。*.tif, *.asc からインポートしたデータではありません。</translation>
+    </message>
+    <message>
+        <source>This data can not be exported. Data with &quot;Time&quot; dimension can not be exported to *.tif or *.asc.</source>
+        <translation>このデータはエクスポートできません。「時間」の次元を持つデータは *.tif, *.asc にエクスポートできません。</translation>
+    </message>
+    <message>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation>ArcInfo ASCII ファイル (*.asc)</translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif)</source>
+        <translation>GeoTiff ファイル (*.tif)</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
@@ -137,6 +164,80 @@
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation type="vanished">GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation>グレースケール 16bit PNGファイル (*.png)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>This data can not be exported. It seems that is it not imported from *.png.</source>
+        <translation>このファイルはエクスポートできません。 PNG ファイルからインポートしたデータはありません。</translation>
+    </message>
+    <message>
+        <source>This data can not be exported. Data with &quot;Time&quot; dimension can not be exported to *.png</source>
+        <translation>このデータはエクスポートできません。「時間」の次元を持つデータは *.png にエクスポートできません。</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開くときにエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Error occured while initializing libpng.</source>
+        <translation>libpng の初期化処理中にエラーが発生しました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <message>
+        <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
+        <translation>グレースケール 16bit PNGファイル (Unreal Englne 4用)</translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation>グレースケール 16bit PNGファイル (*.png)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
+        <translation>グレースケール 16bit PNG ファイルは、「時間」次元のない地理情報にしかインポートできません。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開くときにエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1. It seems not to be a PNG file.</source>
+        <translation>%1 を開く処理でエラーが発生しました。これは PNG ファイルではないようです。</translation>
+    </message>
+    <message>
+        <source>%1 is not a 16bit grayscale image.</source>
+        <translation>%1 は 16bit グレースケールの画像ではありません。</translation>
+    </message>
+    <message>
+        <source>%1 does not exists.</source>
+        <translation>%1 が存在しません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading %1. It is not a valid world file.</source>
+        <translation>%1 の読み込み中にエラーが発生しました。これは正しいワールドファイルではありません。</translation>
+    </message>
+    <message>
+        <source>Error occured while parsing %1.</source>
+        <translation>%1 の読み込み中にエラーが発生しました。</translation>
     </message>
 </context>
 <context>
@@ -230,6 +331,13 @@
     <message>
         <source>Dimensions</source>
         <translation>次元</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfNcExporter</name>
+    <message>
+        <source>NetCDF files (*.nc)</source>
+        <translation>NetCDF ファイル (*.nc)</translation>
     </message>
 </context>
 <context>
