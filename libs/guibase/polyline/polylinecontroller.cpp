@@ -93,11 +93,43 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 
 	double d2 = limitDistance * limitDistance;
 
+	// Use FindCell
 	vtkIdType id = impl->m_actor.linesPolyData()->FindCell(x, nullptr, 0, d2, subId, pcoords, weights);
-	if (id < 0) {return false;}
+	if (id >= 0) {
+		*edgeId = id;
+		return true;
+	}
 
-	*edgeId = id;
-	return true;
+	// Support case if the line is parallel to x axis or y axis
+	double *bounds = impl->m_actor.linesPolyData()->GetBounds();
+
+	auto line = impl->m_actor.line();
+	if (std::fabs(*(bounds + 1) - *(bounds)) < limitDistance) {
+		// almost parallel to y axis
+		double x = (*(bounds) + *(bounds + 1)) * 0.5;
+		if (std::fabs(pos.x() - x) > limitDistance) {return false;}
+		for (int i = 0; i < line.size() - 1; ++i) {
+			double y1 = line.at(i).y();
+			double y2 = line.at(i + 1).y();
+			if (std::fmin(y1, y2) - limitDistance < pos.y() && pos.y() < std::fmax(y1, y2) + limitDistance) {
+				*edgeId = i;
+				return true;
+			}
+		}
+	} else if (std::fabs(*(bounds + 3) - *(bounds + 2)) < limitDistance) {
+		// almost parallel to x axis
+		double y = (*(bounds + 2) + *(bounds + 3)) * 0.5;
+		if (std::fabs(pos.y() - y) > limitDistance) {return false;}
+		for (int i = 0; i < line.size() - 1; ++i) {
+			double x1 = line.at(i).x();
+			double x2 = line.at(i + 1).x();
+			if (std::fmin(x1, x2) - limitDistance < pos.x() && pos.x() < std::fmax(x1, x2) + limitDistance) {
+				*edgeId = i;
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 int PolyLineController::findNearestLine(const QPointF& pos)
