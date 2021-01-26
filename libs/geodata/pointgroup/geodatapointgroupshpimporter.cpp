@@ -41,7 +41,6 @@ const QStringList GeoDataPointGroupShpImporter::fileDialogFilters()
 
 bool GeoDataPointGroupShpImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	QTextCodec* codec = QTextCodec::codecForLocale();
 	auto group = dynamic_cast<GeoDataPointGroup*>(data);
 
 	std::string fname = iRIC::toStr(filename());
@@ -67,13 +66,13 @@ bool GeoDataPointGroupShpImporter::importData(GeoData* data, int /*index*/, QWid
 		// name
 		QString name = nameTpl.arg(i + 1);
 		if (m_nameSetting == GeoDataPolyDataGroupShpImporterSettingDialog::nsLoadFromDBF) {
-			name = readData(dbfh, i, m_nameAttribute, codec).toString();
+			name = readData(dbfh, i, m_nameAttribute, m_codec).toString();
 		}
 		point->setName(name);
 		// value
 		QVariant value = m_specifiedValue;
 		if (m_valueSetting == GeoDataPolyDataGroupShpImporterSettingDialog::vsLoadFromDBF) {
-			value = readData(dbfh, i, m_valueAttribute, codec);
+			value = readData(dbfh, i, m_valueAttribute, m_codec);
 		}
 		point->setValue(value);
 		group->addData(point);
