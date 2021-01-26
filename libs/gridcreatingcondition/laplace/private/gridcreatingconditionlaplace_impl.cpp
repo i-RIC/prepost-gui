@@ -2141,6 +2141,8 @@ void GridCreatingConditionLaplace::Impl::setupLabelsForCenterLine(vtkActor2DColl
 
 void GridCreatingConditionLaplace::Impl::setupLabelsForRegionDefined()
 {
+	if (m_centerLineIndex == -1) {return;}
+
 	auto firstp = ctrlPoint(0, m_centerLineIndex);
 	m_upstreamActor.setPosition(firstp);
 
