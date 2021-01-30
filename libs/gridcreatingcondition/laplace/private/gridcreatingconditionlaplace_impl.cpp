@@ -324,6 +324,8 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	m_centerLineOnlyMouseEventMode {CenterLineOnlyMouseEventMode::Normal},
 	m_regionDefinedMouseEventMode {RegionDefinedMouseEventMode::Normal},
 	m_centerLineIndex {-1},
+	m_ctrlPointCountI {0},
+	m_ctrlPointCountJ {0},
 	m_previewGrid {nullptr},
 	m_previewGridMapper {vtkDataSetMapper::New()},
 	m_previewGridActor {vtkActor::New()},
